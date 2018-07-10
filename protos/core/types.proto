@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package core;
 
-option go_package = "flyteidl";
+option go_package = "core";
 
 // Define a set of simple types.
 enum SimpleType {

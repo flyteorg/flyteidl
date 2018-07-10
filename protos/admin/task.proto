@@ -1,18 +1,15 @@
 syntax = "proto3";
 
-package admin.entity;
-
-option go_package = "flyte_admin";
+package admin;
+option go_package = "admin";
 
 import "core/tasks.proto";
+import "admin/common.proto";
 
 message TaskCreateRequest {
-    string project    = 1;
-    string domain     = 2;
-    string name       = 3;
-    string version    = 4;
-
-    TaskSpec spec     = 5;
+    Identifier id           = 1;
+    string version          = 2;
+    TaskSpec spec           = 3;
 }
 
 message TaskCreateResponse {
@@ -20,27 +17,15 @@ message TaskCreateResponse {
 }
 
 message Task {
-    string project    = 1;
-    string domain     = 2;
-    string name       = 3;
-    string version    = 4;
-    string urn        = 5;
+    Identifier id     = 1;
+    string version    = 2;
+    string urn        = 3;
 
     TaskSpec spec     = 6;
 }
 
-message TaskEntity {
-    string project    = 1;
-    string domain     = 2;
-    string name       = 3;
-}
-
 message TaskList {
     repeated Task tasks = 1;
-}
-
-message TaskEntityList {
-    repeated TaskEntity task_entities = 1;
 }
 
 message TaskSpec {

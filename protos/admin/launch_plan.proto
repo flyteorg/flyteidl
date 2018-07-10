@@ -1,42 +1,29 @@
 syntax = "proto3";
 
-package admin.entity;
-
-option go_package = "flyte_admin";
+package admin;
+option go_package = "admin";
 
 import "core/interface.proto";
 import "admin/schedule.proto";
 import "admin/common.proto";
 
 message LaunchPlanCreateRequest {
-    string project    = 1;
-    string domain     = 2;
-    string name       = 3;
-    string version    = 4;
+    Identifier id       = 1;
+    string version      = 2;
 
-    LaunchPlanSpec spec = 5;
+    LaunchPlanSpec spec = 3;
 }
 
 message LaunchPlan {
-    string project    = 1;
-    string domain     = 2;
-    string name       = 3;
-    string version    = 4;
-    string urn        = 5;
-}
+    Identifier id       = 1;
+    string version      = 2;
+    string urn          = 3;
 
-message LaunchPlanEntity {
-    string project    = 1;
-    string domain     = 2;
-    string name       = 3;
+    LaunchPlanSpec spec = 4;
 }
 
 message LaunchPlanList {
     repeated LaunchPlan launch_plans = 1;
-}
-
-message LaunchPlanEntityList {
-    repeated LaunchPlanEntity launch_plan_entities = 1;
 }
 
 message LaunchPlanSpec {
@@ -44,19 +31,19 @@ message LaunchPlanSpec {
     string workflow_urn   = 1;
 
     // Metadata for the Launch Plan
-    LaunchPlanMetadata entity_metadata = 2;
+    LaunchPlanMetadata entity_metadata    = 2;
 
     // Input values to be passed for the execution
-    repeated core.Parameter default_inputs    = 3;
+    repeated Parameter default_inputs     = 3;
 
     // Fixed, non overridable inputs for the Launch Plan
-    core.NamedValueCollection fixed_inputs    = 4;
+    core.NamedValueCollection fixed_inputs     = 4;
 }
 
 message LaunchPlanMetadata {
     // Schedule to execute the Launch Plan
-    admin.property.Schedule schedule                    = 1;
+    Schedule schedule                    = 1;
 
     // List of notifications based on Execution status transitions
-    repeated admin.entity.Notification notifications  = 2;
+    repeated Notification notifications  = 2;
 }

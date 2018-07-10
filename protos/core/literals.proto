@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package core;
 
-option go_package = "flyteidl";
+option go_package = "core";
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
@@ -25,8 +25,9 @@ message Void {
 
 // Defines where the data is. Different stores will require different APIs and different ways to interact.
 enum BlobStore {
-    S3 = 0;
-    GCS = 1;
+    INVALID = 0;
+    S3 = 1;
+    GCS = 2;
 }
 
 // Refers to an offloaded set of files. It encapsulates the type of the store and a unique uri for where the data is.

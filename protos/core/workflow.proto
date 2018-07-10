@@ -2,69 +2,17 @@ syntax = "proto3";
 
 package core;
 
-option go_package = "flyteidl";
+option go_package = "core";
 
 import "core/interface.proto";
 import "core/literals.proto";
 import "core/types.proto";
+import "core/condition.proto";
 
-// Defines a 2-level tree where the root is a comparison operator and Operands are primtivies or known variables.
-// Each expression results in a boolean result.
-message ComparisonExpression {
-    // Binary Operator for each expression
-    enum Operator {
-        EQ = 0;
-        NEQ = 1;
-        // Greater Than
-        GT = 2;
-        GTE = 3;
-        // Less Than
-        LT = 4;
-        LTE = 5;
-    }
-
-    Operator operator = 1;
-    Operand left_value = 2;
-    Operand right_value = 3;
-}
-
-// Defines an operand to a comparison expression.
-message Operand {
-    oneof val {
-        // Can be a constant
-        Primitive primitive = 1;
-        // Or one of this node's input variables
-        string var = 2;
-    }
-}
-
-// Defines a conjunction expression of two boolean expressions.
-message ConjunctionExpression {
-    // Nested conditions. They can be conjoined using AND / OR
-    // Order of evaluation is not important as the operators are Commutative
-    enum LogicalOperator {
-        // Conjunction
-        AND = 0;
-        OR = 1;
-    }
-
-    LogicalOperator operator = 1;
-    BooleanExpression left_expression = 2;
-    BooleanExpression right_expression = 3;
-}
-
-// Defines a boolean expression tree. It can be a simple or a conjunction expression.
-// Multiple expressions can be combined using a conjunction or a disjuntion to result in final boolean result.
-message BooleanExpression {
-    oneof expr {
-        ConjunctionExpression conjunction = 1;
-        ComparisonExpression comparison = 2;
-    }
-}
 
 // Defines a condition and the execution unit that should be executed if the condition is satisfied.
 message IfBlock {
-    BooleanExpression condition = 1;
+    core.BooleanExpression condition = 1;
     Node then_node = 2;
 }
 
@@ -140,28 +88,28 @@ message Node {
 
     // Specifies how to bind the underlying interface's inputs. All required inputs specified in the underlying interface
     // must be fullfilled.
-    repeated Binding inputs = 4;
+    repeated Binding inputs = 3;
 
     //+optional Specifies execution depdendency for this node ensuring it will only get scheduled to run after all its
     // upstream nodes have completed. This node will have an implicit depdendency on any node that appears in inputs
     // field.
-    repeated string upstream_node_ids = 5;
+    repeated string upstream_node_ids = 4;
 
     //+optional. A node can define aliases for a subset of its outputs. This is particularly useful if different nodes
     // need to conform to the same interface (e.g. all branches in a branch node). Downstream nodes must refer to this
     // nodes outputs using the alias if one's specified.
-    repeated Alias output_aliases = 6;
+    repeated Alias output_aliases = 5;
 
     // Information about the target to execute in this node.
     oneof target {
         // Information about the Task to execute in this node.
-        TaskNode task_node = 7;
+        TaskNode task_node = 6;
 
         // Information about the Workflow to execute in this mode.
-        WorkflowNode workflow_node = 8;
+        WorkflowNode workflow_node = 7;
 
         // Information about the branch node to evaluate in this node.
-        BranchNode branch_node = 9;
+        BranchNode branch_node = 8;
     }
 }
 

@@ -1,8 +1,7 @@
 syntax = "proto3";
 
-package admin.property;
-
-option go_package = "flyte";
+package admin;
+option go_package = "admin";
 
 message Schedule {
     enum FixedRateUnit {

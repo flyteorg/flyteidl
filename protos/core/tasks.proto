@@ -4,7 +4,7 @@ import "core/interface.proto";
 
 package core;
 
-option go_package = "flyteidl";
+option go_package = "core";
 
 enum TaskCategory {
     // Task category that identifies if the system can use default structures in UI, etc to drive the task
