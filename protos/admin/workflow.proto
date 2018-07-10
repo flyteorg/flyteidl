@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package admin.entity;
+
+option go_package = "flyte_admin";
+
+import "core/workflow.proto";
+
+message WorkflowCreateRequest {
+    string project    = 1;
+    string domain     = 2;
+    string name       = 3;
+    string version    = 4;
+
+    WorkflowSpec spec = 5;
+}
+
+message WorkflowCreateResponse {
+    string urn        = 1;
+}
+
+message Workflow {
+    string project    = 1;
+    string domain     = 2;
+    string name       = 3;
+    string version    = 4;
+    string urn        = 5;
+
+    WorkflowSpec spec = 6;
+}
+
+message WorkflowEntity {
+    string project    = 1;
+    string domain     = 2;
+    string name       = 3;
+}
+
+message WorkflowList {
+    repeated Workflow workflows = 1;
+}
+
+message WorkflowEntityList {
+    repeated WorkflowEntity workflow_entities = 1;
+}
+
+message WorkflowEntityDetails {
+    WorkflowTemplate workflow_template = 1;
+}

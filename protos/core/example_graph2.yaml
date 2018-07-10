@@ -1,0 +1,117 @@
+graph:
+  interface:
+    inputs:
+     - name: x
+     - name: y
+    outputs:
+     - name: u
+     - name: v
+  metadata:
+    name: MyGraph
+  nodes:
+    - metatada:
+         name: square_x
+      reference_id: "square"
+      input_link:
+        x: "global.x"
+      output_aliases:
+         global.u: "self.xSquared"
+    - metatada:
+         name: square_y
+      reference_id: "square"
+      input_links:
+        x:
+          list:
+            - "global.y"
+            - "global.x"  # Just showing possible syntax for composing list inputs?
+        y: "global.y"
+      output_aliases:
+        ySquared: "self.xSquared"
+    - metatada:
+         name: ceil_or_floor_x
+         type: Decider
+      input_link:
+        decider_x: "square_x.xSquared"
+      output_aliases:
+        adjusted_x: none
+      branch:
+        case:
+          if:
+            lvalue:
+              var: decider_x
+            op: GTE
+            rvalue:
+               primitive: 50
+          then:
+            metatada:
+              name: ceilTo100_x
+            reference_id: "ceilTo100"
+            input_link:
+              x: "parent.decider_x"
+            output_aliases:
+              parent.adjusted_x: "self.ceilX"
+          else:
+           - if:
+               lvalue:
+                 var: decider_x
+               op: LT
+               rvalue:
+                primitive: 50
+             then:
+               metatada:
+                name: floorTo0_x
+               reference_id: "floorTo0"
+               input_link:
+                x: "parent.decider_x"
+               output_aliases:
+                 parent.adjusted_x: "self.floorX"
+    - metatada:
+         name: ceil_or_floor_y
+         type: Decider
+      input_link:
+        decider_y: "square_y.y"
+      output_aliases:
+        adjusted_y: none
+      decider:
+        if_else:
+          if:
+            case:
+              lvalue:
+                 var: decider_y
+               op: GTE
+               rvalue:
+                  primitive: 50
+            then:
+              metatada:
+                name: ceilTo100_y
+              task:
+                reference_id: "ceilTo100"
+                input_link:
+                  x: "parent.decider_y"
+                output_aliases:
+                  parent.adjusted_y: "self.ceilX"
+          else:
+            case:
+              lvalue:
+                var: decider_y
+              op: LT
+              rvalue:
+                primitive: 50
+            then:
+              metatada:
+                name: floorTo0_y
+              task:
+                reference_id: "floorTo0"
+                input_link:
+                  x: "parent.decider_y"
+                output_aliases:
+                  parent.adjusted_y: "self.floorX"
+    - metatada:
+        name: product_x_y
+      reference_id: "product"
+      input_link:
+        y: "ceil_or_floor_y.adjusted_y"
+        x: "ceil_or_floor_x.adjusted_x"
+      output_aliases:
+        global.v: "self.product"
+

@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package core;
+
+option go_package = "flyteidl";
+
+import "core/types.proto";
+import "core/literals.proto";
+
+// Defines a strongly typed variable.
+message Variable {
+    // Variable name. This can be referenced in input/output bindings to pass data between
+    // nodes/workflows. Variable name is case-sensitive.
+    string name = 1;
+
+    // Variable literal type.
+    LiteralType type = 2;
+}
+
+// Declares an input/output parameter.
+message Parameter {
+    enum SystemProvided {
+        NONE = 0;
+
+        // Indicates the time an execution was kicked off. The matching variable must be of type
+        // DateTime.
+        KICK_OFF_TIME = 1;
+    }
+
+    //+required Variable. Defines a name and a type to reference/compare through out the system.
+    Variable var = 1;
+
+    //+optional
+    oneof default {
+        // Defines a default value that has to match the variable type defined up.
+        Literal value = 2;
+
+        // Defines that this parameter value will be auto-provided by the system at runtime.
+        // The type of the variable must be compatible with the system provided value.
+        // See SystemProvided message for details on the types.
+        SystemProvided system = 3;
+    }
+
+    //+optional, is this value required to be filled.
+    bool required = 4;
+
+    //+optional string describing input variable
+    string description = 5;
+}
+
+// Defines strongly typed inputs and outputs.
+message TypedInterface {
+    repeated Parameter inputs = 1;
+    repeated Variable outputs = 2;
+}
+
+// Structure to encapsulate inputs passed in and outputs generated.
+message NamedValue {
+    string name         = 1;
+    Literal value       = 2;
+}
+
+// Structure to encapsulate list of NamedValues
+message NamedValueCollection {
+    repeated NamedValue values = 1;
+}

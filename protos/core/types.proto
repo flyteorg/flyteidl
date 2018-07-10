@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package core;
+
+option go_package = "flyteidl";
+
+// Define a set of simple types.
+enum SimpleType {
+    NONE = 0;
+    INTEGER = 1;
+    FLOAT = 2;
+    STRING = 3;
+    BOOLEAN = 4;
+    DATE_TIME = 5;
+    DURATION = 6;
+    BLOB = 7;
+    BINARY = 8;
+    WAITABLE = 9;
+    ERROR = 10;
+}
+
+// Defines schema columns and types to strongly type-validate schemas interoperability.
+message SchemaType {
+    message SchemaColumn {
+        // A unique name -within the schema type- for the column
+        string name = 1;
+
+        enum SchemaColumnType {
+            INTEGER = 0;
+            FLOAT = 1;
+            STRING = 2;
+            DATETIME = 3;
+            DURATION = 4;
+            BOOLEAN = 5;
+        }
+
+        // The column type. This allows a limited set of types currently.
+        SchemaColumnType type = 2;
+    }
+
+    // A list of ordered columns this schema comprises of.
+    repeated SchemaColumn columns = 3;
+}
+
+// Defines a strong type to allow type checking between interfaces.
+message LiteralType {
+    oneof type {
+        // A simple type that can be compared one-to-one with another.
+        SimpleType simple = 1;
+
+        // A complex type that requires matching of inner fields.
+        SchemaType schema = 2;
+
+        // Defines the type of the value of a collection. Only homogeneous collections are allowed.
+        LiteralType collection_type = 3;
+
+        // Defines the type of the value of a map type. The type of the key is always a string.
+        LiteralType map_value_type = 4;
+    }
+}
+
+// A reference to an output produced by a node. The type can be retrieved -and validated- from
+// the underlying interface of the node.
+message OutputReference {
+    // Node id must exist at the graph layer.
+    string node_id = 1;
+
+    // Variable name must refer to an output variable for the node.
+    string var = 2;
+}
+
+// Represents an error thrown from a node.
+message Error {
+    // The node id that threw the error.
+    string failed_node_id = 1;
+
+    // Error message thrown.
+    string message = 2;
+}

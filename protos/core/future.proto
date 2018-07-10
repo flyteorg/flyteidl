@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package core;
+
+option go_package = "flyteidl";
+
+// --------------- Value Promises
+// This is an internal only type.
+message ValuePromise {
+    // reference to the index
+    uint32 task_index = 1;
+    // Name of the output variable
+    string output_name = 2;
+}

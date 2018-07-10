@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package admin.entity;
+
+option go_package = "flyte_admin";
+
+// Indicates various states of an Execution - both task and workflow
+enum ExecutionStatus {
+     RUNNING          = 0;
+     SUCCEEDED        = 1;
+     FAILED           = 2;
+     TIMED_OUT        = 3;
+     ABORTED          = 4;
+     UNDEFINED        = 5;
+     QUEUED           = 6;
+}
+
+// Structure of notifications based on execution status.
+message Notification {
+    enum Type {
+        UNDEFINED            = 0;
+        EMAIL                = 1;
+        PAGER_DUTY           = 2;
+        SLACK                = 3;
+    }
+    Type type                = 1;
+    repeated ExecutionStatus states = 2;
+}

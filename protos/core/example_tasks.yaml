@@ -1,0 +1,155 @@
+FlyteTasks:
+   # TODO Interface is still not defined correctly
+   - interface:
+       inputs:
+         - name: x
+           type: integer
+       outputs:
+         - name: xSquared
+           type: integer
+     metadata:
+       name: "square"
+       task_class:
+         container:
+           type: "python"
+           image: "full-path"
+           command: []
+           args: []
+           resource:
+             requests:
+               memory: "64Mi"
+               cpu: "250m"
+             limits:
+               memory: "128Mi"
+               cpu: "500m"
+
+   - interface:
+      inputs:
+        - name: x
+      outputs:
+        - name: ceilX
+     metadata:
+       name: "ceilTo100"
+       task_class:
+         type: "python"
+         container:
+           image: "full-path"
+           command: []
+           args: []
+           resource:
+             requests:
+               memory: "64Mi"
+               cpu: "250m"
+             limits:
+               memory: "128Mi"
+               cpu: "500m"
+
+   - interface:
+       inputs:
+         - name: x
+       outputs:
+         - name: floorX
+     metadata:
+       name: "floorTo0"
+       task_class:
+         type: "python"
+         container:
+           image: "full-path"
+           command: []
+           args: []
+           resource:
+             requests:
+               memory: "64Mi"
+               cpu: "250m"
+             limits:
+               memory: "128Mi"
+               cpu: "500m"
+
+    - interface:
+          inputs:
+            - name: x
+            - name: y
+          outputs:
+            - name: product
+      metadata:
+        name: "product"
+        task_class:
+          type: "python"
+          container:
+            image: "full-path"
+            command: []
+            args: []
+            resource:
+              requests:
+                memory: "64Mi"
+                cpu: "250m"
+              limits:
+                memory: "128Mi"
+                cpu: "500m"
+
+
+    - interface:
+          inputs:
+            - name: x
+            - name: y
+          outputs:
+            - name: product
+      metadata:
+        name: "shell-product"
+        task_class:
+          type: "shell"
+          container:
+            image: "full-path"
+            plugin:
+               # TODO does this need to be a byte array, what happens if we do not have the
+               # definition in Admin?
+              [type.googleapis.com/com.lyft.ShellPlugin]:
+                 script: |
+                     #!/bin/bash
+                     echo ${self.x} * ${self.y} | bc
+            resource:
+              requests:
+                memory: "64Mi"
+                cpu: "250m"
+              limits:
+                memory: "128Mi"
+                cpu: "500m"
+
+    - interface:
+         inputs:
+           - var: x
+             literal: Integer
+           - var: y
+             literal: Double
+         outputs:
+           - var: l
+             literal: List[List[Integer]]
+      metadata:
+        discoverable: true
+      name: test
+      type: batch_task
+      task_class: future
+      future:
+        first_step:
+          interface:
+            inputs:
+              - name: x
+              - name: y
+            outputs:
+              - name: product
+          metadata:
+            name: "product"
+            task_class:
+              type: "python"
+              container:
+                image: "full-path"
+                command: []
+                args: []
+                resource:
+                  requests:
+                    memory: "64Mi"
+                    cpu: "250m"
+                  limits:
+                    memory: "128Mi"
+                    cpu: "500m"
+

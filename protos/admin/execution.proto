@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+package admin.entity;
+
+option go_package = "flyte_admin";
+
+import "google/protobuf/duration.proto";
+import "core/interface.proto";
+import "core/types.proto";
+import "admin/common.proto";
+
+message ExecutionCreateRequest {
+    string project              = 1;
+    string domain               = 2;
+    string friendly_name        = 3;
+
+    ExecutionSpec details = 5;
+}
+
+message ExecutionCreateResult {
+    string urn  = 1;
+}
+
+message Execution {
+    string project              = 1;
+    string domain               = 2;
+    string friendly_name        = 3;
+    string urn                  = 4;
+    ExecutionStatus status      = 5;
+
+    ExecutionSpec details       = 6;
+    ExecutionResult result      = 7;
+}
+
+message ExecutionList {
+    repeated Execution executions = 1;
+}
+
+message ExecutionResultMetadata {
+    string workflow_urn         = 1;
+
+    google.protobuf.Duration duration = 2;
+}
+
+// Encapsultes the results of the Execution
+message ExecutionResult {
+    oneof output_result {
+        // Output of the execution in NamedValue format
+        core.NamedValueCollection outputs   = 1;
+
+        // Error information for the Node
+        core.Error error           = 2;
+    }
+
+    ExecutionResultMetadata result_metadata = 3;
+}
+
+message ExecutionMetadata {
+    enum ExecutionMode {
+        MANUAL        = 0;
+        SCHEDULED     = 1;
+        SYSTEM        = 2;
+    }
+    ExecutionMode mode    = 1;
+
+    // Identifier of the user that triggered this execution.
+    string user_id        = 2;
+
+    // Indicates the "nestedness" of this execution.
+    // If a user launches a workflow execution, the default nesting is 0.
+    // If this execution further launches a workflow (child workflow), the nesting level is incremented by 0 => 1
+    // Generally, if workflow at nesting level k launches a workflow then the child workflow will have
+    // nesting = k + 1.
+    int32 nesting         = 3;
+}
+
+message ExecutionSpec {
+    // Launch plan urn to be executed
+    string launch_plan_urn         = 1;
+
+    // Input values to be passed for the execution
+    core.NamedValueCollection inputs    = 2;
+
+    // Metadata for the execution
+    ExecutionMetadata metadata     = 3;
+
+    // List of notifications based on Execution status transitions
+    repeated Notification notifications = 4;
+}
