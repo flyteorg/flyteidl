@@ -1,0 +1,21 @@
+syntax = "proto3";
+package lyft.flyte.flyteadmin;
+
+import "google/api/annotations.proto";
+import "admin/task.proto";
+import "admin/workflow.proto";
+
+service AdminService {
+  rpc CreateTask (admin.TaskCreateRequest) returns (admin.TaskCreateResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/tasks"
+      body: "*"
+    };
+  }
+  rpc CreateWorkflow (admin.WorkflowCreateRequest) returns (admin.WorkflowCreateResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/workflows"
+      body: "*"
+    };
+  }
+}

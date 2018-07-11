@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='admin/common.proto',
   package='admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x12\x61\x64min/common.proto\x12\x05\x61\x64min\x1a\x14\x63ore/interface.proto\x1a\x13\x63ore/literals.proto\";\n\nIdentifier\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\"1\n\nObjectList\x12#\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x11.admin.Identifier\"z\n\tParameter\x12\x1b\n\x03var\x18\x01 \x01(\x0b\x32\x0e.core.Variable\x12\x1e\n\x05value\x18\x02 \x01(\x0b\x32\r.core.LiteralH\x00\x12\x10\n\x08required\x18\x03 \x01(\x08\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\n\x07\x64\x65\x66\x61ult\"\x9a\x01\n\x0cNotification\x12&\n\x04type\x18\x01 \x01(\x0e\x32\x18.admin.Notification.Type\x12%\n\x06phases\x18\x02 \x03(\x0e\x32\x15.admin.ExecutionPhase\";\n\x04Type\x12\r\n\tUNDEFINED\x10\x00\x12\t\n\x05\x45MAIL\x10\x01\x12\x0e\n\nPAGER_DUTY\x10\x02\x12\t\n\x05SLACK\x10\x03*o\n\x0e\x45xecutionPhase\x12\r\n\tUNDEFINED\x10\x00\x12\x0b\n\x07RUNNING\x10\x01\x12\r\n\tSUCCEEDED\x10\x02\x12\n\n\x06\x46\x41ILED\x10\x03\x12\r\n\tTIMED_OUT\x10\x04\x12\x0b\n\x07\x41\x42ORTED\x10\x05\x12\n\n\x06QUEUED\x10\x06\x42\x07Z\x05\x61\x64minb\x06proto3')
+  serialized_pb=_b('\n\x12\x61\x64min/common.proto\x12\x05\x61\x64min\x1a\x14\x63ore/interface.proto\x1a\x13\x63ore/literals.proto\";\n\nIdentifier\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\"5\n\x0eIdentifierList\x12#\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x11.admin.Identifier\"z\n\tParameter\x12\x1b\n\x03var\x18\x01 \x01(\x0b\x32\x0e.core.Variable\x12\x1e\n\x05value\x18\x02 \x01(\x0b\x32\r.core.LiteralH\x00\x12\x10\n\x08required\x18\x03 \x01(\x08\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\n\x07\x64\x65\x66\x61ult\"\x9a\x01\n\x0cNotification\x12&\n\x04type\x18\x01 \x01(\x0e\x32\x18.admin.Notification.Type\x12%\n\x06phases\x18\x02 \x03(\x0e\x32\x15.admin.ExecutionPhase\";\n\x04Type\x12\r\n\tUNDEFINED\x10\x00\x12\t\n\x05\x45MAIL\x10\x01\x12\x0e\n\nPAGER_DUTY\x10\x02\x12\t\n\x05SLACK\x10\x03*o\n\x0e\x45xecutionPhase\x12\r\n\tUNDEFINED\x10\x00\x12\x0b\n\x07RUNNING\x10\x01\x12\r\n\tSUCCEEDED\x10\x02\x12\n\n\x06\x46\x41ILED\x10\x03\x12\r\n\tTIMED_OUT\x10\x04\x12\x0b\n\x07\x41\x42ORTED\x10\x05\x12\n\n\x06QUEUED\x10\x06\x42\x07Z\x05\x61\x64minb\x06proto3')
   ,
   dependencies=[core_dot_interface__pb2.DESCRIPTOR,core_dot_literals__pb2.DESCRIPTOR,])
 
@@ -63,8 +63,8 @@ _EXECUTIONPHASE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=465,
-  serialized_end=576,
+  serialized_start=469,
+  serialized_end=580,
 )
 _sym_db.RegisterEnumDescriptor(_EXECUTIONPHASE)
 
@@ -103,8 +103,8 @@ _NOTIFICATION_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=404,
-  serialized_end=463,
+  serialized_start=408,
+  serialized_end=467,
 )
 _sym_db.RegisterEnumDescriptor(_NOTIFICATION_TYPE)
 
@@ -154,15 +154,15 @@ _IDENTIFIER = _descriptor.Descriptor(
 )
 
 
-_OBJECTLIST = _descriptor.Descriptor(
-  name='ObjectList',
-  full_name='admin.ObjectList',
+_IDENTIFIERLIST = _descriptor.Descriptor(
+  name='IdentifierList',
+  full_name='admin.IdentifierList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='entities', full_name='admin.ObjectList.entities', index=0,
+      name='entities', full_name='admin.IdentifierList.entities', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -181,7 +181,7 @@ _OBJECTLIST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=133,
-  serialized_end=182,
+  serialized_end=186,
 )
 
 
@@ -235,8 +235,8 @@ _PARAMETER = _descriptor.Descriptor(
       name='default', full_name='admin.Parameter.default',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=184,
-  serialized_end=306,
+  serialized_start=188,
+  serialized_end=310,
 )
 
 
@@ -274,11 +274,11 @@ _NOTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=309,
-  serialized_end=463,
+  serialized_start=313,
+  serialized_end=467,
 )
 
-_OBJECTLIST.fields_by_name['entities'].message_type = _IDENTIFIER
+_IDENTIFIERLIST.fields_by_name['entities'].message_type = _IDENTIFIER
 _PARAMETER.fields_by_name['var'].message_type = core_dot_interface__pb2._VARIABLE
 _PARAMETER.fields_by_name['value'].message_type = core_dot_literals__pb2._LITERAL
 _PARAMETER.oneofs_by_name['default'].fields.append(
@@ -288,7 +288,7 @@ _NOTIFICATION.fields_by_name['type'].enum_type = _NOTIFICATION_TYPE
 _NOTIFICATION.fields_by_name['phases'].enum_type = _EXECUTIONPHASE
 _NOTIFICATION_TYPE.containing_type = _NOTIFICATION
 DESCRIPTOR.message_types_by_name['Identifier'] = _IDENTIFIER
-DESCRIPTOR.message_types_by_name['ObjectList'] = _OBJECTLIST
+DESCRIPTOR.message_types_by_name['IdentifierList'] = _IDENTIFIERLIST
 DESCRIPTOR.message_types_by_name['Parameter'] = _PARAMETER
 DESCRIPTOR.message_types_by_name['Notification'] = _NOTIFICATION
 DESCRIPTOR.enum_types_by_name['ExecutionPhase'] = _EXECUTIONPHASE
@@ -301,12 +301,12 @@ Identifier = _reflection.GeneratedProtocolMessageType('Identifier', (_message.Me
   ))
 _sym_db.RegisterMessage(Identifier)
 
-ObjectList = _reflection.GeneratedProtocolMessageType('ObjectList', (_message.Message,), dict(
-  DESCRIPTOR = _OBJECTLIST,
+IdentifierList = _reflection.GeneratedProtocolMessageType('IdentifierList', (_message.Message,), dict(
+  DESCRIPTOR = _IDENTIFIERLIST,
   __module__ = 'admin.common_pb2'
-  # @@protoc_insertion_point(class_scope:admin.ObjectList)
+  # @@protoc_insertion_point(class_scope:admin.IdentifierList)
   ))
-_sym_db.RegisterMessage(ObjectList)
+_sym_db.RegisterMessage(IdentifierList)
 
 Parameter = _reflection.GeneratedProtocolMessageType('Parameter', (_message.Message,), dict(
   DESCRIPTOR = _PARAMETER,

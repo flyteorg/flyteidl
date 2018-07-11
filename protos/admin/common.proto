@@ -13,7 +13,7 @@ message Identifier {
     string name       = 3;
 }
 
-message ObjectList {
+message IdentifierList {
     repeated Identifier entities = 1;
 }
 
