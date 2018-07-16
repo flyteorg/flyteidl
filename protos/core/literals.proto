@@ -146,3 +146,19 @@ message Binding {
     // Data to use to bind this variable.
     BindingData binding = 2;
 }
+
+// A generic key value pair.
+message KeyValuePair {
+    //required.
+    string key = 1;
+
+    //+optional.
+    string value = 2;
+}
+
+// Retry strategy associated with an executable unit.
+message RetryStrategy {
+    // Number of retries. Retries will be consumed when the job fails with a recoverable error.
+    // The number of retries must be less than or equals to 10.
+    uint32 retries = 5;
+}

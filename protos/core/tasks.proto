@@ -1,6 +1,8 @@
 syntax = "proto3";
 
 import "core/interface.proto";
+import "core/literals.proto";
+import "google/protobuf/duration.proto";
 
 package core;
 
@@ -52,6 +54,11 @@ message TaskMetadata {
     // Runtime information about the task.
     RuntimeMetadata runtime = 2;
 
+    // The overall timeout of a task.
+    google.protobuf.Duration timeout = 4;
+
+    // Number of retries per task.
+    RetryStrategy retries = 5;
 }
 
 // A Task structure that uniquely identifies a task in the system
@@ -76,19 +83,19 @@ message TaskTemplate {
     TypedInterface interface = 5;
 
     // Custom data about the task. This is extensible to allow various plugins in the system.
-    bytes custom_task_info = 6;
+    bytes custom = 6;
 
     // Known task types that the system will guarantee plugins for. Custom SDK plugins are allowed to set these if needed.
     // If no corresponding execution-layer plugins are found, the system will default to handling these using built-in
     // handlers.
     oneof task {
-        ContainerTask container = 7;
+        Container container = 7;
     }
 }
 
 // ----------------- First class Plugins
 
-message ContainerTask {
+message Container {
     // Container image url. Eg: docker/redis:latest
     string image = 1;
 
@@ -102,4 +109,11 @@ message ContainerTask {
 
     // Container resources requirement as specified by the container engine.
     Resources resources = 4;
+
+    // Environment variables will be set as the container is starting up.
+    repeated KeyValuePair env = 5;
+
+    // Allows extra configs to be available for the container.
+    // TODO: elaborate on how configs will become available.
+    repeated KeyValuePair config = 6;
 }

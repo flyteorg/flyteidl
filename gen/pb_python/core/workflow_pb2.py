@@ -17,15 +17,16 @@ from core import interface_pb2 as core_dot_interface__pb2
 from core import literals_pb2 as core_dot_literals__pb2
 from core import types_pb2 as core_dot_types__pb2
 from core import condition_pb2 as core_dot_condition__pb2
+from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='core/workflow.proto',
   package='core',
   syntax='proto3',
-  serialized_pb=_b('\n\x13\x63ore/workflow.proto\x12\x04\x63ore\x1a\x14\x63ore/interface.proto\x1a\x13\x63ore/literals.proto\x1a\x10\x63ore/types.proto\x1a\x14\x63ore/condition.proto\"T\n\x07IfBlock\x12*\n\tcondition\x18\x01 \x01(\x0b\x32\x17.core.BooleanExpression\x12\x1d\n\tthen_node\x18\x02 \x01(\x0b\x32\n.core.Node\"\x92\x01\n\x0bIfElseBlock\x12\x1b\n\x04\x63\x61se\x18\x01 \x01(\x0b\x32\r.core.IfBlock\x12\x1c\n\x05other\x18\x02 \x03(\x0b\x32\r.core.IfBlock\x12\x1f\n\telse_node\x18\x03 \x01(\x0b\x32\n.core.NodeH\x00\x12\x1c\n\x05\x65rror\x18\x04 \x01(\x0b\x32\x0b.core.ErrorH\x00\x42\t\n\x07\x64\x65\x66\x61ult\"0\n\nBranchNode\x12\"\n\x07if_else\x18\x02 \x01(\x0b\x32\x11.core.IfElseBlock\"/\n\x08TaskNode\x12\x16\n\x0creference_id\x18\x01 \x01(\tH\x00\x42\x0b\n\treference\"t\n\x0cWorkflowNode\x12\"\n\x18launch_plan_reference_id\x18\x01 \x01(\tH\x00\x12\x33\n\x11workflow_template\x18\x02 \x01(\x0b\x32\x16.core.WorkflowTemplateH\x00\x42\x0b\n\treference\"\x1c\n\x0cNodeMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t\"#\n\x05\x41lias\x12\x0b\n\x03var\x18\x01 \x01(\t\x12\r\n\x05\x61lias\x18\x02 \x01(\t\"\x9c\x02\n\x04Node\x12\n\n\x02id\x18\x01 \x01(\t\x12$\n\x08metadata\x18\x02 \x01(\x0b\x32\x12.core.NodeMetadata\x12\x1d\n\x06inputs\x18\x03 \x03(\x0b\x32\r.core.Binding\x12\x19\n\x11upstream_node_ids\x18\x04 \x03(\t\x12#\n\x0eoutput_aliases\x18\x05 \x03(\x0b\x32\x0b.core.Alias\x12#\n\ttask_node\x18\x06 \x01(\x0b\x32\x0e.core.TaskNodeH\x00\x12+\n\rworkflow_node\x18\x07 \x01(\x0b\x32\x12.core.WorkflowNodeH\x00\x12\'\n\x0b\x62ranch_node\x18\x08 \x01(\x0b\x32\x10.core.BranchNodeH\x00\x42\x08\n\x06target\"*\n\x10WorkflowMetadata\x12\x16\n\x0e\x65xecution_role\x18\x01 \x01(\t\"\xd5\x01\n\x10WorkflowTemplate\x12\x11\n\tsystem_id\x18\x01 \x01(\t\x12(\n\x08metadata\x18\x02 \x01(\x0b\x32\x16.core.WorkflowMetadata\x12\'\n\tinterface\x18\x03 \x01(\x0b\x32\x14.core.TypedInterface\x12\x19\n\x05nodes\x18\x04 \x03(\x0b\x32\n.core.Node\x12\x1e\n\x07outputs\x18\x05 \x03(\x0b\x32\r.core.Binding\x12 \n\x0c\x66\x61ilure_node\x18\x06 \x01(\x0b\x32\n.core.NodeB\x06Z\x04\x63oreb\x06proto3')
+  serialized_pb=_b('\n\x13\x63ore/workflow.proto\x12\x04\x63ore\x1a\x14\x63ore/interface.proto\x1a\x13\x63ore/literals.proto\x1a\x10\x63ore/types.proto\x1a\x14\x63ore/condition.proto\x1a\x1egoogle/protobuf/duration.proto\"T\n\x07IfBlock\x12*\n\tcondition\x18\x01 \x01(\x0b\x32\x17.core.BooleanExpression\x12\x1d\n\tthen_node\x18\x02 \x01(\x0b\x32\n.core.Node\"\x92\x01\n\x0bIfElseBlock\x12\x1b\n\x04\x63\x61se\x18\x01 \x01(\x0b\x32\r.core.IfBlock\x12\x1c\n\x05other\x18\x02 \x03(\x0b\x32\r.core.IfBlock\x12\x1f\n\telse_node\x18\x03 \x01(\x0b\x32\n.core.NodeH\x00\x12\x1c\n\x05\x65rror\x18\x04 \x01(\x0b\x32\x0b.core.ErrorH\x00\x42\t\n\x07\x64\x65\x66\x61ult\"0\n\nBranchNode\x12\"\n\x07if_else\x18\x02 \x01(\x0b\x32\x11.core.IfElseBlock\"/\n\x08TaskNode\x12\x16\n\x0creference_id\x18\x01 \x01(\tH\x00\x42\x0b\n\treference\"t\n\x0cWorkflowNode\x12\"\n\x18launch_plan_reference_id\x18\x01 \x01(\tH\x00\x12\x33\n\x11workflow_template\x18\x02 \x01(\x0b\x32\x16.core.WorkflowTemplateH\x00\x42\x0b\n\treference\"n\n\x0cNodeMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t\x12*\n\x07timeout\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\x12$\n\x07retries\x18\x05 \x01(\x0b\x32\x13.core.RetryStrategy\"#\n\x05\x41lias\x12\x0b\n\x03var\x18\x01 \x01(\t\x12\r\n\x05\x61lias\x18\x02 \x01(\t\"\x9c\x02\n\x04Node\x12\n\n\x02id\x18\x01 \x01(\t\x12$\n\x08metadata\x18\x02 \x01(\x0b\x32\x12.core.NodeMetadata\x12\x1d\n\x06inputs\x18\x03 \x03(\x0b\x32\r.core.Binding\x12\x19\n\x11upstream_node_ids\x18\x04 \x03(\t\x12#\n\x0eoutput_aliases\x18\x05 \x03(\x0b\x32\x0b.core.Alias\x12#\n\ttask_node\x18\x06 \x01(\x0b\x32\x0e.core.TaskNodeH\x00\x12+\n\rworkflow_node\x18\x07 \x01(\x0b\x32\x12.core.WorkflowNodeH\x00\x12\'\n\x0b\x62ranch_node\x18\x08 \x01(\x0b\x32\x10.core.BranchNodeH\x00\x42\x08\n\x06target\"*\n\x10WorkflowMetadata\x12\x16\n\x0e\x65xecution_role\x18\x01 \x01(\t\"\xd5\x01\n\x10WorkflowTemplate\x12\x11\n\tsystem_id\x18\x01 \x01(\t\x12(\n\x08metadata\x18\x02 \x01(\x0b\x32\x16.core.WorkflowMetadata\x12\'\n\tinterface\x18\x03 \x01(\x0b\x32\x14.core.TypedInterface\x12\x19\n\x05nodes\x18\x04 \x03(\x0b\x32\n.core.Node\x12\x1e\n\x07outputs\x18\x05 \x03(\x0b\x32\r.core.Binding\x12 \n\x0c\x66\x61ilure_node\x18\x06 \x01(\x0b\x32\n.core.NodeB\x06Z\x04\x63oreb\x06proto3')
   ,
-  dependencies=[core_dot_interface__pb2.DESCRIPTOR,core_dot_literals__pb2.DESCRIPTOR,core_dot_types__pb2.DESCRIPTOR,core_dot_condition__pb2.DESCRIPTOR,])
+  dependencies=[core_dot_interface__pb2.DESCRIPTOR,core_dot_literals__pb2.DESCRIPTOR,core_dot_types__pb2.DESCRIPTOR,core_dot_condition__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,])
 
 
 
@@ -63,8 +64,8 @@ _IFBLOCK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=112,
-  serialized_end=196,
+  serialized_start=144,
+  serialized_end=228,
 )
 
 
@@ -118,8 +119,8 @@ _IFELSEBLOCK = _descriptor.Descriptor(
       name='default', full_name='core.IfElseBlock.default',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=199,
-  serialized_end=345,
+  serialized_start=231,
+  serialized_end=377,
 )
 
 
@@ -149,8 +150,8 @@ _BRANCHNODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=347,
-  serialized_end=395,
+  serialized_start=379,
+  serialized_end=427,
 )
 
 
@@ -183,8 +184,8 @@ _TASKNODE = _descriptor.Descriptor(
       name='reference', full_name='core.TaskNode.reference',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=397,
-  serialized_end=444,
+  serialized_start=429,
+  serialized_end=476,
 )
 
 
@@ -224,8 +225,8 @@ _WORKFLOWNODE = _descriptor.Descriptor(
       name='reference', full_name='core.WorkflowNode.reference',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=446,
-  serialized_end=562,
+  serialized_start=478,
+  serialized_end=594,
 )
 
 
@@ -243,6 +244,20 @@ _NODEMETADATA = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='timeout', full_name='core.NodeMetadata.timeout', index=1,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='retries', full_name='core.NodeMetadata.retries', index=2,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -255,8 +270,8 @@ _NODEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=564,
-  serialized_end=592,
+  serialized_start=596,
+  serialized_end=706,
 )
 
 
@@ -293,8 +308,8 @@ _ALIAS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=594,
-  serialized_end=629,
+  serialized_start=708,
+  serialized_end=743,
 )
 
 
@@ -376,8 +391,8 @@ _NODE = _descriptor.Descriptor(
       name='target', full_name='core.Node.target',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=632,
-  serialized_end=916,
+  serialized_start=746,
+  serialized_end=1030,
 )
 
 
@@ -407,8 +422,8 @@ _WORKFLOWMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=918,
-  serialized_end=960,
+  serialized_start=1032,
+  serialized_end=1074,
 )
 
 
@@ -473,8 +488,8 @@ _WORKFLOWTEMPLATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=963,
-  serialized_end=1176,
+  serialized_start=1077,
+  serialized_end=1290,
 )
 
 _IFBLOCK.fields_by_name['condition'].message_type = core_dot_condition__pb2._BOOLEANEXPRESSION
@@ -500,6 +515,8 @@ _WORKFLOWNODE.fields_by_name['launch_plan_reference_id'].containing_oneof = _WOR
 _WORKFLOWNODE.oneofs_by_name['reference'].fields.append(
   _WORKFLOWNODE.fields_by_name['workflow_template'])
 _WORKFLOWNODE.fields_by_name['workflow_template'].containing_oneof = _WORKFLOWNODE.oneofs_by_name['reference']
+_NODEMETADATA.fields_by_name['timeout'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
+_NODEMETADATA.fields_by_name['retries'].message_type = core_dot_literals__pb2._RETRYSTRATEGY
 _NODE.fields_by_name['metadata'].message_type = _NODEMETADATA
 _NODE.fields_by_name['inputs'].message_type = core_dot_literals__pb2._BINDING
 _NODE.fields_by_name['output_aliases'].message_type = _ALIAS

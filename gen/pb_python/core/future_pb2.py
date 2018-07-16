@@ -13,36 +13,46 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
+from core import tasks_pb2 as core_dot_tasks__pb2
+from core import literals_pb2 as core_dot_literals__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='core/future.proto',
   package='core',
   syntax='proto3',
-  serialized_pb=_b('\n\x11\x63ore/future.proto\x12\x04\x63ore\"7\n\x0cValuePromise\x12\x12\n\ntask_index\x18\x01 \x01(\r\x12\x13\n\x0boutput_name\x18\x02 \x01(\tB\x06Z\x04\x63oreb\x06proto3')
-)
+  serialized_pb=_b('\n\x11\x63ore/future.proto\x12\x04\x63ore\x1a\x10\x63ore/tasks.proto\x1a\x13\x63ore/literals.proto\"p\n\x12\x46utureTaskDocument\x12#\n\x05tasks\x18\x01 \x03(\x0b\x32\x14.core.FutureTaskNode\x12\x15\n\rmin_successes\x18\x02 \x01(\x03\x12\x1e\n\x07outputs\x18\x03 \x03(\x0b\x32\r.core.Binding\"\x83\x01\n\x0e\x46utureTaskNode\x12\x13\n\x0bgenerate_id\x18\x01 \x01(\t\x12\x1f\n\x05\x61rray\x18\x02 \x01(\x0b\x32\x0e.core.ArrayJobH\x00\x12\x31\n\x0chive_queries\x18\x03 \x01(\x0b\x32\x19.core.HiveQueryCollectionH\x00\x42\x08\n\x06target\"@\n\tHiveQuery\x12\r\n\x05query\x18\x01 \x01(\t\x12$\n\x08metadata\x18\x02 \x01(\x0b\x32\x12.core.TaskMetadata\"7\n\x13HiveQueryCollection\x12 \n\x07queries\x18\x02 \x03(\x0b\x32\x0f.core.HiveQuery\"\x94\x01\n\x0fSwarmDefinition\x12*\n\x11primary_container\x18\x01 \x01(\x0b\x32\x0f.core.Container\x12(\n\x0finit_containers\x18\x02 \x03(\x0b\x32\x0f.core.Container\x12+\n\x12sidecar_containers\x18\x03 \x03(\x0b\x32\x0f.core.Container\"\xd2\x01\n\x08\x41rrayJob\x12$\n\x08metadata\x18\x01 \x01(\x0b\x32\x12.core.TaskMetadata\x12\r\n\x05slots\x18\x02 \x01(\x03\x12\x13\n\x0b\x63ompletions\x18\x03 \x01(\x03\x12$\n\tcontainer\x18\x04 \x01(\x0b\x32\x0f.core.ContainerH\x00\x12&\n\x05swarm\x18\x05 \x01(\x0b\x32\x15.core.SwarmDefinitionH\x00\x12\"\n\x06inputs\x18\x06 \x01(\x0b\x32\x12.core.DataLocationB\n\n\x08runnable\"e\n\x0c\x44\x61taLocation\x12#\n\nblob_store\x18\x01 \x01(\x0e\x32\x0f.core.BlobStore\x12\x12\n\x08\x61\x62solute\x18\x02 \x01(\tH\x00\x12\x10\n\x06prefix\x18\x03 \x01(\tH\x00\x42\n\n\x08locationB\x06Z\x04\x63oreb\x06proto3')
+  ,
+  dependencies=[core_dot_tasks__pb2.DESCRIPTOR,core_dot_literals__pb2.DESCRIPTOR,])
 
 
 
 
-_VALUEPROMISE = _descriptor.Descriptor(
-  name='ValuePromise',
-  full_name='core.ValuePromise',
+_FUTURETASKDOCUMENT = _descriptor.Descriptor(
+  name='FutureTaskDocument',
+  full_name='core.FutureTaskDocument',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='task_index', full_name='core.ValuePromise.task_index', index=0,
-      number=1, type=13, cpp_type=3, label=1,
+      name='tasks', full_name='core.FutureTaskDocument.tasks', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='min_successes', full_name='core.FutureTaskDocument.min_successes', index=1,
+      number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='output_name', full_name='core.ValuePromise.output_name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='outputs', full_name='core.FutureTaskDocument.outputs', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
@@ -58,19 +68,378 @@ _VALUEPROMISE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=27,
-  serialized_end=82,
+  serialized_start=66,
+  serialized_end=178,
 )
 
-DESCRIPTOR.message_types_by_name['ValuePromise'] = _VALUEPROMISE
+
+_FUTURETASKNODE = _descriptor.Descriptor(
+  name='FutureTaskNode',
+  full_name='core.FutureTaskNode',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='generate_id', full_name='core.FutureTaskNode.generate_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='array', full_name='core.FutureTaskNode.array', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='hive_queries', full_name='core.FutureTaskNode.hive_queries', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='target', full_name='core.FutureTaskNode.target',
+      index=0, containing_type=None, fields=[]),
+  ],
+  serialized_start=181,
+  serialized_end=312,
+)
+
+
+_HIVEQUERY = _descriptor.Descriptor(
+  name='HiveQuery',
+  full_name='core.HiveQuery',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='query', full_name='core.HiveQuery.query', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='metadata', full_name='core.HiveQuery.metadata', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=314,
+  serialized_end=378,
+)
+
+
+_HIVEQUERYCOLLECTION = _descriptor.Descriptor(
+  name='HiveQueryCollection',
+  full_name='core.HiveQueryCollection',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='queries', full_name='core.HiveQueryCollection.queries', index=0,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=380,
+  serialized_end=435,
+)
+
+
+_SWARMDEFINITION = _descriptor.Descriptor(
+  name='SwarmDefinition',
+  full_name='core.SwarmDefinition',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='primary_container', full_name='core.SwarmDefinition.primary_container', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='init_containers', full_name='core.SwarmDefinition.init_containers', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='sidecar_containers', full_name='core.SwarmDefinition.sidecar_containers', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=438,
+  serialized_end=586,
+)
+
+
+_ARRAYJOB = _descriptor.Descriptor(
+  name='ArrayJob',
+  full_name='core.ArrayJob',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='metadata', full_name='core.ArrayJob.metadata', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='slots', full_name='core.ArrayJob.slots', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='completions', full_name='core.ArrayJob.completions', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='container', full_name='core.ArrayJob.container', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='swarm', full_name='core.ArrayJob.swarm', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='inputs', full_name='core.ArrayJob.inputs', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='runnable', full_name='core.ArrayJob.runnable',
+      index=0, containing_type=None, fields=[]),
+  ],
+  serialized_start=589,
+  serialized_end=799,
+)
+
+
+_DATALOCATION = _descriptor.Descriptor(
+  name='DataLocation',
+  full_name='core.DataLocation',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='blob_store', full_name='core.DataLocation.blob_store', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='absolute', full_name='core.DataLocation.absolute', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='prefix', full_name='core.DataLocation.prefix', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='location', full_name='core.DataLocation.location',
+      index=0, containing_type=None, fields=[]),
+  ],
+  serialized_start=801,
+  serialized_end=902,
+)
+
+_FUTURETASKDOCUMENT.fields_by_name['tasks'].message_type = _FUTURETASKNODE
+_FUTURETASKDOCUMENT.fields_by_name['outputs'].message_type = core_dot_literals__pb2._BINDING
+_FUTURETASKNODE.fields_by_name['array'].message_type = _ARRAYJOB
+_FUTURETASKNODE.fields_by_name['hive_queries'].message_type = _HIVEQUERYCOLLECTION
+_FUTURETASKNODE.oneofs_by_name['target'].fields.append(
+  _FUTURETASKNODE.fields_by_name['array'])
+_FUTURETASKNODE.fields_by_name['array'].containing_oneof = _FUTURETASKNODE.oneofs_by_name['target']
+_FUTURETASKNODE.oneofs_by_name['target'].fields.append(
+  _FUTURETASKNODE.fields_by_name['hive_queries'])
+_FUTURETASKNODE.fields_by_name['hive_queries'].containing_oneof = _FUTURETASKNODE.oneofs_by_name['target']
+_HIVEQUERY.fields_by_name['metadata'].message_type = core_dot_tasks__pb2._TASKMETADATA
+_HIVEQUERYCOLLECTION.fields_by_name['queries'].message_type = _HIVEQUERY
+_SWARMDEFINITION.fields_by_name['primary_container'].message_type = core_dot_tasks__pb2._CONTAINER
+_SWARMDEFINITION.fields_by_name['init_containers'].message_type = core_dot_tasks__pb2._CONTAINER
+_SWARMDEFINITION.fields_by_name['sidecar_containers'].message_type = core_dot_tasks__pb2._CONTAINER
+_ARRAYJOB.fields_by_name['metadata'].message_type = core_dot_tasks__pb2._TASKMETADATA
+_ARRAYJOB.fields_by_name['container'].message_type = core_dot_tasks__pb2._CONTAINER
+_ARRAYJOB.fields_by_name['swarm'].message_type = _SWARMDEFINITION
+_ARRAYJOB.fields_by_name['inputs'].message_type = _DATALOCATION
+_ARRAYJOB.oneofs_by_name['runnable'].fields.append(
+  _ARRAYJOB.fields_by_name['container'])
+_ARRAYJOB.fields_by_name['container'].containing_oneof = _ARRAYJOB.oneofs_by_name['runnable']
+_ARRAYJOB.oneofs_by_name['runnable'].fields.append(
+  _ARRAYJOB.fields_by_name['swarm'])
+_ARRAYJOB.fields_by_name['swarm'].containing_oneof = _ARRAYJOB.oneofs_by_name['runnable']
+_DATALOCATION.fields_by_name['blob_store'].enum_type = core_dot_literals__pb2._BLOBSTORE
+_DATALOCATION.oneofs_by_name['location'].fields.append(
+  _DATALOCATION.fields_by_name['absolute'])
+_DATALOCATION.fields_by_name['absolute'].containing_oneof = _DATALOCATION.oneofs_by_name['location']
+_DATALOCATION.oneofs_by_name['location'].fields.append(
+  _DATALOCATION.fields_by_name['prefix'])
+_DATALOCATION.fields_by_name['prefix'].containing_oneof = _DATALOCATION.oneofs_by_name['location']
+DESCRIPTOR.message_types_by_name['FutureTaskDocument'] = _FUTURETASKDOCUMENT
+DESCRIPTOR.message_types_by_name['FutureTaskNode'] = _FUTURETASKNODE
+DESCRIPTOR.message_types_by_name['HiveQuery'] = _HIVEQUERY
+DESCRIPTOR.message_types_by_name['HiveQueryCollection'] = _HIVEQUERYCOLLECTION
+DESCRIPTOR.message_types_by_name['SwarmDefinition'] = _SWARMDEFINITION
+DESCRIPTOR.message_types_by_name['ArrayJob'] = _ARRAYJOB
+DESCRIPTOR.message_types_by_name['DataLocation'] = _DATALOCATION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-ValuePromise = _reflection.GeneratedProtocolMessageType('ValuePromise', (_message.Message,), dict(
-  DESCRIPTOR = _VALUEPROMISE,
+FutureTaskDocument = _reflection.GeneratedProtocolMessageType('FutureTaskDocument', (_message.Message,), dict(
+  DESCRIPTOR = _FUTURETASKDOCUMENT,
   __module__ = 'core.future_pb2'
-  # @@protoc_insertion_point(class_scope:core.ValuePromise)
+  # @@protoc_insertion_point(class_scope:core.FutureTaskDocument)
   ))
-_sym_db.RegisterMessage(ValuePromise)
+_sym_db.RegisterMessage(FutureTaskDocument)
+
+FutureTaskNode = _reflection.GeneratedProtocolMessageType('FutureTaskNode', (_message.Message,), dict(
+  DESCRIPTOR = _FUTURETASKNODE,
+  __module__ = 'core.future_pb2'
+  # @@protoc_insertion_point(class_scope:core.FutureTaskNode)
+  ))
+_sym_db.RegisterMessage(FutureTaskNode)
+
+HiveQuery = _reflection.GeneratedProtocolMessageType('HiveQuery', (_message.Message,), dict(
+  DESCRIPTOR = _HIVEQUERY,
+  __module__ = 'core.future_pb2'
+  # @@protoc_insertion_point(class_scope:core.HiveQuery)
+  ))
+_sym_db.RegisterMessage(HiveQuery)
+
+HiveQueryCollection = _reflection.GeneratedProtocolMessageType('HiveQueryCollection', (_message.Message,), dict(
+  DESCRIPTOR = _HIVEQUERYCOLLECTION,
+  __module__ = 'core.future_pb2'
+  # @@protoc_insertion_point(class_scope:core.HiveQueryCollection)
+  ))
+_sym_db.RegisterMessage(HiveQueryCollection)
+
+SwarmDefinition = _reflection.GeneratedProtocolMessageType('SwarmDefinition', (_message.Message,), dict(
+  DESCRIPTOR = _SWARMDEFINITION,
+  __module__ = 'core.future_pb2'
+  # @@protoc_insertion_point(class_scope:core.SwarmDefinition)
+  ))
+_sym_db.RegisterMessage(SwarmDefinition)
+
+ArrayJob = _reflection.GeneratedProtocolMessageType('ArrayJob', (_message.Message,), dict(
+  DESCRIPTOR = _ARRAYJOB,
+  __module__ = 'core.future_pb2'
+  # @@protoc_insertion_point(class_scope:core.ArrayJob)
+  ))
+_sym_db.RegisterMessage(ArrayJob)
+
+DataLocation = _reflection.GeneratedProtocolMessageType('DataLocation', (_message.Message,), dict(
+  DESCRIPTOR = _DATALOCATION,
+  __module__ = 'core.future_pb2'
+  # @@protoc_insertion_point(class_scope:core.DataLocation)
+  ))
+_sym_db.RegisterMessage(DataLocation)
 
 
 DESCRIPTOR.has_options = True

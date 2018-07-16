@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='core/literals.proto',
   package='core',
   syntax='proto3',
-  serialized_pb=_b('\n\x13\x63ore/literals.proto\x12\x04\x63ore\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x10\x63ore/types.proto\"\xc8\x01\n\tPrimitive\x12\x11\n\x07integer\x18\x01 \x01(\x03H\x00\x12\x15\n\x0b\x66loat_value\x18\x02 \x01(\x01H\x00\x12\x16\n\x0cstring_value\x18\x03 \x01(\tH\x00\x12\x11\n\x07\x62oolean\x18\x04 \x01(\x08H\x00\x12.\n\x08\x64\x61tetime\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampH\x00\x12-\n\x08\x64uration\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationH\x00\x42\x07\n\x05value\"\x06\n\x04Void\"^\n\x04\x42lob\x12$\n\x08metadata\x18\x01 \x01(\x0b\x32\x12.core.BlobMetadata\x12#\n\nblob_store\x18\x02 \x01(\x0e\x32\x0f.core.BlobStore\x12\x0b\n\x03uri\x18\x03 \x01(\t\"p\n\x0c\x42lobMetadata\x12\x0e\n\x06\x66ormat\x18\x01 \x01(\t\x12)\n\x04type\x18\x02 \x01(\x0e\x32\x1b.core.BlobMetadata.BlobType\"%\n\x08\x42lobType\x12\n\n\x06Single\x10\x00\x12\r\n\tMultipart\x10\x01\"8\n\x08Waitable\x12\x15\n\rsurrogate_key\x18\x01 \x01(\t\x12\x15\n\rexecution_uri\x18\x02 \x01(\t\"$\n\x06\x42inary\x12\r\n\x05value\x18\x01 \x01(\x0c\x12\x0b\n\x03tag\x18\x02 \x01(\t\"Z\n\x06Schema\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12#\n\nblob_store\x18\x02 \x01(\x0e\x32\x0f.core.BlobStore\x12\x1e\n\x04type\x18\x03 \x01(\x0b\x32\x10.core.SchemaType\"\xf6\x01\n\x06Scalar\x12$\n\tprimitive\x18\x01 \x01(\x0b\x32\x0f.core.PrimitiveH\x00\x12\x1a\n\x04\x62lob\x18\x02 \x01(\x0b\x32\n.core.BlobH\x00\x12\x1e\n\x06\x62inary\x18\x03 \x01(\x0b\x32\x0c.core.BinaryH\x00\x12\x1e\n\x06schema\x18\x04 \x01(\x0b\x32\x0c.core.SchemaH\x00\x12\x1f\n\tnone_type\x18\x05 \x01(\x0b\x32\n.core.VoidH\x00\x12\"\n\x08waitable\x18\x06 \x01(\x0b\x32\x0e.core.WaitableH\x00\x12\x1c\n\x05\x65rror\x18\x07 \x01(\x0b\x32\x0b.core.ErrorH\x00\x42\x07\n\x05value\"\x82\x01\n\x07Literal\x12\x1e\n\x06scalar\x18\x01 \x01(\x0b\x32\x0c.core.ScalarH\x00\x12-\n\ncollection\x18\x02 \x01(\x0b\x32\x17.core.LiteralCollectionH\x00\x12\x1f\n\x03map\x18\x03 \x01(\x0b\x32\x10.core.LiteralMapH\x00\x42\x07\n\x05value\"4\n\x11LiteralCollection\x12\x1f\n\x08literals\x18\x01 \x03(\x0b\x32\r.core.Literal\"~\n\nLiteralMap\x12\x30\n\x08literals\x18\x01 \x03(\x0b\x32\x1e.core.LiteralMap.LiteralsEntry\x1a>\n\rLiteralsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.core.Literal:\x02\x38\x01\"<\n\x15\x42indingDataCollection\x12#\n\x08\x62indings\x18\x01 \x03(\x0b\x32\x11.core.BindingData\"\x8a\x01\n\x0e\x42indingDataMap\x12\x34\n\x08\x62indings\x18\x01 \x03(\x0b\x32\".core.BindingDataMap.BindingsEntry\x1a\x42\n\rBindingsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12 \n\x05value\x18\x02 \x01(\x0b\x32\x11.core.BindingData:\x02\x38\x01\"\xb8\x01\n\x0b\x42indingData\x12\x1e\n\x06scalar\x18\x01 \x01(\x0b\x32\x0c.core.ScalarH\x00\x12\x31\n\ncollection\x18\x02 \x01(\x0b\x32\x1b.core.BindingDataCollectionH\x00\x12(\n\x07promise\x18\x03 \x01(\x0b\x32\x15.core.OutputReferenceH\x00\x12#\n\x03map\x18\x04 \x01(\x0b\x32\x14.core.BindingDataMapH\x00\x42\x07\n\x05value\":\n\x07\x42inding\x12\x0b\n\x03var\x18\x01 \x01(\t\x12\"\n\x07\x62inding\x18\x02 \x01(\x0b\x32\x11.core.BindingData*)\n\tBlobStore\x12\x0b\n\x07INVALID\x10\x00\x12\x06\n\x02S3\x10\x01\x12\x07\n\x03GCS\x10\x02\x42\x06Z\x04\x63oreb\x06proto3')
+  serialized_pb=_b('\n\x13\x63ore/literals.proto\x12\x04\x63ore\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x10\x63ore/types.proto\"\xc8\x01\n\tPrimitive\x12\x11\n\x07integer\x18\x01 \x01(\x03H\x00\x12\x15\n\x0b\x66loat_value\x18\x02 \x01(\x01H\x00\x12\x16\n\x0cstring_value\x18\x03 \x01(\tH\x00\x12\x11\n\x07\x62oolean\x18\x04 \x01(\x08H\x00\x12.\n\x08\x64\x61tetime\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampH\x00\x12-\n\x08\x64uration\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationH\x00\x42\x07\n\x05value\"\x06\n\x04Void\"^\n\x04\x42lob\x12$\n\x08metadata\x18\x01 \x01(\x0b\x32\x12.core.BlobMetadata\x12#\n\nblob_store\x18\x02 \x01(\x0e\x32\x0f.core.BlobStore\x12\x0b\n\x03uri\x18\x03 \x01(\t\"p\n\x0c\x42lobMetadata\x12\x0e\n\x06\x66ormat\x18\x01 \x01(\t\x12)\n\x04type\x18\x02 \x01(\x0e\x32\x1b.core.BlobMetadata.BlobType\"%\n\x08\x42lobType\x12\n\n\x06Single\x10\x00\x12\r\n\tMultipart\x10\x01\"8\n\x08Waitable\x12\x15\n\rsurrogate_key\x18\x01 \x01(\t\x12\x15\n\rexecution_uri\x18\x02 \x01(\t\"$\n\x06\x42inary\x12\r\n\x05value\x18\x01 \x01(\x0c\x12\x0b\n\x03tag\x18\x02 \x01(\t\"Z\n\x06Schema\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12#\n\nblob_store\x18\x02 \x01(\x0e\x32\x0f.core.BlobStore\x12\x1e\n\x04type\x18\x03 \x01(\x0b\x32\x10.core.SchemaType\"\xf6\x01\n\x06Scalar\x12$\n\tprimitive\x18\x01 \x01(\x0b\x32\x0f.core.PrimitiveH\x00\x12\x1a\n\x04\x62lob\x18\x02 \x01(\x0b\x32\n.core.BlobH\x00\x12\x1e\n\x06\x62inary\x18\x03 \x01(\x0b\x32\x0c.core.BinaryH\x00\x12\x1e\n\x06schema\x18\x04 \x01(\x0b\x32\x0c.core.SchemaH\x00\x12\x1f\n\tnone_type\x18\x05 \x01(\x0b\x32\n.core.VoidH\x00\x12\"\n\x08waitable\x18\x06 \x01(\x0b\x32\x0e.core.WaitableH\x00\x12\x1c\n\x05\x65rror\x18\x07 \x01(\x0b\x32\x0b.core.ErrorH\x00\x42\x07\n\x05value\"\x82\x01\n\x07Literal\x12\x1e\n\x06scalar\x18\x01 \x01(\x0b\x32\x0c.core.ScalarH\x00\x12-\n\ncollection\x18\x02 \x01(\x0b\x32\x17.core.LiteralCollectionH\x00\x12\x1f\n\x03map\x18\x03 \x01(\x0b\x32\x10.core.LiteralMapH\x00\x42\x07\n\x05value\"4\n\x11LiteralCollection\x12\x1f\n\x08literals\x18\x01 \x03(\x0b\x32\r.core.Literal\"~\n\nLiteralMap\x12\x30\n\x08literals\x18\x01 \x03(\x0b\x32\x1e.core.LiteralMap.LiteralsEntry\x1a>\n\rLiteralsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.core.Literal:\x02\x38\x01\"<\n\x15\x42indingDataCollection\x12#\n\x08\x62indings\x18\x01 \x03(\x0b\x32\x11.core.BindingData\"\x8a\x01\n\x0e\x42indingDataMap\x12\x34\n\x08\x62indings\x18\x01 \x03(\x0b\x32\".core.BindingDataMap.BindingsEntry\x1a\x42\n\rBindingsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12 \n\x05value\x18\x02 \x01(\x0b\x32\x11.core.BindingData:\x02\x38\x01\"\xb8\x01\n\x0b\x42indingData\x12\x1e\n\x06scalar\x18\x01 \x01(\x0b\x32\x0c.core.ScalarH\x00\x12\x31\n\ncollection\x18\x02 \x01(\x0b\x32\x1b.core.BindingDataCollectionH\x00\x12(\n\x07promise\x18\x03 \x01(\x0b\x32\x15.core.OutputReferenceH\x00\x12#\n\x03map\x18\x04 \x01(\x0b\x32\x14.core.BindingDataMapH\x00\x42\x07\n\x05value\":\n\x07\x42inding\x12\x0b\n\x03var\x18\x01 \x01(\t\x12\"\n\x07\x62inding\x18\x02 \x01(\x0b\x32\x11.core.BindingData\"*\n\x0cKeyValuePair\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\" \n\rRetryStrategy\x12\x0f\n\x07retries\x18\x05 \x01(\r*)\n\tBlobStore\x12\x0b\n\x07INVALID\x10\x00\x12\x06\n\x02S3\x10\x01\x12\x07\n\x03GCS\x10\x02\x42\x06Z\x04\x63oreb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,core_dot_types__pb2.DESCRIPTOR,])
 
@@ -48,8 +48,8 @@ _BLOBSTORE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1735,
-  serialized_end=1776,
+  serialized_start=1813,
+  serialized_end=1854,
 )
 _sym_db.RegisterEnumDescriptor(_BLOBSTORE)
 
@@ -794,6 +794,75 @@ _BINDING = _descriptor.Descriptor(
   serialized_end=1733,
 )
 
+
+_KEYVALUEPAIR = _descriptor.Descriptor(
+  name='KeyValuePair',
+  full_name='core.KeyValuePair',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='core.KeyValuePair.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='core.KeyValuePair.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1735,
+  serialized_end=1777,
+)
+
+
+_RETRYSTRATEGY = _descriptor.Descriptor(
+  name='RetryStrategy',
+  full_name='core.RetryStrategy',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='retries', full_name='core.RetryStrategy.retries', index=0,
+      number=5, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1779,
+  serialized_end=1811,
+)
+
 _PRIMITIVE.fields_by_name['datetime'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _PRIMITIVE.fields_by_name['duration'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
 _PRIMITIVE.oneofs_by_name['value'].fields.append(
@@ -900,6 +969,8 @@ DESCRIPTOR.message_types_by_name['BindingDataCollection'] = _BINDINGDATACOLLECTI
 DESCRIPTOR.message_types_by_name['BindingDataMap'] = _BINDINGDATAMAP
 DESCRIPTOR.message_types_by_name['BindingData'] = _BINDINGDATA
 DESCRIPTOR.message_types_by_name['Binding'] = _BINDING
+DESCRIPTOR.message_types_by_name['KeyValuePair'] = _KEYVALUEPAIR
+DESCRIPTOR.message_types_by_name['RetryStrategy'] = _RETRYSTRATEGY
 DESCRIPTOR.enum_types_by_name['BlobStore'] = _BLOBSTORE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -1023,6 +1094,20 @@ Binding = _reflection.GeneratedProtocolMessageType('Binding', (_message.Message,
   # @@protoc_insertion_point(class_scope:core.Binding)
   ))
 _sym_db.RegisterMessage(Binding)
+
+KeyValuePair = _reflection.GeneratedProtocolMessageType('KeyValuePair', (_message.Message,), dict(
+  DESCRIPTOR = _KEYVALUEPAIR,
+  __module__ = 'core.literals_pb2'
+  # @@protoc_insertion_point(class_scope:core.KeyValuePair)
+  ))
+_sym_db.RegisterMessage(KeyValuePair)
+
+RetryStrategy = _reflection.GeneratedProtocolMessageType('RetryStrategy', (_message.Message,), dict(
+  DESCRIPTOR = _RETRYSTRATEGY,
+  __module__ = 'core.literals_pb2'
+  # @@protoc_insertion_point(class_scope:core.RetryStrategy)
+  ))
+_sym_db.RegisterMessage(RetryStrategy)
 
 
 DESCRIPTOR.has_options = True

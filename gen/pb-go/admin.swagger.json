@@ -385,7 +385,7 @@
       },
       "description": "Defines a conjunction expression of two boolean expressions."
     },
-    "coreContainerTask": {
+    "coreContainer": {
       "type": "object",
       "properties": {
         "image": {
@@ -409,6 +409,20 @@
         "resources": {
           "$ref": "#/definitions/coreResources",
           "description": "Container resources requirement as specified by the container engine."
+        },
+        "env": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreKeyValuePair"
+          },
+          "description": "Environment variables will be set as the container is starting up."
+        },
+        "config": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreKeyValuePair"
+          },
+          "description": "Allows extra configs to be available for the container.\nTODO: elaborate on how configs will become available."
         }
       }
     },
@@ -462,6 +476,20 @@
         }
       },
       "description": "Defines a series of if/else blocks. The first branch whose condition evaluates to true is the one to execute.\nIf no conditions were satisfied, the else_node will be executed."
+    },
+    "coreKeyValuePair": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "required."
+        },
+        "value": {
+          "type": "string",
+          "description": "+optional."
+        }
+      },
+      "description": "A generic key value pair."
     },
     "coreLiteralType": {
       "type": "object",
@@ -538,6 +566,14 @@
         "name": {
           "type": "string",
           "title": "A friendly name for the Node"
+        },
+        "timeout": {
+          "type": "string",
+          "description": "The overall timeout of a task."
+        },
+        "retries": {
+          "$ref": "#/definitions/coreRetryStrategy",
+          "description": "Number of retries per task."
         }
       },
       "description": "Defines extra information about the Node."
@@ -624,6 +660,17 @@
         }
       },
       "description": "A customizable interface to convey resources requested for a container. This can be interpretted differently for different\ncontainer engines."
+    },
+    "coreRetryStrategy": {
+      "type": "object",
+      "properties": {
+        "retries": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Number of retries. Retries will be consumed when the job fails with a recoverable error.\nThe number of retries must be less than or equals to 10."
+        }
+      },
+      "description": "Retry strategy associated with an executable unit."
     },
     "coreRuntimeMetadata": {
       "type": "object",
@@ -736,6 +783,14 @@
         "runtime": {
           "$ref": "#/definitions/coreRuntimeMetadata",
           "description": "Runtime information about the task."
+        },
+        "timeout": {
+          "type": "string",
+          "description": "The overall timeout of a task."
+        },
+        "retries": {
+          "$ref": "#/definitions/coreRetryStrategy",
+          "description": "Number of retries per task."
         }
       },
       "title": "Task Metadata"
@@ -773,13 +828,13 @@
           "$ref": "#/definitions/coreTypedInterface",
           "description": "A strongly typed interface for the task. This enables others to use this task within a workflow and gauarantees\ncompile-time validation of the workflow to avoid costly runtime failures."
         },
-        "custom_task_info": {
+        "custom": {
           "type": "string",
           "format": "byte",
           "description": "Custom data about the task. This is extensible to allow various plugins in the system."
         },
         "container": {
-          "$ref": "#/definitions/coreContainerTask"
+          "$ref": "#/definitions/coreContainer"
         }
       },
       "description": "A Task structure that uniquely identifies a task in the system\nTasks are registered as a first step in the system."

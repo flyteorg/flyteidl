@@ -15,15 +15,17 @@ _sym_db = _symbol_database.Default()
 
 
 from core import interface_pb2 as core_dot_interface__pb2
+from core import literals_pb2 as core_dot_literals__pb2
+from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='core/tasks.proto',
   package='core',
   syntax='proto3',
-  serialized_pb=_b('\n\x10\x63ore/tasks.proto\x12\x04\x63ore\x1a\x14\x63ore/interface.proto\"\xbb\x02\n\tResources\x12/\n\x08requests\x18\x01 \x03(\x0b\x32\x1d.core.Resources.RequestsEntry\x12+\n\x06limits\x18\x02 \x03(\x0b\x32\x1b.core.Resources.LimitsEntry\x12:\n\x0e\x65nv_dictionary\x18\x03 \x03(\x0b\x32\".core.Resources.EnvDictionaryEntry\x1a/\n\rRequestsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a-\n\x0bLimitsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x34\n\x12\x45nvDictionaryEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8b\x01\n\x0fRuntimeMetadata\x12/\n\x04type\x18\x01 \x01(\x0e\x32!.core.RuntimeMetadata.RuntimeType\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0e\n\x06\x66lavor\x18\x03 \x01(\t\"&\n\x0bRuntimeType\x12\x0c\n\x08\x46lyteSDK\x10\x00\x12\t\n\x05Other\x10\x01\"L\n\x0cTaskMetadata\x12\x14\n\x0c\x64iscoverable\x18\x01 \x01(\x08\x12&\n\x07runtime\x18\x02 \x01(\x0b\x32\x15.core.RuntimeMetadata\"\xf0\x01\n\x0cTaskTemplate\x12\x11\n\tsystem_id\x18\x01 \x01(\t\x12$\n\x08\x63\x61tegory\x18\x02 \x01(\x0e\x32\x12.core.TaskCategory\x12\x0c\n\x04type\x18\x03 \x01(\t\x12$\n\x08metadata\x18\x04 \x01(\x0b\x32\x12.core.TaskMetadata\x12\'\n\tinterface\x18\x05 \x01(\x0b\x32\x14.core.TypedInterface\x12\x18\n\x10\x63ustom_task_info\x18\x06 \x01(\x0c\x12(\n\tcontainer\x18\x07 \x01(\x0b\x32\x13.core.ContainerTaskH\x00\x42\x06\n\x04task\"a\n\rContainerTask\x12\r\n\x05image\x18\x01 \x01(\t\x12\x0f\n\x07\x63ommand\x18\x02 \x03(\t\x12\x0c\n\x04\x61rgs\x18\x03 \x03(\t\x12\"\n\tresources\x18\x04 \x01(\x0b\x32\x0f.core.Resources*5\n\x0cTaskCategory\x12\x12\n\x0eSingleStepTask\x10\x00\x12\x11\n\rMultiStepTask\x10\x01\x42\x06Z\x04\x63oreb\x06proto3')
+  serialized_pb=_b('\n\x10\x63ore/tasks.proto\x12\x04\x63ore\x1a\x14\x63ore/interface.proto\x1a\x13\x63ore/literals.proto\x1a\x1egoogle/protobuf/duration.proto\"\xbb\x02\n\tResources\x12/\n\x08requests\x18\x01 \x03(\x0b\x32\x1d.core.Resources.RequestsEntry\x12+\n\x06limits\x18\x02 \x03(\x0b\x32\x1b.core.Resources.LimitsEntry\x12:\n\x0e\x65nv_dictionary\x18\x03 \x03(\x0b\x32\".core.Resources.EnvDictionaryEntry\x1a/\n\rRequestsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a-\n\x0bLimitsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x34\n\x12\x45nvDictionaryEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8b\x01\n\x0fRuntimeMetadata\x12/\n\x04type\x18\x01 \x01(\x0e\x32!.core.RuntimeMetadata.RuntimeType\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0e\n\x06\x66lavor\x18\x03 \x01(\t\"&\n\x0bRuntimeType\x12\x0c\n\x08\x46lyteSDK\x10\x00\x12\t\n\x05Other\x10\x01\"\x9e\x01\n\x0cTaskMetadata\x12\x14\n\x0c\x64iscoverable\x18\x01 \x01(\x08\x12&\n\x07runtime\x18\x02 \x01(\x0b\x32\x15.core.RuntimeMetadata\x12*\n\x07timeout\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\x12$\n\x07retries\x18\x05 \x01(\x0b\x32\x13.core.RetryStrategy\"\xe2\x01\n\x0cTaskTemplate\x12\x11\n\tsystem_id\x18\x01 \x01(\t\x12$\n\x08\x63\x61tegory\x18\x02 \x01(\x0e\x32\x12.core.TaskCategory\x12\x0c\n\x04type\x18\x03 \x01(\t\x12$\n\x08metadata\x18\x04 \x01(\x0b\x32\x12.core.TaskMetadata\x12\'\n\tinterface\x18\x05 \x01(\x0b\x32\x14.core.TypedInterface\x12\x0e\n\x06\x63ustom\x18\x06 \x01(\x0c\x12$\n\tcontainer\x18\x07 \x01(\x0b\x32\x0f.core.ContainerH\x00\x42\x06\n\x04task\"\xa2\x01\n\tContainer\x12\r\n\x05image\x18\x01 \x01(\t\x12\x0f\n\x07\x63ommand\x18\x02 \x03(\t\x12\x0c\n\x04\x61rgs\x18\x03 \x03(\t\x12\"\n\tresources\x18\x04 \x01(\x0b\x32\x0f.core.Resources\x12\x1f\n\x03\x65nv\x18\x05 \x03(\x0b\x32\x12.core.KeyValuePair\x12\"\n\x06\x63onfig\x18\x06 \x03(\x0b\x32\x12.core.KeyValuePair*5\n\x0cTaskCategory\x12\x12\n\x0eSingleStepTask\x10\x00\x12\x11\n\rMultiStepTask\x10\x01\x42\x06Z\x04\x63oreb\x06proto3')
   ,
-  dependencies=[core_dot_interface__pb2.DESCRIPTOR,])
+  dependencies=[core_dot_interface__pb2.DESCRIPTOR,core_dot_literals__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,])
 
 _TASKCATEGORY = _descriptor.EnumDescriptor(
   name='TaskCategory',
@@ -42,8 +44,8 @@ _TASKCATEGORY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=928,
-  serialized_end=981,
+  serialized_start=1116,
+  serialized_end=1169,
 )
 _sym_db.RegisterEnumDescriptor(_TASKCATEGORY)
 
@@ -69,8 +71,8 @@ _RUNTIMEMETADATA_RUNTIMETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=468,
-  serialized_end=506,
+  serialized_start=521,
+  serialized_end=559,
 )
 _sym_db.RegisterEnumDescriptor(_RUNTIMEMETADATA_RUNTIMETYPE)
 
@@ -108,8 +110,8 @@ _RESOURCES_REQUESTSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=216,
-  serialized_end=263,
+  serialized_start=269,
+  serialized_end=316,
 )
 
 _RESOURCES_LIMITSENTRY = _descriptor.Descriptor(
@@ -145,8 +147,8 @@ _RESOURCES_LIMITSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=265,
-  serialized_end=310,
+  serialized_start=318,
+  serialized_end=363,
 )
 
 _RESOURCES_ENVDICTIONARYENTRY = _descriptor.Descriptor(
@@ -182,8 +184,8 @@ _RESOURCES_ENVDICTIONARYENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=312,
-  serialized_end=364,
+  serialized_start=365,
+  serialized_end=417,
 )
 
 _RESOURCES = _descriptor.Descriptor(
@@ -226,8 +228,8 @@ _RESOURCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=49,
-  serialized_end=364,
+  serialized_start=102,
+  serialized_end=417,
 )
 
 
@@ -272,8 +274,8 @@ _RUNTIMEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=367,
-  serialized_end=506,
+  serialized_start=420,
+  serialized_end=559,
 )
 
 
@@ -298,6 +300,20 @@ _TASKMETADATA = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='timeout', full_name='core.TaskMetadata.timeout', index=2,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='retries', full_name='core.TaskMetadata.retries', index=3,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -310,8 +326,8 @@ _TASKMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=508,
-  serialized_end=584,
+  serialized_start=562,
+  serialized_end=720,
 )
 
 
@@ -358,7 +374,7 @@ _TASKTEMPLATE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='custom_task_info', full_name='core.TaskTemplate.custom_task_info', index=5,
+      name='custom', full_name='core.TaskTemplate.custom', index=5,
       number=6, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -386,43 +402,57 @@ _TASKTEMPLATE = _descriptor.Descriptor(
       name='task', full_name='core.TaskTemplate.task',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=587,
-  serialized_end=827,
+  serialized_start=723,
+  serialized_end=949,
 )
 
 
-_CONTAINERTASK = _descriptor.Descriptor(
-  name='ContainerTask',
-  full_name='core.ContainerTask',
+_CONTAINER = _descriptor.Descriptor(
+  name='Container',
+  full_name='core.Container',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='image', full_name='core.ContainerTask.image', index=0,
+      name='image', full_name='core.Container.image', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='command', full_name='core.ContainerTask.command', index=1,
+      name='command', full_name='core.Container.command', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='args', full_name='core.ContainerTask.args', index=2,
+      name='args', full_name='core.Container.args', index=2,
       number=3, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resources', full_name='core.ContainerTask.resources', index=3,
+      name='resources', full_name='core.Container.resources', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='env', full_name='core.Container.env', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='config', full_name='core.Container.config', index=5,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
@@ -438,8 +468,8 @@ _CONTAINERTASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=829,
-  serialized_end=926,
+  serialized_start=952,
+  serialized_end=1114,
 )
 
 _RESOURCES_REQUESTSENTRY.containing_type = _RESOURCES
@@ -451,19 +481,23 @@ _RESOURCES.fields_by_name['env_dictionary'].message_type = _RESOURCES_ENVDICTION
 _RUNTIMEMETADATA.fields_by_name['type'].enum_type = _RUNTIMEMETADATA_RUNTIMETYPE
 _RUNTIMEMETADATA_RUNTIMETYPE.containing_type = _RUNTIMEMETADATA
 _TASKMETADATA.fields_by_name['runtime'].message_type = _RUNTIMEMETADATA
+_TASKMETADATA.fields_by_name['timeout'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
+_TASKMETADATA.fields_by_name['retries'].message_type = core_dot_literals__pb2._RETRYSTRATEGY
 _TASKTEMPLATE.fields_by_name['category'].enum_type = _TASKCATEGORY
 _TASKTEMPLATE.fields_by_name['metadata'].message_type = _TASKMETADATA
 _TASKTEMPLATE.fields_by_name['interface'].message_type = core_dot_interface__pb2._TYPEDINTERFACE
-_TASKTEMPLATE.fields_by_name['container'].message_type = _CONTAINERTASK
+_TASKTEMPLATE.fields_by_name['container'].message_type = _CONTAINER
 _TASKTEMPLATE.oneofs_by_name['task'].fields.append(
   _TASKTEMPLATE.fields_by_name['container'])
 _TASKTEMPLATE.fields_by_name['container'].containing_oneof = _TASKTEMPLATE.oneofs_by_name['task']
-_CONTAINERTASK.fields_by_name['resources'].message_type = _RESOURCES
+_CONTAINER.fields_by_name['resources'].message_type = _RESOURCES
+_CONTAINER.fields_by_name['env'].message_type = core_dot_literals__pb2._KEYVALUEPAIR
+_CONTAINER.fields_by_name['config'].message_type = core_dot_literals__pb2._KEYVALUEPAIR
 DESCRIPTOR.message_types_by_name['Resources'] = _RESOURCES
 DESCRIPTOR.message_types_by_name['RuntimeMetadata'] = _RUNTIMEMETADATA
 DESCRIPTOR.message_types_by_name['TaskMetadata'] = _TASKMETADATA
 DESCRIPTOR.message_types_by_name['TaskTemplate'] = _TASKTEMPLATE
-DESCRIPTOR.message_types_by_name['ContainerTask'] = _CONTAINERTASK
+DESCRIPTOR.message_types_by_name['Container'] = _CONTAINER
 DESCRIPTOR.enum_types_by_name['TaskCategory'] = _TASKCATEGORY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -519,12 +553,12 @@ TaskTemplate = _reflection.GeneratedProtocolMessageType('TaskTemplate', (_messag
   ))
 _sym_db.RegisterMessage(TaskTemplate)
 
-ContainerTask = _reflection.GeneratedProtocolMessageType('ContainerTask', (_message.Message,), dict(
-  DESCRIPTOR = _CONTAINERTASK,
+Container = _reflection.GeneratedProtocolMessageType('Container', (_message.Message,), dict(
+  DESCRIPTOR = _CONTAINER,
   __module__ = 'core.tasks_pb2'
-  # @@protoc_insertion_point(class_scope:core.ContainerTask)
+  # @@protoc_insertion_point(class_scope:core.Container)
   ))
-_sym_db.RegisterMessage(ContainerTask)
+_sym_db.RegisterMessage(Container)
 
 
 DESCRIPTOR.has_options = True

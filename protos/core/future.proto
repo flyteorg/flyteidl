@@ -1,14 +1,122 @@
 syntax = "proto3";
 
+import "core/tasks.proto";
+import "core/literals.proto";
+
 package core;
 
 option go_package = "core";
 
-// --------------- Value Promises
-// This is an internal only type.
-message ValuePromise {
-    // reference to the index
-    uint32 task_index = 1;
-    // Name of the output variable
-    string output_name = 2;
+// This document describes a set of tasks to execute and how the final outputs are produced.
+message FutureTaskDocument {
+    // A collection of tasks to execute.
+    repeated FutureTaskNode tasks = 1;
+
+    // An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
+    // the future job will be marked as successful and outputs will be computed.
+    int64 min_successes = 2;
+
+    // Describes how to bind the final output of the future task from the outputs of executed nodes. The referenced ids
+    // in bindings should have the generated id for the subtask.
+    repeated Binding outputs = 3;
+}
+
+message FutureTaskNode {
+    // A unique identifier prefix within the document. This is used to generate unique ids for each of the tasks in
+    // target. The generated ids have this format: <generate_id>:<n> where n starts with 0 and monotonically increases.
+    // e.g. if generate_id is set to "my_array_job", the first task in the array job will have the id "my_array_job:0",
+    // then "my_array_job:1"... etc.
+    string generate_id = 1;
+
+    // The executable target of the node.
+    oneof target {
+        // Information about the array job to run.
+        ArrayJob array = 2;
+
+        // Information about the hive queries to execute.
+        HiveQueryCollection hive_queries = 3;
+    }
+
+    // TODO: How to do discovery?
+}
+
+// Defines a query to execute on a hive cluster.
+message HiveQuery {
+    // The query string.
+    string query = 1;
+
+    // Metadata to use when executing the query. Not all fields can be used with all execution engines.
+    TaskMetadata metadata = 2;
+}
+
+// Defines a collection of hive queries.
+message HiveQueryCollection {
+    repeated HiveQuery queries = 2;
+}
+
+// Defines a collection of containers to execute.
+message SwarmDefinition {
+    // The primary container of a swarm job. This container starts after all the init_containers have successfully
+    // completed. The end-state of the primary container determines the overall state of the swarm task.
+    Container primary_container = 1;
+
+    // List of initialization containers belonging to the pod.
+    // Init containers are executed in order prior to containers being started. If any
+    // init container fails, the pod is considered to have failed and is handled according
+    // to its restartPolicy. The name for an init container or normal container must be
+    // unique among all containers.
+    // Init containers may not have Lifecycle actions, Readiness probes, or Liveness probes.
+    // The resourceRequirements of an init container are taken into account during scheduling
+    // by finding the highest request/limit for each resource type, and then using the max of
+    // of that value or the sum of the normal containers. Limits are applied to init containers
+    // in a similar fashion.
+    // More info: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
+    repeated Container init_containers = 2;
+
+    // List of containers that get started after all init_containers have successfully completed. The end-state of
+    // sidecar_containers is ignored when computing the overall state of the swarm task.
+    repeated Container sidecar_containers = 3;
+}
+
+// Describes a job that can process independent pieces of data concurrently. Multiple copies of the runnable component
+// will be executed concurrently.
+message ArrayJob {
+    // Metadata about the task.
+    TaskMetadata metadata = 1;
+
+    // Defines the maximum number of instances to bring up concurrently at any given point.
+    int64 slots = 2;
+
+    // Defines the number of successful completions needed to mark the job as success. This number should match
+    // the size of the input if the job requires processing of all input data.
+    int64 completions = 3;
+
+    oneof runnable {
+        // Information about the container (image, cmd... etc.) to execute.
+        Container container = 4;
+
+        // Information about the various containers to execute for each of the swarm jobs.
+        SwarmDefinition swarm = 5;
+    }
+
+    // The location for where the input will be. The usage of this location is engine-dependent.
+    // AWS_Batch & K8s_Batch: This location will be passed in to each task in the array job. Each job is responsible for
+    // processing only the portion of the input it's meant to based on an environment variable passed into the container
+    // . User code should look at BATCH_JOB_ARRAY_INDEX_VAR_NAME to know the environment variable it must look at.
+    // For example, in AWS_Batch, BATCH_JOB_ARRAY_INDEX_VAR_NAME will be set to AWS_BATCH_JOB_ARRAY_INDEX. The job can
+    // then look at AWS_BATCH_JOB_ARRAY_INDEX to know the index of the job and load the appropriate portion of the input.
+    // Azure: The execution engine will have to process the input and slice it for each task. It'll then pass an absolute
+    // location to each task for where it can find its input.
+    DataLocation inputs = 6;
+}
+
+message DataLocation {
+    // Refers to the blob store type where data is located.
+    BlobStore blob_store = 1;
+
+    // Defines the actual location where data is
+    oneof location {
+        string absolute = 2;
+        string prefix = 3;
+    }
 }
