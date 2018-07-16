@@ -64,8 +64,8 @@ message TaskMetadata {
 // A Task structure that uniquely identifies a task in the system
 // Tasks are registered as a first step in the system.
 message TaskTemplate {
-    // Auto generated taskId. Task Id uniquely identifies this task globally.
-    string system_id = 1;
+    // Auto generated taskId by the system. Task Id uniquely identifies this task globally.
+    string id = 1;
 
     // Category of the task. These are predefined and help provide defaults
     TaskCategory category = 2;
