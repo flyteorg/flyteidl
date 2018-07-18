@@ -2,8 +2,8 @@ syntax = "proto3";
 package lyft.flyte.flyteadmin;
 
 import "google/api/annotations.proto";
-import "admin/task.proto";
-import "admin/workflow.proto";
+import "flyteidl/admin/task.proto";
+import "flyteidl/admin/workflow.proto";
 
 service AdminService {
   rpc CreateTask (admin.TaskCreateRequest) returns (admin.TaskCreateResponse) {

@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package core;
+
+option go_package = "core";
+
+import "flyteidl/core/types.proto";
+import "flyteidl/core/literals.proto";
+
+// Defines a strongly typed variable.
+message Variable {
+    // Variable name. This can be referenced in input/output bindings to pass data between
+    // nodes/workflows. Variable name is case-sensitive.
+    string name = 1;
+
+    // Variable literal type.
+    LiteralType type = 2;
+
+    //+optional string describing input variable
+    string description = 3;
+}
+
+// Defines strongly typed inputs and outputs.
+message TypedInterface {
+    repeated Variable inputs  = 1;
+    repeated Variable outputs = 2;
+}
+
+// Structure to encapsulate inputs passed in and outputs generated.
+message NamedValue {
+    string name         = 1;
+    Literal value       = 2;
+}
+
+// Structure to encapsulate list of NamedValues
+message NamedValueCollection {
+    repeated NamedValue values = 1;
+}

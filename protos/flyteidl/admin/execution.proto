@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+package admin;
+option go_package = "admin";
+
+import "flyteidl/core/interface.proto";
+import "flyteidl/admin/common.proto";
+import "flyteidl/admin/error.proto";
+
+message ExecutionCreateRequest {
+    Identifier id       = 1;
+    ExecutionSpec spec  = 2;
+}
+
+message ExecutionCreateResult {
+    string urn  = 1;
+}
+
+message Execution {
+    Identifier id               = 1;
+    string urn                  = 2;
+    ExecutionStatus status      = 3;
+
+    ExecutionSpec spec          = 4;
+    ExecutionResult result      = 5;
+}
+
+message ExecutionList {
+    repeated Execution executions     = 1;
+}
+
+message ExecutionStatus {
+    // Phase of the executions
+    ExecutionPhase phase              = 1;
+
+    string workflow_urn               = 2;
+}
+
+// Encapsultes the results of the Execution
+message ExecutionResult {
+    oneof output_result {
+        // Output of the execution in NamedValue format
+        core.NamedValueCollection outputs   = 1;
+
+        // Error information for the Node
+        Error error           = 2;
+    }
+}
+
+message ExecutionMetadata {
+    enum ExecutionMode {
+        MANUAL        = 0;
+        SCHEDULED     = 1;
+        SYSTEM        = 2;
+    }
+    ExecutionMode mode    = 1;
+
+    // Identifier of the entity that triggered this execution.
+    string principal      = 2;
+
+    // Indicates the "nestedness" of this execution.
+    // If a user launches a workflow execution, the default nesting is 0.
+    // If this execution further launches a workflow (child workflow), the nesting level is incremented by 0 => 1
+    // Generally, if workflow at nesting level k launches a workflow then the child workflow will have
+    // nesting = k + 1.
+    int32 nesting         = 3;
+}
+
+message ExecutionSpec {
+    // Launch plan urn to be executed
+    string launch_plan_urn        = 1;
+
+    // Input values to be passed for the execution
+    core.NamedValueCollection inputs   = 2;
+
+    // Metadata for the execution
+    ExecutionMetadata metadata    = 3;
+
+    // List of notifications based on Execution status transitions
+    repeated Notification notifications = 4;
+}

@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+package admin;
+option go_package = "admin";
+
+import "google/protobuf/duration.proto";
+import "flyteidl/core/interface.proto";
+import "flyteidl/core/workflow.proto";
+import "flyteidl/admin/common.proto";
+import "flyteidl/admin/error.proto";
+
+message NodeExecutionEventRequest {
+    string execution_urn          = 1;
+    string name                   = 2;
+
+    // To indicate multiple retry of same node execution
+    string version                = 3;
+
+    // Indicates the status of node execution - including retries
+    repeated NodeExecutionStatus status  = 4;
+    NodeExecutionSpec spec      = 5;
+    NodeExecutionResult result  = 6;
+}
+
+message NodeExecutionEventResponse {
+    string urn    = 1;
+}
+
+message NodeExecution {
+    string execution_urn          = 1;
+    string name                   = 2;
+    string urn                    = 3;
+
+    // Indicates the status of node execution - including retries
+    repeated NodeExecutionStatus status = 4;
+    NodeExecutionSpec spec      = 5;
+    NodeExecutionResult result  = 6;
+}
+
+message NodeExecutionList {
+    repeated NodeExecution executions = 1;
+}
+
+message NodeExecutionStatus {
+    // Phase of the executions
+    ExecutionPhase phase              = 1;
+
+    // Time taken for the node execution to complete
+    google.protobuf.Duration duration = 2;
+
+    // Indicates if the node results were fetched from the cache
+    bool discovery_hit                = 3;
+
+    // Indicates the retry value for the Node Execution
+    uint32 retry_attempts             = 4;
+
+    // Indicates if node has sub node executions
+    bool is_sub_task_available        = 5;
+
+    // Indicates specific info for each type
+    bytes custom_task_info            = 6;
+}
+
+// Encapsultes the results of the Execution
+message NodeExecutionResult {
+    oneof output_result {
+        // Output of the execution in NamedValue format
+        core.NamedValueCollection outputs   = 1;
+
+        // Error information for the Node
+        Error error           = 2;
+    }
+}
+
+message NodeExecutionSpec {
+    // Spec of the task that was executed
+    core.Node node     = 1;
+
+    // Inputs that were passed to the task
+    core.NamedValueCollection inputs    = 2;
+}

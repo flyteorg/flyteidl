@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package admin;
+option go_package = "admin";
+
+import "flyteidl/core/workflow.proto";
+import "flyteidl/admin/common.proto";
+
+message WorkflowCreateRequest {
+    Identifier id     = 1;
+    string version    = 2;
+    WorkflowSpec spec = 3;
+}
+
+message WorkflowCreateResponse {
+    string urn        = 1;
+}
+
+message Workflow {
+    Identifier id     = 1;
+    string version    = 2;
+    string urn        = 3;
+
+    WorkflowSpec spec = 4;
+}
+
+message WorkflowList {
+    repeated Workflow workflows = 1;
+}
+
+message WorkflowSpec {
+    core.WorkflowTemplate workflow_template = 1;
+}

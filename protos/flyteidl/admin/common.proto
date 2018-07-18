@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package admin;
+option go_package = "admin";
+
+import "flyteidl/core/interface.proto";
+import "flyteidl/core/literals.proto";
+
+// Encapsulation of fields that identifies a Flyte resource
+message Identifier {
+    string project    = 1;
+    string domain     = 2;
+    string name       = 3;
+}
+
+message IdentifierList {
+    repeated Identifier entities = 1;
+}
+
+// Declares an input parameter.
+message Parameter {
+    //+required Variable. Defines a name and a type to reference/compare through out the system.
+    core.Variable var = 1;
+
+    //+optional
+    oneof default {
+        // Defines a default value that has to match the variable type defined up.
+        core.Literal value = 2;
+    }
+
+    //+optional, is this value required to be filled.
+    bool required = 3;
+
+    //+optional string describing input variable
+    string description = 4;
+}
+
+// Indicates various states of an Execution - both task and workflow
+enum ExecutionPhase {
+    UNDEFINED        = 0;
+    RUNNING          = 1;
+    SUCCEEDED        = 2;
+    FAILED           = 3;
+    TIMED_OUT        = 4;
+    ABORTED          = 5;
+    QUEUED           = 6;
+}
+
+// Structure of notifications based on execution status.
+message Notification {
+    enum Type {
+        UNDEFINED            = 0;
+        EMAIL                = 1;
+        PAGER_DUTY           = 2;
+        SLACK                = 3;
+    }
+    Type type                = 1;
+    repeated ExecutionPhase phases = 2;
+}
