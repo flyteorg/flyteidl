@@ -10,31 +10,27 @@ import "flyteidl/admin/common.proto";
 import "flyteidl/admin/error.proto";
 
 message NodeExecutionEventRequest {
-    string execution_urn          = 1;
-    string name                   = 2;
+    string execution_id = 1;
 
-    // To indicate multiple retry of same node execution
-    string version                = 3;
+    // the unique id of the event per retry
+    string event_id            = 2;
 
-    // Indicates the status of node execution - including retries
-    repeated NodeExecutionStatus status  = 4;
-    NodeExecutionSpec spec      = 5;
-    NodeExecutionResult result  = 6;
+    NodeExecutionStatus status  = 3;
+    NodeExecutionSpec spec      = 4;
+    NodeExecutionResult result  = 5;
 }
 
 message NodeExecutionEventResponse {
-    string urn    = 1;
+    // No specific info needed on the response since the event is pushed
 }
 
 message NodeExecution {
-    string execution_urn          = 1;
-    string name                   = 2;
-    string urn                    = 3;
+    string execution_id = 1;
 
     // Indicates the status of node execution - including retries
-    repeated NodeExecutionStatus status = 4;
-    NodeExecutionSpec spec      = 5;
-    NodeExecutionResult result  = 6;
+    repeated NodeExecutionStatus status = 2;
+    NodeExecutionSpec spec      = 3;
+    NodeExecutionResult result  = 4;
 }
 
 message NodeExecutionList {
@@ -52,7 +48,7 @@ message NodeExecutionStatus {
     bool discovery_hit                = 3;
 
     // Indicates the retry value for the Node Execution
-    uint32 retry_attempts             = 4;
+    uint32 retry_attempt        = 4;
 
     // Indicates if node has sub node executions
     bool is_sub_task_available        = 5;
@@ -73,8 +69,7 @@ message NodeExecutionResult {
 }
 
 message NodeExecutionSpec {
-    // Spec of the task that was executed
-    core.Node node     = 1;
+    string node_id     = 1;
 
     // Inputs that were passed to the task
     core.NamedValueCollection inputs    = 2;

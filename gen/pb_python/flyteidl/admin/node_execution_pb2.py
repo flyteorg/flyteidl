@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/node_execution.proto',
   package='admin',
   syntax='proto3',
-  serialized_pb=_b('\n#flyteidl/admin/node_execution.proto\x12\x05\x61\x64min\x1a\x1egoogle/protobuf/duration.proto\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1c\x66lyteidl/core/workflow.proto\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1a\x66lyteidl/admin/error.proto\"\xd1\x01\n\x19NodeExecutionEventRequest\x12\x15\n\rexecution_urn\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\t\x12*\n\x06status\x18\x04 \x03(\x0b\x32\x1a.admin.NodeExecutionStatus\x12&\n\x04spec\x18\x05 \x01(\x0b\x32\x18.admin.NodeExecutionSpec\x12*\n\x06result\x18\x06 \x01(\x0b\x32\x1a.admin.NodeExecutionResult\")\n\x1aNodeExecutionEventResponse\x12\x0b\n\x03urn\x18\x01 \x01(\t\"\xc1\x01\n\rNodeExecution\x12\x15\n\rexecution_urn\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03urn\x18\x03 \x01(\t\x12*\n\x06status\x18\x04 \x03(\x0b\x32\x1a.admin.NodeExecutionStatus\x12&\n\x04spec\x18\x05 \x01(\x0b\x32\x18.admin.NodeExecutionSpec\x12*\n\x06result\x18\x06 \x01(\x0b\x32\x1a.admin.NodeExecutionResult\"=\n\x11NodeExecutionList\x12(\n\nexecutions\x18\x01 \x03(\x0b\x32\x14.admin.NodeExecution\"\xd0\x01\n\x13NodeExecutionStatus\x12$\n\x05phase\x18\x01 \x01(\x0e\x32\x15.admin.ExecutionPhase\x12+\n\x08\x64uration\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x15\n\rdiscovery_hit\x18\x03 \x01(\x08\x12\x16\n\x0eretry_attempts\x18\x04 \x01(\r\x12\x1d\n\x15is_sub_task_available\x18\x05 \x01(\x08\x12\x18\n\x10\x63ustom_task_info\x18\x06 \x01(\x0c\"t\n\x13NodeExecutionResult\x12-\n\x07outputs\x18\x01 \x01(\x0b\x32\x1a.core.NamedValueCollectionH\x00\x12\x1d\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x0c.admin.ErrorH\x00\x42\x0f\n\routput_result\"Y\n\x11NodeExecutionSpec\x12\x18\n\x04node\x18\x01 \x01(\x0b\x32\n.core.Node\x12*\n\x06inputs\x18\x02 \x01(\x0b\x32\x1a.core.NamedValueCollectionB\x07Z\x05\x61\x64minb\x06proto3')
+  serialized_pb=_b('\n#flyteidl/admin/node_execution.proto\x12\x05\x61\x64min\x1a\x1egoogle/protobuf/duration.proto\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1c\x66lyteidl/core/workflow.proto\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1a\x66lyteidl/admin/error.proto\"\xc3\x01\n\x19NodeExecutionEventRequest\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\x12\x10\n\x08\x65vent_id\x18\x02 \x01(\t\x12*\n\x06status\x18\x03 \x01(\x0b\x32\x1a.admin.NodeExecutionStatus\x12&\n\x04spec\x18\x04 \x01(\x0b\x32\x18.admin.NodeExecutionSpec\x12*\n\x06result\x18\x05 \x01(\x0b\x32\x1a.admin.NodeExecutionResult\"\x1c\n\x1aNodeExecutionEventResponse\"\xa5\x01\n\rNodeExecution\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\x12*\n\x06status\x18\x02 \x03(\x0b\x32\x1a.admin.NodeExecutionStatus\x12&\n\x04spec\x18\x03 \x01(\x0b\x32\x18.admin.NodeExecutionSpec\x12*\n\x06result\x18\x04 \x01(\x0b\x32\x1a.admin.NodeExecutionResult\"=\n\x11NodeExecutionList\x12(\n\nexecutions\x18\x01 \x03(\x0b\x32\x14.admin.NodeExecution\"\xcf\x01\n\x13NodeExecutionStatus\x12$\n\x05phase\x18\x01 \x01(\x0e\x32\x15.admin.ExecutionPhase\x12+\n\x08\x64uration\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x15\n\rdiscovery_hit\x18\x03 \x01(\x08\x12\x15\n\rretry_attempt\x18\x04 \x01(\r\x12\x1d\n\x15is_sub_task_available\x18\x05 \x01(\x08\x12\x18\n\x10\x63ustom_task_info\x18\x06 \x01(\x0c\"t\n\x13NodeExecutionResult\x12-\n\x07outputs\x18\x01 \x01(\x0b\x32\x1a.core.NamedValueCollectionH\x00\x12\x1d\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x0c.admin.ErrorH\x00\x42\x0f\n\routput_result\"P\n\x11NodeExecutionSpec\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12*\n\x06inputs\x18\x02 \x01(\x0b\x32\x1a.core.NamedValueCollectionB\x07Z\x05\x61\x64minb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,flyteidl_dot_core_dot_interface__pb2.DESCRIPTOR,flyteidl_dot_core_dot_workflow__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_error__pb2.DESCRIPTOR,])
 
@@ -39,43 +39,36 @@ _NODEEXECUTIONEVENTREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='execution_urn', full_name='admin.NodeExecutionEventRequest.execution_urn', index=0,
+      name='execution_id', full_name='admin.NodeExecutionEventRequest.execution_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='name', full_name='admin.NodeExecutionEventRequest.name', index=1,
+      name='event_id', full_name='admin.NodeExecutionEventRequest.event_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='version', full_name='admin.NodeExecutionEventRequest.version', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='admin.NodeExecutionEventRequest.status', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='spec', full_name='admin.NodeExecutionEventRequest.spec', index=4,
-      number=5, type=11, cpp_type=10, label=1,
+      name='status', full_name='admin.NodeExecutionEventRequest.status', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='result', full_name='admin.NodeExecutionEventRequest.result', index=5,
-      number=6, type=11, cpp_type=10, label=1,
+      name='spec', full_name='admin.NodeExecutionEventRequest.spec', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='result', full_name='admin.NodeExecutionEventRequest.result', index=4,
+      number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -93,7 +86,7 @@ _NODEEXECUTIONEVENTREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=197,
-  serialized_end=406,
+  serialized_end=392,
 )
 
 
@@ -104,13 +97,6 @@ _NODEEXECUTIONEVENTRESPONSE = _descriptor.Descriptor(
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
-    _descriptor.FieldDescriptor(
-      name='urn', full_name='admin.NodeExecutionEventResponse.urn', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -123,8 +109,8 @@ _NODEEXECUTIONEVENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=408,
-  serialized_end=449,
+  serialized_start=394,
+  serialized_end=422,
 )
 
 
@@ -136,43 +122,29 @@ _NODEEXECUTION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='execution_urn', full_name='admin.NodeExecution.execution_urn', index=0,
+      name='execution_id', full_name='admin.NodeExecution.execution_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='name', full_name='admin.NodeExecution.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='urn', full_name='admin.NodeExecution.urn', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='admin.NodeExecution.status', index=3,
-      number=4, type=11, cpp_type=10, label=3,
+      name='status', full_name='admin.NodeExecution.status', index=1,
+      number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='admin.NodeExecution.spec', index=4,
-      number=5, type=11, cpp_type=10, label=1,
+      name='spec', full_name='admin.NodeExecution.spec', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='result', full_name='admin.NodeExecution.result', index=5,
-      number=6, type=11, cpp_type=10, label=1,
+      name='result', full_name='admin.NodeExecution.result', index=3,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -189,8 +161,8 @@ _NODEEXECUTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=452,
-  serialized_end=645,
+  serialized_start=425,
+  serialized_end=590,
 )
 
 
@@ -220,8 +192,8 @@ _NODEEXECUTIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=647,
-  serialized_end=708,
+  serialized_start=592,
+  serialized_end=653,
 )
 
 
@@ -254,7 +226,7 @@ _NODEEXECUTIONSTATUS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='retry_attempts', full_name='admin.NodeExecutionStatus.retry_attempts', index=3,
+      name='retry_attempt', full_name='admin.NodeExecutionStatus.retry_attempt', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -286,8 +258,8 @@ _NODEEXECUTIONSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=711,
-  serialized_end=919,
+  serialized_start=656,
+  serialized_end=863,
 )
 
 
@@ -327,8 +299,8 @@ _NODEEXECUTIONRESULT = _descriptor.Descriptor(
       name='output_result', full_name='admin.NodeExecutionResult.output_result',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=921,
-  serialized_end=1037,
+  serialized_start=865,
+  serialized_end=981,
 )
 
 
@@ -340,9 +312,9 @@ _NODEEXECUTIONSPEC = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='node', full_name='admin.NodeExecutionSpec.node', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='node_id', full_name='admin.NodeExecutionSpec.node_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
@@ -365,8 +337,8 @@ _NODEEXECUTIONSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1039,
-  serialized_end=1128,
+  serialized_start=983,
+  serialized_end=1063,
 )
 
 _NODEEXECUTIONEVENTREQUEST.fields_by_name['status'].message_type = _NODEEXECUTIONSTATUS
@@ -386,7 +358,6 @@ _NODEEXECUTIONRESULT.fields_by_name['outputs'].containing_oneof = _NODEEXECUTION
 _NODEEXECUTIONRESULT.oneofs_by_name['output_result'].fields.append(
   _NODEEXECUTIONRESULT.fields_by_name['error'])
 _NODEEXECUTIONRESULT.fields_by_name['error'].containing_oneof = _NODEEXECUTIONRESULT.oneofs_by_name['output_result']
-_NODEEXECUTIONSPEC.fields_by_name['node'].message_type = flyteidl_dot_core_dot_workflow__pb2._NODE
 _NODEEXECUTIONSPEC.fields_by_name['inputs'].message_type = flyteidl_dot_core_dot_interface__pb2._NAMEDVALUECOLLECTION
 DESCRIPTOR.message_types_by_name['NodeExecutionEventRequest'] = _NODEEXECUTIONEVENTREQUEST
 DESCRIPTOR.message_types_by_name['NodeExecutionEventResponse'] = _NODEEXECUTIONEVENTRESPONSE
