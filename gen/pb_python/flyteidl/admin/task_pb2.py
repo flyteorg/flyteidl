@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/task.proto',
   package='admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x19\x66lyteidl/admin/task.proto\x12\x05\x61\x64min\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1b\x66lyteidl/admin/common.proto\"b\n\x11TaskCreateRequest\x12\x1d\n\x02id\x18\x01 \x01(\x0b\x32\x11.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x1d\n\x04spec\x18\x03 \x01(\x0b\x32\x0f.admin.TaskSpec\"!\n\x12TaskCreateResponse\x12\x0b\n\x03urn\x18\x01 \x01(\t\"b\n\x04Task\x12\x1d\n\x02id\x18\x01 \x01(\x0b\x32\x11.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0b\n\x03urn\x18\x03 \x01(\t\x12\x1d\n\x04spec\x18\x06 \x01(\x0b\x32\x0f.admin.TaskSpec\"&\n\x08TaskList\x12\x1a\n\x05tasks\x18\x01 \x03(\x0b\x32\x0b.admin.Task\",\n\x08TaskSpec\x12 \n\x04task\x18\x01 \x01(\x0b\x32\x12.core.TaskTemplateB\x07Z\x05\x61\x64minb\x06proto3')
+  serialized_pb=_b('\n\x19\x66lyteidl/admin/task.proto\x12\x05\x61\x64min\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1b\x66lyteidl/admin/common.proto\"b\n\x11TaskCreateRequest\x12\x1d\n\x02id\x18\x01 \x01(\x0b\x32\x11.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x1d\n\x04spec\x18\x03 \x01(\x0b\x32\x0f.admin.TaskSpec\"p\n\x0fTaskListRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05limit\x18\x04 \x01(\r\x12\x0e\n\x06offset\x18\x05 \x01(\r\x12\x0f\n\x07\x66ilters\x18\x06 \x01(\t\"!\n\x12TaskCreateResponse\x12\x0b\n\x03urn\x18\x01 \x01(\t\"b\n\x04Task\x12\x1d\n\x02id\x18\x01 \x01(\x0b\x32\x11.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0b\n\x03urn\x18\x03 \x01(\t\x12\x1d\n\x04spec\x18\x06 \x01(\x0b\x32\x0f.admin.TaskSpec\"&\n\x08TaskList\x12\x1a\n\x05tasks\x18\x01 \x03(\x0b\x32\x0b.admin.Task\",\n\x08TaskSpec\x12 \n\x04task\x18\x01 \x01(\x0b\x32\x12.core.TaskTemplateB\x07Z\x05\x61\x64minb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,])
 
@@ -73,6 +73,72 @@ _TASKCREATEREQUEST = _descriptor.Descriptor(
 )
 
 
+_TASKLISTREQUEST = _descriptor.Descriptor(
+  name='TaskListRequest',
+  full_name='admin.TaskListRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='project', full_name='admin.TaskListRequest.project', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='domain', full_name='admin.TaskListRequest.domain', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='admin.TaskListRequest.name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='limit', full_name='admin.TaskListRequest.limit', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='offset', full_name='admin.TaskListRequest.offset', index=4,
+      number=5, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='filters', full_name='admin.TaskListRequest.filters', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=192,
+  serialized_end=304,
+)
+
+
 _TASKCREATERESPONSE = _descriptor.Descriptor(
   name='TaskCreateResponse',
   full_name='admin.TaskCreateResponse',
@@ -99,8 +165,8 @@ _TASKCREATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=192,
-  serialized_end=225,
+  serialized_start=306,
+  serialized_end=339,
 )
 
 
@@ -151,8 +217,8 @@ _TASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=227,
-  serialized_end=325,
+  serialized_start=341,
+  serialized_end=439,
 )
 
 
@@ -182,8 +248,8 @@ _TASKLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=327,
-  serialized_end=365,
+  serialized_start=441,
+  serialized_end=479,
 )
 
 
@@ -213,8 +279,8 @@ _TASKSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=367,
-  serialized_end=411,
+  serialized_start=481,
+  serialized_end=525,
 )
 
 _TASKCREATEREQUEST.fields_by_name['id'].message_type = flyteidl_dot_admin_dot_common__pb2._IDENTIFIER
@@ -224,6 +290,7 @@ _TASK.fields_by_name['spec'].message_type = _TASKSPEC
 _TASKLIST.fields_by_name['tasks'].message_type = _TASK
 _TASKSPEC.fields_by_name['task'].message_type = flyteidl_dot_core_dot_tasks__pb2._TASKTEMPLATE
 DESCRIPTOR.message_types_by_name['TaskCreateRequest'] = _TASKCREATEREQUEST
+DESCRIPTOR.message_types_by_name['TaskListRequest'] = _TASKLISTREQUEST
 DESCRIPTOR.message_types_by_name['TaskCreateResponse'] = _TASKCREATERESPONSE
 DESCRIPTOR.message_types_by_name['Task'] = _TASK
 DESCRIPTOR.message_types_by_name['TaskList'] = _TASKLIST
@@ -236,6 +303,13 @@ TaskCreateRequest = _reflection.GeneratedProtocolMessageType('TaskCreateRequest'
   # @@protoc_insertion_point(class_scope:admin.TaskCreateRequest)
   ))
 _sym_db.RegisterMessage(TaskCreateRequest)
+
+TaskListRequest = _reflection.GeneratedProtocolMessageType('TaskListRequest', (_message.Message,), dict(
+  DESCRIPTOR = _TASKLISTREQUEST,
+  __module__ = 'flyteidl.admin.task_pb2'
+  # @@protoc_insertion_point(class_scope:admin.TaskListRequest)
+  ))
+_sym_db.RegisterMessage(TaskListRequest)
 
 TaskCreateResponse = _reflection.GeneratedProtocolMessageType('TaskCreateResponse', (_message.Message,), dict(
   DESCRIPTOR = _TASKCREATERESPONSE,

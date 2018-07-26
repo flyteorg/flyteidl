@@ -12,6 +12,15 @@ message TaskCreateRequest {
     TaskSpec spec           = 3;
 }
 
+message TaskListRequest {
+    string project	= 1;
+    string domain	= 2;
+    string name		= 3;
+    uint32 limit	= 4;
+    uint32 offset	= 5;
+    string filters	= 6;    
+}
+
 message TaskCreateResponse {
     string urn        = 1;
 }

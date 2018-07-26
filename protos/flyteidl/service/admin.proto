@@ -4,6 +4,7 @@ package lyft.flyte.flyteadmin;
 import "google/api/annotations.proto";
 import "flyteidl/admin/task.proto";
 import "flyteidl/admin/workflow.proto";
+import "flyteidl/admin/common.proto";
 
 service AdminService {
   rpc CreateTask (admin.TaskCreateRequest) returns (admin.TaskCreateResponse) {
@@ -12,10 +13,41 @@ service AdminService {
       body: "*"
     };
   }
+
+  rpc ListTaskIds (admin.TaskListRequest) returns (admin.IdentifierList) {
+    option (google.api.http) = {
+      get: "/api/v1/project/{project}/domain/{domain}/task_ids"
+    };
+  }
+
+  rpc ListTasks (admin.TaskListRequest) returns (admin.TaskList) {
+    option (google.api.http) = {
+      get: "/api/v1/project/{project}/domain/{domain}/tasks"
+      additional_bindings {
+        get: "/api/v1/project/{project}/domain/{domain}/tasks/{name}"
+      }
+    };
+  }
+
   rpc CreateWorkflow (admin.WorkflowCreateRequest) returns (admin.WorkflowCreateResponse) {
     option (google.api.http) = {
       post: "/api/v1/workflows"
       body: "*"
+    };
+  }
+
+  rpc ListWorkflowIds (admin.WorkflowListRequest) returns (admin.IdentifierList) {
+    option (google.api.http) = {
+      get: "/api/v1/project/{project}/domain/{domain}/workflow_ids"
+    };
+  }
+  
+  rpc ListWorkflows (admin.WorkflowListRequest) returns (admin.WorkflowList) {
+    option (google.api.http) = {
+      get: "/api/v1/project/{project}/domain/{domain}/workflows"
+      additional_bindings {
+        get: "/api/v1/project/{project}/domain/{domain}/workflows/{name}"
+      }
     };
   }
 }
