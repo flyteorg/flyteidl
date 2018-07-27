@@ -437,6 +437,32 @@
       "description": "- AND: Conjunction",
       "title": "Nested conditions. They can be conjoined using AND / OR\nOrder of evaluation is not important as the operators are Commutative"
     },
+    "ResourcesResourceEntry": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/ResourcesResourceName",
+          "description": "Resource name."
+        },
+        "value": {
+          "type": "string",
+          "description": "Value must be a valid k8s quantity."
+        }
+      },
+      "description": "Encapsulates a resource name and value."
+    },
+    "ResourcesResourceName": {
+      "type": "string",
+      "enum": [
+        "Unknown",
+        "Cpu",
+        "Gpu",
+        "Memory",
+        "Storage"
+      ],
+      "default": "Unknown",
+      "description": "Known resource names."
+    },
     "RuntimeMetadataRuntimeType": {
       "type": "string",
       "enum": [
@@ -1041,23 +1067,16 @@
       "type": "object",
       "properties": {
         "requests": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ResourcesResourceEntry"
           },
           "description": "The desired set of resources requested."
         },
         "limits": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          },
-          "description": "Defines a set of bounds (e.g. min/max) within which the task can reliably run."
-        },
-        "env_dictionary": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ResourcesResourceEntry"
           },
           "description": "Defines a set of bounds (e.g. min/max) within which the task can reliably run."
         }

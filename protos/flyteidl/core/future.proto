@@ -115,8 +115,5 @@ message DataLocation {
     BlobStore blob_store = 1;
 
     // Defines the actual location where data is
-    oneof location {
-        string absolute = 2;
-        string prefix = 3;
-    }
+    string path = 2;
 }

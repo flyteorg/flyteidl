@@ -15,7 +15,6 @@ _sym_db = _symbol_database.Default()
 
 from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
 from flyteidl.core import interface_pb2 as flyteidl_dot_core_dot_interface__pb2
-from flyteidl.core import workflow_pb2 as flyteidl_dot_core_dot_workflow__pb2
 from flyteidl.admin import common_pb2 as flyteidl_dot_admin_dot_common__pb2
 from flyteidl.admin import error_pb2 as flyteidl_dot_admin_dot_error__pb2
 
@@ -24,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/node_execution.proto',
   package='admin',
   syntax='proto3',
-  serialized_pb=_b('\n#flyteidl/admin/node_execution.proto\x12\x05\x61\x64min\x1a\x1egoogle/protobuf/duration.proto\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1c\x66lyteidl/core/workflow.proto\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1a\x66lyteidl/admin/error.proto\"\xc3\x01\n\x19NodeExecutionEventRequest\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\x12\x10\n\x08\x65vent_id\x18\x02 \x01(\t\x12*\n\x06status\x18\x03 \x01(\x0b\x32\x1a.admin.NodeExecutionStatus\x12&\n\x04spec\x18\x04 \x01(\x0b\x32\x18.admin.NodeExecutionSpec\x12*\n\x06result\x18\x05 \x01(\x0b\x32\x1a.admin.NodeExecutionResult\"\x1c\n\x1aNodeExecutionEventResponse\"\xa5\x01\n\rNodeExecution\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\x12*\n\x06status\x18\x02 \x03(\x0b\x32\x1a.admin.NodeExecutionStatus\x12&\n\x04spec\x18\x03 \x01(\x0b\x32\x18.admin.NodeExecutionSpec\x12*\n\x06result\x18\x04 \x01(\x0b\x32\x1a.admin.NodeExecutionResult\"=\n\x11NodeExecutionList\x12(\n\nexecutions\x18\x01 \x03(\x0b\x32\x14.admin.NodeExecution\"\xcf\x01\n\x13NodeExecutionStatus\x12$\n\x05phase\x18\x01 \x01(\x0e\x32\x15.admin.ExecutionPhase\x12+\n\x08\x64uration\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x15\n\rdiscovery_hit\x18\x03 \x01(\x08\x12\x15\n\rretry_attempt\x18\x04 \x01(\r\x12\x1d\n\x15is_sub_task_available\x18\x05 \x01(\x08\x12\x18\n\x10\x63ustom_task_info\x18\x06 \x01(\x0c\"t\n\x13NodeExecutionResult\x12-\n\x07outputs\x18\x01 \x01(\x0b\x32\x1a.core.NamedValueCollectionH\x00\x12\x1d\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x0c.admin.ErrorH\x00\x42\x0f\n\routput_result\"P\n\x11NodeExecutionSpec\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12*\n\x06inputs\x18\x02 \x01(\x0b\x32\x1a.core.NamedValueCollectionB\x07Z\x05\x61\x64minb\x06proto3')
+  serialized_pb=_b('\n#flyteidl/admin/node_execution.proto\x12\x05\x61\x64min\x1a\x1egoogle/protobuf/duration.proto\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1a\x66lyteidl/admin/error.proto\"\xc3\x01\n\x19NodeExecutionEventRequest\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\x12\x10\n\x08\x65vent_id\x18\x02 \x01(\t\x12*\n\x06status\x18\x03 \x01(\x0b\x32\x1a.admin.NodeExecutionStatus\x12&\n\x04spec\x18\x04 \x01(\x0b\x32\x18.admin.NodeExecutionSpec\x12*\n\x06result\x18\x05 \x01(\x0b\x32\x1a.admin.NodeExecutionResult\"\x1c\n\x1aNodeExecutionEventResponse\"\xa5\x01\n\rNodeExecution\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\x12*\n\x06status\x18\x02 \x03(\x0b\x32\x1a.admin.NodeExecutionStatus\x12&\n\x04spec\x18\x03 \x01(\x0b\x32\x18.admin.NodeExecutionSpec\x12*\n\x06result\x18\x04 \x01(\x0b\x32\x1a.admin.NodeExecutionResult\"=\n\x11NodeExecutionList\x12(\n\nexecutions\x18\x01 \x03(\x0b\x32\x14.admin.NodeExecution\"\xcf\x01\n\x13NodeExecutionStatus\x12$\n\x05phase\x18\x01 \x01(\x0e\x32\x15.admin.ExecutionPhase\x12+\n\x08\x64uration\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x15\n\rdiscovery_hit\x18\x03 \x01(\x08\x12\x15\n\rretry_attempt\x18\x04 \x01(\r\x12\x1d\n\x15is_sub_task_available\x18\x05 \x01(\x08\x12\x18\n\x10\x63ustom_task_info\x18\x06 \x01(\x0c\"t\n\x13NodeExecutionResult\x12-\n\x07outputs\x18\x01 \x01(\x0b\x32\x1a.core.NamedValueCollectionH\x00\x12\x1d\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x0c.admin.ErrorH\x00\x42\x0f\n\routput_result\"P\n\x11NodeExecutionSpec\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12*\n\x06inputs\x18\x02 \x01(\x0b\x32\x1a.core.NamedValueCollectionB\x07Z\x05\x61\x64minb\x06proto3')
   ,
-  dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,flyteidl_dot_core_dot_interface__pb2.DESCRIPTOR,flyteidl_dot_core_dot_workflow__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_error__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,flyteidl_dot_core_dot_interface__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_error__pb2.DESCRIPTOR,])
 
 
 
@@ -85,8 +84,8 @@ _NODEEXECUTIONEVENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=197,
-  serialized_end=392,
+  serialized_start=167,
+  serialized_end=362,
 )
 
 
@@ -109,8 +108,8 @@ _NODEEXECUTIONEVENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=394,
-  serialized_end=422,
+  serialized_start=364,
+  serialized_end=392,
 )
 
 
@@ -161,8 +160,8 @@ _NODEEXECUTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=425,
-  serialized_end=590,
+  serialized_start=395,
+  serialized_end=560,
 )
 
 
@@ -192,8 +191,8 @@ _NODEEXECUTIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=592,
-  serialized_end=653,
+  serialized_start=562,
+  serialized_end=623,
 )
 
 
@@ -258,8 +257,8 @@ _NODEEXECUTIONSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=656,
-  serialized_end=863,
+  serialized_start=626,
+  serialized_end=833,
 )
 
 
@@ -299,8 +298,8 @@ _NODEEXECUTIONRESULT = _descriptor.Descriptor(
       name='output_result', full_name='admin.NodeExecutionResult.output_result',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=865,
-  serialized_end=981,
+  serialized_start=835,
+  serialized_end=951,
 )
 
 
@@ -337,8 +336,8 @@ _NODEEXECUTIONSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=983,
-  serialized_end=1063,
+  serialized_start=953,
+  serialized_end=1033,
 )
 
 _NODEEXECUTIONEVENTREQUEST.fields_by_name['status'].message_type = _NODEEXECUTIONSTATUS

@@ -5,7 +5,6 @@ option go_package = "admin";
 
 import "google/protobuf/duration.proto";
 import "flyteidl/core/interface.proto";
-import "flyteidl/core/workflow.proto";
 import "flyteidl/admin/common.proto";
 import "flyteidl/admin/error.proto";
 

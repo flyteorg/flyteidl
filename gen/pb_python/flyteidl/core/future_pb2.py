@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/future.proto',
   package='core',
   syntax='proto3',
-  serialized_pb=_b('\n\x1a\x66lyteidl/core/future.proto\x12\x04\x63ore\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1c\x66lyteidl/core/literals.proto\"p\n\x12\x46utureTaskDocument\x12#\n\x05tasks\x18\x01 \x03(\x0b\x32\x14.core.FutureTaskNode\x12\x15\n\rmin_successes\x18\x02 \x01(\x03\x12\x1e\n\x07outputs\x18\x03 \x03(\x0b\x32\r.core.Binding\"\x83\x01\n\x0e\x46utureTaskNode\x12\x13\n\x0bgenerate_id\x18\x01 \x01(\t\x12\x1f\n\x05\x61rray\x18\x02 \x01(\x0b\x32\x0e.core.ArrayJobH\x00\x12\x31\n\x0chive_queries\x18\x03 \x01(\x0b\x32\x19.core.HiveQueryCollectionH\x00\x42\x08\n\x06target\"@\n\tHiveQuery\x12\r\n\x05query\x18\x01 \x01(\t\x12$\n\x08metadata\x18\x02 \x01(\x0b\x32\x12.core.TaskMetadata\"7\n\x13HiveQueryCollection\x12 \n\x07queries\x18\x02 \x03(\x0b\x32\x0f.core.HiveQuery\"\x94\x01\n\x0fSwarmDefinition\x12*\n\x11primary_container\x18\x01 \x01(\x0b\x32\x0f.core.Container\x12(\n\x0finit_containers\x18\x02 \x03(\x0b\x32\x0f.core.Container\x12+\n\x12sidecar_containers\x18\x03 \x03(\x0b\x32\x0f.core.Container\"\xd2\x01\n\x08\x41rrayJob\x12$\n\x08metadata\x18\x01 \x01(\x0b\x32\x12.core.TaskMetadata\x12\r\n\x05slots\x18\x02 \x01(\x03\x12\x13\n\x0b\x63ompletions\x18\x03 \x01(\x03\x12$\n\tcontainer\x18\x04 \x01(\x0b\x32\x0f.core.ContainerH\x00\x12&\n\x05swarm\x18\x05 \x01(\x0b\x32\x15.core.SwarmDefinitionH\x00\x12\"\n\x06inputs\x18\x06 \x01(\x0b\x32\x12.core.DataLocationB\n\n\x08runnable\"e\n\x0c\x44\x61taLocation\x12#\n\nblob_store\x18\x01 \x01(\x0e\x32\x0f.core.BlobStore\x12\x12\n\x08\x61\x62solute\x18\x02 \x01(\tH\x00\x12\x10\n\x06prefix\x18\x03 \x01(\tH\x00\x42\n\n\x08locationB\x06Z\x04\x63oreb\x06proto3')
+  serialized_pb=_b('\n\x1a\x66lyteidl/core/future.proto\x12\x04\x63ore\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1c\x66lyteidl/core/literals.proto\"p\n\x12\x46utureTaskDocument\x12#\n\x05tasks\x18\x01 \x03(\x0b\x32\x14.core.FutureTaskNode\x12\x15\n\rmin_successes\x18\x02 \x01(\x03\x12\x1e\n\x07outputs\x18\x03 \x03(\x0b\x32\r.core.Binding\"\x83\x01\n\x0e\x46utureTaskNode\x12\x13\n\x0bgenerate_id\x18\x01 \x01(\t\x12\x1f\n\x05\x61rray\x18\x02 \x01(\x0b\x32\x0e.core.ArrayJobH\x00\x12\x31\n\x0chive_queries\x18\x03 \x01(\x0b\x32\x19.core.HiveQueryCollectionH\x00\x42\x08\n\x06target\"@\n\tHiveQuery\x12\r\n\x05query\x18\x01 \x01(\t\x12$\n\x08metadata\x18\x02 \x01(\x0b\x32\x12.core.TaskMetadata\"7\n\x13HiveQueryCollection\x12 \n\x07queries\x18\x02 \x03(\x0b\x32\x0f.core.HiveQuery\"\x94\x01\n\x0fSwarmDefinition\x12*\n\x11primary_container\x18\x01 \x01(\x0b\x32\x0f.core.Container\x12(\n\x0finit_containers\x18\x02 \x03(\x0b\x32\x0f.core.Container\x12+\n\x12sidecar_containers\x18\x03 \x03(\x0b\x32\x0f.core.Container\"\xd2\x01\n\x08\x41rrayJob\x12$\n\x08metadata\x18\x01 \x01(\x0b\x32\x12.core.TaskMetadata\x12\r\n\x05slots\x18\x02 \x01(\x03\x12\x13\n\x0b\x63ompletions\x18\x03 \x01(\x03\x12$\n\tcontainer\x18\x04 \x01(\x0b\x32\x0f.core.ContainerH\x00\x12&\n\x05swarm\x18\x05 \x01(\x0b\x32\x15.core.SwarmDefinitionH\x00\x12\"\n\x06inputs\x18\x06 \x01(\x0b\x32\x12.core.DataLocationB\n\n\x08runnable\"A\n\x0c\x44\x61taLocation\x12#\n\nblob_store\x18\x01 \x01(\x0e\x32\x0f.core.BlobStore\x12\x0c\n\x04path\x18\x02 \x01(\tB\x06Z\x04\x63oreb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,])
 
@@ -319,15 +319,8 @@ _DATALOCATION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='absolute', full_name='core.DataLocation.absolute', index=1,
+      name='path', full_name='core.DataLocation.path', index=1,
       number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='prefix', full_name='core.DataLocation.prefix', index=2,
-      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -343,12 +336,9 @@ _DATALOCATION = _descriptor.Descriptor(
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
-    _descriptor.OneofDescriptor(
-      name='location', full_name='core.DataLocation.location',
-      index=0, containing_type=None, fields=[]),
   ],
   serialized_start=828,
-  serialized_end=929,
+  serialized_end=893,
 )
 
 _FUTURETASKDOCUMENT.fields_by_name['tasks'].message_type = _FUTURETASKNODE
@@ -377,12 +367,6 @@ _ARRAYJOB.oneofs_by_name['runnable'].fields.append(
   _ARRAYJOB.fields_by_name['swarm'])
 _ARRAYJOB.fields_by_name['swarm'].containing_oneof = _ARRAYJOB.oneofs_by_name['runnable']
 _DATALOCATION.fields_by_name['blob_store'].enum_type = flyteidl_dot_core_dot_literals__pb2._BLOBSTORE
-_DATALOCATION.oneofs_by_name['location'].fields.append(
-  _DATALOCATION.fields_by_name['absolute'])
-_DATALOCATION.fields_by_name['absolute'].containing_oneof = _DATALOCATION.oneofs_by_name['location']
-_DATALOCATION.oneofs_by_name['location'].fields.append(
-  _DATALOCATION.fields_by_name['prefix'])
-_DATALOCATION.fields_by_name['prefix'].containing_oneof = _DATALOCATION.oneofs_by_name['location']
 DESCRIPTOR.message_types_by_name['FutureTaskDocument'] = _FUTURETASKDOCUMENT
 DESCRIPTOR.message_types_by_name['FutureTaskNode'] = _FUTURETASKNODE
 DESCRIPTOR.message_types_by_name['HiveQuery'] = _HIVEQUERY
