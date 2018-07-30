@@ -21,12 +21,12 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
 type NodeExecutionEventRequest struct {
-	ExecutionId string `protobuf:"bytes,1,opt,name=execution_id,json=executionId" json:"execution_id,omitempty"`
+	ExecutionId string `protobuf:"bytes,1,opt,name=execution_id,json=executionId,proto3" json:"execution_id,omitempty"`
 	// the unique id of the event per retry
-	EventId              string               `protobuf:"bytes,2,opt,name=event_id,json=eventId" json:"event_id,omitempty"`
-	Status               *NodeExecutionStatus `protobuf:"bytes,3,opt,name=status" json:"status,omitempty"`
-	Spec                 *NodeExecutionSpec   `protobuf:"bytes,4,opt,name=spec" json:"spec,omitempty"`
-	Result               *NodeExecutionResult `protobuf:"bytes,5,opt,name=result" json:"result,omitempty"`
+	EventId              string               `protobuf:"bytes,2,opt,name=event_id,json=eventId,proto3" json:"event_id,omitempty"`
+	Status               *NodeExecutionStatus `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
+	Spec                 *NodeExecutionSpec   `protobuf:"bytes,4,opt,name=spec,proto3" json:"spec,omitempty"`
+	Result               *NodeExecutionResult `protobuf:"bytes,5,opt,name=result,proto3" json:"result,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
 	XXX_unrecognized     []byte               `json:"-"`
 	XXX_sizecache        int32                `json:"-"`
@@ -122,11 +122,11 @@ func (m *NodeExecutionEventResponse) XXX_DiscardUnknown() {
 var xxx_messageInfo_NodeExecutionEventResponse proto.InternalMessageInfo
 
 type NodeExecution struct {
-	ExecutionId string `protobuf:"bytes,1,opt,name=execution_id,json=executionId" json:"execution_id,omitempty"`
+	ExecutionId string `protobuf:"bytes,1,opt,name=execution_id,json=executionId,proto3" json:"execution_id,omitempty"`
 	// Indicates the status of node execution - including retries
-	Status               []*NodeExecutionStatus `protobuf:"bytes,2,rep,name=status" json:"status,omitempty"`
-	Spec                 *NodeExecutionSpec     `protobuf:"bytes,3,opt,name=spec" json:"spec,omitempty"`
-	Result               *NodeExecutionResult   `protobuf:"bytes,4,opt,name=result" json:"result,omitempty"`
+	Status               []*NodeExecutionStatus `protobuf:"bytes,2,rep,name=status,proto3" json:"status,omitempty"`
+	Spec                 *NodeExecutionSpec     `protobuf:"bytes,3,opt,name=spec,proto3" json:"spec,omitempty"`
+	Result               *NodeExecutionResult   `protobuf:"bytes,4,opt,name=result,proto3" json:"result,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}               `json:"-"`
 	XXX_unrecognized     []byte                 `json:"-"`
 	XXX_sizecache        int32                  `json:"-"`
@@ -185,7 +185,7 @@ func (m *NodeExecution) GetResult() *NodeExecutionResult {
 }
 
 type NodeExecutionList struct {
-	Executions           []*NodeExecution `protobuf:"bytes,1,rep,name=executions" json:"executions,omitempty"`
+	Executions           []*NodeExecution `protobuf:"bytes,1,rep,name=executions,proto3" json:"executions,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
 	XXX_unrecognized     []byte           `json:"-"`
 	XXX_sizecache        int32            `json:"-"`
@@ -224,15 +224,15 @@ func (m *NodeExecutionList) GetExecutions() []*NodeExecution {
 
 type NodeExecutionStatus struct {
 	// Phase of the executions
-	Phase ExecutionPhase `protobuf:"varint,1,opt,name=phase,enum=admin.ExecutionPhase" json:"phase,omitempty"`
+	Phase ExecutionPhase `protobuf:"varint,1,opt,name=phase,proto3,enum=admin.ExecutionPhase" json:"phase,omitempty"`
 	// Time taken for the node execution to complete
-	Duration *duration.Duration `protobuf:"bytes,2,opt,name=duration" json:"duration,omitempty"`
+	Duration *duration.Duration `protobuf:"bytes,2,opt,name=duration,proto3" json:"duration,omitempty"`
 	// Indicates if the node results were fetched from the cache
-	DiscoveryHit bool `protobuf:"varint,3,opt,name=discovery_hit,json=discoveryHit" json:"discovery_hit,omitempty"`
+	DiscoveryHit bool `protobuf:"varint,3,opt,name=discovery_hit,json=discoveryHit,proto3" json:"discovery_hit,omitempty"`
 	// Indicates the retry value for the Node Execution
-	RetryAttempt uint32 `protobuf:"varint,4,opt,name=retry_attempt,json=retryAttempt" json:"retry_attempt,omitempty"`
+	RetryAttempt uint32 `protobuf:"varint,4,opt,name=retry_attempt,json=retryAttempt,proto3" json:"retry_attempt,omitempty"`
 	// Indicates if node has sub node executions
-	IsSubTaskAvailable bool `protobuf:"varint,5,opt,name=is_sub_task_available,json=isSubTaskAvailable" json:"is_sub_task_available,omitempty"`
+	IsSubTaskAvailable bool `protobuf:"varint,5,opt,name=is_sub_task_available,json=isSubTaskAvailable,proto3" json:"is_sub_task_available,omitempty"`
 	// Indicates specific info for each type
 	CustomTaskInfo       []byte   `protobuf:"bytes,6,opt,name=custom_task_info,json=customTaskInfo,proto3" json:"custom_task_info,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -346,14 +346,16 @@ type isNodeExecutionResult_OutputResult interface {
 }
 
 type NodeExecutionResult_Outputs struct {
-	Outputs *core.NamedValueCollection `protobuf:"bytes,1,opt,name=outputs,oneof"`
+	Outputs *core.NamedValueCollection `protobuf:"bytes,1,opt,name=outputs,proto3,oneof"`
 }
+
 type NodeExecutionResult_Error struct {
-	Error *Error `protobuf:"bytes,2,opt,name=error,oneof"`
+	Error *Error `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
 }
 
 func (*NodeExecutionResult_Outputs) isNodeExecutionResult_OutputResult() {}
-func (*NodeExecutionResult_Error) isNodeExecutionResult_OutputResult()   {}
+
+func (*NodeExecutionResult_Error) isNodeExecutionResult_OutputResult() {}
 
 func (m *NodeExecutionResult) GetOutputResult() isNodeExecutionResult_OutputResult {
 	if m != nil {
@@ -451,9 +453,9 @@ func _NodeExecutionResult_OneofSizer(msg proto.Message) (n int) {
 }
 
 type NodeExecutionSpec struct {
-	NodeId string `protobuf:"bytes,1,opt,name=node_id,json=nodeId" json:"node_id,omitempty"`
+	NodeId string `protobuf:"bytes,1,opt,name=node_id,json=nodeId,proto3" json:"node_id,omitempty"`
 	// Inputs that were passed to the task
-	Inputs               *core.NamedValueCollection `protobuf:"bytes,2,opt,name=inputs" json:"inputs,omitempty"`
+	Inputs               *core.NamedValueCollection `protobuf:"bytes,2,opt,name=inputs,proto3" json:"inputs,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                   `json:"-"`
 	XXX_unrecognized     []byte                     `json:"-"`
 	XXX_sizecache        int32                      `json:"-"`

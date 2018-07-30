@@ -20,9 +20,9 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
 type LaunchPlanCreateRequest struct {
-	Id                   *Identifier     `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
-	Version              string          `protobuf:"bytes,2,opt,name=version" json:"version,omitempty"`
-	Spec                 *LaunchPlanSpec `protobuf:"bytes,3,opt,name=spec" json:"spec,omitempty"`
+	Id                   *Identifier     `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Version              string          `protobuf:"bytes,2,opt,name=version,proto3" json:"version,omitempty"`
+	Spec                 *LaunchPlanSpec `protobuf:"bytes,3,opt,name=spec,proto3" json:"spec,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
 	XXX_unrecognized     []byte          `json:"-"`
 	XXX_sizecache        int32           `json:"-"`
@@ -74,10 +74,10 @@ func (m *LaunchPlanCreateRequest) GetSpec() *LaunchPlanSpec {
 }
 
 type LaunchPlan struct {
-	Id                   *Identifier     `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
-	Version              string          `protobuf:"bytes,2,opt,name=version" json:"version,omitempty"`
-	Urn                  string          `protobuf:"bytes,3,opt,name=urn" json:"urn,omitempty"`
-	Spec                 *LaunchPlanSpec `protobuf:"bytes,4,opt,name=spec" json:"spec,omitempty"`
+	Id                   *Identifier     `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Version              string          `protobuf:"bytes,2,opt,name=version,proto3" json:"version,omitempty"`
+	Urn                  string          `protobuf:"bytes,3,opt,name=urn,proto3" json:"urn,omitempty"`
+	Spec                 *LaunchPlanSpec `protobuf:"bytes,4,opt,name=spec,proto3" json:"spec,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
 	XXX_unrecognized     []byte          `json:"-"`
 	XXX_sizecache        int32           `json:"-"`
@@ -136,7 +136,7 @@ func (m *LaunchPlan) GetSpec() *LaunchPlanSpec {
 }
 
 type LaunchPlanList struct {
-	LaunchPlans          []*LaunchPlan `protobuf:"bytes,1,rep,name=launch_plans,json=launchPlans" json:"launch_plans,omitempty"`
+	LaunchPlans          []*LaunchPlan `protobuf:"bytes,1,rep,name=launch_plans,json=launchPlans,proto3" json:"launch_plans,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
 	XXX_unrecognized     []byte        `json:"-"`
 	XXX_sizecache        int32         `json:"-"`
@@ -175,13 +175,13 @@ func (m *LaunchPlanList) GetLaunchPlans() []*LaunchPlan {
 
 type LaunchPlanSpec struct {
 	// Reference to the Workflow template that the launch plan references
-	WorkflowUrn string `protobuf:"bytes,1,opt,name=workflow_urn,json=workflowUrn" json:"workflow_urn,omitempty"`
+	WorkflowUrn string `protobuf:"bytes,1,opt,name=workflow_urn,json=workflowUrn,proto3" json:"workflow_urn,omitempty"`
 	// Metadata for the Launch Plan
-	EntityMetadata *LaunchPlanMetadata `protobuf:"bytes,2,opt,name=entity_metadata,json=entityMetadata" json:"entity_metadata,omitempty"`
+	EntityMetadata *LaunchPlanMetadata `protobuf:"bytes,2,opt,name=entity_metadata,json=entityMetadata,proto3" json:"entity_metadata,omitempty"`
 	// Input values to be passed for the execution
-	DefaultInputs []*Parameter `protobuf:"bytes,3,rep,name=default_inputs,json=defaultInputs" json:"default_inputs,omitempty"`
+	DefaultInputs []*Parameter `protobuf:"bytes,3,rep,name=default_inputs,json=defaultInputs,proto3" json:"default_inputs,omitempty"`
 	// Fixed, non overridable inputs for the Launch Plan
-	FixedInputs          *core.NamedValueCollection `protobuf:"bytes,4,opt,name=fixed_inputs,json=fixedInputs" json:"fixed_inputs,omitempty"`
+	FixedInputs          *core.NamedValueCollection `protobuf:"bytes,4,opt,name=fixed_inputs,json=fixedInputs,proto3" json:"fixed_inputs,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                   `json:"-"`
 	XXX_unrecognized     []byte                     `json:"-"`
 	XXX_sizecache        int32                      `json:"-"`
@@ -241,9 +241,9 @@ func (m *LaunchPlanSpec) GetFixedInputs() *core.NamedValueCollection {
 
 type LaunchPlanMetadata struct {
 	// Schedule to execute the Launch Plan
-	Schedule *Schedule `protobuf:"bytes,1,opt,name=schedule" json:"schedule,omitempty"`
+	Schedule *Schedule `protobuf:"bytes,1,opt,name=schedule,proto3" json:"schedule,omitempty"`
 	// List of notifications based on Execution status transitions
-	Notifications        []*Notification `protobuf:"bytes,2,rep,name=notifications" json:"notifications,omitempty"`
+	Notifications        []*Notification `protobuf:"bytes,2,rep,name=notifications,proto3" json:"notifications,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
 	XXX_unrecognized     []byte          `json:"-"`
 	XXX_sizecache        int32           `json:"-"`

@@ -21,13 +21,13 @@ const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 // This document describes a set of tasks to execute and how the final outputs are produced.
 type FutureTaskDocument struct {
 	// A collection of tasks to execute.
-	Tasks []*FutureTaskNode `protobuf:"bytes,1,rep,name=tasks" json:"tasks,omitempty"`
+	Tasks []*FutureTaskNode `protobuf:"bytes,1,rep,name=tasks,proto3" json:"tasks,omitempty"`
 	// An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
 	// the future job will be marked as successful and outputs will be computed.
-	MinSuccesses int64 `protobuf:"varint,2,opt,name=min_successes,json=minSuccesses" json:"min_successes,omitempty"`
+	MinSuccesses int64 `protobuf:"varint,2,opt,name=min_successes,json=minSuccesses,proto3" json:"min_successes,omitempty"`
 	// Describes how to bind the final output of the future task from the outputs of executed nodes. The referenced ids
 	// in bindings should have the generated id for the subtask.
-	Outputs              []*Binding `protobuf:"bytes,3,rep,name=outputs" json:"outputs,omitempty"`
+	Outputs              []*Binding `protobuf:"bytes,3,rep,name=outputs,proto3" json:"outputs,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
 	XXX_unrecognized     []byte     `json:"-"`
 	XXX_sizecache        int32      `json:"-"`
@@ -83,7 +83,7 @@ type FutureTaskNode struct {
 	// target. The generated ids have this format: <generate_id>:<n> where n starts with 0 and monotonically increases.
 	// e.g. if generate_id is set to "my_array_job", the first task in the array job will have the id "my_array_job:0",
 	// then "my_array_job:1"... etc.
-	GenerateId string `protobuf:"bytes,1,opt,name=generate_id,json=generateId" json:"generate_id,omitempty"`
+	GenerateId string `protobuf:"bytes,1,opt,name=generate_id,json=generateId,proto3" json:"generate_id,omitempty"`
 	// The executable target of the node.
 	//
 	// Types that are valid to be assigned to Target:
@@ -119,18 +119,27 @@ func (m *FutureTaskNode) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_FutureTaskNode proto.InternalMessageInfo
 
+func (m *FutureTaskNode) GetGenerateId() string {
+	if m != nil {
+		return m.GenerateId
+	}
+	return ""
+}
+
 type isFutureTaskNode_Target interface {
 	isFutureTaskNode_Target()
 }
 
 type FutureTaskNode_Array struct {
-	Array *ArrayJob `protobuf:"bytes,2,opt,name=array,oneof"`
-}
-type FutureTaskNode_HiveQueries struct {
-	HiveQueries *HiveQueryCollection `protobuf:"bytes,3,opt,name=hive_queries,json=hiveQueries,oneof"`
+	Array *ArrayJob `protobuf:"bytes,2,opt,name=array,proto3,oneof"`
 }
 
-func (*FutureTaskNode_Array) isFutureTaskNode_Target()       {}
+type FutureTaskNode_HiveQueries struct {
+	HiveQueries *HiveQueryCollection `protobuf:"bytes,3,opt,name=hive_queries,json=hiveQueries,proto3,oneof"`
+}
+
+func (*FutureTaskNode_Array) isFutureTaskNode_Target() {}
+
 func (*FutureTaskNode_HiveQueries) isFutureTaskNode_Target() {}
 
 func (m *FutureTaskNode) GetTarget() isFutureTaskNode_Target {
@@ -138,13 +147,6 @@ func (m *FutureTaskNode) GetTarget() isFutureTaskNode_Target {
 		return m.Target
 	}
 	return nil
-}
-
-func (m *FutureTaskNode) GetGenerateId() string {
-	if m != nil {
-		return m.GenerateId
-	}
-	return ""
 }
 
 func (m *FutureTaskNode) GetArray() *ArrayJob {
@@ -238,9 +240,9 @@ func _FutureTaskNode_OneofSizer(msg proto.Message) (n int) {
 // Defines a query to execute on a hive cluster.
 type HiveQuery struct {
 	// The query string.
-	Query string `protobuf:"bytes,1,opt,name=query" json:"query,omitempty"`
+	Query string `protobuf:"bytes,1,opt,name=query,proto3" json:"query,omitempty"`
 	// Metadata to use when executing the query. Not all fields can be used with all execution engines.
-	Metadata             *TaskMetadata `protobuf:"bytes,2,opt,name=metadata" json:"metadata,omitempty"`
+	Metadata             *TaskMetadata `protobuf:"bytes,2,opt,name=metadata,proto3" json:"metadata,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
 	XXX_unrecognized     []byte        `json:"-"`
 	XXX_sizecache        int32         `json:"-"`
@@ -286,7 +288,7 @@ func (m *HiveQuery) GetMetadata() *TaskMetadata {
 
 // Defines a collection of hive queries.
 type HiveQueryCollection struct {
-	Queries              []*HiveQuery `protobuf:"bytes,2,rep,name=queries" json:"queries,omitempty"`
+	Queries              []*HiveQuery `protobuf:"bytes,2,rep,name=queries,proto3" json:"queries,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
 	XXX_unrecognized     []byte       `json:"-"`
 	XXX_sizecache        int32        `json:"-"`
@@ -327,7 +329,7 @@ func (m *HiveQueryCollection) GetQueries() []*HiveQuery {
 type SwarmDefinition struct {
 	// The primary container of a swarm job. This container starts after all the init_containers have successfully
 	// completed. The end-state of the primary container determines the overall state of the swarm task.
-	PrimaryContainer *Container `protobuf:"bytes,1,opt,name=primary_container,json=primaryContainer" json:"primary_container,omitempty"`
+	PrimaryContainer *Container `protobuf:"bytes,1,opt,name=primary_container,json=primaryContainer,proto3" json:"primary_container,omitempty"`
 	// List of initialization containers belonging to the pod.
 	// Init containers are executed in order prior to containers being started. If any
 	// init container fails, the pod is considered to have failed and is handled according
@@ -339,10 +341,10 @@ type SwarmDefinition struct {
 	// of that value or the sum of the normal containers. Limits are applied to init containers
 	// in a similar fashion.
 	// More info: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
-	InitContainers []*Container `protobuf:"bytes,2,rep,name=init_containers,json=initContainers" json:"init_containers,omitempty"`
+	InitContainers []*Container `protobuf:"bytes,2,rep,name=init_containers,json=initContainers,proto3" json:"init_containers,omitempty"`
 	// List of containers that get started after all init_containers have successfully completed. The end-state of
 	// sidecar_containers is ignored when computing the overall state of the swarm task.
-	SidecarContainers    []*Container `protobuf:"bytes,3,rep,name=sidecar_containers,json=sidecarContainers" json:"sidecar_containers,omitempty"`
+	SidecarContainers    []*Container `protobuf:"bytes,3,rep,name=sidecar_containers,json=sidecarContainers,proto3" json:"sidecar_containers,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
 	XXX_unrecognized     []byte       `json:"-"`
 	XXX_sizecache        int32        `json:"-"`
@@ -397,12 +399,12 @@ func (m *SwarmDefinition) GetSidecarContainers() []*Container {
 // will be executed concurrently.
 type ArrayJob struct {
 	// Metadata about the task.
-	Metadata *TaskMetadata `protobuf:"bytes,1,opt,name=metadata" json:"metadata,omitempty"`
+	Metadata *TaskMetadata `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
 	// Defines the maximum number of instances to bring up concurrently at any given point.
-	Slots int64 `protobuf:"varint,2,opt,name=slots" json:"slots,omitempty"`
+	Slots int64 `protobuf:"varint,2,opt,name=slots,proto3" json:"slots,omitempty"`
 	// Defines the number of successful completions needed to mark the job as success. This number should match
 	// the size of the input if the job requires processing of all input data.
-	Completions int64 `protobuf:"varint,3,opt,name=completions" json:"completions,omitempty"`
+	Completions int64 `protobuf:"varint,3,opt,name=completions,proto3" json:"completions,omitempty"`
 	// Types that are valid to be assigned to Runnable:
 	//	*ArrayJob_Container
 	//	*ArrayJob_Swarm
@@ -415,7 +417,7 @@ type ArrayJob struct {
 	// then look at AWS_BATCH_JOB_ARRAY_INDEX to know the index of the job and load the appropriate portion of the input.
 	// Azure: The execution engine will have to process the input and slice it for each task. It'll then pass an absolute
 	// location to each task for where it can find its input.
-	Inputs               *DataLocation `protobuf:"bytes,6,opt,name=inputs" json:"inputs,omitempty"`
+	Inputs               *DataLocation `protobuf:"bytes,6,opt,name=inputs,proto3" json:"inputs,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
 	XXX_unrecognized     []byte        `json:"-"`
 	XXX_sizecache        int32         `json:"-"`
@@ -445,27 +447,6 @@ func (m *ArrayJob) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ArrayJob proto.InternalMessageInfo
 
-type isArrayJob_Runnable interface {
-	isArrayJob_Runnable()
-}
-
-type ArrayJob_Container struct {
-	Container *Container `protobuf:"bytes,4,opt,name=container,oneof"`
-}
-type ArrayJob_Swarm struct {
-	Swarm *SwarmDefinition `protobuf:"bytes,5,opt,name=swarm,oneof"`
-}
-
-func (*ArrayJob_Container) isArrayJob_Runnable() {}
-func (*ArrayJob_Swarm) isArrayJob_Runnable()     {}
-
-func (m *ArrayJob) GetRunnable() isArrayJob_Runnable {
-	if m != nil {
-		return m.Runnable
-	}
-	return nil
-}
-
 func (m *ArrayJob) GetMetadata() *TaskMetadata {
 	if m != nil {
 		return m.Metadata
@@ -485,6 +466,29 @@ func (m *ArrayJob) GetCompletions() int64 {
 		return m.Completions
 	}
 	return 0
+}
+
+type isArrayJob_Runnable interface {
+	isArrayJob_Runnable()
+}
+
+type ArrayJob_Container struct {
+	Container *Container `protobuf:"bytes,4,opt,name=container,proto3,oneof"`
+}
+
+type ArrayJob_Swarm struct {
+	Swarm *SwarmDefinition `protobuf:"bytes,5,opt,name=swarm,proto3,oneof"`
+}
+
+func (*ArrayJob_Container) isArrayJob_Runnable() {}
+
+func (*ArrayJob_Swarm) isArrayJob_Runnable() {}
+
+func (m *ArrayJob) GetRunnable() isArrayJob_Runnable {
+	if m != nil {
+		return m.Runnable
+	}
+	return nil
 }
 
 func (m *ArrayJob) GetContainer() *Container {
@@ -584,9 +588,9 @@ func _ArrayJob_OneofSizer(msg proto.Message) (n int) {
 
 type DataLocation struct {
 	// Refers to the blob store type where data is located.
-	BlobStore BlobStore `protobuf:"varint,1,opt,name=blob_store,json=blobStore,enum=core.BlobStore" json:"blob_store,omitempty"`
+	BlobStore BlobStore `protobuf:"varint,1,opt,name=blob_store,json=blobStore,proto3,enum=core.BlobStore" json:"blob_store,omitempty"`
 	// Defines the actual location where data is
-	Path                 string   `protobuf:"bytes,2,opt,name=path" json:"path,omitempty"`
+	Path                 string   `protobuf:"bytes,2,opt,name=path,proto3" json:"path,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`

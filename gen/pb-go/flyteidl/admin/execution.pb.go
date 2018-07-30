@@ -46,8 +46,8 @@ func (ExecutionMetadata_ExecutionMode) EnumDescriptor() ([]byte, []int) {
 }
 
 type ExecutionCreateRequest struct {
-	Id                   *Identifier    `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
-	Spec                 *ExecutionSpec `protobuf:"bytes,2,opt,name=spec" json:"spec,omitempty"`
+	Id                   *Identifier    `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Spec                 *ExecutionSpec `protobuf:"bytes,2,opt,name=spec,proto3" json:"spec,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
 	XXX_unrecognized     []byte         `json:"-"`
 	XXX_sizecache        int32          `json:"-"`
@@ -92,7 +92,7 @@ func (m *ExecutionCreateRequest) GetSpec() *ExecutionSpec {
 }
 
 type ExecutionCreateResult struct {
-	Urn                  string   `protobuf:"bytes,1,opt,name=urn" json:"urn,omitempty"`
+	Urn                  string   `protobuf:"bytes,1,opt,name=urn,proto3" json:"urn,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -130,11 +130,11 @@ func (m *ExecutionCreateResult) GetUrn() string {
 }
 
 type Execution struct {
-	Id                   *Identifier      `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
-	Urn                  string           `protobuf:"bytes,2,opt,name=urn" json:"urn,omitempty"`
-	Status               *ExecutionStatus `protobuf:"bytes,3,opt,name=status" json:"status,omitempty"`
-	Spec                 *ExecutionSpec   `protobuf:"bytes,4,opt,name=spec" json:"spec,omitempty"`
-	Result               *ExecutionResult `protobuf:"bytes,5,opt,name=result" json:"result,omitempty"`
+	Id                   *Identifier      `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Urn                  string           `protobuf:"bytes,2,opt,name=urn,proto3" json:"urn,omitempty"`
+	Status               *ExecutionStatus `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
+	Spec                 *ExecutionSpec   `protobuf:"bytes,4,opt,name=spec,proto3" json:"spec,omitempty"`
+	Result               *ExecutionResult `protobuf:"bytes,5,opt,name=result,proto3" json:"result,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
 	XXX_unrecognized     []byte           `json:"-"`
 	XXX_sizecache        int32            `json:"-"`
@@ -200,7 +200,7 @@ func (m *Execution) GetResult() *ExecutionResult {
 }
 
 type ExecutionList struct {
-	Executions           []*Execution `protobuf:"bytes,1,rep,name=executions" json:"executions,omitempty"`
+	Executions           []*Execution `protobuf:"bytes,1,rep,name=executions,proto3" json:"executions,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
 	XXX_unrecognized     []byte       `json:"-"`
 	XXX_sizecache        int32        `json:"-"`
@@ -239,8 +239,8 @@ func (m *ExecutionList) GetExecutions() []*Execution {
 
 type ExecutionStatus struct {
 	// Phase of the executions
-	Phase                ExecutionPhase `protobuf:"varint,1,opt,name=phase,enum=admin.ExecutionPhase" json:"phase,omitempty"`
-	WorkflowUrn          string         `protobuf:"bytes,2,opt,name=workflow_urn,json=workflowUrn" json:"workflow_urn,omitempty"`
+	Phase                ExecutionPhase `protobuf:"varint,1,opt,name=phase,proto3,enum=admin.ExecutionPhase" json:"phase,omitempty"`
+	WorkflowUrn          string         `protobuf:"bytes,2,opt,name=workflow_urn,json=workflowUrn,proto3" json:"workflow_urn,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
 	XXX_unrecognized     []byte         `json:"-"`
 	XXX_sizecache        int32          `json:"-"`
@@ -324,14 +324,16 @@ type isExecutionResult_OutputResult interface {
 }
 
 type ExecutionResult_Outputs struct {
-	Outputs *core.NamedValueCollection `protobuf:"bytes,1,opt,name=outputs,oneof"`
+	Outputs *core.NamedValueCollection `protobuf:"bytes,1,opt,name=outputs,proto3,oneof"`
 }
+
 type ExecutionResult_Error struct {
-	Error *Error `protobuf:"bytes,2,opt,name=error,oneof"`
+	Error *Error `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
 }
 
 func (*ExecutionResult_Outputs) isExecutionResult_OutputResult() {}
-func (*ExecutionResult_Error) isExecutionResult_OutputResult()   {}
+
+func (*ExecutionResult_Error) isExecutionResult_OutputResult() {}
 
 func (m *ExecutionResult) GetOutputResult() isExecutionResult_OutputResult {
 	if m != nil {
@@ -429,15 +431,15 @@ func _ExecutionResult_OneofSizer(msg proto.Message) (n int) {
 }
 
 type ExecutionMetadata struct {
-	Mode ExecutionMetadata_ExecutionMode `protobuf:"varint,1,opt,name=mode,enum=admin.ExecutionMetadata_ExecutionMode" json:"mode,omitempty"`
+	Mode ExecutionMetadata_ExecutionMode `protobuf:"varint,1,opt,name=mode,proto3,enum=admin.ExecutionMetadata_ExecutionMode" json:"mode,omitempty"`
 	// Identifier of the entity that triggered this execution.
-	Principal string `protobuf:"bytes,2,opt,name=principal" json:"principal,omitempty"`
+	Principal string `protobuf:"bytes,2,opt,name=principal,proto3" json:"principal,omitempty"`
 	// Indicates the "nestedness" of this execution.
 	// If a user launches a workflow execution, the default nesting is 0.
 	// If this execution further launches a workflow (child workflow), the nesting level is incremented by 0 => 1
 	// Generally, if workflow at nesting level k launches a workflow then the child workflow will have
 	// nesting = k + 1.
-	Nesting              int32    `protobuf:"varint,3,opt,name=nesting" json:"nesting,omitempty"`
+	Nesting              int32    `protobuf:"varint,3,opt,name=nesting,proto3" json:"nesting,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -490,13 +492,13 @@ func (m *ExecutionMetadata) GetNesting() int32 {
 
 type ExecutionSpec struct {
 	// Launch plan urn to be executed
-	LaunchPlanUrn string `protobuf:"bytes,1,opt,name=launch_plan_urn,json=launchPlanUrn" json:"launch_plan_urn,omitempty"`
+	LaunchPlanUrn string `protobuf:"bytes,1,opt,name=launch_plan_urn,json=launchPlanUrn,proto3" json:"launch_plan_urn,omitempty"`
 	// Input values to be passed for the execution
-	Inputs *core.NamedValueCollection `protobuf:"bytes,2,opt,name=inputs" json:"inputs,omitempty"`
+	Inputs *core.NamedValueCollection `protobuf:"bytes,2,opt,name=inputs,proto3" json:"inputs,omitempty"`
 	// Metadata for the execution
-	Metadata *ExecutionMetadata `protobuf:"bytes,3,opt,name=metadata" json:"metadata,omitempty"`
+	Metadata *ExecutionMetadata `protobuf:"bytes,3,opt,name=metadata,proto3" json:"metadata,omitempty"`
 	// List of notifications based on Execution status transitions
-	Notifications        []*Notification `protobuf:"bytes,4,rep,name=notifications" json:"notifications,omitempty"`
+	Notifications        []*Notification `protobuf:"bytes,4,rep,name=notifications,proto3" json:"notifications,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
 	XXX_unrecognized     []byte          `json:"-"`
 	XXX_sizecache        int32           `json:"-"`

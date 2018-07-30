@@ -89,9 +89,9 @@ func (Notification_Type) EnumDescriptor() ([]byte, []int) {
 
 // Encapsulation of fields that identifies a Flyte resource
 type Identifier struct {
-	Project              string   `protobuf:"bytes,1,opt,name=project" json:"project,omitempty"`
-	Domain               string   `protobuf:"bytes,2,opt,name=domain" json:"domain,omitempty"`
-	Name                 string   `protobuf:"bytes,3,opt,name=name" json:"name,omitempty"`
+	Project              string   `protobuf:"bytes,1,opt,name=project,proto3" json:"project,omitempty"`
+	Domain               string   `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`
+	Name                 string   `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -143,7 +143,7 @@ func (m *Identifier) GetName() string {
 }
 
 type IdentifierList struct {
-	Entities             []*Identifier `protobuf:"bytes,1,rep,name=entities" json:"entities,omitempty"`
+	Entities             []*Identifier `protobuf:"bytes,1,rep,name=entities,proto3" json:"entities,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
 	XXX_unrecognized     []byte        `json:"-"`
 	XXX_sizecache        int32         `json:"-"`
@@ -183,16 +183,16 @@ func (m *IdentifierList) GetEntities() []*Identifier {
 // Declares an input parameter.
 type Parameter struct {
 	// +required Variable. Defines a name and a type to reference/compare through out the system.
-	Var *core.Variable `protobuf:"bytes,1,opt,name=var" json:"var,omitempty"`
+	Var *core.Variable `protobuf:"bytes,1,opt,name=var,proto3" json:"var,omitempty"`
 	// +optional
 	//
 	// Types that are valid to be assigned to Default:
 	//	*Parameter_Value
 	Default isParameter_Default `protobuf_oneof:"default"`
 	// +optional, is this value required to be filled.
-	Required bool `protobuf:"varint,3,opt,name=required" json:"required,omitempty"`
+	Required bool `protobuf:"varint,3,opt,name=required,proto3" json:"required,omitempty"`
 	// +optional string describing input variable
-	Description          string   `protobuf:"bytes,4,opt,name=description" json:"description,omitempty"`
+	Description          string   `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -222,12 +222,19 @@ func (m *Parameter) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Parameter proto.InternalMessageInfo
 
+func (m *Parameter) GetVar() *core.Variable {
+	if m != nil {
+		return m.Var
+	}
+	return nil
+}
+
 type isParameter_Default interface {
 	isParameter_Default()
 }
 
 type Parameter_Value struct {
-	Value *core.Literal `protobuf:"bytes,2,opt,name=value,oneof"`
+	Value *core.Literal `protobuf:"bytes,2,opt,name=value,proto3,oneof"`
 }
 
 func (*Parameter_Value) isParameter_Default() {}
@@ -235,13 +242,6 @@ func (*Parameter_Value) isParameter_Default() {}
 func (m *Parameter) GetDefault() isParameter_Default {
 	if m != nil {
 		return m.Default
-	}
-	return nil
-}
-
-func (m *Parameter) GetVar() *core.Variable {
-	if m != nil {
-		return m.Var
 	}
 	return nil
 }
@@ -324,8 +324,8 @@ func _Parameter_OneofSizer(msg proto.Message) (n int) {
 
 // Structure of notifications based on execution status.
 type Notification struct {
-	Type                 Notification_Type `protobuf:"varint,1,opt,name=type,enum=admin.Notification_Type" json:"type,omitempty"`
-	Phases               []ExecutionPhase  `protobuf:"varint,2,rep,packed,name=phases,enum=admin.ExecutionPhase" json:"phases,omitempty"`
+	Type                 Notification_Type `protobuf:"varint,1,opt,name=type,proto3,enum=admin.Notification_Type" json:"type,omitempty"`
+	Phases               []ExecutionPhase  `protobuf:"varint,2,rep,packed,name=phases,proto3,enum=admin.ExecutionPhase" json:"phases,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_unrecognized     []byte            `json:"-"`
 	XXX_sizecache        int32             `json:"-"`

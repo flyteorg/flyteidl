@@ -21,8 +21,8 @@ const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
 // Defines a condition and the execution unit that should be executed if the condition is satisfied.
 type IfBlock struct {
-	Condition            *BooleanExpression `protobuf:"bytes,1,opt,name=condition" json:"condition,omitempty"`
-	ThenNode             *Node              `protobuf:"bytes,2,opt,name=then_node,json=thenNode" json:"then_node,omitempty"`
+	Condition            *BooleanExpression `protobuf:"bytes,1,opt,name=condition,proto3" json:"condition,omitempty"`
+	ThenNode             *Node              `protobuf:"bytes,2,opt,name=then_node,json=thenNode,proto3" json:"then_node,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_unrecognized     []byte             `json:"-"`
 	XXX_sizecache        int32              `json:"-"`
@@ -70,9 +70,9 @@ func (m *IfBlock) GetThenNode() *Node {
 // If no conditions were satisfied, the else_node will be executed.
 type IfElseBlock struct {
 	// +required. First condition to evaluate.
-	Case *IfBlock `protobuf:"bytes,1,opt,name=case" json:"case,omitempty"`
+	Case *IfBlock `protobuf:"bytes,1,opt,name=case,proto3" json:"case,omitempty"`
 	// +optional. Additional branches to evaluate.
-	Other []*IfBlock `protobuf:"bytes,2,rep,name=other" json:"other,omitempty"`
+	Other []*IfBlock `protobuf:"bytes,2,rep,name=other,proto3" json:"other,omitempty"`
 	// +required.
 	//
 	// Types that are valid to be assigned to Default:
@@ -108,27 +108,6 @@ func (m *IfElseBlock) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_IfElseBlock proto.InternalMessageInfo
 
-type isIfElseBlock_Default interface {
-	isIfElseBlock_Default()
-}
-
-type IfElseBlock_ElseNode struct {
-	ElseNode *Node `protobuf:"bytes,3,opt,name=else_node,json=elseNode,oneof"`
-}
-type IfElseBlock_Error struct {
-	Error *Error `protobuf:"bytes,4,opt,name=error,oneof"`
-}
-
-func (*IfElseBlock_ElseNode) isIfElseBlock_Default() {}
-func (*IfElseBlock_Error) isIfElseBlock_Default()    {}
-
-func (m *IfElseBlock) GetDefault() isIfElseBlock_Default {
-	if m != nil {
-		return m.Default
-	}
-	return nil
-}
-
 func (m *IfElseBlock) GetCase() *IfBlock {
 	if m != nil {
 		return m.Case
@@ -139,6 +118,29 @@ func (m *IfElseBlock) GetCase() *IfBlock {
 func (m *IfElseBlock) GetOther() []*IfBlock {
 	if m != nil {
 		return m.Other
+	}
+	return nil
+}
+
+type isIfElseBlock_Default interface {
+	isIfElseBlock_Default()
+}
+
+type IfElseBlock_ElseNode struct {
+	ElseNode *Node `protobuf:"bytes,3,opt,name=else_node,json=elseNode,proto3,oneof"`
+}
+
+type IfElseBlock_Error struct {
+	Error *Error `protobuf:"bytes,4,opt,name=error,proto3,oneof"`
+}
+
+func (*IfElseBlock_ElseNode) isIfElseBlock_Default() {}
+
+func (*IfElseBlock_Error) isIfElseBlock_Default() {}
+
+func (m *IfElseBlock) GetDefault() isIfElseBlock_Default {
+	if m != nil {
+		return m.Default
 	}
 	return nil
 }
@@ -235,7 +237,7 @@ func _IfElseBlock_OneofSizer(msg proto.Message) (n int) {
 // runtime based on a series of conditions that get evaluated on various parameters (e.g. inputs, primtives).
 type BranchNode struct {
 	// +required
-	IfElse               *IfElseBlock `protobuf:"bytes,2,opt,name=if_else,json=ifElse" json:"if_else,omitempty"`
+	IfElse               *IfElseBlock `protobuf:"bytes,2,opt,name=if_else,json=ifElse,proto3" json:"if_else,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
 	XXX_unrecognized     []byte       `json:"-"`
 	XXX_sizecache        int32        `json:"-"`
@@ -311,7 +313,7 @@ type isTaskNode_Reference interface {
 }
 
 type TaskNode_ReferenceId struct {
-	ReferenceId string `protobuf:"bytes,1,opt,name=reference_id,json=referenceId,oneof"`
+	ReferenceId string `protobuf:"bytes,1,opt,name=reference_id,json=referenceId,proto3,oneof"`
 }
 
 func (*TaskNode_ReferenceId) isTaskNode_Reference() {}
@@ -421,14 +423,16 @@ type isWorkflowNode_Reference interface {
 }
 
 type WorkflowNode_LaunchPlanReferenceId struct {
-	LaunchPlanReferenceId string `protobuf:"bytes,1,opt,name=launch_plan_reference_id,json=launchPlanReferenceId,oneof"`
+	LaunchPlanReferenceId string `protobuf:"bytes,1,opt,name=launch_plan_reference_id,json=launchPlanReferenceId,proto3,oneof"`
 }
+
 type WorkflowNode_WorkflowTemplate struct {
-	WorkflowTemplate *WorkflowTemplate `protobuf:"bytes,2,opt,name=workflow_template,json=workflowTemplate,oneof"`
+	WorkflowTemplate *WorkflowTemplate `protobuf:"bytes,2,opt,name=workflow_template,json=workflowTemplate,proto3,oneof"`
 }
 
 func (*WorkflowNode_LaunchPlanReferenceId) isWorkflowNode_Reference() {}
-func (*WorkflowNode_WorkflowTemplate) isWorkflowNode_Reference()      {}
+
+func (*WorkflowNode_WorkflowTemplate) isWorkflowNode_Reference() {}
 
 func (m *WorkflowNode) GetReference() isWorkflowNode_Reference {
 	if m != nil {
@@ -524,11 +528,11 @@ func _WorkflowNode_OneofSizer(msg proto.Message) (n int) {
 // Defines extra information about the Node.
 type NodeMetadata struct {
 	// A friendly name for the Node
-	Name string `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
+	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	// The overall timeout of a task.
-	Timeout *duration.Duration `protobuf:"bytes,4,opt,name=timeout" json:"timeout,omitempty"`
+	Timeout *duration.Duration `protobuf:"bytes,4,opt,name=timeout,proto3" json:"timeout,omitempty"`
 	// Number of retries per task.
-	Retries              *RetryStrategy `protobuf:"bytes,5,opt,name=retries" json:"retries,omitempty"`
+	Retries              *RetryStrategy `protobuf:"bytes,5,opt,name=retries,proto3" json:"retries,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
 	XXX_unrecognized     []byte         `json:"-"`
 	XXX_sizecache        int32          `json:"-"`
@@ -582,9 +586,9 @@ func (m *NodeMetadata) GetRetries() *RetryStrategy {
 // Links a variable to an alias.
 type Alias struct {
 	// Must match one of the output variable names on a node.
-	Var string `protobuf:"bytes,1,opt,name=var" json:"var,omitempty"`
+	Var string `protobuf:"bytes,1,opt,name=var,proto3" json:"var,omitempty"`
 	// A workflow-level unique alias that downstream nodes can refer to in their input.
-	Alias                string   `protobuf:"bytes,2,opt,name=alias" json:"alias,omitempty"`
+	Alias                string   `protobuf:"bytes,2,opt,name=alias,proto3" json:"alias,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -633,20 +637,20 @@ func (m *Alias) GetAlias() string {
 type Node struct {
 	// A workflow-level unique identifier that identifies this node in the workflow. "inputs" and "outputs" are reserved
 	// node ids that cannot be used by other nodes.
-	Id string `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
+	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// Extra metadata about the node.
-	Metadata *NodeMetadata `protobuf:"bytes,2,opt,name=metadata" json:"metadata,omitempty"`
+	Metadata *NodeMetadata `protobuf:"bytes,2,opt,name=metadata,proto3" json:"metadata,omitempty"`
 	// Specifies how to bind the underlying interface's inputs. All required inputs specified in the underlying interface
 	// must be fullfilled.
-	Inputs []*Binding `protobuf:"bytes,3,rep,name=inputs" json:"inputs,omitempty"`
+	Inputs []*Binding `protobuf:"bytes,3,rep,name=inputs,proto3" json:"inputs,omitempty"`
 	// +optional Specifies execution depdendency for this node ensuring it will only get scheduled to run after all its
 	// upstream nodes have completed. This node will have an implicit depdendency on any node that appears in inputs
 	// field.
-	UpstreamNodeIds []string `protobuf:"bytes,4,rep,name=upstream_node_ids,json=upstreamNodeIds" json:"upstream_node_ids,omitempty"`
+	UpstreamNodeIds []string `protobuf:"bytes,4,rep,name=upstream_node_ids,json=upstreamNodeIds,proto3" json:"upstream_node_ids,omitempty"`
 	// +optional. A node can define aliases for a subset of its outputs. This is particularly useful if different nodes
 	// need to conform to the same interface (e.g. all branches in a branch node). Downstream nodes must refer to this
 	// nodes outputs using the alias if one's specified.
-	OutputAliases []*Alias `protobuf:"bytes,5,rep,name=output_aliases,json=outputAliases" json:"output_aliases,omitempty"`
+	OutputAliases []*Alias `protobuf:"bytes,5,rep,name=output_aliases,json=outputAliases,proto3" json:"output_aliases,omitempty"`
 	// Information about the target to execute in this node.
 	//
 	// Types that are valid to be assigned to Target:
@@ -683,31 +687,6 @@ func (m *Node) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Node proto.InternalMessageInfo
 
-type isNode_Target interface {
-	isNode_Target()
-}
-
-type Node_TaskNode struct {
-	TaskNode *TaskNode `protobuf:"bytes,6,opt,name=task_node,json=taskNode,oneof"`
-}
-type Node_WorkflowNode struct {
-	WorkflowNode *WorkflowNode `protobuf:"bytes,7,opt,name=workflow_node,json=workflowNode,oneof"`
-}
-type Node_BranchNode struct {
-	BranchNode *BranchNode `protobuf:"bytes,8,opt,name=branch_node,json=branchNode,oneof"`
-}
-
-func (*Node_TaskNode) isNode_Target()     {}
-func (*Node_WorkflowNode) isNode_Target() {}
-func (*Node_BranchNode) isNode_Target()   {}
-
-func (m *Node) GetTarget() isNode_Target {
-	if m != nil {
-		return m.Target
-	}
-	return nil
-}
-
 func (m *Node) GetId() string {
 	if m != nil {
 		return m.Id
@@ -739,6 +718,35 @@ func (m *Node) GetUpstreamNodeIds() []string {
 func (m *Node) GetOutputAliases() []*Alias {
 	if m != nil {
 		return m.OutputAliases
+	}
+	return nil
+}
+
+type isNode_Target interface {
+	isNode_Target()
+}
+
+type Node_TaskNode struct {
+	TaskNode *TaskNode `protobuf:"bytes,6,opt,name=task_node,json=taskNode,proto3,oneof"`
+}
+
+type Node_WorkflowNode struct {
+	WorkflowNode *WorkflowNode `protobuf:"bytes,7,opt,name=workflow_node,json=workflowNode,proto3,oneof"`
+}
+
+type Node_BranchNode struct {
+	BranchNode *BranchNode `protobuf:"bytes,8,opt,name=branch_node,json=branchNode,proto3,oneof"`
+}
+
+func (*Node_TaskNode) isNode_Target() {}
+
+func (*Node_WorkflowNode) isNode_Target() {}
+
+func (*Node_BranchNode) isNode_Target() {}
+
+func (m *Node) GetTarget() isNode_Target {
+	if m != nil {
+		return m.Target
 	}
 	return nil
 }
@@ -859,7 +867,7 @@ func _Node_OneofSizer(msg proto.Message) (n int) {
 
 // Metadata for the entire workflow.
 type WorkflowMetadata struct {
-	ExecutionRole        string   `protobuf:"bytes,1,opt,name=execution_role,json=executionRole" json:"execution_role,omitempty"`
+	ExecutionRole        string   `protobuf:"bytes,1,opt,name=execution_role,json=executionRole,proto3" json:"execution_role,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -900,22 +908,22 @@ func (m *WorkflowMetadata) GetExecutionRole() string {
 // directed acyclic graph.
 type WorkflowTemplate struct {
 	// This is an autogenerated id by the system. The id is globally unique across the system.
-	Id string `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
+	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// Extra metadata about the workflow.
-	Metadata *WorkflowMetadata `protobuf:"bytes,2,opt,name=metadata" json:"metadata,omitempty"`
+	Metadata *WorkflowMetadata `protobuf:"bytes,2,opt,name=metadata,proto3" json:"metadata,omitempty"`
 	// Defines a strongly typed interface for the Workflow. This can include some optional parameters.
-	Interface *TypedInterface `protobuf:"bytes,3,opt,name=interface" json:"interface,omitempty"`
+	Interface *TypedInterface `protobuf:"bytes,3,opt,name=interface,proto3" json:"interface,omitempty"`
 	// A list of nodes. In addition, "globals" is a special reserved node id that can be used to consume workflow inputs.
-	Nodes []*Node `protobuf:"bytes,4,rep,name=nodes" json:"nodes,omitempty"`
+	Nodes []*Node `protobuf:"bytes,4,rep,name=nodes,proto3" json:"nodes,omitempty"`
 	// A list of output bindings that specify how to construct workflow outputs. Bindings can pull node outputs or
 	// specify literals. All workflow outputs specified in the interface field must be bound in order for the workflow
 	// to be validated. A workflow has an implicit depdendency on all of its nodes to execute successfully in order to
 	// bind final outputs.
-	Outputs []*Binding `protobuf:"bytes,5,rep,name=outputs" json:"outputs,omitempty"`
+	Outputs []*Binding `protobuf:"bytes,5,rep,name=outputs,proto3" json:"outputs,omitempty"`
 	// +optional A catch-all node. This node is executed whenever the execution engine determines the workflow has failed.
 	// The interface of this node must match the Workflow interface with an additional input named "error" of type
 	// pb.lyft.flyte.core.Error.
-	FailureNode          *Node    `protobuf:"bytes,6,opt,name=failure_node,json=failureNode" json:"failure_node,omitempty"`
+	FailureNode          *Node    `protobuf:"bytes,6,opt,name=failure_node,json=failureNode,proto3" json:"failure_node,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`

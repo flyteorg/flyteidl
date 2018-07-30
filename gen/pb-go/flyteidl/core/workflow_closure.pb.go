@@ -21,10 +21,10 @@ const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 // Defines an enclosed package of workflow and tasks it references.
 type WorkflowClosure struct {
 	// required. Workflow template.
-	Workflow *WorkflowTemplate `protobuf:"bytes,1,opt,name=workflow" json:"workflow,omitempty"`
+	Workflow *WorkflowTemplate `protobuf:"bytes,1,opt,name=workflow,proto3" json:"workflow,omitempty"`
 	// optional. A collection of tasks referenced by the workflow. Only needed if the workflow
 	// references tasks.
-	Tasks                []*TaskTemplate `protobuf:"bytes,2,rep,name=tasks" json:"tasks,omitempty"`
+	Tasks                []*TaskTemplate `protobuf:"bytes,2,rep,name=tasks,proto3" json:"tasks,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
 	XXX_unrecognized     []byte          `json:"-"`
 	XXX_sizecache        int32           `json:"-"`

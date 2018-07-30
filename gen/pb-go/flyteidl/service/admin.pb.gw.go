@@ -363,14 +363,14 @@ func RegisterAdminServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.S
 	defer func() {
 		if err != nil {
 			if cerr := conn.Close(); cerr != nil {
-				grpclog.Printf("Failed to close conn to %s: %v", endpoint, cerr)
+				grpclog.Infof("Failed to close conn to %s: %v", endpoint, cerr)
 			}
 			return
 		}
 		go func() {
 			<-ctx.Done()
 			if cerr := conn.Close(); cerr != nil {
-				grpclog.Printf("Failed to close conn to %s: %v", endpoint, cerr)
+				grpclog.Infof("Failed to close conn to %s: %v", endpoint, cerr)
 			}
 		}()
 	}()
@@ -384,8 +384,8 @@ func RegisterAdminServiceHandler(ctx context.Context, mux *runtime.ServeMux, con
 	return RegisterAdminServiceHandlerClient(ctx, mux, NewAdminServiceClient(conn))
 }
 
-// RegisterAdminServiceHandler registers the http handlers for service AdminService to "mux".
-// The handlers forward requests to the grpc endpoint over the given implementation of "AdminServiceClient".
+// RegisterAdminServiceHandlerClient registers the http handlers for service AdminService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "AdminServiceClient".
 // Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "AdminServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "AdminServiceClient" to call the correct interceptors.

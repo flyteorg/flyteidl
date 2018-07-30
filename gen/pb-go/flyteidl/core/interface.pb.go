@@ -22,11 +22,11 @@ const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 type Variable struct {
 	// Variable name. This can be referenced in input/output bindings to pass data between
 	// nodes/workflows. Variable name is case-sensitive.
-	Name string `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
+	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	// Variable literal type.
-	Type *LiteralType `protobuf:"bytes,2,opt,name=type" json:"type,omitempty"`
+	Type *LiteralType `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
 	// +optional string describing input variable
-	Description          string   `protobuf:"bytes,3,opt,name=description" json:"description,omitempty"`
+	Description          string   `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -79,8 +79,8 @@ func (m *Variable) GetDescription() string {
 
 // Defines strongly typed inputs and outputs.
 type TypedInterface struct {
-	Inputs               []*Variable `protobuf:"bytes,1,rep,name=inputs" json:"inputs,omitempty"`
-	Outputs              []*Variable `protobuf:"bytes,2,rep,name=outputs" json:"outputs,omitempty"`
+	Inputs               []*Variable `protobuf:"bytes,1,rep,name=inputs,proto3" json:"inputs,omitempty"`
+	Outputs              []*Variable `protobuf:"bytes,2,rep,name=outputs,proto3" json:"outputs,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
 	XXX_unrecognized     []byte      `json:"-"`
 	XXX_sizecache        int32       `json:"-"`
@@ -126,8 +126,8 @@ func (m *TypedInterface) GetOutputs() []*Variable {
 
 // Structure to encapsulate inputs passed in and outputs generated.
 type NamedValue struct {
-	Name                 string   `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
-	Value                *Literal `protobuf:"bytes,2,opt,name=value" json:"value,omitempty"`
+	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Value                *Literal `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -173,7 +173,7 @@ func (m *NamedValue) GetValue() *Literal {
 
 // Structure to encapsulate list of NamedValues
 type NamedValueCollection struct {
-	Values               []*NamedValue `protobuf:"bytes,1,rep,name=values" json:"values,omitempty"`
+	Values               []*NamedValue `protobuf:"bytes,1,rep,name=values,proto3" json:"values,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
 	XXX_unrecognized     []byte        `json:"-"`
 	XXX_sizecache        int32         `json:"-"`

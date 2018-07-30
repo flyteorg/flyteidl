@@ -20,9 +20,9 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
 type TaskCreateRequest struct {
-	Id                   *Identifier `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
-	Version              string      `protobuf:"bytes,2,opt,name=version" json:"version,omitempty"`
-	Spec                 *TaskSpec   `protobuf:"bytes,3,opt,name=spec" json:"spec,omitempty"`
+	Id                   *Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Version              string      `protobuf:"bytes,2,opt,name=version,proto3" json:"version,omitempty"`
+	Spec                 *TaskSpec   `protobuf:"bytes,3,opt,name=spec,proto3" json:"spec,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
 	XXX_unrecognized     []byte      `json:"-"`
 	XXX_sizecache        int32       `json:"-"`
@@ -74,12 +74,12 @@ func (m *TaskCreateRequest) GetSpec() *TaskSpec {
 }
 
 type TaskListRequest struct {
-	Project              string   `protobuf:"bytes,1,opt,name=project" json:"project,omitempty"`
-	Domain               string   `protobuf:"bytes,2,opt,name=domain" json:"domain,omitempty"`
-	Name                 string   `protobuf:"bytes,3,opt,name=name" json:"name,omitempty"`
-	Limit                uint32   `protobuf:"varint,4,opt,name=limit" json:"limit,omitempty"`
-	Offset               uint32   `protobuf:"varint,5,opt,name=offset" json:"offset,omitempty"`
-	Filters              string   `protobuf:"bytes,6,opt,name=filters" json:"filters,omitempty"`
+	Project              string   `protobuf:"bytes,1,opt,name=project,proto3" json:"project,omitempty"`
+	Domain               string   `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`
+	Name                 string   `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Limit                uint32   `protobuf:"varint,4,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset               uint32   `protobuf:"varint,5,opt,name=offset,proto3" json:"offset,omitempty"`
+	Filters              string   `protobuf:"bytes,6,opt,name=filters,proto3" json:"filters,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -152,7 +152,7 @@ func (m *TaskListRequest) GetFilters() string {
 }
 
 type TaskCreateResponse struct {
-	Urn                  string   `protobuf:"bytes,1,opt,name=urn" json:"urn,omitempty"`
+	Urn                  string   `protobuf:"bytes,1,opt,name=urn,proto3" json:"urn,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -190,10 +190,10 @@ func (m *TaskCreateResponse) GetUrn() string {
 }
 
 type Task struct {
-	Id                   *Identifier `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
-	Version              string      `protobuf:"bytes,2,opt,name=version" json:"version,omitempty"`
-	Urn                  string      `protobuf:"bytes,3,opt,name=urn" json:"urn,omitempty"`
-	Spec                 *TaskSpec   `protobuf:"bytes,6,opt,name=spec" json:"spec,omitempty"`
+	Id                   *Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Version              string      `protobuf:"bytes,2,opt,name=version,proto3" json:"version,omitempty"`
+	Urn                  string      `protobuf:"bytes,3,opt,name=urn,proto3" json:"urn,omitempty"`
+	Spec                 *TaskSpec   `protobuf:"bytes,6,opt,name=spec,proto3" json:"spec,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
 	XXX_unrecognized     []byte      `json:"-"`
 	XXX_sizecache        int32       `json:"-"`
@@ -252,7 +252,7 @@ func (m *Task) GetSpec() *TaskSpec {
 }
 
 type TaskList struct {
-	Tasks                []*Task  `protobuf:"bytes,1,rep,name=tasks" json:"tasks,omitempty"`
+	Tasks                []*Task  `protobuf:"bytes,1,rep,name=tasks,proto3" json:"tasks,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -290,7 +290,7 @@ func (m *TaskList) GetTasks() []*Task {
 }
 
 type TaskSpec struct {
-	Task                 *core.TaskTemplate `protobuf:"bytes,1,opt,name=task" json:"task,omitempty"`
+	Task                 *core.TaskTemplate `protobuf:"bytes,1,opt,name=task,proto3" json:"task,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_unrecognized     []byte             `json:"-"`
 	XXX_sizecache        int32              `json:"-"`

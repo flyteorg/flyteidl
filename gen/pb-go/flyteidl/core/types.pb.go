@@ -107,7 +107,7 @@ func (SchemaType_SchemaColumn_SchemaColumnType) EnumDescriptor() ([]byte, []int)
 // Defines schema columns and types to strongly type-validate schemas interoperability.
 type SchemaType struct {
 	// A list of ordered columns this schema comprises of.
-	Columns              []*SchemaType_SchemaColumn `protobuf:"bytes,3,rep,name=columns" json:"columns,omitempty"`
+	Columns              []*SchemaType_SchemaColumn `protobuf:"bytes,3,rep,name=columns,proto3" json:"columns,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                   `json:"-"`
 	XXX_unrecognized     []byte                     `json:"-"`
 	XXX_sizecache        int32                      `json:"-"`
@@ -146,9 +146,9 @@ func (m *SchemaType) GetColumns() []*SchemaType_SchemaColumn {
 
 type SchemaType_SchemaColumn struct {
 	// A unique name -within the schema type- for the column
-	Name string `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
+	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	// The column type. This allows a limited set of types currently.
-	Type                 SchemaType_SchemaColumn_SchemaColumnType `protobuf:"varint,2,opt,name=type,enum=core.SchemaType_SchemaColumn_SchemaColumnType" json:"type,omitempty"`
+	Type                 SchemaType_SchemaColumn_SchemaColumnType `protobuf:"varint,2,opt,name=type,proto3,enum=core.SchemaType_SchemaColumn_SchemaColumnType" json:"type,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                 `json:"-"`
 	XXX_unrecognized     []byte                                   `json:"-"`
 	XXX_sizecache        int32                                    `json:"-"`
@@ -234,22 +234,28 @@ type isLiteralType_Type interface {
 }
 
 type LiteralType_Simple struct {
-	Simple SimpleType `protobuf:"varint,1,opt,name=simple,enum=core.SimpleType,oneof"`
-}
-type LiteralType_Schema struct {
-	Schema *SchemaType `protobuf:"bytes,2,opt,name=schema,oneof"`
-}
-type LiteralType_CollectionType struct {
-	CollectionType *LiteralType `protobuf:"bytes,3,opt,name=collection_type,json=collectionType,oneof"`
-}
-type LiteralType_MapValueType struct {
-	MapValueType *LiteralType `protobuf:"bytes,4,opt,name=map_value_type,json=mapValueType,oneof"`
+	Simple SimpleType `protobuf:"varint,1,opt,name=simple,proto3,enum=core.SimpleType,oneof"`
 }
 
-func (*LiteralType_Simple) isLiteralType_Type()         {}
-func (*LiteralType_Schema) isLiteralType_Type()         {}
+type LiteralType_Schema struct {
+	Schema *SchemaType `protobuf:"bytes,2,opt,name=schema,proto3,oneof"`
+}
+
+type LiteralType_CollectionType struct {
+	CollectionType *LiteralType `protobuf:"bytes,3,opt,name=collection_type,json=collectionType,proto3,oneof"`
+}
+
+type LiteralType_MapValueType struct {
+	MapValueType *LiteralType `protobuf:"bytes,4,opt,name=map_value_type,json=mapValueType,proto3,oneof"`
+}
+
+func (*LiteralType_Simple) isLiteralType_Type() {}
+
+func (*LiteralType_Schema) isLiteralType_Type() {}
+
 func (*LiteralType_CollectionType) isLiteralType_Type() {}
-func (*LiteralType_MapValueType) isLiteralType_Type()   {}
+
+func (*LiteralType_MapValueType) isLiteralType_Type() {}
 
 func (m *LiteralType) GetType() isLiteralType_Type {
 	if m != nil {
@@ -397,9 +403,9 @@ func _LiteralType_OneofSizer(msg proto.Message) (n int) {
 // the underlying interface of the node.
 type OutputReference struct {
 	// Node id must exist at the graph layer.
-	NodeId string `protobuf:"bytes,1,opt,name=node_id,json=nodeId" json:"node_id,omitempty"`
+	NodeId string `protobuf:"bytes,1,opt,name=node_id,json=nodeId,proto3" json:"node_id,omitempty"`
 	// Variable name must refer to an output variable for the node.
-	Var                  string   `protobuf:"bytes,2,opt,name=var" json:"var,omitempty"`
+	Var                  string   `protobuf:"bytes,2,opt,name=var,proto3" json:"var,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -446,9 +452,9 @@ func (m *OutputReference) GetVar() string {
 // Represents an error thrown from a node.
 type Error struct {
 	// The node id that threw the error.
-	FailedNodeId string `protobuf:"bytes,1,opt,name=failed_node_id,json=failedNodeId" json:"failed_node_id,omitempty"`
+	FailedNodeId string `protobuf:"bytes,1,opt,name=failed_node_id,json=failedNodeId,proto3" json:"failed_node_id,omitempty"`
 	// Error message thrown.
-	Message              string   `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
+	Message              string   `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`

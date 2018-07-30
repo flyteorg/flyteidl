@@ -51,7 +51,7 @@ func (Pet_Nested_DeepEnum) EnumDescriptor() ([]byte, []int) {
 }
 
 type EchoMessage struct {
-	Value                string   `protobuf:"bytes,1,opt,name=value" json:"value,omitempty"`
+	Value                string   `protobuf:"bytes,1,opt,name=value,proto3" json:"value,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -89,8 +89,8 @@ func (m *EchoMessage) GetValue() string {
 }
 
 type Pet struct {
-	Name                 string      `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
-	Description          *Pet_Nested `protobuf:"bytes,3,opt,name=description" json:"description,omitempty"`
+	Name                 string      `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Description          *Pet_Nested `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
 	XXX_unrecognized     []byte      `json:"-"`
 	XXX_sizecache        int32       `json:"-"`
@@ -135,9 +135,9 @@ func (m *Pet) GetDescription() *Pet_Nested {
 }
 
 type Pet_Nested struct {
-	Colors               []string            `protobuf:"bytes,1,rep,name=colors" json:"colors,omitempty"`
-	Fluffiness           uint32              `protobuf:"varint,2,opt,name=fluffiness" json:"fluffiness,omitempty"`
-	Ok                   Pet_Nested_DeepEnum `protobuf:"varint,3,opt,name=ok,enum=lyft.flyte.flyteadmin.Pet_Nested_DeepEnum" json:"ok,omitempty"`
+	Colors               []string            `protobuf:"bytes,1,rep,name=colors,proto3" json:"colors,omitempty"`
+	Fluffiness           uint32              `protobuf:"varint,2,opt,name=fluffiness,proto3" json:"fluffiness,omitempty"`
+	Ok                   Pet_Nested_DeepEnum `protobuf:"varint,3,opt,name=ok,proto3,enum=lyft.flyte.flyteadmin.Pet_Nested_DeepEnum" json:"ok,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
 	XXX_unrecognized     []byte              `json:"-"`
 	XXX_sizecache        int32               `json:"-"`
@@ -189,7 +189,7 @@ func (m *Pet_Nested) GetOk() Pet_Nested_DeepEnum {
 }
 
 type Human struct {
-	Name                 string   `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
+	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`

@@ -82,14 +82,14 @@ func RegisterEchoServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.Se
 	defer func() {
 		if err != nil {
 			if cerr := conn.Close(); cerr != nil {
-				grpclog.Printf("Failed to close conn to %s: %v", endpoint, cerr)
+				grpclog.Infof("Failed to close conn to %s: %v", endpoint, cerr)
 			}
 			return
 		}
 		go func() {
 			<-ctx.Done()
 			if cerr := conn.Close(); cerr != nil {
-				grpclog.Printf("Failed to close conn to %s: %v", endpoint, cerr)
+				grpclog.Infof("Failed to close conn to %s: %v", endpoint, cerr)
 			}
 		}()
 	}()
@@ -103,8 +103,8 @@ func RegisterEchoServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn
 	return RegisterEchoServiceHandlerClient(ctx, mux, NewEchoServiceClient(conn))
 }
 
-// RegisterEchoServiceHandler registers the http handlers for service EchoService to "mux".
-// The handlers forward requests to the grpc endpoint over the given implementation of "EchoServiceClient".
+// RegisterEchoServiceHandlerClient registers the http handlers for service EchoService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "EchoServiceClient".
 // Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "EchoServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "EchoServiceClient" to call the correct interceptors.
@@ -160,14 +160,14 @@ func RegisterPetServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.Ser
 	defer func() {
 		if err != nil {
 			if cerr := conn.Close(); cerr != nil {
-				grpclog.Printf("Failed to close conn to %s: %v", endpoint, cerr)
+				grpclog.Infof("Failed to close conn to %s: %v", endpoint, cerr)
 			}
 			return
 		}
 		go func() {
 			<-ctx.Done()
 			if cerr := conn.Close(); cerr != nil {
-				grpclog.Printf("Failed to close conn to %s: %v", endpoint, cerr)
+				grpclog.Infof("Failed to close conn to %s: %v", endpoint, cerr)
 			}
 		}()
 	}()
@@ -181,8 +181,8 @@ func RegisterPetServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn 
 	return RegisterPetServiceHandlerClient(ctx, mux, NewPetServiceClient(conn))
 }
 
-// RegisterPetServiceHandler registers the http handlers for service PetService to "mux".
-// The handlers forward requests to the grpc endpoint over the given implementation of "PetServiceClient".
+// RegisterPetServiceHandlerClient registers the http handlers for service PetService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "PetServiceClient".
 // Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "PetServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "PetServiceClient" to call the correct interceptors.

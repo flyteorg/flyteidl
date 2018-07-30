@@ -20,9 +20,9 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
 type WorkflowCreateRequest struct {
-	Id                   *Identifier   `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
-	Version              string        `protobuf:"bytes,2,opt,name=version" json:"version,omitempty"`
-	Spec                 *WorkflowSpec `protobuf:"bytes,3,opt,name=spec" json:"spec,omitempty"`
+	Id                   *Identifier   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Version              string        `protobuf:"bytes,2,opt,name=version,proto3" json:"version,omitempty"`
+	Spec                 *WorkflowSpec `protobuf:"bytes,3,opt,name=spec,proto3" json:"spec,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
 	XXX_unrecognized     []byte        `json:"-"`
 	XXX_sizecache        int32         `json:"-"`
@@ -74,12 +74,12 @@ func (m *WorkflowCreateRequest) GetSpec() *WorkflowSpec {
 }
 
 type WorkflowListRequest struct {
-	Project              string   `protobuf:"bytes,1,opt,name=project" json:"project,omitempty"`
-	Domain               string   `protobuf:"bytes,2,opt,name=domain" json:"domain,omitempty"`
-	Name                 string   `protobuf:"bytes,3,opt,name=name" json:"name,omitempty"`
-	Limit                uint32   `protobuf:"varint,4,opt,name=limit" json:"limit,omitempty"`
-	Offset               uint32   `protobuf:"varint,5,opt,name=offset" json:"offset,omitempty"`
-	Filters              string   `protobuf:"bytes,6,opt,name=filters" json:"filters,omitempty"`
+	Project              string   `protobuf:"bytes,1,opt,name=project,proto3" json:"project,omitempty"`
+	Domain               string   `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`
+	Name                 string   `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Limit                uint32   `protobuf:"varint,4,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset               uint32   `protobuf:"varint,5,opt,name=offset,proto3" json:"offset,omitempty"`
+	Filters              string   `protobuf:"bytes,6,opt,name=filters,proto3" json:"filters,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -152,7 +152,7 @@ func (m *WorkflowListRequest) GetFilters() string {
 }
 
 type WorkflowCreateResponse struct {
-	Urn                  string   `protobuf:"bytes,1,opt,name=urn" json:"urn,omitempty"`
+	Urn                  string   `protobuf:"bytes,1,opt,name=urn,proto3" json:"urn,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -190,10 +190,10 @@ func (m *WorkflowCreateResponse) GetUrn() string {
 }
 
 type Workflow struct {
-	Id                   *Identifier   `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
-	Version              string        `protobuf:"bytes,2,opt,name=version" json:"version,omitempty"`
-	Urn                  string        `protobuf:"bytes,3,opt,name=urn" json:"urn,omitempty"`
-	Spec                 *WorkflowSpec `protobuf:"bytes,4,opt,name=spec" json:"spec,omitempty"`
+	Id                   *Identifier   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Version              string        `protobuf:"bytes,2,opt,name=version,proto3" json:"version,omitempty"`
+	Urn                  string        `protobuf:"bytes,3,opt,name=urn,proto3" json:"urn,omitempty"`
+	Spec                 *WorkflowSpec `protobuf:"bytes,4,opt,name=spec,proto3" json:"spec,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
 	XXX_unrecognized     []byte        `json:"-"`
 	XXX_sizecache        int32         `json:"-"`
@@ -252,7 +252,7 @@ func (m *Workflow) GetSpec() *WorkflowSpec {
 }
 
 type WorkflowList struct {
-	Workflows            []*Workflow `protobuf:"bytes,1,rep,name=workflows" json:"workflows,omitempty"`
+	Workflows            []*Workflow `protobuf:"bytes,1,rep,name=workflows,proto3" json:"workflows,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
 	XXX_unrecognized     []byte      `json:"-"`
 	XXX_sizecache        int32       `json:"-"`
@@ -290,7 +290,7 @@ func (m *WorkflowList) GetWorkflows() []*Workflow {
 }
 
 type WorkflowSpec struct {
-	WorkflowTemplate     *core.WorkflowTemplate `protobuf:"bytes,1,opt,name=workflow_template,json=workflowTemplate" json:"workflow_template,omitempty"`
+	WorkflowTemplate     *core.WorkflowTemplate `protobuf:"bytes,1,opt,name=workflow_template,json=workflowTemplate,proto3" json:"workflow_template,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}               `json:"-"`
 	XXX_unrecognized     []byte                 `json:"-"`
 	XXX_sizecache        int32                  `json:"-"`

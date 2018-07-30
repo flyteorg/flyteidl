@@ -114,30 +114,40 @@ type isPrimitive_Value interface {
 }
 
 type Primitive_Integer struct {
-	Integer int64 `protobuf:"varint,1,opt,name=integer,oneof"`
-}
-type Primitive_FloatValue struct {
-	FloatValue float64 `protobuf:"fixed64,2,opt,name=float_value,json=floatValue,oneof"`
-}
-type Primitive_StringValue struct {
-	StringValue string `protobuf:"bytes,3,opt,name=string_value,json=stringValue,oneof"`
-}
-type Primitive_Boolean struct {
-	Boolean bool `protobuf:"varint,4,opt,name=boolean,oneof"`
-}
-type Primitive_Datetime struct {
-	Datetime *timestamp.Timestamp `protobuf:"bytes,5,opt,name=datetime,oneof"`
-}
-type Primitive_Duration struct {
-	Duration *duration.Duration `protobuf:"bytes,6,opt,name=duration,oneof"`
+	Integer int64 `protobuf:"varint,1,opt,name=integer,proto3,oneof"`
 }
 
-func (*Primitive_Integer) isPrimitive_Value()     {}
-func (*Primitive_FloatValue) isPrimitive_Value()  {}
+type Primitive_FloatValue struct {
+	FloatValue float64 `protobuf:"fixed64,2,opt,name=float_value,json=floatValue,proto3,oneof"`
+}
+
+type Primitive_StringValue struct {
+	StringValue string `protobuf:"bytes,3,opt,name=string_value,json=stringValue,proto3,oneof"`
+}
+
+type Primitive_Boolean struct {
+	Boolean bool `protobuf:"varint,4,opt,name=boolean,proto3,oneof"`
+}
+
+type Primitive_Datetime struct {
+	Datetime *timestamp.Timestamp `protobuf:"bytes,5,opt,name=datetime,proto3,oneof"`
+}
+
+type Primitive_Duration struct {
+	Duration *duration.Duration `protobuf:"bytes,6,opt,name=duration,proto3,oneof"`
+}
+
+func (*Primitive_Integer) isPrimitive_Value() {}
+
+func (*Primitive_FloatValue) isPrimitive_Value() {}
+
 func (*Primitive_StringValue) isPrimitive_Value() {}
-func (*Primitive_Boolean) isPrimitive_Value()     {}
-func (*Primitive_Datetime) isPrimitive_Value()    {}
-func (*Primitive_Duration) isPrimitive_Value()    {}
+
+func (*Primitive_Boolean) isPrimitive_Value() {}
+
+func (*Primitive_Datetime) isPrimitive_Value() {}
+
+func (*Primitive_Duration) isPrimitive_Value() {}
 
 func (m *Primitive) GetValue() isPrimitive_Value {
 	if m != nil {
@@ -356,9 +366,9 @@ var xxx_messageInfo_Void proto.InternalMessageInfo
 // Refers to an offloaded set of files. It encapsulates the type of the store and a unique uri for where the data is.
 // There ar eno restrictions on how the uri is formatted since it will depend on how to interact with the store.
 type Blob struct {
-	Metadata             *BlobMetadata `protobuf:"bytes,1,opt,name=metadata" json:"metadata,omitempty"`
-	BlobStore            BlobStore     `protobuf:"varint,2,opt,name=blob_store,json=blobStore,enum=core.BlobStore" json:"blob_store,omitempty"`
-	Uri                  string        `protobuf:"bytes,3,opt,name=uri" json:"uri,omitempty"`
+	Metadata             *BlobMetadata `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	BlobStore            BlobStore     `protobuf:"varint,2,opt,name=blob_store,json=blobStore,proto3,enum=core.BlobStore" json:"blob_store,omitempty"`
+	Uri                  string        `protobuf:"bytes,3,opt,name=uri,proto3" json:"uri,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
 	XXX_unrecognized     []byte        `json:"-"`
 	XXX_sizecache        int32         `json:"-"`
@@ -412,8 +422,8 @@ func (m *Blob) GetUri() string {
 type BlobMetadata struct {
 	// Format can be a free form string understood by SDK/UI etc like
 	// csv, parquet etc
-	Format               string                `protobuf:"bytes,1,opt,name=format" json:"format,omitempty"`
-	Type                 BlobMetadata_BlobType `protobuf:"varint,2,opt,name=type,enum=core.BlobMetadata_BlobType" json:"type,omitempty"`
+	Format               string                `protobuf:"bytes,1,opt,name=format,proto3" json:"format,omitempty"`
+	Type                 BlobMetadata_BlobType `protobuf:"varint,2,opt,name=type,proto3,enum=core.BlobMetadata_BlobType" json:"type,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}              `json:"-"`
 	XXX_unrecognized     []byte                `json:"-"`
 	XXX_sizecache        int32                 `json:"-"`
@@ -460,8 +470,8 @@ func (m *BlobMetadata) GetType() BlobMetadata_BlobType {
 // Defines an execution unit recognized by the system and can be referred to by other units to listen to its execution
 // events (started, succeeded, aborted... etc.).
 type Waitable struct {
-	SurrogateKey         string   `protobuf:"bytes,1,opt,name=surrogate_key,json=surrogateKey" json:"surrogate_key,omitempty"`
-	ExecutionUri         string   `protobuf:"bytes,2,opt,name=execution_uri,json=executionUri" json:"execution_uri,omitempty"`
+	SurrogateKey         string   `protobuf:"bytes,1,opt,name=surrogate_key,json=surrogateKey,proto3" json:"surrogate_key,omitempty"`
+	ExecutionUri         string   `protobuf:"bytes,2,opt,name=execution_uri,json=executionUri,proto3" json:"execution_uri,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -509,7 +519,7 @@ func (m *Waitable) GetExecutionUri() string {
 // It's strongly advisable that consumers of this type define a unique tag and validate the tag before parsing the data.
 type Binary struct {
 	Value                []byte   `protobuf:"bytes,1,opt,name=value,proto3" json:"value,omitempty"`
-	Tag                  string   `protobuf:"bytes,2,opt,name=tag" json:"tag,omitempty"`
+	Tag                  string   `protobuf:"bytes,2,opt,name=tag,proto3" json:"tag,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -555,9 +565,9 @@ func (m *Binary) GetTag() string {
 
 // A strongly typed schema that defines the interface of data retrieved from the underlying storage medium.
 type Schema struct {
-	Uri                  string      `protobuf:"bytes,1,opt,name=uri" json:"uri,omitempty"`
-	BlobStore            BlobStore   `protobuf:"varint,2,opt,name=blob_store,json=blobStore,enum=core.BlobStore" json:"blob_store,omitempty"`
-	Type                 *SchemaType `protobuf:"bytes,3,opt,name=type" json:"type,omitempty"`
+	Uri                  string      `protobuf:"bytes,1,opt,name=uri,proto3" json:"uri,omitempty"`
+	BlobStore            BlobStore   `protobuf:"varint,2,opt,name=blob_store,json=blobStore,proto3,enum=core.BlobStore" json:"blob_store,omitempty"`
+	Type                 *SchemaType `protobuf:"bytes,3,opt,name=type,proto3" json:"type,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
 	XXX_unrecognized     []byte      `json:"-"`
 	XXX_sizecache        int32       `json:"-"`
@@ -652,34 +662,46 @@ type isScalar_Value interface {
 }
 
 type Scalar_Primitive struct {
-	Primitive *Primitive `protobuf:"bytes,1,opt,name=primitive,oneof"`
+	Primitive *Primitive `protobuf:"bytes,1,opt,name=primitive,proto3,oneof"`
 }
+
 type Scalar_Blob struct {
-	Blob *Blob `protobuf:"bytes,2,opt,name=blob,oneof"`
+	Blob *Blob `protobuf:"bytes,2,opt,name=blob,proto3,oneof"`
 }
+
 type Scalar_Binary struct {
-	Binary *Binary `protobuf:"bytes,3,opt,name=binary,oneof"`
+	Binary *Binary `protobuf:"bytes,3,opt,name=binary,proto3,oneof"`
 }
+
 type Scalar_Schema struct {
-	Schema *Schema `protobuf:"bytes,4,opt,name=schema,oneof"`
+	Schema *Schema `protobuf:"bytes,4,opt,name=schema,proto3,oneof"`
 }
+
 type Scalar_NoneType struct {
-	NoneType *Void `protobuf:"bytes,5,opt,name=none_type,json=noneType,oneof"`
+	NoneType *Void `protobuf:"bytes,5,opt,name=none_type,json=noneType,proto3,oneof"`
 }
+
 type Scalar_Waitable struct {
-	Waitable *Waitable `protobuf:"bytes,6,opt,name=waitable,oneof"`
+	Waitable *Waitable `protobuf:"bytes,6,opt,name=waitable,proto3,oneof"`
 }
+
 type Scalar_Error struct {
-	Error *Error `protobuf:"bytes,7,opt,name=error,oneof"`
+	Error *Error `protobuf:"bytes,7,opt,name=error,proto3,oneof"`
 }
 
 func (*Scalar_Primitive) isScalar_Value() {}
-func (*Scalar_Blob) isScalar_Value()      {}
-func (*Scalar_Binary) isScalar_Value()    {}
-func (*Scalar_Schema) isScalar_Value()    {}
-func (*Scalar_NoneType) isScalar_Value()  {}
-func (*Scalar_Waitable) isScalar_Value()  {}
-func (*Scalar_Error) isScalar_Value()     {}
+
+func (*Scalar_Blob) isScalar_Value() {}
+
+func (*Scalar_Binary) isScalar_Value() {}
+
+func (*Scalar_Schema) isScalar_Value() {}
+
+func (*Scalar_NoneType) isScalar_Value() {}
+
+func (*Scalar_Waitable) isScalar_Value() {}
+
+func (*Scalar_Error) isScalar_Value() {}
 
 func (m *Scalar) GetValue() isScalar_Value {
 	if m != nil {
@@ -947,18 +969,22 @@ type isLiteral_Value interface {
 }
 
 type Literal_Scalar struct {
-	Scalar *Scalar `protobuf:"bytes,1,opt,name=scalar,oneof"`
-}
-type Literal_Collection struct {
-	Collection *LiteralCollection `protobuf:"bytes,2,opt,name=collection,oneof"`
-}
-type Literal_Map struct {
-	Map *LiteralMap `protobuf:"bytes,3,opt,name=map,oneof"`
+	Scalar *Scalar `protobuf:"bytes,1,opt,name=scalar,proto3,oneof"`
 }
 
-func (*Literal_Scalar) isLiteral_Value()     {}
+type Literal_Collection struct {
+	Collection *LiteralCollection `protobuf:"bytes,2,opt,name=collection,proto3,oneof"`
+}
+
+type Literal_Map struct {
+	Map *LiteralMap `protobuf:"bytes,3,opt,name=map,proto3,oneof"`
+}
+
+func (*Literal_Scalar) isLiteral_Value() {}
+
 func (*Literal_Collection) isLiteral_Value() {}
-func (*Literal_Map) isLiteral_Value()        {}
+
+func (*Literal_Map) isLiteral_Value() {}
 
 func (m *Literal) GetValue() isLiteral_Value {
 	if m != nil {
@@ -1083,7 +1109,7 @@ func _Literal_OneofSizer(msg proto.Message) (n int) {
 
 // A collection of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.
 type LiteralCollection struct {
-	Literals             []*Literal `protobuf:"bytes,1,rep,name=literals" json:"literals,omitempty"`
+	Literals             []*Literal `protobuf:"bytes,1,rep,name=literals,proto3" json:"literals,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
 	XXX_unrecognized     []byte     `json:"-"`
 	XXX_sizecache        int32      `json:"-"`
@@ -1122,7 +1148,7 @@ func (m *LiteralCollection) GetLiterals() []*Literal {
 
 // A map of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.
 type LiteralMap struct {
-	Literals             map[string]*Literal `protobuf:"bytes,1,rep,name=literals" json:"literals,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	Literals             map[string]*Literal `protobuf:"bytes,1,rep,name=literals,proto3" json:"literals,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
 	XXX_unrecognized     []byte              `json:"-"`
 	XXX_sizecache        int32               `json:"-"`
@@ -1161,7 +1187,7 @@ func (m *LiteralMap) GetLiterals() map[string]*Literal {
 
 // A collection of BindingData items.
 type BindingDataCollection struct {
-	Bindings             []*BindingData `protobuf:"bytes,1,rep,name=bindings" json:"bindings,omitempty"`
+	Bindings             []*BindingData `protobuf:"bytes,1,rep,name=bindings,proto3" json:"bindings,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
 	XXX_unrecognized     []byte         `json:"-"`
 	XXX_sizecache        int32          `json:"-"`
@@ -1200,7 +1226,7 @@ func (m *BindingDataCollection) GetBindings() []*BindingData {
 
 // A map of BindingData items.
 type BindingDataMap struct {
-	Bindings             map[string]*BindingData `protobuf:"bytes,1,rep,name=bindings" json:"bindings,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	Bindings             map[string]*BindingData `protobuf:"bytes,1,rep,name=bindings,proto3" json:"bindings,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	XXX_NoUnkeyedLiteral struct{}                `json:"-"`
 	XXX_unrecognized     []byte                  `json:"-"`
 	XXX_sizecache        int32                   `json:"-"`
@@ -1279,22 +1305,28 @@ type isBindingData_Value interface {
 }
 
 type BindingData_Scalar struct {
-	Scalar *Scalar `protobuf:"bytes,1,opt,name=scalar,oneof"`
-}
-type BindingData_Collection struct {
-	Collection *BindingDataCollection `protobuf:"bytes,2,opt,name=collection,oneof"`
-}
-type BindingData_Promise struct {
-	Promise *OutputReference `protobuf:"bytes,3,opt,name=promise,oneof"`
-}
-type BindingData_Map struct {
-	Map *BindingDataMap `protobuf:"bytes,4,opt,name=map,oneof"`
+	Scalar *Scalar `protobuf:"bytes,1,opt,name=scalar,proto3,oneof"`
 }
 
-func (*BindingData_Scalar) isBindingData_Value()     {}
+type BindingData_Collection struct {
+	Collection *BindingDataCollection `protobuf:"bytes,2,opt,name=collection,proto3,oneof"`
+}
+
+type BindingData_Promise struct {
+	Promise *OutputReference `protobuf:"bytes,3,opt,name=promise,proto3,oneof"`
+}
+
+type BindingData_Map struct {
+	Map *BindingDataMap `protobuf:"bytes,4,opt,name=map,proto3,oneof"`
+}
+
+func (*BindingData_Scalar) isBindingData_Value() {}
+
 func (*BindingData_Collection) isBindingData_Value() {}
-func (*BindingData_Promise) isBindingData_Value()    {}
-func (*BindingData_Map) isBindingData_Value()        {}
+
+func (*BindingData_Promise) isBindingData_Value() {}
+
+func (*BindingData_Map) isBindingData_Value() {}
 
 func (m *BindingData) GetValue() isBindingData_Value {
 	if m != nil {
@@ -1446,9 +1478,9 @@ func _BindingData_OneofSizer(msg proto.Message) (n int) {
 // An input/output binding of a variable to either static value or a node output.
 type Binding struct {
 	// Variable name must match an input/output variable of the node.
-	Var string `protobuf:"bytes,1,opt,name=var" json:"var,omitempty"`
+	Var string `protobuf:"bytes,1,opt,name=var,proto3" json:"var,omitempty"`
 	// Data to use to bind this variable.
-	Binding              *BindingData `protobuf:"bytes,2,opt,name=binding" json:"binding,omitempty"`
+	Binding              *BindingData `protobuf:"bytes,2,opt,name=binding,proto3" json:"binding,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
 	XXX_unrecognized     []byte       `json:"-"`
 	XXX_sizecache        int32        `json:"-"`
@@ -1495,9 +1527,9 @@ func (m *Binding) GetBinding() *BindingData {
 // A generic key value pair.
 type KeyValuePair struct {
 	// required.
-	Key string `protobuf:"bytes,1,opt,name=key" json:"key,omitempty"`
+	Key string `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
 	// +optional.
-	Value                string   `protobuf:"bytes,2,opt,name=value" json:"value,omitempty"`
+	Value                string   `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -1545,7 +1577,7 @@ func (m *KeyValuePair) GetValue() string {
 type RetryStrategy struct {
 	// Number of retries. Retries will be consumed when the job fails with a recoverable error.
 	// The number of retries must be less than or equals to 10.
-	Retries              uint32   `protobuf:"varint,5,opt,name=retries" json:"retries,omitempty"`
+	Retries              uint32   `protobuf:"varint,5,opt,name=retries,proto3" json:"retries,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`

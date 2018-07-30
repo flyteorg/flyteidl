@@ -49,9 +49,9 @@ func (ErrorCode) EnumDescriptor() ([]byte, []int) {
 
 type Error struct {
 	// Human-readable error message.
-	Message string `protobuf:"bytes,1,opt,name=message" json:"message,omitempty"`
+	Message string `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
 	// Error code due to which the execution failed
-	Code                 ErrorCode `protobuf:"varint,2,opt,name=code,enum=admin.ErrorCode" json:"code,omitempty"`
+	Code                 ErrorCode `protobuf:"varint,2,opt,name=code,proto3,enum=admin.ErrorCode" json:"code,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
 	XXX_unrecognized     []byte    `json:"-"`
 	XXX_sizecache        int32     `json:"-"`

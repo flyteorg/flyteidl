@@ -49,7 +49,7 @@ type Schedule struct {
 	//	*Schedule_CronExpression
 	//	*Schedule_FixedRate_
 	ScheduleExpression   isSchedule_ScheduleExpression `protobuf_oneof:"ScheduleExpression"`
-	KickoffTimeInputArg  string                        `protobuf:"bytes,3,opt,name=kickoff_time_input_arg,json=kickoffTimeInputArg" json:"kickoff_time_input_arg,omitempty"`
+	KickoffTimeInputArg  string                        `protobuf:"bytes,3,opt,name=kickoff_time_input_arg,json=kickoffTimeInputArg,proto3" json:"kickoff_time_input_arg,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                      `json:"-"`
 	XXX_unrecognized     []byte                        `json:"-"`
 	XXX_sizecache        int32                         `json:"-"`
@@ -84,14 +84,16 @@ type isSchedule_ScheduleExpression interface {
 }
 
 type Schedule_CronExpression struct {
-	CronExpression string `protobuf:"bytes,1,opt,name=cron_expression,json=cronExpression,oneof"`
+	CronExpression string `protobuf:"bytes,1,opt,name=cron_expression,json=cronExpression,proto3,oneof"`
 }
+
 type Schedule_FixedRate_ struct {
-	FixedRate *Schedule_FixedRate `protobuf:"bytes,2,opt,name=fixed_rate,json=fixedRate,oneof"`
+	FixedRate *Schedule_FixedRate `protobuf:"bytes,2,opt,name=fixed_rate,json=fixedRate,proto3,oneof"`
 }
 
 func (*Schedule_CronExpression) isSchedule_ScheduleExpression() {}
-func (*Schedule_FixedRate_) isSchedule_ScheduleExpression()     {}
+
+func (*Schedule_FixedRate_) isSchedule_ScheduleExpression() {}
 
 func (m *Schedule) GetScheduleExpression() isSchedule_ScheduleExpression {
 	if m != nil {
@@ -192,8 +194,8 @@ func _Schedule_OneofSizer(msg proto.Message) (n int) {
 }
 
 type Schedule_FixedRate struct {
-	Value                uint32                 `protobuf:"varint,1,opt,name=value" json:"value,omitempty"`
-	Unit                 Schedule_FixedRateUnit `protobuf:"varint,2,opt,name=unit,enum=admin.Schedule_FixedRateUnit" json:"unit,omitempty"`
+	Value                uint32                 `protobuf:"varint,1,opt,name=value,proto3" json:"value,omitempty"`
+	Unit                 Schedule_FixedRateUnit `protobuf:"varint,2,opt,name=unit,proto3,enum=admin.Schedule_FixedRateUnit" json:"unit,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}               `json:"-"`
 	XXX_unrecognized     []byte                 `json:"-"`
 	XXX_sizecache        int32                  `json:"-"`

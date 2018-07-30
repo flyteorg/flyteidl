@@ -104,9 +104,9 @@ func (RuntimeMetadata_RuntimeType) EnumDescriptor() ([]byte, []int) {
 // container engines.
 type Resources struct {
 	// The desired set of resources requested.
-	Requests []*Resources_ResourceEntry `protobuf:"bytes,1,rep,name=requests" json:"requests,omitempty"`
+	Requests []*Resources_ResourceEntry `protobuf:"bytes,1,rep,name=requests,proto3" json:"requests,omitempty"`
 	// Defines a set of bounds (e.g. min/max) within which the task can reliably run.
-	Limits               []*Resources_ResourceEntry `protobuf:"bytes,2,rep,name=limits" json:"limits,omitempty"`
+	Limits               []*Resources_ResourceEntry `protobuf:"bytes,2,rep,name=limits,proto3" json:"limits,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                   `json:"-"`
 	XXX_unrecognized     []byte                     `json:"-"`
 	XXX_sizecache        int32                      `json:"-"`
@@ -153,9 +153,9 @@ func (m *Resources) GetLimits() []*Resources_ResourceEntry {
 // Encapsulates a resource name and value.
 type Resources_ResourceEntry struct {
 	// Resource name.
-	Name Resources_ResourceName `protobuf:"varint,1,opt,name=name,enum=core.Resources_ResourceName" json:"name,omitempty"`
+	Name Resources_ResourceName `protobuf:"varint,1,opt,name=name,proto3,enum=core.Resources_ResourceName" json:"name,omitempty"`
 	// Value must be a valid k8s quantity.
-	Value                string   `protobuf:"bytes,2,opt,name=value" json:"value,omitempty"`
+	Value                string   `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -202,12 +202,12 @@ func (m *Resources_ResourceEntry) GetValue() string {
 // Runtime information. This is losely defined to allow for extensibility.
 type RuntimeMetadata struct {
 	// Type of runtime.
-	Type RuntimeMetadata_RuntimeType `protobuf:"varint,1,opt,name=type,enum=core.RuntimeMetadata_RuntimeType" json:"type,omitempty"`
+	Type RuntimeMetadata_RuntimeType `protobuf:"varint,1,opt,name=type,proto3,enum=core.RuntimeMetadata_RuntimeType" json:"type,omitempty"`
 	// Version of the runtime. All versions should be backward compatible. However, certain cases call for version
 	// checks to ensure tighter validation or setting expectations.
-	Version string `protobuf:"bytes,2,opt,name=version" json:"version,omitempty"`
+	Version string `protobuf:"bytes,2,opt,name=version,proto3" json:"version,omitempty"`
 	// +optional It can be used to provide extra information about the runtime (e.g. python, golang... etc.).
-	Flavor               string   `protobuf:"bytes,3,opt,name=flavor" json:"flavor,omitempty"`
+	Flavor               string   `protobuf:"bytes,3,opt,name=flavor,proto3" json:"flavor,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -261,13 +261,13 @@ func (m *RuntimeMetadata) GetFlavor() string {
 // Task Metadata
 type TaskMetadata struct {
 	// Indicates whether the system should attempt to lookup this task's output to avoid duplication of work.
-	Discoverable bool `protobuf:"varint,1,opt,name=discoverable" json:"discoverable,omitempty"`
+	Discoverable bool `protobuf:"varint,1,opt,name=discoverable,proto3" json:"discoverable,omitempty"`
 	// Runtime information about the task.
-	Runtime *RuntimeMetadata `protobuf:"bytes,2,opt,name=runtime" json:"runtime,omitempty"`
+	Runtime *RuntimeMetadata `protobuf:"bytes,2,opt,name=runtime,proto3" json:"runtime,omitempty"`
 	// The overall timeout of a task.
-	Timeout *duration.Duration `protobuf:"bytes,4,opt,name=timeout" json:"timeout,omitempty"`
+	Timeout *duration.Duration `protobuf:"bytes,4,opt,name=timeout,proto3" json:"timeout,omitempty"`
 	// Number of retries per task.
-	Retries              *RetryStrategy `protobuf:"bytes,5,opt,name=retries" json:"retries,omitempty"`
+	Retries              *RetryStrategy `protobuf:"bytes,5,opt,name=retries,proto3" json:"retries,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
 	XXX_unrecognized     []byte         `json:"-"`
 	XXX_sizecache        int32          `json:"-"`
@@ -329,18 +329,18 @@ func (m *TaskMetadata) GetRetries() *RetryStrategy {
 // Tasks are registered as a first step in the system.
 type TaskTemplate struct {
 	// Auto generated taskId by the system. Task Id uniquely identifies this task globally.
-	Id string `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
+	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// Category of the task. These are predefined and help provide defaults
-	Category TaskCategory `protobuf:"varint,2,opt,name=category,enum=core.TaskCategory" json:"category,omitempty"`
+	Category TaskCategory `protobuf:"varint,2,opt,name=category,proto3,enum=core.TaskCategory" json:"category,omitempty"`
 	// A predefined yet extensible Task type identifier. This can be used to customize any of the components. If no
 	// extensions are provided in the system, Flyte will resolve the this task to its TaskCategory and default the
 	// implementation registered for the TaskCategory.
-	Type string `protobuf:"bytes,3,opt,name=type" json:"type,omitempty"`
+	Type string `protobuf:"bytes,3,opt,name=type,proto3" json:"type,omitempty"`
 	// Extra metadata about the task.
-	Metadata *TaskMetadata `protobuf:"bytes,4,opt,name=metadata" json:"metadata,omitempty"`
+	Metadata *TaskMetadata `protobuf:"bytes,4,opt,name=metadata,proto3" json:"metadata,omitempty"`
 	// A strongly typed interface for the task. This enables others to use this task within a workflow and gauarantees
 	// compile-time validation of the workflow to avoid costly runtime failures.
-	Interface *TypedInterface `protobuf:"bytes,5,opt,name=interface" json:"interface,omitempty"`
+	Interface *TypedInterface `protobuf:"bytes,5,opt,name=interface,proto3" json:"interface,omitempty"`
 	// Custom data about the task. This is extensible to allow various plugins in the system.
 	Custom []byte `protobuf:"bytes,6,opt,name=custom,proto3" json:"custom,omitempty"`
 	// Known task types that the system will guarantee plugins for. Custom SDK plugins are allowed to set these if needed.
@@ -378,23 +378,6 @@ func (m *TaskTemplate) XXX_DiscardUnknown() {
 }
 
 var xxx_messageInfo_TaskTemplate proto.InternalMessageInfo
-
-type isTaskTemplate_Task interface {
-	isTaskTemplate_Task()
-}
-
-type TaskTemplate_Container struct {
-	Container *Container `protobuf:"bytes,7,opt,name=container,oneof"`
-}
-
-func (*TaskTemplate_Container) isTaskTemplate_Task() {}
-
-func (m *TaskTemplate) GetTask() isTaskTemplate_Task {
-	if m != nil {
-		return m.Task
-	}
-	return nil
-}
 
 func (m *TaskTemplate) GetId() string {
 	if m != nil {
@@ -434,6 +417,23 @@ func (m *TaskTemplate) GetInterface() *TypedInterface {
 func (m *TaskTemplate) GetCustom() []byte {
 	if m != nil {
 		return m.Custom
+	}
+	return nil
+}
+
+type isTaskTemplate_Task interface {
+	isTaskTemplate_Task()
+}
+
+type TaskTemplate_Container struct {
+	Container *Container `protobuf:"bytes,7,opt,name=container,proto3,oneof"`
+}
+
+func (*TaskTemplate_Container) isTaskTemplate_Task() {}
+
+func (m *TaskTemplate) GetTask() isTaskTemplate_Task {
+	if m != nil {
+		return m.Task
 	}
 	return nil
 }
@@ -502,20 +502,20 @@ func _TaskTemplate_OneofSizer(msg proto.Message) (n int) {
 
 type Container struct {
 	// Container image url. Eg: docker/redis:latest
-	Image string `protobuf:"bytes,1,opt,name=image" json:"image,omitempty"`
+	Image string `protobuf:"bytes,1,opt,name=image,proto3" json:"image,omitempty"`
 	// Command to be executed, if not provided, the default entrypoint in the container image will be used.
-	Command []string `protobuf:"bytes,2,rep,name=command" json:"command,omitempty"`
+	Command []string `protobuf:"bytes,2,rep,name=command,proto3" json:"command,omitempty"`
 	// These will default to Flyte given paths. If provided, the system will not append known paths. If the task still
 	// needs flyte's inputs and outputs path, add $(FLYTE_INPUT_FILE), $(FLYTE_OUTPUT_FILE) wherever makes sense and the
 	// system will populate these before executing the container.
-	Args []string `protobuf:"bytes,3,rep,name=args" json:"args,omitempty"`
+	Args []string `protobuf:"bytes,3,rep,name=args,proto3" json:"args,omitempty"`
 	// Container resources requirement as specified by the container engine.
-	Resources *Resources `protobuf:"bytes,4,opt,name=resources" json:"resources,omitempty"`
+	Resources *Resources `protobuf:"bytes,4,opt,name=resources,proto3" json:"resources,omitempty"`
 	// Environment variables will be set as the container is starting up.
-	Env []*KeyValuePair `protobuf:"bytes,5,rep,name=env" json:"env,omitempty"`
+	Env []*KeyValuePair `protobuf:"bytes,5,rep,name=env,proto3" json:"env,omitempty"`
 	// Allows extra configs to be available for the container.
 	// TODO: elaborate on how configs will become available.
-	Config               []*KeyValuePair `protobuf:"bytes,6,rep,name=config" json:"config,omitempty"`
+	Config               []*KeyValuePair `protobuf:"bytes,6,rep,name=config,proto3" json:"config,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
 	XXX_unrecognized     []byte          `json:"-"`
 	XXX_sizecache        int32           `json:"-"`

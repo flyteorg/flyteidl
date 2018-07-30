@@ -85,9 +85,9 @@ func (ConjunctionExpression_LogicalOperator) EnumDescriptor() ([]byte, []int) {
 // Defines a 2-level tree where the root is a comparison operator and Operands are primtivies or known variables.
 // Each expression results in a boolean result.
 type ComparisonExpression struct {
-	Operator             ComparisonExpression_Operator `protobuf:"varint,1,opt,name=operator,enum=core.ComparisonExpression_Operator" json:"operator,omitempty"`
-	LeftValue            *Operand                      `protobuf:"bytes,2,opt,name=left_value,json=leftValue" json:"left_value,omitempty"`
-	RightValue           *Operand                      `protobuf:"bytes,3,opt,name=right_value,json=rightValue" json:"right_value,omitempty"`
+	Operator             ComparisonExpression_Operator `protobuf:"varint,1,opt,name=operator,proto3,enum=core.ComparisonExpression_Operator" json:"operator,omitempty"`
+	LeftValue            *Operand                      `protobuf:"bytes,2,opt,name=left_value,json=leftValue,proto3" json:"left_value,omitempty"`
+	RightValue           *Operand                      `protobuf:"bytes,3,opt,name=right_value,json=rightValue,proto3" json:"right_value,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                      `json:"-"`
 	XXX_unrecognized     []byte                        `json:"-"`
 	XXX_sizecache        int32                         `json:"-"`
@@ -178,14 +178,16 @@ type isOperand_Val interface {
 }
 
 type Operand_Primitive struct {
-	Primitive *Primitive `protobuf:"bytes,1,opt,name=primitive,oneof"`
+	Primitive *Primitive `protobuf:"bytes,1,opt,name=primitive,proto3,oneof"`
 }
+
 type Operand_Var struct {
-	Var string `protobuf:"bytes,2,opt,name=var,oneof"`
+	Var string `protobuf:"bytes,2,opt,name=var,proto3,oneof"`
 }
 
 func (*Operand_Primitive) isOperand_Val() {}
-func (*Operand_Var) isOperand_Val()       {}
+
+func (*Operand_Var) isOperand_Val() {}
 
 func (m *Operand) GetVal() isOperand_Val {
 	if m != nil {
@@ -319,14 +321,16 @@ type isBooleanExpression_Expr interface {
 }
 
 type BooleanExpression_Conjunction struct {
-	Conjunction *ConjunctionExpression `protobuf:"bytes,1,opt,name=conjunction,oneof"`
+	Conjunction *ConjunctionExpression `protobuf:"bytes,1,opt,name=conjunction,proto3,oneof"`
 }
+
 type BooleanExpression_Comparison struct {
-	Comparison *ComparisonExpression `protobuf:"bytes,2,opt,name=comparison,oneof"`
+	Comparison *ComparisonExpression `protobuf:"bytes,2,opt,name=comparison,proto3,oneof"`
 }
 
 func (*BooleanExpression_Conjunction) isBooleanExpression_Expr() {}
-func (*BooleanExpression_Comparison) isBooleanExpression_Expr()  {}
+
+func (*BooleanExpression_Comparison) isBooleanExpression_Expr() {}
 
 func (m *BooleanExpression) GetExpr() isBooleanExpression_Expr {
 	if m != nil {
@@ -425,9 +429,9 @@ func _BooleanExpression_OneofSizer(msg proto.Message) (n int) {
 
 // Defines a conjunction expression of two boolean expressions.
 type ConjunctionExpression struct {
-	Operator             ConjunctionExpression_LogicalOperator `protobuf:"varint,1,opt,name=operator,enum=core.ConjunctionExpression_LogicalOperator" json:"operator,omitempty"`
-	LeftExpression       *BooleanExpression                    `protobuf:"bytes,2,opt,name=left_expression,json=leftExpression" json:"left_expression,omitempty"`
-	RightExpression      *BooleanExpression                    `protobuf:"bytes,3,opt,name=right_expression,json=rightExpression" json:"right_expression,omitempty"`
+	Operator             ConjunctionExpression_LogicalOperator `protobuf:"varint,1,opt,name=operator,proto3,enum=core.ConjunctionExpression_LogicalOperator" json:"operator,omitempty"`
+	LeftExpression       *BooleanExpression                    `protobuf:"bytes,2,opt,name=left_expression,json=leftExpression,proto3" json:"left_expression,omitempty"`
+	RightExpression      *BooleanExpression                    `protobuf:"bytes,3,opt,name=right_expression,json=rightExpression,proto3" json:"right_expression,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                              `json:"-"`
 	XXX_unrecognized     []byte                                `json:"-"`
 	XXX_sizecache        int32                                 `json:"-"`
