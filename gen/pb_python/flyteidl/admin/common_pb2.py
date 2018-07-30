@@ -20,15 +20,15 @@ from flyteidl.core import literals_pb2 as flyteidl_dot_core_dot_literals__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/common.proto',
-  package='admin',
+  package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1b\x66lyteidl/admin/common.proto\x12\x05\x61\x64min\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1c\x66lyteidl/core/literals.proto\";\n\nIdentifier\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\"5\n\x0eIdentifierList\x12#\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x11.admin.Identifier\"z\n\tParameter\x12\x1b\n\x03var\x18\x01 \x01(\x0b\x32\x0e.core.Variable\x12\x1e\n\x05value\x18\x02 \x01(\x0b\x32\r.core.LiteralH\x00\x12\x10\n\x08required\x18\x03 \x01(\x08\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\n\x07\x64\x65\x66\x61ult\"\x9a\x01\n\x0cNotification\x12&\n\x04type\x18\x01 \x01(\x0e\x32\x18.admin.Notification.Type\x12%\n\x06phases\x18\x02 \x03(\x0e\x32\x15.admin.ExecutionPhase\";\n\x04Type\x12\r\n\tUNDEFINED\x10\x00\x12\t\n\x05\x45MAIL\x10\x01\x12\x0e\n\nPAGER_DUTY\x10\x02\x12\t\n\x05SLACK\x10\x03*o\n\x0e\x45xecutionPhase\x12\r\n\tUNDEFINED\x10\x00\x12\x0b\n\x07RUNNING\x10\x01\x12\r\n\tSUCCEEDED\x10\x02\x12\n\n\x06\x46\x41ILED\x10\x03\x12\r\n\tTIMED_OUT\x10\x04\x12\x0b\n\x07\x41\x42ORTED\x10\x05\x12\n\n\x06QUEUED\x10\x06\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1b\x66lyteidl/admin/common.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1c\x66lyteidl/core/literals.proto\";\n\nIdentifier\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\">\n\x0eIdentifierList\x12,\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x1a.flyteidl.admin.Identifier\"\x8c\x01\n\tParameter\x12$\n\x03var\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.Variable\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.LiteralH\x00\x12\x10\n\x08required\x18\x03 \x01(\x08\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\n\x07\x64\x65\x66\x61ult\"\xac\x01\n\x0cNotification\x12/\n\x04type\x18\x01 \x01(\x0e\x32!.flyteidl.admin.Notification.Type\x12.\n\x06phases\x18\x02 \x03(\x0e\x32\x1e.flyteidl.admin.ExecutionPhase\";\n\x04Type\x12\r\n\tUNDEFINED\x10\x00\x12\t\n\x05\x45MAIL\x10\x01\x12\x0e\n\nPAGER_DUTY\x10\x02\x12\t\n\x05SLACK\x10\x03*o\n\x0e\x45xecutionPhase\x12\r\n\tUNDEFINED\x10\x00\x12\x0b\n\x07RUNNING\x10\x01\x12\r\n\tSUCCEEDED\x10\x02\x12\n\n\x06\x46\x41ILED\x10\x03\x12\r\n\tTIMED_OUT\x10\x04\x12\x0b\n\x07\x41\x42ORTED\x10\x05\x12\n\n\x06QUEUED\x10\x06\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_interface__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,])
 
 _EXECUTIONPHASE = _descriptor.EnumDescriptor(
   name='ExecutionPhase',
-  full_name='admin.ExecutionPhase',
+  full_name='flyteidl.admin.ExecutionPhase',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -63,8 +63,8 @@ _EXECUTIONPHASE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=496,
-  serialized_end=607,
+  serialized_start=551,
+  serialized_end=662,
 )
 _sym_db.RegisterEnumDescriptor(_EXECUTIONPHASE)
 
@@ -80,7 +80,7 @@ QUEUED = 6
 
 _NOTIFICATION_TYPE = _descriptor.EnumDescriptor(
   name='Type',
-  full_name='admin.Notification.Type',
+  full_name='flyteidl.admin.Notification.Type',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -103,35 +103,35 @@ _NOTIFICATION_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=435,
-  serialized_end=494,
+  serialized_start=490,
+  serialized_end=549,
 )
 _sym_db.RegisterEnumDescriptor(_NOTIFICATION_TYPE)
 
 
 _IDENTIFIER = _descriptor.Descriptor(
   name='Identifier',
-  full_name='admin.Identifier',
+  full_name='flyteidl.admin.Identifier',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='project', full_name='admin.Identifier.project', index=0,
+      name='project', full_name='flyteidl.admin.Identifier.project', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='domain', full_name='admin.Identifier.domain', index=1,
+      name='domain', full_name='flyteidl.admin.Identifier.domain', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='name', full_name='admin.Identifier.name', index=2,
+      name='name', full_name='flyteidl.admin.Identifier.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -149,20 +149,20 @@ _IDENTIFIER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=99,
-  serialized_end=158,
+  serialized_start=108,
+  serialized_end=167,
 )
 
 
 _IDENTIFIERLIST = _descriptor.Descriptor(
   name='IdentifierList',
-  full_name='admin.IdentifierList',
+  full_name='flyteidl.admin.IdentifierList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='entities', full_name='admin.IdentifierList.entities', index=0,
+      name='entities', full_name='flyteidl.admin.IdentifierList.entities', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -180,41 +180,41 @@ _IDENTIFIERLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=160,
-  serialized_end=213,
+  serialized_start=169,
+  serialized_end=231,
 )
 
 
 _PARAMETER = _descriptor.Descriptor(
   name='Parameter',
-  full_name='admin.Parameter',
+  full_name='flyteidl.admin.Parameter',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='var', full_name='admin.Parameter.var', index=0,
+      name='var', full_name='flyteidl.admin.Parameter.var', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='admin.Parameter.value', index=1,
+      name='value', full_name='flyteidl.admin.Parameter.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='required', full_name='admin.Parameter.required', index=2,
+      name='required', full_name='flyteidl.admin.Parameter.required', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='description', full_name='admin.Parameter.description', index=3,
+      name='description', full_name='flyteidl.admin.Parameter.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -232,30 +232,30 @@ _PARAMETER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='default', full_name='admin.Parameter.default',
+      name='default', full_name='flyteidl.admin.Parameter.default',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=215,
-  serialized_end=337,
+  serialized_start=234,
+  serialized_end=374,
 )
 
 
 _NOTIFICATION = _descriptor.Descriptor(
   name='Notification',
-  full_name='admin.Notification',
+  full_name='flyteidl.admin.Notification',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='admin.Notification.type', index=0,
+      name='type', full_name='flyteidl.admin.Notification.type', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='phases', full_name='admin.Notification.phases', index=1,
+      name='phases', full_name='flyteidl.admin.Notification.phases', index=1,
       number=2, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -274,8 +274,8 @@ _NOTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=340,
-  serialized_end=494,
+  serialized_start=377,
+  serialized_end=549,
 )
 
 _IDENTIFIERLIST.fields_by_name['entities'].message_type = _IDENTIFIER
@@ -297,28 +297,28 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 Identifier = _reflection.GeneratedProtocolMessageType('Identifier', (_message.Message,), dict(
   DESCRIPTOR = _IDENTIFIER,
   __module__ = 'flyteidl.admin.common_pb2'
-  # @@protoc_insertion_point(class_scope:admin.Identifier)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.Identifier)
   ))
 _sym_db.RegisterMessage(Identifier)
 
 IdentifierList = _reflection.GeneratedProtocolMessageType('IdentifierList', (_message.Message,), dict(
   DESCRIPTOR = _IDENTIFIERLIST,
   __module__ = 'flyteidl.admin.common_pb2'
-  # @@protoc_insertion_point(class_scope:admin.IdentifierList)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.IdentifierList)
   ))
 _sym_db.RegisterMessage(IdentifierList)
 
 Parameter = _reflection.GeneratedProtocolMessageType('Parameter', (_message.Message,), dict(
   DESCRIPTOR = _PARAMETER,
   __module__ = 'flyteidl.admin.common_pb2'
-  # @@protoc_insertion_point(class_scope:admin.Parameter)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.Parameter)
   ))
 _sym_db.RegisterMessage(Parameter)
 
 Notification = _reflection.GeneratedProtocolMessageType('Notification', (_message.Message,), dict(
   DESCRIPTOR = _NOTIFICATION,
   __module__ = 'flyteidl.admin.common_pb2'
-  # @@protoc_insertion_point(class_scope:admin.Notification)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.Notification)
   ))
 _sym_db.RegisterMessage(Notification)
 

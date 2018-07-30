@@ -22,9 +22,9 @@ from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/workflow.proto',
-  package='core',
+  package='flyteidl.core',
   syntax='proto3',
-  serialized_pb=_b('\n\x1c\x66lyteidl/core/workflow.proto\x12\x04\x63ore\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x19\x66lyteidl/core/types.proto\x1a\x1d\x66lyteidl/core/condition.proto\x1a\x1egoogle/protobuf/duration.proto\"T\n\x07IfBlock\x12*\n\tcondition\x18\x01 \x01(\x0b\x32\x17.core.BooleanExpression\x12\x1d\n\tthen_node\x18\x02 \x01(\x0b\x32\n.core.Node\"\x92\x01\n\x0bIfElseBlock\x12\x1b\n\x04\x63\x61se\x18\x01 \x01(\x0b\x32\r.core.IfBlock\x12\x1c\n\x05other\x18\x02 \x03(\x0b\x32\r.core.IfBlock\x12\x1f\n\telse_node\x18\x03 \x01(\x0b\x32\n.core.NodeH\x00\x12\x1c\n\x05\x65rror\x18\x04 \x01(\x0b\x32\x0b.core.ErrorH\x00\x42\t\n\x07\x64\x65\x66\x61ult\"0\n\nBranchNode\x12\"\n\x07if_else\x18\x02 \x01(\x0b\x32\x11.core.IfElseBlock\"/\n\x08TaskNode\x12\x16\n\x0creference_id\x18\x01 \x01(\tH\x00\x42\x0b\n\treference\"t\n\x0cWorkflowNode\x12\"\n\x18launch_plan_reference_id\x18\x01 \x01(\tH\x00\x12\x33\n\x11workflow_template\x18\x02 \x01(\x0b\x32\x16.core.WorkflowTemplateH\x00\x42\x0b\n\treference\"n\n\x0cNodeMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t\x12*\n\x07timeout\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\x12$\n\x07retries\x18\x05 \x01(\x0b\x32\x13.core.RetryStrategy\"#\n\x05\x41lias\x12\x0b\n\x03var\x18\x01 \x01(\t\x12\r\n\x05\x61lias\x18\x02 \x01(\t\"\x9c\x02\n\x04Node\x12\n\n\x02id\x18\x01 \x01(\t\x12$\n\x08metadata\x18\x02 \x01(\x0b\x32\x12.core.NodeMetadata\x12\x1d\n\x06inputs\x18\x03 \x03(\x0b\x32\r.core.Binding\x12\x19\n\x11upstream_node_ids\x18\x04 \x03(\t\x12#\n\x0eoutput_aliases\x18\x05 \x03(\x0b\x32\x0b.core.Alias\x12#\n\ttask_node\x18\x06 \x01(\x0b\x32\x0e.core.TaskNodeH\x00\x12+\n\rworkflow_node\x18\x07 \x01(\x0b\x32\x12.core.WorkflowNodeH\x00\x12\'\n\x0b\x62ranch_node\x18\x08 \x01(\x0b\x32\x10.core.BranchNodeH\x00\x42\x08\n\x06target\"*\n\x10WorkflowMetadata\x12\x16\n\x0e\x65xecution_role\x18\x01 \x01(\t\"\xce\x01\n\x10WorkflowTemplate\x12\n\n\x02id\x18\x01 \x01(\t\x12(\n\x08metadata\x18\x02 \x01(\x0b\x32\x16.core.WorkflowMetadata\x12\'\n\tinterface\x18\x03 \x01(\x0b\x32\x14.core.TypedInterface\x12\x19\n\x05nodes\x18\x04 \x03(\x0b\x32\n.core.Node\x12\x1e\n\x07outputs\x18\x05 \x03(\x0b\x32\r.core.Binding\x12 \n\x0c\x66\x61ilure_node\x18\x06 \x01(\x0b\x32\n.core.NodeB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1c\x66lyteidl/core/workflow.proto\x12\rflyteidl.core\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x19\x66lyteidl/core/types.proto\x1a\x1d\x66lyteidl/core/condition.proto\x1a\x1egoogle/protobuf/duration.proto\"f\n\x07IfBlock\x12\x33\n\tcondition\x18\x01 \x01(\x0b\x32 .flyteidl.core.BooleanExpression\x12&\n\tthen_node\x18\x02 \x01(\x0b\x32\x13.flyteidl.core.Node\"\xb6\x01\n\x0bIfElseBlock\x12$\n\x04\x63\x61se\x18\x01 \x01(\x0b\x32\x16.flyteidl.core.IfBlock\x12%\n\x05other\x18\x02 \x03(\x0b\x32\x16.flyteidl.core.IfBlock\x12(\n\telse_node\x18\x03 \x01(\x0b\x32\x13.flyteidl.core.NodeH\x00\x12%\n\x05\x65rror\x18\x04 \x01(\x0b\x32\x14.flyteidl.core.ErrorH\x00\x42\t\n\x07\x64\x65\x66\x61ult\"9\n\nBranchNode\x12+\n\x07if_else\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.IfElseBlock\"/\n\x08TaskNode\x12\x16\n\x0creference_id\x18\x01 \x01(\tH\x00\x42\x0b\n\treference\"}\n\x0cWorkflowNode\x12\"\n\x18launch_plan_reference_id\x18\x01 \x01(\tH\x00\x12<\n\x11workflow_template\x18\x02 \x01(\x0b\x32\x1f.flyteidl.core.WorkflowTemplateH\x00\x42\x0b\n\treference\"w\n\x0cNodeMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t\x12*\n\x07timeout\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\x12-\n\x07retries\x18\x05 \x01(\x0b\x32\x1c.flyteidl.core.RetryStrategy\"#\n\x05\x41lias\x12\x0b\n\x03var\x18\x01 \x01(\t\x12\r\n\x05\x61lias\x18\x02 \x01(\t\"\xd2\x02\n\x04Node\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\x08metadata\x18\x02 \x01(\x0b\x32\x1b.flyteidl.core.NodeMetadata\x12&\n\x06inputs\x18\x03 \x03(\x0b\x32\x16.flyteidl.core.Binding\x12\x19\n\x11upstream_node_ids\x18\x04 \x03(\t\x12,\n\x0eoutput_aliases\x18\x05 \x03(\x0b\x32\x14.flyteidl.core.Alias\x12,\n\ttask_node\x18\x06 \x01(\x0b\x32\x17.flyteidl.core.TaskNodeH\x00\x12\x34\n\rworkflow_node\x18\x07 \x01(\x0b\x32\x1b.flyteidl.core.WorkflowNodeH\x00\x12\x30\n\x0b\x62ranch_node\x18\x08 \x01(\x0b\x32\x19.flyteidl.core.BranchNodeH\x00\x42\x08\n\x06target\"*\n\x10WorkflowMetadata\x12\x16\n\x0e\x65xecution_role\x18\x01 \x01(\t\"\xfb\x01\n\x10WorkflowTemplate\x12\n\n\x02id\x18\x01 \x01(\t\x12\x31\n\x08metadata\x18\x02 \x01(\x0b\x32\x1f.flyteidl.core.WorkflowMetadata\x12\x30\n\tinterface\x18\x03 \x01(\x0b\x32\x1d.flyteidl.core.TypedInterface\x12\"\n\x05nodes\x18\x04 \x03(\x0b\x32\x13.flyteidl.core.Node\x12\'\n\x07outputs\x18\x05 \x03(\x0b\x32\x16.flyteidl.core.Binding\x12)\n\x0c\x66\x61ilure_node\x18\x06 \x01(\x0b\x32\x13.flyteidl.core.NodeB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_interface__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,flyteidl_dot_core_dot_types__pb2.DESCRIPTOR,flyteidl_dot_core_dot_condition__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,])
 
@@ -33,20 +33,20 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _IFBLOCK = _descriptor.Descriptor(
   name='IfBlock',
-  full_name='core.IfBlock',
+  full_name='flyteidl.core.IfBlock',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='condition', full_name='core.IfBlock.condition', index=0,
+      name='condition', full_name='flyteidl.core.IfBlock.condition', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='then_node', full_name='core.IfBlock.then_node', index=1,
+      name='then_node', full_name='flyteidl.core.IfBlock.then_node', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -64,41 +64,41 @@ _IFBLOCK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=189,
-  serialized_end=273,
+  serialized_start=198,
+  serialized_end=300,
 )
 
 
 _IFELSEBLOCK = _descriptor.Descriptor(
   name='IfElseBlock',
-  full_name='core.IfElseBlock',
+  full_name='flyteidl.core.IfElseBlock',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='case', full_name='core.IfElseBlock.case', index=0,
+      name='case', full_name='flyteidl.core.IfElseBlock.case', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='other', full_name='core.IfElseBlock.other', index=1,
+      name='other', full_name='flyteidl.core.IfElseBlock.other', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='else_node', full_name='core.IfElseBlock.else_node', index=2,
+      name='else_node', full_name='flyteidl.core.IfElseBlock.else_node', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='error', full_name='core.IfElseBlock.error', index=3,
+      name='error', full_name='flyteidl.core.IfElseBlock.error', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -116,23 +116,23 @@ _IFELSEBLOCK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='default', full_name='core.IfElseBlock.default',
+      name='default', full_name='flyteidl.core.IfElseBlock.default',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=276,
-  serialized_end=422,
+  serialized_start=303,
+  serialized_end=485,
 )
 
 
 _BRANCHNODE = _descriptor.Descriptor(
   name='BranchNode',
-  full_name='core.BranchNode',
+  full_name='flyteidl.core.BranchNode',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='if_else', full_name='core.BranchNode.if_else', index=0,
+      name='if_else', full_name='flyteidl.core.BranchNode.if_else', index=0,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -150,20 +150,20 @@ _BRANCHNODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=424,
-  serialized_end=472,
+  serialized_start=487,
+  serialized_end=544,
 )
 
 
 _TASKNODE = _descriptor.Descriptor(
   name='TaskNode',
-  full_name='core.TaskNode',
+  full_name='flyteidl.core.TaskNode',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='reference_id', full_name='core.TaskNode.reference_id', index=0,
+      name='reference_id', full_name='flyteidl.core.TaskNode.reference_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -181,30 +181,30 @@ _TASKNODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='reference', full_name='core.TaskNode.reference',
+      name='reference', full_name='flyteidl.core.TaskNode.reference',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=474,
-  serialized_end=521,
+  serialized_start=546,
+  serialized_end=593,
 )
 
 
 _WORKFLOWNODE = _descriptor.Descriptor(
   name='WorkflowNode',
-  full_name='core.WorkflowNode',
+  full_name='flyteidl.core.WorkflowNode',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='launch_plan_reference_id', full_name='core.WorkflowNode.launch_plan_reference_id', index=0,
+      name='launch_plan_reference_id', full_name='flyteidl.core.WorkflowNode.launch_plan_reference_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='workflow_template', full_name='core.WorkflowNode.workflow_template', index=1,
+      name='workflow_template', full_name='flyteidl.core.WorkflowNode.workflow_template', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -222,37 +222,37 @@ _WORKFLOWNODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='reference', full_name='core.WorkflowNode.reference',
+      name='reference', full_name='flyteidl.core.WorkflowNode.reference',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=523,
-  serialized_end=639,
+  serialized_start=595,
+  serialized_end=720,
 )
 
 
 _NODEMETADATA = _descriptor.Descriptor(
   name='NodeMetadata',
-  full_name='core.NodeMetadata',
+  full_name='flyteidl.core.NodeMetadata',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='core.NodeMetadata.name', index=0,
+      name='name', full_name='flyteidl.core.NodeMetadata.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='timeout', full_name='core.NodeMetadata.timeout', index=1,
+      name='timeout', full_name='flyteidl.core.NodeMetadata.timeout', index=1,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='retries', full_name='core.NodeMetadata.retries', index=2,
+      name='retries', full_name='flyteidl.core.NodeMetadata.retries', index=2,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -270,27 +270,27 @@ _NODEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=641,
-  serialized_end=751,
+  serialized_start=722,
+  serialized_end=841,
 )
 
 
 _ALIAS = _descriptor.Descriptor(
   name='Alias',
-  full_name='core.Alias',
+  full_name='flyteidl.core.Alias',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='var', full_name='core.Alias.var', index=0,
+      name='var', full_name='flyteidl.core.Alias.var', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='alias', full_name='core.Alias.alias', index=1,
+      name='alias', full_name='flyteidl.core.Alias.alias', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -308,69 +308,69 @@ _ALIAS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=753,
-  serialized_end=788,
+  serialized_start=843,
+  serialized_end=878,
 )
 
 
 _NODE = _descriptor.Descriptor(
   name='Node',
-  full_name='core.Node',
+  full_name='flyteidl.core.Node',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='core.Node.id', index=0,
+      name='id', full_name='flyteidl.core.Node.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='metadata', full_name='core.Node.metadata', index=1,
+      name='metadata', full_name='flyteidl.core.Node.metadata', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='inputs', full_name='core.Node.inputs', index=2,
+      name='inputs', full_name='flyteidl.core.Node.inputs', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='upstream_node_ids', full_name='core.Node.upstream_node_ids', index=3,
+      name='upstream_node_ids', full_name='flyteidl.core.Node.upstream_node_ids', index=3,
       number=4, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='output_aliases', full_name='core.Node.output_aliases', index=4,
+      name='output_aliases', full_name='flyteidl.core.Node.output_aliases', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='task_node', full_name='core.Node.task_node', index=5,
+      name='task_node', full_name='flyteidl.core.Node.task_node', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='workflow_node', full_name='core.Node.workflow_node', index=6,
+      name='workflow_node', full_name='flyteidl.core.Node.workflow_node', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='branch_node', full_name='core.Node.branch_node', index=7,
+      name='branch_node', full_name='flyteidl.core.Node.branch_node', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -388,23 +388,23 @@ _NODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='target', full_name='core.Node.target',
+      name='target', full_name='flyteidl.core.Node.target',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=791,
-  serialized_end=1075,
+  serialized_start=881,
+  serialized_end=1219,
 )
 
 
 _WORKFLOWMETADATA = _descriptor.Descriptor(
   name='WorkflowMetadata',
-  full_name='core.WorkflowMetadata',
+  full_name='flyteidl.core.WorkflowMetadata',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='execution_role', full_name='core.WorkflowMetadata.execution_role', index=0,
+      name='execution_role', full_name='flyteidl.core.WorkflowMetadata.execution_role', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -422,55 +422,55 @@ _WORKFLOWMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1077,
-  serialized_end=1119,
+  serialized_start=1221,
+  serialized_end=1263,
 )
 
 
 _WORKFLOWTEMPLATE = _descriptor.Descriptor(
   name='WorkflowTemplate',
-  full_name='core.WorkflowTemplate',
+  full_name='flyteidl.core.WorkflowTemplate',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='core.WorkflowTemplate.id', index=0,
+      name='id', full_name='flyteidl.core.WorkflowTemplate.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='metadata', full_name='core.WorkflowTemplate.metadata', index=1,
+      name='metadata', full_name='flyteidl.core.WorkflowTemplate.metadata', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='interface', full_name='core.WorkflowTemplate.interface', index=2,
+      name='interface', full_name='flyteidl.core.WorkflowTemplate.interface', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='nodes', full_name='core.WorkflowTemplate.nodes', index=3,
+      name='nodes', full_name='flyteidl.core.WorkflowTemplate.nodes', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='outputs', full_name='core.WorkflowTemplate.outputs', index=4,
+      name='outputs', full_name='flyteidl.core.WorkflowTemplate.outputs', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='failure_node', full_name='core.WorkflowTemplate.failure_node', index=5,
+      name='failure_node', full_name='flyteidl.core.WorkflowTemplate.failure_node', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -488,8 +488,8 @@ _WORKFLOWTEMPLATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1122,
-  serialized_end=1328,
+  serialized_start=1266,
+  serialized_end=1517,
 )
 
 _IFBLOCK.fields_by_name['condition'].message_type = flyteidl_dot_core_dot_condition__pb2._BOOLEANEXPRESSION
@@ -552,70 +552,70 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 IfBlock = _reflection.GeneratedProtocolMessageType('IfBlock', (_message.Message,), dict(
   DESCRIPTOR = _IFBLOCK,
   __module__ = 'flyteidl.core.workflow_pb2'
-  # @@protoc_insertion_point(class_scope:core.IfBlock)
+  # @@protoc_insertion_point(class_scope:flyteidl.core.IfBlock)
   ))
 _sym_db.RegisterMessage(IfBlock)
 
 IfElseBlock = _reflection.GeneratedProtocolMessageType('IfElseBlock', (_message.Message,), dict(
   DESCRIPTOR = _IFELSEBLOCK,
   __module__ = 'flyteidl.core.workflow_pb2'
-  # @@protoc_insertion_point(class_scope:core.IfElseBlock)
+  # @@protoc_insertion_point(class_scope:flyteidl.core.IfElseBlock)
   ))
 _sym_db.RegisterMessage(IfElseBlock)
 
 BranchNode = _reflection.GeneratedProtocolMessageType('BranchNode', (_message.Message,), dict(
   DESCRIPTOR = _BRANCHNODE,
   __module__ = 'flyteidl.core.workflow_pb2'
-  # @@protoc_insertion_point(class_scope:core.BranchNode)
+  # @@protoc_insertion_point(class_scope:flyteidl.core.BranchNode)
   ))
 _sym_db.RegisterMessage(BranchNode)
 
 TaskNode = _reflection.GeneratedProtocolMessageType('TaskNode', (_message.Message,), dict(
   DESCRIPTOR = _TASKNODE,
   __module__ = 'flyteidl.core.workflow_pb2'
-  # @@protoc_insertion_point(class_scope:core.TaskNode)
+  # @@protoc_insertion_point(class_scope:flyteidl.core.TaskNode)
   ))
 _sym_db.RegisterMessage(TaskNode)
 
 WorkflowNode = _reflection.GeneratedProtocolMessageType('WorkflowNode', (_message.Message,), dict(
   DESCRIPTOR = _WORKFLOWNODE,
   __module__ = 'flyteidl.core.workflow_pb2'
-  # @@protoc_insertion_point(class_scope:core.WorkflowNode)
+  # @@protoc_insertion_point(class_scope:flyteidl.core.WorkflowNode)
   ))
 _sym_db.RegisterMessage(WorkflowNode)
 
 NodeMetadata = _reflection.GeneratedProtocolMessageType('NodeMetadata', (_message.Message,), dict(
   DESCRIPTOR = _NODEMETADATA,
   __module__ = 'flyteidl.core.workflow_pb2'
-  # @@protoc_insertion_point(class_scope:core.NodeMetadata)
+  # @@protoc_insertion_point(class_scope:flyteidl.core.NodeMetadata)
   ))
 _sym_db.RegisterMessage(NodeMetadata)
 
 Alias = _reflection.GeneratedProtocolMessageType('Alias', (_message.Message,), dict(
   DESCRIPTOR = _ALIAS,
   __module__ = 'flyteidl.core.workflow_pb2'
-  # @@protoc_insertion_point(class_scope:core.Alias)
+  # @@protoc_insertion_point(class_scope:flyteidl.core.Alias)
   ))
 _sym_db.RegisterMessage(Alias)
 
 Node = _reflection.GeneratedProtocolMessageType('Node', (_message.Message,), dict(
   DESCRIPTOR = _NODE,
   __module__ = 'flyteidl.core.workflow_pb2'
-  # @@protoc_insertion_point(class_scope:core.Node)
+  # @@protoc_insertion_point(class_scope:flyteidl.core.Node)
   ))
 _sym_db.RegisterMessage(Node)
 
 WorkflowMetadata = _reflection.GeneratedProtocolMessageType('WorkflowMetadata', (_message.Message,), dict(
   DESCRIPTOR = _WORKFLOWMETADATA,
   __module__ = 'flyteidl.core.workflow_pb2'
-  # @@protoc_insertion_point(class_scope:core.WorkflowMetadata)
+  # @@protoc_insertion_point(class_scope:flyteidl.core.WorkflowMetadata)
   ))
 _sym_db.RegisterMessage(WorkflowMetadata)
 
 WorkflowTemplate = _reflection.GeneratedProtocolMessageType('WorkflowTemplate', (_message.Message,), dict(
   DESCRIPTOR = _WORKFLOWTEMPLATE,
   __module__ = 'flyteidl.core.workflow_pb2'
-  # @@protoc_insertion_point(class_scope:core.WorkflowTemplate)
+  # @@protoc_insertion_point(class_scope:flyteidl.core.WorkflowTemplate)
   ))
 _sym_db.RegisterMessage(WorkflowTemplate)
 

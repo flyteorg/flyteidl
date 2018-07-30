@@ -19,9 +19,9 @@ from flyteidl.admin import common_pb2 as flyteidl_dot_admin_dot_common__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/workflow.proto',
-  package='admin',
+  package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1d\x66lyteidl/admin/workflow.proto\x12\x05\x61\x64min\x1a\x1c\x66lyteidl/core/workflow.proto\x1a\x1b\x66lyteidl/admin/common.proto\"j\n\x15WorkflowCreateRequest\x12\x1d\n\x02id\x18\x01 \x01(\x0b\x32\x11.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12!\n\x04spec\x18\x03 \x01(\x0b\x32\x13.admin.WorkflowSpec\"t\n\x13WorkflowListRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05limit\x18\x04 \x01(\r\x12\x0e\n\x06offset\x18\x05 \x01(\r\x12\x0f\n\x07\x66ilters\x18\x06 \x01(\t\"%\n\x16WorkflowCreateResponse\x12\x0b\n\x03urn\x18\x01 \x01(\t\"j\n\x08Workflow\x12\x1d\n\x02id\x18\x01 \x01(\x0b\x32\x11.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0b\n\x03urn\x18\x03 \x01(\t\x12!\n\x04spec\x18\x04 \x01(\x0b\x32\x13.admin.WorkflowSpec\"2\n\x0cWorkflowList\x12\"\n\tworkflows\x18\x01 \x03(\x0b\x32\x0f.admin.Workflow\"A\n\x0cWorkflowSpec\x12\x31\n\x11workflow_template\x18\x01 \x01(\x0b\x32\x16.core.WorkflowTemplateB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/admin/workflow.proto\x12\x0e\x66lyteidl.admin\x1a\x1c\x66lyteidl/core/workflow.proto\x1a\x1b\x66lyteidl/admin/common.proto\"|\n\x15WorkflowCreateRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12*\n\x04spec\x18\x03 \x01(\x0b\x32\x1c.flyteidl.admin.WorkflowSpec\"t\n\x13WorkflowListRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05limit\x18\x04 \x01(\r\x12\x0e\n\x06offset\x18\x05 \x01(\r\x12\x0f\n\x07\x66ilters\x18\x06 \x01(\t\"%\n\x16WorkflowCreateResponse\x12\x0b\n\x03urn\x18\x01 \x01(\t\"|\n\x08Workflow\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0b\n\x03urn\x18\x03 \x01(\t\x12*\n\x04spec\x18\x04 \x01(\x0b\x32\x1c.flyteidl.admin.WorkflowSpec\";\n\x0cWorkflowList\x12+\n\tworkflows\x18\x01 \x03(\x0b\x32\x18.flyteidl.admin.Workflow\"J\n\x0cWorkflowSpec\x12:\n\x11workflow_template\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.WorkflowTemplateB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_workflow__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,])
 
@@ -30,27 +30,27 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _WORKFLOWCREATEREQUEST = _descriptor.Descriptor(
   name='WorkflowCreateRequest',
-  full_name='admin.WorkflowCreateRequest',
+  full_name='flyteidl.admin.WorkflowCreateRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='admin.WorkflowCreateRequest.id', index=0,
+      name='id', full_name='flyteidl.admin.WorkflowCreateRequest.id', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='version', full_name='admin.WorkflowCreateRequest.version', index=1,
+      name='version', full_name='flyteidl.admin.WorkflowCreateRequest.version', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='admin.WorkflowCreateRequest.spec', index=2,
+      name='spec', full_name='flyteidl.admin.WorkflowCreateRequest.spec', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -68,55 +68,55 @@ _WORKFLOWCREATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=99,
-  serialized_end=205,
+  serialized_start=108,
+  serialized_end=232,
 )
 
 
 _WORKFLOWLISTREQUEST = _descriptor.Descriptor(
   name='WorkflowListRequest',
-  full_name='admin.WorkflowListRequest',
+  full_name='flyteidl.admin.WorkflowListRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='project', full_name='admin.WorkflowListRequest.project', index=0,
+      name='project', full_name='flyteidl.admin.WorkflowListRequest.project', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='domain', full_name='admin.WorkflowListRequest.domain', index=1,
+      name='domain', full_name='flyteidl.admin.WorkflowListRequest.domain', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='name', full_name='admin.WorkflowListRequest.name', index=2,
+      name='name', full_name='flyteidl.admin.WorkflowListRequest.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='admin.WorkflowListRequest.limit', index=3,
+      name='limit', full_name='flyteidl.admin.WorkflowListRequest.limit', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='offset', full_name='admin.WorkflowListRequest.offset', index=4,
+      name='offset', full_name='flyteidl.admin.WorkflowListRequest.offset', index=4,
       number=5, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='filters', full_name='admin.WorkflowListRequest.filters', index=5,
+      name='filters', full_name='flyteidl.admin.WorkflowListRequest.filters', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -134,20 +134,20 @@ _WORKFLOWLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=207,
-  serialized_end=323,
+  serialized_start=234,
+  serialized_end=350,
 )
 
 
 _WORKFLOWCREATERESPONSE = _descriptor.Descriptor(
   name='WorkflowCreateResponse',
-  full_name='admin.WorkflowCreateResponse',
+  full_name='flyteidl.admin.WorkflowCreateResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='urn', full_name='admin.WorkflowCreateResponse.urn', index=0,
+      name='urn', full_name='flyteidl.admin.WorkflowCreateResponse.urn', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -165,41 +165,41 @@ _WORKFLOWCREATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=325,
-  serialized_end=362,
+  serialized_start=352,
+  serialized_end=389,
 )
 
 
 _WORKFLOW = _descriptor.Descriptor(
   name='Workflow',
-  full_name='admin.Workflow',
+  full_name='flyteidl.admin.Workflow',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='admin.Workflow.id', index=0,
+      name='id', full_name='flyteidl.admin.Workflow.id', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='version', full_name='admin.Workflow.version', index=1,
+      name='version', full_name='flyteidl.admin.Workflow.version', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='urn', full_name='admin.Workflow.urn', index=2,
+      name='urn', full_name='flyteidl.admin.Workflow.urn', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='admin.Workflow.spec', index=3,
+      name='spec', full_name='flyteidl.admin.Workflow.spec', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -217,20 +217,20 @@ _WORKFLOW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=364,
-  serialized_end=470,
+  serialized_start=391,
+  serialized_end=515,
 )
 
 
 _WORKFLOWLIST = _descriptor.Descriptor(
   name='WorkflowList',
-  full_name='admin.WorkflowList',
+  full_name='flyteidl.admin.WorkflowList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='workflows', full_name='admin.WorkflowList.workflows', index=0,
+      name='workflows', full_name='flyteidl.admin.WorkflowList.workflows', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -248,20 +248,20 @@ _WORKFLOWLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=472,
-  serialized_end=522,
+  serialized_start=517,
+  serialized_end=576,
 )
 
 
 _WORKFLOWSPEC = _descriptor.Descriptor(
   name='WorkflowSpec',
-  full_name='admin.WorkflowSpec',
+  full_name='flyteidl.admin.WorkflowSpec',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='workflow_template', full_name='admin.WorkflowSpec.workflow_template', index=0,
+      name='workflow_template', full_name='flyteidl.admin.WorkflowSpec.workflow_template', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -279,8 +279,8 @@ _WORKFLOWSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=524,
-  serialized_end=589,
+  serialized_start=578,
+  serialized_end=652,
 )
 
 _WORKFLOWCREATEREQUEST.fields_by_name['id'].message_type = flyteidl_dot_admin_dot_common__pb2._IDENTIFIER
@@ -300,42 +300,42 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 WorkflowCreateRequest = _reflection.GeneratedProtocolMessageType('WorkflowCreateRequest', (_message.Message,), dict(
   DESCRIPTOR = _WORKFLOWCREATEREQUEST,
   __module__ = 'flyteidl.admin.workflow_pb2'
-  # @@protoc_insertion_point(class_scope:admin.WorkflowCreateRequest)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.WorkflowCreateRequest)
   ))
 _sym_db.RegisterMessage(WorkflowCreateRequest)
 
 WorkflowListRequest = _reflection.GeneratedProtocolMessageType('WorkflowListRequest', (_message.Message,), dict(
   DESCRIPTOR = _WORKFLOWLISTREQUEST,
   __module__ = 'flyteidl.admin.workflow_pb2'
-  # @@protoc_insertion_point(class_scope:admin.WorkflowListRequest)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.WorkflowListRequest)
   ))
 _sym_db.RegisterMessage(WorkflowListRequest)
 
 WorkflowCreateResponse = _reflection.GeneratedProtocolMessageType('WorkflowCreateResponse', (_message.Message,), dict(
   DESCRIPTOR = _WORKFLOWCREATERESPONSE,
   __module__ = 'flyteidl.admin.workflow_pb2'
-  # @@protoc_insertion_point(class_scope:admin.WorkflowCreateResponse)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.WorkflowCreateResponse)
   ))
 _sym_db.RegisterMessage(WorkflowCreateResponse)
 
 Workflow = _reflection.GeneratedProtocolMessageType('Workflow', (_message.Message,), dict(
   DESCRIPTOR = _WORKFLOW,
   __module__ = 'flyteidl.admin.workflow_pb2'
-  # @@protoc_insertion_point(class_scope:admin.Workflow)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.Workflow)
   ))
 _sym_db.RegisterMessage(Workflow)
 
 WorkflowList = _reflection.GeneratedProtocolMessageType('WorkflowList', (_message.Message,), dict(
   DESCRIPTOR = _WORKFLOWLIST,
   __module__ = 'flyteidl.admin.workflow_pb2'
-  # @@protoc_insertion_point(class_scope:admin.WorkflowList)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.WorkflowList)
   ))
 _sym_db.RegisterMessage(WorkflowList)
 
 WorkflowSpec = _reflection.GeneratedProtocolMessageType('WorkflowSpec', (_message.Message,), dict(
   DESCRIPTOR = _WORKFLOWSPEC,
   __module__ = 'flyteidl.admin.workflow_pb2'
-  # @@protoc_insertion_point(class_scope:admin.WorkflowSpec)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.WorkflowSpec)
   ))
 _sym_db.RegisterMessage(WorkflowSpec)
 

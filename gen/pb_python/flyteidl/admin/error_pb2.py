@@ -18,14 +18,14 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/error.proto',
-  package='admin',
+  package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1a\x66lyteidl/admin/error.proto\x12\x05\x61\x64min\"8\n\x05\x45rror\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x1e\n\x04\x63ode\x18\x02 \x01(\x0e\x32\x10.admin.ErrorCode*_\n\tErrorCode\x12\x12\n\x0eINTERNAL_ERROR\x10\x00\x12\x0e\n\nUSER_ERROR\x10\x01\x12\x16\n\x12MISSING_PARAMETERS\x10\x02\x12\x16\n\x12INVALID_PARAMETERS\x10\x03\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1a\x66lyteidl/admin/error.proto\x12\x0e\x66lyteidl.admin\"A\n\x05\x45rror\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\'\n\x04\x63ode\x18\x02 \x01(\x0e\x32\x19.flyteidl.admin.ErrorCode*_\n\tErrorCode\x12\x12\n\x0eINTERNAL_ERROR\x10\x00\x12\x0e\n\nUSER_ERROR\x10\x01\x12\x16\n\x12MISSING_PARAMETERS\x10\x02\x12\x16\n\x12INVALID_PARAMETERS\x10\x03\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
 )
 
 _ERRORCODE = _descriptor.EnumDescriptor(
   name='ErrorCode',
-  full_name='admin.ErrorCode',
+  full_name='flyteidl.admin.ErrorCode',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -48,8 +48,8 @@ _ERRORCODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=95,
-  serialized_end=190,
+  serialized_start=113,
+  serialized_end=208,
 )
 _sym_db.RegisterEnumDescriptor(_ERRORCODE)
 
@@ -63,20 +63,20 @@ INVALID_PARAMETERS = 3
 
 _ERROR = _descriptor.Descriptor(
   name='Error',
-  full_name='admin.Error',
+  full_name='flyteidl.admin.Error',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='message', full_name='admin.Error.message', index=0,
+      name='message', full_name='flyteidl.admin.Error.message', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='code', full_name='admin.Error.code', index=1,
+      name='code', full_name='flyteidl.admin.Error.code', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -94,8 +94,8 @@ _ERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=37,
-  serialized_end=93,
+  serialized_start=46,
+  serialized_end=111,
 )
 
 _ERROR.fields_by_name['code'].enum_type = _ERRORCODE
@@ -106,7 +106,7 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 Error = _reflection.GeneratedProtocolMessageType('Error', (_message.Message,), dict(
   DESCRIPTOR = _ERROR,
   __module__ = 'flyteidl.admin.error_pb2'
-  # @@protoc_insertion_point(class_scope:admin.Error)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.Error)
   ))
 _sym_db.RegisterMessage(Error)
 

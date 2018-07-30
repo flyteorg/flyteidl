@@ -7,20 +7,20 @@ import "flyteidl/admin/workflow.proto";
 import "flyteidl/admin/common.proto";
 
 service AdminService {
-  rpc CreateTask (admin.TaskCreateRequest) returns (admin.TaskCreateResponse) {
+  rpc CreateTask (flyteidl.admin.TaskCreateRequest) returns (flyteidl.admin.TaskCreateResponse) {
     option (google.api.http) = {
       post: "/api/v1/tasks"
       body: "*"
     };
   }
 
-  rpc ListTaskIds (admin.TaskListRequest) returns (admin.IdentifierList) {
+  rpc ListTaskIds (flyteidl.admin.TaskListRequest) returns (flyteidl.admin.IdentifierList) {
     option (google.api.http) = {
       get: "/api/v1/project/{project}/domain/{domain}/task_ids"
     };
   }
 
-  rpc ListTasks (admin.TaskListRequest) returns (admin.TaskList) {
+  rpc ListTasks (flyteidl.admin.TaskListRequest) returns (flyteidl.admin.TaskList) {
     option (google.api.http) = {
       get: "/api/v1/project/{project}/domain/{domain}/tasks"
       additional_bindings {
@@ -29,20 +29,20 @@ service AdminService {
     };
   }
 
-  rpc CreateWorkflow (admin.WorkflowCreateRequest) returns (admin.WorkflowCreateResponse) {
+  rpc CreateWorkflow (flyteidl.admin.WorkflowCreateRequest) returns (flyteidl.admin.WorkflowCreateResponse) {
     option (google.api.http) = {
       post: "/api/v1/workflows"
       body: "*"
     };
   }
 
-  rpc ListWorkflowIds (admin.WorkflowListRequest) returns (admin.IdentifierList) {
+  rpc ListWorkflowIds (flyteidl.admin.WorkflowListRequest) returns (flyteidl.admin.IdentifierList) {
     option (google.api.http) = {
       get: "/api/v1/project/{project}/domain/{domain}/workflow_ids"
     };
   }
   
-  rpc ListWorkflows (admin.WorkflowListRequest) returns (admin.WorkflowList) {
+  rpc ListWorkflows (flyteidl.admin.WorkflowListRequest) returns (flyteidl.admin.WorkflowList) {
     option (google.api.http) = {
       get: "/api/v1/project/{project}/domain/{domain}/workflows"
       additional_bindings {

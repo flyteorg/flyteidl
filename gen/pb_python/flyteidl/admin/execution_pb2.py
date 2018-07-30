@@ -20,9 +20,9 @@ from flyteidl.admin import error_pb2 as flyteidl_dot_admin_dot_error__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/execution.proto',
-  package='admin',
+  package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1e\x66lyteidl/admin/execution.proto\x12\x05\x61\x64min\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1a\x66lyteidl/admin/error.proto\"[\n\x16\x45xecutionCreateRequest\x12\x1d\n\x02id\x18\x01 \x01(\x0b\x32\x11.admin.Identifier\x12\"\n\x04spec\x18\x02 \x01(\x0b\x32\x14.admin.ExecutionSpec\"$\n\x15\x45xecutionCreateResult\x12\x0b\n\x03urn\x18\x01 \x01(\t\"\xab\x01\n\tExecution\x12\x1d\n\x02id\x18\x01 \x01(\x0b\x32\x11.admin.Identifier\x12\x0b\n\x03urn\x18\x02 \x01(\t\x12&\n\x06status\x18\x03 \x01(\x0b\x32\x16.admin.ExecutionStatus\x12\"\n\x04spec\x18\x04 \x01(\x0b\x32\x14.admin.ExecutionSpec\x12&\n\x06result\x18\x05 \x01(\x0b\x32\x16.admin.ExecutionResult\"5\n\rExecutionList\x12$\n\nexecutions\x18\x01 \x03(\x0b\x32\x10.admin.Execution\"M\n\x0f\x45xecutionStatus\x12$\n\x05phase\x18\x01 \x01(\x0e\x32\x15.admin.ExecutionPhase\x12\x14\n\x0cworkflow_urn\x18\x02 \x01(\t\"p\n\x0f\x45xecutionResult\x12-\n\x07outputs\x18\x01 \x01(\x0b\x32\x1a.core.NamedValueCollectionH\x00\x12\x1d\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x0c.admin.ErrorH\x00\x42\x0f\n\routput_result\"\xa5\x01\n\x11\x45xecutionMetadata\x12\x34\n\x04mode\x18\x01 \x01(\x0e\x32&.admin.ExecutionMetadata.ExecutionMode\x12\x11\n\tprincipal\x18\x02 \x01(\t\x12\x0f\n\x07nesting\x18\x03 \x01(\x05\"6\n\rExecutionMode\x12\n\n\x06MANUAL\x10\x00\x12\r\n\tSCHEDULED\x10\x01\x12\n\n\x06SYSTEM\x10\x02\"\xac\x01\n\rExecutionSpec\x12\x17\n\x0flaunch_plan_urn\x18\x01 \x01(\t\x12*\n\x06inputs\x18\x02 \x01(\x0b\x32\x1a.core.NamedValueCollection\x12*\n\x08metadata\x18\x03 \x01(\x0b\x32\x18.admin.ExecutionMetadata\x12*\n\rnotifications\x18\x04 \x03(\x0b\x32\x13.admin.NotificationB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1e\x66lyteidl/admin/execution.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1a\x66lyteidl/admin/error.proto\"m\n\x16\x45xecutionCreateRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12+\n\x04spec\x18\x02 \x01(\x0b\x32\x1d.flyteidl.admin.ExecutionSpec\"$\n\x15\x45xecutionCreateResult\x12\x0b\n\x03urn\x18\x01 \x01(\t\"\xcf\x01\n\tExecution\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0b\n\x03urn\x18\x02 \x01(\t\x12/\n\x06status\x18\x03 \x01(\x0b\x32\x1f.flyteidl.admin.ExecutionStatus\x12+\n\x04spec\x18\x04 \x01(\x0b\x32\x1d.flyteidl.admin.ExecutionSpec\x12/\n\x06result\x18\x05 \x01(\x0b\x32\x1f.flyteidl.admin.ExecutionResult\">\n\rExecutionList\x12-\n\nexecutions\x18\x01 \x03(\x0b\x32\x19.flyteidl.admin.Execution\"V\n\x0f\x45xecutionStatus\x12-\n\x05phase\x18\x01 \x01(\x0e\x32\x1e.flyteidl.admin.ExecutionPhase\x12\x14\n\x0cworkflow_urn\x18\x02 \x01(\t\"\x82\x01\n\x0f\x45xecutionResult\x12\x36\n\x07outputs\x18\x01 \x01(\x0b\x32#.flyteidl.core.NamedValueCollectionH\x00\x12&\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x15.flyteidl.admin.ErrorH\x00\x42\x0f\n\routput_result\"\xae\x01\n\x11\x45xecutionMetadata\x12=\n\x04mode\x18\x01 \x01(\x0e\x32/.flyteidl.admin.ExecutionMetadata.ExecutionMode\x12\x11\n\tprincipal\x18\x02 \x01(\t\x12\x0f\n\x07nesting\x18\x03 \x01(\x05\"6\n\rExecutionMode\x12\n\n\x06MANUAL\x10\x00\x12\r\n\tSCHEDULED\x10\x01\x12\n\n\x06SYSTEM\x10\x02\"\xc7\x01\n\rExecutionSpec\x12\x17\n\x0flaunch_plan_urn\x18\x01 \x01(\t\x12\x33\n\x06inputs\x18\x02 \x01(\x0b\x32#.flyteidl.core.NamedValueCollection\x12\x33\n\x08metadata\x18\x03 \x01(\x0b\x32!.flyteidl.admin.ExecutionMetadata\x12\x33\n\rnotifications\x18\x04 \x03(\x0b\x32\x1c.flyteidl.admin.NotificationB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_interface__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_error__pb2.DESCRIPTOR,])
 
@@ -30,7 +30,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _EXECUTIONMETADATA_EXECUTIONMODE = _descriptor.EnumDescriptor(
   name='ExecutionMode',
-  full_name='admin.ExecutionMetadata.ExecutionMode',
+  full_name='flyteidl.admin.ExecutionMetadata.ExecutionMode',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -49,28 +49,28 @@ _EXECUTIONMETADATA_EXECUTIONMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=794,
-  serialized_end=848,
+  serialized_start=903,
+  serialized_end=957,
 )
 _sym_db.RegisterEnumDescriptor(_EXECUTIONMETADATA_EXECUTIONMODE)
 
 
 _EXECUTIONCREATEREQUEST = _descriptor.Descriptor(
   name='ExecutionCreateRequest',
-  full_name='admin.ExecutionCreateRequest',
+  full_name='flyteidl.admin.ExecutionCreateRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='admin.ExecutionCreateRequest.id', index=0,
+      name='id', full_name='flyteidl.admin.ExecutionCreateRequest.id', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='admin.ExecutionCreateRequest.spec', index=1,
+      name='spec', full_name='flyteidl.admin.ExecutionCreateRequest.spec', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -88,20 +88,20 @@ _EXECUTIONCREATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=129,
-  serialized_end=220,
+  serialized_start=138,
+  serialized_end=247,
 )
 
 
 _EXECUTIONCREATERESULT = _descriptor.Descriptor(
   name='ExecutionCreateResult',
-  full_name='admin.ExecutionCreateResult',
+  full_name='flyteidl.admin.ExecutionCreateResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='urn', full_name='admin.ExecutionCreateResult.urn', index=0,
+      name='urn', full_name='flyteidl.admin.ExecutionCreateResult.urn', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -119,48 +119,48 @@ _EXECUTIONCREATERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=222,
-  serialized_end=258,
+  serialized_start=249,
+  serialized_end=285,
 )
 
 
 _EXECUTION = _descriptor.Descriptor(
   name='Execution',
-  full_name='admin.Execution',
+  full_name='flyteidl.admin.Execution',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='admin.Execution.id', index=0,
+      name='id', full_name='flyteidl.admin.Execution.id', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='urn', full_name='admin.Execution.urn', index=1,
+      name='urn', full_name='flyteidl.admin.Execution.urn', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='status', full_name='admin.Execution.status', index=2,
+      name='status', full_name='flyteidl.admin.Execution.status', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='spec', full_name='admin.Execution.spec', index=3,
+      name='spec', full_name='flyteidl.admin.Execution.spec', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='result', full_name='admin.Execution.result', index=4,
+      name='result', full_name='flyteidl.admin.Execution.result', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -178,20 +178,20 @@ _EXECUTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=261,
-  serialized_end=432,
+  serialized_start=288,
+  serialized_end=495,
 )
 
 
 _EXECUTIONLIST = _descriptor.Descriptor(
   name='ExecutionList',
-  full_name='admin.ExecutionList',
+  full_name='flyteidl.admin.ExecutionList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='executions', full_name='admin.ExecutionList.executions', index=0,
+      name='executions', full_name='flyteidl.admin.ExecutionList.executions', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -209,27 +209,27 @@ _EXECUTIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=434,
-  serialized_end=487,
+  serialized_start=497,
+  serialized_end=559,
 )
 
 
 _EXECUTIONSTATUS = _descriptor.Descriptor(
   name='ExecutionStatus',
-  full_name='admin.ExecutionStatus',
+  full_name='flyteidl.admin.ExecutionStatus',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='phase', full_name='admin.ExecutionStatus.phase', index=0,
+      name='phase', full_name='flyteidl.admin.ExecutionStatus.phase', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='workflow_urn', full_name='admin.ExecutionStatus.workflow_urn', index=1,
+      name='workflow_urn', full_name='flyteidl.admin.ExecutionStatus.workflow_urn', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -247,27 +247,27 @@ _EXECUTIONSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=489,
-  serialized_end=566,
+  serialized_start=561,
+  serialized_end=647,
 )
 
 
 _EXECUTIONRESULT = _descriptor.Descriptor(
   name='ExecutionResult',
-  full_name='admin.ExecutionResult',
+  full_name='flyteidl.admin.ExecutionResult',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='outputs', full_name='admin.ExecutionResult.outputs', index=0,
+      name='outputs', full_name='flyteidl.admin.ExecutionResult.outputs', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='error', full_name='admin.ExecutionResult.error', index=1,
+      name='error', full_name='flyteidl.admin.ExecutionResult.error', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -285,37 +285,37 @@ _EXECUTIONRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='output_result', full_name='admin.ExecutionResult.output_result',
+      name='output_result', full_name='flyteidl.admin.ExecutionResult.output_result',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=568,
-  serialized_end=680,
+  serialized_start=650,
+  serialized_end=780,
 )
 
 
 _EXECUTIONMETADATA = _descriptor.Descriptor(
   name='ExecutionMetadata',
-  full_name='admin.ExecutionMetadata',
+  full_name='flyteidl.admin.ExecutionMetadata',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='mode', full_name='admin.ExecutionMetadata.mode', index=0,
+      name='mode', full_name='flyteidl.admin.ExecutionMetadata.mode', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='principal', full_name='admin.ExecutionMetadata.principal', index=1,
+      name='principal', full_name='flyteidl.admin.ExecutionMetadata.principal', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='nesting', full_name='admin.ExecutionMetadata.nesting', index=2,
+      name='nesting', full_name='flyteidl.admin.ExecutionMetadata.nesting', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -334,41 +334,41 @@ _EXECUTIONMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=683,
-  serialized_end=848,
+  serialized_start=783,
+  serialized_end=957,
 )
 
 
 _EXECUTIONSPEC = _descriptor.Descriptor(
   name='ExecutionSpec',
-  full_name='admin.ExecutionSpec',
+  full_name='flyteidl.admin.ExecutionSpec',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='launch_plan_urn', full_name='admin.ExecutionSpec.launch_plan_urn', index=0,
+      name='launch_plan_urn', full_name='flyteidl.admin.ExecutionSpec.launch_plan_urn', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='inputs', full_name='admin.ExecutionSpec.inputs', index=1,
+      name='inputs', full_name='flyteidl.admin.ExecutionSpec.inputs', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='metadata', full_name='admin.ExecutionSpec.metadata', index=2,
+      name='metadata', full_name='flyteidl.admin.ExecutionSpec.metadata', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='notifications', full_name='admin.ExecutionSpec.notifications', index=3,
+      name='notifications', full_name='flyteidl.admin.ExecutionSpec.notifications', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -386,8 +386,8 @@ _EXECUTIONSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=851,
-  serialized_end=1023,
+  serialized_start=960,
+  serialized_end=1159,
 )
 
 _EXECUTIONCREATEREQUEST.fields_by_name['id'].message_type = flyteidl_dot_admin_dot_common__pb2._IDENTIFIER
@@ -424,56 +424,56 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 ExecutionCreateRequest = _reflection.GeneratedProtocolMessageType('ExecutionCreateRequest', (_message.Message,), dict(
   DESCRIPTOR = _EXECUTIONCREATEREQUEST,
   __module__ = 'flyteidl.admin.execution_pb2'
-  # @@protoc_insertion_point(class_scope:admin.ExecutionCreateRequest)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionCreateRequest)
   ))
 _sym_db.RegisterMessage(ExecutionCreateRequest)
 
 ExecutionCreateResult = _reflection.GeneratedProtocolMessageType('ExecutionCreateResult', (_message.Message,), dict(
   DESCRIPTOR = _EXECUTIONCREATERESULT,
   __module__ = 'flyteidl.admin.execution_pb2'
-  # @@protoc_insertion_point(class_scope:admin.ExecutionCreateResult)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionCreateResult)
   ))
 _sym_db.RegisterMessage(ExecutionCreateResult)
 
 Execution = _reflection.GeneratedProtocolMessageType('Execution', (_message.Message,), dict(
   DESCRIPTOR = _EXECUTION,
   __module__ = 'flyteidl.admin.execution_pb2'
-  # @@protoc_insertion_point(class_scope:admin.Execution)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.Execution)
   ))
 _sym_db.RegisterMessage(Execution)
 
 ExecutionList = _reflection.GeneratedProtocolMessageType('ExecutionList', (_message.Message,), dict(
   DESCRIPTOR = _EXECUTIONLIST,
   __module__ = 'flyteidl.admin.execution_pb2'
-  # @@protoc_insertion_point(class_scope:admin.ExecutionList)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionList)
   ))
 _sym_db.RegisterMessage(ExecutionList)
 
 ExecutionStatus = _reflection.GeneratedProtocolMessageType('ExecutionStatus', (_message.Message,), dict(
   DESCRIPTOR = _EXECUTIONSTATUS,
   __module__ = 'flyteidl.admin.execution_pb2'
-  # @@protoc_insertion_point(class_scope:admin.ExecutionStatus)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionStatus)
   ))
 _sym_db.RegisterMessage(ExecutionStatus)
 
 ExecutionResult = _reflection.GeneratedProtocolMessageType('ExecutionResult', (_message.Message,), dict(
   DESCRIPTOR = _EXECUTIONRESULT,
   __module__ = 'flyteidl.admin.execution_pb2'
-  # @@protoc_insertion_point(class_scope:admin.ExecutionResult)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionResult)
   ))
 _sym_db.RegisterMessage(ExecutionResult)
 
 ExecutionMetadata = _reflection.GeneratedProtocolMessageType('ExecutionMetadata', (_message.Message,), dict(
   DESCRIPTOR = _EXECUTIONMETADATA,
   __module__ = 'flyteidl.admin.execution_pb2'
-  # @@protoc_insertion_point(class_scope:admin.ExecutionMetadata)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionMetadata)
   ))
 _sym_db.RegisterMessage(ExecutionMetadata)
 
 ExecutionSpec = _reflection.GeneratedProtocolMessageType('ExecutionSpec', (_message.Message,), dict(
   DESCRIPTOR = _EXECUTIONSPEC,
   __module__ = 'flyteidl.admin.execution_pb2'
-  # @@protoc_insertion_point(class_scope:admin.ExecutionSpec)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionSpec)
   ))
 _sym_db.RegisterMessage(ExecutionSpec)
 

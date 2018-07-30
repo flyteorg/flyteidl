@@ -19,9 +19,9 @@ from flyteidl.core import literals_pb2 as flyteidl_dot_core_dot_literals__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/interface.proto',
-  package='core',
+  package='flyteidl.core',
   syntax='proto3',
-  serialized_pb=_b('\n\x1d\x66lyteidl/core/interface.proto\x12\x04\x63ore\x1a\x19\x66lyteidl/core/types.proto\x1a\x1c\x66lyteidl/core/literals.proto\"N\n\x08Variable\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x1f\n\x04type\x18\x02 \x01(\x0b\x32\x11.core.LiteralType\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\"Q\n\x0eTypedInterface\x12\x1e\n\x06inputs\x18\x01 \x03(\x0b\x32\x0e.core.Variable\x12\x1f\n\x07outputs\x18\x02 \x03(\x0b\x32\x0e.core.Variable\"8\n\nNamedValue\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.core.Literal\"8\n\x14NamedValueCollection\x12 \n\x06values\x18\x01 \x03(\x0b\x32\x10.core.NamedValueB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/core/interface.proto\x12\rflyteidl.core\x1a\x19\x66lyteidl/core/types.proto\x1a\x1c\x66lyteidl/core/literals.proto\"W\n\x08Variable\x12\x0c\n\x04name\x18\x01 \x01(\t\x12(\n\x04type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\"c\n\x0eTypedInterface\x12\'\n\x06inputs\x18\x01 \x03(\x0b\x32\x17.flyteidl.core.Variable\x12(\n\x07outputs\x18\x02 \x03(\x0b\x32\x17.flyteidl.core.Variable\"A\n\nNamedValue\x12\x0c\n\x04name\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.Literal\"A\n\x14NamedValueCollection\x12)\n\x06values\x18\x01 \x03(\x0b\x32\x19.flyteidl.core.NamedValueB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_types__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,])
 
@@ -30,27 +30,27 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _VARIABLE = _descriptor.Descriptor(
   name='Variable',
-  full_name='core.Variable',
+  full_name='flyteidl.core.Variable',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='core.Variable.name', index=0,
+      name='name', full_name='flyteidl.core.Variable.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='type', full_name='core.Variable.type', index=1,
+      name='type', full_name='flyteidl.core.Variable.type', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='description', full_name='core.Variable.description', index=2,
+      name='description', full_name='flyteidl.core.Variable.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -68,27 +68,27 @@ _VARIABLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=96,
-  serialized_end=174,
+  serialized_start=105,
+  serialized_end=192,
 )
 
 
 _TYPEDINTERFACE = _descriptor.Descriptor(
   name='TypedInterface',
-  full_name='core.TypedInterface',
+  full_name='flyteidl.core.TypedInterface',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='inputs', full_name='core.TypedInterface.inputs', index=0,
+      name='inputs', full_name='flyteidl.core.TypedInterface.inputs', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='outputs', full_name='core.TypedInterface.outputs', index=1,
+      name='outputs', full_name='flyteidl.core.TypedInterface.outputs', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -106,27 +106,27 @@ _TYPEDINTERFACE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=176,
-  serialized_end=257,
+  serialized_start=194,
+  serialized_end=293,
 )
 
 
 _NAMEDVALUE = _descriptor.Descriptor(
   name='NamedValue',
-  full_name='core.NamedValue',
+  full_name='flyteidl.core.NamedValue',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='core.NamedValue.name', index=0,
+      name='name', full_name='flyteidl.core.NamedValue.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='core.NamedValue.value', index=1,
+      name='value', full_name='flyteidl.core.NamedValue.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -144,20 +144,20 @@ _NAMEDVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=259,
-  serialized_end=315,
+  serialized_start=295,
+  serialized_end=360,
 )
 
 
 _NAMEDVALUECOLLECTION = _descriptor.Descriptor(
   name='NamedValueCollection',
-  full_name='core.NamedValueCollection',
+  full_name='flyteidl.core.NamedValueCollection',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='values', full_name='core.NamedValueCollection.values', index=0,
+      name='values', full_name='flyteidl.core.NamedValueCollection.values', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -175,8 +175,8 @@ _NAMEDVALUECOLLECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=317,
-  serialized_end=373,
+  serialized_start=362,
+  serialized_end=427,
 )
 
 _VARIABLE.fields_by_name['type'].message_type = flyteidl_dot_core_dot_types__pb2._LITERALTYPE
@@ -193,28 +193,28 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 Variable = _reflection.GeneratedProtocolMessageType('Variable', (_message.Message,), dict(
   DESCRIPTOR = _VARIABLE,
   __module__ = 'flyteidl.core.interface_pb2'
-  # @@protoc_insertion_point(class_scope:core.Variable)
+  # @@protoc_insertion_point(class_scope:flyteidl.core.Variable)
   ))
 _sym_db.RegisterMessage(Variable)
 
 TypedInterface = _reflection.GeneratedProtocolMessageType('TypedInterface', (_message.Message,), dict(
   DESCRIPTOR = _TYPEDINTERFACE,
   __module__ = 'flyteidl.core.interface_pb2'
-  # @@protoc_insertion_point(class_scope:core.TypedInterface)
+  # @@protoc_insertion_point(class_scope:flyteidl.core.TypedInterface)
   ))
 _sym_db.RegisterMessage(TypedInterface)
 
 NamedValue = _reflection.GeneratedProtocolMessageType('NamedValue', (_message.Message,), dict(
   DESCRIPTOR = _NAMEDVALUE,
   __module__ = 'flyteidl.core.interface_pb2'
-  # @@protoc_insertion_point(class_scope:core.NamedValue)
+  # @@protoc_insertion_point(class_scope:flyteidl.core.NamedValue)
   ))
 _sym_db.RegisterMessage(NamedValue)
 
 NamedValueCollection = _reflection.GeneratedProtocolMessageType('NamedValueCollection', (_message.Message,), dict(
   DESCRIPTOR = _NAMEDVALUECOLLECTION,
   __module__ = 'flyteidl.core.interface_pb2'
-  # @@protoc_insertion_point(class_scope:core.NamedValueCollection)
+  # @@protoc_insertion_point(class_scope:flyteidl.core.NamedValueCollection)
   ))
 _sym_db.RegisterMessage(NamedValueCollection)
 

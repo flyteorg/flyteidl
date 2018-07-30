@@ -18,14 +18,14 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/types.proto',
-  package='core',
+  package='flyteidl.core',
   syntax='proto3',
-  serialized_pb=_b('\n\x19\x66lyteidl/core/types.proto\x12\x04\x63ore\"\xfa\x01\n\nSchemaType\x12.\n\x07\x63olumns\x18\x03 \x03(\x0b\x32\x1d.core.SchemaType.SchemaColumn\x1a\xbb\x01\n\x0cSchemaColumn\x12\x0c\n\x04name\x18\x01 \x01(\t\x12<\n\x04type\x18\x02 \x01(\x0e\x32..core.SchemaType.SchemaColumn.SchemaColumnType\"_\n\x10SchemaColumnType\x12\x0b\n\x07INTEGER\x10\x00\x12\t\n\x05\x46LOAT\x10\x01\x12\n\n\x06STRING\x10\x02\x12\x0c\n\x08\x44\x41TETIME\x10\x03\x12\x0c\n\x08\x44URATION\x10\x04\x12\x0b\n\x07\x42OOLEAN\x10\x05\"\xb8\x01\n\x0bLiteralType\x12\"\n\x06simple\x18\x01 \x01(\x0e\x32\x10.core.SimpleTypeH\x00\x12\"\n\x06schema\x18\x02 \x01(\x0b\x32\x10.core.SchemaTypeH\x00\x12,\n\x0f\x63ollection_type\x18\x03 \x01(\x0b\x32\x11.core.LiteralTypeH\x00\x12+\n\x0emap_value_type\x18\x04 \x01(\x0b\x32\x11.core.LiteralTypeH\x00\x42\x06\n\x04type\"/\n\x0fOutputReference\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12\x0b\n\x03var\x18\x02 \x01(\t\"0\n\x05\x45rror\x12\x16\n\x0e\x66\x61iled_node_id\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t*\x93\x01\n\nSimpleType\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07INTEGER\x10\x01\x12\t\n\x05\x46LOAT\x10\x02\x12\n\n\x06STRING\x10\x03\x12\x0b\n\x07\x42OOLEAN\x10\x04\x12\r\n\tDATE_TIME\x10\x05\x12\x0c\n\x08\x44URATION\x10\x06\x12\x08\n\x04\x42LOB\x10\x07\x12\n\n\x06\x42INARY\x10\x08\x12\x0c\n\x08WAITABLE\x10\t\x12\t\n\x05\x45RROR\x10\nB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x19\x66lyteidl/core/types.proto\x12\rflyteidl.core\"\x8c\x02\n\nSchemaType\x12\x37\n\x07\x63olumns\x18\x03 \x03(\x0b\x32&.flyteidl.core.SchemaType.SchemaColumn\x1a\xc4\x01\n\x0cSchemaColumn\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x45\n\x04type\x18\x02 \x01(\x0e\x32\x37.flyteidl.core.SchemaType.SchemaColumn.SchemaColumnType\"_\n\x10SchemaColumnType\x12\x0b\n\x07INTEGER\x10\x00\x12\t\n\x05\x46LOAT\x10\x01\x12\n\n\x06STRING\x10\x02\x12\x0c\n\x08\x44\x41TETIME\x10\x03\x12\x0c\n\x08\x44URATION\x10\x04\x12\x0b\n\x07\x42OOLEAN\x10\x05\"\xdc\x01\n\x0bLiteralType\x12+\n\x06simple\x18\x01 \x01(\x0e\x32\x19.flyteidl.core.SimpleTypeH\x00\x12+\n\x06schema\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.SchemaTypeH\x00\x12\x35\n\x0f\x63ollection_type\x18\x03 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeH\x00\x12\x34\n\x0emap_value_type\x18\x04 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeH\x00\x42\x06\n\x04type\"/\n\x0fOutputReference\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12\x0b\n\x03var\x18\x02 \x01(\t\"0\n\x05\x45rror\x12\x16\n\x0e\x66\x61iled_node_id\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t*\x93\x01\n\nSimpleType\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07INTEGER\x10\x01\x12\t\n\x05\x46LOAT\x10\x02\x12\n\n\x06STRING\x10\x03\x12\x0b\n\x07\x42OOLEAN\x10\x04\x12\r\n\tDATE_TIME\x10\x05\x12\x0c\n\x08\x44URATION\x10\x06\x12\x08\n\x04\x42LOB\x10\x07\x12\n\n\x06\x42INARY\x10\x08\x12\x0c\n\x08WAITABLE\x10\t\x12\t\n\x05\x45RROR\x10\nB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
 )
 
 _SIMPLETYPE = _descriptor.EnumDescriptor(
   name='SimpleType',
-  full_name='core.SimpleType',
+  full_name='flyteidl.core.SimpleType',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -76,8 +76,8 @@ _SIMPLETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=575,
-  serialized_end=722,
+  serialized_start=638,
+  serialized_end=785,
 )
 _sym_db.RegisterEnumDescriptor(_SIMPLETYPE)
 
@@ -97,7 +97,7 @@ ERROR = 10
 
 _SCHEMATYPE_SCHEMACOLUMN_SCHEMACOLUMNTYPE = _descriptor.EnumDescriptor(
   name='SchemaColumnType',
-  full_name='core.SchemaType.SchemaColumn.SchemaColumnType',
+  full_name='flyteidl.core.SchemaType.SchemaColumn.SchemaColumnType',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -128,28 +128,28 @@ _SCHEMATYPE_SCHEMACOLUMN_SCHEMACOLUMNTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=191,
-  serialized_end=286,
+  serialized_start=218,
+  serialized_end=313,
 )
 _sym_db.RegisterEnumDescriptor(_SCHEMATYPE_SCHEMACOLUMN_SCHEMACOLUMNTYPE)
 
 
 _SCHEMATYPE_SCHEMACOLUMN = _descriptor.Descriptor(
   name='SchemaColumn',
-  full_name='core.SchemaType.SchemaColumn',
+  full_name='flyteidl.core.SchemaType.SchemaColumn',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='core.SchemaType.SchemaColumn.name', index=0,
+      name='name', full_name='flyteidl.core.SchemaType.SchemaColumn.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='type', full_name='core.SchemaType.SchemaColumn.type', index=1,
+      name='type', full_name='flyteidl.core.SchemaType.SchemaColumn.type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -168,19 +168,19 @@ _SCHEMATYPE_SCHEMACOLUMN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=99,
-  serialized_end=286,
+  serialized_start=117,
+  serialized_end=313,
 )
 
 _SCHEMATYPE = _descriptor.Descriptor(
   name='SchemaType',
-  full_name='core.SchemaType',
+  full_name='flyteidl.core.SchemaType',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='columns', full_name='core.SchemaType.columns', index=0,
+      name='columns', full_name='flyteidl.core.SchemaType.columns', index=0,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -198,41 +198,41 @@ _SCHEMATYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=36,
-  serialized_end=286,
+  serialized_start=45,
+  serialized_end=313,
 )
 
 
 _LITERALTYPE = _descriptor.Descriptor(
   name='LiteralType',
-  full_name='core.LiteralType',
+  full_name='flyteidl.core.LiteralType',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='simple', full_name='core.LiteralType.simple', index=0,
+      name='simple', full_name='flyteidl.core.LiteralType.simple', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='schema', full_name='core.LiteralType.schema', index=1,
+      name='schema', full_name='flyteidl.core.LiteralType.schema', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='collection_type', full_name='core.LiteralType.collection_type', index=2,
+      name='collection_type', full_name='flyteidl.core.LiteralType.collection_type', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='map_value_type', full_name='core.LiteralType.map_value_type', index=3,
+      name='map_value_type', full_name='flyteidl.core.LiteralType.map_value_type', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -250,30 +250,30 @@ _LITERALTYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='type', full_name='core.LiteralType.type',
+      name='type', full_name='flyteidl.core.LiteralType.type',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=289,
-  serialized_end=473,
+  serialized_start=316,
+  serialized_end=536,
 )
 
 
 _OUTPUTREFERENCE = _descriptor.Descriptor(
   name='OutputReference',
-  full_name='core.OutputReference',
+  full_name='flyteidl.core.OutputReference',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='node_id', full_name='core.OutputReference.node_id', index=0,
+      name='node_id', full_name='flyteidl.core.OutputReference.node_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='var', full_name='core.OutputReference.var', index=1,
+      name='var', full_name='flyteidl.core.OutputReference.var', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -291,27 +291,27 @@ _OUTPUTREFERENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=475,
-  serialized_end=522,
+  serialized_start=538,
+  serialized_end=585,
 )
 
 
 _ERROR = _descriptor.Descriptor(
   name='Error',
-  full_name='core.Error',
+  full_name='flyteidl.core.Error',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='failed_node_id', full_name='core.Error.failed_node_id', index=0,
+      name='failed_node_id', full_name='flyteidl.core.Error.failed_node_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='message', full_name='core.Error.message', index=1,
+      name='message', full_name='flyteidl.core.Error.message', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -329,8 +329,8 @@ _ERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=524,
-  serialized_end=572,
+  serialized_start=587,
+  serialized_end=635,
 )
 
 _SCHEMATYPE_SCHEMACOLUMN.fields_by_name['type'].enum_type = _SCHEMATYPE_SCHEMACOLUMN_SCHEMACOLUMNTYPE
@@ -365,12 +365,12 @@ SchemaType = _reflection.GeneratedProtocolMessageType('SchemaType', (_message.Me
   SchemaColumn = _reflection.GeneratedProtocolMessageType('SchemaColumn', (_message.Message,), dict(
     DESCRIPTOR = _SCHEMATYPE_SCHEMACOLUMN,
     __module__ = 'flyteidl.core.types_pb2'
-    # @@protoc_insertion_point(class_scope:core.SchemaType.SchemaColumn)
+    # @@protoc_insertion_point(class_scope:flyteidl.core.SchemaType.SchemaColumn)
     ))
   ,
   DESCRIPTOR = _SCHEMATYPE,
   __module__ = 'flyteidl.core.types_pb2'
-  # @@protoc_insertion_point(class_scope:core.SchemaType)
+  # @@protoc_insertion_point(class_scope:flyteidl.core.SchemaType)
   ))
 _sym_db.RegisterMessage(SchemaType)
 _sym_db.RegisterMessage(SchemaType.SchemaColumn)
@@ -378,21 +378,21 @@ _sym_db.RegisterMessage(SchemaType.SchemaColumn)
 LiteralType = _reflection.GeneratedProtocolMessageType('LiteralType', (_message.Message,), dict(
   DESCRIPTOR = _LITERALTYPE,
   __module__ = 'flyteidl.core.types_pb2'
-  # @@protoc_insertion_point(class_scope:core.LiteralType)
+  # @@protoc_insertion_point(class_scope:flyteidl.core.LiteralType)
   ))
 _sym_db.RegisterMessage(LiteralType)
 
 OutputReference = _reflection.GeneratedProtocolMessageType('OutputReference', (_message.Message,), dict(
   DESCRIPTOR = _OUTPUTREFERENCE,
   __module__ = 'flyteidl.core.types_pb2'
-  # @@protoc_insertion_point(class_scope:core.OutputReference)
+  # @@protoc_insertion_point(class_scope:flyteidl.core.OutputReference)
   ))
 _sym_db.RegisterMessage(OutputReference)
 
 Error = _reflection.GeneratedProtocolMessageType('Error', (_message.Message,), dict(
   DESCRIPTOR = _ERROR,
   __module__ = 'flyteidl.core.types_pb2'
-  # @@protoc_insertion_point(class_scope:core.Error)
+  # @@protoc_insertion_point(class_scope:flyteidl.core.Error)
   ))
 _sym_db.RegisterMessage(Error)
 
