@@ -5,7 +5,7 @@ import "flyteidl/core/literals.proto";
 
 package core;
 
-option go_package = "core";
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
 
 // This document describes a set of tasks to execute and how the final outputs are produced.
 message FutureTaskDocument {

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package core;
 
-option go_package = "core";
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
 
 import "flyteidl/core/types.proto";
 import "flyteidl/core/literals.proto";

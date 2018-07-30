@@ -9,13 +9,13 @@ It translates gRPC into RESTful JSON APIs.
 package lyft_flyte_flyteadmin
 
 import (
-	"flyteidl/admin"
 	"io"
 	"net/http"
 
 	"github.com/golang/protobuf/proto"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"github.com/grpc-ecosystem/grpc-gateway/utilities"
+	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"

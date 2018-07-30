@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/schedule.proto',
   package='admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1d\x66lyteidl/admin/schedule.proto\x12\x05\x61\x64min\"\x85\x02\n\x08Schedule\x12\x19\n\x0f\x63ron_expression\x18\x01 \x01(\tH\x00\x12/\n\nfixed_rate\x18\x02 \x01(\x0b\x32\x19.admin.Schedule.FixedRateH\x00\x12\x1e\n\x16kickoff_time_input_arg\x18\x03 \x01(\t\x1aG\n\tFixedRate\x12\r\n\x05value\x18\x01 \x01(\r\x12+\n\x04unit\x18\x02 \x01(\x0e\x32\x1d.admin.Schedule.FixedRateUnit\".\n\rFixedRateUnit\x12\n\n\x06MINUTE\x10\x00\x12\x08\n\x04HOUR\x10\x01\x12\x07\n\x03\x44\x41Y\x10\x02\x42\x14\n\x12ScheduleExpressionB\x07Z\x05\x61\x64minb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/admin/schedule.proto\x12\x05\x61\x64min\"\x85\x02\n\x08Schedule\x12\x19\n\x0f\x63ron_expression\x18\x01 \x01(\tH\x00\x12/\n\nfixed_rate\x18\x02 \x01(\x0b\x32\x19.admin.Schedule.FixedRateH\x00\x12\x1e\n\x16kickoff_time_input_arg\x18\x03 \x01(\t\x1aG\n\tFixedRate\x12\r\n\x05value\x18\x01 \x01(\r\x12+\n\x04unit\x18\x02 \x01(\x0e\x32\x1d.admin.Schedule.FixedRateUnit\".\n\rFixedRateUnit\x12\n\n\x06MINUTE\x10\x00\x12\x08\n\x04HOUR\x10\x01\x12\x07\n\x03\x44\x41Y\x10\x02\x42\x14\n\x12ScheduleExpressionB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
 )
 
 
@@ -166,5 +166,5 @@ _sym_db.RegisterMessage(Schedule.FixedRate)
 
 
 DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z\005admin'))
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin'))
 # @@protoc_insertion_point(module_scope)

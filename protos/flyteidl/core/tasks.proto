@@ -6,7 +6,7 @@ import "google/protobuf/duration.proto";
 
 package core;
 
-option go_package = "core";
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
 
 enum TaskCategory {
     // Task category that identifies if the system can use default structures in UI, etc to drive the task

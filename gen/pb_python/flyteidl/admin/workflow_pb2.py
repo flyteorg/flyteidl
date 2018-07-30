@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/workflow.proto',
   package='admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1d\x66lyteidl/admin/workflow.proto\x12\x05\x61\x64min\x1a\x1c\x66lyteidl/core/workflow.proto\x1a\x1b\x66lyteidl/admin/common.proto\"j\n\x15WorkflowCreateRequest\x12\x1d\n\x02id\x18\x01 \x01(\x0b\x32\x11.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12!\n\x04spec\x18\x03 \x01(\x0b\x32\x13.admin.WorkflowSpec\"t\n\x13WorkflowListRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05limit\x18\x04 \x01(\r\x12\x0e\n\x06offset\x18\x05 \x01(\r\x12\x0f\n\x07\x66ilters\x18\x06 \x01(\t\"%\n\x16WorkflowCreateResponse\x12\x0b\n\x03urn\x18\x01 \x01(\t\"j\n\x08Workflow\x12\x1d\n\x02id\x18\x01 \x01(\x0b\x32\x11.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0b\n\x03urn\x18\x03 \x01(\t\x12!\n\x04spec\x18\x04 \x01(\x0b\x32\x13.admin.WorkflowSpec\"2\n\x0cWorkflowList\x12\"\n\tworkflows\x18\x01 \x03(\x0b\x32\x0f.admin.Workflow\"A\n\x0cWorkflowSpec\x12\x31\n\x11workflow_template\x18\x01 \x01(\x0b\x32\x16.core.WorkflowTemplateB\x07Z\x05\x61\x64minb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/admin/workflow.proto\x12\x05\x61\x64min\x1a\x1c\x66lyteidl/core/workflow.proto\x1a\x1b\x66lyteidl/admin/common.proto\"j\n\x15WorkflowCreateRequest\x12\x1d\n\x02id\x18\x01 \x01(\x0b\x32\x11.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12!\n\x04spec\x18\x03 \x01(\x0b\x32\x13.admin.WorkflowSpec\"t\n\x13WorkflowListRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05limit\x18\x04 \x01(\r\x12\x0e\n\x06offset\x18\x05 \x01(\r\x12\x0f\n\x07\x66ilters\x18\x06 \x01(\t\"%\n\x16WorkflowCreateResponse\x12\x0b\n\x03urn\x18\x01 \x01(\t\"j\n\x08Workflow\x12\x1d\n\x02id\x18\x01 \x01(\x0b\x32\x11.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0b\n\x03urn\x18\x03 \x01(\t\x12!\n\x04spec\x18\x04 \x01(\x0b\x32\x13.admin.WorkflowSpec\"2\n\x0cWorkflowList\x12\"\n\tworkflows\x18\x01 \x03(\x0b\x32\x0f.admin.Workflow\"A\n\x0cWorkflowSpec\x12\x31\n\x11workflow_template\x18\x01 \x01(\x0b\x32\x16.core.WorkflowTemplateB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_workflow__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,])
 
@@ -341,5 +341,5 @@ _sym_db.RegisterMessage(WorkflowSpec)
 
 
 DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z\005admin'))
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin'))
 # @@protoc_insertion_point(module_scope)

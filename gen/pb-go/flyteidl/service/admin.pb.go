@@ -6,7 +6,7 @@ package lyft_flyte_flyteadmin
 import proto "github.com/golang/protobuf/proto"
 import fmt "fmt"
 import math "math"
-import admin "flyteidl/admin"
+import admin "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin"
 import _ "google.golang.org/genproto/googleapis/api/annotations"
 
 import (

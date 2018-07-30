@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/launch_plan.proto',
   package='admin',
   syntax='proto3',
-  serialized_pb=_b('\n flyteidl/admin/launch_plan.proto\x12\x05\x61\x64min\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1d\x66lyteidl/admin/schedule.proto\x1a\x1b\x66lyteidl/admin/common.proto\"n\n\x17LaunchPlanCreateRequest\x12\x1d\n\x02id\x18\x01 \x01(\x0b\x32\x11.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12#\n\x04spec\x18\x03 \x01(\x0b\x32\x15.admin.LaunchPlanSpec\"n\n\nLaunchPlan\x12\x1d\n\x02id\x18\x01 \x01(\x0b\x32\x11.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0b\n\x03urn\x18\x03 \x01(\t\x12#\n\x04spec\x18\x04 \x01(\x0b\x32\x15.admin.LaunchPlanSpec\"9\n\x0eLaunchPlanList\x12\'\n\x0claunch_plans\x18\x01 \x03(\x0b\x32\x11.admin.LaunchPlan\"\xb6\x01\n\x0eLaunchPlanSpec\x12\x14\n\x0cworkflow_urn\x18\x01 \x01(\t\x12\x32\n\x0f\x65ntity_metadata\x18\x02 \x01(\x0b\x32\x19.admin.LaunchPlanMetadata\x12(\n\x0e\x64\x65\x66\x61ult_inputs\x18\x03 \x03(\x0b\x32\x10.admin.Parameter\x12\x30\n\x0c\x66ixed_inputs\x18\x04 \x01(\x0b\x32\x1a.core.NamedValueCollection\"c\n\x12LaunchPlanMetadata\x12!\n\x08schedule\x18\x01 \x01(\x0b\x32\x0f.admin.Schedule\x12*\n\rnotifications\x18\x02 \x03(\x0b\x32\x13.admin.NotificationB\x07Z\x05\x61\x64minb\x06proto3')
+  serialized_pb=_b('\n flyteidl/admin/launch_plan.proto\x12\x05\x61\x64min\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1d\x66lyteidl/admin/schedule.proto\x1a\x1b\x66lyteidl/admin/common.proto\"n\n\x17LaunchPlanCreateRequest\x12\x1d\n\x02id\x18\x01 \x01(\x0b\x32\x11.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12#\n\x04spec\x18\x03 \x01(\x0b\x32\x15.admin.LaunchPlanSpec\"n\n\nLaunchPlan\x12\x1d\n\x02id\x18\x01 \x01(\x0b\x32\x11.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0b\n\x03urn\x18\x03 \x01(\t\x12#\n\x04spec\x18\x04 \x01(\x0b\x32\x15.admin.LaunchPlanSpec\"9\n\x0eLaunchPlanList\x12\'\n\x0claunch_plans\x18\x01 \x03(\x0b\x32\x11.admin.LaunchPlan\"\xb6\x01\n\x0eLaunchPlanSpec\x12\x14\n\x0cworkflow_urn\x18\x01 \x01(\t\x12\x32\n\x0f\x65ntity_metadata\x18\x02 \x01(\x0b\x32\x19.admin.LaunchPlanMetadata\x12(\n\x0e\x64\x65\x66\x61ult_inputs\x18\x03 \x03(\x0b\x32\x10.admin.Parameter\x12\x30\n\x0c\x66ixed_inputs\x18\x04 \x01(\x0b\x32\x1a.core.NamedValueCollection\"c\n\x12LaunchPlanMetadata\x12!\n\x08schedule\x18\x01 \x01(\x0b\x32\x0f.admin.Schedule\x12*\n\rnotifications\x18\x02 \x03(\x0b\x32\x13.admin.NotificationB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_interface__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_schedule__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,])
 
@@ -300,5 +300,5 @@ _sym_db.RegisterMessage(LaunchPlanMetadata)
 
 
 DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z\005admin'))
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin'))
 # @@protoc_insertion_point(module_scope)

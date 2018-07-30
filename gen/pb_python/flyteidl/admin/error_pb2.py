@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/error.proto',
   package='admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1a\x66lyteidl/admin/error.proto\x12\x05\x61\x64min\"8\n\x05\x45rror\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x1e\n\x04\x63ode\x18\x02 \x01(\x0e\x32\x10.admin.ErrorCode*_\n\tErrorCode\x12\x12\n\x0eINTERNAL_ERROR\x10\x00\x12\x0e\n\nUSER_ERROR\x10\x01\x12\x16\n\x12MISSING_PARAMETERS\x10\x02\x12\x16\n\x12INVALID_PARAMETERS\x10\x03\x42\x07Z\x05\x61\x64minb\x06proto3')
+  serialized_pb=_b('\n\x1a\x66lyteidl/admin/error.proto\x12\x05\x61\x64min\"8\n\x05\x45rror\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x1e\n\x04\x63ode\x18\x02 \x01(\x0e\x32\x10.admin.ErrorCode*_\n\tErrorCode\x12\x12\n\x0eINTERNAL_ERROR\x10\x00\x12\x0e\n\nUSER_ERROR\x10\x01\x12\x16\n\x12MISSING_PARAMETERS\x10\x02\x12\x16\n\x12INVALID_PARAMETERS\x10\x03\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
 )
 
 _ERRORCODE = _descriptor.EnumDescriptor(
@@ -112,5 +112,5 @@ _sym_db.RegisterMessage(Error)
 
 
 DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z\005admin'))
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin'))
 # @@protoc_insertion_point(module_scope)

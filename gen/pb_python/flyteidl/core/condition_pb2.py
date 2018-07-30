@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/condition.proto',
   package='core',
   syntax='proto3',
-  serialized_pb=_b('\n\x1d\x66lyteidl/core/condition.proto\x12\x04\x63ore\x1a\x1c\x66lyteidl/core/literals.proto\"\xd3\x01\n\x14\x43omparisonExpression\x12\x35\n\x08operator\x18\x01 \x01(\x0e\x32#.core.ComparisonExpression.Operator\x12!\n\nleft_value\x18\x02 \x01(\x0b\x32\r.core.Operand\x12\"\n\x0bright_value\x18\x03 \x01(\x0b\x32\r.core.Operand\"=\n\x08Operator\x12\x06\n\x02\x45Q\x10\x00\x12\x07\n\x03NEQ\x10\x01\x12\x06\n\x02GT\x10\x02\x12\x07\n\x03GTE\x10\x03\x12\x06\n\x02LT\x10\x04\x12\x07\n\x03LTE\x10\x05\"E\n\x07Operand\x12$\n\tprimitive\x18\x01 \x01(\x0b\x32\x0f.core.PrimitiveH\x00\x12\r\n\x03var\x18\x02 \x01(\tH\x00\x42\x05\n\x03val\"\x81\x01\n\x11\x42ooleanExpression\x12\x32\n\x0b\x63onjunction\x18\x01 \x01(\x0b\x32\x1b.core.ConjunctionExpressionH\x00\x12\x30\n\ncomparison\x18\x02 \x01(\x0b\x32\x1a.core.ComparisonExpressionH\x00\x42\x06\n\x04\x65xpr\"\xdf\x01\n\x15\x43onjunctionExpression\x12=\n\x08operator\x18\x01 \x01(\x0e\x32+.core.ConjunctionExpression.LogicalOperator\x12\x30\n\x0fleft_expression\x18\x02 \x01(\x0b\x32\x17.core.BooleanExpression\x12\x31\n\x10right_expression\x18\x03 \x01(\x0b\x32\x17.core.BooleanExpression\"\"\n\x0fLogicalOperator\x12\x07\n\x03\x41ND\x10\x00\x12\x06\n\x02OR\x10\x01\x42\x06Z\x04\x63oreb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/core/condition.proto\x12\x04\x63ore\x1a\x1c\x66lyteidl/core/literals.proto\"\xd3\x01\n\x14\x43omparisonExpression\x12\x35\n\x08operator\x18\x01 \x01(\x0e\x32#.core.ComparisonExpression.Operator\x12!\n\nleft_value\x18\x02 \x01(\x0b\x32\r.core.Operand\x12\"\n\x0bright_value\x18\x03 \x01(\x0b\x32\r.core.Operand\"=\n\x08Operator\x12\x06\n\x02\x45Q\x10\x00\x12\x07\n\x03NEQ\x10\x01\x12\x06\n\x02GT\x10\x02\x12\x07\n\x03GTE\x10\x03\x12\x06\n\x02LT\x10\x04\x12\x07\n\x03LTE\x10\x05\"E\n\x07Operand\x12$\n\tprimitive\x18\x01 \x01(\x0b\x32\x0f.core.PrimitiveH\x00\x12\r\n\x03var\x18\x02 \x01(\tH\x00\x42\x05\n\x03val\"\x81\x01\n\x11\x42ooleanExpression\x12\x32\n\x0b\x63onjunction\x18\x01 \x01(\x0b\x32\x1b.core.ConjunctionExpressionH\x00\x12\x30\n\ncomparison\x18\x02 \x01(\x0b\x32\x1a.core.ComparisonExpressionH\x00\x42\x06\n\x04\x65xpr\"\xdf\x01\n\x15\x43onjunctionExpression\x12=\n\x08operator\x18\x01 \x01(\x0e\x32+.core.ConjunctionExpression.LogicalOperator\x12\x30\n\x0fleft_expression\x18\x02 \x01(\x0b\x32\x17.core.BooleanExpression\x12\x31\n\x10right_expression\x18\x03 \x01(\x0b\x32\x17.core.BooleanExpression\"\"\n\x0fLogicalOperator\x12\x07\n\x03\x41ND\x10\x00\x12\x06\n\x02OR\x10\x01\x42\x32Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,])
 
@@ -319,5 +319,5 @@ _sym_db.RegisterMessage(ConjunctionExpression)
 
 
 DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z\004core'))
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/core'))
 # @@protoc_insertion_point(module_scope)

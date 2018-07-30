@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/workflow_closure.proto',
   package='core',
   syntax='proto3',
-  serialized_pb=_b('\n$flyteidl/core/workflow_closure.proto\x12\x04\x63ore\x1a\x1c\x66lyteidl/core/workflow.proto\x1a\x19\x66lyteidl/core/tasks.proto\"^\n\x0fWorkflowClosure\x12(\n\x08workflow\x18\x01 \x01(\x0b\x32\x16.core.WorkflowTemplate\x12!\n\x05tasks\x18\x02 \x03(\x0b\x32\x12.core.TaskTemplateB\x06Z\x04\x63oreb\x06proto3')
+  serialized_pb=_b('\n$flyteidl/core/workflow_closure.proto\x12\x04\x63ore\x1a\x1c\x66lyteidl/core/workflow.proto\x1a\x19\x66lyteidl/core/tasks.proto\"^\n\x0fWorkflowClosure\x12(\n\x08workflow\x18\x01 \x01(\x0b\x32\x16.core.WorkflowTemplate\x12!\n\x05tasks\x18\x02 \x03(\x0b\x32\x12.core.TaskTemplateB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_workflow__pb2.DESCRIPTOR,flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,])
 
@@ -79,5 +79,5 @@ _sym_db.RegisterMessage(WorkflowClosure)
 
 
 DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z\004core'))
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/core'))
 # @@protoc_insertion_point(module_scope)
