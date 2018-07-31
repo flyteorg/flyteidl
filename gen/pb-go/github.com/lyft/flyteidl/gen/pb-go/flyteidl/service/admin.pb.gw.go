@@ -2,11 +2,11 @@
 // source: flyteidl/service/admin.proto
 
 /*
-Package lyft_flyte_flyteadmin is a reverse proxy.
+Package service is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package lyft_flyte_flyteadmin
+package service
 
 import (
 	"io"
