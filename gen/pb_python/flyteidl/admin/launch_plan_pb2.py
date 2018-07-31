@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/launch_plan.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n flyteidl/admin/launch_plan.proto\x12\x0e\x66lyteidl.admin\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x1d\x66lyteidl/admin/schedule.proto\x1a\x1b\x66lyteidl/admin/common.proto\"\x80\x01\n\x17LaunchPlanCreateRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12,\n\x04spec\x18\x03 \x01(\x0b\x32\x1e.flyteidl.admin.LaunchPlanSpec\"\x80\x01\n\nLaunchPlan\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0b\n\x03urn\x18\x03 \x01(\t\x12,\n\x04spec\x18\x04 \x01(\x0b\x32\x1e.flyteidl.admin.LaunchPlanSpec\"B\n\x0eLaunchPlanList\x12\x30\n\x0claunch_plans\x18\x01 \x03(\x0b\x32\x1a.flyteidl.admin.LaunchPlan\"\xc7\x01\n\x0eLaunchPlanSpec\x12\x14\n\x0cworkflow_urn\x18\x01 \x01(\t\x12;\n\x0f\x65ntity_metadata\x18\x02 \x01(\x0b\x32\".flyteidl.admin.LaunchPlanMetadata\x12\x31\n\x0e\x64\x65\x66\x61ult_inputs\x18\x03 \x03(\x0b\x32\x19.flyteidl.admin.Parameter\x12/\n\x0c\x66ixed_inputs\x18\x04 \x01(\x0b\x32\x19.flyteidl.core.LiteralMap\"u\n\x12LaunchPlanMetadata\x12*\n\x08schedule\x18\x01 \x01(\x0b\x32\x18.flyteidl.admin.Schedule\x12\x33\n\rnotifications\x18\x02 \x03(\x0b\x32\x1c.flyteidl.admin.NotificationB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n flyteidl/admin/launch_plan.proto\x12\x0e\x66lyteidl.admin\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x1d\x66lyteidl/admin/schedule.proto\x1a\x1b\x66lyteidl/admin/common.proto\"\x80\x01\n\x17LaunchPlanCreateRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12,\n\x04spec\x18\x03 \x01(\x0b\x32\x1e.flyteidl.admin.LaunchPlanSpec\"\'\n\x18LaunchPlanCreateResponse\x12\x0b\n\x03urn\x18\x01 \x01(\t\"\x80\x01\n\nLaunchPlan\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0b\n\x03urn\x18\x03 \x01(\t\x12,\n\x04spec\x18\x04 \x01(\x0b\x32\x1e.flyteidl.admin.LaunchPlanSpec\"B\n\x0eLaunchPlanList\x12\x30\n\x0claunch_plans\x18\x01 \x03(\x0b\x32\x1a.flyteidl.admin.LaunchPlan\"\xc7\x01\n\x0eLaunchPlanSpec\x12\x14\n\x0cworkflow_urn\x18\x01 \x01(\t\x12;\n\x0f\x65ntity_metadata\x18\x02 \x01(\x0b\x32\".flyteidl.admin.LaunchPlanMetadata\x12\x31\n\x0e\x64\x65\x66\x61ult_inputs\x18\x03 \x03(\x0b\x32\x19.flyteidl.admin.Parameter\x12/\n\x0c\x66ixed_inputs\x18\x04 \x01(\x0b\x32\x19.flyteidl.core.LiteralMap\"u\n\x12LaunchPlanMetadata\x12*\n\x08schedule\x18\x01 \x01(\x0b\x32\x18.flyteidl.admin.Schedule\x12\x33\n\rnotifications\x18\x02 \x03(\x0b\x32\x1c.flyteidl.admin.NotificationB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_schedule__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,])
 
@@ -74,6 +74,37 @@ _LAUNCHPLANCREATEREQUEST = _descriptor.Descriptor(
 )
 
 
+_LAUNCHPLANCREATERESPONSE = _descriptor.Descriptor(
+  name='LaunchPlanCreateResponse',
+  full_name='flyteidl.admin.LaunchPlanCreateResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='urn', full_name='flyteidl.admin.LaunchPlanCreateResponse.urn', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=273,
+  serialized_end=312,
+)
+
+
 _LAUNCHPLAN = _descriptor.Descriptor(
   name='LaunchPlan',
   full_name='flyteidl.admin.LaunchPlan',
@@ -121,8 +152,8 @@ _LAUNCHPLAN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=274,
-  serialized_end=402,
+  serialized_start=315,
+  serialized_end=443,
 )
 
 
@@ -152,8 +183,8 @@ _LAUNCHPLANLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=404,
-  serialized_end=470,
+  serialized_start=445,
+  serialized_end=511,
 )
 
 
@@ -204,8 +235,8 @@ _LAUNCHPLANSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=473,
-  serialized_end=672,
+  serialized_start=514,
+  serialized_end=713,
 )
 
 
@@ -242,8 +273,8 @@ _LAUNCHPLANMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=674,
-  serialized_end=791,
+  serialized_start=715,
+  serialized_end=832,
 )
 
 _LAUNCHPLANCREATEREQUEST.fields_by_name['id'].message_type = flyteidl_dot_admin_dot_common__pb2._IDENTIFIER
@@ -257,6 +288,7 @@ _LAUNCHPLANSPEC.fields_by_name['fixed_inputs'].message_type = flyteidl_dot_core_
 _LAUNCHPLANMETADATA.fields_by_name['schedule'].message_type = flyteidl_dot_admin_dot_schedule__pb2._SCHEDULE
 _LAUNCHPLANMETADATA.fields_by_name['notifications'].message_type = flyteidl_dot_admin_dot_common__pb2._NOTIFICATION
 DESCRIPTOR.message_types_by_name['LaunchPlanCreateRequest'] = _LAUNCHPLANCREATEREQUEST
+DESCRIPTOR.message_types_by_name['LaunchPlanCreateResponse'] = _LAUNCHPLANCREATERESPONSE
 DESCRIPTOR.message_types_by_name['LaunchPlan'] = _LAUNCHPLAN
 DESCRIPTOR.message_types_by_name['LaunchPlanList'] = _LAUNCHPLANLIST
 DESCRIPTOR.message_types_by_name['LaunchPlanSpec'] = _LAUNCHPLANSPEC
@@ -269,6 +301,13 @@ LaunchPlanCreateRequest = _reflection.GeneratedProtocolMessageType('LaunchPlanCr
   # @@protoc_insertion_point(class_scope:flyteidl.admin.LaunchPlanCreateRequest)
   ))
 _sym_db.RegisterMessage(LaunchPlanCreateRequest)
+
+LaunchPlanCreateResponse = _reflection.GeneratedProtocolMessageType('LaunchPlanCreateResponse', (_message.Message,), dict(
+  DESCRIPTOR = _LAUNCHPLANCREATERESPONSE,
+  __module__ = 'flyteidl.admin.launch_plan_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.LaunchPlanCreateResponse)
+  ))
+_sym_db.RegisterMessage(LaunchPlanCreateResponse)
 
 LaunchPlan = _reflection.GeneratedProtocolMessageType('LaunchPlan', (_message.Message,), dict(
   DESCRIPTOR = _LAUNCHPLAN,

@@ -15,6 +15,32 @@
     "application/json"
   ],
   "paths": {
+    "/api/v1/launch_plans": {
+      "post": {
+        "operationId": "CreateLaunchPlan",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminLaunchPlanCreateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminLaunchPlanCreateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/project/{project}/domain/{domain}/task_ids": {
       "get": {
         "operationId": "ListTaskIds",
@@ -519,6 +545,27 @@
       ],
       "default": "FlyteSDK"
     },
+    "ScheduleFixedRate": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "unit": {
+          "$ref": "#/definitions/ScheduleFixedRateUnit"
+        }
+      }
+    },
+    "ScheduleFixedRateUnit": {
+      "type": "string",
+      "enum": [
+        "MINUTE",
+        "HOUR",
+        "DAY"
+      ],
+      "default": "MINUTE"
+    },
     "SchemaColumnSchemaColumnType": {
       "type": "string",
       "enum": [
@@ -544,6 +591,20 @@
         }
       }
     },
+    "adminExecutionPhase": {
+      "type": "string",
+      "enum": [
+        "UNDEFINED",
+        "RUNNING",
+        "SUCCEEDED",
+        "FAILED",
+        "TIMED_OUT",
+        "ABORTED",
+        "QUEUED"
+      ],
+      "default": "UNDEFINED",
+      "title": "Indicates various states of an Execution - both task and workflow"
+    },
     "adminIdentifier": {
       "type": "object",
       "properties": {
@@ -567,6 +628,130 @@
           "items": {
             "$ref": "#/definitions/adminIdentifier"
           }
+        }
+      }
+    },
+    "adminLaunchPlanCreateRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/adminIdentifier"
+        },
+        "version": {
+          "type": "string"
+        },
+        "spec": {
+          "$ref": "#/definitions/adminLaunchPlanSpec"
+        }
+      }
+    },
+    "adminLaunchPlanCreateResponse": {
+      "type": "object",
+      "properties": {
+        "urn": {
+          "type": "string"
+        }
+      }
+    },
+    "adminLaunchPlanMetadata": {
+      "type": "object",
+      "properties": {
+        "schedule": {
+          "$ref": "#/definitions/adminSchedule",
+          "title": "Schedule to execute the Launch Plan"
+        },
+        "notifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminNotification"
+          },
+          "title": "List of notifications based on Execution status transitions"
+        }
+      }
+    },
+    "adminLaunchPlanSpec": {
+      "type": "object",
+      "properties": {
+        "workflow_urn": {
+          "type": "string",
+          "title": "Reference to the Workflow template that the launch plan references"
+        },
+        "entity_metadata": {
+          "$ref": "#/definitions/adminLaunchPlanMetadata",
+          "title": "Metadata for the Launch Plan"
+        },
+        "default_inputs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminParameter"
+          },
+          "title": "Input values to be passed for the execution"
+        },
+        "fixed_inputs": {
+          "$ref": "#/definitions/coreLiteralMap",
+          "title": "Fixed, non overridable inputs for the Launch Plan"
+        }
+      }
+    },
+    "adminNotification": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/adminNotificationType"
+        },
+        "phases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminExecutionPhase"
+          }
+        }
+      },
+      "description": "Structure of notifications based on execution status."
+    },
+    "adminNotificationType": {
+      "type": "string",
+      "enum": [
+        "UNDEFINED",
+        "EMAIL",
+        "PAGER_DUTY",
+        "SLACK"
+      ],
+      "default": "UNDEFINED"
+    },
+    "adminParameter": {
+      "type": "object",
+      "properties": {
+        "var": {
+          "$ref": "#/definitions/coreVariable",
+          "description": "+required Variable. Defines a name and a type to reference/compare through out the system."
+        },
+        "value": {
+          "$ref": "#/definitions/coreLiteral",
+          "description": "Defines a default value that has to match the variable type defined up."
+        },
+        "required": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "+optional, is this value required to be filled."
+        },
+        "description": {
+          "type": "string",
+          "title": "+optional string describing input variable"
+        }
+      },
+      "description": "Declares an input parameter."
+    },
+    "adminSchedule": {
+      "type": "object",
+      "properties": {
+        "cron_expression": {
+          "type": "string"
+        },
+        "fixed_rate": {
+          "$ref": "#/definitions/ScheduleFixedRate"
+        },
+        "kickoff_time_input_arg": {
+          "type": "string"
         }
       }
     },
@@ -975,6 +1160,48 @@
         }
       },
       "description": "A generic key value pair."
+    },
+    "coreLiteral": {
+      "type": "object",
+      "properties": {
+        "scalar": {
+          "$ref": "#/definitions/coreScalar",
+          "description": "A simple value."
+        },
+        "collection": {
+          "$ref": "#/definitions/coreLiteralCollection",
+          "description": "A collection of literals to allow nesting."
+        },
+        "map": {
+          "$ref": "#/definitions/coreLiteralMap",
+          "description": "A map of strings to literals."
+        }
+      },
+      "description": "A simple value. This supports any level of nesting (e.g. array of array of array of Blobs) as well as simple primitives."
+    },
+    "coreLiteralCollection": {
+      "type": "object",
+      "properties": {
+        "literals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreLiteral"
+          }
+        }
+      },
+      "description": "A collection of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field."
+    },
+    "coreLiteralMap": {
+      "type": "object",
+      "properties": {
+        "literals": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/coreLiteral"
+          }
+        }
+      },
+      "description": "A map of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field."
     },
     "coreLiteralType": {
       "type": "object",

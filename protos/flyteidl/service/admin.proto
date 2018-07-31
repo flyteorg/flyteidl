@@ -6,6 +6,7 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/service";
 import "google/api/annotations.proto";
 import "flyteidl/admin/task.proto";
 import "flyteidl/admin/workflow.proto";
+import "flyteidl/admin/launch_plan.proto";
 import "flyteidl/admin/common.proto";
 
 service AdminService {
@@ -62,6 +63,13 @@ service AdminService {
       additional_bindings {
         get: "/api/v1/project/{project}/domain/{domain}/workflows/{name}"
       }
+    };
+  }
+
+  rpc CreateLaunchPlan (flyteidl.admin.LaunchPlanCreateRequest) returns (flyteidl.admin.LaunchPlanCreateResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/launch_plans"
+      body: "*"
     };
   }
 }
