@@ -57,3 +57,7 @@ message Notification {
     Type type                = 1;
     repeated ExecutionPhase phases = 2;
 }
+
+message GetObjectRequest {
+    string urn               = 1;
+}

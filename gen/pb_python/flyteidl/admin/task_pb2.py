@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/task.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x19\x66lyteidl/admin/task.proto\x12\x0e\x66lyteidl.admin\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1b\x66lyteidl/admin/common.proto\"t\n\x11TaskCreateRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12&\n\x04spec\x18\x03 \x01(\x0b\x32\x18.flyteidl.admin.TaskSpec\"p\n\x0fTaskListRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05limit\x18\x04 \x01(\r\x12\x0e\n\x06offset\x18\x05 \x01(\r\x12\x0f\n\x07\x66ilters\x18\x06 \x01(\t\"!\n\x12TaskCreateResponse\x12\x0b\n\x03urn\x18\x01 \x01(\t\"t\n\x04Task\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0b\n\x03urn\x18\x03 \x01(\t\x12&\n\x04spec\x18\x06 \x01(\x0b\x32\x18.flyteidl.admin.TaskSpec\"/\n\x08TaskList\x12#\n\x05tasks\x18\x01 \x03(\x0b\x32\x14.flyteidl.admin.Task\"5\n\x08TaskSpec\x12)\n\x04task\x18\x01 \x01(\x0b\x32\x1b.flyteidl.core.TaskTemplateB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x19\x66lyteidl/admin/task.proto\x12\x0e\x66lyteidl.admin\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1b\x66lyteidl/admin/common.proto\"t\n\x11TaskCreateRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12&\n\x04spec\x18\x03 \x01(\x0b\x32\x18.flyteidl.admin.TaskSpec\"p\n\x0fTaskListRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05limit\x18\x04 \x01(\r\x12\x0e\n\x06offset\x18\x05 \x01(\r\x12\x0f\n\x07\x66ilters\x18\x06 \x01(\t\"!\n\x12TaskCreateResponse\x12\x0b\n\x03urn\x18\x01 \x01(\t\"t\n\x04Task\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0b\n\x03urn\x18\x03 \x01(\t\x12&\n\x04spec\x18\x06 \x01(\x0b\x32\x18.flyteidl.admin.TaskSpec\"?\n\x08TaskList\x12#\n\x05tasks\x18\x01 \x03(\x0b\x32\x14.flyteidl.admin.Task\x12\x0e\n\x06offset\x18\x02 \x01(\r\"5\n\x08TaskSpec\x12)\n\x04task\x18\x01 \x01(\x0b\x32\x1b.flyteidl.core.TaskTemplateB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,])
 
@@ -236,6 +236,13 @@ _TASKLIST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='offset', full_name='flyteidl.admin.TaskList.offset', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -249,7 +256,7 @@ _TASKLIST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=486,
-  serialized_end=533,
+  serialized_end=549,
 )
 
 
@@ -279,8 +286,8 @@ _TASKSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=535,
-  serialized_end=588,
+  serialized_start=551,
+  serialized_end=604,
 )
 
 _TASKCREATEREQUEST.fields_by_name['id'].message_type = flyteidl_dot_admin_dot_common__pb2._IDENTIFIER

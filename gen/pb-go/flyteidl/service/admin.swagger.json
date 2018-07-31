@@ -377,6 +377,30 @@
         ]
       }
     },
+    "/api/v1/tasks/{urn}": {
+      "get": {
+        "operationId": "GetTask",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminTask"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "urn",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/workflows": {
       "post": {
         "operationId": "CreateWorkflow",
@@ -396,6 +420,30 @@
             "schema": {
               "$ref": "#/definitions/adminWorkflowCreateRequest"
             }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/workflows/{urn}": {
+      "get": {
+        "operationId": "GetWorkflow",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminWorkflow"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "urn",
+            "in": "path",
+            "required": true,
+            "type": "string"
           }
         ],
         "tags": [
@@ -569,6 +617,10 @@
           "items": {
             "$ref": "#/definitions/adminTask"
           }
+        },
+        "offset": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },
@@ -627,6 +679,10 @@
           "items": {
             "$ref": "#/definitions/adminWorkflow"
           }
+        },
+        "offset": {
+          "type": "integer",
+          "format": "int64"
         }
       }
     },

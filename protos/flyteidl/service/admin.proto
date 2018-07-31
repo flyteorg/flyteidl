@@ -16,6 +16,12 @@ service AdminService {
     };
   }
 
+  rpc GetTask (flyteidl.admin.GetObjectRequest) returns (flyteidl.admin.Task) {
+    option (google.api.http) = {
+      get: "/api/v1/tasks/{urn}"
+    };
+  }
+
   rpc ListTaskIds (flyteidl.admin.TaskListRequest) returns (flyteidl.admin.IdentifierList) {
     option (google.api.http) = {
       get: "/api/v1/project/{project}/domain/{domain}/task_ids"
@@ -35,6 +41,12 @@ service AdminService {
     option (google.api.http) = {
       post: "/api/v1/workflows"
       body: "*"
+    };
+  }
+
+  rpc GetWorkflow (flyteidl.admin.GetObjectRequest) returns (flyteidl.admin.Workflow) {
+    option (google.api.http) = {
+      get: "/api/v1/workflows/{urn}"
     };
   }
 
