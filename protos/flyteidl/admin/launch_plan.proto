@@ -18,12 +18,19 @@ message LaunchPlanCreateResponse {
     string urn		= 1;
 }
 
-message LaunchPlan {
-    Identifier id       = 1;
-    string version      = 2;
-    string urn          = 3;
+// Indicates various states of an Execution - both task and workflow
+enum LaunchPlanPhase {
+    ACTIVE		= 0;
+    INACTIVE		= 1;
+}
 
-    LaunchPlanSpec spec = 4;
+message LaunchPlan {
+    Identifier id       	= 1;
+    string version      	= 2;
+    string urn          	= 3;
+
+    LaunchPlanSpec spec 	= 4;
+    LaunchPlanStatus status	= 5;
 }
 
 message LaunchPlanList {
@@ -42,6 +49,14 @@ message LaunchPlanSpec {
 
     // Fixed, non overridable inputs for the Launch Plan
     core.LiteralMap fixed_inputs = 4;
+}
+
+message LaunchPlanStatus {
+    // Indicates the set of inputs to execute the Launch plan
+    repeated Parameter expected_inputs	= 1;
+
+    // Indicate the Launch plan phase
+    LaunchPlanPhase phase		= 2;
 }
 
 message LaunchPlanMetadata {
