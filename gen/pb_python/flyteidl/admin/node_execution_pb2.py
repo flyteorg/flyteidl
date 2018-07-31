@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
-from flyteidl.core import interface_pb2 as flyteidl_dot_core_dot_interface__pb2
+from flyteidl.core import literals_pb2 as flyteidl_dot_core_dot_literals__pb2
 from flyteidl.admin import common_pb2 as flyteidl_dot_admin_dot_common__pb2
 from flyteidl.admin import error_pb2 as flyteidl_dot_admin_dot_error__pb2
 
@@ -23,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/node_execution.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n#flyteidl/admin/node_execution.proto\x12\x0e\x66lyteidl.admin\x1a\x1egoogle/protobuf/duration.proto\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1a\x66lyteidl/admin/error.proto\"\xde\x01\n\x19NodeExecutionEventRequest\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\x12\x10\n\x08\x65vent_id\x18\x02 \x01(\t\x12\x33\n\x06status\x18\x03 \x01(\x0b\x32#.flyteidl.admin.NodeExecutionStatus\x12/\n\x04spec\x18\x04 \x01(\x0b\x32!.flyteidl.admin.NodeExecutionSpec\x12\x33\n\x06result\x18\x05 \x01(\x0b\x32#.flyteidl.admin.NodeExecutionResult\"\x1c\n\x1aNodeExecutionEventResponse\"\xc0\x01\n\rNodeExecution\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\x12\x33\n\x06status\x18\x02 \x03(\x0b\x32#.flyteidl.admin.NodeExecutionStatus\x12/\n\x04spec\x18\x03 \x01(\x0b\x32!.flyteidl.admin.NodeExecutionSpec\x12\x33\n\x06result\x18\x04 \x01(\x0b\x32#.flyteidl.admin.NodeExecutionResult\"F\n\x11NodeExecutionList\x12\x31\n\nexecutions\x18\x01 \x03(\x0b\x32\x1d.flyteidl.admin.NodeExecution\"\xd8\x01\n\x13NodeExecutionStatus\x12-\n\x05phase\x18\x01 \x01(\x0e\x32\x1e.flyteidl.admin.ExecutionPhase\x12+\n\x08\x64uration\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x15\n\rdiscovery_hit\x18\x03 \x01(\x08\x12\x15\n\rretry_attempt\x18\x04 \x01(\r\x12\x1d\n\x15is_sub_task_available\x18\x05 \x01(\x08\x12\x18\n\x10\x63ustom_task_info\x18\x06 \x01(\x0c\"\x86\x01\n\x13NodeExecutionResult\x12\x36\n\x07outputs\x18\x01 \x01(\x0b\x32#.flyteidl.core.NamedValueCollectionH\x00\x12&\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x15.flyteidl.admin.ErrorH\x00\x42\x0f\n\routput_result\"Y\n\x11NodeExecutionSpec\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12\x33\n\x06inputs\x18\x02 \x01(\x0b\x32#.flyteidl.core.NamedValueCollectionB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n#flyteidl/admin/node_execution.proto\x12\x0e\x66lyteidl.admin\x1a\x1egoogle/protobuf/duration.proto\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1a\x66lyteidl/admin/error.proto\"\xde\x01\n\x19NodeExecutionEventRequest\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\x12\x10\n\x08\x65vent_id\x18\x02 \x01(\t\x12\x33\n\x06status\x18\x03 \x01(\x0b\x32#.flyteidl.admin.NodeExecutionStatus\x12/\n\x04spec\x18\x04 \x01(\x0b\x32!.flyteidl.admin.NodeExecutionSpec\x12\x33\n\x06result\x18\x05 \x01(\x0b\x32#.flyteidl.admin.NodeExecutionResult\"\x1c\n\x1aNodeExecutionEventResponse\"\xc0\x01\n\rNodeExecution\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\x12\x33\n\x06status\x18\x02 \x03(\x0b\x32#.flyteidl.admin.NodeExecutionStatus\x12/\n\x04spec\x18\x03 \x01(\x0b\x32!.flyteidl.admin.NodeExecutionSpec\x12\x33\n\x06result\x18\x04 \x01(\x0b\x32#.flyteidl.admin.NodeExecutionResult\"F\n\x11NodeExecutionList\x12\x31\n\nexecutions\x18\x01 \x03(\x0b\x32\x1d.flyteidl.admin.NodeExecution\"\xd8\x01\n\x13NodeExecutionStatus\x12-\n\x05phase\x18\x01 \x01(\x0e\x32\x1e.flyteidl.admin.ExecutionPhase\x12+\n\x08\x64uration\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x15\n\rdiscovery_hit\x18\x03 \x01(\x08\x12\x15\n\rretry_attempt\x18\x04 \x01(\r\x12\x1d\n\x15is_sub_task_available\x18\x05 \x01(\x08\x12\x18\n\x10\x63ustom_task_info\x18\x06 \x01(\x0c\"|\n\x13NodeExecutionResult\x12,\n\x07outputs\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00\x12&\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x15.flyteidl.admin.ErrorH\x00\x42\x0f\n\routput_result\"O\n\x11NodeExecutionSpec\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12)\n\x06inputs\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
-  dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,flyteidl_dot_core_dot_interface__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_error__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_error__pb2.DESCRIPTOR,])
 
 
 
@@ -84,8 +84,8 @@ _NODEEXECUTIONEVENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=176,
-  serialized_end=398,
+  serialized_start=175,
+  serialized_end=397,
 )
 
 
@@ -108,8 +108,8 @@ _NODEEXECUTIONEVENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=400,
-  serialized_end=428,
+  serialized_start=399,
+  serialized_end=427,
 )
 
 
@@ -160,8 +160,8 @@ _NODEEXECUTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=431,
-  serialized_end=623,
+  serialized_start=430,
+  serialized_end=622,
 )
 
 
@@ -191,8 +191,8 @@ _NODEEXECUTIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=625,
-  serialized_end=695,
+  serialized_start=624,
+  serialized_end=694,
 )
 
 
@@ -257,8 +257,8 @@ _NODEEXECUTIONSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=698,
-  serialized_end=914,
+  serialized_start=697,
+  serialized_end=913,
 )
 
 
@@ -298,8 +298,8 @@ _NODEEXECUTIONRESULT = _descriptor.Descriptor(
       name='output_result', full_name='flyteidl.admin.NodeExecutionResult.output_result',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=917,
-  serialized_end=1051,
+  serialized_start=915,
+  serialized_end=1039,
 )
 
 
@@ -336,8 +336,8 @@ _NODEEXECUTIONSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1053,
-  serialized_end=1142,
+  serialized_start=1041,
+  serialized_end=1120,
 )
 
 _NODEEXECUTIONEVENTREQUEST.fields_by_name['status'].message_type = _NODEEXECUTIONSTATUS
@@ -349,7 +349,7 @@ _NODEEXECUTION.fields_by_name['result'].message_type = _NODEEXECUTIONRESULT
 _NODEEXECUTIONLIST.fields_by_name['executions'].message_type = _NODEEXECUTION
 _NODEEXECUTIONSTATUS.fields_by_name['phase'].enum_type = flyteidl_dot_admin_dot_common__pb2._EXECUTIONPHASE
 _NODEEXECUTIONSTATUS.fields_by_name['duration'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
-_NODEEXECUTIONRESULT.fields_by_name['outputs'].message_type = flyteidl_dot_core_dot_interface__pb2._NAMEDVALUECOLLECTION
+_NODEEXECUTIONRESULT.fields_by_name['outputs'].message_type = flyteidl_dot_core_dot_literals__pb2._LITERALMAP
 _NODEEXECUTIONRESULT.fields_by_name['error'].message_type = flyteidl_dot_admin_dot_error__pb2._ERROR
 _NODEEXECUTIONRESULT.oneofs_by_name['output_result'].fields.append(
   _NODEEXECUTIONRESULT.fields_by_name['outputs'])
@@ -357,7 +357,7 @@ _NODEEXECUTIONRESULT.fields_by_name['outputs'].containing_oneof = _NODEEXECUTION
 _NODEEXECUTIONRESULT.oneofs_by_name['output_result'].fields.append(
   _NODEEXECUTIONRESULT.fields_by_name['error'])
 _NODEEXECUTIONRESULT.fields_by_name['error'].containing_oneof = _NODEEXECUTIONRESULT.oneofs_by_name['output_result']
-_NODEEXECUTIONSPEC.fields_by_name['inputs'].message_type = flyteidl_dot_core_dot_interface__pb2._NAMEDVALUECOLLECTION
+_NODEEXECUTIONSPEC.fields_by_name['inputs'].message_type = flyteidl_dot_core_dot_literals__pb2._LITERALMAP
 DESCRIPTOR.message_types_by_name['NodeExecutionEventRequest'] = _NODEEXECUTIONEVENTREQUEST
 DESCRIPTOR.message_types_by_name['NodeExecutionEventResponse'] = _NODEEXECUTIONEVENTRESPONSE
 DESCRIPTOR.message_types_by_name['NodeExecution'] = _NODEEXECUTION

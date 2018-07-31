@@ -13,7 +13,7 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
-from flyteidl.core import interface_pb2 as flyteidl_dot_core_dot_interface__pb2
+from flyteidl.core import literals_pb2 as flyteidl_dot_core_dot_literals__pb2
 from flyteidl.admin import common_pb2 as flyteidl_dot_admin_dot_common__pb2
 from flyteidl.admin import error_pb2 as flyteidl_dot_admin_dot_error__pb2
 
@@ -22,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/execution.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1e\x66lyteidl/admin/execution.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1a\x66lyteidl/admin/error.proto\"m\n\x16\x45xecutionCreateRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12+\n\x04spec\x18\x02 \x01(\x0b\x32\x1d.flyteidl.admin.ExecutionSpec\"$\n\x15\x45xecutionCreateResult\x12\x0b\n\x03urn\x18\x01 \x01(\t\"\xcf\x01\n\tExecution\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0b\n\x03urn\x18\x02 \x01(\t\x12/\n\x06status\x18\x03 \x01(\x0b\x32\x1f.flyteidl.admin.ExecutionStatus\x12+\n\x04spec\x18\x04 \x01(\x0b\x32\x1d.flyteidl.admin.ExecutionSpec\x12/\n\x06result\x18\x05 \x01(\x0b\x32\x1f.flyteidl.admin.ExecutionResult\">\n\rExecutionList\x12-\n\nexecutions\x18\x01 \x03(\x0b\x32\x19.flyteidl.admin.Execution\"V\n\x0f\x45xecutionStatus\x12-\n\x05phase\x18\x01 \x01(\x0e\x32\x1e.flyteidl.admin.ExecutionPhase\x12\x14\n\x0cworkflow_urn\x18\x02 \x01(\t\"\x82\x01\n\x0f\x45xecutionResult\x12\x36\n\x07outputs\x18\x01 \x01(\x0b\x32#.flyteidl.core.NamedValueCollectionH\x00\x12&\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x15.flyteidl.admin.ErrorH\x00\x42\x0f\n\routput_result\"\xae\x01\n\x11\x45xecutionMetadata\x12=\n\x04mode\x18\x01 \x01(\x0e\x32/.flyteidl.admin.ExecutionMetadata.ExecutionMode\x12\x11\n\tprincipal\x18\x02 \x01(\t\x12\x0f\n\x07nesting\x18\x03 \x01(\x05\"6\n\rExecutionMode\x12\n\n\x06MANUAL\x10\x00\x12\r\n\tSCHEDULED\x10\x01\x12\n\n\x06SYSTEM\x10\x02\"\xc7\x01\n\rExecutionSpec\x12\x17\n\x0flaunch_plan_urn\x18\x01 \x01(\t\x12\x33\n\x06inputs\x18\x02 \x01(\x0b\x32#.flyteidl.core.NamedValueCollection\x12\x33\n\x08metadata\x18\x03 \x01(\x0b\x32!.flyteidl.admin.ExecutionMetadata\x12\x33\n\rnotifications\x18\x04 \x03(\x0b\x32\x1c.flyteidl.admin.NotificationB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1e\x66lyteidl/admin/execution.proto\x12\x0e\x66lyteidl.admin\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1a\x66lyteidl/admin/error.proto\"m\n\x16\x45xecutionCreateRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12+\n\x04spec\x18\x02 \x01(\x0b\x32\x1d.flyteidl.admin.ExecutionSpec\"$\n\x15\x45xecutionCreateResult\x12\x0b\n\x03urn\x18\x01 \x01(\t\"\xcf\x01\n\tExecution\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0b\n\x03urn\x18\x02 \x01(\t\x12/\n\x06status\x18\x03 \x01(\x0b\x32\x1f.flyteidl.admin.ExecutionStatus\x12+\n\x04spec\x18\x04 \x01(\x0b\x32\x1d.flyteidl.admin.ExecutionSpec\x12/\n\x06result\x18\x05 \x01(\x0b\x32\x1f.flyteidl.admin.ExecutionResult\">\n\rExecutionList\x12-\n\nexecutions\x18\x01 \x03(\x0b\x32\x19.flyteidl.admin.Execution\"V\n\x0f\x45xecutionStatus\x12-\n\x05phase\x18\x01 \x01(\x0e\x32\x1e.flyteidl.admin.ExecutionPhase\x12\x14\n\x0cworkflow_urn\x18\x02 \x01(\t\"x\n\x0f\x45xecutionResult\x12,\n\x07outputs\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00\x12&\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x15.flyteidl.admin.ErrorH\x00\x42\x0f\n\routput_result\"\xae\x01\n\x11\x45xecutionMetadata\x12=\n\x04mode\x18\x01 \x01(\x0e\x32/.flyteidl.admin.ExecutionMetadata.ExecutionMode\x12\x11\n\tprincipal\x18\x02 \x01(\t\x12\x0f\n\x07nesting\x18\x03 \x01(\x05\"6\n\rExecutionMode\x12\n\n\x06MANUAL\x10\x00\x12\r\n\tSCHEDULED\x10\x01\x12\n\n\x06SYSTEM\x10\x02\"\xbd\x01\n\rExecutionSpec\x12\x17\n\x0flaunch_plan_urn\x18\x01 \x01(\t\x12)\n\x06inputs\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.LiteralMap\x12\x33\n\x08metadata\x18\x03 \x01(\x0b\x32!.flyteidl.admin.ExecutionMetadata\x12\x33\n\rnotifications\x18\x04 \x03(\x0b\x32\x1c.flyteidl.admin.NotificationB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
-  dependencies=[flyteidl_dot_core_dot_interface__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_error__pb2.DESCRIPTOR,])
+  dependencies=[flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_error__pb2.DESCRIPTOR,])
 
 
 
@@ -49,8 +49,8 @@ _EXECUTIONMETADATA_EXECUTIONMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=903,
-  serialized_end=957,
+  serialized_start=891,
+  serialized_end=945,
 )
 _sym_db.RegisterEnumDescriptor(_EXECUTIONMETADATA_EXECUTIONMODE)
 
@@ -88,8 +88,8 @@ _EXECUTIONCREATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=138,
-  serialized_end=247,
+  serialized_start=137,
+  serialized_end=246,
 )
 
 
@@ -119,8 +119,8 @@ _EXECUTIONCREATERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=249,
-  serialized_end=285,
+  serialized_start=248,
+  serialized_end=284,
 )
 
 
@@ -178,8 +178,8 @@ _EXECUTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=288,
-  serialized_end=495,
+  serialized_start=287,
+  serialized_end=494,
 )
 
 
@@ -209,8 +209,8 @@ _EXECUTIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=497,
-  serialized_end=559,
+  serialized_start=496,
+  serialized_end=558,
 )
 
 
@@ -247,8 +247,8 @@ _EXECUTIONSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=561,
-  serialized_end=647,
+  serialized_start=560,
+  serialized_end=646,
 )
 
 
@@ -288,8 +288,8 @@ _EXECUTIONRESULT = _descriptor.Descriptor(
       name='output_result', full_name='flyteidl.admin.ExecutionResult.output_result',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=650,
-  serialized_end=780,
+  serialized_start=648,
+  serialized_end=768,
 )
 
 
@@ -334,8 +334,8 @@ _EXECUTIONMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=783,
-  serialized_end=957,
+  serialized_start=771,
+  serialized_end=945,
 )
 
 
@@ -386,8 +386,8 @@ _EXECUTIONSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=960,
-  serialized_end=1159,
+  serialized_start=948,
+  serialized_end=1137,
 )
 
 _EXECUTIONCREATEREQUEST.fields_by_name['id'].message_type = flyteidl_dot_admin_dot_common__pb2._IDENTIFIER
@@ -398,7 +398,7 @@ _EXECUTION.fields_by_name['spec'].message_type = _EXECUTIONSPEC
 _EXECUTION.fields_by_name['result'].message_type = _EXECUTIONRESULT
 _EXECUTIONLIST.fields_by_name['executions'].message_type = _EXECUTION
 _EXECUTIONSTATUS.fields_by_name['phase'].enum_type = flyteidl_dot_admin_dot_common__pb2._EXECUTIONPHASE
-_EXECUTIONRESULT.fields_by_name['outputs'].message_type = flyteidl_dot_core_dot_interface__pb2._NAMEDVALUECOLLECTION
+_EXECUTIONRESULT.fields_by_name['outputs'].message_type = flyteidl_dot_core_dot_literals__pb2._LITERALMAP
 _EXECUTIONRESULT.fields_by_name['error'].message_type = flyteidl_dot_admin_dot_error__pb2._ERROR
 _EXECUTIONRESULT.oneofs_by_name['output_result'].fields.append(
   _EXECUTIONRESULT.fields_by_name['outputs'])
@@ -408,7 +408,7 @@ _EXECUTIONRESULT.oneofs_by_name['output_result'].fields.append(
 _EXECUTIONRESULT.fields_by_name['error'].containing_oneof = _EXECUTIONRESULT.oneofs_by_name['output_result']
 _EXECUTIONMETADATA.fields_by_name['mode'].enum_type = _EXECUTIONMETADATA_EXECUTIONMODE
 _EXECUTIONMETADATA_EXECUTIONMODE.containing_type = _EXECUTIONMETADATA
-_EXECUTIONSPEC.fields_by_name['inputs'].message_type = flyteidl_dot_core_dot_interface__pb2._NAMEDVALUECOLLECTION
+_EXECUTIONSPEC.fields_by_name['inputs'].message_type = flyteidl_dot_core_dot_literals__pb2._LITERALMAP
 _EXECUTIONSPEC.fields_by_name['metadata'].message_type = _EXECUTIONMETADATA
 _EXECUTIONSPEC.fields_by_name['notifications'].message_type = flyteidl_dot_admin_dot_common__pb2._NOTIFICATION
 DESCRIPTOR.message_types_by_name['ExecutionCreateRequest'] = _EXECUTIONCREATEREQUEST

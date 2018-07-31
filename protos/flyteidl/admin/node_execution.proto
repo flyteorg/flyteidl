@@ -4,7 +4,7 @@ package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "google/protobuf/duration.proto";
-import "flyteidl/core/interface.proto";
+import "flyteidl/core/literals.proto";
 import "flyteidl/admin/common.proto";
 import "flyteidl/admin/error.proto";
 
@@ -60,7 +60,7 @@ message NodeExecutionStatus {
 message NodeExecutionResult {
     oneof output_result {
         // Output of the execution in NamedValue format
-        core.NamedValueCollection outputs   = 1;
+        core.LiteralMap outputs = 1;
 
         // Error information for the Node
         Error error           = 2;
@@ -71,5 +71,5 @@ message NodeExecutionSpec {
     string node_id     = 1;
 
     // Inputs that were passed to the task
-    core.NamedValueCollection inputs    = 2;
+    core.LiteralMap inputs = 2;
 }

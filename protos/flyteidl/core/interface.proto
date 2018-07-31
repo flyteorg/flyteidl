@@ -5,7 +5,6 @@ package flyteidl.core;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
 
 import "flyteidl/core/types.proto";
-import "flyteidl/core/literals.proto";
 
 // Defines a strongly typed variable.
 message Variable {
@@ -24,15 +23,4 @@ message Variable {
 message TypedInterface {
     repeated Variable inputs  = 1;
     repeated Variable outputs = 2;
-}
-
-// Structure to encapsulate inputs passed in and outputs generated.
-message NamedValue {
-    string name         = 1;
-    Literal value       = 2;
-}
-
-// Structure to encapsulate list of NamedValues
-message NamedValueCollection {
-    repeated NamedValue values = 1;
 }

@@ -51,6 +51,7 @@ message HiveQuery {
 
 // Defines a collection of hive queries.
 message HiveQueryCollection {
+
     repeated HiveQuery queries = 2;
 }
 

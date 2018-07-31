@@ -3,7 +3,7 @@ syntax = "proto3";
 package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
-import "flyteidl/core/interface.proto";
+import "flyteidl/core/literals.proto";
 import "flyteidl/admin/schedule.proto";
 import "flyteidl/admin/common.proto";
 
@@ -37,7 +37,7 @@ message LaunchPlanSpec {
     repeated Parameter default_inputs     = 3;
 
     // Fixed, non overridable inputs for the Launch Plan
-    core.NamedValueCollection fixed_inputs     = 4;
+    core.LiteralMap fixed_inputs = 4;
 }
 
 message LaunchPlanMetadata {

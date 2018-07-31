@@ -3,7 +3,7 @@ syntax = "proto3";
 package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
-import "flyteidl/core/interface.proto";
+import "flyteidl/core/literals.proto";
 import "flyteidl/admin/common.proto";
 import "flyteidl/admin/error.proto";
 
@@ -39,8 +39,8 @@ message ExecutionStatus {
 // Encapsultes the results of the Execution
 message ExecutionResult {
     oneof output_result {
-        // Output of the execution in NamedValue format
-        core.NamedValueCollection outputs   = 1;
+        // Output of the execution in LiteralMap format
+        core.LiteralMap outputs = 1;
 
         // Error information for the Node
         Error error           = 2;
@@ -71,7 +71,7 @@ message ExecutionSpec {
     string launch_plan_urn        = 1;
 
     // Input values to be passed for the execution
-    core.NamedValueCollection inputs   = 2;
+    core.LiteralMap inputs = 2;
 
     // Metadata for the execution
     ExecutionMetadata metadata    = 3;

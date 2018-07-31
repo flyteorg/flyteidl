@@ -37,7 +37,7 @@ func (m *FutureTaskDocument) Reset()         { *m = FutureTaskDocument{} }
 func (m *FutureTaskDocument) String() string { return proto.CompactTextString(m) }
 func (*FutureTaskDocument) ProtoMessage()    {}
 func (*FutureTaskDocument) Descriptor() ([]byte, []int) {
-	return fileDescriptor_future_855eb0cf17c7d213, []int{0}
+	return fileDescriptor_future_6ef8670ccfd446a7, []int{0}
 }
 func (m *FutureTaskDocument) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FutureTaskDocument.Unmarshal(m, b)
@@ -99,7 +99,7 @@ func (m *FutureTaskNode) Reset()         { *m = FutureTaskNode{} }
 func (m *FutureTaskNode) String() string { return proto.CompactTextString(m) }
 func (*FutureTaskNode) ProtoMessage()    {}
 func (*FutureTaskNode) Descriptor() ([]byte, []int) {
-	return fileDescriptor_future_855eb0cf17c7d213, []int{1}
+	return fileDescriptor_future_6ef8670ccfd446a7, []int{1}
 }
 func (m *FutureTaskNode) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FutureTaskNode.Unmarshal(m, b)
@@ -252,7 +252,7 @@ func (m *HiveQuery) Reset()         { *m = HiveQuery{} }
 func (m *HiveQuery) String() string { return proto.CompactTextString(m) }
 func (*HiveQuery) ProtoMessage()    {}
 func (*HiveQuery) Descriptor() ([]byte, []int) {
-	return fileDescriptor_future_855eb0cf17c7d213, []int{2}
+	return fileDescriptor_future_6ef8670ccfd446a7, []int{2}
 }
 func (m *HiveQuery) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_HiveQuery.Unmarshal(m, b)
@@ -298,7 +298,7 @@ func (m *HiveQueryCollection) Reset()         { *m = HiveQueryCollection{} }
 func (m *HiveQueryCollection) String() string { return proto.CompactTextString(m) }
 func (*HiveQueryCollection) ProtoMessage()    {}
 func (*HiveQueryCollection) Descriptor() ([]byte, []int) {
-	return fileDescriptor_future_855eb0cf17c7d213, []int{3}
+	return fileDescriptor_future_6ef8670ccfd446a7, []int{3}
 }
 func (m *HiveQueryCollection) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_HiveQueryCollection.Unmarshal(m, b)
@@ -354,7 +354,7 @@ func (m *SwarmDefinition) Reset()         { *m = SwarmDefinition{} }
 func (m *SwarmDefinition) String() string { return proto.CompactTextString(m) }
 func (*SwarmDefinition) ProtoMessage()    {}
 func (*SwarmDefinition) Descriptor() ([]byte, []int) {
-	return fileDescriptor_future_855eb0cf17c7d213, []int{4}
+	return fileDescriptor_future_6ef8670ccfd446a7, []int{4}
 }
 func (m *SwarmDefinition) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SwarmDefinition.Unmarshal(m, b)
@@ -427,7 +427,7 @@ func (m *ArrayJob) Reset()         { *m = ArrayJob{} }
 func (m *ArrayJob) String() string { return proto.CompactTextString(m) }
 func (*ArrayJob) ProtoMessage()    {}
 func (*ArrayJob) Descriptor() ([]byte, []int) {
-	return fileDescriptor_future_855eb0cf17c7d213, []int{5}
+	return fileDescriptor_future_6ef8670ccfd446a7, []int{5}
 }
 func (m *ArrayJob) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ArrayJob.Unmarshal(m, b)
@@ -600,7 +600,7 @@ func (m *DataLocation) Reset()         { *m = DataLocation{} }
 func (m *DataLocation) String() string { return proto.CompactTextString(m) }
 func (*DataLocation) ProtoMessage()    {}
 func (*DataLocation) Descriptor() ([]byte, []int) {
-	return fileDescriptor_future_855eb0cf17c7d213, []int{6}
+	return fileDescriptor_future_6ef8670ccfd446a7, []int{6}
 }
 func (m *DataLocation) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DataLocation.Unmarshal(m, b)
@@ -644,9 +644,9 @@ func init() {
 	proto.RegisterType((*DataLocation)(nil), "flyteidl.core.DataLocation")
 }
 
-func init() { proto.RegisterFile("flyteidl/core/future.proto", fileDescriptor_future_855eb0cf17c7d213) }
+func init() { proto.RegisterFile("flyteidl/core/future.proto", fileDescriptor_future_6ef8670ccfd446a7) }
 
-var fileDescriptor_future_855eb0cf17c7d213 = []byte{
+var fileDescriptor_future_6ef8670ccfd446a7 = []byte{
 	// 612 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x54, 0xcd, 0x72, 0xd3, 0x30,
 	0x10, 0xae, 0x9b, 0x26, 0x4d, 0x36, 0xfd, 0xa1, 0x82, 0x81, 0x50, 0xfe, 0x32, 0xe6, 0xd2, 0x0b,
