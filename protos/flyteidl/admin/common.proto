@@ -26,13 +26,15 @@ message Parameter {
     oneof default {
         // Defines a default value that has to match the variable type defined up.
         core.Literal value = 2;
+
+        //+optional, is this value required to be filled.
+        bool required = 3;
     }
+}
 
-    //+optional, is this value required to be filled.
-    bool required = 3;
-
-    //+optional string describing input variable
-    string description = 4;
+// A map of Parameters.
+message ParameterMap {
+    map<string, Parameter> parameters = 1;
 }
 
 // Indicates various states of an Execution - both task and workflow

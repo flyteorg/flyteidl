@@ -681,10 +681,7 @@
           "title": "Metadata for the Launch Plan"
         },
         "default_inputs": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/adminParameter"
-          },
+          "$ref": "#/definitions/adminParameterMap",
           "title": "Input values to be passed for the execution"
         },
         "fixed_inputs": {
@@ -733,13 +730,21 @@
           "type": "boolean",
           "format": "boolean",
           "description": "+optional, is this value required to be filled."
-        },
-        "description": {
-          "type": "string",
-          "title": "+optional string describing input variable"
         }
       },
       "description": "Declares an input parameter."
+    },
+    "adminParameterMap": {
+      "type": "object",
+      "properties": {
+        "parameters": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/adminParameter"
+          }
+        }
+      },
+      "description": "A map of Parameters."
     },
     "adminSchedule": {
       "type": "object",
@@ -1548,16 +1553,10 @@
       "type": "object",
       "properties": {
         "inputs": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/coreVariable"
-          }
+          "$ref": "#/definitions/coreVariableMap"
         },
         "outputs": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/coreVariable"
-          }
+          "$ref": "#/definitions/coreVariableMap"
         }
       },
       "description": "Defines strongly typed inputs and outputs."
@@ -1579,6 +1578,18 @@
         }
       },
       "description": "Defines a strongly typed variable."
+    },
+    "coreVariableMap": {
+      "type": "object",
+      "properties": {
+        "variables": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/coreVariable"
+          }
+        }
+      },
+      "title": "A map of Variables"
     },
     "coreVoid": {
       "type": "object"

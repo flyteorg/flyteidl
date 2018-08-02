@@ -19,8 +19,13 @@ message Variable {
     string description = 3;
 }
 
+// A map of Variables
+message VariableMap {
+    map<string, Variable> variables = 1;
+}
+
 // Defines strongly typed inputs and outputs.
 message TypedInterface {
-    repeated Variable inputs  = 1;
-    repeated Variable outputs = 2;
+    VariableMap inputs  = 1;
+    VariableMap outputs = 2;
 }

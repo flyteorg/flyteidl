@@ -45,7 +45,7 @@ message LaunchPlanSpec {
     LaunchPlanMetadata entity_metadata    = 2;
 
     // Input values to be passed for the execution
-    repeated Parameter default_inputs     = 3;
+    ParameterMap default_inputs     = 3;
 
     // Fixed, non overridable inputs for the Launch Plan
     core.LiteralMap fixed_inputs = 4;
@@ -53,7 +53,7 @@ message LaunchPlanSpec {
 
 message LaunchPlanStatus {
     // Indicates the set of inputs to execute the Launch plan
-    repeated Parameter expected_inputs	= 1;
+    ParameterMap expected_inputs	= 1;
 
     // Indicate the Launch plan phase
     LaunchPlanPhase phase		= 2;
