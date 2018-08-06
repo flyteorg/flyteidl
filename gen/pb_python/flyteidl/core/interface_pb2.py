@@ -14,15 +14,16 @@ _sym_db = _symbol_database.Default()
 
 
 from flyteidl.core import types_pb2 as flyteidl_dot_core_dot_types__pb2
+from flyteidl.core import literals_pb2 as flyteidl_dot_core_dot_literals__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/interface.proto',
   package='flyteidl.core',
   syntax='proto3',
-  serialized_pb=_b('\n\x1d\x66lyteidl/core/interface.proto\x12\rflyteidl.core\x1a\x19\x66lyteidl/core/types.proto\"W\n\x08Variable\x12\x0c\n\x04name\x18\x01 \x01(\t\x12(\n\x04type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\"\x96\x01\n\x0bVariableMap\x12<\n\tvariables\x18\x01 \x03(\x0b\x32).flyteidl.core.VariableMap.VariablesEntry\x1aI\n\x0eVariablesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12&\n\x05value\x18\x02 \x01(\x0b\x32\x17.flyteidl.core.Variable:\x02\x38\x01\"i\n\x0eTypedInterface\x12*\n\x06inputs\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.VariableMap\x12+\n\x07outputs\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.VariableMapB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/core/interface.proto\x12\rflyteidl.core\x1a\x19\x66lyteidl/core/types.proto\x1a\x1c\x66lyteidl/core/literals.proto\"W\n\x08Variable\x12\x0c\n\x04name\x18\x01 \x01(\t\x12(\n\x04type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\"\x96\x01\n\x0bVariableMap\x12<\n\tvariables\x18\x01 \x03(\x0b\x32).flyteidl.core.VariableMap.VariablesEntry\x1aI\n\x0eVariablesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12&\n\x05value\x18\x02 \x01(\x0b\x32\x17.flyteidl.core.Variable:\x02\x38\x01\"y\n\tParameter\x12$\n\x03var\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.Variable\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.LiteralH\x00\x12\x12\n\x08required\x18\x03 \x01(\x08H\x00\x42\t\n\x07\x64\x65\x66\x61ult\"\x9c\x01\n\x0cParameterMap\x12?\n\nparameters\x18\x01 \x03(\x0b\x32+.flyteidl.core.ParameterMap.ParametersEntry\x1aK\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x18.flyteidl.core.Parameter:\x02\x38\x01\"i\n\x0eTypedInterface\x12*\n\x06inputs\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.VariableMap\x12+\n\x07outputs\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.VariableMapB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
-  dependencies=[flyteidl_dot_core_dot_types__pb2.DESCRIPTOR,])
+  dependencies=[flyteidl_dot_core_dot_types__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,])
 
 
 
@@ -67,8 +68,8 @@ _VARIABLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=75,
-  serialized_end=162,
+  serialized_start=105,
+  serialized_end=192,
 )
 
 
@@ -105,8 +106,8 @@ _VARIABLEMAP_VARIABLESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=242,
-  serialized_end=315,
+  serialized_start=272,
+  serialized_end=345,
 )
 
 _VARIABLEMAP = _descriptor.Descriptor(
@@ -135,8 +136,124 @@ _VARIABLEMAP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=165,
-  serialized_end=315,
+  serialized_start=195,
+  serialized_end=345,
+)
+
+
+_PARAMETER = _descriptor.Descriptor(
+  name='Parameter',
+  full_name='flyteidl.core.Parameter',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='var', full_name='flyteidl.core.Parameter.var', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='flyteidl.core.Parameter.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='required', full_name='flyteidl.core.Parameter.required', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='default', full_name='flyteidl.core.Parameter.default',
+      index=0, containing_type=None, fields=[]),
+  ],
+  serialized_start=347,
+  serialized_end=468,
+)
+
+
+_PARAMETERMAP_PARAMETERSENTRY = _descriptor.Descriptor(
+  name='ParametersEntry',
+  full_name='flyteidl.core.ParameterMap.ParametersEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='flyteidl.core.ParameterMap.ParametersEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='flyteidl.core.ParameterMap.ParametersEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=552,
+  serialized_end=627,
+)
+
+_PARAMETERMAP = _descriptor.Descriptor(
+  name='ParameterMap',
+  full_name='flyteidl.core.ParameterMap',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='parameters', full_name='flyteidl.core.ParameterMap.parameters', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_PARAMETERMAP_PARAMETERSENTRY, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=471,
+  serialized_end=627,
 )
 
 
@@ -173,18 +290,31 @@ _TYPEDINTERFACE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=317,
-  serialized_end=422,
+  serialized_start=629,
+  serialized_end=734,
 )
 
 _VARIABLE.fields_by_name['type'].message_type = flyteidl_dot_core_dot_types__pb2._LITERALTYPE
 _VARIABLEMAP_VARIABLESENTRY.fields_by_name['value'].message_type = _VARIABLE
 _VARIABLEMAP_VARIABLESENTRY.containing_type = _VARIABLEMAP
 _VARIABLEMAP.fields_by_name['variables'].message_type = _VARIABLEMAP_VARIABLESENTRY
+_PARAMETER.fields_by_name['var'].message_type = _VARIABLE
+_PARAMETER.fields_by_name['value'].message_type = flyteidl_dot_core_dot_literals__pb2._LITERAL
+_PARAMETER.oneofs_by_name['default'].fields.append(
+  _PARAMETER.fields_by_name['value'])
+_PARAMETER.fields_by_name['value'].containing_oneof = _PARAMETER.oneofs_by_name['default']
+_PARAMETER.oneofs_by_name['default'].fields.append(
+  _PARAMETER.fields_by_name['required'])
+_PARAMETER.fields_by_name['required'].containing_oneof = _PARAMETER.oneofs_by_name['default']
+_PARAMETERMAP_PARAMETERSENTRY.fields_by_name['value'].message_type = _PARAMETER
+_PARAMETERMAP_PARAMETERSENTRY.containing_type = _PARAMETERMAP
+_PARAMETERMAP.fields_by_name['parameters'].message_type = _PARAMETERMAP_PARAMETERSENTRY
 _TYPEDINTERFACE.fields_by_name['inputs'].message_type = _VARIABLEMAP
 _TYPEDINTERFACE.fields_by_name['outputs'].message_type = _VARIABLEMAP
 DESCRIPTOR.message_types_by_name['Variable'] = _VARIABLE
 DESCRIPTOR.message_types_by_name['VariableMap'] = _VARIABLEMAP
+DESCRIPTOR.message_types_by_name['Parameter'] = _PARAMETER
+DESCRIPTOR.message_types_by_name['ParameterMap'] = _PARAMETERMAP
 DESCRIPTOR.message_types_by_name['TypedInterface'] = _TYPEDINTERFACE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -210,6 +340,28 @@ VariableMap = _reflection.GeneratedProtocolMessageType('VariableMap', (_message.
 _sym_db.RegisterMessage(VariableMap)
 _sym_db.RegisterMessage(VariableMap.VariablesEntry)
 
+Parameter = _reflection.GeneratedProtocolMessageType('Parameter', (_message.Message,), dict(
+  DESCRIPTOR = _PARAMETER,
+  __module__ = 'flyteidl.core.interface_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.core.Parameter)
+  ))
+_sym_db.RegisterMessage(Parameter)
+
+ParameterMap = _reflection.GeneratedProtocolMessageType('ParameterMap', (_message.Message,), dict(
+
+  ParametersEntry = _reflection.GeneratedProtocolMessageType('ParametersEntry', (_message.Message,), dict(
+    DESCRIPTOR = _PARAMETERMAP_PARAMETERSENTRY,
+    __module__ = 'flyteidl.core.interface_pb2'
+    # @@protoc_insertion_point(class_scope:flyteidl.core.ParameterMap.ParametersEntry)
+    ))
+  ,
+  DESCRIPTOR = _PARAMETERMAP,
+  __module__ = 'flyteidl.core.interface_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.core.ParameterMap)
+  ))
+_sym_db.RegisterMessage(ParameterMap)
+_sym_db.RegisterMessage(ParameterMap.ParametersEntry)
+
 TypedInterface = _reflection.GeneratedProtocolMessageType('TypedInterface', (_message.Message,), dict(
   DESCRIPTOR = _TYPEDINTERFACE,
   __module__ = 'flyteidl.core.interface_pb2'
@@ -222,4 +374,6 @@ DESCRIPTOR.has_options = True
 DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/core'))
 _VARIABLEMAP_VARIABLESENTRY.has_options = True
 _VARIABLEMAP_VARIABLESENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_PARAMETERMAP_PARAMETERSENTRY.has_options = True
+_PARAMETERMAP_PARAMETERSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
 # @@protoc_insertion_point(module_scope)

@@ -4,6 +4,7 @@ package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "flyteidl/core/literals.proto";
+import "flyteidl/core/interface.proto";
 import "flyteidl/admin/schedule.proto";
 import "flyteidl/admin/common.proto";
 
@@ -45,18 +46,21 @@ message LaunchPlanSpec {
     LaunchPlanMetadata entity_metadata    = 2;
 
     // Input values to be passed for the execution
-    ParameterMap default_inputs     = 3;
+    core.ParameterMap default_inputs     = 3;
 
     // Fixed, non overridable inputs for the Launch Plan
     core.LiteralMap fixed_inputs = 4;
 }
 
 message LaunchPlanStatus {
-    // Indicates the set of inputs to execute the Launch plan
-    ParameterMap expected_inputs	= 1;
-
     // Indicate the Launch plan phase
-    LaunchPlanPhase phase		= 2;
+    LaunchPlanPhase phase		= 1;
+
+    // Indicates the set of inputs to execute the Launch plan
+    core.ParameterMap expected_inputs	= 2;
+
+    // Indicates the set of outputs from the Launch plan
+    core.VariableMap expected_outputs	= 3;
 }
 
 message LaunchPlanMetadata {

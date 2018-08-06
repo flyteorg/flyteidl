@@ -14,17 +14,14 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
-from flyteidl.core import interface_pb2 as flyteidl_dot_core_dot_interface__pb2
-from flyteidl.core import literals_pb2 as flyteidl_dot_core_dot_literals__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/common.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1b\x66lyteidl/admin/common.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1c\x66lyteidl/core/literals.proto\";\n\nIdentifier\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\">\n\x0eIdentifierList\x12,\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x1a.flyteidl.admin.Identifier\"y\n\tParameter\x12$\n\x03var\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.Variable\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.LiteralH\x00\x12\x12\n\x08required\x18\x03 \x01(\x08H\x00\x42\t\n\x07\x64\x65\x66\x61ult\"\x9e\x01\n\x0cParameterMap\x12@\n\nparameters\x18\x01 \x03(\x0b\x32,.flyteidl.admin.ParameterMap.ParametersEntry\x1aL\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12(\n\x05value\x18\x02 \x01(\x0b\x32\x19.flyteidl.admin.Parameter:\x02\x38\x01\"\xac\x01\n\x0cNotification\x12/\n\x04type\x18\x01 \x01(\x0e\x32!.flyteidl.admin.Notification.Type\x12.\n\x06phases\x18\x02 \x03(\x0e\x32\x1e.flyteidl.admin.ExecutionPhase\";\n\x04Type\x12\r\n\tUNDEFINED\x10\x00\x12\t\n\x05\x45MAIL\x10\x01\x12\x0e\n\nPAGER_DUTY\x10\x02\x12\t\n\x05SLACK\x10\x03\"\x1f\n\x10GetObjectRequest\x12\x0b\n\x03urn\x18\x01 \x01(\t*o\n\x0e\x45xecutionPhase\x12\r\n\tUNDEFINED\x10\x00\x12\x0b\n\x07RUNNING\x10\x01\x12\r\n\tSUCCEEDED\x10\x02\x12\n\n\x06\x46\x41ILED\x10\x03\x12\r\n\tTIMED_OUT\x10\x04\x12\x0b\n\x07\x41\x42ORTED\x10\x05\x12\n\n\x06QUEUED\x10\x06\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
-  ,
-  dependencies=[flyteidl_dot_core_dot_interface__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,])
+  serialized_pb=_b('\n\x1b\x66lyteidl/admin/common.proto\x12\x0e\x66lyteidl.admin\";\n\nIdentifier\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\">\n\x0eIdentifierList\x12,\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x1a.flyteidl.admin.Identifier\"\xac\x01\n\x0cNotification\x12/\n\x04type\x18\x01 \x01(\x0e\x32!.flyteidl.admin.Notification.Type\x12.\n\x06phases\x18\x02 \x03(\x0e\x32\x1e.flyteidl.admin.ExecutionPhase\";\n\x04Type\x12\r\n\tUNDEFINED\x10\x00\x12\t\n\x05\x45MAIL\x10\x01\x12\x0e\n\nPAGER_DUTY\x10\x02\x12\t\n\x05SLACK\x10\x03\"\x1f\n\x10GetObjectRequest\x12\x0b\n\x03urn\x18\x01 \x01(\t*o\n\x0e\x45xecutionPhase\x12\r\n\tUNDEFINED\x10\x00\x12\x0b\n\x07RUNNING\x10\x01\x12\r\n\tSUCCEEDED\x10\x02\x12\n\n\x06\x46\x41ILED\x10\x03\x12\r\n\tTIMED_OUT\x10\x04\x12\x0b\n\x07\x41\x42ORTED\x10\x05\x12\n\n\x06QUEUED\x10\x06\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+)
 
 _EXECUTIONPHASE = _descriptor.EnumDescriptor(
   name='ExecutionPhase',
@@ -63,8 +60,8 @@ _EXECUTIONPHASE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=725,
-  serialized_end=836,
+  serialized_start=380,
+  serialized_end=491,
 )
 _sym_db.RegisterEnumDescriptor(_EXECUTIONPHASE)
 
@@ -103,8 +100,8 @@ _NOTIFICATION_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=631,
-  serialized_end=690,
+  serialized_start=286,
+  serialized_end=345,
 )
 _sym_db.RegisterEnumDescriptor(_NOTIFICATION_TYPE)
 
@@ -149,8 +146,8 @@ _IDENTIFIER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=108,
-  serialized_end=167,
+  serialized_start=47,
+  serialized_end=106,
 )
 
 
@@ -180,124 +177,8 @@ _IDENTIFIERLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=169,
-  serialized_end=231,
-)
-
-
-_PARAMETER = _descriptor.Descriptor(
-  name='Parameter',
-  full_name='flyteidl.admin.Parameter',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='var', full_name='flyteidl.admin.Parameter.var', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='flyteidl.admin.Parameter.value', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='required', full_name='flyteidl.admin.Parameter.required', index=2,
-      number=3, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='default', full_name='flyteidl.admin.Parameter.default',
-      index=0, containing_type=None, fields=[]),
-  ],
-  serialized_start=233,
-  serialized_end=354,
-)
-
-
-_PARAMETERMAP_PARAMETERSENTRY = _descriptor.Descriptor(
-  name='ParametersEntry',
-  full_name='flyteidl.admin.ParameterMap.ParametersEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='flyteidl.admin.ParameterMap.ParametersEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='flyteidl.admin.ParameterMap.ParametersEntry.value', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=439,
-  serialized_end=515,
-)
-
-_PARAMETERMAP = _descriptor.Descriptor(
-  name='ParameterMap',
-  full_name='flyteidl.admin.ParameterMap',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='parameters', full_name='flyteidl.admin.ParameterMap.parameters', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[_PARAMETERMAP_PARAMETERSENTRY, ],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=357,
-  serialized_end=515,
+  serialized_start=108,
+  serialized_end=170,
 )
 
 
@@ -335,8 +216,8 @@ _NOTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=518,
-  serialized_end=690,
+  serialized_start=173,
+  serialized_end=345,
 )
 
 
@@ -366,29 +247,16 @@ _GETOBJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=692,
-  serialized_end=723,
+  serialized_start=347,
+  serialized_end=378,
 )
 
 _IDENTIFIERLIST.fields_by_name['entities'].message_type = _IDENTIFIER
-_PARAMETER.fields_by_name['var'].message_type = flyteidl_dot_core_dot_interface__pb2._VARIABLE
-_PARAMETER.fields_by_name['value'].message_type = flyteidl_dot_core_dot_literals__pb2._LITERAL
-_PARAMETER.oneofs_by_name['default'].fields.append(
-  _PARAMETER.fields_by_name['value'])
-_PARAMETER.fields_by_name['value'].containing_oneof = _PARAMETER.oneofs_by_name['default']
-_PARAMETER.oneofs_by_name['default'].fields.append(
-  _PARAMETER.fields_by_name['required'])
-_PARAMETER.fields_by_name['required'].containing_oneof = _PARAMETER.oneofs_by_name['default']
-_PARAMETERMAP_PARAMETERSENTRY.fields_by_name['value'].message_type = _PARAMETER
-_PARAMETERMAP_PARAMETERSENTRY.containing_type = _PARAMETERMAP
-_PARAMETERMAP.fields_by_name['parameters'].message_type = _PARAMETERMAP_PARAMETERSENTRY
 _NOTIFICATION.fields_by_name['type'].enum_type = _NOTIFICATION_TYPE
 _NOTIFICATION.fields_by_name['phases'].enum_type = _EXECUTIONPHASE
 _NOTIFICATION_TYPE.containing_type = _NOTIFICATION
 DESCRIPTOR.message_types_by_name['Identifier'] = _IDENTIFIER
 DESCRIPTOR.message_types_by_name['IdentifierList'] = _IDENTIFIERLIST
-DESCRIPTOR.message_types_by_name['Parameter'] = _PARAMETER
-DESCRIPTOR.message_types_by_name['ParameterMap'] = _PARAMETERMAP
 DESCRIPTOR.message_types_by_name['Notification'] = _NOTIFICATION
 DESCRIPTOR.message_types_by_name['GetObjectRequest'] = _GETOBJECTREQUEST
 DESCRIPTOR.enum_types_by_name['ExecutionPhase'] = _EXECUTIONPHASE
@@ -408,28 +276,6 @@ IdentifierList = _reflection.GeneratedProtocolMessageType('IdentifierList', (_me
   ))
 _sym_db.RegisterMessage(IdentifierList)
 
-Parameter = _reflection.GeneratedProtocolMessageType('Parameter', (_message.Message,), dict(
-  DESCRIPTOR = _PARAMETER,
-  __module__ = 'flyteidl.admin.common_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.admin.Parameter)
-  ))
-_sym_db.RegisterMessage(Parameter)
-
-ParameterMap = _reflection.GeneratedProtocolMessageType('ParameterMap', (_message.Message,), dict(
-
-  ParametersEntry = _reflection.GeneratedProtocolMessageType('ParametersEntry', (_message.Message,), dict(
-    DESCRIPTOR = _PARAMETERMAP_PARAMETERSENTRY,
-    __module__ = 'flyteidl.admin.common_pb2'
-    # @@protoc_insertion_point(class_scope:flyteidl.admin.ParameterMap.ParametersEntry)
-    ))
-  ,
-  DESCRIPTOR = _PARAMETERMAP,
-  __module__ = 'flyteidl.admin.common_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.admin.ParameterMap)
-  ))
-_sym_db.RegisterMessage(ParameterMap)
-_sym_db.RegisterMessage(ParameterMap.ParametersEntry)
-
 Notification = _reflection.GeneratedProtocolMessageType('Notification', (_message.Message,), dict(
   DESCRIPTOR = _NOTIFICATION,
   __module__ = 'flyteidl.admin.common_pb2'
@@ -447,6 +293,4 @@ _sym_db.RegisterMessage(GetObjectRequest)
 
 DESCRIPTOR.has_options = True
 DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin'))
-_PARAMETERMAP_PARAMETERSENTRY.has_options = True
-_PARAMETERMAP_PARAMETERSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
 # @@protoc_insertion_point(module_scope)

@@ -681,7 +681,7 @@
           "title": "Metadata for the Launch Plan"
         },
         "default_inputs": {
-          "$ref": "#/definitions/adminParameterMap",
+          "$ref": "#/definitions/coreParameterMap",
           "title": "Input values to be passed for the execution"
         },
         "fixed_inputs": {
@@ -714,37 +714,6 @@
         "SLACK"
       ],
       "default": "UNDEFINED"
-    },
-    "adminParameter": {
-      "type": "object",
-      "properties": {
-        "var": {
-          "$ref": "#/definitions/coreVariable",
-          "description": "+required Variable. Defines a name and a type to reference/compare through out the system."
-        },
-        "value": {
-          "$ref": "#/definitions/coreLiteral",
-          "description": "Defines a default value that has to match the variable type defined up."
-        },
-        "required": {
-          "type": "boolean",
-          "format": "boolean",
-          "description": "+optional, is this value required to be filled."
-        }
-      },
-      "description": "Declares an input parameter."
-    },
-    "adminParameterMap": {
-      "type": "object",
-      "properties": {
-        "parameters": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/adminParameter"
-          }
-        }
-      },
-      "description": "A map of Parameters."
     },
     "adminSchedule": {
       "type": "object",
@@ -1322,6 +1291,37 @@
         }
       },
       "description": "A reference to an output produced by a node. The type can be retrieved -and validated- from\nthe underlying interface of the node."
+    },
+    "coreParameter": {
+      "type": "object",
+      "properties": {
+        "var": {
+          "$ref": "#/definitions/coreVariable",
+          "description": "+required Variable. Defines a name and a type to reference/compare through out the system."
+        },
+        "value": {
+          "$ref": "#/definitions/coreLiteral",
+          "description": "Defines a default value that has to match the variable type defined up."
+        },
+        "required": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "+optional, is this value required to be filled."
+        }
+      },
+      "description": "Declares an input parameter."
+    },
+    "coreParameterMap": {
+      "type": "object",
+      "properties": {
+        "parameters": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/coreParameter"
+          }
+        }
+      },
+      "description": "A map of Parameters."
     },
     "corePrimitive": {
       "type": "object",
