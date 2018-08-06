@@ -540,10 +540,10 @@
     "RuntimeMetadataRuntimeType": {
       "type": "string",
       "enum": [
-        "FlyteSDK",
-        "Other"
+        "Other",
+        "FlyteSDK"
       ],
-      "default": "FlyteSDK"
+      "default": "Other"
     },
     "ScheduleFixedRate": {
       "type": "object",

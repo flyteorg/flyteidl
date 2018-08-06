@@ -46,8 +46,8 @@ message Resources {
 // Runtime information. This is losely defined to allow for extensibility.
 message RuntimeMetadata {
     enum RuntimeType {
-        FlyteSDK = 0;
-        Other = 1;
+        Other = 0;
+        FlyteSDK = 1;
     }
 
     // Type of runtime.

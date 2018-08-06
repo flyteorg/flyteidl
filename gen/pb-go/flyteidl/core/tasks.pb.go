@@ -41,7 +41,7 @@ func (x TaskCategory) String() string {
 	return proto.EnumName(TaskCategory_name, int32(x))
 }
 func (TaskCategory) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_tasks_1ea393241653aef3, []int{0}
+	return fileDescriptor_tasks_3ed721e905bb82aa, []int{0}
 }
 
 // Known resource names.
@@ -74,30 +74,30 @@ func (x Resources_ResourceName) String() string {
 	return proto.EnumName(Resources_ResourceName_name, int32(x))
 }
 func (Resources_ResourceName) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_tasks_1ea393241653aef3, []int{0, 0}
+	return fileDescriptor_tasks_3ed721e905bb82aa, []int{0, 0}
 }
 
 type RuntimeMetadata_RuntimeType int32
 
 const (
-	RuntimeMetadata_FlyteSDK RuntimeMetadata_RuntimeType = 0
-	RuntimeMetadata_Other    RuntimeMetadata_RuntimeType = 1
+	RuntimeMetadata_Other    RuntimeMetadata_RuntimeType = 0
+	RuntimeMetadata_FlyteSDK RuntimeMetadata_RuntimeType = 1
 )
 
 var RuntimeMetadata_RuntimeType_name = map[int32]string{
-	0: "FlyteSDK",
-	1: "Other",
+	0: "Other",
+	1: "FlyteSDK",
 }
 var RuntimeMetadata_RuntimeType_value = map[string]int32{
-	"FlyteSDK": 0,
-	"Other":    1,
+	"Other":    0,
+	"FlyteSDK": 1,
 }
 
 func (x RuntimeMetadata_RuntimeType) String() string {
 	return proto.EnumName(RuntimeMetadata_RuntimeType_name, int32(x))
 }
 func (RuntimeMetadata_RuntimeType) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_tasks_1ea393241653aef3, []int{1, 0}
+	return fileDescriptor_tasks_3ed721e905bb82aa, []int{1, 0}
 }
 
 // A customizable interface to convey resources requested for a container. This can be interpretted differently for different
@@ -116,7 +116,7 @@ func (m *Resources) Reset()         { *m = Resources{} }
 func (m *Resources) String() string { return proto.CompactTextString(m) }
 func (*Resources) ProtoMessage()    {}
 func (*Resources) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tasks_1ea393241653aef3, []int{0}
+	return fileDescriptor_tasks_3ed721e905bb82aa, []int{0}
 }
 func (m *Resources) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Resources.Unmarshal(m, b)
@@ -165,7 +165,7 @@ func (m *Resources_ResourceEntry) Reset()         { *m = Resources_ResourceEntry
 func (m *Resources_ResourceEntry) String() string { return proto.CompactTextString(m) }
 func (*Resources_ResourceEntry) ProtoMessage()    {}
 func (*Resources_ResourceEntry) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tasks_1ea393241653aef3, []int{0, 0}
+	return fileDescriptor_tasks_3ed721e905bb82aa, []int{0, 0}
 }
 func (m *Resources_ResourceEntry) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Resources_ResourceEntry.Unmarshal(m, b)
@@ -217,7 +217,7 @@ func (m *RuntimeMetadata) Reset()         { *m = RuntimeMetadata{} }
 func (m *RuntimeMetadata) String() string { return proto.CompactTextString(m) }
 func (*RuntimeMetadata) ProtoMessage()    {}
 func (*RuntimeMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tasks_1ea393241653aef3, []int{1}
+	return fileDescriptor_tasks_3ed721e905bb82aa, []int{1}
 }
 func (m *RuntimeMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RuntimeMetadata.Unmarshal(m, b)
@@ -241,7 +241,7 @@ func (m *RuntimeMetadata) GetType() RuntimeMetadata_RuntimeType {
 	if m != nil {
 		return m.Type
 	}
-	return RuntimeMetadata_FlyteSDK
+	return RuntimeMetadata_Other
 }
 
 func (m *RuntimeMetadata) GetVersion() string {
@@ -277,7 +277,7 @@ func (m *TaskMetadata) Reset()         { *m = TaskMetadata{} }
 func (m *TaskMetadata) String() string { return proto.CompactTextString(m) }
 func (*TaskMetadata) ProtoMessage()    {}
 func (*TaskMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tasks_1ea393241653aef3, []int{2}
+	return fileDescriptor_tasks_3ed721e905bb82aa, []int{2}
 }
 func (m *TaskMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskMetadata.Unmarshal(m, b)
@@ -359,7 +359,7 @@ func (m *TaskTemplate) Reset()         { *m = TaskTemplate{} }
 func (m *TaskTemplate) String() string { return proto.CompactTextString(m) }
 func (*TaskTemplate) ProtoMessage()    {}
 func (*TaskTemplate) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tasks_1ea393241653aef3, []int{3}
+	return fileDescriptor_tasks_3ed721e905bb82aa, []int{3}
 }
 func (m *TaskTemplate) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskTemplate.Unmarshal(m, b)
@@ -525,7 +525,7 @@ func (m *Container) Reset()         { *m = Container{} }
 func (m *Container) String() string { return proto.CompactTextString(m) }
 func (*Container) ProtoMessage()    {}
 func (*Container) Descriptor() ([]byte, []int) {
-	return fileDescriptor_tasks_1ea393241653aef3, []int{4}
+	return fileDescriptor_tasks_3ed721e905bb82aa, []int{4}
 }
 func (m *Container) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Container.Unmarshal(m, b)
@@ -599,9 +599,9 @@ func init() {
 	proto.RegisterEnum("flyteidl.core.RuntimeMetadata_RuntimeType", RuntimeMetadata_RuntimeType_name, RuntimeMetadata_RuntimeType_value)
 }
 
-func init() { proto.RegisterFile("flyteidl/core/tasks.proto", fileDescriptor_tasks_1ea393241653aef3) }
+func init() { proto.RegisterFile("flyteidl/core/tasks.proto", fileDescriptor_tasks_3ed721e905bb82aa) }
 
-var fileDescriptor_tasks_1ea393241653aef3 = []byte{
+var fileDescriptor_tasks_3ed721e905bb82aa = []byte{
 	// 743 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x94, 0xdd, 0xae, 0xdb, 0x44,
 	0x10, 0xc7, 0xe3, 0x7c, 0x38, 0xf1, 0x24, 0x27, 0x98, 0x15, 0x42, 0x6e, 0x68, 0xab, 0xc8, 0x12,
@@ -624,9 +624,9 @@ var fileDescriptor_tasks_1ea393241653aef3 = []byte{
 	0x74, 0x7f, 0x35, 0xe0, 0x3d, 0x9a, 0x0b, 0xcd, 0x13, 0xbc, 0x46, 0xcd, 0x42, 0xa6, 0x19, 0x79,
 	0x05, 0x43, 0x5d, 0xa4, 0x6d, 0xb2, 0x4f, 0xcf, 0x93, 0x3d, 0xa5, 0x5b, 0xfb, 0xa6, 0x48, 0x91,
 	0x56, 0x3a, 0xe2, 0xc0, 0xf8, 0x80, 0x2a, 0xe3, 0x52, 0x34, 0x39, 0xb7, 0x26, 0xf9, 0x10, 0xcc,
-	0x7d, 0xcc, 0x0e, 0x52, 0x39, 0x83, 0xca, 0xd1, 0x58, 0xee, 0x13, 0x98, 0xde, 0x09, 0x43, 0x66,
-	0x30, 0x79, 0x53, 0xfe, 0xe7, 0xf6, 0xf5, 0x5b, 0xbb, 0x47, 0x2c, 0x18, 0x7d, 0xab, 0xdf, 0xa1,
-	0xb2, 0x0d, 0xf7, 0x0f, 0x03, 0x66, 0x37, 0x2c, 0xbb, 0xed, 0x52, 0x75, 0x61, 0x16, 0xf2, 0x2c,
+	0x7d, 0xcc, 0x0e, 0x52, 0x39, 0x83, 0xca, 0xd1, 0x58, 0xee, 0x13, 0x98, 0xde, 0x09, 0x43, 0x2c,
+	0x18, 0x7d, 0xab, 0xdf, 0xa1, 0xb2, 0x7b, 0x64, 0x06, 0x93, 0x37, 0xe5, 0xdf, 0x6f, 0x5f, 0xbf,
+	0xb5, 0x0d, 0xf7, 0x0f, 0x03, 0x66, 0x37, 0x2c, 0xbb, 0xed, 0x52, 0x75, 0x61, 0x16, 0xf2, 0x2c,
 	0x90, 0x07, 0x54, 0x6c, 0x17, 0xd7, 0x29, 0x4f, 0xe8, 0xc9, 0x19, 0x79, 0x09, 0x63, 0x55, 0x07,
 	0xaf, 0xd2, 0x99, 0xae, 0x1f, 0xff, 0x77, 0x45, 0xb4, 0xc5, 0xc9, 0x25, 0x8c, 0xcb, 0x5f, 0x99,
 	0x6b, 0x67, 0x58, 0x29, 0x1f, 0x78, 0xf5, 0x28, 0x7a, 0xed, 0x28, 0x7a, 0xaf, 0x9b, 0x51, 0xa4,
@@ -648,6 +648,6 @@ var fileDescriptor_tasks_1ea393241653aef3 = []byte{
 	0xf1, 0x8e, 0xe7, 0x5b, 0x2e, 0xa2, 0x18, 0xb7, 0x1a, 0xd3, 0xd2, 0x63, 0xf7, 0xc8, 0xfb, 0x70,
 	0x71, 0x9d, 0xc7, 0x9a, 0x77, 0x47, 0xc6, 0xd5, 0xfa, 0xc7, 0x4f, 0x22, 0xae, 0xdf, 0xe5, 0x3b,
 	0x2f, 0x90, 0x89, 0x1f, 0x17, 0x7b, 0xed, 0x77, 0x4f, 0x6f, 0x84, 0xc2, 0x4f, 0x77, 0xcf, 0x22,
-	0xe9, 0x9f, 0xbc, 0xc6, 0x3b, 0xb3, 0x1a, 0xf6, 0xcb, 0xbf, 0x02, 0x00, 0x00, 0xff, 0xff, 0x12,
-	0xee, 0x19, 0x8f, 0xee, 0x05, 0x00, 0x00,
+	0xe9, 0x9f, 0xbc, 0xc6, 0x3b, 0xb3, 0x1a, 0xf6, 0xcb, 0xbf, 0x02, 0x00, 0x00, 0xff, 0xff, 0x7b,
+	0x53, 0x45, 0xae, 0xee, 0x05, 0x00, 0x00,
 }
