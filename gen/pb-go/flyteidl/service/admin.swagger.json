@@ -786,7 +786,7 @@
     "adminTaskSpec": {
       "type": "object",
       "properties": {
-        "task": {
+        "template": {
           "$ref": "#/definitions/coreTaskTemplate"
         }
       }

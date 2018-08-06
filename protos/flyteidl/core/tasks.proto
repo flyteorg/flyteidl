@@ -100,10 +100,10 @@ message TaskTemplate {
     // Custom data about the task. This is extensible to allow various plugins in the system.
     bytes custom = 6;
 
-    // Known task types that the system will guarantee plugins for. Custom SDK plugins are allowed to set these if needed.
+    // Known target types that the system will guarantee plugins for. Custom SDK plugins are allowed to set these if needed.
     // If no corresponding execution-layer plugins are found, the system will default to handling these using built-in
     // handlers.
-    oneof task {
+    oneof target {
         Container container = 7;
     }
 }

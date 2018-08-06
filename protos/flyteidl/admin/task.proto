@@ -39,5 +39,5 @@ message TaskList {
 }
 
 message TaskSpec {
-    core.TaskTemplate task = 1;
+    core.TaskTemplate template = 1;
 }
