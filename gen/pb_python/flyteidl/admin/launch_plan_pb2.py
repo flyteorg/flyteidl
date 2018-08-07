@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/launch_plan.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n flyteidl/admin/launch_plan.proto\x12\x0e\x66lyteidl.admin\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1d\x66lyteidl/admin/schedule.proto\x1a\x1b\x66lyteidl/admin/common.proto\"\x80\x01\n\x17LaunchPlanCreateRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12,\n\x04spec\x18\x03 \x01(\x0b\x32\x1e.flyteidl.admin.LaunchPlanSpec\"\'\n\x18LaunchPlanCreateResponse\x12\x0b\n\x03urn\x18\x01 \x01(\t\"\xb2\x01\n\nLaunchPlan\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0b\n\x03urn\x18\x03 \x01(\t\x12,\n\x04spec\x18\x04 \x01(\x0b\x32\x1e.flyteidl.admin.LaunchPlanSpec\x12\x30\n\x06status\x18\x05 \x01(\x0b\x32 .flyteidl.admin.LaunchPlanStatus\"B\n\x0eLaunchPlanList\x12\x30\n\x0claunch_plans\x18\x01 \x03(\x0b\x32\x1a.flyteidl.admin.LaunchPlan\"\xc9\x01\n\x0eLaunchPlanSpec\x12\x14\n\x0cworkflow_urn\x18\x01 \x01(\t\x12;\n\x0f\x65ntity_metadata\x18\x02 \x01(\x0b\x32\".flyteidl.admin.LaunchPlanMetadata\x12\x33\n\x0e\x64\x65\x66\x61ult_inputs\x18\x03 \x01(\x0b\x32\x1b.flyteidl.core.ParameterMap\x12/\n\x0c\x66ixed_inputs\x18\x04 \x01(\x0b\x32\x19.flyteidl.core.LiteralMap\"\xae\x01\n\x10LaunchPlanStatus\x12.\n\x05phase\x18\x01 \x01(\x0e\x32\x1f.flyteidl.admin.LaunchPlanPhase\x12\x34\n\x0f\x65xpected_inputs\x18\x02 \x01(\x0b\x32\x1b.flyteidl.core.ParameterMap\x12\x34\n\x10\x65xpected_outputs\x18\x03 \x01(\x0b\x32\x1a.flyteidl.core.VariableMap\"u\n\x12LaunchPlanMetadata\x12*\n\x08schedule\x18\x01 \x01(\x0b\x32\x18.flyteidl.admin.Schedule\x12\x33\n\rnotifications\x18\x02 \x03(\x0b\x32\x1c.flyteidl.admin.Notification*+\n\x0fLaunchPlanPhase\x12\n\n\x06\x41\x43TIVE\x10\x00\x12\x0c\n\x08INACTIVE\x10\x01\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n flyteidl/admin/launch_plan.proto\x12\x0e\x66lyteidl.admin\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1d\x66lyteidl/admin/schedule.proto\x1a\x1b\x66lyteidl/admin/common.proto\"\x80\x01\n\x17LaunchPlanCreateRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12,\n\x04spec\x18\x03 \x01(\x0b\x32\x1e.flyteidl.admin.LaunchPlanSpec\"\'\n\x18LaunchPlanCreateResponse\x12\x0b\n\x03urn\x18\x01 \x01(\t\"\xb2\x01\n\nLaunchPlan\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0b\n\x03urn\x18\x03 \x01(\t\x12,\n\x04spec\x18\x04 \x01(\x0b\x32\x1e.flyteidl.admin.LaunchPlanSpec\x12\x30\n\x06status\x18\x05 \x01(\x0b\x32 .flyteidl.admin.LaunchPlanStatus\"B\n\x0eLaunchPlanList\x12\x30\n\x0claunch_plans\x18\x01 \x03(\x0b\x32\x1a.flyteidl.admin.LaunchPlan\"\xc9\x01\n\x0eLaunchPlanSpec\x12\x14\n\x0cworkflow_urn\x18\x01 \x01(\t\x12;\n\x0f\x65ntity_metadata\x18\x02 \x01(\x0b\x32\".flyteidl.admin.LaunchPlanMetadata\x12\x33\n\x0e\x64\x65\x66\x61ult_inputs\x18\x03 \x01(\x0b\x32\x1b.flyteidl.core.ParameterMap\x12/\n\x0c\x66ixed_inputs\x18\x04 \x01(\x0b\x32\x19.flyteidl.core.LiteralMap\"\xae\x01\n\x10LaunchPlanStatus\x12.\n\x05phase\x18\x01 \x01(\x0e\x32\x1f.flyteidl.admin.LaunchPlanPhase\x12\x34\n\x0f\x65xpected_inputs\x18\x02 \x01(\x0b\x32\x1b.flyteidl.core.ParameterMap\x12\x34\n\x10\x65xpected_outputs\x18\x03 \x01(\x0b\x32\x1a.flyteidl.core.VariableMap\"u\n\x12LaunchPlanMetadata\x12*\n\x08schedule\x18\x01 \x01(\x0b\x32\x18.flyteidl.admin.Schedule\x12\x33\n\rnotifications\x18\x02 \x03(\x0b\x32\x1c.flyteidl.admin.Notification*+\n\x0fLaunchPlanPhase\x12\x0c\n\x08INACTIVE\x10\x00\x12\n\n\x06\x41\x43TIVE\x10\x01\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,flyteidl_dot_core_dot_interface__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_schedule__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,])
 
@@ -35,11 +35,11 @@ _LAUNCHPLANPHASE = _descriptor.EnumDescriptor(
   file=DESCRIPTOR,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='ACTIVE', index=0, number=0,
+      name='INACTIVE', index=0, number=0,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='INACTIVE', index=1, number=1,
+      name='ACTIVE', index=1, number=1,
       options=None,
       type=None),
   ],
@@ -51,8 +51,8 @@ _LAUNCHPLANPHASE = _descriptor.EnumDescriptor(
 _sym_db.RegisterEnumDescriptor(_LAUNCHPLANPHASE)
 
 LaunchPlanPhase = enum_type_wrapper.EnumTypeWrapper(_LAUNCHPLANPHASE)
-ACTIVE = 0
-INACTIVE = 1
+INACTIVE = 0
+ACTIVE = 1
 
 
 
