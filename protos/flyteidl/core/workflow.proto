@@ -150,4 +150,21 @@ message WorkflowTemplate {
     // The interface of this node must match the Workflow interface with an additional input named "error" of type
     // pb.lyft.flyte.core.Error.
     Node failure_node = 6;
+
+    // For internal use only! This field is used by the system and must not be filled in. Any values set will be ignored.
+    ConnectionSet connections = 7;
 }
+
+// For internal use only! This message is used by the system and must not be filled in.
+message ConnectionSet {
+    message IdList {
+        repeated string ids = 1;
+    }
+
+    // For internal use only! This field is used by the system and must not be filled in. Any values set will be ignored.
+    map<string, IdList> downstream = 7;
+
+    // For internal use only! This field is used by the system and must not be filled in. Any values set will be ignored.
+    map<string, IdList> upstream = 8;
+}
+
