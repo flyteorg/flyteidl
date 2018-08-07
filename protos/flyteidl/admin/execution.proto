@@ -36,11 +36,21 @@ message ExecutionStatus {
     string workflow_urn               = 2;
 }
 
+// Input/output data can represented by actual values or a link to where it is stored
+message LiteralMapBlob {
+    oneof data {
+        // Data in LiteralMap format
+        core.LiteralMap values = 1;
+
+        // In the event that the map is too large, we return a uri to the data
+        string uri = 2;
+    }
+}
+
 // Encapsultes the results of the Execution
 message ExecutionResult {
     oneof output_result {
-        // Output of the execution in LiteralMap format
-        core.LiteralMap outputs = 1;
+        LiteralMapBlob outputs = 1;
 
         // Error information for the Node
         Error error           = 2;
@@ -71,7 +81,7 @@ message ExecutionSpec {
     string launch_plan_urn        = 1;
 
     // Input values to be passed for the execution
-    core.LiteralMap inputs = 2;
+    LiteralMapBlob inputs          = 2;
 
     // Metadata for the execution
     ExecutionMetadata metadata    = 3;

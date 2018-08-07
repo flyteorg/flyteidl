@@ -108,13 +108,5 @@ message ArrayJob {
     // then look at AWS_BATCH_JOB_ARRAY_INDEX to know the index of the job and load the appropriate portion of the input.
     // Azure: The execution engine will have to process the input and slice it for each task. It'll then pass an absolute
     // location to each task for where it can find its input.
-    DataLocation inputs = 6;
-}
-
-message DataLocation {
-    // Refers to the blob store type where data is located.
-    BlobStore blob_store = 1;
-
-    // Defines the actual location where data is
-    string path = 2;
+    string path = 6;
 }

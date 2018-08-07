@@ -14,9 +14,8 @@ message NodeExecutionEventRequest {
     // the unique id of the event per retry
     string event_id            = 2;
 
-    NodeExecutionStatus status  = 3;
+    NodeExecutionStatus result  = 3;
     NodeExecutionSpec spec      = 4;
-    NodeExecutionResult result  = 5;
 }
 
 message NodeExecutionEventResponse {
@@ -27,15 +26,15 @@ message NodeExecution {
     string execution_id = 1;
 
     // Indicates the status of node execution - including retries
-    repeated NodeExecutionStatus status = 2;
+    repeated NodeExecutionStatus results = 2;
     NodeExecutionSpec spec      = 3;
-    NodeExecutionResult result  = 4;
 }
 
 message NodeExecutionList {
     repeated NodeExecution executions = 1;
 }
 
+// Encapsultes the results of the Execution
 message NodeExecutionStatus {
     // Phase of the executions
     ExecutionPhase phase              = 1;
@@ -54,16 +53,14 @@ message NodeExecutionStatus {
 
     // Indicates specific info for each type
     bytes custom_task_info            = 6;
-}
 
-// Encapsultes the results of the Execution
-message NodeExecutionResult {
     oneof output_result {
-        // Output of the execution in NamedValue format
-        core.LiteralMap outputs = 1;
+        // URL to the output of the execution, it encodes all the information
+        // including Cloud source provider. ie., s3://...
+        string output_url       = 7;
 
         // Error information for the Node
-        Error error           = 2;
+        Error error           = 8;
     }
 }
 

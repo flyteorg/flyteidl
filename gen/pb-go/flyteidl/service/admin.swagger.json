@@ -957,14 +957,11 @@
         "metadata": {
           "$ref": "#/definitions/coreBlobMetadata"
         },
-        "blob_store": {
-          "$ref": "#/definitions/coreBlobStore"
-        },
         "uri": {
           "type": "string"
         }
       },
-      "description": "Refers to an offloaded set of files. It encapsulates the type of the store and a unique uri for where the data is.\nThere ar eno restrictions on how the uri is formatted since it will depend on how to interact with the store."
+      "description": "Refers to an offloaded set of files. It encapsulates the type of the store and a unique uri for where the data is.\nThere are no restrictions on how the uri is formatted since it will depend on how to interact with the store."
     },
     "coreBlobMetadata": {
       "type": "object",
@@ -977,16 +974,6 @@
           "$ref": "#/definitions/BlobMetadataBlobType"
         }
       }
-    },
-    "coreBlobStore": {
-      "type": "string",
-      "enum": [
-        "INVALID",
-        "S3",
-        "GCS"
-      ],
-      "default": "INVALID",
-      "description": "Defines where the data is. Different stores will require different APIs and different ways to interact."
     },
     "coreBooleanExpression": {
       "type": "object",
@@ -1463,9 +1450,6 @@
       "properties": {
         "uri": {
           "type": "string"
-        },
-        "blob_store": {
-          "$ref": "#/definitions/coreBlobStore"
         },
         "type": {
           "$ref": "#/definitions/coreSchemaType"

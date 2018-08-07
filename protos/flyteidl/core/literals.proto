@@ -23,18 +23,10 @@ message Primitive {
 message Void {
 }
 
-// Defines where the data is. Different stores will require different APIs and different ways to interact.
-enum BlobStore {
-    INVALID = 0;
-    S3 = 1;
-    GCS = 2;
-}
-
 // Refers to an offloaded set of files. It encapsulates the type of the store and a unique uri for where the data is.
-// There ar eno restrictions on how the uri is formatted since it will depend on how to interact with the store.
+// There are no restrictions on how the uri is formatted since it will depend on how to interact with the store.
 message Blob {
     BlobMetadata metadata = 1;
-    BlobStore blob_store = 2;
     string uri = 3;
 }
 
@@ -67,7 +59,6 @@ message Binary {
 // A strongly typed schema that defines the interface of data retrieved from the underlying storage medium.
 message Schema {
     string uri = 1;
-    BlobStore blob_store = 2;
     SchemaType type = 3;
 }
 
