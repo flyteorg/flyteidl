@@ -55,10 +55,10 @@ message TaskNode {
 message WorkflowNode {
     oneof reference {
         // A globally unique identifier for the launch plan.
-        string launch_plan_reference_id = 1;
+        string launchplan_ref = 1;
 
-        // An implicitly declared workflow.
-        WorkflowTemplate workflow_template = 2;
+        // Reference to a subworkflow, that should be defined with the compiler context
+        string sub_workflow_ref = 2;
     }
 }
 
@@ -151,20 +151,7 @@ message WorkflowTemplate {
     // pb.lyft.flyte.core.Error.
     Node failure_node = 6;
 
-    // For internal use only! This field is used by the system and must not be filled in. Any values set will be ignored.
-    ConnectionSet connections = 7;
 }
 
-// For internal use only! This message is used by the system and must not be filled in.
-message ConnectionSet {
-    message IdList {
-        repeated string ids = 1;
-    }
 
-    // For internal use only! This field is used by the system and must not be filled in. Any values set will be ignored.
-    map<string, IdList> downstream = 7;
-
-    // For internal use only! This field is used by the system and must not be filled in. Any values set will be ignored.
-    map<string, IdList> upstream = 8;
-}
 

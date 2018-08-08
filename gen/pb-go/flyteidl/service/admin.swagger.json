@@ -511,17 +511,6 @@
       "description": "- AND: Conjunction",
       "title": "Nested conditions. They can be conjoined using AND / OR\nOrder of evaluation is not important as the operators are Commutative"
     },
-    "ConnectionSetIdList": {
-      "type": "object",
-      "properties": {
-        "ids": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
     "ResourcesResourceEntry": {
       "type": "object",
       "properties": {
@@ -1026,26 +1015,6 @@
         }
       },
       "description": "Defines a conjunction expression of two boolean expressions."
-    },
-    "coreConnectionSet": {
-      "type": "object",
-      "properties": {
-        "downstream": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/ConnectionSetIdList"
-          },
-          "description": "For internal use only! This field is used by the system and must not be filled in. Any values set will be ignored."
-        },
-        "upstream": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/ConnectionSetIdList"
-          },
-          "description": "For internal use only! This field is used by the system and must not be filled in. Any values set will be ignored."
-        }
-      },
-      "description": "For internal use only! This message is used by the system and must not be filled in."
     },
     "coreContainer": {
       "type": "object",
@@ -1633,13 +1602,13 @@
     "coreWorkflowNode": {
       "type": "object",
       "properties": {
-        "launch_plan_reference_id": {
+        "launchplan_ref": {
           "type": "string",
           "description": "A globally unique identifier for the launch plan."
         },
-        "workflow_template": {
-          "$ref": "#/definitions/coreWorkflowTemplate",
-          "description": "An implicitly declared workflow."
+        "sub_workflow_ref": {
+          "type": "string",
+          "title": "Reference to a subworkflow, that should be defined with the compiler context"
         }
       },
       "description": "Refers to a the workflow the node is to execute."
@@ -1676,10 +1645,6 @@
         "failure_node": {
           "$ref": "#/definitions/coreNode",
           "description": "+optional A catch-all node. This node is executed whenever the execution engine determines the workflow has failed.\nThe interface of this node must match the Workflow interface with an additional input named \"error\" of type\npb.lyft.flyte.core.Error."
-        },
-        "connections": {
-          "$ref": "#/definitions/coreConnectionSet",
-          "description": "For internal use only! This field is used by the system and must not be filled in. Any values set will be ignored."
         }
       },
       "description": "Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,\ndirected acyclic graph."
