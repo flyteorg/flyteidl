@@ -1286,9 +1286,9 @@
           "$ref": "#/definitions/coreVariable",
           "description": "+required Variable. Defines a name and a type to reference/compare through out the system."
         },
-        "value": {
+        "default": {
           "$ref": "#/definitions/coreLiteral",
-          "description": "Defines a default value that has to match the variable type defined up."
+          "description": "Defines a default value that has to match the variable type defined."
         },
         "required": {
           "type": "boolean",
@@ -1548,10 +1548,6 @@
     "coreVariable": {
       "type": "object",
       "properties": {
-        "name": {
-          "type": "string",
-          "description": "Variable name. This can be referenced in input/output bindings to pass data between\nnodes/workflows. Variable name is case-sensitive."
-        },
         "type": {
           "$ref": "#/definitions/coreLiteralType",
           "description": "Variable literal type."

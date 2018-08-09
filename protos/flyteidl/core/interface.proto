@@ -9,15 +9,11 @@ import "flyteidl/core/literals.proto";
 
 // Defines a strongly typed variable.
 message Variable {
-    // Variable name. This can be referenced in input/output bindings to pass data between
-    // nodes/workflows. Variable name is case-sensitive.
-    string name = 1;
-
     // Variable literal type.
-    LiteralType type = 2;
+    LiteralType type = 1;
 
     //+optional string describing input variable
-    string description = 3;
+    string description = 2;
 }
 
 // A map of Variables
@@ -31,9 +27,9 @@ message Parameter {
     core.Variable var = 1;
 
     //+optional
-    oneof default {
-        // Defines a default value that has to match the variable type defined up.
-        Literal value = 2;
+    oneof behavior {
+        // Defines a default value that has to match the variable type defined.
+        Literal default = 2;
 
         //+optional, is this value required to be filled.
         bool required = 3;
