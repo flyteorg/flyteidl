@@ -1447,7 +1447,7 @@
         "FLOAT",
         "STRING",
         "BOOLEAN",
-        "DATE_TIME",
+        "DATETIME",
         "DURATION",
         "BLOB",
         "BINARY",

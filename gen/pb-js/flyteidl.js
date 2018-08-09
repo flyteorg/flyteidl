@@ -2334,7 +2334,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a Variable.
              * @memberof flyteidl.core
              * @interface IVariable
-             * @property {string|null} [name] Variable name
              * @property {flyteidl.core.ILiteralType|null} [type] Variable type
              * @property {string|null} [description] Variable description
              */
@@ -2353,14 +2352,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
-
-            /**
-             * Variable name.
-             * @member {string} name
-             * @memberof flyteidl.core.Variable
-             * @instance
-             */
-            Variable.prototype.name = "";
 
             /**
              * Variable type.
@@ -2402,12 +2393,10 @@ export const flyteidl = $root.flyteidl = (() => {
             Variable.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.name != null && message.hasOwnProperty("name"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
                 if (message.type != null && message.hasOwnProperty("type"))
-                    $root.flyteidl.core.LiteralType.encode(message.type, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    $root.flyteidl.core.LiteralType.encode(message.type, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.description != null && message.hasOwnProperty("description"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.description);
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.description);
                 return writer;
             };
 
@@ -2430,12 +2419,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.name = reader.string();
-                        break;
-                    case 2:
                         message.type = $root.flyteidl.core.LiteralType.decode(reader, reader.uint32());
                         break;
-                    case 3:
+                    case 2:
                         message.description = reader.string();
                         break;
                     default:
@@ -2457,9 +2443,6 @@ export const flyteidl = $root.flyteidl = (() => {
             Variable.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.name != null && message.hasOwnProperty("name"))
-                    if (!$util.isString(message.name))
-                        return "name: string expected";
                 if (message.type != null && message.hasOwnProperty("type")) {
                     let error = $root.flyteidl.core.LiteralType.verify(message.type);
                     if (error)
@@ -2607,7 +2590,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.core
              * @interface IParameter
              * @property {flyteidl.core.IVariable|null} ["var"] Parameter var
-             * @property {flyteidl.core.ILiteral|null} [value] Parameter value
+             * @property {flyteidl.core.ILiteral|null} ["default"] Parameter default
              * @property {boolean|null} [required] Parameter required
              */
 
@@ -2635,12 +2618,12 @@ export const flyteidl = $root.flyteidl = (() => {
             Parameter.prototype["var"] = null;
 
             /**
-             * Parameter value.
-             * @member {flyteidl.core.ILiteral|null|undefined} value
+             * Parameter default.
+             * @member {flyteidl.core.ILiteral|null|undefined} default
              * @memberof flyteidl.core.Parameter
              * @instance
              */
-            Parameter.prototype.value = null;
+            Parameter.prototype["default"] = null;
 
             /**
              * Parameter required.
@@ -2654,13 +2637,13 @@ export const flyteidl = $root.flyteidl = (() => {
             let $oneOfFields;
 
             /**
-             * Parameter default.
-             * @member {"value"|"required"|undefined} default_
+             * Parameter behavior.
+             * @member {"default"|"required"|undefined} behavior
              * @memberof flyteidl.core.Parameter
              * @instance
              */
-            Object.defineProperty(Parameter.prototype, "default", {
-                get: $util.oneOfGetter($oneOfFields = ["value", "required"]),
+            Object.defineProperty(Parameter.prototype, "behavior", {
+                get: $util.oneOfGetter($oneOfFields = ["default", "required"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -2690,8 +2673,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message["var"] != null && message.hasOwnProperty("var"))
                     $root.flyteidl.core.Variable.encode(message["var"], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.value != null && message.hasOwnProperty("value"))
-                    $root.flyteidl.core.Literal.encode(message.value, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message["default"] != null && message.hasOwnProperty("default"))
+                    $root.flyteidl.core.Literal.encode(message["default"], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.required != null && message.hasOwnProperty("required"))
                     writer.uint32(/* id 3, wireType 0 =*/24).bool(message.required);
                 return writer;
@@ -2719,7 +2702,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message["var"] = $root.flyteidl.core.Variable.decode(reader, reader.uint32());
                         break;
                     case 2:
-                        message.value = $root.flyteidl.core.Literal.decode(reader, reader.uint32());
+                        message["default"] = $root.flyteidl.core.Literal.decode(reader, reader.uint32());
                         break;
                     case 3:
                         message.required = reader.bool();
@@ -2749,18 +2732,18 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "var." + error;
                 }
-                if (message.value != null && message.hasOwnProperty("value")) {
-                    properties["default"] = 1;
+                if (message["default"] != null && message.hasOwnProperty("default")) {
+                    properties.behavior = 1;
                     {
-                        let error = $root.flyteidl.core.Literal.verify(message.value);
+                        let error = $root.flyteidl.core.Literal.verify(message["default"]);
                         if (error)
-                            return "value." + error;
+                            return "default." + error;
                     }
                 }
                 if (message.required != null && message.hasOwnProperty("required")) {
-                    if (properties["default"] === 1)
-                        return "default: multiple values";
-                    properties["default"] = 1;
+                    if (properties.behavior === 1)
+                        return "behavior: multiple values";
+                    properties.behavior = 1;
                     if (typeof message.required !== "boolean")
                         return "required: boolean expected";
                 }
@@ -3036,7 +3019,7 @@ export const flyteidl = $root.flyteidl = (() => {
          * @property {number} FLOAT=2 FLOAT value
          * @property {number} STRING=3 STRING value
          * @property {number} BOOLEAN=4 BOOLEAN value
-         * @property {number} DATE_TIME=5 DATE_TIME value
+         * @property {number} DATETIME=5 DATETIME value
          * @property {number} DURATION=6 DURATION value
          * @property {number} BLOB=7 BLOB value
          * @property {number} BINARY=8 BINARY value
@@ -3050,7 +3033,7 @@ export const flyteidl = $root.flyteidl = (() => {
             values[valuesById[2] = "FLOAT"] = 2;
             values[valuesById[3] = "STRING"] = 3;
             values[valuesById[4] = "BOOLEAN"] = 4;
-            values[valuesById[5] = "DATE_TIME"] = 5;
+            values[valuesById[5] = "DATETIME"] = 5;
             values[valuesById[6] = "DURATION"] = 6;
             values[valuesById[7] = "BLOB"] = 7;
             values[valuesById[8] = "BINARY"] = 8;

@@ -947,9 +947,6 @@ export namespace flyteidl {
         /** Properties of a Variable. */
         interface IVariable {
 
-            /** Variable name */
-            name?: (string|null);
-
             /** Variable type */
             type?: (flyteidl.core.ILiteralType|null);
 
@@ -965,9 +962,6 @@ export namespace flyteidl {
              * @param [properties] Properties to set
              */
             constructor(properties?: flyteidl.core.IVariable);
-
-            /** Variable name. */
-            public name: string;
 
             /** Variable type. */
             public type?: (flyteidl.core.ILiteralType|null);
@@ -1066,8 +1060,8 @@ export namespace flyteidl {
             /** Parameter var */
             "var"?: (flyteidl.core.IVariable|null);
 
-            /** Parameter value */
-            value?: (flyteidl.core.ILiteral|null);
+            /** Parameter default */
+            "default"?: (flyteidl.core.ILiteral|null);
 
             /** Parameter required */
             required?: (boolean|null);
@@ -1085,14 +1079,14 @@ export namespace flyteidl {
             /** Parameter var. */
             public var?: (flyteidl.core.IVariable|null);
 
-            /** Parameter value. */
-            public value?: (flyteidl.core.ILiteral|null);
+            /** Parameter default. */
+            public default?: (flyteidl.core.ILiteral|null);
 
             /** Parameter required. */
             public required: boolean;
 
-            /** Parameter default. */
-            public default_?: ("value"|"required");
+            /** Parameter behavior. */
+            public behavior?: ("default"|"required");
 
             /**
              * Creates a new Parameter instance using the specified properties.
@@ -1244,7 +1238,7 @@ export namespace flyteidl {
             FLOAT = 2,
             STRING = 3,
             BOOLEAN = 4,
-            DATE_TIME = 5,
+            DATETIME = 5,
             DURATION = 6,
             BLOB = 7,
             BINARY = 8,

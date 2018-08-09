@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/interface.proto',
   package='flyteidl.core',
   syntax='proto3',
-  serialized_pb=_b('\n\x1d\x66lyteidl/core/interface.proto\x12\rflyteidl.core\x1a\x19\x66lyteidl/core/types.proto\x1a\x1c\x66lyteidl/core/literals.proto\"I\n\x08Variable\x12(\n\x04type\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"\x96\x01\n\x0bVariableMap\x12<\n\tvariables\x18\x01 \x03(\x0b\x32).flyteidl.core.VariableMap.VariablesEntry\x1aI\n\x0eVariablesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12&\n\x05value\x18\x02 \x01(\x0b\x32\x17.flyteidl.core.Variable:\x02\x38\x01\"\x84\x01\n\tParameter\x12$\n\x03var\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.Variable\x12)\n\x07\x64\x65\x66\x61ult\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.LiteralH\x00\x12\x12\n\x08required\x18\x03 \x01(\x08H\x00\x42\x12\n\x10\x64\x65\x66\x61ult_behavior\"\x9c\x01\n\x0cParameterMap\x12?\n\nparameters\x18\x01 \x03(\x0b\x32+.flyteidl.core.ParameterMap.ParametersEntry\x1aK\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x18.flyteidl.core.Parameter:\x02\x38\x01\"i\n\x0eTypedInterface\x12*\n\x06inputs\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.VariableMap\x12+\n\x07outputs\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.VariableMapB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/core/interface.proto\x12\rflyteidl.core\x1a\x19\x66lyteidl/core/types.proto\x1a\x1c\x66lyteidl/core/literals.proto\"I\n\x08Variable\x12(\n\x04type\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"\x96\x01\n\x0bVariableMap\x12<\n\tvariables\x18\x01 \x03(\x0b\x32).flyteidl.core.VariableMap.VariablesEntry\x1aI\n\x0eVariablesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12&\n\x05value\x18\x02 \x01(\x0b\x32\x17.flyteidl.core.Variable:\x02\x38\x01\"|\n\tParameter\x12$\n\x03var\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.Variable\x12)\n\x07\x64\x65\x66\x61ult\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.LiteralH\x00\x12\x12\n\x08required\x18\x03 \x01(\x08H\x00\x42\n\n\x08\x62\x65havior\"\x9c\x01\n\x0cParameterMap\x12?\n\nparameters\x18\x01 \x03(\x0b\x32+.flyteidl.core.ParameterMap.ParametersEntry\x1aK\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x18.flyteidl.core.Parameter:\x02\x38\x01\"i\n\x0eTypedInterface\x12*\n\x06inputs\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.VariableMap\x12+\n\x07outputs\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.VariableMapB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_types__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,])
 
@@ -174,11 +174,11 @@ _PARAMETER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='default_behavior', full_name='flyteidl.core.Parameter.default_behavior',
+      name='behavior', full_name='flyteidl.core.Parameter.behavior',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=334,
-  serialized_end=466,
+  serialized_start=333,
+  serialized_end=457,
 )
 
 
@@ -215,8 +215,8 @@ _PARAMETERMAP_PARAMETERSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=550,
-  serialized_end=625,
+  serialized_start=541,
+  serialized_end=616,
 )
 
 _PARAMETERMAP = _descriptor.Descriptor(
@@ -245,8 +245,8 @@ _PARAMETERMAP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=469,
-  serialized_end=625,
+  serialized_start=460,
+  serialized_end=616,
 )
 
 
@@ -283,8 +283,8 @@ _TYPEDINTERFACE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=627,
-  serialized_end=732,
+  serialized_start=618,
+  serialized_end=723,
 )
 
 _VARIABLE.fields_by_name['type'].message_type = flyteidl_dot_core_dot_types__pb2._LITERALTYPE
@@ -293,12 +293,12 @@ _VARIABLEMAP_VARIABLESENTRY.containing_type = _VARIABLEMAP
 _VARIABLEMAP.fields_by_name['variables'].message_type = _VARIABLEMAP_VARIABLESENTRY
 _PARAMETER.fields_by_name['var'].message_type = _VARIABLE
 _PARAMETER.fields_by_name['default'].message_type = flyteidl_dot_core_dot_literals__pb2._LITERAL
-_PARAMETER.oneofs_by_name['default_behavior'].fields.append(
+_PARAMETER.oneofs_by_name['behavior'].fields.append(
   _PARAMETER.fields_by_name['default'])
-_PARAMETER.fields_by_name['default'].containing_oneof = _PARAMETER.oneofs_by_name['default_behavior']
-_PARAMETER.oneofs_by_name['default_behavior'].fields.append(
+_PARAMETER.fields_by_name['default'].containing_oneof = _PARAMETER.oneofs_by_name['behavior']
+_PARAMETER.oneofs_by_name['behavior'].fields.append(
   _PARAMETER.fields_by_name['required'])
-_PARAMETER.fields_by_name['required'].containing_oneof = _PARAMETER.oneofs_by_name['default_behavior']
+_PARAMETER.fields_by_name['required'].containing_oneof = _PARAMETER.oneofs_by_name['behavior']
 _PARAMETERMAP_PARAMETERSENTRY.fields_by_name['value'].message_type = _PARAMETER
 _PARAMETERMAP_PARAMETERSENTRY.containing_type = _PARAMETERMAP
 _PARAMETERMAP.fields_by_name['parameters'].message_type = _PARAMETERMAP_PARAMETERSENTRY

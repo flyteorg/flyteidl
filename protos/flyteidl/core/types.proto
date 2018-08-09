@@ -11,7 +11,7 @@ enum SimpleType {
     FLOAT = 2;
     STRING = 3;
     BOOLEAN = 4;
-    DATE_TIME = 5;
+    DATETIME = 5;
     DURATION = 6;
     BLOB = 7;
     BINARY = 8;
