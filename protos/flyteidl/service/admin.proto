@@ -7,6 +7,7 @@ import "google/api/annotations.proto";
 import "flyteidl/admin/task.proto";
 import "flyteidl/admin/workflow.proto";
 import "flyteidl/admin/launch_plan.proto";
+import "flyteidl/admin/execution.proto";
 import "flyteidl/admin/common.proto";
 
 service AdminService {
@@ -69,6 +70,13 @@ service AdminService {
   rpc CreateLaunchPlan (flyteidl.admin.LaunchPlanCreateRequest) returns (flyteidl.admin.LaunchPlanCreateResponse) {
     option (google.api.http) = {
       post: "/api/v1/launch_plans"
+      body: "*"
+    };
+  }
+
+  rpc CreateExecution (flyteidl.admin.ExecutionCreateRequest) returns (flyteidl.admin.ExecutionCreateResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/executions"
       body: "*"
     };
   }

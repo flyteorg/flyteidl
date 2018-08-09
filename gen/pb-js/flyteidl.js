@@ -10043,24 +10043,24 @@ export const flyteidl = $root.flyteidl = (() => {
             return ExecutionCreateRequest;
         })();
 
-        admin.ExecutionCreateResult = (function() {
+        admin.ExecutionCreateResponse = (function() {
 
             /**
-             * Properties of an ExecutionCreateResult.
+             * Properties of an ExecutionCreateResponse.
              * @memberof flyteidl.admin
-             * @interface IExecutionCreateResult
-             * @property {string|null} [urn] ExecutionCreateResult urn
+             * @interface IExecutionCreateResponse
+             * @property {string|null} [urn] ExecutionCreateResponse urn
              */
 
             /**
-             * Constructs a new ExecutionCreateResult.
+             * Constructs a new ExecutionCreateResponse.
              * @memberof flyteidl.admin
-             * @classdesc Represents an ExecutionCreateResult.
-             * @implements IExecutionCreateResult
+             * @classdesc Represents an ExecutionCreateResponse.
+             * @implements IExecutionCreateResponse
              * @constructor
-             * @param {flyteidl.admin.IExecutionCreateResult=} [properties] Properties to set
+             * @param {flyteidl.admin.IExecutionCreateResponse=} [properties] Properties to set
              */
-            function ExecutionCreateResult(properties) {
+            function ExecutionCreateResponse(properties) {
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -10068,35 +10068,35 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * ExecutionCreateResult urn.
+             * ExecutionCreateResponse urn.
              * @member {string} urn
-             * @memberof flyteidl.admin.ExecutionCreateResult
+             * @memberof flyteidl.admin.ExecutionCreateResponse
              * @instance
              */
-            ExecutionCreateResult.prototype.urn = "";
+            ExecutionCreateResponse.prototype.urn = "";
 
             /**
-             * Creates a new ExecutionCreateResult instance using the specified properties.
+             * Creates a new ExecutionCreateResponse instance using the specified properties.
              * @function create
-             * @memberof flyteidl.admin.ExecutionCreateResult
+             * @memberof flyteidl.admin.ExecutionCreateResponse
              * @static
-             * @param {flyteidl.admin.IExecutionCreateResult=} [properties] Properties to set
-             * @returns {flyteidl.admin.ExecutionCreateResult} ExecutionCreateResult instance
+             * @param {flyteidl.admin.IExecutionCreateResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.ExecutionCreateResponse} ExecutionCreateResponse instance
              */
-            ExecutionCreateResult.create = function create(properties) {
-                return new ExecutionCreateResult(properties);
+            ExecutionCreateResponse.create = function create(properties) {
+                return new ExecutionCreateResponse(properties);
             };
 
             /**
-             * Encodes the specified ExecutionCreateResult message. Does not implicitly {@link flyteidl.admin.ExecutionCreateResult.verify|verify} messages.
+             * Encodes the specified ExecutionCreateResponse message. Does not implicitly {@link flyteidl.admin.ExecutionCreateResponse.verify|verify} messages.
              * @function encode
-             * @memberof flyteidl.admin.ExecutionCreateResult
+             * @memberof flyteidl.admin.ExecutionCreateResponse
              * @static
-             * @param {flyteidl.admin.IExecutionCreateResult} message ExecutionCreateResult message or plain object to encode
+             * @param {flyteidl.admin.IExecutionCreateResponse} message ExecutionCreateResponse message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ExecutionCreateResult.encode = function encode(message, writer) {
+            ExecutionCreateResponse.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.urn != null && message.hasOwnProperty("urn"))
@@ -10105,20 +10105,20 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Decodes an ExecutionCreateResult message from the specified reader or buffer.
+             * Decodes an ExecutionCreateResponse message from the specified reader or buffer.
              * @function decode
-             * @memberof flyteidl.admin.ExecutionCreateResult
+             * @memberof flyteidl.admin.ExecutionCreateResponse
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.ExecutionCreateResult} ExecutionCreateResult
+             * @returns {flyteidl.admin.ExecutionCreateResponse} ExecutionCreateResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ExecutionCreateResult.decode = function decode(reader, length) {
+            ExecutionCreateResponse.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ExecutionCreateResult();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ExecutionCreateResponse();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -10134,14 +10134,14 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Verifies an ExecutionCreateResult message.
+             * Verifies an ExecutionCreateResponse message.
              * @function verify
-             * @memberof flyteidl.admin.ExecutionCreateResult
+             * @memberof flyteidl.admin.ExecutionCreateResponse
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            ExecutionCreateResult.verify = function verify(message) {
+            ExecutionCreateResponse.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.urn != null && message.hasOwnProperty("urn"))
@@ -10150,7 +10150,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 return null;
             };
 
-            return ExecutionCreateResult;
+            return ExecutionCreateResponse;
         })();
 
         admin.Execution = (function() {
@@ -10160,7 +10160,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface IExecution
              * @property {flyteidl.admin.IIdentifier|null} [id] Execution id
-             * @property {string|null} [urn] Execution urn
+             * @property {string|null} [executionId] Execution executionId
              * @property {flyteidl.admin.IExecutionStatus|null} [status] Execution status
              * @property {flyteidl.admin.IExecutionSpec|null} [spec] Execution spec
              * @property {flyteidl.admin.IExecutionResult|null} [result] Execution result
@@ -10190,12 +10190,12 @@ export const flyteidl = $root.flyteidl = (() => {
             Execution.prototype.id = null;
 
             /**
-             * Execution urn.
-             * @member {string} urn
+             * Execution executionId.
+             * @member {string} executionId
              * @memberof flyteidl.admin.Execution
              * @instance
              */
-            Execution.prototype.urn = "";
+            Execution.prototype.executionId = "";
 
             /**
              * Execution status.
@@ -10247,8 +10247,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.id != null && message.hasOwnProperty("id"))
                     $root.flyteidl.admin.Identifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.urn != null && message.hasOwnProperty("urn"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.urn);
+                if (message.executionId != null && message.hasOwnProperty("executionId"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.executionId);
                 if (message.status != null && message.hasOwnProperty("status"))
                     $root.flyteidl.admin.ExecutionStatus.encode(message.status, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.spec != null && message.hasOwnProperty("spec"))
@@ -10280,7 +10280,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.id = $root.flyteidl.admin.Identifier.decode(reader, reader.uint32());
                         break;
                     case 2:
-                        message.urn = reader.string();
+                        message.executionId = reader.string();
                         break;
                     case 3:
                         message.status = $root.flyteidl.admin.ExecutionStatus.decode(reader, reader.uint32());
@@ -10315,9 +10315,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "id." + error;
                 }
-                if (message.urn != null && message.hasOwnProperty("urn"))
-                    if (!$util.isString(message.urn))
-                        return "urn: string expected";
+                if (message.executionId != null && message.hasOwnProperty("executionId"))
+                    if (!$util.isString(message.executionId))
+                        return "executionId: string expected";
                 if (message.status != null && message.hasOwnProperty("status")) {
                     let error = $root.flyteidl.admin.ExecutionStatus.verify(message.status);
                     if (error)
@@ -11074,7 +11074,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface IExecutionSpec
              * @property {string|null} [launchPlanUrn] ExecutionSpec launchPlanUrn
-             * @property {flyteidl.admin.ILiteralMapBlob|null} [inputs] ExecutionSpec inputs
+             * @property {flyteidl.core.ILiteralMap|null} [inputs] ExecutionSpec inputs
              * @property {flyteidl.admin.IExecutionMetadata|null} [metadata] ExecutionSpec metadata
              * @property {Array.<flyteidl.admin.INotification>|null} [notifications] ExecutionSpec notifications
              */
@@ -11105,7 +11105,7 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * ExecutionSpec inputs.
-             * @member {flyteidl.admin.ILiteralMapBlob|null|undefined} inputs
+             * @member {flyteidl.core.ILiteralMap|null|undefined} inputs
              * @memberof flyteidl.admin.ExecutionSpec
              * @instance
              */
@@ -11154,7 +11154,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.launchPlanUrn != null && message.hasOwnProperty("launchPlanUrn"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.launchPlanUrn);
                 if (message.inputs != null && message.hasOwnProperty("inputs"))
-                    $root.flyteidl.admin.LiteralMapBlob.encode(message.inputs, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    $root.flyteidl.core.LiteralMap.encode(message.inputs, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.metadata != null && message.hasOwnProperty("metadata"))
                     $root.flyteidl.admin.ExecutionMetadata.encode(message.metadata, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.notifications != null && message.notifications.length)
@@ -11185,7 +11185,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.launchPlanUrn = reader.string();
                         break;
                     case 2:
-                        message.inputs = $root.flyteidl.admin.LiteralMapBlob.decode(reader, reader.uint32());
+                        message.inputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
                         break;
                     case 3:
                         message.metadata = $root.flyteidl.admin.ExecutionMetadata.decode(reader, reader.uint32());
@@ -11218,7 +11218,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (!$util.isString(message.launchPlanUrn))
                         return "launchPlanUrn: string expected";
                 if (message.inputs != null && message.hasOwnProperty("inputs")) {
-                    let error = $root.flyteidl.admin.LiteralMapBlob.verify(message.inputs);
+                    let error = $root.flyteidl.core.LiteralMap.verify(message.inputs);
                     if (error)
                         return "inputs." + error;
                 }
@@ -15594,6 +15594,39 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              * @param {flyteidl.admin.ILaunchPlanCreateRequest} request LaunchPlanCreateRequest message or plain object
              * @returns {Promise<flyteidl.admin.LaunchPlanCreateResponse>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#createExecution}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef CreateExecutionCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.ExecutionCreateResponse} [response] ExecutionCreateResponse
+             */
+
+            /**
+             * Calls CreateExecution.
+             * @function createExecution
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IExecutionCreateRequest} request ExecutionCreateRequest message or plain object
+             * @param {flyteidl.service.AdminService.CreateExecutionCallback} callback Node-style callback called with the error, if any, and ExecutionCreateResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.createExecution = function createExecution(request, callback) {
+                return this.rpcCall(createExecution, $root.flyteidl.admin.ExecutionCreateRequest, $root.flyteidl.admin.ExecutionCreateResponse, request, callback);
+            }, "name", { value: "CreateExecution" });
+
+            /**
+             * Calls CreateExecution.
+             * @function createExecution
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IExecutionCreateRequest} request ExecutionCreateRequest message or plain object
+             * @returns {Promise<flyteidl.admin.ExecutionCreateResponse>} Promise
              * @variation 2
              */
 

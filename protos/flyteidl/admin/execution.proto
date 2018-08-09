@@ -12,13 +12,16 @@ message ExecutionCreateRequest {
     ExecutionSpec spec  = 2;
 }
 
-message ExecutionCreateResult {
+message ExecutionCreateResponse {
     string urn  = 1;
 }
 
 message Execution {
     Identifier id               = 1;
-    string urn                  = 2;
+
+    // The execution_id string is contructed from the 'id'.
+    // If name is not available in the 'id', the system will generate a random name
+    string execution_id         = 2;
     ExecutionStatus status      = 3;
 
     ExecutionSpec spec          = 4;
@@ -81,7 +84,7 @@ message ExecutionSpec {
     string launch_plan_urn        = 1;
 
     // Input values to be passed for the execution
-    LiteralMapBlob inputs          = 2;
+    core.LiteralMap inputs          = 2;
 
     // Metadata for the execution
     ExecutionMetadata metadata    = 3;

@@ -4144,52 +4144,52 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of an ExecutionCreateResult. */
-        interface IExecutionCreateResult {
+        /** Properties of an ExecutionCreateResponse. */
+        interface IExecutionCreateResponse {
 
-            /** ExecutionCreateResult urn */
+            /** ExecutionCreateResponse urn */
             urn?: (string|null);
         }
 
-        /** Represents an ExecutionCreateResult. */
-        class ExecutionCreateResult implements IExecutionCreateResult {
+        /** Represents an ExecutionCreateResponse. */
+        class ExecutionCreateResponse implements IExecutionCreateResponse {
 
             /**
-             * Constructs a new ExecutionCreateResult.
+             * Constructs a new ExecutionCreateResponse.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.admin.IExecutionCreateResult);
+            constructor(properties?: flyteidl.admin.IExecutionCreateResponse);
 
-            /** ExecutionCreateResult urn. */
+            /** ExecutionCreateResponse urn. */
             public urn: string;
 
             /**
-             * Creates a new ExecutionCreateResult instance using the specified properties.
+             * Creates a new ExecutionCreateResponse instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns ExecutionCreateResult instance
+             * @returns ExecutionCreateResponse instance
              */
-            public static create(properties?: flyteidl.admin.IExecutionCreateResult): flyteidl.admin.ExecutionCreateResult;
+            public static create(properties?: flyteidl.admin.IExecutionCreateResponse): flyteidl.admin.ExecutionCreateResponse;
 
             /**
-             * Encodes the specified ExecutionCreateResult message. Does not implicitly {@link flyteidl.admin.ExecutionCreateResult.verify|verify} messages.
-             * @param message ExecutionCreateResult message or plain object to encode
+             * Encodes the specified ExecutionCreateResponse message. Does not implicitly {@link flyteidl.admin.ExecutionCreateResponse.verify|verify} messages.
+             * @param message ExecutionCreateResponse message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.admin.IExecutionCreateResult, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.admin.IExecutionCreateResponse, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an ExecutionCreateResult message from the specified reader or buffer.
+             * Decodes an ExecutionCreateResponse message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns ExecutionCreateResult
+             * @returns ExecutionCreateResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionCreateResult;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionCreateResponse;
 
             /**
-             * Verifies an ExecutionCreateResult message.
+             * Verifies an ExecutionCreateResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -4202,8 +4202,8 @@ export namespace flyteidl {
             /** Execution id */
             id?: (flyteidl.admin.IIdentifier|null);
 
-            /** Execution urn */
-            urn?: (string|null);
+            /** Execution executionId */
+            executionId?: (string|null);
 
             /** Execution status */
             status?: (flyteidl.admin.IExecutionStatus|null);
@@ -4227,8 +4227,8 @@ export namespace flyteidl {
             /** Execution id. */
             public id?: (flyteidl.admin.IIdentifier|null);
 
-            /** Execution urn. */
-            public urn: string;
+            /** Execution executionId. */
+            public executionId: string;
 
             /** Execution status. */
             public status?: (flyteidl.admin.IExecutionStatus|null);
@@ -4585,7 +4585,7 @@ export namespace flyteidl {
             launchPlanUrn?: (string|null);
 
             /** ExecutionSpec inputs */
-            inputs?: (flyteidl.admin.ILiteralMapBlob|null);
+            inputs?: (flyteidl.core.ILiteralMap|null);
 
             /** ExecutionSpec metadata */
             metadata?: (flyteidl.admin.IExecutionMetadata|null);
@@ -4607,7 +4607,7 @@ export namespace flyteidl {
             public launchPlanUrn: string;
 
             /** ExecutionSpec inputs. */
-            public inputs?: (flyteidl.admin.ILiteralMapBlob|null);
+            public inputs?: (flyteidl.core.ILiteralMap|null);
 
             /** ExecutionSpec metadata. */
             public metadata?: (flyteidl.admin.IExecutionMetadata|null);
@@ -6517,6 +6517,20 @@ export namespace flyteidl {
              * @returns Promise
              */
             public createLaunchPlan(request: flyteidl.admin.ILaunchPlanCreateRequest): Promise<flyteidl.admin.LaunchPlanCreateResponse>;
+
+            /**
+             * Calls CreateExecution.
+             * @param request ExecutionCreateRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and ExecutionCreateResponse
+             */
+            public createExecution(request: flyteidl.admin.IExecutionCreateRequest, callback: flyteidl.service.AdminService.CreateExecutionCallback): void;
+
+            /**
+             * Calls CreateExecution.
+             * @param request ExecutionCreateRequest message or plain object
+             * @returns Promise
+             */
+            public createExecution(request: flyteidl.admin.IExecutionCreateRequest): Promise<flyteidl.admin.ExecutionCreateResponse>;
         }
 
         namespace AdminService {
@@ -6583,6 +6597,13 @@ export namespace flyteidl {
              * @param [response] LaunchPlanCreateResponse
              */
             type CreateLaunchPlanCallback = (error: (Error|null), response?: flyteidl.admin.LaunchPlanCreateResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#createExecution}.
+             * @param error Error, if any
+             * @param [response] ExecutionCreateResponse
+             */
+            type CreateExecutionCallback = (error: (Error|null), response?: flyteidl.admin.ExecutionCreateResponse) => void;
         }
     }
 }

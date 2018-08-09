@@ -15,6 +15,32 @@
     "application/json"
   ],
   "paths": {
+    "/api/v1/executions": {
+      "post": {
+        "operationId": "CreateExecution",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminExecutionCreateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminExecutionCreateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/launch_plans": {
       "post": {
         "operationId": "CreateLaunchPlan",
@@ -511,6 +537,15 @@
       "description": "- AND: Conjunction",
       "title": "Nested conditions. They can be conjoined using AND / OR\nOrder of evaluation is not important as the operators are Commutative"
     },
+    "ExecutionMetadataExecutionMode": {
+      "type": "string",
+      "enum": [
+        "MANUAL",
+        "SCHEDULED",
+        "SYSTEM"
+      ],
+      "default": "MANUAL"
+    },
     "ResourcesResourceEntry": {
       "type": "object",
       "properties": {
@@ -591,6 +626,42 @@
         }
       }
     },
+    "adminExecutionCreateRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/adminIdentifier"
+        },
+        "spec": {
+          "$ref": "#/definitions/adminExecutionSpec"
+        }
+      }
+    },
+    "adminExecutionCreateResponse": {
+      "type": "object",
+      "properties": {
+        "urn": {
+          "type": "string"
+        }
+      }
+    },
+    "adminExecutionMetadata": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "$ref": "#/definitions/ExecutionMetadataExecutionMode"
+        },
+        "principal": {
+          "type": "string",
+          "description": "Identifier of the entity that triggered this execution."
+        },
+        "nesting": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Indicates the \"nestedness\" of this execution.\nIf a user launches a workflow execution, the default nesting is 0.\nIf this execution further launches a workflow (child workflow), the nesting level is incremented by 0 =\u003e 1\nGenerally, if workflow at nesting level k launches a workflow then the child workflow will have\nnesting = k + 1."
+        }
+      }
+    },
     "adminExecutionPhase": {
       "type": "string",
       "enum": [
@@ -604,6 +675,30 @@
       ],
       "default": "UNDEFINED",
       "title": "Indicates various states of an Execution - both task and workflow"
+    },
+    "adminExecutionSpec": {
+      "type": "object",
+      "properties": {
+        "launch_plan_urn": {
+          "type": "string",
+          "title": "Launch plan urn to be executed"
+        },
+        "inputs": {
+          "$ref": "#/definitions/coreLiteralMap",
+          "title": "Input values to be passed for the execution"
+        },
+        "metadata": {
+          "$ref": "#/definitions/adminExecutionMetadata",
+          "title": "Metadata for the execution"
+        },
+        "notifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminNotification"
+          },
+          "title": "List of notifications based on Execution status transitions"
+        }
+      }
     },
     "adminIdentifier": {
       "type": "object",
@@ -1057,20 +1152,6 @@
         }
       }
     },
-    "coreError": {
-      "type": "object",
-      "properties": {
-        "failed_node_id": {
-          "type": "string",
-          "description": "The node id that threw the error."
-        },
-        "message": {
-          "type": "string",
-          "description": "Error message thrown."
-        }
-      },
-      "description": "Represents an error thrown from a node."
-    },
     "coreIfBlock": {
       "type": "object",
       "properties": {
@@ -1102,7 +1183,7 @@
           "description": "The node to execute in case non of the branches were taken."
         },
         "error": {
-          "$ref": "#/definitions/coreError",
+          "$ref": "#/definitions/flyteidlcoreError",
           "description": "An error to throw in case non of the branches were taken."
         }
       },
@@ -1410,7 +1491,7 @@
           "title": "Backwards compatibility"
         },
         "error": {
-          "$ref": "#/definitions/coreError"
+          "$ref": "#/definitions/flyteidlcoreError"
         }
       }
     },
@@ -1644,6 +1725,20 @@
         }
       },
       "description": "Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,\ndirected acyclic graph."
+    },
+    "flyteidlcoreError": {
+      "type": "object",
+      "properties": {
+        "failed_node_id": {
+          "type": "string",
+          "description": "The node id that threw the error."
+        },
+        "message": {
+          "type": "string",
+          "description": "Error message thrown."
+        }
+      },
+      "description": "Represents an error thrown from a node."
     }
   }
 }

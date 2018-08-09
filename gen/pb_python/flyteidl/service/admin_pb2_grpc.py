@@ -2,6 +2,7 @@
 import grpc
 
 from flyteidl.admin import common_pb2 as flyteidl_dot_admin_dot_common__pb2
+from flyteidl.admin import execution_pb2 as flyteidl_dot_admin_dot_execution__pb2
 from flyteidl.admin import launch_plan_pb2 as flyteidl_dot_admin_dot_launch__plan__pb2
 from flyteidl.admin import task_pb2 as flyteidl_dot_admin_dot_task__pb2
 from flyteidl.admin import workflow_pb2 as flyteidl_dot_admin_dot_workflow__pb2
@@ -61,6 +62,11 @@ class AdminServiceStub(object):
         '/flyteidl.service.AdminService/CreateLaunchPlan',
         request_serializer=flyteidl_dot_admin_dot_launch__plan__pb2.LaunchPlanCreateRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_launch__plan__pb2.LaunchPlanCreateResponse.FromString,
+        )
+    self.CreateExecution = channel.unary_unary(
+        '/flyteidl.service.AdminService/CreateExecution',
+        request_serializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionCreateRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionCreateResponse.FromString,
         )
 
 
@@ -131,6 +137,13 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def CreateExecution(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_AdminServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -178,6 +191,11 @@ def add_AdminServiceServicer_to_server(servicer, server):
           servicer.CreateLaunchPlan,
           request_deserializer=flyteidl_dot_admin_dot_launch__plan__pb2.LaunchPlanCreateRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_launch__plan__pb2.LaunchPlanCreateResponse.SerializeToString,
+      ),
+      'CreateExecution': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateExecution,
+          request_deserializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionCreateRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionCreateResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
