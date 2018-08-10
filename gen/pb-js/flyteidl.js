@@ -15598,6 +15598,39 @@ export const flyteidl = $root.flyteidl = (() => {
              */
 
             /**
+             * Callback as used by {@link flyteidl.service.AdminService#getLaunchPlan}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef GetLaunchPlanCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.LaunchPlan} [response] LaunchPlan
+             */
+
+            /**
+             * Calls GetLaunchPlan.
+             * @function getLaunchPlan
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IGetObjectRequest} request GetObjectRequest message or plain object
+             * @param {flyteidl.service.AdminService.GetLaunchPlanCallback} callback Node-style callback called with the error, if any, and LaunchPlan
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.getLaunchPlan = function getLaunchPlan(request, callback) {
+                return this.rpcCall(getLaunchPlan, $root.flyteidl.admin.GetObjectRequest, $root.flyteidl.admin.LaunchPlan, request, callback);
+            }, "name", { value: "GetLaunchPlan" });
+
+            /**
+             * Calls GetLaunchPlan.
+             * @function getLaunchPlan
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IGetObjectRequest} request GetObjectRequest message or plain object
+             * @returns {Promise<flyteidl.admin.LaunchPlan>} Promise
+             * @variation 2
+             */
+
+            /**
              * Callback as used by {@link flyteidl.service.AdminService#createExecution}.
              * @memberof flyteidl.service.AdminService
              * @typedef CreateExecutionCallback

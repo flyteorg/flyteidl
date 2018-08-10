@@ -6519,6 +6519,20 @@ export namespace flyteidl {
             public createLaunchPlan(request: flyteidl.admin.ILaunchPlanCreateRequest): Promise<flyteidl.admin.LaunchPlanCreateResponse>;
 
             /**
+             * Calls GetLaunchPlan.
+             * @param request GetObjectRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and LaunchPlan
+             */
+            public getLaunchPlan(request: flyteidl.admin.IGetObjectRequest, callback: flyteidl.service.AdminService.GetLaunchPlanCallback): void;
+
+            /**
+             * Calls GetLaunchPlan.
+             * @param request GetObjectRequest message or plain object
+             * @returns Promise
+             */
+            public getLaunchPlan(request: flyteidl.admin.IGetObjectRequest): Promise<flyteidl.admin.LaunchPlan>;
+
+            /**
              * Calls CreateExecution.
              * @param request ExecutionCreateRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and ExecutionCreateResponse
@@ -6597,6 +6611,13 @@ export namespace flyteidl {
              * @param [response] LaunchPlanCreateResponse
              */
             type CreateLaunchPlanCallback = (error: (Error|null), response?: flyteidl.admin.LaunchPlanCreateResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getLaunchPlan}.
+             * @param error Error, if any
+             * @param [response] LaunchPlan
+             */
+            type GetLaunchPlanCallback = (error: (Error|null), response?: flyteidl.admin.LaunchPlan) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.AdminService#createExecution}.

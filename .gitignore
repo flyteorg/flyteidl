@@ -1,2 +1,6 @@
 .idea/*
 .DS_Store
+
+# Vim swapfiles
+*.swp
+*.swo

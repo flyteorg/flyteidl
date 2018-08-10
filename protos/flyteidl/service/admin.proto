@@ -74,6 +74,12 @@ service AdminService {
     };
   }
 
+  rpc GetLaunchPlan (flyteidl.admin.GetObjectRequest) returns (flyteidl.admin.LaunchPlan) {
+    option (google.api.http) = {
+      get: "/api/v1/launch_plans/{urn}"
+    };
+  }
+
   rpc CreateExecution (flyteidl.admin.ExecutionCreateRequest) returns (flyteidl.admin.ExecutionCreateResponse) {
     option (google.api.http) = {
       post: "/api/v1/executions"

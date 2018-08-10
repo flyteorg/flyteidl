@@ -67,6 +67,30 @@
         ]
       }
     },
+    "/api/v1/launch_plans/{urn}": {
+      "get": {
+        "operationId": "GetLaunchPlan",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminLaunchPlan"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "urn",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/project/{project}/domain/{domain}/task_ids": {
       "get": {
         "operationId": "ListTaskIds",
@@ -726,6 +750,26 @@
         }
       }
     },
+    "adminLaunchPlan": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/adminIdentifier"
+        },
+        "version": {
+          "type": "string"
+        },
+        "urn": {
+          "type": "string"
+        },
+        "spec": {
+          "$ref": "#/definitions/adminLaunchPlanSpec"
+        },
+        "status": {
+          "$ref": "#/definitions/adminLaunchPlanStatus"
+        }
+      }
+    },
     "adminLaunchPlanCreateRequest": {
       "type": "object",
       "properties": {
@@ -764,6 +808,15 @@
         }
       }
     },
+    "adminLaunchPlanPhase": {
+      "type": "string",
+      "enum": [
+        "INACTIVE",
+        "ACTIVE"
+      ],
+      "default": "INACTIVE",
+      "title": "Indicates various states of an Execution - both task and workflow"
+    },
     "adminLaunchPlanSpec": {
       "type": "object",
       "properties": {
@@ -782,6 +835,23 @@
         "fixed_inputs": {
           "$ref": "#/definitions/coreLiteralMap",
           "title": "Fixed, non overridable inputs for the Launch Plan"
+        }
+      }
+    },
+    "adminLaunchPlanStatus": {
+      "type": "object",
+      "properties": {
+        "phase": {
+          "$ref": "#/definitions/adminLaunchPlanPhase",
+          "title": "Indicate the Launch plan phase"
+        },
+        "expected_inputs": {
+          "$ref": "#/definitions/coreParameterMap",
+          "title": "Indicates the set of inputs to execute the Launch plan"
+        },
+        "expected_outputs": {
+          "$ref": "#/definitions/coreVariableMap",
+          "title": "Indicates the set of outputs from the Launch plan"
         }
       }
     },
