@@ -8820,7 +8820,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {Long|null} [completions] ArrayJob completions
              * @property {flyteidl.core.IContainer|null} [container] ArrayJob container
              * @property {flyteidl.core.ISwarmDefinition|null} [swarm] ArrayJob swarm
-             * @property {string|null} [path] ArrayJob path
+             * @property {string|null} [inputRef] ArrayJob inputRef
              */
 
             /**
@@ -8879,12 +8879,12 @@ export const flyteidl = $root.flyteidl = (() => {
             ArrayJob.prototype.swarm = null;
 
             /**
-             * ArrayJob path.
-             * @member {string} path
+             * ArrayJob inputRef.
+             * @member {string} inputRef
              * @memberof flyteidl.core.ArrayJob
              * @instance
              */
-            ArrayJob.prototype.path = "";
+            ArrayJob.prototype.inputRef = "";
 
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
@@ -8934,8 +8934,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.Container.encode(message.container, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.swarm != null && message.hasOwnProperty("swarm"))
                     $root.flyteidl.core.SwarmDefinition.encode(message.swarm, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                if (message.path != null && message.hasOwnProperty("path"))
-                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.path);
+                if (message.inputRef != null && message.hasOwnProperty("inputRef"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.inputRef);
                 return writer;
             };
 
@@ -8973,7 +8973,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.swarm = $root.flyteidl.core.SwarmDefinition.decode(reader, reader.uint32());
                         break;
                     case 6:
-                        message.path = reader.string();
+                        message.inputRef = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -9024,9 +9024,9 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "swarm." + error;
                     }
                 }
-                if (message.path != null && message.hasOwnProperty("path"))
-                    if (!$util.isString(message.path))
-                        return "path: string expected";
+                if (message.inputRef != null && message.hasOwnProperty("inputRef"))
+                    if (!$util.isString(message.inputRef))
+                        return "inputRef: string expected";
                 return null;
             };
 

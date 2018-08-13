@@ -108,5 +108,5 @@ message ArrayJob {
     // then look at AWS_BATCH_JOB_ARRAY_INDEX to know the index of the job and load the appropriate portion of the input.
     // Azure: The execution engine will have to process the input and slice it for each task. It'll then pass an absolute
     // location to each task for where it can find its input.
-    string path = 6;
+    string input_ref = 6;
 }

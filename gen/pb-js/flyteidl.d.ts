@@ -3643,8 +3643,8 @@ export namespace flyteidl {
             /** ArrayJob swarm */
             swarm?: (flyteidl.core.ISwarmDefinition|null);
 
-            /** ArrayJob path */
-            path?: (string|null);
+            /** ArrayJob inputRef */
+            inputRef?: (string|null);
         }
 
         /** Represents an ArrayJob. */
@@ -3671,8 +3671,8 @@ export namespace flyteidl {
             /** ArrayJob swarm. */
             public swarm?: (flyteidl.core.ISwarmDefinition|null);
 
-            /** ArrayJob path. */
-            public path: string;
+            /** ArrayJob inputRef. */
+            public inputRef: string;
 
             /** ArrayJob runnable. */
             public runnable?: ("container"|"swarm");
