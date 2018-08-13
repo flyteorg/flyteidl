@@ -20,7 +20,7 @@ message LaunchPlanCreateResponse {
 }
 
 // Indicates various states of an Execution - both task and workflow
-enum LaunchPlanPhase {
+enum LaunchPlanState {
     INACTIVE		= 0;
     ACTIVE		= 1;
 }
@@ -31,7 +31,7 @@ message LaunchPlan {
     string urn          	= 3;
 
     LaunchPlanSpec spec 	= 4;
-    LaunchPlanStatus status	= 5;
+    LaunchPlanClosure closure	= 5;
 }
 
 message LaunchPlanList {
@@ -52,9 +52,9 @@ message LaunchPlanSpec {
     core.LiteralMap fixed_inputs = 4;
 }
 
-message LaunchPlanStatus {
+message LaunchPlanClosure {
     // Indicate the Launch plan phase
-    LaunchPlanPhase phase		= 1;
+    LaunchPlanState state		= 1;
 
     // Indicates the set of inputs to execute the Launch plan
     core.ParameterMap expected_inputs	= 2;

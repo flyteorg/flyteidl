@@ -4764,8 +4764,8 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** LaunchPlanPhase enum. */
-        enum LaunchPlanPhase {
+        /** LaunchPlanState enum. */
+        enum LaunchPlanState {
             INACTIVE = 0,
             ACTIVE = 1
         }
@@ -4785,8 +4785,8 @@ export namespace flyteidl {
             /** LaunchPlan spec */
             spec?: (flyteidl.admin.ILaunchPlanSpec|null);
 
-            /** LaunchPlan status */
-            status?: (flyteidl.admin.ILaunchPlanStatus|null);
+            /** LaunchPlan closure */
+            closure?: (flyteidl.admin.ILaunchPlanClosure|null);
         }
 
         /** Represents a LaunchPlan. */
@@ -4810,8 +4810,8 @@ export namespace flyteidl {
             /** LaunchPlan spec. */
             public spec?: (flyteidl.admin.ILaunchPlanSpec|null);
 
-            /** LaunchPlan status. */
-            public status?: (flyteidl.admin.ILaunchPlanStatus|null);
+            /** LaunchPlan closure. */
+            public closure?: (flyteidl.admin.ILaunchPlanClosure|null);
 
             /**
              * Creates a new LaunchPlan instance using the specified properties.
@@ -4968,64 +4968,64 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a LaunchPlanStatus. */
-        interface ILaunchPlanStatus {
+        /** Properties of a LaunchPlanClosure. */
+        interface ILaunchPlanClosure {
 
-            /** LaunchPlanStatus phase */
-            phase?: (flyteidl.admin.LaunchPlanPhase|null);
+            /** LaunchPlanClosure state */
+            state?: (flyteidl.admin.LaunchPlanState|null);
 
-            /** LaunchPlanStatus expectedInputs */
+            /** LaunchPlanClosure expectedInputs */
             expectedInputs?: (flyteidl.core.IParameterMap|null);
 
-            /** LaunchPlanStatus expectedOutputs */
+            /** LaunchPlanClosure expectedOutputs */
             expectedOutputs?: (flyteidl.core.IVariableMap|null);
         }
 
-        /** Represents a LaunchPlanStatus. */
-        class LaunchPlanStatus implements ILaunchPlanStatus {
+        /** Represents a LaunchPlanClosure. */
+        class LaunchPlanClosure implements ILaunchPlanClosure {
 
             /**
-             * Constructs a new LaunchPlanStatus.
+             * Constructs a new LaunchPlanClosure.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.admin.ILaunchPlanStatus);
+            constructor(properties?: flyteidl.admin.ILaunchPlanClosure);
 
-            /** LaunchPlanStatus phase. */
-            public phase: flyteidl.admin.LaunchPlanPhase;
+            /** LaunchPlanClosure state. */
+            public state: flyteidl.admin.LaunchPlanState;
 
-            /** LaunchPlanStatus expectedInputs. */
+            /** LaunchPlanClosure expectedInputs. */
             public expectedInputs?: (flyteidl.core.IParameterMap|null);
 
-            /** LaunchPlanStatus expectedOutputs. */
+            /** LaunchPlanClosure expectedOutputs. */
             public expectedOutputs?: (flyteidl.core.IVariableMap|null);
 
             /**
-             * Creates a new LaunchPlanStatus instance using the specified properties.
+             * Creates a new LaunchPlanClosure instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns LaunchPlanStatus instance
+             * @returns LaunchPlanClosure instance
              */
-            public static create(properties?: flyteidl.admin.ILaunchPlanStatus): flyteidl.admin.LaunchPlanStatus;
+            public static create(properties?: flyteidl.admin.ILaunchPlanClosure): flyteidl.admin.LaunchPlanClosure;
 
             /**
-             * Encodes the specified LaunchPlanStatus message. Does not implicitly {@link flyteidl.admin.LaunchPlanStatus.verify|verify} messages.
-             * @param message LaunchPlanStatus message or plain object to encode
+             * Encodes the specified LaunchPlanClosure message. Does not implicitly {@link flyteidl.admin.LaunchPlanClosure.verify|verify} messages.
+             * @param message LaunchPlanClosure message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.admin.ILaunchPlanStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.admin.ILaunchPlanClosure, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a LaunchPlanStatus message from the specified reader or buffer.
+             * Decodes a LaunchPlanClosure message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns LaunchPlanStatus
+             * @returns LaunchPlanClosure
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.LaunchPlanStatus;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.LaunchPlanClosure;
 
             /**
-             * Verifies a LaunchPlanStatus message.
+             * Verifies a LaunchPlanClosure message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -5822,8 +5822,8 @@ export namespace flyteidl {
             /** Task urn */
             urn?: (string|null);
 
-            /** Task spec */
-            spec?: (flyteidl.admin.ITaskSpec|null);
+            /** Task closure */
+            closure?: (flyteidl.admin.ITaskClosure|null);
         }
 
         /** Represents a Task. */
@@ -5844,8 +5844,8 @@ export namespace flyteidl {
             /** Task urn. */
             public urn: string;
 
-            /** Task spec. */
-            public spec?: (flyteidl.admin.ITaskSpec|null);
+            /** Task closure. */
+            public closure?: (flyteidl.admin.ITaskClosure|null);
 
             /**
              * Creates a new Task instance using the specified properties.
@@ -5984,6 +5984,58 @@ export namespace flyteidl {
 
             /**
              * Verifies a TaskSpec message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a TaskClosure. */
+        interface ITaskClosure {
+
+            /** TaskClosure compiledTask */
+            compiledTask?: (flyteidl.core.ICompiledTask|null);
+        }
+
+        /** Represents a TaskClosure. */
+        class TaskClosure implements ITaskClosure {
+
+            /**
+             * Constructs a new TaskClosure.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ITaskClosure);
+
+            /** TaskClosure compiledTask. */
+            public compiledTask?: (flyteidl.core.ICompiledTask|null);
+
+            /**
+             * Creates a new TaskClosure instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskClosure instance
+             */
+            public static create(properties?: flyteidl.admin.ITaskClosure): flyteidl.admin.TaskClosure;
+
+            /**
+             * Encodes the specified TaskClosure message. Does not implicitly {@link flyteidl.admin.TaskClosure.verify|verify} messages.
+             * @param message TaskClosure message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ITaskClosure, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskClosure message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskClosure
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.TaskClosure;
+
+            /**
+             * Verifies a TaskClosure message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -6200,8 +6252,8 @@ export namespace flyteidl {
             /** Workflow urn */
             urn?: (string|null);
 
-            /** Workflow spec */
-            spec?: (flyteidl.admin.IWorkflowSpec|null);
+            /** Workflow closure */
+            closure?: (flyteidl.admin.IWorkflowClosure|null);
         }
 
         /** Represents a Workflow. */
@@ -6222,8 +6274,8 @@ export namespace flyteidl {
             /** Workflow urn. */
             public urn: string;
 
-            /** Workflow spec. */
-            public spec?: (flyteidl.admin.IWorkflowSpec|null);
+            /** Workflow closure. */
+            public closure?: (flyteidl.admin.IWorkflowClosure|null);
 
             /**
              * Creates a new Workflow instance using the specified properties.
@@ -6319,8 +6371,8 @@ export namespace flyteidl {
         /** Properties of a WorkflowSpec. */
         interface IWorkflowSpec {
 
-            /** WorkflowSpec workflowTemplate */
-            workflowTemplate?: (flyteidl.core.IWorkflowTemplate|null);
+            /** WorkflowSpec template */
+            template?: (flyteidl.core.IWorkflowTemplate|null);
         }
 
         /** Represents a WorkflowSpec. */
@@ -6332,8 +6384,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.IWorkflowSpec);
 
-            /** WorkflowSpec workflowTemplate. */
-            public workflowTemplate?: (flyteidl.core.IWorkflowTemplate|null);
+            /** WorkflowSpec template. */
+            public template?: (flyteidl.core.IWorkflowTemplate|null);
 
             /**
              * Creates a new WorkflowSpec instance using the specified properties.
@@ -6362,6 +6414,58 @@ export namespace flyteidl {
 
             /**
              * Verifies a WorkflowSpec message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a WorkflowClosure. */
+        interface IWorkflowClosure {
+
+            /** WorkflowClosure compiledWorkflow */
+            compiledWorkflow?: (flyteidl.core.ICompiledWorkflowClosure|null);
+        }
+
+        /** Represents a WorkflowClosure. */
+        class WorkflowClosure implements IWorkflowClosure {
+
+            /**
+             * Constructs a new WorkflowClosure.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IWorkflowClosure);
+
+            /** WorkflowClosure compiledWorkflow. */
+            public compiledWorkflow?: (flyteidl.core.ICompiledWorkflowClosure|null);
+
+            /**
+             * Creates a new WorkflowClosure instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns WorkflowClosure instance
+             */
+            public static create(properties?: flyteidl.admin.IWorkflowClosure): flyteidl.admin.WorkflowClosure;
+
+            /**
+             * Encodes the specified WorkflowClosure message. Does not implicitly {@link flyteidl.admin.WorkflowClosure.verify|verify} messages.
+             * @param message WorkflowClosure message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IWorkflowClosure, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a WorkflowClosure message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns WorkflowClosure
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.WorkflowClosure;
+
+            /**
+             * Verifies a WorkflowClosure message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */

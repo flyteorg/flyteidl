@@ -561,6 +561,17 @@
       "description": "- AND: Conjunction",
       "title": "Nested conditions. They can be conjoined using AND / OR\nOrder of evaluation is not important as the operators are Commutative"
     },
+    "ConnectionSetIdList": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "ExecutionMetadataExecutionMode": {
       "type": "string",
       "enum": [
@@ -765,8 +776,25 @@
         "spec": {
           "$ref": "#/definitions/adminLaunchPlanSpec"
         },
-        "status": {
-          "$ref": "#/definitions/adminLaunchPlanStatus"
+        "closure": {
+          "$ref": "#/definitions/adminLaunchPlanClosure"
+        }
+      }
+    },
+    "adminLaunchPlanClosure": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "$ref": "#/definitions/adminLaunchPlanState",
+          "title": "Indicate the Launch plan phase"
+        },
+        "expected_inputs": {
+          "$ref": "#/definitions/coreParameterMap",
+          "title": "Indicates the set of inputs to execute the Launch plan"
+        },
+        "expected_outputs": {
+          "$ref": "#/definitions/coreVariableMap",
+          "title": "Indicates the set of outputs from the Launch plan"
         }
       }
     },
@@ -808,15 +836,6 @@
         }
       }
     },
-    "adminLaunchPlanPhase": {
-      "type": "string",
-      "enum": [
-        "INACTIVE",
-        "ACTIVE"
-      ],
-      "default": "INACTIVE",
-      "title": "Indicates various states of an Execution - both task and workflow"
-    },
     "adminLaunchPlanSpec": {
       "type": "object",
       "properties": {
@@ -838,22 +857,14 @@
         }
       }
     },
-    "adminLaunchPlanStatus": {
-      "type": "object",
-      "properties": {
-        "phase": {
-          "$ref": "#/definitions/adminLaunchPlanPhase",
-          "title": "Indicate the Launch plan phase"
-        },
-        "expected_inputs": {
-          "$ref": "#/definitions/coreParameterMap",
-          "title": "Indicates the set of inputs to execute the Launch plan"
-        },
-        "expected_outputs": {
-          "$ref": "#/definitions/coreVariableMap",
-          "title": "Indicates the set of outputs from the Launch plan"
-        }
-      }
+    "adminLaunchPlanState": {
+      "type": "string",
+      "enum": [
+        "INACTIVE",
+        "ACTIVE"
+      ],
+      "default": "INACTIVE",
+      "title": "Indicates various states of an Execution - both task and workflow"
     },
     "adminNotification": {
       "type": "object",
@@ -906,8 +917,16 @@
         "urn": {
           "type": "string"
         },
-        "spec": {
-          "$ref": "#/definitions/adminTaskSpec"
+        "closure": {
+          "$ref": "#/definitions/adminTaskClosure"
+        }
+      }
+    },
+    "adminTaskClosure": {
+      "type": "object",
+      "properties": {
+        "compiled_task": {
+          "$ref": "#/definitions/coreCompiledTask"
         }
       }
     },
@@ -968,8 +987,16 @@
         "urn": {
           "type": "string"
         },
-        "spec": {
-          "$ref": "#/definitions/adminWorkflowSpec"
+        "closure": {
+          "$ref": "#/definitions/adminWorkflowClosure"
+        }
+      }
+    },
+    "adminWorkflowClosure": {
+      "type": "object",
+      "properties": {
+        "compiled_workflow": {
+          "$ref": "#/definitions/coreCompiledWorkflowClosure"
         }
       }
     },
@@ -1013,7 +1040,7 @@
     "adminWorkflowSpec": {
       "type": "object",
       "properties": {
-        "workflow_template": {
+        "template": {
           "$ref": "#/definitions/coreWorkflowTemplate"
         }
       }
@@ -1166,6 +1193,54 @@
       },
       "description": "Defines a 2-level tree where the root is a comparison operator and Operands are primtivies or known variables.\nEach expression results in a boolean result."
     },
+    "coreCompiledTask": {
+      "type": "object",
+      "properties": {
+        "template": {
+          "$ref": "#/definitions/coreTaskTemplate",
+          "title": "Completely contained TaskTemplate"
+        }
+      },
+      "title": "Output of the Compilation step. This object represent one Task. We store more metadata at this layer"
+    },
+    "coreCompiledWorkflow": {
+      "type": "object",
+      "properties": {
+        "template": {
+          "$ref": "#/definitions/coreWorkflowTemplate",
+          "title": "Completely contained Workflow Template"
+        },
+        "connections": {
+          "$ref": "#/definitions/coreConnectionSet",
+          "description": "For internal use only! This field is used by the system and must not be filled in. Any values set will be ignored."
+        }
+      },
+      "title": "Output of the compilation Step. This object represents one workflow. We store more metadata at this layer"
+    },
+    "coreCompiledWorkflowClosure": {
+      "type": "object",
+      "properties": {
+        "primary": {
+          "$ref": "#/definitions/coreCompiledWorkflow",
+          "title": "+required"
+        },
+        "sub_workflows": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreCompiledWorkflow"
+          },
+          "title": "Guaranteed that there will only exist one and only one workflow with a given id, i.e., every sub workflow has a\nunique identifier. Also every enclosed subworkflow is used either by a primary workflow or by a subworkflow\nas an inlined workflow\n+optional"
+        },
+        "tasks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreCompiledTask"
+          },
+          "title": "Guaranteed that there will only exist one and only one task with a given id, i.e., every task has a unique id\n+required (atleast 1)"
+        }
+      },
+      "description": "A Compiled Workflow Closure contains all the information required to start a new execution, or to visualized a workflow\nand its details. The CompiledWorkflowClosure should always contain a primary workflow, that is the main workflow that\nwill being the execution. All subworkflows are denormalized. WorkflowNodes refer the the workflow names of compiled\nsubworkflows."
+    },
     "coreConjunctionExpression": {
       "type": "object",
       "properties": {
@@ -1180,6 +1255,26 @@
         }
       },
       "description": "Defines a conjunction expression of two boolean expressions."
+    },
+    "coreConnectionSet": {
+      "type": "object",
+      "properties": {
+        "downstream": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/ConnectionSetIdList"
+          },
+          "title": "A list of all the node ids that are downstream from a given node id"
+        },
+        "upstream": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/ConnectionSetIdList"
+          },
+          "title": "A list of all the node ids, that are upstream of this node id"
+        }
+      },
+      "title": "Adjacency list for the workflow. This is created as part of the compilation process. Every process after the compilation\nstep uses this created ConnectionSet"
     },
     "coreContainer": {
       "type": "object",

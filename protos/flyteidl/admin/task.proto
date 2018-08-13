@@ -4,6 +4,7 @@ package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "flyteidl/core/tasks.proto";
+import "flyteidl/core/compiler.proto";
 import "flyteidl/admin/common.proto";
 
 message TaskCreateRequest {
@@ -30,7 +31,7 @@ message Task {
     string version    = 2;
     string urn        = 3;
 
-    TaskSpec spec     = 6;
+    TaskClosure closure = 4;   
 }
 
 message TaskList {
@@ -40,4 +41,8 @@ message TaskList {
 
 message TaskSpec {
     core.TaskTemplate template = 1;
+}
+
+message TaskClosure {
+    core.CompiledTask compiled_task = 1;
 }

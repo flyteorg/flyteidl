@@ -4,6 +4,7 @@ package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "flyteidl/core/workflow.proto";
+import "flyteidl/core/compiler.proto";
 import "flyteidl/admin/common.proto";
 
 message WorkflowCreateRequest {
@@ -30,7 +31,7 @@ message Workflow {
     string version    = 2;
     string urn        = 3;
 
-    WorkflowSpec spec = 4;
+    WorkflowClosure closure = 4;
 }
 
 message WorkflowList {
@@ -39,5 +40,9 @@ message WorkflowList {
 }
 
 message WorkflowSpec {
-    core.WorkflowTemplate workflow_template = 1;
+    core.WorkflowTemplate template = 1;
+}
+
+message WorkflowClosure {
+    core.CompiledWorkflowClosure compiled_workflow = 1;
 }

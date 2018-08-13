@@ -11501,13 +11501,13 @@ export const flyteidl = $root.flyteidl = (() => {
         })();
 
         /**
-         * LaunchPlanPhase enum.
-         * @name flyteidl.admin.LaunchPlanPhase
+         * LaunchPlanState enum.
+         * @name flyteidl.admin.LaunchPlanState
          * @enum {string}
          * @property {number} INACTIVE=0 INACTIVE value
          * @property {number} ACTIVE=1 ACTIVE value
          */
-        admin.LaunchPlanPhase = (function() {
+        admin.LaunchPlanState = (function() {
             const valuesById = {}, values = Object.create(valuesById);
             values[valuesById[0] = "INACTIVE"] = 0;
             values[valuesById[1] = "ACTIVE"] = 1;
@@ -11524,7 +11524,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [version] LaunchPlan version
              * @property {string|null} [urn] LaunchPlan urn
              * @property {flyteidl.admin.ILaunchPlanSpec|null} [spec] LaunchPlan spec
-             * @property {flyteidl.admin.ILaunchPlanStatus|null} [status] LaunchPlan status
+             * @property {flyteidl.admin.ILaunchPlanClosure|null} [closure] LaunchPlan closure
              */
 
             /**
@@ -11575,12 +11575,12 @@ export const flyteidl = $root.flyteidl = (() => {
             LaunchPlan.prototype.spec = null;
 
             /**
-             * LaunchPlan status.
-             * @member {flyteidl.admin.ILaunchPlanStatus|null|undefined} status
+             * LaunchPlan closure.
+             * @member {flyteidl.admin.ILaunchPlanClosure|null|undefined} closure
              * @memberof flyteidl.admin.LaunchPlan
              * @instance
              */
-            LaunchPlan.prototype.status = null;
+            LaunchPlan.prototype.closure = null;
 
             /**
              * Creates a new LaunchPlan instance using the specified properties.
@@ -11614,8 +11614,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.urn);
                 if (message.spec != null && message.hasOwnProperty("spec"))
                     $root.flyteidl.admin.LaunchPlanSpec.encode(message.spec, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.status != null && message.hasOwnProperty("status"))
-                    $root.flyteidl.admin.LaunchPlanStatus.encode(message.status, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.closure != null && message.hasOwnProperty("closure"))
+                    $root.flyteidl.admin.LaunchPlanClosure.encode(message.closure, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -11650,7 +11650,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.spec = $root.flyteidl.admin.LaunchPlanSpec.decode(reader, reader.uint32());
                         break;
                     case 5:
-                        message.status = $root.flyteidl.admin.LaunchPlanStatus.decode(reader, reader.uint32());
+                        message.closure = $root.flyteidl.admin.LaunchPlanClosure.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11687,10 +11687,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "spec." + error;
                 }
-                if (message.status != null && message.hasOwnProperty("status")) {
-                    let error = $root.flyteidl.admin.LaunchPlanStatus.verify(message.status);
+                if (message.closure != null && message.hasOwnProperty("closure")) {
+                    let error = $root.flyteidl.admin.LaunchPlanClosure.verify(message.closure);
                     if (error)
-                        return "status." + error;
+                        return "closure." + error;
                 }
                 return null;
             };
@@ -11985,26 +11985,26 @@ export const flyteidl = $root.flyteidl = (() => {
             return LaunchPlanSpec;
         })();
 
-        admin.LaunchPlanStatus = (function() {
+        admin.LaunchPlanClosure = (function() {
 
             /**
-             * Properties of a LaunchPlanStatus.
+             * Properties of a LaunchPlanClosure.
              * @memberof flyteidl.admin
-             * @interface ILaunchPlanStatus
-             * @property {flyteidl.admin.LaunchPlanPhase|null} [phase] LaunchPlanStatus phase
-             * @property {flyteidl.core.IParameterMap|null} [expectedInputs] LaunchPlanStatus expectedInputs
-             * @property {flyteidl.core.IVariableMap|null} [expectedOutputs] LaunchPlanStatus expectedOutputs
+             * @interface ILaunchPlanClosure
+             * @property {flyteidl.admin.LaunchPlanState|null} [state] LaunchPlanClosure state
+             * @property {flyteidl.core.IParameterMap|null} [expectedInputs] LaunchPlanClosure expectedInputs
+             * @property {flyteidl.core.IVariableMap|null} [expectedOutputs] LaunchPlanClosure expectedOutputs
              */
 
             /**
-             * Constructs a new LaunchPlanStatus.
+             * Constructs a new LaunchPlanClosure.
              * @memberof flyteidl.admin
-             * @classdesc Represents a LaunchPlanStatus.
-             * @implements ILaunchPlanStatus
+             * @classdesc Represents a LaunchPlanClosure.
+             * @implements ILaunchPlanClosure
              * @constructor
-             * @param {flyteidl.admin.ILaunchPlanStatus=} [properties] Properties to set
+             * @param {flyteidl.admin.ILaunchPlanClosure=} [properties] Properties to set
              */
-            function LaunchPlanStatus(properties) {
+            function LaunchPlanClosure(properties) {
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -12012,55 +12012,55 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * LaunchPlanStatus phase.
-             * @member {flyteidl.admin.LaunchPlanPhase} phase
-             * @memberof flyteidl.admin.LaunchPlanStatus
+             * LaunchPlanClosure state.
+             * @member {flyteidl.admin.LaunchPlanState} state
+             * @memberof flyteidl.admin.LaunchPlanClosure
              * @instance
              */
-            LaunchPlanStatus.prototype.phase = 0;
+            LaunchPlanClosure.prototype.state = 0;
 
             /**
-             * LaunchPlanStatus expectedInputs.
+             * LaunchPlanClosure expectedInputs.
              * @member {flyteidl.core.IParameterMap|null|undefined} expectedInputs
-             * @memberof flyteidl.admin.LaunchPlanStatus
+             * @memberof flyteidl.admin.LaunchPlanClosure
              * @instance
              */
-            LaunchPlanStatus.prototype.expectedInputs = null;
+            LaunchPlanClosure.prototype.expectedInputs = null;
 
             /**
-             * LaunchPlanStatus expectedOutputs.
+             * LaunchPlanClosure expectedOutputs.
              * @member {flyteidl.core.IVariableMap|null|undefined} expectedOutputs
-             * @memberof flyteidl.admin.LaunchPlanStatus
+             * @memberof flyteidl.admin.LaunchPlanClosure
              * @instance
              */
-            LaunchPlanStatus.prototype.expectedOutputs = null;
+            LaunchPlanClosure.prototype.expectedOutputs = null;
 
             /**
-             * Creates a new LaunchPlanStatus instance using the specified properties.
+             * Creates a new LaunchPlanClosure instance using the specified properties.
              * @function create
-             * @memberof flyteidl.admin.LaunchPlanStatus
+             * @memberof flyteidl.admin.LaunchPlanClosure
              * @static
-             * @param {flyteidl.admin.ILaunchPlanStatus=} [properties] Properties to set
-             * @returns {flyteidl.admin.LaunchPlanStatus} LaunchPlanStatus instance
+             * @param {flyteidl.admin.ILaunchPlanClosure=} [properties] Properties to set
+             * @returns {flyteidl.admin.LaunchPlanClosure} LaunchPlanClosure instance
              */
-            LaunchPlanStatus.create = function create(properties) {
-                return new LaunchPlanStatus(properties);
+            LaunchPlanClosure.create = function create(properties) {
+                return new LaunchPlanClosure(properties);
             };
 
             /**
-             * Encodes the specified LaunchPlanStatus message. Does not implicitly {@link flyteidl.admin.LaunchPlanStatus.verify|verify} messages.
+             * Encodes the specified LaunchPlanClosure message. Does not implicitly {@link flyteidl.admin.LaunchPlanClosure.verify|verify} messages.
              * @function encode
-             * @memberof flyteidl.admin.LaunchPlanStatus
+             * @memberof flyteidl.admin.LaunchPlanClosure
              * @static
-             * @param {flyteidl.admin.ILaunchPlanStatus} message LaunchPlanStatus message or plain object to encode
+             * @param {flyteidl.admin.ILaunchPlanClosure} message LaunchPlanClosure message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            LaunchPlanStatus.encode = function encode(message, writer) {
+            LaunchPlanClosure.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.phase != null && message.hasOwnProperty("phase"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.phase);
+                if (message.state != null && message.hasOwnProperty("state"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.state);
                 if (message.expectedInputs != null && message.hasOwnProperty("expectedInputs"))
                     $root.flyteidl.core.ParameterMap.encode(message.expectedInputs, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.expectedOutputs != null && message.hasOwnProperty("expectedOutputs"))
@@ -12069,25 +12069,25 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Decodes a LaunchPlanStatus message from the specified reader or buffer.
+             * Decodes a LaunchPlanClosure message from the specified reader or buffer.
              * @function decode
-             * @memberof flyteidl.admin.LaunchPlanStatus
+             * @memberof flyteidl.admin.LaunchPlanClosure
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.LaunchPlanStatus} LaunchPlanStatus
+             * @returns {flyteidl.admin.LaunchPlanClosure} LaunchPlanClosure
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            LaunchPlanStatus.decode = function decode(reader, length) {
+            LaunchPlanClosure.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchPlanStatus();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchPlanClosure();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.phase = reader.int32();
+                        message.state = reader.int32();
                         break;
                     case 2:
                         message.expectedInputs = $root.flyteidl.core.ParameterMap.decode(reader, reader.uint32());
@@ -12104,20 +12104,20 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Verifies a LaunchPlanStatus message.
+             * Verifies a LaunchPlanClosure message.
              * @function verify
-             * @memberof flyteidl.admin.LaunchPlanStatus
+             * @memberof flyteidl.admin.LaunchPlanClosure
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            LaunchPlanStatus.verify = function verify(message) {
+            LaunchPlanClosure.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.phase != null && message.hasOwnProperty("phase"))
-                    switch (message.phase) {
+                if (message.state != null && message.hasOwnProperty("state"))
+                    switch (message.state) {
                     default:
-                        return "phase: enum value expected";
+                        return "state: enum value expected";
                     case 0:
                     case 1:
                         break;
@@ -12135,7 +12135,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 return null;
             };
 
-            return LaunchPlanStatus;
+            return LaunchPlanClosure;
         })();
 
         admin.LaunchPlanMetadata = (function() {
@@ -13984,7 +13984,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.IIdentifier|null} [id] Task id
              * @property {string|null} [version] Task version
              * @property {string|null} [urn] Task urn
-             * @property {flyteidl.admin.ITaskSpec|null} [spec] Task spec
+             * @property {flyteidl.admin.ITaskClosure|null} [closure] Task closure
              */
 
             /**
@@ -14027,12 +14027,12 @@ export const flyteidl = $root.flyteidl = (() => {
             Task.prototype.urn = "";
 
             /**
-             * Task spec.
-             * @member {flyteidl.admin.ITaskSpec|null|undefined} spec
+             * Task closure.
+             * @member {flyteidl.admin.ITaskClosure|null|undefined} closure
              * @memberof flyteidl.admin.Task
              * @instance
              */
-            Task.prototype.spec = null;
+            Task.prototype.closure = null;
 
             /**
              * Creates a new Task instance using the specified properties.
@@ -14064,8 +14064,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.version);
                 if (message.urn != null && message.hasOwnProperty("urn"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.urn);
-                if (message.spec != null && message.hasOwnProperty("spec"))
-                    $root.flyteidl.admin.TaskSpec.encode(message.spec, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                if (message.closure != null && message.hasOwnProperty("closure"))
+                    $root.flyteidl.admin.TaskClosure.encode(message.closure, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -14096,8 +14096,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 3:
                         message.urn = reader.string();
                         break;
-                    case 6:
-                        message.spec = $root.flyteidl.admin.TaskSpec.decode(reader, reader.uint32());
+                    case 4:
+                        message.closure = $root.flyteidl.admin.TaskClosure.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -14129,10 +14129,10 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.urn != null && message.hasOwnProperty("urn"))
                     if (!$util.isString(message.urn))
                         return "urn: string expected";
-                if (message.spec != null && message.hasOwnProperty("spec")) {
-                    let error = $root.flyteidl.admin.TaskSpec.verify(message.spec);
+                if (message.closure != null && message.hasOwnProperty("closure")) {
+                    let error = $root.flyteidl.admin.TaskClosure.verify(message.closure);
                     if (error)
-                        return "spec." + error;
+                        return "closure." + error;
                 }
                 return null;
             };
@@ -14387,6 +14387,118 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             return TaskSpec;
+        })();
+
+        admin.TaskClosure = (function() {
+
+            /**
+             * Properties of a TaskClosure.
+             * @memberof flyteidl.admin
+             * @interface ITaskClosure
+             * @property {flyteidl.core.ICompiledTask|null} [compiledTask] TaskClosure compiledTask
+             */
+
+            /**
+             * Constructs a new TaskClosure.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a TaskClosure.
+             * @implements ITaskClosure
+             * @constructor
+             * @param {flyteidl.admin.ITaskClosure=} [properties] Properties to set
+             */
+            function TaskClosure(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TaskClosure compiledTask.
+             * @member {flyteidl.core.ICompiledTask|null|undefined} compiledTask
+             * @memberof flyteidl.admin.TaskClosure
+             * @instance
+             */
+            TaskClosure.prototype.compiledTask = null;
+
+            /**
+             * Creates a new TaskClosure instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.TaskClosure
+             * @static
+             * @param {flyteidl.admin.ITaskClosure=} [properties] Properties to set
+             * @returns {flyteidl.admin.TaskClosure} TaskClosure instance
+             */
+            TaskClosure.create = function create(properties) {
+                return new TaskClosure(properties);
+            };
+
+            /**
+             * Encodes the specified TaskClosure message. Does not implicitly {@link flyteidl.admin.TaskClosure.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.TaskClosure
+             * @static
+             * @param {flyteidl.admin.ITaskClosure} message TaskClosure message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TaskClosure.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.compiledTask != null && message.hasOwnProperty("compiledTask"))
+                    $root.flyteidl.core.CompiledTask.encode(message.compiledTask, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a TaskClosure message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.TaskClosure
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.TaskClosure} TaskClosure
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TaskClosure.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.TaskClosure();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.compiledTask = $root.flyteidl.core.CompiledTask.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a TaskClosure message.
+             * @function verify
+             * @memberof flyteidl.admin.TaskClosure
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TaskClosure.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.compiledTask != null && message.hasOwnProperty("compiledTask")) {
+                    let error = $root.flyteidl.core.CompiledTask.verify(message.compiledTask);
+                    if (error)
+                        return "compiledTask." + error;
+                }
+                return null;
+            };
+
+            return TaskClosure;
         })();
 
         admin.WorkflowCreateRequest = (function() {
@@ -14851,7 +14963,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.IIdentifier|null} [id] Workflow id
              * @property {string|null} [version] Workflow version
              * @property {string|null} [urn] Workflow urn
-             * @property {flyteidl.admin.IWorkflowSpec|null} [spec] Workflow spec
+             * @property {flyteidl.admin.IWorkflowClosure|null} [closure] Workflow closure
              */
 
             /**
@@ -14894,12 +15006,12 @@ export const flyteidl = $root.flyteidl = (() => {
             Workflow.prototype.urn = "";
 
             /**
-             * Workflow spec.
-             * @member {flyteidl.admin.IWorkflowSpec|null|undefined} spec
+             * Workflow closure.
+             * @member {flyteidl.admin.IWorkflowClosure|null|undefined} closure
              * @memberof flyteidl.admin.Workflow
              * @instance
              */
-            Workflow.prototype.spec = null;
+            Workflow.prototype.closure = null;
 
             /**
              * Creates a new Workflow instance using the specified properties.
@@ -14931,8 +15043,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.version);
                 if (message.urn != null && message.hasOwnProperty("urn"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.urn);
-                if (message.spec != null && message.hasOwnProperty("spec"))
-                    $root.flyteidl.admin.WorkflowSpec.encode(message.spec, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.closure != null && message.hasOwnProperty("closure"))
+                    $root.flyteidl.admin.WorkflowClosure.encode(message.closure, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -14964,7 +15076,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.urn = reader.string();
                         break;
                     case 4:
-                        message.spec = $root.flyteidl.admin.WorkflowSpec.decode(reader, reader.uint32());
+                        message.closure = $root.flyteidl.admin.WorkflowClosure.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -14996,10 +15108,10 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.urn != null && message.hasOwnProperty("urn"))
                     if (!$util.isString(message.urn))
                         return "urn: string expected";
-                if (message.spec != null && message.hasOwnProperty("spec")) {
-                    let error = $root.flyteidl.admin.WorkflowSpec.verify(message.spec);
+                if (message.closure != null && message.hasOwnProperty("closure")) {
+                    let error = $root.flyteidl.admin.WorkflowClosure.verify(message.closure);
                     if (error)
-                        return "spec." + error;
+                        return "closure." + error;
                 }
                 return null;
             };
@@ -15150,7 +15262,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a WorkflowSpec.
              * @memberof flyteidl.admin
              * @interface IWorkflowSpec
-             * @property {flyteidl.core.IWorkflowTemplate|null} [workflowTemplate] WorkflowSpec workflowTemplate
+             * @property {flyteidl.core.IWorkflowTemplate|null} [template] WorkflowSpec template
              */
 
             /**
@@ -15169,12 +15281,12 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * WorkflowSpec workflowTemplate.
-             * @member {flyteidl.core.IWorkflowTemplate|null|undefined} workflowTemplate
+             * WorkflowSpec template.
+             * @member {flyteidl.core.IWorkflowTemplate|null|undefined} template
              * @memberof flyteidl.admin.WorkflowSpec
              * @instance
              */
-            WorkflowSpec.prototype.workflowTemplate = null;
+            WorkflowSpec.prototype.template = null;
 
             /**
              * Creates a new WorkflowSpec instance using the specified properties.
@@ -15200,8 +15312,8 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowSpec.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.workflowTemplate != null && message.hasOwnProperty("workflowTemplate"))
-                    $root.flyteidl.core.WorkflowTemplate.encode(message.workflowTemplate, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.template != null && message.hasOwnProperty("template"))
+                    $root.flyteidl.core.WorkflowTemplate.encode(message.template, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -15224,7 +15336,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.workflowTemplate = $root.flyteidl.core.WorkflowTemplate.decode(reader, reader.uint32());
+                        message.template = $root.flyteidl.core.WorkflowTemplate.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -15245,15 +15357,127 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowSpec.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.workflowTemplate != null && message.hasOwnProperty("workflowTemplate")) {
-                    let error = $root.flyteidl.core.WorkflowTemplate.verify(message.workflowTemplate);
+                if (message.template != null && message.hasOwnProperty("template")) {
+                    let error = $root.flyteidl.core.WorkflowTemplate.verify(message.template);
                     if (error)
-                        return "workflowTemplate." + error;
+                        return "template." + error;
                 }
                 return null;
             };
 
             return WorkflowSpec;
+        })();
+
+        admin.WorkflowClosure = (function() {
+
+            /**
+             * Properties of a WorkflowClosure.
+             * @memberof flyteidl.admin
+             * @interface IWorkflowClosure
+             * @property {flyteidl.core.ICompiledWorkflowClosure|null} [compiledWorkflow] WorkflowClosure compiledWorkflow
+             */
+
+            /**
+             * Constructs a new WorkflowClosure.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a WorkflowClosure.
+             * @implements IWorkflowClosure
+             * @constructor
+             * @param {flyteidl.admin.IWorkflowClosure=} [properties] Properties to set
+             */
+            function WorkflowClosure(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * WorkflowClosure compiledWorkflow.
+             * @member {flyteidl.core.ICompiledWorkflowClosure|null|undefined} compiledWorkflow
+             * @memberof flyteidl.admin.WorkflowClosure
+             * @instance
+             */
+            WorkflowClosure.prototype.compiledWorkflow = null;
+
+            /**
+             * Creates a new WorkflowClosure instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.WorkflowClosure
+             * @static
+             * @param {flyteidl.admin.IWorkflowClosure=} [properties] Properties to set
+             * @returns {flyteidl.admin.WorkflowClosure} WorkflowClosure instance
+             */
+            WorkflowClosure.create = function create(properties) {
+                return new WorkflowClosure(properties);
+            };
+
+            /**
+             * Encodes the specified WorkflowClosure message. Does not implicitly {@link flyteidl.admin.WorkflowClosure.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.WorkflowClosure
+             * @static
+             * @param {flyteidl.admin.IWorkflowClosure} message WorkflowClosure message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            WorkflowClosure.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.compiledWorkflow != null && message.hasOwnProperty("compiledWorkflow"))
+                    $root.flyteidl.core.CompiledWorkflowClosure.encode(message.compiledWorkflow, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a WorkflowClosure message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.WorkflowClosure
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.WorkflowClosure} WorkflowClosure
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            WorkflowClosure.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.WorkflowClosure();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.compiledWorkflow = $root.flyteidl.core.CompiledWorkflowClosure.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a WorkflowClosure message.
+             * @function verify
+             * @memberof flyteidl.admin.WorkflowClosure
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            WorkflowClosure.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.compiledWorkflow != null && message.hasOwnProperty("compiledWorkflow")) {
+                    let error = $root.flyteidl.core.CompiledWorkflowClosure.verify(message.compiledWorkflow);
+                    if (error)
+                        return "compiledWorkflow." + error;
+                }
+                return null;
+            };
+
+            return WorkflowClosure;
         })();
 
         return admin;
