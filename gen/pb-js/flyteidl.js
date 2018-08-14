@@ -14217,7 +14217,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface ITaskList
              * @property {Array.<flyteidl.admin.ITask>|null} [tasks] TaskList tasks
-             * @property {number|null} [offset] TaskList offset
              */
 
             /**
@@ -14243,14 +14242,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             TaskList.prototype.tasks = $util.emptyArray;
-
-            /**
-             * TaskList offset.
-             * @member {number} offset
-             * @memberof flyteidl.admin.TaskList
-             * @instance
-             */
-            TaskList.prototype.offset = 0;
 
             /**
              * Creates a new TaskList instance using the specified properties.
@@ -14279,8 +14270,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.tasks != null && message.tasks.length)
                     for (let i = 0; i < message.tasks.length; ++i)
                         $root.flyteidl.admin.Task.encode(message.tasks[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.offset != null && message.hasOwnProperty("offset"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.offset);
                 return writer;
             };
 
@@ -14306,9 +14295,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!(message.tasks && message.tasks.length))
                             message.tasks = [];
                         message.tasks.push($root.flyteidl.admin.Task.decode(reader, reader.uint32()));
-                        break;
-                    case 2:
-                        message.offset = reader.uint32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -14338,9 +14324,6 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "tasks." + error;
                     }
                 }
-                if (message.offset != null && message.hasOwnProperty("offset"))
-                    if (!$util.isInteger(message.offset))
-                        return "offset: integer expected";
                 return null;
             };
 
@@ -15001,7 +14984,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface IWorkflowList
              * @property {Array.<flyteidl.admin.IWorkflow>|null} [workflows] WorkflowList workflows
-             * @property {number|null} [offset] WorkflowList offset
              */
 
             /**
@@ -15027,14 +15009,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             WorkflowList.prototype.workflows = $util.emptyArray;
-
-            /**
-             * WorkflowList offset.
-             * @member {number} offset
-             * @memberof flyteidl.admin.WorkflowList
-             * @instance
-             */
-            WorkflowList.prototype.offset = 0;
 
             /**
              * Creates a new WorkflowList instance using the specified properties.
@@ -15063,8 +15037,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.workflows != null && message.workflows.length)
                     for (let i = 0; i < message.workflows.length; ++i)
                         $root.flyteidl.admin.Workflow.encode(message.workflows[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.offset != null && message.hasOwnProperty("offset"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.offset);
                 return writer;
             };
 
@@ -15090,9 +15062,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!(message.workflows && message.workflows.length))
                             message.workflows = [];
                         message.workflows.push($root.flyteidl.admin.Workflow.decode(reader, reader.uint32()));
-                        break;
-                    case 2:
-                        message.offset = reader.uint32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -15122,9 +15091,6 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "workflows." + error;
                     }
                 }
-                if (message.offset != null && message.hasOwnProperty("offset"))
-                    if (!$util.isInteger(message.offset))
-                        return "offset: integer expected";
                 return null;
             };
 

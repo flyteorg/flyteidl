@@ -43,9 +43,6 @@ message Workflow {
 message WorkflowList {
     // A list of workflows returned based on the request.
     repeated Workflow workflows = 1;
-    // Offset value indicates if more results are available.
-    // Value of -1 indicates no more page available.
-    uint32 offset	        = 2;
 }
 
 // Represents a structure that encapsulates the specification of the workflow.

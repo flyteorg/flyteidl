@@ -135,7 +135,7 @@
           },
           {
             "name": "offset",
-            "description": "Indicates the offset to fetch the resource from.\nPagination support provided by the endpoint returns an offset for the next page.\n+optional.",
+            "description": "Indicates the offset to fetch the resource from.\nIt is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.\n+optional.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -197,7 +197,7 @@
           },
           {
             "name": "offset",
-            "description": "Indicates the offset to fetch the resource from.\nPagination support provided by the endpoint returns an offset for the next page.\n+optional.",
+            "description": "Indicates the offset to fetch the resource from.\nIt is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.\n+optional.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -259,7 +259,7 @@
           },
           {
             "name": "offset",
-            "description": "Indicates the offset to fetch the resource from.\nPagination support provided by the endpoint returns an offset for the next page.\n+optional.",
+            "description": "Indicates the offset to fetch the resource from.\nIt is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.\n+optional.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -321,7 +321,7 @@
           },
           {
             "name": "offset",
-            "description": "Indicates the offset to fetch the resource from.\nPagination support provided by the endpoint returns an offset for the next page.\n+optional.",
+            "description": "Indicates the offset to fetch the resource from.\nIt is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.\n+optional.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -959,11 +959,6 @@
             "$ref": "#/definitions/adminTask"
           },
           "description": "A list of tasks returned based on the request."
-        },
-        "offset": {
-          "type": "integer",
-          "format": "int64",
-          "description": "Offset value indicates if more results are available.\nValue of -1, indicates no more page available."
         }
       },
       "description": "Represents a list of tasks returned from the admin."
@@ -1047,11 +1042,6 @@
             "$ref": "#/definitions/adminWorkflow"
           },
           "description": "A list of workflows returned based on the request."
-        },
-        "offset": {
-          "type": "integer",
-          "format": "int64",
-          "description": "Offset value indicates if more results are available.\nValue of -1 indicates no more page available."
         }
       },
       "description": "Represents a list of workflows returned from the admin."

@@ -48,7 +48,7 @@ message ResourceListRequest {
     // +optional
     uint32 limit    = 2;
     // Indicates the offset to fetch the resource from.
-    // Pagination support provided by the endpoint returns an offset for the next page.
+    // It is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.
     // +optional
     uint32 offset   = 3;
     // Indicates a list of filters passed as string.

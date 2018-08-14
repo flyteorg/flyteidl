@@ -5923,9 +5923,6 @@ export namespace flyteidl {
 
             /** TaskList tasks */
             tasks?: (flyteidl.admin.ITask[]|null);
-
-            /** TaskList offset */
-            offset?: (number|null);
         }
 
         /** Represents a TaskList. */
@@ -5939,9 +5936,6 @@ export namespace flyteidl {
 
             /** TaskList tasks. */
             public tasks: flyteidl.admin.ITask[];
-
-            /** TaskList offset. */
-            public offset: number;
 
             /**
              * Creates a new TaskList instance using the specified properties.
@@ -6271,9 +6265,6 @@ export namespace flyteidl {
 
             /** WorkflowList workflows */
             workflows?: (flyteidl.admin.IWorkflow[]|null);
-
-            /** WorkflowList offset */
-            offset?: (number|null);
         }
 
         /** Represents a WorkflowList. */
@@ -6287,9 +6278,6 @@ export namespace flyteidl {
 
             /** WorkflowList workflows. */
             public workflows: flyteidl.admin.IWorkflow[];
-
-            /** WorkflowList offset. */
-            public offset: number;
 
             /**
              * Creates a new WorkflowList instance using the specified properties.

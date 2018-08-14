@@ -54,7 +54,7 @@ func (x ExecutionPhase) String() string {
 	return proto.EnumName(ExecutionPhase_name, int32(x))
 }
 func (ExecutionPhase) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_common_38b37dde9f731b62, []int{0}
+	return fileDescriptor_common_8de70fa01273e842, []int{0}
 }
 
 type Notification_Type int32
@@ -83,7 +83,7 @@ func (x Notification_Type) String() string {
 	return proto.EnumName(Notification_Type_name, int32(x))
 }
 func (Notification_Type) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_common_38b37dde9f731b62, []int{6, 0}
+	return fileDescriptor_common_8de70fa01273e842, []int{6, 0}
 }
 
 // Encapsulation of fields that identifies a Flyte resource.
@@ -108,7 +108,7 @@ func (m *Identifier) Reset()         { *m = Identifier{} }
 func (m *Identifier) String() string { return proto.CompactTextString(m) }
 func (*Identifier) ProtoMessage()    {}
 func (*Identifier) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_38b37dde9f731b62, []int{0}
+	return fileDescriptor_common_8de70fa01273e842, []int{0}
 }
 func (m *Identifier) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Identifier.Unmarshal(m, b)
@@ -165,7 +165,7 @@ func (m *IdentifierListRequest) Reset()         { *m = IdentifierListRequest{} }
 func (m *IdentifierListRequest) String() string { return proto.CompactTextString(m) }
 func (*IdentifierListRequest) ProtoMessage()    {}
 func (*IdentifierListRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_38b37dde9f731b62, []int{1}
+	return fileDescriptor_common_8de70fa01273e842, []int{1}
 }
 func (m *IdentifierListRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_IdentifierListRequest.Unmarshal(m, b)
@@ -212,7 +212,7 @@ func (m *IdentifierList) Reset()         { *m = IdentifierList{} }
 func (m *IdentifierList) String() string { return proto.CompactTextString(m) }
 func (*IdentifierList) ProtoMessage()    {}
 func (*IdentifierList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_38b37dde9f731b62, []int{2}
+	return fileDescriptor_common_8de70fa01273e842, []int{2}
 }
 func (m *IdentifierList) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_IdentifierList.Unmarshal(m, b)
@@ -252,7 +252,7 @@ func (m *ObjectGetRequest) Reset()         { *m = ObjectGetRequest{} }
 func (m *ObjectGetRequest) String() string { return proto.CompactTextString(m) }
 func (*ObjectGetRequest) ProtoMessage()    {}
 func (*ObjectGetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_38b37dde9f731b62, []int{3}
+	return fileDescriptor_common_8de70fa01273e842, []int{3}
 }
 func (m *ObjectGetRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ObjectGetRequest.Unmarshal(m, b)
@@ -288,7 +288,7 @@ type ResourceListRequest struct {
 	// +optional
 	Limit uint32 `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`
 	// Indicates the offset to fetch the resource from.
-	// Pagination support provided by the endpoint returns an offset for the next page.
+	// It is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.
 	// +optional
 	Offset uint32 `protobuf:"varint,3,opt,name=offset,proto3" json:"offset,omitempty"`
 	// Indicates a list of filters passed as string.
@@ -304,7 +304,7 @@ func (m *ResourceListRequest) Reset()         { *m = ResourceListRequest{} }
 func (m *ResourceListRequest) String() string { return proto.CompactTextString(m) }
 func (*ResourceListRequest) ProtoMessage()    {}
 func (*ResourceListRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_38b37dde9f731b62, []int{4}
+	return fileDescriptor_common_8de70fa01273e842, []int{4}
 }
 func (m *ResourceListRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ResourceListRequest.Unmarshal(m, b)
@@ -368,7 +368,7 @@ func (m *Error) Reset()         { *m = Error{} }
 func (m *Error) String() string { return proto.CompactTextString(m) }
 func (*Error) ProtoMessage()    {}
 func (*Error) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_38b37dde9f731b62, []int{5}
+	return fileDescriptor_common_8de70fa01273e842, []int{5}
 }
 func (m *Error) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Error.Unmarshal(m, b)
@@ -416,7 +416,7 @@ func (m *Notification) Reset()         { *m = Notification{} }
 func (m *Notification) String() string { return proto.CompactTextString(m) }
 func (*Notification) ProtoMessage()    {}
 func (*Notification) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_38b37dde9f731b62, []int{6}
+	return fileDescriptor_common_8de70fa01273e842, []int{6}
 }
 func (m *Notification) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Notification.Unmarshal(m, b)
@@ -462,9 +462,9 @@ func init() {
 	proto.RegisterEnum("flyteidl.admin.Notification_Type", Notification_Type_name, Notification_Type_value)
 }
 
-func init() { proto.RegisterFile("flyteidl/admin/common.proto", fileDescriptor_common_38b37dde9f731b62) }
+func init() { proto.RegisterFile("flyteidl/admin/common.proto", fileDescriptor_common_8de70fa01273e842) }
 
-var fileDescriptor_common_38b37dde9f731b62 = []byte{
+var fileDescriptor_common_8de70fa01273e842 = []byte{
 	// 506 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x53, 0xcb, 0x6e, 0xd3, 0x40,
 	0x14, 0xc5, 0x76, 0x92, 0xd2, 0x5b, 0x62, 0x8d, 0x86, 0x87, 0x2c, 0x90, 0x50, 0xb0, 0x58, 0x44,
