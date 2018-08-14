@@ -6,7 +6,6 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 import "google/protobuf/duration.proto";
 import "flyteidl/core/literals.proto";
 import "flyteidl/admin/common.proto";
-import "flyteidl/admin/error.proto";
 
 message NodeExecutionEventRequest {
     string execution_id = 1;

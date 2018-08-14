@@ -3,18 +3,61 @@ syntax = "proto3";
 package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
-// Encapsulation of fields that identifies a Flyte resource
+// Encapsulation of fields that identifies a Flyte resource.
+// A resource can internally have multiple versions.
 message Identifier {
+    // Name of the project the resource belongs to.
     string project    = 1;
+    // Name of the domain the resource belongs to.
+    // A domain can be considered as a subset within a specific project.
+    // +optional - in certain contexts - like 'List API'
     string domain     = 2;
+    // User provided value for the resource.
+    // The combination of project + domain + name uniquely identifies the resource.
+    // +optional - in certain contexts - like 'List API', 'Launch plans'
     string name       = 3;
 }
 
+// Represents a request structure to list identifiers.
+message IdentifierListRequest {
+    // Name of the project that contains the identifiers.
+    string project    = 1;
+    // Name of the domain the identifiers belongs to within the project.
+    // +optional
+    string domain     = 2;
+}
+
+// Represents a list of Identifiers.
 message IdentifierList {
+    // A list of identifiers.
     repeated Identifier entities = 1;
 }
 
-// Indicates various states of an Execution - both task and workflow
+// Represents a structure to fetch a single resource.
+message ObjectGetRequest {
+    // Indicates the string returned by the server that identifies a version of resource.
+    string urn      = 1;
+}
+
+// Represents a request structure to retrieve a list of resources.
+// Resources include: Task, Workflow, LaunchPlan
+message ResourceListRequest {
+    // id represents the unique identifier of the resource.
+    Identifier id   = 1;
+    // Indicates the number of resources to be returned.
+    // +optional
+    uint32 limit    = 2;
+    // Indicates the offset to fetch the resource from.
+    // Pagination support provided by the endpoint returns an offset for the next page.
+    // +optional
+    uint32 offset   = 3;
+    // Indicates a list of filters passed as string.
+    // More info on constructing filters : <Link>
+    // +optional
+    string filters  = 4;
+}
+
+// Indicates various phases of an Execution for both node and launch plan.
 enum ExecutionPhase {
     UNDEFINED        = 0;
     RUNNING          = 1;
@@ -25,7 +68,16 @@ enum ExecutionPhase {
     QUEUED           = 6;
 }
 
-// Structure of notifications based on execution status.
+// Represents the error message from the execution.
+message Error {
+    // Error code indicates a grouping of a type of error.
+    // More Info: <Link>
+    string code     = 1;
+    // Detailed description of the error - including stack trace.
+    string message  = 2;
+}
+
+// Represents a structure for notifications based on execution status.
 message Notification {
     enum Type {
         UNDEFINED            = 0;
@@ -34,9 +86,6 @@ message Notification {
         SLACK                = 3;
     }
     Type type                = 1;
+    // A list of phases to which users can associate the notifications to.
     repeated ExecutionPhase phases = 2;
-}
-
-message GetObjectRequest {
-    string urn               = 1;
 }

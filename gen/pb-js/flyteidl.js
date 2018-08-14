@@ -9328,6 +9328,133 @@ export const flyteidl = $root.flyteidl = (() => {
             return Identifier;
         })();
 
+        admin.IdentifierListRequest = (function() {
+
+            /**
+             * Properties of an IdentifierListRequest.
+             * @memberof flyteidl.admin
+             * @interface IIdentifierListRequest
+             * @property {string|null} [project] IdentifierListRequest project
+             * @property {string|null} [domain] IdentifierListRequest domain
+             */
+
+            /**
+             * Constructs a new IdentifierListRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents an IdentifierListRequest.
+             * @implements IIdentifierListRequest
+             * @constructor
+             * @param {flyteidl.admin.IIdentifierListRequest=} [properties] Properties to set
+             */
+            function IdentifierListRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * IdentifierListRequest project.
+             * @member {string} project
+             * @memberof flyteidl.admin.IdentifierListRequest
+             * @instance
+             */
+            IdentifierListRequest.prototype.project = "";
+
+            /**
+             * IdentifierListRequest domain.
+             * @member {string} domain
+             * @memberof flyteidl.admin.IdentifierListRequest
+             * @instance
+             */
+            IdentifierListRequest.prototype.domain = "";
+
+            /**
+             * Creates a new IdentifierListRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.IdentifierListRequest
+             * @static
+             * @param {flyteidl.admin.IIdentifierListRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.IdentifierListRequest} IdentifierListRequest instance
+             */
+            IdentifierListRequest.create = function create(properties) {
+                return new IdentifierListRequest(properties);
+            };
+
+            /**
+             * Encodes the specified IdentifierListRequest message. Does not implicitly {@link flyteidl.admin.IdentifierListRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.IdentifierListRequest
+             * @static
+             * @param {flyteidl.admin.IIdentifierListRequest} message IdentifierListRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            IdentifierListRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
+                return writer;
+            };
+
+            /**
+             * Decodes an IdentifierListRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.IdentifierListRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.IdentifierListRequest} IdentifierListRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            IdentifierListRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.IdentifierListRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.project = reader.string();
+                        break;
+                    case 2:
+                        message.domain = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an IdentifierListRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.IdentifierListRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            IdentifierListRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    if (!$util.isString(message.domain))
+                        return "domain: string expected";
+                return null;
+            };
+
+            return IdentifierListRequest;
+        })();
+
         admin.IdentifierList = (function() {
 
             /**
@@ -9448,6 +9575,279 @@ export const flyteidl = $root.flyteidl = (() => {
             return IdentifierList;
         })();
 
+        admin.ObjectGetRequest = (function() {
+
+            /**
+             * Properties of an ObjectGetRequest.
+             * @memberof flyteidl.admin
+             * @interface IObjectGetRequest
+             * @property {string|null} [urn] ObjectGetRequest urn
+             */
+
+            /**
+             * Constructs a new ObjectGetRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents an ObjectGetRequest.
+             * @implements IObjectGetRequest
+             * @constructor
+             * @param {flyteidl.admin.IObjectGetRequest=} [properties] Properties to set
+             */
+            function ObjectGetRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ObjectGetRequest urn.
+             * @member {string} urn
+             * @memberof flyteidl.admin.ObjectGetRequest
+             * @instance
+             */
+            ObjectGetRequest.prototype.urn = "";
+
+            /**
+             * Creates a new ObjectGetRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ObjectGetRequest
+             * @static
+             * @param {flyteidl.admin.IObjectGetRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.ObjectGetRequest} ObjectGetRequest instance
+             */
+            ObjectGetRequest.create = function create(properties) {
+                return new ObjectGetRequest(properties);
+            };
+
+            /**
+             * Encodes the specified ObjectGetRequest message. Does not implicitly {@link flyteidl.admin.ObjectGetRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ObjectGetRequest
+             * @static
+             * @param {flyteidl.admin.IObjectGetRequest} message ObjectGetRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ObjectGetRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.urn != null && message.hasOwnProperty("urn"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.urn);
+                return writer;
+            };
+
+            /**
+             * Decodes an ObjectGetRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ObjectGetRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ObjectGetRequest} ObjectGetRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ObjectGetRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ObjectGetRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.urn = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an ObjectGetRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.ObjectGetRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ObjectGetRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.urn != null && message.hasOwnProperty("urn"))
+                    if (!$util.isString(message.urn))
+                        return "urn: string expected";
+                return null;
+            };
+
+            return ObjectGetRequest;
+        })();
+
+        admin.ResourceListRequest = (function() {
+
+            /**
+             * Properties of a ResourceListRequest.
+             * @memberof flyteidl.admin
+             * @interface IResourceListRequest
+             * @property {flyteidl.admin.IIdentifier|null} [id] ResourceListRequest id
+             * @property {number|null} [limit] ResourceListRequest limit
+             * @property {number|null} [offset] ResourceListRequest offset
+             * @property {string|null} [filters] ResourceListRequest filters
+             */
+
+            /**
+             * Constructs a new ResourceListRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a ResourceListRequest.
+             * @implements IResourceListRequest
+             * @constructor
+             * @param {flyteidl.admin.IResourceListRequest=} [properties] Properties to set
+             */
+            function ResourceListRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ResourceListRequest id.
+             * @member {flyteidl.admin.IIdentifier|null|undefined} id
+             * @memberof flyteidl.admin.ResourceListRequest
+             * @instance
+             */
+            ResourceListRequest.prototype.id = null;
+
+            /**
+             * ResourceListRequest limit.
+             * @member {number} limit
+             * @memberof flyteidl.admin.ResourceListRequest
+             * @instance
+             */
+            ResourceListRequest.prototype.limit = 0;
+
+            /**
+             * ResourceListRequest offset.
+             * @member {number} offset
+             * @memberof flyteidl.admin.ResourceListRequest
+             * @instance
+             */
+            ResourceListRequest.prototype.offset = 0;
+
+            /**
+             * ResourceListRequest filters.
+             * @member {string} filters
+             * @memberof flyteidl.admin.ResourceListRequest
+             * @instance
+             */
+            ResourceListRequest.prototype.filters = "";
+
+            /**
+             * Creates a new ResourceListRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ResourceListRequest
+             * @static
+             * @param {flyteidl.admin.IResourceListRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.ResourceListRequest} ResourceListRequest instance
+             */
+            ResourceListRequest.create = function create(properties) {
+                return new ResourceListRequest(properties);
+            };
+
+            /**
+             * Encodes the specified ResourceListRequest message. Does not implicitly {@link flyteidl.admin.ResourceListRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ResourceListRequest
+             * @static
+             * @param {flyteidl.admin.IResourceListRequest} message ResourceListRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ResourceListRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    $root.flyteidl.admin.Identifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.limit != null && message.hasOwnProperty("limit"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.limit);
+                if (message.offset != null && message.hasOwnProperty("offset"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.offset);
+                if (message.filters != null && message.hasOwnProperty("filters"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.filters);
+                return writer;
+            };
+
+            /**
+             * Decodes a ResourceListRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ResourceListRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ResourceListRequest} ResourceListRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ResourceListRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ResourceListRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = $root.flyteidl.admin.Identifier.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.limit = reader.uint32();
+                        break;
+                    case 3:
+                        message.offset = reader.uint32();
+                        break;
+                    case 4:
+                        message.filters = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ResourceListRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.ResourceListRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ResourceListRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id")) {
+                    let error = $root.flyteidl.admin.Identifier.verify(message.id);
+                    if (error)
+                        return "id." + error;
+                }
+                if (message.limit != null && message.hasOwnProperty("limit"))
+                    if (!$util.isInteger(message.limit))
+                        return "limit: integer expected";
+                if (message.offset != null && message.hasOwnProperty("offset"))
+                    if (!$util.isInteger(message.offset))
+                        return "offset: integer expected";
+                if (message.filters != null && message.hasOwnProperty("filters"))
+                    if (!$util.isString(message.filters))
+                        return "filters: string expected";
+                return null;
+            };
+
+            return ResourceListRequest;
+        })();
+
         /**
          * ExecutionPhase enum.
          * @name flyteidl.admin.ExecutionPhase
@@ -9470,6 +9870,133 @@ export const flyteidl = $root.flyteidl = (() => {
             values[valuesById[5] = "ABORTED"] = 5;
             values[valuesById[6] = "QUEUED"] = 6;
             return values;
+        })();
+
+        admin.Error = (function() {
+
+            /**
+             * Properties of an Error.
+             * @memberof flyteidl.admin
+             * @interface IError
+             * @property {string|null} [code] Error code
+             * @property {string|null} [message] Error message
+             */
+
+            /**
+             * Constructs a new Error.
+             * @memberof flyteidl.admin
+             * @classdesc Represents an Error.
+             * @implements IError
+             * @constructor
+             * @param {flyteidl.admin.IError=} [properties] Properties to set
+             */
+            function Error(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Error code.
+             * @member {string} code
+             * @memberof flyteidl.admin.Error
+             * @instance
+             */
+            Error.prototype.code = "";
+
+            /**
+             * Error message.
+             * @member {string} message
+             * @memberof flyteidl.admin.Error
+             * @instance
+             */
+            Error.prototype.message = "";
+
+            /**
+             * Creates a new Error instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.Error
+             * @static
+             * @param {flyteidl.admin.IError=} [properties] Properties to set
+             * @returns {flyteidl.admin.Error} Error instance
+             */
+            Error.create = function create(properties) {
+                return new Error(properties);
+            };
+
+            /**
+             * Encodes the specified Error message. Does not implicitly {@link flyteidl.admin.Error.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.Error
+             * @static
+             * @param {flyteidl.admin.IError} message Error message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Error.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.code != null && message.hasOwnProperty("code"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.code);
+                if (message.message != null && message.hasOwnProperty("message"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.message);
+                return writer;
+            };
+
+            /**
+             * Decodes an Error message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.Error
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.Error} Error
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Error.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Error();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.code = reader.string();
+                        break;
+                    case 2:
+                        message.message = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an Error message.
+             * @function verify
+             * @memberof flyteidl.admin.Error
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Error.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.code != null && message.hasOwnProperty("code"))
+                    if (!$util.isString(message.code))
+                        return "code: string expected";
+                if (message.message != null && message.hasOwnProperty("message"))
+                    if (!$util.isString(message.message))
+                        return "message: string expected";
+                return null;
+            };
+
+            return Error;
         })();
 
         admin.Notification = (function() {
@@ -9648,268 +10175,6 @@ export const flyteidl = $root.flyteidl = (() => {
             })();
 
             return Notification;
-        })();
-
-        admin.GetObjectRequest = (function() {
-
-            /**
-             * Properties of a GetObjectRequest.
-             * @memberof flyteidl.admin
-             * @interface IGetObjectRequest
-             * @property {string|null} [urn] GetObjectRequest urn
-             */
-
-            /**
-             * Constructs a new GetObjectRequest.
-             * @memberof flyteidl.admin
-             * @classdesc Represents a GetObjectRequest.
-             * @implements IGetObjectRequest
-             * @constructor
-             * @param {flyteidl.admin.IGetObjectRequest=} [properties] Properties to set
-             */
-            function GetObjectRequest(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * GetObjectRequest urn.
-             * @member {string} urn
-             * @memberof flyteidl.admin.GetObjectRequest
-             * @instance
-             */
-            GetObjectRequest.prototype.urn = "";
-
-            /**
-             * Creates a new GetObjectRequest instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.admin.GetObjectRequest
-             * @static
-             * @param {flyteidl.admin.IGetObjectRequest=} [properties] Properties to set
-             * @returns {flyteidl.admin.GetObjectRequest} GetObjectRequest instance
-             */
-            GetObjectRequest.create = function create(properties) {
-                return new GetObjectRequest(properties);
-            };
-
-            /**
-             * Encodes the specified GetObjectRequest message. Does not implicitly {@link flyteidl.admin.GetObjectRequest.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.admin.GetObjectRequest
-             * @static
-             * @param {flyteidl.admin.IGetObjectRequest} message GetObjectRequest message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            GetObjectRequest.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.urn != null && message.hasOwnProperty("urn"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.urn);
-                return writer;
-            };
-
-            /**
-             * Decodes a GetObjectRequest message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.admin.GetObjectRequest
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.GetObjectRequest} GetObjectRequest
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            GetObjectRequest.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.GetObjectRequest();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.urn = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a GetObjectRequest message.
-             * @function verify
-             * @memberof flyteidl.admin.GetObjectRequest
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            GetObjectRequest.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.urn != null && message.hasOwnProperty("urn"))
-                    if (!$util.isString(message.urn))
-                        return "urn: string expected";
-                return null;
-            };
-
-            return GetObjectRequest;
-        })();
-
-        /**
-         * ErrorCode enum.
-         * @name flyteidl.admin.ErrorCode
-         * @enum {string}
-         * @property {number} INTERNAL_ERROR=0 INTERNAL_ERROR value
-         * @property {number} USER_ERROR=1 USER_ERROR value
-         * @property {number} MISSING_PARAMETERS=2 MISSING_PARAMETERS value
-         * @property {number} INVALID_PARAMETERS=3 INVALID_PARAMETERS value
-         */
-        admin.ErrorCode = (function() {
-            const valuesById = {}, values = Object.create(valuesById);
-            values[valuesById[0] = "INTERNAL_ERROR"] = 0;
-            values[valuesById[1] = "USER_ERROR"] = 1;
-            values[valuesById[2] = "MISSING_PARAMETERS"] = 2;
-            values[valuesById[3] = "INVALID_PARAMETERS"] = 3;
-            return values;
-        })();
-
-        admin.Error = (function() {
-
-            /**
-             * Properties of an Error.
-             * @memberof flyteidl.admin
-             * @interface IError
-             * @property {string|null} [message] Error message
-             * @property {flyteidl.admin.ErrorCode|null} [code] Error code
-             */
-
-            /**
-             * Constructs a new Error.
-             * @memberof flyteidl.admin
-             * @classdesc Represents an Error.
-             * @implements IError
-             * @constructor
-             * @param {flyteidl.admin.IError=} [properties] Properties to set
-             */
-            function Error(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Error message.
-             * @member {string} message
-             * @memberof flyteidl.admin.Error
-             * @instance
-             */
-            Error.prototype.message = "";
-
-            /**
-             * Error code.
-             * @member {flyteidl.admin.ErrorCode} code
-             * @memberof flyteidl.admin.Error
-             * @instance
-             */
-            Error.prototype.code = 0;
-
-            /**
-             * Creates a new Error instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.admin.Error
-             * @static
-             * @param {flyteidl.admin.IError=} [properties] Properties to set
-             * @returns {flyteidl.admin.Error} Error instance
-             */
-            Error.create = function create(properties) {
-                return new Error(properties);
-            };
-
-            /**
-             * Encodes the specified Error message. Does not implicitly {@link flyteidl.admin.Error.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.admin.Error
-             * @static
-             * @param {flyteidl.admin.IError} message Error message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Error.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.message != null && message.hasOwnProperty("message"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.message);
-                if (message.code != null && message.hasOwnProperty("code"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.code);
-                return writer;
-            };
-
-            /**
-             * Decodes an Error message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.admin.Error
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.Error} Error
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Error.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Error();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.message = reader.string();
-                        break;
-                    case 2:
-                        message.code = reader.int32();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies an Error message.
-             * @function verify
-             * @memberof flyteidl.admin.Error
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Error.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.message != null && message.hasOwnProperty("message"))
-                    if (!$util.isString(message.message))
-                        return "message: string expected";
-                if (message.code != null && message.hasOwnProperty("code"))
-                    switch (message.code) {
-                    default:
-                        return "code: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                        break;
-                    }
-                return null;
-            };
-
-            return Error;
         })();
 
         admin.ExecutionCreateRequest = (function() {
@@ -13670,201 +13935,6 @@ export const flyteidl = $root.flyteidl = (() => {
             return TaskCreateRequest;
         })();
 
-        admin.TaskListRequest = (function() {
-
-            /**
-             * Properties of a TaskListRequest.
-             * @memberof flyteidl.admin
-             * @interface ITaskListRequest
-             * @property {string|null} [project] TaskListRequest project
-             * @property {string|null} [domain] TaskListRequest domain
-             * @property {string|null} [name] TaskListRequest name
-             * @property {number|null} [limit] TaskListRequest limit
-             * @property {number|null} [offset] TaskListRequest offset
-             * @property {string|null} [filters] TaskListRequest filters
-             */
-
-            /**
-             * Constructs a new TaskListRequest.
-             * @memberof flyteidl.admin
-             * @classdesc Represents a TaskListRequest.
-             * @implements ITaskListRequest
-             * @constructor
-             * @param {flyteidl.admin.ITaskListRequest=} [properties] Properties to set
-             */
-            function TaskListRequest(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * TaskListRequest project.
-             * @member {string} project
-             * @memberof flyteidl.admin.TaskListRequest
-             * @instance
-             */
-            TaskListRequest.prototype.project = "";
-
-            /**
-             * TaskListRequest domain.
-             * @member {string} domain
-             * @memberof flyteidl.admin.TaskListRequest
-             * @instance
-             */
-            TaskListRequest.prototype.domain = "";
-
-            /**
-             * TaskListRequest name.
-             * @member {string} name
-             * @memberof flyteidl.admin.TaskListRequest
-             * @instance
-             */
-            TaskListRequest.prototype.name = "";
-
-            /**
-             * TaskListRequest limit.
-             * @member {number} limit
-             * @memberof flyteidl.admin.TaskListRequest
-             * @instance
-             */
-            TaskListRequest.prototype.limit = 0;
-
-            /**
-             * TaskListRequest offset.
-             * @member {number} offset
-             * @memberof flyteidl.admin.TaskListRequest
-             * @instance
-             */
-            TaskListRequest.prototype.offset = 0;
-
-            /**
-             * TaskListRequest filters.
-             * @member {string} filters
-             * @memberof flyteidl.admin.TaskListRequest
-             * @instance
-             */
-            TaskListRequest.prototype.filters = "";
-
-            /**
-             * Creates a new TaskListRequest instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.admin.TaskListRequest
-             * @static
-             * @param {flyteidl.admin.ITaskListRequest=} [properties] Properties to set
-             * @returns {flyteidl.admin.TaskListRequest} TaskListRequest instance
-             */
-            TaskListRequest.create = function create(properties) {
-                return new TaskListRequest(properties);
-            };
-
-            /**
-             * Encodes the specified TaskListRequest message. Does not implicitly {@link flyteidl.admin.TaskListRequest.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.admin.TaskListRequest
-             * @static
-             * @param {flyteidl.admin.ITaskListRequest} message TaskListRequest message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            TaskListRequest.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.project != null && message.hasOwnProperty("project"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
-                if (message.domain != null && message.hasOwnProperty("domain"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
-                if (message.name != null && message.hasOwnProperty("name"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.name);
-                if (message.limit != null && message.hasOwnProperty("limit"))
-                    writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.limit);
-                if (message.offset != null && message.hasOwnProperty("offset"))
-                    writer.uint32(/* id 5, wireType 0 =*/40).uint32(message.offset);
-                if (message.filters != null && message.hasOwnProperty("filters"))
-                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.filters);
-                return writer;
-            };
-
-            /**
-             * Decodes a TaskListRequest message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.admin.TaskListRequest
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.TaskListRequest} TaskListRequest
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            TaskListRequest.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.TaskListRequest();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.project = reader.string();
-                        break;
-                    case 2:
-                        message.domain = reader.string();
-                        break;
-                    case 3:
-                        message.name = reader.string();
-                        break;
-                    case 4:
-                        message.limit = reader.uint32();
-                        break;
-                    case 5:
-                        message.offset = reader.uint32();
-                        break;
-                    case 6:
-                        message.filters = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a TaskListRequest message.
-             * @function verify
-             * @memberof flyteidl.admin.TaskListRequest
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            TaskListRequest.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.project != null && message.hasOwnProperty("project"))
-                    if (!$util.isString(message.project))
-                        return "project: string expected";
-                if (message.domain != null && message.hasOwnProperty("domain"))
-                    if (!$util.isString(message.domain))
-                        return "domain: string expected";
-                if (message.name != null && message.hasOwnProperty("name"))
-                    if (!$util.isString(message.name))
-                        return "name: string expected";
-                if (message.limit != null && message.hasOwnProperty("limit"))
-                    if (!$util.isInteger(message.limit))
-                        return "limit: integer expected";
-                if (message.offset != null && message.hasOwnProperty("offset"))
-                    if (!$util.isInteger(message.offset))
-                        return "offset: integer expected";
-                if (message.filters != null && message.hasOwnProperty("filters"))
-                    if (!$util.isString(message.filters))
-                        return "filters: string expected";
-                return null;
-            };
-
-            return TaskListRequest;
-        })();
-
         admin.TaskCreateResponse = (function() {
 
             /**
@@ -14649,201 +14719,6 @@ export const flyteidl = $root.flyteidl = (() => {
             return WorkflowCreateRequest;
         })();
 
-        admin.WorkflowListRequest = (function() {
-
-            /**
-             * Properties of a WorkflowListRequest.
-             * @memberof flyteidl.admin
-             * @interface IWorkflowListRequest
-             * @property {string|null} [project] WorkflowListRequest project
-             * @property {string|null} [domain] WorkflowListRequest domain
-             * @property {string|null} [name] WorkflowListRequest name
-             * @property {number|null} [limit] WorkflowListRequest limit
-             * @property {number|null} [offset] WorkflowListRequest offset
-             * @property {string|null} [filters] WorkflowListRequest filters
-             */
-
-            /**
-             * Constructs a new WorkflowListRequest.
-             * @memberof flyteidl.admin
-             * @classdesc Represents a WorkflowListRequest.
-             * @implements IWorkflowListRequest
-             * @constructor
-             * @param {flyteidl.admin.IWorkflowListRequest=} [properties] Properties to set
-             */
-            function WorkflowListRequest(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * WorkflowListRequest project.
-             * @member {string} project
-             * @memberof flyteidl.admin.WorkflowListRequest
-             * @instance
-             */
-            WorkflowListRequest.prototype.project = "";
-
-            /**
-             * WorkflowListRequest domain.
-             * @member {string} domain
-             * @memberof flyteidl.admin.WorkflowListRequest
-             * @instance
-             */
-            WorkflowListRequest.prototype.domain = "";
-
-            /**
-             * WorkflowListRequest name.
-             * @member {string} name
-             * @memberof flyteidl.admin.WorkflowListRequest
-             * @instance
-             */
-            WorkflowListRequest.prototype.name = "";
-
-            /**
-             * WorkflowListRequest limit.
-             * @member {number} limit
-             * @memberof flyteidl.admin.WorkflowListRequest
-             * @instance
-             */
-            WorkflowListRequest.prototype.limit = 0;
-
-            /**
-             * WorkflowListRequest offset.
-             * @member {number} offset
-             * @memberof flyteidl.admin.WorkflowListRequest
-             * @instance
-             */
-            WorkflowListRequest.prototype.offset = 0;
-
-            /**
-             * WorkflowListRequest filters.
-             * @member {string} filters
-             * @memberof flyteidl.admin.WorkflowListRequest
-             * @instance
-             */
-            WorkflowListRequest.prototype.filters = "";
-
-            /**
-             * Creates a new WorkflowListRequest instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.admin.WorkflowListRequest
-             * @static
-             * @param {flyteidl.admin.IWorkflowListRequest=} [properties] Properties to set
-             * @returns {flyteidl.admin.WorkflowListRequest} WorkflowListRequest instance
-             */
-            WorkflowListRequest.create = function create(properties) {
-                return new WorkflowListRequest(properties);
-            };
-
-            /**
-             * Encodes the specified WorkflowListRequest message. Does not implicitly {@link flyteidl.admin.WorkflowListRequest.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.admin.WorkflowListRequest
-             * @static
-             * @param {flyteidl.admin.IWorkflowListRequest} message WorkflowListRequest message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            WorkflowListRequest.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.project != null && message.hasOwnProperty("project"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
-                if (message.domain != null && message.hasOwnProperty("domain"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
-                if (message.name != null && message.hasOwnProperty("name"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.name);
-                if (message.limit != null && message.hasOwnProperty("limit"))
-                    writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.limit);
-                if (message.offset != null && message.hasOwnProperty("offset"))
-                    writer.uint32(/* id 5, wireType 0 =*/40).uint32(message.offset);
-                if (message.filters != null && message.hasOwnProperty("filters"))
-                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.filters);
-                return writer;
-            };
-
-            /**
-             * Decodes a WorkflowListRequest message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.admin.WorkflowListRequest
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.WorkflowListRequest} WorkflowListRequest
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            WorkflowListRequest.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.WorkflowListRequest();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.project = reader.string();
-                        break;
-                    case 2:
-                        message.domain = reader.string();
-                        break;
-                    case 3:
-                        message.name = reader.string();
-                        break;
-                    case 4:
-                        message.limit = reader.uint32();
-                        break;
-                    case 5:
-                        message.offset = reader.uint32();
-                        break;
-                    case 6:
-                        message.filters = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a WorkflowListRequest message.
-             * @function verify
-             * @memberof flyteidl.admin.WorkflowListRequest
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            WorkflowListRequest.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.project != null && message.hasOwnProperty("project"))
-                    if (!$util.isString(message.project))
-                        return "project: string expected";
-                if (message.domain != null && message.hasOwnProperty("domain"))
-                    if (!$util.isString(message.domain))
-                        return "domain: string expected";
-                if (message.name != null && message.hasOwnProperty("name"))
-                    if (!$util.isString(message.name))
-                        return "name: string expected";
-                if (message.limit != null && message.hasOwnProperty("limit"))
-                    if (!$util.isInteger(message.limit))
-                        return "limit: integer expected";
-                if (message.offset != null && message.hasOwnProperty("offset"))
-                    if (!$util.isInteger(message.offset))
-                        return "offset: integer expected";
-                if (message.filters != null && message.hasOwnProperty("filters"))
-                    if (!$util.isString(message.filters))
-                        return "filters: string expected";
-                return null;
-            };
-
-            return WorkflowListRequest;
-        })();
-
         admin.WorkflowCreateResponse = (function() {
 
             /**
@@ -15571,13 +15446,13 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function getTask
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.IGetObjectRequest} request GetObjectRequest message or plain object
+             * @param {flyteidl.admin.IObjectGetRequest} request ObjectGetRequest message or plain object
              * @param {flyteidl.service.AdminService.GetTaskCallback} callback Node-style callback called with the error, if any, and Task
              * @returns {undefined}
              * @variation 1
              */
             Object.defineProperty(AdminService.prototype.getTask = function getTask(request, callback) {
-                return this.rpcCall(getTask, $root.flyteidl.admin.GetObjectRequest, $root.flyteidl.admin.Task, request, callback);
+                return this.rpcCall(getTask, $root.flyteidl.admin.ObjectGetRequest, $root.flyteidl.admin.Task, request, callback);
             }, "name", { value: "GetTask" });
 
             /**
@@ -15585,7 +15460,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function getTask
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.IGetObjectRequest} request GetObjectRequest message or plain object
+             * @param {flyteidl.admin.IObjectGetRequest} request ObjectGetRequest message or plain object
              * @returns {Promise<flyteidl.admin.Task>} Promise
              * @variation 2
              */
@@ -15604,13 +15479,13 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function listTaskIds
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.ITaskListRequest} request TaskListRequest message or plain object
+             * @param {flyteidl.admin.IIdentifierListRequest} request IdentifierListRequest message or plain object
              * @param {flyteidl.service.AdminService.ListTaskIdsCallback} callback Node-style callback called with the error, if any, and IdentifierList
              * @returns {undefined}
              * @variation 1
              */
             Object.defineProperty(AdminService.prototype.listTaskIds = function listTaskIds(request, callback) {
-                return this.rpcCall(listTaskIds, $root.flyteidl.admin.TaskListRequest, $root.flyteidl.admin.IdentifierList, request, callback);
+                return this.rpcCall(listTaskIds, $root.flyteidl.admin.IdentifierListRequest, $root.flyteidl.admin.IdentifierList, request, callback);
             }, "name", { value: "ListTaskIds" });
 
             /**
@@ -15618,7 +15493,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function listTaskIds
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.ITaskListRequest} request TaskListRequest message or plain object
+             * @param {flyteidl.admin.IIdentifierListRequest} request IdentifierListRequest message or plain object
              * @returns {Promise<flyteidl.admin.IdentifierList>} Promise
              * @variation 2
              */
@@ -15637,13 +15512,13 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function listTasks
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.ITaskListRequest} request TaskListRequest message or plain object
+             * @param {flyteidl.admin.IResourceListRequest} request ResourceListRequest message or plain object
              * @param {flyteidl.service.AdminService.ListTasksCallback} callback Node-style callback called with the error, if any, and TaskList
              * @returns {undefined}
              * @variation 1
              */
             Object.defineProperty(AdminService.prototype.listTasks = function listTasks(request, callback) {
-                return this.rpcCall(listTasks, $root.flyteidl.admin.TaskListRequest, $root.flyteidl.admin.TaskList, request, callback);
+                return this.rpcCall(listTasks, $root.flyteidl.admin.ResourceListRequest, $root.flyteidl.admin.TaskList, request, callback);
             }, "name", { value: "ListTasks" });
 
             /**
@@ -15651,7 +15526,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function listTasks
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.ITaskListRequest} request TaskListRequest message or plain object
+             * @param {flyteidl.admin.IResourceListRequest} request ResourceListRequest message or plain object
              * @returns {Promise<flyteidl.admin.TaskList>} Promise
              * @variation 2
              */
@@ -15703,13 +15578,13 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function getWorkflow
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.IGetObjectRequest} request GetObjectRequest message or plain object
+             * @param {flyteidl.admin.IObjectGetRequest} request ObjectGetRequest message or plain object
              * @param {flyteidl.service.AdminService.GetWorkflowCallback} callback Node-style callback called with the error, if any, and Workflow
              * @returns {undefined}
              * @variation 1
              */
             Object.defineProperty(AdminService.prototype.getWorkflow = function getWorkflow(request, callback) {
-                return this.rpcCall(getWorkflow, $root.flyteidl.admin.GetObjectRequest, $root.flyteidl.admin.Workflow, request, callback);
+                return this.rpcCall(getWorkflow, $root.flyteidl.admin.ObjectGetRequest, $root.flyteidl.admin.Workflow, request, callback);
             }, "name", { value: "GetWorkflow" });
 
             /**
@@ -15717,7 +15592,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function getWorkflow
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.IGetObjectRequest} request GetObjectRequest message or plain object
+             * @param {flyteidl.admin.IObjectGetRequest} request ObjectGetRequest message or plain object
              * @returns {Promise<flyteidl.admin.Workflow>} Promise
              * @variation 2
              */
@@ -15736,13 +15611,13 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function listWorkflowIds
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.IWorkflowListRequest} request WorkflowListRequest message or plain object
+             * @param {flyteidl.admin.IIdentifierListRequest} request IdentifierListRequest message or plain object
              * @param {flyteidl.service.AdminService.ListWorkflowIdsCallback} callback Node-style callback called with the error, if any, and IdentifierList
              * @returns {undefined}
              * @variation 1
              */
             Object.defineProperty(AdminService.prototype.listWorkflowIds = function listWorkflowIds(request, callback) {
-                return this.rpcCall(listWorkflowIds, $root.flyteidl.admin.WorkflowListRequest, $root.flyteidl.admin.IdentifierList, request, callback);
+                return this.rpcCall(listWorkflowIds, $root.flyteidl.admin.IdentifierListRequest, $root.flyteidl.admin.IdentifierList, request, callback);
             }, "name", { value: "ListWorkflowIds" });
 
             /**
@@ -15750,7 +15625,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function listWorkflowIds
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.IWorkflowListRequest} request WorkflowListRequest message or plain object
+             * @param {flyteidl.admin.IIdentifierListRequest} request IdentifierListRequest message or plain object
              * @returns {Promise<flyteidl.admin.IdentifierList>} Promise
              * @variation 2
              */
@@ -15769,13 +15644,13 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function listWorkflows
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.IWorkflowListRequest} request WorkflowListRequest message or plain object
+             * @param {flyteidl.admin.IResourceListRequest} request ResourceListRequest message or plain object
              * @param {flyteidl.service.AdminService.ListWorkflowsCallback} callback Node-style callback called with the error, if any, and WorkflowList
              * @returns {undefined}
              * @variation 1
              */
             Object.defineProperty(AdminService.prototype.listWorkflows = function listWorkflows(request, callback) {
-                return this.rpcCall(listWorkflows, $root.flyteidl.admin.WorkflowListRequest, $root.flyteidl.admin.WorkflowList, request, callback);
+                return this.rpcCall(listWorkflows, $root.flyteidl.admin.ResourceListRequest, $root.flyteidl.admin.WorkflowList, request, callback);
             }, "name", { value: "ListWorkflows" });
 
             /**
@@ -15783,7 +15658,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function listWorkflows
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.IWorkflowListRequest} request WorkflowListRequest message or plain object
+             * @param {flyteidl.admin.IResourceListRequest} request ResourceListRequest message or plain object
              * @returns {Promise<flyteidl.admin.WorkflowList>} Promise
              * @variation 2
              */
@@ -15835,13 +15710,13 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function getLaunchPlan
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.IGetObjectRequest} request GetObjectRequest message or plain object
+             * @param {flyteidl.admin.IObjectGetRequest} request ObjectGetRequest message or plain object
              * @param {flyteidl.service.AdminService.GetLaunchPlanCallback} callback Node-style callback called with the error, if any, and LaunchPlan
              * @returns {undefined}
              * @variation 1
              */
             Object.defineProperty(AdminService.prototype.getLaunchPlan = function getLaunchPlan(request, callback) {
-                return this.rpcCall(getLaunchPlan, $root.flyteidl.admin.GetObjectRequest, $root.flyteidl.admin.LaunchPlan, request, callback);
+                return this.rpcCall(getLaunchPlan, $root.flyteidl.admin.ObjectGetRequest, $root.flyteidl.admin.LaunchPlan, request, callback);
             }, "name", { value: "GetLaunchPlan" });
 
             /**
@@ -15849,7 +15724,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @function getLaunchPlan
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.IGetObjectRequest} request GetObjectRequest message or plain object
+             * @param {flyteidl.admin.IObjectGetRequest} request ObjectGetRequest message or plain object
              * @returns {Promise<flyteidl.admin.LaunchPlan>} Promise
              * @variation 2
              */

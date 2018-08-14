@@ -3836,6 +3836,64 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of an IdentifierListRequest. */
+        interface IIdentifierListRequest {
+
+            /** IdentifierListRequest project */
+            project?: (string|null);
+
+            /** IdentifierListRequest domain */
+            domain?: (string|null);
+        }
+
+        /** Represents an IdentifierListRequest. */
+        class IdentifierListRequest implements IIdentifierListRequest {
+
+            /**
+             * Constructs a new IdentifierListRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IIdentifierListRequest);
+
+            /** IdentifierListRequest project. */
+            public project: string;
+
+            /** IdentifierListRequest domain. */
+            public domain: string;
+
+            /**
+             * Creates a new IdentifierListRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns IdentifierListRequest instance
+             */
+            public static create(properties?: flyteidl.admin.IIdentifierListRequest): flyteidl.admin.IdentifierListRequest;
+
+            /**
+             * Encodes the specified IdentifierListRequest message. Does not implicitly {@link flyteidl.admin.IdentifierListRequest.verify|verify} messages.
+             * @param message IdentifierListRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IIdentifierListRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an IdentifierListRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns IdentifierListRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.IdentifierListRequest;
+
+            /**
+             * Verifies an IdentifierListRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of an IdentifierList. */
         interface IIdentifierList {
 
@@ -3888,6 +3946,128 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of an ObjectGetRequest. */
+        interface IObjectGetRequest {
+
+            /** ObjectGetRequest urn */
+            urn?: (string|null);
+        }
+
+        /** Represents an ObjectGetRequest. */
+        class ObjectGetRequest implements IObjectGetRequest {
+
+            /**
+             * Constructs a new ObjectGetRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IObjectGetRequest);
+
+            /** ObjectGetRequest urn. */
+            public urn: string;
+
+            /**
+             * Creates a new ObjectGetRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ObjectGetRequest instance
+             */
+            public static create(properties?: flyteidl.admin.IObjectGetRequest): flyteidl.admin.ObjectGetRequest;
+
+            /**
+             * Encodes the specified ObjectGetRequest message. Does not implicitly {@link flyteidl.admin.ObjectGetRequest.verify|verify} messages.
+             * @param message ObjectGetRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IObjectGetRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ObjectGetRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ObjectGetRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ObjectGetRequest;
+
+            /**
+             * Verifies an ObjectGetRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a ResourceListRequest. */
+        interface IResourceListRequest {
+
+            /** ResourceListRequest id */
+            id?: (flyteidl.admin.IIdentifier|null);
+
+            /** ResourceListRequest limit */
+            limit?: (number|null);
+
+            /** ResourceListRequest offset */
+            offset?: (number|null);
+
+            /** ResourceListRequest filters */
+            filters?: (string|null);
+        }
+
+        /** Represents a ResourceListRequest. */
+        class ResourceListRequest implements IResourceListRequest {
+
+            /**
+             * Constructs a new ResourceListRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IResourceListRequest);
+
+            /** ResourceListRequest id. */
+            public id?: (flyteidl.admin.IIdentifier|null);
+
+            /** ResourceListRequest limit. */
+            public limit: number;
+
+            /** ResourceListRequest offset. */
+            public offset: number;
+
+            /** ResourceListRequest filters. */
+            public filters: string;
+
+            /**
+             * Creates a new ResourceListRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ResourceListRequest instance
+             */
+            public static create(properties?: flyteidl.admin.IResourceListRequest): flyteidl.admin.ResourceListRequest;
+
+            /**
+             * Encodes the specified ResourceListRequest message. Does not implicitly {@link flyteidl.admin.ResourceListRequest.verify|verify} messages.
+             * @param message ResourceListRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IResourceListRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ResourceListRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ResourceListRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ResourceListRequest;
+
+            /**
+             * Verifies a ResourceListRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** ExecutionPhase enum. */
         enum ExecutionPhase {
             UNDEFINED = 0,
@@ -3897,6 +4077,64 @@ export namespace flyteidl {
             TIMED_OUT = 4,
             ABORTED = 5,
             QUEUED = 6
+        }
+
+        /** Properties of an Error. */
+        interface IError {
+
+            /** Error code */
+            code?: (string|null);
+
+            /** Error message */
+            message?: (string|null);
+        }
+
+        /** Represents an Error. */
+        class Error implements IError {
+
+            /**
+             * Constructs a new Error.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IError);
+
+            /** Error code. */
+            public code: string;
+
+            /** Error message. */
+            public message: string;
+
+            /**
+             * Creates a new Error instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Error instance
+             */
+            public static create(properties?: flyteidl.admin.IError): flyteidl.admin.Error;
+
+            /**
+             * Encodes the specified Error message. Does not implicitly {@link flyteidl.admin.Error.verify|verify} messages.
+             * @param message Error message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IError, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an Error message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Error
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Error;
+
+            /**
+             * Verifies an Error message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
         }
 
         /** Properties of a Notification. */
@@ -3966,124 +4204,6 @@ export namespace flyteidl {
                 PAGER_DUTY = 2,
                 SLACK = 3
             }
-        }
-
-        /** Properties of a GetObjectRequest. */
-        interface IGetObjectRequest {
-
-            /** GetObjectRequest urn */
-            urn?: (string|null);
-        }
-
-        /** Represents a GetObjectRequest. */
-        class GetObjectRequest implements IGetObjectRequest {
-
-            /**
-             * Constructs a new GetObjectRequest.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IGetObjectRequest);
-
-            /** GetObjectRequest urn. */
-            public urn: string;
-
-            /**
-             * Creates a new GetObjectRequest instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns GetObjectRequest instance
-             */
-            public static create(properties?: flyteidl.admin.IGetObjectRequest): flyteidl.admin.GetObjectRequest;
-
-            /**
-             * Encodes the specified GetObjectRequest message. Does not implicitly {@link flyteidl.admin.GetObjectRequest.verify|verify} messages.
-             * @param message GetObjectRequest message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IGetObjectRequest, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a GetObjectRequest message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns GetObjectRequest
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.GetObjectRequest;
-
-            /**
-             * Verifies a GetObjectRequest message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** ErrorCode enum. */
-        enum ErrorCode {
-            INTERNAL_ERROR = 0,
-            USER_ERROR = 1,
-            MISSING_PARAMETERS = 2,
-            INVALID_PARAMETERS = 3
-        }
-
-        /** Properties of an Error. */
-        interface IError {
-
-            /** Error message */
-            message?: (string|null);
-
-            /** Error code */
-            code?: (flyteidl.admin.ErrorCode|null);
-        }
-
-        /** Represents an Error. */
-        class Error implements IError {
-
-            /**
-             * Constructs a new Error.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IError);
-
-            /** Error message. */
-            public message: string;
-
-            /** Error code. */
-            public code: flyteidl.admin.ErrorCode;
-
-            /**
-             * Creates a new Error instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns Error instance
-             */
-            public static create(properties?: flyteidl.admin.IError): flyteidl.admin.Error;
-
-            /**
-             * Encodes the specified Error message. Does not implicitly {@link flyteidl.admin.Error.verify|verify} messages.
-             * @param message Error message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IError, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an Error message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns Error
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Error;
-
-            /**
-             * Verifies an Error message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
         }
 
         /** Properties of an ExecutionCreateRequest. */
@@ -5676,88 +5796,6 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a TaskListRequest. */
-        interface ITaskListRequest {
-
-            /** TaskListRequest project */
-            project?: (string|null);
-
-            /** TaskListRequest domain */
-            domain?: (string|null);
-
-            /** TaskListRequest name */
-            name?: (string|null);
-
-            /** TaskListRequest limit */
-            limit?: (number|null);
-
-            /** TaskListRequest offset */
-            offset?: (number|null);
-
-            /** TaskListRequest filters */
-            filters?: (string|null);
-        }
-
-        /** Represents a TaskListRequest. */
-        class TaskListRequest implements ITaskListRequest {
-
-            /**
-             * Constructs a new TaskListRequest.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.ITaskListRequest);
-
-            /** TaskListRequest project. */
-            public project: string;
-
-            /** TaskListRequest domain. */
-            public domain: string;
-
-            /** TaskListRequest name. */
-            public name: string;
-
-            /** TaskListRequest limit. */
-            public limit: number;
-
-            /** TaskListRequest offset. */
-            public offset: number;
-
-            /** TaskListRequest filters. */
-            public filters: string;
-
-            /**
-             * Creates a new TaskListRequest instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns TaskListRequest instance
-             */
-            public static create(properties?: flyteidl.admin.ITaskListRequest): flyteidl.admin.TaskListRequest;
-
-            /**
-             * Encodes the specified TaskListRequest message. Does not implicitly {@link flyteidl.admin.TaskListRequest.verify|verify} messages.
-             * @param message TaskListRequest message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.ITaskListRequest, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a TaskListRequest message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns TaskListRequest
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.TaskListRequest;
-
-            /**
-             * Verifies a TaskListRequest message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of a TaskCreateResponse. */
         interface ITaskCreateResponse {
 
@@ -6106,88 +6144,6 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a WorkflowListRequest. */
-        interface IWorkflowListRequest {
-
-            /** WorkflowListRequest project */
-            project?: (string|null);
-
-            /** WorkflowListRequest domain */
-            domain?: (string|null);
-
-            /** WorkflowListRequest name */
-            name?: (string|null);
-
-            /** WorkflowListRequest limit */
-            limit?: (number|null);
-
-            /** WorkflowListRequest offset */
-            offset?: (number|null);
-
-            /** WorkflowListRequest filters */
-            filters?: (string|null);
-        }
-
-        /** Represents a WorkflowListRequest. */
-        class WorkflowListRequest implements IWorkflowListRequest {
-
-            /**
-             * Constructs a new WorkflowListRequest.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IWorkflowListRequest);
-
-            /** WorkflowListRequest project. */
-            public project: string;
-
-            /** WorkflowListRequest domain. */
-            public domain: string;
-
-            /** WorkflowListRequest name. */
-            public name: string;
-
-            /** WorkflowListRequest limit. */
-            public limit: number;
-
-            /** WorkflowListRequest offset. */
-            public offset: number;
-
-            /** WorkflowListRequest filters. */
-            public filters: string;
-
-            /**
-             * Creates a new WorkflowListRequest instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns WorkflowListRequest instance
-             */
-            public static create(properties?: flyteidl.admin.IWorkflowListRequest): flyteidl.admin.WorkflowListRequest;
-
-            /**
-             * Encodes the specified WorkflowListRequest message. Does not implicitly {@link flyteidl.admin.WorkflowListRequest.verify|verify} messages.
-             * @param message WorkflowListRequest message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IWorkflowListRequest, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a WorkflowListRequest message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns WorkflowListRequest
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.WorkflowListRequest;
-
-            /**
-             * Verifies a WorkflowListRequest message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of a WorkflowCreateResponse. */
         interface IWorkflowCreateResponse {
 
@@ -6512,45 +6468,45 @@ export namespace flyteidl {
 
             /**
              * Calls GetTask.
-             * @param request GetObjectRequest message or plain object
+             * @param request ObjectGetRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and Task
              */
-            public getTask(request: flyteidl.admin.IGetObjectRequest, callback: flyteidl.service.AdminService.GetTaskCallback): void;
+            public getTask(request: flyteidl.admin.IObjectGetRequest, callback: flyteidl.service.AdminService.GetTaskCallback): void;
 
             /**
              * Calls GetTask.
-             * @param request GetObjectRequest message or plain object
+             * @param request ObjectGetRequest message or plain object
              * @returns Promise
              */
-            public getTask(request: flyteidl.admin.IGetObjectRequest): Promise<flyteidl.admin.Task>;
+            public getTask(request: flyteidl.admin.IObjectGetRequest): Promise<flyteidl.admin.Task>;
 
             /**
              * Calls ListTaskIds.
-             * @param request TaskListRequest message or plain object
+             * @param request IdentifierListRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and IdentifierList
              */
-            public listTaskIds(request: flyteidl.admin.ITaskListRequest, callback: flyteidl.service.AdminService.ListTaskIdsCallback): void;
+            public listTaskIds(request: flyteidl.admin.IIdentifierListRequest, callback: flyteidl.service.AdminService.ListTaskIdsCallback): void;
 
             /**
              * Calls ListTaskIds.
-             * @param request TaskListRequest message or plain object
+             * @param request IdentifierListRequest message or plain object
              * @returns Promise
              */
-            public listTaskIds(request: flyteidl.admin.ITaskListRequest): Promise<flyteidl.admin.IdentifierList>;
+            public listTaskIds(request: flyteidl.admin.IIdentifierListRequest): Promise<flyteidl.admin.IdentifierList>;
 
             /**
              * Calls ListTasks.
-             * @param request TaskListRequest message or plain object
+             * @param request ResourceListRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and TaskList
              */
-            public listTasks(request: flyteidl.admin.ITaskListRequest, callback: flyteidl.service.AdminService.ListTasksCallback): void;
+            public listTasks(request: flyteidl.admin.IResourceListRequest, callback: flyteidl.service.AdminService.ListTasksCallback): void;
 
             /**
              * Calls ListTasks.
-             * @param request TaskListRequest message or plain object
+             * @param request ResourceListRequest message or plain object
              * @returns Promise
              */
-            public listTasks(request: flyteidl.admin.ITaskListRequest): Promise<flyteidl.admin.TaskList>;
+            public listTasks(request: flyteidl.admin.IResourceListRequest): Promise<flyteidl.admin.TaskList>;
 
             /**
              * Calls CreateWorkflow.
@@ -6568,45 +6524,45 @@ export namespace flyteidl {
 
             /**
              * Calls GetWorkflow.
-             * @param request GetObjectRequest message or plain object
+             * @param request ObjectGetRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and Workflow
              */
-            public getWorkflow(request: flyteidl.admin.IGetObjectRequest, callback: flyteidl.service.AdminService.GetWorkflowCallback): void;
+            public getWorkflow(request: flyteidl.admin.IObjectGetRequest, callback: flyteidl.service.AdminService.GetWorkflowCallback): void;
 
             /**
              * Calls GetWorkflow.
-             * @param request GetObjectRequest message or plain object
+             * @param request ObjectGetRequest message or plain object
              * @returns Promise
              */
-            public getWorkflow(request: flyteidl.admin.IGetObjectRequest): Promise<flyteidl.admin.Workflow>;
+            public getWorkflow(request: flyteidl.admin.IObjectGetRequest): Promise<flyteidl.admin.Workflow>;
 
             /**
              * Calls ListWorkflowIds.
-             * @param request WorkflowListRequest message or plain object
+             * @param request IdentifierListRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and IdentifierList
              */
-            public listWorkflowIds(request: flyteidl.admin.IWorkflowListRequest, callback: flyteidl.service.AdminService.ListWorkflowIdsCallback): void;
+            public listWorkflowIds(request: flyteidl.admin.IIdentifierListRequest, callback: flyteidl.service.AdminService.ListWorkflowIdsCallback): void;
 
             /**
              * Calls ListWorkflowIds.
-             * @param request WorkflowListRequest message or plain object
+             * @param request IdentifierListRequest message or plain object
              * @returns Promise
              */
-            public listWorkflowIds(request: flyteidl.admin.IWorkflowListRequest): Promise<flyteidl.admin.IdentifierList>;
+            public listWorkflowIds(request: flyteidl.admin.IIdentifierListRequest): Promise<flyteidl.admin.IdentifierList>;
 
             /**
              * Calls ListWorkflows.
-             * @param request WorkflowListRequest message or plain object
+             * @param request ResourceListRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and WorkflowList
              */
-            public listWorkflows(request: flyteidl.admin.IWorkflowListRequest, callback: flyteidl.service.AdminService.ListWorkflowsCallback): void;
+            public listWorkflows(request: flyteidl.admin.IResourceListRequest, callback: flyteidl.service.AdminService.ListWorkflowsCallback): void;
 
             /**
              * Calls ListWorkflows.
-             * @param request WorkflowListRequest message or plain object
+             * @param request ResourceListRequest message or plain object
              * @returns Promise
              */
-            public listWorkflows(request: flyteidl.admin.IWorkflowListRequest): Promise<flyteidl.admin.WorkflowList>;
+            public listWorkflows(request: flyteidl.admin.IResourceListRequest): Promise<flyteidl.admin.WorkflowList>;
 
             /**
              * Calls CreateLaunchPlan.
@@ -6624,17 +6580,17 @@ export namespace flyteidl {
 
             /**
              * Calls GetLaunchPlan.
-             * @param request GetObjectRequest message or plain object
+             * @param request ObjectGetRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and LaunchPlan
              */
-            public getLaunchPlan(request: flyteidl.admin.IGetObjectRequest, callback: flyteidl.service.AdminService.GetLaunchPlanCallback): void;
+            public getLaunchPlan(request: flyteidl.admin.IObjectGetRequest, callback: flyteidl.service.AdminService.GetLaunchPlanCallback): void;
 
             /**
              * Calls GetLaunchPlan.
-             * @param request GetObjectRequest message or plain object
+             * @param request ObjectGetRequest message or plain object
              * @returns Promise
              */
-            public getLaunchPlan(request: flyteidl.admin.IGetObjectRequest): Promise<flyteidl.admin.LaunchPlan>;
+            public getLaunchPlan(request: flyteidl.admin.IObjectGetRequest): Promise<flyteidl.admin.LaunchPlan>;
 
             /**
              * Calls CreateExecution.

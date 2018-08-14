@@ -5,7 +5,6 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "flyteidl/core/literals.proto";
 import "flyteidl/admin/common.proto";
-import "flyteidl/admin/error.proto";
 
 message ExecutionCreateRequest {
     Identifier id       = 1;

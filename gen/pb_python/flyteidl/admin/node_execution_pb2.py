@@ -16,16 +16,15 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
 from flyteidl.core import literals_pb2 as flyteidl_dot_core_dot_literals__pb2
 from flyteidl.admin import common_pb2 as flyteidl_dot_admin_dot_common__pb2
-from flyteidl.admin import error_pb2 as flyteidl_dot_admin_dot_error__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/node_execution.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n#flyteidl/admin/node_execution.proto\x12\x0e\x66lyteidl.admin\x1a\x1egoogle/protobuf/duration.proto\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1a\x66lyteidl/admin/error.proto\"\xa9\x01\n\x19NodeExecutionEventRequest\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\x12\x10\n\x08\x65vent_id\x18\x02 \x01(\t\x12\x33\n\x06result\x18\x03 \x01(\x0b\x32#.flyteidl.admin.NodeExecutionStatus\x12/\n\x04spec\x18\x04 \x01(\x0b\x32!.flyteidl.admin.NodeExecutionSpec\"\x1c\n\x1aNodeExecutionEventResponse\"\x8c\x01\n\rNodeExecution\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\x12\x34\n\x07results\x18\x02 \x03(\x0b\x32#.flyteidl.admin.NodeExecutionStatus\x12/\n\x04spec\x18\x03 \x01(\x0b\x32!.flyteidl.admin.NodeExecutionSpec\"F\n\x11NodeExecutionList\x12\x31\n\nexecutions\x18\x01 \x03(\x0b\x32\x1d.flyteidl.admin.NodeExecution\"\xa7\x02\n\x13NodeExecutionStatus\x12-\n\x05phase\x18\x01 \x01(\x0e\x32\x1e.flyteidl.admin.ExecutionPhase\x12+\n\x08\x64uration\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x15\n\rdiscovery_hit\x18\x03 \x01(\x08\x12\x15\n\rretry_attempt\x18\x04 \x01(\r\x12\x1d\n\x15is_sub_task_available\x18\x05 \x01(\x08\x12\x18\n\x10\x63ustom_task_info\x18\x06 \x01(\x0c\x12\x14\n\noutput_url\x18\x07 \x01(\tH\x00\x12&\n\x05\x65rror\x18\x08 \x01(\x0b\x32\x15.flyteidl.admin.ErrorH\x00\x42\x0f\n\routput_result\"O\n\x11NodeExecutionSpec\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12)\n\x06inputs\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n#flyteidl/admin/node_execution.proto\x12\x0e\x66lyteidl.admin\x1a\x1egoogle/protobuf/duration.proto\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x1b\x66lyteidl/admin/common.proto\"\xa9\x01\n\x19NodeExecutionEventRequest\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\x12\x10\n\x08\x65vent_id\x18\x02 \x01(\t\x12\x33\n\x06result\x18\x03 \x01(\x0b\x32#.flyteidl.admin.NodeExecutionStatus\x12/\n\x04spec\x18\x04 \x01(\x0b\x32!.flyteidl.admin.NodeExecutionSpec\"\x1c\n\x1aNodeExecutionEventResponse\"\x8c\x01\n\rNodeExecution\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\x12\x34\n\x07results\x18\x02 \x03(\x0b\x32#.flyteidl.admin.NodeExecutionStatus\x12/\n\x04spec\x18\x03 \x01(\x0b\x32!.flyteidl.admin.NodeExecutionSpec\"F\n\x11NodeExecutionList\x12\x31\n\nexecutions\x18\x01 \x03(\x0b\x32\x1d.flyteidl.admin.NodeExecution\"\xa7\x02\n\x13NodeExecutionStatus\x12-\n\x05phase\x18\x01 \x01(\x0e\x32\x1e.flyteidl.admin.ExecutionPhase\x12+\n\x08\x64uration\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x15\n\rdiscovery_hit\x18\x03 \x01(\x08\x12\x15\n\rretry_attempt\x18\x04 \x01(\r\x12\x1d\n\x15is_sub_task_available\x18\x05 \x01(\x08\x12\x18\n\x10\x63ustom_task_info\x18\x06 \x01(\x0c\x12\x14\n\noutput_url\x18\x07 \x01(\tH\x00\x12&\n\x05\x65rror\x18\x08 \x01(\x0b\x32\x15.flyteidl.admin.ErrorH\x00\x42\x0f\n\routput_result\"O\n\x11NodeExecutionSpec\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12)\n\x06inputs\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
-  dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_error__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,])
 
 
 
@@ -77,8 +76,8 @@ _NODEEXECUTIONEVENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=175,
-  serialized_end=344,
+  serialized_start=147,
+  serialized_end=316,
 )
 
 
@@ -101,8 +100,8 @@ _NODEEXECUTIONEVENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=346,
-  serialized_end=374,
+  serialized_start=318,
+  serialized_end=346,
 )
 
 
@@ -146,8 +145,8 @@ _NODEEXECUTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=377,
-  serialized_end=517,
+  serialized_start=349,
+  serialized_end=489,
 )
 
 
@@ -177,8 +176,8 @@ _NODEEXECUTIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=519,
-  serialized_end=589,
+  serialized_start=491,
+  serialized_end=561,
 )
 
 
@@ -260,8 +259,8 @@ _NODEEXECUTIONSTATUS = _descriptor.Descriptor(
       name='output_result', full_name='flyteidl.admin.NodeExecutionStatus.output_result',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=592,
-  serialized_end=887,
+  serialized_start=564,
+  serialized_end=859,
 )
 
 
@@ -298,8 +297,8 @@ _NODEEXECUTIONSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=889,
-  serialized_end=968,
+  serialized_start=861,
+  serialized_end=940,
 )
 
 _NODEEXECUTIONEVENTREQUEST.fields_by_name['result'].message_type = _NODEEXECUTIONSTATUS
@@ -309,7 +308,7 @@ _NODEEXECUTION.fields_by_name['spec'].message_type = _NODEEXECUTIONSPEC
 _NODEEXECUTIONLIST.fields_by_name['executions'].message_type = _NODEEXECUTION
 _NODEEXECUTIONSTATUS.fields_by_name['phase'].enum_type = flyteidl_dot_admin_dot_common__pb2._EXECUTIONPHASE
 _NODEEXECUTIONSTATUS.fields_by_name['duration'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
-_NODEEXECUTIONSTATUS.fields_by_name['error'].message_type = flyteidl_dot_admin_dot_error__pb2._ERROR
+_NODEEXECUTIONSTATUS.fields_by_name['error'].message_type = flyteidl_dot_admin_dot_common__pb2._ERROR
 _NODEEXECUTIONSTATUS.oneofs_by_name['output_result'].fields.append(
   _NODEEXECUTIONSTATUS.fields_by_name['output_url'])
 _NODEEXECUTIONSTATUS.fields_by_name['output_url'].containing_oneof = _NODEEXECUTIONSTATUS.oneofs_by_name['output_result']

@@ -81,8 +81,257 @@
         "parameters": [
           {
             "name": "urn",
+            "description": "Indicates the string returned by the server that identifies a version of resource.",
             "in": "path",
             "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/project/{id.project}/domain/{id.domain}/tasks": {
+      "get": {
+        "operationId": "ListTasks",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminTaskList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.\n+optional - in certain contexts - like 'List API'",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Indicates the offset to fetch the resource from.\nPagination support provided by the endpoint returns an offset for the next page.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "filters",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/project/{id.project}/domain/{id.domain}/tasks/{id.name}": {
+      "get": {
+        "operationId": "ListTasks2",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminTaskList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.\n+optional - in certain contexts - like 'List API'",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Indicates the offset to fetch the resource from.\nPagination support provided by the endpoint returns an offset for the next page.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "filters",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/project/{id.project}/domain/{id.domain}/workflows": {
+      "get": {
+        "operationId": "ListWorkflows",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminWorkflowList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.\n+optional - in certain contexts - like 'List API'",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Indicates the offset to fetch the resource from.\nPagination support provided by the endpoint returns an offset for the next page.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "filters",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/project/{id.project}/domain/{id.domain}/workflows/{id.name}": {
+      "get": {
+        "operationId": "ListWorkflows2",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminWorkflowList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.\n+optional - in certain contexts - like 'List API'",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Indicates the offset to fetch the resource from.\nPagination support provided by the endpoint returns an offset for the next page.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "filters",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
+            "in": "query",
+            "required": false,
             "type": "string"
           }
         ],
@@ -105,152 +354,16 @@
         "parameters": [
           {
             "name": "project",
+            "description": "Name of the project that contains the identifiers.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "domain",
+            "description": "Name of the domain the identifiers belongs to within the project.\n+optional",
             "in": "path",
             "required": true,
-            "type": "string"
-          },
-          {
-            "name": "name",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "filters",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/project/{project}/domain/{domain}/tasks": {
-      "get": {
-        "operationId": "ListTasks",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminTaskList"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "project",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "domain",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "name",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "filters",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/project/{project}/domain/{domain}/tasks/{name}": {
-      "get": {
-        "operationId": "ListTasks2",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminTaskList"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "project",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "domain",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "name",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "filters",
-            "in": "query",
-            "required": false,
             "type": "string"
           }
         ],
@@ -273,152 +386,16 @@
         "parameters": [
           {
             "name": "project",
+            "description": "Name of the project that contains the identifiers.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "domain",
+            "description": "Name of the domain the identifiers belongs to within the project.\n+optional",
             "in": "path",
             "required": true,
-            "type": "string"
-          },
-          {
-            "name": "name",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "filters",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/project/{project}/domain/{domain}/workflows": {
-      "get": {
-        "operationId": "ListWorkflows",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminWorkflowList"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "project",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "domain",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "name",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "filters",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/project/{project}/domain/{domain}/workflows/{name}": {
-      "get": {
-        "operationId": "ListWorkflows2",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminWorkflowList"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "project",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "domain",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "name",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "filters",
-            "in": "query",
-            "required": false,
             "type": "string"
           }
         ],
@@ -467,6 +444,7 @@
         "parameters": [
           {
             "name": "urn",
+            "description": "Indicates the string returned by the server that identifies a version of resource.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -517,6 +495,7 @@
         "parameters": [
           {
             "name": "urn",
+            "description": "Indicates the string returned by the server that identifies a version of resource.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -709,7 +688,7 @@
         "QUEUED"
       ],
       "default": "UNDEFINED",
-      "title": "Indicates various states of an Execution - both task and workflow"
+      "description": "Indicates various phases of an Execution for both node and launch plan."
     },
     "adminExecutionSpec": {
       "type": "object",
@@ -739,16 +718,19 @@
       "type": "object",
       "properties": {
         "project": {
-          "type": "string"
+          "type": "string",
+          "description": "Name of the project the resource belongs to."
         },
         "domain": {
-          "type": "string"
+          "type": "string",
+          "title": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.\n+optional - in certain contexts - like 'List API'"
         },
         "name": {
-          "type": "string"
+          "type": "string",
+          "title": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'"
         }
       },
-      "title": "Encapsulation of fields that identifies a Flyte resource"
+      "description": "Encapsulation of fields that identifies a Flyte resource.\nA resource can internally have multiple versions."
     },
     "adminIdentifierList": {
       "type": "object",
@@ -757,9 +739,11 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/adminIdentifier"
-          }
+          },
+          "description": "A list of identifiers."
         }
-      }
+      },
+      "description": "Represents a list of Identifiers."
     },
     "adminLaunchPlan": {
       "type": "object",
@@ -876,10 +860,11 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/adminExecutionPhase"
-          }
+          },
+          "description": "A list of phases to which users can associate the notifications to."
         }
       },
-      "description": "Structure of notifications based on execution status."
+      "description": "Represents a structure for notifications based on execution status."
     },
     "adminNotificationType": {
       "type": "string",
@@ -909,48 +894,61 @@
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/adminIdentifier"
+          "$ref": "#/definitions/adminIdentifier",
+          "description": "id represents the unique identifier of the task."
         },
         "version": {
-          "type": "string"
+          "type": "string",
+          "description": "Indicates a particular of version of the task.\nA task uniquely referenced by id can have multiple versions."
         },
         "urn": {
-          "type": "string"
+          "type": "string",
+          "description": "Represents the string that uniquely identifies a revision of a task.\nIdentifier and version together also uniquely identifies a task revision."
         },
         "closure": {
-          "$ref": "#/definitions/adminTaskClosure"
+          "$ref": "#/definitions/adminTaskClosure",
+          "description": "closure encapsulates all the fields that maps to a compiled version of the task."
         }
-      }
+      },
+      "title": "Represents the task structure stored in the Admin"
     },
     "adminTaskClosure": {
       "type": "object",
       "properties": {
         "compiled_task": {
-          "$ref": "#/definitions/coreCompiledTask"
+          "$ref": "#/definitions/coreCompiledTask",
+          "description": "Represents the compiled representation of the task from the specification provided."
         }
-      }
+      },
+      "description": "Represents an encapsulation of the task compilation."
     },
     "adminTaskCreateRequest": {
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/adminIdentifier"
+          "$ref": "#/definitions/adminIdentifier",
+          "description": "id represents the unique identifier of the task."
         },
         "version": {
-          "type": "string"
+          "type": "string",
+          "description": "Indicates a particular of version of the task.\nA task uniquely referenced by id can have multiple versions."
         },
         "spec": {
-          "$ref": "#/definitions/adminTaskSpec"
+          "$ref": "#/definitions/adminTaskSpec",
+          "description": "Represents the specification for task."
         }
-      }
+      },
+      "description": "Represents a request structure to create a revision of a task."
     },
     "adminTaskCreateResponse": {
       "type": "object",
       "properties": {
         "urn": {
-          "type": "string"
+          "type": "string",
+          "description": "Represents the string that uniquely identifies a revision of a task.\nIdentifier and version together also uniquely identifies a task revision."
         }
-      }
+      },
+      "description": "Represents a response structure if task creation succeeds."
     },
     "adminTaskList": {
       "type": "object",
@@ -959,68 +957,86 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/adminTask"
-          }
+          },
+          "description": "A list of tasks returned based on the request."
         },
         "offset": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "description": "Offset value indicates if more results are available.\nValue of -1, indicates no more page available."
         }
-      }
+      },
+      "description": "Represents a list of tasks returned from the admin."
     },
     "adminTaskSpec": {
       "type": "object",
       "properties": {
         "template": {
-          "$ref": "#/definitions/coreTaskTemplate"
+          "$ref": "#/definitions/coreTaskTemplate",
+          "description": "Template of the task that encapsulates all the metadata of the task."
         }
-      }
+      },
+      "description": "Represents a structure that encapsulates the specification of the task."
     },
     "adminWorkflow": {
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/adminIdentifier"
+          "$ref": "#/definitions/adminIdentifier",
+          "description": "id represents the unique identifier of the workflow."
         },
         "version": {
-          "type": "string"
+          "type": "string",
+          "description": "Indicates a particular of version of the workflow.\nA workflow uniquely referenced by id can have multiple versions."
         },
         "urn": {
-          "type": "string"
+          "type": "string",
+          "description": "Represents the string that uniquely identifies a revision of a workflow.\nIdentifier and version together also uniquely identifies a workflow revision."
         },
         "closure": {
-          "$ref": "#/definitions/adminWorkflowClosure"
+          "$ref": "#/definitions/adminWorkflowClosure",
+          "description": "closure encapsulates all the fields that maps to a compiled version of the workflow."
         }
-      }
+      },
+      "title": "Represents the workflow structure stored in the Admin"
     },
     "adminWorkflowClosure": {
       "type": "object",
       "properties": {
         "compiled_workflow": {
-          "$ref": "#/definitions/coreCompiledWorkflowClosure"
+          "$ref": "#/definitions/coreCompiledWorkflowClosure",
+          "description": "Represents the compiled representation of the workflow from the specification provided."
         }
-      }
+      },
+      "description": "Represents an encapsulation of the workflow compilation."
     },
     "adminWorkflowCreateRequest": {
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/adminIdentifier"
+          "$ref": "#/definitions/adminIdentifier",
+          "description": "id represents the unique identifier of the workflow."
         },
         "version": {
-          "type": "string"
+          "type": "string",
+          "description": "Indicates a particular of version of the workflow.\nA workflow uniquely referenced by id can have multiple versions."
         },
         "spec": {
-          "$ref": "#/definitions/adminWorkflowSpec"
+          "$ref": "#/definitions/adminWorkflowSpec",
+          "description": "Represents the specification for workflow."
         }
-      }
+      },
+      "description": "Represents a request structure to create a revision of a workflow."
     },
     "adminWorkflowCreateResponse": {
       "type": "object",
       "properties": {
         "urn": {
-          "type": "string"
+          "type": "string",
+          "description": "Represents the string that uniquely identifies a revision of a workflow.\nIdentifier and version together also uniquely identifies a workflow revision."
         }
-      }
+      },
+      "description": "Represents a response structure if workflow creation succeeds."
     },
     "adminWorkflowList": {
       "type": "object",
@@ -1029,21 +1045,26 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/adminWorkflow"
-          }
+          },
+          "description": "A list of workflows returned based on the request."
         },
         "offset": {
           "type": "integer",
-          "format": "int64"
+          "format": "int64",
+          "description": "Offset value indicates if more results are available.\nValue of -1 indicates no more page available."
         }
-      }
+      },
+      "description": "Represents a list of workflows returned from the admin."
     },
     "adminWorkflowSpec": {
       "type": "object",
       "properties": {
         "template": {
-          "$ref": "#/definitions/coreWorkflowTemplate"
+          "$ref": "#/definitions/coreWorkflowTemplate",
+          "description": "Template of the task that encapsulates all the metadata of the workflow."
         }
-      }
+      },
+      "description": "Represents a structure that encapsulates the specification of the workflow."
     },
     "coreAlias": {
       "type": "object",

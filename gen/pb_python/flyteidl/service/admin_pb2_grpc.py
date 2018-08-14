@@ -25,17 +25,17 @@ class AdminServiceStub(object):
         )
     self.GetTask = channel.unary_unary(
         '/flyteidl.service.AdminService/GetTask',
-        request_serializer=flyteidl_dot_admin_dot_common__pb2.GetObjectRequest.SerializeToString,
+        request_serializer=flyteidl_dot_admin_dot_common__pb2.ObjectGetRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_task__pb2.Task.FromString,
         )
     self.ListTaskIds = channel.unary_unary(
         '/flyteidl.service.AdminService/ListTaskIds',
-        request_serializer=flyteidl_dot_admin_dot_task__pb2.TaskListRequest.SerializeToString,
+        request_serializer=flyteidl_dot_admin_dot_common__pb2.IdentifierListRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_common__pb2.IdentifierList.FromString,
         )
     self.ListTasks = channel.unary_unary(
         '/flyteidl.service.AdminService/ListTasks',
-        request_serializer=flyteidl_dot_admin_dot_task__pb2.TaskListRequest.SerializeToString,
+        request_serializer=flyteidl_dot_admin_dot_common__pb2.ResourceListRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_task__pb2.TaskList.FromString,
         )
     self.CreateWorkflow = channel.unary_unary(
@@ -45,17 +45,17 @@ class AdminServiceStub(object):
         )
     self.GetWorkflow = channel.unary_unary(
         '/flyteidl.service.AdminService/GetWorkflow',
-        request_serializer=flyteidl_dot_admin_dot_common__pb2.GetObjectRequest.SerializeToString,
+        request_serializer=flyteidl_dot_admin_dot_common__pb2.ObjectGetRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_workflow__pb2.Workflow.FromString,
         )
     self.ListWorkflowIds = channel.unary_unary(
         '/flyteidl.service.AdminService/ListWorkflowIds',
-        request_serializer=flyteidl_dot_admin_dot_workflow__pb2.WorkflowListRequest.SerializeToString,
+        request_serializer=flyteidl_dot_admin_dot_common__pb2.IdentifierListRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_common__pb2.IdentifierList.FromString,
         )
     self.ListWorkflows = channel.unary_unary(
         '/flyteidl.service.AdminService/ListWorkflows',
-        request_serializer=flyteidl_dot_admin_dot_workflow__pb2.WorkflowListRequest.SerializeToString,
+        request_serializer=flyteidl_dot_admin_dot_common__pb2.ResourceListRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_workflow__pb2.WorkflowList.FromString,
         )
     self.CreateLaunchPlan = channel.unary_unary(
@@ -65,7 +65,7 @@ class AdminServiceStub(object):
         )
     self.GetLaunchPlan = channel.unary_unary(
         '/flyteidl.service.AdminService/GetLaunchPlan',
-        request_serializer=flyteidl_dot_admin_dot_common__pb2.GetObjectRequest.SerializeToString,
+        request_serializer=flyteidl_dot_admin_dot_common__pb2.ObjectGetRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_launch__plan__pb2.LaunchPlan.FromString,
         )
     self.CreateExecution = channel.unary_unary(
@@ -166,17 +166,17 @@ def add_AdminServiceServicer_to_server(servicer, server):
       ),
       'GetTask': grpc.unary_unary_rpc_method_handler(
           servicer.GetTask,
-          request_deserializer=flyteidl_dot_admin_dot_common__pb2.GetObjectRequest.FromString,
+          request_deserializer=flyteidl_dot_admin_dot_common__pb2.ObjectGetRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_task__pb2.Task.SerializeToString,
       ),
       'ListTaskIds': grpc.unary_unary_rpc_method_handler(
           servicer.ListTaskIds,
-          request_deserializer=flyteidl_dot_admin_dot_task__pb2.TaskListRequest.FromString,
+          request_deserializer=flyteidl_dot_admin_dot_common__pb2.IdentifierListRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_common__pb2.IdentifierList.SerializeToString,
       ),
       'ListTasks': grpc.unary_unary_rpc_method_handler(
           servicer.ListTasks,
-          request_deserializer=flyteidl_dot_admin_dot_task__pb2.TaskListRequest.FromString,
+          request_deserializer=flyteidl_dot_admin_dot_common__pb2.ResourceListRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_task__pb2.TaskList.SerializeToString,
       ),
       'CreateWorkflow': grpc.unary_unary_rpc_method_handler(
@@ -186,17 +186,17 @@ def add_AdminServiceServicer_to_server(servicer, server):
       ),
       'GetWorkflow': grpc.unary_unary_rpc_method_handler(
           servicer.GetWorkflow,
-          request_deserializer=flyteidl_dot_admin_dot_common__pb2.GetObjectRequest.FromString,
+          request_deserializer=flyteidl_dot_admin_dot_common__pb2.ObjectGetRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_workflow__pb2.Workflow.SerializeToString,
       ),
       'ListWorkflowIds': grpc.unary_unary_rpc_method_handler(
           servicer.ListWorkflowIds,
-          request_deserializer=flyteidl_dot_admin_dot_workflow__pb2.WorkflowListRequest.FromString,
+          request_deserializer=flyteidl_dot_admin_dot_common__pb2.IdentifierListRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_common__pb2.IdentifierList.SerializeToString,
       ),
       'ListWorkflows': grpc.unary_unary_rpc_method_handler(
           servicer.ListWorkflows,
-          request_deserializer=flyteidl_dot_admin_dot_workflow__pb2.WorkflowListRequest.FromString,
+          request_deserializer=flyteidl_dot_admin_dot_common__pb2.ResourceListRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_workflow__pb2.WorkflowList.SerializeToString,
       ),
       'CreateLaunchPlan': grpc.unary_unary_rpc_method_handler(
@@ -206,7 +206,7 @@ def add_AdminServiceServicer_to_server(servicer, server):
       ),
       'GetLaunchPlan': grpc.unary_unary_rpc_method_handler(
           servicer.GetLaunchPlan,
-          request_deserializer=flyteidl_dot_admin_dot_common__pb2.GetObjectRequest.FromString,
+          request_deserializer=flyteidl_dot_admin_dot_common__pb2.ObjectGetRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_launch__plan__pb2.LaunchPlan.SerializeToString,
       ),
       'CreateExecution': grpc.unary_unary_rpc_method_handler(

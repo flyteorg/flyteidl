@@ -18,23 +18,23 @@ service AdminService {
     };
   }
 
-  rpc GetTask (flyteidl.admin.GetObjectRequest) returns (flyteidl.admin.Task) {
+  rpc GetTask (flyteidl.admin.ObjectGetRequest) returns (flyteidl.admin.Task) {
     option (google.api.http) = {
       get: "/api/v1/tasks/{urn}"
     };
   }
 
-  rpc ListTaskIds (flyteidl.admin.TaskListRequest) returns (flyteidl.admin.IdentifierList) {
+  rpc ListTaskIds (flyteidl.admin.IdentifierListRequest) returns (flyteidl.admin.IdentifierList) {
     option (google.api.http) = {
       get: "/api/v1/project/{project}/domain/{domain}/task_ids"
     };
   }
 
-  rpc ListTasks (flyteidl.admin.TaskListRequest) returns (flyteidl.admin.TaskList) {
+  rpc ListTasks (flyteidl.admin.ResourceListRequest) returns (flyteidl.admin.TaskList) {
     option (google.api.http) = {
-      get: "/api/v1/project/{project}/domain/{domain}/tasks"
+      get: "/api/v1/project/{id.project}/domain/{id.domain}/tasks"
       additional_bindings {
-        get: "/api/v1/project/{project}/domain/{domain}/tasks/{name}"
+        get: "/api/v1/project/{id.project}/domain/{id.domain}/tasks/{id.name}"
       }
     };
   }
@@ -46,23 +46,23 @@ service AdminService {
     };
   }
 
-  rpc GetWorkflow (flyteidl.admin.GetObjectRequest) returns (flyteidl.admin.Workflow) {
+  rpc GetWorkflow (flyteidl.admin.ObjectGetRequest) returns (flyteidl.admin.Workflow) {
     option (google.api.http) = {
       get: "/api/v1/workflows/{urn}"
     };
   }
 
-  rpc ListWorkflowIds (flyteidl.admin.WorkflowListRequest) returns (flyteidl.admin.IdentifierList) {
+  rpc ListWorkflowIds (flyteidl.admin.IdentifierListRequest) returns (flyteidl.admin.IdentifierList) {
     option (google.api.http) = {
       get: "/api/v1/project/{project}/domain/{domain}/workflow_ids"
     };
   }
-  
-  rpc ListWorkflows (flyteidl.admin.WorkflowListRequest) returns (flyteidl.admin.WorkflowList) {
+
+  rpc ListWorkflows (flyteidl.admin.ResourceListRequest) returns (flyteidl.admin.WorkflowList) {
     option (google.api.http) = {
-      get: "/api/v1/project/{project}/domain/{domain}/workflows"
+      get: "/api/v1/project/{id.project}/domain/{id.domain}/workflows"
       additional_bindings {
-        get: "/api/v1/project/{project}/domain/{domain}/workflows/{name}"
+        get: "/api/v1/project/{id.project}/domain/{id.domain}/workflows/{id.name}"
       }
     };
   }
@@ -74,7 +74,7 @@ service AdminService {
     };
   }
 
-  rpc GetLaunchPlan (flyteidl.admin.GetObjectRequest) returns (flyteidl.admin.LaunchPlan) {
+  rpc GetLaunchPlan (flyteidl.admin.ObjectGetRequest) returns (flyteidl.admin.LaunchPlan) {
     option (google.api.http) = {
       get: "/api/v1/launch_plans/{urn}"
     };

@@ -7,42 +7,55 @@ import "flyteidl/core/workflow.proto";
 import "flyteidl/core/compiler.proto";
 import "flyteidl/admin/common.proto";
 
+// Represents a request structure to create a revision of a workflow.
 message WorkflowCreateRequest {
+    // id represents the unique identifier of the workflow.
     Identifier id     = 1;
+    // Indicates a particular of version of the workflow.
+    // A workflow uniquely referenced by id can have multiple versions.
     string version    = 2;
+    // Represents the specification for workflow.
     WorkflowSpec spec = 3;
 }
 
-message WorkflowListRequest {
-    string project	= 1;
-    string domain	= 2;
-    string name		= 3;
-    uint32 limit	= 4;
-    uint32 offset	= 5;
-    string filters	= 6;    
-}
-
+// Represents a response structure if workflow creation succeeds.
 message WorkflowCreateResponse {
+    // Represents the string that uniquely identifies a revision of a workflow.
+    // Identifier and version together also uniquely identifies a workflow revision.
     string urn        = 1;
 }
 
+// Represents the workflow structure stored in the Admin
 message Workflow {
-    Identifier id     = 1;
-    string version    = 2;
-    string urn        = 3;
-
+    // id represents the unique identifier of the workflow.
+    Identifier id       = 1;
+    // Indicates a particular of version of the workflow.
+    // A workflow uniquely referenced by id can have multiple versions.
+    string version      = 2;
+    // Represents the string that uniquely identifies a revision of a workflow.
+    // Identifier and version together also uniquely identifies a workflow revision.
+    string urn          = 3;
+    // closure encapsulates all the fields that maps to a compiled version of the workflow.
     WorkflowClosure closure = 4;
 }
 
+// Represents a list of workflows returned from the admin.
 message WorkflowList {
+    // A list of workflows returned based on the request.
     repeated Workflow workflows = 1;
+    // Offset value indicates if more results are available.
+    // Value of -1 indicates no more page available.
     uint32 offset	        = 2;
 }
 
+// Represents a structure that encapsulates the specification of the workflow.
 message WorkflowSpec {
+    // Template of the task that encapsulates all the metadata of the workflow.
     core.WorkflowTemplate template = 1;
 }
 
+// Represents an encapsulation of the workflow compilation.
 message WorkflowClosure {
+    // Represents the compiled representation of the workflow from the specification provided.
     core.CompiledWorkflowClosure compiled_workflow = 1;
 }

@@ -7,42 +7,55 @@ import "flyteidl/core/tasks.proto";
 import "flyteidl/core/compiler.proto";
 import "flyteidl/admin/common.proto";
 
+// Represents a request structure to create a revision of a task.
 message TaskCreateRequest {
+    // id represents the unique identifier of the task.
     Identifier id           = 1;
+    // Indicates a particular of version of the task.
+    // A task uniquely referenced by id can have multiple versions.
     string version          = 2;
+    // Represents the specification for task.
     TaskSpec spec           = 3;
 }
 
-message TaskListRequest {
-    string project	= 1;
-    string domain	= 2;
-    string name		= 3;
-    uint32 limit	= 4;
-    uint32 offset	= 5;
-    string filters	= 6;    
-}
-
+// Represents a response structure if task creation succeeds.
 message TaskCreateResponse {
+    // Represents the string that uniquely identifies a revision of a task.
+    // Identifier and version together also uniquely identifies a task revision.
     string urn        = 1;
 }
 
+// Represents the task structure stored in the Admin
 message Task {
-    Identifier id     = 1;
-    string version    = 2;
-    string urn        = 3;
-
-    TaskClosure closure = 4;   
+    // id represents the unique identifier of the task.
+    Identifier id       = 1;
+    // Indicates a particular of version of the task.
+    // A task uniquely referenced by id can have multiple versions.
+    string version      = 2;
+    // Represents the string that uniquely identifies a revision of a task.
+    // Identifier and version together also uniquely identifies a task revision.
+    string urn          = 3;
+    // closure encapsulates all the fields that maps to a compiled version of the task.
+    TaskClosure closure = 4;
 }
 
+// Represents a list of tasks returned from the admin.
 message TaskList {
+    // A list of tasks returned based on the request.
     repeated Task tasks = 1;
+    // Offset value indicates if more results are available.
+    // Value of -1, indicates no more page available.
     uint32 offset	= 2;
 }
 
+// Represents a structure that encapsulates the specification of the task.
 message TaskSpec {
+    // Template of the task that encapsulates all the metadata of the task.
     core.TaskTemplate template = 1;
 }
 
+// Represents an encapsulation of the task compilation.
 message TaskClosure {
+    // Represents the compiled representation of the task from the specification provided.
     core.CompiledTask compiled_task = 1;
 }
