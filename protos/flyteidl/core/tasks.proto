@@ -110,6 +110,13 @@ message TaskTemplate {
 
 // ----------------- First class Plugins
 
+// Defines port properties for a container.
+message ContainerPort {
+    // Number of port to expose on the pod's IP address.
+    // This must be a valid port number, 0 < x < 65536.
+    uint32 container_port = 1;
+}
+
 message Container {
     // Container image url. Eg: docker/redis:latest
     string image = 1;
@@ -131,4 +138,8 @@ message Container {
     // Allows extra configs to be available for the container.
     // TODO: elaborate on how configs will become available.
     repeated KeyValuePair config = 6;
+
+    // Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
+    // not supported on AWS Batch)
+    repeated ContainerPort ports = 7;
 }

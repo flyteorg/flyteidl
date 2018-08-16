@@ -7826,6 +7826,116 @@ export const flyteidl = $root.flyteidl = (() => {
             return TaskTemplate;
         })();
 
+        core.ContainerPort = (function() {
+
+            /**
+             * Properties of a ContainerPort.
+             * @memberof flyteidl.core
+             * @interface IContainerPort
+             * @property {number|null} [containerPort] ContainerPort containerPort
+             */
+
+            /**
+             * Constructs a new ContainerPort.
+             * @memberof flyteidl.core
+             * @classdesc Represents a ContainerPort.
+             * @implements IContainerPort
+             * @constructor
+             * @param {flyteidl.core.IContainerPort=} [properties] Properties to set
+             */
+            function ContainerPort(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ContainerPort containerPort.
+             * @member {number} containerPort
+             * @memberof flyteidl.core.ContainerPort
+             * @instance
+             */
+            ContainerPort.prototype.containerPort = 0;
+
+            /**
+             * Creates a new ContainerPort instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.ContainerPort
+             * @static
+             * @param {flyteidl.core.IContainerPort=} [properties] Properties to set
+             * @returns {flyteidl.core.ContainerPort} ContainerPort instance
+             */
+            ContainerPort.create = function create(properties) {
+                return new ContainerPort(properties);
+            };
+
+            /**
+             * Encodes the specified ContainerPort message. Does not implicitly {@link flyteidl.core.ContainerPort.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.ContainerPort
+             * @static
+             * @param {flyteidl.core.IContainerPort} message ContainerPort message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ContainerPort.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.containerPort != null && message.hasOwnProperty("containerPort"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.containerPort);
+                return writer;
+            };
+
+            /**
+             * Decodes a ContainerPort message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.ContainerPort
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.ContainerPort} ContainerPort
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ContainerPort.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ContainerPort();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.containerPort = reader.uint32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ContainerPort message.
+             * @function verify
+             * @memberof flyteidl.core.ContainerPort
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ContainerPort.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.containerPort != null && message.hasOwnProperty("containerPort"))
+                    if (!$util.isInteger(message.containerPort))
+                        return "containerPort: integer expected";
+                return null;
+            };
+
+            return ContainerPort;
+        })();
+
         core.Container = (function() {
 
             /**
@@ -7838,6 +7948,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.IResources|null} [resources] Container resources
              * @property {Array.<flyteidl.core.IKeyValuePair>|null} [env] Container env
              * @property {Array.<flyteidl.core.IKeyValuePair>|null} [config] Container config
+             * @property {Array.<flyteidl.core.IContainerPort>|null} [ports] Container ports
              */
 
             /**
@@ -7853,6 +7964,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 this.args = [];
                 this.env = [];
                 this.config = [];
+                this.ports = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -7908,6 +8020,14 @@ export const flyteidl = $root.flyteidl = (() => {
             Container.prototype.config = $util.emptyArray;
 
             /**
+             * Container ports.
+             * @member {Array.<flyteidl.core.IContainerPort>} ports
+             * @memberof flyteidl.core.Container
+             * @instance
+             */
+            Container.prototype.ports = $util.emptyArray;
+
+            /**
              * Creates a new Container instance using the specified properties.
              * @function create
              * @memberof flyteidl.core.Container
@@ -7947,6 +8067,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.config != null && message.config.length)
                     for (let i = 0; i < message.config.length; ++i)
                         $root.flyteidl.core.KeyValuePair.encode(message.config[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                if (message.ports != null && message.ports.length)
+                    for (let i = 0; i < message.ports.length; ++i)
+                        $root.flyteidl.core.ContainerPort.encode(message.ports[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 return writer;
             };
 
@@ -7993,6 +8116,11 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!(message.config && message.config.length))
                             message.config = [];
                         message.config.push($root.flyteidl.core.KeyValuePair.decode(reader, reader.uint32()));
+                        break;
+                    case 7:
+                        if (!(message.ports && message.ports.length))
+                            message.ports = [];
+                        message.ports.push($root.flyteidl.core.ContainerPort.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -8053,10 +8181,294 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "config." + error;
                     }
                 }
+                if (message.ports != null && message.hasOwnProperty("ports")) {
+                    if (!Array.isArray(message.ports))
+                        return "ports: array expected";
+                    for (let i = 0; i < message.ports.length; ++i) {
+                        let error = $root.flyteidl.core.ContainerPort.verify(message.ports[i]);
+                        if (error)
+                            return "ports." + error;
+                    }
+                }
                 return null;
             };
 
             return Container;
+        })();
+
+        core.ContainerError = (function() {
+
+            /**
+             * Properties of a ContainerError.
+             * @memberof flyteidl.core
+             * @interface IContainerError
+             * @property {string|null} [errorCode] ContainerError errorCode
+             * @property {string|null} [errorMessage] ContainerError errorMessage
+             * @property {flyteidl.core.ContainerError.ErrorType|null} [errorType] ContainerError errorType
+             */
+
+            /**
+             * Constructs a new ContainerError.
+             * @memberof flyteidl.core
+             * @classdesc Represents a ContainerError.
+             * @implements IContainerError
+             * @constructor
+             * @param {flyteidl.core.IContainerError=} [properties] Properties to set
+             */
+            function ContainerError(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ContainerError errorCode.
+             * @member {string} errorCode
+             * @memberof flyteidl.core.ContainerError
+             * @instance
+             */
+            ContainerError.prototype.errorCode = "";
+
+            /**
+             * ContainerError errorMessage.
+             * @member {string} errorMessage
+             * @memberof flyteidl.core.ContainerError
+             * @instance
+             */
+            ContainerError.prototype.errorMessage = "";
+
+            /**
+             * ContainerError errorType.
+             * @member {flyteidl.core.ContainerError.ErrorType} errorType
+             * @memberof flyteidl.core.ContainerError
+             * @instance
+             */
+            ContainerError.prototype.errorType = 0;
+
+            /**
+             * Creates a new ContainerError instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.ContainerError
+             * @static
+             * @param {flyteidl.core.IContainerError=} [properties] Properties to set
+             * @returns {flyteidl.core.ContainerError} ContainerError instance
+             */
+            ContainerError.create = function create(properties) {
+                return new ContainerError(properties);
+            };
+
+            /**
+             * Encodes the specified ContainerError message. Does not implicitly {@link flyteidl.core.ContainerError.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.ContainerError
+             * @static
+             * @param {flyteidl.core.IContainerError} message ContainerError message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ContainerError.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.errorCode != null && message.hasOwnProperty("errorCode"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.errorCode);
+                if (message.errorMessage != null && message.hasOwnProperty("errorMessage"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.errorMessage);
+                if (message.errorType != null && message.hasOwnProperty("errorType"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.errorType);
+                return writer;
+            };
+
+            /**
+             * Decodes a ContainerError message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.ContainerError
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.ContainerError} ContainerError
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ContainerError.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ContainerError();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.errorCode = reader.string();
+                        break;
+                    case 2:
+                        message.errorMessage = reader.string();
+                        break;
+                    case 3:
+                        message.errorType = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ContainerError message.
+             * @function verify
+             * @memberof flyteidl.core.ContainerError
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ContainerError.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.errorCode != null && message.hasOwnProperty("errorCode"))
+                    if (!$util.isString(message.errorCode))
+                        return "errorCode: string expected";
+                if (message.errorMessage != null && message.hasOwnProperty("errorMessage"))
+                    if (!$util.isString(message.errorMessage))
+                        return "errorMessage: string expected";
+                if (message.errorType != null && message.hasOwnProperty("errorType"))
+                    switch (message.errorType) {
+                    default:
+                        return "errorType: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
+                return null;
+            };
+
+            /**
+             * ErrorType enum.
+             * @name flyteidl.core.ContainerError.ErrorType
+             * @enum {string}
+             * @property {number} NON_RECOVERABLE=0 NON_RECOVERABLE value
+             * @property {number} RECOVERABLE=1 RECOVERABLE value
+             */
+            ContainerError.ErrorType = (function() {
+                const valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "NON_RECOVERABLE"] = 0;
+                values[valuesById[1] = "RECOVERABLE"] = 1;
+                return values;
+            })();
+
+            return ContainerError;
+        })();
+
+        core.ErrorDocument = (function() {
+
+            /**
+             * Properties of an ErrorDocument.
+             * @memberof flyteidl.core
+             * @interface IErrorDocument
+             * @property {flyteidl.core.IContainerError|null} [error] ErrorDocument error
+             */
+
+            /**
+             * Constructs a new ErrorDocument.
+             * @memberof flyteidl.core
+             * @classdesc Represents an ErrorDocument.
+             * @implements IErrorDocument
+             * @constructor
+             * @param {flyteidl.core.IErrorDocument=} [properties] Properties to set
+             */
+            function ErrorDocument(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ErrorDocument error.
+             * @member {flyteidl.core.IContainerError|null|undefined} error
+             * @memberof flyteidl.core.ErrorDocument
+             * @instance
+             */
+            ErrorDocument.prototype.error = null;
+
+            /**
+             * Creates a new ErrorDocument instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.ErrorDocument
+             * @static
+             * @param {flyteidl.core.IErrorDocument=} [properties] Properties to set
+             * @returns {flyteidl.core.ErrorDocument} ErrorDocument instance
+             */
+            ErrorDocument.create = function create(properties) {
+                return new ErrorDocument(properties);
+            };
+
+            /**
+             * Encodes the specified ErrorDocument message. Does not implicitly {@link flyteidl.core.ErrorDocument.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.ErrorDocument
+             * @static
+             * @param {flyteidl.core.IErrorDocument} message ErrorDocument message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ErrorDocument.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.error != null && message.hasOwnProperty("error"))
+                    $root.flyteidl.core.ContainerError.encode(message.error, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes an ErrorDocument message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.ErrorDocument
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.ErrorDocument} ErrorDocument
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ErrorDocument.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ErrorDocument();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.error = $root.flyteidl.core.ContainerError.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an ErrorDocument message.
+             * @function verify
+             * @memberof flyteidl.core.ErrorDocument
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ErrorDocument.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.error != null && message.hasOwnProperty("error")) {
+                    let error = $root.flyteidl.core.ContainerError.verify(message.error);
+                    if (error)
+                        return "error." + error;
+                }
+                return null;
+            };
+
+            return ErrorDocument;
         })();
 
         core.FutureTaskDocument = (function() {

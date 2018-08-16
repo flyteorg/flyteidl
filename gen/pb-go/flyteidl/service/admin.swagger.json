@@ -1325,8 +1325,26 @@
             "$ref": "#/definitions/coreKeyValuePair"
           },
           "description": "Allows extra configs to be available for the container.\nTODO: elaborate on how configs will become available."
+        },
+        "ports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreContainerPort"
+          },
+          "title": "Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but\nnot supported on AWS Batch)"
         }
       }
+    },
+    "coreContainerPort": {
+      "type": "object",
+      "properties": {
+        "container_port": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Number of port to expose on the pod's IP address.\nThis must be a valid port number, 0 \u003c x \u003c 65536."
+        }
+      },
+      "description": "Defines port properties for a container."
     },
     "coreIfBlock": {
       "type": "object",

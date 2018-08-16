@@ -3238,6 +3238,58 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a ContainerPort. */
+        interface IContainerPort {
+
+            /** ContainerPort containerPort */
+            containerPort?: (number|null);
+        }
+
+        /** Represents a ContainerPort. */
+        class ContainerPort implements IContainerPort {
+
+            /**
+             * Constructs a new ContainerPort.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IContainerPort);
+
+            /** ContainerPort containerPort. */
+            public containerPort: number;
+
+            /**
+             * Creates a new ContainerPort instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ContainerPort instance
+             */
+            public static create(properties?: flyteidl.core.IContainerPort): flyteidl.core.ContainerPort;
+
+            /**
+             * Encodes the specified ContainerPort message. Does not implicitly {@link flyteidl.core.ContainerPort.verify|verify} messages.
+             * @param message ContainerPort message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IContainerPort, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ContainerPort message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ContainerPort
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ContainerPort;
+
+            /**
+             * Verifies a ContainerPort message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a Container. */
         interface IContainer {
 
@@ -3258,6 +3310,9 @@ export namespace flyteidl {
 
             /** Container config */
             config?: (flyteidl.core.IKeyValuePair[]|null);
+
+            /** Container ports */
+            ports?: (flyteidl.core.IContainerPort[]|null);
         }
 
         /** Represents a Container. */
@@ -3287,6 +3342,9 @@ export namespace flyteidl {
             /** Container config. */
             public config: flyteidl.core.IKeyValuePair[];
 
+            /** Container ports. */
+            public ports: flyteidl.core.IContainerPort[];
+
             /**
              * Creates a new Container instance using the specified properties.
              * @param [properties] Properties to set
@@ -3314,6 +3372,131 @@ export namespace flyteidl {
 
             /**
              * Verifies a Container message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a ContainerError. */
+        interface IContainerError {
+
+            /** ContainerError errorCode */
+            errorCode?: (string|null);
+
+            /** ContainerError errorMessage */
+            errorMessage?: (string|null);
+
+            /** ContainerError errorType */
+            errorType?: (flyteidl.core.ContainerError.ErrorType|null);
+        }
+
+        /** Represents a ContainerError. */
+        class ContainerError implements IContainerError {
+
+            /**
+             * Constructs a new ContainerError.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IContainerError);
+
+            /** ContainerError errorCode. */
+            public errorCode: string;
+
+            /** ContainerError errorMessage. */
+            public errorMessage: string;
+
+            /** ContainerError errorType. */
+            public errorType: flyteidl.core.ContainerError.ErrorType;
+
+            /**
+             * Creates a new ContainerError instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ContainerError instance
+             */
+            public static create(properties?: flyteidl.core.IContainerError): flyteidl.core.ContainerError;
+
+            /**
+             * Encodes the specified ContainerError message. Does not implicitly {@link flyteidl.core.ContainerError.verify|verify} messages.
+             * @param message ContainerError message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IContainerError, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ContainerError message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ContainerError
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ContainerError;
+
+            /**
+             * Verifies a ContainerError message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace ContainerError {
+
+            /** ErrorType enum. */
+            enum ErrorType {
+                NON_RECOVERABLE = 0,
+                RECOVERABLE = 1
+            }
+        }
+
+        /** Properties of an ErrorDocument. */
+        interface IErrorDocument {
+
+            /** ErrorDocument error */
+            error?: (flyteidl.core.IContainerError|null);
+        }
+
+        /** Represents an ErrorDocument. */
+        class ErrorDocument implements IErrorDocument {
+
+            /**
+             * Constructs a new ErrorDocument.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IErrorDocument);
+
+            /** ErrorDocument error. */
+            public error?: (flyteidl.core.IContainerError|null);
+
+            /**
+             * Creates a new ErrorDocument instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ErrorDocument instance
+             */
+            public static create(properties?: flyteidl.core.IErrorDocument): flyteidl.core.ErrorDocument;
+
+            /**
+             * Encodes the specified ErrorDocument message. Does not implicitly {@link flyteidl.core.ErrorDocument.verify|verify} messages.
+             * @param message ErrorDocument message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IErrorDocument, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ErrorDocument message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ErrorDocument
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ErrorDocument;
+
+            /**
+             * Verifies an ErrorDocument message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
