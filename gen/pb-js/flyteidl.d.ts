@@ -3381,14 +3381,14 @@ export namespace flyteidl {
         /** Properties of a ContainerError. */
         interface IContainerError {
 
-            /** ContainerError errorCode */
-            errorCode?: (string|null);
+            /** ContainerError code */
+            code?: (string|null);
 
-            /** ContainerError errorMessage */
-            errorMessage?: (string|null);
+            /** ContainerError message */
+            message?: (string|null);
 
-            /** ContainerError errorType */
-            errorType?: (flyteidl.core.ContainerError.ErrorType|null);
+            /** ContainerError kind */
+            kind?: (flyteidl.core.ContainerError.Kind|null);
         }
 
         /** Represents a ContainerError. */
@@ -3400,14 +3400,14 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.core.IContainerError);
 
-            /** ContainerError errorCode. */
-            public errorCode: string;
+            /** ContainerError code. */
+            public code: string;
 
-            /** ContainerError errorMessage. */
-            public errorMessage: string;
+            /** ContainerError message. */
+            public message: string;
 
-            /** ContainerError errorType. */
-            public errorType: flyteidl.core.ContainerError.ErrorType;
+            /** ContainerError kind. */
+            public kind: flyteidl.core.ContainerError.Kind;
 
             /**
              * Creates a new ContainerError instance using the specified properties.
@@ -3444,8 +3444,8 @@ export namespace flyteidl {
 
         namespace ContainerError {
 
-            /** ErrorType enum. */
-            enum ErrorType {
+            /** Kind enum. */
+            enum Kind {
                 NON_RECOVERABLE = 0,
                 RECOVERABLE = 1
             }

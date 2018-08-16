@@ -19,14 +19,14 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/errors.proto',
   package='flyteidl.core',
   syntax='proto3',
-  serialized_pb=_b('\n\x1a\x66lyteidl/core/errors.proto\x12\rflyteidl.core\"\xab\x01\n\x0e\x43ontainerError\x12\x12\n\nerror_code\x18\x01 \x01(\t\x12\x15\n\rerror_message\x18\x02 \x01(\t\x12;\n\nerror_type\x18\x03 \x01(\x0e\x32\'.flyteidl.core.ContainerError.ErrorType\"1\n\tErrorType\x12\x13\n\x0fNON_RECOVERABLE\x10\x00\x12\x0f\n\x0bRECOVERABLE\x10\x01\"=\n\rErrorDocument\x12,\n\x05\x65rror\x18\x01 \x01(\x0b\x32\x1d.flyteidl.core.ContainerErrorB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1a\x66lyteidl/core/errors.proto\x12\rflyteidl.core\"\x8f\x01\n\x0e\x43ontainerError\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x30\n\x04kind\x18\x03 \x01(\x0e\x32\".flyteidl.core.ContainerError.Kind\",\n\x04Kind\x12\x13\n\x0fNON_RECOVERABLE\x10\x00\x12\x0f\n\x0bRECOVERABLE\x10\x01\"=\n\rErrorDocument\x12,\n\x05\x65rror\x18\x01 \x01(\x0b\x32\x1d.flyteidl.core.ContainerErrorB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
 )
 
 
 
-_CONTAINERERROR_ERRORTYPE = _descriptor.EnumDescriptor(
-  name='ErrorType',
-  full_name='flyteidl.core.ContainerError.ErrorType',
+_CONTAINERERROR_KIND = _descriptor.EnumDescriptor(
+  name='Kind',
+  full_name='flyteidl.core.ContainerError.Kind',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -41,10 +41,10 @@ _CONTAINERERROR_ERRORTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=168,
-  serialized_end=217,
+  serialized_start=145,
+  serialized_end=189,
 )
-_sym_db.RegisterEnumDescriptor(_CONTAINERERROR_ERRORTYPE)
+_sym_db.RegisterEnumDescriptor(_CONTAINERERROR_KIND)
 
 
 _CONTAINERERROR = _descriptor.Descriptor(
@@ -55,21 +55,21 @@ _CONTAINERERROR = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='error_code', full_name='flyteidl.core.ContainerError.error_code', index=0,
+      name='code', full_name='flyteidl.core.ContainerError.code', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='error_message', full_name='flyteidl.core.ContainerError.error_message', index=1,
+      name='message', full_name='flyteidl.core.ContainerError.message', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='error_type', full_name='flyteidl.core.ContainerError.error_type', index=2,
+      name='kind', full_name='flyteidl.core.ContainerError.kind', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -80,7 +80,7 @@ _CONTAINERERROR = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
-    _CONTAINERERROR_ERRORTYPE,
+    _CONTAINERERROR_KIND,
   ],
   options=None,
   is_extendable=False,
@@ -89,7 +89,7 @@ _CONTAINERERROR = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=46,
-  serialized_end=217,
+  serialized_end=189,
 )
 
 
@@ -119,12 +119,12 @@ _ERRORDOCUMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=219,
-  serialized_end=280,
+  serialized_start=191,
+  serialized_end=252,
 )
 
-_CONTAINERERROR.fields_by_name['error_type'].enum_type = _CONTAINERERROR_ERRORTYPE
-_CONTAINERERROR_ERRORTYPE.containing_type = _CONTAINERERROR
+_CONTAINERERROR.fields_by_name['kind'].enum_type = _CONTAINERERROR_KIND
+_CONTAINERERROR_KIND.containing_type = _CONTAINERERROR
 _ERRORDOCUMENT.fields_by_name['error'].message_type = _CONTAINERERROR
 DESCRIPTOR.message_types_by_name['ContainerError'] = _CONTAINERERROR
 DESCRIPTOR.message_types_by_name['ErrorDocument'] = _ERRORDOCUMENT

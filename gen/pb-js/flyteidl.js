@@ -8202,9 +8202,9 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a ContainerError.
              * @memberof flyteidl.core
              * @interface IContainerError
-             * @property {string|null} [errorCode] ContainerError errorCode
-             * @property {string|null} [errorMessage] ContainerError errorMessage
-             * @property {flyteidl.core.ContainerError.ErrorType|null} [errorType] ContainerError errorType
+             * @property {string|null} [code] ContainerError code
+             * @property {string|null} [message] ContainerError message
+             * @property {flyteidl.core.ContainerError.Kind|null} [kind] ContainerError kind
              */
 
             /**
@@ -8223,28 +8223,28 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * ContainerError errorCode.
-             * @member {string} errorCode
+             * ContainerError code.
+             * @member {string} code
              * @memberof flyteidl.core.ContainerError
              * @instance
              */
-            ContainerError.prototype.errorCode = "";
+            ContainerError.prototype.code = "";
 
             /**
-             * ContainerError errorMessage.
-             * @member {string} errorMessage
+             * ContainerError message.
+             * @member {string} message
              * @memberof flyteidl.core.ContainerError
              * @instance
              */
-            ContainerError.prototype.errorMessage = "";
+            ContainerError.prototype.message = "";
 
             /**
-             * ContainerError errorType.
-             * @member {flyteidl.core.ContainerError.ErrorType} errorType
+             * ContainerError kind.
+             * @member {flyteidl.core.ContainerError.Kind} kind
              * @memberof flyteidl.core.ContainerError
              * @instance
              */
-            ContainerError.prototype.errorType = 0;
+            ContainerError.prototype.kind = 0;
 
             /**
              * Creates a new ContainerError instance using the specified properties.
@@ -8270,12 +8270,12 @@ export const flyteidl = $root.flyteidl = (() => {
             ContainerError.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.errorCode != null && message.hasOwnProperty("errorCode"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.errorCode);
-                if (message.errorMessage != null && message.hasOwnProperty("errorMessage"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.errorMessage);
-                if (message.errorType != null && message.hasOwnProperty("errorType"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.errorType);
+                if (message.code != null && message.hasOwnProperty("code"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.code);
+                if (message.message != null && message.hasOwnProperty("message"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.message);
+                if (message.kind != null && message.hasOwnProperty("kind"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.kind);
                 return writer;
             };
 
@@ -8298,13 +8298,13 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.errorCode = reader.string();
+                        message.code = reader.string();
                         break;
                     case 2:
-                        message.errorMessage = reader.string();
+                        message.message = reader.string();
                         break;
                     case 3:
-                        message.errorType = reader.int32();
+                        message.kind = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -8325,16 +8325,16 @@ export const flyteidl = $root.flyteidl = (() => {
             ContainerError.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.errorCode != null && message.hasOwnProperty("errorCode"))
-                    if (!$util.isString(message.errorCode))
-                        return "errorCode: string expected";
-                if (message.errorMessage != null && message.hasOwnProperty("errorMessage"))
-                    if (!$util.isString(message.errorMessage))
-                        return "errorMessage: string expected";
-                if (message.errorType != null && message.hasOwnProperty("errorType"))
-                    switch (message.errorType) {
+                if (message.code != null && message.hasOwnProperty("code"))
+                    if (!$util.isString(message.code))
+                        return "code: string expected";
+                if (message.message != null && message.hasOwnProperty("message"))
+                    if (!$util.isString(message.message))
+                        return "message: string expected";
+                if (message.kind != null && message.hasOwnProperty("kind"))
+                    switch (message.kind) {
                     default:
-                        return "errorType: enum value expected";
+                        return "kind: enum value expected";
                     case 0:
                     case 1:
                         break;
@@ -8343,13 +8343,13 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * ErrorType enum.
-             * @name flyteidl.core.ContainerError.ErrorType
+             * Kind enum.
+             * @name flyteidl.core.ContainerError.Kind
              * @enum {string}
              * @property {number} NON_RECOVERABLE=0 NON_RECOVERABLE value
              * @property {number} RECOVERABLE=1 RECOVERABLE value
              */
-            ContainerError.ErrorType = (function() {
+            ContainerError.Kind = (function() {
                 const valuesById = {}, values = Object.create(valuesById);
                 values[valuesById[0] = "NON_RECOVERABLE"] = 0;
                 values[valuesById[1] = "RECOVERABLE"] = 1;
