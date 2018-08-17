@@ -25,6 +25,13 @@ message IdentifierListRequest {
     // Name of the domain the identifiers belongs to within the project.
     // +optional
     string domain     = 2;
+    // Indicates the number of resources to be returned.
+    // +optional
+    uint32 limit      = 3;
+    // Indicates the offset to fetch the resource from.
+    // It is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.
+    // +optional
+    uint32 offset     = 4;
 }
 
 // Represents a list of Identifiers.

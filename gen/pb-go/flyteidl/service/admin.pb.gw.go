@@ -69,6 +69,10 @@ func request_AdminService_GetTask_0(ctx context.Context, marshaler runtime.Marsh
 
 }
 
+var (
+	filter_AdminService_ListTaskIds_0 = &utilities.DoubleArray{Encoding: map[string]int{"project": 0, "domain": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+)
+
 func request_AdminService_ListTaskIds_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq admin.IdentifierListRequest
 	var metadata runtime.ServerMetadata
@@ -100,6 +104,10 @@ func request_AdminService_ListTaskIds_0(ctx context.Context, marshaler runtime.M
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "domain", err)
+	}
+
+	if err := runtime.PopulateQueryParameters(&protoReq, req.URL.Query(), filter_AdminService_ListTaskIds_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	msg, err := client.ListTaskIds(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -250,6 +258,10 @@ func request_AdminService_GetWorkflow_0(ctx context.Context, marshaler runtime.M
 
 }
 
+var (
+	filter_AdminService_ListWorkflowIds_0 = &utilities.DoubleArray{Encoding: map[string]int{"project": 0, "domain": 1}, Base: []int{1, 1, 2, 0, 0}, Check: []int{0, 1, 1, 2, 3}}
+)
+
 func request_AdminService_ListWorkflowIds_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq admin.IdentifierListRequest
 	var metadata runtime.ServerMetadata
@@ -281,6 +293,10 @@ func request_AdminService_ListWorkflowIds_0(ctx context.Context, marshaler runti
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "domain", err)
+	}
+
+	if err := runtime.PopulateQueryParameters(&protoReq, req.URL.Query(), filter_AdminService_ListWorkflowIds_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	msg, err := client.ListWorkflowIds(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))

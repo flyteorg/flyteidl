@@ -9748,6 +9748,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IIdentifierListRequest
              * @property {string|null} [project] IdentifierListRequest project
              * @property {string|null} [domain] IdentifierListRequest domain
+             * @property {number|null} [limit] IdentifierListRequest limit
+             * @property {number|null} [offset] IdentifierListRequest offset
              */
 
             /**
@@ -9782,6 +9784,22 @@ export const flyteidl = $root.flyteidl = (() => {
             IdentifierListRequest.prototype.domain = "";
 
             /**
+             * IdentifierListRequest limit.
+             * @member {number} limit
+             * @memberof flyteidl.admin.IdentifierListRequest
+             * @instance
+             */
+            IdentifierListRequest.prototype.limit = 0;
+
+            /**
+             * IdentifierListRequest offset.
+             * @member {number} offset
+             * @memberof flyteidl.admin.IdentifierListRequest
+             * @instance
+             */
+            IdentifierListRequest.prototype.offset = 0;
+
+            /**
              * Creates a new IdentifierListRequest instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.IdentifierListRequest
@@ -9809,6 +9827,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
                 if (message.domain != null && message.hasOwnProperty("domain"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
+                if (message.limit != null && message.hasOwnProperty("limit"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.limit);
+                if (message.offset != null && message.hasOwnProperty("offset"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.offset);
                 return writer;
             };
 
@@ -9836,6 +9858,12 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 2:
                         message.domain = reader.string();
                         break;
+                    case 3:
+                        message.limit = reader.uint32();
+                        break;
+                    case 4:
+                        message.offset = reader.uint32();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -9861,6 +9889,12 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.domain != null && message.hasOwnProperty("domain"))
                     if (!$util.isString(message.domain))
                         return "domain: string expected";
+                if (message.limit != null && message.hasOwnProperty("limit"))
+                    if (!$util.isInteger(message.limit))
+                        return "limit: integer expected";
+                if (message.offset != null && message.hasOwnProperty("offset"))
+                    if (!$util.isInteger(message.offset))
+                        return "offset: integer expected";
                 return null;
             };
 

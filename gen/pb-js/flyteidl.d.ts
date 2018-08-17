@@ -4027,6 +4027,12 @@ export namespace flyteidl {
 
             /** IdentifierListRequest domain */
             domain?: (string|null);
+
+            /** IdentifierListRequest limit */
+            limit?: (number|null);
+
+            /** IdentifierListRequest offset */
+            offset?: (number|null);
         }
 
         /** Represents an IdentifierListRequest. */
@@ -4043,6 +4049,12 @@ export namespace flyteidl {
 
             /** IdentifierListRequest domain. */
             public domain: string;
+
+            /** IdentifierListRequest limit. */
+            public limit: number;
+
+            /** IdentifierListRequest offset. */
+            public offset: number;
 
             /**
              * Creates a new IdentifierListRequest instance using the specified properties.
