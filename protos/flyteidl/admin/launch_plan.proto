@@ -50,6 +50,9 @@ message LaunchPlanSpec {
 
     // Fixed, non overridable inputs for the Launch Plan
     core.LiteralMap fixed_inputs = 4;
+
+    // String to indicate the role to use to execute the workflow underneath
+    string role = 5;
 }
 
 message LaunchPlanClosure {

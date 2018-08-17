@@ -838,6 +838,10 @@
         "fixed_inputs": {
           "$ref": "#/definitions/coreLiteralMap",
           "title": "Fixed, non overridable inputs for the Launch Plan"
+        },
+        "role": {
+          "type": "string",
+          "title": "String to indicate the role to use to execute the workflow underneath"
         }
       }
     },

@@ -5215,6 +5215,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec fixedInputs */
             fixedInputs?: (flyteidl.core.ILiteralMap|null);
+
+            /** LaunchPlanSpec role */
+            role?: (string|null);
         }
 
         /** Represents a LaunchPlanSpec. */
@@ -5237,6 +5240,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec fixedInputs. */
             public fixedInputs?: (flyteidl.core.ILiteralMap|null);
+
+            /** LaunchPlanSpec role. */
+            public role: string;
 
             /**
              * Creates a new LaunchPlanSpec instance using the specified properties.

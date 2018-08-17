@@ -12505,6 +12505,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.ILaunchPlanMetadata|null} [entityMetadata] LaunchPlanSpec entityMetadata
              * @property {flyteidl.core.IParameterMap|null} [defaultInputs] LaunchPlanSpec defaultInputs
              * @property {flyteidl.core.ILiteralMap|null} [fixedInputs] LaunchPlanSpec fixedInputs
+             * @property {string|null} [role] LaunchPlanSpec role
              */
 
             /**
@@ -12555,6 +12556,14 @@ export const flyteidl = $root.flyteidl = (() => {
             LaunchPlanSpec.prototype.fixedInputs = null;
 
             /**
+             * LaunchPlanSpec role.
+             * @member {string} role
+             * @memberof flyteidl.admin.LaunchPlanSpec
+             * @instance
+             */
+            LaunchPlanSpec.prototype.role = "";
+
+            /**
              * Creates a new LaunchPlanSpec instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.LaunchPlanSpec
@@ -12586,6 +12595,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.ParameterMap.encode(message.defaultInputs, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.fixedInputs != null && message.hasOwnProperty("fixedInputs"))
                     $root.flyteidl.core.LiteralMap.encode(message.fixedInputs, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.role != null && message.hasOwnProperty("role"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.role);
                 return writer;
             };
 
@@ -12618,6 +12629,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 4:
                         message.fixedInputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.role = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -12656,6 +12670,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "fixedInputs." + error;
                 }
+                if (message.role != null && message.hasOwnProperty("role"))
+                    if (!$util.isString(message.role))
+                        return "role: string expected";
                 return null;
             };
 
