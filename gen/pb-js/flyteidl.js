@@ -16191,6 +16191,72 @@ export const flyteidl = $root.flyteidl = (() => {
              * @variation 2
              */
 
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getExecution}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef GetExecutionCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.Execution} [response] Execution
+             */
+
+            /**
+             * Calls GetExecution.
+             * @function getExecution
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IObjectGetRequest} request ObjectGetRequest message or plain object
+             * @param {flyteidl.service.AdminService.GetExecutionCallback} callback Node-style callback called with the error, if any, and Execution
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.getExecution = function getExecution(request, callback) {
+                return this.rpcCall(getExecution, $root.flyteidl.admin.ObjectGetRequest, $root.flyteidl.admin.Execution, request, callback);
+            }, "name", { value: "GetExecution" });
+
+            /**
+             * Calls GetExecution.
+             * @function getExecution
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IObjectGetRequest} request ObjectGetRequest message or plain object
+             * @returns {Promise<flyteidl.admin.Execution>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#listExecutions}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef ListExecutionsCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.ExecutionList} [response] ExecutionList
+             */
+
+            /**
+             * Calls ListExecutions.
+             * @function listExecutions
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IResourceListRequest} request ResourceListRequest message or plain object
+             * @param {flyteidl.service.AdminService.ListExecutionsCallback} callback Node-style callback called with the error, if any, and ExecutionList
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.listExecutions = function listExecutions(request, callback) {
+                return this.rpcCall(listExecutions, $root.flyteidl.admin.ResourceListRequest, $root.flyteidl.admin.ExecutionList, request, callback);
+            }, "name", { value: "ListExecutions" });
+
+            /**
+             * Calls ListExecutions.
+             * @function listExecutions
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IResourceListRequest} request ResourceListRequest message or plain object
+             * @returns {Promise<flyteidl.admin.ExecutionList>} Promise
+             * @variation 2
+             */
+
             return AdminService;
         })();
 

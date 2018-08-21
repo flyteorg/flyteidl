@@ -73,6 +73,16 @@ class AdminServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionCreateRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionCreateResponse.FromString,
         )
+    self.GetExecution = channel.unary_unary(
+        '/flyteidl.service.AdminService/GetExecution',
+        request_serializer=flyteidl_dot_admin_dot_common__pb2.ObjectGetRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_execution__pb2.Execution.FromString,
+        )
+    self.ListExecutions = channel.unary_unary(
+        '/flyteidl.service.AdminService/ListExecutions',
+        request_serializer=flyteidl_dot_admin_dot_common__pb2.ResourceListRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionList.FromString,
+        )
 
 
 class AdminServiceServicer(object):
@@ -156,6 +166,20 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetExecution(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ListExecutions(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_AdminServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -213,6 +237,16 @@ def add_AdminServiceServicer_to_server(servicer, server):
           servicer.CreateExecution,
           request_deserializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionCreateRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionCreateResponse.SerializeToString,
+      ),
+      'GetExecution': grpc.unary_unary_rpc_method_handler(
+          servicer.GetExecution,
+          request_deserializer=flyteidl_dot_admin_dot_common__pb2.ObjectGetRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_execution__pb2.Execution.SerializeToString,
+      ),
+      'ListExecutions': grpc.unary_unary_rpc_method_handler(
+          servicer.ListExecutions,
+          request_deserializer=flyteidl_dot_admin_dot_common__pb2.ResourceListRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionList.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

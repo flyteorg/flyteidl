@@ -86,4 +86,16 @@ service AdminService {
       body: "*"
     };
   }
+
+  rpc GetExecution (flyteidl.admin.ObjectGetRequest) returns (flyteidl.admin.Execution) {
+    option (google.api.http) = {
+      get: "/api/v1/executions/{urn}"
+    };
+  }
+
+  rpc ListExecutions (flyteidl.admin.ResourceListRequest) returns (flyteidl.admin.ExecutionList) {
+    option (google.api.http) = {
+      get:  "/api/v1/executions"
+    };
+  }
 }

@@ -6794,6 +6794,34 @@ export namespace flyteidl {
              * @returns Promise
              */
             public createExecution(request: flyteidl.admin.IExecutionCreateRequest): Promise<flyteidl.admin.ExecutionCreateResponse>;
+
+            /**
+             * Calls GetExecution.
+             * @param request ObjectGetRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and Execution
+             */
+            public getExecution(request: flyteidl.admin.IObjectGetRequest, callback: flyteidl.service.AdminService.GetExecutionCallback): void;
+
+            /**
+             * Calls GetExecution.
+             * @param request ObjectGetRequest message or plain object
+             * @returns Promise
+             */
+            public getExecution(request: flyteidl.admin.IObjectGetRequest): Promise<flyteidl.admin.Execution>;
+
+            /**
+             * Calls ListExecutions.
+             * @param request ResourceListRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and ExecutionList
+             */
+            public listExecutions(request: flyteidl.admin.IResourceListRequest, callback: flyteidl.service.AdminService.ListExecutionsCallback): void;
+
+            /**
+             * Calls ListExecutions.
+             * @param request ResourceListRequest message or plain object
+             * @returns Promise
+             */
+            public listExecutions(request: flyteidl.admin.IResourceListRequest): Promise<flyteidl.admin.ExecutionList>;
         }
 
         namespace AdminService {
@@ -6874,6 +6902,20 @@ export namespace flyteidl {
              * @param [response] ExecutionCreateResponse
              */
             type CreateExecutionCallback = (error: (Error|null), response?: flyteidl.admin.ExecutionCreateResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getExecution}.
+             * @param error Error, if any
+             * @param [response] Execution
+             */
+            type GetExecutionCallback = (error: (Error|null), response?: flyteidl.admin.Execution) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#listExecutions}.
+             * @param error Error, if any
+             * @param [response] ExecutionList
+             */
+            type ListExecutionsCallback = (error: (Error|null), response?: flyteidl.admin.ExecutionList) => void;
         }
     }
 }

@@ -16,6 +16,66 @@
   ],
   "paths": {
     "/api/v1/executions": {
+      "get": {
+        "operationId": "ListExecutions",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminExecutionList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.\n+optional - in certain contexts - like 'List API'.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Indicates the offset to fetch the resource from.\nIt is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "filters",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      },
       "post": {
         "operationId": "CreateExecution",
         "responses": {
@@ -34,6 +94,31 @@
             "schema": {
               "$ref": "#/definitions/adminExecutionCreateRequest"
             }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/executions/{urn}": {
+      "get": {
+        "operationId": "GetExecution",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminExecution"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "urn",
+            "description": "Indicates the string returned by the server that identifies a version of resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
           }
         ],
         "tags": [
@@ -672,6 +757,27 @@
         }
       }
     },
+    "adminExecution": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/adminIdentifier"
+        },
+        "execution_id": {
+          "type": "string",
+          "title": "The execution_id string is contructed from the 'id'.\nIf name is not available in the 'id', the system will generate a random name"
+        },
+        "status": {
+          "$ref": "#/definitions/adminExecutionStatus"
+        },
+        "spec": {
+          "$ref": "#/definitions/adminExecutionSpec"
+        },
+        "result": {
+          "$ref": "#/definitions/adminExecutionResult"
+        }
+      }
+    },
     "adminExecutionCreateRequest": {
       "type": "object",
       "properties": {
@@ -688,6 +794,17 @@
       "properties": {
         "urn": {
           "type": "string"
+        }
+      }
+    },
+    "adminExecutionList": {
+      "type": "object",
+      "properties": {
+        "executions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminExecution"
+          }
         }
       }
     },
@@ -722,6 +839,19 @@
       "default": "UNDEFINED",
       "description": "Indicates various phases of an Execution for both node and launch plan."
     },
+    "adminExecutionResult": {
+      "type": "object",
+      "properties": {
+        "outputs": {
+          "$ref": "#/definitions/adminLiteralMapBlob"
+        },
+        "error": {
+          "$ref": "#/definitions/flyteidladminError",
+          "title": "Error information for the Node"
+        }
+      },
+      "title": "Encapsultes the results of the Execution"
+    },
     "adminExecutionSpec": {
       "type": "object",
       "properties": {
@@ -743,6 +873,18 @@
             "$ref": "#/definitions/adminNotification"
           },
           "title": "List of notifications based on Execution status transitions"
+        }
+      }
+    },
+    "adminExecutionStatus": {
+      "type": "object",
+      "properties": {
+        "phase": {
+          "$ref": "#/definitions/adminExecutionPhase",
+          "title": "Phase of the executions"
+        },
+        "workflow_urn": {
+          "type": "string"
         }
       }
     },
@@ -885,6 +1027,20 @@
       ],
       "default": "INACTIVE",
       "title": "Indicates various states of an Execution - both task and workflow"
+    },
+    "adminLiteralMapBlob": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "$ref": "#/definitions/coreLiteralMap",
+          "title": "Data in LiteralMap format"
+        },
+        "uri": {
+          "type": "string",
+          "title": "In the event that the map is too large, we return a uri to the data"
+        }
+      },
+      "title": "Input/output data can represented by actual values or a link to where it is stored"
     },
     "adminNotification": {
       "type": "object",
@@ -1955,6 +2111,20 @@
         }
       },
       "description": "Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,\ndirected acyclic graph."
+    },
+    "flyteidladminError": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "title": "Error code indicates a grouping of a type of error.\nMore Info: \u003cLink\u003e"
+        },
+        "message": {
+          "type": "string",
+          "description": "Detailed description of the error - including stack trace."
+        }
+      },
+      "description": "Represents the error message from the execution."
     },
     "flyteidlcoreError": {
       "type": "object",
