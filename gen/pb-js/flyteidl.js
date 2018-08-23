@@ -10857,7 +10857,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [executionId] Execution executionId
              * @property {flyteidl.admin.IExecutionStatus|null} [status] Execution status
              * @property {flyteidl.admin.IExecutionSpec|null} [spec] Execution spec
-             * @property {flyteidl.admin.IExecutionResult|null} [result] Execution result
+             * @property {flyteidl.admin.IExecutionClosure|null} [closure] Execution closure
              */
 
             /**
@@ -10908,12 +10908,12 @@ export const flyteidl = $root.flyteidl = (() => {
             Execution.prototype.spec = null;
 
             /**
-             * Execution result.
-             * @member {flyteidl.admin.IExecutionResult|null|undefined} result
+             * Execution closure.
+             * @member {flyteidl.admin.IExecutionClosure|null|undefined} closure
              * @memberof flyteidl.admin.Execution
              * @instance
              */
-            Execution.prototype.result = null;
+            Execution.prototype.closure = null;
 
             /**
              * Creates a new Execution instance using the specified properties.
@@ -10947,8 +10947,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.ExecutionStatus.encode(message.status, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.spec != null && message.hasOwnProperty("spec"))
                     $root.flyteidl.admin.ExecutionSpec.encode(message.spec, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.result != null && message.hasOwnProperty("result"))
-                    $root.flyteidl.admin.ExecutionResult.encode(message.result, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.closure != null && message.hasOwnProperty("closure"))
+                    $root.flyteidl.admin.ExecutionClosure.encode(message.closure, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -10983,7 +10983,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.spec = $root.flyteidl.admin.ExecutionSpec.decode(reader, reader.uint32());
                         break;
                     case 5:
-                        message.result = $root.flyteidl.admin.ExecutionResult.decode(reader, reader.uint32());
+                        message.closure = $root.flyteidl.admin.ExecutionClosure.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11022,10 +11022,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "spec." + error;
                 }
-                if (message.result != null && message.hasOwnProperty("result")) {
-                    let error = $root.flyteidl.admin.ExecutionResult.verify(message.result);
+                if (message.closure != null && message.hasOwnProperty("closure")) {
+                    let error = $root.flyteidl.admin.ExecutionClosure.verify(message.closure);
                     if (error)
-                        return "result." + error;
+                        return "closure." + error;
                 }
                 return null;
             };
@@ -11441,25 +11441,26 @@ export const flyteidl = $root.flyteidl = (() => {
             return LiteralMapBlob;
         })();
 
-        admin.ExecutionResult = (function() {
+        admin.ExecutionClosure = (function() {
 
             /**
-             * Properties of an ExecutionResult.
+             * Properties of an ExecutionClosure.
              * @memberof flyteidl.admin
-             * @interface IExecutionResult
-             * @property {flyteidl.admin.ILiteralMapBlob|null} [outputs] ExecutionResult outputs
-             * @property {flyteidl.admin.IError|null} [error] ExecutionResult error
+             * @interface IExecutionClosure
+             * @property {flyteidl.admin.ILiteralMapBlob|null} [outputs] ExecutionClosure outputs
+             * @property {flyteidl.admin.IError|null} [error] ExecutionClosure error
+             * @property {flyteidl.core.ILiteralMap|null} [computedInputs] ExecutionClosure computedInputs
              */
 
             /**
-             * Constructs a new ExecutionResult.
+             * Constructs a new ExecutionClosure.
              * @memberof flyteidl.admin
-             * @classdesc Represents an ExecutionResult.
-             * @implements IExecutionResult
+             * @classdesc Represents an ExecutionClosure.
+             * @implements IExecutionClosure
              * @constructor
-             * @param {flyteidl.admin.IExecutionResult=} [properties] Properties to set
+             * @param {flyteidl.admin.IExecutionClosure=} [properties] Properties to set
              */
-            function ExecutionResult(properties) {
+            function ExecutionClosure(properties) {
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -11467,81 +11468,91 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * ExecutionResult outputs.
+             * ExecutionClosure outputs.
              * @member {flyteidl.admin.ILiteralMapBlob|null|undefined} outputs
-             * @memberof flyteidl.admin.ExecutionResult
+             * @memberof flyteidl.admin.ExecutionClosure
              * @instance
              */
-            ExecutionResult.prototype.outputs = null;
+            ExecutionClosure.prototype.outputs = null;
 
             /**
-             * ExecutionResult error.
+             * ExecutionClosure error.
              * @member {flyteidl.admin.IError|null|undefined} error
-             * @memberof flyteidl.admin.ExecutionResult
+             * @memberof flyteidl.admin.ExecutionClosure
              * @instance
              */
-            ExecutionResult.prototype.error = null;
+            ExecutionClosure.prototype.error = null;
+
+            /**
+             * ExecutionClosure computedInputs.
+             * @member {flyteidl.core.ILiteralMap|null|undefined} computedInputs
+             * @memberof flyteidl.admin.ExecutionClosure
+             * @instance
+             */
+            ExecutionClosure.prototype.computedInputs = null;
 
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
             /**
-             * ExecutionResult outputResult.
+             * ExecutionClosure outputResult.
              * @member {"outputs"|"error"|undefined} outputResult
-             * @memberof flyteidl.admin.ExecutionResult
+             * @memberof flyteidl.admin.ExecutionClosure
              * @instance
              */
-            Object.defineProperty(ExecutionResult.prototype, "outputResult", {
+            Object.defineProperty(ExecutionClosure.prototype, "outputResult", {
                 get: $util.oneOfGetter($oneOfFields = ["outputs", "error"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
             /**
-             * Creates a new ExecutionResult instance using the specified properties.
+             * Creates a new ExecutionClosure instance using the specified properties.
              * @function create
-             * @memberof flyteidl.admin.ExecutionResult
+             * @memberof flyteidl.admin.ExecutionClosure
              * @static
-             * @param {flyteidl.admin.IExecutionResult=} [properties] Properties to set
-             * @returns {flyteidl.admin.ExecutionResult} ExecutionResult instance
+             * @param {flyteidl.admin.IExecutionClosure=} [properties] Properties to set
+             * @returns {flyteidl.admin.ExecutionClosure} ExecutionClosure instance
              */
-            ExecutionResult.create = function create(properties) {
-                return new ExecutionResult(properties);
+            ExecutionClosure.create = function create(properties) {
+                return new ExecutionClosure(properties);
             };
 
             /**
-             * Encodes the specified ExecutionResult message. Does not implicitly {@link flyteidl.admin.ExecutionResult.verify|verify} messages.
+             * Encodes the specified ExecutionClosure message. Does not implicitly {@link flyteidl.admin.ExecutionClosure.verify|verify} messages.
              * @function encode
-             * @memberof flyteidl.admin.ExecutionResult
+             * @memberof flyteidl.admin.ExecutionClosure
              * @static
-             * @param {flyteidl.admin.IExecutionResult} message ExecutionResult message or plain object to encode
+             * @param {flyteidl.admin.IExecutionClosure} message ExecutionClosure message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ExecutionResult.encode = function encode(message, writer) {
+            ExecutionClosure.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.outputs != null && message.hasOwnProperty("outputs"))
                     $root.flyteidl.admin.LiteralMapBlob.encode(message.outputs, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.error != null && message.hasOwnProperty("error"))
                     $root.flyteidl.admin.Error.encode(message.error, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.computedInputs != null && message.hasOwnProperty("computedInputs"))
+                    $root.flyteidl.core.LiteralMap.encode(message.computedInputs, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
 
             /**
-             * Decodes an ExecutionResult message from the specified reader or buffer.
+             * Decodes an ExecutionClosure message from the specified reader or buffer.
              * @function decode
-             * @memberof flyteidl.admin.ExecutionResult
+             * @memberof flyteidl.admin.ExecutionClosure
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.ExecutionResult} ExecutionResult
+             * @returns {flyteidl.admin.ExecutionClosure} ExecutionClosure
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ExecutionResult.decode = function decode(reader, length) {
+            ExecutionClosure.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ExecutionResult();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ExecutionClosure();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -11550,6 +11561,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 2:
                         message.error = $root.flyteidl.admin.Error.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.computedInputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11560,14 +11574,14 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Verifies an ExecutionResult message.
+             * Verifies an ExecutionClosure message.
              * @function verify
-             * @memberof flyteidl.admin.ExecutionResult
+             * @memberof flyteidl.admin.ExecutionClosure
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            ExecutionResult.verify = function verify(message) {
+            ExecutionClosure.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 let properties = {};
@@ -11589,10 +11603,15 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "error." + error;
                     }
                 }
+                if (message.computedInputs != null && message.hasOwnProperty("computedInputs")) {
+                    let error = $root.flyteidl.core.LiteralMap.verify(message.computedInputs);
+                    if (error)
+                        return "computedInputs." + error;
+                }
                 return null;
             };
 
-            return ExecutionResult;
+            return ExecutionClosure;
         })();
 
         admin.ExecutionMetadata = (function() {

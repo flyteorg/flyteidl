@@ -4520,8 +4520,8 @@ export namespace flyteidl {
             /** Execution spec */
             spec?: (flyteidl.admin.IExecutionSpec|null);
 
-            /** Execution result */
-            result?: (flyteidl.admin.IExecutionResult|null);
+            /** Execution closure */
+            closure?: (flyteidl.admin.IExecutionClosure|null);
         }
 
         /** Represents an Execution. */
@@ -4545,8 +4545,8 @@ export namespace flyteidl {
             /** Execution spec. */
             public spec?: (flyteidl.admin.IExecutionSpec|null);
 
-            /** Execution result. */
-            public result?: (flyteidl.admin.IExecutionResult|null);
+            /** Execution closure. */
+            public closure?: (flyteidl.admin.IExecutionClosure|null);
 
             /**
              * Creates a new Execution instance using the specified properties.
@@ -4752,61 +4752,67 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of an ExecutionResult. */
-        interface IExecutionResult {
+        /** Properties of an ExecutionClosure. */
+        interface IExecutionClosure {
 
-            /** ExecutionResult outputs */
+            /** ExecutionClosure outputs */
             outputs?: (flyteidl.admin.ILiteralMapBlob|null);
 
-            /** ExecutionResult error */
+            /** ExecutionClosure error */
             error?: (flyteidl.admin.IError|null);
+
+            /** ExecutionClosure computedInputs */
+            computedInputs?: (flyteidl.core.ILiteralMap|null);
         }
 
-        /** Represents an ExecutionResult. */
-        class ExecutionResult implements IExecutionResult {
+        /** Represents an ExecutionClosure. */
+        class ExecutionClosure implements IExecutionClosure {
 
             /**
-             * Constructs a new ExecutionResult.
+             * Constructs a new ExecutionClosure.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.admin.IExecutionResult);
+            constructor(properties?: flyteidl.admin.IExecutionClosure);
 
-            /** ExecutionResult outputs. */
+            /** ExecutionClosure outputs. */
             public outputs?: (flyteidl.admin.ILiteralMapBlob|null);
 
-            /** ExecutionResult error. */
+            /** ExecutionClosure error. */
             public error?: (flyteidl.admin.IError|null);
 
-            /** ExecutionResult outputResult. */
+            /** ExecutionClosure computedInputs. */
+            public computedInputs?: (flyteidl.core.ILiteralMap|null);
+
+            /** ExecutionClosure outputResult. */
             public outputResult?: ("outputs"|"error");
 
             /**
-             * Creates a new ExecutionResult instance using the specified properties.
+             * Creates a new ExecutionClosure instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns ExecutionResult instance
+             * @returns ExecutionClosure instance
              */
-            public static create(properties?: flyteidl.admin.IExecutionResult): flyteidl.admin.ExecutionResult;
+            public static create(properties?: flyteidl.admin.IExecutionClosure): flyteidl.admin.ExecutionClosure;
 
             /**
-             * Encodes the specified ExecutionResult message. Does not implicitly {@link flyteidl.admin.ExecutionResult.verify|verify} messages.
-             * @param message ExecutionResult message or plain object to encode
+             * Encodes the specified ExecutionClosure message. Does not implicitly {@link flyteidl.admin.ExecutionClosure.verify|verify} messages.
+             * @param message ExecutionClosure message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.admin.IExecutionResult, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.admin.IExecutionClosure, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an ExecutionResult message from the specified reader or buffer.
+             * Decodes an ExecutionClosure message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns ExecutionResult
+             * @returns ExecutionClosure
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionResult;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionClosure;
 
             /**
-             * Verifies an ExecutionResult message.
+             * Verifies an ExecutionClosure message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */

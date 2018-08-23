@@ -24,7 +24,7 @@ message Execution {
     ExecutionStatus status      = 3;
 
     ExecutionSpec spec          = 4;
-    ExecutionResult result      = 5;
+    ExecutionClosure closure    = 5;
 }
 
 message ExecutionList {
@@ -50,13 +50,17 @@ message LiteralMapBlob {
 }
 
 // Encapsultes the results of the Execution
-message ExecutionResult {
+message ExecutionClosure {
     oneof output_result {
-        LiteralMapBlob outputs = 1;
+        LiteralMapBlob outputs	= 1;
 
         // Error information for the Node
-        Error error           = 2;
+        Error error		= 2;
     }
+
+    // Inputs computed and passed for execution.
+    // computed_inputs depends on inputs in ExecutionSpec, fixed and default inputs in launch plan
+    core.LiteralMap computed_inputs      = 3;
 }
 
 message ExecutionMetadata {
