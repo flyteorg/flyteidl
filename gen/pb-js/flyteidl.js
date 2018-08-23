@@ -13007,6 +13007,231 @@ export const flyteidl = $root.flyteidl = (() => {
             return LaunchPlanMetadata;
         })();
 
+        admin.LaunchPlanUpdateRequest = (function() {
+
+            /**
+             * Properties of a LaunchPlanUpdateRequest.
+             * @memberof flyteidl.admin
+             * @interface ILaunchPlanUpdateRequest
+             * @property {string|null} [urn] LaunchPlanUpdateRequest urn
+             * @property {flyteidl.admin.LaunchPlanState|null} [state] LaunchPlanUpdateRequest state
+             */
+
+            /**
+             * Constructs a new LaunchPlanUpdateRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a LaunchPlanUpdateRequest.
+             * @implements ILaunchPlanUpdateRequest
+             * @constructor
+             * @param {flyteidl.admin.ILaunchPlanUpdateRequest=} [properties] Properties to set
+             */
+            function LaunchPlanUpdateRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * LaunchPlanUpdateRequest urn.
+             * @member {string} urn
+             * @memberof flyteidl.admin.LaunchPlanUpdateRequest
+             * @instance
+             */
+            LaunchPlanUpdateRequest.prototype.urn = "";
+
+            /**
+             * LaunchPlanUpdateRequest state.
+             * @member {flyteidl.admin.LaunchPlanState} state
+             * @memberof flyteidl.admin.LaunchPlanUpdateRequest
+             * @instance
+             */
+            LaunchPlanUpdateRequest.prototype.state = 0;
+
+            /**
+             * Creates a new LaunchPlanUpdateRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.LaunchPlanUpdateRequest
+             * @static
+             * @param {flyteidl.admin.ILaunchPlanUpdateRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.LaunchPlanUpdateRequest} LaunchPlanUpdateRequest instance
+             */
+            LaunchPlanUpdateRequest.create = function create(properties) {
+                return new LaunchPlanUpdateRequest(properties);
+            };
+
+            /**
+             * Encodes the specified LaunchPlanUpdateRequest message. Does not implicitly {@link flyteidl.admin.LaunchPlanUpdateRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.LaunchPlanUpdateRequest
+             * @static
+             * @param {flyteidl.admin.ILaunchPlanUpdateRequest} message LaunchPlanUpdateRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LaunchPlanUpdateRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.urn != null && message.hasOwnProperty("urn"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.urn);
+                if (message.state != null && message.hasOwnProperty("state"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.state);
+                return writer;
+            };
+
+            /**
+             * Decodes a LaunchPlanUpdateRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.LaunchPlanUpdateRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.LaunchPlanUpdateRequest} LaunchPlanUpdateRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LaunchPlanUpdateRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchPlanUpdateRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.urn = reader.string();
+                        break;
+                    case 2:
+                        message.state = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a LaunchPlanUpdateRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.LaunchPlanUpdateRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            LaunchPlanUpdateRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.urn != null && message.hasOwnProperty("urn"))
+                    if (!$util.isString(message.urn))
+                        return "urn: string expected";
+                if (message.state != null && message.hasOwnProperty("state"))
+                    switch (message.state) {
+                    default:
+                        return "state: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
+                return null;
+            };
+
+            return LaunchPlanUpdateRequest;
+        })();
+
+        admin.LaunchPlanUpdateResponse = (function() {
+
+            /**
+             * Properties of a LaunchPlanUpdateResponse.
+             * @memberof flyteidl.admin
+             * @interface ILaunchPlanUpdateResponse
+             */
+
+            /**
+             * Constructs a new LaunchPlanUpdateResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a LaunchPlanUpdateResponse.
+             * @implements ILaunchPlanUpdateResponse
+             * @constructor
+             * @param {flyteidl.admin.ILaunchPlanUpdateResponse=} [properties] Properties to set
+             */
+            function LaunchPlanUpdateResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new LaunchPlanUpdateResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.LaunchPlanUpdateResponse
+             * @static
+             * @param {flyteidl.admin.ILaunchPlanUpdateResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.LaunchPlanUpdateResponse} LaunchPlanUpdateResponse instance
+             */
+            LaunchPlanUpdateResponse.create = function create(properties) {
+                return new LaunchPlanUpdateResponse(properties);
+            };
+
+            /**
+             * Encodes the specified LaunchPlanUpdateResponse message. Does not implicitly {@link flyteidl.admin.LaunchPlanUpdateResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.LaunchPlanUpdateResponse
+             * @static
+             * @param {flyteidl.admin.ILaunchPlanUpdateResponse} message LaunchPlanUpdateResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LaunchPlanUpdateResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a LaunchPlanUpdateResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.LaunchPlanUpdateResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.LaunchPlanUpdateResponse} LaunchPlanUpdateResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LaunchPlanUpdateResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchPlanUpdateResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a LaunchPlanUpdateResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.LaunchPlanUpdateResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            LaunchPlanUpdateResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return LaunchPlanUpdateResponse;
+        })();
+
         admin.Schedule = (function() {
 
             /**
@@ -16157,6 +16382,39 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              * @param {flyteidl.admin.IObjectGetRequest} request ObjectGetRequest message or plain object
              * @returns {Promise<flyteidl.admin.LaunchPlan>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#updateLaunchPlan}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef UpdateLaunchPlanCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.LaunchPlanUpdateResponse} [response] LaunchPlanUpdateResponse
+             */
+
+            /**
+             * Calls UpdateLaunchPlan.
+             * @function updateLaunchPlan
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.ILaunchPlanUpdateRequest} request LaunchPlanUpdateRequest message or plain object
+             * @param {flyteidl.service.AdminService.UpdateLaunchPlanCallback} callback Node-style callback called with the error, if any, and LaunchPlanUpdateResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.updateLaunchPlan = function updateLaunchPlan(request, callback) {
+                return this.rpcCall(updateLaunchPlan, $root.flyteidl.admin.LaunchPlanUpdateRequest, $root.flyteidl.admin.LaunchPlanUpdateResponse, request, callback);
+            }, "name", { value: "UpdateLaunchPlan" });
+
+            /**
+             * Calls UpdateLaunchPlan.
+             * @function updateLaunchPlan
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.ILaunchPlanUpdateRequest} request LaunchPlanUpdateRequest message or plain object
+             * @returns {Promise<flyteidl.admin.LaunchPlanUpdateResponse>} Promise
              * @variation 2
              */
 

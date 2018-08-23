@@ -73,3 +73,15 @@ message LaunchPlanMetadata {
     // List of notifications based on Execution status transitions
     repeated Notification notifications  = 2;
 }
+
+message LaunchPlanUpdateRequest {
+    // Urn of launch plan for which to change state.t
+    string urn                           = 1;
+
+    // Desired state to apply to the launch plan.
+    LaunchPlanState state                = 2;
+}
+
+// Purposefully empty, may be populated in the future.
+message LaunchPlanUpdateResponse {
+}

@@ -80,6 +80,13 @@ service AdminService {
     };
   }
 
+  rpc UpdateLaunchPlan (flyteidl.admin.LaunchPlanUpdateRequest) returns (flyteidl.admin.LaunchPlanUpdateResponse) {
+    option (google.api.http) = {
+      put: "/api/v1/launch_plans/{urn}"
+      body: "*"
+    };
+  }
+
   rpc CreateExecution (flyteidl.admin.ExecutionCreateRequest) returns (flyteidl.admin.ExecutionCreateResponse) {
     option (google.api.http) = {
       post: "/api/v1/executions"

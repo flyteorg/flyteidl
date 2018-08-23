@@ -175,6 +175,37 @@
         "tags": [
           "AdminService"
         ]
+      },
+      "put": {
+        "operationId": "UpdateLaunchPlan",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminLaunchPlanUpdateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "urn",
+            "description": "Urn of launch plan for which to change state.t",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminLaunchPlanUpdateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
       }
     },
     "/api/v1/project/{id.project}/domain/{id.domain}/tasks": {
@@ -1031,6 +1062,23 @@
       ],
       "default": "INACTIVE",
       "title": "Indicates various states of an Execution - both task and workflow"
+    },
+    "adminLaunchPlanUpdateRequest": {
+      "type": "object",
+      "properties": {
+        "urn": {
+          "type": "string",
+          "title": "Urn of launch plan for which to change state.t"
+        },
+        "state": {
+          "$ref": "#/definitions/adminLaunchPlanState",
+          "description": "Desired state to apply to the launch plan."
+        }
+      }
+    },
+    "adminLaunchPlanUpdateResponse": {
+      "type": "object",
+      "description": "Purposefully empty, may be populated in the future."
     },
     "adminLiteralMapBlob": {
       "type": "object",

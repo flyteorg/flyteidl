@@ -5411,6 +5411,110 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a LaunchPlanUpdateRequest. */
+        interface ILaunchPlanUpdateRequest {
+
+            /** LaunchPlanUpdateRequest urn */
+            urn?: (string|null);
+
+            /** LaunchPlanUpdateRequest state */
+            state?: (flyteidl.admin.LaunchPlanState|null);
+        }
+
+        /** Represents a LaunchPlanUpdateRequest. */
+        class LaunchPlanUpdateRequest implements ILaunchPlanUpdateRequest {
+
+            /**
+             * Constructs a new LaunchPlanUpdateRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ILaunchPlanUpdateRequest);
+
+            /** LaunchPlanUpdateRequest urn. */
+            public urn: string;
+
+            /** LaunchPlanUpdateRequest state. */
+            public state: flyteidl.admin.LaunchPlanState;
+
+            /**
+             * Creates a new LaunchPlanUpdateRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns LaunchPlanUpdateRequest instance
+             */
+            public static create(properties?: flyteidl.admin.ILaunchPlanUpdateRequest): flyteidl.admin.LaunchPlanUpdateRequest;
+
+            /**
+             * Encodes the specified LaunchPlanUpdateRequest message. Does not implicitly {@link flyteidl.admin.LaunchPlanUpdateRequest.verify|verify} messages.
+             * @param message LaunchPlanUpdateRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ILaunchPlanUpdateRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a LaunchPlanUpdateRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns LaunchPlanUpdateRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.LaunchPlanUpdateRequest;
+
+            /**
+             * Verifies a LaunchPlanUpdateRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a LaunchPlanUpdateResponse. */
+        interface ILaunchPlanUpdateResponse {
+        }
+
+        /** Represents a LaunchPlanUpdateResponse. */
+        class LaunchPlanUpdateResponse implements ILaunchPlanUpdateResponse {
+
+            /**
+             * Constructs a new LaunchPlanUpdateResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ILaunchPlanUpdateResponse);
+
+            /**
+             * Creates a new LaunchPlanUpdateResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns LaunchPlanUpdateResponse instance
+             */
+            public static create(properties?: flyteidl.admin.ILaunchPlanUpdateResponse): flyteidl.admin.LaunchPlanUpdateResponse;
+
+            /**
+             * Encodes the specified LaunchPlanUpdateResponse message. Does not implicitly {@link flyteidl.admin.LaunchPlanUpdateResponse.verify|verify} messages.
+             * @param message LaunchPlanUpdateResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ILaunchPlanUpdateResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a LaunchPlanUpdateResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns LaunchPlanUpdateResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.LaunchPlanUpdateResponse;
+
+            /**
+             * Verifies a LaunchPlanUpdateResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a Schedule. */
         interface ISchedule {
 
@@ -6782,6 +6886,20 @@ export namespace flyteidl {
             public getLaunchPlan(request: flyteidl.admin.IObjectGetRequest): Promise<flyteidl.admin.LaunchPlan>;
 
             /**
+             * Calls UpdateLaunchPlan.
+             * @param request LaunchPlanUpdateRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and LaunchPlanUpdateResponse
+             */
+            public updateLaunchPlan(request: flyteidl.admin.ILaunchPlanUpdateRequest, callback: flyteidl.service.AdminService.UpdateLaunchPlanCallback): void;
+
+            /**
+             * Calls UpdateLaunchPlan.
+             * @param request LaunchPlanUpdateRequest message or plain object
+             * @returns Promise
+             */
+            public updateLaunchPlan(request: flyteidl.admin.ILaunchPlanUpdateRequest): Promise<flyteidl.admin.LaunchPlanUpdateResponse>;
+
+            /**
              * Calls CreateExecution.
              * @param request ExecutionCreateRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and ExecutionCreateResponse
@@ -6895,6 +7013,13 @@ export namespace flyteidl {
              * @param [response] LaunchPlan
              */
             type GetLaunchPlanCallback = (error: (Error|null), response?: flyteidl.admin.LaunchPlan) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#updateLaunchPlan}.
+             * @param error Error, if any
+             * @param [response] LaunchPlanUpdateResponse
+             */
+            type UpdateLaunchPlanCallback = (error: (Error|null), response?: flyteidl.admin.LaunchPlanUpdateResponse) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.AdminService#createExecution}.

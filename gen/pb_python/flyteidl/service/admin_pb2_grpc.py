@@ -68,6 +68,11 @@ class AdminServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_common__pb2.ObjectGetRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_launch__plan__pb2.LaunchPlan.FromString,
         )
+    self.UpdateLaunchPlan = channel.unary_unary(
+        '/flyteidl.service.AdminService/UpdateLaunchPlan',
+        request_serializer=flyteidl_dot_admin_dot_launch__plan__pb2.LaunchPlanUpdateRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_launch__plan__pb2.LaunchPlanUpdateResponse.FromString,
+        )
     self.CreateExecution = channel.unary_unary(
         '/flyteidl.service.AdminService/CreateExecution',
         request_serializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionCreateRequest.SerializeToString,
@@ -159,6 +164,13 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def UpdateLaunchPlan(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def CreateExecution(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -232,6 +244,11 @@ def add_AdminServiceServicer_to_server(servicer, server):
           servicer.GetLaunchPlan,
           request_deserializer=flyteidl_dot_admin_dot_common__pb2.ObjectGetRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_launch__plan__pb2.LaunchPlan.SerializeToString,
+      ),
+      'UpdateLaunchPlan': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateLaunchPlan,
+          request_deserializer=flyteidl_dot_admin_dot_launch__plan__pb2.LaunchPlanUpdateRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_launch__plan__pb2.LaunchPlanUpdateResponse.SerializeToString,
       ),
       'CreateExecution': grpc.unary_unary_rpc_method_handler(
           servicer.CreateExecution,

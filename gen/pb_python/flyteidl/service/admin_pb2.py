@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/service/admin.proto',
   package='flyteidl.service',
   syntax='proto3',
-  serialized_pb=_b('\n\x1c\x66lyteidl/service/admin.proto\x12\x10\x66lyteidl.service\x1a\x1cgoogle/api/annotations.proto\x1a\x19\x66lyteidl/admin/task.proto\x1a\x1d\x66lyteidl/admin/workflow.proto\x1a flyteidl/admin/launch_plan.proto\x1a\x1e\x66lyteidl/admin/execution.proto\x1a\x1b\x66lyteidl/admin/common.proto2\x88\x0e\n\x0c\x41\x64minService\x12m\n\nCreateTask\x12!.flyteidl.admin.TaskCreateRequest\x1a\".flyteidl.admin.TaskCreateResponse\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/api/v1/tasks:\x01*\x12^\n\x07GetTask\x12 .flyteidl.admin.ObjectGetRequest\x1a\x14.flyteidl.admin.Task\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/api/v1/tasks/{urn}\x12\x90\x01\n\x0bListTaskIds\x12%.flyteidl.admin.IdentifierListRequest\x1a\x1e.flyteidl.admin.IdentifierList\":\x82\xd3\xe4\x93\x02\x34\x12\x32/api/v1/project/{project}/domain/{domain}/task_ids\x12\xcd\x01\n\tListTasks\x12#.flyteidl.admin.ResourceListRequest\x1a\x18.flyteidl.admin.TaskList\"\x80\x01\x82\xd3\xe4\x93\x02z\x12\x35/api/v1/project/{id.project}/domain/{id.domain}/tasksZA\x12?/api/v1/project/{id.project}/domain/{id.domain}/tasks/{id.name}\x12}\n\x0e\x43reateWorkflow\x12%.flyteidl.admin.WorkflowCreateRequest\x1a&.flyteidl.admin.WorkflowCreateResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/api/v1/workflows:\x01*\x12j\n\x0bGetWorkflow\x12 .flyteidl.admin.ObjectGetRequest\x1a\x18.flyteidl.admin.Workflow\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/workflows/{urn}\x12\x98\x01\n\x0fListWorkflowIds\x12%.flyteidl.admin.IdentifierListRequest\x1a\x1e.flyteidl.admin.IdentifierList\">\x82\xd3\xe4\x93\x02\x38\x12\x36/api/v1/project/{project}/domain/{domain}/workflow_ids\x12\xde\x01\n\rListWorkflows\x12#.flyteidl.admin.ResourceListRequest\x1a\x1c.flyteidl.admin.WorkflowList\"\x89\x01\x82\xd3\xe4\x93\x02\x82\x01\x12\x39/api/v1/project/{id.project}/domain/{id.domain}/workflowsZE\x12\x43/api/v1/project/{id.project}/domain/{id.domain}/workflows/{id.name}\x12\x86\x01\n\x10\x43reateLaunchPlan\x12\'.flyteidl.admin.LaunchPlanCreateRequest\x1a(.flyteidl.admin.LaunchPlanCreateResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/api/v1/launch_plans:\x01*\x12q\n\rGetLaunchPlan\x12 .flyteidl.admin.ObjectGetRequest\x1a\x1a.flyteidl.admin.LaunchPlan\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/api/v1/launch_plans/{urn}\x12\x81\x01\n\x0f\x43reateExecution\x12&.flyteidl.admin.ExecutionCreateRequest\x1a\'.flyteidl.admin.ExecutionCreateResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/api/v1/executions:\x01*\x12m\n\x0cGetExecution\x12 .flyteidl.admin.ObjectGetRequest\x1a\x19.flyteidl.admin.Execution\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/api/v1/executions/{urn}\x12p\n\x0eListExecutions\x12#.flyteidl.admin.ResourceListRequest\x1a\x1d.flyteidl.admin.ExecutionList\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/api/v1/executionsB5Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/serviceb\x06proto3')
+  serialized_pb=_b('\n\x1c\x66lyteidl/service/admin.proto\x12\x10\x66lyteidl.service\x1a\x1cgoogle/api/annotations.proto\x1a\x19\x66lyteidl/admin/task.proto\x1a\x1d\x66lyteidl/admin/workflow.proto\x1a flyteidl/admin/launch_plan.proto\x1a\x1e\x66lyteidl/admin/execution.proto\x1a\x1b\x66lyteidl/admin/common.proto2\x97\x0f\n\x0c\x41\x64minService\x12m\n\nCreateTask\x12!.flyteidl.admin.TaskCreateRequest\x1a\".flyteidl.admin.TaskCreateResponse\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/api/v1/tasks:\x01*\x12^\n\x07GetTask\x12 .flyteidl.admin.ObjectGetRequest\x1a\x14.flyteidl.admin.Task\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/api/v1/tasks/{urn}\x12\x90\x01\n\x0bListTaskIds\x12%.flyteidl.admin.IdentifierListRequest\x1a\x1e.flyteidl.admin.IdentifierList\":\x82\xd3\xe4\x93\x02\x34\x12\x32/api/v1/project/{project}/domain/{domain}/task_ids\x12\xcd\x01\n\tListTasks\x12#.flyteidl.admin.ResourceListRequest\x1a\x18.flyteidl.admin.TaskList\"\x80\x01\x82\xd3\xe4\x93\x02z\x12\x35/api/v1/project/{id.project}/domain/{id.domain}/tasksZA\x12?/api/v1/project/{id.project}/domain/{id.domain}/tasks/{id.name}\x12}\n\x0e\x43reateWorkflow\x12%.flyteidl.admin.WorkflowCreateRequest\x1a&.flyteidl.admin.WorkflowCreateResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/api/v1/workflows:\x01*\x12j\n\x0bGetWorkflow\x12 .flyteidl.admin.ObjectGetRequest\x1a\x18.flyteidl.admin.Workflow\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/workflows/{urn}\x12\x98\x01\n\x0fListWorkflowIds\x12%.flyteidl.admin.IdentifierListRequest\x1a\x1e.flyteidl.admin.IdentifierList\">\x82\xd3\xe4\x93\x02\x38\x12\x36/api/v1/project/{project}/domain/{domain}/workflow_ids\x12\xde\x01\n\rListWorkflows\x12#.flyteidl.admin.ResourceListRequest\x1a\x1c.flyteidl.admin.WorkflowList\"\x89\x01\x82\xd3\xe4\x93\x02\x82\x01\x12\x39/api/v1/project/{id.project}/domain/{id.domain}/workflowsZE\x12\x43/api/v1/project/{id.project}/domain/{id.domain}/workflows/{id.name}\x12\x86\x01\n\x10\x43reateLaunchPlan\x12\'.flyteidl.admin.LaunchPlanCreateRequest\x1a(.flyteidl.admin.LaunchPlanCreateResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/api/v1/launch_plans:\x01*\x12q\n\rGetLaunchPlan\x12 .flyteidl.admin.ObjectGetRequest\x1a\x1a.flyteidl.admin.LaunchPlan\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/api/v1/launch_plans/{urn}\x12\x8c\x01\n\x10UpdateLaunchPlan\x12\'.flyteidl.admin.LaunchPlanUpdateRequest\x1a(.flyteidl.admin.LaunchPlanUpdateResponse\"%\x82\xd3\xe4\x93\x02\x1f\x1a\x1a/api/v1/launch_plans/{urn}:\x01*\x12\x81\x01\n\x0f\x43reateExecution\x12&.flyteidl.admin.ExecutionCreateRequest\x1a\'.flyteidl.admin.ExecutionCreateResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/api/v1/executions:\x01*\x12m\n\x0cGetExecution\x12 .flyteidl.admin.ObjectGetRequest\x1a\x19.flyteidl.admin.Execution\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/api/v1/executions/{urn}\x12p\n\x0eListExecutions\x12#.flyteidl.admin.ResourceListRequest\x1a\x1d.flyteidl.admin.ExecutionList\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/api/v1/executionsB5Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/serviceb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_task__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_workflow__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_launch__plan__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_execution__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,])
 
@@ -44,7 +44,7 @@ _ADMINSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   options=None,
   serialized_start=234,
-  serialized_end=2034,
+  serialized_end=2177,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateTask',
@@ -137,9 +137,18 @@ _ADMINSERVICE = _descriptor.ServiceDescriptor(
     options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\034\022\032/api/v1/launch_plans/{urn}')),
   ),
   _descriptor.MethodDescriptor(
+    name='UpdateLaunchPlan',
+    full_name='flyteidl.service.AdminService.UpdateLaunchPlan',
+    index=10,
+    containing_service=None,
+    input_type=flyteidl_dot_admin_dot_launch__plan__pb2._LAUNCHPLANUPDATEREQUEST,
+    output_type=flyteidl_dot_admin_dot_launch__plan__pb2._LAUNCHPLANUPDATERESPONSE,
+    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\037\032\032/api/v1/launch_plans/{urn}:\001*')),
+  ),
+  _descriptor.MethodDescriptor(
     name='CreateExecution',
     full_name='flyteidl.service.AdminService.CreateExecution',
-    index=10,
+    index=11,
     containing_service=None,
     input_type=flyteidl_dot_admin_dot_execution__pb2._EXECUTIONCREATEREQUEST,
     output_type=flyteidl_dot_admin_dot_execution__pb2._EXECUTIONCREATERESPONSE,
@@ -148,7 +157,7 @@ _ADMINSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetExecution',
     full_name='flyteidl.service.AdminService.GetExecution',
-    index=11,
+    index=12,
     containing_service=None,
     input_type=flyteidl_dot_admin_dot_common__pb2._OBJECTGETREQUEST,
     output_type=flyteidl_dot_admin_dot_execution__pb2._EXECUTION,
@@ -157,7 +166,7 @@ _ADMINSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListExecutions',
     full_name='flyteidl.service.AdminService.ListExecutions',
-    index=12,
+    index=13,
     containing_service=None,
     input_type=flyteidl_dot_admin_dot_common__pb2._RESOURCELISTREQUEST,
     output_type=flyteidl_dot_admin_dot_execution__pb2._EXECUTIONLIST,
