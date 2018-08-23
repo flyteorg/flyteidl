@@ -121,8 +121,8 @@ message Node {
 }
 
 // Metadata for the entire workflow.
+// To be used in the future.
 message WorkflowMetadata {
-    string execution_role = 1;
 }
 
 // Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,

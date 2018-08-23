@@ -2055,12 +2055,7 @@
     },
     "coreWorkflowMetadata": {
       "type": "object",
-      "properties": {
-        "execution_role": {
-          "type": "string"
-        }
-      },
-      "description": "Metadata for the entire workflow."
+      "description": "Metadata for the entire workflow.\nTo be used in the future."
     },
     "coreWorkflowNode": {
       "type": "object",

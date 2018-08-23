@@ -812,9 +812,6 @@ export namespace flyteidl {
 
         /** Properties of a WorkflowMetadata. */
         interface IWorkflowMetadata {
-
-            /** WorkflowMetadata executionRole */
-            executionRole?: (string|null);
         }
 
         /** Represents a WorkflowMetadata. */
@@ -825,9 +822,6 @@ export namespace flyteidl {
              * @param [properties] Properties to set
              */
             constructor(properties?: flyteidl.core.IWorkflowMetadata);
-
-            /** WorkflowMetadata executionRole. */
-            public executionRole: string;
 
             /**
              * Creates a new WorkflowMetadata instance using the specified properties.
