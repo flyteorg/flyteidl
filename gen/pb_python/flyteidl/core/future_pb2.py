@@ -21,11 +21,41 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/future.proto',
   package='flyteidl.core',
   syntax='proto3',
-  serialized_pb=_b('\n\x1a\x66lyteidl/core/future.proto\x12\rflyteidl.core\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1c\x66lyteidl/core/literals.proto\"\x82\x01\n\x12\x46utureTaskDocument\x12,\n\x05tasks\x18\x01 \x03(\x0b\x32\x1d.flyteidl.core.FutureTaskNode\x12\x15\n\rmin_successes\x18\x02 \x01(\x03\x12\'\n\x07outputs\x18\x03 \x03(\x0b\x32\x16.flyteidl.core.Binding\"\x95\x01\n\x0e\x46utureTaskNode\x12\x13\n\x0bgenerate_id\x18\x01 \x01(\t\x12(\n\x05\x61rray\x18\x02 \x01(\x0b\x32\x17.flyteidl.core.ArrayJobH\x00\x12:\n\x0chive_queries\x18\x03 \x01(\x0b\x32\".flyteidl.core.HiveQueryCollectionH\x00\x42\x08\n\x06target\"I\n\tHiveQuery\x12\r\n\x05query\x18\x01 \x01(\t\x12-\n\x08metadata\x18\x02 \x01(\x0b\x32\x1b.flyteidl.core.TaskMetadata\"@\n\x13HiveQueryCollection\x12)\n\x07queries\x18\x02 \x03(\x0b\x32\x18.flyteidl.core.HiveQuery\"\xaf\x01\n\x0fSwarmDefinition\x12\x33\n\x11primary_container\x18\x01 \x01(\x0b\x32\x18.flyteidl.core.Container\x12\x31\n\x0finit_containers\x18\x02 \x03(\x0b\x32\x18.flyteidl.core.Container\x12\x34\n\x12sidecar_containers\x18\x03 \x03(\x0b\x32\x18.flyteidl.core.Container\"\xdc\x01\n\x08\x41rrayJob\x12-\n\x08metadata\x18\x01 \x01(\x0b\x32\x1b.flyteidl.core.TaskMetadata\x12\r\n\x05slots\x18\x02 \x01(\x03\x12\x13\n\x0b\x63ompletions\x18\x03 \x01(\x03\x12-\n\tcontainer\x18\x04 \x01(\x0b\x32\x18.flyteidl.core.ContainerH\x00\x12/\n\x05swarm\x18\x05 \x01(\x0b\x32\x1e.flyteidl.core.SwarmDefinitionH\x00\x12\x11\n\tinput_ref\x18\x06 \x01(\tB\n\n\x08runnableB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1a\x66lyteidl/core/future.proto\x12\rflyteidl.core\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1c\x66lyteidl/core/literals.proto\"\x82\x01\n\x12\x46utureTaskDocument\x12,\n\x05tasks\x18\x01 \x03(\x0b\x32\x1d.flyteidl.core.FutureTaskNode\x12\x15\n\rmin_successes\x18\x02 \x01(\x03\x12\'\n\x07outputs\x18\x03 \x03(\x0b\x32\x16.flyteidl.core.Binding\"\x8c\x02\n\x0e\x46utureTaskNode\x12\x13\n\x0bgenerate_id\x18\x01 \x01(\t\x12\x30\n\x04kind\x18\x02 \x01(\x0e\x32\".flyteidl.core.FutureTaskNode.Kind\x12(\n\x05\x61rray\x18\x03 \x01(\x0b\x32\x17.flyteidl.core.ArrayJobH\x00\x12:\n\x0chive_queries\x18\x04 \x01(\x0b\x32\".flyteidl.core.HiveQueryCollectionH\x00\"C\n\x04Kind\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x13\n\x0f\x41RRAY_CONTAINER\x10\x01\x12\x0f\n\x0b\x41RRAY_SWARM\x10\x02\x12\x08\n\x04HIVE\x10\x03\x42\x08\n\x06target\"I\n\tHiveQuery\x12\r\n\x05query\x18\x01 \x01(\t\x12-\n\x08metadata\x18\x02 \x01(\x0b\x32\x1b.flyteidl.core.TaskMetadata\"@\n\x13HiveQueryCollection\x12)\n\x07queries\x18\x02 \x03(\x0b\x32\x18.flyteidl.core.HiveQuery\"\xaf\x01\n\x0fSwarmDefinition\x12\x33\n\x11primary_container\x18\x01 \x01(\x0b\x32\x18.flyteidl.core.Container\x12\x31\n\x0finit_containers\x18\x02 \x03(\x0b\x32\x18.flyteidl.core.Container\x12\x34\n\x12sidecar_containers\x18\x03 \x03(\x0b\x32\x18.flyteidl.core.Container\"\xdc\x01\n\x08\x41rrayJob\x12-\n\x08metadata\x18\x01 \x01(\x0b\x32\x1b.flyteidl.core.TaskMetadata\x12\r\n\x05slots\x18\x02 \x01(\x03\x12\x13\n\x0b\x63ompletions\x18\x03 \x01(\x03\x12-\n\tcontainer\x18\x04 \x01(\x0b\x32\x18.flyteidl.core.ContainerH\x00\x12/\n\x05swarm\x18\x05 \x01(\x0b\x32\x1e.flyteidl.core.SwarmDefinitionH\x00\x12\x11\n\tinput_ref\x18\x06 \x01(\tB\n\n\x08runnableB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,])
 
 
+
+_FUTURETASKNODE_KIND = _descriptor.EnumDescriptor(
+  name='Kind',
+  full_name='flyteidl.core.FutureTaskNode.Kind',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ARRAY_CONTAINER', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ARRAY_SWARM', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='HIVE', index=3, number=3,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=427,
+  serialized_end=494,
+)
+_sym_db.RegisterEnumDescriptor(_FUTURETASKNODE_KIND)
 
 
 _FUTURETASKDOCUMENT = _descriptor.Descriptor(
@@ -88,15 +118,22 @@ _FUTURETASKNODE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='array', full_name='flyteidl.core.FutureTaskNode.array', index=1,
-      number=2, type=11, cpp_type=10, label=1,
+      name='kind', full_name='flyteidl.core.FutureTaskNode.kind', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='array', full_name='flyteidl.core.FutureTaskNode.array', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='hive_queries', full_name='flyteidl.core.FutureTaskNode.hive_queries', index=2,
-      number=3, type=11, cpp_type=10, label=1,
+      name='hive_queries', full_name='flyteidl.core.FutureTaskNode.hive_queries', index=3,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -106,6 +143,7 @@ _FUTURETASKNODE = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _FUTURETASKNODE_KIND,
   ],
   options=None,
   is_extendable=False,
@@ -117,7 +155,7 @@ _FUTURETASKNODE = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=236,
-  serialized_end=385,
+  serialized_end=504,
 )
 
 
@@ -154,8 +192,8 @@ _HIVEQUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=387,
-  serialized_end=460,
+  serialized_start=506,
+  serialized_end=579,
 )
 
 
@@ -185,8 +223,8 @@ _HIVEQUERYCOLLECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=462,
-  serialized_end=526,
+  serialized_start=581,
+  serialized_end=645,
 )
 
 
@@ -230,8 +268,8 @@ _SWARMDEFINITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=529,
-  serialized_end=704,
+  serialized_start=648,
+  serialized_end=823,
 )
 
 
@@ -299,14 +337,16 @@ _ARRAYJOB = _descriptor.Descriptor(
       name='runnable', full_name='flyteidl.core.ArrayJob.runnable',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=707,
-  serialized_end=927,
+  serialized_start=826,
+  serialized_end=1046,
 )
 
 _FUTURETASKDOCUMENT.fields_by_name['tasks'].message_type = _FUTURETASKNODE
 _FUTURETASKDOCUMENT.fields_by_name['outputs'].message_type = flyteidl_dot_core_dot_literals__pb2._BINDING
+_FUTURETASKNODE.fields_by_name['kind'].enum_type = _FUTURETASKNODE_KIND
 _FUTURETASKNODE.fields_by_name['array'].message_type = _ARRAYJOB
 _FUTURETASKNODE.fields_by_name['hive_queries'].message_type = _HIVEQUERYCOLLECTION
+_FUTURETASKNODE_KIND.containing_type = _FUTURETASKNODE
 _FUTURETASKNODE.oneofs_by_name['target'].fields.append(
   _FUTURETASKNODE.fields_by_name['array'])
 _FUTURETASKNODE.fields_by_name['array'].containing_oneof = _FUTURETASKNODE.oneofs_by_name['target']

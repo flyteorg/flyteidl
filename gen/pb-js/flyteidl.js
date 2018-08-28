@@ -8625,6 +8625,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.core
              * @interface IFutureTaskNode
              * @property {string|null} [generateId] FutureTaskNode generateId
+             * @property {flyteidl.core.FutureTaskNode.Kind|null} [kind] FutureTaskNode kind
              * @property {flyteidl.core.IArrayJob|null} [array] FutureTaskNode array
              * @property {flyteidl.core.IHiveQueryCollection|null} [hiveQueries] FutureTaskNode hiveQueries
              */
@@ -8651,6 +8652,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             FutureTaskNode.prototype.generateId = "";
+
+            /**
+             * FutureTaskNode kind.
+             * @member {flyteidl.core.FutureTaskNode.Kind} kind
+             * @memberof flyteidl.core.FutureTaskNode
+             * @instance
+             */
+            FutureTaskNode.prototype.kind = 0;
 
             /**
              * FutureTaskNode array.
@@ -8708,10 +8717,12 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.generateId != null && message.hasOwnProperty("generateId"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.generateId);
+                if (message.kind != null && message.hasOwnProperty("kind"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.kind);
                 if (message.array != null && message.hasOwnProperty("array"))
-                    $root.flyteidl.core.ArrayJob.encode(message.array, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    $root.flyteidl.core.ArrayJob.encode(message.array, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.hiveQueries != null && message.hasOwnProperty("hiveQueries"))
-                    $root.flyteidl.core.HiveQueryCollection.encode(message.hiveQueries, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    $root.flyteidl.core.HiveQueryCollection.encode(message.hiveQueries, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -8737,9 +8748,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.generateId = reader.string();
                         break;
                     case 2:
-                        message.array = $root.flyteidl.core.ArrayJob.decode(reader, reader.uint32());
+                        message.kind = reader.int32();
                         break;
                     case 3:
+                        message.array = $root.flyteidl.core.ArrayJob.decode(reader, reader.uint32());
+                        break;
+                    case 4:
                         message.hiveQueries = $root.flyteidl.core.HiveQueryCollection.decode(reader, reader.uint32());
                         break;
                     default:
@@ -8765,6 +8779,16 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.generateId != null && message.hasOwnProperty("generateId"))
                     if (!$util.isString(message.generateId))
                         return "generateId: string expected";
+                if (message.kind != null && message.hasOwnProperty("kind"))
+                    switch (message.kind) {
+                    default:
+                        return "kind: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                        break;
+                    }
                 if (message.array != null && message.hasOwnProperty("array")) {
                     properties.target = 1;
                     {
@@ -8785,6 +8809,24 @@ export const flyteidl = $root.flyteidl = (() => {
                 }
                 return null;
             };
+
+            /**
+             * Kind enum.
+             * @name flyteidl.core.FutureTaskNode.Kind
+             * @enum {string}
+             * @property {number} UNKNOWN=0 UNKNOWN value
+             * @property {number} ARRAY_CONTAINER=1 ARRAY_CONTAINER value
+             * @property {number} ARRAY_SWARM=2 ARRAY_SWARM value
+             * @property {number} HIVE=3 HIVE value
+             */
+            FutureTaskNode.Kind = (function() {
+                const valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "UNKNOWN"] = 0;
+                values[valuesById[1] = "ARRAY_CONTAINER"] = 1;
+                values[valuesById[2] = "ARRAY_SWARM"] = 2;
+                values[valuesById[3] = "HIVE"] = 3;
+                return values;
+            })();
 
             return FutureTaskNode;
         })();

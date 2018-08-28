@@ -3567,6 +3567,9 @@ export namespace flyteidl {
             /** FutureTaskNode generateId */
             generateId?: (string|null);
 
+            /** FutureTaskNode kind */
+            kind?: (flyteidl.core.FutureTaskNode.Kind|null);
+
             /** FutureTaskNode array */
             array?: (flyteidl.core.IArrayJob|null);
 
@@ -3585,6 +3588,9 @@ export namespace flyteidl {
 
             /** FutureTaskNode generateId. */
             public generateId: string;
+
+            /** FutureTaskNode kind. */
+            public kind: flyteidl.core.FutureTaskNode.Kind;
 
             /** FutureTaskNode array. */
             public array?: (flyteidl.core.IArrayJob|null);
@@ -3626,6 +3632,17 @@ export namespace flyteidl {
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace FutureTaskNode {
+
+            /** Kind enum. */
+            enum Kind {
+                UNKNOWN = 0,
+                ARRAY_CONTAINER = 1,
+                ARRAY_SWARM = 2,
+                HIVE = 3
+            }
         }
 
         /** Properties of a HiveQuery. */

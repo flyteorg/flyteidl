@@ -22,19 +22,30 @@ message FutureTaskDocument {
 }
 
 message FutureTaskNode {
+    enum Kind {
+        UNKNOWN = 0;
+        ARRAY_CONTAINER = 1;
+        ARRAY_SWARM = 2;
+        HIVE = 3;
+    }
+
     // A unique identifier prefix within the document. This is used to generate unique ids for each of the tasks in
     // target. The generated ids have this format: <generate_id>:<n> where n starts with 0 and monotonically increases.
     // e.g. if generate_id is set to "my_array_job", the first task in the array job will have the id "my_array_job:0",
     // then "my_array_job:1"... etc.
     string generate_id = 1;
 
+    // A required field to describe the type of the future task. This is used to customize the behavior of various
+    // executors that can handle this type of task.
+    Kind kind = 2;
+
     // The executable target of the node.
     oneof target {
         // Information about the array job to run.
-        ArrayJob array = 2;
+        ArrayJob array = 3;
 
         // Information about the hive queries to execute.
-        HiveQueryCollection hive_queries = 3;
+        HiveQueryCollection hive_queries = 4;
     }
 
     // TODO: How to do discovery?
@@ -51,7 +62,6 @@ message HiveQuery {
 
 // Defines a collection of hive queries.
 message HiveQueryCollection {
-
     repeated HiveQuery queries = 2;
 }
 
@@ -103,10 +113,16 @@ message ArrayJob {
     // The location for where the input will be. The usage of this location is engine-dependent.
     // AWS_Batch & K8s_Batch: This location will be passed in to each task in the array job. Each job is responsible for
     // processing only the portion of the input it's meant to based on an environment variable passed into the container
-    // . User code should look at BATCH_JOB_ARRAY_INDEX_VAR_NAME to know the environment variable it must look at.
+    // . The algorithm for figuring that out is as follows:
+    // - Read environment variable: BATCH_JOB_ARRAY_INDEX_VAR_NAME if it exists, this will contain the name of another
+    //   environment variable that actually contain the index (e.g. AWS_BATCH_JOB_ARRAY_INDEX for AWS batch).
+    // - Read environment variable: BATCH_JOB_ARRAY_INDEX_OFFSET if it exists, this will contain an offset to add to the
+    //   index obtained above.
+    // - The input location is then: <input_ref>/<final_index>/inputs.pb
     // For example, in AWS_Batch, BATCH_JOB_ARRAY_INDEX_VAR_NAME will be set to AWS_BATCH_JOB_ARRAY_INDEX. The job can
-    // then look at AWS_BATCH_JOB_ARRAY_INDEX to know the index of the job and load the appropriate portion of the input.
-    // Azure: The execution engine will have to process the input and slice it for each task. It'll then pass an absolute
-    // location to each task for where it can find its input.
+    // then look at AWS_BATCH_JOB_ARRAY_INDEX to know the index of the job (e.g. 5), then let's say BATCH_JOB_ARRAY_INDEX_OFFSET
+    // contains the value 2. The final output location is then: <input_ref>/7/inputs.pb
+    // P.S for Azure: The execution engine will have to process the input and slice it for each task. It'll then pass an
+    // absolute location to each task for where it can find its input.
     string input_ref = 6;
 }
