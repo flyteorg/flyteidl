@@ -7411,6 +7411,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.IRuntimeMetadata|null} [runtime] TaskMetadata runtime
              * @property {google.protobuf.IDuration|null} [timeout] TaskMetadata timeout
              * @property {flyteidl.core.IRetryStrategy|null} [retries] TaskMetadata retries
+             * @property {string|null} [discoveryVersion] TaskMetadata discoveryVersion
+             * @property {string|null} [deprecated] TaskMetadata deprecated
              */
 
             /**
@@ -7461,6 +7463,22 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskMetadata.prototype.retries = null;
 
             /**
+             * TaskMetadata discoveryVersion.
+             * @member {string} discoveryVersion
+             * @memberof flyteidl.core.TaskMetadata
+             * @instance
+             */
+            TaskMetadata.prototype.discoveryVersion = "";
+
+            /**
+             * TaskMetadata deprecated.
+             * @member {string} deprecated
+             * @memberof flyteidl.core.TaskMetadata
+             * @instance
+             */
+            TaskMetadata.prototype.deprecated = "";
+
+            /**
              * Creates a new TaskMetadata instance using the specified properties.
              * @function create
              * @memberof flyteidl.core.TaskMetadata
@@ -7492,6 +7510,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.google.protobuf.Duration.encode(message.timeout, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.retries != null && message.hasOwnProperty("retries"))
                     $root.flyteidl.core.RetryStrategy.encode(message.retries, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.discoveryVersion != null && message.hasOwnProperty("discoveryVersion"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.discoveryVersion);
+                if (message.deprecated != null && message.hasOwnProperty("deprecated"))
+                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.deprecated);
                 return writer;
             };
 
@@ -7524,6 +7546,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 5:
                         message.retries = $root.flyteidl.core.RetryStrategy.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.discoveryVersion = reader.string();
+                        break;
+                    case 7:
+                        message.deprecated = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -7562,6 +7590,12 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "retries." + error;
                 }
+                if (message.discoveryVersion != null && message.hasOwnProperty("discoveryVersion"))
+                    if (!$util.isString(message.discoveryVersion))
+                        return "discoveryVersion: string expected";
+                if (message.deprecated != null && message.hasOwnProperty("deprecated"))
+                    if (!$util.isString(message.deprecated))
+                        return "deprecated: string expected";
                 return null;
             };
 

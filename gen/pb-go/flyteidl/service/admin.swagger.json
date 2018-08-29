@@ -2004,6 +2004,14 @@
         "retries": {
           "$ref": "#/definitions/coreRetryStrategy",
           "description": "Number of retries per task."
+        },
+        "discovery_version": {
+          "type": "string",
+          "description": "Indicates a logical version to apply to this task for the purpose of discovery."
+        },
+        "deprecated": {
+          "type": "string",
+          "description": "If set, this indicates that this task is deprecated.  This will enable owners of tasks to notify consumers\nof the ending of support for a given task."
         }
       },
       "title": "Task Metadata"

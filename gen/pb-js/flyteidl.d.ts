@@ -3085,6 +3085,12 @@ export namespace flyteidl {
 
             /** TaskMetadata retries */
             retries?: (flyteidl.core.IRetryStrategy|null);
+
+            /** TaskMetadata discoveryVersion */
+            discoveryVersion?: (string|null);
+
+            /** TaskMetadata deprecated */
+            deprecated?: (string|null);
         }
 
         /** Represents a TaskMetadata. */
@@ -3107,6 +3113,12 @@ export namespace flyteidl {
 
             /** TaskMetadata retries. */
             public retries?: (flyteidl.core.IRetryStrategy|null);
+
+            /** TaskMetadata discoveryVersion. */
+            public discoveryVersion: string;
+
+            /** TaskMetadata deprecated. */
+            public deprecated: string;
 
             /**
              * Creates a new TaskMetadata instance using the specified properties.
