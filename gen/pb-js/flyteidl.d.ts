@@ -4543,9 +4543,6 @@ export namespace flyteidl {
             /** Execution executionId */
             executionId?: (string|null);
 
-            /** Execution status */
-            status?: (flyteidl.admin.IExecutionStatus|null);
-
             /** Execution spec */
             spec?: (flyteidl.admin.IExecutionSpec|null);
 
@@ -4567,9 +4564,6 @@ export namespace flyteidl {
 
             /** Execution executionId. */
             public executionId: string;
-
-            /** Execution status. */
-            public status?: (flyteidl.admin.IExecutionStatus|null);
 
             /** Execution spec. */
             public spec?: (flyteidl.admin.IExecutionSpec|null);
@@ -4662,64 +4656,6 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of an ExecutionStatus. */
-        interface IExecutionStatus {
-
-            /** ExecutionStatus phase */
-            phase?: (flyteidl.admin.ExecutionPhase|null);
-
-            /** ExecutionStatus workflowUrn */
-            workflowUrn?: (string|null);
-        }
-
-        /** Represents an ExecutionStatus. */
-        class ExecutionStatus implements IExecutionStatus {
-
-            /**
-             * Constructs a new ExecutionStatus.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IExecutionStatus);
-
-            /** ExecutionStatus phase. */
-            public phase: flyteidl.admin.ExecutionPhase;
-
-            /** ExecutionStatus workflowUrn. */
-            public workflowUrn: string;
-
-            /**
-             * Creates a new ExecutionStatus instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ExecutionStatus instance
-             */
-            public static create(properties?: flyteidl.admin.IExecutionStatus): flyteidl.admin.ExecutionStatus;
-
-            /**
-             * Encodes the specified ExecutionStatus message. Does not implicitly {@link flyteidl.admin.ExecutionStatus.verify|verify} messages.
-             * @param message ExecutionStatus message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IExecutionStatus, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an ExecutionStatus message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns ExecutionStatus
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionStatus;
-
-            /**
-             * Verifies an ExecutionStatus message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of a LiteralMapBlob. */
         interface ILiteralMapBlob {
 
@@ -4792,6 +4728,9 @@ export namespace flyteidl {
 
             /** ExecutionClosure computedInputs */
             computedInputs?: (flyteidl.core.ILiteralMap|null);
+
+            /** ExecutionClosure phase */
+            phase?: (flyteidl.admin.ExecutionPhase|null);
         }
 
         /** Represents an ExecutionClosure. */
@@ -4811,6 +4750,9 @@ export namespace flyteidl {
 
             /** ExecutionClosure computedInputs. */
             public computedInputs?: (flyteidl.core.ILiteralMap|null);
+
+            /** ExecutionClosure phase. */
+            public phase: flyteidl.admin.ExecutionPhase;
 
             /** ExecutionClosure outputResult. */
             public outputResult?: ("outputs"|"error");

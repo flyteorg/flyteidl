@@ -10931,7 +10931,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IExecution
              * @property {flyteidl.admin.IIdentifier|null} [id] Execution id
              * @property {string|null} [executionId] Execution executionId
-             * @property {flyteidl.admin.IExecutionStatus|null} [status] Execution status
              * @property {flyteidl.admin.IExecutionSpec|null} [spec] Execution spec
              * @property {flyteidl.admin.IExecutionClosure|null} [closure] Execution closure
              */
@@ -10966,14 +10965,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             Execution.prototype.executionId = "";
-
-            /**
-             * Execution status.
-             * @member {flyteidl.admin.IExecutionStatus|null|undefined} status
-             * @memberof flyteidl.admin.Execution
-             * @instance
-             */
-            Execution.prototype.status = null;
 
             /**
              * Execution spec.
@@ -11019,12 +11010,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.Identifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.executionId != null && message.hasOwnProperty("executionId"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.executionId);
-                if (message.status != null && message.hasOwnProperty("status"))
-                    $root.flyteidl.admin.ExecutionStatus.encode(message.status, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.spec != null && message.hasOwnProperty("spec"))
-                    $root.flyteidl.admin.ExecutionSpec.encode(message.spec, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    $root.flyteidl.admin.ExecutionSpec.encode(message.spec, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.closure != null && message.hasOwnProperty("closure"))
-                    $root.flyteidl.admin.ExecutionClosure.encode(message.closure, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    $root.flyteidl.admin.ExecutionClosure.encode(message.closure, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -11053,12 +11042,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.executionId = reader.string();
                         break;
                     case 3:
-                        message.status = $root.flyteidl.admin.ExecutionStatus.decode(reader, reader.uint32());
-                        break;
-                    case 4:
                         message.spec = $root.flyteidl.admin.ExecutionSpec.decode(reader, reader.uint32());
                         break;
-                    case 5:
+                    case 4:
                         message.closure = $root.flyteidl.admin.ExecutionClosure.decode(reader, reader.uint32());
                         break;
                     default:
@@ -11088,11 +11074,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.executionId != null && message.hasOwnProperty("executionId"))
                     if (!$util.isString(message.executionId))
                         return "executionId: string expected";
-                if (message.status != null && message.hasOwnProperty("status")) {
-                    let error = $root.flyteidl.admin.ExecutionStatus.verify(message.status);
-                    if (error)
-                        return "status." + error;
-                }
                 if (message.spec != null && message.hasOwnProperty("spec")) {
                     let error = $root.flyteidl.admin.ExecutionSpec.verify(message.spec);
                     if (error)
@@ -11227,143 +11208,6 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             return ExecutionList;
-        })();
-
-        admin.ExecutionStatus = (function() {
-
-            /**
-             * Properties of an ExecutionStatus.
-             * @memberof flyteidl.admin
-             * @interface IExecutionStatus
-             * @property {flyteidl.admin.ExecutionPhase|null} [phase] ExecutionStatus phase
-             * @property {string|null} [workflowUrn] ExecutionStatus workflowUrn
-             */
-
-            /**
-             * Constructs a new ExecutionStatus.
-             * @memberof flyteidl.admin
-             * @classdesc Represents an ExecutionStatus.
-             * @implements IExecutionStatus
-             * @constructor
-             * @param {flyteidl.admin.IExecutionStatus=} [properties] Properties to set
-             */
-            function ExecutionStatus(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * ExecutionStatus phase.
-             * @member {flyteidl.admin.ExecutionPhase} phase
-             * @memberof flyteidl.admin.ExecutionStatus
-             * @instance
-             */
-            ExecutionStatus.prototype.phase = 0;
-
-            /**
-             * ExecutionStatus workflowUrn.
-             * @member {string} workflowUrn
-             * @memberof flyteidl.admin.ExecutionStatus
-             * @instance
-             */
-            ExecutionStatus.prototype.workflowUrn = "";
-
-            /**
-             * Creates a new ExecutionStatus instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.admin.ExecutionStatus
-             * @static
-             * @param {flyteidl.admin.IExecutionStatus=} [properties] Properties to set
-             * @returns {flyteidl.admin.ExecutionStatus} ExecutionStatus instance
-             */
-            ExecutionStatus.create = function create(properties) {
-                return new ExecutionStatus(properties);
-            };
-
-            /**
-             * Encodes the specified ExecutionStatus message. Does not implicitly {@link flyteidl.admin.ExecutionStatus.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.admin.ExecutionStatus
-             * @static
-             * @param {flyteidl.admin.IExecutionStatus} message ExecutionStatus message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            ExecutionStatus.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.phase != null && message.hasOwnProperty("phase"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.phase);
-                if (message.workflowUrn != null && message.hasOwnProperty("workflowUrn"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.workflowUrn);
-                return writer;
-            };
-
-            /**
-             * Decodes an ExecutionStatus message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.admin.ExecutionStatus
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.ExecutionStatus} ExecutionStatus
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            ExecutionStatus.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ExecutionStatus();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.phase = reader.int32();
-                        break;
-                    case 2:
-                        message.workflowUrn = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies an ExecutionStatus message.
-             * @function verify
-             * @memberof flyteidl.admin.ExecutionStatus
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            ExecutionStatus.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.phase != null && message.hasOwnProperty("phase"))
-                    switch (message.phase) {
-                    default:
-                        return "phase: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                    case 4:
-                    case 5:
-                    case 6:
-                        break;
-                    }
-                if (message.workflowUrn != null && message.hasOwnProperty("workflowUrn"))
-                    if (!$util.isString(message.workflowUrn))
-                        return "workflowUrn: string expected";
-                return null;
-            };
-
-            return ExecutionStatus;
         })();
 
         admin.LiteralMapBlob = (function() {
@@ -11526,6 +11370,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.ILiteralMapBlob|null} [outputs] ExecutionClosure outputs
              * @property {flyteidl.admin.IError|null} [error] ExecutionClosure error
              * @property {flyteidl.core.ILiteralMap|null} [computedInputs] ExecutionClosure computedInputs
+             * @property {flyteidl.admin.ExecutionPhase|null} [phase] ExecutionClosure phase
              */
 
             /**
@@ -11566,6 +11411,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             ExecutionClosure.prototype.computedInputs = null;
+
+            /**
+             * ExecutionClosure phase.
+             * @member {flyteidl.admin.ExecutionPhase} phase
+             * @memberof flyteidl.admin.ExecutionClosure
+             * @instance
+             */
+            ExecutionClosure.prototype.phase = 0;
 
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
@@ -11611,6 +11464,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.Error.encode(message.error, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.computedInputs != null && message.hasOwnProperty("computedInputs"))
                     $root.flyteidl.core.LiteralMap.encode(message.computedInputs, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.phase != null && message.hasOwnProperty("phase"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.phase);
                 return writer;
             };
 
@@ -11640,6 +11495,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 3:
                         message.computedInputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.phase = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11684,6 +11542,19 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "computedInputs." + error;
                 }
+                if (message.phase != null && message.hasOwnProperty("phase"))
+                    switch (message.phase) {
+                    default:
+                        return "phase: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                        break;
+                    }
                 return null;
             };
 

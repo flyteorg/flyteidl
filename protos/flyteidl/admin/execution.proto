@@ -21,21 +21,13 @@ message Execution {
     // The execution_id string is contructed from the 'id'.
     // If name is not available in the 'id', the system will generate a random name
     string execution_id         = 2;
-    ExecutionStatus status      = 3;
 
-    ExecutionSpec spec          = 4;
-    ExecutionClosure closure    = 5;
+    ExecutionSpec spec          = 3;
+    ExecutionClosure closure    = 4;
 }
 
 message ExecutionList {
     repeated Execution executions     = 1;
-}
-
-message ExecutionStatus {
-    // Phase of the executions
-    ExecutionPhase phase              = 1;
-
-    string workflow_urn               = 2;
 }
 
 // Input/output data can represented by actual values or a link to where it is stored
@@ -61,6 +53,9 @@ message ExecutionClosure {
     // Inputs computed and passed for execution.
     // computed_inputs depends on inputs in ExecutionSpec, fixed and default inputs in launch plan
     core.LiteralMap computed_inputs      = 3;
+
+    // Phase of the executions
+    ExecutionPhase phase                 = 4;
 }
 
 message ExecutionMetadata {

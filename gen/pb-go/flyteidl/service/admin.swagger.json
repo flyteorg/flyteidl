@@ -798,9 +798,6 @@
           "type": "string",
           "title": "The execution_id string is contructed from the 'id'.\nIf name is not available in the 'id', the system will generate a random name"
         },
-        "status": {
-          "$ref": "#/definitions/adminExecutionStatus"
-        },
         "spec": {
           "$ref": "#/definitions/adminExecutionSpec"
         },
@@ -822,6 +819,10 @@
         "computed_inputs": {
           "$ref": "#/definitions/coreLiteralMap",
           "title": "Inputs computed and passed for execution.\ncomputed_inputs depends on inputs in ExecutionSpec, fixed and default inputs in launch plan"
+        },
+        "phase": {
+          "$ref": "#/definitions/adminExecutionPhase",
+          "title": "Phase of the executions"
         }
       },
       "title": "Encapsultes the results of the Execution"
@@ -908,18 +909,6 @@
             "$ref": "#/definitions/adminNotification"
           },
           "title": "List of notifications based on Execution status transitions"
-        }
-      }
-    },
-    "adminExecutionStatus": {
-      "type": "object",
-      "properties": {
-        "phase": {
-          "$ref": "#/definitions/adminExecutionPhase",
-          "title": "Phase of the executions"
-        },
-        "workflow_urn": {
-          "type": "string"
         }
       }
     },
