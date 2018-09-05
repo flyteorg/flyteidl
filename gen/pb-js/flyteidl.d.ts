@@ -6008,6 +6008,226 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a Domain. */
+        interface IDomain {
+
+            /** Domain id */
+            id?: (string|null);
+
+            /** Domain name */
+            name?: (string|null);
+        }
+
+        /** Represents a Domain. */
+        class Domain implements IDomain {
+
+            /**
+             * Constructs a new Domain.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IDomain);
+
+            /** Domain id. */
+            public id: string;
+
+            /** Domain name. */
+            public name: string;
+
+            /**
+             * Creates a new Domain instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Domain instance
+             */
+            public static create(properties?: flyteidl.admin.IDomain): flyteidl.admin.Domain;
+
+            /**
+             * Encodes the specified Domain message. Does not implicitly {@link flyteidl.admin.Domain.verify|verify} messages.
+             * @param message Domain message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IDomain, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Domain message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Domain
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Domain;
+
+            /**
+             * Verifies a Domain message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a Project. */
+        interface IProject {
+
+            /** Project id */
+            id?: (string|null);
+
+            /** Project name */
+            name?: (string|null);
+
+            /** Project domains */
+            domains?: (flyteidl.admin.IDomain[]|null);
+        }
+
+        /** Represents a Project. */
+        class Project implements IProject {
+
+            /**
+             * Constructs a new Project.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IProject);
+
+            /** Project id. */
+            public id: string;
+
+            /** Project name. */
+            public name: string;
+
+            /** Project domains. */
+            public domains: flyteidl.admin.IDomain[];
+
+            /**
+             * Creates a new Project instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Project instance
+             */
+            public static create(properties?: flyteidl.admin.IProject): flyteidl.admin.Project;
+
+            /**
+             * Encodes the specified Project message. Does not implicitly {@link flyteidl.admin.Project.verify|verify} messages.
+             * @param message Project message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IProject, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Project message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Project
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Project;
+
+            /**
+             * Verifies a Project message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a Projects. */
+        interface IProjects {
+
+            /** Projects projects */
+            projects?: (flyteidl.admin.IProject[]|null);
+        }
+
+        /** Represents a Projects. */
+        class Projects implements IProjects {
+
+            /**
+             * Constructs a new Projects.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IProjects);
+
+            /** Projects projects. */
+            public projects: flyteidl.admin.IProject[];
+
+            /**
+             * Creates a new Projects instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Projects instance
+             */
+            public static create(properties?: flyteidl.admin.IProjects): flyteidl.admin.Projects;
+
+            /**
+             * Encodes the specified Projects message. Does not implicitly {@link flyteidl.admin.Projects.verify|verify} messages.
+             * @param message Projects message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IProjects, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Projects message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Projects
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Projects;
+
+            /**
+             * Verifies a Projects message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a ProjectListRequest. */
+        interface IProjectListRequest {
+        }
+
+        /** Represents a ProjectListRequest. */
+        class ProjectListRequest implements IProjectListRequest {
+
+            /**
+             * Constructs a new ProjectListRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IProjectListRequest);
+
+            /**
+             * Creates a new ProjectListRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ProjectListRequest instance
+             */
+            public static create(properties?: flyteidl.admin.IProjectListRequest): flyteidl.admin.ProjectListRequest;
+
+            /**
+             * Encodes the specified ProjectListRequest message. Does not implicitly {@link flyteidl.admin.ProjectListRequest.verify|verify} messages.
+             * @param message ProjectListRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IProjectListRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ProjectListRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ProjectListRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ProjectListRequest;
+
+            /**
+             * Verifies a ProjectListRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a TaskCreateRequest. */
         interface ITaskCreateRequest {
 
@@ -6911,6 +7131,20 @@ export namespace flyteidl {
              * @returns Promise
              */
             public listExecutions(request: flyteidl.admin.IResourceListRequest): Promise<flyteidl.admin.ExecutionList>;
+
+            /**
+             * Calls ListProjects.
+             * @param request ProjectListRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and Projects
+             */
+            public listProjects(request: flyteidl.admin.IProjectListRequest, callback: flyteidl.service.AdminService.ListProjectsCallback): void;
+
+            /**
+             * Calls ListProjects.
+             * @param request ProjectListRequest message or plain object
+             * @returns Promise
+             */
+            public listProjects(request: flyteidl.admin.IProjectListRequest): Promise<flyteidl.admin.Projects>;
         }
 
         namespace AdminService {
@@ -7012,6 +7246,13 @@ export namespace flyteidl {
              * @param [response] ExecutionList
              */
             type ListExecutionsCallback = (error: (Error|null), response?: flyteidl.admin.ExecutionList) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#listProjects}.
+             * @param error Error, if any
+             * @param [response] Projects
+             */
+            type ListProjectsCallback = (error: (Error|null), response?: flyteidl.admin.Projects) => void;
         }
     }
 }

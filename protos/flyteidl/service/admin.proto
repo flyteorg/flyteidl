@@ -4,6 +4,7 @@ package flyteidl.service;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/service";
 
 import "google/api/annotations.proto";
+import "flyteidl/admin/project.proto";
 import "flyteidl/admin/task.proto";
 import "flyteidl/admin/workflow.proto";
 import "flyteidl/admin/launch_plan.proto";
@@ -103,6 +104,12 @@ service AdminService {
   rpc ListExecutions (flyteidl.admin.ResourceListRequest) returns (flyteidl.admin.ExecutionList) {
     option (google.api.http) = {
       get:  "/api/v1/executions"
+    };
+  }
+
+  rpc ListProjects (flyteidl.admin.ProjectListRequest) returns (flyteidl.admin.Projects) {
+    option (google.api.http) = {
+      get:  "/api/v1/projects"
     };
   }
 }

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package flyteidl.admin;
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
+
+message Domain {
+    string id    = 1;
+
+    // Display name.
+    string name  = 2;
+}
+
+message Project {
+    string id               = 1;
+
+    // Display name.
+    string name             = 2;
+
+    repeated Domain domains = 3;
+}
+
+message Projects {
+    repeated Project projects = 1;
+}
+
+message ProjectListRequest {
+}

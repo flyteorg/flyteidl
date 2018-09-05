@@ -552,6 +552,22 @@
         ]
       }
     },
+    "/api/v1/projects": {
+      "get": {
+        "operationId": "ListProjects",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminProjects"
+            }
+          }
+        },
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/tasks": {
       "post": {
         "operationId": "CreateTask",
@@ -785,6 +801,18 @@
         "type": {
           "$ref": "#/definitions/SchemaColumnSchemaColumnType",
           "description": "The column type. This allows a limited set of types currently."
+        }
+      }
+    },
+    "adminDomain": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string",
+          "description": "Display name."
         }
       }
     },
@@ -1108,6 +1136,35 @@
         "SLACK"
       ],
       "default": "UNDEFINED"
+    },
+    "adminProject": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string",
+          "description": "Display name."
+        },
+        "domains": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminDomain"
+          }
+        }
+      }
+    },
+    "adminProjects": {
+      "type": "object",
+      "properties": {
+        "projects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminProject"
+          }
+        }
+      }
     },
     "adminSchedule": {
       "type": "object",

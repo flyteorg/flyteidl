@@ -14424,6 +14424,500 @@ export const flyteidl = $root.flyteidl = (() => {
             return NodeExecutionSpec;
         })();
 
+        admin.Domain = (function() {
+
+            /**
+             * Properties of a Domain.
+             * @memberof flyteidl.admin
+             * @interface IDomain
+             * @property {string|null} [id] Domain id
+             * @property {string|null} [name] Domain name
+             */
+
+            /**
+             * Constructs a new Domain.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a Domain.
+             * @implements IDomain
+             * @constructor
+             * @param {flyteidl.admin.IDomain=} [properties] Properties to set
+             */
+            function Domain(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Domain id.
+             * @member {string} id
+             * @memberof flyteidl.admin.Domain
+             * @instance
+             */
+            Domain.prototype.id = "";
+
+            /**
+             * Domain name.
+             * @member {string} name
+             * @memberof flyteidl.admin.Domain
+             * @instance
+             */
+            Domain.prototype.name = "";
+
+            /**
+             * Creates a new Domain instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.Domain
+             * @static
+             * @param {flyteidl.admin.IDomain=} [properties] Properties to set
+             * @returns {flyteidl.admin.Domain} Domain instance
+             */
+            Domain.create = function create(properties) {
+                return new Domain(properties);
+            };
+
+            /**
+             * Encodes the specified Domain message. Does not implicitly {@link flyteidl.admin.Domain.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.Domain
+             * @static
+             * @param {flyteidl.admin.IDomain} message Domain message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Domain.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                return writer;
+            };
+
+            /**
+             * Decodes a Domain message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.Domain
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.Domain} Domain
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Domain.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Domain();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.name = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Domain message.
+             * @function verify
+             * @memberof flyteidl.admin.Domain
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Domain.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                return null;
+            };
+
+            return Domain;
+        })();
+
+        admin.Project = (function() {
+
+            /**
+             * Properties of a Project.
+             * @memberof flyteidl.admin
+             * @interface IProject
+             * @property {string|null} [id] Project id
+             * @property {string|null} [name] Project name
+             * @property {Array.<flyteidl.admin.IDomain>|null} [domains] Project domains
+             */
+
+            /**
+             * Constructs a new Project.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a Project.
+             * @implements IProject
+             * @constructor
+             * @param {flyteidl.admin.IProject=} [properties] Properties to set
+             */
+            function Project(properties) {
+                this.domains = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Project id.
+             * @member {string} id
+             * @memberof flyteidl.admin.Project
+             * @instance
+             */
+            Project.prototype.id = "";
+
+            /**
+             * Project name.
+             * @member {string} name
+             * @memberof flyteidl.admin.Project
+             * @instance
+             */
+            Project.prototype.name = "";
+
+            /**
+             * Project domains.
+             * @member {Array.<flyteidl.admin.IDomain>} domains
+             * @memberof flyteidl.admin.Project
+             * @instance
+             */
+            Project.prototype.domains = $util.emptyArray;
+
+            /**
+             * Creates a new Project instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.Project
+             * @static
+             * @param {flyteidl.admin.IProject=} [properties] Properties to set
+             * @returns {flyteidl.admin.Project} Project instance
+             */
+            Project.create = function create(properties) {
+                return new Project(properties);
+            };
+
+            /**
+             * Encodes the specified Project message. Does not implicitly {@link flyteidl.admin.Project.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.Project
+             * @static
+             * @param {flyteidl.admin.IProject} message Project message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Project.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                if (message.domains != null && message.domains.length)
+                    for (let i = 0; i < message.domains.length; ++i)
+                        $root.flyteidl.admin.Domain.encode(message.domains[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a Project message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.Project
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.Project} Project
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Project.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Project();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.name = reader.string();
+                        break;
+                    case 3:
+                        if (!(message.domains && message.domains.length))
+                            message.domains = [];
+                        message.domains.push($root.flyteidl.admin.Domain.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Project message.
+             * @function verify
+             * @memberof flyteidl.admin.Project
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Project.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                if (message.domains != null && message.hasOwnProperty("domains")) {
+                    if (!Array.isArray(message.domains))
+                        return "domains: array expected";
+                    for (let i = 0; i < message.domains.length; ++i) {
+                        let error = $root.flyteidl.admin.Domain.verify(message.domains[i]);
+                        if (error)
+                            return "domains." + error;
+                    }
+                }
+                return null;
+            };
+
+            return Project;
+        })();
+
+        admin.Projects = (function() {
+
+            /**
+             * Properties of a Projects.
+             * @memberof flyteidl.admin
+             * @interface IProjects
+             * @property {Array.<flyteidl.admin.IProject>|null} [projects] Projects projects
+             */
+
+            /**
+             * Constructs a new Projects.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a Projects.
+             * @implements IProjects
+             * @constructor
+             * @param {flyteidl.admin.IProjects=} [properties] Properties to set
+             */
+            function Projects(properties) {
+                this.projects = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Projects projects.
+             * @member {Array.<flyteidl.admin.IProject>} projects
+             * @memberof flyteidl.admin.Projects
+             * @instance
+             */
+            Projects.prototype.projects = $util.emptyArray;
+
+            /**
+             * Creates a new Projects instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.Projects
+             * @static
+             * @param {flyteidl.admin.IProjects=} [properties] Properties to set
+             * @returns {flyteidl.admin.Projects} Projects instance
+             */
+            Projects.create = function create(properties) {
+                return new Projects(properties);
+            };
+
+            /**
+             * Encodes the specified Projects message. Does not implicitly {@link flyteidl.admin.Projects.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.Projects
+             * @static
+             * @param {flyteidl.admin.IProjects} message Projects message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Projects.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.projects != null && message.projects.length)
+                    for (let i = 0; i < message.projects.length; ++i)
+                        $root.flyteidl.admin.Project.encode(message.projects[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a Projects message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.Projects
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.Projects} Projects
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Projects.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Projects();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.projects && message.projects.length))
+                            message.projects = [];
+                        message.projects.push($root.flyteidl.admin.Project.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Projects message.
+             * @function verify
+             * @memberof flyteidl.admin.Projects
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Projects.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.projects != null && message.hasOwnProperty("projects")) {
+                    if (!Array.isArray(message.projects))
+                        return "projects: array expected";
+                    for (let i = 0; i < message.projects.length; ++i) {
+                        let error = $root.flyteidl.admin.Project.verify(message.projects[i]);
+                        if (error)
+                            return "projects." + error;
+                    }
+                }
+                return null;
+            };
+
+            return Projects;
+        })();
+
+        admin.ProjectListRequest = (function() {
+
+            /**
+             * Properties of a ProjectListRequest.
+             * @memberof flyteidl.admin
+             * @interface IProjectListRequest
+             */
+
+            /**
+             * Constructs a new ProjectListRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a ProjectListRequest.
+             * @implements IProjectListRequest
+             * @constructor
+             * @param {flyteidl.admin.IProjectListRequest=} [properties] Properties to set
+             */
+            function ProjectListRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new ProjectListRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ProjectListRequest
+             * @static
+             * @param {flyteidl.admin.IProjectListRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.ProjectListRequest} ProjectListRequest instance
+             */
+            ProjectListRequest.create = function create(properties) {
+                return new ProjectListRequest(properties);
+            };
+
+            /**
+             * Encodes the specified ProjectListRequest message. Does not implicitly {@link flyteidl.admin.ProjectListRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ProjectListRequest
+             * @static
+             * @param {flyteidl.admin.IProjectListRequest} message ProjectListRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProjectListRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a ProjectListRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ProjectListRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ProjectListRequest} ProjectListRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProjectListRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ProjectListRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ProjectListRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.ProjectListRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ProjectListRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return ProjectListRequest;
+        })();
+
         admin.TaskCreateRequest = (function() {
 
             /**
@@ -16461,6 +16955,39 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              * @param {flyteidl.admin.IResourceListRequest} request ResourceListRequest message or plain object
              * @returns {Promise<flyteidl.admin.ExecutionList>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#listProjects}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef ListProjectsCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.Projects} [response] Projects
+             */
+
+            /**
+             * Calls ListProjects.
+             * @function listProjects
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IProjectListRequest} request ProjectListRequest message or plain object
+             * @param {flyteidl.service.AdminService.ListProjectsCallback} callback Node-style callback called with the error, if any, and Projects
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.listProjects = function listProjects(request, callback) {
+                return this.rpcCall(listProjects, $root.flyteidl.admin.ProjectListRequest, $root.flyteidl.admin.Projects, request, callback);
+            }, "name", { value: "ListProjects" });
+
+            /**
+             * Calls ListProjects.
+             * @function listProjects
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IProjectListRequest} request ProjectListRequest message or plain object
+             * @returns {Promise<flyteidl.admin.Projects>} Promise
              * @variation 2
              */
 
