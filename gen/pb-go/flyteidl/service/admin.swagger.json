@@ -566,6 +566,39 @@
         "tags": [
           "AdminService"
         ]
+      },
+      "post": {
+        "description": "Register a project along with valid domains",
+        "operationId": "RegisterProject",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminProjectRegisterResponse"
+            }
+          },
+          "201": {
+            "description": "Returned for successful registration.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned for bad request that may have failed validation.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminProject"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
       }
     },
     "/api/v1/tasks": {
@@ -1154,6 +1187,9 @@
           }
         }
       }
+    },
+    "adminProjectRegisterResponse": {
+      "type": "object"
     },
     "adminProjects": {
       "type": "object",
@@ -1965,7 +2001,7 @@
           "$ref": "#/definitions/coreBinary"
         },
         "schema": {
-          "$ref": "#/definitions/coreSchema"
+          "$ref": "#/definitions/flyteidlcoreSchema"
         },
         "none_type": {
           "$ref": "#/definitions/coreVoid"
@@ -1978,18 +2014,6 @@
           "$ref": "#/definitions/flyteidlcoreError"
         }
       }
-    },
-    "coreSchema": {
-      "type": "object",
-      "properties": {
-        "uri": {
-          "type": "string"
-        },
-        "type": {
-          "$ref": "#/definitions/coreSchemaType"
-        }
-      },
-      "description": "A strongly typed schema that defines the interface of data retrieved from the underlying storage medium."
     },
     "coreSchemaType": {
       "type": "object",
@@ -2240,6 +2264,18 @@
         }
       },
       "description": "Represents an error thrown from a node."
+    },
+    "flyteidlcoreSchema": {
+      "type": "object",
+      "properties": {
+        "uri": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/coreSchemaType"
+        }
+      },
+      "description": "A strongly typed schema that defines the interface of data retrieved from the underlying storage medium."
     }
   }
 }

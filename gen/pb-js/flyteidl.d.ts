@@ -6228,6 +6228,52 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a ProjectRegisterResponse. */
+        interface IProjectRegisterResponse {
+        }
+
+        /** Represents a ProjectRegisterResponse. */
+        class ProjectRegisterResponse implements IProjectRegisterResponse {
+
+            /**
+             * Constructs a new ProjectRegisterResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IProjectRegisterResponse);
+
+            /**
+             * Creates a new ProjectRegisterResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ProjectRegisterResponse instance
+             */
+            public static create(properties?: flyteidl.admin.IProjectRegisterResponse): flyteidl.admin.ProjectRegisterResponse;
+
+            /**
+             * Encodes the specified ProjectRegisterResponse message. Does not implicitly {@link flyteidl.admin.ProjectRegisterResponse.verify|verify} messages.
+             * @param message ProjectRegisterResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IProjectRegisterResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ProjectRegisterResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ProjectRegisterResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ProjectRegisterResponse;
+
+            /**
+             * Verifies a ProjectRegisterResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a TaskCreateRequest. */
         interface ITaskCreateRequest {
 
@@ -7133,6 +7179,20 @@ export namespace flyteidl {
             public listExecutions(request: flyteidl.admin.IResourceListRequest): Promise<flyteidl.admin.ExecutionList>;
 
             /**
+             * Calls RegisterProject.
+             * @param request Project message or plain object
+             * @param callback Node-style callback called with the error, if any, and ProjectRegisterResponse
+             */
+            public registerProject(request: flyteidl.admin.IProject, callback: flyteidl.service.AdminService.RegisterProjectCallback): void;
+
+            /**
+             * Calls RegisterProject.
+             * @param request Project message or plain object
+             * @returns Promise
+             */
+            public registerProject(request: flyteidl.admin.IProject): Promise<flyteidl.admin.ProjectRegisterResponse>;
+
+            /**
              * Calls ListProjects.
              * @param request ProjectListRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and Projects
@@ -7246,6 +7306,13 @@ export namespace flyteidl {
              * @param [response] ExecutionList
              */
             type ListExecutionsCallback = (error: (Error|null), response?: flyteidl.admin.ExecutionList) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#registerProject}.
+             * @param error Error, if any
+             * @param [response] ProjectRegisterResponse
+             */
+            type RegisterProjectCallback = (error: (Error|null), response?: flyteidl.admin.ProjectRegisterResponse) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.AdminService#listProjects}.

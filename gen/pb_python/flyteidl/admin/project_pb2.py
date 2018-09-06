@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/project.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1c\x66lyteidl/admin/project.proto\x12\x0e\x66lyteidl.admin\"\"\n\x06\x44omain\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"L\n\x07Project\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\'\n\x07\x64omains\x18\x03 \x03(\x0b\x32\x16.flyteidl.admin.Domain\"5\n\x08Projects\x12)\n\x08projects\x18\x01 \x03(\x0b\x32\x17.flyteidl.admin.Project\"\x14\n\x12ProjectListRequestB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1c\x66lyteidl/admin/project.proto\x12\x0e\x66lyteidl.admin\"\"\n\x06\x44omain\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"L\n\x07Project\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\'\n\x07\x64omains\x18\x03 \x03(\x0b\x32\x16.flyteidl.admin.Domain\"5\n\x08Projects\x12)\n\x08projects\x18\x01 \x03(\x0b\x32\x17.flyteidl.admin.Project\"\x14\n\x12ProjectListRequest\"\x19\n\x17ProjectRegisterResponseB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
 )
 
 
@@ -162,12 +162,37 @@ _PROJECTLISTREQUEST = _descriptor.Descriptor(
   serialized_end=237,
 )
 
+
+_PROJECTREGISTERRESPONSE = _descriptor.Descriptor(
+  name='ProjectRegisterResponse',
+  full_name='flyteidl.admin.ProjectRegisterResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=239,
+  serialized_end=264,
+)
+
 _PROJECT.fields_by_name['domains'].message_type = _DOMAIN
 _PROJECTS.fields_by_name['projects'].message_type = _PROJECT
 DESCRIPTOR.message_types_by_name['Domain'] = _DOMAIN
 DESCRIPTOR.message_types_by_name['Project'] = _PROJECT
 DESCRIPTOR.message_types_by_name['Projects'] = _PROJECTS
 DESCRIPTOR.message_types_by_name['ProjectListRequest'] = _PROJECTLISTREQUEST
+DESCRIPTOR.message_types_by_name['ProjectRegisterResponse'] = _PROJECTREGISTERRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Domain = _reflection.GeneratedProtocolMessageType('Domain', (_message.Message,), dict(
@@ -197,6 +222,13 @@ ProjectListRequest = _reflection.GeneratedProtocolMessageType('ProjectListReques
   # @@protoc_insertion_point(class_scope:flyteidl.admin.ProjectListRequest)
   ))
 _sym_db.RegisterMessage(ProjectListRequest)
+
+ProjectRegisterResponse = _reflection.GeneratedProtocolMessageType('ProjectRegisterResponse', (_message.Message,), dict(
+  DESCRIPTOR = _PROJECTREGISTERRESPONSE,
+  __module__ = 'flyteidl.admin.project_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.ProjectRegisterResponse)
+  ))
+_sym_db.RegisterMessage(ProjectRegisterResponse)
 
 
 DESCRIPTOR.has_options = True

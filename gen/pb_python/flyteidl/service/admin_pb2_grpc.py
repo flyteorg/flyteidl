@@ -89,6 +89,11 @@ class AdminServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_common__pb2.ResourceListRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionList.FromString,
         )
+    self.RegisterProject = channel.unary_unary(
+        '/flyteidl.service.AdminService/RegisterProject',
+        request_serializer=flyteidl_dot_admin_dot_project__pb2.Project.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_project__pb2.ProjectRegisterResponse.FromString,
+        )
     self.ListProjects = channel.unary_unary(
         '/flyteidl.service.AdminService/ListProjects',
         request_serializer=flyteidl_dot_admin_dot_project__pb2.ProjectListRequest.SerializeToString,
@@ -198,6 +203,13 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def RegisterProject(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def ListProjects(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -277,6 +289,11 @@ def add_AdminServiceServicer_to_server(servicer, server):
           servicer.ListExecutions,
           request_deserializer=flyteidl_dot_admin_dot_common__pb2.ResourceListRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionList.SerializeToString,
+      ),
+      'RegisterProject': grpc.unary_unary_rpc_method_handler(
+          servicer.RegisterProject,
+          request_deserializer=flyteidl_dot_admin_dot_project__pb2.Project.FromString,
+          response_serializer=flyteidl_dot_admin_dot_project__pb2.ProjectRegisterResponse.SerializeToString,
       ),
       'ListProjects': grpc.unary_unary_rpc_method_handler(
           servicer.ListProjects,

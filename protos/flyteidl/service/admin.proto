@@ -10,6 +10,7 @@ import "flyteidl/admin/workflow.proto";
 import "flyteidl/admin/launch_plan.proto";
 import "flyteidl/admin/execution.proto";
 import "flyteidl/admin/common.proto";
+import "protoc-gen-swagger/options/annotations.proto";
 
 service AdminService {
   rpc CreateTask (flyteidl.admin.TaskCreateRequest) returns (flyteidl.admin.TaskCreateResponse) {
@@ -107,9 +108,33 @@ service AdminService {
     };
   }
 
+  rpc RegisterProject (flyteidl.admin.Project) returns (flyteidl.admin.ProjectRegisterResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/projects"
+      body: "*"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Register a project along with valid domains"
+      responses: {
+        key: "201"
+        value: {
+	  description: "Returned for successful registration."
+	}
+      }
+      responses: {
+        key: "400"
+        value: {
+	  description: "Returned for bad request that may have failed validation."
+	}
+      }
+    }; 
+  }
+
+
   rpc ListProjects (flyteidl.admin.ProjectListRequest) returns (flyteidl.admin.Projects) {
     option (google.api.http) = {
       get:  "/api/v1/projects"
     };
+    
   }
 }
