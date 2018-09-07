@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package flyteidl.plugins;
+
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/plugins";
+
+
+// A generic key value pair.
+message KeyValuePair {
+    //required.
+    string key = 1;
+
+    //+optional.
+    string value = 2;
+}
+
+
+enum SparkApplicationType {
+    PythonApplicationType = 0;
+    JavaApplicationType = 1;
+    ScalaApplicationType = 2;
+    RApplicationType = 3;
+}
+
+// Custom Proto for Spark Plugin.
+message SparkJob {
+    SparkApplicationType applicationType = 1;
+    string mainApplicationFile = 2;
+    string mainClass = 3;
+    repeated KeyValuePair sparkConf = 5;
+    repeated KeyValuePair hadoopConf = 6;
+}

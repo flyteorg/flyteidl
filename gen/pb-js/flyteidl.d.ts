@@ -3172,7 +3172,7 @@ export namespace flyteidl {
             "interface"?: (flyteidl.core.ITypedInterface|null);
 
             /** TaskTemplate custom */
-            custom?: (Uint8Array|null);
+            custom?: (google.protobuf.IAny|null);
 
             /** TaskTemplate container */
             container?: (flyteidl.core.IContainer|null);
@@ -3203,7 +3203,7 @@ export namespace flyteidl {
             public interface?: (flyteidl.core.ITypedInterface|null);
 
             /** TaskTemplate custom. */
-            public custom: Uint8Array;
+            public custom?: (google.protobuf.IAny|null);
 
             /** TaskTemplate container. */
             public container?: (flyteidl.core.IContainer|null);
@@ -7322,6 +7322,152 @@ export namespace flyteidl {
             type ListProjectsCallback = (error: (Error|null), response?: flyteidl.admin.Projects) => void;
         }
     }
+
+    /** Namespace plugins. */
+    namespace plugins {
+
+        /** Properties of a KeyValuePair. */
+        interface IKeyValuePair {
+
+            /** KeyValuePair key */
+            key?: (string|null);
+
+            /** KeyValuePair value */
+            value?: (string|null);
+        }
+
+        /** Represents a KeyValuePair. */
+        class KeyValuePair implements IKeyValuePair {
+
+            /**
+             * Constructs a new KeyValuePair.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.plugins.IKeyValuePair);
+
+            /** KeyValuePair key. */
+            public key: string;
+
+            /** KeyValuePair value. */
+            public value: string;
+
+            /**
+             * Creates a new KeyValuePair instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns KeyValuePair instance
+             */
+            public static create(properties?: flyteidl.plugins.IKeyValuePair): flyteidl.plugins.KeyValuePair;
+
+            /**
+             * Encodes the specified KeyValuePair message. Does not implicitly {@link flyteidl.plugins.KeyValuePair.verify|verify} messages.
+             * @param message KeyValuePair message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.plugins.IKeyValuePair, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a KeyValuePair message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns KeyValuePair
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.plugins.KeyValuePair;
+
+            /**
+             * Verifies a KeyValuePair message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** SparkApplicationType enum. */
+        enum SparkApplicationType {
+            PythonApplicationType = 0,
+            JavaApplicationType = 1,
+            ScalaApplicationType = 2,
+            RApplicationType = 3
+        }
+
+        /** Properties of a SparkJob. */
+        interface ISparkJob {
+
+            /** SparkJob applicationType */
+            applicationType?: (flyteidl.plugins.SparkApplicationType|null);
+
+            /** SparkJob mainApplicationFile */
+            mainApplicationFile?: (string|null);
+
+            /** SparkJob mainClass */
+            mainClass?: (string|null);
+
+            /** SparkJob sparkConf */
+            sparkConf?: (flyteidl.plugins.IKeyValuePair[]|null);
+
+            /** SparkJob hadoopConf */
+            hadoopConf?: (flyteidl.plugins.IKeyValuePair[]|null);
+        }
+
+        /** Represents a SparkJob. */
+        class SparkJob implements ISparkJob {
+
+            /**
+             * Constructs a new SparkJob.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.plugins.ISparkJob);
+
+            /** SparkJob applicationType. */
+            public applicationType: flyteidl.plugins.SparkApplicationType;
+
+            /** SparkJob mainApplicationFile. */
+            public mainApplicationFile: string;
+
+            /** SparkJob mainClass. */
+            public mainClass: string;
+
+            /** SparkJob sparkConf. */
+            public sparkConf: flyteidl.plugins.IKeyValuePair[];
+
+            /** SparkJob hadoopConf. */
+            public hadoopConf: flyteidl.plugins.IKeyValuePair[];
+
+            /**
+             * Creates a new SparkJob instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns SparkJob instance
+             */
+            public static create(properties?: flyteidl.plugins.ISparkJob): flyteidl.plugins.SparkJob;
+
+            /**
+             * Encodes the specified SparkJob message. Does not implicitly {@link flyteidl.plugins.SparkJob.verify|verify} messages.
+             * @param message SparkJob message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.plugins.ISparkJob, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a SparkJob message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SparkJob
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.plugins.SparkJob;
+
+            /**
+             * Verifies a SparkJob message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+    }
 }
 
 /** Namespace google. */
@@ -7440,6 +7586,64 @@ export namespace google {
 
             /**
              * Verifies a Duration message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an Any. */
+        interface IAny {
+
+            /** Any type_url */
+            type_url?: (string|null);
+
+            /** Any value */
+            value?: (Uint8Array|null);
+        }
+
+        /** Represents an Any. */
+        class Any implements IAny {
+
+            /**
+             * Constructs a new Any.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: google.protobuf.IAny);
+
+            /** Any type_url. */
+            public type_url: string;
+
+            /** Any value. */
+            public value: Uint8Array;
+
+            /**
+             * Creates a new Any instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Any instance
+             */
+            public static create(properties?: google.protobuf.IAny): google.protobuf.Any;
+
+            /**
+             * Encodes the specified Any message. Does not implicitly {@link google.protobuf.Any.verify|verify} messages.
+             * @param message Any message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: google.protobuf.IAny, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an Any message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Any
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.protobuf.Any;
+
+            /**
+             * Verifies an Any message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */

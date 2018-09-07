@@ -7613,7 +7613,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [type] TaskTemplate type
              * @property {flyteidl.core.ITaskMetadata|null} [metadata] TaskTemplate metadata
              * @property {flyteidl.core.ITypedInterface|null} ["interface"] TaskTemplate interface
-             * @property {Uint8Array|null} [custom] TaskTemplate custom
+             * @property {google.protobuf.IAny|null} [custom] TaskTemplate custom
              * @property {flyteidl.core.IContainer|null} [container] TaskTemplate container
              */
 
@@ -7674,11 +7674,11 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * TaskTemplate custom.
-             * @member {Uint8Array} custom
+             * @member {google.protobuf.IAny|null|undefined} custom
              * @memberof flyteidl.core.TaskTemplate
              * @instance
              */
-            TaskTemplate.prototype.custom = $util.newBuffer([]);
+            TaskTemplate.prototype.custom = null;
 
             /**
              * TaskTemplate container.
@@ -7737,7 +7737,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message["interface"] != null && message.hasOwnProperty("interface"))
                     $root.flyteidl.core.TypedInterface.encode(message["interface"], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 if (message.custom != null && message.hasOwnProperty("custom"))
-                    writer.uint32(/* id 6, wireType 2 =*/50).bytes(message.custom);
+                    $root.google.protobuf.Any.encode(message.custom, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 if (message.container != null && message.hasOwnProperty("container"))
                     $root.flyteidl.core.Container.encode(message.container, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 return writer;
@@ -7777,7 +7777,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message["interface"] = $root.flyteidl.core.TypedInterface.decode(reader, reader.uint32());
                         break;
                     case 6:
-                        message.custom = reader.bytes();
+                        message.custom = $root.google.protobuf.Any.decode(reader, reader.uint32());
                         break;
                     case 7:
                         message.container = $root.flyteidl.core.Container.decode(reader, reader.uint32());
@@ -7826,9 +7826,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "interface." + error;
                 }
-                if (message.custom != null && message.hasOwnProperty("custom"))
-                    if (!(message.custom && typeof message.custom.length === "number" || $util.isString(message.custom)))
-                        return "custom: buffer expected";
+                if (message.custom != null && message.hasOwnProperty("custom")) {
+                    let error = $root.google.protobuf.Any.verify(message.custom);
+                    if (error)
+                        return "custom." + error;
+                }
                 if (message.container != null && message.hasOwnProperty("container")) {
                     properties.target = 1;
                     {
@@ -17123,6 +17125,368 @@ export const flyteidl = $root.flyteidl = (() => {
         return service;
     })();
 
+    flyteidl.plugins = (function() {
+
+        /**
+         * Namespace plugins.
+         * @memberof flyteidl
+         * @namespace
+         */
+        const plugins = {};
+
+        plugins.KeyValuePair = (function() {
+
+            /**
+             * Properties of a KeyValuePair.
+             * @memberof flyteidl.plugins
+             * @interface IKeyValuePair
+             * @property {string|null} [key] KeyValuePair key
+             * @property {string|null} [value] KeyValuePair value
+             */
+
+            /**
+             * Constructs a new KeyValuePair.
+             * @memberof flyteidl.plugins
+             * @classdesc Represents a KeyValuePair.
+             * @implements IKeyValuePair
+             * @constructor
+             * @param {flyteidl.plugins.IKeyValuePair=} [properties] Properties to set
+             */
+            function KeyValuePair(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * KeyValuePair key.
+             * @member {string} key
+             * @memberof flyteidl.plugins.KeyValuePair
+             * @instance
+             */
+            KeyValuePair.prototype.key = "";
+
+            /**
+             * KeyValuePair value.
+             * @member {string} value
+             * @memberof flyteidl.plugins.KeyValuePair
+             * @instance
+             */
+            KeyValuePair.prototype.value = "";
+
+            /**
+             * Creates a new KeyValuePair instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.plugins.KeyValuePair
+             * @static
+             * @param {flyteidl.plugins.IKeyValuePair=} [properties] Properties to set
+             * @returns {flyteidl.plugins.KeyValuePair} KeyValuePair instance
+             */
+            KeyValuePair.create = function create(properties) {
+                return new KeyValuePair(properties);
+            };
+
+            /**
+             * Encodes the specified KeyValuePair message. Does not implicitly {@link flyteidl.plugins.KeyValuePair.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.plugins.KeyValuePair
+             * @static
+             * @param {flyteidl.plugins.IKeyValuePair} message KeyValuePair message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            KeyValuePair.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.key != null && message.hasOwnProperty("key"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
+                if (message.value != null && message.hasOwnProperty("value"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.value);
+                return writer;
+            };
+
+            /**
+             * Decodes a KeyValuePair message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.plugins.KeyValuePair
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.plugins.KeyValuePair} KeyValuePair
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            KeyValuePair.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.plugins.KeyValuePair();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.key = reader.string();
+                        break;
+                    case 2:
+                        message.value = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a KeyValuePair message.
+             * @function verify
+             * @memberof flyteidl.plugins.KeyValuePair
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            KeyValuePair.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.key != null && message.hasOwnProperty("key"))
+                    if (!$util.isString(message.key))
+                        return "key: string expected";
+                if (message.value != null && message.hasOwnProperty("value"))
+                    if (!$util.isString(message.value))
+                        return "value: string expected";
+                return null;
+            };
+
+            return KeyValuePair;
+        })();
+
+        /**
+         * SparkApplicationType enum.
+         * @name flyteidl.plugins.SparkApplicationType
+         * @enum {string}
+         * @property {number} PythonApplicationType=0 PythonApplicationType value
+         * @property {number} JavaApplicationType=1 JavaApplicationType value
+         * @property {number} ScalaApplicationType=2 ScalaApplicationType value
+         * @property {number} RApplicationType=3 RApplicationType value
+         */
+        plugins.SparkApplicationType = (function() {
+            const valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "PythonApplicationType"] = 0;
+            values[valuesById[1] = "JavaApplicationType"] = 1;
+            values[valuesById[2] = "ScalaApplicationType"] = 2;
+            values[valuesById[3] = "RApplicationType"] = 3;
+            return values;
+        })();
+
+        plugins.SparkJob = (function() {
+
+            /**
+             * Properties of a SparkJob.
+             * @memberof flyteidl.plugins
+             * @interface ISparkJob
+             * @property {flyteidl.plugins.SparkApplicationType|null} [applicationType] SparkJob applicationType
+             * @property {string|null} [mainApplicationFile] SparkJob mainApplicationFile
+             * @property {string|null} [mainClass] SparkJob mainClass
+             * @property {Array.<flyteidl.plugins.IKeyValuePair>|null} [sparkConf] SparkJob sparkConf
+             * @property {Array.<flyteidl.plugins.IKeyValuePair>|null} [hadoopConf] SparkJob hadoopConf
+             */
+
+            /**
+             * Constructs a new SparkJob.
+             * @memberof flyteidl.plugins
+             * @classdesc Represents a SparkJob.
+             * @implements ISparkJob
+             * @constructor
+             * @param {flyteidl.plugins.ISparkJob=} [properties] Properties to set
+             */
+            function SparkJob(properties) {
+                this.sparkConf = [];
+                this.hadoopConf = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * SparkJob applicationType.
+             * @member {flyteidl.plugins.SparkApplicationType} applicationType
+             * @memberof flyteidl.plugins.SparkJob
+             * @instance
+             */
+            SparkJob.prototype.applicationType = 0;
+
+            /**
+             * SparkJob mainApplicationFile.
+             * @member {string} mainApplicationFile
+             * @memberof flyteidl.plugins.SparkJob
+             * @instance
+             */
+            SparkJob.prototype.mainApplicationFile = "";
+
+            /**
+             * SparkJob mainClass.
+             * @member {string} mainClass
+             * @memberof flyteidl.plugins.SparkJob
+             * @instance
+             */
+            SparkJob.prototype.mainClass = "";
+
+            /**
+             * SparkJob sparkConf.
+             * @member {Array.<flyteidl.plugins.IKeyValuePair>} sparkConf
+             * @memberof flyteidl.plugins.SparkJob
+             * @instance
+             */
+            SparkJob.prototype.sparkConf = $util.emptyArray;
+
+            /**
+             * SparkJob hadoopConf.
+             * @member {Array.<flyteidl.plugins.IKeyValuePair>} hadoopConf
+             * @memberof flyteidl.plugins.SparkJob
+             * @instance
+             */
+            SparkJob.prototype.hadoopConf = $util.emptyArray;
+
+            /**
+             * Creates a new SparkJob instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.plugins.SparkJob
+             * @static
+             * @param {flyteidl.plugins.ISparkJob=} [properties] Properties to set
+             * @returns {flyteidl.plugins.SparkJob} SparkJob instance
+             */
+            SparkJob.create = function create(properties) {
+                return new SparkJob(properties);
+            };
+
+            /**
+             * Encodes the specified SparkJob message. Does not implicitly {@link flyteidl.plugins.SparkJob.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.plugins.SparkJob
+             * @static
+             * @param {flyteidl.plugins.ISparkJob} message SparkJob message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SparkJob.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.applicationType != null && message.hasOwnProperty("applicationType"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.applicationType);
+                if (message.mainApplicationFile != null && message.hasOwnProperty("mainApplicationFile"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.mainApplicationFile);
+                if (message.mainClass != null && message.hasOwnProperty("mainClass"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.mainClass);
+                if (message.sparkConf != null && message.sparkConf.length)
+                    for (let i = 0; i < message.sparkConf.length; ++i)
+                        $root.flyteidl.plugins.KeyValuePair.encode(message.sparkConf[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.hadoopConf != null && message.hadoopConf.length)
+                    for (let i = 0; i < message.hadoopConf.length; ++i)
+                        $root.flyteidl.plugins.KeyValuePair.encode(message.hadoopConf[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a SparkJob message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.plugins.SparkJob
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.plugins.SparkJob} SparkJob
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SparkJob.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.plugins.SparkJob();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.applicationType = reader.int32();
+                        break;
+                    case 2:
+                        message.mainApplicationFile = reader.string();
+                        break;
+                    case 3:
+                        message.mainClass = reader.string();
+                        break;
+                    case 5:
+                        if (!(message.sparkConf && message.sparkConf.length))
+                            message.sparkConf = [];
+                        message.sparkConf.push($root.flyteidl.plugins.KeyValuePair.decode(reader, reader.uint32()));
+                        break;
+                    case 6:
+                        if (!(message.hadoopConf && message.hadoopConf.length))
+                            message.hadoopConf = [];
+                        message.hadoopConf.push($root.flyteidl.plugins.KeyValuePair.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a SparkJob message.
+             * @function verify
+             * @memberof flyteidl.plugins.SparkJob
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            SparkJob.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.applicationType != null && message.hasOwnProperty("applicationType"))
+                    switch (message.applicationType) {
+                    default:
+                        return "applicationType: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                        break;
+                    }
+                if (message.mainApplicationFile != null && message.hasOwnProperty("mainApplicationFile"))
+                    if (!$util.isString(message.mainApplicationFile))
+                        return "mainApplicationFile: string expected";
+                if (message.mainClass != null && message.hasOwnProperty("mainClass"))
+                    if (!$util.isString(message.mainClass))
+                        return "mainClass: string expected";
+                if (message.sparkConf != null && message.hasOwnProperty("sparkConf")) {
+                    if (!Array.isArray(message.sparkConf))
+                        return "sparkConf: array expected";
+                    for (let i = 0; i < message.sparkConf.length; ++i) {
+                        let error = $root.flyteidl.plugins.KeyValuePair.verify(message.sparkConf[i]);
+                        if (error)
+                            return "sparkConf." + error;
+                    }
+                }
+                if (message.hadoopConf != null && message.hasOwnProperty("hadoopConf")) {
+                    if (!Array.isArray(message.hadoopConf))
+                        return "hadoopConf: array expected";
+                    for (let i = 0; i < message.hadoopConf.length; ++i) {
+                        let error = $root.flyteidl.plugins.KeyValuePair.verify(message.hadoopConf[i]);
+                        if (error)
+                            return "hadoopConf." + error;
+                    }
+                }
+                return null;
+            };
+
+            return SparkJob;
+        })();
+
+        return plugins;
+    })();
+
     return flyteidl;
 })();
 
@@ -17396,6 +17760,133 @@ export const google = $root.google = (() => {
             };
 
             return Duration;
+        })();
+
+        protobuf.Any = (function() {
+
+            /**
+             * Properties of an Any.
+             * @memberof google.protobuf
+             * @interface IAny
+             * @property {string|null} [type_url] Any type_url
+             * @property {Uint8Array|null} [value] Any value
+             */
+
+            /**
+             * Constructs a new Any.
+             * @memberof google.protobuf
+             * @classdesc Represents an Any.
+             * @implements IAny
+             * @constructor
+             * @param {google.protobuf.IAny=} [properties] Properties to set
+             */
+            function Any(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Any type_url.
+             * @member {string} type_url
+             * @memberof google.protobuf.Any
+             * @instance
+             */
+            Any.prototype.type_url = "";
+
+            /**
+             * Any value.
+             * @member {Uint8Array} value
+             * @memberof google.protobuf.Any
+             * @instance
+             */
+            Any.prototype.value = $util.newBuffer([]);
+
+            /**
+             * Creates a new Any instance using the specified properties.
+             * @function create
+             * @memberof google.protobuf.Any
+             * @static
+             * @param {google.protobuf.IAny=} [properties] Properties to set
+             * @returns {google.protobuf.Any} Any instance
+             */
+            Any.create = function create(properties) {
+                return new Any(properties);
+            };
+
+            /**
+             * Encodes the specified Any message. Does not implicitly {@link google.protobuf.Any.verify|verify} messages.
+             * @function encode
+             * @memberof google.protobuf.Any
+             * @static
+             * @param {google.protobuf.IAny} message Any message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Any.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.type_url != null && message.hasOwnProperty("type_url"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.type_url);
+                if (message.value != null && message.hasOwnProperty("value"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.value);
+                return writer;
+            };
+
+            /**
+             * Decodes an Any message from the specified reader or buffer.
+             * @function decode
+             * @memberof google.protobuf.Any
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {google.protobuf.Any} Any
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Any.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.protobuf.Any();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.type_url = reader.string();
+                        break;
+                    case 2:
+                        message.value = reader.bytes();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an Any message.
+             * @function verify
+             * @memberof google.protobuf.Any
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Any.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.type_url != null && message.hasOwnProperty("type_url"))
+                    if (!$util.isString(message.type_url))
+                        return "type_url: string expected";
+                if (message.value != null && message.hasOwnProperty("value"))
+                    if (!(message.value && typeof message.value.length === "number" || $util.isString(message.value)))
+                        return "value: buffer expected";
+                return null;
+            };
+
+            return Any;
         })();
 
         protobuf.FileDescriptorSet = (function() {
