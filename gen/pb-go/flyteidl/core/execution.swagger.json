@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "flyteidl/admin/node_execution.proto",
+    "title": "flyteidl/core/execution.proto",
     "version": "version not set"
   },
   "schemes": [

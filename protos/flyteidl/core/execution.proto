@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package flyteidl.core;
+
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
+
+// Indicates various phases of an Execution for both node and launch plan.
+enum ExecutionPhase {
+    UNDEFINED        = 0;
+    RUNNING          = 1;
+    SUCCEEDED        = 2;
+    FAILED           = 3;
+    TIMED_OUT        = 4;
+    ABORTED          = 5;
+    QUEUED           = 6;
+}
+
+// Represents the error message from the execution.
+message ExecutionError {
+    // Error code indicates a grouping of a type of error.
+    // More Info: <Link>
+    string code     = 1;
+    // Detailed description of the error - including stack trace.
+    string message  = 2;
+}

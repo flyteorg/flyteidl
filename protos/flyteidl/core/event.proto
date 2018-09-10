@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package flyteidl.core;
+
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
+
+import "flyteidl/core/execution.proto";
+
+message WorkflowExecutionEvent {
+    ExecutionPhase phase = 1;
+
+    oneof output_result {
+        // URL to the output of the execution, it encodes all the information
+        // including Cloud source provider. ie., s3://...
+        string output_uri       = 2;
+
+        // Error information for the execution
+        ExecutionError error           = 3;
+    }
+}
+
+message NodeExecutionEvent {
+    string node_id = 1;
+
+    ExecutionPhase phase = 2;
+
+    // Indicates the retry value for the Node Execution
+    uint32 retry_attempt        = 4;
+
+    NodeTargetMetadata target_info = 5;
+
+    oneof output_result {
+        // URL to the output of the execution, it encodes all the information
+        // including Cloud source provider. ie., s3://...
+        string output_uri       = 6;
+
+        // Error information for the execution
+        ExecutionError error           = 7;
+    }
+}
+
+// Node Targets
+// - TaskNode: two different events - one for multistep and one for single step
+// - BranchNode
+// - SubworkflowNode
+message NodeTargetMetadata {
+    oneof target {
+        TaskNodeMetadata task_metadata= 1;
+        BranchNodeMetadata branch_metadata = 2;
+        // NOTE: if we find that subworkflow metadata is useful, we may want to move this to the workflowEvent
+        SubworkflowNodeMetadata workflow_metadata = 3;
+    }
+}
+
+// We can fill these in as we find out what SDK/UI/Admin want to display
+message TaskNodeMetadata {
+
+}
+
+message BranchNodeMetadata {
+
+}
+
+message SubworkflowNodeMetadata {
+
+}
+
+// Plugins specific execution event information. For tasks like Python, Hive, Spark, DynamicJob.
+message TaskExecutionEvent {
+    string task_id = 1;
+    string version_num = 2;
+
+    // TODO: change the custom task info to Any type instead of manually
+    // dealing with task_type and byte array
+    string task_type = 3;
+
+    // Indicates specific info for custom task
+    bytes custom_task_info = 4;
+}

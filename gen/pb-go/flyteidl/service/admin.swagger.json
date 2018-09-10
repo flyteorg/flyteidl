@@ -874,7 +874,7 @@
           "$ref": "#/definitions/adminLiteralMapBlob"
         },
         "error": {
-          "$ref": "#/definitions/flyteidladminError",
+          "$ref": "#/definitions/coreExecutionError",
           "title": "Error information for the Node"
         },
         "computed_inputs": {
@@ -882,7 +882,7 @@
           "title": "Inputs computed and passed for execution.\ncomputed_inputs depends on inputs in ExecutionSpec, fixed and default inputs in launch plan"
         },
         "phase": {
-          "$ref": "#/definitions/adminExecutionPhase",
+          "$ref": "#/definitions/coreExecutionPhase",
           "title": "Phase of the executions"
         }
       },
@@ -934,20 +934,6 @@
           "description": "Indicates the \"nestedness\" of this execution.\nIf a user launches a workflow execution, the default nesting is 0.\nIf this execution further launches a workflow (child workflow), the nesting level is incremented by 0 =\u003e 1\nGenerally, if workflow at nesting level k launches a workflow then the child workflow will have\nnesting = k + 1."
         }
       }
-    },
-    "adminExecutionPhase": {
-      "type": "string",
-      "enum": [
-        "UNDEFINED",
-        "RUNNING",
-        "SUCCEEDED",
-        "FAILED",
-        "TIMED_OUT",
-        "ABORTED",
-        "QUEUED"
-      ],
-      "default": "UNDEFINED",
-      "description": "Indicates various phases of an Execution for both node and launch plan."
     },
     "adminExecutionSpec": {
       "type": "object",
@@ -1153,7 +1139,7 @@
         "phases": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/adminExecutionPhase"
+            "$ref": "#/definitions/coreExecutionPhase"
           },
           "description": "A list of phases to which users can associate the notifications to."
         }
@@ -1672,6 +1658,48 @@
       },
       "description": "Defines port properties for a container."
     },
+    "coreError": {
+      "type": "object",
+      "properties": {
+        "failed_node_id": {
+          "type": "string",
+          "description": "The node id that threw the error."
+        },
+        "message": {
+          "type": "string",
+          "description": "Error message thrown."
+        }
+      },
+      "description": "Represents an error thrown from a node."
+    },
+    "coreExecutionError": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "title": "Error code indicates a grouping of a type of error.\nMore Info: \u003cLink\u003e"
+        },
+        "message": {
+          "type": "string",
+          "description": "Detailed description of the error - including stack trace."
+        }
+      },
+      "description": "Represents the error message from the execution."
+    },
+    "coreExecutionPhase": {
+      "type": "string",
+      "enum": [
+        "UNDEFINED",
+        "RUNNING",
+        "SUCCEEDED",
+        "FAILED",
+        "TIMED_OUT",
+        "ABORTED",
+        "QUEUED"
+      ],
+      "default": "UNDEFINED",
+      "description": "Indicates various phases of an Execution for both node and launch plan."
+    },
     "coreIfBlock": {
       "type": "object",
       "properties": {
@@ -1703,7 +1731,7 @@
           "description": "The node to execute in case non of the branches were taken."
         },
         "error": {
-          "$ref": "#/definitions/flyteidlcoreError",
+          "$ref": "#/definitions/coreError",
           "description": "An error to throw in case non of the branches were taken."
         }
       },
@@ -2011,7 +2039,7 @@
           "title": "Backwards compatibility"
         },
         "error": {
-          "$ref": "#/definitions/flyteidlcoreError"
+          "$ref": "#/definitions/coreError"
         }
       }
     },
@@ -2235,34 +2263,6 @@
         }
       },
       "description": "Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,\ndirected acyclic graph."
-    },
-    "flyteidladminError": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "string",
-          "title": "Error code indicates a grouping of a type of error.\nMore Info: \u003cLink\u003e"
-        },
-        "message": {
-          "type": "string",
-          "description": "Detailed description of the error - including stack trace."
-        }
-      },
-      "description": "Represents the error message from the execution."
-    },
-    "flyteidlcoreError": {
-      "type": "object",
-      "properties": {
-        "failed_node_id": {
-          "type": "string",
-          "description": "The node id that threw the error."
-        },
-        "message": {
-          "type": "string",
-          "description": "Error message thrown."
-        }
-      },
-      "description": "Represents an error thrown from a node."
     },
     "flyteidlcoreSchema": {
       "type": "object",

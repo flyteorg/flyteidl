@@ -3509,6 +3509,502 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a WorkflowExecutionEvent. */
+        interface IWorkflowExecutionEvent {
+
+            /** WorkflowExecutionEvent phase */
+            phase?: (flyteidl.core.ExecutionPhase|null);
+
+            /** WorkflowExecutionEvent outputUri */
+            outputUri?: (string|null);
+
+            /** WorkflowExecutionEvent error */
+            error?: (flyteidl.core.IExecutionError|null);
+        }
+
+        /** Represents a WorkflowExecutionEvent. */
+        class WorkflowExecutionEvent implements IWorkflowExecutionEvent {
+
+            /**
+             * Constructs a new WorkflowExecutionEvent.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IWorkflowExecutionEvent);
+
+            /** WorkflowExecutionEvent phase. */
+            public phase: flyteidl.core.ExecutionPhase;
+
+            /** WorkflowExecutionEvent outputUri. */
+            public outputUri: string;
+
+            /** WorkflowExecutionEvent error. */
+            public error?: (flyteidl.core.IExecutionError|null);
+
+            /** WorkflowExecutionEvent outputResult. */
+            public outputResult?: ("outputUri"|"error");
+
+            /**
+             * Creates a new WorkflowExecutionEvent instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns WorkflowExecutionEvent instance
+             */
+            public static create(properties?: flyteidl.core.IWorkflowExecutionEvent): flyteidl.core.WorkflowExecutionEvent;
+
+            /**
+             * Encodes the specified WorkflowExecutionEvent message. Does not implicitly {@link flyteidl.core.WorkflowExecutionEvent.verify|verify} messages.
+             * @param message WorkflowExecutionEvent message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IWorkflowExecutionEvent, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a WorkflowExecutionEvent message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns WorkflowExecutionEvent
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.WorkflowExecutionEvent;
+
+            /**
+             * Verifies a WorkflowExecutionEvent message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a NodeExecutionEvent. */
+        interface INodeExecutionEvent {
+
+            /** NodeExecutionEvent nodeId */
+            nodeId?: (string|null);
+
+            /** NodeExecutionEvent phase */
+            phase?: (flyteidl.core.ExecutionPhase|null);
+
+            /** NodeExecutionEvent retryAttempt */
+            retryAttempt?: (number|null);
+
+            /** NodeExecutionEvent targetInfo */
+            targetInfo?: (flyteidl.core.INodeTargetMetadata|null);
+
+            /** NodeExecutionEvent outputUri */
+            outputUri?: (string|null);
+
+            /** NodeExecutionEvent error */
+            error?: (flyteidl.core.IExecutionError|null);
+        }
+
+        /** Represents a NodeExecutionEvent. */
+        class NodeExecutionEvent implements INodeExecutionEvent {
+
+            /**
+             * Constructs a new NodeExecutionEvent.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.INodeExecutionEvent);
+
+            /** NodeExecutionEvent nodeId. */
+            public nodeId: string;
+
+            /** NodeExecutionEvent phase. */
+            public phase: flyteidl.core.ExecutionPhase;
+
+            /** NodeExecutionEvent retryAttempt. */
+            public retryAttempt: number;
+
+            /** NodeExecutionEvent targetInfo. */
+            public targetInfo?: (flyteidl.core.INodeTargetMetadata|null);
+
+            /** NodeExecutionEvent outputUri. */
+            public outputUri: string;
+
+            /** NodeExecutionEvent error. */
+            public error?: (flyteidl.core.IExecutionError|null);
+
+            /** NodeExecutionEvent outputResult. */
+            public outputResult?: ("outputUri"|"error");
+
+            /**
+             * Creates a new NodeExecutionEvent instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns NodeExecutionEvent instance
+             */
+            public static create(properties?: flyteidl.core.INodeExecutionEvent): flyteidl.core.NodeExecutionEvent;
+
+            /**
+             * Encodes the specified NodeExecutionEvent message. Does not implicitly {@link flyteidl.core.NodeExecutionEvent.verify|verify} messages.
+             * @param message NodeExecutionEvent message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.INodeExecutionEvent, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a NodeExecutionEvent message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns NodeExecutionEvent
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.NodeExecutionEvent;
+
+            /**
+             * Verifies a NodeExecutionEvent message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a NodeTargetMetadata. */
+        interface INodeTargetMetadata {
+
+            /** NodeTargetMetadata taskMetadata */
+            taskMetadata?: (flyteidl.core.ITaskNodeMetadata|null);
+
+            /** NodeTargetMetadata branchMetadata */
+            branchMetadata?: (flyteidl.core.IBranchNodeMetadata|null);
+
+            /** NodeTargetMetadata workflowMetadata */
+            workflowMetadata?: (flyteidl.core.ISubworkflowNodeMetadata|null);
+        }
+
+        /** Represents a NodeTargetMetadata. */
+        class NodeTargetMetadata implements INodeTargetMetadata {
+
+            /**
+             * Constructs a new NodeTargetMetadata.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.INodeTargetMetadata);
+
+            /** NodeTargetMetadata taskMetadata. */
+            public taskMetadata?: (flyteidl.core.ITaskNodeMetadata|null);
+
+            /** NodeTargetMetadata branchMetadata. */
+            public branchMetadata?: (flyteidl.core.IBranchNodeMetadata|null);
+
+            /** NodeTargetMetadata workflowMetadata. */
+            public workflowMetadata?: (flyteidl.core.ISubworkflowNodeMetadata|null);
+
+            /** NodeTargetMetadata target. */
+            public target?: ("taskMetadata"|"branchMetadata"|"workflowMetadata");
+
+            /**
+             * Creates a new NodeTargetMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns NodeTargetMetadata instance
+             */
+            public static create(properties?: flyteidl.core.INodeTargetMetadata): flyteidl.core.NodeTargetMetadata;
+
+            /**
+             * Encodes the specified NodeTargetMetadata message. Does not implicitly {@link flyteidl.core.NodeTargetMetadata.verify|verify} messages.
+             * @param message NodeTargetMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.INodeTargetMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a NodeTargetMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns NodeTargetMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.NodeTargetMetadata;
+
+            /**
+             * Verifies a NodeTargetMetadata message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a TaskNodeMetadata. */
+        interface ITaskNodeMetadata {
+        }
+
+        /** Represents a TaskNodeMetadata. */
+        class TaskNodeMetadata implements ITaskNodeMetadata {
+
+            /**
+             * Constructs a new TaskNodeMetadata.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ITaskNodeMetadata);
+
+            /**
+             * Creates a new TaskNodeMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskNodeMetadata instance
+             */
+            public static create(properties?: flyteidl.core.ITaskNodeMetadata): flyteidl.core.TaskNodeMetadata;
+
+            /**
+             * Encodes the specified TaskNodeMetadata message. Does not implicitly {@link flyteidl.core.TaskNodeMetadata.verify|verify} messages.
+             * @param message TaskNodeMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ITaskNodeMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskNodeMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskNodeMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.TaskNodeMetadata;
+
+            /**
+             * Verifies a TaskNodeMetadata message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a BranchNodeMetadata. */
+        interface IBranchNodeMetadata {
+        }
+
+        /** Represents a BranchNodeMetadata. */
+        class BranchNodeMetadata implements IBranchNodeMetadata {
+
+            /**
+             * Constructs a new BranchNodeMetadata.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IBranchNodeMetadata);
+
+            /**
+             * Creates a new BranchNodeMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns BranchNodeMetadata instance
+             */
+            public static create(properties?: flyteidl.core.IBranchNodeMetadata): flyteidl.core.BranchNodeMetadata;
+
+            /**
+             * Encodes the specified BranchNodeMetadata message. Does not implicitly {@link flyteidl.core.BranchNodeMetadata.verify|verify} messages.
+             * @param message BranchNodeMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IBranchNodeMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a BranchNodeMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns BranchNodeMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.BranchNodeMetadata;
+
+            /**
+             * Verifies a BranchNodeMetadata message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a SubworkflowNodeMetadata. */
+        interface ISubworkflowNodeMetadata {
+        }
+
+        /** Represents a SubworkflowNodeMetadata. */
+        class SubworkflowNodeMetadata implements ISubworkflowNodeMetadata {
+
+            /**
+             * Constructs a new SubworkflowNodeMetadata.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ISubworkflowNodeMetadata);
+
+            /**
+             * Creates a new SubworkflowNodeMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns SubworkflowNodeMetadata instance
+             */
+            public static create(properties?: flyteidl.core.ISubworkflowNodeMetadata): flyteidl.core.SubworkflowNodeMetadata;
+
+            /**
+             * Encodes the specified SubworkflowNodeMetadata message. Does not implicitly {@link flyteidl.core.SubworkflowNodeMetadata.verify|verify} messages.
+             * @param message SubworkflowNodeMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ISubworkflowNodeMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a SubworkflowNodeMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SubworkflowNodeMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.SubworkflowNodeMetadata;
+
+            /**
+             * Verifies a SubworkflowNodeMetadata message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a TaskExecutionEvent. */
+        interface ITaskExecutionEvent {
+
+            /** TaskExecutionEvent taskId */
+            taskId?: (string|null);
+
+            /** TaskExecutionEvent versionNum */
+            versionNum?: (string|null);
+
+            /** TaskExecutionEvent taskType */
+            taskType?: (string|null);
+
+            /** TaskExecutionEvent customTaskInfo */
+            customTaskInfo?: (Uint8Array|null);
+        }
+
+        /** Represents a TaskExecutionEvent. */
+        class TaskExecutionEvent implements ITaskExecutionEvent {
+
+            /**
+             * Constructs a new TaskExecutionEvent.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ITaskExecutionEvent);
+
+            /** TaskExecutionEvent taskId. */
+            public taskId: string;
+
+            /** TaskExecutionEvent versionNum. */
+            public versionNum: string;
+
+            /** TaskExecutionEvent taskType. */
+            public taskType: string;
+
+            /** TaskExecutionEvent customTaskInfo. */
+            public customTaskInfo: Uint8Array;
+
+            /**
+             * Creates a new TaskExecutionEvent instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskExecutionEvent instance
+             */
+            public static create(properties?: flyteidl.core.ITaskExecutionEvent): flyteidl.core.TaskExecutionEvent;
+
+            /**
+             * Encodes the specified TaskExecutionEvent message. Does not implicitly {@link flyteidl.core.TaskExecutionEvent.verify|verify} messages.
+             * @param message TaskExecutionEvent message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ITaskExecutionEvent, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskExecutionEvent message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskExecutionEvent
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.TaskExecutionEvent;
+
+            /**
+             * Verifies a TaskExecutionEvent message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** ExecutionPhase enum. */
+        enum ExecutionPhase {
+            UNDEFINED = 0,
+            RUNNING = 1,
+            SUCCEEDED = 2,
+            FAILED = 3,
+            TIMED_OUT = 4,
+            ABORTED = 5,
+            QUEUED = 6
+        }
+
+        /** Properties of an ExecutionError. */
+        interface IExecutionError {
+
+            /** ExecutionError code */
+            code?: (string|null);
+
+            /** ExecutionError message */
+            message?: (string|null);
+        }
+
+        /** Represents an ExecutionError. */
+        class ExecutionError implements IExecutionError {
+
+            /**
+             * Constructs a new ExecutionError.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IExecutionError);
+
+            /** ExecutionError code. */
+            public code: string;
+
+            /** ExecutionError message. */
+            public message: string;
+
+            /**
+             * Creates a new ExecutionError instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ExecutionError instance
+             */
+            public static create(properties?: flyteidl.core.IExecutionError): flyteidl.core.ExecutionError;
+
+            /**
+             * Encodes the specified ExecutionError message. Does not implicitly {@link flyteidl.core.ExecutionError.verify|verify} messages.
+             * @param message ExecutionError message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IExecutionError, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ExecutionError message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ExecutionError
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ExecutionError;
+
+            /**
+             * Verifies an ExecutionError message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a FutureTaskDocument. */
         interface IFutureTaskDocument {
 
@@ -4286,75 +4782,6 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** ExecutionPhase enum. */
-        enum ExecutionPhase {
-            UNDEFINED = 0,
-            RUNNING = 1,
-            SUCCEEDED = 2,
-            FAILED = 3,
-            TIMED_OUT = 4,
-            ABORTED = 5,
-            QUEUED = 6
-        }
-
-        /** Properties of an Error. */
-        interface IError {
-
-            /** Error code */
-            code?: (string|null);
-
-            /** Error message */
-            message?: (string|null);
-        }
-
-        /** Represents an Error. */
-        class Error implements IError {
-
-            /**
-             * Constructs a new Error.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IError);
-
-            /** Error code. */
-            public code: string;
-
-            /** Error message. */
-            public message: string;
-
-            /**
-             * Creates a new Error instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns Error instance
-             */
-            public static create(properties?: flyteidl.admin.IError): flyteidl.admin.Error;
-
-            /**
-             * Encodes the specified Error message. Does not implicitly {@link flyteidl.admin.Error.verify|verify} messages.
-             * @param message Error message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IError, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an Error message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns Error
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Error;
-
-            /**
-             * Verifies an Error message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of a Notification. */
         interface INotification {
 
@@ -4362,7 +4789,7 @@ export namespace flyteidl {
             type?: (flyteidl.admin.Notification.Type|null);
 
             /** Notification phases */
-            phases?: (flyteidl.admin.ExecutionPhase[]|null);
+            phases?: (flyteidl.core.ExecutionPhase[]|null);
         }
 
         /** Represents a Notification. */
@@ -4378,7 +4805,7 @@ export namespace flyteidl {
             public type: flyteidl.admin.Notification.Type;
 
             /** Notification phases. */
-            public phases: flyteidl.admin.ExecutionPhase[];
+            public phases: flyteidl.core.ExecutionPhase[];
 
             /**
              * Creates a new Notification instance using the specified properties.
@@ -4422,6 +4849,354 @@ export namespace flyteidl {
                 PAGER_DUTY = 2,
                 SLACK = 3
             }
+        }
+
+        /** Properties of a WorkflowExecutionEventRequest. */
+        interface IWorkflowExecutionEventRequest {
+
+            /** WorkflowExecutionEventRequest requestId */
+            requestId?: (string|null);
+
+            /** WorkflowExecutionEventRequest executionId */
+            executionId?: (string|null);
+
+            /** WorkflowExecutionEventRequest occuredAt */
+            occuredAt?: (google.protobuf.ITimestamp|null);
+
+            /** WorkflowExecutionEventRequest event */
+            event?: (flyteidl.core.IWorkflowExecutionEvent|null);
+        }
+
+        /** Represents a WorkflowExecutionEventRequest. */
+        class WorkflowExecutionEventRequest implements IWorkflowExecutionEventRequest {
+
+            /**
+             * Constructs a new WorkflowExecutionEventRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IWorkflowExecutionEventRequest);
+
+            /** WorkflowExecutionEventRequest requestId. */
+            public requestId: string;
+
+            /** WorkflowExecutionEventRequest executionId. */
+            public executionId: string;
+
+            /** WorkflowExecutionEventRequest occuredAt. */
+            public occuredAt?: (google.protobuf.ITimestamp|null);
+
+            /** WorkflowExecutionEventRequest event. */
+            public event?: (flyteidl.core.IWorkflowExecutionEvent|null);
+
+            /**
+             * Creates a new WorkflowExecutionEventRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns WorkflowExecutionEventRequest instance
+             */
+            public static create(properties?: flyteidl.admin.IWorkflowExecutionEventRequest): flyteidl.admin.WorkflowExecutionEventRequest;
+
+            /**
+             * Encodes the specified WorkflowExecutionEventRequest message. Does not implicitly {@link flyteidl.admin.WorkflowExecutionEventRequest.verify|verify} messages.
+             * @param message WorkflowExecutionEventRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IWorkflowExecutionEventRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a WorkflowExecutionEventRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns WorkflowExecutionEventRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.WorkflowExecutionEventRequest;
+
+            /**
+             * Verifies a WorkflowExecutionEventRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a WorkflowExecutionEventResponse. */
+        interface IWorkflowExecutionEventResponse {
+        }
+
+        /** Represents a WorkflowExecutionEventResponse. */
+        class WorkflowExecutionEventResponse implements IWorkflowExecutionEventResponse {
+
+            /**
+             * Constructs a new WorkflowExecutionEventResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IWorkflowExecutionEventResponse);
+
+            /**
+             * Creates a new WorkflowExecutionEventResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns WorkflowExecutionEventResponse instance
+             */
+            public static create(properties?: flyteidl.admin.IWorkflowExecutionEventResponse): flyteidl.admin.WorkflowExecutionEventResponse;
+
+            /**
+             * Encodes the specified WorkflowExecutionEventResponse message. Does not implicitly {@link flyteidl.admin.WorkflowExecutionEventResponse.verify|verify} messages.
+             * @param message WorkflowExecutionEventResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IWorkflowExecutionEventResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a WorkflowExecutionEventResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns WorkflowExecutionEventResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.WorkflowExecutionEventResponse;
+
+            /**
+             * Verifies a WorkflowExecutionEventResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a NodeExecutionEventRequest. */
+        interface INodeExecutionEventRequest {
+
+            /** NodeExecutionEventRequest requestId */
+            requestId?: (string|null);
+
+            /** NodeExecutionEventRequest executionId */
+            executionId?: (string|null);
+
+            /** NodeExecutionEventRequest occuredAt */
+            occuredAt?: (google.protobuf.ITimestamp|null);
+
+            /** NodeExecutionEventRequest event */
+            event?: (flyteidl.core.INodeExecutionEvent|null);
+        }
+
+        /** Represents a NodeExecutionEventRequest. */
+        class NodeExecutionEventRequest implements INodeExecutionEventRequest {
+
+            /**
+             * Constructs a new NodeExecutionEventRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.INodeExecutionEventRequest);
+
+            /** NodeExecutionEventRequest requestId. */
+            public requestId: string;
+
+            /** NodeExecutionEventRequest executionId. */
+            public executionId: string;
+
+            /** NodeExecutionEventRequest occuredAt. */
+            public occuredAt?: (google.protobuf.ITimestamp|null);
+
+            /** NodeExecutionEventRequest event. */
+            public event?: (flyteidl.core.INodeExecutionEvent|null);
+
+            /**
+             * Creates a new NodeExecutionEventRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns NodeExecutionEventRequest instance
+             */
+            public static create(properties?: flyteidl.admin.INodeExecutionEventRequest): flyteidl.admin.NodeExecutionEventRequest;
+
+            /**
+             * Encodes the specified NodeExecutionEventRequest message. Does not implicitly {@link flyteidl.admin.NodeExecutionEventRequest.verify|verify} messages.
+             * @param message NodeExecutionEventRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.INodeExecutionEventRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a NodeExecutionEventRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns NodeExecutionEventRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.NodeExecutionEventRequest;
+
+            /**
+             * Verifies a NodeExecutionEventRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a NodeExecutionEventResponse. */
+        interface INodeExecutionEventResponse {
+        }
+
+        /** Represents a NodeExecutionEventResponse. */
+        class NodeExecutionEventResponse implements INodeExecutionEventResponse {
+
+            /**
+             * Constructs a new NodeExecutionEventResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.INodeExecutionEventResponse);
+
+            /**
+             * Creates a new NodeExecutionEventResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns NodeExecutionEventResponse instance
+             */
+            public static create(properties?: flyteidl.admin.INodeExecutionEventResponse): flyteidl.admin.NodeExecutionEventResponse;
+
+            /**
+             * Encodes the specified NodeExecutionEventResponse message. Does not implicitly {@link flyteidl.admin.NodeExecutionEventResponse.verify|verify} messages.
+             * @param message NodeExecutionEventResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.INodeExecutionEventResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a NodeExecutionEventResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns NodeExecutionEventResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.NodeExecutionEventResponse;
+
+            /**
+             * Verifies a NodeExecutionEventResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a TaskExecutionEventRequest. */
+        interface ITaskExecutionEventRequest {
+
+            /** TaskExecutionEventRequest requestId */
+            requestId?: (string|null);
+
+            /** TaskExecutionEventRequest executionId */
+            executionId?: (string|null);
+
+            /** TaskExecutionEventRequest occuredAt */
+            occuredAt?: (google.protobuf.ITimestamp|null);
+
+            /** TaskExecutionEventRequest event */
+            event?: (flyteidl.core.ITaskExecutionEvent|null);
+        }
+
+        /** Represents a TaskExecutionEventRequest. */
+        class TaskExecutionEventRequest implements ITaskExecutionEventRequest {
+
+            /**
+             * Constructs a new TaskExecutionEventRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ITaskExecutionEventRequest);
+
+            /** TaskExecutionEventRequest requestId. */
+            public requestId: string;
+
+            /** TaskExecutionEventRequest executionId. */
+            public executionId: string;
+
+            /** TaskExecutionEventRequest occuredAt. */
+            public occuredAt?: (google.protobuf.ITimestamp|null);
+
+            /** TaskExecutionEventRequest event. */
+            public event?: (flyteidl.core.ITaskExecutionEvent|null);
+
+            /**
+             * Creates a new TaskExecutionEventRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskExecutionEventRequest instance
+             */
+            public static create(properties?: flyteidl.admin.ITaskExecutionEventRequest): flyteidl.admin.TaskExecutionEventRequest;
+
+            /**
+             * Encodes the specified TaskExecutionEventRequest message. Does not implicitly {@link flyteidl.admin.TaskExecutionEventRequest.verify|verify} messages.
+             * @param message TaskExecutionEventRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ITaskExecutionEventRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskExecutionEventRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskExecutionEventRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.TaskExecutionEventRequest;
+
+            /**
+             * Verifies a TaskExecutionEventRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a TaskExecutionEventResponse. */
+        interface ITaskExecutionEventResponse {
+        }
+
+        /** Represents a TaskExecutionEventResponse. */
+        class TaskExecutionEventResponse implements ITaskExecutionEventResponse {
+
+            /**
+             * Constructs a new TaskExecutionEventResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ITaskExecutionEventResponse);
+
+            /**
+             * Creates a new TaskExecutionEventResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskExecutionEventResponse instance
+             */
+            public static create(properties?: flyteidl.admin.ITaskExecutionEventResponse): flyteidl.admin.TaskExecutionEventResponse;
+
+            /**
+             * Encodes the specified TaskExecutionEventResponse message. Does not implicitly {@link flyteidl.admin.TaskExecutionEventResponse.verify|verify} messages.
+             * @param message TaskExecutionEventResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ITaskExecutionEventResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskExecutionEventResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskExecutionEventResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.TaskExecutionEventResponse;
+
+            /**
+             * Verifies a TaskExecutionEventResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
         }
 
         /** Properties of an ExecutionCreateRequest. */
@@ -4724,13 +5499,13 @@ export namespace flyteidl {
             outputs?: (flyteidl.admin.ILiteralMapBlob|null);
 
             /** ExecutionClosure error */
-            error?: (flyteidl.admin.IError|null);
+            error?: (flyteidl.core.IExecutionError|null);
 
             /** ExecutionClosure computedInputs */
             computedInputs?: (flyteidl.core.ILiteralMap|null);
 
             /** ExecutionClosure phase */
-            phase?: (flyteidl.admin.ExecutionPhase|null);
+            phase?: (flyteidl.core.ExecutionPhase|null);
         }
 
         /** Represents an ExecutionClosure. */
@@ -4746,13 +5521,13 @@ export namespace flyteidl {
             public outputs?: (flyteidl.admin.ILiteralMapBlob|null);
 
             /** ExecutionClosure error. */
-            public error?: (flyteidl.admin.IError|null);
+            public error?: (flyteidl.core.IExecutionError|null);
 
             /** ExecutionClosure computedInputs. */
             public computedInputs?: (flyteidl.core.ILiteralMap|null);
 
             /** ExecutionClosure phase. */
-            public phase: flyteidl.admin.ExecutionPhase;
+            public phase: flyteidl.core.ExecutionPhase;
 
             /** ExecutionClosure outputResult. */
             public outputResult?: ("outputs"|"error");
@@ -5619,393 +6394,6 @@ export namespace flyteidl {
                  */
                 public static verify(message: { [k: string]: any }): (string|null);
             }
-        }
-
-        /** Properties of a NodeExecutionEventRequest. */
-        interface INodeExecutionEventRequest {
-
-            /** NodeExecutionEventRequest executionId */
-            executionId?: (string|null);
-
-            /** NodeExecutionEventRequest eventId */
-            eventId?: (string|null);
-
-            /** NodeExecutionEventRequest result */
-            result?: (flyteidl.admin.INodeExecutionStatus|null);
-
-            /** NodeExecutionEventRequest spec */
-            spec?: (flyteidl.admin.INodeExecutionSpec|null);
-        }
-
-        /** Represents a NodeExecutionEventRequest. */
-        class NodeExecutionEventRequest implements INodeExecutionEventRequest {
-
-            /**
-             * Constructs a new NodeExecutionEventRequest.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.INodeExecutionEventRequest);
-
-            /** NodeExecutionEventRequest executionId. */
-            public executionId: string;
-
-            /** NodeExecutionEventRequest eventId. */
-            public eventId: string;
-
-            /** NodeExecutionEventRequest result. */
-            public result?: (flyteidl.admin.INodeExecutionStatus|null);
-
-            /** NodeExecutionEventRequest spec. */
-            public spec?: (flyteidl.admin.INodeExecutionSpec|null);
-
-            /**
-             * Creates a new NodeExecutionEventRequest instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns NodeExecutionEventRequest instance
-             */
-            public static create(properties?: flyteidl.admin.INodeExecutionEventRequest): flyteidl.admin.NodeExecutionEventRequest;
-
-            /**
-             * Encodes the specified NodeExecutionEventRequest message. Does not implicitly {@link flyteidl.admin.NodeExecutionEventRequest.verify|verify} messages.
-             * @param message NodeExecutionEventRequest message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.INodeExecutionEventRequest, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a NodeExecutionEventRequest message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns NodeExecutionEventRequest
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.NodeExecutionEventRequest;
-
-            /**
-             * Verifies a NodeExecutionEventRequest message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a NodeExecutionEventResponse. */
-        interface INodeExecutionEventResponse {
-        }
-
-        /** Represents a NodeExecutionEventResponse. */
-        class NodeExecutionEventResponse implements INodeExecutionEventResponse {
-
-            /**
-             * Constructs a new NodeExecutionEventResponse.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.INodeExecutionEventResponse);
-
-            /**
-             * Creates a new NodeExecutionEventResponse instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns NodeExecutionEventResponse instance
-             */
-            public static create(properties?: flyteidl.admin.INodeExecutionEventResponse): flyteidl.admin.NodeExecutionEventResponse;
-
-            /**
-             * Encodes the specified NodeExecutionEventResponse message. Does not implicitly {@link flyteidl.admin.NodeExecutionEventResponse.verify|verify} messages.
-             * @param message NodeExecutionEventResponse message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.INodeExecutionEventResponse, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a NodeExecutionEventResponse message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns NodeExecutionEventResponse
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.NodeExecutionEventResponse;
-
-            /**
-             * Verifies a NodeExecutionEventResponse message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a NodeExecution. */
-        interface INodeExecution {
-
-            /** NodeExecution executionId */
-            executionId?: (string|null);
-
-            /** NodeExecution results */
-            results?: (flyteidl.admin.INodeExecutionStatus[]|null);
-
-            /** NodeExecution spec */
-            spec?: (flyteidl.admin.INodeExecutionSpec|null);
-        }
-
-        /** Represents a NodeExecution. */
-        class NodeExecution implements INodeExecution {
-
-            /**
-             * Constructs a new NodeExecution.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.INodeExecution);
-
-            /** NodeExecution executionId. */
-            public executionId: string;
-
-            /** NodeExecution results. */
-            public results: flyteidl.admin.INodeExecutionStatus[];
-
-            /** NodeExecution spec. */
-            public spec?: (flyteidl.admin.INodeExecutionSpec|null);
-
-            /**
-             * Creates a new NodeExecution instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns NodeExecution instance
-             */
-            public static create(properties?: flyteidl.admin.INodeExecution): flyteidl.admin.NodeExecution;
-
-            /**
-             * Encodes the specified NodeExecution message. Does not implicitly {@link flyteidl.admin.NodeExecution.verify|verify} messages.
-             * @param message NodeExecution message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.INodeExecution, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a NodeExecution message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns NodeExecution
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.NodeExecution;
-
-            /**
-             * Verifies a NodeExecution message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a NodeExecutionList. */
-        interface INodeExecutionList {
-
-            /** NodeExecutionList executions */
-            executions?: (flyteidl.admin.INodeExecution[]|null);
-        }
-
-        /** Represents a NodeExecutionList. */
-        class NodeExecutionList implements INodeExecutionList {
-
-            /**
-             * Constructs a new NodeExecutionList.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.INodeExecutionList);
-
-            /** NodeExecutionList executions. */
-            public executions: flyteidl.admin.INodeExecution[];
-
-            /**
-             * Creates a new NodeExecutionList instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns NodeExecutionList instance
-             */
-            public static create(properties?: flyteidl.admin.INodeExecutionList): flyteidl.admin.NodeExecutionList;
-
-            /**
-             * Encodes the specified NodeExecutionList message. Does not implicitly {@link flyteidl.admin.NodeExecutionList.verify|verify} messages.
-             * @param message NodeExecutionList message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.INodeExecutionList, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a NodeExecutionList message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns NodeExecutionList
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.NodeExecutionList;
-
-            /**
-             * Verifies a NodeExecutionList message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a NodeExecutionStatus. */
-        interface INodeExecutionStatus {
-
-            /** NodeExecutionStatus phase */
-            phase?: (flyteidl.admin.ExecutionPhase|null);
-
-            /** NodeExecutionStatus duration */
-            duration?: (google.protobuf.IDuration|null);
-
-            /** NodeExecutionStatus discoveryHit */
-            discoveryHit?: (boolean|null);
-
-            /** NodeExecutionStatus retryAttempt */
-            retryAttempt?: (number|null);
-
-            /** NodeExecutionStatus isSubTaskAvailable */
-            isSubTaskAvailable?: (boolean|null);
-
-            /** NodeExecutionStatus customTaskInfo */
-            customTaskInfo?: (Uint8Array|null);
-
-            /** NodeExecutionStatus outputUrl */
-            outputUrl?: (string|null);
-
-            /** NodeExecutionStatus error */
-            error?: (flyteidl.admin.IError|null);
-        }
-
-        /** Represents a NodeExecutionStatus. */
-        class NodeExecutionStatus implements INodeExecutionStatus {
-
-            /**
-             * Constructs a new NodeExecutionStatus.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.INodeExecutionStatus);
-
-            /** NodeExecutionStatus phase. */
-            public phase: flyteidl.admin.ExecutionPhase;
-
-            /** NodeExecutionStatus duration. */
-            public duration?: (google.protobuf.IDuration|null);
-
-            /** NodeExecutionStatus discoveryHit. */
-            public discoveryHit: boolean;
-
-            /** NodeExecutionStatus retryAttempt. */
-            public retryAttempt: number;
-
-            /** NodeExecutionStatus isSubTaskAvailable. */
-            public isSubTaskAvailable: boolean;
-
-            /** NodeExecutionStatus customTaskInfo. */
-            public customTaskInfo: Uint8Array;
-
-            /** NodeExecutionStatus outputUrl. */
-            public outputUrl: string;
-
-            /** NodeExecutionStatus error. */
-            public error?: (flyteidl.admin.IError|null);
-
-            /** NodeExecutionStatus outputResult. */
-            public outputResult?: ("outputUrl"|"error");
-
-            /**
-             * Creates a new NodeExecutionStatus instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns NodeExecutionStatus instance
-             */
-            public static create(properties?: flyteidl.admin.INodeExecutionStatus): flyteidl.admin.NodeExecutionStatus;
-
-            /**
-             * Encodes the specified NodeExecutionStatus message. Does not implicitly {@link flyteidl.admin.NodeExecutionStatus.verify|verify} messages.
-             * @param message NodeExecutionStatus message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.INodeExecutionStatus, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a NodeExecutionStatus message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns NodeExecutionStatus
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.NodeExecutionStatus;
-
-            /**
-             * Verifies a NodeExecutionStatus message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a NodeExecutionSpec. */
-        interface INodeExecutionSpec {
-
-            /** NodeExecutionSpec nodeId */
-            nodeId?: (string|null);
-
-            /** NodeExecutionSpec inputs */
-            inputs?: (flyteidl.core.ILiteralMap|null);
-        }
-
-        /** Represents a NodeExecutionSpec. */
-        class NodeExecutionSpec implements INodeExecutionSpec {
-
-            /**
-             * Constructs a new NodeExecutionSpec.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.INodeExecutionSpec);
-
-            /** NodeExecutionSpec nodeId. */
-            public nodeId: string;
-
-            /** NodeExecutionSpec inputs. */
-            public inputs?: (flyteidl.core.ILiteralMap|null);
-
-            /**
-             * Creates a new NodeExecutionSpec instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns NodeExecutionSpec instance
-             */
-            public static create(properties?: flyteidl.admin.INodeExecutionSpec): flyteidl.admin.NodeExecutionSpec;
-
-            /**
-             * Encodes the specified NodeExecutionSpec message. Does not implicitly {@link flyteidl.admin.NodeExecutionSpec.verify|verify} messages.
-             * @param message NodeExecutionSpec message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.INodeExecutionSpec, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a NodeExecutionSpec message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns NodeExecutionSpec
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.NodeExecutionSpec;
-
-            /**
-             * Verifies a NodeExecutionSpec message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
         }
 
         /** Properties of a Domain. */

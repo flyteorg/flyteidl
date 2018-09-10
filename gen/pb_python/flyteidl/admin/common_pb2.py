@@ -3,7 +3,6 @@
 
 import sys
 _b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
-from google.protobuf.internal import enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
@@ -14,65 +13,17 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
+from flyteidl.core import execution_pb2 as flyteidl_dot_core_dot_execution__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/common.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1b\x66lyteidl/admin/common.proto\x12\x0e\x66lyteidl.admin\";\n\nIdentifier\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\"W\n\x15IdentifierListRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\r\x12\x0e\n\x06offset\x18\x04 \x01(\r\">\n\x0eIdentifierList\x12,\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x1a.flyteidl.admin.Identifier\"\x1f\n\x10ObjectGetRequest\x12\x0b\n\x03urn\x18\x01 \x01(\t\"m\n\x13ResourceListRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\r\n\x05limit\x18\x02 \x01(\r\x12\x0e\n\x06offset\x18\x03 \x01(\r\x12\x0f\n\x07\x66ilters\x18\x04 \x01(\t\"&\n\x05\x45rror\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\"\xac\x01\n\x0cNotification\x12/\n\x04type\x18\x01 \x01(\x0e\x32!.flyteidl.admin.Notification.Type\x12.\n\x06phases\x18\x02 \x03(\x0e\x32\x1e.flyteidl.admin.ExecutionPhase\";\n\x04Type\x12\r\n\tUNDEFINED\x10\x00\x12\t\n\x05\x45MAIL\x10\x01\x12\x0e\n\nPAGER_DUTY\x10\x02\x12\t\n\x05SLACK\x10\x03*o\n\x0e\x45xecutionPhase\x12\r\n\tUNDEFINED\x10\x00\x12\x0b\n\x07RUNNING\x10\x01\x12\r\n\tSUCCEEDED\x10\x02\x12\n\n\x06\x46\x41ILED\x10\x03\x12\r\n\tTIMED_OUT\x10\x04\x12\x0b\n\x07\x41\x42ORTED\x10\x05\x12\n\n\x06QUEUED\x10\x06\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
-)
+  serialized_pb=_b('\n\x1b\x66lyteidl/admin/common.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/execution.proto\";\n\nIdentifier\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\"W\n\x15IdentifierListRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\r\x12\x0e\n\x06offset\x18\x04 \x01(\r\">\n\x0eIdentifierList\x12,\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x1a.flyteidl.admin.Identifier\"\x1f\n\x10ObjectGetRequest\x12\x0b\n\x03urn\x18\x01 \x01(\t\"m\n\x13ResourceListRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\r\n\x05limit\x18\x02 \x01(\r\x12\x0e\n\x06offset\x18\x03 \x01(\r\x12\x0f\n\x07\x66ilters\x18\x04 \x01(\t\"\xab\x01\n\x0cNotification\x12/\n\x04type\x18\x01 \x01(\x0e\x32!.flyteidl.admin.Notification.Type\x12-\n\x06phases\x18\x02 \x03(\x0e\x32\x1d.flyteidl.core.ExecutionPhase\";\n\x04Type\x12\r\n\tUNDEFINED\x10\x00\x12\t\n\x05\x45MAIL\x10\x01\x12\x0e\n\nPAGER_DUTY\x10\x02\x12\t\n\x05SLACK\x10\x03\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  ,
+  dependencies=[flyteidl_dot_core_dot_execution__pb2.DESCRIPTOR,])
 
-_EXECUTIONPHASE = _descriptor.EnumDescriptor(
-  name='ExecutionPhase',
-  full_name='flyteidl.admin.ExecutionPhase',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='UNDEFINED', index=0, number=0,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='RUNNING', index=1, number=1,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='SUCCEEDED', index=2, number=2,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='FAILED', index=3, number=3,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='TIMED_OUT', index=4, number=4,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='ABORTED', index=5, number=5,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='QUEUED', index=6, number=6,
-      options=None,
-      type=None),
-  ],
-  containing_type=None,
-  options=None,
-  serialized_start=620,
-  serialized_end=731,
-)
-_sym_db.RegisterEnumDescriptor(_EXECUTIONPHASE)
-
-ExecutionPhase = enum_type_wrapper.EnumTypeWrapper(_EXECUTIONPHASE)
-UNDEFINED = 0
-RUNNING = 1
-SUCCEEDED = 2
-FAILED = 3
-TIMED_OUT = 4
-ABORTED = 5
-QUEUED = 6
 
 
 _NOTIFICATION_TYPE = _descriptor.EnumDescriptor(
@@ -100,8 +51,8 @@ _NOTIFICATION_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=559,
-  serialized_end=618,
+  serialized_start=549,
+  serialized_end=608,
 )
 _sym_db.RegisterEnumDescriptor(_NOTIFICATION_TYPE)
 
@@ -146,8 +97,8 @@ _IDENTIFIER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=47,
-  serialized_end=106,
+  serialized_start=78,
+  serialized_end=137,
 )
 
 
@@ -198,8 +149,8 @@ _IDENTIFIERLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=108,
-  serialized_end=195,
+  serialized_start=139,
+  serialized_end=226,
 )
 
 
@@ -229,8 +180,8 @@ _IDENTIFIERLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=197,
-  serialized_end=259,
+  serialized_start=228,
+  serialized_end=290,
 )
 
 
@@ -260,8 +211,8 @@ _OBJECTGETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=261,
-  serialized_end=292,
+  serialized_start=292,
+  serialized_end=323,
 )
 
 
@@ -312,46 +263,8 @@ _RESOURCELISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=294,
-  serialized_end=403,
-)
-
-
-_ERROR = _descriptor.Descriptor(
-  name='Error',
-  full_name='flyteidl.admin.Error',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='code', full_name='flyteidl.admin.Error.code', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='message', full_name='flyteidl.admin.Error.message', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=405,
-  serialized_end=443,
+  serialized_start=325,
+  serialized_end=434,
 )
 
 
@@ -389,23 +302,21 @@ _NOTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=446,
-  serialized_end=618,
+  serialized_start=437,
+  serialized_end=608,
 )
 
 _IDENTIFIERLIST.fields_by_name['entities'].message_type = _IDENTIFIER
 _RESOURCELISTREQUEST.fields_by_name['id'].message_type = _IDENTIFIER
 _NOTIFICATION.fields_by_name['type'].enum_type = _NOTIFICATION_TYPE
-_NOTIFICATION.fields_by_name['phases'].enum_type = _EXECUTIONPHASE
+_NOTIFICATION.fields_by_name['phases'].enum_type = flyteidl_dot_core_dot_execution__pb2._EXECUTIONPHASE
 _NOTIFICATION_TYPE.containing_type = _NOTIFICATION
 DESCRIPTOR.message_types_by_name['Identifier'] = _IDENTIFIER
 DESCRIPTOR.message_types_by_name['IdentifierListRequest'] = _IDENTIFIERLISTREQUEST
 DESCRIPTOR.message_types_by_name['IdentifierList'] = _IDENTIFIERLIST
 DESCRIPTOR.message_types_by_name['ObjectGetRequest'] = _OBJECTGETREQUEST
 DESCRIPTOR.message_types_by_name['ResourceListRequest'] = _RESOURCELISTREQUEST
-DESCRIPTOR.message_types_by_name['Error'] = _ERROR
 DESCRIPTOR.message_types_by_name['Notification'] = _NOTIFICATION
-DESCRIPTOR.enum_types_by_name['ExecutionPhase'] = _EXECUTIONPHASE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Identifier = _reflection.GeneratedProtocolMessageType('Identifier', (_message.Message,), dict(
@@ -442,13 +353,6 @@ ResourceListRequest = _reflection.GeneratedProtocolMessageType('ResourceListRequ
   # @@protoc_insertion_point(class_scope:flyteidl.admin.ResourceListRequest)
   ))
 _sym_db.RegisterMessage(ResourceListRequest)
-
-Error = _reflection.GeneratedProtocolMessageType('Error', (_message.Message,), dict(
-  DESCRIPTOR = _ERROR,
-  __module__ = 'flyteidl.admin.common_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.admin.Error)
-  ))
-_sym_db.RegisterMessage(Error)
 
 Notification = _reflection.GeneratedProtocolMessageType('Notification', (_message.Message,), dict(
   DESCRIPTOR = _NOTIFICATION,

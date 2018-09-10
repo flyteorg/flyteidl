@@ -4,6 +4,7 @@ package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "flyteidl/core/literals.proto";
+import "flyteidl/core/execution.proto";
 import "flyteidl/admin/common.proto";
 
 message ExecutionCreateRequest {
@@ -47,7 +48,7 @@ message ExecutionClosure {
         LiteralMapBlob outputs	= 1;
 
         // Error information for the Node
-        Error error		= 2;
+        core.ExecutionError error		= 2;
     }
 
     // Inputs computed and passed for execution.
@@ -55,7 +56,7 @@ message ExecutionClosure {
     core.LiteralMap computed_inputs      = 3;
 
     // Phase of the executions
-    ExecutionPhase phase                 = 4;
+    core.ExecutionPhase phase                 = 4;
 }
 
 message ExecutionMetadata {

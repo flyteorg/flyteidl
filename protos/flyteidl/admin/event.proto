@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package flyteidl.admin;
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
+
+import "google/protobuf/timestamp.proto";
+import "flyteidl/core/event.proto";
+
+message WorkflowExecutionEventRequest {
+    // Unique ID for this request that can be traced between services
+    string request_id = 1;
+
+    // Workflow execution id
+    string execution_id = 2;
+
+    // This represents the timestamp of when the event occured, not the request timestamp
+    google.protobuf.Timestamp occured_at = 3;
+    core.WorkflowExecutionEvent event = 4;
+}
+
+message WorkflowExecutionEventResponse {
+    // TODO: add error for admin, is there a generic error obj?
+}
+
+message NodeExecutionEventRequest {
+    // Unique ID for this request that can be traced between services
+    string request_id = 1;
+
+    // Workflow execution id
+    string execution_id = 2;
+
+    // This represents the timestamp of when the event occured, not the request timestamp
+    google.protobuf.Timestamp occured_at = 3;
+    core.NodeExecutionEvent event = 4;
+}
+
+message NodeExecutionEventResponse {
+    // TODO: add error for admin, is there a generic error obj?
+}
+
+message TaskExecutionEventRequest {
+    // Unique ID for this request that can be traced between services
+    string request_id = 1;
+
+    // Workflow execution id
+    string execution_id = 2;
+
+    // This represents the timestamp of when the event occured, not the request timestamp
+    google.protobuf.Timestamp occured_at = 3;
+    core.TaskExecutionEvent event = 4;
+}
+
+message TaskExecutionEventResponse {
+    // TODO: add error for admin, is there a generic error obj?
+}
