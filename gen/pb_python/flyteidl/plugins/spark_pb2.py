@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/plugins/spark.proto',
   package='flyteidl.plugins',
   syntax='proto3',
-  serialized_pb=_b('\n\x1c\x66lyteidl/plugins/spark.proto\x12\x10\x66lyteidl.plugins\"*\n\x0cKeyValuePair\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"\xe2\x01\n\x08SparkJob\x12?\n\x0f\x61pplicationType\x18\x01 \x01(\x0e\x32&.flyteidl.plugins.SparkApplicationType\x12\x1b\n\x13mainApplicationFile\x18\x02 \x01(\t\x12\x11\n\tmainClass\x18\x03 \x01(\t\x12\x31\n\tsparkConf\x18\x05 \x03(\x0b\x32\x1e.flyteidl.plugins.KeyValuePair\x12\x32\n\nhadoopConf\x18\x06 \x03(\x0b\x32\x1e.flyteidl.plugins.KeyValuePair*z\n\x14SparkApplicationType\x12\x19\n\x15PythonApplicationType\x10\x00\x12\x17\n\x13JavaApplicationType\x10\x01\x12\x18\n\x14ScalaApplicationType\x10\x02\x12\x14\n\x10RApplicationType\x10\x03\x42,Z*github.com/lyft/flyteidl/gen/pb-go/pluginsb\x06proto3')
+  serialized_pb=_b('\n\x1c\x66lyteidl/plugins/spark.proto\x12\x10\x66lyteidl.plugins\"\xde\x02\n\x08SparkJob\x12?\n\x0f\x61pplicationType\x18\x01 \x01(\x0e\x32&.flyteidl.plugins.SparkApplicationType\x12\x1b\n\x13mainApplicationFile\x18\x02 \x01(\t\x12\x11\n\tmainClass\x18\x03 \x01(\t\x12<\n\tsparkConf\x18\x04 \x03(\x0b\x32).flyteidl.plugins.SparkJob.SparkConfEntry\x12>\n\nhadoopConf\x18\x05 \x03(\x0b\x32*.flyteidl.plugins.SparkJob.HadoopConfEntry\x1a\x30\n\x0eSparkConfEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0fHadoopConfEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01*z\n\x14SparkApplicationType\x12\x19\n\x15PythonApplicationType\x10\x00\x12\x17\n\x13JavaApplicationType\x10\x01\x12\x18\n\x14ScalaApplicationType\x10\x02\x12\x14\n\x10RApplicationType\x10\x03\x42,Z*github.com/lyft/flyteidl/gen/pb-go/pluginsb\x06proto3')
 )
 
 _SPARKAPPLICATIONTYPE = _descriptor.EnumDescriptor(
@@ -48,8 +48,8 @@ _SPARKAPPLICATIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=323,
-  serialized_end=445,
+  serialized_start=403,
+  serialized_end=525,
 )
 _sym_db.RegisterEnumDescriptor(_SPARKAPPLICATIONTYPE)
 
@@ -61,22 +61,22 @@ RApplicationType = 3
 
 
 
-_KEYVALUEPAIR = _descriptor.Descriptor(
-  name='KeyValuePair',
-  full_name='flyteidl.plugins.KeyValuePair',
+_SPARKJOB_SPARKCONFENTRY = _descriptor.Descriptor(
+  name='SparkConfEntry',
+  full_name='flyteidl.plugins.SparkJob.SparkConfEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='flyteidl.plugins.KeyValuePair.key', index=0,
+      name='key', full_name='flyteidl.plugins.SparkJob.SparkConfEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='flyteidl.plugins.KeyValuePair.value', index=1,
+      name='value', full_name='flyteidl.plugins.SparkJob.SparkConfEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -88,16 +88,52 @@ _KEYVALUEPAIR = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=50,
-  serialized_end=92,
+  serialized_start=302,
+  serialized_end=350,
 )
 
+_SPARKJOB_HADOOPCONFENTRY = _descriptor.Descriptor(
+  name='HadoopConfEntry',
+  full_name='flyteidl.plugins.SparkJob.HadoopConfEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='flyteidl.plugins.SparkJob.HadoopConfEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='flyteidl.plugins.SparkJob.HadoopConfEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=352,
+  serialized_end=401,
+)
 
 _SPARKJOB = _descriptor.Descriptor(
   name='SparkJob',
@@ -129,14 +165,14 @@ _SPARKJOB = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sparkConf', full_name='flyteidl.plugins.SparkJob.sparkConf', index=3,
-      number=5, type=11, cpp_type=10, label=3,
+      number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='hadoopConf', full_name='flyteidl.plugins.SparkJob.hadoopConf', index=4,
-      number=6, type=11, cpp_type=10, label=3,
+      number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -144,7 +180,7 @@ _SPARKJOB = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_SPARKJOB_SPARKCONFENTRY, _SPARKJOB_HADOOPCONFENTRY, ],
   enum_types=[
   ],
   options=None,
@@ -153,33 +189,47 @@ _SPARKJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=95,
-  serialized_end=321,
+  serialized_start=51,
+  serialized_end=401,
 )
 
+_SPARKJOB_SPARKCONFENTRY.containing_type = _SPARKJOB
+_SPARKJOB_HADOOPCONFENTRY.containing_type = _SPARKJOB
 _SPARKJOB.fields_by_name['applicationType'].enum_type = _SPARKAPPLICATIONTYPE
-_SPARKJOB.fields_by_name['sparkConf'].message_type = _KEYVALUEPAIR
-_SPARKJOB.fields_by_name['hadoopConf'].message_type = _KEYVALUEPAIR
-DESCRIPTOR.message_types_by_name['KeyValuePair'] = _KEYVALUEPAIR
+_SPARKJOB.fields_by_name['sparkConf'].message_type = _SPARKJOB_SPARKCONFENTRY
+_SPARKJOB.fields_by_name['hadoopConf'].message_type = _SPARKJOB_HADOOPCONFENTRY
 DESCRIPTOR.message_types_by_name['SparkJob'] = _SPARKJOB
 DESCRIPTOR.enum_types_by_name['SparkApplicationType'] = _SPARKAPPLICATIONTYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-KeyValuePair = _reflection.GeneratedProtocolMessageType('KeyValuePair', (_message.Message,), dict(
-  DESCRIPTOR = _KEYVALUEPAIR,
-  __module__ = 'flyteidl.plugins.spark_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.plugins.KeyValuePair)
-  ))
-_sym_db.RegisterMessage(KeyValuePair)
-
 SparkJob = _reflection.GeneratedProtocolMessageType('SparkJob', (_message.Message,), dict(
+
+  SparkConfEntry = _reflection.GeneratedProtocolMessageType('SparkConfEntry', (_message.Message,), dict(
+    DESCRIPTOR = _SPARKJOB_SPARKCONFENTRY,
+    __module__ = 'flyteidl.plugins.spark_pb2'
+    # @@protoc_insertion_point(class_scope:flyteidl.plugins.SparkJob.SparkConfEntry)
+    ))
+  ,
+
+  HadoopConfEntry = _reflection.GeneratedProtocolMessageType('HadoopConfEntry', (_message.Message,), dict(
+    DESCRIPTOR = _SPARKJOB_HADOOPCONFENTRY,
+    __module__ = 'flyteidl.plugins.spark_pb2'
+    # @@protoc_insertion_point(class_scope:flyteidl.plugins.SparkJob.HadoopConfEntry)
+    ))
+  ,
   DESCRIPTOR = _SPARKJOB,
   __module__ = 'flyteidl.plugins.spark_pb2'
   # @@protoc_insertion_point(class_scope:flyteidl.plugins.SparkJob)
   ))
 _sym_db.RegisterMessage(SparkJob)
+_sym_db.RegisterMessage(SparkJob.SparkConfEntry)
+_sym_db.RegisterMessage(SparkJob.HadoopConfEntry)
 
 
 DESCRIPTOR.has_options = True
 DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z*github.com/lyft/flyteidl/gen/pb-go/plugins'))
+_SPARKJOB_SPARKCONFENTRY.has_options = True
+_SPARKJOB_SPARKCONFENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_SPARKJOB_HADOOPCONFENTRY.has_options = True
+_SPARKJOB_HADOOPCONFENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
 # @@protoc_insertion_point(module_scope)

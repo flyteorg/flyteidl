@@ -3,7 +3,7 @@ syntax = "proto3";
 import "flyteidl/core/interface.proto";
 import "flyteidl/core/literals.proto";
 import "google/protobuf/duration.proto";
-import "google/protobuf/any.proto";
+import "google/protobuf/struct.proto";
 
 package flyteidl.core;
 
@@ -106,8 +106,7 @@ message TaskTemplate {
     TypedInterface interface = 5;
 
     // Custom data about the task. This is extensible to allow various plugins in the system.
-    // TODO: Close out on the right type for custom.
-     google.protobuf.Any custom = 6;
+     google.protobuf.Struct custom = 6;
 
     // Known target types that the system will guarantee plugins for. Custom SDK plugins are allowed to set these if needed.
     // If no corresponding execution-layer plugins are found, the system will default to handling these using built-in

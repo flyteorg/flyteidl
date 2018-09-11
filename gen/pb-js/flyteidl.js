@@ -7613,7 +7613,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [type] TaskTemplate type
              * @property {flyteidl.core.ITaskMetadata|null} [metadata] TaskTemplate metadata
              * @property {flyteidl.core.ITypedInterface|null} ["interface"] TaskTemplate interface
-             * @property {google.protobuf.IAny|null} [custom] TaskTemplate custom
+             * @property {google.protobuf.IStruct|null} [custom] TaskTemplate custom
              * @property {flyteidl.core.IContainer|null} [container] TaskTemplate container
              */
 
@@ -7674,7 +7674,7 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * TaskTemplate custom.
-             * @member {google.protobuf.IAny|null|undefined} custom
+             * @member {google.protobuf.IStruct|null|undefined} custom
              * @memberof flyteidl.core.TaskTemplate
              * @instance
              */
@@ -7737,7 +7737,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message["interface"] != null && message.hasOwnProperty("interface"))
                     $root.flyteidl.core.TypedInterface.encode(message["interface"], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 if (message.custom != null && message.hasOwnProperty("custom"))
-                    $root.google.protobuf.Any.encode(message.custom, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                    $root.google.protobuf.Struct.encode(message.custom, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 if (message.container != null && message.hasOwnProperty("container"))
                     $root.flyteidl.core.Container.encode(message.container, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 return writer;
@@ -7777,7 +7777,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message["interface"] = $root.flyteidl.core.TypedInterface.decode(reader, reader.uint32());
                         break;
                     case 6:
-                        message.custom = $root.google.protobuf.Any.decode(reader, reader.uint32());
+                        message.custom = $root.google.protobuf.Struct.decode(reader, reader.uint32());
                         break;
                     case 7:
                         message.container = $root.flyteidl.core.Container.decode(reader, reader.uint32());
@@ -7827,7 +7827,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         return "interface." + error;
                 }
                 if (message.custom != null && message.hasOwnProperty("custom")) {
-                    let error = $root.google.protobuf.Any.verify(message.custom);
+                    let error = $root.google.protobuf.Struct.verify(message.custom);
                     if (error)
                         return "custom." + error;
                 }
@@ -18007,133 +18007,6 @@ export const flyteidl = $root.flyteidl = (() => {
          */
         const plugins = {};
 
-        plugins.KeyValuePair = (function() {
-
-            /**
-             * Properties of a KeyValuePair.
-             * @memberof flyteidl.plugins
-             * @interface IKeyValuePair
-             * @property {string|null} [key] KeyValuePair key
-             * @property {string|null} [value] KeyValuePair value
-             */
-
-            /**
-             * Constructs a new KeyValuePair.
-             * @memberof flyteidl.plugins
-             * @classdesc Represents a KeyValuePair.
-             * @implements IKeyValuePair
-             * @constructor
-             * @param {flyteidl.plugins.IKeyValuePair=} [properties] Properties to set
-             */
-            function KeyValuePair(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * KeyValuePair key.
-             * @member {string} key
-             * @memberof flyteidl.plugins.KeyValuePair
-             * @instance
-             */
-            KeyValuePair.prototype.key = "";
-
-            /**
-             * KeyValuePair value.
-             * @member {string} value
-             * @memberof flyteidl.plugins.KeyValuePair
-             * @instance
-             */
-            KeyValuePair.prototype.value = "";
-
-            /**
-             * Creates a new KeyValuePair instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.plugins.KeyValuePair
-             * @static
-             * @param {flyteidl.plugins.IKeyValuePair=} [properties] Properties to set
-             * @returns {flyteidl.plugins.KeyValuePair} KeyValuePair instance
-             */
-            KeyValuePair.create = function create(properties) {
-                return new KeyValuePair(properties);
-            };
-
-            /**
-             * Encodes the specified KeyValuePair message. Does not implicitly {@link flyteidl.plugins.KeyValuePair.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.plugins.KeyValuePair
-             * @static
-             * @param {flyteidl.plugins.IKeyValuePair} message KeyValuePair message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            KeyValuePair.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.key != null && message.hasOwnProperty("key"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
-                if (message.value != null && message.hasOwnProperty("value"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.value);
-                return writer;
-            };
-
-            /**
-             * Decodes a KeyValuePair message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.plugins.KeyValuePair
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.plugins.KeyValuePair} KeyValuePair
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            KeyValuePair.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.plugins.KeyValuePair();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.key = reader.string();
-                        break;
-                    case 2:
-                        message.value = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a KeyValuePair message.
-             * @function verify
-             * @memberof flyteidl.plugins.KeyValuePair
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            KeyValuePair.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.key != null && message.hasOwnProperty("key"))
-                    if (!$util.isString(message.key))
-                        return "key: string expected";
-                if (message.value != null && message.hasOwnProperty("value"))
-                    if (!$util.isString(message.value))
-                        return "value: string expected";
-                return null;
-            };
-
-            return KeyValuePair;
-        })();
-
         /**
          * SparkApplicationType enum.
          * @name flyteidl.plugins.SparkApplicationType
@@ -18161,8 +18034,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.plugins.SparkApplicationType|null} [applicationType] SparkJob applicationType
              * @property {string|null} [mainApplicationFile] SparkJob mainApplicationFile
              * @property {string|null} [mainClass] SparkJob mainClass
-             * @property {Array.<flyteidl.plugins.IKeyValuePair>|null} [sparkConf] SparkJob sparkConf
-             * @property {Array.<flyteidl.plugins.IKeyValuePair>|null} [hadoopConf] SparkJob hadoopConf
+             * @property {Object.<string,string>|null} [sparkConf] SparkJob sparkConf
+             * @property {Object.<string,string>|null} [hadoopConf] SparkJob hadoopConf
              */
 
             /**
@@ -18174,8 +18047,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.plugins.ISparkJob=} [properties] Properties to set
              */
             function SparkJob(properties) {
-                this.sparkConf = [];
-                this.hadoopConf = [];
+                this.sparkConf = {};
+                this.hadoopConf = {};
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -18208,19 +18081,19 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * SparkJob sparkConf.
-             * @member {Array.<flyteidl.plugins.IKeyValuePair>} sparkConf
+             * @member {Object.<string,string>} sparkConf
              * @memberof flyteidl.plugins.SparkJob
              * @instance
              */
-            SparkJob.prototype.sparkConf = $util.emptyArray;
+            SparkJob.prototype.sparkConf = $util.emptyObject;
 
             /**
              * SparkJob hadoopConf.
-             * @member {Array.<flyteidl.plugins.IKeyValuePair>} hadoopConf
+             * @member {Object.<string,string>} hadoopConf
              * @memberof flyteidl.plugins.SparkJob
              * @instance
              */
-            SparkJob.prototype.hadoopConf = $util.emptyArray;
+            SparkJob.prototype.hadoopConf = $util.emptyObject;
 
             /**
              * Creates a new SparkJob instance using the specified properties.
@@ -18252,12 +18125,12 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.mainApplicationFile);
                 if (message.mainClass != null && message.hasOwnProperty("mainClass"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.mainClass);
-                if (message.sparkConf != null && message.sparkConf.length)
-                    for (let i = 0; i < message.sparkConf.length; ++i)
-                        $root.flyteidl.plugins.KeyValuePair.encode(message.sparkConf[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                if (message.hadoopConf != null && message.hadoopConf.length)
-                    for (let i = 0; i < message.hadoopConf.length; ++i)
-                        $root.flyteidl.plugins.KeyValuePair.encode(message.hadoopConf[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                if (message.sparkConf != null && message.hasOwnProperty("sparkConf"))
+                    for (let keys = Object.keys(message.sparkConf), i = 0; i < keys.length; ++i)
+                        writer.uint32(/* id 4, wireType 2 =*/34).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.sparkConf[keys[i]]).ldelim();
+                if (message.hadoopConf != null && message.hasOwnProperty("hadoopConf"))
+                    for (let keys = Object.keys(message.hadoopConf), i = 0; i < keys.length; ++i)
+                        writer.uint32(/* id 5, wireType 2 =*/42).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.hadoopConf[keys[i]]).ldelim();
                 return writer;
             };
 
@@ -18275,7 +18148,7 @@ export const flyteidl = $root.flyteidl = (() => {
             SparkJob.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.plugins.SparkJob();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.plugins.SparkJob(), key;
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -18288,15 +18161,21 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 3:
                         message.mainClass = reader.string();
                         break;
-                    case 5:
-                        if (!(message.sparkConf && message.sparkConf.length))
-                            message.sparkConf = [];
-                        message.sparkConf.push($root.flyteidl.plugins.KeyValuePair.decode(reader, reader.uint32()));
+                    case 4:
+                        reader.skip().pos++;
+                        if (message.sparkConf === $util.emptyObject)
+                            message.sparkConf = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.sparkConf[key] = reader.string();
                         break;
-                    case 6:
-                        if (!(message.hadoopConf && message.hadoopConf.length))
-                            message.hadoopConf = [];
-                        message.hadoopConf.push($root.flyteidl.plugins.KeyValuePair.decode(reader, reader.uint32()));
+                    case 5:
+                        reader.skip().pos++;
+                        if (message.hadoopConf === $util.emptyObject)
+                            message.hadoopConf = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.hadoopConf[key] = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -18334,22 +18213,20 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (!$util.isString(message.mainClass))
                         return "mainClass: string expected";
                 if (message.sparkConf != null && message.hasOwnProperty("sparkConf")) {
-                    if (!Array.isArray(message.sparkConf))
-                        return "sparkConf: array expected";
-                    for (let i = 0; i < message.sparkConf.length; ++i) {
-                        let error = $root.flyteidl.plugins.KeyValuePair.verify(message.sparkConf[i]);
-                        if (error)
-                            return "sparkConf." + error;
-                    }
+                    if (!$util.isObject(message.sparkConf))
+                        return "sparkConf: object expected";
+                    let key = Object.keys(message.sparkConf);
+                    for (let i = 0; i < key.length; ++i)
+                        if (!$util.isString(message.sparkConf[key[i]]))
+                            return "sparkConf: string{k:string} expected";
                 }
                 if (message.hadoopConf != null && message.hasOwnProperty("hadoopConf")) {
-                    if (!Array.isArray(message.hadoopConf))
-                        return "hadoopConf: array expected";
-                    for (let i = 0; i < message.hadoopConf.length; ++i) {
-                        let error = $root.flyteidl.plugins.KeyValuePair.verify(message.hadoopConf[i]);
-                        if (error)
-                            return "hadoopConf." + error;
-                    }
+                    if (!$util.isObject(message.hadoopConf))
+                        return "hadoopConf: object expected";
+                    let key = Object.keys(message.hadoopConf);
+                    for (let i = 0; i < key.length; ++i)
+                        if (!$util.isString(message.hadoopConf[key[i]]))
+                            return "hadoopConf: string{k:string} expected";
                 }
                 return null;
             };
@@ -18635,25 +18512,25 @@ export const google = $root.google = (() => {
             return Duration;
         })();
 
-        protobuf.Any = (function() {
+        protobuf.Struct = (function() {
 
             /**
-             * Properties of an Any.
+             * Properties of a Struct.
              * @memberof google.protobuf
-             * @interface IAny
-             * @property {string|null} [type_url] Any type_url
-             * @property {Uint8Array|null} [value] Any value
+             * @interface IStruct
+             * @property {Object.<string,google.protobuf.IValue>|null} [fields] Struct fields
              */
 
             /**
-             * Constructs a new Any.
+             * Constructs a new Struct.
              * @memberof google.protobuf
-             * @classdesc Represents an Any.
-             * @implements IAny
+             * @classdesc Represents a Struct.
+             * @implements IStruct
              * @constructor
-             * @param {google.protobuf.IAny=} [properties] Properties to set
+             * @param {google.protobuf.IStruct=} [properties] Properties to set
              */
-            function Any(properties) {
+            function Struct(properties) {
+                this.fields = {};
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -18661,75 +18538,70 @@ export const google = $root.google = (() => {
             }
 
             /**
-             * Any type_url.
-             * @member {string} type_url
-             * @memberof google.protobuf.Any
+             * Struct fields.
+             * @member {Object.<string,google.protobuf.IValue>} fields
+             * @memberof google.protobuf.Struct
              * @instance
              */
-            Any.prototype.type_url = "";
+            Struct.prototype.fields = $util.emptyObject;
 
             /**
-             * Any value.
-             * @member {Uint8Array} value
-             * @memberof google.protobuf.Any
-             * @instance
-             */
-            Any.prototype.value = $util.newBuffer([]);
-
-            /**
-             * Creates a new Any instance using the specified properties.
+             * Creates a new Struct instance using the specified properties.
              * @function create
-             * @memberof google.protobuf.Any
+             * @memberof google.protobuf.Struct
              * @static
-             * @param {google.protobuf.IAny=} [properties] Properties to set
-             * @returns {google.protobuf.Any} Any instance
+             * @param {google.protobuf.IStruct=} [properties] Properties to set
+             * @returns {google.protobuf.Struct} Struct instance
              */
-            Any.create = function create(properties) {
-                return new Any(properties);
+            Struct.create = function create(properties) {
+                return new Struct(properties);
             };
 
             /**
-             * Encodes the specified Any message. Does not implicitly {@link google.protobuf.Any.verify|verify} messages.
+             * Encodes the specified Struct message. Does not implicitly {@link google.protobuf.Struct.verify|verify} messages.
              * @function encode
-             * @memberof google.protobuf.Any
+             * @memberof google.protobuf.Struct
              * @static
-             * @param {google.protobuf.IAny} message Any message or plain object to encode
+             * @param {google.protobuf.IStruct} message Struct message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            Any.encode = function encode(message, writer) {
+            Struct.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.type_url != null && message.hasOwnProperty("type_url"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.type_url);
-                if (message.value != null && message.hasOwnProperty("value"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.value);
+                if (message.fields != null && message.hasOwnProperty("fields"))
+                    for (let keys = Object.keys(message.fields), i = 0; i < keys.length; ++i) {
+                        writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                        $root.google.protobuf.Value.encode(message.fields[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                    }
                 return writer;
             };
 
             /**
-             * Decodes an Any message from the specified reader or buffer.
+             * Decodes a Struct message from the specified reader or buffer.
              * @function decode
-             * @memberof google.protobuf.Any
+             * @memberof google.protobuf.Struct
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {google.protobuf.Any} Any
+             * @returns {google.protobuf.Struct} Struct
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            Any.decode = function decode(reader, length) {
+            Struct.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.protobuf.Any();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.protobuf.Struct(), key;
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.type_url = reader.string();
-                        break;
-                    case 2:
-                        message.value = reader.bytes();
+                        reader.skip().pos++;
+                        if (message.fields === $util.emptyObject)
+                            message.fields = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.fields[key] = $root.google.protobuf.Value.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -18740,26 +18612,404 @@ export const google = $root.google = (() => {
             };
 
             /**
-             * Verifies an Any message.
+             * Verifies a Struct message.
              * @function verify
-             * @memberof google.protobuf.Any
+             * @memberof google.protobuf.Struct
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            Any.verify = function verify(message) {
+            Struct.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.type_url != null && message.hasOwnProperty("type_url"))
-                    if (!$util.isString(message.type_url))
-                        return "type_url: string expected";
-                if (message.value != null && message.hasOwnProperty("value"))
-                    if (!(message.value && typeof message.value.length === "number" || $util.isString(message.value)))
-                        return "value: buffer expected";
+                if (message.fields != null && message.hasOwnProperty("fields")) {
+                    if (!$util.isObject(message.fields))
+                        return "fields: object expected";
+                    let key = Object.keys(message.fields);
+                    for (let i = 0; i < key.length; ++i) {
+                        let error = $root.google.protobuf.Value.verify(message.fields[key[i]]);
+                        if (error)
+                            return "fields." + error;
+                    }
+                }
                 return null;
             };
 
-            return Any;
+            return Struct;
+        })();
+
+        protobuf.Value = (function() {
+
+            /**
+             * Properties of a Value.
+             * @memberof google.protobuf
+             * @interface IValue
+             * @property {google.protobuf.NullValue|null} [nullValue] Value nullValue
+             * @property {number|null} [numberValue] Value numberValue
+             * @property {string|null} [stringValue] Value stringValue
+             * @property {boolean|null} [boolValue] Value boolValue
+             * @property {google.protobuf.IStruct|null} [structValue] Value structValue
+             * @property {google.protobuf.IListValue|null} [listValue] Value listValue
+             */
+
+            /**
+             * Constructs a new Value.
+             * @memberof google.protobuf
+             * @classdesc Represents a Value.
+             * @implements IValue
+             * @constructor
+             * @param {google.protobuf.IValue=} [properties] Properties to set
+             */
+            function Value(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Value nullValue.
+             * @member {google.protobuf.NullValue} nullValue
+             * @memberof google.protobuf.Value
+             * @instance
+             */
+            Value.prototype.nullValue = 0;
+
+            /**
+             * Value numberValue.
+             * @member {number} numberValue
+             * @memberof google.protobuf.Value
+             * @instance
+             */
+            Value.prototype.numberValue = 0;
+
+            /**
+             * Value stringValue.
+             * @member {string} stringValue
+             * @memberof google.protobuf.Value
+             * @instance
+             */
+            Value.prototype.stringValue = "";
+
+            /**
+             * Value boolValue.
+             * @member {boolean} boolValue
+             * @memberof google.protobuf.Value
+             * @instance
+             */
+            Value.prototype.boolValue = false;
+
+            /**
+             * Value structValue.
+             * @member {google.protobuf.IStruct|null|undefined} structValue
+             * @memberof google.protobuf.Value
+             * @instance
+             */
+            Value.prototype.structValue = null;
+
+            /**
+             * Value listValue.
+             * @member {google.protobuf.IListValue|null|undefined} listValue
+             * @memberof google.protobuf.Value
+             * @instance
+             */
+            Value.prototype.listValue = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * Value kind.
+             * @member {"nullValue"|"numberValue"|"stringValue"|"boolValue"|"structValue"|"listValue"|undefined} kind
+             * @memberof google.protobuf.Value
+             * @instance
+             */
+            Object.defineProperty(Value.prototype, "kind", {
+                get: $util.oneOfGetter($oneOfFields = ["nullValue", "numberValue", "stringValue", "boolValue", "structValue", "listValue"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new Value instance using the specified properties.
+             * @function create
+             * @memberof google.protobuf.Value
+             * @static
+             * @param {google.protobuf.IValue=} [properties] Properties to set
+             * @returns {google.protobuf.Value} Value instance
+             */
+            Value.create = function create(properties) {
+                return new Value(properties);
+            };
+
+            /**
+             * Encodes the specified Value message. Does not implicitly {@link google.protobuf.Value.verify|verify} messages.
+             * @function encode
+             * @memberof google.protobuf.Value
+             * @static
+             * @param {google.protobuf.IValue} message Value message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Value.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.nullValue != null && message.hasOwnProperty("nullValue"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.nullValue);
+                if (message.numberValue != null && message.hasOwnProperty("numberValue"))
+                    writer.uint32(/* id 2, wireType 1 =*/17).double(message.numberValue);
+                if (message.stringValue != null && message.hasOwnProperty("stringValue"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.stringValue);
+                if (message.boolValue != null && message.hasOwnProperty("boolValue"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).bool(message.boolValue);
+                if (message.structValue != null && message.hasOwnProperty("structValue"))
+                    $root.google.protobuf.Struct.encode(message.structValue, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.listValue != null && message.hasOwnProperty("listValue"))
+                    $root.google.protobuf.ListValue.encode(message.listValue, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a Value message from the specified reader or buffer.
+             * @function decode
+             * @memberof google.protobuf.Value
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {google.protobuf.Value} Value
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Value.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.protobuf.Value();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.nullValue = reader.int32();
+                        break;
+                    case 2:
+                        message.numberValue = reader.double();
+                        break;
+                    case 3:
+                        message.stringValue = reader.string();
+                        break;
+                    case 4:
+                        message.boolValue = reader.bool();
+                        break;
+                    case 5:
+                        message.structValue = $root.google.protobuf.Struct.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.listValue = $root.google.protobuf.ListValue.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Value message.
+             * @function verify
+             * @memberof google.protobuf.Value
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Value.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.nullValue != null && message.hasOwnProperty("nullValue")) {
+                    properties.kind = 1;
+                    switch (message.nullValue) {
+                    default:
+                        return "nullValue: enum value expected";
+                    case 0:
+                        break;
+                    }
+                }
+                if (message.numberValue != null && message.hasOwnProperty("numberValue")) {
+                    if (properties.kind === 1)
+                        return "kind: multiple values";
+                    properties.kind = 1;
+                    if (typeof message.numberValue !== "number")
+                        return "numberValue: number expected";
+                }
+                if (message.stringValue != null && message.hasOwnProperty("stringValue")) {
+                    if (properties.kind === 1)
+                        return "kind: multiple values";
+                    properties.kind = 1;
+                    if (!$util.isString(message.stringValue))
+                        return "stringValue: string expected";
+                }
+                if (message.boolValue != null && message.hasOwnProperty("boolValue")) {
+                    if (properties.kind === 1)
+                        return "kind: multiple values";
+                    properties.kind = 1;
+                    if (typeof message.boolValue !== "boolean")
+                        return "boolValue: boolean expected";
+                }
+                if (message.structValue != null && message.hasOwnProperty("structValue")) {
+                    if (properties.kind === 1)
+                        return "kind: multiple values";
+                    properties.kind = 1;
+                    {
+                        let error = $root.google.protobuf.Struct.verify(message.structValue);
+                        if (error)
+                            return "structValue." + error;
+                    }
+                }
+                if (message.listValue != null && message.hasOwnProperty("listValue")) {
+                    if (properties.kind === 1)
+                        return "kind: multiple values";
+                    properties.kind = 1;
+                    {
+                        let error = $root.google.protobuf.ListValue.verify(message.listValue);
+                        if (error)
+                            return "listValue." + error;
+                    }
+                }
+                return null;
+            };
+
+            return Value;
+        })();
+
+        /**
+         * NullValue enum.
+         * @name google.protobuf.NullValue
+         * @enum {string}
+         * @property {number} NULL_VALUE=0 NULL_VALUE value
+         */
+        protobuf.NullValue = (function() {
+            const valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "NULL_VALUE"] = 0;
+            return values;
+        })();
+
+        protobuf.ListValue = (function() {
+
+            /**
+             * Properties of a ListValue.
+             * @memberof google.protobuf
+             * @interface IListValue
+             * @property {Array.<google.protobuf.IValue>|null} [values] ListValue values
+             */
+
+            /**
+             * Constructs a new ListValue.
+             * @memberof google.protobuf
+             * @classdesc Represents a ListValue.
+             * @implements IListValue
+             * @constructor
+             * @param {google.protobuf.IListValue=} [properties] Properties to set
+             */
+            function ListValue(properties) {
+                this.values = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ListValue values.
+             * @member {Array.<google.protobuf.IValue>} values
+             * @memberof google.protobuf.ListValue
+             * @instance
+             */
+            ListValue.prototype.values = $util.emptyArray;
+
+            /**
+             * Creates a new ListValue instance using the specified properties.
+             * @function create
+             * @memberof google.protobuf.ListValue
+             * @static
+             * @param {google.protobuf.IListValue=} [properties] Properties to set
+             * @returns {google.protobuf.ListValue} ListValue instance
+             */
+            ListValue.create = function create(properties) {
+                return new ListValue(properties);
+            };
+
+            /**
+             * Encodes the specified ListValue message. Does not implicitly {@link google.protobuf.ListValue.verify|verify} messages.
+             * @function encode
+             * @memberof google.protobuf.ListValue
+             * @static
+             * @param {google.protobuf.IListValue} message ListValue message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ListValue.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.values != null && message.values.length)
+                    for (let i = 0; i < message.values.length; ++i)
+                        $root.google.protobuf.Value.encode(message.values[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a ListValue message from the specified reader or buffer.
+             * @function decode
+             * @memberof google.protobuf.ListValue
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {google.protobuf.ListValue} ListValue
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ListValue.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.protobuf.ListValue();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.values && message.values.length))
+                            message.values = [];
+                        message.values.push($root.google.protobuf.Value.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ListValue message.
+             * @function verify
+             * @memberof google.protobuf.ListValue
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ListValue.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.values != null && message.hasOwnProperty("values")) {
+                    if (!Array.isArray(message.values))
+                        return "values: array expected";
+                    for (let i = 0; i < message.values.length; ++i) {
+                        let error = $root.google.protobuf.Value.verify(message.values[i]);
+                        if (error)
+                            return "values." + error;
+                    }
+                }
+                return null;
+            };
+
+            return ListValue;
         })();
 
         protobuf.FileDescriptorSet = (function() {

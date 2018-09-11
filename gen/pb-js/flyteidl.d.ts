@@ -3172,7 +3172,7 @@ export namespace flyteidl {
             "interface"?: (flyteidl.core.ITypedInterface|null);
 
             /** TaskTemplate custom */
-            custom?: (google.protobuf.IAny|null);
+            custom?: (google.protobuf.IStruct|null);
 
             /** TaskTemplate container */
             container?: (flyteidl.core.IContainer|null);
@@ -3203,7 +3203,7 @@ export namespace flyteidl {
             public interface?: (flyteidl.core.ITypedInterface|null);
 
             /** TaskTemplate custom. */
-            public custom?: (google.protobuf.IAny|null);
+            public custom?: (google.protobuf.IStruct|null);
 
             /** TaskTemplate container. */
             public container?: (flyteidl.core.IContainer|null);
@@ -7714,64 +7714,6 @@ export namespace flyteidl {
     /** Namespace plugins. */
     namespace plugins {
 
-        /** Properties of a KeyValuePair. */
-        interface IKeyValuePair {
-
-            /** KeyValuePair key */
-            key?: (string|null);
-
-            /** KeyValuePair value */
-            value?: (string|null);
-        }
-
-        /** Represents a KeyValuePair. */
-        class KeyValuePair implements IKeyValuePair {
-
-            /**
-             * Constructs a new KeyValuePair.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.plugins.IKeyValuePair);
-
-            /** KeyValuePair key. */
-            public key: string;
-
-            /** KeyValuePair value. */
-            public value: string;
-
-            /**
-             * Creates a new KeyValuePair instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns KeyValuePair instance
-             */
-            public static create(properties?: flyteidl.plugins.IKeyValuePair): flyteidl.plugins.KeyValuePair;
-
-            /**
-             * Encodes the specified KeyValuePair message. Does not implicitly {@link flyteidl.plugins.KeyValuePair.verify|verify} messages.
-             * @param message KeyValuePair message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.plugins.IKeyValuePair, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a KeyValuePair message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns KeyValuePair
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.plugins.KeyValuePair;
-
-            /**
-             * Verifies a KeyValuePair message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** SparkApplicationType enum. */
         enum SparkApplicationType {
             PythonApplicationType = 0,
@@ -7793,10 +7735,10 @@ export namespace flyteidl {
             mainClass?: (string|null);
 
             /** SparkJob sparkConf */
-            sparkConf?: (flyteidl.plugins.IKeyValuePair[]|null);
+            sparkConf?: ({ [k: string]: string }|null);
 
             /** SparkJob hadoopConf */
-            hadoopConf?: (flyteidl.plugins.IKeyValuePair[]|null);
+            hadoopConf?: ({ [k: string]: string }|null);
         }
 
         /** Represents a SparkJob. */
@@ -7818,10 +7760,10 @@ export namespace flyteidl {
             public mainClass: string;
 
             /** SparkJob sparkConf. */
-            public sparkConf: flyteidl.plugins.IKeyValuePair[];
+            public sparkConf: { [k: string]: string };
 
             /** SparkJob hadoopConf. */
-            public hadoopConf: flyteidl.plugins.IKeyValuePair[];
+            public hadoopConf: { [k: string]: string };
 
             /**
              * Creates a new SparkJob instance using the specified properties.
@@ -7980,58 +7922,194 @@ export namespace google {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of an Any. */
-        interface IAny {
+        /** Properties of a Struct. */
+        interface IStruct {
 
-            /** Any type_url */
-            type_url?: (string|null);
-
-            /** Any value */
-            value?: (Uint8Array|null);
+            /** Struct fields */
+            fields?: ({ [k: string]: google.protobuf.IValue }|null);
         }
 
-        /** Represents an Any. */
-        class Any implements IAny {
+        /** Represents a Struct. */
+        class Struct implements IStruct {
 
             /**
-             * Constructs a new Any.
+             * Constructs a new Struct.
              * @param [properties] Properties to set
              */
-            constructor(properties?: google.protobuf.IAny);
+            constructor(properties?: google.protobuf.IStruct);
 
-            /** Any type_url. */
-            public type_url: string;
-
-            /** Any value. */
-            public value: Uint8Array;
+            /** Struct fields. */
+            public fields: { [k: string]: google.protobuf.IValue };
 
             /**
-             * Creates a new Any instance using the specified properties.
+             * Creates a new Struct instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns Any instance
+             * @returns Struct instance
              */
-            public static create(properties?: google.protobuf.IAny): google.protobuf.Any;
+            public static create(properties?: google.protobuf.IStruct): google.protobuf.Struct;
 
             /**
-             * Encodes the specified Any message. Does not implicitly {@link google.protobuf.Any.verify|verify} messages.
-             * @param message Any message or plain object to encode
+             * Encodes the specified Struct message. Does not implicitly {@link google.protobuf.Struct.verify|verify} messages.
+             * @param message Struct message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: google.protobuf.IAny, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: google.protobuf.IStruct, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an Any message from the specified reader or buffer.
+             * Decodes a Struct message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns Any
+             * @returns Struct
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.protobuf.Any;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.protobuf.Struct;
 
             /**
-             * Verifies an Any message.
+             * Verifies a Struct message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a Value. */
+        interface IValue {
+
+            /** Value nullValue */
+            nullValue?: (google.protobuf.NullValue|null);
+
+            /** Value numberValue */
+            numberValue?: (number|null);
+
+            /** Value stringValue */
+            stringValue?: (string|null);
+
+            /** Value boolValue */
+            boolValue?: (boolean|null);
+
+            /** Value structValue */
+            structValue?: (google.protobuf.IStruct|null);
+
+            /** Value listValue */
+            listValue?: (google.protobuf.IListValue|null);
+        }
+
+        /** Represents a Value. */
+        class Value implements IValue {
+
+            /**
+             * Constructs a new Value.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: google.protobuf.IValue);
+
+            /** Value nullValue. */
+            public nullValue: google.protobuf.NullValue;
+
+            /** Value numberValue. */
+            public numberValue: number;
+
+            /** Value stringValue. */
+            public stringValue: string;
+
+            /** Value boolValue. */
+            public boolValue: boolean;
+
+            /** Value structValue. */
+            public structValue?: (google.protobuf.IStruct|null);
+
+            /** Value listValue. */
+            public listValue?: (google.protobuf.IListValue|null);
+
+            /** Value kind. */
+            public kind?: ("nullValue"|"numberValue"|"stringValue"|"boolValue"|"structValue"|"listValue");
+
+            /**
+             * Creates a new Value instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Value instance
+             */
+            public static create(properties?: google.protobuf.IValue): google.protobuf.Value;
+
+            /**
+             * Encodes the specified Value message. Does not implicitly {@link google.protobuf.Value.verify|verify} messages.
+             * @param message Value message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: google.protobuf.IValue, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Value message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Value
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.protobuf.Value;
+
+            /**
+             * Verifies a Value message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** NullValue enum. */
+        enum NullValue {
+            NULL_VALUE = 0
+        }
+
+        /** Properties of a ListValue. */
+        interface IListValue {
+
+            /** ListValue values */
+            values?: (google.protobuf.IValue[]|null);
+        }
+
+        /** Represents a ListValue. */
+        class ListValue implements IListValue {
+
+            /**
+             * Constructs a new ListValue.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: google.protobuf.IListValue);
+
+            /** ListValue values. */
+            public values: google.protobuf.IValue[];
+
+            /**
+             * Creates a new ListValue instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ListValue instance
+             */
+            public static create(properties?: google.protobuf.IListValue): google.protobuf.ListValue;
+
+            /**
+             * Encodes the specified ListValue message. Does not implicitly {@link google.protobuf.ListValue.verify|verify} messages.
+             * @param message ListValue message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: google.protobuf.IListValue, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ListValue message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ListValue
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.protobuf.ListValue;
+
+            /**
+             * Verifies a ListValue message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
