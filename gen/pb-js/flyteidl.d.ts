@@ -7593,6 +7593,20 @@ export namespace flyteidl {
              * @returns Promise
              */
             public listProjects(request: flyteidl.admin.IProjectListRequest): Promise<flyteidl.admin.Projects>;
+
+            /**
+             * Calls CreateWorkflowEvent.
+             * @param request WorkflowExecutionEventRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and WorkflowExecutionEventResponse
+             */
+            public createWorkflowEvent(request: flyteidl.admin.IWorkflowExecutionEventRequest, callback: flyteidl.service.AdminService.CreateWorkflowEventCallback): void;
+
+            /**
+             * Calls CreateWorkflowEvent.
+             * @param request WorkflowExecutionEventRequest message or plain object
+             * @returns Promise
+             */
+            public createWorkflowEvent(request: flyteidl.admin.IWorkflowExecutionEventRequest): Promise<flyteidl.admin.WorkflowExecutionEventResponse>;
         }
 
         namespace AdminService {
@@ -7708,6 +7722,13 @@ export namespace flyteidl {
              * @param [response] Projects
              */
             type ListProjectsCallback = (error: (Error|null), response?: flyteidl.admin.Projects) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#createWorkflowEvent}.
+             * @param error Error, if any
+             * @param [response] WorkflowExecutionEventResponse
+             */
+            type CreateWorkflowEventCallback = (error: (Error|null), response?: flyteidl.admin.WorkflowExecutionEventResponse) => void;
         }
     }
 

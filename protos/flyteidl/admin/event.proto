@@ -19,7 +19,6 @@ message WorkflowExecutionEventRequest {
 }
 
 message WorkflowExecutionEventResponse {
-    // TODO: add error for admin, is there a generic error obj?
 }
 
 message NodeExecutionEventRequest {
@@ -35,7 +34,6 @@ message NodeExecutionEventRequest {
 }
 
 message NodeExecutionEventResponse {
-    // TODO: add error for admin, is there a generic error obj?
 }
 
 message TaskExecutionEventRequest {
@@ -51,5 +49,4 @@ message TaskExecutionEventRequest {
 }
 
 message TaskExecutionEventResponse {
-    // TODO: add error for admin, is there a generic error obj?
 }

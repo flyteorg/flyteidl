@@ -15,6 +15,32 @@
     "application/json"
   ],
   "paths": {
+    "/api/v1/events/workflow": {
+      "post": {
+        "operationId": "CreateWorkflowEvent",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminWorkflowExecutionEventResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminWorkflowExecutionEventRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/executions": {
       "get": {
         "operationId": "ListExecutions",
@@ -1345,6 +1371,30 @@
       },
       "description": "Represents a response structure if workflow creation succeeds."
     },
+    "adminWorkflowExecutionEventRequest": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "title": "Unique ID for this request that can be traced between services"
+        },
+        "execution_id": {
+          "type": "string",
+          "title": "Workflow execution id"
+        },
+        "occured_at": {
+          "type": "string",
+          "format": "date-time",
+          "title": "This represents the timestamp of when the event occured, not the request timestamp"
+        },
+        "event": {
+          "$ref": "#/definitions/coreWorkflowExecutionEvent"
+        }
+      }
+    },
+    "adminWorkflowExecutionEventResponse": {
+      "type": "object"
+    },
     "adminWorkflowList": {
       "type": "object",
       "properties": {
@@ -2209,6 +2259,22 @@
         }
       },
       "description": "Defines an execution unit recognized by the system and can be referred to by other units to listen to its execution\nevents (started, succeeded, aborted... etc.)."
+    },
+    "coreWorkflowExecutionEvent": {
+      "type": "object",
+      "properties": {
+        "phase": {
+          "$ref": "#/definitions/coreExecutionPhase"
+        },
+        "output_uri": {
+          "type": "string",
+          "description": "URL to the output of the execution, it encodes all the information\nincluding Cloud source provider. ie., s3://..."
+        },
+        "error": {
+          "$ref": "#/definitions/coreExecutionError",
+          "title": "Error information for the execution"
+        }
+      }
     },
     "coreWorkflowMetadata": {
       "type": "object",

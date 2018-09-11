@@ -2,6 +2,7 @@
 import grpc
 
 from flyteidl.admin import common_pb2 as flyteidl_dot_admin_dot_common__pb2
+from flyteidl.admin import event_pb2 as flyteidl_dot_admin_dot_event__pb2
 from flyteidl.admin import execution_pb2 as flyteidl_dot_admin_dot_execution__pb2
 from flyteidl.admin import launch_plan_pb2 as flyteidl_dot_admin_dot_launch__plan__pb2
 from flyteidl.admin import project_pb2 as flyteidl_dot_admin_dot_project__pb2
@@ -98,6 +99,11 @@ class AdminServiceStub(object):
         '/flyteidl.service.AdminService/ListProjects',
         request_serializer=flyteidl_dot_admin_dot_project__pb2.ProjectListRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_project__pb2.Projects.FromString,
+        )
+    self.CreateWorkflowEvent = channel.unary_unary(
+        '/flyteidl.service.AdminService/CreateWorkflowEvent',
+        request_serializer=flyteidl_dot_admin_dot_event__pb2.WorkflowExecutionEventRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_event__pb2.WorkflowExecutionEventResponse.FromString,
         )
 
 
@@ -217,6 +223,13 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def CreateWorkflowEvent(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_AdminServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -299,6 +312,11 @@ def add_AdminServiceServicer_to_server(servicer, server):
           servicer.ListProjects,
           request_deserializer=flyteidl_dot_admin_dot_project__pb2.ProjectListRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_project__pb2.Projects.SerializeToString,
+      ),
+      'CreateWorkflowEvent': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateWorkflowEvent,
+          request_deserializer=flyteidl_dot_admin_dot_event__pb2.WorkflowExecutionEventRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_event__pb2.WorkflowExecutionEventResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

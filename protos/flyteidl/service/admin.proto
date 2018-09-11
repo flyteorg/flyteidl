@@ -8,6 +8,7 @@ import "flyteidl/admin/project.proto";
 import "flyteidl/admin/task.proto";
 import "flyteidl/admin/workflow.proto";
 import "flyteidl/admin/launch_plan.proto";
+import "flyteidl/admin/event.proto";
 import "flyteidl/admin/execution.proto";
 import "flyteidl/admin/common.proto";
 import "protoc-gen-swagger/options/annotations.proto";
@@ -130,11 +131,18 @@ service AdminService {
     }; 
   }
 
-
   rpc ListProjects (flyteidl.admin.ProjectListRequest) returns (flyteidl.admin.Projects) {
     option (google.api.http) = {
       get:  "/api/v1/projects"
     };
     
   }
+
+  rpc CreateWorkflowEvent (flyteidl.admin.WorkflowExecutionEventRequest) returns (flyteidl.admin.WorkflowExecutionEventResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/events/workflow"
+      body: "*"
+    };
+  }
+
 }

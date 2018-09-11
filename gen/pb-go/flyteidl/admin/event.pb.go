@@ -37,7 +37,7 @@ func (m *WorkflowExecutionEventRequest) Reset()         { *m = WorkflowExecution
 func (m *WorkflowExecutionEventRequest) String() string { return proto.CompactTextString(m) }
 func (*WorkflowExecutionEventRequest) ProtoMessage()    {}
 func (*WorkflowExecutionEventRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_event_1337522ab86a440f, []int{0}
+	return fileDescriptor_event_52d642ffdbff3fb0, []int{0}
 }
 func (m *WorkflowExecutionEventRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_WorkflowExecutionEventRequest.Unmarshal(m, b)
@@ -95,7 +95,7 @@ func (m *WorkflowExecutionEventResponse) Reset()         { *m = WorkflowExecutio
 func (m *WorkflowExecutionEventResponse) String() string { return proto.CompactTextString(m) }
 func (*WorkflowExecutionEventResponse) ProtoMessage()    {}
 func (*WorkflowExecutionEventResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_event_1337522ab86a440f, []int{1}
+	return fileDescriptor_event_52d642ffdbff3fb0, []int{1}
 }
 func (m *WorkflowExecutionEventResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_WorkflowExecutionEventResponse.Unmarshal(m, b)
@@ -132,7 +132,7 @@ func (m *NodeExecutionEventRequest) Reset()         { *m = NodeExecutionEventReq
 func (m *NodeExecutionEventRequest) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionEventRequest) ProtoMessage()    {}
 func (*NodeExecutionEventRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_event_1337522ab86a440f, []int{2}
+	return fileDescriptor_event_52d642ffdbff3fb0, []int{2}
 }
 func (m *NodeExecutionEventRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionEventRequest.Unmarshal(m, b)
@@ -190,7 +190,7 @@ func (m *NodeExecutionEventResponse) Reset()         { *m = NodeExecutionEventRe
 func (m *NodeExecutionEventResponse) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionEventResponse) ProtoMessage()    {}
 func (*NodeExecutionEventResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_event_1337522ab86a440f, []int{3}
+	return fileDescriptor_event_52d642ffdbff3fb0, []int{3}
 }
 func (m *NodeExecutionEventResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionEventResponse.Unmarshal(m, b)
@@ -227,7 +227,7 @@ func (m *TaskExecutionEventRequest) Reset()         { *m = TaskExecutionEventReq
 func (m *TaskExecutionEventRequest) String() string { return proto.CompactTextString(m) }
 func (*TaskExecutionEventRequest) ProtoMessage()    {}
 func (*TaskExecutionEventRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_event_1337522ab86a440f, []int{4}
+	return fileDescriptor_event_52d642ffdbff3fb0, []int{4}
 }
 func (m *TaskExecutionEventRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecutionEventRequest.Unmarshal(m, b)
@@ -285,7 +285,7 @@ func (m *TaskExecutionEventResponse) Reset()         { *m = TaskExecutionEventRe
 func (m *TaskExecutionEventResponse) String() string { return proto.CompactTextString(m) }
 func (*TaskExecutionEventResponse) ProtoMessage()    {}
 func (*TaskExecutionEventResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_event_1337522ab86a440f, []int{5}
+	return fileDescriptor_event_52d642ffdbff3fb0, []int{5}
 }
 func (m *TaskExecutionEventResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecutionEventResponse.Unmarshal(m, b)
@@ -314,9 +314,9 @@ func init() {
 	proto.RegisterType((*TaskExecutionEventResponse)(nil), "flyteidl.admin.TaskExecutionEventResponse")
 }
 
-func init() { proto.RegisterFile("flyteidl/admin/event.proto", fileDescriptor_event_1337522ab86a440f) }
+func init() { proto.RegisterFile("flyteidl/admin/event.proto", fileDescriptor_event_52d642ffdbff3fb0) }
 
-var fileDescriptor_event_1337522ab86a440f = []byte{
+var fileDescriptor_event_52d642ffdbff3fb0 = []byte{
 	// 318 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xd4, 0x93, 0xbf, 0x4b, 0xc3, 0x40,
 	0x14, 0xc7, 0x89, 0xbf, 0x20, 0x57, 0x71, 0xc8, 0x94, 0x06, 0xab, 0x69, 0x40, 0xe8, 0xe2, 0x1d,

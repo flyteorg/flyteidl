@@ -17992,6 +17992,39 @@ export const flyteidl = $root.flyteidl = (() => {
              * @variation 2
              */
 
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#createWorkflowEvent}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef CreateWorkflowEventCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.WorkflowExecutionEventResponse} [response] WorkflowExecutionEventResponse
+             */
+
+            /**
+             * Calls CreateWorkflowEvent.
+             * @function createWorkflowEvent
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IWorkflowExecutionEventRequest} request WorkflowExecutionEventRequest message or plain object
+             * @param {flyteidl.service.AdminService.CreateWorkflowEventCallback} callback Node-style callback called with the error, if any, and WorkflowExecutionEventResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.createWorkflowEvent = function createWorkflowEvent(request, callback) {
+                return this.rpcCall(createWorkflowEvent, $root.flyteidl.admin.WorkflowExecutionEventRequest, $root.flyteidl.admin.WorkflowExecutionEventResponse, request, callback);
+            }, "name", { value: "CreateWorkflowEvent" });
+
+            /**
+             * Calls CreateWorkflowEvent.
+             * @function createWorkflowEvent
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IWorkflowExecutionEventRequest} request WorkflowExecutionEventRequest message or plain object
+             * @returns {Promise<flyteidl.admin.WorkflowExecutionEventResponse>} Promise
+             * @variation 2
+             */
+
             return AdminService;
         })();
 
