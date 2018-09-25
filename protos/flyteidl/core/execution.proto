@@ -4,15 +4,30 @@ package flyteidl.core;
 
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
 
-// Indicates various phases of an Execution for both node and launch plan.
-enum ExecutionPhase {
-    UNDEFINED        = 0;
-    RUNNING          = 1;
-    SUCCEEDED        = 2;
-    FAILED           = 3;
-    TIMED_OUT        = 4;
-    ABORTED          = 5;
-    QUEUED           = 6;
+// Indicates various phases of Workflow Execution
+enum WorkflowExecutionPhase {
+    WORKFLOW_PHASE_UNDEFINED        = 0;
+    WORKFLOW_PHASE_RUNNING          = 1;
+    WORKFLOW_PHASE_SUCCEEDING       = 2;
+    WORKFLOW_PHASE_SUCCEEDED         = 3;
+    WORKFLOW_PHASE_FAILING          = 4;
+    WORKFLOW_PHASE_FAILED           = 5;
+    WORKFLOW_PHASE_TIMED_OUT        = 6;
+    WORKFLOW_PHASE_ABORTED          = 7;
+    WORKFLOW_PHASE_QUEUED           = 8;
+}
+
+// Indicates various phases of Node Execution
+enum NodeExecutionPhase {
+    NODE_PHASE_UNDEFINED        = 0;
+    NODE_PHASE_RUNNING          = 1;
+    NODE_PHASE_SUCCEEDED        = 2;
+    NODE_PHASE_FAILING          = 3;
+    NODE_PHASE_FAILED           = 4;
+    NODE_PHASE_TIMED_OUT        = 5;
+    NODE_PHASE_SKIPPED          = 6;
+    NODE_PHASE_ABORTED          = 7;
+    NODE_PHASE_QUEUED           = 8;
 }
 
 // Represents the error message from the execution.

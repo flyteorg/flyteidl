@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/common.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1b\x66lyteidl/admin/common.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/execution.proto\";\n\nIdentifier\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\"W\n\x15IdentifierListRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\r\x12\x0e\n\x06offset\x18\x04 \x01(\r\">\n\x0eIdentifierList\x12,\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x1a.flyteidl.admin.Identifier\"\x1f\n\x10ObjectGetRequest\x12\x0b\n\x03urn\x18\x01 \x01(\t\"m\n\x13ResourceListRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\r\n\x05limit\x18\x02 \x01(\r\x12\x0e\n\x06offset\x18\x03 \x01(\r\x12\x0f\n\x07\x66ilters\x18\x04 \x01(\t\"\xab\x01\n\x0cNotification\x12/\n\x04type\x18\x01 \x01(\x0e\x32!.flyteidl.admin.Notification.Type\x12-\n\x06phases\x18\x02 \x03(\x0e\x32\x1d.flyteidl.core.ExecutionPhase\";\n\x04Type\x12\r\n\tUNDEFINED\x10\x00\x12\t\n\x05\x45MAIL\x10\x01\x12\x0e\n\nPAGER_DUTY\x10\x02\x12\t\n\x05SLACK\x10\x03\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1b\x66lyteidl/admin/common.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/execution.proto\";\n\nIdentifier\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\"W\n\x15IdentifierListRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\r\x12\x0e\n\x06offset\x18\x04 \x01(\r\">\n\x0eIdentifierList\x12,\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x1a.flyteidl.admin.Identifier\"\x1f\n\x10ObjectGetRequest\x12\x0b\n\x03urn\x18\x01 \x01(\t\"m\n\x13ResourceListRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\r\n\x05limit\x18\x02 \x01(\r\x12\x0e\n\x06offset\x18\x03 \x01(\r\x12\x0f\n\x07\x66ilters\x18\x04 \x01(\t\"\xb3\x01\n\x0cNotification\x12/\n\x04type\x18\x01 \x01(\x0e\x32!.flyteidl.admin.Notification.Type\x12\x35\n\x06phases\x18\x02 \x03(\x0e\x32%.flyteidl.core.WorkflowExecutionPhase\";\n\x04Type\x12\r\n\tUNDEFINED\x10\x00\x12\t\n\x05\x45MAIL\x10\x01\x12\x0e\n\nPAGER_DUTY\x10\x02\x12\t\n\x05SLACK\x10\x03\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_execution__pb2.DESCRIPTOR,])
 
@@ -51,8 +51,8 @@ _NOTIFICATION_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=549,
-  serialized_end=608,
+  serialized_start=557,
+  serialized_end=616,
 )
 _sym_db.RegisterEnumDescriptor(_NOTIFICATION_TYPE)
 
@@ -303,13 +303,13 @@ _NOTIFICATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=437,
-  serialized_end=608,
+  serialized_end=616,
 )
 
 _IDENTIFIERLIST.fields_by_name['entities'].message_type = _IDENTIFIER
 _RESOURCELISTREQUEST.fields_by_name['id'].message_type = _IDENTIFIER
 _NOTIFICATION.fields_by_name['type'].enum_type = _NOTIFICATION_TYPE
-_NOTIFICATION.fields_by_name['phases'].enum_type = flyteidl_dot_core_dot_execution__pb2._EXECUTIONPHASE
+_NOTIFICATION.fields_by_name['phases'].enum_type = flyteidl_dot_core_dot_execution__pb2._WORKFLOWEXECUTIONPHASE
 _NOTIFICATION_TYPE.containing_type = _NOTIFICATION
 DESCRIPTOR.message_types_by_name['Identifier'] = _IDENTIFIER
 DESCRIPTOR.message_types_by_name['IdentifierListRequest'] = _IDENTIFIERLISTREQUEST

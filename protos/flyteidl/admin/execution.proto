@@ -56,7 +56,7 @@ message ExecutionClosure {
     core.LiteralMap computed_inputs      = 3;
 
     // Phase of the executions
-    core.ExecutionPhase phase                 = 4;
+    core.WorkflowExecutionPhase phase                 = 4;
 }
 
 message ExecutionMetadata {

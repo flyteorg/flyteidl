@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/execution.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1e\x66lyteidl/admin/execution.proto\x12\x0e\x66lyteidl.admin\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1b\x66lyteidl/admin/common.proto\"m\n\x16\x45xecutionCreateRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12+\n\x04spec\x18\x02 \x01(\x0b\x32\x1d.flyteidl.admin.ExecutionSpec\"&\n\x17\x45xecutionCreateResponse\x12\x0b\n\x03urn\x18\x01 \x01(\t\"\xa9\x01\n\tExecution\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x14\n\x0c\x65xecution_id\x18\x02 \x01(\t\x12+\n\x04spec\x18\x03 \x01(\x0b\x32\x1d.flyteidl.admin.ExecutionSpec\x12\x31\n\x07\x63losure\x18\x04 \x01(\x0b\x32 .flyteidl.admin.ExecutionClosure\">\n\rExecutionList\x12-\n\nexecutions\x18\x01 \x03(\x0b\x32\x19.flyteidl.admin.Execution\"T\n\x0eLiteralMapBlob\x12+\n\x06values\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00\x12\r\n\x03uri\x18\x02 \x01(\tH\x00\x42\x06\n\x04\x64\x61ta\"\xe8\x01\n\x10\x45xecutionClosure\x12\x31\n\x07outputs\x18\x01 \x01(\x0b\x32\x1e.flyteidl.admin.LiteralMapBlobH\x00\x12.\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x12\x32\n\x0f\x63omputed_inputs\x18\x03 \x01(\x0b\x32\x19.flyteidl.core.LiteralMap\x12,\n\x05phase\x18\x04 \x01(\x0e\x32\x1d.flyteidl.core.ExecutionPhaseB\x0f\n\routput_result\"\xae\x01\n\x11\x45xecutionMetadata\x12=\n\x04mode\x18\x01 \x01(\x0e\x32/.flyteidl.admin.ExecutionMetadata.ExecutionMode\x12\x11\n\tprincipal\x18\x02 \x01(\t\x12\x0f\n\x07nesting\x18\x03 \x01(\x05\"6\n\rExecutionMode\x12\n\n\x06MANUAL\x10\x00\x12\r\n\tSCHEDULED\x10\x01\x12\n\n\x06SYSTEM\x10\x02\"\xbd\x01\n\rExecutionSpec\x12\x17\n\x0flaunch_plan_urn\x18\x01 \x01(\t\x12)\n\x06inputs\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.LiteralMap\x12\x33\n\x08metadata\x18\x03 \x01(\x0b\x32!.flyteidl.admin.ExecutionMetadata\x12\x33\n\rnotifications\x18\x04 \x03(\x0b\x32\x1c.flyteidl.admin.NotificationB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1e\x66lyteidl/admin/execution.proto\x12\x0e\x66lyteidl.admin\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1b\x66lyteidl/admin/common.proto\"m\n\x16\x45xecutionCreateRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12+\n\x04spec\x18\x02 \x01(\x0b\x32\x1d.flyteidl.admin.ExecutionSpec\"&\n\x17\x45xecutionCreateResponse\x12\x0b\n\x03urn\x18\x01 \x01(\t\"\xa9\x01\n\tExecution\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x14\n\x0c\x65xecution_id\x18\x02 \x01(\t\x12+\n\x04spec\x18\x03 \x01(\x0b\x32\x1d.flyteidl.admin.ExecutionSpec\x12\x31\n\x07\x63losure\x18\x04 \x01(\x0b\x32 .flyteidl.admin.ExecutionClosure\">\n\rExecutionList\x12-\n\nexecutions\x18\x01 \x03(\x0b\x32\x19.flyteidl.admin.Execution\"T\n\x0eLiteralMapBlob\x12+\n\x06values\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00\x12\r\n\x03uri\x18\x02 \x01(\tH\x00\x42\x06\n\x04\x64\x61ta\"\xf0\x01\n\x10\x45xecutionClosure\x12\x31\n\x07outputs\x18\x01 \x01(\x0b\x32\x1e.flyteidl.admin.LiteralMapBlobH\x00\x12.\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x12\x32\n\x0f\x63omputed_inputs\x18\x03 \x01(\x0b\x32\x19.flyteidl.core.LiteralMap\x12\x34\n\x05phase\x18\x04 \x01(\x0e\x32%.flyteidl.core.WorkflowExecutionPhaseB\x0f\n\routput_result\"\xae\x01\n\x11\x45xecutionMetadata\x12=\n\x04mode\x18\x01 \x01(\x0e\x32/.flyteidl.admin.ExecutionMetadata.ExecutionMode\x12\x11\n\tprincipal\x18\x02 \x01(\t\x12\x0f\n\x07nesting\x18\x03 \x01(\x05\"6\n\rExecutionMode\x12\n\n\x06MANUAL\x10\x00\x12\r\n\tSCHEDULED\x10\x01\x12\n\n\x06SYSTEM\x10\x02\"\xbd\x01\n\rExecutionSpec\x12\x17\n\x0flaunch_plan_urn\x18\x01 \x01(\t\x12)\n\x06inputs\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.LiteralMap\x12\x33\n\x08metadata\x18\x03 \x01(\x0b\x32!.flyteidl.admin.ExecutionMetadata\x12\x33\n\rnotifications\x18\x04 \x03(\x0b\x32\x1c.flyteidl.admin.NotificationB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,flyteidl_dot_core_dot_execution__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,])
 
@@ -49,8 +49,8 @@ _EXECUTIONMETADATA_EXECUTIONMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=969,
-  serialized_end=1023,
+  serialized_start=977,
+  serialized_end=1031,
 )
 _sym_db.RegisterEnumDescriptor(_EXECUTIONMETADATA_EXECUTIONMODE)
 
@@ -299,7 +299,7 @@ _EXECUTIONCLOSURE = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=614,
-  serialized_end=846,
+  serialized_end=854,
 )
 
 
@@ -344,8 +344,8 @@ _EXECUTIONMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=849,
-  serialized_end=1023,
+  serialized_start=857,
+  serialized_end=1031,
 )
 
 
@@ -396,8 +396,8 @@ _EXECUTIONSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1026,
-  serialized_end=1215,
+  serialized_start=1034,
+  serialized_end=1223,
 )
 
 _EXECUTIONCREATEREQUEST.fields_by_name['id'].message_type = flyteidl_dot_admin_dot_common__pb2._IDENTIFIER
@@ -416,7 +416,7 @@ _LITERALMAPBLOB.fields_by_name['uri'].containing_oneof = _LITERALMAPBLOB.oneofs_
 _EXECUTIONCLOSURE.fields_by_name['outputs'].message_type = _LITERALMAPBLOB
 _EXECUTIONCLOSURE.fields_by_name['error'].message_type = flyteidl_dot_core_dot_execution__pb2._EXECUTIONERROR
 _EXECUTIONCLOSURE.fields_by_name['computed_inputs'].message_type = flyteidl_dot_core_dot_literals__pb2._LITERALMAP
-_EXECUTIONCLOSURE.fields_by_name['phase'].enum_type = flyteidl_dot_core_dot_execution__pb2._EXECUTIONPHASE
+_EXECUTIONCLOSURE.fields_by_name['phase'].enum_type = flyteidl_dot_core_dot_execution__pb2._WORKFLOWEXECUTIONPHASE
 _EXECUTIONCLOSURE.oneofs_by_name['output_result'].fields.append(
   _EXECUTIONCLOSURE.fields_by_name['outputs'])
 _EXECUTIONCLOSURE.fields_by_name['outputs'].containing_oneof = _EXECUTIONCLOSURE.oneofs_by_name['output_result']

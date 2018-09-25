@@ -74,7 +74,8 @@ message Notification {
         PAGER_DUTY           = 2;
         SLACK                = 3;
     }
+
     Type type                = 1;
     // A list of phases to which users can associate the notifications to.
-    repeated core.ExecutionPhase phases = 2;
+    repeated core.WorkflowExecutionPhase phases = 2;
 }

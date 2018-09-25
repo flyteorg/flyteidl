@@ -14,16 +14,16 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
-from flyteidl.core import event_pb2 as flyteidl_dot_core_dot_event__pb2
+from flyteidl.event import event_pb2 as flyteidl_dot_event_dot_event__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/event.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1a\x66lyteidl/admin/event.proto\x12\x0e\x66lyteidl.admin\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x19\x66lyteidl/core/event.proto\"\xaf\x01\n\x1dWorkflowExecutionEventRequest\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x14\n\x0c\x65xecution_id\x18\x02 \x01(\t\x12.\n\noccured_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x34\n\x05\x65vent\x18\x04 \x01(\x0b\x32%.flyteidl.core.WorkflowExecutionEvent\" \n\x1eWorkflowExecutionEventResponse\"\xa7\x01\n\x19NodeExecutionEventRequest\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x14\n\x0c\x65xecution_id\x18\x02 \x01(\t\x12.\n\noccured_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x05\x65vent\x18\x04 \x01(\x0b\x32!.flyteidl.core.NodeExecutionEvent\"\x1c\n\x1aNodeExecutionEventResponse\"\xa7\x01\n\x19TaskExecutionEventRequest\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x14\n\x0c\x65xecution_id\x18\x02 \x01(\t\x12.\n\noccured_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x05\x65vent\x18\x04 \x01(\x0b\x32!.flyteidl.core.TaskExecutionEvent\"\x1c\n\x1aTaskExecutionEventResponseB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1a\x66lyteidl/admin/event.proto\x12\x0e\x66lyteidl.admin\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1a\x66lyteidl/event/event.proto\"\xc3\x01\n\x1dWorkflowExecutionEventRequest\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x10\n\x08owner_id\x18\x02 \x01(\t\x12\x14\n\x0c\x65xecution_id\x18\x03 \x01(\t\x12/\n\x0boccurred_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x35\n\x05\x65vent\x18\x05 \x01(\x0b\x32&.flyteidl.event.WorkflowExecutionEvent\" \n\x1eWorkflowExecutionEventResponse\"\xbb\x01\n\x19NodeExecutionEventRequest\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x10\n\x08owner_id\x18\x02 \x01(\t\x12\x14\n\x0c\x65xecution_id\x18\x03 \x01(\t\x12/\n\x0boccurred_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\x05\x65vent\x18\x05 \x01(\x0b\x32\".flyteidl.event.NodeExecutionEvent\"\x1c\n\x1aNodeExecutionEventResponse\"\xbb\x01\n\x19TaskExecutionEventRequest\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x10\n\x08owner_id\x18\x02 \x01(\t\x12\x14\n\x0c\x65xecution_id\x18\x03 \x01(\t\x12/\n\x0boccurred_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\x05\x65vent\x18\x05 \x01(\x0b\x32\".flyteidl.event.TaskExecutionEvent\"\x1c\n\x1aTaskExecutionEventResponseB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
-  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,flyteidl_dot_core_dot_event__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,flyteidl_dot_event_dot_event__pb2.DESCRIPTOR,])
 
 
 
@@ -43,22 +43,29 @@ _WORKFLOWEXECUTIONEVENTREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='execution_id', full_name='flyteidl.admin.WorkflowExecutionEventRequest.execution_id', index=1,
+      name='owner_id', full_name='flyteidl.admin.WorkflowExecutionEventRequest.owner_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='occured_at', full_name='flyteidl.admin.WorkflowExecutionEventRequest.occured_at', index=2,
-      number=3, type=11, cpp_type=10, label=1,
+      name='execution_id', full_name='flyteidl.admin.WorkflowExecutionEventRequest.execution_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='occurred_at', full_name='flyteidl.admin.WorkflowExecutionEventRequest.occurred_at', index=3,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='event', full_name='flyteidl.admin.WorkflowExecutionEventRequest.event', index=3,
-      number=4, type=11, cpp_type=10, label=1,
+      name='event', full_name='flyteidl.admin.WorkflowExecutionEventRequest.event', index=4,
+      number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -75,8 +82,8 @@ _WORKFLOWEXECUTIONEVENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=107,
-  serialized_end=282,
+  serialized_start=108,
+  serialized_end=303,
 )
 
 
@@ -99,8 +106,8 @@ _WORKFLOWEXECUTIONEVENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=284,
-  serialized_end=316,
+  serialized_start=305,
+  serialized_end=337,
 )
 
 
@@ -119,22 +126,29 @@ _NODEEXECUTIONEVENTREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='execution_id', full_name='flyteidl.admin.NodeExecutionEventRequest.execution_id', index=1,
+      name='owner_id', full_name='flyteidl.admin.NodeExecutionEventRequest.owner_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='occured_at', full_name='flyteidl.admin.NodeExecutionEventRequest.occured_at', index=2,
-      number=3, type=11, cpp_type=10, label=1,
+      name='execution_id', full_name='flyteidl.admin.NodeExecutionEventRequest.execution_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='occurred_at', full_name='flyteidl.admin.NodeExecutionEventRequest.occurred_at', index=3,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='event', full_name='flyteidl.admin.NodeExecutionEventRequest.event', index=3,
-      number=4, type=11, cpp_type=10, label=1,
+      name='event', full_name='flyteidl.admin.NodeExecutionEventRequest.event', index=4,
+      number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -151,8 +165,8 @@ _NODEEXECUTIONEVENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=319,
-  serialized_end=486,
+  serialized_start=340,
+  serialized_end=527,
 )
 
 
@@ -175,8 +189,8 @@ _NODEEXECUTIONEVENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=488,
-  serialized_end=516,
+  serialized_start=529,
+  serialized_end=557,
 )
 
 
@@ -195,22 +209,29 @@ _TASKEXECUTIONEVENTREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='execution_id', full_name='flyteidl.admin.TaskExecutionEventRequest.execution_id', index=1,
+      name='owner_id', full_name='flyteidl.admin.TaskExecutionEventRequest.owner_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='occured_at', full_name='flyteidl.admin.TaskExecutionEventRequest.occured_at', index=2,
-      number=3, type=11, cpp_type=10, label=1,
+      name='execution_id', full_name='flyteidl.admin.TaskExecutionEventRequest.execution_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='occurred_at', full_name='flyteidl.admin.TaskExecutionEventRequest.occurred_at', index=3,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='event', full_name='flyteidl.admin.TaskExecutionEventRequest.event', index=3,
-      number=4, type=11, cpp_type=10, label=1,
+      name='event', full_name='flyteidl.admin.TaskExecutionEventRequest.event', index=4,
+      number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -227,8 +248,8 @@ _TASKEXECUTIONEVENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=519,
-  serialized_end=686,
+  serialized_start=560,
+  serialized_end=747,
 )
 
 
@@ -251,16 +272,16 @@ _TASKEXECUTIONEVENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=688,
-  serialized_end=716,
+  serialized_start=749,
+  serialized_end=777,
 )
 
-_WORKFLOWEXECUTIONEVENTREQUEST.fields_by_name['occured_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_WORKFLOWEXECUTIONEVENTREQUEST.fields_by_name['event'].message_type = flyteidl_dot_core_dot_event__pb2._WORKFLOWEXECUTIONEVENT
-_NODEEXECUTIONEVENTREQUEST.fields_by_name['occured_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_NODEEXECUTIONEVENTREQUEST.fields_by_name['event'].message_type = flyteidl_dot_core_dot_event__pb2._NODEEXECUTIONEVENT
-_TASKEXECUTIONEVENTREQUEST.fields_by_name['occured_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_TASKEXECUTIONEVENTREQUEST.fields_by_name['event'].message_type = flyteidl_dot_core_dot_event__pb2._TASKEXECUTIONEVENT
+_WORKFLOWEXECUTIONEVENTREQUEST.fields_by_name['occurred_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_WORKFLOWEXECUTIONEVENTREQUEST.fields_by_name['event'].message_type = flyteidl_dot_event_dot_event__pb2._WORKFLOWEXECUTIONEVENT
+_NODEEXECUTIONEVENTREQUEST.fields_by_name['occurred_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_NODEEXECUTIONEVENTREQUEST.fields_by_name['event'].message_type = flyteidl_dot_event_dot_event__pb2._NODEEXECUTIONEVENT
+_TASKEXECUTIONEVENTREQUEST.fields_by_name['occurred_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_TASKEXECUTIONEVENTREQUEST.fields_by_name['event'].message_type = flyteidl_dot_event_dot_event__pb2._TASKEXECUTIONEVENT
 DESCRIPTOR.message_types_by_name['WorkflowExecutionEventRequest'] = _WORKFLOWEXECUTIONEVENTREQUEST
 DESCRIPTOR.message_types_by_name['WorkflowExecutionEventResponse'] = _WORKFLOWEXECUTIONEVENTRESPONSE
 DESCRIPTOR.message_types_by_name['NodeExecutionEventRequest'] = _NODEEXECUTIONEVENTREQUEST

@@ -908,7 +908,7 @@
           "title": "Inputs computed and passed for execution.\ncomputed_inputs depends on inputs in ExecutionSpec, fixed and default inputs in launch plan"
         },
         "phase": {
-          "$ref": "#/definitions/coreExecutionPhase",
+          "$ref": "#/definitions/coreWorkflowExecutionPhase",
           "title": "Phase of the executions"
         }
       },
@@ -1165,7 +1165,7 @@
         "phases": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/coreExecutionPhase"
+            "$ref": "#/definitions/coreWorkflowExecutionPhase"
           },
           "description": "A list of phases to which users can associate the notifications to."
         }
@@ -1378,17 +1378,21 @@
           "type": "string",
           "title": "Unique ID for this request that can be traced between services"
         },
+        "owner_id": {
+          "type": "string",
+          "title": "the id of the originator (Propeller) of the even"
+        },
         "execution_id": {
           "type": "string",
           "title": "Workflow execution id"
         },
-        "occured_at": {
+        "occurred_at": {
           "type": "string",
           "format": "date-time",
           "title": "This represents the timestamp of when the event occured, not the request timestamp"
         },
         "event": {
-          "$ref": "#/definitions/coreWorkflowExecutionEvent"
+          "$ref": "#/definitions/eventWorkflowExecutionEvent"
         }
       }
     },
@@ -1735,20 +1739,6 @@
         }
       },
       "description": "Represents the error message from the execution."
-    },
-    "coreExecutionPhase": {
-      "type": "string",
-      "enum": [
-        "UNDEFINED",
-        "RUNNING",
-        "SUCCEEDED",
-        "FAILED",
-        "TIMED_OUT",
-        "ABORTED",
-        "QUEUED"
-      ],
-      "default": "UNDEFINED",
-      "description": "Indicates various phases of an Execution for both node and launch plan."
     },
     "coreIfBlock": {
       "type": "object",
@@ -2260,21 +2250,21 @@
       },
       "description": "Defines an execution unit recognized by the system and can be referred to by other units to listen to its execution\nevents (started, succeeded, aborted... etc.)."
     },
-    "coreWorkflowExecutionEvent": {
-      "type": "object",
-      "properties": {
-        "phase": {
-          "$ref": "#/definitions/coreExecutionPhase"
-        },
-        "output_uri": {
-          "type": "string",
-          "description": "URL to the output of the execution, it encodes all the information\nincluding Cloud source provider. ie., s3://..."
-        },
-        "error": {
-          "$ref": "#/definitions/coreExecutionError",
-          "title": "Error information for the execution"
-        }
-      }
+    "coreWorkflowExecutionPhase": {
+      "type": "string",
+      "enum": [
+        "WORKFLOW_PHASE_UNDEFINED",
+        "WORKFLOW_PHASE_RUNNING",
+        "WORKFLOW_PHASE_SUCCEEDING",
+        "WORKFLOW_PHASE_SUCCEEDED",
+        "WORKFLOW_PHASE_FAILING",
+        "WORKFLOW_PHASE_FAILED",
+        "WORKFLOW_PHASE_TIMED_OUT",
+        "WORKFLOW_PHASE_ABORTED",
+        "WORKFLOW_PHASE_QUEUED"
+      ],
+      "default": "WORKFLOW_PHASE_UNDEFINED",
+      "title": "Indicates various phases of Workflow Execution"
     },
     "coreWorkflowMetadata": {
       "type": "object",
@@ -2329,6 +2319,22 @@
         }
       },
       "description": "Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,\ndirected acyclic graph."
+    },
+    "eventWorkflowExecutionEvent": {
+      "type": "object",
+      "properties": {
+        "phase": {
+          "$ref": "#/definitions/coreWorkflowExecutionPhase"
+        },
+        "output_uri": {
+          "type": "string",
+          "description": "URL to the output of the execution, it encodes all the information\nincluding Cloud source provider. ie., s3://..."
+        },
+        "error": {
+          "$ref": "#/definitions/coreExecutionError",
+          "title": "Error information for the execution"
+        }
+      }
     },
     "flyteidlcoreSchema": {
       "type": "object",

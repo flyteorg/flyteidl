@@ -1,13 +1,14 @@
 syntax = "proto3";
 
-package flyteidl.core;
+package flyteidl.event;
 
-option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/event";
 
 import "flyteidl/core/execution.proto";
+import "google/protobuf/struct.proto";
 
 message WorkflowExecutionEvent {
-    ExecutionPhase phase = 1;
+    core.WorkflowExecutionPhase phase = 1;
 
     oneof output_result {
         // URL to the output of the execution, it encodes all the information
@@ -15,40 +16,38 @@ message WorkflowExecutionEvent {
         string output_uri       = 2;
 
         // Error information for the execution
-        ExecutionError error           = 3;
+        core.ExecutionError error           = 3;
     }
 }
 
 message NodeExecutionEvent {
     string node_id = 1;
 
-    ExecutionPhase phase = 2;
+    core.NodeExecutionPhase phase = 2;
 
     // Indicates the retry value for the Node Execution
     uint32 retry_attempt        = 4;
 
-    NodeTargetMetadata target_info = 5;
+    // Node Targets
+    // - TaskNode: two different events - one for multistep and one for single step
+    // - BranchNode
+    // - SubworkflowNode
+    oneof target_metadata {
+        TaskNodeMetadata task_metadata= 5;
+        BranchNodeMetadata branch_metadata = 6;
+        // NOTE: if we find that subworkflow metadata is useful, we may want to move this to the workflowEvent
+        SubworkflowNodeMetadata workflow_metadata = 7;
+    }
+
+    string input_uri       = 9;
 
     oneof output_result {
         // URL to the output of the execution, it encodes all the information
         // including Cloud source provider. ie., s3://...
-        string output_uri       = 6;
+        string output_uri       = 10;
 
         // Error information for the execution
-        ExecutionError error           = 7;
-    }
-}
-
-// Node Targets
-// - TaskNode: two different events - one for multistep and one for single step
-// - BranchNode
-// - SubworkflowNode
-message NodeTargetMetadata {
-    oneof target {
-        TaskNodeMetadata task_metadata= 1;
-        BranchNodeMetadata branch_metadata = 2;
-        // NOTE: if we find that subworkflow metadata is useful, we may want to move this to the workflowEvent
-        SubworkflowNodeMetadata workflow_metadata = 3;
+        core.ExecutionError error           = 11;
     }
 }
 
@@ -70,10 +69,6 @@ message TaskExecutionEvent {
     string task_id = 1;
     string version_num = 2;
 
-    // TODO: change the custom task info to Any type instead of manually
-    // dealing with task_type and byte array
-    string task_type = 3;
-
-    // Indicates specific info for custom task
-    bytes custom_task_info = 4;
+    // Custom data that the task plugin sends back. This is extensible to allow various plugins in the system.
+    google.protobuf.Struct custom_info = 3;
 }

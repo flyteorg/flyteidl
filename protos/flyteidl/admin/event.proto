@@ -4,18 +4,22 @@ package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "google/protobuf/timestamp.proto";
-import "flyteidl/core/event.proto";
+import "flyteidl/event/event.proto";
 
 message WorkflowExecutionEventRequest {
     // Unique ID for this request that can be traced between services
     string request_id = 1;
 
+    // the id of the originator (Propeller) of the even
+    string owner_id = 2;
+
     // Workflow execution id
-    string execution_id = 2;
+    string execution_id = 3;
+
 
     // This represents the timestamp of when the event occured, not the request timestamp
-    google.protobuf.Timestamp occured_at = 3;
-    core.WorkflowExecutionEvent event = 4;
+    google.protobuf.Timestamp occurred_at = 4;
+    event.WorkflowExecutionEvent event = 5;
 }
 
 message WorkflowExecutionEventResponse {
@@ -25,12 +29,15 @@ message NodeExecutionEventRequest {
     // Unique ID for this request that can be traced between services
     string request_id = 1;
 
+    // the id of the originator (Propeller) of the even
+    string owner_id = 2;
+
     // Workflow execution id
-    string execution_id = 2;
+    string execution_id = 3;
 
     // This represents the timestamp of when the event occured, not the request timestamp
-    google.protobuf.Timestamp occured_at = 3;
-    core.NodeExecutionEvent event = 4;
+    google.protobuf.Timestamp occurred_at = 4;
+    event.NodeExecutionEvent event = 5;
 }
 
 message NodeExecutionEventResponse {
@@ -40,12 +47,15 @@ message TaskExecutionEventRequest {
     // Unique ID for this request that can be traced between services
     string request_id = 1;
 
+    // the id of the originator (Propeller) of the even
+    string owner_id = 2;
+
     // Workflow execution id
-    string execution_id = 2;
+    string execution_id = 3;
 
     // This represents the timestamp of when the event occured, not the request timestamp
-    google.protobuf.Timestamp occured_at = 3;
-    core.TaskExecutionEvent event = 4;
+    google.protobuf.Timestamp occurred_at = 4;
+    event.TaskExecutionEvent event = 5;
 }
 
 message TaskExecutionEventResponse {

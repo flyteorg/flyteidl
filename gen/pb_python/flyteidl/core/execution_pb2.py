@@ -20,59 +20,129 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/execution.proto',
   package='flyteidl.core',
   syntax='proto3',
-  serialized_pb=_b('\n\x1d\x66lyteidl/core/execution.proto\x12\rflyteidl.core\"/\n\x0e\x45xecutionError\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t*o\n\x0e\x45xecutionPhase\x12\r\n\tUNDEFINED\x10\x00\x12\x0b\n\x07RUNNING\x10\x01\x12\r\n\tSUCCEEDED\x10\x02\x12\n\n\x06\x46\x41ILED\x10\x03\x12\r\n\tTIMED_OUT\x10\x04\x12\x0b\n\x07\x41\x42ORTED\x10\x05\x12\n\n\x06QUEUED\x10\x06\x42\x32Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/core/execution.proto\x12\rflyteidl.core\"/\n\x0e\x45xecutionError\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t*\x9b\x02\n\x16WorkflowExecutionPhase\x12\x1c\n\x18WORKFLOW_PHASE_UNDEFINED\x10\x00\x12\x1a\n\x16WORKFLOW_PHASE_RUNNING\x10\x01\x12\x1d\n\x19WORKFLOW_PHASE_SUCCEEDING\x10\x02\x12\x1c\n\x18WORKFLOW_PHASE_SUCCEEDED\x10\x03\x12\x1a\n\x16WORKFLOW_PHASE_FAILING\x10\x04\x12\x19\n\x15WORKFLOW_PHASE_FAILED\x10\x05\x12\x1c\n\x18WORKFLOW_PHASE_TIMED_OUT\x10\x06\x12\x1a\n\x16WORKFLOW_PHASE_ABORTED\x10\x07\x12\x19\n\x15WORKFLOW_PHASE_QUEUED\x10\x08*\xf0\x01\n\x12NodeExecutionPhase\x12\x18\n\x14NODE_PHASE_UNDEFINED\x10\x00\x12\x16\n\x12NODE_PHASE_RUNNING\x10\x01\x12\x18\n\x14NODE_PHASE_SUCCEEDED\x10\x02\x12\x16\n\x12NODE_PHASE_FAILING\x10\x03\x12\x15\n\x11NODE_PHASE_FAILED\x10\x04\x12\x18\n\x14NODE_PHASE_TIMED_OUT\x10\x05\x12\x16\n\x12NODE_PHASE_SKIPPED\x10\x06\x12\x16\n\x12NODE_PHASE_ABORTED\x10\x07\x12\x15\n\x11NODE_PHASE_QUEUED\x10\x08\x42\x32Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
 )
 
-_EXECUTIONPHASE = _descriptor.EnumDescriptor(
-  name='ExecutionPhase',
-  full_name='flyteidl.core.ExecutionPhase',
+_WORKFLOWEXECUTIONPHASE = _descriptor.EnumDescriptor(
+  name='WorkflowExecutionPhase',
+  full_name='flyteidl.core.WorkflowExecutionPhase',
   filename=None,
   file=DESCRIPTOR,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='UNDEFINED', index=0, number=0,
+      name='WORKFLOW_PHASE_UNDEFINED', index=0, number=0,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='RUNNING', index=1, number=1,
+      name='WORKFLOW_PHASE_RUNNING', index=1, number=1,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='SUCCEEDED', index=2, number=2,
+      name='WORKFLOW_PHASE_SUCCEEDING', index=2, number=2,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='FAILED', index=3, number=3,
+      name='WORKFLOW_PHASE_SUCCEEDED', index=3, number=3,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='TIMED_OUT', index=4, number=4,
+      name='WORKFLOW_PHASE_FAILING', index=4, number=4,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ABORTED', index=5, number=5,
+      name='WORKFLOW_PHASE_FAILED', index=5, number=5,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='QUEUED', index=6, number=6,
+      name='WORKFLOW_PHASE_TIMED_OUT', index=6, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='WORKFLOW_PHASE_ABORTED', index=7, number=7,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='WORKFLOW_PHASE_QUEUED', index=8, number=8,
       options=None,
       type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=97,
-  serialized_end=208,
+  serialized_start=98,
+  serialized_end=381,
 )
-_sym_db.RegisterEnumDescriptor(_EXECUTIONPHASE)
+_sym_db.RegisterEnumDescriptor(_WORKFLOWEXECUTIONPHASE)
 
-ExecutionPhase = enum_type_wrapper.EnumTypeWrapper(_EXECUTIONPHASE)
-UNDEFINED = 0
-RUNNING = 1
-SUCCEEDED = 2
-FAILED = 3
-TIMED_OUT = 4
-ABORTED = 5
-QUEUED = 6
+WorkflowExecutionPhase = enum_type_wrapper.EnumTypeWrapper(_WORKFLOWEXECUTIONPHASE)
+_NODEEXECUTIONPHASE = _descriptor.EnumDescriptor(
+  name='NodeExecutionPhase',
+  full_name='flyteidl.core.NodeExecutionPhase',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='NODE_PHASE_UNDEFINED', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='NODE_PHASE_RUNNING', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='NODE_PHASE_SUCCEEDED', index=2, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='NODE_PHASE_FAILING', index=3, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='NODE_PHASE_FAILED', index=4, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='NODE_PHASE_TIMED_OUT', index=5, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='NODE_PHASE_SKIPPED', index=6, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='NODE_PHASE_ABORTED', index=7, number=7,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='NODE_PHASE_QUEUED', index=8, number=8,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=384,
+  serialized_end=624,
+)
+_sym_db.RegisterEnumDescriptor(_NODEEXECUTIONPHASE)
+
+NodeExecutionPhase = enum_type_wrapper.EnumTypeWrapper(_NODEEXECUTIONPHASE)
+WORKFLOW_PHASE_UNDEFINED = 0
+WORKFLOW_PHASE_RUNNING = 1
+WORKFLOW_PHASE_SUCCEEDING = 2
+WORKFLOW_PHASE_SUCCEEDED = 3
+WORKFLOW_PHASE_FAILING = 4
+WORKFLOW_PHASE_FAILED = 5
+WORKFLOW_PHASE_TIMED_OUT = 6
+WORKFLOW_PHASE_ABORTED = 7
+WORKFLOW_PHASE_QUEUED = 8
+NODE_PHASE_UNDEFINED = 0
+NODE_PHASE_RUNNING = 1
+NODE_PHASE_SUCCEEDED = 2
+NODE_PHASE_FAILING = 3
+NODE_PHASE_FAILED = 4
+NODE_PHASE_TIMED_OUT = 5
+NODE_PHASE_SKIPPED = 6
+NODE_PHASE_ABORTED = 7
+NODE_PHASE_QUEUED = 8
 
 
 
@@ -114,7 +184,8 @@ _EXECUTIONERROR = _descriptor.Descriptor(
 )
 
 DESCRIPTOR.message_types_by_name['ExecutionError'] = _EXECUTIONERROR
-DESCRIPTOR.enum_types_by_name['ExecutionPhase'] = _EXECUTIONPHASE
+DESCRIPTOR.enum_types_by_name['WorkflowExecutionPhase'] = _WORKFLOWEXECUTIONPHASE
+DESCRIPTOR.enum_types_by_name['NodeExecutionPhase'] = _NODEEXECUTIONPHASE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ExecutionError = _reflection.GeneratedProtocolMessageType('ExecutionError', (_message.Message,), dict(
