@@ -7592,6 +7592,34 @@ export namespace flyteidl {
              * @returns Promise
              */
             public createWorkflowEvent(request: flyteidl.admin.IWorkflowExecutionEventRequest): Promise<flyteidl.admin.WorkflowExecutionEventResponse>;
+
+            /**
+             * Calls CreateNodeEvent.
+             * @param request NodeExecutionEventRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and NodeExecutionEventResponse
+             */
+            public createNodeEvent(request: flyteidl.admin.INodeExecutionEventRequest, callback: flyteidl.service.AdminService.CreateNodeEventCallback): void;
+
+            /**
+             * Calls CreateNodeEvent.
+             * @param request NodeExecutionEventRequest message or plain object
+             * @returns Promise
+             */
+            public createNodeEvent(request: flyteidl.admin.INodeExecutionEventRequest): Promise<flyteidl.admin.NodeExecutionEventResponse>;
+
+            /**
+             * Calls CreateTaskEvent.
+             * @param request TaskExecutionEventRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and TaskExecutionEventResponse
+             */
+            public createTaskEvent(request: flyteidl.admin.ITaskExecutionEventRequest, callback: flyteidl.service.AdminService.CreateTaskEventCallback): void;
+
+            /**
+             * Calls CreateTaskEvent.
+             * @param request TaskExecutionEventRequest message or plain object
+             * @returns Promise
+             */
+            public createTaskEvent(request: flyteidl.admin.ITaskExecutionEventRequest): Promise<flyteidl.admin.TaskExecutionEventResponse>;
         }
 
         namespace AdminService {
@@ -7714,6 +7742,20 @@ export namespace flyteidl {
              * @param [response] WorkflowExecutionEventResponse
              */
             type CreateWorkflowEventCallback = (error: (Error|null), response?: flyteidl.admin.WorkflowExecutionEventResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#createNodeEvent}.
+             * @param error Error, if any
+             * @param [response] NodeExecutionEventResponse
+             */
+            type CreateNodeEventCallback = (error: (Error|null), response?: flyteidl.admin.NodeExecutionEventResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#createTaskEvent}.
+             * @param error Error, if any
+             * @param [response] TaskExecutionEventResponse
+             */
+            type CreateTaskEventCallback = (error: (Error|null), response?: flyteidl.admin.TaskExecutionEventResponse) => void;
         }
     }
 

@@ -15,6 +15,58 @@
     "application/json"
   ],
   "paths": {
+    "/api/v1/events/node": {
+      "post": {
+        "operationId": "CreateNodeEvent",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminNodeExecutionEventResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminNodeExecutionEventRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/events/task": {
+      "post": {
+        "operationId": "CreateTaskEvent",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminTaskExecutionEventResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminTaskExecutionEventRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/events/workflow": {
       "post": {
         "operationId": "CreateWorkflowEvent",
@@ -1156,6 +1208,34 @@
       },
       "title": "Input/output data can represented by actual values or a link to where it is stored"
     },
+    "adminNodeExecutionEventRequest": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "title": "Unique ID for this request that can be traced between services"
+        },
+        "owner_id": {
+          "type": "string",
+          "title": "the id of the originator (Propeller) of the even"
+        },
+        "execution_id": {
+          "type": "string",
+          "title": "Workflow execution id"
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "title": "This represents the timestamp of when the event occured, not the request timestamp"
+        },
+        "event": {
+          "$ref": "#/definitions/eventNodeExecutionEvent"
+        }
+      }
+    },
+    "adminNodeExecutionEventResponse": {
+      "type": "object"
+    },
     "adminNotification": {
       "type": "object",
       "properties": {
@@ -1287,6 +1367,34 @@
         }
       },
       "description": "Represents a response structure if task creation succeeds."
+    },
+    "adminTaskExecutionEventRequest": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "title": "Unique ID for this request that can be traced between services"
+        },
+        "owner_id": {
+          "type": "string",
+          "title": "the id of the originator (Propeller) of the even"
+        },
+        "execution_id": {
+          "type": "string",
+          "title": "Workflow execution id"
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "title": "This represents the timestamp of when the event occured, not the request timestamp"
+        },
+        "event": {
+          "$ref": "#/definitions/eventTaskExecutionEvent"
+        }
+      }
+    },
+    "adminTaskExecutionEventResponse": {
+      "type": "object"
     },
     "adminTaskList": {
       "type": "object",
@@ -1902,6 +2010,22 @@
       },
       "description": "A Workflow graph Node. One unit of execution in the graph. Each node can be linked to a Task, a Workflow or a branch\nnode."
     },
+    "coreNodeExecutionPhase": {
+      "type": "string",
+      "enum": [
+        "NODE_PHASE_UNDEFINED",
+        "NODE_PHASE_RUNNING",
+        "NODE_PHASE_SUCCEEDED",
+        "NODE_PHASE_FAILING",
+        "NODE_PHASE_FAILED",
+        "NODE_PHASE_TIMED_OUT",
+        "NODE_PHASE_SKIPPED",
+        "NODE_PHASE_ABORTED",
+        "NODE_PHASE_QUEUED"
+      ],
+      "default": "NODE_PHASE_UNDEFINED",
+      "title": "Indicates various phases of Node Execution"
+    },
     "coreNodeMetadata": {
       "type": "object",
       "properties": {
@@ -2319,6 +2443,69 @@
         }
       },
       "description": "Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,\ndirected acyclic graph."
+    },
+    "eventBranchNodeMetadata": {
+      "type": "object"
+    },
+    "eventNodeExecutionEvent": {
+      "type": "object",
+      "properties": {
+        "node_id": {
+          "type": "string"
+        },
+        "phase": {
+          "$ref": "#/definitions/coreNodeExecutionPhase"
+        },
+        "retry_attempt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "Indicates the retry value for the Node Execution"
+        },
+        "task_metadata": {
+          "$ref": "#/definitions/eventTaskNodeMetadata"
+        },
+        "branch_metadata": {
+          "$ref": "#/definitions/eventBranchNodeMetadata"
+        },
+        "workflow_metadata": {
+          "$ref": "#/definitions/eventSubworkflowNodeMetadata",
+          "title": "NOTE: if we find that subworkflow metadata is useful, we may want to move this to the workflowEvent"
+        },
+        "input_uri": {
+          "type": "string"
+        },
+        "output_uri": {
+          "type": "string",
+          "description": "URL to the output of the execution, it encodes all the information\nincluding Cloud source provider. ie., s3://..."
+        },
+        "error": {
+          "$ref": "#/definitions/coreExecutionError",
+          "title": "Error information for the execution"
+        }
+      }
+    },
+    "eventSubworkflowNodeMetadata": {
+      "type": "object"
+    },
+    "eventTaskExecutionEvent": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string"
+        },
+        "version_num": {
+          "type": "string"
+        },
+        "custom_info": {
+          "$ref": "#/definitions/protobufStruct",
+          "description": "Custom data that the task plugin sends back. This is extensible to allow various plugins in the system."
+        }
+      },
+      "description": "Plugins specific execution event information. For tasks like Python, Hive, Spark, DynamicJob."
+    },
+    "eventTaskNodeMetadata": {
+      "type": "object",
+      "title": "We can fill these in as we find out what SDK/UI/Admin want to display"
     },
     "eventWorkflowExecutionEvent": {
       "type": "object",

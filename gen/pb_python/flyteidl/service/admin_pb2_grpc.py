@@ -105,6 +105,16 @@ class AdminServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_event__pb2.WorkflowExecutionEventRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_event__pb2.WorkflowExecutionEventResponse.FromString,
         )
+    self.CreateNodeEvent = channel.unary_unary(
+        '/flyteidl.service.AdminService/CreateNodeEvent',
+        request_serializer=flyteidl_dot_admin_dot_event__pb2.NodeExecutionEventRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_event__pb2.NodeExecutionEventResponse.FromString,
+        )
+    self.CreateTaskEvent = channel.unary_unary(
+        '/flyteidl.service.AdminService/CreateTaskEvent',
+        request_serializer=flyteidl_dot_admin_dot_event__pb2.TaskExecutionEventRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_event__pb2.TaskExecutionEventResponse.FromString,
+        )
 
 
 class AdminServiceServicer(object):
@@ -230,6 +240,20 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def CreateNodeEvent(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreateTaskEvent(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_AdminServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -317,6 +341,16 @@ def add_AdminServiceServicer_to_server(servicer, server):
           servicer.CreateWorkflowEvent,
           request_deserializer=flyteidl_dot_admin_dot_event__pb2.WorkflowExecutionEventRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_event__pb2.WorkflowExecutionEventResponse.SerializeToString,
+      ),
+      'CreateNodeEvent': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateNodeEvent,
+          request_deserializer=flyteidl_dot_admin_dot_event__pb2.NodeExecutionEventRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_event__pb2.NodeExecutionEventResponse.SerializeToString,
+      ),
+      'CreateTaskEvent': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateTaskEvent,
+          request_deserializer=flyteidl_dot_admin_dot_event__pb2.TaskExecutionEventRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_event__pb2.TaskExecutionEventResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

@@ -145,4 +145,17 @@ service AdminService {
     };
   }
 
+  rpc CreateNodeEvent (flyteidl.admin.NodeExecutionEventRequest) returns (flyteidl.admin.NodeExecutionEventResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/events/node"
+      body: "*"
+    };
+  }
+
+  rpc CreateTaskEvent (flyteidl.admin.TaskExecutionEventRequest) returns (flyteidl.admin.TaskExecutionEventResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/events/task"
+      body: "*"
+    };
+  }
 }

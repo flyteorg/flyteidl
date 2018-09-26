@@ -18014,6 +18014,72 @@ export const flyteidl = $root.flyteidl = (() => {
              * @variation 2
              */
 
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#createNodeEvent}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef CreateNodeEventCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.NodeExecutionEventResponse} [response] NodeExecutionEventResponse
+             */
+
+            /**
+             * Calls CreateNodeEvent.
+             * @function createNodeEvent
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.INodeExecutionEventRequest} request NodeExecutionEventRequest message or plain object
+             * @param {flyteidl.service.AdminService.CreateNodeEventCallback} callback Node-style callback called with the error, if any, and NodeExecutionEventResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.createNodeEvent = function createNodeEvent(request, callback) {
+                return this.rpcCall(createNodeEvent, $root.flyteidl.admin.NodeExecutionEventRequest, $root.flyteidl.admin.NodeExecutionEventResponse, request, callback);
+            }, "name", { value: "CreateNodeEvent" });
+
+            /**
+             * Calls CreateNodeEvent.
+             * @function createNodeEvent
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.INodeExecutionEventRequest} request NodeExecutionEventRequest message or plain object
+             * @returns {Promise<flyteidl.admin.NodeExecutionEventResponse>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#createTaskEvent}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef CreateTaskEventCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.TaskExecutionEventResponse} [response] TaskExecutionEventResponse
+             */
+
+            /**
+             * Calls CreateTaskEvent.
+             * @function createTaskEvent
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.ITaskExecutionEventRequest} request TaskExecutionEventRequest message or plain object
+             * @param {flyteidl.service.AdminService.CreateTaskEventCallback} callback Node-style callback called with the error, if any, and TaskExecutionEventResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.createTaskEvent = function createTaskEvent(request, callback) {
+                return this.rpcCall(createTaskEvent, $root.flyteidl.admin.TaskExecutionEventRequest, $root.flyteidl.admin.TaskExecutionEventResponse, request, callback);
+            }, "name", { value: "CreateTaskEvent" });
+
+            /**
+             * Calls CreateTaskEvent.
+             * @function createTaskEvent
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.ITaskExecutionEventRequest} request TaskExecutionEventRequest message or plain object
+             * @returns {Promise<flyteidl.admin.TaskExecutionEventResponse>} Promise
+             * @variation 2
+             */
+
             return AdminService;
         })();
 
