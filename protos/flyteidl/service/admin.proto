@@ -10,6 +10,7 @@ import "flyteidl/admin/workflow.proto";
 import "flyteidl/admin/launch_plan.proto";
 import "flyteidl/admin/event.proto";
 import "flyteidl/admin/execution.proto";
+import "flyteidl/admin/node_execution.proto";
 import "flyteidl/admin/common.proto";
 import "protoc-gen-swagger/options/annotations.proto";
 
@@ -140,21 +141,33 @@ service AdminService {
 
   rpc CreateWorkflowEvent (flyteidl.admin.WorkflowExecutionEventRequest) returns (flyteidl.admin.WorkflowExecutionEventResponse) {
     option (google.api.http) = {
-      post: "/api/v1/events/workflow"
+      post: "/api/v1/events/workflows"
       body: "*"
     };
   }
 
   rpc CreateNodeEvent (flyteidl.admin.NodeExecutionEventRequest) returns (flyteidl.admin.NodeExecutionEventResponse) {
     option (google.api.http) = {
-      post: "/api/v1/events/node"
+      post: "/api/v1/events/nodes"
       body: "*"
+    };
+  }
+
+  rpc GetNodeEvent (flyteidl.admin.NodeExecutionGetRequest) returns (flyteidl.admin.NodeExecution) {
+    option (google.api.http) = {
+      get: "/api/v1/events/nodes/{node_execution_id}"
+    };
+  }
+
+  rpc ListNodeEvents (flyteidl.admin.NodeExecutionListRequest) returns (flyteidl.admin.NodeExecutionList) {
+    option (google.api.http) = {
+      get: "/api/v1/events/nodes"
     };
   }
 
   rpc CreateTaskEvent (flyteidl.admin.TaskExecutionEventRequest) returns (flyteidl.admin.TaskExecutionEventResponse) {
     option (google.api.http) = {
-      post: "/api/v1/events/task"
+      post: "/api/v1/events/tasks"
       body: "*"
     };
   }

@@ -5,6 +5,7 @@ from flyteidl.admin import common_pb2 as flyteidl_dot_admin_dot_common__pb2
 from flyteidl.admin import event_pb2 as flyteidl_dot_admin_dot_event__pb2
 from flyteidl.admin import execution_pb2 as flyteidl_dot_admin_dot_execution__pb2
 from flyteidl.admin import launch_plan_pb2 as flyteidl_dot_admin_dot_launch__plan__pb2
+from flyteidl.admin import node_execution_pb2 as flyteidl_dot_admin_dot_node__execution__pb2
 from flyteidl.admin import project_pb2 as flyteidl_dot_admin_dot_project__pb2
 from flyteidl.admin import task_pb2 as flyteidl_dot_admin_dot_task__pb2
 from flyteidl.admin import workflow_pb2 as flyteidl_dot_admin_dot_workflow__pb2
@@ -109,6 +110,16 @@ class AdminServiceStub(object):
         '/flyteidl.service.AdminService/CreateNodeEvent',
         request_serializer=flyteidl_dot_admin_dot_event__pb2.NodeExecutionEventRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_event__pb2.NodeExecutionEventResponse.FromString,
+        )
+    self.GetNodeEvent = channel.unary_unary(
+        '/flyteidl.service.AdminService/GetNodeEvent',
+        request_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecution.FromString,
+        )
+    self.ListNodeEvents = channel.unary_unary(
+        '/flyteidl.service.AdminService/ListNodeEvents',
+        request_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionListRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionList.FromString,
         )
     self.CreateTaskEvent = channel.unary_unary(
         '/flyteidl.service.AdminService/CreateTaskEvent',
@@ -247,6 +258,20 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetNodeEvent(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ListNodeEvents(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def CreateTaskEvent(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -346,6 +371,16 @@ def add_AdminServiceServicer_to_server(servicer, server):
           servicer.CreateNodeEvent,
           request_deserializer=flyteidl_dot_admin_dot_event__pb2.NodeExecutionEventRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_event__pb2.NodeExecutionEventResponse.SerializeToString,
+      ),
+      'GetNodeEvent': grpc.unary_unary_rpc_method_handler(
+          servicer.GetNodeEvent,
+          request_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecution.SerializeToString,
+      ),
+      'ListNodeEvents': grpc.unary_unary_rpc_method_handler(
+          servicer.ListNodeEvents,
+          request_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionListRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionList.SerializeToString,
       ),
       'CreateTaskEvent': grpc.unary_unary_rpc_method_handler(
           servicer.CreateTaskEvent,

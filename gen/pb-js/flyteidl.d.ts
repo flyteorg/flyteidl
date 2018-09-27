@@ -7998,6 +7998,34 @@ export namespace flyteidl {
             public createNodeEvent(request: flyteidl.admin.INodeExecutionEventRequest): Promise<flyteidl.admin.NodeExecutionEventResponse>;
 
             /**
+             * Calls GetNodeEvent.
+             * @param request NodeExecutionGetRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and NodeExecution
+             */
+            public getNodeEvent(request: flyteidl.admin.INodeExecutionGetRequest, callback: flyteidl.service.AdminService.GetNodeEventCallback): void;
+
+            /**
+             * Calls GetNodeEvent.
+             * @param request NodeExecutionGetRequest message or plain object
+             * @returns Promise
+             */
+            public getNodeEvent(request: flyteidl.admin.INodeExecutionGetRequest): Promise<flyteidl.admin.NodeExecution>;
+
+            /**
+             * Calls ListNodeEvents.
+             * @param request NodeExecutionListRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and NodeExecutionList
+             */
+            public listNodeEvents(request: flyteidl.admin.INodeExecutionListRequest, callback: flyteidl.service.AdminService.ListNodeEventsCallback): void;
+
+            /**
+             * Calls ListNodeEvents.
+             * @param request NodeExecutionListRequest message or plain object
+             * @returns Promise
+             */
+            public listNodeEvents(request: flyteidl.admin.INodeExecutionListRequest): Promise<flyteidl.admin.NodeExecutionList>;
+
+            /**
              * Calls CreateTaskEvent.
              * @param request TaskExecutionEventRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and TaskExecutionEventResponse
@@ -8139,6 +8167,20 @@ export namespace flyteidl {
              * @param [response] NodeExecutionEventResponse
              */
             type CreateNodeEventCallback = (error: (Error|null), response?: flyteidl.admin.NodeExecutionEventResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getNodeEvent}.
+             * @param error Error, if any
+             * @param [response] NodeExecution
+             */
+            type GetNodeEventCallback = (error: (Error|null), response?: flyteidl.admin.NodeExecution) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#listNodeEvents}.
+             * @param error Error, if any
+             * @param [response] NodeExecutionList
+             */
+            type ListNodeEventsCallback = (error: (Error|null), response?: flyteidl.admin.NodeExecutionList) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.AdminService#createTaskEvent}.

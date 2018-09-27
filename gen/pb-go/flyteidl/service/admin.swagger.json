@@ -15,7 +15,46 @@
     "application/json"
   ],
   "paths": {
-    "/api/v1/events/node": {
+    "/api/v1/events/nodes": {
+      "get": {
+        "operationId": "ListNodeEvents",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminNodeExecutionList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Indicates the offset to fetch the resource from.\nIt is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "filters",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      },
       "post": {
         "operationId": "CreateNodeEvent",
         "responses": {
@@ -41,7 +80,32 @@
         ]
       }
     },
-    "/api/v1/events/task": {
+    "/api/v1/events/nodes/{node_execution_id}": {
+      "get": {
+        "operationId": "GetNodeEvent",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminNodeExecution"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "node_execution_id",
+            "description": "An opaque string assigned by the flyteadmin that uniquely identifies an individual node execution.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/events/tasks": {
       "post": {
         "operationId": "CreateTaskEvent",
         "responses": {
@@ -67,7 +131,7 @@
         ]
       }
     },
-    "/api/v1/events/workflow": {
+    "/api/v1/events/workflows": {
       "post": {
         "operationId": "CreateWorkflowEvent",
         "responses": {
@@ -1208,6 +1272,51 @@
       },
       "title": "Input/output data can represented by actual values or a link to where it is stored"
     },
+    "adminNodeExecution": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/adminNodeExecutionIdentifier"
+        },
+        "node_execution_id": {
+          "type": "string",
+          "description": "A unique string that identifies a node execution entity."
+        },
+        "input_uri": {
+          "type": "string"
+        },
+        "closure": {
+          "$ref": "#/definitions/adminNodeExecutionClosure"
+        }
+      },
+      "description": "Encapsulates all details for a single node execution entity."
+    },
+    "adminNodeExecutionClosure": {
+      "type": "object",
+      "properties": {
+        "task_metadata": {
+          "$ref": "#/definitions/eventTaskNodeMetadata"
+        },
+        "branch_metadata": {
+          "$ref": "#/definitions/eventBranchNodeMetadata"
+        },
+        "workflow_metadata": {
+          "$ref": "#/definitions/eventSubworkflowNodeMetadata",
+          "title": "NOTE: if we find that subworkflow metadata is useful, we may want to move this to the workflowEvent"
+        },
+        "output_uri": {
+          "type": "string"
+        },
+        "error": {
+          "$ref": "#/definitions/coreExecutionError",
+          "title": "Error information for the Node"
+        },
+        "phase": {
+          "$ref": "#/definitions/coreNodeExecutionPhase"
+        }
+      },
+      "description": "Container for node execution details and results."
+    },
     "adminNodeExecutionEventRequest": {
       "type": "object",
       "properties": {
@@ -1235,6 +1344,34 @@
     },
     "adminNodeExecutionEventResponse": {
       "type": "object"
+    },
+    "adminNodeExecutionIdentifier": {
+      "type": "object",
+      "properties": {
+        "node_id": {
+          "type": "string"
+        },
+        "execution_id": {
+          "type": "string"
+        },
+        "retry_attempt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "description": "Encapsulation of fields that identify a Flyte node execution entity."
+    },
+    "adminNodeExecutionList": {
+      "type": "object",
+      "properties": {
+        "node_executions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminNodeExecution"
+          }
+        }
+      },
+      "description": "Request structure to retrieve a list of node execution entities."
     },
     "adminNotification": {
       "type": "object",
