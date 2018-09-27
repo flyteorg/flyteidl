@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package flyteidl.admin;
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
+
+import "flyteidl/core/execution.proto";
+import "flyteidl/event/event.proto";
+
+// Encapsulation of fields that identify a Flyte node execution entity.
+message NodeExecutionIdentifier {
+    string node_id           = 1;
+
+    string execution_id      = 2;
+
+    uint32 retry_attempt     = 3;
+}
+
+// A message used to fetch a single node execution entity.
+message NodeExecutionGetRequest {
+
+   // An opaque string assigned by the flyteadmin that uniquely identifies an individual node execution.
+   string node_execution_id  = 1;  
+}
+
+// Represents a request structure to retrieve a list of node execution entities.
+message NodeExecutionListRequest {
+    // Indicates the number of resources to be returned.
+    // +optional
+    uint32 limit    = 1;
+    // Indicates the offset to fetch the resource from.
+    // It is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.
+    // +optional
+    uint32 offset   = 2;
+    // Indicates a list of filters passed as string.
+    // More info on constructing filters : <Link>
+    // +optional
+    string filters  = 3;
+}
+
+// Encapsulates all details for a single node execution entity.
+message NodeExecution {
+    NodeExecutionIdentifier id             = 1;
+
+    // A unique string that identifies a node execution entity.
+    string node_execution_id               = 2;
+
+    string input_uri                       = 3;
+
+    NodeExecutionClosure closure           = 4;
+}
+
+// Request structure to retrieve a list of node execution entities.
+message NodeExecutionList {
+    repeated NodeExecution node_executions = 1;
+}
+
+// Container for node execution details and results.
+message NodeExecutionClosure {
+    // Node Targets
+    // - TaskNode: two different events - one for multistep and one for single step
+    // - BranchNode
+    // - SubworkflowNode
+    oneof target_metadata {
+        event.TaskNodeMetadata task_metadata            = 1;
+        event.BranchNodeMetadata branch_metadata        = 2;
+        // NOTE: if we find that subworkflow metadata is useful, we may want to move this to the workflowEvent
+        event.SubworkflowNodeMetadata workflow_metadata = 3;
+    }
+
+    oneof output_result {
+        string output_uri                  = 4;
+
+        // Error information for the Node
+        core.ExecutionError error          = 5;
+    }
+
+    core.NodeExecutionPhase phase          = 6;
+}

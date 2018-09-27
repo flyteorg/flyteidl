@@ -15288,6 +15288,950 @@ export const flyteidl = $root.flyteidl = (() => {
             return Schedule;
         })();
 
+        admin.NodeExecutionIdentifier = (function() {
+
+            /**
+             * Properties of a NodeExecutionIdentifier.
+             * @memberof flyteidl.admin
+             * @interface INodeExecutionIdentifier
+             * @property {string|null} [nodeId] NodeExecutionIdentifier nodeId
+             * @property {string|null} [executionId] NodeExecutionIdentifier executionId
+             * @property {number|null} [retryAttempt] NodeExecutionIdentifier retryAttempt
+             */
+
+            /**
+             * Constructs a new NodeExecutionIdentifier.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a NodeExecutionIdentifier.
+             * @implements INodeExecutionIdentifier
+             * @constructor
+             * @param {flyteidl.admin.INodeExecutionIdentifier=} [properties] Properties to set
+             */
+            function NodeExecutionIdentifier(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * NodeExecutionIdentifier nodeId.
+             * @member {string} nodeId
+             * @memberof flyteidl.admin.NodeExecutionIdentifier
+             * @instance
+             */
+            NodeExecutionIdentifier.prototype.nodeId = "";
+
+            /**
+             * NodeExecutionIdentifier executionId.
+             * @member {string} executionId
+             * @memberof flyteidl.admin.NodeExecutionIdentifier
+             * @instance
+             */
+            NodeExecutionIdentifier.prototype.executionId = "";
+
+            /**
+             * NodeExecutionIdentifier retryAttempt.
+             * @member {number} retryAttempt
+             * @memberof flyteidl.admin.NodeExecutionIdentifier
+             * @instance
+             */
+            NodeExecutionIdentifier.prototype.retryAttempt = 0;
+
+            /**
+             * Creates a new NodeExecutionIdentifier instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.NodeExecutionIdentifier
+             * @static
+             * @param {flyteidl.admin.INodeExecutionIdentifier=} [properties] Properties to set
+             * @returns {flyteidl.admin.NodeExecutionIdentifier} NodeExecutionIdentifier instance
+             */
+            NodeExecutionIdentifier.create = function create(properties) {
+                return new NodeExecutionIdentifier(properties);
+            };
+
+            /**
+             * Encodes the specified NodeExecutionIdentifier message. Does not implicitly {@link flyteidl.admin.NodeExecutionIdentifier.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.NodeExecutionIdentifier
+             * @static
+             * @param {flyteidl.admin.INodeExecutionIdentifier} message NodeExecutionIdentifier message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            NodeExecutionIdentifier.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.nodeId != null && message.hasOwnProperty("nodeId"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.nodeId);
+                if (message.executionId != null && message.hasOwnProperty("executionId"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.executionId);
+                if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.retryAttempt);
+                return writer;
+            };
+
+            /**
+             * Decodes a NodeExecutionIdentifier message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.NodeExecutionIdentifier
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.NodeExecutionIdentifier} NodeExecutionIdentifier
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            NodeExecutionIdentifier.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.NodeExecutionIdentifier();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.nodeId = reader.string();
+                        break;
+                    case 2:
+                        message.executionId = reader.string();
+                        break;
+                    case 3:
+                        message.retryAttempt = reader.uint32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a NodeExecutionIdentifier message.
+             * @function verify
+             * @memberof flyteidl.admin.NodeExecutionIdentifier
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            NodeExecutionIdentifier.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.nodeId != null && message.hasOwnProperty("nodeId"))
+                    if (!$util.isString(message.nodeId))
+                        return "nodeId: string expected";
+                if (message.executionId != null && message.hasOwnProperty("executionId"))
+                    if (!$util.isString(message.executionId))
+                        return "executionId: string expected";
+                if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
+                    if (!$util.isInteger(message.retryAttempt))
+                        return "retryAttempt: integer expected";
+                return null;
+            };
+
+            return NodeExecutionIdentifier;
+        })();
+
+        admin.NodeExecutionGetRequest = (function() {
+
+            /**
+             * Properties of a NodeExecutionGetRequest.
+             * @memberof flyteidl.admin
+             * @interface INodeExecutionGetRequest
+             * @property {string|null} [nodeExecutionId] NodeExecutionGetRequest nodeExecutionId
+             */
+
+            /**
+             * Constructs a new NodeExecutionGetRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a NodeExecutionGetRequest.
+             * @implements INodeExecutionGetRequest
+             * @constructor
+             * @param {flyteidl.admin.INodeExecutionGetRequest=} [properties] Properties to set
+             */
+            function NodeExecutionGetRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * NodeExecutionGetRequest nodeExecutionId.
+             * @member {string} nodeExecutionId
+             * @memberof flyteidl.admin.NodeExecutionGetRequest
+             * @instance
+             */
+            NodeExecutionGetRequest.prototype.nodeExecutionId = "";
+
+            /**
+             * Creates a new NodeExecutionGetRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.NodeExecutionGetRequest
+             * @static
+             * @param {flyteidl.admin.INodeExecutionGetRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.NodeExecutionGetRequest} NodeExecutionGetRequest instance
+             */
+            NodeExecutionGetRequest.create = function create(properties) {
+                return new NodeExecutionGetRequest(properties);
+            };
+
+            /**
+             * Encodes the specified NodeExecutionGetRequest message. Does not implicitly {@link flyteidl.admin.NodeExecutionGetRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.NodeExecutionGetRequest
+             * @static
+             * @param {flyteidl.admin.INodeExecutionGetRequest} message NodeExecutionGetRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            NodeExecutionGetRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.nodeExecutionId != null && message.hasOwnProperty("nodeExecutionId"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.nodeExecutionId);
+                return writer;
+            };
+
+            /**
+             * Decodes a NodeExecutionGetRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.NodeExecutionGetRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.NodeExecutionGetRequest} NodeExecutionGetRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            NodeExecutionGetRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.NodeExecutionGetRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.nodeExecutionId = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a NodeExecutionGetRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.NodeExecutionGetRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            NodeExecutionGetRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.nodeExecutionId != null && message.hasOwnProperty("nodeExecutionId"))
+                    if (!$util.isString(message.nodeExecutionId))
+                        return "nodeExecutionId: string expected";
+                return null;
+            };
+
+            return NodeExecutionGetRequest;
+        })();
+
+        admin.NodeExecutionListRequest = (function() {
+
+            /**
+             * Properties of a NodeExecutionListRequest.
+             * @memberof flyteidl.admin
+             * @interface INodeExecutionListRequest
+             * @property {number|null} [limit] NodeExecutionListRequest limit
+             * @property {number|null} [offset] NodeExecutionListRequest offset
+             * @property {string|null} [filters] NodeExecutionListRequest filters
+             */
+
+            /**
+             * Constructs a new NodeExecutionListRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a NodeExecutionListRequest.
+             * @implements INodeExecutionListRequest
+             * @constructor
+             * @param {flyteidl.admin.INodeExecutionListRequest=} [properties] Properties to set
+             */
+            function NodeExecutionListRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * NodeExecutionListRequest limit.
+             * @member {number} limit
+             * @memberof flyteidl.admin.NodeExecutionListRequest
+             * @instance
+             */
+            NodeExecutionListRequest.prototype.limit = 0;
+
+            /**
+             * NodeExecutionListRequest offset.
+             * @member {number} offset
+             * @memberof flyteidl.admin.NodeExecutionListRequest
+             * @instance
+             */
+            NodeExecutionListRequest.prototype.offset = 0;
+
+            /**
+             * NodeExecutionListRequest filters.
+             * @member {string} filters
+             * @memberof flyteidl.admin.NodeExecutionListRequest
+             * @instance
+             */
+            NodeExecutionListRequest.prototype.filters = "";
+
+            /**
+             * Creates a new NodeExecutionListRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.NodeExecutionListRequest
+             * @static
+             * @param {flyteidl.admin.INodeExecutionListRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.NodeExecutionListRequest} NodeExecutionListRequest instance
+             */
+            NodeExecutionListRequest.create = function create(properties) {
+                return new NodeExecutionListRequest(properties);
+            };
+
+            /**
+             * Encodes the specified NodeExecutionListRequest message. Does not implicitly {@link flyteidl.admin.NodeExecutionListRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.NodeExecutionListRequest
+             * @static
+             * @param {flyteidl.admin.INodeExecutionListRequest} message NodeExecutionListRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            NodeExecutionListRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.limit != null && message.hasOwnProperty("limit"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.limit);
+                if (message.offset != null && message.hasOwnProperty("offset"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.offset);
+                if (message.filters != null && message.hasOwnProperty("filters"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.filters);
+                return writer;
+            };
+
+            /**
+             * Decodes a NodeExecutionListRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.NodeExecutionListRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.NodeExecutionListRequest} NodeExecutionListRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            NodeExecutionListRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.NodeExecutionListRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.limit = reader.uint32();
+                        break;
+                    case 2:
+                        message.offset = reader.uint32();
+                        break;
+                    case 3:
+                        message.filters = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a NodeExecutionListRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.NodeExecutionListRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            NodeExecutionListRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.limit != null && message.hasOwnProperty("limit"))
+                    if (!$util.isInteger(message.limit))
+                        return "limit: integer expected";
+                if (message.offset != null && message.hasOwnProperty("offset"))
+                    if (!$util.isInteger(message.offset))
+                        return "offset: integer expected";
+                if (message.filters != null && message.hasOwnProperty("filters"))
+                    if (!$util.isString(message.filters))
+                        return "filters: string expected";
+                return null;
+            };
+
+            return NodeExecutionListRequest;
+        })();
+
+        admin.NodeExecution = (function() {
+
+            /**
+             * Properties of a NodeExecution.
+             * @memberof flyteidl.admin
+             * @interface INodeExecution
+             * @property {flyteidl.admin.INodeExecutionIdentifier|null} [id] NodeExecution id
+             * @property {string|null} [nodeExecutionId] NodeExecution nodeExecutionId
+             * @property {string|null} [inputUri] NodeExecution inputUri
+             * @property {flyteidl.admin.INodeExecutionClosure|null} [closure] NodeExecution closure
+             */
+
+            /**
+             * Constructs a new NodeExecution.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a NodeExecution.
+             * @implements INodeExecution
+             * @constructor
+             * @param {flyteidl.admin.INodeExecution=} [properties] Properties to set
+             */
+            function NodeExecution(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * NodeExecution id.
+             * @member {flyteidl.admin.INodeExecutionIdentifier|null|undefined} id
+             * @memberof flyteidl.admin.NodeExecution
+             * @instance
+             */
+            NodeExecution.prototype.id = null;
+
+            /**
+             * NodeExecution nodeExecutionId.
+             * @member {string} nodeExecutionId
+             * @memberof flyteidl.admin.NodeExecution
+             * @instance
+             */
+            NodeExecution.prototype.nodeExecutionId = "";
+
+            /**
+             * NodeExecution inputUri.
+             * @member {string} inputUri
+             * @memberof flyteidl.admin.NodeExecution
+             * @instance
+             */
+            NodeExecution.prototype.inputUri = "";
+
+            /**
+             * NodeExecution closure.
+             * @member {flyteidl.admin.INodeExecutionClosure|null|undefined} closure
+             * @memberof flyteidl.admin.NodeExecution
+             * @instance
+             */
+            NodeExecution.prototype.closure = null;
+
+            /**
+             * Creates a new NodeExecution instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.NodeExecution
+             * @static
+             * @param {flyteidl.admin.INodeExecution=} [properties] Properties to set
+             * @returns {flyteidl.admin.NodeExecution} NodeExecution instance
+             */
+            NodeExecution.create = function create(properties) {
+                return new NodeExecution(properties);
+            };
+
+            /**
+             * Encodes the specified NodeExecution message. Does not implicitly {@link flyteidl.admin.NodeExecution.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.NodeExecution
+             * @static
+             * @param {flyteidl.admin.INodeExecution} message NodeExecution message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            NodeExecution.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    $root.flyteidl.admin.NodeExecutionIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.nodeExecutionId != null && message.hasOwnProperty("nodeExecutionId"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.nodeExecutionId);
+                if (message.inputUri != null && message.hasOwnProperty("inputUri"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.inputUri);
+                if (message.closure != null && message.hasOwnProperty("closure"))
+                    $root.flyteidl.admin.NodeExecutionClosure.encode(message.closure, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a NodeExecution message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.NodeExecution
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.NodeExecution} NodeExecution
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            NodeExecution.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.NodeExecution();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = $root.flyteidl.admin.NodeExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.nodeExecutionId = reader.string();
+                        break;
+                    case 3:
+                        message.inputUri = reader.string();
+                        break;
+                    case 4:
+                        message.closure = $root.flyteidl.admin.NodeExecutionClosure.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a NodeExecution message.
+             * @function verify
+             * @memberof flyteidl.admin.NodeExecution
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            NodeExecution.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id")) {
+                    let error = $root.flyteidl.admin.NodeExecutionIdentifier.verify(message.id);
+                    if (error)
+                        return "id." + error;
+                }
+                if (message.nodeExecutionId != null && message.hasOwnProperty("nodeExecutionId"))
+                    if (!$util.isString(message.nodeExecutionId))
+                        return "nodeExecutionId: string expected";
+                if (message.inputUri != null && message.hasOwnProperty("inputUri"))
+                    if (!$util.isString(message.inputUri))
+                        return "inputUri: string expected";
+                if (message.closure != null && message.hasOwnProperty("closure")) {
+                    let error = $root.flyteidl.admin.NodeExecutionClosure.verify(message.closure);
+                    if (error)
+                        return "closure." + error;
+                }
+                return null;
+            };
+
+            return NodeExecution;
+        })();
+
+        admin.NodeExecutionList = (function() {
+
+            /**
+             * Properties of a NodeExecutionList.
+             * @memberof flyteidl.admin
+             * @interface INodeExecutionList
+             * @property {Array.<flyteidl.admin.INodeExecution>|null} [nodeExecutions] NodeExecutionList nodeExecutions
+             */
+
+            /**
+             * Constructs a new NodeExecutionList.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a NodeExecutionList.
+             * @implements INodeExecutionList
+             * @constructor
+             * @param {flyteidl.admin.INodeExecutionList=} [properties] Properties to set
+             */
+            function NodeExecutionList(properties) {
+                this.nodeExecutions = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * NodeExecutionList nodeExecutions.
+             * @member {Array.<flyteidl.admin.INodeExecution>} nodeExecutions
+             * @memberof flyteidl.admin.NodeExecutionList
+             * @instance
+             */
+            NodeExecutionList.prototype.nodeExecutions = $util.emptyArray;
+
+            /**
+             * Creates a new NodeExecutionList instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.NodeExecutionList
+             * @static
+             * @param {flyteidl.admin.INodeExecutionList=} [properties] Properties to set
+             * @returns {flyteidl.admin.NodeExecutionList} NodeExecutionList instance
+             */
+            NodeExecutionList.create = function create(properties) {
+                return new NodeExecutionList(properties);
+            };
+
+            /**
+             * Encodes the specified NodeExecutionList message. Does not implicitly {@link flyteidl.admin.NodeExecutionList.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.NodeExecutionList
+             * @static
+             * @param {flyteidl.admin.INodeExecutionList} message NodeExecutionList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            NodeExecutionList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.nodeExecutions != null && message.nodeExecutions.length)
+                    for (let i = 0; i < message.nodeExecutions.length; ++i)
+                        $root.flyteidl.admin.NodeExecution.encode(message.nodeExecutions[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a NodeExecutionList message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.NodeExecutionList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.NodeExecutionList} NodeExecutionList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            NodeExecutionList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.NodeExecutionList();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.nodeExecutions && message.nodeExecutions.length))
+                            message.nodeExecutions = [];
+                        message.nodeExecutions.push($root.flyteidl.admin.NodeExecution.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a NodeExecutionList message.
+             * @function verify
+             * @memberof flyteidl.admin.NodeExecutionList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            NodeExecutionList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.nodeExecutions != null && message.hasOwnProperty("nodeExecutions")) {
+                    if (!Array.isArray(message.nodeExecutions))
+                        return "nodeExecutions: array expected";
+                    for (let i = 0; i < message.nodeExecutions.length; ++i) {
+                        let error = $root.flyteidl.admin.NodeExecution.verify(message.nodeExecutions[i]);
+                        if (error)
+                            return "nodeExecutions." + error;
+                    }
+                }
+                return null;
+            };
+
+            return NodeExecutionList;
+        })();
+
+        admin.NodeExecutionClosure = (function() {
+
+            /**
+             * Properties of a NodeExecutionClosure.
+             * @memberof flyteidl.admin
+             * @interface INodeExecutionClosure
+             * @property {flyteidl.event.ITaskNodeMetadata|null} [taskMetadata] NodeExecutionClosure taskMetadata
+             * @property {flyteidl.event.IBranchNodeMetadata|null} [branchMetadata] NodeExecutionClosure branchMetadata
+             * @property {flyteidl.event.ISubworkflowNodeMetadata|null} [workflowMetadata] NodeExecutionClosure workflowMetadata
+             * @property {string|null} [outputUri] NodeExecutionClosure outputUri
+             * @property {flyteidl.core.IExecutionError|null} [error] NodeExecutionClosure error
+             * @property {flyteidl.core.NodeExecutionPhase|null} [phase] NodeExecutionClosure phase
+             */
+
+            /**
+             * Constructs a new NodeExecutionClosure.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a NodeExecutionClosure.
+             * @implements INodeExecutionClosure
+             * @constructor
+             * @param {flyteidl.admin.INodeExecutionClosure=} [properties] Properties to set
+             */
+            function NodeExecutionClosure(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * NodeExecutionClosure taskMetadata.
+             * @member {flyteidl.event.ITaskNodeMetadata|null|undefined} taskMetadata
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @instance
+             */
+            NodeExecutionClosure.prototype.taskMetadata = null;
+
+            /**
+             * NodeExecutionClosure branchMetadata.
+             * @member {flyteidl.event.IBranchNodeMetadata|null|undefined} branchMetadata
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @instance
+             */
+            NodeExecutionClosure.prototype.branchMetadata = null;
+
+            /**
+             * NodeExecutionClosure workflowMetadata.
+             * @member {flyteidl.event.ISubworkflowNodeMetadata|null|undefined} workflowMetadata
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @instance
+             */
+            NodeExecutionClosure.prototype.workflowMetadata = null;
+
+            /**
+             * NodeExecutionClosure outputUri.
+             * @member {string} outputUri
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @instance
+             */
+            NodeExecutionClosure.prototype.outputUri = "";
+
+            /**
+             * NodeExecutionClosure error.
+             * @member {flyteidl.core.IExecutionError|null|undefined} error
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @instance
+             */
+            NodeExecutionClosure.prototype.error = null;
+
+            /**
+             * NodeExecutionClosure phase.
+             * @member {flyteidl.core.NodeExecutionPhase} phase
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @instance
+             */
+            NodeExecutionClosure.prototype.phase = 0;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * NodeExecutionClosure targetMetadata.
+             * @member {"taskMetadata"|"branchMetadata"|"workflowMetadata"|undefined} targetMetadata
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @instance
+             */
+            Object.defineProperty(NodeExecutionClosure.prototype, "targetMetadata", {
+                get: $util.oneOfGetter($oneOfFields = ["taskMetadata", "branchMetadata", "workflowMetadata"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * NodeExecutionClosure outputResult.
+             * @member {"outputUri"|"error"|undefined} outputResult
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @instance
+             */
+            Object.defineProperty(NodeExecutionClosure.prototype, "outputResult", {
+                get: $util.oneOfGetter($oneOfFields = ["outputUri", "error"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new NodeExecutionClosure instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @static
+             * @param {flyteidl.admin.INodeExecutionClosure=} [properties] Properties to set
+             * @returns {flyteidl.admin.NodeExecutionClosure} NodeExecutionClosure instance
+             */
+            NodeExecutionClosure.create = function create(properties) {
+                return new NodeExecutionClosure(properties);
+            };
+
+            /**
+             * Encodes the specified NodeExecutionClosure message. Does not implicitly {@link flyteidl.admin.NodeExecutionClosure.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @static
+             * @param {flyteidl.admin.INodeExecutionClosure} message NodeExecutionClosure message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            NodeExecutionClosure.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.taskMetadata != null && message.hasOwnProperty("taskMetadata"))
+                    $root.flyteidl.event.TaskNodeMetadata.encode(message.taskMetadata, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.branchMetadata != null && message.hasOwnProperty("branchMetadata"))
+                    $root.flyteidl.event.BranchNodeMetadata.encode(message.branchMetadata, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.workflowMetadata != null && message.hasOwnProperty("workflowMetadata"))
+                    $root.flyteidl.event.SubworkflowNodeMetadata.encode(message.workflowMetadata, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.outputUri != null && message.hasOwnProperty("outputUri"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.outputUri);
+                if (message.error != null && message.hasOwnProperty("error"))
+                    $root.flyteidl.core.ExecutionError.encode(message.error, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.phase != null && message.hasOwnProperty("phase"))
+                    writer.uint32(/* id 6, wireType 0 =*/48).int32(message.phase);
+                return writer;
+            };
+
+            /**
+             * Decodes a NodeExecutionClosure message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.NodeExecutionClosure} NodeExecutionClosure
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            NodeExecutionClosure.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.NodeExecutionClosure();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.taskMetadata = $root.flyteidl.event.TaskNodeMetadata.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.branchMetadata = $root.flyteidl.event.BranchNodeMetadata.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.workflowMetadata = $root.flyteidl.event.SubworkflowNodeMetadata.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.outputUri = reader.string();
+                        break;
+                    case 5:
+                        message.error = $root.flyteidl.core.ExecutionError.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.phase = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a NodeExecutionClosure message.
+             * @function verify
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            NodeExecutionClosure.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.taskMetadata != null && message.hasOwnProperty("taskMetadata")) {
+                    properties.targetMetadata = 1;
+                    {
+                        let error = $root.flyteidl.event.TaskNodeMetadata.verify(message.taskMetadata);
+                        if (error)
+                            return "taskMetadata." + error;
+                    }
+                }
+                if (message.branchMetadata != null && message.hasOwnProperty("branchMetadata")) {
+                    if (properties.targetMetadata === 1)
+                        return "targetMetadata: multiple values";
+                    properties.targetMetadata = 1;
+                    {
+                        let error = $root.flyteidl.event.BranchNodeMetadata.verify(message.branchMetadata);
+                        if (error)
+                            return "branchMetadata." + error;
+                    }
+                }
+                if (message.workflowMetadata != null && message.hasOwnProperty("workflowMetadata")) {
+                    if (properties.targetMetadata === 1)
+                        return "targetMetadata: multiple values";
+                    properties.targetMetadata = 1;
+                    {
+                        let error = $root.flyteidl.event.SubworkflowNodeMetadata.verify(message.workflowMetadata);
+                        if (error)
+                            return "workflowMetadata." + error;
+                    }
+                }
+                if (message.outputUri != null && message.hasOwnProperty("outputUri")) {
+                    properties.outputResult = 1;
+                    if (!$util.isString(message.outputUri))
+                        return "outputUri: string expected";
+                }
+                if (message.error != null && message.hasOwnProperty("error")) {
+                    if (properties.outputResult === 1)
+                        return "outputResult: multiple values";
+                    properties.outputResult = 1;
+                    {
+                        let error = $root.flyteidl.core.ExecutionError.verify(message.error);
+                        if (error)
+                            return "error." + error;
+                    }
+                }
+                if (message.phase != null && message.hasOwnProperty("phase"))
+                    switch (message.phase) {
+                    default:
+                        return "phase: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                        break;
+                    }
+                return null;
+            };
+
+            return NodeExecutionClosure;
+        })();
+
         admin.Domain = (function() {
 
             /**
