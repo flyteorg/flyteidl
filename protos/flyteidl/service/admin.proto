@@ -110,6 +110,18 @@ service AdminService {
     };
   }
 
+  rpc GetNodeExecution (flyteidl.admin.NodeExecutionGetRequest) returns (flyteidl.admin.NodeExecution) {
+    option (google.api.http) = {
+      get: "/api/v1/node_executions/{node_execution_id}"
+    };
+  }
+
+  rpc ListNodeExecutions (flyteidl.admin.NodeExecutionListRequest) returns (flyteidl.admin.NodeExecutionList) {
+    option (google.api.http) = {
+      get: "/api/v1/node_executions"
+    };
+  }
+
   rpc RegisterProject (flyteidl.admin.Project) returns (flyteidl.admin.ProjectRegisterResponse) {
     option (google.api.http) = {
       post: "/api/v1/projects"
@@ -150,18 +162,6 @@ service AdminService {
     option (google.api.http) = {
       post: "/api/v1/events/nodes"
       body: "*"
-    };
-  }
-
-  rpc GetNodeEvent (flyteidl.admin.NodeExecutionGetRequest) returns (flyteidl.admin.NodeExecution) {
-    option (google.api.http) = {
-      get: "/api/v1/events/nodes/{node_execution_id}"
-    };
-  }
-
-  rpc ListNodeEvents (flyteidl.admin.NodeExecutionListRequest) returns (flyteidl.admin.NodeExecutionList) {
-    option (google.api.http) = {
-      get: "/api/v1/events/nodes"
     };
   }
 

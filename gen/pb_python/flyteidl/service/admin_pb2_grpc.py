@@ -91,6 +91,16 @@ class AdminServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_common__pb2.ResourceListRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionList.FromString,
         )
+    self.GetNodeExecution = channel.unary_unary(
+        '/flyteidl.service.AdminService/GetNodeExecution',
+        request_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecution.FromString,
+        )
+    self.ListNodeExecutions = channel.unary_unary(
+        '/flyteidl.service.AdminService/ListNodeExecutions',
+        request_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionListRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionList.FromString,
+        )
     self.RegisterProject = channel.unary_unary(
         '/flyteidl.service.AdminService/RegisterProject',
         request_serializer=flyteidl_dot_admin_dot_project__pb2.Project.SerializeToString,
@@ -110,16 +120,6 @@ class AdminServiceStub(object):
         '/flyteidl.service.AdminService/CreateNodeEvent',
         request_serializer=flyteidl_dot_admin_dot_event__pb2.NodeExecutionEventRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_event__pb2.NodeExecutionEventResponse.FromString,
-        )
-    self.GetNodeEvent = channel.unary_unary(
-        '/flyteidl.service.AdminService/GetNodeEvent',
-        request_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetRequest.SerializeToString,
-        response_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecution.FromString,
-        )
-    self.ListNodeEvents = channel.unary_unary(
-        '/flyteidl.service.AdminService/ListNodeEvents',
-        request_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionListRequest.SerializeToString,
-        response_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionList.FromString,
         )
     self.CreateTaskEvent = channel.unary_unary(
         '/flyteidl.service.AdminService/CreateTaskEvent',
@@ -230,6 +230,20 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetNodeExecution(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ListNodeExecutions(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def RegisterProject(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -252,20 +266,6 @@ class AdminServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def CreateNodeEvent(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def GetNodeEvent(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def ListNodeEvents(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -352,6 +352,16 @@ def add_AdminServiceServicer_to_server(servicer, server):
           request_deserializer=flyteidl_dot_admin_dot_common__pb2.ResourceListRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionList.SerializeToString,
       ),
+      'GetNodeExecution': grpc.unary_unary_rpc_method_handler(
+          servicer.GetNodeExecution,
+          request_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecution.SerializeToString,
+      ),
+      'ListNodeExecutions': grpc.unary_unary_rpc_method_handler(
+          servicer.ListNodeExecutions,
+          request_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionListRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionList.SerializeToString,
+      ),
       'RegisterProject': grpc.unary_unary_rpc_method_handler(
           servicer.RegisterProject,
           request_deserializer=flyteidl_dot_admin_dot_project__pb2.Project.FromString,
@@ -371,16 +381,6 @@ def add_AdminServiceServicer_to_server(servicer, server):
           servicer.CreateNodeEvent,
           request_deserializer=flyteidl_dot_admin_dot_event__pb2.NodeExecutionEventRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_event__pb2.NodeExecutionEventResponse.SerializeToString,
-      ),
-      'GetNodeEvent': grpc.unary_unary_rpc_method_handler(
-          servicer.GetNodeEvent,
-          request_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetRequest.FromString,
-          response_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecution.SerializeToString,
-      ),
-      'ListNodeEvents': grpc.unary_unary_rpc_method_handler(
-          servicer.ListNodeEvents,
-          request_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionListRequest.FromString,
-          response_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionList.SerializeToString,
       ),
       'CreateTaskEvent': grpc.unary_unary_rpc_method_handler(
           servicer.CreateTaskEvent,
