@@ -6388,7 +6388,7 @@ export namespace flyteidl {
             nodeId?: (string|null);
 
             /** NodeExecutionIdentifier executionId */
-            executionId?: (string|null);
+            executionId?: (number|null);
 
             /** NodeExecutionIdentifier retryAttempt */
             retryAttempt?: (number|null);
@@ -6407,7 +6407,7 @@ export namespace flyteidl {
             public nodeId: string;
 
             /** NodeExecutionIdentifier executionId. */
-            public executionId: string;
+            public executionId: number;
 
             /** NodeExecutionIdentifier retryAttempt. */
             public retryAttempt: number;

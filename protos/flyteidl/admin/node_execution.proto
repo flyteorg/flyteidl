@@ -10,7 +10,7 @@ import "flyteidl/event/event.proto";
 message NodeExecutionIdentifier {
     string node_id           = 1;
 
-    string execution_id      = 2;
+    uint32 execution_id        = 2;
 
     uint32 retry_attempt     = 3;
 }

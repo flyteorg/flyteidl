@@ -1354,7 +1354,8 @@
           "type": "string"
         },
         "execution_id": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "retry_attempt": {
           "type": "integer",
