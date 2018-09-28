@@ -7886,6 +7886,34 @@ export namespace flyteidl {
             public getLaunchPlan(request: flyteidl.admin.IObjectGetRequest): Promise<flyteidl.admin.LaunchPlan>;
 
             /**
+             * Calls ListLaunchPlanIds.
+             * @param request IdentifierListRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and IdentifierList
+             */
+            public listLaunchPlanIds(request: flyteidl.admin.IIdentifierListRequest, callback: flyteidl.service.AdminService.ListLaunchPlanIdsCallback): void;
+
+            /**
+             * Calls ListLaunchPlanIds.
+             * @param request IdentifierListRequest message or plain object
+             * @returns Promise
+             */
+            public listLaunchPlanIds(request: flyteidl.admin.IIdentifierListRequest): Promise<flyteidl.admin.IdentifierList>;
+
+            /**
+             * Calls ListLaunchPlans.
+             * @param request ResourceListRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and LaunchPlanList
+             */
+            public listLaunchPlans(request: flyteidl.admin.IResourceListRequest, callback: flyteidl.service.AdminService.ListLaunchPlansCallback): void;
+
+            /**
+             * Calls ListLaunchPlans.
+             * @param request ResourceListRequest message or plain object
+             * @returns Promise
+             */
+            public listLaunchPlans(request: flyteidl.admin.IResourceListRequest): Promise<flyteidl.admin.LaunchPlanList>;
+
+            /**
              * Calls UpdateLaunchPlan.
              * @param request LaunchPlanUpdateRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and LaunchPlanUpdateResponse
@@ -8111,6 +8139,20 @@ export namespace flyteidl {
              * @param [response] LaunchPlan
              */
             type GetLaunchPlanCallback = (error: (Error|null), response?: flyteidl.admin.LaunchPlan) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#listLaunchPlanIds}.
+             * @param error Error, if any
+             * @param [response] IdentifierList
+             */
+            type ListLaunchPlanIdsCallback = (error: (Error|null), response?: flyteidl.admin.IdentifierList) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#listLaunchPlans}.
+             * @param error Error, if any
+             * @param [response] LaunchPlanList
+             */
+            type ListLaunchPlansCallback = (error: (Error|null), response?: flyteidl.admin.LaunchPlanList) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.AdminService#updateLaunchPlan}.

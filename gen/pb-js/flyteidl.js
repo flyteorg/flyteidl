@@ -18728,6 +18728,72 @@ export const flyteidl = $root.flyteidl = (() => {
              */
 
             /**
+             * Callback as used by {@link flyteidl.service.AdminService#listLaunchPlanIds}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef ListLaunchPlanIdsCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.IdentifierList} [response] IdentifierList
+             */
+
+            /**
+             * Calls ListLaunchPlanIds.
+             * @function listLaunchPlanIds
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IIdentifierListRequest} request IdentifierListRequest message or plain object
+             * @param {flyteidl.service.AdminService.ListLaunchPlanIdsCallback} callback Node-style callback called with the error, if any, and IdentifierList
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.listLaunchPlanIds = function listLaunchPlanIds(request, callback) {
+                return this.rpcCall(listLaunchPlanIds, $root.flyteidl.admin.IdentifierListRequest, $root.flyteidl.admin.IdentifierList, request, callback);
+            }, "name", { value: "ListLaunchPlanIds" });
+
+            /**
+             * Calls ListLaunchPlanIds.
+             * @function listLaunchPlanIds
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IIdentifierListRequest} request IdentifierListRequest message or plain object
+             * @returns {Promise<flyteidl.admin.IdentifierList>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#listLaunchPlans}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef ListLaunchPlansCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.LaunchPlanList} [response] LaunchPlanList
+             */
+
+            /**
+             * Calls ListLaunchPlans.
+             * @function listLaunchPlans
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IResourceListRequest} request ResourceListRequest message or plain object
+             * @param {flyteidl.service.AdminService.ListLaunchPlansCallback} callback Node-style callback called with the error, if any, and LaunchPlanList
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.listLaunchPlans = function listLaunchPlans(request, callback) {
+                return this.rpcCall(listLaunchPlans, $root.flyteidl.admin.ResourceListRequest, $root.flyteidl.admin.LaunchPlanList, request, callback);
+            }, "name", { value: "ListLaunchPlans" });
+
+            /**
+             * Calls ListLaunchPlans.
+             * @function listLaunchPlans
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IResourceListRequest} request ResourceListRequest message or plain object
+             * @returns {Promise<flyteidl.admin.LaunchPlanList>} Promise
+             * @variation 2
+             */
+
+            /**
              * Callback as used by {@link flyteidl.service.AdminService#updateLaunchPlan}.
              * @memberof flyteidl.service.AdminService
              * @typedef UpdateLaunchPlanCallback

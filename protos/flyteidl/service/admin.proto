@@ -84,6 +84,21 @@ service AdminService {
     };
   }
 
+  rpc ListLaunchPlanIds (flyteidl.admin.IdentifierListRequest) returns (flyteidl.admin.IdentifierList) {
+    option (google.api.http) = {
+      get: "/api/v1/project/{project}/domain/{domain}/launch_plan_ids"
+    };
+  }
+
+  rpc ListLaunchPlans (flyteidl.admin.ResourceListRequest) returns (flyteidl.admin.LaunchPlanList) {
+    option (google.api.http) = {
+      get: "/api/v1/project/{id.project}/domain/{id.domain}/launch_plans"
+      additional_bindings {
+        get: "/api/v1/project/{id.project}/domain/{id.domain}/launch_plans/{id.name}"
+      }
+    };
+  }
+
   rpc UpdateLaunchPlan (flyteidl.admin.LaunchPlanUpdateRequest) returns (flyteidl.admin.LaunchPlanUpdateResponse) {
     option (google.api.http) = {
       put: "/api/v1/launch_plans/{urn}"
