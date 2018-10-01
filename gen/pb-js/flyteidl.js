@@ -9305,6 +9305,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a SwarmDefinition.
              * @memberof flyteidl.core
              * @interface ISwarmDefinition
+             * @property {flyteidl.core.ITaskMetadata|null} [metadata] SwarmDefinition metadata
              * @property {flyteidl.core.IContainer|null} [primaryContainer] SwarmDefinition primaryContainer
              * @property {Array.<flyteidl.core.IContainer>|null} [initContainers] SwarmDefinition initContainers
              * @property {Array.<flyteidl.core.IContainer>|null} [sidecarContainers] SwarmDefinition sidecarContainers
@@ -9326,6 +9327,14 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
+
+            /**
+             * SwarmDefinition metadata.
+             * @member {flyteidl.core.ITaskMetadata|null|undefined} metadata
+             * @memberof flyteidl.core.SwarmDefinition
+             * @instance
+             */
+            SwarmDefinition.prototype.metadata = null;
 
             /**
              * SwarmDefinition primaryContainer.
@@ -9375,14 +9384,16 @@ export const flyteidl = $root.flyteidl = (() => {
             SwarmDefinition.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
+                if (message.metadata != null && message.hasOwnProperty("metadata"))
+                    $root.flyteidl.core.TaskMetadata.encode(message.metadata, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.primaryContainer != null && message.hasOwnProperty("primaryContainer"))
-                    $root.flyteidl.core.Container.encode(message.primaryContainer, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    $root.flyteidl.core.Container.encode(message.primaryContainer, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.initContainers != null && message.initContainers.length)
                     for (let i = 0; i < message.initContainers.length; ++i)
-                        $root.flyteidl.core.Container.encode(message.initContainers[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                        $root.flyteidl.core.Container.encode(message.initContainers[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.sidecarContainers != null && message.sidecarContainers.length)
                     for (let i = 0; i < message.sidecarContainers.length; ++i)
-                        $root.flyteidl.core.Container.encode(message.sidecarContainers[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                        $root.flyteidl.core.Container.encode(message.sidecarContainers[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -9405,14 +9416,17 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.primaryContainer = $root.flyteidl.core.Container.decode(reader, reader.uint32());
+                        message.metadata = $root.flyteidl.core.TaskMetadata.decode(reader, reader.uint32());
                         break;
                     case 2:
+                        message.primaryContainer = $root.flyteidl.core.Container.decode(reader, reader.uint32());
+                        break;
+                    case 3:
                         if (!(message.initContainers && message.initContainers.length))
                             message.initContainers = [];
                         message.initContainers.push($root.flyteidl.core.Container.decode(reader, reader.uint32()));
                         break;
-                    case 3:
+                    case 4:
                         if (!(message.sidecarContainers && message.sidecarContainers.length))
                             message.sidecarContainers = [];
                         message.sidecarContainers.push($root.flyteidl.core.Container.decode(reader, reader.uint32()));
@@ -9436,6 +9450,11 @@ export const flyteidl = $root.flyteidl = (() => {
             SwarmDefinition.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (message.metadata != null && message.hasOwnProperty("metadata")) {
+                    let error = $root.flyteidl.core.TaskMetadata.verify(message.metadata);
+                    if (error)
+                        return "metadata." + error;
+                }
                 if (message.primaryContainer != null && message.hasOwnProperty("primaryContainer")) {
                     let error = $root.flyteidl.core.Container.verify(message.primaryContainer);
                     if (error)
@@ -9471,10 +9490,9 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of an ArrayJob.
              * @memberof flyteidl.core
              * @interface IArrayJob
-             * @property {flyteidl.core.ITaskMetadata|null} [metadata] ArrayJob metadata
              * @property {Long|null} [slots] ArrayJob slots
              * @property {Long|null} [completions] ArrayJob completions
-             * @property {flyteidl.core.IContainer|null} [container] ArrayJob container
+             * @property {flyteidl.core.ITaskTemplate|null} [task] ArrayJob task
              * @property {flyteidl.core.ISwarmDefinition|null} [swarm] ArrayJob swarm
              * @property {string|null} [inputRef] ArrayJob inputRef
              */
@@ -9495,14 +9513,6 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * ArrayJob metadata.
-             * @member {flyteidl.core.ITaskMetadata|null|undefined} metadata
-             * @memberof flyteidl.core.ArrayJob
-             * @instance
-             */
-            ArrayJob.prototype.metadata = null;
-
-            /**
              * ArrayJob slots.
              * @member {Long} slots
              * @memberof flyteidl.core.ArrayJob
@@ -9519,12 +9529,12 @@ export const flyteidl = $root.flyteidl = (() => {
             ArrayJob.prototype.completions = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
-             * ArrayJob container.
-             * @member {flyteidl.core.IContainer|null|undefined} container
+             * ArrayJob task.
+             * @member {flyteidl.core.ITaskTemplate|null|undefined} task
              * @memberof flyteidl.core.ArrayJob
              * @instance
              */
-            ArrayJob.prototype.container = null;
+            ArrayJob.prototype.task = null;
 
             /**
              * ArrayJob swarm.
@@ -9547,12 +9557,12 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * ArrayJob runnable.
-             * @member {"container"|"swarm"|undefined} runnable
+             * @member {"task"|"swarm"|undefined} runnable
              * @memberof flyteidl.core.ArrayJob
              * @instance
              */
             Object.defineProperty(ArrayJob.prototype, "runnable", {
-                get: $util.oneOfGetter($oneOfFields = ["container", "swarm"]),
+                get: $util.oneOfGetter($oneOfFields = ["task", "swarm"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -9580,18 +9590,16 @@ export const flyteidl = $root.flyteidl = (() => {
             ArrayJob.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.metadata != null && message.hasOwnProperty("metadata"))
-                    $root.flyteidl.core.TaskMetadata.encode(message.metadata, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.slots != null && message.hasOwnProperty("slots"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.slots);
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.slots);
                 if (message.completions != null && message.hasOwnProperty("completions"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.completions);
-                if (message.container != null && message.hasOwnProperty("container"))
-                    $root.flyteidl.core.Container.encode(message.container, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.completions);
+                if (message.task != null && message.hasOwnProperty("task"))
+                    $root.flyteidl.core.TaskTemplate.encode(message.task, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.swarm != null && message.hasOwnProperty("swarm"))
-                    $root.flyteidl.core.SwarmDefinition.encode(message.swarm, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    $root.flyteidl.core.SwarmDefinition.encode(message.swarm, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.inputRef != null && message.hasOwnProperty("inputRef"))
-                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.inputRef);
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.inputRef);
                 return writer;
             };
 
@@ -9614,21 +9622,18 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.metadata = $root.flyteidl.core.TaskMetadata.decode(reader, reader.uint32());
-                        break;
-                    case 2:
                         message.slots = reader.int64();
                         break;
-                    case 3:
+                    case 2:
                         message.completions = reader.int64();
                         break;
-                    case 4:
-                        message.container = $root.flyteidl.core.Container.decode(reader, reader.uint32());
+                    case 3:
+                        message.task = $root.flyteidl.core.TaskTemplate.decode(reader, reader.uint32());
                         break;
-                    case 5:
+                    case 4:
                         message.swarm = $root.flyteidl.core.SwarmDefinition.decode(reader, reader.uint32());
                         break;
-                    case 6:
+                    case 5:
                         message.inputRef = reader.string();
                         break;
                     default:
@@ -9651,23 +9656,18 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 let properties = {};
-                if (message.metadata != null && message.hasOwnProperty("metadata")) {
-                    let error = $root.flyteidl.core.TaskMetadata.verify(message.metadata);
-                    if (error)
-                        return "metadata." + error;
-                }
                 if (message.slots != null && message.hasOwnProperty("slots"))
                     if (!$util.isInteger(message.slots) && !(message.slots && $util.isInteger(message.slots.low) && $util.isInteger(message.slots.high)))
                         return "slots: integer|Long expected";
                 if (message.completions != null && message.hasOwnProperty("completions"))
                     if (!$util.isInteger(message.completions) && !(message.completions && $util.isInteger(message.completions.low) && $util.isInteger(message.completions.high)))
                         return "completions: integer|Long expected";
-                if (message.container != null && message.hasOwnProperty("container")) {
+                if (message.task != null && message.hasOwnProperty("task")) {
                     properties.runnable = 1;
                     {
-                        let error = $root.flyteidl.core.Container.verify(message.container);
+                        let error = $root.flyteidl.core.TaskTemplate.verify(message.task);
                         if (error)
-                            return "container." + error;
+                            return "task." + error;
                     }
                 }
                 if (message.swarm != null && message.hasOwnProperty("swarm")) {

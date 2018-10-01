@@ -3854,6 +3854,9 @@ export namespace flyteidl {
         /** Properties of a SwarmDefinition. */
         interface ISwarmDefinition {
 
+            /** SwarmDefinition metadata */
+            metadata?: (flyteidl.core.ITaskMetadata|null);
+
             /** SwarmDefinition primaryContainer */
             primaryContainer?: (flyteidl.core.IContainer|null);
 
@@ -3872,6 +3875,9 @@ export namespace flyteidl {
              * @param [properties] Properties to set
              */
             constructor(properties?: flyteidl.core.ISwarmDefinition);
+
+            /** SwarmDefinition metadata. */
+            public metadata?: (flyteidl.core.ITaskMetadata|null);
 
             /** SwarmDefinition primaryContainer. */
             public primaryContainer?: (flyteidl.core.IContainer|null);
@@ -3918,17 +3924,14 @@ export namespace flyteidl {
         /** Properties of an ArrayJob. */
         interface IArrayJob {
 
-            /** ArrayJob metadata */
-            metadata?: (flyteidl.core.ITaskMetadata|null);
-
             /** ArrayJob slots */
             slots?: (Long|null);
 
             /** ArrayJob completions */
             completions?: (Long|null);
 
-            /** ArrayJob container */
-            container?: (flyteidl.core.IContainer|null);
+            /** ArrayJob task */
+            task?: (flyteidl.core.ITaskTemplate|null);
 
             /** ArrayJob swarm */
             swarm?: (flyteidl.core.ISwarmDefinition|null);
@@ -3946,17 +3949,14 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.core.IArrayJob);
 
-            /** ArrayJob metadata. */
-            public metadata?: (flyteidl.core.ITaskMetadata|null);
-
             /** ArrayJob slots. */
             public slots: Long;
 
             /** ArrayJob completions. */
             public completions: Long;
 
-            /** ArrayJob container. */
-            public container?: (flyteidl.core.IContainer|null);
+            /** ArrayJob task. */
+            public task?: (flyteidl.core.ITaskTemplate|null);
 
             /** ArrayJob swarm. */
             public swarm?: (flyteidl.core.ISwarmDefinition|null);
@@ -3965,7 +3965,7 @@ export namespace flyteidl {
             public inputRef: string;
 
             /** ArrayJob runnable. */
-            public runnable?: ("container"|"swarm");
+            public runnable?: ("task"|"swarm");
 
             /**
              * Creates a new ArrayJob instance using the specified properties.

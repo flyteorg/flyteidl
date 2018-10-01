@@ -67,9 +67,12 @@ message HiveQueryCollection {
 
 // Defines a collection of containers to execute.
 message SwarmDefinition {
+    // Metadata about the task.
+    TaskMetadata metadata = 1;
+
     // The primary container of a swarm job. This container starts after all the init_containers have successfully
     // completed. The end-state of the primary container determines the overall state of the swarm task.
-    Container primary_container = 1;
+    Container primary_container = 2;
 
     // List of initialization containers belonging to the pod.
     // Init containers are executed in order prior to containers being started. If any
@@ -82,32 +85,32 @@ message SwarmDefinition {
     // of that value or the sum of the normal containers. Limits are applied to init containers
     // in a similar fashion.
     // More info: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
-    repeated Container init_containers = 2;
+    repeated Container init_containers = 3;
 
     // List of containers that get started after all init_containers have successfully completed. The end-state of
     // sidecar_containers is ignored when computing the overall state of the swarm task.
-    repeated Container sidecar_containers = 3;
+    repeated Container sidecar_containers = 4;
 }
 
 // Describes a job that can process independent pieces of data concurrently. Multiple copies of the runnable component
 // will be executed concurrently.
 message ArrayJob {
-    // Metadata about the task.
-    TaskMetadata metadata = 1;
-
-    // Defines the maximum number of instances to bring up concurrently at any given point.
-    int64 slots = 2;
+    // Defines the maximum number of instances to bring up concurrently at any given point. If not specified, the system
+    // will attempt to execute as many instances in parallel as possible.
+    int64 slots = 1;
 
     // Defines the number of successful completions needed to mark the job as success. This number should match
     // the size of the input if the job requires processing of all input data.
-    int64 completions = 3;
+    int64 completions = 2;
 
     oneof runnable {
-        // Information about the container (image, cmd... etc.) to execute.
-        Container container = 4;
+        // Task to run in an ArrayJob. The system will run this task as an array job if, and only if, completions count
+        // is greater than 1 and this task type supports running in arrays. Currently only Python tasks are supported.
+        // If these conditions are not met, the system will spawn off individual jobs to execute this task.
+        TaskTemplate task = 3;
 
         // Information about the various containers to execute for each of the swarm jobs.
-        SwarmDefinition swarm = 5;
+        SwarmDefinition swarm = 4;
     }
 
     // The location for where the input will be. The usage of this location is engine-dependent.
@@ -124,5 +127,5 @@ message ArrayJob {
     // contains the value 2. The final output location is then: <input_ref>/7/inputs.pb
     // P.S for Azure: The execution engine will have to process the input and slice it for each task. It'll then pass an
     // absolute location to each task for where it can find its input.
-    string input_ref = 6;
+    string input_ref = 5;
 }

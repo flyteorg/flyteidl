@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/future.proto',
   package='flyteidl.core',
   syntax='proto3',
-  serialized_pb=_b('\n\x1a\x66lyteidl/core/future.proto\x12\rflyteidl.core\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1c\x66lyteidl/core/literals.proto\"\x82\x01\n\x12\x46utureTaskDocument\x12,\n\x05tasks\x18\x01 \x03(\x0b\x32\x1d.flyteidl.core.FutureTaskNode\x12\x15\n\rmin_successes\x18\x02 \x01(\x03\x12\'\n\x07outputs\x18\x03 \x03(\x0b\x32\x16.flyteidl.core.Binding\"\x8c\x02\n\x0e\x46utureTaskNode\x12\x13\n\x0bgenerate_id\x18\x01 \x01(\t\x12\x30\n\x04kind\x18\x02 \x01(\x0e\x32\".flyteidl.core.FutureTaskNode.Kind\x12(\n\x05\x61rray\x18\x03 \x01(\x0b\x32\x17.flyteidl.core.ArrayJobH\x00\x12:\n\x0chive_queries\x18\x04 \x01(\x0b\x32\".flyteidl.core.HiveQueryCollectionH\x00\"C\n\x04Kind\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x13\n\x0f\x41RRAY_CONTAINER\x10\x01\x12\x0f\n\x0b\x41RRAY_SWARM\x10\x02\x12\x08\n\x04HIVE\x10\x03\x42\x08\n\x06target\"I\n\tHiveQuery\x12\r\n\x05query\x18\x01 \x01(\t\x12-\n\x08metadata\x18\x02 \x01(\x0b\x32\x1b.flyteidl.core.TaskMetadata\"@\n\x13HiveQueryCollection\x12)\n\x07queries\x18\x02 \x03(\x0b\x32\x18.flyteidl.core.HiveQuery\"\xaf\x01\n\x0fSwarmDefinition\x12\x33\n\x11primary_container\x18\x01 \x01(\x0b\x32\x18.flyteidl.core.Container\x12\x31\n\x0finit_containers\x18\x02 \x03(\x0b\x32\x18.flyteidl.core.Container\x12\x34\n\x12sidecar_containers\x18\x03 \x03(\x0b\x32\x18.flyteidl.core.Container\"\xdc\x01\n\x08\x41rrayJob\x12-\n\x08metadata\x18\x01 \x01(\x0b\x32\x1b.flyteidl.core.TaskMetadata\x12\r\n\x05slots\x18\x02 \x01(\x03\x12\x13\n\x0b\x63ompletions\x18\x03 \x01(\x03\x12-\n\tcontainer\x18\x04 \x01(\x0b\x32\x18.flyteidl.core.ContainerH\x00\x12/\n\x05swarm\x18\x05 \x01(\x0b\x32\x1e.flyteidl.core.SwarmDefinitionH\x00\x12\x11\n\tinput_ref\x18\x06 \x01(\tB\n\n\x08runnableB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1a\x66lyteidl/core/future.proto\x12\rflyteidl.core\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1c\x66lyteidl/core/literals.proto\"\x82\x01\n\x12\x46utureTaskDocument\x12,\n\x05tasks\x18\x01 \x03(\x0b\x32\x1d.flyteidl.core.FutureTaskNode\x12\x15\n\rmin_successes\x18\x02 \x01(\x03\x12\'\n\x07outputs\x18\x03 \x03(\x0b\x32\x16.flyteidl.core.Binding\"\x8c\x02\n\x0e\x46utureTaskNode\x12\x13\n\x0bgenerate_id\x18\x01 \x01(\t\x12\x30\n\x04kind\x18\x02 \x01(\x0e\x32\".flyteidl.core.FutureTaskNode.Kind\x12(\n\x05\x61rray\x18\x03 \x01(\x0b\x32\x17.flyteidl.core.ArrayJobH\x00\x12:\n\x0chive_queries\x18\x04 \x01(\x0b\x32\".flyteidl.core.HiveQueryCollectionH\x00\"C\n\x04Kind\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x13\n\x0f\x41RRAY_CONTAINER\x10\x01\x12\x0f\n\x0b\x41RRAY_SWARM\x10\x02\x12\x08\n\x04HIVE\x10\x03\x42\x08\n\x06target\"I\n\tHiveQuery\x12\r\n\x05query\x18\x01 \x01(\t\x12-\n\x08metadata\x18\x02 \x01(\x0b\x32\x1b.flyteidl.core.TaskMetadata\"@\n\x13HiveQueryCollection\x12)\n\x07queries\x18\x02 \x03(\x0b\x32\x18.flyteidl.core.HiveQuery\"\xde\x01\n\x0fSwarmDefinition\x12-\n\x08metadata\x18\x01 \x01(\x0b\x32\x1b.flyteidl.core.TaskMetadata\x12\x33\n\x11primary_container\x18\x02 \x01(\x0b\x32\x18.flyteidl.core.Container\x12\x31\n\x0finit_containers\x18\x03 \x03(\x0b\x32\x18.flyteidl.core.Container\x12\x34\n\x12sidecar_containers\x18\x04 \x03(\x0b\x32\x18.flyteidl.core.Container\"\xab\x01\n\x08\x41rrayJob\x12\r\n\x05slots\x18\x01 \x01(\x03\x12\x13\n\x0b\x63ompletions\x18\x02 \x01(\x03\x12+\n\x04task\x18\x03 \x01(\x0b\x32\x1b.flyteidl.core.TaskTemplateH\x00\x12/\n\x05swarm\x18\x04 \x01(\x0b\x32\x1e.flyteidl.core.SwarmDefinitionH\x00\x12\x11\n\tinput_ref\x18\x05 \x01(\tB\n\n\x08runnableB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,])
 
@@ -236,22 +236,29 @@ _SWARMDEFINITION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='primary_container', full_name='flyteidl.core.SwarmDefinition.primary_container', index=0,
+      name='metadata', full_name='flyteidl.core.SwarmDefinition.metadata', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='init_containers', full_name='flyteidl.core.SwarmDefinition.init_containers', index=1,
-      number=2, type=11, cpp_type=10, label=3,
+      name='primary_container', full_name='flyteidl.core.SwarmDefinition.primary_container', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='init_containers', full_name='flyteidl.core.SwarmDefinition.init_containers', index=2,
+      number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sidecar_containers', full_name='flyteidl.core.SwarmDefinition.sidecar_containers', index=2,
-      number=3, type=11, cpp_type=10, label=3,
+      name='sidecar_containers', full_name='flyteidl.core.SwarmDefinition.sidecar_containers', index=3,
+      number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -269,7 +276,7 @@ _SWARMDEFINITION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=648,
-  serialized_end=823,
+  serialized_end=870,
 )
 
 
@@ -281,43 +288,36 @@ _ARRAYJOB = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='metadata', full_name='flyteidl.core.ArrayJob.metadata', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='slots', full_name='flyteidl.core.ArrayJob.slots', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='slots', full_name='flyteidl.core.ArrayJob.slots', index=1,
+      name='completions', full_name='flyteidl.core.ArrayJob.completions', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='completions', full_name='flyteidl.core.ArrayJob.completions', index=2,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
+      name='task', full_name='flyteidl.core.ArrayJob.task', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='container', full_name='flyteidl.core.ArrayJob.container', index=3,
+      name='swarm', full_name='flyteidl.core.ArrayJob.swarm', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='swarm', full_name='flyteidl.core.ArrayJob.swarm', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='input_ref', full_name='flyteidl.core.ArrayJob.input_ref', index=5,
-      number=6, type=9, cpp_type=9, label=1,
+      name='input_ref', full_name='flyteidl.core.ArrayJob.input_ref', index=4,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -337,8 +337,8 @@ _ARRAYJOB = _descriptor.Descriptor(
       name='runnable', full_name='flyteidl.core.ArrayJob.runnable',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=826,
-  serialized_end=1046,
+  serialized_start=873,
+  serialized_end=1044,
 )
 
 _FUTURETASKDOCUMENT.fields_by_name['tasks'].message_type = _FUTURETASKNODE
@@ -355,15 +355,15 @@ _FUTURETASKNODE.oneofs_by_name['target'].fields.append(
 _FUTURETASKNODE.fields_by_name['hive_queries'].containing_oneof = _FUTURETASKNODE.oneofs_by_name['target']
 _HIVEQUERY.fields_by_name['metadata'].message_type = flyteidl_dot_core_dot_tasks__pb2._TASKMETADATA
 _HIVEQUERYCOLLECTION.fields_by_name['queries'].message_type = _HIVEQUERY
+_SWARMDEFINITION.fields_by_name['metadata'].message_type = flyteidl_dot_core_dot_tasks__pb2._TASKMETADATA
 _SWARMDEFINITION.fields_by_name['primary_container'].message_type = flyteidl_dot_core_dot_tasks__pb2._CONTAINER
 _SWARMDEFINITION.fields_by_name['init_containers'].message_type = flyteidl_dot_core_dot_tasks__pb2._CONTAINER
 _SWARMDEFINITION.fields_by_name['sidecar_containers'].message_type = flyteidl_dot_core_dot_tasks__pb2._CONTAINER
-_ARRAYJOB.fields_by_name['metadata'].message_type = flyteidl_dot_core_dot_tasks__pb2._TASKMETADATA
-_ARRAYJOB.fields_by_name['container'].message_type = flyteidl_dot_core_dot_tasks__pb2._CONTAINER
+_ARRAYJOB.fields_by_name['task'].message_type = flyteidl_dot_core_dot_tasks__pb2._TASKTEMPLATE
 _ARRAYJOB.fields_by_name['swarm'].message_type = _SWARMDEFINITION
 _ARRAYJOB.oneofs_by_name['runnable'].fields.append(
-  _ARRAYJOB.fields_by_name['container'])
-_ARRAYJOB.fields_by_name['container'].containing_oneof = _ARRAYJOB.oneofs_by_name['runnable']
+  _ARRAYJOB.fields_by_name['task'])
+_ARRAYJOB.fields_by_name['task'].containing_oneof = _ARRAYJOB.oneofs_by_name['runnable']
 _ARRAYJOB.oneofs_by_name['runnable'].fields.append(
   _ARRAYJOB.fields_by_name['swarm'])
 _ARRAYJOB.fields_by_name['swarm'].containing_oneof = _ARRAYJOB.oneofs_by_name['runnable']
