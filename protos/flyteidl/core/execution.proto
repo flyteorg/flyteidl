@@ -9,7 +9,7 @@ enum WorkflowExecutionPhase {
     WORKFLOW_PHASE_UNDEFINED        = 0;
     WORKFLOW_PHASE_RUNNING          = 1;
     WORKFLOW_PHASE_SUCCEEDING       = 2;
-    WORKFLOW_PHASE_SUCCEEDED         = 3;
+    WORKFLOW_PHASE_SUCCEEDED        = 3;
     WORKFLOW_PHASE_FAILING          = 4;
     WORKFLOW_PHASE_FAILED           = 5;
     WORKFLOW_PHASE_TIMED_OUT        = 6;
@@ -28,6 +28,18 @@ enum NodeExecutionPhase {
     NODE_PHASE_SKIPPED          = 6;
     NODE_PHASE_ABORTED          = 7;
     NODE_PHASE_QUEUED           = 8;
+}
+
+// Phases that task plugins can go through. Not all phases may be applicable to a specific plugin task,
+// but this is the cumulative list that customers may want to know about for their task.
+enum TaskExecutionPhase {
+    TASK_PHASE_UNDEFINED        = 0;
+    TASK_PHASE_QUEUED           = 1;
+    TASK_PHASE_RUNNABLE         = 2;
+    TASK_PHASE_RUNNING          = 3;
+    TASK_PHASE_SUCCEEDED        = 4;
+    TASK_PHASE_FAILED           = 5;
+    TASK_PHASE_ABORTED          = 6;
 }
 
 // Represents the error message from the execution.

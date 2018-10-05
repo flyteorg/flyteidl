@@ -4,7 +4,6 @@ package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "flyteidl/core/execution.proto";
-import "flyteidl/event/event.proto";
 
 // Encapsulation of fields that identify a Flyte node execution entity.
 message NodeExecutionIdentifier {
@@ -56,23 +55,12 @@ message NodeExecutionList {
 
 // Container for node execution details and results.
 message NodeExecutionClosure {
-    // Node Targets
-    // - TaskNode: two different events - one for multistep and one for single step
-    // - BranchNode
-    // - SubworkflowNode
-    oneof target_metadata {
-        event.TaskNodeMetadata task_metadata            = 1;
-        event.BranchNodeMetadata branch_metadata        = 2;
-        // NOTE: if we find that subworkflow metadata is useful, we may want to move this to the workflowEvent
-        event.SubworkflowNodeMetadata workflow_metadata = 3;
-    }
-
     oneof output_result {
-        string output_uri                  = 4;
+        string output_uri                  = 1;
 
         // Error information for the Node
-        core.ExecutionError error          = 5;
+        core.ExecutionError error          = 2;
     }
 
-    core.NodeExecutionPhase phase          = 6;
+    core.NodeExecutionPhase phase          = 3;
 }

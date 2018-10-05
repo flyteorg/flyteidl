@@ -1479,16 +1479,6 @@
     "adminNodeExecutionClosure": {
       "type": "object",
       "properties": {
-        "task_metadata": {
-          "$ref": "#/definitions/eventTaskNodeMetadata"
-        },
-        "branch_metadata": {
-          "$ref": "#/definitions/eventBranchNodeMetadata"
-        },
-        "workflow_metadata": {
-          "$ref": "#/definitions/eventSubworkflowNodeMetadata",
-          "title": "NOTE: if we find that subworkflow metadata is useful, we may want to move this to the workflowEvent"
-        },
         "output_uri": {
           "type": "string"
         },
@@ -1508,19 +1498,6 @@
         "request_id": {
           "type": "string",
           "title": "Unique ID for this request that can be traced between services"
-        },
-        "owner_id": {
-          "type": "string",
-          "title": "the id of the originator (Propeller) of the even"
-        },
-        "execution_id": {
-          "type": "string",
-          "title": "Workflow execution id"
-        },
-        "occurred_at": {
-          "type": "string",
-          "format": "date-time",
-          "title": "This represents the timestamp of when the event occured, not the request timestamp"
         },
         "event": {
           "$ref": "#/definitions/eventNodeExecutionEvent"
@@ -1698,19 +1675,6 @@
           "type": "string",
           "title": "Unique ID for this request that can be traced between services"
         },
-        "owner_id": {
-          "type": "string",
-          "title": "the id of the originator (Propeller) of the even"
-        },
-        "execution_id": {
-          "type": "string",
-          "title": "Workflow execution id"
-        },
-        "occurred_at": {
-          "type": "string",
-          "format": "date-time",
-          "title": "This represents the timestamp of when the event occured, not the request timestamp"
-        },
         "event": {
           "$ref": "#/definitions/eventTaskExecutionEvent"
         }
@@ -1808,19 +1772,6 @@
         "request_id": {
           "type": "string",
           "title": "Unique ID for this request that can be traced between services"
-        },
-        "owner_id": {
-          "type": "string",
-          "title": "the id of the originator (Propeller) of the even"
-        },
-        "execution_id": {
-          "type": "string",
-          "title": "Workflow execution id"
-        },
-        "occurred_at": {
-          "type": "string",
-          "format": "date-time",
-          "title": "This represents the timestamp of when the event occured, not the request timestamp"
         },
         "event": {
           "$ref": "#/definitions/eventWorkflowExecutionEvent"
@@ -2570,6 +2521,20 @@
       "default": "SingleStepTask",
       "title": "- SingleStepTask: Task category that identifies if the system can use default structures in UI, etc to drive the task\nTODO should we add Container type of tasks as a special Class?"
     },
+    "coreTaskExecutionPhase": {
+      "type": "string",
+      "enum": [
+        "TASK_PHASE_UNDEFINED",
+        "TASK_PHASE_QUEUED",
+        "TASK_PHASE_RUNNABLE",
+        "TASK_PHASE_RUNNING",
+        "TASK_PHASE_SUCCEEDED",
+        "TASK_PHASE_FAILED",
+        "TASK_PHASE_ABORTED"
+      ],
+      "default": "TASK_PHASE_UNDEFINED",
+      "description": "Phases that task plugins can go through. Not all phases may be applicable to a specific plugin task,\nbut this is the cumulative list that customers may want to know about for their task."
+    },
     "coreTaskMetadata": {
       "type": "object",
       "properties": {
@@ -2767,32 +2732,33 @@
       },
       "description": "Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,\ndirected acyclic graph."
     },
-    "eventBranchNodeMetadata": {
-      "type": "object"
-    },
     "eventNodeExecutionEvent": {
       "type": "object",
       "properties": {
         "node_id": {
-          "type": "string"
+          "type": "string",
+          "title": "Node ID"
         },
-        "phase": {
-          "$ref": "#/definitions/coreNodeExecutionPhase"
+        "execution_id": {
+          "type": "string",
+          "title": "Workflow execution id"
         },
         "retry_attempt": {
           "type": "integer",
           "format": "int64",
           "title": "Indicates the retry value for the Node Execution"
         },
-        "task_metadata": {
-          "$ref": "#/definitions/eventTaskNodeMetadata"
+        "producer_id": {
+          "type": "string",
+          "title": "the id of the originator (Propeller) of the event"
         },
-        "branch_metadata": {
-          "$ref": "#/definitions/eventBranchNodeMetadata"
+        "phase": {
+          "$ref": "#/definitions/coreNodeExecutionPhase"
         },
-        "workflow_metadata": {
-          "$ref": "#/definitions/eventSubworkflowNodeMetadata",
-          "title": "NOTE: if we find that subworkflow metadata is useful, we may want to move this to the workflowEvent"
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "title": "This timestamp represents when the original event occurred"
         },
         "input_uri": {
           "type": "string"
@@ -2807,17 +2773,46 @@
         }
       }
     },
-    "eventSubworkflowNodeMetadata": {
-      "type": "object"
-    },
     "eventTaskExecutionEvent": {
       "type": "object",
       "properties": {
         "task_id": {
-          "type": "string"
+          "type": "string",
+          "title": "Task execution ID (non-unique per retry)"
+        },
+        "client_id": {
+          "type": "string",
+          "title": "A unique ID given by the client that represents this instance of the task execution + retry"
+        },
+        "parent_id": {
+          "type": "string",
+          "title": "A node or task can be the parent of this task, the event consumer will use\nthe parent_id to relate it\nSpecifally for parents that are:\n- Tasks: this will be the client_id of that task\n- Nodes: this will be the node_id + execution_id + retry constructed as an id"
+        },
+        "phase": {
+          "$ref": "#/definitions/coreTaskExecutionPhase",
+          "title": "Phase associated with the event"
+        },
+        "producer_id": {
+          "type": "string",
+          "title": "id of the process that sent this event, mainly for trace debugging"
         },
         "version_num": {
-          "type": "string"
+          "type": "string",
+          "title": "Optional: a sequence number that denotes the ordering across events.\nThis is useful in situations where a plugin can send multiple events\nfor the same phase"
+        },
+        "log_uri": {
+          "type": "string",
+          "title": "URI of the task's log file"
+        },
+        "retry_attempt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "retry attempt number for this task, ie., 2 for the second attempt"
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "title": "This represents the timestamp of when the event occured, not the request timestamp"
         },
         "custom_info": {
           "$ref": "#/definitions/protobufStruct",
@@ -2826,15 +2821,24 @@
       },
       "description": "Plugins specific execution event information. For tasks like Python, Hive, Spark, DynamicJob."
     },
-    "eventTaskNodeMetadata": {
-      "type": "object",
-      "title": "We can fill these in as we find out what SDK/UI/Admin want to display"
-    },
     "eventWorkflowExecutionEvent": {
       "type": "object",
       "properties": {
+        "execution_id": {
+          "type": "string",
+          "title": "Workflow execution id"
+        },
+        "producer_id": {
+          "type": "string",
+          "title": "the id of the originator (Propeller) of the event"
+        },
         "phase": {
           "$ref": "#/definitions/coreWorkflowExecutionPhase"
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "title": "This timestamp represents when the original event occurred"
         },
         "output_uri": {
           "type": "string",

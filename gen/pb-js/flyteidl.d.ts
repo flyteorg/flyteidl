@@ -3535,6 +3535,17 @@ export namespace flyteidl {
             NODE_PHASE_QUEUED = 8
         }
 
+        /** TaskExecutionPhase enum. */
+        enum TaskExecutionPhase {
+            TASK_PHASE_UNDEFINED = 0,
+            TASK_PHASE_QUEUED = 1,
+            TASK_PHASE_RUNNABLE = 2,
+            TASK_PHASE_RUNNING = 3,
+            TASK_PHASE_SUCCEEDED = 4,
+            TASK_PHASE_FAILED = 5,
+            TASK_PHASE_ABORTED = 6
+        }
+
         /** Properties of an ExecutionError. */
         interface IExecutionError {
 
@@ -4065,8 +4076,17 @@ export namespace flyteidl {
         /** Properties of a WorkflowExecutionEvent. */
         interface IWorkflowExecutionEvent {
 
+            /** WorkflowExecutionEvent executionId */
+            executionId?: (string|null);
+
+            /** WorkflowExecutionEvent producerId */
+            producerId?: (string|null);
+
             /** WorkflowExecutionEvent phase */
             phase?: (flyteidl.core.WorkflowExecutionPhase|null);
+
+            /** WorkflowExecutionEvent occurredAt */
+            occurredAt?: (google.protobuf.ITimestamp|null);
 
             /** WorkflowExecutionEvent outputUri */
             outputUri?: (string|null);
@@ -4084,8 +4104,17 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.event.IWorkflowExecutionEvent);
 
+            /** WorkflowExecutionEvent executionId. */
+            public executionId: string;
+
+            /** WorkflowExecutionEvent producerId. */
+            public producerId: string;
+
             /** WorkflowExecutionEvent phase. */
             public phase: flyteidl.core.WorkflowExecutionPhase;
+
+            /** WorkflowExecutionEvent occurredAt. */
+            public occurredAt?: (google.protobuf.ITimestamp|null);
 
             /** WorkflowExecutionEvent outputUri. */
             public outputUri: string;
@@ -4135,20 +4164,20 @@ export namespace flyteidl {
             /** NodeExecutionEvent nodeId */
             nodeId?: (string|null);
 
-            /** NodeExecutionEvent phase */
-            phase?: (flyteidl.core.NodeExecutionPhase|null);
+            /** NodeExecutionEvent executionId */
+            executionId?: (string|null);
 
             /** NodeExecutionEvent retryAttempt */
             retryAttempt?: (number|null);
 
-            /** NodeExecutionEvent taskMetadata */
-            taskMetadata?: (flyteidl.event.ITaskNodeMetadata|null);
+            /** NodeExecutionEvent producerId */
+            producerId?: (string|null);
 
-            /** NodeExecutionEvent branchMetadata */
-            branchMetadata?: (flyteidl.event.IBranchNodeMetadata|null);
+            /** NodeExecutionEvent phase */
+            phase?: (flyteidl.core.NodeExecutionPhase|null);
 
-            /** NodeExecutionEvent workflowMetadata */
-            workflowMetadata?: (flyteidl.event.ISubworkflowNodeMetadata|null);
+            /** NodeExecutionEvent occurredAt */
+            occurredAt?: (google.protobuf.ITimestamp|null);
 
             /** NodeExecutionEvent inputUri */
             inputUri?: (string|null);
@@ -4172,20 +4201,20 @@ export namespace flyteidl {
             /** NodeExecutionEvent nodeId. */
             public nodeId: string;
 
-            /** NodeExecutionEvent phase. */
-            public phase: flyteidl.core.NodeExecutionPhase;
+            /** NodeExecutionEvent executionId. */
+            public executionId: string;
 
             /** NodeExecutionEvent retryAttempt. */
             public retryAttempt: number;
 
-            /** NodeExecutionEvent taskMetadata. */
-            public taskMetadata?: (flyteidl.event.ITaskNodeMetadata|null);
+            /** NodeExecutionEvent producerId. */
+            public producerId: string;
 
-            /** NodeExecutionEvent branchMetadata. */
-            public branchMetadata?: (flyteidl.event.IBranchNodeMetadata|null);
+            /** NodeExecutionEvent phase. */
+            public phase: flyteidl.core.NodeExecutionPhase;
 
-            /** NodeExecutionEvent workflowMetadata. */
-            public workflowMetadata?: (flyteidl.event.ISubworkflowNodeMetadata|null);
+            /** NodeExecutionEvent occurredAt. */
+            public occurredAt?: (google.protobuf.ITimestamp|null);
 
             /** NodeExecutionEvent inputUri. */
             public inputUri: string;
@@ -4195,9 +4224,6 @@ export namespace flyteidl {
 
             /** NodeExecutionEvent error. */
             public error?: (flyteidl.core.IExecutionError|null);
-
-            /** NodeExecutionEvent targetMetadata. */
-            public targetMetadata?: ("taskMetadata"|"branchMetadata"|"workflowMetadata");
 
             /** NodeExecutionEvent outputResult. */
             public outputResult?: ("outputUri"|"error");
@@ -4235,152 +4261,35 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a TaskNodeMetadata. */
-        interface ITaskNodeMetadata {
-        }
-
-        /** Represents a TaskNodeMetadata. */
-        class TaskNodeMetadata implements ITaskNodeMetadata {
-
-            /**
-             * Constructs a new TaskNodeMetadata.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.event.ITaskNodeMetadata);
-
-            /**
-             * Creates a new TaskNodeMetadata instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns TaskNodeMetadata instance
-             */
-            public static create(properties?: flyteidl.event.ITaskNodeMetadata): flyteidl.event.TaskNodeMetadata;
-
-            /**
-             * Encodes the specified TaskNodeMetadata message. Does not implicitly {@link flyteidl.event.TaskNodeMetadata.verify|verify} messages.
-             * @param message TaskNodeMetadata message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.event.ITaskNodeMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a TaskNodeMetadata message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns TaskNodeMetadata
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.TaskNodeMetadata;
-
-            /**
-             * Verifies a TaskNodeMetadata message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a BranchNodeMetadata. */
-        interface IBranchNodeMetadata {
-        }
-
-        /** Represents a BranchNodeMetadata. */
-        class BranchNodeMetadata implements IBranchNodeMetadata {
-
-            /**
-             * Constructs a new BranchNodeMetadata.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.event.IBranchNodeMetadata);
-
-            /**
-             * Creates a new BranchNodeMetadata instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns BranchNodeMetadata instance
-             */
-            public static create(properties?: flyteidl.event.IBranchNodeMetadata): flyteidl.event.BranchNodeMetadata;
-
-            /**
-             * Encodes the specified BranchNodeMetadata message. Does not implicitly {@link flyteidl.event.BranchNodeMetadata.verify|verify} messages.
-             * @param message BranchNodeMetadata message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.event.IBranchNodeMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a BranchNodeMetadata message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns BranchNodeMetadata
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.BranchNodeMetadata;
-
-            /**
-             * Verifies a BranchNodeMetadata message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a SubworkflowNodeMetadata. */
-        interface ISubworkflowNodeMetadata {
-        }
-
-        /** Represents a SubworkflowNodeMetadata. */
-        class SubworkflowNodeMetadata implements ISubworkflowNodeMetadata {
-
-            /**
-             * Constructs a new SubworkflowNodeMetadata.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.event.ISubworkflowNodeMetadata);
-
-            /**
-             * Creates a new SubworkflowNodeMetadata instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns SubworkflowNodeMetadata instance
-             */
-            public static create(properties?: flyteidl.event.ISubworkflowNodeMetadata): flyteidl.event.SubworkflowNodeMetadata;
-
-            /**
-             * Encodes the specified SubworkflowNodeMetadata message. Does not implicitly {@link flyteidl.event.SubworkflowNodeMetadata.verify|verify} messages.
-             * @param message SubworkflowNodeMetadata message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.event.ISubworkflowNodeMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a SubworkflowNodeMetadata message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns SubworkflowNodeMetadata
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.SubworkflowNodeMetadata;
-
-            /**
-             * Verifies a SubworkflowNodeMetadata message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of a TaskExecutionEvent. */
         interface ITaskExecutionEvent {
 
             /** TaskExecutionEvent taskId */
             taskId?: (string|null);
 
+            /** TaskExecutionEvent clientId */
+            clientId?: (string|null);
+
+            /** TaskExecutionEvent parentId */
+            parentId?: (string|null);
+
+            /** TaskExecutionEvent phase */
+            phase?: (flyteidl.core.TaskExecutionPhase|null);
+
+            /** TaskExecutionEvent producerId */
+            producerId?: (string|null);
+
             /** TaskExecutionEvent versionNum */
             versionNum?: (string|null);
+
+            /** TaskExecutionEvent logUri */
+            logUri?: (string|null);
+
+            /** TaskExecutionEvent retryAttempt */
+            retryAttempt?: (number|null);
+
+            /** TaskExecutionEvent occurredAt */
+            occurredAt?: (google.protobuf.ITimestamp|null);
 
             /** TaskExecutionEvent customInfo */
             customInfo?: (google.protobuf.IStruct|null);
@@ -4398,8 +4307,29 @@ export namespace flyteidl {
             /** TaskExecutionEvent taskId. */
             public taskId: string;
 
+            /** TaskExecutionEvent clientId. */
+            public clientId: string;
+
+            /** TaskExecutionEvent parentId. */
+            public parentId: string;
+
+            /** TaskExecutionEvent phase. */
+            public phase: flyteidl.core.TaskExecutionPhase;
+
+            /** TaskExecutionEvent producerId. */
+            public producerId: string;
+
             /** TaskExecutionEvent versionNum. */
             public versionNum: string;
+
+            /** TaskExecutionEvent logUri. */
+            public logUri: string;
+
+            /** TaskExecutionEvent retryAttempt. */
+            public retryAttempt: number;
+
+            /** TaskExecutionEvent occurredAt. */
+            public occurredAt?: (google.protobuf.ITimestamp|null);
 
             /** TaskExecutionEvent customInfo. */
             public customInfo?: (google.protobuf.IStruct|null);
@@ -4824,15 +4754,6 @@ export namespace flyteidl {
             /** WorkflowExecutionEventRequest requestId */
             requestId?: (string|null);
 
-            /** WorkflowExecutionEventRequest ownerId */
-            ownerId?: (string|null);
-
-            /** WorkflowExecutionEventRequest executionId */
-            executionId?: (string|null);
-
-            /** WorkflowExecutionEventRequest occurredAt */
-            occurredAt?: (google.protobuf.ITimestamp|null);
-
             /** WorkflowExecutionEventRequest event */
             event?: (flyteidl.event.IWorkflowExecutionEvent|null);
         }
@@ -4848,15 +4769,6 @@ export namespace flyteidl {
 
             /** WorkflowExecutionEventRequest requestId. */
             public requestId: string;
-
-            /** WorkflowExecutionEventRequest ownerId. */
-            public ownerId: string;
-
-            /** WorkflowExecutionEventRequest executionId. */
-            public executionId: string;
-
-            /** WorkflowExecutionEventRequest occurredAt. */
-            public occurredAt?: (google.protobuf.ITimestamp|null);
 
             /** WorkflowExecutionEventRequest event. */
             public event?: (flyteidl.event.IWorkflowExecutionEvent|null);
@@ -4946,15 +4858,6 @@ export namespace flyteidl {
             /** NodeExecutionEventRequest requestId */
             requestId?: (string|null);
 
-            /** NodeExecutionEventRequest ownerId */
-            ownerId?: (string|null);
-
-            /** NodeExecutionEventRequest executionId */
-            executionId?: (string|null);
-
-            /** NodeExecutionEventRequest occurredAt */
-            occurredAt?: (google.protobuf.ITimestamp|null);
-
             /** NodeExecutionEventRequest event */
             event?: (flyteidl.event.INodeExecutionEvent|null);
         }
@@ -4970,15 +4873,6 @@ export namespace flyteidl {
 
             /** NodeExecutionEventRequest requestId. */
             public requestId: string;
-
-            /** NodeExecutionEventRequest ownerId. */
-            public ownerId: string;
-
-            /** NodeExecutionEventRequest executionId. */
-            public executionId: string;
-
-            /** NodeExecutionEventRequest occurredAt. */
-            public occurredAt?: (google.protobuf.ITimestamp|null);
 
             /** NodeExecutionEventRequest event. */
             public event?: (flyteidl.event.INodeExecutionEvent|null);
@@ -5068,15 +4962,6 @@ export namespace flyteidl {
             /** TaskExecutionEventRequest requestId */
             requestId?: (string|null);
 
-            /** TaskExecutionEventRequest ownerId */
-            ownerId?: (string|null);
-
-            /** TaskExecutionEventRequest executionId */
-            executionId?: (string|null);
-
-            /** TaskExecutionEventRequest occurredAt */
-            occurredAt?: (google.protobuf.ITimestamp|null);
-
             /** TaskExecutionEventRequest event */
             event?: (flyteidl.event.ITaskExecutionEvent|null);
         }
@@ -5092,15 +4977,6 @@ export namespace flyteidl {
 
             /** TaskExecutionEventRequest requestId. */
             public requestId: string;
-
-            /** TaskExecutionEventRequest ownerId. */
-            public ownerId: string;
-
-            /** TaskExecutionEventRequest executionId. */
-            public executionId: string;
-
-            /** TaskExecutionEventRequest occurredAt. */
-            public occurredAt?: (google.protobuf.ITimestamp|null);
 
             /** TaskExecutionEventRequest event. */
             public event?: (flyteidl.event.ITaskExecutionEvent|null);
@@ -6686,15 +6562,6 @@ export namespace flyteidl {
         /** Properties of a NodeExecutionClosure. */
         interface INodeExecutionClosure {
 
-            /** NodeExecutionClosure taskMetadata */
-            taskMetadata?: (flyteidl.event.ITaskNodeMetadata|null);
-
-            /** NodeExecutionClosure branchMetadata */
-            branchMetadata?: (flyteidl.event.IBranchNodeMetadata|null);
-
-            /** NodeExecutionClosure workflowMetadata */
-            workflowMetadata?: (flyteidl.event.ISubworkflowNodeMetadata|null);
-
             /** NodeExecutionClosure outputUri */
             outputUri?: (string|null);
 
@@ -6714,15 +6581,6 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.INodeExecutionClosure);
 
-            /** NodeExecutionClosure taskMetadata. */
-            public taskMetadata?: (flyteidl.event.ITaskNodeMetadata|null);
-
-            /** NodeExecutionClosure branchMetadata. */
-            public branchMetadata?: (flyteidl.event.IBranchNodeMetadata|null);
-
-            /** NodeExecutionClosure workflowMetadata. */
-            public workflowMetadata?: (flyteidl.event.ISubworkflowNodeMetadata|null);
-
             /** NodeExecutionClosure outputUri. */
             public outputUri: string;
 
@@ -6731,9 +6589,6 @@ export namespace flyteidl {
 
             /** NodeExecutionClosure phase. */
             public phase: flyteidl.core.NodeExecutionPhase;
-
-            /** NodeExecutionClosure targetMetadata. */
-            public targetMetadata?: ("taskMetadata"|"branchMetadata"|"workflowMetadata");
 
             /** NodeExecutionClosure outputResult. */
             public outputResult?: ("outputUri"|"error");

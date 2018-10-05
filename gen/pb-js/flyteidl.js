@@ -8546,6 +8546,30 @@ export const flyteidl = $root.flyteidl = (() => {
             return values;
         })();
 
+        /**
+         * TaskExecutionPhase enum.
+         * @name flyteidl.core.TaskExecutionPhase
+         * @enum {string}
+         * @property {number} TASK_PHASE_UNDEFINED=0 TASK_PHASE_UNDEFINED value
+         * @property {number} TASK_PHASE_QUEUED=1 TASK_PHASE_QUEUED value
+         * @property {number} TASK_PHASE_RUNNABLE=2 TASK_PHASE_RUNNABLE value
+         * @property {number} TASK_PHASE_RUNNING=3 TASK_PHASE_RUNNING value
+         * @property {number} TASK_PHASE_SUCCEEDED=4 TASK_PHASE_SUCCEEDED value
+         * @property {number} TASK_PHASE_FAILED=5 TASK_PHASE_FAILED value
+         * @property {number} TASK_PHASE_ABORTED=6 TASK_PHASE_ABORTED value
+         */
+        core.TaskExecutionPhase = (function() {
+            const valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "TASK_PHASE_UNDEFINED"] = 0;
+            values[valuesById[1] = "TASK_PHASE_QUEUED"] = 1;
+            values[valuesById[2] = "TASK_PHASE_RUNNABLE"] = 2;
+            values[valuesById[3] = "TASK_PHASE_RUNNING"] = 3;
+            values[valuesById[4] = "TASK_PHASE_SUCCEEDED"] = 4;
+            values[valuesById[5] = "TASK_PHASE_FAILED"] = 5;
+            values[valuesById[6] = "TASK_PHASE_ABORTED"] = 6;
+            return values;
+        })();
+
         core.ExecutionError = (function() {
 
             /**
@@ -9846,7 +9870,10 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a WorkflowExecutionEvent.
              * @memberof flyteidl.event
              * @interface IWorkflowExecutionEvent
+             * @property {string|null} [executionId] WorkflowExecutionEvent executionId
+             * @property {string|null} [producerId] WorkflowExecutionEvent producerId
              * @property {flyteidl.core.WorkflowExecutionPhase|null} [phase] WorkflowExecutionEvent phase
+             * @property {google.protobuf.ITimestamp|null} [occurredAt] WorkflowExecutionEvent occurredAt
              * @property {string|null} [outputUri] WorkflowExecutionEvent outputUri
              * @property {flyteidl.core.IExecutionError|null} [error] WorkflowExecutionEvent error
              */
@@ -9867,12 +9894,36 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
+             * WorkflowExecutionEvent executionId.
+             * @member {string} executionId
+             * @memberof flyteidl.event.WorkflowExecutionEvent
+             * @instance
+             */
+            WorkflowExecutionEvent.prototype.executionId = "";
+
+            /**
+             * WorkflowExecutionEvent producerId.
+             * @member {string} producerId
+             * @memberof flyteidl.event.WorkflowExecutionEvent
+             * @instance
+             */
+            WorkflowExecutionEvent.prototype.producerId = "";
+
+            /**
              * WorkflowExecutionEvent phase.
              * @member {flyteidl.core.WorkflowExecutionPhase} phase
              * @memberof flyteidl.event.WorkflowExecutionEvent
              * @instance
              */
             WorkflowExecutionEvent.prototype.phase = 0;
+
+            /**
+             * WorkflowExecutionEvent occurredAt.
+             * @member {google.protobuf.ITimestamp|null|undefined} occurredAt
+             * @memberof flyteidl.event.WorkflowExecutionEvent
+             * @instance
+             */
+            WorkflowExecutionEvent.prototype.occurredAt = null;
 
             /**
              * WorkflowExecutionEvent outputUri.
@@ -9928,12 +9979,18 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowExecutionEvent.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
+                if (message.executionId != null && message.hasOwnProperty("executionId"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.executionId);
+                if (message.producerId != null && message.hasOwnProperty("producerId"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.producerId);
                 if (message.phase != null && message.hasOwnProperty("phase"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.phase);
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.phase);
+                if (message.occurredAt != null && message.hasOwnProperty("occurredAt"))
+                    $root.google.protobuf.Timestamp.encode(message.occurredAt, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.outputUri != null && message.hasOwnProperty("outputUri"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.outputUri);
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.outputUri);
                 if (message.error != null && message.hasOwnProperty("error"))
-                    $root.flyteidl.core.ExecutionError.encode(message.error, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    $root.flyteidl.core.ExecutionError.encode(message.error, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 return writer;
             };
 
@@ -9956,12 +10013,21 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.phase = reader.int32();
+                        message.executionId = reader.string();
                         break;
                     case 2:
-                        message.outputUri = reader.string();
+                        message.producerId = reader.string();
                         break;
                     case 3:
+                        message.phase = reader.int32();
+                        break;
+                    case 4:
+                        message.occurredAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.outputUri = reader.string();
+                        break;
+                    case 6:
                         message.error = $root.flyteidl.core.ExecutionError.decode(reader, reader.uint32());
                         break;
                     default:
@@ -9984,6 +10050,12 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 let properties = {};
+                if (message.executionId != null && message.hasOwnProperty("executionId"))
+                    if (!$util.isString(message.executionId))
+                        return "executionId: string expected";
+                if (message.producerId != null && message.hasOwnProperty("producerId"))
+                    if (!$util.isString(message.producerId))
+                        return "producerId: string expected";
                 if (message.phase != null && message.hasOwnProperty("phase"))
                     switch (message.phase) {
                     default:
@@ -9999,6 +10071,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 8:
                         break;
                     }
+                if (message.occurredAt != null && message.hasOwnProperty("occurredAt")) {
+                    let error = $root.google.protobuf.Timestamp.verify(message.occurredAt);
+                    if (error)
+                        return "occurredAt." + error;
+                }
                 if (message.outputUri != null && message.hasOwnProperty("outputUri")) {
                     properties.outputResult = 1;
                     if (!$util.isString(message.outputUri))
@@ -10027,11 +10104,11 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.event
              * @interface INodeExecutionEvent
              * @property {string|null} [nodeId] NodeExecutionEvent nodeId
-             * @property {flyteidl.core.NodeExecutionPhase|null} [phase] NodeExecutionEvent phase
+             * @property {string|null} [executionId] NodeExecutionEvent executionId
              * @property {number|null} [retryAttempt] NodeExecutionEvent retryAttempt
-             * @property {flyteidl.event.ITaskNodeMetadata|null} [taskMetadata] NodeExecutionEvent taskMetadata
-             * @property {flyteidl.event.IBranchNodeMetadata|null} [branchMetadata] NodeExecutionEvent branchMetadata
-             * @property {flyteidl.event.ISubworkflowNodeMetadata|null} [workflowMetadata] NodeExecutionEvent workflowMetadata
+             * @property {string|null} [producerId] NodeExecutionEvent producerId
+             * @property {flyteidl.core.NodeExecutionPhase|null} [phase] NodeExecutionEvent phase
+             * @property {google.protobuf.ITimestamp|null} [occurredAt] NodeExecutionEvent occurredAt
              * @property {string|null} [inputUri] NodeExecutionEvent inputUri
              * @property {string|null} [outputUri] NodeExecutionEvent outputUri
              * @property {flyteidl.core.IExecutionError|null} [error] NodeExecutionEvent error
@@ -10061,12 +10138,12 @@ export const flyteidl = $root.flyteidl = (() => {
             NodeExecutionEvent.prototype.nodeId = "";
 
             /**
-             * NodeExecutionEvent phase.
-             * @member {flyteidl.core.NodeExecutionPhase} phase
+             * NodeExecutionEvent executionId.
+             * @member {string} executionId
              * @memberof flyteidl.event.NodeExecutionEvent
              * @instance
              */
-            NodeExecutionEvent.prototype.phase = 0;
+            NodeExecutionEvent.prototype.executionId = "";
 
             /**
              * NodeExecutionEvent retryAttempt.
@@ -10077,28 +10154,28 @@ export const flyteidl = $root.flyteidl = (() => {
             NodeExecutionEvent.prototype.retryAttempt = 0;
 
             /**
-             * NodeExecutionEvent taskMetadata.
-             * @member {flyteidl.event.ITaskNodeMetadata|null|undefined} taskMetadata
+             * NodeExecutionEvent producerId.
+             * @member {string} producerId
              * @memberof flyteidl.event.NodeExecutionEvent
              * @instance
              */
-            NodeExecutionEvent.prototype.taskMetadata = null;
+            NodeExecutionEvent.prototype.producerId = "";
 
             /**
-             * NodeExecutionEvent branchMetadata.
-             * @member {flyteidl.event.IBranchNodeMetadata|null|undefined} branchMetadata
+             * NodeExecutionEvent phase.
+             * @member {flyteidl.core.NodeExecutionPhase} phase
              * @memberof flyteidl.event.NodeExecutionEvent
              * @instance
              */
-            NodeExecutionEvent.prototype.branchMetadata = null;
+            NodeExecutionEvent.prototype.phase = 0;
 
             /**
-             * NodeExecutionEvent workflowMetadata.
-             * @member {flyteidl.event.ISubworkflowNodeMetadata|null|undefined} workflowMetadata
+             * NodeExecutionEvent occurredAt.
+             * @member {google.protobuf.ITimestamp|null|undefined} occurredAt
              * @memberof flyteidl.event.NodeExecutionEvent
              * @instance
              */
-            NodeExecutionEvent.prototype.workflowMetadata = null;
+            NodeExecutionEvent.prototype.occurredAt = null;
 
             /**
              * NodeExecutionEvent inputUri.
@@ -10126,17 +10203,6 @@ export const flyteidl = $root.flyteidl = (() => {
 
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
-
-            /**
-             * NodeExecutionEvent targetMetadata.
-             * @member {"taskMetadata"|"branchMetadata"|"workflowMetadata"|undefined} targetMetadata
-             * @memberof flyteidl.event.NodeExecutionEvent
-             * @instance
-             */
-            Object.defineProperty(NodeExecutionEvent.prototype, "targetMetadata", {
-                get: $util.oneOfGetter($oneOfFields = ["taskMetadata", "branchMetadata", "workflowMetadata"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
 
             /**
              * NodeExecutionEvent outputResult.
@@ -10175,22 +10241,22 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.nodeId != null && message.hasOwnProperty("nodeId"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.nodeId);
-                if (message.phase != null && message.hasOwnProperty("phase"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.phase);
+                if (message.executionId != null && message.hasOwnProperty("executionId"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.executionId);
                 if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
-                    writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.retryAttempt);
-                if (message.taskMetadata != null && message.hasOwnProperty("taskMetadata"))
-                    $root.flyteidl.event.TaskNodeMetadata.encode(message.taskMetadata, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                if (message.branchMetadata != null && message.hasOwnProperty("branchMetadata"))
-                    $root.flyteidl.event.BranchNodeMetadata.encode(message.branchMetadata, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                if (message.workflowMetadata != null && message.hasOwnProperty("workflowMetadata"))
-                    $root.flyteidl.event.SubworkflowNodeMetadata.encode(message.workflowMetadata, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                    writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.retryAttempt);
+                if (message.producerId != null && message.hasOwnProperty("producerId"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.producerId);
+                if (message.phase != null && message.hasOwnProperty("phase"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.phase);
+                if (message.occurredAt != null && message.hasOwnProperty("occurredAt"))
+                    $root.google.protobuf.Timestamp.encode(message.occurredAt, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 if (message.inputUri != null && message.hasOwnProperty("inputUri"))
-                    writer.uint32(/* id 9, wireType 2 =*/74).string(message.inputUri);
+                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.inputUri);
                 if (message.outputUri != null && message.hasOwnProperty("outputUri"))
-                    writer.uint32(/* id 10, wireType 2 =*/82).string(message.outputUri);
+                    writer.uint32(/* id 8, wireType 2 =*/66).string(message.outputUri);
                 if (message.error != null && message.hasOwnProperty("error"))
-                    $root.flyteidl.core.ExecutionError.encode(message.error, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
+                    $root.flyteidl.core.ExecutionError.encode(message.error, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 return writer;
             };
 
@@ -10216,27 +10282,27 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.nodeId = reader.string();
                         break;
                     case 2:
-                        message.phase = reader.int32();
+                        message.executionId = reader.string();
                         break;
-                    case 4:
+                    case 3:
                         message.retryAttempt = reader.uint32();
                         break;
+                    case 4:
+                        message.producerId = reader.string();
+                        break;
                     case 5:
-                        message.taskMetadata = $root.flyteidl.event.TaskNodeMetadata.decode(reader, reader.uint32());
+                        message.phase = reader.int32();
                         break;
                     case 6:
-                        message.branchMetadata = $root.flyteidl.event.BranchNodeMetadata.decode(reader, reader.uint32());
+                        message.occurredAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
                         break;
                     case 7:
-                        message.workflowMetadata = $root.flyteidl.event.SubworkflowNodeMetadata.decode(reader, reader.uint32());
-                        break;
-                    case 9:
                         message.inputUri = reader.string();
                         break;
-                    case 10:
+                    case 8:
                         message.outputUri = reader.string();
                         break;
-                    case 11:
+                    case 9:
                         message.error = $root.flyteidl.core.ExecutionError.decode(reader, reader.uint32());
                         break;
                     default:
@@ -10262,6 +10328,15 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.nodeId != null && message.hasOwnProperty("nodeId"))
                     if (!$util.isString(message.nodeId))
                         return "nodeId: string expected";
+                if (message.executionId != null && message.hasOwnProperty("executionId"))
+                    if (!$util.isString(message.executionId))
+                        return "executionId: string expected";
+                if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
+                    if (!$util.isInteger(message.retryAttempt))
+                        return "retryAttempt: integer expected";
+                if (message.producerId != null && message.hasOwnProperty("producerId"))
+                    if (!$util.isString(message.producerId))
+                        return "producerId: string expected";
                 if (message.phase != null && message.hasOwnProperty("phase"))
                     switch (message.phase) {
                     default:
@@ -10277,36 +10352,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 8:
                         break;
                     }
-                if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
-                    if (!$util.isInteger(message.retryAttempt))
-                        return "retryAttempt: integer expected";
-                if (message.taskMetadata != null && message.hasOwnProperty("taskMetadata")) {
-                    properties.targetMetadata = 1;
-                    {
-                        let error = $root.flyteidl.event.TaskNodeMetadata.verify(message.taskMetadata);
-                        if (error)
-                            return "taskMetadata." + error;
-                    }
-                }
-                if (message.branchMetadata != null && message.hasOwnProperty("branchMetadata")) {
-                    if (properties.targetMetadata === 1)
-                        return "targetMetadata: multiple values";
-                    properties.targetMetadata = 1;
-                    {
-                        let error = $root.flyteidl.event.BranchNodeMetadata.verify(message.branchMetadata);
-                        if (error)
-                            return "branchMetadata." + error;
-                    }
-                }
-                if (message.workflowMetadata != null && message.hasOwnProperty("workflowMetadata")) {
-                    if (properties.targetMetadata === 1)
-                        return "targetMetadata: multiple values";
-                    properties.targetMetadata = 1;
-                    {
-                        let error = $root.flyteidl.event.SubworkflowNodeMetadata.verify(message.workflowMetadata);
-                        if (error)
-                            return "workflowMetadata." + error;
-                    }
+                if (message.occurredAt != null && message.hasOwnProperty("occurredAt")) {
+                    let error = $root.google.protobuf.Timestamp.verify(message.occurredAt);
+                    if (error)
+                        return "occurredAt." + error;
                 }
                 if (message.inputUri != null && message.hasOwnProperty("inputUri"))
                     if (!$util.isString(message.inputUri))
@@ -10332,285 +10381,6 @@ export const flyteidl = $root.flyteidl = (() => {
             return NodeExecutionEvent;
         })();
 
-        event.TaskNodeMetadata = (function() {
-
-            /**
-             * Properties of a TaskNodeMetadata.
-             * @memberof flyteidl.event
-             * @interface ITaskNodeMetadata
-             */
-
-            /**
-             * Constructs a new TaskNodeMetadata.
-             * @memberof flyteidl.event
-             * @classdesc Represents a TaskNodeMetadata.
-             * @implements ITaskNodeMetadata
-             * @constructor
-             * @param {flyteidl.event.ITaskNodeMetadata=} [properties] Properties to set
-             */
-            function TaskNodeMetadata(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Creates a new TaskNodeMetadata instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.event.TaskNodeMetadata
-             * @static
-             * @param {flyteidl.event.ITaskNodeMetadata=} [properties] Properties to set
-             * @returns {flyteidl.event.TaskNodeMetadata} TaskNodeMetadata instance
-             */
-            TaskNodeMetadata.create = function create(properties) {
-                return new TaskNodeMetadata(properties);
-            };
-
-            /**
-             * Encodes the specified TaskNodeMetadata message. Does not implicitly {@link flyteidl.event.TaskNodeMetadata.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.event.TaskNodeMetadata
-             * @static
-             * @param {flyteidl.event.ITaskNodeMetadata} message TaskNodeMetadata message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            TaskNodeMetadata.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                return writer;
-            };
-
-            /**
-             * Decodes a TaskNodeMetadata message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.event.TaskNodeMetadata
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.event.TaskNodeMetadata} TaskNodeMetadata
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            TaskNodeMetadata.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.TaskNodeMetadata();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a TaskNodeMetadata message.
-             * @function verify
-             * @memberof flyteidl.event.TaskNodeMetadata
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            TaskNodeMetadata.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                return null;
-            };
-
-            return TaskNodeMetadata;
-        })();
-
-        event.BranchNodeMetadata = (function() {
-
-            /**
-             * Properties of a BranchNodeMetadata.
-             * @memberof flyteidl.event
-             * @interface IBranchNodeMetadata
-             */
-
-            /**
-             * Constructs a new BranchNodeMetadata.
-             * @memberof flyteidl.event
-             * @classdesc Represents a BranchNodeMetadata.
-             * @implements IBranchNodeMetadata
-             * @constructor
-             * @param {flyteidl.event.IBranchNodeMetadata=} [properties] Properties to set
-             */
-            function BranchNodeMetadata(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Creates a new BranchNodeMetadata instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.event.BranchNodeMetadata
-             * @static
-             * @param {flyteidl.event.IBranchNodeMetadata=} [properties] Properties to set
-             * @returns {flyteidl.event.BranchNodeMetadata} BranchNodeMetadata instance
-             */
-            BranchNodeMetadata.create = function create(properties) {
-                return new BranchNodeMetadata(properties);
-            };
-
-            /**
-             * Encodes the specified BranchNodeMetadata message. Does not implicitly {@link flyteidl.event.BranchNodeMetadata.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.event.BranchNodeMetadata
-             * @static
-             * @param {flyteidl.event.IBranchNodeMetadata} message BranchNodeMetadata message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            BranchNodeMetadata.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                return writer;
-            };
-
-            /**
-             * Decodes a BranchNodeMetadata message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.event.BranchNodeMetadata
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.event.BranchNodeMetadata} BranchNodeMetadata
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            BranchNodeMetadata.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.BranchNodeMetadata();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a BranchNodeMetadata message.
-             * @function verify
-             * @memberof flyteidl.event.BranchNodeMetadata
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            BranchNodeMetadata.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                return null;
-            };
-
-            return BranchNodeMetadata;
-        })();
-
-        event.SubworkflowNodeMetadata = (function() {
-
-            /**
-             * Properties of a SubworkflowNodeMetadata.
-             * @memberof flyteidl.event
-             * @interface ISubworkflowNodeMetadata
-             */
-
-            /**
-             * Constructs a new SubworkflowNodeMetadata.
-             * @memberof flyteidl.event
-             * @classdesc Represents a SubworkflowNodeMetadata.
-             * @implements ISubworkflowNodeMetadata
-             * @constructor
-             * @param {flyteidl.event.ISubworkflowNodeMetadata=} [properties] Properties to set
-             */
-            function SubworkflowNodeMetadata(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Creates a new SubworkflowNodeMetadata instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.event.SubworkflowNodeMetadata
-             * @static
-             * @param {flyteidl.event.ISubworkflowNodeMetadata=} [properties] Properties to set
-             * @returns {flyteidl.event.SubworkflowNodeMetadata} SubworkflowNodeMetadata instance
-             */
-            SubworkflowNodeMetadata.create = function create(properties) {
-                return new SubworkflowNodeMetadata(properties);
-            };
-
-            /**
-             * Encodes the specified SubworkflowNodeMetadata message. Does not implicitly {@link flyteidl.event.SubworkflowNodeMetadata.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.event.SubworkflowNodeMetadata
-             * @static
-             * @param {flyteidl.event.ISubworkflowNodeMetadata} message SubworkflowNodeMetadata message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            SubworkflowNodeMetadata.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                return writer;
-            };
-
-            /**
-             * Decodes a SubworkflowNodeMetadata message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.event.SubworkflowNodeMetadata
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.event.SubworkflowNodeMetadata} SubworkflowNodeMetadata
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            SubworkflowNodeMetadata.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.SubworkflowNodeMetadata();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a SubworkflowNodeMetadata message.
-             * @function verify
-             * @memberof flyteidl.event.SubworkflowNodeMetadata
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            SubworkflowNodeMetadata.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                return null;
-            };
-
-            return SubworkflowNodeMetadata;
-        })();
-
         event.TaskExecutionEvent = (function() {
 
             /**
@@ -10618,7 +10388,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.event
              * @interface ITaskExecutionEvent
              * @property {string|null} [taskId] TaskExecutionEvent taskId
+             * @property {string|null} [clientId] TaskExecutionEvent clientId
+             * @property {string|null} [parentId] TaskExecutionEvent parentId
+             * @property {flyteidl.core.TaskExecutionPhase|null} [phase] TaskExecutionEvent phase
+             * @property {string|null} [producerId] TaskExecutionEvent producerId
              * @property {string|null} [versionNum] TaskExecutionEvent versionNum
+             * @property {string|null} [logUri] TaskExecutionEvent logUri
+             * @property {number|null} [retryAttempt] TaskExecutionEvent retryAttempt
+             * @property {google.protobuf.ITimestamp|null} [occurredAt] TaskExecutionEvent occurredAt
              * @property {google.protobuf.IStruct|null} [customInfo] TaskExecutionEvent customInfo
              */
 
@@ -10646,12 +10423,68 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskExecutionEvent.prototype.taskId = "";
 
             /**
+             * TaskExecutionEvent clientId.
+             * @member {string} clientId
+             * @memberof flyteidl.event.TaskExecutionEvent
+             * @instance
+             */
+            TaskExecutionEvent.prototype.clientId = "";
+
+            /**
+             * TaskExecutionEvent parentId.
+             * @member {string} parentId
+             * @memberof flyteidl.event.TaskExecutionEvent
+             * @instance
+             */
+            TaskExecutionEvent.prototype.parentId = "";
+
+            /**
+             * TaskExecutionEvent phase.
+             * @member {flyteidl.core.TaskExecutionPhase} phase
+             * @memberof flyteidl.event.TaskExecutionEvent
+             * @instance
+             */
+            TaskExecutionEvent.prototype.phase = 0;
+
+            /**
+             * TaskExecutionEvent producerId.
+             * @member {string} producerId
+             * @memberof flyteidl.event.TaskExecutionEvent
+             * @instance
+             */
+            TaskExecutionEvent.prototype.producerId = "";
+
+            /**
              * TaskExecutionEvent versionNum.
              * @member {string} versionNum
              * @memberof flyteidl.event.TaskExecutionEvent
              * @instance
              */
             TaskExecutionEvent.prototype.versionNum = "";
+
+            /**
+             * TaskExecutionEvent logUri.
+             * @member {string} logUri
+             * @memberof flyteidl.event.TaskExecutionEvent
+             * @instance
+             */
+            TaskExecutionEvent.prototype.logUri = "";
+
+            /**
+             * TaskExecutionEvent retryAttempt.
+             * @member {number} retryAttempt
+             * @memberof flyteidl.event.TaskExecutionEvent
+             * @instance
+             */
+            TaskExecutionEvent.prototype.retryAttempt = 0;
+
+            /**
+             * TaskExecutionEvent occurredAt.
+             * @member {google.protobuf.ITimestamp|null|undefined} occurredAt
+             * @memberof flyteidl.event.TaskExecutionEvent
+             * @instance
+             */
+            TaskExecutionEvent.prototype.occurredAt = null;
 
             /**
              * TaskExecutionEvent customInfo.
@@ -10687,10 +10520,24 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.taskId != null && message.hasOwnProperty("taskId"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.taskId);
+                if (message.clientId != null && message.hasOwnProperty("clientId"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.clientId);
+                if (message.parentId != null && message.hasOwnProperty("parentId"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.parentId);
+                if (message.phase != null && message.hasOwnProperty("phase"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.phase);
+                if (message.producerId != null && message.hasOwnProperty("producerId"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.producerId);
                 if (message.versionNum != null && message.hasOwnProperty("versionNum"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.versionNum);
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.versionNum);
+                if (message.logUri != null && message.hasOwnProperty("logUri"))
+                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.logUri);
+                if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
+                    writer.uint32(/* id 8, wireType 0 =*/64).uint32(message.retryAttempt);
+                if (message.occurredAt != null && message.hasOwnProperty("occurredAt"))
+                    $root.google.protobuf.Timestamp.encode(message.occurredAt, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 if (message.customInfo != null && message.hasOwnProperty("customInfo"))
-                    $root.google.protobuf.Struct.encode(message.customInfo, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    $root.google.protobuf.Struct.encode(message.customInfo, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                 return writer;
             };
 
@@ -10716,9 +10563,30 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.taskId = reader.string();
                         break;
                     case 2:
-                        message.versionNum = reader.string();
+                        message.clientId = reader.string();
                         break;
                     case 3:
+                        message.parentId = reader.string();
+                        break;
+                    case 4:
+                        message.phase = reader.int32();
+                        break;
+                    case 5:
+                        message.producerId = reader.string();
+                        break;
+                    case 6:
+                        message.versionNum = reader.string();
+                        break;
+                    case 7:
+                        message.logUri = reader.string();
+                        break;
+                    case 8:
+                        message.retryAttempt = reader.uint32();
+                        break;
+                    case 9:
+                        message.occurredAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    case 10:
                         message.customInfo = $root.google.protobuf.Struct.decode(reader, reader.uint32());
                         break;
                     default:
@@ -10743,9 +10611,42 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.taskId != null && message.hasOwnProperty("taskId"))
                     if (!$util.isString(message.taskId))
                         return "taskId: string expected";
+                if (message.clientId != null && message.hasOwnProperty("clientId"))
+                    if (!$util.isString(message.clientId))
+                        return "clientId: string expected";
+                if (message.parentId != null && message.hasOwnProperty("parentId"))
+                    if (!$util.isString(message.parentId))
+                        return "parentId: string expected";
+                if (message.phase != null && message.hasOwnProperty("phase"))
+                    switch (message.phase) {
+                    default:
+                        return "phase: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                        break;
+                    }
+                if (message.producerId != null && message.hasOwnProperty("producerId"))
+                    if (!$util.isString(message.producerId))
+                        return "producerId: string expected";
                 if (message.versionNum != null && message.hasOwnProperty("versionNum"))
                     if (!$util.isString(message.versionNum))
                         return "versionNum: string expected";
+                if (message.logUri != null && message.hasOwnProperty("logUri"))
+                    if (!$util.isString(message.logUri))
+                        return "logUri: string expected";
+                if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
+                    if (!$util.isInteger(message.retryAttempt))
+                        return "retryAttempt: integer expected";
+                if (message.occurredAt != null && message.hasOwnProperty("occurredAt")) {
+                    let error = $root.google.protobuf.Timestamp.verify(message.occurredAt);
+                    if (error)
+                        return "occurredAt." + error;
+                }
                 if (message.customInfo != null && message.hasOwnProperty("customInfo")) {
                     let error = $root.google.protobuf.Struct.verify(message.customInfo);
                     if (error)
@@ -11654,9 +11555,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface IWorkflowExecutionEventRequest
              * @property {string|null} [requestId] WorkflowExecutionEventRequest requestId
-             * @property {string|null} [ownerId] WorkflowExecutionEventRequest ownerId
-             * @property {string|null} [executionId] WorkflowExecutionEventRequest executionId
-             * @property {google.protobuf.ITimestamp|null} [occurredAt] WorkflowExecutionEventRequest occurredAt
              * @property {flyteidl.event.IWorkflowExecutionEvent|null} [event] WorkflowExecutionEventRequest event
              */
 
@@ -11682,30 +11580,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             WorkflowExecutionEventRequest.prototype.requestId = "";
-
-            /**
-             * WorkflowExecutionEventRequest ownerId.
-             * @member {string} ownerId
-             * @memberof flyteidl.admin.WorkflowExecutionEventRequest
-             * @instance
-             */
-            WorkflowExecutionEventRequest.prototype.ownerId = "";
-
-            /**
-             * WorkflowExecutionEventRequest executionId.
-             * @member {string} executionId
-             * @memberof flyteidl.admin.WorkflowExecutionEventRequest
-             * @instance
-             */
-            WorkflowExecutionEventRequest.prototype.executionId = "";
-
-            /**
-             * WorkflowExecutionEventRequest occurredAt.
-             * @member {google.protobuf.ITimestamp|null|undefined} occurredAt
-             * @memberof flyteidl.admin.WorkflowExecutionEventRequest
-             * @instance
-             */
-            WorkflowExecutionEventRequest.prototype.occurredAt = null;
 
             /**
              * WorkflowExecutionEventRequest event.
@@ -11741,14 +11615,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.requestId != null && message.hasOwnProperty("requestId"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.requestId);
-                if (message.ownerId != null && message.hasOwnProperty("ownerId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.ownerId);
-                if (message.executionId != null && message.hasOwnProperty("executionId"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.executionId);
-                if (message.occurredAt != null && message.hasOwnProperty("occurredAt"))
-                    $root.google.protobuf.Timestamp.encode(message.occurredAt, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.event != null && message.hasOwnProperty("event"))
-                    $root.flyteidl.event.WorkflowExecutionEvent.encode(message.event, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    $root.flyteidl.event.WorkflowExecutionEvent.encode(message.event, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
 
@@ -11774,15 +11642,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.requestId = reader.string();
                         break;
                     case 2:
-                        message.ownerId = reader.string();
-                        break;
-                    case 3:
-                        message.executionId = reader.string();
-                        break;
-                    case 4:
-                        message.occurredAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
-                        break;
-                    case 5:
                         message.event = $root.flyteidl.event.WorkflowExecutionEvent.decode(reader, reader.uint32());
                         break;
                     default:
@@ -11807,17 +11666,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.requestId != null && message.hasOwnProperty("requestId"))
                     if (!$util.isString(message.requestId))
                         return "requestId: string expected";
-                if (message.ownerId != null && message.hasOwnProperty("ownerId"))
-                    if (!$util.isString(message.ownerId))
-                        return "ownerId: string expected";
-                if (message.executionId != null && message.hasOwnProperty("executionId"))
-                    if (!$util.isString(message.executionId))
-                        return "executionId: string expected";
-                if (message.occurredAt != null && message.hasOwnProperty("occurredAt")) {
-                    let error = $root.google.protobuf.Timestamp.verify(message.occurredAt);
-                    if (error)
-                        return "occurredAt." + error;
-                }
                 if (message.event != null && message.hasOwnProperty("event")) {
                     let error = $root.flyteidl.event.WorkflowExecutionEvent.verify(message.event);
                     if (error)
@@ -11929,9 +11777,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface INodeExecutionEventRequest
              * @property {string|null} [requestId] NodeExecutionEventRequest requestId
-             * @property {string|null} [ownerId] NodeExecutionEventRequest ownerId
-             * @property {string|null} [executionId] NodeExecutionEventRequest executionId
-             * @property {google.protobuf.ITimestamp|null} [occurredAt] NodeExecutionEventRequest occurredAt
              * @property {flyteidl.event.INodeExecutionEvent|null} [event] NodeExecutionEventRequest event
              */
 
@@ -11957,30 +11802,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             NodeExecutionEventRequest.prototype.requestId = "";
-
-            /**
-             * NodeExecutionEventRequest ownerId.
-             * @member {string} ownerId
-             * @memberof flyteidl.admin.NodeExecutionEventRequest
-             * @instance
-             */
-            NodeExecutionEventRequest.prototype.ownerId = "";
-
-            /**
-             * NodeExecutionEventRequest executionId.
-             * @member {string} executionId
-             * @memberof flyteidl.admin.NodeExecutionEventRequest
-             * @instance
-             */
-            NodeExecutionEventRequest.prototype.executionId = "";
-
-            /**
-             * NodeExecutionEventRequest occurredAt.
-             * @member {google.protobuf.ITimestamp|null|undefined} occurredAt
-             * @memberof flyteidl.admin.NodeExecutionEventRequest
-             * @instance
-             */
-            NodeExecutionEventRequest.prototype.occurredAt = null;
 
             /**
              * NodeExecutionEventRequest event.
@@ -12016,14 +11837,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.requestId != null && message.hasOwnProperty("requestId"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.requestId);
-                if (message.ownerId != null && message.hasOwnProperty("ownerId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.ownerId);
-                if (message.executionId != null && message.hasOwnProperty("executionId"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.executionId);
-                if (message.occurredAt != null && message.hasOwnProperty("occurredAt"))
-                    $root.google.protobuf.Timestamp.encode(message.occurredAt, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.event != null && message.hasOwnProperty("event"))
-                    $root.flyteidl.event.NodeExecutionEvent.encode(message.event, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    $root.flyteidl.event.NodeExecutionEvent.encode(message.event, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
 
@@ -12049,15 +11864,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.requestId = reader.string();
                         break;
                     case 2:
-                        message.ownerId = reader.string();
-                        break;
-                    case 3:
-                        message.executionId = reader.string();
-                        break;
-                    case 4:
-                        message.occurredAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
-                        break;
-                    case 5:
                         message.event = $root.flyteidl.event.NodeExecutionEvent.decode(reader, reader.uint32());
                         break;
                     default:
@@ -12082,17 +11888,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.requestId != null && message.hasOwnProperty("requestId"))
                     if (!$util.isString(message.requestId))
                         return "requestId: string expected";
-                if (message.ownerId != null && message.hasOwnProperty("ownerId"))
-                    if (!$util.isString(message.ownerId))
-                        return "ownerId: string expected";
-                if (message.executionId != null && message.hasOwnProperty("executionId"))
-                    if (!$util.isString(message.executionId))
-                        return "executionId: string expected";
-                if (message.occurredAt != null && message.hasOwnProperty("occurredAt")) {
-                    let error = $root.google.protobuf.Timestamp.verify(message.occurredAt);
-                    if (error)
-                        return "occurredAt." + error;
-                }
                 if (message.event != null && message.hasOwnProperty("event")) {
                     let error = $root.flyteidl.event.NodeExecutionEvent.verify(message.event);
                     if (error)
@@ -12204,9 +11999,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface ITaskExecutionEventRequest
              * @property {string|null} [requestId] TaskExecutionEventRequest requestId
-             * @property {string|null} [ownerId] TaskExecutionEventRequest ownerId
-             * @property {string|null} [executionId] TaskExecutionEventRequest executionId
-             * @property {google.protobuf.ITimestamp|null} [occurredAt] TaskExecutionEventRequest occurredAt
              * @property {flyteidl.event.ITaskExecutionEvent|null} [event] TaskExecutionEventRequest event
              */
 
@@ -12232,30 +12024,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             TaskExecutionEventRequest.prototype.requestId = "";
-
-            /**
-             * TaskExecutionEventRequest ownerId.
-             * @member {string} ownerId
-             * @memberof flyteidl.admin.TaskExecutionEventRequest
-             * @instance
-             */
-            TaskExecutionEventRequest.prototype.ownerId = "";
-
-            /**
-             * TaskExecutionEventRequest executionId.
-             * @member {string} executionId
-             * @memberof flyteidl.admin.TaskExecutionEventRequest
-             * @instance
-             */
-            TaskExecutionEventRequest.prototype.executionId = "";
-
-            /**
-             * TaskExecutionEventRequest occurredAt.
-             * @member {google.protobuf.ITimestamp|null|undefined} occurredAt
-             * @memberof flyteidl.admin.TaskExecutionEventRequest
-             * @instance
-             */
-            TaskExecutionEventRequest.prototype.occurredAt = null;
 
             /**
              * TaskExecutionEventRequest event.
@@ -12291,14 +12059,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.requestId != null && message.hasOwnProperty("requestId"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.requestId);
-                if (message.ownerId != null && message.hasOwnProperty("ownerId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.ownerId);
-                if (message.executionId != null && message.hasOwnProperty("executionId"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.executionId);
-                if (message.occurredAt != null && message.hasOwnProperty("occurredAt"))
-                    $root.google.protobuf.Timestamp.encode(message.occurredAt, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.event != null && message.hasOwnProperty("event"))
-                    $root.flyteidl.event.TaskExecutionEvent.encode(message.event, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    $root.flyteidl.event.TaskExecutionEvent.encode(message.event, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
 
@@ -12324,15 +12086,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.requestId = reader.string();
                         break;
                     case 2:
-                        message.ownerId = reader.string();
-                        break;
-                    case 3:
-                        message.executionId = reader.string();
-                        break;
-                    case 4:
-                        message.occurredAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
-                        break;
-                    case 5:
                         message.event = $root.flyteidl.event.TaskExecutionEvent.decode(reader, reader.uint32());
                         break;
                     default:
@@ -12357,17 +12110,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.requestId != null && message.hasOwnProperty("requestId"))
                     if (!$util.isString(message.requestId))
                         return "requestId: string expected";
-                if (message.ownerId != null && message.hasOwnProperty("ownerId"))
-                    if (!$util.isString(message.ownerId))
-                        return "ownerId: string expected";
-                if (message.executionId != null && message.hasOwnProperty("executionId"))
-                    if (!$util.isString(message.executionId))
-                        return "executionId: string expected";
-                if (message.occurredAt != null && message.hasOwnProperty("occurredAt")) {
-                    let error = $root.google.protobuf.Timestamp.verify(message.occurredAt);
-                    if (error)
-                        return "occurredAt." + error;
-                }
                 if (message.event != null && message.hasOwnProperty("event")) {
                     let error = $root.flyteidl.event.TaskExecutionEvent.verify(message.event);
                     if (error)
@@ -15977,9 +15719,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a NodeExecutionClosure.
              * @memberof flyteidl.admin
              * @interface INodeExecutionClosure
-             * @property {flyteidl.event.ITaskNodeMetadata|null} [taskMetadata] NodeExecutionClosure taskMetadata
-             * @property {flyteidl.event.IBranchNodeMetadata|null} [branchMetadata] NodeExecutionClosure branchMetadata
-             * @property {flyteidl.event.ISubworkflowNodeMetadata|null} [workflowMetadata] NodeExecutionClosure workflowMetadata
              * @property {string|null} [outputUri] NodeExecutionClosure outputUri
              * @property {flyteidl.core.IExecutionError|null} [error] NodeExecutionClosure error
              * @property {flyteidl.core.NodeExecutionPhase|null} [phase] NodeExecutionClosure phase
@@ -15999,30 +15738,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
-
-            /**
-             * NodeExecutionClosure taskMetadata.
-             * @member {flyteidl.event.ITaskNodeMetadata|null|undefined} taskMetadata
-             * @memberof flyteidl.admin.NodeExecutionClosure
-             * @instance
-             */
-            NodeExecutionClosure.prototype.taskMetadata = null;
-
-            /**
-             * NodeExecutionClosure branchMetadata.
-             * @member {flyteidl.event.IBranchNodeMetadata|null|undefined} branchMetadata
-             * @memberof flyteidl.admin.NodeExecutionClosure
-             * @instance
-             */
-            NodeExecutionClosure.prototype.branchMetadata = null;
-
-            /**
-             * NodeExecutionClosure workflowMetadata.
-             * @member {flyteidl.event.ISubworkflowNodeMetadata|null|undefined} workflowMetadata
-             * @memberof flyteidl.admin.NodeExecutionClosure
-             * @instance
-             */
-            NodeExecutionClosure.prototype.workflowMetadata = null;
 
             /**
              * NodeExecutionClosure outputUri.
@@ -16050,17 +15765,6 @@ export const flyteidl = $root.flyteidl = (() => {
 
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
-
-            /**
-             * NodeExecutionClosure targetMetadata.
-             * @member {"taskMetadata"|"branchMetadata"|"workflowMetadata"|undefined} targetMetadata
-             * @memberof flyteidl.admin.NodeExecutionClosure
-             * @instance
-             */
-            Object.defineProperty(NodeExecutionClosure.prototype, "targetMetadata", {
-                get: $util.oneOfGetter($oneOfFields = ["taskMetadata", "branchMetadata", "workflowMetadata"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
 
             /**
              * NodeExecutionClosure outputResult.
@@ -16097,18 +15801,12 @@ export const flyteidl = $root.flyteidl = (() => {
             NodeExecutionClosure.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.taskMetadata != null && message.hasOwnProperty("taskMetadata"))
-                    $root.flyteidl.event.TaskNodeMetadata.encode(message.taskMetadata, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.branchMetadata != null && message.hasOwnProperty("branchMetadata"))
-                    $root.flyteidl.event.BranchNodeMetadata.encode(message.branchMetadata, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.workflowMetadata != null && message.hasOwnProperty("workflowMetadata"))
-                    $root.flyteidl.event.SubworkflowNodeMetadata.encode(message.workflowMetadata, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.outputUri != null && message.hasOwnProperty("outputUri"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.outputUri);
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.outputUri);
                 if (message.error != null && message.hasOwnProperty("error"))
-                    $root.flyteidl.core.ExecutionError.encode(message.error, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    $root.flyteidl.core.ExecutionError.encode(message.error, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.phase != null && message.hasOwnProperty("phase"))
-                    writer.uint32(/* id 6, wireType 0 =*/48).int32(message.phase);
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.phase);
                 return writer;
             };
 
@@ -16131,21 +15829,12 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.taskMetadata = $root.flyteidl.event.TaskNodeMetadata.decode(reader, reader.uint32());
-                        break;
-                    case 2:
-                        message.branchMetadata = $root.flyteidl.event.BranchNodeMetadata.decode(reader, reader.uint32());
-                        break;
-                    case 3:
-                        message.workflowMetadata = $root.flyteidl.event.SubworkflowNodeMetadata.decode(reader, reader.uint32());
-                        break;
-                    case 4:
                         message.outputUri = reader.string();
                         break;
-                    case 5:
+                    case 2:
                         message.error = $root.flyteidl.core.ExecutionError.decode(reader, reader.uint32());
                         break;
-                    case 6:
+                    case 3:
                         message.phase = reader.int32();
                         break;
                     default:
@@ -16168,34 +15857,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 let properties = {};
-                if (message.taskMetadata != null && message.hasOwnProperty("taskMetadata")) {
-                    properties.targetMetadata = 1;
-                    {
-                        let error = $root.flyteidl.event.TaskNodeMetadata.verify(message.taskMetadata);
-                        if (error)
-                            return "taskMetadata." + error;
-                    }
-                }
-                if (message.branchMetadata != null && message.hasOwnProperty("branchMetadata")) {
-                    if (properties.targetMetadata === 1)
-                        return "targetMetadata: multiple values";
-                    properties.targetMetadata = 1;
-                    {
-                        let error = $root.flyteidl.event.BranchNodeMetadata.verify(message.branchMetadata);
-                        if (error)
-                            return "branchMetadata." + error;
-                    }
-                }
-                if (message.workflowMetadata != null && message.hasOwnProperty("workflowMetadata")) {
-                    if (properties.targetMetadata === 1)
-                        return "targetMetadata: multiple values";
-                    properties.targetMetadata = 1;
-                    {
-                        let error = $root.flyteidl.event.SubworkflowNodeMetadata.verify(message.workflowMetadata);
-                        if (error)
-                            return "workflowMetadata." + error;
-                    }
-                }
                 if (message.outputUri != null && message.hasOwnProperty("outputUri")) {
                     properties.outputResult = 1;
                     if (!$util.isString(message.outputUri))

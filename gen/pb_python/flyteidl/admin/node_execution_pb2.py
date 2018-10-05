@@ -14,16 +14,15 @@ _sym_db = _symbol_database.Default()
 
 
 from flyteidl.core import execution_pb2 as flyteidl_dot_core_dot_execution__pb2
-from flyteidl.event import event_pb2 as flyteidl_dot_event_dot_event__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/node_execution.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n#flyteidl/admin/node_execution.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1a\x66lyteidl/event/event.proto\"W\n\x17NodeExecutionIdentifier\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12\x14\n\x0c\x65xecution_id\x18\x02 \x01(\r\x12\x15\n\rretry_attempt\x18\x03 \x01(\r\"4\n\x17NodeExecutionGetRequest\x12\x19\n\x11node_execution_id\x18\x01 \x01(\t\"J\n\x18NodeExecutionListRequest\x12\r\n\x05limit\x18\x01 \x01(\r\x12\x0e\n\x06offset\x18\x02 \x01(\r\x12\x0f\n\x07\x66ilters\x18\x03 \x01(\t\"\xa9\x01\n\rNodeExecution\x12\x33\n\x02id\x18\x01 \x01(\x0b\x32\'.flyteidl.admin.NodeExecutionIdentifier\x12\x19\n\x11node_execution_id\x18\x02 \x01(\t\x12\x11\n\tinput_uri\x18\x03 \x01(\t\x12\x35\n\x07\x63losure\x18\x04 \x01(\x0b\x32$.flyteidl.admin.NodeExecutionClosure\"K\n\x11NodeExecutionList\x12\x36\n\x0fnode_executions\x18\x01 \x03(\x0b\x32\x1d.flyteidl.admin.NodeExecution\"\xf2\x02\n\x14NodeExecutionClosure\x12\x39\n\rtask_metadata\x18\x01 \x01(\x0b\x32 .flyteidl.event.TaskNodeMetadataH\x00\x12=\n\x0f\x62ranch_metadata\x18\x02 \x01(\x0b\x32\".flyteidl.event.BranchNodeMetadataH\x00\x12\x44\n\x11workflow_metadata\x18\x03 \x01(\x0b\x32\'.flyteidl.event.SubworkflowNodeMetadataH\x00\x12\x14\n\noutput_uri\x18\x04 \x01(\tH\x01\x12.\n\x05\x65rror\x18\x05 \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x01\x12\x30\n\x05phase\x18\x06 \x01(\x0e\x32!.flyteidl.core.NodeExecutionPhaseB\x11\n\x0ftarget_metadataB\x0f\n\routput_resultB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n#flyteidl/admin/node_execution.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/execution.proto\"W\n\x17NodeExecutionIdentifier\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12\x14\n\x0c\x65xecution_id\x18\x02 \x01(\r\x12\x15\n\rretry_attempt\x18\x03 \x01(\r\"4\n\x17NodeExecutionGetRequest\x12\x19\n\x11node_execution_id\x18\x01 \x01(\t\"J\n\x18NodeExecutionListRequest\x12\r\n\x05limit\x18\x01 \x01(\r\x12\x0e\n\x06offset\x18\x02 \x01(\r\x12\x0f\n\x07\x66ilters\x18\x03 \x01(\t\"\xa9\x01\n\rNodeExecution\x12\x33\n\x02id\x18\x01 \x01(\x0b\x32\'.flyteidl.admin.NodeExecutionIdentifier\x12\x19\n\x11node_execution_id\x18\x02 \x01(\t\x12\x11\n\tinput_uri\x18\x03 \x01(\t\x12\x35\n\x07\x63losure\x18\x04 \x01(\x0b\x32$.flyteidl.admin.NodeExecutionClosure\"K\n\x11NodeExecutionList\x12\x36\n\x0fnode_executions\x18\x01 \x03(\x0b\x32\x1d.flyteidl.admin.NodeExecution\"\x9f\x01\n\x14NodeExecutionClosure\x12\x14\n\noutput_uri\x18\x01 \x01(\tH\x00\x12.\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x12\x30\n\x05phase\x18\x03 \x01(\x0e\x32!.flyteidl.core.NodeExecutionPhaseB\x0f\n\routput_resultB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
-  dependencies=[flyteidl_dot_core_dot_execution__pb2.DESCRIPTOR,flyteidl_dot_event_dot_event__pb2.DESCRIPTOR,])
+  dependencies=[flyteidl_dot_core_dot_execution__pb2.DESCRIPTOR,])
 
 
 
@@ -68,8 +67,8 @@ _NODEEXECUTIONIDENTIFIER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=114,
-  serialized_end=201,
+  serialized_start=86,
+  serialized_end=173,
 )
 
 
@@ -99,8 +98,8 @@ _NODEEXECUTIONGETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=203,
-  serialized_end=255,
+  serialized_start=175,
+  serialized_end=227,
 )
 
 
@@ -144,8 +143,8 @@ _NODEEXECUTIONLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=257,
-  serialized_end=331,
+  serialized_start=229,
+  serialized_end=303,
 )
 
 
@@ -196,8 +195,8 @@ _NODEEXECUTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=334,
-  serialized_end=503,
+  serialized_start=306,
+  serialized_end=475,
 )
 
 
@@ -227,8 +226,8 @@ _NODEEXECUTIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=505,
-  serialized_end=580,
+  serialized_start=477,
+  serialized_end=552,
 )
 
 
@@ -240,43 +239,22 @@ _NODEEXECUTIONCLOSURE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='task_metadata', full_name='flyteidl.admin.NodeExecutionClosure.task_metadata', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='output_uri', full_name='flyteidl.admin.NodeExecutionClosure.output_uri', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='branch_metadata', full_name='flyteidl.admin.NodeExecutionClosure.branch_metadata', index=1,
+      name='error', full_name='flyteidl.admin.NodeExecutionClosure.error', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='workflow_metadata', full_name='flyteidl.admin.NodeExecutionClosure.workflow_metadata', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='output_uri', full_name='flyteidl.admin.NodeExecutionClosure.output_uri', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='error', full_name='flyteidl.admin.NodeExecutionClosure.error', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='phase', full_name='flyteidl.admin.NodeExecutionClosure.phase', index=5,
-      number=6, type=14, cpp_type=8, label=1,
+      name='phase', full_name='flyteidl.admin.NodeExecutionClosure.phase', index=2,
+      number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -293,33 +271,18 @@ _NODEEXECUTIONCLOSURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='target_metadata', full_name='flyteidl.admin.NodeExecutionClosure.target_metadata',
-      index=0, containing_type=None, fields=[]),
-    _descriptor.OneofDescriptor(
       name='output_result', full_name='flyteidl.admin.NodeExecutionClosure.output_result',
-      index=1, containing_type=None, fields=[]),
+      index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=583,
-  serialized_end=953,
+  serialized_start=555,
+  serialized_end=714,
 )
 
 _NODEEXECUTION.fields_by_name['id'].message_type = _NODEEXECUTIONIDENTIFIER
 _NODEEXECUTION.fields_by_name['closure'].message_type = _NODEEXECUTIONCLOSURE
 _NODEEXECUTIONLIST.fields_by_name['node_executions'].message_type = _NODEEXECUTION
-_NODEEXECUTIONCLOSURE.fields_by_name['task_metadata'].message_type = flyteidl_dot_event_dot_event__pb2._TASKNODEMETADATA
-_NODEEXECUTIONCLOSURE.fields_by_name['branch_metadata'].message_type = flyteidl_dot_event_dot_event__pb2._BRANCHNODEMETADATA
-_NODEEXECUTIONCLOSURE.fields_by_name['workflow_metadata'].message_type = flyteidl_dot_event_dot_event__pb2._SUBWORKFLOWNODEMETADATA
 _NODEEXECUTIONCLOSURE.fields_by_name['error'].message_type = flyteidl_dot_core_dot_execution__pb2._EXECUTIONERROR
 _NODEEXECUTIONCLOSURE.fields_by_name['phase'].enum_type = flyteidl_dot_core_dot_execution__pb2._NODEEXECUTIONPHASE
-_NODEEXECUTIONCLOSURE.oneofs_by_name['target_metadata'].fields.append(
-  _NODEEXECUTIONCLOSURE.fields_by_name['task_metadata'])
-_NODEEXECUTIONCLOSURE.fields_by_name['task_metadata'].containing_oneof = _NODEEXECUTIONCLOSURE.oneofs_by_name['target_metadata']
-_NODEEXECUTIONCLOSURE.oneofs_by_name['target_metadata'].fields.append(
-  _NODEEXECUTIONCLOSURE.fields_by_name['branch_metadata'])
-_NODEEXECUTIONCLOSURE.fields_by_name['branch_metadata'].containing_oneof = _NODEEXECUTIONCLOSURE.oneofs_by_name['target_metadata']
-_NODEEXECUTIONCLOSURE.oneofs_by_name['target_metadata'].fields.append(
-  _NODEEXECUTIONCLOSURE.fields_by_name['workflow_metadata'])
-_NODEEXECUTIONCLOSURE.fields_by_name['workflow_metadata'].containing_oneof = _NODEEXECUTIONCLOSURE.oneofs_by_name['target_metadata']
 _NODEEXECUTIONCLOSURE.oneofs_by_name['output_result'].fields.append(
   _NODEEXECUTIONCLOSURE.fields_by_name['output_uri'])
 _NODEEXECUTIONCLOSURE.fields_by_name['output_uri'].containing_oneof = _NODEEXECUTIONCLOSURE.oneofs_by_name['output_result']

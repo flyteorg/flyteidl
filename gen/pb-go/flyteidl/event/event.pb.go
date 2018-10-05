@@ -7,6 +7,7 @@ import proto "github.com/golang/protobuf/proto"
 import fmt "fmt"
 import math "math"
 import _struct "github.com/golang/protobuf/ptypes/struct"
+import timestamp "github.com/golang/protobuf/ptypes/timestamp"
 import core "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -21,7 +22,13 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
 type WorkflowExecutionEvent struct {
-	Phase core.WorkflowExecutionPhase `protobuf:"varint,1,opt,name=phase,proto3,enum=flyteidl.core.WorkflowExecutionPhase" json:"phase,omitempty"`
+	// Workflow execution id
+	ExecutionId string `protobuf:"bytes,1,opt,name=execution_id,json=executionId,proto3" json:"execution_id,omitempty"`
+	// the id of the originator (Propeller) of the event
+	ProducerId string                      `protobuf:"bytes,2,opt,name=producer_id,json=producerId,proto3" json:"producer_id,omitempty"`
+	Phase      core.WorkflowExecutionPhase `protobuf:"varint,3,opt,name=phase,proto3,enum=flyteidl.core.WorkflowExecutionPhase" json:"phase,omitempty"`
+	// This timestamp represents when the original event occurred
+	OccurredAt *timestamp.Timestamp `protobuf:"bytes,4,opt,name=occurred_at,json=occurredAt,proto3" json:"occurred_at,omitempty"`
 	// Types that are valid to be assigned to OutputResult:
 	//	*WorkflowExecutionEvent_OutputUri
 	//	*WorkflowExecutionEvent_Error
@@ -35,7 +42,7 @@ func (m *WorkflowExecutionEvent) Reset()         { *m = WorkflowExecutionEvent{}
 func (m *WorkflowExecutionEvent) String() string { return proto.CompactTextString(m) }
 func (*WorkflowExecutionEvent) ProtoMessage()    {}
 func (*WorkflowExecutionEvent) Descriptor() ([]byte, []int) {
-	return fileDescriptor_event_20a651f47183dfb8, []int{0}
+	return fileDescriptor_event_98faf99b1bb7aef0, []int{0}
 }
 func (m *WorkflowExecutionEvent) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_WorkflowExecutionEvent.Unmarshal(m, b)
@@ -55,6 +62,20 @@ func (m *WorkflowExecutionEvent) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_WorkflowExecutionEvent proto.InternalMessageInfo
 
+func (m *WorkflowExecutionEvent) GetExecutionId() string {
+	if m != nil {
+		return m.ExecutionId
+	}
+	return ""
+}
+
+func (m *WorkflowExecutionEvent) GetProducerId() string {
+	if m != nil {
+		return m.ProducerId
+	}
+	return ""
+}
+
 func (m *WorkflowExecutionEvent) GetPhase() core.WorkflowExecutionPhase {
 	if m != nil {
 		return m.Phase
@@ -62,16 +83,23 @@ func (m *WorkflowExecutionEvent) GetPhase() core.WorkflowExecutionPhase {
 	return core.WorkflowExecutionPhase_WORKFLOW_PHASE_UNDEFINED
 }
 
+func (m *WorkflowExecutionEvent) GetOccurredAt() *timestamp.Timestamp {
+	if m != nil {
+		return m.OccurredAt
+	}
+	return nil
+}
+
 type isWorkflowExecutionEvent_OutputResult interface {
 	isWorkflowExecutionEvent_OutputResult()
 }
 
 type WorkflowExecutionEvent_OutputUri struct {
-	OutputUri string `protobuf:"bytes,2,opt,name=output_uri,json=outputUri,proto3,oneof"`
+	OutputUri string `protobuf:"bytes,5,opt,name=output_uri,json=outputUri,proto3,oneof"`
 }
 
 type WorkflowExecutionEvent_Error struct {
-	Error *core.ExecutionError `protobuf:"bytes,3,opt,name=error,proto3,oneof"`
+	Error *core.ExecutionError `protobuf:"bytes,6,opt,name=error,proto3,oneof"`
 }
 
 func (*WorkflowExecutionEvent_OutputUri) isWorkflowExecutionEvent_OutputResult() {}
@@ -112,10 +140,10 @@ func _WorkflowExecutionEvent_OneofMarshaler(msg proto.Message, b *proto.Buffer) 
 	// output_result
 	switch x := m.OutputResult.(type) {
 	case *WorkflowExecutionEvent_OutputUri:
-		b.EncodeVarint(2<<3 | proto.WireBytes)
+		b.EncodeVarint(5<<3 | proto.WireBytes)
 		b.EncodeStringBytes(x.OutputUri)
 	case *WorkflowExecutionEvent_Error:
-		b.EncodeVarint(3<<3 | proto.WireBytes)
+		b.EncodeVarint(6<<3 | proto.WireBytes)
 		if err := b.EncodeMessage(x.Error); err != nil {
 			return err
 		}
@@ -129,14 +157,14 @@ func _WorkflowExecutionEvent_OneofMarshaler(msg proto.Message, b *proto.Buffer) 
 func _WorkflowExecutionEvent_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
 	m := msg.(*WorkflowExecutionEvent)
 	switch tag {
-	case 2: // output_result.output_uri
+	case 5: // output_result.output_uri
 		if wire != proto.WireBytes {
 			return true, proto.ErrInternalBadWireType
 		}
 		x, err := b.DecodeStringBytes()
 		m.OutputResult = &WorkflowExecutionEvent_OutputUri{x}
 		return true, err
-	case 3: // output_result.error
+	case 6: // output_result.error
 		if wire != proto.WireBytes {
 			return true, proto.ErrInternalBadWireType
 		}
@@ -170,21 +198,18 @@ func _WorkflowExecutionEvent_OneofSizer(msg proto.Message) (n int) {
 }
 
 type NodeExecutionEvent struct {
-	NodeId string                  `protobuf:"bytes,1,opt,name=node_id,json=nodeId,proto3" json:"node_id,omitempty"`
-	Phase  core.NodeExecutionPhase `protobuf:"varint,2,opt,name=phase,proto3,enum=flyteidl.core.NodeExecutionPhase" json:"phase,omitempty"`
+	// Node ID
+	NodeId string `protobuf:"bytes,1,opt,name=node_id,json=nodeId,proto3" json:"node_id,omitempty"`
+	// Workflow execution id
+	ExecutionId string `protobuf:"bytes,2,opt,name=execution_id,json=executionId,proto3" json:"execution_id,omitempty"`
 	// Indicates the retry value for the Node Execution
-	RetryAttempt uint32 `protobuf:"varint,4,opt,name=retry_attempt,json=retryAttempt,proto3" json:"retry_attempt,omitempty"`
-	// Node Targets
-	// - TaskNode: two different events - one for multistep and one for single step
-	// - BranchNode
-	// - SubworkflowNode
-	//
-	// Types that are valid to be assigned to TargetMetadata:
-	//	*NodeExecutionEvent_TaskMetadata
-	//	*NodeExecutionEvent_BranchMetadata
-	//	*NodeExecutionEvent_WorkflowMetadata
-	TargetMetadata isNodeExecutionEvent_TargetMetadata `protobuf_oneof:"target_metadata"`
-	InputUri       string                              `protobuf:"bytes,9,opt,name=input_uri,json=inputUri,proto3" json:"input_uri,omitempty"`
+	RetryAttempt uint32 `protobuf:"varint,3,opt,name=retry_attempt,json=retryAttempt,proto3" json:"retry_attempt,omitempty"`
+	// the id of the originator (Propeller) of the event
+	ProducerId string                  `protobuf:"bytes,4,opt,name=producer_id,json=producerId,proto3" json:"producer_id,omitempty"`
+	Phase      core.NodeExecutionPhase `protobuf:"varint,5,opt,name=phase,proto3,enum=flyteidl.core.NodeExecutionPhase" json:"phase,omitempty"`
+	// This timestamp represents when the original event occurred
+	OccurredAt *timestamp.Timestamp `protobuf:"bytes,6,opt,name=occurred_at,json=occurredAt,proto3" json:"occurred_at,omitempty"`
+	InputUri   string               `protobuf:"bytes,7,opt,name=input_uri,json=inputUri,proto3" json:"input_uri,omitempty"`
 	// Types that are valid to be assigned to OutputResult:
 	//	*NodeExecutionEvent_OutputUri
 	//	*NodeExecutionEvent_Error
@@ -198,7 +223,7 @@ func (m *NodeExecutionEvent) Reset()         { *m = NodeExecutionEvent{} }
 func (m *NodeExecutionEvent) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionEvent) ProtoMessage()    {}
 func (*NodeExecutionEvent) Descriptor() ([]byte, []int) {
-	return fileDescriptor_event_20a651f47183dfb8, []int{1}
+	return fileDescriptor_event_98faf99b1bb7aef0, []int{1}
 }
 func (m *NodeExecutionEvent) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionEvent.Unmarshal(m, b)
@@ -225,11 +250,11 @@ func (m *NodeExecutionEvent) GetNodeId() string {
 	return ""
 }
 
-func (m *NodeExecutionEvent) GetPhase() core.NodeExecutionPhase {
+func (m *NodeExecutionEvent) GetExecutionId() string {
 	if m != nil {
-		return m.Phase
+		return m.ExecutionId
 	}
-	return core.NodeExecutionPhase_NODE_PHASE_UNDEFINED
+	return ""
 }
 
 func (m *NodeExecutionEvent) GetRetryAttempt() uint32 {
@@ -239,52 +264,23 @@ func (m *NodeExecutionEvent) GetRetryAttempt() uint32 {
 	return 0
 }
 
-type isNodeExecutionEvent_TargetMetadata interface {
-	isNodeExecutionEvent_TargetMetadata()
-}
-
-type NodeExecutionEvent_TaskMetadata struct {
-	TaskMetadata *TaskNodeMetadata `protobuf:"bytes,5,opt,name=task_metadata,json=taskMetadata,proto3,oneof"`
-}
-
-type NodeExecutionEvent_BranchMetadata struct {
-	BranchMetadata *BranchNodeMetadata `protobuf:"bytes,6,opt,name=branch_metadata,json=branchMetadata,proto3,oneof"`
-}
-
-type NodeExecutionEvent_WorkflowMetadata struct {
-	WorkflowMetadata *SubworkflowNodeMetadata `protobuf:"bytes,7,opt,name=workflow_metadata,json=workflowMetadata,proto3,oneof"`
-}
-
-func (*NodeExecutionEvent_TaskMetadata) isNodeExecutionEvent_TargetMetadata() {}
-
-func (*NodeExecutionEvent_BranchMetadata) isNodeExecutionEvent_TargetMetadata() {}
-
-func (*NodeExecutionEvent_WorkflowMetadata) isNodeExecutionEvent_TargetMetadata() {}
-
-func (m *NodeExecutionEvent) GetTargetMetadata() isNodeExecutionEvent_TargetMetadata {
+func (m *NodeExecutionEvent) GetProducerId() string {
 	if m != nil {
-		return m.TargetMetadata
+		return m.ProducerId
 	}
-	return nil
+	return ""
 }
 
-func (m *NodeExecutionEvent) GetTaskMetadata() *TaskNodeMetadata {
-	if x, ok := m.GetTargetMetadata().(*NodeExecutionEvent_TaskMetadata); ok {
-		return x.TaskMetadata
+func (m *NodeExecutionEvent) GetPhase() core.NodeExecutionPhase {
+	if m != nil {
+		return m.Phase
 	}
-	return nil
+	return core.NodeExecutionPhase_NODE_PHASE_UNDEFINED
 }
 
-func (m *NodeExecutionEvent) GetBranchMetadata() *BranchNodeMetadata {
-	if x, ok := m.GetTargetMetadata().(*NodeExecutionEvent_BranchMetadata); ok {
-		return x.BranchMetadata
-	}
-	return nil
-}
-
-func (m *NodeExecutionEvent) GetWorkflowMetadata() *SubworkflowNodeMetadata {
-	if x, ok := m.GetTargetMetadata().(*NodeExecutionEvent_WorkflowMetadata); ok {
-		return x.WorkflowMetadata
+func (m *NodeExecutionEvent) GetOccurredAt() *timestamp.Timestamp {
+	if m != nil {
+		return m.OccurredAt
 	}
 	return nil
 }
@@ -301,11 +297,11 @@ type isNodeExecutionEvent_OutputResult interface {
 }
 
 type NodeExecutionEvent_OutputUri struct {
-	OutputUri string `protobuf:"bytes,10,opt,name=output_uri,json=outputUri,proto3,oneof"`
+	OutputUri string `protobuf:"bytes,8,opt,name=output_uri,json=outputUri,proto3,oneof"`
 }
 
 type NodeExecutionEvent_Error struct {
-	Error *core.ExecutionError `protobuf:"bytes,11,opt,name=error,proto3,oneof"`
+	Error *core.ExecutionError `protobuf:"bytes,9,opt,name=error,proto3,oneof"`
 }
 
 func (*NodeExecutionEvent_OutputUri) isNodeExecutionEvent_OutputResult() {}
@@ -336,9 +332,6 @@ func (m *NodeExecutionEvent) GetError() *core.ExecutionError {
 // XXX_OneofFuncs is for the internal use of the proto package.
 func (*NodeExecutionEvent) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
 	return _NodeExecutionEvent_OneofMarshaler, _NodeExecutionEvent_OneofUnmarshaler, _NodeExecutionEvent_OneofSizer, []interface{}{
-		(*NodeExecutionEvent_TaskMetadata)(nil),
-		(*NodeExecutionEvent_BranchMetadata)(nil),
-		(*NodeExecutionEvent_WorkflowMetadata)(nil),
 		(*NodeExecutionEvent_OutputUri)(nil),
 		(*NodeExecutionEvent_Error)(nil),
 	}
@@ -346,34 +339,13 @@ func (*NodeExecutionEvent) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Bu
 
 func _NodeExecutionEvent_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
 	m := msg.(*NodeExecutionEvent)
-	// target_metadata
-	switch x := m.TargetMetadata.(type) {
-	case *NodeExecutionEvent_TaskMetadata:
-		b.EncodeVarint(5<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.TaskMetadata); err != nil {
-			return err
-		}
-	case *NodeExecutionEvent_BranchMetadata:
-		b.EncodeVarint(6<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.BranchMetadata); err != nil {
-			return err
-		}
-	case *NodeExecutionEvent_WorkflowMetadata:
-		b.EncodeVarint(7<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.WorkflowMetadata); err != nil {
-			return err
-		}
-	case nil:
-	default:
-		return fmt.Errorf("NodeExecutionEvent.TargetMetadata has unexpected type %T", x)
-	}
 	// output_result
 	switch x := m.OutputResult.(type) {
 	case *NodeExecutionEvent_OutputUri:
-		b.EncodeVarint(10<<3 | proto.WireBytes)
+		b.EncodeVarint(8<<3 | proto.WireBytes)
 		b.EncodeStringBytes(x.OutputUri)
 	case *NodeExecutionEvent_Error:
-		b.EncodeVarint(11<<3 | proto.WireBytes)
+		b.EncodeVarint(9<<3 | proto.WireBytes)
 		if err := b.EncodeMessage(x.Error); err != nil {
 			return err
 		}
@@ -387,38 +359,14 @@ func _NodeExecutionEvent_OneofMarshaler(msg proto.Message, b *proto.Buffer) erro
 func _NodeExecutionEvent_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
 	m := msg.(*NodeExecutionEvent)
 	switch tag {
-	case 5: // target_metadata.task_metadata
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		msg := new(TaskNodeMetadata)
-		err := b.DecodeMessage(msg)
-		m.TargetMetadata = &NodeExecutionEvent_TaskMetadata{msg}
-		return true, err
-	case 6: // target_metadata.branch_metadata
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		msg := new(BranchNodeMetadata)
-		err := b.DecodeMessage(msg)
-		m.TargetMetadata = &NodeExecutionEvent_BranchMetadata{msg}
-		return true, err
-	case 7: // target_metadata.workflow_metadata
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		msg := new(SubworkflowNodeMetadata)
-		err := b.DecodeMessage(msg)
-		m.TargetMetadata = &NodeExecutionEvent_WorkflowMetadata{msg}
-		return true, err
-	case 10: // output_result.output_uri
+	case 8: // output_result.output_uri
 		if wire != proto.WireBytes {
 			return true, proto.ErrInternalBadWireType
 		}
 		x, err := b.DecodeStringBytes()
 		m.OutputResult = &NodeExecutionEvent_OutputUri{x}
 		return true, err
-	case 11: // output_result.error
+	case 9: // output_result.error
 		if wire != proto.WireBytes {
 			return true, proto.ErrInternalBadWireType
 		}
@@ -433,27 +381,6 @@ func _NodeExecutionEvent_OneofUnmarshaler(msg proto.Message, tag, wire int, b *p
 
 func _NodeExecutionEvent_OneofSizer(msg proto.Message) (n int) {
 	m := msg.(*NodeExecutionEvent)
-	// target_metadata
-	switch x := m.TargetMetadata.(type) {
-	case *NodeExecutionEvent_TaskMetadata:
-		s := proto.Size(x.TaskMetadata)
-		n += 1 // tag and wire
-		n += proto.SizeVarint(uint64(s))
-		n += s
-	case *NodeExecutionEvent_BranchMetadata:
-		s := proto.Size(x.BranchMetadata)
-		n += 1 // tag and wire
-		n += proto.SizeVarint(uint64(s))
-		n += s
-	case *NodeExecutionEvent_WorkflowMetadata:
-		s := proto.Size(x.WorkflowMetadata)
-		n += 1 // tag and wire
-		n += proto.SizeVarint(uint64(s))
-		n += s
-	case nil:
-	default:
-		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
-	}
 	// output_result
 	switch x := m.OutputResult.(type) {
 	case *NodeExecutionEvent_OutputUri:
@@ -472,103 +399,34 @@ func _NodeExecutionEvent_OneofSizer(msg proto.Message) (n int) {
 	return n
 }
 
-// We can fill these in as we find out what SDK/UI/Admin want to display
-type TaskNodeMetadata struct {
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *TaskNodeMetadata) Reset()         { *m = TaskNodeMetadata{} }
-func (m *TaskNodeMetadata) String() string { return proto.CompactTextString(m) }
-func (*TaskNodeMetadata) ProtoMessage()    {}
-func (*TaskNodeMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_event_20a651f47183dfb8, []int{2}
-}
-func (m *TaskNodeMetadata) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_TaskNodeMetadata.Unmarshal(m, b)
-}
-func (m *TaskNodeMetadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_TaskNodeMetadata.Marshal(b, m, deterministic)
-}
-func (dst *TaskNodeMetadata) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_TaskNodeMetadata.Merge(dst, src)
-}
-func (m *TaskNodeMetadata) XXX_Size() int {
-	return xxx_messageInfo_TaskNodeMetadata.Size(m)
-}
-func (m *TaskNodeMetadata) XXX_DiscardUnknown() {
-	xxx_messageInfo_TaskNodeMetadata.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_TaskNodeMetadata proto.InternalMessageInfo
-
-type BranchNodeMetadata struct {
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *BranchNodeMetadata) Reset()         { *m = BranchNodeMetadata{} }
-func (m *BranchNodeMetadata) String() string { return proto.CompactTextString(m) }
-func (*BranchNodeMetadata) ProtoMessage()    {}
-func (*BranchNodeMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_event_20a651f47183dfb8, []int{3}
-}
-func (m *BranchNodeMetadata) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_BranchNodeMetadata.Unmarshal(m, b)
-}
-func (m *BranchNodeMetadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_BranchNodeMetadata.Marshal(b, m, deterministic)
-}
-func (dst *BranchNodeMetadata) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_BranchNodeMetadata.Merge(dst, src)
-}
-func (m *BranchNodeMetadata) XXX_Size() int {
-	return xxx_messageInfo_BranchNodeMetadata.Size(m)
-}
-func (m *BranchNodeMetadata) XXX_DiscardUnknown() {
-	xxx_messageInfo_BranchNodeMetadata.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_BranchNodeMetadata proto.InternalMessageInfo
-
-type SubworkflowNodeMetadata struct {
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *SubworkflowNodeMetadata) Reset()         { *m = SubworkflowNodeMetadata{} }
-func (m *SubworkflowNodeMetadata) String() string { return proto.CompactTextString(m) }
-func (*SubworkflowNodeMetadata) ProtoMessage()    {}
-func (*SubworkflowNodeMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_event_20a651f47183dfb8, []int{4}
-}
-func (m *SubworkflowNodeMetadata) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_SubworkflowNodeMetadata.Unmarshal(m, b)
-}
-func (m *SubworkflowNodeMetadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_SubworkflowNodeMetadata.Marshal(b, m, deterministic)
-}
-func (dst *SubworkflowNodeMetadata) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SubworkflowNodeMetadata.Merge(dst, src)
-}
-func (m *SubworkflowNodeMetadata) XXX_Size() int {
-	return xxx_messageInfo_SubworkflowNodeMetadata.Size(m)
-}
-func (m *SubworkflowNodeMetadata) XXX_DiscardUnknown() {
-	xxx_messageInfo_SubworkflowNodeMetadata.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_SubworkflowNodeMetadata proto.InternalMessageInfo
-
 // Plugins specific execution event information. For tasks like Python, Hive, Spark, DynamicJob.
 type TaskExecutionEvent struct {
-	TaskId     string `protobuf:"bytes,1,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
-	VersionNum string `protobuf:"bytes,2,opt,name=version_num,json=versionNum,proto3" json:"version_num,omitempty"`
+	// Task execution ID (non-unique per retry)
+	TaskId string `protobuf:"bytes,1,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
+	// A unique ID given by the client that represents this instance of the task execution + retry
+	ClientId string `protobuf:"bytes,2,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	// A node or task can be the parent of this task, the event consumer will use
+	// the parent_id to relate it
+	// Specifally for parents that are:
+	// - Tasks: this will be the client_id of that task
+	// - Nodes: this will be the node_id + execution_id + retry constructed as an id
+	ParentId string `protobuf:"bytes,3,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
+	// Phase associated with the event
+	Phase core.TaskExecutionPhase `protobuf:"varint,4,opt,name=phase,proto3,enum=flyteidl.core.TaskExecutionPhase" json:"phase,omitempty"`
+	// id of the process that sent this event, mainly for trace debugging
+	ProducerId string `protobuf:"bytes,5,opt,name=producer_id,json=producerId,proto3" json:"producer_id,omitempty"`
+	// Optional: a sequence number that denotes the ordering across events.
+	// This is useful in situations where a plugin can send multiple events
+	// for the same phase
+	VersionNum string `protobuf:"bytes,6,opt,name=version_num,json=versionNum,proto3" json:"version_num,omitempty"`
+	// URI of the task's log file
+	LogUri string `protobuf:"bytes,7,opt,name=log_uri,json=logUri,proto3" json:"log_uri,omitempty"`
+	// retry attempt number for this task, ie., 2 for the second attempt
+	RetryAttempt uint32 `protobuf:"varint,8,opt,name=retry_attempt,json=retryAttempt,proto3" json:"retry_attempt,omitempty"`
+	// This represents the timestamp of when the event occured, not the request timestamp
+	OccurredAt *timestamp.Timestamp `protobuf:"bytes,9,opt,name=occurred_at,json=occurredAt,proto3" json:"occurred_at,omitempty"`
 	// Custom data that the task plugin sends back. This is extensible to allow various plugins in the system.
-	CustomInfo           *_struct.Struct `protobuf:"bytes,3,opt,name=custom_info,json=customInfo,proto3" json:"custom_info,omitempty"`
+	CustomInfo           *_struct.Struct `protobuf:"bytes,10,opt,name=custom_info,json=customInfo,proto3" json:"custom_info,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
 	XXX_unrecognized     []byte          `json:"-"`
 	XXX_sizecache        int32           `json:"-"`
@@ -578,7 +436,7 @@ func (m *TaskExecutionEvent) Reset()         { *m = TaskExecutionEvent{} }
 func (m *TaskExecutionEvent) String() string { return proto.CompactTextString(m) }
 func (*TaskExecutionEvent) ProtoMessage()    {}
 func (*TaskExecutionEvent) Descriptor() ([]byte, []int) {
-	return fileDescriptor_event_20a651f47183dfb8, []int{5}
+	return fileDescriptor_event_98faf99b1bb7aef0, []int{2}
 }
 func (m *TaskExecutionEvent) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecutionEvent.Unmarshal(m, b)
@@ -605,11 +463,60 @@ func (m *TaskExecutionEvent) GetTaskId() string {
 	return ""
 }
 
+func (m *TaskExecutionEvent) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *TaskExecutionEvent) GetParentId() string {
+	if m != nil {
+		return m.ParentId
+	}
+	return ""
+}
+
+func (m *TaskExecutionEvent) GetPhase() core.TaskExecutionPhase {
+	if m != nil {
+		return m.Phase
+	}
+	return core.TaskExecutionPhase_TASK_PHASE_UNDEFINED
+}
+
+func (m *TaskExecutionEvent) GetProducerId() string {
+	if m != nil {
+		return m.ProducerId
+	}
+	return ""
+}
+
 func (m *TaskExecutionEvent) GetVersionNum() string {
 	if m != nil {
 		return m.VersionNum
 	}
 	return ""
+}
+
+func (m *TaskExecutionEvent) GetLogUri() string {
+	if m != nil {
+		return m.LogUri
+	}
+	return ""
+}
+
+func (m *TaskExecutionEvent) GetRetryAttempt() uint32 {
+	if m != nil {
+		return m.RetryAttempt
+	}
+	return 0
+}
+
+func (m *TaskExecutionEvent) GetOccurredAt() *timestamp.Timestamp {
+	if m != nil {
+		return m.OccurredAt
+	}
+	return nil
 }
 
 func (m *TaskExecutionEvent) GetCustomInfo() *_struct.Struct {
@@ -622,48 +529,46 @@ func (m *TaskExecutionEvent) GetCustomInfo() *_struct.Struct {
 func init() {
 	proto.RegisterType((*WorkflowExecutionEvent)(nil), "flyteidl.event.WorkflowExecutionEvent")
 	proto.RegisterType((*NodeExecutionEvent)(nil), "flyteidl.event.NodeExecutionEvent")
-	proto.RegisterType((*TaskNodeMetadata)(nil), "flyteidl.event.TaskNodeMetadata")
-	proto.RegisterType((*BranchNodeMetadata)(nil), "flyteidl.event.BranchNodeMetadata")
-	proto.RegisterType((*SubworkflowNodeMetadata)(nil), "flyteidl.event.SubworkflowNodeMetadata")
 	proto.RegisterType((*TaskExecutionEvent)(nil), "flyteidl.event.TaskExecutionEvent")
 }
 
-func init() { proto.RegisterFile("flyteidl/event/event.proto", fileDescriptor_event_20a651f47183dfb8) }
+func init() { proto.RegisterFile("flyteidl/event/event.proto", fileDescriptor_event_98faf99b1bb7aef0) }
 
-var fileDescriptor_event_20a651f47183dfb8 = []byte{
-	// 538 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x94, 0xdd, 0x6e, 0xd3, 0x4c,
-	0x10, 0x86, 0xe3, 0x7e, 0x4d, 0xfa, 0x65, 0xd2, 0x24, 0xed, 0x0a, 0x91, 0x10, 0xa8, 0x1a, 0x8c,
-	0x10, 0x39, 0xc1, 0x16, 0xad, 0x10, 0x48, 0x1c, 0x11, 0xa9, 0x22, 0x39, 0x68, 0x85, 0x5c, 0x7e,
-	0x24, 0x4e, 0x2c, 0xff, 0xac, 0x1d, 0x2b, 0xb6, 0x37, 0x5a, 0xcf, 0xb6, 0xe4, 0x0e, 0xb8, 0x00,
-	0xae, 0x87, 0x6b, 0x43, 0xde, 0xb5, 0x1d, 0xd9, 0x01, 0x89, 0x93, 0x48, 0x3b, 0x79, 0xe7, 0x99,
-	0x9d, 0x9d, 0x77, 0x0c, 0x93, 0x20, 0xde, 0x22, 0x8d, 0xfc, 0xd8, 0xa4, 0x77, 0x34, 0x45, 0xf5,
-	0x6b, 0x6c, 0x38, 0x43, 0x46, 0x06, 0xe5, 0x7f, 0x86, 0x8c, 0x4e, 0xce, 0x2a, 0xad, 0xc7, 0x38,
-	0x35, 0xe9, 0x77, 0xea, 0x09, 0x8c, 0x58, 0xaa, 0xe4, 0x93, 0x27, 0x21, 0x63, 0x61, 0x4c, 0x4d,
-	0x79, 0x72, 0x45, 0x60, 0x66, 0xc8, 0x85, 0x57, 0xc0, 0xf4, 0x5f, 0x1a, 0x3c, 0xfc, 0xca, 0xf8,
-	0x3a, 0x88, 0xd9, 0xfd, 0x55, 0x99, 0x79, 0x95, 0x73, 0xc9, 0x3b, 0x68, 0x6f, 0x56, 0x4e, 0x46,
-	0xc7, 0xda, 0x54, 0x9b, 0x0d, 0x2e, 0x9e, 0x1b, 0x55, 0xdd, 0xbc, 0x8e, 0xb1, 0x97, 0xf5, 0x31,
-	0x17, 0x5b, 0x2a, 0x87, 0x9c, 0x03, 0x30, 0x81, 0x1b, 0x81, 0xb6, 0xe0, 0xd1, 0xf8, 0x60, 0xaa,
-	0xcd, 0xba, 0x8b, 0x96, 0xd5, 0x55, 0xb1, 0xcf, 0x3c, 0x22, 0xaf, 0xa1, 0x4d, 0x39, 0x67, 0x7c,
-	0xfc, 0xdf, 0x54, 0x9b, 0xf5, 0x2e, 0xce, 0x1a, 0xf4, 0xdd, 0x5d, 0x72, 0xd1, 0xa2, 0x65, 0x29,
-	0xf5, 0x7c, 0x08, 0xfd, 0x82, 0xcb, 0x69, 0x26, 0x62, 0xd4, 0x7f, 0x1e, 0x02, 0xb9, 0x61, 0x3e,
-	0x6d, 0x5c, 0x7e, 0x04, 0x47, 0x29, 0xf3, 0xa9, 0x1d, 0xf9, 0xf2, 0xfa, 0x5d, 0xab, 0x93, 0x1f,
-	0x97, 0x3e, 0x79, 0x53, 0x76, 0x75, 0x20, 0xbb, 0x7a, 0xda, 0xa8, 0x5b, 0x43, 0xd5, 0x3a, 0x7a,
-	0x06, 0x7d, 0x4e, 0x91, 0x6f, 0x6d, 0x07, 0x91, 0x26, 0x1b, 0x1c, 0x1f, 0x4e, 0xb5, 0x59, 0xdf,
-	0x3a, 0x96, 0xc1, 0xf7, 0x2a, 0x46, 0x3e, 0x40, 0x1f, 0x9d, 0x6c, 0x6d, 0x27, 0x14, 0x1d, 0xdf,
-	0x41, 0x67, 0xdc, 0x96, 0xdd, 0x4d, 0x8d, 0xfa, 0xcc, 0x8c, 0x4f, 0x4e, 0xb6, 0xce, 0x4b, 0x5d,
-	0x17, 0xba, 0x45, 0xcb, 0x3a, 0xce, 0x13, 0xcb, 0x33, 0xb9, 0x86, 0xa1, 0xcb, 0x9d, 0xd4, 0x5b,
-	0xed, 0x50, 0x1d, 0x89, 0xd2, 0x9b, 0xa8, 0xb9, 0x94, 0x35, 0x60, 0x03, 0x95, 0x5c, 0xe1, 0xbe,
-	0xc0, 0xe9, 0x7d, 0x31, 0xaf, 0x1d, 0xf0, 0x48, 0x02, 0x5f, 0x34, 0x81, 0xb7, 0xc2, 0x2d, 0xb5,
-	0x0d, 0xea, 0x49, 0x19, 0xaf, 0xb8, 0x8f, 0xa1, 0x1b, 0xa5, 0xe5, 0x94, 0xbb, 0xf2, 0xa1, 0xff,
-	0x97, 0x81, 0x7c, 0xc4, 0x75, 0x0f, 0x80, 0xf4, 0x80, 0xf6, 0x47, 0x0f, 0xf4, 0xfe, 0xc5, 0x03,
-	0x5a, 0xe9, 0x81, 0x53, 0x18, 0xa2, 0xc3, 0x43, 0x8a, 0x55, 0x2b, 0xfb, 0xb6, 0x20, 0x70, 0xd2,
-	0x7c, 0x63, 0xfd, 0x01, 0x90, 0xfd, 0xc7, 0xd2, 0x1f, 0xc1, 0xe8, 0x2f, 0x1d, 0xeb, 0x3f, 0x34,
-	0x20, 0x39, 0x65, 0xdf, 0x5b, 0x72, 0xc8, 0x3b, 0x6f, 0xe5, 0xc7, 0xa5, 0x4f, 0xce, 0xa1, 0x77,
-	0x47, 0x79, 0x16, 0xb1, 0xd4, 0x4e, 0x45, 0xa2, 0x5c, 0x6f, 0x41, 0x11, 0xba, 0x11, 0x09, 0x79,
-	0x0b, 0x3d, 0x4f, 0x64, 0xc8, 0x12, 0x3b, 0x4a, 0x03, 0x56, 0x58, 0x7f, 0x64, 0xa8, 0x0d, 0x35,
-	0xca, 0x0d, 0x35, 0x6e, 0xe5, 0x86, 0x5a, 0xa0, 0xb4, 0xcb, 0x34, 0x60, 0xf3, 0xcb, 0x6f, 0xaf,
-	0xc2, 0x08, 0x57, 0xc2, 0x35, 0x3c, 0x96, 0x98, 0xf1, 0x36, 0x40, 0xb3, 0x5a, 0xfb, 0x90, 0xa6,
-	0xe6, 0xc6, 0x7d, 0x19, 0x32, 0xb3, 0xfe, 0xd5, 0x70, 0x3b, 0x92, 0x78, 0xf9, 0x3b, 0x00, 0x00,
-	0xff, 0xff, 0x64, 0x10, 0x8d, 0x5a, 0x4e, 0x04, 0x00, 0x00,
+var fileDescriptor_event_98faf99b1bb7aef0 = []byte{
+	// 557 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x94, 0x4d, 0x6b, 0xdb, 0x4e,
+	0x10, 0xc6, 0xe3, 0xf8, 0x25, 0xd6, 0x28, 0xce, 0x1f, 0x74, 0xf8, 0x47, 0xb8, 0x0d, 0x76, 0x52,
+	0x0a, 0xbe, 0x54, 0xa2, 0x09, 0xa5, 0x85, 0x9c, 0x12, 0x08, 0xc4, 0x97, 0x50, 0xd4, 0x94, 0x42,
+	0x2f, 0x46, 0x96, 0x56, 0x8a, 0xb0, 0xa4, 0x11, 0xab, 0xd9, 0xb4, 0xfe, 0x1a, 0xbd, 0xf4, 0xe3,
+	0xf4, 0xab, 0x95, 0xdd, 0xb5, 0xfc, 0x22, 0x85, 0x40, 0xe8, 0x45, 0xa0, 0x67, 0x9f, 0xdd, 0x99,
+	0xf9, 0x3d, 0xcb, 0xc2, 0x30, 0x4a, 0x97, 0xc4, 0x92, 0x30, 0x75, 0xd9, 0x23, 0xcb, 0x49, 0x7f,
+	0x9d, 0x82, 0x23, 0xa1, 0x75, 0x54, 0xad, 0x39, 0x4a, 0x1d, 0x9e, 0xac, 0xbd, 0x01, 0x72, 0xe6,
+	0xb2, 0x9f, 0x2c, 0x10, 0x94, 0x60, 0xae, 0xed, 0xc3, 0x51, 0x8c, 0x18, 0xa7, 0xcc, 0x55, 0x7f,
+	0x73, 0x11, 0xb9, 0x94, 0x64, 0xac, 0x24, 0x3f, 0x2b, 0x56, 0x86, 0xd7, 0x75, 0x43, 0x49, 0x5c,
+	0x04, 0xab, 0x6a, 0x67, 0x7f, 0xf6, 0xe1, 0xff, 0x6f, 0xc8, 0x17, 0x51, 0x8a, 0x3f, 0x6e, 0xaa,
+	0xa3, 0x6f, 0x64, 0x61, 0xeb, 0x14, 0x0e, 0xd7, 0xc5, 0x66, 0x49, 0x68, 0xb7, 0xc6, 0xad, 0x89,
+	0xe1, 0x99, 0x6b, 0x6d, 0x1a, 0x5a, 0x23, 0x30, 0x0b, 0x8e, 0xa1, 0x08, 0x18, 0x97, 0x8e, 0x7d,
+	0xe5, 0x80, 0x4a, 0x9a, 0x86, 0xd6, 0x25, 0x74, 0x8b, 0x07, 0xbf, 0x64, 0x76, 0x7b, 0xdc, 0x9a,
+	0x1c, 0x9d, 0xbf, 0x75, 0xd6, 0xc3, 0xc9, 0x61, 0x9c, 0x46, 0xe5, 0xcf, 0xd2, 0xec, 0xe9, 0x3d,
+	0xd6, 0x25, 0x98, 0x18, 0x04, 0x82, 0x73, 0x16, 0xce, 0x7c, 0xb2, 0x3b, 0xe3, 0xd6, 0xc4, 0x3c,
+	0x1f, 0x3a, 0x7a, 0x1e, 0xa7, 0x9a, 0xc7, 0xb9, 0xaf, 0x06, 0xf6, 0xa0, 0xb2, 0x5f, 0x91, 0x35,
+	0x02, 0x40, 0x41, 0x85, 0xa0, 0x99, 0xe0, 0x89, 0xdd, 0x95, 0x9d, 0xdd, 0xee, 0x79, 0x86, 0xd6,
+	0xbe, 0xf2, 0xc4, 0xfa, 0x00, 0x5d, 0xc6, 0x39, 0x72, 0xbb, 0xa7, 0xce, 0x3d, 0xa9, 0xb5, 0xb6,
+	0x81, 0x21, 0x4d, 0xb7, 0x7b, 0x9e, 0x76, 0x5f, 0xff, 0x07, 0x83, 0xd5, 0xb9, 0x9c, 0x95, 0x22,
+	0xa5, 0xb3, 0x5f, 0x6d, 0xb0, 0xee, 0x30, 0x64, 0x35, 0x7a, 0xc7, 0x70, 0x90, 0x63, 0xc8, 0x36,
+	0xe0, 0x7a, 0xf2, 0x77, 0x1a, 0x36, 0xb0, 0xee, 0x37, 0xb1, 0xbe, 0x81, 0x01, 0x67, 0xc4, 0x97,
+	0x33, 0x9f, 0x88, 0x65, 0x05, 0x29, 0x7a, 0x03, 0xef, 0x50, 0x89, 0x57, 0x5a, 0xab, 0xb3, 0xef,
+	0x34, 0xd8, 0x7f, 0xac, 0xd8, 0x77, 0x15, 0xfb, 0xd3, 0xda, 0x80, 0x3b, 0x3d, 0x3f, 0xc7, 0xbd,
+	0xf7, 0x22, 0xee, 0xaf, 0xc0, 0x48, 0xf2, 0x0a, 0xfb, 0x81, 0x6a, 0xaa, 0xaf, 0x04, 0xc9, 0x7c,
+	0x37, 0x94, 0xfe, 0x33, 0xa1, 0x18, 0xff, 0x16, 0xca, 0xef, 0x36, 0x58, 0xf7, 0x7e, 0xb9, 0x68,
+	0x86, 0x42, 0x7e, 0xb9, 0xd8, 0x0a, 0x45, 0xfe, 0x4e, 0x43, 0xd9, 0x75, 0x90, 0x26, 0x2c, 0xa7,
+	0x4d, 0x22, 0x7d, 0x2d, 0xe8, 0xc5, 0xc2, 0xe7, 0xab, 0xc5, 0xb6, 0x5e, 0xd4, 0xc2, 0x36, 0xe5,
+	0xce, 0x93, 0x94, 0x77, 0x9a, 0xd8, 0xa1, 0x5c, 0xcb, 0xaf, 0xdb, 0xc8, 0x6f, 0x04, 0xe6, 0x23,
+	0xe3, 0xa5, 0xbc, 0x26, 0xb9, 0xc8, 0x54, 0x0c, 0x86, 0x07, 0x2b, 0xe9, 0x4e, 0x64, 0x72, 0x9a,
+	0x14, 0xe3, 0x2d, 0xd0, 0xbd, 0x14, 0x63, 0x49, 0xb1, 0x71, 0x7f, 0xfa, 0x4f, 0xdc, 0x9f, 0x5a,
+	0xca, 0xc6, 0x8b, 0x52, 0xfe, 0x04, 0x66, 0x20, 0x4a, 0xc2, 0x6c, 0x96, 0xe4, 0x11, 0xda, 0xa0,
+	0x36, 0x1f, 0x37, 0x36, 0x7f, 0x51, 0x4f, 0x8d, 0x07, 0xda, 0x3b, 0xcd, 0x23, 0xbc, 0xbe, 0xf8,
+	0xfe, 0x3e, 0x4e, 0xe8, 0x41, 0xcc, 0x9d, 0x00, 0x33, 0x37, 0x5d, 0x46, 0xe4, 0xae, 0x1f, 0xb8,
+	0x98, 0xe5, 0x6e, 0x31, 0x7f, 0x17, 0xa3, 0xbb, 0xfb, 0x3e, 0xce, 0x7b, 0xea, 0xc4, 0x8b, 0xbf,
+	0x01, 0x00, 0x00, 0xff, 0xff, 0xe4, 0xe7, 0xe0, 0x92, 0x38, 0x05, 0x00, 0x00,
 }
