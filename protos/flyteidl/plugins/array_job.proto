@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package flyteidl.plugins;
+
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/plugins";
+
+// Describes a job that can process independent pieces of data concurrently. Multiple copies of the runnable component
+// will be executed concurrently.
+message ArrayJob {
+    // Defines the maximum number of instances to bring up concurrently at any given point.
+    int64 slots = 1;
+
+    // Defines the number of successful completions needed to mark the job as success. This number should match
+    // the size of the input if the job requires processing of all input data.
+    int64 completions = 2;
+
+    // An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
+    // the array job will be marked as successful and outputs will be computed.
+    int64 min_successes = 3;
+
+    // The location for where the input will be. The usage of this location is engine-dependent.
+    // AWS_Batch & K8s_Batch: This location will be passed in to each task in the array job. Each job is responsible for
+    // processing only the portion of the input it's meant to based on an environment variable passed into the container
+    // . The algorithm for figuring that out is as follows:
+    // - Read environment variable: BATCH_JOB_ARRAY_INDEX_VAR_NAME if it exists, this will contain the name of another
+    //   environment variable that actually contain the index (e.g. AWS_BATCH_JOB_ARRAY_INDEX for AWS batch).
+    // - Read environment variable: BATCH_JOB_ARRAY_INDEX_OFFSET if it exists, this will contain an offset to add to the
+    //   index obtained above.
+    // - The input location is then: <input_ref>/<final_index>/inputs.pb
+    // For example, in AWS_Batch, BATCH_JOB_ARRAY_INDEX_VAR_NAME will be set to AWS_BATCH_JOB_ARRAY_INDEX. The job can
+    // then look at AWS_BATCH_JOB_ARRAY_INDEX to know the index of the job (e.g. 5), then let's say BATCH_JOB_ARRAY_INDEX_OFFSET
+    // contains the value 2. The final output location is then: <input_ref>/7/inputs.pb
+    // P.S for Azure: The execution engine will have to process the input and slice it for each task. It'll then pass an
+    // absolute location to each task for where it can find its input.
+    string input_ref = 4;
+
+    // TODO: Add bindings to optionally pull these fields from task inputs.
+}

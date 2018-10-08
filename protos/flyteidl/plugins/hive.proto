@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package flyteidl.plugins;
+
+import "flyteidl/core/tasks.proto";
+
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/plugins";
+
+// Defines a query to execute on a hive cluster.
+message HiveQuery {
+    // The query string.
+    string query = 1;
+}
+
+// Defines a collection of hive queries.
+message HiveQueryCollection {
+    repeated HiveQuery queries = 2;
+}

@@ -8215,6 +8215,363 @@ export const flyteidl = $root.flyteidl = (() => {
             return Container;
         })();
 
+        core.DynamicJobSpec = (function() {
+
+            /**
+             * Properties of a DynamicJobSpec.
+             * @memberof flyteidl.core
+             * @interface IDynamicJobSpec
+             * @property {Array.<flyteidl.core.IDynamicNode>|null} [nodes] DynamicJobSpec nodes
+             * @property {Long|null} [minSuccesses] DynamicJobSpec minSuccesses
+             * @property {Array.<flyteidl.core.IBinding>|null} [outputs] DynamicJobSpec outputs
+             * @property {Array.<flyteidl.core.ITaskTemplate>|null} [tasks] DynamicJobSpec tasks
+             */
+
+            /**
+             * Constructs a new DynamicJobSpec.
+             * @memberof flyteidl.core
+             * @classdesc Represents a DynamicJobSpec.
+             * @implements IDynamicJobSpec
+             * @constructor
+             * @param {flyteidl.core.IDynamicJobSpec=} [properties] Properties to set
+             */
+            function DynamicJobSpec(properties) {
+                this.nodes = [];
+                this.outputs = [];
+                this.tasks = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * DynamicJobSpec nodes.
+             * @member {Array.<flyteidl.core.IDynamicNode>} nodes
+             * @memberof flyteidl.core.DynamicJobSpec
+             * @instance
+             */
+            DynamicJobSpec.prototype.nodes = $util.emptyArray;
+
+            /**
+             * DynamicJobSpec minSuccesses.
+             * @member {Long} minSuccesses
+             * @memberof flyteidl.core.DynamicJobSpec
+             * @instance
+             */
+            DynamicJobSpec.prototype.minSuccesses = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * DynamicJobSpec outputs.
+             * @member {Array.<flyteidl.core.IBinding>} outputs
+             * @memberof flyteidl.core.DynamicJobSpec
+             * @instance
+             */
+            DynamicJobSpec.prototype.outputs = $util.emptyArray;
+
+            /**
+             * DynamicJobSpec tasks.
+             * @member {Array.<flyteidl.core.ITaskTemplate>} tasks
+             * @memberof flyteidl.core.DynamicJobSpec
+             * @instance
+             */
+            DynamicJobSpec.prototype.tasks = $util.emptyArray;
+
+            /**
+             * Creates a new DynamicJobSpec instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.DynamicJobSpec
+             * @static
+             * @param {flyteidl.core.IDynamicJobSpec=} [properties] Properties to set
+             * @returns {flyteidl.core.DynamicJobSpec} DynamicJobSpec instance
+             */
+            DynamicJobSpec.create = function create(properties) {
+                return new DynamicJobSpec(properties);
+            };
+
+            /**
+             * Encodes the specified DynamicJobSpec message. Does not implicitly {@link flyteidl.core.DynamicJobSpec.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.DynamicJobSpec
+             * @static
+             * @param {flyteidl.core.IDynamicJobSpec} message DynamicJobSpec message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DynamicJobSpec.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.nodes != null && message.nodes.length)
+                    for (let i = 0; i < message.nodes.length; ++i)
+                        $root.flyteidl.core.DynamicNode.encode(message.nodes[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.minSuccesses != null && message.hasOwnProperty("minSuccesses"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.minSuccesses);
+                if (message.outputs != null && message.outputs.length)
+                    for (let i = 0; i < message.outputs.length; ++i)
+                        $root.flyteidl.core.Binding.encode(message.outputs[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.tasks != null && message.tasks.length)
+                    for (let i = 0; i < message.tasks.length; ++i)
+                        $root.flyteidl.core.TaskTemplate.encode(message.tasks[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a DynamicJobSpec message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.DynamicJobSpec
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.DynamicJobSpec} DynamicJobSpec
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DynamicJobSpec.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.DynamicJobSpec();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.nodes && message.nodes.length))
+                            message.nodes = [];
+                        message.nodes.push($root.flyteidl.core.DynamicNode.decode(reader, reader.uint32()));
+                        break;
+                    case 2:
+                        message.minSuccesses = reader.int64();
+                        break;
+                    case 3:
+                        if (!(message.outputs && message.outputs.length))
+                            message.outputs = [];
+                        message.outputs.push($root.flyteidl.core.Binding.decode(reader, reader.uint32()));
+                        break;
+                    case 4:
+                        if (!(message.tasks && message.tasks.length))
+                            message.tasks = [];
+                        message.tasks.push($root.flyteidl.core.TaskTemplate.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a DynamicJobSpec message.
+             * @function verify
+             * @memberof flyteidl.core.DynamicJobSpec
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DynamicJobSpec.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.nodes != null && message.hasOwnProperty("nodes")) {
+                    if (!Array.isArray(message.nodes))
+                        return "nodes: array expected";
+                    for (let i = 0; i < message.nodes.length; ++i) {
+                        let error = $root.flyteidl.core.DynamicNode.verify(message.nodes[i]);
+                        if (error)
+                            return "nodes." + error;
+                    }
+                }
+                if (message.minSuccesses != null && message.hasOwnProperty("minSuccesses"))
+                    if (!$util.isInteger(message.minSuccesses) && !(message.minSuccesses && $util.isInteger(message.minSuccesses.low) && $util.isInteger(message.minSuccesses.high)))
+                        return "minSuccesses: integer|Long expected";
+                if (message.outputs != null && message.hasOwnProperty("outputs")) {
+                    if (!Array.isArray(message.outputs))
+                        return "outputs: array expected";
+                    for (let i = 0; i < message.outputs.length; ++i) {
+                        let error = $root.flyteidl.core.Binding.verify(message.outputs[i]);
+                        if (error)
+                            return "outputs." + error;
+                    }
+                }
+                if (message.tasks != null && message.hasOwnProperty("tasks")) {
+                    if (!Array.isArray(message.tasks))
+                        return "tasks: array expected";
+                    for (let i = 0; i < message.tasks.length; ++i) {
+                        let error = $root.flyteidl.core.TaskTemplate.verify(message.tasks[i]);
+                        if (error)
+                            return "tasks." + error;
+                    }
+                }
+                return null;
+            };
+
+            return DynamicJobSpec;
+        })();
+
+        core.DynamicNode = (function() {
+
+            /**
+             * Properties of a DynamicNode.
+             * @memberof flyteidl.core
+             * @interface IDynamicNode
+             * @property {string|null} [generateId] DynamicNode generateId
+             * @property {flyteidl.core.INodeMetadata|null} [metadata] DynamicNode metadata
+             * @property {flyteidl.core.ITaskNode|null} [taskRef] DynamicNode taskRef
+             */
+
+            /**
+             * Constructs a new DynamicNode.
+             * @memberof flyteidl.core
+             * @classdesc Represents a DynamicNode.
+             * @implements IDynamicNode
+             * @constructor
+             * @param {flyteidl.core.IDynamicNode=} [properties] Properties to set
+             */
+            function DynamicNode(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * DynamicNode generateId.
+             * @member {string} generateId
+             * @memberof flyteidl.core.DynamicNode
+             * @instance
+             */
+            DynamicNode.prototype.generateId = "";
+
+            /**
+             * DynamicNode metadata.
+             * @member {flyteidl.core.INodeMetadata|null|undefined} metadata
+             * @memberof flyteidl.core.DynamicNode
+             * @instance
+             */
+            DynamicNode.prototype.metadata = null;
+
+            /**
+             * DynamicNode taskRef.
+             * @member {flyteidl.core.ITaskNode|null|undefined} taskRef
+             * @memberof flyteidl.core.DynamicNode
+             * @instance
+             */
+            DynamicNode.prototype.taskRef = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * DynamicNode target.
+             * @member {"taskRef"|undefined} target
+             * @memberof flyteidl.core.DynamicNode
+             * @instance
+             */
+            Object.defineProperty(DynamicNode.prototype, "target", {
+                get: $util.oneOfGetter($oneOfFields = ["taskRef"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new DynamicNode instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.DynamicNode
+             * @static
+             * @param {flyteidl.core.IDynamicNode=} [properties] Properties to set
+             * @returns {flyteidl.core.DynamicNode} DynamicNode instance
+             */
+            DynamicNode.create = function create(properties) {
+                return new DynamicNode(properties);
+            };
+
+            /**
+             * Encodes the specified DynamicNode message. Does not implicitly {@link flyteidl.core.DynamicNode.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.DynamicNode
+             * @static
+             * @param {flyteidl.core.IDynamicNode} message DynamicNode message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DynamicNode.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.generateId != null && message.hasOwnProperty("generateId"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.generateId);
+                if (message.metadata != null && message.hasOwnProperty("metadata"))
+                    $root.flyteidl.core.NodeMetadata.encode(message.metadata, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.taskRef != null && message.hasOwnProperty("taskRef"))
+                    $root.flyteidl.core.TaskNode.encode(message.taskRef, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a DynamicNode message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.DynamicNode
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.DynamicNode} DynamicNode
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DynamicNode.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.DynamicNode();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.generateId = reader.string();
+                        break;
+                    case 2:
+                        message.metadata = $root.flyteidl.core.NodeMetadata.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.taskRef = $root.flyteidl.core.TaskNode.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a DynamicNode message.
+             * @function verify
+             * @memberof flyteidl.core.DynamicNode
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DynamicNode.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.generateId != null && message.hasOwnProperty("generateId"))
+                    if (!$util.isString(message.generateId))
+                        return "generateId: string expected";
+                if (message.metadata != null && message.hasOwnProperty("metadata")) {
+                    let error = $root.flyteidl.core.NodeMetadata.verify(message.metadata);
+                    if (error)
+                        return "metadata." + error;
+                }
+                if (message.taskRef != null && message.hasOwnProperty("taskRef")) {
+                    properties.target = 1;
+                    {
+                        let error = $root.flyteidl.core.TaskNode.verify(message.taskRef);
+                        if (error)
+                            return "taskRef." + error;
+                    }
+                }
+                return null;
+            };
+
+            return DynamicNode;
+        })();
+
         core.ContainerError = (function() {
 
             /**
@@ -8695,1022 +9052,6 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             return ExecutionError;
-        })();
-
-        core.FutureTaskDocument = (function() {
-
-            /**
-             * Properties of a FutureTaskDocument.
-             * @memberof flyteidl.core
-             * @interface IFutureTaskDocument
-             * @property {Array.<flyteidl.core.IFutureTaskNode>|null} [tasks] FutureTaskDocument tasks
-             * @property {Long|null} [minSuccesses] FutureTaskDocument minSuccesses
-             * @property {Array.<flyteidl.core.IBinding>|null} [outputs] FutureTaskDocument outputs
-             */
-
-            /**
-             * Constructs a new FutureTaskDocument.
-             * @memberof flyteidl.core
-             * @classdesc Represents a FutureTaskDocument.
-             * @implements IFutureTaskDocument
-             * @constructor
-             * @param {flyteidl.core.IFutureTaskDocument=} [properties] Properties to set
-             */
-            function FutureTaskDocument(properties) {
-                this.tasks = [];
-                this.outputs = [];
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * FutureTaskDocument tasks.
-             * @member {Array.<flyteidl.core.IFutureTaskNode>} tasks
-             * @memberof flyteidl.core.FutureTaskDocument
-             * @instance
-             */
-            FutureTaskDocument.prototype.tasks = $util.emptyArray;
-
-            /**
-             * FutureTaskDocument minSuccesses.
-             * @member {Long} minSuccesses
-             * @memberof flyteidl.core.FutureTaskDocument
-             * @instance
-             */
-            FutureTaskDocument.prototype.minSuccesses = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-            /**
-             * FutureTaskDocument outputs.
-             * @member {Array.<flyteidl.core.IBinding>} outputs
-             * @memberof flyteidl.core.FutureTaskDocument
-             * @instance
-             */
-            FutureTaskDocument.prototype.outputs = $util.emptyArray;
-
-            /**
-             * Creates a new FutureTaskDocument instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.FutureTaskDocument
-             * @static
-             * @param {flyteidl.core.IFutureTaskDocument=} [properties] Properties to set
-             * @returns {flyteidl.core.FutureTaskDocument} FutureTaskDocument instance
-             */
-            FutureTaskDocument.create = function create(properties) {
-                return new FutureTaskDocument(properties);
-            };
-
-            /**
-             * Encodes the specified FutureTaskDocument message. Does not implicitly {@link flyteidl.core.FutureTaskDocument.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.FutureTaskDocument
-             * @static
-             * @param {flyteidl.core.IFutureTaskDocument} message FutureTaskDocument message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            FutureTaskDocument.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.tasks != null && message.tasks.length)
-                    for (let i = 0; i < message.tasks.length; ++i)
-                        $root.flyteidl.core.FutureTaskNode.encode(message.tasks[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.minSuccesses != null && message.hasOwnProperty("minSuccesses"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.minSuccesses);
-                if (message.outputs != null && message.outputs.length)
-                    for (let i = 0; i < message.outputs.length; ++i)
-                        $root.flyteidl.core.Binding.encode(message.outputs[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a FutureTaskDocument message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.FutureTaskDocument
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.FutureTaskDocument} FutureTaskDocument
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            FutureTaskDocument.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.FutureTaskDocument();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.tasks && message.tasks.length))
-                            message.tasks = [];
-                        message.tasks.push($root.flyteidl.core.FutureTaskNode.decode(reader, reader.uint32()));
-                        break;
-                    case 2:
-                        message.minSuccesses = reader.int64();
-                        break;
-                    case 3:
-                        if (!(message.outputs && message.outputs.length))
-                            message.outputs = [];
-                        message.outputs.push($root.flyteidl.core.Binding.decode(reader, reader.uint32()));
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a FutureTaskDocument message.
-             * @function verify
-             * @memberof flyteidl.core.FutureTaskDocument
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            FutureTaskDocument.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.tasks != null && message.hasOwnProperty("tasks")) {
-                    if (!Array.isArray(message.tasks))
-                        return "tasks: array expected";
-                    for (let i = 0; i < message.tasks.length; ++i) {
-                        let error = $root.flyteidl.core.FutureTaskNode.verify(message.tasks[i]);
-                        if (error)
-                            return "tasks." + error;
-                    }
-                }
-                if (message.minSuccesses != null && message.hasOwnProperty("minSuccesses"))
-                    if (!$util.isInteger(message.minSuccesses) && !(message.minSuccesses && $util.isInteger(message.minSuccesses.low) && $util.isInteger(message.minSuccesses.high)))
-                        return "minSuccesses: integer|Long expected";
-                if (message.outputs != null && message.hasOwnProperty("outputs")) {
-                    if (!Array.isArray(message.outputs))
-                        return "outputs: array expected";
-                    for (let i = 0; i < message.outputs.length; ++i) {
-                        let error = $root.flyteidl.core.Binding.verify(message.outputs[i]);
-                        if (error)
-                            return "outputs." + error;
-                    }
-                }
-                return null;
-            };
-
-            return FutureTaskDocument;
-        })();
-
-        core.FutureTaskNode = (function() {
-
-            /**
-             * Properties of a FutureTaskNode.
-             * @memberof flyteidl.core
-             * @interface IFutureTaskNode
-             * @property {string|null} [generateId] FutureTaskNode generateId
-             * @property {flyteidl.core.FutureTaskNode.Kind|null} [kind] FutureTaskNode kind
-             * @property {flyteidl.core.IArrayJob|null} [array] FutureTaskNode array
-             * @property {flyteidl.core.IHiveQueryCollection|null} [hiveQueries] FutureTaskNode hiveQueries
-             */
-
-            /**
-             * Constructs a new FutureTaskNode.
-             * @memberof flyteidl.core
-             * @classdesc Represents a FutureTaskNode.
-             * @implements IFutureTaskNode
-             * @constructor
-             * @param {flyteidl.core.IFutureTaskNode=} [properties] Properties to set
-             */
-            function FutureTaskNode(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * FutureTaskNode generateId.
-             * @member {string} generateId
-             * @memberof flyteidl.core.FutureTaskNode
-             * @instance
-             */
-            FutureTaskNode.prototype.generateId = "";
-
-            /**
-             * FutureTaskNode kind.
-             * @member {flyteidl.core.FutureTaskNode.Kind} kind
-             * @memberof flyteidl.core.FutureTaskNode
-             * @instance
-             */
-            FutureTaskNode.prototype.kind = 0;
-
-            /**
-             * FutureTaskNode array.
-             * @member {flyteidl.core.IArrayJob|null|undefined} array
-             * @memberof flyteidl.core.FutureTaskNode
-             * @instance
-             */
-            FutureTaskNode.prototype.array = null;
-
-            /**
-             * FutureTaskNode hiveQueries.
-             * @member {flyteidl.core.IHiveQueryCollection|null|undefined} hiveQueries
-             * @memberof flyteidl.core.FutureTaskNode
-             * @instance
-             */
-            FutureTaskNode.prototype.hiveQueries = null;
-
-            // OneOf field names bound to virtual getters and setters
-            let $oneOfFields;
-
-            /**
-             * FutureTaskNode target.
-             * @member {"array"|"hiveQueries"|undefined} target
-             * @memberof flyteidl.core.FutureTaskNode
-             * @instance
-             */
-            Object.defineProperty(FutureTaskNode.prototype, "target", {
-                get: $util.oneOfGetter($oneOfFields = ["array", "hiveQueries"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new FutureTaskNode instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.FutureTaskNode
-             * @static
-             * @param {flyteidl.core.IFutureTaskNode=} [properties] Properties to set
-             * @returns {flyteidl.core.FutureTaskNode} FutureTaskNode instance
-             */
-            FutureTaskNode.create = function create(properties) {
-                return new FutureTaskNode(properties);
-            };
-
-            /**
-             * Encodes the specified FutureTaskNode message. Does not implicitly {@link flyteidl.core.FutureTaskNode.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.FutureTaskNode
-             * @static
-             * @param {flyteidl.core.IFutureTaskNode} message FutureTaskNode message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            FutureTaskNode.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.generateId != null && message.hasOwnProperty("generateId"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.generateId);
-                if (message.kind != null && message.hasOwnProperty("kind"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.kind);
-                if (message.array != null && message.hasOwnProperty("array"))
-                    $root.flyteidl.core.ArrayJob.encode(message.array, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.hiveQueries != null && message.hasOwnProperty("hiveQueries"))
-                    $root.flyteidl.core.HiveQueryCollection.encode(message.hiveQueries, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a FutureTaskNode message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.FutureTaskNode
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.FutureTaskNode} FutureTaskNode
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            FutureTaskNode.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.FutureTaskNode();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.generateId = reader.string();
-                        break;
-                    case 2:
-                        message.kind = reader.int32();
-                        break;
-                    case 3:
-                        message.array = $root.flyteidl.core.ArrayJob.decode(reader, reader.uint32());
-                        break;
-                    case 4:
-                        message.hiveQueries = $root.flyteidl.core.HiveQueryCollection.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a FutureTaskNode message.
-             * @function verify
-             * @memberof flyteidl.core.FutureTaskNode
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            FutureTaskNode.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                let properties = {};
-                if (message.generateId != null && message.hasOwnProperty("generateId"))
-                    if (!$util.isString(message.generateId))
-                        return "generateId: string expected";
-                if (message.kind != null && message.hasOwnProperty("kind"))
-                    switch (message.kind) {
-                    default:
-                        return "kind: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                        break;
-                    }
-                if (message.array != null && message.hasOwnProperty("array")) {
-                    properties.target = 1;
-                    {
-                        let error = $root.flyteidl.core.ArrayJob.verify(message.array);
-                        if (error)
-                            return "array." + error;
-                    }
-                }
-                if (message.hiveQueries != null && message.hasOwnProperty("hiveQueries")) {
-                    if (properties.target === 1)
-                        return "target: multiple values";
-                    properties.target = 1;
-                    {
-                        let error = $root.flyteidl.core.HiveQueryCollection.verify(message.hiveQueries);
-                        if (error)
-                            return "hiveQueries." + error;
-                    }
-                }
-                return null;
-            };
-
-            /**
-             * Kind enum.
-             * @name flyteidl.core.FutureTaskNode.Kind
-             * @enum {string}
-             * @property {number} UNKNOWN=0 UNKNOWN value
-             * @property {number} ARRAY_CONTAINER=1 ARRAY_CONTAINER value
-             * @property {number} ARRAY_SWARM=2 ARRAY_SWARM value
-             * @property {number} HIVE=3 HIVE value
-             */
-            FutureTaskNode.Kind = (function() {
-                const valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "UNKNOWN"] = 0;
-                values[valuesById[1] = "ARRAY_CONTAINER"] = 1;
-                values[valuesById[2] = "ARRAY_SWARM"] = 2;
-                values[valuesById[3] = "HIVE"] = 3;
-                return values;
-            })();
-
-            return FutureTaskNode;
-        })();
-
-        core.HiveQuery = (function() {
-
-            /**
-             * Properties of a HiveQuery.
-             * @memberof flyteidl.core
-             * @interface IHiveQuery
-             * @property {string|null} [query] HiveQuery query
-             * @property {flyteidl.core.ITaskMetadata|null} [metadata] HiveQuery metadata
-             */
-
-            /**
-             * Constructs a new HiveQuery.
-             * @memberof flyteidl.core
-             * @classdesc Represents a HiveQuery.
-             * @implements IHiveQuery
-             * @constructor
-             * @param {flyteidl.core.IHiveQuery=} [properties] Properties to set
-             */
-            function HiveQuery(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * HiveQuery query.
-             * @member {string} query
-             * @memberof flyteidl.core.HiveQuery
-             * @instance
-             */
-            HiveQuery.prototype.query = "";
-
-            /**
-             * HiveQuery metadata.
-             * @member {flyteidl.core.ITaskMetadata|null|undefined} metadata
-             * @memberof flyteidl.core.HiveQuery
-             * @instance
-             */
-            HiveQuery.prototype.metadata = null;
-
-            /**
-             * Creates a new HiveQuery instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.HiveQuery
-             * @static
-             * @param {flyteidl.core.IHiveQuery=} [properties] Properties to set
-             * @returns {flyteidl.core.HiveQuery} HiveQuery instance
-             */
-            HiveQuery.create = function create(properties) {
-                return new HiveQuery(properties);
-            };
-
-            /**
-             * Encodes the specified HiveQuery message. Does not implicitly {@link flyteidl.core.HiveQuery.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.HiveQuery
-             * @static
-             * @param {flyteidl.core.IHiveQuery} message HiveQuery message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            HiveQuery.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.query != null && message.hasOwnProperty("query"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.query);
-                if (message.metadata != null && message.hasOwnProperty("metadata"))
-                    $root.flyteidl.core.TaskMetadata.encode(message.metadata, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a HiveQuery message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.HiveQuery
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.HiveQuery} HiveQuery
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            HiveQuery.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.HiveQuery();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.query = reader.string();
-                        break;
-                    case 2:
-                        message.metadata = $root.flyteidl.core.TaskMetadata.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a HiveQuery message.
-             * @function verify
-             * @memberof flyteidl.core.HiveQuery
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            HiveQuery.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.query != null && message.hasOwnProperty("query"))
-                    if (!$util.isString(message.query))
-                        return "query: string expected";
-                if (message.metadata != null && message.hasOwnProperty("metadata")) {
-                    let error = $root.flyteidl.core.TaskMetadata.verify(message.metadata);
-                    if (error)
-                        return "metadata." + error;
-                }
-                return null;
-            };
-
-            return HiveQuery;
-        })();
-
-        core.HiveQueryCollection = (function() {
-
-            /**
-             * Properties of a HiveQueryCollection.
-             * @memberof flyteidl.core
-             * @interface IHiveQueryCollection
-             * @property {Array.<flyteidl.core.IHiveQuery>|null} [queries] HiveQueryCollection queries
-             */
-
-            /**
-             * Constructs a new HiveQueryCollection.
-             * @memberof flyteidl.core
-             * @classdesc Represents a HiveQueryCollection.
-             * @implements IHiveQueryCollection
-             * @constructor
-             * @param {flyteidl.core.IHiveQueryCollection=} [properties] Properties to set
-             */
-            function HiveQueryCollection(properties) {
-                this.queries = [];
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * HiveQueryCollection queries.
-             * @member {Array.<flyteidl.core.IHiveQuery>} queries
-             * @memberof flyteidl.core.HiveQueryCollection
-             * @instance
-             */
-            HiveQueryCollection.prototype.queries = $util.emptyArray;
-
-            /**
-             * Creates a new HiveQueryCollection instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.HiveQueryCollection
-             * @static
-             * @param {flyteidl.core.IHiveQueryCollection=} [properties] Properties to set
-             * @returns {flyteidl.core.HiveQueryCollection} HiveQueryCollection instance
-             */
-            HiveQueryCollection.create = function create(properties) {
-                return new HiveQueryCollection(properties);
-            };
-
-            /**
-             * Encodes the specified HiveQueryCollection message. Does not implicitly {@link flyteidl.core.HiveQueryCollection.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.HiveQueryCollection
-             * @static
-             * @param {flyteidl.core.IHiveQueryCollection} message HiveQueryCollection message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            HiveQueryCollection.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.queries != null && message.queries.length)
-                    for (let i = 0; i < message.queries.length; ++i)
-                        $root.flyteidl.core.HiveQuery.encode(message.queries[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a HiveQueryCollection message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.HiveQueryCollection
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.HiveQueryCollection} HiveQueryCollection
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            HiveQueryCollection.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.HiveQueryCollection();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 2:
-                        if (!(message.queries && message.queries.length))
-                            message.queries = [];
-                        message.queries.push($root.flyteidl.core.HiveQuery.decode(reader, reader.uint32()));
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a HiveQueryCollection message.
-             * @function verify
-             * @memberof flyteidl.core.HiveQueryCollection
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            HiveQueryCollection.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.queries != null && message.hasOwnProperty("queries")) {
-                    if (!Array.isArray(message.queries))
-                        return "queries: array expected";
-                    for (let i = 0; i < message.queries.length; ++i) {
-                        let error = $root.flyteidl.core.HiveQuery.verify(message.queries[i]);
-                        if (error)
-                            return "queries." + error;
-                    }
-                }
-                return null;
-            };
-
-            return HiveQueryCollection;
-        })();
-
-        core.SwarmDefinition = (function() {
-
-            /**
-             * Properties of a SwarmDefinition.
-             * @memberof flyteidl.core
-             * @interface ISwarmDefinition
-             * @property {flyteidl.core.ITaskMetadata|null} [metadata] SwarmDefinition metadata
-             * @property {flyteidl.core.IContainer|null} [primaryContainer] SwarmDefinition primaryContainer
-             * @property {Array.<flyteidl.core.IContainer>|null} [initContainers] SwarmDefinition initContainers
-             * @property {Array.<flyteidl.core.IContainer>|null} [sidecarContainers] SwarmDefinition sidecarContainers
-             */
-
-            /**
-             * Constructs a new SwarmDefinition.
-             * @memberof flyteidl.core
-             * @classdesc Represents a SwarmDefinition.
-             * @implements ISwarmDefinition
-             * @constructor
-             * @param {flyteidl.core.ISwarmDefinition=} [properties] Properties to set
-             */
-            function SwarmDefinition(properties) {
-                this.initContainers = [];
-                this.sidecarContainers = [];
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * SwarmDefinition metadata.
-             * @member {flyteidl.core.ITaskMetadata|null|undefined} metadata
-             * @memberof flyteidl.core.SwarmDefinition
-             * @instance
-             */
-            SwarmDefinition.prototype.metadata = null;
-
-            /**
-             * SwarmDefinition primaryContainer.
-             * @member {flyteidl.core.IContainer|null|undefined} primaryContainer
-             * @memberof flyteidl.core.SwarmDefinition
-             * @instance
-             */
-            SwarmDefinition.prototype.primaryContainer = null;
-
-            /**
-             * SwarmDefinition initContainers.
-             * @member {Array.<flyteidl.core.IContainer>} initContainers
-             * @memberof flyteidl.core.SwarmDefinition
-             * @instance
-             */
-            SwarmDefinition.prototype.initContainers = $util.emptyArray;
-
-            /**
-             * SwarmDefinition sidecarContainers.
-             * @member {Array.<flyteidl.core.IContainer>} sidecarContainers
-             * @memberof flyteidl.core.SwarmDefinition
-             * @instance
-             */
-            SwarmDefinition.prototype.sidecarContainers = $util.emptyArray;
-
-            /**
-             * Creates a new SwarmDefinition instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.SwarmDefinition
-             * @static
-             * @param {flyteidl.core.ISwarmDefinition=} [properties] Properties to set
-             * @returns {flyteidl.core.SwarmDefinition} SwarmDefinition instance
-             */
-            SwarmDefinition.create = function create(properties) {
-                return new SwarmDefinition(properties);
-            };
-
-            /**
-             * Encodes the specified SwarmDefinition message. Does not implicitly {@link flyteidl.core.SwarmDefinition.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.SwarmDefinition
-             * @static
-             * @param {flyteidl.core.ISwarmDefinition} message SwarmDefinition message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            SwarmDefinition.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.metadata != null && message.hasOwnProperty("metadata"))
-                    $root.flyteidl.core.TaskMetadata.encode(message.metadata, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.primaryContainer != null && message.hasOwnProperty("primaryContainer"))
-                    $root.flyteidl.core.Container.encode(message.primaryContainer, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.initContainers != null && message.initContainers.length)
-                    for (let i = 0; i < message.initContainers.length; ++i)
-                        $root.flyteidl.core.Container.encode(message.initContainers[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.sidecarContainers != null && message.sidecarContainers.length)
-                    for (let i = 0; i < message.sidecarContainers.length; ++i)
-                        $root.flyteidl.core.Container.encode(message.sidecarContainers[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a SwarmDefinition message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.SwarmDefinition
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.SwarmDefinition} SwarmDefinition
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            SwarmDefinition.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.SwarmDefinition();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.metadata = $root.flyteidl.core.TaskMetadata.decode(reader, reader.uint32());
-                        break;
-                    case 2:
-                        message.primaryContainer = $root.flyteidl.core.Container.decode(reader, reader.uint32());
-                        break;
-                    case 3:
-                        if (!(message.initContainers && message.initContainers.length))
-                            message.initContainers = [];
-                        message.initContainers.push($root.flyteidl.core.Container.decode(reader, reader.uint32()));
-                        break;
-                    case 4:
-                        if (!(message.sidecarContainers && message.sidecarContainers.length))
-                            message.sidecarContainers = [];
-                        message.sidecarContainers.push($root.flyteidl.core.Container.decode(reader, reader.uint32()));
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a SwarmDefinition message.
-             * @function verify
-             * @memberof flyteidl.core.SwarmDefinition
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            SwarmDefinition.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.metadata != null && message.hasOwnProperty("metadata")) {
-                    let error = $root.flyteidl.core.TaskMetadata.verify(message.metadata);
-                    if (error)
-                        return "metadata." + error;
-                }
-                if (message.primaryContainer != null && message.hasOwnProperty("primaryContainer")) {
-                    let error = $root.flyteidl.core.Container.verify(message.primaryContainer);
-                    if (error)
-                        return "primaryContainer." + error;
-                }
-                if (message.initContainers != null && message.hasOwnProperty("initContainers")) {
-                    if (!Array.isArray(message.initContainers))
-                        return "initContainers: array expected";
-                    for (let i = 0; i < message.initContainers.length; ++i) {
-                        let error = $root.flyteidl.core.Container.verify(message.initContainers[i]);
-                        if (error)
-                            return "initContainers." + error;
-                    }
-                }
-                if (message.sidecarContainers != null && message.hasOwnProperty("sidecarContainers")) {
-                    if (!Array.isArray(message.sidecarContainers))
-                        return "sidecarContainers: array expected";
-                    for (let i = 0; i < message.sidecarContainers.length; ++i) {
-                        let error = $root.flyteidl.core.Container.verify(message.sidecarContainers[i]);
-                        if (error)
-                            return "sidecarContainers." + error;
-                    }
-                }
-                return null;
-            };
-
-            return SwarmDefinition;
-        })();
-
-        core.ArrayJob = (function() {
-
-            /**
-             * Properties of an ArrayJob.
-             * @memberof flyteidl.core
-             * @interface IArrayJob
-             * @property {Long|null} [slots] ArrayJob slots
-             * @property {Long|null} [completions] ArrayJob completions
-             * @property {flyteidl.core.ITaskTemplate|null} [task] ArrayJob task
-             * @property {flyteidl.core.ISwarmDefinition|null} [swarm] ArrayJob swarm
-             * @property {string|null} [inputRef] ArrayJob inputRef
-             */
-
-            /**
-             * Constructs a new ArrayJob.
-             * @memberof flyteidl.core
-             * @classdesc Represents an ArrayJob.
-             * @implements IArrayJob
-             * @constructor
-             * @param {flyteidl.core.IArrayJob=} [properties] Properties to set
-             */
-            function ArrayJob(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * ArrayJob slots.
-             * @member {Long} slots
-             * @memberof flyteidl.core.ArrayJob
-             * @instance
-             */
-            ArrayJob.prototype.slots = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-            /**
-             * ArrayJob completions.
-             * @member {Long} completions
-             * @memberof flyteidl.core.ArrayJob
-             * @instance
-             */
-            ArrayJob.prototype.completions = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-            /**
-             * ArrayJob task.
-             * @member {flyteidl.core.ITaskTemplate|null|undefined} task
-             * @memberof flyteidl.core.ArrayJob
-             * @instance
-             */
-            ArrayJob.prototype.task = null;
-
-            /**
-             * ArrayJob swarm.
-             * @member {flyteidl.core.ISwarmDefinition|null|undefined} swarm
-             * @memberof flyteidl.core.ArrayJob
-             * @instance
-             */
-            ArrayJob.prototype.swarm = null;
-
-            /**
-             * ArrayJob inputRef.
-             * @member {string} inputRef
-             * @memberof flyteidl.core.ArrayJob
-             * @instance
-             */
-            ArrayJob.prototype.inputRef = "";
-
-            // OneOf field names bound to virtual getters and setters
-            let $oneOfFields;
-
-            /**
-             * ArrayJob runnable.
-             * @member {"task"|"swarm"|undefined} runnable
-             * @memberof flyteidl.core.ArrayJob
-             * @instance
-             */
-            Object.defineProperty(ArrayJob.prototype, "runnable", {
-                get: $util.oneOfGetter($oneOfFields = ["task", "swarm"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new ArrayJob instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.ArrayJob
-             * @static
-             * @param {flyteidl.core.IArrayJob=} [properties] Properties to set
-             * @returns {flyteidl.core.ArrayJob} ArrayJob instance
-             */
-            ArrayJob.create = function create(properties) {
-                return new ArrayJob(properties);
-            };
-
-            /**
-             * Encodes the specified ArrayJob message. Does not implicitly {@link flyteidl.core.ArrayJob.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.ArrayJob
-             * @static
-             * @param {flyteidl.core.IArrayJob} message ArrayJob message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            ArrayJob.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.slots != null && message.hasOwnProperty("slots"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.slots);
-                if (message.completions != null && message.hasOwnProperty("completions"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.completions);
-                if (message.task != null && message.hasOwnProperty("task"))
-                    $root.flyteidl.core.TaskTemplate.encode(message.task, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.swarm != null && message.hasOwnProperty("swarm"))
-                    $root.flyteidl.core.SwarmDefinition.encode(message.swarm, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.inputRef != null && message.hasOwnProperty("inputRef"))
-                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.inputRef);
-                return writer;
-            };
-
-            /**
-             * Decodes an ArrayJob message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.ArrayJob
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.ArrayJob} ArrayJob
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            ArrayJob.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ArrayJob();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.slots = reader.int64();
-                        break;
-                    case 2:
-                        message.completions = reader.int64();
-                        break;
-                    case 3:
-                        message.task = $root.flyteidl.core.TaskTemplate.decode(reader, reader.uint32());
-                        break;
-                    case 4:
-                        message.swarm = $root.flyteidl.core.SwarmDefinition.decode(reader, reader.uint32());
-                        break;
-                    case 5:
-                        message.inputRef = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies an ArrayJob message.
-             * @function verify
-             * @memberof flyteidl.core.ArrayJob
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            ArrayJob.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                let properties = {};
-                if (message.slots != null && message.hasOwnProperty("slots"))
-                    if (!$util.isInteger(message.slots) && !(message.slots && $util.isInteger(message.slots.low) && $util.isInteger(message.slots.high)))
-                        return "slots: integer|Long expected";
-                if (message.completions != null && message.hasOwnProperty("completions"))
-                    if (!$util.isInteger(message.completions) && !(message.completions && $util.isInteger(message.completions.low) && $util.isInteger(message.completions.high)))
-                        return "completions: integer|Long expected";
-                if (message.task != null && message.hasOwnProperty("task")) {
-                    properties.runnable = 1;
-                    {
-                        let error = $root.flyteidl.core.TaskTemplate.verify(message.task);
-                        if (error)
-                            return "task." + error;
-                    }
-                }
-                if (message.swarm != null && message.hasOwnProperty("swarm")) {
-                    if (properties.runnable === 1)
-                        return "runnable: multiple values";
-                    properties.runnable = 1;
-                    {
-                        let error = $root.flyteidl.core.SwarmDefinition.verify(message.swarm);
-                        if (error)
-                            return "swarm." + error;
-                    }
-                }
-                if (message.inputRef != null && message.hasOwnProperty("inputRef"))
-                    if (!$util.isString(message.inputRef))
-                        return "inputRef: string expected";
-                return null;
-            };
-
-            return ArrayJob;
         })();
 
         core.WorkflowClosure = (function() {
@@ -18831,6 +18172,397 @@ export const flyteidl = $root.flyteidl = (() => {
          * @namespace
          */
         const plugins = {};
+
+        plugins.ArrayJob = (function() {
+
+            /**
+             * Properties of an ArrayJob.
+             * @memberof flyteidl.plugins
+             * @interface IArrayJob
+             * @property {Long|null} [slots] ArrayJob slots
+             * @property {Long|null} [completions] ArrayJob completions
+             * @property {Long|null} [minSuccesses] ArrayJob minSuccesses
+             * @property {string|null} [inputRef] ArrayJob inputRef
+             */
+
+            /**
+             * Constructs a new ArrayJob.
+             * @memberof flyteidl.plugins
+             * @classdesc Represents an ArrayJob.
+             * @implements IArrayJob
+             * @constructor
+             * @param {flyteidl.plugins.IArrayJob=} [properties] Properties to set
+             */
+            function ArrayJob(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ArrayJob slots.
+             * @member {Long} slots
+             * @memberof flyteidl.plugins.ArrayJob
+             * @instance
+             */
+            ArrayJob.prototype.slots = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * ArrayJob completions.
+             * @member {Long} completions
+             * @memberof flyteidl.plugins.ArrayJob
+             * @instance
+             */
+            ArrayJob.prototype.completions = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * ArrayJob minSuccesses.
+             * @member {Long} minSuccesses
+             * @memberof flyteidl.plugins.ArrayJob
+             * @instance
+             */
+            ArrayJob.prototype.minSuccesses = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * ArrayJob inputRef.
+             * @member {string} inputRef
+             * @memberof flyteidl.plugins.ArrayJob
+             * @instance
+             */
+            ArrayJob.prototype.inputRef = "";
+
+            /**
+             * Creates a new ArrayJob instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.plugins.ArrayJob
+             * @static
+             * @param {flyteidl.plugins.IArrayJob=} [properties] Properties to set
+             * @returns {flyteidl.plugins.ArrayJob} ArrayJob instance
+             */
+            ArrayJob.create = function create(properties) {
+                return new ArrayJob(properties);
+            };
+
+            /**
+             * Encodes the specified ArrayJob message. Does not implicitly {@link flyteidl.plugins.ArrayJob.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.plugins.ArrayJob
+             * @static
+             * @param {flyteidl.plugins.IArrayJob} message ArrayJob message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ArrayJob.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.slots != null && message.hasOwnProperty("slots"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.slots);
+                if (message.completions != null && message.hasOwnProperty("completions"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.completions);
+                if (message.minSuccesses != null && message.hasOwnProperty("minSuccesses"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.minSuccesses);
+                if (message.inputRef != null && message.hasOwnProperty("inputRef"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.inputRef);
+                return writer;
+            };
+
+            /**
+             * Decodes an ArrayJob message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.plugins.ArrayJob
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.plugins.ArrayJob} ArrayJob
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ArrayJob.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.plugins.ArrayJob();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.slots = reader.int64();
+                        break;
+                    case 2:
+                        message.completions = reader.int64();
+                        break;
+                    case 3:
+                        message.minSuccesses = reader.int64();
+                        break;
+                    case 4:
+                        message.inputRef = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an ArrayJob message.
+             * @function verify
+             * @memberof flyteidl.plugins.ArrayJob
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ArrayJob.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.slots != null && message.hasOwnProperty("slots"))
+                    if (!$util.isInteger(message.slots) && !(message.slots && $util.isInteger(message.slots.low) && $util.isInteger(message.slots.high)))
+                        return "slots: integer|Long expected";
+                if (message.completions != null && message.hasOwnProperty("completions"))
+                    if (!$util.isInteger(message.completions) && !(message.completions && $util.isInteger(message.completions.low) && $util.isInteger(message.completions.high)))
+                        return "completions: integer|Long expected";
+                if (message.minSuccesses != null && message.hasOwnProperty("minSuccesses"))
+                    if (!$util.isInteger(message.minSuccesses) && !(message.minSuccesses && $util.isInteger(message.minSuccesses.low) && $util.isInteger(message.minSuccesses.high)))
+                        return "minSuccesses: integer|Long expected";
+                if (message.inputRef != null && message.hasOwnProperty("inputRef"))
+                    if (!$util.isString(message.inputRef))
+                        return "inputRef: string expected";
+                return null;
+            };
+
+            return ArrayJob;
+        })();
+
+        plugins.HiveQuery = (function() {
+
+            /**
+             * Properties of a HiveQuery.
+             * @memberof flyteidl.plugins
+             * @interface IHiveQuery
+             * @property {string|null} [query] HiveQuery query
+             */
+
+            /**
+             * Constructs a new HiveQuery.
+             * @memberof flyteidl.plugins
+             * @classdesc Represents a HiveQuery.
+             * @implements IHiveQuery
+             * @constructor
+             * @param {flyteidl.plugins.IHiveQuery=} [properties] Properties to set
+             */
+            function HiveQuery(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * HiveQuery query.
+             * @member {string} query
+             * @memberof flyteidl.plugins.HiveQuery
+             * @instance
+             */
+            HiveQuery.prototype.query = "";
+
+            /**
+             * Creates a new HiveQuery instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.plugins.HiveQuery
+             * @static
+             * @param {flyteidl.plugins.IHiveQuery=} [properties] Properties to set
+             * @returns {flyteidl.plugins.HiveQuery} HiveQuery instance
+             */
+            HiveQuery.create = function create(properties) {
+                return new HiveQuery(properties);
+            };
+
+            /**
+             * Encodes the specified HiveQuery message. Does not implicitly {@link flyteidl.plugins.HiveQuery.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.plugins.HiveQuery
+             * @static
+             * @param {flyteidl.plugins.IHiveQuery} message HiveQuery message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            HiveQuery.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.query != null && message.hasOwnProperty("query"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.query);
+                return writer;
+            };
+
+            /**
+             * Decodes a HiveQuery message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.plugins.HiveQuery
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.plugins.HiveQuery} HiveQuery
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            HiveQuery.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.plugins.HiveQuery();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.query = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a HiveQuery message.
+             * @function verify
+             * @memberof flyteidl.plugins.HiveQuery
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            HiveQuery.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.query != null && message.hasOwnProperty("query"))
+                    if (!$util.isString(message.query))
+                        return "query: string expected";
+                return null;
+            };
+
+            return HiveQuery;
+        })();
+
+        plugins.HiveQueryCollection = (function() {
+
+            /**
+             * Properties of a HiveQueryCollection.
+             * @memberof flyteidl.plugins
+             * @interface IHiveQueryCollection
+             * @property {Array.<flyteidl.plugins.IHiveQuery>|null} [queries] HiveQueryCollection queries
+             */
+
+            /**
+             * Constructs a new HiveQueryCollection.
+             * @memberof flyteidl.plugins
+             * @classdesc Represents a HiveQueryCollection.
+             * @implements IHiveQueryCollection
+             * @constructor
+             * @param {flyteidl.plugins.IHiveQueryCollection=} [properties] Properties to set
+             */
+            function HiveQueryCollection(properties) {
+                this.queries = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * HiveQueryCollection queries.
+             * @member {Array.<flyteidl.plugins.IHiveQuery>} queries
+             * @memberof flyteidl.plugins.HiveQueryCollection
+             * @instance
+             */
+            HiveQueryCollection.prototype.queries = $util.emptyArray;
+
+            /**
+             * Creates a new HiveQueryCollection instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.plugins.HiveQueryCollection
+             * @static
+             * @param {flyteidl.plugins.IHiveQueryCollection=} [properties] Properties to set
+             * @returns {flyteidl.plugins.HiveQueryCollection} HiveQueryCollection instance
+             */
+            HiveQueryCollection.create = function create(properties) {
+                return new HiveQueryCollection(properties);
+            };
+
+            /**
+             * Encodes the specified HiveQueryCollection message. Does not implicitly {@link flyteidl.plugins.HiveQueryCollection.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.plugins.HiveQueryCollection
+             * @static
+             * @param {flyteidl.plugins.IHiveQueryCollection} message HiveQueryCollection message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            HiveQueryCollection.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.queries != null && message.queries.length)
+                    for (let i = 0; i < message.queries.length; ++i)
+                        $root.flyteidl.plugins.HiveQuery.encode(message.queries[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a HiveQueryCollection message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.plugins.HiveQueryCollection
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.plugins.HiveQueryCollection} HiveQueryCollection
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            HiveQueryCollection.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.plugins.HiveQueryCollection();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 2:
+                        if (!(message.queries && message.queries.length))
+                            message.queries = [];
+                        message.queries.push($root.flyteidl.plugins.HiveQuery.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a HiveQueryCollection message.
+             * @function verify
+             * @memberof flyteidl.plugins.HiveQueryCollection
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            HiveQueryCollection.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.queries != null && message.hasOwnProperty("queries")) {
+                    if (!Array.isArray(message.queries))
+                        return "queries: array expected";
+                    for (let i = 0; i < message.queries.length; ++i) {
+                        let error = $root.flyteidl.plugins.HiveQuery.verify(message.queries[i]);
+                        if (error)
+                            return "queries." + error;
+                    }
+                }
+                return null;
+            };
+
+            return HiveQueryCollection;
+        })();
 
         /**
          * SparkApplicationType enum.

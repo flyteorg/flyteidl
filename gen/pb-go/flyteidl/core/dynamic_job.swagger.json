@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "flyteidl/core/future.proto",
+    "title": "flyteidl/core/dynamic_job.proto",
     "version": "version not set"
   },
   "schemes": [

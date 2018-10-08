@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+import "flyteidl/core/tasks.proto";
+import "flyteidl/core/workflow.proto";
+import "flyteidl/core/literals.proto";
+
+package flyteidl.core;
+
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
+
+// Describes a set of tasks to execute and how the final outputs are produced.
+message DynamicJobSpec {
+    // A collection of nodes to execute.
+    repeated DynamicNode nodes = 1;
+
+    // An absolute number of the minimum number of successful completions of subtasks. As soon as this criteria is met,
+    // the dynamic job will be marked as successful and outputs will be computed.
+    int64 min_successes = 2;
+
+    // Describes how to bind the final output of the dynamic job from the outputs of executed nodes. The referenced ids
+    // in bindings should have the generated id for the subtask.
+    repeated Binding outputs = 3;
+
+    // [Optional] A complete list of task specs referenced in nodes.
+    repeated TaskTemplate tasks = 4;
+}
+
+// Describes a single node to execute that can potentially produce more tasks to run.
+message DynamicNode {
+    // A unique identifier prefix within the document. This is used to generate unique ids for each of the tasks in
+    // target. The generated ids have this format: <generate_id>:<n> where n starts with 0 and monotonically increases.
+    // e.g. if generate_id is set to "my_array_job", the first task in the array job will have the id "my_array_job:0",
+    // then "my_array_job:1"... etc.
+    string generate_id = 1;
+
+    // Extra metadata about the node.
+    NodeMetadata metadata = 2;
+
+    // The executable target of the node. The task custom field will contain one of:
+    // HiveQueryCollection (When task.type is set to HIVE_QUERIES) or ArrayJob (When task.type is set to either
+    // CONTAINER or SWARM).
+    oneof target {
+        TaskNode task_ref = 3;
+    }
+}

@@ -3384,6 +3384,143 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a DynamicJobSpec. */
+        interface IDynamicJobSpec {
+
+            /** DynamicJobSpec nodes */
+            nodes?: (flyteidl.core.IDynamicNode[]|null);
+
+            /** DynamicJobSpec minSuccesses */
+            minSuccesses?: (Long|null);
+
+            /** DynamicJobSpec outputs */
+            outputs?: (flyteidl.core.IBinding[]|null);
+
+            /** DynamicJobSpec tasks */
+            tasks?: (flyteidl.core.ITaskTemplate[]|null);
+        }
+
+        /** Represents a DynamicJobSpec. */
+        class DynamicJobSpec implements IDynamicJobSpec {
+
+            /**
+             * Constructs a new DynamicJobSpec.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IDynamicJobSpec);
+
+            /** DynamicJobSpec nodes. */
+            public nodes: flyteidl.core.IDynamicNode[];
+
+            /** DynamicJobSpec minSuccesses. */
+            public minSuccesses: Long;
+
+            /** DynamicJobSpec outputs. */
+            public outputs: flyteidl.core.IBinding[];
+
+            /** DynamicJobSpec tasks. */
+            public tasks: flyteidl.core.ITaskTemplate[];
+
+            /**
+             * Creates a new DynamicJobSpec instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns DynamicJobSpec instance
+             */
+            public static create(properties?: flyteidl.core.IDynamicJobSpec): flyteidl.core.DynamicJobSpec;
+
+            /**
+             * Encodes the specified DynamicJobSpec message. Does not implicitly {@link flyteidl.core.DynamicJobSpec.verify|verify} messages.
+             * @param message DynamicJobSpec message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IDynamicJobSpec, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a DynamicJobSpec message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DynamicJobSpec
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.DynamicJobSpec;
+
+            /**
+             * Verifies a DynamicJobSpec message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a DynamicNode. */
+        interface IDynamicNode {
+
+            /** DynamicNode generateId */
+            generateId?: (string|null);
+
+            /** DynamicNode metadata */
+            metadata?: (flyteidl.core.INodeMetadata|null);
+
+            /** DynamicNode taskRef */
+            taskRef?: (flyteidl.core.ITaskNode|null);
+        }
+
+        /** Represents a DynamicNode. */
+        class DynamicNode implements IDynamicNode {
+
+            /**
+             * Constructs a new DynamicNode.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IDynamicNode);
+
+            /** DynamicNode generateId. */
+            public generateId: string;
+
+            /** DynamicNode metadata. */
+            public metadata?: (flyteidl.core.INodeMetadata|null);
+
+            /** DynamicNode taskRef. */
+            public taskRef?: (flyteidl.core.ITaskNode|null);
+
+            /** DynamicNode target. */
+            public target?: "taskRef";
+
+            /**
+             * Creates a new DynamicNode instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns DynamicNode instance
+             */
+            public static create(properties?: flyteidl.core.IDynamicNode): flyteidl.core.DynamicNode;
+
+            /**
+             * Encodes the specified DynamicNode message. Does not implicitly {@link flyteidl.core.DynamicNode.verify|verify} messages.
+             * @param message DynamicNode message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IDynamicNode, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a DynamicNode message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DynamicNode
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.DynamicNode;
+
+            /**
+             * Verifies a DynamicNode message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a ContainerError. */
         interface IContainerError {
 
@@ -3598,413 +3735,6 @@ export namespace flyteidl {
 
             /**
              * Verifies an ExecutionError message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a FutureTaskDocument. */
-        interface IFutureTaskDocument {
-
-            /** FutureTaskDocument tasks */
-            tasks?: (flyteidl.core.IFutureTaskNode[]|null);
-
-            /** FutureTaskDocument minSuccesses */
-            minSuccesses?: (Long|null);
-
-            /** FutureTaskDocument outputs */
-            outputs?: (flyteidl.core.IBinding[]|null);
-        }
-
-        /** Represents a FutureTaskDocument. */
-        class FutureTaskDocument implements IFutureTaskDocument {
-
-            /**
-             * Constructs a new FutureTaskDocument.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.IFutureTaskDocument);
-
-            /** FutureTaskDocument tasks. */
-            public tasks: flyteidl.core.IFutureTaskNode[];
-
-            /** FutureTaskDocument minSuccesses. */
-            public minSuccesses: Long;
-
-            /** FutureTaskDocument outputs. */
-            public outputs: flyteidl.core.IBinding[];
-
-            /**
-             * Creates a new FutureTaskDocument instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns FutureTaskDocument instance
-             */
-            public static create(properties?: flyteidl.core.IFutureTaskDocument): flyteidl.core.FutureTaskDocument;
-
-            /**
-             * Encodes the specified FutureTaskDocument message. Does not implicitly {@link flyteidl.core.FutureTaskDocument.verify|verify} messages.
-             * @param message FutureTaskDocument message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.IFutureTaskDocument, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a FutureTaskDocument message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns FutureTaskDocument
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.FutureTaskDocument;
-
-            /**
-             * Verifies a FutureTaskDocument message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a FutureTaskNode. */
-        interface IFutureTaskNode {
-
-            /** FutureTaskNode generateId */
-            generateId?: (string|null);
-
-            /** FutureTaskNode kind */
-            kind?: (flyteidl.core.FutureTaskNode.Kind|null);
-
-            /** FutureTaskNode array */
-            array?: (flyteidl.core.IArrayJob|null);
-
-            /** FutureTaskNode hiveQueries */
-            hiveQueries?: (flyteidl.core.IHiveQueryCollection|null);
-        }
-
-        /** Represents a FutureTaskNode. */
-        class FutureTaskNode implements IFutureTaskNode {
-
-            /**
-             * Constructs a new FutureTaskNode.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.IFutureTaskNode);
-
-            /** FutureTaskNode generateId. */
-            public generateId: string;
-
-            /** FutureTaskNode kind. */
-            public kind: flyteidl.core.FutureTaskNode.Kind;
-
-            /** FutureTaskNode array. */
-            public array?: (flyteidl.core.IArrayJob|null);
-
-            /** FutureTaskNode hiveQueries. */
-            public hiveQueries?: (flyteidl.core.IHiveQueryCollection|null);
-
-            /** FutureTaskNode target. */
-            public target?: ("array"|"hiveQueries");
-
-            /**
-             * Creates a new FutureTaskNode instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns FutureTaskNode instance
-             */
-            public static create(properties?: flyteidl.core.IFutureTaskNode): flyteidl.core.FutureTaskNode;
-
-            /**
-             * Encodes the specified FutureTaskNode message. Does not implicitly {@link flyteidl.core.FutureTaskNode.verify|verify} messages.
-             * @param message FutureTaskNode message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.IFutureTaskNode, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a FutureTaskNode message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns FutureTaskNode
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.FutureTaskNode;
-
-            /**
-             * Verifies a FutureTaskNode message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        namespace FutureTaskNode {
-
-            /** Kind enum. */
-            enum Kind {
-                UNKNOWN = 0,
-                ARRAY_CONTAINER = 1,
-                ARRAY_SWARM = 2,
-                HIVE = 3
-            }
-        }
-
-        /** Properties of a HiveQuery. */
-        interface IHiveQuery {
-
-            /** HiveQuery query */
-            query?: (string|null);
-
-            /** HiveQuery metadata */
-            metadata?: (flyteidl.core.ITaskMetadata|null);
-        }
-
-        /** Represents a HiveQuery. */
-        class HiveQuery implements IHiveQuery {
-
-            /**
-             * Constructs a new HiveQuery.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.IHiveQuery);
-
-            /** HiveQuery query. */
-            public query: string;
-
-            /** HiveQuery metadata. */
-            public metadata?: (flyteidl.core.ITaskMetadata|null);
-
-            /**
-             * Creates a new HiveQuery instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns HiveQuery instance
-             */
-            public static create(properties?: flyteidl.core.IHiveQuery): flyteidl.core.HiveQuery;
-
-            /**
-             * Encodes the specified HiveQuery message. Does not implicitly {@link flyteidl.core.HiveQuery.verify|verify} messages.
-             * @param message HiveQuery message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.IHiveQuery, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a HiveQuery message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns HiveQuery
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.HiveQuery;
-
-            /**
-             * Verifies a HiveQuery message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a HiveQueryCollection. */
-        interface IHiveQueryCollection {
-
-            /** HiveQueryCollection queries */
-            queries?: (flyteidl.core.IHiveQuery[]|null);
-        }
-
-        /** Represents a HiveQueryCollection. */
-        class HiveQueryCollection implements IHiveQueryCollection {
-
-            /**
-             * Constructs a new HiveQueryCollection.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.IHiveQueryCollection);
-
-            /** HiveQueryCollection queries. */
-            public queries: flyteidl.core.IHiveQuery[];
-
-            /**
-             * Creates a new HiveQueryCollection instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns HiveQueryCollection instance
-             */
-            public static create(properties?: flyteidl.core.IHiveQueryCollection): flyteidl.core.HiveQueryCollection;
-
-            /**
-             * Encodes the specified HiveQueryCollection message. Does not implicitly {@link flyteidl.core.HiveQueryCollection.verify|verify} messages.
-             * @param message HiveQueryCollection message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.IHiveQueryCollection, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a HiveQueryCollection message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns HiveQueryCollection
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.HiveQueryCollection;
-
-            /**
-             * Verifies a HiveQueryCollection message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a SwarmDefinition. */
-        interface ISwarmDefinition {
-
-            /** SwarmDefinition metadata */
-            metadata?: (flyteidl.core.ITaskMetadata|null);
-
-            /** SwarmDefinition primaryContainer */
-            primaryContainer?: (flyteidl.core.IContainer|null);
-
-            /** SwarmDefinition initContainers */
-            initContainers?: (flyteidl.core.IContainer[]|null);
-
-            /** SwarmDefinition sidecarContainers */
-            sidecarContainers?: (flyteidl.core.IContainer[]|null);
-        }
-
-        /** Represents a SwarmDefinition. */
-        class SwarmDefinition implements ISwarmDefinition {
-
-            /**
-             * Constructs a new SwarmDefinition.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.ISwarmDefinition);
-
-            /** SwarmDefinition metadata. */
-            public metadata?: (flyteidl.core.ITaskMetadata|null);
-
-            /** SwarmDefinition primaryContainer. */
-            public primaryContainer?: (flyteidl.core.IContainer|null);
-
-            /** SwarmDefinition initContainers. */
-            public initContainers: flyteidl.core.IContainer[];
-
-            /** SwarmDefinition sidecarContainers. */
-            public sidecarContainers: flyteidl.core.IContainer[];
-
-            /**
-             * Creates a new SwarmDefinition instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns SwarmDefinition instance
-             */
-            public static create(properties?: flyteidl.core.ISwarmDefinition): flyteidl.core.SwarmDefinition;
-
-            /**
-             * Encodes the specified SwarmDefinition message. Does not implicitly {@link flyteidl.core.SwarmDefinition.verify|verify} messages.
-             * @param message SwarmDefinition message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.ISwarmDefinition, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a SwarmDefinition message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns SwarmDefinition
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.SwarmDefinition;
-
-            /**
-             * Verifies a SwarmDefinition message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of an ArrayJob. */
-        interface IArrayJob {
-
-            /** ArrayJob slots */
-            slots?: (Long|null);
-
-            /** ArrayJob completions */
-            completions?: (Long|null);
-
-            /** ArrayJob task */
-            task?: (flyteidl.core.ITaskTemplate|null);
-
-            /** ArrayJob swarm */
-            swarm?: (flyteidl.core.ISwarmDefinition|null);
-
-            /** ArrayJob inputRef */
-            inputRef?: (string|null);
-        }
-
-        /** Represents an ArrayJob. */
-        class ArrayJob implements IArrayJob {
-
-            /**
-             * Constructs a new ArrayJob.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.IArrayJob);
-
-            /** ArrayJob slots. */
-            public slots: Long;
-
-            /** ArrayJob completions. */
-            public completions: Long;
-
-            /** ArrayJob task. */
-            public task?: (flyteidl.core.ITaskTemplate|null);
-
-            /** ArrayJob swarm. */
-            public swarm?: (flyteidl.core.ISwarmDefinition|null);
-
-            /** ArrayJob inputRef. */
-            public inputRef: string;
-
-            /** ArrayJob runnable. */
-            public runnable?: ("task"|"swarm");
-
-            /**
-             * Creates a new ArrayJob instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ArrayJob instance
-             */
-            public static create(properties?: flyteidl.core.IArrayJob): flyteidl.core.ArrayJob;
-
-            /**
-             * Encodes the specified ArrayJob message. Does not implicitly {@link flyteidl.core.ArrayJob.verify|verify} messages.
-             * @param message ArrayJob message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.IArrayJob, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an ArrayJob message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns ArrayJob
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ArrayJob;
-
-            /**
-             * Verifies an ArrayJob message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -8090,6 +7820,180 @@ export namespace flyteidl {
 
     /** Namespace plugins. */
     namespace plugins {
+
+        /** Properties of an ArrayJob. */
+        interface IArrayJob {
+
+            /** ArrayJob slots */
+            slots?: (Long|null);
+
+            /** ArrayJob completions */
+            completions?: (Long|null);
+
+            /** ArrayJob minSuccesses */
+            minSuccesses?: (Long|null);
+
+            /** ArrayJob inputRef */
+            inputRef?: (string|null);
+        }
+
+        /** Represents an ArrayJob. */
+        class ArrayJob implements IArrayJob {
+
+            /**
+             * Constructs a new ArrayJob.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.plugins.IArrayJob);
+
+            /** ArrayJob slots. */
+            public slots: Long;
+
+            /** ArrayJob completions. */
+            public completions: Long;
+
+            /** ArrayJob minSuccesses. */
+            public minSuccesses: Long;
+
+            /** ArrayJob inputRef. */
+            public inputRef: string;
+
+            /**
+             * Creates a new ArrayJob instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ArrayJob instance
+             */
+            public static create(properties?: flyteidl.plugins.IArrayJob): flyteidl.plugins.ArrayJob;
+
+            /**
+             * Encodes the specified ArrayJob message. Does not implicitly {@link flyteidl.plugins.ArrayJob.verify|verify} messages.
+             * @param message ArrayJob message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.plugins.IArrayJob, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ArrayJob message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ArrayJob
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.plugins.ArrayJob;
+
+            /**
+             * Verifies an ArrayJob message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a HiveQuery. */
+        interface IHiveQuery {
+
+            /** HiveQuery query */
+            query?: (string|null);
+        }
+
+        /** Represents a HiveQuery. */
+        class HiveQuery implements IHiveQuery {
+
+            /**
+             * Constructs a new HiveQuery.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.plugins.IHiveQuery);
+
+            /** HiveQuery query. */
+            public query: string;
+
+            /**
+             * Creates a new HiveQuery instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns HiveQuery instance
+             */
+            public static create(properties?: flyteidl.plugins.IHiveQuery): flyteidl.plugins.HiveQuery;
+
+            /**
+             * Encodes the specified HiveQuery message. Does not implicitly {@link flyteidl.plugins.HiveQuery.verify|verify} messages.
+             * @param message HiveQuery message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.plugins.IHiveQuery, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a HiveQuery message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns HiveQuery
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.plugins.HiveQuery;
+
+            /**
+             * Verifies a HiveQuery message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a HiveQueryCollection. */
+        interface IHiveQueryCollection {
+
+            /** HiveQueryCollection queries */
+            queries?: (flyteidl.plugins.IHiveQuery[]|null);
+        }
+
+        /** Represents a HiveQueryCollection. */
+        class HiveQueryCollection implements IHiveQueryCollection {
+
+            /**
+             * Constructs a new HiveQueryCollection.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.plugins.IHiveQueryCollection);
+
+            /** HiveQueryCollection queries. */
+            public queries: flyteidl.plugins.IHiveQuery[];
+
+            /**
+             * Creates a new HiveQueryCollection instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns HiveQueryCollection instance
+             */
+            public static create(properties?: flyteidl.plugins.IHiveQueryCollection): flyteidl.plugins.HiveQueryCollection;
+
+            /**
+             * Encodes the specified HiveQueryCollection message. Does not implicitly {@link flyteidl.plugins.HiveQueryCollection.verify|verify} messages.
+             * @param message HiveQueryCollection message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.plugins.IHiveQueryCollection, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a HiveQueryCollection message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns HiveQueryCollection
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.plugins.HiveQueryCollection;
+
+            /**
+             * Verifies a HiveQueryCollection message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
 
         /** SparkApplicationType enum. */
         enum SparkApplicationType {
