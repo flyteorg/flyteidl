@@ -18341,6 +18341,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.plugins
              * @interface IHiveQuery
              * @property {string|null} [query] HiveQuery query
+             * @property {number|null} [timeoutSec] HiveQuery timeoutSec
+             * @property {number|null} [retryCount] HiveQuery retryCount
              */
 
             /**
@@ -18365,6 +18367,22 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             HiveQuery.prototype.query = "";
+
+            /**
+             * HiveQuery timeoutSec.
+             * @member {number} timeoutSec
+             * @memberof flyteidl.plugins.HiveQuery
+             * @instance
+             */
+            HiveQuery.prototype.timeoutSec = 0;
+
+            /**
+             * HiveQuery retryCount.
+             * @member {number} retryCount
+             * @memberof flyteidl.plugins.HiveQuery
+             * @instance
+             */
+            HiveQuery.prototype.retryCount = 0;
 
             /**
              * Creates a new HiveQuery instance using the specified properties.
@@ -18392,6 +18410,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.query != null && message.hasOwnProperty("query"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.query);
+                if (message.timeoutSec != null && message.hasOwnProperty("timeoutSec"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.timeoutSec);
+                if (message.retryCount != null && message.hasOwnProperty("retryCount"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.retryCount);
                 return writer;
             };
 
@@ -18416,6 +18438,12 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                         message.query = reader.string();
                         break;
+                    case 2:
+                        message.timeoutSec = reader.uint32();
+                        break;
+                    case 3:
+                        message.retryCount = reader.uint32();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -18438,6 +18466,12 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.query != null && message.hasOwnProperty("query"))
                     if (!$util.isString(message.query))
                         return "query: string expected";
+                if (message.timeoutSec != null && message.hasOwnProperty("timeoutSec"))
+                    if (!$util.isInteger(message.timeoutSec))
+                        return "timeoutSec: integer expected";
+                if (message.retryCount != null && message.hasOwnProperty("retryCount"))
+                    if (!$util.isInteger(message.retryCount))
+                        return "retryCount: integer expected";
                 return null;
             };
 
@@ -18562,6 +18596,160 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             return HiveQueryCollection;
+        })();
+
+        plugins.QuboleHiveJob = (function() {
+
+            /**
+             * Properties of a QuboleHiveJob.
+             * @memberof flyteidl.plugins
+             * @interface IQuboleHiveJob
+             * @property {string|null} [clusterLabel] QuboleHiveJob clusterLabel
+             * @property {flyteidl.plugins.IHiveQueryCollection|null} [queryCollection] QuboleHiveJob queryCollection
+             * @property {Array.<string>|null} [tags] QuboleHiveJob tags
+             */
+
+            /**
+             * Constructs a new QuboleHiveJob.
+             * @memberof flyteidl.plugins
+             * @classdesc Represents a QuboleHiveJob.
+             * @implements IQuboleHiveJob
+             * @constructor
+             * @param {flyteidl.plugins.IQuboleHiveJob=} [properties] Properties to set
+             */
+            function QuboleHiveJob(properties) {
+                this.tags = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * QuboleHiveJob clusterLabel.
+             * @member {string} clusterLabel
+             * @memberof flyteidl.plugins.QuboleHiveJob
+             * @instance
+             */
+            QuboleHiveJob.prototype.clusterLabel = "";
+
+            /**
+             * QuboleHiveJob queryCollection.
+             * @member {flyteidl.plugins.IHiveQueryCollection|null|undefined} queryCollection
+             * @memberof flyteidl.plugins.QuboleHiveJob
+             * @instance
+             */
+            QuboleHiveJob.prototype.queryCollection = null;
+
+            /**
+             * QuboleHiveJob tags.
+             * @member {Array.<string>} tags
+             * @memberof flyteidl.plugins.QuboleHiveJob
+             * @instance
+             */
+            QuboleHiveJob.prototype.tags = $util.emptyArray;
+
+            /**
+             * Creates a new QuboleHiveJob instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.plugins.QuboleHiveJob
+             * @static
+             * @param {flyteidl.plugins.IQuboleHiveJob=} [properties] Properties to set
+             * @returns {flyteidl.plugins.QuboleHiveJob} QuboleHiveJob instance
+             */
+            QuboleHiveJob.create = function create(properties) {
+                return new QuboleHiveJob(properties);
+            };
+
+            /**
+             * Encodes the specified QuboleHiveJob message. Does not implicitly {@link flyteidl.plugins.QuboleHiveJob.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.plugins.QuboleHiveJob
+             * @static
+             * @param {flyteidl.plugins.IQuboleHiveJob} message QuboleHiveJob message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            QuboleHiveJob.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.clusterLabel != null && message.hasOwnProperty("clusterLabel"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.clusterLabel);
+                if (message.queryCollection != null && message.hasOwnProperty("queryCollection"))
+                    $root.flyteidl.plugins.HiveQueryCollection.encode(message.queryCollection, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.tags != null && message.tags.length)
+                    for (let i = 0; i < message.tags.length; ++i)
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.tags[i]);
+                return writer;
+            };
+
+            /**
+             * Decodes a QuboleHiveJob message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.plugins.QuboleHiveJob
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.plugins.QuboleHiveJob} QuboleHiveJob
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            QuboleHiveJob.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.plugins.QuboleHiveJob();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.clusterLabel = reader.string();
+                        break;
+                    case 2:
+                        message.queryCollection = $root.flyteidl.plugins.HiveQueryCollection.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        if (!(message.tags && message.tags.length))
+                            message.tags = [];
+                        message.tags.push(reader.string());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a QuboleHiveJob message.
+             * @function verify
+             * @memberof flyteidl.plugins.QuboleHiveJob
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            QuboleHiveJob.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.clusterLabel != null && message.hasOwnProperty("clusterLabel"))
+                    if (!$util.isString(message.clusterLabel))
+                        return "clusterLabel: string expected";
+                if (message.queryCollection != null && message.hasOwnProperty("queryCollection")) {
+                    let error = $root.flyteidl.plugins.HiveQueryCollection.verify(message.queryCollection);
+                    if (error)
+                        return "queryCollection." + error;
+                }
+                if (message.tags != null && message.hasOwnProperty("tags")) {
+                    if (!Array.isArray(message.tags))
+                        return "tags: array expected";
+                    for (let i = 0; i < message.tags.length; ++i)
+                        if (!$util.isString(message.tags[i]))
+                            return "tags: string[] expected";
+                }
+                return null;
+            };
+
+            return QuboleHiveJob;
         })();
 
         /**

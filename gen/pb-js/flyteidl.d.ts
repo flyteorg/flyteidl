@@ -7896,6 +7896,12 @@ export namespace flyteidl {
 
             /** HiveQuery query */
             query?: (string|null);
+
+            /** HiveQuery timeoutSec */
+            timeoutSec?: (number|null);
+
+            /** HiveQuery retryCount */
+            retryCount?: (number|null);
         }
 
         /** Represents a HiveQuery. */
@@ -7909,6 +7915,12 @@ export namespace flyteidl {
 
             /** HiveQuery query. */
             public query: string;
+
+            /** HiveQuery timeoutSec. */
+            public timeoutSec: number;
+
+            /** HiveQuery retryCount. */
+            public retryCount: number;
 
             /**
              * Creates a new HiveQuery instance using the specified properties.
@@ -7989,6 +8001,70 @@ export namespace flyteidl {
 
             /**
              * Verifies a HiveQueryCollection message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a QuboleHiveJob. */
+        interface IQuboleHiveJob {
+
+            /** QuboleHiveJob clusterLabel */
+            clusterLabel?: (string|null);
+
+            /** QuboleHiveJob queryCollection */
+            queryCollection?: (flyteidl.plugins.IHiveQueryCollection|null);
+
+            /** QuboleHiveJob tags */
+            tags?: (string[]|null);
+        }
+
+        /** Represents a QuboleHiveJob. */
+        class QuboleHiveJob implements IQuboleHiveJob {
+
+            /**
+             * Constructs a new QuboleHiveJob.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.plugins.IQuboleHiveJob);
+
+            /** QuboleHiveJob clusterLabel. */
+            public clusterLabel: string;
+
+            /** QuboleHiveJob queryCollection. */
+            public queryCollection?: (flyteidl.plugins.IHiveQueryCollection|null);
+
+            /** QuboleHiveJob tags. */
+            public tags: string[];
+
+            /**
+             * Creates a new QuboleHiveJob instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns QuboleHiveJob instance
+             */
+            public static create(properties?: flyteidl.plugins.IQuboleHiveJob): flyteidl.plugins.QuboleHiveJob;
+
+            /**
+             * Encodes the specified QuboleHiveJob message. Does not implicitly {@link flyteidl.plugins.QuboleHiveJob.verify|verify} messages.
+             * @param message QuboleHiveJob message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.plugins.IQuboleHiveJob, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a QuboleHiveJob message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns QuboleHiveJob
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.plugins.QuboleHiveJob;
+
+            /**
+             * Verifies a QuboleHiveJob message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
