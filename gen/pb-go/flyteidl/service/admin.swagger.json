@@ -1925,7 +1925,7 @@
           "$ref": "#/definitions/coreComparisonExpression"
         }
       },
-      "description": "Defines a boolean expression tree. It can be a simple or a conjunction expression.\nMultiple expressions can be combined using a conjunction or a disjuntion to result in final boolean result."
+      "description": "Defines a boolean expression tree. It can be a simple or a conjunction expression.\nMultiple expressions can be combined using a conjunction or a disjunction to result in a final boolean result."
     },
     "coreBranchNode": {
       "type": "object",
@@ -1950,7 +1950,7 @@
           "$ref": "#/definitions/coreOperand"
         }
       },
-      "description": "Defines a 2-level tree where the root is a comparison operator and Operands are primtivies or known variables.\nEach expression results in a boolean result."
+      "description": "Defines a 2-level tree where the root is a comparison operator and Operands are primitives or known variables.\nEach expression results in a boolean result."
     },
     "coreCompiledTask": {
       "type": "object",
@@ -1998,7 +1998,7 @@
           "title": "Guaranteed that there will only exist one and only one task with a given id, i.e., every task has a unique id\n+required (atleast 1)"
         }
       },
-      "description": "A Compiled Workflow Closure contains all the information required to start a new execution, or to visualized a workflow\nand its details. The CompiledWorkflowClosure should always contain a primary workflow, that is the main workflow that\nwill being the execution. All subworkflows are denormalized. WorkflowNodes refer the the workflow names of compiled\nsubworkflows."
+      "description": "A Compiled Workflow Closure contains all the information required to start a new execution, or to visualize a workflow\nand its details. The CompiledWorkflowClosure should always contain a primary workflow, that is the main workflow that\nwill being the execution. All subworkflows are denormalized. WorkflowNodes refer the the workflow names of compiled\nsubworkflows."
     },
     "coreConjunctionExpression": {
       "type": "object",
@@ -2150,14 +2150,14 @@
         },
         "else_node": {
           "$ref": "#/definitions/coreNode",
-          "description": "The node to execute in case non of the branches were taken."
+          "description": "The node to execute in case none of the branches were taken."
         },
         "error": {
           "$ref": "#/definitions/coreError",
-          "description": "An error to throw in case non of the branches were taken."
+          "description": "An error to throw in case none of the branches were taken."
         }
       },
-      "description": "Defines a series of if/else blocks. The first branch whose condition evaluates to true is the one to execute.\nIf no conditions were satisfied, the else_node will be executed."
+      "description": "Defines a series of if/else blocks. The first branch whose condition evaluates to true is the one to execute.\nIf no conditions were satisfied, the else_node or the error will execute."
     },
     "coreKeyValuePair": {
       "type": "object",

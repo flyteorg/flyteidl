@@ -53,7 +53,7 @@ func (x ComparisonExpression_Operator) String() string {
 	return proto.EnumName(ComparisonExpression_Operator_name, int32(x))
 }
 func (ComparisonExpression_Operator) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_condition_9259e107d912fe95, []int{0, 0}
+	return fileDescriptor_condition_5fe109419dcb44b0, []int{0, 0}
 }
 
 // Nested conditions. They can be conjoined using AND / OR
@@ -79,10 +79,10 @@ func (x ConjunctionExpression_LogicalOperator) String() string {
 	return proto.EnumName(ConjunctionExpression_LogicalOperator_name, int32(x))
 }
 func (ConjunctionExpression_LogicalOperator) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_condition_9259e107d912fe95, []int{3, 0}
+	return fileDescriptor_condition_5fe109419dcb44b0, []int{3, 0}
 }
 
-// Defines a 2-level tree where the root is a comparison operator and Operands are primtivies or known variables.
+// Defines a 2-level tree where the root is a comparison operator and Operands are primitives or known variables.
 // Each expression results in a boolean result.
 type ComparisonExpression struct {
 	Operator             ComparisonExpression_Operator `protobuf:"varint,1,opt,name=operator,proto3,enum=flyteidl.core.ComparisonExpression_Operator" json:"operator,omitempty"`
@@ -97,7 +97,7 @@ func (m *ComparisonExpression) Reset()         { *m = ComparisonExpression{} }
 func (m *ComparisonExpression) String() string { return proto.CompactTextString(m) }
 func (*ComparisonExpression) ProtoMessage()    {}
 func (*ComparisonExpression) Descriptor() ([]byte, []int) {
-	return fileDescriptor_condition_9259e107d912fe95, []int{0}
+	return fileDescriptor_condition_5fe109419dcb44b0, []int{0}
 }
 func (m *ComparisonExpression) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ComparisonExpression.Unmarshal(m, b)
@@ -153,7 +153,7 @@ func (m *Operand) Reset()         { *m = Operand{} }
 func (m *Operand) String() string { return proto.CompactTextString(m) }
 func (*Operand) ProtoMessage()    {}
 func (*Operand) Descriptor() ([]byte, []int) {
-	return fileDescriptor_condition_9259e107d912fe95, []int{1}
+	return fileDescriptor_condition_5fe109419dcb44b0, []int{1}
 }
 func (m *Operand) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Operand.Unmarshal(m, b)
@@ -281,7 +281,7 @@ func _Operand_OneofSizer(msg proto.Message) (n int) {
 }
 
 // Defines a boolean expression tree. It can be a simple or a conjunction expression.
-// Multiple expressions can be combined using a conjunction or a disjuntion to result in final boolean result.
+// Multiple expressions can be combined using a conjunction or a disjunction to result in a final boolean result.
 type BooleanExpression struct {
 	// Types that are valid to be assigned to Expr:
 	//	*BooleanExpression_Conjunction
@@ -296,7 +296,7 @@ func (m *BooleanExpression) Reset()         { *m = BooleanExpression{} }
 func (m *BooleanExpression) String() string { return proto.CompactTextString(m) }
 func (*BooleanExpression) ProtoMessage()    {}
 func (*BooleanExpression) Descriptor() ([]byte, []int) {
-	return fileDescriptor_condition_9259e107d912fe95, []int{2}
+	return fileDescriptor_condition_5fe109419dcb44b0, []int{2}
 }
 func (m *BooleanExpression) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BooleanExpression.Unmarshal(m, b)
@@ -441,7 +441,7 @@ func (m *ConjunctionExpression) Reset()         { *m = ConjunctionExpression{} }
 func (m *ConjunctionExpression) String() string { return proto.CompactTextString(m) }
 func (*ConjunctionExpression) ProtoMessage()    {}
 func (*ConjunctionExpression) Descriptor() ([]byte, []int) {
-	return fileDescriptor_condition_9259e107d912fe95, []int{3}
+	return fileDescriptor_condition_5fe109419dcb44b0, []int{3}
 }
 func (m *ConjunctionExpression) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConjunctionExpression.Unmarshal(m, b)
@@ -492,10 +492,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/core/condition.proto", fileDescriptor_condition_9259e107d912fe95)
+	proto.RegisterFile("flyteidl/core/condition.proto", fileDescriptor_condition_5fe109419dcb44b0)
 }
 
-var fileDescriptor_condition_9259e107d912fe95 = []byte{
+var fileDescriptor_condition_5fe109419dcb44b0 = []byte{
 	// 462 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x93, 0xcf, 0x6e, 0xd3, 0x40,
 	0x10, 0xc6, 0xfd, 0xa7, 0x4d, 0x9b, 0x89, 0x68, 0x96, 0x15, 0xa0, 0x08, 0x81, 0x14, 0x19, 0x0e,

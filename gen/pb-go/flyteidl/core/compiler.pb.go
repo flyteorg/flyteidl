@@ -34,7 +34,7 @@ func (m *ConnectionSet) Reset()         { *m = ConnectionSet{} }
 func (m *ConnectionSet) String() string { return proto.CompactTextString(m) }
 func (*ConnectionSet) ProtoMessage()    {}
 func (*ConnectionSet) Descriptor() ([]byte, []int) {
-	return fileDescriptor_compiler_050f9567912bd2c1, []int{0}
+	return fileDescriptor_compiler_5643dac339397d6d, []int{0}
 }
 func (m *ConnectionSet) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConnectionSet.Unmarshal(m, b)
@@ -79,7 +79,7 @@ func (m *ConnectionSet_IdList) Reset()         { *m = ConnectionSet_IdList{} }
 func (m *ConnectionSet_IdList) String() string { return proto.CompactTextString(m) }
 func (*ConnectionSet_IdList) ProtoMessage()    {}
 func (*ConnectionSet_IdList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_compiler_050f9567912bd2c1, []int{0, 0}
+	return fileDescriptor_compiler_5643dac339397d6d, []int{0, 0}
 }
 func (m *ConnectionSet_IdList) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConnectionSet_IdList.Unmarshal(m, b)
@@ -121,7 +121,7 @@ func (m *CompiledWorkflow) Reset()         { *m = CompiledWorkflow{} }
 func (m *CompiledWorkflow) String() string { return proto.CompactTextString(m) }
 func (*CompiledWorkflow) ProtoMessage()    {}
 func (*CompiledWorkflow) Descriptor() ([]byte, []int) {
-	return fileDescriptor_compiler_050f9567912bd2c1, []int{1}
+	return fileDescriptor_compiler_5643dac339397d6d, []int{1}
 }
 func (m *CompiledWorkflow) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CompiledWorkflow.Unmarshal(m, b)
@@ -168,7 +168,7 @@ func (m *CompiledTask) Reset()         { *m = CompiledTask{} }
 func (m *CompiledTask) String() string { return proto.CompactTextString(m) }
 func (*CompiledTask) ProtoMessage()    {}
 func (*CompiledTask) Descriptor() ([]byte, []int) {
-	return fileDescriptor_compiler_050f9567912bd2c1, []int{2}
+	return fileDescriptor_compiler_5643dac339397d6d, []int{2}
 }
 func (m *CompiledTask) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CompiledTask.Unmarshal(m, b)
@@ -195,7 +195,7 @@ func (m *CompiledTask) GetTemplate() *TaskTemplate {
 	return nil
 }
 
-// A Compiled Workflow Closure contains all the information required to start a new execution, or to visualized a workflow
+// A Compiled Workflow Closure contains all the information required to start a new execution, or to visualize a workflow
 // and its details. The CompiledWorkflowClosure should always contain a primary workflow, that is the main workflow that
 // will being the execution. All subworkflows are denormalized. WorkflowNodes refer the the workflow names of compiled
 // subworkflows.
@@ -219,7 +219,7 @@ func (m *CompiledWorkflowClosure) Reset()         { *m = CompiledWorkflowClosure
 func (m *CompiledWorkflowClosure) String() string { return proto.CompactTextString(m) }
 func (*CompiledWorkflowClosure) ProtoMessage()    {}
 func (*CompiledWorkflowClosure) Descriptor() ([]byte, []int) {
-	return fileDescriptor_compiler_050f9567912bd2c1, []int{3}
+	return fileDescriptor_compiler_5643dac339397d6d, []int{3}
 }
 func (m *CompiledWorkflowClosure) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CompiledWorkflowClosure.Unmarshal(m, b)
@@ -271,10 +271,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/core/compiler.proto", fileDescriptor_compiler_050f9567912bd2c1)
+	proto.RegisterFile("flyteidl/core/compiler.proto", fileDescriptor_compiler_5643dac339397d6d)
 }
 
-var fileDescriptor_compiler_050f9567912bd2c1 = []byte{
+var fileDescriptor_compiler_5643dac339397d6d = []byte{
 	// 422 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x93, 0xcb, 0xca, 0xd3, 0x40,
 	0x14, 0xc7, 0xc9, 0x17, 0xbe, 0xb6, 0x9e, 0x34, 0x58, 0x66, 0x63, 0x4c, 0x0b, 0x86, 0xb8, 0x29,

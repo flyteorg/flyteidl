@@ -18,7 +18,7 @@ message IfBlock {
 }
 
 // Defines a series of if/else blocks. The first branch whose condition evaluates to true is the one to execute.
-// If no conditions were satisfied, the else_node will be executed.
+// If no conditions were satisfied, the else_node or the error will execute.
 message IfElseBlock {
     //+required. First condition to evaluate.
     IfBlock case = 1;
@@ -28,10 +28,10 @@ message IfElseBlock {
 
     //+required.
     oneof default {
-        // The node to execute in case non of the branches were taken.
+        // The node to execute in case none of the branches were taken.
         Node else_node = 3;
 
-        // An error to throw in case non of the branches were taken.
+        // An error to throw in case none of the branches were taken.
         Error error = 4;
     }
 }

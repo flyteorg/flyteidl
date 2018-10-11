@@ -6,7 +6,7 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
 
 import "flyteidl/core/literals.proto";
 
-// Defines a 2-level tree where the root is a comparison operator and Operands are primtivies or known variables.
+// Defines a 2-level tree where the root is a comparison operator and Operands are primitives or known variables.
 // Each expression results in a boolean result.
 message ComparisonExpression {
     // Binary Operator for each expression
@@ -37,7 +37,7 @@ message Operand {
 }
 
 // Defines a boolean expression tree. It can be a simple or a conjunction expression.
-// Multiple expressions can be combined using a conjunction or a disjuntion to result in final boolean result.
+// Multiple expressions can be combined using a conjunction or a disjunction to result in a final boolean result.
 message BooleanExpression {
     oneof expr {
         ConjunctionExpression conjunction = 1;
