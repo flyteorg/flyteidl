@@ -10,3 +10,7 @@ jobs:
       name: protos
       install: true
       script: make test
+    - stage: test
+      name: unit tests
+      install: make install 
+      script: make test_unit
