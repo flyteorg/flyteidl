@@ -1,18 +1,19 @@
 DIR=`pwd`
 rm -rf $DIR/gen
+LYFT_IMAGE="lyft/protocgenerator:ec3374df888cdc7ff755807c090231f0df139453"
 
-docker run -v $DIR:/defs namely/protoc-all:1.14_0  -d example --with-gateway -l go --go-source-relative
-docker run -v $DIR:/defs namely/protoc-all:1.14_0  -i ./protos -d protos/flyteidl/service --with-gateway -l go --go-source-relative
-docker run -v $DIR:/defs namely/protoc-all:1.14_0  -i ./protos -d protos/flyteidl/admin --with-gateway -l go --go-source-relative
-docker run -v $DIR:/defs namely/protoc-all:1.14_0  -i ./protos -d protos/flyteidl/core --with-gateway -l go --go-source-relative
-docker run -v $DIR:/defs namely/protoc-all:1.14_0  -i ./protos -d protos/flyteidl/event --with-gateway -l go --go-source-relative
-docker run -v $DIR:/defs namely/protoc-all:1.14_0  -i ./protos -d protos/flyteidl/plugins -l go --go-source-relative
+docker run -v $DIR:/defs $LYFT_IMAGE -d example --with_gateway -l go --go_source_relative
+docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/service --with_gateway -l go --go_source_relative
+docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/admin --with_gateway -l go --go_source_relative
+docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/core --with_gateway -l go --go_source_relative
+docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/event --with_gateway -l go --go_source_relative
+docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/plugins -l go --go_source_relative
 
-docker run -v $DIR:/defs namely/protoc-all:1.14_0  -i ./protos -d protos/flyteidl/service -l python
-docker run -v $DIR:/defs namely/protoc-all:1.14_0  -i ./protos -d protos/flyteidl/admin -l python
-docker run -v $DIR:/defs namely/protoc-all:1.14_0  -i ./protos -d protos/flyteidl/core -l python
-docker run -v $DIR:/defs namely/protoc-all:1.14_0  -i ./protos -d protos/flyteidl/event -l python
-docker run -v $DIR:/defs namely/protoc-all:1.14_0  -i ./protos -d protos/flyteidl/plugins -l python
+docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/service -l python
+docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/admin -l python
+docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/core -l python
+docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/event -l python
+docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/plugins -l python
 
 docker run -v $DIR:/defs schottra/docker-protobufjs:latest --module-name flyteidl -d protos/flyteidl/core  -d protos/flyteidl/event -d protos/flyteidl/admin -d protos/flyteidl/service -d protos/flyteidl/plugins -- --root flyteidl -t static-module -w es6 --no-delimited --force-long --no-convert -p /defs/protos
 
