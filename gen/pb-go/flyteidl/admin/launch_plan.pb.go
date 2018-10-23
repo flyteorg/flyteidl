@@ -40,7 +40,7 @@ func (x LaunchPlanState) String() string {
 	return proto.EnumName(LaunchPlanState_name, int32(x))
 }
 func (LaunchPlanState) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_64f2e9c65b720b37, []int{0}
+	return fileDescriptor_launch_plan_2742ba87bdd6dadd, []int{0}
 }
 
 type LaunchPlanCreateRequest struct {
@@ -56,7 +56,7 @@ func (m *LaunchPlanCreateRequest) Reset()         { *m = LaunchPlanCreateRequest
 func (m *LaunchPlanCreateRequest) String() string { return proto.CompactTextString(m) }
 func (*LaunchPlanCreateRequest) ProtoMessage()    {}
 func (*LaunchPlanCreateRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_64f2e9c65b720b37, []int{0}
+	return fileDescriptor_launch_plan_2742ba87bdd6dadd, []int{0}
 }
 func (m *LaunchPlanCreateRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LaunchPlanCreateRequest.Unmarshal(m, b)
@@ -108,7 +108,7 @@ func (m *LaunchPlanCreateResponse) Reset()         { *m = LaunchPlanCreateRespon
 func (m *LaunchPlanCreateResponse) String() string { return proto.CompactTextString(m) }
 func (*LaunchPlanCreateResponse) ProtoMessage()    {}
 func (*LaunchPlanCreateResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_64f2e9c65b720b37, []int{1}
+	return fileDescriptor_launch_plan_2742ba87bdd6dadd, []int{1}
 }
 func (m *LaunchPlanCreateResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LaunchPlanCreateResponse.Unmarshal(m, b)
@@ -150,7 +150,7 @@ func (m *LaunchPlan) Reset()         { *m = LaunchPlan{} }
 func (m *LaunchPlan) String() string { return proto.CompactTextString(m) }
 func (*LaunchPlan) ProtoMessage()    {}
 func (*LaunchPlan) Descriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_64f2e9c65b720b37, []int{2}
+	return fileDescriptor_launch_plan_2742ba87bdd6dadd, []int{2}
 }
 func (m *LaunchPlan) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LaunchPlan.Unmarshal(m, b)
@@ -216,7 +216,7 @@ func (m *LaunchPlanList) Reset()         { *m = LaunchPlanList{} }
 func (m *LaunchPlanList) String() string { return proto.CompactTextString(m) }
 func (*LaunchPlanList) ProtoMessage()    {}
 func (*LaunchPlanList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_64f2e9c65b720b37, []int{3}
+	return fileDescriptor_launch_plan_2742ba87bdd6dadd, []int{3}
 }
 func (m *LaunchPlanList) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LaunchPlanList.Unmarshal(m, b)
@@ -250,7 +250,7 @@ type LaunchPlanSpec struct {
 	EntityMetadata *LaunchPlanMetadata `protobuf:"bytes,2,opt,name=entity_metadata,json=entityMetadata,proto3" json:"entity_metadata,omitempty"`
 	// Input values to be passed for the execution
 	DefaultInputs *core.ParameterMap `protobuf:"bytes,3,opt,name=default_inputs,json=defaultInputs,proto3" json:"default_inputs,omitempty"`
-	// Fixed, non overridable inputs for the Launch Plan
+	// Fixed, non-overridable inputs for the Launch Plan
 	FixedInputs *core.LiteralMap `protobuf:"bytes,4,opt,name=fixed_inputs,json=fixedInputs,proto3" json:"fixed_inputs,omitempty"`
 	// String to indicate the role to use to execute the workflow underneath
 	Role                 string   `protobuf:"bytes,5,opt,name=role,proto3" json:"role,omitempty"`
@@ -263,7 +263,7 @@ func (m *LaunchPlanSpec) Reset()         { *m = LaunchPlanSpec{} }
 func (m *LaunchPlanSpec) String() string { return proto.CompactTextString(m) }
 func (*LaunchPlanSpec) ProtoMessage()    {}
 func (*LaunchPlanSpec) Descriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_64f2e9c65b720b37, []int{4}
+	return fileDescriptor_launch_plan_2742ba87bdd6dadd, []int{4}
 }
 func (m *LaunchPlanSpec) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LaunchPlanSpec.Unmarshal(m, b)
@@ -334,7 +334,7 @@ func (m *LaunchPlanClosure) Reset()         { *m = LaunchPlanClosure{} }
 func (m *LaunchPlanClosure) String() string { return proto.CompactTextString(m) }
 func (*LaunchPlanClosure) ProtoMessage()    {}
 func (*LaunchPlanClosure) Descriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_64f2e9c65b720b37, []int{5}
+	return fileDescriptor_launch_plan_2742ba87bdd6dadd, []int{5}
 }
 func (m *LaunchPlanClosure) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LaunchPlanClosure.Unmarshal(m, b)
@@ -389,7 +389,7 @@ func (m *LaunchPlanMetadata) Reset()         { *m = LaunchPlanMetadata{} }
 func (m *LaunchPlanMetadata) String() string { return proto.CompactTextString(m) }
 func (*LaunchPlanMetadata) ProtoMessage()    {}
 func (*LaunchPlanMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_64f2e9c65b720b37, []int{6}
+	return fileDescriptor_launch_plan_2742ba87bdd6dadd, []int{6}
 }
 func (m *LaunchPlanMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LaunchPlanMetadata.Unmarshal(m, b)
@@ -437,7 +437,7 @@ func (m *LaunchPlanUpdateRequest) Reset()         { *m = LaunchPlanUpdateRequest
 func (m *LaunchPlanUpdateRequest) String() string { return proto.CompactTextString(m) }
 func (*LaunchPlanUpdateRequest) ProtoMessage()    {}
 func (*LaunchPlanUpdateRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_64f2e9c65b720b37, []int{7}
+	return fileDescriptor_launch_plan_2742ba87bdd6dadd, []int{7}
 }
 func (m *LaunchPlanUpdateRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LaunchPlanUpdateRequest.Unmarshal(m, b)
@@ -482,7 +482,7 @@ func (m *LaunchPlanUpdateResponse) Reset()         { *m = LaunchPlanUpdateRespon
 func (m *LaunchPlanUpdateResponse) String() string { return proto.CompactTextString(m) }
 func (*LaunchPlanUpdateResponse) ProtoMessage()    {}
 func (*LaunchPlanUpdateResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_64f2e9c65b720b37, []int{8}
+	return fileDescriptor_launch_plan_2742ba87bdd6dadd, []int{8}
 }
 func (m *LaunchPlanUpdateResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LaunchPlanUpdateResponse.Unmarshal(m, b)
@@ -516,10 +516,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/admin/launch_plan.proto", fileDescriptor_launch_plan_64f2e9c65b720b37)
+	proto.RegisterFile("flyteidl/admin/launch_plan.proto", fileDescriptor_launch_plan_2742ba87bdd6dadd)
 }
 
-var fileDescriptor_launch_plan_64f2e9c65b720b37 = []byte{
+var fileDescriptor_launch_plan_2742ba87bdd6dadd = []byte{
 	// 640 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x54, 0x4b, 0x6f, 0xd3, 0x40,
 	0x10, 0xc6, 0x49, 0x9f, 0x93, 0x34, 0x2d, 0x7b, 0xc1, 0xa4, 0x05, 0x52, 0x9f, 0xaa, 0x02, 0xb1,

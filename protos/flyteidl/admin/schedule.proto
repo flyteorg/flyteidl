@@ -19,5 +19,6 @@ message Schedule {
         string cron_expression = 1;
         FixedRate rate = 2;
     }
+    // Name of the input variable that the kickoff time will be supplied to when the workflow is kicked off.
     string kickoff_time_input_arg = 3;
 }

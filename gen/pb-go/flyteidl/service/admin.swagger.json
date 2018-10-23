@@ -1409,7 +1409,7 @@
         },
         "fixed_inputs": {
           "$ref": "#/definitions/coreLiteralMap",
-          "title": "Fixed, non overridable inputs for the Launch Plan"
+          "title": "Fixed, non-overridable inputs for the Launch Plan"
         },
         "role": {
           "type": "string",
@@ -1604,7 +1604,8 @@
           "$ref": "#/definitions/adminFixedRate"
         },
         "kickoff_time_input_arg": {
-          "type": "string"
+          "type": "string",
+          "description": "Name of the input variable that the kickoff time will be supplied to when the workflow is kicked off."
         }
       }
     },
@@ -2363,7 +2364,7 @@
           "description": "+optional, is this value required to be filled."
         }
       },
-      "description": "Declares an input parameter."
+      "description": "A parameter is used as input to a launch plan and has\nthe special ability to have a default value or mark itself as required."
     },
     "coreParameterMap": {
       "type": "object",
@@ -2723,7 +2724,7 @@
           "items": {
             "$ref": "#/definitions/coreBinding"
           },
-          "description": "A list of output bindings that specify how to construct workflow outputs. Bindings can pull node outputs or\nspecify literals. All workflow outputs specified in the interface field must be bound in order for the workflow\nto be validated. A workflow has an implicit depdendency on all of its nodes to execute successfully in order to\nbind final outputs."
+          "description": "A list of output bindings that specify how to construct workflow outputs. Bindings can pull node outputs or\nspecify literals. All workflow outputs specified in the interface field must be bound in order for the workflow\nto be validated. A workflow has an implicit dependency on all of its nodes to execute successfully in order to\nbind final outputs.\nMost of these outputs will be Binding's with a BindingData of type OutputReference.  That is, your workflow can\njust have an output of some constant (`Output(5)`), but usually, the workflow will be pulling\noutputs from the output of a task."
         },
         "failure_node": {
           "$ref": "#/definitions/coreNode",

@@ -32,7 +32,7 @@ func (m *IfBlock) Reset()         { *m = IfBlock{} }
 func (m *IfBlock) String() string { return proto.CompactTextString(m) }
 func (*IfBlock) ProtoMessage()    {}
 func (*IfBlock) Descriptor() ([]byte, []int) {
-	return fileDescriptor_workflow_4fed90f26a1c91a6, []int{0}
+	return fileDescriptor_workflow_fa7dd2afbbd304c8, []int{0}
 }
 func (m *IfBlock) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_IfBlock.Unmarshal(m, b)
@@ -88,7 +88,7 @@ func (m *IfElseBlock) Reset()         { *m = IfElseBlock{} }
 func (m *IfElseBlock) String() string { return proto.CompactTextString(m) }
 func (*IfElseBlock) ProtoMessage()    {}
 func (*IfElseBlock) Descriptor() ([]byte, []int) {
-	return fileDescriptor_workflow_4fed90f26a1c91a6, []int{1}
+	return fileDescriptor_workflow_fa7dd2afbbd304c8, []int{1}
 }
 func (m *IfElseBlock) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_IfElseBlock.Unmarshal(m, b)
@@ -247,7 +247,7 @@ func (m *BranchNode) Reset()         { *m = BranchNode{} }
 func (m *BranchNode) String() string { return proto.CompactTextString(m) }
 func (*BranchNode) ProtoMessage()    {}
 func (*BranchNode) Descriptor() ([]byte, []int) {
-	return fileDescriptor_workflow_4fed90f26a1c91a6, []int{2}
+	return fileDescriptor_workflow_fa7dd2afbbd304c8, []int{2}
 }
 func (m *BranchNode) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BranchNode.Unmarshal(m, b)
@@ -288,7 +288,7 @@ func (m *TaskNode) Reset()         { *m = TaskNode{} }
 func (m *TaskNode) String() string { return proto.CompactTextString(m) }
 func (*TaskNode) ProtoMessage()    {}
 func (*TaskNode) Descriptor() ([]byte, []int) {
-	return fileDescriptor_workflow_4fed90f26a1c91a6, []int{3}
+	return fileDescriptor_workflow_fa7dd2afbbd304c8, []int{3}
 }
 func (m *TaskNode) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskNode.Unmarshal(m, b)
@@ -398,7 +398,7 @@ func (m *WorkflowNode) Reset()         { *m = WorkflowNode{} }
 func (m *WorkflowNode) String() string { return proto.CompactTextString(m) }
 func (*WorkflowNode) ProtoMessage()    {}
 func (*WorkflowNode) Descriptor() ([]byte, []int) {
-	return fileDescriptor_workflow_4fed90f26a1c91a6, []int{4}
+	return fileDescriptor_workflow_fa7dd2afbbd304c8, []int{4}
 }
 func (m *WorkflowNode) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_WorkflowNode.Unmarshal(m, b)
@@ -538,7 +538,7 @@ func (m *NodeMetadata) Reset()         { *m = NodeMetadata{} }
 func (m *NodeMetadata) String() string { return proto.CompactTextString(m) }
 func (*NodeMetadata) ProtoMessage()    {}
 func (*NodeMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_workflow_4fed90f26a1c91a6, []int{5}
+	return fileDescriptor_workflow_fa7dd2afbbd304c8, []int{5}
 }
 func (m *NodeMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeMetadata.Unmarshal(m, b)
@@ -594,7 +594,7 @@ func (m *Alias) Reset()         { *m = Alias{} }
 func (m *Alias) String() string { return proto.CompactTextString(m) }
 func (*Alias) ProtoMessage()    {}
 func (*Alias) Descriptor() ([]byte, []int) {
-	return fileDescriptor_workflow_4fed90f26a1c91a6, []int{6}
+	return fileDescriptor_workflow_fa7dd2afbbd304c8, []int{6}
 }
 func (m *Alias) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Alias.Unmarshal(m, b)
@@ -663,7 +663,7 @@ func (m *Node) Reset()         { *m = Node{} }
 func (m *Node) String() string { return proto.CompactTextString(m) }
 func (*Node) ProtoMessage()    {}
 func (*Node) Descriptor() ([]byte, []int) {
-	return fileDescriptor_workflow_4fed90f26a1c91a6, []int{7}
+	return fileDescriptor_workflow_fa7dd2afbbd304c8, []int{7}
 }
 func (m *Node) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Node.Unmarshal(m, b)
@@ -873,7 +873,7 @@ func (m *WorkflowMetadata) Reset()         { *m = WorkflowMetadata{} }
 func (m *WorkflowMetadata) String() string { return proto.CompactTextString(m) }
 func (*WorkflowMetadata) ProtoMessage()    {}
 func (*WorkflowMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_workflow_4fed90f26a1c91a6, []int{8}
+	return fileDescriptor_workflow_fa7dd2afbbd304c8, []int{8}
 }
 func (m *WorkflowMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_WorkflowMetadata.Unmarshal(m, b)
@@ -906,8 +906,11 @@ type WorkflowTemplate struct {
 	Nodes []*Node `protobuf:"bytes,4,rep,name=nodes,proto3" json:"nodes,omitempty"`
 	// A list of output bindings that specify how to construct workflow outputs. Bindings can pull node outputs or
 	// specify literals. All workflow outputs specified in the interface field must be bound in order for the workflow
-	// to be validated. A workflow has an implicit depdendency on all of its nodes to execute successfully in order to
+	// to be validated. A workflow has an implicit dependency on all of its nodes to execute successfully in order to
 	// bind final outputs.
+	// Most of these outputs will be Binding's with a BindingData of type OutputReference.  That is, your workflow can
+	// just have an output of some constant (`Output(5)`), but usually, the workflow will be pulling
+	// outputs from the output of a task.
 	Outputs []*Binding `protobuf:"bytes,5,rep,name=outputs,proto3" json:"outputs,omitempty"`
 	// +optional A catch-all node. This node is executed whenever the execution engine determines the workflow has failed.
 	// The interface of this node must match the Workflow interface with an additional input named "error" of type
@@ -922,7 +925,7 @@ func (m *WorkflowTemplate) Reset()         { *m = WorkflowTemplate{} }
 func (m *WorkflowTemplate) String() string { return proto.CompactTextString(m) }
 func (*WorkflowTemplate) ProtoMessage()    {}
 func (*WorkflowTemplate) Descriptor() ([]byte, []int) {
-	return fileDescriptor_workflow_4fed90f26a1c91a6, []int{9}
+	return fileDescriptor_workflow_fa7dd2afbbd304c8, []int{9}
 }
 func (m *WorkflowTemplate) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_WorkflowTemplate.Unmarshal(m, b)
@@ -998,10 +1001,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/core/workflow.proto", fileDescriptor_workflow_4fed90f26a1c91a6)
+	proto.RegisterFile("flyteidl/core/workflow.proto", fileDescriptor_workflow_fa7dd2afbbd304c8)
 }
 
-var fileDescriptor_workflow_4fed90f26a1c91a6 = []byte{
+var fileDescriptor_workflow_fa7dd2afbbd304c8 = []byte{
 	// 808 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x7c, 0x55, 0xcd, 0x6e, 0xeb, 0x44,
 	0x14, 0x4e, 0xf3, 0xef, 0x93, 0xb4, 0x94, 0xe1, 0x0a, 0x72, 0xcb, 0xbd, 0x50, 0x99, 0x05, 0x97,

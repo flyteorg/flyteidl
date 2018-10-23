@@ -33,7 +33,7 @@ func (m *Variable) Reset()         { *m = Variable{} }
 func (m *Variable) String() string { return proto.CompactTextString(m) }
 func (*Variable) ProtoMessage()    {}
 func (*Variable) Descriptor() ([]byte, []int) {
-	return fileDescriptor_interface_a1219c6b6d09625c, []int{0}
+	return fileDescriptor_interface_8e59a0e5a099e36b, []int{0}
 }
 func (m *Variable) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Variable.Unmarshal(m, b)
@@ -79,7 +79,7 @@ func (m *VariableMap) Reset()         { *m = VariableMap{} }
 func (m *VariableMap) String() string { return proto.CompactTextString(m) }
 func (*VariableMap) ProtoMessage()    {}
 func (*VariableMap) Descriptor() ([]byte, []int) {
-	return fileDescriptor_interface_a1219c6b6d09625c, []int{1}
+	return fileDescriptor_interface_8e59a0e5a099e36b, []int{1}
 }
 func (m *VariableMap) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_VariableMap.Unmarshal(m, b)
@@ -106,7 +106,8 @@ func (m *VariableMap) GetVariables() map[string]*Variable {
 	return nil
 }
 
-// Declares an input parameter.
+// A parameter is used as input to a launch plan and has
+// the special ability to have a default value or mark itself as required.
 type Parameter struct {
 	// +required Variable. Defines a name and a type to reference/compare through out the system.
 	Var *Variable `protobuf:"bytes,1,opt,name=var,proto3" json:"var,omitempty"`
@@ -125,7 +126,7 @@ func (m *Parameter) Reset()         { *m = Parameter{} }
 func (m *Parameter) String() string { return proto.CompactTextString(m) }
 func (*Parameter) ProtoMessage()    {}
 func (*Parameter) Descriptor() ([]byte, []int) {
-	return fileDescriptor_interface_a1219c6b6d09625c, []int{2}
+	return fileDescriptor_interface_8e59a0e5a099e36b, []int{2}
 }
 func (m *Parameter) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Parameter.Unmarshal(m, b)
@@ -274,7 +275,7 @@ func (m *ParameterMap) Reset()         { *m = ParameterMap{} }
 func (m *ParameterMap) String() string { return proto.CompactTextString(m) }
 func (*ParameterMap) ProtoMessage()    {}
 func (*ParameterMap) Descriptor() ([]byte, []int) {
-	return fileDescriptor_interface_a1219c6b6d09625c, []int{3}
+	return fileDescriptor_interface_8e59a0e5a099e36b, []int{3}
 }
 func (m *ParameterMap) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ParameterMap.Unmarshal(m, b)
@@ -314,7 +315,7 @@ func (m *TypedInterface) Reset()         { *m = TypedInterface{} }
 func (m *TypedInterface) String() string { return proto.CompactTextString(m) }
 func (*TypedInterface) ProtoMessage()    {}
 func (*TypedInterface) Descriptor() ([]byte, []int) {
-	return fileDescriptor_interface_a1219c6b6d09625c, []int{4}
+	return fileDescriptor_interface_8e59a0e5a099e36b, []int{4}
 }
 func (m *TypedInterface) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TypedInterface.Unmarshal(m, b)
@@ -359,10 +360,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/core/interface.proto", fileDescriptor_interface_a1219c6b6d09625c)
+	proto.RegisterFile("flyteidl/core/interface.proto", fileDescriptor_interface_8e59a0e5a099e36b)
 }
 
-var fileDescriptor_interface_a1219c6b6d09625c = []byte{
+var fileDescriptor_interface_8e59a0e5a099e36b = []byte{
 	// 424 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x84, 0x53, 0x5d, 0x6b, 0xd4, 0x40,
 	0x14, 0xed, 0xec, 0x6a, 0xbb, 0x7b, 0xa3, 0x55, 0xe6, 0x41, 0x63, 0xa8, 0x10, 0xf6, 0x69, 0x8b,
