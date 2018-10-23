@@ -114,7 +114,7 @@
           },
           {
             "name": "id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.\n+optional - in certain contexts - like 'List API'.",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
             "in": "query",
             "required": false,
             "type": "string"
@@ -373,7 +373,7 @@
           },
           {
             "name": "id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.\n+optional - in certain contexts - like 'List API'",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -435,7 +435,7 @@
           },
           {
             "name": "id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.\n+optional - in certain contexts - like 'List API'",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -497,7 +497,7 @@
           },
           {
             "name": "id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.\n+optional - in certain contexts - like 'List API'",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -559,7 +559,7 @@
           },
           {
             "name": "id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.\n+optional - in certain contexts - like 'List API'",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -621,7 +621,7 @@
           },
           {
             "name": "id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.\n+optional - in certain contexts - like 'List API'",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -683,7 +683,7 @@
           },
           {
             "name": "id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.\n+optional - in certain contexts - like 'List API'",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -745,7 +745,7 @@
           },
           {
             "name": "domain",
-            "description": "Name of the domain the identifiers belongs to within the project.\n+optional",
+            "description": "Name of the domain the identifiers belongs to within the project.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -793,7 +793,7 @@
           },
           {
             "name": "domain",
-            "description": "Name of the domain the identifiers belongs to within the project.\n+optional",
+            "description": "Name of the domain the identifiers belongs to within the project.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -841,7 +841,7 @@
           },
           {
             "name": "domain",
-            "description": "Name of the domain the identifiers belongs to within the project.\n+optional",
+            "description": "Name of the domain the identifiers belongs to within the project.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1107,27 +1107,6 @@
       ],
       "default": "Other"
     },
-    "ScheduleFixedRate": {
-      "type": "object",
-      "properties": {
-        "value": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "unit": {
-          "$ref": "#/definitions/ScheduleFixedRateUnit"
-        }
-      }
-    },
-    "ScheduleFixedRateUnit": {
-      "type": "string",
-      "enum": [
-        "MINUTE",
-        "HOUR",
-        "DAY"
-      ],
-      "default": "MINUTE"
-    },
     "SchemaColumnSchemaColumnType": {
       "type": "string",
       "enum": [
@@ -1275,6 +1254,27 @@
         }
       }
     },
+    "adminFixedRate": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "unit": {
+          "$ref": "#/definitions/adminFixedRateUnit"
+        }
+      }
+    },
+    "adminFixedRateUnit": {
+      "type": "string",
+      "enum": [
+        "MINUTE",
+        "HOUR",
+        "DAY"
+      ],
+      "default": "MINUTE"
+    },
     "adminIdentifier": {
       "type": "object",
       "properties": {
@@ -1284,7 +1284,7 @@
         },
         "domain": {
           "type": "string",
-          "title": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.\n+optional - in certain contexts - like 'List API'"
+          "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project."
         },
         "name": {
           "type": "string",
@@ -1600,8 +1600,8 @@
         "cron_expression": {
           "type": "string"
         },
-        "fixed_rate": {
-          "$ref": "#/definitions/ScheduleFixedRate"
+        "rate": {
+          "$ref": "#/definitions/adminFixedRate"
         },
         "kickoff_time_input_arg": {
           "type": "string"

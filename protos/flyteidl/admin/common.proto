@@ -4,16 +4,16 @@ package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "flyteidl/core/execution.proto";
+import "validate/validate.proto";
 
 // Encapsulation of fields that identifies a Flyte resource.
 // A resource can internally have multiple versions.
 message Identifier {
     // Name of the project the resource belongs to.
-    string project    = 1;
+    string project    = 1 [(validate.rules).string.min_bytes = 1];
     // Name of the domain the resource belongs to.
     // A domain can be considered as a subset within a specific project.
-    // +optional - in certain contexts - like 'List API'
-    string domain     = 2;
+    string domain     = 2 [(validate.rules).string.min_bytes = 1];
     // User provided value for the resource.
     // The combination of project + domain + name uniquely identifies the resource.
     // +optional - in certain contexts - like 'List API', 'Launch plans'
@@ -23,10 +23,9 @@ message Identifier {
 // Represents a request structure to list identifiers.
 message IdentifierListRequest {
     // Name of the project that contains the identifiers.
-    string project    = 1;
+    string project    = 1 [(validate.rules).string.min_bytes = 1];
     // Name of the domain the identifiers belongs to within the project.
-    // +optional
-    string domain     = 2;
+    string domain     = 2 [(validate.rules).string.min_bytes = 1];
     // Indicates the number of resources to be returned.
     // +optional
     uint32 limit      = 3;
@@ -75,7 +74,7 @@ message Notification {
         SLACK                = 3;
     }
 
-    Type type                = 1;
+    Type type                = 1 [(validate.rules).enum.defined_only = true];
     // A list of phases to which users can associate the notifications to.
     repeated core.WorkflowExecutionPhase phases = 2;
 }

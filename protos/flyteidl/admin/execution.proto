@@ -6,6 +6,7 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 import "flyteidl/core/literals.proto";
 import "flyteidl/core/execution.proto";
 import "flyteidl/admin/common.proto";
+import "validate/validate.proto";
 
 message ExecutionCreateRequest {
     Identifier id       = 1;
@@ -65,7 +66,7 @@ message ExecutionMetadata {
         SCHEDULED     = 1;
         SYSTEM        = 2;
     }
-    ExecutionMode mode    = 1;
+    ExecutionMode mode    = 1 [(validate.rules).enum.defined_only = true];
 
     // Identifier of the entity that triggered this execution.
     string principal      = 2;

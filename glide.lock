@@ -1,5 +1,5 @@
-hash: 9ec5de54af7094d4d50ae2446cf36acbd36888723976dbfdccaba2a064140c17
-updated: 2018-10-16T15:50:17.657678-07:00
+hash: 10ef4f342067d9761f292cbd43ab9497a43d6e0f519def4586f0215ab5287169
+updated: 2018-10-22T15:31:52.231828-07:00
 imports:
 - name: github.com/fatih/color
   version: 5b77d2a35fb0ede96d138fc9a99f5c9b6aef11b4
@@ -50,6 +50,10 @@ imports:
   - contextutils
   - logger
   - utils
+- name: github.com/lyft/protoc-gen-validate
+  version: 3bd820adb86cc455b16b37465905a9b99e22cbbb
+  subpackages:
+  - validate
 - name: github.com/magiconair/properties
   version: c2353362d570a7bfa228149c62842019201cfb71
 - name: github.com/mattn/go-colorable

@@ -14054,6 +14054,155 @@ export const flyteidl = $root.flyteidl = (() => {
             return LaunchPlanUpdateResponse;
         })();
 
+        /**
+         * FixedRateUnit enum.
+         * @name flyteidl.admin.FixedRateUnit
+         * @enum {string}
+         * @property {number} MINUTE=0 MINUTE value
+         * @property {number} HOUR=1 HOUR value
+         * @property {number} DAY=2 DAY value
+         */
+        admin.FixedRateUnit = (function() {
+            const valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "MINUTE"] = 0;
+            values[valuesById[1] = "HOUR"] = 1;
+            values[valuesById[2] = "DAY"] = 2;
+            return values;
+        })();
+
+        admin.FixedRate = (function() {
+
+            /**
+             * Properties of a FixedRate.
+             * @memberof flyteidl.admin
+             * @interface IFixedRate
+             * @property {number|null} [value] FixedRate value
+             * @property {flyteidl.admin.FixedRateUnit|null} [unit] FixedRate unit
+             */
+
+            /**
+             * Constructs a new FixedRate.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a FixedRate.
+             * @implements IFixedRate
+             * @constructor
+             * @param {flyteidl.admin.IFixedRate=} [properties] Properties to set
+             */
+            function FixedRate(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * FixedRate value.
+             * @member {number} value
+             * @memberof flyteidl.admin.FixedRate
+             * @instance
+             */
+            FixedRate.prototype.value = 0;
+
+            /**
+             * FixedRate unit.
+             * @member {flyteidl.admin.FixedRateUnit} unit
+             * @memberof flyteidl.admin.FixedRate
+             * @instance
+             */
+            FixedRate.prototype.unit = 0;
+
+            /**
+             * Creates a new FixedRate instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.FixedRate
+             * @static
+             * @param {flyteidl.admin.IFixedRate=} [properties] Properties to set
+             * @returns {flyteidl.admin.FixedRate} FixedRate instance
+             */
+            FixedRate.create = function create(properties) {
+                return new FixedRate(properties);
+            };
+
+            /**
+             * Encodes the specified FixedRate message. Does not implicitly {@link flyteidl.admin.FixedRate.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.FixedRate
+             * @static
+             * @param {flyteidl.admin.IFixedRate} message FixedRate message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            FixedRate.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.value != null && message.hasOwnProperty("value"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.value);
+                if (message.unit != null && message.hasOwnProperty("unit"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.unit);
+                return writer;
+            };
+
+            /**
+             * Decodes a FixedRate message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.FixedRate
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.FixedRate} FixedRate
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            FixedRate.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.FixedRate();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.value = reader.uint32();
+                        break;
+                    case 2:
+                        message.unit = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a FixedRate message.
+             * @function verify
+             * @memberof flyteidl.admin.FixedRate
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            FixedRate.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.value != null && message.hasOwnProperty("value"))
+                    if (!$util.isInteger(message.value))
+                        return "value: integer expected";
+                if (message.unit != null && message.hasOwnProperty("unit"))
+                    switch (message.unit) {
+                    default:
+                        return "unit: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                        break;
+                    }
+                return null;
+            };
+
+            return FixedRate;
+        })();
+
         admin.Schedule = (function() {
 
             /**
@@ -14061,7 +14210,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface ISchedule
              * @property {string|null} [cronExpression] Schedule cronExpression
-             * @property {flyteidl.admin.Schedule.IFixedRate|null} [fixedRate] Schedule fixedRate
+             * @property {flyteidl.admin.IFixedRate|null} [rate] Schedule rate
              * @property {string|null} [kickoffTimeInputArg] Schedule kickoffTimeInputArg
              */
 
@@ -14089,12 +14238,12 @@ export const flyteidl = $root.flyteidl = (() => {
             Schedule.prototype.cronExpression = "";
 
             /**
-             * Schedule fixedRate.
-             * @member {flyteidl.admin.Schedule.IFixedRate|null|undefined} fixedRate
+             * Schedule rate.
+             * @member {flyteidl.admin.IFixedRate|null|undefined} rate
              * @memberof flyteidl.admin.Schedule
              * @instance
              */
-            Schedule.prototype.fixedRate = null;
+            Schedule.prototype.rate = null;
 
             /**
              * Schedule kickoffTimeInputArg.
@@ -14109,12 +14258,12 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * Schedule ScheduleExpression.
-             * @member {"cronExpression"|"fixedRate"|undefined} ScheduleExpression
+             * @member {"cronExpression"|"rate"|undefined} ScheduleExpression
              * @memberof flyteidl.admin.Schedule
              * @instance
              */
             Object.defineProperty(Schedule.prototype, "ScheduleExpression", {
-                get: $util.oneOfGetter($oneOfFields = ["cronExpression", "fixedRate"]),
+                get: $util.oneOfGetter($oneOfFields = ["cronExpression", "rate"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -14144,8 +14293,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.cronExpression != null && message.hasOwnProperty("cronExpression"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.cronExpression);
-                if (message.fixedRate != null && message.hasOwnProperty("fixedRate"))
-                    $root.flyteidl.admin.Schedule.FixedRate.encode(message.fixedRate, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.rate != null && message.hasOwnProperty("rate"))
+                    $root.flyteidl.admin.FixedRate.encode(message.rate, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.kickoffTimeInputArg != null && message.hasOwnProperty("kickoffTimeInputArg"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.kickoffTimeInputArg);
                 return writer;
@@ -14173,7 +14322,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.cronExpression = reader.string();
                         break;
                     case 2:
-                        message.fixedRate = $root.flyteidl.admin.Schedule.FixedRate.decode(reader, reader.uint32());
+                        message.rate = $root.flyteidl.admin.FixedRate.decode(reader, reader.uint32());
                         break;
                     case 3:
                         message.kickoffTimeInputArg = reader.string();
@@ -14203,14 +14352,14 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (!$util.isString(message.cronExpression))
                         return "cronExpression: string expected";
                 }
-                if (message.fixedRate != null && message.hasOwnProperty("fixedRate")) {
+                if (message.rate != null && message.hasOwnProperty("rate")) {
                     if (properties.ScheduleExpression === 1)
                         return "ScheduleExpression: multiple values";
                     properties.ScheduleExpression = 1;
                     {
-                        let error = $root.flyteidl.admin.Schedule.FixedRate.verify(message.fixedRate);
+                        let error = $root.flyteidl.admin.FixedRate.verify(message.rate);
                         if (error)
-                            return "fixedRate." + error;
+                            return "rate." + error;
                     }
                 }
                 if (message.kickoffTimeInputArg != null && message.hasOwnProperty("kickoffTimeInputArg"))
@@ -14218,155 +14367,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         return "kickoffTimeInputArg: string expected";
                 return null;
             };
-
-            /**
-             * FixedRateUnit enum.
-             * @name flyteidl.admin.Schedule.FixedRateUnit
-             * @enum {string}
-             * @property {number} MINUTE=0 MINUTE value
-             * @property {number} HOUR=1 HOUR value
-             * @property {number} DAY=2 DAY value
-             */
-            Schedule.FixedRateUnit = (function() {
-                const valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "MINUTE"] = 0;
-                values[valuesById[1] = "HOUR"] = 1;
-                values[valuesById[2] = "DAY"] = 2;
-                return values;
-            })();
-
-            Schedule.FixedRate = (function() {
-
-                /**
-                 * Properties of a FixedRate.
-                 * @memberof flyteidl.admin.Schedule
-                 * @interface IFixedRate
-                 * @property {number|null} [value] FixedRate value
-                 * @property {flyteidl.admin.Schedule.FixedRateUnit|null} [unit] FixedRate unit
-                 */
-
-                /**
-                 * Constructs a new FixedRate.
-                 * @memberof flyteidl.admin.Schedule
-                 * @classdesc Represents a FixedRate.
-                 * @implements IFixedRate
-                 * @constructor
-                 * @param {flyteidl.admin.Schedule.IFixedRate=} [properties] Properties to set
-                 */
-                function FixedRate(properties) {
-                    if (properties)
-                        for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-
-                /**
-                 * FixedRate value.
-                 * @member {number} value
-                 * @memberof flyteidl.admin.Schedule.FixedRate
-                 * @instance
-                 */
-                FixedRate.prototype.value = 0;
-
-                /**
-                 * FixedRate unit.
-                 * @member {flyteidl.admin.Schedule.FixedRateUnit} unit
-                 * @memberof flyteidl.admin.Schedule.FixedRate
-                 * @instance
-                 */
-                FixedRate.prototype.unit = 0;
-
-                /**
-                 * Creates a new FixedRate instance using the specified properties.
-                 * @function create
-                 * @memberof flyteidl.admin.Schedule.FixedRate
-                 * @static
-                 * @param {flyteidl.admin.Schedule.IFixedRate=} [properties] Properties to set
-                 * @returns {flyteidl.admin.Schedule.FixedRate} FixedRate instance
-                 */
-                FixedRate.create = function create(properties) {
-                    return new FixedRate(properties);
-                };
-
-                /**
-                 * Encodes the specified FixedRate message. Does not implicitly {@link flyteidl.admin.Schedule.FixedRate.verify|verify} messages.
-                 * @function encode
-                 * @memberof flyteidl.admin.Schedule.FixedRate
-                 * @static
-                 * @param {flyteidl.admin.Schedule.IFixedRate} message FixedRate message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                FixedRate.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.value != null && message.hasOwnProperty("value"))
-                        writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.value);
-                    if (message.unit != null && message.hasOwnProperty("unit"))
-                        writer.uint32(/* id 2, wireType 0 =*/16).int32(message.unit);
-                    return writer;
-                };
-
-                /**
-                 * Decodes a FixedRate message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof flyteidl.admin.Schedule.FixedRate
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.admin.Schedule.FixedRate} FixedRate
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                FixedRate.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Schedule.FixedRate();
-                    while (reader.pos < end) {
-                        let tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.value = reader.uint32();
-                            break;
-                        case 2:
-                            message.unit = reader.int32();
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-
-                /**
-                 * Verifies a FixedRate message.
-                 * @function verify
-                 * @memberof flyteidl.admin.Schedule.FixedRate
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                FixedRate.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    if (message.value != null && message.hasOwnProperty("value"))
-                        if (!$util.isInteger(message.value))
-                            return "value: integer expected";
-                    if (message.unit != null && message.hasOwnProperty("unit"))
-                        switch (message.unit) {
-                        default:
-                            return "unit: enum value expected";
-                        case 0:
-                        case 1:
-                        case 2:
-                            break;
-                        }
-                    return null;
-                };
-
-                return FixedRate;
-            })();
 
             return Schedule;
         })();

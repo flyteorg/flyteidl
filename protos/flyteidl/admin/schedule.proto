@@ -3,19 +3,21 @@ syntax = "proto3";
 package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
+enum FixedRateUnit {
+    MINUTE = 0;
+    HOUR = 1;
+    DAY = 2;
+}
+message FixedRate {
+    uint32 value = 1;
+    FixedRateUnit unit = 2;
+}
+
 message Schedule {
-    enum FixedRateUnit {
-        MINUTE = 0;
-        HOUR = 1;
-        DAY = 2;
-    }
-    message FixedRate {
-        uint32 value = 1;
-        FixedRateUnit unit = 2;
-    }
+
     oneof ScheduleExpression {
         string cron_expression = 1;
-        FixedRate fixed_rate = 2;
+        FixedRate rate = 2;
     }
     string kickoff_time_input_arg = 3;
 }

@@ -43,6 +43,8 @@ import:
   - unix
 - package: github.com/mitchellh/mapstructure
   version: v1.1.2
+- package: github.com/lyft/protoc-gen-validate
+  version: ^0.0.7
 testImport:
 - package: github.com/stretchr/testify
   version: v1.2.2

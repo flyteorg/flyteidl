@@ -3,6 +3,7 @@
 
 import sys
 _b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+from google.protobuf.internal import enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
@@ -19,14 +20,12 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/schedule.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1d\x66lyteidl/admin/schedule.proto\x12\x0e\x66lyteidl.admin\"\x97\x02\n\x08Schedule\x12\x19\n\x0f\x63ron_expression\x18\x01 \x01(\tH\x00\x12\x38\n\nfixed_rate\x18\x02 \x01(\x0b\x32\".flyteidl.admin.Schedule.FixedRateH\x00\x12\x1e\n\x16kickoff_time_input_arg\x18\x03 \x01(\t\x1aP\n\tFixedRate\x12\r\n\x05value\x18\x01 \x01(\r\x12\x34\n\x04unit\x18\x02 \x01(\x0e\x32&.flyteidl.admin.Schedule.FixedRateUnit\".\n\rFixedRateUnit\x12\n\n\x06MINUTE\x10\x00\x12\x08\n\x04HOUR\x10\x01\x12\x07\n\x03\x44\x41Y\x10\x02\x42\x14\n\x12ScheduleExpressionB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/admin/schedule.proto\x12\x0e\x66lyteidl.admin\"G\n\tFixedRate\x12\r\n\x05value\x18\x01 \x01(\r\x12+\n\x04unit\x18\x02 \x01(\x0e\x32\x1d.flyteidl.admin.FixedRateUnit\"\x86\x01\n\x08Schedule\x12\x19\n\x0f\x63ron_expression\x18\x01 \x01(\tH\x00\x12)\n\x04rate\x18\x02 \x01(\x0b\x32\x19.flyteidl.admin.FixedRateH\x00\x12\x1e\n\x16kickoff_time_input_arg\x18\x03 \x01(\tB\x14\n\x12ScheduleExpression*.\n\rFixedRateUnit\x12\n\n\x06MINUTE\x10\x00\x12\x08\n\x04HOUR\x10\x01\x12\x07\n\x03\x44\x41Y\x10\x02\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
 )
 
-
-
-_SCHEDULE_FIXEDRATEUNIT = _descriptor.EnumDescriptor(
+_FIXEDRATEUNIT = _descriptor.EnumDescriptor(
   name='FixedRateUnit',
-  full_name='flyteidl.admin.Schedule.FixedRateUnit',
+  full_name='flyteidl.admin.FixedRateUnit',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -45,28 +44,34 @@ _SCHEDULE_FIXEDRATEUNIT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=261,
-  serialized_end=307,
+  serialized_start=259,
+  serialized_end=305,
 )
-_sym_db.RegisterEnumDescriptor(_SCHEDULE_FIXEDRATEUNIT)
+_sym_db.RegisterEnumDescriptor(_FIXEDRATEUNIT)
+
+FixedRateUnit = enum_type_wrapper.EnumTypeWrapper(_FIXEDRATEUNIT)
+MINUTE = 0
+HOUR = 1
+DAY = 2
 
 
-_SCHEDULE_FIXEDRATE = _descriptor.Descriptor(
+
+_FIXEDRATE = _descriptor.Descriptor(
   name='FixedRate',
-  full_name='flyteidl.admin.Schedule.FixedRate',
+  full_name='flyteidl.admin.FixedRate',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='flyteidl.admin.Schedule.FixedRate.value', index=0,
+      name='value', full_name='flyteidl.admin.FixedRate.value', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='unit', full_name='flyteidl.admin.Schedule.FixedRate.unit', index=1,
+      name='unit', full_name='flyteidl.admin.FixedRate.unit', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -84,9 +89,10 @@ _SCHEDULE_FIXEDRATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=179,
-  serialized_end=259,
+  serialized_start=49,
+  serialized_end=120,
 )
+
 
 _SCHEDULE = _descriptor.Descriptor(
   name='Schedule',
@@ -103,7 +109,7 @@ _SCHEDULE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='fixed_rate', full_name='flyteidl.admin.Schedule.fixed_rate', index=1,
+      name='rate', full_name='flyteidl.admin.Schedule.rate', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -119,9 +125,8 @@ _SCHEDULE = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_SCHEDULE_FIXEDRATE, ],
+  nested_types=[],
   enum_types=[
-    _SCHEDULE_FIXEDRATEUNIT,
   ],
   options=None,
   is_extendable=False,
@@ -132,37 +137,36 @@ _SCHEDULE = _descriptor.Descriptor(
       name='ScheduleExpression', full_name='flyteidl.admin.Schedule.ScheduleExpression',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=50,
-  serialized_end=329,
+  serialized_start=123,
+  serialized_end=257,
 )
 
-_SCHEDULE_FIXEDRATE.fields_by_name['unit'].enum_type = _SCHEDULE_FIXEDRATEUNIT
-_SCHEDULE_FIXEDRATE.containing_type = _SCHEDULE
-_SCHEDULE.fields_by_name['fixed_rate'].message_type = _SCHEDULE_FIXEDRATE
-_SCHEDULE_FIXEDRATEUNIT.containing_type = _SCHEDULE
+_FIXEDRATE.fields_by_name['unit'].enum_type = _FIXEDRATEUNIT
+_SCHEDULE.fields_by_name['rate'].message_type = _FIXEDRATE
 _SCHEDULE.oneofs_by_name['ScheduleExpression'].fields.append(
   _SCHEDULE.fields_by_name['cron_expression'])
 _SCHEDULE.fields_by_name['cron_expression'].containing_oneof = _SCHEDULE.oneofs_by_name['ScheduleExpression']
 _SCHEDULE.oneofs_by_name['ScheduleExpression'].fields.append(
-  _SCHEDULE.fields_by_name['fixed_rate'])
-_SCHEDULE.fields_by_name['fixed_rate'].containing_oneof = _SCHEDULE.oneofs_by_name['ScheduleExpression']
+  _SCHEDULE.fields_by_name['rate'])
+_SCHEDULE.fields_by_name['rate'].containing_oneof = _SCHEDULE.oneofs_by_name['ScheduleExpression']
+DESCRIPTOR.message_types_by_name['FixedRate'] = _FIXEDRATE
 DESCRIPTOR.message_types_by_name['Schedule'] = _SCHEDULE
+DESCRIPTOR.enum_types_by_name['FixedRateUnit'] = _FIXEDRATEUNIT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Schedule = _reflection.GeneratedProtocolMessageType('Schedule', (_message.Message,), dict(
+FixedRate = _reflection.GeneratedProtocolMessageType('FixedRate', (_message.Message,), dict(
+  DESCRIPTOR = _FIXEDRATE,
+  __module__ = 'flyteidl.admin.schedule_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.FixedRate)
+  ))
+_sym_db.RegisterMessage(FixedRate)
 
-  FixedRate = _reflection.GeneratedProtocolMessageType('FixedRate', (_message.Message,), dict(
-    DESCRIPTOR = _SCHEDULE_FIXEDRATE,
-    __module__ = 'flyteidl.admin.schedule_pb2'
-    # @@protoc_insertion_point(class_scope:flyteidl.admin.Schedule.FixedRate)
-    ))
-  ,
+Schedule = _reflection.GeneratedProtocolMessageType('Schedule', (_message.Message,), dict(
   DESCRIPTOR = _SCHEDULE,
   __module__ = 'flyteidl.admin.schedule_pb2'
   # @@protoc_insertion_point(class_scope:flyteidl.admin.Schedule)
   ))
 _sym_db.RegisterMessage(Schedule)
-_sym_db.RegisterMessage(Schedule.FixedRate)
 
 
 DESCRIPTOR.has_options = True

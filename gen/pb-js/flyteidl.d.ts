@@ -5852,14 +5852,79 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** FixedRateUnit enum. */
+        enum FixedRateUnit {
+            MINUTE = 0,
+            HOUR = 1,
+            DAY = 2
+        }
+
+        /** Properties of a FixedRate. */
+        interface IFixedRate {
+
+            /** FixedRate value */
+            value?: (number|null);
+
+            /** FixedRate unit */
+            unit?: (flyteidl.admin.FixedRateUnit|null);
+        }
+
+        /** Represents a FixedRate. */
+        class FixedRate implements IFixedRate {
+
+            /**
+             * Constructs a new FixedRate.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IFixedRate);
+
+            /** FixedRate value. */
+            public value: number;
+
+            /** FixedRate unit. */
+            public unit: flyteidl.admin.FixedRateUnit;
+
+            /**
+             * Creates a new FixedRate instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns FixedRate instance
+             */
+            public static create(properties?: flyteidl.admin.IFixedRate): flyteidl.admin.FixedRate;
+
+            /**
+             * Encodes the specified FixedRate message. Does not implicitly {@link flyteidl.admin.FixedRate.verify|verify} messages.
+             * @param message FixedRate message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IFixedRate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a FixedRate message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns FixedRate
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.FixedRate;
+
+            /**
+             * Verifies a FixedRate message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a Schedule. */
         interface ISchedule {
 
             /** Schedule cronExpression */
             cronExpression?: (string|null);
 
-            /** Schedule fixedRate */
-            fixedRate?: (flyteidl.admin.Schedule.IFixedRate|null);
+            /** Schedule rate */
+            rate?: (flyteidl.admin.IFixedRate|null);
 
             /** Schedule kickoffTimeInputArg */
             kickoffTimeInputArg?: (string|null);
@@ -5877,14 +5942,14 @@ export namespace flyteidl {
             /** Schedule cronExpression. */
             public cronExpression: string;
 
-            /** Schedule fixedRate. */
-            public fixedRate?: (flyteidl.admin.Schedule.IFixedRate|null);
+            /** Schedule rate. */
+            public rate?: (flyteidl.admin.IFixedRate|null);
 
             /** Schedule kickoffTimeInputArg. */
             public kickoffTimeInputArg: string;
 
             /** Schedule ScheduleExpression. */
-            public ScheduleExpression?: ("cronExpression"|"fixedRate");
+            public ScheduleExpression?: ("cronExpression"|"rate");
 
             /**
              * Creates a new Schedule instance using the specified properties.
@@ -5917,74 +5982,6 @@ export namespace flyteidl {
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        namespace Schedule {
-
-            /** FixedRateUnit enum. */
-            enum FixedRateUnit {
-                MINUTE = 0,
-                HOUR = 1,
-                DAY = 2
-            }
-
-            /** Properties of a FixedRate. */
-            interface IFixedRate {
-
-                /** FixedRate value */
-                value?: (number|null);
-
-                /** FixedRate unit */
-                unit?: (flyteidl.admin.Schedule.FixedRateUnit|null);
-            }
-
-            /** Represents a FixedRate. */
-            class FixedRate implements IFixedRate {
-
-                /**
-                 * Constructs a new FixedRate.
-                 * @param [properties] Properties to set
-                 */
-                constructor(properties?: flyteidl.admin.Schedule.IFixedRate);
-
-                /** FixedRate value. */
-                public value: number;
-
-                /** FixedRate unit. */
-                public unit: flyteidl.admin.Schedule.FixedRateUnit;
-
-                /**
-                 * Creates a new FixedRate instance using the specified properties.
-                 * @param [properties] Properties to set
-                 * @returns FixedRate instance
-                 */
-                public static create(properties?: flyteidl.admin.Schedule.IFixedRate): flyteidl.admin.Schedule.FixedRate;
-
-                /**
-                 * Encodes the specified FixedRate message. Does not implicitly {@link flyteidl.admin.Schedule.FixedRate.verify|verify} messages.
-                 * @param message FixedRate message or plain object to encode
-                 * @param [writer] Writer to encode to
-                 * @returns Writer
-                 */
-                public static encode(message: flyteidl.admin.Schedule.IFixedRate, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                /**
-                 * Decodes a FixedRate message from the specified reader or buffer.
-                 * @param reader Reader or buffer to decode from
-                 * @param [length] Message length if known beforehand
-                 * @returns FixedRate
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Schedule.FixedRate;
-
-                /**
-                 * Verifies a FixedRate message.
-                 * @param message Plain object to verify
-                 * @returns `null` if valid, otherwise the reason why it is not
-                 */
-                public static verify(message: { [k: string]: any }): (string|null);
-            }
         }
 
         /** Properties of a NodeExecutionIdentifier. */
