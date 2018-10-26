@@ -54,7 +54,7 @@ func (s *adminEventSink) Sink(ctx context.Context, eventType EventType, message 
 		_, err := s.adminClient.CreateWorkflowEvent(ctx, request)
 
 		if err != nil {
-			logger.Errorf(ctx, "failed to Send node workflow(%d, %d) %v", event.ExecutionId, event.Phase, err)
+			logger.Errorf(ctx, "failed to send workflow event(%d, %d) %v", event.ExecutionId, event.Phase, err)
 			return err
 		}
 	case NodeEvent:
@@ -67,20 +67,20 @@ func (s *adminEventSink) Sink(ctx context.Context, eventType EventType, message 
 		}
 		_, err := s.adminClient.CreateNodeEvent(ctx, request)
 		if err != nil {
-			logger.Errorf(ctx, "failed to Send node event(%d, %d) %v", event.NodeId, event.Phase, err)
+			logger.Errorf(ctx, "failed to send node event(%d, %d) %v", event.NodeId, event.Phase, err)
 			return err
 		}
 	case TaskEvent:
 		event, ok := message.(*event.TaskExecutionEvent)
 		if !ok {
-			return fmt.Errorf("failed to convert node execution event to its protobuf structure")
+			return fmt.Errorf("failed to convert task execution event to its protobuf structure")
 		}
 		request := &admin.TaskExecutionEventRequest{
 			Event: event,
 		}
 		_, err := s.adminClient.CreateTaskEvent(ctx, request)
 		if err != nil {
-			logger.Errorf(ctx, "failed to Send node event(%d, %d) %v", event.TaskId, event.Phase, err)
+			logger.Errorf(ctx, "failed to send task event(%d, %d) %v", event.TaskId, event.Phase, err)
 			return err
 		}
 	}

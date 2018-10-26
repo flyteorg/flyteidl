@@ -1,5 +1,5 @@
 hash: 10ef4f342067d9761f292cbd43ab9497a43d6e0f519def4586f0215ab5287169
-updated: 2018-10-22T15:31:52.231828-07:00
+updated: 2018-10-25T17:51:19.905443-07:00
 imports:
 - name: github.com/fatih/color
   version: 5b77d2a35fb0ede96d138fc9a99f5c9b6aef11b4
@@ -71,7 +71,7 @@ imports:
   subpackages:
   - mem
 - name: github.com/spf13/cast
-  version: 8965335b8c7107321228e3e3702cab9832751bac
+  version: 8c9545af88b134710ab1cd196795e7f2388358d7
 - name: github.com/spf13/cobra
   version: ef82de70bb3f60c65fb8eebacbb2d122ef517385
 - name: github.com/spf13/jwalterweatherman
