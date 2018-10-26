@@ -4409,14 +4409,176 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of an EmailNotification. */
+        interface IEmailNotification {
+
+            /** EmailNotification emailRecipients */
+            emailRecipients?: (string[]|null);
+        }
+
+        /** Represents an EmailNotification. */
+        class EmailNotification implements IEmailNotification {
+
+            /**
+             * Constructs a new EmailNotification.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IEmailNotification);
+
+            /** EmailNotification emailRecipients. */
+            public emailRecipients: string[];
+
+            /**
+             * Creates a new EmailNotification instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns EmailNotification instance
+             */
+            public static create(properties?: flyteidl.admin.IEmailNotification): flyteidl.admin.EmailNotification;
+
+            /**
+             * Encodes the specified EmailNotification message. Does not implicitly {@link flyteidl.admin.EmailNotification.verify|verify} messages.
+             * @param message EmailNotification message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IEmailNotification, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an EmailNotification message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns EmailNotification
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.EmailNotification;
+
+            /**
+             * Verifies an EmailNotification message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a PagerDutyNotification. */
+        interface IPagerDutyNotification {
+
+            /** PagerDutyNotification pagerDutyEmails */
+            pagerDutyEmails?: (string[]|null);
+        }
+
+        /** Represents a PagerDutyNotification. */
+        class PagerDutyNotification implements IPagerDutyNotification {
+
+            /**
+             * Constructs a new PagerDutyNotification.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IPagerDutyNotification);
+
+            /** PagerDutyNotification pagerDutyEmails. */
+            public pagerDutyEmails: string[];
+
+            /**
+             * Creates a new PagerDutyNotification instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns PagerDutyNotification instance
+             */
+            public static create(properties?: flyteidl.admin.IPagerDutyNotification): flyteidl.admin.PagerDutyNotification;
+
+            /**
+             * Encodes the specified PagerDutyNotification message. Does not implicitly {@link flyteidl.admin.PagerDutyNotification.verify|verify} messages.
+             * @param message PagerDutyNotification message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IPagerDutyNotification, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a PagerDutyNotification message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns PagerDutyNotification
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.PagerDutyNotification;
+
+            /**
+             * Verifies a PagerDutyNotification message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a SlackNotification. */
+        interface ISlackNotification {
+
+            /** SlackNotification slackEmails */
+            slackEmails?: (string[]|null);
+        }
+
+        /** Represents a SlackNotification. */
+        class SlackNotification implements ISlackNotification {
+
+            /**
+             * Constructs a new SlackNotification.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ISlackNotification);
+
+            /** SlackNotification slackEmails. */
+            public slackEmails: string[];
+
+            /**
+             * Creates a new SlackNotification instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns SlackNotification instance
+             */
+            public static create(properties?: flyteidl.admin.ISlackNotification): flyteidl.admin.SlackNotification;
+
+            /**
+             * Encodes the specified SlackNotification message. Does not implicitly {@link flyteidl.admin.SlackNotification.verify|verify} messages.
+             * @param message SlackNotification message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ISlackNotification, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a SlackNotification message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SlackNotification
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.SlackNotification;
+
+            /**
+             * Verifies a SlackNotification message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a Notification. */
         interface INotification {
 
-            /** Notification type */
-            type?: (flyteidl.admin.Notification.Type|null);
-
             /** Notification phases */
             phases?: (flyteidl.core.WorkflowExecutionPhase[]|null);
+
+            /** Notification email */
+            email?: (flyteidl.admin.IEmailNotification|null);
+
+            /** Notification pagerDuty */
+            pagerDuty?: (flyteidl.admin.IPagerDutyNotification|null);
+
+            /** Notification slack */
+            slack?: (flyteidl.admin.ISlackNotification|null);
         }
 
         /** Represents a Notification. */
@@ -4428,11 +4590,20 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.INotification);
 
-            /** Notification type. */
-            public type: flyteidl.admin.Notification.Type;
-
             /** Notification phases. */
             public phases: flyteidl.core.WorkflowExecutionPhase[];
+
+            /** Notification email. */
+            public email?: (flyteidl.admin.IEmailNotification|null);
+
+            /** Notification pagerDuty. */
+            public pagerDuty?: (flyteidl.admin.IPagerDutyNotification|null);
+
+            /** Notification slack. */
+            public slack?: (flyteidl.admin.ISlackNotification|null);
+
+            /** Notification type. */
+            public type?: ("email"|"pagerDuty"|"slack");
 
             /**
              * Creates a new Notification instance using the specified properties.
@@ -4465,17 +4636,6 @@ export namespace flyteidl {
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        namespace Notification {
-
-            /** Type enum. */
-            enum Type {
-                UNDEFINED = 0,
-                EMAIL = 1,
-                PAGER_DUTY = 2,
-                SLACK = 3
-            }
         }
 
         /** Properties of a WorkflowExecutionEventRequest. */

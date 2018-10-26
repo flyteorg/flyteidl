@@ -10709,14 +10709,370 @@ export const flyteidl = $root.flyteidl = (() => {
             return ResourceListRequest;
         })();
 
+        admin.EmailNotification = (function() {
+
+            /**
+             * Properties of an EmailNotification.
+             * @memberof flyteidl.admin
+             * @interface IEmailNotification
+             * @property {Array.<string>|null} [emailRecipients] EmailNotification emailRecipients
+             */
+
+            /**
+             * Constructs a new EmailNotification.
+             * @memberof flyteidl.admin
+             * @classdesc Represents an EmailNotification.
+             * @implements IEmailNotification
+             * @constructor
+             * @param {flyteidl.admin.IEmailNotification=} [properties] Properties to set
+             */
+            function EmailNotification(properties) {
+                this.emailRecipients = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * EmailNotification emailRecipients.
+             * @member {Array.<string>} emailRecipients
+             * @memberof flyteidl.admin.EmailNotification
+             * @instance
+             */
+            EmailNotification.prototype.emailRecipients = $util.emptyArray;
+
+            /**
+             * Creates a new EmailNotification instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.EmailNotification
+             * @static
+             * @param {flyteidl.admin.IEmailNotification=} [properties] Properties to set
+             * @returns {flyteidl.admin.EmailNotification} EmailNotification instance
+             */
+            EmailNotification.create = function create(properties) {
+                return new EmailNotification(properties);
+            };
+
+            /**
+             * Encodes the specified EmailNotification message. Does not implicitly {@link flyteidl.admin.EmailNotification.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.EmailNotification
+             * @static
+             * @param {flyteidl.admin.IEmailNotification} message EmailNotification message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            EmailNotification.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.emailRecipients != null && message.emailRecipients.length)
+                    for (let i = 0; i < message.emailRecipients.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.emailRecipients[i]);
+                return writer;
+            };
+
+            /**
+             * Decodes an EmailNotification message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.EmailNotification
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.EmailNotification} EmailNotification
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            EmailNotification.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.EmailNotification();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.emailRecipients && message.emailRecipients.length))
+                            message.emailRecipients = [];
+                        message.emailRecipients.push(reader.string());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an EmailNotification message.
+             * @function verify
+             * @memberof flyteidl.admin.EmailNotification
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            EmailNotification.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.emailRecipients != null && message.hasOwnProperty("emailRecipients")) {
+                    if (!Array.isArray(message.emailRecipients))
+                        return "emailRecipients: array expected";
+                    for (let i = 0; i < message.emailRecipients.length; ++i)
+                        if (!$util.isString(message.emailRecipients[i]))
+                            return "emailRecipients: string[] expected";
+                }
+                return null;
+            };
+
+            return EmailNotification;
+        })();
+
+        admin.PagerDutyNotification = (function() {
+
+            /**
+             * Properties of a PagerDutyNotification.
+             * @memberof flyteidl.admin
+             * @interface IPagerDutyNotification
+             * @property {Array.<string>|null} [pagerDutyEmails] PagerDutyNotification pagerDutyEmails
+             */
+
+            /**
+             * Constructs a new PagerDutyNotification.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a PagerDutyNotification.
+             * @implements IPagerDutyNotification
+             * @constructor
+             * @param {flyteidl.admin.IPagerDutyNotification=} [properties] Properties to set
+             */
+            function PagerDutyNotification(properties) {
+                this.pagerDutyEmails = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * PagerDutyNotification pagerDutyEmails.
+             * @member {Array.<string>} pagerDutyEmails
+             * @memberof flyteidl.admin.PagerDutyNotification
+             * @instance
+             */
+            PagerDutyNotification.prototype.pagerDutyEmails = $util.emptyArray;
+
+            /**
+             * Creates a new PagerDutyNotification instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.PagerDutyNotification
+             * @static
+             * @param {flyteidl.admin.IPagerDutyNotification=} [properties] Properties to set
+             * @returns {flyteidl.admin.PagerDutyNotification} PagerDutyNotification instance
+             */
+            PagerDutyNotification.create = function create(properties) {
+                return new PagerDutyNotification(properties);
+            };
+
+            /**
+             * Encodes the specified PagerDutyNotification message. Does not implicitly {@link flyteidl.admin.PagerDutyNotification.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.PagerDutyNotification
+             * @static
+             * @param {flyteidl.admin.IPagerDutyNotification} message PagerDutyNotification message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PagerDutyNotification.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.pagerDutyEmails != null && message.pagerDutyEmails.length)
+                    for (let i = 0; i < message.pagerDutyEmails.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.pagerDutyEmails[i]);
+                return writer;
+            };
+
+            /**
+             * Decodes a PagerDutyNotification message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.PagerDutyNotification
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.PagerDutyNotification} PagerDutyNotification
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PagerDutyNotification.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.PagerDutyNotification();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.pagerDutyEmails && message.pagerDutyEmails.length))
+                            message.pagerDutyEmails = [];
+                        message.pagerDutyEmails.push(reader.string());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a PagerDutyNotification message.
+             * @function verify
+             * @memberof flyteidl.admin.PagerDutyNotification
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            PagerDutyNotification.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.pagerDutyEmails != null && message.hasOwnProperty("pagerDutyEmails")) {
+                    if (!Array.isArray(message.pagerDutyEmails))
+                        return "pagerDutyEmails: array expected";
+                    for (let i = 0; i < message.pagerDutyEmails.length; ++i)
+                        if (!$util.isString(message.pagerDutyEmails[i]))
+                            return "pagerDutyEmails: string[] expected";
+                }
+                return null;
+            };
+
+            return PagerDutyNotification;
+        })();
+
+        admin.SlackNotification = (function() {
+
+            /**
+             * Properties of a SlackNotification.
+             * @memberof flyteidl.admin
+             * @interface ISlackNotification
+             * @property {Array.<string>|null} [slackEmails] SlackNotification slackEmails
+             */
+
+            /**
+             * Constructs a new SlackNotification.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a SlackNotification.
+             * @implements ISlackNotification
+             * @constructor
+             * @param {flyteidl.admin.ISlackNotification=} [properties] Properties to set
+             */
+            function SlackNotification(properties) {
+                this.slackEmails = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * SlackNotification slackEmails.
+             * @member {Array.<string>} slackEmails
+             * @memberof flyteidl.admin.SlackNotification
+             * @instance
+             */
+            SlackNotification.prototype.slackEmails = $util.emptyArray;
+
+            /**
+             * Creates a new SlackNotification instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.SlackNotification
+             * @static
+             * @param {flyteidl.admin.ISlackNotification=} [properties] Properties to set
+             * @returns {flyteidl.admin.SlackNotification} SlackNotification instance
+             */
+            SlackNotification.create = function create(properties) {
+                return new SlackNotification(properties);
+            };
+
+            /**
+             * Encodes the specified SlackNotification message. Does not implicitly {@link flyteidl.admin.SlackNotification.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.SlackNotification
+             * @static
+             * @param {flyteidl.admin.ISlackNotification} message SlackNotification message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SlackNotification.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.slackEmails != null && message.slackEmails.length)
+                    for (let i = 0; i < message.slackEmails.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.slackEmails[i]);
+                return writer;
+            };
+
+            /**
+             * Decodes a SlackNotification message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.SlackNotification
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.SlackNotification} SlackNotification
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SlackNotification.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.SlackNotification();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.slackEmails && message.slackEmails.length))
+                            message.slackEmails = [];
+                        message.slackEmails.push(reader.string());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a SlackNotification message.
+             * @function verify
+             * @memberof flyteidl.admin.SlackNotification
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            SlackNotification.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.slackEmails != null && message.hasOwnProperty("slackEmails")) {
+                    if (!Array.isArray(message.slackEmails))
+                        return "slackEmails: array expected";
+                    for (let i = 0; i < message.slackEmails.length; ++i)
+                        if (!$util.isString(message.slackEmails[i]))
+                            return "slackEmails: string[] expected";
+                }
+                return null;
+            };
+
+            return SlackNotification;
+        })();
+
         admin.Notification = (function() {
 
             /**
              * Properties of a Notification.
              * @memberof flyteidl.admin
              * @interface INotification
-             * @property {flyteidl.admin.Notification.Type|null} [type] Notification type
              * @property {Array.<flyteidl.core.WorkflowExecutionPhase>|null} [phases] Notification phases
+             * @property {flyteidl.admin.IEmailNotification|null} [email] Notification email
+             * @property {flyteidl.admin.IPagerDutyNotification|null} [pagerDuty] Notification pagerDuty
+             * @property {flyteidl.admin.ISlackNotification|null} [slack] Notification slack
              */
 
             /**
@@ -10736,20 +11092,50 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * Notification type.
-             * @member {flyteidl.admin.Notification.Type} type
-             * @memberof flyteidl.admin.Notification
-             * @instance
-             */
-            Notification.prototype.type = 0;
-
-            /**
              * Notification phases.
              * @member {Array.<flyteidl.core.WorkflowExecutionPhase>} phases
              * @memberof flyteidl.admin.Notification
              * @instance
              */
             Notification.prototype.phases = $util.emptyArray;
+
+            /**
+             * Notification email.
+             * @member {flyteidl.admin.IEmailNotification|null|undefined} email
+             * @memberof flyteidl.admin.Notification
+             * @instance
+             */
+            Notification.prototype.email = null;
+
+            /**
+             * Notification pagerDuty.
+             * @member {flyteidl.admin.IPagerDutyNotification|null|undefined} pagerDuty
+             * @memberof flyteidl.admin.Notification
+             * @instance
+             */
+            Notification.prototype.pagerDuty = null;
+
+            /**
+             * Notification slack.
+             * @member {flyteidl.admin.ISlackNotification|null|undefined} slack
+             * @memberof flyteidl.admin.Notification
+             * @instance
+             */
+            Notification.prototype.slack = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * Notification type.
+             * @member {"email"|"pagerDuty"|"slack"|undefined} type
+             * @memberof flyteidl.admin.Notification
+             * @instance
+             */
+            Object.defineProperty(Notification.prototype, "type", {
+                get: $util.oneOfGetter($oneOfFields = ["email", "pagerDuty", "slack"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
 
             /**
              * Creates a new Notification instance using the specified properties.
@@ -10775,14 +11161,18 @@ export const flyteidl = $root.flyteidl = (() => {
             Notification.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.type != null && message.hasOwnProperty("type"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
                 if (message.phases != null && message.phases.length) {
-                    writer.uint32(/* id 2, wireType 2 =*/18).fork();
+                    writer.uint32(/* id 1, wireType 2 =*/10).fork();
                     for (let i = 0; i < message.phases.length; ++i)
                         writer.int32(message.phases[i]);
                     writer.ldelim();
                 }
+                if (message.email != null && message.hasOwnProperty("email"))
+                    $root.flyteidl.admin.EmailNotification.encode(message.email, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.pagerDuty != null && message.hasOwnProperty("pagerDuty"))
+                    $root.flyteidl.admin.PagerDutyNotification.encode(message.pagerDuty, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.slack != null && message.hasOwnProperty("slack"))
+                    $root.flyteidl.admin.SlackNotification.encode(message.slack, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -10805,9 +11195,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.type = reader.int32();
-                        break;
-                    case 2:
                         if (!(message.phases && message.phases.length))
                             message.phases = [];
                         if ((tag & 7) === 2) {
@@ -10816,6 +11203,15 @@ export const flyteidl = $root.flyteidl = (() => {
                                 message.phases.push(reader.int32());
                         } else
                             message.phases.push(reader.int32());
+                        break;
+                    case 2:
+                        message.email = $root.flyteidl.admin.EmailNotification.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.pagerDuty = $root.flyteidl.admin.PagerDutyNotification.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.slack = $root.flyteidl.admin.SlackNotification.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -10836,16 +11232,7 @@ export const flyteidl = $root.flyteidl = (() => {
             Notification.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.type != null && message.hasOwnProperty("type"))
-                    switch (message.type) {
-                    default:
-                        return "type: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                        break;
-                    }
+                let properties = {};
                 if (message.phases != null && message.hasOwnProperty("phases")) {
                     if (!Array.isArray(message.phases))
                         return "phases: array expected";
@@ -10865,26 +11252,36 @@ export const flyteidl = $root.flyteidl = (() => {
                             break;
                         }
                 }
+                if (message.email != null && message.hasOwnProperty("email")) {
+                    properties.type = 1;
+                    {
+                        let error = $root.flyteidl.admin.EmailNotification.verify(message.email);
+                        if (error)
+                            return "email." + error;
+                    }
+                }
+                if (message.pagerDuty != null && message.hasOwnProperty("pagerDuty")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        let error = $root.flyteidl.admin.PagerDutyNotification.verify(message.pagerDuty);
+                        if (error)
+                            return "pagerDuty." + error;
+                    }
+                }
+                if (message.slack != null && message.hasOwnProperty("slack")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        let error = $root.flyteidl.admin.SlackNotification.verify(message.slack);
+                        if (error)
+                            return "slack." + error;
+                    }
+                }
                 return null;
             };
-
-            /**
-             * Type enum.
-             * @name flyteidl.admin.Notification.Type
-             * @enum {string}
-             * @property {number} UNDEFINED=0 UNDEFINED value
-             * @property {number} EMAIL=1 EMAIL value
-             * @property {number} PAGER_DUTY=2 PAGER_DUTY value
-             * @property {number} SLACK=3 SLACK value
-             */
-            Notification.Type = (function() {
-                const valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "UNDEFINED"] = 0;
-                values[valuesById[1] = "EMAIL"] = 1;
-                values[valuesById[2] = "PAGER_DUTY"] = 2;
-                values[valuesById[3] = "SLACK"] = 3;
-                return values;
-            })();
 
             return Notification;
         })();

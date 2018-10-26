@@ -20,35 +20,6 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
-type Notification_Type int32
-
-const (
-	Notification_UNDEFINED  Notification_Type = 0
-	Notification_EMAIL      Notification_Type = 1
-	Notification_PAGER_DUTY Notification_Type = 2
-	Notification_SLACK      Notification_Type = 3
-)
-
-var Notification_Type_name = map[int32]string{
-	0: "UNDEFINED",
-	1: "EMAIL",
-	2: "PAGER_DUTY",
-	3: "SLACK",
-}
-var Notification_Type_value = map[string]int32{
-	"UNDEFINED":  0,
-	"EMAIL":      1,
-	"PAGER_DUTY": 2,
-	"SLACK":      3,
-}
-
-func (x Notification_Type) String() string {
-	return proto.EnumName(Notification_Type_name, int32(x))
-}
-func (Notification_Type) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_common_16c75baa7ae8b683, []int{5, 0}
-}
-
 // Encapsulation of fields that identifies a Flyte resource.
 // A resource can internally have multiple versions.
 type Identifier struct {
@@ -70,7 +41,7 @@ func (m *Identifier) Reset()         { *m = Identifier{} }
 func (m *Identifier) String() string { return proto.CompactTextString(m) }
 func (*Identifier) ProtoMessage()    {}
 func (*Identifier) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_16c75baa7ae8b683, []int{0}
+	return fileDescriptor_common_ba4c5078c06545b4, []int{0}
 }
 func (m *Identifier) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Identifier.Unmarshal(m, b)
@@ -133,7 +104,7 @@ func (m *IdentifierListRequest) Reset()         { *m = IdentifierListRequest{} }
 func (m *IdentifierListRequest) String() string { return proto.CompactTextString(m) }
 func (*IdentifierListRequest) ProtoMessage()    {}
 func (*IdentifierListRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_16c75baa7ae8b683, []int{1}
+	return fileDescriptor_common_ba4c5078c06545b4, []int{1}
 }
 func (m *IdentifierListRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_IdentifierListRequest.Unmarshal(m, b)
@@ -194,7 +165,7 @@ func (m *IdentifierList) Reset()         { *m = IdentifierList{} }
 func (m *IdentifierList) String() string { return proto.CompactTextString(m) }
 func (*IdentifierList) ProtoMessage()    {}
 func (*IdentifierList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_16c75baa7ae8b683, []int{2}
+	return fileDescriptor_common_ba4c5078c06545b4, []int{2}
 }
 func (m *IdentifierList) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_IdentifierList.Unmarshal(m, b)
@@ -234,7 +205,7 @@ func (m *ObjectGetRequest) Reset()         { *m = ObjectGetRequest{} }
 func (m *ObjectGetRequest) String() string { return proto.CompactTextString(m) }
 func (*ObjectGetRequest) ProtoMessage()    {}
 func (*ObjectGetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_16c75baa7ae8b683, []int{3}
+	return fileDescriptor_common_ba4c5078c06545b4, []int{3}
 }
 func (m *ObjectGetRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ObjectGetRequest.Unmarshal(m, b)
@@ -286,7 +257,7 @@ func (m *ResourceListRequest) Reset()         { *m = ResourceListRequest{} }
 func (m *ResourceListRequest) String() string { return proto.CompactTextString(m) }
 func (*ResourceListRequest) ProtoMessage()    {}
 func (*ResourceListRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_16c75baa7ae8b683, []int{4}
+	return fileDescriptor_common_ba4c5078c06545b4, []int{4}
 }
 func (m *ResourceListRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ResourceListRequest.Unmarshal(m, b)
@@ -334,21 +305,144 @@ func (m *ResourceListRequest) GetFilters() string {
 	return ""
 }
 
+type EmailNotification struct {
+	// The list of email recipients for this notification.
+	EmailRecipients      []string `protobuf:"bytes,1,rep,name=email_recipients,json=emailRecipients,proto3" json:"email_recipients,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *EmailNotification) Reset()         { *m = EmailNotification{} }
+func (m *EmailNotification) String() string { return proto.CompactTextString(m) }
+func (*EmailNotification) ProtoMessage()    {}
+func (*EmailNotification) Descriptor() ([]byte, []int) {
+	return fileDescriptor_common_ba4c5078c06545b4, []int{5}
+}
+func (m *EmailNotification) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_EmailNotification.Unmarshal(m, b)
+}
+func (m *EmailNotification) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_EmailNotification.Marshal(b, m, deterministic)
+}
+func (dst *EmailNotification) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_EmailNotification.Merge(dst, src)
+}
+func (m *EmailNotification) XXX_Size() int {
+	return xxx_messageInfo_EmailNotification.Size(m)
+}
+func (m *EmailNotification) XXX_DiscardUnknown() {
+	xxx_messageInfo_EmailNotification.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_EmailNotification proto.InternalMessageInfo
+
+func (m *EmailNotification) GetEmailRecipients() []string {
+	if m != nil {
+		return m.EmailRecipients
+	}
+	return nil
+}
+
+type PagerDutyNotification struct {
+	// Currently, PagerDuty notifications leverage email to trigger a notification.
+	PagerDutyEmails      []string `protobuf:"bytes,1,rep,name=pager_duty_emails,json=pagerDutyEmails,proto3" json:"pager_duty_emails,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PagerDutyNotification) Reset()         { *m = PagerDutyNotification{} }
+func (m *PagerDutyNotification) String() string { return proto.CompactTextString(m) }
+func (*PagerDutyNotification) ProtoMessage()    {}
+func (*PagerDutyNotification) Descriptor() ([]byte, []int) {
+	return fileDescriptor_common_ba4c5078c06545b4, []int{6}
+}
+func (m *PagerDutyNotification) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PagerDutyNotification.Unmarshal(m, b)
+}
+func (m *PagerDutyNotification) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PagerDutyNotification.Marshal(b, m, deterministic)
+}
+func (dst *PagerDutyNotification) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PagerDutyNotification.Merge(dst, src)
+}
+func (m *PagerDutyNotification) XXX_Size() int {
+	return xxx_messageInfo_PagerDutyNotification.Size(m)
+}
+func (m *PagerDutyNotification) XXX_DiscardUnknown() {
+	xxx_messageInfo_PagerDutyNotification.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PagerDutyNotification proto.InternalMessageInfo
+
+func (m *PagerDutyNotification) GetPagerDutyEmails() []string {
+	if m != nil {
+		return m.PagerDutyEmails
+	}
+	return nil
+}
+
+type SlackNotification struct {
+	// Currently, Slack notifications leverage email to trigger a notification.
+	SlackEmails          []string `protobuf:"bytes,1,rep,name=slack_emails,json=slackEmails,proto3" json:"slack_emails,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *SlackNotification) Reset()         { *m = SlackNotification{} }
+func (m *SlackNotification) String() string { return proto.CompactTextString(m) }
+func (*SlackNotification) ProtoMessage()    {}
+func (*SlackNotification) Descriptor() ([]byte, []int) {
+	return fileDescriptor_common_ba4c5078c06545b4, []int{7}
+}
+func (m *SlackNotification) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_SlackNotification.Unmarshal(m, b)
+}
+func (m *SlackNotification) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_SlackNotification.Marshal(b, m, deterministic)
+}
+func (dst *SlackNotification) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SlackNotification.Merge(dst, src)
+}
+func (m *SlackNotification) XXX_Size() int {
+	return xxx_messageInfo_SlackNotification.Size(m)
+}
+func (m *SlackNotification) XXX_DiscardUnknown() {
+	xxx_messageInfo_SlackNotification.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_SlackNotification proto.InternalMessageInfo
+
+func (m *SlackNotification) GetSlackEmails() []string {
+	if m != nil {
+		return m.SlackEmails
+	}
+	return nil
+}
+
 // Represents a structure for notifications based on execution status.
+// The Notification content is configured within Admin. Future iterations could
+// expose configuring notifications with custom content.
 type Notification struct {
-	Type Notification_Type `protobuf:"varint,1,opt,name=type,proto3,enum=flyteidl.admin.Notification_Type" json:"type,omitempty"`
 	// A list of phases to which users can associate the notifications to.
-	Phases               []core.WorkflowExecutionPhase `protobuf:"varint,2,rep,packed,name=phases,proto3,enum=flyteidl.core.WorkflowExecutionPhase" json:"phases,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                      `json:"-"`
-	XXX_unrecognized     []byte                        `json:"-"`
-	XXX_sizecache        int32                         `json:"-"`
+	Phases []core.WorkflowExecutionPhase `protobuf:"varint,1,rep,packed,name=phases,proto3,enum=flyteidl.core.WorkflowExecutionPhase" json:"phases,omitempty"`
+	// Types that are valid to be assigned to Type:
+	//	*Notification_Email
+	//	*Notification_PagerDuty
+	//	*Notification_Slack
+	Type                 isNotification_Type `protobuf_oneof:"type"`
+	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
+	XXX_unrecognized     []byte              `json:"-"`
+	XXX_sizecache        int32               `json:"-"`
 }
 
 func (m *Notification) Reset()         { *m = Notification{} }
 func (m *Notification) String() string { return proto.CompactTextString(m) }
 func (*Notification) ProtoMessage()    {}
 func (*Notification) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_16c75baa7ae8b683, []int{5}
+	return fileDescriptor_common_ba4c5078c06545b4, []int{8}
 }
 func (m *Notification) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Notification.Unmarshal(m, b)
@@ -368,18 +462,154 @@ func (m *Notification) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Notification proto.InternalMessageInfo
 
-func (m *Notification) GetType() Notification_Type {
-	if m != nil {
-		return m.Type
-	}
-	return Notification_UNDEFINED
-}
-
 func (m *Notification) GetPhases() []core.WorkflowExecutionPhase {
 	if m != nil {
 		return m.Phases
 	}
 	return nil
+}
+
+type isNotification_Type interface {
+	isNotification_Type()
+}
+
+type Notification_Email struct {
+	Email *EmailNotification `protobuf:"bytes,2,opt,name=email,proto3,oneof"`
+}
+
+type Notification_PagerDuty struct {
+	PagerDuty *PagerDutyNotification `protobuf:"bytes,3,opt,name=pager_duty,json=pagerDuty,proto3,oneof"`
+}
+
+type Notification_Slack struct {
+	Slack *SlackNotification `protobuf:"bytes,4,opt,name=slack,proto3,oneof"`
+}
+
+func (*Notification_Email) isNotification_Type() {}
+
+func (*Notification_PagerDuty) isNotification_Type() {}
+
+func (*Notification_Slack) isNotification_Type() {}
+
+func (m *Notification) GetType() isNotification_Type {
+	if m != nil {
+		return m.Type
+	}
+	return nil
+}
+
+func (m *Notification) GetEmail() *EmailNotification {
+	if x, ok := m.GetType().(*Notification_Email); ok {
+		return x.Email
+	}
+	return nil
+}
+
+func (m *Notification) GetPagerDuty() *PagerDutyNotification {
+	if x, ok := m.GetType().(*Notification_PagerDuty); ok {
+		return x.PagerDuty
+	}
+	return nil
+}
+
+func (m *Notification) GetSlack() *SlackNotification {
+	if x, ok := m.GetType().(*Notification_Slack); ok {
+		return x.Slack
+	}
+	return nil
+}
+
+// XXX_OneofFuncs is for the internal use of the proto package.
+func (*Notification) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
+	return _Notification_OneofMarshaler, _Notification_OneofUnmarshaler, _Notification_OneofSizer, []interface{}{
+		(*Notification_Email)(nil),
+		(*Notification_PagerDuty)(nil),
+		(*Notification_Slack)(nil),
+	}
+}
+
+func _Notification_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
+	m := msg.(*Notification)
+	// type
+	switch x := m.Type.(type) {
+	case *Notification_Email:
+		b.EncodeVarint(2<<3 | proto.WireBytes)
+		if err := b.EncodeMessage(x.Email); err != nil {
+			return err
+		}
+	case *Notification_PagerDuty:
+		b.EncodeVarint(3<<3 | proto.WireBytes)
+		if err := b.EncodeMessage(x.PagerDuty); err != nil {
+			return err
+		}
+	case *Notification_Slack:
+		b.EncodeVarint(4<<3 | proto.WireBytes)
+		if err := b.EncodeMessage(x.Slack); err != nil {
+			return err
+		}
+	case nil:
+	default:
+		return fmt.Errorf("Notification.Type has unexpected type %T", x)
+	}
+	return nil
+}
+
+func _Notification_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
+	m := msg.(*Notification)
+	switch tag {
+	case 2: // type.email
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		msg := new(EmailNotification)
+		err := b.DecodeMessage(msg)
+		m.Type = &Notification_Email{msg}
+		return true, err
+	case 3: // type.pager_duty
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		msg := new(PagerDutyNotification)
+		err := b.DecodeMessage(msg)
+		m.Type = &Notification_PagerDuty{msg}
+		return true, err
+	case 4: // type.slack
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		msg := new(SlackNotification)
+		err := b.DecodeMessage(msg)
+		m.Type = &Notification_Slack{msg}
+		return true, err
+	default:
+		return false, nil
+	}
+}
+
+func _Notification_OneofSizer(msg proto.Message) (n int) {
+	m := msg.(*Notification)
+	// type
+	switch x := m.Type.(type) {
+	case *Notification_Email:
+		s := proto.Size(x.Email)
+		n += 1 // tag and wire
+		n += proto.SizeVarint(uint64(s))
+		n += s
+	case *Notification_PagerDuty:
+		s := proto.Size(x.PagerDuty)
+		n += 1 // tag and wire
+		n += proto.SizeVarint(uint64(s))
+		n += s
+	case *Notification_Slack:
+		s := proto.Size(x.Slack)
+		n += 1 // tag and wire
+		n += proto.SizeVarint(uint64(s))
+		n += s
+	case nil:
+	default:
+		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
+	}
+	return n
 }
 
 func init() {
@@ -388,43 +618,50 @@ func init() {
 	proto.RegisterType((*IdentifierList)(nil), "flyteidl.admin.IdentifierList")
 	proto.RegisterType((*ObjectGetRequest)(nil), "flyteidl.admin.ObjectGetRequest")
 	proto.RegisterType((*ResourceListRequest)(nil), "flyteidl.admin.ResourceListRequest")
+	proto.RegisterType((*EmailNotification)(nil), "flyteidl.admin.EmailNotification")
+	proto.RegisterType((*PagerDutyNotification)(nil), "flyteidl.admin.PagerDutyNotification")
+	proto.RegisterType((*SlackNotification)(nil), "flyteidl.admin.SlackNotification")
 	proto.RegisterType((*Notification)(nil), "flyteidl.admin.Notification")
-	proto.RegisterEnum("flyteidl.admin.Notification_Type", Notification_Type_name, Notification_Type_value)
 }
 
-func init() { proto.RegisterFile("flyteidl/admin/common.proto", fileDescriptor_common_16c75baa7ae8b683) }
+func init() { proto.RegisterFile("flyteidl/admin/common.proto", fileDescriptor_common_ba4c5078c06545b4) }
 
-var fileDescriptor_common_16c75baa7ae8b683 = []byte{
-	// 491 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x53, 0xcd, 0x6e, 0xd3, 0x40,
-	0x10, 0x66, 0xed, 0x34, 0x25, 0x03, 0xb5, 0xac, 0xe5, 0xcf, 0x0a, 0x42, 0x4a, 0x0d, 0x48, 0x11,
-	0x12, 0xb6, 0x48, 0x25, 0x2e, 0x88, 0x43, 0x42, 0x4c, 0x89, 0x08, 0xa1, 0x5a, 0x5a, 0x21, 0xb8,
-	0x20, 0xc7, 0x1e, 0x27, 0x0b, 0xb6, 0xd7, 0xd8, 0x6b, 0x20, 0x57, 0x6e, 0x1c, 0x78, 0x21, 0x4e,
-	0xbc, 0x00, 0x0f, 0xc2, 0x5b, 0xa0, 0x75, 0xe2, 0xfc, 0x54, 0x88, 0x13, 0xb7, 0x99, 0xfd, 0xbe,
-	0x99, 0xf9, 0xbe, 0xd5, 0x0c, 0xdc, 0x8c, 0xe2, 0x85, 0x44, 0x1e, 0xc6, 0xae, 0x1f, 0x26, 0x3c,
-	0x75, 0x03, 0x91, 0x24, 0x22, 0x75, 0xb2, 0x5c, 0x48, 0x41, 0x8d, 0x1a, 0x74, 0x2a, 0xb0, 0x7d,
-	0x6b, 0x4d, 0x0e, 0x44, 0x8e, 0x2e, 0x7e, 0xc1, 0xa0, 0x94, 0xbc, 0xa6, 0xb7, 0x6f, 0x7c, 0xf2,
-	0x63, 0x1e, 0xfa, 0x12, 0xdd, 0x3a, 0x58, 0x02, 0xf6, 0x1c, 0x60, 0x14, 0x62, 0x2a, 0x79, 0xc4,
-	0x31, 0xa7, 0xb7, 0x61, 0x3f, 0xcb, 0xc5, 0x7b, 0x0c, 0xa4, 0x45, 0x3a, 0xa4, 0xdb, 0x1a, 0xb4,
-	0x7e, 0xfc, 0xfe, 0xa9, 0x37, 0x72, 0xad, 0x43, 0x58, 0x8d, 0xd0, 0x43, 0x68, 0x86, 0x22, 0xf1,
-	0x79, 0x6a, 0x69, 0xe7, 0x39, 0x2b, 0x80, 0x52, 0x68, 0xa4, 0x7e, 0x82, 0x96, 0xae, 0x08, 0xac,
-	0x8a, 0xed, 0xef, 0x04, 0xae, 0x6d, 0x46, 0x8d, 0x79, 0x21, 0x19, 0x7e, 0x2c, 0xb1, 0x90, 0xff,
-	0x6d, 0xea, 0x55, 0xd8, 0x8b, 0x79, 0xc2, 0x65, 0x35, 0xf6, 0x80, 0x2d, 0x13, 0x7a, 0x1d, 0x9a,
-	0x22, 0x8a, 0x0a, 0x94, 0x56, 0xa3, 0x7a, 0x5e, 0x65, 0xf6, 0x33, 0x30, 0x76, 0xe5, 0xd0, 0x87,
-	0x70, 0x51, 0xe5, 0x92, 0x63, 0x61, 0x91, 0x8e, 0xde, 0xbd, 0xd4, 0x6b, 0x3b, 0xbb, 0xdf, 0xec,
-	0x6c, 0x2a, 0xd8, 0x9a, 0x6b, 0xdf, 0x01, 0xf3, 0xe5, 0x54, 0x89, 0x3c, 0xc6, 0xb5, 0x27, 0x13,
-	0xf4, 0x32, 0x4f, 0x97, 0x7e, 0x98, 0x0a, 0xed, 0x6f, 0x04, 0xae, 0x30, 0x2c, 0x44, 0x99, 0x07,
-	0xb8, 0xed, 0xfe, 0x1e, 0x68, 0x3c, 0xac, 0x88, 0xff, 0x9e, 0xa7, 0xf1, 0x70, 0xe3, 0x50, 0xfb,
-	0xbb, 0x43, 0x7d, 0xdb, 0x21, 0xb5, 0x60, 0x3f, 0xe2, 0xb1, 0xc4, 0xbc, 0xa8, 0xac, 0xb7, 0x58,
-	0x9d, 0xda, 0xbf, 0x08, 0x5c, 0x9e, 0x08, 0xd5, 0x38, 0xf0, 0xd5, 0x96, 0xd0, 0x3e, 0x34, 0xe4,
-	0x22, 0xc3, 0x4a, 0x86, 0xd1, 0x3b, 0x3c, 0x2f, 0x63, 0x9b, 0xeb, 0x9c, 0x2e, 0x32, 0x1c, 0x80,
-	0xfa, 0xfe, 0xbd, 0xaf, 0x44, 0x33, 0x09, 0xab, 0x4a, 0xe9, 0x63, 0x68, 0x66, 0x73, 0xbf, 0xc0,
-	0xc2, 0xd2, 0x3a, 0x7a, 0xd7, 0xe8, 0xdd, 0xdd, 0x34, 0x51, 0x2b, 0xe9, 0xbc, 0x16, 0xf9, 0x87,
-	0x28, 0x16, 0x9f, 0xbd, 0x7a, 0x35, 0x4f, 0x14, 0x9b, 0xad, 0x8a, 0xec, 0x47, 0xd0, 0x50, 0x8d,
-	0xe9, 0x01, 0xb4, 0xce, 0x26, 0x43, 0xef, 0xe9, 0x68, 0xe2, 0x0d, 0xcd, 0x0b, 0xb4, 0x05, 0x7b,
-	0xde, 0x8b, 0xfe, 0x68, 0x6c, 0x12, 0x6a, 0x00, 0x9c, 0xf4, 0x8f, 0x3d, 0xf6, 0x6e, 0x78, 0x76,
-	0xfa, 0xc6, 0xd4, 0x14, 0xf4, 0x6a, 0xdc, 0x7f, 0xf2, 0xdc, 0xd4, 0x07, 0x47, 0x6f, 0x1f, 0xcc,
-	0xb8, 0x9c, 0x97, 0x53, 0x27, 0x10, 0x89, 0x1b, 0x2f, 0x22, 0xe9, 0xae, 0xef, 0x61, 0x86, 0xa9,
-	0x9b, 0x4d, 0xef, 0xcf, 0x84, 0xbb, 0x7b, 0x4f, 0xd3, 0x66, 0x75, 0x01, 0x47, 0x7f, 0x02, 0x00,
-	0x00, 0xff, 0xff, 0x2d, 0x29, 0x17, 0x7e, 0x68, 0x03, 0x00, 0x00,
+var fileDescriptor_common_ba4c5078c06545b4 = []byte{
+	// 573 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x54, 0xcd, 0x6e, 0xd3, 0x40,
+	0x10, 0xae, 0xed, 0x34, 0x6d, 0x26, 0x6d, 0x49, 0x17, 0x0a, 0x56, 0x11, 0x52, 0x6b, 0x40, 0xaa,
+	0x90, 0xb0, 0x45, 0x2b, 0x90, 0x38, 0xc0, 0x21, 0xa2, 0x10, 0x10, 0x82, 0x6a, 0x39, 0x54, 0xe2,
+	0x12, 0x39, 0xf6, 0x38, 0x59, 0x6a, 0x7b, 0xcd, 0x7a, 0x0d, 0xe4, 0x11, 0x38, 0x70, 0xe1, 0xc8,
+	0x93, 0x20, 0x4e, 0x7d, 0x9d, 0xbe, 0x05, 0xda, 0x75, 0xec, 0xfc, 0x34, 0x2a, 0x17, 0x6e, 0x3b,
+	0x3b, 0xdf, 0xcc, 0x7c, 0xdf, 0x37, 0xf6, 0xc2, 0xed, 0x28, 0x1e, 0x4b, 0x64, 0x61, 0xec, 0xf9,
+	0x61, 0xc2, 0x52, 0x2f, 0xe0, 0x49, 0xc2, 0x53, 0x37, 0x13, 0x5c, 0x72, 0xb2, 0x55, 0x25, 0x5d,
+	0x9d, 0xdc, 0xbd, 0x53, 0x83, 0x03, 0x2e, 0xd0, 0xc3, 0x6f, 0x18, 0x14, 0x92, 0x55, 0xf0, 0xdd,
+	0x5b, 0x5f, 0xfc, 0x98, 0x85, 0xbe, 0x44, 0xaf, 0x3a, 0x94, 0x09, 0x67, 0x04, 0xf0, 0x3a, 0xc4,
+	0x54, 0xb2, 0x88, 0xa1, 0x20, 0x77, 0x61, 0x2d, 0x13, 0xfc, 0x13, 0x06, 0xd2, 0x36, 0xf6, 0x8c,
+	0x83, 0x56, 0xb7, 0xf5, 0xe7, 0xe2, 0xdc, 0x6a, 0x08, 0x73, 0xcf, 0xa0, 0x55, 0x86, 0xec, 0x43,
+	0x33, 0xe4, 0x89, 0xcf, 0x52, 0xdb, 0x5c, 0xc4, 0x4c, 0x12, 0x84, 0x40, 0x23, 0xf5, 0x13, 0xb4,
+	0x2d, 0x05, 0xa0, 0xfa, 0xec, 0xfc, 0x30, 0x60, 0x67, 0x3a, 0xea, 0x2d, 0xcb, 0x25, 0xc5, 0xcf,
+	0x05, 0xe6, 0xf2, 0xbf, 0x4d, 0xbd, 0x01, 0xab, 0x31, 0x4b, 0x98, 0xd4, 0x63, 0x37, 0x69, 0x19,
+	0x90, 0x9b, 0xd0, 0xe4, 0x51, 0x94, 0xa3, 0xb4, 0x1b, 0xfa, 0x7a, 0x12, 0x39, 0x3d, 0xd8, 0x9a,
+	0xa7, 0x43, 0x9e, 0xc0, 0xba, 0x8a, 0x25, 0xc3, 0xdc, 0x36, 0xf6, 0xac, 0x83, 0xf6, 0xe1, 0xae,
+	0x3b, 0x6f, 0xb3, 0x3b, 0xad, 0xa0, 0x35, 0xd6, 0xb9, 0x07, 0x9d, 0xf7, 0x03, 0x45, 0xf2, 0x15,
+	0xd6, 0x9a, 0x3a, 0x60, 0x15, 0x22, 0x2d, 0xf5, 0x50, 0x75, 0x74, 0xbe, 0x1b, 0x70, 0x9d, 0x62,
+	0xce, 0x0b, 0x11, 0xe0, 0xac, 0xfa, 0x07, 0x60, 0xb2, 0x50, 0x03, 0xaf, 0x9e, 0x67, 0xb2, 0x70,
+	0xaa, 0xd0, 0x5c, 0xae, 0xd0, 0x9a, 0x55, 0x48, 0x6c, 0x58, 0x8b, 0x58, 0x2c, 0x51, 0xe4, 0x5a,
+	0x7a, 0x8b, 0x56, 0xa1, 0x43, 0x61, 0xfb, 0x38, 0xf1, 0x59, 0xfc, 0x8e, 0xab, 0xe6, 0x81, 0xaf,
+	0xbe, 0x14, 0xf2, 0x0c, 0x3a, 0xa8, 0x2e, 0xfb, 0x02, 0x03, 0x96, 0x31, 0x4c, 0x65, 0x69, 0x43,
+	0xab, 0x4b, 0x94, 0xd7, 0x9b, 0x3f, 0x0d, 0x58, 0x37, 0x6c, 0xc3, 0x69, 0x08, 0xb3, 0x63, 0xd0,
+	0x6b, 0x1a, 0x4b, 0x6b, 0xa8, 0x73, 0x0a, 0x3b, 0x27, 0xfe, 0x10, 0xc5, 0x8b, 0x42, 0x8e, 0xe7,
+	0xfa, 0x3e, 0x87, 0xed, 0x4c, 0x25, 0xfa, 0x61, 0x21, 0xc7, 0x7d, 0x5d, 0x76, 0x65, 0xe3, 0xac,
+	0xea, 0xa2, 0x29, 0xe6, 0xce, 0x1b, 0xd8, 0xfe, 0x10, 0xfb, 0xc1, 0xd9, 0x5c, 0xd3, 0xc7, 0xb0,
+	0x91, 0xab, 0xcb, 0x7f, 0xf7, 0x6b, 0x6b, 0xdc, 0xa4, 0xd7, 0x2f, 0x13, 0x36, 0x16, 0x44, 0x37,
+	0xb3, 0x91, 0x9f, 0x4f, 0x36, 0xbe, 0x75, 0x78, 0x7f, 0xba, 0x01, 0xf5, 0x23, 0xb9, 0xa7, 0x5c,
+	0x9c, 0x45, 0x31, 0xff, 0x7a, 0x5c, 0xfd, 0x50, 0x27, 0x0a, 0x4d, 0x27, 0x45, 0xe4, 0x29, 0xac,
+	0x6a, 0x02, 0x7a, 0x21, 0xed, 0xc3, 0xfd, 0xc5, 0xfd, 0x5d, 0x72, 0xb9, 0xb7, 0x42, 0xcb, 0x0a,
+	0xf2, 0x12, 0x60, 0x6a, 0x8b, 0xde, 0x5c, 0x7b, 0x76, 0x7a, 0x59, 0xbf, 0xd4, 0xd1, 0xde, 0x0a,
+	0x6d, 0xd5, 0x26, 0x29, 0x0a, 0x5a, 0xa1, 0xde, 0xf1, 0x12, 0x0a, 0x97, 0xbc, 0x53, 0x14, 0x74,
+	0x45, 0x77, 0x13, 0x1a, 0x72, 0x9c, 0x21, 0x59, 0xfd, 0x7d, 0x71, 0x6e, 0x19, 0xdd, 0xa3, 0x8f,
+	0x8f, 0x86, 0x4c, 0x8e, 0x8a, 0x81, 0x1b, 0xf0, 0xc4, 0x8b, 0xc7, 0x91, 0xf4, 0xea, 0x57, 0x65,
+	0x88, 0xa9, 0x97, 0x0d, 0x1e, 0x0e, 0xb9, 0x37, 0xff, 0x2a, 0x0d, 0x9a, 0xfa, 0x1d, 0x39, 0xfa,
+	0x1b, 0x00, 0x00, 0xff, 0xff, 0xc3, 0x0d, 0x65, 0x9f, 0xae, 0x04, 0x00, 0x00,
 }

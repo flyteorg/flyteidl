@@ -65,16 +65,34 @@ message ResourceListRequest {
     string filters  = 4;
 }
 
+message EmailNotification {
+    // The list of email recipients for this notification.
+    repeated string email_recipients = 1 [(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {min_len: 1}}}];
+}
+
+message PagerDutyNotification {
+    // Currently, PagerDuty notifications leverage email to trigger a notification.
+    repeated string pager_duty_emails = 1 [(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {min_len: 1}}}];
+}
+
+message SlackNotification {
+    // Currently, Slack notifications leverage email to trigger a notification.
+    repeated string slack_emails = 1 [(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {min_len: 1}}}];
+
+}
+
 // Represents a structure for notifications based on execution status.
+// The Notification content is configured within Admin. Future iterations could
+// expose configuring notifications with custom content.
 message Notification {
-    enum Type {
-        UNDEFINED            = 0;
-        EMAIL                = 1;
-        PAGER_DUTY           = 2;
-        SLACK                = 3;
+    // A list of phases to which users can associate the notifications to.
+    repeated core.WorkflowExecutionPhase phases = 1;
+
+    oneof type {
+        option (validate.required) = true;
+        EmailNotification email = 2;
+        PagerDutyNotification pager_duty = 3;
+        SlackNotification slack = 4;
     }
 
-    Type type                = 1 [(validate.rules).enum.defined_only = true];
-    // A list of phases to which users can associate the notifications to.
-    repeated core.WorkflowExecutionPhase phases = 2;
 }

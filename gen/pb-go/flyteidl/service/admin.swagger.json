@@ -1144,6 +1144,18 @@
         }
       }
     },
+    "adminEmailNotification": {
+      "type": "object",
+      "properties": {
+        "email_recipients": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The list of email recipients for this notification."
+        }
+      }
+    },
     "adminExecution": {
       "type": "object",
       "properties": {
@@ -1539,28 +1551,36 @@
     "adminNotification": {
       "type": "object",
       "properties": {
-        "type": {
-          "$ref": "#/definitions/adminNotificationType"
-        },
         "phases": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/coreWorkflowExecutionPhase"
           },
           "description": "A list of phases to which users can associate the notifications to."
+        },
+        "email": {
+          "$ref": "#/definitions/adminEmailNotification"
+        },
+        "pager_duty": {
+          "$ref": "#/definitions/adminPagerDutyNotification"
+        },
+        "slack": {
+          "$ref": "#/definitions/adminSlackNotification"
         }
       },
-      "description": "Represents a structure for notifications based on execution status."
+      "description": "Represents a structure for notifications based on execution status.\nThe Notification content is configured within Admin. Future iterations could\nexpose configuring notifications with custom content."
     },
-    "adminNotificationType": {
-      "type": "string",
-      "enum": [
-        "UNDEFINED",
-        "EMAIL",
-        "PAGER_DUTY",
-        "SLACK"
-      ],
-      "default": "UNDEFINED"
+    "adminPagerDutyNotification": {
+      "type": "object",
+      "properties": {
+        "pager_duty_emails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Currently, PagerDuty notifications leverage email to trigger a notification."
+        }
+      }
     },
     "adminProject": {
       "type": "object",
@@ -1606,6 +1626,18 @@
         "kickoff_time_input_arg": {
           "type": "string",
           "description": "Name of the input variable that the kickoff time will be supplied to when the workflow is kicked off."
+        }
+      }
+    },
+    "adminSlackNotification": {
+      "type": "object",
+      "properties": {
+        "slack_emails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Currently, Slack notifications leverage email to trigger a notification."
         }
       }
     },

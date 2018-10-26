@@ -428,6 +428,297 @@ var _ interface {
 	ErrorName() string
 } = ResourceListRequestValidationError{}
 
+// Validate checks the field values on EmailNotification with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *EmailNotification) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if len(m.GetEmailRecipients()) < 1 {
+		return EmailNotificationValidationError{
+			field:  "EmailRecipients",
+			reason: "value must contain at least 1 item(s)",
+		}
+	}
+
+	_EmailNotification_EmailRecipients_Unique := make(map[string]struct{}, len(m.GetEmailRecipients()))
+
+	for idx, item := range m.GetEmailRecipients() {
+		_, _ = idx, item
+
+		if _, exists := _EmailNotification_EmailRecipients_Unique[item]; exists {
+			return EmailNotificationValidationError{
+				field:  fmt.Sprintf("EmailRecipients[%v]", idx),
+				reason: "repeated value must contain unique items",
+			}
+		} else {
+			_EmailNotification_EmailRecipients_Unique[item] = struct{}{}
+		}
+
+		if utf8.RuneCountInString(item) < 1 {
+			return EmailNotificationValidationError{
+				field:  fmt.Sprintf("EmailRecipients[%v]", idx),
+				reason: "value length must be at least 1 runes",
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// EmailNotificationValidationError is the validation error returned by
+// EmailNotification.Validate if the designated constraints aren't met.
+type EmailNotificationValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e EmailNotificationValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e EmailNotificationValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e EmailNotificationValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e EmailNotificationValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e EmailNotificationValidationError) ErrorName() string {
+	return "EmailNotificationValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e EmailNotificationValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sEmailNotification.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = EmailNotificationValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = EmailNotificationValidationError{}
+
+// Validate checks the field values on PagerDutyNotification with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *PagerDutyNotification) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if len(m.GetPagerDutyEmails()) < 1 {
+		return PagerDutyNotificationValidationError{
+			field:  "PagerDutyEmails",
+			reason: "value must contain at least 1 item(s)",
+		}
+	}
+
+	_PagerDutyNotification_PagerDutyEmails_Unique := make(map[string]struct{}, len(m.GetPagerDutyEmails()))
+
+	for idx, item := range m.GetPagerDutyEmails() {
+		_, _ = idx, item
+
+		if _, exists := _PagerDutyNotification_PagerDutyEmails_Unique[item]; exists {
+			return PagerDutyNotificationValidationError{
+				field:  fmt.Sprintf("PagerDutyEmails[%v]", idx),
+				reason: "repeated value must contain unique items",
+			}
+		} else {
+			_PagerDutyNotification_PagerDutyEmails_Unique[item] = struct{}{}
+		}
+
+		if utf8.RuneCountInString(item) < 1 {
+			return PagerDutyNotificationValidationError{
+				field:  fmt.Sprintf("PagerDutyEmails[%v]", idx),
+				reason: "value length must be at least 1 runes",
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// PagerDutyNotificationValidationError is the validation error returned by
+// PagerDutyNotification.Validate if the designated constraints aren't met.
+type PagerDutyNotificationValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e PagerDutyNotificationValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e PagerDutyNotificationValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e PagerDutyNotificationValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e PagerDutyNotificationValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e PagerDutyNotificationValidationError) ErrorName() string {
+	return "PagerDutyNotificationValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e PagerDutyNotificationValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sPagerDutyNotification.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = PagerDutyNotificationValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = PagerDutyNotificationValidationError{}
+
+// Validate checks the field values on SlackNotification with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *SlackNotification) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if len(m.GetSlackEmails()) < 1 {
+		return SlackNotificationValidationError{
+			field:  "SlackEmails",
+			reason: "value must contain at least 1 item(s)",
+		}
+	}
+
+	_SlackNotification_SlackEmails_Unique := make(map[string]struct{}, len(m.GetSlackEmails()))
+
+	for idx, item := range m.GetSlackEmails() {
+		_, _ = idx, item
+
+		if _, exists := _SlackNotification_SlackEmails_Unique[item]; exists {
+			return SlackNotificationValidationError{
+				field:  fmt.Sprintf("SlackEmails[%v]", idx),
+				reason: "repeated value must contain unique items",
+			}
+		} else {
+			_SlackNotification_SlackEmails_Unique[item] = struct{}{}
+		}
+
+		if utf8.RuneCountInString(item) < 1 {
+			return SlackNotificationValidationError{
+				field:  fmt.Sprintf("SlackEmails[%v]", idx),
+				reason: "value length must be at least 1 runes",
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// SlackNotificationValidationError is the validation error returned by
+// SlackNotification.Validate if the designated constraints aren't met.
+type SlackNotificationValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e SlackNotificationValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e SlackNotificationValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e SlackNotificationValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e SlackNotificationValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e SlackNotificationValidationError) ErrorName() string {
+	return "SlackNotificationValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e SlackNotificationValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sSlackNotification.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = SlackNotificationValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = SlackNotificationValidationError{}
+
 // Validate checks the field values on Notification with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
 // is returned.
@@ -436,11 +727,50 @@ func (m *Notification) Validate() error {
 		return nil
 	}
 
-	if _, ok := Notification_Type_name[int32(m.GetType())]; !ok {
+	switch m.Type.(type) {
+
+	case *Notification_Email:
+
+		if v, ok := interface{}(m.GetEmail()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return NotificationValidationError{
+					field:  "Email",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	case *Notification_PagerDuty:
+
+		if v, ok := interface{}(m.GetPagerDuty()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return NotificationValidationError{
+					field:  "PagerDuty",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	case *Notification_Slack:
+
+		if v, ok := interface{}(m.GetSlack()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return NotificationValidationError{
+					field:  "Slack",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	default:
 		return NotificationValidationError{
 			field:  "Type",
-			reason: "value must be one of the defined enum values",
+			reason: "value is required",
 		}
+
 	}
 
 	return nil
