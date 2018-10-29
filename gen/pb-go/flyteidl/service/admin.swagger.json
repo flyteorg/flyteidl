@@ -1147,12 +1147,12 @@
     "adminEmailNotification": {
       "type": "object",
       "properties": {
-        "email_recipients": {
+        "recipients_email": {
           "type": "array",
           "items": {
             "type": "string"
           },
-          "description": "The list of email recipients for this notification."
+          "description": "The list of email addresses recipients for this notification."
         }
       }
     },
@@ -1591,7 +1591,7 @@
     "adminPagerDutyNotification": {
       "type": "object",
       "properties": {
-        "pager_duty_emails": {
+        "recipients_email": {
           "type": "array",
           "items": {
             "type": "string"
@@ -1650,7 +1650,7 @@
     "adminSlackNotification": {
       "type": "object",
       "properties": {
-        "slack_emails": {
+        "recipients_email": {
           "type": "array",
           "items": {
             "type": "string"

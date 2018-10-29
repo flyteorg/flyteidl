@@ -10715,7 +10715,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of an EmailNotification.
              * @memberof flyteidl.admin
              * @interface IEmailNotification
-             * @property {Array.<string>|null} [emailRecipients] EmailNotification emailRecipients
+             * @property {Array.<string>|null} [recipientsEmail] EmailNotification recipientsEmail
              */
 
             /**
@@ -10727,7 +10727,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.admin.IEmailNotification=} [properties] Properties to set
              */
             function EmailNotification(properties) {
-                this.emailRecipients = [];
+                this.recipientsEmail = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -10735,12 +10735,12 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * EmailNotification emailRecipients.
-             * @member {Array.<string>} emailRecipients
+             * EmailNotification recipientsEmail.
+             * @member {Array.<string>} recipientsEmail
              * @memberof flyteidl.admin.EmailNotification
              * @instance
              */
-            EmailNotification.prototype.emailRecipients = $util.emptyArray;
+            EmailNotification.prototype.recipientsEmail = $util.emptyArray;
 
             /**
              * Creates a new EmailNotification instance using the specified properties.
@@ -10766,9 +10766,9 @@ export const flyteidl = $root.flyteidl = (() => {
             EmailNotification.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.emailRecipients != null && message.emailRecipients.length)
-                    for (let i = 0; i < message.emailRecipients.length; ++i)
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.emailRecipients[i]);
+                if (message.recipientsEmail != null && message.recipientsEmail.length)
+                    for (let i = 0; i < message.recipientsEmail.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.recipientsEmail[i]);
                 return writer;
             };
 
@@ -10791,9 +10791,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        if (!(message.emailRecipients && message.emailRecipients.length))
-                            message.emailRecipients = [];
-                        message.emailRecipients.push(reader.string());
+                        if (!(message.recipientsEmail && message.recipientsEmail.length))
+                            message.recipientsEmail = [];
+                        message.recipientsEmail.push(reader.string());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -10814,12 +10814,12 @@ export const flyteidl = $root.flyteidl = (() => {
             EmailNotification.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.emailRecipients != null && message.hasOwnProperty("emailRecipients")) {
-                    if (!Array.isArray(message.emailRecipients))
-                        return "emailRecipients: array expected";
-                    for (let i = 0; i < message.emailRecipients.length; ++i)
-                        if (!$util.isString(message.emailRecipients[i]))
-                            return "emailRecipients: string[] expected";
+                if (message.recipientsEmail != null && message.hasOwnProperty("recipientsEmail")) {
+                    if (!Array.isArray(message.recipientsEmail))
+                        return "recipientsEmail: array expected";
+                    for (let i = 0; i < message.recipientsEmail.length; ++i)
+                        if (!$util.isString(message.recipientsEmail[i]))
+                            return "recipientsEmail: string[] expected";
                 }
                 return null;
             };
@@ -10833,7 +10833,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a PagerDutyNotification.
              * @memberof flyteidl.admin
              * @interface IPagerDutyNotification
-             * @property {Array.<string>|null} [pagerDutyEmails] PagerDutyNotification pagerDutyEmails
+             * @property {Array.<string>|null} [recipientsEmail] PagerDutyNotification recipientsEmail
              */
 
             /**
@@ -10845,7 +10845,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.admin.IPagerDutyNotification=} [properties] Properties to set
              */
             function PagerDutyNotification(properties) {
-                this.pagerDutyEmails = [];
+                this.recipientsEmail = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -10853,12 +10853,12 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * PagerDutyNotification pagerDutyEmails.
-             * @member {Array.<string>} pagerDutyEmails
+             * PagerDutyNotification recipientsEmail.
+             * @member {Array.<string>} recipientsEmail
              * @memberof flyteidl.admin.PagerDutyNotification
              * @instance
              */
-            PagerDutyNotification.prototype.pagerDutyEmails = $util.emptyArray;
+            PagerDutyNotification.prototype.recipientsEmail = $util.emptyArray;
 
             /**
              * Creates a new PagerDutyNotification instance using the specified properties.
@@ -10884,9 +10884,9 @@ export const flyteidl = $root.flyteidl = (() => {
             PagerDutyNotification.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.pagerDutyEmails != null && message.pagerDutyEmails.length)
-                    for (let i = 0; i < message.pagerDutyEmails.length; ++i)
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.pagerDutyEmails[i]);
+                if (message.recipientsEmail != null && message.recipientsEmail.length)
+                    for (let i = 0; i < message.recipientsEmail.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.recipientsEmail[i]);
                 return writer;
             };
 
@@ -10909,9 +10909,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        if (!(message.pagerDutyEmails && message.pagerDutyEmails.length))
-                            message.pagerDutyEmails = [];
-                        message.pagerDutyEmails.push(reader.string());
+                        if (!(message.recipientsEmail && message.recipientsEmail.length))
+                            message.recipientsEmail = [];
+                        message.recipientsEmail.push(reader.string());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -10932,12 +10932,12 @@ export const flyteidl = $root.flyteidl = (() => {
             PagerDutyNotification.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.pagerDutyEmails != null && message.hasOwnProperty("pagerDutyEmails")) {
-                    if (!Array.isArray(message.pagerDutyEmails))
-                        return "pagerDutyEmails: array expected";
-                    for (let i = 0; i < message.pagerDutyEmails.length; ++i)
-                        if (!$util.isString(message.pagerDutyEmails[i]))
-                            return "pagerDutyEmails: string[] expected";
+                if (message.recipientsEmail != null && message.hasOwnProperty("recipientsEmail")) {
+                    if (!Array.isArray(message.recipientsEmail))
+                        return "recipientsEmail: array expected";
+                    for (let i = 0; i < message.recipientsEmail.length; ++i)
+                        if (!$util.isString(message.recipientsEmail[i]))
+                            return "recipientsEmail: string[] expected";
                 }
                 return null;
             };
@@ -10951,7 +10951,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a SlackNotification.
              * @memberof flyteidl.admin
              * @interface ISlackNotification
-             * @property {Array.<string>|null} [slackEmails] SlackNotification slackEmails
+             * @property {Array.<string>|null} [recipientsEmail] SlackNotification recipientsEmail
              */
 
             /**
@@ -10963,7 +10963,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.admin.ISlackNotification=} [properties] Properties to set
              */
             function SlackNotification(properties) {
-                this.slackEmails = [];
+                this.recipientsEmail = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -10971,12 +10971,12 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * SlackNotification slackEmails.
-             * @member {Array.<string>} slackEmails
+             * SlackNotification recipientsEmail.
+             * @member {Array.<string>} recipientsEmail
              * @memberof flyteidl.admin.SlackNotification
              * @instance
              */
-            SlackNotification.prototype.slackEmails = $util.emptyArray;
+            SlackNotification.prototype.recipientsEmail = $util.emptyArray;
 
             /**
              * Creates a new SlackNotification instance using the specified properties.
@@ -11002,9 +11002,9 @@ export const flyteidl = $root.flyteidl = (() => {
             SlackNotification.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.slackEmails != null && message.slackEmails.length)
-                    for (let i = 0; i < message.slackEmails.length; ++i)
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.slackEmails[i]);
+                if (message.recipientsEmail != null && message.recipientsEmail.length)
+                    for (let i = 0; i < message.recipientsEmail.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.recipientsEmail[i]);
                 return writer;
             };
 
@@ -11027,9 +11027,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        if (!(message.slackEmails && message.slackEmails.length))
-                            message.slackEmails = [];
-                        message.slackEmails.push(reader.string());
+                        if (!(message.recipientsEmail && message.recipientsEmail.length))
+                            message.recipientsEmail = [];
+                        message.recipientsEmail.push(reader.string());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11050,12 +11050,12 @@ export const flyteidl = $root.flyteidl = (() => {
             SlackNotification.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.slackEmails != null && message.hasOwnProperty("slackEmails")) {
-                    if (!Array.isArray(message.slackEmails))
-                        return "slackEmails: array expected";
-                    for (let i = 0; i < message.slackEmails.length; ++i)
-                        if (!$util.isString(message.slackEmails[i]))
-                            return "slackEmails: string[] expected";
+                if (message.recipientsEmail != null && message.hasOwnProperty("recipientsEmail")) {
+                    if (!Array.isArray(message.recipientsEmail))
+                        return "recipientsEmail: array expected";
+                    for (let i = 0; i < message.recipientsEmail.length; ++i)
+                        if (!$util.isString(message.recipientsEmail[i]))
+                            return "recipientsEmail: string[] expected";
                 }
                 return null;
             };
@@ -15705,6 +15705,192 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             return NodeExecutionClosure;
+        })();
+
+        admin.EmailMessage = (function() {
+
+            /**
+             * Properties of an EmailMessage.
+             * @memberof flyteidl.admin
+             * @interface IEmailMessage
+             * @property {Array.<string>|null} [recipientsEmail] EmailMessage recipientsEmail
+             * @property {string|null} [senderEmail] EmailMessage senderEmail
+             * @property {string|null} [subjectLine] EmailMessage subjectLine
+             * @property {string|null} [body] EmailMessage body
+             * @property {string|null} [category] EmailMessage category
+             */
+
+            /**
+             * Constructs a new EmailMessage.
+             * @memberof flyteidl.admin
+             * @classdesc Represents an EmailMessage.
+             * @implements IEmailMessage
+             * @constructor
+             * @param {flyteidl.admin.IEmailMessage=} [properties] Properties to set
+             */
+            function EmailMessage(properties) {
+                this.recipientsEmail = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * EmailMessage recipientsEmail.
+             * @member {Array.<string>} recipientsEmail
+             * @memberof flyteidl.admin.EmailMessage
+             * @instance
+             */
+            EmailMessage.prototype.recipientsEmail = $util.emptyArray;
+
+            /**
+             * EmailMessage senderEmail.
+             * @member {string} senderEmail
+             * @memberof flyteidl.admin.EmailMessage
+             * @instance
+             */
+            EmailMessage.prototype.senderEmail = "";
+
+            /**
+             * EmailMessage subjectLine.
+             * @member {string} subjectLine
+             * @memberof flyteidl.admin.EmailMessage
+             * @instance
+             */
+            EmailMessage.prototype.subjectLine = "";
+
+            /**
+             * EmailMessage body.
+             * @member {string} body
+             * @memberof flyteidl.admin.EmailMessage
+             * @instance
+             */
+            EmailMessage.prototype.body = "";
+
+            /**
+             * EmailMessage category.
+             * @member {string} category
+             * @memberof flyteidl.admin.EmailMessage
+             * @instance
+             */
+            EmailMessage.prototype.category = "";
+
+            /**
+             * Creates a new EmailMessage instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.EmailMessage
+             * @static
+             * @param {flyteidl.admin.IEmailMessage=} [properties] Properties to set
+             * @returns {flyteidl.admin.EmailMessage} EmailMessage instance
+             */
+            EmailMessage.create = function create(properties) {
+                return new EmailMessage(properties);
+            };
+
+            /**
+             * Encodes the specified EmailMessage message. Does not implicitly {@link flyteidl.admin.EmailMessage.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.EmailMessage
+             * @static
+             * @param {flyteidl.admin.IEmailMessage} message EmailMessage message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            EmailMessage.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.recipientsEmail != null && message.recipientsEmail.length)
+                    for (let i = 0; i < message.recipientsEmail.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.recipientsEmail[i]);
+                if (message.senderEmail != null && message.hasOwnProperty("senderEmail"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.senderEmail);
+                if (message.subjectLine != null && message.hasOwnProperty("subjectLine"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.subjectLine);
+                if (message.body != null && message.hasOwnProperty("body"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.body);
+                if (message.category != null && message.hasOwnProperty("category"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.category);
+                return writer;
+            };
+
+            /**
+             * Decodes an EmailMessage message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.EmailMessage
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.EmailMessage} EmailMessage
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            EmailMessage.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.EmailMessage();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.recipientsEmail && message.recipientsEmail.length))
+                            message.recipientsEmail = [];
+                        message.recipientsEmail.push(reader.string());
+                        break;
+                    case 2:
+                        message.senderEmail = reader.string();
+                        break;
+                    case 3:
+                        message.subjectLine = reader.string();
+                        break;
+                    case 4:
+                        message.body = reader.string();
+                        break;
+                    case 5:
+                        message.category = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an EmailMessage message.
+             * @function verify
+             * @memberof flyteidl.admin.EmailMessage
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            EmailMessage.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.recipientsEmail != null && message.hasOwnProperty("recipientsEmail")) {
+                    if (!Array.isArray(message.recipientsEmail))
+                        return "recipientsEmail: array expected";
+                    for (let i = 0; i < message.recipientsEmail.length; ++i)
+                        if (!$util.isString(message.recipientsEmail[i]))
+                            return "recipientsEmail: string[] expected";
+                }
+                if (message.senderEmail != null && message.hasOwnProperty("senderEmail"))
+                    if (!$util.isString(message.senderEmail))
+                        return "senderEmail: string expected";
+                if (message.subjectLine != null && message.hasOwnProperty("subjectLine"))
+                    if (!$util.isString(message.subjectLine))
+                        return "subjectLine: string expected";
+                if (message.body != null && message.hasOwnProperty("body"))
+                    if (!$util.isString(message.body))
+                        return "body: string expected";
+                if (message.category != null && message.hasOwnProperty("category"))
+                    if (!$util.isString(message.category))
+                        return "category: string expected";
+                return null;
+            };
+
+            return EmailMessage;
         })();
 
         admin.Domain = (function() {

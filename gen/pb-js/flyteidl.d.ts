@@ -4412,8 +4412,8 @@ export namespace flyteidl {
         /** Properties of an EmailNotification. */
         interface IEmailNotification {
 
-            /** EmailNotification emailRecipients */
-            emailRecipients?: (string[]|null);
+            /** EmailNotification recipientsEmail */
+            recipientsEmail?: (string[]|null);
         }
 
         /** Represents an EmailNotification. */
@@ -4425,8 +4425,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.IEmailNotification);
 
-            /** EmailNotification emailRecipients. */
-            public emailRecipients: string[];
+            /** EmailNotification recipientsEmail. */
+            public recipientsEmail: string[];
 
             /**
              * Creates a new EmailNotification instance using the specified properties.
@@ -4464,8 +4464,8 @@ export namespace flyteidl {
         /** Properties of a PagerDutyNotification. */
         interface IPagerDutyNotification {
 
-            /** PagerDutyNotification pagerDutyEmails */
-            pagerDutyEmails?: (string[]|null);
+            /** PagerDutyNotification recipientsEmail */
+            recipientsEmail?: (string[]|null);
         }
 
         /** Represents a PagerDutyNotification. */
@@ -4477,8 +4477,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.IPagerDutyNotification);
 
-            /** PagerDutyNotification pagerDutyEmails. */
-            public pagerDutyEmails: string[];
+            /** PagerDutyNotification recipientsEmail. */
+            public recipientsEmail: string[];
 
             /**
              * Creates a new PagerDutyNotification instance using the specified properties.
@@ -4516,8 +4516,8 @@ export namespace flyteidl {
         /** Properties of a SlackNotification. */
         interface ISlackNotification {
 
-            /** SlackNotification slackEmails */
-            slackEmails?: (string[]|null);
+            /** SlackNotification recipientsEmail */
+            recipientsEmail?: (string[]|null);
         }
 
         /** Represents a SlackNotification. */
@@ -4529,8 +4529,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.ISlackNotification);
 
-            /** SlackNotification slackEmails. */
-            public slackEmails: string[];
+            /** SlackNotification recipientsEmail. */
+            public recipientsEmail: string[];
 
             /**
              * Creates a new SlackNotification instance using the specified properties.
@@ -6531,6 +6531,82 @@ export namespace flyteidl {
 
             /**
              * Verifies a NodeExecutionClosure message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an EmailMessage. */
+        interface IEmailMessage {
+
+            /** EmailMessage recipientsEmail */
+            recipientsEmail?: (string[]|null);
+
+            /** EmailMessage senderEmail */
+            senderEmail?: (string|null);
+
+            /** EmailMessage subjectLine */
+            subjectLine?: (string|null);
+
+            /** EmailMessage body */
+            body?: (string|null);
+
+            /** EmailMessage category */
+            category?: (string|null);
+        }
+
+        /** Represents an EmailMessage. */
+        class EmailMessage implements IEmailMessage {
+
+            /**
+             * Constructs a new EmailMessage.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IEmailMessage);
+
+            /** EmailMessage recipientsEmail. */
+            public recipientsEmail: string[];
+
+            /** EmailMessage senderEmail. */
+            public senderEmail: string;
+
+            /** EmailMessage subjectLine. */
+            public subjectLine: string;
+
+            /** EmailMessage body. */
+            public body: string;
+
+            /** EmailMessage category. */
+            public category: string;
+
+            /**
+             * Creates a new EmailMessage instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns EmailMessage instance
+             */
+            public static create(properties?: flyteidl.admin.IEmailMessage): flyteidl.admin.EmailMessage;
+
+            /**
+             * Encodes the specified EmailMessage message. Does not implicitly {@link flyteidl.admin.EmailMessage.verify|verify} messages.
+             * @param message EmailMessage message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IEmailMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an EmailMessage message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns EmailMessage
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.EmailMessage;
+
+            /**
+             * Verifies an EmailMessage message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */

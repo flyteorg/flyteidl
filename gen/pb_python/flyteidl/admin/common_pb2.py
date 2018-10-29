@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/common.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1b\x66lyteidl/admin/common.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x17validate/validate.proto\"Q\n\nIdentifier\x12\x1a\n\x07project\x18\x01 \x01(\tB\t\xba\xe9\xc0\x03\x04r\x02 \x01\x12\x19\n\x06\x64omain\x18\x02 \x01(\tB\t\xba\xe9\xc0\x03\x04r\x02 \x01\x12\x0c\n\x04name\x18\x03 \x01(\t\"m\n\x15IdentifierListRequest\x12\x1a\n\x07project\x18\x01 \x01(\tB\t\xba\xe9\xc0\x03\x04r\x02 \x01\x12\x19\n\x06\x64omain\x18\x02 \x01(\tB\t\xba\xe9\xc0\x03\x04r\x02 \x01\x12\r\n\x05limit\x18\x03 \x01(\r\x12\x0e\n\x06offset\x18\x04 \x01(\r\">\n\x0eIdentifierList\x12,\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x1a.flyteidl.admin.Identifier\"\x1f\n\x10ObjectGetRequest\x12\x0b\n\x03urn\x18\x01 \x01(\t\"m\n\x13ResourceListRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\r\n\x05limit\x18\x02 \x01(\r\x12\x0e\n\x06offset\x18\x03 \x01(\r\x12\x0f\n\x07\x66ilters\x18\x04 \x01(\t\"A\n\x11\x45mailNotification\x12,\n\x10\x65mail_recipients\x18\x01 \x03(\tB\x12\xba\xe9\xc0\x03\r\x92\x01\n\x08\x01\x18\x01\"\x04r\x02\x10\x01\"F\n\x15PagerDutyNotification\x12-\n\x11pager_duty_emails\x18\x01 \x03(\tB\x12\xba\xe9\xc0\x03\r\x92\x01\n\x08\x01\x18\x01\"\x04r\x02\x10\x01\"=\n\x11SlackNotification\x12(\n\x0cslack_emails\x18\x01 \x03(\tB\x12\xba\xe9\xc0\x03\r\x92\x01\n\x08\x01\x18\x01\"\x04r\x02\x10\x01\"\xf9\x01\n\x0cNotification\x12\x35\n\x06phases\x18\x01 \x03(\x0e\x32%.flyteidl.core.WorkflowExecutionPhase\x12\x32\n\x05\x65mail\x18\x02 \x01(\x0b\x32!.flyteidl.admin.EmailNotificationH\x00\x12;\n\npager_duty\x18\x03 \x01(\x0b\x32%.flyteidl.admin.PagerDutyNotificationH\x00\x12\x32\n\x05slack\x18\x04 \x01(\x0b\x32!.flyteidl.admin.SlackNotificationH\x00\x42\r\n\x04type\x12\x05\xb8\xe9\xc0\x03\x01\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1b\x66lyteidl/admin/common.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x17validate/validate.proto\"Q\n\nIdentifier\x12\x1a\n\x07project\x18\x01 \x01(\tB\t\xba\xe9\xc0\x03\x04r\x02 \x01\x12\x19\n\x06\x64omain\x18\x02 \x01(\tB\t\xba\xe9\xc0\x03\x04r\x02 \x01\x12\x0c\n\x04name\x18\x03 \x01(\t\"m\n\x15IdentifierListRequest\x12\x1a\n\x07project\x18\x01 \x01(\tB\t\xba\xe9\xc0\x03\x04r\x02 \x01\x12\x19\n\x06\x64omain\x18\x02 \x01(\tB\t\xba\xe9\xc0\x03\x04r\x02 \x01\x12\r\n\x05limit\x18\x03 \x01(\r\x12\x0e\n\x06offset\x18\x04 \x01(\r\">\n\x0eIdentifierList\x12,\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x1a.flyteidl.admin.Identifier\"\x1f\n\x10ObjectGetRequest\x12\x0b\n\x03urn\x18\x01 \x01(\t\"m\n\x13ResourceListRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\r\n\x05limit\x18\x02 \x01(\r\x12\x0e\n\x06offset\x18\x03 \x01(\r\x12\x0f\n\x07\x66ilters\x18\x04 \x01(\t\"A\n\x11\x45mailNotification\x12,\n\x10recipients_email\x18\x01 \x03(\tB\x12\xba\xe9\xc0\x03\r\x92\x01\n\x08\x01\x18\x01\"\x04r\x02`\x01\"E\n\x15PagerDutyNotification\x12,\n\x10recipients_email\x18\x01 \x03(\tB\x12\xba\xe9\xc0\x03\r\x92\x01\n\x08\x01\x18\x01\"\x04r\x02`\x01\"A\n\x11SlackNotification\x12,\n\x10recipients_email\x18\x01 \x03(\tB\x12\xba\xe9\xc0\x03\r\x92\x01\n\x08\x01\x18\x01\"\x04r\x02`\x01\"\xf9\x01\n\x0cNotification\x12\x35\n\x06phases\x18\x01 \x03(\x0e\x32%.flyteidl.core.WorkflowExecutionPhase\x12\x32\n\x05\x65mail\x18\x02 \x01(\x0b\x32!.flyteidl.admin.EmailNotificationH\x00\x12;\n\npager_duty\x18\x03 \x01(\x0b\x32%.flyteidl.admin.PagerDutyNotificationH\x00\x12\x32\n\x05slack\x18\x04 \x01(\x0b\x32!.flyteidl.admin.SlackNotificationH\x00\x42\r\n\x04type\x12\x05\xb8\xe9\xc0\x03\x01\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_execution__pb2.DESCRIPTOR,validate_dot_validate__pb2.DESCRIPTOR,])
 
@@ -247,12 +247,12 @@ _EMAILNOTIFICATION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='email_recipients', full_name='flyteidl.admin.EmailNotification.email_recipients', index=0,
+      name='recipients_email', full_name='flyteidl.admin.EmailNotification.recipients_email', index=0,
       number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\r\222\001\n\010\001\030\001\"\004r\002\020\001')), file=DESCRIPTOR),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\r\222\001\n\010\001\030\001\"\004r\002`\001')), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -278,12 +278,12 @@ _PAGERDUTYNOTIFICATION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pager_duty_emails', full_name='flyteidl.admin.PagerDutyNotification.pager_duty_emails', index=0,
+      name='recipients_email', full_name='flyteidl.admin.PagerDutyNotification.recipients_email', index=0,
       number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\r\222\001\n\010\001\030\001\"\004r\002\020\001')), file=DESCRIPTOR),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\r\222\001\n\010\001\030\001\"\004r\002`\001')), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -297,7 +297,7 @@ _PAGERDUTYNOTIFICATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=572,
-  serialized_end=642,
+  serialized_end=641,
 )
 
 
@@ -309,12 +309,12 @@ _SLACKNOTIFICATION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='slack_emails', full_name='flyteidl.admin.SlackNotification.slack_emails', index=0,
+      name='recipients_email', full_name='flyteidl.admin.SlackNotification.recipients_email', index=0,
       number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\r\222\001\n\010\001\030\001\"\004r\002\020\001')), file=DESCRIPTOR),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\r\222\001\n\010\001\030\001\"\004r\002`\001')), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -327,8 +327,8 @@ _SLACKNOTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=644,
-  serialized_end=705,
+  serialized_start=643,
+  serialized_end=708,
 )
 
 
@@ -382,8 +382,8 @@ _NOTIFICATION = _descriptor.Descriptor(
       name='type', full_name='flyteidl.admin.Notification.type',
       index=0, containing_type=None, fields=[], options=_descriptor._ParseOptions(descriptor_pb2.OneofOptions(), _b('\270\351\300\003\001'))),
   ],
-  serialized_start=708,
-  serialized_end=957,
+  serialized_start=711,
+  serialized_end=960,
 )
 
 _IDENTIFIERLIST.fields_by_name['entities'].message_type = _IDENTIFIER
@@ -486,12 +486,12 @@ _IDENTIFIERLISTREQUEST.fields_by_name['project'].has_options = True
 _IDENTIFIERLISTREQUEST.fields_by_name['project']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\004r\002 \001'))
 _IDENTIFIERLISTREQUEST.fields_by_name['domain'].has_options = True
 _IDENTIFIERLISTREQUEST.fields_by_name['domain']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\004r\002 \001'))
-_EMAILNOTIFICATION.fields_by_name['email_recipients'].has_options = True
-_EMAILNOTIFICATION.fields_by_name['email_recipients']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\r\222\001\n\010\001\030\001\"\004r\002\020\001'))
-_PAGERDUTYNOTIFICATION.fields_by_name['pager_duty_emails'].has_options = True
-_PAGERDUTYNOTIFICATION.fields_by_name['pager_duty_emails']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\r\222\001\n\010\001\030\001\"\004r\002\020\001'))
-_SLACKNOTIFICATION.fields_by_name['slack_emails'].has_options = True
-_SLACKNOTIFICATION.fields_by_name['slack_emails']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\r\222\001\n\010\001\030\001\"\004r\002\020\001'))
+_EMAILNOTIFICATION.fields_by_name['recipients_email'].has_options = True
+_EMAILNOTIFICATION.fields_by_name['recipients_email']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\r\222\001\n\010\001\030\001\"\004r\002`\001'))
+_PAGERDUTYNOTIFICATION.fields_by_name['recipients_email'].has_options = True
+_PAGERDUTYNOTIFICATION.fields_by_name['recipients_email']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\r\222\001\n\010\001\030\001\"\004r\002`\001'))
+_SLACKNOTIFICATION.fields_by_name['recipients_email'].has_options = True
+_SLACKNOTIFICATION.fields_by_name['recipients_email']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\r\222\001\n\010\001\030\001\"\004r\002`\001'))
 _NOTIFICATION.oneofs_by_name['type'].has_options = True
 _NOTIFICATION.oneofs_by_name['type']._options = _descriptor._ParseOptions(descriptor_pb2.OneofOptions(), _b('\270\351\300\003\001'))
 # @@protoc_insertion_point(module_scope)

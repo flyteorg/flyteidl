@@ -66,18 +66,18 @@ message ResourceListRequest {
 }
 
 message EmailNotification {
-    // The list of email recipients for this notification.
-    repeated string email_recipients = 1 [(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {min_len: 1}}}];
+    // The list of email addresses recipients for this notification.
+    repeated string recipients_email = 1 [(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {email: true}}}];
 }
 
 message PagerDutyNotification {
     // Currently, PagerDuty notifications leverage email to trigger a notification.
-    repeated string pager_duty_emails = 1 [(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {min_len: 1}}}];
+    repeated string recipients_email = 1 [(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {email: true}}}];
 }
 
 message SlackNotification {
     // Currently, Slack notifications leverage email to trigger a notification.
-    repeated string slack_emails = 1 [(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {min_len: 1}}}];
+    repeated string recipients_email = 1 [(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {email: true}}}];
 
 }
 
