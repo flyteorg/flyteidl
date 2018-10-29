@@ -12641,6 +12641,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.IExecutionError|null} [error] ExecutionClosure error
              * @property {flyteidl.core.ILiteralMap|null} [computedInputs] ExecutionClosure computedInputs
              * @property {flyteidl.core.WorkflowExecutionPhase|null} [phase] ExecutionClosure phase
+             * @property {google.protobuf.ITimestamp|null} [startedAt] ExecutionClosure startedAt
+             * @property {google.protobuf.IDuration|null} [duration] ExecutionClosure duration
              */
 
             /**
@@ -12690,6 +12692,22 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             ExecutionClosure.prototype.phase = 0;
 
+            /**
+             * ExecutionClosure startedAt.
+             * @member {google.protobuf.ITimestamp|null|undefined} startedAt
+             * @memberof flyteidl.admin.ExecutionClosure
+             * @instance
+             */
+            ExecutionClosure.prototype.startedAt = null;
+
+            /**
+             * ExecutionClosure duration.
+             * @member {google.protobuf.IDuration|null|undefined} duration
+             * @memberof flyteidl.admin.ExecutionClosure
+             * @instance
+             */
+            ExecutionClosure.prototype.duration = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -12736,6 +12754,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.LiteralMap.encode(message.computedInputs, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.phase != null && message.hasOwnProperty("phase"))
                     writer.uint32(/* id 4, wireType 0 =*/32).int32(message.phase);
+                if (message.startedAt != null && message.hasOwnProperty("startedAt"))
+                    $root.google.protobuf.Timestamp.encode(message.startedAt, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.duration != null && message.hasOwnProperty("duration"))
+                    $root.google.protobuf.Duration.encode(message.duration, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 return writer;
             };
 
@@ -12768,6 +12790,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 4:
                         message.phase = reader.int32();
+                        break;
+                    case 5:
+                        message.startedAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.duration = $root.google.protobuf.Duration.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -12827,6 +12855,16 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 8:
                         break;
                     }
+                if (message.startedAt != null && message.hasOwnProperty("startedAt")) {
+                    let error = $root.google.protobuf.Timestamp.verify(message.startedAt);
+                    if (error)
+                        return "startedAt." + error;
+                }
+                if (message.duration != null && message.hasOwnProperty("duration")) {
+                    let error = $root.google.protobuf.Duration.verify(message.duration);
+                    if (error)
+                        return "duration." + error;
+                }
                 return null;
             };
 
@@ -15460,6 +15498,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [outputUri] NodeExecutionClosure outputUri
              * @property {flyteidl.core.IExecutionError|null} [error] NodeExecutionClosure error
              * @property {flyteidl.core.NodeExecutionPhase|null} [phase] NodeExecutionClosure phase
+             * @property {google.protobuf.ITimestamp|null} [startedAt] NodeExecutionClosure startedAt
+             * @property {google.protobuf.IDuration|null} [duration] NodeExecutionClosure duration
              */
 
             /**
@@ -15500,6 +15540,22 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             NodeExecutionClosure.prototype.phase = 0;
+
+            /**
+             * NodeExecutionClosure startedAt.
+             * @member {google.protobuf.ITimestamp|null|undefined} startedAt
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @instance
+             */
+            NodeExecutionClosure.prototype.startedAt = null;
+
+            /**
+             * NodeExecutionClosure duration.
+             * @member {google.protobuf.IDuration|null|undefined} duration
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @instance
+             */
+            NodeExecutionClosure.prototype.duration = null;
 
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
@@ -15545,6 +15601,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.ExecutionError.encode(message.error, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.phase != null && message.hasOwnProperty("phase"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int32(message.phase);
+                if (message.startedAt != null && message.hasOwnProperty("startedAt"))
+                    $root.google.protobuf.Timestamp.encode(message.startedAt, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.duration != null && message.hasOwnProperty("duration"))
+                    $root.google.protobuf.Duration.encode(message.duration, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -15574,6 +15634,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 3:
                         message.phase = reader.int32();
+                        break;
+                    case 4:
+                        message.startedAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.duration = $root.google.protobuf.Duration.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -15625,6 +15691,16 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 8:
                         break;
                     }
+                if (message.startedAt != null && message.hasOwnProperty("startedAt")) {
+                    let error = $root.google.protobuf.Timestamp.verify(message.startedAt);
+                    if (error)
+                        return "startedAt." + error;
+                }
+                if (message.duration != null && message.hasOwnProperty("duration")) {
+                    let error = $root.google.protobuf.Duration.verify(message.duration);
+                    if (error)
+                        return "duration." + error;
+                }
                 return null;
             };
 

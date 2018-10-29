@@ -5257,6 +5257,12 @@ export namespace flyteidl {
 
             /** ExecutionClosure phase */
             phase?: (flyteidl.core.WorkflowExecutionPhase|null);
+
+            /** ExecutionClosure startedAt */
+            startedAt?: (google.protobuf.ITimestamp|null);
+
+            /** ExecutionClosure duration */
+            duration?: (google.protobuf.IDuration|null);
         }
 
         /** Represents an ExecutionClosure. */
@@ -5279,6 +5285,12 @@ export namespace flyteidl {
 
             /** ExecutionClosure phase. */
             public phase: flyteidl.core.WorkflowExecutionPhase;
+
+            /** ExecutionClosure startedAt. */
+            public startedAt?: (google.protobuf.ITimestamp|null);
+
+            /** ExecutionClosure duration. */
+            public duration?: (google.protobuf.IDuration|null);
 
             /** ExecutionClosure outputResult. */
             public outputResult?: ("outputs"|"error");
@@ -6457,6 +6469,12 @@ export namespace flyteidl {
 
             /** NodeExecutionClosure phase */
             phase?: (flyteidl.core.NodeExecutionPhase|null);
+
+            /** NodeExecutionClosure startedAt */
+            startedAt?: (google.protobuf.ITimestamp|null);
+
+            /** NodeExecutionClosure duration */
+            duration?: (google.protobuf.IDuration|null);
         }
 
         /** Represents a NodeExecutionClosure. */
@@ -6476,6 +6494,12 @@ export namespace flyteidl {
 
             /** NodeExecutionClosure phase. */
             public phase: flyteidl.core.NodeExecutionPhase;
+
+            /** NodeExecutionClosure startedAt. */
+            public startedAt?: (google.protobuf.ITimestamp|null);
+
+            /** NodeExecutionClosure duration. */
+            public duration?: (google.protobuf.IDuration|null);
 
             /** NodeExecutionClosure outputResult. */
             public outputResult?: ("outputUri"|"error");

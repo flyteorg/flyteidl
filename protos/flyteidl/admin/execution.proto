@@ -6,6 +6,8 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 import "flyteidl/core/literals.proto";
 import "flyteidl/core/execution.proto";
 import "flyteidl/admin/common.proto";
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
 import "validate/validate.proto";
 
 message ExecutionCreateRequest {
@@ -58,6 +60,12 @@ message ExecutionClosure {
 
     // Phase of the executions
     core.WorkflowExecutionPhase phase                 = 4;
+
+    // Time at which the execution began running.
+    google.protobuf.Timestamp started_at              = 5;
+
+    // The amount of time the execution spent running.
+    google.protobuf.Duration duration                 = 6;     
 }
 
 message ExecutionMetadata {

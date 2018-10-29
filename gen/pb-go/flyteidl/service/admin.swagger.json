@@ -1191,6 +1191,15 @@
         "phase": {
           "$ref": "#/definitions/coreWorkflowExecutionPhase",
           "title": "Phase of the executions"
+        },
+        "started_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time at which the execution began running."
+        },
+        "duration": {
+          "type": "string",
+          "description": "The amount of time the execution spent running."
         }
       },
       "title": "Encapsultes the results of the Execution"
@@ -1500,6 +1509,15 @@
         },
         "phase": {
           "$ref": "#/definitions/coreNodeExecutionPhase"
+        },
+        "started_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time at which the execution began running."
+        },
+        "duration": {
+          "type": "string",
+          "description": "The amount of time the execution spent running."
         }
       },
       "description": "Container for node execution details and results."
