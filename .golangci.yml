@@ -1,0 +1,31 @@
+# WARNING: THIS FILE IS MANAGED IN THE 'FLYTE' REPO AND COPIED TO OTHER REPOSITORIES.
+# ONLY EDIT THIS FILE IF:
+#   A) THIS IS THE 'FLYTE' REPO
+#   B) THIS CHANGE WORKS ACCROSS ALL APPLICABLE FLYTE SERVICES
+# TO OPT OUT OF UPDATES, SEE https://github.com/lyft/flyte/blob/master/sync_files/Readme.rst
+
+run:
+  skip-dirs:
+    - pkg/client
+
+linters:
+  disable-all: true
+  enable:
+    - deadcode
+    - errcheck
+    - gas
+    - goconst
+    - goimports
+    - golint
+    - gosimple
+    - govet
+    - ineffassign
+    - misspell
+    - nakedret
+    - staticcheck
+    - structcheck
+    - typecheck
+    - unconvert
+    - unparam
+    - unused
+    - varcheck

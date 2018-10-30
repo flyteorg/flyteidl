@@ -20,8 +20,8 @@ goimports:
 
 .PHONY: install
 install: #download dependencies (including test deps) for the package
-	which glide || (curl https://glide.sh/get | sh)
-	glide install
+	which dep || (curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh)
+	dep ensure
 
 .PHONY: test_unit
 test_unit:
@@ -30,4 +30,3 @@ test_unit:
 .PHONY: test_benchmark
 test_benchmark:
 	go test -bench . ./...
-
