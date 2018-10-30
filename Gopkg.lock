@@ -98,7 +98,7 @@
   version = "v1.0"
 
 [[projects]]
-  digest = "1:55ed2777b32ad2acbe29108acd85c0fbabe15ca64695a0000d687642acb81465"
+  digest = "1:2a04a31b4a716803ee8c0000b8f618f7e07c3b1bf7c3618fa5628c30503372e7"
   name = "github.com/lyft/flytestdlib"
   packages = [
     "config",
@@ -107,8 +107,8 @@
     "utils",
   ]
   pruneopts = "UT"
-  revision = "71646c6151f93291d8295e4ff8d7bef76ddf1c76"
-  version = "v0.2.5"
+  revision = "9e001fce9fae3dd68b2a864642efdef4e5699ee7"
+  version = "v0.3.3"
 
 [[projects]]
   digest = "1:894628a9f8e128036c8a4c00519ffc2c2555850db6b919330df82ce003eaf1b4"
@@ -341,15 +341,15 @@
   revision = "53feefa2559fb8dfa8d81baad31be332c97d6c77"
 
 [[projects]]
-  digest = "1:3668d58fa995fb3bb772ced20daaa57bf14a09cb38e48b67f61be9603713f318"
+  digest = "1:ff9b4ee72c2c3bbe05a65d62008b5cd5b66448425827df03dfe2c5e57adfd6dc"
   name = "k8s.io/apimachinery"
   packages = [
     "pkg/util/runtime",
     "pkg/util/wait",
   ]
   pruneopts = "UT"
-  revision = "19e3f5aa3adca672c153d324e6b7d82ff8935f03"
-  version = "kubernetes-1.9.3"
+  revision = "103fd098999dc9c0c88536f5c9ad2e5da39373ae"
+  version = "kubernetes-1.11.2"
 
 [solve-meta]
   analyzer-name = "dep"
