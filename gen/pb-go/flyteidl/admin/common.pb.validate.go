@@ -40,19 +40,9 @@ func (m *Identifier) Validate() error {
 		return nil
 	}
 
-	if len(m.GetProject()) < 1 {
-		return IdentifierValidationError{
-			field:  "Project",
-			reason: "value length must be at least 1 bytes",
-		}
-	}
+	// no validation rules for Project
 
-	if len(m.GetDomain()) < 1 {
-		return IdentifierValidationError{
-			field:  "Domain",
-			reason: "value length must be at least 1 bytes",
-		}
-	}
+	// no validation rules for Domain
 
 	// no validation rules for Name
 
@@ -121,19 +111,9 @@ func (m *IdentifierListRequest) Validate() error {
 		return nil
 	}
 
-	if len(m.GetProject()) < 1 {
-		return IdentifierListRequestValidationError{
-			field:  "Project",
-			reason: "value length must be at least 1 bytes",
-		}
-	}
+	// no validation rules for Project
 
-	if len(m.GetDomain()) < 1 {
-		return IdentifierListRequestValidationError{
-			field:  "Domain",
-			reason: "value length must be at least 1 bytes",
-		}
-	}
+	// no validation rules for Domain
 
 	// no validation rules for Limit
 
@@ -436,88 +416,7 @@ func (m *EmailNotification) Validate() error {
 		return nil
 	}
 
-	if len(m.GetRecipientsEmail()) < 1 {
-		return EmailNotificationValidationError{
-			field:  "RecipientsEmail",
-			reason: "value must contain at least 1 item(s)",
-		}
-	}
-
-	_EmailNotification_RecipientsEmail_Unique := make(map[string]struct{}, len(m.GetRecipientsEmail()))
-
-	for idx, item := range m.GetRecipientsEmail() {
-		_, _ = idx, item
-
-		if _, exists := _EmailNotification_RecipientsEmail_Unique[item]; exists {
-			return EmailNotificationValidationError{
-				field:  fmt.Sprintf("RecipientsEmail[%v]", idx),
-				reason: "repeated value must contain unique items",
-			}
-		} else {
-			_EmailNotification_RecipientsEmail_Unique[item] = struct{}{}
-		}
-
-		if err := m._validateEmail(item); err != nil {
-			return EmailNotificationValidationError{
-				field:  fmt.Sprintf("RecipientsEmail[%v]", idx),
-				reason: "value must be a valid email address",
-				cause:  err,
-			}
-		}
-
-	}
-
 	return nil
-}
-
-func (m *EmailNotification) _validateHostname(host string) error {
-	s := strings.ToLower(strings.TrimSuffix(host, "."))
-
-	if len(host) > 253 {
-		return errors.New("hostname cannot exceed 253 characters")
-	}
-
-	for _, part := range strings.Split(s, ".") {
-		if l := len(part); l == 0 || l > 63 {
-			return errors.New("hostname part must be non-empty and cannot exceed 63 characters")
-		}
-
-		if part[0] == '-' {
-			return errors.New("hostname parts cannot begin with hyphens")
-		}
-
-		if part[len(part)-1] == '-' {
-			return errors.New("hostname parts cannot end with hyphens")
-		}
-
-		for _, r := range part {
-			if (r < 'a' || r > 'z') && (r < '0' || r > '9') && r != '-' {
-				return fmt.Errorf("hostname parts can only contain alphanumeric characters or hyphens, got %q", string(r))
-			}
-		}
-	}
-
-	return nil
-}
-
-func (m *EmailNotification) _validateEmail(addr string) error {
-	a, err := mail.ParseAddress(addr)
-	if err != nil {
-		return err
-	}
-	addr = a.Address
-
-	if len(addr) > 254 {
-		return errors.New("email addresses cannot exceed 254 characters")
-	}
-
-	parts := strings.SplitN(addr, "@", 2)
-
-	if len(parts[0]) > 64 {
-		return errors.New("email address local phrase cannot exceed 64 characters")
-	}
-
-	return m._validateHostname(parts[1])
 }
 
 // EmailNotificationValidationError is the validation error returned by
@@ -584,88 +483,7 @@ func (m *PagerDutyNotification) Validate() error {
 		return nil
 	}
 
-	if len(m.GetRecipientsEmail()) < 1 {
-		return PagerDutyNotificationValidationError{
-			field:  "RecipientsEmail",
-			reason: "value must contain at least 1 item(s)",
-		}
-	}
-
-	_PagerDutyNotification_RecipientsEmail_Unique := make(map[string]struct{}, len(m.GetRecipientsEmail()))
-
-	for idx, item := range m.GetRecipientsEmail() {
-		_, _ = idx, item
-
-		if _, exists := _PagerDutyNotification_RecipientsEmail_Unique[item]; exists {
-			return PagerDutyNotificationValidationError{
-				field:  fmt.Sprintf("RecipientsEmail[%v]", idx),
-				reason: "repeated value must contain unique items",
-			}
-		} else {
-			_PagerDutyNotification_RecipientsEmail_Unique[item] = struct{}{}
-		}
-
-		if err := m._validateEmail(item); err != nil {
-			return PagerDutyNotificationValidationError{
-				field:  fmt.Sprintf("RecipientsEmail[%v]", idx),
-				reason: "value must be a valid email address",
-				cause:  err,
-			}
-		}
-
-	}
-
 	return nil
-}
-
-func (m *PagerDutyNotification) _validateHostname(host string) error {
-	s := strings.ToLower(strings.TrimSuffix(host, "."))
-
-	if len(host) > 253 {
-		return errors.New("hostname cannot exceed 253 characters")
-	}
-
-	for _, part := range strings.Split(s, ".") {
-		if l := len(part); l == 0 || l > 63 {
-			return errors.New("hostname part must be non-empty and cannot exceed 63 characters")
-		}
-
-		if part[0] == '-' {
-			return errors.New("hostname parts cannot begin with hyphens")
-		}
-
-		if part[len(part)-1] == '-' {
-			return errors.New("hostname parts cannot end with hyphens")
-		}
-
-		for _, r := range part {
-			if (r < 'a' || r > 'z') && (r < '0' || r > '9') && r != '-' {
-				return fmt.Errorf("hostname parts can only contain alphanumeric characters or hyphens, got %q", string(r))
-			}
-		}
-	}
-
-	return nil
-}
-
-func (m *PagerDutyNotification) _validateEmail(addr string) error {
-	a, err := mail.ParseAddress(addr)
-	if err != nil {
-		return err
-	}
-	addr = a.Address
-
-	if len(addr) > 254 {
-		return errors.New("email addresses cannot exceed 254 characters")
-	}
-
-	parts := strings.SplitN(addr, "@", 2)
-
-	if len(parts[0]) > 64 {
-		return errors.New("email address local phrase cannot exceed 64 characters")
-	}
-
-	return m._validateHostname(parts[1])
 }
 
 // PagerDutyNotificationValidationError is the validation error returned by
@@ -732,88 +550,7 @@ func (m *SlackNotification) Validate() error {
 		return nil
 	}
 
-	if len(m.GetRecipientsEmail()) < 1 {
-		return SlackNotificationValidationError{
-			field:  "RecipientsEmail",
-			reason: "value must contain at least 1 item(s)",
-		}
-	}
-
-	_SlackNotification_RecipientsEmail_Unique := make(map[string]struct{}, len(m.GetRecipientsEmail()))
-
-	for idx, item := range m.GetRecipientsEmail() {
-		_, _ = idx, item
-
-		if _, exists := _SlackNotification_RecipientsEmail_Unique[item]; exists {
-			return SlackNotificationValidationError{
-				field:  fmt.Sprintf("RecipientsEmail[%v]", idx),
-				reason: "repeated value must contain unique items",
-			}
-		} else {
-			_SlackNotification_RecipientsEmail_Unique[item] = struct{}{}
-		}
-
-		if err := m._validateEmail(item); err != nil {
-			return SlackNotificationValidationError{
-				field:  fmt.Sprintf("RecipientsEmail[%v]", idx),
-				reason: "value must be a valid email address",
-				cause:  err,
-			}
-		}
-
-	}
-
 	return nil
-}
-
-func (m *SlackNotification) _validateHostname(host string) error {
-	s := strings.ToLower(strings.TrimSuffix(host, "."))
-
-	if len(host) > 253 {
-		return errors.New("hostname cannot exceed 253 characters")
-	}
-
-	for _, part := range strings.Split(s, ".") {
-		if l := len(part); l == 0 || l > 63 {
-			return errors.New("hostname part must be non-empty and cannot exceed 63 characters")
-		}
-
-		if part[0] == '-' {
-			return errors.New("hostname parts cannot begin with hyphens")
-		}
-
-		if part[len(part)-1] == '-' {
-			return errors.New("hostname parts cannot end with hyphens")
-		}
-
-		for _, r := range part {
-			if (r < 'a' || r > 'z') && (r < '0' || r > '9') && r != '-' {
-				return fmt.Errorf("hostname parts can only contain alphanumeric characters or hyphens, got %q", string(r))
-			}
-		}
-	}
-
-	return nil
-}
-
-func (m *SlackNotification) _validateEmail(addr string) error {
-	a, err := mail.ParseAddress(addr)
-	if err != nil {
-		return err
-	}
-	addr = a.Address
-
-	if len(addr) > 254 {
-		return errors.New("email addresses cannot exceed 254 characters")
-	}
-
-	parts := strings.SplitN(addr, "@", 2)
-
-	if len(parts[0]) > 64 {
-		return errors.New("email address local phrase cannot exceed 64 characters")
-	}
-
-	return m._validateHostname(parts[1])
 }
 
 // SlackNotificationValidationError is the validation error returned by
@@ -916,12 +653,6 @@ func (m *Notification) Validate() error {
 					cause:  err,
 				}
 			}
-		}
-
-	default:
-		return NotificationValidationError{
-			field:  "Type",
-			reason: "value is required",
 		}
 
 	}

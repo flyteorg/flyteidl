@@ -582,12 +582,7 @@ func (m *ExecutionMetadata) Validate() error {
 		return nil
 	}
 
-	if _, ok := ExecutionMetadata_ExecutionMode_name[int32(m.GetMode())]; !ok {
-		return ExecutionMetadataValidationError{
-			field:  "Mode",
-			reason: "value must be one of the defined enum values",
-		}
-	}
+	// no validation rules for Mode
 
 	// no validation rules for Principal
 

@@ -4,16 +4,16 @@ package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "flyteidl/core/execution.proto";
-import "validate/validate.proto";
+// import "validate/validate.proto";
 
 // Encapsulation of fields that identifies a Flyte resource.
 // A resource can internally have multiple versions.
 message Identifier {
     // Name of the project the resource belongs to.
-    string project    = 1 [(validate.rules).string.min_bytes = 1];
+    string project    = 1;  // [(validate.rules).string.min_bytes = 1];
     // Name of the domain the resource belongs to.
     // A domain can be considered as a subset within a specific project.
-    string domain     = 2 [(validate.rules).string.min_bytes = 1];
+    string domain     = 2;  // [(validate.rules).string.min_bytes = 1];
     // User provided value for the resource.
     // The combination of project + domain + name uniquely identifies the resource.
     // +optional - in certain contexts - like 'List API', 'Launch plans'
@@ -23,9 +23,9 @@ message Identifier {
 // Represents a request structure to list identifiers.
 message IdentifierListRequest {
     // Name of the project that contains the identifiers.
-    string project    = 1 [(validate.rules).string.min_bytes = 1];
+    string project    = 1;  // [(validate.rules).string.min_bytes = 1];
     // Name of the domain the identifiers belongs to within the project.
-    string domain     = 2 [(validate.rules).string.min_bytes = 1];
+    string domain     = 2;  // [(validate.rules).string.min_bytes = 1];
     // Indicates the number of resources to be returned.
     // +optional
     uint32 limit      = 3;
@@ -67,17 +67,17 @@ message ResourceListRequest {
 
 message EmailNotification {
     // The list of email addresses recipients for this notification.
-    repeated string recipients_email = 1 [(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {email: true}}}];
+    repeated string recipients_email = 1;  // [(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {email: true}}}];
 }
 
 message PagerDutyNotification {
     // Currently, PagerDuty notifications leverage email to trigger a notification.
-    repeated string recipients_email = 1 [(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {email: true}}}];
+    repeated string recipients_email = 1;  // [(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {email: true}}}];
 }
 
 message SlackNotification {
     // Currently, Slack notifications leverage email to trigger a notification.
-    repeated string recipients_email = 1 [(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {email: true}}}];
+    repeated string recipients_email = 1;  // [(validate.rules).repeated = {min_items: 1, unique: true, items: {string: {email: true}}}];
 
 }
 
@@ -89,7 +89,7 @@ message Notification {
     repeated core.WorkflowExecutionPhase phases = 1;
 
     oneof type {
-        option (validate.required) = true;
+        // option (validate.required) = true;
         EmailNotification email = 2;
         PagerDutyNotification pager_duty = 3;
         SlackNotification slack = 4;

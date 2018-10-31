@@ -8,7 +8,7 @@ import "flyteidl/core/execution.proto";
 import "flyteidl/admin/common.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
-import "validate/validate.proto";
+// import "validate/validate.proto";
 
 message ExecutionCreateRequest {
     Identifier id       = 1;
@@ -74,7 +74,7 @@ message ExecutionMetadata {
         SCHEDULED     = 1;
         SYSTEM        = 2;
     }
-    ExecutionMode mode    = 1 [(validate.rules).enum.defined_only = true];
+    ExecutionMode mode    = 1;  // [(validate.rules).enum.defined_only = true];
 
     // Identifier of the entity that triggered this execution.
     string principal      = 2;
