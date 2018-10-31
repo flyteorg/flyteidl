@@ -20,7 +20,7 @@ func (m *MockRecorder) RecordNodeEvent(ctx context.Context, event *event.NodeExe
 }
 
 func (m *MockRecorder) RecordWorkflowEvent(ctx context.Context, event *event.WorkflowExecutionEvent) error {
-	if m.RecordNodeEventCb != nil {
+	if m.RecordWorkflowEventCb != nil {
 		return m.RecordWorkflowEventCb(ctx, event)
 	}
 
