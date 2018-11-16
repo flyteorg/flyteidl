@@ -3,7 +3,6 @@
 # Refer to https://golang.github.io/dep/docs/Gopkg.toml.html
 # for detailed Gopkg.toml documentation.
 #
-# required = ["github.com/user/thing/cmd/thing"]
 # ignored = ["github.com/user/project/pkgX", "bitbucket.org/user/project/pkgA/pkgY"]
 #
 # [[constraint]]
@@ -24,6 +23,7 @@
 #   go-tests = true
 #   unused-packages = true
 
+required = ["github.com/lyft/protoc-gen-validate"]
 
 [[constraint]]
   name = "github.com/golang/mock"
@@ -39,7 +39,7 @@
 
 [[constraint]]
   name = "github.com/lyft/flytestdlib"
-  version = "^0.3.3"
+  version = "^0.4.0"
 
 [[constraint]]
   name = "github.com/lyft/protoc-gen-validate"

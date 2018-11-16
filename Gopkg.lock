@@ -18,14 +18,6 @@
   version = "v1.7.0"
 
 [[projects]]
-  branch = "master"
-  digest = "1:b9414457752702c53f6afd3838da3d89b9513ada40cdbe9603bdf54b1ceb5014"
-  name = "github.com/fsnotify/fsnotify"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "ccc981bf80385c528a65fbfdd49bf2d8da22aa23"
-
-[[projects]]
   digest = "1:2edd2416f89b4e841df0e4a78802ce14d2bc7ad79eba1a45986e39f0f8cb7d87"
   name = "github.com/golang/glog"
   packages = ["."]
@@ -41,12 +33,15 @@
   version = "v1.1.1"
 
 [[projects]]
-  digest = "1:fa5e9e1af8a8645086811ec5ab003806026babc57c8bb3a6f7e1ab34b80e2ff1"
+  digest = "1:6ce94e52c5f56dfbea4e3cb99ccf4b44d701d91b16167486e9842b2fe45e717a"
   name = "github.com/golang/protobuf"
   packages = [
     "jsonpb",
     "proto",
     "protoc-gen-go/descriptor",
+    "protoc-gen-go/generator",
+    "protoc-gen-go/generator/internal/remap",
+    "protoc-gen-go/plugin",
     "ptypes",
     "ptypes/any",
     "ptypes/duration",
@@ -71,25 +66,6 @@
   version = "v1.5.1"
 
 [[projects]]
-  branch = "master"
-  digest = "1:ae22a88db2b2ed901a45665953afeb80410413edd27557e15e535b21f48a3622"
-  name = "github.com/hashicorp/hcl"
-  packages = [
-    ".",
-    "hcl/ast",
-    "hcl/parser",
-    "hcl/printer",
-    "hcl/scanner",
-    "hcl/strconv",
-    "hcl/token",
-    "json/parser",
-    "json/scanner",
-    "json/token",
-  ]
-  pruneopts = "UT"
-  revision = "65a6292f0157eff210d03ed1bf6c59b190b8b906"
-
-[[projects]]
   digest = "1:870d441fe217b8e689d7949fef6e43efbc787e50f200cb1e70dbca9204a1d6be"
   name = "github.com/inconshreveable/mousetrap"
   packages = ["."]
@@ -98,7 +74,7 @@
   version = "v1.0"
 
 [[projects]]
-  digest = "1:2a04a31b4a716803ee8c0000b8f618f7e07c3b1bf7c3618fa5628c30503372e7"
+  digest = "1:fc0275190aa725488b4c7cee6ed38cfeab59c52f808728ed3cf9569c0e4534a4"
   name = "github.com/lyft/flytestdlib"
   packages = [
     "config",
@@ -107,24 +83,38 @@
     "utils",
   ]
   pruneopts = "UT"
-  revision = "9e001fce9fae3dd68b2a864642efdef4e5699ee7"
-  version = "v0.3.3"
+  revision = "c2cb0e1d091f8009f325871fb463070ca9175113"
+  version = "v0.4.0"
 
 [[projects]]
-  digest = "1:894628a9f8e128036c8a4c00519ffc2c2555850db6b919330df82ce003eaf1b4"
+  digest = "1:ca10820e594078ab3f6a9e4f40e05ed9d9a87d075067c3a3f5c1332c93064cc3"
+  name = "github.com/lyft/protoc-gen-star"
+  packages = [
+    ".",
+    "lang/go",
+  ]
+  pruneopts = "UT"
+  revision = "95ca57a4ef989c084ed1a5a58810d2b34a28cf72"
+  version = "v0.4.4"
+
+[[projects]]
+  digest = "1:8dc24f568e6e5854ed160c98c006288e1b7a03dde4d8eef013d7e5c26e414208"
   name = "github.com/lyft/protoc-gen-validate"
-  packages = ["validate"]
+  packages = [
+    ".",
+    "gogoproto",
+    "module",
+    "templates",
+    "templates/cc",
+    "templates/go",
+    "templates/gogo",
+    "templates/goshared",
+    "templates/shared",
+    "validate",
+  ]
   pruneopts = "UT"
-  revision = "3bd820adb86cc455b16b37465905a9b99e22cbbb"
-  version = "v0.0.7"
-
-[[projects]]
-  digest = "1:c568d7727aa262c32bdf8a3f7db83614f7af0ed661474b24588de635c20024c7"
-  name = "github.com/magiconair/properties"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "c2353362d570a7bfa228149c62842019201cfb71"
-  version = "v1.8.0"
+  revision = "1ffd5e8db575ed8a61c7e0d415af263c39cef1ab"
+  version = "v0.0.11"
 
 [[projects]]
   digest = "1:c658e84ad3916da105a761660dcaeb01e63416c8ec7bc62256a9b411a05fcd67"
@@ -149,14 +139,6 @@
   pruneopts = "UT"
   revision = "3536a929edddb9a5b34bd6861dc4a9647cb459fe"
   version = "v1.1.2"
-
-[[projects]]
-  branch = "master"
-  digest = "1:f863ffc0f641ecfb25b6bb4b19b28d046edb7ead914b0037f689e50092773e18"
-  name = "github.com/pelletier/go-toml"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "81a861c69d25a841d0c4394f0e6f84bc8c5afae0"
 
 [[projects]]
   digest = "1:0028cb19b2e4c3112225cd871870f2d9cf49b9b4276531f03438a88e94be86fe"
@@ -185,14 +167,6 @@
   version = "v1.1.2"
 
 [[projects]]
-  digest = "1:08d65904057412fc0270fc4812a1c90c594186819243160dc779a402d4b6d0bc"
-  name = "github.com/spf13/cast"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "8c9545af88b134710ab1cd196795e7f2388358d7"
-  version = "v1.3.0"
-
-[[projects]]
   digest = "1:645cabccbb4fa8aab25a956cbcbdf6a6845ca736b2c64e197ca7cbb9d210b939"
   name = "github.com/spf13/cobra"
   packages = ["."]
@@ -201,27 +175,12 @@
   version = "v0.0.3"
 
 [[projects]]
-  digest = "1:3e3e1f76ffc00d36bc89c975a1ae71a24e85f1ec11d3802520e94e5b3178fb4d"
-  name = "github.com/spf13/jwalterweatherman"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "103a6da826d08544f49833dabd4f1cdf8a1038bb"
-
-[[projects]]
   digest = "1:9424f440bba8f7508b69414634aef3b2b3a877e522d8a4624692412805407bb7"
   name = "github.com/spf13/pflag"
   packages = ["."]
   pruneopts = "UT"
   revision = "583c0c0531f06d5278b7d917446061adc344b5cd"
   version = "v1.0.1"
-
-[[projects]]
-  digest = "1:4fc8a61287ccfb4286e1ca5ad2ce3b0b301d746053bf44ac38cf34e40ae10372"
-  name = "github.com/spf13/viper"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "907c19d40d9a6c9bb55f040ff4ae45271a4754b9"
-  version = "v1.1.0"
 
 [[projects]]
   digest = "1:18752d0b95816a1b777505a97f71c7467a8445b8ffb55631a7bf779f6ba4fa83"
@@ -334,13 +293,6 @@
   version = "v1.16.0"
 
 [[projects]]
-  digest = "1:c27797c5f42d349e2a604510822df7d037415aae58bf1e6fd35624eda757c0aa"
-  name = "gopkg.in/yaml.v2"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "53feefa2559fb8dfa8d81baad31be332c97d6c77"
-
-[[projects]]
   digest = "1:ff9b4ee72c2c3bbe05a65d62008b5cd5b66448425827df03dfe2c5e57adfd6dc"
   name = "k8s.io/apimachinery"
   packages = [
@@ -367,7 +319,7 @@
     "github.com/lyft/flytestdlib/config",
     "github.com/lyft/flytestdlib/logger",
     "github.com/lyft/flytestdlib/utils",
-    "github.com/lyft/protoc-gen-validate/validate",
+    "github.com/lyft/protoc-gen-validate",
     "github.com/mitchellh/mapstructure",
     "github.com/spf13/pflag",
     "github.com/stretchr/testify/assert",
