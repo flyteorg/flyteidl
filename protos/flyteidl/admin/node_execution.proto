@@ -71,4 +71,10 @@ message NodeExecutionClosure {
 
     // The amount of time the execution spent running.
     google.protobuf.Duration duration      = 5; 
+
+    // Time at which the node execution was created.
+    google.protobuf.Timestamp created_at   = 6;
+    
+    // Time at which the node execution was last updated.
+    google.protobuf.Timestamp updated_at   = 7;
 }

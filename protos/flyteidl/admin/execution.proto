@@ -66,6 +66,12 @@ message ExecutionClosure {
 
     // The amount of time the execution spent running.
     google.protobuf.Duration duration                 = 6;     
+
+    // Time at which the execution was created.
+    google.protobuf.Timestamp created_at              = 7;
+
+    // Time at which the execution was last updated.
+    google.protobuf.Timestamp updated_at              = 8;
 }
 
 message ExecutionMetadata {

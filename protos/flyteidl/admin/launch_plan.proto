@@ -7,6 +7,7 @@ import "flyteidl/core/literals.proto";
 import "flyteidl/core/interface.proto";
 import "flyteidl/admin/schedule.proto";
 import "flyteidl/admin/common.proto";
+import "google/protobuf/timestamp.proto";
 
 message LaunchPlanCreateRequest {
     Identifier id       = 1;
@@ -64,6 +65,12 @@ message LaunchPlanClosure {
 
     // Indicates the set of outputs from the Launch plan
     core.VariableMap expected_outputs	= 3;
+
+    // Time at which the launch plan was created.
+    google.protobuf.Timestamp created_at = 4;
+    
+    // Time at which the launch plan was last updated.
+    google.protobuf.Timestamp updated_at = 5;
 }
 
 message LaunchPlanMetadata {

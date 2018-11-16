@@ -6,6 +6,7 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 import "flyteidl/core/workflow.proto";
 import "flyteidl/core/compiler.proto";
 import "flyteidl/admin/common.proto";
+import "google/protobuf/timestamp.proto";
 
 // Represents a request structure to create a revision of a workflow.
 message WorkflowCreateRequest {
@@ -55,4 +56,7 @@ message WorkflowSpec {
 message WorkflowClosure {
     // Represents the compiled representation of the workflow from the specification provided.
     core.CompiledWorkflowClosure compiled_workflow = 1;
+
+    // Time at which the workflow was created.
+    google.protobuf.Timestamp created_at           = 2;
 }

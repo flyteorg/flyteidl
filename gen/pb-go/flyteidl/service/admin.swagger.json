@@ -1200,6 +1200,16 @@
         "duration": {
           "type": "string",
           "description": "The amount of time the execution spent running."
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time at which the execution was created."
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time at which the execution was last updated."
         }
       },
       "title": "Encapsultes the results of the Execution"
@@ -1361,6 +1371,16 @@
         "expected_outputs": {
           "$ref": "#/definitions/coreVariableMap",
           "title": "Indicates the set of outputs from the Launch plan"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time at which the launch plan was created."
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time at which the launch plan was last updated."
         }
       }
     },
@@ -1518,6 +1538,16 @@
         "duration": {
           "type": "string",
           "description": "The amount of time the execution spent running."
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time at which the node execution was created."
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time at which the node execution was last updated."
         }
       },
       "description": "Container for node execution details and results."
@@ -1688,6 +1718,11 @@
         "compiled_task": {
           "$ref": "#/definitions/coreCompiledTask",
           "description": "Represents the compiled representation of the task from the specification provided."
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time at which the task was created."
         }
       },
       "description": "Represents an encapsulation of the task compilation."
@@ -1786,6 +1821,11 @@
         "compiled_workflow": {
           "$ref": "#/definitions/coreCompiledWorkflowClosure",
           "description": "Represents the compiled representation of the workflow from the specification provided."
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time at which the workflow was created."
         }
       },
       "description": "Represents an encapsulation of the workflow compilation."

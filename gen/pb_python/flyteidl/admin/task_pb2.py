@@ -16,15 +16,16 @@ _sym_db = _symbol_database.Default()
 from flyteidl.core import tasks_pb2 as flyteidl_dot_core_dot_tasks__pb2
 from flyteidl.core import compiler_pb2 as flyteidl_dot_core_dot_compiler__pb2
 from flyteidl.admin import common_pb2 as flyteidl_dot_admin_dot_common__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/task.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x19\x66lyteidl/admin/task.proto\x12\x0e\x66lyteidl.admin\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1c\x66lyteidl/core/compiler.proto\x1a\x1b\x66lyteidl/admin/common.proto\"t\n\x11TaskCreateRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12&\n\x04spec\x18\x03 \x01(\x0b\x32\x18.flyteidl.admin.TaskSpec\"!\n\x12TaskCreateResponse\x12\x0b\n\x03urn\x18\x01 \x01(\t\"z\n\x04Task\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0b\n\x03urn\x18\x03 \x01(\t\x12,\n\x07\x63losure\x18\x04 \x01(\x0b\x32\x1b.flyteidl.admin.TaskClosure\"/\n\x08TaskList\x12#\n\x05tasks\x18\x01 \x03(\x0b\x32\x14.flyteidl.admin.Task\"9\n\x08TaskSpec\x12-\n\x08template\x18\x01 \x01(\x0b\x32\x1b.flyteidl.core.TaskTemplate\"A\n\x0bTaskClosure\x12\x32\n\rcompiled_task\x18\x01 \x01(\x0b\x32\x1b.flyteidl.core.CompiledTaskB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x19\x66lyteidl/admin/task.proto\x12\x0e\x66lyteidl.admin\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1c\x66lyteidl/core/compiler.proto\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"t\n\x11TaskCreateRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12&\n\x04spec\x18\x03 \x01(\x0b\x32\x18.flyteidl.admin.TaskSpec\"!\n\x12TaskCreateResponse\x12\x0b\n\x03urn\x18\x01 \x01(\t\"z\n\x04Task\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0b\n\x03urn\x18\x03 \x01(\t\x12,\n\x07\x63losure\x18\x04 \x01(\x0b\x32\x1b.flyteidl.admin.TaskClosure\"/\n\x08TaskList\x12#\n\x05tasks\x18\x01 \x03(\x0b\x32\x14.flyteidl.admin.Task\"9\n\x08TaskSpec\x12-\n\x08template\x18\x01 \x01(\x0b\x32\x1b.flyteidl.core.TaskTemplate\"q\n\x0bTaskClosure\x12\x32\n\rcompiled_task\x18\x01 \x01(\x0b\x32\x1b.flyteidl.core.CompiledTask\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
-  dependencies=[flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,flyteidl_dot_core_dot_compiler__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,])
+  dependencies=[flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,flyteidl_dot_core_dot_compiler__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
 
 
@@ -69,8 +70,8 @@ _TASKCREATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=131,
-  serialized_end=247,
+  serialized_start=164,
+  serialized_end=280,
 )
 
 
@@ -100,8 +101,8 @@ _TASKCREATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=249,
-  serialized_end=282,
+  serialized_start=282,
+  serialized_end=315,
 )
 
 
@@ -152,8 +153,8 @@ _TASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=284,
-  serialized_end=406,
+  serialized_start=317,
+  serialized_end=439,
 )
 
 
@@ -183,8 +184,8 @@ _TASKLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=408,
-  serialized_end=455,
+  serialized_start=441,
+  serialized_end=488,
 )
 
 
@@ -214,8 +215,8 @@ _TASKSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=457,
-  serialized_end=514,
+  serialized_start=490,
+  serialized_end=547,
 )
 
 
@@ -233,6 +234,13 @@ _TASKCLOSURE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='created_at', full_name='flyteidl.admin.TaskClosure.created_at', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -245,8 +253,8 @@ _TASKCLOSURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=516,
-  serialized_end=581,
+  serialized_start=549,
+  serialized_end=662,
 )
 
 _TASKCREATEREQUEST.fields_by_name['id'].message_type = flyteidl_dot_admin_dot_common__pb2._IDENTIFIER
@@ -256,6 +264,7 @@ _TASK.fields_by_name['closure'].message_type = _TASKCLOSURE
 _TASKLIST.fields_by_name['tasks'].message_type = _TASK
 _TASKSPEC.fields_by_name['template'].message_type = flyteidl_dot_core_dot_tasks__pb2._TASKTEMPLATE
 _TASKCLOSURE.fields_by_name['compiled_task'].message_type = flyteidl_dot_core_dot_compiler__pb2._COMPILEDTASK
+_TASKCLOSURE.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['TaskCreateRequest'] = _TASKCREATEREQUEST
 DESCRIPTOR.message_types_by_name['TaskCreateResponse'] = _TASKCREATERESPONSE
 DESCRIPTOR.message_types_by_name['Task'] = _TASK

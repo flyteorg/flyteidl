@@ -5475,6 +5475,12 @@ export namespace flyteidl {
 
             /** ExecutionClosure duration */
             duration?: (google.protobuf.IDuration|null);
+
+            /** ExecutionClosure createdAt */
+            createdAt?: (google.protobuf.ITimestamp|null);
+
+            /** ExecutionClosure updatedAt */
+            updatedAt?: (google.protobuf.ITimestamp|null);
         }
 
         /** Represents an ExecutionClosure. */
@@ -5503,6 +5509,12 @@ export namespace flyteidl {
 
             /** ExecutionClosure duration. */
             public duration?: (google.protobuf.IDuration|null);
+
+            /** ExecutionClosure createdAt. */
+            public createdAt?: (google.protobuf.ITimestamp|null);
+
+            /** ExecutionClosure updatedAt. */
+            public updatedAt?: (google.protobuf.ITimestamp|null);
 
             /** ExecutionClosure outputResult. */
             public outputResult?: ("outputs"|"error");
@@ -6021,6 +6033,12 @@ export namespace flyteidl {
 
             /** LaunchPlanClosure expectedOutputs */
             expectedOutputs?: (flyteidl.core.IVariableMap|null);
+
+            /** LaunchPlanClosure createdAt */
+            createdAt?: (google.protobuf.ITimestamp|null);
+
+            /** LaunchPlanClosure updatedAt */
+            updatedAt?: (google.protobuf.ITimestamp|null);
         }
 
         /** Represents a LaunchPlanClosure. */
@@ -6040,6 +6058,12 @@ export namespace flyteidl {
 
             /** LaunchPlanClosure expectedOutputs. */
             public expectedOutputs?: (flyteidl.core.IVariableMap|null);
+
+            /** LaunchPlanClosure createdAt. */
+            public createdAt?: (google.protobuf.ITimestamp|null);
+
+            /** LaunchPlanClosure updatedAt. */
+            public updatedAt?: (google.protobuf.ITimestamp|null);
 
             /**
              * Creates a new LaunchPlanClosure instance using the specified properties.
@@ -6687,6 +6711,12 @@ export namespace flyteidl {
 
             /** NodeExecutionClosure duration */
             duration?: (google.protobuf.IDuration|null);
+
+            /** NodeExecutionClosure createdAt */
+            createdAt?: (google.protobuf.ITimestamp|null);
+
+            /** NodeExecutionClosure updatedAt */
+            updatedAt?: (google.protobuf.ITimestamp|null);
         }
 
         /** Represents a NodeExecutionClosure. */
@@ -6712,6 +6742,12 @@ export namespace flyteidl {
 
             /** NodeExecutionClosure duration. */
             public duration?: (google.protobuf.IDuration|null);
+
+            /** NodeExecutionClosure createdAt. */
+            public createdAt?: (google.protobuf.ITimestamp|null);
+
+            /** NodeExecutionClosure updatedAt. */
+            public updatedAt?: (google.protobuf.ITimestamp|null);
 
             /** NodeExecutionClosure outputResult. */
             public outputResult?: ("outputUri"|"error");
@@ -7386,6 +7422,9 @@ export namespace flyteidl {
 
             /** TaskClosure compiledTask */
             compiledTask?: (flyteidl.core.ICompiledTask|null);
+
+            /** TaskClosure createdAt */
+            createdAt?: (google.protobuf.ITimestamp|null);
         }
 
         /** Represents a TaskClosure. */
@@ -7399,6 +7438,9 @@ export namespace flyteidl {
 
             /** TaskClosure compiledTask. */
             public compiledTask?: (flyteidl.core.ICompiledTask|null);
+
+            /** TaskClosure createdAt. */
+            public createdAt?: (google.protobuf.ITimestamp|null);
 
             /**
              * Creates a new TaskClosure instance using the specified properties.
@@ -7728,6 +7770,9 @@ export namespace flyteidl {
 
             /** WorkflowClosure compiledWorkflow */
             compiledWorkflow?: (flyteidl.core.ICompiledWorkflowClosure|null);
+
+            /** WorkflowClosure createdAt */
+            createdAt?: (google.protobuf.ITimestamp|null);
         }
 
         /** Represents a WorkflowClosure. */
@@ -7741,6 +7786,9 @@ export namespace flyteidl {
 
             /** WorkflowClosure compiledWorkflow. */
             public compiledWorkflow?: (flyteidl.core.ICompiledWorkflowClosure|null);
+
+            /** WorkflowClosure createdAt. */
+            public createdAt?: (google.protobuf.ITimestamp|null);
 
             /**
              * Creates a new WorkflowClosure instance using the specified properties.
