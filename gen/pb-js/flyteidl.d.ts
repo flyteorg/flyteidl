@@ -4377,6 +4377,73 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a Sort. */
+        interface ISort {
+
+            /** Sort key */
+            key?: (string|null);
+
+            /** Sort direction */
+            direction?: (flyteidl.admin.Sort.Direction|null);
+        }
+
+        /** Represents a Sort. */
+        class Sort implements ISort {
+
+            /**
+             * Constructs a new Sort.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ISort);
+
+            /** Sort key. */
+            public key: string;
+
+            /** Sort direction. */
+            public direction: flyteidl.admin.Sort.Direction;
+
+            /**
+             * Creates a new Sort instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Sort instance
+             */
+            public static create(properties?: flyteidl.admin.ISort): flyteidl.admin.Sort;
+
+            /**
+             * Encodes the specified Sort message. Does not implicitly {@link flyteidl.admin.Sort.verify|verify} messages.
+             * @param message Sort message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ISort, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Sort message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Sort
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Sort;
+
+            /**
+             * Verifies a Sort message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace Sort {
+
+            /** Direction enum. */
+            enum Direction {
+                DESCENDING = 0,
+                ASCENDING = 1
+            }
+        }
+
         /** Properties of an IdentifierListRequest. */
         interface IIdentifierListRequest {
 
@@ -4391,6 +4458,9 @@ export namespace flyteidl {
 
             /** IdentifierListRequest offset */
             offset?: (number|null);
+
+            /** IdentifierListRequest sortBy */
+            sortBy?: (flyteidl.admin.ISort|null);
         }
 
         /** Represents an IdentifierListRequest. */
@@ -4413,6 +4483,9 @@ export namespace flyteidl {
 
             /** IdentifierListRequest offset. */
             public offset: number;
+
+            /** IdentifierListRequest sortBy. */
+            public sortBy?: (flyteidl.admin.ISort|null);
 
             /**
              * Creates a new IdentifierListRequest instance using the specified properties.
@@ -4565,6 +4638,9 @@ export namespace flyteidl {
 
             /** ResourceListRequest filters */
             filters?: (string|null);
+
+            /** ResourceListRequest sortBy */
+            sortBy?: (flyteidl.admin.ISort|null);
         }
 
         /** Represents a ResourceListRequest. */
@@ -4587,6 +4663,9 @@ export namespace flyteidl {
 
             /** ResourceListRequest filters. */
             public filters: string;
+
+            /** ResourceListRequest sortBy. */
+            public sortBy?: (flyteidl.admin.ISort|null);
 
             /**
              * Creates a new ResourceListRequest instance using the specified properties.
@@ -6519,6 +6598,9 @@ export namespace flyteidl {
 
             /** NodeExecutionListRequest filters */
             filters?: (string|null);
+
+            /** NodeExecutionListRequest sortBy */
+            sortBy?: (flyteidl.admin.ISort|null);
         }
 
         /** Represents a NodeExecutionListRequest. */
@@ -6538,6 +6620,9 @@ export namespace flyteidl {
 
             /** NodeExecutionListRequest filters. */
             public filters: string;
+
+            /** NodeExecutionListRequest sortBy. */
+            public sortBy?: (flyteidl.admin.ISort|null);
 
             /**
              * Creates a new NodeExecutionListRequest instance using the specified properties.

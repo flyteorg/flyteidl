@@ -20,6 +20,21 @@ message Identifier {
     string name       = 3;
 }
 
+// Species sort ordering in a list request.
+message Sort {
+    enum Direction {
+        DESCENDING        = 0;
+        ASCENDING         = 1;
+    }
+    // Indicates an attribute to sort the response values.
+    // TODO(katrogan): Add string validation here. This should never be empty.
+    string key            = 1;
+
+    // Indicates the direction to apply sort key for response values.
+    // +optional
+    Direction direction   = 2;
+}
+
 // Represents a request structure to list identifiers.
 message IdentifierListRequest {
     // Name of the project that contains the identifiers.
@@ -33,6 +48,10 @@ message IdentifierListRequest {
     // It is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.
     // +optional
     uint32 offset     = 4;
+
+    // Sort ordering.
+    // +optional
+    Sort sort_by      = 5;
 }
 
 // Represents a list of Identifiers.
@@ -63,6 +82,10 @@ message ResourceListRequest {
     // More info on constructing filters : <Link>
     // +optional
     string filters  = 4;
+
+    // Sort ordering.
+    // +optional
+    Sort sort_by    = 5;
 }
 
 message EmailNotification {

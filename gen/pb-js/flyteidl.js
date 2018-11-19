@@ -10648,6 +10648,152 @@ export const flyteidl = $root.flyteidl = (() => {
             return Identifier;
         })();
 
+        admin.Sort = (function() {
+
+            /**
+             * Properties of a Sort.
+             * @memberof flyteidl.admin
+             * @interface ISort
+             * @property {string|null} [key] Sort key
+             * @property {flyteidl.admin.Sort.Direction|null} [direction] Sort direction
+             */
+
+            /**
+             * Constructs a new Sort.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a Sort.
+             * @implements ISort
+             * @constructor
+             * @param {flyteidl.admin.ISort=} [properties] Properties to set
+             */
+            function Sort(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Sort key.
+             * @member {string} key
+             * @memberof flyteidl.admin.Sort
+             * @instance
+             */
+            Sort.prototype.key = "";
+
+            /**
+             * Sort direction.
+             * @member {flyteidl.admin.Sort.Direction} direction
+             * @memberof flyteidl.admin.Sort
+             * @instance
+             */
+            Sort.prototype.direction = 0;
+
+            /**
+             * Creates a new Sort instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.Sort
+             * @static
+             * @param {flyteidl.admin.ISort=} [properties] Properties to set
+             * @returns {flyteidl.admin.Sort} Sort instance
+             */
+            Sort.create = function create(properties) {
+                return new Sort(properties);
+            };
+
+            /**
+             * Encodes the specified Sort message. Does not implicitly {@link flyteidl.admin.Sort.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.Sort
+             * @static
+             * @param {flyteidl.admin.ISort} message Sort message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Sort.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.key != null && message.hasOwnProperty("key"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
+                if (message.direction != null && message.hasOwnProperty("direction"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.direction);
+                return writer;
+            };
+
+            /**
+             * Decodes a Sort message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.Sort
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.Sort} Sort
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Sort.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Sort();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.key = reader.string();
+                        break;
+                    case 2:
+                        message.direction = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Sort message.
+             * @function verify
+             * @memberof flyteidl.admin.Sort
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Sort.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.key != null && message.hasOwnProperty("key"))
+                    if (!$util.isString(message.key))
+                        return "key: string expected";
+                if (message.direction != null && message.hasOwnProperty("direction"))
+                    switch (message.direction) {
+                    default:
+                        return "direction: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
+                return null;
+            };
+
+            /**
+             * Direction enum.
+             * @name flyteidl.admin.Sort.Direction
+             * @enum {string}
+             * @property {number} DESCENDING=0 DESCENDING value
+             * @property {number} ASCENDING=1 ASCENDING value
+             */
+            Sort.Direction = (function() {
+                const valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "DESCENDING"] = 0;
+                values[valuesById[1] = "ASCENDING"] = 1;
+                return values;
+            })();
+
+            return Sort;
+        })();
+
         admin.IdentifierListRequest = (function() {
 
             /**
@@ -10658,6 +10804,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [domain] IdentifierListRequest domain
              * @property {number|null} [limit] IdentifierListRequest limit
              * @property {number|null} [offset] IdentifierListRequest offset
+             * @property {flyteidl.admin.ISort|null} [sortBy] IdentifierListRequest sortBy
              */
 
             /**
@@ -10708,6 +10855,14 @@ export const flyteidl = $root.flyteidl = (() => {
             IdentifierListRequest.prototype.offset = 0;
 
             /**
+             * IdentifierListRequest sortBy.
+             * @member {flyteidl.admin.ISort|null|undefined} sortBy
+             * @memberof flyteidl.admin.IdentifierListRequest
+             * @instance
+             */
+            IdentifierListRequest.prototype.sortBy = null;
+
+            /**
              * Creates a new IdentifierListRequest instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.IdentifierListRequest
@@ -10739,6 +10894,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.limit);
                 if (message.offset != null && message.hasOwnProperty("offset"))
                     writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.offset);
+                if (message.sortBy != null && message.hasOwnProperty("sortBy"))
+                    $root.flyteidl.admin.Sort.encode(message.sortBy, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -10772,6 +10929,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 4:
                         message.offset = reader.uint32();
                         break;
+                    case 5:
+                        message.sortBy = $root.flyteidl.admin.Sort.decode(reader, reader.uint32());
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -10803,6 +10963,11 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.offset != null && message.hasOwnProperty("offset"))
                     if (!$util.isInteger(message.offset))
                         return "offset: integer expected";
+                if (message.sortBy != null && message.hasOwnProperty("sortBy")) {
+                    let error = $root.flyteidl.admin.Sort.verify(message.sortBy);
+                    if (error)
+                        return "sortBy." + error;
+                }
                 return null;
             };
 
@@ -11049,6 +11214,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {number|null} [limit] ResourceListRequest limit
              * @property {number|null} [offset] ResourceListRequest offset
              * @property {string|null} [filters] ResourceListRequest filters
+             * @property {flyteidl.admin.ISort|null} [sortBy] ResourceListRequest sortBy
              */
 
             /**
@@ -11099,6 +11265,14 @@ export const flyteidl = $root.flyteidl = (() => {
             ResourceListRequest.prototype.filters = "";
 
             /**
+             * ResourceListRequest sortBy.
+             * @member {flyteidl.admin.ISort|null|undefined} sortBy
+             * @memberof flyteidl.admin.ResourceListRequest
+             * @instance
+             */
+            ResourceListRequest.prototype.sortBy = null;
+
+            /**
              * Creates a new ResourceListRequest instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.ResourceListRequest
@@ -11130,6 +11304,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.offset);
                 if (message.filters != null && message.hasOwnProperty("filters"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.filters);
+                if (message.sortBy != null && message.hasOwnProperty("sortBy"))
+                    $root.flyteidl.admin.Sort.encode(message.sortBy, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -11162,6 +11338,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 4:
                         message.filters = reader.string();
+                        break;
+                    case 5:
+                        message.sortBy = $root.flyteidl.admin.Sort.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11196,6 +11375,11 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.filters != null && message.hasOwnProperty("filters"))
                     if (!$util.isString(message.filters))
                         return "filters: string expected";
+                if (message.sortBy != null && message.hasOwnProperty("sortBy")) {
+                    let error = $root.flyteidl.admin.Sort.verify(message.sortBy);
+                    if (error)
+                        return "sortBy." + error;
+                }
                 return null;
             };
 
@@ -15638,6 +15822,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {number|null} [limit] NodeExecutionListRequest limit
              * @property {number|null} [offset] NodeExecutionListRequest offset
              * @property {string|null} [filters] NodeExecutionListRequest filters
+             * @property {flyteidl.admin.ISort|null} [sortBy] NodeExecutionListRequest sortBy
              */
 
             /**
@@ -15680,6 +15865,14 @@ export const flyteidl = $root.flyteidl = (() => {
             NodeExecutionListRequest.prototype.filters = "";
 
             /**
+             * NodeExecutionListRequest sortBy.
+             * @member {flyteidl.admin.ISort|null|undefined} sortBy
+             * @memberof flyteidl.admin.NodeExecutionListRequest
+             * @instance
+             */
+            NodeExecutionListRequest.prototype.sortBy = null;
+
+            /**
              * Creates a new NodeExecutionListRequest instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.NodeExecutionListRequest
@@ -15709,6 +15902,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.offset);
                 if (message.filters != null && message.hasOwnProperty("filters"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.filters);
+                if (message.sortBy != null && message.hasOwnProperty("sortBy"))
+                    $root.flyteidl.admin.Sort.encode(message.sortBy, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -15739,6 +15934,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 3:
                         message.filters = reader.string();
                         break;
+                    case 4:
+                        message.sortBy = $root.flyteidl.admin.Sort.decode(reader, reader.uint32());
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -15767,6 +15965,11 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.filters != null && message.hasOwnProperty("filters"))
                     if (!$util.isString(message.filters))
                         return "filters: string expected";
+                if (message.sortBy != null && message.hasOwnProperty("sortBy")) {
+                    let error = $root.flyteidl.admin.Sort.verify(message.sortBy);
+                    if (error)
+                        return "sortBy." + error;
+                }
                 return null;
             };
 

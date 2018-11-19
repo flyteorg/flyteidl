@@ -20,11 +20,33 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/common.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1b\x66lyteidl/admin/common.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/execution.proto\";\n\nIdentifier\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\"W\n\x15IdentifierListRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\r\x12\x0e\n\x06offset\x18\x04 \x01(\r\">\n\x0eIdentifierList\x12,\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x1a.flyteidl.admin.Identifier\"\x1f\n\x10ObjectGetRequest\x12\x0b\n\x03urn\x18\x01 \x01(\t\"m\n\x13ResourceListRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\r\n\x05limit\x18\x02 \x01(\r\x12\x0e\n\x06offset\x18\x03 \x01(\r\x12\x0f\n\x07\x66ilters\x18\x04 \x01(\t\"-\n\x11\x45mailNotification\x12\x18\n\x10recipients_email\x18\x01 \x03(\t\"1\n\x15PagerDutyNotification\x12\x18\n\x10recipients_email\x18\x01 \x03(\t\"-\n\x11SlackNotification\x12\x18\n\x10recipients_email\x18\x01 \x03(\t\"\xf2\x01\n\x0cNotification\x12\x35\n\x06phases\x18\x01 \x03(\x0e\x32%.flyteidl.core.WorkflowExecutionPhase\x12\x32\n\x05\x65mail\x18\x02 \x01(\x0b\x32!.flyteidl.admin.EmailNotificationH\x00\x12;\n\npager_duty\x18\x03 \x01(\x0b\x32%.flyteidl.admin.PagerDutyNotificationH\x00\x12\x32\n\x05slack\x18\x04 \x01(\x0b\x32!.flyteidl.admin.SlackNotificationH\x00\x42\x06\n\x04typeB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1b\x66lyteidl/admin/common.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/execution.proto\";\n\nIdentifier\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\"r\n\x04Sort\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x31\n\tdirection\x18\x02 \x01(\x0e\x32\x1e.flyteidl.admin.Sort.Direction\"*\n\tDirection\x12\x0e\n\nDESCENDING\x10\x00\x12\r\n\tASCENDING\x10\x01\"~\n\x15IdentifierListRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\r\x12\x0e\n\x06offset\x18\x04 \x01(\r\x12%\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.Sort\">\n\x0eIdentifierList\x12,\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x1a.flyteidl.admin.Identifier\"\x1f\n\x10ObjectGetRequest\x12\x0b\n\x03urn\x18\x01 \x01(\t\"\x94\x01\n\x13ResourceListRequest\x12&\n\x02id\x18\x01 \x01(\x0b\x32\x1a.flyteidl.admin.Identifier\x12\r\n\x05limit\x18\x02 \x01(\r\x12\x0e\n\x06offset\x18\x03 \x01(\r\x12\x0f\n\x07\x66ilters\x18\x04 \x01(\t\x12%\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.Sort\"-\n\x11\x45mailNotification\x12\x18\n\x10recipients_email\x18\x01 \x03(\t\"1\n\x15PagerDutyNotification\x12\x18\n\x10recipients_email\x18\x01 \x03(\t\"-\n\x11SlackNotification\x12\x18\n\x10recipients_email\x18\x01 \x03(\t\"\xf2\x01\n\x0cNotification\x12\x35\n\x06phases\x18\x01 \x03(\x0e\x32%.flyteidl.core.WorkflowExecutionPhase\x12\x32\n\x05\x65mail\x18\x02 \x01(\x0b\x32!.flyteidl.admin.EmailNotificationH\x00\x12;\n\npager_duty\x18\x03 \x01(\x0b\x32%.flyteidl.admin.PagerDutyNotificationH\x00\x12\x32\n\x05slack\x18\x04 \x01(\x0b\x32!.flyteidl.admin.SlackNotificationH\x00\x42\x06\n\x04typeB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_execution__pb2.DESCRIPTOR,])
 
 
+
+_SORT_DIRECTION = _descriptor.EnumDescriptor(
+  name='Direction',
+  full_name='flyteidl.admin.Sort.Direction',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='DESCENDING', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ASCENDING', index=1, number=1,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=211,
+  serialized_end=253,
+)
+_sym_db.RegisterEnumDescriptor(_SORT_DIRECTION)
 
 
 _IDENTIFIER = _descriptor.Descriptor(
@@ -72,6 +94,45 @@ _IDENTIFIER = _descriptor.Descriptor(
 )
 
 
+_SORT = _descriptor.Descriptor(
+  name='Sort',
+  full_name='flyteidl.admin.Sort',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='flyteidl.admin.Sort.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='direction', full_name='flyteidl.admin.Sort.direction', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _SORT_DIRECTION,
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=139,
+  serialized_end=253,
+)
+
+
 _IDENTIFIERLISTREQUEST = _descriptor.Descriptor(
   name='IdentifierListRequest',
   full_name='flyteidl.admin.IdentifierListRequest',
@@ -107,6 +168,13 @@ _IDENTIFIERLISTREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='sort_by', full_name='flyteidl.admin.IdentifierListRequest.sort_by', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -119,8 +187,8 @@ _IDENTIFIERLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=139,
-  serialized_end=226,
+  serialized_start=255,
+  serialized_end=381,
 )
 
 
@@ -150,8 +218,8 @@ _IDENTIFIERLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=228,
-  serialized_end=290,
+  serialized_start=383,
+  serialized_end=445,
 )
 
 
@@ -181,8 +249,8 @@ _OBJECTGETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=292,
-  serialized_end=323,
+  serialized_start=447,
+  serialized_end=478,
 )
 
 
@@ -221,6 +289,13 @@ _RESOURCELISTREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='sort_by', full_name='flyteidl.admin.ResourceListRequest.sort_by', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -233,8 +308,8 @@ _RESOURCELISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=325,
-  serialized_end=434,
+  serialized_start=481,
+  serialized_end=629,
 )
 
 
@@ -264,8 +339,8 @@ _EMAILNOTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=436,
-  serialized_end=481,
+  serialized_start=631,
+  serialized_end=676,
 )
 
 
@@ -295,8 +370,8 @@ _PAGERDUTYNOTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=483,
-  serialized_end=532,
+  serialized_start=678,
+  serialized_end=727,
 )
 
 
@@ -326,8 +401,8 @@ _SLACKNOTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=534,
-  serialized_end=579,
+  serialized_start=729,
+  serialized_end=774,
 )
 
 
@@ -381,12 +456,16 @@ _NOTIFICATION = _descriptor.Descriptor(
       name='type', full_name='flyteidl.admin.Notification.type',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=582,
-  serialized_end=824,
+  serialized_start=777,
+  serialized_end=1019,
 )
 
+_SORT.fields_by_name['direction'].enum_type = _SORT_DIRECTION
+_SORT_DIRECTION.containing_type = _SORT
+_IDENTIFIERLISTREQUEST.fields_by_name['sort_by'].message_type = _SORT
 _IDENTIFIERLIST.fields_by_name['entities'].message_type = _IDENTIFIER
 _RESOURCELISTREQUEST.fields_by_name['id'].message_type = _IDENTIFIER
+_RESOURCELISTREQUEST.fields_by_name['sort_by'].message_type = _SORT
 _NOTIFICATION.fields_by_name['phases'].enum_type = flyteidl_dot_core_dot_execution__pb2._WORKFLOWEXECUTIONPHASE
 _NOTIFICATION.fields_by_name['email'].message_type = _EMAILNOTIFICATION
 _NOTIFICATION.fields_by_name['pager_duty'].message_type = _PAGERDUTYNOTIFICATION
@@ -401,6 +480,7 @@ _NOTIFICATION.oneofs_by_name['type'].fields.append(
   _NOTIFICATION.fields_by_name['slack'])
 _NOTIFICATION.fields_by_name['slack'].containing_oneof = _NOTIFICATION.oneofs_by_name['type']
 DESCRIPTOR.message_types_by_name['Identifier'] = _IDENTIFIER
+DESCRIPTOR.message_types_by_name['Sort'] = _SORT
 DESCRIPTOR.message_types_by_name['IdentifierListRequest'] = _IDENTIFIERLISTREQUEST
 DESCRIPTOR.message_types_by_name['IdentifierList'] = _IDENTIFIERLIST
 DESCRIPTOR.message_types_by_name['ObjectGetRequest'] = _OBJECTGETREQUEST
@@ -417,6 +497,13 @@ Identifier = _reflection.GeneratedProtocolMessageType('Identifier', (_message.Me
   # @@protoc_insertion_point(class_scope:flyteidl.admin.Identifier)
   ))
 _sym_db.RegisterMessage(Identifier)
+
+Sort = _reflection.GeneratedProtocolMessageType('Sort', (_message.Message,), dict(
+  DESCRIPTOR = _SORT,
+  __module__ = 'flyteidl.admin.common_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.Sort)
+  ))
+_sym_db.RegisterMessage(Sort)
 
 IdentifierListRequest = _reflection.GeneratedProtocolMessageType('IdentifierListRequest', (_message.Message,), dict(
   DESCRIPTOR = _IDENTIFIERLISTREQUEST,

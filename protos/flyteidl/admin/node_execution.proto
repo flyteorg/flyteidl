@@ -3,6 +3,7 @@ syntax = "proto3";
 package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
+import "flyteidl/admin/common.proto";
 import "flyteidl/core/execution.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
@@ -36,6 +37,10 @@ message NodeExecutionListRequest {
     // More info on constructing filters : <Link>
     // +optional
     string filters  = 3;
+
+    // Sort ordering.
+    // +optional
+    Sort sort_by    = 4;
 }
 
 // Encapsulates all details for a single node execution entity.
