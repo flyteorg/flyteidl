@@ -33,9 +33,10 @@ var (
 	_ = ptypes.DynamicAny{}
 )
 
-// Validate checks the field values on Identifier with the rules defined in the
-// proto definition for this message. If any rules are violated, an error is returned.
-func (m *Identifier) Validate() error {
+// Validate checks the field values on NamedEntityIdentifier with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *NamedEntityIdentifier) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -49,9 +50,9 @@ func (m *Identifier) Validate() error {
 	return nil
 }
 
-// IdentifierValidationError is the validation error returned by
-// Identifier.Validate if the designated constraints aren't met.
-type IdentifierValidationError struct {
+// NamedEntityIdentifierValidationError is the validation error returned by
+// NamedEntityIdentifier.Validate if the designated constraints aren't met.
+type NamedEntityIdentifierValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -59,22 +60,24 @@ type IdentifierValidationError struct {
 }
 
 // Field function returns field value.
-func (e IdentifierValidationError) Field() string { return e.field }
+func (e NamedEntityIdentifierValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e IdentifierValidationError) Reason() string { return e.reason }
+func (e NamedEntityIdentifierValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e IdentifierValidationError) Cause() error { return e.cause }
+func (e NamedEntityIdentifierValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e IdentifierValidationError) Key() bool { return e.key }
+func (e NamedEntityIdentifierValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e IdentifierValidationError) ErrorName() string { return "IdentifierValidationError" }
+func (e NamedEntityIdentifierValidationError) ErrorName() string {
+	return "NamedEntityIdentifierValidationError"
+}
 
 // Error satisfies the builtin error interface
-func (e IdentifierValidationError) Error() string {
+func (e NamedEntityIdentifierValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -86,14 +89,14 @@ func (e IdentifierValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sIdentifier.%s: %s%s",
+		"invalid %sNamedEntityIdentifier.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = IdentifierValidationError{}
+var _ error = NamedEntityIdentifierValidationError{}
 
 var _ interface {
 	Field() string
@@ -101,7 +104,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = IdentifierValidationError{}
+} = NamedEntityIdentifierValidationError{}
 
 // Validate checks the field values on Sort with the rules defined in the proto
 // definition for this message. If any rules are violated, an error is returned.
@@ -171,10 +174,10 @@ var _ interface {
 	ErrorName() string
 } = SortValidationError{}
 
-// Validate checks the field values on IdentifierListRequest with the rules
-// defined in the proto definition for this message. If any rules are
-// violated, an error is returned.
-func (m *IdentifierListRequest) Validate() error {
+// Validate checks the field values on NamedEntityIdentifierListRequest with
+// the rules defined in the proto definition for this message. If any rules
+// are violated, an error is returned.
+func (m *NamedEntityIdentifierListRequest) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -189,7 +192,7 @@ func (m *IdentifierListRequest) Validate() error {
 
 	if v, ok := interface{}(m.GetSortBy()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return IdentifierListRequestValidationError{
+			return NamedEntityIdentifierListRequestValidationError{
 				field:  "SortBy",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -200,9 +203,10 @@ func (m *IdentifierListRequest) Validate() error {
 	return nil
 }
 
-// IdentifierListRequestValidationError is the validation error returned by
-// IdentifierListRequest.Validate if the designated constraints aren't met.
-type IdentifierListRequestValidationError struct {
+// NamedEntityIdentifierListRequestValidationError is the validation error
+// returned by NamedEntityIdentifierListRequest.Validate if the designated
+// constraints aren't met.
+type NamedEntityIdentifierListRequestValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -210,24 +214,24 @@ type IdentifierListRequestValidationError struct {
 }
 
 // Field function returns field value.
-func (e IdentifierListRequestValidationError) Field() string { return e.field }
+func (e NamedEntityIdentifierListRequestValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e IdentifierListRequestValidationError) Reason() string { return e.reason }
+func (e NamedEntityIdentifierListRequestValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e IdentifierListRequestValidationError) Cause() error { return e.cause }
+func (e NamedEntityIdentifierListRequestValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e IdentifierListRequestValidationError) Key() bool { return e.key }
+func (e NamedEntityIdentifierListRequestValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e IdentifierListRequestValidationError) ErrorName() string {
-	return "IdentifierListRequestValidationError"
+func (e NamedEntityIdentifierListRequestValidationError) ErrorName() string {
+	return "NamedEntityIdentifierListRequestValidationError"
 }
 
 // Error satisfies the builtin error interface
-func (e IdentifierListRequestValidationError) Error() string {
+func (e NamedEntityIdentifierListRequestValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -239,14 +243,14 @@ func (e IdentifierListRequestValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sIdentifierListRequest.%s: %s%s",
+		"invalid %sNamedEntityIdentifierListRequest.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = IdentifierListRequestValidationError{}
+var _ error = NamedEntityIdentifierListRequestValidationError{}
 
 var _ interface {
 	Field() string
@@ -254,12 +258,12 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = IdentifierListRequestValidationError{}
+} = NamedEntityIdentifierListRequestValidationError{}
 
-// Validate checks the field values on IdentifierList with the rules defined in
-// the proto definition for this message. If any rules are violated, an error
-// is returned.
-func (m *IdentifierList) Validate() error {
+// Validate checks the field values on NamedEntityIdentifierList with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *NamedEntityIdentifierList) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -269,7 +273,7 @@ func (m *IdentifierList) Validate() error {
 
 		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
-				return IdentifierListValidationError{
+				return NamedEntityIdentifierListValidationError{
 					field:  fmt.Sprintf("Entities[%v]", idx),
 					reason: "embedded message failed validation",
 					cause:  err,
@@ -282,9 +286,9 @@ func (m *IdentifierList) Validate() error {
 	return nil
 }
 
-// IdentifierListValidationError is the validation error returned by
-// IdentifierList.Validate if the designated constraints aren't met.
-type IdentifierListValidationError struct {
+// NamedEntityIdentifierListValidationError is the validation error returned by
+// NamedEntityIdentifierList.Validate if the designated constraints aren't met.
+type NamedEntityIdentifierListValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -292,22 +296,24 @@ type IdentifierListValidationError struct {
 }
 
 // Field function returns field value.
-func (e IdentifierListValidationError) Field() string { return e.field }
+func (e NamedEntityIdentifierListValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e IdentifierListValidationError) Reason() string { return e.reason }
+func (e NamedEntityIdentifierListValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e IdentifierListValidationError) Cause() error { return e.cause }
+func (e NamedEntityIdentifierListValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e IdentifierListValidationError) Key() bool { return e.key }
+func (e NamedEntityIdentifierListValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e IdentifierListValidationError) ErrorName() string { return "IdentifierListValidationError" }
+func (e NamedEntityIdentifierListValidationError) ErrorName() string {
+	return "NamedEntityIdentifierListValidationError"
+}
 
 // Error satisfies the builtin error interface
-func (e IdentifierListValidationError) Error() string {
+func (e NamedEntityIdentifierListValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -319,14 +325,14 @@ func (e IdentifierListValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sIdentifierList.%s: %s%s",
+		"invalid %sNamedEntityIdentifierList.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = IdentifierListValidationError{}
+var _ error = NamedEntityIdentifierListValidationError{}
 
 var _ interface {
 	Field() string
@@ -334,7 +340,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = IdentifierListValidationError{}
+} = NamedEntityIdentifierListValidationError{}
 
 // Validate checks the field values on ObjectGetRequest with the rules defined
 // in the proto definition for this message. If any rules are violated, an
@@ -344,7 +350,15 @@ func (m *ObjectGetRequest) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Urn
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ObjectGetRequestValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	return nil
 }

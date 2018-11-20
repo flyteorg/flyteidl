@@ -198,7 +198,59 @@
         ]
       }
     },
-    "/api/v1/executions/{urn}": {
+    "/api/v1/executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}": {
+      "get": {
+        "operationId": "GetNodeExecution",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminNodeExecution"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.execution_id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.execution_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.execution_id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.node_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id.retry_attempt",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/executions/{id.project}/{id.domain}/{id.name}": {
       "get": {
         "operationId": "GetExecution",
         "responses": {
@@ -211,11 +263,85 @@
         },
         "parameters": [
           {
-            "name": "urn",
-            "description": "Indicates the string returned by the server that identifies a version of resource.",
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/launch_plan/{id.project}/{id.domain}/{id.name}/{id.version}": {
+      "get": {
+        "operationId": "GetLaunchPlan",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminLaunchPlan"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.version",
+            "description": "Specific version of the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.resource_type",
+            "description": "Identifies the specific type of resource that this identifer corresponds to.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "UNSPECIFIED",
+              "TASK",
+              "WORKFLOW",
+              "LAUNCH_PLAN"
+            ],
+            "default": "UNSPECIFIED"
           }
         ],
         "tags": [
@@ -249,30 +375,7 @@
         ]
       }
     },
-    "/api/v1/launch_plans/{urn}": {
-      "get": {
-        "operationId": "GetLaunchPlan",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminLaunchPlan"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "urn",
-            "description": "Indicates the string returned by the server that identifies a version of resource.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      },
+    "/api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version}": {
       "put": {
         "operationId": "UpdateLaunchPlan",
         "responses": {
@@ -285,8 +388,29 @@
         },
         "parameters": [
           {
-            "name": "urn",
-            "description": "Urn of launch plan for which to change state.t",
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.version",
+            "description": "Specific version of the resource.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -358,31 +482,6 @@
               "ASCENDING"
             ],
             "default": "DESCENDING"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/node_executions/{node_execution_id}": {
-      "get": {
-        "operationId": "GetNodeExecution",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminNodeExecution"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "node_execution_id",
-            "description": "An opaque string assigned by the flyteadmin that uniquely identifies an individual node execution.",
-            "in": "path",
-            "required": true,
-            "type": "string"
           }
         ],
         "tags": [
@@ -883,7 +982,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/adminIdentifierList"
+              "$ref": "#/definitions/adminNamedEntityIdentifierList"
             }
           }
         },
@@ -950,7 +1049,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/adminIdentifierList"
+              "$ref": "#/definitions/adminNamedEntityIdentifierList"
             }
           }
         },
@@ -1017,7 +1116,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/adminIdentifierList"
+              "$ref": "#/definitions/adminNamedEntityIdentifierList"
             }
           }
         },
@@ -1152,7 +1251,7 @@
         ]
       }
     },
-    "/api/v1/tasks/{urn}": {
+    "/api/v1/tasks/{id.project}/{id.domain}/{id.name}/{id.version}": {
       "get": {
         "operationId": "GetTask",
         "responses": {
@@ -1165,11 +1264,46 @@
         },
         "parameters": [
           {
-            "name": "urn",
-            "description": "Indicates the string returned by the server that identifies a version of resource.",
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.version",
+            "description": "Specific version of the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.resource_type",
+            "description": "Identifies the specific type of resource that this identifer corresponds to.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "UNSPECIFIED",
+              "TASK",
+              "WORKFLOW",
+              "LAUNCH_PLAN"
+            ],
+            "default": "UNSPECIFIED"
           }
         ],
         "tags": [
@@ -1203,7 +1337,7 @@
         ]
       }
     },
-    "/api/v1/workflows/{urn}": {
+    "/api/v1/workflows/{id.project}/{id.domain}/{id.name}/{id.version}": {
       "get": {
         "operationId": "GetWorkflow",
         "responses": {
@@ -1216,11 +1350,46 @@
         },
         "parameters": [
           {
-            "name": "urn",
-            "description": "Indicates the string returned by the server that identifies a version of resource.",
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.version",
+            "description": "Specific version of the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.resource_type",
+            "description": "Identifies the specific type of resource that this identifer corresponds to.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "UNSPECIFIED",
+              "TASK",
+              "WORKFLOW",
+              "LAUNCH_PLAN"
+            ],
+            "default": "UNSPECIFIED"
           }
         ],
         "tags": [
@@ -1377,11 +1546,7 @@
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/adminIdentifier"
-        },
-        "execution_id": {
-          "type": "string",
-          "title": "The execution_id string is contructed from the 'id'.\nIf name is not available in the 'id', the system will generate a random name"
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier"
         },
         "spec": {
           "$ref": "#/definitions/adminExecutionSpec"
@@ -1436,13 +1601,22 @@
           "description": "The notification settings to use after merging the CreateExecutionRequest and the launch plan\nnotification settings."
         }
       },
-      "title": "Encapsultes the results of the Execution"
+      "title": "Encapsulates the results of the Execution"
     },
     "adminExecutionCreateRequest": {
       "type": "object",
       "properties": {
-        "id": {
-          "$ref": "#/definitions/adminIdentifier"
+        "project": {
+          "type": "string",
+          "description": "Name of the project the execution belongs to."
+        },
+        "domain": {
+          "type": "string",
+          "description": "Name of the domain the execution belongs to. \nA domain can be considered as a subset within a specific project."
+        },
+        "name": {
+          "type": "string",
+          "title": "User provided value for the resource.\nIf none is provided the system will generate a unique string.\n+optional"
         },
         "spec": {
           "$ref": "#/definitions/adminExecutionSpec"
@@ -1452,8 +1626,8 @@
     "adminExecutionCreateResponse": {
       "type": "object",
       "properties": {
-        "urn": {
-          "type": "string"
+        "id": {
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier"
         }
       }
     },
@@ -1488,9 +1662,9 @@
     "adminExecutionSpec": {
       "type": "object",
       "properties": {
-        "launch_plan_urn": {
-          "type": "string",
-          "title": "Launch plan urn to be executed"
+        "launch_plan": {
+          "$ref": "#/definitions/coreIdentifier",
+          "title": "Launch plan to be executed"
         },
         "inputs": {
           "$ref": "#/definitions/coreLiteralMap",
@@ -1530,48 +1704,11 @@
       ],
       "default": "MINUTE"
     },
-    "adminIdentifier": {
-      "type": "object",
-      "properties": {
-        "project": {
-          "type": "string",
-          "description": "Name of the project the resource belongs to."
-        },
-        "domain": {
-          "type": "string",
-          "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project."
-        },
-        "name": {
-          "type": "string",
-          "title": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'"
-        }
-      },
-      "description": "Encapsulation of fields that identifies a Flyte resource.\nA resource can internally have multiple versions."
-    },
-    "adminIdentifierList": {
-      "type": "object",
-      "properties": {
-        "entities": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/adminIdentifier"
-          },
-          "description": "A list of identifiers."
-        }
-      },
-      "description": "Represents a list of Identifiers."
-    },
     "adminLaunchPlan": {
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/adminIdentifier"
-        },
-        "version": {
-          "type": "string"
-        },
-        "urn": {
-          "type": "string"
+          "$ref": "#/definitions/coreIdentifier"
         },
         "spec": {
           "$ref": "#/definitions/adminLaunchPlanSpec"
@@ -1612,10 +1749,7 @@
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/adminIdentifier"
-        },
-        "version": {
-          "type": "string"
+          "$ref": "#/definitions/coreIdentifier"
         },
         "spec": {
           "$ref": "#/definitions/adminLaunchPlanSpec"
@@ -1623,12 +1757,7 @@
       }
     },
     "adminLaunchPlanCreateResponse": {
-      "type": "object",
-      "properties": {
-        "urn": {
-          "type": "string"
-        }
-      }
+      "type": "object"
     },
     "adminLaunchPlanList": {
       "type": "object",
@@ -1660,8 +1789,8 @@
     "adminLaunchPlanSpec": {
       "type": "object",
       "properties": {
-        "workflow_urn": {
-          "type": "string",
+        "workflow_id": {
+          "$ref": "#/definitions/coreIdentifier",
           "title": "Reference to the Workflow template that the launch plan references"
         },
         "entity_metadata": {
@@ -1694,9 +1823,9 @@
     "adminLaunchPlanUpdateRequest": {
       "type": "object",
       "properties": {
-        "urn": {
-          "type": "string",
-          "title": "Urn of launch plan for which to change state.t"
+        "id": {
+          "$ref": "#/definitions/coreIdentifier",
+          "description": "Identifier of launch plan for which to change state."
         },
         "state": {
           "$ref": "#/definitions/adminLaunchPlanState",
@@ -1722,15 +1851,42 @@
       },
       "title": "Input/output data can represented by actual values or a link to where it is stored"
     },
+    "adminNamedEntityIdentifier": {
+      "type": "object",
+      "properties": {
+        "project": {
+          "type": "string",
+          "description": "Name of the project the resource belongs to."
+        },
+        "domain": {
+          "type": "string",
+          "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project."
+        },
+        "name": {
+          "type": "string",
+          "title": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'"
+        }
+      },
+      "description": "Encapsulation of fields that identifies a Flyte resource.\nA resource can internally have multiple versions."
+    },
+    "adminNamedEntityIdentifierList": {
+      "type": "object",
+      "properties": {
+        "entities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminNamedEntityIdentifier"
+          },
+          "description": "A list of identifiers."
+        }
+      },
+      "description": "Represents a list of Identifiers."
+    },
     "adminNodeExecution": {
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/adminNodeExecutionIdentifier"
-        },
-        "node_execution_id": {
-          "type": "string",
-          "description": "A unique string that identifies a node execution entity."
+          "$ref": "#/definitions/coreNodeExecutionIdentifier"
         },
         "input_uri": {
           "type": "string"
@@ -1790,23 +1946,6 @@
     },
     "adminNodeExecutionEventResponse": {
       "type": "object"
-    },
-    "adminNodeExecutionIdentifier": {
-      "type": "object",
-      "properties": {
-        "node_id": {
-          "type": "string"
-        },
-        "execution_id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "retry_attempt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      },
-      "description": "Encapsulation of fields that identify a Flyte node execution entity."
     },
     "adminNodeExecutionList": {
       "type": "object",
@@ -1932,16 +2071,8 @@
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/adminIdentifier",
+          "$ref": "#/definitions/coreIdentifier",
           "description": "id represents the unique identifier of the task."
-        },
-        "version": {
-          "type": "string",
-          "description": "Indicates a particular of version of the task.\nA task uniquely referenced by id can have multiple versions."
-        },
-        "urn": {
-          "type": "string",
-          "description": "Represents the string that uniquely identifies a revision of a task.\nIdentifier and version together also uniquely identifies a task revision."
         },
         "closure": {
           "$ref": "#/definitions/adminTaskClosure",
@@ -1969,12 +2100,8 @@
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/adminIdentifier",
+          "$ref": "#/definitions/coreIdentifier",
           "description": "id represents the unique identifier of the task."
-        },
-        "version": {
-          "type": "string",
-          "description": "Indicates a particular of version of the task.\nA task uniquely referenced by id can have multiple versions."
         },
         "spec": {
           "$ref": "#/definitions/adminTaskSpec",
@@ -1985,12 +2112,6 @@
     },
     "adminTaskCreateResponse": {
       "type": "object",
-      "properties": {
-        "urn": {
-          "type": "string",
-          "description": "Represents the string that uniquely identifies a revision of a task.\nIdentifier and version together also uniquely identifies a task revision."
-        }
-      },
       "description": "Represents a response structure if task creation succeeds."
     },
     "adminTaskExecutionEventRequest": {
@@ -2035,16 +2156,8 @@
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/adminIdentifier",
+          "$ref": "#/definitions/coreIdentifier",
           "description": "id represents the unique identifier of the workflow."
-        },
-        "version": {
-          "type": "string",
-          "description": "Indicates a particular of version of the workflow.\nA workflow uniquely referenced by id can have multiple versions."
-        },
-        "urn": {
-          "type": "string",
-          "description": "Represents the string that uniquely identifies a revision of a workflow.\nIdentifier and version together also uniquely identifies a workflow revision."
         },
         "closure": {
           "$ref": "#/definitions/adminWorkflowClosure",
@@ -2072,12 +2185,8 @@
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/adminIdentifier",
+          "$ref": "#/definitions/coreIdentifier",
           "description": "id represents the unique identifier of the workflow."
-        },
-        "version": {
-          "type": "string",
-          "description": "Indicates a particular of version of the workflow.\nA workflow uniquely referenced by id can have multiple versions."
         },
         "spec": {
           "$ref": "#/definitions/adminWorkflowSpec",
@@ -2088,12 +2197,6 @@
     },
     "adminWorkflowCreateResponse": {
       "type": "object",
-      "properties": {
-        "urn": {
-          "type": "string",
-          "description": "Represents the string that uniquely identifies a revision of a workflow.\nIdentifier and version together also uniquely identifies a workflow revision."
-        }
-      },
       "description": "Represents a response structure if workflow creation succeeds."
     },
     "adminWorkflowExecutionEventRequest": {
@@ -2452,6 +2555,32 @@
       },
       "description": "Represents the error message from the execution."
     },
+    "coreIdentifier": {
+      "type": "object",
+      "properties": {
+        "resource_type": {
+          "$ref": "#/definitions/coreResourceType",
+          "description": "Identifies the specific type of resource that this identifer corresponds to."
+        },
+        "project": {
+          "type": "string",
+          "description": "Name of the project the resource belongs to."
+        },
+        "domain": {
+          "type": "string",
+          "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project."
+        },
+        "name": {
+          "type": "string",
+          "description": "User provided value for the resource."
+        },
+        "version": {
+          "type": "string",
+          "description": "Specific version of the resource."
+        }
+      },
+      "description": "Encapsulation of fields that uniquely identifies a Flyte resource."
+    },
     "coreIfBlock": {
       "type": "object",
       "properties": {
@@ -2614,6 +2743,22 @@
       },
       "description": "A Workflow graph Node. One unit of execution in the graph. Each node can be linked to a Task, a Workflow or a branch\nnode."
     },
+    "coreNodeExecutionIdentifier": {
+      "type": "object",
+      "properties": {
+        "node_id": {
+          "type": "string"
+        },
+        "execution_id": {
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier"
+        },
+        "retry_attempt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "description": "Encapsulation of fields that identify a Flyte node execution entity."
+    },
     "coreNodeExecutionPhase": {
       "type": "string",
       "enum": [
@@ -2734,6 +2879,17 @@
         }
       },
       "title": "Primitive Types"
+    },
+    "coreResourceType": {
+      "type": "string",
+      "enum": [
+        "UNSPECIFIED",
+        "TASK",
+        "WORKFLOW",
+        "LAUNCH_PLAN"
+      ],
+      "default": "UNSPECIFIED",
+      "description": "Indicates a resource type within Flyte."
     },
     "coreResources": {
       "type": "object",
@@ -2900,7 +3056,7 @@
       "type": "object",
       "properties": {
         "reference_id": {
-          "type": "string",
+          "$ref": "#/definitions/coreIdentifier",
           "description": "A globally unique identifier for the task."
         }
       },
@@ -2910,7 +3066,7 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string",
+          "$ref": "#/definitions/coreIdentifier",
           "description": "Auto generated taskId by the system. Task Id uniquely identifies this task globally."
         },
         "category": {
@@ -2992,6 +3148,24 @@
       },
       "description": "Defines an execution unit recognized by the system and can be referred to by other units to listen to its execution\nevents (started, succeeded, aborted... etc.)."
     },
+    "coreWorkflowExecutionIdentifier": {
+      "type": "object",
+      "properties": {
+        "project": {
+          "type": "string",
+          "description": "Name of the project the resource belongs to."
+        },
+        "domain": {
+          "type": "string",
+          "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project."
+        },
+        "name": {
+          "type": "string",
+          "description": "User or system provided value for the resource."
+        }
+      },
+      "title": "Encapsulation of fields that uniquely identifies a Flyte workflow execution"
+    },
     "coreWorkflowExecutionPhase": {
       "type": "string",
       "enum": [
@@ -3016,11 +3190,11 @@
       "type": "object",
       "properties": {
         "launchplan_ref": {
-          "type": "string",
+          "$ref": "#/definitions/coreIdentifier",
           "description": "A globally unique identifier for the launch plan."
         },
         "sub_workflow_ref": {
-          "type": "string",
+          "$ref": "#/definitions/coreIdentifier",
           "title": "Reference to a subworkflow, that should be defined with the compiler context"
         }
       },
@@ -3030,7 +3204,7 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string",
+          "$ref": "#/definitions/coreIdentifier",
           "description": "This is an autogenerated id by the system. The id is globally unique across the system."
         },
         "metadata": {
@@ -3065,18 +3239,9 @@
     "eventNodeExecutionEvent": {
       "type": "object",
       "properties": {
-        "node_id": {
-          "type": "string",
-          "title": "Node ID"
-        },
-        "execution_id": {
-          "type": "string",
-          "title": "Workflow execution id"
-        },
-        "retry_attempt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "Indicates the retry value for the Node Execution"
+        "id": {
+          "$ref": "#/definitions/coreNodeExecutionIdentifier",
+          "title": "Unique identifier for this node execution"
         },
         "producer_id": {
           "type": "string",
@@ -3107,16 +3272,17 @@
       "type": "object",
       "properties": {
         "task_id": {
-          "type": "string",
+          "$ref": "#/definitions/coreIdentifier",
           "title": "Task execution ID (non-unique per retry)"
         },
-        "client_id": {
-          "type": "string",
-          "title": "A unique ID given by the client that represents this instance of the task execution + retry"
+        "parent_node_execution_id": {
+          "$ref": "#/definitions/coreNodeExecutionIdentifier",
+          "title": "A task execution is always kicked off by a node execution, the event consumer\nwill use the parent_id to relate the task to it's parent node execution"
         },
-        "parent_id": {
-          "type": "string",
-          "title": "A node or task can be the parent of this task, the event consumer will use\nthe parent_id to relate it\nSpecifally for parents that are:\n- Tasks: this will be the client_id of that task\n- Nodes: this will be the node_id + execution_id + retry constructed as an id"
+        "retry_attempt": {
+          "type": "integer",
+          "format": "int64",
+          "title": "retry attempt number for this task, ie., 2 for the second attempt"
         },
         "phase": {
           "$ref": "#/definitions/coreTaskExecutionPhase",
@@ -3134,11 +3300,6 @@
           "type": "string",
           "title": "URI of the task's log file"
         },
-        "retry_attempt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "retry attempt number for this task, ie., 2 for the second attempt"
-        },
         "occurred_at": {
           "type": "string",
           "format": "date-time",
@@ -3155,7 +3316,7 @@
       "type": "object",
       "properties": {
         "execution_id": {
-          "type": "string",
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
           "title": "Workflow execution id"
         },
         "producer_id": {

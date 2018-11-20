@@ -5,23 +5,15 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "flyteidl/admin/common.proto";
 import "flyteidl/core/execution.proto";
+import "flyteidl/core/identifier.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
-
-// Encapsulation of fields that identify a Flyte node execution entity.
-message NodeExecutionIdentifier {
-    string node_id           = 1;
-
-    uint32 execution_id        = 2;
-
-    uint32 retry_attempt     = 3;
-}
 
 // A message used to fetch a single node execution entity.
 message NodeExecutionGetRequest {
 
-   // An opaque string assigned by the flyteadmin that uniquely identifies an individual node execution.
-   string node_execution_id  = 1;  
+   // Uniquely identifies an individual node execution.
+   core.NodeExecutionIdentifier id  = 1;  
 }
 
 // Represents a request structure to retrieve a list of node execution entities.
@@ -45,14 +37,11 @@ message NodeExecutionListRequest {
 
 // Encapsulates all details for a single node execution entity.
 message NodeExecution {
-    NodeExecutionIdentifier id             = 1;
+    core.NodeExecutionIdentifier id        = 1;
 
-    // A unique string that identifies a node execution entity.
-    string node_execution_id               = 2;
+    string input_uri                       = 2;
 
-    string input_uri                       = 3;
-
-    NodeExecutionClosure closure           = 4;
+    NodeExecutionClosure closure           = 3;
 }
 
 // Request structure to retrieve a list of node execution entities.

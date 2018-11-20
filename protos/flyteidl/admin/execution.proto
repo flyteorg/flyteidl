@@ -3,31 +3,45 @@ syntax = "proto3";
 package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
+import "flyteidl/admin/common.proto";
 import "flyteidl/core/literals.proto";
 import "flyteidl/core/execution.proto";
-import "flyteidl/admin/common.proto";
+import "flyteidl/core/identifier.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 // import "validate/validate.proto";
 
 message ExecutionCreateRequest {
-    Identifier id       = 1;
-    ExecutionSpec spec  = 2;
+    // Name of the project the execution belongs to. 
+    string project    = 1;
+
+    // Name of the domain the execution belongs to. 
+    // A domain can be considered as a subset within a specific project.
+    string domain     = 2;
+
+    // User provided value for the resource.
+    // If none is provided the system will generate a unique string.
+    // +optional
+    string name       = 3;
+
+    ExecutionSpec spec  = 4;
 }
 
 message ExecutionCreateResponse {
-    string urn  = 1;
+    core.WorkflowExecutionIdentifier id = 1;
+}
+
+// A message used to fetch a single workflow execution entity.
+message WorkflowExecutionGetRequest {
+   // Uniquely identifies an individual workflow execution.
+   core.WorkflowExecutionIdentifier id  = 1;  
 }
 
 message Execution {
-    Identifier id               = 1;
+    core.WorkflowExecutionIdentifier id               = 1;
 
-    // The execution_id string is contructed from the 'id'.
-    // If name is not available in the 'id', the system will generate a random name
-    string execution_id         = 2;
-
-    ExecutionSpec spec          = 3;
-    ExecutionClosure closure    = 4;
+    ExecutionSpec spec                                = 2;
+    ExecutionClosure closure                          = 3;
 }
 
 message ExecutionList {
@@ -45,7 +59,7 @@ message LiteralMapBlob {
     }
 }
 
-// Encapsultes the results of the Execution
+// Encapsulates the results of the Execution
 message ExecutionClosure {
     oneof output_result {
         LiteralMapBlob outputs	= 1;
@@ -98,8 +112,8 @@ message ExecutionMetadata {
 }
 
 message ExecutionSpec {
-    // Launch plan urn to be executed
-    string launch_plan_urn        = 1;
+    // Launch plan to be executed
+    core.Identifier launch_plan        = 1;
 
     // Input values to be passed for the execution
     core.LiteralMap inputs          = 2;

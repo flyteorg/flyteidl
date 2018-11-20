@@ -51,8 +51,6 @@ func (m *LaunchPlanCreateRequest) Validate() error {
 		}
 	}
 
-	// no validation rules for Version
-
 	if v, ok := interface{}(m.GetSpec()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return LaunchPlanCreateRequestValidationError{
@@ -130,8 +128,6 @@ func (m *LaunchPlanCreateResponse) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Urn
-
 	return nil
 }
 
@@ -207,10 +203,6 @@ func (m *LaunchPlan) Validate() error {
 			}
 		}
 	}
-
-	// no validation rules for Version
-
-	// no validation rules for Urn
 
 	if v, ok := interface{}(m.GetSpec()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
@@ -377,7 +369,15 @@ func (m *LaunchPlanSpec) Validate() error {
 		return nil
 	}
 
-	// no validation rules for WorkflowUrn
+	if v, ok := interface{}(m.GetWorkflowId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return LaunchPlanSpecValidationError{
+				field:  "WorkflowId",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	if v, ok := interface{}(m.GetEntityMetadata()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
@@ -677,7 +677,15 @@ func (m *LaunchPlanUpdateRequest) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Urn
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return LaunchPlanUpdateRequestValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	// no validation rules for State
 

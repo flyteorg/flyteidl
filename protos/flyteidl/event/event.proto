@@ -5,17 +5,18 @@ package flyteidl.event;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/event";
 
 import "flyteidl/core/execution.proto";
+import "flyteidl/core/identifier.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/struct.proto";
 
 message WorkflowExecutionEvent {
     // Workflow execution id
-    string execution_id                   = 1;
+    core.WorkflowExecutionIdentifier execution_id = 1;
 
     // the id of the originator (Propeller) of the event
-    string producer_id                       = 2;
+    string producer_id = 2;
 
-    core.WorkflowExecutionPhase phase     = 3;
+    core.WorkflowExecutionPhase phase = 3;
 
     // This timestamp represents when the original event occurred
     google.protobuf.Timestamp occurred_at = 4;
@@ -23,78 +24,66 @@ message WorkflowExecutionEvent {
     oneof output_result {
         // URL to the output of the execution, it encodes all the information
         // including Cloud source provider. ie., s3://...
-        string output_uri                 = 5;
+        string output_uri = 5;
 
         // Error information for the execution
-        core.ExecutionError error         = 6;
+        core.ExecutionError error = 6;
     }
 }
 
 message NodeExecutionEvent {
-    // Node ID
-    string node_id                                  = 1;
-
-    // Workflow execution id
-    string execution_id                             = 2;
-
-    // Indicates the retry value for the Node Execution
-    uint32 retry_attempt                            = 3;
+    // Unique identifier for this node execution
+    core.NodeExecutionIdentifier id = 1;
 
     // the id of the originator (Propeller) of the event
-    string producer_id                                 = 4;
+    string producer_id = 2;
 
-    core.NodeExecutionPhase phase                   = 5;
+    core.NodeExecutionPhase phase = 3;
 
     // This timestamp represents when the original event occurred
-    google.protobuf.Timestamp occurred_at           = 6;
+    google.protobuf.Timestamp occurred_at = 4;
 
-    string input_uri                                = 7;
+    string input_uri = 5;
 
     oneof output_result {
         // URL to the output of the execution, it encodes all the information
         // including Cloud source provider. ie., s3://...
-        string output_uri                           = 8;
+        string output_uri = 6;
 
         // Error information for the execution
-        core.ExecutionError error                   = 9;
+        core.ExecutionError error = 7;
     }
 }
 
 // Plugins specific execution event information. For tasks like Python, Hive, Spark, DynamicJob.
 message TaskExecutionEvent {
     // Task execution ID (non-unique per retry)
-    string task_id                        = 1;
+    core.Identifier task_id = 1;
 
-    // A unique ID given by the client that represents this instance of the task execution + retry
-    string client_id                      = 2;
+    // A task execution is always kicked off by a node execution, the event consumer
+    // will use the parent_id to relate the task to it's parent node execution
+    core.NodeExecutionIdentifier parent_node_execution_id = 2;
 
-    // A node or task can be the parent of this task, the event consumer will use
-    // the parent_id to relate it
-    // Specifally for parents that are:
-    // - Tasks: this will be the client_id of that task
-    // - Nodes: this will be the node_id + execution_id + retry constructed as an id
-    string parent_id                      = 3;
+    // retry attempt number for this task, ie., 2 for the second attempt
+    uint32 retry_attempt = 3;
 
     // Phase associated with the event
-    core.TaskExecutionPhase phase         = 4;
+    core.TaskExecutionPhase phase = 4;
 
     // id of the process that sent this event, mainly for trace debugging
-    string producer_id                    = 5;
+    string producer_id = 5;
 
     // Optional: a sequence number that denotes the ordering across events.
     // This is useful in situations where a plugin can send multiple events
     // for the same phase
-    string version_num                    = 6;
+    string version_num = 6;
 
     // URI of the task's log file
-    string log_uri                        = 7;
-
-    // retry attempt number for this task, ie., 2 for the second attempt
-    uint32 retry_attempt                  = 8;
+    string log_uri = 7;
 
     // This represents the timestamp of when the event occured, not the request timestamp
-    google.protobuf.Timestamp occurred_at = 9;
+    google.protobuf.Timestamp occurred_at = 8;
 
     // Custom data that the task plugin sends back. This is extensible to allow various plugins in the system.
-    google.protobuf.Struct custom_info    = 10;
+    google.protobuf.Struct custom_info = 9;
 }

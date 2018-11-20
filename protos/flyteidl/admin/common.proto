@@ -4,11 +4,12 @@ package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "flyteidl/core/execution.proto";
+import "flyteidl/core/identifier.proto";
 // import "validate/validate.proto";
 
 // Encapsulation of fields that identifies a Flyte resource.
 // A resource can internally have multiple versions.
-message Identifier {
+message NamedEntityIdentifier {
     // Name of the project the resource belongs to.
     string project    = 1;  // [(validate.rules).string.min_bytes = 1];
     // Name of the domain the resource belongs to.
@@ -36,7 +37,7 @@ message Sort {
 }
 
 // Represents a request structure to list identifiers.
-message IdentifierListRequest {
+message NamedEntityIdentifierListRequest {
     // Name of the project that contains the identifiers.
     string project    = 1;  // [(validate.rules).string.min_bytes = 1];
     // Name of the domain the identifiers belongs to within the project.
@@ -55,22 +56,22 @@ message IdentifierListRequest {
 }
 
 // Represents a list of Identifiers.
-message IdentifierList {
+message NamedEntityIdentifierList {
     // A list of identifiers.
-    repeated Identifier entities = 1;
+    repeated NamedEntityIdentifier entities = 1;
 }
 
 // Represents a structure to fetch a single resource.
 message ObjectGetRequest {
-    // Indicates the string returned by the server that identifies a version of resource.
-    string urn      = 1;
+    // Indicates a unique version of resource.
+    core.Identifier id   = 1;
 }
 
 // Represents a request structure to retrieve a list of resources.
 // Resources include: Task, Workflow, LaunchPlan
 message ResourceListRequest {
     // id represents the unique identifier of the resource.
-    Identifier id   = 1;
+    NamedEntityIdentifier id   = 1;
     // Indicates the number of resources to be returned.
     // +optional
     uint32 limit    = 2;

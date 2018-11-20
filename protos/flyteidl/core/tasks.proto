@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "flyteidl/core/identifier.proto";
 import "flyteidl/core/interface.proto";
 import "flyteidl/core/literals.proto";
 import "google/protobuf/duration.proto";
@@ -88,7 +89,7 @@ message TaskMetadata {
 // Tasks are registered as a first step in the system.
 message TaskTemplate {
     // Auto generated taskId by the system. Task Id uniquely identifies this task globally.
-    string id = 1;
+    Identifier id = 1;
 
     // Category of the task. These are predefined and help provide defaults
     TaskCategory category = 2;
@@ -106,7 +107,7 @@ message TaskTemplate {
     TypedInterface interface = 5;
 
     // Custom data about the task. This is extensible to allow various plugins in the system.
-     google.protobuf.Struct custom = 6;
+    google.protobuf.Struct custom = 6;
 
     // Known target types that the system will guarantee plugins for. Custom SDK plugins are allowed to set these if needed.
     // If no corresponding execution-layer plugins are found, the system will default to handling these using built-in

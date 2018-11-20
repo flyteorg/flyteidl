@@ -67,7 +67,7 @@ func (s *adminEventSink) Sink(ctx context.Context, eventType EventType, message 
 		}
 		_, err := s.adminClient.CreateNodeEvent(ctx, request)
 		if err != nil {
-			logger.Errorf(ctx, "failed to send node event(%d, %d) %v", event.NodeId, event.Phase, err)
+			logger.Errorf(ctx, "failed to send node event(%d, %d) %v", event.Id.NodeId, event.Phase, err)
 			return err
 		}
 	case TaskEvent:

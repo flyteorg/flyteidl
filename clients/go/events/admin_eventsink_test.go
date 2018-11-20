@@ -28,7 +28,7 @@ func TestAdminWorkflowEvent(t *testing.T) {
 	wfEvent := &event.WorkflowExecutionEvent{
 		Phase:        core.WorkflowExecutionPhase_WORKFLOW_PHASE_RUNNING,
 		OccurredAt:   ptypes.TimestampNow(),
-		ExecutionId:  "",
+		ExecutionId:  nil,
 		ProducerId:   "",
 		OutputResult: &event.WorkflowExecutionEvent_OutputUri{""},
 	}
@@ -49,12 +49,13 @@ func TestAdminNodeEvent(t *testing.T) {
 	adminEventSink, adminClient := GetTestAdminEventSink(t)
 
 	nodeEvent := &event.NodeExecutionEvent{
+		Id: &core.NodeExecutionIdentifier{
+			RetryAttempt: 1,
+		},
 		Phase:        core.NodeExecutionPhase_NODE_PHASE_FAILED,
 		OccurredAt:   ptypes.TimestampNow(),
-		ExecutionId:  "",
 		ProducerId:   "",
 		InputUri:     "input-uri",
-		RetryAttempt: 1,
 		OutputResult: &event.NodeExecutionEvent_OutputUri{OutputUri: ""},
 	}
 
@@ -76,10 +77,17 @@ func TestAdminTaskEvent(t *testing.T) {
 	taskEvent := &event.TaskExecutionEvent{
 		Phase:        core.TaskExecutionPhase_TASK_PHASE_SUCCEEDED,
 		OccurredAt:   ptypes.TimestampNow(),
-		TaskId:       "task-id",
+		TaskId:       &core.Identifier{ResourceType: core.ResourceType_TASK, Name: "task-id"},
 		RetryAttempt: 1,
-		ClientId:     "client-id",
-		ParentId:     "parent-id",
+		ParentNodeExecutionId:	&core.NodeExecutionIdentifier{
+			NodeId: "node-id",
+			RetryAttempt: 3,
+			ExecutionId: &core.WorkflowExecutionIdentifier{
+				Project: "p",
+				Domain: "d",
+				Name: "n",
+			},
+		},
 		LogUri:       "log-uri",
 	}
 

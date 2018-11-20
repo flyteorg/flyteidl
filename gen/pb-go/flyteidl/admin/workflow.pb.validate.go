@@ -51,8 +51,6 @@ func (m *WorkflowCreateRequest) Validate() error {
 		}
 	}
 
-	// no validation rules for Version
-
 	if v, ok := interface{}(m.GetSpec()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return WorkflowCreateRequestValidationError{
@@ -130,8 +128,6 @@ func (m *WorkflowCreateResponse) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Urn
-
 	return nil
 }
 
@@ -207,10 +203,6 @@ func (m *Workflow) Validate() error {
 			}
 		}
 	}
-
-	// no validation rules for Version
-
-	// no validation rules for Urn
 
 	if v, ok := interface{}(m.GetClosure()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {

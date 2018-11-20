@@ -4,20 +4,20 @@ package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "flyteidl/core/literals.proto";
+import "flyteidl/core/identifier.proto";
 import "flyteidl/core/interface.proto";
 import "flyteidl/admin/schedule.proto";
 import "flyteidl/admin/common.proto";
 import "google/protobuf/timestamp.proto";
 
 message LaunchPlanCreateRequest {
-    Identifier id       = 1;
-    string version      = 2;
+    core.Identifier id       = 1;
 
-    LaunchPlanSpec spec = 3;
+    LaunchPlanSpec spec      = 2;
 }
 
 message LaunchPlanCreateResponse {
-    string urn		= 1;
+    // Purposefully empty, may be populated in the future.
 }
 
 // Indicates various states of an Execution - both task and workflow
@@ -27,12 +27,10 @@ enum LaunchPlanState {
 }
 
 message LaunchPlan {
-    Identifier id       	= 1;
-    string version      	= 2;
-    string urn          	= 3;
+    core.Identifier id       	= 1;
 
-    LaunchPlanSpec spec 	= 4;
-    LaunchPlanClosure closure	= 5;
+    LaunchPlanSpec spec 	= 2;
+    LaunchPlanClosure closure	= 3;
 }
 
 message LaunchPlanList {
@@ -41,19 +39,19 @@ message LaunchPlanList {
 
 message LaunchPlanSpec {
     // Reference to the Workflow template that the launch plan references
-    string workflow_urn   = 1;
+    core.Identifier workflow_id           = 1;
 
     // Metadata for the Launch Plan
     LaunchPlanMetadata entity_metadata    = 2;
 
     // Input values to be passed for the execution
-    core.ParameterMap default_inputs     = 3;
+    core.ParameterMap default_inputs      = 3;
 
     // Fixed, non-overridable inputs for the Launch Plan
-    core.LiteralMap fixed_inputs = 4;
+    core.LiteralMap fixed_inputs          = 4;
 
     // String to indicate the role to use to execute the workflow underneath
-    string role = 5;
+    string role                           = 5;
 }
 
 message LaunchPlanClosure {
@@ -82,8 +80,8 @@ message LaunchPlanMetadata {
 }
 
 message LaunchPlanUpdateRequest {
-    // Urn of launch plan for which to change state.t
-    string urn                           = 1;
+    // Identifier of launch plan for which to change state.
+    core.Identifier id                   = 1;
 
     // Desired state to apply to the launch plan.
     LaunchPlanState state                = 2;

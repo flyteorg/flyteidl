@@ -3,6 +3,7 @@ syntax = "proto3";
 package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
+import "flyteidl/core/identifier.proto";
 import "flyteidl/core/tasks.proto";
 import "flyteidl/core/compiler.proto";
 import "flyteidl/admin/common.proto";
@@ -11,33 +12,25 @@ import "google/protobuf/timestamp.proto";
 // Represents a request structure to create a revision of a task.
 message TaskCreateRequest {
     // id represents the unique identifier of the task.
-    Identifier id           = 1;
-    // Indicates a particular of version of the task.
-    // A task uniquely referenced by id can have multiple versions.
-    string version          = 2;
+    core.Identifier id           = 1;
+    
     // Represents the specification for task.
-    TaskSpec spec           = 3;
+    TaskSpec spec                = 2;
 }
 
 // Represents a response structure if task creation succeeds.
 message TaskCreateResponse {
-    // Represents the string that uniquely identifies a revision of a task.
-    // Identifier and version together also uniquely identifies a task revision.
-    string urn        = 1;
+    // Purposefully empty, may be populated in the future.
 }
 
 // Represents the task structure stored in the Admin
 message Task {
     // id represents the unique identifier of the task.
-    Identifier id       = 1;
-    // Indicates a particular of version of the task.
-    // A task uniquely referenced by id can have multiple versions.
-    string version      = 2;
-    // Represents the string that uniquely identifies a revision of a task.
-    // Identifier and version together also uniquely identifies a task revision.
-    string urn          = 3;
+    core.Identifier id       = 1;
+
+
     // closure encapsulates all the fields that maps to a compiled version of the task.
-    TaskClosure closure = 4;
+    TaskClosure closure      = 2;
 }
 
 // Represents a list of tasks returned from the admin.

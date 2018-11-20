@@ -24,11 +24,11 @@ service AdminService {
 
   rpc GetTask (flyteidl.admin.ObjectGetRequest) returns (flyteidl.admin.Task) {
     option (google.api.http) = {
-      get: "/api/v1/tasks/{urn}"
+      get: "/api/v1/tasks/{id.project}/{id.domain}/{id.name}/{id.version}"
     };
   }
 
-  rpc ListTaskIds (flyteidl.admin.IdentifierListRequest) returns (flyteidl.admin.IdentifierList) {
+  rpc ListTaskIds (flyteidl.admin.NamedEntityIdentifierListRequest) returns (flyteidl.admin.NamedEntityIdentifierList) {
     option (google.api.http) = {
       get: "/api/v1/project/{project}/domain/{domain}/task_ids"
     };
@@ -52,11 +52,11 @@ service AdminService {
 
   rpc GetWorkflow (flyteidl.admin.ObjectGetRequest) returns (flyteidl.admin.Workflow) {
     option (google.api.http) = {
-      get: "/api/v1/workflows/{urn}"
+      get: "/api/v1/workflows/{id.project}/{id.domain}/{id.name}/{id.version}"
     };
   }
 
-  rpc ListWorkflowIds (flyteidl.admin.IdentifierListRequest) returns (flyteidl.admin.IdentifierList) {
+  rpc ListWorkflowIds (flyteidl.admin.NamedEntityIdentifierListRequest) returns (flyteidl.admin.NamedEntityIdentifierList) {
     option (google.api.http) = {
       get: "/api/v1/project/{project}/domain/{domain}/workflow_ids"
     };
@@ -80,11 +80,11 @@ service AdminService {
 
   rpc GetLaunchPlan (flyteidl.admin.ObjectGetRequest) returns (flyteidl.admin.LaunchPlan) {
     option (google.api.http) = {
-      get: "/api/v1/launch_plans/{urn}"
+      get: "/api/v1/launch_plan/{id.project}/{id.domain}/{id.name}/{id.version}"
     };
   }
 
-  rpc ListLaunchPlanIds (flyteidl.admin.IdentifierListRequest) returns (flyteidl.admin.IdentifierList) {
+  rpc ListLaunchPlanIds (flyteidl.admin.NamedEntityIdentifierListRequest) returns (flyteidl.admin.NamedEntityIdentifierList) {
     option (google.api.http) = {
       get: "/api/v1/project/{project}/domain/{domain}/launch_plan_ids"
     };
@@ -101,7 +101,7 @@ service AdminService {
 
   rpc UpdateLaunchPlan (flyteidl.admin.LaunchPlanUpdateRequest) returns (flyteidl.admin.LaunchPlanUpdateResponse) {
     option (google.api.http) = {
-      put: "/api/v1/launch_plans/{urn}"
+      put: "/api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version}"
       body: "*"
     };
   }
@@ -113,9 +113,9 @@ service AdminService {
     };
   }
 
-  rpc GetExecution (flyteidl.admin.ObjectGetRequest) returns (flyteidl.admin.Execution) {
+  rpc GetExecution (flyteidl.admin.WorkflowExecutionGetRequest) returns (flyteidl.admin.Execution) {
     option (google.api.http) = {
-      get: "/api/v1/executions/{urn}"
+      get: "/api/v1/executions/{id.project}/{id.domain}/{id.name}"
     };
   }
 
@@ -127,7 +127,7 @@ service AdminService {
 
   rpc GetNodeExecution (flyteidl.admin.NodeExecutionGetRequest) returns (flyteidl.admin.NodeExecution) {
     option (google.api.http) = {
-      get: "/api/v1/node_executions/{node_execution_id}"
+      get: "/api/v1/executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}"
     };
   }
 

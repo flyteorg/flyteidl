@@ -41,15 +41,11 @@ func (m *ExecutionCreateRequest) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return ExecutionCreateRequestValidationError{
-				field:  "Id",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
+	// no validation rules for Project
+
+	// no validation rules for Domain
+
+	// no validation rules for Name
 
 	if v, ok := interface{}(m.GetSpec()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
@@ -128,7 +124,15 @@ func (m *ExecutionCreateResponse) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Urn
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionCreateResponseValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	return nil
 }
@@ -189,6 +193,84 @@ var _ interface {
 	ErrorName() string
 } = ExecutionCreateResponseValidationError{}
 
+// Validate checks the field values on WorkflowExecutionGetRequest with the
+// rules defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *WorkflowExecutionGetRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return WorkflowExecutionGetRequestValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// WorkflowExecutionGetRequestValidationError is the validation error returned
+// by WorkflowExecutionGetRequest.Validate if the designated constraints
+// aren't met.
+type WorkflowExecutionGetRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e WorkflowExecutionGetRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e WorkflowExecutionGetRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e WorkflowExecutionGetRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e WorkflowExecutionGetRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e WorkflowExecutionGetRequestValidationError) ErrorName() string {
+	return "WorkflowExecutionGetRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e WorkflowExecutionGetRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sWorkflowExecutionGetRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = WorkflowExecutionGetRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = WorkflowExecutionGetRequestValidationError{}
+
 // Validate checks the field values on Execution with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.
 func (m *Execution) Validate() error {
@@ -205,8 +287,6 @@ func (m *Execution) Validate() error {
 			}
 		}
 	}
-
-	// no validation rules for ExecutionId
 
 	if v, ok := interface{}(m.GetSpec()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
@@ -690,7 +770,15 @@ func (m *ExecutionSpec) Validate() error {
 		return nil
 	}
 
-	// no validation rules for LaunchPlanUrn
+	if v, ok := interface{}(m.GetLaunchPlan()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionSpecValidationError{
+				field:  "LaunchPlan",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	if v, ok := interface{}(m.GetInputs()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {

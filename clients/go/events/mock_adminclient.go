@@ -163,7 +163,7 @@ func (mr *MockAdminServiceClientMockRecorder) CreateWorkflowEvent(arg0, arg1 int
 }
 
 // GetExecution mocks base method
-func (m *MockAdminServiceClient) GetExecution(arg0 context.Context, arg1 *admin.ObjectGetRequest, arg2 ...grpc.CallOption) (*admin.Execution, error) {
+func (m *MockAdminServiceClient) GetExecution(arg0 context.Context, arg1 *admin.WorkflowExecutionGetRequest, arg2 ...grpc.CallOption) (*admin.Execution, error) {
 	varargs := []interface{}{arg0, arg1}
 	for _, a := range arg2 {
 		varargs = append(varargs, a)
@@ -271,13 +271,13 @@ func (mr *MockAdminServiceClientMockRecorder) ListExecutions(arg0, arg1 interfac
 }
 
 // ListLaunchPlanIds mocks base method
-func (m *MockAdminServiceClient) ListLaunchPlanIds(arg0 context.Context, arg1 *admin.IdentifierListRequest, arg2 ...grpc.CallOption) (*admin.IdentifierList, error) {
+func (m *MockAdminServiceClient) ListLaunchPlanIds(arg0 context.Context, arg1 *admin.NamedEntityIdentifierListRequest, arg2 ...grpc.CallOption) (*admin.NamedEntityIdentifierList, error) {
 	varargs := []interface{}{arg0, arg1}
 	for _, a := range arg2 {
 		varargs = append(varargs, a)
 	}
 	ret := m.ctrl.Call(m, "ListLaunchPlanIds", varargs...)
-	ret0, _ := ret[0].(*admin.IdentifierList)
+	ret0, _ := ret[0].(*admin.NamedEntityIdentifierList)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -343,13 +343,13 @@ func (mr *MockAdminServiceClientMockRecorder) ListProjects(arg0, arg1 interface{
 }
 
 // ListTaskIds mocks base method
-func (m *MockAdminServiceClient) ListTaskIds(arg0 context.Context, arg1 *admin.IdentifierListRequest, arg2 ...grpc.CallOption) (*admin.IdentifierList, error) {
+func (m *MockAdminServiceClient) ListTaskIds(arg0 context.Context, arg1 *admin.NamedEntityIdentifierListRequest, arg2 ...grpc.CallOption) (*admin.NamedEntityIdentifierList, error) {
 	varargs := []interface{}{arg0, arg1}
 	for _, a := range arg2 {
 		varargs = append(varargs, a)
 	}
 	ret := m.ctrl.Call(m, "ListTaskIds", varargs...)
-	ret0, _ := ret[0].(*admin.IdentifierList)
+	ret0, _ := ret[0].(*admin.NamedEntityIdentifierList)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -379,13 +379,13 @@ func (mr *MockAdminServiceClientMockRecorder) ListTasks(arg0, arg1 interface{}, 
 }
 
 // ListWorkflowIds mocks base method
-func (m *MockAdminServiceClient) ListWorkflowIds(arg0 context.Context, arg1 *admin.IdentifierListRequest, arg2 ...grpc.CallOption) (*admin.IdentifierList, error) {
+func (m *MockAdminServiceClient) ListWorkflowIds(arg0 context.Context, arg1 *admin.NamedEntityIdentifierListRequest, arg2 ...grpc.CallOption) (*admin.NamedEntityIdentifierList, error) {
 	varargs := []interface{}{arg0, arg1}
 	for _, a := range arg2 {
 		varargs = append(varargs, a)
 	}
 	ret := m.ctrl.Call(m, "ListWorkflowIds", varargs...)
-	ret0, _ := ret[0].(*admin.IdentifierList)
+	ret0, _ := ret[0].(*admin.NamedEntityIdentifierList)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }

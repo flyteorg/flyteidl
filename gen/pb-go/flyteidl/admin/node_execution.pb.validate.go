@@ -33,79 +33,6 @@ var (
 	_ = ptypes.DynamicAny{}
 )
 
-// Validate checks the field values on NodeExecutionIdentifier with the rules
-// defined in the proto definition for this message. If any rules are
-// violated, an error is returned.
-func (m *NodeExecutionIdentifier) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	// no validation rules for NodeId
-
-	// no validation rules for ExecutionId
-
-	// no validation rules for RetryAttempt
-
-	return nil
-}
-
-// NodeExecutionIdentifierValidationError is the validation error returned by
-// NodeExecutionIdentifier.Validate if the designated constraints aren't met.
-type NodeExecutionIdentifierValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e NodeExecutionIdentifierValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e NodeExecutionIdentifierValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e NodeExecutionIdentifierValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e NodeExecutionIdentifierValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e NodeExecutionIdentifierValidationError) ErrorName() string {
-	return "NodeExecutionIdentifierValidationError"
-}
-
-// Error satisfies the builtin error interface
-func (e NodeExecutionIdentifierValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sNodeExecutionIdentifier.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = NodeExecutionIdentifierValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = NodeExecutionIdentifierValidationError{}
-
 // Validate checks the field values on NodeExecutionGetRequest with the rules
 // defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
@@ -114,7 +41,15 @@ func (m *NodeExecutionGetRequest) Validate() error {
 		return nil
 	}
 
-	// no validation rules for NodeExecutionId
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return NodeExecutionGetRequestValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	return nil
 }
@@ -275,8 +210,6 @@ func (m *NodeExecution) Validate() error {
 			}
 		}
 	}
-
-	// no validation rules for NodeExecutionId
 
 	// no validation rules for InputUri
 

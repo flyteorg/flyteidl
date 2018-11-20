@@ -33,8 +33,8 @@ class AdminServiceStub(object):
         )
     self.ListTaskIds = channel.unary_unary(
         '/flyteidl.service.AdminService/ListTaskIds',
-        request_serializer=flyteidl_dot_admin_dot_common__pb2.IdentifierListRequest.SerializeToString,
-        response_deserializer=flyteidl_dot_admin_dot_common__pb2.IdentifierList.FromString,
+        request_serializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityIdentifierListRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityIdentifierList.FromString,
         )
     self.ListTasks = channel.unary_unary(
         '/flyteidl.service.AdminService/ListTasks',
@@ -53,8 +53,8 @@ class AdminServiceStub(object):
         )
     self.ListWorkflowIds = channel.unary_unary(
         '/flyteidl.service.AdminService/ListWorkflowIds',
-        request_serializer=flyteidl_dot_admin_dot_common__pb2.IdentifierListRequest.SerializeToString,
-        response_deserializer=flyteidl_dot_admin_dot_common__pb2.IdentifierList.FromString,
+        request_serializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityIdentifierListRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityIdentifierList.FromString,
         )
     self.ListWorkflows = channel.unary_unary(
         '/flyteidl.service.AdminService/ListWorkflows',
@@ -73,8 +73,8 @@ class AdminServiceStub(object):
         )
     self.ListLaunchPlanIds = channel.unary_unary(
         '/flyteidl.service.AdminService/ListLaunchPlanIds',
-        request_serializer=flyteidl_dot_admin_dot_common__pb2.IdentifierListRequest.SerializeToString,
-        response_deserializer=flyteidl_dot_admin_dot_common__pb2.IdentifierList.FromString,
+        request_serializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityIdentifierListRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityIdentifierList.FromString,
         )
     self.ListLaunchPlans = channel.unary_unary(
         '/flyteidl.service.AdminService/ListLaunchPlans',
@@ -93,7 +93,7 @@ class AdminServiceStub(object):
         )
     self.GetExecution = channel.unary_unary(
         '/flyteidl.service.AdminService/GetExecution',
-        request_serializer=flyteidl_dot_admin_dot_common__pb2.ObjectGetRequest.SerializeToString,
+        request_serializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_execution__pb2.Execution.FromString,
         )
     self.ListExecutions = channel.unary_unary(
@@ -318,8 +318,8 @@ def add_AdminServiceServicer_to_server(servicer, server):
       ),
       'ListTaskIds': grpc.unary_unary_rpc_method_handler(
           servicer.ListTaskIds,
-          request_deserializer=flyteidl_dot_admin_dot_common__pb2.IdentifierListRequest.FromString,
-          response_serializer=flyteidl_dot_admin_dot_common__pb2.IdentifierList.SerializeToString,
+          request_deserializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityIdentifierListRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityIdentifierList.SerializeToString,
       ),
       'ListTasks': grpc.unary_unary_rpc_method_handler(
           servicer.ListTasks,
@@ -338,8 +338,8 @@ def add_AdminServiceServicer_to_server(servicer, server):
       ),
       'ListWorkflowIds': grpc.unary_unary_rpc_method_handler(
           servicer.ListWorkflowIds,
-          request_deserializer=flyteidl_dot_admin_dot_common__pb2.IdentifierListRequest.FromString,
-          response_serializer=flyteidl_dot_admin_dot_common__pb2.IdentifierList.SerializeToString,
+          request_deserializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityIdentifierListRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityIdentifierList.SerializeToString,
       ),
       'ListWorkflows': grpc.unary_unary_rpc_method_handler(
           servicer.ListWorkflows,
@@ -358,8 +358,8 @@ def add_AdminServiceServicer_to_server(servicer, server):
       ),
       'ListLaunchPlanIds': grpc.unary_unary_rpc_method_handler(
           servicer.ListLaunchPlanIds,
-          request_deserializer=flyteidl_dot_admin_dot_common__pb2.IdentifierListRequest.FromString,
-          response_serializer=flyteidl_dot_admin_dot_common__pb2.IdentifierList.SerializeToString,
+          request_deserializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityIdentifierListRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityIdentifierList.SerializeToString,
       ),
       'ListLaunchPlans': grpc.unary_unary_rpc_method_handler(
           servicer.ListLaunchPlans,
@@ -378,7 +378,7 @@ def add_AdminServiceServicer_to_server(servicer, server):
       ),
       'GetExecution': grpc.unary_unary_rpc_method_handler(
           servicer.GetExecution,
-          request_deserializer=flyteidl_dot_admin_dot_common__pb2.ObjectGetRequest.FromString,
+          request_deserializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_execution__pb2.Execution.SerializeToString,
       ),
       'ListExecutions': grpc.unary_unary_rpc_method_handler(

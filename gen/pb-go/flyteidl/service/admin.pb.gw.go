@@ -42,6 +42,10 @@ func request_AdminService_CreateTask_0(ctx context.Context, marshaler runtime.Ma
 
 }
 
+var (
+	filter_AdminService_GetTask_0 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "project": 1, "domain": 2, "name": 3, "version": 4}, Base: []int{1, 1, 1, 2, 3, 4, 0, 0, 0, 0}, Check: []int{0, 1, 2, 2, 2, 2, 3, 4, 5, 6}}
+)
+
 func request_AdminService_GetTask_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq admin.ObjectGetRequest
 	var metadata runtime.ServerMetadata
@@ -53,15 +57,52 @@ func request_AdminService_GetTask_0(ctx context.Context, marshaler runtime.Marsh
 		_   = err
 	)
 
-	val, ok = pathParams["urn"]
+	val, ok = pathParams["id.project"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "urn")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.project")
 	}
 
-	protoReq.Urn, err = runtime.String(val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.project", val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "urn", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.project", err)
+	}
+
+	val, ok = pathParams["id.domain"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.domain")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.domain", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.domain", err)
+	}
+
+	val, ok = pathParams["id.name"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.name")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.name", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.name", err)
+	}
+
+	val, ok = pathParams["id.version"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.version")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.version", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.version", err)
+	}
+
+	if err := runtime.PopulateQueryParameters(&protoReq, req.URL.Query(), filter_AdminService_GetTask_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	msg, err := client.GetTask(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -74,7 +115,7 @@ var (
 )
 
 func request_AdminService_ListTaskIds_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq admin.IdentifierListRequest
+	var protoReq admin.NamedEntityIdentifierListRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -231,6 +272,10 @@ func request_AdminService_CreateWorkflow_0(ctx context.Context, marshaler runtim
 
 }
 
+var (
+	filter_AdminService_GetWorkflow_0 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "project": 1, "domain": 2, "name": 3, "version": 4}, Base: []int{1, 1, 1, 2, 3, 4, 0, 0, 0, 0}, Check: []int{0, 1, 2, 2, 2, 2, 3, 4, 5, 6}}
+)
+
 func request_AdminService_GetWorkflow_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq admin.ObjectGetRequest
 	var metadata runtime.ServerMetadata
@@ -242,15 +287,52 @@ func request_AdminService_GetWorkflow_0(ctx context.Context, marshaler runtime.M
 		_   = err
 	)
 
-	val, ok = pathParams["urn"]
+	val, ok = pathParams["id.project"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "urn")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.project")
 	}
 
-	protoReq.Urn, err = runtime.String(val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.project", val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "urn", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.project", err)
+	}
+
+	val, ok = pathParams["id.domain"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.domain")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.domain", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.domain", err)
+	}
+
+	val, ok = pathParams["id.name"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.name")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.name", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.name", err)
+	}
+
+	val, ok = pathParams["id.version"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.version")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.version", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.version", err)
+	}
+
+	if err := runtime.PopulateQueryParameters(&protoReq, req.URL.Query(), filter_AdminService_GetWorkflow_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	msg, err := client.GetWorkflow(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -263,7 +345,7 @@ var (
 )
 
 func request_AdminService_ListWorkflowIds_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq admin.IdentifierListRequest
+	var protoReq admin.NamedEntityIdentifierListRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -420,6 +502,10 @@ func request_AdminService_CreateLaunchPlan_0(ctx context.Context, marshaler runt
 
 }
 
+var (
+	filter_AdminService_GetLaunchPlan_0 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "project": 1, "domain": 2, "name": 3, "version": 4}, Base: []int{1, 1, 1, 2, 3, 4, 0, 0, 0, 0}, Check: []int{0, 1, 2, 2, 2, 2, 3, 4, 5, 6}}
+)
+
 func request_AdminService_GetLaunchPlan_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq admin.ObjectGetRequest
 	var metadata runtime.ServerMetadata
@@ -431,15 +517,52 @@ func request_AdminService_GetLaunchPlan_0(ctx context.Context, marshaler runtime
 		_   = err
 	)
 
-	val, ok = pathParams["urn"]
+	val, ok = pathParams["id.project"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "urn")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.project")
 	}
 
-	protoReq.Urn, err = runtime.String(val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.project", val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "urn", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.project", err)
+	}
+
+	val, ok = pathParams["id.domain"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.domain")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.domain", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.domain", err)
+	}
+
+	val, ok = pathParams["id.name"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.name")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.name", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.name", err)
+	}
+
+	val, ok = pathParams["id.version"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.version")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.version", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.version", err)
+	}
+
+	if err := runtime.PopulateQueryParameters(&protoReq, req.URL.Query(), filter_AdminService_GetLaunchPlan_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	msg, err := client.GetLaunchPlan(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -452,7 +575,7 @@ var (
 )
 
 func request_AdminService_ListLaunchPlanIds_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq admin.IdentifierListRequest
+	var protoReq admin.NamedEntityIdentifierListRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -611,15 +734,48 @@ func request_AdminService_UpdateLaunchPlan_0(ctx context.Context, marshaler runt
 		_   = err
 	)
 
-	val, ok = pathParams["urn"]
+	val, ok = pathParams["id.project"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "urn")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.project")
 	}
 
-	protoReq.Urn, err = runtime.String(val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.project", val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "urn", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.project", err)
+	}
+
+	val, ok = pathParams["id.domain"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.domain")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.domain", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.domain", err)
+	}
+
+	val, ok = pathParams["id.name"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.name")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.name", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.name", err)
+	}
+
+	val, ok = pathParams["id.version"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.version")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.version", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.version", err)
 	}
 
 	msg, err := client.UpdateLaunchPlan(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -640,8 +796,12 @@ func request_AdminService_CreateExecution_0(ctx context.Context, marshaler runti
 
 }
 
+var (
+	filter_AdminService_GetExecution_0 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "project": 1, "domain": 2, "name": 3}, Base: []int{1, 1, 1, 2, 3, 0, 0, 0}, Check: []int{0, 1, 2, 2, 2, 3, 4, 5}}
+)
+
 func request_AdminService_GetExecution_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq admin.ObjectGetRequest
+	var protoReq admin.WorkflowExecutionGetRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -651,15 +811,41 @@ func request_AdminService_GetExecution_0(ctx context.Context, marshaler runtime.
 		_   = err
 	)
 
-	val, ok = pathParams["urn"]
+	val, ok = pathParams["id.project"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "urn")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.project")
 	}
 
-	protoReq.Urn, err = runtime.String(val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.project", val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "urn", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.project", err)
+	}
+
+	val, ok = pathParams["id.domain"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.domain")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.domain", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.domain", err)
+	}
+
+	val, ok = pathParams["id.name"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.name")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.name", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.name", err)
+	}
+
+	if err := runtime.PopulateQueryParameters(&protoReq, req.URL.Query(), filter_AdminService_GetExecution_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	msg, err := client.GetExecution(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -684,6 +870,10 @@ func request_AdminService_ListExecutions_0(ctx context.Context, marshaler runtim
 
 }
 
+var (
+	filter_AdminService_GetNodeExecution_0 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "execution_id": 1, "project": 2, "domain": 3, "name": 4}, Base: []int{1, 7, 1, 1, 2, 2, 0, 0, 5, 5, 0}, Check: []int{0, 1, 2, 3, 2, 5, 4, 6, 2, 9, 10}}
+)
+
 func request_AdminService_GetNodeExecution_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq admin.NodeExecutionGetRequest
 	var metadata runtime.ServerMetadata
@@ -695,15 +885,41 @@ func request_AdminService_GetNodeExecution_0(ctx context.Context, marshaler runt
 		_   = err
 	)
 
-	val, ok = pathParams["node_execution_id"]
+	val, ok = pathParams["id.execution_id.project"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "node_execution_id")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.execution_id.project")
 	}
 
-	protoReq.NodeExecutionId, err = runtime.String(val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.execution_id.project", val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "node_execution_id", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.execution_id.project", err)
+	}
+
+	val, ok = pathParams["id.execution_id.domain"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.execution_id.domain")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.execution_id.domain", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.execution_id.domain", err)
+	}
+
+	val, ok = pathParams["id.execution_id.name"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.execution_id.name")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.execution_id.name", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.execution_id.name", err)
+	}
+
+	if err := runtime.PopulateQueryParameters(&protoReq, req.URL.Query(), filter_AdminService_GetNodeExecution_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	msg, err := client.GetNodeExecution(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -1587,7 +1803,7 @@ func RegisterAdminServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 var (
 	pattern_AdminService_CreateTask_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "v1", "tasks"}, ""))
 
-	pattern_AdminService_GetTask_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"api", "v1", "tasks", "urn"}, ""))
+	pattern_AdminService_GetTask_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6}, []string{"api", "v1", "tasks", "id.project", "id.domain", "id.name", "id.version"}, ""))
 
 	pattern_AdminService_ListTaskIds_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 3, 2, 4}, []string{"api", "v1", "project", "domain", "task_ids"}, ""))
 
@@ -1597,7 +1813,7 @@ var (
 
 	pattern_AdminService_CreateWorkflow_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "v1", "workflows"}, ""))
 
-	pattern_AdminService_GetWorkflow_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"api", "v1", "workflows", "urn"}, ""))
+	pattern_AdminService_GetWorkflow_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6}, []string{"api", "v1", "workflows", "id.project", "id.domain", "id.name", "id.version"}, ""))
 
 	pattern_AdminService_ListWorkflowIds_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 3, 2, 4}, []string{"api", "v1", "project", "domain", "workflow_ids"}, ""))
 
@@ -1607,7 +1823,7 @@ var (
 
 	pattern_AdminService_CreateLaunchPlan_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "v1", "launch_plans"}, ""))
 
-	pattern_AdminService_GetLaunchPlan_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"api", "v1", "launch_plans", "urn"}, ""))
+	pattern_AdminService_GetLaunchPlan_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6}, []string{"api", "v1", "launch_plan", "id.project", "id.domain", "id.name", "id.version"}, ""))
 
 	pattern_AdminService_ListLaunchPlanIds_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 3, 2, 4}, []string{"api", "v1", "project", "domain", "launch_plan_ids"}, ""))
 
@@ -1615,15 +1831,15 @@ var (
 
 	pattern_AdminService_ListLaunchPlans_1 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 2, 4, 1, 0, 4, 1, 5, 5, 2, 6, 1, 0, 4, 1, 5, 7}, []string{"api", "v1", "project", "id.project", "domain", "id.domain", "launch_plans", "id.name"}, ""))
 
-	pattern_AdminService_UpdateLaunchPlan_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"api", "v1", "launch_plans", "urn"}, ""))
+	pattern_AdminService_UpdateLaunchPlan_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6}, []string{"api", "v1", "launch_plans", "id.project", "id.domain", "id.name", "id.version"}, ""))
 
 	pattern_AdminService_CreateExecution_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "v1", "executions"}, ""))
 
-	pattern_AdminService_GetExecution_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"api", "v1", "executions", "urn"}, ""))
+	pattern_AdminService_GetExecution_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "executions", "id.project", "id.domain", "id.name"}, ""))
 
 	pattern_AdminService_ListExecutions_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "v1", "executions"}, ""))
 
-	pattern_AdminService_GetNodeExecution_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"api", "v1", "node_executions", "node_execution_id"}, ""))
+	pattern_AdminService_GetNodeExecution_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "executions", "id.execution_id.project", "id.execution_id.domain", "id.execution_id.name"}, ""))
 
 	pattern_AdminService_ListNodeExecutions_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "v1", "node_executions"}, ""))
 
