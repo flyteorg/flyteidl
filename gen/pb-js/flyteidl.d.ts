@@ -5560,6 +5560,9 @@ export namespace flyteidl {
 
             /** ExecutionClosure updatedAt */
             updatedAt?: (google.protobuf.ITimestamp|null);
+
+            /** ExecutionClosure notifications */
+            notifications?: (flyteidl.admin.INotification[]|null);
         }
 
         /** Represents an ExecutionClosure. */
@@ -5594,6 +5597,9 @@ export namespace flyteidl {
 
             /** ExecutionClosure updatedAt. */
             public updatedAt?: (google.protobuf.ITimestamp|null);
+
+            /** ExecutionClosure notifications. */
+            public notifications: flyteidl.admin.INotification[];
 
             /** ExecutionClosure outputResult. */
             public outputResult?: ("outputs"|"error");

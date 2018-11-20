@@ -72,6 +72,10 @@ message ExecutionClosure {
 
     // Time at which the execution was last updated.
     google.protobuf.Timestamp updated_at              = 8;
+
+    // The notification settings to use after merging the CreateExecutionRequest and the launch plan
+    // notification settings.
+    repeated Notification notifications               = 9;
 }
 
 message ExecutionMetadata {

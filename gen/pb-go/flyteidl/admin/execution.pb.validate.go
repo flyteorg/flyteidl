@@ -509,6 +509,21 @@ func (m *ExecutionClosure) Validate() error {
 		}
 	}
 
+	for idx, item := range m.GetNotifications() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ExecutionClosureValidationError{
+					field:  fmt.Sprintf("Notifications[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
 	switch m.OutputResult.(type) {
 
 	case *ExecutionClosure_Outputs:

@@ -1427,6 +1427,13 @@
           "type": "string",
           "format": "date-time",
           "description": "Time at which the execution was last updated."
+        },
+        "notifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminNotification"
+          },
+          "description": "The notification settings to use after merging the CreateExecutionRequest and the launch plan\nnotification settings."
         }
       },
       "title": "Encapsultes the results of the Execution"

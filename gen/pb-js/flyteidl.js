@@ -13322,6 +13322,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.IDuration|null} [duration] ExecutionClosure duration
              * @property {google.protobuf.ITimestamp|null} [createdAt] ExecutionClosure createdAt
              * @property {google.protobuf.ITimestamp|null} [updatedAt] ExecutionClosure updatedAt
+             * @property {Array.<flyteidl.admin.INotification>|null} [notifications] ExecutionClosure notifications
              */
 
             /**
@@ -13333,6 +13334,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.admin.IExecutionClosure=} [properties] Properties to set
              */
             function ExecutionClosure(properties) {
+                this.notifications = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -13403,6 +13405,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             ExecutionClosure.prototype.updatedAt = null;
 
+            /**
+             * ExecutionClosure notifications.
+             * @member {Array.<flyteidl.admin.INotification>} notifications
+             * @memberof flyteidl.admin.ExecutionClosure
+             * @instance
+             */
+            ExecutionClosure.prototype.notifications = $util.emptyArray;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -13457,6 +13467,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.google.protobuf.Timestamp.encode(message.createdAt, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 if (message.updatedAt != null && message.hasOwnProperty("updatedAt"))
                     $root.google.protobuf.Timestamp.encode(message.updatedAt, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                if (message.notifications != null && message.notifications.length)
+                    for (let i = 0; i < message.notifications.length; ++i)
+                        $root.flyteidl.admin.Notification.encode(message.notifications[i], writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 return writer;
             };
 
@@ -13501,6 +13514,11 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 8:
                         message.updatedAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    case 9:
+                        if (!(message.notifications && message.notifications.length))
+                            message.notifications = [];
+                        message.notifications.push($root.flyteidl.admin.Notification.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -13579,6 +13597,15 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.google.protobuf.Timestamp.verify(message.updatedAt);
                     if (error)
                         return "updatedAt." + error;
+                }
+                if (message.notifications != null && message.hasOwnProperty("notifications")) {
+                    if (!Array.isArray(message.notifications))
+                        return "notifications: array expected";
+                    for (let i = 0; i < message.notifications.length; ++i) {
+                        let error = $root.flyteidl.admin.Notification.verify(message.notifications[i]);
+                        if (error)
+                            return "notifications." + error;
+                    }
                 }
                 return null;
             };
