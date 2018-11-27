@@ -289,6 +289,168 @@
         ]
       }
     },
+    "/api/v1/launch_plan/{id.project}/{id.domain}": {
+      "get": {
+        "operationId": "ListLaunchPlans2",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminLaunchPlanList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Indicates the offset to fetch the resource from.\nIt is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "filters",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.key",
+            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.direction",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "DESCENDING",
+              "ASCENDING"
+            ],
+            "default": "DESCENDING"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/launch_plan/{id.project}/{id.domain}/{id.name}": {
+      "get": {
+        "operationId": "ListLaunchPlans",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminLaunchPlanList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Indicates the offset to fetch the resource from.\nIt is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "filters",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.key",
+            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.direction",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "DESCENDING",
+              "ASCENDING"
+            ],
+            "default": "DESCENDING"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/launch_plan/{id.project}/{id.domain}/{id.name}/{id.version}": {
       "get": {
         "operationId": "GetLaunchPlan",
@@ -347,35 +509,7 @@
         "tags": [
           "AdminService"
         ]
-      }
-    },
-    "/api/v1/launch_plans": {
-      "post": {
-        "operationId": "CreateLaunchPlan",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminLaunchPlanCreateResponse"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/adminLaunchPlanCreateRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version}": {
+      },
       "put": {
         "operationId": "UpdateLaunchPlan",
         "responses": {
@@ -422,6 +556,145 @@
             "schema": {
               "$ref": "#/definitions/adminLaunchPlanUpdateRequest"
             }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/launch_plan_id/{project}/{domain}": {
+      "get": {
+        "operationId": "ListLaunchPlanIds",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminNamedEntityIdentifierList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "project",
+            "description": "Name of the project that contains the identifiers.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "domain",
+            "description": "Name of the domain the identifiers belongs to within the project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Indicates the offset to fetch the resource from.\nIt is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "sort_by.key",
+            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.direction",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "DESCENDING",
+              "ASCENDING"
+            ],
+            "default": "DESCENDING"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/launch_plans": {
+      "post": {
+        "operationId": "CreateLaunchPlan",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminLaunchPlanCreateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminLaunchPlanCreateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version}": {
+      "put": {
+        "operationId": "UpdateLaunchPlan2",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminLaunchPlanUpdateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.version",
+            "description": "Specific version of the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
           }
         ],
         "tags": [
@@ -491,7 +764,7 @@
     },
     "/api/v1/project/{id.project}/domain/{id.domain}/launch_plans": {
       "get": {
-        "operationId": "ListLaunchPlans",
+        "operationId": "ListLaunchPlans3",
         "responses": {
           "200": {
             "description": "",
@@ -572,7 +845,7 @@
     },
     "/api/v1/project/{id.project}/domain/{id.domain}/launch_plans/{id.name}": {
       "get": {
-        "operationId": "ListLaunchPlans2",
+        "operationId": "ListLaunchPlans4",
         "responses": {
           "200": {
             "description": "",
@@ -651,171 +924,9 @@
         ]
       }
     },
-    "/api/v1/project/{id.project}/domain/{id.domain}/tasks": {
-      "get": {
-        "operationId": "ListTasks",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminTaskList"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.name",
-            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "offset",
-            "description": "Indicates the offset to fetch the resource from.\nIt is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "filters",
-            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "DESCENDING",
-              "ASCENDING"
-            ],
-            "default": "DESCENDING"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/project/{id.project}/domain/{id.domain}/tasks/{id.name}": {
-      "get": {
-        "operationId": "ListTasks2",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminTaskList"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.name",
-            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "offset",
-            "description": "Indicates the offset to fetch the resource from.\nIt is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "filters",
-            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "DESCENDING",
-              "ASCENDING"
-            ],
-            "default": "DESCENDING"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
     "/api/v1/project/{id.project}/domain/{id.domain}/workflows": {
       "get": {
-        "operationId": "ListWorkflows",
+        "operationId": "ListWorkflows3",
         "responses": {
           "200": {
             "description": "",
@@ -896,7 +1007,7 @@
     },
     "/api/v1/project/{id.project}/domain/{id.domain}/workflows/{id.name}": {
       "get": {
-        "operationId": "ListWorkflows2",
+        "operationId": "ListWorkflows4",
         "responses": {
           "200": {
             "description": "",
@@ -977,7 +1088,7 @@
     },
     "/api/v1/project/{project}/domain/{domain}/launch_plan_ids": {
       "get": {
-        "operationId": "ListLaunchPlanIds",
+        "operationId": "ListLaunchPlanIds2",
         "responses": {
           "200": {
             "description": "",
@@ -1044,7 +1155,7 @@
     },
     "/api/v1/project/{project}/domain/{domain}/task_ids": {
       "get": {
-        "operationId": "ListTaskIds",
+        "operationId": "ListTaskIds2",
         "responses": {
           "200": {
             "description": "",
@@ -1111,7 +1222,7 @@
     },
     "/api/v1/project/{project}/domain/{domain}/workflow_ids": {
       "get": {
-        "operationId": "ListWorkflowIds",
+        "operationId": "ListWorkflowIds2",
         "responses": {
           "200": {
             "description": "",
@@ -1225,25 +1336,80 @@
         ]
       }
     },
-    "/api/v1/tasks": {
-      "post": {
-        "operationId": "CreateTask",
+    "/api/v1/task/{id.project}/{id.domain}": {
+      "get": {
+        "operationId": "ListTasks2",
         "responses": {
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/adminTaskCreateResponse"
+              "$ref": "#/definitions/adminTaskList"
             }
           }
         },
         "parameters": [
           {
-            "name": "body",
-            "in": "body",
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
             "required": true,
-            "schema": {
-              "$ref": "#/definitions/adminTaskCreateRequest"
-            }
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Indicates the offset to fetch the resource from.\nIt is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "filters",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.key",
+            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.direction",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "DESCENDING",
+              "ASCENDING"
+            ],
+            "default": "DESCENDING"
           }
         ],
         "tags": [
@@ -1251,7 +1417,88 @@
         ]
       }
     },
-    "/api/v1/tasks/{id.project}/{id.domain}/{id.name}/{id.version}": {
+    "/api/v1/task/{id.project}/{id.domain}/{id.name}": {
+      "get": {
+        "operationId": "ListTasks",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminTaskList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Indicates the offset to fetch the resource from.\nIt is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "filters",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.key",
+            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.direction",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "DESCENDING",
+              "ASCENDING"
+            ],
+            "default": "DESCENDING"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/task/{id.project}/{id.domain}/{id.name}/{id.version}": {
       "get": {
         "operationId": "GetTask",
         "responses": {
@@ -1311,6 +1558,448 @@
         ]
       }
     },
+    "/api/v1/task_id/{project}/{domain}": {
+      "get": {
+        "operationId": "ListTaskIds",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminNamedEntityIdentifierList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "project",
+            "description": "Name of the project that contains the identifiers.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "domain",
+            "description": "Name of the domain the identifiers belongs to within the project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Indicates the offset to fetch the resource from.\nIt is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "sort_by.key",
+            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.direction",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "DESCENDING",
+              "ASCENDING"
+            ],
+            "default": "DESCENDING"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/tasks": {
+      "post": {
+        "operationId": "CreateTask",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminTaskCreateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminTaskCreateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/tasks/{id.project}/{id.domain}/{id.name}/{id.version}": {
+      "get": {
+        "operationId": "GetTask2",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminTask"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.version",
+            "description": "Specific version of the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.resource_type",
+            "description": "Identifies the specific type of resource that this identifer corresponds to.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "UNSPECIFIED",
+              "TASK",
+              "WORKFLOW",
+              "LAUNCH_PLAN"
+            ],
+            "default": "UNSPECIFIED"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/workflow/{id.project}/{id.domain}": {
+      "get": {
+        "operationId": "ListWorkflows2",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminWorkflowList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Indicates the offset to fetch the resource from.\nIt is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "filters",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.key",
+            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.direction",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "DESCENDING",
+              "ASCENDING"
+            ],
+            "default": "DESCENDING"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/workflow/{id.project}/{id.domain}/{id.name}": {
+      "get": {
+        "operationId": "ListWorkflows",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminWorkflowList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Indicates the offset to fetch the resource from.\nIt is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "filters",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.key",
+            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.direction",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "DESCENDING",
+              "ASCENDING"
+            ],
+            "default": "DESCENDING"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/workflow/{id.project}/{id.domain}/{id.name}/{id.version}": {
+      "get": {
+        "operationId": "GetWorkflow",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminWorkflow"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.version",
+            "description": "Specific version of the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.resource_type",
+            "description": "Identifies the specific type of resource that this identifer corresponds to.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "UNSPECIFIED",
+              "TASK",
+              "WORKFLOW",
+              "LAUNCH_PLAN"
+            ],
+            "default": "UNSPECIFIED"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/workflow_id/{project}/{domain}": {
+      "get": {
+        "operationId": "ListWorkflowIds",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminNamedEntityIdentifierList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "project",
+            "description": "Name of the project that contains the identifiers.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "domain",
+            "description": "Name of the domain the identifiers belongs to within the project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Indicates the offset to fetch the resource from.\nIt is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "sort_by.key",
+            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.direction",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "DESCENDING",
+              "ASCENDING"
+            ],
+            "default": "DESCENDING"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/workflows": {
       "post": {
         "operationId": "CreateWorkflow",
@@ -1339,7 +2028,7 @@
     },
     "/api/v1/workflows/{id.project}/{id.domain}/{id.name}/{id.version}": {
       "get": {
-        "operationId": "GetWorkflow",
+        "operationId": "GetWorkflow2",
         "responses": {
           "200": {
             "description": "",
