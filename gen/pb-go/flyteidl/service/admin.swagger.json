@@ -1558,6 +1558,107 @@
         ]
       }
     },
+    "/api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.node_execution_id.retry_attempt}": {
+      "get": {
+        "operationId": "GetTaskExecution",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminTaskExecution"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.node_execution_id.execution_id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.node_execution_id.execution_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.node_execution_id.execution_id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.node_execution_id.node_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.node_execution_id.retry_attempt",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "id.task_id.resource_type",
+            "description": "Identifies the specific type of resource that this identifer corresponds to.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "UNSPECIFIED",
+              "TASK",
+              "WORKFLOW",
+              "LAUNCH_PLAN"
+            ],
+            "default": "UNSPECIFIED"
+          },
+          {
+            "name": "id.task_id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id.task_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id.task_id.name",
+            "description": "User provided value for the resource.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id.task_id.version",
+            "description": "Specific version of the resource.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id.retry_attempt",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/task_id/{project}/{domain}": {
       "get": {
         "operationId": "ListTaskIds",
@@ -2803,6 +2904,62 @@
       "type": "object",
       "description": "Represents a response structure if task creation succeeds."
     },
+    "adminTaskExecution": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/coreTaskExecutionIdentifier"
+        },
+        "input_uri": {
+          "type": "string"
+        },
+        "closure": {
+          "$ref": "#/definitions/adminTaskExecutionClosure"
+        }
+      },
+      "description": "Encapsulates all details for a single task execution entity."
+    },
+    "adminTaskExecutionClosure": {
+      "type": "object",
+      "properties": {
+        "output_uri": {
+          "type": "string"
+        },
+        "error": {
+          "$ref": "#/definitions/coreExecutionError",
+          "title": "Error information for the Task"
+        },
+        "phase": {
+          "$ref": "#/definitions/coreTaskExecutionPhase"
+        },
+        "logs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreTaskLog"
+          }
+        },
+        "started_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time at which the task execution began running."
+        },
+        "duration": {
+          "type": "string",
+          "description": "The amount of time the task execution spent running."
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time at which the task execution was created."
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time at which the task execution was last updated."
+        }
+      },
+      "description": "Container for task execution details and results."
+    },
     "adminTaskExecutionEventRequest": {
       "type": "object",
       "properties": {
@@ -3699,6 +3856,22 @@
       ],
       "default": "SingleStepTask",
       "title": "- SingleStepTask: Task category that identifies if the system can use default structures in UI, etc to drive the task\nTODO should we add Container type of tasks as a special Class?"
+    },
+    "coreTaskExecutionIdentifier": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "$ref": "#/definitions/coreIdentifier"
+        },
+        "node_execution_id": {
+          "$ref": "#/definitions/coreNodeExecutionIdentifier"
+        },
+        "retry_attempt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "description": "Encapsulation of fields that identify a Flyte task execution entity."
     },
     "coreTaskExecutionPhase": {
       "type": "string",

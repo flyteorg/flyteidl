@@ -8623,6 +8623,20 @@ export namespace flyteidl {
              * @returns Promise
              */
             public createTaskEvent(request: flyteidl.admin.ITaskExecutionEventRequest): Promise<flyteidl.admin.TaskExecutionEventResponse>;
+
+            /**
+             * Calls GetTaskExecution.
+             * @param request TaskExecutionGetRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and TaskExecution
+             */
+            public getTaskExecution(request: flyteidl.admin.ITaskExecutionGetRequest, callback: flyteidl.service.AdminService.GetTaskExecutionCallback): void;
+
+            /**
+             * Calls GetTaskExecution.
+             * @param request TaskExecutionGetRequest message or plain object
+             * @returns Promise
+             */
+            public getTaskExecution(request: flyteidl.admin.ITaskExecutionGetRequest): Promise<flyteidl.admin.TaskExecution>;
         }
 
         namespace AdminService {
@@ -8787,6 +8801,13 @@ export namespace flyteidl {
              * @param [response] TaskExecutionEventResponse
              */
             type CreateTaskEventCallback = (error: (Error|null), response?: flyteidl.admin.TaskExecutionEventResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getTaskExecution}.
+             * @param error Error, if any
+             * @param [response] TaskExecution
+             */
+            type GetTaskExecutionCallback = (error: (Error|null), response?: flyteidl.admin.TaskExecution) => void;
         }
     }
 

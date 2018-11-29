@@ -20584,6 +20584,39 @@ export const flyteidl = $root.flyteidl = (() => {
              * @variation 2
              */
 
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getTaskExecution}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef GetTaskExecutionCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.TaskExecution} [response] TaskExecution
+             */
+
+            /**
+             * Calls GetTaskExecution.
+             * @function getTaskExecution
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.ITaskExecutionGetRequest} request TaskExecutionGetRequest message or plain object
+             * @param {flyteidl.service.AdminService.GetTaskExecutionCallback} callback Node-style callback called with the error, if any, and TaskExecution
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.getTaskExecution = function getTaskExecution(request, callback) {
+                return this.rpcCall(getTaskExecution, $root.flyteidl.admin.TaskExecutionGetRequest, $root.flyteidl.admin.TaskExecution, request, callback);
+            }, "name", { value: "GetTaskExecution" });
+
+            /**
+             * Calls GetTaskExecution.
+             * @function getTaskExecution
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.ITaskExecutionGetRequest} request TaskExecutionGetRequest message or plain object
+             * @returns {Promise<flyteidl.admin.TaskExecution>} Promise
+             * @variation 2
+             */
+
             return AdminService;
         })();
 

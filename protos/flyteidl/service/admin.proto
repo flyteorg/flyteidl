@@ -219,4 +219,10 @@ service AdminService {
       body: "*"
     };
   }
+
+  rpc GetTaskExecution (flyteidl.admin.TaskExecutionGetRequest) returns (flyteidl.admin.TaskExecution) {
+    option (google.api.http) = {
+        get: "/api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.node_execution_id.retry_attempt}"
+    };
+  }
 }
