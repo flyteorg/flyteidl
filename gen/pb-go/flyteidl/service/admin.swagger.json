@@ -2602,11 +2602,11 @@
         "started_at": {
           "type": "string",
           "format": "date-time",
-          "description": "Time at which the execution began running."
+          "description": "Time at which the node execution began running."
         },
         "duration": {
           "type": "string",
-          "description": "The amount of time the execution spent running."
+          "description": "The amount of time the node execution spent running."
         },
         "created_at": {
           "type": "string",
@@ -3240,6 +3240,10 @@
         "message": {
           "type": "string",
           "description": "Detailed description of the error - including stack trace."
+        },
+        "error_uri": {
+          "type": "string",
+          "title": "Full error contents accessible via a URI"
         }
       },
       "description": "Represents the error message from the execution."
@@ -3710,6 +3714,15 @@
       "default": "TASK_PHASE_UNDEFINED",
       "description": "Phases that task plugins can go through. Not all phases may be applicable to a specific plugin task,\nbut this is the cumulative list that customers may want to know about for their task."
     },
+    "coreTaskLog": {
+      "type": "object",
+      "properties": {
+        "uri": {
+          "type": "string"
+        }
+      },
+      "title": "Log information for the task that is specific to a log sink\nWhen our log story is flushed out, we may have more metadata here like log link expiry"
+    },
     "coreTaskMetadata": {
       "type": "object",
       "properties": {
@@ -3942,7 +3955,7 @@
         "occurred_at": {
           "type": "string",
           "format": "date-time",
-          "title": "This timestamp represents when the original event occurred"
+          "description": "This timestamp represents when the original event occurred, it is generated\nby the executor of the node."
         },
         "input_uri": {
           "type": "string"
@@ -3962,7 +3975,7 @@
       "properties": {
         "task_id": {
           "$ref": "#/definitions/coreIdentifier",
-          "title": "Task execution ID (non-unique per retry)"
+          "description": "ID of the task. In combination with the retryAttempt this will indicate\nthe task execution uniquely for a given parent node execution."
         },
         "parent_node_execution_id": {
           "$ref": "#/definitions/coreNodeExecutionIdentifier",
@@ -3981,25 +3994,36 @@
           "type": "string",
           "title": "id of the process that sent this event, mainly for trace debugging"
         },
-        "version_num": {
-          "type": "string",
-          "title": "Optional: a sequence number that denotes the ordering across events.\nThis is useful in situations where a plugin can send multiple events\nfor the same phase"
-        },
-        "log_uri": {
-          "type": "string",
-          "title": "URI of the task's log file"
+        "logs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreTaskLog"
+          },
+          "title": "log information for the task execution"
         },
         "occurred_at": {
           "type": "string",
           "format": "date-time",
-          "title": "This represents the timestamp of when the event occured, not the request timestamp"
+          "description": "This timestamp represents when the original event occurred, it is generated\nby the executor of the task."
+        },
+        "input_uri": {
+          "type": "string",
+          "description": "URI of the input file, it encodes all the information\nincluding Cloud source provider. ie., s3://..."
+        },
+        "output_uri": {
+          "type": "string",
+          "description": "URI to the output of the execution, it will be in a format that encodes all the information\nincluding Cloud source provider. ie., s3://..."
+        },
+        "error": {
+          "$ref": "#/definitions/coreExecutionError",
+          "title": "Error information for the execution"
         },
         "custom_info": {
           "$ref": "#/definitions/protobufStruct",
           "description": "Custom data that the task plugin sends back. This is extensible to allow various plugins in the system."
         }
       },
-      "description": "Plugins specific execution event information. For tasks like Python, Hive, Spark, DynamicJob."
+      "description": "Plugin specific execution event information. For tasks like Python, Hive, Spark, DynamicJob."
     },
     "eventWorkflowExecutionEvent": {
       "type": "object",
@@ -4018,7 +4042,7 @@
         "occurred_at": {
           "type": "string",
           "format": "date-time",
-          "title": "This timestamp represents when the original event occurred"
+          "description": "This timestamp represents when the original event occurred, it is generated\nby the executor of the workflow."
         },
         "output_uri": {
           "type": "string",

@@ -34,7 +34,7 @@ func (m *NodeExecutionGetRequest) Reset()         { *m = NodeExecutionGetRequest
 func (m *NodeExecutionGetRequest) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionGetRequest) ProtoMessage()    {}
 func (*NodeExecutionGetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_f58b363705154e8f, []int{0}
+	return fileDescriptor_node_execution_486bace1bf664e55, []int{0}
 }
 func (m *NodeExecutionGetRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionGetRequest.Unmarshal(m, b)
@@ -86,7 +86,7 @@ func (m *NodeExecutionListRequest) Reset()         { *m = NodeExecutionListReque
 func (m *NodeExecutionListRequest) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionListRequest) ProtoMessage()    {}
 func (*NodeExecutionListRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_f58b363705154e8f, []int{1}
+	return fileDescriptor_node_execution_486bace1bf664e55, []int{1}
 }
 func (m *NodeExecutionListRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionListRequest.Unmarshal(m, b)
@@ -148,7 +148,7 @@ func (m *NodeExecution) Reset()         { *m = NodeExecution{} }
 func (m *NodeExecution) String() string { return proto.CompactTextString(m) }
 func (*NodeExecution) ProtoMessage()    {}
 func (*NodeExecution) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_f58b363705154e8f, []int{2}
+	return fileDescriptor_node_execution_486bace1bf664e55, []int{2}
 }
 func (m *NodeExecution) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecution.Unmarshal(m, b)
@@ -201,7 +201,7 @@ func (m *NodeExecutionList) Reset()         { *m = NodeExecutionList{} }
 func (m *NodeExecutionList) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionList) ProtoMessage()    {}
 func (*NodeExecutionList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_f58b363705154e8f, []int{3}
+	return fileDescriptor_node_execution_486bace1bf664e55, []int{3}
 }
 func (m *NodeExecutionList) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionList.Unmarshal(m, b)
@@ -235,9 +235,9 @@ type NodeExecutionClosure struct {
 	//	*NodeExecutionClosure_Error
 	OutputResult isNodeExecutionClosure_OutputResult `protobuf_oneof:"output_result"`
 	Phase        core.NodeExecutionPhase             `protobuf:"varint,3,opt,name=phase,proto3,enum=flyteidl.core.NodeExecutionPhase" json:"phase,omitempty"`
-	// Time at which the execution began running.
+	// Time at which the node execution began running.
 	StartedAt *timestamp.Timestamp `protobuf:"bytes,4,opt,name=started_at,json=startedAt,proto3" json:"started_at,omitempty"`
-	// The amount of time the execution spent running.
+	// The amount of time the node execution spent running.
 	Duration *duration.Duration `protobuf:"bytes,5,opt,name=duration,proto3" json:"duration,omitempty"`
 	// Time at which the node execution was created.
 	CreatedAt *timestamp.Timestamp `protobuf:"bytes,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
@@ -252,7 +252,7 @@ func (m *NodeExecutionClosure) Reset()         { *m = NodeExecutionClosure{} }
 func (m *NodeExecutionClosure) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionClosure) ProtoMessage()    {}
 func (*NodeExecutionClosure) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_f58b363705154e8f, []int{4}
+	return fileDescriptor_node_execution_486bace1bf664e55, []int{4}
 }
 func (m *NodeExecutionClosure) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionClosure.Unmarshal(m, b)
@@ -423,10 +423,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/admin/node_execution.proto", fileDescriptor_node_execution_f58b363705154e8f)
+	proto.RegisterFile("flyteidl/admin/node_execution.proto", fileDescriptor_node_execution_486bace1bf664e55)
 }
 
-var fileDescriptor_node_execution_f58b363705154e8f = []byte{
+var fileDescriptor_node_execution_486bace1bf664e55 = []byte{
 	// 538 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x94, 0xc1, 0x6e, 0xd3, 0x4c,
 	0x10, 0xc7, 0xeb, 0xe4, 0x4b, 0x52, 0x4f, 0x94, 0x54, 0xdf, 0x2a, 0x02, 0x93, 0xaa, 0x34, 0x04,

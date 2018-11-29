@@ -60,10 +60,10 @@ message NodeExecutionClosure {
 
     core.NodeExecutionPhase phase          = 3;
 
-    // Time at which the execution began running.
+    // Time at which the node execution began running.
     google.protobuf.Timestamp started_at   = 4;
 
-    // The amount of time the execution spent running.
+    // The amount of time the node execution spent running.
     google.protobuf.Duration duration      = 5; 
 
     // Time at which the node execution was created.

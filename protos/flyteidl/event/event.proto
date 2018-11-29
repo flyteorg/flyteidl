@@ -18,7 +18,8 @@ message WorkflowExecutionEvent {
 
     core.WorkflowExecutionPhase phase = 3;
 
-    // This timestamp represents when the original event occurred
+    // This timestamp represents when the original event occurred, it is generated
+    // by the executor of the workflow.
     google.protobuf.Timestamp occurred_at = 4;
 
     oneof output_result {
@@ -40,8 +41,9 @@ message NodeExecutionEvent {
 
     core.NodeExecutionPhase phase = 3;
 
-    // This timestamp represents when the original event occurred
-    google.protobuf.Timestamp occurred_at = 4;
+    // This timestamp represents when the original event occurred, it is generated
+    // by the executor of the node.
+    google.protobuf.Timestamp occurred_at           = 4;
 
     string input_uri = 5;
 
@@ -55,9 +57,10 @@ message NodeExecutionEvent {
     }
 }
 
-// Plugins specific execution event information. For tasks like Python, Hive, Spark, DynamicJob.
+// Plugin specific execution event information. For tasks like Python, Hive, Spark, DynamicJob.
 message TaskExecutionEvent {
-    // Task execution ID (non-unique per retry)
+    // ID of the task. In combination with the retryAttempt this will indicate
+    // the task execution uniquely for a given parent node execution.
     core.Identifier task_id = 1;
 
     // A task execution is always kicked off by a node execution, the event consumer
@@ -73,17 +76,26 @@ message TaskExecutionEvent {
     // id of the process that sent this event, mainly for trace debugging
     string producer_id = 5;
 
-    // Optional: a sequence number that denotes the ordering across events.
-    // This is useful in situations where a plugin can send multiple events
-    // for the same phase
-    string version_num = 6;
+    // log information for the task execution
+    repeated core.TaskLog logs           = 6;
 
-    // URI of the task's log file
-    string log_uri = 7;
+    // This timestamp represents when the original event occurred, it is generated
+    // by the executor of the task.
+    google.protobuf.Timestamp occurred_at = 7;
 
-    // This represents the timestamp of when the event occured, not the request timestamp
-    google.protobuf.Timestamp occurred_at = 8;
+    // URI of the input file, it encodes all the information
+    // including Cloud source provider. ie., s3://...
+    string input_uri                      = 8;
+
+    oneof output_result {
+        // URI to the output of the execution, it will be in a format that encodes all the information
+        // including Cloud source provider. ie., s3://...
+        string output_uri                 = 9;
+
+        // Error information for the execution
+        core.ExecutionError error         = 10;
+    }
 
     // Custom data that the task plugin sends back. This is extensible to allow various plugins in the system.
-    google.protobuf.Struct custom_info = 9;
+    google.protobuf.Struct custom_info    = 11;
 }

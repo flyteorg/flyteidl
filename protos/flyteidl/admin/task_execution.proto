@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package flyteidl.admin;
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
+
+import "flyteidl/core/execution.proto";
+import "flyteidl/core/identifier.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+// A message used to fetch a single task execution entity.
+message TaskExecutionGetRequest {
+    core.TaskExecutionIdentifier id = 1;
+}
+
+// Represents a request structure to retrieve a list of task execution entities.
+message TaskExecutionListRequest {
+    // Indicates the number of resources to be returned.
+    // +optional
+    uint32 limit    = 1;
+    // Indicates the offset to fetch the resource from.
+    // It is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.
+    // +optional
+    uint32 offset   = 2;
+    // Indicates a list of filters passed as string.
+    // More info on constructing filters : <Link>
+    // +optional
+    string filters  = 3;
+}
+
+// Encapsulates all details for a single task execution entity.
+message TaskExecution {
+    core.TaskExecutionIdentifier id             = 1;
+
+    string input_uri                       = 2;
+
+    TaskExecutionClosure closure           = 3;
+}
+
+// Request structure to retrieve a list of task execution entities.
+message TaskExecutionList {
+    repeated TaskExecution task_executions = 1;
+}
+
+// Container for task execution details and results.
+message TaskExecutionClosure {
+    oneof output_result {
+        string output_uri                  = 1;
+
+        // Error information for the Task
+        core.ExecutionError error          = 2;
+    }
+
+    core.TaskExecutionPhase phase          = 3;
+
+    repeated core.TaskLog logs                  = 4;
+
+    // Time at which the task execution began running.
+    google.protobuf.Timestamp started_at   = 5;
+
+    // The amount of time the task execution spent running.
+    google.protobuf.Duration duration      = 6;
+
+    // Time at which the task execution was created.
+    google.protobuf.Timestamp created_at   = 7;
+
+    // Time at which the task execution was last updated.
+    google.protobuf.Timestamp updated_at   = 8;
+}

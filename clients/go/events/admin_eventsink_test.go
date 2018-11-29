@@ -88,7 +88,7 @@ func TestAdminTaskEvent(t *testing.T) {
 				Name: "n",
 			},
 		},
-		LogUri:       "log-uri",
+		Logs: []*core.TaskLog{{ Uri: "logs.txt"}},
 	}
 
 	adminClient.EXPECT().CreateTaskEvent(

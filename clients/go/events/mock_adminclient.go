@@ -6,11 +6,10 @@ package events
 
 import (
 	context "context"
-	reflect "reflect"
-
 	gomock "github.com/golang/mock/gomock"
 	admin "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin"
 	grpc "google.golang.org/grpc"
+	reflect "reflect"
 )
 
 // MockAdminServiceClient is a mock of AdminServiceClient interface
@@ -232,6 +231,24 @@ func (m *MockAdminServiceClient) GetTask(arg0 context.Context, arg1 *admin.Objec
 func (mr *MockAdminServiceClientMockRecorder) GetTask(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTask", reflect.TypeOf((*MockAdminServiceClient)(nil).GetTask), varargs...)
+}
+
+// GetTaskExecution mocks base method
+func (m *MockAdminServiceClient) GetTaskExecution(arg0 context.Context, arg1 *admin.TaskExecutionGetRequest, arg2 ...grpc.CallOption) (*admin.TaskExecution, error) {
+	varargs := []interface{}{arg0, arg1}
+	for _, a := range arg2 {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "GetTaskExecution", varargs...)
+	ret0, _ := ret[0].(*admin.TaskExecution)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// GetTaskExecution indicates an expected call of GetTaskExecution
+func (mr *MockAdminServiceClientMockRecorder) GetTaskExecution(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
+	varargs := append([]interface{}{arg0, arg1}, arg2...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTaskExecution", reflect.TypeOf((*MockAdminServiceClient)(nil).GetTaskExecution), varargs...)
 }
 
 // GetWorkflow mocks base method

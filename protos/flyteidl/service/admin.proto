@@ -11,6 +11,7 @@ import "flyteidl/admin/launch_plan.proto";
 import "flyteidl/admin/event.proto";
 import "flyteidl/admin/execution.proto";
 import "flyteidl/admin/node_execution.proto";
+import "flyteidl/admin/task_execution.proto";
 import "flyteidl/admin/common.proto";
 import "protoc-gen-swagger/options/annotations.proto";
 

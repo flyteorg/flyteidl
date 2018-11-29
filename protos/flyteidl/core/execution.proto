@@ -49,4 +49,12 @@ message ExecutionError {
     string code     = 1;
     // Detailed description of the error - including stack trace.
     string message  = 2;
+    // Full error contents accessible via a URI
+    string error_uri = 3;
+}
+
+// Log information for the task that is specific to a log sink
+// When our log story is flushed out, we may have more metadata here like log link expiry
+message TaskLog {
+    string uri = 1;
 }

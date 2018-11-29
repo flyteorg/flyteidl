@@ -2789,6 +2789,70 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a TaskExecutionIdentifier. */
+        interface ITaskExecutionIdentifier {
+
+            /** TaskExecutionIdentifier taskId */
+            taskId?: (flyteidl.core.IIdentifier|null);
+
+            /** TaskExecutionIdentifier nodeExecutionId */
+            nodeExecutionId?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /** TaskExecutionIdentifier retryAttempt */
+            retryAttempt?: (number|null);
+        }
+
+        /** Represents a TaskExecutionIdentifier. */
+        class TaskExecutionIdentifier implements ITaskExecutionIdentifier {
+
+            /**
+             * Constructs a new TaskExecutionIdentifier.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ITaskExecutionIdentifier);
+
+            /** TaskExecutionIdentifier taskId. */
+            public taskId?: (flyteidl.core.IIdentifier|null);
+
+            /** TaskExecutionIdentifier nodeExecutionId. */
+            public nodeExecutionId?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /** TaskExecutionIdentifier retryAttempt. */
+            public retryAttempt: number;
+
+            /**
+             * Creates a new TaskExecutionIdentifier instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskExecutionIdentifier instance
+             */
+            public static create(properties?: flyteidl.core.ITaskExecutionIdentifier): flyteidl.core.TaskExecutionIdentifier;
+
+            /**
+             * Encodes the specified TaskExecutionIdentifier message. Does not implicitly {@link flyteidl.core.TaskExecutionIdentifier.verify|verify} messages.
+             * @param message TaskExecutionIdentifier message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ITaskExecutionIdentifier, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskExecutionIdentifier message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskExecutionIdentifier
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.TaskExecutionIdentifier;
+
+            /**
+             * Verifies a TaskExecutionIdentifier message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a Variable. */
         interface IVariable {
 
@@ -3903,6 +3967,9 @@ export namespace flyteidl {
 
             /** ExecutionError message */
             message?: (string|null);
+
+            /** ExecutionError errorUri */
+            errorUri?: (string|null);
         }
 
         /** Represents an ExecutionError. */
@@ -3919,6 +3986,9 @@ export namespace flyteidl {
 
             /** ExecutionError message. */
             public message: string;
+
+            /** ExecutionError errorUri. */
+            public errorUri: string;
 
             /**
              * Creates a new ExecutionError instance using the specified properties.
@@ -3947,6 +4017,58 @@ export namespace flyteidl {
 
             /**
              * Verifies an ExecutionError message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a TaskLog. */
+        interface ITaskLog {
+
+            /** TaskLog uri */
+            uri?: (string|null);
+        }
+
+        /** Represents a TaskLog. */
+        class TaskLog implements ITaskLog {
+
+            /**
+             * Constructs a new TaskLog.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ITaskLog);
+
+            /** TaskLog uri. */
+            public uri: string;
+
+            /**
+             * Creates a new TaskLog instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskLog instance
+             */
+            public static create(properties?: flyteidl.core.ITaskLog): flyteidl.core.TaskLog;
+
+            /**
+             * Encodes the specified TaskLog message. Does not implicitly {@link flyteidl.core.TaskLog.verify|verify} messages.
+             * @param message TaskLog message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ITaskLog, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskLog message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskLog
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.TaskLog;
+
+            /**
+             * Verifies a TaskLog message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -4209,14 +4331,20 @@ export namespace flyteidl {
             /** TaskExecutionEvent producerId */
             producerId?: (string|null);
 
-            /** TaskExecutionEvent versionNum */
-            versionNum?: (string|null);
-
-            /** TaskExecutionEvent logUri */
-            logUri?: (string|null);
+            /** TaskExecutionEvent logs */
+            logs?: (flyteidl.core.ITaskLog[]|null);
 
             /** TaskExecutionEvent occurredAt */
             occurredAt?: (google.protobuf.ITimestamp|null);
+
+            /** TaskExecutionEvent inputUri */
+            inputUri?: (string|null);
+
+            /** TaskExecutionEvent outputUri */
+            outputUri?: (string|null);
+
+            /** TaskExecutionEvent error */
+            error?: (flyteidl.core.IExecutionError|null);
 
             /** TaskExecutionEvent customInfo */
             customInfo?: (google.protobuf.IStruct|null);
@@ -4246,17 +4374,26 @@ export namespace flyteidl {
             /** TaskExecutionEvent producerId. */
             public producerId: string;
 
-            /** TaskExecutionEvent versionNum. */
-            public versionNum: string;
-
-            /** TaskExecutionEvent logUri. */
-            public logUri: string;
+            /** TaskExecutionEvent logs. */
+            public logs: flyteidl.core.ITaskLog[];
 
             /** TaskExecutionEvent occurredAt. */
             public occurredAt?: (google.protobuf.ITimestamp|null);
 
+            /** TaskExecutionEvent inputUri. */
+            public inputUri: string;
+
+            /** TaskExecutionEvent outputUri. */
+            public outputUri: string;
+
+            /** TaskExecutionEvent error. */
+            public error?: (flyteidl.core.IExecutionError|null);
+
             /** TaskExecutionEvent customInfo. */
             public customInfo?: (google.protobuf.IStruct|null);
+
+            /** TaskExecutionEvent outputResult. */
+            public outputResult?: ("outputUri"|"error");
 
             /**
              * Creates a new TaskExecutionEvent instance using the specified properties.
@@ -7482,6 +7619,335 @@ export namespace flyteidl {
 
             /**
              * Verifies a TaskClosure message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a TaskExecutionGetRequest. */
+        interface ITaskExecutionGetRequest {
+
+            /** TaskExecutionGetRequest id */
+            id?: (flyteidl.core.ITaskExecutionIdentifier|null);
+        }
+
+        /** Represents a TaskExecutionGetRequest. */
+        class TaskExecutionGetRequest implements ITaskExecutionGetRequest {
+
+            /**
+             * Constructs a new TaskExecutionGetRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ITaskExecutionGetRequest);
+
+            /** TaskExecutionGetRequest id. */
+            public id?: (flyteidl.core.ITaskExecutionIdentifier|null);
+
+            /**
+             * Creates a new TaskExecutionGetRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskExecutionGetRequest instance
+             */
+            public static create(properties?: flyteidl.admin.ITaskExecutionGetRequest): flyteidl.admin.TaskExecutionGetRequest;
+
+            /**
+             * Encodes the specified TaskExecutionGetRequest message. Does not implicitly {@link flyteidl.admin.TaskExecutionGetRequest.verify|verify} messages.
+             * @param message TaskExecutionGetRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ITaskExecutionGetRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskExecutionGetRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskExecutionGetRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.TaskExecutionGetRequest;
+
+            /**
+             * Verifies a TaskExecutionGetRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a TaskExecutionListRequest. */
+        interface ITaskExecutionListRequest {
+
+            /** TaskExecutionListRequest limit */
+            limit?: (number|null);
+
+            /** TaskExecutionListRequest offset */
+            offset?: (number|null);
+
+            /** TaskExecutionListRequest filters */
+            filters?: (string|null);
+        }
+
+        /** Represents a TaskExecutionListRequest. */
+        class TaskExecutionListRequest implements ITaskExecutionListRequest {
+
+            /**
+             * Constructs a new TaskExecutionListRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ITaskExecutionListRequest);
+
+            /** TaskExecutionListRequest limit. */
+            public limit: number;
+
+            /** TaskExecutionListRequest offset. */
+            public offset: number;
+
+            /** TaskExecutionListRequest filters. */
+            public filters: string;
+
+            /**
+             * Creates a new TaskExecutionListRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskExecutionListRequest instance
+             */
+            public static create(properties?: flyteidl.admin.ITaskExecutionListRequest): flyteidl.admin.TaskExecutionListRequest;
+
+            /**
+             * Encodes the specified TaskExecutionListRequest message. Does not implicitly {@link flyteidl.admin.TaskExecutionListRequest.verify|verify} messages.
+             * @param message TaskExecutionListRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ITaskExecutionListRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskExecutionListRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskExecutionListRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.TaskExecutionListRequest;
+
+            /**
+             * Verifies a TaskExecutionListRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a TaskExecution. */
+        interface ITaskExecution {
+
+            /** TaskExecution id */
+            id?: (flyteidl.core.ITaskExecutionIdentifier|null);
+
+            /** TaskExecution inputUri */
+            inputUri?: (string|null);
+
+            /** TaskExecution closure */
+            closure?: (flyteidl.admin.ITaskExecutionClosure|null);
+        }
+
+        /** Represents a TaskExecution. */
+        class TaskExecution implements ITaskExecution {
+
+            /**
+             * Constructs a new TaskExecution.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ITaskExecution);
+
+            /** TaskExecution id. */
+            public id?: (flyteidl.core.ITaskExecutionIdentifier|null);
+
+            /** TaskExecution inputUri. */
+            public inputUri: string;
+
+            /** TaskExecution closure. */
+            public closure?: (flyteidl.admin.ITaskExecutionClosure|null);
+
+            /**
+             * Creates a new TaskExecution instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskExecution instance
+             */
+            public static create(properties?: flyteidl.admin.ITaskExecution): flyteidl.admin.TaskExecution;
+
+            /**
+             * Encodes the specified TaskExecution message. Does not implicitly {@link flyteidl.admin.TaskExecution.verify|verify} messages.
+             * @param message TaskExecution message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ITaskExecution, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskExecution message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskExecution
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.TaskExecution;
+
+            /**
+             * Verifies a TaskExecution message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a TaskExecutionList. */
+        interface ITaskExecutionList {
+
+            /** TaskExecutionList taskExecutions */
+            taskExecutions?: (flyteidl.admin.ITaskExecution[]|null);
+        }
+
+        /** Represents a TaskExecutionList. */
+        class TaskExecutionList implements ITaskExecutionList {
+
+            /**
+             * Constructs a new TaskExecutionList.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ITaskExecutionList);
+
+            /** TaskExecutionList taskExecutions. */
+            public taskExecutions: flyteidl.admin.ITaskExecution[];
+
+            /**
+             * Creates a new TaskExecutionList instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskExecutionList instance
+             */
+            public static create(properties?: flyteidl.admin.ITaskExecutionList): flyteidl.admin.TaskExecutionList;
+
+            /**
+             * Encodes the specified TaskExecutionList message. Does not implicitly {@link flyteidl.admin.TaskExecutionList.verify|verify} messages.
+             * @param message TaskExecutionList message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ITaskExecutionList, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskExecutionList message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskExecutionList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.TaskExecutionList;
+
+            /**
+             * Verifies a TaskExecutionList message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a TaskExecutionClosure. */
+        interface ITaskExecutionClosure {
+
+            /** TaskExecutionClosure outputUri */
+            outputUri?: (string|null);
+
+            /** TaskExecutionClosure error */
+            error?: (flyteidl.core.IExecutionError|null);
+
+            /** TaskExecutionClosure phase */
+            phase?: (flyteidl.core.TaskExecutionPhase|null);
+
+            /** TaskExecutionClosure logs */
+            logs?: (flyteidl.core.ITaskLog[]|null);
+
+            /** TaskExecutionClosure startedAt */
+            startedAt?: (google.protobuf.ITimestamp|null);
+
+            /** TaskExecutionClosure duration */
+            duration?: (google.protobuf.IDuration|null);
+
+            /** TaskExecutionClosure createdAt */
+            createdAt?: (google.protobuf.ITimestamp|null);
+
+            /** TaskExecutionClosure updatedAt */
+            updatedAt?: (google.protobuf.ITimestamp|null);
+        }
+
+        /** Represents a TaskExecutionClosure. */
+        class TaskExecutionClosure implements ITaskExecutionClosure {
+
+            /**
+             * Constructs a new TaskExecutionClosure.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ITaskExecutionClosure);
+
+            /** TaskExecutionClosure outputUri. */
+            public outputUri: string;
+
+            /** TaskExecutionClosure error. */
+            public error?: (flyteidl.core.IExecutionError|null);
+
+            /** TaskExecutionClosure phase. */
+            public phase: flyteidl.core.TaskExecutionPhase;
+
+            /** TaskExecutionClosure logs. */
+            public logs: flyteidl.core.ITaskLog[];
+
+            /** TaskExecutionClosure startedAt. */
+            public startedAt?: (google.protobuf.ITimestamp|null);
+
+            /** TaskExecutionClosure duration. */
+            public duration?: (google.protobuf.IDuration|null);
+
+            /** TaskExecutionClosure createdAt. */
+            public createdAt?: (google.protobuf.ITimestamp|null);
+
+            /** TaskExecutionClosure updatedAt. */
+            public updatedAt?: (google.protobuf.ITimestamp|null);
+
+            /** TaskExecutionClosure outputResult. */
+            public outputResult?: ("outputUri"|"error");
+
+            /**
+             * Creates a new TaskExecutionClosure instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskExecutionClosure instance
+             */
+            public static create(properties?: flyteidl.admin.ITaskExecutionClosure): flyteidl.admin.TaskExecutionClosure;
+
+            /**
+             * Encodes the specified TaskExecutionClosure message. Does not implicitly {@link flyteidl.admin.TaskExecutionClosure.verify|verify} messages.
+             * @param message TaskExecutionClosure message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ITaskExecutionClosure, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskExecutionClosure message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskExecutionClosure
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.TaskExecutionClosure;
+
+            /**
+             * Verifies a TaskExecutionClosure message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
