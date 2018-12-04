@@ -158,6 +158,14 @@ service AdminService {
     };
   }
 
+  rpc TerminateExecution (flyteidl.admin.ExecutionTerminateRequest) returns (flyteidl.admin.ExecutionTerminateResponse) {
+    option (google.api.http) = {
+      delete: "/api/v1/executions/{id.project}/{id.domain}/{id.name}"
+      body: "*"
+    };
+  }
+
+
   rpc GetNodeExecution (flyteidl.admin.NodeExecutionGetRequest) returns (flyteidl.admin.NodeExecution) {
     option (google.api.http) = {
       get: "/api/v1/executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}"
