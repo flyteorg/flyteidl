@@ -12,6 +12,10 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// This test suite uses Gomock to mock the AdminServiceClient. Run the following command in CLI or in the IntelliJ
+// IDE "Go Generate File". This will create a mock_adminclient.go file within this package.
+//go:generate mockgen -package events -destination=mock_adminclient.go github.com/lyft/flyteidl/gen/pb-go/flyteidl/service AdminServiceClient
+
 func GetTestAdminEventSink(t *testing.T) (EventSink, *MockAdminServiceClient) {
 	ctrl := gomock.NewController(t)
 	client := NewMockAdminServiceClient(ctrl)
