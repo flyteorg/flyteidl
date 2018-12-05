@@ -124,16 +124,3 @@ message ExecutionSpec {
     // List of notifications based on Execution status transitions
     repeated Notification notifications = 4;
 }
-
-message ExecutionTerminateRequest {
-    // Uniquely identifies the individual workflow execution to be terminated. 
-    core.WorkflowExecutionIdentifier id  = 1;
-
-    // Optional reason for aborting.
-    string cause                         = 2;
-}
-
-
-message ExecutionTerminateResponse {
-    // Purposefully empty, may be populated in the future.
-}

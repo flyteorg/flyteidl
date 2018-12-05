@@ -5958,110 +5958,6 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of an ExecutionTerminateRequest. */
-        interface IExecutionTerminateRequest {
-
-            /** ExecutionTerminateRequest id */
-            id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
-
-            /** ExecutionTerminateRequest cause */
-            cause?: (string|null);
-        }
-
-        /** Represents an ExecutionTerminateRequest. */
-        class ExecutionTerminateRequest implements IExecutionTerminateRequest {
-
-            /**
-             * Constructs a new ExecutionTerminateRequest.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IExecutionTerminateRequest);
-
-            /** ExecutionTerminateRequest id. */
-            public id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
-
-            /** ExecutionTerminateRequest cause. */
-            public cause: string;
-
-            /**
-             * Creates a new ExecutionTerminateRequest instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ExecutionTerminateRequest instance
-             */
-            public static create(properties?: flyteidl.admin.IExecutionTerminateRequest): flyteidl.admin.ExecutionTerminateRequest;
-
-            /**
-             * Encodes the specified ExecutionTerminateRequest message. Does not implicitly {@link flyteidl.admin.ExecutionTerminateRequest.verify|verify} messages.
-             * @param message ExecutionTerminateRequest message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IExecutionTerminateRequest, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an ExecutionTerminateRequest message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns ExecutionTerminateRequest
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionTerminateRequest;
-
-            /**
-             * Verifies an ExecutionTerminateRequest message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of an ExecutionTerminateResponse. */
-        interface IExecutionTerminateResponse {
-        }
-
-        /** Represents an ExecutionTerminateResponse. */
-        class ExecutionTerminateResponse implements IExecutionTerminateResponse {
-
-            /**
-             * Constructs a new ExecutionTerminateResponse.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IExecutionTerminateResponse);
-
-            /**
-             * Creates a new ExecutionTerminateResponse instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ExecutionTerminateResponse instance
-             */
-            public static create(properties?: flyteidl.admin.IExecutionTerminateResponse): flyteidl.admin.ExecutionTerminateResponse;
-
-            /**
-             * Encodes the specified ExecutionTerminateResponse message. Does not implicitly {@link flyteidl.admin.ExecutionTerminateResponse.verify|verify} messages.
-             * @param message ExecutionTerminateResponse message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IExecutionTerminateResponse, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an ExecutionTerminateResponse message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns ExecutionTerminateResponse
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionTerminateResponse;
-
-            /**
-             * Verifies an ExecutionTerminateResponse message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of a LaunchPlanCreateRequest. */
         interface ILaunchPlanCreateRequest {
 
@@ -8631,20 +8527,6 @@ export namespace flyteidl {
             public listExecutions(request: flyteidl.admin.IResourceListRequest): Promise<flyteidl.admin.ExecutionList>;
 
             /**
-             * Calls TerminateExecution.
-             * @param request ExecutionTerminateRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and ExecutionTerminateResponse
-             */
-            public terminateExecution(request: flyteidl.admin.IExecutionTerminateRequest, callback: flyteidl.service.AdminService.TerminateExecutionCallback): void;
-
-            /**
-             * Calls TerminateExecution.
-             * @param request ExecutionTerminateRequest message or plain object
-             * @returns Promise
-             */
-            public terminateExecution(request: flyteidl.admin.IExecutionTerminateRequest): Promise<flyteidl.admin.ExecutionTerminateResponse>;
-
-            /**
              * Calls GetNodeExecution.
              * @param request NodeExecutionGetRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and NodeExecution
@@ -8870,13 +8752,6 @@ export namespace flyteidl {
              * @param [response] ExecutionList
              */
             type ListExecutionsCallback = (error: (Error|null), response?: flyteidl.admin.ExecutionList) => void;
-
-            /**
-             * Callback as used by {@link flyteidl.service.AdminService#terminateExecution}.
-             * @param error Error, if any
-             * @param [response] ExecutionTerminateResponse
-             */
-            type TerminateExecutionCallback = (error: (Error|null), response?: flyteidl.admin.ExecutionTerminateResponse) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.AdminService#getNodeExecution}.
