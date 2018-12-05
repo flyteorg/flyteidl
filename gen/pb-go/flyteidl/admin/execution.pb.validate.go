@@ -16,6 +16,8 @@ import (
 	"unicode/utf8"
 
 	"github.com/golang/protobuf/ptypes"
+
+	core "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
 )
 
 // ensure the imports are used
@@ -31,6 +33,8 @@ var (
 	_ = (*url.URL)(nil)
 	_ = (*mail.Address)(nil)
 	_ = ptypes.DynamicAny{}
+
+	_ = core.WorkflowExecutionPhase(0)
 )
 
 // Validate checks the field values on ExecutionCreateRequest with the rules
@@ -871,3 +875,149 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = ExecutionSpecValidationError{}
+
+// Validate checks the field values on ExecutionTerminateRequest with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *ExecutionTerminateRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionTerminateRequestValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	// no validation rules for Cause
+
+	return nil
+}
+
+// ExecutionTerminateRequestValidationError is the validation error returned by
+// ExecutionTerminateRequest.Validate if the designated constraints aren't met.
+type ExecutionTerminateRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ExecutionTerminateRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ExecutionTerminateRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ExecutionTerminateRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ExecutionTerminateRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ExecutionTerminateRequestValidationError) ErrorName() string {
+	return "ExecutionTerminateRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e ExecutionTerminateRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sExecutionTerminateRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ExecutionTerminateRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ExecutionTerminateRequestValidationError{}
+
+// Validate checks the field values on ExecutionTerminateResponse with the
+// rules defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *ExecutionTerminateResponse) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	return nil
+}
+
+// ExecutionTerminateResponseValidationError is the validation error returned
+// by ExecutionTerminateResponse.Validate if the designated constraints aren't met.
+type ExecutionTerminateResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ExecutionTerminateResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ExecutionTerminateResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ExecutionTerminateResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ExecutionTerminateResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ExecutionTerminateResponseValidationError) ErrorName() string {
+	return "ExecutionTerminateResponseValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e ExecutionTerminateResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sExecutionTerminateResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ExecutionTerminateResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ExecutionTerminateResponseValidationError{}

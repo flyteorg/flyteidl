@@ -16,6 +16,8 @@ import (
 	"unicode/utf8"
 
 	"github.com/golang/protobuf/ptypes"
+
+	core "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
 )
 
 // ensure the imports are used
@@ -31,6 +33,8 @@ var (
 	_ = (*url.URL)(nil)
 	_ = (*mail.Address)(nil)
 	_ = ptypes.DynamicAny{}
+
+	_ = core.NodeExecutionPhase(0)
 )
 
 // Validate checks the field values on NodeExecutionGetRequest with the rules

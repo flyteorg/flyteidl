@@ -449,6 +449,23 @@ func (mr *MockAdminServiceClientMockRecorder) RegisterProject(arg0, arg1 interfa
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RegisterProject", reflect.TypeOf((*MockAdminServiceClient)(nil).RegisterProject), varargs...)
 }
 
+// TerminateExecution mocks base method
+func (m *MockAdminServiceClient) TerminateExecution(arg0 context.Context, arg1 *admin.ExecutionTerminateRequest, arg2 ...grpc.CallOption) (*admin.ExecutionTerminateResponse, error) {
+	varargs := []interface{}{arg0, arg1}
+	for _, a := range arg2 {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "TerminateExecution", varargs...)
+	ret0, _ := ret[0].(*admin.ExecutionTerminateResponse)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+ // TerminateExecution indicates an expected call of ExecutionTerminateRequest 
+func (mr *MockAdminServiceClientMockRecorder) TerminateExecution(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
+	varargs := append([]interface{}{arg0, arg1}, arg2...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TerminateExecution", reflect.TypeOf((*MockAdminServiceClient)(nil).TerminateExecution), varargs...)
+}
+
 // UpdateLaunchPlan mocks base method
 func (m *MockAdminServiceClient) UpdateLaunchPlan(arg0 context.Context, arg1 *admin.LaunchPlanUpdateRequest, arg2 ...grpc.CallOption) (*admin.LaunchPlanUpdateResponse, error) {
 	varargs := []interface{}{arg0, arg1}

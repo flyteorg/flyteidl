@@ -1,6 +1,6 @@
 DIR=`pwd`
 rm -rf $DIR/gen
-LYFT_IMAGE="lyft/protocgenerator:ec3374df888cdc7ff755807c090231f0df139453"
+LYFT_IMAGE="lyft/protocgenerator:f4bad5b4fb78734e69e398e29497670bd374c133"
 
 docker run -v $DIR:/defs $LYFT_IMAGE -d example --with_gateway -l go --go_source_relative
 docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/service --with_gateway -l go --go_source_relative

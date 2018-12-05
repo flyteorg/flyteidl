@@ -102,6 +102,11 @@ class AdminServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_common__pb2.ResourceListRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionList.FromString,
         )
+    self.TerminateExecution = channel.unary_unary(
+        '/flyteidl.service.AdminService/TerminateExecution',
+        request_serializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionTerminateRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionTerminateResponse.FromString,
+        )
     self.GetNodeExecution = channel.unary_unary(
         '/flyteidl.service.AdminService/GetNodeExecution',
         request_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetRequest.SerializeToString,
@@ -260,6 +265,13 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def TerminateExecution(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def GetNodeExecution(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -398,6 +410,11 @@ def add_AdminServiceServicer_to_server(servicer, server):
           servicer.ListExecutions,
           request_deserializer=flyteidl_dot_admin_dot_common__pb2.ResourceListRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionList.SerializeToString,
+      ),
+      'TerminateExecution': grpc.unary_unary_rpc_method_handler(
+          servicer.TerminateExecution,
+          request_deserializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionTerminateRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionTerminateResponse.SerializeToString,
       ),
       'GetNodeExecution': grpc.unary_unary_rpc_method_handler(
           servicer.GetNodeExecution,
