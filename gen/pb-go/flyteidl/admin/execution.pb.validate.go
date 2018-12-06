@@ -634,6 +634,9 @@ func (m *ExecutionClosure) Validate() error {
 			}
 		}
 
+	case *ExecutionClosure_AbortCause:
+		// no validation rules for AbortCause
+
 	}
 
 	return nil

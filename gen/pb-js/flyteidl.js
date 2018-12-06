@@ -13760,6 +13760,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IExecutionClosure
              * @property {flyteidl.admin.ILiteralMapBlob|null} [outputs] ExecutionClosure outputs
              * @property {flyteidl.core.IExecutionError|null} [error] ExecutionClosure error
+             * @property {string|null} [abortCause] ExecutionClosure abortCause
              * @property {flyteidl.core.ILiteralMap|null} [computedInputs] ExecutionClosure computedInputs
              * @property {flyteidl.core.WorkflowExecutionPhase|null} [phase] ExecutionClosure phase
              * @property {google.protobuf.ITimestamp|null} [startedAt] ExecutionClosure startedAt
@@ -13800,6 +13801,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             ExecutionClosure.prototype.error = null;
+
+            /**
+             * ExecutionClosure abortCause.
+             * @member {string} abortCause
+             * @memberof flyteidl.admin.ExecutionClosure
+             * @instance
+             */
+            ExecutionClosure.prototype.abortCause = "";
 
             /**
              * ExecutionClosure computedInputs.
@@ -13862,12 +13871,12 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * ExecutionClosure outputResult.
-             * @member {"outputs"|"error"|undefined} outputResult
+             * @member {"outputs"|"error"|"abortCause"|undefined} outputResult
              * @memberof flyteidl.admin.ExecutionClosure
              * @instance
              */
             Object.defineProperty(ExecutionClosure.prototype, "outputResult", {
-                get: $util.oneOfGetter($oneOfFields = ["outputs", "error"]),
+                get: $util.oneOfGetter($oneOfFields = ["outputs", "error", "abortCause"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -13914,6 +13923,8 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.notifications != null && message.notifications.length)
                     for (let i = 0; i < message.notifications.length; ++i)
                         $root.flyteidl.admin.Notification.encode(message.notifications[i], writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                if (message.abortCause != null && message.hasOwnProperty("abortCause"))
+                    writer.uint32(/* id 10, wireType 2 =*/82).string(message.abortCause);
                 return writer;
             };
 
@@ -13940,6 +13951,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 2:
                         message.error = $root.flyteidl.core.ExecutionError.decode(reader, reader.uint32());
+                        break;
+                    case 10:
+                        message.abortCause = reader.string();
                         break;
                     case 3:
                         message.computedInputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
@@ -14001,6 +14015,13 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (error)
                             return "error." + error;
                     }
+                }
+                if (message.abortCause != null && message.hasOwnProperty("abortCause")) {
+                    if (properties.outputResult === 1)
+                        return "outputResult: multiple values";
+                    properties.outputResult = 1;
+                    if (!$util.isString(message.abortCause))
+                        return "abortCause: string expected";
                 }
                 if (message.computedInputs != null && message.hasOwnProperty("computedInputs")) {
                     let error = $root.flyteidl.core.LiteralMap.verify(message.computedInputs);

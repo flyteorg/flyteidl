@@ -5720,6 +5720,9 @@ export namespace flyteidl {
             /** ExecutionClosure error */
             error?: (flyteidl.core.IExecutionError|null);
 
+            /** ExecutionClosure abortCause */
+            abortCause?: (string|null);
+
             /** ExecutionClosure computedInputs */
             computedInputs?: (flyteidl.core.ILiteralMap|null);
 
@@ -5757,6 +5760,9 @@ export namespace flyteidl {
             /** ExecutionClosure error. */
             public error?: (flyteidl.core.IExecutionError|null);
 
+            /** ExecutionClosure abortCause. */
+            public abortCause: string;
+
             /** ExecutionClosure computedInputs. */
             public computedInputs?: (flyteidl.core.ILiteralMap|null);
 
@@ -5779,7 +5785,7 @@ export namespace flyteidl {
             public notifications: flyteidl.admin.INotification[];
 
             /** ExecutionClosure outputResult. */
-            public outputResult?: ("outputs"|"error");
+            public outputResult?: ("outputs"|"error"|"abortCause");
 
             /**
              * Creates a new ExecutionClosure instance using the specified properties.

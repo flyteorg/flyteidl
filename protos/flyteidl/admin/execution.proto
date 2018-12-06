@@ -66,6 +66,9 @@ message ExecutionClosure {
 
         // Error information for the Node
         core.ExecutionError error		= 2;
+
+        // In the case of a user-specified abort, this will pass along the user-supplied cause.
+        string abort_cause                      = 10;
     }
 
     // Inputs computed and passed for execution.
