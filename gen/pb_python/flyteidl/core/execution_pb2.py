@@ -14,14 +14,16 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/execution.proto',
   package='flyteidl.core',
   syntax='proto3',
-  serialized_pb=_b('\n\x1d\x66lyteidl/core/execution.proto\x12\rflyteidl.core\"B\n\x0e\x45xecutionError\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x11\n\terror_uri\x18\x03 \x01(\t\"\x16\n\x07TaskLog\x12\x0b\n\x03uri\x18\x01 \x01(\t*\x9b\x02\n\x16WorkflowExecutionPhase\x12\x1c\n\x18WORKFLOW_PHASE_UNDEFINED\x10\x00\x12\x1a\n\x16WORKFLOW_PHASE_RUNNING\x10\x01\x12\x1d\n\x19WORKFLOW_PHASE_SUCCEEDING\x10\x02\x12\x1c\n\x18WORKFLOW_PHASE_SUCCEEDED\x10\x03\x12\x1a\n\x16WORKFLOW_PHASE_FAILING\x10\x04\x12\x19\n\x15WORKFLOW_PHASE_FAILED\x10\x05\x12\x1c\n\x18WORKFLOW_PHASE_TIMED_OUT\x10\x06\x12\x1a\n\x16WORKFLOW_PHASE_ABORTED\x10\x07\x12\x19\n\x15WORKFLOW_PHASE_QUEUED\x10\x08*\xf0\x01\n\x12NodeExecutionPhase\x12\x18\n\x14NODE_PHASE_UNDEFINED\x10\x00\x12\x16\n\x12NODE_PHASE_RUNNING\x10\x01\x12\x18\n\x14NODE_PHASE_SUCCEEDED\x10\x02\x12\x16\n\x12NODE_PHASE_FAILING\x10\x03\x12\x15\n\x11NODE_PHASE_FAILED\x10\x04\x12\x18\n\x14NODE_PHASE_TIMED_OUT\x10\x05\x12\x16\n\x12NODE_PHASE_SKIPPED\x10\x06\x12\x16\n\x12NODE_PHASE_ABORTED\x10\x07\x12\x15\n\x11NODE_PHASE_QUEUED\x10\x08*\xbf\x01\n\x12TaskExecutionPhase\x12\x18\n\x14TASK_PHASE_UNDEFINED\x10\x00\x12\x15\n\x11TASK_PHASE_QUEUED\x10\x01\x12\x17\n\x13TASK_PHASE_RUNNABLE\x10\x02\x12\x16\n\x12TASK_PHASE_RUNNING\x10\x03\x12\x18\n\x14TASK_PHASE_SUCCEEDED\x10\x04\x12\x15\n\x11TASK_PHASE_FAILED\x10\x05\x12\x16\n\x12TASK_PHASE_ABORTED\x10\x06\x42\x32Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
-)
+  serialized_pb=_b('\n\x1d\x66lyteidl/core/execution.proto\x12\rflyteidl.core\x1a\x1egoogle/protobuf/duration.proto\"B\n\x0e\x45xecutionError\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x11\n\terror_uri\x18\x03 \x01(\t\"\xbb\x01\n\x07TaskLog\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12<\n\x0emessage_format\x18\x03 \x01(\x0e\x32$.flyteidl.core.TaskLog.MessageFormat\x12&\n\x03ttl\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\"/\n\rMessageFormat\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x07\n\x03\x43SV\x10\x01\x12\x08\n\x04JSON\x10\x02*\x9b\x02\n\x16WorkflowExecutionPhase\x12\x1c\n\x18WORKFLOW_PHASE_UNDEFINED\x10\x00\x12\x1a\n\x16WORKFLOW_PHASE_RUNNING\x10\x01\x12\x1d\n\x19WORKFLOW_PHASE_SUCCEEDING\x10\x02\x12\x1c\n\x18WORKFLOW_PHASE_SUCCEEDED\x10\x03\x12\x1a\n\x16WORKFLOW_PHASE_FAILING\x10\x04\x12\x19\n\x15WORKFLOW_PHASE_FAILED\x10\x05\x12\x1c\n\x18WORKFLOW_PHASE_TIMED_OUT\x10\x06\x12\x1a\n\x16WORKFLOW_PHASE_ABORTED\x10\x07\x12\x19\n\x15WORKFLOW_PHASE_QUEUED\x10\x08*\xf0\x01\n\x12NodeExecutionPhase\x12\x18\n\x14NODE_PHASE_UNDEFINED\x10\x00\x12\x16\n\x12NODE_PHASE_RUNNING\x10\x01\x12\x18\n\x14NODE_PHASE_SUCCEEDED\x10\x02\x12\x16\n\x12NODE_PHASE_FAILING\x10\x03\x12\x15\n\x11NODE_PHASE_FAILED\x10\x04\x12\x18\n\x14NODE_PHASE_TIMED_OUT\x10\x05\x12\x16\n\x12NODE_PHASE_SKIPPED\x10\x06\x12\x16\n\x12NODE_PHASE_ABORTED\x10\x07\x12\x15\n\x11NODE_PHASE_QUEUED\x10\x08*\xbf\x01\n\x12TaskExecutionPhase\x12\x18\n\x14TASK_PHASE_UNDEFINED\x10\x00\x12\x15\n\x11TASK_PHASE_QUEUED\x10\x01\x12\x17\n\x13TASK_PHASE_RUNNABLE\x10\x02\x12\x16\n\x12TASK_PHASE_RUNNING\x10\x03\x12\x18\n\x14TASK_PHASE_SUCCEEDED\x10\x04\x12\x15\n\x11TASK_PHASE_FAILED\x10\x05\x12\x16\n\x12TASK_PHASE_ABORTED\x10\x06\x42\x32Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  ,
+  dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,])
 
 _WORKFLOWEXECUTIONPHASE = _descriptor.EnumDescriptor(
   name='WorkflowExecutionPhase',
@@ -68,8 +70,8 @@ _WORKFLOWEXECUTIONPHASE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=141,
-  serialized_end=424,
+  serialized_start=339,
+  serialized_end=622,
 )
 _sym_db.RegisterEnumDescriptor(_WORKFLOWEXECUTIONPHASE)
 
@@ -119,8 +121,8 @@ _NODEEXECUTIONPHASE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=427,
-  serialized_end=667,
+  serialized_start=625,
+  serialized_end=865,
 )
 _sym_db.RegisterEnumDescriptor(_NODEEXECUTIONPHASE)
 
@@ -162,8 +164,8 @@ _TASKEXECUTIONPHASE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=670,
-  serialized_end=861,
+  serialized_start=868,
+  serialized_end=1059,
 )
 _sym_db.RegisterEnumDescriptor(_TASKEXECUTIONPHASE)
 
@@ -194,6 +196,32 @@ TASK_PHASE_SUCCEEDED = 4
 TASK_PHASE_FAILED = 5
 TASK_PHASE_ABORTED = 6
 
+
+_TASKLOG_MESSAGEFORMAT = _descriptor.EnumDescriptor(
+  name='MessageFormat',
+  full_name='flyteidl.core.TaskLog.MessageFormat',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN', index=0, number=0,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='CSV', index=1, number=1,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='JSON', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=289,
+  serialized_end=336,
+)
+_sym_db.RegisterEnumDescriptor(_TASKLOG_MESSAGEFORMAT)
 
 
 _EXECUTIONERROR = _descriptor.Descriptor(
@@ -236,8 +264,8 @@ _EXECUTIONERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=48,
-  serialized_end=114,
+  serialized_start=80,
+  serialized_end=146,
 )
 
 
@@ -255,11 +283,33 @@ _TASKLOG = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='flyteidl.core.TaskLog.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='message_format', full_name='flyteidl.core.TaskLog.message_format', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ttl', full_name='flyteidl.core.TaskLog.ttl', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
+    _TASKLOG_MESSAGEFORMAT,
   ],
   options=None,
   is_extendable=False,
@@ -267,10 +317,13 @@ _TASKLOG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=116,
-  serialized_end=138,
+  serialized_start=149,
+  serialized_end=336,
 )
 
+_TASKLOG.fields_by_name['message_format'].enum_type = _TASKLOG_MESSAGEFORMAT
+_TASKLOG.fields_by_name['ttl'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
+_TASKLOG_MESSAGEFORMAT.containing_type = _TASKLOG
 DESCRIPTOR.message_types_by_name['ExecutionError'] = _EXECUTIONERROR
 DESCRIPTOR.message_types_by_name['TaskLog'] = _TASKLOG
 DESCRIPTOR.enum_types_by_name['WorkflowExecutionPhase'] = _WORKFLOWEXECUTIONPHASE

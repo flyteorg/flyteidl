@@ -2353,6 +2353,15 @@
       ],
       "default": "DESCENDING"
     },
+    "TaskLogMessageFormat": {
+      "type": "string",
+      "enum": [
+        "UNKNOWN",
+        "CSV",
+        "JSON"
+      ],
+      "default": "UNKNOWN"
+    },
     "adminDomain": {
       "type": "object",
       "properties": {
@@ -3956,6 +3965,15 @@
       "type": "object",
       "properties": {
         "uri": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "message_format": {
+          "$ref": "#/definitions/TaskLogMessageFormat"
+        },
+        "ttl": {
           "type": "string"
         }
       },

@@ -4028,6 +4028,15 @@ export namespace flyteidl {
 
             /** TaskLog uri */
             uri?: (string|null);
+
+            /** TaskLog name */
+            name?: (string|null);
+
+            /** TaskLog messageFormat */
+            messageFormat?: (flyteidl.core.TaskLog.MessageFormat|null);
+
+            /** TaskLog ttl */
+            ttl?: (google.protobuf.IDuration|null);
         }
 
         /** Represents a TaskLog. */
@@ -4041,6 +4050,15 @@ export namespace flyteidl {
 
             /** TaskLog uri. */
             public uri: string;
+
+            /** TaskLog name. */
+            public name: string;
+
+            /** TaskLog messageFormat. */
+            public messageFormat: flyteidl.core.TaskLog.MessageFormat;
+
+            /** TaskLog ttl. */
+            public ttl?: (google.protobuf.IDuration|null);
 
             /**
              * Creates a new TaskLog instance using the specified properties.
@@ -4073,6 +4091,16 @@ export namespace flyteidl {
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace TaskLog {
+
+            /** MessageFormat enum. */
+            enum MessageFormat {
+                UNKNOWN = 0,
+                CSV = 1,
+                JSON = 2
+            }
         }
 
         /** Properties of a WorkflowClosure. */

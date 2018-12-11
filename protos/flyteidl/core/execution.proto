@@ -4,6 +4,8 @@ package flyteidl.core;
 
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
 
+import "google/protobuf/duration.proto";
+
 // Indicates various phases of Workflow Execution
 enum WorkflowExecutionPhase {
     WORKFLOW_PHASE_UNDEFINED        = 0;
@@ -56,5 +58,15 @@ message ExecutionError {
 // Log information for the task that is specific to a log sink
 // When our log story is flushed out, we may have more metadata here like log link expiry
 message TaskLog {
+
+    enum MessageFormat {
+        UNKNOWN = 0;
+        CSV = 1;
+        JSON = 2;
+    }
+
     string uri = 1;
+    string name = 2;
+    MessageFormat message_format = 3; 
+    google.protobuf.Duration ttl = 4;
 }

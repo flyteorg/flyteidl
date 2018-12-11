@@ -9732,6 +9732,9 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.core
              * @interface ITaskLog
              * @property {string|null} [uri] TaskLog uri
+             * @property {string|null} [name] TaskLog name
+             * @property {flyteidl.core.TaskLog.MessageFormat|null} [messageFormat] TaskLog messageFormat
+             * @property {google.protobuf.IDuration|null} [ttl] TaskLog ttl
              */
 
             /**
@@ -9756,6 +9759,30 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             TaskLog.prototype.uri = "";
+
+            /**
+             * TaskLog name.
+             * @member {string} name
+             * @memberof flyteidl.core.TaskLog
+             * @instance
+             */
+            TaskLog.prototype.name = "";
+
+            /**
+             * TaskLog messageFormat.
+             * @member {flyteidl.core.TaskLog.MessageFormat} messageFormat
+             * @memberof flyteidl.core.TaskLog
+             * @instance
+             */
+            TaskLog.prototype.messageFormat = 0;
+
+            /**
+             * TaskLog ttl.
+             * @member {google.protobuf.IDuration|null|undefined} ttl
+             * @memberof flyteidl.core.TaskLog
+             * @instance
+             */
+            TaskLog.prototype.ttl = null;
 
             /**
              * Creates a new TaskLog instance using the specified properties.
@@ -9783,6 +9810,12 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.uri != null && message.hasOwnProperty("uri"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.uri);
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                if (message.messageFormat != null && message.hasOwnProperty("messageFormat"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.messageFormat);
+                if (message.ttl != null && message.hasOwnProperty("ttl"))
+                    $root.google.protobuf.Duration.encode(message.ttl, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -9807,6 +9840,15 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                         message.uri = reader.string();
                         break;
+                    case 2:
+                        message.name = reader.string();
+                        break;
+                    case 3:
+                        message.messageFormat = reader.int32();
+                        break;
+                    case 4:
+                        message.ttl = $root.google.protobuf.Duration.decode(reader, reader.uint32());
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -9829,8 +9871,41 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.uri != null && message.hasOwnProperty("uri"))
                     if (!$util.isString(message.uri))
                         return "uri: string expected";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                if (message.messageFormat != null && message.hasOwnProperty("messageFormat"))
+                    switch (message.messageFormat) {
+                    default:
+                        return "messageFormat: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                        break;
+                    }
+                if (message.ttl != null && message.hasOwnProperty("ttl")) {
+                    let error = $root.google.protobuf.Duration.verify(message.ttl);
+                    if (error)
+                        return "ttl." + error;
+                }
                 return null;
             };
+
+            /**
+             * MessageFormat enum.
+             * @name flyteidl.core.TaskLog.MessageFormat
+             * @enum {string}
+             * @property {number} UNKNOWN=0 UNKNOWN value
+             * @property {number} CSV=1 CSV value
+             * @property {number} JSON=2 JSON value
+             */
+            TaskLog.MessageFormat = (function() {
+                const valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "UNKNOWN"] = 0;
+                values[valuesById[1] = "CSV"] = 1;
+                values[valuesById[2] = "JSON"] = 2;
+                return values;
+            })();
 
             return TaskLog;
         })();
