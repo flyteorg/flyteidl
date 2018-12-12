@@ -1,6 +1,6 @@
 #!/bin/bash
 export REPOSITORY=flyteidl
-include go.mk
+include boilerplate/lyft/golang_test_targets/Makefile
 
 .PHONY: generate
 generate: # generate protos
@@ -16,6 +16,6 @@ test_unit:
     # go tries to intepret. So we need to use go list to get the packages that go understands.
 	go test -cover `go list ./...` -race
 
-.PHONY: update_framework
-update_framework:
-	@script/update.sh
+.PHONY: update_boilerplate
+update_boilerplate:
+	@boilerplate/update.sh

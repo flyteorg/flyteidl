@@ -1,11 +1,7 @@
-# WARNING: THIS FILE IS MANAGED IN THE 'FLYTE' REPO AND COPIED TO OTHER REPOSITORIES.
-# ONLY EDIT THIS FILE IF:
-#   A) THIS IS THE 'FLYTE' REPO
-#   B) THIS CHANGE WORKS ACCROSS ALL APPLICABLE FLYTE SERVICES
-# TO OPT OUT OF UPDATES, SEE https://github.com/lyft/flyte/blob/master/sync_files/Readme.rst
-
-# These targets are shared concerns across go flyte repos.
-# They're separated so we can easily update all go repositories.
+# WARNING: THIS FILE IS MANAGED IN THE 'BOILERPLATE' REPO AND COPIED TO OTHER REPOSITORIES.
+# ONLY EDIT THIS FILE FROM WITHIN THE 'LYFT/BOILERPLATE' REPOSITORY:
+# 
+# TO OPT OUT OF UPDATES, SEE https://github.com/lyft/boilerplate/blob/master/Readme.rst
 
 .PHONY: lint
 lint: #lints the package for common code smells
@@ -16,7 +12,7 @@ lint: #lints the package for common code smells
 # skips 'vendor'
 .PHONY: goimports
 goimports:
-	@script/goimports
+	@boilerplate/lyft/golang_test_targets/goimports
 
 .PHONY: install
 install: #download dependencies (including test deps) for the package
@@ -30,3 +26,11 @@ test_unit:
 .PHONY: test_benchmark
 test_benchmark:
 	go test -bench . ./...
+
+.PHONY: test_unit_cover
+test_unit_cover:
+	go test ./... -coverprofile /tmp/cover.out -covermode=count; go tool cover -func /tmp/cover.out
+
+.PHONY: test_unit_visual
+test_unit_visual:
+	go test ./... -coverprofile /tmp/cover.out -covermode=count; go tool cover -html=/tmp/cover.out 
