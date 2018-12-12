@@ -174,6 +174,7 @@
         ]
       },
       "post": {
+        "description": "Create a workflow execution",
         "operationId": "CreateExecution",
         "responses": {
           "200": {
@@ -181,6 +182,14 @@
             "schema": {
               "$ref": "#/definitions/adminExecutionCreateResponse"
             }
+          },
+          "400": {
+            "description": "Returned for bad request that may have failed validation.",
+            "schema": {}
+          },
+          "409": {
+            "description": "Returned for a request that references an identical entity that has already been registered.",
+            "schema": {}
           }
         },
         "parameters": [
@@ -677,6 +686,7 @@
     },
     "/api/v1/launch_plans": {
       "post": {
+        "description": "Create and register a launch plan definition",
         "operationId": "CreateLaunchPlan",
         "responses": {
           "200": {
@@ -684,6 +694,14 @@
             "schema": {
               "$ref": "#/definitions/adminLaunchPlanCreateResponse"
             }
+          },
+          "400": {
+            "description": "Returned for bad request that may have failed validation.",
+            "schema": {}
+          },
+          "409": {
+            "description": "Returned for a request that references an identical entity that has already been registered.",
+            "schema": {}
           }
         },
         "parameters": [
@@ -1773,6 +1791,7 @@
     },
     "/api/v1/tasks": {
       "post": {
+        "description": "Create and register a task definition",
         "operationId": "CreateTask",
         "responses": {
           "200": {
@@ -1780,6 +1799,14 @@
             "schema": {
               "$ref": "#/definitions/adminTaskCreateResponse"
             }
+          },
+          "400": {
+            "description": "Returned for bad request that may have failed validation.",
+            "schema": {}
+          },
+          "409": {
+            "description": "Returned for a request that references an identical entity that has already been registered.",
+            "schema": {}
           }
         },
         "parameters": [
@@ -2148,6 +2175,7 @@
     },
     "/api/v1/workflows": {
       "post": {
+        "description": "Create and register a workflow definition",
         "operationId": "CreateWorkflow",
         "responses": {
           "200": {
@@ -2155,6 +2183,14 @@
             "schema": {
               "$ref": "#/definitions/adminWorkflowCreateResponse"
             }
+          },
+          "400": {
+            "description": "Returned for bad request that may have failed validation.",
+            "schema": {}
+          },
+          "409": {
+            "description": "Returned for a request that references an identical entity that has already been registered.",
+            "schema": {}
           }
         },
         "parameters": [
