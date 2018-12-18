@@ -608,6 +608,16 @@ func (m *ExecutionClosure) Validate() error {
 
 	}
 
+	if v, ok := interface{}(m.GetWorkflowId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionClosureValidationError{
+				field:  "WorkflowId",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	switch m.OutputResult.(type) {
 
 	case *ExecutionClosure_Outputs:

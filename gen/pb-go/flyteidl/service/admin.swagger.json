@@ -2483,6 +2483,10 @@
             "$ref": "#/definitions/adminNotification"
           },
           "description": "The notification settings to use after merging the CreateExecutionRequest and the launch plan\nnotification settings."
+        },
+        "workflow_id": {
+          "$ref": "#/definitions/coreIdentifier",
+          "description": "Identifies the workflow definition for this execution."
         }
       },
       "title": "Encapsulates the results of the Execution"

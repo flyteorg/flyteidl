@@ -5771,6 +5771,9 @@ export namespace flyteidl {
 
             /** ExecutionClosure notifications */
             notifications?: (flyteidl.admin.INotification[]|null);
+
+            /** ExecutionClosure workflowId */
+            workflowId?: (flyteidl.core.IIdentifier|null);
         }
 
         /** Represents an ExecutionClosure. */
@@ -5811,6 +5814,9 @@ export namespace flyteidl {
 
             /** ExecutionClosure notifications. */
             public notifications: flyteidl.admin.INotification[];
+
+            /** ExecutionClosure workflowId. */
+            public workflowId?: (flyteidl.core.IIdentifier|null);
 
             /** ExecutionClosure outputResult. */
             public outputResult?: ("outputs"|"error"|"abortCause");

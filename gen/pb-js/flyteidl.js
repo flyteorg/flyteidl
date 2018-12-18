@@ -13843,6 +13843,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.ITimestamp|null} [createdAt] ExecutionClosure createdAt
              * @property {google.protobuf.ITimestamp|null} [updatedAt] ExecutionClosure updatedAt
              * @property {Array.<flyteidl.admin.INotification>|null} [notifications] ExecutionClosure notifications
+             * @property {flyteidl.core.IIdentifier|null} [workflowId] ExecutionClosure workflowId
              */
 
             /**
@@ -13941,6 +13942,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             ExecutionClosure.prototype.notifications = $util.emptyArray;
 
+            /**
+             * ExecutionClosure workflowId.
+             * @member {flyteidl.core.IIdentifier|null|undefined} workflowId
+             * @memberof flyteidl.admin.ExecutionClosure
+             * @instance
+             */
+            ExecutionClosure.prototype.workflowId = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -14000,6 +14009,8 @@ export const flyteidl = $root.flyteidl = (() => {
                         $root.flyteidl.admin.Notification.encode(message.notifications[i], writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 if (message.abortCause != null && message.hasOwnProperty("abortCause"))
                     writer.uint32(/* id 10, wireType 2 =*/82).string(message.abortCause);
+                if (message.workflowId != null && message.hasOwnProperty("workflowId"))
+                    $root.flyteidl.core.Identifier.encode(message.workflowId, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
                 return writer;
             };
 
@@ -14052,6 +14063,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!(message.notifications && message.notifications.length))
                             message.notifications = [];
                         message.notifications.push($root.flyteidl.admin.Notification.decode(reader, reader.uint32()));
+                        break;
+                    case 11:
+                        message.workflowId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -14146,6 +14160,11 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (error)
                             return "notifications." + error;
                     }
+                }
+                if (message.workflowId != null && message.hasOwnProperty("workflowId")) {
+                    let error = $root.flyteidl.core.Identifier.verify(message.workflowId);
+                    if (error)
+                        return "workflowId." + error;
                 }
                 return null;
             };

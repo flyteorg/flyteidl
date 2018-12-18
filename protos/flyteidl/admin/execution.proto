@@ -93,6 +93,9 @@ message ExecutionClosure {
     // The notification settings to use after merging the CreateExecutionRequest and the launch plan
     // notification settings.
     repeated Notification notifications               = 9;
+
+    // Identifies the workflow definition for this execution.
+    core.Identifier workflow_id                       = 11;
 }
 
 message ExecutionMetadata {
