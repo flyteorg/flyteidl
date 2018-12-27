@@ -15,6 +15,18 @@ const (
 	TaskEvent
 )
 
+func (e EventType) String() string {
+	switch e {
+	case WorkflowEvent:
+		return "WorkflowEvent"
+	case NodeEvent:
+		return "NodeEvent"
+	case TaskEvent:
+		return "TaskEvent"
+	}
+	return "UnknownEventType"
+}
+
 // EventRecorder records workflow, node and task events to the eventSink it is configured with.
 type eventRecorder struct {
 	eventSink EventSink

@@ -44,45 +44,47 @@ func (s *adminEventSink) Sink(ctx context.Context, eventType EventType, message 
 
 	switch eventType {
 	case WorkflowEvent:
-		event, ok := message.(*event.WorkflowExecutionEvent)
+		ev, ok := message.(*event.WorkflowExecutionEvent)
 		if !ok {
-			return fmt.Errorf("failed to convert workflow event to its protobuf structure")
+			return fmt.Errorf("incorrect event-type and message. For eventType (WorkflowEvent), *event.WorkflowExecutionEvent is expected")
 		}
 		request := &admin.WorkflowExecutionEventRequest{
-			Event: event,
+			Event: ev,
 		}
 		_, err := s.adminClient.CreateWorkflowEvent(ctx, request)
 
 		if err != nil {
-			logger.Errorf(ctx, "failed to send workflow event(%d, %d) %v", event.ExecutionId, event.Phase, err)
+			logger.Errorf(ctx, "failed to send workflow event for [%s] in phase [%s] caused by error: %s", ev.ExecutionId.Name, ev.Phase.String(), err.Error())
 			return err
 		}
 	case NodeEvent:
-		event, ok := message.(*event.NodeExecutionEvent)
+		ev, ok := message.(*event.NodeExecutionEvent)
 		if !ok {
-			return fmt.Errorf("failed to convert node execution event to its protobuf structure")
+			return fmt.Errorf("incorrect event-type and message. For eventType (NodeEvent), *event.WorkflowExecutionEvent is expected")
 		}
 		request := &admin.NodeExecutionEventRequest{
-			Event: event,
+			Event: ev,
 		}
 		_, err := s.adminClient.CreateNodeEvent(ctx, request)
 		if err != nil {
-			logger.Errorf(ctx, "failed to send node event(%d, %d) %v", event.Id.NodeId, event.Phase, err)
+			logger.Errorf(ctx, "failed to send node event for [%s] in phase [%s] caused by error: %s", ev.Id.NodeId, ev.Phase.String(), err.Error())
 			return err
 		}
 	case TaskEvent:
-		event, ok := message.(*event.TaskExecutionEvent)
+		ev, ok := message.(*event.TaskExecutionEvent)
 		if !ok {
 			return fmt.Errorf("failed to convert task execution event to its protobuf structure")
 		}
 		request := &admin.TaskExecutionEventRequest{
-			Event: event,
+			Event: ev,
 		}
 		_, err := s.adminClient.CreateTaskEvent(ctx, request)
 		if err != nil {
-			logger.Errorf(ctx, "failed to send task event(%d, %d) %v", event.TaskId, event.Phase, err)
+			logger.Errorf(ctx, "failed to send task event for [%s] Retry[%d] in phase [%s] caused by error: %s", ev.TaskId.Name, ev.RetryAttempt, ev.Phase.String(), err.Error())
 			return err
 		}
+	default:
+		return fmt.Errorf("unknown event type [%s]", eventType.String())
 	}
 
 	return nil
