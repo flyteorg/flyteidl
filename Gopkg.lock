@@ -83,7 +83,7 @@
   version = "v1.0.1"
 
 [[projects]]
-  digest = "1:fc0275190aa725488b4c7cee6ed38cfeab59c52f808728ed3cf9569c0e4534a4"
+  digest = "1:3e8ebb44daebab4437e2348e54746efe7b218fcfcaa6dc3ad1947d621e745ac4"
   name = "github.com/lyft/flytestdlib"
   packages = [
     "config",
@@ -92,8 +92,8 @@
     "utils",
   ]
   pruneopts = "UT"
-  revision = "2c5df7a886efa553b5c3b6ed9d21c1dec9444e61"
-  version = "v0.4.1"
+  revision = "b9fb13dba313bbfb8d2e8f91a96f73317594cd99"
+  version = "v0.5.0"
 
 [[projects]]
   digest = "1:ca10820e594078ab3f6a9e4f40e05ed9d9a87d075067c3a3f5c1332c93064cc3"
