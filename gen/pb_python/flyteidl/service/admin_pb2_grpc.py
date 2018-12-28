@@ -147,6 +147,11 @@ class AdminServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_task__execution__pb2.TaskExecutionGetRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_task__execution__pb2.TaskExecution.FromString,
         )
+    self.ListTaskExecutions = channel.unary_unary(
+        '/flyteidl.service.AdminService/ListTaskExecutions',
+        request_serializer=flyteidl_dot_admin_dot_task__execution__pb2.TaskExecutionListRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_task__execution__pb2.TaskExecutionList.FromString,
+        )
 
 
 class AdminServiceServicer(object):
@@ -328,6 +333,13 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListTaskExecutions(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_AdminServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -455,6 +467,11 @@ def add_AdminServiceServicer_to_server(servicer, server):
           servicer.GetTaskExecution,
           request_deserializer=flyteidl_dot_admin_dot_task__execution__pb2.TaskExecutionGetRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_task__execution__pb2.TaskExecution.SerializeToString,
+      ),
+      'ListTaskExecutions': grpc.unary_unary_rpc_method_handler(
+          servicer.ListTaskExecutions,
+          request_deserializer=flyteidl_dot_admin_dot_task__execution__pb2.TaskExecutionListRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_task__execution__pb2.TaskExecutionList.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

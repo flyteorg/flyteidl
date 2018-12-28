@@ -6,7 +6,6 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 import "flyteidl/core/identifier.proto";
 import "flyteidl/core/tasks.proto";
 import "flyteidl/core/compiler.proto";
-import "flyteidl/admin/common.proto";
 import "google/protobuf/timestamp.proto";
 
 // Represents a request structure to create a revision of a task.

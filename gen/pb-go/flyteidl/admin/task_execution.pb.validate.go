@@ -128,6 +128,16 @@ func (m *TaskExecutionListRequest) Validate() error {
 
 	// no validation rules for Filters
 
+	if v, ok := interface{}(m.GetSortBy()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TaskExecutionListRequestValidationError{
+				field:  "SortBy",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	return nil
 }
 

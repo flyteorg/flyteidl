@@ -7832,6 +7832,9 @@ export namespace flyteidl {
 
             /** TaskExecutionListRequest filters */
             filters?: (string|null);
+
+            /** TaskExecutionListRequest sortBy */
+            sortBy?: (flyteidl.admin.ISort|null);
         }
 
         /** Represents a TaskExecutionListRequest. */
@@ -7851,6 +7854,9 @@ export namespace flyteidl {
 
             /** TaskExecutionListRequest filters. */
             public filters: string;
+
+            /** TaskExecutionListRequest sortBy. */
+            public sortBy?: (flyteidl.admin.ISort|null);
 
             /**
              * Creates a new TaskExecutionListRequest instance using the specified properties.
@@ -8795,6 +8801,20 @@ export namespace flyteidl {
              * @returns Promise
              */
             public getTaskExecution(request: flyteidl.admin.ITaskExecutionGetRequest): Promise<flyteidl.admin.TaskExecution>;
+
+            /**
+             * Calls ListTaskExecutions.
+             * @param request TaskExecutionListRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and TaskExecutionList
+             */
+            public listTaskExecutions(request: flyteidl.admin.ITaskExecutionListRequest, callback: flyteidl.service.AdminService.ListTaskExecutionsCallback): void;
+
+            /**
+             * Calls ListTaskExecutions.
+             * @param request TaskExecutionListRequest message or plain object
+             * @returns Promise
+             */
+            public listTaskExecutions(request: flyteidl.admin.ITaskExecutionListRequest): Promise<flyteidl.admin.TaskExecutionList>;
         }
 
         namespace AdminService {
@@ -8973,6 +8993,13 @@ export namespace flyteidl {
              * @param [response] TaskExecution
              */
             type GetTaskExecutionCallback = (error: (Error|null), response?: flyteidl.admin.TaskExecution) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#listTaskExecutions}.
+             * @param error Error, if any
+             * @param [response] TaskExecutionList
+             */
+            type ListTaskExecutionsCallback = (error: (Error|null), response?: flyteidl.admin.TaskExecutionList) => void;
         }
     }
 

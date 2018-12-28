@@ -1621,6 +1621,66 @@
         ]
       }
     },
+    "/api/v1/task_executions": {
+      "get": {
+        "operationId": "ListTaskExecutions",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminTaskExecutionList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Indicates the offset to fetch the resource from.\nIt is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "filters",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.key",
+            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.direction",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "DESCENDING",
+              "ASCENDING"
+            ],
+            "default": "DESCENDING"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.node_execution_id.retry_attempt}": {
       "get": {
         "operationId": "GetTaskExecution",
@@ -3088,6 +3148,18 @@
     },
     "adminTaskExecutionEventResponse": {
       "type": "object"
+    },
+    "adminTaskExecutionList": {
+      "type": "object",
+      "properties": {
+        "task_executions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminTaskExecution"
+          }
+        }
+      },
+      "description": "Request structure to retrieve a list of task execution entities."
     },
     "adminTaskList": {
       "type": "object",

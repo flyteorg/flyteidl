@@ -264,7 +264,6 @@ service AdminService {
     option (google.api.http) = {
       get:  "/api/v1/projects"
     };
-    
   }
 
   rpc CreateWorkflowEvent (flyteidl.admin.WorkflowExecutionEventRequest) returns (flyteidl.admin.WorkflowExecutionEventResponse) {
@@ -291,6 +290,12 @@ service AdminService {
   rpc GetTaskExecution (flyteidl.admin.TaskExecutionGetRequest) returns (flyteidl.admin.TaskExecution) {
     option (google.api.http) = {
         get: "/api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.node_execution_id.retry_attempt}"
+    };
+  }
+
+  rpc ListTaskExecutions (flyteidl.admin.TaskExecutionListRequest) returns (flyteidl.admin.TaskExecutionList) {
+    option (google.api.http) = {
+        get: "/api/v1/task_executions"
     };
   }
 }

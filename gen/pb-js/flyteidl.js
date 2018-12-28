@@ -18716,6 +18716,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {number|null} [limit] TaskExecutionListRequest limit
              * @property {number|null} [offset] TaskExecutionListRequest offset
              * @property {string|null} [filters] TaskExecutionListRequest filters
+             * @property {flyteidl.admin.ISort|null} [sortBy] TaskExecutionListRequest sortBy
              */
 
             /**
@@ -18758,6 +18759,14 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskExecutionListRequest.prototype.filters = "";
 
             /**
+             * TaskExecutionListRequest sortBy.
+             * @member {flyteidl.admin.ISort|null|undefined} sortBy
+             * @memberof flyteidl.admin.TaskExecutionListRequest
+             * @instance
+             */
+            TaskExecutionListRequest.prototype.sortBy = null;
+
+            /**
              * Creates a new TaskExecutionListRequest instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.TaskExecutionListRequest
@@ -18787,6 +18796,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.offset);
                 if (message.filters != null && message.hasOwnProperty("filters"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.filters);
+                if (message.sortBy != null && message.hasOwnProperty("sortBy"))
+                    $root.flyteidl.admin.Sort.encode(message.sortBy, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -18817,6 +18828,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 3:
                         message.filters = reader.string();
                         break;
+                    case 4:
+                        message.sortBy = $root.flyteidl.admin.Sort.decode(reader, reader.uint32());
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -18845,6 +18859,11 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.filters != null && message.hasOwnProperty("filters"))
                     if (!$util.isString(message.filters))
                         return "filters: string expected";
+                if (message.sortBy != null && message.hasOwnProperty("sortBy")) {
+                    let error = $root.flyteidl.admin.Sort.verify(message.sortBy);
+                    if (error)
+                        return "sortBy." + error;
+                }
                 return null;
             };
 
@@ -20984,6 +21003,39 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              * @param {flyteidl.admin.ITaskExecutionGetRequest} request TaskExecutionGetRequest message or plain object
              * @returns {Promise<flyteidl.admin.TaskExecution>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#listTaskExecutions}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef ListTaskExecutionsCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.TaskExecutionList} [response] TaskExecutionList
+             */
+
+            /**
+             * Calls ListTaskExecutions.
+             * @function listTaskExecutions
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.ITaskExecutionListRequest} request TaskExecutionListRequest message or plain object
+             * @param {flyteidl.service.AdminService.ListTaskExecutionsCallback} callback Node-style callback called with the error, if any, and TaskExecutionList
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.listTaskExecutions = function listTaskExecutions(request, callback) {
+                return this.rpcCall(listTaskExecutions, $root.flyteidl.admin.TaskExecutionListRequest, $root.flyteidl.admin.TaskExecutionList, request, callback);
+            }, "name", { value: "ListTaskExecutions" });
+
+            /**
+             * Calls ListTaskExecutions.
+             * @function listTaskExecutions
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.ITaskExecutionListRequest} request TaskExecutionListRequest message or plain object
+             * @returns {Promise<flyteidl.admin.TaskExecutionList>} Promise
              * @variation 2
              */
 
