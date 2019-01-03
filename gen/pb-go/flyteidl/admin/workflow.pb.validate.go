@@ -294,6 +294,8 @@ func (m *WorkflowList) Validate() error {
 
 	}
 
+	// no validation rules for Token
+
 	return nil
 }
 

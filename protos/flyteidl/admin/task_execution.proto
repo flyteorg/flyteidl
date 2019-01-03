@@ -19,10 +19,10 @@ message TaskExecutionListRequest {
     // Indicates the number of resources to be returned.
     // +optional
     uint32 limit    = 1;
-    // Indicates the offset to fetch the resource from.
-    // It is the responsibility of the user to pass add value of limit to offset to fetch the next set of results.
+    // In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+    // in a query.
     // +optional
-    uint32 offset   = 2;
+    string token    = 2;
     // Indicates a list of filters passed as string.
     // More info on constructing filters : <Link>
     // +optional
@@ -45,6 +45,10 @@ message TaskExecution {
 // Request structure to retrieve a list of task execution entities.
 message TaskExecutionList {
     repeated TaskExecution task_executions = 1;
+
+    // In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+    // in a query. If there are no more results, this value will be empty.
+    string token                           = 2;
 }
 
 // Container for task execution details and results.

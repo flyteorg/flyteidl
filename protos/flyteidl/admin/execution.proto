@@ -46,6 +46,10 @@ message Execution {
 
 message ExecutionList {
     repeated Execution executions     = 1;
+
+    // In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+    // in a query. If there are no more results, this value will be empty.
+    string token                      = 2;
 }
 
 // Input/output data can represented by actual values or a link to where it is stored

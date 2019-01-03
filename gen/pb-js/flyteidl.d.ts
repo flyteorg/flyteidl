@@ -4603,8 +4603,8 @@ export namespace flyteidl {
             /** NamedEntityIdentifierListRequest limit */
             limit?: (number|null);
 
-            /** NamedEntityIdentifierListRequest offset */
-            offset?: (number|null);
+            /** NamedEntityIdentifierListRequest token */
+            token?: (string|null);
 
             /** NamedEntityIdentifierListRequest sortBy */
             sortBy?: (flyteidl.admin.ISort|null);
@@ -4628,8 +4628,8 @@ export namespace flyteidl {
             /** NamedEntityIdentifierListRequest limit. */
             public limit: number;
 
-            /** NamedEntityIdentifierListRequest offset. */
-            public offset: number;
+            /** NamedEntityIdentifierListRequest token. */
+            public token: string;
 
             /** NamedEntityIdentifierListRequest sortBy. */
             public sortBy?: (flyteidl.admin.ISort|null);
@@ -4672,6 +4672,9 @@ export namespace flyteidl {
 
             /** NamedEntityIdentifierList entities */
             entities?: (flyteidl.admin.INamedEntityIdentifier[]|null);
+
+            /** NamedEntityIdentifierList token */
+            token?: (string|null);
         }
 
         /** Represents a NamedEntityIdentifierList. */
@@ -4685,6 +4688,9 @@ export namespace flyteidl {
 
             /** NamedEntityIdentifierList entities. */
             public entities: flyteidl.admin.INamedEntityIdentifier[];
+
+            /** NamedEntityIdentifierList token. */
+            public token: string;
 
             /**
              * Creates a new NamedEntityIdentifierList instance using the specified properties.
@@ -4780,8 +4786,8 @@ export namespace flyteidl {
             /** ResourceListRequest limit */
             limit?: (number|null);
 
-            /** ResourceListRequest offset */
-            offset?: (number|null);
+            /** ResourceListRequest token */
+            token?: (string|null);
 
             /** ResourceListRequest filters */
             filters?: (string|null);
@@ -4805,8 +4811,8 @@ export namespace flyteidl {
             /** ResourceListRequest limit. */
             public limit: number;
 
-            /** ResourceListRequest offset. */
-            public offset: number;
+            /** ResourceListRequest token. */
+            public token: string;
 
             /** ResourceListRequest filters. */
             public filters: string;
@@ -5631,6 +5637,9 @@ export namespace flyteidl {
 
             /** ExecutionList executions */
             executions?: (flyteidl.admin.IExecution[]|null);
+
+            /** ExecutionList token */
+            token?: (string|null);
         }
 
         /** Represents an ExecutionList. */
@@ -5644,6 +5653,9 @@ export namespace flyteidl {
 
             /** ExecutionList executions. */
             public executions: flyteidl.admin.IExecution[];
+
+            /** ExecutionList token. */
+            public token: string;
 
             /**
              * Creates a new ExecutionList instance using the specified properties.
@@ -6281,6 +6293,9 @@ export namespace flyteidl {
 
             /** LaunchPlanList launchPlans */
             launchPlans?: (flyteidl.admin.ILaunchPlan[]|null);
+
+            /** LaunchPlanList token */
+            token?: (string|null);
         }
 
         /** Represents a LaunchPlanList. */
@@ -6294,6 +6309,9 @@ export namespace flyteidl {
 
             /** LaunchPlanList launchPlans. */
             public launchPlans: flyteidl.admin.ILaunchPlan[];
+
+            /** LaunchPlanList token. */
+            public token: string;
 
             /**
              * Creates a new LaunchPlanList instance using the specified properties.
@@ -6832,8 +6850,8 @@ export namespace flyteidl {
             /** NodeExecutionListRequest limit */
             limit?: (number|null);
 
-            /** NodeExecutionListRequest offset */
-            offset?: (number|null);
+            /** NodeExecutionListRequest token */
+            token?: (string|null);
 
             /** NodeExecutionListRequest filters */
             filters?: (string|null);
@@ -6854,8 +6872,8 @@ export namespace flyteidl {
             /** NodeExecutionListRequest limit. */
             public limit: number;
 
-            /** NodeExecutionListRequest offset. */
-            public offset: number;
+            /** NodeExecutionListRequest token. */
+            public token: string;
 
             /** NodeExecutionListRequest filters. */
             public filters: string;
@@ -6965,6 +6983,9 @@ export namespace flyteidl {
 
             /** NodeExecutionList nodeExecutions */
             nodeExecutions?: (flyteidl.admin.INodeExecution[]|null);
+
+            /** NodeExecutionList token */
+            token?: (string|null);
         }
 
         /** Represents a NodeExecutionList. */
@@ -6978,6 +6999,9 @@ export namespace flyteidl {
 
             /** NodeExecutionList nodeExecutions. */
             public nodeExecutions: flyteidl.admin.INodeExecution[];
+
+            /** NodeExecutionList token. */
+            public token: string;
 
             /**
              * Creates a new NodeExecutionList instance using the specified properties.
@@ -7612,6 +7636,9 @@ export namespace flyteidl {
 
             /** TaskList tasks */
             tasks?: (flyteidl.admin.ITask[]|null);
+
+            /** TaskList token */
+            token?: (string|null);
         }
 
         /** Represents a TaskList. */
@@ -7625,6 +7652,9 @@ export namespace flyteidl {
 
             /** TaskList tasks. */
             public tasks: flyteidl.admin.ITask[];
+
+            /** TaskList token. */
+            public token: string;
 
             /**
              * Creates a new TaskList instance using the specified properties.
@@ -7827,8 +7857,8 @@ export namespace flyteidl {
             /** TaskExecutionListRequest limit */
             limit?: (number|null);
 
-            /** TaskExecutionListRequest offset */
-            offset?: (number|null);
+            /** TaskExecutionListRequest token */
+            token?: (string|null);
 
             /** TaskExecutionListRequest filters */
             filters?: (string|null);
@@ -7849,8 +7879,8 @@ export namespace flyteidl {
             /** TaskExecutionListRequest limit. */
             public limit: number;
 
-            /** TaskExecutionListRequest offset. */
-            public offset: number;
+            /** TaskExecutionListRequest token. */
+            public token: string;
 
             /** TaskExecutionListRequest filters. */
             public filters: string;
@@ -7960,6 +7990,9 @@ export namespace flyteidl {
 
             /** TaskExecutionList taskExecutions */
             taskExecutions?: (flyteidl.admin.ITaskExecution[]|null);
+
+            /** TaskExecutionList token */
+            token?: (string|null);
         }
 
         /** Represents a TaskExecutionList. */
@@ -7973,6 +8006,9 @@ export namespace flyteidl {
 
             /** TaskExecutionList taskExecutions. */
             public taskExecutions: flyteidl.admin.ITaskExecution[];
+
+            /** TaskExecutionList token. */
+            public token: string;
 
             /**
              * Creates a new TaskExecutionList instance using the specified properties.
@@ -8271,6 +8307,9 @@ export namespace flyteidl {
 
             /** WorkflowList workflows */
             workflows?: (flyteidl.admin.IWorkflow[]|null);
+
+            /** WorkflowList token */
+            token?: (string|null);
         }
 
         /** Represents a WorkflowList. */
@@ -8284,6 +8323,9 @@ export namespace flyteidl {
 
             /** WorkflowList workflows. */
             public workflows: flyteidl.admin.IWorkflow[];
+
+            /** WorkflowList token. */
+            public token: string;
 
             /**
              * Creates a new WorkflowList instance using the specified properties.

@@ -124,7 +124,7 @@ func (m *TaskExecutionListRequest) Validate() error {
 
 	// no validation rules for Limit
 
-	// no validation rules for Offset
+	// no validation rules for Token
 
 	// no validation rules for Filters
 
@@ -306,6 +306,8 @@ func (m *TaskExecutionList) Validate() error {
 		}
 
 	}
+
+	// no validation rules for Token
 
 	return nil
 }

@@ -36,6 +36,10 @@ message Task {
 message TaskList {
     // A list of tasks returned based on the request.
     repeated Task tasks = 1;
+
+    // In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+    // in a query. If there are no more results, this value will be empty.
+    string token        = 2;
 }
 
 // Represents a structure that encapsulates the specification of the task.

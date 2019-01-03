@@ -392,6 +392,8 @@ func (m *ExecutionList) Validate() error {
 
 	}
 
+	// no validation rules for Token
+
 	return nil
 }
 

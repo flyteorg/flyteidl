@@ -293,6 +293,8 @@ func (m *TaskList) Validate() error {
 
 	}
 
+	// no validation rules for Token
+
 	return nil
 }
 

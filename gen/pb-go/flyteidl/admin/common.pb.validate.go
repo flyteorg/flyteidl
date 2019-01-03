@@ -188,7 +188,7 @@ func (m *NamedEntityIdentifierListRequest) Validate() error {
 
 	// no validation rules for Limit
 
-	// no validation rules for Offset
+	// no validation rules for Token
 
 	if v, ok := interface{}(m.GetSortBy()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
@@ -282,6 +282,8 @@ func (m *NamedEntityIdentifierList) Validate() error {
 		}
 
 	}
+
+	// no validation rules for Token
 
 	return nil
 }
@@ -437,7 +439,7 @@ func (m *ResourceListRequest) Validate() error {
 
 	// no validation rules for Limit
 
-	// no validation rules for Offset
+	// no validation rules for Token
 
 	// no validation rules for Filters
 

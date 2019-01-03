@@ -11191,7 +11191,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [project] NamedEntityIdentifierListRequest project
              * @property {string|null} [domain] NamedEntityIdentifierListRequest domain
              * @property {number|null} [limit] NamedEntityIdentifierListRequest limit
-             * @property {number|null} [offset] NamedEntityIdentifierListRequest offset
+             * @property {string|null} [token] NamedEntityIdentifierListRequest token
              * @property {flyteidl.admin.ISort|null} [sortBy] NamedEntityIdentifierListRequest sortBy
              */
 
@@ -11235,12 +11235,12 @@ export const flyteidl = $root.flyteidl = (() => {
             NamedEntityIdentifierListRequest.prototype.limit = 0;
 
             /**
-             * NamedEntityIdentifierListRequest offset.
-             * @member {number} offset
+             * NamedEntityIdentifierListRequest token.
+             * @member {string} token
              * @memberof flyteidl.admin.NamedEntityIdentifierListRequest
              * @instance
              */
-            NamedEntityIdentifierListRequest.prototype.offset = 0;
+            NamedEntityIdentifierListRequest.prototype.token = "";
 
             /**
              * NamedEntityIdentifierListRequest sortBy.
@@ -11280,8 +11280,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
                 if (message.limit != null && message.hasOwnProperty("limit"))
                     writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.limit);
-                if (message.offset != null && message.hasOwnProperty("offset"))
-                    writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.offset);
+                if (message.token != null && message.hasOwnProperty("token"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.token);
                 if (message.sortBy != null && message.hasOwnProperty("sortBy"))
                     $root.flyteidl.admin.Sort.encode(message.sortBy, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
@@ -11315,7 +11315,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.limit = reader.uint32();
                         break;
                     case 4:
-                        message.offset = reader.uint32();
+                        message.token = reader.string();
                         break;
                     case 5:
                         message.sortBy = $root.flyteidl.admin.Sort.decode(reader, reader.uint32());
@@ -11348,9 +11348,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.limit != null && message.hasOwnProperty("limit"))
                     if (!$util.isInteger(message.limit))
                         return "limit: integer expected";
-                if (message.offset != null && message.hasOwnProperty("offset"))
-                    if (!$util.isInteger(message.offset))
-                        return "offset: integer expected";
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
                 if (message.sortBy != null && message.hasOwnProperty("sortBy")) {
                     let error = $root.flyteidl.admin.Sort.verify(message.sortBy);
                     if (error)
@@ -11369,6 +11369,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface INamedEntityIdentifierList
              * @property {Array.<flyteidl.admin.INamedEntityIdentifier>|null} [entities] NamedEntityIdentifierList entities
+             * @property {string|null} [token] NamedEntityIdentifierList token
              */
 
             /**
@@ -11394,6 +11395,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             NamedEntityIdentifierList.prototype.entities = $util.emptyArray;
+
+            /**
+             * NamedEntityIdentifierList token.
+             * @member {string} token
+             * @memberof flyteidl.admin.NamedEntityIdentifierList
+             * @instance
+             */
+            NamedEntityIdentifierList.prototype.token = "";
 
             /**
              * Creates a new NamedEntityIdentifierList instance using the specified properties.
@@ -11422,6 +11431,8 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.entities != null && message.entities.length)
                     for (let i = 0; i < message.entities.length; ++i)
                         $root.flyteidl.admin.NamedEntityIdentifier.encode(message.entities[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.token != null && message.hasOwnProperty("token"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.token);
                 return writer;
             };
 
@@ -11447,6 +11458,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!(message.entities && message.entities.length))
                             message.entities = [];
                         message.entities.push($root.flyteidl.admin.NamedEntityIdentifier.decode(reader, reader.uint32()));
+                        break;
+                    case 2:
+                        message.token = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11476,6 +11490,9 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "entities." + error;
                     }
                 }
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
                 return null;
             };
 
@@ -11602,7 +11619,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IResourceListRequest
              * @property {flyteidl.admin.INamedEntityIdentifier|null} [id] ResourceListRequest id
              * @property {number|null} [limit] ResourceListRequest limit
-             * @property {number|null} [offset] ResourceListRequest offset
+             * @property {string|null} [token] ResourceListRequest token
              * @property {string|null} [filters] ResourceListRequest filters
              * @property {flyteidl.admin.ISort|null} [sortBy] ResourceListRequest sortBy
              */
@@ -11639,12 +11656,12 @@ export const flyteidl = $root.flyteidl = (() => {
             ResourceListRequest.prototype.limit = 0;
 
             /**
-             * ResourceListRequest offset.
-             * @member {number} offset
+             * ResourceListRequest token.
+             * @member {string} token
              * @memberof flyteidl.admin.ResourceListRequest
              * @instance
              */
-            ResourceListRequest.prototype.offset = 0;
+            ResourceListRequest.prototype.token = "";
 
             /**
              * ResourceListRequest filters.
@@ -11690,8 +11707,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.NamedEntityIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.limit != null && message.hasOwnProperty("limit"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.limit);
-                if (message.offset != null && message.hasOwnProperty("offset"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.offset);
+                if (message.token != null && message.hasOwnProperty("token"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.token);
                 if (message.filters != null && message.hasOwnProperty("filters"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.filters);
                 if (message.sortBy != null && message.hasOwnProperty("sortBy"))
@@ -11724,7 +11741,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.limit = reader.uint32();
                         break;
                     case 3:
-                        message.offset = reader.uint32();
+                        message.token = reader.string();
                         break;
                     case 4:
                         message.filters = reader.string();
@@ -11759,9 +11776,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.limit != null && message.hasOwnProperty("limit"))
                     if (!$util.isInteger(message.limit))
                         return "limit: integer expected";
-                if (message.offset != null && message.hasOwnProperty("offset"))
-                    if (!$util.isInteger(message.offset))
-                        return "offset: integer expected";
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
                 if (message.filters != null && message.hasOwnProperty("filters"))
                     if (!$util.isString(message.filters))
                         return "filters: string expected";
@@ -13563,6 +13580,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface IExecutionList
              * @property {Array.<flyteidl.admin.IExecution>|null} [executions] ExecutionList executions
+             * @property {string|null} [token] ExecutionList token
              */
 
             /**
@@ -13588,6 +13606,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             ExecutionList.prototype.executions = $util.emptyArray;
+
+            /**
+             * ExecutionList token.
+             * @member {string} token
+             * @memberof flyteidl.admin.ExecutionList
+             * @instance
+             */
+            ExecutionList.prototype.token = "";
 
             /**
              * Creates a new ExecutionList instance using the specified properties.
@@ -13616,6 +13642,8 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.executions != null && message.executions.length)
                     for (let i = 0; i < message.executions.length; ++i)
                         $root.flyteidl.admin.Execution.encode(message.executions[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.token != null && message.hasOwnProperty("token"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.token);
                 return writer;
             };
 
@@ -13641,6 +13669,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!(message.executions && message.executions.length))
                             message.executions = [];
                         message.executions.push($root.flyteidl.admin.Execution.decode(reader, reader.uint32()));
+                        break;
+                    case 2:
+                        message.token = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -13670,6 +13701,9 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "executions." + error;
                     }
                 }
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
                 return null;
             };
 
@@ -15132,6 +15166,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface ILaunchPlanList
              * @property {Array.<flyteidl.admin.ILaunchPlan>|null} [launchPlans] LaunchPlanList launchPlans
+             * @property {string|null} [token] LaunchPlanList token
              */
 
             /**
@@ -15157,6 +15192,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             LaunchPlanList.prototype.launchPlans = $util.emptyArray;
+
+            /**
+             * LaunchPlanList token.
+             * @member {string} token
+             * @memberof flyteidl.admin.LaunchPlanList
+             * @instance
+             */
+            LaunchPlanList.prototype.token = "";
 
             /**
              * Creates a new LaunchPlanList instance using the specified properties.
@@ -15185,6 +15228,8 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.launchPlans != null && message.launchPlans.length)
                     for (let i = 0; i < message.launchPlans.length; ++i)
                         $root.flyteidl.admin.LaunchPlan.encode(message.launchPlans[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.token != null && message.hasOwnProperty("token"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.token);
                 return writer;
             };
 
@@ -15210,6 +15255,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!(message.launchPlans && message.launchPlans.length))
                             message.launchPlans = [];
                         message.launchPlans.push($root.flyteidl.admin.LaunchPlan.decode(reader, reader.uint32()));
+                        break;
+                    case 2:
+                        message.token = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -15239,6 +15287,9 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "launchPlans." + error;
                     }
                 }
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
                 return null;
             };
 
@@ -16424,7 +16475,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface INodeExecutionListRequest
              * @property {number|null} [limit] NodeExecutionListRequest limit
-             * @property {number|null} [offset] NodeExecutionListRequest offset
+             * @property {string|null} [token] NodeExecutionListRequest token
              * @property {string|null} [filters] NodeExecutionListRequest filters
              * @property {flyteidl.admin.ISort|null} [sortBy] NodeExecutionListRequest sortBy
              */
@@ -16453,12 +16504,12 @@ export const flyteidl = $root.flyteidl = (() => {
             NodeExecutionListRequest.prototype.limit = 0;
 
             /**
-             * NodeExecutionListRequest offset.
-             * @member {number} offset
+             * NodeExecutionListRequest token.
+             * @member {string} token
              * @memberof flyteidl.admin.NodeExecutionListRequest
              * @instance
              */
-            NodeExecutionListRequest.prototype.offset = 0;
+            NodeExecutionListRequest.prototype.token = "";
 
             /**
              * NodeExecutionListRequest filters.
@@ -16502,8 +16553,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.limit != null && message.hasOwnProperty("limit"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.limit);
-                if (message.offset != null && message.hasOwnProperty("offset"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.offset);
+                if (message.token != null && message.hasOwnProperty("token"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.token);
                 if (message.filters != null && message.hasOwnProperty("filters"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.filters);
                 if (message.sortBy != null && message.hasOwnProperty("sortBy"))
@@ -16533,7 +16584,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.limit = reader.uint32();
                         break;
                     case 2:
-                        message.offset = reader.uint32();
+                        message.token = reader.string();
                         break;
                     case 3:
                         message.filters = reader.string();
@@ -16563,9 +16614,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.limit != null && message.hasOwnProperty("limit"))
                     if (!$util.isInteger(message.limit))
                         return "limit: integer expected";
-                if (message.offset != null && message.hasOwnProperty("offset"))
-                    if (!$util.isInteger(message.offset))
-                        return "offset: integer expected";
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
                 if (message.filters != null && message.hasOwnProperty("filters"))
                     if (!$util.isString(message.filters))
                         return "filters: string expected";
@@ -16735,6 +16786,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface INodeExecutionList
              * @property {Array.<flyteidl.admin.INodeExecution>|null} [nodeExecutions] NodeExecutionList nodeExecutions
+             * @property {string|null} [token] NodeExecutionList token
              */
 
             /**
@@ -16760,6 +16812,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             NodeExecutionList.prototype.nodeExecutions = $util.emptyArray;
+
+            /**
+             * NodeExecutionList token.
+             * @member {string} token
+             * @memberof flyteidl.admin.NodeExecutionList
+             * @instance
+             */
+            NodeExecutionList.prototype.token = "";
 
             /**
              * Creates a new NodeExecutionList instance using the specified properties.
@@ -16788,6 +16848,8 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.nodeExecutions != null && message.nodeExecutions.length)
                     for (let i = 0; i < message.nodeExecutions.length; ++i)
                         $root.flyteidl.admin.NodeExecution.encode(message.nodeExecutions[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.token != null && message.hasOwnProperty("token"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.token);
                 return writer;
             };
 
@@ -16813,6 +16875,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!(message.nodeExecutions && message.nodeExecutions.length))
                             message.nodeExecutions = [];
                         message.nodeExecutions.push($root.flyteidl.admin.NodeExecution.decode(reader, reader.uint32()));
+                        break;
+                    case 2:
+                        message.token = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -16842,6 +16907,9 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "nodeExecutions." + error;
                     }
                 }
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
                 return null;
             };
 
@@ -18239,6 +18307,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface ITaskList
              * @property {Array.<flyteidl.admin.ITask>|null} [tasks] TaskList tasks
+             * @property {string|null} [token] TaskList token
              */
 
             /**
@@ -18264,6 +18333,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             TaskList.prototype.tasks = $util.emptyArray;
+
+            /**
+             * TaskList token.
+             * @member {string} token
+             * @memberof flyteidl.admin.TaskList
+             * @instance
+             */
+            TaskList.prototype.token = "";
 
             /**
              * Creates a new TaskList instance using the specified properties.
@@ -18292,6 +18369,8 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.tasks != null && message.tasks.length)
                     for (let i = 0; i < message.tasks.length; ++i)
                         $root.flyteidl.admin.Task.encode(message.tasks[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.token != null && message.hasOwnProperty("token"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.token);
                 return writer;
             };
 
@@ -18317,6 +18396,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!(message.tasks && message.tasks.length))
                             message.tasks = [];
                         message.tasks.push($root.flyteidl.admin.Task.decode(reader, reader.uint32()));
+                        break;
+                    case 2:
+                        message.token = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -18346,6 +18428,9 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "tasks." + error;
                     }
                 }
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
                 return null;
             };
 
@@ -18714,7 +18799,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface ITaskExecutionListRequest
              * @property {number|null} [limit] TaskExecutionListRequest limit
-             * @property {number|null} [offset] TaskExecutionListRequest offset
+             * @property {string|null} [token] TaskExecutionListRequest token
              * @property {string|null} [filters] TaskExecutionListRequest filters
              * @property {flyteidl.admin.ISort|null} [sortBy] TaskExecutionListRequest sortBy
              */
@@ -18743,12 +18828,12 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskExecutionListRequest.prototype.limit = 0;
 
             /**
-             * TaskExecutionListRequest offset.
-             * @member {number} offset
+             * TaskExecutionListRequest token.
+             * @member {string} token
              * @memberof flyteidl.admin.TaskExecutionListRequest
              * @instance
              */
-            TaskExecutionListRequest.prototype.offset = 0;
+            TaskExecutionListRequest.prototype.token = "";
 
             /**
              * TaskExecutionListRequest filters.
@@ -18792,8 +18877,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.limit != null && message.hasOwnProperty("limit"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.limit);
-                if (message.offset != null && message.hasOwnProperty("offset"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.offset);
+                if (message.token != null && message.hasOwnProperty("token"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.token);
                 if (message.filters != null && message.hasOwnProperty("filters"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.filters);
                 if (message.sortBy != null && message.hasOwnProperty("sortBy"))
@@ -18823,7 +18908,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.limit = reader.uint32();
                         break;
                     case 2:
-                        message.offset = reader.uint32();
+                        message.token = reader.string();
                         break;
                     case 3:
                         message.filters = reader.string();
@@ -18853,9 +18938,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.limit != null && message.hasOwnProperty("limit"))
                     if (!$util.isInteger(message.limit))
                         return "limit: integer expected";
-                if (message.offset != null && message.hasOwnProperty("offset"))
-                    if (!$util.isInteger(message.offset))
-                        return "offset: integer expected";
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
                 if (message.filters != null && message.hasOwnProperty("filters"))
                     if (!$util.isString(message.filters))
                         return "filters: string expected";
@@ -19025,6 +19110,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface ITaskExecutionList
              * @property {Array.<flyteidl.admin.ITaskExecution>|null} [taskExecutions] TaskExecutionList taskExecutions
+             * @property {string|null} [token] TaskExecutionList token
              */
 
             /**
@@ -19050,6 +19136,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             TaskExecutionList.prototype.taskExecutions = $util.emptyArray;
+
+            /**
+             * TaskExecutionList token.
+             * @member {string} token
+             * @memberof flyteidl.admin.TaskExecutionList
+             * @instance
+             */
+            TaskExecutionList.prototype.token = "";
 
             /**
              * Creates a new TaskExecutionList instance using the specified properties.
@@ -19078,6 +19172,8 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.taskExecutions != null && message.taskExecutions.length)
                     for (let i = 0; i < message.taskExecutions.length; ++i)
                         $root.flyteidl.admin.TaskExecution.encode(message.taskExecutions[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.token != null && message.hasOwnProperty("token"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.token);
                 return writer;
             };
 
@@ -19103,6 +19199,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!(message.taskExecutions && message.taskExecutions.length))
                             message.taskExecutions = [];
                         message.taskExecutions.push($root.flyteidl.admin.TaskExecution.decode(reader, reader.uint32()));
+                        break;
+                    case 2:
+                        message.token = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -19132,6 +19231,9 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "taskExecutions." + error;
                     }
                 }
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
                 return null;
             };
 
@@ -19781,6 +19883,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface IWorkflowList
              * @property {Array.<flyteidl.admin.IWorkflow>|null} [workflows] WorkflowList workflows
+             * @property {string|null} [token] WorkflowList token
              */
 
             /**
@@ -19806,6 +19909,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             WorkflowList.prototype.workflows = $util.emptyArray;
+
+            /**
+             * WorkflowList token.
+             * @member {string} token
+             * @memberof flyteidl.admin.WorkflowList
+             * @instance
+             */
+            WorkflowList.prototype.token = "";
 
             /**
              * Creates a new WorkflowList instance using the specified properties.
@@ -19834,6 +19945,8 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.workflows != null && message.workflows.length)
                     for (let i = 0; i < message.workflows.length; ++i)
                         $root.flyteidl.admin.Workflow.encode(message.workflows[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.token != null && message.hasOwnProperty("token"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.token);
                 return writer;
             };
 
@@ -19859,6 +19972,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!(message.workflows && message.workflows.length))
                             message.workflows = [];
                         message.workflows.push($root.flyteidl.admin.Workflow.decode(reader, reader.uint32()));
+                        break;
+                    case 2:
+                        message.token = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -19888,6 +20004,9 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "workflows." + error;
                     }
                 }
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
                 return null;
             };
 
