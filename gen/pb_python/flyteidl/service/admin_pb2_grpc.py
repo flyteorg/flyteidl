@@ -92,6 +92,11 @@ class AdminServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionCreateRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionCreateResponse.FromString,
         )
+    self.RelaunchExecution = channel.unary_unary(
+        '/flyteidl.service.AdminService/RelaunchExecution',
+        request_serializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionRelaunchRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionCreateResponse.FromString,
+        )
     self.GetExecution = channel.unary_unary(
         '/flyteidl.service.AdminService/GetExecution',
         request_serializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetRequest.SerializeToString,
@@ -256,6 +261,13 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def RelaunchExecution(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def GetExecution(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -411,6 +423,11 @@ def add_AdminServiceServicer_to_server(servicer, server):
       'CreateExecution': grpc.unary_unary_rpc_method_handler(
           servicer.CreateExecution,
           request_deserializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionCreateRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionCreateResponse.SerializeToString,
+      ),
+      'RelaunchExecution': grpc.unary_unary_rpc_method_handler(
+          servicer.RelaunchExecution,
+          request_deserializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionRelaunchRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_execution__pb2.ExecutionCreateResponse.SerializeToString,
       ),
       'GetExecution': grpc.unary_unary_rpc_method_handler(

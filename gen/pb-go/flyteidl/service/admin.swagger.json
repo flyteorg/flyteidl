@@ -173,8 +173,8 @@
         ]
       },
       "post": {
-        "description": "Create a workflow execution",
-        "operationId": "CreateExecution",
+        "description": "Relaunch a workflow execution",
+        "operationId": "RelaunchExecution",
         "responses": {
           "200": {
             "description": "",
@@ -197,7 +197,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/adminExecutionCreateRequest"
+              "$ref": "#/definitions/adminExecutionRelaunchRequest"
             }
           }
         ],
@@ -2589,6 +2589,19 @@
           "type": "integer",
           "format": "int32",
           "description": "Indicates the \"nestedness\" of this execution.\nIf a user launches a workflow execution, the default nesting is 0.\nIf this execution further launches a workflow (child workflow), the nesting level is incremented by 0 =\u003e 1\nGenerally, if workflow at nesting level k launches a workflow then the child workflow will have\nnesting = k + 1."
+        }
+      }
+    },
+    "adminExecutionRelaunchRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
+          "description": "Identifier of the workflow execution to relaunch."
+        },
+        "name": {
+          "type": "string",
+          "title": "User provided value for the relaunched execution.\nIf none is provided the system will generate a unique string.\n+optional"
         }
       }
     },

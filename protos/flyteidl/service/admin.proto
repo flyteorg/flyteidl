@@ -206,6 +206,28 @@ service AdminService {
     };
   }
 
+  rpc RelaunchExecution (flyteidl.admin.ExecutionRelaunchRequest) returns (flyteidl.admin.ExecutionCreateResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/executions"
+      body: "*"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Relaunch a workflow execution"
+      responses: {
+        key: "400"
+        value: {
+          description: "Returned for bad request that may have failed validation."
+        }
+      }
+      responses: {
+        key: "409"
+        value: {
+          description: "Returned for a request that references an identical entity that has already been registered."
+        }
+      }
+    };
+  }
+
   rpc GetExecution (flyteidl.admin.WorkflowExecutionGetRequest) returns (flyteidl.admin.Execution) {
     option (google.api.http) = {
       get: "/api/v1/executions/{id.project}/{id.domain}/{id.name}"

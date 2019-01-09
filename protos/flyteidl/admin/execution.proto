@@ -27,6 +27,16 @@ message ExecutionCreateRequest {
     ExecutionSpec spec  = 4;
 }
 
+message ExecutionRelaunchRequest {
+    // Identifier of the workflow execution to relaunch.
+    core.WorkflowExecutionIdentifier id = 1;
+
+    // User provided value for the relaunched execution.
+    // If none is provided the system will generate a unique string.
+    // +optional
+    string name       = 3;
+}
+
 message ExecutionCreateResponse {
     core.WorkflowExecutionIdentifier id = 1;
 }

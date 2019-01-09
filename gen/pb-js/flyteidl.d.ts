@@ -5464,6 +5464,64 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of an ExecutionRelaunchRequest. */
+        interface IExecutionRelaunchRequest {
+
+            /** ExecutionRelaunchRequest id */
+            id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** ExecutionRelaunchRequest name */
+            name?: (string|null);
+        }
+
+        /** Represents an ExecutionRelaunchRequest. */
+        class ExecutionRelaunchRequest implements IExecutionRelaunchRequest {
+
+            /**
+             * Constructs a new ExecutionRelaunchRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IExecutionRelaunchRequest);
+
+            /** ExecutionRelaunchRequest id. */
+            public id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** ExecutionRelaunchRequest name. */
+            public name: string;
+
+            /**
+             * Creates a new ExecutionRelaunchRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ExecutionRelaunchRequest instance
+             */
+            public static create(properties?: flyteidl.admin.IExecutionRelaunchRequest): flyteidl.admin.ExecutionRelaunchRequest;
+
+            /**
+             * Encodes the specified ExecutionRelaunchRequest message. Does not implicitly {@link flyteidl.admin.ExecutionRelaunchRequest.verify|verify} messages.
+             * @param message ExecutionRelaunchRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IExecutionRelaunchRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ExecutionRelaunchRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ExecutionRelaunchRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionRelaunchRequest;
+
+            /**
+             * Verifies an ExecutionRelaunchRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of an ExecutionCreateResponse. */
         interface IExecutionCreateResponse {
 
@@ -8691,6 +8749,20 @@ export namespace flyteidl {
             public createExecution(request: flyteidl.admin.IExecutionCreateRequest): Promise<flyteidl.admin.ExecutionCreateResponse>;
 
             /**
+             * Calls RelaunchExecution.
+             * @param request ExecutionRelaunchRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and ExecutionCreateResponse
+             */
+            public relaunchExecution(request: flyteidl.admin.IExecutionRelaunchRequest, callback: flyteidl.service.AdminService.RelaunchExecutionCallback): void;
+
+            /**
+             * Calls RelaunchExecution.
+             * @param request ExecutionRelaunchRequest message or plain object
+             * @returns Promise
+             */
+            public relaunchExecution(request: flyteidl.admin.IExecutionRelaunchRequest): Promise<flyteidl.admin.ExecutionCreateResponse>;
+
+            /**
              * Calls GetExecution.
              * @param request WorkflowExecutionGetRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and Execution
@@ -8958,6 +9030,13 @@ export namespace flyteidl {
              * @param [response] ExecutionCreateResponse
              */
             type CreateExecutionCallback = (error: (Error|null), response?: flyteidl.admin.ExecutionCreateResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#relaunchExecution}.
+             * @param error Error, if any
+             * @param [response] ExecutionCreateResponse
+             */
+            type RelaunchExecutionCallback = (error: (Error|null), response?: flyteidl.admin.ExecutionCreateResponse) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.AdminService#getExecution}.
