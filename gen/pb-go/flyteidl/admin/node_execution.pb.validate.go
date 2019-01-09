@@ -495,3 +495,153 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = NodeExecutionClosureValidationError{}
+
+// Validate checks the field values on NodeExecutionGetDataRequest with the
+// rules defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *NodeExecutionGetDataRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return NodeExecutionGetDataRequestValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// NodeExecutionGetDataRequestValidationError is the validation error returned
+// by NodeExecutionGetDataRequest.Validate if the designated constraints
+// aren't met.
+type NodeExecutionGetDataRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e NodeExecutionGetDataRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e NodeExecutionGetDataRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e NodeExecutionGetDataRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e NodeExecutionGetDataRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e NodeExecutionGetDataRequestValidationError) ErrorName() string {
+	return "NodeExecutionGetDataRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e NodeExecutionGetDataRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sNodeExecutionGetDataRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = NodeExecutionGetDataRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = NodeExecutionGetDataRequestValidationError{}
+
+// Validate checks the field values on NodeExecutionGetDataResponse with the
+// rules defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *NodeExecutionGetDataResponse) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for InputsUrl
+
+	// no validation rules for OutputsUrl
+
+	return nil
+}
+
+// NodeExecutionGetDataResponseValidationError is the validation error returned
+// by NodeExecutionGetDataResponse.Validate if the designated constraints
+// aren't met.
+type NodeExecutionGetDataResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e NodeExecutionGetDataResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e NodeExecutionGetDataResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e NodeExecutionGetDataResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e NodeExecutionGetDataResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e NodeExecutionGetDataResponseValidationError) ErrorName() string {
+	return "NodeExecutionGetDataResponseValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e NodeExecutionGetDataResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sNodeExecutionGetDataResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = NodeExecutionGetDataResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = NodeExecutionGetDataResponseValidationError{}

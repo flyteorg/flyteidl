@@ -7185,6 +7185,116 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a NodeExecutionGetDataRequest. */
+        interface INodeExecutionGetDataRequest {
+
+            /** NodeExecutionGetDataRequest id */
+            id?: (flyteidl.core.INodeExecutionIdentifier|null);
+        }
+
+        /** Represents a NodeExecutionGetDataRequest. */
+        class NodeExecutionGetDataRequest implements INodeExecutionGetDataRequest {
+
+            /**
+             * Constructs a new NodeExecutionGetDataRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.INodeExecutionGetDataRequest);
+
+            /** NodeExecutionGetDataRequest id. */
+            public id?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /**
+             * Creates a new NodeExecutionGetDataRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns NodeExecutionGetDataRequest instance
+             */
+            public static create(properties?: flyteidl.admin.INodeExecutionGetDataRequest): flyteidl.admin.NodeExecutionGetDataRequest;
+
+            /**
+             * Encodes the specified NodeExecutionGetDataRequest message. Does not implicitly {@link flyteidl.admin.NodeExecutionGetDataRequest.verify|verify} messages.
+             * @param message NodeExecutionGetDataRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.INodeExecutionGetDataRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a NodeExecutionGetDataRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns NodeExecutionGetDataRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.NodeExecutionGetDataRequest;
+
+            /**
+             * Verifies a NodeExecutionGetDataRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a NodeExecutionGetDataResponse. */
+        interface INodeExecutionGetDataResponse {
+
+            /** NodeExecutionGetDataResponse inputsUrl */
+            inputsUrl?: (string|null);
+
+            /** NodeExecutionGetDataResponse outputsUrl */
+            outputsUrl?: (string|null);
+        }
+
+        /** Represents a NodeExecutionGetDataResponse. */
+        class NodeExecutionGetDataResponse implements INodeExecutionGetDataResponse {
+
+            /**
+             * Constructs a new NodeExecutionGetDataResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.INodeExecutionGetDataResponse);
+
+            /** NodeExecutionGetDataResponse inputsUrl. */
+            public inputsUrl: string;
+
+            /** NodeExecutionGetDataResponse outputsUrl. */
+            public outputsUrl: string;
+
+            /**
+             * Creates a new NodeExecutionGetDataResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns NodeExecutionGetDataResponse instance
+             */
+            public static create(properties?: flyteidl.admin.INodeExecutionGetDataResponse): flyteidl.admin.NodeExecutionGetDataResponse;
+
+            /**
+             * Encodes the specified NodeExecutionGetDataResponse message. Does not implicitly {@link flyteidl.admin.NodeExecutionGetDataResponse.verify|verify} messages.
+             * @param message NodeExecutionGetDataResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.INodeExecutionGetDataResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a NodeExecutionGetDataResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns NodeExecutionGetDataResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.NodeExecutionGetDataResponse;
+
+            /**
+             * Verifies a NodeExecutionGetDataResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of an EmailMessage. */
         interface IEmailMessage {
 
@@ -8198,6 +8308,116 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a TaskExecutionGetDataRequest. */
+        interface ITaskExecutionGetDataRequest {
+
+            /** TaskExecutionGetDataRequest id */
+            id?: (flyteidl.core.ITaskExecutionIdentifier|null);
+        }
+
+        /** Represents a TaskExecutionGetDataRequest. */
+        class TaskExecutionGetDataRequest implements ITaskExecutionGetDataRequest {
+
+            /**
+             * Constructs a new TaskExecutionGetDataRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ITaskExecutionGetDataRequest);
+
+            /** TaskExecutionGetDataRequest id. */
+            public id?: (flyteidl.core.ITaskExecutionIdentifier|null);
+
+            /**
+             * Creates a new TaskExecutionGetDataRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskExecutionGetDataRequest instance
+             */
+            public static create(properties?: flyteidl.admin.ITaskExecutionGetDataRequest): flyteidl.admin.TaskExecutionGetDataRequest;
+
+            /**
+             * Encodes the specified TaskExecutionGetDataRequest message. Does not implicitly {@link flyteidl.admin.TaskExecutionGetDataRequest.verify|verify} messages.
+             * @param message TaskExecutionGetDataRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ITaskExecutionGetDataRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskExecutionGetDataRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskExecutionGetDataRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.TaskExecutionGetDataRequest;
+
+            /**
+             * Verifies a TaskExecutionGetDataRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a TaskExecutionGetDataResponse. */
+        interface ITaskExecutionGetDataResponse {
+
+            /** TaskExecutionGetDataResponse inputsUrl */
+            inputsUrl?: (string|null);
+
+            /** TaskExecutionGetDataResponse outputsUrl */
+            outputsUrl?: (string|null);
+        }
+
+        /** Represents a TaskExecutionGetDataResponse. */
+        class TaskExecutionGetDataResponse implements ITaskExecutionGetDataResponse {
+
+            /**
+             * Constructs a new TaskExecutionGetDataResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ITaskExecutionGetDataResponse);
+
+            /** TaskExecutionGetDataResponse inputsUrl. */
+            public inputsUrl: string;
+
+            /** TaskExecutionGetDataResponse outputsUrl. */
+            public outputsUrl: string;
+
+            /**
+             * Creates a new TaskExecutionGetDataResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskExecutionGetDataResponse instance
+             */
+            public static create(properties?: flyteidl.admin.ITaskExecutionGetDataResponse): flyteidl.admin.TaskExecutionGetDataResponse;
+
+            /**
+             * Encodes the specified TaskExecutionGetDataResponse message. Does not implicitly {@link flyteidl.admin.TaskExecutionGetDataResponse.verify|verify} messages.
+             * @param message TaskExecutionGetDataResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ITaskExecutionGetDataResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskExecutionGetDataResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskExecutionGetDataResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.TaskExecutionGetDataResponse;
+
+            /**
+             * Verifies a TaskExecutionGetDataResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a WorkflowCreateRequest. */
         interface IWorkflowCreateRequest {
 
@@ -8833,6 +9053,20 @@ export namespace flyteidl {
             public listNodeExecutions(request: flyteidl.admin.INodeExecutionListRequest): Promise<flyteidl.admin.NodeExecutionList>;
 
             /**
+             * Calls GetNodeExecutionData.
+             * @param request NodeExecutionGetDataRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and NodeExecutionGetDataResponse
+             */
+            public getNodeExecutionData(request: flyteidl.admin.INodeExecutionGetDataRequest, callback: flyteidl.service.AdminService.GetNodeExecutionDataCallback): void;
+
+            /**
+             * Calls GetNodeExecutionData.
+             * @param request NodeExecutionGetDataRequest message or plain object
+             * @returns Promise
+             */
+            public getNodeExecutionData(request: flyteidl.admin.INodeExecutionGetDataRequest): Promise<flyteidl.admin.NodeExecutionGetDataResponse>;
+
+            /**
              * Calls RegisterProject.
              * @param request Project message or plain object
              * @param callback Node-style callback called with the error, if any, and ProjectRegisterResponse
@@ -8929,6 +9163,20 @@ export namespace flyteidl {
              * @returns Promise
              */
             public listTaskExecutions(request: flyteidl.admin.ITaskExecutionListRequest): Promise<flyteidl.admin.TaskExecutionList>;
+
+            /**
+             * Calls GetTaskExecutionData.
+             * @param request TaskExecutionGetDataRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and TaskExecutionGetDataResponse
+             */
+            public getTaskExecutionData(request: flyteidl.admin.ITaskExecutionGetDataRequest, callback: flyteidl.service.AdminService.GetTaskExecutionDataCallback): void;
+
+            /**
+             * Calls GetTaskExecutionData.
+             * @param request TaskExecutionGetDataRequest message or plain object
+             * @returns Promise
+             */
+            public getTaskExecutionData(request: flyteidl.admin.ITaskExecutionGetDataRequest): Promise<flyteidl.admin.TaskExecutionGetDataResponse>;
         }
 
         namespace AdminService {
@@ -9074,6 +9322,13 @@ export namespace flyteidl {
             type ListNodeExecutionsCallback = (error: (Error|null), response?: flyteidl.admin.NodeExecutionList) => void;
 
             /**
+             * Callback as used by {@link flyteidl.service.AdminService#getNodeExecutionData}.
+             * @param error Error, if any
+             * @param [response] NodeExecutionGetDataResponse
+             */
+            type GetNodeExecutionDataCallback = (error: (Error|null), response?: flyteidl.admin.NodeExecutionGetDataResponse) => void;
+
+            /**
              * Callback as used by {@link flyteidl.service.AdminService#registerProject}.
              * @param error Error, if any
              * @param [response] ProjectRegisterResponse
@@ -9121,6 +9376,13 @@ export namespace flyteidl {
              * @param [response] TaskExecutionList
              */
             type ListTaskExecutionsCallback = (error: (Error|null), response?: flyteidl.admin.TaskExecutionList) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getTaskExecutionData}.
+             * @param error Error, if any
+             * @param [response] TaskExecutionGetDataResponse
+             */
+            type GetTaskExecutionDataCallback = (error: (Error|null), response?: flyteidl.admin.TaskExecutionGetDataResponse) => void;
         }
     }
 

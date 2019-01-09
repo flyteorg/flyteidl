@@ -215,6 +215,24 @@ func (mr *MockAdminServiceClientMockRecorder) GetNodeExecution(arg0, arg1 interf
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetNodeExecution", reflect.TypeOf((*MockAdminServiceClient)(nil).GetNodeExecution), varargs...)
 }
 
+// GetNodeExecutionData mocks base method
+func (m *MockAdminServiceClient) GetNodeExecutionData(arg0 context.Context, arg1 *admin.NodeExecutionGetDataRequest, arg2 ...grpc.CallOption) (*admin.NodeExecutionGetDataResponse, error) {
+	varargs := []interface{}{arg0, arg1}
+	for _, a := range arg2 {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "GetNodeExecutionData", varargs...)
+	ret0, _ := ret[0].(*admin.NodeExecutionGetDataResponse)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// GetNodeExecutionData indicates an expected call of GetNodeExecutionData
+func (mr *MockAdminServiceClientMockRecorder) GetNodeExecutionData(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
+	varargs := append([]interface{}{arg0, arg1}, arg2...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetNodeExecutionData", reflect.TypeOf((*MockAdminServiceClient)(nil).GetNodeExecutionData), varargs...)
+}
+
 // GetTask mocks base method
 func (m *MockAdminServiceClient) GetTask(arg0 context.Context, arg1 *admin.ObjectGetRequest, arg2 ...grpc.CallOption) (*admin.Task, error) {
 	varargs := []interface{}{arg0, arg1}
@@ -249,6 +267,24 @@ func (m *MockAdminServiceClient) GetTaskExecution(arg0 context.Context, arg1 *ad
 func (mr *MockAdminServiceClientMockRecorder) GetTaskExecution(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTaskExecution", reflect.TypeOf((*MockAdminServiceClient)(nil).GetTaskExecution), varargs...)
+}
+
+// GetTaskExecutionData mocks base method
+func (m *MockAdminServiceClient) GetTaskExecutionData(arg0 context.Context, arg1 *admin.TaskExecutionGetDataRequest, arg2 ...grpc.CallOption) (*admin.TaskExecutionGetDataResponse, error) {
+	varargs := []interface{}{arg0, arg1}
+	for _, a := range arg2 {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "GetTaskExecutionData", varargs...)
+	ret0, _ := ret[0].(*admin.TaskExecutionGetDataResponse)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// GetTaskExecutionData indicates an expected call of GetTaskExecutionData
+func (mr *MockAdminServiceClientMockRecorder) GetTaskExecutionData(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
+	varargs := append([]interface{}{arg0, arg1}, arg2...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTaskExecutionData", reflect.TypeOf((*MockAdminServiceClient)(nil).GetTaskExecutionData), varargs...)
 }
 
 // GetWorkflow mocks base method

@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/task_execution.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n#flyteidl/admin/task_execution.proto\x12\x0e\x66lyteidl.admin\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\"M\n\x17TaskExecutionGetRequest\x12\x32\n\x02id\x18\x01 \x01(\x0b\x32&.flyteidl.core.TaskExecutionIdentifier\"p\n\x18TaskExecutionListRequest\x12\r\n\x05limit\x18\x01 \x01(\r\x12\r\n\x05token\x18\x02 \x01(\t\x12\x0f\n\x07\x66ilters\x18\x03 \x01(\t\x12%\n\x07sort_by\x18\x04 \x01(\x0b\x32\x14.flyteidl.admin.Sort\"\x8d\x01\n\rTaskExecution\x12\x32\n\x02id\x18\x01 \x01(\x0b\x32&.flyteidl.core.TaskExecutionIdentifier\x12\x11\n\tinput_uri\x18\x02 \x01(\t\x12\x35\n\x07\x63losure\x18\x03 \x01(\x0b\x32$.flyteidl.admin.TaskExecutionClosure\"Z\n\x11TaskExecutionList\x12\x36\n\x0ftask_executions\x18\x01 \x03(\x0b\x32\x1d.flyteidl.admin.TaskExecution\x12\r\n\x05token\x18\x02 \x01(\t\"\x82\x03\n\x14TaskExecutionClosure\x12\x14\n\noutput_uri\x18\x01 \x01(\tH\x00\x12.\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x12\x30\n\x05phase\x18\x03 \x01(\x0e\x32!.flyteidl.core.TaskExecutionPhase\x12$\n\x04logs\x18\x04 \x03(\x0b\x32\x16.flyteidl.core.TaskLog\x12.\n\nstarted_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x08\x64uration\x18\x06 \x01(\x0b\x32\x19.google.protobuf.Duration\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x0f\n\routput_resultB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n#flyteidl/admin/task_execution.proto\x12\x0e\x66lyteidl.admin\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\"M\n\x17TaskExecutionGetRequest\x12\x32\n\x02id\x18\x01 \x01(\x0b\x32&.flyteidl.core.TaskExecutionIdentifier\"p\n\x18TaskExecutionListRequest\x12\r\n\x05limit\x18\x01 \x01(\r\x12\r\n\x05token\x18\x02 \x01(\t\x12\x0f\n\x07\x66ilters\x18\x03 \x01(\t\x12%\n\x07sort_by\x18\x04 \x01(\x0b\x32\x14.flyteidl.admin.Sort\"\x8d\x01\n\rTaskExecution\x12\x32\n\x02id\x18\x01 \x01(\x0b\x32&.flyteidl.core.TaskExecutionIdentifier\x12\x11\n\tinput_uri\x18\x02 \x01(\t\x12\x35\n\x07\x63losure\x18\x03 \x01(\x0b\x32$.flyteidl.admin.TaskExecutionClosure\"Z\n\x11TaskExecutionList\x12\x36\n\x0ftask_executions\x18\x01 \x03(\x0b\x32\x1d.flyteidl.admin.TaskExecution\x12\r\n\x05token\x18\x02 \x01(\t\"\x82\x03\n\x14TaskExecutionClosure\x12\x14\n\noutput_uri\x18\x01 \x01(\tH\x00\x12.\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x12\x30\n\x05phase\x18\x03 \x01(\x0e\x32!.flyteidl.core.TaskExecutionPhase\x12$\n\x04logs\x18\x04 \x03(\x0b\x32\x16.flyteidl.core.TaskLog\x12.\n\nstarted_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x08\x64uration\x18\x06 \x01(\x0b\x32\x19.google.protobuf.Duration\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x0f\n\routput_result\"Q\n\x1bTaskExecutionGetDataRequest\x12\x32\n\x02id\x18\x01 \x01(\x0b\x32&.flyteidl.core.TaskExecutionIdentifier\"G\n\x1cTaskExecutionGetDataResponse\x12\x12\n\ninputs_url\x18\x01 \x01(\t\x12\x13\n\x0boutputs_url\x18\x02 \x01(\tB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,flyteidl_dot_core_dot_execution__pb2.DESCRIPTOR,flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,])
 
@@ -279,6 +279,75 @@ _TASKEXECUTIONCLOSURE = _descriptor.Descriptor(
   serialized_end=1028,
 )
 
+
+_TASKEXECUTIONGETDATAREQUEST = _descriptor.Descriptor(
+  name='TaskExecutionGetDataRequest',
+  full_name='flyteidl.admin.TaskExecutionGetDataRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='flyteidl.admin.TaskExecutionGetDataRequest.id', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1030,
+  serialized_end=1111,
+)
+
+
+_TASKEXECUTIONGETDATARESPONSE = _descriptor.Descriptor(
+  name='TaskExecutionGetDataResponse',
+  full_name='flyteidl.admin.TaskExecutionGetDataResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='inputs_url', full_name='flyteidl.admin.TaskExecutionGetDataResponse.inputs_url', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='outputs_url', full_name='flyteidl.admin.TaskExecutionGetDataResponse.outputs_url', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1113,
+  serialized_end=1184,
+)
+
 _TASKEXECUTIONGETREQUEST.fields_by_name['id'].message_type = flyteidl_dot_core_dot_identifier__pb2._TASKEXECUTIONIDENTIFIER
 _TASKEXECUTIONLISTREQUEST.fields_by_name['sort_by'].message_type = flyteidl_dot_admin_dot_common__pb2._SORT
 _TASKEXECUTION.fields_by_name['id'].message_type = flyteidl_dot_core_dot_identifier__pb2._TASKEXECUTIONIDENTIFIER
@@ -297,11 +366,14 @@ _TASKEXECUTIONCLOSURE.fields_by_name['output_uri'].containing_oneof = _TASKEXECU
 _TASKEXECUTIONCLOSURE.oneofs_by_name['output_result'].fields.append(
   _TASKEXECUTIONCLOSURE.fields_by_name['error'])
 _TASKEXECUTIONCLOSURE.fields_by_name['error'].containing_oneof = _TASKEXECUTIONCLOSURE.oneofs_by_name['output_result']
+_TASKEXECUTIONGETDATAREQUEST.fields_by_name['id'].message_type = flyteidl_dot_core_dot_identifier__pb2._TASKEXECUTIONIDENTIFIER
 DESCRIPTOR.message_types_by_name['TaskExecutionGetRequest'] = _TASKEXECUTIONGETREQUEST
 DESCRIPTOR.message_types_by_name['TaskExecutionListRequest'] = _TASKEXECUTIONLISTREQUEST
 DESCRIPTOR.message_types_by_name['TaskExecution'] = _TASKEXECUTION
 DESCRIPTOR.message_types_by_name['TaskExecutionList'] = _TASKEXECUTIONLIST
 DESCRIPTOR.message_types_by_name['TaskExecutionClosure'] = _TASKEXECUTIONCLOSURE
+DESCRIPTOR.message_types_by_name['TaskExecutionGetDataRequest'] = _TASKEXECUTIONGETDATAREQUEST
+DESCRIPTOR.message_types_by_name['TaskExecutionGetDataResponse'] = _TASKEXECUTIONGETDATARESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 TaskExecutionGetRequest = _reflection.GeneratedProtocolMessageType('TaskExecutionGetRequest', (_message.Message,), dict(
@@ -338,6 +410,20 @@ TaskExecutionClosure = _reflection.GeneratedProtocolMessageType('TaskExecutionCl
   # @@protoc_insertion_point(class_scope:flyteidl.admin.TaskExecutionClosure)
   ))
 _sym_db.RegisterMessage(TaskExecutionClosure)
+
+TaskExecutionGetDataRequest = _reflection.GeneratedProtocolMessageType('TaskExecutionGetDataRequest', (_message.Message,), dict(
+  DESCRIPTOR = _TASKEXECUTIONGETDATAREQUEST,
+  __module__ = 'flyteidl.admin.task_execution_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.TaskExecutionGetDataRequest)
+  ))
+_sym_db.RegisterMessage(TaskExecutionGetDataRequest)
+
+TaskExecutionGetDataResponse = _reflection.GeneratedProtocolMessageType('TaskExecutionGetDataResponse', (_message.Message,), dict(
+  DESCRIPTOR = _TASKEXECUTIONGETDATARESPONSE,
+  __module__ = 'flyteidl.admin.task_execution_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.TaskExecutionGetDataResponse)
+  ))
+_sym_db.RegisterMessage(TaskExecutionGetDataResponse)
 
 
 DESCRIPTOR.has_options = True

@@ -15,6 +15,159 @@
     "application/json"
   ],
   "paths": {
+    "/api/v1/data/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}": {
+      "get": {
+        "operationId": "GetNodeExecutionData",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminNodeExecutionGetDataResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.execution_id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.execution_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.execution_id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.node_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id.retry_attempt",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/data/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.node_execution_id.retry_attempt}": {
+      "get": {
+        "operationId": "GetTaskExecutionData",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminTaskExecutionGetDataResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.node_execution_id.execution_id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.node_execution_id.execution_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.node_execution_id.execution_id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.node_execution_id.node_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.node_execution_id.retry_attempt",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "id.task_id.resource_type",
+            "description": "Identifies the specific type of resource that this identifer corresponds to.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "UNSPECIFIED",
+              "TASK",
+              "WORKFLOW",
+              "LAUNCH_PLAN"
+            ],
+            "default": "UNSPECIFIED"
+          },
+          {
+            "name": "id.task_id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id.task_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id.task_id.name",
+            "description": "User provided value for the resource.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id.task_id.version",
+            "description": "Specific version of the resource.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id.retry_attempt",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/events/nodes": {
       "post": {
         "operationId": "CreateNodeEvent",
@@ -199,58 +352,6 @@
             "schema": {
               "$ref": "#/definitions/adminExecutionRelaunchRequest"
             }
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}": {
-      "get": {
-        "operationId": "GetNodeExecution",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminNodeExecution"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id.execution_id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.execution_id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.execution_id.name",
-            "description": "User or system provided value for the resource.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.node_id",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id.retry_attempt",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
           }
         ],
         "tags": [
@@ -813,6 +914,58 @@
               "ASCENDING"
             ],
             "default": "DESCENDING"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}": {
+      "get": {
+        "operationId": "GetNodeExecution",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminNodeExecution"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.execution_id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.execution_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.execution_id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.node_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id.retry_attempt",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
           }
         ],
         "tags": [
@@ -2917,6 +3070,20 @@
     "adminNodeExecutionEventResponse": {
       "type": "object"
     },
+    "adminNodeExecutionGetDataResponse": {
+      "type": "object",
+      "properties": {
+        "inputs_url": {
+          "type": "string",
+          "description": "Signed url to fetch a core.LiteralMap of node execution inputs."
+        },
+        "outputs_url": {
+          "type": "string",
+          "description": "Signed url to fetch a core.LiteralMap of node execution outputs."
+        }
+      },
+      "description": "Response structure for NodeExecutionGetDataRequest which contains inputs and outputs for a node execution."
+    },
     "adminNodeExecutionList": {
       "type": "object",
       "properties": {
@@ -3158,6 +3325,20 @@
     },
     "adminTaskExecutionEventResponse": {
       "type": "object"
+    },
+    "adminTaskExecutionGetDataResponse": {
+      "type": "object",
+      "properties": {
+        "inputs_url": {
+          "type": "string",
+          "description": "Signed url to fetch a core.LiteralMap of task execution inputs."
+        },
+        "outputs_url": {
+          "type": "string",
+          "description": "Signed url to fetch a core.LiteralMap of task execution outputs."
+        }
+      },
+      "description": "Response structure for TaskExecutionGetDataRequest which contains inputs and outputs for a task execution."
     },
     "adminTaskExecutionList": {
       "type": "object",

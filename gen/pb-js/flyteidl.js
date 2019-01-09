@@ -17301,6 +17301,245 @@ export const flyteidl = $root.flyteidl = (() => {
             return NodeExecutionClosure;
         })();
 
+        admin.NodeExecutionGetDataRequest = (function() {
+
+            /**
+             * Properties of a NodeExecutionGetDataRequest.
+             * @memberof flyteidl.admin
+             * @interface INodeExecutionGetDataRequest
+             * @property {flyteidl.core.INodeExecutionIdentifier|null} [id] NodeExecutionGetDataRequest id
+             */
+
+            /**
+             * Constructs a new NodeExecutionGetDataRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a NodeExecutionGetDataRequest.
+             * @implements INodeExecutionGetDataRequest
+             * @constructor
+             * @param {flyteidl.admin.INodeExecutionGetDataRequest=} [properties] Properties to set
+             */
+            function NodeExecutionGetDataRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * NodeExecutionGetDataRequest id.
+             * @member {flyteidl.core.INodeExecutionIdentifier|null|undefined} id
+             * @memberof flyteidl.admin.NodeExecutionGetDataRequest
+             * @instance
+             */
+            NodeExecutionGetDataRequest.prototype.id = null;
+
+            /**
+             * Creates a new NodeExecutionGetDataRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.NodeExecutionGetDataRequest
+             * @static
+             * @param {flyteidl.admin.INodeExecutionGetDataRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.NodeExecutionGetDataRequest} NodeExecutionGetDataRequest instance
+             */
+            NodeExecutionGetDataRequest.create = function create(properties) {
+                return new NodeExecutionGetDataRequest(properties);
+            };
+
+            /**
+             * Encodes the specified NodeExecutionGetDataRequest message. Does not implicitly {@link flyteidl.admin.NodeExecutionGetDataRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.NodeExecutionGetDataRequest
+             * @static
+             * @param {flyteidl.admin.INodeExecutionGetDataRequest} message NodeExecutionGetDataRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            NodeExecutionGetDataRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    $root.flyteidl.core.NodeExecutionIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a NodeExecutionGetDataRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.NodeExecutionGetDataRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.NodeExecutionGetDataRequest} NodeExecutionGetDataRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            NodeExecutionGetDataRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.NodeExecutionGetDataRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a NodeExecutionGetDataRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.NodeExecutionGetDataRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            NodeExecutionGetDataRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id")) {
+                    let error = $root.flyteidl.core.NodeExecutionIdentifier.verify(message.id);
+                    if (error)
+                        return "id." + error;
+                }
+                return null;
+            };
+
+            return NodeExecutionGetDataRequest;
+        })();
+
+        admin.NodeExecutionGetDataResponse = (function() {
+
+            /**
+             * Properties of a NodeExecutionGetDataResponse.
+             * @memberof flyteidl.admin
+             * @interface INodeExecutionGetDataResponse
+             * @property {string|null} [inputsUrl] NodeExecutionGetDataResponse inputsUrl
+             * @property {string|null} [outputsUrl] NodeExecutionGetDataResponse outputsUrl
+             */
+
+            /**
+             * Constructs a new NodeExecutionGetDataResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a NodeExecutionGetDataResponse.
+             * @implements INodeExecutionGetDataResponse
+             * @constructor
+             * @param {flyteidl.admin.INodeExecutionGetDataResponse=} [properties] Properties to set
+             */
+            function NodeExecutionGetDataResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * NodeExecutionGetDataResponse inputsUrl.
+             * @member {string} inputsUrl
+             * @memberof flyteidl.admin.NodeExecutionGetDataResponse
+             * @instance
+             */
+            NodeExecutionGetDataResponse.prototype.inputsUrl = "";
+
+            /**
+             * NodeExecutionGetDataResponse outputsUrl.
+             * @member {string} outputsUrl
+             * @memberof flyteidl.admin.NodeExecutionGetDataResponse
+             * @instance
+             */
+            NodeExecutionGetDataResponse.prototype.outputsUrl = "";
+
+            /**
+             * Creates a new NodeExecutionGetDataResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.NodeExecutionGetDataResponse
+             * @static
+             * @param {flyteidl.admin.INodeExecutionGetDataResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.NodeExecutionGetDataResponse} NodeExecutionGetDataResponse instance
+             */
+            NodeExecutionGetDataResponse.create = function create(properties) {
+                return new NodeExecutionGetDataResponse(properties);
+            };
+
+            /**
+             * Encodes the specified NodeExecutionGetDataResponse message. Does not implicitly {@link flyteidl.admin.NodeExecutionGetDataResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.NodeExecutionGetDataResponse
+             * @static
+             * @param {flyteidl.admin.INodeExecutionGetDataResponse} message NodeExecutionGetDataResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            NodeExecutionGetDataResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.inputsUrl != null && message.hasOwnProperty("inputsUrl"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.inputsUrl);
+                if (message.outputsUrl != null && message.hasOwnProperty("outputsUrl"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.outputsUrl);
+                return writer;
+            };
+
+            /**
+             * Decodes a NodeExecutionGetDataResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.NodeExecutionGetDataResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.NodeExecutionGetDataResponse} NodeExecutionGetDataResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            NodeExecutionGetDataResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.NodeExecutionGetDataResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.inputsUrl = reader.string();
+                        break;
+                    case 2:
+                        message.outputsUrl = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a NodeExecutionGetDataResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.NodeExecutionGetDataResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            NodeExecutionGetDataResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.inputsUrl != null && message.hasOwnProperty("inputsUrl"))
+                    if (!$util.isString(message.inputsUrl))
+                        return "inputsUrl: string expected";
+                if (message.outputsUrl != null && message.hasOwnProperty("outputsUrl"))
+                    if (!$util.isString(message.outputsUrl))
+                        return "outputsUrl: string expected";
+                return null;
+            };
+
+            return NodeExecutionGetDataResponse;
+        })();
+
         admin.EmailMessage = (function() {
 
             /**
@@ -19650,6 +19889,245 @@ export const flyteidl = $root.flyteidl = (() => {
             return TaskExecutionClosure;
         })();
 
+        admin.TaskExecutionGetDataRequest = (function() {
+
+            /**
+             * Properties of a TaskExecutionGetDataRequest.
+             * @memberof flyteidl.admin
+             * @interface ITaskExecutionGetDataRequest
+             * @property {flyteidl.core.ITaskExecutionIdentifier|null} [id] TaskExecutionGetDataRequest id
+             */
+
+            /**
+             * Constructs a new TaskExecutionGetDataRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a TaskExecutionGetDataRequest.
+             * @implements ITaskExecutionGetDataRequest
+             * @constructor
+             * @param {flyteidl.admin.ITaskExecutionGetDataRequest=} [properties] Properties to set
+             */
+            function TaskExecutionGetDataRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TaskExecutionGetDataRequest id.
+             * @member {flyteidl.core.ITaskExecutionIdentifier|null|undefined} id
+             * @memberof flyteidl.admin.TaskExecutionGetDataRequest
+             * @instance
+             */
+            TaskExecutionGetDataRequest.prototype.id = null;
+
+            /**
+             * Creates a new TaskExecutionGetDataRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.TaskExecutionGetDataRequest
+             * @static
+             * @param {flyteidl.admin.ITaskExecutionGetDataRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.TaskExecutionGetDataRequest} TaskExecutionGetDataRequest instance
+             */
+            TaskExecutionGetDataRequest.create = function create(properties) {
+                return new TaskExecutionGetDataRequest(properties);
+            };
+
+            /**
+             * Encodes the specified TaskExecutionGetDataRequest message. Does not implicitly {@link flyteidl.admin.TaskExecutionGetDataRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.TaskExecutionGetDataRequest
+             * @static
+             * @param {flyteidl.admin.ITaskExecutionGetDataRequest} message TaskExecutionGetDataRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TaskExecutionGetDataRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    $root.flyteidl.core.TaskExecutionIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a TaskExecutionGetDataRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.TaskExecutionGetDataRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.TaskExecutionGetDataRequest} TaskExecutionGetDataRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TaskExecutionGetDataRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.TaskExecutionGetDataRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = $root.flyteidl.core.TaskExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a TaskExecutionGetDataRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.TaskExecutionGetDataRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TaskExecutionGetDataRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id")) {
+                    let error = $root.flyteidl.core.TaskExecutionIdentifier.verify(message.id);
+                    if (error)
+                        return "id." + error;
+                }
+                return null;
+            };
+
+            return TaskExecutionGetDataRequest;
+        })();
+
+        admin.TaskExecutionGetDataResponse = (function() {
+
+            /**
+             * Properties of a TaskExecutionGetDataResponse.
+             * @memberof flyteidl.admin
+             * @interface ITaskExecutionGetDataResponse
+             * @property {string|null} [inputsUrl] TaskExecutionGetDataResponse inputsUrl
+             * @property {string|null} [outputsUrl] TaskExecutionGetDataResponse outputsUrl
+             */
+
+            /**
+             * Constructs a new TaskExecutionGetDataResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a TaskExecutionGetDataResponse.
+             * @implements ITaskExecutionGetDataResponse
+             * @constructor
+             * @param {flyteidl.admin.ITaskExecutionGetDataResponse=} [properties] Properties to set
+             */
+            function TaskExecutionGetDataResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TaskExecutionGetDataResponse inputsUrl.
+             * @member {string} inputsUrl
+             * @memberof flyteidl.admin.TaskExecutionGetDataResponse
+             * @instance
+             */
+            TaskExecutionGetDataResponse.prototype.inputsUrl = "";
+
+            /**
+             * TaskExecutionGetDataResponse outputsUrl.
+             * @member {string} outputsUrl
+             * @memberof flyteidl.admin.TaskExecutionGetDataResponse
+             * @instance
+             */
+            TaskExecutionGetDataResponse.prototype.outputsUrl = "";
+
+            /**
+             * Creates a new TaskExecutionGetDataResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.TaskExecutionGetDataResponse
+             * @static
+             * @param {flyteidl.admin.ITaskExecutionGetDataResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.TaskExecutionGetDataResponse} TaskExecutionGetDataResponse instance
+             */
+            TaskExecutionGetDataResponse.create = function create(properties) {
+                return new TaskExecutionGetDataResponse(properties);
+            };
+
+            /**
+             * Encodes the specified TaskExecutionGetDataResponse message. Does not implicitly {@link flyteidl.admin.TaskExecutionGetDataResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.TaskExecutionGetDataResponse
+             * @static
+             * @param {flyteidl.admin.ITaskExecutionGetDataResponse} message TaskExecutionGetDataResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TaskExecutionGetDataResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.inputsUrl != null && message.hasOwnProperty("inputsUrl"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.inputsUrl);
+                if (message.outputsUrl != null && message.hasOwnProperty("outputsUrl"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.outputsUrl);
+                return writer;
+            };
+
+            /**
+             * Decodes a TaskExecutionGetDataResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.TaskExecutionGetDataResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.TaskExecutionGetDataResponse} TaskExecutionGetDataResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TaskExecutionGetDataResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.TaskExecutionGetDataResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.inputsUrl = reader.string();
+                        break;
+                    case 2:
+                        message.outputsUrl = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a TaskExecutionGetDataResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.TaskExecutionGetDataResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TaskExecutionGetDataResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.inputsUrl != null && message.hasOwnProperty("inputsUrl"))
+                    if (!$util.isString(message.inputsUrl))
+                        return "inputsUrl: string expected";
+                if (message.outputsUrl != null && message.hasOwnProperty("outputsUrl"))
+                    if (!$util.isString(message.outputsUrl))
+                        return "outputsUrl: string expected";
+                return null;
+            };
+
+            return TaskExecutionGetDataResponse;
+        })();
+
         admin.WorkflowCreateRequest = (function() {
 
             /**
@@ -21090,6 +21568,39 @@ export const flyteidl = $root.flyteidl = (() => {
              */
 
             /**
+             * Callback as used by {@link flyteidl.service.AdminService#getNodeExecutionData}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef GetNodeExecutionDataCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.NodeExecutionGetDataResponse} [response] NodeExecutionGetDataResponse
+             */
+
+            /**
+             * Calls GetNodeExecutionData.
+             * @function getNodeExecutionData
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.INodeExecutionGetDataRequest} request NodeExecutionGetDataRequest message or plain object
+             * @param {flyteidl.service.AdminService.GetNodeExecutionDataCallback} callback Node-style callback called with the error, if any, and NodeExecutionGetDataResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.getNodeExecutionData = function getNodeExecutionData(request, callback) {
+                return this.rpcCall(getNodeExecutionData, $root.flyteidl.admin.NodeExecutionGetDataRequest, $root.flyteidl.admin.NodeExecutionGetDataResponse, request, callback);
+            }, "name", { value: "GetNodeExecutionData" });
+
+            /**
+             * Calls GetNodeExecutionData.
+             * @function getNodeExecutionData
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.INodeExecutionGetDataRequest} request NodeExecutionGetDataRequest message or plain object
+             * @returns {Promise<flyteidl.admin.NodeExecutionGetDataResponse>} Promise
+             * @variation 2
+             */
+
+            /**
              * Callback as used by {@link flyteidl.service.AdminService#registerProject}.
              * @memberof flyteidl.service.AdminService
              * @typedef RegisterProjectCallback
@@ -21317,6 +21828,39 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              * @param {flyteidl.admin.ITaskExecutionListRequest} request TaskExecutionListRequest message or plain object
              * @returns {Promise<flyteidl.admin.TaskExecutionList>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getTaskExecutionData}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef GetTaskExecutionDataCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.TaskExecutionGetDataResponse} [response] TaskExecutionGetDataResponse
+             */
+
+            /**
+             * Calls GetTaskExecutionData.
+             * @function getTaskExecutionData
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.ITaskExecutionGetDataRequest} request TaskExecutionGetDataRequest message or plain object
+             * @param {flyteidl.service.AdminService.GetTaskExecutionDataCallback} callback Node-style callback called with the error, if any, and TaskExecutionGetDataResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.getTaskExecutionData = function getTaskExecutionData(request, callback) {
+                return this.rpcCall(getTaskExecutionData, $root.flyteidl.admin.TaskExecutionGetDataRequest, $root.flyteidl.admin.TaskExecutionGetDataResponse, request, callback);
+            }, "name", { value: "GetTaskExecutionData" });
+
+            /**
+             * Calls GetTaskExecutionData.
+             * @function getTaskExecutionData
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.ITaskExecutionGetDataRequest} request TaskExecutionGetDataRequest message or plain object
+             * @returns {Promise<flyteidl.admin.TaskExecutionGetDataResponse>} Promise
              * @variation 2
              */
 

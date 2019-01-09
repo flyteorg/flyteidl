@@ -122,6 +122,11 @@ class AdminServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionListRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionList.FromString,
         )
+    self.GetNodeExecutionData = channel.unary_unary(
+        '/flyteidl.service.AdminService/GetNodeExecutionData',
+        request_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetDataRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetDataResponse.FromString,
+        )
     self.RegisterProject = channel.unary_unary(
         '/flyteidl.service.AdminService/RegisterProject',
         request_serializer=flyteidl_dot_admin_dot_project__pb2.Project.SerializeToString,
@@ -156,6 +161,11 @@ class AdminServiceStub(object):
         '/flyteidl.service.AdminService/ListTaskExecutions',
         request_serializer=flyteidl_dot_admin_dot_task__execution__pb2.TaskExecutionListRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_task__execution__pb2.TaskExecutionList.FromString,
+        )
+    self.GetTaskExecutionData = channel.unary_unary(
+        '/flyteidl.service.AdminService/GetTaskExecutionData',
+        request_serializer=flyteidl_dot_admin_dot_task__execution__pb2.TaskExecutionGetDataRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_task__execution__pb2.TaskExecutionGetDataResponse.FromString,
         )
 
 
@@ -303,6 +313,13 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetNodeExecutionData(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def RegisterProject(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -346,6 +363,13 @@ class AdminServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def ListTaskExecutions(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetTaskExecutionData(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -455,6 +479,11 @@ def add_AdminServiceServicer_to_server(servicer, server):
           request_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionListRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionList.SerializeToString,
       ),
+      'GetNodeExecutionData': grpc.unary_unary_rpc_method_handler(
+          servicer.GetNodeExecutionData,
+          request_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetDataRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetDataResponse.SerializeToString,
+      ),
       'RegisterProject': grpc.unary_unary_rpc_method_handler(
           servicer.RegisterProject,
           request_deserializer=flyteidl_dot_admin_dot_project__pb2.Project.FromString,
@@ -489,6 +518,11 @@ def add_AdminServiceServicer_to_server(servicer, server):
           servicer.ListTaskExecutions,
           request_deserializer=flyteidl_dot_admin_dot_task__execution__pb2.TaskExecutionListRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_task__execution__pb2.TaskExecutionList.SerializeToString,
+      ),
+      'GetTaskExecutionData': grpc.unary_unary_rpc_method_handler(
+          servicer.GetTaskExecutionData,
+          request_deserializer=flyteidl_dot_admin_dot_task__execution__pb2.TaskExecutionGetDataRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_task__execution__pb2.TaskExecutionGetDataResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

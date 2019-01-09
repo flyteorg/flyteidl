@@ -247,10 +247,9 @@ service AdminService {
     };
   }
 
-
   rpc GetNodeExecution (flyteidl.admin.NodeExecutionGetRequest) returns (flyteidl.admin.NodeExecution) {
     option (google.api.http) = {
-      get: "/api/v1/executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}"
+      get: "/api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}"
     };
   }
 
@@ -259,6 +258,12 @@ service AdminService {
       get: "/api/v1/node_executions"
     };
   }
+
+  rpc GetNodeExecutionData (flyteidl.admin.NodeExecutionGetDataRequest) returns (flyteidl.admin.NodeExecutionGetDataResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/data/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}"
+    };
+  };
 
   rpc RegisterProject (flyteidl.admin.Project) returns (flyteidl.admin.ProjectRegisterResponse) {
     option (google.api.http) = {
@@ -318,6 +323,12 @@ service AdminService {
   rpc ListTaskExecutions (flyteidl.admin.TaskExecutionListRequest) returns (flyteidl.admin.TaskExecutionList) {
     option (google.api.http) = {
         get: "/api/v1/task_executions"
+    };
+  }
+
+  rpc GetTaskExecutionData (flyteidl.admin.TaskExecutionGetDataRequest) returns (flyteidl.admin.TaskExecutionGetDataResponse) {
+    option (google.api.http) = {
+        get: "/api/v1/data/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.node_execution_id.retry_attempt}"
     };
   }
 }
