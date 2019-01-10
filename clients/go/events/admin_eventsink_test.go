@@ -21,7 +21,6 @@ func GetTestAdminEventSink(t *testing.T) (EventSink, *MockAdminServiceClient) {
 	client := NewMockAdminServiceClient(ctrl)
 	return &adminEventSink{
 		adminClient:     client,
-		adminClientConn: nil,
 	}, client
 }
 

@@ -25,23 +25,23 @@ func (s *localSink) Sink(ctx context.Context, eventType EventType, message proto
 	var eventOutput string
 	switch eventType {
 	case WorkflowEvent:
-		event, ok := message.(*event.WorkflowExecutionEvent)
+		e, ok := message.(*event.WorkflowExecutionEvent)
 		if !ok {
 			return fmt.Errorf("failed to convert workflow event to its protobuf structure")
 		}
-		eventOutput = fmt.Sprintf("[--WF EVENT-%d-] Phase: %s\n", utils.GetSequencer().GetNext(), event.Phase)
+		eventOutput = fmt.Sprintf("[--WF EVENT-%d-] Phase: %s\n", utils.GetSequencer().GetNext(), e.Phase)
 	case NodeEvent:
-		event, ok := message.(*event.NodeExecutionEvent)
+		e, ok := message.(*event.NodeExecutionEvent)
 		if !ok {
 			return fmt.Errorf("failed to convert workflow event to its protobuf structure")
 		}
-		eventOutput = fmt.Sprintf("[--NODE EVENT-%d-] Phase: %s\n", utils.GetSequencer().GetNext(), event.Phase)
+		eventOutput = fmt.Sprintf("[--NODE EVENT-%d-] Phase: %s\n", utils.GetSequencer().GetNext(), e.Phase)
 	case TaskEvent:
-		event, ok := message.(*event.TaskExecutionEvent)
+		e, ok := message.(*event.TaskExecutionEvent)
 		if !ok {
 			return fmt.Errorf("failed to convert workflow event to its protobuf structure")
 		}
-		eventOutput = fmt.Sprintf("[--TASK EVENT-%d-] TaskId: %s\n", utils.GetSequencer().GetNext(), event.TaskId)
+		eventOutput = fmt.Sprintf("[--TASK EVENT-%d-] TaskId: %s\n", utils.GetSequencer().GetNext(), e.TaskId)
 	}
 
 	return s.writer.Write(ctx, eventOutput)
@@ -65,6 +65,7 @@ func NewStdoutSink() (EventSink, error) {
 	return &localSink{writer: &StdWriter{}}, nil
 }
 
+// TODO this will cause multiple handles to the same file if we open multiple syncs. Maybe we should remove this
 func NewFileSink(path string) (EventSink, error) {
 	f, err := os.OpenFile(path, os.O_APPEND|os.O_RDWR|os.O_CREATE, os.FileMode(0666))
 	if err != nil {

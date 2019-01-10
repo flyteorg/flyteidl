@@ -3,38 +3,26 @@ package events
 import (
 	"context"
 	"fmt"
-
-	"net/url"
+	admin2 "github.com/lyft/flyteidl/clients/go/admin"
 
 	"github.com/golang/protobuf/proto"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/event"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/lyft/flytestdlib/logger"
-	"google.golang.org/grpc"
 )
 
 type adminEventSink struct {
-	adminClient     service.AdminServiceClient
-	adminClientConn *grpc.ClientConn
+	adminClient service.AdminServiceClient
 }
 
 // Constructs a new EventSink that sends events to FlyteAdmin through gRPC
-func NewAdminEventSink(ctx context.Context, adminURL url.URL) (EventSink, error) {
-	var opts []grpc.DialOption
-	opts = append(opts, grpc.WithInsecure())
-	conn, err := grpc.Dial(adminURL.String(), opts...)
-	if err != nil {
-		return nil, err
-	}
-	client := service.NewAdminServiceClient(conn)
-
+func NewAdminEventSink(ctx context.Context, adminClient service.AdminServiceClient) (EventSink, error) {
 	eventSink := &adminEventSink{
-		adminClient:     client,
-		adminClientConn: conn,
+		adminClient: adminClient,
 	}
 
-	logger.Infof(ctx, "Created new AdminEvenSink to service: %s", adminURL.String())
+	logger.Infof(ctx, "Created new AdminEvenSink to Admin service")
 	return eventSink, nil
 }
 
@@ -92,5 +80,22 @@ func (s *adminEventSink) Sink(ctx context.Context, eventType EventType, message 
 
 // Closes the gRPC client connection. This should be deferred on the client does shutdown cleanup.
 func (s *adminEventSink) Close() error {
-	return s.adminClientConn.Close()
+	return nil
+}
+
+func ConstructEventSink(ctx context.Context, config *Config) (EventSink, error) {
+	switch config.Type {
+	case EventSinkLog:
+		return NewLogSink()
+	case EventSinkFile:
+		return NewFileSink(config.FilePath)
+	case EventSinkAdmin:
+		adminClient, err := admin2.InitializeAdminClientFromConfig(ctx)
+		if err != nil {
+			return nil, err
+		}
+		return NewAdminEventSink(ctx, adminClient)
+	default:
+		return NewStdoutSink()
+	}
 }

@@ -3,17 +3,10 @@ package events
 import (
 	"context"
 
-	"sync"
-
 	"github.com/golang/protobuf/proto"
 )
 
 type EventSinkType = string
-
-var (
-	eventSink EventSink
-	onlyOnce  sync.Once
-)
 
 // EventSink determines how/where Events are emitted to. The type of EventSink the operator wants should be configurable.
 // In Flyte, we also have local implementations so that operators can emit events without dependency on other services.
@@ -28,26 +21,4 @@ type EventSink interface {
 	Close() error
 }
 
-// Singleton constructor that returns an EventSink based on the configuration registered.
-func ConstructEventSink(ctx context.Context, config *EventSinkConfig) (EventSink, error) {
-	var err error
 
-	onlyOnce.Do(func() {
-		switch config.Type {
-		case EventSinkLog:
-			eventSink, err = NewLogSink()
-		case EventSinkFile:
-			eventSink, err = NewFileSink(config.FilePath)
-		case EventSinkAdmin:
-			eventSink, err = NewAdminEventSink(ctx, config.Endpoint.URL)
-		default:
-			eventSink, err = NewStdoutSink()
-		}
-	})
-
-	if err != nil {
-		return nil, err
-	}
-
-	return eventSink, nil
-}
