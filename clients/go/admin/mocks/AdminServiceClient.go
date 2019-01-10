@@ -312,6 +312,36 @@ func (_m *AdminServiceClient) GetNodeExecution(ctx context.Context, in *admin.No
 	return r0, r1
 }
 
+// GetNodeExecutionData provides a mock function with given fields: ctx, in, opts
+func (_m *AdminServiceClient) GetNodeExecutionData(ctx context.Context, in *admin.NodeExecutionGetDataRequest, opts ...grpc.CallOption) (*admin.NodeExecutionGetDataResponse, error) {
+	_va := make([]interface{}, len(opts))
+	for _i := range opts {
+		_va[_i] = opts[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, ctx, in)
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	var r0 *admin.NodeExecutionGetDataResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.NodeExecutionGetDataRequest, ...grpc.CallOption) *admin.NodeExecutionGetDataResponse); ok {
+		r0 = rf(ctx, in, opts...)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*admin.NodeExecutionGetDataResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.NodeExecutionGetDataRequest, ...grpc.CallOption) error); ok {
+		r1 = rf(ctx, in, opts...)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
 // GetTask provides a mock function with given fields: ctx, in, opts
 func (_m *AdminServiceClient) GetTask(ctx context.Context, in *admin.ObjectGetRequest, opts ...grpc.CallOption) (*admin.Task, error) {
 	_va := make([]interface{}, len(opts))
@@ -364,6 +394,36 @@ func (_m *AdminServiceClient) GetTaskExecution(ctx context.Context, in *admin.Ta
 
 	var r1 error
 	if rf, ok := ret.Get(1).(func(context.Context, *admin.TaskExecutionGetRequest, ...grpc.CallOption) error); ok {
+		r1 = rf(ctx, in, opts...)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// GetTaskExecutionData provides a mock function with given fields: ctx, in, opts
+func (_m *AdminServiceClient) GetTaskExecutionData(ctx context.Context, in *admin.TaskExecutionGetDataRequest, opts ...grpc.CallOption) (*admin.TaskExecutionGetDataResponse, error) {
+	_va := make([]interface{}, len(opts))
+	for _i := range opts {
+		_va[_i] = opts[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, ctx, in)
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	var r0 *admin.TaskExecutionGetDataResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.TaskExecutionGetDataRequest, ...grpc.CallOption) *admin.TaskExecutionGetDataResponse); ok {
+		r0 = rf(ctx, in, opts...)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*admin.TaskExecutionGetDataResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.TaskExecutionGetDataRequest, ...grpc.CallOption) error); ok {
 		r1 = rf(ctx, in, opts...)
 	} else {
 		r1 = ret.Error(1)
@@ -724,6 +784,36 @@ func (_m *AdminServiceClient) RegisterProject(ctx context.Context, in *admin.Pro
 
 	var r1 error
 	if rf, ok := ret.Get(1).(func(context.Context, *admin.Project, ...grpc.CallOption) error); ok {
+		r1 = rf(ctx, in, opts...)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// RelaunchExecution provides a mock function with given fields: ctx, in, opts
+func (_m *AdminServiceClient) RelaunchExecution(ctx context.Context, in *admin.ExecutionRelaunchRequest, opts ...grpc.CallOption) (*admin.ExecutionCreateResponse, error) {
+	_va := make([]interface{}, len(opts))
+	for _i := range opts {
+		_va[_i] = opts[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, ctx, in)
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	var r0 *admin.ExecutionCreateResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.ExecutionRelaunchRequest, ...grpc.CallOption) *admin.ExecutionCreateResponse); ok {
+		r0 = rf(ctx, in, opts...)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*admin.ExecutionCreateResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.ExecutionRelaunchRequest, ...grpc.CallOption) error); ok {
 		r1 = rf(ctx, in, opts...)
 	} else {
 		r1 = ret.Error(1)

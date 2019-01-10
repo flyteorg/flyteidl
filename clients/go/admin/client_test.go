@@ -27,3 +27,8 @@ func TestInitializeAndGetAdminClient(t *testing.T) {
 		assert.NotNil(t, InitializeAdminClient(ctx, Config{}))
 	})
 }
+
+func TestInitializeMockAdminClient(t *testing.T) {
+	c := InitializeMockAdminClient()
+	assert.NotNil(t, c)
+}

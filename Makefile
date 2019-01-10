@@ -5,6 +5,7 @@ include boilerplate/lyft/golang_test_targets/Makefile
 .PHONY: generate
 generate: # generate protos
 	./generate_protos.sh
+	./generate_mocks.sh
 
 .PHONY: test
 test: # ensures generate_protos script has been run
