@@ -597,9 +597,25 @@ func (m *TaskExecutionGetDataResponse) Validate() error {
 		return nil
 	}
 
-	// no validation rules for InputsUrl
+	if v, ok := interface{}(m.GetInputs()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TaskExecutionGetDataResponseValidationError{
+				field:  "Inputs",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
-	// no validation rules for OutputsUrl
+	if v, ok := interface{}(m.GetOutputs()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TaskExecutionGetDataResponseValidationError{
+				field:  "Outputs",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	return nil
 }

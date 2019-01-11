@@ -1485,7 +1485,7 @@ func request_AdminService_TerminateExecution_0(ctx context.Context, marshaler ru
 }
 
 var (
-	filter_AdminService_GetNodeExecution_0 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "execution_id": 1, "project": 2, "domain": 3, "name": 4}, Base: []int{1, 7, 1, 1, 2, 2, 0, 0, 5, 5, 0}, Check: []int{0, 1, 2, 3, 2, 5, 4, 6, 2, 9, 10}}
+	filter_AdminService_GetNodeExecution_0 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "execution_id": 1, "project": 2, "domain": 3, "name": 4, "node_id": 5}, Base: []int{1, 6, 1, 1, 2, 2, 5, 0, 0, 4, 0, 6, 0}, Check: []int{0, 1, 2, 3, 2, 5, 2, 4, 6, 7, 10, 2, 12}}
 )
 
 func request_AdminService_GetNodeExecution_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1532,6 +1532,17 @@ func request_AdminService_GetNodeExecution_0(ctx context.Context, marshaler runt
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.execution_id.name", err)
 	}
 
+	val, ok = pathParams["id.node_id"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.node_id")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.node_id", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.node_id", err)
+	}
+
 	if err := runtime.PopulateQueryParameters(&protoReq, req.URL.Query(), filter_AdminService_GetNodeExecution_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
@@ -1559,7 +1570,7 @@ func request_AdminService_ListNodeExecutions_0(ctx context.Context, marshaler ru
 }
 
 var (
-	filter_AdminService_GetNodeExecutionData_0 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "execution_id": 1, "project": 2, "domain": 3, "name": 4}, Base: []int{1, 7, 1, 1, 2, 2, 0, 0, 5, 5, 0}, Check: []int{0, 1, 2, 3, 2, 5, 4, 6, 2, 9, 10}}
+	filter_AdminService_GetNodeExecutionData_0 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "execution_id": 1, "project": 2, "domain": 3, "name": 4, "node_id": 5}, Base: []int{1, 6, 1, 1, 2, 2, 5, 0, 0, 4, 0, 6, 0}, Check: []int{0, 1, 2, 3, 2, 5, 2, 4, 6, 7, 10, 2, 12}}
 )
 
 func request_AdminService_GetNodeExecutionData_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1604,6 +1615,17 @@ func request_AdminService_GetNodeExecutionData_0(ctx context.Context, marshaler 
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.execution_id.name", err)
+	}
+
+	val, ok = pathParams["id.node_id"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.node_id")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.node_id", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.node_id", err)
 	}
 
 	if err := runtime.PopulateQueryParameters(&protoReq, req.URL.Query(), filter_AdminService_GetNodeExecutionData_0); err != nil {
@@ -1677,7 +1699,7 @@ func request_AdminService_CreateTaskEvent_0(ctx context.Context, marshaler runti
 }
 
 var (
-	filter_AdminService_GetTaskExecution_0 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "node_execution_id": 1, "execution_id": 2, "project": 3, "domain": 4, "name": 5, "node_id": 6, "retry_attempt": 7}, Base: []int{1, 16, 1, 1, 1, 4, 3, 2, 9, 0, 0, 7, 5, 0, 9, 8, 0, 11, 11, 0}, Check: []int{0, 1, 2, 3, 4, 2, 6, 7, 2, 5, 8, 9, 12, 13, 2, 15, 16, 2, 18, 19}}
+	filter_AdminService_GetTaskExecution_0 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "node_execution_id": 1, "execution_id": 2, "project": 3, "domain": 4, "name": 5, "node_id": 6, "task_id": 7, "version": 8}, Base: []int{1, 19, 1, 1, 1, 4, 3, 2, 7, 7, 0, 0, 4, 0, 9, 7, 0, 15, 10, 0, 17, 13, 0, 19, 16, 0, 19, 19, 0}, Check: []int{0, 1, 2, 3, 4, 2, 6, 7, 2, 9, 5, 8, 10, 13, 2, 15, 16, 2, 18, 19, 2, 21, 22, 2, 24, 25, 2, 27, 28}}
 )
 
 func request_AdminService_GetTaskExecution_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1735,15 +1757,48 @@ func request_AdminService_GetTaskExecution_0(ctx context.Context, marshaler runt
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.node_execution_id.node_id", err)
 	}
 
-	val, ok = pathParams["id.node_execution_id.retry_attempt"]
+	val, ok = pathParams["id.task_id.project"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.node_execution_id.retry_attempt")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.task_id.project")
 	}
 
-	err = runtime.PopulateFieldFromPath(&protoReq, "id.node_execution_id.retry_attempt", val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.task_id.project", val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.node_execution_id.retry_attempt", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.task_id.project", err)
+	}
+
+	val, ok = pathParams["id.task_id.domain"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.task_id.domain")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.task_id.domain", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.task_id.domain", err)
+	}
+
+	val, ok = pathParams["id.task_id.name"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.task_id.name")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.task_id.name", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.task_id.name", err)
+	}
+
+	val, ok = pathParams["id.task_id.version"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.task_id.version")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.task_id.version", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.task_id.version", err)
 	}
 
 	if err := runtime.PopulateQueryParameters(&protoReq, req.URL.Query(), filter_AdminService_GetTaskExecution_0); err != nil {
@@ -1773,7 +1828,7 @@ func request_AdminService_ListTaskExecutions_0(ctx context.Context, marshaler ru
 }
 
 var (
-	filter_AdminService_GetTaskExecutionData_0 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "node_execution_id": 1, "execution_id": 2, "project": 3, "domain": 4, "name": 5, "node_id": 6, "retry_attempt": 7}, Base: []int{1, 16, 1, 1, 1, 4, 3, 2, 9, 0, 0, 7, 5, 0, 9, 8, 0, 11, 11, 0}, Check: []int{0, 1, 2, 3, 4, 2, 6, 7, 2, 5, 8, 9, 12, 13, 2, 15, 16, 2, 18, 19}}
+	filter_AdminService_GetTaskExecutionData_0 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "node_execution_id": 1, "execution_id": 2, "project": 3, "domain": 4, "name": 5, "node_id": 6, "task_id": 7, "version": 8}, Base: []int{1, 19, 1, 1, 1, 4, 3, 2, 7, 7, 0, 0, 4, 0, 9, 7, 0, 15, 10, 0, 17, 13, 0, 19, 16, 0, 19, 19, 0}, Check: []int{0, 1, 2, 3, 4, 2, 6, 7, 2, 9, 5, 8, 10, 13, 2, 15, 16, 2, 18, 19, 2, 21, 22, 2, 24, 25, 2, 27, 28}}
 )
 
 func request_AdminService_GetTaskExecutionData_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1831,15 +1886,48 @@ func request_AdminService_GetTaskExecutionData_0(ctx context.Context, marshaler 
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.node_execution_id.node_id", err)
 	}
 
-	val, ok = pathParams["id.node_execution_id.retry_attempt"]
+	val, ok = pathParams["id.task_id.project"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.node_execution_id.retry_attempt")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.task_id.project")
 	}
 
-	err = runtime.PopulateFieldFromPath(&protoReq, "id.node_execution_id.retry_attempt", val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.task_id.project", val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.node_execution_id.retry_attempt", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.task_id.project", err)
+	}
+
+	val, ok = pathParams["id.task_id.domain"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.task_id.domain")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.task_id.domain", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.task_id.domain", err)
+	}
+
+	val, ok = pathParams["id.task_id.name"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.task_id.name")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.task_id.name", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.task_id.name", err)
+	}
+
+	val, ok = pathParams["id.task_id.version"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.task_id.version")
+	}
+
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.task_id.version", val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.task_id.version", err)
 	}
 
 	if err := runtime.PopulateQueryParameters(&protoReq, req.URL.Query(), filter_AdminService_GetTaskExecutionData_0); err != nil {
@@ -3173,11 +3261,11 @@ var (
 
 	pattern_AdminService_TerminateExecution_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "executions", "id.project", "id.domain", "id.name"}, ""))
 
-	pattern_AdminService_GetNodeExecution_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "node_executions", "id.execution_id.project", "id.execution_id.domain", "id.execution_id.name"}, ""))
+	pattern_AdminService_GetNodeExecution_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6}, []string{"api", "v1", "node_executions", "id.execution_id.project", "id.execution_id.domain", "id.execution_id.name", "id.node_id"}, ""))
 
 	pattern_AdminService_ListNodeExecutions_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "v1", "node_executions"}, ""))
 
-	pattern_AdminService_GetNodeExecutionData_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6}, []string{"api", "v1", "data", "node_executions", "id.execution_id.project", "id.execution_id.domain", "id.execution_id.name"}, ""))
+	pattern_AdminService_GetNodeExecutionData_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6, 1, 0, 4, 1, 5, 7}, []string{"api", "v1", "data", "node_executions", "id.execution_id.project", "id.execution_id.domain", "id.execution_id.name", "id.node_id"}, ""))
 
 	pattern_AdminService_RegisterProject_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "v1", "projects"}, ""))
 
@@ -3189,11 +3277,11 @@ var (
 
 	pattern_AdminService_CreateTaskEvent_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "events", "tasks"}, ""))
 
-	pattern_AdminService_GetTaskExecution_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6, 1, 0, 4, 1, 5, 7}, []string{"api", "v1", "task_executions", "id.node_execution_id.execution_id.project", "id.node_execution_id.execution_id.domain", "id.node_execution_id.execution_id.name", "id.node_execution_id.node_id", "id.node_execution_id.retry_attempt"}, ""))
+	pattern_AdminService_GetTaskExecution_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6, 1, 0, 4, 1, 5, 7, 1, 0, 4, 1, 5, 8, 1, 0, 4, 1, 5, 9, 1, 0, 4, 1, 5, 10}, []string{"api", "v1", "task_executions", "id.node_execution_id.execution_id.project", "id.node_execution_id.execution_id.domain", "id.node_execution_id.execution_id.name", "id.node_execution_id.node_id", "id.task_id.project", "id.task_id.domain", "id.task_id.name", "id.task_id.version"}, ""))
 
 	pattern_AdminService_ListTaskExecutions_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "v1", "task_executions"}, ""))
 
-	pattern_AdminService_GetTaskExecutionData_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6, 1, 0, 4, 1, 5, 7, 1, 0, 4, 1, 5, 8}, []string{"api", "v1", "data", "task_executions", "id.node_execution_id.execution_id.project", "id.node_execution_id.execution_id.domain", "id.node_execution_id.execution_id.name", "id.node_execution_id.node_id", "id.node_execution_id.retry_attempt"}, ""))
+	pattern_AdminService_GetTaskExecutionData_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6, 1, 0, 4, 1, 5, 7, 1, 0, 4, 1, 5, 8, 1, 0, 4, 1, 5, 9, 1, 0, 4, 1, 5, 10, 1, 0, 4, 1, 5, 11}, []string{"api", "v1", "data", "task_executions", "id.node_execution_id.execution_id.project", "id.node_execution_id.execution_id.domain", "id.node_execution_id.execution_id.name", "id.node_execution_id.node_id", "id.task_id.project", "id.task_id.domain", "id.task_id.name", "id.task_id.version"}, ""))
 )
 
 var (

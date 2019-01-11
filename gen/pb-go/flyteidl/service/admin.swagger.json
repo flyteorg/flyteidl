@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/api/v1/data/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}": {
+    "/api/v1/data/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}": {
       "get": {
         "operationId": "GetNodeExecutionData",
         "responses": {
@@ -50,8 +50,8 @@
           },
           {
             "name": "id.node_id",
-            "in": "query",
-            "required": false,
+            "in": "path",
+            "required": true,
             "type": "string"
           },
           {
@@ -67,7 +67,7 @@
         ]
       }
     },
-    "/api/v1/data/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.node_execution_id.retry_attempt}": {
+    "/api/v1/data/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}": {
       "get": {
         "operationId": "GetTaskExecutionData",
         "responses": {
@@ -107,11 +107,32 @@
             "type": "string"
           },
           {
-            "name": "id.node_execution_id.retry_attempt",
+            "name": "id.task_id.project",
+            "description": "Name of the project the resource belongs to.",
             "in": "path",
             "required": true,
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
+          },
+          {
+            "name": "id.task_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.task_id.name",
+            "description": "User provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.task_id.version",
+            "description": "Specific version of the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
           },
           {
             "name": "id.task_id.resource_type",
@@ -128,32 +149,11 @@
             "default": "UNSPECIFIED"
           },
           {
-            "name": "id.task_id.project",
-            "description": "Name of the project the resource belongs to.",
+            "name": "id.node_execution_id.retry_attempt",
             "in": "query",
             "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id.task_id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id.task_id.name",
-            "description": "User provided value for the resource.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id.task_id.version",
-            "description": "Specific version of the resource.",
-            "in": "query",
-            "required": false,
-            "type": "string"
+            "type": "integer",
+            "format": "int64"
           },
           {
             "name": "id.retry_attempt",
@@ -921,7 +921,7 @@
         ]
       }
     },
-    "/api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}": {
+    "/api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}": {
       "get": {
         "operationId": "GetNodeExecution",
         "responses": {
@@ -956,8 +956,8 @@
           },
           {
             "name": "id.node_id",
-            "in": "query",
-            "required": false,
+            "in": "path",
+            "required": true,
             "type": "string"
           },
           {
@@ -1819,7 +1819,7 @@
         ]
       }
     },
-    "/api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.node_execution_id.retry_attempt}": {
+    "/api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}": {
       "get": {
         "operationId": "GetTaskExecution",
         "responses": {
@@ -1859,11 +1859,32 @@
             "type": "string"
           },
           {
-            "name": "id.node_execution_id.retry_attempt",
+            "name": "id.task_id.project",
+            "description": "Name of the project the resource belongs to.",
             "in": "path",
             "required": true,
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
+          },
+          {
+            "name": "id.task_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.task_id.name",
+            "description": "User provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.task_id.version",
+            "description": "Specific version of the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
           },
           {
             "name": "id.task_id.resource_type",
@@ -1880,32 +1901,11 @@
             "default": "UNSPECIFIED"
           },
           {
-            "name": "id.task_id.project",
-            "description": "Name of the project the resource belongs to.",
+            "name": "id.node_execution_id.retry_attempt",
             "in": "query",
             "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id.task_id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id.task_id.name",
-            "description": "User provided value for the resource.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id.task_id.version",
-            "description": "Specific version of the resource.",
-            "in": "query",
-            "required": false,
-            "type": "string"
+            "type": "integer",
+            "format": "int64"
           },
           {
             "name": "id.retry_attempt",
@@ -3073,12 +3073,12 @@
     "adminNodeExecutionGetDataResponse": {
       "type": "object",
       "properties": {
-        "inputs_url": {
-          "type": "string",
+        "inputs": {
+          "$ref": "#/definitions/adminUrlBlob",
           "description": "Signed url to fetch a core.LiteralMap of node execution inputs."
         },
-        "outputs_url": {
-          "type": "string",
+        "outputs": {
+          "$ref": "#/definitions/adminUrlBlob",
           "description": "Signed url to fetch a core.LiteralMap of node execution outputs."
         }
       },
@@ -3329,12 +3329,12 @@
     "adminTaskExecutionGetDataResponse": {
       "type": "object",
       "properties": {
-        "inputs_url": {
-          "type": "string",
+        "inputs": {
+          "$ref": "#/definitions/adminUrlBlob",
           "description": "Signed url to fetch a core.LiteralMap of task execution inputs."
         },
-        "outputs_url": {
-          "type": "string",
+        "outputs": {
+          "$ref": "#/definitions/adminUrlBlob",
           "description": "Signed url to fetch a core.LiteralMap of task execution outputs."
         }
       },
@@ -3382,6 +3382,21 @@
         }
       },
       "description": "Represents a structure that encapsulates the specification of the task."
+    },
+    "adminUrlBlob": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "Actual url value."
+        },
+        "bytes": {
+          "type": "string",
+          "format": "int64",
+          "description": "Represents the size of the file accessible at the above url."
+        }
+      },
+      "description": "Represents a string url and associated metadata used throughout the platform."
     },
     "adminWorkflow": {
       "type": "object",

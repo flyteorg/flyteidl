@@ -249,7 +249,7 @@ service AdminService {
 
   rpc GetNodeExecution (flyteidl.admin.NodeExecutionGetRequest) returns (flyteidl.admin.NodeExecution) {
     option (google.api.http) = {
-      get: "/api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}"
+      get: "/api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}"
     };
   }
 
@@ -261,7 +261,7 @@ service AdminService {
 
   rpc GetNodeExecutionData (flyteidl.admin.NodeExecutionGetDataRequest) returns (flyteidl.admin.NodeExecutionGetDataResponse) {
     option (google.api.http) = {
-      get: "/api/v1/data/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}"
+      get: "/api/v1/data/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}"
     };
   };
 
@@ -316,7 +316,7 @@ service AdminService {
 
   rpc GetTaskExecution (flyteidl.admin.TaskExecutionGetRequest) returns (flyteidl.admin.TaskExecution) {
     option (google.api.http) = {
-        get: "/api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.node_execution_id.retry_attempt}"
+        get: "/api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}"
     };
   }
 
@@ -328,7 +328,7 @@ service AdminService {
 
   rpc GetTaskExecutionData (flyteidl.admin.TaskExecutionGetDataRequest) returns (flyteidl.admin.TaskExecutionGetDataResponse) {
     option (google.api.http) = {
-        get: "/api/v1/data/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.node_execution_id.retry_attempt}"
+        get: "/api/v1/data/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}"
     };
   }
 }

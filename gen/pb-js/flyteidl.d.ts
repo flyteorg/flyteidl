@@ -5082,6 +5082,64 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of an UrlBlob. */
+        interface IUrlBlob {
+
+            /** UrlBlob url */
+            url?: (string|null);
+
+            /** UrlBlob bytes */
+            bytes?: (Long|null);
+        }
+
+        /** Represents an UrlBlob. */
+        class UrlBlob implements IUrlBlob {
+
+            /**
+             * Constructs a new UrlBlob.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IUrlBlob);
+
+            /** UrlBlob url. */
+            public url: string;
+
+            /** UrlBlob bytes. */
+            public bytes: Long;
+
+            /**
+             * Creates a new UrlBlob instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns UrlBlob instance
+             */
+            public static create(properties?: flyteidl.admin.IUrlBlob): flyteidl.admin.UrlBlob;
+
+            /**
+             * Encodes the specified UrlBlob message. Does not implicitly {@link flyteidl.admin.UrlBlob.verify|verify} messages.
+             * @param message UrlBlob message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IUrlBlob, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an UrlBlob message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns UrlBlob
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.UrlBlob;
+
+            /**
+             * Verifies an UrlBlob message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a WorkflowExecutionEventRequest. */
         interface IWorkflowExecutionEventRequest {
 
@@ -7240,11 +7298,11 @@ export namespace flyteidl {
         /** Properties of a NodeExecutionGetDataResponse. */
         interface INodeExecutionGetDataResponse {
 
-            /** NodeExecutionGetDataResponse inputsUrl */
-            inputsUrl?: (string|null);
+            /** NodeExecutionGetDataResponse inputs */
+            inputs?: (flyteidl.admin.IUrlBlob|null);
 
-            /** NodeExecutionGetDataResponse outputsUrl */
-            outputsUrl?: (string|null);
+            /** NodeExecutionGetDataResponse outputs */
+            outputs?: (flyteidl.admin.IUrlBlob|null);
         }
 
         /** Represents a NodeExecutionGetDataResponse. */
@@ -7256,11 +7314,11 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.INodeExecutionGetDataResponse);
 
-            /** NodeExecutionGetDataResponse inputsUrl. */
-            public inputsUrl: string;
+            /** NodeExecutionGetDataResponse inputs. */
+            public inputs?: (flyteidl.admin.IUrlBlob|null);
 
-            /** NodeExecutionGetDataResponse outputsUrl. */
-            public outputsUrl: string;
+            /** NodeExecutionGetDataResponse outputs. */
+            public outputs?: (flyteidl.admin.IUrlBlob|null);
 
             /**
              * Creates a new NodeExecutionGetDataResponse instance using the specified properties.
@@ -8363,11 +8421,11 @@ export namespace flyteidl {
         /** Properties of a TaskExecutionGetDataResponse. */
         interface ITaskExecutionGetDataResponse {
 
-            /** TaskExecutionGetDataResponse inputsUrl */
-            inputsUrl?: (string|null);
+            /** TaskExecutionGetDataResponse inputs */
+            inputs?: (flyteidl.admin.IUrlBlob|null);
 
-            /** TaskExecutionGetDataResponse outputsUrl */
-            outputsUrl?: (string|null);
+            /** TaskExecutionGetDataResponse outputs */
+            outputs?: (flyteidl.admin.IUrlBlob|null);
         }
 
         /** Represents a TaskExecutionGetDataResponse. */
@@ -8379,11 +8437,11 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.ITaskExecutionGetDataResponse);
 
-            /** TaskExecutionGetDataResponse inputsUrl. */
-            public inputsUrl: string;
+            /** TaskExecutionGetDataResponse inputs. */
+            public inputs?: (flyteidl.admin.IUrlBlob|null);
 
-            /** TaskExecutionGetDataResponse outputsUrl. */
-            public outputsUrl: string;
+            /** TaskExecutionGetDataResponse outputs. */
+            public outputs?: (flyteidl.admin.IUrlBlob|null);
 
             /**
              * Creates a new TaskExecutionGetDataResponse instance using the specified properties.

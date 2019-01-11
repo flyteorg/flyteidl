@@ -86,8 +86,8 @@ message NodeExecutionGetDataRequest {
 // Response structure for NodeExecutionGetDataRequest which contains inputs and outputs for a node execution.
 message NodeExecutionGetDataResponse {
     // Signed url to fetch a core.LiteralMap of node execution inputs.
-    string inputs_url                 = 1;
+    UrlBlob inputs                             = 1;
 
     // Signed url to fetch a core.LiteralMap of node execution outputs.
-    string outputs_url                = 2;
+    UrlBlob outputs                            = 2;
 }

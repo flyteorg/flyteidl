@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/common.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1b\x66lyteidl/admin/common.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\"F\n\x15NamedEntityIdentifier\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\"r\n\x04Sort\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x31\n\tdirection\x18\x02 \x01(\x0e\x32\x1e.flyteidl.admin.Sort.Direction\"*\n\tDirection\x12\x0e\n\nDESCENDING\x10\x00\x12\r\n\tASCENDING\x10\x01\"\x88\x01\n NamedEntityIdentifierListRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\r\x12\r\n\x05token\x18\x04 \x01(\t\x12%\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.Sort\"c\n\x19NamedEntityIdentifierList\x12\x37\n\x08\x65ntities\x18\x01 \x03(\x0b\x32%.flyteidl.admin.NamedEntityIdentifier\x12\r\n\x05token\x18\x02 \x01(\t\"9\n\x10ObjectGetRequest\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\"\x9e\x01\n\x13ResourceListRequest\x12\x31\n\x02id\x18\x01 \x01(\x0b\x32%.flyteidl.admin.NamedEntityIdentifier\x12\r\n\x05limit\x18\x02 \x01(\r\x12\r\n\x05token\x18\x03 \x01(\t\x12\x0f\n\x07\x66ilters\x18\x04 \x01(\t\x12%\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.Sort\"-\n\x11\x45mailNotification\x12\x18\n\x10recipients_email\x18\x01 \x03(\t\"1\n\x15PagerDutyNotification\x12\x18\n\x10recipients_email\x18\x01 \x03(\t\"-\n\x11SlackNotification\x12\x18\n\x10recipients_email\x18\x01 \x03(\t\"\xf2\x01\n\x0cNotification\x12\x35\n\x06phases\x18\x01 \x03(\x0e\x32%.flyteidl.core.WorkflowExecutionPhase\x12\x32\n\x05\x65mail\x18\x02 \x01(\x0b\x32!.flyteidl.admin.EmailNotificationH\x00\x12;\n\npager_duty\x18\x03 \x01(\x0b\x32%.flyteidl.admin.PagerDutyNotificationH\x00\x12\x32\n\x05slack\x18\x04 \x01(\x0b\x32!.flyteidl.admin.SlackNotificationH\x00\x42\x06\n\x04typeB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1b\x66lyteidl/admin/common.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\"F\n\x15NamedEntityIdentifier\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\"r\n\x04Sort\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x31\n\tdirection\x18\x02 \x01(\x0e\x32\x1e.flyteidl.admin.Sort.Direction\"*\n\tDirection\x12\x0e\n\nDESCENDING\x10\x00\x12\r\n\tASCENDING\x10\x01\"\x88\x01\n NamedEntityIdentifierListRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\r\x12\r\n\x05token\x18\x04 \x01(\t\x12%\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.Sort\"c\n\x19NamedEntityIdentifierList\x12\x37\n\x08\x65ntities\x18\x01 \x03(\x0b\x32%.flyteidl.admin.NamedEntityIdentifier\x12\r\n\x05token\x18\x02 \x01(\t\"9\n\x10ObjectGetRequest\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\"\x9e\x01\n\x13ResourceListRequest\x12\x31\n\x02id\x18\x01 \x01(\x0b\x32%.flyteidl.admin.NamedEntityIdentifier\x12\r\n\x05limit\x18\x02 \x01(\r\x12\r\n\x05token\x18\x03 \x01(\t\x12\x0f\n\x07\x66ilters\x18\x04 \x01(\t\x12%\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.Sort\"-\n\x11\x45mailNotification\x12\x18\n\x10recipients_email\x18\x01 \x03(\t\"1\n\x15PagerDutyNotification\x12\x18\n\x10recipients_email\x18\x01 \x03(\t\"-\n\x11SlackNotification\x12\x18\n\x10recipients_email\x18\x01 \x03(\t\"\xf2\x01\n\x0cNotification\x12\x35\n\x06phases\x18\x01 \x03(\x0e\x32%.flyteidl.core.WorkflowExecutionPhase\x12\x32\n\x05\x65mail\x18\x02 \x01(\x0b\x32!.flyteidl.admin.EmailNotificationH\x00\x12;\n\npager_duty\x18\x03 \x01(\x0b\x32%.flyteidl.admin.PagerDutyNotificationH\x00\x12\x32\n\x05slack\x18\x04 \x01(\x0b\x32!.flyteidl.admin.SlackNotificationH\x00\x42\x06\n\x04type\"%\n\x07UrlBlob\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\r\n\x05\x62ytes\x18\x02 \x01(\x03\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_execution__pb2.DESCRIPTOR,flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,])
 
@@ -468,6 +468,44 @@ _NOTIFICATION = _descriptor.Descriptor(
   serialized_end=1146,
 )
 
+
+_URLBLOB = _descriptor.Descriptor(
+  name='UrlBlob',
+  full_name='flyteidl.admin.UrlBlob',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='url', full_name='flyteidl.admin.UrlBlob.url', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='bytes', full_name='flyteidl.admin.UrlBlob.bytes', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1148,
+  serialized_end=1185,
+)
+
 _SORT.fields_by_name['direction'].enum_type = _SORT_DIRECTION
 _SORT_DIRECTION.containing_type = _SORT
 _NAMEDENTITYIDENTIFIERLISTREQUEST.fields_by_name['sort_by'].message_type = _SORT
@@ -498,6 +536,7 @@ DESCRIPTOR.message_types_by_name['EmailNotification'] = _EMAILNOTIFICATION
 DESCRIPTOR.message_types_by_name['PagerDutyNotification'] = _PAGERDUTYNOTIFICATION
 DESCRIPTOR.message_types_by_name['SlackNotification'] = _SLACKNOTIFICATION
 DESCRIPTOR.message_types_by_name['Notification'] = _NOTIFICATION
+DESCRIPTOR.message_types_by_name['UrlBlob'] = _URLBLOB
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 NamedEntityIdentifier = _reflection.GeneratedProtocolMessageType('NamedEntityIdentifier', (_message.Message,), dict(
@@ -569,6 +608,13 @@ Notification = _reflection.GeneratedProtocolMessageType('Notification', (_messag
   # @@protoc_insertion_point(class_scope:flyteidl.admin.Notification)
   ))
 _sym_db.RegisterMessage(Notification)
+
+UrlBlob = _reflection.GeneratedProtocolMessageType('UrlBlob', (_message.Message,), dict(
+  DESCRIPTOR = _URLBLOB,
+  __module__ = 'flyteidl.admin.common_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.UrlBlob)
+  ))
+_sym_db.RegisterMessage(UrlBlob)
 
 
 DESCRIPTOR.has_options = True
