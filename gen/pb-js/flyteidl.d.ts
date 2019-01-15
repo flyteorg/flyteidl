@@ -2733,9 +2733,6 @@ export namespace flyteidl {
 
             /** NodeExecutionIdentifier executionId */
             executionId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
-
-            /** NodeExecutionIdentifier retryAttempt */
-            retryAttempt?: (number|null);
         }
 
         /** Represents a NodeExecutionIdentifier. */
@@ -2752,9 +2749,6 @@ export namespace flyteidl {
 
             /** NodeExecutionIdentifier executionId. */
             public executionId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
-
-            /** NodeExecutionIdentifier retryAttempt. */
-            public retryAttempt: number;
 
             /**
              * Creates a new NodeExecutionIdentifier instance using the specified properties.

@@ -6606,7 +6606,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface INodeExecutionIdentifier
              * @property {string|null} [nodeId] NodeExecutionIdentifier nodeId
              * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [executionId] NodeExecutionIdentifier executionId
-             * @property {number|null} [retryAttempt] NodeExecutionIdentifier retryAttempt
              */
 
             /**
@@ -6641,14 +6640,6 @@ export const flyteidl = $root.flyteidl = (() => {
             NodeExecutionIdentifier.prototype.executionId = null;
 
             /**
-             * NodeExecutionIdentifier retryAttempt.
-             * @member {number} retryAttempt
-             * @memberof flyteidl.core.NodeExecutionIdentifier
-             * @instance
-             */
-            NodeExecutionIdentifier.prototype.retryAttempt = 0;
-
-            /**
              * Creates a new NodeExecutionIdentifier instance using the specified properties.
              * @function create
              * @memberof flyteidl.core.NodeExecutionIdentifier
@@ -6676,8 +6667,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.nodeId);
                 if (message.executionId != null && message.hasOwnProperty("executionId"))
                     $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.executionId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.retryAttempt);
                 return writer;
             };
 
@@ -6704,9 +6693,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 2:
                         message.executionId = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
-                        break;
-                    case 3:
-                        message.retryAttempt = reader.uint32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -6735,9 +6721,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "executionId." + error;
                 }
-                if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
-                    if (!$util.isInteger(message.retryAttempt))
-                        return "retryAttempt: integer expected";
                 return null;
             };
 

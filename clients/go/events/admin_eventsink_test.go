@@ -53,7 +53,7 @@ func TestAdminNodeEvent(t *testing.T) {
 
 	nodeEvent := &event.NodeExecutionEvent{
 		Id: &core.NodeExecutionIdentifier{
-			RetryAttempt: 1,
+			NodeId: "node-id",
 		},
 		Phase:        core.NodeExecutionPhase_NODE_PHASE_FAILED,
 		OccurredAt:   ptypes.TimestampNow(),
@@ -84,7 +84,6 @@ func TestAdminTaskEvent(t *testing.T) {
 		RetryAttempt: 1,
 		ParentNodeExecutionId:	&core.NodeExecutionIdentifier{
 			NodeId: "node-id",
-			RetryAttempt: 3,
 			ExecutionId: &core.WorkflowExecutionIdentifier{
 				Project: "p",
 				Domain: "d",

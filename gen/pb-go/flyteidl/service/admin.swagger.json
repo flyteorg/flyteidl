@@ -53,13 +53,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "id.retry_attempt",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
           }
         ],
         "tags": [
@@ -147,13 +140,6 @@
               "LAUNCH_PLAN"
             ],
             "default": "UNSPECIFIED"
-          },
-          {
-            "name": "id.node_execution_id.retry_attempt",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
           },
           {
             "name": "id.retry_attempt",
@@ -959,13 +945,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "id.retry_attempt",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
           }
         ],
         "tags": [
@@ -1899,13 +1878,6 @@
               "LAUNCH_PLAN"
             ],
             "default": "UNSPECIFIED"
-          },
-          {
-            "name": "id.node_execution_id.retry_attempt",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
           },
           {
             "name": "id.retry_attempt",
@@ -4005,10 +3977,6 @@
         },
         "execution_id": {
           "$ref": "#/definitions/coreWorkflowExecutionIdentifier"
-        },
-        "retry_attempt": {
-          "type": "integer",
-          "format": "int64"
         }
       },
       "description": "Encapsulation of fields that identify a Flyte node execution entity."

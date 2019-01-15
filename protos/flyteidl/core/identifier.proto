@@ -49,8 +49,6 @@ message NodeExecutionIdentifier {
     string node_id           = 1;
 
     WorkflowExecutionIdentifier execution_id        = 2;
-
-    uint32 retry_attempt     = 3;
 }
 
 // Encapsulation of fields that identify a Flyte task execution entity.

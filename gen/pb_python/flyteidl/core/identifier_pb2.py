@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/identifier.proto',
   package='flyteidl.core',
   syntax='proto3',
-  serialized_pb=_b('\n\x1e\x66lyteidl/core/identifier.proto\x12\rflyteidl.core\"\x80\x01\n\nIdentifier\x12\x32\n\rresource_type\x18\x01 \x01(\x0e\x32\x1b.flyteidl.core.ResourceType\x12\x0f\n\x07project\x18\x02 \x01(\t\x12\x0e\n\x06\x64omain\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\"L\n\x1bWorkflowExecutionIdentifier\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\"\x83\x01\n\x17NodeExecutionIdentifier\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12@\n\x0c\x65xecution_id\x18\x02 \x01(\x0b\x32*.flyteidl.core.WorkflowExecutionIdentifier\x12\x15\n\rretry_attempt\x18\x03 \x01(\r\"\x9f\x01\n\x17TaskExecutionIdentifier\x12*\n\x07task_id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12\x41\n\x11node_execution_id\x18\x02 \x01(\x0b\x32&.flyteidl.core.NodeExecutionIdentifier\x12\x15\n\rretry_attempt\x18\x03 \x01(\r*H\n\x0cResourceType\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x08\n\x04TASK\x10\x01\x12\x0c\n\x08WORKFLOW\x10\x02\x12\x0f\n\x0bLAUNCH_PLAN\x10\x03\x42\x32Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1e\x66lyteidl/core/identifier.proto\x12\rflyteidl.core\"\x80\x01\n\nIdentifier\x12\x32\n\rresource_type\x18\x01 \x01(\x0e\x32\x1b.flyteidl.core.ResourceType\x12\x0f\n\x07project\x18\x02 \x01(\t\x12\x0e\n\x06\x64omain\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x0f\n\x07version\x18\x05 \x01(\t\"L\n\x1bWorkflowExecutionIdentifier\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\"l\n\x17NodeExecutionIdentifier\x12\x0f\n\x07node_id\x18\x01 \x01(\t\x12@\n\x0c\x65xecution_id\x18\x02 \x01(\x0b\x32*.flyteidl.core.WorkflowExecutionIdentifier\"\x9f\x01\n\x17TaskExecutionIdentifier\x12*\n\x07task_id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12\x41\n\x11node_execution_id\x18\x02 \x01(\x0b\x32&.flyteidl.core.NodeExecutionIdentifier\x12\x15\n\rretry_attempt\x18\x03 \x01(\r*H\n\x0cResourceType\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x08\n\x04TASK\x10\x01\x12\x0c\n\x08WORKFLOW\x10\x02\x12\x0f\n\x0bLAUNCH_PLAN\x10\x03\x42\x32Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
 )
 
 _RESOURCETYPE = _descriptor.EnumDescriptor(
@@ -48,8 +48,8 @@ _RESOURCETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=554,
-  serialized_end=626,
+  serialized_start=530,
+  serialized_end=602,
 )
 _sym_db.RegisterEnumDescriptor(_RESOURCETYPE)
 
@@ -186,13 +186,6 @@ _NODEEXECUTIONIDENTIFIER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='retry_attempt', full_name='flyteidl.core.NodeExecutionIdentifier.retry_attempt', index=2,
-      number=3, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -205,8 +198,8 @@ _NODEEXECUTIONIDENTIFIER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=259,
-  serialized_end=390,
+  serialized_start=258,
+  serialized_end=366,
 )
 
 
@@ -250,8 +243,8 @@ _TASKEXECUTIONIDENTIFIER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=393,
-  serialized_end=552,
+  serialized_start=369,
+  serialized_end=528,
 )
 
 _IDENTIFIER.fields_by_name['resource_type'].enum_type = _RESOURCETYPE
