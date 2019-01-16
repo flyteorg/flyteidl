@@ -6046,7 +6046,8 @@ export namespace flyteidl {
             enum ExecutionMode {
                 MANUAL = 0,
                 SCHEDULED = 1,
-                SYSTEM = 2
+                SYSTEM = 2,
+                RELAUNCH = 3
             }
         }
 

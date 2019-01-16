@@ -14581,6 +14581,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 0:
                     case 1:
                     case 2:
+                    case 3:
                         break;
                     }
                 if (message.principal != null && message.hasOwnProperty("principal"))
@@ -14599,12 +14600,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {number} MANUAL=0 MANUAL value
              * @property {number} SCHEDULED=1 SCHEDULED value
              * @property {number} SYSTEM=2 SYSTEM value
+             * @property {number} RELAUNCH=3 RELAUNCH value
              */
             ExecutionMetadata.ExecutionMode = (function() {
                 const valuesById = {}, values = Object.create(valuesById);
                 values[valuesById[0] = "MANUAL"] = 0;
                 values[valuesById[1] = "SCHEDULED"] = 1;
                 values[valuesById[2] = "SYSTEM"] = 2;
+                values[valuesById[3] = "RELAUNCH"] = 3;
                 return values;
             })();
 

@@ -117,6 +117,7 @@ message ExecutionMetadata {
         MANUAL        = 0;
         SCHEDULED     = 1;
         SYSTEM        = 2;
+        RELAUNCH      = 3;
     }
     ExecutionMode mode    = 1;  // [(validate.rules).enum.defined_only = true];
 

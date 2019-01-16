@@ -2484,7 +2484,8 @@
       "enum": [
         "MANUAL",
         "SCHEDULED",
-        "SYSTEM"
+        "SYSTEM",
+        "RELAUNCH"
       ],
       "default": "MANUAL"
     },
