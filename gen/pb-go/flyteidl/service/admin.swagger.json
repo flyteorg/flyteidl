@@ -2485,7 +2485,8 @@
         "MANUAL",
         "SCHEDULED",
         "SYSTEM",
-        "RELAUNCH"
+        "RELAUNCH",
+        "CHILD_WORKFLOW"
       ],
       "default": "MANUAL"
     },
@@ -4522,6 +4523,9 @@
         "error": {
           "$ref": "#/definitions/coreExecutionError",
           "title": "Error information for the execution"
+        },
+        "workflow_node_metadata": {
+          "$ref": "#/definitions/eventWorkflowNodeMetadata"
         }
       }
     },
@@ -4608,6 +4612,15 @@
           "title": "Error information for the execution"
         }
       }
+    },
+    "eventWorkflowNodeMetadata": {
+      "type": "object",
+      "properties": {
+        "execution_id": {
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier"
+        }
+      },
+      "title": "For Workflow Nodes we need to send information about the workflow that's launched"
     },
     "flyteidlcoreSchema": {
       "type": "object",

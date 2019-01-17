@@ -55,6 +55,17 @@ message NodeExecutionEvent {
         // Error information for the execution
         core.ExecutionError error = 7;
     }
+
+    // Additional metadata to do with this event's node target based
+    // on the node type
+    oneof target_metadata {
+        WorkflowNodeMetadata workflow_node_metadata = 8;
+    }
+}
+
+// For Workflow Nodes we need to send information about the workflow that's launched
+message WorkflowNodeMetadata {
+    core.WorkflowExecutionIdentifier execution_id = 1;
 }
 
 // Plugin specific execution event information. For tasks like Python, Hive, Spark, DynamicJob.

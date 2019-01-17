@@ -118,6 +118,7 @@ message ExecutionMetadata {
         SCHEDULED     = 1;
         SYSTEM        = 2;
         RELAUNCH      = 3;
+        CHILD_WORKFLOW = 4;
     }
     ExecutionMode mode    = 1;  // [(validate.rules).enum.defined_only = true];
 

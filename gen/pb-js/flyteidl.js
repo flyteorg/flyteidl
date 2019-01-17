@@ -10292,6 +10292,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [inputUri] NodeExecutionEvent inputUri
              * @property {string|null} [outputUri] NodeExecutionEvent outputUri
              * @property {flyteidl.core.IExecutionError|null} [error] NodeExecutionEvent error
+             * @property {flyteidl.event.IWorkflowNodeMetadata|null} [workflowNodeMetadata] NodeExecutionEvent workflowNodeMetadata
              */
 
             /**
@@ -10365,6 +10366,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             NodeExecutionEvent.prototype.error = null;
 
+            /**
+             * NodeExecutionEvent workflowNodeMetadata.
+             * @member {flyteidl.event.IWorkflowNodeMetadata|null|undefined} workflowNodeMetadata
+             * @memberof flyteidl.event.NodeExecutionEvent
+             * @instance
+             */
+            NodeExecutionEvent.prototype.workflowNodeMetadata = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -10376,6 +10385,17 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             Object.defineProperty(NodeExecutionEvent.prototype, "outputResult", {
                 get: $util.oneOfGetter($oneOfFields = ["outputUri", "error"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * NodeExecutionEvent targetMetadata.
+             * @member {"workflowNodeMetadata"|undefined} targetMetadata
+             * @memberof flyteidl.event.NodeExecutionEvent
+             * @instance
+             */
+            Object.defineProperty(NodeExecutionEvent.prototype, "targetMetadata", {
+                get: $util.oneOfGetter($oneOfFields = ["workflowNodeMetadata"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -10417,6 +10437,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 6, wireType 2 =*/50).string(message.outputUri);
                 if (message.error != null && message.hasOwnProperty("error"))
                     $root.flyteidl.core.ExecutionError.encode(message.error, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                if (message.workflowNodeMetadata != null && message.hasOwnProperty("workflowNodeMetadata"))
+                    $root.flyteidl.event.WorkflowNodeMetadata.encode(message.workflowNodeMetadata, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 return writer;
             };
 
@@ -10458,6 +10480,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 7:
                         message.error = $root.flyteidl.core.ExecutionError.decode(reader, reader.uint32());
+                        break;
+                    case 8:
+                        message.workflowNodeMetadata = $root.flyteidl.event.WorkflowNodeMetadata.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -10525,10 +10550,130 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "error." + error;
                     }
                 }
+                if (message.workflowNodeMetadata != null && message.hasOwnProperty("workflowNodeMetadata")) {
+                    properties.targetMetadata = 1;
+                    {
+                        let error = $root.flyteidl.event.WorkflowNodeMetadata.verify(message.workflowNodeMetadata);
+                        if (error)
+                            return "workflowNodeMetadata." + error;
+                    }
+                }
                 return null;
             };
 
             return NodeExecutionEvent;
+        })();
+
+        event.WorkflowNodeMetadata = (function() {
+
+            /**
+             * Properties of a WorkflowNodeMetadata.
+             * @memberof flyteidl.event
+             * @interface IWorkflowNodeMetadata
+             * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [executionId] WorkflowNodeMetadata executionId
+             */
+
+            /**
+             * Constructs a new WorkflowNodeMetadata.
+             * @memberof flyteidl.event
+             * @classdesc Represents a WorkflowNodeMetadata.
+             * @implements IWorkflowNodeMetadata
+             * @constructor
+             * @param {flyteidl.event.IWorkflowNodeMetadata=} [properties] Properties to set
+             */
+            function WorkflowNodeMetadata(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * WorkflowNodeMetadata executionId.
+             * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} executionId
+             * @memberof flyteidl.event.WorkflowNodeMetadata
+             * @instance
+             */
+            WorkflowNodeMetadata.prototype.executionId = null;
+
+            /**
+             * Creates a new WorkflowNodeMetadata instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.event.WorkflowNodeMetadata
+             * @static
+             * @param {flyteidl.event.IWorkflowNodeMetadata=} [properties] Properties to set
+             * @returns {flyteidl.event.WorkflowNodeMetadata} WorkflowNodeMetadata instance
+             */
+            WorkflowNodeMetadata.create = function create(properties) {
+                return new WorkflowNodeMetadata(properties);
+            };
+
+            /**
+             * Encodes the specified WorkflowNodeMetadata message. Does not implicitly {@link flyteidl.event.WorkflowNodeMetadata.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.event.WorkflowNodeMetadata
+             * @static
+             * @param {flyteidl.event.IWorkflowNodeMetadata} message WorkflowNodeMetadata message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            WorkflowNodeMetadata.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.executionId != null && message.hasOwnProperty("executionId"))
+                    $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.executionId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a WorkflowNodeMetadata message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.event.WorkflowNodeMetadata
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.event.WorkflowNodeMetadata} WorkflowNodeMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            WorkflowNodeMetadata.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.WorkflowNodeMetadata();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.executionId = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a WorkflowNodeMetadata message.
+             * @function verify
+             * @memberof flyteidl.event.WorkflowNodeMetadata
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            WorkflowNodeMetadata.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.executionId != null && message.hasOwnProperty("executionId")) {
+                    let error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.executionId);
+                    if (error)
+                        return "executionId." + error;
+                }
+                return null;
+            };
+
+            return WorkflowNodeMetadata;
         })();
 
         event.TaskExecutionEvent = (function() {
@@ -14582,6 +14727,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                     case 2:
                     case 3:
+                    case 4:
                         break;
                     }
                 if (message.principal != null && message.hasOwnProperty("principal"))
@@ -14601,6 +14747,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {number} SCHEDULED=1 SCHEDULED value
              * @property {number} SYSTEM=2 SYSTEM value
              * @property {number} RELAUNCH=3 RELAUNCH value
+             * @property {number} CHILD_WORKFLOW=4 CHILD_WORKFLOW value
              */
             ExecutionMetadata.ExecutionMode = (function() {
                 const valuesById = {}, values = Object.create(valuesById);
@@ -14608,6 +14755,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 values[valuesById[1] = "SCHEDULED"] = 1;
                 values[valuesById[2] = "SYSTEM"] = 2;
                 values[valuesById[3] = "RELAUNCH"] = 3;
+                values[valuesById[4] = "CHILD_WORKFLOW"] = 4;
                 return values;
             })();
 
