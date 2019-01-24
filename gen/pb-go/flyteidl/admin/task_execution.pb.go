@@ -33,7 +33,7 @@ func (m *TaskExecutionGetRequest) Reset()         { *m = TaskExecutionGetRequest
 func (m *TaskExecutionGetRequest) String() string { return proto.CompactTextString(m) }
 func (*TaskExecutionGetRequest) ProtoMessage()    {}
 func (*TaskExecutionGetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_execution_5c6dab016c4e4497, []int{0}
+	return fileDescriptor_task_execution_a7887d79d47dc6b1, []int{0}
 }
 func (m *TaskExecutionGetRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecutionGetRequest.Unmarshal(m, b)
@@ -63,7 +63,6 @@ func (m *TaskExecutionGetRequest) GetId() *core.TaskExecutionIdentifier {
 // Represents a request structure to retrieve a list of task execution entities.
 type TaskExecutionListRequest struct {
 	// Indicates the number of resources to be returned.
-	// +optional
 	Limit uint32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
 	// In the case of multiple pages of results, the server-provided token can be used to fetch the next page
 	// in a query.
@@ -85,7 +84,7 @@ func (m *TaskExecutionListRequest) Reset()         { *m = TaskExecutionListReque
 func (m *TaskExecutionListRequest) String() string { return proto.CompactTextString(m) }
 func (*TaskExecutionListRequest) ProtoMessage()    {}
 func (*TaskExecutionListRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_execution_5c6dab016c4e4497, []int{1}
+	return fileDescriptor_task_execution_a7887d79d47dc6b1, []int{1}
 }
 func (m *TaskExecutionListRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecutionListRequest.Unmarshal(m, b)
@@ -147,7 +146,7 @@ func (m *TaskExecution) Reset()         { *m = TaskExecution{} }
 func (m *TaskExecution) String() string { return proto.CompactTextString(m) }
 func (*TaskExecution) ProtoMessage()    {}
 func (*TaskExecution) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_execution_5c6dab016c4e4497, []int{2}
+	return fileDescriptor_task_execution_a7887d79d47dc6b1, []int{2}
 }
 func (m *TaskExecution) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecution.Unmarshal(m, b)
@@ -203,7 +202,7 @@ func (m *TaskExecutionList) Reset()         { *m = TaskExecutionList{} }
 func (m *TaskExecutionList) String() string { return proto.CompactTextString(m) }
 func (*TaskExecutionList) ProtoMessage()    {}
 func (*TaskExecutionList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_execution_5c6dab016c4e4497, []int{3}
+	return fileDescriptor_task_execution_a7887d79d47dc6b1, []int{3}
 }
 func (m *TaskExecutionList) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecutionList.Unmarshal(m, b)
@@ -262,7 +261,7 @@ func (m *TaskExecutionClosure) Reset()         { *m = TaskExecutionClosure{} }
 func (m *TaskExecutionClosure) String() string { return proto.CompactTextString(m) }
 func (*TaskExecutionClosure) ProtoMessage()    {}
 func (*TaskExecutionClosure) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_execution_5c6dab016c4e4497, []int{4}
+	return fileDescriptor_task_execution_a7887d79d47dc6b1, []int{4}
 }
 func (m *TaskExecutionClosure) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecutionClosure.Unmarshal(m, b)
@@ -444,7 +443,7 @@ func (m *TaskExecutionGetDataRequest) Reset()         { *m = TaskExecutionGetDat
 func (m *TaskExecutionGetDataRequest) String() string { return proto.CompactTextString(m) }
 func (*TaskExecutionGetDataRequest) ProtoMessage()    {}
 func (*TaskExecutionGetDataRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_execution_5c6dab016c4e4497, []int{5}
+	return fileDescriptor_task_execution_a7887d79d47dc6b1, []int{5}
 }
 func (m *TaskExecutionGetDataRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecutionGetDataRequest.Unmarshal(m, b)
@@ -486,7 +485,7 @@ func (m *TaskExecutionGetDataResponse) Reset()         { *m = TaskExecutionGetDa
 func (m *TaskExecutionGetDataResponse) String() string { return proto.CompactTextString(m) }
 func (*TaskExecutionGetDataResponse) ProtoMessage()    {}
 func (*TaskExecutionGetDataResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_execution_5c6dab016c4e4497, []int{6}
+	return fileDescriptor_task_execution_a7887d79d47dc6b1, []int{6}
 }
 func (m *TaskExecutionGetDataResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecutionGetDataResponse.Unmarshal(m, b)
@@ -531,10 +530,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/admin/task_execution.proto", fileDescriptor_task_execution_5c6dab016c4e4497)
+	proto.RegisterFile("flyteidl/admin/task_execution.proto", fileDescriptor_task_execution_a7887d79d47dc6b1)
 }
 
-var fileDescriptor_task_execution_5c6dab016c4e4497 = []byte{
+var fileDescriptor_task_execution_a7887d79d47dc6b1 = []byte{
 	// 612 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x94, 0xd1, 0x4e, 0xd4, 0x4e,
 	0x14, 0xc6, 0x29, 0xb0, 0xbb, 0xec, 0x21, 0x40, 0xfe, 0x13, 0xf2, 0xa7, 0x2e, 0x22, 0xb8, 0x1a,

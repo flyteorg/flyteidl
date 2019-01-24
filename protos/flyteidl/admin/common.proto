@@ -43,7 +43,6 @@ message NamedEntityIdentifierListRequest {
     // Name of the domain the identifiers belongs to within the project.
     string domain     = 2;  // [(validate.rules).string.min_bytes = 1];
     // Indicates the number of resources to be returned.
-    // +optional
     uint32 limit      = 3;
     // In the case of multiple pages of results, the server-provided token can be used to fetch the next page
     // in a query.
@@ -77,7 +76,6 @@ message ResourceListRequest {
     // id represents the unique identifier of the resource.
     NamedEntityIdentifier id   = 1;
     // Indicates the number of resources to be returned.
-    // +optional
     uint32 limit    = 2;
     // In the case of multiple pages of results, this server-provided token can be used to fetch the next page
     // in a query.

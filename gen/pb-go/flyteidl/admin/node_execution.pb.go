@@ -34,7 +34,7 @@ func (m *NodeExecutionGetRequest) Reset()         { *m = NodeExecutionGetRequest
 func (m *NodeExecutionGetRequest) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionGetRequest) ProtoMessage()    {}
 func (*NodeExecutionGetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_ab92117964c7684c, []int{0}
+	return fileDescriptor_node_execution_524a07daba39f807, []int{0}
 }
 func (m *NodeExecutionGetRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionGetRequest.Unmarshal(m, b)
@@ -64,7 +64,6 @@ func (m *NodeExecutionGetRequest) GetId() *core.NodeExecutionIdentifier {
 // Represents a request structure to retrieve a list of node execution entities.
 type NodeExecutionListRequest struct {
 	// Indicates the number of resources to be returned.
-	// +optional
 	Limit uint32 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
 	// In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
 	// in a query.
@@ -86,7 +85,7 @@ func (m *NodeExecutionListRequest) Reset()         { *m = NodeExecutionListReque
 func (m *NodeExecutionListRequest) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionListRequest) ProtoMessage()    {}
 func (*NodeExecutionListRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_ab92117964c7684c, []int{1}
+	return fileDescriptor_node_execution_524a07daba39f807, []int{1}
 }
 func (m *NodeExecutionListRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionListRequest.Unmarshal(m, b)
@@ -148,7 +147,7 @@ func (m *NodeExecution) Reset()         { *m = NodeExecution{} }
 func (m *NodeExecution) String() string { return proto.CompactTextString(m) }
 func (*NodeExecution) ProtoMessage()    {}
 func (*NodeExecution) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_ab92117964c7684c, []int{2}
+	return fileDescriptor_node_execution_524a07daba39f807, []int{2}
 }
 func (m *NodeExecution) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecution.Unmarshal(m, b)
@@ -204,7 +203,7 @@ func (m *NodeExecutionList) Reset()         { *m = NodeExecutionList{} }
 func (m *NodeExecutionList) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionList) ProtoMessage()    {}
 func (*NodeExecutionList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_ab92117964c7684c, []int{3}
+	return fileDescriptor_node_execution_524a07daba39f807, []int{3}
 }
 func (m *NodeExecutionList) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionList.Unmarshal(m, b)
@@ -262,7 +261,7 @@ func (m *NodeExecutionClosure) Reset()         { *m = NodeExecutionClosure{} }
 func (m *NodeExecutionClosure) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionClosure) ProtoMessage()    {}
 func (*NodeExecutionClosure) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_ab92117964c7684c, []int{4}
+	return fileDescriptor_node_execution_524a07daba39f807, []int{4}
 }
 func (m *NodeExecutionClosure) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionClosure.Unmarshal(m, b)
@@ -437,7 +436,7 @@ func (m *NodeExecutionGetDataRequest) Reset()         { *m = NodeExecutionGetDat
 func (m *NodeExecutionGetDataRequest) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionGetDataRequest) ProtoMessage()    {}
 func (*NodeExecutionGetDataRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_ab92117964c7684c, []int{5}
+	return fileDescriptor_node_execution_524a07daba39f807, []int{5}
 }
 func (m *NodeExecutionGetDataRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionGetDataRequest.Unmarshal(m, b)
@@ -479,7 +478,7 @@ func (m *NodeExecutionGetDataResponse) Reset()         { *m = NodeExecutionGetDa
 func (m *NodeExecutionGetDataResponse) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionGetDataResponse) ProtoMessage()    {}
 func (*NodeExecutionGetDataResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_ab92117964c7684c, []int{6}
+	return fileDescriptor_node_execution_524a07daba39f807, []int{6}
 }
 func (m *NodeExecutionGetDataResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionGetDataResponse.Unmarshal(m, b)
@@ -524,10 +523,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/admin/node_execution.proto", fileDescriptor_node_execution_ab92117964c7684c)
+	proto.RegisterFile("flyteidl/admin/node_execution.proto", fileDescriptor_node_execution_524a07daba39f807)
 }
 
-var fileDescriptor_node_execution_ab92117964c7684c = []byte{
+var fileDescriptor_node_execution_524a07daba39f807 = []byte{
 	// 589 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x54, 0x5d, 0x4f, 0xd4, 0x40,
 	0x14, 0xa5, 0xe0, 0xee, 0xb2, 0x97, 0x00, 0x71, 0x42, 0x42, 0x5d, 0x44, 0x70, 0x35, 0x86, 0x17,

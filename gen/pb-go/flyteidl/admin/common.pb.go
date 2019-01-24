@@ -39,7 +39,7 @@ func (x Sort_Direction) String() string {
 	return proto.EnumName(Sort_Direction_name, int32(x))
 }
 func (Sort_Direction) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_common_91dffd1a87248398, []int{1, 0}
+	return fileDescriptor_common_0126c9b4e114c287, []int{1, 0}
 }
 
 // Encapsulation of fields that identifies a Flyte resource.
@@ -63,7 +63,7 @@ func (m *NamedEntityIdentifier) Reset()         { *m = NamedEntityIdentifier{} }
 func (m *NamedEntityIdentifier) String() string { return proto.CompactTextString(m) }
 func (*NamedEntityIdentifier) ProtoMessage()    {}
 func (*NamedEntityIdentifier) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_91dffd1a87248398, []int{0}
+	return fileDescriptor_common_0126c9b4e114c287, []int{0}
 }
 func (m *NamedEntityIdentifier) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NamedEntityIdentifier.Unmarshal(m, b)
@@ -121,7 +121,7 @@ func (m *Sort) Reset()         { *m = Sort{} }
 func (m *Sort) String() string { return proto.CompactTextString(m) }
 func (*Sort) ProtoMessage()    {}
 func (*Sort) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_91dffd1a87248398, []int{1}
+	return fileDescriptor_common_0126c9b4e114c287, []int{1}
 }
 func (m *Sort) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Sort.Unmarshal(m, b)
@@ -162,7 +162,6 @@ type NamedEntityIdentifierListRequest struct {
 	// Name of the domain the identifiers belongs to within the project.
 	Domain string `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`
 	// Indicates the number of resources to be returned.
-	// +optional
 	Limit uint32 `protobuf:"varint,3,opt,name=limit,proto3" json:"limit,omitempty"`
 	// In the case of multiple pages of results, the server-provided token can be used to fetch the next page
 	// in a query.
@@ -180,7 +179,7 @@ func (m *NamedEntityIdentifierListRequest) Reset()         { *m = NamedEntityIde
 func (m *NamedEntityIdentifierListRequest) String() string { return proto.CompactTextString(m) }
 func (*NamedEntityIdentifierListRequest) ProtoMessage()    {}
 func (*NamedEntityIdentifierListRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_91dffd1a87248398, []int{2}
+	return fileDescriptor_common_0126c9b4e114c287, []int{2}
 }
 func (m *NamedEntityIdentifierListRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NamedEntityIdentifierListRequest.Unmarshal(m, b)
@@ -251,7 +250,7 @@ func (m *NamedEntityIdentifierList) Reset()         { *m = NamedEntityIdentifier
 func (m *NamedEntityIdentifierList) String() string { return proto.CompactTextString(m) }
 func (*NamedEntityIdentifierList) ProtoMessage()    {}
 func (*NamedEntityIdentifierList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_91dffd1a87248398, []int{3}
+	return fileDescriptor_common_0126c9b4e114c287, []int{3}
 }
 func (m *NamedEntityIdentifierList) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NamedEntityIdentifierList.Unmarshal(m, b)
@@ -298,7 +297,7 @@ func (m *ObjectGetRequest) Reset()         { *m = ObjectGetRequest{} }
 func (m *ObjectGetRequest) String() string { return proto.CompactTextString(m) }
 func (*ObjectGetRequest) ProtoMessage()    {}
 func (*ObjectGetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_91dffd1a87248398, []int{4}
+	return fileDescriptor_common_0126c9b4e114c287, []int{4}
 }
 func (m *ObjectGetRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ObjectGetRequest.Unmarshal(m, b)
@@ -331,7 +330,6 @@ type ResourceListRequest struct {
 	// id represents the unique identifier of the resource.
 	Id *NamedEntityIdentifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// Indicates the number of resources to be returned.
-	// +optional
 	Limit uint32 `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`
 	// In the case of multiple pages of results, this server-provided token can be used to fetch the next page
 	// in a query.
@@ -353,7 +351,7 @@ func (m *ResourceListRequest) Reset()         { *m = ResourceListRequest{} }
 func (m *ResourceListRequest) String() string { return proto.CompactTextString(m) }
 func (*ResourceListRequest) ProtoMessage()    {}
 func (*ResourceListRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_91dffd1a87248398, []int{5}
+	return fileDescriptor_common_0126c9b4e114c287, []int{5}
 }
 func (m *ResourceListRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ResourceListRequest.Unmarshal(m, b)
@@ -420,7 +418,7 @@ func (m *EmailNotification) Reset()         { *m = EmailNotification{} }
 func (m *EmailNotification) String() string { return proto.CompactTextString(m) }
 func (*EmailNotification) ProtoMessage()    {}
 func (*EmailNotification) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_91dffd1a87248398, []int{6}
+	return fileDescriptor_common_0126c9b4e114c287, []int{6}
 }
 func (m *EmailNotification) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EmailNotification.Unmarshal(m, b)
@@ -459,7 +457,7 @@ func (m *PagerDutyNotification) Reset()         { *m = PagerDutyNotification{} }
 func (m *PagerDutyNotification) String() string { return proto.CompactTextString(m) }
 func (*PagerDutyNotification) ProtoMessage()    {}
 func (*PagerDutyNotification) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_91dffd1a87248398, []int{7}
+	return fileDescriptor_common_0126c9b4e114c287, []int{7}
 }
 func (m *PagerDutyNotification) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PagerDutyNotification.Unmarshal(m, b)
@@ -498,7 +496,7 @@ func (m *SlackNotification) Reset()         { *m = SlackNotification{} }
 func (m *SlackNotification) String() string { return proto.CompactTextString(m) }
 func (*SlackNotification) ProtoMessage()    {}
 func (*SlackNotification) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_91dffd1a87248398, []int{8}
+	return fileDescriptor_common_0126c9b4e114c287, []int{8}
 }
 func (m *SlackNotification) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SlackNotification.Unmarshal(m, b)
@@ -545,7 +543,7 @@ func (m *Notification) Reset()         { *m = Notification{} }
 func (m *Notification) String() string { return proto.CompactTextString(m) }
 func (*Notification) ProtoMessage()    {}
 func (*Notification) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_91dffd1a87248398, []int{9}
+	return fileDescriptor_common_0126c9b4e114c287, []int{9}
 }
 func (m *Notification) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Notification.Unmarshal(m, b)
@@ -730,7 +728,7 @@ func (m *UrlBlob) Reset()         { *m = UrlBlob{} }
 func (m *UrlBlob) String() string { return proto.CompactTextString(m) }
 func (*UrlBlob) ProtoMessage()    {}
 func (*UrlBlob) Descriptor() ([]byte, []int) {
-	return fileDescriptor_common_91dffd1a87248398, []int{10}
+	return fileDescriptor_common_0126c9b4e114c287, []int{10}
 }
 func (m *UrlBlob) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UrlBlob.Unmarshal(m, b)
@@ -779,9 +777,9 @@ func init() {
 	proto.RegisterEnum("flyteidl.admin.Sort_Direction", Sort_Direction_name, Sort_Direction_value)
 }
 
-func init() { proto.RegisterFile("flyteidl/admin/common.proto", fileDescriptor_common_91dffd1a87248398) }
+func init() { proto.RegisterFile("flyteidl/admin/common.proto", fileDescriptor_common_0126c9b4e114c287) }
 
-var fileDescriptor_common_91dffd1a87248398 = []byte{
+var fileDescriptor_common_0126c9b4e114c287 = []byte{
 	// 638 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x54, 0x6f, 0x6b, 0xd3, 0x5e,
 	0x14, 0x5e, 0xd2, 0xae, 0xfd, 0xf5, 0xec, 0xb7, 0xda, 0x5d, 0x37, 0xc9, 0x26, 0x8e, 0x1a, 0x10,

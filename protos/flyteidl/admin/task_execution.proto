@@ -17,7 +17,6 @@ message TaskExecutionGetRequest {
 // Represents a request structure to retrieve a list of task execution entities.
 message TaskExecutionListRequest {
     // Indicates the number of resources to be returned.
-    // +optional
     uint32 limit    = 1;
     // In the case of multiple pages of results, the server-provided token can be used to fetch the next page
     // in a query.

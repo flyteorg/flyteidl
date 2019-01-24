@@ -267,7 +267,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -464,7 +464,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -544,7 +544,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -729,7 +729,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -862,7 +862,7 @@
         "parameters": [
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -987,7 +987,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -1067,7 +1067,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -1147,7 +1147,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -1227,7 +1227,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -1300,7 +1300,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -1366,7 +1366,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -1432,7 +1432,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -1554,7 +1554,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -1634,7 +1634,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -1753,7 +1753,7 @@
         "parameters": [
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -1920,7 +1920,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -2088,7 +2088,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -2168,7 +2168,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -2301,7 +2301,7 @@
           },
           {
             "name": "limit",
-            "description": "Indicates the number of resources to be returned.\n+optional.",
+            "description": "Indicates the number of resources to be returned.",
             "in": "query",
             "required": false,
             "type": "integer",
