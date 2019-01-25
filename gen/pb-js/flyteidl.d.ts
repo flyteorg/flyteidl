@@ -1402,11 +1402,8 @@ export namespace flyteidl {
         /** Properties of a BlobMetadata. */
         interface IBlobMetadata {
 
-            /** BlobMetadata format */
-            format?: (string|null);
-
             /** BlobMetadata type */
-            type?: (flyteidl.core.BlobMetadata.BlobType|null);
+            type?: (flyteidl.core.IBlobType|null);
         }
 
         /** Represents a BlobMetadata. */
@@ -1418,11 +1415,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.core.IBlobMetadata);
 
-            /** BlobMetadata format. */
-            public format: string;
-
             /** BlobMetadata type. */
-            public type: flyteidl.core.BlobMetadata.BlobType;
+            public type?: (flyteidl.core.IBlobType|null);
 
             /**
              * Creates a new BlobMetadata instance using the specified properties.
@@ -1455,15 +1449,6 @@ export namespace flyteidl {
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        namespace BlobMetadata {
-
-            /** BlobType enum. */
-            enum BlobType {
-                Single = 0,
-                Multipart = 1
-            }
         }
 
         /** Properties of a Waitable. */
@@ -2256,7 +2241,6 @@ export namespace flyteidl {
             BOOLEAN = 4,
             DATETIME = 5,
             DURATION = 6,
-            BLOB = 7,
             BINARY = 8,
             WAITABLE = 9,
             ERROR = 10
@@ -2388,6 +2372,73 @@ export namespace flyteidl {
             }
         }
 
+        /** Properties of a BlobType. */
+        interface IBlobType {
+
+            /** BlobType format */
+            format?: (string|null);
+
+            /** BlobType dimensionality */
+            dimensionality?: (flyteidl.core.BlobType.BlobDimensionality|null);
+        }
+
+        /** Represents a BlobType. */
+        class BlobType implements IBlobType {
+
+            /**
+             * Constructs a new BlobType.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IBlobType);
+
+            /** BlobType format. */
+            public format: string;
+
+            /** BlobType dimensionality. */
+            public dimensionality: flyteidl.core.BlobType.BlobDimensionality;
+
+            /**
+             * Creates a new BlobType instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns BlobType instance
+             */
+            public static create(properties?: flyteidl.core.IBlobType): flyteidl.core.BlobType;
+
+            /**
+             * Encodes the specified BlobType message. Does not implicitly {@link flyteidl.core.BlobType.verify|verify} messages.
+             * @param message BlobType message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IBlobType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a BlobType message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns BlobType
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.BlobType;
+
+            /**
+             * Verifies a BlobType message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace BlobType {
+
+            /** BlobDimensionality enum. */
+            enum BlobDimensionality {
+                Single = 0,
+                Multipart = 1
+            }
+        }
+
         /** Properties of a LiteralType. */
         interface ILiteralType {
 
@@ -2402,6 +2453,9 @@ export namespace flyteidl {
 
             /** LiteralType mapValueType */
             mapValueType?: (flyteidl.core.ILiteralType|null);
+
+            /** LiteralType blob */
+            blob?: (flyteidl.core.IBlobType|null);
         }
 
         /** Represents a LiteralType. */
@@ -2425,8 +2479,11 @@ export namespace flyteidl {
             /** LiteralType mapValueType. */
             public mapValueType?: (flyteidl.core.ILiteralType|null);
 
+            /** LiteralType blob. */
+            public blob?: (flyteidl.core.IBlobType|null);
+
             /** LiteralType type. */
-            public type?: ("simple"|"schema"|"collectionType"|"mapValueType");
+            public type?: ("simple"|"schema"|"collectionType"|"mapValueType"|"blob");
 
             /**
              * Creates a new LiteralType instance using the specified properties.

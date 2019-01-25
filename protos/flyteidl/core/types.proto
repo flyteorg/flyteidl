@@ -6,6 +6,8 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
 
 // Define a set of simple types.
 enum SimpleType {
+    reserved 7;  // TODO: (Open-Source, GA) If we are able to start on a clean-slate, let's renumber this entirely to clean up.    
+
     NONE = 0;
     INTEGER = 1;
     FLOAT = 2;
@@ -13,7 +15,6 @@ enum SimpleType {
     BOOLEAN = 4;
     DATETIME = 5;
     DURATION = 6;
-    BLOB = 7;
     BINARY = 8;
     WAITABLE = 9;
     ERROR = 10;
@@ -42,6 +43,19 @@ message SchemaType {
     repeated SchemaColumn columns = 3;
 }
 
+// Defines type behavior for blob objects
+message BlobType {
+    enum BlobDimensionality {
+        Single = 0;
+        Multipart = 1;
+    }
+
+    // Format can be a free form string understood by SDK/UI etc like
+    // csv, parquet etc
+    string format = 1;
+    BlobDimensionality dimensionality = 2;
+}
+
 // Defines a strong type to allow type checking between interfaces.
 message LiteralType {
     oneof type {
@@ -56,6 +70,9 @@ message LiteralType {
 
         // Defines the type of the value of a map type. The type of the key is always a string.
         LiteralType map_value_type = 4;
+
+        // A blob might have specialized implementation details depending on associated metadata.
+        BlobType blob = 5;
     }
 }
 

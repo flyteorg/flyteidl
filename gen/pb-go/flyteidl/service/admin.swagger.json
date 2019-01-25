@@ -2436,7 +2436,7 @@
     }
   },
   "definitions": {
-    "BlobMetadataBlobType": {
+    "BlobTypeBlobDimensionality": {
       "type": "string",
       "enum": [
         "Single",
@@ -3563,14 +3563,23 @@
     "coreBlobMetadata": {
       "type": "object",
       "properties": {
+        "type": {
+          "$ref": "#/definitions/coreBlobType"
+        }
+      }
+    },
+    "coreBlobType": {
+      "type": "object",
+      "properties": {
         "format": {
           "type": "string",
           "title": "Format can be a free form string understood by SDK/UI etc like\ncsv, parquet etc"
         },
-        "type": {
-          "$ref": "#/definitions/BlobMetadataBlobType"
+        "dimensionality": {
+          "$ref": "#/definitions/BlobTypeBlobDimensionality"
         }
-      }
+      },
+      "title": "Defines type behavior for blob objects"
     },
     "coreBooleanExpression": {
       "type": "object",
@@ -3920,6 +3929,10 @@
         "map_value_type": {
           "$ref": "#/definitions/coreLiteralType",
           "description": "Defines the type of the value of a map type. The type of the key is always a string."
+        },
+        "blob": {
+          "$ref": "#/definitions/coreBlobType",
+          "description": "A blob might have specialized implementation details depending on associated metadata."
         }
       },
       "description": "Defines a strong type to allow type checking between interfaces."
@@ -4214,7 +4227,6 @@
         "BOOLEAN",
         "DATETIME",
         "DURATION",
-        "BLOB",
         "BINARY",
         "WAITABLE",
         "ERROR"

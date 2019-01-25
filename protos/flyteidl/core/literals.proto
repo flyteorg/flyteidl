@@ -31,15 +31,7 @@ message Blob {
 }
 
 message BlobMetadata {
-    enum BlobType {
-        Single = 0;
-        Multipart = 1;
-    }
-
-    // Format can be a free form string understood by SDK/UI etc like
-    // csv, parquet etc
-    string format = 1;
-    BlobType type = 2;
+    BlobType type = 1;
 }
 
 // Defines an execution unit recognized by the system and can be referred to by other units to listen to its execution

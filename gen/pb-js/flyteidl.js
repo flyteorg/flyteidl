@@ -3439,8 +3439,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a BlobMetadata.
              * @memberof flyteidl.core
              * @interface IBlobMetadata
-             * @property {string|null} [format] BlobMetadata format
-             * @property {flyteidl.core.BlobMetadata.BlobType|null} [type] BlobMetadata type
+             * @property {flyteidl.core.IBlobType|null} [type] BlobMetadata type
              */
 
             /**
@@ -3459,20 +3458,12 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * BlobMetadata format.
-             * @member {string} format
-             * @memberof flyteidl.core.BlobMetadata
-             * @instance
-             */
-            BlobMetadata.prototype.format = "";
-
-            /**
              * BlobMetadata type.
-             * @member {flyteidl.core.BlobMetadata.BlobType} type
+             * @member {flyteidl.core.IBlobType|null|undefined} type
              * @memberof flyteidl.core.BlobMetadata
              * @instance
              */
-            BlobMetadata.prototype.type = 0;
+            BlobMetadata.prototype.type = null;
 
             /**
              * Creates a new BlobMetadata instance using the specified properties.
@@ -3498,10 +3489,8 @@ export const flyteidl = $root.flyteidl = (() => {
             BlobMetadata.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.format != null && message.hasOwnProperty("format"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.format);
                 if (message.type != null && message.hasOwnProperty("type"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.type);
+                    $root.flyteidl.core.BlobType.encode(message.type, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -3524,10 +3513,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.format = reader.string();
-                        break;
-                    case 2:
-                        message.type = reader.int32();
+                        message.type = $root.flyteidl.core.BlobType.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -3548,33 +3534,13 @@ export const flyteidl = $root.flyteidl = (() => {
             BlobMetadata.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.format != null && message.hasOwnProperty("format"))
-                    if (!$util.isString(message.format))
-                        return "format: string expected";
-                if (message.type != null && message.hasOwnProperty("type"))
-                    switch (message.type) {
-                    default:
-                        return "type: enum value expected";
-                    case 0:
-                    case 1:
-                        break;
-                    }
+                if (message.type != null && message.hasOwnProperty("type")) {
+                    let error = $root.flyteidl.core.BlobType.verify(message.type);
+                    if (error)
+                        return "type." + error;
+                }
                 return null;
             };
-
-            /**
-             * BlobType enum.
-             * @name flyteidl.core.BlobMetadata.BlobType
-             * @enum {string}
-             * @property {number} Single=0 Single value
-             * @property {number} Multipart=1 Multipart value
-             */
-            BlobMetadata.BlobType = (function() {
-                const valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "Single"] = 0;
-                values[valuesById[1] = "Multipart"] = 1;
-                return values;
-            })();
 
             return BlobMetadata;
         })();
@@ -5485,7 +5451,6 @@ export const flyteidl = $root.flyteidl = (() => {
          * @property {number} BOOLEAN=4 BOOLEAN value
          * @property {number} DATETIME=5 DATETIME value
          * @property {number} DURATION=6 DURATION value
-         * @property {number} BLOB=7 BLOB value
          * @property {number} BINARY=8 BINARY value
          * @property {number} WAITABLE=9 WAITABLE value
          * @property {number} ERROR=10 ERROR value
@@ -5499,7 +5464,6 @@ export const flyteidl = $root.flyteidl = (() => {
             values[valuesById[4] = "BOOLEAN"] = 4;
             values[valuesById[5] = "DATETIME"] = 5;
             values[valuesById[6] = "DURATION"] = 6;
-            values[valuesById[7] = "BLOB"] = 7;
             values[valuesById[8] = "BINARY"] = 8;
             values[valuesById[9] = "WAITABLE"] = 9;
             values[valuesById[10] = "ERROR"] = 10;
@@ -5784,6 +5748,152 @@ export const flyteidl = $root.flyteidl = (() => {
             return SchemaType;
         })();
 
+        core.BlobType = (function() {
+
+            /**
+             * Properties of a BlobType.
+             * @memberof flyteidl.core
+             * @interface IBlobType
+             * @property {string|null} [format] BlobType format
+             * @property {flyteidl.core.BlobType.BlobDimensionality|null} [dimensionality] BlobType dimensionality
+             */
+
+            /**
+             * Constructs a new BlobType.
+             * @memberof flyteidl.core
+             * @classdesc Represents a BlobType.
+             * @implements IBlobType
+             * @constructor
+             * @param {flyteidl.core.IBlobType=} [properties] Properties to set
+             */
+            function BlobType(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * BlobType format.
+             * @member {string} format
+             * @memberof flyteidl.core.BlobType
+             * @instance
+             */
+            BlobType.prototype.format = "";
+
+            /**
+             * BlobType dimensionality.
+             * @member {flyteidl.core.BlobType.BlobDimensionality} dimensionality
+             * @memberof flyteidl.core.BlobType
+             * @instance
+             */
+            BlobType.prototype.dimensionality = 0;
+
+            /**
+             * Creates a new BlobType instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.BlobType
+             * @static
+             * @param {flyteidl.core.IBlobType=} [properties] Properties to set
+             * @returns {flyteidl.core.BlobType} BlobType instance
+             */
+            BlobType.create = function create(properties) {
+                return new BlobType(properties);
+            };
+
+            /**
+             * Encodes the specified BlobType message. Does not implicitly {@link flyteidl.core.BlobType.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.BlobType
+             * @static
+             * @param {flyteidl.core.IBlobType} message BlobType message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            BlobType.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.format != null && message.hasOwnProperty("format"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.format);
+                if (message.dimensionality != null && message.hasOwnProperty("dimensionality"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.dimensionality);
+                return writer;
+            };
+
+            /**
+             * Decodes a BlobType message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.BlobType
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.BlobType} BlobType
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            BlobType.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.BlobType();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.format = reader.string();
+                        break;
+                    case 2:
+                        message.dimensionality = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a BlobType message.
+             * @function verify
+             * @memberof flyteidl.core.BlobType
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            BlobType.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.format != null && message.hasOwnProperty("format"))
+                    if (!$util.isString(message.format))
+                        return "format: string expected";
+                if (message.dimensionality != null && message.hasOwnProperty("dimensionality"))
+                    switch (message.dimensionality) {
+                    default:
+                        return "dimensionality: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
+                return null;
+            };
+
+            /**
+             * BlobDimensionality enum.
+             * @name flyteidl.core.BlobType.BlobDimensionality
+             * @enum {string}
+             * @property {number} Single=0 Single value
+             * @property {number} Multipart=1 Multipart value
+             */
+            BlobType.BlobDimensionality = (function() {
+                const valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "Single"] = 0;
+                values[valuesById[1] = "Multipart"] = 1;
+                return values;
+            })();
+
+            return BlobType;
+        })();
+
         core.LiteralType = (function() {
 
             /**
@@ -5794,6 +5904,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.ISchemaType|null} [schema] LiteralType schema
              * @property {flyteidl.core.ILiteralType|null} [collectionType] LiteralType collectionType
              * @property {flyteidl.core.ILiteralType|null} [mapValueType] LiteralType mapValueType
+             * @property {flyteidl.core.IBlobType|null} [blob] LiteralType blob
              */
 
             /**
@@ -5843,17 +5954,25 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             LiteralType.prototype.mapValueType = null;
 
+            /**
+             * LiteralType blob.
+             * @member {flyteidl.core.IBlobType|null|undefined} blob
+             * @memberof flyteidl.core.LiteralType
+             * @instance
+             */
+            LiteralType.prototype.blob = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
             /**
              * LiteralType type.
-             * @member {"simple"|"schema"|"collectionType"|"mapValueType"|undefined} type
+             * @member {"simple"|"schema"|"collectionType"|"mapValueType"|"blob"|undefined} type
              * @memberof flyteidl.core.LiteralType
              * @instance
              */
             Object.defineProperty(LiteralType.prototype, "type", {
-                get: $util.oneOfGetter($oneOfFields = ["simple", "schema", "collectionType", "mapValueType"]),
+                get: $util.oneOfGetter($oneOfFields = ["simple", "schema", "collectionType", "mapValueType", "blob"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -5889,6 +6008,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.LiteralType.encode(message.collectionType, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.mapValueType != null && message.hasOwnProperty("mapValueType"))
                     $root.flyteidl.core.LiteralType.encode(message.mapValueType, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.blob != null && message.hasOwnProperty("blob"))
+                    $root.flyteidl.core.BlobType.encode(message.blob, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -5922,6 +6043,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 4:
                         message.mapValueType = $root.flyteidl.core.LiteralType.decode(reader, reader.uint32());
                         break;
+                    case 5:
+                        message.blob = $root.flyteidl.core.BlobType.decode(reader, reader.uint32());
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -5954,7 +6078,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 4:
                     case 5:
                     case 6:
-                    case 7:
                     case 8:
                     case 9:
                     case 10:
@@ -5989,6 +6112,16 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.flyteidl.core.LiteralType.verify(message.mapValueType);
                         if (error)
                             return "mapValueType." + error;
+                    }
+                }
+                if (message.blob != null && message.hasOwnProperty("blob")) {
+                    if (properties.type === 1)
+                        return "type: multiple values";
+                    properties.type = 1;
+                    {
+                        let error = $root.flyteidl.core.BlobType.verify(message.blob);
+                        if (error)
+                            return "blob." + error;
                     }
                 }
                 return null;
