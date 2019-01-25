@@ -23,6 +23,7 @@ const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
 // A message used to fetch a single task execution entity.
 type TaskExecutionGetRequest struct {
+	// Unique identifier for the task execution.
 	Id                   *core.TaskExecutionIdentifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                      `json:"-"`
 	XXX_unrecognized     []byte                        `json:"-"`
@@ -33,7 +34,7 @@ func (m *TaskExecutionGetRequest) Reset()         { *m = TaskExecutionGetRequest
 func (m *TaskExecutionGetRequest) String() string { return proto.CompactTextString(m) }
 func (*TaskExecutionGetRequest) ProtoMessage()    {}
 func (*TaskExecutionGetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_execution_a7887d79d47dc6b1, []int{0}
+	return fileDescriptor_task_execution_0c83d5ad5762088c, []int{0}
 }
 func (m *TaskExecutionGetRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecutionGetRequest.Unmarshal(m, b)
@@ -84,7 +85,7 @@ func (m *TaskExecutionListRequest) Reset()         { *m = TaskExecutionListReque
 func (m *TaskExecutionListRequest) String() string { return proto.CompactTextString(m) }
 func (*TaskExecutionListRequest) ProtoMessage()    {}
 func (*TaskExecutionListRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_execution_a7887d79d47dc6b1, []int{1}
+	return fileDescriptor_task_execution_0c83d5ad5762088c, []int{1}
 }
 func (m *TaskExecutionListRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecutionListRequest.Unmarshal(m, b)
@@ -133,20 +134,25 @@ func (m *TaskExecutionListRequest) GetSortBy() *Sort {
 }
 
 // Encapsulates all details for a single task execution entity.
+// A task execution represents an instantiated task, including all inputs and additional
+// metadata as well as computed results included state, outputs, and duration-based attributes.
 type TaskExecution struct {
-	Id                   *core.TaskExecutionIdentifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	InputUri             string                        `protobuf:"bytes,2,opt,name=input_uri,json=inputUri,proto3" json:"input_uri,omitempty"`
-	Closure              *TaskExecutionClosure         `protobuf:"bytes,3,opt,name=closure,proto3" json:"closure,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                      `json:"-"`
-	XXX_unrecognized     []byte                        `json:"-"`
-	XXX_sizecache        int32                         `json:"-"`
+	// Unique identifier for the task execution.
+	Id *core.TaskExecutionIdentifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// Path to remote data store where input blob is stored.
+	InputUri string `protobuf:"bytes,2,opt,name=input_uri,json=inputUri,proto3" json:"input_uri,omitempty"`
+	// Task execution details and results.
+	Closure              *TaskExecutionClosure `protobuf:"bytes,3,opt,name=closure,proto3" json:"closure,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}              `json:"-"`
+	XXX_unrecognized     []byte                `json:"-"`
+	XXX_sizecache        int32                 `json:"-"`
 }
 
 func (m *TaskExecution) Reset()         { *m = TaskExecution{} }
 func (m *TaskExecution) String() string { return proto.CompactTextString(m) }
 func (*TaskExecution) ProtoMessage()    {}
 func (*TaskExecution) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_execution_a7887d79d47dc6b1, []int{2}
+	return fileDescriptor_task_execution_0c83d5ad5762088c, []int{2}
 }
 func (m *TaskExecution) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecution.Unmarshal(m, b)
@@ -187,7 +193,7 @@ func (m *TaskExecution) GetClosure() *TaskExecutionClosure {
 	return nil
 }
 
-// Request structure to retrieve a list of task execution entities.
+// Response structure for a query to list of task execution entities.
 type TaskExecutionList struct {
 	TaskExecutions []*TaskExecution `protobuf:"bytes,1,rep,name=task_executions,json=taskExecutions,proto3" json:"task_executions,omitempty"`
 	// In the case of multiple pages of results, the server-provided token can be used to fetch the next page
@@ -202,7 +208,7 @@ func (m *TaskExecutionList) Reset()         { *m = TaskExecutionList{} }
 func (m *TaskExecutionList) String() string { return proto.CompactTextString(m) }
 func (*TaskExecutionList) ProtoMessage()    {}
 func (*TaskExecutionList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_execution_a7887d79d47dc6b1, []int{3}
+	return fileDescriptor_task_execution_0c83d5ad5762088c, []int{3}
 }
 func (m *TaskExecutionList) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecutionList.Unmarshal(m, b)
@@ -242,8 +248,10 @@ type TaskExecutionClosure struct {
 	//	*TaskExecutionClosure_OutputUri
 	//	*TaskExecutionClosure_Error
 	OutputResult isTaskExecutionClosure_OutputResult `protobuf_oneof:"output_result"`
-	Phase        core.TaskExecutionPhase             `protobuf:"varint,3,opt,name=phase,proto3,enum=flyteidl.core.TaskExecutionPhase" json:"phase,omitempty"`
-	Logs         []*core.TaskLog                     `protobuf:"bytes,4,rep,name=logs,proto3" json:"logs,omitempty"`
+	// The last recorded phase for this task execution.
+	Phase core.TaskExecutionPhase `protobuf:"varint,3,opt,name=phase,proto3,enum=flyteidl.core.TaskExecutionPhase" json:"phase,omitempty"`
+	// Detailed log information output by the task execution.
+	Logs []*core.TaskLog `protobuf:"bytes,4,rep,name=logs,proto3" json:"logs,omitempty"`
 	// Time at which the task execution began running.
 	StartedAt *timestamp.Timestamp `protobuf:"bytes,5,opt,name=started_at,json=startedAt,proto3" json:"started_at,omitempty"`
 	// The amount of time the task execution spent running.
@@ -261,7 +269,7 @@ func (m *TaskExecutionClosure) Reset()         { *m = TaskExecutionClosure{} }
 func (m *TaskExecutionClosure) String() string { return proto.CompactTextString(m) }
 func (*TaskExecutionClosure) ProtoMessage()    {}
 func (*TaskExecutionClosure) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_execution_a7887d79d47dc6b1, []int{4}
+	return fileDescriptor_task_execution_0c83d5ad5762088c, []int{4}
 }
 func (m *TaskExecutionClosure) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecutionClosure.Unmarshal(m, b)
@@ -443,7 +451,7 @@ func (m *TaskExecutionGetDataRequest) Reset()         { *m = TaskExecutionGetDat
 func (m *TaskExecutionGetDataRequest) String() string { return proto.CompactTextString(m) }
 func (*TaskExecutionGetDataRequest) ProtoMessage()    {}
 func (*TaskExecutionGetDataRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_execution_a7887d79d47dc6b1, []int{5}
+	return fileDescriptor_task_execution_0c83d5ad5762088c, []int{5}
 }
 func (m *TaskExecutionGetDataRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecutionGetDataRequest.Unmarshal(m, b)
@@ -485,7 +493,7 @@ func (m *TaskExecutionGetDataResponse) Reset()         { *m = TaskExecutionGetDa
 func (m *TaskExecutionGetDataResponse) String() string { return proto.CompactTextString(m) }
 func (*TaskExecutionGetDataResponse) ProtoMessage()    {}
 func (*TaskExecutionGetDataResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_execution_a7887d79d47dc6b1, []int{6}
+	return fileDescriptor_task_execution_0c83d5ad5762088c, []int{6}
 }
 func (m *TaskExecutionGetDataResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecutionGetDataResponse.Unmarshal(m, b)
@@ -530,10 +538,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/admin/task_execution.proto", fileDescriptor_task_execution_a7887d79d47dc6b1)
+	proto.RegisterFile("flyteidl/admin/task_execution.proto", fileDescriptor_task_execution_0c83d5ad5762088c)
 }
 
-var fileDescriptor_task_execution_a7887d79d47dc6b1 = []byte{
+var fileDescriptor_task_execution_0c83d5ad5762088c = []byte{
 	// 612 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x94, 0xd1, 0x4e, 0xd4, 0x4e,
 	0x14, 0xc6, 0x29, 0xb0, 0xbb, 0xec, 0x21, 0x40, 0xfe, 0x13, 0xf2, 0xa7, 0x2e, 0x22, 0xb8, 0x1a,

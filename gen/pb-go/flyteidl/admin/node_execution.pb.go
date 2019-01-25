@@ -34,7 +34,7 @@ func (m *NodeExecutionGetRequest) Reset()         { *m = NodeExecutionGetRequest
 func (m *NodeExecutionGetRequest) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionGetRequest) ProtoMessage()    {}
 func (*NodeExecutionGetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_524a07daba39f807, []int{0}
+	return fileDescriptor_node_execution_e35f342f70a69e87, []int{0}
 }
 func (m *NodeExecutionGetRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionGetRequest.Unmarshal(m, b)
@@ -85,7 +85,7 @@ func (m *NodeExecutionListRequest) Reset()         { *m = NodeExecutionListReque
 func (m *NodeExecutionListRequest) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionListRequest) ProtoMessage()    {}
 func (*NodeExecutionListRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_524a07daba39f807, []int{1}
+	return fileDescriptor_node_execution_e35f342f70a69e87, []int{1}
 }
 func (m *NodeExecutionListRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionListRequest.Unmarshal(m, b)
@@ -134,20 +134,26 @@ func (m *NodeExecutionListRequest) GetSortBy() *Sort {
 }
 
 // Encapsulates all details for a single node execution entity.
+// A node represents a component in the overall workflow graph. A node launch a task, multiple tasks, an entire nested
+// sub-workflow, or even a separate child-workflow execution.
+// The same task can be called repeatedly in a single workflow but each node is unique.
 type NodeExecution struct {
-	Id                   *core.NodeExecutionIdentifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	InputUri             string                        `protobuf:"bytes,2,opt,name=input_uri,json=inputUri,proto3" json:"input_uri,omitempty"`
-	Closure              *NodeExecutionClosure         `protobuf:"bytes,3,opt,name=closure,proto3" json:"closure,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                      `json:"-"`
-	XXX_unrecognized     []byte                        `json:"-"`
-	XXX_sizecache        int32                         `json:"-"`
+	// Uniquely identifies an individual node execution.
+	Id *core.NodeExecutionIdentifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// Path to remote data store where input blob is stored.
+	InputUri string `protobuf:"bytes,2,opt,name=input_uri,json=inputUri,proto3" json:"input_uri,omitempty"`
+	// Computed results associated with this node execution.
+	Closure              *NodeExecutionClosure `protobuf:"bytes,3,opt,name=closure,proto3" json:"closure,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}              `json:"-"`
+	XXX_unrecognized     []byte                `json:"-"`
+	XXX_sizecache        int32                 `json:"-"`
 }
 
 func (m *NodeExecution) Reset()         { *m = NodeExecution{} }
 func (m *NodeExecution) String() string { return proto.CompactTextString(m) }
 func (*NodeExecution) ProtoMessage()    {}
 func (*NodeExecution) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_524a07daba39f807, []int{2}
+	return fileDescriptor_node_execution_e35f342f70a69e87, []int{2}
 }
 func (m *NodeExecution) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecution.Unmarshal(m, b)
@@ -203,7 +209,7 @@ func (m *NodeExecutionList) Reset()         { *m = NodeExecutionList{} }
 func (m *NodeExecutionList) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionList) ProtoMessage()    {}
 func (*NodeExecutionList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_524a07daba39f807, []int{3}
+	return fileDescriptor_node_execution_e35f342f70a69e87, []int{3}
 }
 func (m *NodeExecutionList) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionList.Unmarshal(m, b)
@@ -239,11 +245,14 @@ func (m *NodeExecutionList) GetToken() string {
 
 // Container for node execution details and results.
 type NodeExecutionClosure struct {
+	// Only a node in a terminal state will have a non-empty output_result.
+	//
 	// Types that are valid to be assigned to OutputResult:
 	//	*NodeExecutionClosure_OutputUri
 	//	*NodeExecutionClosure_Error
 	OutputResult isNodeExecutionClosure_OutputResult `protobuf_oneof:"output_result"`
-	Phase        core.NodeExecutionPhase             `protobuf:"varint,3,opt,name=phase,proto3,enum=flyteidl.core.NodeExecutionPhase" json:"phase,omitempty"`
+	// The last recorded phase for this node execution.
+	Phase core.NodeExecutionPhase `protobuf:"varint,3,opt,name=phase,proto3,enum=flyteidl.core.NodeExecutionPhase" json:"phase,omitempty"`
 	// Time at which the node execution began running.
 	StartedAt *timestamp.Timestamp `protobuf:"bytes,4,opt,name=started_at,json=startedAt,proto3" json:"started_at,omitempty"`
 	// The amount of time the node execution spent running.
@@ -261,7 +270,7 @@ func (m *NodeExecutionClosure) Reset()         { *m = NodeExecutionClosure{} }
 func (m *NodeExecutionClosure) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionClosure) ProtoMessage()    {}
 func (*NodeExecutionClosure) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_524a07daba39f807, []int{4}
+	return fileDescriptor_node_execution_e35f342f70a69e87, []int{4}
 }
 func (m *NodeExecutionClosure) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionClosure.Unmarshal(m, b)
@@ -436,7 +445,7 @@ func (m *NodeExecutionGetDataRequest) Reset()         { *m = NodeExecutionGetDat
 func (m *NodeExecutionGetDataRequest) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionGetDataRequest) ProtoMessage()    {}
 func (*NodeExecutionGetDataRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_524a07daba39f807, []int{5}
+	return fileDescriptor_node_execution_e35f342f70a69e87, []int{5}
 }
 func (m *NodeExecutionGetDataRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionGetDataRequest.Unmarshal(m, b)
@@ -478,7 +487,7 @@ func (m *NodeExecutionGetDataResponse) Reset()         { *m = NodeExecutionGetDa
 func (m *NodeExecutionGetDataResponse) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionGetDataResponse) ProtoMessage()    {}
 func (*NodeExecutionGetDataResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_node_execution_524a07daba39f807, []int{6}
+	return fileDescriptor_node_execution_e35f342f70a69e87, []int{6}
 }
 func (m *NodeExecutionGetDataResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionGetDataResponse.Unmarshal(m, b)
@@ -523,10 +532,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/admin/node_execution.proto", fileDescriptor_node_execution_524a07daba39f807)
+	proto.RegisterFile("flyteidl/admin/node_execution.proto", fileDescriptor_node_execution_e35f342f70a69e87)
 }
 
-var fileDescriptor_node_execution_524a07daba39f807 = []byte{
+var fileDescriptor_node_execution_e35f342f70a69e87 = []byte{
 	// 589 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x54, 0x5d, 0x4f, 0xd4, 0x40,
 	0x14, 0xa5, 0xe0, 0xee, 0xb2, 0x97, 0x00, 0x71, 0x42, 0x42, 0x5d, 0x44, 0x70, 0x35, 0x86, 0x17,

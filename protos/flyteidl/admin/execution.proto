@@ -9,8 +9,8 @@ import "flyteidl/core/execution.proto";
 import "flyteidl/core/identifier.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
-// import "validate/validate.proto";
 
+// Request to launch an execution with the given project, domain and optionally name.
 message ExecutionCreateRequest {
     // Name of the project the execution belongs to. 
     string project    = 1;
@@ -24,9 +24,11 @@ message ExecutionCreateRequest {
     // +optional
     string name       = 3;
 
+    // Additional fields necessary to launch the execution.
     ExecutionSpec spec  = 4;
 }
 
+// Request to relaunch the referenced execution.
 message ExecutionRelaunchRequest {
     // Identifier of the workflow execution to relaunch.
     core.WorkflowExecutionIdentifier id = 1;
@@ -37,6 +39,8 @@ message ExecutionRelaunchRequest {
     string name       = 3;
 }
 
+// The unique identifier for a successfully created execution.
+// If the name was *not* specified in the create request, this identifier will include a generated name.
 message ExecutionCreateResponse {
     core.WorkflowExecutionIdentifier id = 1;
 }
@@ -47,13 +51,21 @@ message WorkflowExecutionGetRequest {
    core.WorkflowExecutionIdentifier id  = 1;  
 }
 
+// A workflow execution represents an instantiated workflow, including all inputs and additional
+// metadata as well as computed results included state, outputs, and duration-based attributes.
+// Used as a response object used in Get and List execution requests.
 message Execution {
+    // Unique identifier of the workflow execution.
     core.WorkflowExecutionIdentifier id               = 1;
 
+    // User-provided configuration and inputs for launching the execution.
     ExecutionSpec spec                                = 2;
+
+    // Execution results. 
     ExecutionClosure closure                          = 3;
 }
 
+// Used as a response for request to list executions.
 message ExecutionList {
     repeated Execution executions     = 1;
 
@@ -62,7 +74,7 @@ message ExecutionList {
     string token                      = 2;
 }
 
-// Input/output data can represented by actual values or a link to where it is stored
+// Input/output data can represented by actual values or a link to where values are stored
 message LiteralMapBlob {
     oneof data {
         // Data in LiteralMap format
@@ -75,10 +87,13 @@ message LiteralMapBlob {
 
 // Encapsulates the results of the Execution
 message ExecutionClosure {
+    // A result produced by a terminated execution.
+    // A pending (non-terminal) execution will not have any output result.
     oneof output_result {
+        // A map of outputs in the case of a successful execution.
         LiteralMapBlob outputs	= 1;
 
-        // Error information for the Node
+        // Error information in the case of a failed execution. 
         core.ExecutionError error		= 2;
 
         // In the case of a user-specified abort, this will pass along the user-supplied cause.
@@ -89,35 +104,48 @@ message ExecutionClosure {
     // computed_inputs depends on inputs in ExecutionSpec, fixed and default inputs in launch plan
     core.LiteralMap computed_inputs      = 3;
 
-    // Phase of the executions
+    // Most recent recorded phase for the execution.
     core.WorkflowExecutionPhase phase                 = 4;
 
-    // Time at which the execution began running.
+    // Reported ime at which the execution began running.
     google.protobuf.Timestamp started_at              = 5;
 
     // The amount of time the execution spent running.
     google.protobuf.Duration duration                 = 6;     
 
-    // Time at which the execution was created.
+    // Reported time at which the execution was created.
     google.protobuf.Timestamp created_at              = 7;
 
-    // Time at which the execution was last updated.
+    // Reported time at which the execution was last updated.
     google.protobuf.Timestamp updated_at              = 8;
 
     // The notification settings to use after merging the CreateExecutionRequest and the launch plan
-    // notification settings.
+    // notification settings. An execution launched with notifications will always prefer that definition
+    // to notifications defined statically in a launch plan.
     repeated Notification notifications               = 9;
 
     // Identifies the workflow definition for this execution.
     core.Identifier workflow_id                       = 11;
 }
 
+// Represents attributes about an execution which are not required to launch the execution but are useful to record.
+// These attributes are assigned at launch time and do not change.
 message ExecutionMetadata {
+    // The method by which this execution was launched.
     enum ExecutionMode {
+        // The default execution mode, MANUAL implies that an execution was launched by an individual.
         MANUAL        = 0;
+
+        // A schedule triggered this execution launch.
         SCHEDULED     = 1;
+
+        // A system process was responsible for launching this execution rather an individual.
         SYSTEM        = 2;
+
+        // This execution was launched with identical inputs as a previous execution.
         RELAUNCH      = 3;
+
+        // This execution was triggered by another execution.
         CHILD_WORKFLOW = 4;
     }
     ExecutionMode mode    = 1;  // [(validate.rules).enum.defined_only = true];
@@ -133,6 +161,8 @@ message ExecutionMetadata {
     int32 nesting         = 3;
 }
 
+// An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime
+// of an execution as it progresses across phase changes..
 message ExecutionSpec {
     // Launch plan to be executed
     core.Identifier launch_plan        = 1;
@@ -144,9 +174,15 @@ message ExecutionSpec {
     ExecutionMetadata metadata    = 3;
 
     // List of notifications based on Execution status transitions
+    // When this list is not empty it is used rather than any notifications defined in the referenced launch plan.
     repeated Notification notifications = 4;
 }
 
+// Request to terminate an in-progress execution.  This action is irreversible.
+// If an execution is already terminated, this request will simply be a no-op.
+// This request will fail if it references a non-existent execution.
+// If the request succeeds the phase "ABORTED" will be recorded for the termination
+// with the optional cause added to the output_result.
 message ExecutionTerminateRequest {
     // Uniquely identifies the individual workflow execution to be terminated. 
     core.WorkflowExecutionIdentifier id  = 1;

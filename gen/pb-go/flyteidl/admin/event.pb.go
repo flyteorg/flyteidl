@@ -19,9 +19,11 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
+// Request to send a notification that a workflow execution event has occurred.
 type WorkflowExecutionEventRequest struct {
 	// Unique ID for this request that can be traced between services
-	RequestId            string                        `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
+	RequestId string `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
+	// Details about the event that occurred.
 	Event                *event.WorkflowExecutionEvent `protobuf:"bytes,2,opt,name=event,proto3" json:"event,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                      `json:"-"`
 	XXX_unrecognized     []byte                        `json:"-"`
@@ -32,7 +34,7 @@ func (m *WorkflowExecutionEventRequest) Reset()         { *m = WorkflowExecution
 func (m *WorkflowExecutionEventRequest) String() string { return proto.CompactTextString(m) }
 func (*WorkflowExecutionEventRequest) ProtoMessage()    {}
 func (*WorkflowExecutionEventRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_event_f4f68ca36c17de68, []int{0}
+	return fileDescriptor_event_6a51730a0688e436, []int{0}
 }
 func (m *WorkflowExecutionEventRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_WorkflowExecutionEventRequest.Unmarshal(m, b)
@@ -76,7 +78,7 @@ func (m *WorkflowExecutionEventResponse) Reset()         { *m = WorkflowExecutio
 func (m *WorkflowExecutionEventResponse) String() string { return proto.CompactTextString(m) }
 func (*WorkflowExecutionEventResponse) ProtoMessage()    {}
 func (*WorkflowExecutionEventResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_event_f4f68ca36c17de68, []int{1}
+	return fileDescriptor_event_6a51730a0688e436, []int{1}
 }
 func (m *WorkflowExecutionEventResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_WorkflowExecutionEventResponse.Unmarshal(m, b)
@@ -96,9 +98,11 @@ func (m *WorkflowExecutionEventResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_WorkflowExecutionEventResponse proto.InternalMessageInfo
 
+// Request to send a notification that a node execution event has occurred.
 type NodeExecutionEventRequest struct {
 	// Unique ID for this request that can be traced between services
-	RequestId            string                    `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
+	RequestId string `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
+	// Details about the event that occurred.
 	Event                *event.NodeExecutionEvent `protobuf:"bytes,2,opt,name=event,proto3" json:"event,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                  `json:"-"`
 	XXX_unrecognized     []byte                    `json:"-"`
@@ -109,7 +113,7 @@ func (m *NodeExecutionEventRequest) Reset()         { *m = NodeExecutionEventReq
 func (m *NodeExecutionEventRequest) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionEventRequest) ProtoMessage()    {}
 func (*NodeExecutionEventRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_event_f4f68ca36c17de68, []int{2}
+	return fileDescriptor_event_6a51730a0688e436, []int{2}
 }
 func (m *NodeExecutionEventRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionEventRequest.Unmarshal(m, b)
@@ -153,7 +157,7 @@ func (m *NodeExecutionEventResponse) Reset()         { *m = NodeExecutionEventRe
 func (m *NodeExecutionEventResponse) String() string { return proto.CompactTextString(m) }
 func (*NodeExecutionEventResponse) ProtoMessage()    {}
 func (*NodeExecutionEventResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_event_f4f68ca36c17de68, []int{3}
+	return fileDescriptor_event_6a51730a0688e436, []int{3}
 }
 func (m *NodeExecutionEventResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_NodeExecutionEventResponse.Unmarshal(m, b)
@@ -173,9 +177,11 @@ func (m *NodeExecutionEventResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_NodeExecutionEventResponse proto.InternalMessageInfo
 
+// Request to send a notification that a task execution event has occurred.
 type TaskExecutionEventRequest struct {
 	// Unique ID for this request that can be traced between services
-	RequestId            string                    `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
+	RequestId string `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
+	// Details about the event that occurred.
 	Event                *event.TaskExecutionEvent `protobuf:"bytes,2,opt,name=event,proto3" json:"event,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                  `json:"-"`
 	XXX_unrecognized     []byte                    `json:"-"`
@@ -186,7 +192,7 @@ func (m *TaskExecutionEventRequest) Reset()         { *m = TaskExecutionEventReq
 func (m *TaskExecutionEventRequest) String() string { return proto.CompactTextString(m) }
 func (*TaskExecutionEventRequest) ProtoMessage()    {}
 func (*TaskExecutionEventRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_event_f4f68ca36c17de68, []int{4}
+	return fileDescriptor_event_6a51730a0688e436, []int{4}
 }
 func (m *TaskExecutionEventRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecutionEventRequest.Unmarshal(m, b)
@@ -230,7 +236,7 @@ func (m *TaskExecutionEventResponse) Reset()         { *m = TaskExecutionEventRe
 func (m *TaskExecutionEventResponse) String() string { return proto.CompactTextString(m) }
 func (*TaskExecutionEventResponse) ProtoMessage()    {}
 func (*TaskExecutionEventResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_event_f4f68ca36c17de68, []int{5}
+	return fileDescriptor_event_6a51730a0688e436, []int{5}
 }
 func (m *TaskExecutionEventResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskExecutionEventResponse.Unmarshal(m, b)
@@ -259,9 +265,9 @@ func init() {
 	proto.RegisterType((*TaskExecutionEventResponse)(nil), "flyteidl.admin.TaskExecutionEventResponse")
 }
 
-func init() { proto.RegisterFile("flyteidl/admin/event.proto", fileDescriptor_event_f4f68ca36c17de68) }
+func init() { proto.RegisterFile("flyteidl/admin/event.proto", fileDescriptor_event_6a51730a0688e436) }
 
-var fileDescriptor_event_f4f68ca36c17de68 = []byte{
+var fileDescriptor_event_6a51730a0688e436 = []byte{
 	// 241 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x92, 0x4a, 0xcb, 0xa9, 0x2c,
 	0x49, 0xcd, 0x4c, 0xc9, 0xd1, 0x4f, 0x4c, 0xc9, 0xcd, 0xcc, 0xd3, 0x4f, 0x2d, 0x4b, 0xcd, 0x2b,

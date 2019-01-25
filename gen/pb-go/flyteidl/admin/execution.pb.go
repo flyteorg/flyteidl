@@ -21,13 +21,19 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
+// The method by which this execution was launched.
 type ExecutionMetadata_ExecutionMode int32
 
 const (
-	ExecutionMetadata_MANUAL         ExecutionMetadata_ExecutionMode = 0
-	ExecutionMetadata_SCHEDULED      ExecutionMetadata_ExecutionMode = 1
-	ExecutionMetadata_SYSTEM         ExecutionMetadata_ExecutionMode = 2
-	ExecutionMetadata_RELAUNCH       ExecutionMetadata_ExecutionMode = 3
+	// The default execution mode, MANUAL implies that an execution was launched by an individual.
+	ExecutionMetadata_MANUAL ExecutionMetadata_ExecutionMode = 0
+	// A schedule triggered this execution launch.
+	ExecutionMetadata_SCHEDULED ExecutionMetadata_ExecutionMode = 1
+	// A system process was responsible for launching this execution rather an individual.
+	ExecutionMetadata_SYSTEM ExecutionMetadata_ExecutionMode = 2
+	// This execution was launched with identical inputs as a previous execution.
+	ExecutionMetadata_RELAUNCH ExecutionMetadata_ExecutionMode = 3
+	// This execution was triggered by another execution.
 	ExecutionMetadata_CHILD_WORKFLOW ExecutionMetadata_ExecutionMode = 4
 )
 
@@ -50,9 +56,10 @@ func (x ExecutionMetadata_ExecutionMode) String() string {
 	return proto.EnumName(ExecutionMetadata_ExecutionMode_name, int32(x))
 }
 func (ExecutionMetadata_ExecutionMode) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_execution_623c2f8d00475ebc, []int{8, 0}
+	return fileDescriptor_execution_388c99a5f2f58a35, []int{8, 0}
 }
 
+// Request to launch an execution with the given project, domain and optionally name.
 type ExecutionCreateRequest struct {
 	// Name of the project the execution belongs to.
 	Project string `protobuf:"bytes,1,opt,name=project,proto3" json:"project,omitempty"`
@@ -62,7 +69,8 @@ type ExecutionCreateRequest struct {
 	// User provided value for the resource.
 	// If none is provided the system will generate a unique string.
 	// +optional
-	Name                 string         `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	// Additional fields necessary to launch the execution.
 	Spec                 *ExecutionSpec `protobuf:"bytes,4,opt,name=spec,proto3" json:"spec,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
 	XXX_unrecognized     []byte         `json:"-"`
@@ -73,7 +81,7 @@ func (m *ExecutionCreateRequest) Reset()         { *m = ExecutionCreateRequest{}
 func (m *ExecutionCreateRequest) String() string { return proto.CompactTextString(m) }
 func (*ExecutionCreateRequest) ProtoMessage()    {}
 func (*ExecutionCreateRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_execution_623c2f8d00475ebc, []int{0}
+	return fileDescriptor_execution_388c99a5f2f58a35, []int{0}
 }
 func (m *ExecutionCreateRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ExecutionCreateRequest.Unmarshal(m, b)
@@ -121,6 +129,7 @@ func (m *ExecutionCreateRequest) GetSpec() *ExecutionSpec {
 	return nil
 }
 
+// Request to relaunch the referenced execution.
 type ExecutionRelaunchRequest struct {
 	// Identifier of the workflow execution to relaunch.
 	Id *core.WorkflowExecutionIdentifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -137,7 +146,7 @@ func (m *ExecutionRelaunchRequest) Reset()         { *m = ExecutionRelaunchReque
 func (m *ExecutionRelaunchRequest) String() string { return proto.CompactTextString(m) }
 func (*ExecutionRelaunchRequest) ProtoMessage()    {}
 func (*ExecutionRelaunchRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_execution_623c2f8d00475ebc, []int{1}
+	return fileDescriptor_execution_388c99a5f2f58a35, []int{1}
 }
 func (m *ExecutionRelaunchRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ExecutionRelaunchRequest.Unmarshal(m, b)
@@ -171,6 +180,8 @@ func (m *ExecutionRelaunchRequest) GetName() string {
 	return ""
 }
 
+// The unique identifier for a successfully created execution.
+// If the name was *not* specified in the create request, this identifier will include a generated name.
 type ExecutionCreateResponse struct {
 	Id                   *core.WorkflowExecutionIdentifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                          `json:"-"`
@@ -182,7 +193,7 @@ func (m *ExecutionCreateResponse) Reset()         { *m = ExecutionCreateResponse
 func (m *ExecutionCreateResponse) String() string { return proto.CompactTextString(m) }
 func (*ExecutionCreateResponse) ProtoMessage()    {}
 func (*ExecutionCreateResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_execution_623c2f8d00475ebc, []int{2}
+	return fileDescriptor_execution_388c99a5f2f58a35, []int{2}
 }
 func (m *ExecutionCreateResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ExecutionCreateResponse.Unmarshal(m, b)
@@ -222,7 +233,7 @@ func (m *WorkflowExecutionGetRequest) Reset()         { *m = WorkflowExecutionGe
 func (m *WorkflowExecutionGetRequest) String() string { return proto.CompactTextString(m) }
 func (*WorkflowExecutionGetRequest) ProtoMessage()    {}
 func (*WorkflowExecutionGetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_execution_623c2f8d00475ebc, []int{3}
+	return fileDescriptor_execution_388c99a5f2f58a35, []int{3}
 }
 func (m *WorkflowExecutionGetRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_WorkflowExecutionGetRequest.Unmarshal(m, b)
@@ -249,20 +260,26 @@ func (m *WorkflowExecutionGetRequest) GetId() *core.WorkflowExecutionIdentifier 
 	return nil
 }
 
+// A workflow execution represents an instantiated workflow, including all inputs and additional
+// metadata as well as computed results included state, outputs, and duration-based attributes.
+// Used as a response object used in Get and List execution requests.
 type Execution struct {
-	Id                   *core.WorkflowExecutionIdentifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Spec                 *ExecutionSpec                    `protobuf:"bytes,2,opt,name=spec,proto3" json:"spec,omitempty"`
-	Closure              *ExecutionClosure                 `protobuf:"bytes,3,opt,name=closure,proto3" json:"closure,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                          `json:"-"`
-	XXX_unrecognized     []byte                            `json:"-"`
-	XXX_sizecache        int32                             `json:"-"`
+	// Unique identifier of the workflow execution.
+	Id *core.WorkflowExecutionIdentifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// User-provided configuration and inputs for launching the execution.
+	Spec *ExecutionSpec `protobuf:"bytes,2,opt,name=spec,proto3" json:"spec,omitempty"`
+	// Execution results.
+	Closure              *ExecutionClosure `protobuf:"bytes,3,opt,name=closure,proto3" json:"closure,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
 }
 
 func (m *Execution) Reset()         { *m = Execution{} }
 func (m *Execution) String() string { return proto.CompactTextString(m) }
 func (*Execution) ProtoMessage()    {}
 func (*Execution) Descriptor() ([]byte, []int) {
-	return fileDescriptor_execution_623c2f8d00475ebc, []int{4}
+	return fileDescriptor_execution_388c99a5f2f58a35, []int{4}
 }
 func (m *Execution) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Execution.Unmarshal(m, b)
@@ -303,6 +320,7 @@ func (m *Execution) GetClosure() *ExecutionClosure {
 	return nil
 }
 
+// Used as a response for request to list executions.
 type ExecutionList struct {
 	Executions []*Execution `protobuf:"bytes,1,rep,name=executions,proto3" json:"executions,omitempty"`
 	// In the case of multiple pages of results, the server-provided token can be used to fetch the next page
@@ -317,7 +335,7 @@ func (m *ExecutionList) Reset()         { *m = ExecutionList{} }
 func (m *ExecutionList) String() string { return proto.CompactTextString(m) }
 func (*ExecutionList) ProtoMessage()    {}
 func (*ExecutionList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_execution_623c2f8d00475ebc, []int{5}
+	return fileDescriptor_execution_388c99a5f2f58a35, []int{5}
 }
 func (m *ExecutionList) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ExecutionList.Unmarshal(m, b)
@@ -351,7 +369,7 @@ func (m *ExecutionList) GetToken() string {
 	return ""
 }
 
-// Input/output data can represented by actual values or a link to where it is stored
+// Input/output data can represented by actual values or a link to where values are stored
 type LiteralMapBlob struct {
 	// Types that are valid to be assigned to Data:
 	//	*LiteralMapBlob_Values
@@ -366,7 +384,7 @@ func (m *LiteralMapBlob) Reset()         { *m = LiteralMapBlob{} }
 func (m *LiteralMapBlob) String() string { return proto.CompactTextString(m) }
 func (*LiteralMapBlob) ProtoMessage()    {}
 func (*LiteralMapBlob) Descriptor() ([]byte, []int) {
-	return fileDescriptor_execution_623c2f8d00475ebc, []int{6}
+	return fileDescriptor_execution_388c99a5f2f58a35, []int{6}
 }
 func (m *LiteralMapBlob) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LiteralMapBlob.Unmarshal(m, b)
@@ -495,6 +513,9 @@ func _LiteralMapBlob_OneofSizer(msg proto.Message) (n int) {
 
 // Encapsulates the results of the Execution
 type ExecutionClosure struct {
+	// A result produced by a terminated execution.
+	// A pending (non-terminal) execution will not have any output result.
+	//
 	// Types that are valid to be assigned to OutputResult:
 	//	*ExecutionClosure_Outputs
 	//	*ExecutionClosure_Error
@@ -503,18 +524,19 @@ type ExecutionClosure struct {
 	// Inputs computed and passed for execution.
 	// computed_inputs depends on inputs in ExecutionSpec, fixed and default inputs in launch plan
 	ComputedInputs *core.LiteralMap `protobuf:"bytes,3,opt,name=computed_inputs,json=computedInputs,proto3" json:"computed_inputs,omitempty"`
-	// Phase of the executions
+	// Most recent recorded phase for the execution.
 	Phase core.WorkflowExecutionPhase `protobuf:"varint,4,opt,name=phase,proto3,enum=flyteidl.core.WorkflowExecutionPhase" json:"phase,omitempty"`
-	// Time at which the execution began running.
+	// Reported ime at which the execution began running.
 	StartedAt *timestamp.Timestamp `protobuf:"bytes,5,opt,name=started_at,json=startedAt,proto3" json:"started_at,omitempty"`
 	// The amount of time the execution spent running.
 	Duration *duration.Duration `protobuf:"bytes,6,opt,name=duration,proto3" json:"duration,omitempty"`
-	// Time at which the execution was created.
+	// Reported time at which the execution was created.
 	CreatedAt *timestamp.Timestamp `protobuf:"bytes,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	// Time at which the execution was last updated.
+	// Reported time at which the execution was last updated.
 	UpdatedAt *timestamp.Timestamp `protobuf:"bytes,8,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
 	// The notification settings to use after merging the CreateExecutionRequest and the launch plan
-	// notification settings.
+	// notification settings. An execution launched with notifications will always prefer that definition
+	// to notifications defined statically in a launch plan.
 	Notifications []*Notification `protobuf:"bytes,9,rep,name=notifications,proto3" json:"notifications,omitempty"`
 	// Identifies the workflow definition for this execution.
 	WorkflowId           *core.Identifier `protobuf:"bytes,11,opt,name=workflow_id,json=workflowId,proto3" json:"workflow_id,omitempty"`
@@ -527,7 +549,7 @@ func (m *ExecutionClosure) Reset()         { *m = ExecutionClosure{} }
 func (m *ExecutionClosure) String() string { return proto.CompactTextString(m) }
 func (*ExecutionClosure) ProtoMessage()    {}
 func (*ExecutionClosure) Descriptor() ([]byte, []int) {
-	return fileDescriptor_execution_623c2f8d00475ebc, []int{7}
+	return fileDescriptor_execution_388c99a5f2f58a35, []int{7}
 }
 func (m *ExecutionClosure) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ExecutionClosure.Unmarshal(m, b)
@@ -742,6 +764,8 @@ func _ExecutionClosure_OneofSizer(msg proto.Message) (n int) {
 	return n
 }
 
+// Represents attributes about an execution which are not required to launch the execution but are useful to record.
+// These attributes are assigned at launch time and do not change.
 type ExecutionMetadata struct {
 	Mode ExecutionMetadata_ExecutionMode `protobuf:"varint,1,opt,name=mode,proto3,enum=flyteidl.admin.ExecutionMetadata_ExecutionMode" json:"mode,omitempty"`
 	// Identifier of the entity that triggered this execution.
@@ -761,7 +785,7 @@ func (m *ExecutionMetadata) Reset()         { *m = ExecutionMetadata{} }
 func (m *ExecutionMetadata) String() string { return proto.CompactTextString(m) }
 func (*ExecutionMetadata) ProtoMessage()    {}
 func (*ExecutionMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_execution_623c2f8d00475ebc, []int{8}
+	return fileDescriptor_execution_388c99a5f2f58a35, []int{8}
 }
 func (m *ExecutionMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ExecutionMetadata.Unmarshal(m, b)
@@ -802,6 +826,8 @@ func (m *ExecutionMetadata) GetNesting() int32 {
 	return 0
 }
 
+// An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime
+// of an execution as it progresses across phase changes..
 type ExecutionSpec struct {
 	// Launch plan to be executed
 	LaunchPlan *core.Identifier `protobuf:"bytes,1,opt,name=launch_plan,json=launchPlan,proto3" json:"launch_plan,omitempty"`
@@ -810,6 +836,7 @@ type ExecutionSpec struct {
 	// Metadata for the execution
 	Metadata *ExecutionMetadata `protobuf:"bytes,3,opt,name=metadata,proto3" json:"metadata,omitempty"`
 	// List of notifications based on Execution status transitions
+	// When this list is not empty it is used rather than any notifications defined in the referenced launch plan.
 	Notifications        []*Notification `protobuf:"bytes,4,rep,name=notifications,proto3" json:"notifications,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
 	XXX_unrecognized     []byte          `json:"-"`
@@ -820,7 +847,7 @@ func (m *ExecutionSpec) Reset()         { *m = ExecutionSpec{} }
 func (m *ExecutionSpec) String() string { return proto.CompactTextString(m) }
 func (*ExecutionSpec) ProtoMessage()    {}
 func (*ExecutionSpec) Descriptor() ([]byte, []int) {
-	return fileDescriptor_execution_623c2f8d00475ebc, []int{9}
+	return fileDescriptor_execution_388c99a5f2f58a35, []int{9}
 }
 func (m *ExecutionSpec) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ExecutionSpec.Unmarshal(m, b)
@@ -868,6 +895,11 @@ func (m *ExecutionSpec) GetNotifications() []*Notification {
 	return nil
 }
 
+// Request to terminate an in-progress execution.  This action is irreversible.
+// If an execution is already terminated, this request will simply be a no-op.
+// This request will fail if it references a non-existent execution.
+// If the request succeeds the phase "ABORTED" will be recorded for the termination
+// with the optional cause added to the output_result.
 type ExecutionTerminateRequest struct {
 	// Uniquely identifies the individual workflow execution to be terminated.
 	Id *core.WorkflowExecutionIdentifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -882,7 +914,7 @@ func (m *ExecutionTerminateRequest) Reset()         { *m = ExecutionTerminateReq
 func (m *ExecutionTerminateRequest) String() string { return proto.CompactTextString(m) }
 func (*ExecutionTerminateRequest) ProtoMessage()    {}
 func (*ExecutionTerminateRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_execution_623c2f8d00475ebc, []int{10}
+	return fileDescriptor_execution_388c99a5f2f58a35, []int{10}
 }
 func (m *ExecutionTerminateRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ExecutionTerminateRequest.Unmarshal(m, b)
@@ -926,7 +958,7 @@ func (m *ExecutionTerminateResponse) Reset()         { *m = ExecutionTerminateRe
 func (m *ExecutionTerminateResponse) String() string { return proto.CompactTextString(m) }
 func (*ExecutionTerminateResponse) ProtoMessage()    {}
 func (*ExecutionTerminateResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_execution_623c2f8d00475ebc, []int{11}
+	return fileDescriptor_execution_388c99a5f2f58a35, []int{11}
 }
 func (m *ExecutionTerminateResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ExecutionTerminateResponse.Unmarshal(m, b)
@@ -963,10 +995,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/admin/execution.proto", fileDescriptor_execution_623c2f8d00475ebc)
+	proto.RegisterFile("flyteidl/admin/execution.proto", fileDescriptor_execution_388c99a5f2f58a35)
 }
 
-var fileDescriptor_execution_623c2f8d00475ebc = []byte{
+var fileDescriptor_execution_388c99a5f2f58a35 = []byte{
 	// 930 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x56, 0xdd, 0x6e, 0xdb, 0x36,
 	0x14, 0xf6, 0x7f, 0xe2, 0xe3, 0xc5, 0xf5, 0x88, 0xa2, 0x53, 0xdc, 0x34, 0x4b, 0x05, 0x0c, 0x08,

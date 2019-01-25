@@ -35,7 +35,7 @@ func (m *WorkflowCreateRequest) Reset()         { *m = WorkflowCreateRequest{} }
 func (m *WorkflowCreateRequest) String() string { return proto.CompactTextString(m) }
 func (*WorkflowCreateRequest) ProtoMessage()    {}
 func (*WorkflowCreateRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_workflow_155d56ab38736e44, []int{0}
+	return fileDescriptor_workflow_3b9bde175ae134be, []int{0}
 }
 func (m *WorkflowCreateRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_WorkflowCreateRequest.Unmarshal(m, b)
@@ -69,7 +69,6 @@ func (m *WorkflowCreateRequest) GetSpec() *WorkflowSpec {
 	return nil
 }
 
-// Represents a response structure if workflow creation succeeds.
 type WorkflowCreateResponse struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -80,7 +79,7 @@ func (m *WorkflowCreateResponse) Reset()         { *m = WorkflowCreateResponse{}
 func (m *WorkflowCreateResponse) String() string { return proto.CompactTextString(m) }
 func (*WorkflowCreateResponse) ProtoMessage()    {}
 func (*WorkflowCreateResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_workflow_155d56ab38736e44, []int{1}
+	return fileDescriptor_workflow_3b9bde175ae134be, []int{1}
 }
 func (m *WorkflowCreateResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_WorkflowCreateResponse.Unmarshal(m, b)
@@ -101,6 +100,8 @@ func (m *WorkflowCreateResponse) XXX_DiscardUnknown() {
 var xxx_messageInfo_WorkflowCreateResponse proto.InternalMessageInfo
 
 // Represents the workflow structure stored in the Admin
+// A workflow is created by ordering tasks and associating outputs to inputs
+// in order to produce a directed-acyclic execution graph.
 type Workflow struct {
 	// id represents the unique identifier of the workflow.
 	Id *core.Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -115,7 +116,7 @@ func (m *Workflow) Reset()         { *m = Workflow{} }
 func (m *Workflow) String() string { return proto.CompactTextString(m) }
 func (*Workflow) ProtoMessage()    {}
 func (*Workflow) Descriptor() ([]byte, []int) {
-	return fileDescriptor_workflow_155d56ab38736e44, []int{2}
+	return fileDescriptor_workflow_3b9bde175ae134be, []int{2}
 }
 func (m *Workflow) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Workflow.Unmarshal(m, b)
@@ -165,7 +166,7 @@ func (m *WorkflowList) Reset()         { *m = WorkflowList{} }
 func (m *WorkflowList) String() string { return proto.CompactTextString(m) }
 func (*WorkflowList) ProtoMessage()    {}
 func (*WorkflowList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_workflow_155d56ab38736e44, []int{3}
+	return fileDescriptor_workflow_3b9bde175ae134be, []int{3}
 }
 func (m *WorkflowList) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_WorkflowList.Unmarshal(m, b)
@@ -212,7 +213,7 @@ func (m *WorkflowSpec) Reset()         { *m = WorkflowSpec{} }
 func (m *WorkflowSpec) String() string { return proto.CompactTextString(m) }
 func (*WorkflowSpec) ProtoMessage()    {}
 func (*WorkflowSpec) Descriptor() ([]byte, []int) {
-	return fileDescriptor_workflow_155d56ab38736e44, []int{4}
+	return fileDescriptor_workflow_3b9bde175ae134be, []int{4}
 }
 func (m *WorkflowSpec) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_WorkflowSpec.Unmarshal(m, b)
@@ -239,7 +240,7 @@ func (m *WorkflowSpec) GetTemplate() *core.WorkflowTemplate {
 	return nil
 }
 
-// Represents an encapsulation of the workflow compilation.
+// A container holding the compiled workflow produced from the WorkflowSpec and additional metadata.
 type WorkflowClosure struct {
 	// Represents the compiled representation of the workflow from the specification provided.
 	CompiledWorkflow *core.CompiledWorkflowClosure `protobuf:"bytes,1,opt,name=compiled_workflow,json=compiledWorkflow,proto3" json:"compiled_workflow,omitempty"`
@@ -254,7 +255,7 @@ func (m *WorkflowClosure) Reset()         { *m = WorkflowClosure{} }
 func (m *WorkflowClosure) String() string { return proto.CompactTextString(m) }
 func (*WorkflowClosure) ProtoMessage()    {}
 func (*WorkflowClosure) Descriptor() ([]byte, []int) {
-	return fileDescriptor_workflow_155d56ab38736e44, []int{5}
+	return fileDescriptor_workflow_3b9bde175ae134be, []int{5}
 }
 func (m *WorkflowClosure) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_WorkflowClosure.Unmarshal(m, b)
@@ -298,10 +299,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/admin/workflow.proto", fileDescriptor_workflow_155d56ab38736e44)
+	proto.RegisterFile("flyteidl/admin/workflow.proto", fileDescriptor_workflow_3b9bde175ae134be)
 }
 
-var fileDescriptor_workflow_155d56ab38736e44 = []byte{
+var fileDescriptor_workflow_3b9bde175ae134be = []byte{
 	// 406 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x92, 0xdf, 0x6b, 0xd5, 0x30,
 	0x1c, 0xc5, 0xb9, 0xd7, 0x5f, 0xbb, 0x99, 0xf8, 0x23, 0xa8, 0xd4, 0xeb, 0xf4, 0x8e, 0x3e, 0xc8,

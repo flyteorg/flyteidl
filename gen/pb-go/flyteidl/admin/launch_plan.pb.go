@@ -20,7 +20,11 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
-// Indicates various states of an Execution - both task and workflow
+// By default any launch plan regardless of state can be used to launch a workflow execution.
+// However, at most one version of a launch plan
+// (e.g. a NamedEntityIdentifier set of shared project, domain and name values) can be
+// active at a time in regards to *schedules*. That is, at most one schedule in a NamedEntityIdentifier
+// group will be observed and trigger executions at a defined cadence.
 type LaunchPlanState int32
 
 const (
@@ -41,22 +45,27 @@ func (x LaunchPlanState) String() string {
 	return proto.EnumName(LaunchPlanState_name, int32(x))
 }
 func (LaunchPlanState) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_cf5b2f286705e74e, []int{0}
+	return fileDescriptor_launch_plan_2f23f84ce3f36ada, []int{0}
 }
 
+// Request to register a launch plan. A LaunchPlanSpec may include a complete or incomplete set of inputs required
+// to launch a workflow execution. By default all launch plans are registered in state INACTIVE. If you wish to
+// set the state to ACTIVE, you must submit a LaunchPlanUpdateRequest, after you have created a launch plan.
 type LaunchPlanCreateRequest struct {
-	Id                   *core.Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Spec                 *LaunchPlanSpec  `protobuf:"bytes,2,opt,name=spec,proto3" json:"spec,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
-	XXX_unrecognized     []byte           `json:"-"`
-	XXX_sizecache        int32            `json:"-"`
+	// Uniquely identifies a launch plan entity.
+	Id *core.Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// User-provided launch plan details, including reference workflow, inputs and other metadata.
+	Spec                 *LaunchPlanSpec `protobuf:"bytes,2,opt,name=spec,proto3" json:"spec,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
+	XXX_unrecognized     []byte          `json:"-"`
+	XXX_sizecache        int32           `json:"-"`
 }
 
 func (m *LaunchPlanCreateRequest) Reset()         { *m = LaunchPlanCreateRequest{} }
 func (m *LaunchPlanCreateRequest) String() string { return proto.CompactTextString(m) }
 func (*LaunchPlanCreateRequest) ProtoMessage()    {}
 func (*LaunchPlanCreateRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_cf5b2f286705e74e, []int{0}
+	return fileDescriptor_launch_plan_2f23f84ce3f36ada, []int{0}
 }
 func (m *LaunchPlanCreateRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LaunchPlanCreateRequest.Unmarshal(m, b)
@@ -100,7 +109,7 @@ func (m *LaunchPlanCreateResponse) Reset()         { *m = LaunchPlanCreateRespon
 func (m *LaunchPlanCreateResponse) String() string { return proto.CompactTextString(m) }
 func (*LaunchPlanCreateResponse) ProtoMessage()    {}
 func (*LaunchPlanCreateResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_cf5b2f286705e74e, []int{1}
+	return fileDescriptor_launch_plan_2f23f84ce3f36ada, []int{1}
 }
 func (m *LaunchPlanCreateResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LaunchPlanCreateResponse.Unmarshal(m, b)
@@ -120,6 +129,10 @@ func (m *LaunchPlanCreateResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_LaunchPlanCreateResponse proto.InternalMessageInfo
 
+// A LaunchPlan provides the capability to templatize workflow executions.
+// Launch plans simplify associating one or more schedules, inputs and notifications with your workflows.
+// Launch plans can be shared and used to trigger executions with predefined inputs even when a workflow
+// definition doesn't necessarily have a default value for said input.
 type LaunchPlan struct {
 	Id                   *core.Identifier   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Spec                 *LaunchPlanSpec    `protobuf:"bytes,2,opt,name=spec,proto3" json:"spec,omitempty"`
@@ -133,7 +146,7 @@ func (m *LaunchPlan) Reset()         { *m = LaunchPlan{} }
 func (m *LaunchPlan) String() string { return proto.CompactTextString(m) }
 func (*LaunchPlan) ProtoMessage()    {}
 func (*LaunchPlan) Descriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_cf5b2f286705e74e, []int{2}
+	return fileDescriptor_launch_plan_2f23f84ce3f36ada, []int{2}
 }
 func (m *LaunchPlan) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LaunchPlan.Unmarshal(m, b)
@@ -174,6 +187,7 @@ func (m *LaunchPlan) GetClosure() *LaunchPlanClosure {
 	return nil
 }
 
+// Response object for list launch plan requests.
 type LaunchPlanList struct {
 	LaunchPlans []*LaunchPlan `protobuf:"bytes,1,rep,name=launch_plans,json=launchPlans,proto3" json:"launch_plans,omitempty"`
 	// In the case of multiple pages of results, the server-provided token can be used to fetch the next page
@@ -188,7 +202,7 @@ func (m *LaunchPlanList) Reset()         { *m = LaunchPlanList{} }
 func (m *LaunchPlanList) String() string { return proto.CompactTextString(m) }
 func (*LaunchPlanList) ProtoMessage()    {}
 func (*LaunchPlanList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_cf5b2f286705e74e, []int{3}
+	return fileDescriptor_launch_plan_2f23f84ce3f36ada, []int{3}
 }
 func (m *LaunchPlanList) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LaunchPlanList.Unmarshal(m, b)
@@ -222,6 +236,7 @@ func (m *LaunchPlanList) GetToken() string {
 	return ""
 }
 
+// User-provided launch plan definition and configuration values.
 type LaunchPlanSpec struct {
 	// Reference to the Workflow template that the launch plan references
 	WorkflowId *core.Identifier `protobuf:"bytes,1,opt,name=workflow_id,json=workflowId,proto3" json:"workflow_id,omitempty"`
@@ -242,7 +257,7 @@ func (m *LaunchPlanSpec) Reset()         { *m = LaunchPlanSpec{} }
 func (m *LaunchPlanSpec) String() string { return proto.CompactTextString(m) }
 func (*LaunchPlanSpec) ProtoMessage()    {}
 func (*LaunchPlanSpec) Descriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_cf5b2f286705e74e, []int{4}
+	return fileDescriptor_launch_plan_2f23f84ce3f36ada, []int{4}
 }
 func (m *LaunchPlanSpec) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LaunchPlanSpec.Unmarshal(m, b)
@@ -297,6 +312,9 @@ func (m *LaunchPlanSpec) GetRole() string {
 	return ""
 }
 
+// Values computed by the flyte platform after launch plan registration.
+// These include expected_inputs required to be present in a CreateExecutionRequest
+// to launch the reference workflow as well timestamp values associated with the launch plan.
 type LaunchPlanClosure struct {
 	// Indicate the Launch plan phase
 	State LaunchPlanState `protobuf:"varint,1,opt,name=state,proto3,enum=flyteidl.admin.LaunchPlanState" json:"state,omitempty"`
@@ -317,7 +335,7 @@ func (m *LaunchPlanClosure) Reset()         { *m = LaunchPlanClosure{} }
 func (m *LaunchPlanClosure) String() string { return proto.CompactTextString(m) }
 func (*LaunchPlanClosure) ProtoMessage()    {}
 func (*LaunchPlanClosure) Descriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_cf5b2f286705e74e, []int{5}
+	return fileDescriptor_launch_plan_2f23f84ce3f36ada, []int{5}
 }
 func (m *LaunchPlanClosure) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LaunchPlanClosure.Unmarshal(m, b)
@@ -372,6 +390,8 @@ func (m *LaunchPlanClosure) GetUpdatedAt() *timestamp.Timestamp {
 	return nil
 }
 
+// Additional launch plan attributes included in the LaunchPlanSpec not strictly required to launch
+// the reference workflow.
 type LaunchPlanMetadata struct {
 	// Schedule to execute the Launch Plan
 	Schedule *Schedule `protobuf:"bytes,1,opt,name=schedule,proto3" json:"schedule,omitempty"`
@@ -386,7 +406,7 @@ func (m *LaunchPlanMetadata) Reset()         { *m = LaunchPlanMetadata{} }
 func (m *LaunchPlanMetadata) String() string { return proto.CompactTextString(m) }
 func (*LaunchPlanMetadata) ProtoMessage()    {}
 func (*LaunchPlanMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_cf5b2f286705e74e, []int{6}
+	return fileDescriptor_launch_plan_2f23f84ce3f36ada, []int{6}
 }
 func (m *LaunchPlanMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LaunchPlanMetadata.Unmarshal(m, b)
@@ -420,6 +440,7 @@ func (m *LaunchPlanMetadata) GetNotifications() []*Notification {
 	return nil
 }
 
+// Request to set the referenced launch plan state to the configured value.
 type LaunchPlanUpdateRequest struct {
 	// Identifier of launch plan for which to change state.
 	Id *core.Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -434,7 +455,7 @@ func (m *LaunchPlanUpdateRequest) Reset()         { *m = LaunchPlanUpdateRequest
 func (m *LaunchPlanUpdateRequest) String() string { return proto.CompactTextString(m) }
 func (*LaunchPlanUpdateRequest) ProtoMessage()    {}
 func (*LaunchPlanUpdateRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_cf5b2f286705e74e, []int{7}
+	return fileDescriptor_launch_plan_2f23f84ce3f36ada, []int{7}
 }
 func (m *LaunchPlanUpdateRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LaunchPlanUpdateRequest.Unmarshal(m, b)
@@ -479,7 +500,7 @@ func (m *LaunchPlanUpdateResponse) Reset()         { *m = LaunchPlanUpdateRespon
 func (m *LaunchPlanUpdateResponse) String() string { return proto.CompactTextString(m) }
 func (*LaunchPlanUpdateResponse) ProtoMessage()    {}
 func (*LaunchPlanUpdateResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_launch_plan_cf5b2f286705e74e, []int{8}
+	return fileDescriptor_launch_plan_2f23f84ce3f36ada, []int{8}
 }
 func (m *LaunchPlanUpdateResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_LaunchPlanUpdateResponse.Unmarshal(m, b)
@@ -513,10 +534,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/admin/launch_plan.proto", fileDescriptor_launch_plan_cf5b2f286705e74e)
+	proto.RegisterFile("flyteidl/admin/launch_plan.proto", fileDescriptor_launch_plan_2f23f84ce3f36ada)
 }
 
-var fileDescriptor_launch_plan_cf5b2f286705e74e = []byte{
+var fileDescriptor_launch_plan_2f23f84ce3f36ada = []byte{
 	// 681 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x54, 0x4d, 0x53, 0xd4, 0x4c,
 	0x10, 0x7e, 0x77, 0x61, 0x79, 0xa1, 0x17, 0x16, 0xde, 0xa9, 0xb7, 0xca, 0x18, 0x10, 0x30, 0x27,

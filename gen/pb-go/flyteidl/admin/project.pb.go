@@ -18,6 +18,8 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
+// Namespace within a project commonly used to differentiate between different service instances.
+// e.g. "production", "development", etc.
 type Domain struct {
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// Display name.
@@ -31,7 +33,7 @@ func (m *Domain) Reset()         { *m = Domain{} }
 func (m *Domain) String() string { return proto.CompactTextString(m) }
 func (*Domain) ProtoMessage()    {}
 func (*Domain) Descriptor() ([]byte, []int) {
-	return fileDescriptor_project_3a260572ca4c894f, []int{0}
+	return fileDescriptor_project_ea953b96dd5fcc03, []int{0}
 }
 func (m *Domain) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Domain.Unmarshal(m, b)
@@ -65,6 +67,7 @@ func (m *Domain) GetName() string {
 	return ""
 }
 
+// Top-level namespace used to classify different entities like workflows and executions.
 type Project struct {
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// Display name.
@@ -79,7 +82,7 @@ func (m *Project) Reset()         { *m = Project{} }
 func (m *Project) String() string { return proto.CompactTextString(m) }
 func (*Project) ProtoMessage()    {}
 func (*Project) Descriptor() ([]byte, []int) {
-	return fileDescriptor_project_3a260572ca4c894f, []int{1}
+	return fileDescriptor_project_ea953b96dd5fcc03, []int{1}
 }
 func (m *Project) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Project.Unmarshal(m, b)
@@ -131,7 +134,7 @@ func (m *Projects) Reset()         { *m = Projects{} }
 func (m *Projects) String() string { return proto.CompactTextString(m) }
 func (*Projects) ProtoMessage()    {}
 func (*Projects) Descriptor() ([]byte, []int) {
-	return fileDescriptor_project_3a260572ca4c894f, []int{2}
+	return fileDescriptor_project_ea953b96dd5fcc03, []int{2}
 }
 func (m *Projects) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Projects.Unmarshal(m, b)
@@ -168,7 +171,7 @@ func (m *ProjectListRequest) Reset()         { *m = ProjectListRequest{} }
 func (m *ProjectListRequest) String() string { return proto.CompactTextString(m) }
 func (*ProjectListRequest) ProtoMessage()    {}
 func (*ProjectListRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_project_3a260572ca4c894f, []int{3}
+	return fileDescriptor_project_ea953b96dd5fcc03, []int{3}
 }
 func (m *ProjectListRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ProjectListRequest.Unmarshal(m, b)
@@ -198,7 +201,7 @@ func (m *ProjectRegisterResponse) Reset()         { *m = ProjectRegisterResponse
 func (m *ProjectRegisterResponse) String() string { return proto.CompactTextString(m) }
 func (*ProjectRegisterResponse) ProtoMessage()    {}
 func (*ProjectRegisterResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_project_3a260572ca4c894f, []int{4}
+	return fileDescriptor_project_ea953b96dd5fcc03, []int{4}
 }
 func (m *ProjectRegisterResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ProjectRegisterResponse.Unmarshal(m, b)
@@ -227,10 +230,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/admin/project.proto", fileDescriptor_project_3a260572ca4c894f)
+	proto.RegisterFile("flyteidl/admin/project.proto", fileDescriptor_project_ea953b96dd5fcc03)
 }
 
-var fileDescriptor_project_3a260572ca4c894f = []byte{
+var fileDescriptor_project_ea953b96dd5fcc03 = []byte{
 	// 237 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x90, 0x31, 0x4f, 0xc3, 0x30,
 	0x10, 0x85, 0x95, 0x14, 0xb5, 0xe5, 0x90, 0x3a, 0x58, 0x88, 0x06, 0x89, 0xa1, 0xf2, 0xd4, 0x01,

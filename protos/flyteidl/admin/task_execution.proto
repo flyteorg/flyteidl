@@ -11,6 +11,7 @@ import "google/protobuf/duration.proto";
 
 // A message used to fetch a single task execution entity.
 message TaskExecutionGetRequest {
+    // Unique identifier for the task execution.
     core.TaskExecutionIdentifier id = 1;
 }
 
@@ -33,15 +34,20 @@ message TaskExecutionListRequest {
 }
 
 // Encapsulates all details for a single task execution entity.
+// A task execution represents an instantiated task, including all inputs and additional
+// metadata as well as computed results included state, outputs, and duration-based attributes.
 message TaskExecution {
-    core.TaskExecutionIdentifier id             = 1;
+    // Unique identifier for the task execution.
+    core.TaskExecutionIdentifier id        = 1;
 
+    // Path to remote data store where input blob is stored.
     string input_uri                       = 2;
 
+    // Task execution details and results.
     TaskExecutionClosure closure           = 3;
 }
 
-// Request structure to retrieve a list of task execution entities.
+// Response structure for a query to list of task execution entities.
 message TaskExecutionList {
     repeated TaskExecution task_executions = 1;
 
@@ -53,15 +59,18 @@ message TaskExecutionList {
 // Container for task execution details and results.
 message TaskExecutionClosure {
     oneof output_result {
+        // Path to remote data store where output blob is stored if the execution succeeded (and produced outputs).
         string output_uri                  = 1;
 
-        // Error information for the Task
+        // Error information for the task execution. Populated if the execution failed.
         core.ExecutionError error          = 2;
     }
 
+    // The last recorded phase for this task execution.
     core.TaskExecutionPhase phase          = 3;
 
-    repeated core.TaskLog logs                  = 4;
+    // Detailed log information output by the task execution.
+    repeated core.TaskLog logs             = 4;
 
     // Time at which the task execution began running.
     google.protobuf.Timestamp started_at   = 5;

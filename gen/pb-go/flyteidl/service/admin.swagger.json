@@ -2488,7 +2488,8 @@
         "RELAUNCH",
         "CHILD_WORKFLOW"
       ],
-      "default": "MANUAL"
+      "default": "MANUAL",
+      "description": "The method by which this execution was launched.\n\n - MANUAL: The default execution mode, MANUAL implies that an execution was launched by an individual.\n - SCHEDULED: A schedule triggered this execution launch.\n - SYSTEM: A system process was responsible for launching this execution rather an individual.\n - RELAUNCH: This execution was launched with identical inputs as a previous execution.\n - CHILD_WORKFLOW: This execution was triggered by another execution."
     },
     "ResourcesResourceEntry": {
       "type": "object",
@@ -2576,7 +2577,8 @@
           "type": "string",
           "description": "Display name."
         }
-      }
+      },
+      "description": "Namespace within a project commonly used to differentiate between different service instances.\ne.g. \"production\", \"development\", etc."
     },
     "adminEmailNotification": {
       "type": "object",
@@ -2594,25 +2596,30 @@
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/coreWorkflowExecutionIdentifier"
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
+          "description": "Unique identifier of the workflow execution."
         },
         "spec": {
-          "$ref": "#/definitions/adminExecutionSpec"
+          "$ref": "#/definitions/adminExecutionSpec",
+          "description": "User-provided configuration and inputs for launching the execution."
         },
         "closure": {
-          "$ref": "#/definitions/adminExecutionClosure"
+          "$ref": "#/definitions/adminExecutionClosure",
+          "description": "Execution results."
         }
-      }
+      },
+      "description": "A workflow execution represents an instantiated workflow, including all inputs and additional\nmetadata as well as computed results included state, outputs, and duration-based attributes.\nUsed as a response object used in Get and List execution requests."
     },
     "adminExecutionClosure": {
       "type": "object",
       "properties": {
         "outputs": {
-          "$ref": "#/definitions/adminLiteralMapBlob"
+          "$ref": "#/definitions/adminLiteralMapBlob",
+          "description": "A map of outputs in the case of a successful execution."
         },
         "error": {
           "$ref": "#/definitions/coreExecutionError",
-          "title": "Error information for the Node"
+          "description": "Error information in the case of a failed execution."
         },
         "abort_cause": {
           "type": "string",
@@ -2624,12 +2631,12 @@
         },
         "phase": {
           "$ref": "#/definitions/coreWorkflowExecutionPhase",
-          "title": "Phase of the executions"
+          "description": "Most recent recorded phase for the execution."
         },
         "started_at": {
           "type": "string",
           "format": "date-time",
-          "description": "Time at which the execution began running."
+          "description": "Reported ime at which the execution began running."
         },
         "duration": {
           "type": "string",
@@ -2638,19 +2645,19 @@
         "created_at": {
           "type": "string",
           "format": "date-time",
-          "description": "Time at which the execution was created."
+          "description": "Reported time at which the execution was created."
         },
         "updated_at": {
           "type": "string",
           "format": "date-time",
-          "description": "Time at which the execution was last updated."
+          "description": "Reported time at which the execution was last updated."
         },
         "notifications": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/adminNotification"
           },
-          "description": "The notification settings to use after merging the CreateExecutionRequest and the launch plan\nnotification settings."
+          "description": "The notification settings to use after merging the CreateExecutionRequest and the launch plan\nnotification settings. An execution launched with notifications will always prefer that definition\nto notifications defined statically in a launch plan."
         },
         "workflow_id": {
           "$ref": "#/definitions/coreIdentifier",
@@ -2675,9 +2682,11 @@
           "title": "User provided value for the resource.\nIf none is provided the system will generate a unique string.\n+optional"
         },
         "spec": {
-          "$ref": "#/definitions/adminExecutionSpec"
+          "$ref": "#/definitions/adminExecutionSpec",
+          "description": "Additional fields necessary to launch the execution."
         }
-      }
+      },
+      "description": "Request to launch an execution with the given project, domain and optionally name."
     },
     "adminExecutionCreateResponse": {
       "type": "object",
@@ -2685,7 +2694,8 @@
         "id": {
           "$ref": "#/definitions/coreWorkflowExecutionIdentifier"
         }
-      }
+      },
+      "description": "The unique identifier for a successfully created execution.\nIf the name was *not* specified in the create request, this identifier will include a generated name."
     },
     "adminExecutionList": {
       "type": "object",
@@ -2700,7 +2710,8 @@
           "type": "string",
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
         }
-      }
+      },
+      "description": "Used as a response for request to list executions."
     },
     "adminExecutionMetadata": {
       "type": "object",
@@ -2717,7 +2728,8 @@
           "format": "int32",
           "description": "Indicates the \"nestedness\" of this execution.\nIf a user launches a workflow execution, the default nesting is 0.\nIf this execution further launches a workflow (child workflow), the nesting level is incremented by 0 =\u003e 1\nGenerally, if workflow at nesting level k launches a workflow then the child workflow will have\nnesting = k + 1."
         }
-      }
+      },
+      "description": "Represents attributes about an execution which are not required to launch the execution but are useful to record.\nThese attributes are assigned at launch time and do not change."
     },
     "adminExecutionRelaunchRequest": {
       "type": "object",
@@ -2730,7 +2742,8 @@
           "type": "string",
           "title": "User provided value for the relaunched execution.\nIf none is provided the system will generate a unique string.\n+optional"
         }
-      }
+      },
+      "description": "Request to relaunch the referenced execution."
     },
     "adminExecutionSpec": {
       "type": "object",
@@ -2752,9 +2765,10 @@
           "items": {
             "$ref": "#/definitions/adminNotification"
           },
-          "title": "List of notifications based on Execution status transitions"
+          "description": "List of notifications based on Execution status transitions\nWhen this list is not empty it is used rather than any notifications defined in the referenced launch plan."
         }
-      }
+      },
+      "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes.."
     },
     "adminExecutionTerminateRequest": {
       "type": "object",
@@ -2767,7 +2781,8 @@
           "type": "string",
           "description": "Optional reason for aborting."
         }
-      }
+      },
+      "description": "Request to terminate an in-progress execution.  This action is irreversible.\nIf an execution is already terminated, this request will simply be a no-op.\nThis request will fail if it references a non-existent execution.\nIf the request succeeds the phase \"ABORTED\" will be recorded for the termination\nwith the optional cause added to the output_result."
     },
     "adminExecutionTerminateResponse": {
       "type": "object"
@@ -2782,7 +2797,8 @@
         "unit": {
           "$ref": "#/definitions/adminFixedRateUnit"
         }
-      }
+      },
+      "description": "Option for schedules run at a certain frequency, e.g. every 2 minutes."
     },
     "adminFixedRateUnit": {
       "type": "string",
@@ -2791,7 +2807,8 @@
         "HOUR",
         "DAY"
       ],
-      "default": "MINUTE"
+      "default": "MINUTE",
+      "description": "Represents a frequency at which to run a schedule."
     },
     "adminLaunchPlan": {
       "type": "object",
@@ -2805,7 +2822,8 @@
         "closure": {
           "$ref": "#/definitions/adminLaunchPlanClosure"
         }
-      }
+      },
+      "description": "A LaunchPlan provides the capability to templatize workflow executions.\nLaunch plans simplify associating one or more schedules, inputs and notifications with your workflows.\nLaunch plans can be shared and used to trigger executions with predefined inputs even when a workflow\ndefinition doesn't necessarily have a default value for said input."
     },
     "adminLaunchPlanClosure": {
       "type": "object",
@@ -2832,18 +2850,22 @@
           "format": "date-time",
           "description": "Time at which the launch plan was last updated."
         }
-      }
+      },
+      "description": "Values computed by the flyte platform after launch plan registration.\nThese include expected_inputs required to be present in a CreateExecutionRequest\nto launch the reference workflow as well timestamp values associated with the launch plan."
     },
     "adminLaunchPlanCreateRequest": {
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/coreIdentifier"
+          "$ref": "#/definitions/coreIdentifier",
+          "description": "Uniquely identifies a launch plan entity."
         },
         "spec": {
-          "$ref": "#/definitions/adminLaunchPlanSpec"
+          "$ref": "#/definitions/adminLaunchPlanSpec",
+          "description": "User-provided launch plan details, including reference workflow, inputs and other metadata."
         }
-      }
+      },
+      "description": "Request to register a launch plan. A LaunchPlanSpec may include a complete or incomplete set of inputs required\nto launch a workflow execution. By default all launch plans are registered in state INACTIVE. If you wish to\nset the state to ACTIVE, you must submit a LaunchPlanUpdateRequest, after you have created a launch plan."
     },
     "adminLaunchPlanCreateResponse": {
       "type": "object"
@@ -2861,7 +2883,8 @@
           "type": "string",
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
         }
-      }
+      },
+      "description": "Response object for list launch plan requests."
     },
     "adminLaunchPlanMetadata": {
       "type": "object",
@@ -2877,7 +2900,8 @@
           },
           "title": "List of notifications based on Execution status transitions"
         }
-      }
+      },
+      "description": "Additional launch plan attributes included in the LaunchPlanSpec not strictly required to launch\nthe reference workflow."
     },
     "adminLaunchPlanSpec": {
       "type": "object",
@@ -2902,7 +2926,8 @@
           "type": "string",
           "title": "String to indicate the role to use to execute the workflow underneath"
         }
-      }
+      },
+      "description": "User-provided launch plan definition and configuration values."
     },
     "adminLaunchPlanState": {
       "type": "string",
@@ -2911,7 +2936,7 @@
         "ACTIVE"
       ],
       "default": "INACTIVE",
-      "title": "Indicates various states of an Execution - both task and workflow"
+      "description": "By default any launch plan regardless of state can be used to launch a workflow execution.\nHowever, at most one version of a launch plan\n(e.g. a NamedEntityIdentifier set of shared project, domain and name values) can be\nactive at a time in regards to *schedules*. That is, at most one schedule in a NamedEntityIdentifier\ngroup will be observed and trigger executions at a defined cadence."
     },
     "adminLaunchPlanUpdateRequest": {
       "type": "object",
@@ -2924,7 +2949,8 @@
           "$ref": "#/definitions/adminLaunchPlanState",
           "description": "Desired state to apply to the launch plan."
         }
-      }
+      },
+      "description": "Request to set the referenced launch plan state to the configured value."
     },
     "adminLaunchPlanUpdateResponse": {
       "type": "object",
@@ -2942,7 +2968,7 @@
           "title": "In the event that the map is too large, we return a uri to the data"
         }
       },
-      "title": "Input/output data can represented by actual values or a link to where it is stored"
+      "title": "Input/output data can represented by actual values or a link to where values are stored"
     },
     "adminNamedEntityIdentifier": {
       "type": "object",
@@ -2983,16 +3009,19 @@
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/coreNodeExecutionIdentifier"
+          "$ref": "#/definitions/coreNodeExecutionIdentifier",
+          "description": "Uniquely identifies an individual node execution."
         },
         "input_uri": {
-          "type": "string"
+          "type": "string",
+          "description": "Path to remote data store where input blob is stored."
         },
         "closure": {
-          "$ref": "#/definitions/adminNodeExecutionClosure"
+          "$ref": "#/definitions/adminNodeExecutionClosure",
+          "description": "Computed results associated with this node execution."
         }
       },
-      "description": "Encapsulates all details for a single node execution entity."
+      "description": "Encapsulates all details for a single node execution entity.\nA node represents a component in the overall workflow graph. A node launch a task, multiple tasks, an entire nested\nsub-workflow, or even a separate child-workflow execution.\nThe same task can be called repeatedly in a single workflow but each node is unique."
     },
     "adminNodeExecutionClosure": {
       "type": "object",
@@ -3005,7 +3034,8 @@
           "title": "Error information for the Node"
         },
         "phase": {
-          "$ref": "#/definitions/coreNodeExecutionPhase"
+          "$ref": "#/definitions/coreNodeExecutionPhase",
+          "description": "The last recorded phase for this node execution."
         },
         "started_at": {
           "type": "string",
@@ -3037,9 +3067,11 @@
           "title": "Unique ID for this request that can be traced between services"
         },
         "event": {
-          "$ref": "#/definitions/eventNodeExecutionEvent"
+          "$ref": "#/definitions/eventNodeExecutionEvent",
+          "description": "Details about the event that occurred."
         }
-      }
+      },
+      "description": "Request to send a notification that a node execution event has occurred."
     },
     "adminNodeExecutionEventResponse": {
       "type": "object"
@@ -3125,7 +3157,8 @@
             "$ref": "#/definitions/adminDomain"
           }
         }
-      }
+      },
+      "description": "Top-level namespace used to classify different entities like workflows and executions."
     },
     "adminProjectRegisterResponse": {
       "type": "object"
@@ -3145,7 +3178,8 @@
       "type": "object",
       "properties": {
         "cron_expression": {
-          "type": "string"
+          "type": "string",
+          "title": "Uses AWS syntax: \"Minutes Hours Day-of-month Month Day-of-week Year\"\ne.g. for a schedule that runs every 15 minutes: \"0/15 * * * ? *\""
         },
         "rate": {
           "$ref": "#/definitions/adminFixedRate"
@@ -3154,7 +3188,8 @@
           "type": "string",
           "description": "Name of the input variable that the kickoff time will be supplied to when the workflow is kicked off."
         }
-      }
+      },
+      "description": "Defines complete set of information required to trigger an execution on a schedule."
     },
     "adminSlackNotification": {
       "type": "object",
@@ -3194,7 +3229,7 @@
           "description": "closure encapsulates all the fields that maps to a compiled version of the task."
         }
       },
-      "title": "Represents the task structure stored in the Admin"
+      "description": "Flyte workflows are composed of many ordered tasks. That is small, reusable, self-contained logical blocks\narranged to process workflow inputs and produce a deterministic set of outputs.\nTasks can come in many varieties tuned for specialized behavior."
     },
     "adminTaskClosure": {
       "type": "object",
@@ -3209,7 +3244,7 @@
           "description": "Time at which the task was created."
         }
       },
-      "description": "Represents an encapsulation of the task compilation."
+      "description": "Compute task attributes which include values derived from the TaskSpec, as well as plugin-specific data\nand task metadata."
     },
     "adminTaskCreateRequest": {
       "type": "object",
@@ -3233,35 +3268,41 @@
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/coreTaskExecutionIdentifier"
+          "$ref": "#/definitions/coreTaskExecutionIdentifier",
+          "description": "Unique identifier for the task execution."
         },
         "input_uri": {
-          "type": "string"
+          "type": "string",
+          "description": "Path to remote data store where input blob is stored."
         },
         "closure": {
-          "$ref": "#/definitions/adminTaskExecutionClosure"
+          "$ref": "#/definitions/adminTaskExecutionClosure",
+          "description": "Task execution details and results."
         }
       },
-      "description": "Encapsulates all details for a single task execution entity."
+      "description": "Encapsulates all details for a single task execution entity.\nA task execution represents an instantiated task, including all inputs and additional\nmetadata as well as computed results included state, outputs, and duration-based attributes."
     },
     "adminTaskExecutionClosure": {
       "type": "object",
       "properties": {
         "output_uri": {
-          "type": "string"
+          "type": "string",
+          "description": "Path to remote data store where output blob is stored if the execution succeeded (and produced outputs)."
         },
         "error": {
           "$ref": "#/definitions/coreExecutionError",
-          "title": "Error information for the Task"
+          "description": "Error information for the task execution. Populated if the execution failed."
         },
         "phase": {
-          "$ref": "#/definitions/coreTaskExecutionPhase"
+          "$ref": "#/definitions/coreTaskExecutionPhase",
+          "description": "The last recorded phase for this task execution."
         },
         "logs": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/coreTaskLog"
-          }
+          },
+          "description": "Detailed log information output by the task execution."
         },
         "started_at": {
           "type": "string",
@@ -3293,9 +3334,11 @@
           "title": "Unique ID for this request that can be traced between services"
         },
         "event": {
-          "$ref": "#/definitions/eventTaskExecutionEvent"
+          "$ref": "#/definitions/eventTaskExecutionEvent",
+          "description": "Details about the event that occurred."
         }
-      }
+      },
+      "description": "Request to send a notification that a task execution event has occurred."
     },
     "adminTaskExecutionEventResponse": {
       "type": "object"
@@ -3328,7 +3371,7 @@
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
         }
       },
-      "description": "Request structure to retrieve a list of task execution entities."
+      "description": "Response structure for a query to list of task execution entities."
     },
     "adminTaskList": {
       "type": "object",
@@ -3355,7 +3398,7 @@
           "description": "Template of the task that encapsulates all the metadata of the task."
         }
       },
-      "description": "Represents a structure that encapsulates the specification of the task."
+      "description": "Represents a structure that encapsulates the user-configured specification of the task."
     },
     "adminUrlBlob": {
       "type": "object",
@@ -3384,7 +3427,7 @@
           "description": "closure encapsulates all the fields that maps to a compiled version of the workflow."
         }
       },
-      "title": "Represents the workflow structure stored in the Admin"
+      "description": "Represents the workflow structure stored in the Admin\nA workflow is created by ordering tasks and associating outputs to inputs\nin order to produce a directed-acyclic execution graph."
     },
     "adminWorkflowClosure": {
       "type": "object",
@@ -3399,7 +3442,7 @@
           "description": "Time at which the workflow was created."
         }
       },
-      "description": "Represents an encapsulation of the workflow compilation."
+      "description": "A container holding the compiled workflow produced from the WorkflowSpec and additional metadata."
     },
     "adminWorkflowCreateRequest": {
       "type": "object",
@@ -3416,8 +3459,7 @@
       "description": "Represents a request structure to create a revision of a workflow."
     },
     "adminWorkflowCreateResponse": {
-      "type": "object",
-      "description": "Represents a response structure if workflow creation succeeds."
+      "type": "object"
     },
     "adminWorkflowExecutionEventRequest": {
       "type": "object",
@@ -3427,9 +3469,11 @@
           "title": "Unique ID for this request that can be traced between services"
         },
         "event": {
-          "$ref": "#/definitions/eventWorkflowExecutionEvent"
+          "$ref": "#/definitions/eventWorkflowExecutionEvent",
+          "description": "Details about the event that occurred."
         }
-      }
+      },
+      "description": "Request to send a notification that a workflow execution event has occurred."
     },
     "adminWorkflowExecutionEventResponse": {
       "type": "object"

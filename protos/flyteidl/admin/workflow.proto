@@ -18,12 +18,13 @@ message WorkflowCreateRequest {
     WorkflowSpec spec      = 2;
 }
 
-// Represents a response structure if workflow creation succeeds.
 message WorkflowCreateResponse {
     // Purposefully empty, may be populated in the future. 
 }
 
 // Represents the workflow structure stored in the Admin
+// A workflow is created by ordering tasks and associating outputs to inputs
+// in order to produce a directed-acyclic execution graph.
 message Workflow {
     // id represents the unique identifier of the workflow.
     core.Identifier id       = 1;
@@ -48,7 +49,7 @@ message WorkflowSpec {
     core.WorkflowTemplate template = 1;
 }
 
-// Represents an encapsulation of the workflow compilation.
+// A container holding the compiled workflow produced from the WorkflowSpec and additional metadata.
 message WorkflowClosure {
     // Represents the compiled representation of the workflow from the specification provided.
     core.CompiledWorkflowClosure compiled_workflow = 1;

@@ -3,6 +3,8 @@ syntax = "proto3";
 package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
+// Namespace within a project commonly used to differentiate between different service instances.
+// e.g. "production", "development", etc.
 message Domain {
     string id    = 1;
 
@@ -10,6 +12,7 @@ message Domain {
     string name  = 2;
 }
 
+// Top-level namespace used to classify different entities like workflows and executions.
 message Project {
     string id               = 1;
 

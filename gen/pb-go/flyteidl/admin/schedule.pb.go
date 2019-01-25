@@ -18,6 +18,7 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
+// Represents a frequency at which to run a schedule.
 type FixedRateUnit int32
 
 const (
@@ -41,9 +42,10 @@ func (x FixedRateUnit) String() string {
 	return proto.EnumName(FixedRateUnit_name, int32(x))
 }
 func (FixedRateUnit) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_schedule_33f9fd1cc7bc2152, []int{0}
+	return fileDescriptor_schedule_c941bc9af25305cb, []int{0}
 }
 
+// Option for schedules run at a certain frequency, e.g. every 2 minutes.
 type FixedRate struct {
 	Value                uint32        `protobuf:"varint,1,opt,name=value,proto3" json:"value,omitempty"`
 	Unit                 FixedRateUnit `protobuf:"varint,2,opt,name=unit,proto3,enum=flyteidl.admin.FixedRateUnit" json:"unit,omitempty"`
@@ -56,7 +58,7 @@ func (m *FixedRate) Reset()         { *m = FixedRate{} }
 func (m *FixedRate) String() string { return proto.CompactTextString(m) }
 func (*FixedRate) ProtoMessage()    {}
 func (*FixedRate) Descriptor() ([]byte, []int) {
-	return fileDescriptor_schedule_33f9fd1cc7bc2152, []int{0}
+	return fileDescriptor_schedule_c941bc9af25305cb, []int{0}
 }
 func (m *FixedRate) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FixedRate.Unmarshal(m, b)
@@ -90,6 +92,7 @@ func (m *FixedRate) GetUnit() FixedRateUnit {
 	return FixedRateUnit_MINUTE
 }
 
+// Defines complete set of information required to trigger an execution on a schedule.
 type Schedule struct {
 	// Types that are valid to be assigned to ScheduleExpression:
 	//	*Schedule_CronExpression
@@ -106,7 +109,7 @@ func (m *Schedule) Reset()         { *m = Schedule{} }
 func (m *Schedule) String() string { return proto.CompactTextString(m) }
 func (*Schedule) ProtoMessage()    {}
 func (*Schedule) Descriptor() ([]byte, []int) {
-	return fileDescriptor_schedule_33f9fd1cc7bc2152, []int{1}
+	return fileDescriptor_schedule_c941bc9af25305cb, []int{1}
 }
 func (m *Schedule) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Schedule.Unmarshal(m, b)
@@ -247,10 +250,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/admin/schedule.proto", fileDescriptor_schedule_33f9fd1cc7bc2152)
+	proto.RegisterFile("flyteidl/admin/schedule.proto", fileDescriptor_schedule_c941bc9af25305cb)
 }
 
-var fileDescriptor_schedule_33f9fd1cc7bc2152 = []byte{
+var fileDescriptor_schedule_c941bc9af25305cb = []byte{
 	// 301 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x74, 0x91, 0x41, 0x4f, 0xc2, 0x30,
 	0x18, 0x86, 0x19, 0x20, 0xc2, 0x67, 0x40, 0x52, 0x89, 0xc1, 0x03, 0x09, 0xe1, 0x84, 0x26, 0xb6,

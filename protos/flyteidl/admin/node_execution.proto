@@ -35,11 +35,18 @@ message NodeExecutionListRequest {
 }
 
 // Encapsulates all details for a single node execution entity.
+// A node represents a component in the overall workflow graph. A node launch a task, multiple tasks, an entire nested
+// sub-workflow, or even a separate child-workflow execution.
+// The same task can be called repeatedly in a single workflow but each node is unique.
 message NodeExecution {
+
+    // Uniquely identifies an individual node execution.
     core.NodeExecutionIdentifier id        = 1;
 
+    // Path to remote data store where input blob is stored.
     string input_uri                       = 2;
 
+    // Computed results associated with this node execution.
     NodeExecutionClosure closure           = 3;
 }
 
@@ -54,13 +61,15 @@ message NodeExecutionList {
 
 // Container for node execution details and results.
 message NodeExecutionClosure {
+    // Only a node in a terminal state will have a non-empty output_result.
     oneof output_result {
         string output_uri                  = 1;
 
         // Error information for the Node
         core.ExecutionError error          = 2;
     }
-
+    
+    // The last recorded phase for this node execution.
     core.NodeExecutionPhase phase          = 3;
 
     // Time at which the node execution began running.

@@ -35,7 +35,7 @@ func (m *TaskCreateRequest) Reset()         { *m = TaskCreateRequest{} }
 func (m *TaskCreateRequest) String() string { return proto.CompactTextString(m) }
 func (*TaskCreateRequest) ProtoMessage()    {}
 func (*TaskCreateRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_610350fd1d78c901, []int{0}
+	return fileDescriptor_task_11abecd65b99328b, []int{0}
 }
 func (m *TaskCreateRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskCreateRequest.Unmarshal(m, b)
@@ -80,7 +80,7 @@ func (m *TaskCreateResponse) Reset()         { *m = TaskCreateResponse{} }
 func (m *TaskCreateResponse) String() string { return proto.CompactTextString(m) }
 func (*TaskCreateResponse) ProtoMessage()    {}
 func (*TaskCreateResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_610350fd1d78c901, []int{1}
+	return fileDescriptor_task_11abecd65b99328b, []int{1}
 }
 func (m *TaskCreateResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskCreateResponse.Unmarshal(m, b)
@@ -100,7 +100,9 @@ func (m *TaskCreateResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_TaskCreateResponse proto.InternalMessageInfo
 
-// Represents the task structure stored in the Admin
+// Flyte workflows are composed of many ordered tasks. That is small, reusable, self-contained logical blocks
+// arranged to process workflow inputs and produce a deterministic set of outputs.
+// Tasks can come in many varieties tuned for specialized behavior.
 type Task struct {
 	// id represents the unique identifier of the task.
 	Id *core.Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -115,7 +117,7 @@ func (m *Task) Reset()         { *m = Task{} }
 func (m *Task) String() string { return proto.CompactTextString(m) }
 func (*Task) ProtoMessage()    {}
 func (*Task) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_610350fd1d78c901, []int{2}
+	return fileDescriptor_task_11abecd65b99328b, []int{2}
 }
 func (m *Task) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Task.Unmarshal(m, b)
@@ -165,7 +167,7 @@ func (m *TaskList) Reset()         { *m = TaskList{} }
 func (m *TaskList) String() string { return proto.CompactTextString(m) }
 func (*TaskList) ProtoMessage()    {}
 func (*TaskList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_610350fd1d78c901, []int{3}
+	return fileDescriptor_task_11abecd65b99328b, []int{3}
 }
 func (m *TaskList) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskList.Unmarshal(m, b)
@@ -199,7 +201,7 @@ func (m *TaskList) GetToken() string {
 	return ""
 }
 
-// Represents a structure that encapsulates the specification of the task.
+// Represents a structure that encapsulates the user-configured specification of the task.
 type TaskSpec struct {
 	// Template of the task that encapsulates all the metadata of the task.
 	Template             *core.TaskTemplate `protobuf:"bytes,1,opt,name=template,proto3" json:"template,omitempty"`
@@ -212,7 +214,7 @@ func (m *TaskSpec) Reset()         { *m = TaskSpec{} }
 func (m *TaskSpec) String() string { return proto.CompactTextString(m) }
 func (*TaskSpec) ProtoMessage()    {}
 func (*TaskSpec) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_610350fd1d78c901, []int{4}
+	return fileDescriptor_task_11abecd65b99328b, []int{4}
 }
 func (m *TaskSpec) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskSpec.Unmarshal(m, b)
@@ -239,7 +241,8 @@ func (m *TaskSpec) GetTemplate() *core.TaskTemplate {
 	return nil
 }
 
-// Represents an encapsulation of the task compilation.
+// Compute task attributes which include values derived from the TaskSpec, as well as plugin-specific data
+// and task metadata.
 type TaskClosure struct {
 	// Represents the compiled representation of the task from the specification provided.
 	CompiledTask *core.CompiledTask `protobuf:"bytes,1,opt,name=compiled_task,json=compiledTask,proto3" json:"compiled_task,omitempty"`
@@ -254,7 +257,7 @@ func (m *TaskClosure) Reset()         { *m = TaskClosure{} }
 func (m *TaskClosure) String() string { return proto.CompactTextString(m) }
 func (*TaskClosure) ProtoMessage()    {}
 func (*TaskClosure) Descriptor() ([]byte, []int) {
-	return fileDescriptor_task_610350fd1d78c901, []int{5}
+	return fileDescriptor_task_11abecd65b99328b, []int{5}
 }
 func (m *TaskClosure) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskClosure.Unmarshal(m, b)
@@ -297,9 +300,9 @@ func init() {
 	proto.RegisterType((*TaskClosure)(nil), "flyteidl.admin.TaskClosure")
 }
 
-func init() { proto.RegisterFile("flyteidl/admin/task.proto", fileDescriptor_task_610350fd1d78c901) }
+func init() { proto.RegisterFile("flyteidl/admin/task.proto", fileDescriptor_task_11abecd65b99328b) }
 
-var fileDescriptor_task_610350fd1d78c901 = []byte{
+var fileDescriptor_task_11abecd65b99328b = []byte{
 	// 390 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x92, 0x41, 0x6f, 0xd4, 0x30,
 	0x10, 0x85, 0xb5, 0x4b, 0x0b, 0xad, 0x17, 0x90, 0xb0, 0xf6, 0x90, 0xdd, 0x22, 0xa8, 0x72, 0x2a,

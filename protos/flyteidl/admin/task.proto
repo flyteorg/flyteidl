@@ -22,7 +22,9 @@ message TaskCreateResponse {
     // Purposefully empty, may be populated in the future.
 }
 
-// Represents the task structure stored in the Admin
+// Flyte workflows are composed of many ordered tasks. That is small, reusable, self-contained logical blocks
+// arranged to process workflow inputs and produce a deterministic set of outputs.
+// Tasks can come in many varieties tuned for specialized behavior. 
 message Task {
     // id represents the unique identifier of the task.
     core.Identifier id       = 1;
@@ -42,13 +44,14 @@ message TaskList {
     string token        = 2;
 }
 
-// Represents a structure that encapsulates the specification of the task.
+// Represents a structure that encapsulates the user-configured specification of the task.
 message TaskSpec {
     // Template of the task that encapsulates all the metadata of the task.
     core.TaskTemplate template = 1;
 }
 
-// Represents an encapsulation of the task compilation.
+// Compute task attributes which include values derived from the TaskSpec, as well as plugin-specific data
+// and task metadata.
 message TaskClosure {
     // Represents the compiled representation of the task from the specification provided.
     core.CompiledTask compiled_task = 1;
