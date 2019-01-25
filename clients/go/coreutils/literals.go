@@ -194,18 +194,6 @@ func MakeDefaultLiteralForType(typ *core.LiteralType) (*core.Literal, error) {
 			return MakeLiteral(time.Now())
 		case core.SimpleType_DURATION:
 			return MakeLiteral(time.Second)
-		case core.SimpleType_BLOB:
-			return &core.Literal{
-				Value: &core.Literal_Scalar{
-					Scalar: &core.Scalar{
-						Value: &core.Scalar_Blob{
-							Blob: &core.Blob{
-								Uri: "s3://dummy-uri",
-							},
-						},
-					},
-				},
-			}, nil
 		case core.SimpleType_BINARY:
 			return MakeLiteral([]byte{})
 			//case core.SimpleType_WAITABLE:
