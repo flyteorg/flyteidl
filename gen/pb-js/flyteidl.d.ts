@@ -4488,6 +4488,9 @@ export namespace flyteidl {
 
             /** TaskExecutionEvent customInfo */
             customInfo?: (google.protobuf.IStruct|null);
+
+            /** TaskExecutionEvent phaseVersion */
+            phaseVersion?: (number|null);
         }
 
         /** Represents a TaskExecutionEvent. */
@@ -4531,6 +4534,9 @@ export namespace flyteidl {
 
             /** TaskExecutionEvent customInfo. */
             public customInfo?: (google.protobuf.IStruct|null);
+
+            /** TaskExecutionEvent phaseVersion. */
+            public phaseVersion: number;
 
             /** TaskExecutionEvent outputResult. */
             public outputResult?: ("outputUri"|"error");

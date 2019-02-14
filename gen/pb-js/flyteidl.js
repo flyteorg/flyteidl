@@ -10826,6 +10826,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [outputUri] TaskExecutionEvent outputUri
              * @property {flyteidl.core.IExecutionError|null} [error] TaskExecutionEvent error
              * @property {google.protobuf.IStruct|null} [customInfo] TaskExecutionEvent customInfo
+             * @property {number|null} [phaseVersion] TaskExecutionEvent phaseVersion
              */
 
             /**
@@ -10932,6 +10933,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             TaskExecutionEvent.prototype.customInfo = null;
 
+            /**
+             * TaskExecutionEvent phaseVersion.
+             * @member {number} phaseVersion
+             * @memberof flyteidl.event.TaskExecutionEvent
+             * @instance
+             */
+            TaskExecutionEvent.prototype.phaseVersion = 0;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -10993,6 +11002,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.ExecutionError.encode(message.error, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                 if (message.customInfo != null && message.hasOwnProperty("customInfo"))
                     $root.google.protobuf.Struct.encode(message.customInfo, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
+                if (message.phaseVersion != null && message.hasOwnProperty("phaseVersion"))
+                    writer.uint32(/* id 12, wireType 0 =*/96).uint32(message.phaseVersion);
                 return writer;
             };
 
@@ -11048,6 +11059,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 11:
                         message.customInfo = $root.google.protobuf.Struct.decode(reader, reader.uint32());
+                        break;
+                    case 12:
+                        message.phaseVersion = reader.uint32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11135,6 +11149,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "customInfo." + error;
                 }
+                if (message.phaseVersion != null && message.hasOwnProperty("phaseVersion"))
+                    if (!$util.isInteger(message.phaseVersion))
+                        return "phaseVersion: integer expected";
                 return null;
             };
 
