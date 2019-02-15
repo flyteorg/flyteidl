@@ -34,7 +34,7 @@ var (
 	_ = (*mail.Address)(nil)
 	_ = ptypes.DynamicAny{}
 
-	_ = core.TaskExecutionPhase(0)
+	_ = core.TaskExecution_Phase(0)
 )
 
 // Validate checks the field values on TaskExecutionGetRequest with the rules
@@ -120,6 +120,16 @@ var _ interface {
 func (m *TaskExecutionListRequest) Validate() error {
 	if m == nil {
 		return nil
+	}
+
+	if v, ok := interface{}(m.GetNodeExecutionId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TaskExecutionListRequestValidationError{
+				field:  "NodeExecutionId",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
 	}
 
 	// no validation rules for Limit

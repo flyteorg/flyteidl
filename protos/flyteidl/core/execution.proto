@@ -7,42 +7,48 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
 import "google/protobuf/duration.proto";
 
 // Indicates various phases of Workflow Execution
-enum WorkflowExecutionPhase {
-    WORKFLOW_PHASE_UNDEFINED        = 0;
-    WORKFLOW_PHASE_RUNNING          = 1;
-    WORKFLOW_PHASE_SUCCEEDING       = 2;
-    WORKFLOW_PHASE_SUCCEEDED        = 3;
-    WORKFLOW_PHASE_FAILING          = 4;
-    WORKFLOW_PHASE_FAILED           = 5;
-    WORKFLOW_PHASE_TIMED_OUT        = 6;
-    WORKFLOW_PHASE_ABORTED          = 7;
-    WORKFLOW_PHASE_QUEUED           = 8;
+message WorkflowExecution {
+    enum Phase {
+        UNDEFINED = 0;
+        QUEUED = 1;
+        RUNNING = 2;
+        SUCCEEDING = 3;
+        SUCCEEDED = 4;
+        FAILING = 5;
+        FAILED = 6;
+        ABORTED = 7;
+        TIMED_OUT = 8;
+    }
 }
 
 // Indicates various phases of Node Execution
-enum NodeExecutionPhase {
-    NODE_PHASE_UNDEFINED        = 0;
-    NODE_PHASE_RUNNING          = 1;
-    NODE_PHASE_SUCCEEDED        = 2;
-    NODE_PHASE_FAILING          = 3;
-    NODE_PHASE_FAILED           = 4;
-    NODE_PHASE_TIMED_OUT        = 5;
-    NODE_PHASE_SKIPPED          = 6;
-    NODE_PHASE_ABORTED          = 7;
-    NODE_PHASE_QUEUED           = 8;
+message NodeExecution {
+    enum Phase {
+        UNDEFINED = 0;
+        QUEUED = 1;
+        RUNNING = 2;
+        SUCCEEDED = 3;
+        FAILING = 4;
+        FAILED = 5;
+        ABORTED = 6;
+        SKIPPED = 7;
+        TIMED_OUT = 8;
+    }
 }
 
 // Phases that task plugins can go through. Not all phases may be applicable to a specific plugin task,
 // but this is the cumulative list that customers may want to know about for their task.
-enum TaskExecutionPhase {
-    TASK_PHASE_UNDEFINED        = 0;
-    TASK_PHASE_QUEUED           = 1;
-    TASK_PHASE_RUNNABLE         = 2;
-    TASK_PHASE_RUNNING          = 3;
-    TASK_PHASE_SUCCEEDED        = 4;
-    TASK_PHASE_FAILED           = 5;
-    TASK_PHASE_ABORTED          = 6;
+message TaskExecution{
+    enum Phase {
+        UNDEFINED = 0;
+        QUEUED = 1;
+        RUNNING = 2;
+        SUCCEEDED = 3;
+        ABORTED = 4;
+        FAILED = 5;
+    }
 }
+
 
 // Represents the error message from the execution.
 message ExecutionError {

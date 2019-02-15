@@ -34,7 +34,7 @@ var (
 	_ = (*mail.Address)(nil)
 	_ = ptypes.DynamicAny{}
 
-	_ = core.WorkflowExecutionPhase(0)
+	_ = core.WorkflowExecution_Phase(0)
 )
 
 // Validate checks the field values on ExecutionCreateRequest with the rules

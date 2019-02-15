@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/task_execution.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n#flyteidl/admin/task_execution.proto\x12\x0e\x66lyteidl.admin\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\"M\n\x17TaskExecutionGetRequest\x12\x32\n\x02id\x18\x01 \x01(\x0b\x32&.flyteidl.core.TaskExecutionIdentifier\"p\n\x18TaskExecutionListRequest\x12\r\n\x05limit\x18\x01 \x01(\r\x12\r\n\x05token\x18\x02 \x01(\t\x12\x0f\n\x07\x66ilters\x18\x03 \x01(\t\x12%\n\x07sort_by\x18\x04 \x01(\x0b\x32\x14.flyteidl.admin.Sort\"\x8d\x01\n\rTaskExecution\x12\x32\n\x02id\x18\x01 \x01(\x0b\x32&.flyteidl.core.TaskExecutionIdentifier\x12\x11\n\tinput_uri\x18\x02 \x01(\t\x12\x35\n\x07\x63losure\x18\x03 \x01(\x0b\x32$.flyteidl.admin.TaskExecutionClosure\"Z\n\x11TaskExecutionList\x12\x36\n\x0ftask_executions\x18\x01 \x03(\x0b\x32\x1d.flyteidl.admin.TaskExecution\x12\r\n\x05token\x18\x02 \x01(\t\"\x82\x03\n\x14TaskExecutionClosure\x12\x14\n\noutput_uri\x18\x01 \x01(\tH\x00\x12.\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x12\x30\n\x05phase\x18\x03 \x01(\x0e\x32!.flyteidl.core.TaskExecutionPhase\x12$\n\x04logs\x18\x04 \x03(\x0b\x32\x16.flyteidl.core.TaskLog\x12.\n\nstarted_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x08\x64uration\x18\x06 \x01(\x0b\x32\x19.google.protobuf.Duration\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x0f\n\routput_result\"Q\n\x1bTaskExecutionGetDataRequest\x12\x32\n\x02id\x18\x01 \x01(\x0b\x32&.flyteidl.core.TaskExecutionIdentifier\"q\n\x1cTaskExecutionGetDataResponse\x12\'\n\x06inputs\x18\x01 \x01(\x0b\x32\x17.flyteidl.admin.UrlBlob\x12(\n\x07outputs\x18\x02 \x01(\x0b\x32\x17.flyteidl.admin.UrlBlobB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n#flyteidl/admin/task_execution.proto\x12\x0e\x66lyteidl.admin\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\"M\n\x17TaskExecutionGetRequest\x12\x32\n\x02id\x18\x01 \x01(\x0b\x32&.flyteidl.core.TaskExecutionIdentifier\"\xb3\x01\n\x18TaskExecutionListRequest\x12\x41\n\x11node_execution_id\x18\x01 \x01(\x0b\x32&.flyteidl.core.NodeExecutionIdentifier\x12\r\n\x05limit\x18\x02 \x01(\r\x12\r\n\x05token\x18\x03 \x01(\t\x12\x0f\n\x07\x66ilters\x18\x04 \x01(\t\x12%\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.Sort\"\x8d\x01\n\rTaskExecution\x12\x32\n\x02id\x18\x01 \x01(\x0b\x32&.flyteidl.core.TaskExecutionIdentifier\x12\x11\n\tinput_uri\x18\x02 \x01(\t\x12\x35\n\x07\x63losure\x18\x03 \x01(\x0b\x32$.flyteidl.admin.TaskExecutionClosure\"Z\n\x11TaskExecutionList\x12\x36\n\x0ftask_executions\x18\x01 \x03(\x0b\x32\x1d.flyteidl.admin.TaskExecution\x12\r\n\x05token\x18\x02 \x01(\t\"\x83\x03\n\x14TaskExecutionClosure\x12\x14\n\noutput_uri\x18\x01 \x01(\tH\x00\x12.\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x12\x31\n\x05phase\x18\x03 \x01(\x0e\x32\".flyteidl.core.TaskExecution.Phase\x12$\n\x04logs\x18\x04 \x03(\x0b\x32\x16.flyteidl.core.TaskLog\x12.\n\nstarted_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x08\x64uration\x18\x06 \x01(\x0b\x32\x19.google.protobuf.Duration\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x0f\n\routput_result\"Q\n\x1bTaskExecutionGetDataRequest\x12\x32\n\x02id\x18\x01 \x01(\x0b\x32&.flyteidl.core.TaskExecutionIdentifier\"q\n\x1cTaskExecutionGetDataResponse\x12\'\n\x06inputs\x18\x01 \x01(\x0b\x32\x17.flyteidl.admin.UrlBlob\x12(\n\x07outputs\x18\x02 \x01(\x0b\x32\x17.flyteidl.admin.UrlBlobB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,flyteidl_dot_core_dot_execution__pb2.DESCRIPTOR,flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,])
 
@@ -70,29 +70,36 @@ _TASKEXECUTIONLISTREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='limit', full_name='flyteidl.admin.TaskExecutionListRequest.limit', index=0,
-      number=1, type=13, cpp_type=3, label=1,
+      name='node_execution_id', full_name='flyteidl.admin.TaskExecutionListRequest.node_execution_id', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='limit', full_name='flyteidl.admin.TaskExecutionListRequest.limit', index=1,
+      number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='token', full_name='flyteidl.admin.TaskExecutionListRequest.token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='filters', full_name='flyteidl.admin.TaskExecutionListRequest.filters', index=2,
+      name='token', full_name='flyteidl.admin.TaskExecutionListRequest.token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sort_by', full_name='flyteidl.admin.TaskExecutionListRequest.sort_by', index=3,
-      number=4, type=11, cpp_type=10, label=1,
+      name='filters', full_name='flyteidl.admin.TaskExecutionListRequest.filters', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='sort_by', full_name='flyteidl.admin.TaskExecutionListRequest.sort_by', index=4,
+      number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -109,8 +116,8 @@ _TASKEXECUTIONLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=291,
-  serialized_end=403,
+  serialized_start=292,
+  serialized_end=471,
 )
 
 
@@ -154,8 +161,8 @@ _TASKEXECUTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=406,
-  serialized_end=547,
+  serialized_start=474,
+  serialized_end=615,
 )
 
 
@@ -192,8 +199,8 @@ _TASKEXECUTIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=549,
-  serialized_end=639,
+  serialized_start=617,
+  serialized_end=707,
 )
 
 
@@ -275,8 +282,8 @@ _TASKEXECUTIONCLOSURE = _descriptor.Descriptor(
       name='output_result', full_name='flyteidl.admin.TaskExecutionClosure.output_result',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=642,
-  serialized_end=1028,
+  serialized_start=710,
+  serialized_end=1097,
 )
 
 
@@ -306,8 +313,8 @@ _TASKEXECUTIONGETDATAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1030,
-  serialized_end=1111,
+  serialized_start=1099,
+  serialized_end=1180,
 )
 
 
@@ -344,17 +351,18 @@ _TASKEXECUTIONGETDATARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1113,
-  serialized_end=1226,
+  serialized_start=1182,
+  serialized_end=1295,
 )
 
 _TASKEXECUTIONGETREQUEST.fields_by_name['id'].message_type = flyteidl_dot_core_dot_identifier__pb2._TASKEXECUTIONIDENTIFIER
+_TASKEXECUTIONLISTREQUEST.fields_by_name['node_execution_id'].message_type = flyteidl_dot_core_dot_identifier__pb2._NODEEXECUTIONIDENTIFIER
 _TASKEXECUTIONLISTREQUEST.fields_by_name['sort_by'].message_type = flyteidl_dot_admin_dot_common__pb2._SORT
 _TASKEXECUTION.fields_by_name['id'].message_type = flyteidl_dot_core_dot_identifier__pb2._TASKEXECUTIONIDENTIFIER
 _TASKEXECUTION.fields_by_name['closure'].message_type = _TASKEXECUTIONCLOSURE
 _TASKEXECUTIONLIST.fields_by_name['task_executions'].message_type = _TASKEXECUTION
 _TASKEXECUTIONCLOSURE.fields_by_name['error'].message_type = flyteidl_dot_core_dot_execution__pb2._EXECUTIONERROR
-_TASKEXECUTIONCLOSURE.fields_by_name['phase'].enum_type = flyteidl_dot_core_dot_execution__pb2._TASKEXECUTIONPHASE
+_TASKEXECUTIONCLOSURE.fields_by_name['phase'].enum_type = flyteidl_dot_core_dot_execution__pb2._TASKEXECUTION_PHASE
 _TASKEXECUTIONCLOSURE.fields_by_name['logs'].message_type = flyteidl_dot_core_dot_execution__pb2._TASKLOG
 _TASKEXECUTIONCLOSURE.fields_by_name['started_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _TASKEXECUTIONCLOSURE.fields_by_name['duration'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION

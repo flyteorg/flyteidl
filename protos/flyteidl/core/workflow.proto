@@ -41,7 +41,7 @@ message IfElseBlock {
 // runtime based on a series of conditions that get evaluated on various parameters (e.g. inputs, primtives).
 message BranchNode {
     //+required
-    IfElseBlock if_else = 2;
+    IfElseBlock if_else = 1;
 }
 
 // Refers to the task that the Node is to execute.

@@ -17,32 +17,36 @@ import (
 func TestFileEvent(t *testing.T) {
 	dir, err := ioutil.TempDir("", "eventstest")
 	if err != nil {
-		assert.Fail(t, "test dir creation failed")
+		assert.FailNow(t, "test dir creation failed")
 	}
-	defer os.RemoveAll(dir)
+	defer func() { assert.NoError(t, os.RemoveAll(dir)) }()
 
 	file := path.Join(dir, "events.test")
 	sink, err := NewFileSink(file)
 	if err != nil {
-		assert.Fail(t, "failed to create file sync "+err.Error())
+		assert.FailNow(t, "failed to create file sync "+err.Error())
 	}
 
-	nodeEvent := &event.NodeExecutionEvent{Phase: core.NodeExecutionPhase_NODE_PHASE_RUNNING}
+	nodeEvent := &event.NodeExecutionEvent{Phase: core.NodeExecution_RUNNING}
 	err = sink.Sink(context.Background(), NodeEvent, nodeEvent)
 	assert.NoError(t, err)
 
-	nodeEvent = &event.NodeExecutionEvent{Phase: core.NodeExecutionPhase_NODE_PHASE_SUCCEEDED}
+	nodeEvent = &event.NodeExecutionEvent{Phase: core.NodeExecution_SUCCEEDED}
 	assert.NoError(t, err)
 	err = sink.Sink(context.Background(), NodeEvent, nodeEvent)
 	assert.NoError(t, err)
 
-	expected := []string{"[--NODE EVENT-1-] Phase: NODE_PHASE_RUNNING", "[--NODE EVENT-2-] Phase: NODE_PHASE_SUCCEEDED"}
+	expected := []string{"[--NODE EVENT-1-] Phase: RUNNING", "[--NODE EVENT-2-] Phase: SUCCEEDED"}
 	actual, err := readLinesFromFile(file)
 	if err != nil {
-		assert.Fail(t, "failed to read file "+err.Error())
+		assert.FailNow(t, "failed to read file "+err.Error())
 	}
 
-	assert.True(t, reflect.DeepEqual(expected, actual))
+	areSame := reflect.DeepEqual(expected, actual)
+	assert.True(t, areSame)
+	if !areSame {
+		t.Logf("Expected output: %v\n Actual output: %v", expected, actual)
+	}
 }
 
 func readLinesFromFile(name string) ([]string, error) {

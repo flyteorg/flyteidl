@@ -16,7 +16,7 @@ message WorkflowExecutionEvent {
     // the id of the originator (Propeller) of the event
     string producer_id = 2;
 
-    core.WorkflowExecutionPhase phase = 3;
+    core.WorkflowExecution.Phase phase = 3;
 
     // This timestamp represents when the original event occurred, it is generated
     // by the executor of the workflow.
@@ -39,7 +39,7 @@ message NodeExecutionEvent {
     // the id of the originator (Propeller) of the event
     string producer_id = 2;
 
-    core.NodeExecutionPhase phase = 3;
+    core.NodeExecution.Phase phase = 3;
 
     // This timestamp represents when the original event occurred, it is generated
     // by the executor of the node.
@@ -82,7 +82,7 @@ message TaskExecutionEvent {
     uint32 retry_attempt = 3;
 
     // Phase associated with the event
-    core.TaskExecutionPhase phase = 4;
+    core.TaskExecution.Phase phase = 4;
 
     // id of the process that sent this event, mainly for trace debugging
     string producer_id = 5;

@@ -20,5 +20,3 @@ type EventSink interface {
 	// connections.
 	Close() error
 }
-
-

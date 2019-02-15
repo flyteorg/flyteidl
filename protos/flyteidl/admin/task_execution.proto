@@ -17,20 +17,25 @@ message TaskExecutionGetRequest {
 
 // Represents a request structure to retrieve a list of task execution entities.
 message TaskExecutionListRequest {
+    // Indicates the node execution to filter by.
+    core.NodeExecutionIdentifier node_execution_id = 1;
+
     // Indicates the number of resources to be returned.
-    uint32 limit    = 1;
+    uint32 limit    = 2;
+
     // In the case of multiple pages of results, the server-provided token can be used to fetch the next page
     // in a query.
     // +optional
-    string token    = 2;
+    string token    = 3;
+
     // Indicates a list of filters passed as string.
     // More info on constructing filters : <Link>
     // +optional
-    string filters  = 3;
+    string filters  = 4;
 
     // Sort ordering for returned list.
     // +optional
-    Sort sort_by    = 4;
+    Sort sort_by    = 5;
 }
 
 // Encapsulates all details for a single task execution entity.
@@ -38,7 +43,7 @@ message TaskExecutionListRequest {
 // metadata as well as computed results included state, outputs, and duration-based attributes.
 message TaskExecution {
     // Unique identifier for the task execution.
-    core.TaskExecutionIdentifier id        = 1;
+    core.TaskExecutionIdentifier id = 1;
 
     // Path to remote data store where input blob is stored.
     string input_uri                       = 2;
@@ -67,10 +72,10 @@ message TaskExecutionClosure {
     }
 
     // The last recorded phase for this task execution.
-    core.TaskExecutionPhase phase          = 3;
+    core.TaskExecution.Phase phase          = 3;
 
     // Detailed log information output by the task execution.
-    repeated core.TaskLog logs             = 4;
+    repeated core.TaskLog logs = 4;
 
     // Time at which the task execution began running.
     google.protobuf.Timestamp started_at   = 5;

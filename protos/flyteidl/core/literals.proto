@@ -10,6 +10,8 @@ import "flyteidl/core/types.proto";
 
 // Primitive Types
 message Primitive {
+    // Defines one of simple primitive types. These types will get translated into different programming languages as
+    // described in https://developers.google.com/protocol-buffers/docs/proto#scalar.
     oneof value {
         int64 integer = 1;
         double float_value = 2;
@@ -20,6 +22,8 @@ message Primitive {
     }
 }
 
+// Used to denote a nil/null/None assignment to a scalar value. The underlying LiteralType for Void is intentionally
+// undefined since it can be assigned to a scalar of any LiteralType.
 message Void {
 }
 
@@ -32,13 +36,6 @@ message Blob {
 
 message BlobMetadata {
     BlobType type = 1;
-}
-
-// Defines an execution unit recognized by the system and can be referred to by other units to listen to its execution
-// events (started, succeeded, aborted... etc.).
-message Waitable {
-    string surrogate_key = 1;
-    string execution_uri = 2;
 }
 
 // A simple byte array with a tag to help different parts of the system communicate about what is in the byte array.
@@ -61,11 +58,7 @@ message Scalar {
         Binary binary = 3;
         Schema schema = 4;
         Void none_type = 5;
-
-        // Backwards compatibility
-        Waitable waitable = 6;
-
-        Error error = 7;
+        Error error = 6;
     }
 }
 

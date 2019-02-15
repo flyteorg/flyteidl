@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 set -e
 set -x
 go get github.com/vektra/mockery/.../

@@ -48,7 +48,7 @@ message ExecutionCreateResponse {
 // A message used to fetch a single workflow execution entity.
 message WorkflowExecutionGetRequest {
    // Uniquely identifies an individual workflow execution.
-   core.WorkflowExecutionIdentifier id  = 1;  
+   core.WorkflowExecutionIdentifier id  = 1;
 }
 
 // A workflow execution represents an instantiated workflow, including all inputs and additional
@@ -105,13 +105,13 @@ message ExecutionClosure {
     core.LiteralMap computed_inputs      = 3;
 
     // Most recent recorded phase for the execution.
-    core.WorkflowExecutionPhase phase                 = 4;
+    core.WorkflowExecution.Phase phase                 = 4;
 
     // Reported ime at which the execution began running.
     google.protobuf.Timestamp started_at              = 5;
 
     // The amount of time the execution spent running.
-    google.protobuf.Duration duration                 = 6;     
+    google.protobuf.Duration duration                 = 6;
 
     // Reported time at which the execution was created.
     google.protobuf.Timestamp created_at              = 7;
@@ -148,7 +148,7 @@ message ExecutionMetadata {
         // This execution was triggered by another execution.
         CHILD_WORKFLOW = 4;
     }
-    ExecutionMode mode    = 1;  // [(validate.rules).enum.defined_only = true];
+    ExecutionMode mode    = 1; // [(validate.rules).enum.defined_only = true];
 
     // Identifier of the entity that triggered this execution.
     string principal      = 2;
@@ -158,7 +158,7 @@ message ExecutionMetadata {
     // If this execution further launches a workflow (child workflow), the nesting level is incremented by 0 => 1
     // Generally, if workflow at nesting level k launches a workflow then the child workflow will have
     // nesting = k + 1.
-    int32 nesting         = 3;
+    uint32 nesting         = 3;
 }
 
 // An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime

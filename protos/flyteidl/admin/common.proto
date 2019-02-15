@@ -112,7 +112,7 @@ message SlackNotification {
 // expose configuring notifications with custom content.
 message Notification {
     // A list of phases to which users can associate the notifications to.
-    repeated core.WorkflowExecutionPhase phases = 1;
+    repeated core.WorkflowExecution.Phase phases = 1;
 
     oneof type {
         // option (validate.required) = true;

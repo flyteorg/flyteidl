@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/literals.proto',
   package='flyteidl.core',
   syntax='proto3',
-  serialized_pb=_b('\n\x1c\x66lyteidl/core/literals.proto\x12\rflyteidl.core\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x19\x66lyteidl/core/types.proto\"\xc8\x01\n\tPrimitive\x12\x11\n\x07integer\x18\x01 \x01(\x03H\x00\x12\x15\n\x0b\x66loat_value\x18\x02 \x01(\x01H\x00\x12\x16\n\x0cstring_value\x18\x03 \x01(\tH\x00\x12\x11\n\x07\x62oolean\x18\x04 \x01(\x08H\x00\x12.\n\x08\x64\x61tetime\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampH\x00\x12-\n\x08\x64uration\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationH\x00\x42\x07\n\x05value\"\x06\n\x04Void\"B\n\x04\x42lob\x12-\n\x08metadata\x18\x01 \x01(\x0b\x32\x1b.flyteidl.core.BlobMetadata\x12\x0b\n\x03uri\x18\x03 \x01(\t\"5\n\x0c\x42lobMetadata\x12%\n\x04type\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.BlobType\"8\n\x08Waitable\x12\x15\n\rsurrogate_key\x18\x01 \x01(\t\x12\x15\n\rexecution_uri\x18\x02 \x01(\t\"$\n\x06\x42inary\x12\r\n\x05value\x18\x01 \x01(\x0c\x12\x0b\n\x03tag\x18\x02 \x01(\t\">\n\x06Schema\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\'\n\x04type\x18\x03 \x01(\x0b\x32\x19.flyteidl.core.SchemaType\"\xb5\x02\n\x06Scalar\x12-\n\tprimitive\x18\x01 \x01(\x0b\x32\x18.flyteidl.core.PrimitiveH\x00\x12#\n\x04\x62lob\x18\x02 \x01(\x0b\x32\x13.flyteidl.core.BlobH\x00\x12\'\n\x06\x62inary\x18\x03 \x01(\x0b\x32\x15.flyteidl.core.BinaryH\x00\x12\'\n\x06schema\x18\x04 \x01(\x0b\x32\x15.flyteidl.core.SchemaH\x00\x12(\n\tnone_type\x18\x05 \x01(\x0b\x32\x13.flyteidl.core.VoidH\x00\x12+\n\x08waitable\x18\x06 \x01(\x0b\x32\x17.flyteidl.core.WaitableH\x00\x12%\n\x05\x65rror\x18\x07 \x01(\x0b\x32\x14.flyteidl.core.ErrorH\x00\x42\x07\n\x05value\"\x9d\x01\n\x07Literal\x12\'\n\x06scalar\x18\x01 \x01(\x0b\x32\x15.flyteidl.core.ScalarH\x00\x12\x36\n\ncollection\x18\x02 \x01(\x0b\x32 .flyteidl.core.LiteralCollectionH\x00\x12(\n\x03map\x18\x03 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00\x42\x07\n\x05value\"=\n\x11LiteralCollection\x12(\n\x08literals\x18\x01 \x03(\x0b\x32\x16.flyteidl.core.Literal\"\x90\x01\n\nLiteralMap\x12\x39\n\x08literals\x18\x01 \x03(\x0b\x32\'.flyteidl.core.LiteralMap.LiteralsEntry\x1aG\n\rLiteralsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.Literal:\x02\x38\x01\"E\n\x15\x42indingDataCollection\x12,\n\x08\x62indings\x18\x01 \x03(\x0b\x32\x1a.flyteidl.core.BindingData\"\x9c\x01\n\x0e\x42indingDataMap\x12=\n\x08\x62indings\x18\x01 \x03(\x0b\x32+.flyteidl.core.BindingDataMap.BindingsEntry\x1aK\n\rBindingsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12)\n\x05value\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.BindingData:\x02\x38\x01\"\xdc\x01\n\x0b\x42indingData\x12\'\n\x06scalar\x18\x01 \x01(\x0b\x32\x15.flyteidl.core.ScalarH\x00\x12:\n\ncollection\x18\x02 \x01(\x0b\x32$.flyteidl.core.BindingDataCollectionH\x00\x12\x31\n\x07promise\x18\x03 \x01(\x0b\x32\x1e.flyteidl.core.OutputReferenceH\x00\x12,\n\x03map\x18\x04 \x01(\x0b\x32\x1d.flyteidl.core.BindingDataMapH\x00\x42\x07\n\x05value\"C\n\x07\x42inding\x12\x0b\n\x03var\x18\x01 \x01(\t\x12+\n\x07\x62inding\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.BindingData\"*\n\x0cKeyValuePair\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\" \n\rRetryStrategy\x12\x0f\n\x07retries\x18\x05 \x01(\rB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1c\x66lyteidl/core/literals.proto\x12\rflyteidl.core\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x19\x66lyteidl/core/types.proto\"\xc8\x01\n\tPrimitive\x12\x11\n\x07integer\x18\x01 \x01(\x03H\x00\x12\x15\n\x0b\x66loat_value\x18\x02 \x01(\x01H\x00\x12\x16\n\x0cstring_value\x18\x03 \x01(\tH\x00\x12\x11\n\x07\x62oolean\x18\x04 \x01(\x08H\x00\x12.\n\x08\x64\x61tetime\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampH\x00\x12-\n\x08\x64uration\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationH\x00\x42\x07\n\x05value\"\x06\n\x04Void\"B\n\x04\x42lob\x12-\n\x08metadata\x18\x01 \x01(\x0b\x32\x1b.flyteidl.core.BlobMetadata\x12\x0b\n\x03uri\x18\x03 \x01(\t\"5\n\x0c\x42lobMetadata\x12%\n\x04type\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.BlobType\"$\n\x06\x42inary\x12\r\n\x05value\x18\x01 \x01(\x0c\x12\x0b\n\x03tag\x18\x02 \x01(\t\">\n\x06Schema\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\'\n\x04type\x18\x03 \x01(\x0b\x32\x19.flyteidl.core.SchemaType\"\x88\x02\n\x06Scalar\x12-\n\tprimitive\x18\x01 \x01(\x0b\x32\x18.flyteidl.core.PrimitiveH\x00\x12#\n\x04\x62lob\x18\x02 \x01(\x0b\x32\x13.flyteidl.core.BlobH\x00\x12\'\n\x06\x62inary\x18\x03 \x01(\x0b\x32\x15.flyteidl.core.BinaryH\x00\x12\'\n\x06schema\x18\x04 \x01(\x0b\x32\x15.flyteidl.core.SchemaH\x00\x12(\n\tnone_type\x18\x05 \x01(\x0b\x32\x13.flyteidl.core.VoidH\x00\x12%\n\x05\x65rror\x18\x06 \x01(\x0b\x32\x14.flyteidl.core.ErrorH\x00\x42\x07\n\x05value\"\x9d\x01\n\x07Literal\x12\'\n\x06scalar\x18\x01 \x01(\x0b\x32\x15.flyteidl.core.ScalarH\x00\x12\x36\n\ncollection\x18\x02 \x01(\x0b\x32 .flyteidl.core.LiteralCollectionH\x00\x12(\n\x03map\x18\x03 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00\x42\x07\n\x05value\"=\n\x11LiteralCollection\x12(\n\x08literals\x18\x01 \x03(\x0b\x32\x16.flyteidl.core.Literal\"\x90\x01\n\nLiteralMap\x12\x39\n\x08literals\x18\x01 \x03(\x0b\x32\'.flyteidl.core.LiteralMap.LiteralsEntry\x1aG\n\rLiteralsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.Literal:\x02\x38\x01\"E\n\x15\x42indingDataCollection\x12,\n\x08\x62indings\x18\x01 \x03(\x0b\x32\x1a.flyteidl.core.BindingData\"\x9c\x01\n\x0e\x42indingDataMap\x12=\n\x08\x62indings\x18\x01 \x03(\x0b\x32+.flyteidl.core.BindingDataMap.BindingsEntry\x1aK\n\rBindingsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12)\n\x05value\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.BindingData:\x02\x38\x01\"\xdc\x01\n\x0b\x42indingData\x12\'\n\x06scalar\x18\x01 \x01(\x0b\x32\x15.flyteidl.core.ScalarH\x00\x12:\n\ncollection\x18\x02 \x01(\x0b\x32$.flyteidl.core.BindingDataCollectionH\x00\x12\x31\n\x07promise\x18\x03 \x01(\x0b\x32\x1e.flyteidl.core.OutputReferenceH\x00\x12,\n\x03map\x18\x04 \x01(\x0b\x32\x1d.flyteidl.core.BindingDataMapH\x00\x42\x07\n\x05value\"C\n\x07\x42inding\x12\x0b\n\x03var\x18\x01 \x01(\t\x12+\n\x07\x62inding\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.BindingData\"*\n\x0cKeyValuePair\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\" \n\rRetryStrategy\x12\x0f\n\x07retries\x18\x05 \x01(\rB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,flyteidl_dot_core_dot_types__pb2.DESCRIPTOR,])
 
@@ -191,44 +191,6 @@ _BLOBMETADATA = _descriptor.Descriptor(
 )
 
 
-_WAITABLE = _descriptor.Descriptor(
-  name='Waitable',
-  full_name='flyteidl.core.Waitable',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='surrogate_key', full_name='flyteidl.core.Waitable.surrogate_key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='execution_uri', full_name='flyteidl.core.Waitable.execution_uri', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=473,
-  serialized_end=529,
-)
-
-
 _BINARY = _descriptor.Descriptor(
   name='Binary',
   full_name='flyteidl.core.Binary',
@@ -262,8 +224,8 @@ _BINARY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=531,
-  serialized_end=567,
+  serialized_start=473,
+  serialized_end=509,
 )
 
 
@@ -300,8 +262,8 @@ _SCHEMA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=569,
-  serialized_end=631,
+  serialized_start=511,
+  serialized_end=573,
 )
 
 
@@ -348,15 +310,8 @@ _SCALAR = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='waitable', full_name='flyteidl.core.Scalar.waitable', index=5,
+      name='error', full_name='flyteidl.core.Scalar.error', index=5,
       number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='error', full_name='flyteidl.core.Scalar.error', index=6,
-      number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -376,8 +331,8 @@ _SCALAR = _descriptor.Descriptor(
       name='value', full_name='flyteidl.core.Scalar.value',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=634,
-  serialized_end=943,
+  serialized_start=576,
+  serialized_end=840,
 )
 
 
@@ -424,8 +379,8 @@ _LITERAL = _descriptor.Descriptor(
       name='value', full_name='flyteidl.core.Literal.value',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=946,
-  serialized_end=1103,
+  serialized_start=843,
+  serialized_end=1000,
 )
 
 
@@ -455,8 +410,8 @@ _LITERALCOLLECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1105,
-  serialized_end=1166,
+  serialized_start=1002,
+  serialized_end=1063,
 )
 
 
@@ -493,8 +448,8 @@ _LITERALMAP_LITERALSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1242,
-  serialized_end=1313,
+  serialized_start=1139,
+  serialized_end=1210,
 )
 
 _LITERALMAP = _descriptor.Descriptor(
@@ -523,8 +478,8 @@ _LITERALMAP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1169,
-  serialized_end=1313,
+  serialized_start=1066,
+  serialized_end=1210,
 )
 
 
@@ -554,8 +509,8 @@ _BINDINGDATACOLLECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1315,
-  serialized_end=1384,
+  serialized_start=1212,
+  serialized_end=1281,
 )
 
 
@@ -592,8 +547,8 @@ _BINDINGDATAMAP_BINDINGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1468,
-  serialized_end=1543,
+  serialized_start=1365,
+  serialized_end=1440,
 )
 
 _BINDINGDATAMAP = _descriptor.Descriptor(
@@ -622,8 +577,8 @@ _BINDINGDATAMAP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1387,
-  serialized_end=1543,
+  serialized_start=1284,
+  serialized_end=1440,
 )
 
 
@@ -677,8 +632,8 @@ _BINDINGDATA = _descriptor.Descriptor(
       name='value', full_name='flyteidl.core.BindingData.value',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1546,
-  serialized_end=1766,
+  serialized_start=1443,
+  serialized_end=1663,
 )
 
 
@@ -715,8 +670,8 @@ _BINDING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1768,
-  serialized_end=1835,
+  serialized_start=1665,
+  serialized_end=1732,
 )
 
 
@@ -753,8 +708,8 @@ _KEYVALUEPAIR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1837,
-  serialized_end=1879,
+  serialized_start=1734,
+  serialized_end=1776,
 )
 
 
@@ -784,8 +739,8 @@ _RETRYSTRATEGY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1881,
-  serialized_end=1913,
+  serialized_start=1778,
+  serialized_end=1810,
 )
 
 _PRIMITIVE.fields_by_name['datetime'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
@@ -816,7 +771,6 @@ _SCALAR.fields_by_name['blob'].message_type = _BLOB
 _SCALAR.fields_by_name['binary'].message_type = _BINARY
 _SCALAR.fields_by_name['schema'].message_type = _SCHEMA
 _SCALAR.fields_by_name['none_type'].message_type = _VOID
-_SCALAR.fields_by_name['waitable'].message_type = _WAITABLE
 _SCALAR.fields_by_name['error'].message_type = flyteidl_dot_core_dot_types__pb2._ERROR
 _SCALAR.oneofs_by_name['value'].fields.append(
   _SCALAR.fields_by_name['primitive'])
@@ -833,9 +787,6 @@ _SCALAR.fields_by_name['schema'].containing_oneof = _SCALAR.oneofs_by_name['valu
 _SCALAR.oneofs_by_name['value'].fields.append(
   _SCALAR.fields_by_name['none_type'])
 _SCALAR.fields_by_name['none_type'].containing_oneof = _SCALAR.oneofs_by_name['value']
-_SCALAR.oneofs_by_name['value'].fields.append(
-  _SCALAR.fields_by_name['waitable'])
-_SCALAR.fields_by_name['waitable'].containing_oneof = _SCALAR.oneofs_by_name['value']
 _SCALAR.oneofs_by_name['value'].fields.append(
   _SCALAR.fields_by_name['error'])
 _SCALAR.fields_by_name['error'].containing_oneof = _SCALAR.oneofs_by_name['value']
@@ -880,7 +831,6 @@ DESCRIPTOR.message_types_by_name['Primitive'] = _PRIMITIVE
 DESCRIPTOR.message_types_by_name['Void'] = _VOID
 DESCRIPTOR.message_types_by_name['Blob'] = _BLOB
 DESCRIPTOR.message_types_by_name['BlobMetadata'] = _BLOBMETADATA
-DESCRIPTOR.message_types_by_name['Waitable'] = _WAITABLE
 DESCRIPTOR.message_types_by_name['Binary'] = _BINARY
 DESCRIPTOR.message_types_by_name['Schema'] = _SCHEMA
 DESCRIPTOR.message_types_by_name['Scalar'] = _SCALAR
@@ -922,13 +872,6 @@ BlobMetadata = _reflection.GeneratedProtocolMessageType('BlobMetadata', (_messag
   # @@protoc_insertion_point(class_scope:flyteidl.core.BlobMetadata)
   ))
 _sym_db.RegisterMessage(BlobMetadata)
-
-Waitable = _reflection.GeneratedProtocolMessageType('Waitable', (_message.Message,), dict(
-  DESCRIPTOR = _WAITABLE,
-  __module__ = 'flyteidl.core.literals_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.core.Waitable)
-  ))
-_sym_db.RegisterMessage(Waitable)
 
 Binary = _reflection.GeneratedProtocolMessageType('Binary', (_message.Message,), dict(
   DESCRIPTOR = _BINARY,

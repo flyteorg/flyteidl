@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/plugins/qubole.proto',
   package='flyteidl.plugins',
   syntax='proto3',
-  serialized_pb=_b('\n\x1d\x66lyteidl/plugins/qubole.proto\x12\x10\x66lyteidl.plugins\x1a\x19\x66lyteidl/core/tasks.proto\"C\n\tHiveQuery\x12\r\n\x05query\x18\x01 \x01(\t\x12\x13\n\x0btimeout_sec\x18\x02 \x01(\r\x12\x12\n\nretryCount\x18\x03 \x01(\r\"C\n\x13HiveQueryCollection\x12,\n\x07queries\x18\x02 \x03(\x0b\x32\x1b.flyteidl.plugins.HiveQuery\"u\n\rQuboleHiveJob\x12\x15\n\rcluster_label\x18\x01 \x01(\t\x12?\n\x10query_collection\x18\x02 \x01(\x0b\x32%.flyteidl.plugins.HiveQueryCollection\x12\x0c\n\x04tags\x18\x03 \x03(\tB,Z*github.com/lyft/flyteidl/gen/pb-go/pluginsb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/plugins/qubole.proto\x12\x10\x66lyteidl.plugins\x1a\x19\x66lyteidl/core/tasks.proto\"C\n\tHiveQuery\x12\r\n\x05query\x18\x01 \x01(\t\x12\x13\n\x0btimeout_sec\x18\x02 \x01(\r\x12\x12\n\nretryCount\x18\x03 \x01(\r\"C\n\x13HiveQueryCollection\x12,\n\x07queries\x18\x02 \x03(\x0b\x32\x1b.flyteidl.plugins.HiveQuery\"u\n\rQuboleHiveJob\x12\x15\n\rcluster_label\x18\x01 \x01(\t\x12?\n\x10query_collection\x18\x02 \x01(\x0b\x32%.flyteidl.plugins.HiveQueryCollection\x12\x0c\n\x04tags\x18\x03 \x03(\tB5Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,])
 
@@ -177,5 +177,5 @@ _sym_db.RegisterMessage(QuboleHiveJob)
 
 
 DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z*github.com/lyft/flyteidl/gen/pb-go/plugins'))
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins'))
 # @@protoc_insertion_point(module_scope)

@@ -37,8 +37,8 @@ message CompiledTask {
 
 // A Compiled Workflow Closure contains all the information required to start a new execution, or to visualize a workflow
 // and its details. The CompiledWorkflowClosure should always contain a primary workflow, that is the main workflow that
-// will being the execution. All subworkflows are denormalized. WorkflowNodes refer the the workflow names of compiled
-// subworkflows.
+// will being the execution. All subworkflows are denormalized. WorkflowNodes refer to the workflow identifiers of
+// compiled subworkflows.
 message CompiledWorkflowClosure {
     //+required
     CompiledWorkflow primary = 1;

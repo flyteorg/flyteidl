@@ -60,7 +60,7 @@
         ]
       }
     },
-    "/api/v1/data/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}": {
+    "/api/v1/data/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt}": {
       "get": {
         "operationId": "GetTaskExecutionData",
         "responses": {
@@ -128,6 +128,13 @@
             "type": "string"
           },
           {
+            "name": "id.retry_attempt",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
             "name": "id.task_id.resource_type",
             "description": "Identifies the specific type of resource that this identifer corresponds to.",
             "in": "query",
@@ -140,13 +147,6 @@
               "LAUNCH_PLAN"
             ],
             "default": "UNSPECIFIED"
-          },
-          {
-            "name": "id.retry_attempt",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
           }
         ],
         "tags": [
@@ -233,6 +233,76 @@
       }
     },
     "/api/v1/executions": {
+      "post": {
+        "description": "Create a workflow execution",
+        "operationId": "CreateExecution",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminExecutionCreateResponse"
+            }
+          },
+          "400": {
+            "description": "Returned for bad request that may have failed validation.",
+            "schema": {}
+          },
+          "409": {
+            "description": "Returned for a request that references an identical entity that has already been registered.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminExecutionCreateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/executions/relaunch": {
+      "post": {
+        "description": "Relaunch a workflow execution",
+        "operationId": "RelaunchExecution",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminExecutionCreateResponse"
+            }
+          },
+          "400": {
+            "description": "Returned for bad request that may have failed validation.",
+            "schema": {}
+          },
+          "409": {
+            "description": "Returned for a request that references an identical entity that has already been registered.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminExecutionRelaunchRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/executions/{id.project}/{id.domain}": {
       "get": {
         "operationId": "ListExecutions",
         "responses": {
@@ -247,15 +317,15 @@
           {
             "name": "id.project",
             "description": "Name of the project the resource belongs to.",
-            "in": "query",
-            "required": false,
+            "in": "path",
+            "required": true,
             "type": "string"
           },
           {
             "name": "id.domain",
             "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "query",
-            "required": false,
+            "in": "path",
+            "required": true,
             "type": "string"
           },
           {
@@ -305,39 +375,6 @@
               "ASCENDING"
             ],
             "default": "DESCENDING"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      },
-      "post": {
-        "description": "Relaunch a workflow execution",
-        "operationId": "RelaunchExecution",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminExecutionCreateResponse"
-            }
-          },
-          "400": {
-            "description": "Returned for bad request that may have failed validation.",
-            "schema": {}
-          },
-          "409": {
-            "description": "Returned for a request that references an identical entity that has already been registered.",
-            "schema": {}
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/adminExecutionRelaunchRequest"
-            }
           }
         ],
         "tags": [
@@ -429,7 +466,108 @@
         ]
       }
     },
-    "/api/v1/launch_plan/{id.project}/{id.domain}": {
+    "/api/v1/launch_plan_ids/{project}/{domain}": {
+      "get": {
+        "operationId": "ListLaunchPlanIds",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminNamedEntityIdentifierList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "project",
+            "description": "Name of the project that contains the identifiers.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "domain",
+            "description": "Name of the domain the identifiers belongs to within the project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "token",
+            "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.key",
+            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.direction",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "DESCENDING",
+              "ASCENDING"
+            ],
+            "default": "DESCENDING"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/launch_plans": {
+      "post": {
+        "description": "Create and register a launch plan definition",
+        "operationId": "CreateLaunchPlan",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminLaunchPlanCreateResponse"
+            }
+          },
+          "400": {
+            "description": "Returned for bad request that may have failed validation.",
+            "schema": {}
+          },
+          "409": {
+            "description": "Returned for a request that references an identical entity that has already been registered.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminLaunchPlanCreateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/launch_plans/{id.project}/{id.domain}": {
       "get": {
         "operationId": "ListLaunchPlans2",
         "responses": {
@@ -509,7 +647,7 @@
         ]
       }
     },
-    "/api/v1/launch_plan/{id.project}/{id.domain}/{id.name}": {
+    "/api/v1/launch_plans/{id.project}/{id.domain}/{id.name}": {
       "get": {
         "operationId": "ListLaunchPlans",
         "responses": {
@@ -589,7 +727,7 @@
         ]
       }
     },
-    "/api/v1/launch_plan/{id.project}/{id.domain}/{id.name}/{id.version}": {
+    "/api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version}": {
       "get": {
         "operationId": "GetLaunchPlan",
         "responses": {
@@ -701,212 +839,6 @@
         ]
       }
     },
-    "/api/v1/launch_plan_id/{project}/{domain}": {
-      "get": {
-        "operationId": "ListLaunchPlanIds",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminNamedEntityIdentifierList"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "project",
-            "description": "Name of the project that contains the identifiers.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "domain",
-            "description": "Name of the domain the identifiers belongs to within the project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "token",
-            "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "DESCENDING",
-              "ASCENDING"
-            ],
-            "default": "DESCENDING"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/launch_plans": {
-      "post": {
-        "description": "Create and register a launch plan definition",
-        "operationId": "CreateLaunchPlan",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminLaunchPlanCreateResponse"
-            }
-          },
-          "400": {
-            "description": "Returned for bad request that may have failed validation.",
-            "schema": {}
-          },
-          "409": {
-            "description": "Returned for a request that references an identical entity that has already been registered.",
-            "schema": {}
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/adminLaunchPlanCreateRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version}": {
-      "put": {
-        "operationId": "UpdateLaunchPlan2",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminLaunchPlanUpdateResponse"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.name",
-            "description": "User provided value for the resource.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.version",
-            "description": "Specific version of the resource.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/node_executions": {
-      "get": {
-        "operationId": "ListNodeExecutions",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminNodeExecutionList"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "token",
-            "description": "In the case of multiple pages of results, the, server-provided token can be used to fetch the next page\nin a query.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "filters",
-            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "DESCENDING",
-              "ASCENDING"
-            ],
-            "default": "DESCENDING"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
     "/api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}": {
       "get": {
         "operationId": "GetNodeExecution",
@@ -914,7 +846,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/adminNodeExecution"
+              "$ref": "#/definitions/flyteidladminNodeExecution"
             }
           }
         },
@@ -952,37 +884,37 @@
         ]
       }
     },
-    "/api/v1/project/{id.project}/domain/{id.domain}/launch_plans": {
+    "/api/v1/node_executions/{workflow_execution_id.project}/{workflow_execution_id.domain}/{workflow_execution_id.name}": {
       "get": {
-        "operationId": "ListLaunchPlans3",
+        "operationId": "ListNodeExecutions",
         "responses": {
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/adminLaunchPlanList"
+              "$ref": "#/definitions/adminNodeExecutionList"
             }
           }
         },
         "parameters": [
           {
-            "name": "id.project",
+            "name": "workflow_execution_id.project",
             "description": "Name of the project the resource belongs to.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id.domain",
+            "name": "workflow_execution_id.domain",
             "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "id.name",
-            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'.",
-            "in": "query",
-            "required": false,
+            "name": "workflow_execution_id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "path",
+            "required": true,
             "type": "string"
           },
           {
@@ -995,7 +927,7 @@
           },
           {
             "name": "token",
-            "description": "In the case of multiple pages of results, this server-provided token can be used to fetch the next page\nin a query.\n+optional.",
+            "description": "In the case of multiple pages of results, the, server-provided token can be used to fetch the next page\nin a query.\n+optional.",
             "in": "query",
             "required": false,
             "type": "string"
@@ -1003,444 +935,6 @@
           {
             "name": "filters",
             "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "DESCENDING",
-              "ASCENDING"
-            ],
-            "default": "DESCENDING"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/project/{id.project}/domain/{id.domain}/launch_plans/{id.name}": {
-      "get": {
-        "operationId": "ListLaunchPlans4",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminLaunchPlanList"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.name",
-            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "token",
-            "description": "In the case of multiple pages of results, this server-provided token can be used to fetch the next page\nin a query.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "filters",
-            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "DESCENDING",
-              "ASCENDING"
-            ],
-            "default": "DESCENDING"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/project/{id.project}/domain/{id.domain}/workflows": {
-      "get": {
-        "operationId": "ListWorkflows3",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminWorkflowList"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.name",
-            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "token",
-            "description": "In the case of multiple pages of results, this server-provided token can be used to fetch the next page\nin a query.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "filters",
-            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "DESCENDING",
-              "ASCENDING"
-            ],
-            "default": "DESCENDING"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/project/{id.project}/domain/{id.domain}/workflows/{id.name}": {
-      "get": {
-        "operationId": "ListWorkflows4",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminWorkflowList"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.name",
-            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "token",
-            "description": "In the case of multiple pages of results, this server-provided token can be used to fetch the next page\nin a query.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "filters",
-            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "DESCENDING",
-              "ASCENDING"
-            ],
-            "default": "DESCENDING"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/project/{project}/domain/{domain}/launch_plan_ids": {
-      "get": {
-        "operationId": "ListLaunchPlanIds2",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminNamedEntityIdentifierList"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "project",
-            "description": "Name of the project that contains the identifiers.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "domain",
-            "description": "Name of the domain the identifiers belongs to within the project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "token",
-            "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "DESCENDING",
-              "ASCENDING"
-            ],
-            "default": "DESCENDING"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/project/{project}/domain/{domain}/task_ids": {
-      "get": {
-        "operationId": "ListTaskIds2",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminNamedEntityIdentifierList"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "project",
-            "description": "Name of the project that contains the identifiers.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "domain",
-            "description": "Name of the domain the identifiers belongs to within the project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "token",
-            "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "DESCENDING",
-              "ASCENDING"
-            ],
-            "default": "DESCENDING"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/project/{project}/domain/{domain}/workflow_ids": {
-      "get": {
-        "operationId": "ListWorkflowIds2",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminNamedEntityIdentifierList"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "project",
-            "description": "Name of the project that contains the identifiers.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "domain",
-            "description": "Name of the domain the identifiers belongs to within the project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "token",
-            "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query.\n+optional.",
             "in": "query",
             "required": false,
             "type": "string"
@@ -1519,293 +1013,14 @@
         ]
       }
     },
-    "/api/v1/task/{id.project}/{id.domain}": {
-      "get": {
-        "operationId": "ListTasks2",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminTaskList"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.name",
-            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "token",
-            "description": "In the case of multiple pages of results, this server-provided token can be used to fetch the next page\nin a query.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "filters",
-            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "DESCENDING",
-              "ASCENDING"
-            ],
-            "default": "DESCENDING"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/task/{id.project}/{id.domain}/{id.name}": {
-      "get": {
-        "operationId": "ListTasks",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminTaskList"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.name",
-            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "token",
-            "description": "In the case of multiple pages of results, this server-provided token can be used to fetch the next page\nin a query.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "filters",
-            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "DESCENDING",
-              "ASCENDING"
-            ],
-            "default": "DESCENDING"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/task/{id.project}/{id.domain}/{id.name}/{id.version}": {
-      "get": {
-        "operationId": "GetTask",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminTask"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.name",
-            "description": "User provided value for the resource.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.version",
-            "description": "Specific version of the resource.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.resource_type",
-            "description": "Identifies the specific type of resource that this identifer corresponds to.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "UNSPECIFIED",
-              "TASK",
-              "WORKFLOW",
-              "LAUNCH_PLAN"
-            ],
-            "default": "UNSPECIFIED"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/task_executions": {
-      "get": {
-        "operationId": "ListTaskExecutions",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminTaskExecutionList"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "limit",
-            "description": "Indicates the number of resources to be returned.",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "token",
-            "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "filters",
-            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.key",
-            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "sort_by.direction",
-            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "DESCENDING",
-              "ASCENDING"
-            ],
-            "default": "DESCENDING"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}": {
+    "/api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt}": {
       "get": {
         "operationId": "GetTaskExecution",
         "responses": {
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/adminTaskExecution"
+              "$ref": "#/definitions/flyteidladminTaskExecution"
             }
           }
         },
@@ -1866,6 +1081,13 @@
             "type": "string"
           },
           {
+            "name": "id.retry_attempt",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
             "name": "id.task_id.resource_type",
             "description": "Identifies the specific type of resource that this identifer corresponds to.",
             "in": "query",
@@ -1878,13 +1100,6 @@
               "LAUNCH_PLAN"
             ],
             "default": "UNSPECIFIED"
-          },
-          {
-            "name": "id.retry_attempt",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
           }
         ],
         "tags": [
@@ -1892,7 +1107,93 @@
         ]
       }
     },
-    "/api/v1/task_id/{project}/{domain}": {
+    "/api/v1/task_executions/{node_execution_id.execution_id.project}/{node_execution_id.execution_id.domain}/{node_execution_id.execution_id.name}/{node_execution_id.node_id}": {
+      "get": {
+        "operationId": "ListTaskExecutions",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminTaskExecutionList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "node_execution_id.execution_id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "node_execution_id.execution_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "node_execution_id.execution_id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "node_execution_id.node_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "token",
+            "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "filters",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.key",
+            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.direction",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "DESCENDING",
+              "ASCENDING"
+            ],
+            "default": "DESCENDING"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/task_ids/{project}/{domain}": {
       "get": {
         "operationId": "ListTaskIds",
         "responses": {
@@ -1993,74 +1294,14 @@
         ]
       }
     },
-    "/api/v1/tasks/{id.project}/{id.domain}/{id.name}/{id.version}": {
+    "/api/v1/tasks/{id.project}/{id.domain}": {
       "get": {
-        "operationId": "GetTask2",
+        "operationId": "ListTasks2",
         "responses": {
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/adminTask"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.name",
-            "description": "User provided value for the resource.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.version",
-            "description": "Specific version of the resource.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.resource_type",
-            "description": "Identifies the specific type of resource that this identifer corresponds to.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "UNSPECIFIED",
-              "TASK",
-              "WORKFLOW",
-              "LAUNCH_PLAN"
-            ],
-            "default": "UNSPECIFIED"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/workflow/{id.project}/{id.domain}": {
-      "get": {
-        "operationId": "ListWorkflows2",
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/adminWorkflowList"
+              "$ref": "#/definitions/adminTaskList"
             }
           }
         },
@@ -2133,14 +1374,14 @@
         ]
       }
     },
-    "/api/v1/workflow/{id.project}/{id.domain}/{id.name}": {
+    "/api/v1/tasks/{id.project}/{id.domain}/{id.name}": {
       "get": {
-        "operationId": "ListWorkflows",
+        "operationId": "ListTasks",
         "responses": {
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/adminWorkflowList"
+              "$ref": "#/definitions/adminTaskList"
             }
           }
         },
@@ -2213,14 +1454,14 @@
         ]
       }
     },
-    "/api/v1/workflow/{id.project}/{id.domain}/{id.name}/{id.version}": {
+    "/api/v1/tasks/{id.project}/{id.domain}/{id.name}/{id.version}": {
       "get": {
-        "operationId": "GetWorkflow",
+        "operationId": "GetTask",
         "responses": {
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/adminWorkflow"
+              "$ref": "#/definitions/adminTask"
             }
           }
         },
@@ -2273,7 +1514,7 @@
         ]
       }
     },
-    "/api/v1/workflow_id/{project}/{domain}": {
+    "/api/v1/workflow_ids/{project}/{domain}": {
       "get": {
         "operationId": "ListWorkflowIds",
         "responses": {
@@ -2374,9 +1615,169 @@
         ]
       }
     },
+    "/api/v1/workflows/{id.project}/{id.domain}": {
+      "get": {
+        "operationId": "ListWorkflows2",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminWorkflowList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "token",
+            "description": "In the case of multiple pages of results, this server-provided token can be used to fetch the next page\nin a query.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "filters",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.key",
+            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.direction",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "DESCENDING",
+              "ASCENDING"
+            ],
+            "default": "DESCENDING"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/workflows/{id.project}/{id.domain}/{id.name}": {
+      "get": {
+        "operationId": "ListWorkflows",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminWorkflowList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "token",
+            "description": "In the case of multiple pages of results, this server-provided token can be used to fetch the next page\nin a query.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "filters",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.key",
+            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.direction",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "DESCENDING",
+              "ASCENDING"
+            ],
+            "default": "DESCENDING"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/workflows/{id.project}/{id.domain}/{id.name}/{id.version}": {
       "get": {
-        "operationId": "GetWorkflow2",
+        "operationId": "GetWorkflow",
         "responses": {
           "200": {
             "description": "",
@@ -2439,10 +1840,10 @@
     "BlobTypeBlobDimensionality": {
       "type": "string",
       "enum": [
-        "Single",
-        "Multipart"
+        "SINGLE",
+        "MULTIPART"
       ],
-      "default": "Single"
+      "default": "SINGLE"
     },
     "ComparisonExpressionOperator": {
       "type": "string",
@@ -2500,7 +1901,7 @@
         },
         "value": {
           "type": "string",
-          "description": "Value must be a valid k8s quantity."
+          "title": "Value must be a valid k8s quantity. See\nhttps://github.com/kubernetes/apimachinery/blob/master/pkg/api/resource/quantity.go#L30-L80"
         }
       },
       "description": "Encapsulates a resource name and value."
@@ -2508,22 +1909,22 @@
     "ResourcesResourceName": {
       "type": "string",
       "enum": [
-        "Unknown",
-        "Cpu",
-        "Gpu",
-        "Memory",
-        "Storage"
+        "UNKNOWN",
+        "CPU",
+        "GPU",
+        "MEMORY",
+        "STORAGE"
       ],
-      "default": "Unknown",
+      "default": "UNKNOWN",
       "description": "Known resource names."
     },
     "RuntimeMetadataRuntimeType": {
       "type": "string",
       "enum": [
-        "Other",
-        "FlyteSDK"
+        "OTHER",
+        "FLYTE_SDK"
       ],
-      "default": "Other"
+      "default": "OTHER"
     },
     "SchemaColumnSchemaColumnType": {
       "type": "string",
@@ -2531,9 +1932,9 @@
         "INTEGER",
         "FLOAT",
         "STRING",
+        "BOOLEAN",
         "DATETIME",
-        "DURATION",
-        "BOOLEAN"
+        "DURATION"
       ],
       "default": "INTEGER"
     },
@@ -2725,7 +2126,7 @@
         },
         "nesting": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "description": "Indicates the \"nestedness\" of this execution.\nIf a user launches a workflow execution, the default nesting is 0.\nIf this execution further launches a workflow (child workflow), the nesting level is incremented by 0 =\u003e 1\nGenerally, if workflow at nesting level k launches a workflow then the child workflow will have\nnesting = k + 1."
         }
       },
@@ -3005,24 +2406,6 @@
       },
       "description": "Represents a list of Identifiers."
     },
-    "adminNodeExecution": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "$ref": "#/definitions/coreNodeExecutionIdentifier",
-          "description": "Uniquely identifies an individual node execution."
-        },
-        "input_uri": {
-          "type": "string",
-          "description": "Path to remote data store where input blob is stored."
-        },
-        "closure": {
-          "$ref": "#/definitions/adminNodeExecutionClosure",
-          "description": "Computed results associated with this node execution."
-        }
-      },
-      "description": "Encapsulates all details for a single node execution entity.\nA node represents a component in the overall workflow graph. A node launch a task, multiple tasks, an entire nested\nsub-workflow, or even a separate child-workflow execution.\nThe same task can be called repeatedly in a single workflow but each node is unique."
-    },
     "adminNodeExecutionClosure": {
       "type": "object",
       "properties": {
@@ -3096,7 +2479,7 @@
         "node_executions": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/adminNodeExecution"
+            "$ref": "#/definitions/flyteidladminNodeExecution"
           }
         },
         "token": {
@@ -3264,24 +2647,6 @@
       "type": "object",
       "description": "Represents a response structure if task creation succeeds."
     },
-    "adminTaskExecution": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "$ref": "#/definitions/coreTaskExecutionIdentifier",
-          "description": "Unique identifier for the task execution."
-        },
-        "input_uri": {
-          "type": "string",
-          "description": "Path to remote data store where input blob is stored."
-        },
-        "closure": {
-          "$ref": "#/definitions/adminTaskExecutionClosure",
-          "description": "Task execution details and results."
-        }
-      },
-      "description": "Encapsulates all details for a single task execution entity.\nA task execution represents an instantiated task, including all inputs and additional\nmetadata as well as computed results included state, outputs, and duration-based attributes."
-    },
     "adminTaskExecutionClosure": {
       "type": "object",
       "properties": {
@@ -3363,7 +2728,7 @@
         "task_executions": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/adminTaskExecution"
+            "$ref": "#/definitions/flyteidladminTaskExecution"
           }
         },
         "token": {
@@ -3708,7 +3073,7 @@
           "title": "Guaranteed that there will only exist one and only one task with a given id, i.e., every task has a unique id\n+required (atleast 1)"
         }
       },
-      "description": "A Compiled Workflow Closure contains all the information required to start a new execution, or to visualize a workflow\nand its details. The CompiledWorkflowClosure should always contain a primary workflow, that is the main workflow that\nwill being the execution. All subworkflows are denormalized. WorkflowNodes refer the the workflow names of compiled\nsubworkflows."
+      "description": "A Compiled Workflow Closure contains all the information required to start a new execution, or to visualize a workflow\nand its details. The CompiledWorkflowClosure should always contain a primary workflow, that is the main workflow that\nwill being the execution. All subworkflows are denormalized. WorkflowNodes refer to the workflow identifiers of\ncompiled subworkflows."
     },
     "coreConjunctionExpression": {
       "type": "object",
@@ -4043,18 +3408,17 @@
     "coreNodeExecutionPhase": {
       "type": "string",
       "enum": [
-        "NODE_PHASE_UNDEFINED",
-        "NODE_PHASE_RUNNING",
-        "NODE_PHASE_SUCCEEDED",
-        "NODE_PHASE_FAILING",
-        "NODE_PHASE_FAILED",
-        "NODE_PHASE_TIMED_OUT",
-        "NODE_PHASE_SKIPPED",
-        "NODE_PHASE_ABORTED",
-        "NODE_PHASE_QUEUED"
+        "UNDEFINED",
+        "QUEUED",
+        "RUNNING",
+        "SUCCEEDED",
+        "FAILING",
+        "FAILED",
+        "ABORTED",
+        "SKIPPED",
+        "TIMED_OUT"
       ],
-      "default": "NODE_PHASE_UNDEFINED",
-      "title": "Indicates various phases of Node Execution"
+      "default": "UNDEFINED"
     },
     "coreNodeMetadata": {
       "type": "object",
@@ -4107,7 +3471,7 @@
       "properties": {
         "var": {
           "$ref": "#/definitions/coreVariable",
-          "description": "+required Variable. Defines a name and a type to reference/compare through out the system."
+          "description": "+required Variable. Defines the type of the variable backing this parameter."
         },
         "default": {
           "$ref": "#/definitions/coreLiteral",
@@ -4128,7 +3492,8 @@
           "type": "object",
           "additionalProperties": {
             "$ref": "#/definitions/coreParameter"
-          }
+          },
+          "description": "Defines a map of parameter names to parameters."
         }
       },
       "description": "A map of Parameters."
@@ -4180,14 +3545,14 @@
           "items": {
             "$ref": "#/definitions/ResourcesResourceEntry"
           },
-          "description": "The desired set of resources requested."
+          "description": "The desired set of resources requested. ResourceNames must be unique within the list."
         },
         "limits": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/ResourcesResourceEntry"
           },
-          "description": "Defines a set of bounds (e.g. min/max) within which the task can reliably run."
+          "description": "Defines a set of bounds (e.g. min/max) within which the task can reliably run. ResourceNames must be unique\nwithin the list."
         }
       },
       "description": "A customizable interface to convey resources requested for a container. This can be interpretted differently for different\ncontainer engines."
@@ -4239,10 +3604,6 @@
         "none_type": {
           "$ref": "#/definitions/coreVoid"
         },
-        "waitable": {
-          "$ref": "#/definitions/coreWaitable",
-          "title": "Backwards compatibility"
-        },
         "error": {
           "$ref": "#/definitions/coreError"
         }
@@ -4272,20 +3633,10 @@
         "DATETIME",
         "DURATION",
         "BINARY",
-        "WAITABLE",
         "ERROR"
       ],
       "default": "NONE",
       "description": "Define a set of simple types."
-    },
-    "coreTaskCategory": {
-      "type": "string",
-      "enum": [
-        "SingleStepTask",
-        "MultiStepTask"
-      ],
-      "default": "SingleStepTask",
-      "title": "- SingleStepTask: Task category that identifies if the system can use default structures in UI, etc to drive the task\nTODO should we add Container type of tasks as a special Class?"
     },
     "coreTaskExecutionIdentifier": {
       "type": "object",
@@ -4306,16 +3657,14 @@
     "coreTaskExecutionPhase": {
       "type": "string",
       "enum": [
-        "TASK_PHASE_UNDEFINED",
-        "TASK_PHASE_QUEUED",
-        "TASK_PHASE_RUNNABLE",
-        "TASK_PHASE_RUNNING",
-        "TASK_PHASE_SUCCEEDED",
-        "TASK_PHASE_FAILED",
-        "TASK_PHASE_ABORTED"
+        "UNDEFINED",
+        "QUEUED",
+        "RUNNING",
+        "SUCCEEDED",
+        "ABORTED",
+        "FAILED"
       ],
-      "default": "TASK_PHASE_UNDEFINED",
-      "description": "Phases that task plugins can go through. Not all phases may be applicable to a specific plugin task,\nbut this is the cumulative list that customers may want to know about for their task."
+      "default": "UNDEFINED"
     },
     "coreTaskLog": {
       "type": "object",
@@ -4349,7 +3698,7 @@
         },
         "timeout": {
           "type": "string",
-          "description": "The overall timeout of a task."
+          "description": "The overall timeout of a task including user-triggered retries."
         },
         "retries": {
           "$ref": "#/definitions/coreRetryStrategy",
@@ -4359,7 +3708,7 @@
           "type": "string",
           "description": "Indicates a logical version to apply to this task for the purpose of discovery."
         },
-        "deprecated": {
+        "deprecated_error_message": {
           "type": "string",
           "description": "If set, this indicates that this task is deprecated.  This will enable owners of tasks to notify consumers\nof the ending of support for a given task."
         }
@@ -4382,10 +3731,6 @@
         "id": {
           "$ref": "#/definitions/coreIdentifier",
           "description": "Auto generated taskId by the system. Task Id uniquely identifies this task globally."
-        },
-        "category": {
-          "$ref": "#/definitions/coreTaskCategory",
-          "title": "Category of the task. These are predefined and help provide defaults"
         },
         "type": {
           "type": "string",
@@ -4442,25 +3787,15 @@
           "type": "object",
           "additionalProperties": {
             "$ref": "#/definitions/coreVariable"
-          }
+          },
+          "description": "Defines a map of variable names to variables."
         }
       },
       "title": "A map of Variables"
     },
     "coreVoid": {
-      "type": "object"
-    },
-    "coreWaitable": {
       "type": "object",
-      "properties": {
-        "surrogate_key": {
-          "type": "string"
-        },
-        "execution_uri": {
-          "type": "string"
-        }
-      },
-      "description": "Defines an execution unit recognized by the system and can be referred to by other units to listen to its execution\nevents (started, succeeded, aborted... etc.)."
+      "description": "Used to denote a nil/null/None assignment to a scalar value. The underlying LiteralType for Void is intentionally\nundefined since it can be assigned to a scalar of any LiteralType."
     },
     "coreWorkflowExecutionIdentifier": {
       "type": "object",
@@ -4483,18 +3818,17 @@
     "coreWorkflowExecutionPhase": {
       "type": "string",
       "enum": [
-        "WORKFLOW_PHASE_UNDEFINED",
-        "WORKFLOW_PHASE_RUNNING",
-        "WORKFLOW_PHASE_SUCCEEDING",
-        "WORKFLOW_PHASE_SUCCEEDED",
-        "WORKFLOW_PHASE_FAILING",
-        "WORKFLOW_PHASE_FAILED",
-        "WORKFLOW_PHASE_TIMED_OUT",
-        "WORKFLOW_PHASE_ABORTED",
-        "WORKFLOW_PHASE_QUEUED"
+        "UNDEFINED",
+        "QUEUED",
+        "RUNNING",
+        "SUCCEEDING",
+        "SUCCEEDED",
+        "FAILING",
+        "FAILED",
+        "ABORTED",
+        "TIMED_OUT"
       ],
-      "default": "WORKFLOW_PHASE_UNDEFINED",
-      "title": "Indicates various phases of Workflow Execution"
+      "default": "UNDEFINED"
     },
     "coreWorkflowMetadata": {
       "type": "object",
@@ -4682,6 +4016,42 @@
         }
       },
       "title": "For Workflow Nodes we need to send information about the workflow that's launched"
+    },
+    "flyteidladminNodeExecution": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/coreNodeExecutionIdentifier",
+          "description": "Uniquely identifies an individual node execution."
+        },
+        "input_uri": {
+          "type": "string",
+          "description": "Path to remote data store where input blob is stored."
+        },
+        "closure": {
+          "$ref": "#/definitions/adminNodeExecutionClosure",
+          "description": "Computed results associated with this node execution."
+        }
+      },
+      "description": "Encapsulates all details for a single node execution entity.\nA node represents a component in the overall workflow graph. A node launch a task, multiple tasks, an entire nested\nsub-workflow, or even a separate child-workflow execution.\nThe same task can be called repeatedly in a single workflow but each node is unique."
+    },
+    "flyteidladminTaskExecution": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/coreTaskExecutionIdentifier",
+          "description": "Unique identifier for the task execution."
+        },
+        "input_uri": {
+          "type": "string",
+          "description": "Path to remote data store where input blob is stored."
+        },
+        "closure": {
+          "$ref": "#/definitions/adminTaskExecutionClosure",
+          "description": "Task execution details and results."
+        }
+      },
+      "description": "Encapsulates all details for a single task execution entity.\nA task execution represents an instantiated task, including all inputs and additional\nmetadata as well as computed results included state, outputs, and duration-based attributes."
     },
     "flyteidlcoreSchema": {
       "type": "object",

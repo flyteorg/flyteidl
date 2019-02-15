@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/dynamic_job.proto',
   package='flyteidl.core',
   syntax='proto3',
-  serialized_pb=_b('\n\x1f\x66lyteidl/core/dynamic_job.proto\x12\rflyteidl.core\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1c\x66lyteidl/core/workflow.proto\x1a\x1c\x66lyteidl/core/literals.proto\"\xa7\x01\n\x0e\x44ynamicJobSpec\x12)\n\x05nodes\x18\x01 \x03(\x0b\x32\x1a.flyteidl.core.DynamicNode\x12\x15\n\rmin_successes\x18\x02 \x01(\x03\x12\'\n\x07outputs\x18\x03 \x03(\x0b\x32\x16.flyteidl.core.Binding\x12*\n\x05tasks\x18\x04 \x03(\x0b\x32\x1b.flyteidl.core.TaskTemplate\"\x88\x01\n\x0b\x44ynamicNode\x12\x13\n\x0bgenerate_id\x18\x01 \x01(\t\x12-\n\x08metadata\x18\x02 \x01(\x0b\x32\x1b.flyteidl.core.NodeMetadata\x12+\n\x08task_ref\x18\x03 \x01(\x0b\x32\x17.flyteidl.core.TaskNodeH\x00\x42\x08\n\x06targetB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1f\x66lyteidl/core/dynamic_job.proto\x12\rflyteidl.core\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1c\x66lyteidl/core/workflow.proto\x1a\x1c\x66lyteidl/core/literals.proto\"\xd7\x01\n\x0e\x44ynamicJobSpec\x12\"\n\x05nodes\x18\x01 \x03(\x0b\x32\x13.flyteidl.core.Node\x12\x15\n\rmin_successes\x18\x02 \x01(\x03\x12\'\n\x07outputs\x18\x03 \x03(\x0b\x32\x16.flyteidl.core.Binding\x12*\n\x05tasks\x18\x04 \x03(\x0b\x32\x1b.flyteidl.core.TaskTemplate\x12\x35\n\x0csubworkflows\x18\x05 \x03(\x0b\x32\x1f.flyteidl.core.WorkflowTemplateB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,flyteidl_dot_core_dot_workflow__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,])
 
@@ -64,6 +64,13 @@ _DYNAMICJOBSPEC = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='subworkflows', full_name='flyteidl.core.DynamicJobSpec.subworkflows', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -77,67 +84,14 @@ _DYNAMICJOBSPEC = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=138,
-  serialized_end=305,
+  serialized_end=353,
 )
 
-
-_DYNAMICNODE = _descriptor.Descriptor(
-  name='DynamicNode',
-  full_name='flyteidl.core.DynamicNode',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='generate_id', full_name='flyteidl.core.DynamicNode.generate_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='metadata', full_name='flyteidl.core.DynamicNode.metadata', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='task_ref', full_name='flyteidl.core.DynamicNode.task_ref', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='target', full_name='flyteidl.core.DynamicNode.target',
-      index=0, containing_type=None, fields=[]),
-  ],
-  serialized_start=308,
-  serialized_end=444,
-)
-
-_DYNAMICJOBSPEC.fields_by_name['nodes'].message_type = _DYNAMICNODE
+_DYNAMICJOBSPEC.fields_by_name['nodes'].message_type = flyteidl_dot_core_dot_workflow__pb2._NODE
 _DYNAMICJOBSPEC.fields_by_name['outputs'].message_type = flyteidl_dot_core_dot_literals__pb2._BINDING
 _DYNAMICJOBSPEC.fields_by_name['tasks'].message_type = flyteidl_dot_core_dot_tasks__pb2._TASKTEMPLATE
-_DYNAMICNODE.fields_by_name['metadata'].message_type = flyteidl_dot_core_dot_workflow__pb2._NODEMETADATA
-_DYNAMICNODE.fields_by_name['task_ref'].message_type = flyteidl_dot_core_dot_workflow__pb2._TASKNODE
-_DYNAMICNODE.oneofs_by_name['target'].fields.append(
-  _DYNAMICNODE.fields_by_name['task_ref'])
-_DYNAMICNODE.fields_by_name['task_ref'].containing_oneof = _DYNAMICNODE.oneofs_by_name['target']
+_DYNAMICJOBSPEC.fields_by_name['subworkflows'].message_type = flyteidl_dot_core_dot_workflow__pb2._WORKFLOWTEMPLATE
 DESCRIPTOR.message_types_by_name['DynamicJobSpec'] = _DYNAMICJOBSPEC
-DESCRIPTOR.message_types_by_name['DynamicNode'] = _DYNAMICNODE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 DynamicJobSpec = _reflection.GeneratedProtocolMessageType('DynamicJobSpec', (_message.Message,), dict(
@@ -146,13 +100,6 @@ DynamicJobSpec = _reflection.GeneratedProtocolMessageType('DynamicJobSpec', (_me
   # @@protoc_insertion_point(class_scope:flyteidl.core.DynamicJobSpec)
   ))
 _sym_db.RegisterMessage(DynamicJobSpec)
-
-DynamicNode = _reflection.GeneratedProtocolMessageType('DynamicNode', (_message.Message,), dict(
-  DESCRIPTOR = _DYNAMICNODE,
-  __module__ = 'flyteidl.core.dynamic_job_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.core.DynamicNode)
-  ))
-_sym_db.RegisterMessage(DynamicNode)
 
 
 DESCRIPTOR.has_options = True

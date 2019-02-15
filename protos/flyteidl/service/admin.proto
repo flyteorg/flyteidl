@@ -35,32 +35,26 @@ service AdminService {
           description: "Returned for a request that references an identical entity that has already been registered."
         }
       }
-    }; 
+    };
   }
 
   rpc GetTask (flyteidl.admin.ObjectGetRequest) returns (flyteidl.admin.Task) {
     option (google.api.http) = {
-      get: "/api/v1/task/{id.project}/{id.domain}/{id.name}/{id.version}"
-      additional_bindings {
-        get: "/api/v1/tasks/{id.project}/{id.domain}/{id.name}/{id.version}"
-      }
+      get: "/api/v1/tasks/{id.project}/{id.domain}/{id.name}/{id.version}"
     };
   }
 
   rpc ListTaskIds (flyteidl.admin.NamedEntityIdentifierListRequest) returns (flyteidl.admin.NamedEntityIdentifierList) {
     option (google.api.http) = {
-      get: "/api/v1/task_id/{project}/{domain}"
-      additional_bindings {
-        get: "/api/v1/project/{project}/domain/{domain}/task_ids"
-      }
+      get: "/api/v1/task_ids/{project}/{domain}"
     };
   }
 
   rpc ListTasks (flyteidl.admin.ResourceListRequest) returns (flyteidl.admin.TaskList) {
     option (google.api.http) = {
-      get: "/api/v1/task/{id.project}/{id.domain}/{id.name}"
+      get: "/api/v1/tasks/{id.project}/{id.domain}/{id.name}"
       additional_bindings {
-        get: "/api/v1/task/{id.project}/{id.domain}"
+        get: "/api/v1/tasks/{id.project}/{id.domain}"
       }
     };
   }
@@ -84,39 +78,26 @@ service AdminService {
           description: "Returned for a request that references an identical entity that has already been registered."
         }
       }
-    }; 
+    };
   }
 
   rpc GetWorkflow (flyteidl.admin.ObjectGetRequest) returns (flyteidl.admin.Workflow) {
     option (google.api.http) = {
-      get: "/api/v1/workflow/{id.project}/{id.domain}/{id.name}/{id.version}"
-      additional_bindings {
-        get: "/api/v1/workflows/{id.project}/{id.domain}/{id.name}/{id.version}"
-      }
+      get: "/api/v1/workflows/{id.project}/{id.domain}/{id.name}/{id.version}"
     };
   }
 
   rpc ListWorkflowIds (flyteidl.admin.NamedEntityIdentifierListRequest) returns (flyteidl.admin.NamedEntityIdentifierList) {
     option (google.api.http) = {
-      get: "/api/v1/workflow_id/{project}/{domain}"
-      additional_bindings {
-        get: "/api/v1/project/{project}/domain/{domain}/workflow_ids"
-      }
+      get: "/api/v1/workflow_ids/{project}/{domain}"
     };
   }
 
   rpc ListWorkflows (flyteidl.admin.ResourceListRequest) returns (flyteidl.admin.WorkflowList) {
     option (google.api.http) = {
-      get: "/api/v1/workflow/{id.project}/{id.domain}/{id.name}"
+      get: "/api/v1/workflows/{id.project}/{id.domain}/{id.name}"
       additional_bindings {
-        get: "/api/v1/workflow/{id.project}/{id.domain}"
-      }
-      // TODO(katrogan): Delete these additional bindings once the UI has cut over.
-      additional_bindings {
-        get: "/api/v1/project/{id.project}/domain/{id.domain}/workflows"
-      }
-      additional_bindings {
-        get: "/api/v1/project/{id.project}/domain/{id.domain}/workflows/{id.name}"
+        get: "/api/v1/workflows/{id.project}/{id.domain}"
       }
     };
   }
@@ -145,41 +126,28 @@ service AdminService {
 
   rpc GetLaunchPlan (flyteidl.admin.ObjectGetRequest) returns (flyteidl.admin.LaunchPlan) {
     option (google.api.http) = {
-      get: "/api/v1/launch_plan/{id.project}/{id.domain}/{id.name}/{id.version}"
+      get: "/api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version}"
     };
   }
 
   rpc ListLaunchPlanIds (flyteidl.admin.NamedEntityIdentifierListRequest) returns (flyteidl.admin.NamedEntityIdentifierList) {
     option (google.api.http) = {
-      get: "/api/v1/launch_plan_id/{project}/{domain}"
-      additional_bindings {
-        get: "/api/v1/project/{project}/domain/{domain}/launch_plan_ids"
-      }
+      get: "/api/v1/launch_plan_ids/{project}/{domain}"
     };
   }
 
   rpc ListLaunchPlans (flyteidl.admin.ResourceListRequest) returns (flyteidl.admin.LaunchPlanList) {
     option (google.api.http) = {
-      get: "/api/v1/launch_plan/{id.project}/{id.domain}/{id.name}"
+      get: "/api/v1/launch_plans/{id.project}/{id.domain}/{id.name}"
       additional_bindings {
-        get: "/api/v1/launch_plan/{id.project}/{id.domain}"
-      }
-      // TODO(katrogan): Delete these additional bindings once the UI has cut over.
-      additional_bindings {
-        get: "/api/v1/project/{id.project}/domain/{id.domain}/launch_plans"
-      }
-      additional_bindings {
-        get: "/api/v1/project/{id.project}/domain/{id.domain}/launch_plans/{id.name}"
+        get: "/api/v1/launch_plans/{id.project}/{id.domain}"
       }
     };
   }
 
   rpc UpdateLaunchPlan (flyteidl.admin.LaunchPlanUpdateRequest) returns (flyteidl.admin.LaunchPlanUpdateResponse) {
     option (google.api.http) = {
-      put: "/api/v1/launch_plan/{id.project}/{id.domain}/{id.name}/{id.version}"
-      additional_bindings {
-        put: "/api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version}"
-      }
+      put: "/api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version}"
       body: "*"
     };
   }
@@ -208,7 +176,7 @@ service AdminService {
 
   rpc RelaunchExecution (flyteidl.admin.ExecutionRelaunchRequest) returns (flyteidl.admin.ExecutionCreateResponse) {
     option (google.api.http) = {
-      post: "/api/v1/executions"
+      post: "/api/v1/executions/relaunch"
       body: "*"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
@@ -236,7 +204,7 @@ service AdminService {
 
   rpc ListExecutions (flyteidl.admin.ResourceListRequest) returns (flyteidl.admin.ExecutionList) {
     option (google.api.http) = {
-      get:  "/api/v1/executions"
+      get: "/api/v1/executions/{id.project}/{id.domain}"
     };
   }
 
@@ -255,7 +223,7 @@ service AdminService {
 
   rpc ListNodeExecutions (flyteidl.admin.NodeExecutionListRequest) returns (flyteidl.admin.NodeExecutionList) {
     option (google.api.http) = {
-      get: "/api/v1/node_executions"
+      get: "/api/v1/node_executions/{workflow_execution_id.project}/{workflow_execution_id.domain}/{workflow_execution_id.name}"
     };
   }
 
@@ -284,7 +252,7 @@ service AdminService {
 	  description: "Returned for bad request that may have failed validation."
 	}
       }
-    }; 
+    };
   }
 
   rpc ListProjects (flyteidl.admin.ProjectListRequest) returns (flyteidl.admin.Projects) {
@@ -316,19 +284,19 @@ service AdminService {
 
   rpc GetTaskExecution (flyteidl.admin.TaskExecutionGetRequest) returns (flyteidl.admin.TaskExecution) {
     option (google.api.http) = {
-        get: "/api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}"
+        get: "/api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt}"
     };
   }
 
   rpc ListTaskExecutions (flyteidl.admin.TaskExecutionListRequest) returns (flyteidl.admin.TaskExecutionList) {
     option (google.api.http) = {
-        get: "/api/v1/task_executions"
+        get: "/api/v1/task_executions/{node_execution_id.execution_id.project}/{node_execution_id.execution_id.domain}/{node_execution_id.execution_id.name}/{node_execution_id.node_id}"
     };
   }
 
   rpc GetTaskExecutionData (flyteidl.admin.TaskExecutionGetDataRequest) returns (flyteidl.admin.TaskExecutionGetDataResponse) {
     option (google.api.http) = {
-        get: "/api/v1/data/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}"
+        get: "/api/v1/data/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt}"
     };
   }
 }

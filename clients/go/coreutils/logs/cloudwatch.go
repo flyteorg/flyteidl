@@ -2,8 +2,9 @@ package logs
 
 import (
 	"fmt"
-	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
 	"strings"
+
+	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
 )
 
 type cloudwatchLogPlugin struct {

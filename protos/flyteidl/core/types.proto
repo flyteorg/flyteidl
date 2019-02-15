@@ -6,8 +6,6 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
 
 // Define a set of simple types.
 enum SimpleType {
-    reserved 7;  // TODO: (Open-Source, GA) If we are able to start on a clean-slate, let's renumber this entirely to clean up.    
-
     NONE = 0;
     INTEGER = 1;
     FLOAT = 2;
@@ -15,9 +13,8 @@ enum SimpleType {
     BOOLEAN = 4;
     DATETIME = 5;
     DURATION = 6;
-    BINARY = 8;
-    WAITABLE = 9;
-    ERROR = 10;
+    BINARY = 7;
+    ERROR = 8;
 }
 
 // Defines schema columns and types to strongly type-validate schemas interoperability.
@@ -30,9 +27,9 @@ message SchemaType {
             INTEGER = 0;
             FLOAT = 1;
             STRING = 2;
-            DATETIME = 3;
-            DURATION = 4;
-            BOOLEAN = 5;
+            BOOLEAN = 3;
+            DATETIME = 4;
+            DURATION = 5;
         }
 
         // The column type. This allows a limited set of types currently.
@@ -46,8 +43,8 @@ message SchemaType {
 // Defines type behavior for blob objects
 message BlobType {
     enum BlobDimensionality {
-        Single = 0;
-        Multipart = 1;
+        SINGLE = 0;
+        MULTIPART = 1;
     }
 
     // Format can be a free form string understood by SDK/UI etc like

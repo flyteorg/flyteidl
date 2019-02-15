@@ -18,20 +18,23 @@ message NodeExecutionGetRequest {
 
 // Represents a request structure to retrieve a list of node execution entities.
 message NodeExecutionListRequest {
+    // Indicates the workflow execution to filter by.
+    core.WorkflowExecutionIdentifier workflow_execution_id = 1;
+
     // Indicates the number of resources to be returned.
-    uint32 limit    = 1;
+    uint32 limit    = 2;
     // In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
     // in a query.
     // +optional
-    string token    = 2;
+    string token    = 3;
     // Indicates a list of filters passed as string.
     // More info on constructing filters : <Link>
     // +optional
-    string filters  = 3;
+    string filters  = 4;
 
     // Sort ordering.
     // +optional
-    Sort sort_by    = 4;
+    Sort sort_by    = 5;
 }
 
 // Encapsulates all details for a single node execution entity.
@@ -68,19 +71,19 @@ message NodeExecutionClosure {
         // Error information for the Node
         core.ExecutionError error          = 2;
     }
-    
+
     // The last recorded phase for this node execution.
-    core.NodeExecutionPhase phase          = 3;
+    core.NodeExecution.Phase phase          = 3;
 
     // Time at which the node execution began running.
     google.protobuf.Timestamp started_at   = 4;
 
     // The amount of time the node execution spent running.
-    google.protobuf.Duration duration      = 5; 
+    google.protobuf.Duration duration      = 5;
 
     // Time at which the node execution was created.
     google.protobuf.Timestamp created_at   = 6;
-    
+
     // Time at which the node execution was last updated.
     google.protobuf.Timestamp updated_at   = 7;
 }

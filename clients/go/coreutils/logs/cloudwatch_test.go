@@ -1,9 +1,10 @@
 package logs
 
 import (
+	"testing"
+
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 func TestCloudwatchLogMaker_CriO(t *testing.T) {

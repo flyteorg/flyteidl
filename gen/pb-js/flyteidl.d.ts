@@ -1451,64 +1451,6 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a Waitable. */
-        interface IWaitable {
-
-            /** Waitable surrogateKey */
-            surrogateKey?: (string|null);
-
-            /** Waitable executionUri */
-            executionUri?: (string|null);
-        }
-
-        /** Represents a Waitable. */
-        class Waitable implements IWaitable {
-
-            /**
-             * Constructs a new Waitable.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.IWaitable);
-
-            /** Waitable surrogateKey. */
-            public surrogateKey: string;
-
-            /** Waitable executionUri. */
-            public executionUri: string;
-
-            /**
-             * Creates a new Waitable instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns Waitable instance
-             */
-            public static create(properties?: flyteidl.core.IWaitable): flyteidl.core.Waitable;
-
-            /**
-             * Encodes the specified Waitable message. Does not implicitly {@link flyteidl.core.Waitable.verify|verify} messages.
-             * @param message Waitable message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.IWaitable, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a Waitable message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns Waitable
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.Waitable;
-
-            /**
-             * Verifies a Waitable message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of a Binary. */
         interface IBinary {
 
@@ -1643,9 +1585,6 @@ export namespace flyteidl {
             /** Scalar noneType */
             noneType?: (flyteidl.core.IVoid|null);
 
-            /** Scalar waitable */
-            waitable?: (flyteidl.core.IWaitable|null);
-
             /** Scalar error */
             error?: (flyteidl.core.IError|null);
         }
@@ -1674,14 +1613,11 @@ export namespace flyteidl {
             /** Scalar noneType. */
             public noneType?: (flyteidl.core.IVoid|null);
 
-            /** Scalar waitable. */
-            public waitable?: (flyteidl.core.IWaitable|null);
-
             /** Scalar error. */
             public error?: (flyteidl.core.IError|null);
 
             /** Scalar value. */
-            public value?: ("primitive"|"blob"|"binary"|"schema"|"noneType"|"waitable"|"error");
+            public value?: ("primitive"|"blob"|"binary"|"schema"|"noneType"|"error");
 
             /**
              * Creates a new Scalar instance using the specified properties.
@@ -2241,9 +2177,8 @@ export namespace flyteidl {
             BOOLEAN = 4,
             DATETIME = 5,
             DURATION = 6,
-            BINARY = 8,
-            WAITABLE = 9,
-            ERROR = 10
+            BINARY = 7,
+            ERROR = 8
         }
 
         /** Properties of a SchemaType. */
@@ -2365,9 +2300,9 @@ export namespace flyteidl {
                     INTEGER = 0,
                     FLOAT = 1,
                     STRING = 2,
-                    DATETIME = 3,
-                    DURATION = 4,
-                    BOOLEAN = 5
+                    BOOLEAN = 3,
+                    DATETIME = 4,
+                    DURATION = 5
                 }
             }
         }
@@ -2434,8 +2369,8 @@ export namespace flyteidl {
 
             /** BlobDimensionality enum. */
             enum BlobDimensionality {
-                Single = 0,
-                Multipart = 1
+                SINGLE = 0,
+                MULTIPART = 1
             }
         }
 
@@ -3014,6 +2949,64 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a TypedInterface. */
+        interface ITypedInterface {
+
+            /** TypedInterface inputs */
+            inputs?: (flyteidl.core.IVariableMap|null);
+
+            /** TypedInterface outputs */
+            outputs?: (flyteidl.core.IVariableMap|null);
+        }
+
+        /** Represents a TypedInterface. */
+        class TypedInterface implements ITypedInterface {
+
+            /**
+             * Constructs a new TypedInterface.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ITypedInterface);
+
+            /** TypedInterface inputs. */
+            public inputs?: (flyteidl.core.IVariableMap|null);
+
+            /** TypedInterface outputs. */
+            public outputs?: (flyteidl.core.IVariableMap|null);
+
+            /**
+             * Creates a new TypedInterface instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TypedInterface instance
+             */
+            public static create(properties?: flyteidl.core.ITypedInterface): flyteidl.core.TypedInterface;
+
+            /**
+             * Encodes the specified TypedInterface message. Does not implicitly {@link flyteidl.core.TypedInterface.verify|verify} messages.
+             * @param message TypedInterface message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ITypedInterface, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TypedInterface message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TypedInterface
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.TypedInterface;
+
+            /**
+             * Verifies a TypedInterface message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a Parameter. */
         interface IParameter {
 
@@ -3133,70 +3126,6 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a TypedInterface. */
-        interface ITypedInterface {
-
-            /** TypedInterface inputs */
-            inputs?: (flyteidl.core.IVariableMap|null);
-
-            /** TypedInterface outputs */
-            outputs?: (flyteidl.core.IVariableMap|null);
-        }
-
-        /** Represents a TypedInterface. */
-        class TypedInterface implements ITypedInterface {
-
-            /**
-             * Constructs a new TypedInterface.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.ITypedInterface);
-
-            /** TypedInterface inputs. */
-            public inputs?: (flyteidl.core.IVariableMap|null);
-
-            /** TypedInterface outputs. */
-            public outputs?: (flyteidl.core.IVariableMap|null);
-
-            /**
-             * Creates a new TypedInterface instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns TypedInterface instance
-             */
-            public static create(properties?: flyteidl.core.ITypedInterface): flyteidl.core.TypedInterface;
-
-            /**
-             * Encodes the specified TypedInterface message. Does not implicitly {@link flyteidl.core.TypedInterface.verify|verify} messages.
-             * @param message TypedInterface message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.ITypedInterface, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a TypedInterface message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns TypedInterface
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.TypedInterface;
-
-            /**
-             * Verifies a TypedInterface message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** TaskCategory enum. */
-        enum TaskCategory {
-            SingleStepTask = 0,
-            MultiStepTask = 1
-        }
-
         /** Properties of a Resources. */
         interface IResources {
 
@@ -3259,11 +3188,11 @@ export namespace flyteidl {
 
             /** ResourceName enum. */
             enum ResourceName {
-                Unknown = 0,
-                Cpu = 1,
-                Gpu = 2,
-                Memory = 3,
-                Storage = 4
+                UNKNOWN = 0,
+                CPU = 1,
+                GPU = 2,
+                MEMORY = 3,
+                STORAGE = 4
             }
 
             /** Properties of a ResourceEntry. */
@@ -3393,8 +3322,8 @@ export namespace flyteidl {
 
             /** RuntimeType enum. */
             enum RuntimeType {
-                Other = 0,
-                FlyteSDK = 1
+                OTHER = 0,
+                FLYTE_SDK = 1
             }
         }
 
@@ -3416,8 +3345,8 @@ export namespace flyteidl {
             /** TaskMetadata discoveryVersion */
             discoveryVersion?: (string|null);
 
-            /** TaskMetadata deprecated */
-            deprecated?: (string|null);
+            /** TaskMetadata deprecatedErrorMessage */
+            deprecatedErrorMessage?: (string|null);
         }
 
         /** Represents a TaskMetadata. */
@@ -3444,8 +3373,8 @@ export namespace flyteidl {
             /** TaskMetadata discoveryVersion. */
             public discoveryVersion: string;
 
-            /** TaskMetadata deprecated. */
-            public deprecated: string;
+            /** TaskMetadata deprecatedErrorMessage. */
+            public deprecatedErrorMessage: string;
 
             /**
              * Creates a new TaskMetadata instance using the specified properties.
@@ -3486,9 +3415,6 @@ export namespace flyteidl {
             /** TaskTemplate id */
             id?: (flyteidl.core.IIdentifier|null);
 
-            /** TaskTemplate category */
-            category?: (flyteidl.core.TaskCategory|null);
-
             /** TaskTemplate type */
             type?: (string|null);
 
@@ -3516,9 +3442,6 @@ export namespace flyteidl {
 
             /** TaskTemplate id. */
             public id?: (flyteidl.core.IIdentifier|null);
-
-            /** TaskTemplate category. */
-            public category: flyteidl.core.TaskCategory;
 
             /** TaskTemplate type. */
             public type: string;
@@ -3715,7 +3638,7 @@ export namespace flyteidl {
         interface IDynamicJobSpec {
 
             /** DynamicJobSpec nodes */
-            nodes?: (flyteidl.core.IDynamicNode[]|null);
+            nodes?: (flyteidl.core.INode[]|null);
 
             /** DynamicJobSpec minSuccesses */
             minSuccesses?: (Long|null);
@@ -3725,6 +3648,9 @@ export namespace flyteidl {
 
             /** DynamicJobSpec tasks */
             tasks?: (flyteidl.core.ITaskTemplate[]|null);
+
+            /** DynamicJobSpec subworkflows */
+            subworkflows?: (flyteidl.core.IWorkflowTemplate[]|null);
         }
 
         /** Represents a DynamicJobSpec. */
@@ -3737,7 +3663,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.core.IDynamicJobSpec);
 
             /** DynamicJobSpec nodes. */
-            public nodes: flyteidl.core.IDynamicNode[];
+            public nodes: flyteidl.core.INode[];
 
             /** DynamicJobSpec minSuccesses. */
             public minSuccesses: Long;
@@ -3747,6 +3673,9 @@ export namespace flyteidl {
 
             /** DynamicJobSpec tasks. */
             public tasks: flyteidl.core.ITaskTemplate[];
+
+            /** DynamicJobSpec subworkflows. */
+            public subworkflows: flyteidl.core.IWorkflowTemplate[];
 
             /**
              * Creates a new DynamicJobSpec instance using the specified properties.
@@ -3775,73 +3704,6 @@ export namespace flyteidl {
 
             /**
              * Verifies a DynamicJobSpec message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a DynamicNode. */
-        interface IDynamicNode {
-
-            /** DynamicNode generateId */
-            generateId?: (string|null);
-
-            /** DynamicNode metadata */
-            metadata?: (flyteidl.core.INodeMetadata|null);
-
-            /** DynamicNode taskRef */
-            taskRef?: (flyteidl.core.ITaskNode|null);
-        }
-
-        /** Represents a DynamicNode. */
-        class DynamicNode implements IDynamicNode {
-
-            /**
-             * Constructs a new DynamicNode.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.IDynamicNode);
-
-            /** DynamicNode generateId. */
-            public generateId: string;
-
-            /** DynamicNode metadata. */
-            public metadata?: (flyteidl.core.INodeMetadata|null);
-
-            /** DynamicNode taskRef. */
-            public taskRef?: (flyteidl.core.ITaskNode|null);
-
-            /** DynamicNode target. */
-            public target?: "taskRef";
-
-            /**
-             * Creates a new DynamicNode instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns DynamicNode instance
-             */
-            public static create(properties?: flyteidl.core.IDynamicNode): flyteidl.core.DynamicNode;
-
-            /**
-             * Encodes the specified DynamicNode message. Does not implicitly {@link flyteidl.core.DynamicNode.verify|verify} messages.
-             * @param message DynamicNode message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.IDynamicNode, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a DynamicNode message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns DynamicNode
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.DynamicNode;
-
-            /**
-             * Verifies a DynamicNode message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -3973,41 +3835,187 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** WorkflowExecutionPhase enum. */
-        enum WorkflowExecutionPhase {
-            WORKFLOW_PHASE_UNDEFINED = 0,
-            WORKFLOW_PHASE_RUNNING = 1,
-            WORKFLOW_PHASE_SUCCEEDING = 2,
-            WORKFLOW_PHASE_SUCCEEDED = 3,
-            WORKFLOW_PHASE_FAILING = 4,
-            WORKFLOW_PHASE_FAILED = 5,
-            WORKFLOW_PHASE_TIMED_OUT = 6,
-            WORKFLOW_PHASE_ABORTED = 7,
-            WORKFLOW_PHASE_QUEUED = 8
+        /** Properties of a WorkflowExecution. */
+        interface IWorkflowExecution {
         }
 
-        /** NodeExecutionPhase enum. */
-        enum NodeExecutionPhase {
-            NODE_PHASE_UNDEFINED = 0,
-            NODE_PHASE_RUNNING = 1,
-            NODE_PHASE_SUCCEEDED = 2,
-            NODE_PHASE_FAILING = 3,
-            NODE_PHASE_FAILED = 4,
-            NODE_PHASE_TIMED_OUT = 5,
-            NODE_PHASE_SKIPPED = 6,
-            NODE_PHASE_ABORTED = 7,
-            NODE_PHASE_QUEUED = 8
+        /** Represents a WorkflowExecution. */
+        class WorkflowExecution implements IWorkflowExecution {
+
+            /**
+             * Constructs a new WorkflowExecution.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IWorkflowExecution);
+
+            /**
+             * Creates a new WorkflowExecution instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns WorkflowExecution instance
+             */
+            public static create(properties?: flyteidl.core.IWorkflowExecution): flyteidl.core.WorkflowExecution;
+
+            /**
+             * Encodes the specified WorkflowExecution message. Does not implicitly {@link flyteidl.core.WorkflowExecution.verify|verify} messages.
+             * @param message WorkflowExecution message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IWorkflowExecution, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a WorkflowExecution message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns WorkflowExecution
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.WorkflowExecution;
+
+            /**
+             * Verifies a WorkflowExecution message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** TaskExecutionPhase enum. */
-        enum TaskExecutionPhase {
-            TASK_PHASE_UNDEFINED = 0,
-            TASK_PHASE_QUEUED = 1,
-            TASK_PHASE_RUNNABLE = 2,
-            TASK_PHASE_RUNNING = 3,
-            TASK_PHASE_SUCCEEDED = 4,
-            TASK_PHASE_FAILED = 5,
-            TASK_PHASE_ABORTED = 6
+        namespace WorkflowExecution {
+
+            /** Phase enum. */
+            enum Phase {
+                UNDEFINED = 0,
+                QUEUED = 1,
+                RUNNING = 2,
+                SUCCEEDING = 3,
+                SUCCEEDED = 4,
+                FAILING = 5,
+                FAILED = 6,
+                ABORTED = 7,
+                TIMED_OUT = 8
+            }
+        }
+
+        /** Properties of a NodeExecution. */
+        interface INodeExecution {
+        }
+
+        /** Represents a NodeExecution. */
+        class NodeExecution implements INodeExecution {
+
+            /**
+             * Constructs a new NodeExecution.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.INodeExecution);
+
+            /**
+             * Creates a new NodeExecution instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns NodeExecution instance
+             */
+            public static create(properties?: flyteidl.core.INodeExecution): flyteidl.core.NodeExecution;
+
+            /**
+             * Encodes the specified NodeExecution message. Does not implicitly {@link flyteidl.core.NodeExecution.verify|verify} messages.
+             * @param message NodeExecution message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.INodeExecution, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a NodeExecution message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns NodeExecution
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.NodeExecution;
+
+            /**
+             * Verifies a NodeExecution message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace NodeExecution {
+
+            /** Phase enum. */
+            enum Phase {
+                UNDEFINED = 0,
+                QUEUED = 1,
+                RUNNING = 2,
+                SUCCEEDED = 3,
+                FAILING = 4,
+                FAILED = 5,
+                ABORTED = 6,
+                SKIPPED = 7,
+                TIMED_OUT = 8
+            }
+        }
+
+        /** Properties of a TaskExecution. */
+        interface ITaskExecution {
+        }
+
+        /** Represents a TaskExecution. */
+        class TaskExecution implements ITaskExecution {
+
+            /**
+             * Constructs a new TaskExecution.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ITaskExecution);
+
+            /**
+             * Creates a new TaskExecution instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskExecution instance
+             */
+            public static create(properties?: flyteidl.core.ITaskExecution): flyteidl.core.TaskExecution;
+
+            /**
+             * Encodes the specified TaskExecution message. Does not implicitly {@link flyteidl.core.TaskExecution.verify|verify} messages.
+             * @param message TaskExecution message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ITaskExecution, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskExecution message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskExecution
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.TaskExecution;
+
+            /**
+             * Verifies a TaskExecution message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace TaskExecution {
+
+            /** Phase enum. */
+            enum Phase {
+                UNDEFINED = 0,
+                QUEUED = 1,
+                RUNNING = 2,
+                SUCCEEDED = 3,
+                ABORTED = 4,
+                FAILED = 5
+            }
         }
 
         /** Properties of an ExecutionError. */
@@ -4226,7 +4234,7 @@ export namespace flyteidl {
             producerId?: (string|null);
 
             /** WorkflowExecutionEvent phase */
-            phase?: (flyteidl.core.WorkflowExecutionPhase|null);
+            phase?: (flyteidl.core.WorkflowExecution.Phase|null);
 
             /** WorkflowExecutionEvent occurredAt */
             occurredAt?: (google.protobuf.ITimestamp|null);
@@ -4254,7 +4262,7 @@ export namespace flyteidl {
             public producerId: string;
 
             /** WorkflowExecutionEvent phase. */
-            public phase: flyteidl.core.WorkflowExecutionPhase;
+            public phase: flyteidl.core.WorkflowExecution.Phase;
 
             /** WorkflowExecutionEvent occurredAt. */
             public occurredAt?: (google.protobuf.ITimestamp|null);
@@ -4311,7 +4319,7 @@ export namespace flyteidl {
             producerId?: (string|null);
 
             /** NodeExecutionEvent phase */
-            phase?: (flyteidl.core.NodeExecutionPhase|null);
+            phase?: (flyteidl.core.NodeExecution.Phase|null);
 
             /** NodeExecutionEvent occurredAt */
             occurredAt?: (google.protobuf.ITimestamp|null);
@@ -4345,7 +4353,7 @@ export namespace flyteidl {
             public producerId: string;
 
             /** NodeExecutionEvent phase. */
-            public phase: flyteidl.core.NodeExecutionPhase;
+            public phase: flyteidl.core.NodeExecution.Phase;
 
             /** NodeExecutionEvent occurredAt. */
             public occurredAt?: (google.protobuf.ITimestamp|null);
@@ -4466,7 +4474,7 @@ export namespace flyteidl {
             retryAttempt?: (number|null);
 
             /** TaskExecutionEvent phase */
-            phase?: (flyteidl.core.TaskExecutionPhase|null);
+            phase?: (flyteidl.core.TaskExecution.Phase|null);
 
             /** TaskExecutionEvent producerId */
             producerId?: (string|null);
@@ -4512,7 +4520,7 @@ export namespace flyteidl {
             public retryAttempt: number;
 
             /** TaskExecutionEvent phase. */
-            public phase: flyteidl.core.TaskExecutionPhase;
+            public phase: flyteidl.core.TaskExecution.Phase;
 
             /** TaskExecutionEvent producerId. */
             public producerId: string;
@@ -5131,7 +5139,7 @@ export namespace flyteidl {
         interface INotification {
 
             /** Notification phases */
-            phases?: (flyteidl.core.WorkflowExecutionPhase[]|null);
+            phases?: (flyteidl.core.WorkflowExecution.Phase[]|null);
 
             /** Notification email */
             email?: (flyteidl.admin.IEmailNotification|null);
@@ -5153,7 +5161,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.admin.INotification);
 
             /** Notification phases. */
-            public phases: flyteidl.core.WorkflowExecutionPhase[];
+            public phases: flyteidl.core.WorkflowExecution.Phase[];
 
             /** Notification email. */
             public email?: (flyteidl.admin.IEmailNotification|null);
@@ -6001,7 +6009,7 @@ export namespace flyteidl {
             computedInputs?: (flyteidl.core.ILiteralMap|null);
 
             /** ExecutionClosure phase */
-            phase?: (flyteidl.core.WorkflowExecutionPhase|null);
+            phase?: (flyteidl.core.WorkflowExecution.Phase|null);
 
             /** ExecutionClosure startedAt */
             startedAt?: (google.protobuf.ITimestamp|null);
@@ -6044,7 +6052,7 @@ export namespace flyteidl {
             public computedInputs?: (flyteidl.core.ILiteralMap|null);
 
             /** ExecutionClosure phase. */
-            public phase: flyteidl.core.WorkflowExecutionPhase;
+            public phase: flyteidl.core.WorkflowExecution.Phase;
 
             /** ExecutionClosure startedAt. */
             public startedAt?: (google.protobuf.ITimestamp|null);
@@ -7083,6 +7091,9 @@ export namespace flyteidl {
         /** Properties of a NodeExecutionListRequest. */
         interface INodeExecutionListRequest {
 
+            /** NodeExecutionListRequest workflowExecutionId */
+            workflowExecutionId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
             /** NodeExecutionListRequest limit */
             limit?: (number|null);
 
@@ -7104,6 +7115,9 @@ export namespace flyteidl {
              * @param [properties] Properties to set
              */
             constructor(properties?: flyteidl.admin.INodeExecutionListRequest);
+
+            /** NodeExecutionListRequest workflowExecutionId. */
+            public workflowExecutionId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
 
             /** NodeExecutionListRequest limit. */
             public limit: number;
@@ -7282,7 +7296,7 @@ export namespace flyteidl {
             error?: (flyteidl.core.IExecutionError|null);
 
             /** NodeExecutionClosure phase */
-            phase?: (flyteidl.core.NodeExecutionPhase|null);
+            phase?: (flyteidl.core.NodeExecution.Phase|null);
 
             /** NodeExecutionClosure startedAt */
             startedAt?: (google.protobuf.ITimestamp|null);
@@ -7313,7 +7327,7 @@ export namespace flyteidl {
             public error?: (flyteidl.core.IExecutionError|null);
 
             /** NodeExecutionClosure phase. */
-            public phase: flyteidl.core.NodeExecutionPhase;
+            public phase: flyteidl.core.NodeExecution.Phase;
 
             /** NodeExecutionClosure startedAt. */
             public startedAt?: (google.protobuf.ITimestamp|null);
@@ -8200,6 +8214,9 @@ export namespace flyteidl {
         /** Properties of a TaskExecutionListRequest. */
         interface ITaskExecutionListRequest {
 
+            /** TaskExecutionListRequest nodeExecutionId */
+            nodeExecutionId?: (flyteidl.core.INodeExecutionIdentifier|null);
+
             /** TaskExecutionListRequest limit */
             limit?: (number|null);
 
@@ -8221,6 +8238,9 @@ export namespace flyteidl {
              * @param [properties] Properties to set
              */
             constructor(properties?: flyteidl.admin.ITaskExecutionListRequest);
+
+            /** TaskExecutionListRequest nodeExecutionId. */
+            public nodeExecutionId?: (flyteidl.core.INodeExecutionIdentifier|null);
 
             /** TaskExecutionListRequest limit. */
             public limit: number;
@@ -8399,7 +8419,7 @@ export namespace flyteidl {
             error?: (flyteidl.core.IExecutionError|null);
 
             /** TaskExecutionClosure phase */
-            phase?: (flyteidl.core.TaskExecutionPhase|null);
+            phase?: (flyteidl.core.TaskExecution.Phase|null);
 
             /** TaskExecutionClosure logs */
             logs?: (flyteidl.core.ITaskLog[]|null);
@@ -8433,7 +8453,7 @@ export namespace flyteidl {
             public error?: (flyteidl.core.IExecutionError|null);
 
             /** TaskExecutionClosure phase. */
-            public phase: flyteidl.core.TaskExecutionPhase;
+            public phase: flyteidl.core.TaskExecution.Phase;
 
             /** TaskExecutionClosure logs. */
             public logs: flyteidl.core.ITaskLog[];
@@ -9570,17 +9590,14 @@ export namespace flyteidl {
         /** Properties of an ArrayJob. */
         interface IArrayJob {
 
-            /** ArrayJob slots */
-            slots?: (Long|null);
+            /** ArrayJob parallelism */
+            parallelism?: (Long|null);
 
-            /** ArrayJob completions */
-            completions?: (Long|null);
+            /** ArrayJob size */
+            size?: (Long|null);
 
             /** ArrayJob minSuccesses */
             minSuccesses?: (Long|null);
-
-            /** ArrayJob inputRef */
-            inputRef?: (string|null);
         }
 
         /** Represents an ArrayJob. */
@@ -9592,17 +9609,14 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.plugins.IArrayJob);
 
-            /** ArrayJob slots. */
-            public slots: Long;
+            /** ArrayJob parallelism. */
+            public parallelism: Long;
 
-            /** ArrayJob completions. */
-            public completions: Long;
+            /** ArrayJob size. */
+            public size: Long;
 
             /** ArrayJob minSuccesses. */
             public minSuccesses: Long;
-
-            /** ArrayJob inputRef. */
-            public inputRef: string;
 
             /**
              * Creates a new ArrayJob instance using the specified properties.
@@ -9817,19 +9831,68 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** SparkApplicationType enum. */
-        enum SparkApplicationType {
-            PythonApplicationType = 0,
-            JavaApplicationType = 1,
-            ScalaApplicationType = 2,
-            RApplicationType = 3
+        /** Properties of a SparkApplication. */
+        interface ISparkApplication {
+        }
+
+        /** Represents a SparkApplication. */
+        class SparkApplication implements ISparkApplication {
+
+            /**
+             * Constructs a new SparkApplication.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.plugins.ISparkApplication);
+
+            /**
+             * Creates a new SparkApplication instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns SparkApplication instance
+             */
+            public static create(properties?: flyteidl.plugins.ISparkApplication): flyteidl.plugins.SparkApplication;
+
+            /**
+             * Encodes the specified SparkApplication message. Does not implicitly {@link flyteidl.plugins.SparkApplication.verify|verify} messages.
+             * @param message SparkApplication message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.plugins.ISparkApplication, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a SparkApplication message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SparkApplication
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.plugins.SparkApplication;
+
+            /**
+             * Verifies a SparkApplication message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace SparkApplication {
+
+            /** Type enum. */
+            enum Type {
+                PYTHON = 0,
+                JAVA = 1,
+                SCALA = 2,
+                R = 3
+            }
         }
 
         /** Properties of a SparkJob. */
         interface ISparkJob {
 
             /** SparkJob applicationType */
-            applicationType?: (flyteidl.plugins.SparkApplicationType|null);
+            applicationType?: (flyteidl.plugins.SparkApplication.Type|null);
 
             /** SparkJob mainApplicationFile */
             mainApplicationFile?: (string|null);
@@ -9854,7 +9917,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.plugins.ISparkJob);
 
             /** SparkJob applicationType. */
-            public applicationType: flyteidl.plugins.SparkApplicationType;
+            public applicationType: flyteidl.plugins.SparkApplication.Type;
 
             /** SparkJob mainApplicationFile. */
             public mainApplicationFile: string;

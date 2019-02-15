@@ -10,23 +10,16 @@ package flyteidl.core;
 
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
 
-enum TaskCategory {
-    // Task category that identifies if the system can use default structures in UI, etc to drive the task
-    // TODO should we add Container type of tasks as a special Class?
-    SingleStepTask = 0;
-    MultiStepTask = 1;
-}
-
 // A customizable interface to convey resources requested for a container. This can be interpretted differently for different
 // container engines.
 message Resources {
     // Known resource names.
     enum ResourceName {
-        Unknown = 0;
-        Cpu = 1;
-        Gpu = 2;
-        Memory = 3;
-        Storage = 4;
+        UNKNOWN = 0;
+        CPU = 1;
+        GPU = 2;
+        MEMORY = 3;
+        STORAGE = 4;
     }
 
     // Encapsulates a resource name and value.
@@ -34,22 +27,24 @@ message Resources {
         // Resource name.
         ResourceName name = 1;
 
-        // Value must be a valid k8s quantity.
+        // Value must be a valid k8s quantity. See
+        // https://github.com/kubernetes/apimachinery/blob/master/pkg/api/resource/quantity.go#L30-L80
         string value = 2;
     }
 
-    // The desired set of resources requested.
+    // The desired set of resources requested. ResourceNames must be unique within the list.
     repeated ResourceEntry requests = 1;
 
-    // Defines a set of bounds (e.g. min/max) within which the task can reliably run.
+    // Defines a set of bounds (e.g. min/max) within which the task can reliably run. ResourceNames must be unique
+    // within the list.
     repeated ResourceEntry limits = 2;
 }
 
 // Runtime information. This is losely defined to allow for extensibility.
 message RuntimeMetadata {
     enum RuntimeType {
-        Other = 0;
-        FlyteSDK = 1;
+        OTHER = 0;
+        FLYTE_SDK = 1;
     }
 
     // Type of runtime.
@@ -71,7 +66,7 @@ message TaskMetadata {
     // Runtime information about the task.
     RuntimeMetadata runtime = 2;
 
-    // The overall timeout of a task.
+    // The overall timeout of a task including user-triggered retries.
     google.protobuf.Duration timeout = 4;
 
     // Number of retries per task.
@@ -82,7 +77,7 @@ message TaskMetadata {
 
     // If set, this indicates that this task is deprecated.  This will enable owners of tasks to notify consumers
     // of the ending of support for a given task.
-    string deprecated = 7;
+    string deprecated_error_message = 7;
 }
 
 // A Task structure that uniquely identifies a task in the system
@@ -91,29 +86,26 @@ message TaskTemplate {
     // Auto generated taskId by the system. Task Id uniquely identifies this task globally.
     Identifier id = 1;
 
-    // Category of the task. These are predefined and help provide defaults
-    TaskCategory category = 2;
-
     // A predefined yet extensible Task type identifier. This can be used to customize any of the components. If no
     // extensions are provided in the system, Flyte will resolve the this task to its TaskCategory and default the
     // implementation registered for the TaskCategory.
-    string type = 3;
+    string type = 2;
 
     // Extra metadata about the task.
-    TaskMetadata metadata = 4;
+    TaskMetadata metadata = 3;
 
     // A strongly typed interface for the task. This enables others to use this task within a workflow and gauarantees
     // compile-time validation of the workflow to avoid costly runtime failures.
-    TypedInterface interface = 5;
+    TypedInterface interface = 4;
 
     // Custom data about the task. This is extensible to allow various plugins in the system.
-    google.protobuf.Struct custom = 6;
+    google.protobuf.Struct custom = 5;
 
     // Known target types that the system will guarantee plugins for. Custom SDK plugins are allowed to set these if needed.
     // If no corresponding execution-layer plugins are found, the system will default to handling these using built-in
     // handlers.
     oneof target {
-        Container container = 7;
+        Container container = 6;
     }
 }
 

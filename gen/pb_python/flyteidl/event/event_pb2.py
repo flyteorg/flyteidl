@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/event/event.proto',
   package='flyteidl.event',
   syntax='proto3',
-  serialized_pb=_b('\n\x1a\x66lyteidl/event/event.proto\x12\x0e\x66lyteidl.event\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/protobuf/struct.proto\"\xad\x02\n\x16WorkflowExecutionEvent\x12@\n\x0c\x65xecution_id\x18\x01 \x01(\x0b\x32*.flyteidl.core.WorkflowExecutionIdentifier\x12\x13\n\x0bproducer_id\x18\x02 \x01(\t\x12\x34\n\x05phase\x18\x03 \x01(\x0e\x32%.flyteidl.core.WorkflowExecutionPhase\x12/\n\x0boccurred_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x14\n\noutput_uri\x18\x05 \x01(\tH\x00\x12.\n\x05\x65rror\x18\x06 \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x42\x0f\n\routput_result\"\x85\x03\n\x12NodeExecutionEvent\x12\x32\n\x02id\x18\x01 \x01(\x0b\x32&.flyteidl.core.NodeExecutionIdentifier\x12\x13\n\x0bproducer_id\x18\x02 \x01(\t\x12\x30\n\x05phase\x18\x03 \x01(\x0e\x32!.flyteidl.core.NodeExecutionPhase\x12/\n\x0boccurred_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tinput_uri\x18\x05 \x01(\t\x12\x14\n\noutput_uri\x18\x06 \x01(\tH\x00\x12.\n\x05\x65rror\x18\x07 \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x12\x46\n\x16workflow_node_metadata\x18\x08 \x01(\x0b\x32$.flyteidl.event.WorkflowNodeMetadataH\x01\x42\x0f\n\routput_resultB\x11\n\x0ftarget_metadata\"X\n\x14WorkflowNodeMetadata\x12@\n\x0c\x65xecution_id\x18\x01 \x01(\x0b\x32*.flyteidl.core.WorkflowExecutionIdentifier\"\xee\x03\n\x12TaskExecutionEvent\x12*\n\x07task_id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12H\n\x18parent_node_execution_id\x18\x02 \x01(\x0b\x32&.flyteidl.core.NodeExecutionIdentifier\x12\x15\n\rretry_attempt\x18\x03 \x01(\r\x12\x30\n\x05phase\x18\x04 \x01(\x0e\x32!.flyteidl.core.TaskExecutionPhase\x12\x13\n\x0bproducer_id\x18\x05 \x01(\t\x12$\n\x04logs\x18\x06 \x03(\x0b\x32\x16.flyteidl.core.TaskLog\x12/\n\x0boccurred_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tinput_uri\x18\x08 \x01(\t\x12\x14\n\noutput_uri\x18\t \x01(\tH\x00\x12.\n\x05\x65rror\x18\n \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x12,\n\x0b\x63ustom_info\x18\x0b \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x15\n\rphase_version\x18\x0c \x01(\rB\x0f\n\routput_resultB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/eventb\x06proto3')
+  serialized_pb=_b('\n\x1a\x66lyteidl/event/event.proto\x12\x0e\x66lyteidl.event\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/protobuf/struct.proto\"\xae\x02\n\x16WorkflowExecutionEvent\x12@\n\x0c\x65xecution_id\x18\x01 \x01(\x0b\x32*.flyteidl.core.WorkflowExecutionIdentifier\x12\x13\n\x0bproducer_id\x18\x02 \x01(\t\x12\x35\n\x05phase\x18\x03 \x01(\x0e\x32&.flyteidl.core.WorkflowExecution.Phase\x12/\n\x0boccurred_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x14\n\noutput_uri\x18\x05 \x01(\tH\x00\x12.\n\x05\x65rror\x18\x06 \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x42\x0f\n\routput_result\"\x86\x03\n\x12NodeExecutionEvent\x12\x32\n\x02id\x18\x01 \x01(\x0b\x32&.flyteidl.core.NodeExecutionIdentifier\x12\x13\n\x0bproducer_id\x18\x02 \x01(\t\x12\x31\n\x05phase\x18\x03 \x01(\x0e\x32\".flyteidl.core.NodeExecution.Phase\x12/\n\x0boccurred_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tinput_uri\x18\x05 \x01(\t\x12\x14\n\noutput_uri\x18\x06 \x01(\tH\x00\x12.\n\x05\x65rror\x18\x07 \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x12\x46\n\x16workflow_node_metadata\x18\x08 \x01(\x0b\x32$.flyteidl.event.WorkflowNodeMetadataH\x01\x42\x0f\n\routput_resultB\x11\n\x0ftarget_metadata\"X\n\x14WorkflowNodeMetadata\x12@\n\x0c\x65xecution_id\x18\x01 \x01(\x0b\x32*.flyteidl.core.WorkflowExecutionIdentifier\"\xef\x03\n\x12TaskExecutionEvent\x12*\n\x07task_id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12H\n\x18parent_node_execution_id\x18\x02 \x01(\x0b\x32&.flyteidl.core.NodeExecutionIdentifier\x12\x15\n\rretry_attempt\x18\x03 \x01(\r\x12\x31\n\x05phase\x18\x04 \x01(\x0e\x32\".flyteidl.core.TaskExecution.Phase\x12\x13\n\x0bproducer_id\x18\x05 \x01(\t\x12$\n\x04logs\x18\x06 \x03(\x0b\x32\x16.flyteidl.core.TaskLog\x12/\n\x0boccurred_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tinput_uri\x18\x08 \x01(\t\x12\x14\n\noutput_uri\x18\t \x01(\tH\x00\x12.\n\x05\x65rror\x18\n \x01(\x0b\x32\x1d.flyteidl.core.ExecutionErrorH\x00\x12,\n\x0b\x63ustom_info\x18\x0b \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x15\n\rphase_version\x18\x0c \x01(\rB\x0f\n\routput_resultB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/eventb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_execution__pb2.DESCRIPTOR,flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,])
 
@@ -95,7 +95,7 @@ _WORKFLOWEXECUTIONEVENT = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=173,
-  serialized_end=474,
+  serialized_end=475,
 )
 
 
@@ -180,8 +180,8 @@ _NODEEXECUTIONEVENT = _descriptor.Descriptor(
       name='target_metadata', full_name='flyteidl.event.NodeExecutionEvent.target_metadata',
       index=1, containing_type=None, fields=[]),
   ],
-  serialized_start=477,
-  serialized_end=866,
+  serialized_start=478,
+  serialized_end=868,
 )
 
 
@@ -211,8 +211,8 @@ _WORKFLOWNODEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=868,
-  serialized_end=956,
+  serialized_start=870,
+  serialized_end=958,
 )
 
 
@@ -322,12 +322,12 @@ _TASKEXECUTIONEVENT = _descriptor.Descriptor(
       name='output_result', full_name='flyteidl.event.TaskExecutionEvent.output_result',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=959,
-  serialized_end=1453,
+  serialized_start=961,
+  serialized_end=1456,
 )
 
 _WORKFLOWEXECUTIONEVENT.fields_by_name['execution_id'].message_type = flyteidl_dot_core_dot_identifier__pb2._WORKFLOWEXECUTIONIDENTIFIER
-_WORKFLOWEXECUTIONEVENT.fields_by_name['phase'].enum_type = flyteidl_dot_core_dot_execution__pb2._WORKFLOWEXECUTIONPHASE
+_WORKFLOWEXECUTIONEVENT.fields_by_name['phase'].enum_type = flyteidl_dot_core_dot_execution__pb2._WORKFLOWEXECUTION_PHASE
 _WORKFLOWEXECUTIONEVENT.fields_by_name['occurred_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _WORKFLOWEXECUTIONEVENT.fields_by_name['error'].message_type = flyteidl_dot_core_dot_execution__pb2._EXECUTIONERROR
 _WORKFLOWEXECUTIONEVENT.oneofs_by_name['output_result'].fields.append(
@@ -337,7 +337,7 @@ _WORKFLOWEXECUTIONEVENT.oneofs_by_name['output_result'].fields.append(
   _WORKFLOWEXECUTIONEVENT.fields_by_name['error'])
 _WORKFLOWEXECUTIONEVENT.fields_by_name['error'].containing_oneof = _WORKFLOWEXECUTIONEVENT.oneofs_by_name['output_result']
 _NODEEXECUTIONEVENT.fields_by_name['id'].message_type = flyteidl_dot_core_dot_identifier__pb2._NODEEXECUTIONIDENTIFIER
-_NODEEXECUTIONEVENT.fields_by_name['phase'].enum_type = flyteidl_dot_core_dot_execution__pb2._NODEEXECUTIONPHASE
+_NODEEXECUTIONEVENT.fields_by_name['phase'].enum_type = flyteidl_dot_core_dot_execution__pb2._NODEEXECUTION_PHASE
 _NODEEXECUTIONEVENT.fields_by_name['occurred_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _NODEEXECUTIONEVENT.fields_by_name['error'].message_type = flyteidl_dot_core_dot_execution__pb2._EXECUTIONERROR
 _NODEEXECUTIONEVENT.fields_by_name['workflow_node_metadata'].message_type = _WORKFLOWNODEMETADATA
@@ -353,7 +353,7 @@ _NODEEXECUTIONEVENT.fields_by_name['workflow_node_metadata'].containing_oneof = 
 _WORKFLOWNODEMETADATA.fields_by_name['execution_id'].message_type = flyteidl_dot_core_dot_identifier__pb2._WORKFLOWEXECUTIONIDENTIFIER
 _TASKEXECUTIONEVENT.fields_by_name['task_id'].message_type = flyteidl_dot_core_dot_identifier__pb2._IDENTIFIER
 _TASKEXECUTIONEVENT.fields_by_name['parent_node_execution_id'].message_type = flyteidl_dot_core_dot_identifier__pb2._NODEEXECUTIONIDENTIFIER
-_TASKEXECUTIONEVENT.fields_by_name['phase'].enum_type = flyteidl_dot_core_dot_execution__pb2._TASKEXECUTIONPHASE
+_TASKEXECUTIONEVENT.fields_by_name['phase'].enum_type = flyteidl_dot_core_dot_execution__pb2._TASKEXECUTION_PHASE
 _TASKEXECUTIONEVENT.fields_by_name['logs'].message_type = flyteidl_dot_core_dot_execution__pb2._TASKLOG
 _TASKEXECUTIONEVENT.fields_by_name['occurred_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _TASKEXECUTIONEVENT.fields_by_name['error'].message_type = flyteidl_dot_core_dot_execution__pb2._EXECUTIONERROR

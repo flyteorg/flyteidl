@@ -19,134 +19,127 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
-// Indicates various phases of Workflow Execution
-type WorkflowExecutionPhase int32
+type WorkflowExecution_Phase int32
 
 const (
-	WorkflowExecutionPhase_WORKFLOW_PHASE_UNDEFINED  WorkflowExecutionPhase = 0
-	WorkflowExecutionPhase_WORKFLOW_PHASE_RUNNING    WorkflowExecutionPhase = 1
-	WorkflowExecutionPhase_WORKFLOW_PHASE_SUCCEEDING WorkflowExecutionPhase = 2
-	WorkflowExecutionPhase_WORKFLOW_PHASE_SUCCEEDED  WorkflowExecutionPhase = 3
-	WorkflowExecutionPhase_WORKFLOW_PHASE_FAILING    WorkflowExecutionPhase = 4
-	WorkflowExecutionPhase_WORKFLOW_PHASE_FAILED     WorkflowExecutionPhase = 5
-	WorkflowExecutionPhase_WORKFLOW_PHASE_TIMED_OUT  WorkflowExecutionPhase = 6
-	WorkflowExecutionPhase_WORKFLOW_PHASE_ABORTED    WorkflowExecutionPhase = 7
-	WorkflowExecutionPhase_WORKFLOW_PHASE_QUEUED     WorkflowExecutionPhase = 8
+	WorkflowExecution_UNDEFINED  WorkflowExecution_Phase = 0
+	WorkflowExecution_QUEUED     WorkflowExecution_Phase = 1
+	WorkflowExecution_RUNNING    WorkflowExecution_Phase = 2
+	WorkflowExecution_SUCCEEDING WorkflowExecution_Phase = 3
+	WorkflowExecution_SUCCEEDED  WorkflowExecution_Phase = 4
+	WorkflowExecution_FAILING    WorkflowExecution_Phase = 5
+	WorkflowExecution_FAILED     WorkflowExecution_Phase = 6
+	WorkflowExecution_ABORTED    WorkflowExecution_Phase = 7
+	WorkflowExecution_TIMED_OUT  WorkflowExecution_Phase = 8
 )
 
-var WorkflowExecutionPhase_name = map[int32]string{
-	0: "WORKFLOW_PHASE_UNDEFINED",
-	1: "WORKFLOW_PHASE_RUNNING",
-	2: "WORKFLOW_PHASE_SUCCEEDING",
-	3: "WORKFLOW_PHASE_SUCCEEDED",
-	4: "WORKFLOW_PHASE_FAILING",
-	5: "WORKFLOW_PHASE_FAILED",
-	6: "WORKFLOW_PHASE_TIMED_OUT",
-	7: "WORKFLOW_PHASE_ABORTED",
-	8: "WORKFLOW_PHASE_QUEUED",
+var WorkflowExecution_Phase_name = map[int32]string{
+	0: "UNDEFINED",
+	1: "QUEUED",
+	2: "RUNNING",
+	3: "SUCCEEDING",
+	4: "SUCCEEDED",
+	5: "FAILING",
+	6: "FAILED",
+	7: "ABORTED",
+	8: "TIMED_OUT",
 }
-var WorkflowExecutionPhase_value = map[string]int32{
-	"WORKFLOW_PHASE_UNDEFINED":  0,
-	"WORKFLOW_PHASE_RUNNING":    1,
-	"WORKFLOW_PHASE_SUCCEEDING": 2,
-	"WORKFLOW_PHASE_SUCCEEDED":  3,
-	"WORKFLOW_PHASE_FAILING":    4,
-	"WORKFLOW_PHASE_FAILED":     5,
-	"WORKFLOW_PHASE_TIMED_OUT":  6,
-	"WORKFLOW_PHASE_ABORTED":    7,
-	"WORKFLOW_PHASE_QUEUED":     8,
-}
-
-func (x WorkflowExecutionPhase) String() string {
-	return proto.EnumName(WorkflowExecutionPhase_name, int32(x))
-}
-func (WorkflowExecutionPhase) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_execution_e6dac1a5cb2f2561, []int{0}
+var WorkflowExecution_Phase_value = map[string]int32{
+	"UNDEFINED":  0,
+	"QUEUED":     1,
+	"RUNNING":    2,
+	"SUCCEEDING": 3,
+	"SUCCEEDED":  4,
+	"FAILING":    5,
+	"FAILED":     6,
+	"ABORTED":    7,
+	"TIMED_OUT":  8,
 }
 
-// Indicates various phases of Node Execution
-type NodeExecutionPhase int32
+func (x WorkflowExecution_Phase) String() string {
+	return proto.EnumName(WorkflowExecution_Phase_name, int32(x))
+}
+func (WorkflowExecution_Phase) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_execution_9e5183245240f7ca, []int{0, 0}
+}
+
+type NodeExecution_Phase int32
 
 const (
-	NodeExecutionPhase_NODE_PHASE_UNDEFINED NodeExecutionPhase = 0
-	NodeExecutionPhase_NODE_PHASE_RUNNING   NodeExecutionPhase = 1
-	NodeExecutionPhase_NODE_PHASE_SUCCEEDED NodeExecutionPhase = 2
-	NodeExecutionPhase_NODE_PHASE_FAILING   NodeExecutionPhase = 3
-	NodeExecutionPhase_NODE_PHASE_FAILED    NodeExecutionPhase = 4
-	NodeExecutionPhase_NODE_PHASE_TIMED_OUT NodeExecutionPhase = 5
-	NodeExecutionPhase_NODE_PHASE_SKIPPED   NodeExecutionPhase = 6
-	NodeExecutionPhase_NODE_PHASE_ABORTED   NodeExecutionPhase = 7
-	NodeExecutionPhase_NODE_PHASE_QUEUED    NodeExecutionPhase = 8
+	NodeExecution_UNDEFINED NodeExecution_Phase = 0
+	NodeExecution_QUEUED    NodeExecution_Phase = 1
+	NodeExecution_RUNNING   NodeExecution_Phase = 2
+	NodeExecution_SUCCEEDED NodeExecution_Phase = 3
+	NodeExecution_FAILING   NodeExecution_Phase = 4
+	NodeExecution_FAILED    NodeExecution_Phase = 5
+	NodeExecution_ABORTED   NodeExecution_Phase = 6
+	NodeExecution_SKIPPED   NodeExecution_Phase = 7
+	NodeExecution_TIMED_OUT NodeExecution_Phase = 8
 )
 
-var NodeExecutionPhase_name = map[int32]string{
-	0: "NODE_PHASE_UNDEFINED",
-	1: "NODE_PHASE_RUNNING",
-	2: "NODE_PHASE_SUCCEEDED",
-	3: "NODE_PHASE_FAILING",
-	4: "NODE_PHASE_FAILED",
-	5: "NODE_PHASE_TIMED_OUT",
-	6: "NODE_PHASE_SKIPPED",
-	7: "NODE_PHASE_ABORTED",
-	8: "NODE_PHASE_QUEUED",
+var NodeExecution_Phase_name = map[int32]string{
+	0: "UNDEFINED",
+	1: "QUEUED",
+	2: "RUNNING",
+	3: "SUCCEEDED",
+	4: "FAILING",
+	5: "FAILED",
+	6: "ABORTED",
+	7: "SKIPPED",
+	8: "TIMED_OUT",
 }
-var NodeExecutionPhase_value = map[string]int32{
-	"NODE_PHASE_UNDEFINED": 0,
-	"NODE_PHASE_RUNNING":   1,
-	"NODE_PHASE_SUCCEEDED": 2,
-	"NODE_PHASE_FAILING":   3,
-	"NODE_PHASE_FAILED":    4,
-	"NODE_PHASE_TIMED_OUT": 5,
-	"NODE_PHASE_SKIPPED":   6,
-	"NODE_PHASE_ABORTED":   7,
-	"NODE_PHASE_QUEUED":    8,
-}
-
-func (x NodeExecutionPhase) String() string {
-	return proto.EnumName(NodeExecutionPhase_name, int32(x))
-}
-func (NodeExecutionPhase) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_execution_e6dac1a5cb2f2561, []int{1}
+var NodeExecution_Phase_value = map[string]int32{
+	"UNDEFINED": 0,
+	"QUEUED":    1,
+	"RUNNING":   2,
+	"SUCCEEDED": 3,
+	"FAILING":   4,
+	"FAILED":    5,
+	"ABORTED":   6,
+	"SKIPPED":   7,
+	"TIMED_OUT": 8,
 }
 
-// Phases that task plugins can go through. Not all phases may be applicable to a specific plugin task,
-// but this is the cumulative list that customers may want to know about for their task.
-type TaskExecutionPhase int32
+func (x NodeExecution_Phase) String() string {
+	return proto.EnumName(NodeExecution_Phase_name, int32(x))
+}
+func (NodeExecution_Phase) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_execution_9e5183245240f7ca, []int{1, 0}
+}
+
+type TaskExecution_Phase int32
 
 const (
-	TaskExecutionPhase_TASK_PHASE_UNDEFINED TaskExecutionPhase = 0
-	TaskExecutionPhase_TASK_PHASE_QUEUED    TaskExecutionPhase = 1
-	TaskExecutionPhase_TASK_PHASE_RUNNABLE  TaskExecutionPhase = 2
-	TaskExecutionPhase_TASK_PHASE_RUNNING   TaskExecutionPhase = 3
-	TaskExecutionPhase_TASK_PHASE_SUCCEEDED TaskExecutionPhase = 4
-	TaskExecutionPhase_TASK_PHASE_FAILED    TaskExecutionPhase = 5
-	TaskExecutionPhase_TASK_PHASE_ABORTED   TaskExecutionPhase = 6
+	TaskExecution_UNDEFINED TaskExecution_Phase = 0
+	TaskExecution_QUEUED    TaskExecution_Phase = 1
+	TaskExecution_RUNNING   TaskExecution_Phase = 2
+	TaskExecution_SUCCEEDED TaskExecution_Phase = 3
+	TaskExecution_ABORTED   TaskExecution_Phase = 4
+	TaskExecution_FAILED    TaskExecution_Phase = 5
 )
 
-var TaskExecutionPhase_name = map[int32]string{
-	0: "TASK_PHASE_UNDEFINED",
-	1: "TASK_PHASE_QUEUED",
-	2: "TASK_PHASE_RUNNABLE",
-	3: "TASK_PHASE_RUNNING",
-	4: "TASK_PHASE_SUCCEEDED",
-	5: "TASK_PHASE_FAILED",
-	6: "TASK_PHASE_ABORTED",
+var TaskExecution_Phase_name = map[int32]string{
+	0: "UNDEFINED",
+	1: "QUEUED",
+	2: "RUNNING",
+	3: "SUCCEEDED",
+	4: "ABORTED",
+	5: "FAILED",
 }
-var TaskExecutionPhase_value = map[string]int32{
-	"TASK_PHASE_UNDEFINED": 0,
-	"TASK_PHASE_QUEUED":    1,
-	"TASK_PHASE_RUNNABLE":  2,
-	"TASK_PHASE_RUNNING":   3,
-	"TASK_PHASE_SUCCEEDED": 4,
-	"TASK_PHASE_FAILED":    5,
-	"TASK_PHASE_ABORTED":   6,
+var TaskExecution_Phase_value = map[string]int32{
+	"UNDEFINED": 0,
+	"QUEUED":    1,
+	"RUNNING":   2,
+	"SUCCEEDED": 3,
+	"ABORTED":   4,
+	"FAILED":    5,
 }
 
-func (x TaskExecutionPhase) String() string {
-	return proto.EnumName(TaskExecutionPhase_name, int32(x))
+func (x TaskExecution_Phase) String() string {
+	return proto.EnumName(TaskExecution_Phase_name, int32(x))
 }
-func (TaskExecutionPhase) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_execution_e6dac1a5cb2f2561, []int{2}
+func (TaskExecution_Phase) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_execution_9e5183245240f7ca, []int{2, 0}
 }
 
 type TaskLog_MessageFormat int32
@@ -172,8 +165,102 @@ func (x TaskLog_MessageFormat) String() string {
 	return proto.EnumName(TaskLog_MessageFormat_name, int32(x))
 }
 func (TaskLog_MessageFormat) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_execution_e6dac1a5cb2f2561, []int{1, 0}
+	return fileDescriptor_execution_9e5183245240f7ca, []int{4, 0}
 }
+
+// Indicates various phases of Workflow Execution
+type WorkflowExecution struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *WorkflowExecution) Reset()         { *m = WorkflowExecution{} }
+func (m *WorkflowExecution) String() string { return proto.CompactTextString(m) }
+func (*WorkflowExecution) ProtoMessage()    {}
+func (*WorkflowExecution) Descriptor() ([]byte, []int) {
+	return fileDescriptor_execution_9e5183245240f7ca, []int{0}
+}
+func (m *WorkflowExecution) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_WorkflowExecution.Unmarshal(m, b)
+}
+func (m *WorkflowExecution) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_WorkflowExecution.Marshal(b, m, deterministic)
+}
+func (dst *WorkflowExecution) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_WorkflowExecution.Merge(dst, src)
+}
+func (m *WorkflowExecution) XXX_Size() int {
+	return xxx_messageInfo_WorkflowExecution.Size(m)
+}
+func (m *WorkflowExecution) XXX_DiscardUnknown() {
+	xxx_messageInfo_WorkflowExecution.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_WorkflowExecution proto.InternalMessageInfo
+
+// Indicates various phases of Node Execution
+type NodeExecution struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *NodeExecution) Reset()         { *m = NodeExecution{} }
+func (m *NodeExecution) String() string { return proto.CompactTextString(m) }
+func (*NodeExecution) ProtoMessage()    {}
+func (*NodeExecution) Descriptor() ([]byte, []int) {
+	return fileDescriptor_execution_9e5183245240f7ca, []int{1}
+}
+func (m *NodeExecution) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_NodeExecution.Unmarshal(m, b)
+}
+func (m *NodeExecution) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_NodeExecution.Marshal(b, m, deterministic)
+}
+func (dst *NodeExecution) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_NodeExecution.Merge(dst, src)
+}
+func (m *NodeExecution) XXX_Size() int {
+	return xxx_messageInfo_NodeExecution.Size(m)
+}
+func (m *NodeExecution) XXX_DiscardUnknown() {
+	xxx_messageInfo_NodeExecution.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_NodeExecution proto.InternalMessageInfo
+
+// Phases that task plugins can go through. Not all phases may be applicable to a specific plugin task,
+// but this is the cumulative list that customers may want to know about for their task.
+type TaskExecution struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *TaskExecution) Reset()         { *m = TaskExecution{} }
+func (m *TaskExecution) String() string { return proto.CompactTextString(m) }
+func (*TaskExecution) ProtoMessage()    {}
+func (*TaskExecution) Descriptor() ([]byte, []int) {
+	return fileDescriptor_execution_9e5183245240f7ca, []int{2}
+}
+func (m *TaskExecution) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_TaskExecution.Unmarshal(m, b)
+}
+func (m *TaskExecution) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_TaskExecution.Marshal(b, m, deterministic)
+}
+func (dst *TaskExecution) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_TaskExecution.Merge(dst, src)
+}
+func (m *TaskExecution) XXX_Size() int {
+	return xxx_messageInfo_TaskExecution.Size(m)
+}
+func (m *TaskExecution) XXX_DiscardUnknown() {
+	xxx_messageInfo_TaskExecution.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_TaskExecution proto.InternalMessageInfo
 
 // Represents the error message from the execution.
 type ExecutionError struct {
@@ -193,7 +280,7 @@ func (m *ExecutionError) Reset()         { *m = ExecutionError{} }
 func (m *ExecutionError) String() string { return proto.CompactTextString(m) }
 func (*ExecutionError) ProtoMessage()    {}
 func (*ExecutionError) Descriptor() ([]byte, []int) {
-	return fileDescriptor_execution_e6dac1a5cb2f2561, []int{0}
+	return fileDescriptor_execution_9e5183245240f7ca, []int{3}
 }
 func (m *ExecutionError) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ExecutionError.Unmarshal(m, b)
@@ -250,7 +337,7 @@ func (m *TaskLog) Reset()         { *m = TaskLog{} }
 func (m *TaskLog) String() string { return proto.CompactTextString(m) }
 func (*TaskLog) ProtoMessage()    {}
 func (*TaskLog) Descriptor() ([]byte, []int) {
-	return fileDescriptor_execution_e6dac1a5cb2f2561, []int{1}
+	return fileDescriptor_execution_9e5183245240f7ca, []int{4}
 }
 func (m *TaskLog) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaskLog.Unmarshal(m, b)
@@ -299,53 +386,51 @@ func (m *TaskLog) GetTtl() *duration.Duration {
 }
 
 func init() {
+	proto.RegisterType((*WorkflowExecution)(nil), "flyteidl.core.WorkflowExecution")
+	proto.RegisterType((*NodeExecution)(nil), "flyteidl.core.NodeExecution")
+	proto.RegisterType((*TaskExecution)(nil), "flyteidl.core.TaskExecution")
 	proto.RegisterType((*ExecutionError)(nil), "flyteidl.core.ExecutionError")
 	proto.RegisterType((*TaskLog)(nil), "flyteidl.core.TaskLog")
-	proto.RegisterEnum("flyteidl.core.WorkflowExecutionPhase", WorkflowExecutionPhase_name, WorkflowExecutionPhase_value)
-	proto.RegisterEnum("flyteidl.core.NodeExecutionPhase", NodeExecutionPhase_name, NodeExecutionPhase_value)
-	proto.RegisterEnum("flyteidl.core.TaskExecutionPhase", TaskExecutionPhase_name, TaskExecutionPhase_value)
+	proto.RegisterEnum("flyteidl.core.WorkflowExecution_Phase", WorkflowExecution_Phase_name, WorkflowExecution_Phase_value)
+	proto.RegisterEnum("flyteidl.core.NodeExecution_Phase", NodeExecution_Phase_name, NodeExecution_Phase_value)
+	proto.RegisterEnum("flyteidl.core.TaskExecution_Phase", TaskExecution_Phase_name, TaskExecution_Phase_value)
 	proto.RegisterEnum("flyteidl.core.TaskLog_MessageFormat", TaskLog_MessageFormat_name, TaskLog_MessageFormat_value)
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/core/execution.proto", fileDescriptor_execution_e6dac1a5cb2f2561)
+	proto.RegisterFile("flyteidl/core/execution.proto", fileDescriptor_execution_9e5183245240f7ca)
 }
 
-var fileDescriptor_execution_e6dac1a5cb2f2561 = []byte{
-	// 559 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x6c, 0x94, 0x51, 0x6e, 0xda, 0x40,
-	0x10, 0x86, 0x63, 0xec, 0x40, 0x32, 0x51, 0xd0, 0x66, 0x5b, 0xa8, 0x49, 0x9b, 0x2a, 0x42, 0x7d,
-	0x88, 0x52, 0xd5, 0xae, 0xe8, 0x09, 0x80, 0x5d, 0x5a, 0x0a, 0x59, 0x53, 0x1b, 0x17, 0xa9, 0x7d,
-	0x40, 0x06, 0x16, 0x07, 0xc5, 0xb0, 0x91, 0x31, 0x6a, 0x73, 0x96, 0x1e, 0xa6, 0xf7, 0xe8, 0x29,
-	0x7a, 0x84, 0xca, 0x06, 0x63, 0xec, 0xfa, 0x6d, 0x77, 0xfe, 0x99, 0x6f, 0xf4, 0xff, 0xe0, 0x85,
-	0xab, 0xb9, 0xf7, 0x14, 0xf0, 0xc5, 0xcc, 0xd3, 0xa7, 0xc2, 0xe7, 0x3a, 0xff, 0xc9, 0xa7, 0x9b,
-	0x60, 0x21, 0x56, 0xda, 0xa3, 0x2f, 0x02, 0x81, 0xcf, 0x63, 0x59, 0x0b, 0xe5, 0xcb, 0xd7, 0xae,
-	0x10, 0xae, 0xc7, 0xf5, 0x48, 0x9c, 0x6c, 0xe6, 0xfa, 0x6c, 0xe3, 0x3b, 0x49, 0x7b, 0xfd, 0x3b,
-	0x94, 0x69, 0x4c, 0xa0, 0xbe, 0x2f, 0x7c, 0x8c, 0x41, 0x99, 0x8a, 0x19, 0x57, 0xa5, 0x6b, 0xe9,
-	0xe6, 0xd4, 0x8c, 0xce, 0x58, 0x85, 0xd2, 0x92, 0xaf, 0xd7, 0x8e, 0xcb, 0xd5, 0x42, 0x54, 0x8e,
-	0xaf, 0xf8, 0x25, 0x9c, 0xf2, 0x70, 0x6c, 0xbc, 0xf1, 0x17, 0xaa, 0x1c, 0x69, 0x27, 0x51, 0xc1,
-	0xf6, 0x17, 0xf5, 0x3f, 0x12, 0x94, 0x86, 0xce, 0xfa, 0xa1, 0x2f, 0x5c, 0x8c, 0x40, 0x0e, 0x5b,
-	0xb6, 0xd4, 0xf0, 0x18, 0x2e, 0x5a, 0x39, 0xcb, 0x98, 0x18, 0x9d, 0x71, 0x0f, 0xca, 0x3b, 0xf2,
-	0x78, 0x2e, 0xfc, 0xa5, 0x13, 0x44, 0xcc, 0x72, 0xe3, 0x8d, 0x96, 0xb2, 0xa5, 0xed, 0xa8, 0xda,
-	0xdd, 0xb6, 0xb9, 0x13, 0xf5, 0x9a, 0xe7, 0xcb, 0xc3, 0x2b, 0x7e, 0x0b, 0x72, 0x10, 0x78, 0xaa,
-	0x72, 0x2d, 0xdd, 0x9c, 0x35, 0x6a, 0xda, 0x36, 0x09, 0x2d, 0x4e, 0x42, 0x23, 0xbb, 0x24, 0xcc,
-	0xb0, 0xab, 0xae, 0xc3, 0x79, 0x0a, 0x86, 0xcf, 0xa0, 0x64, 0xb3, 0x1e, 0x33, 0x46, 0x0c, 0x1d,
-	0xe1, 0x12, 0xc8, 0x6d, 0xeb, 0x2b, 0x92, 0xf0, 0x09, 0x28, 0x9f, 0x2d, 0x83, 0xa1, 0xc2, 0xed,
-	0xaf, 0x02, 0x54, 0x47, 0xc2, 0x7f, 0x98, 0x7b, 0xe2, 0xc7, 0x3e, 0xc2, 0xc1, 0xbd, 0xb3, 0xe6,
-	0xf8, 0x15, 0xa8, 0x23, 0xc3, 0xec, 0x75, 0xfa, 0xc6, 0x68, 0x3c, 0xf8, 0xd4, 0xb4, 0xe8, 0xd8,
-	0x66, 0x84, 0x76, 0xba, 0x8c, 0x12, 0x74, 0x84, 0x2f, 0xa1, 0x9a, 0x51, 0x4d, 0x9b, 0xb1, 0x2e,
-	0xfb, 0x88, 0x24, 0x7c, 0x05, 0xb5, 0x8c, 0x66, 0xd9, 0xed, 0x36, 0xa5, 0x24, 0x94, 0x0b, 0x39,
-	0xe0, 0x9d, 0x4c, 0x09, 0x92, 0x73, 0xc0, 0x9d, 0x66, 0xb7, 0x1f, 0x4e, 0x2a, 0xb8, 0x06, 0x95,
-	0x1c, 0x8d, 0x12, 0x74, 0x9c, 0x03, 0x1d, 0x76, 0xef, 0x28, 0x19, 0x1b, 0xf6, 0x10, 0x15, 0x73,
-	0xa0, 0xcd, 0x96, 0x61, 0x0e, 0x29, 0x41, 0xa5, 0x1c, 0xe8, 0x17, 0x9b, 0xda, 0x94, 0xa0, 0x93,
-	0xdb, 0xbf, 0x12, 0x60, 0x26, 0x66, 0x3c, 0x93, 0x8c, 0x0a, 0xcf, 0x99, 0x41, 0x68, 0x4e, 0x2a,
-	0x55, 0xc0, 0x07, 0x4a, 0x92, 0x48, 0x7a, 0x22, 0xb1, 0x5b, 0xc8, 0x4c, 0xc4, 0x56, 0x65, 0x5c,
-	0x81, 0x8b, 0x4c, 0x9d, 0x12, 0xa4, 0x64, 0x40, 0x89, 0xc5, 0xe3, 0x0c, 0xc8, 0xea, 0x75, 0x07,
-	0x03, 0x4a, 0x50, 0x31, 0x53, 0x4f, 0x6c, 0xa7, 0x17, 0xec, 0x2d, 0xff, 0x96, 0x00, 0x87, 0xff,
-	0xcb, 0xff, 0x2d, 0x0f, 0x9b, 0x56, 0x2f, 0xc7, 0x72, 0x05, 0x2e, 0x0e, 0x94, 0x1d, 0x47, 0xc2,
-	0x2f, 0xe0, 0xd9, 0x41, 0x39, 0x4c, 0xa2, 0xd9, 0xea, 0xd3, 0xad, 0xe1, 0x8c, 0xb0, 0x35, 0x9c,
-	0xde, 0x90, 0x44, 0xa4, 0x64, 0x36, 0xec, 0x7f, 0xf1, 0x34, 0x28, 0x36, 0x56, 0x6c, 0x35, 0xbe,
-	0xbd, 0x77, 0x17, 0xc1, 0xfd, 0x66, 0xa2, 0x4d, 0xc5, 0x52, 0xf7, 0x9e, 0xe6, 0x81, 0xbe, 0x7f,
-	0x6c, 0x5c, 0xbe, 0xd2, 0x1f, 0x27, 0xef, 0x5c, 0xa1, 0xa7, 0xde, 0x9f, 0x49, 0x31, 0xfa, 0x9e,
-	0x3e, 0xfc, 0x0b, 0x00, 0x00, 0xff, 0xff, 0x6f, 0xcf, 0x5f, 0xcc, 0x97, 0x04, 0x00, 0x00,
+var fileDescriptor_execution_9e5183245240f7ca = []byte{
+	// 475 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x93, 0xd1, 0x8e, 0xd2, 0x40,
+	0x14, 0x86, 0xb7, 0x14, 0x28, 0x9c, 0x4d, 0xc9, 0x38, 0x57, 0x55, 0xa3, 0xd9, 0x34, 0x5e, 0x6c,
+	0x62, 0x6c, 0x0d, 0x3e, 0xc1, 0x2e, 0x1d, 0x4c, 0x65, 0x77, 0xc0, 0x42, 0x25, 0xd1, 0x0b, 0x52,
+	0x60, 0x5a, 0x9a, 0x6d, 0x99, 0xcd, 0xd0, 0x46, 0xf7, 0xce, 0xc4, 0x37, 0xf0, 0xce, 0x57, 0xf3,
+	0x69, 0xcc, 0x0c, 0x74, 0xa1, 0x89, 0x37, 0xc6, 0xbb, 0x39, 0xf3, 0xff, 0xe7, 0x3f, 0x5f, 0x9b,
+	0x33, 0xf0, 0x22, 0xce, 0x1e, 0x0a, 0x96, 0xae, 0x33, 0x77, 0xc5, 0x05, 0x73, 0xd9, 0x37, 0xb6,
+	0x2a, 0x8b, 0x94, 0x6f, 0x9d, 0x7b, 0xc1, 0x0b, 0x8e, 0xcd, 0x4a, 0x76, 0xa4, 0xfc, 0xec, 0x65,
+	0xc2, 0x79, 0x92, 0x31, 0x57, 0x89, 0xcb, 0x32, 0x76, 0xd7, 0xa5, 0x88, 0x8e, 0x76, 0xfb, 0x97,
+	0x06, 0x4f, 0xe6, 0x5c, 0xdc, 0xc5, 0x19, 0xff, 0x4a, 0xaa, 0x28, 0xfb, 0x87, 0x06, 0xad, 0xc9,
+	0x26, 0xda, 0x31, 0x6c, 0x42, 0x37, 0xa4, 0x1e, 0x19, 0xfa, 0x94, 0x78, 0xe8, 0x0c, 0x03, 0xb4,
+	0x3f, 0x86, 0x24, 0x24, 0x1e, 0xd2, 0xf0, 0x39, 0x18, 0x41, 0x48, 0xa9, 0x4f, 0xdf, 0xa3, 0x06,
+	0xee, 0x01, 0x4c, 0xc3, 0xc1, 0x80, 0x10, 0x4f, 0xd6, 0xba, 0xec, 0x3b, 0xd4, 0xc4, 0x43, 0x4d,
+	0xe9, 0x1d, 0x5e, 0xf9, 0x37, 0x52, 0x6b, 0xc9, 0x10, 0x59, 0x10, 0x0f, 0xb5, 0xa5, 0x70, 0x75,
+	0x3d, 0x0e, 0x66, 0xc4, 0x43, 0x86, 0x6c, 0x9a, 0xf9, 0xb7, 0xc4, 0x5b, 0x8c, 0xc3, 0x19, 0xea,
+	0xd8, 0x3f, 0x35, 0x30, 0x29, 0x5f, 0xb3, 0x23, 0xd7, 0xf7, 0x7f, 0xe6, 0xaa, 0x71, 0xe8, 0xa7,
+	0x1c, 0xcd, 0x13, 0x8e, 0xd6, 0x29, 0x87, 0x82, 0x9a, 0x8e, 0xfc, 0xc9, 0xe4, 0x6f, 0x50, 0x1b,
+	0x30, 0x67, 0xd1, 0xee, 0xee, 0xc8, 0x34, 0xff, 0x7f, 0xa4, 0x6a, 0x72, 0x0d, 0xc9, 0xfe, 0x02,
+	0xbd, 0xc7, 0x29, 0x44, 0x08, 0x2e, 0x30, 0x86, 0xe6, 0x8a, 0xaf, 0x99, 0xa5, 0x5d, 0x68, 0x97,
+	0xdd, 0x40, 0x9d, 0xb1, 0x05, 0x46, 0xce, 0x76, 0xbb, 0x28, 0x61, 0x56, 0x43, 0x5d, 0x57, 0x25,
+	0x7e, 0x0e, 0x5d, 0x26, 0xdb, 0x16, 0xa5, 0x48, 0x2d, 0x5d, 0x69, 0x1d, 0x75, 0x11, 0x8a, 0xd4,
+	0xfe, 0xad, 0x81, 0x21, 0xbf, 0xe3, 0x86, 0x27, 0x18, 0x81, 0x2e, 0x2d, 0xfb, 0x54, 0x79, 0x94,
+	0x83, 0xb6, 0x51, 0x5e, 0x25, 0xaa, 0x33, 0x1e, 0x41, 0xef, 0x90, 0xbc, 0x88, 0xb9, 0xc8, 0xa3,
+	0x42, 0x65, 0xf6, 0xfa, 0xaf, 0x9c, 0xda, 0xc6, 0x39, 0x87, 0x54, 0xe7, 0x76, 0x6f, 0x1e, 0x2a,
+	0x6f, 0x60, 0xe6, 0xa7, 0x25, 0x7e, 0x0d, 0x7a, 0x51, 0x64, 0x56, 0xf3, 0x42, 0xbb, 0x3c, 0xef,
+	0x3f, 0x75, 0xf6, 0x4b, 0xea, 0x54, 0x4b, 0xea, 0x78, 0x87, 0x25, 0x0d, 0xa4, 0xcb, 0x76, 0xc1,
+	0xac, 0x85, 0xc9, 0x5f, 0x16, 0xd2, 0x11, 0x1d, 0xcf, 0x29, 0x3a, 0xc3, 0x06, 0xe8, 0x83, 0xe9,
+	0x27, 0xa4, 0xe1, 0x0e, 0x34, 0x3f, 0x4c, 0xc7, 0x14, 0x35, 0xae, 0xfb, 0x9f, 0xdf, 0x26, 0x69,
+	0xb1, 0x29, 0x97, 0xce, 0x8a, 0xe7, 0x6e, 0xf6, 0x10, 0x17, 0xee, 0xe3, 0xa3, 0x49, 0xd8, 0xd6,
+	0xbd, 0x5f, 0xbe, 0x49, 0xb8, 0x5b, 0x7b, 0x47, 0xcb, 0xb6, 0x1a, 0xfe, 0xee, 0x4f, 0x00, 0x00,
+	0x00, 0xff, 0xff, 0xd4, 0xa6, 0x1d, 0xa9, 0x5f, 0x03, 0x00, 0x00,
 }

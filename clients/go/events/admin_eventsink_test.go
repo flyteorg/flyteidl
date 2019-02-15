@@ -20,7 +20,7 @@ func GetTestAdminEventSink(t *testing.T) (EventSink, *MockAdminServiceClient) {
 	ctrl := gomock.NewController(t)
 	client := NewMockAdminServiceClient(ctrl)
 	return &adminEventSink{
-		adminClient:     client,
+		adminClient: client,
 	}, client
 }
 
@@ -29,7 +29,7 @@ func TestAdminWorkflowEvent(t *testing.T) {
 	adminEventSink, adminClient := GetTestAdminEventSink(t)
 
 	wfEvent := &event.WorkflowExecutionEvent{
-		Phase:        core.WorkflowExecutionPhase_WORKFLOW_PHASE_RUNNING,
+		Phase:        core.WorkflowExecution_RUNNING,
 		OccurredAt:   ptypes.TimestampNow(),
 		ExecutionId:  nil,
 		ProducerId:   "",
@@ -55,7 +55,7 @@ func TestAdminNodeEvent(t *testing.T) {
 		Id: &core.NodeExecutionIdentifier{
 			NodeId: "node-id",
 		},
-		Phase:        core.NodeExecutionPhase_NODE_PHASE_FAILED,
+		Phase:        core.NodeExecution_FAILED,
 		OccurredAt:   ptypes.TimestampNow(),
 		ProducerId:   "",
 		InputUri:     "input-uri",
@@ -78,19 +78,19 @@ func TestAdminTaskEvent(t *testing.T) {
 	adminEventSink, adminClient := GetTestAdminEventSink(t)
 
 	taskEvent := &event.TaskExecutionEvent{
-		Phase:        core.TaskExecutionPhase_TASK_PHASE_SUCCEEDED,
+		Phase:        core.TaskExecution_SUCCEEDED,
 		OccurredAt:   ptypes.TimestampNow(),
 		TaskId:       &core.Identifier{ResourceType: core.ResourceType_TASK, Name: "task-id"},
 		RetryAttempt: 1,
-		ParentNodeExecutionId:	&core.NodeExecutionIdentifier{
+		ParentNodeExecutionId: &core.NodeExecutionIdentifier{
 			NodeId: "node-id",
 			ExecutionId: &core.WorkflowExecutionIdentifier{
 				Project: "p",
-				Domain: "d",
-				Name: "n",
+				Domain:  "d",
+				Name:    "n",
 			},
 		},
-		Logs: []*core.TaskLog{{ Uri: "logs.txt"}},
+		Logs: []*core.TaskLog{{Uri: "logs.txt"}},
 	}
 
 	adminClient.EXPECT().CreateTaskEvent(
