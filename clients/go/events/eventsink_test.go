@@ -12,9 +12,11 @@ import (
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/event"
 	"github.com/stretchr/testify/assert"
+	"github.com/golang/protobuf/ptypes"
 )
 
 func TestFileEvent(t *testing.T) {
+	now := ptypes.TimestampNow()
 	dir, err := ioutil.TempDir("", "eventstest")
 	if err != nil {
 		assert.FailNow(t, "test dir creation failed")
@@ -27,26 +29,64 @@ func TestFileEvent(t *testing.T) {
 		assert.FailNow(t, "failed to create file sync "+err.Error())
 	}
 
-	nodeEvent := &event.NodeExecutionEvent{Phase: core.NodeExecution_RUNNING}
-	err = sink.Sink(context.Background(), NodeEvent, nodeEvent)
+	executionId := &core.WorkflowExecutionIdentifier{
+		Project: "FlyteTest",
+		Domain: "FlyteStaging",
+		Name: "Name",
+	}
+
+	workflowEvent := &event.WorkflowExecutionEvent{
+		ExecutionId: executionId,
+		Phase: core.WorkflowExecution_SUCCEEDED,
+		OccurredAt: now,
+	}
+	err = sink.Sink(context.Background(), workflowEvent)
 	assert.NoError(t, err)
 
-	nodeEvent = &event.NodeExecutionEvent{Phase: core.NodeExecution_SUCCEEDED}
-	assert.NoError(t, err)
-	err = sink.Sink(context.Background(), NodeEvent, nodeEvent)
+	nodeEvent := &event.NodeExecutionEvent{
+		Id: &core.NodeExecutionIdentifier{
+			NodeId: "node1",
+			ExecutionId: &core.WorkflowExecutionIdentifier{
+				Project: "FlyteTest",
+				Domain: "FlyteStaging",
+				Name: "Name",
+			},
+		},
+		Phase: core.NodeExecution_RUNNING,
+		OccurredAt: now,
+	}
+	err = sink.Sink(context.Background(), nodeEvent)
 	assert.NoError(t, err)
 
-	expected := []string{"[--NODE EVENT-1-] Phase: RUNNING", "[--NODE EVENT-2-] Phase: SUCCEEDED"}
+	taskEvent := &event.TaskExecutionEvent{
+		TaskId: &core.Identifier {
+			ResourceType: core.ResourceType_TASK,
+			Project: executionId.Project,
+			Domain: executionId.Domain,
+			Name: executionId.Name,
+		},
+		ParentNodeExecutionId: nodeEvent.Id,
+		Phase: core.TaskExecution_FAILED,
+		OccurredAt: now,
+	}
+	assert.NoError(t, err)
+	err = sink.Sink(context.Background(), taskEvent)
+
+	expected := []string{
+		"[--WF EVENT--] project:\"FlyteTest\" domain:\"FlyteStaging\" name:\"Name\" , " +
+			"Phase: SUCCEEDED, OccuredAt: " + ptypes.TimestampString(now),
+		"[--NODE EVENT--] node_id:\"node1\" execution_id:<project:\"FlyteTest\" " +
+			"domain:\"FlyteStaging\" name:\"Name\" > , Phase: RUNNING, OccuredAt: " + ptypes.TimestampString(now),
+		"[--TASK EVENT--] resource_type:TASK project:\"FlyteTest\" domain:\"FlyteStaging\" " +
+			"name:\"Name\" ,node_id:\"node1\" execution_id:<project:\"FlyteTest\" domain:\"FlyteStaging\" " +
+			"name:\"Name\" > , Phase: FAILED, OccuredAt: " + ptypes.TimestampString(now),
+	}
 	actual, err := readLinesFromFile(file)
 	if err != nil {
 		assert.FailNow(t, "failed to read file "+err.Error())
 	}
 
-	areSame := reflect.DeepEqual(expected, actual)
-	assert.True(t, areSame)
-	if !areSame {
-		t.Logf("Expected output: %v\n Actual output: %v", expected, actual)
-	}
+	assert.True(t, reflect.DeepEqual(expected, actual), "Expected %v\nActual %v", expected, actual)
 }
 
 func readLinesFromFile(name string) ([]string, error) {

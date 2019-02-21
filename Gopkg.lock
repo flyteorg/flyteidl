@@ -18,22 +18,6 @@
   version = "v1.7.0"
 
 [[projects]]
-  branch = "master"
-  digest = "1:1ba1d79f2810270045c328ae5d674321db34e3aae468eb4233883b473c5c0467"
-  name = "github.com/golang/glog"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "23def4e6c14b4da8ac2ed8007337bc5eb5007998"
-
-[[projects]]
-  digest = "1:b60efdeb75d3c0ceed88783ac2495256aba3491a537d0f31401202579fd62a94"
-  name = "github.com/golang/mock"
-  packages = ["gomock"]
-  pruneopts = "UT"
-  revision = "51421b967af1f557f93a59e0057aaf15ca02e29c"
-  version = "v1.2.0"
-
-[[projects]]
   digest = "1:6ce94e52c5f56dfbea4e3cb99ccf4b44d701d91b16167486e9842b2fe45e717a"
   name = "github.com/golang/protobuf"
   packages = [
@@ -83,13 +67,12 @@
   version = "v1.0.1"
 
 [[projects]]
-  digest = "1:3e8ebb44daebab4437e2348e54746efe7b218fcfcaa6dc3ad1947d621e745ac4"
+  digest = "1:2a59479c60af73dc452b7cb6ffcf8d255858826fef907a40f2778e8af68db32c"
   name = "github.com/lyft/flytestdlib"
   packages = [
     "config",
     "contextutils",
     "logger",
-    "utils",
   ]
   pruneopts = "UT"
   revision = "b9fb13dba313bbfb8d2e8f91a96f73317594cd99"
@@ -271,14 +254,6 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:9fdc2b55e8e0fafe4b41884091e51e77344f7dc511c5acedcfd98200003bff90"
-  name = "golang.org/x/time"
-  packages = ["rate"]
-  pruneopts = "UT"
-  revision = "85acf8d2951cb2a3bde7632f9ff273ef0379bcbd"
-
-[[projects]]
-  branch = "master"
   digest = "1:ec1919b8b80839559effbe3eabcebf92238d12d3dd9182e51deb5da3ed12e5e9"
   name = "google.golang.org/genproto"
   packages = [
@@ -323,22 +298,10 @@
   revision = "2e463a05d100327ca47ac218281906921038fd95"
   version = "v1.16.0"
 
-[[projects]]
-  digest = "1:ff9b4ee72c2c3bbe05a65d62008b5cd5b66448425827df03dfe2c5e57adfd6dc"
-  name = "k8s.io/apimachinery"
-  packages = [
-    "pkg/util/runtime",
-    "pkg/util/wait",
-  ]
-  pruneopts = "UT"
-  revision = "103fd098999dc9c0c88536f5c9ad2e5da39373ae"
-  version = "kubernetes-1.11.2"
-
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/golang/mock/gomock",
     "github.com/golang/protobuf/proto",
     "github.com/golang/protobuf/ptypes",
     "github.com/golang/protobuf/ptypes/duration",
@@ -349,7 +312,6 @@
     "github.com/grpc-ecosystem/grpc-gateway/utilities",
     "github.com/lyft/flytestdlib/config",
     "github.com/lyft/flytestdlib/logger",
-    "github.com/lyft/flytestdlib/utils",
     "github.com/lyft/protoc-gen-validate",
     "github.com/mitchellh/mapstructure",
     "github.com/spf13/pflag",

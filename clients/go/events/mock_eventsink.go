@@ -7,13 +7,13 @@ import (
 )
 
 type MockEventSink struct {
-	SinkCb  func(ctx context.Context, eventType EventType, message proto.Message) error
+	SinkCb  func(ctx context.Context, message proto.Message) error
 	CloseCb func() error
 }
 
-func (t *MockEventSink) Sink(ctx context.Context, eventType EventType, message proto.Message) error {
+func (t *MockEventSink) Sink(ctx context.Context, message proto.Message) error {
 	if t.SinkCb != nil {
-		return t.SinkCb(ctx, eventType, message)
+		return t.SinkCb(ctx, message)
 	}
 
 	return nil
@@ -29,7 +29,7 @@ func (t *MockEventSink) Close() error {
 
 func NewMockEventSink() EventSink {
 	return &MockEventSink{
-		SinkCb: func(ctx context.Context, eventType EventType, message proto.Message) error {
+		SinkCb: func(ctx context.Context, message proto.Message) error {
 			return nil
 		},
 		CloseCb: func() error {

@@ -14,6 +14,6 @@ Repo that contains all of Flyte's IDLs (Public, eventually)
 
 When an endpoint is updated or added, the mock client must be regenerated.  The steps to do so are as follows:
 
-1. go get github.com/golang/mock/gomock
-2. go install github.com/golang/mock/mockgen
-3. mockgen -package events -destination=clients/go/events/mock_adminclient.go github.com/lyft/flyteidl/gen/pb-go/flyteidl/service AdminServiceClient
+1. Follow installation instructions here: https://github.com/vektra/mockery#installation
+2. Run `mockery -dir ../../../gen/pb-go/flyteidl/service -name AdminServiceClient -output ../admin/mocks`
+

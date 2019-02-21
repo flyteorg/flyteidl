@@ -11,6 +11,7 @@ import (
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/event"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/lyft/flytestdlib/logger"
+	"github.com/lyft/flyteidl/clients/go/events/errors"
 )
 
 type adminEventSink struct {
@@ -28,52 +29,37 @@ func NewAdminEventSink(ctx context.Context, adminClient service.AdminServiceClie
 }
 
 // Sends events to the FlyteAdmin service through gRPC
-func (s *adminEventSink) Sink(ctx context.Context, eventType EventType, message proto.Message) error {
-	logger.Debugf(ctx, "AdminEventSink received a new Event %s, message %s", eventType, message.String())
+func (s *adminEventSink) Sink(ctx context.Context, message proto.Message) error {
+	logger.Debugf(ctx, "AdminEventSink received a new event %s", message.String())
 
-	switch eventType {
-	case WorkflowEvent:
-		ev, ok := message.(*event.WorkflowExecutionEvent)
-		if !ok {
-			return fmt.Errorf("incorrect event-type and message. For eventType (WorkflowEvent), *event.WorkflowExecutionEvent is expected")
-		}
+	switch eventMessage := message.(type) {
+	case *event.WorkflowExecutionEvent:
 		request := &admin.WorkflowExecutionEventRequest{
-			Event: ev,
+			Event: eventMessage,
 		}
 		_, err := s.adminClient.CreateWorkflowEvent(ctx, request)
 
 		if err != nil {
-			logger.Errorf(ctx, "failed to send workflow event for [%s] in phase [%s] caused by error: %s", ev.ExecutionId.Name, ev.Phase.String(), err.Error())
-			return err
+			return errors.WrapError(err)
 		}
-	case NodeEvent:
-		ev, ok := message.(*event.NodeExecutionEvent)
-		if !ok {
-			return fmt.Errorf("incorrect event-type and message. For eventType (NodeEvent), *event.WorkflowExecutionEvent is expected")
-		}
+	case *event.NodeExecutionEvent:
 		request := &admin.NodeExecutionEventRequest{
-			Event: ev,
+			Event: eventMessage,
 		}
 		_, err := s.adminClient.CreateNodeEvent(ctx, request)
 		if err != nil {
-			logger.Errorf(ctx, "failed to send node event for [%s] in phase [%s] caused by error: %s", ev.Id.NodeId, ev.Phase.String(), err.Error())
-			return err
+			return errors.WrapError(err)
 		}
-	case TaskEvent:
-		ev, ok := message.(*event.TaskExecutionEvent)
-		if !ok {
-			return fmt.Errorf("failed to convert task execution event to its protobuf structure")
-		}
+	case *event.TaskExecutionEvent:
 		request := &admin.TaskExecutionEventRequest{
-			Event: ev,
+			Event: eventMessage,
 		}
 		_, err := s.adminClient.CreateTaskEvent(ctx, request)
 		if err != nil {
-			logger.Errorf(ctx, "failed to send task event for [%s] Retry[%d] in phase [%s] caused by error: %s", ev.TaskId.Name, ev.RetryAttempt, ev.Phase.String(), err.Error())
-			return err
+			return errors.WrapError(err)
 		}
 	default:
-		return fmt.Errorf("unknown event type [%s]", eventType.String())
+		return fmt.Errorf("unknown event type [%s]", eventMessage.String())
 	}
 
 	return nil

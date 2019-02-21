@@ -4,29 +4,32 @@ import (
 	"context"
 	"testing"
 
-	"github.com/golang/mock/gomock"
 	"github.com/golang/protobuf/ptypes"
-	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/event"
 	"github.com/stretchr/testify/assert"
+	"github.com/lyft/flyteidl/clients/go/admin/mocks"
+	"github.com/stretchr/testify/mock"
+	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
+	"github.com/lyft/flyteidl/clients/go/events/errors"
 )
 
-// This test suite uses Gomock to mock the AdminServiceClient. Run the following command in CLI or in the IntelliJ
-// IDE "Go Generate File". This will create a mock_adminclient.go file within this package.
-//go:generate mockgen -package events -destination=mock_adminclient.go github.com/lyft/flyteidl/gen/pb-go/flyteidl/service AdminServiceClient
+// This test suite uses Mockery to mock the AdminServiceClient. Run the following command in CLI or in the IntelliJ
+// IDE "Go Generate File". This will create a mocks/AdminServiceClient.go file
+//go:generate mockery -dir ../../../gen/pb-go/flyteidl/service -name AdminServiceClient -output ../admin/mocks
 
-func GetTestAdminEventSink(t *testing.T) (EventSink, *MockAdminServiceClient) {
-	ctrl := gomock.NewController(t)
-	client := NewMockAdminServiceClient(ctrl)
+func CreateMockAdminEventSink(t *testing.T) (EventSink, *mocks.AdminServiceClient) {
+	mockClient := &mocks.AdminServiceClient{}
 	return &adminEventSink{
-		adminClient: client,
-	}, client
+		adminClient: mockClient,
+	}, mockClient
 }
 
 func TestAdminWorkflowEvent(t *testing.T) {
 	ctx := context.Background()
-	adminEventSink, adminClient := GetTestAdminEventSink(t)
+	adminEventSink, adminClient := CreateMockAdminEventSink(t)
 
 	wfEvent := &event.WorkflowExecutionEvent{
 		Phase:        core.WorkflowExecution_RUNNING,
@@ -36,20 +39,21 @@ func TestAdminWorkflowEvent(t *testing.T) {
 		OutputResult: &event.WorkflowExecutionEvent_OutputUri{""},
 	}
 
-	adminClient.EXPECT().CreateWorkflowEvent(
+	adminClient.On(
+		"CreateWorkflowEvent",
 		ctx,
-		&admin.WorkflowExecutionEventRequest{
-			Event: wfEvent,
+		mock.MatchedBy(func(req *admin.WorkflowExecutionEventRequest) bool {
+			return req.Event == wfEvent
 		},
-	).Return(&admin.WorkflowExecutionEventResponse{}, nil)
+	)).Return(&admin.WorkflowExecutionEventResponse{}, nil)
 
-	err := adminEventSink.Sink(ctx, WorkflowEvent, wfEvent)
+	err := adminEventSink.Sink(ctx, wfEvent)
 	assert.NoError(t, err)
 }
 
 func TestAdminNodeEvent(t *testing.T) {
 	ctx := context.Background()
-	adminEventSink, adminClient := GetTestAdminEventSink(t)
+	adminEventSink, adminClient := CreateMockAdminEventSink(t)
 
 	nodeEvent := &event.NodeExecutionEvent{
 		Id: &core.NodeExecutionIdentifier{
@@ -62,20 +66,21 @@ func TestAdminNodeEvent(t *testing.T) {
 		OutputResult: &event.NodeExecutionEvent_OutputUri{OutputUri: ""},
 	}
 
-	adminClient.EXPECT().CreateNodeEvent(
+	adminClient.On(
+		"CreateNodeEvent",
 		ctx,
-		&admin.NodeExecutionEventRequest{
-			Event: nodeEvent,
-		},
+		mock.MatchedBy(func(req *admin.NodeExecutionEventRequest) bool {
+			return req.Event == nodeEvent
+		}),
 	).Return(&admin.NodeExecutionEventResponse{}, nil)
 
-	err := adminEventSink.Sink(ctx, NodeEvent, nodeEvent)
+	err := adminEventSink.Sink(ctx, nodeEvent)
 	assert.NoError(t, err)
 }
 
 func TestAdminTaskEvent(t *testing.T) {
 	ctx := context.Background()
-	adminEventSink, adminClient := GetTestAdminEventSink(t)
+	adminEventSink, adminClient := CreateMockAdminEventSink(t)
 
 	taskEvent := &event.TaskExecutionEvent{
 		Phase:        core.TaskExecution_SUCCEEDED,
@@ -93,13 +98,47 @@ func TestAdminTaskEvent(t *testing.T) {
 		Logs: []*core.TaskLog{{Uri: "logs.txt"}},
 	}
 
-	adminClient.EXPECT().CreateTaskEvent(
+	adminClient.On(
+		"CreateTaskEvent",
 		ctx,
-		&admin.TaskExecutionEventRequest{
-			Event: taskEvent,
-		},
+		mock.MatchedBy(func(req *admin.TaskExecutionEventRequest) bool {
+			return req.Event == taskEvent
+		}),
 	).Return(&admin.TaskExecutionEventResponse{}, nil)
 
-	err := adminEventSink.Sink(ctx, TaskEvent, taskEvent)
+	err := adminEventSink.Sink(ctx, taskEvent)
 	assert.NoError(t, err)
+}
+
+func TestAdminAlreadyExistsError(t *testing.T) {
+	ctx := context.Background()
+	adminEventSink, adminClient := CreateMockAdminEventSink(t)
+
+	taskEvent := &event.TaskExecutionEvent{
+		Phase:        core.TaskExecution_SUCCEEDED,
+		OccurredAt:   ptypes.TimestampNow(),
+		TaskId:       &core.Identifier{ResourceType: core.ResourceType_TASK, Name: "task-id"},
+		RetryAttempt: 1,
+		ParentNodeExecutionId:	&core.NodeExecutionIdentifier{
+			NodeId: "node-id",
+			ExecutionId: &core.WorkflowExecutionIdentifier{
+				Project: "p",
+				Domain: "d",
+				Name: "n",
+			},
+		},
+		Logs: []*core.TaskLog{{ Uri: "logs.txt"}},
+	}
+
+	alreadyExistErr := status.Error(codes.AlreadyExists, "Grpc AlreadyExists error")
+
+	adminClient.On(
+		"CreateTaskEvent",
+		ctx,
+		mock.MatchedBy(func(req *admin.TaskExecutionEventRequest) bool { return true }),
+	).Return(nil, alreadyExistErr)
+
+	err := adminEventSink.Sink(ctx, taskEvent)
+	assert.Error(t, err)
+	assert.True(t, errors.IsAlreadyExists(err))
 }

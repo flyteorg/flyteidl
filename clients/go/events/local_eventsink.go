@@ -6,10 +6,9 @@ import (
 	"fmt"
 	"os"
 	"sync"
-
 	"github.com/golang/protobuf/proto"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/event"
-	"github.com/lyft/flytestdlib/utils"
+	"github.com/golang/protobuf/ptypes"
 )
 
 type localSink struct {
@@ -17,31 +16,22 @@ type localSink struct {
 	writer writer
 }
 
-func (s *localSink) Sink(ctx context.Context, eventType EventType, message proto.Message) error {
+func (s *localSink) Sink(ctx context.Context, message proto.Message) error {
 	s.mu.Lock()
 	defer s.writer.Flush()
 	defer s.mu.Unlock()
 
 	var eventOutput string
-	switch eventType {
-	case WorkflowEvent:
-		e, ok := message.(*event.WorkflowExecutionEvent)
-		if !ok {
-			return fmt.Errorf("failed to convert workflow event to its protobuf structure")
-		}
-		eventOutput = fmt.Sprintf("[--WF EVENT-%d-] Phase: %s\n", utils.GetSequencer().GetNext(), e.Phase)
-	case NodeEvent:
-		e, ok := message.(*event.NodeExecutionEvent)
-		if !ok {
-			return fmt.Errorf("failed to convert workflow event to its protobuf structure")
-		}
-		eventOutput = fmt.Sprintf("[--NODE EVENT-%d-] Phase: %s\n", utils.GetSequencer().GetNext(), e.Phase)
-	case TaskEvent:
-		e, ok := message.(*event.TaskExecutionEvent)
-		if !ok {
-			return fmt.Errorf("failed to convert workflow event to its protobuf structure")
-		}
-		eventOutput = fmt.Sprintf("[--TASK EVENT-%d-] TaskId: %s\n", utils.GetSequencer().GetNext(), e.TaskId)
+	switch e := message.(type) {
+	case *event.WorkflowExecutionEvent:
+		eventOutput = fmt.Sprintf("[--WF EVENT--] %s, Phase: %s, OccuredAt: %s\n",
+		e.ExecutionId, e.Phase, ptypes.TimestampString(e.OccurredAt))
+	case *event.NodeExecutionEvent:
+		eventOutput = fmt.Sprintf("[--NODE EVENT--] %s, Phase: %s, OccuredAt: %s\n",
+			e.Id, e.Phase, ptypes.TimestampString(e.OccurredAt))
+	case *event.TaskExecutionEvent:
+		eventOutput = fmt.Sprintf("[--TASK EVENT--] %s,%s, Phase: %s, OccuredAt: %s\n",
+			e.TaskId, e.ParentNodeExecutionId, e.Phase, ptypes.TimestampString(e.OccurredAt))
 	}
 
 	return s.writer.Write(ctx, eventOutput)

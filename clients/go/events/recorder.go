@@ -3,50 +3,24 @@ package events
 import (
 	"context"
 
-	"github.com/golang/protobuf/proto"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/event"
 )
-
-type EventType int
-
-const (
-	WorkflowEvent EventType = 1 + iota
-	NodeEvent
-	TaskEvent
-)
-
-func (e EventType) String() string {
-	switch e {
-	case WorkflowEvent:
-		return "WorkflowEvent"
-	case NodeEvent:
-		return "NodeEvent"
-	case TaskEvent:
-		return "TaskEvent"
-	}
-	return "UnknownEventType"
-}
 
 // EventRecorder records workflow, node and task events to the eventSink it is configured with.
 type eventRecorder struct {
 	eventSink EventSink
 }
 
-func (r *eventRecorder) recordEvent(ctx context.Context, eventType EventType, event proto.Message) error {
-	return r.eventSink.Sink(ctx, eventType, event)
-}
-
 func (r *eventRecorder) RecordWorkflowEvent(ctx context.Context, event *event.WorkflowExecutionEvent) error {
-	err := r.recordEvent(ctx, WorkflowEvent, event)
-	return err
+	return r.eventSink.Sink(ctx, event)
 }
 
 func (r *eventRecorder) RecordNodeEvent(ctx context.Context, event *event.NodeExecutionEvent) error {
-	return r.recordEvent(ctx, NodeEvent, event)
+	return r.eventSink.Sink(ctx, event)
 }
 
 func (r *eventRecorder) RecordTaskEvent(ctx context.Context, event *event.TaskExecutionEvent) error {
-	return r.recordEvent(ctx, TaskEvent, event)
+	return r.eventSink.Sink(ctx, event)
 }
 
 // Construct a new Workflow Event Recorder

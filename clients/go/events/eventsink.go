@@ -14,7 +14,7 @@ type EventSink interface {
 
 	// Send the Event to this EventSink. The EventSink will identify the type of message through the
 	// specified eventType and sink it appropriately based on the type.
-	Sink(ctx context.Context, eventType EventType, message proto.Message) error
+	Sink(ctx context.Context, message proto.Message) error
 
 	// Callers should close the EventSink when it is no longer being used as there may be long living
 	// connections.
