@@ -7,6 +7,7 @@ docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/admin --with
 docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/core --with_gateway -l go --go_source_relative --validate_out
 docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/event --with_gateway -l go --go_source_relative --validate_out
 docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/plugins -l go --go_source_relative --validate_out
+docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/legacydiscovery -l go --go_source_relative --validate_out
 
 docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/service -l python
 docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/admin -l python
