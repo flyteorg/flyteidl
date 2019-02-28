@@ -2391,6 +2391,9 @@ export namespace flyteidl {
 
             /** LiteralType blob */
             blob?: (flyteidl.core.IBlobType|null);
+
+            /** LiteralType metadata */
+            metadata?: (google.protobuf.IStruct|null);
         }
 
         /** Represents a LiteralType. */
@@ -2416,6 +2419,9 @@ export namespace flyteidl {
 
             /** LiteralType blob. */
             public blob?: (flyteidl.core.IBlobType|null);
+
+            /** LiteralType metadata. */
+            public metadata?: (google.protobuf.IStruct|null);
 
             /** LiteralType type. */
             public type?: ("simple"|"schema"|"collectionType"|"mapValueType"|"blob");

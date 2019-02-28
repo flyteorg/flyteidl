@@ -188,6 +188,16 @@ func (m *LiteralType) Validate() error {
 		return nil
 	}
 
+	if v, ok := interface{}(m.GetMetadata()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return LiteralTypeValidationError{
+				field:  "Metadata",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	switch m.Type.(type) {
 
 	case *LiteralType_Simple:

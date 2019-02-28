@@ -3342,6 +3342,10 @@
         "blob": {
           "$ref": "#/definitions/coreBlobType",
           "description": "A blob might have specialized implementation details depending on associated metadata."
+        },
+        "metadata": {
+          "$ref": "#/definitions/protobufStruct",
+          "description": "This field contains type metadata that is descriptive of the type, but is NOT considered in type-checking.  This might be used by\nconsumers to identify special behavior or display extended information for the type."
         }
       },
       "description": "Defines a strong type to allow type checking between interfaces."

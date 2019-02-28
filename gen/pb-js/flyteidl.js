@@ -5752,6 +5752,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.ILiteralType|null} [collectionType] LiteralType collectionType
              * @property {flyteidl.core.ILiteralType|null} [mapValueType] LiteralType mapValueType
              * @property {flyteidl.core.IBlobType|null} [blob] LiteralType blob
+             * @property {google.protobuf.IStruct|null} [metadata] LiteralType metadata
              */
 
             /**
@@ -5809,6 +5810,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             LiteralType.prototype.blob = null;
 
+            /**
+             * LiteralType metadata.
+             * @member {google.protobuf.IStruct|null|undefined} metadata
+             * @memberof flyteidl.core.LiteralType
+             * @instance
+             */
+            LiteralType.prototype.metadata = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -5857,6 +5866,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.LiteralType.encode(message.mapValueType, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.blob != null && message.hasOwnProperty("blob"))
                     $root.flyteidl.core.BlobType.encode(message.blob, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.metadata != null && message.hasOwnProperty("metadata"))
+                    $root.google.protobuf.Struct.encode(message.metadata, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 return writer;
             };
 
@@ -5892,6 +5903,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 5:
                         message.blob = $root.flyteidl.core.BlobType.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.metadata = $root.google.protobuf.Struct.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5969,6 +5983,11 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (error)
                             return "blob." + error;
                     }
+                }
+                if (message.metadata != null && message.hasOwnProperty("metadata")) {
+                    let error = $root.google.protobuf.Struct.verify(message.metadata);
+                    if (error)
+                        return "metadata." + error;
                 }
                 return null;
             };

@@ -4,6 +4,8 @@ package flyteidl.core;
 
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
 
+import "google/protobuf/struct.proto";
+
 // Define a set of simple types.
 enum SimpleType {
     NONE = 0;
@@ -71,6 +73,10 @@ message LiteralType {
         // A blob might have specialized implementation details depending on associated metadata.
         BlobType blob = 5;
     }
+
+    // This field contains type metadata that is descriptive of the type, but is NOT considered in type-checking.  This might be used by
+    // consumers to identify special behavior or display extended information for the type.
+    google.protobuf.Struct metadata = 6;
 }
 
 // A reference to an output produced by a node. The type can be retrieved -and validated- from
