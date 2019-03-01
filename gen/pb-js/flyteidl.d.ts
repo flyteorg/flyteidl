@@ -6426,9 +6426,6 @@ export namespace flyteidl {
         /** Properties of a WorkflowExecutionGetDataResponse. */
         interface IWorkflowExecutionGetDataResponse {
 
-            /** WorkflowExecutionGetDataResponse inputs */
-            inputs?: (flyteidl.admin.IUrlBlob|null);
-
             /** WorkflowExecutionGetDataResponse outputs */
             outputs?: (flyteidl.admin.IUrlBlob|null);
         }
@@ -6441,9 +6438,6 @@ export namespace flyteidl {
              * @param [properties] Properties to set
              */
             constructor(properties?: flyteidl.admin.IWorkflowExecutionGetDataResponse);
-
-            /** WorkflowExecutionGetDataResponse inputs. */
-            public inputs?: (flyteidl.admin.IUrlBlob|null);
 
             /** WorkflowExecutionGetDataResponse outputs. */
             public outputs?: (flyteidl.admin.IUrlBlob|null);

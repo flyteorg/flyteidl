@@ -1202,16 +1202,6 @@ func (m *WorkflowExecutionGetDataResponse) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetInputs()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return WorkflowExecutionGetDataResponseValidationError{
-				field:  "Inputs",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
 	if v, ok := interface{}(m.GetOutputs()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return WorkflowExecutionGetDataResponseValidationError{

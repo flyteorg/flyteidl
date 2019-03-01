@@ -15422,7 +15422,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a WorkflowExecutionGetDataResponse.
              * @memberof flyteidl.admin
              * @interface IWorkflowExecutionGetDataResponse
-             * @property {flyteidl.admin.IUrlBlob|null} [inputs] WorkflowExecutionGetDataResponse inputs
              * @property {flyteidl.admin.IUrlBlob|null} [outputs] WorkflowExecutionGetDataResponse outputs
              */
 
@@ -15440,14 +15439,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
-
-            /**
-             * WorkflowExecutionGetDataResponse inputs.
-             * @member {flyteidl.admin.IUrlBlob|null|undefined} inputs
-             * @memberof flyteidl.admin.WorkflowExecutionGetDataResponse
-             * @instance
-             */
-            WorkflowExecutionGetDataResponse.prototype.inputs = null;
 
             /**
              * WorkflowExecutionGetDataResponse outputs.
@@ -15481,10 +15472,8 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowExecutionGetDataResponse.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.inputs != null && message.hasOwnProperty("inputs"))
-                    $root.flyteidl.admin.UrlBlob.encode(message.inputs, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.outputs != null && message.hasOwnProperty("outputs"))
-                    $root.flyteidl.admin.UrlBlob.encode(message.outputs, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    $root.flyteidl.admin.UrlBlob.encode(message.outputs, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -15507,9 +15496,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.inputs = $root.flyteidl.admin.UrlBlob.decode(reader, reader.uint32());
-                        break;
-                    case 2:
                         message.outputs = $root.flyteidl.admin.UrlBlob.decode(reader, reader.uint32());
                         break;
                     default:
@@ -15531,11 +15517,6 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowExecutionGetDataResponse.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.inputs != null && message.hasOwnProperty("inputs")) {
-                    let error = $root.flyteidl.admin.UrlBlob.verify(message.inputs);
-                    if (error)
-                        return "inputs." + error;
-                }
                 if (message.outputs != null && message.hasOwnProperty("outputs")) {
                     let error = $root.flyteidl.admin.UrlBlob.verify(message.outputs);
                     if (error)
