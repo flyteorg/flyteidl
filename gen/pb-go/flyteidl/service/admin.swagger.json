@@ -3663,6 +3663,9 @@
         },
         "error": {
           "$ref": "#/definitions/coreError"
+        },
+        "generic": {
+          "$ref": "#/definitions/protobufStruct"
         }
       }
     },
@@ -3690,7 +3693,8 @@
         "DATETIME",
         "DURATION",
         "BINARY",
-        "ERROR"
+        "ERROR",
+        "STRUCT"
       ],
       "default": "NONE",
       "description": "Define a set of simple types."

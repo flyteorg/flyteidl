@@ -35,7 +35,7 @@ required = ["github.com/lyft/protoc-gen-validate"]
 
 [[constraint]]
   name = "github.com/lyft/flytestdlib"
-  version = "^0.5.x"
+  version = "^0.6.x"
 
 [[constraint]]
   name = "github.com/lyft/protoc-gen-validate"

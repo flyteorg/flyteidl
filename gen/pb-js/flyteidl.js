@@ -3813,6 +3813,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.ISchema|null} [schema] Scalar schema
              * @property {flyteidl.core.IVoid|null} [noneType] Scalar noneType
              * @property {flyteidl.core.IError|null} [error] Scalar error
+             * @property {google.protobuf.IStruct|null} [generic] Scalar generic
              */
 
             /**
@@ -3878,17 +3879,25 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             Scalar.prototype.error = null;
 
+            /**
+             * Scalar generic.
+             * @member {google.protobuf.IStruct|null|undefined} generic
+             * @memberof flyteidl.core.Scalar
+             * @instance
+             */
+            Scalar.prototype.generic = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
             /**
              * Scalar value.
-             * @member {"primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|undefined} value
+             * @member {"primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|"generic"|undefined} value
              * @memberof flyteidl.core.Scalar
              * @instance
              */
             Object.defineProperty(Scalar.prototype, "value", {
-                get: $util.oneOfGetter($oneOfFields = ["primitive", "blob", "binary", "schema", "noneType", "error"]),
+                get: $util.oneOfGetter($oneOfFields = ["primitive", "blob", "binary", "schema", "noneType", "error", "generic"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -3928,6 +3937,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.Void.encode(message.noneType, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 if (message.error != null && message.hasOwnProperty("error"))
                     $root.flyteidl.core.Error.encode(message.error, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                if (message.generic != null && message.hasOwnProperty("generic"))
+                    $root.google.protobuf.Struct.encode(message.generic, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 return writer;
             };
 
@@ -3966,6 +3977,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 6:
                         message.error = $root.flyteidl.core.Error.decode(reader, reader.uint32());
+                        break;
+                    case 7:
+                        message.generic = $root.google.protobuf.Struct.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -4043,6 +4057,16 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.flyteidl.core.Error.verify(message.error);
                         if (error)
                             return "error." + error;
+                    }
+                }
+                if (message.generic != null && message.hasOwnProperty("generic")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.google.protobuf.Struct.verify(message.generic);
+                        if (error)
+                            return "generic." + error;
                     }
                 }
                 return null;
@@ -5302,6 +5326,7 @@ export const flyteidl = $root.flyteidl = (() => {
          * @property {number} DURATION=6 DURATION value
          * @property {number} BINARY=7 BINARY value
          * @property {number} ERROR=8 ERROR value
+         * @property {number} STRUCT=9 STRUCT value
          */
         core.SimpleType = (function() {
             const valuesById = {}, values = Object.create(valuesById);
@@ -5314,6 +5339,7 @@ export const flyteidl = $root.flyteidl = (() => {
             values[valuesById[6] = "DURATION"] = 6;
             values[valuesById[7] = "BINARY"] = 7;
             values[valuesById[8] = "ERROR"] = 8;
+            values[valuesById[9] = "STRUCT"] = 9;
             return values;
         })();
 
@@ -5941,6 +5967,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 6:
                     case 7:
                     case 8:
+                    case 9:
                         break;
                     }
                 }
@@ -23457,6 +23484,147 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             return SparkJob;
+        })();
+
+        plugins.Waitable = (function() {
+
+            /**
+             * Properties of a Waitable.
+             * @memberof flyteidl.plugins
+             * @interface IWaitable
+             * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [wfExecId] Waitable wfExecId
+             * @property {flyteidl.core.WorkflowExecution.Phase|null} [phase] Waitable phase
+             */
+
+            /**
+             * Constructs a new Waitable.
+             * @memberof flyteidl.plugins
+             * @classdesc Represents a Waitable.
+             * @implements IWaitable
+             * @constructor
+             * @param {flyteidl.plugins.IWaitable=} [properties] Properties to set
+             */
+            function Waitable(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Waitable wfExecId.
+             * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} wfExecId
+             * @memberof flyteidl.plugins.Waitable
+             * @instance
+             */
+            Waitable.prototype.wfExecId = null;
+
+            /**
+             * Waitable phase.
+             * @member {flyteidl.core.WorkflowExecution.Phase} phase
+             * @memberof flyteidl.plugins.Waitable
+             * @instance
+             */
+            Waitable.prototype.phase = 0;
+
+            /**
+             * Creates a new Waitable instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.plugins.Waitable
+             * @static
+             * @param {flyteidl.plugins.IWaitable=} [properties] Properties to set
+             * @returns {flyteidl.plugins.Waitable} Waitable instance
+             */
+            Waitable.create = function create(properties) {
+                return new Waitable(properties);
+            };
+
+            /**
+             * Encodes the specified Waitable message. Does not implicitly {@link flyteidl.plugins.Waitable.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.plugins.Waitable
+             * @static
+             * @param {flyteidl.plugins.IWaitable} message Waitable message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Waitable.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.wfExecId != null && message.hasOwnProperty("wfExecId"))
+                    $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.wfExecId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.phase != null && message.hasOwnProperty("phase"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.phase);
+                return writer;
+            };
+
+            /**
+             * Decodes a Waitable message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.plugins.Waitable
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.plugins.Waitable} Waitable
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Waitable.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.plugins.Waitable();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.wfExecId = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.phase = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Waitable message.
+             * @function verify
+             * @memberof flyteidl.plugins.Waitable
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Waitable.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.wfExecId != null && message.hasOwnProperty("wfExecId")) {
+                    let error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.wfExecId);
+                    if (error)
+                        return "wfExecId." + error;
+                }
+                if (message.phase != null && message.hasOwnProperty("phase"))
+                    switch (message.phase) {
+                    default:
+                        return "phase: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                        break;
+                    }
+                return null;
+            };
+
+            return Waitable;
         })();
 
         return plugins;

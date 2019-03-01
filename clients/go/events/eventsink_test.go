@@ -9,10 +9,10 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/golang/protobuf/ptypes"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/event"
 	"github.com/stretchr/testify/assert"
-	"github.com/golang/protobuf/ptypes"
 )
 
 func TestFileEvent(t *testing.T) {
@@ -29,16 +29,16 @@ func TestFileEvent(t *testing.T) {
 		assert.FailNow(t, "failed to create file sync "+err.Error())
 	}
 
-	executionId := &core.WorkflowExecutionIdentifier{
+	executionID := &core.WorkflowExecutionIdentifier{
 		Project: "FlyteTest",
-		Domain: "FlyteStaging",
-		Name: "Name",
+		Domain:  "FlyteStaging",
+		Name:    "Name",
 	}
 
 	workflowEvent := &event.WorkflowExecutionEvent{
-		ExecutionId: executionId,
-		Phase: core.WorkflowExecution_SUCCEEDED,
-		OccurredAt: now,
+		ExecutionId: executionID,
+		Phase:       core.WorkflowExecution_SUCCEEDED,
+		OccurredAt:  now,
 	}
 	err = sink.Sink(context.Background(), workflowEvent)
 	assert.NoError(t, err)
@@ -48,29 +48,30 @@ func TestFileEvent(t *testing.T) {
 			NodeId: "node1",
 			ExecutionId: &core.WorkflowExecutionIdentifier{
 				Project: "FlyteTest",
-				Domain: "FlyteStaging",
-				Name: "Name",
+				Domain:  "FlyteStaging",
+				Name:    "Name",
 			},
 		},
-		Phase: core.NodeExecution_RUNNING,
+		Phase:      core.NodeExecution_RUNNING,
 		OccurredAt: now,
 	}
 	err = sink.Sink(context.Background(), nodeEvent)
 	assert.NoError(t, err)
 
 	taskEvent := &event.TaskExecutionEvent{
-		TaskId: &core.Identifier {
+		TaskId: &core.Identifier{
 			ResourceType: core.ResourceType_TASK,
-			Project: executionId.Project,
-			Domain: executionId.Domain,
-			Name: executionId.Name,
+			Project:      executionID.Project,
+			Domain:       executionID.Domain,
+			Name:         executionID.Name,
 		},
 		ParentNodeExecutionId: nodeEvent.Id,
-		Phase: core.TaskExecution_FAILED,
-		OccurredAt: now,
+		Phase:                 core.TaskExecution_FAILED,
+		OccurredAt:            now,
 	}
 	assert.NoError(t, err)
 	err = sink.Sink(context.Background(), taskEvent)
+	assert.NoError(t, err)
 
 	expected := []string{
 		"[--WF EVENT--] project:\"FlyteTest\" domain:\"FlyteStaging\" name:\"Name\" , " +

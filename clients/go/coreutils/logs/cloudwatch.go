@@ -12,14 +12,14 @@ type cloudwatchLogPlugin struct {
 	groupName string
 }
 
-func (s cloudwatchLogPlugin) GetTaskLog(podName, namespace, containerName, containerId, logName string) (core.TaskLog, error) {
+func (s cloudwatchLogPlugin) GetTaskLog(podName, namespace, containerName, containerID, logName string) (core.TaskLog, error) {
 
 	// Container IDs are prefixed with docker://, cri-o://, etc. which is stripped by fluentd before pushing to a log
 	// stream.  Therefore, we must also strip the prefix.
 	// Also, container names are
 	stripDelimiter := "://"
-	if split := strings.Split(containerId, stripDelimiter); len(split) > 1 {
-		containerId = split[1]
+	if split := strings.Split(containerID, stripDelimiter); len(split) > 1 {
+		containerID = split[1]
 	}
 
 	return core.TaskLog{
@@ -30,7 +30,7 @@ func (s cloudwatchLogPlugin) GetTaskLog(podName, namespace, containerName, conta
 			podName,
 			namespace,
 			containerName,
-			containerId),
+			containerID),
 		Name:          logName,
 		MessageFormat: core.TaskLog_JSON,
 	}, nil

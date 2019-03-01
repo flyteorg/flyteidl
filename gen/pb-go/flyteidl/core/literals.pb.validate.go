@@ -577,6 +577,18 @@ func (m *Scalar) Validate() error {
 			}
 		}
 
+	case *Scalar_Generic:
+
+		if v, ok := interface{}(m.GetGeneric()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ScalarValidationError{
+					field:  "Generic",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
 	}
 
 	return nil

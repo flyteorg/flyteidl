@@ -7,19 +7,19 @@ import (
 )
 
 type kubernetesLogPlugin struct {
-	k8sUrl string
+	k8sURL string
 }
 
-func (s kubernetesLogPlugin) GetTaskLog(podName, namespace, containerName, containerId, logName string) (core.TaskLog, error) {
+func (s kubernetesLogPlugin) GetTaskLog(podName, namespace, containerName, containerID, logName string) (core.TaskLog, error) {
 	return core.TaskLog{
-		Uri:           fmt.Sprintf("%s/#!/log/%s/%s/pod?namespace=%s", s.k8sUrl, namespace, podName, namespace),
+		Uri:           fmt.Sprintf("%s/#!/log/%s/%s/pod?namespace=%s", s.k8sURL, namespace, podName, namespace),
 		Name:          logName,
 		MessageFormat: core.TaskLog_UNKNOWN,
 	}, nil
 }
 
-func NewKubernetesLogPlugin(k8sUrl string) LogPlugin {
+func NewKubernetesLogPlugin(k8sURL string) LogPlugin {
 	return &kubernetesLogPlugin{
-		k8sUrl: k8sUrl,
+		k8sURL: k8sURL,
 	}
 }

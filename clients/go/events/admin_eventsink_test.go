@@ -5,15 +5,15 @@ import (
 	"testing"
 
 	"github.com/golang/protobuf/ptypes"
+	"github.com/lyft/flyteidl/clients/go/admin/mocks"
+	"github.com/lyft/flyteidl/clients/go/events/errors"
+	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/event"
 	"github.com/stretchr/testify/assert"
-	"github.com/lyft/flyteidl/clients/go/admin/mocks"
 	"github.com/stretchr/testify/mock"
-	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
-	"github.com/lyft/flyteidl/clients/go/events/errors"
 )
 
 // This test suite uses Mockery to mock the AdminServiceClient. Run the following command in CLI or in the IntelliJ
@@ -45,7 +45,7 @@ func TestAdminWorkflowEvent(t *testing.T) {
 		mock.MatchedBy(func(req *admin.WorkflowExecutionEventRequest) bool {
 			return req.Event == wfEvent
 		},
-	)).Return(&admin.WorkflowExecutionEventResponse{}, nil)
+		)).Return(&admin.WorkflowExecutionEventResponse{}, nil)
 
 	err := adminEventSink.Sink(ctx, wfEvent)
 	assert.NoError(t, err)
@@ -119,15 +119,15 @@ func TestAdminAlreadyExistsError(t *testing.T) {
 		OccurredAt:   ptypes.TimestampNow(),
 		TaskId:       &core.Identifier{ResourceType: core.ResourceType_TASK, Name: "task-id"},
 		RetryAttempt: 1,
-		ParentNodeExecutionId:	&core.NodeExecutionIdentifier{
+		ParentNodeExecutionId: &core.NodeExecutionIdentifier{
 			NodeId: "node-id",
 			ExecutionId: &core.WorkflowExecutionIdentifier{
 				Project: "p",
-				Domain: "d",
-				Name: "n",
+				Domain:  "d",
+				Name:    "n",
 			},
 		},
-		Logs: []*core.TaskLog{{ Uri: "logs.txt"}},
+		Logs: []*core.TaskLog{{Uri: "logs.txt"}},
 	}
 
 	alreadyExistErr := status.Error(codes.AlreadyExists, "Grpc AlreadyExists error")

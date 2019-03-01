@@ -17,6 +17,7 @@ enum SimpleType {
     DURATION = 6;
     BINARY = 7;
     ERROR = 8;
+    STRUCT = 9;
 }
 
 // Defines schema columns and types to strongly type-validate schemas interoperability.

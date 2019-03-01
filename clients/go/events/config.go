@@ -20,6 +20,10 @@ const (
 	EventSinkAdmin EventReportingType = "admin"
 )
 
+var (
+	configSection = config.MustRegisterSection(configSectionKey, &Config{})
+)
+
 type Config struct {
 	Type     EventReportingType `json:"type" pflag:",Sets the type of EventSink to configure [log/admin/file]."`
 	FilePath string             `json:"file-path" pflag:",For file types, specify where the file should be located."`
@@ -27,16 +31,10 @@ type Config struct {
 
 // Retrieve current global config for storage.
 func GetConfig(ctx context.Context) *Config {
-	if c, ok := config.GetSection(configSectionKey).(*Config); ok {
+	if c, ok := configSection.GetConfig().(*Config); ok {
 		return c
 	}
 
 	logger.Warnf(ctx, "Failed to retrieve config section [%v].", configSectionKey)
 	return nil
-}
-
-func init() {
-	if err := config.RegisterSection(configSectionKey, &Config{}); err != nil {
-		panic(err)
-	}
 }

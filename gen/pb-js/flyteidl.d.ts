@@ -1587,6 +1587,9 @@ export namespace flyteidl {
 
             /** Scalar error */
             error?: (flyteidl.core.IError|null);
+
+            /** Scalar generic */
+            generic?: (google.protobuf.IStruct|null);
         }
 
         /** Represents a Scalar. */
@@ -1616,8 +1619,11 @@ export namespace flyteidl {
             /** Scalar error. */
             public error?: (flyteidl.core.IError|null);
 
+            /** Scalar generic. */
+            public generic?: (google.protobuf.IStruct|null);
+
             /** Scalar value. */
-            public value?: ("primitive"|"blob"|"binary"|"schema"|"noneType"|"error");
+            public value?: ("primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|"generic");
 
             /**
              * Creates a new Scalar instance using the specified properties.
@@ -2178,7 +2184,8 @@ export namespace flyteidl {
             DATETIME = 5,
             DURATION = 6,
             BINARY = 7,
-            ERROR = 8
+            ERROR = 8,
+            STRUCT = 9
         }
 
         /** Properties of a SchemaType. */
@@ -10095,6 +10102,64 @@ export namespace flyteidl {
 
             /**
              * Verifies a SparkJob message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a Waitable. */
+        interface IWaitable {
+
+            /** Waitable wfExecId */
+            wfExecId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** Waitable phase */
+            phase?: (flyteidl.core.WorkflowExecution.Phase|null);
+        }
+
+        /** Represents a Waitable. */
+        class Waitable implements IWaitable {
+
+            /**
+             * Constructs a new Waitable.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.plugins.IWaitable);
+
+            /** Waitable wfExecId. */
+            public wfExecId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** Waitable phase. */
+            public phase: flyteidl.core.WorkflowExecution.Phase;
+
+            /**
+             * Creates a new Waitable instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Waitable instance
+             */
+            public static create(properties?: flyteidl.plugins.IWaitable): flyteidl.plugins.Waitable;
+
+            /**
+             * Encodes the specified Waitable message. Does not implicitly {@link flyteidl.plugins.Waitable.verify|verify} messages.
+             * @param message Waitable message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.plugins.IWaitable, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Waitable message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Waitable
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.plugins.Waitable;
+
+            /**
+             * Verifies a Waitable message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */

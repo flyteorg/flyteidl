@@ -2,6 +2,7 @@ package errors
 
 import (
 	"fmt"
+
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )
@@ -9,11 +10,11 @@ import (
 type ErrorCode string
 
 const (
-	AlreadyExists ErrorCode = "AlreadyExists"
+	AlreadyExists     ErrorCode = "AlreadyExists"
 	ExecutionNotFound ErrorCode = "ExecutionNotFound"
 	ResourceExhausted ErrorCode = "ResourceExhausted"
-	InvalidArgument ErrorCode = "InvalidArgument"
-	EventSinkError ErrorCode = "EventSinkError"
+	InvalidArgument   ErrorCode = "InvalidArgument"
+	EventSinkError    ErrorCode = "EventSinkError"
 )
 
 type EventError struct {

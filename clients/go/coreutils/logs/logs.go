@@ -8,5 +8,5 @@ import (
 
 type LogPlugin interface {
 	// Generates a TaskLog object given necessary computation information
-	GetTaskLog(podName, namespace, containerName, containerId, logName string) (core.TaskLog, error)
+	GetTaskLog(podName, namespace, containerName, containerID, logName string) (core.TaskLog, error)
 }

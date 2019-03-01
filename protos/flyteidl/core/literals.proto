@@ -6,6 +6,7 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
+import "google/protobuf/struct.proto";
 import "flyteidl/core/types.proto";
 
 // Primitive Types
@@ -59,6 +60,7 @@ message Scalar {
         Schema schema = 4;
         Void none_type = 5;
         Error error = 6;
+        google.protobuf.Struct generic = 7;
     }
 }
 
