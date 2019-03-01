@@ -202,6 +202,13 @@ service AdminService {
     };
   }
 
+  rpc GetExecutionData (flyteidl.admin.WorkflowExecutionGetDataRequest) returns (flyteidl.admin.WorkflowExecutionGetDataResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/data/executions/{id.project}/{id.domain}/{id.name}"
+    };
+  };
+
+
   rpc ListExecutions (flyteidl.admin.ResourceListRequest) returns (flyteidl.admin.ExecutionList) {
     option (google.api.http) = {
       get: "/api/v1/executions/{id.project}/{id.domain}"

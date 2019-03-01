@@ -1115,3 +1115,169 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = ExecutionTerminateResponseValidationError{}
+
+// Validate checks the field values on WorkflowExecutionGetDataRequest with the
+// rules defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *WorkflowExecutionGetDataRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return WorkflowExecutionGetDataRequestValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// WorkflowExecutionGetDataRequestValidationError is the validation error
+// returned by WorkflowExecutionGetDataRequest.Validate if the designated
+// constraints aren't met.
+type WorkflowExecutionGetDataRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e WorkflowExecutionGetDataRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e WorkflowExecutionGetDataRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e WorkflowExecutionGetDataRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e WorkflowExecutionGetDataRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e WorkflowExecutionGetDataRequestValidationError) ErrorName() string {
+	return "WorkflowExecutionGetDataRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e WorkflowExecutionGetDataRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sWorkflowExecutionGetDataRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = WorkflowExecutionGetDataRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = WorkflowExecutionGetDataRequestValidationError{}
+
+// Validate checks the field values on WorkflowExecutionGetDataResponse with
+// the rules defined in the proto definition for this message. If any rules
+// are violated, an error is returned.
+func (m *WorkflowExecutionGetDataResponse) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetInputs()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return WorkflowExecutionGetDataResponseValidationError{
+				field:  "Inputs",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetOutputs()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return WorkflowExecutionGetDataResponseValidationError{
+				field:  "Outputs",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// WorkflowExecutionGetDataResponseValidationError is the validation error
+// returned by WorkflowExecutionGetDataResponse.Validate if the designated
+// constraints aren't met.
+type WorkflowExecutionGetDataResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e WorkflowExecutionGetDataResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e WorkflowExecutionGetDataResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e WorkflowExecutionGetDataResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e WorkflowExecutionGetDataResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e WorkflowExecutionGetDataResponseValidationError) ErrorName() string {
+	return "WorkflowExecutionGetDataResponseValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e WorkflowExecutionGetDataResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sWorkflowExecutionGetDataResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = WorkflowExecutionGetDataResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = WorkflowExecutionGetDataResponseValidationError{}

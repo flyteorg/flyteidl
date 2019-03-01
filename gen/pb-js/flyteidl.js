@@ -15277,6 +15277,249 @@ export const flyteidl = $root.flyteidl = (() => {
             return ExecutionTerminateResponse;
         })();
 
+        admin.WorkflowExecutionGetDataRequest = (function() {
+
+            /**
+             * Properties of a WorkflowExecutionGetDataRequest.
+             * @memberof flyteidl.admin
+             * @interface IWorkflowExecutionGetDataRequest
+             * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [id] WorkflowExecutionGetDataRequest id
+             */
+
+            /**
+             * Constructs a new WorkflowExecutionGetDataRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a WorkflowExecutionGetDataRequest.
+             * @implements IWorkflowExecutionGetDataRequest
+             * @constructor
+             * @param {flyteidl.admin.IWorkflowExecutionGetDataRequest=} [properties] Properties to set
+             */
+            function WorkflowExecutionGetDataRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * WorkflowExecutionGetDataRequest id.
+             * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} id
+             * @memberof flyteidl.admin.WorkflowExecutionGetDataRequest
+             * @instance
+             */
+            WorkflowExecutionGetDataRequest.prototype.id = null;
+
+            /**
+             * Creates a new WorkflowExecutionGetDataRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.WorkflowExecutionGetDataRequest
+             * @static
+             * @param {flyteidl.admin.IWorkflowExecutionGetDataRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.WorkflowExecutionGetDataRequest} WorkflowExecutionGetDataRequest instance
+             */
+            WorkflowExecutionGetDataRequest.create = function create(properties) {
+                return new WorkflowExecutionGetDataRequest(properties);
+            };
+
+            /**
+             * Encodes the specified WorkflowExecutionGetDataRequest message. Does not implicitly {@link flyteidl.admin.WorkflowExecutionGetDataRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.WorkflowExecutionGetDataRequest
+             * @static
+             * @param {flyteidl.admin.IWorkflowExecutionGetDataRequest} message WorkflowExecutionGetDataRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            WorkflowExecutionGetDataRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a WorkflowExecutionGetDataRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.WorkflowExecutionGetDataRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.WorkflowExecutionGetDataRequest} WorkflowExecutionGetDataRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            WorkflowExecutionGetDataRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.WorkflowExecutionGetDataRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a WorkflowExecutionGetDataRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.WorkflowExecutionGetDataRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            WorkflowExecutionGetDataRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id")) {
+                    let error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.id);
+                    if (error)
+                        return "id." + error;
+                }
+                return null;
+            };
+
+            return WorkflowExecutionGetDataRequest;
+        })();
+
+        admin.WorkflowExecutionGetDataResponse = (function() {
+
+            /**
+             * Properties of a WorkflowExecutionGetDataResponse.
+             * @memberof flyteidl.admin
+             * @interface IWorkflowExecutionGetDataResponse
+             * @property {flyteidl.admin.IUrlBlob|null} [inputs] WorkflowExecutionGetDataResponse inputs
+             * @property {flyteidl.admin.IUrlBlob|null} [outputs] WorkflowExecutionGetDataResponse outputs
+             */
+
+            /**
+             * Constructs a new WorkflowExecutionGetDataResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a WorkflowExecutionGetDataResponse.
+             * @implements IWorkflowExecutionGetDataResponse
+             * @constructor
+             * @param {flyteidl.admin.IWorkflowExecutionGetDataResponse=} [properties] Properties to set
+             */
+            function WorkflowExecutionGetDataResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * WorkflowExecutionGetDataResponse inputs.
+             * @member {flyteidl.admin.IUrlBlob|null|undefined} inputs
+             * @memberof flyteidl.admin.WorkflowExecutionGetDataResponse
+             * @instance
+             */
+            WorkflowExecutionGetDataResponse.prototype.inputs = null;
+
+            /**
+             * WorkflowExecutionGetDataResponse outputs.
+             * @member {flyteidl.admin.IUrlBlob|null|undefined} outputs
+             * @memberof flyteidl.admin.WorkflowExecutionGetDataResponse
+             * @instance
+             */
+            WorkflowExecutionGetDataResponse.prototype.outputs = null;
+
+            /**
+             * Creates a new WorkflowExecutionGetDataResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.WorkflowExecutionGetDataResponse
+             * @static
+             * @param {flyteidl.admin.IWorkflowExecutionGetDataResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.WorkflowExecutionGetDataResponse} WorkflowExecutionGetDataResponse instance
+             */
+            WorkflowExecutionGetDataResponse.create = function create(properties) {
+                return new WorkflowExecutionGetDataResponse(properties);
+            };
+
+            /**
+             * Encodes the specified WorkflowExecutionGetDataResponse message. Does not implicitly {@link flyteidl.admin.WorkflowExecutionGetDataResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.WorkflowExecutionGetDataResponse
+             * @static
+             * @param {flyteidl.admin.IWorkflowExecutionGetDataResponse} message WorkflowExecutionGetDataResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            WorkflowExecutionGetDataResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.inputs != null && message.hasOwnProperty("inputs"))
+                    $root.flyteidl.admin.UrlBlob.encode(message.inputs, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.outputs != null && message.hasOwnProperty("outputs"))
+                    $root.flyteidl.admin.UrlBlob.encode(message.outputs, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a WorkflowExecutionGetDataResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.WorkflowExecutionGetDataResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.WorkflowExecutionGetDataResponse} WorkflowExecutionGetDataResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            WorkflowExecutionGetDataResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.WorkflowExecutionGetDataResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.inputs = $root.flyteidl.admin.UrlBlob.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.outputs = $root.flyteidl.admin.UrlBlob.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a WorkflowExecutionGetDataResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.WorkflowExecutionGetDataResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            WorkflowExecutionGetDataResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.inputs != null && message.hasOwnProperty("inputs")) {
+                    let error = $root.flyteidl.admin.UrlBlob.verify(message.inputs);
+                    if (error)
+                        return "inputs." + error;
+                }
+                if (message.outputs != null && message.hasOwnProperty("outputs")) {
+                    let error = $root.flyteidl.admin.UrlBlob.verify(message.outputs);
+                    if (error)
+                        return "outputs." + error;
+                }
+                return null;
+            };
+
+            return WorkflowExecutionGetDataResponse;
+        })();
+
         admin.LaunchPlanCreateRequest = (function() {
 
             /**
@@ -21854,6 +22097,39 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              * @param {flyteidl.admin.IWorkflowExecutionGetRequest} request WorkflowExecutionGetRequest message or plain object
              * @returns {Promise<flyteidl.admin.Execution>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getExecutionData}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef GetExecutionDataCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.WorkflowExecutionGetDataResponse} [response] WorkflowExecutionGetDataResponse
+             */
+
+            /**
+             * Calls GetExecutionData.
+             * @function getExecutionData
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IWorkflowExecutionGetDataRequest} request WorkflowExecutionGetDataRequest message or plain object
+             * @param {flyteidl.service.AdminService.GetExecutionDataCallback} callback Node-style callback called with the error, if any, and WorkflowExecutionGetDataResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.getExecutionData = function getExecutionData(request, callback) {
+                return this.rpcCall(getExecutionData, $root.flyteidl.admin.WorkflowExecutionGetDataRequest, $root.flyteidl.admin.WorkflowExecutionGetDataResponse, request, callback);
+            }, "name", { value: "GetExecutionData" });
+
+            /**
+             * Calls GetExecutionData.
+             * @function getExecutionData
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IWorkflowExecutionGetDataRequest} request WorkflowExecutionGetDataRequest message or plain object
+             * @returns {Promise<flyteidl.admin.WorkflowExecutionGetDataResponse>} Promise
              * @variation 2
              */
 

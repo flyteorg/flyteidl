@@ -252,6 +252,36 @@ func (_m *AdminServiceClient) GetExecution(ctx context.Context, in *admin.Workfl
 	return r0, r1
 }
 
+// GetExecutionData provides a mock function with given fields: ctx, in, opts
+func (_m *AdminServiceClient) GetExecutionData(ctx context.Context, in *admin.WorkflowExecutionGetDataRequest, opts ...grpc.CallOption) (*admin.WorkflowExecutionGetDataResponse, error) {
+	_va := make([]interface{}, len(opts))
+	for _i := range opts {
+		_va[_i] = opts[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, ctx, in)
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	var r0 *admin.WorkflowExecutionGetDataResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.WorkflowExecutionGetDataRequest, ...grpc.CallOption) *admin.WorkflowExecutionGetDataResponse); ok {
+		r0 = rf(ctx, in, opts...)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*admin.WorkflowExecutionGetDataResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.WorkflowExecutionGetDataRequest, ...grpc.CallOption) error); ok {
+		r1 = rf(ctx, in, opts...)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
 // GetLaunchPlan provides a mock function with given fields: ctx, in, opts
 func (_m *AdminServiceClient) GetLaunchPlan(ctx context.Context, in *admin.ObjectGetRequest, opts ...grpc.CallOption) (*admin.LaunchPlan, error) {
 	_va := make([]interface{}, len(opts))

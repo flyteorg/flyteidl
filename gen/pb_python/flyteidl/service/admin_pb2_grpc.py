@@ -102,6 +102,11 @@ class AdminServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_execution__pb2.Execution.FromString,
         )
+    self.GetExecutionData = channel.unary_unary(
+        '/flyteidl.service.AdminService/GetExecutionData',
+        request_serializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetDataRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetDataResponse.FromString,
+        )
     self.ListExecutions = channel.unary_unary(
         '/flyteidl.service.AdminService/ListExecutions',
         request_serializer=flyteidl_dot_admin_dot_common__pb2.ResourceListRequest.SerializeToString,
@@ -285,6 +290,13 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetExecutionData(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def ListExecutions(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -458,6 +470,11 @@ def add_AdminServiceServicer_to_server(servicer, server):
           servicer.GetExecution,
           request_deserializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_execution__pb2.Execution.SerializeToString,
+      ),
+      'GetExecutionData': grpc.unary_unary_rpc_method_handler(
+          servicer.GetExecutionData,
+          request_deserializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetDataRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_execution__pb2.WorkflowExecutionGetDataResponse.SerializeToString,
       ),
       'ListExecutions': grpc.unary_unary_rpc_method_handler(
           servicer.ListExecutions,

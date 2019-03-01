@@ -6364,6 +6364,116 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a WorkflowExecutionGetDataRequest. */
+        interface IWorkflowExecutionGetDataRequest {
+
+            /** WorkflowExecutionGetDataRequest id */
+            id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+        }
+
+        /** Represents a WorkflowExecutionGetDataRequest. */
+        class WorkflowExecutionGetDataRequest implements IWorkflowExecutionGetDataRequest {
+
+            /**
+             * Constructs a new WorkflowExecutionGetDataRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IWorkflowExecutionGetDataRequest);
+
+            /** WorkflowExecutionGetDataRequest id. */
+            public id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /**
+             * Creates a new WorkflowExecutionGetDataRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns WorkflowExecutionGetDataRequest instance
+             */
+            public static create(properties?: flyteidl.admin.IWorkflowExecutionGetDataRequest): flyteidl.admin.WorkflowExecutionGetDataRequest;
+
+            /**
+             * Encodes the specified WorkflowExecutionGetDataRequest message. Does not implicitly {@link flyteidl.admin.WorkflowExecutionGetDataRequest.verify|verify} messages.
+             * @param message WorkflowExecutionGetDataRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IWorkflowExecutionGetDataRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a WorkflowExecutionGetDataRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns WorkflowExecutionGetDataRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.WorkflowExecutionGetDataRequest;
+
+            /**
+             * Verifies a WorkflowExecutionGetDataRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a WorkflowExecutionGetDataResponse. */
+        interface IWorkflowExecutionGetDataResponse {
+
+            /** WorkflowExecutionGetDataResponse inputs */
+            inputs?: (flyteidl.admin.IUrlBlob|null);
+
+            /** WorkflowExecutionGetDataResponse outputs */
+            outputs?: (flyteidl.admin.IUrlBlob|null);
+        }
+
+        /** Represents a WorkflowExecutionGetDataResponse. */
+        class WorkflowExecutionGetDataResponse implements IWorkflowExecutionGetDataResponse {
+
+            /**
+             * Constructs a new WorkflowExecutionGetDataResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IWorkflowExecutionGetDataResponse);
+
+            /** WorkflowExecutionGetDataResponse inputs. */
+            public inputs?: (flyteidl.admin.IUrlBlob|null);
+
+            /** WorkflowExecutionGetDataResponse outputs. */
+            public outputs?: (flyteidl.admin.IUrlBlob|null);
+
+            /**
+             * Creates a new WorkflowExecutionGetDataResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns WorkflowExecutionGetDataResponse instance
+             */
+            public static create(properties?: flyteidl.admin.IWorkflowExecutionGetDataResponse): flyteidl.admin.WorkflowExecutionGetDataResponse;
+
+            /**
+             * Encodes the specified WorkflowExecutionGetDataResponse message. Does not implicitly {@link flyteidl.admin.WorkflowExecutionGetDataResponse.verify|verify} messages.
+             * @param message WorkflowExecutionGetDataResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IWorkflowExecutionGetDataResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a WorkflowExecutionGetDataResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns WorkflowExecutionGetDataResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.WorkflowExecutionGetDataResponse;
+
+            /**
+             * Verifies a WorkflowExecutionGetDataResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a LaunchPlanCreateRequest. */
         interface ILaunchPlanCreateRequest {
 
@@ -9201,6 +9311,20 @@ export namespace flyteidl {
             public getExecution(request: flyteidl.admin.IWorkflowExecutionGetRequest): Promise<flyteidl.admin.Execution>;
 
             /**
+             * Calls GetExecutionData.
+             * @param request WorkflowExecutionGetDataRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and WorkflowExecutionGetDataResponse
+             */
+            public getExecutionData(request: flyteidl.admin.IWorkflowExecutionGetDataRequest, callback: flyteidl.service.AdminService.GetExecutionDataCallback): void;
+
+            /**
+             * Calls GetExecutionData.
+             * @param request WorkflowExecutionGetDataRequest message or plain object
+             * @returns Promise
+             */
+            public getExecutionData(request: flyteidl.admin.IWorkflowExecutionGetDataRequest): Promise<flyteidl.admin.WorkflowExecutionGetDataResponse>;
+
+            /**
              * Calls ListExecutions.
              * @param request ResourceListRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and ExecutionList
@@ -9496,6 +9620,13 @@ export namespace flyteidl {
              * @param [response] Execution
              */
             type GetExecutionCallback = (error: (Error|null), response?: flyteidl.admin.Execution) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getExecutionData}.
+             * @param error Error, if any
+             * @param [response] WorkflowExecutionGetDataResponse
+             */
+            type GetExecutionDataCallback = (error: (Error|null), response?: flyteidl.admin.WorkflowExecutionGetDataResponse) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.AdminService#listExecutions}.

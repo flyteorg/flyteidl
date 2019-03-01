@@ -195,3 +195,17 @@ message ExecutionTerminateResponse {
     // Purposefully empty, may be populated in the future.
 }
 
+// Request structure to fetch inputs and output urls for an execution.
+message WorkflowExecutionGetDataRequest {
+    // The identifier of the execution for which to fetch inputs and outputs.
+    core.WorkflowExecutionIdentifier id        = 1;
+}
+
+// Response structure for WorkflowExecutionGetDataRequest which contains inputs and outputs for an execution.
+message WorkflowExecutionGetDataResponse {
+    // Signed url to fetch a core.LiteralMap of execution inputs.
+    UrlBlob inputs                             = 1;
+
+    // Signed url to fetch a core.LiteralMap of execution outputs.
+    UrlBlob outputs                            = 2;
+}

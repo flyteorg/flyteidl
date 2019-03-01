@@ -15,6 +15,45 @@
     "application/json"
   ],
   "paths": {
+    "/api/v1/data/executions/{id.project}/{id.domain}/{id.name}": {
+      "get": {
+        "operationId": "GetExecutionData",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminWorkflowExecutionGetDataResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/data/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}": {
       "get": {
         "operationId": "GetNodeExecutionData",
@@ -2842,6 +2881,20 @@
     },
     "adminWorkflowExecutionEventResponse": {
       "type": "object"
+    },
+    "adminWorkflowExecutionGetDataResponse": {
+      "type": "object",
+      "properties": {
+        "inputs": {
+          "$ref": "#/definitions/adminUrlBlob",
+          "description": "Signed url to fetch a core.LiteralMap of execution inputs."
+        },
+        "outputs": {
+          "$ref": "#/definitions/adminUrlBlob",
+          "description": "Signed url to fetch a core.LiteralMap of execution outputs."
+        }
+      },
+      "description": "Response structure for WorkflowExecutionGetDataRequest which contains inputs and outputs for an execution."
     },
     "adminWorkflowList": {
       "type": "object",
