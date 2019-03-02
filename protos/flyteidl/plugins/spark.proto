@@ -20,4 +20,5 @@ message SparkJob {
     string mainClass = 3;
     map<string, string> sparkConf = 4;
     map<string, string> hadoopConf = 5;
+    string executorPath = 6; // Executor path for Python jobs.
 }

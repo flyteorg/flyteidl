@@ -23269,6 +23269,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [mainClass] SparkJob mainClass
              * @property {Object.<string,string>|null} [sparkConf] SparkJob sparkConf
              * @property {Object.<string,string>|null} [hadoopConf] SparkJob hadoopConf
+             * @property {string|null} [executorPath] SparkJob executorPath
              */
 
             /**
@@ -23329,6 +23330,14 @@ export const flyteidl = $root.flyteidl = (() => {
             SparkJob.prototype.hadoopConf = $util.emptyObject;
 
             /**
+             * SparkJob executorPath.
+             * @member {string} executorPath
+             * @memberof flyteidl.plugins.SparkJob
+             * @instance
+             */
+            SparkJob.prototype.executorPath = "";
+
+            /**
              * Creates a new SparkJob instance using the specified properties.
              * @function create
              * @memberof flyteidl.plugins.SparkJob
@@ -23364,6 +23373,8 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.hadoopConf != null && message.hasOwnProperty("hadoopConf"))
                     for (let keys = Object.keys(message.hadoopConf), i = 0; i < keys.length; ++i)
                         writer.uint32(/* id 5, wireType 2 =*/42).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.hadoopConf[keys[i]]).ldelim();
+                if (message.executorPath != null && message.hasOwnProperty("executorPath"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.executorPath);
                 return writer;
             };
 
@@ -23409,6 +23420,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         key = reader.string();
                         reader.pos++;
                         message.hadoopConf[key] = reader.string();
+                        break;
+                    case 6:
+                        message.executorPath = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -23461,6 +23475,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!$util.isString(message.hadoopConf[key[i]]))
                             return "hadoopConf: string{k:string} expected";
                 }
+                if (message.executorPath != null && message.hasOwnProperty("executorPath"))
+                    if (!$util.isString(message.executorPath))
+                        return "executorPath: string expected";
                 return null;
             };
 

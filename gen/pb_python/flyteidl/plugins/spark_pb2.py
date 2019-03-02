@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/plugins/spark.proto',
   package='flyteidl.plugins',
   syntax='proto3',
-  serialized_pb=_b('\n\x1c\x66lyteidl/plugins/spark.proto\x12\x10\x66lyteidl.plugins\"B\n\x10SparkApplication\".\n\x04Type\x12\n\n\x06PYTHON\x10\x00\x12\x08\n\x04JAVA\x10\x01\x12\t\n\x05SCALA\x10\x02\x12\x05\n\x01R\x10\x03\"\xdf\x02\n\x08SparkJob\x12@\n\x0f\x61pplicationType\x18\x01 \x01(\x0e\x32\'.flyteidl.plugins.SparkApplication.Type\x12\x1b\n\x13mainApplicationFile\x18\x02 \x01(\t\x12\x11\n\tmainClass\x18\x03 \x01(\t\x12<\n\tsparkConf\x18\x04 \x03(\x0b\x32).flyteidl.plugins.SparkJob.SparkConfEntry\x12>\n\nhadoopConf\x18\x05 \x03(\x0b\x32*.flyteidl.plugins.SparkJob.HadoopConfEntry\x1a\x30\n\x0eSparkConfEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0fHadoopConfEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n\x1c\x66lyteidl/plugins/spark.proto\x12\x10\x66lyteidl.plugins\"B\n\x10SparkApplication\".\n\x04Type\x12\n\n\x06PYTHON\x10\x00\x12\x08\n\x04JAVA\x10\x01\x12\t\n\x05SCALA\x10\x02\x12\x05\n\x01R\x10\x03\"\xf5\x02\n\x08SparkJob\x12@\n\x0f\x61pplicationType\x18\x01 \x01(\x0e\x32\'.flyteidl.plugins.SparkApplication.Type\x12\x1b\n\x13mainApplicationFile\x18\x02 \x01(\t\x12\x11\n\tmainClass\x18\x03 \x01(\t\x12<\n\tsparkConf\x18\x04 \x03(\x0b\x32).flyteidl.plugins.SparkJob.SparkConfEntry\x12>\n\nhadoopConf\x18\x05 \x03(\x0b\x32*.flyteidl.plugins.SparkJob.HadoopConfEntry\x12\x14\n\x0c\x65xecutorPath\x18\x06 \x01(\t\x1a\x30\n\x0eSparkConfEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0fHadoopConfEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
 )
 
 
@@ -113,8 +113,8 @@ _SPARKJOB_SPARKCONFENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=371,
-  serialized_end=419,
+  serialized_start=393,
+  serialized_end=441,
 )
 
 _SPARKJOB_HADOOPCONFENTRY = _descriptor.Descriptor(
@@ -150,8 +150,8 @@ _SPARKJOB_HADOOPCONFENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=421,
-  serialized_end=470,
+  serialized_start=443,
+  serialized_end=492,
 )
 
 _SPARKJOB = _descriptor.Descriptor(
@@ -196,6 +196,13 @@ _SPARKJOB = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='executorPath', full_name='flyteidl.plugins.SparkJob.executorPath', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -209,7 +216,7 @@ _SPARKJOB = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=119,
-  serialized_end=470,
+  serialized_end=492,
 )
 
 _SPARKAPPLICATION_TYPE.containing_type = _SPARKAPPLICATION

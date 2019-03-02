@@ -115,6 +115,8 @@ func (m *SparkJob) Validate() error {
 
 	// no validation rules for HadoopConf
 
+	// no validation rules for ExecutorPath
+
 	return nil
 }
 

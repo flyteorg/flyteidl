@@ -10043,6 +10043,9 @@ export namespace flyteidl {
 
             /** SparkJob hadoopConf */
             hadoopConf?: ({ [k: string]: string }|null);
+
+            /** SparkJob executorPath */
+            executorPath?: (string|null);
         }
 
         /** Represents a SparkJob. */
@@ -10068,6 +10071,9 @@ export namespace flyteidl {
 
             /** SparkJob hadoopConf. */
             public hadoopConf: { [k: string]: string };
+
+            /** SparkJob executorPath. */
+            public executorPath: string;
 
             /**
              * Creates a new SparkJob instance using the specified properties.
