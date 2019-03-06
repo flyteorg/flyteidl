@@ -10420,6 +10420,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [outputUri] NodeExecutionEvent outputUri
              * @property {flyteidl.core.IExecutionError|null} [error] NodeExecutionEvent error
              * @property {flyteidl.event.IWorkflowNodeMetadata|null} [workflowNodeMetadata] NodeExecutionEvent workflowNodeMetadata
+             * @property {flyteidl.event.IParentTaskExecutionMetadata|null} [parentTaskMetadata] NodeExecutionEvent parentTaskMetadata
              */
 
             /**
@@ -10501,6 +10502,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             NodeExecutionEvent.prototype.workflowNodeMetadata = null;
 
+            /**
+             * NodeExecutionEvent parentTaskMetadata.
+             * @member {flyteidl.event.IParentTaskExecutionMetadata|null|undefined} parentTaskMetadata
+             * @memberof flyteidl.event.NodeExecutionEvent
+             * @instance
+             */
+            NodeExecutionEvent.prototype.parentTaskMetadata = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -10566,6 +10575,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.ExecutionError.encode(message.error, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 if (message.workflowNodeMetadata != null && message.hasOwnProperty("workflowNodeMetadata"))
                     $root.flyteidl.event.WorkflowNodeMetadata.encode(message.workflowNodeMetadata, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                if (message.parentTaskMetadata != null && message.hasOwnProperty("parentTaskMetadata"))
+                    $root.flyteidl.event.ParentTaskExecutionMetadata.encode(message.parentTaskMetadata, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 return writer;
             };
 
@@ -10610,6 +10621,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 8:
                         message.workflowNodeMetadata = $root.flyteidl.event.WorkflowNodeMetadata.decode(reader, reader.uint32());
+                        break;
+                    case 9:
+                        message.parentTaskMetadata = $root.flyteidl.event.ParentTaskExecutionMetadata.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -10684,6 +10698,11 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (error)
                             return "workflowNodeMetadata." + error;
                     }
+                }
+                if (message.parentTaskMetadata != null && message.hasOwnProperty("parentTaskMetadata")) {
+                    let error = $root.flyteidl.event.ParentTaskExecutionMetadata.verify(message.parentTaskMetadata);
+                    if (error)
+                        return "parentTaskMetadata." + error;
                 }
                 return null;
             };
@@ -10801,6 +10820,118 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             return WorkflowNodeMetadata;
+        })();
+
+        event.ParentTaskExecutionMetadata = (function() {
+
+            /**
+             * Properties of a ParentTaskExecutionMetadata.
+             * @memberof flyteidl.event
+             * @interface IParentTaskExecutionMetadata
+             * @property {flyteidl.core.ITaskExecutionIdentifier|null} [id] ParentTaskExecutionMetadata id
+             */
+
+            /**
+             * Constructs a new ParentTaskExecutionMetadata.
+             * @memberof flyteidl.event
+             * @classdesc Represents a ParentTaskExecutionMetadata.
+             * @implements IParentTaskExecutionMetadata
+             * @constructor
+             * @param {flyteidl.event.IParentTaskExecutionMetadata=} [properties] Properties to set
+             */
+            function ParentTaskExecutionMetadata(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ParentTaskExecutionMetadata id.
+             * @member {flyteidl.core.ITaskExecutionIdentifier|null|undefined} id
+             * @memberof flyteidl.event.ParentTaskExecutionMetadata
+             * @instance
+             */
+            ParentTaskExecutionMetadata.prototype.id = null;
+
+            /**
+             * Creates a new ParentTaskExecutionMetadata instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.event.ParentTaskExecutionMetadata
+             * @static
+             * @param {flyteidl.event.IParentTaskExecutionMetadata=} [properties] Properties to set
+             * @returns {flyteidl.event.ParentTaskExecutionMetadata} ParentTaskExecutionMetadata instance
+             */
+            ParentTaskExecutionMetadata.create = function create(properties) {
+                return new ParentTaskExecutionMetadata(properties);
+            };
+
+            /**
+             * Encodes the specified ParentTaskExecutionMetadata message. Does not implicitly {@link flyteidl.event.ParentTaskExecutionMetadata.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.event.ParentTaskExecutionMetadata
+             * @static
+             * @param {flyteidl.event.IParentTaskExecutionMetadata} message ParentTaskExecutionMetadata message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ParentTaskExecutionMetadata.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    $root.flyteidl.core.TaskExecutionIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a ParentTaskExecutionMetadata message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.event.ParentTaskExecutionMetadata
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.event.ParentTaskExecutionMetadata} ParentTaskExecutionMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ParentTaskExecutionMetadata.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.ParentTaskExecutionMetadata();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = $root.flyteidl.core.TaskExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ParentTaskExecutionMetadata message.
+             * @function verify
+             * @memberof flyteidl.event.ParentTaskExecutionMetadata
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ParentTaskExecutionMetadata.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id")) {
+                    let error = $root.flyteidl.core.TaskExecutionIdentifier.verify(message.id);
+                    if (error)
+                        return "id." + error;
+                }
+                return null;
+            };
+
+            return ParentTaskExecutionMetadata;
         })();
 
         event.TaskExecutionEvent = (function() {
@@ -17407,6 +17538,188 @@ export const flyteidl = $root.flyteidl = (() => {
             return NodeExecutionListRequest;
         })();
 
+        admin.NodeExecutionForTaskListRequest = (function() {
+
+            /**
+             * Properties of a NodeExecutionForTaskListRequest.
+             * @memberof flyteidl.admin
+             * @interface INodeExecutionForTaskListRequest
+             * @property {flyteidl.core.ITaskExecutionIdentifier|null} [taskExecutionId] NodeExecutionForTaskListRequest taskExecutionId
+             * @property {number|null} [limit] NodeExecutionForTaskListRequest limit
+             * @property {string|null} [token] NodeExecutionForTaskListRequest token
+             * @property {string|null} [filters] NodeExecutionForTaskListRequest filters
+             * @property {flyteidl.admin.ISort|null} [sortBy] NodeExecutionForTaskListRequest sortBy
+             */
+
+            /**
+             * Constructs a new NodeExecutionForTaskListRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a NodeExecutionForTaskListRequest.
+             * @implements INodeExecutionForTaskListRequest
+             * @constructor
+             * @param {flyteidl.admin.INodeExecutionForTaskListRequest=} [properties] Properties to set
+             */
+            function NodeExecutionForTaskListRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * NodeExecutionForTaskListRequest taskExecutionId.
+             * @member {flyteidl.core.ITaskExecutionIdentifier|null|undefined} taskExecutionId
+             * @memberof flyteidl.admin.NodeExecutionForTaskListRequest
+             * @instance
+             */
+            NodeExecutionForTaskListRequest.prototype.taskExecutionId = null;
+
+            /**
+             * NodeExecutionForTaskListRequest limit.
+             * @member {number} limit
+             * @memberof flyteidl.admin.NodeExecutionForTaskListRequest
+             * @instance
+             */
+            NodeExecutionForTaskListRequest.prototype.limit = 0;
+
+            /**
+             * NodeExecutionForTaskListRequest token.
+             * @member {string} token
+             * @memberof flyteidl.admin.NodeExecutionForTaskListRequest
+             * @instance
+             */
+            NodeExecutionForTaskListRequest.prototype.token = "";
+
+            /**
+             * NodeExecutionForTaskListRequest filters.
+             * @member {string} filters
+             * @memberof flyteidl.admin.NodeExecutionForTaskListRequest
+             * @instance
+             */
+            NodeExecutionForTaskListRequest.prototype.filters = "";
+
+            /**
+             * NodeExecutionForTaskListRequest sortBy.
+             * @member {flyteidl.admin.ISort|null|undefined} sortBy
+             * @memberof flyteidl.admin.NodeExecutionForTaskListRequest
+             * @instance
+             */
+            NodeExecutionForTaskListRequest.prototype.sortBy = null;
+
+            /**
+             * Creates a new NodeExecutionForTaskListRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.NodeExecutionForTaskListRequest
+             * @static
+             * @param {flyteidl.admin.INodeExecutionForTaskListRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.NodeExecutionForTaskListRequest} NodeExecutionForTaskListRequest instance
+             */
+            NodeExecutionForTaskListRequest.create = function create(properties) {
+                return new NodeExecutionForTaskListRequest(properties);
+            };
+
+            /**
+             * Encodes the specified NodeExecutionForTaskListRequest message. Does not implicitly {@link flyteidl.admin.NodeExecutionForTaskListRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.NodeExecutionForTaskListRequest
+             * @static
+             * @param {flyteidl.admin.INodeExecutionForTaskListRequest} message NodeExecutionForTaskListRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            NodeExecutionForTaskListRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.taskExecutionId != null && message.hasOwnProperty("taskExecutionId"))
+                    $root.flyteidl.core.TaskExecutionIdentifier.encode(message.taskExecutionId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.limit != null && message.hasOwnProperty("limit"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.limit);
+                if (message.token != null && message.hasOwnProperty("token"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.token);
+                if (message.filters != null && message.hasOwnProperty("filters"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.filters);
+                if (message.sortBy != null && message.hasOwnProperty("sortBy"))
+                    $root.flyteidl.admin.Sort.encode(message.sortBy, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a NodeExecutionForTaskListRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.NodeExecutionForTaskListRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.NodeExecutionForTaskListRequest} NodeExecutionForTaskListRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            NodeExecutionForTaskListRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.NodeExecutionForTaskListRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.taskExecutionId = $root.flyteidl.core.TaskExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.limit = reader.uint32();
+                        break;
+                    case 3:
+                        message.token = reader.string();
+                        break;
+                    case 4:
+                        message.filters = reader.string();
+                        break;
+                    case 5:
+                        message.sortBy = $root.flyteidl.admin.Sort.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a NodeExecutionForTaskListRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.NodeExecutionForTaskListRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            NodeExecutionForTaskListRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.taskExecutionId != null && message.hasOwnProperty("taskExecutionId")) {
+                    let error = $root.flyteidl.core.TaskExecutionIdentifier.verify(message.taskExecutionId);
+                    if (error)
+                        return "taskExecutionId." + error;
+                }
+                if (message.limit != null && message.hasOwnProperty("limit"))
+                    if (!$util.isInteger(message.limit))
+                        return "limit: integer expected";
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
+                if (message.filters != null && message.hasOwnProperty("filters"))
+                    if (!$util.isString(message.filters))
+                        return "filters: string expected";
+                if (message.sortBy != null && message.hasOwnProperty("sortBy")) {
+                    let error = $root.flyteidl.admin.Sort.verify(message.sortBy);
+                    if (error)
+                        return "sortBy." + error;
+                }
+                return null;
+            };
+
+            return NodeExecutionForTaskListRequest;
+        })();
+
         admin.NodeExecution = (function() {
 
             /**
@@ -20002,6 +20315,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.ITaskExecutionIdentifier|null} [id] TaskExecution id
              * @property {string|null} [inputUri] TaskExecution inputUri
              * @property {flyteidl.admin.ITaskExecutionClosure|null} [closure] TaskExecution closure
+             * @property {boolean|null} [isParent] TaskExecution isParent
              */
 
             /**
@@ -20044,6 +20358,14 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskExecution.prototype.closure = null;
 
             /**
+             * TaskExecution isParent.
+             * @member {boolean} isParent
+             * @memberof flyteidl.admin.TaskExecution
+             * @instance
+             */
+            TaskExecution.prototype.isParent = false;
+
+            /**
              * Creates a new TaskExecution instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.TaskExecution
@@ -20073,6 +20395,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.inputUri);
                 if (message.closure != null && message.hasOwnProperty("closure"))
                     $root.flyteidl.admin.TaskExecutionClosure.encode(message.closure, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.isParent != null && message.hasOwnProperty("isParent"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).bool(message.isParent);
                 return writer;
             };
 
@@ -20102,6 +20426,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 3:
                         message.closure = $root.flyteidl.admin.TaskExecutionClosure.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.isParent = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -20135,6 +20462,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "closure." + error;
                 }
+                if (message.isParent != null && message.hasOwnProperty("isParent"))
+                    if (typeof message.isParent !== "boolean")
+                        return "isParent: boolean expected";
                 return null;
             };
 
@@ -22269,6 +22599,39 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.service.AdminService
              * @instance
              * @param {flyteidl.admin.INodeExecutionListRequest} request NodeExecutionListRequest message or plain object
+             * @returns {Promise<flyteidl.admin.NodeExecutionList>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#listNodeExecutionsForTask}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef ListNodeExecutionsForTaskCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.NodeExecutionList} [response] NodeExecutionList
+             */
+
+            /**
+             * Calls ListNodeExecutionsForTask.
+             * @function listNodeExecutionsForTask
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.INodeExecutionForTaskListRequest} request NodeExecutionForTaskListRequest message or plain object
+             * @param {flyteidl.service.AdminService.ListNodeExecutionsForTaskCallback} callback Node-style callback called with the error, if any, and NodeExecutionList
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.listNodeExecutionsForTask = function listNodeExecutionsForTask(request, callback) {
+                return this.rpcCall(listNodeExecutionsForTask, $root.flyteidl.admin.NodeExecutionForTaskListRequest, $root.flyteidl.admin.NodeExecutionList, request, callback);
+            }, "name", { value: "ListNodeExecutionsForTask" });
+
+            /**
+             * Calls ListNodeExecutionsForTask.
+             * @function listNodeExecutionsForTask
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.INodeExecutionForTaskListRequest} request NodeExecutionForTaskListRequest message or plain object
              * @returns {Promise<flyteidl.admin.NodeExecutionList>} Promise
              * @variation 2
              */

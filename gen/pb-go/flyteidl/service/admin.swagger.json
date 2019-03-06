@@ -15,6 +15,141 @@
     "application/json"
   ],
   "paths": {
+    "/api/v1/children/task_executions/{task_execution_id.node_execution_id.execution_id.project}/{task_execution_id.node_execution_id.execution_id.domain}/{task_execution_id.node_execution_id.execution_id.name}/{task_execution_id.node_execution_id.node_id}/{task_execution_id.task_id.project}/{task_execution_id.task_id.domain}/{task_execution_id.task_id.name}/{task_execution_id.task_id.version}/{task_execution_id.retry_attempt}": {
+      "get": {
+        "operationId": "ListNodeExecutionsForTask",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/adminNodeExecutionList"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "task_execution_id.node_execution_id.execution_id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "task_execution_id.node_execution_id.execution_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "task_execution_id.node_execution_id.execution_id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "task_execution_id.node_execution_id.node_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "task_execution_id.task_id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "task_execution_id.task_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "task_execution_id.task_id.name",
+            "description": "User provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "task_execution_id.task_id.version",
+            "description": "Specific version of the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "task_execution_id.retry_attempt",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "task_execution_id.task_id.resource_type",
+            "description": "Identifies the specific type of resource that this identifer corresponds to.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "UNSPECIFIED",
+              "TASK",
+              "WORKFLOW",
+              "LAUNCH_PLAN"
+            ],
+            "default": "UNSPECIFIED"
+          },
+          {
+            "name": "limit",
+            "description": "Indicates the number of resources to be returned.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "token",
+            "description": "In the case of multiple pages of results, the, server-provided token can be used to fetch the next page\nin a query.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "filters",
+            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.key",
+            "description": "Indicates an attribute to sort the response values.\nTODO(katrogan): Add string validation here. This should never be empty.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sort_by.direction",
+            "description": "Indicates the direction to apply sort key for response values.\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "DESCENDING",
+              "ASCENDING"
+            ],
+            "default": "DESCENDING"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/data/executions/{id.project}/{id.domain}/{id.name}": {
       "get": {
         "operationId": "GetExecutionData",
@@ -3973,6 +4108,18 @@
         },
         "workflow_node_metadata": {
           "$ref": "#/definitions/eventWorkflowNodeMetadata"
+        },
+        "parent_task_metadata": {
+          "$ref": "#/definitions/eventParentTaskExecutionMetadata",
+          "description": "Specifies which task (if any) launched this node."
+        }
+      }
+    },
+    "eventParentTaskExecutionMetadata": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/coreTaskExecutionIdentifier"
         }
       }
     },
@@ -4106,6 +4253,11 @@
         "closure": {
           "$ref": "#/definitions/adminTaskExecutionClosure",
           "description": "Task execution details and results."
+        },
+        "is_parent": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Whether this task spawned nodes."
         }
       },
       "description": "Encapsulates all details for a single task execution entity.\nA task execution represents an instantiated task, including all inputs and additional\nmetadata as well as computed results included state, outputs, and duration-based attributes."

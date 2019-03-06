@@ -234,6 +234,12 @@ service AdminService {
     };
   }
 
+  rpc ListNodeExecutionsForTask (flyteidl.admin.NodeExecutionForTaskListRequest) returns (flyteidl.admin.NodeExecutionList) {
+    option (google.api.http) = {
+      get: "/api/v1/children/task_executions/{task_execution_id.node_execution_id.execution_id.project}/{task_execution_id.node_execution_id.execution_id.domain}/{task_execution_id.node_execution_id.execution_id.name}/{task_execution_id.node_execution_id.node_id}/{task_execution_id.task_id.project}/{task_execution_id.task_id.domain}/{task_execution_id.task_id.name}/{task_execution_id.task_id.version}/{task_execution_id.retry_attempt}"
+    };
+  }
+
   rpc GetNodeExecutionData (flyteidl.admin.NodeExecutionGetDataRequest) returns (flyteidl.admin.NodeExecutionGetDataResponse) {
     option (google.api.http) = {
       get: "/api/v1/data/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}"

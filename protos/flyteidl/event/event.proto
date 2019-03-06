@@ -61,11 +61,18 @@ message NodeExecutionEvent {
     oneof target_metadata {
         WorkflowNodeMetadata workflow_node_metadata = 8;
     }
+
+    // Specifies which task (if any) launched this node.
+    ParentTaskExecutionMetadata parent_task_metadata         = 9;
 }
 
 // For Workflow Nodes we need to send information about the workflow that's launched
 message WorkflowNodeMetadata {
     core.WorkflowExecutionIdentifier execution_id = 1;
+}
+
+message ParentTaskExecutionMetadata {
+    core.TaskExecutionIdentifier id = 1;
 }
 
 // Plugin specific execution event information. For tasks like Python, Hive, Spark, DynamicJob.

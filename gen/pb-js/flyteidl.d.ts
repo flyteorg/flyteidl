@@ -4348,6 +4348,9 @@ export namespace flyteidl {
 
             /** NodeExecutionEvent workflowNodeMetadata */
             workflowNodeMetadata?: (flyteidl.event.IWorkflowNodeMetadata|null);
+
+            /** NodeExecutionEvent parentTaskMetadata */
+            parentTaskMetadata?: (flyteidl.event.IParentTaskExecutionMetadata|null);
         }
 
         /** Represents a NodeExecutionEvent. */
@@ -4382,6 +4385,9 @@ export namespace flyteidl {
 
             /** NodeExecutionEvent workflowNodeMetadata. */
             public workflowNodeMetadata?: (flyteidl.event.IWorkflowNodeMetadata|null);
+
+            /** NodeExecutionEvent parentTaskMetadata. */
+            public parentTaskMetadata?: (flyteidl.event.IParentTaskExecutionMetadata|null);
 
             /** NodeExecutionEvent outputResult. */
             public outputResult?: ("outputUri"|"error");
@@ -4468,6 +4474,58 @@ export namespace flyteidl {
 
             /**
              * Verifies a WorkflowNodeMetadata message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a ParentTaskExecutionMetadata. */
+        interface IParentTaskExecutionMetadata {
+
+            /** ParentTaskExecutionMetadata id */
+            id?: (flyteidl.core.ITaskExecutionIdentifier|null);
+        }
+
+        /** Represents a ParentTaskExecutionMetadata. */
+        class ParentTaskExecutionMetadata implements IParentTaskExecutionMetadata {
+
+            /**
+             * Constructs a new ParentTaskExecutionMetadata.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.event.IParentTaskExecutionMetadata);
+
+            /** ParentTaskExecutionMetadata id. */
+            public id?: (flyteidl.core.ITaskExecutionIdentifier|null);
+
+            /**
+             * Creates a new ParentTaskExecutionMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ParentTaskExecutionMetadata instance
+             */
+            public static create(properties?: flyteidl.event.IParentTaskExecutionMetadata): flyteidl.event.ParentTaskExecutionMetadata;
+
+            /**
+             * Encodes the specified ParentTaskExecutionMetadata message. Does not implicitly {@link flyteidl.event.ParentTaskExecutionMetadata.verify|verify} messages.
+             * @param message ParentTaskExecutionMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.event.IParentTaskExecutionMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ParentTaskExecutionMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ParentTaskExecutionMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.ParentTaskExecutionMetadata;
+
+            /**
+             * Verifies a ParentTaskExecutionMetadata message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -7281,6 +7339,82 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a NodeExecutionForTaskListRequest. */
+        interface INodeExecutionForTaskListRequest {
+
+            /** NodeExecutionForTaskListRequest taskExecutionId */
+            taskExecutionId?: (flyteidl.core.ITaskExecutionIdentifier|null);
+
+            /** NodeExecutionForTaskListRequest limit */
+            limit?: (number|null);
+
+            /** NodeExecutionForTaskListRequest token */
+            token?: (string|null);
+
+            /** NodeExecutionForTaskListRequest filters */
+            filters?: (string|null);
+
+            /** NodeExecutionForTaskListRequest sortBy */
+            sortBy?: (flyteidl.admin.ISort|null);
+        }
+
+        /** Represents a NodeExecutionForTaskListRequest. */
+        class NodeExecutionForTaskListRequest implements INodeExecutionForTaskListRequest {
+
+            /**
+             * Constructs a new NodeExecutionForTaskListRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.INodeExecutionForTaskListRequest);
+
+            /** NodeExecutionForTaskListRequest taskExecutionId. */
+            public taskExecutionId?: (flyteidl.core.ITaskExecutionIdentifier|null);
+
+            /** NodeExecutionForTaskListRequest limit. */
+            public limit: number;
+
+            /** NodeExecutionForTaskListRequest token. */
+            public token: string;
+
+            /** NodeExecutionForTaskListRequest filters. */
+            public filters: string;
+
+            /** NodeExecutionForTaskListRequest sortBy. */
+            public sortBy?: (flyteidl.admin.ISort|null);
+
+            /**
+             * Creates a new NodeExecutionForTaskListRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns NodeExecutionForTaskListRequest instance
+             */
+            public static create(properties?: flyteidl.admin.INodeExecutionForTaskListRequest): flyteidl.admin.NodeExecutionForTaskListRequest;
+
+            /**
+             * Encodes the specified NodeExecutionForTaskListRequest message. Does not implicitly {@link flyteidl.admin.NodeExecutionForTaskListRequest.verify|verify} messages.
+             * @param message NodeExecutionForTaskListRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.INodeExecutionForTaskListRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a NodeExecutionForTaskListRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns NodeExecutionForTaskListRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.NodeExecutionForTaskListRequest;
+
+            /**
+             * Verifies a NodeExecutionForTaskListRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a NodeExecution. */
         interface INodeExecution {
 
@@ -8415,6 +8549,9 @@ export namespace flyteidl {
 
             /** TaskExecution closure */
             closure?: (flyteidl.admin.ITaskExecutionClosure|null);
+
+            /** TaskExecution isParent */
+            isParent?: (boolean|null);
         }
 
         /** Represents a TaskExecution. */
@@ -8434,6 +8571,9 @@ export namespace flyteidl {
 
             /** TaskExecution closure. */
             public closure?: (flyteidl.admin.ITaskExecutionClosure|null);
+
+            /** TaskExecution isParent. */
+            public isParent: boolean;
 
             /**
              * Creates a new TaskExecution instance using the specified properties.
@@ -9382,6 +9522,20 @@ export namespace flyteidl {
             public listNodeExecutions(request: flyteidl.admin.INodeExecutionListRequest): Promise<flyteidl.admin.NodeExecutionList>;
 
             /**
+             * Calls ListNodeExecutionsForTask.
+             * @param request NodeExecutionForTaskListRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and NodeExecutionList
+             */
+            public listNodeExecutionsForTask(request: flyteidl.admin.INodeExecutionForTaskListRequest, callback: flyteidl.service.AdminService.ListNodeExecutionsForTaskCallback): void;
+
+            /**
+             * Calls ListNodeExecutionsForTask.
+             * @param request NodeExecutionForTaskListRequest message or plain object
+             * @returns Promise
+             */
+            public listNodeExecutionsForTask(request: flyteidl.admin.INodeExecutionForTaskListRequest): Promise<flyteidl.admin.NodeExecutionList>;
+
+            /**
              * Calls GetNodeExecutionData.
              * @param request NodeExecutionGetDataRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and NodeExecutionGetDataResponse
@@ -9656,6 +9810,13 @@ export namespace flyteidl {
              * @param [response] NodeExecutionList
              */
             type ListNodeExecutionsCallback = (error: (Error|null), response?: flyteidl.admin.NodeExecutionList) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#listNodeExecutionsForTask}.
+             * @param error Error, if any
+             * @param [response] NodeExecutionList
+             */
+            type ListNodeExecutionsForTaskCallback = (error: (Error|null), response?: flyteidl.admin.NodeExecutionList) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.AdminService#getNodeExecutionData}.

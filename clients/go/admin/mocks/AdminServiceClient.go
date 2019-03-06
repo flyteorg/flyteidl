@@ -612,6 +612,36 @@ func (_m *AdminServiceClient) ListNodeExecutions(ctx context.Context, in *admin.
 	return r0, r1
 }
 
+// ListNodeExecutionsForTask provides a mock function with given fields: ctx, in, opts
+func (_m *AdminServiceClient) ListNodeExecutionsForTask(ctx context.Context, in *admin.NodeExecutionForTaskListRequest, opts ...grpc.CallOption) (*admin.NodeExecutionList, error) {
+	_va := make([]interface{}, len(opts))
+	for _i := range opts {
+		_va[_i] = opts[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, ctx, in)
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	var r0 *admin.NodeExecutionList
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.NodeExecutionForTaskListRequest, ...grpc.CallOption) *admin.NodeExecutionList); ok {
+		r0 = rf(ctx, in, opts...)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*admin.NodeExecutionList)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.NodeExecutionForTaskListRequest, ...grpc.CallOption) error); ok {
+		r1 = rf(ctx, in, opts...)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
 // ListProjects provides a mock function with given fields: ctx, in, opts
 func (_m *AdminServiceClient) ListProjects(ctx context.Context, in *admin.ProjectListRequest, opts ...grpc.CallOption) (*admin.Projects, error) {
 	_va := make([]interface{}, len(opts))

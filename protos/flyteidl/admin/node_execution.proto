@@ -37,6 +37,27 @@ message NodeExecutionListRequest {
     Sort sort_by    = 5;
 }
 
+// Represents a request structure to retrieve a list of node execution entities launched by a specific task.
+message NodeExecutionForTaskListRequest {
+    // Indicates the node execution to filter by.
+    core.TaskExecutionIdentifier task_execution_id = 1;
+
+    // Indicates the number of resources to be returned.
+    uint32 limit    = 2;
+    // In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
+    // in a query.
+    // +optional
+    string token    = 3;
+    // Indicates a list of filters passed as string.
+    // More info on constructing filters : <Link>
+    // +optional
+    string filters  = 4;
+
+    // Sort ordering.
+    // +optional
+    Sort sort_by    = 5;
+}
+
 // Encapsulates all details for a single node execution entity.
 // A node represents a component in the overall workflow graph. A node launch a task, multiple tasks, an entire nested
 // sub-workflow, or even a separate child-workflow execution.

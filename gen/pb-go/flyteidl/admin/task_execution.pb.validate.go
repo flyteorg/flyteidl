@@ -237,6 +237,8 @@ func (m *TaskExecution) Validate() error {
 		}
 	}
 
+	// no validation rules for IsParent
+
 	return nil
 }
 

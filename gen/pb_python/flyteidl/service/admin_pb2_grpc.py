@@ -127,6 +127,11 @@ class AdminServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionListRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionList.FromString,
         )
+    self.ListNodeExecutionsForTask = channel.unary_unary(
+        '/flyteidl.service.AdminService/ListNodeExecutionsForTask',
+        request_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionForTaskListRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionList.FromString,
+        )
     self.GetNodeExecutionData = channel.unary_unary(
         '/flyteidl.service.AdminService/GetNodeExecutionData',
         request_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetDataRequest.SerializeToString,
@@ -325,6 +330,13 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListNodeExecutionsForTask(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def GetNodeExecutionData(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -494,6 +506,11 @@ def add_AdminServiceServicer_to_server(servicer, server):
       'ListNodeExecutions': grpc.unary_unary_rpc_method_handler(
           servicer.ListNodeExecutions,
           request_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionListRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionList.SerializeToString,
+      ),
+      'ListNodeExecutionsForTask': grpc.unary_unary_rpc_method_handler(
+          servicer.ListNodeExecutionsForTask,
+          request_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionForTaskListRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionList.SerializeToString,
       ),
       'GetNodeExecutionData': grpc.unary_unary_rpc_method_handler(

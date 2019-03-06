@@ -50,6 +50,9 @@ message TaskExecution {
 
     // Task execution details and results.
     TaskExecutionClosure closure           = 3;
+
+    // Whether this task spawned nodes.
+    bool is_parent                         = 4;
 }
 
 // Response structure for a query to list of task execution entities.
