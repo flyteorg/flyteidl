@@ -14873,6 +14873,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.ExecutionMetadata.ExecutionMode|null} [mode] ExecutionMetadata mode
              * @property {string|null} [principal] ExecutionMetadata principal
              * @property {number|null} [nesting] ExecutionMetadata nesting
+             * @property {google.protobuf.ITimestamp|null} [scheduledAt] ExecutionMetadata scheduledAt
              */
 
             /**
@@ -14915,6 +14916,14 @@ export const flyteidl = $root.flyteidl = (() => {
             ExecutionMetadata.prototype.nesting = 0;
 
             /**
+             * ExecutionMetadata scheduledAt.
+             * @member {google.protobuf.ITimestamp|null|undefined} scheduledAt
+             * @memberof flyteidl.admin.ExecutionMetadata
+             * @instance
+             */
+            ExecutionMetadata.prototype.scheduledAt = null;
+
+            /**
              * Creates a new ExecutionMetadata instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.ExecutionMetadata
@@ -14944,6 +14953,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.principal);
                 if (message.nesting != null && message.hasOwnProperty("nesting"))
                     writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.nesting);
+                if (message.scheduledAt != null && message.hasOwnProperty("scheduledAt"))
+                    $root.google.protobuf.Timestamp.encode(message.scheduledAt, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -14973,6 +14984,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 3:
                         message.nesting = reader.uint32();
+                        break;
+                    case 4:
+                        message.scheduledAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -15010,6 +15024,11 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.nesting != null && message.hasOwnProperty("nesting"))
                     if (!$util.isInteger(message.nesting))
                         return "nesting: integer expected";
+                if (message.scheduledAt != null && message.hasOwnProperty("scheduledAt")) {
+                    let error = $root.google.protobuf.Timestamp.verify(message.scheduledAt);
+                    if (error)
+                        return "scheduledAt." + error;
+                }
                 return null;
             };
 

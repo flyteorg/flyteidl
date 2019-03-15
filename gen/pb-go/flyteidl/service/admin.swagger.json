@@ -2302,6 +2302,11 @@
           "type": "integer",
           "format": "int64",
           "description": "Indicates the \"nestedness\" of this execution.\nIf a user launches a workflow execution, the default nesting is 0.\nIf this execution further launches a workflow (child workflow), the nesting level is incremented by 0 =\u003e 1\nGenerally, if workflow at nesting level k launches a workflow then the child workflow will have\nnesting = k + 1."
+        },
+        "scheduled_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "For scheduled executions, the requested time for execution for this specific schedule invocation."
         }
       },
       "description": "Represents attributes about an execution which are not required to launch the execution but are useful to record.\nThese attributes are assigned at launch time and do not change."

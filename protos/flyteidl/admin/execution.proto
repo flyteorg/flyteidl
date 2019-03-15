@@ -159,6 +159,9 @@ message ExecutionMetadata {
     // Generally, if workflow at nesting level k launches a workflow then the child workflow will have
     // nesting = k + 1.
     uint32 nesting         = 3;
+
+    // For scheduled executions, the requested time for execution for this specific schedule invocation.
+    google.protobuf.Timestamp scheduled_at            = 4;
 }
 
 // An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime

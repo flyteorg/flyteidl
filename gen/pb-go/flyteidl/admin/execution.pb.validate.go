@@ -801,6 +801,16 @@ func (m *ExecutionMetadata) Validate() error {
 
 	// no validation rules for Nesting
 
+	if v, ok := interface{}(m.GetScheduledAt()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionMetadataValidationError{
+				field:  "ScheduledAt",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	return nil
 }
 

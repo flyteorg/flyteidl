@@ -6190,6 +6190,9 @@ export namespace flyteidl {
 
             /** ExecutionMetadata nesting */
             nesting?: (number|null);
+
+            /** ExecutionMetadata scheduledAt */
+            scheduledAt?: (google.protobuf.ITimestamp|null);
         }
 
         /** Represents an ExecutionMetadata. */
@@ -6209,6 +6212,9 @@ export namespace flyteidl {
 
             /** ExecutionMetadata nesting. */
             public nesting: number;
+
+            /** ExecutionMetadata scheduledAt. */
+            public scheduledAt?: (google.protobuf.ITimestamp|null);
 
             /**
              * Creates a new ExecutionMetadata instance using the specified properties.
