@@ -23874,6 +23874,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IWaitable
              * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [wfExecId] Waitable wfExecId
              * @property {flyteidl.core.WorkflowExecution.Phase|null} [phase] Waitable phase
+             * @property {string|null} [workflowId] Waitable workflowId
              */
 
             /**
@@ -23908,6 +23909,14 @@ export const flyteidl = $root.flyteidl = (() => {
             Waitable.prototype.phase = 0;
 
             /**
+             * Waitable workflowId.
+             * @member {string} workflowId
+             * @memberof flyteidl.plugins.Waitable
+             * @instance
+             */
+            Waitable.prototype.workflowId = "";
+
+            /**
              * Creates a new Waitable instance using the specified properties.
              * @function create
              * @memberof flyteidl.plugins.Waitable
@@ -23935,6 +23944,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.wfExecId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.phase != null && message.hasOwnProperty("phase"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.phase);
+                if (message.workflowId != null && message.hasOwnProperty("workflowId"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.workflowId);
                 return writer;
             };
 
@@ -23961,6 +23972,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 2:
                         message.phase = reader.int32();
+                        break;
+                    case 3:
+                        message.workflowId = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -24001,6 +24015,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 8:
                         break;
                     }
+                if (message.workflowId != null && message.hasOwnProperty("workflowId"))
+                    if (!$util.isString(message.workflowId))
+                        return "workflowId: string expected";
                 return null;
             };
 

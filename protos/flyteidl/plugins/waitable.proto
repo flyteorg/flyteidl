@@ -11,4 +11,5 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
 message Waitable {
     core.WorkflowExecutionIdentifier wf_exec_id = 1;
     core.WorkflowExecution.Phase phase = 2;
+    string workflow_id = 3;
 }

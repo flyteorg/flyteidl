@@ -10283,6 +10283,9 @@ export namespace flyteidl {
 
             /** Waitable phase */
             phase?: (flyteidl.core.WorkflowExecution.Phase|null);
+
+            /** Waitable workflowId */
+            workflowId?: (string|null);
         }
 
         /** Represents a Waitable. */
@@ -10299,6 +10302,9 @@ export namespace flyteidl {
 
             /** Waitable phase. */
             public phase: flyteidl.core.WorkflowExecution.Phase;
+
+            /** Waitable workflowId. */
+            public workflowId: string;
 
             /**
              * Creates a new Waitable instance using the specified properties.

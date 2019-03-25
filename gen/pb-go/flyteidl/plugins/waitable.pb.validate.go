@@ -56,6 +56,8 @@ func (m *Waitable) Validate() error {
 
 	// no validation rules for Phase
 
+	// no validation rules for WorkflowId
+
 	return nil
 }
 

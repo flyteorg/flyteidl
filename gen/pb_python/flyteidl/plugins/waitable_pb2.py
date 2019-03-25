@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/plugins/waitable.proto',
   package='flyteidl.plugins',
   syntax='proto3',
-  serialized_pb=_b('\n\x1f\x66lyteidl/plugins/waitable.proto\x12\x10\x66lyteidl.plugins\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\"\x81\x01\n\x08Waitable\x12>\n\nwf_exec_id\x18\x01 \x01(\x0b\x32*.flyteidl.core.WorkflowExecutionIdentifier\x12\x35\n\x05phase\x18\x02 \x01(\x0e\x32&.flyteidl.core.WorkflowExecution.PhaseB5Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n\x1f\x66lyteidl/plugins/waitable.proto\x12\x10\x66lyteidl.plugins\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\"\x96\x01\n\x08Waitable\x12>\n\nwf_exec_id\x18\x01 \x01(\x0b\x32*.flyteidl.core.WorkflowExecutionIdentifier\x12\x35\n\x05phase\x18\x02 \x01(\x0e\x32&.flyteidl.core.WorkflowExecution.Phase\x12\x13\n\x0bworkflow_id\x18\x03 \x01(\tB5Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_execution__pb2.DESCRIPTOR,flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,])
 
@@ -49,6 +49,13 @@ _WAITABLE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='workflow_id', full_name='flyteidl.plugins.Waitable.workflow_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -62,7 +69,7 @@ _WAITABLE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=117,
-  serialized_end=246,
+  serialized_end=267,
 )
 
 _WAITABLE.fields_by_name['wf_exec_id'].message_type = flyteidl_dot_core_dot_identifier__pb2._WORKFLOWEXECUTIONIDENTIFIER
