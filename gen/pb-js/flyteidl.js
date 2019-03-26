@@ -15055,6 +15055,126 @@ export const flyteidl = $root.flyteidl = (() => {
             return ExecutionMetadata;
         })();
 
+        admin.NotificationList = (function() {
+
+            /**
+             * Properties of a NotificationList.
+             * @memberof flyteidl.admin
+             * @interface INotificationList
+             * @property {Array.<flyteidl.admin.INotification>|null} [notifications] NotificationList notifications
+             */
+
+            /**
+             * Constructs a new NotificationList.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a NotificationList.
+             * @implements INotificationList
+             * @constructor
+             * @param {flyteidl.admin.INotificationList=} [properties] Properties to set
+             */
+            function NotificationList(properties) {
+                this.notifications = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * NotificationList notifications.
+             * @member {Array.<flyteidl.admin.INotification>} notifications
+             * @memberof flyteidl.admin.NotificationList
+             * @instance
+             */
+            NotificationList.prototype.notifications = $util.emptyArray;
+
+            /**
+             * Creates a new NotificationList instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.NotificationList
+             * @static
+             * @param {flyteidl.admin.INotificationList=} [properties] Properties to set
+             * @returns {flyteidl.admin.NotificationList} NotificationList instance
+             */
+            NotificationList.create = function create(properties) {
+                return new NotificationList(properties);
+            };
+
+            /**
+             * Encodes the specified NotificationList message. Does not implicitly {@link flyteidl.admin.NotificationList.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.NotificationList
+             * @static
+             * @param {flyteidl.admin.INotificationList} message NotificationList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            NotificationList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.notifications != null && message.notifications.length)
+                    for (let i = 0; i < message.notifications.length; ++i)
+                        $root.flyteidl.admin.Notification.encode(message.notifications[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a NotificationList message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.NotificationList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.NotificationList} NotificationList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            NotificationList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.NotificationList();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.notifications && message.notifications.length))
+                            message.notifications = [];
+                        message.notifications.push($root.flyteidl.admin.Notification.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a NotificationList message.
+             * @function verify
+             * @memberof flyteidl.admin.NotificationList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            NotificationList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.notifications != null && message.hasOwnProperty("notifications")) {
+                    if (!Array.isArray(message.notifications))
+                        return "notifications: array expected";
+                    for (let i = 0; i < message.notifications.length; ++i) {
+                        let error = $root.flyteidl.admin.Notification.verify(message.notifications[i]);
+                        if (error)
+                            return "notifications." + error;
+                    }
+                }
+                return null;
+            };
+
+            return NotificationList;
+        })();
+
         admin.ExecutionSpec = (function() {
 
             /**
@@ -15064,7 +15184,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.IIdentifier|null} [launchPlan] ExecutionSpec launchPlan
              * @property {flyteidl.core.ILiteralMap|null} [inputs] ExecutionSpec inputs
              * @property {flyteidl.admin.IExecutionMetadata|null} [metadata] ExecutionSpec metadata
-             * @property {Array.<flyteidl.admin.INotification>|null} [notifications] ExecutionSpec notifications
+             * @property {flyteidl.admin.INotificationList|null} [notifications] ExecutionSpec notifications
+             * @property {boolean|null} [disableAll] ExecutionSpec disableAll
              */
 
             /**
@@ -15076,7 +15197,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.admin.IExecutionSpec=} [properties] Properties to set
              */
             function ExecutionSpec(properties) {
-                this.notifications = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -15109,11 +15229,33 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * ExecutionSpec notifications.
-             * @member {Array.<flyteidl.admin.INotification>} notifications
+             * @member {flyteidl.admin.INotificationList|null|undefined} notifications
              * @memberof flyteidl.admin.ExecutionSpec
              * @instance
              */
-            ExecutionSpec.prototype.notifications = $util.emptyArray;
+            ExecutionSpec.prototype.notifications = null;
+
+            /**
+             * ExecutionSpec disableAll.
+             * @member {boolean} disableAll
+             * @memberof flyteidl.admin.ExecutionSpec
+             * @instance
+             */
+            ExecutionSpec.prototype.disableAll = false;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * ExecutionSpec notificationOverrides.
+             * @member {"notifications"|"disableAll"|undefined} notificationOverrides
+             * @memberof flyteidl.admin.ExecutionSpec
+             * @instance
+             */
+            Object.defineProperty(ExecutionSpec.prototype, "notificationOverrides", {
+                get: $util.oneOfGetter($oneOfFields = ["notifications", "disableAll"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
 
             /**
              * Creates a new ExecutionSpec instance using the specified properties.
@@ -15145,9 +15287,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.LiteralMap.encode(message.inputs, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.metadata != null && message.hasOwnProperty("metadata"))
                     $root.flyteidl.admin.ExecutionMetadata.encode(message.metadata, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.notifications != null && message.notifications.length)
-                    for (let i = 0; i < message.notifications.length; ++i)
-                        $root.flyteidl.admin.Notification.encode(message.notifications[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.notifications != null && message.hasOwnProperty("notifications"))
+                    $root.flyteidl.admin.NotificationList.encode(message.notifications, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.disableAll != null && message.hasOwnProperty("disableAll"))
+                    writer.uint32(/* id 6, wireType 0 =*/48).bool(message.disableAll);
                 return writer;
             };
 
@@ -15178,10 +15321,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 3:
                         message.metadata = $root.flyteidl.admin.ExecutionMetadata.decode(reader, reader.uint32());
                         break;
-                    case 4:
-                        if (!(message.notifications && message.notifications.length))
-                            message.notifications = [];
-                        message.notifications.push($root.flyteidl.admin.Notification.decode(reader, reader.uint32()));
+                    case 5:
+                        message.notifications = $root.flyteidl.admin.NotificationList.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.disableAll = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -15202,6 +15346,7 @@ export const flyteidl = $root.flyteidl = (() => {
             ExecutionSpec.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                let properties = {};
                 if (message.launchPlan != null && message.hasOwnProperty("launchPlan")) {
                     let error = $root.flyteidl.core.Identifier.verify(message.launchPlan);
                     if (error)
@@ -15218,13 +15363,19 @@ export const flyteidl = $root.flyteidl = (() => {
                         return "metadata." + error;
                 }
                 if (message.notifications != null && message.hasOwnProperty("notifications")) {
-                    if (!Array.isArray(message.notifications))
-                        return "notifications: array expected";
-                    for (let i = 0; i < message.notifications.length; ++i) {
-                        let error = $root.flyteidl.admin.Notification.verify(message.notifications[i]);
+                    properties.notificationOverrides = 1;
+                    {
+                        let error = $root.flyteidl.admin.NotificationList.verify(message.notifications);
                         if (error)
                             return "notifications." + error;
                     }
+                }
+                if (message.disableAll != null && message.hasOwnProperty("disableAll")) {
+                    if (properties.notificationOverrides === 1)
+                        return "notificationOverrides: multiple values";
+                    properties.notificationOverrides = 1;
+                    if (typeof message.disableAll !== "boolean")
+                        return "disableAll: boolean expected";
                 }
                 return null;
             };

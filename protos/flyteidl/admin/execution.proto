@@ -164,6 +164,10 @@ message ExecutionMetadata {
     google.protobuf.Timestamp scheduled_at            = 4;
 }
 
+message NotificationList {
+    repeated Notification notifications = 1;
+}
+
 // An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime
 // of an execution as it progresses across phase changes..
 message ExecutionSpec {
@@ -176,9 +180,18 @@ message ExecutionSpec {
     // Metadata for the execution
     ExecutionMetadata metadata    = 3;
 
-    // List of notifications based on Execution status transitions
-    // When this list is not empty it is used rather than any notifications defined in the referenced launch plan.
-    repeated Notification notifications = 4;
+    // This field is deprecated.  Do not use.
+    reserved 4;
+
+    oneof notification_overrides {
+        // List of notifications based on Execution status transitions
+        // When this list is not empty it is used rather than any notifications defined in the referenced launch plan.
+        // When this list is empty, the notifications defined for the launch plan will be applied.
+        NotificationList notifications = 5;
+        
+        // This should be set to true if all notifications are intended to be disabled for this execution.
+        bool disable_all = 6;
+    }
 }
 
 // Request to terminate an in-progress execution.  This action is irreversible.

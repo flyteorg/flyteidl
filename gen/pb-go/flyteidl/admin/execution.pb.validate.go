@@ -870,6 +870,86 @@ var _ interface {
 	ErrorName() string
 } = ExecutionMetadataValidationError{}
 
+// Validate checks the field values on NotificationList with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *NotificationList) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	for idx, item := range m.GetNotifications() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return NotificationListValidationError{
+					field:  fmt.Sprintf("Notifications[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// NotificationListValidationError is the validation error returned by
+// NotificationList.Validate if the designated constraints aren't met.
+type NotificationListValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e NotificationListValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e NotificationListValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e NotificationListValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e NotificationListValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e NotificationListValidationError) ErrorName() string { return "NotificationListValidationError" }
+
+// Error satisfies the builtin error interface
+func (e NotificationListValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sNotificationList.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = NotificationListValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = NotificationListValidationError{}
+
 // Validate checks the field values on ExecutionSpec with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
 // is returned.
@@ -908,18 +988,22 @@ func (m *ExecutionSpec) Validate() error {
 		}
 	}
 
-	for idx, item := range m.GetNotifications() {
-		_, _ = idx, item
+	switch m.NotificationOverrides.(type) {
 
-		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+	case *ExecutionSpec_Notifications:
+
+		if v, ok := interface{}(m.GetNotifications()).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
 				return ExecutionSpecValidationError{
-					field:  fmt.Sprintf("Notifications[%v]", idx),
+					field:  "Notifications",
 					reason: "embedded message failed validation",
 					cause:  err,
 				}
 			}
 		}
+
+	case *ExecutionSpec_DisableAll:
+		// no validation rules for DisableAll
 
 	}
 

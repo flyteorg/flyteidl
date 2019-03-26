@@ -6261,6 +6261,58 @@ export namespace flyteidl {
             }
         }
 
+        /** Properties of a NotificationList. */
+        interface INotificationList {
+
+            /** NotificationList notifications */
+            notifications?: (flyteidl.admin.INotification[]|null);
+        }
+
+        /** Represents a NotificationList. */
+        class NotificationList implements INotificationList {
+
+            /**
+             * Constructs a new NotificationList.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.INotificationList);
+
+            /** NotificationList notifications. */
+            public notifications: flyteidl.admin.INotification[];
+
+            /**
+             * Creates a new NotificationList instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns NotificationList instance
+             */
+            public static create(properties?: flyteidl.admin.INotificationList): flyteidl.admin.NotificationList;
+
+            /**
+             * Encodes the specified NotificationList message. Does not implicitly {@link flyteidl.admin.NotificationList.verify|verify} messages.
+             * @param message NotificationList message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.INotificationList, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a NotificationList message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns NotificationList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.NotificationList;
+
+            /**
+             * Verifies a NotificationList message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of an ExecutionSpec. */
         interface IExecutionSpec {
 
@@ -6274,7 +6326,10 @@ export namespace flyteidl {
             metadata?: (flyteidl.admin.IExecutionMetadata|null);
 
             /** ExecutionSpec notifications */
-            notifications?: (flyteidl.admin.INotification[]|null);
+            notifications?: (flyteidl.admin.INotificationList|null);
+
+            /** ExecutionSpec disableAll */
+            disableAll?: (boolean|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -6296,7 +6351,13 @@ export namespace flyteidl {
             public metadata?: (flyteidl.admin.IExecutionMetadata|null);
 
             /** ExecutionSpec notifications. */
-            public notifications: flyteidl.admin.INotification[];
+            public notifications?: (flyteidl.admin.INotificationList|null);
+
+            /** ExecutionSpec disableAll. */
+            public disableAll: boolean;
+
+            /** ExecutionSpec notificationOverrides. */
+            public notificationOverrides?: ("notifications"|"disableAll");
 
             /**
              * Creates a new ExecutionSpec instance using the specified properties.
