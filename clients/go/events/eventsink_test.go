@@ -66,8 +66,8 @@ func TestFileEvent(t *testing.T) {
 			Name:         executionID.Name,
 		},
 		ParentNodeExecutionId: nodeEvent.Id,
-		Phase:                 core.TaskExecution_FAILED,
-		OccurredAt:            now,
+		Phase:      core.TaskExecution_FAILED,
+		OccurredAt: now,
 	}
 	assert.NoError(t, err)
 	err = sink.Sink(context.Background(), taskEvent)
@@ -82,6 +82,7 @@ func TestFileEvent(t *testing.T) {
 			"name:\"Name\" ,node_id:\"node1\" execution_id:<project:\"FlyteTest\" domain:\"FlyteStaging\" " +
 			"name:\"Name\" > , Phase: FAILED, OccuredAt: " + ptypes.TimestampString(now),
 	}
+
 	actual, err := readLinesFromFile(file)
 	if err != nil {
 		assert.FailNow(t, "failed to read file "+err.Error())

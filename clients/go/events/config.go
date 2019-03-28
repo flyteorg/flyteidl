@@ -27,6 +27,8 @@ var (
 type Config struct {
 	Type     EventReportingType `json:"type" pflag:",Sets the type of EventSink to configure [log/admin/file]."`
 	FilePath string             `json:"file-path" pflag:",For file types, specify where the file should be located."`
+	Rate     int64              `json:"rate" pflag:"int64(500),Max rate at which events can be recorded per second."`
+	Capacity int                `json:"capacity" pflag:"1000,The max bucket size for event recording tokens."`
 }
 
 // Retrieve current global config for storage.

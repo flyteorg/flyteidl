@@ -3,9 +3,10 @@ export REPOSITORY=flyteidl
 include boilerplate/lyft/golang_test_targets/Makefile
 
 .PHONY: generate
-generate: # generate protos
+generate: # generate protos, mocks and pflags
 	./generate_protos.sh
 	./generate_mocks.sh
+	go generate ./...
 
 .PHONY: test
 test: # ensures generate_protos script has been run

@@ -6,8 +6,6 @@ import (
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/event"
 )
 
-//go:generate mockgen -package events -destination=mock_adminclient.go github.com/lyft/flyteidl/gen/pb-go/flyteidl/service AdminServiceClient
-
 // Recorder for Workflow events
 type WorkflowEventRecorder interface {
 	RecordWorkflowEvent(ctx context.Context, event *event.WorkflowExecutionEvent) error

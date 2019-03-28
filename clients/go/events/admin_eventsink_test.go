@@ -22,9 +22,8 @@ import (
 
 func CreateMockAdminEventSink(t *testing.T) (EventSink, *mocks.AdminServiceClient) {
 	mockClient := &mocks.AdminServiceClient{}
-	return &adminEventSink{
-		adminClient: mockClient,
-	}, mockClient
+	eventSink, _ := NewAdminEventSink(context.Background(), mockClient, &Config{Rate: 100, Capacity: 1000})
+	return eventSink, mockClient
 }
 
 func TestAdminWorkflowEvent(t *testing.T) {
@@ -141,4 +140,47 @@ func TestAdminAlreadyExistsError(t *testing.T) {
 	err := adminEventSink.Sink(ctx, taskEvent)
 	assert.Error(t, err)
 	assert.True(t, errors.IsAlreadyExists(err))
+}
+
+func TestAdminRateLimitError(t *testing.T) {
+	ctx := context.Background()
+	adminClient := &mocks.AdminServiceClient{}
+	adminEventSink, _ := NewAdminEventSink(context.Background(), adminClient, &Config{Rate: 1, Capacity: 1})
+
+	taskEvent := &event.TaskExecutionEvent{
+		Phase:        core.TaskExecution_SUCCEEDED,
+		OccurredAt:   ptypes.TimestampNow(),
+		TaskId:       &core.Identifier{ResourceType: core.ResourceType_TASK, Name: "task-id"},
+		RetryAttempt: 1,
+		ParentNodeExecutionId: &core.NodeExecutionIdentifier{
+			NodeId: "node-id",
+			ExecutionId: &core.WorkflowExecutionIdentifier{
+				Project: "p",
+				Domain:  "d",
+				Name:    "n",
+			},
+		},
+		Logs: []*core.TaskLog{{Uri: "logs.txt"}},
+	}
+
+	adminClient.On(
+		"CreateTaskEvent",
+		ctx,
+		mock.MatchedBy(func(req *admin.TaskExecutionEventRequest) bool {
+			return req.Event == taskEvent
+		}),
+	).Return(&admin.TaskExecutionEventResponse{}, nil)
+
+	var rateLimitedErr error
+	for i := 0; i < 10; i++ {
+		err := adminEventSink.Sink(ctx, taskEvent)
+
+		if err != nil {
+			rateLimitedErr = err
+			break
+		}
+	}
+
+	assert.Error(t, rateLimitedErr)
+	assert.True(t, errors.IsResourceExhausted(rateLimitedErr))
 }

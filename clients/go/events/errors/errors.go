@@ -49,11 +49,11 @@ func WrapError(err error) error {
 	}
 }
 
-func wrapf(code ErrorCode, cause error, msg string, args ...interface{}) error {
+func wrapf(code ErrorCode, cause error, msg string) error {
 	return &EventError{
 		Code:    code,
 		Cause:   cause,
-		Message: fmt.Sprintf(msg, args...),
+		Message: msg,
 	}
 }
 
