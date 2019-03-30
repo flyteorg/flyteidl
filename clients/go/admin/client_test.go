@@ -22,7 +22,7 @@ func TestInitializeAndGetAdminClient(t *testing.T) {
 	})
 
 	t.Run("illegal", func(t *testing.T) {
-		adminClient = nil
+		adminConnection = nil
 		once = sync.Once{}
 		assert.NotNil(t, InitializeAdminClient(ctx, Config{}))
 	})

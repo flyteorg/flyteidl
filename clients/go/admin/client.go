@@ -13,10 +13,11 @@ import (
 
 var (
 	once        = sync.Once{}
-	adminClient service.AdminServiceClient
+	adminConnection *grpc.ClientConn
 )
 
-func NewAdminClient(_ context.Context, conn *grpc.ClientConn) service.AdminServiceClient {
+func NewAdminClient(ctx context.Context, conn *grpc.ClientConn) service.AdminServiceClient {
+	logger.Infof(ctx, "Initialized Admin client")
 	return service.NewAdminServiceClient(conn)
 }
 
@@ -27,16 +28,17 @@ func NewAdminConnection(_ context.Context, cfg Config) (*grpc.ClientConn, error)
 	return grpc.Dial(cfg.Endpoint.String(), opts...)
 }
 
+// Create an AdminClient with a shared Admin connection for the process
 func InitializeAdminClient(ctx context.Context, cfg Config) service.AdminServiceClient {
 	once.Do(func() {
-		conn, err := NewAdminConnection(ctx, cfg)
+		var err error
+		adminConnection, err = NewAdminConnection(ctx, cfg)
 		if err != nil {
 			logger.Panicf(ctx, "failed to initialize Admin connection. Err: %s", err.Error())
 		}
-		adminClient = NewAdminClient(ctx, conn)
-		logger.Infof(ctx, "Initialized Admin client")
 	})
-	return adminClient
+
+	return NewAdminClient(ctx, adminConnection)
 }
 
 func InitializeAdminClientFromConfig(ctx context.Context) (service.AdminServiceClient, error) {
@@ -48,9 +50,6 @@ func InitializeAdminClientFromConfig(ctx context.Context) (service.AdminServiceC
 }
 
 func InitializeMockAdminClient() service.AdminServiceClient {
-	once.Do(func() {
-		logger.Infof(context.TODO(), "Initialized Mock Admin client")
-		adminClient = &mocks.AdminServiceClient{}
-	})
-	return adminClient
+	logger.Infof(context.TODO(), "Initialized Mock Admin client")
+	return &mocks.AdminServiceClient{}
 }
