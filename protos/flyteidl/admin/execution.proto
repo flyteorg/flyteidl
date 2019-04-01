@@ -162,6 +162,9 @@ message ExecutionMetadata {
 
     // For scheduled executions, the requested time for execution for this specific schedule invocation.
     google.protobuf.Timestamp scheduled_at            = 4;
+
+    // Which subworkflow node launched this execution
+    core.NodeExecutionIdentifier parent_node_execution = 5;
 }
 
 message NotificationList {

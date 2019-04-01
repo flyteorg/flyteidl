@@ -2307,6 +2307,10 @@
           "type": "string",
           "format": "date-time",
           "description": "For scheduled executions, the requested time for execution for this specific schedule invocation."
+        },
+        "parent_node_execution": {
+          "$ref": "#/definitions/coreNodeExecutionIdentifier",
+          "title": "Which subworkflow node launched this execution"
         }
       },
       "description": "Represents attributes about an execution which are not required to launch the execution but are useful to record.\nThese attributes are assigned at launch time and do not change."

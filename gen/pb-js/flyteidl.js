@@ -14874,6 +14874,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [principal] ExecutionMetadata principal
              * @property {number|null} [nesting] ExecutionMetadata nesting
              * @property {google.protobuf.ITimestamp|null} [scheduledAt] ExecutionMetadata scheduledAt
+             * @property {flyteidl.core.INodeExecutionIdentifier|null} [parentNodeExecution] ExecutionMetadata parentNodeExecution
              */
 
             /**
@@ -14924,6 +14925,14 @@ export const flyteidl = $root.flyteidl = (() => {
             ExecutionMetadata.prototype.scheduledAt = null;
 
             /**
+             * ExecutionMetadata parentNodeExecution.
+             * @member {flyteidl.core.INodeExecutionIdentifier|null|undefined} parentNodeExecution
+             * @memberof flyteidl.admin.ExecutionMetadata
+             * @instance
+             */
+            ExecutionMetadata.prototype.parentNodeExecution = null;
+
+            /**
              * Creates a new ExecutionMetadata instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.ExecutionMetadata
@@ -14955,6 +14964,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.nesting);
                 if (message.scheduledAt != null && message.hasOwnProperty("scheduledAt"))
                     $root.google.protobuf.Timestamp.encode(message.scheduledAt, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.parentNodeExecution != null && message.hasOwnProperty("parentNodeExecution"))
+                    $root.flyteidl.core.NodeExecutionIdentifier.encode(message.parentNodeExecution, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -14987,6 +14998,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 4:
                         message.scheduledAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.parentNodeExecution = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -15028,6 +15042,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.google.protobuf.Timestamp.verify(message.scheduledAt);
                     if (error)
                         return "scheduledAt." + error;
+                }
+                if (message.parentNodeExecution != null && message.hasOwnProperty("parentNodeExecution")) {
+                    let error = $root.flyteidl.core.NodeExecutionIdentifier.verify(message.parentNodeExecution);
+                    if (error)
+                        return "parentNodeExecution." + error;
                 }
                 return null;
             };

@@ -811,6 +811,16 @@ func (m *ExecutionMetadata) Validate() error {
 		}
 	}
 
+	if v, ok := interface{}(m.GetParentNodeExecution()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionMetadataValidationError{
+				field:  "ParentNodeExecution",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	return nil
 }
 

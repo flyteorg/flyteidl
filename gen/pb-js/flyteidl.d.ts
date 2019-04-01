@@ -6193,6 +6193,9 @@ export namespace flyteidl {
 
             /** ExecutionMetadata scheduledAt */
             scheduledAt?: (google.protobuf.ITimestamp|null);
+
+            /** ExecutionMetadata parentNodeExecution */
+            parentNodeExecution?: (flyteidl.core.INodeExecutionIdentifier|null);
         }
 
         /** Represents an ExecutionMetadata. */
@@ -6215,6 +6218,9 @@ export namespace flyteidl {
 
             /** ExecutionMetadata scheduledAt. */
             public scheduledAt?: (google.protobuf.ITimestamp|null);
+
+            /** ExecutionMetadata parentNodeExecution. */
+            public parentNodeExecution?: (flyteidl.core.INodeExecutionIdentifier|null);
 
             /**
              * Creates a new ExecutionMetadata instance using the specified properties.
