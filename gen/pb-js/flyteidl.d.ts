@@ -5337,6 +5337,110 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a Labels. */
+        interface ILabels {
+
+            /** Labels values */
+            values?: ({ [k: string]: string }|null);
+        }
+
+        /** Represents a Labels. */
+        class Labels implements ILabels {
+
+            /**
+             * Constructs a new Labels.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ILabels);
+
+            /** Labels values. */
+            public values: { [k: string]: string };
+
+            /**
+             * Creates a new Labels instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Labels instance
+             */
+            public static create(properties?: flyteidl.admin.ILabels): flyteidl.admin.Labels;
+
+            /**
+             * Encodes the specified Labels message. Does not implicitly {@link flyteidl.admin.Labels.verify|verify} messages.
+             * @param message Labels message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ILabels, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Labels message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Labels
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Labels;
+
+            /**
+             * Verifies a Labels message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an Annotations. */
+        interface IAnnotations {
+
+            /** Annotations values */
+            values?: ({ [k: string]: string }|null);
+        }
+
+        /** Represents an Annotations. */
+        class Annotations implements IAnnotations {
+
+            /**
+             * Constructs a new Annotations.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IAnnotations);
+
+            /** Annotations values. */
+            public values: { [k: string]: string };
+
+            /**
+             * Creates a new Annotations instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Annotations instance
+             */
+            public static create(properties?: flyteidl.admin.IAnnotations): flyteidl.admin.Annotations;
+
+            /**
+             * Encodes the specified Annotations message. Does not implicitly {@link flyteidl.admin.Annotations.verify|verify} messages.
+             * @param message Annotations message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IAnnotations, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an Annotations message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Annotations
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Annotations;
+
+            /**
+             * Verifies an Annotations message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a WorkflowExecutionEventRequest. */
         interface IWorkflowExecutionEventRequest {
 
@@ -6336,6 +6440,12 @@ export namespace flyteidl {
 
             /** ExecutionSpec disableAll */
             disableAll?: (boolean|null);
+
+            /** ExecutionSpec labels */
+            labels?: (flyteidl.admin.ILabels|null);
+
+            /** ExecutionSpec annotations */
+            annotations?: (flyteidl.admin.IAnnotations|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -6361,6 +6471,12 @@ export namespace flyteidl {
 
             /** ExecutionSpec disableAll. */
             public disableAll: boolean;
+
+            /** ExecutionSpec labels. */
+            public labels?: (flyteidl.admin.ILabels|null);
+
+            /** ExecutionSpec annotations. */
+            public annotations?: (flyteidl.admin.IAnnotations|null);
 
             /** ExecutionSpec notificationOverrides. */
             public notificationOverrides?: ("notifications"|"disableAll");
@@ -6855,6 +6971,12 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec role */
             role?: (string|null);
+
+            /** LaunchPlanSpec labels */
+            labels?: (flyteidl.admin.ILabels|null);
+
+            /** LaunchPlanSpec annotations */
+            annotations?: (flyteidl.admin.IAnnotations|null);
         }
 
         /** Represents a LaunchPlanSpec. */
@@ -6880,6 +7002,12 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec role. */
             public role: string;
+
+            /** LaunchPlanSpec labels. */
+            public labels?: (flyteidl.admin.ILabels|null);
+
+            /** LaunchPlanSpec annotations. */
+            public annotations?: (flyteidl.admin.IAnnotations|null);
 
             /**
              * Creates a new LaunchPlanSpec instance using the specified properties.

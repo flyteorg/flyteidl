@@ -71,6 +71,12 @@ message LaunchPlanSpec {
 
     // String to indicate the role to use to execute the workflow underneath
     string role                           = 5;
+
+    // Custom labels to be applied to the execution resource.
+    Labels labels                         = 6;
+
+    // Custom annotations to be applied to the execution resource.
+    Annotations annotations               = 7;
 }
 
 // Values computed by the flyte platform after launch plan registration.

@@ -998,6 +998,26 @@ func (m *ExecutionSpec) Validate() error {
 		}
 	}
 
+	if v, ok := interface{}(m.GetLabels()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionSpecValidationError{
+				field:  "Labels",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetAnnotations()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionSpecValidationError{
+				field:  "Annotations",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	switch m.NotificationOverrides.(type) {
 
 	case *ExecutionSpec_Notifications:

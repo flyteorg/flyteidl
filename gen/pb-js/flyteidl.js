@@ -12899,6 +12899,250 @@ export const flyteidl = $root.flyteidl = (() => {
             return UrlBlob;
         })();
 
+        admin.Labels = (function() {
+
+            /**
+             * Properties of a Labels.
+             * @memberof flyteidl.admin
+             * @interface ILabels
+             * @property {Object.<string,string>|null} [values] Labels values
+             */
+
+            /**
+             * Constructs a new Labels.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a Labels.
+             * @implements ILabels
+             * @constructor
+             * @param {flyteidl.admin.ILabels=} [properties] Properties to set
+             */
+            function Labels(properties) {
+                this.values = {};
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Labels values.
+             * @member {Object.<string,string>} values
+             * @memberof flyteidl.admin.Labels
+             * @instance
+             */
+            Labels.prototype.values = $util.emptyObject;
+
+            /**
+             * Creates a new Labels instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.Labels
+             * @static
+             * @param {flyteidl.admin.ILabels=} [properties] Properties to set
+             * @returns {flyteidl.admin.Labels} Labels instance
+             */
+            Labels.create = function create(properties) {
+                return new Labels(properties);
+            };
+
+            /**
+             * Encodes the specified Labels message. Does not implicitly {@link flyteidl.admin.Labels.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.Labels
+             * @static
+             * @param {flyteidl.admin.ILabels} message Labels message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Labels.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.values != null && message.hasOwnProperty("values"))
+                    for (let keys = Object.keys(message.values), i = 0; i < keys.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.values[keys[i]]).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a Labels message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.Labels
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.Labels} Labels
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Labels.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Labels(), key;
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        reader.skip().pos++;
+                        if (message.values === $util.emptyObject)
+                            message.values = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.values[key] = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Labels message.
+             * @function verify
+             * @memberof flyteidl.admin.Labels
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Labels.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.values != null && message.hasOwnProperty("values")) {
+                    if (!$util.isObject(message.values))
+                        return "values: object expected";
+                    let key = Object.keys(message.values);
+                    for (let i = 0; i < key.length; ++i)
+                        if (!$util.isString(message.values[key[i]]))
+                            return "values: string{k:string} expected";
+                }
+                return null;
+            };
+
+            return Labels;
+        })();
+
+        admin.Annotations = (function() {
+
+            /**
+             * Properties of an Annotations.
+             * @memberof flyteidl.admin
+             * @interface IAnnotations
+             * @property {Object.<string,string>|null} [values] Annotations values
+             */
+
+            /**
+             * Constructs a new Annotations.
+             * @memberof flyteidl.admin
+             * @classdesc Represents an Annotations.
+             * @implements IAnnotations
+             * @constructor
+             * @param {flyteidl.admin.IAnnotations=} [properties] Properties to set
+             */
+            function Annotations(properties) {
+                this.values = {};
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Annotations values.
+             * @member {Object.<string,string>} values
+             * @memberof flyteidl.admin.Annotations
+             * @instance
+             */
+            Annotations.prototype.values = $util.emptyObject;
+
+            /**
+             * Creates a new Annotations instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.Annotations
+             * @static
+             * @param {flyteidl.admin.IAnnotations=} [properties] Properties to set
+             * @returns {flyteidl.admin.Annotations} Annotations instance
+             */
+            Annotations.create = function create(properties) {
+                return new Annotations(properties);
+            };
+
+            /**
+             * Encodes the specified Annotations message. Does not implicitly {@link flyteidl.admin.Annotations.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.Annotations
+             * @static
+             * @param {flyteidl.admin.IAnnotations} message Annotations message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Annotations.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.values != null && message.hasOwnProperty("values"))
+                    for (let keys = Object.keys(message.values), i = 0; i < keys.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.values[keys[i]]).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes an Annotations message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.Annotations
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.Annotations} Annotations
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Annotations.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Annotations(), key;
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        reader.skip().pos++;
+                        if (message.values === $util.emptyObject)
+                            message.values = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.values[key] = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an Annotations message.
+             * @function verify
+             * @memberof flyteidl.admin.Annotations
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Annotations.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.values != null && message.hasOwnProperty("values")) {
+                    if (!$util.isObject(message.values))
+                        return "values: object expected";
+                    let key = Object.keys(message.values);
+                    for (let i = 0; i < key.length; ++i)
+                        if (!$util.isString(message.values[key[i]]))
+                            return "values: string{k:string} expected";
+                }
+                return null;
+            };
+
+            return Annotations;
+        })();
+
         admin.WorkflowExecutionEventRequest = (function() {
 
             /**
@@ -15205,6 +15449,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.IExecutionMetadata|null} [metadata] ExecutionSpec metadata
              * @property {flyteidl.admin.INotificationList|null} [notifications] ExecutionSpec notifications
              * @property {boolean|null} [disableAll] ExecutionSpec disableAll
+             * @property {flyteidl.admin.ILabels|null} [labels] ExecutionSpec labels
+             * @property {flyteidl.admin.IAnnotations|null} [annotations] ExecutionSpec annotations
              */
 
             /**
@@ -15262,6 +15508,22 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             ExecutionSpec.prototype.disableAll = false;
 
+            /**
+             * ExecutionSpec labels.
+             * @member {flyteidl.admin.ILabels|null|undefined} labels
+             * @memberof flyteidl.admin.ExecutionSpec
+             * @instance
+             */
+            ExecutionSpec.prototype.labels = null;
+
+            /**
+             * ExecutionSpec annotations.
+             * @member {flyteidl.admin.IAnnotations|null|undefined} annotations
+             * @memberof flyteidl.admin.ExecutionSpec
+             * @instance
+             */
+            ExecutionSpec.prototype.annotations = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -15310,6 +15572,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.NotificationList.encode(message.notifications, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 if (message.disableAll != null && message.hasOwnProperty("disableAll"))
                     writer.uint32(/* id 6, wireType 0 =*/48).bool(message.disableAll);
+                if (message.labels != null && message.hasOwnProperty("labels"))
+                    $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                if (message.annotations != null && message.hasOwnProperty("annotations"))
+                    $root.flyteidl.admin.Annotations.encode(message.annotations, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 return writer;
             };
 
@@ -15345,6 +15611,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 6:
                         message.disableAll = reader.bool();
+                        break;
+                    case 7:
+                        message.labels = $root.flyteidl.admin.Labels.decode(reader, reader.uint32());
+                        break;
+                    case 8:
+                        message.annotations = $root.flyteidl.admin.Annotations.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -15395,6 +15667,16 @@ export const flyteidl = $root.flyteidl = (() => {
                     properties.notificationOverrides = 1;
                     if (typeof message.disableAll !== "boolean")
                         return "disableAll: boolean expected";
+                }
+                if (message.labels != null && message.hasOwnProperty("labels")) {
+                    let error = $root.flyteidl.admin.Labels.verify(message.labels);
+                    if (error)
+                        return "labels." + error;
+                }
+                if (message.annotations != null && message.hasOwnProperty("annotations")) {
+                    let error = $root.flyteidl.admin.Annotations.verify(message.annotations);
+                    if (error)
+                        return "annotations." + error;
                 }
                 return null;
             };
@@ -16384,6 +16666,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.IParameterMap|null} [defaultInputs] LaunchPlanSpec defaultInputs
              * @property {flyteidl.core.ILiteralMap|null} [fixedInputs] LaunchPlanSpec fixedInputs
              * @property {string|null} [role] LaunchPlanSpec role
+             * @property {flyteidl.admin.ILabels|null} [labels] LaunchPlanSpec labels
+             * @property {flyteidl.admin.IAnnotations|null} [annotations] LaunchPlanSpec annotations
              */
 
             /**
@@ -16442,6 +16726,22 @@ export const flyteidl = $root.flyteidl = (() => {
             LaunchPlanSpec.prototype.role = "";
 
             /**
+             * LaunchPlanSpec labels.
+             * @member {flyteidl.admin.ILabels|null|undefined} labels
+             * @memberof flyteidl.admin.LaunchPlanSpec
+             * @instance
+             */
+            LaunchPlanSpec.prototype.labels = null;
+
+            /**
+             * LaunchPlanSpec annotations.
+             * @member {flyteidl.admin.IAnnotations|null|undefined} annotations
+             * @memberof flyteidl.admin.LaunchPlanSpec
+             * @instance
+             */
+            LaunchPlanSpec.prototype.annotations = null;
+
+            /**
              * Creates a new LaunchPlanSpec instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.LaunchPlanSpec
@@ -16475,6 +16775,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.LiteralMap.encode(message.fixedInputs, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.role != null && message.hasOwnProperty("role"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.role);
+                if (message.labels != null && message.hasOwnProperty("labels"))
+                    $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                if (message.annotations != null && message.hasOwnProperty("annotations"))
+                    $root.flyteidl.admin.Annotations.encode(message.annotations, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 return writer;
             };
 
@@ -16510,6 +16814,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 5:
                         message.role = reader.string();
+                        break;
+                    case 6:
+                        message.labels = $root.flyteidl.admin.Labels.decode(reader, reader.uint32());
+                        break;
+                    case 7:
+                        message.annotations = $root.flyteidl.admin.Annotations.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -16553,6 +16863,16 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.role != null && message.hasOwnProperty("role"))
                     if (!$util.isString(message.role))
                         return "role: string expected";
+                if (message.labels != null && message.hasOwnProperty("labels")) {
+                    let error = $root.flyteidl.admin.Labels.verify(message.labels);
+                    if (error)
+                        return "labels." + error;
+                }
+                if (message.annotations != null && message.hasOwnProperty("annotations")) {
+                    let error = $root.flyteidl.admin.Annotations.verify(message.annotations);
+                    if (error)
+                        return "annotations." + error;
+                }
                 return null;
             };
 

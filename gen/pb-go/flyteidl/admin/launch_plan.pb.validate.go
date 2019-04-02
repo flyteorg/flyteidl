@@ -413,6 +413,26 @@ func (m *LaunchPlanSpec) Validate() error {
 
 	// no validation rules for Role
 
+	if v, ok := interface{}(m.GetLabels()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return LaunchPlanSpecValidationError{
+				field:  "Labels",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetAnnotations()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return LaunchPlanSpecValidationError{
+				field:  "Annotations",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	return nil
 }
 

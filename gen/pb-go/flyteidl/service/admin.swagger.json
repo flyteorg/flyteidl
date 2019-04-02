@@ -2142,6 +2142,19 @@
       ],
       "default": "UNKNOWN"
     },
+    "adminAnnotations": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Map of custom annotations to be applied to the execution resource."
+        }
+      },
+      "description": "Annotation values to be applied to an execution resource.\nIn the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined\nto specify how to merge annotations defined at registration and execution time."
+    },
     "adminDomain": {
       "type": "object",
       "properties": {
@@ -2352,6 +2365,14 @@
           "type": "boolean",
           "format": "boolean",
           "description": "This should be set to true if all notifications are intended to be disabled for this execution."
+        },
+        "labels": {
+          "$ref": "#/definitions/adminLabels",
+          "description": "Labels to apply to the execution resource."
+        },
+        "annotations": {
+          "$ref": "#/definitions/adminAnnotations",
+          "description": "Annotations to apply to the execution resource."
         }
       },
       "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes.."
@@ -2395,6 +2416,19 @@
       ],
       "default": "MINUTE",
       "description": "Represents a frequency at which to run a schedule."
+    },
+    "adminLabels": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Map of custom labels to be applied to the execution resource."
+        }
+      },
+      "description": "Label values to be applied to an execution resource.\nIn the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined\nto specify how to merge labels defined at registration and execution time."
     },
     "adminLaunchPlan": {
       "type": "object",
@@ -2511,6 +2545,14 @@
         "role": {
           "type": "string",
           "title": "String to indicate the role to use to execute the workflow underneath"
+        },
+        "labels": {
+          "$ref": "#/definitions/adminLabels",
+          "description": "Custom labels to be applied to the execution resource."
+        },
+        "annotations": {
+          "$ref": "#/definitions/adminAnnotations",
+          "description": "Custom annotations to be applied to the execution resource."
         }
       },
       "description": "User-provided launch plan definition and configuration values."

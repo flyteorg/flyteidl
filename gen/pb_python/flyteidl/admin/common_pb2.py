@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/admin/common.proto',
   package='flyteidl.admin',
   syntax='proto3',
-  serialized_pb=_b('\n\x1b\x66lyteidl/admin/common.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\"F\n\x15NamedEntityIdentifier\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\"r\n\x04Sort\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x31\n\tdirection\x18\x02 \x01(\x0e\x32\x1e.flyteidl.admin.Sort.Direction\"*\n\tDirection\x12\x0e\n\nDESCENDING\x10\x00\x12\r\n\tASCENDING\x10\x01\"\x88\x01\n NamedEntityIdentifierListRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\r\x12\r\n\x05token\x18\x04 \x01(\t\x12%\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.Sort\"c\n\x19NamedEntityIdentifierList\x12\x37\n\x08\x65ntities\x18\x01 \x03(\x0b\x32%.flyteidl.admin.NamedEntityIdentifier\x12\r\n\x05token\x18\x02 \x01(\t\"9\n\x10ObjectGetRequest\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\"\x9e\x01\n\x13ResourceListRequest\x12\x31\n\x02id\x18\x01 \x01(\x0b\x32%.flyteidl.admin.NamedEntityIdentifier\x12\r\n\x05limit\x18\x02 \x01(\r\x12\r\n\x05token\x18\x03 \x01(\t\x12\x0f\n\x07\x66ilters\x18\x04 \x01(\t\x12%\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.Sort\"-\n\x11\x45mailNotification\x12\x18\n\x10recipients_email\x18\x01 \x03(\t\"1\n\x15PagerDutyNotification\x12\x18\n\x10recipients_email\x18\x01 \x03(\t\"-\n\x11SlackNotification\x12\x18\n\x10recipients_email\x18\x01 \x03(\t\"\xf3\x01\n\x0cNotification\x12\x36\n\x06phases\x18\x01 \x03(\x0e\x32&.flyteidl.core.WorkflowExecution.Phase\x12\x32\n\x05\x65mail\x18\x02 \x01(\x0b\x32!.flyteidl.admin.EmailNotificationH\x00\x12;\n\npager_duty\x18\x03 \x01(\x0b\x32%.flyteidl.admin.PagerDutyNotificationH\x00\x12\x32\n\x05slack\x18\x04 \x01(\x0b\x32!.flyteidl.admin.SlackNotificationH\x00\x42\x06\n\x04type\"%\n\x07UrlBlob\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\r\n\x05\x62ytes\x18\x02 \x01(\x03\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1b\x66lyteidl/admin/common.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\"F\n\x15NamedEntityIdentifier\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\"r\n\x04Sort\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x31\n\tdirection\x18\x02 \x01(\x0e\x32\x1e.flyteidl.admin.Sort.Direction\"*\n\tDirection\x12\x0e\n\nDESCENDING\x10\x00\x12\r\n\tASCENDING\x10\x01\"\x88\x01\n NamedEntityIdentifierListRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\r\x12\r\n\x05token\x18\x04 \x01(\t\x12%\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.Sort\"c\n\x19NamedEntityIdentifierList\x12\x37\n\x08\x65ntities\x18\x01 \x03(\x0b\x32%.flyteidl.admin.NamedEntityIdentifier\x12\r\n\x05token\x18\x02 \x01(\t\"9\n\x10ObjectGetRequest\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\"\x9e\x01\n\x13ResourceListRequest\x12\x31\n\x02id\x18\x01 \x01(\x0b\x32%.flyteidl.admin.NamedEntityIdentifier\x12\r\n\x05limit\x18\x02 \x01(\r\x12\r\n\x05token\x18\x03 \x01(\t\x12\x0f\n\x07\x66ilters\x18\x04 \x01(\t\x12%\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.Sort\"-\n\x11\x45mailNotification\x12\x18\n\x10recipients_email\x18\x01 \x03(\t\"1\n\x15PagerDutyNotification\x12\x18\n\x10recipients_email\x18\x01 \x03(\t\"-\n\x11SlackNotification\x12\x18\n\x10recipients_email\x18\x01 \x03(\t\"\xf3\x01\n\x0cNotification\x12\x36\n\x06phases\x18\x01 \x03(\x0e\x32&.flyteidl.core.WorkflowExecution.Phase\x12\x32\n\x05\x65mail\x18\x02 \x01(\x0b\x32!.flyteidl.admin.EmailNotificationH\x00\x12;\n\npager_duty\x18\x03 \x01(\x0b\x32%.flyteidl.admin.PagerDutyNotificationH\x00\x12\x32\n\x05slack\x18\x04 \x01(\x0b\x32!.flyteidl.admin.SlackNotificationH\x00\x42\x06\n\x04type\"%\n\x07UrlBlob\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\r\n\x05\x62ytes\x18\x02 \x01(\x03\"k\n\x06Labels\x12\x32\n\x06values\x18\x01 \x03(\x0b\x32\".flyteidl.admin.Labels.ValuesEntry\x1a-\n\x0bValuesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"u\n\x0b\x41nnotations\x12\x37\n\x06values\x18\x01 \x03(\x0b\x32\'.flyteidl.admin.Annotations.ValuesEntry\x1a-\n\x0bValuesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_execution__pb2.DESCRIPTOR,flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,])
 
@@ -506,6 +506,142 @@ _URLBLOB = _descriptor.Descriptor(
   serialized_end=1186,
 )
 
+
+_LABELS_VALUESENTRY = _descriptor.Descriptor(
+  name='ValuesEntry',
+  full_name='flyteidl.admin.Labels.ValuesEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='flyteidl.admin.Labels.ValuesEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='flyteidl.admin.Labels.ValuesEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1250,
+  serialized_end=1295,
+)
+
+_LABELS = _descriptor.Descriptor(
+  name='Labels',
+  full_name='flyteidl.admin.Labels',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='values', full_name='flyteidl.admin.Labels.values', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_LABELS_VALUESENTRY, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1188,
+  serialized_end=1295,
+)
+
+
+_ANNOTATIONS_VALUESENTRY = _descriptor.Descriptor(
+  name='ValuesEntry',
+  full_name='flyteidl.admin.Annotations.ValuesEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='flyteidl.admin.Annotations.ValuesEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='flyteidl.admin.Annotations.ValuesEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1250,
+  serialized_end=1295,
+)
+
+_ANNOTATIONS = _descriptor.Descriptor(
+  name='Annotations',
+  full_name='flyteidl.admin.Annotations',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='values', full_name='flyteidl.admin.Annotations.values', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_ANNOTATIONS_VALUESENTRY, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1297,
+  serialized_end=1414,
+)
+
 _SORT.fields_by_name['direction'].enum_type = _SORT_DIRECTION
 _SORT_DIRECTION.containing_type = _SORT
 _NAMEDENTITYIDENTIFIERLISTREQUEST.fields_by_name['sort_by'].message_type = _SORT
@@ -526,6 +662,10 @@ _NOTIFICATION.fields_by_name['pager_duty'].containing_oneof = _NOTIFICATION.oneo
 _NOTIFICATION.oneofs_by_name['type'].fields.append(
   _NOTIFICATION.fields_by_name['slack'])
 _NOTIFICATION.fields_by_name['slack'].containing_oneof = _NOTIFICATION.oneofs_by_name['type']
+_LABELS_VALUESENTRY.containing_type = _LABELS
+_LABELS.fields_by_name['values'].message_type = _LABELS_VALUESENTRY
+_ANNOTATIONS_VALUESENTRY.containing_type = _ANNOTATIONS
+_ANNOTATIONS.fields_by_name['values'].message_type = _ANNOTATIONS_VALUESENTRY
 DESCRIPTOR.message_types_by_name['NamedEntityIdentifier'] = _NAMEDENTITYIDENTIFIER
 DESCRIPTOR.message_types_by_name['Sort'] = _SORT
 DESCRIPTOR.message_types_by_name['NamedEntityIdentifierListRequest'] = _NAMEDENTITYIDENTIFIERLISTREQUEST
@@ -537,6 +677,8 @@ DESCRIPTOR.message_types_by_name['PagerDutyNotification'] = _PAGERDUTYNOTIFICATI
 DESCRIPTOR.message_types_by_name['SlackNotification'] = _SLACKNOTIFICATION
 DESCRIPTOR.message_types_by_name['Notification'] = _NOTIFICATION
 DESCRIPTOR.message_types_by_name['UrlBlob'] = _URLBLOB
+DESCRIPTOR.message_types_by_name['Labels'] = _LABELS
+DESCRIPTOR.message_types_by_name['Annotations'] = _ANNOTATIONS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 NamedEntityIdentifier = _reflection.GeneratedProtocolMessageType('NamedEntityIdentifier', (_message.Message,), dict(
@@ -616,7 +758,41 @@ UrlBlob = _reflection.GeneratedProtocolMessageType('UrlBlob', (_message.Message,
   ))
 _sym_db.RegisterMessage(UrlBlob)
 
+Labels = _reflection.GeneratedProtocolMessageType('Labels', (_message.Message,), dict(
+
+  ValuesEntry = _reflection.GeneratedProtocolMessageType('ValuesEntry', (_message.Message,), dict(
+    DESCRIPTOR = _LABELS_VALUESENTRY,
+    __module__ = 'flyteidl.admin.common_pb2'
+    # @@protoc_insertion_point(class_scope:flyteidl.admin.Labels.ValuesEntry)
+    ))
+  ,
+  DESCRIPTOR = _LABELS,
+  __module__ = 'flyteidl.admin.common_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.Labels)
+  ))
+_sym_db.RegisterMessage(Labels)
+_sym_db.RegisterMessage(Labels.ValuesEntry)
+
+Annotations = _reflection.GeneratedProtocolMessageType('Annotations', (_message.Message,), dict(
+
+  ValuesEntry = _reflection.GeneratedProtocolMessageType('ValuesEntry', (_message.Message,), dict(
+    DESCRIPTOR = _ANNOTATIONS_VALUESENTRY,
+    __module__ = 'flyteidl.admin.common_pb2'
+    # @@protoc_insertion_point(class_scope:flyteidl.admin.Annotations.ValuesEntry)
+    ))
+  ,
+  DESCRIPTOR = _ANNOTATIONS,
+  __module__ = 'flyteidl.admin.common_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.Annotations)
+  ))
+_sym_db.RegisterMessage(Annotations)
+_sym_db.RegisterMessage(Annotations.ValuesEntry)
+
 
 DESCRIPTOR.has_options = True
 DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin'))
+_LABELS_VALUESENTRY.has_options = True
+_LABELS_VALUESENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_ANNOTATIONS_VALUESENTRY.has_options = True
+_ANNOTATIONS_VALUESENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
 # @@protoc_insertion_point(module_scope)

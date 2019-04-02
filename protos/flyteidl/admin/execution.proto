@@ -195,6 +195,12 @@ message ExecutionSpec {
         // This should be set to true if all notifications are intended to be disabled for this execution.
         bool disable_all = 6;
     }
+
+    // Labels to apply to the execution resource.
+    Labels labels             = 7;
+
+    // Annotations to apply to the execution resource.
+    Annotations annotations   = 8;
 }
 
 // Request to terminate an in-progress execution.  This action is irreversible.

@@ -885,3 +885,136 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = UrlBlobValidationError{}
+
+// Validate checks the field values on Labels with the rules defined in the
+// proto definition for this message. If any rules are violated, an error is returned.
+func (m *Labels) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Values
+
+	return nil
+}
+
+// LabelsValidationError is the validation error returned by Labels.Validate if
+// the designated constraints aren't met.
+type LabelsValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e LabelsValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e LabelsValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e LabelsValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e LabelsValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e LabelsValidationError) ErrorName() string { return "LabelsValidationError" }
+
+// Error satisfies the builtin error interface
+func (e LabelsValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sLabels.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = LabelsValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = LabelsValidationError{}
+
+// Validate checks the field values on Annotations with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *Annotations) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Values
+
+	return nil
+}
+
+// AnnotationsValidationError is the validation error returned by
+// Annotations.Validate if the designated constraints aren't met.
+type AnnotationsValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e AnnotationsValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e AnnotationsValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e AnnotationsValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e AnnotationsValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e AnnotationsValidationError) ErrorName() string { return "AnnotationsValidationError" }
+
+// Error satisfies the builtin error interface
+func (e AnnotationsValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sAnnotations.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = AnnotationsValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = AnnotationsValidationError{}
