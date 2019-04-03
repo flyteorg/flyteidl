@@ -2665,6 +2665,9 @@
           "type": "string",
           "format": "date-time",
           "description": "Time at which the node execution was last updated."
+        },
+        "workflow_node_metadata": {
+          "$ref": "#/definitions/flyteidladminWorkflowNodeMetadata"
         }
       },
       "description": "Container for node execution details and results."
@@ -4171,7 +4174,7 @@
           "title": "Error information for the execution"
         },
         "workflow_node_metadata": {
-          "$ref": "#/definitions/eventWorkflowNodeMetadata"
+          "$ref": "#/definitions/flyteidleventWorkflowNodeMetadata"
         },
         "parent_task_metadata": {
           "$ref": "#/definitions/eventParentTaskExecutionMetadata",
@@ -4276,15 +4279,6 @@
         }
       }
     },
-    "eventWorkflowNodeMetadata": {
-      "type": "object",
-      "properties": {
-        "execution_id": {
-          "$ref": "#/definitions/coreWorkflowExecutionIdentifier"
-        }
-      },
-      "title": "For Workflow Nodes we need to send information about the workflow that's launched"
-    },
     "flyteidladminNodeExecution": {
       "type": "object",
       "properties": {
@@ -4326,6 +4320,15 @@
       },
       "description": "Encapsulates all details for a single task execution entity.\nA task execution represents an instantiated task, including all inputs and additional\nmetadata as well as computed results included state, outputs, and duration-based attributes."
     },
+    "flyteidladminWorkflowNodeMetadata": {
+      "type": "object",
+      "properties": {
+        "executionId": {
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier"
+        }
+      },
+      "title": "Metadata for a WorkflowNode"
+    },
     "flyteidlcoreSchema": {
       "type": "object",
       "properties": {
@@ -4337,6 +4340,15 @@
         }
       },
       "description": "A strongly typed schema that defines the interface of data retrieved from the underlying storage medium."
+    },
+    "flyteidleventWorkflowNodeMetadata": {
+      "type": "object",
+      "properties": {
+        "execution_id": {
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier"
+        }
+      },
+      "title": "For Workflow Nodes we need to send information about the workflow that's launched"
     },
     "protobufListValue": {
       "type": "object",

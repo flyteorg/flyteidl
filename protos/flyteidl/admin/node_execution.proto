@@ -107,6 +107,17 @@ message NodeExecutionClosure {
 
     // Time at which the node execution was last updated.
     google.protobuf.Timestamp updated_at   = 7;
+
+    // Store metadata for what the node launched.
+    // for ex: if this is a workflow node, we store information for the launched workflow.
+    oneof target_metadata {
+        WorkflowNodeMetadata workflow_node_metadata = 8;
+    }
+}
+
+// Metadata for a WorkflowNode
+message WorkflowNodeMetadata {
+    core.WorkflowExecutionIdentifier executionId        = 1;
 }
 
 // Request structure to fetch inputs and output urls for a node execution.

@@ -7761,6 +7761,9 @@ export namespace flyteidl {
 
             /** NodeExecutionClosure updatedAt */
             updatedAt?: (google.protobuf.ITimestamp|null);
+
+            /** NodeExecutionClosure workflowNodeMetadata */
+            workflowNodeMetadata?: (flyteidl.admin.IWorkflowNodeMetadata|null);
         }
 
         /** Represents a NodeExecutionClosure. */
@@ -7793,8 +7796,14 @@ export namespace flyteidl {
             /** NodeExecutionClosure updatedAt. */
             public updatedAt?: (google.protobuf.ITimestamp|null);
 
+            /** NodeExecutionClosure workflowNodeMetadata. */
+            public workflowNodeMetadata?: (flyteidl.admin.IWorkflowNodeMetadata|null);
+
             /** NodeExecutionClosure outputResult. */
             public outputResult?: ("outputUri"|"error");
+
+            /** NodeExecutionClosure targetMetadata. */
+            public targetMetadata?: "workflowNodeMetadata";
 
             /**
              * Creates a new NodeExecutionClosure instance using the specified properties.
@@ -7823,6 +7832,58 @@ export namespace flyteidl {
 
             /**
              * Verifies a NodeExecutionClosure message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a WorkflowNodeMetadata. */
+        interface IWorkflowNodeMetadata {
+
+            /** WorkflowNodeMetadata executionId */
+            executionId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+        }
+
+        /** Represents a WorkflowNodeMetadata. */
+        class WorkflowNodeMetadata implements IWorkflowNodeMetadata {
+
+            /**
+             * Constructs a new WorkflowNodeMetadata.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IWorkflowNodeMetadata);
+
+            /** WorkflowNodeMetadata executionId. */
+            public executionId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /**
+             * Creates a new WorkflowNodeMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns WorkflowNodeMetadata instance
+             */
+            public static create(properties?: flyteidl.admin.IWorkflowNodeMetadata): flyteidl.admin.WorkflowNodeMetadata;
+
+            /**
+             * Encodes the specified WorkflowNodeMetadata message. Does not implicitly {@link flyteidl.admin.WorkflowNodeMetadata.verify|verify} messages.
+             * @param message WorkflowNodeMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IWorkflowNodeMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a WorkflowNodeMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns WorkflowNodeMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.WorkflowNodeMetadata;
+
+            /**
+             * Verifies a WorkflowNodeMetadata message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */

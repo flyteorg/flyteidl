@@ -18527,6 +18527,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.IDuration|null} [duration] NodeExecutionClosure duration
              * @property {google.protobuf.ITimestamp|null} [createdAt] NodeExecutionClosure createdAt
              * @property {google.protobuf.ITimestamp|null} [updatedAt] NodeExecutionClosure updatedAt
+             * @property {flyteidl.admin.IWorkflowNodeMetadata|null} [workflowNodeMetadata] NodeExecutionClosure workflowNodeMetadata
              */
 
             /**
@@ -18600,6 +18601,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             NodeExecutionClosure.prototype.updatedAt = null;
 
+            /**
+             * NodeExecutionClosure workflowNodeMetadata.
+             * @member {flyteidl.admin.IWorkflowNodeMetadata|null|undefined} workflowNodeMetadata
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @instance
+             */
+            NodeExecutionClosure.prototype.workflowNodeMetadata = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -18611,6 +18620,17 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             Object.defineProperty(NodeExecutionClosure.prototype, "outputResult", {
                 get: $util.oneOfGetter($oneOfFields = ["outputUri", "error"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * NodeExecutionClosure targetMetadata.
+             * @member {"workflowNodeMetadata"|undefined} targetMetadata
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @instance
+             */
+            Object.defineProperty(NodeExecutionClosure.prototype, "targetMetadata", {
+                get: $util.oneOfGetter($oneOfFields = ["workflowNodeMetadata"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -18652,6 +18672,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.google.protobuf.Timestamp.encode(message.createdAt, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 if (message.updatedAt != null && message.hasOwnProperty("updatedAt"))
                     $root.google.protobuf.Timestamp.encode(message.updatedAt, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                if (message.workflowNodeMetadata != null && message.hasOwnProperty("workflowNodeMetadata"))
+                    $root.flyteidl.admin.WorkflowNodeMetadata.encode(message.workflowNodeMetadata, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 return writer;
             };
 
@@ -18693,6 +18715,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 7:
                         message.updatedAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    case 8:
+                        message.workflowNodeMetadata = $root.flyteidl.admin.WorkflowNodeMetadata.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -18764,10 +18789,130 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "updatedAt." + error;
                 }
+                if (message.workflowNodeMetadata != null && message.hasOwnProperty("workflowNodeMetadata")) {
+                    properties.targetMetadata = 1;
+                    {
+                        let error = $root.flyteidl.admin.WorkflowNodeMetadata.verify(message.workflowNodeMetadata);
+                        if (error)
+                            return "workflowNodeMetadata." + error;
+                    }
+                }
                 return null;
             };
 
             return NodeExecutionClosure;
+        })();
+
+        admin.WorkflowNodeMetadata = (function() {
+
+            /**
+             * Properties of a WorkflowNodeMetadata.
+             * @memberof flyteidl.admin
+             * @interface IWorkflowNodeMetadata
+             * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [executionId] WorkflowNodeMetadata executionId
+             */
+
+            /**
+             * Constructs a new WorkflowNodeMetadata.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a WorkflowNodeMetadata.
+             * @implements IWorkflowNodeMetadata
+             * @constructor
+             * @param {flyteidl.admin.IWorkflowNodeMetadata=} [properties] Properties to set
+             */
+            function WorkflowNodeMetadata(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * WorkflowNodeMetadata executionId.
+             * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} executionId
+             * @memberof flyteidl.admin.WorkflowNodeMetadata
+             * @instance
+             */
+            WorkflowNodeMetadata.prototype.executionId = null;
+
+            /**
+             * Creates a new WorkflowNodeMetadata instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.WorkflowNodeMetadata
+             * @static
+             * @param {flyteidl.admin.IWorkflowNodeMetadata=} [properties] Properties to set
+             * @returns {flyteidl.admin.WorkflowNodeMetadata} WorkflowNodeMetadata instance
+             */
+            WorkflowNodeMetadata.create = function create(properties) {
+                return new WorkflowNodeMetadata(properties);
+            };
+
+            /**
+             * Encodes the specified WorkflowNodeMetadata message. Does not implicitly {@link flyteidl.admin.WorkflowNodeMetadata.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.WorkflowNodeMetadata
+             * @static
+             * @param {flyteidl.admin.IWorkflowNodeMetadata} message WorkflowNodeMetadata message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            WorkflowNodeMetadata.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.executionId != null && message.hasOwnProperty("executionId"))
+                    $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.executionId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a WorkflowNodeMetadata message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.WorkflowNodeMetadata
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.WorkflowNodeMetadata} WorkflowNodeMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            WorkflowNodeMetadata.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.WorkflowNodeMetadata();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.executionId = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a WorkflowNodeMetadata message.
+             * @function verify
+             * @memberof flyteidl.admin.WorkflowNodeMetadata
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            WorkflowNodeMetadata.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.executionId != null && message.hasOwnProperty("executionId")) {
+                    let error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.executionId);
+                    if (error)
+                        return "executionId." + error;
+                }
+                return null;
+            };
+
+            return WorkflowNodeMetadata;
         })();
 
         admin.NodeExecutionGetDataRequest = (function() {
