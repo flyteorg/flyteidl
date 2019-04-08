@@ -8,6 +8,7 @@ import "flyteidl/core/execution.proto";
 import "flyteidl/core/identifier.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
+import "google/protobuf/struct.proto";
 
 // A message used to fetch a single task execution entity.
 message TaskExecutionGetRequest {
@@ -91,6 +92,9 @@ message TaskExecutionClosure {
 
     // Time at which the task execution was last updated.
     google.protobuf.Timestamp updated_at   = 8;
+
+    // Custom data specific to the task plugin.
+    google.protobuf.Struct custom_info     = 9;
 }
 
 // Request structure to fetch inputs and output urls for a task execution.

@@ -21276,6 +21276,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.IDuration|null} [duration] TaskExecutionClosure duration
              * @property {google.protobuf.ITimestamp|null} [createdAt] TaskExecutionClosure createdAt
              * @property {google.protobuf.ITimestamp|null} [updatedAt] TaskExecutionClosure updatedAt
+             * @property {google.protobuf.IStruct|null} [customInfo] TaskExecutionClosure customInfo
              */
 
             /**
@@ -21358,6 +21359,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             TaskExecutionClosure.prototype.updatedAt = null;
 
+            /**
+             * TaskExecutionClosure customInfo.
+             * @member {google.protobuf.IStruct|null|undefined} customInfo
+             * @memberof flyteidl.admin.TaskExecutionClosure
+             * @instance
+             */
+            TaskExecutionClosure.prototype.customInfo = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -21413,6 +21422,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.google.protobuf.Timestamp.encode(message.createdAt, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 if (message.updatedAt != null && message.hasOwnProperty("updatedAt"))
                     $root.google.protobuf.Timestamp.encode(message.updatedAt, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                if (message.customInfo != null && message.hasOwnProperty("customInfo"))
+                    $root.google.protobuf.Struct.encode(message.customInfo, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 return writer;
             };
 
@@ -21459,6 +21470,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 8:
                         message.updatedAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    case 9:
+                        message.customInfo = $root.google.protobuf.Struct.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -21535,6 +21549,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.google.protobuf.Timestamp.verify(message.updatedAt);
                     if (error)
                         return "updatedAt." + error;
+                }
+                if (message.customInfo != null && message.hasOwnProperty("customInfo")) {
+                    let error = $root.google.protobuf.Struct.verify(message.customInfo);
+                    if (error)
+                        return "customInfo." + error;
                 }
                 return null;
             };

@@ -445,6 +445,16 @@ func (m *TaskExecutionClosure) Validate() error {
 		}
 	}
 
+	if v, ok := interface{}(m.GetCustomInfo()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TaskExecutionClosureValidationError{
+				field:  "CustomInfo",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	switch m.OutputResult.(type) {
 
 	case *TaskExecutionClosure_OutputUri:

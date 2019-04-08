@@ -8954,6 +8954,9 @@ export namespace flyteidl {
 
             /** TaskExecutionClosure updatedAt */
             updatedAt?: (google.protobuf.ITimestamp|null);
+
+            /** TaskExecutionClosure customInfo */
+            customInfo?: (google.protobuf.IStruct|null);
         }
 
         /** Represents a TaskExecutionClosure. */
@@ -8988,6 +8991,9 @@ export namespace flyteidl {
 
             /** TaskExecutionClosure updatedAt. */
             public updatedAt?: (google.protobuf.ITimestamp|null);
+
+            /** TaskExecutionClosure customInfo. */
+            public customInfo?: (google.protobuf.IStruct|null);
 
             /** TaskExecutionClosure outputResult. */
             public outputResult?: ("outputUri"|"error");

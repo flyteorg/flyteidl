@@ -2928,6 +2928,10 @@
           "type": "string",
           "format": "date-time",
           "description": "Time at which the task execution was last updated."
+        },
+        "custom_info": {
+          "$ref": "#/definitions/protobufStruct",
+          "description": "Custom data specific to the task plugin."
         }
       },
       "description": "Container for task execution details and results."
