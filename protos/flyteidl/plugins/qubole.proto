@@ -18,6 +18,8 @@ message HiveQueryCollection {
     repeated HiveQuery queries = 2;
 }
 
+// This message works with the 'hive' task type in the SDK and is the object that will be in the 'custom' field
+// of a hive task's TaskTemplate
 message QuboleHiveJob {
     string cluster_label = 1;
     HiveQueryCollection query_collection = 2;

@@ -33,7 +33,7 @@ func (m *HiveQuery) Reset()         { *m = HiveQuery{} }
 func (m *HiveQuery) String() string { return proto.CompactTextString(m) }
 func (*HiveQuery) ProtoMessage()    {}
 func (*HiveQuery) Descriptor() ([]byte, []int) {
-	return fileDescriptor_qubole_a085f18da97a6cda, []int{0}
+	return fileDescriptor_qubole_790d55138f42e270, []int{0}
 }
 func (m *HiveQuery) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_HiveQuery.Unmarshal(m, b)
@@ -86,7 +86,7 @@ func (m *HiveQueryCollection) Reset()         { *m = HiveQueryCollection{} }
 func (m *HiveQueryCollection) String() string { return proto.CompactTextString(m) }
 func (*HiveQueryCollection) ProtoMessage()    {}
 func (*HiveQueryCollection) Descriptor() ([]byte, []int) {
-	return fileDescriptor_qubole_a085f18da97a6cda, []int{1}
+	return fileDescriptor_qubole_790d55138f42e270, []int{1}
 }
 func (m *HiveQueryCollection) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_HiveQueryCollection.Unmarshal(m, b)
@@ -113,6 +113,8 @@ func (m *HiveQueryCollection) GetQueries() []*HiveQuery {
 	return nil
 }
 
+// This message works with the 'hive' task type in the SDK and is the object that will be in the 'custom' field
+// of a hive task's TaskTemplate
 type QuboleHiveJob struct {
 	ClusterLabel         string               `protobuf:"bytes,1,opt,name=cluster_label,json=clusterLabel,proto3" json:"cluster_label,omitempty"`
 	QueryCollection      *HiveQueryCollection `protobuf:"bytes,2,opt,name=query_collection,json=queryCollection,proto3" json:"query_collection,omitempty"`
@@ -126,7 +128,7 @@ func (m *QuboleHiveJob) Reset()         { *m = QuboleHiveJob{} }
 func (m *QuboleHiveJob) String() string { return proto.CompactTextString(m) }
 func (*QuboleHiveJob) ProtoMessage()    {}
 func (*QuboleHiveJob) Descriptor() ([]byte, []int) {
-	return fileDescriptor_qubole_a085f18da97a6cda, []int{2}
+	return fileDescriptor_qubole_790d55138f42e270, []int{2}
 }
 func (m *QuboleHiveJob) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_QuboleHiveJob.Unmarshal(m, b)
@@ -174,10 +176,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/plugins/qubole.proto", fileDescriptor_qubole_a085f18da97a6cda)
+	proto.RegisterFile("flyteidl/plugins/qubole.proto", fileDescriptor_qubole_790d55138f42e270)
 }
 
-var fileDescriptor_qubole_a085f18da97a6cda = []byte{
+var fileDescriptor_qubole_790d55138f42e270 = []byte{
 	// 303 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x7c, 0x91, 0xcf, 0x4a, 0xc3, 0x40,
 	0x10, 0xc6, 0x49, 0xe3, 0x1f, 0x3a, 0xb5, 0x58, 0x56, 0x0f, 0x51, 0x51, 0x43, 0x45, 0xc8, 0xc5,

@@ -92,7 +92,7 @@
   version = "v1.0.2"
 
 [[projects]]
-  digest = "1:ef9e8f4191818cedb76d5a0d132e9af54e95d2b602991a6f941c4f153cbd3b06"
+  digest = "1:88bcb6bdbb2d882230c541133364f549da140ee867084a02f899dc58a74d3fca"
   name = "github.com/lyft/flytestdlib"
   packages = [
     "atomic",
@@ -103,8 +103,8 @@
     "promutils/labeled",
   ]
   pruneopts = "UT"
-  revision = "2c658aefb0d2f37fd20c2adf2dbe6268da7d4bd2"
-  version = "v0.6.4"
+  revision = "11120c125fe5d66c1211d23fe3d911c143c52823"
+  version = "v0.1.0"
 
 [[projects]]
   digest = "1:d9023a3a0ba491366b49adf0beee4ea9fbd69e87a83e43cf4ea9b16166af4432"
