@@ -14,5 +14,6 @@ import (
 func (Config) GetPFlagSet(prefix string) *pflag.FlagSet {
 	cmdFlags := pflag.NewFlagSet("Config", pflag.ExitOnError)
 	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "endpoint"), "", "For admin types,  specify where the uri of the service is located.")
+	cmdFlags.Bool(fmt.Sprintf("%v%v", prefix, "insecure"), *new(bool), "Use insecure connection.")
 	return cmdFlags
 }

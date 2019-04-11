@@ -121,4 +121,26 @@ func TestConfig_SetFlags(t *testing.T) {
 			}
 		})
 	})
+	t.Run("Test_insecure", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vBool, err := cmdFlags.GetBool("insecure"); err == nil {
+				assert.Equal(t, bool(*new(bool)), vBool)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+
+		t.Run("Override", func(t *testing.T) {
+			testValue := "1"
+
+			cmdFlags.Set("insecure", testValue)
+			if vBool, err := cmdFlags.GetBool("insecure"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vBool), &actual.UseInsecureConnection)
+
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+	})
 }

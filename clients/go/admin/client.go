@@ -2,7 +2,9 @@ package admin
 
 import (
 	"context"
+	"crypto/x509"
 	"fmt"
+	"google.golang.org/grpc/credentials"
 	"sync"
 
 	"github.com/lyft/flyteidl/clients/go/admin/mocks"
@@ -12,7 +14,7 @@ import (
 )
 
 var (
-	once        = sync.Once{}
+	once            = sync.Once{}
 	adminConnection *grpc.ClientConn
 )
 
@@ -24,7 +26,19 @@ func NewAdminClient(ctx context.Context, conn *grpc.ClientConn) service.AdminSer
 // TODO Use config to configure the connection correctly with backoff etc
 func NewAdminConnection(_ context.Context, cfg Config) (*grpc.ClientConn, error) {
 	var opts []grpc.DialOption
-	opts = append(opts, grpc.WithInsecure())
+	if cfg.UseInsecureConnection {
+		opts = append(opts, grpc.WithInsecure())
+	} else {
+		// TODO: as of Go 1.11.4, this is not supported on Windows. https://github.com/golang/go/issues/16736
+		pool, err := x509.SystemCertPool()
+		if err != nil {
+			return nil, err
+		}
+
+		creds := credentials.NewClientTLSFromCert(pool, "")
+		opts = append(opts, grpc.WithTransportCredentials(creds))
+	}
+
 	return grpc.Dial(cfg.Endpoint.String(), opts...)
 }
 

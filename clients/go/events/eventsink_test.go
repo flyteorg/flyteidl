@@ -66,8 +66,8 @@ func TestFileEvent(t *testing.T) {
 			Name:         executionID.Name,
 		},
 		ParentNodeExecutionId: nodeEvent.Id,
-		Phase:      core.TaskExecution_FAILED,
-		OccurredAt: now,
+		Phase:                 core.TaskExecution_FAILED,
+		OccurredAt:            now,
 	}
 	assert.NoError(t, err)
 	err = sink.Sink(context.Background(), taskEvent)

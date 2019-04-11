@@ -16,7 +16,8 @@ var (
 )
 
 type Config struct {
-	Endpoint config.URL `json:"endpoint" pflag:",For admin types, specify where the uri of the service is located."`
+	Endpoint              config.URL `json:"endpoint" pflag:",For admin types, specify where the uri of the service is located."`
+	UseInsecureConnection bool       `json:"insecure" pflag:",Use insecure connection."`
 }
 
 func GetConfig(ctx context.Context) *Config {
