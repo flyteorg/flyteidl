@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/core/workflow_closure.proto:
 
-flyteidl/core/workflow_closure.proto
+workflow_closure.proto
 ====================================
 
 .. _api_msg_flyteidl.core.WorkflowClosure:

@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/core/types.proto:
 
-flyteidl/core/types.proto
+types.proto
 =========================
 
 .. _api_msg_flyteidl.core.SchemaType:

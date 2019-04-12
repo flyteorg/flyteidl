@@ -1,5 +1,5 @@
 service
-========
+=======
 
 .. toctree::
 	:maxdepth: 1

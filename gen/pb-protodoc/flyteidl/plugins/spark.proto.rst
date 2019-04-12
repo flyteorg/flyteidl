@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/plugins/spark.proto:
 
-flyteidl/plugins/spark.proto
+spark.proto
 ============================
 
 .. _api_msg_flyteidl.plugins.SparkApplication:

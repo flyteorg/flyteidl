@@ -1,6 +1,6 @@
 .. _api_file_google/api/annotations.proto:
 
-google/api/annotations.proto
+annotations.proto
 ============================
 
 Copyright (c) 2015, Google Inc.

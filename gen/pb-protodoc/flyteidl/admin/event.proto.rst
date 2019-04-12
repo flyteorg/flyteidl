@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/admin/event.proto:
 
-flyteidl/admin/event.proto
+event.proto
 ==========================
 
 .. _api_msg_flyteidl.admin.WorkflowExecutionEventRequest:

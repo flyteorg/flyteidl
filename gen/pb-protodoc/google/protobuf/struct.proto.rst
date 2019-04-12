@@ -1,6 +1,6 @@
 .. _api_file_google/protobuf/struct.proto:
 
-google/protobuf/struct.proto
+struct.proto
 ============================
 
 Protocol Buffers - Google's data interchange format

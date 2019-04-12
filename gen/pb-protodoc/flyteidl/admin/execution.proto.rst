@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/admin/execution.proto:
 
-flyteidl/admin/execution.proto
+execution.proto
 ==============================
 
 .. _api_msg_flyteidl.admin.ExecutionCreateRequest:

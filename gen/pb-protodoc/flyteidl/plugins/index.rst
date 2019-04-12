@@ -1,5 +1,9 @@
-plugins
-========
+Flyte Task Plugins
+==================
+
+These protocol buffer specifications provide information about the various Task
+Plugins available in the Flyte system.
+
 
 .. toctree::
 	:maxdepth: 1
@@ -8,5 +12,5 @@ plugins
 
 	array_job.proto
 	qubole.proto
-	waitable.proto
 	spark.proto
+	waitable.proto

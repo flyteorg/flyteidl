@@ -1,6 +1,6 @@
 .. _api_file_google/api/http.proto:
 
-google/api/http.proto
+http.proto
 =====================
 
 Copyright 2018 Google LLC

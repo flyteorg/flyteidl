@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/admin/launch_plan.proto:
 
-flyteidl/admin/launch_plan.proto
+launch_plan.proto
 ================================
 
 .. _api_msg_flyteidl.admin.LaunchPlanCreateRequest:

@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/plugins/qubole.proto:
 
-flyteidl/plugins/qubole.proto
+qubole.proto
 =============================
 
 .. _api_msg_flyteidl.plugins.HiveQuery:

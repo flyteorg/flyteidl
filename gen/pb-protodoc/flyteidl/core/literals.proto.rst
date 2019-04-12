@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/core/literals.proto:
 
-flyteidl/core/literals.proto
+literals.proto
 ============================
 
 .. _api_msg_flyteidl.core.Primitive:

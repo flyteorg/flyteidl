@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/core/condition.proto:
 
-flyteidl/core/condition.proto
+condition.proto
 =============================
 
 .. _api_msg_flyteidl.core.ComparisonExpression:

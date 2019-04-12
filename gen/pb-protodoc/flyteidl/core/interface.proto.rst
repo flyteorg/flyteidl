@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/core/interface.proto:
 
-flyteidl/core/interface.proto
+interface.proto
 =============================
 
 .. _api_msg_flyteidl.core.Variable:

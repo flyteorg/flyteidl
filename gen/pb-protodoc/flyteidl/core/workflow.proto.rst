@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/core/workflow.proto:
 
-flyteidl/core/workflow.proto
+workflow.proto
 ============================
 
 .. _api_msg_flyteidl.core.IfBlock:

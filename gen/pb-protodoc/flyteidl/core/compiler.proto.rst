@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/core/compiler.proto:
 
-flyteidl/core/compiler.proto
+compiler.proto
 ============================
 
 .. _api_msg_flyteidl.core.ConnectionSet:

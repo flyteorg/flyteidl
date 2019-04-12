@@ -1,6 +1,6 @@
 .. _api_file_google/protobuf/any.proto:
 
-google/protobuf/any.proto
+any.proto
 =========================
 
 Protocol Buffers - Google's data interchange format

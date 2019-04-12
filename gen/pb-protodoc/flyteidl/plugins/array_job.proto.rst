@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/plugins/array_job.proto:
 
-flyteidl/plugins/array_job.proto
+array_job.proto
 ================================
 
 .. _api_msg_flyteidl.plugins.ArrayJob:

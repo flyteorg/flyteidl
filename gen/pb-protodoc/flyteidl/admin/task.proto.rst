@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/admin/task.proto:
 
-flyteidl/admin/task.proto
+task.proto
 =========================
 
 .. _api_msg_flyteidl.admin.TaskCreateRequest:

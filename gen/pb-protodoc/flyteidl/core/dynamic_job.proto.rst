@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/core/dynamic_job.proto:
 
-flyteidl/core/dynamic_job.proto
+dynamic_job.proto
 ===============================
 
 .. _api_msg_flyteidl.core.DynamicJobSpec:

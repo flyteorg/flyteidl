@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/admin/workflow.proto:
 
-flyteidl/admin/workflow.proto
+workflow.proto
 =============================
 
 .. _api_msg_flyteidl.admin.WorkflowCreateRequest:

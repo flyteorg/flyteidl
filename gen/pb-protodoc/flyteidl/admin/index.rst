@@ -1,19 +1,19 @@
 admin
-======
+=====
 
 .. toctree::
 	:maxdepth: 1
 	:caption: admin
 	:name: admintoc
 
-	node_execution.proto
-	project.proto
-	task_execution.proto
-	notification.proto
-	task.proto
-	execution.proto
-	schedule.proto
-	workflow.proto
 	common.proto
 	event.proto
+	execution.proto
 	launch_plan.proto
+	node_execution.proto
+	notification.proto
+	project.proto
+	schedule.proto
+	task.proto
+	task_execution.proto
+	workflow.proto

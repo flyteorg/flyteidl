@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/plugins/waitable.proto:
 
-flyteidl/plugins/waitable.proto
+waitable.proto
 ===============================
 
 .. _api_msg_flyteidl.plugins.Waitable:

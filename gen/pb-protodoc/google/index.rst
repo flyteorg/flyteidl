@@ -1,5 +1,5 @@
 google
-=======
+======
 
 .. toctree::
 	:maxdepth: 1

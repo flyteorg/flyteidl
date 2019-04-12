@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/admin/schedule.proto:
 
-flyteidl/admin/schedule.proto
+schedule.proto
 =============================
 
 .. _api_msg_flyteidl.admin.FixedRate:

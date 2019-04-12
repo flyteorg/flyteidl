@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/admin/notification.proto:
 
-flyteidl/admin/notification.proto
+notification.proto
 =================================
 
 import "validate/validate.proto";

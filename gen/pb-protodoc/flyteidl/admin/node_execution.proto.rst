@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/admin/node_execution.proto:
 
-flyteidl/admin/node_execution.proto
+node_execution.proto
 ===================================
 
 .. _api_msg_flyteidl.admin.NodeExecutionGetRequest:

@@ -1,5 +1,5 @@
 event
-======
+=====
 
 .. toctree::
 	:maxdepth: 1

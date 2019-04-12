@@ -1,6 +1,6 @@
 .. _api_file_protoc-gen-swagger/options/openapiv2.proto:
 
-protoc-gen-swagger/options/openapiv2.proto
+openapiv2.proto
 ==========================================
 
 .. _api_msg_grpc.gateway.protoc_gen_swagger.options.Swagger:

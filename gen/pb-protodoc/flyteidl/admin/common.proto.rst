@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/admin/common.proto:
 
-flyteidl/admin/common.proto
+common.proto
 ===========================
 
 .. _api_msg_flyteidl.admin.NamedEntityIdentifier:

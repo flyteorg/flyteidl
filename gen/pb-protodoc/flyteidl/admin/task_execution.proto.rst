@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/admin/task_execution.proto:
 
-flyteidl/admin/task_execution.proto
+task_execution.proto
 ===================================
 
 .. _api_msg_flyteidl.admin.TaskExecutionGetRequest:

@@ -1,5 +1,5 @@
 protoc-gen-swagger
-===================
+==================
 
 .. toctree::
 	:maxdepth: 1

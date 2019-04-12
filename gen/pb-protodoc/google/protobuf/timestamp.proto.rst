@@ -1,6 +1,6 @@
 .. _api_file_google/protobuf/timestamp.proto:
 
-google/protobuf/timestamp.proto
+timestamp.proto
 ===============================
 
 Protocol Buffers - Google's data interchange format

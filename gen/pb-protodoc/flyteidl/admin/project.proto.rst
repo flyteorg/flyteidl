@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/admin/project.proto:
 
-flyteidl/admin/project.proto
+project.proto
 ============================
 
 .. _api_msg_flyteidl.admin.Domain:

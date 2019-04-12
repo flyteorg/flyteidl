@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/core/errors.proto:
 
-flyteidl/core/errors.proto
+errors.proto
 ==========================
 
 .. _api_msg_flyteidl.core.ContainerError:

@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/core/tasks.proto:
 
-flyteidl/core/tasks.proto
+tasks.proto
 =========================
 
 ----------------- First class Plugins

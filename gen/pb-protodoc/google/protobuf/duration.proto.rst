@@ -1,6 +1,6 @@
 .. _api_file_google/protobuf/duration.proto:
 
-google/protobuf/duration.proto
+duration.proto
 ==============================
 
 Protocol Buffers - Google's data interchange format

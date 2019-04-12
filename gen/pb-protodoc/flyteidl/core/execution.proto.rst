@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/core/execution.proto:
 
-flyteidl/core/execution.proto
+execution.proto
 =============================
 
 .. _api_msg_flyteidl.core.WorkflowExecution:

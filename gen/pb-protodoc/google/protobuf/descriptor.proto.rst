@@ -1,6 +1,6 @@
 .. _api_file_google/protobuf/descriptor.proto:
 
-google/protobuf/descriptor.proto
+descriptor.proto
 ================================
 
 Protocol Buffers - Google's data interchange format

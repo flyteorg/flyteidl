@@ -1,6 +1,6 @@
 .. _api_file_flyteidl/core/identifier.proto:
 
-flyteidl/core/identifier.proto
+identifier.proto
 ==============================
 
 .. _api_msg_flyteidl.core.Identifier:

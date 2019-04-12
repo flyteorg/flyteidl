@@ -1,6 +1,7 @@
 DIR=`pwd`
 rm -rf $DIR/gen
-LYFT_IMAGE="lyft/protocgenerator:51460476fc041d752c834a3621dce34d0bae1aca"
+LYFT_IMAGE="lyft/protocgenerator:8d6ef5ddf4b858a90a53044a1b2dc7b034e83c88"
+
 
 docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/service --with_gateway -l go --go_source_relative
 docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/admin --with_gateway -l go --go_source_relative --validate_out
@@ -38,6 +39,8 @@ if [ -n "$DELTA_CHECK" ]; then
   if [ -n "$DIRTY" ]; then
     echo "FAILED: Protos updated without commiting generated code."
     echo "Ensure make generate has run and all changes are committed."
+    DIFF=$(git diff)
+    echo "dif detected: $DIFF"
     exit 1
   else
     echo "SUCCESS: Generated code is up to date."
