@@ -1,6 +1,6 @@
 DIR=`pwd`
 rm -rf $DIR/gen
-LYFT_IMAGE="lyft/protocgenerator:f4bad5b4fb78734e69e398e29497670bd374c133"
+LYFT_IMAGE="lyft/protocgenerator:51460476fc041d752c834a3621dce34d0bae1aca"
 
 docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/service --with_gateway -l go --go_source_relative
 docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/admin --with_gateway -l go --go_source_relative --validate_out
@@ -14,6 +14,14 @@ docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/admin -l pyt
 docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/core -l python
 docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/event -l python
 docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/plugins -l python
+
+#############
+# Docs generated
+docker run -e REPO_BLOB_SHA=master -e PROJECT_ANNOTATION_PREFIX=flyte.interface -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/service -l protodoc
+docker run -e REPO_BLOB_SHA=master -e PROJECT_ANNOTATION_PREFIX=flyte.interface -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/admin -l protodoc
+docker run -e REPO_BLOB_SHA=master -e PROJECT_ANNOTATION_PREFIX=flyte.interface -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/core -l protodoc
+docker run -e REPO_BLOB_SHA=master -e PROJECT_ANNOTATION_PREFIX=flyte.interface -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/event -l protodoc
+docker run -e REPO_BLOB_SHA=master -e PROJECT_ANNOTATION_PREFIX=flyte.interface -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/plugins -l protodoc
 
 docker run -v $DIR:/defs schottra/docker-protobufjs:latest --module-name flyteidl -d protos/flyteidl/core  -d protos/flyteidl/event -d protos/flyteidl/admin -d protos/flyteidl/service -d protos/flyteidl/plugins -- --root flyteidl -t static-module -w es6 --no-delimited --force-long --no-convert -p /defs/protos
 
