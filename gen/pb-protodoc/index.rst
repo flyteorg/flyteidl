@@ -8,4 +8,5 @@ pb-protodoc
 
 	flyteidl/index
 	google/index
+	k8s.io/index
 	protoc-gen-swagger/index

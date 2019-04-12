@@ -12,5 +12,6 @@ Plugins available in the Flyte system.
 
 	array_job.proto
 	qubole.proto
+	sidecar.proto
 	spark.proto
 	waitable.proto
