@@ -1,8 +1,9 @@
-Flyte Task Plugins
-==================
+Flyte Language and API specification
+====================================
 
-These protocol buffer specifications provide information about the various Task
-Plugins available in the Flyte system.
+The protocol buffers defined here provide a high level specification of various
+entities in Flyte control plane and data plane. It provides detailed definition
+and documentation of all these entities.
 
 
 .. toctree::
