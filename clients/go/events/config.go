@@ -2,7 +2,6 @@ package events
 
 import (
 	"context"
-
 	"github.com/lyft/flytestdlib/config"
 	"github.com/lyft/flytestdlib/logger"
 )
@@ -20,16 +19,21 @@ const (
 	EventSinkAdmin EventReportingType = "admin"
 )
 
-var (
-	configSection = config.MustRegisterSection(configSectionKey, &Config{})
-)
-
 type Config struct {
-	Type     EventReportingType `json:"type" pflag:",Sets the type of EventSink to configure [log/admin/file]."`
-	FilePath string             `json:"file-path" pflag:",For file types, specify where the file should be located."`
-	Rate     int64              `json:"rate" pflag:"int64(500),Max rate at which events can be recorded per second."`
-	Capacity int                `json:"capacity" pflag:"1000,The max bucket size for event recording tokens."`
+	Type           EventReportingType `json:"type" pflag:",Sets the type of EventSink to configure [log/admin/file]."`
+	FilePath       string             `json:"file-path" pflag:",For file types, specify where the file should be located."`
+	Rate           int64              `json:"rate" pflag:",Max rate at which events can be recorded per second."`
+	Capacity       int                `json:"capacity" pflag:",The max bucket size for event recording tokens."`
 }
+
+var (
+	defaultConfig = Config{
+		Rate:           int64(500),
+		Capacity:       1000,
+	}
+
+	configSection = config.MustRegisterSection(configSectionKey, &defaultConfig)
+)
 
 // Retrieve current global config for storage.
 func GetConfig(ctx context.Context) *Config {

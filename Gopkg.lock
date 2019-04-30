@@ -74,6 +74,27 @@
   version = "v1.0.0"
 
 [[projects]]
+  digest = "1:73513cdd52d6f0768201cebbf82612aa39a9d8022bc6337815cd504e532281b7"
+  name = "github.com/grpc-ecosystem/go-grpc-middleware"
+  packages = [
+    ".",
+    "retry",
+    "util/backoffutils",
+    "util/metautils",
+  ]
+  pruneopts = "UT"
+  revision = "c250d6563d4d4c20252cd865923440e829844f4e"
+  version = "v1.0.0"
+
+[[projects]]
+  digest = "1:9b7a07ac7577787a8ecc1334cb9f34df1c76ed82a917d556c5713d3ab84fbc43"
+  name = "github.com/grpc-ecosystem/go-grpc-prometheus"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "c225b8c3b01faf2899099b768856a9e916e5087b"
+  version = "v1.2.0"
+
+[[projects]]
   digest = "1:3f58ecbaa1f31d1ff694ed17009cf274f4e2078ea435c83b43a144656ce3e54b"
   name = "github.com/grpc-ecosystem/grpc-gateway"
   packages = [
@@ -103,6 +124,14 @@
   version = "v1.0"
 
 [[projects]]
+  digest = "1:0ee34e6dce5ac88ce2782f1969d04f4264f0e634def092080459277238581063"
+  name = "github.com/influxdata/influxdb"
+  packages = ["pkg/testing/assert"]
+  pruneopts = "UT"
+  revision = "01c8dd416270f424ab0c40f9291e269ac6921964"
+  version = "v1.7.6"
+
+[[projects]]
   digest = "1:31e761d97c76151dde79e9d28964a812c46efc5baee4085b86f68f0c654450de"
   name = "github.com/konsorten/go-windows-terminal-sequences"
   packages = ["."]
@@ -111,7 +140,7 @@
   version = "v1.0.2"
 
 [[projects]]
-  digest = "1:1523af8fac81f31db0d0dcacba70600db94239f247f1703c60a7307773a586b2"
+  digest = "1:5418c902d3a96e2951528f572f7d2da0a291bf49b5466c7205f31fcbb09315fc"
   name = "github.com/lyft/flytestdlib"
   packages = [
     "atomic",
@@ -122,8 +151,8 @@
     "promutils/labeled",
   ]
   pruneopts = "UT"
-  revision = "e7969e58de177044a6ad4a23ca0ce0ca83258fdc"
-  version = "v0.2.2"
+  revision = "5401018e3a7cf7ea94004fa12c8f70e005654c99"
+  version = "v0.2.3"
 
 [[projects]]
   digest = "1:966242b951d14090cda78b3957196cecc559f3bacce75e907e5a316c46b3ecd7"
@@ -315,11 +344,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:157e5158a7f29d6633eed502880463aa43de3c36d451c7051591efd12f455ac8"
+  digest = "1:dcd2e9de31e20e01b156288ce4fc239498564295bdbb59d8aaf591af94778162"
   name = "golang.org/x/sys"
   packages = ["unix"]
   pruneopts = "UT"
-  revision = "16072639606ea9e22c7d86e4cbd6af6314f4193c"
+  revision = "d89cdac9e8725f2aefce25fcbfef41134c9ad412"
 
 [[projects]]
   digest = "1:8d8faad6b12a3a4c819a3f9618cb6ee1fa1cfc33253abeeea8b55336721e3405"
@@ -422,7 +451,7 @@
   name = "k8s.io/api"
   packages = ["core/v1"]
   pruneopts = "UT"
-  revision = "181e1f9c52c1a4e72e64db906923efc79a76a8e3"
+  revision = "97d6bb8ea5f4f05566a0124638fb511be2b80c54"
 
 [[projects]]
   digest = "1:23f3e59c1ef45b73a386aad7bb252b89fee989677ed57f63cdca1d796b75a8f2"
@@ -473,9 +502,13 @@
     "github.com/golang/protobuf/ptypes/duration",
     "github.com/golang/protobuf/ptypes/struct",
     "github.com/golang/protobuf/ptypes/timestamp",
+    "github.com/grpc-ecosystem/go-grpc-middleware",
+    "github.com/grpc-ecosystem/go-grpc-middleware/retry",
+    "github.com/grpc-ecosystem/go-grpc-prometheus",
     "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options",
     "github.com/grpc-ecosystem/grpc-gateway/runtime",
     "github.com/grpc-ecosystem/grpc-gateway/utilities",
+    "github.com/influxdata/influxdb/pkg/testing/assert",
     "github.com/lyft/flytestdlib/config",
     "github.com/lyft/flytestdlib/logger",
     "github.com/lyft/flytestdlib/promutils",

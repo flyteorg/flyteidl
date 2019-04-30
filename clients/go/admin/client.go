@@ -4,13 +4,15 @@ import (
 	"context"
 	"crypto/x509"
 	"fmt"
-	"google.golang.org/grpc/credentials"
-	"sync"
-
+	"github.com/grpc-ecosystem/go-grpc-middleware"
+	"github.com/grpc-ecosystem/go-grpc-middleware/retry"
+	"github.com/grpc-ecosystem/go-grpc-prometheus"
 	"github.com/lyft/flyteidl/clients/go/admin/mocks"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/lyft/flytestdlib/logger"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
+	"sync"
 )
 
 var (
@@ -23,7 +25,29 @@ func NewAdminClient(ctx context.Context, conn *grpc.ClientConn) service.AdminSer
 	return service.NewAdminServiceClient(conn)
 }
 
-// TODO Use config to configure the connection correctly with backoff etc
+func GetAdditionalAdminClientConfigOptions(cfg Config) []grpc.DialOption {
+	opts := make([]grpc.DialOption, 0, 2)
+	backoffConfig := grpc.BackoffConfig{
+		MaxDelay: cfg.MaxBackoffDelay.Duration,
+	}
+	opts = append(opts, grpc.WithBackoffConfig(backoffConfig))
+
+	timeoutDialOption := grpc_retry.WithPerRetryTimeout(cfg.PerRetryTimeout.Duration)
+	maxRetriesOption := grpc_retry.WithMax(cfg.MaxRetries)
+
+	retryInterceptor := grpc_retry.UnaryClientInterceptor(timeoutDialOption, maxRetriesOption)
+	finalUnaryInterceptor := grpc_middleware.ChainUnaryClient(
+		grpc_prometheus.UnaryClientInterceptor,
+		retryInterceptor,
+	)
+
+	// We only make unary calls in this client, no streaming calls.  We can add a streaming interceptor if admin
+	// ever has those endpoints
+	opts = append(opts, grpc.WithUnaryInterceptor(finalUnaryInterceptor))
+
+	return opts
+}
+
 func NewAdminConnection(_ context.Context, cfg Config) (*grpc.ClientConn, error) {
 	var opts []grpc.DialOption
 	if cfg.UseInsecureConnection {
@@ -39,6 +63,7 @@ func NewAdminConnection(_ context.Context, cfg Config) (*grpc.ClientConn, error)
 		opts = append(opts, grpc.WithTransportCredentials(creds))
 	}
 
+	opts = append(opts, GetAdditionalAdminClientConfigOptions(cfg)...)
 	return grpc.Dial(cfg.Endpoint.String(), opts...)
 }
 

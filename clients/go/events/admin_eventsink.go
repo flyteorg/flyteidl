@@ -3,7 +3,6 @@ package events
 import (
 	"context"
 	"fmt"
-
 	admin2 "github.com/lyft/flyteidl/clients/go/admin"
 
 	"github.com/golang/protobuf/proto"
@@ -18,6 +17,7 @@ import (
 type adminEventSink struct {
 	adminClient service.AdminServiceClient
 	rateLimiter *rate.Limiter
+	cfg         *Config
 }
 
 // Constructs a new EventSink that sends events to FlyteAdmin through gRPC
@@ -27,9 +27,10 @@ func NewAdminEventSink(ctx context.Context, adminClient service.AdminServiceClie
 	eventSink := &adminEventSink{
 		adminClient: adminClient,
 		rateLimiter: rateLimiter,
+		cfg:         config,
 	}
 
-	logger.Infof(ctx, "Created new AdminEvenSink to Admin service")
+	logger.Infof(ctx, "Created new AdminEventSink to Admin service")
 	return eventSink, nil
 }
 
