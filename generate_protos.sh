@@ -1,6 +1,6 @@
 DIR=`pwd`
 rm -rf $DIR/gen
-LYFT_IMAGE="lyft/protocgenerator:4896952431e669240fa3cb8a93b493da2fcea7ae"
+LYFT_IMAGE="lyft/protocgenerator:d53ce1490e235bf765c93b4a8cfcdd07a1325024"
 
 docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/service --with_gateway -l go --go_source_relative
 docker run -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/admin --with_gateway -l go --go_source_relative --validate_out
@@ -22,6 +22,9 @@ docker run -e REPO_BLOB_SHA=master -e PROJECT_ANNOTATION_PREFIX=flyte.interface 
 docker run -e REPO_BLOB_SHA=master -e PROJECT_ANNOTATION_PREFIX=flyte.interface -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/event -l protodoc
 docker run -e REPO_BLOB_SHA=master -e PROJECT_ANNOTATION_PREFIX=flyte.interface -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/plugins -l protodoc
 
+# Generate binary data from OpenAPI 2 file
+docker run -v $DIR/gen/pb-go/flyteidl/service:/service --entrypoint go-bindata $LYFT_IMAGE -pkg service -o /service/openapi.go -prefix /service/ -modtime 1562572800 /service/admin.swagger.json
+
 # Generate JS code
 docker run -v $DIR:/defs schottra/docker-protobufjs:latest --module-name flyteidl -d protos/flyteidl/core  -d protos/flyteidl/event -d protos/flyteidl/admin -d protos/flyteidl/service  -- --root flyteidl -t static-module -w es6 --no-delimited --force-long --no-convert -p /defs/protos
 
@@ -32,6 +35,7 @@ sudo rm -rf gen/pb-go/github.com
 # Copy the validate.py protos.
 sudo mkdir -p gen/pb_python/validate
 sudo cp -r validate/* gen/pb_python/validate/
+
 
 if [ -n "$DELTA_CHECK" ]; then
   DIRTY=$(git status --porcelain)
