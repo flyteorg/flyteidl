@@ -1178,7 +1178,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/adminProject"
+              "$ref": "#/definitions/adminProjectRegisterRequest"
             }
           }
         ],
@@ -2783,6 +2783,14 @@
         }
       },
       "description": "Top-level namespace used to classify different entities like workflows and executions."
+    },
+    "adminProjectRegisterRequest": {
+      "type": "object",
+      "properties": {
+        "project": {
+          "$ref": "#/definitions/adminProject"
+        }
+      }
     },
     "adminProjectRegisterResponse": {
       "type": "object"

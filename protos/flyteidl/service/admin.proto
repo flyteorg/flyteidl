@@ -246,7 +246,7 @@ service AdminService {
     };
   };
 
-  rpc RegisterProject (flyteidl.admin.Project) returns (flyteidl.admin.ProjectRegisterResponse) {
+  rpc RegisterProject (flyteidl.admin.ProjectRegisterRequest) returns (flyteidl.admin.ProjectRegisterResponse) {
     option (google.api.http) = {
       post: "/api/v1/projects"
       body: "*"

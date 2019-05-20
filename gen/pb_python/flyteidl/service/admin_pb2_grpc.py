@@ -139,7 +139,7 @@ class AdminServiceStub(object):
         )
     self.RegisterProject = channel.unary_unary(
         '/flyteidl.service.AdminService/RegisterProject',
-        request_serializer=flyteidl_dot_admin_dot_project__pb2.Project.SerializeToString,
+        request_serializer=flyteidl_dot_admin_dot_project__pb2.ProjectRegisterRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_project__pb2.ProjectRegisterResponse.FromString,
         )
     self.ListProjects = channel.unary_unary(
@@ -520,7 +520,7 @@ def add_AdminServiceServicer_to_server(servicer, server):
       ),
       'RegisterProject': grpc.unary_unary_rpc_method_handler(
           servicer.RegisterProject,
-          request_deserializer=flyteidl_dot_admin_dot_project__pb2.Project.FromString,
+          request_deserializer=flyteidl_dot_admin_dot_project__pb2.ProjectRegisterRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_project__pb2.ProjectRegisterResponse.SerializeToString,
       ),
       'ListProjects': grpc.unary_unary_rpc_method_handler(

@@ -29,5 +29,9 @@ message Projects {
 message ProjectListRequest {
 }
 
+message ProjectRegisterRequest {
+    Project project                       = 1;
+}
+
 message ProjectRegisterResponse {
 }

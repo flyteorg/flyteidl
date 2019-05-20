@@ -104,12 +104,33 @@ flyteidl.admin.ProjectListRequest
 
 
 
+.. _api_msg_flyteidl.admin.ProjectRegisterRequest:
+
+flyteidl.admin.ProjectRegisterRequest
+-------------------------------------
+
+`[flyteidl.admin.ProjectRegisterRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L31>`_
+
+
+.. code-block:: json
+
+  {
+    "project": "{...}"
+  }
+
+.. _api_field_flyteidl.admin.ProjectRegisterRequest.project:
+
+project
+  (:ref:`flyteidl.admin.Project <api_msg_flyteidl.admin.Project>`) 
+  
+
+
 .. _api_msg_flyteidl.admin.ProjectRegisterResponse:
 
 flyteidl.admin.ProjectRegisterResponse
 --------------------------------------
 
-`[flyteidl.admin.ProjectRegisterResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L31>`_
+`[flyteidl.admin.ProjectRegisterResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project.proto#L35>`_
 
 
 .. code-block:: json
