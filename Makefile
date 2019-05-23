@@ -21,3 +21,7 @@ test_unit:
 .PHONY: update_boilerplate
 update_boilerplate:
 	@boilerplate/update.sh
+
+.PHONY: build_python
+build_python:
+	@python setup.py sdist
