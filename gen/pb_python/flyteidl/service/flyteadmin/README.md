@@ -108,6 +108,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AdminAnnotations](docs/AdminAnnotations.md)
+ - [AdminAuth](docs/AdminAuth.md)
  - [AdminDomain](docs/AdminDomain.md)
  - [AdminEmailNotification](docs/AdminEmailNotification.md)
  - [AdminExecution](docs/AdminExecution.md)

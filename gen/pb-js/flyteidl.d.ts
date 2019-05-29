@@ -6954,6 +6954,67 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of an Auth. */
+        interface IAuth {
+
+            /** Auth assumableIamRole */
+            assumableIamRole?: (string|null);
+
+            /** Auth kubernetesServiceAccount */
+            kubernetesServiceAccount?: (string|null);
+        }
+
+        /** Represents an Auth. */
+        class Auth implements IAuth {
+
+            /**
+             * Constructs a new Auth.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IAuth);
+
+            /** Auth assumableIamRole. */
+            public assumableIamRole: string;
+
+            /** Auth kubernetesServiceAccount. */
+            public kubernetesServiceAccount: string;
+
+            /** Auth method. */
+            public method?: ("assumableIamRole"|"kubernetesServiceAccount");
+
+            /**
+             * Creates a new Auth instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Auth instance
+             */
+            public static create(properties?: flyteidl.admin.IAuth): flyteidl.admin.Auth;
+
+            /**
+             * Encodes the specified Auth message. Does not implicitly {@link flyteidl.admin.Auth.verify|verify} messages.
+             * @param message Auth message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IAuth, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an Auth message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Auth
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Auth;
+
+            /**
+             * Verifies an Auth message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a LaunchPlanSpec. */
         interface ILaunchPlanSpec {
 
@@ -6977,6 +7038,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec annotations */
             annotations?: (flyteidl.admin.IAnnotations|null);
+
+            /** LaunchPlanSpec auth */
+            auth?: (flyteidl.admin.IAuth|null);
         }
 
         /** Represents a LaunchPlanSpec. */
@@ -7008,6 +7072,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec annotations. */
             public annotations?: (flyteidl.admin.IAnnotations|null);
+
+            /** LaunchPlanSpec auth. */
+            public auth?: (flyteidl.admin.IAuth|null);
 
             /**
              * Creates a new LaunchPlanSpec instance using the specified properties.

@@ -1860,6 +1860,18 @@ definitions:
     example:
       values:
         key: "values"
+  adminAuth:
+    type: "object"
+    properties:
+      assumable_iam_role:
+        type: "string"
+      kubernetes_service_account:
+        type: "string"
+    description: "Defines permissions associated with executions created by this launch\
+      \ plan spec."
+    example:
+      kubernetes_service_account: "kubernetes_service_account"
+      assumable_iam_role: "assumable_iam_role"
   adminDomain:
     type: "object"
     properties:
@@ -3308,6 +3320,9 @@ definitions:
                 - null
                 - null
         role: "role"
+        auth:
+          kubernetes_service_account: "kubernetes_service_account"
+          assumable_iam_role: "assumable_iam_role"
         entity_metadata:
           schedule:
             kickoff_time_input_arg: "kickoff_time_input_arg"
@@ -3748,6 +3763,9 @@ definitions:
                   - null
                   - null
           role: "role"
+          auth:
+            kubernetes_service_account: "kubernetes_service_account"
+            assumable_iam_role: "assumable_iam_role"
           entity_metadata:
             schedule:
               kickoff_time_input_arg: "kickoff_time_input_arg"
@@ -4029,6 +4047,9 @@ definitions:
                   - null
                   - null
           role: "role"
+          auth:
+            kubernetes_service_account: "kubernetes_service_account"
+            assumable_iam_role: "assumable_iam_role"
           entity_metadata:
             schedule:
               kickoff_time_input_arg: "kickoff_time_input_arg"
@@ -4222,6 +4243,10 @@ definitions:
       annotations:
         description: "Custom annotations to be applied to the execution resource."
         $ref: "#/definitions/adminAnnotations"
+      auth:
+        description: "Indicates the permission associated with workflow executions\
+          \ triggered with this launch plan."
+        $ref: "#/definitions/adminAuth"
     description: "User-provided launch plan definition and configuration values."
     example:
       workflow_id:
@@ -4278,6 +4303,9 @@ definitions:
               - null
               - null
       role: "role"
+      auth:
+        kubernetes_service_account: "kubernetes_service_account"
+        assumable_iam_role: "assumable_iam_role"
       entity_metadata:
         schedule:
           kickoff_time_input_arg: "kickoff_time_input_arg"

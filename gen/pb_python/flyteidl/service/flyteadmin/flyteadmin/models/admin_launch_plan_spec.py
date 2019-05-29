@@ -17,6 +17,7 @@ import re  # noqa: F401
 import six
 
 from flyteadmin.models.admin_annotations import AdminAnnotations  # noqa: F401,E501
+from flyteadmin.models.admin_auth import AdminAuth  # noqa: F401,E501
 from flyteadmin.models.admin_labels import AdminLabels  # noqa: F401,E501
 from flyteadmin.models.admin_launch_plan_metadata import AdminLaunchPlanMetadata  # noqa: F401,E501
 from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
@@ -44,7 +45,8 @@ class AdminLaunchPlanSpec(object):
         'fixed_inputs': 'CoreLiteralMap',
         'role': 'str',
         'labels': 'AdminLabels',
-        'annotations': 'AdminAnnotations'
+        'annotations': 'AdminAnnotations',
+        'auth': 'AdminAuth'
     }
 
     attribute_map = {
@@ -54,10 +56,11 @@ class AdminLaunchPlanSpec(object):
         'fixed_inputs': 'fixed_inputs',
         'role': 'role',
         'labels': 'labels',
-        'annotations': 'annotations'
+        'annotations': 'annotations',
+        'auth': 'auth'
     }
 
-    def __init__(self, workflow_id=None, entity_metadata=None, default_inputs=None, fixed_inputs=None, role=None, labels=None, annotations=None):  # noqa: E501
+    def __init__(self, workflow_id=None, entity_metadata=None, default_inputs=None, fixed_inputs=None, role=None, labels=None, annotations=None, auth=None):  # noqa: E501
         """AdminLaunchPlanSpec - a model defined in Swagger"""  # noqa: E501
 
         self._workflow_id = None
@@ -67,6 +70,7 @@ class AdminLaunchPlanSpec(object):
         self._role = None
         self._labels = None
         self._annotations = None
+        self._auth = None
         self.discriminator = None
 
         if workflow_id is not None:
@@ -83,6 +87,8 @@ class AdminLaunchPlanSpec(object):
             self.labels = labels
         if annotations is not None:
             self.annotations = annotations
+        if auth is not None:
+            self.auth = auth
 
     @property
     def workflow_id(self):
@@ -234,6 +240,29 @@ class AdminLaunchPlanSpec(object):
         """
 
         self._annotations = annotations
+
+    @property
+    def auth(self):
+        """Gets the auth of this AdminLaunchPlanSpec.  # noqa: E501
+
+        Indicates the permission associated with workflow executions triggered with this launch plan.  # noqa: E501
+
+        :return: The auth of this AdminLaunchPlanSpec.  # noqa: E501
+        :rtype: AdminAuth
+        """
+        return self._auth
+
+    @auth.setter
+    def auth(self, auth):
+        """Sets the auth of this AdminLaunchPlanSpec.
+
+        Indicates the permission associated with workflow executions triggered with this launch plan.  # noqa: E501
+
+        :param auth: The auth of this AdminLaunchPlanSpec.  # noqa: E501
+        :type: AdminAuth
+        """
+
+        self._auth = auth
 
     def to_dict(self):
         """Returns the model properties as a dict"""

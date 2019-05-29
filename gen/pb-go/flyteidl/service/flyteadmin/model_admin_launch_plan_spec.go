@@ -20,4 +20,6 @@ type AdminLaunchPlanSpec struct {
 	Labels *AdminLabels `json:"labels,omitempty"`
 	// Custom annotations to be applied to the execution resource.
 	Annotations *AdminAnnotations `json:"annotations,omitempty"`
+	// Indicates the permission associated with workflow executions triggered with this launch plan.
+	Auth *AdminAuth `json:"auth,omitempty"`
 }

@@ -23,6 +23,7 @@ from flyteadmin.api_client import ApiClient
 from flyteadmin.configuration import Configuration
 # import models into sdk package
 from flyteadmin.models.admin_annotations import AdminAnnotations
+from flyteadmin.models.admin_auth import AdminAuth
 from flyteadmin.models.admin_domain import AdminDomain
 from flyteadmin.models.admin_email_notification import AdminEmailNotification
 from flyteadmin.models.admin_execution import AdminExecution
