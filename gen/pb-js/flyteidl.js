@@ -15119,6 +15119,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {number|null} [nesting] ExecutionMetadata nesting
              * @property {google.protobuf.ITimestamp|null} [scheduledAt] ExecutionMetadata scheduledAt
              * @property {flyteidl.core.INodeExecutionIdentifier|null} [parentNodeExecution] ExecutionMetadata parentNodeExecution
+             * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [referenceExecution] ExecutionMetadata referenceExecution
              */
 
             /**
@@ -15177,6 +15178,14 @@ export const flyteidl = $root.flyteidl = (() => {
             ExecutionMetadata.prototype.parentNodeExecution = null;
 
             /**
+             * ExecutionMetadata referenceExecution.
+             * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} referenceExecution
+             * @memberof flyteidl.admin.ExecutionMetadata
+             * @instance
+             */
+            ExecutionMetadata.prototype.referenceExecution = null;
+
+            /**
              * Creates a new ExecutionMetadata instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.ExecutionMetadata
@@ -15210,6 +15219,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.google.protobuf.Timestamp.encode(message.scheduledAt, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.parentNodeExecution != null && message.hasOwnProperty("parentNodeExecution"))
                     $root.flyteidl.core.NodeExecutionIdentifier.encode(message.parentNodeExecution, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.referenceExecution != null && message.hasOwnProperty("referenceExecution"))
+                    $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.referenceExecution, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 return writer;
             };
 
@@ -15245,6 +15256,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 5:
                         message.parentNodeExecution = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    case 16:
+                        message.referenceExecution = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -15291,6 +15305,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.flyteidl.core.NodeExecutionIdentifier.verify(message.parentNodeExecution);
                     if (error)
                         return "parentNodeExecution." + error;
+                }
+                if (message.referenceExecution != null && message.hasOwnProperty("referenceExecution")) {
+                    let error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.referenceExecution);
+                    if (error)
+                        return "referenceExecution." + error;
                 }
                 return null;
             };

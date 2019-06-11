@@ -2077,6 +2077,10 @@ definitions:
               name: "name"
               project: "project"
             node_id: "node_id"
+          reference_execution:
+            domain: "domain"
+            name: "name"
+            project: "project"
           scheduled_at: "2000-01-23T04:56:07.000+00:00"
           nesting: 1
         disable_all: true
@@ -2565,6 +2569,10 @@ definitions:
                 name: "name"
                 project: "project"
               node_id: "node_id"
+            reference_execution:
+              domain: "domain"
+              name: "name"
+              project: "project"
             scheduled_at: "2000-01-23T04:56:07.000+00:00"
             nesting: 1
           disable_all: true
@@ -2816,6 +2824,10 @@ definitions:
                 name: "name"
                 project: "project"
               node_id: "node_id"
+            reference_execution:
+              domain: "domain"
+              name: "name"
+              project: "project"
             scheduled_at: "2000-01-23T04:56:07.000+00:00"
             nesting: 1
           disable_all: true
@@ -2929,6 +2941,10 @@ definitions:
       parent_node_execution:
         title: "Which subworkflow node launched this execution"
         $ref: "#/definitions/coreNodeExecutionIdentifier"
+      reference_execution:
+        description: "Optional, a reference workflow execution related to this execution.\n\
+          In the case of a relaunch, this references the original workflow execution."
+        $ref: "#/definitions/coreWorkflowExecutionIdentifier"
     description: "Represents attributes about an execution which are not required\
       \ to launch the execution but are useful to record.\nThese attributes are assigned\
       \ at launch time and do not change."
@@ -2941,6 +2957,10 @@ definitions:
           name: "name"
           project: "project"
         node_id: "node_id"
+      reference_execution:
+        domain: "domain"
+        name: "name"
+        project: "project"
       scheduled_at: "2000-01-23T04:56:07.000+00:00"
       nesting: 1
   adminExecutionRelaunchRequest:
@@ -3002,6 +3022,10 @@ definitions:
             name: "name"
             project: "project"
           node_id: "node_id"
+        reference_execution:
+          domain: "domain"
+          name: "name"
+          project: "project"
         scheduled_at: "2000-01-23T04:56:07.000+00:00"
         nesting: 1
       disable_all: true

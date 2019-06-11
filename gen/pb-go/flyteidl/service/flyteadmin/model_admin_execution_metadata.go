@@ -23,4 +23,6 @@ type AdminExecutionMetadata struct {
 	// For scheduled executions, the requested time for execution for this specific schedule invocation.
 	ScheduledAt time.Time `json:"scheduled_at,omitempty"`
 	ParentNodeExecution *CoreNodeExecutionIdentifier `json:"parent_node_execution,omitempty"`
+	// Optional, a reference workflow execution related to this execution. In the case of a relaunch, this references the original workflow execution.
+	ReferenceExecution *CoreWorkflowExecutionIdentifier `json:"reference_execution,omitempty"`
 }

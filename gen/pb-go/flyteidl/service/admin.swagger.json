@@ -2336,6 +2336,10 @@
         "parent_node_execution": {
           "$ref": "#/definitions/coreNodeExecutionIdentifier",
           "title": "Which subworkflow node launched this execution"
+        },
+        "reference_execution": {
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
+          "description": "Optional, a reference workflow execution related to this execution.\nIn the case of a relaunch, this references the original workflow execution."
         }
       },
       "description": "Represents attributes about an execution which are not required to launch the execution but are useful to record.\nThese attributes are assigned at launch time and do not change."

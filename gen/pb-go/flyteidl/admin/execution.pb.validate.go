@@ -821,6 +821,16 @@ func (m *ExecutionMetadata) Validate() error {
 		}
 	}
 
+	if v, ok := interface{}(m.GetReferenceExecution()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionMetadataValidationError{
+				field:  "ReferenceExecution",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	return nil
 }
 

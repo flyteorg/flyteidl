@@ -17,6 +17,7 @@ import re  # noqa: F401
 import six
 
 from flyteadmin.models.core_node_execution_identifier import CoreNodeExecutionIdentifier  # noqa: F401,E501
+from flyteadmin.models.core_workflow_execution_identifier import CoreWorkflowExecutionIdentifier  # noqa: F401,E501
 from flyteadmin.models.execution_metadata_execution_mode import ExecutionMetadataExecutionMode  # noqa: F401,E501
 
 
@@ -38,7 +39,8 @@ class AdminExecutionMetadata(object):
         'principal': 'str',
         'nesting': 'int',
         'scheduled_at': 'datetime',
-        'parent_node_execution': 'CoreNodeExecutionIdentifier'
+        'parent_node_execution': 'CoreNodeExecutionIdentifier',
+        'reference_execution': 'CoreWorkflowExecutionIdentifier'
     }
 
     attribute_map = {
@@ -46,10 +48,11 @@ class AdminExecutionMetadata(object):
         'principal': 'principal',
         'nesting': 'nesting',
         'scheduled_at': 'scheduled_at',
-        'parent_node_execution': 'parent_node_execution'
+        'parent_node_execution': 'parent_node_execution',
+        'reference_execution': 'reference_execution'
     }
 
-    def __init__(self, mode=None, principal=None, nesting=None, scheduled_at=None, parent_node_execution=None):  # noqa: E501
+    def __init__(self, mode=None, principal=None, nesting=None, scheduled_at=None, parent_node_execution=None, reference_execution=None):  # noqa: E501
         """AdminExecutionMetadata - a model defined in Swagger"""  # noqa: E501
 
         self._mode = None
@@ -57,6 +60,7 @@ class AdminExecutionMetadata(object):
         self._nesting = None
         self._scheduled_at = None
         self._parent_node_execution = None
+        self._reference_execution = None
         self.discriminator = None
 
         if mode is not None:
@@ -69,6 +73,8 @@ class AdminExecutionMetadata(object):
             self.scheduled_at = scheduled_at
         if parent_node_execution is not None:
             self.parent_node_execution = parent_node_execution
+        if reference_execution is not None:
+            self.reference_execution = reference_execution
 
     @property
     def mode(self):
@@ -180,6 +186,29 @@ class AdminExecutionMetadata(object):
         """
 
         self._parent_node_execution = parent_node_execution
+
+    @property
+    def reference_execution(self):
+        """Gets the reference_execution of this AdminExecutionMetadata.  # noqa: E501
+
+        Optional, a reference workflow execution related to this execution. In the case of a relaunch, this references the original workflow execution.  # noqa: E501
+
+        :return: The reference_execution of this AdminExecutionMetadata.  # noqa: E501
+        :rtype: CoreWorkflowExecutionIdentifier
+        """
+        return self._reference_execution
+
+    @reference_execution.setter
+    def reference_execution(self, reference_execution):
+        """Sets the reference_execution of this AdminExecutionMetadata.
+
+        Optional, a reference workflow execution related to this execution. In the case of a relaunch, this references the original workflow execution.  # noqa: E501
+
+        :param reference_execution: The reference_execution of this AdminExecutionMetadata.  # noqa: E501
+        :type: CoreWorkflowExecutionIdentifier
+        """
+
+        self._reference_execution = reference_execution
 
     def to_dict(self):
         """Returns the model properties as a dict"""

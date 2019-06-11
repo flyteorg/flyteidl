@@ -165,6 +165,10 @@ message ExecutionMetadata {
 
     // Which subworkflow node launched this execution
     core.NodeExecutionIdentifier parent_node_execution = 5;
+
+    // Optional, a reference workflow execution related to this execution.
+    // In the case of a relaunch, this references the original workflow execution.
+    core.WorkflowExecutionIdentifier reference_execution = 16;
 }
 
 message NotificationList {

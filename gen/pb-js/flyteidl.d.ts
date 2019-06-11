@@ -6300,6 +6300,9 @@ export namespace flyteidl {
 
             /** ExecutionMetadata parentNodeExecution */
             parentNodeExecution?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /** ExecutionMetadata referenceExecution */
+            referenceExecution?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
         }
 
         /** Represents an ExecutionMetadata. */
@@ -6325,6 +6328,9 @@ export namespace flyteidl {
 
             /** ExecutionMetadata parentNodeExecution. */
             public parentNodeExecution?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /** ExecutionMetadata referenceExecution. */
+            public referenceExecution?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
 
             /**
              * Creates a new ExecutionMetadata instance using the specified properties.
