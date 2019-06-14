@@ -56,6 +56,10 @@ message BlobType {
     BlobDimensionality dimensionality = 2;
 }
 
+message ClosureType {
+
+}
+
 // Defines a strong type to allow type checking between interfaces.
 message LiteralType {
     oneof type {
@@ -73,6 +77,8 @@ message LiteralType {
 
         // A blob might have specialized implementation details depending on associated metadata.
         BlobType blob = 5;
+
+        ClosureType closure = 7;
     }
 
     // This field contains type metadata that is descriptive of the type, but is NOT considered in type-checking.  This might be used by
