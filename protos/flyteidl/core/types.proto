@@ -56,8 +56,9 @@ message BlobType {
     BlobDimensionality dimensionality = 2;
 }
 
+// Defines a closure. At the moment any closure can be bound to any variable of type ClosureType.
 message ClosureType {
-
+    // TODO: add a typed interface to restrict the type of closures accepted.
 }
 
 // Defines a strong type to allow type checking between interfaces.

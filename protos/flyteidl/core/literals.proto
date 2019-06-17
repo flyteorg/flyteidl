@@ -69,14 +69,17 @@ message Scalar {
 }
 
 // Represents a node closure that contain all required information to execute.
-message NodeClosure {
-    // A node to execute.
+message Closure {
+    // A node to execute. All inputs of the node must be statically bound in node input bindings. Dynamic bindings
+    // is not yet supported.
     Node node = 1;
 
-    // [Optional] A complete list of task specs referenced in node.
+    // [Optional] List of task specs directly or indirectly referenced in node. This list will take precedence over
+    // other task specs found in the environment (e.g. in an enclosing workflow) when resolving task references.
     repeated TaskTemplate tasks = 4;
 
-    // [Optional] A complete list of workflow specs referenced in node or in other workflows.
+    // [Optional] List of workflow specs directly or indirectly referenced in node. This list will take precedence over
+    // other workflow specs found in the environment (e.g. in an enclosing workflow) when resolving workflows references.
     repeated WorkflowTemplate sub_workflows = 5;
 }
 
@@ -92,7 +95,7 @@ message Literal {
         // A map of strings to literals.
         LiteralMap map = 3;
 
-        NodeClosure closure = 4;
+        Closure closure = 4;
     }
 }
 
@@ -132,7 +135,7 @@ message BindingData {
         // A map of bindings. The key is always a string.
         BindingDataMap map = 4;
 
-        NodeClosure closure = 5;
+        Closure closure = 5;
     }
 }
 
@@ -193,11 +196,16 @@ message BranchNode {
     IfElseBlock if_else = 1;
 }
 
-// A specialized node type that expects a NodeClosure as the first and only input.
+// A specialized node type that expects a NodeClosure as the first and only input. Partially filled closures (e.g. with
+// unbound inputs) is not yet supported.
 message ClosureNode {
-    // Since closures will only be discovered at runtime. The node must statically specify the outputs it promises to
-    // generate. If this is not specified, subsequent nodes won't be able to consume the executed closure's output.
-    VariableMap outputs = 1;
+    // The interface for the closure. The input variable map must have one and only one input of type Closure. Since
+    // closures will only be discovered at runtime, the effective node interface won't be known until execution
+    // time. In order for this node's outputs to be bound to subsequent nodes, the outputs map of the interface can
+    // optionally be provided. The output interface will be matched at runtime against the closure and, if not matched,
+    // will fail the node without running the closure. The output map in the interface has to be a strict subset of the
+    // closure's effective interface.
+    TypedInterface interface = 1;
 }
 
 // Refers to the task that the Node is to execute.
