@@ -4,7 +4,8 @@ package flyteidl.core;
 
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
 
-import "flyteidl/core/interface.proto";
+import "flyteidl/core/types.proto";
+import "flyteidl/core/literals.proto";
 
 // Metadata for the entire workflow.
 // To be used in the future.

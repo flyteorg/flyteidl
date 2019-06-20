@@ -11,8 +11,5 @@ and documentation of all these entities.
 	:caption: flyteidl
 	:name: flyteidltoc
 
-	admin/index
 	core/index
 	event/index
-	plugins/index
-	service/index

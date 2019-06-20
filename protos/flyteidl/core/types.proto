@@ -58,7 +58,8 @@ message BlobType {
 
 // Defines a closure. At the moment any closure can be bound to any variable of type ClosureType.
 message ClosureType {
-    // TODO: add a typed interface to restrict the type of closures accepted.
+    // Defines the interface of the underlying closure.
+    TypedInterface interface = 1;
 }
 
 // Defines a strong type to allow type checking between interfaces.
@@ -104,4 +105,25 @@ message Error {
 
     // Error message thrown.
     string message = 2;
+}
+
+// Defines a strongly typed variable.
+message Variable {
+    // Variable literal type.
+    LiteralType type = 1;
+
+    //+optional string describing input variable
+    string description = 2;
+}
+
+// A map of Variables
+message VariableMap {
+    // Defines a map of variable names to variables.
+    map<string, Variable> variables = 1;
+}
+
+// Defines strongly typed inputs and outputs.
+message TypedInterface {
+    VariableMap inputs = 1;
+    VariableMap outputs = 2;
 }

@@ -76,11 +76,11 @@ message Closure {
 
     // [Optional] List of task specs directly or indirectly referenced in node. This list will take precedence over
     // other task specs found in the environment (e.g. in an enclosing workflow) when resolving task references.
-    repeated TaskTemplate tasks = 4;
+    repeated TaskTemplate tasks = 2;
 
     // [Optional] List of workflow specs directly or indirectly referenced in node. This list will take precedence over
     // other workflow specs found in the environment (e.g. in an enclosing workflow) when resolving workflows references.
-    repeated WorkflowTemplate sub_workflows = 5;
+    repeated WorkflowTemplate sub_workflows = 3;
 }
 
 // A simple value. This supports any level of nesting (e.g. array of array of array of Blobs) as well as simple primitives.
@@ -196,16 +196,12 @@ message BranchNode {
     IfElseBlock if_else = 1;
 }
 
-// A specialized node type that expects a NodeClosure as the first and only input. Partially filled closures (e.g. with
-// unbound inputs) is not yet supported.
+// A specialized node type that expects a Closure as an additional input called "input_closure". Other inputs bound
+// will be passed down to the closure if it expects any, otherwise additional inputs will be ignored.
 message ClosureNode {
-    // The interface for the closure. The input variable map must have one and only one input of type Closure. Since
-    // closures will only be discovered at runtime, the effective node interface won't be known until execution
-    // time. In order for this node's outputs to be bound to subsequent nodes, the outputs map of the interface can
-    // optionally be provided. The output interface will be matched at runtime against the closure and, if not matched,
-    // will fail the node without running the closure. The output map in the interface has to be a strict subset of the
-    // closure's effective interface.
-    TypedInterface interface = 1;
+    // The closure type to expect to be bound to "input_closure" input for this node. ClosureType interface must be
+    // populated if inputs/outputs are expected to be passed to and consumed from, respectively, the executed closure.
+    ClosureType closure_type = 1;
 }
 
 // Refers to the task that the Node is to execute.

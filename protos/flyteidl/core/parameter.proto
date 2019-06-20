@@ -4,29 +4,7 @@ package flyteidl.core;
 
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
 
-import "flyteidl/core/types.proto";
 import "flyteidl/core/literals.proto";
-
-// Defines a strongly typed variable.
-message Variable {
-    // Variable literal type.
-    LiteralType type = 1;
-
-    //+optional string describing input variable
-    string description = 2;
-}
-
-// A map of Variables
-message VariableMap {
-    // Defines a map of variable names to variables.
-    map<string, Variable> variables = 1;
-}
-
-// Defines strongly typed inputs and outputs.
-message TypedInterface {
-    VariableMap inputs  = 1;
-    VariableMap outputs = 2;
-}
 
 // A parameter is used as input to a launch plan and has
 // the special ability to have a default value or mark itself as required.

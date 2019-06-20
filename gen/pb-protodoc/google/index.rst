@@ -6,5 +6,4 @@ google
 	:caption: google
 	:name: googletoc
 
-	api/index
 	protobuf/index
