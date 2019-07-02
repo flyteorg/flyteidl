@@ -1,7 +1,6 @@
 syntax = "proto3";
 
 import "flyteidl/core/tasks.proto";
-import "flyteidl/core/workflow.proto";
 import "flyteidl/core/literals.proto";
 
 package flyteidl.core;

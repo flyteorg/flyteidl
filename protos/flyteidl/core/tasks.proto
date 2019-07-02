@@ -2,7 +2,6 @@ syntax = "proto3";
 
 import "flyteidl/core/identifier.proto";
 import "flyteidl/core/types.proto";
-import "flyteidl/core/literals.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/struct.proto";
 
@@ -56,6 +55,22 @@ message RuntimeMetadata {
 
     //+optional It can be used to provide extra information about the runtime (e.g. python, golang... etc.).
     string flavor = 3;
+}
+
+// Retry strategy associated with an executable unit.
+message RetryStrategy {
+    // Number of retries. Retries will be consumed when the job fails with a recoverable error.
+    // The number of retries must be less than or equals to 10.
+    uint32 retries = 5;
+}
+
+// A generic key value pair.
+message KeyValuePair {
+    //required.
+    string key = 1;
+
+    //+optional.
+    string value = 2;
 }
 
 // Task Metadata

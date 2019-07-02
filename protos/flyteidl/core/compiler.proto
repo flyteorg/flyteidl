@@ -4,7 +4,7 @@ package flyteidl.core;
 
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
 
-import "flyteidl/core/workflow.proto";
+import "flyteidl/core/literals.proto";
 import "flyteidl/core/tasks.proto";
 
 // Adjacency list for the workflow. This is created as part of the compilation process. Every process after the compilation

@@ -711,6 +711,3516 @@ export const flyteidl = $root.flyteidl = (() => {
             return CompiledWorkflowClosure;
         })();
 
+        core.Void = (function() {
+
+            /**
+             * Properties of a Void.
+             * @memberof flyteidl.core
+             * @interface IVoid
+             */
+
+            /**
+             * Constructs a new Void.
+             * @memberof flyteidl.core
+             * @classdesc Represents a Void.
+             * @implements IVoid
+             * @constructor
+             * @param {flyteidl.core.IVoid=} [properties] Properties to set
+             */
+            function Void(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new Void instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.Void
+             * @static
+             * @param {flyteidl.core.IVoid=} [properties] Properties to set
+             * @returns {flyteidl.core.Void} Void instance
+             */
+            Void.create = function create(properties) {
+                return new Void(properties);
+            };
+
+            /**
+             * Encodes the specified Void message. Does not implicitly {@link flyteidl.core.Void.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.Void
+             * @static
+             * @param {flyteidl.core.IVoid} message Void message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Void.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a Void message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.Void
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.Void} Void
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Void.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Void();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Void message.
+             * @function verify
+             * @memberof flyteidl.core.Void
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Void.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return Void;
+        })();
+
+        core.Blob = (function() {
+
+            /**
+             * Properties of a Blob.
+             * @memberof flyteidl.core
+             * @interface IBlob
+             * @property {flyteidl.core.IBlobMetadata|null} [metadata] Blob metadata
+             * @property {string|null} [uri] Blob uri
+             */
+
+            /**
+             * Constructs a new Blob.
+             * @memberof flyteidl.core
+             * @classdesc Represents a Blob.
+             * @implements IBlob
+             * @constructor
+             * @param {flyteidl.core.IBlob=} [properties] Properties to set
+             */
+            function Blob(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Blob metadata.
+             * @member {flyteidl.core.IBlobMetadata|null|undefined} metadata
+             * @memberof flyteidl.core.Blob
+             * @instance
+             */
+            Blob.prototype.metadata = null;
+
+            /**
+             * Blob uri.
+             * @member {string} uri
+             * @memberof flyteidl.core.Blob
+             * @instance
+             */
+            Blob.prototype.uri = "";
+
+            /**
+             * Creates a new Blob instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.Blob
+             * @static
+             * @param {flyteidl.core.IBlob=} [properties] Properties to set
+             * @returns {flyteidl.core.Blob} Blob instance
+             */
+            Blob.create = function create(properties) {
+                return new Blob(properties);
+            };
+
+            /**
+             * Encodes the specified Blob message. Does not implicitly {@link flyteidl.core.Blob.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.Blob
+             * @static
+             * @param {flyteidl.core.IBlob} message Blob message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Blob.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.metadata != null && message.hasOwnProperty("metadata"))
+                    $root.flyteidl.core.BlobMetadata.encode(message.metadata, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.uri != null && message.hasOwnProperty("uri"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.uri);
+                return writer;
+            };
+
+            /**
+             * Decodes a Blob message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.Blob
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.Blob} Blob
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Blob.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Blob();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.metadata = $root.flyteidl.core.BlobMetadata.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.uri = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Blob message.
+             * @function verify
+             * @memberof flyteidl.core.Blob
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Blob.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.metadata != null && message.hasOwnProperty("metadata")) {
+                    let error = $root.flyteidl.core.BlobMetadata.verify(message.metadata);
+                    if (error)
+                        return "metadata." + error;
+                }
+                if (message.uri != null && message.hasOwnProperty("uri"))
+                    if (!$util.isString(message.uri))
+                        return "uri: string expected";
+                return null;
+            };
+
+            return Blob;
+        })();
+
+        core.BlobMetadata = (function() {
+
+            /**
+             * Properties of a BlobMetadata.
+             * @memberof flyteidl.core
+             * @interface IBlobMetadata
+             * @property {flyteidl.core.IBlobType|null} [type] BlobMetadata type
+             */
+
+            /**
+             * Constructs a new BlobMetadata.
+             * @memberof flyteidl.core
+             * @classdesc Represents a BlobMetadata.
+             * @implements IBlobMetadata
+             * @constructor
+             * @param {flyteidl.core.IBlobMetadata=} [properties] Properties to set
+             */
+            function BlobMetadata(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * BlobMetadata type.
+             * @member {flyteidl.core.IBlobType|null|undefined} type
+             * @memberof flyteidl.core.BlobMetadata
+             * @instance
+             */
+            BlobMetadata.prototype.type = null;
+
+            /**
+             * Creates a new BlobMetadata instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.BlobMetadata
+             * @static
+             * @param {flyteidl.core.IBlobMetadata=} [properties] Properties to set
+             * @returns {flyteidl.core.BlobMetadata} BlobMetadata instance
+             */
+            BlobMetadata.create = function create(properties) {
+                return new BlobMetadata(properties);
+            };
+
+            /**
+             * Encodes the specified BlobMetadata message. Does not implicitly {@link flyteidl.core.BlobMetadata.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.BlobMetadata
+             * @static
+             * @param {flyteidl.core.IBlobMetadata} message BlobMetadata message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            BlobMetadata.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.type != null && message.hasOwnProperty("type"))
+                    $root.flyteidl.core.BlobType.encode(message.type, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a BlobMetadata message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.BlobMetadata
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.BlobMetadata} BlobMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            BlobMetadata.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.BlobMetadata();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.type = $root.flyteidl.core.BlobType.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a BlobMetadata message.
+             * @function verify
+             * @memberof flyteidl.core.BlobMetadata
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            BlobMetadata.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.type != null && message.hasOwnProperty("type")) {
+                    let error = $root.flyteidl.core.BlobType.verify(message.type);
+                    if (error)
+                        return "type." + error;
+                }
+                return null;
+            };
+
+            return BlobMetadata;
+        })();
+
+        core.Binary = (function() {
+
+            /**
+             * Properties of a Binary.
+             * @memberof flyteidl.core
+             * @interface IBinary
+             * @property {Uint8Array|null} [value] Binary value
+             * @property {string|null} [tag] Binary tag
+             */
+
+            /**
+             * Constructs a new Binary.
+             * @memberof flyteidl.core
+             * @classdesc Represents a Binary.
+             * @implements IBinary
+             * @constructor
+             * @param {flyteidl.core.IBinary=} [properties] Properties to set
+             */
+            function Binary(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Binary value.
+             * @member {Uint8Array} value
+             * @memberof flyteidl.core.Binary
+             * @instance
+             */
+            Binary.prototype.value = $util.newBuffer([]);
+
+            /**
+             * Binary tag.
+             * @member {string} tag
+             * @memberof flyteidl.core.Binary
+             * @instance
+             */
+            Binary.prototype.tag = "";
+
+            /**
+             * Creates a new Binary instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.Binary
+             * @static
+             * @param {flyteidl.core.IBinary=} [properties] Properties to set
+             * @returns {flyteidl.core.Binary} Binary instance
+             */
+            Binary.create = function create(properties) {
+                return new Binary(properties);
+            };
+
+            /**
+             * Encodes the specified Binary message. Does not implicitly {@link flyteidl.core.Binary.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.Binary
+             * @static
+             * @param {flyteidl.core.IBinary} message Binary message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Binary.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.value != null && message.hasOwnProperty("value"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.value);
+                if (message.tag != null && message.hasOwnProperty("tag"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.tag);
+                return writer;
+            };
+
+            /**
+             * Decodes a Binary message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.Binary
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.Binary} Binary
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Binary.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Binary();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.value = reader.bytes();
+                        break;
+                    case 2:
+                        message.tag = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Binary message.
+             * @function verify
+             * @memberof flyteidl.core.Binary
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Binary.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.value != null && message.hasOwnProperty("value"))
+                    if (!(message.value && typeof message.value.length === "number" || $util.isString(message.value)))
+                        return "value: buffer expected";
+                if (message.tag != null && message.hasOwnProperty("tag"))
+                    if (!$util.isString(message.tag))
+                        return "tag: string expected";
+                return null;
+            };
+
+            return Binary;
+        })();
+
+        core.Schema = (function() {
+
+            /**
+             * Properties of a Schema.
+             * @memberof flyteidl.core
+             * @interface ISchema
+             * @property {string|null} [uri] Schema uri
+             * @property {flyteidl.core.ISchemaType|null} [type] Schema type
+             */
+
+            /**
+             * Constructs a new Schema.
+             * @memberof flyteidl.core
+             * @classdesc Represents a Schema.
+             * @implements ISchema
+             * @constructor
+             * @param {flyteidl.core.ISchema=} [properties] Properties to set
+             */
+            function Schema(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Schema uri.
+             * @member {string} uri
+             * @memberof flyteidl.core.Schema
+             * @instance
+             */
+            Schema.prototype.uri = "";
+
+            /**
+             * Schema type.
+             * @member {flyteidl.core.ISchemaType|null|undefined} type
+             * @memberof flyteidl.core.Schema
+             * @instance
+             */
+            Schema.prototype.type = null;
+
+            /**
+             * Creates a new Schema instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.Schema
+             * @static
+             * @param {flyteidl.core.ISchema=} [properties] Properties to set
+             * @returns {flyteidl.core.Schema} Schema instance
+             */
+            Schema.create = function create(properties) {
+                return new Schema(properties);
+            };
+
+            /**
+             * Encodes the specified Schema message. Does not implicitly {@link flyteidl.core.Schema.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.Schema
+             * @static
+             * @param {flyteidl.core.ISchema} message Schema message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Schema.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.uri != null && message.hasOwnProperty("uri"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.uri);
+                if (message.type != null && message.hasOwnProperty("type"))
+                    $root.flyteidl.core.SchemaType.encode(message.type, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a Schema message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.Schema
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.Schema} Schema
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Schema.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Schema();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.uri = reader.string();
+                        break;
+                    case 3:
+                        message.type = $root.flyteidl.core.SchemaType.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Schema message.
+             * @function verify
+             * @memberof flyteidl.core.Schema
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Schema.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.uri != null && message.hasOwnProperty("uri"))
+                    if (!$util.isString(message.uri))
+                        return "uri: string expected";
+                if (message.type != null && message.hasOwnProperty("type")) {
+                    let error = $root.flyteidl.core.SchemaType.verify(message.type);
+                    if (error)
+                        return "type." + error;
+                }
+                return null;
+            };
+
+            return Schema;
+        })();
+
+        core.Scalar = (function() {
+
+            /**
+             * Properties of a Scalar.
+             * @memberof flyteidl.core
+             * @interface IScalar
+             * @property {flyteidl.core.IPrimitive|null} [primitive] Scalar primitive
+             * @property {flyteidl.core.IBlob|null} [blob] Scalar blob
+             * @property {flyteidl.core.IBinary|null} [binary] Scalar binary
+             * @property {flyteidl.core.ISchema|null} [schema] Scalar schema
+             * @property {flyteidl.core.IVoid|null} [noneType] Scalar noneType
+             * @property {flyteidl.core.IError|null} [error] Scalar error
+             * @property {google.protobuf.IStruct|null} [generic] Scalar generic
+             */
+
+            /**
+             * Constructs a new Scalar.
+             * @memberof flyteidl.core
+             * @classdesc Represents a Scalar.
+             * @implements IScalar
+             * @constructor
+             * @param {flyteidl.core.IScalar=} [properties] Properties to set
+             */
+            function Scalar(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Scalar primitive.
+             * @member {flyteidl.core.IPrimitive|null|undefined} primitive
+             * @memberof flyteidl.core.Scalar
+             * @instance
+             */
+            Scalar.prototype.primitive = null;
+
+            /**
+             * Scalar blob.
+             * @member {flyteidl.core.IBlob|null|undefined} blob
+             * @memberof flyteidl.core.Scalar
+             * @instance
+             */
+            Scalar.prototype.blob = null;
+
+            /**
+             * Scalar binary.
+             * @member {flyteidl.core.IBinary|null|undefined} binary
+             * @memberof flyteidl.core.Scalar
+             * @instance
+             */
+            Scalar.prototype.binary = null;
+
+            /**
+             * Scalar schema.
+             * @member {flyteidl.core.ISchema|null|undefined} schema
+             * @memberof flyteidl.core.Scalar
+             * @instance
+             */
+            Scalar.prototype.schema = null;
+
+            /**
+             * Scalar noneType.
+             * @member {flyteidl.core.IVoid|null|undefined} noneType
+             * @memberof flyteidl.core.Scalar
+             * @instance
+             */
+            Scalar.prototype.noneType = null;
+
+            /**
+             * Scalar error.
+             * @member {flyteidl.core.IError|null|undefined} error
+             * @memberof flyteidl.core.Scalar
+             * @instance
+             */
+            Scalar.prototype.error = null;
+
+            /**
+             * Scalar generic.
+             * @member {google.protobuf.IStruct|null|undefined} generic
+             * @memberof flyteidl.core.Scalar
+             * @instance
+             */
+            Scalar.prototype.generic = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * Scalar value.
+             * @member {"primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|"generic"|undefined} value
+             * @memberof flyteidl.core.Scalar
+             * @instance
+             */
+            Object.defineProperty(Scalar.prototype, "value", {
+                get: $util.oneOfGetter($oneOfFields = ["primitive", "blob", "binary", "schema", "noneType", "error", "generic"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new Scalar instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.Scalar
+             * @static
+             * @param {flyteidl.core.IScalar=} [properties] Properties to set
+             * @returns {flyteidl.core.Scalar} Scalar instance
+             */
+            Scalar.create = function create(properties) {
+                return new Scalar(properties);
+            };
+
+            /**
+             * Encodes the specified Scalar message. Does not implicitly {@link flyteidl.core.Scalar.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.Scalar
+             * @static
+             * @param {flyteidl.core.IScalar} message Scalar message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Scalar.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.primitive != null && message.hasOwnProperty("primitive"))
+                    $root.flyteidl.core.Primitive.encode(message.primitive, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.blob != null && message.hasOwnProperty("blob"))
+                    $root.flyteidl.core.Blob.encode(message.blob, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.binary != null && message.hasOwnProperty("binary"))
+                    $root.flyteidl.core.Binary.encode(message.binary, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.schema != null && message.hasOwnProperty("schema"))
+                    $root.flyteidl.core.Schema.encode(message.schema, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.noneType != null && message.hasOwnProperty("noneType"))
+                    $root.flyteidl.core.Void.encode(message.noneType, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.error != null && message.hasOwnProperty("error"))
+                    $root.flyteidl.core.Error.encode(message.error, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                if (message.generic != null && message.hasOwnProperty("generic"))
+                    $root.google.protobuf.Struct.encode(message.generic, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a Scalar message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.Scalar
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.Scalar} Scalar
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Scalar.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Scalar();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.primitive = $root.flyteidl.core.Primitive.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.blob = $root.flyteidl.core.Blob.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.binary = $root.flyteidl.core.Binary.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.schema = $root.flyteidl.core.Schema.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.noneType = $root.flyteidl.core.Void.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.error = $root.flyteidl.core.Error.decode(reader, reader.uint32());
+                        break;
+                    case 7:
+                        message.generic = $root.google.protobuf.Struct.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Scalar message.
+             * @function verify
+             * @memberof flyteidl.core.Scalar
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Scalar.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.primitive != null && message.hasOwnProperty("primitive")) {
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.Primitive.verify(message.primitive);
+                        if (error)
+                            return "primitive." + error;
+                    }
+                }
+                if (message.blob != null && message.hasOwnProperty("blob")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.Blob.verify(message.blob);
+                        if (error)
+                            return "blob." + error;
+                    }
+                }
+                if (message.binary != null && message.hasOwnProperty("binary")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.Binary.verify(message.binary);
+                        if (error)
+                            return "binary." + error;
+                    }
+                }
+                if (message.schema != null && message.hasOwnProperty("schema")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.Schema.verify(message.schema);
+                        if (error)
+                            return "schema." + error;
+                    }
+                }
+                if (message.noneType != null && message.hasOwnProperty("noneType")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.Void.verify(message.noneType);
+                        if (error)
+                            return "noneType." + error;
+                    }
+                }
+                if (message.error != null && message.hasOwnProperty("error")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.Error.verify(message.error);
+                        if (error)
+                            return "error." + error;
+                    }
+                }
+                if (message.generic != null && message.hasOwnProperty("generic")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.google.protobuf.Struct.verify(message.generic);
+                        if (error)
+                            return "generic." + error;
+                    }
+                }
+                return null;
+            };
+
+            return Scalar;
+        })();
+
+        core.Closure = (function() {
+
+            /**
+             * Properties of a Closure.
+             * @memberof flyteidl.core
+             * @interface IClosure
+             * @property {flyteidl.core.INode|null} [node] Closure node
+             * @property {Array.<flyteidl.core.ITaskTemplate>|null} [tasks] Closure tasks
+             * @property {Array.<flyteidl.core.IWorkflowTemplate>|null} [subWorkflows] Closure subWorkflows
+             */
+
+            /**
+             * Constructs a new Closure.
+             * @memberof flyteidl.core
+             * @classdesc Represents a Closure.
+             * @implements IClosure
+             * @constructor
+             * @param {flyteidl.core.IClosure=} [properties] Properties to set
+             */
+            function Closure(properties) {
+                this.tasks = [];
+                this.subWorkflows = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Closure node.
+             * @member {flyteidl.core.INode|null|undefined} node
+             * @memberof flyteidl.core.Closure
+             * @instance
+             */
+            Closure.prototype.node = null;
+
+            /**
+             * Closure tasks.
+             * @member {Array.<flyteidl.core.ITaskTemplate>} tasks
+             * @memberof flyteidl.core.Closure
+             * @instance
+             */
+            Closure.prototype.tasks = $util.emptyArray;
+
+            /**
+             * Closure subWorkflows.
+             * @member {Array.<flyteidl.core.IWorkflowTemplate>} subWorkflows
+             * @memberof flyteidl.core.Closure
+             * @instance
+             */
+            Closure.prototype.subWorkflows = $util.emptyArray;
+
+            /**
+             * Creates a new Closure instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.Closure
+             * @static
+             * @param {flyteidl.core.IClosure=} [properties] Properties to set
+             * @returns {flyteidl.core.Closure} Closure instance
+             */
+            Closure.create = function create(properties) {
+                return new Closure(properties);
+            };
+
+            /**
+             * Encodes the specified Closure message. Does not implicitly {@link flyteidl.core.Closure.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.Closure
+             * @static
+             * @param {flyteidl.core.IClosure} message Closure message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Closure.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.node != null && message.hasOwnProperty("node"))
+                    $root.flyteidl.core.Node.encode(message.node, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.tasks != null && message.tasks.length)
+                    for (let i = 0; i < message.tasks.length; ++i)
+                        $root.flyteidl.core.TaskTemplate.encode(message.tasks[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.subWorkflows != null && message.subWorkflows.length)
+                    for (let i = 0; i < message.subWorkflows.length; ++i)
+                        $root.flyteidl.core.WorkflowTemplate.encode(message.subWorkflows[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a Closure message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.Closure
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.Closure} Closure
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Closure.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Closure();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.node = $root.flyteidl.core.Node.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        if (!(message.tasks && message.tasks.length))
+                            message.tasks = [];
+                        message.tasks.push($root.flyteidl.core.TaskTemplate.decode(reader, reader.uint32()));
+                        break;
+                    case 3:
+                        if (!(message.subWorkflows && message.subWorkflows.length))
+                            message.subWorkflows = [];
+                        message.subWorkflows.push($root.flyteidl.core.WorkflowTemplate.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Closure message.
+             * @function verify
+             * @memberof flyteidl.core.Closure
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Closure.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.node != null && message.hasOwnProperty("node")) {
+                    let error = $root.flyteidl.core.Node.verify(message.node);
+                    if (error)
+                        return "node." + error;
+                }
+                if (message.tasks != null && message.hasOwnProperty("tasks")) {
+                    if (!Array.isArray(message.tasks))
+                        return "tasks: array expected";
+                    for (let i = 0; i < message.tasks.length; ++i) {
+                        let error = $root.flyteidl.core.TaskTemplate.verify(message.tasks[i]);
+                        if (error)
+                            return "tasks." + error;
+                    }
+                }
+                if (message.subWorkflows != null && message.hasOwnProperty("subWorkflows")) {
+                    if (!Array.isArray(message.subWorkflows))
+                        return "subWorkflows: array expected";
+                    for (let i = 0; i < message.subWorkflows.length; ++i) {
+                        let error = $root.flyteidl.core.WorkflowTemplate.verify(message.subWorkflows[i]);
+                        if (error)
+                            return "subWorkflows." + error;
+                    }
+                }
+                return null;
+            };
+
+            return Closure;
+        })();
+
+        core.Literal = (function() {
+
+            /**
+             * Properties of a Literal.
+             * @memberof flyteidl.core
+             * @interface ILiteral
+             * @property {flyteidl.core.IScalar|null} [scalar] Literal scalar
+             * @property {flyteidl.core.ILiteralCollection|null} [collection] Literal collection
+             * @property {flyteidl.core.ILiteralMap|null} [map] Literal map
+             * @property {flyteidl.core.IClosure|null} [closure] Literal closure
+             */
+
+            /**
+             * Constructs a new Literal.
+             * @memberof flyteidl.core
+             * @classdesc Represents a Literal.
+             * @implements ILiteral
+             * @constructor
+             * @param {flyteidl.core.ILiteral=} [properties] Properties to set
+             */
+            function Literal(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Literal scalar.
+             * @member {flyteidl.core.IScalar|null|undefined} scalar
+             * @memberof flyteidl.core.Literal
+             * @instance
+             */
+            Literal.prototype.scalar = null;
+
+            /**
+             * Literal collection.
+             * @member {flyteidl.core.ILiteralCollection|null|undefined} collection
+             * @memberof flyteidl.core.Literal
+             * @instance
+             */
+            Literal.prototype.collection = null;
+
+            /**
+             * Literal map.
+             * @member {flyteidl.core.ILiteralMap|null|undefined} map
+             * @memberof flyteidl.core.Literal
+             * @instance
+             */
+            Literal.prototype.map = null;
+
+            /**
+             * Literal closure.
+             * @member {flyteidl.core.IClosure|null|undefined} closure
+             * @memberof flyteidl.core.Literal
+             * @instance
+             */
+            Literal.prototype.closure = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * Literal value.
+             * @member {"scalar"|"collection"|"map"|"closure"|undefined} value
+             * @memberof flyteidl.core.Literal
+             * @instance
+             */
+            Object.defineProperty(Literal.prototype, "value", {
+                get: $util.oneOfGetter($oneOfFields = ["scalar", "collection", "map", "closure"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new Literal instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.Literal
+             * @static
+             * @param {flyteidl.core.ILiteral=} [properties] Properties to set
+             * @returns {flyteidl.core.Literal} Literal instance
+             */
+            Literal.create = function create(properties) {
+                return new Literal(properties);
+            };
+
+            /**
+             * Encodes the specified Literal message. Does not implicitly {@link flyteidl.core.Literal.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.Literal
+             * @static
+             * @param {flyteidl.core.ILiteral} message Literal message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Literal.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.scalar != null && message.hasOwnProperty("scalar"))
+                    $root.flyteidl.core.Scalar.encode(message.scalar, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.collection != null && message.hasOwnProperty("collection"))
+                    $root.flyteidl.core.LiteralCollection.encode(message.collection, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.map != null && message.hasOwnProperty("map"))
+                    $root.flyteidl.core.LiteralMap.encode(message.map, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.closure != null && message.hasOwnProperty("closure"))
+                    $root.flyteidl.core.Closure.encode(message.closure, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a Literal message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.Literal
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.Literal} Literal
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Literal.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Literal();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.scalar = $root.flyteidl.core.Scalar.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.collection = $root.flyteidl.core.LiteralCollection.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.map = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.closure = $root.flyteidl.core.Closure.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Literal message.
+             * @function verify
+             * @memberof flyteidl.core.Literal
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Literal.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.scalar != null && message.hasOwnProperty("scalar")) {
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.Scalar.verify(message.scalar);
+                        if (error)
+                            return "scalar." + error;
+                    }
+                }
+                if (message.collection != null && message.hasOwnProperty("collection")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.LiteralCollection.verify(message.collection);
+                        if (error)
+                            return "collection." + error;
+                    }
+                }
+                if (message.map != null && message.hasOwnProperty("map")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.LiteralMap.verify(message.map);
+                        if (error)
+                            return "map." + error;
+                    }
+                }
+                if (message.closure != null && message.hasOwnProperty("closure")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.Closure.verify(message.closure);
+                        if (error)
+                            return "closure." + error;
+                    }
+                }
+                return null;
+            };
+
+            return Literal;
+        })();
+
+        core.LiteralCollection = (function() {
+
+            /**
+             * Properties of a LiteralCollection.
+             * @memberof flyteidl.core
+             * @interface ILiteralCollection
+             * @property {Array.<flyteidl.core.ILiteral>|null} [literals] LiteralCollection literals
+             */
+
+            /**
+             * Constructs a new LiteralCollection.
+             * @memberof flyteidl.core
+             * @classdesc Represents a LiteralCollection.
+             * @implements ILiteralCollection
+             * @constructor
+             * @param {flyteidl.core.ILiteralCollection=} [properties] Properties to set
+             */
+            function LiteralCollection(properties) {
+                this.literals = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * LiteralCollection literals.
+             * @member {Array.<flyteidl.core.ILiteral>} literals
+             * @memberof flyteidl.core.LiteralCollection
+             * @instance
+             */
+            LiteralCollection.prototype.literals = $util.emptyArray;
+
+            /**
+             * Creates a new LiteralCollection instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.LiteralCollection
+             * @static
+             * @param {flyteidl.core.ILiteralCollection=} [properties] Properties to set
+             * @returns {flyteidl.core.LiteralCollection} LiteralCollection instance
+             */
+            LiteralCollection.create = function create(properties) {
+                return new LiteralCollection(properties);
+            };
+
+            /**
+             * Encodes the specified LiteralCollection message. Does not implicitly {@link flyteidl.core.LiteralCollection.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.LiteralCollection
+             * @static
+             * @param {flyteidl.core.ILiteralCollection} message LiteralCollection message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LiteralCollection.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.literals != null && message.literals.length)
+                    for (let i = 0; i < message.literals.length; ++i)
+                        $root.flyteidl.core.Literal.encode(message.literals[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a LiteralCollection message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.LiteralCollection
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.LiteralCollection} LiteralCollection
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LiteralCollection.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.LiteralCollection();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.literals && message.literals.length))
+                            message.literals = [];
+                        message.literals.push($root.flyteidl.core.Literal.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a LiteralCollection message.
+             * @function verify
+             * @memberof flyteidl.core.LiteralCollection
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            LiteralCollection.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.literals != null && message.hasOwnProperty("literals")) {
+                    if (!Array.isArray(message.literals))
+                        return "literals: array expected";
+                    for (let i = 0; i < message.literals.length; ++i) {
+                        let error = $root.flyteidl.core.Literal.verify(message.literals[i]);
+                        if (error)
+                            return "literals." + error;
+                    }
+                }
+                return null;
+            };
+
+            return LiteralCollection;
+        })();
+
+        core.LiteralMap = (function() {
+
+            /**
+             * Properties of a LiteralMap.
+             * @memberof flyteidl.core
+             * @interface ILiteralMap
+             * @property {Object.<string,flyteidl.core.ILiteral>|null} [literals] LiteralMap literals
+             */
+
+            /**
+             * Constructs a new LiteralMap.
+             * @memberof flyteidl.core
+             * @classdesc Represents a LiteralMap.
+             * @implements ILiteralMap
+             * @constructor
+             * @param {flyteidl.core.ILiteralMap=} [properties] Properties to set
+             */
+            function LiteralMap(properties) {
+                this.literals = {};
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * LiteralMap literals.
+             * @member {Object.<string,flyteidl.core.ILiteral>} literals
+             * @memberof flyteidl.core.LiteralMap
+             * @instance
+             */
+            LiteralMap.prototype.literals = $util.emptyObject;
+
+            /**
+             * Creates a new LiteralMap instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.LiteralMap
+             * @static
+             * @param {flyteidl.core.ILiteralMap=} [properties] Properties to set
+             * @returns {flyteidl.core.LiteralMap} LiteralMap instance
+             */
+            LiteralMap.create = function create(properties) {
+                return new LiteralMap(properties);
+            };
+
+            /**
+             * Encodes the specified LiteralMap message. Does not implicitly {@link flyteidl.core.LiteralMap.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.LiteralMap
+             * @static
+             * @param {flyteidl.core.ILiteralMap} message LiteralMap message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LiteralMap.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.literals != null && message.hasOwnProperty("literals"))
+                    for (let keys = Object.keys(message.literals), i = 0; i < keys.length; ++i) {
+                        writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                        $root.flyteidl.core.Literal.encode(message.literals[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                    }
+                return writer;
+            };
+
+            /**
+             * Decodes a LiteralMap message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.LiteralMap
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.LiteralMap} LiteralMap
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LiteralMap.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.LiteralMap(), key;
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        reader.skip().pos++;
+                        if (message.literals === $util.emptyObject)
+                            message.literals = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.literals[key] = $root.flyteidl.core.Literal.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a LiteralMap message.
+             * @function verify
+             * @memberof flyteidl.core.LiteralMap
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            LiteralMap.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.literals != null && message.hasOwnProperty("literals")) {
+                    if (!$util.isObject(message.literals))
+                        return "literals: object expected";
+                    let key = Object.keys(message.literals);
+                    for (let i = 0; i < key.length; ++i) {
+                        let error = $root.flyteidl.core.Literal.verify(message.literals[key[i]]);
+                        if (error)
+                            return "literals." + error;
+                    }
+                }
+                return null;
+            };
+
+            return LiteralMap;
+        })();
+
+        core.BindingDataCollection = (function() {
+
+            /**
+             * Properties of a BindingDataCollection.
+             * @memberof flyteidl.core
+             * @interface IBindingDataCollection
+             * @property {Array.<flyteidl.core.IBindingData>|null} [bindings] BindingDataCollection bindings
+             */
+
+            /**
+             * Constructs a new BindingDataCollection.
+             * @memberof flyteidl.core
+             * @classdesc Represents a BindingDataCollection.
+             * @implements IBindingDataCollection
+             * @constructor
+             * @param {flyteidl.core.IBindingDataCollection=} [properties] Properties to set
+             */
+            function BindingDataCollection(properties) {
+                this.bindings = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * BindingDataCollection bindings.
+             * @member {Array.<flyteidl.core.IBindingData>} bindings
+             * @memberof flyteidl.core.BindingDataCollection
+             * @instance
+             */
+            BindingDataCollection.prototype.bindings = $util.emptyArray;
+
+            /**
+             * Creates a new BindingDataCollection instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.BindingDataCollection
+             * @static
+             * @param {flyteidl.core.IBindingDataCollection=} [properties] Properties to set
+             * @returns {flyteidl.core.BindingDataCollection} BindingDataCollection instance
+             */
+            BindingDataCollection.create = function create(properties) {
+                return new BindingDataCollection(properties);
+            };
+
+            /**
+             * Encodes the specified BindingDataCollection message. Does not implicitly {@link flyteidl.core.BindingDataCollection.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.BindingDataCollection
+             * @static
+             * @param {flyteidl.core.IBindingDataCollection} message BindingDataCollection message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            BindingDataCollection.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.bindings != null && message.bindings.length)
+                    for (let i = 0; i < message.bindings.length; ++i)
+                        $root.flyteidl.core.BindingData.encode(message.bindings[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a BindingDataCollection message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.BindingDataCollection
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.BindingDataCollection} BindingDataCollection
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            BindingDataCollection.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.BindingDataCollection();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.bindings && message.bindings.length))
+                            message.bindings = [];
+                        message.bindings.push($root.flyteidl.core.BindingData.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a BindingDataCollection message.
+             * @function verify
+             * @memberof flyteidl.core.BindingDataCollection
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            BindingDataCollection.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.bindings != null && message.hasOwnProperty("bindings")) {
+                    if (!Array.isArray(message.bindings))
+                        return "bindings: array expected";
+                    for (let i = 0; i < message.bindings.length; ++i) {
+                        let error = $root.flyteidl.core.BindingData.verify(message.bindings[i]);
+                        if (error)
+                            return "bindings." + error;
+                    }
+                }
+                return null;
+            };
+
+            return BindingDataCollection;
+        })();
+
+        core.BindingDataMap = (function() {
+
+            /**
+             * Properties of a BindingDataMap.
+             * @memberof flyteidl.core
+             * @interface IBindingDataMap
+             * @property {Object.<string,flyteidl.core.IBindingData>|null} [bindings] BindingDataMap bindings
+             */
+
+            /**
+             * Constructs a new BindingDataMap.
+             * @memberof flyteidl.core
+             * @classdesc Represents a BindingDataMap.
+             * @implements IBindingDataMap
+             * @constructor
+             * @param {flyteidl.core.IBindingDataMap=} [properties] Properties to set
+             */
+            function BindingDataMap(properties) {
+                this.bindings = {};
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * BindingDataMap bindings.
+             * @member {Object.<string,flyteidl.core.IBindingData>} bindings
+             * @memberof flyteidl.core.BindingDataMap
+             * @instance
+             */
+            BindingDataMap.prototype.bindings = $util.emptyObject;
+
+            /**
+             * Creates a new BindingDataMap instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.BindingDataMap
+             * @static
+             * @param {flyteidl.core.IBindingDataMap=} [properties] Properties to set
+             * @returns {flyteidl.core.BindingDataMap} BindingDataMap instance
+             */
+            BindingDataMap.create = function create(properties) {
+                return new BindingDataMap(properties);
+            };
+
+            /**
+             * Encodes the specified BindingDataMap message. Does not implicitly {@link flyteidl.core.BindingDataMap.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.BindingDataMap
+             * @static
+             * @param {flyteidl.core.IBindingDataMap} message BindingDataMap message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            BindingDataMap.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.bindings != null && message.hasOwnProperty("bindings"))
+                    for (let keys = Object.keys(message.bindings), i = 0; i < keys.length; ++i) {
+                        writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                        $root.flyteidl.core.BindingData.encode(message.bindings[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                    }
+                return writer;
+            };
+
+            /**
+             * Decodes a BindingDataMap message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.BindingDataMap
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.BindingDataMap} BindingDataMap
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            BindingDataMap.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.BindingDataMap(), key;
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        reader.skip().pos++;
+                        if (message.bindings === $util.emptyObject)
+                            message.bindings = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.bindings[key] = $root.flyteidl.core.BindingData.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a BindingDataMap message.
+             * @function verify
+             * @memberof flyteidl.core.BindingDataMap
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            BindingDataMap.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.bindings != null && message.hasOwnProperty("bindings")) {
+                    if (!$util.isObject(message.bindings))
+                        return "bindings: object expected";
+                    let key = Object.keys(message.bindings);
+                    for (let i = 0; i < key.length; ++i) {
+                        let error = $root.flyteidl.core.BindingData.verify(message.bindings[key[i]]);
+                        if (error)
+                            return "bindings." + error;
+                    }
+                }
+                return null;
+            };
+
+            return BindingDataMap;
+        })();
+
+        core.BindingData = (function() {
+
+            /**
+             * Properties of a BindingData.
+             * @memberof flyteidl.core
+             * @interface IBindingData
+             * @property {flyteidl.core.IScalar|null} [scalar] BindingData scalar
+             * @property {flyteidl.core.IBindingDataCollection|null} [collection] BindingData collection
+             * @property {flyteidl.core.IOutputReference|null} [promise] BindingData promise
+             * @property {flyteidl.core.IBindingDataMap|null} [map] BindingData map
+             * @property {flyteidl.core.IClosure|null} [closure] BindingData closure
+             */
+
+            /**
+             * Constructs a new BindingData.
+             * @memberof flyteidl.core
+             * @classdesc Represents a BindingData.
+             * @implements IBindingData
+             * @constructor
+             * @param {flyteidl.core.IBindingData=} [properties] Properties to set
+             */
+            function BindingData(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * BindingData scalar.
+             * @member {flyteidl.core.IScalar|null|undefined} scalar
+             * @memberof flyteidl.core.BindingData
+             * @instance
+             */
+            BindingData.prototype.scalar = null;
+
+            /**
+             * BindingData collection.
+             * @member {flyteidl.core.IBindingDataCollection|null|undefined} collection
+             * @memberof flyteidl.core.BindingData
+             * @instance
+             */
+            BindingData.prototype.collection = null;
+
+            /**
+             * BindingData promise.
+             * @member {flyteidl.core.IOutputReference|null|undefined} promise
+             * @memberof flyteidl.core.BindingData
+             * @instance
+             */
+            BindingData.prototype.promise = null;
+
+            /**
+             * BindingData map.
+             * @member {flyteidl.core.IBindingDataMap|null|undefined} map
+             * @memberof flyteidl.core.BindingData
+             * @instance
+             */
+            BindingData.prototype.map = null;
+
+            /**
+             * BindingData closure.
+             * @member {flyteidl.core.IClosure|null|undefined} closure
+             * @memberof flyteidl.core.BindingData
+             * @instance
+             */
+            BindingData.prototype.closure = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * BindingData value.
+             * @member {"scalar"|"collection"|"promise"|"map"|"closure"|undefined} value
+             * @memberof flyteidl.core.BindingData
+             * @instance
+             */
+            Object.defineProperty(BindingData.prototype, "value", {
+                get: $util.oneOfGetter($oneOfFields = ["scalar", "collection", "promise", "map", "closure"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new BindingData instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.BindingData
+             * @static
+             * @param {flyteidl.core.IBindingData=} [properties] Properties to set
+             * @returns {flyteidl.core.BindingData} BindingData instance
+             */
+            BindingData.create = function create(properties) {
+                return new BindingData(properties);
+            };
+
+            /**
+             * Encodes the specified BindingData message. Does not implicitly {@link flyteidl.core.BindingData.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.BindingData
+             * @static
+             * @param {flyteidl.core.IBindingData} message BindingData message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            BindingData.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.scalar != null && message.hasOwnProperty("scalar"))
+                    $root.flyteidl.core.Scalar.encode(message.scalar, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.collection != null && message.hasOwnProperty("collection"))
+                    $root.flyteidl.core.BindingDataCollection.encode(message.collection, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.promise != null && message.hasOwnProperty("promise"))
+                    $root.flyteidl.core.OutputReference.encode(message.promise, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.map != null && message.hasOwnProperty("map"))
+                    $root.flyteidl.core.BindingDataMap.encode(message.map, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.closure != null && message.hasOwnProperty("closure"))
+                    $root.flyteidl.core.Closure.encode(message.closure, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a BindingData message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.BindingData
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.BindingData} BindingData
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            BindingData.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.BindingData();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.scalar = $root.flyteidl.core.Scalar.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.collection = $root.flyteidl.core.BindingDataCollection.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.promise = $root.flyteidl.core.OutputReference.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.map = $root.flyteidl.core.BindingDataMap.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.closure = $root.flyteidl.core.Closure.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a BindingData message.
+             * @function verify
+             * @memberof flyteidl.core.BindingData
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            BindingData.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.scalar != null && message.hasOwnProperty("scalar")) {
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.Scalar.verify(message.scalar);
+                        if (error)
+                            return "scalar." + error;
+                    }
+                }
+                if (message.collection != null && message.hasOwnProperty("collection")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.BindingDataCollection.verify(message.collection);
+                        if (error)
+                            return "collection." + error;
+                    }
+                }
+                if (message.promise != null && message.hasOwnProperty("promise")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.OutputReference.verify(message.promise);
+                        if (error)
+                            return "promise." + error;
+                    }
+                }
+                if (message.map != null && message.hasOwnProperty("map")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.BindingDataMap.verify(message.map);
+                        if (error)
+                            return "map." + error;
+                    }
+                }
+                if (message.closure != null && message.hasOwnProperty("closure")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.Closure.verify(message.closure);
+                        if (error)
+                            return "closure." + error;
+                    }
+                }
+                return null;
+            };
+
+            return BindingData;
+        })();
+
+        core.Binding = (function() {
+
+            /**
+             * Properties of a Binding.
+             * @memberof flyteidl.core
+             * @interface IBinding
+             * @property {string|null} ["var"] Binding var
+             * @property {flyteidl.core.IBindingData|null} [binding] Binding binding
+             */
+
+            /**
+             * Constructs a new Binding.
+             * @memberof flyteidl.core
+             * @classdesc Represents a Binding.
+             * @implements IBinding
+             * @constructor
+             * @param {flyteidl.core.IBinding=} [properties] Properties to set
+             */
+            function Binding(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Binding var.
+             * @member {string} var
+             * @memberof flyteidl.core.Binding
+             * @instance
+             */
+            Binding.prototype["var"] = "";
+
+            /**
+             * Binding binding.
+             * @member {flyteidl.core.IBindingData|null|undefined} binding
+             * @memberof flyteidl.core.Binding
+             * @instance
+             */
+            Binding.prototype.binding = null;
+
+            /**
+             * Creates a new Binding instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.Binding
+             * @static
+             * @param {flyteidl.core.IBinding=} [properties] Properties to set
+             * @returns {flyteidl.core.Binding} Binding instance
+             */
+            Binding.create = function create(properties) {
+                return new Binding(properties);
+            };
+
+            /**
+             * Encodes the specified Binding message. Does not implicitly {@link flyteidl.core.Binding.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.Binding
+             * @static
+             * @param {flyteidl.core.IBinding} message Binding message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Binding.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message["var"] != null && message.hasOwnProperty("var"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message["var"]);
+                if (message.binding != null && message.hasOwnProperty("binding"))
+                    $root.flyteidl.core.BindingData.encode(message.binding, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a Binding message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.Binding
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.Binding} Binding
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Binding.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Binding();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message["var"] = reader.string();
+                        break;
+                    case 2:
+                        message.binding = $root.flyteidl.core.BindingData.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Binding message.
+             * @function verify
+             * @memberof flyteidl.core.Binding
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Binding.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message["var"] != null && message.hasOwnProperty("var"))
+                    if (!$util.isString(message["var"]))
+                        return "var: string expected";
+                if (message.binding != null && message.hasOwnProperty("binding")) {
+                    let error = $root.flyteidl.core.BindingData.verify(message.binding);
+                    if (error)
+                        return "binding." + error;
+                }
+                return null;
+            };
+
+            return Binding;
+        })();
+
+        core.IfBlock = (function() {
+
+            /**
+             * Properties of an IfBlock.
+             * @memberof flyteidl.core
+             * @interface IIfBlock
+             * @property {flyteidl.core.IBooleanExpression|null} [condition] IfBlock condition
+             * @property {flyteidl.core.INode|null} [thenNode] IfBlock thenNode
+             */
+
+            /**
+             * Constructs a new IfBlock.
+             * @memberof flyteidl.core
+             * @classdesc Represents an IfBlock.
+             * @implements IIfBlock
+             * @constructor
+             * @param {flyteidl.core.IIfBlock=} [properties] Properties to set
+             */
+            function IfBlock(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * IfBlock condition.
+             * @member {flyteidl.core.IBooleanExpression|null|undefined} condition
+             * @memberof flyteidl.core.IfBlock
+             * @instance
+             */
+            IfBlock.prototype.condition = null;
+
+            /**
+             * IfBlock thenNode.
+             * @member {flyteidl.core.INode|null|undefined} thenNode
+             * @memberof flyteidl.core.IfBlock
+             * @instance
+             */
+            IfBlock.prototype.thenNode = null;
+
+            /**
+             * Creates a new IfBlock instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.IfBlock
+             * @static
+             * @param {flyteidl.core.IIfBlock=} [properties] Properties to set
+             * @returns {flyteidl.core.IfBlock} IfBlock instance
+             */
+            IfBlock.create = function create(properties) {
+                return new IfBlock(properties);
+            };
+
+            /**
+             * Encodes the specified IfBlock message. Does not implicitly {@link flyteidl.core.IfBlock.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.IfBlock
+             * @static
+             * @param {flyteidl.core.IIfBlock} message IfBlock message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            IfBlock.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.condition != null && message.hasOwnProperty("condition"))
+                    $root.flyteidl.core.BooleanExpression.encode(message.condition, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.thenNode != null && message.hasOwnProperty("thenNode"))
+                    $root.flyteidl.core.Node.encode(message.thenNode, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes an IfBlock message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.IfBlock
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.IfBlock} IfBlock
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            IfBlock.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.IfBlock();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.condition = $root.flyteidl.core.BooleanExpression.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.thenNode = $root.flyteidl.core.Node.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an IfBlock message.
+             * @function verify
+             * @memberof flyteidl.core.IfBlock
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            IfBlock.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.condition != null && message.hasOwnProperty("condition")) {
+                    let error = $root.flyteidl.core.BooleanExpression.verify(message.condition);
+                    if (error)
+                        return "condition." + error;
+                }
+                if (message.thenNode != null && message.hasOwnProperty("thenNode")) {
+                    let error = $root.flyteidl.core.Node.verify(message.thenNode);
+                    if (error)
+                        return "thenNode." + error;
+                }
+                return null;
+            };
+
+            return IfBlock;
+        })();
+
+        core.IfElseBlock = (function() {
+
+            /**
+             * Properties of an IfElseBlock.
+             * @memberof flyteidl.core
+             * @interface IIfElseBlock
+             * @property {flyteidl.core.IIfBlock|null} ["case"] IfElseBlock case
+             * @property {Array.<flyteidl.core.IIfBlock>|null} [other] IfElseBlock other
+             * @property {flyteidl.core.INode|null} [elseNode] IfElseBlock elseNode
+             * @property {flyteidl.core.IError|null} [error] IfElseBlock error
+             */
+
+            /**
+             * Constructs a new IfElseBlock.
+             * @memberof flyteidl.core
+             * @classdesc Represents an IfElseBlock.
+             * @implements IIfElseBlock
+             * @constructor
+             * @param {flyteidl.core.IIfElseBlock=} [properties] Properties to set
+             */
+            function IfElseBlock(properties) {
+                this.other = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * IfElseBlock case.
+             * @member {flyteidl.core.IIfBlock|null|undefined} case
+             * @memberof flyteidl.core.IfElseBlock
+             * @instance
+             */
+            IfElseBlock.prototype["case"] = null;
+
+            /**
+             * IfElseBlock other.
+             * @member {Array.<flyteidl.core.IIfBlock>} other
+             * @memberof flyteidl.core.IfElseBlock
+             * @instance
+             */
+            IfElseBlock.prototype.other = $util.emptyArray;
+
+            /**
+             * IfElseBlock elseNode.
+             * @member {flyteidl.core.INode|null|undefined} elseNode
+             * @memberof flyteidl.core.IfElseBlock
+             * @instance
+             */
+            IfElseBlock.prototype.elseNode = null;
+
+            /**
+             * IfElseBlock error.
+             * @member {flyteidl.core.IError|null|undefined} error
+             * @memberof flyteidl.core.IfElseBlock
+             * @instance
+             */
+            IfElseBlock.prototype.error = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * IfElseBlock default.
+             * @member {"elseNode"|"error"|undefined} default_
+             * @memberof flyteidl.core.IfElseBlock
+             * @instance
+             */
+            Object.defineProperty(IfElseBlock.prototype, "default", {
+                get: $util.oneOfGetter($oneOfFields = ["elseNode", "error"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new IfElseBlock instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.IfElseBlock
+             * @static
+             * @param {flyteidl.core.IIfElseBlock=} [properties] Properties to set
+             * @returns {flyteidl.core.IfElseBlock} IfElseBlock instance
+             */
+            IfElseBlock.create = function create(properties) {
+                return new IfElseBlock(properties);
+            };
+
+            /**
+             * Encodes the specified IfElseBlock message. Does not implicitly {@link flyteidl.core.IfElseBlock.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.IfElseBlock
+             * @static
+             * @param {flyteidl.core.IIfElseBlock} message IfElseBlock message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            IfElseBlock.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message["case"] != null && message.hasOwnProperty("case"))
+                    $root.flyteidl.core.IfBlock.encode(message["case"], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.other != null && message.other.length)
+                    for (let i = 0; i < message.other.length; ++i)
+                        $root.flyteidl.core.IfBlock.encode(message.other[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.elseNode != null && message.hasOwnProperty("elseNode"))
+                    $root.flyteidl.core.Node.encode(message.elseNode, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.error != null && message.hasOwnProperty("error"))
+                    $root.flyteidl.core.Error.encode(message.error, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes an IfElseBlock message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.IfElseBlock
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.IfElseBlock} IfElseBlock
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            IfElseBlock.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.IfElseBlock();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message["case"] = $root.flyteidl.core.IfBlock.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        if (!(message.other && message.other.length))
+                            message.other = [];
+                        message.other.push($root.flyteidl.core.IfBlock.decode(reader, reader.uint32()));
+                        break;
+                    case 3:
+                        message.elseNode = $root.flyteidl.core.Node.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.error = $root.flyteidl.core.Error.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an IfElseBlock message.
+             * @function verify
+             * @memberof flyteidl.core.IfElseBlock
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            IfElseBlock.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message["case"] != null && message.hasOwnProperty("case")) {
+                    let error = $root.flyteidl.core.IfBlock.verify(message["case"]);
+                    if (error)
+                        return "case." + error;
+                }
+                if (message.other != null && message.hasOwnProperty("other")) {
+                    if (!Array.isArray(message.other))
+                        return "other: array expected";
+                    for (let i = 0; i < message.other.length; ++i) {
+                        let error = $root.flyteidl.core.IfBlock.verify(message.other[i]);
+                        if (error)
+                            return "other." + error;
+                    }
+                }
+                if (message.elseNode != null && message.hasOwnProperty("elseNode")) {
+                    properties["default"] = 1;
+                    {
+                        let error = $root.flyteidl.core.Node.verify(message.elseNode);
+                        if (error)
+                            return "elseNode." + error;
+                    }
+                }
+                if (message.error != null && message.hasOwnProperty("error")) {
+                    if (properties["default"] === 1)
+                        return "default: multiple values";
+                    properties["default"] = 1;
+                    {
+                        let error = $root.flyteidl.core.Error.verify(message.error);
+                        if (error)
+                            return "error." + error;
+                    }
+                }
+                return null;
+            };
+
+            return IfElseBlock;
+        })();
+
+        core.BranchNode = (function() {
+
+            /**
+             * Properties of a BranchNode.
+             * @memberof flyteidl.core
+             * @interface IBranchNode
+             * @property {flyteidl.core.IIfElseBlock|null} [ifElse] BranchNode ifElse
+             */
+
+            /**
+             * Constructs a new BranchNode.
+             * @memberof flyteidl.core
+             * @classdesc Represents a BranchNode.
+             * @implements IBranchNode
+             * @constructor
+             * @param {flyteidl.core.IBranchNode=} [properties] Properties to set
+             */
+            function BranchNode(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * BranchNode ifElse.
+             * @member {flyteidl.core.IIfElseBlock|null|undefined} ifElse
+             * @memberof flyteidl.core.BranchNode
+             * @instance
+             */
+            BranchNode.prototype.ifElse = null;
+
+            /**
+             * Creates a new BranchNode instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.BranchNode
+             * @static
+             * @param {flyteidl.core.IBranchNode=} [properties] Properties to set
+             * @returns {flyteidl.core.BranchNode} BranchNode instance
+             */
+            BranchNode.create = function create(properties) {
+                return new BranchNode(properties);
+            };
+
+            /**
+             * Encodes the specified BranchNode message. Does not implicitly {@link flyteidl.core.BranchNode.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.BranchNode
+             * @static
+             * @param {flyteidl.core.IBranchNode} message BranchNode message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            BranchNode.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.ifElse != null && message.hasOwnProperty("ifElse"))
+                    $root.flyteidl.core.IfElseBlock.encode(message.ifElse, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a BranchNode message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.BranchNode
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.BranchNode} BranchNode
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            BranchNode.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.BranchNode();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.ifElse = $root.flyteidl.core.IfElseBlock.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a BranchNode message.
+             * @function verify
+             * @memberof flyteidl.core.BranchNode
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            BranchNode.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.ifElse != null && message.hasOwnProperty("ifElse")) {
+                    let error = $root.flyteidl.core.IfElseBlock.verify(message.ifElse);
+                    if (error)
+                        return "ifElse." + error;
+                }
+                return null;
+            };
+
+            return BranchNode;
+        })();
+
+        core.ClosureNode = (function() {
+
+            /**
+             * Properties of a ClosureNode.
+             * @memberof flyteidl.core
+             * @interface IClosureNode
+             * @property {flyteidl.core.IClosureType|null} [closureType] ClosureNode closureType
+             */
+
+            /**
+             * Constructs a new ClosureNode.
+             * @memberof flyteidl.core
+             * @classdesc Represents a ClosureNode.
+             * @implements IClosureNode
+             * @constructor
+             * @param {flyteidl.core.IClosureNode=} [properties] Properties to set
+             */
+            function ClosureNode(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ClosureNode closureType.
+             * @member {flyteidl.core.IClosureType|null|undefined} closureType
+             * @memberof flyteidl.core.ClosureNode
+             * @instance
+             */
+            ClosureNode.prototype.closureType = null;
+
+            /**
+             * Creates a new ClosureNode instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.ClosureNode
+             * @static
+             * @param {flyteidl.core.IClosureNode=} [properties] Properties to set
+             * @returns {flyteidl.core.ClosureNode} ClosureNode instance
+             */
+            ClosureNode.create = function create(properties) {
+                return new ClosureNode(properties);
+            };
+
+            /**
+             * Encodes the specified ClosureNode message. Does not implicitly {@link flyteidl.core.ClosureNode.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.ClosureNode
+             * @static
+             * @param {flyteidl.core.IClosureNode} message ClosureNode message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ClosureNode.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.closureType != null && message.hasOwnProperty("closureType"))
+                    $root.flyteidl.core.ClosureType.encode(message.closureType, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a ClosureNode message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.ClosureNode
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.ClosureNode} ClosureNode
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ClosureNode.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ClosureNode();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.closureType = $root.flyteidl.core.ClosureType.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ClosureNode message.
+             * @function verify
+             * @memberof flyteidl.core.ClosureNode
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ClosureNode.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.closureType != null && message.hasOwnProperty("closureType")) {
+                    let error = $root.flyteidl.core.ClosureType.verify(message.closureType);
+                    if (error)
+                        return "closureType." + error;
+                }
+                return null;
+            };
+
+            return ClosureNode;
+        })();
+
+        core.TaskNode = (function() {
+
+            /**
+             * Properties of a TaskNode.
+             * @memberof flyteidl.core
+             * @interface ITaskNode
+             * @property {flyteidl.core.IIdentifier|null} [referenceId] TaskNode referenceId
+             */
+
+            /**
+             * Constructs a new TaskNode.
+             * @memberof flyteidl.core
+             * @classdesc Represents a TaskNode.
+             * @implements ITaskNode
+             * @constructor
+             * @param {flyteidl.core.ITaskNode=} [properties] Properties to set
+             */
+            function TaskNode(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TaskNode referenceId.
+             * @member {flyteidl.core.IIdentifier|null|undefined} referenceId
+             * @memberof flyteidl.core.TaskNode
+             * @instance
+             */
+            TaskNode.prototype.referenceId = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * TaskNode reference.
+             * @member {"referenceId"|undefined} reference
+             * @memberof flyteidl.core.TaskNode
+             * @instance
+             */
+            Object.defineProperty(TaskNode.prototype, "reference", {
+                get: $util.oneOfGetter($oneOfFields = ["referenceId"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new TaskNode instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.TaskNode
+             * @static
+             * @param {flyteidl.core.ITaskNode=} [properties] Properties to set
+             * @returns {flyteidl.core.TaskNode} TaskNode instance
+             */
+            TaskNode.create = function create(properties) {
+                return new TaskNode(properties);
+            };
+
+            /**
+             * Encodes the specified TaskNode message. Does not implicitly {@link flyteidl.core.TaskNode.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.TaskNode
+             * @static
+             * @param {flyteidl.core.ITaskNode} message TaskNode message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TaskNode.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.referenceId != null && message.hasOwnProperty("referenceId"))
+                    $root.flyteidl.core.Identifier.encode(message.referenceId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a TaskNode message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.TaskNode
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.TaskNode} TaskNode
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TaskNode.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.TaskNode();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.referenceId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a TaskNode message.
+             * @function verify
+             * @memberof flyteidl.core.TaskNode
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TaskNode.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.referenceId != null && message.hasOwnProperty("referenceId")) {
+                    properties.reference = 1;
+                    {
+                        let error = $root.flyteidl.core.Identifier.verify(message.referenceId);
+                        if (error)
+                            return "referenceId." + error;
+                    }
+                }
+                return null;
+            };
+
+            return TaskNode;
+        })();
+
+        core.WorkflowNode = (function() {
+
+            /**
+             * Properties of a WorkflowNode.
+             * @memberof flyteidl.core
+             * @interface IWorkflowNode
+             * @property {flyteidl.core.IIdentifier|null} [launchplanRef] WorkflowNode launchplanRef
+             * @property {flyteidl.core.IIdentifier|null} [subWorkflowRef] WorkflowNode subWorkflowRef
+             */
+
+            /**
+             * Constructs a new WorkflowNode.
+             * @memberof flyteidl.core
+             * @classdesc Represents a WorkflowNode.
+             * @implements IWorkflowNode
+             * @constructor
+             * @param {flyteidl.core.IWorkflowNode=} [properties] Properties to set
+             */
+            function WorkflowNode(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * WorkflowNode launchplanRef.
+             * @member {flyteidl.core.IIdentifier|null|undefined} launchplanRef
+             * @memberof flyteidl.core.WorkflowNode
+             * @instance
+             */
+            WorkflowNode.prototype.launchplanRef = null;
+
+            /**
+             * WorkflowNode subWorkflowRef.
+             * @member {flyteidl.core.IIdentifier|null|undefined} subWorkflowRef
+             * @memberof flyteidl.core.WorkflowNode
+             * @instance
+             */
+            WorkflowNode.prototype.subWorkflowRef = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * WorkflowNode reference.
+             * @member {"launchplanRef"|"subWorkflowRef"|undefined} reference
+             * @memberof flyteidl.core.WorkflowNode
+             * @instance
+             */
+            Object.defineProperty(WorkflowNode.prototype, "reference", {
+                get: $util.oneOfGetter($oneOfFields = ["launchplanRef", "subWorkflowRef"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new WorkflowNode instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.WorkflowNode
+             * @static
+             * @param {flyteidl.core.IWorkflowNode=} [properties] Properties to set
+             * @returns {flyteidl.core.WorkflowNode} WorkflowNode instance
+             */
+            WorkflowNode.create = function create(properties) {
+                return new WorkflowNode(properties);
+            };
+
+            /**
+             * Encodes the specified WorkflowNode message. Does not implicitly {@link flyteidl.core.WorkflowNode.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.WorkflowNode
+             * @static
+             * @param {flyteidl.core.IWorkflowNode} message WorkflowNode message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            WorkflowNode.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.launchplanRef != null && message.hasOwnProperty("launchplanRef"))
+                    $root.flyteidl.core.Identifier.encode(message.launchplanRef, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.subWorkflowRef != null && message.hasOwnProperty("subWorkflowRef"))
+                    $root.flyteidl.core.Identifier.encode(message.subWorkflowRef, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a WorkflowNode message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.WorkflowNode
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.WorkflowNode} WorkflowNode
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            WorkflowNode.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.WorkflowNode();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.launchplanRef = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.subWorkflowRef = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a WorkflowNode message.
+             * @function verify
+             * @memberof flyteidl.core.WorkflowNode
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            WorkflowNode.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.launchplanRef != null && message.hasOwnProperty("launchplanRef")) {
+                    properties.reference = 1;
+                    {
+                        let error = $root.flyteidl.core.Identifier.verify(message.launchplanRef);
+                        if (error)
+                            return "launchplanRef." + error;
+                    }
+                }
+                if (message.subWorkflowRef != null && message.hasOwnProperty("subWorkflowRef")) {
+                    if (properties.reference === 1)
+                        return "reference: multiple values";
+                    properties.reference = 1;
+                    {
+                        let error = $root.flyteidl.core.Identifier.verify(message.subWorkflowRef);
+                        if (error)
+                            return "subWorkflowRef." + error;
+                    }
+                }
+                return null;
+            };
+
+            return WorkflowNode;
+        })();
+
+        core.NodeMetadata = (function() {
+
+            /**
+             * Properties of a NodeMetadata.
+             * @memberof flyteidl.core
+             * @interface INodeMetadata
+             * @property {string|null} [name] NodeMetadata name
+             * @property {google.protobuf.IDuration|null} [timeout] NodeMetadata timeout
+             * @property {flyteidl.core.IRetryStrategy|null} [retries] NodeMetadata retries
+             */
+
+            /**
+             * Constructs a new NodeMetadata.
+             * @memberof flyteidl.core
+             * @classdesc Represents a NodeMetadata.
+             * @implements INodeMetadata
+             * @constructor
+             * @param {flyteidl.core.INodeMetadata=} [properties] Properties to set
+             */
+            function NodeMetadata(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * NodeMetadata name.
+             * @member {string} name
+             * @memberof flyteidl.core.NodeMetadata
+             * @instance
+             */
+            NodeMetadata.prototype.name = "";
+
+            /**
+             * NodeMetadata timeout.
+             * @member {google.protobuf.IDuration|null|undefined} timeout
+             * @memberof flyteidl.core.NodeMetadata
+             * @instance
+             */
+            NodeMetadata.prototype.timeout = null;
+
+            /**
+             * NodeMetadata retries.
+             * @member {flyteidl.core.IRetryStrategy|null|undefined} retries
+             * @memberof flyteidl.core.NodeMetadata
+             * @instance
+             */
+            NodeMetadata.prototype.retries = null;
+
+            /**
+             * Creates a new NodeMetadata instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.NodeMetadata
+             * @static
+             * @param {flyteidl.core.INodeMetadata=} [properties] Properties to set
+             * @returns {flyteidl.core.NodeMetadata} NodeMetadata instance
+             */
+            NodeMetadata.create = function create(properties) {
+                return new NodeMetadata(properties);
+            };
+
+            /**
+             * Encodes the specified NodeMetadata message. Does not implicitly {@link flyteidl.core.NodeMetadata.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.NodeMetadata
+             * @static
+             * @param {flyteidl.core.INodeMetadata} message NodeMetadata message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            NodeMetadata.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+                if (message.timeout != null && message.hasOwnProperty("timeout"))
+                    $root.google.protobuf.Duration.encode(message.timeout, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.retries != null && message.hasOwnProperty("retries"))
+                    $root.flyteidl.core.RetryStrategy.encode(message.retries, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a NodeMetadata message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.NodeMetadata
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.NodeMetadata} NodeMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            NodeMetadata.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.NodeMetadata();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.name = reader.string();
+                        break;
+                    case 4:
+                        message.timeout = $root.google.protobuf.Duration.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.retries = $root.flyteidl.core.RetryStrategy.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a NodeMetadata message.
+             * @function verify
+             * @memberof flyteidl.core.NodeMetadata
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            NodeMetadata.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                if (message.timeout != null && message.hasOwnProperty("timeout")) {
+                    let error = $root.google.protobuf.Duration.verify(message.timeout);
+                    if (error)
+                        return "timeout." + error;
+                }
+                if (message.retries != null && message.hasOwnProperty("retries")) {
+                    let error = $root.flyteidl.core.RetryStrategy.verify(message.retries);
+                    if (error)
+                        return "retries." + error;
+                }
+                return null;
+            };
+
+            return NodeMetadata;
+        })();
+
+        core.Alias = (function() {
+
+            /**
+             * Properties of an Alias.
+             * @memberof flyteidl.core
+             * @interface IAlias
+             * @property {string|null} ["var"] Alias var
+             * @property {string|null} [alias] Alias alias
+             */
+
+            /**
+             * Constructs a new Alias.
+             * @memberof flyteidl.core
+             * @classdesc Represents an Alias.
+             * @implements IAlias
+             * @constructor
+             * @param {flyteidl.core.IAlias=} [properties] Properties to set
+             */
+            function Alias(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Alias var.
+             * @member {string} var
+             * @memberof flyteidl.core.Alias
+             * @instance
+             */
+            Alias.prototype["var"] = "";
+
+            /**
+             * Alias alias.
+             * @member {string} alias
+             * @memberof flyteidl.core.Alias
+             * @instance
+             */
+            Alias.prototype.alias = "";
+
+            /**
+             * Creates a new Alias instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.Alias
+             * @static
+             * @param {flyteidl.core.IAlias=} [properties] Properties to set
+             * @returns {flyteidl.core.Alias} Alias instance
+             */
+            Alias.create = function create(properties) {
+                return new Alias(properties);
+            };
+
+            /**
+             * Encodes the specified Alias message. Does not implicitly {@link flyteidl.core.Alias.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.Alias
+             * @static
+             * @param {flyteidl.core.IAlias} message Alias message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Alias.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message["var"] != null && message.hasOwnProperty("var"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message["var"]);
+                if (message.alias != null && message.hasOwnProperty("alias"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.alias);
+                return writer;
+            };
+
+            /**
+             * Decodes an Alias message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.Alias
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.Alias} Alias
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Alias.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Alias();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message["var"] = reader.string();
+                        break;
+                    case 2:
+                        message.alias = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an Alias message.
+             * @function verify
+             * @memberof flyteidl.core.Alias
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Alias.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message["var"] != null && message.hasOwnProperty("var"))
+                    if (!$util.isString(message["var"]))
+                        return "var: string expected";
+                if (message.alias != null && message.hasOwnProperty("alias"))
+                    if (!$util.isString(message.alias))
+                        return "alias: string expected";
+                return null;
+            };
+
+            return Alias;
+        })();
+
+        core.Node = (function() {
+
+            /**
+             * Properties of a Node.
+             * @memberof flyteidl.core
+             * @interface INode
+             * @property {string|null} [id] Node id
+             * @property {flyteidl.core.INodeMetadata|null} [metadata] Node metadata
+             * @property {Array.<flyteidl.core.IBinding>|null} [inputs] Node inputs
+             * @property {Array.<string>|null} [upstreamNodeIds] Node upstreamNodeIds
+             * @property {Array.<flyteidl.core.IAlias>|null} [outputAliases] Node outputAliases
+             * @property {flyteidl.core.ITaskNode|null} [taskNode] Node taskNode
+             * @property {flyteidl.core.IWorkflowNode|null} [workflowNode] Node workflowNode
+             * @property {flyteidl.core.IBranchNode|null} [branchNode] Node branchNode
+             * @property {flyteidl.core.IClosureNode|null} [closureNode] Node closureNode
+             */
+
+            /**
+             * Constructs a new Node.
+             * @memberof flyteidl.core
+             * @classdesc Represents a Node.
+             * @implements INode
+             * @constructor
+             * @param {flyteidl.core.INode=} [properties] Properties to set
+             */
+            function Node(properties) {
+                this.inputs = [];
+                this.upstreamNodeIds = [];
+                this.outputAliases = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Node id.
+             * @member {string} id
+             * @memberof flyteidl.core.Node
+             * @instance
+             */
+            Node.prototype.id = "";
+
+            /**
+             * Node metadata.
+             * @member {flyteidl.core.INodeMetadata|null|undefined} metadata
+             * @memberof flyteidl.core.Node
+             * @instance
+             */
+            Node.prototype.metadata = null;
+
+            /**
+             * Node inputs.
+             * @member {Array.<flyteidl.core.IBinding>} inputs
+             * @memberof flyteidl.core.Node
+             * @instance
+             */
+            Node.prototype.inputs = $util.emptyArray;
+
+            /**
+             * Node upstreamNodeIds.
+             * @member {Array.<string>} upstreamNodeIds
+             * @memberof flyteidl.core.Node
+             * @instance
+             */
+            Node.prototype.upstreamNodeIds = $util.emptyArray;
+
+            /**
+             * Node outputAliases.
+             * @member {Array.<flyteidl.core.IAlias>} outputAliases
+             * @memberof flyteidl.core.Node
+             * @instance
+             */
+            Node.prototype.outputAliases = $util.emptyArray;
+
+            /**
+             * Node taskNode.
+             * @member {flyteidl.core.ITaskNode|null|undefined} taskNode
+             * @memberof flyteidl.core.Node
+             * @instance
+             */
+            Node.prototype.taskNode = null;
+
+            /**
+             * Node workflowNode.
+             * @member {flyteidl.core.IWorkflowNode|null|undefined} workflowNode
+             * @memberof flyteidl.core.Node
+             * @instance
+             */
+            Node.prototype.workflowNode = null;
+
+            /**
+             * Node branchNode.
+             * @member {flyteidl.core.IBranchNode|null|undefined} branchNode
+             * @memberof flyteidl.core.Node
+             * @instance
+             */
+            Node.prototype.branchNode = null;
+
+            /**
+             * Node closureNode.
+             * @member {flyteidl.core.IClosureNode|null|undefined} closureNode
+             * @memberof flyteidl.core.Node
+             * @instance
+             */
+            Node.prototype.closureNode = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * Node target.
+             * @member {"taskNode"|"workflowNode"|"branchNode"|"closureNode"|undefined} target
+             * @memberof flyteidl.core.Node
+             * @instance
+             */
+            Object.defineProperty(Node.prototype, "target", {
+                get: $util.oneOfGetter($oneOfFields = ["taskNode", "workflowNode", "branchNode", "closureNode"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new Node instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.Node
+             * @static
+             * @param {flyteidl.core.INode=} [properties] Properties to set
+             * @returns {flyteidl.core.Node} Node instance
+             */
+            Node.create = function create(properties) {
+                return new Node(properties);
+            };
+
+            /**
+             * Encodes the specified Node message. Does not implicitly {@link flyteidl.core.Node.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.Node
+             * @static
+             * @param {flyteidl.core.INode} message Node message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Node.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.metadata != null && message.hasOwnProperty("metadata"))
+                    $root.flyteidl.core.NodeMetadata.encode(message.metadata, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.inputs != null && message.inputs.length)
+                    for (let i = 0; i < message.inputs.length; ++i)
+                        $root.flyteidl.core.Binding.encode(message.inputs[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.upstreamNodeIds != null && message.upstreamNodeIds.length)
+                    for (let i = 0; i < message.upstreamNodeIds.length; ++i)
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.upstreamNodeIds[i]);
+                if (message.outputAliases != null && message.outputAliases.length)
+                    for (let i = 0; i < message.outputAliases.length; ++i)
+                        $root.flyteidl.core.Alias.encode(message.outputAliases[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.taskNode != null && message.hasOwnProperty("taskNode"))
+                    $root.flyteidl.core.TaskNode.encode(message.taskNode, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                if (message.workflowNode != null && message.hasOwnProperty("workflowNode"))
+                    $root.flyteidl.core.WorkflowNode.encode(message.workflowNode, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                if (message.branchNode != null && message.hasOwnProperty("branchNode"))
+                    $root.flyteidl.core.BranchNode.encode(message.branchNode, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                if (message.closureNode != null && message.hasOwnProperty("closureNode"))
+                    $root.flyteidl.core.ClosureNode.encode(message.closureNode, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a Node message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.Node
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.Node} Node
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Node.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Node();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.metadata = $root.flyteidl.core.NodeMetadata.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        if (!(message.inputs && message.inputs.length))
+                            message.inputs = [];
+                        message.inputs.push($root.flyteidl.core.Binding.decode(reader, reader.uint32()));
+                        break;
+                    case 4:
+                        if (!(message.upstreamNodeIds && message.upstreamNodeIds.length))
+                            message.upstreamNodeIds = [];
+                        message.upstreamNodeIds.push(reader.string());
+                        break;
+                    case 5:
+                        if (!(message.outputAliases && message.outputAliases.length))
+                            message.outputAliases = [];
+                        message.outputAliases.push($root.flyteidl.core.Alias.decode(reader, reader.uint32()));
+                        break;
+                    case 6:
+                        message.taskNode = $root.flyteidl.core.TaskNode.decode(reader, reader.uint32());
+                        break;
+                    case 7:
+                        message.workflowNode = $root.flyteidl.core.WorkflowNode.decode(reader, reader.uint32());
+                        break;
+                    case 8:
+                        message.branchNode = $root.flyteidl.core.BranchNode.decode(reader, reader.uint32());
+                        break;
+                    case 9:
+                        message.closureNode = $root.flyteidl.core.ClosureNode.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Node message.
+             * @function verify
+             * @memberof flyteidl.core.Node
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Node.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.metadata != null && message.hasOwnProperty("metadata")) {
+                    let error = $root.flyteidl.core.NodeMetadata.verify(message.metadata);
+                    if (error)
+                        return "metadata." + error;
+                }
+                if (message.inputs != null && message.hasOwnProperty("inputs")) {
+                    if (!Array.isArray(message.inputs))
+                        return "inputs: array expected";
+                    for (let i = 0; i < message.inputs.length; ++i) {
+                        let error = $root.flyteidl.core.Binding.verify(message.inputs[i]);
+                        if (error)
+                            return "inputs." + error;
+                    }
+                }
+                if (message.upstreamNodeIds != null && message.hasOwnProperty("upstreamNodeIds")) {
+                    if (!Array.isArray(message.upstreamNodeIds))
+                        return "upstreamNodeIds: array expected";
+                    for (let i = 0; i < message.upstreamNodeIds.length; ++i)
+                        if (!$util.isString(message.upstreamNodeIds[i]))
+                            return "upstreamNodeIds: string[] expected";
+                }
+                if (message.outputAliases != null && message.hasOwnProperty("outputAliases")) {
+                    if (!Array.isArray(message.outputAliases))
+                        return "outputAliases: array expected";
+                    for (let i = 0; i < message.outputAliases.length; ++i) {
+                        let error = $root.flyteidl.core.Alias.verify(message.outputAliases[i]);
+                        if (error)
+                            return "outputAliases." + error;
+                    }
+                }
+                if (message.taskNode != null && message.hasOwnProperty("taskNode")) {
+                    properties.target = 1;
+                    {
+                        let error = $root.flyteidl.core.TaskNode.verify(message.taskNode);
+                        if (error)
+                            return "taskNode." + error;
+                    }
+                }
+                if (message.workflowNode != null && message.hasOwnProperty("workflowNode")) {
+                    if (properties.target === 1)
+                        return "target: multiple values";
+                    properties.target = 1;
+                    {
+                        let error = $root.flyteidl.core.WorkflowNode.verify(message.workflowNode);
+                        if (error)
+                            return "workflowNode." + error;
+                    }
+                }
+                if (message.branchNode != null && message.hasOwnProperty("branchNode")) {
+                    if (properties.target === 1)
+                        return "target: multiple values";
+                    properties.target = 1;
+                    {
+                        let error = $root.flyteidl.core.BranchNode.verify(message.branchNode);
+                        if (error)
+                            return "branchNode." + error;
+                    }
+                }
+                if (message.closureNode != null && message.hasOwnProperty("closureNode")) {
+                    if (properties.target === 1)
+                        return "target: multiple values";
+                    properties.target = 1;
+                    {
+                        let error = $root.flyteidl.core.ClosureNode.verify(message.closureNode);
+                        if (error)
+                            return "closureNode." + error;
+                    }
+                }
+                return null;
+            };
+
+            return Node;
+        })();
+
         core.WorkflowMetadata = (function() {
 
             /**
@@ -1025,6 +4535,630 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             return WorkflowTemplate;
+        })();
+
+        /**
+         * ResourceType enum.
+         * @name flyteidl.core.ResourceType
+         * @enum {string}
+         * @property {number} UNSPECIFIED=0 UNSPECIFIED value
+         * @property {number} TASK=1 TASK value
+         * @property {number} WORKFLOW=2 WORKFLOW value
+         * @property {number} LAUNCH_PLAN=3 LAUNCH_PLAN value
+         */
+        core.ResourceType = (function() {
+            const valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "UNSPECIFIED"] = 0;
+            values[valuesById[1] = "TASK"] = 1;
+            values[valuesById[2] = "WORKFLOW"] = 2;
+            values[valuesById[3] = "LAUNCH_PLAN"] = 3;
+            return values;
+        })();
+
+        core.Identifier = (function() {
+
+            /**
+             * Properties of an Identifier.
+             * @memberof flyteidl.core
+             * @interface IIdentifier
+             * @property {flyteidl.core.ResourceType|null} [resourceType] Identifier resourceType
+             * @property {string|null} [project] Identifier project
+             * @property {string|null} [domain] Identifier domain
+             * @property {string|null} [name] Identifier name
+             * @property {string|null} [version] Identifier version
+             */
+
+            /**
+             * Constructs a new Identifier.
+             * @memberof flyteidl.core
+             * @classdesc Represents an Identifier.
+             * @implements IIdentifier
+             * @constructor
+             * @param {flyteidl.core.IIdentifier=} [properties] Properties to set
+             */
+            function Identifier(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Identifier resourceType.
+             * @member {flyteidl.core.ResourceType} resourceType
+             * @memberof flyteidl.core.Identifier
+             * @instance
+             */
+            Identifier.prototype.resourceType = 0;
+
+            /**
+             * Identifier project.
+             * @member {string} project
+             * @memberof flyteidl.core.Identifier
+             * @instance
+             */
+            Identifier.prototype.project = "";
+
+            /**
+             * Identifier domain.
+             * @member {string} domain
+             * @memberof flyteidl.core.Identifier
+             * @instance
+             */
+            Identifier.prototype.domain = "";
+
+            /**
+             * Identifier name.
+             * @member {string} name
+             * @memberof flyteidl.core.Identifier
+             * @instance
+             */
+            Identifier.prototype.name = "";
+
+            /**
+             * Identifier version.
+             * @member {string} version
+             * @memberof flyteidl.core.Identifier
+             * @instance
+             */
+            Identifier.prototype.version = "";
+
+            /**
+             * Creates a new Identifier instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.Identifier
+             * @static
+             * @param {flyteidl.core.IIdentifier=} [properties] Properties to set
+             * @returns {flyteidl.core.Identifier} Identifier instance
+             */
+            Identifier.create = function create(properties) {
+                return new Identifier(properties);
+            };
+
+            /**
+             * Encodes the specified Identifier message. Does not implicitly {@link flyteidl.core.Identifier.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.Identifier
+             * @static
+             * @param {flyteidl.core.IIdentifier} message Identifier message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Identifier.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.resourceType);
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.project);
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.domain);
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.name);
+                if (message.version != null && message.hasOwnProperty("version"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.version);
+                return writer;
+            };
+
+            /**
+             * Decodes an Identifier message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.Identifier
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.Identifier} Identifier
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Identifier.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Identifier();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.resourceType = reader.int32();
+                        break;
+                    case 2:
+                        message.project = reader.string();
+                        break;
+                    case 3:
+                        message.domain = reader.string();
+                        break;
+                    case 4:
+                        message.name = reader.string();
+                        break;
+                    case 5:
+                        message.version = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an Identifier message.
+             * @function verify
+             * @memberof flyteidl.core.Identifier
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Identifier.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    switch (message.resourceType) {
+                    default:
+                        return "resourceType: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                        break;
+                    }
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    if (!$util.isString(message.domain))
+                        return "domain: string expected";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                if (message.version != null && message.hasOwnProperty("version"))
+                    if (!$util.isString(message.version))
+                        return "version: string expected";
+                return null;
+            };
+
+            return Identifier;
+        })();
+
+        core.WorkflowExecutionIdentifier = (function() {
+
+            /**
+             * Properties of a WorkflowExecutionIdentifier.
+             * @memberof flyteidl.core
+             * @interface IWorkflowExecutionIdentifier
+             * @property {string|null} [project] WorkflowExecutionIdentifier project
+             * @property {string|null} [domain] WorkflowExecutionIdentifier domain
+             * @property {string|null} [name] WorkflowExecutionIdentifier name
+             */
+
+            /**
+             * Constructs a new WorkflowExecutionIdentifier.
+             * @memberof flyteidl.core
+             * @classdesc Represents a WorkflowExecutionIdentifier.
+             * @implements IWorkflowExecutionIdentifier
+             * @constructor
+             * @param {flyteidl.core.IWorkflowExecutionIdentifier=} [properties] Properties to set
+             */
+            function WorkflowExecutionIdentifier(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * WorkflowExecutionIdentifier project.
+             * @member {string} project
+             * @memberof flyteidl.core.WorkflowExecutionIdentifier
+             * @instance
+             */
+            WorkflowExecutionIdentifier.prototype.project = "";
+
+            /**
+             * WorkflowExecutionIdentifier domain.
+             * @member {string} domain
+             * @memberof flyteidl.core.WorkflowExecutionIdentifier
+             * @instance
+             */
+            WorkflowExecutionIdentifier.prototype.domain = "";
+
+            /**
+             * WorkflowExecutionIdentifier name.
+             * @member {string} name
+             * @memberof flyteidl.core.WorkflowExecutionIdentifier
+             * @instance
+             */
+            WorkflowExecutionIdentifier.prototype.name = "";
+
+            /**
+             * Creates a new WorkflowExecutionIdentifier instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.WorkflowExecutionIdentifier
+             * @static
+             * @param {flyteidl.core.IWorkflowExecutionIdentifier=} [properties] Properties to set
+             * @returns {flyteidl.core.WorkflowExecutionIdentifier} WorkflowExecutionIdentifier instance
+             */
+            WorkflowExecutionIdentifier.create = function create(properties) {
+                return new WorkflowExecutionIdentifier(properties);
+            };
+
+            /**
+             * Encodes the specified WorkflowExecutionIdentifier message. Does not implicitly {@link flyteidl.core.WorkflowExecutionIdentifier.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.WorkflowExecutionIdentifier
+             * @static
+             * @param {flyteidl.core.IWorkflowExecutionIdentifier} message WorkflowExecutionIdentifier message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            WorkflowExecutionIdentifier.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.name);
+                return writer;
+            };
+
+            /**
+             * Decodes a WorkflowExecutionIdentifier message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.WorkflowExecutionIdentifier
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.WorkflowExecutionIdentifier} WorkflowExecutionIdentifier
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            WorkflowExecutionIdentifier.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.WorkflowExecutionIdentifier();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.project = reader.string();
+                        break;
+                    case 2:
+                        message.domain = reader.string();
+                        break;
+                    case 4:
+                        message.name = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a WorkflowExecutionIdentifier message.
+             * @function verify
+             * @memberof flyteidl.core.WorkflowExecutionIdentifier
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            WorkflowExecutionIdentifier.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    if (!$util.isString(message.domain))
+                        return "domain: string expected";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                return null;
+            };
+
+            return WorkflowExecutionIdentifier;
+        })();
+
+        core.NodeExecutionIdentifier = (function() {
+
+            /**
+             * Properties of a NodeExecutionIdentifier.
+             * @memberof flyteidl.core
+             * @interface INodeExecutionIdentifier
+             * @property {string|null} [nodeId] NodeExecutionIdentifier nodeId
+             * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [executionId] NodeExecutionIdentifier executionId
+             */
+
+            /**
+             * Constructs a new NodeExecutionIdentifier.
+             * @memberof flyteidl.core
+             * @classdesc Represents a NodeExecutionIdentifier.
+             * @implements INodeExecutionIdentifier
+             * @constructor
+             * @param {flyteidl.core.INodeExecutionIdentifier=} [properties] Properties to set
+             */
+            function NodeExecutionIdentifier(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * NodeExecutionIdentifier nodeId.
+             * @member {string} nodeId
+             * @memberof flyteidl.core.NodeExecutionIdentifier
+             * @instance
+             */
+            NodeExecutionIdentifier.prototype.nodeId = "";
+
+            /**
+             * NodeExecutionIdentifier executionId.
+             * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} executionId
+             * @memberof flyteidl.core.NodeExecutionIdentifier
+             * @instance
+             */
+            NodeExecutionIdentifier.prototype.executionId = null;
+
+            /**
+             * Creates a new NodeExecutionIdentifier instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.NodeExecutionIdentifier
+             * @static
+             * @param {flyteidl.core.INodeExecutionIdentifier=} [properties] Properties to set
+             * @returns {flyteidl.core.NodeExecutionIdentifier} NodeExecutionIdentifier instance
+             */
+            NodeExecutionIdentifier.create = function create(properties) {
+                return new NodeExecutionIdentifier(properties);
+            };
+
+            /**
+             * Encodes the specified NodeExecutionIdentifier message. Does not implicitly {@link flyteidl.core.NodeExecutionIdentifier.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.NodeExecutionIdentifier
+             * @static
+             * @param {flyteidl.core.INodeExecutionIdentifier} message NodeExecutionIdentifier message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            NodeExecutionIdentifier.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.nodeId != null && message.hasOwnProperty("nodeId"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.nodeId);
+                if (message.executionId != null && message.hasOwnProperty("executionId"))
+                    $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.executionId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a NodeExecutionIdentifier message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.NodeExecutionIdentifier
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.NodeExecutionIdentifier} NodeExecutionIdentifier
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            NodeExecutionIdentifier.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.NodeExecutionIdentifier();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.nodeId = reader.string();
+                        break;
+                    case 2:
+                        message.executionId = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a NodeExecutionIdentifier message.
+             * @function verify
+             * @memberof flyteidl.core.NodeExecutionIdentifier
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            NodeExecutionIdentifier.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.nodeId != null && message.hasOwnProperty("nodeId"))
+                    if (!$util.isString(message.nodeId))
+                        return "nodeId: string expected";
+                if (message.executionId != null && message.hasOwnProperty("executionId")) {
+                    let error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.executionId);
+                    if (error)
+                        return "executionId." + error;
+                }
+                return null;
+            };
+
+            return NodeExecutionIdentifier;
+        })();
+
+        core.TaskExecutionIdentifier = (function() {
+
+            /**
+             * Properties of a TaskExecutionIdentifier.
+             * @memberof flyteidl.core
+             * @interface ITaskExecutionIdentifier
+             * @property {flyteidl.core.IIdentifier|null} [taskId] TaskExecutionIdentifier taskId
+             * @property {flyteidl.core.INodeExecutionIdentifier|null} [nodeExecutionId] TaskExecutionIdentifier nodeExecutionId
+             * @property {number|null} [retryAttempt] TaskExecutionIdentifier retryAttempt
+             */
+
+            /**
+             * Constructs a new TaskExecutionIdentifier.
+             * @memberof flyteidl.core
+             * @classdesc Represents a TaskExecutionIdentifier.
+             * @implements ITaskExecutionIdentifier
+             * @constructor
+             * @param {flyteidl.core.ITaskExecutionIdentifier=} [properties] Properties to set
+             */
+            function TaskExecutionIdentifier(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TaskExecutionIdentifier taskId.
+             * @member {flyteidl.core.IIdentifier|null|undefined} taskId
+             * @memberof flyteidl.core.TaskExecutionIdentifier
+             * @instance
+             */
+            TaskExecutionIdentifier.prototype.taskId = null;
+
+            /**
+             * TaskExecutionIdentifier nodeExecutionId.
+             * @member {flyteidl.core.INodeExecutionIdentifier|null|undefined} nodeExecutionId
+             * @memberof flyteidl.core.TaskExecutionIdentifier
+             * @instance
+             */
+            TaskExecutionIdentifier.prototype.nodeExecutionId = null;
+
+            /**
+             * TaskExecutionIdentifier retryAttempt.
+             * @member {number} retryAttempt
+             * @memberof flyteidl.core.TaskExecutionIdentifier
+             * @instance
+             */
+            TaskExecutionIdentifier.prototype.retryAttempt = 0;
+
+            /**
+             * Creates a new TaskExecutionIdentifier instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.TaskExecutionIdentifier
+             * @static
+             * @param {flyteidl.core.ITaskExecutionIdentifier=} [properties] Properties to set
+             * @returns {flyteidl.core.TaskExecutionIdentifier} TaskExecutionIdentifier instance
+             */
+            TaskExecutionIdentifier.create = function create(properties) {
+                return new TaskExecutionIdentifier(properties);
+            };
+
+            /**
+             * Encodes the specified TaskExecutionIdentifier message. Does not implicitly {@link flyteidl.core.TaskExecutionIdentifier.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.TaskExecutionIdentifier
+             * @static
+             * @param {flyteidl.core.ITaskExecutionIdentifier} message TaskExecutionIdentifier message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TaskExecutionIdentifier.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.taskId != null && message.hasOwnProperty("taskId"))
+                    $root.flyteidl.core.Identifier.encode(message.taskId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.nodeExecutionId != null && message.hasOwnProperty("nodeExecutionId"))
+                    $root.flyteidl.core.NodeExecutionIdentifier.encode(message.nodeExecutionId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.retryAttempt);
+                return writer;
+            };
+
+            /**
+             * Decodes a TaskExecutionIdentifier message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.TaskExecutionIdentifier
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.TaskExecutionIdentifier} TaskExecutionIdentifier
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TaskExecutionIdentifier.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.TaskExecutionIdentifier();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.taskId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.nodeExecutionId = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.retryAttempt = reader.uint32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a TaskExecutionIdentifier message.
+             * @function verify
+             * @memberof flyteidl.core.TaskExecutionIdentifier
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TaskExecutionIdentifier.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.taskId != null && message.hasOwnProperty("taskId")) {
+                    let error = $root.flyteidl.core.Identifier.verify(message.taskId);
+                    if (error)
+                        return "taskId." + error;
+                }
+                if (message.nodeExecutionId != null && message.hasOwnProperty("nodeExecutionId")) {
+                    let error = $root.flyteidl.core.NodeExecutionIdentifier.verify(message.nodeExecutionId);
+                    if (error)
+                        return "nodeExecutionId." + error;
+                }
+                if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
+                    if (!$util.isInteger(message.retryAttempt))
+                        return "retryAttempt: integer expected";
+                return null;
+            };
+
+            return TaskExecutionIdentifier;
         })();
 
         /**
@@ -2512,4615 +6646,6 @@ export const flyteidl = $root.flyteidl = (() => {
             return TypedInterface;
         })();
 
-        core.Primitive = (function() {
-
-            /**
-             * Properties of a Primitive.
-             * @memberof flyteidl.core
-             * @interface IPrimitive
-             * @property {Long|null} [integer] Primitive integer
-             * @property {number|null} [floatValue] Primitive floatValue
-             * @property {string|null} [stringValue] Primitive stringValue
-             * @property {boolean|null} [boolean] Primitive boolean
-             * @property {google.protobuf.ITimestamp|null} [datetime] Primitive datetime
-             * @property {google.protobuf.IDuration|null} [duration] Primitive duration
-             */
-
-            /**
-             * Constructs a new Primitive.
-             * @memberof flyteidl.core
-             * @classdesc Represents a Primitive.
-             * @implements IPrimitive
-             * @constructor
-             * @param {flyteidl.core.IPrimitive=} [properties] Properties to set
-             */
-            function Primitive(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Primitive integer.
-             * @member {Long} integer
-             * @memberof flyteidl.core.Primitive
-             * @instance
-             */
-            Primitive.prototype.integer = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-            /**
-             * Primitive floatValue.
-             * @member {number} floatValue
-             * @memberof flyteidl.core.Primitive
-             * @instance
-             */
-            Primitive.prototype.floatValue = 0;
-
-            /**
-             * Primitive stringValue.
-             * @member {string} stringValue
-             * @memberof flyteidl.core.Primitive
-             * @instance
-             */
-            Primitive.prototype.stringValue = "";
-
-            /**
-             * Primitive boolean.
-             * @member {boolean} boolean
-             * @memberof flyteidl.core.Primitive
-             * @instance
-             */
-            Primitive.prototype.boolean = false;
-
-            /**
-             * Primitive datetime.
-             * @member {google.protobuf.ITimestamp|null|undefined} datetime
-             * @memberof flyteidl.core.Primitive
-             * @instance
-             */
-            Primitive.prototype.datetime = null;
-
-            /**
-             * Primitive duration.
-             * @member {google.protobuf.IDuration|null|undefined} duration
-             * @memberof flyteidl.core.Primitive
-             * @instance
-             */
-            Primitive.prototype.duration = null;
-
-            // OneOf field names bound to virtual getters and setters
-            let $oneOfFields;
-
-            /**
-             * Primitive value.
-             * @member {"integer"|"floatValue"|"stringValue"|"boolean"|"datetime"|"duration"|undefined} value
-             * @memberof flyteidl.core.Primitive
-             * @instance
-             */
-            Object.defineProperty(Primitive.prototype, "value", {
-                get: $util.oneOfGetter($oneOfFields = ["integer", "floatValue", "stringValue", "boolean", "datetime", "duration"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new Primitive instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.Primitive
-             * @static
-             * @param {flyteidl.core.IPrimitive=} [properties] Properties to set
-             * @returns {flyteidl.core.Primitive} Primitive instance
-             */
-            Primitive.create = function create(properties) {
-                return new Primitive(properties);
-            };
-
-            /**
-             * Encodes the specified Primitive message. Does not implicitly {@link flyteidl.core.Primitive.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.Primitive
-             * @static
-             * @param {flyteidl.core.IPrimitive} message Primitive message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Primitive.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.integer != null && message.hasOwnProperty("integer"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.integer);
-                if (message.floatValue != null && message.hasOwnProperty("floatValue"))
-                    writer.uint32(/* id 2, wireType 1 =*/17).double(message.floatValue);
-                if (message.stringValue != null && message.hasOwnProperty("stringValue"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.stringValue);
-                if (message.boolean != null && message.hasOwnProperty("boolean"))
-                    writer.uint32(/* id 4, wireType 0 =*/32).bool(message.boolean);
-                if (message.datetime != null && message.hasOwnProperty("datetime"))
-                    $root.google.protobuf.Timestamp.encode(message.datetime, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                if (message.duration != null && message.hasOwnProperty("duration"))
-                    $root.google.protobuf.Duration.encode(message.duration, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a Primitive message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.Primitive
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.Primitive} Primitive
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Primitive.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Primitive();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.integer = reader.int64();
-                        break;
-                    case 2:
-                        message.floatValue = reader.double();
-                        break;
-                    case 3:
-                        message.stringValue = reader.string();
-                        break;
-                    case 4:
-                        message.boolean = reader.bool();
-                        break;
-                    case 5:
-                        message.datetime = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
-                        break;
-                    case 6:
-                        message.duration = $root.google.protobuf.Duration.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a Primitive message.
-             * @function verify
-             * @memberof flyteidl.core.Primitive
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Primitive.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                let properties = {};
-                if (message.integer != null && message.hasOwnProperty("integer")) {
-                    properties.value = 1;
-                    if (!$util.isInteger(message.integer) && !(message.integer && $util.isInteger(message.integer.low) && $util.isInteger(message.integer.high)))
-                        return "integer: integer|Long expected";
-                }
-                if (message.floatValue != null && message.hasOwnProperty("floatValue")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    if (typeof message.floatValue !== "number")
-                        return "floatValue: number expected";
-                }
-                if (message.stringValue != null && message.hasOwnProperty("stringValue")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    if (!$util.isString(message.stringValue))
-                        return "stringValue: string expected";
-                }
-                if (message.boolean != null && message.hasOwnProperty("boolean")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    if (typeof message.boolean !== "boolean")
-                        return "boolean: boolean expected";
-                }
-                if (message.datetime != null && message.hasOwnProperty("datetime")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    {
-                        let error = $root.google.protobuf.Timestamp.verify(message.datetime);
-                        if (error)
-                            return "datetime." + error;
-                    }
-                }
-                if (message.duration != null && message.hasOwnProperty("duration")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    {
-                        let error = $root.google.protobuf.Duration.verify(message.duration);
-                        if (error)
-                            return "duration." + error;
-                    }
-                }
-                return null;
-            };
-
-            return Primitive;
-        })();
-
-        core.Void = (function() {
-
-            /**
-             * Properties of a Void.
-             * @memberof flyteidl.core
-             * @interface IVoid
-             */
-
-            /**
-             * Constructs a new Void.
-             * @memberof flyteidl.core
-             * @classdesc Represents a Void.
-             * @implements IVoid
-             * @constructor
-             * @param {flyteidl.core.IVoid=} [properties] Properties to set
-             */
-            function Void(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Creates a new Void instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.Void
-             * @static
-             * @param {flyteidl.core.IVoid=} [properties] Properties to set
-             * @returns {flyteidl.core.Void} Void instance
-             */
-            Void.create = function create(properties) {
-                return new Void(properties);
-            };
-
-            /**
-             * Encodes the specified Void message. Does not implicitly {@link flyteidl.core.Void.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.Void
-             * @static
-             * @param {flyteidl.core.IVoid} message Void message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Void.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                return writer;
-            };
-
-            /**
-             * Decodes a Void message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.Void
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.Void} Void
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Void.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Void();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a Void message.
-             * @function verify
-             * @memberof flyteidl.core.Void
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Void.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                return null;
-            };
-
-            return Void;
-        })();
-
-        core.Blob = (function() {
-
-            /**
-             * Properties of a Blob.
-             * @memberof flyteidl.core
-             * @interface IBlob
-             * @property {flyteidl.core.IBlobMetadata|null} [metadata] Blob metadata
-             * @property {string|null} [uri] Blob uri
-             */
-
-            /**
-             * Constructs a new Blob.
-             * @memberof flyteidl.core
-             * @classdesc Represents a Blob.
-             * @implements IBlob
-             * @constructor
-             * @param {flyteidl.core.IBlob=} [properties] Properties to set
-             */
-            function Blob(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Blob metadata.
-             * @member {flyteidl.core.IBlobMetadata|null|undefined} metadata
-             * @memberof flyteidl.core.Blob
-             * @instance
-             */
-            Blob.prototype.metadata = null;
-
-            /**
-             * Blob uri.
-             * @member {string} uri
-             * @memberof flyteidl.core.Blob
-             * @instance
-             */
-            Blob.prototype.uri = "";
-
-            /**
-             * Creates a new Blob instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.Blob
-             * @static
-             * @param {flyteidl.core.IBlob=} [properties] Properties to set
-             * @returns {flyteidl.core.Blob} Blob instance
-             */
-            Blob.create = function create(properties) {
-                return new Blob(properties);
-            };
-
-            /**
-             * Encodes the specified Blob message. Does not implicitly {@link flyteidl.core.Blob.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.Blob
-             * @static
-             * @param {flyteidl.core.IBlob} message Blob message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Blob.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.metadata != null && message.hasOwnProperty("metadata"))
-                    $root.flyteidl.core.BlobMetadata.encode(message.metadata, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.uri != null && message.hasOwnProperty("uri"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.uri);
-                return writer;
-            };
-
-            /**
-             * Decodes a Blob message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.Blob
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.Blob} Blob
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Blob.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Blob();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.metadata = $root.flyteidl.core.BlobMetadata.decode(reader, reader.uint32());
-                        break;
-                    case 3:
-                        message.uri = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a Blob message.
-             * @function verify
-             * @memberof flyteidl.core.Blob
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Blob.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.metadata != null && message.hasOwnProperty("metadata")) {
-                    let error = $root.flyteidl.core.BlobMetadata.verify(message.metadata);
-                    if (error)
-                        return "metadata." + error;
-                }
-                if (message.uri != null && message.hasOwnProperty("uri"))
-                    if (!$util.isString(message.uri))
-                        return "uri: string expected";
-                return null;
-            };
-
-            return Blob;
-        })();
-
-        core.BlobMetadata = (function() {
-
-            /**
-             * Properties of a BlobMetadata.
-             * @memberof flyteidl.core
-             * @interface IBlobMetadata
-             * @property {flyteidl.core.IBlobType|null} [type] BlobMetadata type
-             */
-
-            /**
-             * Constructs a new BlobMetadata.
-             * @memberof flyteidl.core
-             * @classdesc Represents a BlobMetadata.
-             * @implements IBlobMetadata
-             * @constructor
-             * @param {flyteidl.core.IBlobMetadata=} [properties] Properties to set
-             */
-            function BlobMetadata(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * BlobMetadata type.
-             * @member {flyteidl.core.IBlobType|null|undefined} type
-             * @memberof flyteidl.core.BlobMetadata
-             * @instance
-             */
-            BlobMetadata.prototype.type = null;
-
-            /**
-             * Creates a new BlobMetadata instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.BlobMetadata
-             * @static
-             * @param {flyteidl.core.IBlobMetadata=} [properties] Properties to set
-             * @returns {flyteidl.core.BlobMetadata} BlobMetadata instance
-             */
-            BlobMetadata.create = function create(properties) {
-                return new BlobMetadata(properties);
-            };
-
-            /**
-             * Encodes the specified BlobMetadata message. Does not implicitly {@link flyteidl.core.BlobMetadata.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.BlobMetadata
-             * @static
-             * @param {flyteidl.core.IBlobMetadata} message BlobMetadata message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            BlobMetadata.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.type != null && message.hasOwnProperty("type"))
-                    $root.flyteidl.core.BlobType.encode(message.type, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a BlobMetadata message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.BlobMetadata
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.BlobMetadata} BlobMetadata
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            BlobMetadata.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.BlobMetadata();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.type = $root.flyteidl.core.BlobType.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a BlobMetadata message.
-             * @function verify
-             * @memberof flyteidl.core.BlobMetadata
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            BlobMetadata.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.type != null && message.hasOwnProperty("type")) {
-                    let error = $root.flyteidl.core.BlobType.verify(message.type);
-                    if (error)
-                        return "type." + error;
-                }
-                return null;
-            };
-
-            return BlobMetadata;
-        })();
-
-        core.Binary = (function() {
-
-            /**
-             * Properties of a Binary.
-             * @memberof flyteidl.core
-             * @interface IBinary
-             * @property {Uint8Array|null} [value] Binary value
-             * @property {string|null} [tag] Binary tag
-             */
-
-            /**
-             * Constructs a new Binary.
-             * @memberof flyteidl.core
-             * @classdesc Represents a Binary.
-             * @implements IBinary
-             * @constructor
-             * @param {flyteidl.core.IBinary=} [properties] Properties to set
-             */
-            function Binary(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Binary value.
-             * @member {Uint8Array} value
-             * @memberof flyteidl.core.Binary
-             * @instance
-             */
-            Binary.prototype.value = $util.newBuffer([]);
-
-            /**
-             * Binary tag.
-             * @member {string} tag
-             * @memberof flyteidl.core.Binary
-             * @instance
-             */
-            Binary.prototype.tag = "";
-
-            /**
-             * Creates a new Binary instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.Binary
-             * @static
-             * @param {flyteidl.core.IBinary=} [properties] Properties to set
-             * @returns {flyteidl.core.Binary} Binary instance
-             */
-            Binary.create = function create(properties) {
-                return new Binary(properties);
-            };
-
-            /**
-             * Encodes the specified Binary message. Does not implicitly {@link flyteidl.core.Binary.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.Binary
-             * @static
-             * @param {flyteidl.core.IBinary} message Binary message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Binary.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.value != null && message.hasOwnProperty("value"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.value);
-                if (message.tag != null && message.hasOwnProperty("tag"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.tag);
-                return writer;
-            };
-
-            /**
-             * Decodes a Binary message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.Binary
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.Binary} Binary
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Binary.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Binary();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.value = reader.bytes();
-                        break;
-                    case 2:
-                        message.tag = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a Binary message.
-             * @function verify
-             * @memberof flyteidl.core.Binary
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Binary.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.value != null && message.hasOwnProperty("value"))
-                    if (!(message.value && typeof message.value.length === "number" || $util.isString(message.value)))
-                        return "value: buffer expected";
-                if (message.tag != null && message.hasOwnProperty("tag"))
-                    if (!$util.isString(message.tag))
-                        return "tag: string expected";
-                return null;
-            };
-
-            return Binary;
-        })();
-
-        core.Schema = (function() {
-
-            /**
-             * Properties of a Schema.
-             * @memberof flyteidl.core
-             * @interface ISchema
-             * @property {string|null} [uri] Schema uri
-             * @property {flyteidl.core.ISchemaType|null} [type] Schema type
-             */
-
-            /**
-             * Constructs a new Schema.
-             * @memberof flyteidl.core
-             * @classdesc Represents a Schema.
-             * @implements ISchema
-             * @constructor
-             * @param {flyteidl.core.ISchema=} [properties] Properties to set
-             */
-            function Schema(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Schema uri.
-             * @member {string} uri
-             * @memberof flyteidl.core.Schema
-             * @instance
-             */
-            Schema.prototype.uri = "";
-
-            /**
-             * Schema type.
-             * @member {flyteidl.core.ISchemaType|null|undefined} type
-             * @memberof flyteidl.core.Schema
-             * @instance
-             */
-            Schema.prototype.type = null;
-
-            /**
-             * Creates a new Schema instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.Schema
-             * @static
-             * @param {flyteidl.core.ISchema=} [properties] Properties to set
-             * @returns {flyteidl.core.Schema} Schema instance
-             */
-            Schema.create = function create(properties) {
-                return new Schema(properties);
-            };
-
-            /**
-             * Encodes the specified Schema message. Does not implicitly {@link flyteidl.core.Schema.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.Schema
-             * @static
-             * @param {flyteidl.core.ISchema} message Schema message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Schema.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.uri != null && message.hasOwnProperty("uri"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.uri);
-                if (message.type != null && message.hasOwnProperty("type"))
-                    $root.flyteidl.core.SchemaType.encode(message.type, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a Schema message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.Schema
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.Schema} Schema
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Schema.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Schema();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.uri = reader.string();
-                        break;
-                    case 3:
-                        message.type = $root.flyteidl.core.SchemaType.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a Schema message.
-             * @function verify
-             * @memberof flyteidl.core.Schema
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Schema.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.uri != null && message.hasOwnProperty("uri"))
-                    if (!$util.isString(message.uri))
-                        return "uri: string expected";
-                if (message.type != null && message.hasOwnProperty("type")) {
-                    let error = $root.flyteidl.core.SchemaType.verify(message.type);
-                    if (error)
-                        return "type." + error;
-                }
-                return null;
-            };
-
-            return Schema;
-        })();
-
-        core.Scalar = (function() {
-
-            /**
-             * Properties of a Scalar.
-             * @memberof flyteidl.core
-             * @interface IScalar
-             * @property {flyteidl.core.IPrimitive|null} [primitive] Scalar primitive
-             * @property {flyteidl.core.IBlob|null} [blob] Scalar blob
-             * @property {flyteidl.core.IBinary|null} [binary] Scalar binary
-             * @property {flyteidl.core.ISchema|null} [schema] Scalar schema
-             * @property {flyteidl.core.IVoid|null} [noneType] Scalar noneType
-             * @property {flyteidl.core.IError|null} [error] Scalar error
-             * @property {google.protobuf.IStruct|null} [generic] Scalar generic
-             */
-
-            /**
-             * Constructs a new Scalar.
-             * @memberof flyteidl.core
-             * @classdesc Represents a Scalar.
-             * @implements IScalar
-             * @constructor
-             * @param {flyteidl.core.IScalar=} [properties] Properties to set
-             */
-            function Scalar(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Scalar primitive.
-             * @member {flyteidl.core.IPrimitive|null|undefined} primitive
-             * @memberof flyteidl.core.Scalar
-             * @instance
-             */
-            Scalar.prototype.primitive = null;
-
-            /**
-             * Scalar blob.
-             * @member {flyteidl.core.IBlob|null|undefined} blob
-             * @memberof flyteidl.core.Scalar
-             * @instance
-             */
-            Scalar.prototype.blob = null;
-
-            /**
-             * Scalar binary.
-             * @member {flyteidl.core.IBinary|null|undefined} binary
-             * @memberof flyteidl.core.Scalar
-             * @instance
-             */
-            Scalar.prototype.binary = null;
-
-            /**
-             * Scalar schema.
-             * @member {flyteidl.core.ISchema|null|undefined} schema
-             * @memberof flyteidl.core.Scalar
-             * @instance
-             */
-            Scalar.prototype.schema = null;
-
-            /**
-             * Scalar noneType.
-             * @member {flyteidl.core.IVoid|null|undefined} noneType
-             * @memberof flyteidl.core.Scalar
-             * @instance
-             */
-            Scalar.prototype.noneType = null;
-
-            /**
-             * Scalar error.
-             * @member {flyteidl.core.IError|null|undefined} error
-             * @memberof flyteidl.core.Scalar
-             * @instance
-             */
-            Scalar.prototype.error = null;
-
-            /**
-             * Scalar generic.
-             * @member {google.protobuf.IStruct|null|undefined} generic
-             * @memberof flyteidl.core.Scalar
-             * @instance
-             */
-            Scalar.prototype.generic = null;
-
-            // OneOf field names bound to virtual getters and setters
-            let $oneOfFields;
-
-            /**
-             * Scalar value.
-             * @member {"primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|"generic"|undefined} value
-             * @memberof flyteidl.core.Scalar
-             * @instance
-             */
-            Object.defineProperty(Scalar.prototype, "value", {
-                get: $util.oneOfGetter($oneOfFields = ["primitive", "blob", "binary", "schema", "noneType", "error", "generic"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new Scalar instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.Scalar
-             * @static
-             * @param {flyteidl.core.IScalar=} [properties] Properties to set
-             * @returns {flyteidl.core.Scalar} Scalar instance
-             */
-            Scalar.create = function create(properties) {
-                return new Scalar(properties);
-            };
-
-            /**
-             * Encodes the specified Scalar message. Does not implicitly {@link flyteidl.core.Scalar.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.Scalar
-             * @static
-             * @param {flyteidl.core.IScalar} message Scalar message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Scalar.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.primitive != null && message.hasOwnProperty("primitive"))
-                    $root.flyteidl.core.Primitive.encode(message.primitive, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.blob != null && message.hasOwnProperty("blob"))
-                    $root.flyteidl.core.Blob.encode(message.blob, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.binary != null && message.hasOwnProperty("binary"))
-                    $root.flyteidl.core.Binary.encode(message.binary, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.schema != null && message.hasOwnProperty("schema"))
-                    $root.flyteidl.core.Schema.encode(message.schema, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.noneType != null && message.hasOwnProperty("noneType"))
-                    $root.flyteidl.core.Void.encode(message.noneType, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                if (message.error != null && message.hasOwnProperty("error"))
-                    $root.flyteidl.core.Error.encode(message.error, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                if (message.generic != null && message.hasOwnProperty("generic"))
-                    $root.google.protobuf.Struct.encode(message.generic, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a Scalar message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.Scalar
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.Scalar} Scalar
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Scalar.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Scalar();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.primitive = $root.flyteidl.core.Primitive.decode(reader, reader.uint32());
-                        break;
-                    case 2:
-                        message.blob = $root.flyteidl.core.Blob.decode(reader, reader.uint32());
-                        break;
-                    case 3:
-                        message.binary = $root.flyteidl.core.Binary.decode(reader, reader.uint32());
-                        break;
-                    case 4:
-                        message.schema = $root.flyteidl.core.Schema.decode(reader, reader.uint32());
-                        break;
-                    case 5:
-                        message.noneType = $root.flyteidl.core.Void.decode(reader, reader.uint32());
-                        break;
-                    case 6:
-                        message.error = $root.flyteidl.core.Error.decode(reader, reader.uint32());
-                        break;
-                    case 7:
-                        message.generic = $root.google.protobuf.Struct.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a Scalar message.
-             * @function verify
-             * @memberof flyteidl.core.Scalar
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Scalar.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                let properties = {};
-                if (message.primitive != null && message.hasOwnProperty("primitive")) {
-                    properties.value = 1;
-                    {
-                        let error = $root.flyteidl.core.Primitive.verify(message.primitive);
-                        if (error)
-                            return "primitive." + error;
-                    }
-                }
-                if (message.blob != null && message.hasOwnProperty("blob")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    {
-                        let error = $root.flyteidl.core.Blob.verify(message.blob);
-                        if (error)
-                            return "blob." + error;
-                    }
-                }
-                if (message.binary != null && message.hasOwnProperty("binary")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    {
-                        let error = $root.flyteidl.core.Binary.verify(message.binary);
-                        if (error)
-                            return "binary." + error;
-                    }
-                }
-                if (message.schema != null && message.hasOwnProperty("schema")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    {
-                        let error = $root.flyteidl.core.Schema.verify(message.schema);
-                        if (error)
-                            return "schema." + error;
-                    }
-                }
-                if (message.noneType != null && message.hasOwnProperty("noneType")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    {
-                        let error = $root.flyteidl.core.Void.verify(message.noneType);
-                        if (error)
-                            return "noneType." + error;
-                    }
-                }
-                if (message.error != null && message.hasOwnProperty("error")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    {
-                        let error = $root.flyteidl.core.Error.verify(message.error);
-                        if (error)
-                            return "error." + error;
-                    }
-                }
-                if (message.generic != null && message.hasOwnProperty("generic")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    {
-                        let error = $root.google.protobuf.Struct.verify(message.generic);
-                        if (error)
-                            return "generic." + error;
-                    }
-                }
-                return null;
-            };
-
-            return Scalar;
-        })();
-
-        core.Closure = (function() {
-
-            /**
-             * Properties of a Closure.
-             * @memberof flyteidl.core
-             * @interface IClosure
-             * @property {flyteidl.core.INode|null} [node] Closure node
-             * @property {Array.<flyteidl.core.ITaskTemplate>|null} [tasks] Closure tasks
-             * @property {Array.<flyteidl.core.IWorkflowTemplate>|null} [subWorkflows] Closure subWorkflows
-             */
-
-            /**
-             * Constructs a new Closure.
-             * @memberof flyteidl.core
-             * @classdesc Represents a Closure.
-             * @implements IClosure
-             * @constructor
-             * @param {flyteidl.core.IClosure=} [properties] Properties to set
-             */
-            function Closure(properties) {
-                this.tasks = [];
-                this.subWorkflows = [];
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Closure node.
-             * @member {flyteidl.core.INode|null|undefined} node
-             * @memberof flyteidl.core.Closure
-             * @instance
-             */
-            Closure.prototype.node = null;
-
-            /**
-             * Closure tasks.
-             * @member {Array.<flyteidl.core.ITaskTemplate>} tasks
-             * @memberof flyteidl.core.Closure
-             * @instance
-             */
-            Closure.prototype.tasks = $util.emptyArray;
-
-            /**
-             * Closure subWorkflows.
-             * @member {Array.<flyteidl.core.IWorkflowTemplate>} subWorkflows
-             * @memberof flyteidl.core.Closure
-             * @instance
-             */
-            Closure.prototype.subWorkflows = $util.emptyArray;
-
-            /**
-             * Creates a new Closure instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.Closure
-             * @static
-             * @param {flyteidl.core.IClosure=} [properties] Properties to set
-             * @returns {flyteidl.core.Closure} Closure instance
-             */
-            Closure.create = function create(properties) {
-                return new Closure(properties);
-            };
-
-            /**
-             * Encodes the specified Closure message. Does not implicitly {@link flyteidl.core.Closure.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.Closure
-             * @static
-             * @param {flyteidl.core.IClosure} message Closure message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Closure.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.node != null && message.hasOwnProperty("node"))
-                    $root.flyteidl.core.Node.encode(message.node, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.tasks != null && message.tasks.length)
-                    for (let i = 0; i < message.tasks.length; ++i)
-                        $root.flyteidl.core.TaskTemplate.encode(message.tasks[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.subWorkflows != null && message.subWorkflows.length)
-                    for (let i = 0; i < message.subWorkflows.length; ++i)
-                        $root.flyteidl.core.WorkflowTemplate.encode(message.subWorkflows[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a Closure message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.Closure
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.Closure} Closure
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Closure.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Closure();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.node = $root.flyteidl.core.Node.decode(reader, reader.uint32());
-                        break;
-                    case 4:
-                        if (!(message.tasks && message.tasks.length))
-                            message.tasks = [];
-                        message.tasks.push($root.flyteidl.core.TaskTemplate.decode(reader, reader.uint32()));
-                        break;
-                    case 5:
-                        if (!(message.subWorkflows && message.subWorkflows.length))
-                            message.subWorkflows = [];
-                        message.subWorkflows.push($root.flyteidl.core.WorkflowTemplate.decode(reader, reader.uint32()));
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a Closure message.
-             * @function verify
-             * @memberof flyteidl.core.Closure
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Closure.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.node != null && message.hasOwnProperty("node")) {
-                    let error = $root.flyteidl.core.Node.verify(message.node);
-                    if (error)
-                        return "node." + error;
-                }
-                if (message.tasks != null && message.hasOwnProperty("tasks")) {
-                    if (!Array.isArray(message.tasks))
-                        return "tasks: array expected";
-                    for (let i = 0; i < message.tasks.length; ++i) {
-                        let error = $root.flyteidl.core.TaskTemplate.verify(message.tasks[i]);
-                        if (error)
-                            return "tasks." + error;
-                    }
-                }
-                if (message.subWorkflows != null && message.hasOwnProperty("subWorkflows")) {
-                    if (!Array.isArray(message.subWorkflows))
-                        return "subWorkflows: array expected";
-                    for (let i = 0; i < message.subWorkflows.length; ++i) {
-                        let error = $root.flyteidl.core.WorkflowTemplate.verify(message.subWorkflows[i]);
-                        if (error)
-                            return "subWorkflows." + error;
-                    }
-                }
-                return null;
-            };
-
-            return Closure;
-        })();
-
-        core.Literal = (function() {
-
-            /**
-             * Properties of a Literal.
-             * @memberof flyteidl.core
-             * @interface ILiteral
-             * @property {flyteidl.core.IScalar|null} [scalar] Literal scalar
-             * @property {flyteidl.core.ILiteralCollection|null} [collection] Literal collection
-             * @property {flyteidl.core.ILiteralMap|null} [map] Literal map
-             * @property {flyteidl.core.IClosure|null} [closure] Literal closure
-             */
-
-            /**
-             * Constructs a new Literal.
-             * @memberof flyteidl.core
-             * @classdesc Represents a Literal.
-             * @implements ILiteral
-             * @constructor
-             * @param {flyteidl.core.ILiteral=} [properties] Properties to set
-             */
-            function Literal(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Literal scalar.
-             * @member {flyteidl.core.IScalar|null|undefined} scalar
-             * @memberof flyteidl.core.Literal
-             * @instance
-             */
-            Literal.prototype.scalar = null;
-
-            /**
-             * Literal collection.
-             * @member {flyteidl.core.ILiteralCollection|null|undefined} collection
-             * @memberof flyteidl.core.Literal
-             * @instance
-             */
-            Literal.prototype.collection = null;
-
-            /**
-             * Literal map.
-             * @member {flyteidl.core.ILiteralMap|null|undefined} map
-             * @memberof flyteidl.core.Literal
-             * @instance
-             */
-            Literal.prototype.map = null;
-
-            /**
-             * Literal closure.
-             * @member {flyteidl.core.IClosure|null|undefined} closure
-             * @memberof flyteidl.core.Literal
-             * @instance
-             */
-            Literal.prototype.closure = null;
-
-            // OneOf field names bound to virtual getters and setters
-            let $oneOfFields;
-
-            /**
-             * Literal value.
-             * @member {"scalar"|"collection"|"map"|"closure"|undefined} value
-             * @memberof flyteidl.core.Literal
-             * @instance
-             */
-            Object.defineProperty(Literal.prototype, "value", {
-                get: $util.oneOfGetter($oneOfFields = ["scalar", "collection", "map", "closure"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new Literal instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.Literal
-             * @static
-             * @param {flyteidl.core.ILiteral=} [properties] Properties to set
-             * @returns {flyteidl.core.Literal} Literal instance
-             */
-            Literal.create = function create(properties) {
-                return new Literal(properties);
-            };
-
-            /**
-             * Encodes the specified Literal message. Does not implicitly {@link flyteidl.core.Literal.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.Literal
-             * @static
-             * @param {flyteidl.core.ILiteral} message Literal message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Literal.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.scalar != null && message.hasOwnProperty("scalar"))
-                    $root.flyteidl.core.Scalar.encode(message.scalar, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.collection != null && message.hasOwnProperty("collection"))
-                    $root.flyteidl.core.LiteralCollection.encode(message.collection, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.map != null && message.hasOwnProperty("map"))
-                    $root.flyteidl.core.LiteralMap.encode(message.map, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.closure != null && message.hasOwnProperty("closure"))
-                    $root.flyteidl.core.Closure.encode(message.closure, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a Literal message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.Literal
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.Literal} Literal
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Literal.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Literal();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.scalar = $root.flyteidl.core.Scalar.decode(reader, reader.uint32());
-                        break;
-                    case 2:
-                        message.collection = $root.flyteidl.core.LiteralCollection.decode(reader, reader.uint32());
-                        break;
-                    case 3:
-                        message.map = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
-                        break;
-                    case 4:
-                        message.closure = $root.flyteidl.core.Closure.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a Literal message.
-             * @function verify
-             * @memberof flyteidl.core.Literal
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Literal.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                let properties = {};
-                if (message.scalar != null && message.hasOwnProperty("scalar")) {
-                    properties.value = 1;
-                    {
-                        let error = $root.flyteidl.core.Scalar.verify(message.scalar);
-                        if (error)
-                            return "scalar." + error;
-                    }
-                }
-                if (message.collection != null && message.hasOwnProperty("collection")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    {
-                        let error = $root.flyteidl.core.LiteralCollection.verify(message.collection);
-                        if (error)
-                            return "collection." + error;
-                    }
-                }
-                if (message.map != null && message.hasOwnProperty("map")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    {
-                        let error = $root.flyteidl.core.LiteralMap.verify(message.map);
-                        if (error)
-                            return "map." + error;
-                    }
-                }
-                if (message.closure != null && message.hasOwnProperty("closure")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    {
-                        let error = $root.flyteidl.core.Closure.verify(message.closure);
-                        if (error)
-                            return "closure." + error;
-                    }
-                }
-                return null;
-            };
-
-            return Literal;
-        })();
-
-        core.LiteralCollection = (function() {
-
-            /**
-             * Properties of a LiteralCollection.
-             * @memberof flyteidl.core
-             * @interface ILiteralCollection
-             * @property {Array.<flyteidl.core.ILiteral>|null} [literals] LiteralCollection literals
-             */
-
-            /**
-             * Constructs a new LiteralCollection.
-             * @memberof flyteidl.core
-             * @classdesc Represents a LiteralCollection.
-             * @implements ILiteralCollection
-             * @constructor
-             * @param {flyteidl.core.ILiteralCollection=} [properties] Properties to set
-             */
-            function LiteralCollection(properties) {
-                this.literals = [];
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * LiteralCollection literals.
-             * @member {Array.<flyteidl.core.ILiteral>} literals
-             * @memberof flyteidl.core.LiteralCollection
-             * @instance
-             */
-            LiteralCollection.prototype.literals = $util.emptyArray;
-
-            /**
-             * Creates a new LiteralCollection instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.LiteralCollection
-             * @static
-             * @param {flyteidl.core.ILiteralCollection=} [properties] Properties to set
-             * @returns {flyteidl.core.LiteralCollection} LiteralCollection instance
-             */
-            LiteralCollection.create = function create(properties) {
-                return new LiteralCollection(properties);
-            };
-
-            /**
-             * Encodes the specified LiteralCollection message. Does not implicitly {@link flyteidl.core.LiteralCollection.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.LiteralCollection
-             * @static
-             * @param {flyteidl.core.ILiteralCollection} message LiteralCollection message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            LiteralCollection.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.literals != null && message.literals.length)
-                    for (let i = 0; i < message.literals.length; ++i)
-                        $root.flyteidl.core.Literal.encode(message.literals[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a LiteralCollection message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.LiteralCollection
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.LiteralCollection} LiteralCollection
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            LiteralCollection.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.LiteralCollection();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.literals && message.literals.length))
-                            message.literals = [];
-                        message.literals.push($root.flyteidl.core.Literal.decode(reader, reader.uint32()));
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a LiteralCollection message.
-             * @function verify
-             * @memberof flyteidl.core.LiteralCollection
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            LiteralCollection.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.literals != null && message.hasOwnProperty("literals")) {
-                    if (!Array.isArray(message.literals))
-                        return "literals: array expected";
-                    for (let i = 0; i < message.literals.length; ++i) {
-                        let error = $root.flyteidl.core.Literal.verify(message.literals[i]);
-                        if (error)
-                            return "literals." + error;
-                    }
-                }
-                return null;
-            };
-
-            return LiteralCollection;
-        })();
-
-        core.LiteralMap = (function() {
-
-            /**
-             * Properties of a LiteralMap.
-             * @memberof flyteidl.core
-             * @interface ILiteralMap
-             * @property {Object.<string,flyteidl.core.ILiteral>|null} [literals] LiteralMap literals
-             */
-
-            /**
-             * Constructs a new LiteralMap.
-             * @memberof flyteidl.core
-             * @classdesc Represents a LiteralMap.
-             * @implements ILiteralMap
-             * @constructor
-             * @param {flyteidl.core.ILiteralMap=} [properties] Properties to set
-             */
-            function LiteralMap(properties) {
-                this.literals = {};
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * LiteralMap literals.
-             * @member {Object.<string,flyteidl.core.ILiteral>} literals
-             * @memberof flyteidl.core.LiteralMap
-             * @instance
-             */
-            LiteralMap.prototype.literals = $util.emptyObject;
-
-            /**
-             * Creates a new LiteralMap instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.LiteralMap
-             * @static
-             * @param {flyteidl.core.ILiteralMap=} [properties] Properties to set
-             * @returns {flyteidl.core.LiteralMap} LiteralMap instance
-             */
-            LiteralMap.create = function create(properties) {
-                return new LiteralMap(properties);
-            };
-
-            /**
-             * Encodes the specified LiteralMap message. Does not implicitly {@link flyteidl.core.LiteralMap.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.LiteralMap
-             * @static
-             * @param {flyteidl.core.ILiteralMap} message LiteralMap message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            LiteralMap.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.literals != null && message.hasOwnProperty("literals"))
-                    for (let keys = Object.keys(message.literals), i = 0; i < keys.length; ++i) {
-                        writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
-                        $root.flyteidl.core.Literal.encode(message.literals[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
-                    }
-                return writer;
-            };
-
-            /**
-             * Decodes a LiteralMap message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.LiteralMap
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.LiteralMap} LiteralMap
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            LiteralMap.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.LiteralMap(), key;
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        reader.skip().pos++;
-                        if (message.literals === $util.emptyObject)
-                            message.literals = {};
-                        key = reader.string();
-                        reader.pos++;
-                        message.literals[key] = $root.flyteidl.core.Literal.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a LiteralMap message.
-             * @function verify
-             * @memberof flyteidl.core.LiteralMap
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            LiteralMap.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.literals != null && message.hasOwnProperty("literals")) {
-                    if (!$util.isObject(message.literals))
-                        return "literals: object expected";
-                    let key = Object.keys(message.literals);
-                    for (let i = 0; i < key.length; ++i) {
-                        let error = $root.flyteidl.core.Literal.verify(message.literals[key[i]]);
-                        if (error)
-                            return "literals." + error;
-                    }
-                }
-                return null;
-            };
-
-            return LiteralMap;
-        })();
-
-        core.BindingDataCollection = (function() {
-
-            /**
-             * Properties of a BindingDataCollection.
-             * @memberof flyteidl.core
-             * @interface IBindingDataCollection
-             * @property {Array.<flyteidl.core.IBindingData>|null} [bindings] BindingDataCollection bindings
-             */
-
-            /**
-             * Constructs a new BindingDataCollection.
-             * @memberof flyteidl.core
-             * @classdesc Represents a BindingDataCollection.
-             * @implements IBindingDataCollection
-             * @constructor
-             * @param {flyteidl.core.IBindingDataCollection=} [properties] Properties to set
-             */
-            function BindingDataCollection(properties) {
-                this.bindings = [];
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * BindingDataCollection bindings.
-             * @member {Array.<flyteidl.core.IBindingData>} bindings
-             * @memberof flyteidl.core.BindingDataCollection
-             * @instance
-             */
-            BindingDataCollection.prototype.bindings = $util.emptyArray;
-
-            /**
-             * Creates a new BindingDataCollection instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.BindingDataCollection
-             * @static
-             * @param {flyteidl.core.IBindingDataCollection=} [properties] Properties to set
-             * @returns {flyteidl.core.BindingDataCollection} BindingDataCollection instance
-             */
-            BindingDataCollection.create = function create(properties) {
-                return new BindingDataCollection(properties);
-            };
-
-            /**
-             * Encodes the specified BindingDataCollection message. Does not implicitly {@link flyteidl.core.BindingDataCollection.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.BindingDataCollection
-             * @static
-             * @param {flyteidl.core.IBindingDataCollection} message BindingDataCollection message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            BindingDataCollection.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.bindings != null && message.bindings.length)
-                    for (let i = 0; i < message.bindings.length; ++i)
-                        $root.flyteidl.core.BindingData.encode(message.bindings[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a BindingDataCollection message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.BindingDataCollection
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.BindingDataCollection} BindingDataCollection
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            BindingDataCollection.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.BindingDataCollection();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.bindings && message.bindings.length))
-                            message.bindings = [];
-                        message.bindings.push($root.flyteidl.core.BindingData.decode(reader, reader.uint32()));
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a BindingDataCollection message.
-             * @function verify
-             * @memberof flyteidl.core.BindingDataCollection
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            BindingDataCollection.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.bindings != null && message.hasOwnProperty("bindings")) {
-                    if (!Array.isArray(message.bindings))
-                        return "bindings: array expected";
-                    for (let i = 0; i < message.bindings.length; ++i) {
-                        let error = $root.flyteidl.core.BindingData.verify(message.bindings[i]);
-                        if (error)
-                            return "bindings." + error;
-                    }
-                }
-                return null;
-            };
-
-            return BindingDataCollection;
-        })();
-
-        core.BindingDataMap = (function() {
-
-            /**
-             * Properties of a BindingDataMap.
-             * @memberof flyteidl.core
-             * @interface IBindingDataMap
-             * @property {Object.<string,flyteidl.core.IBindingData>|null} [bindings] BindingDataMap bindings
-             */
-
-            /**
-             * Constructs a new BindingDataMap.
-             * @memberof flyteidl.core
-             * @classdesc Represents a BindingDataMap.
-             * @implements IBindingDataMap
-             * @constructor
-             * @param {flyteidl.core.IBindingDataMap=} [properties] Properties to set
-             */
-            function BindingDataMap(properties) {
-                this.bindings = {};
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * BindingDataMap bindings.
-             * @member {Object.<string,flyteidl.core.IBindingData>} bindings
-             * @memberof flyteidl.core.BindingDataMap
-             * @instance
-             */
-            BindingDataMap.prototype.bindings = $util.emptyObject;
-
-            /**
-             * Creates a new BindingDataMap instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.BindingDataMap
-             * @static
-             * @param {flyteidl.core.IBindingDataMap=} [properties] Properties to set
-             * @returns {flyteidl.core.BindingDataMap} BindingDataMap instance
-             */
-            BindingDataMap.create = function create(properties) {
-                return new BindingDataMap(properties);
-            };
-
-            /**
-             * Encodes the specified BindingDataMap message. Does not implicitly {@link flyteidl.core.BindingDataMap.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.BindingDataMap
-             * @static
-             * @param {flyteidl.core.IBindingDataMap} message BindingDataMap message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            BindingDataMap.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.bindings != null && message.hasOwnProperty("bindings"))
-                    for (let keys = Object.keys(message.bindings), i = 0; i < keys.length; ++i) {
-                        writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
-                        $root.flyteidl.core.BindingData.encode(message.bindings[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
-                    }
-                return writer;
-            };
-
-            /**
-             * Decodes a BindingDataMap message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.BindingDataMap
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.BindingDataMap} BindingDataMap
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            BindingDataMap.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.BindingDataMap(), key;
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        reader.skip().pos++;
-                        if (message.bindings === $util.emptyObject)
-                            message.bindings = {};
-                        key = reader.string();
-                        reader.pos++;
-                        message.bindings[key] = $root.flyteidl.core.BindingData.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a BindingDataMap message.
-             * @function verify
-             * @memberof flyteidl.core.BindingDataMap
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            BindingDataMap.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.bindings != null && message.hasOwnProperty("bindings")) {
-                    if (!$util.isObject(message.bindings))
-                        return "bindings: object expected";
-                    let key = Object.keys(message.bindings);
-                    for (let i = 0; i < key.length; ++i) {
-                        let error = $root.flyteidl.core.BindingData.verify(message.bindings[key[i]]);
-                        if (error)
-                            return "bindings." + error;
-                    }
-                }
-                return null;
-            };
-
-            return BindingDataMap;
-        })();
-
-        core.BindingData = (function() {
-
-            /**
-             * Properties of a BindingData.
-             * @memberof flyteidl.core
-             * @interface IBindingData
-             * @property {flyteidl.core.IScalar|null} [scalar] BindingData scalar
-             * @property {flyteidl.core.IBindingDataCollection|null} [collection] BindingData collection
-             * @property {flyteidl.core.IOutputReference|null} [promise] BindingData promise
-             * @property {flyteidl.core.IBindingDataMap|null} [map] BindingData map
-             * @property {flyteidl.core.IClosure|null} [closure] BindingData closure
-             */
-
-            /**
-             * Constructs a new BindingData.
-             * @memberof flyteidl.core
-             * @classdesc Represents a BindingData.
-             * @implements IBindingData
-             * @constructor
-             * @param {flyteidl.core.IBindingData=} [properties] Properties to set
-             */
-            function BindingData(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * BindingData scalar.
-             * @member {flyteidl.core.IScalar|null|undefined} scalar
-             * @memberof flyteidl.core.BindingData
-             * @instance
-             */
-            BindingData.prototype.scalar = null;
-
-            /**
-             * BindingData collection.
-             * @member {flyteidl.core.IBindingDataCollection|null|undefined} collection
-             * @memberof flyteidl.core.BindingData
-             * @instance
-             */
-            BindingData.prototype.collection = null;
-
-            /**
-             * BindingData promise.
-             * @member {flyteidl.core.IOutputReference|null|undefined} promise
-             * @memberof flyteidl.core.BindingData
-             * @instance
-             */
-            BindingData.prototype.promise = null;
-
-            /**
-             * BindingData map.
-             * @member {flyteidl.core.IBindingDataMap|null|undefined} map
-             * @memberof flyteidl.core.BindingData
-             * @instance
-             */
-            BindingData.prototype.map = null;
-
-            /**
-             * BindingData closure.
-             * @member {flyteidl.core.IClosure|null|undefined} closure
-             * @memberof flyteidl.core.BindingData
-             * @instance
-             */
-            BindingData.prototype.closure = null;
-
-            // OneOf field names bound to virtual getters and setters
-            let $oneOfFields;
-
-            /**
-             * BindingData value.
-             * @member {"scalar"|"collection"|"promise"|"map"|"closure"|undefined} value
-             * @memberof flyteidl.core.BindingData
-             * @instance
-             */
-            Object.defineProperty(BindingData.prototype, "value", {
-                get: $util.oneOfGetter($oneOfFields = ["scalar", "collection", "promise", "map", "closure"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new BindingData instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.BindingData
-             * @static
-             * @param {flyteidl.core.IBindingData=} [properties] Properties to set
-             * @returns {flyteidl.core.BindingData} BindingData instance
-             */
-            BindingData.create = function create(properties) {
-                return new BindingData(properties);
-            };
-
-            /**
-             * Encodes the specified BindingData message. Does not implicitly {@link flyteidl.core.BindingData.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.BindingData
-             * @static
-             * @param {flyteidl.core.IBindingData} message BindingData message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            BindingData.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.scalar != null && message.hasOwnProperty("scalar"))
-                    $root.flyteidl.core.Scalar.encode(message.scalar, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.collection != null && message.hasOwnProperty("collection"))
-                    $root.flyteidl.core.BindingDataCollection.encode(message.collection, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.promise != null && message.hasOwnProperty("promise"))
-                    $root.flyteidl.core.OutputReference.encode(message.promise, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.map != null && message.hasOwnProperty("map"))
-                    $root.flyteidl.core.BindingDataMap.encode(message.map, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.closure != null && message.hasOwnProperty("closure"))
-                    $root.flyteidl.core.Closure.encode(message.closure, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a BindingData message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.BindingData
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.BindingData} BindingData
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            BindingData.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.BindingData();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.scalar = $root.flyteidl.core.Scalar.decode(reader, reader.uint32());
-                        break;
-                    case 2:
-                        message.collection = $root.flyteidl.core.BindingDataCollection.decode(reader, reader.uint32());
-                        break;
-                    case 3:
-                        message.promise = $root.flyteidl.core.OutputReference.decode(reader, reader.uint32());
-                        break;
-                    case 4:
-                        message.map = $root.flyteidl.core.BindingDataMap.decode(reader, reader.uint32());
-                        break;
-                    case 5:
-                        message.closure = $root.flyteidl.core.Closure.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a BindingData message.
-             * @function verify
-             * @memberof flyteidl.core.BindingData
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            BindingData.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                let properties = {};
-                if (message.scalar != null && message.hasOwnProperty("scalar")) {
-                    properties.value = 1;
-                    {
-                        let error = $root.flyteidl.core.Scalar.verify(message.scalar);
-                        if (error)
-                            return "scalar." + error;
-                    }
-                }
-                if (message.collection != null && message.hasOwnProperty("collection")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    {
-                        let error = $root.flyteidl.core.BindingDataCollection.verify(message.collection);
-                        if (error)
-                            return "collection." + error;
-                    }
-                }
-                if (message.promise != null && message.hasOwnProperty("promise")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    {
-                        let error = $root.flyteidl.core.OutputReference.verify(message.promise);
-                        if (error)
-                            return "promise." + error;
-                    }
-                }
-                if (message.map != null && message.hasOwnProperty("map")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    {
-                        let error = $root.flyteidl.core.BindingDataMap.verify(message.map);
-                        if (error)
-                            return "map." + error;
-                    }
-                }
-                if (message.closure != null && message.hasOwnProperty("closure")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    {
-                        let error = $root.flyteidl.core.Closure.verify(message.closure);
-                        if (error)
-                            return "closure." + error;
-                    }
-                }
-                return null;
-            };
-
-            return BindingData;
-        })();
-
-        core.Binding = (function() {
-
-            /**
-             * Properties of a Binding.
-             * @memberof flyteidl.core
-             * @interface IBinding
-             * @property {string|null} ["var"] Binding var
-             * @property {flyteidl.core.IBindingData|null} [binding] Binding binding
-             */
-
-            /**
-             * Constructs a new Binding.
-             * @memberof flyteidl.core
-             * @classdesc Represents a Binding.
-             * @implements IBinding
-             * @constructor
-             * @param {flyteidl.core.IBinding=} [properties] Properties to set
-             */
-            function Binding(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Binding var.
-             * @member {string} var
-             * @memberof flyteidl.core.Binding
-             * @instance
-             */
-            Binding.prototype["var"] = "";
-
-            /**
-             * Binding binding.
-             * @member {flyteidl.core.IBindingData|null|undefined} binding
-             * @memberof flyteidl.core.Binding
-             * @instance
-             */
-            Binding.prototype.binding = null;
-
-            /**
-             * Creates a new Binding instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.Binding
-             * @static
-             * @param {flyteidl.core.IBinding=} [properties] Properties to set
-             * @returns {flyteidl.core.Binding} Binding instance
-             */
-            Binding.create = function create(properties) {
-                return new Binding(properties);
-            };
-
-            /**
-             * Encodes the specified Binding message. Does not implicitly {@link flyteidl.core.Binding.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.Binding
-             * @static
-             * @param {flyteidl.core.IBinding} message Binding message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Binding.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message["var"] != null && message.hasOwnProperty("var"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message["var"]);
-                if (message.binding != null && message.hasOwnProperty("binding"))
-                    $root.flyteidl.core.BindingData.encode(message.binding, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a Binding message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.Binding
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.Binding} Binding
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Binding.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Binding();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message["var"] = reader.string();
-                        break;
-                    case 2:
-                        message.binding = $root.flyteidl.core.BindingData.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a Binding message.
-             * @function verify
-             * @memberof flyteidl.core.Binding
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Binding.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message["var"] != null && message.hasOwnProperty("var"))
-                    if (!$util.isString(message["var"]))
-                        return "var: string expected";
-                if (message.binding != null && message.hasOwnProperty("binding")) {
-                    let error = $root.flyteidl.core.BindingData.verify(message.binding);
-                    if (error)
-                        return "binding." + error;
-                }
-                return null;
-            };
-
-            return Binding;
-        })();
-
-        core.KeyValuePair = (function() {
-
-            /**
-             * Properties of a KeyValuePair.
-             * @memberof flyteidl.core
-             * @interface IKeyValuePair
-             * @property {string|null} [key] KeyValuePair key
-             * @property {string|null} [value] KeyValuePair value
-             */
-
-            /**
-             * Constructs a new KeyValuePair.
-             * @memberof flyteidl.core
-             * @classdesc Represents a KeyValuePair.
-             * @implements IKeyValuePair
-             * @constructor
-             * @param {flyteidl.core.IKeyValuePair=} [properties] Properties to set
-             */
-            function KeyValuePair(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * KeyValuePair key.
-             * @member {string} key
-             * @memberof flyteidl.core.KeyValuePair
-             * @instance
-             */
-            KeyValuePair.prototype.key = "";
-
-            /**
-             * KeyValuePair value.
-             * @member {string} value
-             * @memberof flyteidl.core.KeyValuePair
-             * @instance
-             */
-            KeyValuePair.prototype.value = "";
-
-            /**
-             * Creates a new KeyValuePair instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.KeyValuePair
-             * @static
-             * @param {flyteidl.core.IKeyValuePair=} [properties] Properties to set
-             * @returns {flyteidl.core.KeyValuePair} KeyValuePair instance
-             */
-            KeyValuePair.create = function create(properties) {
-                return new KeyValuePair(properties);
-            };
-
-            /**
-             * Encodes the specified KeyValuePair message. Does not implicitly {@link flyteidl.core.KeyValuePair.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.KeyValuePair
-             * @static
-             * @param {flyteidl.core.IKeyValuePair} message KeyValuePair message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            KeyValuePair.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.key != null && message.hasOwnProperty("key"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
-                if (message.value != null && message.hasOwnProperty("value"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.value);
-                return writer;
-            };
-
-            /**
-             * Decodes a KeyValuePair message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.KeyValuePair
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.KeyValuePair} KeyValuePair
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            KeyValuePair.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.KeyValuePair();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.key = reader.string();
-                        break;
-                    case 2:
-                        message.value = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a KeyValuePair message.
-             * @function verify
-             * @memberof flyteidl.core.KeyValuePair
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            KeyValuePair.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.key != null && message.hasOwnProperty("key"))
-                    if (!$util.isString(message.key))
-                        return "key: string expected";
-                if (message.value != null && message.hasOwnProperty("value"))
-                    if (!$util.isString(message.value))
-                        return "value: string expected";
-                return null;
-            };
-
-            return KeyValuePair;
-        })();
-
-        core.RetryStrategy = (function() {
-
-            /**
-             * Properties of a RetryStrategy.
-             * @memberof flyteidl.core
-             * @interface IRetryStrategy
-             * @property {number|null} [retries] RetryStrategy retries
-             */
-
-            /**
-             * Constructs a new RetryStrategy.
-             * @memberof flyteidl.core
-             * @classdesc Represents a RetryStrategy.
-             * @implements IRetryStrategy
-             * @constructor
-             * @param {flyteidl.core.IRetryStrategy=} [properties] Properties to set
-             */
-            function RetryStrategy(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * RetryStrategy retries.
-             * @member {number} retries
-             * @memberof flyteidl.core.RetryStrategy
-             * @instance
-             */
-            RetryStrategy.prototype.retries = 0;
-
-            /**
-             * Creates a new RetryStrategy instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.RetryStrategy
-             * @static
-             * @param {flyteidl.core.IRetryStrategy=} [properties] Properties to set
-             * @returns {flyteidl.core.RetryStrategy} RetryStrategy instance
-             */
-            RetryStrategy.create = function create(properties) {
-                return new RetryStrategy(properties);
-            };
-
-            /**
-             * Encodes the specified RetryStrategy message. Does not implicitly {@link flyteidl.core.RetryStrategy.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.RetryStrategy
-             * @static
-             * @param {flyteidl.core.IRetryStrategy} message RetryStrategy message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            RetryStrategy.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.retries != null && message.hasOwnProperty("retries"))
-                    writer.uint32(/* id 5, wireType 0 =*/40).uint32(message.retries);
-                return writer;
-            };
-
-            /**
-             * Decodes a RetryStrategy message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.RetryStrategy
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.RetryStrategy} RetryStrategy
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            RetryStrategy.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.RetryStrategy();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 5:
-                        message.retries = reader.uint32();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a RetryStrategy message.
-             * @function verify
-             * @memberof flyteidl.core.RetryStrategy
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            RetryStrategy.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.retries != null && message.hasOwnProperty("retries"))
-                    if (!$util.isInteger(message.retries))
-                        return "retries: integer expected";
-                return null;
-            };
-
-            return RetryStrategy;
-        })();
-
-        core.IfBlock = (function() {
-
-            /**
-             * Properties of an IfBlock.
-             * @memberof flyteidl.core
-             * @interface IIfBlock
-             * @property {flyteidl.core.IBooleanExpression|null} [condition] IfBlock condition
-             * @property {flyteidl.core.INode|null} [thenNode] IfBlock thenNode
-             */
-
-            /**
-             * Constructs a new IfBlock.
-             * @memberof flyteidl.core
-             * @classdesc Represents an IfBlock.
-             * @implements IIfBlock
-             * @constructor
-             * @param {flyteidl.core.IIfBlock=} [properties] Properties to set
-             */
-            function IfBlock(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * IfBlock condition.
-             * @member {flyteidl.core.IBooleanExpression|null|undefined} condition
-             * @memberof flyteidl.core.IfBlock
-             * @instance
-             */
-            IfBlock.prototype.condition = null;
-
-            /**
-             * IfBlock thenNode.
-             * @member {flyteidl.core.INode|null|undefined} thenNode
-             * @memberof flyteidl.core.IfBlock
-             * @instance
-             */
-            IfBlock.prototype.thenNode = null;
-
-            /**
-             * Creates a new IfBlock instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.IfBlock
-             * @static
-             * @param {flyteidl.core.IIfBlock=} [properties] Properties to set
-             * @returns {flyteidl.core.IfBlock} IfBlock instance
-             */
-            IfBlock.create = function create(properties) {
-                return new IfBlock(properties);
-            };
-
-            /**
-             * Encodes the specified IfBlock message. Does not implicitly {@link flyteidl.core.IfBlock.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.IfBlock
-             * @static
-             * @param {flyteidl.core.IIfBlock} message IfBlock message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            IfBlock.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.condition != null && message.hasOwnProperty("condition"))
-                    $root.flyteidl.core.BooleanExpression.encode(message.condition, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.thenNode != null && message.hasOwnProperty("thenNode"))
-                    $root.flyteidl.core.Node.encode(message.thenNode, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes an IfBlock message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.IfBlock
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.IfBlock} IfBlock
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            IfBlock.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.IfBlock();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.condition = $root.flyteidl.core.BooleanExpression.decode(reader, reader.uint32());
-                        break;
-                    case 2:
-                        message.thenNode = $root.flyteidl.core.Node.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies an IfBlock message.
-             * @function verify
-             * @memberof flyteidl.core.IfBlock
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            IfBlock.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.condition != null && message.hasOwnProperty("condition")) {
-                    let error = $root.flyteidl.core.BooleanExpression.verify(message.condition);
-                    if (error)
-                        return "condition." + error;
-                }
-                if (message.thenNode != null && message.hasOwnProperty("thenNode")) {
-                    let error = $root.flyteidl.core.Node.verify(message.thenNode);
-                    if (error)
-                        return "thenNode." + error;
-                }
-                return null;
-            };
-
-            return IfBlock;
-        })();
-
-        core.IfElseBlock = (function() {
-
-            /**
-             * Properties of an IfElseBlock.
-             * @memberof flyteidl.core
-             * @interface IIfElseBlock
-             * @property {flyteidl.core.IIfBlock|null} ["case"] IfElseBlock case
-             * @property {Array.<flyteidl.core.IIfBlock>|null} [other] IfElseBlock other
-             * @property {flyteidl.core.INode|null} [elseNode] IfElseBlock elseNode
-             * @property {flyteidl.core.IError|null} [error] IfElseBlock error
-             */
-
-            /**
-             * Constructs a new IfElseBlock.
-             * @memberof flyteidl.core
-             * @classdesc Represents an IfElseBlock.
-             * @implements IIfElseBlock
-             * @constructor
-             * @param {flyteidl.core.IIfElseBlock=} [properties] Properties to set
-             */
-            function IfElseBlock(properties) {
-                this.other = [];
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * IfElseBlock case.
-             * @member {flyteidl.core.IIfBlock|null|undefined} case
-             * @memberof flyteidl.core.IfElseBlock
-             * @instance
-             */
-            IfElseBlock.prototype["case"] = null;
-
-            /**
-             * IfElseBlock other.
-             * @member {Array.<flyteidl.core.IIfBlock>} other
-             * @memberof flyteidl.core.IfElseBlock
-             * @instance
-             */
-            IfElseBlock.prototype.other = $util.emptyArray;
-
-            /**
-             * IfElseBlock elseNode.
-             * @member {flyteidl.core.INode|null|undefined} elseNode
-             * @memberof flyteidl.core.IfElseBlock
-             * @instance
-             */
-            IfElseBlock.prototype.elseNode = null;
-
-            /**
-             * IfElseBlock error.
-             * @member {flyteidl.core.IError|null|undefined} error
-             * @memberof flyteidl.core.IfElseBlock
-             * @instance
-             */
-            IfElseBlock.prototype.error = null;
-
-            // OneOf field names bound to virtual getters and setters
-            let $oneOfFields;
-
-            /**
-             * IfElseBlock default.
-             * @member {"elseNode"|"error"|undefined} default_
-             * @memberof flyteidl.core.IfElseBlock
-             * @instance
-             */
-            Object.defineProperty(IfElseBlock.prototype, "default", {
-                get: $util.oneOfGetter($oneOfFields = ["elseNode", "error"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new IfElseBlock instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.IfElseBlock
-             * @static
-             * @param {flyteidl.core.IIfElseBlock=} [properties] Properties to set
-             * @returns {flyteidl.core.IfElseBlock} IfElseBlock instance
-             */
-            IfElseBlock.create = function create(properties) {
-                return new IfElseBlock(properties);
-            };
-
-            /**
-             * Encodes the specified IfElseBlock message. Does not implicitly {@link flyteidl.core.IfElseBlock.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.IfElseBlock
-             * @static
-             * @param {flyteidl.core.IIfElseBlock} message IfElseBlock message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            IfElseBlock.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message["case"] != null && message.hasOwnProperty("case"))
-                    $root.flyteidl.core.IfBlock.encode(message["case"], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.other != null && message.other.length)
-                    for (let i = 0; i < message.other.length; ++i)
-                        $root.flyteidl.core.IfBlock.encode(message.other[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.elseNode != null && message.hasOwnProperty("elseNode"))
-                    $root.flyteidl.core.Node.encode(message.elseNode, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.error != null && message.hasOwnProperty("error"))
-                    $root.flyteidl.core.Error.encode(message.error, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes an IfElseBlock message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.IfElseBlock
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.IfElseBlock} IfElseBlock
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            IfElseBlock.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.IfElseBlock();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message["case"] = $root.flyteidl.core.IfBlock.decode(reader, reader.uint32());
-                        break;
-                    case 2:
-                        if (!(message.other && message.other.length))
-                            message.other = [];
-                        message.other.push($root.flyteidl.core.IfBlock.decode(reader, reader.uint32()));
-                        break;
-                    case 3:
-                        message.elseNode = $root.flyteidl.core.Node.decode(reader, reader.uint32());
-                        break;
-                    case 4:
-                        message.error = $root.flyteidl.core.Error.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies an IfElseBlock message.
-             * @function verify
-             * @memberof flyteidl.core.IfElseBlock
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            IfElseBlock.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                let properties = {};
-                if (message["case"] != null && message.hasOwnProperty("case")) {
-                    let error = $root.flyteidl.core.IfBlock.verify(message["case"]);
-                    if (error)
-                        return "case." + error;
-                }
-                if (message.other != null && message.hasOwnProperty("other")) {
-                    if (!Array.isArray(message.other))
-                        return "other: array expected";
-                    for (let i = 0; i < message.other.length; ++i) {
-                        let error = $root.flyteidl.core.IfBlock.verify(message.other[i]);
-                        if (error)
-                            return "other." + error;
-                    }
-                }
-                if (message.elseNode != null && message.hasOwnProperty("elseNode")) {
-                    properties["default"] = 1;
-                    {
-                        let error = $root.flyteidl.core.Node.verify(message.elseNode);
-                        if (error)
-                            return "elseNode." + error;
-                    }
-                }
-                if (message.error != null && message.hasOwnProperty("error")) {
-                    if (properties["default"] === 1)
-                        return "default: multiple values";
-                    properties["default"] = 1;
-                    {
-                        let error = $root.flyteidl.core.Error.verify(message.error);
-                        if (error)
-                            return "error." + error;
-                    }
-                }
-                return null;
-            };
-
-            return IfElseBlock;
-        })();
-
-        core.BranchNode = (function() {
-
-            /**
-             * Properties of a BranchNode.
-             * @memberof flyteidl.core
-             * @interface IBranchNode
-             * @property {flyteidl.core.IIfElseBlock|null} [ifElse] BranchNode ifElse
-             */
-
-            /**
-             * Constructs a new BranchNode.
-             * @memberof flyteidl.core
-             * @classdesc Represents a BranchNode.
-             * @implements IBranchNode
-             * @constructor
-             * @param {flyteidl.core.IBranchNode=} [properties] Properties to set
-             */
-            function BranchNode(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * BranchNode ifElse.
-             * @member {flyteidl.core.IIfElseBlock|null|undefined} ifElse
-             * @memberof flyteidl.core.BranchNode
-             * @instance
-             */
-            BranchNode.prototype.ifElse = null;
-
-            /**
-             * Creates a new BranchNode instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.BranchNode
-             * @static
-             * @param {flyteidl.core.IBranchNode=} [properties] Properties to set
-             * @returns {flyteidl.core.BranchNode} BranchNode instance
-             */
-            BranchNode.create = function create(properties) {
-                return new BranchNode(properties);
-            };
-
-            /**
-             * Encodes the specified BranchNode message. Does not implicitly {@link flyteidl.core.BranchNode.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.BranchNode
-             * @static
-             * @param {flyteidl.core.IBranchNode} message BranchNode message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            BranchNode.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.ifElse != null && message.hasOwnProperty("ifElse"))
-                    $root.flyteidl.core.IfElseBlock.encode(message.ifElse, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a BranchNode message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.BranchNode
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.BranchNode} BranchNode
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            BranchNode.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.BranchNode();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.ifElse = $root.flyteidl.core.IfElseBlock.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a BranchNode message.
-             * @function verify
-             * @memberof flyteidl.core.BranchNode
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            BranchNode.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.ifElse != null && message.hasOwnProperty("ifElse")) {
-                    let error = $root.flyteidl.core.IfElseBlock.verify(message.ifElse);
-                    if (error)
-                        return "ifElse." + error;
-                }
-                return null;
-            };
-
-            return BranchNode;
-        })();
-
-        core.ClosureNode = (function() {
-
-            /**
-             * Properties of a ClosureNode.
-             * @memberof flyteidl.core
-             * @interface IClosureNode
-             * @property {flyteidl.core.ITypedInterface|null} ["interface"] ClosureNode interface
-             */
-
-            /**
-             * Constructs a new ClosureNode.
-             * @memberof flyteidl.core
-             * @classdesc Represents a ClosureNode.
-             * @implements IClosureNode
-             * @constructor
-             * @param {flyteidl.core.IClosureNode=} [properties] Properties to set
-             */
-            function ClosureNode(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * ClosureNode interface.
-             * @member {flyteidl.core.ITypedInterface|null|undefined} interface
-             * @memberof flyteidl.core.ClosureNode
-             * @instance
-             */
-            ClosureNode.prototype["interface"] = null;
-
-            /**
-             * Creates a new ClosureNode instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.ClosureNode
-             * @static
-             * @param {flyteidl.core.IClosureNode=} [properties] Properties to set
-             * @returns {flyteidl.core.ClosureNode} ClosureNode instance
-             */
-            ClosureNode.create = function create(properties) {
-                return new ClosureNode(properties);
-            };
-
-            /**
-             * Encodes the specified ClosureNode message. Does not implicitly {@link flyteidl.core.ClosureNode.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.ClosureNode
-             * @static
-             * @param {flyteidl.core.IClosureNode} message ClosureNode message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            ClosureNode.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message["interface"] != null && message.hasOwnProperty("interface"))
-                    $root.flyteidl.core.TypedInterface.encode(message["interface"], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a ClosureNode message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.ClosureNode
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.ClosureNode} ClosureNode
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            ClosureNode.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ClosureNode();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message["interface"] = $root.flyteidl.core.TypedInterface.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a ClosureNode message.
-             * @function verify
-             * @memberof flyteidl.core.ClosureNode
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            ClosureNode.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message["interface"] != null && message.hasOwnProperty("interface")) {
-                    let error = $root.flyteidl.core.TypedInterface.verify(message["interface"]);
-                    if (error)
-                        return "interface." + error;
-                }
-                return null;
-            };
-
-            return ClosureNode;
-        })();
-
-        core.TaskNode = (function() {
-
-            /**
-             * Properties of a TaskNode.
-             * @memberof flyteidl.core
-             * @interface ITaskNode
-             * @property {flyteidl.core.IIdentifier|null} [referenceId] TaskNode referenceId
-             */
-
-            /**
-             * Constructs a new TaskNode.
-             * @memberof flyteidl.core
-             * @classdesc Represents a TaskNode.
-             * @implements ITaskNode
-             * @constructor
-             * @param {flyteidl.core.ITaskNode=} [properties] Properties to set
-             */
-            function TaskNode(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * TaskNode referenceId.
-             * @member {flyteidl.core.IIdentifier|null|undefined} referenceId
-             * @memberof flyteidl.core.TaskNode
-             * @instance
-             */
-            TaskNode.prototype.referenceId = null;
-
-            // OneOf field names bound to virtual getters and setters
-            let $oneOfFields;
-
-            /**
-             * TaskNode reference.
-             * @member {"referenceId"|undefined} reference
-             * @memberof flyteidl.core.TaskNode
-             * @instance
-             */
-            Object.defineProperty(TaskNode.prototype, "reference", {
-                get: $util.oneOfGetter($oneOfFields = ["referenceId"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new TaskNode instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.TaskNode
-             * @static
-             * @param {flyteidl.core.ITaskNode=} [properties] Properties to set
-             * @returns {flyteidl.core.TaskNode} TaskNode instance
-             */
-            TaskNode.create = function create(properties) {
-                return new TaskNode(properties);
-            };
-
-            /**
-             * Encodes the specified TaskNode message. Does not implicitly {@link flyteidl.core.TaskNode.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.TaskNode
-             * @static
-             * @param {flyteidl.core.ITaskNode} message TaskNode message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            TaskNode.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.referenceId != null && message.hasOwnProperty("referenceId"))
-                    $root.flyteidl.core.Identifier.encode(message.referenceId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a TaskNode message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.TaskNode
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.TaskNode} TaskNode
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            TaskNode.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.TaskNode();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.referenceId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a TaskNode message.
-             * @function verify
-             * @memberof flyteidl.core.TaskNode
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            TaskNode.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                let properties = {};
-                if (message.referenceId != null && message.hasOwnProperty("referenceId")) {
-                    properties.reference = 1;
-                    {
-                        let error = $root.flyteidl.core.Identifier.verify(message.referenceId);
-                        if (error)
-                            return "referenceId." + error;
-                    }
-                }
-                return null;
-            };
-
-            return TaskNode;
-        })();
-
-        core.WorkflowNode = (function() {
-
-            /**
-             * Properties of a WorkflowNode.
-             * @memberof flyteidl.core
-             * @interface IWorkflowNode
-             * @property {flyteidl.core.IIdentifier|null} [launchplanRef] WorkflowNode launchplanRef
-             * @property {flyteidl.core.IIdentifier|null} [subWorkflowRef] WorkflowNode subWorkflowRef
-             */
-
-            /**
-             * Constructs a new WorkflowNode.
-             * @memberof flyteidl.core
-             * @classdesc Represents a WorkflowNode.
-             * @implements IWorkflowNode
-             * @constructor
-             * @param {flyteidl.core.IWorkflowNode=} [properties] Properties to set
-             */
-            function WorkflowNode(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * WorkflowNode launchplanRef.
-             * @member {flyteidl.core.IIdentifier|null|undefined} launchplanRef
-             * @memberof flyteidl.core.WorkflowNode
-             * @instance
-             */
-            WorkflowNode.prototype.launchplanRef = null;
-
-            /**
-             * WorkflowNode subWorkflowRef.
-             * @member {flyteidl.core.IIdentifier|null|undefined} subWorkflowRef
-             * @memberof flyteidl.core.WorkflowNode
-             * @instance
-             */
-            WorkflowNode.prototype.subWorkflowRef = null;
-
-            // OneOf field names bound to virtual getters and setters
-            let $oneOfFields;
-
-            /**
-             * WorkflowNode reference.
-             * @member {"launchplanRef"|"subWorkflowRef"|undefined} reference
-             * @memberof flyteidl.core.WorkflowNode
-             * @instance
-             */
-            Object.defineProperty(WorkflowNode.prototype, "reference", {
-                get: $util.oneOfGetter($oneOfFields = ["launchplanRef", "subWorkflowRef"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new WorkflowNode instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.WorkflowNode
-             * @static
-             * @param {flyteidl.core.IWorkflowNode=} [properties] Properties to set
-             * @returns {flyteidl.core.WorkflowNode} WorkflowNode instance
-             */
-            WorkflowNode.create = function create(properties) {
-                return new WorkflowNode(properties);
-            };
-
-            /**
-             * Encodes the specified WorkflowNode message. Does not implicitly {@link flyteidl.core.WorkflowNode.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.WorkflowNode
-             * @static
-             * @param {flyteidl.core.IWorkflowNode} message WorkflowNode message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            WorkflowNode.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.launchplanRef != null && message.hasOwnProperty("launchplanRef"))
-                    $root.flyteidl.core.Identifier.encode(message.launchplanRef, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.subWorkflowRef != null && message.hasOwnProperty("subWorkflowRef"))
-                    $root.flyteidl.core.Identifier.encode(message.subWorkflowRef, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a WorkflowNode message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.WorkflowNode
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.WorkflowNode} WorkflowNode
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            WorkflowNode.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.WorkflowNode();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.launchplanRef = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
-                        break;
-                    case 2:
-                        message.subWorkflowRef = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a WorkflowNode message.
-             * @function verify
-             * @memberof flyteidl.core.WorkflowNode
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            WorkflowNode.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                let properties = {};
-                if (message.launchplanRef != null && message.hasOwnProperty("launchplanRef")) {
-                    properties.reference = 1;
-                    {
-                        let error = $root.flyteidl.core.Identifier.verify(message.launchplanRef);
-                        if (error)
-                            return "launchplanRef." + error;
-                    }
-                }
-                if (message.subWorkflowRef != null && message.hasOwnProperty("subWorkflowRef")) {
-                    if (properties.reference === 1)
-                        return "reference: multiple values";
-                    properties.reference = 1;
-                    {
-                        let error = $root.flyteidl.core.Identifier.verify(message.subWorkflowRef);
-                        if (error)
-                            return "subWorkflowRef." + error;
-                    }
-                }
-                return null;
-            };
-
-            return WorkflowNode;
-        })();
-
-        core.NodeMetadata = (function() {
-
-            /**
-             * Properties of a NodeMetadata.
-             * @memberof flyteidl.core
-             * @interface INodeMetadata
-             * @property {string|null} [name] NodeMetadata name
-             * @property {google.protobuf.IDuration|null} [timeout] NodeMetadata timeout
-             * @property {flyteidl.core.IRetryStrategy|null} [retries] NodeMetadata retries
-             */
-
-            /**
-             * Constructs a new NodeMetadata.
-             * @memberof flyteidl.core
-             * @classdesc Represents a NodeMetadata.
-             * @implements INodeMetadata
-             * @constructor
-             * @param {flyteidl.core.INodeMetadata=} [properties] Properties to set
-             */
-            function NodeMetadata(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * NodeMetadata name.
-             * @member {string} name
-             * @memberof flyteidl.core.NodeMetadata
-             * @instance
-             */
-            NodeMetadata.prototype.name = "";
-
-            /**
-             * NodeMetadata timeout.
-             * @member {google.protobuf.IDuration|null|undefined} timeout
-             * @memberof flyteidl.core.NodeMetadata
-             * @instance
-             */
-            NodeMetadata.prototype.timeout = null;
-
-            /**
-             * NodeMetadata retries.
-             * @member {flyteidl.core.IRetryStrategy|null|undefined} retries
-             * @memberof flyteidl.core.NodeMetadata
-             * @instance
-             */
-            NodeMetadata.prototype.retries = null;
-
-            /**
-             * Creates a new NodeMetadata instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.NodeMetadata
-             * @static
-             * @param {flyteidl.core.INodeMetadata=} [properties] Properties to set
-             * @returns {flyteidl.core.NodeMetadata} NodeMetadata instance
-             */
-            NodeMetadata.create = function create(properties) {
-                return new NodeMetadata(properties);
-            };
-
-            /**
-             * Encodes the specified NodeMetadata message. Does not implicitly {@link flyteidl.core.NodeMetadata.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.NodeMetadata
-             * @static
-             * @param {flyteidl.core.INodeMetadata} message NodeMetadata message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            NodeMetadata.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.name != null && message.hasOwnProperty("name"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
-                if (message.timeout != null && message.hasOwnProperty("timeout"))
-                    $root.google.protobuf.Duration.encode(message.timeout, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.retries != null && message.hasOwnProperty("retries"))
-                    $root.flyteidl.core.RetryStrategy.encode(message.retries, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a NodeMetadata message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.NodeMetadata
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.NodeMetadata} NodeMetadata
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            NodeMetadata.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.NodeMetadata();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.name = reader.string();
-                        break;
-                    case 4:
-                        message.timeout = $root.google.protobuf.Duration.decode(reader, reader.uint32());
-                        break;
-                    case 5:
-                        message.retries = $root.flyteidl.core.RetryStrategy.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a NodeMetadata message.
-             * @function verify
-             * @memberof flyteidl.core.NodeMetadata
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            NodeMetadata.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.name != null && message.hasOwnProperty("name"))
-                    if (!$util.isString(message.name))
-                        return "name: string expected";
-                if (message.timeout != null && message.hasOwnProperty("timeout")) {
-                    let error = $root.google.protobuf.Duration.verify(message.timeout);
-                    if (error)
-                        return "timeout." + error;
-                }
-                if (message.retries != null && message.hasOwnProperty("retries")) {
-                    let error = $root.flyteidl.core.RetryStrategy.verify(message.retries);
-                    if (error)
-                        return "retries." + error;
-                }
-                return null;
-            };
-
-            return NodeMetadata;
-        })();
-
-        core.Alias = (function() {
-
-            /**
-             * Properties of an Alias.
-             * @memberof flyteidl.core
-             * @interface IAlias
-             * @property {string|null} ["var"] Alias var
-             * @property {string|null} [alias] Alias alias
-             */
-
-            /**
-             * Constructs a new Alias.
-             * @memberof flyteidl.core
-             * @classdesc Represents an Alias.
-             * @implements IAlias
-             * @constructor
-             * @param {flyteidl.core.IAlias=} [properties] Properties to set
-             */
-            function Alias(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Alias var.
-             * @member {string} var
-             * @memberof flyteidl.core.Alias
-             * @instance
-             */
-            Alias.prototype["var"] = "";
-
-            /**
-             * Alias alias.
-             * @member {string} alias
-             * @memberof flyteidl.core.Alias
-             * @instance
-             */
-            Alias.prototype.alias = "";
-
-            /**
-             * Creates a new Alias instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.Alias
-             * @static
-             * @param {flyteidl.core.IAlias=} [properties] Properties to set
-             * @returns {flyteidl.core.Alias} Alias instance
-             */
-            Alias.create = function create(properties) {
-                return new Alias(properties);
-            };
-
-            /**
-             * Encodes the specified Alias message. Does not implicitly {@link flyteidl.core.Alias.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.Alias
-             * @static
-             * @param {flyteidl.core.IAlias} message Alias message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Alias.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message["var"] != null && message.hasOwnProperty("var"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message["var"]);
-                if (message.alias != null && message.hasOwnProperty("alias"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.alias);
-                return writer;
-            };
-
-            /**
-             * Decodes an Alias message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.Alias
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.Alias} Alias
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Alias.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Alias();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message["var"] = reader.string();
-                        break;
-                    case 2:
-                        message.alias = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies an Alias message.
-             * @function verify
-             * @memberof flyteidl.core.Alias
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Alias.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message["var"] != null && message.hasOwnProperty("var"))
-                    if (!$util.isString(message["var"]))
-                        return "var: string expected";
-                if (message.alias != null && message.hasOwnProperty("alias"))
-                    if (!$util.isString(message.alias))
-                        return "alias: string expected";
-                return null;
-            };
-
-            return Alias;
-        })();
-
-        core.Node = (function() {
-
-            /**
-             * Properties of a Node.
-             * @memberof flyteidl.core
-             * @interface INode
-             * @property {string|null} [id] Node id
-             * @property {flyteidl.core.INodeMetadata|null} [metadata] Node metadata
-             * @property {Array.<flyteidl.core.IBinding>|null} [inputs] Node inputs
-             * @property {Array.<string>|null} [upstreamNodeIds] Node upstreamNodeIds
-             * @property {Array.<flyteidl.core.IAlias>|null} [outputAliases] Node outputAliases
-             * @property {flyteidl.core.ITaskNode|null} [taskNode] Node taskNode
-             * @property {flyteidl.core.IWorkflowNode|null} [workflowNode] Node workflowNode
-             * @property {flyteidl.core.IBranchNode|null} [branchNode] Node branchNode
-             * @property {flyteidl.core.IClosureNode|null} [closureNode] Node closureNode
-             */
-
-            /**
-             * Constructs a new Node.
-             * @memberof flyteidl.core
-             * @classdesc Represents a Node.
-             * @implements INode
-             * @constructor
-             * @param {flyteidl.core.INode=} [properties] Properties to set
-             */
-            function Node(properties) {
-                this.inputs = [];
-                this.upstreamNodeIds = [];
-                this.outputAliases = [];
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Node id.
-             * @member {string} id
-             * @memberof flyteidl.core.Node
-             * @instance
-             */
-            Node.prototype.id = "";
-
-            /**
-             * Node metadata.
-             * @member {flyteidl.core.INodeMetadata|null|undefined} metadata
-             * @memberof flyteidl.core.Node
-             * @instance
-             */
-            Node.prototype.metadata = null;
-
-            /**
-             * Node inputs.
-             * @member {Array.<flyteidl.core.IBinding>} inputs
-             * @memberof flyteidl.core.Node
-             * @instance
-             */
-            Node.prototype.inputs = $util.emptyArray;
-
-            /**
-             * Node upstreamNodeIds.
-             * @member {Array.<string>} upstreamNodeIds
-             * @memberof flyteidl.core.Node
-             * @instance
-             */
-            Node.prototype.upstreamNodeIds = $util.emptyArray;
-
-            /**
-             * Node outputAliases.
-             * @member {Array.<flyteidl.core.IAlias>} outputAliases
-             * @memberof flyteidl.core.Node
-             * @instance
-             */
-            Node.prototype.outputAliases = $util.emptyArray;
-
-            /**
-             * Node taskNode.
-             * @member {flyteidl.core.ITaskNode|null|undefined} taskNode
-             * @memberof flyteidl.core.Node
-             * @instance
-             */
-            Node.prototype.taskNode = null;
-
-            /**
-             * Node workflowNode.
-             * @member {flyteidl.core.IWorkflowNode|null|undefined} workflowNode
-             * @memberof flyteidl.core.Node
-             * @instance
-             */
-            Node.prototype.workflowNode = null;
-
-            /**
-             * Node branchNode.
-             * @member {flyteidl.core.IBranchNode|null|undefined} branchNode
-             * @memberof flyteidl.core.Node
-             * @instance
-             */
-            Node.prototype.branchNode = null;
-
-            /**
-             * Node closureNode.
-             * @member {flyteidl.core.IClosureNode|null|undefined} closureNode
-             * @memberof flyteidl.core.Node
-             * @instance
-             */
-            Node.prototype.closureNode = null;
-
-            // OneOf field names bound to virtual getters and setters
-            let $oneOfFields;
-
-            /**
-             * Node target.
-             * @member {"taskNode"|"workflowNode"|"branchNode"|"closureNode"|undefined} target
-             * @memberof flyteidl.core.Node
-             * @instance
-             */
-            Object.defineProperty(Node.prototype, "target", {
-                get: $util.oneOfGetter($oneOfFields = ["taskNode", "workflowNode", "branchNode", "closureNode"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new Node instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.Node
-             * @static
-             * @param {flyteidl.core.INode=} [properties] Properties to set
-             * @returns {flyteidl.core.Node} Node instance
-             */
-            Node.create = function create(properties) {
-                return new Node(properties);
-            };
-
-            /**
-             * Encodes the specified Node message. Does not implicitly {@link flyteidl.core.Node.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.Node
-             * @static
-             * @param {flyteidl.core.INode} message Node message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Node.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
-                if (message.metadata != null && message.hasOwnProperty("metadata"))
-                    $root.flyteidl.core.NodeMetadata.encode(message.metadata, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.inputs != null && message.inputs.length)
-                    for (let i = 0; i < message.inputs.length; ++i)
-                        $root.flyteidl.core.Binding.encode(message.inputs[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.upstreamNodeIds != null && message.upstreamNodeIds.length)
-                    for (let i = 0; i < message.upstreamNodeIds.length; ++i)
-                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.upstreamNodeIds[i]);
-                if (message.outputAliases != null && message.outputAliases.length)
-                    for (let i = 0; i < message.outputAliases.length; ++i)
-                        $root.flyteidl.core.Alias.encode(message.outputAliases[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                if (message.taskNode != null && message.hasOwnProperty("taskNode"))
-                    $root.flyteidl.core.TaskNode.encode(message.taskNode, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                if (message.workflowNode != null && message.hasOwnProperty("workflowNode"))
-                    $root.flyteidl.core.WorkflowNode.encode(message.workflowNode, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                if (message.branchNode != null && message.hasOwnProperty("branchNode"))
-                    $root.flyteidl.core.BranchNode.encode(message.branchNode, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-                if (message.closureNode != null && message.hasOwnProperty("closureNode"))
-                    $root.flyteidl.core.ClosureNode.encode(message.closureNode, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a Node message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.Node
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.Node} Node
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Node.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Node();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.id = reader.string();
-                        break;
-                    case 2:
-                        message.metadata = $root.flyteidl.core.NodeMetadata.decode(reader, reader.uint32());
-                        break;
-                    case 3:
-                        if (!(message.inputs && message.inputs.length))
-                            message.inputs = [];
-                        message.inputs.push($root.flyteidl.core.Binding.decode(reader, reader.uint32()));
-                        break;
-                    case 4:
-                        if (!(message.upstreamNodeIds && message.upstreamNodeIds.length))
-                            message.upstreamNodeIds = [];
-                        message.upstreamNodeIds.push(reader.string());
-                        break;
-                    case 5:
-                        if (!(message.outputAliases && message.outputAliases.length))
-                            message.outputAliases = [];
-                        message.outputAliases.push($root.flyteidl.core.Alias.decode(reader, reader.uint32()));
-                        break;
-                    case 6:
-                        message.taskNode = $root.flyteidl.core.TaskNode.decode(reader, reader.uint32());
-                        break;
-                    case 7:
-                        message.workflowNode = $root.flyteidl.core.WorkflowNode.decode(reader, reader.uint32());
-                        break;
-                    case 8:
-                        message.branchNode = $root.flyteidl.core.BranchNode.decode(reader, reader.uint32());
-                        break;
-                    case 9:
-                        message.closureNode = $root.flyteidl.core.ClosureNode.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a Node message.
-             * @function verify
-             * @memberof flyteidl.core.Node
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Node.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                let properties = {};
-                if (message.id != null && message.hasOwnProperty("id"))
-                    if (!$util.isString(message.id))
-                        return "id: string expected";
-                if (message.metadata != null && message.hasOwnProperty("metadata")) {
-                    let error = $root.flyteidl.core.NodeMetadata.verify(message.metadata);
-                    if (error)
-                        return "metadata." + error;
-                }
-                if (message.inputs != null && message.hasOwnProperty("inputs")) {
-                    if (!Array.isArray(message.inputs))
-                        return "inputs: array expected";
-                    for (let i = 0; i < message.inputs.length; ++i) {
-                        let error = $root.flyteidl.core.Binding.verify(message.inputs[i]);
-                        if (error)
-                            return "inputs." + error;
-                    }
-                }
-                if (message.upstreamNodeIds != null && message.hasOwnProperty("upstreamNodeIds")) {
-                    if (!Array.isArray(message.upstreamNodeIds))
-                        return "upstreamNodeIds: array expected";
-                    for (let i = 0; i < message.upstreamNodeIds.length; ++i)
-                        if (!$util.isString(message.upstreamNodeIds[i]))
-                            return "upstreamNodeIds: string[] expected";
-                }
-                if (message.outputAliases != null && message.hasOwnProperty("outputAliases")) {
-                    if (!Array.isArray(message.outputAliases))
-                        return "outputAliases: array expected";
-                    for (let i = 0; i < message.outputAliases.length; ++i) {
-                        let error = $root.flyteidl.core.Alias.verify(message.outputAliases[i]);
-                        if (error)
-                            return "outputAliases." + error;
-                    }
-                }
-                if (message.taskNode != null && message.hasOwnProperty("taskNode")) {
-                    properties.target = 1;
-                    {
-                        let error = $root.flyteidl.core.TaskNode.verify(message.taskNode);
-                        if (error)
-                            return "taskNode." + error;
-                    }
-                }
-                if (message.workflowNode != null && message.hasOwnProperty("workflowNode")) {
-                    if (properties.target === 1)
-                        return "target: multiple values";
-                    properties.target = 1;
-                    {
-                        let error = $root.flyteidl.core.WorkflowNode.verify(message.workflowNode);
-                        if (error)
-                            return "workflowNode." + error;
-                    }
-                }
-                if (message.branchNode != null && message.hasOwnProperty("branchNode")) {
-                    if (properties.target === 1)
-                        return "target: multiple values";
-                    properties.target = 1;
-                    {
-                        let error = $root.flyteidl.core.BranchNode.verify(message.branchNode);
-                        if (error)
-                            return "branchNode." + error;
-                    }
-                }
-                if (message.closureNode != null && message.hasOwnProperty("closureNode")) {
-                    if (properties.target === 1)
-                        return "target: multiple values";
-                    properties.target = 1;
-                    {
-                        let error = $root.flyteidl.core.ClosureNode.verify(message.closureNode);
-                        if (error)
-                            return "closureNode." + error;
-                    }
-                }
-                return null;
-            };
-
-            return Node;
-        })();
-
-        /**
-         * ResourceType enum.
-         * @name flyteidl.core.ResourceType
-         * @enum {string}
-         * @property {number} UNSPECIFIED=0 UNSPECIFIED value
-         * @property {number} TASK=1 TASK value
-         * @property {number} WORKFLOW=2 WORKFLOW value
-         * @property {number} LAUNCH_PLAN=3 LAUNCH_PLAN value
-         */
-        core.ResourceType = (function() {
-            const valuesById = {}, values = Object.create(valuesById);
-            values[valuesById[0] = "UNSPECIFIED"] = 0;
-            values[valuesById[1] = "TASK"] = 1;
-            values[valuesById[2] = "WORKFLOW"] = 2;
-            values[valuesById[3] = "LAUNCH_PLAN"] = 3;
-            return values;
-        })();
-
-        core.Identifier = (function() {
-
-            /**
-             * Properties of an Identifier.
-             * @memberof flyteidl.core
-             * @interface IIdentifier
-             * @property {flyteidl.core.ResourceType|null} [resourceType] Identifier resourceType
-             * @property {string|null} [project] Identifier project
-             * @property {string|null} [domain] Identifier domain
-             * @property {string|null} [name] Identifier name
-             * @property {string|null} [version] Identifier version
-             */
-
-            /**
-             * Constructs a new Identifier.
-             * @memberof flyteidl.core
-             * @classdesc Represents an Identifier.
-             * @implements IIdentifier
-             * @constructor
-             * @param {flyteidl.core.IIdentifier=} [properties] Properties to set
-             */
-            function Identifier(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Identifier resourceType.
-             * @member {flyteidl.core.ResourceType} resourceType
-             * @memberof flyteidl.core.Identifier
-             * @instance
-             */
-            Identifier.prototype.resourceType = 0;
-
-            /**
-             * Identifier project.
-             * @member {string} project
-             * @memberof flyteidl.core.Identifier
-             * @instance
-             */
-            Identifier.prototype.project = "";
-
-            /**
-             * Identifier domain.
-             * @member {string} domain
-             * @memberof flyteidl.core.Identifier
-             * @instance
-             */
-            Identifier.prototype.domain = "";
-
-            /**
-             * Identifier name.
-             * @member {string} name
-             * @memberof flyteidl.core.Identifier
-             * @instance
-             */
-            Identifier.prototype.name = "";
-
-            /**
-             * Identifier version.
-             * @member {string} version
-             * @memberof flyteidl.core.Identifier
-             * @instance
-             */
-            Identifier.prototype.version = "";
-
-            /**
-             * Creates a new Identifier instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.Identifier
-             * @static
-             * @param {flyteidl.core.IIdentifier=} [properties] Properties to set
-             * @returns {flyteidl.core.Identifier} Identifier instance
-             */
-            Identifier.create = function create(properties) {
-                return new Identifier(properties);
-            };
-
-            /**
-             * Encodes the specified Identifier message. Does not implicitly {@link flyteidl.core.Identifier.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.Identifier
-             * @static
-             * @param {flyteidl.core.IIdentifier} message Identifier message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Identifier.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.resourceType);
-                if (message.project != null && message.hasOwnProperty("project"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.project);
-                if (message.domain != null && message.hasOwnProperty("domain"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.domain);
-                if (message.name != null && message.hasOwnProperty("name"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.name);
-                if (message.version != null && message.hasOwnProperty("version"))
-                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.version);
-                return writer;
-            };
-
-            /**
-             * Decodes an Identifier message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.Identifier
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.Identifier} Identifier
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Identifier.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Identifier();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.resourceType = reader.int32();
-                        break;
-                    case 2:
-                        message.project = reader.string();
-                        break;
-                    case 3:
-                        message.domain = reader.string();
-                        break;
-                    case 4:
-                        message.name = reader.string();
-                        break;
-                    case 5:
-                        message.version = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies an Identifier message.
-             * @function verify
-             * @memberof flyteidl.core.Identifier
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Identifier.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
-                    switch (message.resourceType) {
-                    default:
-                        return "resourceType: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                        break;
-                    }
-                if (message.project != null && message.hasOwnProperty("project"))
-                    if (!$util.isString(message.project))
-                        return "project: string expected";
-                if (message.domain != null && message.hasOwnProperty("domain"))
-                    if (!$util.isString(message.domain))
-                        return "domain: string expected";
-                if (message.name != null && message.hasOwnProperty("name"))
-                    if (!$util.isString(message.name))
-                        return "name: string expected";
-                if (message.version != null && message.hasOwnProperty("version"))
-                    if (!$util.isString(message.version))
-                        return "version: string expected";
-                return null;
-            };
-
-            return Identifier;
-        })();
-
-        core.WorkflowExecutionIdentifier = (function() {
-
-            /**
-             * Properties of a WorkflowExecutionIdentifier.
-             * @memberof flyteidl.core
-             * @interface IWorkflowExecutionIdentifier
-             * @property {string|null} [project] WorkflowExecutionIdentifier project
-             * @property {string|null} [domain] WorkflowExecutionIdentifier domain
-             * @property {string|null} [name] WorkflowExecutionIdentifier name
-             */
-
-            /**
-             * Constructs a new WorkflowExecutionIdentifier.
-             * @memberof flyteidl.core
-             * @classdesc Represents a WorkflowExecutionIdentifier.
-             * @implements IWorkflowExecutionIdentifier
-             * @constructor
-             * @param {flyteidl.core.IWorkflowExecutionIdentifier=} [properties] Properties to set
-             */
-            function WorkflowExecutionIdentifier(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * WorkflowExecutionIdentifier project.
-             * @member {string} project
-             * @memberof flyteidl.core.WorkflowExecutionIdentifier
-             * @instance
-             */
-            WorkflowExecutionIdentifier.prototype.project = "";
-
-            /**
-             * WorkflowExecutionIdentifier domain.
-             * @member {string} domain
-             * @memberof flyteidl.core.WorkflowExecutionIdentifier
-             * @instance
-             */
-            WorkflowExecutionIdentifier.prototype.domain = "";
-
-            /**
-             * WorkflowExecutionIdentifier name.
-             * @member {string} name
-             * @memberof flyteidl.core.WorkflowExecutionIdentifier
-             * @instance
-             */
-            WorkflowExecutionIdentifier.prototype.name = "";
-
-            /**
-             * Creates a new WorkflowExecutionIdentifier instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.WorkflowExecutionIdentifier
-             * @static
-             * @param {flyteidl.core.IWorkflowExecutionIdentifier=} [properties] Properties to set
-             * @returns {flyteidl.core.WorkflowExecutionIdentifier} WorkflowExecutionIdentifier instance
-             */
-            WorkflowExecutionIdentifier.create = function create(properties) {
-                return new WorkflowExecutionIdentifier(properties);
-            };
-
-            /**
-             * Encodes the specified WorkflowExecutionIdentifier message. Does not implicitly {@link flyteidl.core.WorkflowExecutionIdentifier.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.WorkflowExecutionIdentifier
-             * @static
-             * @param {flyteidl.core.IWorkflowExecutionIdentifier} message WorkflowExecutionIdentifier message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            WorkflowExecutionIdentifier.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.project != null && message.hasOwnProperty("project"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
-                if (message.domain != null && message.hasOwnProperty("domain"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
-                if (message.name != null && message.hasOwnProperty("name"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.name);
-                return writer;
-            };
-
-            /**
-             * Decodes a WorkflowExecutionIdentifier message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.WorkflowExecutionIdentifier
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.WorkflowExecutionIdentifier} WorkflowExecutionIdentifier
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            WorkflowExecutionIdentifier.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.WorkflowExecutionIdentifier();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.project = reader.string();
-                        break;
-                    case 2:
-                        message.domain = reader.string();
-                        break;
-                    case 4:
-                        message.name = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a WorkflowExecutionIdentifier message.
-             * @function verify
-             * @memberof flyteidl.core.WorkflowExecutionIdentifier
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            WorkflowExecutionIdentifier.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.project != null && message.hasOwnProperty("project"))
-                    if (!$util.isString(message.project))
-                        return "project: string expected";
-                if (message.domain != null && message.hasOwnProperty("domain"))
-                    if (!$util.isString(message.domain))
-                        return "domain: string expected";
-                if (message.name != null && message.hasOwnProperty("name"))
-                    if (!$util.isString(message.name))
-                        return "name: string expected";
-                return null;
-            };
-
-            return WorkflowExecutionIdentifier;
-        })();
-
-        core.NodeExecutionIdentifier = (function() {
-
-            /**
-             * Properties of a NodeExecutionIdentifier.
-             * @memberof flyteidl.core
-             * @interface INodeExecutionIdentifier
-             * @property {string|null} [nodeId] NodeExecutionIdentifier nodeId
-             * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [executionId] NodeExecutionIdentifier executionId
-             */
-
-            /**
-             * Constructs a new NodeExecutionIdentifier.
-             * @memberof flyteidl.core
-             * @classdesc Represents a NodeExecutionIdentifier.
-             * @implements INodeExecutionIdentifier
-             * @constructor
-             * @param {flyteidl.core.INodeExecutionIdentifier=} [properties] Properties to set
-             */
-            function NodeExecutionIdentifier(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * NodeExecutionIdentifier nodeId.
-             * @member {string} nodeId
-             * @memberof flyteidl.core.NodeExecutionIdentifier
-             * @instance
-             */
-            NodeExecutionIdentifier.prototype.nodeId = "";
-
-            /**
-             * NodeExecutionIdentifier executionId.
-             * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} executionId
-             * @memberof flyteidl.core.NodeExecutionIdentifier
-             * @instance
-             */
-            NodeExecutionIdentifier.prototype.executionId = null;
-
-            /**
-             * Creates a new NodeExecutionIdentifier instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.NodeExecutionIdentifier
-             * @static
-             * @param {flyteidl.core.INodeExecutionIdentifier=} [properties] Properties to set
-             * @returns {flyteidl.core.NodeExecutionIdentifier} NodeExecutionIdentifier instance
-             */
-            NodeExecutionIdentifier.create = function create(properties) {
-                return new NodeExecutionIdentifier(properties);
-            };
-
-            /**
-             * Encodes the specified NodeExecutionIdentifier message. Does not implicitly {@link flyteidl.core.NodeExecutionIdentifier.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.NodeExecutionIdentifier
-             * @static
-             * @param {flyteidl.core.INodeExecutionIdentifier} message NodeExecutionIdentifier message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            NodeExecutionIdentifier.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.nodeId != null && message.hasOwnProperty("nodeId"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.nodeId);
-                if (message.executionId != null && message.hasOwnProperty("executionId"))
-                    $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.executionId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a NodeExecutionIdentifier message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.NodeExecutionIdentifier
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.NodeExecutionIdentifier} NodeExecutionIdentifier
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            NodeExecutionIdentifier.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.NodeExecutionIdentifier();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.nodeId = reader.string();
-                        break;
-                    case 2:
-                        message.executionId = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a NodeExecutionIdentifier message.
-             * @function verify
-             * @memberof flyteidl.core.NodeExecutionIdentifier
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            NodeExecutionIdentifier.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.nodeId != null && message.hasOwnProperty("nodeId"))
-                    if (!$util.isString(message.nodeId))
-                        return "nodeId: string expected";
-                if (message.executionId != null && message.hasOwnProperty("executionId")) {
-                    let error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.executionId);
-                    if (error)
-                        return "executionId." + error;
-                }
-                return null;
-            };
-
-            return NodeExecutionIdentifier;
-        })();
-
-        core.TaskExecutionIdentifier = (function() {
-
-            /**
-             * Properties of a TaskExecutionIdentifier.
-             * @memberof flyteidl.core
-             * @interface ITaskExecutionIdentifier
-             * @property {flyteidl.core.IIdentifier|null} [taskId] TaskExecutionIdentifier taskId
-             * @property {flyteidl.core.INodeExecutionIdentifier|null} [nodeExecutionId] TaskExecutionIdentifier nodeExecutionId
-             * @property {number|null} [retryAttempt] TaskExecutionIdentifier retryAttempt
-             */
-
-            /**
-             * Constructs a new TaskExecutionIdentifier.
-             * @memberof flyteidl.core
-             * @classdesc Represents a TaskExecutionIdentifier.
-             * @implements ITaskExecutionIdentifier
-             * @constructor
-             * @param {flyteidl.core.ITaskExecutionIdentifier=} [properties] Properties to set
-             */
-            function TaskExecutionIdentifier(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * TaskExecutionIdentifier taskId.
-             * @member {flyteidl.core.IIdentifier|null|undefined} taskId
-             * @memberof flyteidl.core.TaskExecutionIdentifier
-             * @instance
-             */
-            TaskExecutionIdentifier.prototype.taskId = null;
-
-            /**
-             * TaskExecutionIdentifier nodeExecutionId.
-             * @member {flyteidl.core.INodeExecutionIdentifier|null|undefined} nodeExecutionId
-             * @memberof flyteidl.core.TaskExecutionIdentifier
-             * @instance
-             */
-            TaskExecutionIdentifier.prototype.nodeExecutionId = null;
-
-            /**
-             * TaskExecutionIdentifier retryAttempt.
-             * @member {number} retryAttempt
-             * @memberof flyteidl.core.TaskExecutionIdentifier
-             * @instance
-             */
-            TaskExecutionIdentifier.prototype.retryAttempt = 0;
-
-            /**
-             * Creates a new TaskExecutionIdentifier instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.TaskExecutionIdentifier
-             * @static
-             * @param {flyteidl.core.ITaskExecutionIdentifier=} [properties] Properties to set
-             * @returns {flyteidl.core.TaskExecutionIdentifier} TaskExecutionIdentifier instance
-             */
-            TaskExecutionIdentifier.create = function create(properties) {
-                return new TaskExecutionIdentifier(properties);
-            };
-
-            /**
-             * Encodes the specified TaskExecutionIdentifier message. Does not implicitly {@link flyteidl.core.TaskExecutionIdentifier.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.TaskExecutionIdentifier
-             * @static
-             * @param {flyteidl.core.ITaskExecutionIdentifier} message TaskExecutionIdentifier message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            TaskExecutionIdentifier.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.taskId != null && message.hasOwnProperty("taskId"))
-                    $root.flyteidl.core.Identifier.encode(message.taskId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.nodeExecutionId != null && message.hasOwnProperty("nodeExecutionId"))
-                    $root.flyteidl.core.NodeExecutionIdentifier.encode(message.nodeExecutionId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.retryAttempt);
-                return writer;
-            };
-
-            /**
-             * Decodes a TaskExecutionIdentifier message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.TaskExecutionIdentifier
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.TaskExecutionIdentifier} TaskExecutionIdentifier
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            TaskExecutionIdentifier.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.TaskExecutionIdentifier();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.taskId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
-                        break;
-                    case 2:
-                        message.nodeExecutionId = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
-                        break;
-                    case 3:
-                        message.retryAttempt = reader.uint32();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a TaskExecutionIdentifier message.
-             * @function verify
-             * @memberof flyteidl.core.TaskExecutionIdentifier
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            TaskExecutionIdentifier.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.taskId != null && message.hasOwnProperty("taskId")) {
-                    let error = $root.flyteidl.core.Identifier.verify(message.taskId);
-                    if (error)
-                        return "taskId." + error;
-                }
-                if (message.nodeExecutionId != null && message.hasOwnProperty("nodeExecutionId")) {
-                    let error = $root.flyteidl.core.NodeExecutionIdentifier.verify(message.nodeExecutionId);
-                    if (error)
-                        return "nodeExecutionId." + error;
-                }
-                if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
-                    if (!$util.isInteger(message.retryAttempt))
-                        return "retryAttempt: integer expected";
-                return null;
-            };
-
-            return TaskExecutionIdentifier;
-        })();
-
         core.ComparisonExpression = (function() {
 
             /**
@@ -7772,6 +7297,244 @@ export const flyteidl = $root.flyteidl = (() => {
             return ConjunctionExpression;
         })();
 
+        core.Primitive = (function() {
+
+            /**
+             * Properties of a Primitive.
+             * @memberof flyteidl.core
+             * @interface IPrimitive
+             * @property {Long|null} [integer] Primitive integer
+             * @property {number|null} [floatValue] Primitive floatValue
+             * @property {string|null} [stringValue] Primitive stringValue
+             * @property {boolean|null} [boolean] Primitive boolean
+             * @property {google.protobuf.ITimestamp|null} [datetime] Primitive datetime
+             * @property {google.protobuf.IDuration|null} [duration] Primitive duration
+             */
+
+            /**
+             * Constructs a new Primitive.
+             * @memberof flyteidl.core
+             * @classdesc Represents a Primitive.
+             * @implements IPrimitive
+             * @constructor
+             * @param {flyteidl.core.IPrimitive=} [properties] Properties to set
+             */
+            function Primitive(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Primitive integer.
+             * @member {Long} integer
+             * @memberof flyteidl.core.Primitive
+             * @instance
+             */
+            Primitive.prototype.integer = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Primitive floatValue.
+             * @member {number} floatValue
+             * @memberof flyteidl.core.Primitive
+             * @instance
+             */
+            Primitive.prototype.floatValue = 0;
+
+            /**
+             * Primitive stringValue.
+             * @member {string} stringValue
+             * @memberof flyteidl.core.Primitive
+             * @instance
+             */
+            Primitive.prototype.stringValue = "";
+
+            /**
+             * Primitive boolean.
+             * @member {boolean} boolean
+             * @memberof flyteidl.core.Primitive
+             * @instance
+             */
+            Primitive.prototype.boolean = false;
+
+            /**
+             * Primitive datetime.
+             * @member {google.protobuf.ITimestamp|null|undefined} datetime
+             * @memberof flyteidl.core.Primitive
+             * @instance
+             */
+            Primitive.prototype.datetime = null;
+
+            /**
+             * Primitive duration.
+             * @member {google.protobuf.IDuration|null|undefined} duration
+             * @memberof flyteidl.core.Primitive
+             * @instance
+             */
+            Primitive.prototype.duration = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * Primitive value.
+             * @member {"integer"|"floatValue"|"stringValue"|"boolean"|"datetime"|"duration"|undefined} value
+             * @memberof flyteidl.core.Primitive
+             * @instance
+             */
+            Object.defineProperty(Primitive.prototype, "value", {
+                get: $util.oneOfGetter($oneOfFields = ["integer", "floatValue", "stringValue", "boolean", "datetime", "duration"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new Primitive instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.Primitive
+             * @static
+             * @param {flyteidl.core.IPrimitive=} [properties] Properties to set
+             * @returns {flyteidl.core.Primitive} Primitive instance
+             */
+            Primitive.create = function create(properties) {
+                return new Primitive(properties);
+            };
+
+            /**
+             * Encodes the specified Primitive message. Does not implicitly {@link flyteidl.core.Primitive.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.Primitive
+             * @static
+             * @param {flyteidl.core.IPrimitive} message Primitive message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Primitive.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.integer != null && message.hasOwnProperty("integer"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.integer);
+                if (message.floatValue != null && message.hasOwnProperty("floatValue"))
+                    writer.uint32(/* id 2, wireType 1 =*/17).double(message.floatValue);
+                if (message.stringValue != null && message.hasOwnProperty("stringValue"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.stringValue);
+                if (message.boolean != null && message.hasOwnProperty("boolean"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).bool(message.boolean);
+                if (message.datetime != null && message.hasOwnProperty("datetime"))
+                    $root.google.protobuf.Timestamp.encode(message.datetime, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.duration != null && message.hasOwnProperty("duration"))
+                    $root.google.protobuf.Duration.encode(message.duration, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a Primitive message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.Primitive
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.Primitive} Primitive
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Primitive.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Primitive();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.integer = reader.int64();
+                        break;
+                    case 2:
+                        message.floatValue = reader.double();
+                        break;
+                    case 3:
+                        message.stringValue = reader.string();
+                        break;
+                    case 4:
+                        message.boolean = reader.bool();
+                        break;
+                    case 5:
+                        message.datetime = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.duration = $root.google.protobuf.Duration.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Primitive message.
+             * @function verify
+             * @memberof flyteidl.core.Primitive
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Primitive.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.integer != null && message.hasOwnProperty("integer")) {
+                    properties.value = 1;
+                    if (!$util.isInteger(message.integer) && !(message.integer && $util.isInteger(message.integer.low) && $util.isInteger(message.integer.high)))
+                        return "integer: integer|Long expected";
+                }
+                if (message.floatValue != null && message.hasOwnProperty("floatValue")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    if (typeof message.floatValue !== "number")
+                        return "floatValue: number expected";
+                }
+                if (message.stringValue != null && message.hasOwnProperty("stringValue")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    if (!$util.isString(message.stringValue))
+                        return "stringValue: string expected";
+                }
+                if (message.boolean != null && message.hasOwnProperty("boolean")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    if (typeof message.boolean !== "boolean")
+                        return "boolean: boolean expected";
+                }
+                if (message.datetime != null && message.hasOwnProperty("datetime")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.google.protobuf.Timestamp.verify(message.datetime);
+                        if (error)
+                            return "datetime." + error;
+                    }
+                }
+                if (message.duration != null && message.hasOwnProperty("duration")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.google.protobuf.Duration.verify(message.duration);
+                        if (error)
+                            return "duration." + error;
+                    }
+                }
+                return null;
+            };
+
+            return Primitive;
+        })();
+
         core.Resources = (function() {
 
             /**
@@ -8235,6 +7998,243 @@ export const flyteidl = $root.flyteidl = (() => {
             })();
 
             return RuntimeMetadata;
+        })();
+
+        core.RetryStrategy = (function() {
+
+            /**
+             * Properties of a RetryStrategy.
+             * @memberof flyteidl.core
+             * @interface IRetryStrategy
+             * @property {number|null} [retries] RetryStrategy retries
+             */
+
+            /**
+             * Constructs a new RetryStrategy.
+             * @memberof flyteidl.core
+             * @classdesc Represents a RetryStrategy.
+             * @implements IRetryStrategy
+             * @constructor
+             * @param {flyteidl.core.IRetryStrategy=} [properties] Properties to set
+             */
+            function RetryStrategy(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * RetryStrategy retries.
+             * @member {number} retries
+             * @memberof flyteidl.core.RetryStrategy
+             * @instance
+             */
+            RetryStrategy.prototype.retries = 0;
+
+            /**
+             * Creates a new RetryStrategy instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.RetryStrategy
+             * @static
+             * @param {flyteidl.core.IRetryStrategy=} [properties] Properties to set
+             * @returns {flyteidl.core.RetryStrategy} RetryStrategy instance
+             */
+            RetryStrategy.create = function create(properties) {
+                return new RetryStrategy(properties);
+            };
+
+            /**
+             * Encodes the specified RetryStrategy message. Does not implicitly {@link flyteidl.core.RetryStrategy.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.RetryStrategy
+             * @static
+             * @param {flyteidl.core.IRetryStrategy} message RetryStrategy message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            RetryStrategy.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.retries != null && message.hasOwnProperty("retries"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).uint32(message.retries);
+                return writer;
+            };
+
+            /**
+             * Decodes a RetryStrategy message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.RetryStrategy
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.RetryStrategy} RetryStrategy
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            RetryStrategy.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.RetryStrategy();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 5:
+                        message.retries = reader.uint32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a RetryStrategy message.
+             * @function verify
+             * @memberof flyteidl.core.RetryStrategy
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            RetryStrategy.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.retries != null && message.hasOwnProperty("retries"))
+                    if (!$util.isInteger(message.retries))
+                        return "retries: integer expected";
+                return null;
+            };
+
+            return RetryStrategy;
+        })();
+
+        core.KeyValuePair = (function() {
+
+            /**
+             * Properties of a KeyValuePair.
+             * @memberof flyteidl.core
+             * @interface IKeyValuePair
+             * @property {string|null} [key] KeyValuePair key
+             * @property {string|null} [value] KeyValuePair value
+             */
+
+            /**
+             * Constructs a new KeyValuePair.
+             * @memberof flyteidl.core
+             * @classdesc Represents a KeyValuePair.
+             * @implements IKeyValuePair
+             * @constructor
+             * @param {flyteidl.core.IKeyValuePair=} [properties] Properties to set
+             */
+            function KeyValuePair(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * KeyValuePair key.
+             * @member {string} key
+             * @memberof flyteidl.core.KeyValuePair
+             * @instance
+             */
+            KeyValuePair.prototype.key = "";
+
+            /**
+             * KeyValuePair value.
+             * @member {string} value
+             * @memberof flyteidl.core.KeyValuePair
+             * @instance
+             */
+            KeyValuePair.prototype.value = "";
+
+            /**
+             * Creates a new KeyValuePair instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.KeyValuePair
+             * @static
+             * @param {flyteidl.core.IKeyValuePair=} [properties] Properties to set
+             * @returns {flyteidl.core.KeyValuePair} KeyValuePair instance
+             */
+            KeyValuePair.create = function create(properties) {
+                return new KeyValuePair(properties);
+            };
+
+            /**
+             * Encodes the specified KeyValuePair message. Does not implicitly {@link flyteidl.core.KeyValuePair.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.KeyValuePair
+             * @static
+             * @param {flyteidl.core.IKeyValuePair} message KeyValuePair message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            KeyValuePair.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.key != null && message.hasOwnProperty("key"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
+                if (message.value != null && message.hasOwnProperty("value"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.value);
+                return writer;
+            };
+
+            /**
+             * Decodes a KeyValuePair message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.KeyValuePair
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.KeyValuePair} KeyValuePair
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            KeyValuePair.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.KeyValuePair();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.key = reader.string();
+                        break;
+                    case 2:
+                        message.value = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a KeyValuePair message.
+             * @function verify
+             * @memberof flyteidl.core.KeyValuePair
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            KeyValuePair.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.key != null && message.hasOwnProperty("key"))
+                    if (!$util.isString(message.key))
+                        return "key: string expected";
+                if (message.value != null && message.hasOwnProperty("value"))
+                    if (!$util.isString(message.value))
+                        return "value: string expected";
+                return null;
+            };
+
+            return KeyValuePair;
         })();
 
         core.TaskMetadata = (function() {
@@ -24417,6 +24417,260 @@ export const google = $root.google = (() => {
          */
         const protobuf = {};
 
+        protobuf.Timestamp = (function() {
+
+            /**
+             * Properties of a Timestamp.
+             * @memberof google.protobuf
+             * @interface ITimestamp
+             * @property {Long|null} [seconds] Timestamp seconds
+             * @property {number|null} [nanos] Timestamp nanos
+             */
+
+            /**
+             * Constructs a new Timestamp.
+             * @memberof google.protobuf
+             * @classdesc Represents a Timestamp.
+             * @implements ITimestamp
+             * @constructor
+             * @param {google.protobuf.ITimestamp=} [properties] Properties to set
+             */
+            function Timestamp(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Timestamp seconds.
+             * @member {Long} seconds
+             * @memberof google.protobuf.Timestamp
+             * @instance
+             */
+            Timestamp.prototype.seconds = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Timestamp nanos.
+             * @member {number} nanos
+             * @memberof google.protobuf.Timestamp
+             * @instance
+             */
+            Timestamp.prototype.nanos = 0;
+
+            /**
+             * Creates a new Timestamp instance using the specified properties.
+             * @function create
+             * @memberof google.protobuf.Timestamp
+             * @static
+             * @param {google.protobuf.ITimestamp=} [properties] Properties to set
+             * @returns {google.protobuf.Timestamp} Timestamp instance
+             */
+            Timestamp.create = function create(properties) {
+                return new Timestamp(properties);
+            };
+
+            /**
+             * Encodes the specified Timestamp message. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
+             * @function encode
+             * @memberof google.protobuf.Timestamp
+             * @static
+             * @param {google.protobuf.ITimestamp} message Timestamp message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Timestamp.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.seconds != null && message.hasOwnProperty("seconds"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.seconds);
+                if (message.nanos != null && message.hasOwnProperty("nanos"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.nanos);
+                return writer;
+            };
+
+            /**
+             * Decodes a Timestamp message from the specified reader or buffer.
+             * @function decode
+             * @memberof google.protobuf.Timestamp
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {google.protobuf.Timestamp} Timestamp
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Timestamp.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.protobuf.Timestamp();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.seconds = reader.int64();
+                        break;
+                    case 2:
+                        message.nanos = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Timestamp message.
+             * @function verify
+             * @memberof google.protobuf.Timestamp
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Timestamp.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.seconds != null && message.hasOwnProperty("seconds"))
+                    if (!$util.isInteger(message.seconds) && !(message.seconds && $util.isInteger(message.seconds.low) && $util.isInteger(message.seconds.high)))
+                        return "seconds: integer|Long expected";
+                if (message.nanos != null && message.hasOwnProperty("nanos"))
+                    if (!$util.isInteger(message.nanos))
+                        return "nanos: integer expected";
+                return null;
+            };
+
+            return Timestamp;
+        })();
+
+        protobuf.Duration = (function() {
+
+            /**
+             * Properties of a Duration.
+             * @memberof google.protobuf
+             * @interface IDuration
+             * @property {Long|null} [seconds] Duration seconds
+             * @property {number|null} [nanos] Duration nanos
+             */
+
+            /**
+             * Constructs a new Duration.
+             * @memberof google.protobuf
+             * @classdesc Represents a Duration.
+             * @implements IDuration
+             * @constructor
+             * @param {google.protobuf.IDuration=} [properties] Properties to set
+             */
+            function Duration(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Duration seconds.
+             * @member {Long} seconds
+             * @memberof google.protobuf.Duration
+             * @instance
+             */
+            Duration.prototype.seconds = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Duration nanos.
+             * @member {number} nanos
+             * @memberof google.protobuf.Duration
+             * @instance
+             */
+            Duration.prototype.nanos = 0;
+
+            /**
+             * Creates a new Duration instance using the specified properties.
+             * @function create
+             * @memberof google.protobuf.Duration
+             * @static
+             * @param {google.protobuf.IDuration=} [properties] Properties to set
+             * @returns {google.protobuf.Duration} Duration instance
+             */
+            Duration.create = function create(properties) {
+                return new Duration(properties);
+            };
+
+            /**
+             * Encodes the specified Duration message. Does not implicitly {@link google.protobuf.Duration.verify|verify} messages.
+             * @function encode
+             * @memberof google.protobuf.Duration
+             * @static
+             * @param {google.protobuf.IDuration} message Duration message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Duration.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.seconds != null && message.hasOwnProperty("seconds"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.seconds);
+                if (message.nanos != null && message.hasOwnProperty("nanos"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.nanos);
+                return writer;
+            };
+
+            /**
+             * Decodes a Duration message from the specified reader or buffer.
+             * @function decode
+             * @memberof google.protobuf.Duration
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {google.protobuf.Duration} Duration
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Duration.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.protobuf.Duration();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.seconds = reader.int64();
+                        break;
+                    case 2:
+                        message.nanos = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Duration message.
+             * @function verify
+             * @memberof google.protobuf.Duration
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Duration.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.seconds != null && message.hasOwnProperty("seconds"))
+                    if (!$util.isInteger(message.seconds) && !(message.seconds && $util.isInteger(message.seconds.low) && $util.isInteger(message.seconds.high)))
+                        return "seconds: integer|Long expected";
+                if (message.nanos != null && message.hasOwnProperty("nanos"))
+                    if (!$util.isInteger(message.nanos))
+                        return "nanos: integer expected";
+                return null;
+            };
+
+            return Duration;
+        })();
+
         protobuf.Struct = (function() {
 
             /**
@@ -24915,260 +25169,6 @@ export const google = $root.google = (() => {
             };
 
             return ListValue;
-        })();
-
-        protobuf.Timestamp = (function() {
-
-            /**
-             * Properties of a Timestamp.
-             * @memberof google.protobuf
-             * @interface ITimestamp
-             * @property {Long|null} [seconds] Timestamp seconds
-             * @property {number|null} [nanos] Timestamp nanos
-             */
-
-            /**
-             * Constructs a new Timestamp.
-             * @memberof google.protobuf
-             * @classdesc Represents a Timestamp.
-             * @implements ITimestamp
-             * @constructor
-             * @param {google.protobuf.ITimestamp=} [properties] Properties to set
-             */
-            function Timestamp(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Timestamp seconds.
-             * @member {Long} seconds
-             * @memberof google.protobuf.Timestamp
-             * @instance
-             */
-            Timestamp.prototype.seconds = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-            /**
-             * Timestamp nanos.
-             * @member {number} nanos
-             * @memberof google.protobuf.Timestamp
-             * @instance
-             */
-            Timestamp.prototype.nanos = 0;
-
-            /**
-             * Creates a new Timestamp instance using the specified properties.
-             * @function create
-             * @memberof google.protobuf.Timestamp
-             * @static
-             * @param {google.protobuf.ITimestamp=} [properties] Properties to set
-             * @returns {google.protobuf.Timestamp} Timestamp instance
-             */
-            Timestamp.create = function create(properties) {
-                return new Timestamp(properties);
-            };
-
-            /**
-             * Encodes the specified Timestamp message. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
-             * @function encode
-             * @memberof google.protobuf.Timestamp
-             * @static
-             * @param {google.protobuf.ITimestamp} message Timestamp message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Timestamp.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.seconds != null && message.hasOwnProperty("seconds"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.seconds);
-                if (message.nanos != null && message.hasOwnProperty("nanos"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.nanos);
-                return writer;
-            };
-
-            /**
-             * Decodes a Timestamp message from the specified reader or buffer.
-             * @function decode
-             * @memberof google.protobuf.Timestamp
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {google.protobuf.Timestamp} Timestamp
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Timestamp.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.protobuf.Timestamp();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.seconds = reader.int64();
-                        break;
-                    case 2:
-                        message.nanos = reader.int32();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a Timestamp message.
-             * @function verify
-             * @memberof google.protobuf.Timestamp
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Timestamp.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.seconds != null && message.hasOwnProperty("seconds"))
-                    if (!$util.isInteger(message.seconds) && !(message.seconds && $util.isInteger(message.seconds.low) && $util.isInteger(message.seconds.high)))
-                        return "seconds: integer|Long expected";
-                if (message.nanos != null && message.hasOwnProperty("nanos"))
-                    if (!$util.isInteger(message.nanos))
-                        return "nanos: integer expected";
-                return null;
-            };
-
-            return Timestamp;
-        })();
-
-        protobuf.Duration = (function() {
-
-            /**
-             * Properties of a Duration.
-             * @memberof google.protobuf
-             * @interface IDuration
-             * @property {Long|null} [seconds] Duration seconds
-             * @property {number|null} [nanos] Duration nanos
-             */
-
-            /**
-             * Constructs a new Duration.
-             * @memberof google.protobuf
-             * @classdesc Represents a Duration.
-             * @implements IDuration
-             * @constructor
-             * @param {google.protobuf.IDuration=} [properties] Properties to set
-             */
-            function Duration(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Duration seconds.
-             * @member {Long} seconds
-             * @memberof google.protobuf.Duration
-             * @instance
-             */
-            Duration.prototype.seconds = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-            /**
-             * Duration nanos.
-             * @member {number} nanos
-             * @memberof google.protobuf.Duration
-             * @instance
-             */
-            Duration.prototype.nanos = 0;
-
-            /**
-             * Creates a new Duration instance using the specified properties.
-             * @function create
-             * @memberof google.protobuf.Duration
-             * @static
-             * @param {google.protobuf.IDuration=} [properties] Properties to set
-             * @returns {google.protobuf.Duration} Duration instance
-             */
-            Duration.create = function create(properties) {
-                return new Duration(properties);
-            };
-
-            /**
-             * Encodes the specified Duration message. Does not implicitly {@link google.protobuf.Duration.verify|verify} messages.
-             * @function encode
-             * @memberof google.protobuf.Duration
-             * @static
-             * @param {google.protobuf.IDuration} message Duration message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Duration.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.seconds != null && message.hasOwnProperty("seconds"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.seconds);
-                if (message.nanos != null && message.hasOwnProperty("nanos"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.nanos);
-                return writer;
-            };
-
-            /**
-             * Decodes a Duration message from the specified reader or buffer.
-             * @function decode
-             * @memberof google.protobuf.Duration
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {google.protobuf.Duration} Duration
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Duration.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.protobuf.Duration();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.seconds = reader.int64();
-                        break;
-                    case 2:
-                        message.nanos = reader.int32();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a Duration message.
-             * @function verify
-             * @memberof google.protobuf.Duration
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Duration.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.seconds != null && message.hasOwnProperty("seconds"))
-                    if (!$util.isInteger(message.seconds) && !(message.seconds && $util.isInteger(message.seconds.low) && $util.isInteger(message.seconds.high)))
-                        return "seconds: integer|Long expected";
-                if (message.nanos != null && message.hasOwnProperty("nanos"))
-                    if (!$util.isInteger(message.nanos))
-                        return "nanos: integer expected";
-                return null;
-            };
-
-            return Duration;
         })();
 
         protobuf.FileDescriptorSet = (function() {

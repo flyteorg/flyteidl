@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package flyteidl.core;
+
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/core";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+// Primitive Types
+message Primitive {
+    // Defines one of simple primitive types. These types will get translated into different programming languages as
+    // described in https://developers.google.com/protocol-buffers/docs/proto#scalar.
+    oneof value {
+        int64 integer = 1;
+        double float_value = 2;
+        string string_value = 3;
+        bool boolean = 4;
+        google.protobuf.Timestamp datetime = 5;
+        google.protobuf.Duration duration = 6;
+    }
+}
+
