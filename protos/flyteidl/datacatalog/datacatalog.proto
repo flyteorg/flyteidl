@@ -1,10 +1,11 @@
 syntax = "proto3";
 
-package datacatalog;
+package flyteidl.datacatalog;
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/datacatalog";
 
 import "flyteidl/core/literals.proto";
 
-service DataCatalog {
+service DataCatalogService {
     rpc CreateDataset (CreateDatasetRequest) returns (CreateDatasetResponse);
     rpc GetDataset (GetDatasetRequest) returns (GetDatasetResponse);
     rpc CreateArtifact (CreateArtifactRequest) returns (CreateArtifactResponse);
