@@ -19,11 +19,13 @@ var (
 	dataCatalogConnection *grpc.ClientConn
 )
 
+// Create a new DataCatalog Client with the connection provided
 func NewDataCatalogClient(ctx context.Context, conn *grpc.ClientConn) datacatalog.DataCatalogServiceClient {
 	logger.Infof(ctx, "Initialized Data Catalog client")
 	return datacatalog.NewDataCatalogServiceClient(conn)
 }
 
+// Create a new Datacatalog connection with the configs provided
 func NewDataCatalogConnection(_ context.Context, cfg ClientConfig) (*grpc.ClientConn, error) {
 	var opts []grpc.DialOption
 
@@ -61,7 +63,7 @@ func NewDataCatalogConnection(_ context.Context, cfg ClientConfig) (*grpc.Client
 	return grpc.Dial(cfg.Endpoint.String(), opts...)
 }
 
-// Create an DataCatalogClient that shares a single DataCatalog connection for the process
+// Create a DataCatalogClient that shares a single DataCatalog connection for the process
 func InitializeDataCatalogClient(ctx context.Context, cfg ClientConfig) datacatalog.DataCatalogServiceClient {
 	once.Do(func() {
 		var err error
@@ -74,6 +76,7 @@ func InitializeDataCatalogClient(ctx context.Context, cfg ClientConfig) datacata
 	return NewDataCatalogClient(ctx, dataCatalogConnection)
 }
 
+// Create a shared DataCatalogClient with the loaded configs
 func InitializeDataCatalogClientFromConfig(ctx context.Context) (datacatalog.DataCatalogServiceClient, error) {
 	cfg := GetConfig(ctx)
 	if cfg == nil {

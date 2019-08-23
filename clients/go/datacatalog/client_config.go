@@ -12,6 +12,7 @@ import (
 
 const configSectionKey = "datacatalog"
 
+// Configs to connect to DataCatalogService
 type ClientConfig struct {
 	Endpoint              config.URL      `json:"endpoint" pflag:",Specify where the uri of the datacatalog service is located."`
 	UseInsecureConnection bool            `json:"insecure" pflag:",Use insecure connection to the service."`
