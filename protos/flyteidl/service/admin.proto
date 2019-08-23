@@ -1,4 +1,8 @@
 syntax = "proto3";
+
+// NOTE: If you are adding a new service to FlyteIDL it should be in it's own top level folder. It should *not* be in
+// this service package. We plan on moving away from this service package and putting AdminService in its own admin pkg.
+// At the moment there is a lot of dependent code on this package, so it will require a refactor of dependencies.
 package flyteidl.service;
 
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/service";
