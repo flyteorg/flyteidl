@@ -35,7 +35,7 @@ func (m *CreateDatasetRequest) Reset()         { *m = CreateDatasetRequest{} }
 func (m *CreateDatasetRequest) String() string { return proto.CompactTextString(m) }
 func (*CreateDatasetRequest) ProtoMessage()    {}
 func (*CreateDatasetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_a29ddaa325d66176, []int{0}
+	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{0}
 }
 func (m *CreateDatasetRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateDatasetRequest.Unmarshal(m, b)
@@ -72,7 +72,7 @@ func (m *CreateDatasetResponse) Reset()         { *m = CreateDatasetResponse{} }
 func (m *CreateDatasetResponse) String() string { return proto.CompactTextString(m) }
 func (*CreateDatasetResponse) ProtoMessage()    {}
 func (*CreateDatasetResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_a29ddaa325d66176, []int{1}
+	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{1}
 }
 func (m *CreateDatasetResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateDatasetResponse.Unmarshal(m, b)
@@ -103,7 +103,7 @@ func (m *GetDatasetRequest) Reset()         { *m = GetDatasetRequest{} }
 func (m *GetDatasetRequest) String() string { return proto.CompactTextString(m) }
 func (*GetDatasetRequest) ProtoMessage()    {}
 func (*GetDatasetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_a29ddaa325d66176, []int{2}
+	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{2}
 }
 func (m *GetDatasetRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetDatasetRequest.Unmarshal(m, b)
@@ -141,7 +141,7 @@ func (m *GetDatasetResponse) Reset()         { *m = GetDatasetResponse{} }
 func (m *GetDatasetResponse) String() string { return proto.CompactTextString(m) }
 func (*GetDatasetResponse) ProtoMessage()    {}
 func (*GetDatasetResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_a29ddaa325d66176, []int{3}
+	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{3}
 }
 func (m *GetDatasetResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetDatasetResponse.Unmarshal(m, b)
@@ -183,7 +183,7 @@ func (m *GetArtifactRequest) Reset()         { *m = GetArtifactRequest{} }
 func (m *GetArtifactRequest) String() string { return proto.CompactTextString(m) }
 func (*GetArtifactRequest) ProtoMessage()    {}
 func (*GetArtifactRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_a29ddaa325d66176, []int{4}
+	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{4}
 }
 func (m *GetArtifactRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetArtifactRequest.Unmarshal(m, b)
@@ -324,7 +324,7 @@ func (m *GetArtifactResponse) Reset()         { *m = GetArtifactResponse{} }
 func (m *GetArtifactResponse) String() string { return proto.CompactTextString(m) }
 func (*GetArtifactResponse) ProtoMessage()    {}
 func (*GetArtifactResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_a29ddaa325d66176, []int{5}
+	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{5}
 }
 func (m *GetArtifactResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetArtifactResponse.Unmarshal(m, b)
@@ -362,7 +362,7 @@ func (m *CreateArtifactRequest) Reset()         { *m = CreateArtifactRequest{} }
 func (m *CreateArtifactRequest) String() string { return proto.CompactTextString(m) }
 func (*CreateArtifactRequest) ProtoMessage()    {}
 func (*CreateArtifactRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_a29ddaa325d66176, []int{6}
+	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{6}
 }
 func (m *CreateArtifactRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateArtifactRequest.Unmarshal(m, b)
@@ -399,7 +399,7 @@ func (m *CreateArtifactResponse) Reset()         { *m = CreateArtifactResponse{}
 func (m *CreateArtifactResponse) String() string { return proto.CompactTextString(m) }
 func (*CreateArtifactResponse) ProtoMessage()    {}
 func (*CreateArtifactResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_a29ddaa325d66176, []int{7}
+	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{7}
 }
 func (m *CreateArtifactResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateArtifactResponse.Unmarshal(m, b)
@@ -430,7 +430,7 @@ func (m *AddTagRequest) Reset()         { *m = AddTagRequest{} }
 func (m *AddTagRequest) String() string { return proto.CompactTextString(m) }
 func (*AddTagRequest) ProtoMessage()    {}
 func (*AddTagRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_a29ddaa325d66176, []int{8}
+	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{8}
 }
 func (m *AddTagRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddTagRequest.Unmarshal(m, b)
@@ -467,7 +467,7 @@ func (m *AddTagResponse) Reset()         { *m = AddTagResponse{} }
 func (m *AddTagResponse) String() string { return proto.CompactTextString(m) }
 func (*AddTagResponse) ProtoMessage()    {}
 func (*AddTagResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_a29ddaa325d66176, []int{9}
+	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{9}
 }
 func (m *AddTagResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddTagResponse.Unmarshal(m, b)
@@ -499,7 +499,7 @@ func (m *Dataset) Reset()         { *m = Dataset{} }
 func (m *Dataset) String() string { return proto.CompactTextString(m) }
 func (*Dataset) ProtoMessage()    {}
 func (*Dataset) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_a29ddaa325d66176, []int{10}
+	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{10}
 }
 func (m *Dataset) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Dataset.Unmarshal(m, b)
@@ -547,7 +547,7 @@ func (m *DatasetID) Reset()         { *m = DatasetID{} }
 func (m *DatasetID) String() string { return proto.CompactTextString(m) }
 func (*DatasetID) ProtoMessage()    {}
 func (*DatasetID) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_a29ddaa325d66176, []int{11}
+	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{11}
 }
 func (m *DatasetID) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DatasetID.Unmarshal(m, b)
@@ -609,7 +609,7 @@ func (m *Artifact) Reset()         { *m = Artifact{} }
 func (m *Artifact) String() string { return proto.CompactTextString(m) }
 func (*Artifact) ProtoMessage()    {}
 func (*Artifact) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_a29ddaa325d66176, []int{12}
+	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{12}
 }
 func (m *Artifact) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Artifact.Unmarshal(m, b)
@@ -669,7 +669,7 @@ func (m *ArtifactData) Reset()         { *m = ArtifactData{} }
 func (m *ArtifactData) String() string { return proto.CompactTextString(m) }
 func (*ArtifactData) ProtoMessage()    {}
 func (*ArtifactData) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_a29ddaa325d66176, []int{13}
+	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{13}
 }
 func (m *ArtifactData) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ArtifactData.Unmarshal(m, b)
@@ -716,7 +716,7 @@ func (m *Tag) Reset()         { *m = Tag{} }
 func (m *Tag) String() string { return proto.CompactTextString(m) }
 func (*Tag) ProtoMessage()    {}
 func (*Tag) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_a29ddaa325d66176, []int{14}
+	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{14}
 }
 func (m *Tag) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Tag.Unmarshal(m, b)
@@ -768,7 +768,7 @@ func (m *Metadata) Reset()         { *m = Metadata{} }
 func (m *Metadata) String() string { return proto.CompactTextString(m) }
 func (*Metadata) ProtoMessage()    {}
 func (*Metadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_a29ddaa325d66176, []int{15}
+	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{15}
 }
 func (m *Metadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Metadata.Unmarshal(m, b)
@@ -823,10 +823,10 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// DataCatalogClient is the client API for DataCatalog service.
+// DataCatalogServiceClient is the client API for DataCatalogService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type DataCatalogClient interface {
+type DataCatalogServiceClient interface {
 	CreateDataset(ctx context.Context, in *CreateDatasetRequest, opts ...grpc.CallOption) (*CreateDatasetResponse, error)
 	GetDataset(ctx context.Context, in *GetDatasetRequest, opts ...grpc.CallOption) (*GetDatasetResponse, error)
 	CreateArtifact(ctx context.Context, in *CreateArtifactRequest, opts ...grpc.CallOption) (*CreateArtifactResponse, error)
@@ -834,61 +834,61 @@ type DataCatalogClient interface {
 	AddTag(ctx context.Context, in *AddTagRequest, opts ...grpc.CallOption) (*AddTagResponse, error)
 }
 
-type dataCatalogClient struct {
+type dataCatalogServiceClient struct {
 	cc *grpc.ClientConn
 }
 
-func NewDataCatalogClient(cc *grpc.ClientConn) DataCatalogClient {
-	return &dataCatalogClient{cc}
+func NewDataCatalogServiceClient(cc *grpc.ClientConn) DataCatalogServiceClient {
+	return &dataCatalogServiceClient{cc}
 }
 
-func (c *dataCatalogClient) CreateDataset(ctx context.Context, in *CreateDatasetRequest, opts ...grpc.CallOption) (*CreateDatasetResponse, error) {
+func (c *dataCatalogServiceClient) CreateDataset(ctx context.Context, in *CreateDatasetRequest, opts ...grpc.CallOption) (*CreateDatasetResponse, error) {
 	out := new(CreateDatasetResponse)
-	err := c.cc.Invoke(ctx, "/flyteidl.datacatalog.DataCatalog/CreateDataset", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/flyteidl.datacatalog.DataCatalogService/CreateDataset", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dataCatalogClient) GetDataset(ctx context.Context, in *GetDatasetRequest, opts ...grpc.CallOption) (*GetDatasetResponse, error) {
+func (c *dataCatalogServiceClient) GetDataset(ctx context.Context, in *GetDatasetRequest, opts ...grpc.CallOption) (*GetDatasetResponse, error) {
 	out := new(GetDatasetResponse)
-	err := c.cc.Invoke(ctx, "/flyteidl.datacatalog.DataCatalog/GetDataset", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/flyteidl.datacatalog.DataCatalogService/GetDataset", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dataCatalogClient) CreateArtifact(ctx context.Context, in *CreateArtifactRequest, opts ...grpc.CallOption) (*CreateArtifactResponse, error) {
+func (c *dataCatalogServiceClient) CreateArtifact(ctx context.Context, in *CreateArtifactRequest, opts ...grpc.CallOption) (*CreateArtifactResponse, error) {
 	out := new(CreateArtifactResponse)
-	err := c.cc.Invoke(ctx, "/flyteidl.datacatalog.DataCatalog/CreateArtifact", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/flyteidl.datacatalog.DataCatalogService/CreateArtifact", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dataCatalogClient) GetArtifact(ctx context.Context, in *GetArtifactRequest, opts ...grpc.CallOption) (*GetArtifactResponse, error) {
+func (c *dataCatalogServiceClient) GetArtifact(ctx context.Context, in *GetArtifactRequest, opts ...grpc.CallOption) (*GetArtifactResponse, error) {
 	out := new(GetArtifactResponse)
-	err := c.cc.Invoke(ctx, "/flyteidl.datacatalog.DataCatalog/GetArtifact", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/flyteidl.datacatalog.DataCatalogService/GetArtifact", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dataCatalogClient) AddTag(ctx context.Context, in *AddTagRequest, opts ...grpc.CallOption) (*AddTagResponse, error) {
+func (c *dataCatalogServiceClient) AddTag(ctx context.Context, in *AddTagRequest, opts ...grpc.CallOption) (*AddTagResponse, error) {
 	out := new(AddTagResponse)
-	err := c.cc.Invoke(ctx, "/flyteidl.datacatalog.DataCatalog/AddTag", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/flyteidl.datacatalog.DataCatalogService/AddTag", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// DataCatalogServer is the server API for DataCatalog service.
-type DataCatalogServer interface {
+// DataCatalogServiceServer is the server API for DataCatalogService service.
+type DataCatalogServiceServer interface {
 	CreateDataset(context.Context, *CreateDatasetRequest) (*CreateDatasetResponse, error)
 	GetDataset(context.Context, *GetDatasetRequest) (*GetDatasetResponse, error)
 	CreateArtifact(context.Context, *CreateArtifactRequest) (*CreateArtifactResponse, error)
@@ -896,123 +896,123 @@ type DataCatalogServer interface {
 	AddTag(context.Context, *AddTagRequest) (*AddTagResponse, error)
 }
 
-func RegisterDataCatalogServer(s *grpc.Server, srv DataCatalogServer) {
-	s.RegisterService(&_DataCatalog_serviceDesc, srv)
+func RegisterDataCatalogServiceServer(s *grpc.Server, srv DataCatalogServiceServer) {
+	s.RegisterService(&_DataCatalogService_serviceDesc, srv)
 }
 
-func _DataCatalog_CreateDataset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _DataCatalogService_CreateDataset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateDatasetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataCatalogServer).CreateDataset(ctx, in)
+		return srv.(DataCatalogServiceServer).CreateDataset(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/flyteidl.datacatalog.DataCatalog/CreateDataset",
+		FullMethod: "/flyteidl.datacatalog.DataCatalogService/CreateDataset",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataCatalogServer).CreateDataset(ctx, req.(*CreateDatasetRequest))
+		return srv.(DataCatalogServiceServer).CreateDataset(ctx, req.(*CreateDatasetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataCatalog_GetDataset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _DataCatalogService_GetDataset_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetDatasetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataCatalogServer).GetDataset(ctx, in)
+		return srv.(DataCatalogServiceServer).GetDataset(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/flyteidl.datacatalog.DataCatalog/GetDataset",
+		FullMethod: "/flyteidl.datacatalog.DataCatalogService/GetDataset",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataCatalogServer).GetDataset(ctx, req.(*GetDatasetRequest))
+		return srv.(DataCatalogServiceServer).GetDataset(ctx, req.(*GetDatasetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataCatalog_CreateArtifact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _DataCatalogService_CreateArtifact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateArtifactRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataCatalogServer).CreateArtifact(ctx, in)
+		return srv.(DataCatalogServiceServer).CreateArtifact(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/flyteidl.datacatalog.DataCatalog/CreateArtifact",
+		FullMethod: "/flyteidl.datacatalog.DataCatalogService/CreateArtifact",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataCatalogServer).CreateArtifact(ctx, req.(*CreateArtifactRequest))
+		return srv.(DataCatalogServiceServer).CreateArtifact(ctx, req.(*CreateArtifactRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataCatalog_GetArtifact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _DataCatalogService_GetArtifact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetArtifactRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataCatalogServer).GetArtifact(ctx, in)
+		return srv.(DataCatalogServiceServer).GetArtifact(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/flyteidl.datacatalog.DataCatalog/GetArtifact",
+		FullMethod: "/flyteidl.datacatalog.DataCatalogService/GetArtifact",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataCatalogServer).GetArtifact(ctx, req.(*GetArtifactRequest))
+		return srv.(DataCatalogServiceServer).GetArtifact(ctx, req.(*GetArtifactRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DataCatalog_AddTag_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _DataCatalogService_AddTag_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AddTagRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DataCatalogServer).AddTag(ctx, in)
+		return srv.(DataCatalogServiceServer).AddTag(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/flyteidl.datacatalog.DataCatalog/AddTag",
+		FullMethod: "/flyteidl.datacatalog.DataCatalogService/AddTag",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DataCatalogServer).AddTag(ctx, req.(*AddTagRequest))
+		return srv.(DataCatalogServiceServer).AddTag(ctx, req.(*AddTagRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _DataCatalog_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "flyteidl.datacatalog.DataCatalog",
-	HandlerType: (*DataCatalogServer)(nil),
+var _DataCatalogService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "flyteidl.datacatalog.DataCatalogService",
+	HandlerType: (*DataCatalogServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateDataset",
-			Handler:    _DataCatalog_CreateDataset_Handler,
+			Handler:    _DataCatalogService_CreateDataset_Handler,
 		},
 		{
 			MethodName: "GetDataset",
-			Handler:    _DataCatalog_GetDataset_Handler,
+			Handler:    _DataCatalogService_GetDataset_Handler,
 		},
 		{
 			MethodName: "CreateArtifact",
-			Handler:    _DataCatalog_CreateArtifact_Handler,
+			Handler:    _DataCatalogService_CreateArtifact_Handler,
 		},
 		{
 			MethodName: "GetArtifact",
-			Handler:    _DataCatalog_GetArtifact_Handler,
+			Handler:    _DataCatalogService_GetArtifact_Handler,
 		},
 		{
 			MethodName: "AddTag",
-			Handler:    _DataCatalog_AddTag_Handler,
+			Handler:    _DataCatalogService_AddTag_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -1020,53 +1020,53 @@ var _DataCatalog_serviceDesc = grpc.ServiceDesc{
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/datacatalog/datacatalog.proto", fileDescriptor_datacatalog_a29ddaa325d66176)
+	proto.RegisterFile("flyteidl/datacatalog/datacatalog.proto", fileDescriptor_datacatalog_38e0e7ef61805663)
 }
 
-var fileDescriptor_datacatalog_a29ddaa325d66176 = []byte{
-	// 690 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x56, 0xd9, 0x6e, 0xd3, 0x4c,
-	0x18, 0xfd, 0x1d, 0xe7, 0xcf, 0xf2, 0xb9, 0x8d, 0xca, 0x50, 0x8a, 0x31, 0x4b, 0x8b, 0x41, 0x10,
-	0x68, 0xb1, 0xa5, 0x22, 0x51, 0x5a, 0x71, 0xd3, 0x05, 0x41, 0x05, 0x2d, 0xe0, 0xf6, 0x8a, 0x9b,
-	0x68, 0x12, 0x4f, 0x1c, 0x13, 0x6f, 0xb5, 0x27, 0x91, 0xfc, 0x0a, 0xbc, 0x04, 0xcf, 0xc3, 0x4b,
-	0x21, 0x64, 0x7b, 0xec, 0x38, 0xc6, 0x09, 0x09, 0x70, 0x37, 0x33, 0x39, 0xdf, 0x39, 0xdf, 0x32,
-	0x73, 0x62, 0x78, 0xd4, 0xb7, 0x42, 0x4a, 0x4c, 0xdd, 0x52, 0x75, 0x4c, 0x71, 0x0f, 0x53, 0x6c,
-	0xb9, 0x46, 0x7e, 0xad, 0x78, 0xbe, 0x4b, 0x5d, 0xb4, 0x9e, 0xe2, 0x94, 0xdc, 0x6f, 0xd2, 0x9d,
-	0x2c, 0xba, 0xe7, 0xfa, 0x44, 0xb5, 0x4c, 0x4a, 0x7c, 0x6c, 0x05, 0x49, 0x8c, 0xfc, 0x01, 0xd6,
-	0x8f, 0x7d, 0x82, 0x29, 0x39, 0xc1, 0x14, 0x07, 0x84, 0x6a, 0xe4, 0x6a, 0x44, 0x02, 0x8a, 0xf6,
-	0xa0, 0xae, 0x27, 0x27, 0x22, 0xb7, 0xc5, 0xb5, 0x85, 0xdd, 0xbb, 0x4a, 0x19, 0xbb, 0x92, 0x86,
-	0xa5, 0x68, 0xf9, 0x26, 0xdc, 0x28, 0x10, 0x06, 0x9e, 0xeb, 0x04, 0x44, 0x3e, 0x87, 0x6b, 0x6f,
-	0x08, 0x2d, 0xc8, 0xec, 0x17, 0x65, 0x36, 0xe7, 0xca, 0x9c, 0x9e, 0x4c, 0x84, 0xce, 0x00, 0xe5,
-	0xf9, 0x12, 0x95, 0x3f, 0xcf, 0xfb, 0x1b, 0x17, 0xf3, 0x1d, 0xfa, 0xd4, 0xec, 0xe3, 0xde, 0x3f,
-	0x48, 0x10, 0xdd, 0x07, 0x01, 0x33, 0xb6, 0x8e, 0xa9, 0x8b, 0x95, 0x2d, 0xae, 0xdd, 0x7c, 0xfb,
-	0x9f, 0x06, 0xe9, 0xe1, 0xa9, 0x8e, 0x6e, 0x43, 0x83, 0x62, 0xa3, 0xe3, 0x60, 0x9b, 0x88, 0x3c,
-	0xfb, 0xbd, 0x4e, 0xb1, 0x71, 0x8e, 0x6d, 0x72, 0xd4, 0x82, 0x95, 0xab, 0x11, 0xf1, 0xc3, 0xce,
-	0x00, 0x3b, 0xba, 0x45, 0xe4, 0x4f, 0x70, 0x7d, 0x2a, 0x41, 0x56, 0xf1, 0x01, 0x34, 0x52, 0x46,
-	0x96, 0xe2, 0xbd, 0xf2, 0x14, 0xb3, 0xc8, 0x0c, 0x2f, 0x5f, 0xa4, 0xc3, 0x2a, 0x96, 0xfd, 0x37,
-	0xa4, 0x22, 0x6c, 0x14, 0x49, 0xd9, 0x15, 0x78, 0x05, 0xab, 0x87, 0xba, 0x7e, 0x89, 0x8d, 0x54,
-	0x66, 0x1b, 0x78, 0x8a, 0x0d, 0xa6, 0x70, 0xab, 0x5c, 0x21, 0x82, 0x47, 0x28, 0x79, 0x0d, 0x5a,
-	0x69, 0x34, 0xe3, 0x1b, 0x43, 0x9d, 0xf5, 0x1d, 0xa9, 0x50, 0x31, 0xf5, 0x45, 0x47, 0x54, 0x31,
-	0xf5, 0xa8, 0x42, 0x9b, 0x50, 0x1c, 0x01, 0xe2, 0xd1, 0xcc, 0xac, 0xf0, 0x8c, 0xa1, 0xb4, 0x0c,
-	0x2f, 0x0f, 0xa1, 0x99, 0x91, 0x21, 0x11, 0xea, 0x9e, 0xef, 0x7e, 0x21, 0xac, 0x53, 0x4d, 0x2d,
-	0xdd, 0x22, 0x04, 0xd5, 0x78, 0xb2, 0xf1, 0xe4, 0xb5, 0x78, 0x8d, 0x36, 0xa0, 0xa6, 0xbb, 0x36,
-	0x36, 0x9d, 0x64, 0xde, 0x1a, 0xdb, 0x45, 0x2c, 0x63, 0xe2, 0x07, 0xa6, 0xeb, 0x88, 0xd5, 0x84,
-	0x85, 0x6d, 0xe5, 0xef, 0x1c, 0x34, 0xd2, 0x4e, 0xa2, 0x56, 0x56, 0x66, 0x33, 0xae, 0x22, 0x77,
-	0x3d, 0x2b, 0x4b, 0x5e, 0xcf, 0x17, 0x50, 0x8d, 0x8b, 0xe7, 0xb7, 0xf8, 0xb6, 0xb0, 0x2b, 0xcf,
-	0x1f, 0x6f, 0x14, 0xaf, 0xc5, 0xf8, 0xa9, 0xc6, 0x55, 0x97, 0x6c, 0xdc, 0x47, 0x58, 0xc9, 0x33,
-	0x66, 0x1d, 0xe2, 0x72, 0x1d, 0xda, 0x81, 0xff, 0xc7, 0xd8, 0x1a, 0x11, 0x56, 0xd0, 0xc6, 0x84,
-	0x3c, 0xf2, 0x2f, 0xe5, 0x7d, 0xe2, 0x5f, 0x5a, 0x02, 0x92, 0x47, 0xc0, 0x5f, 0x62, 0xa3, 0x94,
-	0x68, 0xb3, 0xe4, 0xfd, 0x4d, 0xbd, 0xbe, 0x5c, 0xf3, 0xf8, 0x25, 0xcd, 0xe7, 0x2b, 0x07, 0x8d,
-	0xb4, 0x3e, 0x74, 0x0c, 0xf5, 0x21, 0x09, 0x3b, 0x36, 0xf6, 0x44, 0x2e, 0x6e, 0xe6, 0xd3, 0xf9,
-	0x0d, 0x51, 0xde, 0x91, 0xf0, 0x0c, 0x7b, 0xaf, 0x1d, 0xea, 0x87, 0x5a, 0x6d, 0x18, 0x6f, 0xa4,
-	0x7d, 0x10, 0x72, 0xc7, 0x68, 0x0d, 0xf8, 0x21, 0x09, 0x59, 0x3d, 0xd1, 0x12, 0xad, 0xe7, 0xfb,
-	0xd2, 0x64, 0xf5, 0x1f, 0x54, 0x5e, 0x72, 0xbb, 0x3f, 0x78, 0x10, 0xa2, 0x1c, 0x8f, 0x13, 0x1d,
-	0x34, 0x80, 0xd5, 0x29, 0x0b, 0x46, 0x33, 0xf2, 0x29, 0x33, 0x7e, 0x69, 0x7b, 0x21, 0x2c, 0xf3,
-	0x9e, 0x0e, 0xc0, 0xc4, 0x83, 0xd1, 0xe3, 0xf2, 0xd0, 0x5f, 0x5c, 0x5f, 0x6a, 0xff, 0x1e, 0xc8,
-	0x04, 0x86, 0xd0, 0x9a, 0xf6, 0x12, 0x34, 0x37, 0xbf, 0x82, 0x8d, 0x49, 0x3b, 0x8b, 0x81, 0x99,
-	0x58, 0x17, 0x84, 0x9c, 0xc1, 0xa2, 0xd9, 0x59, 0x16, 0x65, 0x9e, 0x2c, 0x80, 0x64, 0x1a, 0x17,
-	0x50, 0x4b, 0x4c, 0x0c, 0x3d, 0x98, 0xf1, 0xe2, 0xf2, 0x06, 0x29, 0x3d, 0x9c, 0x0f, 0x4a, 0x48,
-	0x8f, 0xf6, 0x3f, 0xef, 0x19, 0x26, 0x1d, 0x8c, 0xba, 0x4a, 0xcf, 0xb5, 0x55, 0x2b, 0xec, 0x53,
-	0x35, 0xfb, 0xd3, 0x37, 0x88, 0xa3, 0x7a, 0xdd, 0x67, 0x86, 0xab, 0x96, 0x7d, 0x45, 0x74, 0x6b,
-	0xf1, 0x67, 0xc0, 0xf3, 0x9f, 0x01, 0x00, 0x00, 0xff, 0xff, 0x27, 0xeb, 0x63, 0xd1, 0x64, 0x08,
-	0x00, 0x00,
+var fileDescriptor_datacatalog_38e0e7ef61805663 = []byte{
+	// 696 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x56, 0xdb, 0x6e, 0xd3, 0x4a,
+	0x14, 0x3d, 0x8e, 0x73, 0x72, 0xd9, 0x69, 0xa3, 0x32, 0x94, 0x62, 0xc2, 0xa5, 0xc5, 0x20, 0x08,
+	0xb4, 0xd8, 0x52, 0x91, 0x28, 0xad, 0x78, 0xe9, 0x05, 0x41, 0x05, 0x2d, 0xe0, 0xf6, 0x89, 0x97,
+	0x68, 0x12, 0xef, 0xba, 0x26, 0xbe, 0xd5, 0x9e, 0x44, 0xf2, 0x07, 0xf0, 0xc2, 0x4f, 0xf0, 0x3d,
+	0xfc, 0x15, 0xb2, 0x3d, 0x76, 0x1d, 0xe3, 0x84, 0x14, 0x78, 0x9b, 0x99, 0xac, 0xbd, 0xd6, 0xbe,
+	0xcc, 0xac, 0x18, 0x1e, 0x9d, 0x59, 0x21, 0x43, 0x53, 0xb7, 0x54, 0x9d, 0x32, 0x3a, 0xa0, 0x8c,
+	0x5a, 0xae, 0x91, 0x5f, 0x2b, 0x9e, 0xef, 0x32, 0x97, 0x2c, 0xa7, 0x38, 0x25, 0xf7, 0x5b, 0xe7,
+	0x4e, 0x16, 0x3d, 0x70, 0x7d, 0x54, 0x2d, 0x93, 0xa1, 0x4f, 0xad, 0x20, 0x89, 0x91, 0x3f, 0xc0,
+	0xf2, 0xbe, 0x8f, 0x94, 0xe1, 0x01, 0x65, 0x34, 0x40, 0xa6, 0xe1, 0xc5, 0x08, 0x03, 0x46, 0xb6,
+	0xa0, 0xae, 0x27, 0x27, 0x92, 0xb0, 0x26, 0x74, 0x5b, 0x9b, 0x77, 0x95, 0x32, 0x76, 0x25, 0x0d,
+	0x4b, 0xd1, 0xf2, 0x4d, 0xb8, 0x51, 0x20, 0x0c, 0x3c, 0xd7, 0x09, 0x50, 0x3e, 0x86, 0x6b, 0x6f,
+	0x90, 0x15, 0x64, 0xb6, 0x8b, 0x32, 0xab, 0x33, 0x65, 0x0e, 0x0f, 0x2e, 0x85, 0x8e, 0x80, 0xe4,
+	0xf9, 0x12, 0x95, 0x3f, 0xcf, 0xfb, 0xbb, 0x10, 0xf3, 0xed, 0xfa, 0xcc, 0x3c, 0xa3, 0x83, 0x7f,
+	0x90, 0x20, 0xb9, 0x0f, 0x2d, 0xca, 0xd9, 0x7a, 0xa6, 0x2e, 0x55, 0xd6, 0x84, 0x6e, 0xf3, 0xed,
+	0x7f, 0x1a, 0xa4, 0x87, 0x87, 0x3a, 0xb9, 0x0d, 0x0d, 0x46, 0x8d, 0x9e, 0x43, 0x6d, 0x94, 0x44,
+	0xfe, 0x7b, 0x9d, 0x51, 0xe3, 0x98, 0xda, 0xb8, 0xd7, 0x86, 0x85, 0x8b, 0x11, 0xfa, 0x61, 0xef,
+	0x9c, 0x3a, 0xba, 0x85, 0xf2, 0x27, 0xb8, 0x3e, 0x91, 0x20, 0xaf, 0x78, 0x07, 0x1a, 0x29, 0x23,
+	0x4f, 0xf1, 0x5e, 0x79, 0x8a, 0x59, 0x64, 0x86, 0x97, 0x4f, 0xd2, 0x61, 0x15, 0xcb, 0xfe, 0x1b,
+	0x52, 0x09, 0x56, 0x8a, 0xa4, 0xfc, 0x0a, 0xbc, 0x82, 0xc5, 0x5d, 0x5d, 0x3f, 0xa5, 0x46, 0x2a,
+	0xb3, 0x0e, 0x22, 0xa3, 0x06, 0x57, 0xb8, 0x55, 0xae, 0x10, 0xc1, 0x23, 0x94, 0xbc, 0x04, 0xed,
+	0x34, 0x9a, 0xf3, 0x8d, 0xa1, 0xce, 0xfb, 0x4e, 0x54, 0xa8, 0x98, 0xfa, 0xbc, 0x23, 0xaa, 0x98,
+	0x7a, 0x54, 0xa1, 0x8d, 0x8c, 0x46, 0x80, 0x78, 0x34, 0x53, 0x2b, 0x3c, 0xe2, 0x28, 0x2d, 0xc3,
+	0xcb, 0x43, 0x68, 0x66, 0x64, 0x44, 0x82, 0xba, 0xe7, 0xbb, 0x5f, 0x90, 0x77, 0xaa, 0xa9, 0xa5,
+	0x5b, 0x42, 0xa0, 0x1a, 0x4f, 0x36, 0x9e, 0xbc, 0x16, 0xaf, 0xc9, 0x0a, 0xd4, 0x74, 0xd7, 0xa6,
+	0xa6, 0x93, 0xcc, 0x5b, 0xe3, 0xbb, 0x88, 0x65, 0x8c, 0x7e, 0x60, 0xba, 0x8e, 0x54, 0x4d, 0x58,
+	0xf8, 0x56, 0xfe, 0x21, 0x40, 0x23, 0xed, 0x24, 0x69, 0x67, 0x65, 0x36, 0xe3, 0x2a, 0x72, 0xd7,
+	0xb3, 0x72, 0xc5, 0xeb, 0xf9, 0x02, 0xaa, 0x71, 0xf1, 0xe2, 0x9a, 0xd8, 0x6d, 0x6d, 0xca, 0xb3,
+	0xc7, 0x1b, 0xc5, 0x6b, 0x31, 0x7e, 0xa2, 0x71, 0xd5, 0x2b, 0x36, 0xee, 0x23, 0x2c, 0xe4, 0x19,
+	0xb3, 0x0e, 0x09, 0xb9, 0x0e, 0x6d, 0xc0, 0xff, 0x63, 0x6a, 0x8d, 0x90, 0x17, 0xb4, 0x72, 0x49,
+	0x1e, 0xf9, 0x97, 0xf2, 0x3e, 0xf1, 0x2f, 0x2d, 0x01, 0xc9, 0x23, 0x10, 0x4f, 0xa9, 0x51, 0x4a,
+	0xb4, 0x5a, 0xf2, 0xfe, 0x26, 0x5e, 0x5f, 0xae, 0x79, 0xe2, 0x15, 0xcd, 0xe7, 0x9b, 0x00, 0x8d,
+	0xb4, 0x3e, 0xb2, 0x0f, 0xf5, 0x21, 0x86, 0x3d, 0x9b, 0x7a, 0x92, 0x10, 0x37, 0xf3, 0xe9, 0xec,
+	0x86, 0x28, 0xef, 0x30, 0x3c, 0xa2, 0xde, 0x6b, 0x87, 0xf9, 0xa1, 0x56, 0x1b, 0xc6, 0x9b, 0xce,
+	0x36, 0xb4, 0x72, 0xc7, 0x64, 0x09, 0xc4, 0x21, 0x86, 0xbc, 0x9e, 0x68, 0x49, 0x96, 0xf3, 0x7d,
+	0x69, 0xf2, 0xfa, 0x77, 0x2a, 0x2f, 0x85, 0xcd, 0xaf, 0x55, 0x20, 0x51, 0x8e, 0xfb, 0x89, 0xce,
+	0x09, 0xfa, 0x63, 0x73, 0x80, 0xe4, 0x1c, 0x16, 0x27, 0x9c, 0x98, 0x4c, 0x49, 0xab, 0xcc, 0xff,
+	0x3b, 0xeb, 0x73, 0x61, 0xb9, 0x05, 0xf5, 0x00, 0x2e, 0xad, 0x98, 0x3c, 0x2e, 0x0f, 0xfd, 0xc5,
+	0xfc, 0x3b, 0xdd, 0xdf, 0x03, 0xb9, 0xc0, 0x10, 0xda, 0x93, 0x96, 0x42, 0x66, 0xe6, 0x57, 0x70,
+	0xb3, 0xce, 0xc6, 0x7c, 0x60, 0x2e, 0xd6, 0x87, 0x56, 0xce, 0x67, 0xc9, 0xf4, 0x2c, 0x8b, 0x32,
+	0x4f, 0xe6, 0x40, 0x72, 0x8d, 0x13, 0xa8, 0x25, 0x5e, 0x46, 0x1e, 0x4c, 0x79, 0x78, 0x79, 0x9f,
+	0xec, 0x3c, 0x9c, 0x0d, 0x4a, 0x48, 0xf7, 0xb6, 0x3f, 0x6f, 0x19, 0x26, 0x3b, 0x1f, 0xf5, 0x95,
+	0x81, 0x6b, 0xab, 0x56, 0x78, 0xc6, 0xd4, 0xec, 0xbf, 0xdf, 0x40, 0x47, 0xf5, 0xfa, 0xcf, 0x0c,
+	0x57, 0x2d, 0xfb, 0x98, 0xe8, 0xd7, 0xe2, 0xaf, 0x81, 0xe7, 0x3f, 0x03, 0x00, 0x00, 0xff, 0xff,
+	0x50, 0x47, 0x23, 0xf3, 0x6b, 0x08, 0x00, 0x00,
 }
