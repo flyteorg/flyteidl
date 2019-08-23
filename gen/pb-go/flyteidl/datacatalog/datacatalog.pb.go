@@ -24,6 +24,8 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
+//
+// Request message for creating a Dataset.
 type CreateDatasetRequest struct {
 	Dataset              *Dataset `protobuf:"bytes,1,opt,name=dataset,proto3" json:"dataset,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -35,7 +37,7 @@ func (m *CreateDatasetRequest) Reset()         { *m = CreateDatasetRequest{} }
 func (m *CreateDatasetRequest) String() string { return proto.CompactTextString(m) }
 func (*CreateDatasetRequest) ProtoMessage()    {}
 func (*CreateDatasetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{0}
+	return fileDescriptor_datacatalog_5b7a59acd90424c0, []int{0}
 }
 func (m *CreateDatasetRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateDatasetRequest.Unmarshal(m, b)
@@ -62,6 +64,8 @@ func (m *CreateDatasetRequest) GetDataset() *Dataset {
 	return nil
 }
 
+//
+// Response message for creating a Dataset
 type CreateDatasetResponse struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -72,7 +76,7 @@ func (m *CreateDatasetResponse) Reset()         { *m = CreateDatasetResponse{} }
 func (m *CreateDatasetResponse) String() string { return proto.CompactTextString(m) }
 func (*CreateDatasetResponse) ProtoMessage()    {}
 func (*CreateDatasetResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{1}
+	return fileDescriptor_datacatalog_5b7a59acd90424c0, []int{1}
 }
 func (m *CreateDatasetResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateDatasetResponse.Unmarshal(m, b)
@@ -92,6 +96,9 @@ func (m *CreateDatasetResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_CreateDatasetResponse proto.InternalMessageInfo
 
+//
+// Request message for retrieving a Dataset. The Dataset is retrieved by it's unique identifier
+// which is a combination of several fields.
 type GetDatasetRequest struct {
 	Dataset              *DatasetID `protobuf:"bytes,1,opt,name=dataset,proto3" json:"dataset,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
@@ -103,7 +110,7 @@ func (m *GetDatasetRequest) Reset()         { *m = GetDatasetRequest{} }
 func (m *GetDatasetRequest) String() string { return proto.CompactTextString(m) }
 func (*GetDatasetRequest) ProtoMessage()    {}
 func (*GetDatasetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{2}
+	return fileDescriptor_datacatalog_5b7a59acd90424c0, []int{2}
 }
 func (m *GetDatasetRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetDatasetRequest.Unmarshal(m, b)
@@ -130,6 +137,9 @@ func (m *GetDatasetRequest) GetDataset() *DatasetID {
 	return nil
 }
 
+//
+// Response message for retrieving a Dataset. The response will include the metadata for the
+// Dataset.
 type GetDatasetResponse struct {
 	Dataset              *Dataset `protobuf:"bytes,1,opt,name=dataset,proto3" json:"dataset,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -141,7 +151,7 @@ func (m *GetDatasetResponse) Reset()         { *m = GetDatasetResponse{} }
 func (m *GetDatasetResponse) String() string { return proto.CompactTextString(m) }
 func (*GetDatasetResponse) ProtoMessage()    {}
 func (*GetDatasetResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{3}
+	return fileDescriptor_datacatalog_5b7a59acd90424c0, []int{3}
 }
 func (m *GetDatasetResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetDatasetResponse.Unmarshal(m, b)
@@ -168,6 +178,10 @@ func (m *GetDatasetResponse) GetDataset() *Dataset {
 	return nil
 }
 
+//
+// Request message for retrieving an Artifact. Retrieve an artifact based on a query handle that
+// can be one of artifact_id or tag. The result returned will include the artifact data and metadata
+// associated with the artifact.
 type GetArtifactRequest struct {
 	Dataset *DatasetID `protobuf:"bytes,1,opt,name=dataset,proto3" json:"dataset,omitempty"`
 	// Types that are valid to be assigned to QueryHandle:
@@ -183,7 +197,7 @@ func (m *GetArtifactRequest) Reset()         { *m = GetArtifactRequest{} }
 func (m *GetArtifactRequest) String() string { return proto.CompactTextString(m) }
 func (*GetArtifactRequest) ProtoMessage()    {}
 func (*GetArtifactRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{4}
+	return fileDescriptor_datacatalog_5b7a59acd90424c0, []int{4}
 }
 func (m *GetArtifactRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetArtifactRequest.Unmarshal(m, b)
@@ -313,6 +327,9 @@ func _GetArtifactRequest_OneofSizer(msg proto.Message) (n int) {
 	return n
 }
 
+//
+// Response message for retrieving an Artifact. The result returned will include the artifact data
+// and metadata associated with the artifact.
 type GetArtifactResponse struct {
 	Artifact             *Artifact `protobuf:"bytes,1,opt,name=artifact,proto3" json:"artifact,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
@@ -324,7 +341,7 @@ func (m *GetArtifactResponse) Reset()         { *m = GetArtifactResponse{} }
 func (m *GetArtifactResponse) String() string { return proto.CompactTextString(m) }
 func (*GetArtifactResponse) ProtoMessage()    {}
 func (*GetArtifactResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{5}
+	return fileDescriptor_datacatalog_5b7a59acd90424c0, []int{5}
 }
 func (m *GetArtifactResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetArtifactResponse.Unmarshal(m, b)
@@ -351,6 +368,8 @@ func (m *GetArtifactResponse) GetArtifact() *Artifact {
 	return nil
 }
 
+//
+// Request message for creating an Artifact and its associated artifact Data.
 type CreateArtifactRequest struct {
 	Artifact             *Artifact `protobuf:"bytes,1,opt,name=artifact,proto3" json:"artifact,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
@@ -362,7 +381,7 @@ func (m *CreateArtifactRequest) Reset()         { *m = CreateArtifactRequest{} }
 func (m *CreateArtifactRequest) String() string { return proto.CompactTextString(m) }
 func (*CreateArtifactRequest) ProtoMessage()    {}
 func (*CreateArtifactRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{6}
+	return fileDescriptor_datacatalog_5b7a59acd90424c0, []int{6}
 }
 func (m *CreateArtifactRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateArtifactRequest.Unmarshal(m, b)
@@ -389,6 +408,8 @@ func (m *CreateArtifactRequest) GetArtifact() *Artifact {
 	return nil
 }
 
+//
+// Response message for creating an Artifact.
 type CreateArtifactResponse struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -399,7 +420,7 @@ func (m *CreateArtifactResponse) Reset()         { *m = CreateArtifactResponse{}
 func (m *CreateArtifactResponse) String() string { return proto.CompactTextString(m) }
 func (*CreateArtifactResponse) ProtoMessage()    {}
 func (*CreateArtifactResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{7}
+	return fileDescriptor_datacatalog_5b7a59acd90424c0, []int{7}
 }
 func (m *CreateArtifactResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateArtifactResponse.Unmarshal(m, b)
@@ -419,6 +440,8 @@ func (m *CreateArtifactResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_CreateArtifactResponse proto.InternalMessageInfo
 
+//
+// Request message for tagging an Artifact.
 type AddTagRequest struct {
 	Tag                  *Tag     `protobuf:"bytes,1,opt,name=tag,proto3" json:"tag,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -430,7 +453,7 @@ func (m *AddTagRequest) Reset()         { *m = AddTagRequest{} }
 func (m *AddTagRequest) String() string { return proto.CompactTextString(m) }
 func (*AddTagRequest) ProtoMessage()    {}
 func (*AddTagRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{8}
+	return fileDescriptor_datacatalog_5b7a59acd90424c0, []int{8}
 }
 func (m *AddTagRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddTagRequest.Unmarshal(m, b)
@@ -457,6 +480,8 @@ func (m *AddTagRequest) GetTag() *Tag {
 	return nil
 }
 
+//
+// Response message for tagging an Artifact.
 type AddTagResponse struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -467,7 +492,7 @@ func (m *AddTagResponse) Reset()         { *m = AddTagResponse{} }
 func (m *AddTagResponse) String() string { return proto.CompactTextString(m) }
 func (*AddTagResponse) ProtoMessage()    {}
 func (*AddTagResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{9}
+	return fileDescriptor_datacatalog_5b7a59acd90424c0, []int{9}
 }
 func (m *AddTagResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddTagResponse.Unmarshal(m, b)
@@ -487,6 +512,8 @@ func (m *AddTagResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_AddTagResponse proto.InternalMessageInfo
 
+//
+// Dataset message. It is uniquely identified by DatasetID.
 type Dataset struct {
 	Id                   *DatasetID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Metadata             *Metadata  `protobuf:"bytes,2,opt,name=metadata,proto3" json:"metadata,omitempty"`
@@ -499,7 +526,7 @@ func (m *Dataset) Reset()         { *m = Dataset{} }
 func (m *Dataset) String() string { return proto.CompactTextString(m) }
 func (*Dataset) ProtoMessage()    {}
 func (*Dataset) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{10}
+	return fileDescriptor_datacatalog_5b7a59acd90424c0, []int{10}
 }
 func (m *Dataset) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Dataset.Unmarshal(m, b)
@@ -533,6 +560,8 @@ func (m *Dataset) GetMetadata() *Metadata {
 	return nil
 }
 
+//
+// DatasetID message that is composed of several string fields.
 type DatasetID struct {
 	Project              string   `protobuf:"bytes,1,opt,name=project,proto3" json:"project,omitempty"`
 	Name                 string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
@@ -547,7 +576,7 @@ func (m *DatasetID) Reset()         { *m = DatasetID{} }
 func (m *DatasetID) String() string { return proto.CompactTextString(m) }
 func (*DatasetID) ProtoMessage()    {}
 func (*DatasetID) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{11}
+	return fileDescriptor_datacatalog_5b7a59acd90424c0, []int{11}
 }
 func (m *DatasetID) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DatasetID.Unmarshal(m, b)
@@ -595,6 +624,8 @@ func (m *DatasetID) GetVersion() string {
 	return ""
 }
 
+//
+// Artifact message. It is composed of several string fields.
 type Artifact struct {
 	Id                   string          `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Dataset              *DatasetID      `protobuf:"bytes,2,opt,name=dataset,proto3" json:"dataset,omitempty"`
@@ -609,7 +640,7 @@ func (m *Artifact) Reset()         { *m = Artifact{} }
 func (m *Artifact) String() string { return proto.CompactTextString(m) }
 func (*Artifact) ProtoMessage()    {}
 func (*Artifact) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{12}
+	return fileDescriptor_datacatalog_5b7a59acd90424c0, []int{12}
 }
 func (m *Artifact) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Artifact.Unmarshal(m, b)
@@ -657,6 +688,8 @@ func (m *Artifact) GetMetadata() *Metadata {
 	return nil
 }
 
+//
+// ArtifactData that belongs to an artifact
 type ArtifactData struct {
 	Name                 string        `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	Value                *core.Literal `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
@@ -669,7 +702,7 @@ func (m *ArtifactData) Reset()         { *m = ArtifactData{} }
 func (m *ArtifactData) String() string { return proto.CompactTextString(m) }
 func (*ArtifactData) ProtoMessage()    {}
 func (*ArtifactData) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{13}
+	return fileDescriptor_datacatalog_5b7a59acd90424c0, []int{13}
 }
 func (m *ArtifactData) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ArtifactData.Unmarshal(m, b)
@@ -703,6 +736,9 @@ func (m *ArtifactData) GetValue() *core.Literal {
 	return nil
 }
 
+//
+// Tag message that is unique to a Dataset. It is associated to a single artifact and
+// can be retrieved by name later.
 type Tag struct {
 	Name                 string     `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	ArtifactId           string     `protobuf:"bytes,2,opt,name=artifact_id,json=artifactId,proto3" json:"artifact_id,omitempty"`
@@ -716,7 +752,7 @@ func (m *Tag) Reset()         { *m = Tag{} }
 func (m *Tag) String() string { return proto.CompactTextString(m) }
 func (*Tag) ProtoMessage()    {}
 func (*Tag) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{14}
+	return fileDescriptor_datacatalog_5b7a59acd90424c0, []int{14}
 }
 func (m *Tag) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Tag.Unmarshal(m, b)
@@ -757,6 +793,8 @@ func (m *Tag) GetDataset() *DatasetID {
 	return nil
 }
 
+//
+// Metadata representation for artifacts and datasets
 type Metadata struct {
 	KeyMap               map[string]string `protobuf:"bytes,1,rep,name=key_map,json=keyMap,proto3" json:"key_map,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
@@ -768,7 +806,7 @@ func (m *Metadata) Reset()         { *m = Metadata{} }
 func (m *Metadata) String() string { return proto.CompactTextString(m) }
 func (*Metadata) ProtoMessage()    {}
 func (*Metadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_datacatalog_38e0e7ef61805663, []int{15}
+	return fileDescriptor_datacatalog_5b7a59acd90424c0, []int{15}
 }
 func (m *Metadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Metadata.Unmarshal(m, b)
@@ -827,10 +865,15 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type DataCatalogServiceClient interface {
+	// Create a new Dataset. Datasets are unique based on the DatasetID.
 	CreateDataset(ctx context.Context, in *CreateDatasetRequest, opts ...grpc.CallOption) (*CreateDatasetResponse, error)
+	// Get a Dataset by the DatasetID. This returns the Dataset with the associated metadata.
 	GetDataset(ctx context.Context, in *GetDatasetRequest, opts ...grpc.CallOption) (*GetDatasetResponse, error)
+	// Create an artifact and the artifact data associated with it.
 	CreateArtifact(ctx context.Context, in *CreateArtifactRequest, opts ...grpc.CallOption) (*CreateArtifactResponse, error)
+	// Retrieve an artifact by an identifying handle. This returns an artifact along with the artifact data.
 	GetArtifact(ctx context.Context, in *GetArtifactRequest, opts ...grpc.CallOption) (*GetArtifactResponse, error)
+	// Associate a tag with an artifact. Tags are unique within a Dataset.
 	AddTag(ctx context.Context, in *AddTagRequest, opts ...grpc.CallOption) (*AddTagResponse, error)
 }
 
@@ -889,10 +932,15 @@ func (c *dataCatalogServiceClient) AddTag(ctx context.Context, in *AddTagRequest
 
 // DataCatalogServiceServer is the server API for DataCatalogService service.
 type DataCatalogServiceServer interface {
+	// Create a new Dataset. Datasets are unique based on the DatasetID.
 	CreateDataset(context.Context, *CreateDatasetRequest) (*CreateDatasetResponse, error)
+	// Get a Dataset by the DatasetID. This returns the Dataset with the associated metadata.
 	GetDataset(context.Context, *GetDatasetRequest) (*GetDatasetResponse, error)
+	// Create an artifact and the artifact data associated with it.
 	CreateArtifact(context.Context, *CreateArtifactRequest) (*CreateArtifactResponse, error)
+	// Retrieve an artifact by an identifying handle. This returns an artifact along with the artifact data.
 	GetArtifact(context.Context, *GetArtifactRequest) (*GetArtifactResponse, error)
+	// Associate a tag with an artifact. Tags are unique within a Dataset.
 	AddTag(context.Context, *AddTagRequest) (*AddTagResponse, error)
 }
 
@@ -1020,10 +1068,10 @@ var _DataCatalogService_serviceDesc = grpc.ServiceDesc{
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/datacatalog/datacatalog.proto", fileDescriptor_datacatalog_38e0e7ef61805663)
+	proto.RegisterFile("flyteidl/datacatalog/datacatalog.proto", fileDescriptor_datacatalog_5b7a59acd90424c0)
 }
 
-var fileDescriptor_datacatalog_38e0e7ef61805663 = []byte{
+var fileDescriptor_datacatalog_5b7a59acd90424c0 = []byte{
 	// 696 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x56, 0xdb, 0x6e, 0xd3, 0x4a,
 	0x14, 0x3d, 0x8e, 0x73, 0x72, 0xd9, 0x69, 0xa3, 0x32, 0x94, 0x62, 0xc2, 0xa5, 0xc5, 0x20, 0x08,

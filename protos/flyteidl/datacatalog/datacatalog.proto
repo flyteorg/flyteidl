@@ -5,30 +5,59 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/datacatalog";
 
 import "flyteidl/core/literals.proto";
 
+/*
+ * Data Catalog service definition. Data Catalog is a service for
+ * indexing parameterized, strongly-typed data artifacts across revisions.
+ * Artifacts are associated with a Dataset, and can be tagged for retrieval.
+ */
 service DataCatalogService {
+    // Create a new Dataset. Datasets are unique based on the DatasetID.
     rpc CreateDataset (CreateDatasetRequest) returns (CreateDatasetResponse);
+    // Get a Dataset by the DatasetID. This returns the Dataset with the associated metadata.
     rpc GetDataset (GetDatasetRequest) returns (GetDatasetResponse);
+    // Create an artifact and the artifact data associated with it.
     rpc CreateArtifact (CreateArtifactRequest) returns (CreateArtifactResponse);
+    // Retrieve an artifact by an identifying handle. This returns an artifact along with the artifact data.
     rpc GetArtifact (GetArtifactRequest) returns (GetArtifactResponse);
+    // Associate a tag with an artifact. Tags are unique within a Dataset.
     rpc AddTag (AddTagRequest) returns (AddTagResponse);
 }
 
+/*
+ * Request message for creating a Dataset.
+ */
 message CreateDatasetRequest {
     Dataset dataset = 1;
 }
 
+/*
+ * Response message for creating a Dataset
+ */
 message CreateDatasetResponse {
 
 }
 
+/*
+ * Request message for retrieving a Dataset. The Dataset is retrieved by it's unique identifier
+ * which is a combination of several fields.
+ */
 message GetDatasetRequest {
     DatasetID dataset = 1;
 }
 
+/*
+ * Response message for retrieving a Dataset. The response will include the metadata for the
+ * Dataset.
+ */
 message GetDatasetResponse {
     Dataset dataset = 1;
 }
 
+/*
+ * Request message for retrieving an Artifact. Retrieve an artifact based on a query handle that
+ * can be one of artifact_id or tag. The result returned will include the artifact data and metadata
+ * associated with the artifact.
+ */
 message GetArtifactRequest {
     DatasetID dataset = 1;
 
@@ -38,56 +67,91 @@ message GetArtifactRequest {
     }
 }
 
+/*
+ * Response message for retrieving an Artifact. The result returned will include the artifact data
+ * and metadata associated with the artifact.
+ */
 message GetArtifactResponse {
     Artifact artifact = 1;
 }
 
+/*
+ * Request message for creating an Artifact and its associated artifact Data.
+ */
 message CreateArtifactRequest {
     Artifact artifact = 1;
 }
 
+/*
+ * Response message for creating an Artifact.
+ */
 message CreateArtifactResponse {
 
 }
 
+/*
+ * Request message for tagging an Artifact.
+ */
 message AddTagRequest {
     Tag tag = 1;
 }
 
+/*
+ * Response message for tagging an Artifact.
+ */
 message AddTagResponse {
 
 }
 
+/*
+ * Dataset message. It is uniquely identified by DatasetID.
+ */
 message Dataset {
-    DatasetID id = 1;
-    Metadata metadata = 2;
+    DatasetID id = 1;       // Unique identifier for the Dataset that is composed of several fields
+    Metadata metadata = 2;  // Free-form metadata associated the dataset
 }
 
+/*
+ * DatasetID message that is composed of several string fields.
+ */
 message DatasetID {
-    string project = 1;  // The name of the project
+    string project = 1;  // The project that this Dataset represents
     string name = 2;     // The name of the dataset
-    string domain = 3;   // The domain (eg. environment) in which it's desired to run (optional)
-    string version = 4;  // Version of the data schema
+    string domain = 3;   // The domain (eg. environment) in which it's desired to run
+    string version = 4;  // Version of the dataset schema
 }
 
+/*
+ * Artifact message. It is composed of several string fields.
+ */
 message Artifact {
-    string id = 1;
-    DatasetID dataset = 2;
-    repeated ArtifactData data = 3;
-    Metadata metadata = 4;
+    string id = 1;                  // The unique ID of the artifact
+    DatasetID dataset = 2;          // The Dataset that the artifact belongs to
+    repeated ArtifactData data = 3; // A list of data that is associated with the artifact
+    Metadata metadata = 4;          // Free-form metadata associated with the artifact
 }
 
+/*
+ * ArtifactData that belongs to an artifact
+ */
 message ArtifactData {
-    string name = 1;
-    flyteidl.core.Literal value = 2;
+    string name = 1;                    // Name of the artifact data
+    flyteidl.core.Literal value = 2;    // Value of the data represented as a literal
 }
 
+/*
+ * Tag message that is unique to a Dataset. It is associated to a single artifact and
+ * can be retrieved by name later.
+ */
 message Tag {
-    string name = 1;
-    string artifact_id = 2;
-    DatasetID dataset = 3;
+    string name = 1;        // Name of tag
+    string artifact_id = 2; // The tagged artifact
+    DatasetID dataset = 3;  // The Dataset that this tag belongs to
 }
 
+/*
+ * Metadata representation for artifacts and datasets
+ */
 message Metadata {
     map<string, string> key_map = 1; // key map is a dictionary of key/val strings that represent metadata
 }
