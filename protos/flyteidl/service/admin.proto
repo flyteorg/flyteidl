@@ -138,7 +138,7 @@ service AdminService {
 
   rpc ListActiveLaunchPlans (flyteidl.admin.NamedEntityIdentifierListRequest) returns (flyteidl.admin.LaunchPlanList) {
     option (google.api.http) = {
-      get: "/api/v1/active_launch_plans/{id.project}/{id.domain}"
+      get: "/api/v1/active_launch_plans/{project}/{domain}"
     };
   }
 
