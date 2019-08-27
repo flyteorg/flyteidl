@@ -130,7 +130,7 @@ service AdminService {
     };
   }
 
-  rpc GetActiveLaunchPlan (flyteidl.admin.??) returns (flyteidl.admin.LaunchPlan) {
+  rpc GetActiveLaunchPlan (flyteidl.admin.ActiveLaunchPlanRequest) returns (flyteidl.admin.LaunchPlan) {
     option (google.api.http) = {
       get: "/api/v1/active_launch_plans/{id.project}/{id.domain}/{id.name}"
     };
