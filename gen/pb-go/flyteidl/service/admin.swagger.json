@@ -818,6 +818,14 @@
             "schema": {
               "$ref": "#/definitions/adminLaunchPlanCreateResponse"
             }
+          },
+          "400": {
+            "description": "Returned for bad request that may have failed validation.",
+            "schema": {}
+          },
+          "409": {
+            "description": "Returned for a request that references an identical entity that has already been registered.",
+            "schema": {}
           }
         },
         "parameters": [
@@ -1058,7 +1066,7 @@
         ]
       },
       "put": {
-        "description": "Update the status of an existing launch plan definition.",
+        "description": "Update the status of an existing launch plan definition. At most one launch plan version for a given {project, domain, name} can be active at a time. If this call sets a launch plan to active and existing version is already active, the result of this call will be that the formerly active launch plan will be made inactive and specified launch plan in this request will be made active.",
         "operationId": "UpdateLaunchPlan",
         "responses": {
           "200": {
@@ -1539,6 +1547,14 @@
             "schema": {
               "$ref": "#/definitions/adminTaskCreateResponse"
             }
+          },
+          "400": {
+            "description": "Returned for bad request that may have failed validation.",
+            "schema": {}
+          },
+          "409": {
+            "description": "Returned for a request that references an identical entity that has already been registered.",
+            "schema": {}
           }
         },
         "parameters": [
@@ -1856,6 +1872,14 @@
             "schema": {
               "$ref": "#/definitions/adminWorkflowCreateResponse"
             }
+          },
+          "400": {
+            "description": "Returned for bad request that may have failed validation.",
+            "schema": {}
+          },
+          "409": {
+            "description": "Returned for a request that references an identical entity that has already been registered.",
+            "schema": {}
           }
         },
         "parameters": [
