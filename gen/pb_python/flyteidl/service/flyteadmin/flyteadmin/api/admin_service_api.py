@@ -4333,7 +4333,7 @@ class AdminServiceApi(object):
     def update_launch_plan(self, id_project, id_domain, id_name, id_version, body, **kwargs):  # noqa: E501
         """update_launch_plan  # noqa: E501
 
-        Update the status of an existing launch plan definition. At most one launch plan version for a given {project, domain, name} can be active at a time. If this call sets a launch plan to active and existing version is already active, the result of this call will be that the formerly active launch plan will be made inactive and specified launch plan in this request will be made active.  # noqa: E501
+        Update the status of an existing launch plan definition. At most one launch plan version for a given {project, domain, name} can be active at a time. If this call sets a launch plan to active and existing version is already active, the result of this call will be that the formerly active launch plan will be made inactive and specified launch plan in this request will be made active. In the event that the formerly active launch plan had a schedule associated it with it, this schedule will be disabled. If the reference launch plan in this request is being set to active and has a schedule associated with it, the schedule will be enabled.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_launch_plan(id_project, id_domain, id_name, id_version, body, async_req=True)
@@ -4359,7 +4359,7 @@ class AdminServiceApi(object):
     def update_launch_plan_with_http_info(self, id_project, id_domain, id_name, id_version, body, **kwargs):  # noqa: E501
         """update_launch_plan  # noqa: E501
 
-        Update the status of an existing launch plan definition. At most one launch plan version for a given {project, domain, name} can be active at a time. If this call sets a launch plan to active and existing version is already active, the result of this call will be that the formerly active launch plan will be made inactive and specified launch plan in this request will be made active.  # noqa: E501
+        Update the status of an existing launch plan definition. At most one launch plan version for a given {project, domain, name} can be active at a time. If this call sets a launch plan to active and existing version is already active, the result of this call will be that the formerly active launch plan will be made inactive and specified launch plan in this request will be made active. In the event that the formerly active launch plan had a schedule associated it with it, this schedule will be disabled. If the reference launch plan in this request is being set to active and has a schedule associated with it, the schedule will be enabled.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_launch_plan_with_http_info(id_project, id_domain, id_name, id_version, body, async_req=True)

@@ -914,7 +914,10 @@ paths:
         \ at a time. If this call sets a launch plan to active and existing version\
         \ is already active, the result of this call will be that the formerly active\
         \ launch plan will be made inactive and specified launch plan in this request\
-        \ will be made active."
+        \ will be made active. In the event that the formerly active launch plan had\
+        \ a schedule associated it with it, this schedule will be disabled. If the\
+        \ reference launch plan in this request is being set to active and has a schedule\
+        \ associated with it, the schedule will be enabled."
       operationId: "UpdateLaunchPlan"
       parameters:
       - name: "id.project"
