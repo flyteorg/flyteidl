@@ -17,5 +17,4 @@ type CoreLiteral struct {
 	Collection *CoreLiteralCollection `json:"collection,omitempty"`
 	// A map of strings to literals.
 	Map_ *CoreLiteralMap `json:"map,omitempty"`
-	Closure *CoreClosure `json:"closure,omitempty"`
 }

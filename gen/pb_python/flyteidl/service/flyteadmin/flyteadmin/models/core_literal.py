@@ -16,7 +16,6 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.core_closure import CoreClosure  # noqa: F401,E501
 from flyteadmin.models.core_literal_collection import CoreLiteralCollection  # noqa: F401,E501
 from flyteadmin.models.core_literal_map import CoreLiteralMap  # noqa: F401,E501
 from flyteadmin.models.core_scalar import CoreScalar  # noqa: F401,E501
@@ -38,24 +37,21 @@ class CoreLiteral(object):
     swagger_types = {
         'scalar': 'CoreScalar',
         'collection': 'CoreLiteralCollection',
-        'map': 'CoreLiteralMap',
-        'closure': 'CoreClosure'
+        'map': 'CoreLiteralMap'
     }
 
     attribute_map = {
         'scalar': 'scalar',
         'collection': 'collection',
-        'map': 'map',
-        'closure': 'closure'
+        'map': 'map'
     }
 
-    def __init__(self, scalar=None, collection=None, map=None, closure=None):  # noqa: E501
+    def __init__(self, scalar=None, collection=None, map=None):  # noqa: E501
         """CoreLiteral - a model defined in Swagger"""  # noqa: E501
 
         self._scalar = None
         self._collection = None
         self._map = None
-        self._closure = None
         self.discriminator = None
 
         if scalar is not None:
@@ -64,8 +60,6 @@ class CoreLiteral(object):
             self.collection = collection
         if map is not None:
             self.map = map
-        if closure is not None:
-            self.closure = closure
 
     @property
     def scalar(self):
@@ -135,27 +129,6 @@ class CoreLiteral(object):
         """
 
         self._map = map
-
-    @property
-    def closure(self):
-        """Gets the closure of this CoreLiteral.  # noqa: E501
-
-
-        :return: The closure of this CoreLiteral.  # noqa: E501
-        :rtype: CoreClosure
-        """
-        return self._closure
-
-    @closure.setter
-    def closure(self, closure):
-        """Sets the closure of this CoreLiteral.
-
-
-        :param closure: The closure of this CoreLiteral.  # noqa: E501
-        :type: CoreClosure
-        """
-
-        self._closure = closure
 
     def to_dict(self):
         """Returns the model properties as a dict"""

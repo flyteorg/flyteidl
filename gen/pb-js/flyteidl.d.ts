@@ -587,6 +587,9 @@ export namespace flyteidl {
 
             /** Scalar generic */
             generic?: (google.protobuf.IStruct|null);
+
+            /** Scalar closure */
+            closure?: (flyteidl.core.IClosure|null);
         }
 
         /** Represents a Scalar. */
@@ -619,8 +622,11 @@ export namespace flyteidl {
             /** Scalar generic. */
             public generic?: (google.protobuf.IStruct|null);
 
+            /** Scalar closure. */
+            public closure?: (flyteidl.core.IClosure|null);
+
             /** Scalar value. */
-            public value?: ("primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|"generic");
+            public value?: ("primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|"generic"|"closure");
 
             /**
              * Creates a new Scalar instance using the specified properties.
@@ -730,9 +736,6 @@ export namespace flyteidl {
 
             /** Literal map */
             map?: (flyteidl.core.ILiteralMap|null);
-
-            /** Literal closure */
-            closure?: (flyteidl.core.IClosure|null);
         }
 
         /** Represents a Literal. */
@@ -753,11 +756,8 @@ export namespace flyteidl {
             /** Literal map. */
             public map?: (flyteidl.core.ILiteralMap|null);
 
-            /** Literal closure. */
-            public closure?: (flyteidl.core.IClosure|null);
-
             /** Literal value. */
-            public value?: ("scalar"|"collection"|"map"|"closure");
+            public value?: ("scalar"|"collection"|"map");
 
             /**
              * Creates a new Literal instance using the specified properties.

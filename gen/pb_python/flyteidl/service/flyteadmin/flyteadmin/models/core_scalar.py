@@ -18,6 +18,7 @@ import six
 
 from flyteadmin.models.core_binary import CoreBinary  # noqa: F401,E501
 from flyteadmin.models.core_blob import CoreBlob  # noqa: F401,E501
+from flyteadmin.models.core_closure import CoreClosure  # noqa: F401,E501
 from flyteadmin.models.core_error import CoreError  # noqa: F401,E501
 from flyteadmin.models.core_primitive import CorePrimitive  # noqa: F401,E501
 from flyteadmin.models.core_void import CoreVoid  # noqa: F401,E501
@@ -45,7 +46,8 @@ class CoreScalar(object):
         'schema': 'FlyteidlcoreSchema',
         'none_type': 'CoreVoid',
         'error': 'CoreError',
-        'generic': 'ProtobufStruct'
+        'generic': 'ProtobufStruct',
+        'closure': 'CoreClosure'
     }
 
     attribute_map = {
@@ -55,10 +57,11 @@ class CoreScalar(object):
         'schema': 'schema',
         'none_type': 'none_type',
         'error': 'error',
-        'generic': 'generic'
+        'generic': 'generic',
+        'closure': 'closure'
     }
 
-    def __init__(self, primitive=None, blob=None, binary=None, schema=None, none_type=None, error=None, generic=None):  # noqa: E501
+    def __init__(self, primitive=None, blob=None, binary=None, schema=None, none_type=None, error=None, generic=None, closure=None):  # noqa: E501
         """CoreScalar - a model defined in Swagger"""  # noqa: E501
 
         self._primitive = None
@@ -68,6 +71,7 @@ class CoreScalar(object):
         self._none_type = None
         self._error = None
         self._generic = None
+        self._closure = None
         self.discriminator = None
 
         if primitive is not None:
@@ -84,6 +88,8 @@ class CoreScalar(object):
             self.error = error
         if generic is not None:
             self.generic = generic
+        if closure is not None:
+            self.closure = closure
 
     @property
     def primitive(self):
@@ -231,6 +237,27 @@ class CoreScalar(object):
         """
 
         self._generic = generic
+
+    @property
+    def closure(self):
+        """Gets the closure of this CoreScalar.  # noqa: E501
+
+
+        :return: The closure of this CoreScalar.  # noqa: E501
+        :rtype: CoreClosure
+        """
+        return self._closure
+
+    @closure.setter
+    def closure(self, closure):
+        """Sets the closure of this CoreScalar.
+
+
+        :param closure: The closure of this CoreScalar.  # noqa: E501
+        :type: CoreClosure
+        """
+
+        self._closure = closure
 
     def to_dict(self):
         """Returns the model properties as a dict"""

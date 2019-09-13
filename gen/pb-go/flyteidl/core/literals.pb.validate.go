@@ -485,6 +485,18 @@ func (m *Scalar) Validate() error {
 			}
 		}
 
+	case *Scalar_Closure:
+
+		if v, ok := interface{}(m.GetClosure()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ScalarValidationError{
+					field:  "Closure",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
 	}
 
 	return nil
@@ -687,18 +699,6 @@ func (m *Literal) Validate() error {
 			if err := v.Validate(); err != nil {
 				return LiteralValidationError{
 					field:  "Map",
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
-	case *Literal_Closure:
-
-		if v, ok := interface{}(m.GetClosure()).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return LiteralValidationError{
-					field:  "Closure",
 					reason: "embedded message failed validation",
 					cause:  err,
 				}

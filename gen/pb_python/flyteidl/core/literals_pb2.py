@@ -27,7 +27,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/literals.proto',
   package='flyteidl.core',
   syntax='proto3',
-  serialized_pb=_b('\n\x1c\x66lyteidl/core/literals.proto\x12\rflyteidl.core\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a\x19\x66lyteidl/core/types.proto\x1a\x1d\x66lyteidl/core/condition.proto\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1e\x66lyteidl/core/primitives.proto\"\x06\n\x04Void\"B\n\x04\x42lob\x12-\n\x08metadata\x18\x01 \x01(\x0b\x32\x1b.flyteidl.core.BlobMetadata\x12\x0b\n\x03uri\x18\x03 \x01(\t\"5\n\x0c\x42lobMetadata\x12%\n\x04type\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.BlobType\"$\n\x06\x42inary\x12\r\n\x05value\x18\x01 \x01(\x0c\x12\x0b\n\x03tag\x18\x02 \x01(\t\">\n\x06Schema\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\'\n\x04type\x18\x03 \x01(\x0b\x32\x19.flyteidl.core.SchemaType\"\xb4\x02\n\x06Scalar\x12-\n\tprimitive\x18\x01 \x01(\x0b\x32\x18.flyteidl.core.PrimitiveH\x00\x12#\n\x04\x62lob\x18\x02 \x01(\x0b\x32\x13.flyteidl.core.BlobH\x00\x12\'\n\x06\x62inary\x18\x03 \x01(\x0b\x32\x15.flyteidl.core.BinaryH\x00\x12\'\n\x06schema\x18\x04 \x01(\x0b\x32\x15.flyteidl.core.SchemaH\x00\x12(\n\tnone_type\x18\x05 \x01(\x0b\x32\x13.flyteidl.core.VoidH\x00\x12%\n\x05\x65rror\x18\x06 \x01(\x0b\x32\x14.flyteidl.core.ErrorH\x00\x12*\n\x07generic\x18\x07 \x01(\x0b\x32\x17.google.protobuf.StructH\x00\x42\x07\n\x05value\"\x90\x01\n\x07\x43losure\x12!\n\x04node\x18\x01 \x01(\x0b\x32\x13.flyteidl.core.Node\x12*\n\x05tasks\x18\x02 \x03(\x0b\x32\x1b.flyteidl.core.TaskTemplate\x12\x36\n\rsub_workflows\x18\x03 \x03(\x0b\x32\x1f.flyteidl.core.WorkflowTemplate\"\xc8\x01\n\x07Literal\x12\'\n\x06scalar\x18\x01 \x01(\x0b\x32\x15.flyteidl.core.ScalarH\x00\x12\x36\n\ncollection\x18\x02 \x01(\x0b\x32 .flyteidl.core.LiteralCollectionH\x00\x12(\n\x03map\x18\x03 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00\x12)\n\x07\x63losure\x18\x04 \x01(\x0b\x32\x16.flyteidl.core.ClosureH\x00\x42\x07\n\x05value\"=\n\x11LiteralCollection\x12(\n\x08literals\x18\x01 \x03(\x0b\x32\x16.flyteidl.core.Literal\"\x90\x01\n\nLiteralMap\x12\x39\n\x08literals\x18\x01 \x03(\x0b\x32\'.flyteidl.core.LiteralMap.LiteralsEntry\x1aG\n\rLiteralsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.Literal:\x02\x38\x01\"E\n\x15\x42indingDataCollection\x12,\n\x08\x62indings\x18\x01 \x03(\x0b\x32\x1a.flyteidl.core.BindingData\"\x9c\x01\n\x0e\x42indingDataMap\x12=\n\x08\x62indings\x18\x01 \x03(\x0b\x32+.flyteidl.core.BindingDataMap.BindingsEntry\x1aK\n\rBindingsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12)\n\x05value\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.BindingData:\x02\x38\x01\"\x87\x02\n\x0b\x42indingData\x12\'\n\x06scalar\x18\x01 \x01(\x0b\x32\x15.flyteidl.core.ScalarH\x00\x12:\n\ncollection\x18\x02 \x01(\x0b\x32$.flyteidl.core.BindingDataCollectionH\x00\x12\x31\n\x07promise\x18\x03 \x01(\x0b\x32\x1e.flyteidl.core.OutputReferenceH\x00\x12,\n\x03map\x18\x04 \x01(\x0b\x32\x1d.flyteidl.core.BindingDataMapH\x00\x12)\n\x07\x63losure\x18\x05 \x01(\x0b\x32\x16.flyteidl.core.ClosureH\x00\x42\x07\n\x05value\"C\n\x07\x42inding\x12\x0b\n\x03var\x18\x01 \x01(\t\x12+\n\x07\x62inding\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.BindingData\"f\n\x07IfBlock\x12\x33\n\tcondition\x18\x01 \x01(\x0b\x32 .flyteidl.core.BooleanExpression\x12&\n\tthen_node\x18\x02 \x01(\x0b\x32\x13.flyteidl.core.Node\"\xb6\x01\n\x0bIfElseBlock\x12$\n\x04\x63\x61se\x18\x01 \x01(\x0b\x32\x16.flyteidl.core.IfBlock\x12%\n\x05other\x18\x02 \x03(\x0b\x32\x16.flyteidl.core.IfBlock\x12(\n\telse_node\x18\x03 \x01(\x0b\x32\x13.flyteidl.core.NodeH\x00\x12%\n\x05\x65rror\x18\x04 \x01(\x0b\x32\x14.flyteidl.core.ErrorH\x00\x42\t\n\x07\x64\x65\x66\x61ult\"9\n\nBranchNode\x12+\n\x07if_else\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.IfElseBlock\"?\n\x0b\x43losureNode\x12\x30\n\x0c\x63losure_type\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.ClosureType\"J\n\x08TaskNode\x12\x31\n\x0creference_id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.IdentifierH\x00\x42\x0b\n\treference\"\x87\x01\n\x0cWorkflowNode\x12\x33\n\x0elaunchplan_ref\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.IdentifierH\x00\x12\x35\n\x10sub_workflow_ref\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.IdentifierH\x00\x42\x0b\n\treference\"w\n\x0cNodeMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t\x12*\n\x07timeout\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\x12-\n\x07retries\x18\x05 \x01(\x0b\x32\x1c.flyteidl.core.RetryStrategy\"#\n\x05\x41lias\x12\x0b\n\x03var\x18\x01 \x01(\t\x12\r\n\x05\x61lias\x18\x02 \x01(\t\"\x86\x03\n\x04Node\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\x08metadata\x18\x02 \x01(\x0b\x32\x1b.flyteidl.core.NodeMetadata\x12&\n\x06inputs\x18\x03 \x03(\x0b\x32\x16.flyteidl.core.Binding\x12\x19\n\x11upstream_node_ids\x18\x04 \x03(\t\x12,\n\x0eoutput_aliases\x18\x05 \x03(\x0b\x32\x14.flyteidl.core.Alias\x12,\n\ttask_node\x18\x06 \x01(\x0b\x32\x17.flyteidl.core.TaskNodeH\x00\x12\x34\n\rworkflow_node\x18\x07 \x01(\x0b\x32\x1b.flyteidl.core.WorkflowNodeH\x00\x12\x30\n\x0b\x62ranch_node\x18\x08 \x01(\x0b\x32\x19.flyteidl.core.BranchNodeH\x00\x12\x32\n\x0c\x63losure_node\x18\t \x01(\x0b\x32\x1a.flyteidl.core.ClosureNodeH\x00\x42\x08\n\x06target\"\x12\n\x10WorkflowMetadata\"\x96\x02\n\x10WorkflowTemplate\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12\x31\n\x08metadata\x18\x02 \x01(\x0b\x32\x1f.flyteidl.core.WorkflowMetadata\x12\x30\n\tinterface\x18\x03 \x01(\x0b\x32\x1d.flyteidl.core.TypedInterface\x12\"\n\x05nodes\x18\x04 \x03(\x0b\x32\x13.flyteidl.core.Node\x12\'\n\x07outputs\x18\x05 \x03(\x0b\x32\x16.flyteidl.core.Binding\x12)\n\x0c\x66\x61ilure_node\x18\x06 \x01(\x0b\x32\x13.flyteidl.core.NodeB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1c\x66lyteidl/core/literals.proto\x12\rflyteidl.core\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a\x19\x66lyteidl/core/types.proto\x1a\x1d\x66lyteidl/core/condition.proto\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1e\x66lyteidl/core/primitives.proto\"\x06\n\x04Void\"B\n\x04\x42lob\x12-\n\x08metadata\x18\x01 \x01(\x0b\x32\x1b.flyteidl.core.BlobMetadata\x12\x0b\n\x03uri\x18\x03 \x01(\t\"5\n\x0c\x42lobMetadata\x12%\n\x04type\x18\x01 \x01(\x0b\x32\x17.flyteidl.core.BlobType\"$\n\x06\x42inary\x12\r\n\x05value\x18\x01 \x01(\x0c\x12\x0b\n\x03tag\x18\x02 \x01(\t\">\n\x06Schema\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\'\n\x04type\x18\x03 \x01(\x0b\x32\x19.flyteidl.core.SchemaType\"\xdf\x02\n\x06Scalar\x12-\n\tprimitive\x18\x01 \x01(\x0b\x32\x18.flyteidl.core.PrimitiveH\x00\x12#\n\x04\x62lob\x18\x02 \x01(\x0b\x32\x13.flyteidl.core.BlobH\x00\x12\'\n\x06\x62inary\x18\x03 \x01(\x0b\x32\x15.flyteidl.core.BinaryH\x00\x12\'\n\x06schema\x18\x04 \x01(\x0b\x32\x15.flyteidl.core.SchemaH\x00\x12(\n\tnone_type\x18\x05 \x01(\x0b\x32\x13.flyteidl.core.VoidH\x00\x12%\n\x05\x65rror\x18\x06 \x01(\x0b\x32\x14.flyteidl.core.ErrorH\x00\x12*\n\x07generic\x18\x07 \x01(\x0b\x32\x17.google.protobuf.StructH\x00\x12)\n\x07\x63losure\x18\x08 \x01(\x0b\x32\x16.flyteidl.core.ClosureH\x00\x42\x07\n\x05value\"\x90\x01\n\x07\x43losure\x12!\n\x04node\x18\x01 \x01(\x0b\x32\x13.flyteidl.core.Node\x12*\n\x05tasks\x18\x02 \x03(\x0b\x32\x1b.flyteidl.core.TaskTemplate\x12\x36\n\rsub_workflows\x18\x03 \x03(\x0b\x32\x1f.flyteidl.core.WorkflowTemplate\"\x9d\x01\n\x07Literal\x12\'\n\x06scalar\x18\x01 \x01(\x0b\x32\x15.flyteidl.core.ScalarH\x00\x12\x36\n\ncollection\x18\x02 \x01(\x0b\x32 .flyteidl.core.LiteralCollectionH\x00\x12(\n\x03map\x18\x03 \x01(\x0b\x32\x19.flyteidl.core.LiteralMapH\x00\x42\x07\n\x05value\"=\n\x11LiteralCollection\x12(\n\x08literals\x18\x01 \x03(\x0b\x32\x16.flyteidl.core.Literal\"\x90\x01\n\nLiteralMap\x12\x39\n\x08literals\x18\x01 \x03(\x0b\x32\'.flyteidl.core.LiteralMap.LiteralsEntry\x1aG\n\rLiteralsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.Literal:\x02\x38\x01\"E\n\x15\x42indingDataCollection\x12,\n\x08\x62indings\x18\x01 \x03(\x0b\x32\x1a.flyteidl.core.BindingData\"\x9c\x01\n\x0e\x42indingDataMap\x12=\n\x08\x62indings\x18\x01 \x03(\x0b\x32+.flyteidl.core.BindingDataMap.BindingsEntry\x1aK\n\rBindingsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12)\n\x05value\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.BindingData:\x02\x38\x01\"\x87\x02\n\x0b\x42indingData\x12\'\n\x06scalar\x18\x01 \x01(\x0b\x32\x15.flyteidl.core.ScalarH\x00\x12:\n\ncollection\x18\x02 \x01(\x0b\x32$.flyteidl.core.BindingDataCollectionH\x00\x12\x31\n\x07promise\x18\x03 \x01(\x0b\x32\x1e.flyteidl.core.OutputReferenceH\x00\x12,\n\x03map\x18\x04 \x01(\x0b\x32\x1d.flyteidl.core.BindingDataMapH\x00\x12)\n\x07\x63losure\x18\x05 \x01(\x0b\x32\x16.flyteidl.core.ClosureH\x00\x42\x07\n\x05value\"C\n\x07\x42inding\x12\x0b\n\x03var\x18\x01 \x01(\t\x12+\n\x07\x62inding\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.BindingData\"f\n\x07IfBlock\x12\x33\n\tcondition\x18\x01 \x01(\x0b\x32 .flyteidl.core.BooleanExpression\x12&\n\tthen_node\x18\x02 \x01(\x0b\x32\x13.flyteidl.core.Node\"\xb6\x01\n\x0bIfElseBlock\x12$\n\x04\x63\x61se\x18\x01 \x01(\x0b\x32\x16.flyteidl.core.IfBlock\x12%\n\x05other\x18\x02 \x03(\x0b\x32\x16.flyteidl.core.IfBlock\x12(\n\telse_node\x18\x03 \x01(\x0b\x32\x13.flyteidl.core.NodeH\x00\x12%\n\x05\x65rror\x18\x04 \x01(\x0b\x32\x14.flyteidl.core.ErrorH\x00\x42\t\n\x07\x64\x65\x66\x61ult\"9\n\nBranchNode\x12+\n\x07if_else\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.IfElseBlock\"?\n\x0b\x43losureNode\x12\x30\n\x0c\x63losure_type\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.ClosureType\"J\n\x08TaskNode\x12\x31\n\x0creference_id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.IdentifierH\x00\x42\x0b\n\treference\"\x87\x01\n\x0cWorkflowNode\x12\x33\n\x0elaunchplan_ref\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.IdentifierH\x00\x12\x35\n\x10sub_workflow_ref\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.IdentifierH\x00\x42\x0b\n\treference\"w\n\x0cNodeMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t\x12*\n\x07timeout\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\x12-\n\x07retries\x18\x05 \x01(\x0b\x32\x1c.flyteidl.core.RetryStrategy\"#\n\x05\x41lias\x12\x0b\n\x03var\x18\x01 \x01(\t\x12\r\n\x05\x61lias\x18\x02 \x01(\t\"\x86\x03\n\x04Node\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\x08metadata\x18\x02 \x01(\x0b\x32\x1b.flyteidl.core.NodeMetadata\x12&\n\x06inputs\x18\x03 \x03(\x0b\x32\x16.flyteidl.core.Binding\x12\x19\n\x11upstream_node_ids\x18\x04 \x03(\t\x12,\n\x0eoutput_aliases\x18\x05 \x03(\x0b\x32\x14.flyteidl.core.Alias\x12,\n\ttask_node\x18\x06 \x01(\x0b\x32\x17.flyteidl.core.TaskNodeH\x00\x12\x34\n\rworkflow_node\x18\x07 \x01(\x0b\x32\x1b.flyteidl.core.WorkflowNodeH\x00\x12\x30\n\x0b\x62ranch_node\x18\x08 \x01(\x0b\x32\x19.flyteidl.core.BranchNodeH\x00\x12\x32\n\x0c\x63losure_node\x18\t \x01(\x0b\x32\x1a.flyteidl.core.ClosureNodeH\x00\x42\x08\n\x06target\"\x12\n\x10WorkflowMetadata\"\x96\x02\n\x10WorkflowTemplate\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12\x31\n\x08metadata\x18\x02 \x01(\x0b\x32\x1f.flyteidl.core.WorkflowMetadata\x12\x30\n\tinterface\x18\x03 \x01(\x0b\x32\x1d.flyteidl.core.TypedInterface\x12\"\n\x05nodes\x18\x04 \x03(\x0b\x32\x13.flyteidl.core.Node\x12\'\n\x07outputs\x18\x05 \x03(\x0b\x32\x16.flyteidl.core.Binding\x12)\n\x0c\x66\x61ilure_node\x18\x06 \x01(\x0b\x32\x13.flyteidl.core.NodeB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,flyteidl_dot_core_dot_types__pb2.DESCRIPTOR,flyteidl_dot_core_dot_condition__pb2.DESCRIPTOR,flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,flyteidl_dot_core_dot_primitives__pb2.DESCRIPTOR,])
 
@@ -259,6 +259,13 @@ _SCALAR = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='closure', full_name='flyteidl.core.Scalar.closure', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -275,7 +282,7 @@ _SCALAR = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=525,
-  serialized_end=833,
+  serialized_end=876,
 )
 
 
@@ -319,8 +326,8 @@ _CLOSURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=836,
-  serialized_end=980,
+  serialized_start=879,
+  serialized_end=1023,
 )
 
 
@@ -352,13 +359,6 @@ _LITERAL = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='closure', full_name='flyteidl.core.Literal.closure', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -374,7 +374,7 @@ _LITERAL = _descriptor.Descriptor(
       name='value', full_name='flyteidl.core.Literal.value',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=983,
+  serialized_start=1026,
   serialized_end=1183,
 )
 
@@ -1179,6 +1179,7 @@ _SCALAR.fields_by_name['schema'].message_type = _SCHEMA
 _SCALAR.fields_by_name['none_type'].message_type = _VOID
 _SCALAR.fields_by_name['error'].message_type = flyteidl_dot_core_dot_types__pb2._ERROR
 _SCALAR.fields_by_name['generic'].message_type = google_dot_protobuf_dot_struct__pb2._STRUCT
+_SCALAR.fields_by_name['closure'].message_type = _CLOSURE
 _SCALAR.oneofs_by_name['value'].fields.append(
   _SCALAR.fields_by_name['primitive'])
 _SCALAR.fields_by_name['primitive'].containing_oneof = _SCALAR.oneofs_by_name['value']
@@ -1200,13 +1201,15 @@ _SCALAR.fields_by_name['error'].containing_oneof = _SCALAR.oneofs_by_name['value
 _SCALAR.oneofs_by_name['value'].fields.append(
   _SCALAR.fields_by_name['generic'])
 _SCALAR.fields_by_name['generic'].containing_oneof = _SCALAR.oneofs_by_name['value']
+_SCALAR.oneofs_by_name['value'].fields.append(
+  _SCALAR.fields_by_name['closure'])
+_SCALAR.fields_by_name['closure'].containing_oneof = _SCALAR.oneofs_by_name['value']
 _CLOSURE.fields_by_name['node'].message_type = _NODE
 _CLOSURE.fields_by_name['tasks'].message_type = flyteidl_dot_core_dot_tasks__pb2._TASKTEMPLATE
 _CLOSURE.fields_by_name['sub_workflows'].message_type = _WORKFLOWTEMPLATE
 _LITERAL.fields_by_name['scalar'].message_type = _SCALAR
 _LITERAL.fields_by_name['collection'].message_type = _LITERALCOLLECTION
 _LITERAL.fields_by_name['map'].message_type = _LITERALMAP
-_LITERAL.fields_by_name['closure'].message_type = _CLOSURE
 _LITERAL.oneofs_by_name['value'].fields.append(
   _LITERAL.fields_by_name['scalar'])
 _LITERAL.fields_by_name['scalar'].containing_oneof = _LITERAL.oneofs_by_name['value']
@@ -1216,9 +1219,6 @@ _LITERAL.fields_by_name['collection'].containing_oneof = _LITERAL.oneofs_by_name
 _LITERAL.oneofs_by_name['value'].fields.append(
   _LITERAL.fields_by_name['map'])
 _LITERAL.fields_by_name['map'].containing_oneof = _LITERAL.oneofs_by_name['value']
-_LITERAL.oneofs_by_name['value'].fields.append(
-  _LITERAL.fields_by_name['closure'])
-_LITERAL.fields_by_name['closure'].containing_oneof = _LITERAL.oneofs_by_name['value']
 _LITERALCOLLECTION.fields_by_name['literals'].message_type = _LITERAL
 _LITERALMAP_LITERALSENTRY.fields_by_name['value'].message_type = _LITERAL
 _LITERALMAP_LITERALSENTRY.containing_type = _LITERALMAP

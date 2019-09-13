@@ -1314,6 +1314,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.IVoid|null} [noneType] Scalar noneType
              * @property {flyteidl.core.IError|null} [error] Scalar error
              * @property {google.protobuf.IStruct|null} [generic] Scalar generic
+             * @property {flyteidl.core.IClosure|null} [closure] Scalar closure
              */
 
             /**
@@ -1387,17 +1388,25 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             Scalar.prototype.generic = null;
 
+            /**
+             * Scalar closure.
+             * @member {flyteidl.core.IClosure|null|undefined} closure
+             * @memberof flyteidl.core.Scalar
+             * @instance
+             */
+            Scalar.prototype.closure = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
             /**
              * Scalar value.
-             * @member {"primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|"generic"|undefined} value
+             * @member {"primitive"|"blob"|"binary"|"schema"|"noneType"|"error"|"generic"|"closure"|undefined} value
              * @memberof flyteidl.core.Scalar
              * @instance
              */
             Object.defineProperty(Scalar.prototype, "value", {
-                get: $util.oneOfGetter($oneOfFields = ["primitive", "blob", "binary", "schema", "noneType", "error", "generic"]),
+                get: $util.oneOfGetter($oneOfFields = ["primitive", "blob", "binary", "schema", "noneType", "error", "generic", "closure"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -1439,6 +1448,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.Error.encode(message.error, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 if (message.generic != null && message.hasOwnProperty("generic"))
                     $root.google.protobuf.Struct.encode(message.generic, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                if (message.closure != null && message.hasOwnProperty("closure"))
+                    $root.flyteidl.core.Closure.encode(message.closure, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 return writer;
             };
 
@@ -1480,6 +1491,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 7:
                         message.generic = $root.google.protobuf.Struct.decode(reader, reader.uint32());
+                        break;
+                    case 8:
+                        message.closure = $root.flyteidl.core.Closure.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -1567,6 +1581,16 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.google.protobuf.Struct.verify(message.generic);
                         if (error)
                             return "generic." + error;
+                    }
+                }
+                if (message.closure != null && message.hasOwnProperty("closure")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.Closure.verify(message.closure);
+                        if (error)
+                            return "closure." + error;
                     }
                 }
                 return null;
@@ -1750,7 +1774,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.IScalar|null} [scalar] Literal scalar
              * @property {flyteidl.core.ILiteralCollection|null} [collection] Literal collection
              * @property {flyteidl.core.ILiteralMap|null} [map] Literal map
-             * @property {flyteidl.core.IClosure|null} [closure] Literal closure
              */
 
             /**
@@ -1792,25 +1815,17 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             Literal.prototype.map = null;
 
-            /**
-             * Literal closure.
-             * @member {flyteidl.core.IClosure|null|undefined} closure
-             * @memberof flyteidl.core.Literal
-             * @instance
-             */
-            Literal.prototype.closure = null;
-
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
             /**
              * Literal value.
-             * @member {"scalar"|"collection"|"map"|"closure"|undefined} value
+             * @member {"scalar"|"collection"|"map"|undefined} value
              * @memberof flyteidl.core.Literal
              * @instance
              */
             Object.defineProperty(Literal.prototype, "value", {
-                get: $util.oneOfGetter($oneOfFields = ["scalar", "collection", "map", "closure"]),
+                get: $util.oneOfGetter($oneOfFields = ["scalar", "collection", "map"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -1844,8 +1859,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.LiteralCollection.encode(message.collection, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.map != null && message.hasOwnProperty("map"))
                     $root.flyteidl.core.LiteralMap.encode(message.map, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.closure != null && message.hasOwnProperty("closure"))
-                    $root.flyteidl.core.Closure.encode(message.closure, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -1875,9 +1888,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 3:
                         message.map = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
-                        break;
-                    case 4:
-                        message.closure = $root.flyteidl.core.Closure.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -1925,16 +1935,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.flyteidl.core.LiteralMap.verify(message.map);
                         if (error)
                             return "map." + error;
-                    }
-                }
-                if (message.closure != null && message.hasOwnProperty("closure")) {
-                    if (properties.value === 1)
-                        return "value: multiple values";
-                    properties.value = 1;
-                    {
-                        let error = $root.flyteidl.core.Closure.verify(message.closure);
-                        if (error)
-                            return "closure." + error;
                     }
                 }
                 return null;

@@ -3622,9 +3622,6 @@
         "map": {
           "$ref": "#/definitions/coreLiteralMap",
           "description": "A map of strings to literals."
-        },
-        "closure": {
-          "$ref": "#/definitions/coreClosure"
         }
       },
       "description": "A simple value. This supports any level of nesting (e.g. array of array of array of Blobs) as well as simple primitives."
@@ -3952,6 +3949,9 @@
         },
         "generic": {
           "$ref": "#/definitions/protobufStruct"
+        },
+        "closure": {
+          "$ref": "#/definitions/coreClosure"
         }
       }
     },

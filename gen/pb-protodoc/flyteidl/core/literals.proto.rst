@@ -144,7 +144,8 @@ flyteidl.core.Scalar
     "schema": "{...}",
     "none_type": "{...}",
     "error": "{...}",
-    "generic": "{...}"
+    "generic": "{...}",
+    "closure": "{...}"
   }
 
 .. _api_field_flyteidl.core.Scalar.primitive:
@@ -153,7 +154,7 @@ primitive
   (:ref:`flyteidl.core.Primitive <api_msg_flyteidl.core.Primitive>`) 
   
   
-  Only one of :ref:`primitive <api_field_flyteidl.core.Scalar.primitive>`, :ref:`blob <api_field_flyteidl.core.Scalar.blob>`, :ref:`binary <api_field_flyteidl.core.Scalar.binary>`, :ref:`schema <api_field_flyteidl.core.Scalar.schema>`, :ref:`none_type <api_field_flyteidl.core.Scalar.none_type>`, :ref:`error <api_field_flyteidl.core.Scalar.error>`, :ref:`generic <api_field_flyteidl.core.Scalar.generic>` may be set.
+  Only one of :ref:`primitive <api_field_flyteidl.core.Scalar.primitive>`, :ref:`blob <api_field_flyteidl.core.Scalar.blob>`, :ref:`binary <api_field_flyteidl.core.Scalar.binary>`, :ref:`schema <api_field_flyteidl.core.Scalar.schema>`, :ref:`none_type <api_field_flyteidl.core.Scalar.none_type>`, :ref:`error <api_field_flyteidl.core.Scalar.error>`, :ref:`generic <api_field_flyteidl.core.Scalar.generic>`, :ref:`closure <api_field_flyteidl.core.Scalar.closure>` may be set.
   
 .. _api_field_flyteidl.core.Scalar.blob:
 
@@ -161,7 +162,7 @@ blob
   (:ref:`flyteidl.core.Blob <api_msg_flyteidl.core.Blob>`) 
   
   
-  Only one of :ref:`primitive <api_field_flyteidl.core.Scalar.primitive>`, :ref:`blob <api_field_flyteidl.core.Scalar.blob>`, :ref:`binary <api_field_flyteidl.core.Scalar.binary>`, :ref:`schema <api_field_flyteidl.core.Scalar.schema>`, :ref:`none_type <api_field_flyteidl.core.Scalar.none_type>`, :ref:`error <api_field_flyteidl.core.Scalar.error>`, :ref:`generic <api_field_flyteidl.core.Scalar.generic>` may be set.
+  Only one of :ref:`primitive <api_field_flyteidl.core.Scalar.primitive>`, :ref:`blob <api_field_flyteidl.core.Scalar.blob>`, :ref:`binary <api_field_flyteidl.core.Scalar.binary>`, :ref:`schema <api_field_flyteidl.core.Scalar.schema>`, :ref:`none_type <api_field_flyteidl.core.Scalar.none_type>`, :ref:`error <api_field_flyteidl.core.Scalar.error>`, :ref:`generic <api_field_flyteidl.core.Scalar.generic>`, :ref:`closure <api_field_flyteidl.core.Scalar.closure>` may be set.
   
 .. _api_field_flyteidl.core.Scalar.binary:
 
@@ -169,7 +170,7 @@ binary
   (:ref:`flyteidl.core.Binary <api_msg_flyteidl.core.Binary>`) 
   
   
-  Only one of :ref:`primitive <api_field_flyteidl.core.Scalar.primitive>`, :ref:`blob <api_field_flyteidl.core.Scalar.blob>`, :ref:`binary <api_field_flyteidl.core.Scalar.binary>`, :ref:`schema <api_field_flyteidl.core.Scalar.schema>`, :ref:`none_type <api_field_flyteidl.core.Scalar.none_type>`, :ref:`error <api_field_flyteidl.core.Scalar.error>`, :ref:`generic <api_field_flyteidl.core.Scalar.generic>` may be set.
+  Only one of :ref:`primitive <api_field_flyteidl.core.Scalar.primitive>`, :ref:`blob <api_field_flyteidl.core.Scalar.blob>`, :ref:`binary <api_field_flyteidl.core.Scalar.binary>`, :ref:`schema <api_field_flyteidl.core.Scalar.schema>`, :ref:`none_type <api_field_flyteidl.core.Scalar.none_type>`, :ref:`error <api_field_flyteidl.core.Scalar.error>`, :ref:`generic <api_field_flyteidl.core.Scalar.generic>`, :ref:`closure <api_field_flyteidl.core.Scalar.closure>` may be set.
   
 .. _api_field_flyteidl.core.Scalar.schema:
 
@@ -177,7 +178,7 @@ schema
   (:ref:`flyteidl.core.Schema <api_msg_flyteidl.core.Schema>`) 
   
   
-  Only one of :ref:`primitive <api_field_flyteidl.core.Scalar.primitive>`, :ref:`blob <api_field_flyteidl.core.Scalar.blob>`, :ref:`binary <api_field_flyteidl.core.Scalar.binary>`, :ref:`schema <api_field_flyteidl.core.Scalar.schema>`, :ref:`none_type <api_field_flyteidl.core.Scalar.none_type>`, :ref:`error <api_field_flyteidl.core.Scalar.error>`, :ref:`generic <api_field_flyteidl.core.Scalar.generic>` may be set.
+  Only one of :ref:`primitive <api_field_flyteidl.core.Scalar.primitive>`, :ref:`blob <api_field_flyteidl.core.Scalar.blob>`, :ref:`binary <api_field_flyteidl.core.Scalar.binary>`, :ref:`schema <api_field_flyteidl.core.Scalar.schema>`, :ref:`none_type <api_field_flyteidl.core.Scalar.none_type>`, :ref:`error <api_field_flyteidl.core.Scalar.error>`, :ref:`generic <api_field_flyteidl.core.Scalar.generic>`, :ref:`closure <api_field_flyteidl.core.Scalar.closure>` may be set.
   
 .. _api_field_flyteidl.core.Scalar.none_type:
 
@@ -185,7 +186,7 @@ none_type
   (:ref:`flyteidl.core.Void <api_msg_flyteidl.core.Void>`) 
   
   
-  Only one of :ref:`primitive <api_field_flyteidl.core.Scalar.primitive>`, :ref:`blob <api_field_flyteidl.core.Scalar.blob>`, :ref:`binary <api_field_flyteidl.core.Scalar.binary>`, :ref:`schema <api_field_flyteidl.core.Scalar.schema>`, :ref:`none_type <api_field_flyteidl.core.Scalar.none_type>`, :ref:`error <api_field_flyteidl.core.Scalar.error>`, :ref:`generic <api_field_flyteidl.core.Scalar.generic>` may be set.
+  Only one of :ref:`primitive <api_field_flyteidl.core.Scalar.primitive>`, :ref:`blob <api_field_flyteidl.core.Scalar.blob>`, :ref:`binary <api_field_flyteidl.core.Scalar.binary>`, :ref:`schema <api_field_flyteidl.core.Scalar.schema>`, :ref:`none_type <api_field_flyteidl.core.Scalar.none_type>`, :ref:`error <api_field_flyteidl.core.Scalar.error>`, :ref:`generic <api_field_flyteidl.core.Scalar.generic>`, :ref:`closure <api_field_flyteidl.core.Scalar.closure>` may be set.
   
 .. _api_field_flyteidl.core.Scalar.error:
 
@@ -193,7 +194,7 @@ error
   (:ref:`flyteidl.core.Error <api_msg_flyteidl.core.Error>`) 
   
   
-  Only one of :ref:`primitive <api_field_flyteidl.core.Scalar.primitive>`, :ref:`blob <api_field_flyteidl.core.Scalar.blob>`, :ref:`binary <api_field_flyteidl.core.Scalar.binary>`, :ref:`schema <api_field_flyteidl.core.Scalar.schema>`, :ref:`none_type <api_field_flyteidl.core.Scalar.none_type>`, :ref:`error <api_field_flyteidl.core.Scalar.error>`, :ref:`generic <api_field_flyteidl.core.Scalar.generic>` may be set.
+  Only one of :ref:`primitive <api_field_flyteidl.core.Scalar.primitive>`, :ref:`blob <api_field_flyteidl.core.Scalar.blob>`, :ref:`binary <api_field_flyteidl.core.Scalar.binary>`, :ref:`schema <api_field_flyteidl.core.Scalar.schema>`, :ref:`none_type <api_field_flyteidl.core.Scalar.none_type>`, :ref:`error <api_field_flyteidl.core.Scalar.error>`, :ref:`generic <api_field_flyteidl.core.Scalar.generic>`, :ref:`closure <api_field_flyteidl.core.Scalar.closure>` may be set.
   
 .. _api_field_flyteidl.core.Scalar.generic:
 
@@ -201,7 +202,15 @@ generic
   (:ref:`google.protobuf.Struct <api_msg_google.protobuf.Struct>`) 
   
   
-  Only one of :ref:`primitive <api_field_flyteidl.core.Scalar.primitive>`, :ref:`blob <api_field_flyteidl.core.Scalar.blob>`, :ref:`binary <api_field_flyteidl.core.Scalar.binary>`, :ref:`schema <api_field_flyteidl.core.Scalar.schema>`, :ref:`none_type <api_field_flyteidl.core.Scalar.none_type>`, :ref:`error <api_field_flyteidl.core.Scalar.error>`, :ref:`generic <api_field_flyteidl.core.Scalar.generic>` may be set.
+  Only one of :ref:`primitive <api_field_flyteidl.core.Scalar.primitive>`, :ref:`blob <api_field_flyteidl.core.Scalar.blob>`, :ref:`binary <api_field_flyteidl.core.Scalar.binary>`, :ref:`schema <api_field_flyteidl.core.Scalar.schema>`, :ref:`none_type <api_field_flyteidl.core.Scalar.none_type>`, :ref:`error <api_field_flyteidl.core.Scalar.error>`, :ref:`generic <api_field_flyteidl.core.Scalar.generic>`, :ref:`closure <api_field_flyteidl.core.Scalar.closure>` may be set.
+  
+.. _api_field_flyteidl.core.Scalar.closure:
+
+closure
+  (:ref:`flyteidl.core.Closure <api_msg_flyteidl.core.Closure>`) 
+  
+  
+  Only one of :ref:`primitive <api_field_flyteidl.core.Scalar.primitive>`, :ref:`blob <api_field_flyteidl.core.Scalar.blob>`, :ref:`binary <api_field_flyteidl.core.Scalar.binary>`, :ref:`schema <api_field_flyteidl.core.Scalar.schema>`, :ref:`none_type <api_field_flyteidl.core.Scalar.none_type>`, :ref:`error <api_field_flyteidl.core.Scalar.error>`, :ref:`generic <api_field_flyteidl.core.Scalar.generic>`, :ref:`closure <api_field_flyteidl.core.Scalar.closure>` may be set.
   
 
 
@@ -210,7 +219,7 @@ generic
 flyteidl.core.Closure
 ---------------------
 
-`[flyteidl.core.Closure proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L57>`_
+`[flyteidl.core.Closure proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L58>`_
 
 Represents a node closure that contain all required information to execute.
 
@@ -250,7 +259,7 @@ sub_workflows
 flyteidl.core.Literal
 ---------------------
 
-`[flyteidl.core.Literal proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L72>`_
+`[flyteidl.core.Literal proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L73>`_
 
 A simple value. This supports any level of nesting (e.g. array of array of array of Blobs) as well as simple primitives.
 
@@ -259,8 +268,7 @@ A simple value. This supports any level of nesting (e.g. array of array of array
   {
     "scalar": "{...}",
     "collection": "{...}",
-    "map": "{...}",
-    "closure": "{...}"
+    "map": "{...}"
   }
 
 .. _api_field_flyteidl.core.Literal.scalar:
@@ -270,7 +278,7 @@ scalar
   
   
   
-  Only one of :ref:`scalar <api_field_flyteidl.core.Literal.scalar>`, :ref:`collection <api_field_flyteidl.core.Literal.collection>`, :ref:`map <api_field_flyteidl.core.Literal.map>`, :ref:`closure <api_field_flyteidl.core.Literal.closure>` may be set.
+  Only one of :ref:`scalar <api_field_flyteidl.core.Literal.scalar>`, :ref:`collection <api_field_flyteidl.core.Literal.collection>`, :ref:`map <api_field_flyteidl.core.Literal.map>` may be set.
   
 .. _api_field_flyteidl.core.Literal.collection:
 
@@ -279,7 +287,7 @@ collection
   
   
   
-  Only one of :ref:`scalar <api_field_flyteidl.core.Literal.scalar>`, :ref:`collection <api_field_flyteidl.core.Literal.collection>`, :ref:`map <api_field_flyteidl.core.Literal.map>`, :ref:`closure <api_field_flyteidl.core.Literal.closure>` may be set.
+  Only one of :ref:`scalar <api_field_flyteidl.core.Literal.scalar>`, :ref:`collection <api_field_flyteidl.core.Literal.collection>`, :ref:`map <api_field_flyteidl.core.Literal.map>` may be set.
   
 .. _api_field_flyteidl.core.Literal.map:
 
@@ -288,15 +296,7 @@ map
   
   
   
-  Only one of :ref:`scalar <api_field_flyteidl.core.Literal.scalar>`, :ref:`collection <api_field_flyteidl.core.Literal.collection>`, :ref:`map <api_field_flyteidl.core.Literal.map>`, :ref:`closure <api_field_flyteidl.core.Literal.closure>` may be set.
-  
-.. _api_field_flyteidl.core.Literal.closure:
-
-closure
-  (:ref:`flyteidl.core.Closure <api_msg_flyteidl.core.Closure>`) 
-  
-  
-  Only one of :ref:`scalar <api_field_flyteidl.core.Literal.scalar>`, :ref:`collection <api_field_flyteidl.core.Literal.collection>`, :ref:`map <api_field_flyteidl.core.Literal.map>`, :ref:`closure <api_field_flyteidl.core.Literal.closure>` may be set.
+  Only one of :ref:`scalar <api_field_flyteidl.core.Literal.scalar>`, :ref:`collection <api_field_flyteidl.core.Literal.collection>`, :ref:`map <api_field_flyteidl.core.Literal.map>` may be set.
   
 
 
@@ -305,7 +305,7 @@ closure
 flyteidl.core.LiteralCollection
 -------------------------------
 
-`[flyteidl.core.LiteralCollection proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L88>`_
+`[flyteidl.core.LiteralCollection proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L87>`_
 
 A collection of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.
 
@@ -327,7 +327,7 @@ literals
 flyteidl.core.LiteralMap
 ------------------------
 
-`[flyteidl.core.LiteralMap proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L93>`_
+`[flyteidl.core.LiteralMap proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L92>`_
 
 A map of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field.
 
@@ -349,7 +349,7 @@ literals
 flyteidl.core.BindingDataCollection
 -----------------------------------
 
-`[flyteidl.core.BindingDataCollection proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L98>`_
+`[flyteidl.core.BindingDataCollection proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L97>`_
 
 A collection of BindingData items.
 
@@ -371,7 +371,7 @@ bindings
 flyteidl.core.BindingDataMap
 ----------------------------
 
-`[flyteidl.core.BindingDataMap proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L103>`_
+`[flyteidl.core.BindingDataMap proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L102>`_
 
 A map of BindingData items.
 
@@ -393,7 +393,7 @@ bindings
 flyteidl.core.BindingData
 -------------------------
 
-`[flyteidl.core.BindingData proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L108>`_
+`[flyteidl.core.BindingData proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L107>`_
 
 Specifies either a simple value or a reference to another output.
 
@@ -459,7 +459,7 @@ closure
 flyteidl.core.Binding
 ---------------------
 
-`[flyteidl.core.Binding proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L128>`_
+`[flyteidl.core.Binding proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L127>`_
 
 An input/output binding of a variable to either static value or a node output.
 
@@ -489,7 +489,7 @@ binding
 flyteidl.core.IfBlock
 ---------------------
 
-`[flyteidl.core.IfBlock proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L137>`_
+`[flyteidl.core.IfBlock proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L136>`_
 
 Defines a condition and the execution unit that should be executed if the condition is satisfied.
 
@@ -517,7 +517,7 @@ then_node
 flyteidl.core.IfElseBlock
 -------------------------
 
-`[flyteidl.core.IfElseBlock proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L144>`_
+`[flyteidl.core.IfElseBlock proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L143>`_
 
 Defines a series of if/else blocks. The first branch whose condition evaluates to true is the one to execute.
 If no conditions were satisfied, the else_node or the error will execute.
@@ -570,7 +570,7 @@ error
 flyteidl.core.BranchNode
 ------------------------
 
-`[flyteidl.core.BranchNode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L163>`_
+`[flyteidl.core.BranchNode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L162>`_
 
 BranchNode is a special node that alter the flow of the workflow graph. It allows the control flow to branch at
 runtime based on a series of conditions that get evaluated on various parameters (e.g. inputs, primtives).
@@ -594,7 +594,7 @@ if_else
 flyteidl.core.ClosureNode
 -------------------------
 
-`[flyteidl.core.ClosureNode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L170>`_
+`[flyteidl.core.ClosureNode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L169>`_
 
 A specialized node type that expects a Closure as an additional input called "input_closure". Other inputs bound
 will be passed down to the closure if it expects any, otherwise additional inputs will be ignored.
@@ -619,7 +619,7 @@ closure_type
 flyteidl.core.TaskNode
 ----------------------
 
-`[flyteidl.core.TaskNode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L177>`_
+`[flyteidl.core.TaskNode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L176>`_
 
 Refers to the task that the Node is to execute.
 
@@ -643,7 +643,7 @@ reference_id
 flyteidl.core.WorkflowNode
 --------------------------
 
-`[flyteidl.core.WorkflowNode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L185>`_
+`[flyteidl.core.WorkflowNode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L184>`_
 
 Refers to a the workflow the node is to execute.
 
@@ -679,7 +679,7 @@ sub_workflow_ref
 flyteidl.core.NodeMetadata
 --------------------------
 
-`[flyteidl.core.NodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L196>`_
+`[flyteidl.core.NodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L195>`_
 
 Defines extra information about the Node.
 
@@ -716,7 +716,7 @@ retries
 flyteidl.core.Alias
 -------------------
 
-`[flyteidl.core.Alias proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L208>`_
+`[flyteidl.core.Alias proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L207>`_
 
 Links a variable to an alias.
 
@@ -746,7 +746,7 @@ alias
 flyteidl.core.Node
 ------------------
 
-`[flyteidl.core.Node proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L218>`_
+`[flyteidl.core.Node proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L217>`_
 
 A Workflow graph Node. One unit of execution in the graph. Each node can be linked to a Task, a Workflow or a branch
 node.
@@ -847,7 +847,7 @@ closure_node
 flyteidl.core.WorkflowMetadata
 ------------------------------
 
-`[flyteidl.core.WorkflowMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L257>`_
+`[flyteidl.core.WorkflowMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L256>`_
 
 Metadata for the entire workflow.
 To be used in the future.
@@ -864,7 +864,7 @@ To be used in the future.
 flyteidl.core.WorkflowTemplate
 ------------------------------
 
-`[flyteidl.core.WorkflowTemplate proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L262>`_
+`[flyteidl.core.WorkflowTemplate proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/literals.proto#L261>`_
 
 Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,
 directed acyclic graph.
