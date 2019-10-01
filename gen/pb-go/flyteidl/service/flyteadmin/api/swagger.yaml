@@ -21485,6 +21485,7 @@ definitions:
     - "FAILED"
     - "ABORTED"
     - "TIMED_OUT"
+    - "LAUNCHED"
     default: "UNDEFINED"
   coreWorkflowMetadata:
     type: "object"

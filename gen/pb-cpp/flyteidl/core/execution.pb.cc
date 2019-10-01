@@ -231,29 +231,29 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\035flyteidl/core/execution.proto\022\rflyteid"
-      "l.core\032\036google/protobuf/duration.proto\"\231"
-      "\001\n\021WorkflowExecution\"\203\001\n\005Phase\022\r\n\tUNDEFI"
+      "l.core\032\036google/protobuf/duration.proto\"\247"
+      "\001\n\021WorkflowExecution\"\221\001\n\005Phase\022\r\n\tUNDEFI"
       "NED\020\000\022\n\n\006QUEUED\020\001\022\013\n\007RUNNING\020\002\022\016\n\nSUCCEE"
       "DING\020\003\022\r\n\tSUCCEEDED\020\004\022\013\n\007FAILING\020\005\022\n\n\006FA"
-      "ILED\020\006\022\013\n\007ABORTED\020\007\022\r\n\tTIMED_OUT\020\010\"\222\001\n\rN"
-      "odeExecution\"\200\001\n\005Phase\022\r\n\tUNDEFINED\020\000\022\n\n"
-      "\006QUEUED\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCCEEDED\020\003\022\013\n"
-      "\007FAILING\020\004\022\n\n\006FAILED\020\005\022\013\n\007ABORTED\020\006\022\013\n\007S"
-      "KIPPED\020\007\022\r\n\tTIMED_OUT\020\010\"h\n\rTaskExecution"
-      "\"W\n\005Phase\022\r\n\tUNDEFINED\020\000\022\n\n\006QUEUED\020\001\022\013\n\007"
-      "RUNNING\020\002\022\r\n\tSUCCEEDED\020\003\022\013\n\007ABORTED\020\004\022\n\n"
-      "\006FAILED\020\005\"B\n\016ExecutionError\022\014\n\004code\030\001 \001("
-      "\t\022\017\n\007message\030\002 \001(\t\022\021\n\terror_uri\030\003 \001(\t\"\273\001"
-      "\n\007TaskLog\022\013\n\003uri\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022<\n\016"
-      "message_format\030\003 \001(\0162$.flyteidl.core.Tas"
-      "kLog.MessageFormat\022&\n\003ttl\030\004 \001(\0132\031.google"
-      ".protobuf.Duration\"/\n\rMessageFormat\022\013\n\007U"
-      "NKNOWN\020\000\022\007\n\003CSV\020\001\022\010\n\004JSON\020\002B2Z0github.co"
-      "m/lyft/flyteidl/gen/pb-go/flyteidl/coreb"
-      "\006proto3"
+      "ILED\020\006\022\013\n\007ABORTED\020\007\022\r\n\tTIMED_OUT\020\010\022\014\n\010LA"
+      "UNCHED\020\t\"\222\001\n\rNodeExecution\"\200\001\n\005Phase\022\r\n\t"
+      "UNDEFINED\020\000\022\n\n\006QUEUED\020\001\022\013\n\007RUNNING\020\002\022\r\n\t"
+      "SUCCEEDED\020\003\022\013\n\007FAILING\020\004\022\n\n\006FAILED\020\005\022\013\n\007"
+      "ABORTED\020\006\022\013\n\007SKIPPED\020\007\022\r\n\tTIMED_OUT\020\010\"h\n"
+      "\rTaskExecution\"W\n\005Phase\022\r\n\tUNDEFINED\020\000\022\n"
+      "\n\006QUEUED\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCCEEDED\020\003\022\013"
+      "\n\007ABORTED\020\004\022\n\n\006FAILED\020\005\"B\n\016ExecutionErro"
+      "r\022\014\n\004code\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\022\021\n\terro"
+      "r_uri\030\003 \001(\t\"\273\001\n\007TaskLog\022\013\n\003uri\030\001 \001(\t\022\014\n\004"
+      "name\030\002 \001(\t\022<\n\016message_format\030\003 \001(\0162$.fly"
+      "teidl.core.TaskLog.MessageFormat\022&\n\003ttl\030"
+      "\004 \001(\0132\031.google.protobuf.Duration\"/\n\rMess"
+      "ageFormat\022\013\n\007UNKNOWN\020\000\022\007\n\003CSV\020\001\022\010\n\004JSON\020"
+      "\002B2Z0github.com/lyft/flyteidl/gen/pb-go/"
+      "flyteidl/coreb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 807);
+      descriptor, 821);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "flyteidl/core/execution.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fprotobuf_2fduration_2eproto::AddDescriptors();
@@ -287,6 +287,7 @@ bool WorkflowExecution_Phase_IsValid(int value) {
     case 6:
     case 7:
     case 8:
+    case 9:
       return true;
     default:
       return false;
@@ -303,6 +304,7 @@ const WorkflowExecution_Phase WorkflowExecution::FAILING;
 const WorkflowExecution_Phase WorkflowExecution::FAILED;
 const WorkflowExecution_Phase WorkflowExecution::ABORTED;
 const WorkflowExecution_Phase WorkflowExecution::TIMED_OUT;
+const WorkflowExecution_Phase WorkflowExecution::LAUNCHED;
 const WorkflowExecution_Phase WorkflowExecution::Phase_MIN;
 const WorkflowExecution_Phase WorkflowExecution::Phase_MAX;
 const int WorkflowExecution::Phase_ARRAYSIZE;

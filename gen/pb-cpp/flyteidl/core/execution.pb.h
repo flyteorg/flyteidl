@@ -94,12 +94,13 @@ enum WorkflowExecution_Phase {
   WorkflowExecution_Phase_FAILED = 6,
   WorkflowExecution_Phase_ABORTED = 7,
   WorkflowExecution_Phase_TIMED_OUT = 8,
+  WorkflowExecution_Phase_LAUNCHED = 9,
   WorkflowExecution_Phase_WorkflowExecution_Phase_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
   WorkflowExecution_Phase_WorkflowExecution_Phase_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
 bool WorkflowExecution_Phase_IsValid(int value);
 const WorkflowExecution_Phase WorkflowExecution_Phase_Phase_MIN = WorkflowExecution_Phase_UNDEFINED;
-const WorkflowExecution_Phase WorkflowExecution_Phase_Phase_MAX = WorkflowExecution_Phase_TIMED_OUT;
+const WorkflowExecution_Phase WorkflowExecution_Phase_Phase_MAX = WorkflowExecution_Phase_LAUNCHED;
 const int WorkflowExecution_Phase_Phase_ARRAYSIZE = WorkflowExecution_Phase_Phase_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* WorkflowExecution_Phase_descriptor();
@@ -288,6 +289,8 @@ class WorkflowExecution : public ::google::protobuf::Message /* @@protoc_inserti
     WorkflowExecution_Phase_ABORTED;
   static const Phase TIMED_OUT =
     WorkflowExecution_Phase_TIMED_OUT;
+  static const Phase LAUNCHED =
+    WorkflowExecution_Phase_LAUNCHED;
   static inline bool Phase_IsValid(int value) {
     return WorkflowExecution_Phase_IsValid(value);
   }

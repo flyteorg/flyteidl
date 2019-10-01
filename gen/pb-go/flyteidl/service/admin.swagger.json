@@ -4228,7 +4228,8 @@
         "FAILING",
         "FAILED",
         "ABORTED",
-        "TIMED_OUT"
+        "TIMED_OUT",
+        "LAUNCHED"
       ],
       "default": "UNDEFINED"
     },

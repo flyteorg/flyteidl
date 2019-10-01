@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/execution.proto',
   package='flyteidl.core',
   syntax='proto3',
-  serialized_pb=_b('\n\x1d\x66lyteidl/core/execution.proto\x12\rflyteidl.core\x1a\x1egoogle/protobuf/duration.proto\"\x99\x01\n\x11WorkflowExecution\"\x83\x01\n\x05Phase\x12\r\n\tUNDEFINED\x10\x00\x12\n\n\x06QUEUED\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0e\n\nSUCCEEDING\x10\x03\x12\r\n\tSUCCEEDED\x10\x04\x12\x0b\n\x07\x46\x41ILING\x10\x05\x12\n\n\x06\x46\x41ILED\x10\x06\x12\x0b\n\x07\x41\x42ORTED\x10\x07\x12\r\n\tTIMED_OUT\x10\x08\"\x92\x01\n\rNodeExecution\"\x80\x01\n\x05Phase\x12\r\n\tUNDEFINED\x10\x00\x12\n\n\x06QUEUED\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\r\n\tSUCCEEDED\x10\x03\x12\x0b\n\x07\x46\x41ILING\x10\x04\x12\n\n\x06\x46\x41ILED\x10\x05\x12\x0b\n\x07\x41\x42ORTED\x10\x06\x12\x0b\n\x07SKIPPED\x10\x07\x12\r\n\tTIMED_OUT\x10\x08\"h\n\rTaskExecution\"W\n\x05Phase\x12\r\n\tUNDEFINED\x10\x00\x12\n\n\x06QUEUED\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\r\n\tSUCCEEDED\x10\x03\x12\x0b\n\x07\x41\x42ORTED\x10\x04\x12\n\n\x06\x46\x41ILED\x10\x05\"B\n\x0e\x45xecutionError\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x11\n\terror_uri\x18\x03 \x01(\t\"\xbb\x01\n\x07TaskLog\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12<\n\x0emessage_format\x18\x03 \x01(\x0e\x32$.flyteidl.core.TaskLog.MessageFormat\x12&\n\x03ttl\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\"/\n\rMessageFormat\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x07\n\x03\x43SV\x10\x01\x12\x08\n\x04JSON\x10\x02\x42\x32Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/core/execution.proto\x12\rflyteidl.core\x1a\x1egoogle/protobuf/duration.proto\"\xa7\x01\n\x11WorkflowExecution\"\x91\x01\n\x05Phase\x12\r\n\tUNDEFINED\x10\x00\x12\n\n\x06QUEUED\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0e\n\nSUCCEEDING\x10\x03\x12\r\n\tSUCCEEDED\x10\x04\x12\x0b\n\x07\x46\x41ILING\x10\x05\x12\n\n\x06\x46\x41ILED\x10\x06\x12\x0b\n\x07\x41\x42ORTED\x10\x07\x12\r\n\tTIMED_OUT\x10\x08\x12\x0c\n\x08LAUNCHED\x10\t\"\x92\x01\n\rNodeExecution\"\x80\x01\n\x05Phase\x12\r\n\tUNDEFINED\x10\x00\x12\n\n\x06QUEUED\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\r\n\tSUCCEEDED\x10\x03\x12\x0b\n\x07\x46\x41ILING\x10\x04\x12\n\n\x06\x46\x41ILED\x10\x05\x12\x0b\n\x07\x41\x42ORTED\x10\x06\x12\x0b\n\x07SKIPPED\x10\x07\x12\r\n\tTIMED_OUT\x10\x08\"h\n\rTaskExecution\"W\n\x05Phase\x12\r\n\tUNDEFINED\x10\x00\x12\n\n\x06QUEUED\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\r\n\tSUCCEEDED\x10\x03\x12\x0b\n\x07\x41\x42ORTED\x10\x04\x12\n\n\x06\x46\x41ILED\x10\x05\"B\n\x0e\x45xecutionError\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x11\n\terror_uri\x18\x03 \x01(\t\"\xbb\x01\n\x07TaskLog\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12<\n\x0emessage_format\x18\x03 \x01(\x0e\x32$.flyteidl.core.TaskLog.MessageFormat\x12&\n\x03ttl\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\"/\n\rMessageFormat\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x07\n\x03\x43SV\x10\x01\x12\x08\n\x04JSON\x10\x02\x42\x32Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,])
 
@@ -68,11 +68,15 @@ _WORKFLOWEXECUTION_PHASE = _descriptor.EnumDescriptor(
       name='TIMED_OUT', index=8, number=8,
       options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='LAUNCHED', index=9, number=9,
+      options=None,
+      type=None),
   ],
   containing_type=None,
   options=None,
   serialized_start=103,
-  serialized_end=234,
+  serialized_end=248,
 )
 _sym_db.RegisterEnumDescriptor(_WORKFLOWEXECUTION_PHASE)
 
@@ -121,8 +125,8 @@ _NODEEXECUTION_PHASE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=255,
-  serialized_end=383,
+  serialized_start=269,
+  serialized_end=397,
 )
 _sym_db.RegisterEnumDescriptor(_NODEEXECUTION_PHASE)
 
@@ -159,8 +163,8 @@ _TASKEXECUTION_PHASE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=402,
-  serialized_end=489,
+  serialized_start=416,
+  serialized_end=503,
 )
 _sym_db.RegisterEnumDescriptor(_TASKEXECUTION_PHASE)
 
@@ -185,8 +189,8 @@ _TASKLOG_MESSAGEFORMAT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=700,
-  serialized_end=747,
+  serialized_start=714,
+  serialized_end=761,
 )
 _sym_db.RegisterEnumDescriptor(_TASKLOG_MESSAGEFORMAT)
 
@@ -212,7 +216,7 @@ _WORKFLOWEXECUTION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=81,
-  serialized_end=234,
+  serialized_end=248,
 )
 
 
@@ -236,8 +240,8 @@ _NODEEXECUTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=237,
-  serialized_end=383,
+  serialized_start=251,
+  serialized_end=397,
 )
 
 
@@ -261,8 +265,8 @@ _TASKEXECUTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=385,
-  serialized_end=489,
+  serialized_start=399,
+  serialized_end=503,
 )
 
 
@@ -306,8 +310,8 @@ _EXECUTIONERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=491,
-  serialized_end=557,
+  serialized_start=505,
+  serialized_end=571,
 )
 
 
@@ -359,8 +363,8 @@ _TASKLOG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=560,
-  serialized_end=747,
+  serialized_start=574,
+  serialized_end=761,
 )
 
 _WORKFLOWEXECUTION_PHASE.containing_type = _WORKFLOWEXECUTION
