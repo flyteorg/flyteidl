@@ -29,7 +29,7 @@ message ExecutionCreateRequest {
 
     // The inputs required to start the execution. All required inputs must be
     // included in this map. If not required and not provided, defaults apply.
-    LiteralMap inputs   = 5;
+    core.LiteralMap inputs   = 5;
 }
 
 // Request to relaunch the referenced execution.
@@ -186,7 +186,7 @@ message ExecutionSpec {
     core.Identifier launch_plan        = 1;
 
     // Input values to be passed for the execution
-    core.LiteralMap inputs          = 2;
+    core.LiteralMap inputs          = 2 [deprecated=true];
 
     // Metadata for the execution
     ExecutionMetadata metadata    = 3;
