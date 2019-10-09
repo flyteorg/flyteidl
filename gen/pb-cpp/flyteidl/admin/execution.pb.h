@@ -1134,6 +1134,20 @@ class ExecutionClosure : public ::google::protobuf::Message /* @@protoc_insertio
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Notification >&
       notifications() const;
 
+  // string inputs_uri = 12;
+  void clear_inputs_uri();
+  static const int kInputsUriFieldNumber = 12;
+  const ::std::string& inputs_uri() const;
+  void set_inputs_uri(const ::std::string& value);
+  #if LANG_CXX11
+  void set_inputs_uri(::std::string&& value);
+  #endif
+  void set_inputs_uri(const char* value);
+  void set_inputs_uri(const char* value, size_t size);
+  ::std::string* mutable_inputs_uri();
+  ::std::string* release_inputs_uri();
+  void set_allocated_inputs_uri(::std::string* inputs_uri);
+
   // .flyteidl.core.LiteralMap computed_inputs = 3 [deprecated = true];
   GOOGLE_PROTOBUF_DEPRECATED_ATTR bool has_computed_inputs() const;
   GOOGLE_PROTOBUF_DEPRECATED_ATTR void clear_computed_inputs();
@@ -1242,6 +1256,7 @@ class ExecutionClosure : public ::google::protobuf::Message /* @@protoc_insertio
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Notification > notifications_;
+  ::google::protobuf::internal::ArenaStringPtr inputs_uri_;
   ::flyteidl::core::LiteralMap* computed_inputs_;
   ::google::protobuf::Timestamp* started_at_;
   ::google::protobuf::Duration* duration_;
@@ -3470,6 +3485,59 @@ inline void ExecutionClosure::set_allocated_workflow_id(::flyteidl::core::Identi
   }
   workflow_id_ = workflow_id;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionClosure.workflow_id)
+}
+
+// string inputs_uri = 12;
+inline void ExecutionClosure::clear_inputs_uri() {
+  inputs_uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ExecutionClosure::inputs_uri() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionClosure.inputs_uri)
+  return inputs_uri_.GetNoArena();
+}
+inline void ExecutionClosure::set_inputs_uri(const ::std::string& value) {
+  
+  inputs_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionClosure.inputs_uri)
+}
+#if LANG_CXX11
+inline void ExecutionClosure::set_inputs_uri(::std::string&& value) {
+  
+  inputs_uri_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.ExecutionClosure.inputs_uri)
+}
+#endif
+inline void ExecutionClosure::set_inputs_uri(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  inputs_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.ExecutionClosure.inputs_uri)
+}
+inline void ExecutionClosure::set_inputs_uri(const char* value, size_t size) {
+  
+  inputs_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.ExecutionClosure.inputs_uri)
+}
+inline ::std::string* ExecutionClosure::mutable_inputs_uri() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionClosure.inputs_uri)
+  return inputs_uri_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ExecutionClosure::release_inputs_uri() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.ExecutionClosure.inputs_uri)
+  
+  return inputs_uri_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ExecutionClosure::set_allocated_inputs_uri(::std::string* inputs_uri) {
+  if (inputs_uri != NULL) {
+    
+  } else {
+    
+  }
+  inputs_uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), inputs_uri);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionClosure.inputs_uri)
 }
 
 inline bool ExecutionClosure::has_output_result() const {

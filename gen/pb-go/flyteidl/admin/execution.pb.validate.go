@@ -709,6 +709,8 @@ func (m *ExecutionClosure) Validate() error {
 		}
 	}
 
+	// no validation rules for InputsUri
+
 	switch m.OutputResult.(type) {
 
 	case *ExecutionClosure_Outputs:

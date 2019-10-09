@@ -131,8 +131,8 @@ message ExecutionClosure {
     // Identifies the workflow definition for this execution.
     core.Identifier workflow_id                       = 11;
 
-    // URI for where the input LiteralMap is persisted.
-    string input_uri                                  = 12;
+    // URI for where the LiteralMap for inputs is persisted.
+    string inputs_uri                                  = 12;
 }
 
 // Represents attributes about an execution which are not required to launch the execution but are useful to record.

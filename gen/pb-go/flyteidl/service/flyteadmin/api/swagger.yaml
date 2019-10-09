@@ -2038,6 +2038,7 @@ definitions:
           uri: "uri"
         phase: {}
         duration: "duration"
+        inputs_uri: "inputs_uri"
         workflow_id:
           domain: "domain"
           resource_type: {}
@@ -2194,6 +2195,9 @@ definitions:
       workflow_id:
         description: "Identifies the workflow definition for this execution."
         $ref: "#/definitions/coreIdentifier"
+      inputs_uri:
+        type: "string"
+        description: "URI for where the LiteralMap for inputs is persisted."
     title: "Encapsulates the results of the Execution"
     example:
       outputs:
@@ -2202,6 +2206,7 @@ definitions:
         uri: "uri"
       phase: {}
       duration: "duration"
+      inputs_uri: "inputs_uri"
       workflow_id:
         domain: "domain"
         resource_type: {}
@@ -2312,6 +2317,7 @@ definitions:
             uri: "uri"
           phase: {}
           duration: "duration"
+          inputs_uri: "inputs_uri"
           workflow_id:
             domain: "domain"
             resource_type: {}
@@ -2433,6 +2439,7 @@ definitions:
             uri: "uri"
           phase: {}
           duration: "duration"
+          inputs_uri: "inputs_uri"
           workflow_id:
             domain: "domain"
             resource_type: {}

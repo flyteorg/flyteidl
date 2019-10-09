@@ -48,7 +48,8 @@ class AdminExecutionClosure(object):
         'created_at': 'datetime',
         'updated_at': 'datetime',
         'notifications': 'list[AdminNotification]',
-        'workflow_id': 'CoreIdentifier'
+        'workflow_id': 'CoreIdentifier',
+        'inputs_uri': 'str'
     }
 
     attribute_map = {
@@ -62,10 +63,11 @@ class AdminExecutionClosure(object):
         'created_at': 'created_at',
         'updated_at': 'updated_at',
         'notifications': 'notifications',
-        'workflow_id': 'workflow_id'
+        'workflow_id': 'workflow_id',
+        'inputs_uri': 'inputs_uri'
     }
 
-    def __init__(self, outputs=None, error=None, abort_cause=None, computed_inputs=None, phase=None, started_at=None, duration=None, created_at=None, updated_at=None, notifications=None, workflow_id=None):  # noqa: E501
+    def __init__(self, outputs=None, error=None, abort_cause=None, computed_inputs=None, phase=None, started_at=None, duration=None, created_at=None, updated_at=None, notifications=None, workflow_id=None, inputs_uri=None):  # noqa: E501
         """AdminExecutionClosure - a model defined in Swagger"""  # noqa: E501
 
         self._outputs = None
@@ -79,6 +81,7 @@ class AdminExecutionClosure(object):
         self._updated_at = None
         self._notifications = None
         self._workflow_id = None
+        self._inputs_uri = None
         self.discriminator = None
 
         if outputs is not None:
@@ -103,6 +106,8 @@ class AdminExecutionClosure(object):
             self.notifications = notifications
         if workflow_id is not None:
             self.workflow_id = workflow_id
+        if inputs_uri is not None:
+            self.inputs_uri = inputs_uri
 
     @property
     def outputs(self):
@@ -354,6 +359,29 @@ class AdminExecutionClosure(object):
         """
 
         self._workflow_id = workflow_id
+
+    @property
+    def inputs_uri(self):
+        """Gets the inputs_uri of this AdminExecutionClosure.  # noqa: E501
+
+        URI for where the LiteralMap for inputs is persisted.  # noqa: E501
+
+        :return: The inputs_uri of this AdminExecutionClosure.  # noqa: E501
+        :rtype: str
+        """
+        return self._inputs_uri
+
+    @inputs_uri.setter
+    def inputs_uri(self, inputs_uri):
+        """Sets the inputs_uri of this AdminExecutionClosure.
+
+        URI for where the LiteralMap for inputs is persisted.  # noqa: E501
+
+        :param inputs_uri: The inputs_uri of this AdminExecutionClosure.  # noqa: E501
+        :type: str
+        """
+
+        self._inputs_uri = inputs_uri
 
     def to_dict(self):
         """Returns the model properties as a dict"""

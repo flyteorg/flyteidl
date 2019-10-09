@@ -2373,6 +2373,10 @@
         "workflow_id": {
           "$ref": "#/definitions/coreIdentifier",
           "description": "Identifies the workflow definition for this execution."
+        },
+        "inputs_uri": {
+          "type": "string",
+          "description": "URI for where the LiteralMap for inputs is persisted."
         }
       },
       "title": "Encapsulates the results of the Execution"

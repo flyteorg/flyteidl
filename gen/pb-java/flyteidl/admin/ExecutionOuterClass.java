@@ -6913,6 +6913,24 @@ public final class ExecutionOuterClass {
      */
     flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getWorkflowIdOrBuilder();
 
+    /**
+     * <pre>
+     * URI for where the LiteralMap for inputs is persisted.
+     * </pre>
+     *
+     * <code>string inputs_uri = 12;</code>
+     */
+    java.lang.String getInputsUri();
+    /**
+     * <pre>
+     * URI for where the LiteralMap for inputs is persisted.
+     * </pre>
+     *
+     * <code>string inputs_uri = 12;</code>
+     */
+    com.google.protobuf.ByteString
+        getInputsUriBytes();
+
     public flyteidl.admin.ExecutionOuterClass.ExecutionClosure.OutputResultCase getOutputResultCase();
   }
   /**
@@ -6934,6 +6952,7 @@ public final class ExecutionOuterClass {
     private ExecutionClosure() {
       phase_ = 0;
       notifications_ = java.util.Collections.emptyList();
+      inputsUri_ = "";
     }
 
     @java.lang.Override
@@ -7092,6 +7111,12 @@ public final class ExecutionOuterClass {
                 workflowId_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              inputsUri_ = s;
               break;
             }
           }
@@ -7579,6 +7604,48 @@ public final class ExecutionOuterClass {
       return getWorkflowId();
     }
 
+    public static final int INPUTS_URI_FIELD_NUMBER = 12;
+    private volatile java.lang.Object inputsUri_;
+    /**
+     * <pre>
+     * URI for where the LiteralMap for inputs is persisted.
+     * </pre>
+     *
+     * <code>string inputs_uri = 12;</code>
+     */
+    public java.lang.String getInputsUri() {
+      java.lang.Object ref = inputsUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        inputsUri_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * URI for where the LiteralMap for inputs is persisted.
+     * </pre>
+     *
+     * <code>string inputs_uri = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getInputsUriBytes() {
+      java.lang.Object ref = inputsUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        inputsUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -7623,6 +7690,9 @@ public final class ExecutionOuterClass {
       }
       if (workflowId_ != null) {
         output.writeMessage(11, getWorkflowId());
+      }
+      if (!getInputsUriBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, inputsUri_);
       }
       unknownFields.writeTo(output);
     }
@@ -7675,6 +7745,9 @@ public final class ExecutionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getWorkflowId());
       }
+      if (!getInputsUriBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, inputsUri_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -7724,6 +7797,8 @@ public final class ExecutionOuterClass {
         result = result && getWorkflowId()
             .equals(other.getWorkflowId());
       }
+      result = result && getInputsUri()
+          .equals(other.getInputsUri());
       result = result && getOutputResultCase().equals(
           other.getOutputResultCase());
       if (!result) return false;
@@ -7784,6 +7859,8 @@ public final class ExecutionOuterClass {
         hash = (37 * hash) + WORKFLOW_ID_FIELD_NUMBER;
         hash = (53 * hash) + getWorkflowId().hashCode();
       }
+      hash = (37 * hash) + INPUTS_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getInputsUri().hashCode();
       switch (outputResultCase_) {
         case 1:
           hash = (37 * hash) + OUTPUTS_FIELD_NUMBER;
@@ -7978,6 +8055,8 @@ public final class ExecutionOuterClass {
           workflowId_ = null;
           workflowIdBuilder_ = null;
         }
+        inputsUri_ = "";
+
         outputResultCase_ = 0;
         outputResult_ = null;
         return this;
@@ -8061,6 +8140,7 @@ public final class ExecutionOuterClass {
         } else {
           result.workflowId_ = workflowIdBuilder_.build();
         }
+        result.inputsUri_ = inputsUri_;
         result.bitField0_ = to_bitField0_;
         result.outputResultCase_ = outputResultCase_;
         onBuilt();
@@ -8150,6 +8230,10 @@ public final class ExecutionOuterClass {
         }
         if (other.hasWorkflowId()) {
           mergeWorkflowId(other.getWorkflowId());
+        }
+        if (!other.getInputsUri().isEmpty()) {
+          inputsUri_ = other.inputsUri_;
+          onChanged();
         }
         switch (other.getOutputResultCase()) {
           case OUTPUTS: {
@@ -9994,6 +10078,95 @@ public final class ExecutionOuterClass {
           workflowId_ = null;
         }
         return workflowIdBuilder_;
+      }
+
+      private java.lang.Object inputsUri_ = "";
+      /**
+       * <pre>
+       * URI for where the LiteralMap for inputs is persisted.
+       * </pre>
+       *
+       * <code>string inputs_uri = 12;</code>
+       */
+      public java.lang.String getInputsUri() {
+        java.lang.Object ref = inputsUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          inputsUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * URI for where the LiteralMap for inputs is persisted.
+       * </pre>
+       *
+       * <code>string inputs_uri = 12;</code>
+       */
+      public com.google.protobuf.ByteString
+          getInputsUriBytes() {
+        java.lang.Object ref = inputsUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          inputsUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * URI for where the LiteralMap for inputs is persisted.
+       * </pre>
+       *
+       * <code>string inputs_uri = 12;</code>
+       */
+      public Builder setInputsUri(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        inputsUri_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * URI for where the LiteralMap for inputs is persisted.
+       * </pre>
+       *
+       * <code>string inputs_uri = 12;</code>
+       */
+      public Builder clearInputsUri() {
+        
+        inputsUri_ = getDefaultInstance().getInputsUri();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * URI for where the LiteralMap for inputs is persisted.
+       * </pre>
+       *
+       * <code>string inputs_uri = 12;</code>
+       */
+      public Builder setInputsUriBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        inputsUri_ = value;
+        onChanged();
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -17580,7 +17753,7 @@ public final class ExecutionOuterClass {
       "tionList\022-\n\nexecutions\030\001 \003(\0132\031.flyteidl." +
       "admin.Execution\022\r\n\005token\030\002 \001(\t\"T\n\016Litera" +
       "lMapBlob\022+\n\006values\030\001 \001(\0132\031.flyteidl.core" +
-      ".LiteralMapH\000\022\r\n\003uri\030\002 \001(\tH\000B\006\n\004data\"\256\004\n" +
+      ".LiteralMapH\000\022\r\n\003uri\030\002 \001(\tH\000B\006\n\004data\"\302\004\n" +
       "\020ExecutionClosure\0221\n\007outputs\030\001 \001(\0132\036.fly" +
       "teidl.admin.LiteralMapBlobH\000\022.\n\005error\030\002 " +
       "\001(\0132\035.flyteidl.core.ExecutionErrorH\000\022\025\n\013" +
@@ -17594,39 +17767,39 @@ public final class ExecutionOuterClass {
       "ed_at\030\010 \001(\0132\032.google.protobuf.Timestamp\022" +
       "3\n\rnotifications\030\t \003(\0132\034.flyteidl.admin." +
       "Notification\022.\n\013workflow_id\030\013 \001(\0132\031.flyt" +
-      "eidl.core.IdentifierB\017\n\routput_result\"\222\003" +
-      "\n\021ExecutionMetadata\022=\n\004mode\030\001 \001(\0162/.flyt" +
-      "eidl.admin.ExecutionMetadata.ExecutionMo" +
-      "de\022\021\n\tprincipal\030\002 \001(\t\022\017\n\007nesting\030\003 \001(\r\0220" +
-      "\n\014scheduled_at\030\004 \001(\0132\032.google.protobuf.T" +
-      "imestamp\022E\n\025parent_node_execution\030\005 \001(\0132" +
-      "&.flyteidl.core.NodeExecutionIdentifier\022" +
-      "G\n\023reference_execution\030\020 \001(\0132*.flyteidl." +
-      "core.WorkflowExecutionIdentifier\"X\n\rExec" +
-      "utionMode\022\n\n\006MANUAL\020\000\022\r\n\tSCHEDULED\020\001\022\n\n\006" +
-      "SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016CHILD_WORKFLOW" +
-      "\020\004\"G\n\020NotificationList\0223\n\rnotifications\030" +
-      "\001 \003(\0132\034.flyteidl.admin.Notification\"\357\002\n\r" +
-      "ExecutionSpec\022.\n\013launch_plan\030\001 \001(\0132\031.fly" +
-      "teidl.core.Identifier\022-\n\006inputs\030\002 \001(\0132\031." +
-      "flyteidl.core.LiteralMapB\002\030\001\0223\n\010metadata" +
-      "\030\003 \001(\0132!.flyteidl.admin.ExecutionMetadat" +
-      "a\0229\n\rnotifications\030\005 \001(\0132 .flyteidl.admi" +
-      "n.NotificationListH\000\022\025\n\013disable_all\030\006 \001(" +
-      "\010H\000\022&\n\006labels\030\007 \001(\0132\026.flyteidl.admin.Lab" +
-      "els\0220\n\013annotations\030\010 \001(\0132\033.flyteidl.admi" +
-      "n.AnnotationsB\030\n\026notification_overridesJ" +
-      "\004\010\004\020\005\"b\n\031ExecutionTerminateRequest\0226\n\002id" +
-      "\030\001 \001(\0132*.flyteidl.core.WorkflowExecution" +
-      "Identifier\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTe" +
-      "rminateResponse\"Y\n\037WorkflowExecutionGetD" +
-      "ataRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.W" +
-      "orkflowExecutionIdentifier\"u\n WorkflowEx" +
-      "ecutionGetDataResponse\022(\n\007outputs\030\001 \001(\0132" +
-      "\027.flyteidl.admin.UrlBlob\022\'\n\006inputs\030\002 \001(\013" +
-      "2\027.flyteidl.admin.UrlBlobB3Z1github.com/" +
-      "lyft/flyteidl/gen/pb-go/flyteidl/adminb\006" +
-      "proto3"
+      "eidl.core.Identifier\022\022\n\ninputs_uri\030\014 \001(\t" +
+      "B\017\n\routput_result\"\222\003\n\021ExecutionMetadata\022" +
+      "=\n\004mode\030\001 \001(\0162/.flyteidl.admin.Execution" +
+      "Metadata.ExecutionMode\022\021\n\tprincipal\030\002 \001(" +
+      "\t\022\017\n\007nesting\030\003 \001(\r\0220\n\014scheduled_at\030\004 \001(\013" +
+      "2\032.google.protobuf.Timestamp\022E\n\025parent_n" +
+      "ode_execution\030\005 \001(\0132&.flyteidl.core.Node" +
+      "ExecutionIdentifier\022G\n\023reference_executi" +
+      "on\030\020 \001(\0132*.flyteidl.core.WorkflowExecuti" +
+      "onIdentifier\"X\n\rExecutionMode\022\n\n\006MANUAL\020" +
+      "\000\022\r\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH" +
+      "\020\003\022\022\n\016CHILD_WORKFLOW\020\004\"G\n\020NotificationLi" +
+      "st\0223\n\rnotifications\030\001 \003(\0132\034.flyteidl.adm" +
+      "in.Notification\"\357\002\n\rExecutionSpec\022.\n\013lau" +
+      "nch_plan\030\001 \001(\0132\031.flyteidl.core.Identifie" +
+      "r\022-\n\006inputs\030\002 \001(\0132\031.flyteidl.core.Litera" +
+      "lMapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!.flyteidl.ad" +
+      "min.ExecutionMetadata\0229\n\rnotifications\030\005" +
+      " \001(\0132 .flyteidl.admin.NotificationListH\000" +
+      "\022\025\n\013disable_all\030\006 \001(\010H\000\022&\n\006labels\030\007 \001(\0132" +
+      "\026.flyteidl.admin.Labels\0220\n\013annotations\030\010" +
+      " \001(\0132\033.flyteidl.admin.AnnotationsB\030\n\026not" +
+      "ification_overridesJ\004\010\004\020\005\"b\n\031ExecutionTe" +
+      "rminateRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.co" +
+      "re.WorkflowExecutionIdentifier\022\r\n\005cause\030" +
+      "\002 \001(\t\"\034\n\032ExecutionTerminateResponse\"Y\n\037W" +
+      "orkflowExecutionGetDataRequest\0226\n\002id\030\001 \001" +
+      "(\0132*.flyteidl.core.WorkflowExecutionIden" +
+      "tifier\"u\n WorkflowExecutionGetDataRespon" +
+      "se\022(\n\007outputs\030\001 \001(\0132\027.flyteidl.admin.Url" +
+      "Blob\022\'\n\006inputs\030\002 \001(\0132\027.flyteidl.admin.Ur" +
+      "lBlobB3Z1github.com/lyft/flyteidl/gen/pb" +
+      "-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -17693,7 +17866,7 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_ExecutionClosure_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionClosure_descriptor,
-        new java.lang.String[] { "Outputs", "Error", "AbortCause", "ComputedInputs", "Phase", "StartedAt", "Duration", "CreatedAt", "UpdatedAt", "Notifications", "WorkflowId", "OutputResult", });
+        new java.lang.String[] { "Outputs", "Error", "AbortCause", "ComputedInputs", "Phase", "StartedAt", "Duration", "CreatedAt", "UpdatedAt", "Notifications", "WorkflowId", "InputsUri", "OutputResult", });
     internal_static_flyteidl_admin_ExecutionMetadata_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_admin_ExecutionMetadata_fieldAccessorTable = new

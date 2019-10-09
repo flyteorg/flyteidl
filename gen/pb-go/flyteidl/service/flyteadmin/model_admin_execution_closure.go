@@ -35,4 +35,6 @@ type AdminExecutionClosure struct {
 	Notifications []AdminNotification `json:"notifications,omitempty"`
 	// Identifies the workflow definition for this execution.
 	WorkflowId *CoreIdentifier `json:"workflow_id,omitempty"`
+	// URI for where the LiteralMap for inputs is persisted.
+	InputsUri string `json:"inputs_uri,omitempty"`
 }

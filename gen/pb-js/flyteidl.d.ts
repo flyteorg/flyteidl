@@ -6316,6 +6316,9 @@ export namespace flyteidl {
 
             /** ExecutionClosure workflowId */
             workflowId?: (flyteidl.core.IIdentifier|null);
+
+            /** ExecutionClosure inputsUri */
+            inputsUri?: (string|null);
         }
 
         /** Represents an ExecutionClosure. */
@@ -6359,6 +6362,9 @@ export namespace flyteidl {
 
             /** ExecutionClosure workflowId. */
             public workflowId?: (flyteidl.core.IIdentifier|null);
+
+            /** ExecutionClosure inputsUri. */
+            public inputsUri: string;
 
             /** ExecutionClosure outputResult. */
             public outputResult?: ("outputs"|"error"|"abortCause");

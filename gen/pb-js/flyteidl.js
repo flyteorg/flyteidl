@@ -15039,6 +15039,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.ITimestamp|null} [updatedAt] ExecutionClosure updatedAt
              * @property {Array.<flyteidl.admin.INotification>|null} [notifications] ExecutionClosure notifications
              * @property {flyteidl.core.IIdentifier|null} [workflowId] ExecutionClosure workflowId
+             * @property {string|null} [inputsUri] ExecutionClosure inputsUri
              */
 
             /**
@@ -15145,6 +15146,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             ExecutionClosure.prototype.workflowId = null;
 
+            /**
+             * ExecutionClosure inputsUri.
+             * @member {string} inputsUri
+             * @memberof flyteidl.admin.ExecutionClosure
+             * @instance
+             */
+            ExecutionClosure.prototype.inputsUri = "";
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -15206,6 +15215,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 10, wireType 2 =*/82).string(message.abortCause);
                 if (message.workflowId != null && message.hasOwnProperty("workflowId"))
                     $root.flyteidl.core.Identifier.encode(message.workflowId, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
+                if (message.inputsUri != null && message.hasOwnProperty("inputsUri"))
+                    writer.uint32(/* id 12, wireType 2 =*/98).string(message.inputsUri);
                 return writer;
             };
 
@@ -15261,6 +15272,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 11:
                         message.workflowId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                        break;
+                    case 12:
+                        message.inputsUri = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -15361,6 +15375,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "workflowId." + error;
                 }
+                if (message.inputsUri != null && message.hasOwnProperty("inputsUri"))
+                    if (!$util.isString(message.inputsUri))
+                        return "inputsUri: string expected";
                 return null;
             };
 
