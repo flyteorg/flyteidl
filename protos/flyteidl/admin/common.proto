@@ -121,6 +121,16 @@ message Notification {
         SlackNotification slack = 4;
     }
 
+    SNSMessage snsmessage = 5;
+}
+
+// Represents a structure for a generic SNS Message to be published as 
+// part of a notification.
+message SNSMessage {
+    core.WorkflowExecutionIdentifier id = 1;
+    core.WorkflowExecution.Phase phase = 2;
+    google.protobuf.Timestamp occurred_at = 3;
+    repeated string sns_topic = 4;
 }
 
 // Represents a string url and associated metadata used throughout the platform.
