@@ -1001,3 +1001,33 @@ func (_m *AdminServiceClient) UpdateLaunchPlan(ctx context.Context, in *admin.La
 
 	return r0, r1
 }
+
+// UpdateProjectDomainAttributes provides a mock function with given fields: ctx, in, opts
+func (_m *AdminServiceClient) UpdateProjectDomainAttributes(ctx context.Context, in *admin.ProjectDomainAttributesUpdateRequest, opts ...grpc.CallOption) (*admin.ProjectDomainAttributesUpdateResponse, error) {
+	_va := make([]interface{}, len(opts))
+	for _i := range opts {
+		_va[_i] = opts[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, ctx, in)
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	var r0 *admin.ProjectDomainAttributesUpdateResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.ProjectDomainAttributesUpdateRequest, ...grpc.CallOption) *admin.ProjectDomainAttributesUpdateResponse); ok {
+		r0 = rf(ctx, in, opts...)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*admin.ProjectDomainAttributesUpdateResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.ProjectDomainAttributesUpdateRequest, ...grpc.CallOption) error); ok {
+		r1 = rf(ctx, in, opts...)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}

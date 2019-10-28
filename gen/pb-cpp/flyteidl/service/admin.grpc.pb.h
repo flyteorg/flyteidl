@@ -268,6 +268,13 @@ class AdminService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::TaskExecutionGetDataResponse>> PrepareAsyncGetTaskExecutionData(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetDataRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::TaskExecutionGetDataResponse>>(PrepareAsyncGetTaskExecutionDataRaw(context, request, cq));
     }
+    virtual ::grpc::Status UpdateProjectDomainAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest& request, ::flyteidl::admin::ProjectDomainAttributesUpdateResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>> AsyncUpdateProjectDomainAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>>(AsyncUpdateProjectDomainAttributesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>> PrepareAsyncUpdateProjectDomainAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>>(PrepareAsyncUpdateProjectDomainAttributesRaw(context, request, cq));
+    }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::TaskCreateResponse>* AsyncCreateTaskRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::TaskCreateResponse>* PrepareAsyncCreateTaskRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -335,6 +342,8 @@ class AdminService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::TaskExecutionList>* PrepareAsyncListTaskExecutionsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionListRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::TaskExecutionGetDataResponse>* AsyncGetTaskExecutionDataRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetDataRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::TaskExecutionGetDataResponse>* PrepareAsyncGetTaskExecutionDataRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetDataRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>* AsyncUpdateProjectDomainAttributesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>* PrepareAsyncUpdateProjectDomainAttributesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -570,6 +579,13 @@ class AdminService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskExecutionGetDataResponse>> PrepareAsyncGetTaskExecutionData(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetDataRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskExecutionGetDataResponse>>(PrepareAsyncGetTaskExecutionDataRaw(context, request, cq));
     }
+    ::grpc::Status UpdateProjectDomainAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest& request, ::flyteidl::admin::ProjectDomainAttributesUpdateResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>> AsyncUpdateProjectDomainAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>>(AsyncUpdateProjectDomainAttributesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>> PrepareAsyncUpdateProjectDomainAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>>(PrepareAsyncUpdateProjectDomainAttributesRaw(context, request, cq));
+    }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
@@ -639,6 +655,8 @@ class AdminService final {
     ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskExecutionList>* PrepareAsyncListTaskExecutionsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionListRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskExecutionGetDataResponse>* AsyncGetTaskExecutionDataRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetDataRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskExecutionGetDataResponse>* PrepareAsyncGetTaskExecutionDataRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetDataRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>* AsyncUpdateProjectDomainAttributesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>* PrepareAsyncUpdateProjectDomainAttributesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateTask_;
     const ::grpc::internal::RpcMethod rpcmethod_GetTask_;
     const ::grpc::internal::RpcMethod rpcmethod_ListTaskIds_;
@@ -672,6 +690,7 @@ class AdminService final {
     const ::grpc::internal::RpcMethod rpcmethod_GetTaskExecution_;
     const ::grpc::internal::RpcMethod rpcmethod_ListTaskExecutions_;
     const ::grpc::internal::RpcMethod rpcmethod_GetTaskExecutionData_;
+    const ::grpc::internal::RpcMethod rpcmethod_UpdateProjectDomainAttributes_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -712,6 +731,7 @@ class AdminService final {
     virtual ::grpc::Status GetTaskExecution(::grpc::ServerContext* context, const ::flyteidl::admin::TaskExecutionGetRequest* request, ::flyteidl::admin::TaskExecution* response);
     virtual ::grpc::Status ListTaskExecutions(::grpc::ServerContext* context, const ::flyteidl::admin::TaskExecutionListRequest* request, ::flyteidl::admin::TaskExecutionList* response);
     virtual ::grpc::Status GetTaskExecutionData(::grpc::ServerContext* context, const ::flyteidl::admin::TaskExecutionGetDataRequest* request, ::flyteidl::admin::TaskExecutionGetDataResponse* response);
+    virtual ::grpc::Status UpdateProjectDomainAttributes(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest* request, ::flyteidl::admin::ProjectDomainAttributesUpdateResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateTask : public BaseClass {
@@ -1373,7 +1393,27 @@ class AdminService final {
       ::grpc::Service::RequestAsyncUnary(32, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateTask<WithAsyncMethod_GetTask<WithAsyncMethod_ListTaskIds<WithAsyncMethod_ListTasks<WithAsyncMethod_CreateWorkflow<WithAsyncMethod_GetWorkflow<WithAsyncMethod_ListWorkflowIds<WithAsyncMethod_ListWorkflows<WithAsyncMethod_CreateLaunchPlan<WithAsyncMethod_GetLaunchPlan<WithAsyncMethod_GetActiveLaunchPlan<WithAsyncMethod_ListActiveLaunchPlans<WithAsyncMethod_ListLaunchPlanIds<WithAsyncMethod_ListLaunchPlans<WithAsyncMethod_UpdateLaunchPlan<WithAsyncMethod_CreateExecution<WithAsyncMethod_RelaunchExecution<WithAsyncMethod_GetExecution<WithAsyncMethod_GetExecutionData<WithAsyncMethod_ListExecutions<WithAsyncMethod_TerminateExecution<WithAsyncMethod_GetNodeExecution<WithAsyncMethod_ListNodeExecutions<WithAsyncMethod_ListNodeExecutionsForTask<WithAsyncMethod_GetNodeExecutionData<WithAsyncMethod_RegisterProject<WithAsyncMethod_ListProjects<WithAsyncMethod_CreateWorkflowEvent<WithAsyncMethod_CreateNodeEvent<WithAsyncMethod_CreateTaskEvent<WithAsyncMethod_GetTaskExecution<WithAsyncMethod_ListTaskExecutions<WithAsyncMethod_GetTaskExecutionData<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_UpdateProjectDomainAttributes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_UpdateProjectDomainAttributes() {
+      ::grpc::Service::MarkMethodAsync(33);
+    }
+    ~WithAsyncMethod_UpdateProjectDomainAttributes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateProjectDomainAttributes(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest* request, ::flyteidl::admin::ProjectDomainAttributesUpdateResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateProjectDomainAttributes(::grpc::ServerContext* context, ::flyteidl::admin::ProjectDomainAttributesUpdateRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(33, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateTask<WithAsyncMethod_GetTask<WithAsyncMethod_ListTaskIds<WithAsyncMethod_ListTasks<WithAsyncMethod_CreateWorkflow<WithAsyncMethod_GetWorkflow<WithAsyncMethod_ListWorkflowIds<WithAsyncMethod_ListWorkflows<WithAsyncMethod_CreateLaunchPlan<WithAsyncMethod_GetLaunchPlan<WithAsyncMethod_GetActiveLaunchPlan<WithAsyncMethod_ListActiveLaunchPlans<WithAsyncMethod_ListLaunchPlanIds<WithAsyncMethod_ListLaunchPlans<WithAsyncMethod_UpdateLaunchPlan<WithAsyncMethod_CreateExecution<WithAsyncMethod_RelaunchExecution<WithAsyncMethod_GetExecution<WithAsyncMethod_GetExecutionData<WithAsyncMethod_ListExecutions<WithAsyncMethod_TerminateExecution<WithAsyncMethod_GetNodeExecution<WithAsyncMethod_ListNodeExecutions<WithAsyncMethod_ListNodeExecutionsForTask<WithAsyncMethod_GetNodeExecutionData<WithAsyncMethod_RegisterProject<WithAsyncMethod_ListProjects<WithAsyncMethod_CreateWorkflowEvent<WithAsyncMethod_CreateNodeEvent<WithAsyncMethod_CreateTaskEvent<WithAsyncMethod_GetTaskExecution<WithAsyncMethod_ListTaskExecutions<WithAsyncMethod_GetTaskExecutionData<WithAsyncMethod_UpdateProjectDomainAttributes<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_CreateTask : public BaseClass {
    private:
@@ -1931,6 +1971,23 @@ class AdminService final {
     }
     // disable synchronous version of this method
     ::grpc::Status GetTaskExecutionData(::grpc::ServerContext* context, const ::flyteidl::admin::TaskExecutionGetDataRequest* request, ::flyteidl::admin::TaskExecutionGetDataResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_UpdateProjectDomainAttributes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_UpdateProjectDomainAttributes() {
+      ::grpc::Service::MarkMethodGeneric(33);
+    }
+    ~WithGenericMethod_UpdateProjectDomainAttributes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateProjectDomainAttributes(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest* request, ::flyteidl::admin::ProjectDomainAttributesUpdateResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2596,6 +2653,26 @@ class AdminService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_UpdateProjectDomainAttributes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_UpdateProjectDomainAttributes() {
+      ::grpc::Service::MarkMethodRaw(33);
+    }
+    ~WithRawMethod_UpdateProjectDomainAttributes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateProjectDomainAttributes(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest* request, ::flyteidl::admin::ProjectDomainAttributesUpdateResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateProjectDomainAttributes(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(33, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateTask : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -3255,9 +3332,29 @@ class AdminService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetTaskExecutionData(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::admin::TaskExecutionGetDataRequest,::flyteidl::admin::TaskExecutionGetDataResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateTask<WithStreamedUnaryMethod_GetTask<WithStreamedUnaryMethod_ListTaskIds<WithStreamedUnaryMethod_ListTasks<WithStreamedUnaryMethod_CreateWorkflow<WithStreamedUnaryMethod_GetWorkflow<WithStreamedUnaryMethod_ListWorkflowIds<WithStreamedUnaryMethod_ListWorkflows<WithStreamedUnaryMethod_CreateLaunchPlan<WithStreamedUnaryMethod_GetLaunchPlan<WithStreamedUnaryMethod_GetActiveLaunchPlan<WithStreamedUnaryMethod_ListActiveLaunchPlans<WithStreamedUnaryMethod_ListLaunchPlanIds<WithStreamedUnaryMethod_ListLaunchPlans<WithStreamedUnaryMethod_UpdateLaunchPlan<WithStreamedUnaryMethod_CreateExecution<WithStreamedUnaryMethod_RelaunchExecution<WithStreamedUnaryMethod_GetExecution<WithStreamedUnaryMethod_GetExecutionData<WithStreamedUnaryMethod_ListExecutions<WithStreamedUnaryMethod_TerminateExecution<WithStreamedUnaryMethod_GetNodeExecution<WithStreamedUnaryMethod_ListNodeExecutions<WithStreamedUnaryMethod_ListNodeExecutionsForTask<WithStreamedUnaryMethod_GetNodeExecutionData<WithStreamedUnaryMethod_RegisterProject<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_CreateWorkflowEvent<WithStreamedUnaryMethod_CreateNodeEvent<WithStreamedUnaryMethod_CreateTaskEvent<WithStreamedUnaryMethod_GetTaskExecution<WithStreamedUnaryMethod_ListTaskExecutions<WithStreamedUnaryMethod_GetTaskExecutionData<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_UpdateProjectDomainAttributes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_UpdateProjectDomainAttributes() {
+      ::grpc::Service::MarkMethodStreamed(33,
+        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::admin::ProjectDomainAttributesUpdateRequest, ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>(std::bind(&WithStreamedUnaryMethod_UpdateProjectDomainAttributes<BaseClass>::StreamedUpdateProjectDomainAttributes, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_UpdateProjectDomainAttributes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status UpdateProjectDomainAttributes(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest* request, ::flyteidl::admin::ProjectDomainAttributesUpdateResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedUpdateProjectDomainAttributes(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::admin::ProjectDomainAttributesUpdateRequest,::flyteidl::admin::ProjectDomainAttributesUpdateResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateTask<WithStreamedUnaryMethod_GetTask<WithStreamedUnaryMethod_ListTaskIds<WithStreamedUnaryMethod_ListTasks<WithStreamedUnaryMethod_CreateWorkflow<WithStreamedUnaryMethod_GetWorkflow<WithStreamedUnaryMethod_ListWorkflowIds<WithStreamedUnaryMethod_ListWorkflows<WithStreamedUnaryMethod_CreateLaunchPlan<WithStreamedUnaryMethod_GetLaunchPlan<WithStreamedUnaryMethod_GetActiveLaunchPlan<WithStreamedUnaryMethod_ListActiveLaunchPlans<WithStreamedUnaryMethod_ListLaunchPlanIds<WithStreamedUnaryMethod_ListLaunchPlans<WithStreamedUnaryMethod_UpdateLaunchPlan<WithStreamedUnaryMethod_CreateExecution<WithStreamedUnaryMethod_RelaunchExecution<WithStreamedUnaryMethod_GetExecution<WithStreamedUnaryMethod_GetExecutionData<WithStreamedUnaryMethod_ListExecutions<WithStreamedUnaryMethod_TerminateExecution<WithStreamedUnaryMethod_GetNodeExecution<WithStreamedUnaryMethod_ListNodeExecutions<WithStreamedUnaryMethod_ListNodeExecutionsForTask<WithStreamedUnaryMethod_GetNodeExecutionData<WithStreamedUnaryMethod_RegisterProject<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_CreateWorkflowEvent<WithStreamedUnaryMethod_CreateNodeEvent<WithStreamedUnaryMethod_CreateTaskEvent<WithStreamedUnaryMethod_GetTaskExecution<WithStreamedUnaryMethod_ListTaskExecutions<WithStreamedUnaryMethod_GetTaskExecutionData<WithStreamedUnaryMethod_UpdateProjectDomainAttributes<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateTask<WithStreamedUnaryMethod_GetTask<WithStreamedUnaryMethod_ListTaskIds<WithStreamedUnaryMethod_ListTasks<WithStreamedUnaryMethod_CreateWorkflow<WithStreamedUnaryMethod_GetWorkflow<WithStreamedUnaryMethod_ListWorkflowIds<WithStreamedUnaryMethod_ListWorkflows<WithStreamedUnaryMethod_CreateLaunchPlan<WithStreamedUnaryMethod_GetLaunchPlan<WithStreamedUnaryMethod_GetActiveLaunchPlan<WithStreamedUnaryMethod_ListActiveLaunchPlans<WithStreamedUnaryMethod_ListLaunchPlanIds<WithStreamedUnaryMethod_ListLaunchPlans<WithStreamedUnaryMethod_UpdateLaunchPlan<WithStreamedUnaryMethod_CreateExecution<WithStreamedUnaryMethod_RelaunchExecution<WithStreamedUnaryMethod_GetExecution<WithStreamedUnaryMethod_GetExecutionData<WithStreamedUnaryMethod_ListExecutions<WithStreamedUnaryMethod_TerminateExecution<WithStreamedUnaryMethod_GetNodeExecution<WithStreamedUnaryMethod_ListNodeExecutions<WithStreamedUnaryMethod_ListNodeExecutionsForTask<WithStreamedUnaryMethod_GetNodeExecutionData<WithStreamedUnaryMethod_RegisterProject<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_CreateWorkflowEvent<WithStreamedUnaryMethod_CreateNodeEvent<WithStreamedUnaryMethod_CreateTaskEvent<WithStreamedUnaryMethod_GetTaskExecution<WithStreamedUnaryMethod_ListTaskExecutions<WithStreamedUnaryMethod_GetTaskExecutionData<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateTask<WithStreamedUnaryMethod_GetTask<WithStreamedUnaryMethod_ListTaskIds<WithStreamedUnaryMethod_ListTasks<WithStreamedUnaryMethod_CreateWorkflow<WithStreamedUnaryMethod_GetWorkflow<WithStreamedUnaryMethod_ListWorkflowIds<WithStreamedUnaryMethod_ListWorkflows<WithStreamedUnaryMethod_CreateLaunchPlan<WithStreamedUnaryMethod_GetLaunchPlan<WithStreamedUnaryMethod_GetActiveLaunchPlan<WithStreamedUnaryMethod_ListActiveLaunchPlans<WithStreamedUnaryMethod_ListLaunchPlanIds<WithStreamedUnaryMethod_ListLaunchPlans<WithStreamedUnaryMethod_UpdateLaunchPlan<WithStreamedUnaryMethod_CreateExecution<WithStreamedUnaryMethod_RelaunchExecution<WithStreamedUnaryMethod_GetExecution<WithStreamedUnaryMethod_GetExecutionData<WithStreamedUnaryMethod_ListExecutions<WithStreamedUnaryMethod_TerminateExecution<WithStreamedUnaryMethod_GetNodeExecution<WithStreamedUnaryMethod_ListNodeExecutions<WithStreamedUnaryMethod_ListNodeExecutionsForTask<WithStreamedUnaryMethod_GetNodeExecutionData<WithStreamedUnaryMethod_RegisterProject<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_CreateWorkflowEvent<WithStreamedUnaryMethod_CreateNodeEvent<WithStreamedUnaryMethod_CreateTaskEvent<WithStreamedUnaryMethod_GetTaskExecution<WithStreamedUnaryMethod_ListTaskExecutions<WithStreamedUnaryMethod_GetTaskExecutionData<WithStreamedUnaryMethod_UpdateProjectDomainAttributes<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace service

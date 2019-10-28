@@ -57,6 +57,7 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**RelaunchExecution**](docs/AdminServiceApi.md#relaunchexecution) | **Post** /api/v1/executions/relaunch | 
 *AdminServiceApi* | [**TerminateExecution**](docs/AdminServiceApi.md#terminateexecution) | **Delete** /api/v1/executions/{id.project}/{id.domain}/{id.name} | 
 *AdminServiceApi* | [**UpdateLaunchPlan**](docs/AdminServiceApi.md#updatelaunchplan) | **Put** /api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version} | 
+*AdminServiceApi* | [**UpdateProjectDomainAttributes**](docs/AdminServiceApi.md#updateprojectdomainattributes) | **Put** /api/v1/project_domain_attributes/{attributes.project}/{attributes.domain} | 
 
 
 ## Documentation For Models
@@ -100,6 +101,9 @@ Class | Method | HTTP request | Description
  - [AdminNotificationList](docs/AdminNotificationList.md)
  - [AdminPagerDutyNotification](docs/AdminPagerDutyNotification.md)
  - [AdminProject](docs/AdminProject.md)
+ - [AdminProjectDomainAttributes](docs/AdminProjectDomainAttributes.md)
+ - [AdminProjectDomainAttributesUpdateRequest](docs/AdminProjectDomainAttributesUpdateRequest.md)
+ - [AdminProjectDomainAttributesUpdateResponse](docs/AdminProjectDomainAttributesUpdateResponse.md)
  - [AdminProjectRegisterRequest](docs/AdminProjectRegisterRequest.md)
  - [AdminProjectRegisterResponse](docs/AdminProjectRegisterResponse.md)
  - [AdminProjects](docs/AdminProjects.md)
