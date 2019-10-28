@@ -57,7 +57,7 @@ public final class ProjectDomainAttributesOuterClass {
     /**
      * <pre>
      * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-     * Map keys are the names of variables in templatized resource files.
+     * Map keys are the *case-sensitive* names of variables in templatized resource files.
      * Map values should be the custom values which get substituted during resource creation.
      * </pre>
      *
@@ -67,7 +67,7 @@ public final class ProjectDomainAttributesOuterClass {
     /**
      * <pre>
      * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-     * Map keys are the names of variables in templatized resource files.
+     * Map keys are the *case-sensitive* names of variables in templatized resource files.
      * Map values should be the custom values which get substituted during resource creation.
      * </pre>
      *
@@ -84,7 +84,7 @@ public final class ProjectDomainAttributesOuterClass {
     /**
      * <pre>
      * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-     * Map keys are the names of variables in templatized resource files.
+     * Map keys are the *case-sensitive* names of variables in templatized resource files.
      * Map values should be the custom values which get substituted during resource creation.
      * </pre>
      *
@@ -95,7 +95,7 @@ public final class ProjectDomainAttributesOuterClass {
     /**
      * <pre>
      * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-     * Map keys are the names of variables in templatized resource files.
+     * Map keys are the *case-sensitive* names of variables in templatized resource files.
      * Map values should be the custom values which get substituted during resource creation.
      * </pre>
      *
@@ -108,7 +108,7 @@ public final class ProjectDomainAttributesOuterClass {
     /**
      * <pre>
      * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-     * Map keys are the names of variables in templatized resource files.
+     * Map keys are the *case-sensitive* names of variables in templatized resource files.
      * Map values should be the custom values which get substituted during resource creation.
      * </pre>
      *
@@ -340,7 +340,7 @@ public final class ProjectDomainAttributesOuterClass {
     /**
      * <pre>
      * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-     * Map keys are the names of variables in templatized resource files.
+     * Map keys are the *case-sensitive* names of variables in templatized resource files.
      * Map values should be the custom values which get substituted during resource creation.
      * </pre>
      *
@@ -362,7 +362,7 @@ public final class ProjectDomainAttributesOuterClass {
     /**
      * <pre>
      * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-     * Map keys are the names of variables in templatized resource files.
+     * Map keys are the *case-sensitive* names of variables in templatized resource files.
      * Map values should be the custom values which get substituted during resource creation.
      * </pre>
      *
@@ -375,7 +375,7 @@ public final class ProjectDomainAttributesOuterClass {
     /**
      * <pre>
      * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-     * Map keys are the names of variables in templatized resource files.
+     * Map keys are the *case-sensitive* names of variables in templatized resource files.
      * Map values should be the custom values which get substituted during resource creation.
      * </pre>
      *
@@ -393,7 +393,7 @@ public final class ProjectDomainAttributesOuterClass {
     /**
      * <pre>
      * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-     * Map keys are the names of variables in templatized resource files.
+     * Map keys are the *case-sensitive* names of variables in templatized resource files.
      * Map values should be the custom values which get substituted during resource creation.
      * </pre>
      *
@@ -971,7 +971,7 @@ public final class ProjectDomainAttributesOuterClass {
       /**
        * <pre>
        * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-       * Map keys are the names of variables in templatized resource files.
+       * Map keys are the *case-sensitive* names of variables in templatized resource files.
        * Map values should be the custom values which get substituted during resource creation.
        * </pre>
        *
@@ -993,7 +993,7 @@ public final class ProjectDomainAttributesOuterClass {
       /**
        * <pre>
        * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-       * Map keys are the names of variables in templatized resource files.
+       * Map keys are the *case-sensitive* names of variables in templatized resource files.
        * Map values should be the custom values which get substituted during resource creation.
        * </pre>
        *
@@ -1006,7 +1006,7 @@ public final class ProjectDomainAttributesOuterClass {
       /**
        * <pre>
        * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-       * Map keys are the names of variables in templatized resource files.
+       * Map keys are the *case-sensitive* names of variables in templatized resource files.
        * Map values should be the custom values which get substituted during resource creation.
        * </pre>
        *
@@ -1024,7 +1024,7 @@ public final class ProjectDomainAttributesOuterClass {
       /**
        * <pre>
        * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-       * Map keys are the names of variables in templatized resource files.
+       * Map keys are the *case-sensitive* names of variables in templatized resource files.
        * Map values should be the custom values which get substituted during resource creation.
        * </pre>
        *
@@ -1050,7 +1050,7 @@ public final class ProjectDomainAttributesOuterClass {
       /**
        * <pre>
        * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-       * Map keys are the names of variables in templatized resource files.
+       * Map keys are the *case-sensitive* names of variables in templatized resource files.
        * Map values should be the custom values which get substituted during resource creation.
        * </pre>
        *
@@ -1075,7 +1075,7 @@ public final class ProjectDomainAttributesOuterClass {
       /**
        * <pre>
        * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-       * Map keys are the names of variables in templatized resource files.
+       * Map keys are the *case-sensitive* names of variables in templatized resource files.
        * Map values should be the custom values which get substituted during resource creation.
        * </pre>
        *
@@ -1093,7 +1093,7 @@ public final class ProjectDomainAttributesOuterClass {
       /**
        * <pre>
        * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-       * Map keys are the names of variables in templatized resource files.
+       * Map keys are the *case-sensitive* names of variables in templatized resource files.
        * Map values should be the custom values which get substituted during resource creation.
        * </pre>
        *

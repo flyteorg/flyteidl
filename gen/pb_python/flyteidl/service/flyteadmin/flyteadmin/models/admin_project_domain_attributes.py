@@ -107,7 +107,7 @@ class AdminProjectDomainAttributes(object):
     def attributes(self):
         """Gets the attributes of this AdminProjectDomainAttributes.  # noqa: E501
 
-        Custom resource attributes which will be applied in cluster resource creation (e.g. quotas). Map keys are the names of variables in templatized resource files. Map values should be the custom values which get substituted during resource creation.  # noqa: E501
+        Custom resource attributes which will be applied in cluster resource creation (e.g. quotas). Map keys are the *case-sensitive* names of variables in templatized resource files. Map values should be the custom values which get substituted during resource creation.  # noqa: E501
 
         :return: The attributes of this AdminProjectDomainAttributes.  # noqa: E501
         :rtype: dict(str, str)
@@ -118,7 +118,7 @@ class AdminProjectDomainAttributes(object):
     def attributes(self, attributes):
         """Sets the attributes of this AdminProjectDomainAttributes.
 
-        Custom resource attributes which will be applied in cluster resource creation (e.g. quotas). Map keys are the names of variables in templatized resource files. Map values should be the custom values which get substituted during resource creation.  # noqa: E501
+        Custom resource attributes which will be applied in cluster resource creation (e.g. quotas). Map keys are the *case-sensitive* names of variables in templatized resource files. Map values should be the custom values which get substituted during resource creation.  # noqa: E501
 
         :param attributes: The attributes of this AdminProjectDomainAttributes.  # noqa: E501
         :type: dict(str, str)

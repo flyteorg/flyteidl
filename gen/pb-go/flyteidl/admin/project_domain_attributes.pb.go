@@ -24,7 +24,7 @@ type ProjectDomainAttributes struct {
 	// Unique domain id for which this set of attributes will be applied.
 	Domain string `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`
 	// Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-	// Map keys are the names of variables in templatized resource files.
+	// Map keys are the *case-sensitive* names of variables in templatized resource files.
 	// Map values should be the custom values which get substituted during resource creation.
 	Attributes           map[string]string `protobuf:"bytes,3,rep,name=attributes,proto3" json:"attributes,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
@@ -36,7 +36,7 @@ func (m *ProjectDomainAttributes) Reset()         { *m = ProjectDomainAttributes
 func (m *ProjectDomainAttributes) String() string { return proto.CompactTextString(m) }
 func (*ProjectDomainAttributes) ProtoMessage()    {}
 func (*ProjectDomainAttributes) Descriptor() ([]byte, []int) {
-	return fileDescriptor_project_domain_attributes_271e37bf3dc2c330, []int{0}
+	return fileDescriptor_project_domain_attributes_756b5794db5b9aef, []int{0}
 }
 func (m *ProjectDomainAttributes) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ProjectDomainAttributes.Unmarshal(m, b)
@@ -89,7 +89,7 @@ func (m *ProjectDomainAttributesUpdateRequest) Reset()         { *m = ProjectDom
 func (m *ProjectDomainAttributesUpdateRequest) String() string { return proto.CompactTextString(m) }
 func (*ProjectDomainAttributesUpdateRequest) ProtoMessage()    {}
 func (*ProjectDomainAttributesUpdateRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_project_domain_attributes_271e37bf3dc2c330, []int{1}
+	return fileDescriptor_project_domain_attributes_756b5794db5b9aef, []int{1}
 }
 func (m *ProjectDomainAttributesUpdateRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ProjectDomainAttributesUpdateRequest.Unmarshal(m, b)
@@ -127,7 +127,7 @@ func (m *ProjectDomainAttributesUpdateResponse) Reset()         { *m = ProjectDo
 func (m *ProjectDomainAttributesUpdateResponse) String() string { return proto.CompactTextString(m) }
 func (*ProjectDomainAttributesUpdateResponse) ProtoMessage()    {}
 func (*ProjectDomainAttributesUpdateResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_project_domain_attributes_271e37bf3dc2c330, []int{2}
+	return fileDescriptor_project_domain_attributes_756b5794db5b9aef, []int{2}
 }
 func (m *ProjectDomainAttributesUpdateResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ProjectDomainAttributesUpdateResponse.Unmarshal(m, b)
@@ -155,10 +155,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("flyteidl/admin/project_domain_attributes.proto", fileDescriptor_project_domain_attributes_271e37bf3dc2c330)
+	proto.RegisterFile("flyteidl/admin/project_domain_attributes.proto", fileDescriptor_project_domain_attributes_756b5794db5b9aef)
 }
 
-var fileDescriptor_project_domain_attributes_271e37bf3dc2c330 = []byte{
+var fileDescriptor_project_domain_attributes_756b5794db5b9aef = []byte{
 	// 272 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xd2, 0x4b, 0xcb, 0xa9, 0x2c,
 	0x49, 0xcd, 0x4c, 0xc9, 0xd1, 0x4f, 0x4c, 0xc9, 0xcd, 0xcc, 0xd3, 0x2f, 0x28, 0xca, 0xcf, 0x4a,
