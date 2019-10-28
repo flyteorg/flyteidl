@@ -64,6 +64,14 @@ required = [
   name = "github.com/vektra/mockery"
   source = "github.com/enghabu/mockery"
 
+[[override]]
+  name = "k8s.io/apimachinery"
+  version = "kubernetes-1.16.2"
+
+[[override]]
+  name = "k8s.io/client-go"
+  version = "kubernetes-1.16.2"
+
 [prune]
   go-tests = true
   unused-packages = true
