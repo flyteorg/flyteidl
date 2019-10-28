@@ -333,6 +333,18 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:5e15985794371ee5a2d1572172fde32c9a77c5c64e45498325f68783c099d479"
+  name = "github.com/vektra/mockery"
+  packages = [
+    "cmd/mockery",
+    "mockery",
+  ]
+  pruneopts = "UT"
+  revision = "9d0c8670c2f01c1cd29137d8bbcd42ce038559a9"
+  source = "github.com/enghabu/mockery"
+
+[[projects]]
+  branch = "master"
   digest = "1:2ce67db9864088dee35dab5967f041d2b4ae1c7440dabb44542c1847933fd872"
   name = "golang.org/x/net"
   packages = [
@@ -399,6 +411,28 @@
   packages = ["rate"]
   pruneopts = "UT"
   revision = "555d28b269f0569763d25dbe1a237ae74c6bcc82"
+
+[[projects]]
+  branch = "master"
+  digest = "1:e8074db5811031e438301937752755e84de48028d254d69ed9e3bbe74f9d0c0f"
+  name = "golang.org/x/tools"
+  packages = [
+    "go/ast/astutil",
+    "go/gcexportdata",
+    "go/internal/gcimporter",
+    "go/internal/packagesdriver",
+    "go/packages",
+    "go/types/typeutil",
+    "imports",
+    "internal/fastwalk",
+    "internal/gopathwalk",
+    "internal/imports",
+    "internal/module",
+    "internal/semver",
+    "internal/span",
+  ]
+  pruneopts = "UT"
+  revision = "c8a4b8d038a61e6c6f8d867202e56091288b8016"
 
 [[projects]]
   digest = "1:e0a1881f9e0564bebdeac98c75e59f07acdde6ed3a5396e0e613eaad31194866"
@@ -569,6 +603,7 @@
     "github.com/spf13/pflag",
     "github.com/stretchr/testify/assert",
     "github.com/stretchr/testify/mock",
+    "github.com/vektra/mockery/cmd/mockery",
     "golang.org/x/net/context",
     "golang.org/x/oauth2",
     "golang.org/x/time/rate",
