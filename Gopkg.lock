@@ -149,8 +149,8 @@
   name = "github.com/influxdata/influxdb"
   packages = ["pkg/testing/assert"]
   pruneopts = "UT"
-  revision = "ff383cdc0420217e3460dabe17db54f8557d95b6"
-  version = "v1.7.8"
+  revision = "23bc63d43a8dc05f53afa46e3526ebb5578f3d88"
+  version = "v1.7.9"
 
 [[projects]]
   digest = "1:31e761d97c76151dde79e9d28964a812c46efc5baee4085b86f68f0c654450de"
@@ -358,7 +358,7 @@
     "trace",
   ]
   pruneopts = "UT"
-  revision = "ec77196f6094c3492a8b61f2c11cf937f78992ae"
+  revision = "fe3aa8a4527195a6057b3fad46619d7d090e99b5"
 
 [[projects]]
   branch = "master"
@@ -373,11 +373,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:3ad1c39b4423fda6dd2120d0ecc8a2eda3d26831c551871cfbb9860edd48e86f"
+  digest = "1:999c8e6b10ddb08bc4ea3a56d4e838194c4884eac6ecf90a9aa98ed8475fdf37"
   name = "golang.org/x/sys"
   packages = ["unix"]
   pruneopts = "UT"
-  revision = "b4ff53e7a1cb8ab8ce2e12d50d5d63530183e1a9"
+  revision = "195ce5e7f934b923d8fc432cf5a2561f2b334da9"
 
 [[projects]]
   digest = "1:8d8faad6b12a3a4c819a3f9618cb6ee1fa1cfc33253abeeea8b55336721e3405"
@@ -414,7 +414,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:e8074db5811031e438301937752755e84de48028d254d69ed9e3bbe74f9d0c0f"
+  digest = "1:634f91b94015dfcb7fe2ab475ee7d6d05bffb0a8ada81839e07a3a3b43067802"
   name = "golang.org/x/tools"
   packages = [
     "go/ast/astutil",
@@ -432,7 +432,7 @@
     "internal/span",
   ]
   pruneopts = "UT"
-  revision = "c8a4b8d038a61e6c6f8d867202e56091288b8016"
+  revision = "d78a1f2664a08ffcd20fbbc90d95df4fffa60547"
 
 [[projects]]
   digest = "1:e0a1881f9e0564bebdeac98c75e59f07acdde6ed3a5396e0e613eaad31194866"
@@ -461,7 +461,7 @@
     "protobuf/field_mask",
   ]
   pruneopts = "UT"
-  revision = "548a555dbc03994223efbaba0090152849259498"
+  revision = "919d9bdd9fe6f1a5dd95ce5d5e4cdb8fd3c516d0"
 
 [[projects]]
   digest = "1:6cd77d0b616d2dcebd363dfecba593f27b0151fc82cdb5fbfb96c5a7cfbc95b5"
@@ -527,7 +527,7 @@
   name = "k8s.io/api"
   packages = ["core/v1"]
   pruneopts = "UT"
-  revision = "4cb0a757333cba9f7fbbc75d3fd7e3382b9b90e0"
+  revision = "5524a3672fbb1d8e9528811576c859dbedffeed7"
 
 [[projects]]
   digest = "1:866ebdd22d88ef95b896119aebc1ff265806c56c7f0044978cde42d2461f5d5c"
@@ -604,7 +604,6 @@
     "github.com/stretchr/testify/assert",
     "github.com/stretchr/testify/mock",
     "github.com/vektra/mockery/cmd/mockery",
-    "golang.org/x/net/context",
     "golang.org/x/oauth2",
     "golang.org/x/time/rate",
     "google.golang.org/genproto/googleapis/api/annotations",
