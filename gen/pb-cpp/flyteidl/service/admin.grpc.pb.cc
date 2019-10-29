@@ -5,12 +5,15 @@
 #include "flyteidl/service/admin.pb.h"
 #include "flyteidl/service/admin.grpc.pb.h"
 
+#include <functional>
 #include <grpcpp/impl/codegen/async_stream.h>
 #include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
+#include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/method_handler_impl.h>
 #include <grpcpp/impl/codegen/rpc_service_method.h>
+#include <grpcpp/impl/codegen/server_callback.h>
 #include <grpcpp/impl/codegen/service_type.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
 namespace flyteidl {
@@ -50,6 +53,10 @@ static const char* AdminService_method_names[] = {
   "/flyteidl.service.AdminService/GetTaskExecution",
   "/flyteidl.service.AdminService/ListTaskExecutions",
   "/flyteidl.service.AdminService/GetTaskExecutionData",
+  "/flyteidl.service.AdminService/UpdateProjectDomainAttributes",
+  "/flyteidl.service.AdminService/ListNamedEntities",
+  "/flyteidl.service.AdminService/GetNamedEntity",
+  "/flyteidl.service.AdminService/UpdateNamedEntity",
 };
 
 std::unique_ptr< AdminService::Stub> AdminService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -92,10 +99,30 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   , rpcmethod_GetTaskExecution_(AdminService_method_names[30], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListTaskExecutions_(AdminService_method_names[31], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetTaskExecutionData_(AdminService_method_names[32], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateProjectDomainAttributes_(AdminService_method_names[33], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListNamedEntities_(AdminService_method_names[34], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetNamedEntity_(AdminService_method_names[35], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateNamedEntity_(AdminService_method_names[36], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status AdminService::Stub::CreateTask(::grpc::ClientContext* context, const ::flyteidl::admin::TaskCreateRequest& request, ::flyteidl::admin::TaskCreateResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateTask_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::CreateTask(::grpc::ClientContext* context, const ::flyteidl::admin::TaskCreateRequest* request, ::flyteidl::admin::TaskCreateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateTask_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::CreateTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::TaskCreateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateTask_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::CreateTask(::grpc::ClientContext* context, const ::flyteidl::admin::TaskCreateRequest* request, ::flyteidl::admin::TaskCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateTask_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::CreateTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::TaskCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateTask_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskCreateResponse>* AdminService::Stub::AsyncCreateTaskRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskCreateRequest& request, ::grpc::CompletionQueue* cq) {
@@ -110,6 +137,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetTask_, context, request, response);
 }
 
+void AdminService::Stub::experimental_async::GetTask(::grpc::ClientContext* context, const ::flyteidl::admin::ObjectGetRequest* request, ::flyteidl::admin::Task* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTask_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Task* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTask_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetTask(::grpc::ClientContext* context, const ::flyteidl::admin::ObjectGetRequest* request, ::flyteidl::admin::Task* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetTask_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::GetTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Task* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetTask_, context, request, response, reactor);
+}
+
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Task>* AdminService::Stub::AsyncGetTaskRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ObjectGetRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::Task>::Create(channel_.get(), cq, rpcmethod_GetTask_, context, request, true);
 }
@@ -120,6 +163,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
 
 ::grpc::Status AdminService::Stub::ListTaskIds(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityIdentifierListRequest& request, ::flyteidl::admin::NamedEntityIdentifierList* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListTaskIds_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::ListTaskIds(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityIdentifierListRequest* request, ::flyteidl::admin::NamedEntityIdentifierList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListTaskIds_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListTaskIds(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NamedEntityIdentifierList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListTaskIds_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListTaskIds(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityIdentifierListRequest* request, ::flyteidl::admin::NamedEntityIdentifierList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListTaskIds_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::ListTaskIds(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NamedEntityIdentifierList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListTaskIds_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NamedEntityIdentifierList>* AdminService::Stub::AsyncListTaskIdsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityIdentifierListRequest& request, ::grpc::CompletionQueue* cq) {
@@ -134,6 +193,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListTasks_, context, request, response);
 }
 
+void AdminService::Stub::experimental_async::ListTasks(::grpc::ClientContext* context, const ::flyteidl::admin::ResourceListRequest* request, ::flyteidl::admin::TaskList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListTasks_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListTasks(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::TaskList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListTasks_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListTasks(::grpc::ClientContext* context, const ::flyteidl::admin::ResourceListRequest* request, ::flyteidl::admin::TaskList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListTasks_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::ListTasks(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::TaskList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListTasks_, context, request, response, reactor);
+}
+
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskList>* AdminService::Stub::AsyncListTasksRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ResourceListRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::TaskList>::Create(channel_.get(), cq, rpcmethod_ListTasks_, context, request, true);
 }
@@ -144,6 +219,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
 
 ::grpc::Status AdminService::Stub::CreateWorkflow(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowCreateRequest& request, ::flyteidl::admin::WorkflowCreateResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateWorkflow_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::CreateWorkflow(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowCreateRequest* request, ::flyteidl::admin::WorkflowCreateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateWorkflow_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::CreateWorkflow(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::WorkflowCreateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateWorkflow_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::CreateWorkflow(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowCreateRequest* request, ::flyteidl::admin::WorkflowCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateWorkflow_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::CreateWorkflow(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::WorkflowCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateWorkflow_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::WorkflowCreateResponse>* AdminService::Stub::AsyncCreateWorkflowRaw(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowCreateRequest& request, ::grpc::CompletionQueue* cq) {
@@ -158,6 +249,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetWorkflow_, context, request, response);
 }
 
+void AdminService::Stub::experimental_async::GetWorkflow(::grpc::ClientContext* context, const ::flyteidl::admin::ObjectGetRequest* request, ::flyteidl::admin::Workflow* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetWorkflow_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetWorkflow(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Workflow* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetWorkflow_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetWorkflow(::grpc::ClientContext* context, const ::flyteidl::admin::ObjectGetRequest* request, ::flyteidl::admin::Workflow* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetWorkflow_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::GetWorkflow(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Workflow* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetWorkflow_, context, request, response, reactor);
+}
+
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Workflow>* AdminService::Stub::AsyncGetWorkflowRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ObjectGetRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::Workflow>::Create(channel_.get(), cq, rpcmethod_GetWorkflow_, context, request, true);
 }
@@ -168,6 +275,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
 
 ::grpc::Status AdminService::Stub::ListWorkflowIds(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityIdentifierListRequest& request, ::flyteidl::admin::NamedEntityIdentifierList* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListWorkflowIds_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::ListWorkflowIds(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityIdentifierListRequest* request, ::flyteidl::admin::NamedEntityIdentifierList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListWorkflowIds_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListWorkflowIds(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NamedEntityIdentifierList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListWorkflowIds_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListWorkflowIds(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityIdentifierListRequest* request, ::flyteidl::admin::NamedEntityIdentifierList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListWorkflowIds_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::ListWorkflowIds(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NamedEntityIdentifierList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListWorkflowIds_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NamedEntityIdentifierList>* AdminService::Stub::AsyncListWorkflowIdsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityIdentifierListRequest& request, ::grpc::CompletionQueue* cq) {
@@ -182,6 +305,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListWorkflows_, context, request, response);
 }
 
+void AdminService::Stub::experimental_async::ListWorkflows(::grpc::ClientContext* context, const ::flyteidl::admin::ResourceListRequest* request, ::flyteidl::admin::WorkflowList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListWorkflows_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListWorkflows(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::WorkflowList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListWorkflows_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListWorkflows(::grpc::ClientContext* context, const ::flyteidl::admin::ResourceListRequest* request, ::flyteidl::admin::WorkflowList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListWorkflows_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::ListWorkflows(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::WorkflowList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListWorkflows_, context, request, response, reactor);
+}
+
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::WorkflowList>* AdminService::Stub::AsyncListWorkflowsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ResourceListRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::WorkflowList>::Create(channel_.get(), cq, rpcmethod_ListWorkflows_, context, request, true);
 }
@@ -192,6 +331,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
 
 ::grpc::Status AdminService::Stub::CreateLaunchPlan(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanCreateRequest& request, ::flyteidl::admin::LaunchPlanCreateResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateLaunchPlan_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::CreateLaunchPlan(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanCreateRequest* request, ::flyteidl::admin::LaunchPlanCreateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateLaunchPlan_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::CreateLaunchPlan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::LaunchPlanCreateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateLaunchPlan_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::CreateLaunchPlan(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanCreateRequest* request, ::flyteidl::admin::LaunchPlanCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateLaunchPlan_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::CreateLaunchPlan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::LaunchPlanCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateLaunchPlan_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::LaunchPlanCreateResponse>* AdminService::Stub::AsyncCreateLaunchPlanRaw(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanCreateRequest& request, ::grpc::CompletionQueue* cq) {
@@ -206,6 +361,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetLaunchPlan_, context, request, response);
 }
 
+void AdminService::Stub::experimental_async::GetLaunchPlan(::grpc::ClientContext* context, const ::flyteidl::admin::ObjectGetRequest* request, ::flyteidl::admin::LaunchPlan* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetLaunchPlan_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetLaunchPlan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::LaunchPlan* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetLaunchPlan_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetLaunchPlan(::grpc::ClientContext* context, const ::flyteidl::admin::ObjectGetRequest* request, ::flyteidl::admin::LaunchPlan* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetLaunchPlan_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::GetLaunchPlan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::LaunchPlan* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetLaunchPlan_, context, request, response, reactor);
+}
+
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::LaunchPlan>* AdminService::Stub::AsyncGetLaunchPlanRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ObjectGetRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::LaunchPlan>::Create(channel_.get(), cq, rpcmethod_GetLaunchPlan_, context, request, true);
 }
@@ -216,6 +387,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
 
 ::grpc::Status AdminService::Stub::GetActiveLaunchPlan(::grpc::ClientContext* context, const ::flyteidl::admin::ActiveLaunchPlanRequest& request, ::flyteidl::admin::LaunchPlan* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetActiveLaunchPlan_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::GetActiveLaunchPlan(::grpc::ClientContext* context, const ::flyteidl::admin::ActiveLaunchPlanRequest* request, ::flyteidl::admin::LaunchPlan* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetActiveLaunchPlan_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetActiveLaunchPlan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::LaunchPlan* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetActiveLaunchPlan_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetActiveLaunchPlan(::grpc::ClientContext* context, const ::flyteidl::admin::ActiveLaunchPlanRequest* request, ::flyteidl::admin::LaunchPlan* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetActiveLaunchPlan_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::GetActiveLaunchPlan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::LaunchPlan* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetActiveLaunchPlan_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::LaunchPlan>* AdminService::Stub::AsyncGetActiveLaunchPlanRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ActiveLaunchPlanRequest& request, ::grpc::CompletionQueue* cq) {
@@ -230,6 +417,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListActiveLaunchPlans_, context, request, response);
 }
 
+void AdminService::Stub::experimental_async::ListActiveLaunchPlans(::grpc::ClientContext* context, const ::flyteidl::admin::ActiveLaunchPlanListRequest* request, ::flyteidl::admin::LaunchPlanList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListActiveLaunchPlans_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListActiveLaunchPlans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::LaunchPlanList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListActiveLaunchPlans_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListActiveLaunchPlans(::grpc::ClientContext* context, const ::flyteidl::admin::ActiveLaunchPlanListRequest* request, ::flyteidl::admin::LaunchPlanList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListActiveLaunchPlans_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::ListActiveLaunchPlans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::LaunchPlanList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListActiveLaunchPlans_, context, request, response, reactor);
+}
+
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::LaunchPlanList>* AdminService::Stub::AsyncListActiveLaunchPlansRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ActiveLaunchPlanListRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::LaunchPlanList>::Create(channel_.get(), cq, rpcmethod_ListActiveLaunchPlans_, context, request, true);
 }
@@ -240,6 +443,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
 
 ::grpc::Status AdminService::Stub::ListLaunchPlanIds(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityIdentifierListRequest& request, ::flyteidl::admin::NamedEntityIdentifierList* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListLaunchPlanIds_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::ListLaunchPlanIds(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityIdentifierListRequest* request, ::flyteidl::admin::NamedEntityIdentifierList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListLaunchPlanIds_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListLaunchPlanIds(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NamedEntityIdentifierList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListLaunchPlanIds_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListLaunchPlanIds(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityIdentifierListRequest* request, ::flyteidl::admin::NamedEntityIdentifierList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListLaunchPlanIds_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::ListLaunchPlanIds(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NamedEntityIdentifierList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListLaunchPlanIds_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NamedEntityIdentifierList>* AdminService::Stub::AsyncListLaunchPlanIdsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityIdentifierListRequest& request, ::grpc::CompletionQueue* cq) {
@@ -254,6 +473,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListLaunchPlans_, context, request, response);
 }
 
+void AdminService::Stub::experimental_async::ListLaunchPlans(::grpc::ClientContext* context, const ::flyteidl::admin::ResourceListRequest* request, ::flyteidl::admin::LaunchPlanList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListLaunchPlans_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListLaunchPlans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::LaunchPlanList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListLaunchPlans_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListLaunchPlans(::grpc::ClientContext* context, const ::flyteidl::admin::ResourceListRequest* request, ::flyteidl::admin::LaunchPlanList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListLaunchPlans_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::ListLaunchPlans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::LaunchPlanList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListLaunchPlans_, context, request, response, reactor);
+}
+
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::LaunchPlanList>* AdminService::Stub::AsyncListLaunchPlansRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ResourceListRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::LaunchPlanList>::Create(channel_.get(), cq, rpcmethod_ListLaunchPlans_, context, request, true);
 }
@@ -264,6 +499,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
 
 ::grpc::Status AdminService::Stub::UpdateLaunchPlan(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanUpdateRequest& request, ::flyteidl::admin::LaunchPlanUpdateResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateLaunchPlan_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::UpdateLaunchPlan(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanUpdateRequest* request, ::flyteidl::admin::LaunchPlanUpdateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateLaunchPlan_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::UpdateLaunchPlan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::LaunchPlanUpdateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateLaunchPlan_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::UpdateLaunchPlan(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanUpdateRequest* request, ::flyteidl::admin::LaunchPlanUpdateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateLaunchPlan_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::UpdateLaunchPlan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::LaunchPlanUpdateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateLaunchPlan_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::LaunchPlanUpdateResponse>* AdminService::Stub::AsyncUpdateLaunchPlanRaw(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanUpdateRequest& request, ::grpc::CompletionQueue* cq) {
@@ -278,6 +529,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateExecution_, context, request, response);
 }
 
+void AdminService::Stub::experimental_async::CreateExecution(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionCreateRequest* request, ::flyteidl::admin::ExecutionCreateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateExecution_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::CreateExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ExecutionCreateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateExecution_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::CreateExecution(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionCreateRequest* request, ::flyteidl::admin::ExecutionCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateExecution_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::CreateExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ExecutionCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateExecution_, context, request, response, reactor);
+}
+
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ExecutionCreateResponse>* AdminService::Stub::AsyncCreateExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionCreateRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::ExecutionCreateResponse>::Create(channel_.get(), cq, rpcmethod_CreateExecution_, context, request, true);
 }
@@ -288,6 +555,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
 
 ::grpc::Status AdminService::Stub::RelaunchExecution(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionRelaunchRequest& request, ::flyteidl::admin::ExecutionCreateResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_RelaunchExecution_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::RelaunchExecution(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionRelaunchRequest* request, ::flyteidl::admin::ExecutionCreateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RelaunchExecution_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::RelaunchExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ExecutionCreateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RelaunchExecution_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::RelaunchExecution(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionRelaunchRequest* request, ::flyteidl::admin::ExecutionCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RelaunchExecution_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::RelaunchExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ExecutionCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RelaunchExecution_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ExecutionCreateResponse>* AdminService::Stub::AsyncRelaunchExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionRelaunchRequest& request, ::grpc::CompletionQueue* cq) {
@@ -302,6 +585,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetExecution_, context, request, response);
 }
 
+void AdminService::Stub::experimental_async::GetExecution(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetRequest* request, ::flyteidl::admin::Execution* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetExecution_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Execution* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetExecution_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetExecution(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetRequest* request, ::flyteidl::admin::Execution* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetExecution_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::GetExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Execution* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetExecution_, context, request, response, reactor);
+}
+
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Execution>* AdminService::Stub::AsyncGetExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::Execution>::Create(channel_.get(), cq, rpcmethod_GetExecution_, context, request, true);
 }
@@ -312,6 +611,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
 
 ::grpc::Status AdminService::Stub::GetExecutionData(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetDataRequest& request, ::flyteidl::admin::WorkflowExecutionGetDataResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetExecutionData_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::GetExecutionData(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetDataRequest* request, ::flyteidl::admin::WorkflowExecutionGetDataResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetExecutionData_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetExecutionData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::WorkflowExecutionGetDataResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetExecutionData_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetExecutionData(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetDataRequest* request, ::flyteidl::admin::WorkflowExecutionGetDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetExecutionData_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::GetExecutionData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::WorkflowExecutionGetDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetExecutionData_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::WorkflowExecutionGetDataResponse>* AdminService::Stub::AsyncGetExecutionDataRaw(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetDataRequest& request, ::grpc::CompletionQueue* cq) {
@@ -326,6 +641,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListExecutions_, context, request, response);
 }
 
+void AdminService::Stub::experimental_async::ListExecutions(::grpc::ClientContext* context, const ::flyteidl::admin::ResourceListRequest* request, ::flyteidl::admin::ExecutionList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListExecutions_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListExecutions(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ExecutionList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListExecutions_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListExecutions(::grpc::ClientContext* context, const ::flyteidl::admin::ResourceListRequest* request, ::flyteidl::admin::ExecutionList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListExecutions_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::ListExecutions(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ExecutionList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListExecutions_, context, request, response, reactor);
+}
+
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ExecutionList>* AdminService::Stub::AsyncListExecutionsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ResourceListRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::ExecutionList>::Create(channel_.get(), cq, rpcmethod_ListExecutions_, context, request, true);
 }
@@ -336,6 +667,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
 
 ::grpc::Status AdminService::Stub::TerminateExecution(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionTerminateRequest& request, ::flyteidl::admin::ExecutionTerminateResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_TerminateExecution_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::TerminateExecution(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionTerminateRequest* request, ::flyteidl::admin::ExecutionTerminateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_TerminateExecution_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::TerminateExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ExecutionTerminateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_TerminateExecution_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::TerminateExecution(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionTerminateRequest* request, ::flyteidl::admin::ExecutionTerminateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_TerminateExecution_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::TerminateExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ExecutionTerminateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_TerminateExecution_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ExecutionTerminateResponse>* AdminService::Stub::AsyncTerminateExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ExecutionTerminateRequest& request, ::grpc::CompletionQueue* cq) {
@@ -350,6 +697,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetNodeExecution_, context, request, response);
 }
 
+void AdminService::Stub::experimental_async::GetNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetRequest* request, ::flyteidl::admin::NodeExecution* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetNodeExecution_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecution* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetNodeExecution_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetNodeExecution(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetRequest* request, ::flyteidl::admin::NodeExecution* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetNodeExecution_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::GetNodeExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecution* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetNodeExecution_, context, request, response, reactor);
+}
+
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecution>* AdminService::Stub::AsyncGetNodeExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::NodeExecution>::Create(channel_.get(), cq, rpcmethod_GetNodeExecution_, context, request, true);
 }
@@ -360,6 +723,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
 
 ::grpc::Status AdminService::Stub::ListNodeExecutions(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionListRequest& request, ::flyteidl::admin::NodeExecutionList* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListNodeExecutions_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::ListNodeExecutions(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionListRequest* request, ::flyteidl::admin::NodeExecutionList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListNodeExecutions_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListNodeExecutions(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListNodeExecutions_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListNodeExecutions(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionListRequest* request, ::flyteidl::admin::NodeExecutionList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListNodeExecutions_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::ListNodeExecutions(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListNodeExecutions_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionList>* AdminService::Stub::AsyncListNodeExecutionsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionListRequest& request, ::grpc::CompletionQueue* cq) {
@@ -374,6 +753,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListNodeExecutionsForTask_, context, request, response);
 }
 
+void AdminService::Stub::experimental_async::ListNodeExecutionsForTask(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionForTaskListRequest* request, ::flyteidl::admin::NodeExecutionList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListNodeExecutionsForTask_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListNodeExecutionsForTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListNodeExecutionsForTask_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListNodeExecutionsForTask(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionForTaskListRequest* request, ::flyteidl::admin::NodeExecutionList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListNodeExecutionsForTask_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::ListNodeExecutionsForTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListNodeExecutionsForTask_, context, request, response, reactor);
+}
+
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionList>* AdminService::Stub::AsyncListNodeExecutionsForTaskRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionForTaskListRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::NodeExecutionList>::Create(channel_.get(), cq, rpcmethod_ListNodeExecutionsForTask_, context, request, true);
 }
@@ -384,6 +779,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
 
 ::grpc::Status AdminService::Stub::GetNodeExecutionData(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetDataRequest& request, ::flyteidl::admin::NodeExecutionGetDataResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetNodeExecutionData_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::GetNodeExecutionData(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetDataRequest* request, ::flyteidl::admin::NodeExecutionGetDataResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetNodeExecutionData_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetNodeExecutionData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionGetDataResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetNodeExecutionData_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetNodeExecutionData(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetDataRequest* request, ::flyteidl::admin::NodeExecutionGetDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetNodeExecutionData_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::GetNodeExecutionData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionGetDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetNodeExecutionData_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionGetDataResponse>* AdminService::Stub::AsyncGetNodeExecutionDataRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetDataRequest& request, ::grpc::CompletionQueue* cq) {
@@ -398,6 +809,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_RegisterProject_, context, request, response);
 }
 
+void AdminService::Stub::experimental_async::RegisterProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectRegisterRequest* request, ::flyteidl::admin::ProjectRegisterResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RegisterProject_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::RegisterProject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ProjectRegisterResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RegisterProject_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::RegisterProject(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectRegisterRequest* request, ::flyteidl::admin::ProjectRegisterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RegisterProject_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::RegisterProject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ProjectRegisterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RegisterProject_, context, request, response, reactor);
+}
+
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectRegisterResponse>* AdminService::Stub::AsyncRegisterProjectRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectRegisterRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::ProjectRegisterResponse>::Create(channel_.get(), cq, rpcmethod_RegisterProject_, context, request, true);
 }
@@ -408,6 +835,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
 
 ::grpc::Status AdminService::Stub::ListProjects(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectListRequest& request, ::flyteidl::admin::Projects* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListProjects_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::ListProjects(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectListRequest* request, ::flyteidl::admin::Projects* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListProjects_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListProjects(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Projects* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListProjects_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListProjects(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectListRequest* request, ::flyteidl::admin::Projects* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListProjects_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::ListProjects(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Projects* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListProjects_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Projects>* AdminService::Stub::AsyncListProjectsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectListRequest& request, ::grpc::CompletionQueue* cq) {
@@ -422,6 +865,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateWorkflowEvent_, context, request, response);
 }
 
+void AdminService::Stub::experimental_async::CreateWorkflowEvent(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionEventRequest* request, ::flyteidl::admin::WorkflowExecutionEventResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateWorkflowEvent_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::CreateWorkflowEvent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::WorkflowExecutionEventResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateWorkflowEvent_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::CreateWorkflowEvent(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionEventRequest* request, ::flyteidl::admin::WorkflowExecutionEventResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateWorkflowEvent_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::CreateWorkflowEvent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::WorkflowExecutionEventResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateWorkflowEvent_, context, request, response, reactor);
+}
+
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::WorkflowExecutionEventResponse>* AdminService::Stub::AsyncCreateWorkflowEventRaw(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionEventRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::WorkflowExecutionEventResponse>::Create(channel_.get(), cq, rpcmethod_CreateWorkflowEvent_, context, request, true);
 }
@@ -432,6 +891,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
 
 ::grpc::Status AdminService::Stub::CreateNodeEvent(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionEventRequest& request, ::flyteidl::admin::NodeExecutionEventResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateNodeEvent_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::CreateNodeEvent(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionEventRequest* request, ::flyteidl::admin::NodeExecutionEventResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateNodeEvent_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::CreateNodeEvent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionEventResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateNodeEvent_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::CreateNodeEvent(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionEventRequest* request, ::flyteidl::admin::NodeExecutionEventResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateNodeEvent_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::CreateNodeEvent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionEventResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateNodeEvent_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionEventResponse>* AdminService::Stub::AsyncCreateNodeEventRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionEventRequest& request, ::grpc::CompletionQueue* cq) {
@@ -446,6 +921,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateTaskEvent_, context, request, response);
 }
 
+void AdminService::Stub::experimental_async::CreateTaskEvent(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionEventRequest* request, ::flyteidl::admin::TaskExecutionEventResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateTaskEvent_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::CreateTaskEvent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::TaskExecutionEventResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateTaskEvent_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::CreateTaskEvent(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionEventRequest* request, ::flyteidl::admin::TaskExecutionEventResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateTaskEvent_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::CreateTaskEvent(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::TaskExecutionEventResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateTaskEvent_, context, request, response, reactor);
+}
+
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskExecutionEventResponse>* AdminService::Stub::AsyncCreateTaskEventRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionEventRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::TaskExecutionEventResponse>::Create(channel_.get(), cq, rpcmethod_CreateTaskEvent_, context, request, true);
 }
@@ -456,6 +947,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
 
 ::grpc::Status AdminService::Stub::GetTaskExecution(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetRequest& request, ::flyteidl::admin::TaskExecution* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetTaskExecution_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::GetTaskExecution(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetRequest* request, ::flyteidl::admin::TaskExecution* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTaskExecution_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetTaskExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::TaskExecution* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTaskExecution_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetTaskExecution(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetRequest* request, ::flyteidl::admin::TaskExecution* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetTaskExecution_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::GetTaskExecution(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::TaskExecution* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetTaskExecution_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskExecution>* AdminService::Stub::AsyncGetTaskExecutionRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetRequest& request, ::grpc::CompletionQueue* cq) {
@@ -470,6 +977,22 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListTaskExecutions_, context, request, response);
 }
 
+void AdminService::Stub::experimental_async::ListTaskExecutions(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionListRequest* request, ::flyteidl::admin::TaskExecutionList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListTaskExecutions_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListTaskExecutions(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::TaskExecutionList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListTaskExecutions_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListTaskExecutions(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionListRequest* request, ::flyteidl::admin::TaskExecutionList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListTaskExecutions_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::ListTaskExecutions(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::TaskExecutionList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListTaskExecutions_, context, request, response, reactor);
+}
+
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskExecutionList>* AdminService::Stub::AsyncListTaskExecutionsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionListRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::TaskExecutionList>::Create(channel_.get(), cq, rpcmethod_ListTaskExecutions_, context, request, true);
 }
@@ -482,12 +1005,140 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetTaskExecutionData_, context, request, response);
 }
 
+void AdminService::Stub::experimental_async::GetTaskExecutionData(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetDataRequest* request, ::flyteidl::admin::TaskExecutionGetDataResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTaskExecutionData_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetTaskExecutionData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::TaskExecutionGetDataResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTaskExecutionData_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetTaskExecutionData(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetDataRequest* request, ::flyteidl::admin::TaskExecutionGetDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetTaskExecutionData_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::GetTaskExecutionData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::TaskExecutionGetDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetTaskExecutionData_, context, request, response, reactor);
+}
+
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskExecutionGetDataResponse>* AdminService::Stub::AsyncGetTaskExecutionDataRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetDataRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::TaskExecutionGetDataResponse>::Create(channel_.get(), cq, rpcmethod_GetTaskExecutionData_, context, request, true);
 }
 
 ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskExecutionGetDataResponse>* AdminService::Stub::PrepareAsyncGetTaskExecutionDataRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetDataRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::TaskExecutionGetDataResponse>::Create(channel_.get(), cq, rpcmethod_GetTaskExecutionData_, context, request, false);
+}
+
+::grpc::Status AdminService::Stub::UpdateProjectDomainAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest& request, ::flyteidl::admin::ProjectDomainAttributesUpdateResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateProjectDomainAttributes_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::UpdateProjectDomainAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest* request, ::flyteidl::admin::ProjectDomainAttributesUpdateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateProjectDomainAttributes_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::UpdateProjectDomainAttributes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ProjectDomainAttributesUpdateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateProjectDomainAttributes_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::UpdateProjectDomainAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest* request, ::flyteidl::admin::ProjectDomainAttributesUpdateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateProjectDomainAttributes_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::UpdateProjectDomainAttributes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ProjectDomainAttributesUpdateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateProjectDomainAttributes_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>* AdminService::Stub::AsyncUpdateProjectDomainAttributesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>::Create(channel_.get(), cq, rpcmethod_UpdateProjectDomainAttributes_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>* AdminService::Stub::PrepareAsyncUpdateProjectDomainAttributesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>::Create(channel_.get(), cq, rpcmethod_UpdateProjectDomainAttributes_, context, request, false);
+}
+
+::grpc::Status AdminService::Stub::ListNamedEntities(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityListRequest& request, ::flyteidl::admin::NamedEntityList* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListNamedEntities_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::ListNamedEntities(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityListRequest* request, ::flyteidl::admin::NamedEntityList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListNamedEntities_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListNamedEntities(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NamedEntityList* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListNamedEntities_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::ListNamedEntities(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityListRequest* request, ::flyteidl::admin::NamedEntityList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListNamedEntities_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::ListNamedEntities(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NamedEntityList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListNamedEntities_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NamedEntityList>* AdminService::Stub::AsyncListNamedEntitiesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityListRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::NamedEntityList>::Create(channel_.get(), cq, rpcmethod_ListNamedEntities_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NamedEntityList>* AdminService::Stub::PrepareAsyncListNamedEntitiesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityListRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::NamedEntityList>::Create(channel_.get(), cq, rpcmethod_ListNamedEntities_, context, request, false);
+}
+
+::grpc::Status AdminService::Stub::GetNamedEntity(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityGetRequest& request, ::flyteidl::admin::NamedEntity* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetNamedEntity_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::GetNamedEntity(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityGetRequest* request, ::flyteidl::admin::NamedEntity* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetNamedEntity_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetNamedEntity(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NamedEntity* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetNamedEntity_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetNamedEntity(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityGetRequest* request, ::flyteidl::admin::NamedEntity* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetNamedEntity_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::GetNamedEntity(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NamedEntity* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetNamedEntity_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NamedEntity>* AdminService::Stub::AsyncGetNamedEntityRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityGetRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::NamedEntity>::Create(channel_.get(), cq, rpcmethod_GetNamedEntity_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NamedEntity>* AdminService::Stub::PrepareAsyncGetNamedEntityRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityGetRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::NamedEntity>::Create(channel_.get(), cq, rpcmethod_GetNamedEntity_, context, request, false);
+}
+
+::grpc::Status AdminService::Stub::UpdateNamedEntity(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityUpdateRequest& request, ::flyteidl::admin::NamedEntityUpdateResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateNamedEntity_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::UpdateNamedEntity(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityUpdateRequest* request, ::flyteidl::admin::NamedEntityUpdateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateNamedEntity_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::UpdateNamedEntity(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NamedEntityUpdateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateNamedEntity_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::UpdateNamedEntity(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityUpdateRequest* request, ::flyteidl::admin::NamedEntityUpdateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateNamedEntity_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::UpdateNamedEntity(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NamedEntityUpdateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateNamedEntity_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NamedEntityUpdateResponse>* AdminService::Stub::AsyncUpdateNamedEntityRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::NamedEntityUpdateResponse>::Create(channel_.get(), cq, rpcmethod_UpdateNamedEntity_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NamedEntityUpdateResponse>* AdminService::Stub::PrepareAsyncUpdateNamedEntityRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::NamedEntityUpdateResponse>::Create(channel_.get(), cq, rpcmethod_UpdateNamedEntity_, context, request, false);
 }
 
 AdminService::Service::Service() {
@@ -656,6 +1307,26 @@ AdminService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::TaskExecutionGetDataRequest, ::flyteidl::admin::TaskExecutionGetDataResponse>(
           std::mem_fn(&AdminService::Service::GetTaskExecutionData), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AdminService_method_names[33],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::ProjectDomainAttributesUpdateRequest, ::flyteidl::admin::ProjectDomainAttributesUpdateResponse>(
+          std::mem_fn(&AdminService::Service::UpdateProjectDomainAttributes), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AdminService_method_names[34],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::NamedEntityListRequest, ::flyteidl::admin::NamedEntityList>(
+          std::mem_fn(&AdminService::Service::ListNamedEntities), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AdminService_method_names[35],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::NamedEntityGetRequest, ::flyteidl::admin::NamedEntity>(
+          std::mem_fn(&AdminService::Service::GetNamedEntity), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AdminService_method_names[36],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::NamedEntityUpdateRequest, ::flyteidl::admin::NamedEntityUpdateResponse>(
+          std::mem_fn(&AdminService::Service::UpdateNamedEntity), this)));
 }
 
 AdminService::Service::~Service() {
@@ -886,6 +1557,34 @@ AdminService::Service::~Service() {
 }
 
 ::grpc::Status AdminService::Service::GetTaskExecutionData(::grpc::ServerContext* context, const ::flyteidl::admin::TaskExecutionGetDataRequest* request, ::flyteidl::admin::TaskExecutionGetDataResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AdminService::Service::UpdateProjectDomainAttributes(::grpc::ServerContext* context, const ::flyteidl::admin::ProjectDomainAttributesUpdateRequest* request, ::flyteidl::admin::ProjectDomainAttributesUpdateResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AdminService::Service::ListNamedEntities(::grpc::ServerContext* context, const ::flyteidl::admin::NamedEntityListRequest* request, ::flyteidl::admin::NamedEntityList* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AdminService::Service::GetNamedEntity(::grpc::ServerContext* context, const ::flyteidl::admin::NamedEntityGetRequest* request, ::flyteidl::admin::NamedEntity* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AdminService::Service::UpdateNamedEntity(::grpc::ServerContext* context, const ::flyteidl::admin::NamedEntityUpdateRequest* request, ::flyteidl::admin::NamedEntityUpdateResponse* response) {
   (void) context;
   (void) request;
   (void) response;

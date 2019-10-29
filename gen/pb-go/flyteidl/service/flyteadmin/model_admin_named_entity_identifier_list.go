@@ -9,7 +9,7 @@
 
 package flyteadmin
 
-// Represents a list of Identifiers.
+// Represents a list of NamedEntityIdentifiers.
 type AdminNamedEntityIdentifierList struct {
 	// A list of identifiers.
 	Entities []AdminNamedEntityIdentifier `json:"entities,omitempty"`
