@@ -194,6 +194,21 @@ class AdminServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_project__domain__attributes__pb2.ProjectDomainAttributesUpdateRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_project__domain__attributes__pb2.ProjectDomainAttributesUpdateResponse.FromString,
         )
+    self.ListNamedEntities = channel.unary_unary(
+        '/flyteidl.service.AdminService/ListNamedEntities',
+        request_serializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityListRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityList.FromString,
+        )
+    self.GetNamedEntity = channel.unary_unary(
+        '/flyteidl.service.AdminService/GetNamedEntity',
+        request_serializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityGetRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_common__pb2.NamedEntity.FromString,
+        )
+    self.UpdateNamedEntity = channel.unary_unary(
+        '/flyteidl.service.AdminService/UpdateNamedEntity',
+        request_serializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityUpdateRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityUpdateResponse.FromString,
+        )
 
 
 class AdminServiceServicer(object):
@@ -439,6 +454,27 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListNamedEntities(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetNamedEntity(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def UpdateNamedEntity(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_AdminServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -611,6 +647,21 @@ def add_AdminServiceServicer_to_server(servicer, server):
           servicer.UpdateProjectDomainAttributes,
           request_deserializer=flyteidl_dot_admin_dot_project__domain__attributes__pb2.ProjectDomainAttributesUpdateRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_project__domain__attributes__pb2.ProjectDomainAttributesUpdateResponse.SerializeToString,
+      ),
+      'ListNamedEntities': grpc.unary_unary_rpc_method_handler(
+          servicer.ListNamedEntities,
+          request_deserializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityListRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityList.SerializeToString,
+      ),
+      'GetNamedEntity': grpc.unary_unary_rpc_method_handler(
+          servicer.GetNamedEntity,
+          request_deserializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityGetRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_common__pb2.NamedEntity.SerializeToString,
+      ),
+      'UpdateNamedEntity': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateNamedEntity,
+          request_deserializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityUpdateRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_common__pb2.NamedEntityUpdateResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

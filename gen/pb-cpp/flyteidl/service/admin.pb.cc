@@ -48,7 +48,7 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fadmin_2eproto[] =
   "dmin/node_execution.proto\032#flyteidl/admi"
   "n/task_execution.proto\032\033flyteidl/admin/c"
   "ommon.proto\032,protoc-gen-swagger/options/"
-  "annotations.proto2\272K\n\014AdminService\022\305\002\n\nC"
+  "annotations.proto2\200Q\n\014AdminService\022\305\002\n\nC"
   "reateTask\022!.flyteidl.admin.TaskCreateReq"
   "uest\032\".flyteidl.admin.TaskCreateResponse"
   "\"\357\001\202\323\344\223\002\022\"\r/api/v1/tasks:\001*\222A\323\001\032&Create "
@@ -289,14 +289,32 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fadmin_2eproto[] =
   "oject_domain_attributes/{attributes.proj"
   "ect}/{attributes.domain}:\001*\222AX\032VUpdate t"
   "he customized resource attributes associ"
-  "ated with a project-domain combinationB5"
-  "Z3github.com/lyft/flyteidl/gen/pb-go/fly"
-  "teidl/serviceb\006proto3"
+  "ated with a project-domain combination\022\200"
+  "\002\n\021ListNamedEntities\022&.flyteidl.admin.Na"
+  "medEntityListRequest\032\037.flyteidl.admin.Na"
+  "medEntityList\"\241\001\202\323\344\223\002;\0229/api/v1/named_en"
+  "tities/{resource_type}/{project}/{domain"
+  "}\222A]\032[Retrieve a list of NamedEntity obj"
+  "ects sharing a common resource type, pro"
+  "ject, and domain.\022\312\001\n\016GetNamedEntity\022%.f"
+  "lyteidl.admin.NamedEntityGetRequest\032\033.fl"
+  "yteidl.admin.NamedEntity\"t\202\323\344\223\002K\022I/api/v"
+  "1/named_entities/{resource_type}/{id.pro"
+  "ject}/{id.domain}/{id.name}\222A \032\036Retrieve"
+  " a NamedEntity object.\022\363\001\n\021UpdateNamedEn"
+  "tity\022(.flyteidl.admin.NamedEntityUpdateR"
+  "equest\032).flyteidl.admin.NamedEntityUpdat"
+  "eResponse\"\210\001\202\323\344\223\002N\032I/api/v1/named_entiti"
+  "es/{resource_type}/{id.project}/{id.doma"
+  "in}/{id.name}:\001*\222A1\032/Update the fields a"
+  "ssociated with a NamedEntityB5Z3github.c"
+  "om/lyft/flyteidl/gen/pb-go/flyteidl/serv"
+  "iceb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fservice_2fadmin_2eproto = {
   false, InitDefaults_flyteidl_2fservice_2fadmin_2eproto, 
   descriptor_table_protodef_flyteidl_2fservice_2fadmin_2eproto,
-  "flyteidl/service/admin.proto", &assign_descriptors_table_flyteidl_2fservice_2fadmin_2eproto, 10181,
+  "flyteidl/service/admin.proto", &assign_descriptors_table_flyteidl_2fservice_2fadmin_2eproto, 10891,
 };
 
 void AddDescriptors_flyteidl_2fservice_2fadmin_2eproto() {
