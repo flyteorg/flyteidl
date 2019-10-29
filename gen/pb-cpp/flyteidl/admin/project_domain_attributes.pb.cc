@@ -6,52 +6,41 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
-#include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
 #include <google/protobuf/wire_format_lite_inl.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
 // @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ProjectDomainAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ProjectDomainAttributes_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto;
 namespace flyteidl {
 namespace admin {
 class ProjectDomainAttributes_AttributesEntry_DoNotUseDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ProjectDomainAttributes_AttributesEntry_DoNotUse>
-      _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<ProjectDomainAttributes_AttributesEntry_DoNotUse> _instance;
 } _ProjectDomainAttributes_AttributesEntry_DoNotUse_default_instance_;
 class ProjectDomainAttributesDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ProjectDomainAttributes>
-      _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<ProjectDomainAttributes> _instance;
 } _ProjectDomainAttributes_default_instance_;
 class ProjectDomainAttributesUpdateRequestDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ProjectDomainAttributesUpdateRequest>
-      _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<ProjectDomainAttributesUpdateRequest> _instance;
 } _ProjectDomainAttributesUpdateRequest_default_instance_;
 class ProjectDomainAttributesUpdateResponseDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ProjectDomainAttributesUpdateResponse>
-      _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<ProjectDomainAttributesUpdateResponse> _instance;
 } _ProjectDomainAttributesUpdateResponse_default_instance_;
 }  // namespace admin
 }  // namespace flyteidl
-namespace protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto {
-void InitDefaultsProjectDomainAttributes_AttributesEntry_DoNotUseImpl() {
+static void InitDefaultsProjectDomainAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
   {
     void* ptr = &::flyteidl::admin::_ProjectDomainAttributes_AttributesEntry_DoNotUse_default_instance_;
     new (ptr) ::flyteidl::admin::ProjectDomainAttributes_AttributesEntry_DoNotUse();
@@ -59,20 +48,12 @@ void InitDefaultsProjectDomainAttributes_AttributesEntry_DoNotUseImpl() {
   ::flyteidl::admin::ProjectDomainAttributes_AttributesEntry_DoNotUse::InitAsDefaultInstance();
 }
 
-void InitDefaultsProjectDomainAttributes_AttributesEntry_DoNotUse() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsProjectDomainAttributes_AttributesEntry_DoNotUseImpl);
-}
+::google::protobuf::internal::SCCInfo<0> scc_info_ProjectDomainAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsProjectDomainAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto}, {}};
 
-void InitDefaultsProjectDomainAttributesImpl() {
+static void InitDefaultsProjectDomainAttributes_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::InitDefaultsProjectDomainAttributes_AttributesEntry_DoNotUse();
   {
     void* ptr = &::flyteidl::admin::_ProjectDomainAttributes_default_instance_;
     new (ptr) ::flyteidl::admin::ProjectDomainAttributes();
@@ -81,20 +62,13 @@ void InitDefaultsProjectDomainAttributesImpl() {
   ::flyteidl::admin::ProjectDomainAttributes::InitAsDefaultInstance();
 }
 
-void InitDefaultsProjectDomainAttributes() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsProjectDomainAttributesImpl);
-}
+::google::protobuf::internal::SCCInfo<1> scc_info_ProjectDomainAttributes_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsProjectDomainAttributes_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto}, {
+      &scc_info_ProjectDomainAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto.base,}};
 
-void InitDefaultsProjectDomainAttributesUpdateRequestImpl() {
+static void InitDefaultsProjectDomainAttributesUpdateRequest_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::InitDefaultsProjectDomainAttributes();
   {
     void* ptr = &::flyteidl::admin::_ProjectDomainAttributesUpdateRequest_default_instance_;
     new (ptr) ::flyteidl::admin::ProjectDomainAttributesUpdateRequest();
@@ -103,19 +77,13 @@ void InitDefaultsProjectDomainAttributesUpdateRequestImpl() {
   ::flyteidl::admin::ProjectDomainAttributesUpdateRequest::InitAsDefaultInstance();
 }
 
-void InitDefaultsProjectDomainAttributesUpdateRequest() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsProjectDomainAttributesUpdateRequestImpl);
-}
+::google::protobuf::internal::SCCInfo<1> scc_info_ProjectDomainAttributesUpdateRequest_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsProjectDomainAttributesUpdateRequest_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto}, {
+      &scc_info_ProjectDomainAttributes_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto.base,}};
 
-void InitDefaultsProjectDomainAttributesUpdateResponseImpl() {
+static void InitDefaultsProjectDomainAttributesUpdateResponse_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
   {
     void* ptr = &::flyteidl::admin::_ProjectDomainAttributesUpdateResponse_default_instance_;
     new (ptr) ::flyteidl::admin::ProjectDomainAttributesUpdateResponse();
@@ -124,44 +92,51 @@ void InitDefaultsProjectDomainAttributesUpdateResponseImpl() {
   ::flyteidl::admin::ProjectDomainAttributesUpdateResponse::InitAsDefaultInstance();
 }
 
-void InitDefaultsProjectDomainAttributesUpdateResponse() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsProjectDomainAttributesUpdateResponseImpl);
+::google::protobuf::internal::SCCInfo<0> scc_info_ProjectDomainAttributesUpdateResponse_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsProjectDomainAttributesUpdateResponse_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto}, {}};
+
+void InitDefaults_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto() {
+  ::google::protobuf::internal::InitSCC(&scc_info_ProjectDomainAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_ProjectDomainAttributes_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_ProjectDomainAttributesUpdateRequest_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_ProjectDomainAttributesUpdateResponse_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[4];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto[4];
+constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto = nullptr;
+constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto = nullptr;
 
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes_AttributesEntry_DoNotUse, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes_AttributesEntry_DoNotUse, _internal_metadata_),
+const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes_AttributesEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes_AttributesEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes_AttributesEntry_DoNotUse, key_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes_AttributesEntry_DoNotUse, value_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes_AttributesEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes_AttributesEntry_DoNotUse, value_),
   0,
   1,
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes, project_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes, domain_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes, attributes_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes, project_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes, domain_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes, attributes_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributesUpdateRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributesUpdateRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributesUpdateRequest, attributes_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributesUpdateRequest, attributes_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributesUpdateResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributesUpdateResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 7, sizeof(::flyteidl::admin::ProjectDomainAttributes_AttributesEntry_DoNotUse)},
   { 9, -1, sizeof(::flyteidl::admin::ProjectDomainAttributes)},
   { 17, -1, sizeof(::flyteidl::admin::ProjectDomainAttributesUpdateRequest)},
@@ -175,82 +150,93 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ProjectDomainAttributesUpdateResponse_default_instance_),
 };
 
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  ::google::protobuf::MessageFactory* factory = NULL;
-  AssignDescriptors(
-      "flyteidl/admin/project_domain_attributes.proto", schemas, file_default_instances, TableStruct::offsets, factory,
-      file_level_metadata, NULL, NULL);
-}
+::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto = {
+  {}, AddDescriptors_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto, "flyteidl/admin/project_domain_attributes.proto", schemas,
+  file_default_instances, TableStruct_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::offsets,
+  file_level_metadata_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto, 4, file_level_enum_descriptors_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto, file_level_service_descriptors_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto,
+};
 
-void protobuf_AssignDescriptorsOnce() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &protobuf_AssignDescriptors);
-}
+const char descriptor_table_protodef_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto[] =
+  "\n.flyteidl/admin/project_domain_attribut"
+  "es.proto\022\016flyteidl.admin\"\272\001\n\027ProjectDoma"
+  "inAttributes\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030"
+  "\002 \001(\t\022K\n\nattributes\030\003 \003(\01327.flyteidl.adm"
+  "in.ProjectDomainAttributes.AttributesEnt"
+  "ry\0321\n\017AttributesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
+  "lue\030\002 \001(\t:\0028\001\"c\n$ProjectDomainAttributes"
+  "UpdateRequest\022;\n\nattributes\030\001 \001(\0132\'.flyt"
+  "eidl.admin.ProjectDomainAttributes\"\'\n%Pr"
+  "ojectDomainAttributesUpdateResponseB3Z1g"
+  "ithub.com/lyft/flyteidl/gen/pb-go/flytei"
+  "dl/adminb\006proto3"
+  ;
+::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto = {
+  false, InitDefaults_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto, 
+  descriptor_table_protodef_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto,
+  "flyteidl/admin/project_domain_attributes.proto", &assign_descriptors_table_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto, 456,
+};
 
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 4);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n.flyteidl/admin/project_domain_attribut"
-      "es.proto\022\016flyteidl.admin\"\272\001\n\027ProjectDoma"
-      "inAttributes\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030"
-      "\002 \001(\t\022K\n\nattributes\030\003 \003(\01327.flyteidl.adm"
-      "in.ProjectDomainAttributes.AttributesEnt"
-      "ry\0321\n\017AttributesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
-      "lue\030\002 \001(\t:\0028\001\"c\n$ProjectDomainAttributes"
-      "UpdateRequest\022;\n\nattributes\030\001 \001(\0132\'.flyt"
-      "eidl.admin.ProjectDomainAttributes\"\'\n%Pr"
-      "ojectDomainAttributesUpdateResponseB3Z1g"
-      "ithub.com/lyft/flyteidl/gen/pb-go/flytei"
-      "dl/adminb\006proto3"
+void AddDescriptors_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto() {
+  static constexpr ::google::protobuf::internal::InitFunc deps[1] =
+  {
   };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 456);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "flyteidl/admin/project_domain_attributes.proto", &protobuf_RegisterTypes);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto, deps, 0);
 }
 
-void AddDescriptors() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &AddDescriptorsImpl);
-}
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+static bool dynamic_init_dummy_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto = []() { AddDescriptors_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto(); return true; }();
 namespace flyteidl {
 namespace admin {
 
 // ===================================================================
 
 ProjectDomainAttributes_AttributesEntry_DoNotUse::ProjectDomainAttributes_AttributesEntry_DoNotUse() {}
-ProjectDomainAttributes_AttributesEntry_DoNotUse::ProjectDomainAttributes_AttributesEntry_DoNotUse(::google::protobuf::Arena* arena) : SuperType(arena) {}
+ProjectDomainAttributes_AttributesEntry_DoNotUse::ProjectDomainAttributes_AttributesEntry_DoNotUse(::google::protobuf::Arena* arena)
+    : SuperType(arena) {}
 void ProjectDomainAttributes_AttributesEntry_DoNotUse::MergeFrom(const ProjectDomainAttributes_AttributesEntry_DoNotUse& other) {
   MergeFromInternal(other);
 }
 ::google::protobuf::Metadata ProjectDomainAttributes_AttributesEntry_DoNotUse::GetMetadata() const {
-  ::protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::file_level_metadata[0];
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto);
+  return ::file_level_metadata_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto[0];
 }
 void ProjectDomainAttributes_AttributesEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
   ::google::protobuf::Message::MergeFrom(other);
 }
 
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool ProjectDomainAttributes_AttributesEntry_DoNotUse::_ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx) {
+  using MF = ::google::protobuf::internal::MapField<
+      ProjectDomainAttributes_AttributesEntry_DoNotUse, EntryKeyType, EntryValueType,
+      kEntryKeyFieldType, kEntryValueFieldType,
+      kEntryDefaultEnumValue>;
+  auto mf = static_cast<MF*>(object);
+  Parser<MF, ::google::protobuf::Map<EntryKeyType, EntryValueType>> parser(mf);
+#define DO_(x) if (!(x)) return false
+  DO_(parser.ParseMap(begin, end));
+  DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+    parser.key().data(), static_cast<int>(parser.key().length()),
+    ::google::protobuf::internal::WireFormatLite::PARSE,
+    "flyteidl.admin.ProjectDomainAttributes.AttributesEntry.key"));
+  DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+    parser.value().data(), static_cast<int>(parser.value().length()),
+    ::google::protobuf::internal::WireFormatLite::PARSE,
+    "flyteidl.admin.ProjectDomainAttributes.AttributesEntry.value"));
+#undef DO_
+  return true;
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
 
 // ===================================================================
 
 void ProjectDomainAttributes::InitAsDefaultInstance() {
 }
+class ProjectDomainAttributes::HasBitSetters {
+ public:
+};
+
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ProjectDomainAttributes::kProjectFieldNumber;
 const int ProjectDomainAttributes::kDomainFieldNumber;
@@ -258,17 +244,13 @@ const int ProjectDomainAttributes::kAttributesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ProjectDomainAttributes::ProjectDomainAttributes()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    ::protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::InitDefaultsProjectDomainAttributes();
-  }
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:flyteidl.admin.ProjectDomainAttributes)
 }
 ProjectDomainAttributes::ProjectDomainAttributes(const ProjectDomainAttributes& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _cached_size_(0) {
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   attributes_.MergeFrom(from.attributes_);
   project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -283,9 +265,10 @@ ProjectDomainAttributes::ProjectDomainAttributes(const ProjectDomainAttributes& 
 }
 
 void ProjectDomainAttributes::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_ProjectDomainAttributes_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto.base);
   project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  _cached_size_ = 0;
 }
 
 ProjectDomainAttributes::~ProjectDomainAttributes() {
@@ -299,27 +282,13 @@ void ProjectDomainAttributes::SharedDtor() {
 }
 
 void ProjectDomainAttributes::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* ProjectDomainAttributes::descriptor() {
-  ::protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const ProjectDomainAttributes& ProjectDomainAttributes::default_instance() {
-  ::protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::InitDefaultsProjectDomainAttributes();
+  ::google::protobuf::internal::InitSCC(&::scc_info_ProjectDomainAttributes_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto.base);
   return *internal_default_instance();
 }
 
-ProjectDomainAttributes* ProjectDomainAttributes::New(::google::protobuf::Arena* arena) const {
-  ProjectDomainAttributes* n = new ProjectDomainAttributes;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
 
 void ProjectDomainAttributes::Clear() {
 // @@protoc_insertion_point(message_clear_start:flyteidl.admin.ProjectDomainAttributes)
@@ -333,20 +302,107 @@ void ProjectDomainAttributes::Clear() {
   _internal_metadata_.Clear();
 }
 
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* ProjectDomainAttributes::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<ProjectDomainAttributes*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // string project = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.ProjectDomainAttributes.project");
+        object = msg->mutable_project();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // string domain = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.ProjectDomainAttributes.domain");
+        object = msg->mutable_domain();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // map<string, string> attributes = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        do {
+          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          parser_till_end = ::google::protobuf::internal::SlowMapEntryParser;
+          auto parse_map = ::flyteidl::admin::ProjectDomainAttributes_AttributesEntry_DoNotUse::_ParseMap;
+          ctx->extra_parse_data().payload.clear();
+          ctx->extra_parse_data().parse_map = parse_map;
+          object = &msg->attributes_;
+          if (size > end - ptr) goto len_delim_till_end;
+          auto newend = ptr + size;
+          GOOGLE_PROTOBUF_PARSER_ASSERT(parse_map(ptr, newend, object, ctx));
+          ptr = newend;
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 26 && (ptr += 1));
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool ProjectDomainAttributes::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:flyteidl.admin.ProjectDomainAttributes)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // string project = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_project()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -361,8 +417,7 @@ bool ProjectDomainAttributes::MergePartialFromCodedStream(
 
       // string domain = 2;
       case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_domain()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -377,8 +432,7 @@ bool ProjectDomainAttributes::MergePartialFromCodedStream(
 
       // map<string, string> attributes = 3;
       case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
           ProjectDomainAttributes_AttributesEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
               ProjectDomainAttributes_AttributesEntry_DoNotUse,
               ::std::string, ::std::string,
@@ -421,6 +475,7 @@ failure:
   return false;
 #undef DO_
 }
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void ProjectDomainAttributes::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
@@ -469,7 +524,7 @@ void ProjectDomainAttributes::SerializeWithCachedSizes(
 
     if (output->IsSerializationDeterministic() &&
         this->attributes().size() > 1) {
-      ::google::protobuf::scoped_array<SortItem> items(
+      ::std::unique_ptr<SortItem[]> items(
           new SortItem[this->attributes().size()]);
       typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
       size_type n = 0;
@@ -479,38 +534,33 @@ void ProjectDomainAttributes::SerializeWithCachedSizes(
         items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
       ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::google::protobuf::scoped_ptr<ProjectDomainAttributes_AttributesEntry_DoNotUse> entry;
+      ::std::unique_ptr<ProjectDomainAttributes_AttributesEntry_DoNotUse> entry;
       for (size_type i = 0; i < n; i++) {
-        entry.reset(attributes_.NewEntryWrapper(
-            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-            3, *entry, output);
-        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
+        entry.reset(attributes_.NewEntryWrapper(items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
+        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(3, *entry, output);
+        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
       }
     } else {
-      ::google::protobuf::scoped_ptr<ProjectDomainAttributes_AttributesEntry_DoNotUse> entry;
+      ::std::unique_ptr<ProjectDomainAttributes_AttributesEntry_DoNotUse> entry;
       for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
           it = this->attributes().begin();
           it != this->attributes().end(); ++it) {
-        entry.reset(attributes_.NewEntryWrapper(
-            it->first, it->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-            3, *entry, output);
-        Utf8Check::Check(&*it);
+        entry.reset(attributes_.NewEntryWrapper(it->first, it->second));
+        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(3, *entry, output);
+        Utf8Check::Check(&(*it));
       }
     }
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+        _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:flyteidl.admin.ProjectDomainAttributes)
 }
 
 ::google::protobuf::uint8* ProjectDomainAttributes::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+    ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.ProjectDomainAttributes)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
@@ -556,9 +606,9 @@ void ProjectDomainAttributes::SerializeWithCachedSizes(
       }
     };
 
-    if (deterministic &&
+    if (false &&
         this->attributes().size() > 1) {
-      ::google::protobuf::scoped_array<SortItem> items(
+      ::std::unique_ptr<SortItem[]> items(
           new SortItem[this->attributes().size()]);
       typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
       size_type n = 0;
@@ -568,35 +618,27 @@ void ProjectDomainAttributes::SerializeWithCachedSizes(
         items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
       ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::google::protobuf::scoped_ptr<ProjectDomainAttributes_AttributesEntry_DoNotUse> entry;
+      ::std::unique_ptr<ProjectDomainAttributes_AttributesEntry_DoNotUse> entry;
       for (size_type i = 0; i < n; i++) {
-        entry.reset(attributes_.NewEntryWrapper(
-            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        target = ::google::protobuf::internal::WireFormatLite::
-                   InternalWriteMessageNoVirtualToArray(
-                       3, *entry, deterministic, target);
-;
-        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
+        entry.reset(attributes_.NewEntryWrapper(items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
+        target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(3, *entry, target);
+        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
       }
     } else {
-      ::google::protobuf::scoped_ptr<ProjectDomainAttributes_AttributesEntry_DoNotUse> entry;
+      ::std::unique_ptr<ProjectDomainAttributes_AttributesEntry_DoNotUse> entry;
       for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
           it = this->attributes().begin();
           it != this->attributes().end(); ++it) {
-        entry.reset(attributes_.NewEntryWrapper(
-            it->first, it->second));
-        target = ::google::protobuf::internal::WireFormatLite::
-                   InternalWriteMessageNoVirtualToArray(
-                       3, *entry, deterministic, target);
-;
-        Utf8Check::Check(&*it);
+        entry.reset(attributes_.NewEntryWrapper(it->first, it->second));
+        target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(3, *entry, target);
+        Utf8Check::Check(&(*it));
       }
     }
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.ProjectDomainAttributes)
   return target;
@@ -606,16 +648,20 @@ size_t ProjectDomainAttributes::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.ProjectDomainAttributes)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+        _internal_metadata_.unknown_fields());
   }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // map<string, string> attributes = 3;
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->attributes_size());
   {
-    ::google::protobuf::scoped_ptr<ProjectDomainAttributes_AttributesEntry_DoNotUse> entry;
+    ::std::unique_ptr<ProjectDomainAttributes_AttributesEntry_DoNotUse> entry;
     for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
         it = this->attributes().begin();
         it != this->attributes().end(); ++it) {
@@ -640,9 +686,7 @@ size_t ProjectDomainAttributes::ByteSizeLong() const {
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  SetCachedSize(cached_size);
   return total_size;
 }
 
@@ -650,9 +694,9 @@ void ProjectDomainAttributes::MergeFrom(const ::google::protobuf::Message& from)
 // @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.ProjectDomainAttributes)
   GOOGLE_DCHECK_NE(&from, this);
   const ProjectDomainAttributes* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const ProjectDomainAttributes>(
+      ::google::protobuf::DynamicCastToGenerated<ProjectDomainAttributes>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.ProjectDomainAttributes)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -703,16 +747,17 @@ void ProjectDomainAttributes::Swap(ProjectDomainAttributes* other) {
 }
 void ProjectDomainAttributes::InternalSwap(ProjectDomainAttributes* other) {
   using std::swap;
-  attributes_.Swap(&other->attributes_);
-  project_.Swap(&other->project_);
-  domain_.Swap(&other->domain_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_cached_size_, other->_cached_size_);
+  attributes_.Swap(&other->attributes_);
+  project_.Swap(&other->project_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  domain_.Swap(&other->domain_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
 }
 
 ::google::protobuf::Metadata ProjectDomainAttributes::GetMetadata() const {
-  protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::file_level_metadata[kIndexInFileMessages];
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto);
+  return ::file_level_metadata_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto[kIndexInFileMessages];
 }
 
 
@@ -722,34 +767,40 @@ void ProjectDomainAttributesUpdateRequest::InitAsDefaultInstance() {
   ::flyteidl::admin::_ProjectDomainAttributesUpdateRequest_default_instance_._instance.get_mutable()->attributes_ = const_cast< ::flyteidl::admin::ProjectDomainAttributes*>(
       ::flyteidl::admin::ProjectDomainAttributes::internal_default_instance());
 }
+class ProjectDomainAttributesUpdateRequest::HasBitSetters {
+ public:
+  static const ::flyteidl::admin::ProjectDomainAttributes& attributes(const ProjectDomainAttributesUpdateRequest* msg);
+};
+
+const ::flyteidl::admin::ProjectDomainAttributes&
+ProjectDomainAttributesUpdateRequest::HasBitSetters::attributes(const ProjectDomainAttributesUpdateRequest* msg) {
+  return *msg->attributes_;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ProjectDomainAttributesUpdateRequest::kAttributesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ProjectDomainAttributesUpdateRequest::ProjectDomainAttributesUpdateRequest()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    ::protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::InitDefaultsProjectDomainAttributesUpdateRequest();
-  }
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:flyteidl.admin.ProjectDomainAttributesUpdateRequest)
 }
 ProjectDomainAttributesUpdateRequest::ProjectDomainAttributesUpdateRequest(const ProjectDomainAttributesUpdateRequest& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _cached_size_(0) {
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from.has_attributes()) {
     attributes_ = new ::flyteidl::admin::ProjectDomainAttributes(*from.attributes_);
   } else {
-    attributes_ = NULL;
+    attributes_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.ProjectDomainAttributesUpdateRequest)
 }
 
 void ProjectDomainAttributesUpdateRequest::SharedCtor() {
-  attributes_ = NULL;
-  _cached_size_ = 0;
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_ProjectDomainAttributesUpdateRequest_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto.base);
+  attributes_ = nullptr;
 }
 
 ProjectDomainAttributesUpdateRequest::~ProjectDomainAttributesUpdateRequest() {
@@ -762,27 +813,13 @@ void ProjectDomainAttributesUpdateRequest::SharedDtor() {
 }
 
 void ProjectDomainAttributesUpdateRequest::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* ProjectDomainAttributesUpdateRequest::descriptor() {
-  ::protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const ProjectDomainAttributesUpdateRequest& ProjectDomainAttributesUpdateRequest::default_instance() {
-  ::protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::InitDefaultsProjectDomainAttributesUpdateRequest();
+  ::google::protobuf::internal::InitSCC(&::scc_info_ProjectDomainAttributesUpdateRequest_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto.base);
   return *internal_default_instance();
 }
 
-ProjectDomainAttributesUpdateRequest* ProjectDomainAttributesUpdateRequest::New(::google::protobuf::Arena* arena) const {
-  ProjectDomainAttributesUpdateRequest* n = new ProjectDomainAttributesUpdateRequest;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
 
 void ProjectDomainAttributesUpdateRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:flyteidl.admin.ProjectDomainAttributesUpdateRequest)
@@ -790,27 +827,72 @@ void ProjectDomainAttributesUpdateRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == NULL && attributes_ != NULL) {
+  if (GetArenaNoVirtual() == nullptr && attributes_ != nullptr) {
     delete attributes_;
   }
-  attributes_ = NULL;
+  attributes_ = nullptr;
   _internal_metadata_.Clear();
 }
 
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* ProjectDomainAttributesUpdateRequest::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<ProjectDomainAttributesUpdateRequest*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .flyteidl.admin.ProjectDomainAttributes attributes = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::admin::ProjectDomainAttributes::_InternalParse;
+        object = msg->mutable_attributes();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool ProjectDomainAttributesUpdateRequest::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:flyteidl.admin.ProjectDomainAttributesUpdateRequest)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // .flyteidl.admin.ProjectDomainAttributes attributes = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_attributes()));
         } else {
@@ -838,6 +920,7 @@ failure:
   return false;
 #undef DO_
 }
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void ProjectDomainAttributesUpdateRequest::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
@@ -848,19 +931,18 @@ void ProjectDomainAttributesUpdateRequest::SerializeWithCachedSizes(
   // .flyteidl.admin.ProjectDomainAttributes attributes = 1;
   if (this->has_attributes()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->attributes_, output);
+      1, HasBitSetters::attributes(this), output);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+        _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:flyteidl.admin.ProjectDomainAttributesUpdateRequest)
 }
 
 ::google::protobuf::uint8* ProjectDomainAttributesUpdateRequest::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+    ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.ProjectDomainAttributesUpdateRequest)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
@@ -869,12 +951,12 @@ void ProjectDomainAttributesUpdateRequest::SerializeWithCachedSizes(
   if (this->has_attributes()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, *this->attributes_, deterministic, target);
+        1, HasBitSetters::attributes(this), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.ProjectDomainAttributesUpdateRequest)
   return target;
@@ -884,22 +966,24 @@ size_t ProjectDomainAttributesUpdateRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.ProjectDomainAttributesUpdateRequest)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+        _internal_metadata_.unknown_fields());
   }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // .flyteidl.admin.ProjectDomainAttributes attributes = 1;
   if (this->has_attributes()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *this->attributes_);
+        *attributes_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  SetCachedSize(cached_size);
   return total_size;
 }
 
@@ -907,9 +991,9 @@ void ProjectDomainAttributesUpdateRequest::MergeFrom(const ::google::protobuf::M
 // @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.ProjectDomainAttributesUpdateRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const ProjectDomainAttributesUpdateRequest* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const ProjectDomainAttributesUpdateRequest>(
+      ::google::protobuf::DynamicCastToGenerated<ProjectDomainAttributesUpdateRequest>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.ProjectDomainAttributesUpdateRequest)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -954,14 +1038,13 @@ void ProjectDomainAttributesUpdateRequest::Swap(ProjectDomainAttributesUpdateReq
 }
 void ProjectDomainAttributesUpdateRequest::InternalSwap(ProjectDomainAttributesUpdateRequest* other) {
   using std::swap;
-  swap(attributes_, other->attributes_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_cached_size_, other->_cached_size_);
+  swap(attributes_, other->attributes_);
 }
 
 ::google::protobuf::Metadata ProjectDomainAttributesUpdateRequest::GetMetadata() const {
-  protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::file_level_metadata[kIndexInFileMessages];
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto);
+  return ::file_level_metadata_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto[kIndexInFileMessages];
 }
 
 
@@ -969,27 +1052,26 @@ void ProjectDomainAttributesUpdateRequest::InternalSwap(ProjectDomainAttributesU
 
 void ProjectDomainAttributesUpdateResponse::InitAsDefaultInstance() {
 }
+class ProjectDomainAttributesUpdateResponse::HasBitSetters {
+ public:
+};
+
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ProjectDomainAttributesUpdateResponse::ProjectDomainAttributesUpdateResponse()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    ::protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::InitDefaultsProjectDomainAttributesUpdateResponse();
-  }
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:flyteidl.admin.ProjectDomainAttributesUpdateResponse)
 }
 ProjectDomainAttributesUpdateResponse::ProjectDomainAttributesUpdateResponse(const ProjectDomainAttributesUpdateResponse& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _cached_size_(0) {
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.ProjectDomainAttributesUpdateResponse)
 }
 
 void ProjectDomainAttributesUpdateResponse::SharedCtor() {
-  _cached_size_ = 0;
 }
 
 ProjectDomainAttributesUpdateResponse::~ProjectDomainAttributesUpdateResponse() {
@@ -1001,27 +1083,13 @@ void ProjectDomainAttributesUpdateResponse::SharedDtor() {
 }
 
 void ProjectDomainAttributesUpdateResponse::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* ProjectDomainAttributesUpdateResponse::descriptor() {
-  ::protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const ProjectDomainAttributesUpdateResponse& ProjectDomainAttributesUpdateResponse::default_instance() {
-  ::protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::InitDefaultsProjectDomainAttributesUpdateResponse();
+  ::google::protobuf::internal::InitSCC(&::scc_info_ProjectDomainAttributesUpdateResponse_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto.base);
   return *internal_default_instance();
 }
 
-ProjectDomainAttributesUpdateResponse* ProjectDomainAttributesUpdateResponse::New(::google::protobuf::Arena* arena) const {
-  ProjectDomainAttributesUpdateResponse* n = new ProjectDomainAttributesUpdateResponse;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
 
 void ProjectDomainAttributesUpdateResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:flyteidl.admin.ProjectDomainAttributesUpdateResponse)
@@ -1032,13 +1100,42 @@ void ProjectDomainAttributesUpdateResponse::Clear() {
   _internal_metadata_.Clear();
 }
 
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* ProjectDomainAttributesUpdateResponse::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<ProjectDomainAttributesUpdateResponse*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      default: {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool ProjectDomainAttributesUpdateResponse::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:flyteidl.admin.ProjectDomainAttributesUpdateResponse)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
   handle_unusual:
@@ -1056,6 +1153,7 @@ failure:
   return false;
 #undef DO_
 }
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void ProjectDomainAttributesUpdateResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
@@ -1063,23 +1161,22 @@ void ProjectDomainAttributesUpdateResponse::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+        _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:flyteidl.admin.ProjectDomainAttributesUpdateResponse)
 }
 
 ::google::protobuf::uint8* ProjectDomainAttributesUpdateResponse::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+    ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.ProjectDomainAttributesUpdateResponse)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.ProjectDomainAttributesUpdateResponse)
   return target;
@@ -1089,15 +1186,17 @@ size_t ProjectDomainAttributesUpdateResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.ProjectDomainAttributesUpdateResponse)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+        _internal_metadata_.unknown_fields());
   }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  SetCachedSize(cached_size);
   return total_size;
 }
 
@@ -1105,9 +1204,9 @@ void ProjectDomainAttributesUpdateResponse::MergeFrom(const ::google::protobuf::
 // @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.ProjectDomainAttributesUpdateResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const ProjectDomainAttributesUpdateResponse* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const ProjectDomainAttributesUpdateResponse>(
+      ::google::protobuf::DynamicCastToGenerated<ProjectDomainAttributesUpdateResponse>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.ProjectDomainAttributesUpdateResponse)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -1150,17 +1249,33 @@ void ProjectDomainAttributesUpdateResponse::Swap(ProjectDomainAttributesUpdateRe
 void ProjectDomainAttributesUpdateResponse::InternalSwap(ProjectDomainAttributesUpdateResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata ProjectDomainAttributesUpdateResponse::GetMetadata() const {
-  protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto::file_level_metadata[kIndexInFileMessages];
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto);
+  return ::file_level_metadata_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto[kIndexInFileMessages];
 }
 
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace admin
 }  // namespace flyteidl
+namespace google {
+namespace protobuf {
+template<> PROTOBUF_NOINLINE ::flyteidl::admin::ProjectDomainAttributes_AttributesEntry_DoNotUse* Arena::CreateMaybeMessage< ::flyteidl::admin::ProjectDomainAttributes_AttributesEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::admin::ProjectDomainAttributes_AttributesEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::flyteidl::admin::ProjectDomainAttributes* Arena::CreateMaybeMessage< ::flyteidl::admin::ProjectDomainAttributes >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::admin::ProjectDomainAttributes >(arena);
+}
+template<> PROTOBUF_NOINLINE ::flyteidl::admin::ProjectDomainAttributesUpdateRequest* Arena::CreateMaybeMessage< ::flyteidl::admin::ProjectDomainAttributesUpdateRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::admin::ProjectDomainAttributesUpdateRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::flyteidl::admin::ProjectDomainAttributesUpdateResponse* Arena::CreateMaybeMessage< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::admin::ProjectDomainAttributesUpdateResponse >(arena);
+}
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
+#include <google/protobuf/port_undef.inc>
