@@ -5644,6 +5644,9 @@ export namespace flyteidl {
 
             /** Notification slack */
             slack?: (flyteidl.admin.ISlackNotification|null);
+
+            /** Notification snsmessage */
+            snsmessage?: (flyteidl.admin.ISNSMessage|null);
         }
 
         /** Represents a Notification. */
@@ -5666,6 +5669,9 @@ export namespace flyteidl {
 
             /** Notification slack. */
             public slack?: (flyteidl.admin.ISlackNotification|null);
+
+            /** Notification snsmessage. */
+            public snsmessage?: (flyteidl.admin.ISNSMessage|null);
 
             /** Notification type. */
             public type?: ("email"|"pagerDuty"|"slack");
@@ -5697,6 +5703,76 @@ export namespace flyteidl {
 
             /**
              * Verifies a Notification message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a SNSMessage. */
+        interface ISNSMessage {
+
+            /** SNSMessage id */
+            id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** SNSMessage phase */
+            phase?: (flyteidl.core.WorkflowExecution.Phase|null);
+
+            /** SNSMessage occurredAt */
+            occurredAt?: (google.protobuf.ITimestamp|null);
+
+            /** SNSMessage snsTopic */
+            snsTopic?: (string[]|null);
+        }
+
+        /** Represents a SNSMessage. */
+        class SNSMessage implements ISNSMessage {
+
+            /**
+             * Constructs a new SNSMessage.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ISNSMessage);
+
+            /** SNSMessage id. */
+            public id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** SNSMessage phase. */
+            public phase: flyteidl.core.WorkflowExecution.Phase;
+
+            /** SNSMessage occurredAt. */
+            public occurredAt?: (google.protobuf.ITimestamp|null);
+
+            /** SNSMessage snsTopic. */
+            public snsTopic: string[];
+
+            /**
+             * Creates a new SNSMessage instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns SNSMessage instance
+             */
+            public static create(properties?: flyteidl.admin.ISNSMessage): flyteidl.admin.SNSMessage;
+
+            /**
+             * Encodes the specified SNSMessage message. Does not implicitly {@link flyteidl.admin.SNSMessage.verify|verify} messages.
+             * @param message SNSMessage message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ISNSMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a SNSMessage message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SNSMessage
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.SNSMessage;
+
+            /**
+             * Verifies a SNSMessage message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */

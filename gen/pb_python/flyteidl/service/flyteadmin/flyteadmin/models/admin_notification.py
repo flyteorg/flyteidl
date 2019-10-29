@@ -19,6 +19,7 @@ import six
 from flyteadmin.models.admin_email_notification import AdminEmailNotification  # noqa: F401,E501
 from flyteadmin.models.admin_pager_duty_notification import AdminPagerDutyNotification  # noqa: F401,E501
 from flyteadmin.models.admin_slack_notification import AdminSlackNotification  # noqa: F401,E501
+from flyteadmin.models.admin_sns_message import AdminSNSMessage  # noqa: F401,E501
 from flyteadmin.models.core_workflow_execution_phase import CoreWorkflowExecutionPhase  # noqa: F401,E501
 
 
@@ -39,23 +40,26 @@ class AdminNotification(object):
         'phases': 'list[CoreWorkflowExecutionPhase]',
         'email': 'AdminEmailNotification',
         'pager_duty': 'AdminPagerDutyNotification',
-        'slack': 'AdminSlackNotification'
+        'slack': 'AdminSlackNotification',
+        'snsmessage': 'AdminSNSMessage'
     }
 
     attribute_map = {
         'phases': 'phases',
         'email': 'email',
         'pager_duty': 'pager_duty',
-        'slack': 'slack'
+        'slack': 'slack',
+        'snsmessage': 'snsmessage'
     }
 
-    def __init__(self, phases=None, email=None, pager_duty=None, slack=None):  # noqa: E501
+    def __init__(self, phases=None, email=None, pager_duty=None, slack=None, snsmessage=None):  # noqa: E501
         """AdminNotification - a model defined in Swagger"""  # noqa: E501
 
         self._phases = None
         self._email = None
         self._pager_duty = None
         self._slack = None
+        self._snsmessage = None
         self.discriminator = None
 
         if phases is not None:
@@ -66,6 +70,8 @@ class AdminNotification(object):
             self.pager_duty = pager_duty
         if slack is not None:
             self.slack = slack
+        if snsmessage is not None:
+            self.snsmessage = snsmessage
 
     @property
     def phases(self):
@@ -152,6 +158,27 @@ class AdminNotification(object):
         """
 
         self._slack = slack
+
+    @property
+    def snsmessage(self):
+        """Gets the snsmessage of this AdminNotification.  # noqa: E501
+
+
+        :return: The snsmessage of this AdminNotification.  # noqa: E501
+        :rtype: AdminSNSMessage
+        """
+        return self._snsmessage
+
+    @snsmessage.setter
+    def snsmessage(self, snsmessage):
+        """Sets the snsmessage of this AdminNotification.
+
+
+        :param snsmessage: The snsmessage of this AdminNotification.  # noqa: E501
+        :type: AdminSNSMessage
+        """
+
+        self._snsmessage = snsmessage
 
     def to_dict(self):
         """Returns the model properties as a dict"""

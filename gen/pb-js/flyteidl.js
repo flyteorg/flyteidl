@@ -13549,6 +13549,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.IEmailNotification|null} [email] Notification email
              * @property {flyteidl.admin.IPagerDutyNotification|null} [pagerDuty] Notification pagerDuty
              * @property {flyteidl.admin.ISlackNotification|null} [slack] Notification slack
+             * @property {flyteidl.admin.ISNSMessage|null} [snsmessage] Notification snsmessage
              */
 
             /**
@@ -13598,6 +13599,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             Notification.prototype.slack = null;
+
+            /**
+             * Notification snsmessage.
+             * @member {flyteidl.admin.ISNSMessage|null|undefined} snsmessage
+             * @memberof flyteidl.admin.Notification
+             * @instance
+             */
+            Notification.prototype.snsmessage = null;
 
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
@@ -13649,6 +13658,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.PagerDutyNotification.encode(message.pagerDuty, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.slack != null && message.hasOwnProperty("slack"))
                     $root.flyteidl.admin.SlackNotification.encode(message.slack, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.snsmessage != null && message.hasOwnProperty("snsmessage"))
+                    $root.flyteidl.admin.SNSMessage.encode(message.snsmessage, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -13688,6 +13699,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 4:
                         message.slack = $root.flyteidl.admin.SlackNotification.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.snsmessage = $root.flyteidl.admin.SNSMessage.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -13756,10 +13770,200 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "slack." + error;
                     }
                 }
+                if (message.snsmessage != null && message.hasOwnProperty("snsmessage")) {
+                    let error = $root.flyteidl.admin.SNSMessage.verify(message.snsmessage);
+                    if (error)
+                        return "snsmessage." + error;
+                }
                 return null;
             };
 
             return Notification;
+        })();
+
+        admin.SNSMessage = (function() {
+
+            /**
+             * Properties of a SNSMessage.
+             * @memberof flyteidl.admin
+             * @interface ISNSMessage
+             * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [id] SNSMessage id
+             * @property {flyteidl.core.WorkflowExecution.Phase|null} [phase] SNSMessage phase
+             * @property {google.protobuf.ITimestamp|null} [occurredAt] SNSMessage occurredAt
+             * @property {Array.<string>|null} [snsTopic] SNSMessage snsTopic
+             */
+
+            /**
+             * Constructs a new SNSMessage.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a SNSMessage.
+             * @implements ISNSMessage
+             * @constructor
+             * @param {flyteidl.admin.ISNSMessage=} [properties] Properties to set
+             */
+            function SNSMessage(properties) {
+                this.snsTopic = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * SNSMessage id.
+             * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} id
+             * @memberof flyteidl.admin.SNSMessage
+             * @instance
+             */
+            SNSMessage.prototype.id = null;
+
+            /**
+             * SNSMessage phase.
+             * @member {flyteidl.core.WorkflowExecution.Phase} phase
+             * @memberof flyteidl.admin.SNSMessage
+             * @instance
+             */
+            SNSMessage.prototype.phase = 0;
+
+            /**
+             * SNSMessage occurredAt.
+             * @member {google.protobuf.ITimestamp|null|undefined} occurredAt
+             * @memberof flyteidl.admin.SNSMessage
+             * @instance
+             */
+            SNSMessage.prototype.occurredAt = null;
+
+            /**
+             * SNSMessage snsTopic.
+             * @member {Array.<string>} snsTopic
+             * @memberof flyteidl.admin.SNSMessage
+             * @instance
+             */
+            SNSMessage.prototype.snsTopic = $util.emptyArray;
+
+            /**
+             * Creates a new SNSMessage instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.SNSMessage
+             * @static
+             * @param {flyteidl.admin.ISNSMessage=} [properties] Properties to set
+             * @returns {flyteidl.admin.SNSMessage} SNSMessage instance
+             */
+            SNSMessage.create = function create(properties) {
+                return new SNSMessage(properties);
+            };
+
+            /**
+             * Encodes the specified SNSMessage message. Does not implicitly {@link flyteidl.admin.SNSMessage.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.SNSMessage
+             * @static
+             * @param {flyteidl.admin.ISNSMessage} message SNSMessage message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SNSMessage.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.phase != null && message.hasOwnProperty("phase"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.phase);
+                if (message.occurredAt != null && message.hasOwnProperty("occurredAt"))
+                    $root.google.protobuf.Timestamp.encode(message.occurredAt, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.snsTopic != null && message.snsTopic.length)
+                    for (let i = 0; i < message.snsTopic.length; ++i)
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.snsTopic[i]);
+                return writer;
+            };
+
+            /**
+             * Decodes a SNSMessage message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.SNSMessage
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.SNSMessage} SNSMessage
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SNSMessage.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.SNSMessage();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.phase = reader.int32();
+                        break;
+                    case 3:
+                        message.occurredAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        if (!(message.snsTopic && message.snsTopic.length))
+                            message.snsTopic = [];
+                        message.snsTopic.push(reader.string());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a SNSMessage message.
+             * @function verify
+             * @memberof flyteidl.admin.SNSMessage
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            SNSMessage.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id")) {
+                    let error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.id);
+                    if (error)
+                        return "id." + error;
+                }
+                if (message.phase != null && message.hasOwnProperty("phase"))
+                    switch (message.phase) {
+                    default:
+                        return "phase: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                        break;
+                    }
+                if (message.occurredAt != null && message.hasOwnProperty("occurredAt")) {
+                    let error = $root.google.protobuf.Timestamp.verify(message.occurredAt);
+                    if (error)
+                        return "occurredAt." + error;
+                }
+                if (message.snsTopic != null && message.hasOwnProperty("snsTopic")) {
+                    if (!Array.isArray(message.snsTopic))
+                        return "snsTopic: array expected";
+                    for (let i = 0; i < message.snsTopic.length; ++i)
+                        if (!$util.isString(message.snsTopic[i]))
+                            return "snsTopic: string[] expected";
+                }
+                return null;
+            };
+
+            return SNSMessage;
         })();
 
         admin.UrlBlob = (function() {

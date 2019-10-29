@@ -2257,6 +2257,15 @@ definitions:
             recipients_email:
             - "recipients_email"
             - "recipients_email"
+          snsmessage:
+            occurred_at: "2000-01-23T04:56:07.000+00:00"
+            sns_topic:
+            - "sns_topic"
+            - "sns_topic"
+            id:
+              domain: "domain"
+              name: "name"
+              project: "project"
           phases:
           - {}
           - {}
@@ -2272,6 +2281,15 @@ definitions:
             recipients_email:
             - "recipients_email"
             - "recipients_email"
+          snsmessage:
+            occurred_at: "2000-01-23T04:56:07.000+00:00"
+            sns_topic:
+            - "sns_topic"
+            - "sns_topic"
+            id:
+              domain: "domain"
+              name: "name"
+              project: "project"
           phases:
           - {}
           - {}
@@ -2317,6 +2335,15 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
+            snsmessage:
+              occurred_at: "2000-01-23T04:56:07.000+00:00"
+              sns_topic:
+              - "sns_topic"
+              - "sns_topic"
+              id:
+                domain: "domain"
+                name: "name"
+                project: "project"
             phases:
             - {}
             - {}
@@ -2332,6 +2359,15 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
+            snsmessage:
+              occurred_at: "2000-01-23T04:56:07.000+00:00"
+              sns_topic:
+              - "sns_topic"
+              - "sns_topic"
+              id:
+                domain: "domain"
+                name: "name"
+                project: "project"
             phases:
             - {}
             - {}
@@ -2421,6 +2457,15 @@ definitions:
           recipients_email:
           - "recipients_email"
           - "recipients_email"
+        snsmessage:
+          occurred_at: "2000-01-23T04:56:07.000+00:00"
+          sns_topic:
+          - "sns_topic"
+          - "sns_topic"
+          id:
+            domain: "domain"
+            name: "name"
+            project: "project"
         phases:
         - {}
         - {}
@@ -2436,6 +2481,15 @@ definitions:
           recipients_email:
           - "recipients_email"
           - "recipients_email"
+        snsmessage:
+          occurred_at: "2000-01-23T04:56:07.000+00:00"
+          sns_topic:
+          - "sns_topic"
+          - "sns_topic"
+          id:
+            domain: "domain"
+            name: "name"
+            project: "project"
         phases:
         - {}
         - {}
@@ -2531,6 +2585,15 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
+            snsmessage:
+              occurred_at: "2000-01-23T04:56:07.000+00:00"
+              sns_topic:
+              - "sns_topic"
+              - "sns_topic"
+              id:
+                domain: "domain"
+                name: "name"
+                project: "project"
             phases:
             - {}
             - {}
@@ -2546,6 +2609,15 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
+            snsmessage:
+              occurred_at: "2000-01-23T04:56:07.000+00:00"
+              sns_topic:
+              - "sns_topic"
+              - "sns_topic"
+              id:
+                domain: "domain"
+                name: "name"
+                project: "project"
             phases:
             - {}
             - {}
@@ -2591,6 +2663,15 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+              snsmessage:
+                occurred_at: "2000-01-23T04:56:07.000+00:00"
+                sns_topic:
+                - "sns_topic"
+                - "sns_topic"
+                id:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
               phases:
               - {}
               - {}
@@ -2606,6 +2687,15 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+              snsmessage:
+                occurred_at: "2000-01-23T04:56:07.000+00:00"
+                sns_topic:
+                - "sns_topic"
+                - "sns_topic"
+                id:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
               phases:
               - {}
               - {}
@@ -2652,6 +2742,15 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
+            snsmessage:
+              occurred_at: "2000-01-23T04:56:07.000+00:00"
+              sns_topic:
+              - "sns_topic"
+              - "sns_topic"
+              id:
+                domain: "domain"
+                name: "name"
+                project: "project"
             phases:
             - {}
             - {}
@@ -2667,6 +2766,15 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
+            snsmessage:
+              occurred_at: "2000-01-23T04:56:07.000+00:00"
+              sns_topic:
+              - "sns_topic"
+              - "sns_topic"
+              id:
+                domain: "domain"
+                name: "name"
+                project: "project"
             phases:
             - {}
             - {}
@@ -2712,6 +2820,15 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+              snsmessage:
+                occurred_at: "2000-01-23T04:56:07.000+00:00"
+                sns_topic:
+                - "sns_topic"
+                - "sns_topic"
+                id:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
               phases:
               - {}
               - {}
@@ -2727,6 +2844,15 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+              snsmessage:
+                occurred_at: "2000-01-23T04:56:07.000+00:00"
+                sns_topic:
+                - "sns_topic"
+                - "sns_topic"
+                id:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
               phases:
               - {}
               - {}
@@ -2865,6 +2991,15 @@ definitions:
             recipients_email:
             - "recipients_email"
             - "recipients_email"
+          snsmessage:
+            occurred_at: "2000-01-23T04:56:07.000+00:00"
+            sns_topic:
+            - "sns_topic"
+            - "sns_topic"
+            id:
+              domain: "domain"
+              name: "name"
+              project: "project"
           phases:
           - {}
           - {}
@@ -2880,6 +3015,15 @@ definitions:
             recipients_email:
             - "recipients_email"
             - "recipients_email"
+          snsmessage:
+            occurred_at: "2000-01-23T04:56:07.000+00:00"
+            sns_topic:
+            - "sns_topic"
+            - "sns_topic"
+            id:
+              domain: "domain"
+              name: "name"
+              project: "project"
           phases:
           - {}
           - {}
@@ -3096,6 +3240,15 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
+            snsmessage:
+              occurred_at: "2000-01-23T04:56:07.000+00:00"
+              sns_topic:
+              - "sns_topic"
+              - "sns_topic"
+              id:
+                domain: "domain"
+                name: "name"
+                project: "project"
             phases:
             - {}
             - {}
@@ -3111,6 +3264,15 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
+            snsmessage:
+              occurred_at: "2000-01-23T04:56:07.000+00:00"
+              sns_topic:
+              - "sns_topic"
+              - "sns_topic"
+              id:
+                domain: "domain"
+                name: "name"
+                project: "project"
             phases:
             - {}
             - {}
@@ -3500,6 +3662,15 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+              snsmessage:
+                occurred_at: "2000-01-23T04:56:07.000+00:00"
+                sns_topic:
+                - "sns_topic"
+                - "sns_topic"
+                id:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
               phases:
               - {}
               - {}
@@ -3515,6 +3686,15 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+              snsmessage:
+                occurred_at: "2000-01-23T04:56:07.000+00:00"
+                sns_topic:
+                - "sns_topic"
+                - "sns_topic"
+                id:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
               phases:
               - {}
               - {}
@@ -3743,6 +3923,15 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+              snsmessage:
+                occurred_at: "2000-01-23T04:56:07.000+00:00"
+                sns_topic:
+                - "sns_topic"
+                - "sns_topic"
+                id:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
               phases:
               - {}
               - {}
@@ -3758,6 +3947,15 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+              snsmessage:
+                occurred_at: "2000-01-23T04:56:07.000+00:00"
+                sns_topic:
+                - "sns_topic"
+                - "sns_topic"
+                id:
+                  domain: "domain"
+                  name: "name"
+                  project: "project"
               phases:
               - {}
               - {}
@@ -3876,6 +4074,15 @@ definitions:
           recipients_email:
           - "recipients_email"
           - "recipients_email"
+        snsmessage:
+          occurred_at: "2000-01-23T04:56:07.000+00:00"
+          sns_topic:
+          - "sns_topic"
+          - "sns_topic"
+          id:
+            domain: "domain"
+            name: "name"
+            project: "project"
         phases:
         - {}
         - {}
@@ -3891,6 +4098,15 @@ definitions:
           recipients_email:
           - "recipients_email"
           - "recipients_email"
+        snsmessage:
+          occurred_at: "2000-01-23T04:56:07.000+00:00"
+          sns_topic:
+          - "sns_topic"
+          - "sns_topic"
+          id:
+            domain: "domain"
+            name: "name"
+            project: "project"
         phases:
         - {}
         - {}
@@ -3956,6 +4172,15 @@ definitions:
             recipients_email:
             - "recipients_email"
             - "recipients_email"
+          snsmessage:
+            occurred_at: "2000-01-23T04:56:07.000+00:00"
+            sns_topic:
+            - "sns_topic"
+            - "sns_topic"
+            id:
+              domain: "domain"
+              name: "name"
+              project: "project"
           phases:
           - {}
           - {}
@@ -3971,6 +4196,15 @@ definitions:
             recipients_email:
             - "recipients_email"
             - "recipients_email"
+          snsmessage:
+            occurred_at: "2000-01-23T04:56:07.000+00:00"
+            sns_topic:
+            - "sns_topic"
+            - "sns_topic"
+            id:
+              domain: "domain"
+              name: "name"
+              project: "project"
           phases:
           - {}
           - {}
@@ -4372,6 +4606,8 @@ definitions:
         $ref: "#/definitions/adminPagerDutyNotification"
       slack:
         $ref: "#/definitions/adminSlackNotification"
+      snsmessage:
+        $ref: "#/definitions/adminSNSMessage"
     description: "Represents a structure for notifications based on execution status.\n\
       The Notification content is configured within Admin. Future iterations could\n\
       expose configuring notifications with custom content."
@@ -4384,6 +4620,15 @@ definitions:
         recipients_email:
         - "recipients_email"
         - "recipients_email"
+      snsmessage:
+        occurred_at: "2000-01-23T04:56:07.000+00:00"
+        sns_topic:
+        - "sns_topic"
+        - "sns_topic"
+        id:
+          domain: "domain"
+          name: "name"
+          project: "project"
       phases:
       - {}
       - {}
@@ -4408,6 +4653,15 @@ definitions:
           recipients_email:
           - "recipients_email"
           - "recipients_email"
+        snsmessage:
+          occurred_at: "2000-01-23T04:56:07.000+00:00"
+          sns_topic:
+          - "sns_topic"
+          - "sns_topic"
+          id:
+            domain: "domain"
+            name: "name"
+            project: "project"
         phases:
         - {}
         - {}
@@ -4423,6 +4677,15 @@ definitions:
           recipients_email:
           - "recipients_email"
           - "recipients_email"
+        snsmessage:
+          occurred_at: "2000-01-23T04:56:07.000+00:00"
+          sns_topic:
+          - "sns_topic"
+          - "sns_topic"
+          id:
+            domain: "domain"
+            name: "name"
+            project: "project"
         phases:
         - {}
         - {}
@@ -4526,6 +4789,31 @@ definitions:
           id: "id"
         description: "description"
         id: "id"
+  adminSNSMessage:
+    type: "object"
+    properties:
+      id:
+        $ref: "#/definitions/coreWorkflowExecutionIdentifier"
+      phase:
+        $ref: "#/definitions/coreWorkflowExecutionPhase"
+      occurred_at:
+        type: "string"
+        format: "date-time"
+      sns_topic:
+        type: "array"
+        items:
+          type: "string"
+    description: "Represents a structure for a generic SNS Message to be published\
+      \ as \npart of a notification."
+    example:
+      occurred_at: "2000-01-23T04:56:07.000+00:00"
+      sns_topic:
+      - "sns_topic"
+      - "sns_topic"
+      id:
+        domain: "domain"
+        name: "name"
+        project: "project"
   adminSchedule:
     type: "object"
     properties:

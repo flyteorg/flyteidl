@@ -5,6 +5,7 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "flyteidl/core/execution.proto";
 import "flyteidl/core/identifier.proto";
+import "google/protobuf/timestamp.proto";
 // import "validate/validate.proto";
 
 // Encapsulation of fields that identifies a Flyte resource.
@@ -191,8 +192,8 @@ message Notification {
 // Represents a structure for a generic SNS Message to be published as 
 // part of a notification.
 message SNSMessage {
-    core.WorkflowExecutionIdentifier id = 1;
-    core.WorkflowExecution.Phase phase = 2;
+    flyteidl.core.WorkflowExecutionIdentifier id = 1;
+    flyteidl.core.WorkflowExecution.Phase phase = 2;
     google.protobuf.Timestamp occurred_at = 3;
     repeated string sns_topic = 4;
 }

@@ -41,6 +41,8 @@ var (
 	_ = core.ResourceType(0)
 
 	_ = core.ResourceType(0)
+
+	_ = core.WorkflowExecution_Phase(0)
 )
 
 // define the regex for a UUID once up-front
@@ -1294,6 +1296,16 @@ func (m *Notification) Validate() error {
 		return nil
 	}
 
+	if v, ok := interface{}(m.GetSnsmessage()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return NotificationValidationError{
+				field:  "Snsmessage",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	switch m.Type.(type) {
 
 	case *Notification_Email:
@@ -1390,6 +1402,92 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = NotificationValidationError{}
+
+// Validate checks the field values on SNSMessage with the rules defined in the
+// proto definition for this message. If any rules are violated, an error is returned.
+func (m *SNSMessage) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return SNSMessageValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	// no validation rules for Phase
+
+	if v, ok := interface{}(m.GetOccurredAt()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return SNSMessageValidationError{
+				field:  "OccurredAt",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// SNSMessageValidationError is the validation error returned by
+// SNSMessage.Validate if the designated constraints aren't met.
+type SNSMessageValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e SNSMessageValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e SNSMessageValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e SNSMessageValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e SNSMessageValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e SNSMessageValidationError) ErrorName() string { return "SNSMessageValidationError" }
+
+// Error satisfies the builtin error interface
+func (e SNSMessageValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sSNSMessage.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = SNSMessageValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = SNSMessageValidationError{}
 
 // Validate checks the field values on UrlBlob with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.

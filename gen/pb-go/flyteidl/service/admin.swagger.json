@@ -3167,6 +3167,9 @@
         },
         "slack": {
           "$ref": "#/definitions/adminSlackNotification"
+        },
+        "snsmessage": {
+          "$ref": "#/definitions/adminSNSMessage"
         }
       },
       "description": "Represents a structure for notifications based on execution status.\nThe Notification content is configured within Admin. Future iterations could\nexpose configuring notifications with custom content."
@@ -3270,6 +3273,28 @@
           }
         }
       }
+    },
+    "adminSNSMessage": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier"
+        },
+        "phase": {
+          "$ref": "#/definitions/coreWorkflowExecutionPhase"
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "sns_topic": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Represents a structure for a generic SNS Message to be published as \npart of a notification."
     },
     "adminSchedule": {
       "type": "object",

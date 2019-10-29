@@ -16,4 +16,5 @@ type AdminNotification struct {
 	Email *AdminEmailNotification `json:"email,omitempty"`
 	PagerDuty *AdminPagerDutyNotification `json:"pager_duty,omitempty"`
 	Slack *AdminSlackNotification `json:"slack,omitempty"`
+	Snsmessage *AdminSnsMessage `json:"snsmessage,omitempty"`
 }

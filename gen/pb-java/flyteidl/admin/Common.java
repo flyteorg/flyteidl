@@ -14579,6 +14579,19 @@ public final class Common {
      */
     flyteidl.admin.Common.SlackNotificationOrBuilder getSlackOrBuilder();
 
+    /**
+     * <code>.flyteidl.admin.SNSMessage snsmessage = 5;</code>
+     */
+    boolean hasSnsmessage();
+    /**
+     * <code>.flyteidl.admin.SNSMessage snsmessage = 5;</code>
+     */
+    flyteidl.admin.Common.SNSMessage getSnsmessage();
+    /**
+     * <code>.flyteidl.admin.SNSMessage snsmessage = 5;</code>
+     */
+    flyteidl.admin.Common.SNSMessageOrBuilder getSnsmessageOrBuilder();
+
     public flyteidl.admin.Common.Notification.TypeCase getTypeCase();
   }
   /**
@@ -14690,6 +14703,19 @@ public final class Common {
                 type_ = subBuilder.buildPartial();
               }
               typeCase_ = 4;
+              break;
+            }
+            case 42: {
+              flyteidl.admin.Common.SNSMessage.Builder subBuilder = null;
+              if (snsmessage_ != null) {
+                subBuilder = snsmessage_.toBuilder();
+              }
+              snsmessage_ = input.readMessage(flyteidl.admin.Common.SNSMessage.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(snsmessage_);
+                snsmessage_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -14924,6 +14950,27 @@ public final class Common {
       return flyteidl.admin.Common.SlackNotification.getDefaultInstance();
     }
 
+    public static final int SNSMESSAGE_FIELD_NUMBER = 5;
+    private flyteidl.admin.Common.SNSMessage snsmessage_;
+    /**
+     * <code>.flyteidl.admin.SNSMessage snsmessage = 5;</code>
+     */
+    public boolean hasSnsmessage() {
+      return snsmessage_ != null;
+    }
+    /**
+     * <code>.flyteidl.admin.SNSMessage snsmessage = 5;</code>
+     */
+    public flyteidl.admin.Common.SNSMessage getSnsmessage() {
+      return snsmessage_ == null ? flyteidl.admin.Common.SNSMessage.getDefaultInstance() : snsmessage_;
+    }
+    /**
+     * <code>.flyteidl.admin.SNSMessage snsmessage = 5;</code>
+     */
+    public flyteidl.admin.Common.SNSMessageOrBuilder getSnsmessageOrBuilder() {
+      return getSnsmessage();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -14954,6 +15001,9 @@ public final class Common {
       }
       if (typeCase_ == 4) {
         output.writeMessage(4, (flyteidl.admin.Common.SlackNotification) type_);
+      }
+      if (snsmessage_ != null) {
+        output.writeMessage(5, getSnsmessage());
       }
       unknownFields.writeTo(output);
     }
@@ -14988,6 +15038,10 @@ public final class Common {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, (flyteidl.admin.Common.SlackNotification) type_);
       }
+      if (snsmessage_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getSnsmessage());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -15004,6 +15058,11 @@ public final class Common {
       flyteidl.admin.Common.Notification other = (flyteidl.admin.Common.Notification) obj;
 
       if (!phases_.equals(other.phases_)) return false;
+      if (hasSnsmessage() != other.hasSnsmessage()) return false;
+      if (hasSnsmessage()) {
+        if (!getSnsmessage()
+            .equals(other.getSnsmessage())) return false;
+      }
       if (!getTypeCase().equals(other.getTypeCase())) return false;
       switch (typeCase_) {
         case 2:
@@ -15035,6 +15094,10 @@ public final class Common {
       if (getPhasesCount() > 0) {
         hash = (37 * hash) + PHASES_FIELD_NUMBER;
         hash = (53 * hash) + phases_.hashCode();
+      }
+      if (hasSnsmessage()) {
+        hash = (37 * hash) + SNSMESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getSnsmessage().hashCode();
       }
       switch (typeCase_) {
         case 2:
@@ -15193,6 +15256,12 @@ public final class Common {
         super.clear();
         phases_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        if (snsmessageBuilder_ == null) {
+          snsmessage_ = null;
+        } else {
+          snsmessage_ = null;
+          snsmessageBuilder_ = null;
+        }
         typeCase_ = 0;
         type_ = null;
         return this;
@@ -15248,6 +15317,11 @@ public final class Common {
           } else {
             result.type_ = slackBuilder_.build();
           }
+        }
+        if (snsmessageBuilder_ == null) {
+          result.snsmessage_ = snsmessage_;
+        } else {
+          result.snsmessage_ = snsmessageBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         result.typeCase_ = typeCase_;
@@ -15308,6 +15382,9 @@ public final class Common {
             phases_.addAll(other.phases_);
           }
           onChanged();
+        }
+        if (other.hasSnsmessage()) {
+          mergeSnsmessage(other.getSnsmessage());
         }
         switch (other.getTypeCase()) {
           case EMAIL: {
@@ -15980,6 +16057,123 @@ public final class Common {
         onChanged();;
         return slackBuilder_;
       }
+
+      private flyteidl.admin.Common.SNSMessage snsmessage_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.SNSMessage, flyteidl.admin.Common.SNSMessage.Builder, flyteidl.admin.Common.SNSMessageOrBuilder> snsmessageBuilder_;
+      /**
+       * <code>.flyteidl.admin.SNSMessage snsmessage = 5;</code>
+       */
+      public boolean hasSnsmessage() {
+        return snsmessageBuilder_ != null || snsmessage_ != null;
+      }
+      /**
+       * <code>.flyteidl.admin.SNSMessage snsmessage = 5;</code>
+       */
+      public flyteidl.admin.Common.SNSMessage getSnsmessage() {
+        if (snsmessageBuilder_ == null) {
+          return snsmessage_ == null ? flyteidl.admin.Common.SNSMessage.getDefaultInstance() : snsmessage_;
+        } else {
+          return snsmessageBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.SNSMessage snsmessage = 5;</code>
+       */
+      public Builder setSnsmessage(flyteidl.admin.Common.SNSMessage value) {
+        if (snsmessageBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          snsmessage_ = value;
+          onChanged();
+        } else {
+          snsmessageBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.SNSMessage snsmessage = 5;</code>
+       */
+      public Builder setSnsmessage(
+          flyteidl.admin.Common.SNSMessage.Builder builderForValue) {
+        if (snsmessageBuilder_ == null) {
+          snsmessage_ = builderForValue.build();
+          onChanged();
+        } else {
+          snsmessageBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.SNSMessage snsmessage = 5;</code>
+       */
+      public Builder mergeSnsmessage(flyteidl.admin.Common.SNSMessage value) {
+        if (snsmessageBuilder_ == null) {
+          if (snsmessage_ != null) {
+            snsmessage_ =
+              flyteidl.admin.Common.SNSMessage.newBuilder(snsmessage_).mergeFrom(value).buildPartial();
+          } else {
+            snsmessage_ = value;
+          }
+          onChanged();
+        } else {
+          snsmessageBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.SNSMessage snsmessage = 5;</code>
+       */
+      public Builder clearSnsmessage() {
+        if (snsmessageBuilder_ == null) {
+          snsmessage_ = null;
+          onChanged();
+        } else {
+          snsmessage_ = null;
+          snsmessageBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.SNSMessage snsmessage = 5;</code>
+       */
+      public flyteidl.admin.Common.SNSMessage.Builder getSnsmessageBuilder() {
+        
+        onChanged();
+        return getSnsmessageFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.admin.SNSMessage snsmessage = 5;</code>
+       */
+      public flyteidl.admin.Common.SNSMessageOrBuilder getSnsmessageOrBuilder() {
+        if (snsmessageBuilder_ != null) {
+          return snsmessageBuilder_.getMessageOrBuilder();
+        } else {
+          return snsmessage_ == null ?
+              flyteidl.admin.Common.SNSMessage.getDefaultInstance() : snsmessage_;
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.SNSMessage snsmessage = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.SNSMessage, flyteidl.admin.Common.SNSMessage.Builder, flyteidl.admin.Common.SNSMessageOrBuilder> 
+          getSnsmessageFieldBuilder() {
+        if (snsmessageBuilder_ == null) {
+          snsmessageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.Common.SNSMessage, flyteidl.admin.Common.SNSMessage.Builder, flyteidl.admin.Common.SNSMessageOrBuilder>(
+                  getSnsmessage(),
+                  getParentForChildren(),
+                  isClean());
+          snsmessage_ = null;
+        }
+        return snsmessageBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -16028,6 +16222,1104 @@ public final class Common {
 
     @java.lang.Override
     public flyteidl.admin.Common.Notification getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SNSMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.SNSMessage)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getId();
+    /**
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getIdOrBuilder();
+
+    /**
+     * <code>.flyteidl.core.WorkflowExecution.Phase phase = 2;</code>
+     */
+    int getPhaseValue();
+    /**
+     * <code>.flyteidl.core.WorkflowExecution.Phase phase = 2;</code>
+     */
+    flyteidl.core.Execution.WorkflowExecution.Phase getPhase();
+
+    /**
+     * <code>.google.protobuf.Timestamp occurred_at = 3;</code>
+     */
+    boolean hasOccurredAt();
+    /**
+     * <code>.google.protobuf.Timestamp occurred_at = 3;</code>
+     */
+    com.google.protobuf.Timestamp getOccurredAt();
+    /**
+     * <code>.google.protobuf.Timestamp occurred_at = 3;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getOccurredAtOrBuilder();
+
+    /**
+     * <code>repeated string sns_topic = 4;</code>
+     */
+    java.util.List<java.lang.String>
+        getSnsTopicList();
+    /**
+     * <code>repeated string sns_topic = 4;</code>
+     */
+    int getSnsTopicCount();
+    /**
+     * <code>repeated string sns_topic = 4;</code>
+     */
+    java.lang.String getSnsTopic(int index);
+    /**
+     * <code>repeated string sns_topic = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getSnsTopicBytes(int index);
+  }
+  /**
+   * <pre>
+   * Represents a structure for a generic SNS Message to be published as 
+   * part of a notification.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.SNSMessage}
+   */
+  public  static final class SNSMessage extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.SNSMessage)
+      SNSMessageOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SNSMessage.newBuilder() to construct.
+    private SNSMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SNSMessage() {
+      phase_ = 0;
+      snsTopic_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SNSMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder subBuilder = null;
+              if (id_ != null) {
+                subBuilder = id_.toBuilder();
+              }
+              id_ = input.readMessage(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(id_);
+                id_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              phase_ = rawValue;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (occurredAt_ != null) {
+                subBuilder = occurredAt_.toBuilder();
+              }
+              occurredAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(occurredAt_);
+                occurredAt_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                snsTopic_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              snsTopic_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          snsTopic_ = snsTopic_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.Common.internal_static_flyteidl_admin_SNSMessage_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.Common.internal_static_flyteidl_admin_SNSMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.Common.SNSMessage.class, flyteidl.admin.Common.SNSMessage.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier id_;
+    /**
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+     */
+    public boolean hasId() {
+      return id_ != null;
+    }
+    /**
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getId() {
+      return id_ == null ? flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance() : id_;
+    }
+    /**
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getIdOrBuilder() {
+      return getId();
+    }
+
+    public static final int PHASE_FIELD_NUMBER = 2;
+    private int phase_;
+    /**
+     * <code>.flyteidl.core.WorkflowExecution.Phase phase = 2;</code>
+     */
+    public int getPhaseValue() {
+      return phase_;
+    }
+    /**
+     * <code>.flyteidl.core.WorkflowExecution.Phase phase = 2;</code>
+     */
+    public flyteidl.core.Execution.WorkflowExecution.Phase getPhase() {
+      @SuppressWarnings("deprecation")
+      flyteidl.core.Execution.WorkflowExecution.Phase result = flyteidl.core.Execution.WorkflowExecution.Phase.valueOf(phase_);
+      return result == null ? flyteidl.core.Execution.WorkflowExecution.Phase.UNRECOGNIZED : result;
+    }
+
+    public static final int OCCURRED_AT_FIELD_NUMBER = 3;
+    private com.google.protobuf.Timestamp occurredAt_;
+    /**
+     * <code>.google.protobuf.Timestamp occurred_at = 3;</code>
+     */
+    public boolean hasOccurredAt() {
+      return occurredAt_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp occurred_at = 3;</code>
+     */
+    public com.google.protobuf.Timestamp getOccurredAt() {
+      return occurredAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : occurredAt_;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp occurred_at = 3;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getOccurredAtOrBuilder() {
+      return getOccurredAt();
+    }
+
+    public static final int SNS_TOPIC_FIELD_NUMBER = 4;
+    private com.google.protobuf.LazyStringList snsTopic_;
+    /**
+     * <code>repeated string sns_topic = 4;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getSnsTopicList() {
+      return snsTopic_;
+    }
+    /**
+     * <code>repeated string sns_topic = 4;</code>
+     */
+    public int getSnsTopicCount() {
+      return snsTopic_.size();
+    }
+    /**
+     * <code>repeated string sns_topic = 4;</code>
+     */
+    public java.lang.String getSnsTopic(int index) {
+      return snsTopic_.get(index);
+    }
+    /**
+     * <code>repeated string sns_topic = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSnsTopicBytes(int index) {
+      return snsTopic_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != null) {
+        output.writeMessage(1, getId());
+      }
+      if (phase_ != flyteidl.core.Execution.WorkflowExecution.Phase.UNDEFINED.getNumber()) {
+        output.writeEnum(2, phase_);
+      }
+      if (occurredAt_ != null) {
+        output.writeMessage(3, getOccurredAt());
+      }
+      for (int i = 0; i < snsTopic_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, snsTopic_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getId());
+      }
+      if (phase_ != flyteidl.core.Execution.WorkflowExecution.Phase.UNDEFINED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, phase_);
+      }
+      if (occurredAt_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getOccurredAt());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < snsTopic_.size(); i++) {
+          dataSize += computeStringSizeNoTag(snsTopic_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getSnsTopicList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.Common.SNSMessage)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.Common.SNSMessage other = (flyteidl.admin.Common.SNSMessage) obj;
+
+      if (hasId() != other.hasId()) return false;
+      if (hasId()) {
+        if (!getId()
+            .equals(other.getId())) return false;
+      }
+      if (phase_ != other.phase_) return false;
+      if (hasOccurredAt() != other.hasOccurredAt()) return false;
+      if (hasOccurredAt()) {
+        if (!getOccurredAt()
+            .equals(other.getOccurredAt())) return false;
+      }
+      if (!getSnsTopicList()
+          .equals(other.getSnsTopicList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasId()) {
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId().hashCode();
+      }
+      hash = (37 * hash) + PHASE_FIELD_NUMBER;
+      hash = (53 * hash) + phase_;
+      if (hasOccurredAt()) {
+        hash = (37 * hash) + OCCURRED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getOccurredAt().hashCode();
+      }
+      if (getSnsTopicCount() > 0) {
+        hash = (37 * hash) + SNS_TOPIC_FIELD_NUMBER;
+        hash = (53 * hash) + getSnsTopicList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.Common.SNSMessage parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Common.SNSMessage parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.SNSMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Common.SNSMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.SNSMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Common.SNSMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.SNSMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Common.SNSMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.SNSMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Common.SNSMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.SNSMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Common.SNSMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.Common.SNSMessage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Represents a structure for a generic SNS Message to be published as 
+     * part of a notification.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.admin.SNSMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.SNSMessage)
+        flyteidl.admin.Common.SNSMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_SNSMessage_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_SNSMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.Common.SNSMessage.class, flyteidl.admin.Common.SNSMessage.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.Common.SNSMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (idBuilder_ == null) {
+          id_ = null;
+        } else {
+          id_ = null;
+          idBuilder_ = null;
+        }
+        phase_ = 0;
+
+        if (occurredAtBuilder_ == null) {
+          occurredAt_ = null;
+        } else {
+          occurredAt_ = null;
+          occurredAtBuilder_ = null;
+        }
+        snsTopic_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_SNSMessage_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Common.SNSMessage getDefaultInstanceForType() {
+        return flyteidl.admin.Common.SNSMessage.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Common.SNSMessage build() {
+        flyteidl.admin.Common.SNSMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Common.SNSMessage buildPartial() {
+        flyteidl.admin.Common.SNSMessage result = new flyteidl.admin.Common.SNSMessage(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (idBuilder_ == null) {
+          result.id_ = id_;
+        } else {
+          result.id_ = idBuilder_.build();
+        }
+        result.phase_ = phase_;
+        if (occurredAtBuilder_ == null) {
+          result.occurredAt_ = occurredAt_;
+        } else {
+          result.occurredAt_ = occurredAtBuilder_.build();
+        }
+        if (((bitField0_ & 0x00000008) != 0)) {
+          snsTopic_ = snsTopic_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.snsTopic_ = snsTopic_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.Common.SNSMessage) {
+          return mergeFrom((flyteidl.admin.Common.SNSMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.Common.SNSMessage other) {
+        if (other == flyteidl.admin.Common.SNSMessage.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          mergeId(other.getId());
+        }
+        if (other.phase_ != 0) {
+          setPhaseValue(other.getPhaseValue());
+        }
+        if (other.hasOccurredAt()) {
+          mergeOccurredAt(other.getOccurredAt());
+        }
+        if (!other.snsTopic_.isEmpty()) {
+          if (snsTopic_.isEmpty()) {
+            snsTopic_ = other.snsTopic_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureSnsTopicIsMutable();
+            snsTopic_.addAll(other.snsTopic_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.Common.SNSMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.Common.SNSMessage) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier id_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder> idBuilder_;
+      /**
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public boolean hasId() {
+        return idBuilder_ != null || id_ != null;
+      }
+      /**
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getId() {
+        if (idBuilder_ == null) {
+          return id_ == null ? flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance() : id_;
+        } else {
+          return idBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public Builder setId(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier value) {
+        if (idBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          id_ = value;
+          onChanged();
+        } else {
+          idBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public Builder setId(
+          flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder builderForValue) {
+        if (idBuilder_ == null) {
+          id_ = builderForValue.build();
+          onChanged();
+        } else {
+          idBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public Builder mergeId(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier value) {
+        if (idBuilder_ == null) {
+          if (id_ != null) {
+            id_ =
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.newBuilder(id_).mergeFrom(value).buildPartial();
+          } else {
+            id_ = value;
+          }
+          onChanged();
+        } else {
+          idBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public Builder clearId() {
+        if (idBuilder_ == null) {
+          id_ = null;
+          onChanged();
+        } else {
+          id_ = null;
+          idBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder getIdBuilder() {
+        
+        onChanged();
+        return getIdFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getIdOrBuilder() {
+        if (idBuilder_ != null) {
+          return idBuilder_.getMessageOrBuilder();
+        } else {
+          return id_ == null ?
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance() : id_;
+        }
+      }
+      /**
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder> 
+          getIdFieldBuilder() {
+        if (idBuilder_ == null) {
+          idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder>(
+                  getId(),
+                  getParentForChildren(),
+                  isClean());
+          id_ = null;
+        }
+        return idBuilder_;
+      }
+
+      private int phase_ = 0;
+      /**
+       * <code>.flyteidl.core.WorkflowExecution.Phase phase = 2;</code>
+       */
+      public int getPhaseValue() {
+        return phase_;
+      }
+      /**
+       * <code>.flyteidl.core.WorkflowExecution.Phase phase = 2;</code>
+       */
+      public Builder setPhaseValue(int value) {
+        phase_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.WorkflowExecution.Phase phase = 2;</code>
+       */
+      public flyteidl.core.Execution.WorkflowExecution.Phase getPhase() {
+        @SuppressWarnings("deprecation")
+        flyteidl.core.Execution.WorkflowExecution.Phase result = flyteidl.core.Execution.WorkflowExecution.Phase.valueOf(phase_);
+        return result == null ? flyteidl.core.Execution.WorkflowExecution.Phase.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.flyteidl.core.WorkflowExecution.Phase phase = 2;</code>
+       */
+      public Builder setPhase(flyteidl.core.Execution.WorkflowExecution.Phase value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        phase_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.WorkflowExecution.Phase phase = 2;</code>
+       */
+      public Builder clearPhase() {
+        
+        phase_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp occurredAt_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> occurredAtBuilder_;
+      /**
+       * <code>.google.protobuf.Timestamp occurred_at = 3;</code>
+       */
+      public boolean hasOccurredAt() {
+        return occurredAtBuilder_ != null || occurredAt_ != null;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp occurred_at = 3;</code>
+       */
+      public com.google.protobuf.Timestamp getOccurredAt() {
+        if (occurredAtBuilder_ == null) {
+          return occurredAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : occurredAt_;
+        } else {
+          return occurredAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp occurred_at = 3;</code>
+       */
+      public Builder setOccurredAt(com.google.protobuf.Timestamp value) {
+        if (occurredAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          occurredAt_ = value;
+          onChanged();
+        } else {
+          occurredAtBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp occurred_at = 3;</code>
+       */
+      public Builder setOccurredAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (occurredAtBuilder_ == null) {
+          occurredAt_ = builderForValue.build();
+          onChanged();
+        } else {
+          occurredAtBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp occurred_at = 3;</code>
+       */
+      public Builder mergeOccurredAt(com.google.protobuf.Timestamp value) {
+        if (occurredAtBuilder_ == null) {
+          if (occurredAt_ != null) {
+            occurredAt_ =
+              com.google.protobuf.Timestamp.newBuilder(occurredAt_).mergeFrom(value).buildPartial();
+          } else {
+            occurredAt_ = value;
+          }
+          onChanged();
+        } else {
+          occurredAtBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp occurred_at = 3;</code>
+       */
+      public Builder clearOccurredAt() {
+        if (occurredAtBuilder_ == null) {
+          occurredAt_ = null;
+          onChanged();
+        } else {
+          occurredAt_ = null;
+          occurredAtBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp occurred_at = 3;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getOccurredAtBuilder() {
+        
+        onChanged();
+        return getOccurredAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Timestamp occurred_at = 3;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getOccurredAtOrBuilder() {
+        if (occurredAtBuilder_ != null) {
+          return occurredAtBuilder_.getMessageOrBuilder();
+        } else {
+          return occurredAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : occurredAt_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp occurred_at = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getOccurredAtFieldBuilder() {
+        if (occurredAtBuilder_ == null) {
+          occurredAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getOccurredAt(),
+                  getParentForChildren(),
+                  isClean());
+          occurredAt_ = null;
+        }
+        return occurredAtBuilder_;
+      }
+
+      private com.google.protobuf.LazyStringList snsTopic_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureSnsTopicIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          snsTopic_ = new com.google.protobuf.LazyStringArrayList(snsTopic_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+      /**
+       * <code>repeated string sns_topic = 4;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getSnsTopicList() {
+        return snsTopic_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string sns_topic = 4;</code>
+       */
+      public int getSnsTopicCount() {
+        return snsTopic_.size();
+      }
+      /**
+       * <code>repeated string sns_topic = 4;</code>
+       */
+      public java.lang.String getSnsTopic(int index) {
+        return snsTopic_.get(index);
+      }
+      /**
+       * <code>repeated string sns_topic = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSnsTopicBytes(int index) {
+        return snsTopic_.getByteString(index);
+      }
+      /**
+       * <code>repeated string sns_topic = 4;</code>
+       */
+      public Builder setSnsTopic(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSnsTopicIsMutable();
+        snsTopic_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string sns_topic = 4;</code>
+       */
+      public Builder addSnsTopic(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSnsTopicIsMutable();
+        snsTopic_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string sns_topic = 4;</code>
+       */
+      public Builder addAllSnsTopic(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureSnsTopicIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, snsTopic_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string sns_topic = 4;</code>
+       */
+      public Builder clearSnsTopic() {
+        snsTopic_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string sns_topic = 4;</code>
+       */
+      public Builder addSnsTopicBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureSnsTopicIsMutable();
+        snsTopic_.add(value);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.SNSMessage)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.SNSMessage)
+    private static final flyteidl.admin.Common.SNSMessage DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.Common.SNSMessage();
+    }
+
+    public static flyteidl.admin.Common.SNSMessage getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SNSMessage>
+        PARSER = new com.google.protobuf.AbstractParser<SNSMessage>() {
+      @java.lang.Override
+      public SNSMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SNSMessage(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SNSMessage> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SNSMessage> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.Common.SNSMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -18389,6 +19681,11 @@ public final class Common {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_Notification_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_SNSMessage_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_SNSMessage_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_UrlBlob_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -18424,62 +19721,69 @@ public final class Common {
     java.lang.String[] descriptorData = {
       "\n\033flyteidl/admin/common.proto\022\016flyteidl." +
       "admin\032\035flyteidl/core/execution.proto\032\036fl" +
-      "yteidl/core/identifier.proto\"F\n\025NamedEnt" +
-      "ityIdentifier\022\017\n\007project\030\001 \001(\t\022\016\n\006domain" +
-      "\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\"*\n\023NamedEntityMetad" +
-      "ata\022\023\n\013description\030\001 \001(\t\"\253\001\n\013NamedEntity" +
-      "\0222\n\rresource_type\030\001 \001(\0162\033.flyteidl.core." +
-      "ResourceType\0221\n\002id\030\002 \001(\0132%.flyteidl.admi" +
-      "n.NamedEntityIdentifier\0225\n\010metadata\030\003 \001(" +
-      "\0132#.flyteidl.admin.NamedEntityMetadata\"r" +
-      "\n\004Sort\022\013\n\003key\030\001 \001(\t\0221\n\tdirection\030\002 \001(\0162\036" +
-      ".flyteidl.admin.Sort.Direction\"*\n\tDirect" +
-      "ion\022\016\n\nDESCENDING\020\000\022\r\n\tASCENDING\020\001\"\210\001\n N" +
-      "amedEntityIdentifierListRequest\022\017\n\007proje" +
-      "ct\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\r\n\005limit\030\003 \001(\r\022" +
-      "\r\n\005token\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flytei" +
-      "dl.admin.Sort\"\262\001\n\026NamedEntityListRequest" +
-      "\0222\n\rresource_type\030\001 \001(\0162\033.flyteidl.core." +
-      "ResourceType\022\017\n\007project\030\002 \001(\t\022\016\n\006domain\030" +
-      "\003 \001(\t\022\r\n\005limit\030\004 \001(\r\022\r\n\005token\030\005 \001(\t\022%\n\007s" +
-      "ort_by\030\006 \001(\0132\024.flyteidl.admin.Sort\"c\n\031Na" +
-      "medEntityIdentifierList\0227\n\010entities\030\001 \003(" +
-      "\0132%.flyteidl.admin.NamedEntityIdentifier" +
-      "\022\r\n\005token\030\002 \001(\t\"O\n\017NamedEntityList\022-\n\010en" +
-      "tities\030\001 \003(\0132\033.flyteidl.admin.NamedEntit" +
-      "y\022\r\n\005token\030\002 \001(\t\"~\n\025NamedEntityGetReques" +
-      "t\0222\n\rresource_type\030\001 \001(\0162\033.flyteidl.core" +
-      ".ResourceType\0221\n\002id\030\002 \001(\0132%.flyteidl.adm" +
-      "in.NamedEntityIdentifier\"\270\001\n\030NamedEntity" +
-      "UpdateRequest\0222\n\rresource_type\030\001 \001(\0162\033.f" +
-      "lyteidl.core.ResourceType\0221\n\002id\030\002 \001(\0132%." +
-      "flyteidl.admin.NamedEntityIdentifier\0225\n\010" +
-      "metadata\030\003 \001(\0132#.flyteidl.admin.NamedEnt" +
-      "ityMetadata\"\033\n\031NamedEntityUpdateResponse" +
-      "\"9\n\020ObjectGetRequest\022%\n\002id\030\001 \001(\0132\031.flyte" +
-      "idl.core.Identifier\"\236\001\n\023ResourceListRequ" +
-      "est\0221\n\002id\030\001 \001(\0132%.flyteidl.admin.NamedEn" +
-      "tityIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030\003" +
-      " \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024" +
-      ".flyteidl.admin.Sort\"-\n\021EmailNotificatio" +
-      "n\022\030\n\020recipients_email\030\001 \003(\t\"1\n\025PagerDuty" +
-      "Notification\022\030\n\020recipients_email\030\001 \003(\t\"-" +
-      "\n\021SlackNotification\022\030\n\020recipients_email\030" +
-      "\001 \003(\t\"\363\001\n\014Notification\0226\n\006phases\030\001 \003(\0162&" +
-      ".flyteidl.core.WorkflowExecution.Phase\0222" +
-      "\n\005email\030\002 \001(\0132!.flyteidl.admin.EmailNoti" +
-      "ficationH\000\022;\n\npager_duty\030\003 \001(\0132%.flyteid" +
-      "l.admin.PagerDutyNotificationH\000\0222\n\005slack" +
-      "\030\004 \001(\0132!.flyteidl.admin.SlackNotificatio" +
-      "nH\000B\006\n\004type\"%\n\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r\n\005b" +
-      "ytes\030\002 \001(\003\"k\n\006Labels\0222\n\006values\030\001 \003(\0132\".f" +
-      "lyteidl.admin.Labels.ValuesEntry\032-\n\013Valu" +
-      "esEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"" +
-      "u\n\013Annotations\0227\n\006values\030\001 \003(\0132\'.flyteid" +
-      "l.admin.Annotations.ValuesEntry\032-\n\013Value" +
-      "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B3" +
-      "Z1github.com/lyft/flyteidl/gen/pb-go/fly" +
-      "teidl/adminb\006proto3"
+      "yteidl/core/identifier.proto\032\037google/pro" +
+      "tobuf/timestamp.proto\"F\n\025NamedEntityIden" +
+      "tifier\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022" +
+      "\014\n\004name\030\003 \001(\t\"*\n\023NamedEntityMetadata\022\023\n\013" +
+      "description\030\001 \001(\t\"\253\001\n\013NamedEntity\0222\n\rres" +
+      "ource_type\030\001 \001(\0162\033.flyteidl.core.Resourc" +
+      "eType\0221\n\002id\030\002 \001(\0132%.flyteidl.admin.Named" +
+      "EntityIdentifier\0225\n\010metadata\030\003 \001(\0132#.fly" +
+      "teidl.admin.NamedEntityMetadata\"r\n\004Sort\022" +
+      "\013\n\003key\030\001 \001(\t\0221\n\tdirection\030\002 \001(\0162\036.flytei" +
+      "dl.admin.Sort.Direction\"*\n\tDirection\022\016\n\n" +
+      "DESCENDING\020\000\022\r\n\tASCENDING\020\001\"\210\001\n NamedEnt" +
+      "ityIdentifierListRequest\022\017\n\007project\030\001 \001(" +
+      "\t\022\016\n\006domain\030\002 \001(\t\022\r\n\005limit\030\003 \001(\r\022\r\n\005toke" +
+      "n\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admi" +
+      "n.Sort\"\262\001\n\026NamedEntityListRequest\0222\n\rres" +
+      "ource_type\030\001 \001(\0162\033.flyteidl.core.Resourc" +
+      "eType\022\017\n\007project\030\002 \001(\t\022\016\n\006domain\030\003 \001(\t\022\r" +
+      "\n\005limit\030\004 \001(\r\022\r\n\005token\030\005 \001(\t\022%\n\007sort_by\030" +
+      "\006 \001(\0132\024.flyteidl.admin.Sort\"c\n\031NamedEnti" +
+      "tyIdentifierList\0227\n\010entities\030\001 \003(\0132%.fly" +
+      "teidl.admin.NamedEntityIdentifier\022\r\n\005tok" +
+      "en\030\002 \001(\t\"O\n\017NamedEntityList\022-\n\010entities\030" +
+      "\001 \003(\0132\033.flyteidl.admin.NamedEntity\022\r\n\005to" +
+      "ken\030\002 \001(\t\"~\n\025NamedEntityGetRequest\0222\n\rre" +
+      "source_type\030\001 \001(\0162\033.flyteidl.core.Resour" +
+      "ceType\0221\n\002id\030\002 \001(\0132%.flyteidl.admin.Name" +
+      "dEntityIdentifier\"\270\001\n\030NamedEntityUpdateR" +
+      "equest\0222\n\rresource_type\030\001 \001(\0162\033.flyteidl" +
+      ".core.ResourceType\0221\n\002id\030\002 \001(\0132%.flyteid" +
+      "l.admin.NamedEntityIdentifier\0225\n\010metadat" +
+      "a\030\003 \001(\0132#.flyteidl.admin.NamedEntityMeta" +
+      "data\"\033\n\031NamedEntityUpdateResponse\"9\n\020Obj" +
+      "ectGetRequest\022%\n\002id\030\001 \001(\0132\031.flyteidl.cor" +
+      "e.Identifier\"\236\001\n\023ResourceListRequest\0221\n\002" +
+      "id\030\001 \001(\0132%.flyteidl.admin.NamedEntityIde" +
+      "ntifier\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030\003 \001(\t\022\017\n" +
+      "\007filters\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flytei" +
+      "dl.admin.Sort\"-\n\021EmailNotification\022\030\n\020re" +
+      "cipients_email\030\001 \003(\t\"1\n\025PagerDutyNotific" +
+      "ation\022\030\n\020recipients_email\030\001 \003(\t\"-\n\021Slack" +
+      "Notification\022\030\n\020recipients_email\030\001 \003(\t\"\243" +
+      "\002\n\014Notification\0226\n\006phases\030\001 \003(\0162&.flytei" +
+      "dl.core.WorkflowExecution.Phase\0222\n\005email" +
+      "\030\002 \001(\0132!.flyteidl.admin.EmailNotificatio" +
+      "nH\000\022;\n\npager_duty\030\003 \001(\0132%.flyteidl.admin" +
+      ".PagerDutyNotificationH\000\0222\n\005slack\030\004 \001(\0132" +
+      "!.flyteidl.admin.SlackNotificationH\000\022.\n\n" +
+      "snsmessage\030\005 \001(\0132\032.flyteidl.admin.SNSMes" +
+      "sageB\006\n\004type\"\277\001\n\nSNSMessage\0226\n\002id\030\001 \001(\0132" +
+      "*.flyteidl.core.WorkflowExecutionIdentif" +
+      "ier\0225\n\005phase\030\002 \001(\0162&.flyteidl.core.Workf" +
+      "lowExecution.Phase\022/\n\013occurred_at\030\003 \001(\0132" +
+      "\032.google.protobuf.Timestamp\022\021\n\tsns_topic" +
+      "\030\004 \003(\t\"%\n\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r\n\005bytes\030" +
+      "\002 \001(\003\"k\n\006Labels\0222\n\006values\030\001 \003(\0132\".flytei" +
+      "dl.admin.Labels.ValuesEntry\032-\n\013ValuesEnt" +
+      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"u\n\013An" +
+      "notations\0227\n\006values\030\001 \003(\0132\'.flyteidl.adm" +
+      "in.Annotations.ValuesEntry\032-\n\013ValuesEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B3Z1git" +
+      "hub.com/lyft/flyteidl/gen/pb-go/flyteidl" +
+      "/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -18494,6 +19798,7 @@ public final class Common {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           flyteidl.core.Execution.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_admin_NamedEntityIdentifier_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -18596,15 +19901,21 @@ public final class Common {
     internal_static_flyteidl_admin_Notification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Notification_descriptor,
-        new java.lang.String[] { "Phases", "Email", "PagerDuty", "Slack", "Type", });
-    internal_static_flyteidl_admin_UrlBlob_descriptor =
+        new java.lang.String[] { "Phases", "Email", "PagerDuty", "Slack", "Snsmessage", "Type", });
+    internal_static_flyteidl_admin_SNSMessage_descriptor =
       getDescriptor().getMessageTypes().get(17);
+    internal_static_flyteidl_admin_SNSMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_SNSMessage_descriptor,
+        new java.lang.String[] { "Id", "Phase", "OccurredAt", "SnsTopic", });
+    internal_static_flyteidl_admin_UrlBlob_descriptor =
+      getDescriptor().getMessageTypes().get(18);
     internal_static_flyteidl_admin_UrlBlob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_UrlBlob_descriptor,
         new java.lang.String[] { "Url", "Bytes", });
     internal_static_flyteidl_admin_Labels_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_flyteidl_admin_Labels_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Labels_descriptor,
@@ -18616,7 +19927,7 @@ public final class Common {
         internal_static_flyteidl_admin_Labels_ValuesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_admin_Annotations_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_flyteidl_admin_Annotations_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Annotations_descriptor,
@@ -18629,6 +19940,7 @@ public final class Common {
         new java.lang.String[] { "Key", "Value", });
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

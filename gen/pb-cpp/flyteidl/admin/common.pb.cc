@@ -25,7 +25,10 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::prot
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SlackNotification_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Sort_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_NamedEntity_flyteidl_2fadmin_2fcommon_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_SNSMessage_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_WorkflowExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2ftimestamp_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto;
 namespace flyteidl {
 namespace admin {
 class NamedEntityIdentifierDefaultTypeInternal {
@@ -99,6 +102,10 @@ class NotificationDefaultTypeInternal {
   const ::flyteidl::admin::PagerDutyNotification* pager_duty_;
   const ::flyteidl::admin::SlackNotification* slack_;
 } _Notification_default_instance_;
+class SNSMessageDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<SNSMessage> _instance;
+} _SNSMessage_default_instance_;
 class UrlBlobDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<UrlBlob> _instance;
@@ -368,11 +375,28 @@ static void InitDefaultsNotification_flyteidl_2fadmin_2fcommon_2eproto() {
   ::flyteidl::admin::Notification::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<3> scc_info_Notification_flyteidl_2fadmin_2fcommon_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsNotification_flyteidl_2fadmin_2fcommon_2eproto}, {
+::google::protobuf::internal::SCCInfo<4> scc_info_Notification_flyteidl_2fadmin_2fcommon_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsNotification_flyteidl_2fadmin_2fcommon_2eproto}, {
       &scc_info_EmailNotification_flyteidl_2fadmin_2fcommon_2eproto.base,
       &scc_info_PagerDutyNotification_flyteidl_2fadmin_2fcommon_2eproto.base,
-      &scc_info_SlackNotification_flyteidl_2fadmin_2fcommon_2eproto.base,}};
+      &scc_info_SlackNotification_flyteidl_2fadmin_2fcommon_2eproto.base,
+      &scc_info_SNSMessage_flyteidl_2fadmin_2fcommon_2eproto.base,}};
+
+static void InitDefaultsSNSMessage_flyteidl_2fadmin_2fcommon_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::flyteidl::admin::_SNSMessage_default_instance_;
+    new (ptr) ::flyteidl::admin::SNSMessage();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::flyteidl::admin::SNSMessage::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<2> scc_info_SNSMessage_flyteidl_2fadmin_2fcommon_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsSNSMessage_flyteidl_2fadmin_2fcommon_2eproto}, {
+      &scc_info_WorkflowExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto.base,
+      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
 
 static void InitDefaultsUrlBlob_flyteidl_2fadmin_2fcommon_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -462,6 +486,7 @@ void InitDefaults_flyteidl_2fadmin_2fcommon_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_PagerDutyNotification_flyteidl_2fadmin_2fcommon_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SlackNotification_flyteidl_2fadmin_2fcommon_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Notification_flyteidl_2fadmin_2fcommon_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_SNSMessage_flyteidl_2fadmin_2fcommon_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_UrlBlob_flyteidl_2fadmin_2fcommon_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Labels_ValuesEntry_DoNotUse_flyteidl_2fadmin_2fcommon_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Labels_flyteidl_2fadmin_2fcommon_2eproto.base);
@@ -469,7 +494,7 @@ void InitDefaults_flyteidl_2fadmin_2fcommon_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_Annotations_flyteidl_2fadmin_2fcommon_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fcommon_2eproto[22];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fcommon_2eproto[23];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fadmin_2fcommon_2eproto[1];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fadmin_2fcommon_2eproto = nullptr;
 
@@ -601,7 +626,17 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fcommon_2eproto::
   offsetof(::flyteidl::admin::NotificationDefaultTypeInternal, email_),
   offsetof(::flyteidl::admin::NotificationDefaultTypeInternal, pager_duty_),
   offsetof(::flyteidl::admin::NotificationDefaultTypeInternal, slack_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Notification, snsmessage_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Notification, type_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SNSMessage, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SNSMessage, id_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SNSMessage, phase_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SNSMessage, occurred_at_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SNSMessage, sns_topic_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::UrlBlob, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -658,11 +693,12 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 106, -1, sizeof(::flyteidl::admin::PagerDutyNotification)},
   { 112, -1, sizeof(::flyteidl::admin::SlackNotification)},
   { 118, -1, sizeof(::flyteidl::admin::Notification)},
-  { 128, -1, sizeof(::flyteidl::admin::UrlBlob)},
-  { 135, 142, sizeof(::flyteidl::admin::Labels_ValuesEntry_DoNotUse)},
-  { 144, -1, sizeof(::flyteidl::admin::Labels)},
-  { 150, 157, sizeof(::flyteidl::admin::Annotations_ValuesEntry_DoNotUse)},
-  { 159, -1, sizeof(::flyteidl::admin::Annotations)},
+  { 129, -1, sizeof(::flyteidl::admin::SNSMessage)},
+  { 138, -1, sizeof(::flyteidl::admin::UrlBlob)},
+  { 145, 152, sizeof(::flyteidl::admin::Labels_ValuesEntry_DoNotUse)},
+  { 154, -1, sizeof(::flyteidl::admin::Labels)},
+  { 160, 167, sizeof(::flyteidl::admin::Annotations_ValuesEntry_DoNotUse)},
+  { 169, -1, sizeof(::flyteidl::admin::Annotations)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -683,6 +719,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_PagerDutyNotification_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_SlackNotification_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_Notification_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_SNSMessage_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_UrlBlob_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_Labels_ValuesEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_Labels_default_instance_),
@@ -693,82 +730,90 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto = {
   {}, AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto, "flyteidl/admin/common.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fadmin_2fcommon_2eproto::offsets,
-  file_level_metadata_flyteidl_2fadmin_2fcommon_2eproto, 22, file_level_enum_descriptors_flyteidl_2fadmin_2fcommon_2eproto, file_level_service_descriptors_flyteidl_2fadmin_2fcommon_2eproto,
+  file_level_metadata_flyteidl_2fadmin_2fcommon_2eproto, 23, file_level_enum_descriptors_flyteidl_2fadmin_2fcommon_2eproto, file_level_service_descriptors_flyteidl_2fadmin_2fcommon_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto[] =
   "\n\033flyteidl/admin/common.proto\022\016flyteidl."
   "admin\032\035flyteidl/core/execution.proto\032\036fl"
-  "yteidl/core/identifier.proto\"F\n\025NamedEnt"
-  "ityIdentifier\022\017\n\007project\030\001 \001(\t\022\016\n\006domain"
-  "\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\"*\n\023NamedEntityMetad"
-  "ata\022\023\n\013description\030\001 \001(\t\"\253\001\n\013NamedEntity"
-  "\0222\n\rresource_type\030\001 \001(\0162\033.flyteidl.core."
-  "ResourceType\0221\n\002id\030\002 \001(\0132%.flyteidl.admi"
-  "n.NamedEntityIdentifier\0225\n\010metadata\030\003 \001("
-  "\0132#.flyteidl.admin.NamedEntityMetadata\"r"
-  "\n\004Sort\022\013\n\003key\030\001 \001(\t\0221\n\tdirection\030\002 \001(\0162\036"
-  ".flyteidl.admin.Sort.Direction\"*\n\tDirect"
-  "ion\022\016\n\nDESCENDING\020\000\022\r\n\tASCENDING\020\001\"\210\001\n N"
-  "amedEntityIdentifierListRequest\022\017\n\007proje"
-  "ct\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\r\n\005limit\030\003 \001(\r\022"
-  "\r\n\005token\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flytei"
-  "dl.admin.Sort\"\262\001\n\026NamedEntityListRequest"
-  "\0222\n\rresource_type\030\001 \001(\0162\033.flyteidl.core."
-  "ResourceType\022\017\n\007project\030\002 \001(\t\022\016\n\006domain\030"
-  "\003 \001(\t\022\r\n\005limit\030\004 \001(\r\022\r\n\005token\030\005 \001(\t\022%\n\007s"
-  "ort_by\030\006 \001(\0132\024.flyteidl.admin.Sort\"c\n\031Na"
-  "medEntityIdentifierList\0227\n\010entities\030\001 \003("
-  "\0132%.flyteidl.admin.NamedEntityIdentifier"
-  "\022\r\n\005token\030\002 \001(\t\"O\n\017NamedEntityList\022-\n\010en"
-  "tities\030\001 \003(\0132\033.flyteidl.admin.NamedEntit"
-  "y\022\r\n\005token\030\002 \001(\t\"~\n\025NamedEntityGetReques"
-  "t\0222\n\rresource_type\030\001 \001(\0162\033.flyteidl.core"
-  ".ResourceType\0221\n\002id\030\002 \001(\0132%.flyteidl.adm"
-  "in.NamedEntityIdentifier\"\270\001\n\030NamedEntity"
-  "UpdateRequest\0222\n\rresource_type\030\001 \001(\0162\033.f"
-  "lyteidl.core.ResourceType\0221\n\002id\030\002 \001(\0132%."
-  "flyteidl.admin.NamedEntityIdentifier\0225\n\010"
-  "metadata\030\003 \001(\0132#.flyteidl.admin.NamedEnt"
-  "ityMetadata\"\033\n\031NamedEntityUpdateResponse"
-  "\"9\n\020ObjectGetRequest\022%\n\002id\030\001 \001(\0132\031.flyte"
-  "idl.core.Identifier\"\236\001\n\023ResourceListRequ"
-  "est\0221\n\002id\030\001 \001(\0132%.flyteidl.admin.NamedEn"
-  "tityIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030\003"
-  " \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024"
-  ".flyteidl.admin.Sort\"-\n\021EmailNotificatio"
-  "n\022\030\n\020recipients_email\030\001 \003(\t\"1\n\025PagerDuty"
-  "Notification\022\030\n\020recipients_email\030\001 \003(\t\"-"
-  "\n\021SlackNotification\022\030\n\020recipients_email\030"
-  "\001 \003(\t\"\363\001\n\014Notification\0226\n\006phases\030\001 \003(\0162&"
-  ".flyteidl.core.WorkflowExecution.Phase\0222"
-  "\n\005email\030\002 \001(\0132!.flyteidl.admin.EmailNoti"
-  "ficationH\000\022;\n\npager_duty\030\003 \001(\0132%.flyteid"
-  "l.admin.PagerDutyNotificationH\000\0222\n\005slack"
-  "\030\004 \001(\0132!.flyteidl.admin.SlackNotificatio"
-  "nH\000B\006\n\004type\"%\n\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r\n\005b"
-  "ytes\030\002 \001(\003\"k\n\006Labels\0222\n\006values\030\001 \003(\0132\".f"
-  "lyteidl.admin.Labels.ValuesEntry\032-\n\013Valu"
-  "esEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\""
-  "u\n\013Annotations\0227\n\006values\030\001 \003(\0132\'.flyteid"
-  "l.admin.Annotations.ValuesEntry\032-\n\013Value"
-  "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B3"
-  "Z1github.com/lyft/flyteidl/gen/pb-go/fly"
-  "teidl/adminb\006proto3"
+  "yteidl/core/identifier.proto\032\037google/pro"
+  "tobuf/timestamp.proto\"F\n\025NamedEntityIden"
+  "tifier\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022"
+  "\014\n\004name\030\003 \001(\t\"*\n\023NamedEntityMetadata\022\023\n\013"
+  "description\030\001 \001(\t\"\253\001\n\013NamedEntity\0222\n\rres"
+  "ource_type\030\001 \001(\0162\033.flyteidl.core.Resourc"
+  "eType\0221\n\002id\030\002 \001(\0132%.flyteidl.admin.Named"
+  "EntityIdentifier\0225\n\010metadata\030\003 \001(\0132#.fly"
+  "teidl.admin.NamedEntityMetadata\"r\n\004Sort\022"
+  "\013\n\003key\030\001 \001(\t\0221\n\tdirection\030\002 \001(\0162\036.flytei"
+  "dl.admin.Sort.Direction\"*\n\tDirection\022\016\n\n"
+  "DESCENDING\020\000\022\r\n\tASCENDING\020\001\"\210\001\n NamedEnt"
+  "ityIdentifierListRequest\022\017\n\007project\030\001 \001("
+  "\t\022\016\n\006domain\030\002 \001(\t\022\r\n\005limit\030\003 \001(\r\022\r\n\005toke"
+  "n\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admi"
+  "n.Sort\"\262\001\n\026NamedEntityListRequest\0222\n\rres"
+  "ource_type\030\001 \001(\0162\033.flyteidl.core.Resourc"
+  "eType\022\017\n\007project\030\002 \001(\t\022\016\n\006domain\030\003 \001(\t\022\r"
+  "\n\005limit\030\004 \001(\r\022\r\n\005token\030\005 \001(\t\022%\n\007sort_by\030"
+  "\006 \001(\0132\024.flyteidl.admin.Sort\"c\n\031NamedEnti"
+  "tyIdentifierList\0227\n\010entities\030\001 \003(\0132%.fly"
+  "teidl.admin.NamedEntityIdentifier\022\r\n\005tok"
+  "en\030\002 \001(\t\"O\n\017NamedEntityList\022-\n\010entities\030"
+  "\001 \003(\0132\033.flyteidl.admin.NamedEntity\022\r\n\005to"
+  "ken\030\002 \001(\t\"~\n\025NamedEntityGetRequest\0222\n\rre"
+  "source_type\030\001 \001(\0162\033.flyteidl.core.Resour"
+  "ceType\0221\n\002id\030\002 \001(\0132%.flyteidl.admin.Name"
+  "dEntityIdentifier\"\270\001\n\030NamedEntityUpdateR"
+  "equest\0222\n\rresource_type\030\001 \001(\0162\033.flyteidl"
+  ".core.ResourceType\0221\n\002id\030\002 \001(\0132%.flyteid"
+  "l.admin.NamedEntityIdentifier\0225\n\010metadat"
+  "a\030\003 \001(\0132#.flyteidl.admin.NamedEntityMeta"
+  "data\"\033\n\031NamedEntityUpdateResponse\"9\n\020Obj"
+  "ectGetRequest\022%\n\002id\030\001 \001(\0132\031.flyteidl.cor"
+  "e.Identifier\"\236\001\n\023ResourceListRequest\0221\n\002"
+  "id\030\001 \001(\0132%.flyteidl.admin.NamedEntityIde"
+  "ntifier\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030\003 \001(\t\022\017\n"
+  "\007filters\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flytei"
+  "dl.admin.Sort\"-\n\021EmailNotification\022\030\n\020re"
+  "cipients_email\030\001 \003(\t\"1\n\025PagerDutyNotific"
+  "ation\022\030\n\020recipients_email\030\001 \003(\t\"-\n\021Slack"
+  "Notification\022\030\n\020recipients_email\030\001 \003(\t\"\243"
+  "\002\n\014Notification\0226\n\006phases\030\001 \003(\0162&.flytei"
+  "dl.core.WorkflowExecution.Phase\0222\n\005email"
+  "\030\002 \001(\0132!.flyteidl.admin.EmailNotificatio"
+  "nH\000\022;\n\npager_duty\030\003 \001(\0132%.flyteidl.admin"
+  ".PagerDutyNotificationH\000\0222\n\005slack\030\004 \001(\0132"
+  "!.flyteidl.admin.SlackNotificationH\000\022.\n\n"
+  "snsmessage\030\005 \001(\0132\032.flyteidl.admin.SNSMes"
+  "sageB\006\n\004type\"\277\001\n\nSNSMessage\0226\n\002id\030\001 \001(\0132"
+  "*.flyteidl.core.WorkflowExecutionIdentif"
+  "ier\0225\n\005phase\030\002 \001(\0162&.flyteidl.core.Workf"
+  "lowExecution.Phase\022/\n\013occurred_at\030\003 \001(\0132"
+  "\032.google.protobuf.Timestamp\022\021\n\tsns_topic"
+  "\030\004 \003(\t\"%\n\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r\n\005bytes\030"
+  "\002 \001(\003\"k\n\006Labels\0222\n\006values\030\001 \003(\0132\".flytei"
+  "dl.admin.Labels.ValuesEntry\032-\n\013ValuesEnt"
+  "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"u\n\013An"
+  "notations\0227\n\006values\030\001 \003(\0132\'.flyteidl.adm"
+  "in.Annotations.ValuesEntry\032-\n\013ValuesEntr"
+  "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B3Z1git"
+  "hub.com/lyft/flyteidl/gen/pb-go/flyteidl"
+  "/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fcommon_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fcommon_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto,
-  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 2299,
+  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 2574,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[2] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[3] =
   {
     ::AddDescriptors_flyteidl_2fcore_2fexecution_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fidentifier_2eproto,
+    ::AddDescriptors_google_2fprotobuf_2ftimestamp_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fcommon_2eproto, deps, 2);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fcommon_2eproto, deps, 3);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -6833,12 +6878,15 @@ void Notification::InitAsDefaultInstance() {
       ::flyteidl::admin::PagerDutyNotification::internal_default_instance());
   ::flyteidl::admin::_Notification_default_instance_.slack_ = const_cast< ::flyteidl::admin::SlackNotification*>(
       ::flyteidl::admin::SlackNotification::internal_default_instance());
+  ::flyteidl::admin::_Notification_default_instance_._instance.get_mutable()->snsmessage_ = const_cast< ::flyteidl::admin::SNSMessage*>(
+      ::flyteidl::admin::SNSMessage::internal_default_instance());
 }
 class Notification::HasBitSetters {
  public:
   static const ::flyteidl::admin::EmailNotification& email(const Notification* msg);
   static const ::flyteidl::admin::PagerDutyNotification& pager_duty(const Notification* msg);
   static const ::flyteidl::admin::SlackNotification& slack(const Notification* msg);
+  static const ::flyteidl::admin::SNSMessage& snsmessage(const Notification* msg);
 };
 
 const ::flyteidl::admin::EmailNotification&
@@ -6852,6 +6900,10 @@ Notification::HasBitSetters::pager_duty(const Notification* msg) {
 const ::flyteidl::admin::SlackNotification&
 Notification::HasBitSetters::slack(const Notification* msg) {
   return *msg->type_.slack_;
+}
+const ::flyteidl::admin::SNSMessage&
+Notification::HasBitSetters::snsmessage(const Notification* msg) {
+  return *msg->snsmessage_;
 }
 void Notification::set_allocated_email(::flyteidl::admin::EmailNotification* email) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
@@ -6900,6 +6952,7 @@ const int Notification::kPhasesFieldNumber;
 const int Notification::kEmailFieldNumber;
 const int Notification::kPagerDutyFieldNumber;
 const int Notification::kSlackFieldNumber;
+const int Notification::kSnsmessageFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Notification::Notification()
@@ -6912,6 +6965,11 @@ Notification::Notification(const Notification& from)
       _internal_metadata_(nullptr),
       phases_(from.phases_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_snsmessage()) {
+    snsmessage_ = new ::flyteidl::admin::SNSMessage(*from.snsmessage_);
+  } else {
+    snsmessage_ = nullptr;
+  }
   clear_has_type();
   switch (from.type_case()) {
     case kEmail: {
@@ -6936,6 +6994,7 @@ Notification::Notification(const Notification& from)
 void Notification::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_Notification_flyteidl_2fadmin_2fcommon_2eproto.base);
+  snsmessage_ = nullptr;
   clear_has_type();
 }
 
@@ -6945,6 +7004,7 @@ Notification::~Notification() {
 }
 
 void Notification::SharedDtor() {
+  if (this != internal_default_instance()) delete snsmessage_;
   if (has_type()) {
     clear_type();
   }
@@ -6989,6 +7049,10 @@ void Notification::Clear() {
   (void) cached_has_bits;
 
   phases_.Clear();
+  if (GetArenaNoVirtual() == nullptr && snsmessage_ != nullptr) {
+    delete snsmessage_;
+  }
+  snsmessage_ = nullptr;
   clear_type();
   _internal_metadata_.Clear();
 }
@@ -7060,6 +7124,19 @@ const char* Notification::_InternalParse(const char* begin, const char* end, voi
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::admin::SlackNotification::_InternalParse;
         object = msg->mutable_slack();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .flyteidl.admin.SNSMessage snsmessage = 5;
+      case 5: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::admin::SNSMessage::_InternalParse;
+        object = msg->mutable_snsmessage();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -7155,6 +7232,17 @@ bool Notification::MergePartialFromCodedStream(
         break;
       }
 
+      // .flyteidl.admin.SNSMessage snsmessage = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_snsmessage()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -7214,6 +7302,12 @@ void Notification::SerializeWithCachedSizes(
       4, HasBitSetters::slack(this), output);
   }
 
+  // .flyteidl.admin.SNSMessage snsmessage = 5;
+  if (this->has_snsmessage()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      5, HasBitSetters::snsmessage(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -7260,6 +7354,13 @@ void Notification::SerializeWithCachedSizes(
         4, HasBitSetters::slack(this), target);
   }
 
+  // .flyteidl.admin.SNSMessage snsmessage = 5;
+  if (this->has_snsmessage()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        5, HasBitSetters::snsmessage(this), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -7297,6 +7398,13 @@ size_t Notification::ByteSizeLong() const {
     _phases_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
+  }
+
+  // .flyteidl.admin.SNSMessage snsmessage = 5;
+  if (this->has_snsmessage()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *snsmessage_);
   }
 
   switch (type_case()) {
@@ -7353,6 +7461,9 @@ void Notification::MergeFrom(const Notification& from) {
   (void) cached_has_bits;
 
   phases_.MergeFrom(from.phases_);
+  if (from.has_snsmessage()) {
+    mutable_snsmessage()->::flyteidl::admin::SNSMessage::MergeFrom(from.snsmessage());
+  }
   switch (from.type_case()) {
     case kEmail: {
       mutable_email()->::flyteidl::admin::EmailNotification::MergeFrom(from.email());
@@ -7398,11 +7509,498 @@ void Notification::InternalSwap(Notification* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   phases_.InternalSwap(&other->phases_);
+  swap(snsmessage_, other->snsmessage_);
   swap(type_, other->type_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
 ::google::protobuf::Metadata Notification::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto);
+  return ::file_level_metadata_flyteidl_2fadmin_2fcommon_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void SNSMessage::InitAsDefaultInstance() {
+  ::flyteidl::admin::_SNSMessage_default_instance_._instance.get_mutable()->id_ = const_cast< ::flyteidl::core::WorkflowExecutionIdentifier*>(
+      ::flyteidl::core::WorkflowExecutionIdentifier::internal_default_instance());
+  ::flyteidl::admin::_SNSMessage_default_instance_._instance.get_mutable()->occurred_at_ = const_cast< ::google::protobuf::Timestamp*>(
+      ::google::protobuf::Timestamp::internal_default_instance());
+}
+class SNSMessage::HasBitSetters {
+ public:
+  static const ::flyteidl::core::WorkflowExecutionIdentifier& id(const SNSMessage* msg);
+  static const ::google::protobuf::Timestamp& occurred_at(const SNSMessage* msg);
+};
+
+const ::flyteidl::core::WorkflowExecutionIdentifier&
+SNSMessage::HasBitSetters::id(const SNSMessage* msg) {
+  return *msg->id_;
+}
+const ::google::protobuf::Timestamp&
+SNSMessage::HasBitSetters::occurred_at(const SNSMessage* msg) {
+  return *msg->occurred_at_;
+}
+void SNSMessage::clear_id() {
+  if (GetArenaNoVirtual() == nullptr && id_ != nullptr) {
+    delete id_;
+  }
+  id_ = nullptr;
+}
+void SNSMessage::clear_occurred_at() {
+  if (GetArenaNoVirtual() == nullptr && occurred_at_ != nullptr) {
+    delete occurred_at_;
+  }
+  occurred_at_ = nullptr;
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int SNSMessage::kIdFieldNumber;
+const int SNSMessage::kPhaseFieldNumber;
+const int SNSMessage::kOccurredAtFieldNumber;
+const int SNSMessage::kSnsTopicFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+SNSMessage::SNSMessage()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:flyteidl.admin.SNSMessage)
+}
+SNSMessage::SNSMessage(const SNSMessage& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr),
+      sns_topic_(from.sns_topic_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_id()) {
+    id_ = new ::flyteidl::core::WorkflowExecutionIdentifier(*from.id_);
+  } else {
+    id_ = nullptr;
+  }
+  if (from.has_occurred_at()) {
+    occurred_at_ = new ::google::protobuf::Timestamp(*from.occurred_at_);
+  } else {
+    occurred_at_ = nullptr;
+  }
+  phase_ = from.phase_;
+  // @@protoc_insertion_point(copy_constructor:flyteidl.admin.SNSMessage)
+}
+
+void SNSMessage::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_SNSMessage_flyteidl_2fadmin_2fcommon_2eproto.base);
+  ::memset(&id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&phase_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(phase_));
+}
+
+SNSMessage::~SNSMessage() {
+  // @@protoc_insertion_point(destructor:flyteidl.admin.SNSMessage)
+  SharedDtor();
+}
+
+void SNSMessage::SharedDtor() {
+  if (this != internal_default_instance()) delete id_;
+  if (this != internal_default_instance()) delete occurred_at_;
+}
+
+void SNSMessage::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const SNSMessage& SNSMessage::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_SNSMessage_flyteidl_2fadmin_2fcommon_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void SNSMessage::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.admin.SNSMessage)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  sns_topic_.Clear();
+  if (GetArenaNoVirtual() == nullptr && id_ != nullptr) {
+    delete id_;
+  }
+  id_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && occurred_at_ != nullptr) {
+    delete occurred_at_;
+  }
+  occurred_at_ = nullptr;
+  phase_ = 0;
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* SNSMessage::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<SNSMessage*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .flyteidl.core.WorkflowExecutionIdentifier id = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::core::WorkflowExecutionIdentifier::_InternalParse;
+        object = msg->mutable_id();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .flyteidl.core.WorkflowExecution.Phase phase = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_phase(static_cast<::flyteidl::core::WorkflowExecution_Phase>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // .google.protobuf.Timestamp occurred_at = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::google::protobuf::Timestamp::_InternalParse;
+        object = msg->mutable_occurred_at();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // repeated string sns_topic = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
+        do {
+          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          ctx->extra_parse_data().SetFieldName("flyteidl.admin.SNSMessage.sns_topic");
+          object = msg->add_sns_topic();
+          if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+            parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+            goto string_till_end;
+          }
+          GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+          ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+          ptr += size;
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 34 && (ptr += 1));
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool SNSMessage::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:flyteidl.admin.SNSMessage)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .flyteidl.core.WorkflowExecutionIdentifier id = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_id()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .flyteidl.core.WorkflowExecution.Phase phase = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_phase(static_cast< ::flyteidl::core::WorkflowExecution_Phase >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .google.protobuf.Timestamp occurred_at = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_occurred_at()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated string sns_topic = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_sns_topic()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->sns_topic(this->sns_topic_size() - 1).data(),
+            static_cast<int>(this->sns_topic(this->sns_topic_size() - 1).length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.admin.SNSMessage.sns_topic"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:flyteidl.admin.SNSMessage)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:flyteidl.admin.SNSMessage)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void SNSMessage::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:flyteidl.admin.SNSMessage)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .flyteidl.core.WorkflowExecutionIdentifier id = 1;
+  if (this->has_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, HasBitSetters::id(this), output);
+  }
+
+  // .flyteidl.core.WorkflowExecution.Phase phase = 2;
+  if (this->phase() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->phase(), output);
+  }
+
+  // .google.protobuf.Timestamp occurred_at = 3;
+  if (this->has_occurred_at()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, HasBitSetters::occurred_at(this), output);
+  }
+
+  // repeated string sns_topic = 4;
+  for (int i = 0, n = this->sns_topic_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->sns_topic(i).data(), static_cast<int>(this->sns_topic(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.SNSMessage.sns_topic");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      4, this->sns_topic(i), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:flyteidl.admin.SNSMessage)
+}
+
+::google::protobuf::uint8* SNSMessage::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.SNSMessage)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .flyteidl.core.WorkflowExecutionIdentifier id = 1;
+  if (this->has_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, HasBitSetters::id(this), target);
+  }
+
+  // .flyteidl.core.WorkflowExecution.Phase phase = 2;
+  if (this->phase() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->phase(), target);
+  }
+
+  // .google.protobuf.Timestamp occurred_at = 3;
+  if (this->has_occurred_at()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, HasBitSetters::occurred_at(this), target);
+  }
+
+  // repeated string sns_topic = 4;
+  for (int i = 0, n = this->sns_topic_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->sns_topic(i).data(), static_cast<int>(this->sns_topic(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.SNSMessage.sns_topic");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(4, this->sns_topic(i), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.SNSMessage)
+  return target;
+}
+
+size_t SNSMessage::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.SNSMessage)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated string sns_topic = 4;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->sns_topic_size());
+  for (int i = 0, n = this->sns_topic_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->sns_topic(i));
+  }
+
+  // .flyteidl.core.WorkflowExecutionIdentifier id = 1;
+  if (this->has_id()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *id_);
+  }
+
+  // .google.protobuf.Timestamp occurred_at = 3;
+  if (this->has_occurred_at()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *occurred_at_);
+  }
+
+  // .flyteidl.core.WorkflowExecution.Phase phase = 2;
+  if (this->phase() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->phase());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void SNSMessage::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.SNSMessage)
+  GOOGLE_DCHECK_NE(&from, this);
+  const SNSMessage* source =
+      ::google::protobuf::DynamicCastToGenerated<SNSMessage>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.SNSMessage)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.admin.SNSMessage)
+    MergeFrom(*source);
+  }
+}
+
+void SNSMessage::MergeFrom(const SNSMessage& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.admin.SNSMessage)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  sns_topic_.MergeFrom(from.sns_topic_);
+  if (from.has_id()) {
+    mutable_id()->::flyteidl::core::WorkflowExecutionIdentifier::MergeFrom(from.id());
+  }
+  if (from.has_occurred_at()) {
+    mutable_occurred_at()->::google::protobuf::Timestamp::MergeFrom(from.occurred_at());
+  }
+  if (from.phase() != 0) {
+    set_phase(from.phase());
+  }
+}
+
+void SNSMessage::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.admin.SNSMessage)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void SNSMessage::CopyFrom(const SNSMessage& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.admin.SNSMessage)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SNSMessage::IsInitialized() const {
+  return true;
+}
+
+void SNSMessage::Swap(SNSMessage* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void SNSMessage::InternalSwap(SNSMessage* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  sns_topic_.InternalSwap(CastToBase(&other->sns_topic_));
+  swap(id_, other->id_);
+  swap(occurred_at_, other->occurred_at_);
+  swap(phase_, other->phase_);
+}
+
+::google::protobuf::Metadata SNSMessage::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto);
   return ::file_level_metadata_flyteidl_2fadmin_2fcommon_2eproto[kIndexInFileMessages];
 }
@@ -7760,7 +8358,7 @@ void Labels_ValuesEntry_DoNotUse::MergeFrom(const Labels_ValuesEntry_DoNotUse& o
 }
 ::google::protobuf::Metadata Labels_ValuesEntry_DoNotUse::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto);
-  return ::file_level_metadata_flyteidl_2fadmin_2fcommon_2eproto[18];
+  return ::file_level_metadata_flyteidl_2fadmin_2fcommon_2eproto[19];
 }
 void Labels_ValuesEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -8183,7 +8781,7 @@ void Annotations_ValuesEntry_DoNotUse::MergeFrom(const Annotations_ValuesEntry_D
 }
 ::google::protobuf::Metadata Annotations_ValuesEntry_DoNotUse::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto);
-  return ::file_level_metadata_flyteidl_2fadmin_2fcommon_2eproto[20];
+  return ::file_level_metadata_flyteidl_2fadmin_2fcommon_2eproto[21];
 }
 void Annotations_ValuesEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -8651,6 +9249,9 @@ template<> PROTOBUF_NOINLINE ::flyteidl::admin::SlackNotification* Arena::Create
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::Notification* Arena::CreateMaybeMessage< ::flyteidl::admin::Notification >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::admin::Notification >(arena);
+}
+template<> PROTOBUF_NOINLINE ::flyteidl::admin::SNSMessage* Arena::CreateMaybeMessage< ::flyteidl::admin::SNSMessage >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::admin::SNSMessage >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::UrlBlob* Arena::CreateMaybeMessage< ::flyteidl::admin::UrlBlob >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::admin::UrlBlob >(arena);

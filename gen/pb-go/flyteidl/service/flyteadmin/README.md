@@ -117,6 +117,7 @@ Class | Method | HTTP request | Description
  - [AdminProjects](docs/AdminProjects.md)
  - [AdminSchedule](docs/AdminSchedule.md)
  - [AdminSlackNotification](docs/AdminSlackNotification.md)
+ - [AdminSnsMessage](docs/AdminSnsMessage.md)
  - [AdminSort](docs/AdminSort.md)
  - [AdminTask](docs/AdminTask.md)
  - [AdminTaskClosure](docs/AdminTaskClosure.md)
