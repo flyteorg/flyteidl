@@ -1,7 +1,5 @@
 syntax = "proto3";
 
-import "flyteidl/core/tasks.proto";
-
 package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
@@ -15,17 +13,8 @@ message WorkflowAttributes {
     // Workflow name for which this set of attributes will be applied.
     string workflow                = 3;
 
-    // Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-    // Map keys are the *case-sensitive* names of variables in templatized resource files.
-    // Map values should be the custom values which get substituted during resource creation.
-    map<string, string> attributes = 4;
-
-    // Custom resource defaults for task container resource requests and limits for tasks defined
-    // within this project, domain and workflow.
-    core.Resources task_resource_attributes = 5;
-
     // Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-    repeated string tags           = 6;
+    repeated string tags           = 4;
 }
 
 // Sets custom attributes for a project, domain and workflow combination.

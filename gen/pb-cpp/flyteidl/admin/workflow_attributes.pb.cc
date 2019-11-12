@@ -16,15 +16,9 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_WorkflowAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_WorkflowAttributes_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftasks_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Resources_flyteidl_2fcore_2ftasks_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_WorkflowAttributes_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto;
 namespace flyteidl {
 namespace admin {
-class WorkflowAttributes_AttributesEntry_DoNotUseDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<WorkflowAttributes_AttributesEntry_DoNotUse> _instance;
-} _WorkflowAttributes_AttributesEntry_DoNotUse_default_instance_;
 class WorkflowAttributesDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<WorkflowAttributes> _instance;
@@ -39,19 +33,6 @@ class WorkflowAttributesUpdateResponseDefaultTypeInternal {
 } _WorkflowAttributesUpdateResponse_default_instance_;
 }  // namespace admin
 }  // namespace flyteidl
-static void InitDefaultsWorkflowAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::flyteidl::admin::_WorkflowAttributes_AttributesEntry_DoNotUse_default_instance_;
-    new (ptr) ::flyteidl::admin::WorkflowAttributes_AttributesEntry_DoNotUse();
-  }
-  ::flyteidl::admin::WorkflowAttributes_AttributesEntry_DoNotUse::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_WorkflowAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsWorkflowAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto}, {}};
-
 static void InitDefaultsWorkflowAttributes_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -63,10 +44,8 @@ static void InitDefaultsWorkflowAttributes_flyteidl_2fadmin_2fworkflow_5fattribu
   ::flyteidl::admin::WorkflowAttributes::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_WorkflowAttributes_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsWorkflowAttributes_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto}, {
-      &scc_info_WorkflowAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto.base,
-      &scc_info_Resources_flyteidl_2fcore_2ftasks_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<0> scc_info_WorkflowAttributes_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsWorkflowAttributes_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto}, {}};
 
 static void InitDefaultsWorkflowAttributesUpdateRequest_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -98,26 +77,16 @@ static void InitDefaultsWorkflowAttributesUpdateResponse_flyteidl_2fadmin_2fwork
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsWorkflowAttributesUpdateResponse_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto}, {}};
 
 void InitDefaults_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto() {
-  ::google::protobuf::internal::InitSCC(&scc_info_WorkflowAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_WorkflowAttributes_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_WorkflowAttributesUpdateRequest_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_WorkflowAttributesUpdateResponse_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto[4];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto[3];
 constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto = nullptr;
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributes_AttributesEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributes_AttributesEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributes_AttributesEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributes_AttributesEntry_DoNotUse, value_),
-  0,
-  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributes, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -126,8 +95,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fworkflow_5fattri
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributes, project_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributes, domain_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributes, workflow_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributes, attributes_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributes, task_resource_attributes_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributes, tags_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributesUpdateRequest, _internal_metadata_),
@@ -142,14 +109,12 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fworkflow_5fattri
   ~0u,  // no _weak_field_map_
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 7, sizeof(::flyteidl::admin::WorkflowAttributes_AttributesEntry_DoNotUse)},
-  { 9, -1, sizeof(::flyteidl::admin::WorkflowAttributes)},
-  { 20, -1, sizeof(::flyteidl::admin::WorkflowAttributesUpdateRequest)},
-  { 26, -1, sizeof(::flyteidl::admin::WorkflowAttributesUpdateResponse)},
+  { 0, -1, sizeof(::flyteidl::admin::WorkflowAttributes)},
+  { 9, -1, sizeof(::flyteidl::admin::WorkflowAttributesUpdateRequest)},
+  { 15, -1, sizeof(::flyteidl::admin::WorkflowAttributesUpdateResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_WorkflowAttributes_AttributesEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_WorkflowAttributes_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_WorkflowAttributesUpdateRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_WorkflowAttributesUpdateResponse_default_instance_),
@@ -158,37 +123,31 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto = {
   {}, AddDescriptors_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto, "flyteidl/admin/workflow_attributes.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto::offsets,
-  file_level_metadata_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto, 4, file_level_enum_descriptors_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto, file_level_service_descriptors_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto,
+  file_level_metadata_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto, 3, file_level_enum_descriptors_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto, file_level_service_descriptors_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto[] =
   "\n(flyteidl/admin/workflow_attributes.pro"
-  "to\022\016flyteidl.admin\032\031flyteidl/core/tasks."
-  "proto\"\214\002\n\022WorkflowAttributes\022\017\n\007project\030"
-  "\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010workflow\030\003 \001(\t\022"
-  "F\n\nattributes\030\004 \003(\01322.flyteidl.admin.Wor"
-  "kflowAttributes.AttributesEntry\022:\n\030task_"
-  "resource_attributes\030\005 \001(\0132\030.flyteidl.cor"
-  "e.Resources\022\014\n\004tags\030\006 \003(\t\0321\n\017AttributesE"
-  "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"Y\n\037"
-  "WorkflowAttributesUpdateRequest\0226\n\nattri"
-  "butes\030\001 \001(\0132\".flyteidl.admin.WorkflowAtt"
-  "ributes\"\"\n WorkflowAttributesUpdateRespo"
-  "nseB3Z1github.com/lyft/flyteidl/gen/pb-g"
-  "o/flyteidl/adminb\006proto3"
+  "to\022\016flyteidl.admin\"U\n\022WorkflowAttributes"
+  "\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010wor"
+  "kflow\030\003 \001(\t\022\014\n\004tags\030\004 \003(\t\"Y\n\037WorkflowAtt"
+  "ributesUpdateRequest\0226\n\nattributes\030\001 \001(\013"
+  "2\".flyteidl.admin.WorkflowAttributes\"\"\n "
+  "WorkflowAttributesUpdateResponseB3Z1gith"
+  "ub.com/lyft/flyteidl/gen/pb-go/flyteidl/"
+  "adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto,
-  "flyteidl/admin/workflow_attributes.proto", &assign_descriptors_table_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto, 544,
+  "flyteidl/admin/workflow_attributes.proto", &assign_descriptors_table_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto, 333,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto() {
   static constexpr ::google::protobuf::internal::InitFunc deps[1] =
   {
-    ::AddDescriptors_flyteidl_2fcore_2ftasks_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto, deps, 1);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto, deps, 0);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -198,72 +157,16 @@ namespace admin {
 
 // ===================================================================
 
-WorkflowAttributes_AttributesEntry_DoNotUse::WorkflowAttributes_AttributesEntry_DoNotUse() {}
-WorkflowAttributes_AttributesEntry_DoNotUse::WorkflowAttributes_AttributesEntry_DoNotUse(::google::protobuf::Arena* arena)
-    : SuperType(arena) {}
-void WorkflowAttributes_AttributesEntry_DoNotUse::MergeFrom(const WorkflowAttributes_AttributesEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::google::protobuf::Metadata WorkflowAttributes_AttributesEntry_DoNotUse::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto);
-  return ::file_level_metadata_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto[0];
-}
-void WorkflowAttributes_AttributesEntry_DoNotUse::MergeFrom(
-    const ::google::protobuf::Message& other) {
-  ::google::protobuf::Message::MergeFrom(other);
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool WorkflowAttributes_AttributesEntry_DoNotUse::_ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx) {
-  using MF = ::google::protobuf::internal::MapField<
-      WorkflowAttributes_AttributesEntry_DoNotUse, EntryKeyType, EntryValueType,
-      kEntryKeyFieldType, kEntryValueFieldType,
-      kEntryDefaultEnumValue>;
-  auto mf = static_cast<MF*>(object);
-  Parser<MF, ::google::protobuf::Map<EntryKeyType, EntryValueType>> parser(mf);
-#define DO_(x) if (!(x)) return false
-  DO_(parser.ParseMap(begin, end));
-  DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-    parser.key().data(), static_cast<int>(parser.key().length()),
-    ::google::protobuf::internal::WireFormatLite::PARSE,
-    "flyteidl.admin.WorkflowAttributes.AttributesEntry.key"));
-  DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-    parser.value().data(), static_cast<int>(parser.value().length()),
-    ::google::protobuf::internal::WireFormatLite::PARSE,
-    "flyteidl.admin.WorkflowAttributes.AttributesEntry.value"));
-#undef DO_
-  return true;
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-
-// ===================================================================
-
 void WorkflowAttributes::InitAsDefaultInstance() {
-  ::flyteidl::admin::_WorkflowAttributes_default_instance_._instance.get_mutable()->task_resource_attributes_ = const_cast< ::flyteidl::core::Resources*>(
-      ::flyteidl::core::Resources::internal_default_instance());
 }
 class WorkflowAttributes::HasBitSetters {
  public:
-  static const ::flyteidl::core::Resources& task_resource_attributes(const WorkflowAttributes* msg);
 };
 
-const ::flyteidl::core::Resources&
-WorkflowAttributes::HasBitSetters::task_resource_attributes(const WorkflowAttributes* msg) {
-  return *msg->task_resource_attributes_;
-}
-void WorkflowAttributes::clear_task_resource_attributes() {
-  if (GetArenaNoVirtual() == nullptr && task_resource_attributes_ != nullptr) {
-    delete task_resource_attributes_;
-  }
-  task_resource_attributes_ = nullptr;
-}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int WorkflowAttributes::kProjectFieldNumber;
 const int WorkflowAttributes::kDomainFieldNumber;
 const int WorkflowAttributes::kWorkflowFieldNumber;
-const int WorkflowAttributes::kAttributesFieldNumber;
-const int WorkflowAttributes::kTaskResourceAttributesFieldNumber;
 const int WorkflowAttributes::kTagsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -277,7 +180,6 @@ WorkflowAttributes::WorkflowAttributes(const WorkflowAttributes& from)
       _internal_metadata_(nullptr),
       tags_(from.tags_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  attributes_.MergeFrom(from.attributes_);
   project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.project().size() > 0) {
     project_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.project_);
@@ -290,11 +192,6 @@ WorkflowAttributes::WorkflowAttributes(const WorkflowAttributes& from)
   if (from.workflow().size() > 0) {
     workflow_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.workflow_);
   }
-  if (from.has_task_resource_attributes()) {
-    task_resource_attributes_ = new ::flyteidl::core::Resources(*from.task_resource_attributes_);
-  } else {
-    task_resource_attributes_ = nullptr;
-  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.WorkflowAttributes)
 }
 
@@ -304,7 +201,6 @@ void WorkflowAttributes::SharedCtor() {
   project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   workflow_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  task_resource_attributes_ = nullptr;
 }
 
 WorkflowAttributes::~WorkflowAttributes() {
@@ -316,7 +212,6 @@ void WorkflowAttributes::SharedDtor() {
   project_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   workflow_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete task_resource_attributes_;
 }
 
 void WorkflowAttributes::SetCachedSize(int size) const {
@@ -334,15 +229,10 @@ void WorkflowAttributes::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  attributes_.Clear();
   tags_.Clear();
   project_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   workflow_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && task_resource_attributes_ != nullptr) {
-    delete task_resource_attributes_;
-  }
-  task_resource_attributes_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -407,41 +297,9 @@ const char* WorkflowAttributes::_InternalParse(const char* begin, const char* en
         ptr += size;
         break;
       }
-      // map<string, string> attributes = 4;
+      // repeated string tags = 4;
       case 4: {
         if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
-        do {
-          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::google::protobuf::internal::SlowMapEntryParser;
-          auto parse_map = ::flyteidl::admin::WorkflowAttributes_AttributesEntry_DoNotUse::_ParseMap;
-          ctx->extra_parse_data().payload.clear();
-          ctx->extra_parse_data().parse_map = parse_map;
-          object = &msg->attributes_;
-          if (size > end - ptr) goto len_delim_till_end;
-          auto newend = ptr + size;
-          GOOGLE_PROTOBUF_PARSER_ASSERT(parse_map(ptr, newend, object, ctx));
-          ptr = newend;
-          if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 34 && (ptr += 1));
-        break;
-      }
-      // .flyteidl.core.Resources task_resource_attributes = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::core::Resources::_InternalParse;
-        object = msg->mutable_task_resource_attributes();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // repeated string tags = 6;
-      case 6: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
@@ -455,7 +313,7 @@ const char* WorkflowAttributes::_InternalParse(const char* begin, const char* en
           ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
           ptr += size;
           if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 50 && (ptr += 1));
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 34 && (ptr += 1));
         break;
       }
       default: {
@@ -537,46 +395,9 @@ bool WorkflowAttributes::MergePartialFromCodedStream(
         break;
       }
 
-      // map<string, string> attributes = 4;
+      // repeated string tags = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
-          WorkflowAttributes_AttributesEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
-              WorkflowAttributes_AttributesEntry_DoNotUse,
-              ::std::string, ::std::string,
-              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-              0 >,
-            ::google::protobuf::Map< ::std::string, ::std::string > > parser(&attributes_);
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-              input, &parser));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.key().data(), static_cast<int>(parser.key().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.WorkflowAttributes.AttributesEntry.key"));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.value().data(), static_cast<int>(parser.value().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.WorkflowAttributes.AttributesEntry.value"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .flyteidl.core.Resources task_resource_attributes = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_task_resource_attributes()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated string tags = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->add_tags()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -647,69 +468,14 @@ void WorkflowAttributes::SerializeWithCachedSizes(
       3, this->workflow(), output);
   }
 
-  // map<string, string> attributes = 4;
-  if (!this->attributes().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "flyteidl.admin.WorkflowAttributes.AttributesEntry.key");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "flyteidl.admin.WorkflowAttributes.AttributesEntry.value");
-      }
-    };
-
-    if (output->IsSerializationDeterministic() &&
-        this->attributes().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->attributes().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->attributes().begin();
-          it != this->attributes().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::std::unique_ptr<WorkflowAttributes_AttributesEntry_DoNotUse> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(attributes_.NewEntryWrapper(items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(4, *entry, output);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      ::std::unique_ptr<WorkflowAttributes_AttributesEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->attributes().begin();
-          it != this->attributes().end(); ++it) {
-        entry.reset(attributes_.NewEntryWrapper(it->first, it->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(4, *entry, output);
-        Utf8Check::Check(&(*it));
-      }
-    }
-  }
-
-  // .flyteidl.core.Resources task_resource_attributes = 5;
-  if (this->has_task_resource_attributes()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, HasBitSetters::task_resource_attributes(this), output);
-  }
-
-  // repeated string tags = 6;
+  // repeated string tags = 4;
   for (int i = 0, n = this->tags_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->tags(i).data(), static_cast<int>(this->tags(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.admin.WorkflowAttributes.tags");
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      6, this->tags(i), output);
+      4, this->tags(i), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -758,70 +524,14 @@ void WorkflowAttributes::SerializeWithCachedSizes(
         3, this->workflow(), target);
   }
 
-  // map<string, string> attributes = 4;
-  if (!this->attributes().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "flyteidl.admin.WorkflowAttributes.AttributesEntry.key");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "flyteidl.admin.WorkflowAttributes.AttributesEntry.value");
-      }
-    };
-
-    if (false &&
-        this->attributes().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->attributes().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->attributes().begin();
-          it != this->attributes().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::std::unique_ptr<WorkflowAttributes_AttributesEntry_DoNotUse> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(attributes_.NewEntryWrapper(items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(4, *entry, target);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      ::std::unique_ptr<WorkflowAttributes_AttributesEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->attributes().begin();
-          it != this->attributes().end(); ++it) {
-        entry.reset(attributes_.NewEntryWrapper(it->first, it->second));
-        target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(4, *entry, target);
-        Utf8Check::Check(&(*it));
-      }
-    }
-  }
-
-  // .flyteidl.core.Resources task_resource_attributes = 5;
-  if (this->has_task_resource_attributes()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        5, HasBitSetters::task_resource_attributes(this), target);
-  }
-
-  // repeated string tags = 6;
+  // repeated string tags = 4;
   for (int i = 0, n = this->tags_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->tags(i).data(), static_cast<int>(this->tags(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.admin.WorkflowAttributes.tags");
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(6, this->tags(i), target);
+      WriteStringToArray(4, this->tags(i), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -845,21 +555,7 @@ size_t WorkflowAttributes::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // map<string, string> attributes = 4;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->attributes_size());
-  {
-    ::std::unique_ptr<WorkflowAttributes_AttributesEntry_DoNotUse> entry;
-    for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-        it = this->attributes().begin();
-        it != this->attributes().end(); ++it) {
-      entry.reset(attributes_.NewEntryWrapper(it->first, it->second));
-      total_size += ::google::protobuf::internal::WireFormatLite::
-          MessageSizeNoVirtual(*entry);
-    }
-  }
-
-  // repeated string tags = 6;
+  // repeated string tags = 4;
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->tags_size());
   for (int i = 0, n = this->tags_size(); i < n; i++) {
@@ -886,13 +582,6 @@ size_t WorkflowAttributes::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->workflow());
-  }
-
-  // .flyteidl.core.Resources task_resource_attributes = 5;
-  if (this->has_task_resource_attributes()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *task_resource_attributes_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -922,7 +611,6 @@ void WorkflowAttributes::MergeFrom(const WorkflowAttributes& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  attributes_.MergeFrom(from.attributes_);
   tags_.MergeFrom(from.tags_);
   if (from.project().size() > 0) {
 
@@ -935,9 +623,6 @@ void WorkflowAttributes::MergeFrom(const WorkflowAttributes& from) {
   if (from.workflow().size() > 0) {
 
     workflow_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.workflow_);
-  }
-  if (from.has_task_resource_attributes()) {
-    mutable_task_resource_attributes()->::flyteidl::core::Resources::MergeFrom(from.task_resource_attributes());
   }
 }
 
@@ -966,7 +651,6 @@ void WorkflowAttributes::Swap(WorkflowAttributes* other) {
 void WorkflowAttributes::InternalSwap(WorkflowAttributes* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  attributes_.Swap(&other->attributes_);
   tags_.InternalSwap(CastToBase(&other->tags_));
   project_.Swap(&other->project_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
@@ -974,7 +658,6 @@ void WorkflowAttributes::InternalSwap(WorkflowAttributes* other) {
     GetArenaNoVirtual());
   workflow_.Swap(&other->workflow_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  swap(task_resource_attributes_, other->task_resource_attributes_);
 }
 
 ::google::protobuf::Metadata WorkflowAttributes::GetMetadata() const {
@@ -1484,9 +1167,6 @@ void WorkflowAttributesUpdateResponse::InternalSwap(WorkflowAttributesUpdateResp
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
-template<> PROTOBUF_NOINLINE ::flyteidl::admin::WorkflowAttributes_AttributesEntry_DoNotUse* Arena::CreateMaybeMessage< ::flyteidl::admin::WorkflowAttributes_AttributesEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::admin::WorkflowAttributes_AttributesEntry_DoNotUse >(arena);
-}
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::WorkflowAttributes* Arena::CreateMaybeMessage< ::flyteidl::admin::WorkflowAttributes >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::admin::WorkflowAttributes >(arena);
 }

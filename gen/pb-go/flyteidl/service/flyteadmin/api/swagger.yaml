@@ -4543,10 +4543,6 @@ definitions:
           \ custom values which get substituted during resource creation."
         additionalProperties:
           type: "string"
-      task_resource_attributes:
-        description: "Custom resource defaults for task container resource requests\
-          \ and limits for tasks defined\nwithin this project."
-        $ref: "#/definitions/coreResources"
       tags:
         type: "array"
         description: "Tags used for assigning execution queues for tasks defined within\
@@ -4579,10 +4575,6 @@ definitions:
           \ custom values which get substituted during resource creation."
         additionalProperties:
           type: "string"
-      task_resource_attributes:
-        description: "Custom resource defaults for task container resource requests\
-          \ and limits for tasks defined\nwithin this project and domain."
-        $ref: "#/definitions/coreResources"
       tags:
         type: "array"
         description: "Tags used for assigning execution queues for tasks defined within\
@@ -8171,18 +8163,6 @@ definitions:
       workflow:
         type: "string"
         description: "Workflow name for which this set of attributes will be applied."
-      attributes:
-        type: "object"
-        description: "Custom resource attributes which will be applied in cluster\
-          \ resource creation (e.g. quotas).\nMap keys are the *case-sensitive* names\
-          \ of variables in templatized resource files.\nMap values should be the\
-          \ custom values which get substituted during resource creation."
-        additionalProperties:
-          type: "string"
-      task_resource_attributes:
-        description: "Custom resource defaults for task container resource requests\
-          \ and limits for tasks defined\nwithin this project, domain and workflow."
-        $ref: "#/definitions/coreResources"
       tags:
         type: "array"
         description: "Tags used for assigning execution queues for tasks defined within\

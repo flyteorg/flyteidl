@@ -9147,9 +9147,6 @@ export namespace flyteidl {
             /** ProjectAttributes attributes */
             attributes?: ({ [k: string]: string }|null);
 
-            /** ProjectAttributes taskResourceAttributes */
-            taskResourceAttributes?: (flyteidl.core.IResources|null);
-
             /** ProjectAttributes tags */
             tags?: (string[]|null);
         }
@@ -9168,9 +9165,6 @@ export namespace flyteidl {
 
             /** ProjectAttributes attributes. */
             public attributes: { [k: string]: string };
-
-            /** ProjectAttributes taskResourceAttributes. */
-            public taskResourceAttributes?: (flyteidl.core.IResources|null);
 
             /** ProjectAttributes tags. */
             public tags: string[];
@@ -9318,9 +9312,6 @@ export namespace flyteidl {
             /** ProjectDomainAttributes attributes */
             attributes?: ({ [k: string]: string }|null);
 
-            /** ProjectDomainAttributes taskResourceAttributes */
-            taskResourceAttributes?: (flyteidl.core.IResources|null);
-
             /** ProjectDomainAttributes tags */
             tags?: (string[]|null);
         }
@@ -9342,9 +9333,6 @@ export namespace flyteidl {
 
             /** ProjectDomainAttributes attributes. */
             public attributes: { [k: string]: string };
-
-            /** ProjectDomainAttributes taskResourceAttributes. */
-            public taskResourceAttributes?: (flyteidl.core.IResources|null);
 
             /** ProjectDomainAttributes tags. */
             public tags: string[];
@@ -10621,12 +10609,6 @@ export namespace flyteidl {
             /** WorkflowAttributes workflow */
             workflow?: (string|null);
 
-            /** WorkflowAttributes attributes */
-            attributes?: ({ [k: string]: string }|null);
-
-            /** WorkflowAttributes taskResourceAttributes */
-            taskResourceAttributes?: (flyteidl.core.IResources|null);
-
             /** WorkflowAttributes tags */
             tags?: (string[]|null);
         }
@@ -10648,12 +10630,6 @@ export namespace flyteidl {
 
             /** WorkflowAttributes workflow. */
             public workflow: string;
-
-            /** WorkflowAttributes attributes. */
-            public attributes: { [k: string]: string };
-
-            /** WorkflowAttributes taskResourceAttributes. */
-            public taskResourceAttributes?: (flyteidl.core.IResources|null);
 
             /** WorkflowAttributes tags. */
             public tags: string[];

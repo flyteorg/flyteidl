@@ -17,8 +17,7 @@
 #include <google/protobuf/port_def.inc>
 
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ProjectDomainAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ProjectDomainAttributes_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftasks_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Resources_flyteidl_2fcore_2ftasks_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ProjectDomainAttributes_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto;
 namespace flyteidl {
 namespace admin {
 class ProjectDomainAttributes_AttributesEntry_DoNotUseDefaultTypeInternal {
@@ -63,10 +62,9 @@ static void InitDefaultsProjectDomainAttributes_flyteidl_2fadmin_2fproject_5fdom
   ::flyteidl::admin::ProjectDomainAttributes::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_ProjectDomainAttributes_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsProjectDomainAttributes_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto}, {
-      &scc_info_ProjectDomainAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto.base,
-      &scc_info_Resources_flyteidl_2fcore_2ftasks_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<1> scc_info_ProjectDomainAttributes_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsProjectDomainAttributes_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto}, {
+      &scc_info_ProjectDomainAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto.base,}};
 
 static void InitDefaultsProjectDomainAttributesUpdateRequest_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -126,7 +124,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fproject_5fdomain
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes, project_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes, domain_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes, attributes_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes, task_resource_attributes_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributes, tags_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributesUpdateRequest, _internal_metadata_),
@@ -143,8 +140,8 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fproject_5fdomain
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 7, sizeof(::flyteidl::admin::ProjectDomainAttributes_AttributesEntry_DoNotUse)},
   { 9, -1, sizeof(::flyteidl::admin::ProjectDomainAttributes)},
-  { 19, -1, sizeof(::flyteidl::admin::ProjectDomainAttributesUpdateRequest)},
-  { 25, -1, sizeof(::flyteidl::admin::ProjectDomainAttributesUpdateResponse)},
+  { 18, -1, sizeof(::flyteidl::admin::ProjectDomainAttributesUpdateRequest)},
+  { 24, -1, sizeof(::flyteidl::admin::ProjectDomainAttributesUpdateResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -162,32 +159,29 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto[] =
   "\n.flyteidl/admin/project_domain_attribut"
-  "es.proto\022\016flyteidl.admin\032\031flyteidl/core/"
-  "tasks.proto\"\204\002\n\027ProjectDomainAttributes\022"
-  "\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022K\n\nattr"
-  "ibutes\030\003 \003(\01327.flyteidl.admin.ProjectDom"
-  "ainAttributes.AttributesEntry\022:\n\030task_re"
-  "source_attributes\030\004 \001(\0132\030.flyteidl.core."
-  "Resources\022\014\n\004tags\030\005 \003(\t\0321\n\017AttributesEnt"
-  "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"c\n$Pr"
-  "ojectDomainAttributesUpdateRequest\022;\n\nat"
-  "tributes\030\001 \001(\0132\'.flyteidl.admin.ProjectD"
-  "omainAttributes\"\'\n%ProjectDomainAttribut"
-  "esUpdateResponseB3Z1github.com/lyft/flyt"
-  "eidl/gen/pb-go/flyteidl/adminb\006proto3"
+  "es.proto\022\016flyteidl.admin\"\310\001\n\027ProjectDoma"
+  "inAttributes\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030"
+  "\002 \001(\t\022K\n\nattributes\030\003 \003(\01327.flyteidl.adm"
+  "in.ProjectDomainAttributes.AttributesEnt"
+  "ry\022\014\n\004tags\030\004 \003(\t\0321\n\017AttributesEntry\022\013\n\003k"
+  "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"c\n$ProjectDo"
+  "mainAttributesUpdateRequest\022;\n\nattribute"
+  "s\030\001 \001(\0132\'.flyteidl.admin.ProjectDomainAt"
+  "tributes\"\'\n%ProjectDomainAttributesUpdat"
+  "eResponseB3Z1github.com/lyft/flyteidl/ge"
+  "n/pb-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto,
-  "flyteidl/admin/project_domain_attributes.proto", &assign_descriptors_table_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto, 557,
+  "flyteidl/admin/project_domain_attributes.proto", &assign_descriptors_table_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto, 470,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto() {
   static constexpr ::google::protobuf::internal::InitFunc deps[1] =
   {
-    ::AddDescriptors_flyteidl_2fcore_2ftasks_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto, deps, 1);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto, deps, 0);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -239,29 +233,15 @@ bool ProjectDomainAttributes_AttributesEntry_DoNotUse::_ParseMap(const char* beg
 // ===================================================================
 
 void ProjectDomainAttributes::InitAsDefaultInstance() {
-  ::flyteidl::admin::_ProjectDomainAttributes_default_instance_._instance.get_mutable()->task_resource_attributes_ = const_cast< ::flyteidl::core::Resources*>(
-      ::flyteidl::core::Resources::internal_default_instance());
 }
 class ProjectDomainAttributes::HasBitSetters {
  public:
-  static const ::flyteidl::core::Resources& task_resource_attributes(const ProjectDomainAttributes* msg);
 };
 
-const ::flyteidl::core::Resources&
-ProjectDomainAttributes::HasBitSetters::task_resource_attributes(const ProjectDomainAttributes* msg) {
-  return *msg->task_resource_attributes_;
-}
-void ProjectDomainAttributes::clear_task_resource_attributes() {
-  if (GetArenaNoVirtual() == nullptr && task_resource_attributes_ != nullptr) {
-    delete task_resource_attributes_;
-  }
-  task_resource_attributes_ = nullptr;
-}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ProjectDomainAttributes::kProjectFieldNumber;
 const int ProjectDomainAttributes::kDomainFieldNumber;
 const int ProjectDomainAttributes::kAttributesFieldNumber;
-const int ProjectDomainAttributes::kTaskResourceAttributesFieldNumber;
 const int ProjectDomainAttributes::kTagsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -284,11 +264,6 @@ ProjectDomainAttributes::ProjectDomainAttributes(const ProjectDomainAttributes& 
   if (from.domain().size() > 0) {
     domain_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.domain_);
   }
-  if (from.has_task_resource_attributes()) {
-    task_resource_attributes_ = new ::flyteidl::core::Resources(*from.task_resource_attributes_);
-  } else {
-    task_resource_attributes_ = nullptr;
-  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.ProjectDomainAttributes)
 }
 
@@ -297,7 +272,6 @@ void ProjectDomainAttributes::SharedCtor() {
       &scc_info_ProjectDomainAttributes_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto.base);
   project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  task_resource_attributes_ = nullptr;
 }
 
 ProjectDomainAttributes::~ProjectDomainAttributes() {
@@ -308,7 +282,6 @@ ProjectDomainAttributes::~ProjectDomainAttributes() {
 void ProjectDomainAttributes::SharedDtor() {
   project_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete task_resource_attributes_;
 }
 
 void ProjectDomainAttributes::SetCachedSize(int size) const {
@@ -330,10 +303,6 @@ void ProjectDomainAttributes::Clear() {
   tags_.Clear();
   project_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && task_resource_attributes_ != nullptr) {
-    delete task_resource_attributes_;
-  }
-  task_resource_attributes_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -401,22 +370,9 @@ const char* ProjectDomainAttributes::_InternalParse(const char* begin, const cha
         } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 26 && (ptr += 1));
         break;
       }
-      // .flyteidl.core.Resources task_resource_attributes = 4;
+      // repeated string tags = 4;
       case 4: {
         if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::core::Resources::_InternalParse;
-        object = msg->mutable_task_resource_attributes();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // repeated string tags = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
@@ -430,7 +386,7 @@ const char* ProjectDomainAttributes::_InternalParse(const char* begin, const cha
           ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
           ptr += size;
           if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 42 && (ptr += 1));
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 34 && (ptr += 1));
         break;
       }
       default: {
@@ -523,20 +479,9 @@ bool ProjectDomainAttributes::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.core.Resources task_resource_attributes = 4;
+      // repeated string tags = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_task_resource_attributes()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated string tags = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->add_tags()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -646,20 +591,14 @@ void ProjectDomainAttributes::SerializeWithCachedSizes(
     }
   }
 
-  // .flyteidl.core.Resources task_resource_attributes = 4;
-  if (this->has_task_resource_attributes()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, HasBitSetters::task_resource_attributes(this), output);
-  }
-
-  // repeated string tags = 5;
+  // repeated string tags = 4;
   for (int i = 0, n = this->tags_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->tags(i).data(), static_cast<int>(this->tags(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.admin.ProjectDomainAttributes.tags");
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      5, this->tags(i), output);
+      4, this->tags(i), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -746,21 +685,14 @@ void ProjectDomainAttributes::SerializeWithCachedSizes(
     }
   }
 
-  // .flyteidl.core.Resources task_resource_attributes = 4;
-  if (this->has_task_resource_attributes()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        4, HasBitSetters::task_resource_attributes(this), target);
-  }
-
-  // repeated string tags = 5;
+  // repeated string tags = 4;
   for (int i = 0, n = this->tags_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->tags(i).data(), static_cast<int>(this->tags(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.admin.ProjectDomainAttributes.tags");
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(5, this->tags(i), target);
+      WriteStringToArray(4, this->tags(i), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -798,7 +730,7 @@ size_t ProjectDomainAttributes::ByteSizeLong() const {
     }
   }
 
-  // repeated string tags = 5;
+  // repeated string tags = 4;
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->tags_size());
   for (int i = 0, n = this->tags_size(); i < n; i++) {
@@ -818,13 +750,6 @@ size_t ProjectDomainAttributes::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->domain());
-  }
-
-  // .flyteidl.core.Resources task_resource_attributes = 4;
-  if (this->has_task_resource_attributes()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *task_resource_attributes_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -864,9 +789,6 @@ void ProjectDomainAttributes::MergeFrom(const ProjectDomainAttributes& from) {
 
     domain_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.domain_);
   }
-  if (from.has_task_resource_attributes()) {
-    mutable_task_resource_attributes()->::flyteidl::core::Resources::MergeFrom(from.task_resource_attributes());
-  }
 }
 
 void ProjectDomainAttributes::CopyFrom(const ::google::protobuf::Message& from) {
@@ -900,7 +822,6 @@ void ProjectDomainAttributes::InternalSwap(ProjectDomainAttributes* other) {
     GetArenaNoVirtual());
   domain_.Swap(&other->domain_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  swap(task_resource_attributes_, other->task_resource_attributes_);
 }
 
 ::google::protobuf::Metadata ProjectDomainAttributes::GetMetadata() const {

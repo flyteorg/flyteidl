@@ -74,102 +74,10 @@ public final class WorkflowAttributesOuterClass {
 
     /**
      * <pre>
-     * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-     * Map keys are the *case-sensitive* names of variables in templatized resource files.
-     * Map values should be the custom values which get substituted during resource creation.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; attributes = 4;</code>
-     */
-    int getAttributesCount();
-    /**
-     * <pre>
-     * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-     * Map keys are the *case-sensitive* names of variables in templatized resource files.
-     * Map values should be the custom values which get substituted during resource creation.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; attributes = 4;</code>
-     */
-    boolean containsAttributes(
-        java.lang.String key);
-    /**
-     * Use {@link #getAttributesMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getAttributes();
-    /**
-     * <pre>
-     * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-     * Map keys are the *case-sensitive* names of variables in templatized resource files.
-     * Map values should be the custom values which get substituted during resource creation.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; attributes = 4;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getAttributesMap();
-    /**
-     * <pre>
-     * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-     * Map keys are the *case-sensitive* names of variables in templatized resource files.
-     * Map values should be the custom values which get substituted during resource creation.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; attributes = 4;</code>
-     */
-
-    java.lang.String getAttributesOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <pre>
-     * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-     * Map keys are the *case-sensitive* names of variables in templatized resource files.
-     * Map values should be the custom values which get substituted during resource creation.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; attributes = 4;</code>
-     */
-
-    java.lang.String getAttributesOrThrow(
-        java.lang.String key);
-
-    /**
-     * <pre>
-     * Custom resource defaults for task container resource requests and limits for tasks defined
-     * within this project, domain and workflow.
-     * </pre>
-     *
-     * <code>.flyteidl.core.Resources task_resource_attributes = 5;</code>
-     */
-    boolean hasTaskResourceAttributes();
-    /**
-     * <pre>
-     * Custom resource defaults for task container resource requests and limits for tasks defined
-     * within this project, domain and workflow.
-     * </pre>
-     *
-     * <code>.flyteidl.core.Resources task_resource_attributes = 5;</code>
-     */
-    flyteidl.core.Tasks.Resources getTaskResourceAttributes();
-    /**
-     * <pre>
-     * Custom resource defaults for task container resource requests and limits for tasks defined
-     * within this project, domain and workflow.
-     * </pre>
-     *
-     * <code>.flyteidl.core.Resources task_resource_attributes = 5;</code>
-     */
-    flyteidl.core.Tasks.ResourcesOrBuilder getTaskResourceAttributesOrBuilder();
-
-    /**
-     * <pre>
      * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
      * </pre>
      *
-     * <code>repeated string tags = 6;</code>
+     * <code>repeated string tags = 4;</code>
      */
     java.util.List<java.lang.String>
         getTagsList();
@@ -178,7 +86,7 @@ public final class WorkflowAttributesOuterClass {
      * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
      * </pre>
      *
-     * <code>repeated string tags = 6;</code>
+     * <code>repeated string tags = 4;</code>
      */
     int getTagsCount();
     /**
@@ -186,7 +94,7 @@ public final class WorkflowAttributesOuterClass {
      * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
      * </pre>
      *
-     * <code>repeated string tags = 6;</code>
+     * <code>repeated string tags = 4;</code>
      */
     java.lang.String getTags(int index);
     /**
@@ -194,7 +102,7 @@ public final class WorkflowAttributesOuterClass {
      * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
      * </pre>
      *
-     * <code>repeated string tags = 6;</code>
+     * <code>repeated string tags = 4;</code>
      */
     com.google.protobuf.ByteString
         getTagsBytes(int index);
@@ -261,36 +169,10 @@ public final class WorkflowAttributesOuterClass {
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                attributes_ = com.google.protobuf.MapField.newMapField(
-                    AttributesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              attributes__ = input.readMessage(
-                  AttributesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              attributes_.getMutableMap().put(
-                  attributes__.getKey(), attributes__.getValue());
-              break;
-            }
-            case 42: {
-              flyteidl.core.Tasks.Resources.Builder subBuilder = null;
-              if (taskResourceAttributes_ != null) {
-                subBuilder = taskResourceAttributes_.toBuilder();
-              }
-              taskResourceAttributes_ = input.readMessage(flyteidl.core.Tasks.Resources.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(taskResourceAttributes_);
-                taskResourceAttributes_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000008;
               }
               tags_.add(s);
               break;
@@ -310,7 +192,7 @@ public final class WorkflowAttributesOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
           tags_ = tags_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -322,18 +204,6 @@ public final class WorkflowAttributesOuterClass {
       return flyteidl.admin.WorkflowAttributesOuterClass.internal_static_flyteidl_admin_WorkflowAttributes_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 4:
-          return internalGetAttributes();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -469,150 +339,14 @@ public final class WorkflowAttributesOuterClass {
       }
     }
 
-    public static final int ATTRIBUTES_FIELD_NUMBER = 4;
-    private static final class AttributesDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  flyteidl.admin.WorkflowAttributesOuterClass.internal_static_flyteidl_admin_WorkflowAttributes_AttributesEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> attributes_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetAttributes() {
-      if (attributes_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            AttributesDefaultEntryHolder.defaultEntry);
-      }
-      return attributes_;
-    }
-
-    public int getAttributesCount() {
-      return internalGetAttributes().getMap().size();
-    }
-    /**
-     * <pre>
-     * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-     * Map keys are the *case-sensitive* names of variables in templatized resource files.
-     * Map values should be the custom values which get substituted during resource creation.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; attributes = 4;</code>
-     */
-
-    public boolean containsAttributes(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetAttributes().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getAttributesMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
-      return getAttributesMap();
-    }
-    /**
-     * <pre>
-     * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-     * Map keys are the *case-sensitive* names of variables in templatized resource files.
-     * Map values should be the custom values which get substituted during resource creation.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; attributes = 4;</code>
-     */
-
-    public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
-      return internalGetAttributes().getMap();
-    }
-    /**
-     * <pre>
-     * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-     * Map keys are the *case-sensitive* names of variables in templatized resource files.
-     * Map values should be the custom values which get substituted during resource creation.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; attributes = 4;</code>
-     */
-
-    public java.lang.String getAttributesOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetAttributes().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <pre>
-     * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-     * Map keys are the *case-sensitive* names of variables in templatized resource files.
-     * Map values should be the custom values which get substituted during resource creation.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; attributes = 4;</code>
-     */
-
-    public java.lang.String getAttributesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetAttributes().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public static final int TASK_RESOURCE_ATTRIBUTES_FIELD_NUMBER = 5;
-    private flyteidl.core.Tasks.Resources taskResourceAttributes_;
-    /**
-     * <pre>
-     * Custom resource defaults for task container resource requests and limits for tasks defined
-     * within this project, domain and workflow.
-     * </pre>
-     *
-     * <code>.flyteidl.core.Resources task_resource_attributes = 5;</code>
-     */
-    public boolean hasTaskResourceAttributes() {
-      return taskResourceAttributes_ != null;
-    }
-    /**
-     * <pre>
-     * Custom resource defaults for task container resource requests and limits for tasks defined
-     * within this project, domain and workflow.
-     * </pre>
-     *
-     * <code>.flyteidl.core.Resources task_resource_attributes = 5;</code>
-     */
-    public flyteidl.core.Tasks.Resources getTaskResourceAttributes() {
-      return taskResourceAttributes_ == null ? flyteidl.core.Tasks.Resources.getDefaultInstance() : taskResourceAttributes_;
-    }
-    /**
-     * <pre>
-     * Custom resource defaults for task container resource requests and limits for tasks defined
-     * within this project, domain and workflow.
-     * </pre>
-     *
-     * <code>.flyteidl.core.Resources task_resource_attributes = 5;</code>
-     */
-    public flyteidl.core.Tasks.ResourcesOrBuilder getTaskResourceAttributesOrBuilder() {
-      return getTaskResourceAttributes();
-    }
-
-    public static final int TAGS_FIELD_NUMBER = 6;
+    public static final int TAGS_FIELD_NUMBER = 4;
     private com.google.protobuf.LazyStringList tags_;
     /**
      * <pre>
      * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
      * </pre>
      *
-     * <code>repeated string tags = 6;</code>
+     * <code>repeated string tags = 4;</code>
      */
     public com.google.protobuf.ProtocolStringList
         getTagsList() {
@@ -623,7 +357,7 @@ public final class WorkflowAttributesOuterClass {
      * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
      * </pre>
      *
-     * <code>repeated string tags = 6;</code>
+     * <code>repeated string tags = 4;</code>
      */
     public int getTagsCount() {
       return tags_.size();
@@ -633,7 +367,7 @@ public final class WorkflowAttributesOuterClass {
      * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
      * </pre>
      *
-     * <code>repeated string tags = 6;</code>
+     * <code>repeated string tags = 4;</code>
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
@@ -643,7 +377,7 @@ public final class WorkflowAttributesOuterClass {
      * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
      * </pre>
      *
-     * <code>repeated string tags = 6;</code>
+     * <code>repeated string tags = 4;</code>
      */
     public com.google.protobuf.ByteString
         getTagsBytes(int index) {
@@ -673,17 +407,8 @@ public final class WorkflowAttributesOuterClass {
       if (!getWorkflowBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, workflow_);
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetAttributes(),
-          AttributesDefaultEntryHolder.defaultEntry,
-          4);
-      if (taskResourceAttributes_ != null) {
-        output.writeMessage(5, getTaskResourceAttributes());
-      }
       for (int i = 0; i < tags_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, tags_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tags_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -702,20 +427,6 @@ public final class WorkflowAttributesOuterClass {
       }
       if (!getWorkflowBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, workflow_);
-      }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetAttributes().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        attributes__ = AttributesDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(4, attributes__);
-      }
-      if (taskResourceAttributes_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getTaskResourceAttributes());
       }
       {
         int dataSize = 0;
@@ -746,13 +457,6 @@ public final class WorkflowAttributesOuterClass {
           .equals(other.getDomain())) return false;
       if (!getWorkflow()
           .equals(other.getWorkflow())) return false;
-      if (!internalGetAttributes().equals(
-          other.internalGetAttributes())) return false;
-      if (hasTaskResourceAttributes() != other.hasTaskResourceAttributes()) return false;
-      if (hasTaskResourceAttributes()) {
-        if (!getTaskResourceAttributes()
-            .equals(other.getTaskResourceAttributes())) return false;
-      }
       if (!getTagsList()
           .equals(other.getTagsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -772,14 +476,6 @@ public final class WorkflowAttributesOuterClass {
       hash = (53 * hash) + getDomain().hashCode();
       hash = (37 * hash) + WORKFLOW_FIELD_NUMBER;
       hash = (53 * hash) + getWorkflow().hashCode();
-      if (!internalGetAttributes().getMap().isEmpty()) {
-        hash = (37 * hash) + ATTRIBUTES_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetAttributes().hashCode();
-      }
-      if (hasTaskResourceAttributes()) {
-        hash = (37 * hash) + TASK_RESOURCE_ATTRIBUTES_FIELD_NUMBER;
-        hash = (53 * hash) + getTaskResourceAttributes().hashCode();
-      }
       if (getTagsCount() > 0) {
         hash = (37 * hash) + TAGS_FIELD_NUMBER;
         hash = (53 * hash) + getTagsList().hashCode();
@@ -891,28 +587,6 @@ public final class WorkflowAttributesOuterClass {
         return flyteidl.admin.WorkflowAttributesOuterClass.internal_static_flyteidl_admin_WorkflowAttributes_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 4:
-            return internalGetAttributes();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 4:
-            return internalGetMutableAttributes();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -945,15 +619,8 @@ public final class WorkflowAttributesOuterClass {
 
         workflow_ = "";
 
-        internalGetMutableAttributes().clear();
-        if (taskResourceAttributesBuilder_ == null) {
-          taskResourceAttributes_ = null;
-        } else {
-          taskResourceAttributes_ = null;
-          taskResourceAttributesBuilder_ = null;
-        }
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -985,16 +652,9 @@ public final class WorkflowAttributesOuterClass {
         result.project_ = project_;
         result.domain_ = domain_;
         result.workflow_ = workflow_;
-        result.attributes_ = internalGetAttributes();
-        result.attributes_.makeImmutable();
-        if (taskResourceAttributesBuilder_ == null) {
-          result.taskResourceAttributes_ = taskResourceAttributes_;
-        } else {
-          result.taskResourceAttributes_ = taskResourceAttributesBuilder_.build();
-        }
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.tags_ = tags_;
         result.bitField0_ = to_bitField0_;
@@ -1058,15 +718,10 @@ public final class WorkflowAttributesOuterClass {
           workflow_ = other.workflow_;
           onChanged();
         }
-        internalGetMutableAttributes().mergeFrom(
-            other.internalGetAttributes());
-        if (other.hasTaskResourceAttributes()) {
-          mergeTaskResourceAttributes(other.getTaskResourceAttributes());
-        }
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -1370,338 +1025,11 @@ public final class WorkflowAttributesOuterClass {
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> attributes_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetAttributes() {
-        if (attributes_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              AttributesDefaultEntryHolder.defaultEntry);
-        }
-        return attributes_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableAttributes() {
-        onChanged();;
-        if (attributes_ == null) {
-          attributes_ = com.google.protobuf.MapField.newMapField(
-              AttributesDefaultEntryHolder.defaultEntry);
-        }
-        if (!attributes_.isMutable()) {
-          attributes_ = attributes_.copy();
-        }
-        return attributes_;
-      }
-
-      public int getAttributesCount() {
-        return internalGetAttributes().getMap().size();
-      }
-      /**
-       * <pre>
-       * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-       * Map keys are the *case-sensitive* names of variables in templatized resource files.
-       * Map values should be the custom values which get substituted during resource creation.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; attributes = 4;</code>
-       */
-
-      public boolean containsAttributes(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetAttributes().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getAttributesMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
-        return getAttributesMap();
-      }
-      /**
-       * <pre>
-       * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-       * Map keys are the *case-sensitive* names of variables in templatized resource files.
-       * Map values should be the custom values which get substituted during resource creation.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; attributes = 4;</code>
-       */
-
-      public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
-        return internalGetAttributes().getMap();
-      }
-      /**
-       * <pre>
-       * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-       * Map keys are the *case-sensitive* names of variables in templatized resource files.
-       * Map values should be the custom values which get substituted during resource creation.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; attributes = 4;</code>
-       */
-
-      public java.lang.String getAttributesOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetAttributes().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <pre>
-       * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-       * Map keys are the *case-sensitive* names of variables in templatized resource files.
-       * Map values should be the custom values which get substituted during resource creation.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; attributes = 4;</code>
-       */
-
-      public java.lang.String getAttributesOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetAttributes().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearAttributes() {
-        internalGetMutableAttributes().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <pre>
-       * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-       * Map keys are the *case-sensitive* names of variables in templatized resource files.
-       * Map values should be the custom values which get substituted during resource creation.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; attributes = 4;</code>
-       */
-
-      public Builder removeAttributes(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableAttributes().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableAttributes() {
-        return internalGetMutableAttributes().getMutableMap();
-      }
-      /**
-       * <pre>
-       * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-       * Map keys are the *case-sensitive* names of variables in templatized resource files.
-       * Map values should be the custom values which get substituted during resource creation.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; attributes = 4;</code>
-       */
-      public Builder putAttributes(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableAttributes().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <pre>
-       * Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).
-       * Map keys are the *case-sensitive* names of variables in templatized resource files.
-       * Map values should be the custom values which get substituted during resource creation.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; attributes = 4;</code>
-       */
-
-      public Builder putAllAttributes(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableAttributes().getMutableMap()
-            .putAll(values);
-        return this;
-      }
-
-      private flyteidl.core.Tasks.Resources taskResourceAttributes_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Tasks.Resources, flyteidl.core.Tasks.Resources.Builder, flyteidl.core.Tasks.ResourcesOrBuilder> taskResourceAttributesBuilder_;
-      /**
-       * <pre>
-       * Custom resource defaults for task container resource requests and limits for tasks defined
-       * within this project, domain and workflow.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Resources task_resource_attributes = 5;</code>
-       */
-      public boolean hasTaskResourceAttributes() {
-        return taskResourceAttributesBuilder_ != null || taskResourceAttributes_ != null;
-      }
-      /**
-       * <pre>
-       * Custom resource defaults for task container resource requests and limits for tasks defined
-       * within this project, domain and workflow.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Resources task_resource_attributes = 5;</code>
-       */
-      public flyteidl.core.Tasks.Resources getTaskResourceAttributes() {
-        if (taskResourceAttributesBuilder_ == null) {
-          return taskResourceAttributes_ == null ? flyteidl.core.Tasks.Resources.getDefaultInstance() : taskResourceAttributes_;
-        } else {
-          return taskResourceAttributesBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Custom resource defaults for task container resource requests and limits for tasks defined
-       * within this project, domain and workflow.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Resources task_resource_attributes = 5;</code>
-       */
-      public Builder setTaskResourceAttributes(flyteidl.core.Tasks.Resources value) {
-        if (taskResourceAttributesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          taskResourceAttributes_ = value;
-          onChanged();
-        } else {
-          taskResourceAttributesBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Custom resource defaults for task container resource requests and limits for tasks defined
-       * within this project, domain and workflow.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Resources task_resource_attributes = 5;</code>
-       */
-      public Builder setTaskResourceAttributes(
-          flyteidl.core.Tasks.Resources.Builder builderForValue) {
-        if (taskResourceAttributesBuilder_ == null) {
-          taskResourceAttributes_ = builderForValue.build();
-          onChanged();
-        } else {
-          taskResourceAttributesBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Custom resource defaults for task container resource requests and limits for tasks defined
-       * within this project, domain and workflow.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Resources task_resource_attributes = 5;</code>
-       */
-      public Builder mergeTaskResourceAttributes(flyteidl.core.Tasks.Resources value) {
-        if (taskResourceAttributesBuilder_ == null) {
-          if (taskResourceAttributes_ != null) {
-            taskResourceAttributes_ =
-              flyteidl.core.Tasks.Resources.newBuilder(taskResourceAttributes_).mergeFrom(value).buildPartial();
-          } else {
-            taskResourceAttributes_ = value;
-          }
-          onChanged();
-        } else {
-          taskResourceAttributesBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Custom resource defaults for task container resource requests and limits for tasks defined
-       * within this project, domain and workflow.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Resources task_resource_attributes = 5;</code>
-       */
-      public Builder clearTaskResourceAttributes() {
-        if (taskResourceAttributesBuilder_ == null) {
-          taskResourceAttributes_ = null;
-          onChanged();
-        } else {
-          taskResourceAttributes_ = null;
-          taskResourceAttributesBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Custom resource defaults for task container resource requests and limits for tasks defined
-       * within this project, domain and workflow.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Resources task_resource_attributes = 5;</code>
-       */
-      public flyteidl.core.Tasks.Resources.Builder getTaskResourceAttributesBuilder() {
-        
-        onChanged();
-        return getTaskResourceAttributesFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Custom resource defaults for task container resource requests and limits for tasks defined
-       * within this project, domain and workflow.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Resources task_resource_attributes = 5;</code>
-       */
-      public flyteidl.core.Tasks.ResourcesOrBuilder getTaskResourceAttributesOrBuilder() {
-        if (taskResourceAttributesBuilder_ != null) {
-          return taskResourceAttributesBuilder_.getMessageOrBuilder();
-        } else {
-          return taskResourceAttributes_ == null ?
-              flyteidl.core.Tasks.Resources.getDefaultInstance() : taskResourceAttributes_;
-        }
-      }
-      /**
-       * <pre>
-       * Custom resource defaults for task container resource requests and limits for tasks defined
-       * within this project, domain and workflow.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Resources task_resource_attributes = 5;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Tasks.Resources, flyteidl.core.Tasks.Resources.Builder, flyteidl.core.Tasks.ResourcesOrBuilder> 
-          getTaskResourceAttributesFieldBuilder() {
-        if (taskResourceAttributesBuilder_ == null) {
-          taskResourceAttributesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.Tasks.Resources, flyteidl.core.Tasks.Resources.Builder, flyteidl.core.Tasks.ResourcesOrBuilder>(
-                  getTaskResourceAttributes(),
-                  getParentForChildren(),
-                  isClean());
-          taskResourceAttributes_ = null;
-        }
-        return taskResourceAttributesBuilder_;
-      }
-
       private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000008;
          }
       }
       /**
@@ -1709,7 +1037,7 @@ public final class WorkflowAttributesOuterClass {
        * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
        * </pre>
        *
-       * <code>repeated string tags = 6;</code>
+       * <code>repeated string tags = 4;</code>
        */
       public com.google.protobuf.ProtocolStringList
           getTagsList() {
@@ -1720,7 +1048,7 @@ public final class WorkflowAttributesOuterClass {
        * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
        * </pre>
        *
-       * <code>repeated string tags = 6;</code>
+       * <code>repeated string tags = 4;</code>
        */
       public int getTagsCount() {
         return tags_.size();
@@ -1730,7 +1058,7 @@ public final class WorkflowAttributesOuterClass {
        * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
        * </pre>
        *
-       * <code>repeated string tags = 6;</code>
+       * <code>repeated string tags = 4;</code>
        */
       public java.lang.String getTags(int index) {
         return tags_.get(index);
@@ -1740,7 +1068,7 @@ public final class WorkflowAttributesOuterClass {
        * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
        * </pre>
        *
-       * <code>repeated string tags = 6;</code>
+       * <code>repeated string tags = 4;</code>
        */
       public com.google.protobuf.ByteString
           getTagsBytes(int index) {
@@ -1751,7 +1079,7 @@ public final class WorkflowAttributesOuterClass {
        * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
        * </pre>
        *
-       * <code>repeated string tags = 6;</code>
+       * <code>repeated string tags = 4;</code>
        */
       public Builder setTags(
           int index, java.lang.String value) {
@@ -1768,7 +1096,7 @@ public final class WorkflowAttributesOuterClass {
        * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
        * </pre>
        *
-       * <code>repeated string tags = 6;</code>
+       * <code>repeated string tags = 4;</code>
        */
       public Builder addTags(
           java.lang.String value) {
@@ -1785,7 +1113,7 @@ public final class WorkflowAttributesOuterClass {
        * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
        * </pre>
        *
-       * <code>repeated string tags = 6;</code>
+       * <code>repeated string tags = 4;</code>
        */
       public Builder addAllTags(
           java.lang.Iterable<java.lang.String> values) {
@@ -1800,11 +1128,11 @@ public final class WorkflowAttributesOuterClass {
        * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
        * </pre>
        *
-       * <code>repeated string tags = 6;</code>
+       * <code>repeated string tags = 4;</code>
        */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1813,7 +1141,7 @@ public final class WorkflowAttributesOuterClass {
        * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
        * </pre>
        *
-       * <code>repeated string tags = 6;</code>
+       * <code>repeated string tags = 4;</code>
        */
       public Builder addTagsBytes(
           com.google.protobuf.ByteString value) {
@@ -2918,11 +2246,6 @@ public final class WorkflowAttributesOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_WorkflowAttributes_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_WorkflowAttributes_AttributesEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_WorkflowAttributes_AttributesEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_WorkflowAttributesUpdateRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -2942,19 +2265,14 @@ public final class WorkflowAttributesOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n(flyteidl/admin/workflow_attributes.pro" +
-      "to\022\016flyteidl.admin\032\031flyteidl/core/tasks." +
-      "proto\"\214\002\n\022WorkflowAttributes\022\017\n\007project\030" +
-      "\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010workflow\030\003 \001(\t\022" +
-      "F\n\nattributes\030\004 \003(\01322.flyteidl.admin.Wor" +
-      "kflowAttributes.AttributesEntry\022:\n\030task_" +
-      "resource_attributes\030\005 \001(\0132\030.flyteidl.cor" +
-      "e.Resources\022\014\n\004tags\030\006 \003(\t\0321\n\017AttributesE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"Y\n\037" +
-      "WorkflowAttributesUpdateRequest\0226\n\nattri" +
-      "butes\030\001 \001(\0132\".flyteidl.admin.WorkflowAtt" +
-      "ributes\"\"\n WorkflowAttributesUpdateRespo" +
-      "nseB3Z1github.com/lyft/flyteidl/gen/pb-g" +
-      "o/flyteidl/adminb\006proto3"
+      "to\022\016flyteidl.admin\"U\n\022WorkflowAttributes" +
+      "\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010wor" +
+      "kflow\030\003 \001(\t\022\014\n\004tags\030\004 \003(\t\"Y\n\037WorkflowAtt" +
+      "ributesUpdateRequest\0226\n\nattributes\030\001 \001(\013" +
+      "2\".flyteidl.admin.WorkflowAttributes\"\"\n " +
+      "WorkflowAttributesUpdateResponseB3Z1gith" +
+      "ub.com/lyft/flyteidl/gen/pb-go/flyteidl/" +
+      "adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2967,20 +2285,13 @@ public final class WorkflowAttributesOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          flyteidl.core.Tasks.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_admin_WorkflowAttributes_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_flyteidl_admin_WorkflowAttributes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowAttributes_descriptor,
-        new java.lang.String[] { "Project", "Domain", "Workflow", "Attributes", "TaskResourceAttributes", "Tags", });
-    internal_static_flyteidl_admin_WorkflowAttributes_AttributesEntry_descriptor =
-      internal_static_flyteidl_admin_WorkflowAttributes_descriptor.getNestedTypes().get(0);
-    internal_static_flyteidl_admin_WorkflowAttributes_AttributesEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_WorkflowAttributes_AttributesEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        new java.lang.String[] { "Project", "Domain", "Workflow", "Tags", });
     internal_static_flyteidl_admin_WorkflowAttributesUpdateRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_admin_WorkflowAttributesUpdateRequest_fieldAccessorTable = new
@@ -2993,7 +2304,6 @@ public final class WorkflowAttributesOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowAttributesUpdateResponse_descriptor,
         new java.lang.String[] { });
-    flyteidl.core.Tasks.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

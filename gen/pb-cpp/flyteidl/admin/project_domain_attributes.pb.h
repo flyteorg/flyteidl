@@ -34,7 +34,6 @@
 #include <google/protobuf/map_entry.h>
 #include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
-#include "flyteidl/core/tasks.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto
@@ -210,10 +209,10 @@ class ProjectDomainAttributes final :
   ::google::protobuf::Map< ::std::string, ::std::string >*
       mutable_attributes();
 
-  // repeated string tags = 5;
+  // repeated string tags = 4;
   int tags_size() const;
   void clear_tags();
-  static const int kTagsFieldNumber = 5;
+  static const int kTagsFieldNumber = 4;
   const ::std::string& tags(int index) const;
   ::std::string* mutable_tags(int index);
   void set_tags(int index, const ::std::string& value);
@@ -260,15 +259,6 @@ class ProjectDomainAttributes final :
   ::std::string* release_domain();
   void set_allocated_domain(::std::string* domain);
 
-  // .flyteidl.core.Resources task_resource_attributes = 4;
-  bool has_task_resource_attributes() const;
-  void clear_task_resource_attributes();
-  static const int kTaskResourceAttributesFieldNumber = 4;
-  const ::flyteidl::core::Resources& task_resource_attributes() const;
-  ::flyteidl::core::Resources* release_task_resource_attributes();
-  ::flyteidl::core::Resources* mutable_task_resource_attributes();
-  void set_allocated_task_resource_attributes(::flyteidl::core::Resources* task_resource_attributes);
-
   // @@protoc_insertion_point(class_scope:flyteidl.admin.ProjectDomainAttributes)
  private:
   class HasBitSetters;
@@ -283,7 +273,6 @@ class ProjectDomainAttributes final :
   ::google::protobuf::RepeatedPtrField<::std::string> tags_;
   ::google::protobuf::internal::ArenaStringPtr project_;
   ::google::protobuf::internal::ArenaStringPtr domain_;
-  ::flyteidl::core::Resources* task_resource_attributes_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto;
 };
@@ -644,52 +633,7 @@ ProjectDomainAttributes::mutable_attributes() {
   return attributes_.MutableMap();
 }
 
-// .flyteidl.core.Resources task_resource_attributes = 4;
-inline bool ProjectDomainAttributes::has_task_resource_attributes() const {
-  return this != internal_default_instance() && task_resource_attributes_ != nullptr;
-}
-inline const ::flyteidl::core::Resources& ProjectDomainAttributes::task_resource_attributes() const {
-  const ::flyteidl::core::Resources* p = task_resource_attributes_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.ProjectDomainAttributes.task_resource_attributes)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Resources*>(
-      &::flyteidl::core::_Resources_default_instance_);
-}
-inline ::flyteidl::core::Resources* ProjectDomainAttributes::release_task_resource_attributes() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.ProjectDomainAttributes.task_resource_attributes)
-  
-  ::flyteidl::core::Resources* temp = task_resource_attributes_;
-  task_resource_attributes_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::core::Resources* ProjectDomainAttributes::mutable_task_resource_attributes() {
-  
-  if (task_resource_attributes_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::Resources>(GetArenaNoVirtual());
-    task_resource_attributes_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ProjectDomainAttributes.task_resource_attributes)
-  return task_resource_attributes_;
-}
-inline void ProjectDomainAttributes::set_allocated_task_resource_attributes(::flyteidl::core::Resources* task_resource_attributes) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(task_resource_attributes_);
-  }
-  if (task_resource_attributes) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      task_resource_attributes = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, task_resource_attributes, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  task_resource_attributes_ = task_resource_attributes;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ProjectDomainAttributes.task_resource_attributes)
-}
-
-// repeated string tags = 5;
+// repeated string tags = 4;
 inline int ProjectDomainAttributes::tags_size() const {
   return tags_.size();
 }

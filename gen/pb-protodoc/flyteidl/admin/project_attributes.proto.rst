@@ -8,7 +8,7 @@ project_attributes.proto
 flyteidl.admin.ProjectAttributes
 --------------------------------
 
-`[flyteidl.admin.ProjectAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_attributes.proto#L8>`_
+`[flyteidl.admin.ProjectAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_attributes.proto#L6>`_
 
 
 .. code-block:: json
@@ -16,7 +16,6 @@ flyteidl.admin.ProjectAttributes
   {
     "project": "...",
     "attributes": "{...}",
-    "task_resource_attributes": "{...}",
     "tags": []
   }
 
@@ -34,13 +33,6 @@ attributes
   Map values should be the custom values which get substituted during resource creation.
   
   
-.. _api_field_flyteidl.admin.ProjectAttributes.task_resource_attributes:
-
-task_resource_attributes
-  (:ref:`flyteidl.core.Resources <api_msg_flyteidl.core.Resources>`) Custom resource defaults for task container resource requests and limits for tasks defined
-  within this project.
-  
-  
 .. _api_field_flyteidl.admin.ProjectAttributes.tags:
 
 tags
@@ -54,7 +46,7 @@ tags
 flyteidl.admin.ProjectAttributesUpdateRequest
 ---------------------------------------------
 
-`[flyteidl.admin.ProjectAttributesUpdateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_attributes.proto#L26>`_
+`[flyteidl.admin.ProjectAttributesUpdateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_attributes.proto#L20>`_
 
 Sets custom attributes for a project combination.
 
@@ -76,7 +68,7 @@ attributes
 flyteidl.admin.ProjectAttributesUpdateResponse
 ----------------------------------------------
 
-`[flyteidl.admin.ProjectAttributesUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_attributes.proto#L31>`_
+`[flyteidl.admin.ProjectAttributesUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_attributes.proto#L25>`_
 
 Purposefully empty, may be populated in the future.
 

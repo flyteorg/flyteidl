@@ -13,7 +13,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from flyteidl.core import tasks_pb2 as flyteidl_dot_core_dot_tasks__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,9 +20,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n\'flyteidl/admin/project_attributes.proto\x12\x0e\x66lyteidl.admin\x1a\x19\x66lyteidl/core/tasks.proto\"\xe8\x01\n\x11ProjectAttributes\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x45\n\nattributes\x18\x02 \x03(\x0b\x32\x31.flyteidl.admin.ProjectAttributes.AttributesEntry\x12:\n\x18task_resource_attributes\x18\x03 \x01(\x0b\x32\x18.flyteidl.core.Resources\x12\x0c\n\x04tags\x18\x04 \x03(\t\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"W\n\x1eProjectAttributesUpdateRequest\x12\x35\n\nattributes\x18\x01 \x01(\x0b\x32!.flyteidl.admin.ProjectAttributes\"!\n\x1fProjectAttributesUpdateResponseB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
-  ,
-  dependencies=[flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,])
+  serialized_pb=_b('\n\'flyteidl/admin/project_attributes.proto\x12\x0e\x66lyteidl.admin\"\xac\x01\n\x11ProjectAttributes\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x45\n\nattributes\x18\x02 \x03(\x0b\x32\x31.flyteidl.admin.ProjectAttributes.AttributesEntry\x12\x0c\n\x04tags\x18\x03 \x03(\t\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"W\n\x1eProjectAttributesUpdateRequest\x12\x35\n\nattributes\x18\x01 \x01(\x0b\x32!.flyteidl.admin.ProjectAttributes\"!\n\x1fProjectAttributesUpdateResponseB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+)
 
 
 
@@ -61,8 +59,8 @@ _PROJECTATTRIBUTES_ATTRIBUTESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=270,
-  serialized_end=319,
+  serialized_start=183,
+  serialized_end=232,
 )
 
 _PROJECTATTRIBUTES = _descriptor.Descriptor(
@@ -87,15 +85,8 @@ _PROJECTATTRIBUTES = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='task_resource_attributes', full_name='flyteidl.admin.ProjectAttributes.task_resource_attributes', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='tags', full_name='flyteidl.admin.ProjectAttributes.tags', index=3,
-      number=4, type=9, cpp_type=9, label=3,
+      name='tags', full_name='flyteidl.admin.ProjectAttributes.tags', index=2,
+      number=3, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -112,8 +103,8 @@ _PROJECTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=87,
-  serialized_end=319,
+  serialized_start=60,
+  serialized_end=232,
 )
 
 
@@ -143,8 +134,8 @@ _PROJECTATTRIBUTESUPDATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=321,
-  serialized_end=408,
+  serialized_start=234,
+  serialized_end=321,
 )
 
 
@@ -167,13 +158,12 @@ _PROJECTATTRIBUTESUPDATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=410,
-  serialized_end=443,
+  serialized_start=323,
+  serialized_end=356,
 )
 
 _PROJECTATTRIBUTES_ATTRIBUTESENTRY.containing_type = _PROJECTATTRIBUTES
 _PROJECTATTRIBUTES.fields_by_name['attributes'].message_type = _PROJECTATTRIBUTES_ATTRIBUTESENTRY
-_PROJECTATTRIBUTES.fields_by_name['task_resource_attributes'].message_type = flyteidl_dot_core_dot_tasks__pb2._RESOURCES
 _PROJECTATTRIBUTESUPDATEREQUEST.fields_by_name['attributes'].message_type = _PROJECTATTRIBUTES
 DESCRIPTOR.message_types_by_name['ProjectAttributes'] = _PROJECTATTRIBUTES
 DESCRIPTOR.message_types_by_name['ProjectAttributesUpdateRequest'] = _PROJECTATTRIBUTESUPDATEREQUEST

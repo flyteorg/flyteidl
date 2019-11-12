@@ -50,16 +50,6 @@ func (m *ProjectDomainAttributes) Validate() error {
 
 	// no validation rules for Attributes
 
-	if v, ok := interface{}(m.GetTaskResourceAttributes()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return ProjectDomainAttributesValidationError{
-				field:  "TaskResourceAttributes",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
 	return nil
 }
 

@@ -3312,10 +3312,6 @@
           },
           "description": "Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).\nMap keys are the *case-sensitive* names of variables in templatized resource files.\nMap values should be the custom values which get substituted during resource creation."
         },
-        "task_resource_attributes": {
-          "$ref": "#/definitions/coreResources",
-          "description": "Custom resource defaults for task container resource requests and limits for tasks defined\nwithin this project."
-        },
         "tags": {
           "type": "array",
           "items": {
@@ -3355,10 +3351,6 @@
             "type": "string"
           },
           "description": "Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).\nMap keys are the *case-sensitive* names of variables in templatized resource files.\nMap values should be the custom values which get substituted during resource creation."
-        },
-        "task_resource_attributes": {
-          "$ref": "#/definitions/coreResources",
-          "description": "Custom resource defaults for task container resource requests and limits for tasks defined\nwithin this project and domain."
         },
         "tags": {
           "type": "array",
@@ -3659,17 +3651,6 @@
         "workflow": {
           "type": "string",
           "description": "Workflow name for which this set of attributes will be applied."
-        },
-        "attributes": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          },
-          "description": "Custom resource attributes which will be applied in cluster resource creation (e.g. quotas).\nMap keys are the *case-sensitive* names of variables in templatized resource files.\nMap values should be the custom values which get substituted during resource creation."
-        },
-        "task_resource_attributes": {
-          "$ref": "#/definitions/coreResources",
-          "description": "Custom resource defaults for task container resource requests and limits for tasks defined\nwithin this project, domain and workflow."
         },
         "tags": {
           "type": "array",

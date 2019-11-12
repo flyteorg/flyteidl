@@ -8,7 +8,7 @@ project_domain_attributes.proto
 flyteidl.admin.ProjectDomainAttributes
 --------------------------------------
 
-`[flyteidl.admin.ProjectDomainAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L7>`_
+`[flyteidl.admin.ProjectDomainAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L5>`_
 
 
 .. code-block:: json
@@ -17,7 +17,6 @@ flyteidl.admin.ProjectDomainAttributes
     "project": "...",
     "domain": "...",
     "attributes": "{...}",
-    "task_resource_attributes": "{...}",
     "tags": []
   }
 
@@ -41,13 +40,6 @@ attributes
   Map values should be the custom values which get substituted during resource creation.
   
   
-.. _api_field_flyteidl.admin.ProjectDomainAttributes.task_resource_attributes:
-
-task_resource_attributes
-  (:ref:`flyteidl.core.Resources <api_msg_flyteidl.core.Resources>`) Custom resource defaults for task container resource requests and limits for tasks defined
-  within this project and domain.
-  
-  
 .. _api_field_flyteidl.admin.ProjectDomainAttributes.tags:
 
 tags
@@ -61,7 +53,7 @@ tags
 flyteidl.admin.ProjectDomainAttributesUpdateRequest
 ---------------------------------------------------
 
-`[flyteidl.admin.ProjectDomainAttributesUpdateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L28>`_
+`[flyteidl.admin.ProjectDomainAttributesUpdateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L22>`_
 
 Sets custom attributes for a project-domain combination.
 
@@ -83,7 +75,7 @@ attributes
 flyteidl.admin.ProjectDomainAttributesUpdateResponse
 ----------------------------------------------------
 
-`[flyteidl.admin.ProjectDomainAttributesUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L33>`_
+`[flyteidl.admin.ProjectDomainAttributesUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L27>`_
 
 Purposefully empty, may be populated in the future.
 

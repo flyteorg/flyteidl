@@ -21797,7 +21797,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IProjectAttributes
              * @property {string|null} [project] ProjectAttributes project
              * @property {Object.<string,string>|null} [attributes] ProjectAttributes attributes
-             * @property {flyteidl.core.IResources|null} [taskResourceAttributes] ProjectAttributes taskResourceAttributes
              * @property {Array.<string>|null} [tags] ProjectAttributes tags
              */
 
@@ -21833,14 +21832,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             ProjectAttributes.prototype.attributes = $util.emptyObject;
-
-            /**
-             * ProjectAttributes taskResourceAttributes.
-             * @member {flyteidl.core.IResources|null|undefined} taskResourceAttributes
-             * @memberof flyteidl.admin.ProjectAttributes
-             * @instance
-             */
-            ProjectAttributes.prototype.taskResourceAttributes = null;
 
             /**
              * ProjectAttributes tags.
@@ -21879,11 +21870,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.attributes != null && message.hasOwnProperty("attributes"))
                     for (let keys = Object.keys(message.attributes), i = 0; i < keys.length; ++i)
                         writer.uint32(/* id 2, wireType 2 =*/18).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.attributes[keys[i]]).ldelim();
-                if (message.taskResourceAttributes != null && message.hasOwnProperty("taskResourceAttributes"))
-                    $root.flyteidl.core.Resources.encode(message.taskResourceAttributes, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.tags != null && message.tags.length)
                     for (let i = 0; i < message.tags.length; ++i)
-                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.tags[i]);
                 return writer;
             };
 
@@ -21917,9 +21906,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.attributes[key] = reader.string();
                         break;
                     case 3:
-                        message.taskResourceAttributes = $root.flyteidl.core.Resources.decode(reader, reader.uint32());
-                        break;
-                    case 4:
                         if (!(message.tags && message.tags.length))
                             message.tags = [];
                         message.tags.push(reader.string());
@@ -21953,11 +21939,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     for (let i = 0; i < key.length; ++i)
                         if (!$util.isString(message.attributes[key[i]]))
                             return "attributes: string{k:string} expected";
-                }
-                if (message.taskResourceAttributes != null && message.hasOwnProperty("taskResourceAttributes")) {
-                    let error = $root.flyteidl.core.Resources.verify(message.taskResourceAttributes);
-                    if (error)
-                        return "taskResourceAttributes." + error;
                 }
                 if (message.tags != null && message.hasOwnProperty("tags")) {
                     if (!Array.isArray(message.tags))
@@ -22186,7 +22167,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [project] ProjectDomainAttributes project
              * @property {string|null} [domain] ProjectDomainAttributes domain
              * @property {Object.<string,string>|null} [attributes] ProjectDomainAttributes attributes
-             * @property {flyteidl.core.IResources|null} [taskResourceAttributes] ProjectDomainAttributes taskResourceAttributes
              * @property {Array.<string>|null} [tags] ProjectDomainAttributes tags
              */
 
@@ -22232,14 +22212,6 @@ export const flyteidl = $root.flyteidl = (() => {
             ProjectDomainAttributes.prototype.attributes = $util.emptyObject;
 
             /**
-             * ProjectDomainAttributes taskResourceAttributes.
-             * @member {flyteidl.core.IResources|null|undefined} taskResourceAttributes
-             * @memberof flyteidl.admin.ProjectDomainAttributes
-             * @instance
-             */
-            ProjectDomainAttributes.prototype.taskResourceAttributes = null;
-
-            /**
              * ProjectDomainAttributes tags.
              * @member {Array.<string>} tags
              * @memberof flyteidl.admin.ProjectDomainAttributes
@@ -22278,11 +22250,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.attributes != null && message.hasOwnProperty("attributes"))
                     for (let keys = Object.keys(message.attributes), i = 0; i < keys.length; ++i)
                         writer.uint32(/* id 3, wireType 2 =*/26).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.attributes[keys[i]]).ldelim();
-                if (message.taskResourceAttributes != null && message.hasOwnProperty("taskResourceAttributes"))
-                    $root.flyteidl.core.Resources.encode(message.taskResourceAttributes, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.tags != null && message.tags.length)
                     for (let i = 0; i < message.tags.length; ++i)
-                        writer.uint32(/* id 5, wireType 2 =*/42).string(message.tags[i]);
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
                 return writer;
             };
 
@@ -22319,9 +22289,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.attributes[key] = reader.string();
                         break;
                     case 4:
-                        message.taskResourceAttributes = $root.flyteidl.core.Resources.decode(reader, reader.uint32());
-                        break;
-                    case 5:
                         if (!(message.tags && message.tags.length))
                             message.tags = [];
                         message.tags.push(reader.string());
@@ -22358,11 +22325,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     for (let i = 0; i < key.length; ++i)
                         if (!$util.isString(message.attributes[key[i]]))
                             return "attributes: string{k:string} expected";
-                }
-                if (message.taskResourceAttributes != null && message.hasOwnProperty("taskResourceAttributes")) {
-                    let error = $root.flyteidl.core.Resources.verify(message.taskResourceAttributes);
-                    if (error)
-                        return "taskResourceAttributes." + error;
                 }
                 if (message.tags != null && message.hasOwnProperty("tags")) {
                     if (!Array.isArray(message.tags))
@@ -25199,8 +25161,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [project] WorkflowAttributes project
              * @property {string|null} [domain] WorkflowAttributes domain
              * @property {string|null} [workflow] WorkflowAttributes workflow
-             * @property {Object.<string,string>|null} [attributes] WorkflowAttributes attributes
-             * @property {flyteidl.core.IResources|null} [taskResourceAttributes] WorkflowAttributes taskResourceAttributes
              * @property {Array.<string>|null} [tags] WorkflowAttributes tags
              */
 
@@ -25213,7 +25173,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.admin.IWorkflowAttributes=} [properties] Properties to set
              */
             function WorkflowAttributes(properties) {
-                this.attributes = {};
                 this.tags = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
@@ -25244,22 +25203,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             WorkflowAttributes.prototype.workflow = "";
-
-            /**
-             * WorkflowAttributes attributes.
-             * @member {Object.<string,string>} attributes
-             * @memberof flyteidl.admin.WorkflowAttributes
-             * @instance
-             */
-            WorkflowAttributes.prototype.attributes = $util.emptyObject;
-
-            /**
-             * WorkflowAttributes taskResourceAttributes.
-             * @member {flyteidl.core.IResources|null|undefined} taskResourceAttributes
-             * @memberof flyteidl.admin.WorkflowAttributes
-             * @instance
-             */
-            WorkflowAttributes.prototype.taskResourceAttributes = null;
 
             /**
              * WorkflowAttributes tags.
@@ -25299,14 +25242,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
                 if (message.workflow != null && message.hasOwnProperty("workflow"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.workflow);
-                if (message.attributes != null && message.hasOwnProperty("attributes"))
-                    for (let keys = Object.keys(message.attributes), i = 0; i < keys.length; ++i)
-                        writer.uint32(/* id 4, wireType 2 =*/34).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.attributes[keys[i]]).ldelim();
-                if (message.taskResourceAttributes != null && message.hasOwnProperty("taskResourceAttributes"))
-                    $root.flyteidl.core.Resources.encode(message.taskResourceAttributes, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 if (message.tags != null && message.tags.length)
                     for (let i = 0; i < message.tags.length; ++i)
-                        writer.uint32(/* id 6, wireType 2 =*/50).string(message.tags[i]);
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
                 return writer;
             };
 
@@ -25324,7 +25262,7 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowAttributes.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.WorkflowAttributes(), key;
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.WorkflowAttributes();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -25338,17 +25276,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.workflow = reader.string();
                         break;
                     case 4:
-                        reader.skip().pos++;
-                        if (message.attributes === $util.emptyObject)
-                            message.attributes = {};
-                        key = reader.string();
-                        reader.pos++;
-                        message.attributes[key] = reader.string();
-                        break;
-                    case 5:
-                        message.taskResourceAttributes = $root.flyteidl.core.Resources.decode(reader, reader.uint32());
-                        break;
-                    case 6:
                         if (!(message.tags && message.tags.length))
                             message.tags = [];
                         message.tags.push(reader.string());
@@ -25381,19 +25308,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.workflow != null && message.hasOwnProperty("workflow"))
                     if (!$util.isString(message.workflow))
                         return "workflow: string expected";
-                if (message.attributes != null && message.hasOwnProperty("attributes")) {
-                    if (!$util.isObject(message.attributes))
-                        return "attributes: object expected";
-                    let key = Object.keys(message.attributes);
-                    for (let i = 0; i < key.length; ++i)
-                        if (!$util.isString(message.attributes[key[i]]))
-                            return "attributes: string{k:string} expected";
-                }
-                if (message.taskResourceAttributes != null && message.hasOwnProperty("taskResourceAttributes")) {
-                    let error = $root.flyteidl.core.Resources.verify(message.taskResourceAttributes);
-                    if (error)
-                        return "taskResourceAttributes." + error;
-                }
                 if (message.tags != null && message.hasOwnProperty("tags")) {
                     if (!Array.isArray(message.tags))
                         return "tags: array expected";
