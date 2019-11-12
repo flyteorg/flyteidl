@@ -108,7 +108,9 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**terminate_execution**](docs/AdminServiceApi.md#terminate_execution) | **DELETE** /api/v1/executions/{id.project}/{id.domain}/{id.name} | 
 *AdminServiceApi* | [**update_launch_plan**](docs/AdminServiceApi.md#update_launch_plan) | **PUT** /api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version} | 
 *AdminServiceApi* | [**update_named_entity**](docs/AdminServiceApi.md#update_named_entity) | **PUT** /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name} | 
+*AdminServiceApi* | [**update_project_attributes**](docs/AdminServiceApi.md#update_project_attributes) | **PUT** /api/v1/project_attributes/{attributes.project} | 
 *AdminServiceApi* | [**update_project_domain_attributes**](docs/AdminServiceApi.md#update_project_domain_attributes) | **PUT** /api/v1/project_domain_attributes/{attributes.project}/{attributes.domain} | 
+*AdminServiceApi* | [**update_workflow_attributes**](docs/AdminServiceApi.md#update_workflow_attributes) | **PUT** /api/v1/project_domain_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow} | 
 
 
 ## Documentation For Models
@@ -157,6 +159,9 @@ Class | Method | HTTP request | Description
  - [AdminNotificationList](docs/AdminNotificationList.md)
  - [AdminPagerDutyNotification](docs/AdminPagerDutyNotification.md)
  - [AdminProject](docs/AdminProject.md)
+ - [AdminProjectAttributes](docs/AdminProjectAttributes.md)
+ - [AdminProjectAttributesUpdateRequest](docs/AdminProjectAttributesUpdateRequest.md)
+ - [AdminProjectAttributesUpdateResponse](docs/AdminProjectAttributesUpdateResponse.md)
  - [AdminProjectDomainAttributes](docs/AdminProjectDomainAttributes.md)
  - [AdminProjectDomainAttributesUpdateRequest](docs/AdminProjectDomainAttributesUpdateRequest.md)
  - [AdminProjectDomainAttributesUpdateResponse](docs/AdminProjectDomainAttributesUpdateResponse.md)
@@ -179,6 +184,9 @@ Class | Method | HTTP request | Description
  - [AdminTaskSpec](docs/AdminTaskSpec.md)
  - [AdminUrlBlob](docs/AdminUrlBlob.md)
  - [AdminWorkflow](docs/AdminWorkflow.md)
+ - [AdminWorkflowAttributes](docs/AdminWorkflowAttributes.md)
+ - [AdminWorkflowAttributesUpdateRequest](docs/AdminWorkflowAttributesUpdateRequest.md)
+ - [AdminWorkflowAttributesUpdateResponse](docs/AdminWorkflowAttributesUpdateResponse.md)
  - [AdminWorkflowClosure](docs/AdminWorkflowClosure.md)
  - [AdminWorkflowCreateRequest](docs/AdminWorkflowCreateRequest.md)
  - [AdminWorkflowCreateResponse](docs/AdminWorkflowCreateResponse.md)

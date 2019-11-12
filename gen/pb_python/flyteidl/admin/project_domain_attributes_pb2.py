@@ -13,6 +13,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from flyteidl.core import tasks_pb2 as flyteidl_dot_core_dot_tasks__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,8 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n.flyteidl/admin/project_domain_attributes.proto\x12\x0e\x66lyteidl.admin\"\xba\x01\n\x17ProjectDomainAttributes\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12K\n\nattributes\x18\x03 \x03(\x0b\x32\x37.flyteidl.admin.ProjectDomainAttributes.AttributesEntry\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"c\n$ProjectDomainAttributesUpdateRequest\x12;\n\nattributes\x18\x01 \x01(\x0b\x32\'.flyteidl.admin.ProjectDomainAttributes\"\'\n%ProjectDomainAttributesUpdateResponseB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
-)
+  serialized_pb=_b('\n.flyteidl/admin/project_domain_attributes.proto\x12\x0e\x66lyteidl.admin\x1a\x19\x66lyteidl/core/tasks.proto\"\x84\x02\n\x17ProjectDomainAttributes\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12K\n\nattributes\x18\x03 \x03(\x0b\x32\x37.flyteidl.admin.ProjectDomainAttributes.AttributesEntry\x12:\n\x18task_resource_attributes\x18\x04 \x01(\x0b\x32\x18.flyteidl.core.Resources\x12\x0c\n\x04tags\x18\x05 \x03(\t\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"c\n$ProjectDomainAttributesUpdateRequest\x12;\n\nattributes\x18\x01 \x01(\x0b\x32\'.flyteidl.admin.ProjectDomainAttributes\"\'\n%ProjectDomainAttributesUpdateResponseB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  ,
+  dependencies=[flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,])
 
 
 
@@ -59,8 +61,8 @@ _PROJECTDOMAINATTRIBUTES_ATTRIBUTESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=204,
-  serialized_end=253,
+  serialized_start=305,
+  serialized_end=354,
 )
 
 _PROJECTDOMAINATTRIBUTES = _descriptor.Descriptor(
@@ -91,6 +93,20 @@ _PROJECTDOMAINATTRIBUTES = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='task_resource_attributes', full_name='flyteidl.admin.ProjectDomainAttributes.task_resource_attributes', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='tags', full_name='flyteidl.admin.ProjectDomainAttributes.tags', index=4,
+      number=5, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -103,8 +119,8 @@ _PROJECTDOMAINATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=67,
-  serialized_end=253,
+  serialized_start=94,
+  serialized_end=354,
 )
 
 
@@ -134,8 +150,8 @@ _PROJECTDOMAINATTRIBUTESUPDATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=255,
-  serialized_end=354,
+  serialized_start=356,
+  serialized_end=455,
 )
 
 
@@ -158,12 +174,13 @@ _PROJECTDOMAINATTRIBUTESUPDATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=356,
-  serialized_end=395,
+  serialized_start=457,
+  serialized_end=496,
 )
 
 _PROJECTDOMAINATTRIBUTES_ATTRIBUTESENTRY.containing_type = _PROJECTDOMAINATTRIBUTES
 _PROJECTDOMAINATTRIBUTES.fields_by_name['attributes'].message_type = _PROJECTDOMAINATTRIBUTES_ATTRIBUTESENTRY
+_PROJECTDOMAINATTRIBUTES.fields_by_name['task_resource_attributes'].message_type = flyteidl_dot_core_dot_tasks__pb2._RESOURCES
 _PROJECTDOMAINATTRIBUTESUPDATEREQUEST.fields_by_name['attributes'].message_type = _PROJECTDOMAINATTRIBUTES
 DESCRIPTOR.message_types_by_name['ProjectDomainAttributes'] = _PROJECTDOMAINATTRIBUTES
 DESCRIPTOR.message_types_by_name['ProjectDomainAttributesUpdateRequest'] = _PROJECTDOMAINATTRIBUTESUPDATEREQUEST

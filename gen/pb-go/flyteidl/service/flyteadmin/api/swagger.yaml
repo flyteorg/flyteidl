@@ -1230,6 +1230,30 @@ paths:
           description: "A successful response."
           schema:
             $ref: "#/definitions/adminNodeExecutionList"
+  /api/v1/project_attributes/{attributes.project}:
+    put:
+      tags:
+      - "AdminService"
+      description: "Update the customized resource attributes associated with a project"
+      operationId: "UpdateProjectAttributes"
+      parameters:
+      - name: "attributes.project"
+        in: "path"
+        description: "Unique project id for which this set of attributes will be applied."
+        required: true
+        type: "string"
+        x-exportParamName: "AttributesProject"
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/adminProjectAttributesUpdateRequest"
+        x-exportParamName: "Body"
+      responses:
+        200:
+          description: "A successful response."
+          schema:
+            $ref: "#/definitions/adminProjectAttributesUpdateResponse"
   /api/v1/project_domain_attributes/{attributes.project}/{attributes.domain}:
     put:
       tags:
@@ -1261,6 +1285,43 @@ paths:
           description: "A successful response."
           schema:
             $ref: "#/definitions/adminProjectDomainAttributesUpdateResponse"
+  /api/v1/project_domain_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow}:
+    put:
+      tags:
+      - "AdminService"
+      description: "Update the customized resource attributes associated with a project,\
+        \ domain and workflow combination"
+      operationId: "UpdateWorkflowAttributes"
+      parameters:
+      - name: "attributes.project"
+        in: "path"
+        description: "Unique project id for which this set of attributes will be applied."
+        required: true
+        type: "string"
+        x-exportParamName: "AttributesProject"
+      - name: "attributes.domain"
+        in: "path"
+        description: "Unique domain id for which this set of attributes will be applied."
+        required: true
+        type: "string"
+        x-exportParamName: "AttributesDomain"
+      - name: "attributes.workflow"
+        in: "path"
+        description: "Workflow name for which this set of attributes will be applied."
+        required: true
+        type: "string"
+        x-exportParamName: "AttributesWorkflow"
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/adminWorkflowAttributesUpdateRequest"
+        x-exportParamName: "Body"
+      responses:
+        200:
+          description: "A successful response."
+          schema:
+            $ref: "#/definitions/adminWorkflowAttributesUpdateResponse"
   /api/v1/projects:
     get:
       tags:
@@ -4468,6 +4529,39 @@ definitions:
         id: "id"
       description: "description"
       id: "id"
+  adminProjectAttributes:
+    type: "object"
+    properties:
+      project:
+        type: "string"
+        description: "Unique project id for which this set of attributes will be applied."
+      attributes:
+        type: "object"
+        description: "Custom resource attributes which will be applied in cluster\
+          \ resource creation (e.g. quotas).\nMap keys are the *case-sensitive* names\
+          \ of variables in templatized resource files.\nMap values should be the\
+          \ custom values which get substituted during resource creation."
+        additionalProperties:
+          type: "string"
+      task_resource_attributes:
+        description: "Custom resource defaults for task container resource requests\
+          \ and limits for tasks defined\nwithin this project."
+        $ref: "#/definitions/coreResources"
+      tags:
+        type: "array"
+        description: "Tags used for assigning execution queues for tasks defined within\
+          \ this project."
+        items:
+          type: "string"
+  adminProjectAttributesUpdateRequest:
+    type: "object"
+    properties:
+      attributes:
+        $ref: "#/definitions/adminProjectAttributes"
+    description: "Sets custom attributes for a project combination."
+  adminProjectAttributesUpdateResponse:
+    type: "object"
+    description: "Purposefully empty, may be populated in the future."
   adminProjectDomainAttributes:
     type: "object"
     properties:
@@ -4484,6 +4578,16 @@ definitions:
           \ of variables in templatized resource files.\nMap values should be the\
           \ custom values which get substituted during resource creation."
         additionalProperties:
+          type: "string"
+      task_resource_attributes:
+        description: "Custom resource defaults for task container resource requests\
+          \ and limits for tasks defined\nwithin this project and domain."
+        $ref: "#/definitions/coreResources"
+      tags:
+        type: "array"
+        description: "Tags used for assigning execution queues for tasks defined within\
+          \ this project and domain."
+        items:
           type: "string"
   adminProjectDomainAttributesUpdateRequest:
     type: "object"
@@ -8055,6 +8159,45 @@ definitions:
                   - "ids"
                   - "ids"
         created_at: "2000-01-23T04:56:07.000+00:00"
+  adminWorkflowAttributes:
+    type: "object"
+    properties:
+      project:
+        type: "string"
+        description: "Unique project id for which this set of attributes will be applied."
+      domain:
+        type: "string"
+        description: "Unique domain id for which this set of attributes will be applied."
+      workflow:
+        type: "string"
+        description: "Workflow name for which this set of attributes will be applied."
+      attributes:
+        type: "object"
+        description: "Custom resource attributes which will be applied in cluster\
+          \ resource creation (e.g. quotas).\nMap keys are the *case-sensitive* names\
+          \ of variables in templatized resource files.\nMap values should be the\
+          \ custom values which get substituted during resource creation."
+        additionalProperties:
+          type: "string"
+      task_resource_attributes:
+        description: "Custom resource defaults for task container resource requests\
+          \ and limits for tasks defined\nwithin this project, domain and workflow."
+        $ref: "#/definitions/coreResources"
+      tags:
+        type: "array"
+        description: "Tags used for assigning execution queues for tasks defined within\
+          \ this project, domain and workflow."
+        items:
+          type: "string"
+  adminWorkflowAttributesUpdateRequest:
+    type: "object"
+    properties:
+      attributes:
+        $ref: "#/definitions/adminWorkflowAttributes"
+    description: "Sets custom attributes for a project, domain and workflow combination."
+  adminWorkflowAttributesUpdateResponse:
+    type: "object"
+    description: "Purposefully empty, may be populated in the future."
   adminWorkflowClosure:
     type: "object"
     properties:

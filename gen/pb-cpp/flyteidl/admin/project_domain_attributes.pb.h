@@ -34,6 +34,7 @@
 #include <google/protobuf/map_entry.h>
 #include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "flyteidl/core/tasks.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto
@@ -209,6 +210,28 @@ class ProjectDomainAttributes final :
   ::google::protobuf::Map< ::std::string, ::std::string >*
       mutable_attributes();
 
+  // repeated string tags = 5;
+  int tags_size() const;
+  void clear_tags();
+  static const int kTagsFieldNumber = 5;
+  const ::std::string& tags(int index) const;
+  ::std::string* mutable_tags(int index);
+  void set_tags(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_tags(int index, ::std::string&& value);
+  #endif
+  void set_tags(int index, const char* value);
+  void set_tags(int index, const char* value, size_t size);
+  ::std::string* add_tags();
+  void add_tags(const ::std::string& value);
+  #if LANG_CXX11
+  void add_tags(::std::string&& value);
+  #endif
+  void add_tags(const char* value);
+  void add_tags(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& tags() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_tags();
+
   // string project = 1;
   void clear_project();
   static const int kProjectFieldNumber = 1;
@@ -237,6 +260,15 @@ class ProjectDomainAttributes final :
   ::std::string* release_domain();
   void set_allocated_domain(::std::string* domain);
 
+  // .flyteidl.core.Resources task_resource_attributes = 4;
+  bool has_task_resource_attributes() const;
+  void clear_task_resource_attributes();
+  static const int kTaskResourceAttributesFieldNumber = 4;
+  const ::flyteidl::core::Resources& task_resource_attributes() const;
+  ::flyteidl::core::Resources* release_task_resource_attributes();
+  ::flyteidl::core::Resources* mutable_task_resource_attributes();
+  void set_allocated_task_resource_attributes(::flyteidl::core::Resources* task_resource_attributes);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.ProjectDomainAttributes)
  private:
   class HasBitSetters;
@@ -248,8 +280,10 @@ class ProjectDomainAttributes final :
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       0 > attributes_;
+  ::google::protobuf::RepeatedPtrField<::std::string> tags_;
   ::google::protobuf::internal::ArenaStringPtr project_;
   ::google::protobuf::internal::ArenaStringPtr domain_;
+  ::flyteidl::core::Resources* task_resource_attributes_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto;
 };
@@ -608,6 +642,120 @@ inline ::google::protobuf::Map< ::std::string, ::std::string >*
 ProjectDomainAttributes::mutable_attributes() {
   // @@protoc_insertion_point(field_mutable_map:flyteidl.admin.ProjectDomainAttributes.attributes)
   return attributes_.MutableMap();
+}
+
+// .flyteidl.core.Resources task_resource_attributes = 4;
+inline bool ProjectDomainAttributes::has_task_resource_attributes() const {
+  return this != internal_default_instance() && task_resource_attributes_ != nullptr;
+}
+inline const ::flyteidl::core::Resources& ProjectDomainAttributes::task_resource_attributes() const {
+  const ::flyteidl::core::Resources* p = task_resource_attributes_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ProjectDomainAttributes.task_resource_attributes)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Resources*>(
+      &::flyteidl::core::_Resources_default_instance_);
+}
+inline ::flyteidl::core::Resources* ProjectDomainAttributes::release_task_resource_attributes() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.ProjectDomainAttributes.task_resource_attributes)
+  
+  ::flyteidl::core::Resources* temp = task_resource_attributes_;
+  task_resource_attributes_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::Resources* ProjectDomainAttributes::mutable_task_resource_attributes() {
+  
+  if (task_resource_attributes_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::Resources>(GetArenaNoVirtual());
+    task_resource_attributes_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ProjectDomainAttributes.task_resource_attributes)
+  return task_resource_attributes_;
+}
+inline void ProjectDomainAttributes::set_allocated_task_resource_attributes(::flyteidl::core::Resources* task_resource_attributes) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(task_resource_attributes_);
+  }
+  if (task_resource_attributes) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      task_resource_attributes = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, task_resource_attributes, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  task_resource_attributes_ = task_resource_attributes;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ProjectDomainAttributes.task_resource_attributes)
+}
+
+// repeated string tags = 5;
+inline int ProjectDomainAttributes::tags_size() const {
+  return tags_.size();
+}
+inline void ProjectDomainAttributes::clear_tags() {
+  tags_.Clear();
+}
+inline const ::std::string& ProjectDomainAttributes::tags(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ProjectDomainAttributes.tags)
+  return tags_.Get(index);
+}
+inline ::std::string* ProjectDomainAttributes::mutable_tags(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ProjectDomainAttributes.tags)
+  return tags_.Mutable(index);
+}
+inline void ProjectDomainAttributes::set_tags(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ProjectDomainAttributes.tags)
+  tags_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void ProjectDomainAttributes::set_tags(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ProjectDomainAttributes.tags)
+  tags_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void ProjectDomainAttributes::set_tags(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  tags_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.ProjectDomainAttributes.tags)
+}
+inline void ProjectDomainAttributes::set_tags(int index, const char* value, size_t size) {
+  tags_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.ProjectDomainAttributes.tags)
+}
+inline ::std::string* ProjectDomainAttributes::add_tags() {
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.admin.ProjectDomainAttributes.tags)
+  return tags_.Add();
+}
+inline void ProjectDomainAttributes::add_tags(const ::std::string& value) {
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:flyteidl.admin.ProjectDomainAttributes.tags)
+}
+#if LANG_CXX11
+inline void ProjectDomainAttributes::add_tags(::std::string&& value) {
+  tags_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:flyteidl.admin.ProjectDomainAttributes.tags)
+}
+#endif
+inline void ProjectDomainAttributes::add_tags(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:flyteidl.admin.ProjectDomainAttributes.tags)
+}
+inline void ProjectDomainAttributes::add_tags(const char* value, size_t size) {
+  tags_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.admin.ProjectDomainAttributes.tags)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+ProjectDomainAttributes::tags() const {
+  // @@protoc_insertion_point(field_list:flyteidl.admin.ProjectDomainAttributes.tags)
+  return tags_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>*
+ProjectDomainAttributes::mutable_tags() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.ProjectDomainAttributes.tags)
+  return &tags_;
 }
 
 // -------------------------------------------------------------------

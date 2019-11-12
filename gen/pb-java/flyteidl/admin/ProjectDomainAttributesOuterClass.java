@@ -117,6 +117,69 @@ public final class ProjectDomainAttributesOuterClass {
 
     java.lang.String getAttributesOrThrow(
         java.lang.String key);
+
+    /**
+     * <pre>
+     * Custom resource defaults for task container resource requests and limits for tasks defined
+     * within this project and domain.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources task_resource_attributes = 4;</code>
+     */
+    boolean hasTaskResourceAttributes();
+    /**
+     * <pre>
+     * Custom resource defaults for task container resource requests and limits for tasks defined
+     * within this project and domain.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources task_resource_attributes = 4;</code>
+     */
+    flyteidl.core.Tasks.Resources getTaskResourceAttributes();
+    /**
+     * <pre>
+     * Custom resource defaults for task container resource requests and limits for tasks defined
+     * within this project and domain.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources task_resource_attributes = 4;</code>
+     */
+    flyteidl.core.Tasks.ResourcesOrBuilder getTaskResourceAttributesOrBuilder();
+
+    /**
+     * <pre>
+     * Tags used for assigning execution queues for tasks defined within this project and domain.
+     * </pre>
+     *
+     * <code>repeated string tags = 5;</code>
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <pre>
+     * Tags used for assigning execution queues for tasks defined within this project and domain.
+     * </pre>
+     *
+     * <code>repeated string tags = 5;</code>
+     */
+    int getTagsCount();
+    /**
+     * <pre>
+     * Tags used for assigning execution queues for tasks defined within this project and domain.
+     * </pre>
+     *
+     * <code>repeated string tags = 5;</code>
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <pre>
+     * Tags used for assigning execution queues for tasks defined within this project and domain.
+     * </pre>
+     *
+     * <code>repeated string tags = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
   }
   /**
    * Protobuf type {@code flyteidl.admin.ProjectDomainAttributes}
@@ -133,6 +196,7 @@ public final class ProjectDomainAttributesOuterClass {
     private ProjectDomainAttributes() {
       project_ = "";
       domain_ = "";
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -184,6 +248,28 @@ public final class ProjectDomainAttributesOuterClass {
                   attributes__.getKey(), attributes__.getValue());
               break;
             }
+            case 34: {
+              flyteidl.core.Tasks.Resources.Builder subBuilder = null;
+              if (taskResourceAttributes_ != null) {
+                subBuilder = taskResourceAttributes_.toBuilder();
+              }
+              taskResourceAttributes_ = input.readMessage(flyteidl.core.Tasks.Resources.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(taskResourceAttributes_);
+                taskResourceAttributes_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              tags_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -199,6 +285,9 @@ public final class ProjectDomainAttributesOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -413,6 +502,87 @@ public final class ProjectDomainAttributesOuterClass {
       return map.get(key);
     }
 
+    public static final int TASK_RESOURCE_ATTRIBUTES_FIELD_NUMBER = 4;
+    private flyteidl.core.Tasks.Resources taskResourceAttributes_;
+    /**
+     * <pre>
+     * Custom resource defaults for task container resource requests and limits for tasks defined
+     * within this project and domain.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources task_resource_attributes = 4;</code>
+     */
+    public boolean hasTaskResourceAttributes() {
+      return taskResourceAttributes_ != null;
+    }
+    /**
+     * <pre>
+     * Custom resource defaults for task container resource requests and limits for tasks defined
+     * within this project and domain.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources task_resource_attributes = 4;</code>
+     */
+    public flyteidl.core.Tasks.Resources getTaskResourceAttributes() {
+      return taskResourceAttributes_ == null ? flyteidl.core.Tasks.Resources.getDefaultInstance() : taskResourceAttributes_;
+    }
+    /**
+     * <pre>
+     * Custom resource defaults for task container resource requests and limits for tasks defined
+     * within this project and domain.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources task_resource_attributes = 4;</code>
+     */
+    public flyteidl.core.Tasks.ResourcesOrBuilder getTaskResourceAttributesOrBuilder() {
+      return getTaskResourceAttributes();
+    }
+
+    public static final int TAGS_FIELD_NUMBER = 5;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <pre>
+     * Tags used for assigning execution queues for tasks defined within this project and domain.
+     * </pre>
+     *
+     * <code>repeated string tags = 5;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <pre>
+     * Tags used for assigning execution queues for tasks defined within this project and domain.
+     * </pre>
+     *
+     * <code>repeated string tags = 5;</code>
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <pre>
+     * Tags used for assigning execution queues for tasks defined within this project and domain.
+     * </pre>
+     *
+     * <code>repeated string tags = 5;</code>
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <pre>
+     * Tags used for assigning execution queues for tasks defined within this project and domain.
+     * </pre>
+     *
+     * <code>repeated string tags = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -439,6 +609,12 @@ public final class ProjectDomainAttributesOuterClass {
           internalGetAttributes(),
           AttributesDefaultEntryHolder.defaultEntry,
           3);
+      if (taskResourceAttributes_ != null) {
+        output.writeMessage(4, getTaskResourceAttributes());
+      }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, tags_.getRaw(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -464,6 +640,18 @@ public final class ProjectDomainAttributesOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(3, attributes__);
       }
+      if (taskResourceAttributes_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getTaskResourceAttributes());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -485,6 +673,13 @@ public final class ProjectDomainAttributesOuterClass {
           .equals(other.getDomain())) return false;
       if (!internalGetAttributes().equals(
           other.internalGetAttributes())) return false;
+      if (hasTaskResourceAttributes() != other.hasTaskResourceAttributes()) return false;
+      if (hasTaskResourceAttributes()) {
+        if (!getTaskResourceAttributes()
+            .equals(other.getTaskResourceAttributes())) return false;
+      }
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -503,6 +698,14 @@ public final class ProjectDomainAttributesOuterClass {
       if (!internalGetAttributes().getMap().isEmpty()) {
         hash = (37 * hash) + ATTRIBUTES_FIELD_NUMBER;
         hash = (53 * hash) + internalGetAttributes().hashCode();
+      }
+      if (hasTaskResourceAttributes()) {
+        hash = (37 * hash) + TASK_RESOURCE_ATTRIBUTES_FIELD_NUMBER;
+        hash = (53 * hash) + getTaskResourceAttributes().hashCode();
+      }
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -664,6 +867,14 @@ public final class ProjectDomainAttributesOuterClass {
         domain_ = "";
 
         internalGetMutableAttributes().clear();
+        if (taskResourceAttributesBuilder_ == null) {
+          taskResourceAttributes_ = null;
+        } else {
+          taskResourceAttributes_ = null;
+          taskResourceAttributesBuilder_ = null;
+        }
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -696,6 +907,16 @@ public final class ProjectDomainAttributesOuterClass {
         result.domain_ = domain_;
         result.attributes_ = internalGetAttributes();
         result.attributes_.makeImmutable();
+        if (taskResourceAttributesBuilder_ == null) {
+          result.taskResourceAttributes_ = taskResourceAttributes_;
+        } else {
+          result.taskResourceAttributes_ = taskResourceAttributesBuilder_.build();
+        }
+        if (((bitField0_ & 0x00000010) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.tags_ = tags_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -755,6 +976,19 @@ public final class ProjectDomainAttributesOuterClass {
         }
         internalGetMutableAttributes().mergeFrom(
             other.internalGetAttributes());
+        if (other.hasTaskResourceAttributes()) {
+          mergeTaskResourceAttributes(other.getTaskResourceAttributes());
+        }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1125,6 +1359,298 @@ public final class ProjectDomainAttributesOuterClass {
           java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableAttributes().getMutableMap()
             .putAll(values);
+        return this;
+      }
+
+      private flyteidl.core.Tasks.Resources taskResourceAttributes_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.Resources, flyteidl.core.Tasks.Resources.Builder, flyteidl.core.Tasks.ResourcesOrBuilder> taskResourceAttributesBuilder_;
+      /**
+       * <pre>
+       * Custom resource defaults for task container resource requests and limits for tasks defined
+       * within this project and domain.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources task_resource_attributes = 4;</code>
+       */
+      public boolean hasTaskResourceAttributes() {
+        return taskResourceAttributesBuilder_ != null || taskResourceAttributes_ != null;
+      }
+      /**
+       * <pre>
+       * Custom resource defaults for task container resource requests and limits for tasks defined
+       * within this project and domain.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources task_resource_attributes = 4;</code>
+       */
+      public flyteidl.core.Tasks.Resources getTaskResourceAttributes() {
+        if (taskResourceAttributesBuilder_ == null) {
+          return taskResourceAttributes_ == null ? flyteidl.core.Tasks.Resources.getDefaultInstance() : taskResourceAttributes_;
+        } else {
+          return taskResourceAttributesBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Custom resource defaults for task container resource requests and limits for tasks defined
+       * within this project and domain.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources task_resource_attributes = 4;</code>
+       */
+      public Builder setTaskResourceAttributes(flyteidl.core.Tasks.Resources value) {
+        if (taskResourceAttributesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          taskResourceAttributes_ = value;
+          onChanged();
+        } else {
+          taskResourceAttributesBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom resource defaults for task container resource requests and limits for tasks defined
+       * within this project and domain.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources task_resource_attributes = 4;</code>
+       */
+      public Builder setTaskResourceAttributes(
+          flyteidl.core.Tasks.Resources.Builder builderForValue) {
+        if (taskResourceAttributesBuilder_ == null) {
+          taskResourceAttributes_ = builderForValue.build();
+          onChanged();
+        } else {
+          taskResourceAttributesBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom resource defaults for task container resource requests and limits for tasks defined
+       * within this project and domain.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources task_resource_attributes = 4;</code>
+       */
+      public Builder mergeTaskResourceAttributes(flyteidl.core.Tasks.Resources value) {
+        if (taskResourceAttributesBuilder_ == null) {
+          if (taskResourceAttributes_ != null) {
+            taskResourceAttributes_ =
+              flyteidl.core.Tasks.Resources.newBuilder(taskResourceAttributes_).mergeFrom(value).buildPartial();
+          } else {
+            taskResourceAttributes_ = value;
+          }
+          onChanged();
+        } else {
+          taskResourceAttributesBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom resource defaults for task container resource requests and limits for tasks defined
+       * within this project and domain.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources task_resource_attributes = 4;</code>
+       */
+      public Builder clearTaskResourceAttributes() {
+        if (taskResourceAttributesBuilder_ == null) {
+          taskResourceAttributes_ = null;
+          onChanged();
+        } else {
+          taskResourceAttributes_ = null;
+          taskResourceAttributesBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Custom resource defaults for task container resource requests and limits for tasks defined
+       * within this project and domain.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources task_resource_attributes = 4;</code>
+       */
+      public flyteidl.core.Tasks.Resources.Builder getTaskResourceAttributesBuilder() {
+        
+        onChanged();
+        return getTaskResourceAttributesFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Custom resource defaults for task container resource requests and limits for tasks defined
+       * within this project and domain.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources task_resource_attributes = 4;</code>
+       */
+      public flyteidl.core.Tasks.ResourcesOrBuilder getTaskResourceAttributesOrBuilder() {
+        if (taskResourceAttributesBuilder_ != null) {
+          return taskResourceAttributesBuilder_.getMessageOrBuilder();
+        } else {
+          return taskResourceAttributes_ == null ?
+              flyteidl.core.Tasks.Resources.getDefaultInstance() : taskResourceAttributes_;
+        }
+      }
+      /**
+       * <pre>
+       * Custom resource defaults for task container resource requests and limits for tasks defined
+       * within this project and domain.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources task_resource_attributes = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.Resources, flyteidl.core.Tasks.Resources.Builder, flyteidl.core.Tasks.ResourcesOrBuilder> 
+          getTaskResourceAttributesFieldBuilder() {
+        if (taskResourceAttributesBuilder_ == null) {
+          taskResourceAttributesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Tasks.Resources, flyteidl.core.Tasks.Resources.Builder, flyteidl.core.Tasks.ResourcesOrBuilder>(
+                  getTaskResourceAttributes(),
+                  getParentForChildren(),
+                  isClean());
+          taskResourceAttributes_ = null;
+        }
+        return taskResourceAttributesBuilder_;
+      }
+
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+      /**
+       * <pre>
+       * Tags used for assigning execution queues for tasks defined within this project and domain.
+       * </pre>
+       *
+       * <code>repeated string tags = 5;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * Tags used for assigning execution queues for tasks defined within this project and domain.
+       * </pre>
+       *
+       * <code>repeated string tags = 5;</code>
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <pre>
+       * Tags used for assigning execution queues for tasks defined within this project and domain.
+       * </pre>
+       *
+       * <code>repeated string tags = 5;</code>
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <pre>
+       * Tags used for assigning execution queues for tasks defined within this project and domain.
+       * </pre>
+       *
+       * <code>repeated string tags = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * Tags used for assigning execution queues for tasks defined within this project and domain.
+       * </pre>
+       *
+       * <code>repeated string tags = 5;</code>
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Tags used for assigning execution queues for tasks defined within this project and domain.
+       * </pre>
+       *
+       * <code>repeated string tags = 5;</code>
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Tags used for assigning execution queues for tasks defined within this project and domain.
+       * </pre>
+       *
+       * <code>repeated string tags = 5;</code>
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Tags used for assigning execution queues for tasks defined within this project and domain.
+       * </pre>
+       *
+       * <code>repeated string tags = 5;</code>
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Tags used for assigning execution queues for tasks defined within this project and domain.
+       * </pre>
+       *
+       * <code>repeated string tags = 5;</code>
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
         return this;
       }
       @java.lang.Override
@@ -2243,17 +2769,19 @@ public final class ProjectDomainAttributesOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n.flyteidl/admin/project_domain_attribut" +
-      "es.proto\022\016flyteidl.admin\"\272\001\n\027ProjectDoma" +
-      "inAttributes\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030" +
-      "\002 \001(\t\022K\n\nattributes\030\003 \003(\01327.flyteidl.adm" +
-      "in.ProjectDomainAttributes.AttributesEnt" +
-      "ry\0321\n\017AttributesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
-      "lue\030\002 \001(\t:\0028\001\"c\n$ProjectDomainAttributes" +
-      "UpdateRequest\022;\n\nattributes\030\001 \001(\0132\'.flyt" +
-      "eidl.admin.ProjectDomainAttributes\"\'\n%Pr" +
-      "ojectDomainAttributesUpdateResponseB3Z1g" +
-      "ithub.com/lyft/flyteidl/gen/pb-go/flytei" +
-      "dl/adminb\006proto3"
+      "es.proto\022\016flyteidl.admin\032\031flyteidl/core/" +
+      "tasks.proto\"\204\002\n\027ProjectDomainAttributes\022" +
+      "\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022K\n\nattr" +
+      "ibutes\030\003 \003(\01327.flyteidl.admin.ProjectDom" +
+      "ainAttributes.AttributesEntry\022:\n\030task_re" +
+      "source_attributes\030\004 \001(\0132\030.flyteidl.core." +
+      "Resources\022\014\n\004tags\030\005 \003(\t\0321\n\017AttributesEnt" +
+      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"c\n$Pr" +
+      "ojectDomainAttributesUpdateRequest\022;\n\nat" +
+      "tributes\030\001 \001(\0132\'.flyteidl.admin.ProjectD" +
+      "omainAttributes\"\'\n%ProjectDomainAttribut" +
+      "esUpdateResponseB3Z1github.com/lyft/flyt" +
+      "eidl/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2266,13 +2794,14 @@ public final class ProjectDomainAttributesOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          flyteidl.core.Tasks.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_admin_ProjectDomainAttributes_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_flyteidl_admin_ProjectDomainAttributes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ProjectDomainAttributes_descriptor,
-        new java.lang.String[] { "Project", "Domain", "Attributes", });
+        new java.lang.String[] { "Project", "Domain", "Attributes", "TaskResourceAttributes", "Tags", });
     internal_static_flyteidl_admin_ProjectDomainAttributes_AttributesEntry_descriptor =
       internal_static_flyteidl_admin_ProjectDomainAttributes_descriptor.getNestedTypes().get(0);
     internal_static_flyteidl_admin_ProjectDomainAttributes_AttributesEntry_fieldAccessorTable = new
@@ -2291,6 +2820,7 @@ public final class ProjectDomainAttributesOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ProjectDomainAttributesUpdateResponse_descriptor,
         new java.lang.String[] { });
+    flyteidl.core.Tasks.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

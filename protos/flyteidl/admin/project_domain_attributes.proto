@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "flyteidl/core/tasks.proto";
+
 package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
@@ -14,6 +16,13 @@ message ProjectDomainAttributes {
     // Map keys are the *case-sensitive* names of variables in templatized resource files.
     // Map values should be the custom values which get substituted during resource creation.
     map<string, string> attributes = 3;
+
+    // Custom resource defaults for task container resource requests and limits for tasks defined
+    // within this project and domain.
+    core.Resources task_resource_attributes = 4;
+
+    // Tags used for assigning execution queues for tasks defined within this project and domain.
+    repeated string tags           = 5;
 }
 
 // Sets custom attributes for a project-domain combination.

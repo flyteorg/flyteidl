@@ -21789,6 +21789,394 @@ export const flyteidl = $root.flyteidl = (() => {
             return ProjectRegisterResponse;
         })();
 
+        admin.ProjectAttributes = (function() {
+
+            /**
+             * Properties of a ProjectAttributes.
+             * @memberof flyteidl.admin
+             * @interface IProjectAttributes
+             * @property {string|null} [project] ProjectAttributes project
+             * @property {Object.<string,string>|null} [attributes] ProjectAttributes attributes
+             * @property {flyteidl.core.IResources|null} [taskResourceAttributes] ProjectAttributes taskResourceAttributes
+             * @property {Array.<string>|null} [tags] ProjectAttributes tags
+             */
+
+            /**
+             * Constructs a new ProjectAttributes.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a ProjectAttributes.
+             * @implements IProjectAttributes
+             * @constructor
+             * @param {flyteidl.admin.IProjectAttributes=} [properties] Properties to set
+             */
+            function ProjectAttributes(properties) {
+                this.attributes = {};
+                this.tags = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ProjectAttributes project.
+             * @member {string} project
+             * @memberof flyteidl.admin.ProjectAttributes
+             * @instance
+             */
+            ProjectAttributes.prototype.project = "";
+
+            /**
+             * ProjectAttributes attributes.
+             * @member {Object.<string,string>} attributes
+             * @memberof flyteidl.admin.ProjectAttributes
+             * @instance
+             */
+            ProjectAttributes.prototype.attributes = $util.emptyObject;
+
+            /**
+             * ProjectAttributes taskResourceAttributes.
+             * @member {flyteidl.core.IResources|null|undefined} taskResourceAttributes
+             * @memberof flyteidl.admin.ProjectAttributes
+             * @instance
+             */
+            ProjectAttributes.prototype.taskResourceAttributes = null;
+
+            /**
+             * ProjectAttributes tags.
+             * @member {Array.<string>} tags
+             * @memberof flyteidl.admin.ProjectAttributes
+             * @instance
+             */
+            ProjectAttributes.prototype.tags = $util.emptyArray;
+
+            /**
+             * Creates a new ProjectAttributes instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ProjectAttributes
+             * @static
+             * @param {flyteidl.admin.IProjectAttributes=} [properties] Properties to set
+             * @returns {flyteidl.admin.ProjectAttributes} ProjectAttributes instance
+             */
+            ProjectAttributes.create = function create(properties) {
+                return new ProjectAttributes(properties);
+            };
+
+            /**
+             * Encodes the specified ProjectAttributes message. Does not implicitly {@link flyteidl.admin.ProjectAttributes.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ProjectAttributes
+             * @static
+             * @param {flyteidl.admin.IProjectAttributes} message ProjectAttributes message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProjectAttributes.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                if (message.attributes != null && message.hasOwnProperty("attributes"))
+                    for (let keys = Object.keys(message.attributes), i = 0; i < keys.length; ++i)
+                        writer.uint32(/* id 2, wireType 2 =*/18).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.attributes[keys[i]]).ldelim();
+                if (message.taskResourceAttributes != null && message.hasOwnProperty("taskResourceAttributes"))
+                    $root.flyteidl.core.Resources.encode(message.taskResourceAttributes, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.tags != null && message.tags.length)
+                    for (let i = 0; i < message.tags.length; ++i)
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
+                return writer;
+            };
+
+            /**
+             * Decodes a ProjectAttributes message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ProjectAttributes
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ProjectAttributes} ProjectAttributes
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProjectAttributes.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ProjectAttributes(), key;
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.project = reader.string();
+                        break;
+                    case 2:
+                        reader.skip().pos++;
+                        if (message.attributes === $util.emptyObject)
+                            message.attributes = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.attributes[key] = reader.string();
+                        break;
+                    case 3:
+                        message.taskResourceAttributes = $root.flyteidl.core.Resources.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        if (!(message.tags && message.tags.length))
+                            message.tags = [];
+                        message.tags.push(reader.string());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ProjectAttributes message.
+             * @function verify
+             * @memberof flyteidl.admin.ProjectAttributes
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ProjectAttributes.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                if (message.attributes != null && message.hasOwnProperty("attributes")) {
+                    if (!$util.isObject(message.attributes))
+                        return "attributes: object expected";
+                    let key = Object.keys(message.attributes);
+                    for (let i = 0; i < key.length; ++i)
+                        if (!$util.isString(message.attributes[key[i]]))
+                            return "attributes: string{k:string} expected";
+                }
+                if (message.taskResourceAttributes != null && message.hasOwnProperty("taskResourceAttributes")) {
+                    let error = $root.flyteidl.core.Resources.verify(message.taskResourceAttributes);
+                    if (error)
+                        return "taskResourceAttributes." + error;
+                }
+                if (message.tags != null && message.hasOwnProperty("tags")) {
+                    if (!Array.isArray(message.tags))
+                        return "tags: array expected";
+                    for (let i = 0; i < message.tags.length; ++i)
+                        if (!$util.isString(message.tags[i]))
+                            return "tags: string[] expected";
+                }
+                return null;
+            };
+
+            return ProjectAttributes;
+        })();
+
+        admin.ProjectAttributesUpdateRequest = (function() {
+
+            /**
+             * Properties of a ProjectAttributesUpdateRequest.
+             * @memberof flyteidl.admin
+             * @interface IProjectAttributesUpdateRequest
+             * @property {flyteidl.admin.IProjectAttributes|null} [attributes] ProjectAttributesUpdateRequest attributes
+             */
+
+            /**
+             * Constructs a new ProjectAttributesUpdateRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a ProjectAttributesUpdateRequest.
+             * @implements IProjectAttributesUpdateRequest
+             * @constructor
+             * @param {flyteidl.admin.IProjectAttributesUpdateRequest=} [properties] Properties to set
+             */
+            function ProjectAttributesUpdateRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ProjectAttributesUpdateRequest attributes.
+             * @member {flyteidl.admin.IProjectAttributes|null|undefined} attributes
+             * @memberof flyteidl.admin.ProjectAttributesUpdateRequest
+             * @instance
+             */
+            ProjectAttributesUpdateRequest.prototype.attributes = null;
+
+            /**
+             * Creates a new ProjectAttributesUpdateRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ProjectAttributesUpdateRequest
+             * @static
+             * @param {flyteidl.admin.IProjectAttributesUpdateRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.ProjectAttributesUpdateRequest} ProjectAttributesUpdateRequest instance
+             */
+            ProjectAttributesUpdateRequest.create = function create(properties) {
+                return new ProjectAttributesUpdateRequest(properties);
+            };
+
+            /**
+             * Encodes the specified ProjectAttributesUpdateRequest message. Does not implicitly {@link flyteidl.admin.ProjectAttributesUpdateRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ProjectAttributesUpdateRequest
+             * @static
+             * @param {flyteidl.admin.IProjectAttributesUpdateRequest} message ProjectAttributesUpdateRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProjectAttributesUpdateRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.attributes != null && message.hasOwnProperty("attributes"))
+                    $root.flyteidl.admin.ProjectAttributes.encode(message.attributes, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a ProjectAttributesUpdateRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ProjectAttributesUpdateRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ProjectAttributesUpdateRequest} ProjectAttributesUpdateRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProjectAttributesUpdateRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ProjectAttributesUpdateRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.attributes = $root.flyteidl.admin.ProjectAttributes.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ProjectAttributesUpdateRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.ProjectAttributesUpdateRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ProjectAttributesUpdateRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.attributes != null && message.hasOwnProperty("attributes")) {
+                    let error = $root.flyteidl.admin.ProjectAttributes.verify(message.attributes);
+                    if (error)
+                        return "attributes." + error;
+                }
+                return null;
+            };
+
+            return ProjectAttributesUpdateRequest;
+        })();
+
+        admin.ProjectAttributesUpdateResponse = (function() {
+
+            /**
+             * Properties of a ProjectAttributesUpdateResponse.
+             * @memberof flyteidl.admin
+             * @interface IProjectAttributesUpdateResponse
+             */
+
+            /**
+             * Constructs a new ProjectAttributesUpdateResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a ProjectAttributesUpdateResponse.
+             * @implements IProjectAttributesUpdateResponse
+             * @constructor
+             * @param {flyteidl.admin.IProjectAttributesUpdateResponse=} [properties] Properties to set
+             */
+            function ProjectAttributesUpdateResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new ProjectAttributesUpdateResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ProjectAttributesUpdateResponse
+             * @static
+             * @param {flyteidl.admin.IProjectAttributesUpdateResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.ProjectAttributesUpdateResponse} ProjectAttributesUpdateResponse instance
+             */
+            ProjectAttributesUpdateResponse.create = function create(properties) {
+                return new ProjectAttributesUpdateResponse(properties);
+            };
+
+            /**
+             * Encodes the specified ProjectAttributesUpdateResponse message. Does not implicitly {@link flyteidl.admin.ProjectAttributesUpdateResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ProjectAttributesUpdateResponse
+             * @static
+             * @param {flyteidl.admin.IProjectAttributesUpdateResponse} message ProjectAttributesUpdateResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProjectAttributesUpdateResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a ProjectAttributesUpdateResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ProjectAttributesUpdateResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ProjectAttributesUpdateResponse} ProjectAttributesUpdateResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProjectAttributesUpdateResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ProjectAttributesUpdateResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ProjectAttributesUpdateResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.ProjectAttributesUpdateResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ProjectAttributesUpdateResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return ProjectAttributesUpdateResponse;
+        })();
+
         admin.ProjectDomainAttributes = (function() {
 
             /**
@@ -21798,6 +22186,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [project] ProjectDomainAttributes project
              * @property {string|null} [domain] ProjectDomainAttributes domain
              * @property {Object.<string,string>|null} [attributes] ProjectDomainAttributes attributes
+             * @property {flyteidl.core.IResources|null} [taskResourceAttributes] ProjectDomainAttributes taskResourceAttributes
+             * @property {Array.<string>|null} [tags] ProjectDomainAttributes tags
              */
 
             /**
@@ -21810,6 +22200,7 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             function ProjectDomainAttributes(properties) {
                 this.attributes = {};
+                this.tags = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -21839,6 +22230,22 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             ProjectDomainAttributes.prototype.attributes = $util.emptyObject;
+
+            /**
+             * ProjectDomainAttributes taskResourceAttributes.
+             * @member {flyteidl.core.IResources|null|undefined} taskResourceAttributes
+             * @memberof flyteidl.admin.ProjectDomainAttributes
+             * @instance
+             */
+            ProjectDomainAttributes.prototype.taskResourceAttributes = null;
+
+            /**
+             * ProjectDomainAttributes tags.
+             * @member {Array.<string>} tags
+             * @memberof flyteidl.admin.ProjectDomainAttributes
+             * @instance
+             */
+            ProjectDomainAttributes.prototype.tags = $util.emptyArray;
 
             /**
              * Creates a new ProjectDomainAttributes instance using the specified properties.
@@ -21871,6 +22278,11 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.attributes != null && message.hasOwnProperty("attributes"))
                     for (let keys = Object.keys(message.attributes), i = 0; i < keys.length; ++i)
                         writer.uint32(/* id 3, wireType 2 =*/26).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.attributes[keys[i]]).ldelim();
+                if (message.taskResourceAttributes != null && message.hasOwnProperty("taskResourceAttributes"))
+                    $root.flyteidl.core.Resources.encode(message.taskResourceAttributes, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.tags != null && message.tags.length)
+                    for (let i = 0; i < message.tags.length; ++i)
+                        writer.uint32(/* id 5, wireType 2 =*/42).string(message.tags[i]);
                 return writer;
             };
 
@@ -21906,6 +22318,14 @@ export const flyteidl = $root.flyteidl = (() => {
                         reader.pos++;
                         message.attributes[key] = reader.string();
                         break;
+                    case 4:
+                        message.taskResourceAttributes = $root.flyteidl.core.Resources.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        if (!(message.tags && message.tags.length))
+                            message.tags = [];
+                        message.tags.push(reader.string());
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -21938,6 +22358,18 @@ export const flyteidl = $root.flyteidl = (() => {
                     for (let i = 0; i < key.length; ++i)
                         if (!$util.isString(message.attributes[key[i]]))
                             return "attributes: string{k:string} expected";
+                }
+                if (message.taskResourceAttributes != null && message.hasOwnProperty("taskResourceAttributes")) {
+                    let error = $root.flyteidl.core.Resources.verify(message.taskResourceAttributes);
+                    if (error)
+                        return "taskResourceAttributes." + error;
+                }
+                if (message.tags != null && message.hasOwnProperty("tags")) {
+                    if (!Array.isArray(message.tags))
+                        return "tags: array expected";
+                    for (let i = 0; i < message.tags.length; ++i)
+                        if (!$util.isString(message.tags[i]))
+                            return "tags: string[] expected";
                 }
                 return null;
             };
@@ -24758,6 +25190,428 @@ export const flyteidl = $root.flyteidl = (() => {
             return WorkflowClosure;
         })();
 
+        admin.WorkflowAttributes = (function() {
+
+            /**
+             * Properties of a WorkflowAttributes.
+             * @memberof flyteidl.admin
+             * @interface IWorkflowAttributes
+             * @property {string|null} [project] WorkflowAttributes project
+             * @property {string|null} [domain] WorkflowAttributes domain
+             * @property {string|null} [workflow] WorkflowAttributes workflow
+             * @property {Object.<string,string>|null} [attributes] WorkflowAttributes attributes
+             * @property {flyteidl.core.IResources|null} [taskResourceAttributes] WorkflowAttributes taskResourceAttributes
+             * @property {Array.<string>|null} [tags] WorkflowAttributes tags
+             */
+
+            /**
+             * Constructs a new WorkflowAttributes.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a WorkflowAttributes.
+             * @implements IWorkflowAttributes
+             * @constructor
+             * @param {flyteidl.admin.IWorkflowAttributes=} [properties] Properties to set
+             */
+            function WorkflowAttributes(properties) {
+                this.attributes = {};
+                this.tags = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * WorkflowAttributes project.
+             * @member {string} project
+             * @memberof flyteidl.admin.WorkflowAttributes
+             * @instance
+             */
+            WorkflowAttributes.prototype.project = "";
+
+            /**
+             * WorkflowAttributes domain.
+             * @member {string} domain
+             * @memberof flyteidl.admin.WorkflowAttributes
+             * @instance
+             */
+            WorkflowAttributes.prototype.domain = "";
+
+            /**
+             * WorkflowAttributes workflow.
+             * @member {string} workflow
+             * @memberof flyteidl.admin.WorkflowAttributes
+             * @instance
+             */
+            WorkflowAttributes.prototype.workflow = "";
+
+            /**
+             * WorkflowAttributes attributes.
+             * @member {Object.<string,string>} attributes
+             * @memberof flyteidl.admin.WorkflowAttributes
+             * @instance
+             */
+            WorkflowAttributes.prototype.attributes = $util.emptyObject;
+
+            /**
+             * WorkflowAttributes taskResourceAttributes.
+             * @member {flyteidl.core.IResources|null|undefined} taskResourceAttributes
+             * @memberof flyteidl.admin.WorkflowAttributes
+             * @instance
+             */
+            WorkflowAttributes.prototype.taskResourceAttributes = null;
+
+            /**
+             * WorkflowAttributes tags.
+             * @member {Array.<string>} tags
+             * @memberof flyteidl.admin.WorkflowAttributes
+             * @instance
+             */
+            WorkflowAttributes.prototype.tags = $util.emptyArray;
+
+            /**
+             * Creates a new WorkflowAttributes instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.WorkflowAttributes
+             * @static
+             * @param {flyteidl.admin.IWorkflowAttributes=} [properties] Properties to set
+             * @returns {flyteidl.admin.WorkflowAttributes} WorkflowAttributes instance
+             */
+            WorkflowAttributes.create = function create(properties) {
+                return new WorkflowAttributes(properties);
+            };
+
+            /**
+             * Encodes the specified WorkflowAttributes message. Does not implicitly {@link flyteidl.admin.WorkflowAttributes.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.WorkflowAttributes
+             * @static
+             * @param {flyteidl.admin.IWorkflowAttributes} message WorkflowAttributes message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            WorkflowAttributes.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
+                if (message.workflow != null && message.hasOwnProperty("workflow"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.workflow);
+                if (message.attributes != null && message.hasOwnProperty("attributes"))
+                    for (let keys = Object.keys(message.attributes), i = 0; i < keys.length; ++i)
+                        writer.uint32(/* id 4, wireType 2 =*/34).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.attributes[keys[i]]).ldelim();
+                if (message.taskResourceAttributes != null && message.hasOwnProperty("taskResourceAttributes"))
+                    $root.flyteidl.core.Resources.encode(message.taskResourceAttributes, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.tags != null && message.tags.length)
+                    for (let i = 0; i < message.tags.length; ++i)
+                        writer.uint32(/* id 6, wireType 2 =*/50).string(message.tags[i]);
+                return writer;
+            };
+
+            /**
+             * Decodes a WorkflowAttributes message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.WorkflowAttributes
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.WorkflowAttributes} WorkflowAttributes
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            WorkflowAttributes.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.WorkflowAttributes(), key;
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.project = reader.string();
+                        break;
+                    case 2:
+                        message.domain = reader.string();
+                        break;
+                    case 3:
+                        message.workflow = reader.string();
+                        break;
+                    case 4:
+                        reader.skip().pos++;
+                        if (message.attributes === $util.emptyObject)
+                            message.attributes = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.attributes[key] = reader.string();
+                        break;
+                    case 5:
+                        message.taskResourceAttributes = $root.flyteidl.core.Resources.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        if (!(message.tags && message.tags.length))
+                            message.tags = [];
+                        message.tags.push(reader.string());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a WorkflowAttributes message.
+             * @function verify
+             * @memberof flyteidl.admin.WorkflowAttributes
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            WorkflowAttributes.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    if (!$util.isString(message.domain))
+                        return "domain: string expected";
+                if (message.workflow != null && message.hasOwnProperty("workflow"))
+                    if (!$util.isString(message.workflow))
+                        return "workflow: string expected";
+                if (message.attributes != null && message.hasOwnProperty("attributes")) {
+                    if (!$util.isObject(message.attributes))
+                        return "attributes: object expected";
+                    let key = Object.keys(message.attributes);
+                    for (let i = 0; i < key.length; ++i)
+                        if (!$util.isString(message.attributes[key[i]]))
+                            return "attributes: string{k:string} expected";
+                }
+                if (message.taskResourceAttributes != null && message.hasOwnProperty("taskResourceAttributes")) {
+                    let error = $root.flyteidl.core.Resources.verify(message.taskResourceAttributes);
+                    if (error)
+                        return "taskResourceAttributes." + error;
+                }
+                if (message.tags != null && message.hasOwnProperty("tags")) {
+                    if (!Array.isArray(message.tags))
+                        return "tags: array expected";
+                    for (let i = 0; i < message.tags.length; ++i)
+                        if (!$util.isString(message.tags[i]))
+                            return "tags: string[] expected";
+                }
+                return null;
+            };
+
+            return WorkflowAttributes;
+        })();
+
+        admin.WorkflowAttributesUpdateRequest = (function() {
+
+            /**
+             * Properties of a WorkflowAttributesUpdateRequest.
+             * @memberof flyteidl.admin
+             * @interface IWorkflowAttributesUpdateRequest
+             * @property {flyteidl.admin.IWorkflowAttributes|null} [attributes] WorkflowAttributesUpdateRequest attributes
+             */
+
+            /**
+             * Constructs a new WorkflowAttributesUpdateRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a WorkflowAttributesUpdateRequest.
+             * @implements IWorkflowAttributesUpdateRequest
+             * @constructor
+             * @param {flyteidl.admin.IWorkflowAttributesUpdateRequest=} [properties] Properties to set
+             */
+            function WorkflowAttributesUpdateRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * WorkflowAttributesUpdateRequest attributes.
+             * @member {flyteidl.admin.IWorkflowAttributes|null|undefined} attributes
+             * @memberof flyteidl.admin.WorkflowAttributesUpdateRequest
+             * @instance
+             */
+            WorkflowAttributesUpdateRequest.prototype.attributes = null;
+
+            /**
+             * Creates a new WorkflowAttributesUpdateRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.WorkflowAttributesUpdateRequest
+             * @static
+             * @param {flyteidl.admin.IWorkflowAttributesUpdateRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.WorkflowAttributesUpdateRequest} WorkflowAttributesUpdateRequest instance
+             */
+            WorkflowAttributesUpdateRequest.create = function create(properties) {
+                return new WorkflowAttributesUpdateRequest(properties);
+            };
+
+            /**
+             * Encodes the specified WorkflowAttributesUpdateRequest message. Does not implicitly {@link flyteidl.admin.WorkflowAttributesUpdateRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.WorkflowAttributesUpdateRequest
+             * @static
+             * @param {flyteidl.admin.IWorkflowAttributesUpdateRequest} message WorkflowAttributesUpdateRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            WorkflowAttributesUpdateRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.attributes != null && message.hasOwnProperty("attributes"))
+                    $root.flyteidl.admin.WorkflowAttributes.encode(message.attributes, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a WorkflowAttributesUpdateRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.WorkflowAttributesUpdateRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.WorkflowAttributesUpdateRequest} WorkflowAttributesUpdateRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            WorkflowAttributesUpdateRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.WorkflowAttributesUpdateRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.attributes = $root.flyteidl.admin.WorkflowAttributes.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a WorkflowAttributesUpdateRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.WorkflowAttributesUpdateRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            WorkflowAttributesUpdateRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.attributes != null && message.hasOwnProperty("attributes")) {
+                    let error = $root.flyteidl.admin.WorkflowAttributes.verify(message.attributes);
+                    if (error)
+                        return "attributes." + error;
+                }
+                return null;
+            };
+
+            return WorkflowAttributesUpdateRequest;
+        })();
+
+        admin.WorkflowAttributesUpdateResponse = (function() {
+
+            /**
+             * Properties of a WorkflowAttributesUpdateResponse.
+             * @memberof flyteidl.admin
+             * @interface IWorkflowAttributesUpdateResponse
+             */
+
+            /**
+             * Constructs a new WorkflowAttributesUpdateResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a WorkflowAttributesUpdateResponse.
+             * @implements IWorkflowAttributesUpdateResponse
+             * @constructor
+             * @param {flyteidl.admin.IWorkflowAttributesUpdateResponse=} [properties] Properties to set
+             */
+            function WorkflowAttributesUpdateResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new WorkflowAttributesUpdateResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.WorkflowAttributesUpdateResponse
+             * @static
+             * @param {flyteidl.admin.IWorkflowAttributesUpdateResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.WorkflowAttributesUpdateResponse} WorkflowAttributesUpdateResponse instance
+             */
+            WorkflowAttributesUpdateResponse.create = function create(properties) {
+                return new WorkflowAttributesUpdateResponse(properties);
+            };
+
+            /**
+             * Encodes the specified WorkflowAttributesUpdateResponse message. Does not implicitly {@link flyteidl.admin.WorkflowAttributesUpdateResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.WorkflowAttributesUpdateResponse
+             * @static
+             * @param {flyteidl.admin.IWorkflowAttributesUpdateResponse} message WorkflowAttributesUpdateResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            WorkflowAttributesUpdateResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a WorkflowAttributesUpdateResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.WorkflowAttributesUpdateResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.WorkflowAttributesUpdateResponse} WorkflowAttributesUpdateResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            WorkflowAttributesUpdateResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.WorkflowAttributesUpdateResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a WorkflowAttributesUpdateResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.WorkflowAttributesUpdateResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            WorkflowAttributesUpdateResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return WorkflowAttributesUpdateResponse;
+        })();
+
         return admin;
     })();
 
@@ -25892,6 +26746,39 @@ export const flyteidl = $root.flyteidl = (() => {
              */
 
             /**
+             * Callback as used by {@link flyteidl.service.AdminService#updateProjectAttributes}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef UpdateProjectAttributesCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.ProjectAttributesUpdateResponse} [response] ProjectAttributesUpdateResponse
+             */
+
+            /**
+             * Calls UpdateProjectAttributes.
+             * @function updateProjectAttributes
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IProjectAttributesUpdateRequest} request ProjectAttributesUpdateRequest message or plain object
+             * @param {flyteidl.service.AdminService.UpdateProjectAttributesCallback} callback Node-style callback called with the error, if any, and ProjectAttributesUpdateResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.updateProjectAttributes = function updateProjectAttributes(request, callback) {
+                return this.rpcCall(updateProjectAttributes, $root.flyteidl.admin.ProjectAttributesUpdateRequest, $root.flyteidl.admin.ProjectAttributesUpdateResponse, request, callback);
+            }, "name", { value: "UpdateProjectAttributes" });
+
+            /**
+             * Calls UpdateProjectAttributes.
+             * @function updateProjectAttributes
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IProjectAttributesUpdateRequest} request ProjectAttributesUpdateRequest message or plain object
+             * @returns {Promise<flyteidl.admin.ProjectAttributesUpdateResponse>} Promise
+             * @variation 2
+             */
+
+            /**
              * Callback as used by {@link flyteidl.service.AdminService#updateProjectDomainAttributes}.
              * @memberof flyteidl.service.AdminService
              * @typedef UpdateProjectDomainAttributesCallback
@@ -25921,6 +26808,39 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              * @param {flyteidl.admin.IProjectDomainAttributesUpdateRequest} request ProjectDomainAttributesUpdateRequest message or plain object
              * @returns {Promise<flyteidl.admin.ProjectDomainAttributesUpdateResponse>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#updateWorkflowAttributes}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef UpdateWorkflowAttributesCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.WorkflowAttributesUpdateResponse} [response] WorkflowAttributesUpdateResponse
+             */
+
+            /**
+             * Calls UpdateWorkflowAttributes.
+             * @function updateWorkflowAttributes
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IWorkflowAttributesUpdateRequest} request WorkflowAttributesUpdateRequest message or plain object
+             * @param {flyteidl.service.AdminService.UpdateWorkflowAttributesCallback} callback Node-style callback called with the error, if any, and WorkflowAttributesUpdateResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.updateWorkflowAttributes = function updateWorkflowAttributes(request, callback) {
+                return this.rpcCall(updateWorkflowAttributes, $root.flyteidl.admin.WorkflowAttributesUpdateRequest, $root.flyteidl.admin.WorkflowAttributesUpdateResponse, request, callback);
+            }, "name", { value: "UpdateWorkflowAttributes" });
+
+            /**
+             * Calls UpdateWorkflowAttributes.
+             * @function updateWorkflowAttributes
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IWorkflowAttributesUpdateRequest} request WorkflowAttributesUpdateRequest message or plain object
+             * @returns {Promise<flyteidl.admin.WorkflowAttributesUpdateResponse>} Promise
              * @variation 2
              */
 

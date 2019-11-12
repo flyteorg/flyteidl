@@ -8,7 +8,7 @@ project_domain_attributes.proto
 flyteidl.admin.ProjectDomainAttributes
 --------------------------------------
 
-`[flyteidl.admin.ProjectDomainAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L5>`_
+`[flyteidl.admin.ProjectDomainAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L7>`_
 
 
 .. code-block:: json
@@ -16,7 +16,9 @@ flyteidl.admin.ProjectDomainAttributes
   {
     "project": "...",
     "domain": "...",
-    "attributes": "{...}"
+    "attributes": "{...}",
+    "task_resource_attributes": "{...}",
+    "tags": []
   }
 
 .. _api_field_flyteidl.admin.ProjectDomainAttributes.project:
@@ -39,6 +41,19 @@ attributes
   Map values should be the custom values which get substituted during resource creation.
   
   
+.. _api_field_flyteidl.admin.ProjectDomainAttributes.task_resource_attributes:
+
+task_resource_attributes
+  (:ref:`flyteidl.core.Resources <api_msg_flyteidl.core.Resources>`) Custom resource defaults for task container resource requests and limits for tasks defined
+  within this project and domain.
+  
+  
+.. _api_field_flyteidl.admin.ProjectDomainAttributes.tags:
+
+tags
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Tags used for assigning execution queues for tasks defined within this project and domain.
+  
+  
 
 
 .. _api_msg_flyteidl.admin.ProjectDomainAttributesUpdateRequest:
@@ -46,7 +61,7 @@ attributes
 flyteidl.admin.ProjectDomainAttributesUpdateRequest
 ---------------------------------------------------
 
-`[flyteidl.admin.ProjectDomainAttributesUpdateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L19>`_
+`[flyteidl.admin.ProjectDomainAttributesUpdateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L28>`_
 
 Sets custom attributes for a project-domain combination.
 
@@ -68,7 +83,7 @@ attributes
 flyteidl.admin.ProjectDomainAttributesUpdateResponse
 ----------------------------------------------------
 
-`[flyteidl.admin.ProjectDomainAttributesUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L24>`_
+`[flyteidl.admin.ProjectDomainAttributesUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L33>`_
 
 Purposefully empty, may be populated in the future.
 
