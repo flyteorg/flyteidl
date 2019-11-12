@@ -4440,7 +4440,7 @@ func (a *AdminServiceApiService) UpdateWorkflowAttributes(ctx context.Context, a
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/api/v1/project_domain_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow}"
+	localVarPath := a.client.cfg.BasePath + "/api/v1/workflow_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow}"
 	localVarPath = strings.Replace(localVarPath, "{"+"attributes.project"+"}", fmt.Sprintf("%v", attributesProject), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"attributes.domain"+"}", fmt.Sprintf("%v", attributesDomain), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"attributes.workflow"+"}", fmt.Sprintf("%v", attributesWorkflow), -1)

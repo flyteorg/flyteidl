@@ -62,7 +62,7 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**UpdateNamedEntity**](docs/AdminServiceApi.md#updatenamedentity) | **Put** /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name} | 
 *AdminServiceApi* | [**UpdateProjectAttributes**](docs/AdminServiceApi.md#updateprojectattributes) | **Put** /api/v1/project_attributes/{attributes.project} | 
 *AdminServiceApi* | [**UpdateProjectDomainAttributes**](docs/AdminServiceApi.md#updateprojectdomainattributes) | **Put** /api/v1/project_domain_attributes/{attributes.project}/{attributes.domain} | 
-*AdminServiceApi* | [**UpdateWorkflowAttributes**](docs/AdminServiceApi.md#updateworkflowattributes) | **Put** /api/v1/project_domain_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow} | 
+*AdminServiceApi* | [**UpdateWorkflowAttributes**](docs/AdminServiceApi.md#updateworkflowattributes) | **Put** /api/v1/workflow_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow} | 
 
 
 ## Documentation For Models

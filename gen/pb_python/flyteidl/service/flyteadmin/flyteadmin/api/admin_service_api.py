@@ -5176,7 +5176,7 @@ class AdminServiceApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v1/project_domain_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow}', 'PUT',
+            '/api/v1/workflow_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow}', 'PUT',
             path_params,
             query_params,
             header_params,

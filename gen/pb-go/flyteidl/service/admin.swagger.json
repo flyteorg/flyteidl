@@ -1511,54 +1511,6 @@
         ]
       }
     },
-    "/api/v1/project_domain_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow}": {
-      "put": {
-        "description": "Update the customized resource attributes associated with a project, domain and workflow combination",
-        "operationId": "UpdateWorkflowAttributes",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/adminWorkflowAttributesUpdateResponse"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "attributes.project",
-            "description": "Unique project id for which this set of attributes will be applied.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "attributes.domain",
-            "description": "Unique domain id for which this set of attributes will be applied.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "attributes.workflow",
-            "description": "Workflow name for which this set of attributes will be applied.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/adminWorkflowAttributesUpdateRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
     "/api/v1/projects": {
       "get": {
         "description": "Fetch registered projects.",
@@ -2101,6 +2053,54 @@
               "LAUNCH_PLAN"
             ],
             "default": "UNSPECIFIED"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/workflow_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow}": {
+      "put": {
+        "description": "Update the customized resource attributes associated with a project, domain and workflow combination",
+        "operationId": "UpdateWorkflowAttributes",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminWorkflowAttributesUpdateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "attributes.project",
+            "description": "Unique project id for which this set of attributes will be applied.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "attributes.domain",
+            "description": "Unique domain id for which this set of attributes will be applied.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "attributes.workflow",
+            "description": "Workflow name for which this set of attributes will be applied.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminWorkflowAttributesUpdateRequest"
+            }
           }
         ],
         "tags": [

@@ -36,7 +36,7 @@ public final class Admin {
       "l/admin/node_execution.proto\032#flyteidl/a" +
       "dmin/task_execution.proto\032\033flyteidl/admi" +
       "n/common.proto\032,protoc-gen-swagger/optio" +
-      "ns/annotations.proto2\331U\n\014AdminService\022\305\002" +
+      "ns/annotations.proto2\323U\n\014AdminService\022\305\002" +
       "\n\nCreateTask\022!.flyteidl.admin.TaskCreate" +
       "Request\032\".flyteidl.admin.TaskCreateRespo" +
       "nse\"\357\001\202\323\344\223\002\022\"\r/api/v1/tasks:\001*\222A\323\001\032&Crea" +
@@ -284,35 +284,35 @@ public final class Admin {
       "utes/{attributes.project}/{attributes.do" +
       "main}:\001*\222AX\032VUpdate the customized resou" +
       "rce attributes associated with a project" +
-      "-domain combination\022\324\002\n\030UpdateWorkflowAt" +
+      "-domain combination\022\316\002\n\030UpdateWorkflowAt" +
       "tributes\022/.flyteidl.admin.WorkflowAttrib" +
       "utesUpdateRequest\0320.flyteidl.admin.Workf" +
-      "lowAttributesUpdateResponse\"\324\001\202\323\344\223\002e\032`/a" +
-      "pi/v1/project_domain_attributes/{attribu" +
-      "tes.project}/{attributes.domain}/{attrib" +
-      "utes.workflow}:\001*\222Af\032dUpdate the customi" +
-      "zed resource attributes associated with " +
-      "a project, domain and workflow combinati" +
-      "on\022\200\002\n\021ListNamedEntities\022&.flyteidl.admi" +
-      "n.NamedEntityListRequest\032\037.flyteidl.admi" +
-      "n.NamedEntityList\"\241\001\202\323\344\223\002;\0229/api/v1/name" +
-      "d_entities/{resource_type}/{project}/{do" +
-      "main}\222A]\032[Retrieve a list of NamedEntity" +
-      " objects sharing a common resource type," +
-      " project, and domain.\022\312\001\n\016GetNamedEntity" +
-      "\022%.flyteidl.admin.NamedEntityGetRequest\032" +
-      "\033.flyteidl.admin.NamedEntity\"t\202\323\344\223\002K\022I/a" +
-      "pi/v1/named_entities/{resource_type}/{id" +
-      ".project}/{id.domain}/{id.name}\222A \032\036Retr" +
-      "ieve a NamedEntity object.\022\363\001\n\021UpdateNam" +
-      "edEntity\022(.flyteidl.admin.NamedEntityUpd" +
-      "ateRequest\032).flyteidl.admin.NamedEntityU" +
-      "pdateResponse\"\210\001\202\323\344\223\002N\032I/api/v1/named_en" +
-      "tities/{resource_type}/{id.project}/{id." +
-      "domain}/{id.name}:\001*\222A1\032/Update the fiel" +
-      "ds associated with a NamedEntityB5Z3gith" +
-      "ub.com/lyft/flyteidl/gen/pb-go/flyteidl/" +
-      "serviceb\006proto3"
+      "lowAttributesUpdateResponse\"\316\001\202\323\344\223\002_\032Z/a" +
+      "pi/v1/workflow_attributes/{attributes.pr" +
+      "oject}/{attributes.domain}/{attributes.w" +
+      "orkflow}:\001*\222Af\032dUpdate the customized re" +
+      "source attributes associated with a proj" +
+      "ect, domain and workflow combination\022\200\002\n" +
+      "\021ListNamedEntities\022&.flyteidl.admin.Name" +
+      "dEntityListRequest\032\037.flyteidl.admin.Name" +
+      "dEntityList\"\241\001\202\323\344\223\002;\0229/api/v1/named_enti" +
+      "ties/{resource_type}/{project}/{domain}\222" +
+      "A]\032[Retrieve a list of NamedEntity objec" +
+      "ts sharing a common resource type, proje" +
+      "ct, and domain.\022\312\001\n\016GetNamedEntity\022%.fly" +
+      "teidl.admin.NamedEntityGetRequest\032\033.flyt" +
+      "eidl.admin.NamedEntity\"t\202\323\344\223\002K\022I/api/v1/" +
+      "named_entities/{resource_type}/{id.proje" +
+      "ct}/{id.domain}/{id.name}\222A \032\036Retrieve a" +
+      " NamedEntity object.\022\363\001\n\021UpdateNamedEnti" +
+      "ty\022(.flyteidl.admin.NamedEntityUpdateReq" +
+      "uest\032).flyteidl.admin.NamedEntityUpdateR" +
+      "esponse\"\210\001\202\323\344\223\002N\032I/api/v1/named_entities" +
+      "/{resource_type}/{id.project}/{id.domain" +
+      "}/{id.name}:\001*\222A1\032/Update the fields ass" +
+      "ociated with a NamedEntityB5Z3github.com" +
+      "/lyft/flyteidl/gen/pb-go/flyteidl/servic" +
+      "eb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

@@ -402,7 +402,7 @@ service AdminService {
 
   rpc UpdateWorkflowAttributes (flyteidl.admin.WorkflowAttributesUpdateRequest) returns (flyteidl.admin.WorkflowAttributesUpdateResponse) {
     option (google.api.http) = {
-      put: "/api/v1/project_domain_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow}"
+      put: "/api/v1/workflow_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow}"
       body: "*"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
