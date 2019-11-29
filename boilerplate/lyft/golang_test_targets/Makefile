@@ -7,7 +7,8 @@ DEP_SHA=1f7c19e5f52f49ffb9f956f64c010be14683468b
 
 .PHONY: lint
 lint: #lints the package for common code smells
-	which golangci-lint || GO111MODULE=on go install github.com/golangci/golangci-lint/cmd/golangci-lint
+	# install outside of current module, workaround https://github.com/golang/go/issues/30515
+	which golangci-lint || (cd boilerplate/lyft/golang_support_tools && go get github.com/golangci/golangci-lint/cmd/golangci-lint && cd -)
 	golangci-lint run --exclude deprecated
 
 # If code is failing goimports linter, this will fix.
@@ -18,8 +19,7 @@ goimports:
 
 .PHONY: install
 install: #download dependencies (including test deps) for the package
-	which dep || (curl "https://raw.githubusercontent.com/golang/dep/${DEP_SHA}/install.sh" | sh)
-	dep ensure
+	go mod download
 
 .PHONY: test_unit
 test_unit:

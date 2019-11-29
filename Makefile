@@ -1,5 +1,4 @@
 #!/bin/bash
-export GO111MODULE=off
 export REPOSITORY=flyteidl
 include boilerplate/lyft/golang_test_targets/Makefile
 
@@ -9,7 +8,7 @@ update_boilerplate:
 
 .PHONY: generate
 generate: # generate protos, mocks and pflags
-	dep ensure -vendor-only
+	go mod download
 	./generate_protos.sh
 	./generate_mocks.sh
 	go generate ./...
@@ -17,9 +16,8 @@ generate: # generate protos, mocks and pflags
 .PHONY: test
 test: # ensures generate_protos script has been run
 	make install
+	which pflags || (cd boilerplate/lyft/golang_support_tools && go get github.com/lyft/flytestdlib/cli/pflags && cd -)
 	git diff
-	go get github.com/lyft/flytestdlib/cli/pflags
-	dep ensure -vendor-only
 	./generate_mocks.sh
 	go generate ./...
 	DELTA_CHECK=true ./generate_protos.sh
