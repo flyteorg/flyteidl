@@ -17,7 +17,7 @@ generate: # generate protos, mocks and pflags
 test: # ensures generate_protos script has been run
 	make install
 	git diff
-	go get github.com/lyft/flytestdlib/cli/pflags
+	which pflags || (go get github.com/lyft/flytestdlib/cli/pflags)
 	go mod download
 	./generate_mocks.sh
 	go generate ./...
