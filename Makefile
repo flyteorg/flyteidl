@@ -21,6 +21,7 @@ test: # ensures generate_protos script has been run
 	go mod download
 	./generate_mocks.sh
 	go generate ./...
+	go mod tidy
 	DELTA_CHECK=true ./generate_protos.sh
 
 .PHONY: test_unit
