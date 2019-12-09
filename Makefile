@@ -21,9 +21,6 @@ test: # ensures generate_protos script has been run
 	go mod download
 	./generate_mocks.sh
 	go generate ./...
-	# workaround https://github.com/golang/go/issues/33008
-	rm go.sum
-	go mod tidy
 	DELTA_CHECK=true ./generate_protos.sh
 
 .PHONY: test_unit
