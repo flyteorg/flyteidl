@@ -17111,7 +17111,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IExecutionTerminateRequest
              * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [id] ExecutionTerminateRequest id
              * @property {string|null} [cause] ExecutionTerminateRequest cause
-             * @property {string|null} [principal] ExecutionTerminateRequest principal
              */
 
             /**
@@ -17146,14 +17145,6 @@ export const flyteidl = $root.flyteidl = (() => {
             ExecutionTerminateRequest.prototype.cause = "";
 
             /**
-             * ExecutionTerminateRequest principal.
-             * @member {string} principal
-             * @memberof flyteidl.admin.ExecutionTerminateRequest
-             * @instance
-             */
-            ExecutionTerminateRequest.prototype.principal = "";
-
-            /**
              * Creates a new ExecutionTerminateRequest instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.ExecutionTerminateRequest
@@ -17181,8 +17172,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.cause != null && message.hasOwnProperty("cause"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.cause);
-                if (message.principal != null && message.hasOwnProperty("principal"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.principal);
                 return writer;
             };
 
@@ -17209,9 +17198,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 2:
                         message.cause = reader.string();
-                        break;
-                    case 3:
-                        message.principal = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -17240,9 +17226,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.cause != null && message.hasOwnProperty("cause"))
                     if (!$util.isString(message.cause))
                         return "cause: string expected";
-                if (message.principal != null && message.hasOwnProperty("principal"))
-                    if (!$util.isString(message.principal))
-                        return "principal: string expected";
                 return null;
             };
 

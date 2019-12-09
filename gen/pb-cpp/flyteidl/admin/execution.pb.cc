@@ -503,7 +503,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fexecution_2eprot
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionTerminateRequest, id_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionTerminateRequest, cause_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionTerminateRequest, principal_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionTerminateResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -537,9 +536,9 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 88, -1, sizeof(::flyteidl::admin::NotificationList)},
   { 94, -1, sizeof(::flyteidl::admin::ExecutionSpec)},
   { 107, -1, sizeof(::flyteidl::admin::ExecutionTerminateRequest)},
-  { 115, -1, sizeof(::flyteidl::admin::ExecutionTerminateResponse)},
-  { 120, -1, sizeof(::flyteidl::admin::WorkflowExecutionGetDataRequest)},
-  { 126, -1, sizeof(::flyteidl::admin::WorkflowExecutionGetDataResponse)},
+  { 114, -1, sizeof(::flyteidl::admin::ExecutionTerminateResponse)},
+  { 119, -1, sizeof(::flyteidl::admin::WorkflowExecutionGetDataRequest)},
+  { 125, -1, sizeof(::flyteidl::admin::WorkflowExecutionGetDataResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -630,23 +629,22 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto[] =
   "cationListH\000\022\025\n\013disable_all\030\006 \001(\010H\000\022&\n\006l"
   "abels\030\007 \001(\0132\026.flyteidl.admin.Labels\0220\n\013a"
   "nnotations\030\010 \001(\0132\033.flyteidl.admin.Annota"
-  "tionsB\030\n\026notification_overridesJ\004\010\004\020\005\"u\n"
+  "tionsB\030\n\026notification_overridesJ\004\010\004\020\005\"b\n"
   "\031ExecutionTerminateRequest\0226\n\002id\030\001 \001(\0132*"
   ".flyteidl.core.WorkflowExecutionIdentifi"
-  "er\022\r\n\005cause\030\002 \001(\t\022\021\n\tprincipal\030\003 \001(\t\"\034\n\032"
-  "ExecutionTerminateResponse\"Y\n\037WorkflowEx"
-  "ecutionGetDataRequest\0226\n\002id\030\001 \001(\0132*.flyt"
-  "eidl.core.WorkflowExecutionIdentifier\"u\n"
-  " WorkflowExecutionGetDataResponse\022(\n\007out"
-  "puts\030\001 \001(\0132\027.flyteidl.admin.UrlBlob\022\'\n\006i"
-  "nputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlobB3Z1"
-  "github.com/lyft/flyteidl/gen/pb-go/flyte"
-  "idl/adminb\006proto3"
+  "er\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTerminateR"
+  "esponse\"Y\n\037WorkflowExecutionGetDataReque"
+  "st\0226\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowE"
+  "xecutionIdentifier\"u\n WorkflowExecutionG"
+  "etDataResponse\022(\n\007outputs\030\001 \001(\0132\027.flytei"
+  "dl.admin.UrlBlob\022\'\n\006inputs\030\002 \001(\0132\027.flyte"
+  "idl.admin.UrlBlobB3Z1github.com/lyft/fly"
+  "teidl/gen/pb-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fexecution_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fexecution_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto,
-  "flyteidl/admin/execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto, 2937,
+  "flyteidl/admin/execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto, 2918,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fexecution_2eproto() {
@@ -6576,7 +6574,6 @@ void ExecutionTerminateRequest::clear_id() {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ExecutionTerminateRequest::kIdFieldNumber;
 const int ExecutionTerminateRequest::kCauseFieldNumber;
-const int ExecutionTerminateRequest::kPrincipalFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ExecutionTerminateRequest::ExecutionTerminateRequest()
@@ -6592,10 +6589,6 @@ ExecutionTerminateRequest::ExecutionTerminateRequest(const ExecutionTerminateReq
   if (from.cause().size() > 0) {
     cause_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.cause_);
   }
-  principal_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.principal().size() > 0) {
-    principal_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.principal_);
-  }
   if (from.has_id()) {
     id_ = new ::flyteidl::core::WorkflowExecutionIdentifier(*from.id_);
   } else {
@@ -6608,7 +6601,6 @@ void ExecutionTerminateRequest::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_ExecutionTerminateRequest_flyteidl_2fadmin_2fexecution_2eproto.base);
   cause_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  principal_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   id_ = nullptr;
 }
 
@@ -6619,7 +6611,6 @@ ExecutionTerminateRequest::~ExecutionTerminateRequest() {
 
 void ExecutionTerminateRequest::SharedDtor() {
   cause_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  principal_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete id_;
 }
 
@@ -6639,7 +6630,6 @@ void ExecutionTerminateRequest::Clear() {
   (void) cached_has_bits;
 
   cause_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  principal_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && id_ != nullptr) {
     delete id_;
   }
@@ -6680,22 +6670,6 @@ const char* ExecutionTerminateRequest::_InternalParse(const char* begin, const c
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("flyteidl.admin.ExecutionTerminateRequest.cause");
         object = msg->mutable_cause();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string principal = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.ExecutionTerminateRequest.principal");
-        object = msg->mutable_principal();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
           goto string_till_end;
@@ -6765,21 +6739,6 @@ bool ExecutionTerminateRequest::MergePartialFromCodedStream(
         break;
       }
 
-      // string principal = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_principal()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->principal().data(), static_cast<int>(this->principal().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.ExecutionTerminateRequest.principal"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -6823,16 +6782,6 @@ void ExecutionTerminateRequest::SerializeWithCachedSizes(
       2, this->cause(), output);
   }
 
-  // string principal = 3;
-  if (this->principal().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->principal().data(), static_cast<int>(this->principal().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.ExecutionTerminateRequest.principal");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->principal(), output);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -6864,17 +6813,6 @@ void ExecutionTerminateRequest::SerializeWithCachedSizes(
         2, this->cause(), target);
   }
 
-  // string principal = 3;
-  if (this->principal().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->principal().data(), static_cast<int>(this->principal().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.ExecutionTerminateRequest.principal");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->principal(), target);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -6901,13 +6839,6 @@ size_t ExecutionTerminateRequest::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->cause());
-  }
-
-  // string principal = 3;
-  if (this->principal().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->principal());
   }
 
   // .flyteidl.core.WorkflowExecutionIdentifier id = 1;
@@ -6948,10 +6879,6 @@ void ExecutionTerminateRequest::MergeFrom(const ExecutionTerminateRequest& from)
 
     cause_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.cause_);
   }
-  if (from.principal().size() > 0) {
-
-    principal_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.principal_);
-  }
   if (from.has_id()) {
     mutable_id()->::flyteidl::core::WorkflowExecutionIdentifier::MergeFrom(from.id());
   }
@@ -6983,8 +6910,6 @@ void ExecutionTerminateRequest::InternalSwap(ExecutionTerminateRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   cause_.Swap(&other->cause_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  principal_.Swap(&other->principal_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(id_, other->id_);
 }

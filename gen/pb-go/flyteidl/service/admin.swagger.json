@@ -2766,10 +2766,6 @@
         "cause": {
           "type": "string",
           "description": "Optional reason for aborting."
-        },
-        "principal": {
-          "type": "string",
-          "description": "Identifier of the entity that terminated this execution."
         }
       },
       "description": "Request to terminate an in-progress execution.  This action is irreversible.\nIf an execution is already terminated, this request will simply be a no-op.\nThis request will fail if it references a non-existent execution.\nIf the request succeeds the phase \"ABORTED\" will be recorded for the termination\nwith the optional cause added to the output_result."

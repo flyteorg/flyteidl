@@ -233,9 +233,6 @@ message ExecutionTerminateRequest {
 
     // Optional reason for aborting.
     string cause                         = 2;
-
-    // Identifier of the entity that terminated this execution.
-    string principal                     = 3;
 }
 
 message ExecutionTerminateResponse {

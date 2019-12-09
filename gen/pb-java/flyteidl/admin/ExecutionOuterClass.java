@@ -16034,24 +16034,6 @@ public final class ExecutionOuterClass {
      */
     com.google.protobuf.ByteString
         getCauseBytes();
-
-    /**
-     * <pre>
-     * Identifier of the entity that terminated this execution.
-     * </pre>
-     *
-     * <code>string principal = 3;</code>
-     */
-    java.lang.String getPrincipal();
-    /**
-     * <pre>
-     * Identifier of the entity that terminated this execution.
-     * </pre>
-     *
-     * <code>string principal = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getPrincipalBytes();
   }
   /**
    * <pre>
@@ -16075,7 +16057,6 @@ public final class ExecutionOuterClass {
     }
     private ExecutionTerminateRequest() {
       cause_ = "";
-      principal_ = "";
     }
 
     @java.lang.Override
@@ -16119,12 +16100,6 @@ public final class ExecutionOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               cause_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              principal_ = s;
               break;
             }
             default: {
@@ -16234,48 +16209,6 @@ public final class ExecutionOuterClass {
       }
     }
 
-    public static final int PRINCIPAL_FIELD_NUMBER = 3;
-    private volatile java.lang.Object principal_;
-    /**
-     * <pre>
-     * Identifier of the entity that terminated this execution.
-     * </pre>
-     *
-     * <code>string principal = 3;</code>
-     */
-    public java.lang.String getPrincipal() {
-      java.lang.Object ref = principal_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        principal_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Identifier of the entity that terminated this execution.
-     * </pre>
-     *
-     * <code>string principal = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getPrincipalBytes() {
-      java.lang.Object ref = principal_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        principal_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -16296,9 +16229,6 @@ public final class ExecutionOuterClass {
       if (!getCauseBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cause_);
       }
-      if (!getPrincipalBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, principal_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -16314,9 +16244,6 @@ public final class ExecutionOuterClass {
       }
       if (!getCauseBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cause_);
-      }
-      if (!getPrincipalBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, principal_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -16340,8 +16267,6 @@ public final class ExecutionOuterClass {
       }
       if (!getCause()
           .equals(other.getCause())) return false;
-      if (!getPrincipal()
-          .equals(other.getPrincipal())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -16359,8 +16284,6 @@ public final class ExecutionOuterClass {
       }
       hash = (37 * hash) + CAUSE_FIELD_NUMBER;
       hash = (53 * hash) + getCause().hashCode();
-      hash = (37 * hash) + PRINCIPAL_FIELD_NUMBER;
-      hash = (53 * hash) + getPrincipal().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -16510,8 +16433,6 @@ public final class ExecutionOuterClass {
         }
         cause_ = "";
 
-        principal_ = "";
-
         return this;
       }
 
@@ -16544,7 +16465,6 @@ public final class ExecutionOuterClass {
           result.id_ = idBuilder_.build();
         }
         result.cause_ = cause_;
-        result.principal_ = principal_;
         onBuilt();
         return result;
       }
@@ -16598,10 +16518,6 @@ public final class ExecutionOuterClass {
         }
         if (!other.getCause().isEmpty()) {
           cause_ = other.cause_;
-          onChanged();
-        }
-        if (!other.getPrincipal().isEmpty()) {
-          principal_ = other.principal_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -16871,95 +16787,6 @@ public final class ExecutionOuterClass {
   checkByteStringIsUtf8(value);
         
         cause_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object principal_ = "";
-      /**
-       * <pre>
-       * Identifier of the entity that terminated this execution.
-       * </pre>
-       *
-       * <code>string principal = 3;</code>
-       */
-      public java.lang.String getPrincipal() {
-        java.lang.Object ref = principal_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          principal_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Identifier of the entity that terminated this execution.
-       * </pre>
-       *
-       * <code>string principal = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getPrincipalBytes() {
-        java.lang.Object ref = principal_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          principal_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Identifier of the entity that terminated this execution.
-       * </pre>
-       *
-       * <code>string principal = 3;</code>
-       */
-      public Builder setPrincipal(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        principal_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Identifier of the entity that terminated this execution.
-       * </pre>
-       *
-       * <code>string principal = 3;</code>
-       */
-      public Builder clearPrincipal() {
-        
-        principal_ = getDefaultInstance().getPrincipal();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Identifier of the entity that terminated this execution.
-       * </pre>
-       *
-       * <code>string principal = 3;</code>
-       */
-      public Builder setPrincipalBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        principal_ = value;
         onChanged();
         return this;
       }
@@ -19188,18 +19015,17 @@ public final class ExecutionOuterClass {
       "cationListH\000\022\025\n\013disable_all\030\006 \001(\010H\000\022&\n\006l" +
       "abels\030\007 \001(\0132\026.flyteidl.admin.Labels\0220\n\013a" +
       "nnotations\030\010 \001(\0132\033.flyteidl.admin.Annota" +
-      "tionsB\030\n\026notification_overridesJ\004\010\004\020\005\"u\n" +
+      "tionsB\030\n\026notification_overridesJ\004\010\004\020\005\"b\n" +
       "\031ExecutionTerminateRequest\0226\n\002id\030\001 \001(\0132*" +
       ".flyteidl.core.WorkflowExecutionIdentifi" +
-      "er\022\r\n\005cause\030\002 \001(\t\022\021\n\tprincipal\030\003 \001(\t\"\034\n\032" +
-      "ExecutionTerminateResponse\"Y\n\037WorkflowEx" +
-      "ecutionGetDataRequest\0226\n\002id\030\001 \001(\0132*.flyt" +
-      "eidl.core.WorkflowExecutionIdentifier\"u\n" +
-      " WorkflowExecutionGetDataResponse\022(\n\007out" +
-      "puts\030\001 \001(\0132\027.flyteidl.admin.UrlBlob\022\'\n\006i" +
-      "nputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlobB3Z1" +
-      "github.com/lyft/flyteidl/gen/pb-go/flyte" +
-      "idl/adminb\006proto3"
+      "er\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTerminateR" +
+      "esponse\"Y\n\037WorkflowExecutionGetDataReque" +
+      "st\0226\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowE" +
+      "xecutionIdentifier\"u\n WorkflowExecutionG" +
+      "etDataResponse\022(\n\007outputs\030\001 \001(\0132\027.flytei" +
+      "dl.admin.UrlBlob\022\'\n\006inputs\030\002 \001(\0132\027.flyte" +
+      "idl.admin.UrlBlobB3Z1github.com/lyft/fly" +
+      "teidl/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -19296,7 +19122,7 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_ExecutionTerminateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionTerminateRequest_descriptor,
-        new java.lang.String[] { "Id", "Cause", "Principal", });
+        new java.lang.String[] { "Id", "Cause", });
     internal_static_flyteidl_admin_ExecutionTerminateResponse_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_flyteidl_admin_ExecutionTerminateResponse_fieldAccessorTable = new

@@ -15,6 +15,4 @@ type AdminExecutionTerminateRequest struct {
 	Id *CoreWorkflowExecutionIdentifier `json:"id,omitempty"`
 	// Optional reason for aborting.
 	Cause string `json:"cause,omitempty"`
-	// Identifier of the entity that terminated this execution.
-	Principal string `json:"principal,omitempty"`
 }

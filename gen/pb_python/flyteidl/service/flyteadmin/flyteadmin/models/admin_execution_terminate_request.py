@@ -34,30 +34,25 @@ class AdminExecutionTerminateRequest(object):
     """
     swagger_types = {
         'id': 'CoreWorkflowExecutionIdentifier',
-        'cause': 'str',
-        'principal': 'str'
+        'cause': 'str'
     }
 
     attribute_map = {
         'id': 'id',
-        'cause': 'cause',
-        'principal': 'principal'
+        'cause': 'cause'
     }
 
-    def __init__(self, id=None, cause=None, principal=None):  # noqa: E501
+    def __init__(self, id=None, cause=None):  # noqa: E501
         """AdminExecutionTerminateRequest - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._cause = None
-        self._principal = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
         if cause is not None:
             self.cause = cause
-        if principal is not None:
-            self.principal = principal
 
     @property
     def id(self):
@@ -104,29 +99,6 @@ class AdminExecutionTerminateRequest(object):
         """
 
         self._cause = cause
-
-    @property
-    def principal(self):
-        """Gets the principal of this AdminExecutionTerminateRequest.  # noqa: E501
-
-        Identifier of the entity that terminated this execution.  # noqa: E501
-
-        :return: The principal of this AdminExecutionTerminateRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._principal
-
-    @principal.setter
-    def principal(self, principal):
-        """Sets the principal of this AdminExecutionTerminateRequest.
-
-        Identifier of the entity that terminated this execution.  # noqa: E501
-
-        :param principal: The principal of this AdminExecutionTerminateRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._principal = principal
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -2929,9 +2929,6 @@ definitions:
       cause:
         type: "string"
         description: "Optional reason for aborting."
-      principal:
-        type: "string"
-        description: "Identifier of the entity that terminated this execution."
     description: "Request to terminate an in-progress execution.  This action is irreversible.\n\
       If an execution is already terminated, this request will simply be a no-op.\n\
       This request will fail if it references a non-existent execution.\nIf the request\

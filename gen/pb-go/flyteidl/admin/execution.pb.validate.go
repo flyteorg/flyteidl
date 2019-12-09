@@ -1218,8 +1218,6 @@ func (m *ExecutionTerminateRequest) Validate() error {
 
 	// no validation rules for Cause
 
-	// no validation rules for Principal
-
 	return nil
 }
 

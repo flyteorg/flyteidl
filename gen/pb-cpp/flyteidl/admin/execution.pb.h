@@ -2111,20 +2111,6 @@ class ExecutionTerminateRequest final :
   ::std::string* release_cause();
   void set_allocated_cause(::std::string* cause);
 
-  // string principal = 3;
-  void clear_principal();
-  static const int kPrincipalFieldNumber = 3;
-  const ::std::string& principal() const;
-  void set_principal(const ::std::string& value);
-  #if LANG_CXX11
-  void set_principal(::std::string&& value);
-  #endif
-  void set_principal(const char* value);
-  void set_principal(const char* value, size_t size);
-  ::std::string* mutable_principal();
-  ::std::string* release_principal();
-  void set_allocated_principal(::std::string* principal);
-
   // .flyteidl.core.WorkflowExecutionIdentifier id = 1;
   bool has_id() const;
   void clear_id();
@@ -2140,7 +2126,6 @@ class ExecutionTerminateRequest final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr cause_;
-  ::google::protobuf::internal::ArenaStringPtr principal_;
   ::flyteidl::core::WorkflowExecutionIdentifier* id_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fexecution_2eproto;
@@ -4647,59 +4632,6 @@ inline void ExecutionTerminateRequest::set_allocated_cause(::std::string* cause)
   }
   cause_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), cause);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionTerminateRequest.cause)
-}
-
-// string principal = 3;
-inline void ExecutionTerminateRequest::clear_principal() {
-  principal_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& ExecutionTerminateRequest::principal() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionTerminateRequest.principal)
-  return principal_.GetNoArena();
-}
-inline void ExecutionTerminateRequest::set_principal(const ::std::string& value) {
-  
-  principal_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionTerminateRequest.principal)
-}
-#if LANG_CXX11
-inline void ExecutionTerminateRequest::set_principal(::std::string&& value) {
-  
-  principal_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.ExecutionTerminateRequest.principal)
-}
-#endif
-inline void ExecutionTerminateRequest::set_principal(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  principal_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.ExecutionTerminateRequest.principal)
-}
-inline void ExecutionTerminateRequest::set_principal(const char* value, size_t size) {
-  
-  principal_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.ExecutionTerminateRequest.principal)
-}
-inline ::std::string* ExecutionTerminateRequest::mutable_principal() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionTerminateRequest.principal)
-  return principal_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* ExecutionTerminateRequest::release_principal() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.ExecutionTerminateRequest.principal)
-  
-  return principal_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void ExecutionTerminateRequest::set_allocated_principal(::std::string* principal) {
-  if (principal != nullptr) {
-    
-  } else {
-    
-  }
-  principal_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), principal);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionTerminateRequest.principal)
 }
 
 // -------------------------------------------------------------------

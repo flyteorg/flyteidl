@@ -7129,9 +7129,6 @@ export namespace flyteidl {
 
             /** ExecutionTerminateRequest cause */
             cause?: (string|null);
-
-            /** ExecutionTerminateRequest principal */
-            principal?: (string|null);
         }
 
         /** Represents an ExecutionTerminateRequest. */
@@ -7148,9 +7145,6 @@ export namespace flyteidl {
 
             /** ExecutionTerminateRequest cause. */
             public cause: string;
-
-            /** ExecutionTerminateRequest principal. */
-            public principal: string;
 
             /**
              * Creates a new ExecutionTerminateRequest instance using the specified properties.

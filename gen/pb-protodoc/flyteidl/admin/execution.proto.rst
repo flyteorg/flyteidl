@@ -607,8 +607,7 @@ with the optional cause added to the output_result.
 
   {
     "id": "{...}",
-    "cause": "...",
-    "principal": "..."
+    "cause": "..."
   }
 
 .. _api_field_flyteidl.admin.ExecutionTerminateRequest.id:
@@ -623,12 +622,6 @@ cause
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Optional reason for aborting.
   
   
-.. _api_field_flyteidl.admin.ExecutionTerminateRequest.principal:
-
-principal
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Identifier of the entity that terminated this execution.
-  
-  
 
 
 .. _api_msg_flyteidl.admin.ExecutionTerminateResponse:
@@ -636,7 +629,7 @@ principal
 flyteidl.admin.ExecutionTerminateResponse
 -----------------------------------------
 
-`[flyteidl.admin.ExecutionTerminateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L240>`_
+`[flyteidl.admin.ExecutionTerminateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L237>`_
 
 
 .. code-block:: json
@@ -651,7 +644,7 @@ flyteidl.admin.ExecutionTerminateResponse
 flyteidl.admin.WorkflowExecutionGetDataRequest
 ----------------------------------------------
 
-`[flyteidl.admin.WorkflowExecutionGetDataRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L245>`_
+`[flyteidl.admin.WorkflowExecutionGetDataRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L242>`_
 
 Request structure to fetch inputs and output urls for an execution.
 
@@ -674,7 +667,7 @@ id
 flyteidl.admin.WorkflowExecutionGetDataResponse
 -----------------------------------------------
 
-`[flyteidl.admin.WorkflowExecutionGetDataResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L251>`_
+`[flyteidl.admin.WorkflowExecutionGetDataResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L248>`_
 
 Response structure for WorkflowExecutionGetDataRequest which contains inputs and outputs for an execution.
 
