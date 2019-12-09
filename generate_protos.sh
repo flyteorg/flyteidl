@@ -57,6 +57,7 @@ cp -r validate/* gen/pb_python/validate/
 
 # This section is used by Travis CI to ensure that the generation step was run
 if [ -n "$DELTA_CHECK" ]; then
+  go mod tidy
   DIRTY=$(git status --porcelain)
   if [ -n "$DIRTY" ]; then
     echo "FAILED: Protos updated without commiting generated code."
