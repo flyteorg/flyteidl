@@ -11295,17 +11295,17 @@ public final class ExecutionOuterClass {
      * Identifier of the entity that triggered this execution.
      * </pre>
      *
-     * <code>string principal = 2;</code>
+     * <code>string principal = 2 [deprecated = true];</code>
      */
-    java.lang.String getPrincipal();
+    @java.lang.Deprecated java.lang.String getPrincipal();
     /**
      * <pre>
      * Identifier of the entity that triggered this execution.
      * </pre>
      *
-     * <code>string principal = 2;</code>
+     * <code>string principal = 2 [deprecated = true];</code>
      */
-    com.google.protobuf.ByteString
+    @java.lang.Deprecated com.google.protobuf.ByteString
         getPrincipalBytes();
 
     /**
@@ -11734,9 +11734,9 @@ public final class ExecutionOuterClass {
      * Identifier of the entity that triggered this execution.
      * </pre>
      *
-     * <code>string principal = 2;</code>
+     * <code>string principal = 2 [deprecated = true];</code>
      */
-    public java.lang.String getPrincipal() {
+    @java.lang.Deprecated public java.lang.String getPrincipal() {
       java.lang.Object ref = principal_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
@@ -11753,9 +11753,9 @@ public final class ExecutionOuterClass {
      * Identifier of the entity that triggered this execution.
      * </pre>
      *
-     * <code>string principal = 2;</code>
+     * <code>string principal = 2 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getPrincipalBytes() {
       java.lang.Object ref = principal_;
       if (ref instanceof java.lang.String) {
@@ -12389,9 +12389,9 @@ public final class ExecutionOuterClass {
        * Identifier of the entity that triggered this execution.
        * </pre>
        *
-       * <code>string principal = 2;</code>
+       * <code>string principal = 2 [deprecated = true];</code>
        */
-      public java.lang.String getPrincipal() {
+      @java.lang.Deprecated public java.lang.String getPrincipal() {
         java.lang.Object ref = principal_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
@@ -12408,9 +12408,9 @@ public final class ExecutionOuterClass {
        * Identifier of the entity that triggered this execution.
        * </pre>
        *
-       * <code>string principal = 2;</code>
+       * <code>string principal = 2 [deprecated = true];</code>
        */
-      public com.google.protobuf.ByteString
+      @java.lang.Deprecated public com.google.protobuf.ByteString
           getPrincipalBytes() {
         java.lang.Object ref = principal_;
         if (ref instanceof String) {
@@ -12428,9 +12428,9 @@ public final class ExecutionOuterClass {
        * Identifier of the entity that triggered this execution.
        * </pre>
        *
-       * <code>string principal = 2;</code>
+       * <code>string principal = 2 [deprecated = true];</code>
        */
-      public Builder setPrincipal(
+      @java.lang.Deprecated public Builder setPrincipal(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
@@ -12445,9 +12445,9 @@ public final class ExecutionOuterClass {
        * Identifier of the entity that triggered this execution.
        * </pre>
        *
-       * <code>string principal = 2;</code>
+       * <code>string principal = 2 [deprecated = true];</code>
        */
-      public Builder clearPrincipal() {
+      @java.lang.Deprecated public Builder clearPrincipal() {
         
         principal_ = getDefaultInstance().getPrincipal();
         onChanged();
@@ -12458,9 +12458,9 @@ public final class ExecutionOuterClass {
        * Identifier of the entity that triggered this execution.
        * </pre>
        *
-       * <code>string principal = 2;</code>
+       * <code>string principal = 2 [deprecated = true];</code>
        */
-      public Builder setPrincipalBytes(
+      @java.lang.Deprecated public Builder setPrincipalBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -18994,38 +18994,39 @@ public final class ExecutionOuterClass {
       "\001(\0132\032.google.protobuf.Timestamp\0223\n\rnotif" +
       "ications\030\t \003(\0132\034.flyteidl.admin.Notifica" +
       "tion\022.\n\013workflow_id\030\013 \001(\0132\031.flyteidl.cor" +
-      "e.IdentifierB\017\n\routput_result\"\222\003\n\021Execut" +
+      "e.IdentifierB\017\n\routput_result\"\226\003\n\021Execut" +
       "ionMetadata\022=\n\004mode\030\001 \001(\0162/.flyteidl.adm" +
-      "in.ExecutionMetadata.ExecutionMode\022\021\n\tpr" +
-      "incipal\030\002 \001(\t\022\017\n\007nesting\030\003 \001(\r\0220\n\014schedu" +
-      "led_at\030\004 \001(\0132\032.google.protobuf.Timestamp" +
-      "\022E\n\025parent_node_execution\030\005 \001(\0132&.flytei" +
-      "dl.core.NodeExecutionIdentifier\022G\n\023refer" +
-      "ence_execution\030\020 \001(\0132*.flyteidl.core.Wor" +
-      "kflowExecutionIdentifier\"X\n\rExecutionMod" +
-      "e\022\n\n\006MANUAL\020\000\022\r\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002" +
-      "\022\014\n\010RELAUNCH\020\003\022\022\n\016CHILD_WORKFLOW\020\004\"G\n\020No" +
-      "tificationList\0223\n\rnotifications\030\001 \003(\0132\034." +
-      "flyteidl.admin.Notification\"\357\002\n\rExecutio" +
-      "nSpec\022.\n\013launch_plan\030\001 \001(\0132\031.flyteidl.co" +
-      "re.Identifier\022-\n\006inputs\030\002 \001(\0132\031.flyteidl" +
-      ".core.LiteralMapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!" +
-      ".flyteidl.admin.ExecutionMetadata\0229\n\rnot" +
-      "ifications\030\005 \001(\0132 .flyteidl.admin.Notifi" +
-      "cationListH\000\022\025\n\013disable_all\030\006 \001(\010H\000\022&\n\006l" +
-      "abels\030\007 \001(\0132\026.flyteidl.admin.Labels\0220\n\013a" +
-      "nnotations\030\010 \001(\0132\033.flyteidl.admin.Annota" +
-      "tionsB\030\n\026notification_overridesJ\004\010\004\020\005\"b\n" +
-      "\031ExecutionTerminateRequest\0226\n\002id\030\001 \001(\0132*" +
-      ".flyteidl.core.WorkflowExecutionIdentifi" +
-      "er\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTerminateR" +
-      "esponse\"Y\n\037WorkflowExecutionGetDataReque" +
-      "st\0226\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowE" +
-      "xecutionIdentifier\"u\n WorkflowExecutionG" +
-      "etDataResponse\022(\n\007outputs\030\001 \001(\0132\027.flytei" +
-      "dl.admin.UrlBlob\022\'\n\006inputs\030\002 \001(\0132\027.flyte" +
-      "idl.admin.UrlBlobB3Z1github.com/lyft/fly" +
-      "teidl/gen/pb-go/flyteidl/adminb\006proto3"
+      "in.ExecutionMetadata.ExecutionMode\022\025\n\tpr" +
+      "incipal\030\002 \001(\tB\002\030\001\022\017\n\007nesting\030\003 \001(\r\0220\n\014sc" +
+      "heduled_at\030\004 \001(\0132\032.google.protobuf.Times" +
+      "tamp\022E\n\025parent_node_execution\030\005 \001(\0132&.fl" +
+      "yteidl.core.NodeExecutionIdentifier\022G\n\023r" +
+      "eference_execution\030\020 \001(\0132*.flyteidl.core" +
+      ".WorkflowExecutionIdentifier\"X\n\rExecutio" +
+      "nMode\022\n\n\006MANUAL\020\000\022\r\n\tSCHEDULED\020\001\022\n\n\006SYST" +
+      "EM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016CHILD_WORKFLOW\020\004\"G" +
+      "\n\020NotificationList\0223\n\rnotifications\030\001 \003(" +
+      "\0132\034.flyteidl.admin.Notification\"\357\002\n\rExec" +
+      "utionSpec\022.\n\013launch_plan\030\001 \001(\0132\031.flyteid" +
+      "l.core.Identifier\022-\n\006inputs\030\002 \001(\0132\031.flyt" +
+      "eidl.core.LiteralMapB\002\030\001\0223\n\010metadata\030\003 \001" +
+      "(\0132!.flyteidl.admin.ExecutionMetadata\0229\n" +
+      "\rnotifications\030\005 \001(\0132 .flyteidl.admin.No" +
+      "tificationListH\000\022\025\n\013disable_all\030\006 \001(\010H\000\022" +
+      "&\n\006labels\030\007 \001(\0132\026.flyteidl.admin.Labels\022" +
+      "0\n\013annotations\030\010 \001(\0132\033.flyteidl.admin.An" +
+      "notationsB\030\n\026notification_overridesJ\004\010\004\020" +
+      "\005\"b\n\031ExecutionTerminateRequest\0226\n\002id\030\001 \001" +
+      "(\0132*.flyteidl.core.WorkflowExecutionIden" +
+      "tifier\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTermin" +
+      "ateResponse\"Y\n\037WorkflowExecutionGetDataR" +
+      "equest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workf" +
+      "lowExecutionIdentifier\"u\n WorkflowExecut" +
+      "ionGetDataResponse\022(\n\007outputs\030\001 \001(\0132\027.fl" +
+      "yteidl.admin.UrlBlob\022\'\n\006inputs\030\002 \001(\0132\027.f" +
+      "lyteidl.admin.UrlBlobB3Z1github.com/lyft" +
+      "/flyteidl/gen/pb-go/flyteidl/adminb\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

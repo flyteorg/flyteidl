@@ -166,7 +166,7 @@ message ExecutionMetadata {
     ExecutionMode mode    = 1; // [(validate.rules).enum.defined_only = true];
 
     // Identifier of the entity that triggered this execution.
-    string principal      = 2;
+    string principal      = 2 [deprecated=true];
 
     // Indicates the "nestedness" of this execution.
     // If a user launches a workflow execution, the default nesting is 0.
