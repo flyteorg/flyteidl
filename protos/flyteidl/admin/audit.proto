@@ -12,12 +12,9 @@ message AuditLog {
 
   string client_ip = 2;
 
-  // The client that initiated the auth flow.
-  string client_id = 3;
+  Request request = 3;
 
-  Request request = 4;
-
-  Response response = 5;
+  Response response = 4;
 }
 
 // Details about the authenticated user who issued a service request.
@@ -25,7 +22,10 @@ message Principal {
   // Identifies authenticated end-user
   string subject = 1;
 
-  google.protobuf.Timestamp token_issued_at = 2;
+  // The client that initiated the auth flow.
+  string client_id = 2;
+
+  google.protobuf.Timestamp token_issued_at = 3;
 }
 
 // Details about a specific request issued by a user.

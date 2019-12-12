@@ -42,46 +42,28 @@ public final class Audit {
         getClientIpBytes();
 
     /**
-     * <pre>
-     * The client that initiated the auth flow.
-     * </pre>
-     *
-     * <code>string client_id = 3;</code>
-     */
-    java.lang.String getClientId();
-    /**
-     * <pre>
-     * The client that initiated the auth flow.
-     * </pre>
-     *
-     * <code>string client_id = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getClientIdBytes();
-
-    /**
-     * <code>.flyteidl.admin.Request request = 4;</code>
+     * <code>.flyteidl.admin.Request request = 3;</code>
      */
     boolean hasRequest();
     /**
-     * <code>.flyteidl.admin.Request request = 4;</code>
+     * <code>.flyteidl.admin.Request request = 3;</code>
      */
     flyteidl.admin.Audit.Request getRequest();
     /**
-     * <code>.flyteidl.admin.Request request = 4;</code>
+     * <code>.flyteidl.admin.Request request = 3;</code>
      */
     flyteidl.admin.Audit.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>.flyteidl.admin.Response response = 5;</code>
+     * <code>.flyteidl.admin.Response response = 4;</code>
      */
     boolean hasResponse();
     /**
-     * <code>.flyteidl.admin.Response response = 5;</code>
+     * <code>.flyteidl.admin.Response response = 4;</code>
      */
     flyteidl.admin.Audit.Response getResponse();
     /**
-     * <code>.flyteidl.admin.Response response = 5;</code>
+     * <code>.flyteidl.admin.Response response = 4;</code>
      */
     flyteidl.admin.Audit.ResponseOrBuilder getResponseOrBuilder();
   }
@@ -103,7 +85,6 @@ public final class Audit {
     }
     private AuditLog() {
       clientIp_ = "";
-      clientId_ = "";
     }
 
     @java.lang.Override
@@ -150,12 +131,6 @@ public final class Audit {
               break;
             }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clientId_ = s;
-              break;
-            }
-            case 34: {
               flyteidl.admin.Audit.Request.Builder subBuilder = null;
               if (request_ != null) {
                 subBuilder = request_.toBuilder();
@@ -168,7 +143,7 @@ public final class Audit {
 
               break;
             }
-            case 42: {
+            case 34: {
               flyteidl.admin.Audit.Response.Builder subBuilder = null;
               if (response_ != null) {
                 subBuilder = response_.toBuilder();
@@ -268,85 +243,43 @@ public final class Audit {
       }
     }
 
-    public static final int CLIENT_ID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object clientId_;
-    /**
-     * <pre>
-     * The client that initiated the auth flow.
-     * </pre>
-     *
-     * <code>string client_id = 3;</code>
-     */
-    public java.lang.String getClientId() {
-      java.lang.Object ref = clientId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        clientId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The client that initiated the auth flow.
-     * </pre>
-     *
-     * <code>string client_id = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getClientIdBytes() {
-      java.lang.Object ref = clientId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        clientId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int REQUEST_FIELD_NUMBER = 4;
+    public static final int REQUEST_FIELD_NUMBER = 3;
     private flyteidl.admin.Audit.Request request_;
     /**
-     * <code>.flyteidl.admin.Request request = 4;</code>
+     * <code>.flyteidl.admin.Request request = 3;</code>
      */
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>.flyteidl.admin.Request request = 4;</code>
+     * <code>.flyteidl.admin.Request request = 3;</code>
      */
     public flyteidl.admin.Audit.Request getRequest() {
       return request_ == null ? flyteidl.admin.Audit.Request.getDefaultInstance() : request_;
     }
     /**
-     * <code>.flyteidl.admin.Request request = 4;</code>
+     * <code>.flyteidl.admin.Request request = 3;</code>
      */
     public flyteidl.admin.Audit.RequestOrBuilder getRequestOrBuilder() {
       return getRequest();
     }
 
-    public static final int RESPONSE_FIELD_NUMBER = 5;
+    public static final int RESPONSE_FIELD_NUMBER = 4;
     private flyteidl.admin.Audit.Response response_;
     /**
-     * <code>.flyteidl.admin.Response response = 5;</code>
+     * <code>.flyteidl.admin.Response response = 4;</code>
      */
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>.flyteidl.admin.Response response = 5;</code>
+     * <code>.flyteidl.admin.Response response = 4;</code>
      */
     public flyteidl.admin.Audit.Response getResponse() {
       return response_ == null ? flyteidl.admin.Audit.Response.getDefaultInstance() : response_;
     }
     /**
-     * <code>.flyteidl.admin.Response response = 5;</code>
+     * <code>.flyteidl.admin.Response response = 4;</code>
      */
     public flyteidl.admin.Audit.ResponseOrBuilder getResponseOrBuilder() {
       return getResponse();
@@ -372,14 +305,11 @@ public final class Audit {
       if (!getClientIpBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clientIp_);
       }
-      if (!getClientIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clientId_);
-      }
       if (request_ != null) {
-        output.writeMessage(4, getRequest());
+        output.writeMessage(3, getRequest());
       }
       if (response_ != null) {
-        output.writeMessage(5, getResponse());
+        output.writeMessage(4, getResponse());
       }
       unknownFields.writeTo(output);
     }
@@ -397,16 +327,13 @@ public final class Audit {
       if (!getClientIpBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clientIp_);
       }
-      if (!getClientIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clientId_);
-      }
       if (request_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getRequest());
+          .computeMessageSize(3, getRequest());
       }
       if (response_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getResponse());
+          .computeMessageSize(4, getResponse());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -430,8 +357,6 @@ public final class Audit {
       }
       if (!getClientIp()
           .equals(other.getClientIp())) return false;
-      if (!getClientId()
-          .equals(other.getClientId())) return false;
       if (hasRequest() != other.hasRequest()) return false;
       if (hasRequest()) {
         if (!getRequest()
@@ -459,8 +384,6 @@ public final class Audit {
       }
       hash = (37 * hash) + CLIENT_IP_FIELD_NUMBER;
       hash = (53 * hash) + getClientIp().hashCode();
-      hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getClientId().hashCode();
       if (hasRequest()) {
         hash = (37 * hash) + REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getRequest().hashCode();
@@ -614,8 +537,6 @@ public final class Audit {
         }
         clientIp_ = "";
 
-        clientId_ = "";
-
         if (requestBuilder_ == null) {
           request_ = null;
         } else {
@@ -660,7 +581,6 @@ public final class Audit {
           result.principal_ = principalBuilder_.build();
         }
         result.clientIp_ = clientIp_;
-        result.clientId_ = clientId_;
         if (requestBuilder_ == null) {
           result.request_ = request_;
         } else {
@@ -724,10 +644,6 @@ public final class Audit {
         }
         if (!other.getClientIp().isEmpty()) {
           clientIp_ = other.clientIp_;
-          onChanged();
-        }
-        if (!other.getClientId().isEmpty()) {
-          clientId_ = other.clientId_;
           onChanged();
         }
         if (other.hasRequest()) {
@@ -951,106 +867,17 @@ public final class Audit {
         return this;
       }
 
-      private java.lang.Object clientId_ = "";
-      /**
-       * <pre>
-       * The client that initiated the auth flow.
-       * </pre>
-       *
-       * <code>string client_id = 3;</code>
-       */
-      public java.lang.String getClientId() {
-        java.lang.Object ref = clientId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          clientId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The client that initiated the auth flow.
-       * </pre>
-       *
-       * <code>string client_id = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getClientIdBytes() {
-        java.lang.Object ref = clientId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          clientId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The client that initiated the auth flow.
-       * </pre>
-       *
-       * <code>string client_id = 3;</code>
-       */
-      public Builder setClientId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        clientId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The client that initiated the auth flow.
-       * </pre>
-       *
-       * <code>string client_id = 3;</code>
-       */
-      public Builder clearClientId() {
-        
-        clientId_ = getDefaultInstance().getClientId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The client that initiated the auth flow.
-       * </pre>
-       *
-       * <code>string client_id = 3;</code>
-       */
-      public Builder setClientIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        clientId_ = value;
-        onChanged();
-        return this;
-      }
-
       private flyteidl.admin.Audit.Request request_;
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Audit.Request, flyteidl.admin.Audit.Request.Builder, flyteidl.admin.Audit.RequestOrBuilder> requestBuilder_;
       /**
-       * <code>.flyteidl.admin.Request request = 4;</code>
+       * <code>.flyteidl.admin.Request request = 3;</code>
        */
       public boolean hasRequest() {
         return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>.flyteidl.admin.Request request = 4;</code>
+       * <code>.flyteidl.admin.Request request = 3;</code>
        */
       public flyteidl.admin.Audit.Request getRequest() {
         if (requestBuilder_ == null) {
@@ -1060,7 +887,7 @@ public final class Audit {
         }
       }
       /**
-       * <code>.flyteidl.admin.Request request = 4;</code>
+       * <code>.flyteidl.admin.Request request = 3;</code>
        */
       public Builder setRequest(flyteidl.admin.Audit.Request value) {
         if (requestBuilder_ == null) {
@@ -1076,7 +903,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Request request = 4;</code>
+       * <code>.flyteidl.admin.Request request = 3;</code>
        */
       public Builder setRequest(
           flyteidl.admin.Audit.Request.Builder builderForValue) {
@@ -1090,7 +917,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Request request = 4;</code>
+       * <code>.flyteidl.admin.Request request = 3;</code>
        */
       public Builder mergeRequest(flyteidl.admin.Audit.Request value) {
         if (requestBuilder_ == null) {
@@ -1108,7 +935,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Request request = 4;</code>
+       * <code>.flyteidl.admin.Request request = 3;</code>
        */
       public Builder clearRequest() {
         if (requestBuilder_ == null) {
@@ -1122,7 +949,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Request request = 4;</code>
+       * <code>.flyteidl.admin.Request request = 3;</code>
        */
       public flyteidl.admin.Audit.Request.Builder getRequestBuilder() {
         
@@ -1130,7 +957,7 @@ public final class Audit {
         return getRequestFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.Request request = 4;</code>
+       * <code>.flyteidl.admin.Request request = 3;</code>
        */
       public flyteidl.admin.Audit.RequestOrBuilder getRequestOrBuilder() {
         if (requestBuilder_ != null) {
@@ -1141,7 +968,7 @@ public final class Audit {
         }
       }
       /**
-       * <code>.flyteidl.admin.Request request = 4;</code>
+       * <code>.flyteidl.admin.Request request = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Audit.Request, flyteidl.admin.Audit.Request.Builder, flyteidl.admin.Audit.RequestOrBuilder> 
@@ -1161,13 +988,13 @@ public final class Audit {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Audit.Response, flyteidl.admin.Audit.Response.Builder, flyteidl.admin.Audit.ResponseOrBuilder> responseBuilder_;
       /**
-       * <code>.flyteidl.admin.Response response = 5;</code>
+       * <code>.flyteidl.admin.Response response = 4;</code>
        */
       public boolean hasResponse() {
         return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>.flyteidl.admin.Response response = 5;</code>
+       * <code>.flyteidl.admin.Response response = 4;</code>
        */
       public flyteidl.admin.Audit.Response getResponse() {
         if (responseBuilder_ == null) {
@@ -1177,7 +1004,7 @@ public final class Audit {
         }
       }
       /**
-       * <code>.flyteidl.admin.Response response = 5;</code>
+       * <code>.flyteidl.admin.Response response = 4;</code>
        */
       public Builder setResponse(flyteidl.admin.Audit.Response value) {
         if (responseBuilder_ == null) {
@@ -1193,7 +1020,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Response response = 5;</code>
+       * <code>.flyteidl.admin.Response response = 4;</code>
        */
       public Builder setResponse(
           flyteidl.admin.Audit.Response.Builder builderForValue) {
@@ -1207,7 +1034,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Response response = 5;</code>
+       * <code>.flyteidl.admin.Response response = 4;</code>
        */
       public Builder mergeResponse(flyteidl.admin.Audit.Response value) {
         if (responseBuilder_ == null) {
@@ -1225,7 +1052,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Response response = 5;</code>
+       * <code>.flyteidl.admin.Response response = 4;</code>
        */
       public Builder clearResponse() {
         if (responseBuilder_ == null) {
@@ -1239,7 +1066,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Response response = 5;</code>
+       * <code>.flyteidl.admin.Response response = 4;</code>
        */
       public flyteidl.admin.Audit.Response.Builder getResponseBuilder() {
         
@@ -1247,7 +1074,7 @@ public final class Audit {
         return getResponseFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.Response response = 5;</code>
+       * <code>.flyteidl.admin.Response response = 4;</code>
        */
       public flyteidl.admin.Audit.ResponseOrBuilder getResponseOrBuilder() {
         if (responseBuilder_ != null) {
@@ -1258,7 +1085,7 @@ public final class Audit {
         }
       }
       /**
-       * <code>.flyteidl.admin.Response response = 5;</code>
+       * <code>.flyteidl.admin.Response response = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Audit.Response, flyteidl.admin.Audit.Response.Builder, flyteidl.admin.Audit.ResponseOrBuilder> 
@@ -1349,15 +1176,33 @@ public final class Audit {
         getSubjectBytes();
 
     /**
-     * <code>.google.protobuf.Timestamp token_issued_at = 2;</code>
+     * <pre>
+     * The client that initiated the auth flow.
+     * </pre>
+     *
+     * <code>string client_id = 2;</code>
+     */
+    java.lang.String getClientId();
+    /**
+     * <pre>
+     * The client that initiated the auth flow.
+     * </pre>
+     *
+     * <code>string client_id = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getClientIdBytes();
+
+    /**
+     * <code>.google.protobuf.Timestamp token_issued_at = 3;</code>
      */
     boolean hasTokenIssuedAt();
     /**
-     * <code>.google.protobuf.Timestamp token_issued_at = 2;</code>
+     * <code>.google.protobuf.Timestamp token_issued_at = 3;</code>
      */
     com.google.protobuf.Timestamp getTokenIssuedAt();
     /**
-     * <code>.google.protobuf.Timestamp token_issued_at = 2;</code>
+     * <code>.google.protobuf.Timestamp token_issued_at = 3;</code>
      */
     com.google.protobuf.TimestampOrBuilder getTokenIssuedAtOrBuilder();
   }
@@ -1379,6 +1224,7 @@ public final class Audit {
     }
     private Principal() {
       subject_ = "";
+      clientId_ = "";
     }
 
     @java.lang.Override
@@ -1412,6 +1258,12 @@ public final class Audit {
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientId_ = s;
+              break;
+            }
+            case 26: {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
               if (tokenIssuedAt_ != null) {
                 subBuilder = tokenIssuedAt_.toBuilder();
@@ -1498,22 +1350,64 @@ public final class Audit {
       }
     }
 
-    public static final int TOKEN_ISSUED_AT_FIELD_NUMBER = 2;
+    public static final int CLIENT_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object clientId_;
+    /**
+     * <pre>
+     * The client that initiated the auth flow.
+     * </pre>
+     *
+     * <code>string client_id = 2;</code>
+     */
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The client that initiated the auth flow.
+     * </pre>
+     *
+     * <code>string client_id = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOKEN_ISSUED_AT_FIELD_NUMBER = 3;
     private com.google.protobuf.Timestamp tokenIssuedAt_;
     /**
-     * <code>.google.protobuf.Timestamp token_issued_at = 2;</code>
+     * <code>.google.protobuf.Timestamp token_issued_at = 3;</code>
      */
     public boolean hasTokenIssuedAt() {
       return tokenIssuedAt_ != null;
     }
     /**
-     * <code>.google.protobuf.Timestamp token_issued_at = 2;</code>
+     * <code>.google.protobuf.Timestamp token_issued_at = 3;</code>
      */
     public com.google.protobuf.Timestamp getTokenIssuedAt() {
       return tokenIssuedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : tokenIssuedAt_;
     }
     /**
-     * <code>.google.protobuf.Timestamp token_issued_at = 2;</code>
+     * <code>.google.protobuf.Timestamp token_issued_at = 3;</code>
      */
     public com.google.protobuf.TimestampOrBuilder getTokenIssuedAtOrBuilder() {
       return getTokenIssuedAt();
@@ -1536,8 +1430,11 @@ public final class Audit {
       if (!getSubjectBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, subject_);
       }
+      if (!getClientIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clientId_);
+      }
       if (tokenIssuedAt_ != null) {
-        output.writeMessage(2, getTokenIssuedAt());
+        output.writeMessage(3, getTokenIssuedAt());
       }
       unknownFields.writeTo(output);
     }
@@ -1551,9 +1448,12 @@ public final class Audit {
       if (!getSubjectBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, subject_);
       }
+      if (!getClientIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clientId_);
+      }
       if (tokenIssuedAt_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getTokenIssuedAt());
+          .computeMessageSize(3, getTokenIssuedAt());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1572,6 +1472,8 @@ public final class Audit {
 
       if (!getSubject()
           .equals(other.getSubject())) return false;
+      if (!getClientId()
+          .equals(other.getClientId())) return false;
       if (hasTokenIssuedAt() != other.hasTokenIssuedAt()) return false;
       if (hasTokenIssuedAt()) {
         if (!getTokenIssuedAt()
@@ -1590,6 +1492,8 @@ public final class Audit {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SUBJECT_FIELD_NUMBER;
       hash = (53 * hash) + getSubject().hashCode();
+      hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getClientId().hashCode();
       if (hasTokenIssuedAt()) {
         hash = (37 * hash) + TOKEN_ISSUED_AT_FIELD_NUMBER;
         hash = (53 * hash) + getTokenIssuedAt().hashCode();
@@ -1733,6 +1637,8 @@ public final class Audit {
         super.clear();
         subject_ = "";
 
+        clientId_ = "";
+
         if (tokenIssuedAtBuilder_ == null) {
           tokenIssuedAt_ = null;
         } else {
@@ -1766,6 +1672,7 @@ public final class Audit {
       public flyteidl.admin.Audit.Principal buildPartial() {
         flyteidl.admin.Audit.Principal result = new flyteidl.admin.Audit.Principal(this);
         result.subject_ = subject_;
+        result.clientId_ = clientId_;
         if (tokenIssuedAtBuilder_ == null) {
           result.tokenIssuedAt_ = tokenIssuedAt_;
         } else {
@@ -1821,6 +1728,10 @@ public final class Audit {
         if (other == flyteidl.admin.Audit.Principal.getDefaultInstance()) return this;
         if (!other.getSubject().isEmpty()) {
           subject_ = other.subject_;
+          onChanged();
+        }
+        if (!other.getClientId().isEmpty()) {
+          clientId_ = other.clientId_;
           onChanged();
         }
         if (other.hasTokenIssuedAt()) {
@@ -1944,17 +1855,106 @@ public final class Audit {
         return this;
       }
 
+      private java.lang.Object clientId_ = "";
+      /**
+       * <pre>
+       * The client that initiated the auth flow.
+       * </pre>
+       *
+       * <code>string client_id = 2;</code>
+       */
+      public java.lang.String getClientId() {
+        java.lang.Object ref = clientId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clientId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The client that initiated the auth flow.
+       * </pre>
+       *
+       * <code>string client_id = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getClientIdBytes() {
+        java.lang.Object ref = clientId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The client that initiated the auth flow.
+       * </pre>
+       *
+       * <code>string client_id = 2;</code>
+       */
+      public Builder setClientId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        clientId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The client that initiated the auth flow.
+       * </pre>
+       *
+       * <code>string client_id = 2;</code>
+       */
+      public Builder clearClientId() {
+        
+        clientId_ = getDefaultInstance().getClientId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The client that initiated the auth flow.
+       * </pre>
+       *
+       * <code>string client_id = 2;</code>
+       */
+      public Builder setClientIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        clientId_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.Timestamp tokenIssuedAt_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> tokenIssuedAtBuilder_;
       /**
-       * <code>.google.protobuf.Timestamp token_issued_at = 2;</code>
+       * <code>.google.protobuf.Timestamp token_issued_at = 3;</code>
        */
       public boolean hasTokenIssuedAt() {
         return tokenIssuedAtBuilder_ != null || tokenIssuedAt_ != null;
       }
       /**
-       * <code>.google.protobuf.Timestamp token_issued_at = 2;</code>
+       * <code>.google.protobuf.Timestamp token_issued_at = 3;</code>
        */
       public com.google.protobuf.Timestamp getTokenIssuedAt() {
         if (tokenIssuedAtBuilder_ == null) {
@@ -1964,7 +1964,7 @@ public final class Audit {
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp token_issued_at = 2;</code>
+       * <code>.google.protobuf.Timestamp token_issued_at = 3;</code>
        */
       public Builder setTokenIssuedAt(com.google.protobuf.Timestamp value) {
         if (tokenIssuedAtBuilder_ == null) {
@@ -1980,7 +1980,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp token_issued_at = 2;</code>
+       * <code>.google.protobuf.Timestamp token_issued_at = 3;</code>
        */
       public Builder setTokenIssuedAt(
           com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1994,7 +1994,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp token_issued_at = 2;</code>
+       * <code>.google.protobuf.Timestamp token_issued_at = 3;</code>
        */
       public Builder mergeTokenIssuedAt(com.google.protobuf.Timestamp value) {
         if (tokenIssuedAtBuilder_ == null) {
@@ -2012,7 +2012,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp token_issued_at = 2;</code>
+       * <code>.google.protobuf.Timestamp token_issued_at = 3;</code>
        */
       public Builder clearTokenIssuedAt() {
         if (tokenIssuedAtBuilder_ == null) {
@@ -2026,7 +2026,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp token_issued_at = 2;</code>
+       * <code>.google.protobuf.Timestamp token_issued_at = 3;</code>
        */
       public com.google.protobuf.Timestamp.Builder getTokenIssuedAtBuilder() {
         
@@ -2034,7 +2034,7 @@ public final class Audit {
         return getTokenIssuedAtFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Timestamp token_issued_at = 2;</code>
+       * <code>.google.protobuf.Timestamp token_issued_at = 3;</code>
        */
       public com.google.protobuf.TimestampOrBuilder getTokenIssuedAtOrBuilder() {
         if (tokenIssuedAtBuilder_ != null) {
@@ -2045,7 +2045,7 @@ public final class Audit {
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp token_issued_at = 2;</code>
+       * <code>.google.protobuf.Timestamp token_issued_at = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -4463,13 +4463,13 @@ public final class Audit {
   static {
     java.lang.String[] descriptorData = {
       "\n\032flyteidl/admin/audit.proto\022\016flyteidl.a" +
-      "dmin\032\037google/protobuf/timestamp.proto\"\264\001" +
+      "dmin\032\037google/protobuf/timestamp.proto\"\241\001" +
       "\n\010AuditLog\022,\n\tprincipal\030\001 \001(\0132\031.flyteidl" +
-      ".admin.Principal\022\021\n\tclient_ip\030\002 \001(\t\022\021\n\tc" +
-      "lient_id\030\003 \001(\t\022(\n\007request\030\004 \001(\0132\027.flytei" +
-      "dl.admin.Request\022*\n\010response\030\005 \001(\0132\030.fly" +
-      "teidl.admin.Response\"Q\n\tPrincipal\022\017\n\007sub" +
-      "ject\030\001 \001(\t\0223\n\017token_issued_at\030\002 \001(\0132\032.go" +
+      ".admin.Principal\022\021\n\tclient_ip\030\002 \001(\t\022(\n\007r" +
+      "equest\030\003 \001(\0132\027.flyteidl.admin.Request\022*\n" +
+      "\010response\030\004 \001(\0132\030.flyteidl.admin.Respons" +
+      "e\"d\n\tPrincipal\022\017\n\007subject\030\001 \001(\t\022\021\n\tclien" +
+      "t_id\030\002 \001(\t\0223\n\017token_issued_at\030\003 \001(\0132\032.go" +
       "ogle.protobuf.Timestamp\"\240\002\n\007Request\022\016\n\006m" +
       "ethod\030\001 \001(\t\022\021\n\thttp_verb\030\002 \001(\t\022;\n\nparame" +
       "ters\030\003 \003(\0132\'.flyteidl.admin.Request.Para" +
@@ -4501,13 +4501,13 @@ public final class Audit {
     internal_static_flyteidl_admin_AuditLog_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_AuditLog_descriptor,
-        new java.lang.String[] { "Principal", "ClientIp", "ClientId", "Request", "Response", });
+        new java.lang.String[] { "Principal", "ClientIp", "Request", "Response", });
     internal_static_flyteidl_admin_Principal_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_admin_Principal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Principal_descriptor,
-        new java.lang.String[] { "Subject", "TokenIssuedAt", });
+        new java.lang.String[] { "Subject", "ClientId", "TokenIssuedAt", });
     internal_static_flyteidl_admin_Request_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_admin_Request_fieldAccessorTable = new

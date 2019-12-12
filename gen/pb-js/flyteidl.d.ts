@@ -4666,9 +4666,6 @@ export namespace flyteidl {
             /** AuditLog clientIp */
             clientIp?: (string|null);
 
-            /** AuditLog clientId */
-            clientId?: (string|null);
-
             /** AuditLog request */
             request?: (flyteidl.admin.IRequest|null);
 
@@ -4690,9 +4687,6 @@ export namespace flyteidl {
 
             /** AuditLog clientIp. */
             public clientIp: string;
-
-            /** AuditLog clientId. */
-            public clientId: string;
 
             /** AuditLog request. */
             public request?: (flyteidl.admin.IRequest|null);
@@ -4739,6 +4733,9 @@ export namespace flyteidl {
             /** Principal subject */
             subject?: (string|null);
 
+            /** Principal clientId */
+            clientId?: (string|null);
+
             /** Principal tokenIssuedAt */
             tokenIssuedAt?: (google.protobuf.ITimestamp|null);
         }
@@ -4754,6 +4751,9 @@ export namespace flyteidl {
 
             /** Principal subject. */
             public subject: string;
+
+            /** Principal clientId. */
+            public clientId: string;
 
             /** Principal tokenIssuedAt. */
             public tokenIssuedAt?: (google.protobuf.ITimestamp|null);

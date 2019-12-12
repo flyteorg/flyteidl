@@ -55,8 +55,6 @@ func (m *AuditLog) Validate() error {
 
 	// no validation rules for ClientIp
 
-	// no validation rules for ClientId
-
 	if v, ok := interface{}(m.GetRequest()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return AuditLogValidationError{
@@ -142,6 +140,8 @@ func (m *Principal) Validate() error {
 	}
 
 	// no validation rules for Subject
+
+	// no validation rules for ClientId
 
 	if v, ok := interface{}(m.GetTokenIssuedAt()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {

@@ -11302,7 +11302,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IAuditLog
              * @property {flyteidl.admin.IPrincipal|null} [principal] AuditLog principal
              * @property {string|null} [clientIp] AuditLog clientIp
-             * @property {string|null} [clientId] AuditLog clientId
              * @property {flyteidl.admin.IRequest|null} [request] AuditLog request
              * @property {flyteidl.admin.IResponse|null} [response] AuditLog response
              */
@@ -11337,14 +11336,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             AuditLog.prototype.clientIp = "";
-
-            /**
-             * AuditLog clientId.
-             * @member {string} clientId
-             * @memberof flyteidl.admin.AuditLog
-             * @instance
-             */
-            AuditLog.prototype.clientId = "";
 
             /**
              * AuditLog request.
@@ -11390,12 +11381,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.Principal.encode(message.principal, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.clientIp != null && message.hasOwnProperty("clientIp"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.clientIp);
-                if (message.clientId != null && message.hasOwnProperty("clientId"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.clientId);
                 if (message.request != null && message.hasOwnProperty("request"))
-                    $root.flyteidl.admin.Request.encode(message.request, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    $root.flyteidl.admin.Request.encode(message.request, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.response != null && message.hasOwnProperty("response"))
-                    $root.flyteidl.admin.Response.encode(message.response, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    $root.flyteidl.admin.Response.encode(message.response, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -11424,12 +11413,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.clientIp = reader.string();
                         break;
                     case 3:
-                        message.clientId = reader.string();
-                        break;
-                    case 4:
                         message.request = $root.flyteidl.admin.Request.decode(reader, reader.uint32());
                         break;
-                    case 5:
+                    case 4:
                         message.response = $root.flyteidl.admin.Response.decode(reader, reader.uint32());
                         break;
                     default:
@@ -11459,9 +11445,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.clientIp != null && message.hasOwnProperty("clientIp"))
                     if (!$util.isString(message.clientIp))
                         return "clientIp: string expected";
-                if (message.clientId != null && message.hasOwnProperty("clientId"))
-                    if (!$util.isString(message.clientId))
-                        return "clientId: string expected";
                 if (message.request != null && message.hasOwnProperty("request")) {
                     let error = $root.flyteidl.admin.Request.verify(message.request);
                     if (error)
@@ -11485,6 +11468,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface IPrincipal
              * @property {string|null} [subject] Principal subject
+             * @property {string|null} [clientId] Principal clientId
              * @property {google.protobuf.ITimestamp|null} [tokenIssuedAt] Principal tokenIssuedAt
              */
 
@@ -11510,6 +11494,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             Principal.prototype.subject = "";
+
+            /**
+             * Principal clientId.
+             * @member {string} clientId
+             * @memberof flyteidl.admin.Principal
+             * @instance
+             */
+            Principal.prototype.clientId = "";
 
             /**
              * Principal tokenIssuedAt.
@@ -11545,8 +11537,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.subject != null && message.hasOwnProperty("subject"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.subject);
+                if (message.clientId != null && message.hasOwnProperty("clientId"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.clientId);
                 if (message.tokenIssuedAt != null && message.hasOwnProperty("tokenIssuedAt"))
-                    $root.google.protobuf.Timestamp.encode(message.tokenIssuedAt, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    $root.google.protobuf.Timestamp.encode(message.tokenIssuedAt, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
 
@@ -11572,6 +11566,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.subject = reader.string();
                         break;
                     case 2:
+                        message.clientId = reader.string();
+                        break;
+                    case 3:
                         message.tokenIssuedAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
                         break;
                     default:
@@ -11596,6 +11593,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.subject != null && message.hasOwnProperty("subject"))
                     if (!$util.isString(message.subject))
                         return "subject: string expected";
+                if (message.clientId != null && message.hasOwnProperty("clientId"))
+                    if (!$util.isString(message.clientId))
+                        return "clientId: string expected";
                 if (message.tokenIssuedAt != null && message.hasOwnProperty("tokenIssuedAt")) {
                     let error = $root.google.protobuf.Timestamp.verify(message.tokenIssuedAt);
                     if (error)

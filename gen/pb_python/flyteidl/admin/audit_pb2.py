@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n\x1a\x66lyteidl/admin/audit.proto\x12\x0e\x66lyteidl.admin\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb4\x01\n\x08\x41uditLog\x12,\n\tprincipal\x18\x01 \x01(\x0b\x32\x19.flyteidl.admin.Principal\x12\x11\n\tclient_ip\x18\x02 \x01(\t\x12\x11\n\tclient_id\x18\x03 \x01(\t\x12(\n\x07request\x18\x04 \x01(\x0b\x32\x17.flyteidl.admin.Request\x12*\n\x08response\x18\x05 \x01(\x0b\x32\x18.flyteidl.admin.Response\"Q\n\tPrincipal\x12\x0f\n\x07subject\x18\x01 \x01(\t\x12\x33\n\x0ftoken_issued_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xa0\x02\n\x07Request\x12\x0e\n\x06method\x18\x01 \x01(\t\x12\x11\n\thttp_verb\x18\x02 \x01(\t\x12;\n\nparameters\x18\x03 \x03(\x0b\x32\'.flyteidl.admin.Request.ParametersEntry\x12*\n\x04mode\x18\x04 \x01(\x0e\x32\x1c.flyteidl.admin.Request.Mode\x12/\n\x0breceived_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a\x31\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"%\n\x04Mode\x12\r\n\tREAD_ONLY\x10\x00\x12\x0e\n\nREAD_WRITE\x10\x01\"N\n\x08Response\x12\x15\n\rresponse_code\x18\x01 \x01(\t\x12+\n\x07sent_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1a\x66lyteidl/admin/audit.proto\x12\x0e\x66lyteidl.admin\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa1\x01\n\x08\x41uditLog\x12,\n\tprincipal\x18\x01 \x01(\x0b\x32\x19.flyteidl.admin.Principal\x12\x11\n\tclient_ip\x18\x02 \x01(\t\x12(\n\x07request\x18\x03 \x01(\x0b\x32\x17.flyteidl.admin.Request\x12*\n\x08response\x18\x04 \x01(\x0b\x32\x18.flyteidl.admin.Response\"d\n\tPrincipal\x12\x0f\n\x07subject\x18\x01 \x01(\t\x12\x11\n\tclient_id\x18\x02 \x01(\t\x12\x33\n\x0ftoken_issued_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xa0\x02\n\x07Request\x12\x0e\n\x06method\x18\x01 \x01(\t\x12\x11\n\thttp_verb\x18\x02 \x01(\t\x12;\n\nparameters\x18\x03 \x03(\x0b\x32\'.flyteidl.admin.Request.ParametersEntry\x12*\n\x04mode\x18\x04 \x01(\x0e\x32\x1c.flyteidl.admin.Request.Mode\x12/\n\x0breceived_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a\x31\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"%\n\x04Mode\x12\r\n\tREAD_ONLY\x10\x00\x12\x0e\n\nREAD_WRITE\x10\x01\"N\n\x08Response\x12\x15\n\rresponse_code\x18\x01 \x01(\t\x12+\n\x07sent_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -72,22 +72,15 @@ _AUDITLOG = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='client_id', full_name='flyteidl.admin.AuditLog.client_id', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='request', full_name='flyteidl.admin.AuditLog.request', index=3,
-      number=4, type=11, cpp_type=10, label=1,
+      name='request', full_name='flyteidl.admin.AuditLog.request', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='response', full_name='flyteidl.admin.AuditLog.response', index=4,
-      number=5, type=11, cpp_type=10, label=1,
+      name='response', full_name='flyteidl.admin.AuditLog.response', index=3,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -105,7 +98,7 @@ _AUDITLOG = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=80,
-  serialized_end=260,
+  serialized_end=241,
 )
 
 
@@ -124,8 +117,15 @@ _PRINCIPAL = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='token_issued_at', full_name='flyteidl.admin.Principal.token_issued_at', index=1,
-      number=2, type=11, cpp_type=10, label=1,
+      name='client_id', full_name='flyteidl.admin.Principal.client_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='token_issued_at', full_name='flyteidl.admin.Principal.token_issued_at', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -142,7 +142,7 @@ _PRINCIPAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=262,
+  serialized_start=243,
   serialized_end=343,
 )
 

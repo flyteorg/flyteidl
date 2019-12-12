@@ -17,7 +17,6 @@ Audit log that is emitted on each user request.
   {
     "principal": "{...}",
     "client_ip": "...",
-    "client_id": "...",
     "request": "{...}",
     "response": "{...}"
   }
@@ -31,12 +30,6 @@ principal
 
 client_ip
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
-  
-.. _api_field_flyteidl.admin.AuditLog.client_id:
-
-client_id
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The client that initiated the auth flow.
-  
   
 .. _api_field_flyteidl.admin.AuditLog.request:
 
@@ -55,7 +48,7 @@ response
 flyteidl.admin.Principal
 ------------------------
 
-`[flyteidl.admin.Principal proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/audit.proto#L23>`_
+`[flyteidl.admin.Principal proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/audit.proto#L20>`_
 
 Details about the authenticated user who issued a service request.
 
@@ -63,6 +56,7 @@ Details about the authenticated user who issued a service request.
 
   {
     "subject": "...",
+    "client_id": "...",
     "token_issued_at": "{...}"
   }
 
@@ -70,6 +64,12 @@ Details about the authenticated user who issued a service request.
 
 subject
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Identifies authenticated end-user
+  
+  
+.. _api_field_flyteidl.admin.Principal.client_id:
+
+client_id
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The client that initiated the auth flow.
   
   
 .. _api_field_flyteidl.admin.Principal.token_issued_at:

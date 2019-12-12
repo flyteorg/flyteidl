@@ -216,20 +216,6 @@ class AuditLog final :
   ::std::string* release_client_ip();
   void set_allocated_client_ip(::std::string* client_ip);
 
-  // string client_id = 3;
-  void clear_client_id();
-  static const int kClientIdFieldNumber = 3;
-  const ::std::string& client_id() const;
-  void set_client_id(const ::std::string& value);
-  #if LANG_CXX11
-  void set_client_id(::std::string&& value);
-  #endif
-  void set_client_id(const char* value);
-  void set_client_id(const char* value, size_t size);
-  ::std::string* mutable_client_id();
-  ::std::string* release_client_id();
-  void set_allocated_client_id(::std::string* client_id);
-
   // .flyteidl.admin.Principal principal = 1;
   bool has_principal() const;
   void clear_principal();
@@ -239,19 +225,19 @@ class AuditLog final :
   ::flyteidl::admin::Principal* mutable_principal();
   void set_allocated_principal(::flyteidl::admin::Principal* principal);
 
-  // .flyteidl.admin.Request request = 4;
+  // .flyteidl.admin.Request request = 3;
   bool has_request() const;
   void clear_request();
-  static const int kRequestFieldNumber = 4;
+  static const int kRequestFieldNumber = 3;
   const ::flyteidl::admin::Request& request() const;
   ::flyteidl::admin::Request* release_request();
   ::flyteidl::admin::Request* mutable_request();
   void set_allocated_request(::flyteidl::admin::Request* request);
 
-  // .flyteidl.admin.Response response = 5;
+  // .flyteidl.admin.Response response = 4;
   bool has_response() const;
   void clear_response();
-  static const int kResponseFieldNumber = 5;
+  static const int kResponseFieldNumber = 4;
   const ::flyteidl::admin::Response& response() const;
   ::flyteidl::admin::Response* release_response();
   ::flyteidl::admin::Response* mutable_response();
@@ -263,7 +249,6 @@ class AuditLog final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr client_ip_;
-  ::google::protobuf::internal::ArenaStringPtr client_id_;
   ::flyteidl::admin::Principal* principal_;
   ::flyteidl::admin::Request* request_;
   ::flyteidl::admin::Response* response_;
@@ -381,10 +366,24 @@ class Principal final :
   ::std::string* release_subject();
   void set_allocated_subject(::std::string* subject);
 
-  // .google.protobuf.Timestamp token_issued_at = 2;
+  // string client_id = 2;
+  void clear_client_id();
+  static const int kClientIdFieldNumber = 2;
+  const ::std::string& client_id() const;
+  void set_client_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_client_id(::std::string&& value);
+  #endif
+  void set_client_id(const char* value);
+  void set_client_id(const char* value, size_t size);
+  ::std::string* mutable_client_id();
+  ::std::string* release_client_id();
+  void set_allocated_client_id(::std::string* client_id);
+
+  // .google.protobuf.Timestamp token_issued_at = 3;
   bool has_token_issued_at() const;
   void clear_token_issued_at();
-  static const int kTokenIssuedAtFieldNumber = 2;
+  static const int kTokenIssuedAtFieldNumber = 3;
   const ::google::protobuf::Timestamp& token_issued_at() const;
   ::google::protobuf::Timestamp* release_token_issued_at();
   ::google::protobuf::Timestamp* mutable_token_issued_at();
@@ -396,6 +395,7 @@ class Principal final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr subject_;
+  ::google::protobuf::internal::ArenaStringPtr client_id_;
   ::google::protobuf::Timestamp* token_issued_at_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2faudit_2eproto;
@@ -863,60 +863,7 @@ inline void AuditLog::set_allocated_client_ip(::std::string* client_ip) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.AuditLog.client_ip)
 }
 
-// string client_id = 3;
-inline void AuditLog::clear_client_id() {
-  client_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& AuditLog::client_id() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.AuditLog.client_id)
-  return client_id_.GetNoArena();
-}
-inline void AuditLog::set_client_id(const ::std::string& value) {
-  
-  client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.AuditLog.client_id)
-}
-#if LANG_CXX11
-inline void AuditLog::set_client_id(::std::string&& value) {
-  
-  client_id_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.AuditLog.client_id)
-}
-#endif
-inline void AuditLog::set_client_id(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.AuditLog.client_id)
-}
-inline void AuditLog::set_client_id(const char* value, size_t size) {
-  
-  client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.AuditLog.client_id)
-}
-inline ::std::string* AuditLog::mutable_client_id() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.AuditLog.client_id)
-  return client_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* AuditLog::release_client_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.AuditLog.client_id)
-  
-  return client_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void AuditLog::set_allocated_client_id(::std::string* client_id) {
-  if (client_id != nullptr) {
-    
-  } else {
-    
-  }
-  client_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), client_id);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.AuditLog.client_id)
-}
-
-// .flyteidl.admin.Request request = 4;
+// .flyteidl.admin.Request request = 3;
 inline bool AuditLog::has_request() const {
   return this != internal_default_instance() && request_ != nullptr;
 }
@@ -967,7 +914,7 @@ inline void AuditLog::set_allocated_request(::flyteidl::admin::Request* request)
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.AuditLog.request)
 }
 
-// .flyteidl.admin.Response response = 5;
+// .flyteidl.admin.Response response = 4;
 inline bool AuditLog::has_response() const {
   return this != internal_default_instance() && response_ != nullptr;
 }
@@ -1075,7 +1022,60 @@ inline void Principal::set_allocated_subject(::std::string* subject) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Principal.subject)
 }
 
-// .google.protobuf.Timestamp token_issued_at = 2;
+// string client_id = 2;
+inline void Principal::clear_client_id() {
+  client_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Principal::client_id() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Principal.client_id)
+  return client_id_.GetNoArena();
+}
+inline void Principal::set_client_id(const ::std::string& value) {
+  
+  client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.Principal.client_id)
+}
+#if LANG_CXX11
+inline void Principal::set_client_id(::std::string&& value) {
+  
+  client_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.Principal.client_id)
+}
+#endif
+inline void Principal::set_client_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.Principal.client_id)
+}
+inline void Principal::set_client_id(const char* value, size_t size) {
+  
+  client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.Principal.client_id)
+}
+inline ::std::string* Principal::mutable_client_id() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Principal.client_id)
+  return client_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Principal::release_client_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.Principal.client_id)
+  
+  return client_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Principal::set_allocated_client_id(::std::string* client_id) {
+  if (client_id != nullptr) {
+    
+  } else {
+    
+  }
+  client_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), client_id);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Principal.client_id)
+}
+
+// .google.protobuf.Timestamp token_issued_at = 3;
 inline bool Principal::has_token_issued_at() const {
   return this != internal_default_instance() && token_issued_at_ != nullptr;
 }
