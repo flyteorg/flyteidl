@@ -4657,6 +4657,277 @@ export namespace flyteidl {
     /** Namespace admin. */
     namespace admin {
 
+        /** Properties of an AuditLog. */
+        interface IAuditLog {
+
+            /** AuditLog actor */
+            actor?: (flyteidl.admin.IActor|null);
+
+            /** AuditLog clientIp */
+            clientIp?: (string|null);
+
+            /** AuditLog request */
+            request?: (flyteidl.admin.IRequest|null);
+
+            /** AuditLog response */
+            response?: (flyteidl.admin.IResponse|null);
+        }
+
+        /** Represents an AuditLog. */
+        class AuditLog implements IAuditLog {
+
+            /**
+             * Constructs a new AuditLog.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IAuditLog);
+
+            /** AuditLog actor. */
+            public actor?: (flyteidl.admin.IActor|null);
+
+            /** AuditLog clientIp. */
+            public clientIp: string;
+
+            /** AuditLog request. */
+            public request?: (flyteidl.admin.IRequest|null);
+
+            /** AuditLog response. */
+            public response?: (flyteidl.admin.IResponse|null);
+
+            /**
+             * Creates a new AuditLog instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns AuditLog instance
+             */
+            public static create(properties?: flyteidl.admin.IAuditLog): flyteidl.admin.AuditLog;
+
+            /**
+             * Encodes the specified AuditLog message. Does not implicitly {@link flyteidl.admin.AuditLog.verify|verify} messages.
+             * @param message AuditLog message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IAuditLog, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an AuditLog message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns AuditLog
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.AuditLog;
+
+            /**
+             * Verifies an AuditLog message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an Actor. */
+        interface IActor {
+
+            /** Actor subject */
+            subject?: (string|null);
+
+            /** Actor tokenIssuedAt */
+            tokenIssuedAt?: (google.protobuf.ITimestamp|null);
+        }
+
+        /** Represents an Actor. */
+        class Actor implements IActor {
+
+            /**
+             * Constructs a new Actor.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IActor);
+
+            /** Actor subject. */
+            public subject: string;
+
+            /** Actor tokenIssuedAt. */
+            public tokenIssuedAt?: (google.protobuf.ITimestamp|null);
+
+            /**
+             * Creates a new Actor instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Actor instance
+             */
+            public static create(properties?: flyteidl.admin.IActor): flyteidl.admin.Actor;
+
+            /**
+             * Encodes the specified Actor message. Does not implicitly {@link flyteidl.admin.Actor.verify|verify} messages.
+             * @param message Actor message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IActor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an Actor message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Actor
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Actor;
+
+            /**
+             * Verifies an Actor message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a Request. */
+        interface IRequest {
+
+            /** Request method */
+            method?: (string|null);
+
+            /** Request httpVerb */
+            httpVerb?: (string|null);
+
+            /** Request parameters */
+            parameters?: (string|null);
+
+            /** Request mode */
+            mode?: (flyteidl.admin.Request.Mode|null);
+
+            /** Request receivedAt */
+            receivedAt?: (google.protobuf.ITimestamp|null);
+        }
+
+        /** Represents a Request. */
+        class Request implements IRequest {
+
+            /**
+             * Constructs a new Request.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IRequest);
+
+            /** Request method. */
+            public method: string;
+
+            /** Request httpVerb. */
+            public httpVerb: string;
+
+            /** Request parameters. */
+            public parameters: string;
+
+            /** Request mode. */
+            public mode: flyteidl.admin.Request.Mode;
+
+            /** Request receivedAt. */
+            public receivedAt?: (google.protobuf.ITimestamp|null);
+
+            /**
+             * Creates a new Request instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Request instance
+             */
+            public static create(properties?: flyteidl.admin.IRequest): flyteidl.admin.Request;
+
+            /**
+             * Encodes the specified Request message. Does not implicitly {@link flyteidl.admin.Request.verify|verify} messages.
+             * @param message Request message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Request message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Request
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Request;
+
+            /**
+             * Verifies a Request message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace Request {
+
+            /** Mode enum. */
+            enum Mode {
+                READ_ONLY = 0,
+                READ_WRITE = 1
+            }
+        }
+
+        /** Properties of a Response. */
+        interface IResponse {
+
+            /** Response responseCode */
+            responseCode?: (string|null);
+
+            /** Response sentAt */
+            sentAt?: (google.protobuf.ITimestamp|null);
+        }
+
+        /** Represents a Response. */
+        class Response implements IResponse {
+
+            /**
+             * Constructs a new Response.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IResponse);
+
+            /** Response responseCode. */
+            public responseCode: string;
+
+            /** Response sentAt. */
+            public sentAt?: (google.protobuf.ITimestamp|null);
+
+            /**
+             * Creates a new Response instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Response instance
+             */
+            public static create(properties?: flyteidl.admin.IResponse): flyteidl.admin.Response;
+
+            /**
+             * Encodes the specified Response message. Does not implicitly {@link flyteidl.admin.Response.verify|verify} messages.
+             * @param message Response message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Response message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Response
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Response;
+
+            /**
+             * Verifies a Response message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a NamedEntityIdentifier. */
         interface INamedEntityIdentifier {
 

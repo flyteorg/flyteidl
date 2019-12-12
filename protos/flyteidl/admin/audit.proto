@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package flyteidl.admin;
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
+
+import "google/protobuf/timestamp.proto";
+
+
+// Audit log that is emitted on each user request.
+message AuditLog {
+  Actor actor = 1;
+
+  string client_ip = 2;
+
+  Request request = 3;
+
+  Response response = 4;
+}
+
+// Details about the authenticated user who issued a service request.
+message Actor {
+  // Identifies authenticated end-user
+  string subject = 1;
+
+  google.protobuf.Timestamp token_issued_at = 2;
+}
+
+// Details about a specific request issued by a user.
+message Request {
+  // Service method endpoint e.g. GetWorkflowExecution
+  string method = 1;
+
+  // In the case of HTTP service calls.
+  string http_verb = 2;
+
+  // Only includes identifier parameters (that is, a subset of all parameters) submitted in the request.
+  string parameters = 3;
+
+  enum Mode {
+    READ_ONLY = 0;
+    READ_WRITE = 1;
+  }
+  Mode mode = 4;
+
+  google.protobuf.Timestamp received_at = 5;
+}
+
+// Summary of service response details.
+message Response {
+  // e.g. gRPC status code
+  string response_code = 1;
+
+  google.protobuf.Timestamp sent_at = 2;
+}
+

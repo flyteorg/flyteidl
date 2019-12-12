@@ -11294,6 +11294,630 @@ export const flyteidl = $root.flyteidl = (() => {
          */
         const admin = {};
 
+        admin.AuditLog = (function() {
+
+            /**
+             * Properties of an AuditLog.
+             * @memberof flyteidl.admin
+             * @interface IAuditLog
+             * @property {flyteidl.admin.IActor|null} [actor] AuditLog actor
+             * @property {string|null} [clientIp] AuditLog clientIp
+             * @property {flyteidl.admin.IRequest|null} [request] AuditLog request
+             * @property {flyteidl.admin.IResponse|null} [response] AuditLog response
+             */
+
+            /**
+             * Constructs a new AuditLog.
+             * @memberof flyteidl.admin
+             * @classdesc Represents an AuditLog.
+             * @implements IAuditLog
+             * @constructor
+             * @param {flyteidl.admin.IAuditLog=} [properties] Properties to set
+             */
+            function AuditLog(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * AuditLog actor.
+             * @member {flyteidl.admin.IActor|null|undefined} actor
+             * @memberof flyteidl.admin.AuditLog
+             * @instance
+             */
+            AuditLog.prototype.actor = null;
+
+            /**
+             * AuditLog clientIp.
+             * @member {string} clientIp
+             * @memberof flyteidl.admin.AuditLog
+             * @instance
+             */
+            AuditLog.prototype.clientIp = "";
+
+            /**
+             * AuditLog request.
+             * @member {flyteidl.admin.IRequest|null|undefined} request
+             * @memberof flyteidl.admin.AuditLog
+             * @instance
+             */
+            AuditLog.prototype.request = null;
+
+            /**
+             * AuditLog response.
+             * @member {flyteidl.admin.IResponse|null|undefined} response
+             * @memberof flyteidl.admin.AuditLog
+             * @instance
+             */
+            AuditLog.prototype.response = null;
+
+            /**
+             * Creates a new AuditLog instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.AuditLog
+             * @static
+             * @param {flyteidl.admin.IAuditLog=} [properties] Properties to set
+             * @returns {flyteidl.admin.AuditLog} AuditLog instance
+             */
+            AuditLog.create = function create(properties) {
+                return new AuditLog(properties);
+            };
+
+            /**
+             * Encodes the specified AuditLog message. Does not implicitly {@link flyteidl.admin.AuditLog.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.AuditLog
+             * @static
+             * @param {flyteidl.admin.IAuditLog} message AuditLog message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            AuditLog.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.actor != null && message.hasOwnProperty("actor"))
+                    $root.flyteidl.admin.Actor.encode(message.actor, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.clientIp != null && message.hasOwnProperty("clientIp"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.clientIp);
+                if (message.request != null && message.hasOwnProperty("request"))
+                    $root.flyteidl.admin.Request.encode(message.request, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.response != null && message.hasOwnProperty("response"))
+                    $root.flyteidl.admin.Response.encode(message.response, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes an AuditLog message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.AuditLog
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.AuditLog} AuditLog
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            AuditLog.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.AuditLog();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.actor = $root.flyteidl.admin.Actor.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.clientIp = reader.string();
+                        break;
+                    case 3:
+                        message.request = $root.flyteidl.admin.Request.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.response = $root.flyteidl.admin.Response.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an AuditLog message.
+             * @function verify
+             * @memberof flyteidl.admin.AuditLog
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            AuditLog.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.actor != null && message.hasOwnProperty("actor")) {
+                    let error = $root.flyteidl.admin.Actor.verify(message.actor);
+                    if (error)
+                        return "actor." + error;
+                }
+                if (message.clientIp != null && message.hasOwnProperty("clientIp"))
+                    if (!$util.isString(message.clientIp))
+                        return "clientIp: string expected";
+                if (message.request != null && message.hasOwnProperty("request")) {
+                    let error = $root.flyteidl.admin.Request.verify(message.request);
+                    if (error)
+                        return "request." + error;
+                }
+                if (message.response != null && message.hasOwnProperty("response")) {
+                    let error = $root.flyteidl.admin.Response.verify(message.response);
+                    if (error)
+                        return "response." + error;
+                }
+                return null;
+            };
+
+            return AuditLog;
+        })();
+
+        admin.Actor = (function() {
+
+            /**
+             * Properties of an Actor.
+             * @memberof flyteidl.admin
+             * @interface IActor
+             * @property {string|null} [subject] Actor subject
+             * @property {google.protobuf.ITimestamp|null} [tokenIssuedAt] Actor tokenIssuedAt
+             */
+
+            /**
+             * Constructs a new Actor.
+             * @memberof flyteidl.admin
+             * @classdesc Represents an Actor.
+             * @implements IActor
+             * @constructor
+             * @param {flyteidl.admin.IActor=} [properties] Properties to set
+             */
+            function Actor(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Actor subject.
+             * @member {string} subject
+             * @memberof flyteidl.admin.Actor
+             * @instance
+             */
+            Actor.prototype.subject = "";
+
+            /**
+             * Actor tokenIssuedAt.
+             * @member {google.protobuf.ITimestamp|null|undefined} tokenIssuedAt
+             * @memberof flyteidl.admin.Actor
+             * @instance
+             */
+            Actor.prototype.tokenIssuedAt = null;
+
+            /**
+             * Creates a new Actor instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.Actor
+             * @static
+             * @param {flyteidl.admin.IActor=} [properties] Properties to set
+             * @returns {flyteidl.admin.Actor} Actor instance
+             */
+            Actor.create = function create(properties) {
+                return new Actor(properties);
+            };
+
+            /**
+             * Encodes the specified Actor message. Does not implicitly {@link flyteidl.admin.Actor.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.Actor
+             * @static
+             * @param {flyteidl.admin.IActor} message Actor message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Actor.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.subject != null && message.hasOwnProperty("subject"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.subject);
+                if (message.tokenIssuedAt != null && message.hasOwnProperty("tokenIssuedAt"))
+                    $root.google.protobuf.Timestamp.encode(message.tokenIssuedAt, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes an Actor message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.Actor
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.Actor} Actor
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Actor.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Actor();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.subject = reader.string();
+                        break;
+                    case 2:
+                        message.tokenIssuedAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an Actor message.
+             * @function verify
+             * @memberof flyteidl.admin.Actor
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Actor.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.subject != null && message.hasOwnProperty("subject"))
+                    if (!$util.isString(message.subject))
+                        return "subject: string expected";
+                if (message.tokenIssuedAt != null && message.hasOwnProperty("tokenIssuedAt")) {
+                    let error = $root.google.protobuf.Timestamp.verify(message.tokenIssuedAt);
+                    if (error)
+                        return "tokenIssuedAt." + error;
+                }
+                return null;
+            };
+
+            return Actor;
+        })();
+
+        admin.Request = (function() {
+
+            /**
+             * Properties of a Request.
+             * @memberof flyteidl.admin
+             * @interface IRequest
+             * @property {string|null} [method] Request method
+             * @property {string|null} [httpVerb] Request httpVerb
+             * @property {string|null} [parameters] Request parameters
+             * @property {flyteidl.admin.Request.Mode|null} [mode] Request mode
+             * @property {google.protobuf.ITimestamp|null} [receivedAt] Request receivedAt
+             */
+
+            /**
+             * Constructs a new Request.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a Request.
+             * @implements IRequest
+             * @constructor
+             * @param {flyteidl.admin.IRequest=} [properties] Properties to set
+             */
+            function Request(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Request method.
+             * @member {string} method
+             * @memberof flyteidl.admin.Request
+             * @instance
+             */
+            Request.prototype.method = "";
+
+            /**
+             * Request httpVerb.
+             * @member {string} httpVerb
+             * @memberof flyteidl.admin.Request
+             * @instance
+             */
+            Request.prototype.httpVerb = "";
+
+            /**
+             * Request parameters.
+             * @member {string} parameters
+             * @memberof flyteidl.admin.Request
+             * @instance
+             */
+            Request.prototype.parameters = "";
+
+            /**
+             * Request mode.
+             * @member {flyteidl.admin.Request.Mode} mode
+             * @memberof flyteidl.admin.Request
+             * @instance
+             */
+            Request.prototype.mode = 0;
+
+            /**
+             * Request receivedAt.
+             * @member {google.protobuf.ITimestamp|null|undefined} receivedAt
+             * @memberof flyteidl.admin.Request
+             * @instance
+             */
+            Request.prototype.receivedAt = null;
+
+            /**
+             * Creates a new Request instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.Request
+             * @static
+             * @param {flyteidl.admin.IRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.Request} Request instance
+             */
+            Request.create = function create(properties) {
+                return new Request(properties);
+            };
+
+            /**
+             * Encodes the specified Request message. Does not implicitly {@link flyteidl.admin.Request.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.Request
+             * @static
+             * @param {flyteidl.admin.IRequest} message Request message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Request.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.method != null && message.hasOwnProperty("method"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.method);
+                if (message.httpVerb != null && message.hasOwnProperty("httpVerb"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.httpVerb);
+                if (message.parameters != null && message.hasOwnProperty("parameters"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.parameters);
+                if (message.mode != null && message.hasOwnProperty("mode"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.mode);
+                if (message.receivedAt != null && message.hasOwnProperty("receivedAt"))
+                    $root.google.protobuf.Timestamp.encode(message.receivedAt, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a Request message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.Request
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.Request} Request
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Request.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Request();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.method = reader.string();
+                        break;
+                    case 2:
+                        message.httpVerb = reader.string();
+                        break;
+                    case 3:
+                        message.parameters = reader.string();
+                        break;
+                    case 4:
+                        message.mode = reader.int32();
+                        break;
+                    case 5:
+                        message.receivedAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Request message.
+             * @function verify
+             * @memberof flyteidl.admin.Request
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Request.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.method != null && message.hasOwnProperty("method"))
+                    if (!$util.isString(message.method))
+                        return "method: string expected";
+                if (message.httpVerb != null && message.hasOwnProperty("httpVerb"))
+                    if (!$util.isString(message.httpVerb))
+                        return "httpVerb: string expected";
+                if (message.parameters != null && message.hasOwnProperty("parameters"))
+                    if (!$util.isString(message.parameters))
+                        return "parameters: string expected";
+                if (message.mode != null && message.hasOwnProperty("mode"))
+                    switch (message.mode) {
+                    default:
+                        return "mode: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
+                if (message.receivedAt != null && message.hasOwnProperty("receivedAt")) {
+                    let error = $root.google.protobuf.Timestamp.verify(message.receivedAt);
+                    if (error)
+                        return "receivedAt." + error;
+                }
+                return null;
+            };
+
+            /**
+             * Mode enum.
+             * @name flyteidl.admin.Request.Mode
+             * @enum {string}
+             * @property {number} READ_ONLY=0 READ_ONLY value
+             * @property {number} READ_WRITE=1 READ_WRITE value
+             */
+            Request.Mode = (function() {
+                const valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "READ_ONLY"] = 0;
+                values[valuesById[1] = "READ_WRITE"] = 1;
+                return values;
+            })();
+
+            return Request;
+        })();
+
+        admin.Response = (function() {
+
+            /**
+             * Properties of a Response.
+             * @memberof flyteidl.admin
+             * @interface IResponse
+             * @property {string|null} [responseCode] Response responseCode
+             * @property {google.protobuf.ITimestamp|null} [sentAt] Response sentAt
+             */
+
+            /**
+             * Constructs a new Response.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a Response.
+             * @implements IResponse
+             * @constructor
+             * @param {flyteidl.admin.IResponse=} [properties] Properties to set
+             */
+            function Response(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Response responseCode.
+             * @member {string} responseCode
+             * @memberof flyteidl.admin.Response
+             * @instance
+             */
+            Response.prototype.responseCode = "";
+
+            /**
+             * Response sentAt.
+             * @member {google.protobuf.ITimestamp|null|undefined} sentAt
+             * @memberof flyteidl.admin.Response
+             * @instance
+             */
+            Response.prototype.sentAt = null;
+
+            /**
+             * Creates a new Response instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.Response
+             * @static
+             * @param {flyteidl.admin.IResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.Response} Response instance
+             */
+            Response.create = function create(properties) {
+                return new Response(properties);
+            };
+
+            /**
+             * Encodes the specified Response message. Does not implicitly {@link flyteidl.admin.Response.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.Response
+             * @static
+             * @param {flyteidl.admin.IResponse} message Response message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Response.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.responseCode != null && message.hasOwnProperty("responseCode"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.responseCode);
+                if (message.sentAt != null && message.hasOwnProperty("sentAt"))
+                    $root.google.protobuf.Timestamp.encode(message.sentAt, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a Response message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.Response
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.Response} Response
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Response.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Response();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.responseCode = reader.string();
+                        break;
+                    case 2:
+                        message.sentAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Response message.
+             * @function verify
+             * @memberof flyteidl.admin.Response
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Response.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.responseCode != null && message.hasOwnProperty("responseCode"))
+                    if (!$util.isString(message.responseCode))
+                        return "responseCode: string expected";
+                if (message.sentAt != null && message.hasOwnProperty("sentAt")) {
+                    let error = $root.google.protobuf.Timestamp.verify(message.sentAt);
+                    if (error)
+                        return "sentAt." + error;
+                }
+                return null;
+            };
+
+            return Response;
+        })();
+
         admin.NamedEntityIdentifier = (function() {
 
             /**

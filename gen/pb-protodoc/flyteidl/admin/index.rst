@@ -10,6 +10,7 @@ Flyte Admin service over gRPC or REST. The endpoint specification is defined in 
 	:caption: admin
 	:name: admintoc
 
+	audit.proto
 	common.proto
 	event.proto
 	execution.proto
