@@ -15,21 +15,28 @@ Audit log that is emitted on each user request.
 .. code-block:: json
 
   {
-    "actor": "{...}",
+    "principal": "{...}",
     "client_ip": "...",
+    "client_id": "...",
     "request": "{...}",
     "response": "{...}"
   }
 
-.. _api_field_flyteidl.admin.AuditLog.actor:
+.. _api_field_flyteidl.admin.AuditLog.principal:
 
-actor
-  (:ref:`flyteidl.admin.Actor <api_msg_flyteidl.admin.Actor>`) 
+principal
+  (:ref:`flyteidl.admin.Principal <api_msg_flyteidl.admin.Principal>`) 
   
 .. _api_field_flyteidl.admin.AuditLog.client_ip:
 
 client_ip
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+.. _api_field_flyteidl.admin.AuditLog.client_id:
+
+client_id
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The client that initiated the auth flow.
+  
   
 .. _api_field_flyteidl.admin.AuditLog.request:
 
@@ -43,12 +50,12 @@ response
   
 
 
-.. _api_msg_flyteidl.admin.Actor:
+.. _api_msg_flyteidl.admin.Principal:
 
-flyteidl.admin.Actor
---------------------
+flyteidl.admin.Principal
+------------------------
 
-`[flyteidl.admin.Actor proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/audit.proto#L20>`_
+`[flyteidl.admin.Principal proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/audit.proto#L23>`_
 
 Details about the authenticated user who issued a service request.
 
@@ -59,13 +66,13 @@ Details about the authenticated user who issued a service request.
     "token_issued_at": "{...}"
   }
 
-.. _api_field_flyteidl.admin.Actor.subject:
+.. _api_field_flyteidl.admin.Principal.subject:
 
 subject
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Identifies authenticated end-user
   
   
-.. _api_field_flyteidl.admin.Actor.token_issued_at:
+.. _api_field_flyteidl.admin.Principal.token_issued_at:
 
 token_issued_at
   (:ref:`google.protobuf.Timestamp <api_msg_google.protobuf.Timestamp>`) 
@@ -77,7 +84,7 @@ token_issued_at
 flyteidl.admin.Request
 ----------------------
 
-`[flyteidl.admin.Request proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/audit.proto#L28>`_
+`[flyteidl.admin.Request proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/audit.proto#L31>`_
 
 Details about a specific request issued by a user.
 
@@ -86,7 +93,7 @@ Details about a specific request issued by a user.
   {
     "method": "...",
     "http_verb": "...",
-    "parameters": "...",
+    "parameters": "{...}",
     "mode": "...",
     "received_at": "{...}"
   }
@@ -106,7 +113,7 @@ http_verb
 .. _api_field_flyteidl.admin.Request.parameters:
 
 parameters
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Only includes identifier parameters (that is, a subset of all parameters) submitted in the request.
+  (map<`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_, `string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_>) Includes parameters submitted in the request.
   
   
 .. _api_field_flyteidl.admin.Request.mode:
@@ -125,7 +132,7 @@ received_at
 Enum flyteidl.admin.Request.Mode
 --------------------------------
 
-`[flyteidl.admin.Request.Mode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/audit.proto#L38>`_
+`[flyteidl.admin.Request.Mode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/audit.proto#L41>`_
 
 
 .. _api_enum_value_flyteidl.admin.Request.Mode.READ_ONLY:
@@ -144,7 +151,7 @@ READ_WRITE
 flyteidl.admin.Response
 -----------------------
 
-`[flyteidl.admin.Response proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/audit.proto#L48>`_
+`[flyteidl.admin.Response proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/audit.proto#L51>`_
 
 Summary of service response details.
 

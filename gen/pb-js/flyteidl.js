@@ -11300,8 +11300,9 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of an AuditLog.
              * @memberof flyteidl.admin
              * @interface IAuditLog
-             * @property {flyteidl.admin.IActor|null} [actor] AuditLog actor
+             * @property {flyteidl.admin.IPrincipal|null} [principal] AuditLog principal
              * @property {string|null} [clientIp] AuditLog clientIp
+             * @property {string|null} [clientId] AuditLog clientId
              * @property {flyteidl.admin.IRequest|null} [request] AuditLog request
              * @property {flyteidl.admin.IResponse|null} [response] AuditLog response
              */
@@ -11322,12 +11323,12 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * AuditLog actor.
-             * @member {flyteidl.admin.IActor|null|undefined} actor
+             * AuditLog principal.
+             * @member {flyteidl.admin.IPrincipal|null|undefined} principal
              * @memberof flyteidl.admin.AuditLog
              * @instance
              */
-            AuditLog.prototype.actor = null;
+            AuditLog.prototype.principal = null;
 
             /**
              * AuditLog clientIp.
@@ -11336,6 +11337,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             AuditLog.prototype.clientIp = "";
+
+            /**
+             * AuditLog clientId.
+             * @member {string} clientId
+             * @memberof flyteidl.admin.AuditLog
+             * @instance
+             */
+            AuditLog.prototype.clientId = "";
 
             /**
              * AuditLog request.
@@ -11377,14 +11386,16 @@ export const flyteidl = $root.flyteidl = (() => {
             AuditLog.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.actor != null && message.hasOwnProperty("actor"))
-                    $root.flyteidl.admin.Actor.encode(message.actor, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.principal != null && message.hasOwnProperty("principal"))
+                    $root.flyteidl.admin.Principal.encode(message.principal, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.clientIp != null && message.hasOwnProperty("clientIp"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.clientIp);
+                if (message.clientId != null && message.hasOwnProperty("clientId"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.clientId);
                 if (message.request != null && message.hasOwnProperty("request"))
-                    $root.flyteidl.admin.Request.encode(message.request, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    $root.flyteidl.admin.Request.encode(message.request, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.response != null && message.hasOwnProperty("response"))
-                    $root.flyteidl.admin.Response.encode(message.response, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    $root.flyteidl.admin.Response.encode(message.response, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -11407,15 +11418,18 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.actor = $root.flyteidl.admin.Actor.decode(reader, reader.uint32());
+                        message.principal = $root.flyteidl.admin.Principal.decode(reader, reader.uint32());
                         break;
                     case 2:
                         message.clientIp = reader.string();
                         break;
                     case 3:
-                        message.request = $root.flyteidl.admin.Request.decode(reader, reader.uint32());
+                        message.clientId = reader.string();
                         break;
                     case 4:
+                        message.request = $root.flyteidl.admin.Request.decode(reader, reader.uint32());
+                        break;
+                    case 5:
                         message.response = $root.flyteidl.admin.Response.decode(reader, reader.uint32());
                         break;
                     default:
@@ -11437,14 +11451,17 @@ export const flyteidl = $root.flyteidl = (() => {
             AuditLog.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.actor != null && message.hasOwnProperty("actor")) {
-                    let error = $root.flyteidl.admin.Actor.verify(message.actor);
+                if (message.principal != null && message.hasOwnProperty("principal")) {
+                    let error = $root.flyteidl.admin.Principal.verify(message.principal);
                     if (error)
-                        return "actor." + error;
+                        return "principal." + error;
                 }
                 if (message.clientIp != null && message.hasOwnProperty("clientIp"))
                     if (!$util.isString(message.clientIp))
                         return "clientIp: string expected";
+                if (message.clientId != null && message.hasOwnProperty("clientId"))
+                    if (!$util.isString(message.clientId))
+                        return "clientId: string expected";
                 if (message.request != null && message.hasOwnProperty("request")) {
                     let error = $root.flyteidl.admin.Request.verify(message.request);
                     if (error)
@@ -11461,25 +11478,25 @@ export const flyteidl = $root.flyteidl = (() => {
             return AuditLog;
         })();
 
-        admin.Actor = (function() {
+        admin.Principal = (function() {
 
             /**
-             * Properties of an Actor.
+             * Properties of a Principal.
              * @memberof flyteidl.admin
-             * @interface IActor
-             * @property {string|null} [subject] Actor subject
-             * @property {google.protobuf.ITimestamp|null} [tokenIssuedAt] Actor tokenIssuedAt
+             * @interface IPrincipal
+             * @property {string|null} [subject] Principal subject
+             * @property {google.protobuf.ITimestamp|null} [tokenIssuedAt] Principal tokenIssuedAt
              */
 
             /**
-             * Constructs a new Actor.
+             * Constructs a new Principal.
              * @memberof flyteidl.admin
-             * @classdesc Represents an Actor.
-             * @implements IActor
+             * @classdesc Represents a Principal.
+             * @implements IPrincipal
              * @constructor
-             * @param {flyteidl.admin.IActor=} [properties] Properties to set
+             * @param {flyteidl.admin.IPrincipal=} [properties] Properties to set
              */
-            function Actor(properties) {
+            function Principal(properties) {
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -11487,43 +11504,43 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * Actor subject.
+             * Principal subject.
              * @member {string} subject
-             * @memberof flyteidl.admin.Actor
+             * @memberof flyteidl.admin.Principal
              * @instance
              */
-            Actor.prototype.subject = "";
+            Principal.prototype.subject = "";
 
             /**
-             * Actor tokenIssuedAt.
+             * Principal tokenIssuedAt.
              * @member {google.protobuf.ITimestamp|null|undefined} tokenIssuedAt
-             * @memberof flyteidl.admin.Actor
+             * @memberof flyteidl.admin.Principal
              * @instance
              */
-            Actor.prototype.tokenIssuedAt = null;
+            Principal.prototype.tokenIssuedAt = null;
 
             /**
-             * Creates a new Actor instance using the specified properties.
+             * Creates a new Principal instance using the specified properties.
              * @function create
-             * @memberof flyteidl.admin.Actor
+             * @memberof flyteidl.admin.Principal
              * @static
-             * @param {flyteidl.admin.IActor=} [properties] Properties to set
-             * @returns {flyteidl.admin.Actor} Actor instance
+             * @param {flyteidl.admin.IPrincipal=} [properties] Properties to set
+             * @returns {flyteidl.admin.Principal} Principal instance
              */
-            Actor.create = function create(properties) {
-                return new Actor(properties);
+            Principal.create = function create(properties) {
+                return new Principal(properties);
             };
 
             /**
-             * Encodes the specified Actor message. Does not implicitly {@link flyteidl.admin.Actor.verify|verify} messages.
+             * Encodes the specified Principal message. Does not implicitly {@link flyteidl.admin.Principal.verify|verify} messages.
              * @function encode
-             * @memberof flyteidl.admin.Actor
+             * @memberof flyteidl.admin.Principal
              * @static
-             * @param {flyteidl.admin.IActor} message Actor message or plain object to encode
+             * @param {flyteidl.admin.IPrincipal} message Principal message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            Actor.encode = function encode(message, writer) {
+            Principal.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.subject != null && message.hasOwnProperty("subject"))
@@ -11534,20 +11551,20 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Decodes an Actor message from the specified reader or buffer.
+             * Decodes a Principal message from the specified reader or buffer.
              * @function decode
-             * @memberof flyteidl.admin.Actor
+             * @memberof flyteidl.admin.Principal
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.Actor} Actor
+             * @returns {flyteidl.admin.Principal} Principal
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            Actor.decode = function decode(reader, length) {
+            Principal.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Actor();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Principal();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -11566,14 +11583,14 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Verifies an Actor message.
+             * Verifies a Principal message.
              * @function verify
-             * @memberof flyteidl.admin.Actor
+             * @memberof flyteidl.admin.Principal
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            Actor.verify = function verify(message) {
+            Principal.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.subject != null && message.hasOwnProperty("subject"))
@@ -11587,7 +11604,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 return null;
             };
 
-            return Actor;
+            return Principal;
         })();
 
         admin.Request = (function() {
@@ -11598,7 +11615,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IRequest
              * @property {string|null} [method] Request method
              * @property {string|null} [httpVerb] Request httpVerb
-             * @property {string|null} [parameters] Request parameters
+             * @property {Object.<string,string>|null} [parameters] Request parameters
              * @property {flyteidl.admin.Request.Mode|null} [mode] Request mode
              * @property {google.protobuf.ITimestamp|null} [receivedAt] Request receivedAt
              */
@@ -11612,6 +11629,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.admin.IRequest=} [properties] Properties to set
              */
             function Request(properties) {
+                this.parameters = {};
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -11636,11 +11654,11 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * Request parameters.
-             * @member {string} parameters
+             * @member {Object.<string,string>} parameters
              * @memberof flyteidl.admin.Request
              * @instance
              */
-            Request.prototype.parameters = "";
+            Request.prototype.parameters = $util.emptyObject;
 
             /**
              * Request mode.
@@ -11687,7 +11705,8 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.httpVerb != null && message.hasOwnProperty("httpVerb"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.httpVerb);
                 if (message.parameters != null && message.hasOwnProperty("parameters"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.parameters);
+                    for (let keys = Object.keys(message.parameters), i = 0; i < keys.length; ++i)
+                        writer.uint32(/* id 3, wireType 2 =*/26).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.parameters[keys[i]]).ldelim();
                 if (message.mode != null && message.hasOwnProperty("mode"))
                     writer.uint32(/* id 4, wireType 0 =*/32).int32(message.mode);
                 if (message.receivedAt != null && message.hasOwnProperty("receivedAt"))
@@ -11709,7 +11728,7 @@ export const flyteidl = $root.flyteidl = (() => {
             Request.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Request();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Request(), key;
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -11720,7 +11739,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.httpVerb = reader.string();
                         break;
                     case 3:
-                        message.parameters = reader.string();
+                        reader.skip().pos++;
+                        if (message.parameters === $util.emptyObject)
+                            message.parameters = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.parameters[key] = reader.string();
                         break;
                     case 4:
                         message.mode = reader.int32();
@@ -11753,9 +11777,14 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.httpVerb != null && message.hasOwnProperty("httpVerb"))
                     if (!$util.isString(message.httpVerb))
                         return "httpVerb: string expected";
-                if (message.parameters != null && message.hasOwnProperty("parameters"))
-                    if (!$util.isString(message.parameters))
-                        return "parameters: string expected";
+                if (message.parameters != null && message.hasOwnProperty("parameters")) {
+                    if (!$util.isObject(message.parameters))
+                        return "parameters: object expected";
+                    let key = Object.keys(message.parameters);
+                    for (let i = 0; i < key.length; ++i)
+                        if (!$util.isString(message.parameters[key[i]]))
+                            return "parameters: string{k:string} expected";
+                }
                 if (message.mode != null && message.hasOwnProperty("mode"))
                     switch (message.mode) {
                     default:

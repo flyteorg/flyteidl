@@ -43,10 +43,10 @@ func (m *AuditLog) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetActor()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetPrincipal()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return AuditLogValidationError{
-				field:  "Actor",
+				field:  "Principal",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
@@ -54,6 +54,8 @@ func (m *AuditLog) Validate() error {
 	}
 
 	// no validation rules for ClientIp
+
+	// no validation rules for ClientId
 
 	if v, ok := interface{}(m.GetRequest()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
@@ -132,9 +134,9 @@ var _ interface {
 	ErrorName() string
 } = AuditLogValidationError{}
 
-// Validate checks the field values on Actor with the rules defined in the
+// Validate checks the field values on Principal with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.
-func (m *Actor) Validate() error {
+func (m *Principal) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -143,7 +145,7 @@ func (m *Actor) Validate() error {
 
 	if v, ok := interface{}(m.GetTokenIssuedAt()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return ActorValidationError{
+			return PrincipalValidationError{
 				field:  "TokenIssuedAt",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -154,9 +156,9 @@ func (m *Actor) Validate() error {
 	return nil
 }
 
-// ActorValidationError is the validation error returned by Actor.Validate if
-// the designated constraints aren't met.
-type ActorValidationError struct {
+// PrincipalValidationError is the validation error returned by
+// Principal.Validate if the designated constraints aren't met.
+type PrincipalValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -164,22 +166,22 @@ type ActorValidationError struct {
 }
 
 // Field function returns field value.
-func (e ActorValidationError) Field() string { return e.field }
+func (e PrincipalValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e ActorValidationError) Reason() string { return e.reason }
+func (e PrincipalValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e ActorValidationError) Cause() error { return e.cause }
+func (e PrincipalValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e ActorValidationError) Key() bool { return e.key }
+func (e PrincipalValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e ActorValidationError) ErrorName() string { return "ActorValidationError" }
+func (e PrincipalValidationError) ErrorName() string { return "PrincipalValidationError" }
 
 // Error satisfies the builtin error interface
-func (e ActorValidationError) Error() string {
+func (e PrincipalValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -191,14 +193,14 @@ func (e ActorValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sActor.%s: %s%s",
+		"invalid %sPrincipal.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = ActorValidationError{}
+var _ error = PrincipalValidationError{}
 
 var _ interface {
 	Field() string
@@ -206,7 +208,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = ActorValidationError{}
+} = PrincipalValidationError{}
 
 // Validate checks the field values on Request with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.

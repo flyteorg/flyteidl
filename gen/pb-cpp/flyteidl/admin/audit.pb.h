@@ -30,6 +30,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include <google/protobuf/timestamp.pb.h>
@@ -43,7 +46,7 @@ struct TableStruct_flyteidl_2fadmin_2faudit_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[4]
+  static const ::google::protobuf::internal::ParseTable schema[5]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -52,15 +55,18 @@ struct TableStruct_flyteidl_2fadmin_2faudit_2eproto {
 void AddDescriptors_flyteidl_2fadmin_2faudit_2eproto();
 namespace flyteidl {
 namespace admin {
-class Actor;
-class ActorDefaultTypeInternal;
-extern ActorDefaultTypeInternal _Actor_default_instance_;
 class AuditLog;
 class AuditLogDefaultTypeInternal;
 extern AuditLogDefaultTypeInternal _AuditLog_default_instance_;
+class Principal;
+class PrincipalDefaultTypeInternal;
+extern PrincipalDefaultTypeInternal _Principal_default_instance_;
 class Request;
 class RequestDefaultTypeInternal;
 extern RequestDefaultTypeInternal _Request_default_instance_;
+class Request_ParametersEntry_DoNotUse;
+class Request_ParametersEntry_DoNotUseDefaultTypeInternal;
+extern Request_ParametersEntry_DoNotUseDefaultTypeInternal _Request_ParametersEntry_DoNotUse_default_instance_;
 class Response;
 class ResponseDefaultTypeInternal;
 extern ResponseDefaultTypeInternal _Response_default_instance_;
@@ -68,9 +74,10 @@ extern ResponseDefaultTypeInternal _Response_default_instance_;
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
-template<> ::flyteidl::admin::Actor* Arena::CreateMaybeMessage<::flyteidl::admin::Actor>(Arena*);
 template<> ::flyteidl::admin::AuditLog* Arena::CreateMaybeMessage<::flyteidl::admin::AuditLog>(Arena*);
+template<> ::flyteidl::admin::Principal* Arena::CreateMaybeMessage<::flyteidl::admin::Principal>(Arena*);
 template<> ::flyteidl::admin::Request* Arena::CreateMaybeMessage<::flyteidl::admin::Request>(Arena*);
+template<> ::flyteidl::admin::Request_ParametersEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::admin::Request_ParametersEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::admin::Response* Arena::CreateMaybeMessage<::flyteidl::admin::Response>(Arena*);
 }  // namespace protobuf
 }  // namespace google
@@ -209,28 +216,42 @@ class AuditLog final :
   ::std::string* release_client_ip();
   void set_allocated_client_ip(::std::string* client_ip);
 
-  // .flyteidl.admin.Actor actor = 1;
-  bool has_actor() const;
-  void clear_actor();
-  static const int kActorFieldNumber = 1;
-  const ::flyteidl::admin::Actor& actor() const;
-  ::flyteidl::admin::Actor* release_actor();
-  ::flyteidl::admin::Actor* mutable_actor();
-  void set_allocated_actor(::flyteidl::admin::Actor* actor);
+  // string client_id = 3;
+  void clear_client_id();
+  static const int kClientIdFieldNumber = 3;
+  const ::std::string& client_id() const;
+  void set_client_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_client_id(::std::string&& value);
+  #endif
+  void set_client_id(const char* value);
+  void set_client_id(const char* value, size_t size);
+  ::std::string* mutable_client_id();
+  ::std::string* release_client_id();
+  void set_allocated_client_id(::std::string* client_id);
 
-  // .flyteidl.admin.Request request = 3;
+  // .flyteidl.admin.Principal principal = 1;
+  bool has_principal() const;
+  void clear_principal();
+  static const int kPrincipalFieldNumber = 1;
+  const ::flyteidl::admin::Principal& principal() const;
+  ::flyteidl::admin::Principal* release_principal();
+  ::flyteidl::admin::Principal* mutable_principal();
+  void set_allocated_principal(::flyteidl::admin::Principal* principal);
+
+  // .flyteidl.admin.Request request = 4;
   bool has_request() const;
   void clear_request();
-  static const int kRequestFieldNumber = 3;
+  static const int kRequestFieldNumber = 4;
   const ::flyteidl::admin::Request& request() const;
   ::flyteidl::admin::Request* release_request();
   ::flyteidl::admin::Request* mutable_request();
   void set_allocated_request(::flyteidl::admin::Request* request);
 
-  // .flyteidl.admin.Response response = 4;
+  // .flyteidl.admin.Response response = 5;
   bool has_response() const;
   void clear_response();
-  static const int kResponseFieldNumber = 4;
+  static const int kResponseFieldNumber = 5;
   const ::flyteidl::admin::Response& response() const;
   ::flyteidl::admin::Response* release_response();
   ::flyteidl::admin::Response* mutable_response();
@@ -242,7 +263,8 @@ class AuditLog final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr client_ip_;
-  ::flyteidl::admin::Actor* actor_;
+  ::google::protobuf::internal::ArenaStringPtr client_id_;
+  ::flyteidl::admin::Principal* principal_;
   ::flyteidl::admin::Request* request_;
   ::flyteidl::admin::Response* response_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -250,25 +272,25 @@ class AuditLog final :
 };
 // -------------------------------------------------------------------
 
-class Actor final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.Actor) */ {
+class Principal final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.Principal) */ {
  public:
-  Actor();
-  virtual ~Actor();
+  Principal();
+  virtual ~Principal();
 
-  Actor(const Actor& from);
+  Principal(const Principal& from);
 
-  inline Actor& operator=(const Actor& from) {
+  inline Principal& operator=(const Principal& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  Actor(Actor&& from) noexcept
-    : Actor() {
+  Principal(Principal&& from) noexcept
+    : Principal() {
     *this = ::std::move(from);
   }
 
-  inline Actor& operator=(Actor&& from) noexcept {
+  inline Principal& operator=(Principal&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -280,34 +302,34 @@ class Actor final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const Actor& default_instance();
+  static const Principal& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Actor* internal_default_instance() {
-    return reinterpret_cast<const Actor*>(
-               &_Actor_default_instance_);
+  static inline const Principal* internal_default_instance() {
+    return reinterpret_cast<const Principal*>(
+               &_Principal_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  void Swap(Actor* other);
-  friend void swap(Actor& a, Actor& b) {
+  void Swap(Principal* other);
+  friend void swap(Principal& a, Principal& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline Actor* New() const final {
-    return CreateMaybeMessage<Actor>(nullptr);
+  inline Principal* New() const final {
+    return CreateMaybeMessage<Principal>(nullptr);
   }
 
-  Actor* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Actor>(arena);
+  Principal* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Principal>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Actor& from);
-  void MergeFrom(const Actor& from);
+  void CopyFrom(const Principal& from);
+  void MergeFrom(const Principal& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -329,7 +351,7 @@ class Actor final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Actor* other);
+  void InternalSwap(Principal* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -368,7 +390,7 @@ class Actor final :
   ::google::protobuf::Timestamp* mutable_token_issued_at();
   void set_allocated_token_issued_at(::google::protobuf::Timestamp* token_issued_at);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.admin.Actor)
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.Principal)
  private:
   class HasBitSetters;
 
@@ -378,6 +400,30 @@ class Actor final :
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2faudit_2eproto;
 };
+// -------------------------------------------------------------------
+
+class Request_ParametersEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<Request_ParametersEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  typedef ::google::protobuf::internal::MapEntry<Request_ParametersEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  Request_ParametersEntry_DoNotUse();
+  Request_ParametersEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const Request_ParametersEntry_DoNotUse& other);
+  static const Request_ParametersEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Request_ParametersEntry_DoNotUse*>(&_Request_ParametersEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
 // -------------------------------------------------------------------
 
 class Request final :
@@ -418,7 +464,7 @@ class Request final :
                &_Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(Request* other);
   friend void swap(Request& a, Request& b) {
@@ -473,6 +519,7 @@ class Request final :
 
   // nested types ----------------------------------------------------
 
+
   typedef Request_Mode Mode;
   static const Mode READ_ONLY =
     Request_Mode_READ_ONLY;
@@ -500,6 +547,15 @@ class Request final :
   }
 
   // accessors -------------------------------------------------------
+
+  // map<string, string> parameters = 3;
+  int parameters_size() const;
+  void clear_parameters();
+  static const int kParametersFieldNumber = 3;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      parameters() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_parameters();
 
   // string method = 1;
   void clear_method();
@@ -529,20 +585,6 @@ class Request final :
   ::std::string* release_http_verb();
   void set_allocated_http_verb(::std::string* http_verb);
 
-  // string parameters = 3;
-  void clear_parameters();
-  static const int kParametersFieldNumber = 3;
-  const ::std::string& parameters() const;
-  void set_parameters(const ::std::string& value);
-  #if LANG_CXX11
-  void set_parameters(::std::string&& value);
-  #endif
-  void set_parameters(const char* value);
-  void set_parameters(const char* value, size_t size);
-  ::std::string* mutable_parameters();
-  ::std::string* release_parameters();
-  void set_allocated_parameters(::std::string* parameters);
-
   // .google.protobuf.Timestamp received_at = 5;
   bool has_received_at() const;
   void clear_received_at();
@@ -563,9 +605,14 @@ class Request final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      Request_ParametersEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > parameters_;
   ::google::protobuf::internal::ArenaStringPtr method_;
   ::google::protobuf::internal::ArenaStringPtr http_verb_;
-  ::google::protobuf::internal::ArenaStringPtr parameters_;
   ::google::protobuf::Timestamp* received_at_;
   int mode_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -611,7 +658,7 @@ class Response final :
                &_Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(Response* other);
   friend void swap(Response& a, Response& b) {
@@ -712,55 +759,55 @@ class Response final :
 #endif  // __GNUC__
 // AuditLog
 
-// .flyteidl.admin.Actor actor = 1;
-inline bool AuditLog::has_actor() const {
-  return this != internal_default_instance() && actor_ != nullptr;
+// .flyteidl.admin.Principal principal = 1;
+inline bool AuditLog::has_principal() const {
+  return this != internal_default_instance() && principal_ != nullptr;
 }
-inline void AuditLog::clear_actor() {
-  if (GetArenaNoVirtual() == nullptr && actor_ != nullptr) {
-    delete actor_;
+inline void AuditLog::clear_principal() {
+  if (GetArenaNoVirtual() == nullptr && principal_ != nullptr) {
+    delete principal_;
   }
-  actor_ = nullptr;
+  principal_ = nullptr;
 }
-inline const ::flyteidl::admin::Actor& AuditLog::actor() const {
-  const ::flyteidl::admin::Actor* p = actor_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.AuditLog.actor)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::Actor*>(
-      &::flyteidl::admin::_Actor_default_instance_);
+inline const ::flyteidl::admin::Principal& AuditLog::principal() const {
+  const ::flyteidl::admin::Principal* p = principal_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.AuditLog.principal)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::Principal*>(
+      &::flyteidl::admin::_Principal_default_instance_);
 }
-inline ::flyteidl::admin::Actor* AuditLog::release_actor() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.AuditLog.actor)
+inline ::flyteidl::admin::Principal* AuditLog::release_principal() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.AuditLog.principal)
   
-  ::flyteidl::admin::Actor* temp = actor_;
-  actor_ = nullptr;
+  ::flyteidl::admin::Principal* temp = principal_;
+  principal_ = nullptr;
   return temp;
 }
-inline ::flyteidl::admin::Actor* AuditLog::mutable_actor() {
+inline ::flyteidl::admin::Principal* AuditLog::mutable_principal() {
   
-  if (actor_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::Actor>(GetArenaNoVirtual());
-    actor_ = p;
+  if (principal_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::Principal>(GetArenaNoVirtual());
+    principal_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.AuditLog.actor)
-  return actor_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.AuditLog.principal)
+  return principal_;
 }
-inline void AuditLog::set_allocated_actor(::flyteidl::admin::Actor* actor) {
+inline void AuditLog::set_allocated_principal(::flyteidl::admin::Principal* principal) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete actor_;
+    delete principal_;
   }
-  if (actor) {
+  if (principal) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      actor = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, actor, submessage_arena);
+      principal = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, principal, submessage_arena);
     }
     
   } else {
     
   }
-  actor_ = actor;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.AuditLog.actor)
+  principal_ = principal;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.AuditLog.principal)
 }
 
 // string client_ip = 2;
@@ -816,7 +863,60 @@ inline void AuditLog::set_allocated_client_ip(::std::string* client_ip) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.AuditLog.client_ip)
 }
 
-// .flyteidl.admin.Request request = 3;
+// string client_id = 3;
+inline void AuditLog::clear_client_id() {
+  client_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& AuditLog::client_id() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.AuditLog.client_id)
+  return client_id_.GetNoArena();
+}
+inline void AuditLog::set_client_id(const ::std::string& value) {
+  
+  client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.AuditLog.client_id)
+}
+#if LANG_CXX11
+inline void AuditLog::set_client_id(::std::string&& value) {
+  
+  client_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.AuditLog.client_id)
+}
+#endif
+inline void AuditLog::set_client_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.AuditLog.client_id)
+}
+inline void AuditLog::set_client_id(const char* value, size_t size) {
+  
+  client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.AuditLog.client_id)
+}
+inline ::std::string* AuditLog::mutable_client_id() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.AuditLog.client_id)
+  return client_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* AuditLog::release_client_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.AuditLog.client_id)
+  
+  return client_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void AuditLog::set_allocated_client_id(::std::string* client_id) {
+  if (client_id != nullptr) {
+    
+  } else {
+    
+  }
+  client_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), client_id);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.AuditLog.client_id)
+}
+
+// .flyteidl.admin.Request request = 4;
 inline bool AuditLog::has_request() const {
   return this != internal_default_instance() && request_ != nullptr;
 }
@@ -867,7 +967,7 @@ inline void AuditLog::set_allocated_request(::flyteidl::admin::Request* request)
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.AuditLog.request)
 }
 
-// .flyteidl.admin.Response response = 4;
+// .flyteidl.admin.Response response = 5;
 inline bool AuditLog::has_response() const {
   return this != internal_default_instance() && response_ != nullptr;
 }
@@ -920,88 +1020,88 @@ inline void AuditLog::set_allocated_response(::flyteidl::admin::Response* respon
 
 // -------------------------------------------------------------------
 
-// Actor
+// Principal
 
 // string subject = 1;
-inline void Actor::clear_subject() {
+inline void Principal::clear_subject() {
   subject_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& Actor::subject() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.Actor.subject)
+inline const ::std::string& Principal::subject() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Principal.subject)
   return subject_.GetNoArena();
 }
-inline void Actor::set_subject(const ::std::string& value) {
+inline void Principal::set_subject(const ::std::string& value) {
   
   subject_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.Actor.subject)
+  // @@protoc_insertion_point(field_set:flyteidl.admin.Principal.subject)
 }
 #if LANG_CXX11
-inline void Actor::set_subject(::std::string&& value) {
+inline void Principal::set_subject(::std::string&& value) {
   
   subject_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.Actor.subject)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.Principal.subject)
 }
 #endif
-inline void Actor::set_subject(const char* value) {
+inline void Principal::set_subject(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   subject_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.Actor.subject)
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.Principal.subject)
 }
-inline void Actor::set_subject(const char* value, size_t size) {
+inline void Principal::set_subject(const char* value, size_t size) {
   
   subject_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.Actor.subject)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.Principal.subject)
 }
-inline ::std::string* Actor::mutable_subject() {
+inline ::std::string* Principal::mutable_subject() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Actor.subject)
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Principal.subject)
   return subject_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Actor::release_subject() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.Actor.subject)
+inline ::std::string* Principal::release_subject() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.Principal.subject)
   
   return subject_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Actor::set_allocated_subject(::std::string* subject) {
+inline void Principal::set_allocated_subject(::std::string* subject) {
   if (subject != nullptr) {
     
   } else {
     
   }
   subject_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), subject);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Actor.subject)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Principal.subject)
 }
 
 // .google.protobuf.Timestamp token_issued_at = 2;
-inline bool Actor::has_token_issued_at() const {
+inline bool Principal::has_token_issued_at() const {
   return this != internal_default_instance() && token_issued_at_ != nullptr;
 }
-inline const ::google::protobuf::Timestamp& Actor::token_issued_at() const {
+inline const ::google::protobuf::Timestamp& Principal::token_issued_at() const {
   const ::google::protobuf::Timestamp* p = token_issued_at_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.Actor.token_issued_at)
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Principal.token_issued_at)
   return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Timestamp*>(
       &::google::protobuf::_Timestamp_default_instance_);
 }
-inline ::google::protobuf::Timestamp* Actor::release_token_issued_at() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.Actor.token_issued_at)
+inline ::google::protobuf::Timestamp* Principal::release_token_issued_at() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.Principal.token_issued_at)
   
   ::google::protobuf::Timestamp* temp = token_issued_at_;
   token_issued_at_ = nullptr;
   return temp;
 }
-inline ::google::protobuf::Timestamp* Actor::mutable_token_issued_at() {
+inline ::google::protobuf::Timestamp* Principal::mutable_token_issued_at() {
   
   if (token_issued_at_ == nullptr) {
     auto* p = CreateMaybeMessage<::google::protobuf::Timestamp>(GetArenaNoVirtual());
     token_issued_at_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Actor.token_issued_at)
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Principal.token_issued_at)
   return token_issued_at_;
 }
-inline void Actor::set_allocated_token_issued_at(::google::protobuf::Timestamp* token_issued_at) {
+inline void Principal::set_allocated_token_issued_at(::google::protobuf::Timestamp* token_issued_at) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(token_issued_at_);
@@ -1018,8 +1118,10 @@ inline void Actor::set_allocated_token_issued_at(::google::protobuf::Timestamp* 
     
   }
   token_issued_at_ = token_issued_at;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Actor.token_issued_at)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Principal.token_issued_at)
 }
+
+// -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
 
@@ -1131,57 +1233,22 @@ inline void Request::set_allocated_http_verb(::std::string* http_verb) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Request.http_verb)
 }
 
-// string parameters = 3;
+// map<string, string> parameters = 3;
+inline int Request::parameters_size() const {
+  return parameters_.size();
+}
 inline void Request::clear_parameters() {
-  parameters_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  parameters_.Clear();
 }
-inline const ::std::string& Request::parameters() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.Request.parameters)
-  return parameters_.GetNoArena();
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+Request::parameters() const {
+  // @@protoc_insertion_point(field_map:flyteidl.admin.Request.parameters)
+  return parameters_.GetMap();
 }
-inline void Request::set_parameters(const ::std::string& value) {
-  
-  parameters_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.Request.parameters)
-}
-#if LANG_CXX11
-inline void Request::set_parameters(::std::string&& value) {
-  
-  parameters_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.Request.parameters)
-}
-#endif
-inline void Request::set_parameters(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  parameters_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.Request.parameters)
-}
-inline void Request::set_parameters(const char* value, size_t size) {
-  
-  parameters_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.Request.parameters)
-}
-inline ::std::string* Request::mutable_parameters() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Request.parameters)
-  return parameters_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Request::release_parameters() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.Request.parameters)
-  
-  return parameters_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Request::set_allocated_parameters(::std::string* parameters) {
-  if (parameters != nullptr) {
-    
-  } else {
-    
-  }
-  parameters_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), parameters);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Request.parameters)
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+Request::mutable_parameters() {
+  // @@protoc_insertion_point(field_mutable_map:flyteidl.admin.Request.parameters)
+  return parameters_.MutableMap();
 }
 
 // .flyteidl.admin.Request.Mode mode = 4;
@@ -1350,6 +1417,8 @@ inline void Response::set_allocated_sent_at(::google::protobuf::Timestamp* sent_
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

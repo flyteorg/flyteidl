@@ -19,17 +19,17 @@ public final class Audit {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.flyteidl.admin.Actor actor = 1;</code>
+     * <code>.flyteidl.admin.Principal principal = 1;</code>
      */
-    boolean hasActor();
+    boolean hasPrincipal();
     /**
-     * <code>.flyteidl.admin.Actor actor = 1;</code>
+     * <code>.flyteidl.admin.Principal principal = 1;</code>
      */
-    flyteidl.admin.Audit.Actor getActor();
+    flyteidl.admin.Audit.Principal getPrincipal();
     /**
-     * <code>.flyteidl.admin.Actor actor = 1;</code>
+     * <code>.flyteidl.admin.Principal principal = 1;</code>
      */
-    flyteidl.admin.Audit.ActorOrBuilder getActorOrBuilder();
+    flyteidl.admin.Audit.PrincipalOrBuilder getPrincipalOrBuilder();
 
     /**
      * <code>string client_ip = 2;</code>
@@ -42,28 +42,46 @@ public final class Audit {
         getClientIpBytes();
 
     /**
-     * <code>.flyteidl.admin.Request request = 3;</code>
+     * <pre>
+     * The client that initiated the auth flow.
+     * </pre>
+     *
+     * <code>string client_id = 3;</code>
+     */
+    java.lang.String getClientId();
+    /**
+     * <pre>
+     * The client that initiated the auth flow.
+     * </pre>
+     *
+     * <code>string client_id = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getClientIdBytes();
+
+    /**
+     * <code>.flyteidl.admin.Request request = 4;</code>
      */
     boolean hasRequest();
     /**
-     * <code>.flyteidl.admin.Request request = 3;</code>
+     * <code>.flyteidl.admin.Request request = 4;</code>
      */
     flyteidl.admin.Audit.Request getRequest();
     /**
-     * <code>.flyteidl.admin.Request request = 3;</code>
+     * <code>.flyteidl.admin.Request request = 4;</code>
      */
     flyteidl.admin.Audit.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>.flyteidl.admin.Response response = 4;</code>
+     * <code>.flyteidl.admin.Response response = 5;</code>
      */
     boolean hasResponse();
     /**
-     * <code>.flyteidl.admin.Response response = 4;</code>
+     * <code>.flyteidl.admin.Response response = 5;</code>
      */
     flyteidl.admin.Audit.Response getResponse();
     /**
-     * <code>.flyteidl.admin.Response response = 4;</code>
+     * <code>.flyteidl.admin.Response response = 5;</code>
      */
     flyteidl.admin.Audit.ResponseOrBuilder getResponseOrBuilder();
   }
@@ -85,6 +103,7 @@ public final class Audit {
     }
     private AuditLog() {
       clientIp_ = "";
+      clientId_ = "";
     }
 
     @java.lang.Override
@@ -112,14 +131,14 @@ public final class Audit {
               done = true;
               break;
             case 10: {
-              flyteidl.admin.Audit.Actor.Builder subBuilder = null;
-              if (actor_ != null) {
-                subBuilder = actor_.toBuilder();
+              flyteidl.admin.Audit.Principal.Builder subBuilder = null;
+              if (principal_ != null) {
+                subBuilder = principal_.toBuilder();
               }
-              actor_ = input.readMessage(flyteidl.admin.Audit.Actor.parser(), extensionRegistry);
+              principal_ = input.readMessage(flyteidl.admin.Audit.Principal.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(actor_);
-                actor_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(principal_);
+                principal_ = subBuilder.buildPartial();
               }
 
               break;
@@ -131,6 +150,12 @@ public final class Audit {
               break;
             }
             case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientId_ = s;
+              break;
+            }
+            case 34: {
               flyteidl.admin.Audit.Request.Builder subBuilder = null;
               if (request_ != null) {
                 subBuilder = request_.toBuilder();
@@ -143,7 +168,7 @@ public final class Audit {
 
               break;
             }
-            case 34: {
+            case 42: {
               flyteidl.admin.Audit.Response.Builder subBuilder = null;
               if (response_ != null) {
                 subBuilder = response_.toBuilder();
@@ -188,25 +213,25 @@ public final class Audit {
               flyteidl.admin.Audit.AuditLog.class, flyteidl.admin.Audit.AuditLog.Builder.class);
     }
 
-    public static final int ACTOR_FIELD_NUMBER = 1;
-    private flyteidl.admin.Audit.Actor actor_;
+    public static final int PRINCIPAL_FIELD_NUMBER = 1;
+    private flyteidl.admin.Audit.Principal principal_;
     /**
-     * <code>.flyteidl.admin.Actor actor = 1;</code>
+     * <code>.flyteidl.admin.Principal principal = 1;</code>
      */
-    public boolean hasActor() {
-      return actor_ != null;
+    public boolean hasPrincipal() {
+      return principal_ != null;
     }
     /**
-     * <code>.flyteidl.admin.Actor actor = 1;</code>
+     * <code>.flyteidl.admin.Principal principal = 1;</code>
      */
-    public flyteidl.admin.Audit.Actor getActor() {
-      return actor_ == null ? flyteidl.admin.Audit.Actor.getDefaultInstance() : actor_;
+    public flyteidl.admin.Audit.Principal getPrincipal() {
+      return principal_ == null ? flyteidl.admin.Audit.Principal.getDefaultInstance() : principal_;
     }
     /**
-     * <code>.flyteidl.admin.Actor actor = 1;</code>
+     * <code>.flyteidl.admin.Principal principal = 1;</code>
      */
-    public flyteidl.admin.Audit.ActorOrBuilder getActorOrBuilder() {
-      return getActor();
+    public flyteidl.admin.Audit.PrincipalOrBuilder getPrincipalOrBuilder() {
+      return getPrincipal();
     }
 
     public static final int CLIENT_IP_FIELD_NUMBER = 2;
@@ -243,43 +268,85 @@ public final class Audit {
       }
     }
 
-    public static final int REQUEST_FIELD_NUMBER = 3;
+    public static final int CLIENT_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object clientId_;
+    /**
+     * <pre>
+     * The client that initiated the auth flow.
+     * </pre>
+     *
+     * <code>string client_id = 3;</code>
+     */
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The client that initiated the auth flow.
+     * </pre>
+     *
+     * <code>string client_id = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REQUEST_FIELD_NUMBER = 4;
     private flyteidl.admin.Audit.Request request_;
     /**
-     * <code>.flyteidl.admin.Request request = 3;</code>
+     * <code>.flyteidl.admin.Request request = 4;</code>
      */
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>.flyteidl.admin.Request request = 3;</code>
+     * <code>.flyteidl.admin.Request request = 4;</code>
      */
     public flyteidl.admin.Audit.Request getRequest() {
       return request_ == null ? flyteidl.admin.Audit.Request.getDefaultInstance() : request_;
     }
     /**
-     * <code>.flyteidl.admin.Request request = 3;</code>
+     * <code>.flyteidl.admin.Request request = 4;</code>
      */
     public flyteidl.admin.Audit.RequestOrBuilder getRequestOrBuilder() {
       return getRequest();
     }
 
-    public static final int RESPONSE_FIELD_NUMBER = 4;
+    public static final int RESPONSE_FIELD_NUMBER = 5;
     private flyteidl.admin.Audit.Response response_;
     /**
-     * <code>.flyteidl.admin.Response response = 4;</code>
+     * <code>.flyteidl.admin.Response response = 5;</code>
      */
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>.flyteidl.admin.Response response = 4;</code>
+     * <code>.flyteidl.admin.Response response = 5;</code>
      */
     public flyteidl.admin.Audit.Response getResponse() {
       return response_ == null ? flyteidl.admin.Audit.Response.getDefaultInstance() : response_;
     }
     /**
-     * <code>.flyteidl.admin.Response response = 4;</code>
+     * <code>.flyteidl.admin.Response response = 5;</code>
      */
     public flyteidl.admin.Audit.ResponseOrBuilder getResponseOrBuilder() {
       return getResponse();
@@ -299,17 +366,20 @@ public final class Audit {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (actor_ != null) {
-        output.writeMessage(1, getActor());
+      if (principal_ != null) {
+        output.writeMessage(1, getPrincipal());
       }
       if (!getClientIpBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clientIp_);
       }
+      if (!getClientIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clientId_);
+      }
       if (request_ != null) {
-        output.writeMessage(3, getRequest());
+        output.writeMessage(4, getRequest());
       }
       if (response_ != null) {
-        output.writeMessage(4, getResponse());
+        output.writeMessage(5, getResponse());
       }
       unknownFields.writeTo(output);
     }
@@ -320,20 +390,23 @@ public final class Audit {
       if (size != -1) return size;
 
       size = 0;
-      if (actor_ != null) {
+      if (principal_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getActor());
+          .computeMessageSize(1, getPrincipal());
       }
       if (!getClientIpBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clientIp_);
       }
+      if (!getClientIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clientId_);
+      }
       if (request_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getRequest());
+          .computeMessageSize(4, getRequest());
       }
       if (response_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getResponse());
+          .computeMessageSize(5, getResponse());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -350,13 +423,15 @@ public final class Audit {
       }
       flyteidl.admin.Audit.AuditLog other = (flyteidl.admin.Audit.AuditLog) obj;
 
-      if (hasActor() != other.hasActor()) return false;
-      if (hasActor()) {
-        if (!getActor()
-            .equals(other.getActor())) return false;
+      if (hasPrincipal() != other.hasPrincipal()) return false;
+      if (hasPrincipal()) {
+        if (!getPrincipal()
+            .equals(other.getPrincipal())) return false;
       }
       if (!getClientIp()
           .equals(other.getClientIp())) return false;
+      if (!getClientId()
+          .equals(other.getClientId())) return false;
       if (hasRequest() != other.hasRequest()) return false;
       if (hasRequest()) {
         if (!getRequest()
@@ -378,12 +453,14 @@ public final class Audit {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasActor()) {
-        hash = (37 * hash) + ACTOR_FIELD_NUMBER;
-        hash = (53 * hash) + getActor().hashCode();
+      if (hasPrincipal()) {
+        hash = (37 * hash) + PRINCIPAL_FIELD_NUMBER;
+        hash = (53 * hash) + getPrincipal().hashCode();
       }
       hash = (37 * hash) + CLIENT_IP_FIELD_NUMBER;
       hash = (53 * hash) + getClientIp().hashCode();
+      hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getClientId().hashCode();
       if (hasRequest()) {
         hash = (37 * hash) + REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getRequest().hashCode();
@@ -529,13 +606,15 @@ public final class Audit {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (actorBuilder_ == null) {
-          actor_ = null;
+        if (principalBuilder_ == null) {
+          principal_ = null;
         } else {
-          actor_ = null;
-          actorBuilder_ = null;
+          principal_ = null;
+          principalBuilder_ = null;
         }
         clientIp_ = "";
+
+        clientId_ = "";
 
         if (requestBuilder_ == null) {
           request_ = null;
@@ -575,12 +654,13 @@ public final class Audit {
       @java.lang.Override
       public flyteidl.admin.Audit.AuditLog buildPartial() {
         flyteidl.admin.Audit.AuditLog result = new flyteidl.admin.Audit.AuditLog(this);
-        if (actorBuilder_ == null) {
-          result.actor_ = actor_;
+        if (principalBuilder_ == null) {
+          result.principal_ = principal_;
         } else {
-          result.actor_ = actorBuilder_.build();
+          result.principal_ = principalBuilder_.build();
         }
         result.clientIp_ = clientIp_;
+        result.clientId_ = clientId_;
         if (requestBuilder_ == null) {
           result.request_ = request_;
         } else {
@@ -639,11 +719,15 @@ public final class Audit {
 
       public Builder mergeFrom(flyteidl.admin.Audit.AuditLog other) {
         if (other == flyteidl.admin.Audit.AuditLog.getDefaultInstance()) return this;
-        if (other.hasActor()) {
-          mergeActor(other.getActor());
+        if (other.hasPrincipal()) {
+          mergePrincipal(other.getPrincipal());
         }
         if (!other.getClientIp().isEmpty()) {
           clientIp_ = other.clientIp_;
+          onChanged();
+        }
+        if (!other.getClientId().isEmpty()) {
+          clientId_ = other.clientId_;
           onChanged();
         }
         if (other.hasRequest()) {
@@ -681,121 +765,121 @@ public final class Audit {
         return this;
       }
 
-      private flyteidl.admin.Audit.Actor actor_;
+      private flyteidl.admin.Audit.Principal principal_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Audit.Actor, flyteidl.admin.Audit.Actor.Builder, flyteidl.admin.Audit.ActorOrBuilder> actorBuilder_;
+          flyteidl.admin.Audit.Principal, flyteidl.admin.Audit.Principal.Builder, flyteidl.admin.Audit.PrincipalOrBuilder> principalBuilder_;
       /**
-       * <code>.flyteidl.admin.Actor actor = 1;</code>
+       * <code>.flyteidl.admin.Principal principal = 1;</code>
        */
-      public boolean hasActor() {
-        return actorBuilder_ != null || actor_ != null;
+      public boolean hasPrincipal() {
+        return principalBuilder_ != null || principal_ != null;
       }
       /**
-       * <code>.flyteidl.admin.Actor actor = 1;</code>
+       * <code>.flyteidl.admin.Principal principal = 1;</code>
        */
-      public flyteidl.admin.Audit.Actor getActor() {
-        if (actorBuilder_ == null) {
-          return actor_ == null ? flyteidl.admin.Audit.Actor.getDefaultInstance() : actor_;
+      public flyteidl.admin.Audit.Principal getPrincipal() {
+        if (principalBuilder_ == null) {
+          return principal_ == null ? flyteidl.admin.Audit.Principal.getDefaultInstance() : principal_;
         } else {
-          return actorBuilder_.getMessage();
+          return principalBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.admin.Actor actor = 1;</code>
+       * <code>.flyteidl.admin.Principal principal = 1;</code>
        */
-      public Builder setActor(flyteidl.admin.Audit.Actor value) {
-        if (actorBuilder_ == null) {
+      public Builder setPrincipal(flyteidl.admin.Audit.Principal value) {
+        if (principalBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          actor_ = value;
+          principal_ = value;
           onChanged();
         } else {
-          actorBuilder_.setMessage(value);
+          principalBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Actor actor = 1;</code>
+       * <code>.flyteidl.admin.Principal principal = 1;</code>
        */
-      public Builder setActor(
-          flyteidl.admin.Audit.Actor.Builder builderForValue) {
-        if (actorBuilder_ == null) {
-          actor_ = builderForValue.build();
+      public Builder setPrincipal(
+          flyteidl.admin.Audit.Principal.Builder builderForValue) {
+        if (principalBuilder_ == null) {
+          principal_ = builderForValue.build();
           onChanged();
         } else {
-          actorBuilder_.setMessage(builderForValue.build());
+          principalBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Actor actor = 1;</code>
+       * <code>.flyteidl.admin.Principal principal = 1;</code>
        */
-      public Builder mergeActor(flyteidl.admin.Audit.Actor value) {
-        if (actorBuilder_ == null) {
-          if (actor_ != null) {
-            actor_ =
-              flyteidl.admin.Audit.Actor.newBuilder(actor_).mergeFrom(value).buildPartial();
+      public Builder mergePrincipal(flyteidl.admin.Audit.Principal value) {
+        if (principalBuilder_ == null) {
+          if (principal_ != null) {
+            principal_ =
+              flyteidl.admin.Audit.Principal.newBuilder(principal_).mergeFrom(value).buildPartial();
           } else {
-            actor_ = value;
+            principal_ = value;
           }
           onChanged();
         } else {
-          actorBuilder_.mergeFrom(value);
+          principalBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Actor actor = 1;</code>
+       * <code>.flyteidl.admin.Principal principal = 1;</code>
        */
-      public Builder clearActor() {
-        if (actorBuilder_ == null) {
-          actor_ = null;
+      public Builder clearPrincipal() {
+        if (principalBuilder_ == null) {
+          principal_ = null;
           onChanged();
         } else {
-          actor_ = null;
-          actorBuilder_ = null;
+          principal_ = null;
+          principalBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Actor actor = 1;</code>
+       * <code>.flyteidl.admin.Principal principal = 1;</code>
        */
-      public flyteidl.admin.Audit.Actor.Builder getActorBuilder() {
+      public flyteidl.admin.Audit.Principal.Builder getPrincipalBuilder() {
         
         onChanged();
-        return getActorFieldBuilder().getBuilder();
+        return getPrincipalFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.Actor actor = 1;</code>
+       * <code>.flyteidl.admin.Principal principal = 1;</code>
        */
-      public flyteidl.admin.Audit.ActorOrBuilder getActorOrBuilder() {
-        if (actorBuilder_ != null) {
-          return actorBuilder_.getMessageOrBuilder();
+      public flyteidl.admin.Audit.PrincipalOrBuilder getPrincipalOrBuilder() {
+        if (principalBuilder_ != null) {
+          return principalBuilder_.getMessageOrBuilder();
         } else {
-          return actor_ == null ?
-              flyteidl.admin.Audit.Actor.getDefaultInstance() : actor_;
+          return principal_ == null ?
+              flyteidl.admin.Audit.Principal.getDefaultInstance() : principal_;
         }
       }
       /**
-       * <code>.flyteidl.admin.Actor actor = 1;</code>
+       * <code>.flyteidl.admin.Principal principal = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Audit.Actor, flyteidl.admin.Audit.Actor.Builder, flyteidl.admin.Audit.ActorOrBuilder> 
-          getActorFieldBuilder() {
-        if (actorBuilder_ == null) {
-          actorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.Audit.Actor, flyteidl.admin.Audit.Actor.Builder, flyteidl.admin.Audit.ActorOrBuilder>(
-                  getActor(),
+          flyteidl.admin.Audit.Principal, flyteidl.admin.Audit.Principal.Builder, flyteidl.admin.Audit.PrincipalOrBuilder> 
+          getPrincipalFieldBuilder() {
+        if (principalBuilder_ == null) {
+          principalBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.Audit.Principal, flyteidl.admin.Audit.Principal.Builder, flyteidl.admin.Audit.PrincipalOrBuilder>(
+                  getPrincipal(),
                   getParentForChildren(),
                   isClean());
-          actor_ = null;
+          principal_ = null;
         }
-        return actorBuilder_;
+        return principalBuilder_;
       }
 
       private java.lang.Object clientIp_ = "";
@@ -867,17 +951,106 @@ public final class Audit {
         return this;
       }
 
+      private java.lang.Object clientId_ = "";
+      /**
+       * <pre>
+       * The client that initiated the auth flow.
+       * </pre>
+       *
+       * <code>string client_id = 3;</code>
+       */
+      public java.lang.String getClientId() {
+        java.lang.Object ref = clientId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clientId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The client that initiated the auth flow.
+       * </pre>
+       *
+       * <code>string client_id = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getClientIdBytes() {
+        java.lang.Object ref = clientId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The client that initiated the auth flow.
+       * </pre>
+       *
+       * <code>string client_id = 3;</code>
+       */
+      public Builder setClientId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        clientId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The client that initiated the auth flow.
+       * </pre>
+       *
+       * <code>string client_id = 3;</code>
+       */
+      public Builder clearClientId() {
+        
+        clientId_ = getDefaultInstance().getClientId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The client that initiated the auth flow.
+       * </pre>
+       *
+       * <code>string client_id = 3;</code>
+       */
+      public Builder setClientIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        clientId_ = value;
+        onChanged();
+        return this;
+      }
+
       private flyteidl.admin.Audit.Request request_;
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Audit.Request, flyteidl.admin.Audit.Request.Builder, flyteidl.admin.Audit.RequestOrBuilder> requestBuilder_;
       /**
-       * <code>.flyteidl.admin.Request request = 3;</code>
+       * <code>.flyteidl.admin.Request request = 4;</code>
        */
       public boolean hasRequest() {
         return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>.flyteidl.admin.Request request = 3;</code>
+       * <code>.flyteidl.admin.Request request = 4;</code>
        */
       public flyteidl.admin.Audit.Request getRequest() {
         if (requestBuilder_ == null) {
@@ -887,7 +1060,7 @@ public final class Audit {
         }
       }
       /**
-       * <code>.flyteidl.admin.Request request = 3;</code>
+       * <code>.flyteidl.admin.Request request = 4;</code>
        */
       public Builder setRequest(flyteidl.admin.Audit.Request value) {
         if (requestBuilder_ == null) {
@@ -903,7 +1076,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Request request = 3;</code>
+       * <code>.flyteidl.admin.Request request = 4;</code>
        */
       public Builder setRequest(
           flyteidl.admin.Audit.Request.Builder builderForValue) {
@@ -917,7 +1090,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Request request = 3;</code>
+       * <code>.flyteidl.admin.Request request = 4;</code>
        */
       public Builder mergeRequest(flyteidl.admin.Audit.Request value) {
         if (requestBuilder_ == null) {
@@ -935,7 +1108,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Request request = 3;</code>
+       * <code>.flyteidl.admin.Request request = 4;</code>
        */
       public Builder clearRequest() {
         if (requestBuilder_ == null) {
@@ -949,7 +1122,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Request request = 3;</code>
+       * <code>.flyteidl.admin.Request request = 4;</code>
        */
       public flyteidl.admin.Audit.Request.Builder getRequestBuilder() {
         
@@ -957,7 +1130,7 @@ public final class Audit {
         return getRequestFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.Request request = 3;</code>
+       * <code>.flyteidl.admin.Request request = 4;</code>
        */
       public flyteidl.admin.Audit.RequestOrBuilder getRequestOrBuilder() {
         if (requestBuilder_ != null) {
@@ -968,7 +1141,7 @@ public final class Audit {
         }
       }
       /**
-       * <code>.flyteidl.admin.Request request = 3;</code>
+       * <code>.flyteidl.admin.Request request = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Audit.Request, flyteidl.admin.Audit.Request.Builder, flyteidl.admin.Audit.RequestOrBuilder> 
@@ -988,13 +1161,13 @@ public final class Audit {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Audit.Response, flyteidl.admin.Audit.Response.Builder, flyteidl.admin.Audit.ResponseOrBuilder> responseBuilder_;
       /**
-       * <code>.flyteidl.admin.Response response = 4;</code>
+       * <code>.flyteidl.admin.Response response = 5;</code>
        */
       public boolean hasResponse() {
         return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>.flyteidl.admin.Response response = 4;</code>
+       * <code>.flyteidl.admin.Response response = 5;</code>
        */
       public flyteidl.admin.Audit.Response getResponse() {
         if (responseBuilder_ == null) {
@@ -1004,7 +1177,7 @@ public final class Audit {
         }
       }
       /**
-       * <code>.flyteidl.admin.Response response = 4;</code>
+       * <code>.flyteidl.admin.Response response = 5;</code>
        */
       public Builder setResponse(flyteidl.admin.Audit.Response value) {
         if (responseBuilder_ == null) {
@@ -1020,7 +1193,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Response response = 4;</code>
+       * <code>.flyteidl.admin.Response response = 5;</code>
        */
       public Builder setResponse(
           flyteidl.admin.Audit.Response.Builder builderForValue) {
@@ -1034,7 +1207,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Response response = 4;</code>
+       * <code>.flyteidl.admin.Response response = 5;</code>
        */
       public Builder mergeResponse(flyteidl.admin.Audit.Response value) {
         if (responseBuilder_ == null) {
@@ -1052,7 +1225,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Response response = 4;</code>
+       * <code>.flyteidl.admin.Response response = 5;</code>
        */
       public Builder clearResponse() {
         if (responseBuilder_ == null) {
@@ -1066,7 +1239,7 @@ public final class Audit {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.Response response = 4;</code>
+       * <code>.flyteidl.admin.Response response = 5;</code>
        */
       public flyteidl.admin.Audit.Response.Builder getResponseBuilder() {
         
@@ -1074,7 +1247,7 @@ public final class Audit {
         return getResponseFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.Response response = 4;</code>
+       * <code>.flyteidl.admin.Response response = 5;</code>
        */
       public flyteidl.admin.Audit.ResponseOrBuilder getResponseOrBuilder() {
         if (responseBuilder_ != null) {
@@ -1085,7 +1258,7 @@ public final class Audit {
         }
       }
       /**
-       * <code>.flyteidl.admin.Response response = 4;</code>
+       * <code>.flyteidl.admin.Response response = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Audit.Response, flyteidl.admin.Audit.Response.Builder, flyteidl.admin.Audit.ResponseOrBuilder> 
@@ -1153,8 +1326,8 @@ public final class Audit {
 
   }
 
-  public interface ActorOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.admin.Actor)
+  public interface PrincipalOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.Principal)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1193,18 +1366,18 @@ public final class Audit {
    * Details about the authenticated user who issued a service request.
    * </pre>
    *
-   * Protobuf type {@code flyteidl.admin.Actor}
+   * Protobuf type {@code flyteidl.admin.Principal}
    */
-  public  static final class Actor extends
+  public  static final class Principal extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.Actor)
-      ActorOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.Principal)
+      PrincipalOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use Actor.newBuilder() to construct.
-    private Actor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Principal.newBuilder() to construct.
+    private Principal(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Actor() {
+    private Principal() {
       subject_ = "";
     }
 
@@ -1213,7 +1386,7 @@ public final class Audit {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Actor(
+    private Principal(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1272,15 +1445,15 @@ public final class Audit {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.admin.Audit.internal_static_flyteidl_admin_Actor_descriptor;
+      return flyteidl.admin.Audit.internal_static_flyteidl_admin_Principal_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.admin.Audit.internal_static_flyteidl_admin_Actor_fieldAccessorTable
+      return flyteidl.admin.Audit.internal_static_flyteidl_admin_Principal_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.admin.Audit.Actor.class, flyteidl.admin.Audit.Actor.Builder.class);
+              flyteidl.admin.Audit.Principal.class, flyteidl.admin.Audit.Principal.Builder.class);
     }
 
     public static final int SUBJECT_FIELD_NUMBER = 1;
@@ -1392,10 +1565,10 @@ public final class Audit {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.admin.Audit.Actor)) {
+      if (!(obj instanceof flyteidl.admin.Audit.Principal)) {
         return super.equals(obj);
       }
-      flyteidl.admin.Audit.Actor other = (flyteidl.admin.Audit.Actor) obj;
+      flyteidl.admin.Audit.Principal other = (flyteidl.admin.Audit.Principal) obj;
 
       if (!getSubject()
           .equals(other.getSubject())) return false;
@@ -1426,69 +1599,69 @@ public final class Audit {
       return hash;
     }
 
-    public static flyteidl.admin.Audit.Actor parseFrom(
+    public static flyteidl.admin.Audit.Principal parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.Audit.Actor parseFrom(
+    public static flyteidl.admin.Audit.Principal parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.Audit.Actor parseFrom(
+    public static flyteidl.admin.Audit.Principal parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.Audit.Actor parseFrom(
+    public static flyteidl.admin.Audit.Principal parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.Audit.Actor parseFrom(byte[] data)
+    public static flyteidl.admin.Audit.Principal parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.Audit.Actor parseFrom(
+    public static flyteidl.admin.Audit.Principal parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.Audit.Actor parseFrom(java.io.InputStream input)
+    public static flyteidl.admin.Audit.Principal parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.Audit.Actor parseFrom(
+    public static flyteidl.admin.Audit.Principal parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.Audit.Actor parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.admin.Audit.Principal parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.Audit.Actor parseDelimitedFrom(
+    public static flyteidl.admin.Audit.Principal parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.Audit.Actor parseFrom(
+    public static flyteidl.admin.Audit.Principal parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.Audit.Actor parseFrom(
+    public static flyteidl.admin.Audit.Principal parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1501,7 +1674,7 @@ public final class Audit {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.admin.Audit.Actor prototype) {
+    public static Builder newBuilder(flyteidl.admin.Audit.Principal prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1521,26 +1694,26 @@ public final class Audit {
      * Details about the authenticated user who issued a service request.
      * </pre>
      *
-     * Protobuf type {@code flyteidl.admin.Actor}
+     * Protobuf type {@code flyteidl.admin.Principal}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.Actor)
-        flyteidl.admin.Audit.ActorOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.Principal)
+        flyteidl.admin.Audit.PrincipalOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.admin.Audit.internal_static_flyteidl_admin_Actor_descriptor;
+        return flyteidl.admin.Audit.internal_static_flyteidl_admin_Principal_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.admin.Audit.internal_static_flyteidl_admin_Actor_fieldAccessorTable
+        return flyteidl.admin.Audit.internal_static_flyteidl_admin_Principal_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.admin.Audit.Actor.class, flyteidl.admin.Audit.Actor.Builder.class);
+                flyteidl.admin.Audit.Principal.class, flyteidl.admin.Audit.Principal.Builder.class);
       }
 
-      // Construct using flyteidl.admin.Audit.Actor.newBuilder()
+      // Construct using flyteidl.admin.Audit.Principal.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1572,17 +1745,17 @@ public final class Audit {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.admin.Audit.internal_static_flyteidl_admin_Actor_descriptor;
+        return flyteidl.admin.Audit.internal_static_flyteidl_admin_Principal_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.admin.Audit.Actor getDefaultInstanceForType() {
-        return flyteidl.admin.Audit.Actor.getDefaultInstance();
+      public flyteidl.admin.Audit.Principal getDefaultInstanceForType() {
+        return flyteidl.admin.Audit.Principal.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.admin.Audit.Actor build() {
-        flyteidl.admin.Audit.Actor result = buildPartial();
+      public flyteidl.admin.Audit.Principal build() {
+        flyteidl.admin.Audit.Principal result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1590,8 +1763,8 @@ public final class Audit {
       }
 
       @java.lang.Override
-      public flyteidl.admin.Audit.Actor buildPartial() {
-        flyteidl.admin.Audit.Actor result = new flyteidl.admin.Audit.Actor(this);
+      public flyteidl.admin.Audit.Principal buildPartial() {
+        flyteidl.admin.Audit.Principal result = new flyteidl.admin.Audit.Principal(this);
         result.subject_ = subject_;
         if (tokenIssuedAtBuilder_ == null) {
           result.tokenIssuedAt_ = tokenIssuedAt_;
@@ -1636,16 +1809,16 @@ public final class Audit {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.Audit.Actor) {
-          return mergeFrom((flyteidl.admin.Audit.Actor)other);
+        if (other instanceof flyteidl.admin.Audit.Principal) {
+          return mergeFrom((flyteidl.admin.Audit.Principal)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.admin.Audit.Actor other) {
-        if (other == flyteidl.admin.Audit.Actor.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.admin.Audit.Principal other) {
+        if (other == flyteidl.admin.Audit.Principal.getDefaultInstance()) return this;
         if (!other.getSubject().isEmpty()) {
           subject_ = other.subject_;
           onChanged();
@@ -1668,11 +1841,11 @@ public final class Audit {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.admin.Audit.Actor parsedMessage = null;
+        flyteidl.admin.Audit.Principal parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.Audit.Actor) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.admin.Audit.Principal) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1900,41 +2073,41 @@ public final class Audit {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.admin.Actor)
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.Principal)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.admin.Actor)
-    private static final flyteidl.admin.Audit.Actor DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.Principal)
+    private static final flyteidl.admin.Audit.Principal DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.admin.Audit.Actor();
+      DEFAULT_INSTANCE = new flyteidl.admin.Audit.Principal();
     }
 
-    public static flyteidl.admin.Audit.Actor getDefaultInstance() {
+    public static flyteidl.admin.Audit.Principal getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Actor>
-        PARSER = new com.google.protobuf.AbstractParser<Actor>() {
+    private static final com.google.protobuf.Parser<Principal>
+        PARSER = new com.google.protobuf.AbstractParser<Principal>() {
       @java.lang.Override
-      public Actor parsePartialFrom(
+      public Principal parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Actor(input, extensionRegistry);
+        return new Principal(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<Actor> parser() {
+    public static com.google.protobuf.Parser<Principal> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Actor> getParserForType() {
+    public com.google.protobuf.Parser<Principal> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.admin.Audit.Actor getDefaultInstanceForType() {
+    public flyteidl.admin.Audit.Principal getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1982,21 +2155,57 @@ public final class Audit {
 
     /**
      * <pre>
-     * Only includes identifier parameters (that is, a subset of all parameters) submitted in the request.
+     * Includes parameters submitted in the request.
      * </pre>
      *
-     * <code>string parameters = 3;</code>
+     * <code>map&lt;string, string&gt; parameters = 3;</code>
      */
-    java.lang.String getParameters();
+    int getParametersCount();
     /**
      * <pre>
-     * Only includes identifier parameters (that is, a subset of all parameters) submitted in the request.
+     * Includes parameters submitted in the request.
      * </pre>
      *
-     * <code>string parameters = 3;</code>
+     * <code>map&lt;string, string&gt; parameters = 3;</code>
      */
-    com.google.protobuf.ByteString
-        getParametersBytes();
+    boolean containsParameters(
+        java.lang.String key);
+    /**
+     * Use {@link #getParametersMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getParameters();
+    /**
+     * <pre>
+     * Includes parameters submitted in the request.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; parameters = 3;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getParametersMap();
+    /**
+     * <pre>
+     * Includes parameters submitted in the request.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; parameters = 3;</code>
+     */
+
+    java.lang.String getParametersOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <pre>
+     * Includes parameters submitted in the request.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; parameters = 3;</code>
+     */
+
+    java.lang.String getParametersOrThrow(
+        java.lang.String key);
 
     /**
      * <code>.flyteidl.admin.Request.Mode mode = 4;</code>
@@ -2039,7 +2248,6 @@ public final class Audit {
     private Request() {
       method_ = "";
       httpVerb_ = "";
-      parameters_ = "";
       mode_ = 0;
     }
 
@@ -2080,9 +2288,16 @@ public final class Audit {
               break;
             }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              parameters_ = s;
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                parameters_ = com.google.protobuf.MapField.newMapField(
+                    ParametersDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              parameters__ = input.readMessage(
+                  ParametersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              parameters_.getMutableMap().put(
+                  parameters__.getKey(), parameters__.getValue());
               break;
             }
             case 32: {
@@ -2128,6 +2343,18 @@ public final class Audit {
       return flyteidl.admin.Audit.internal_static_flyteidl_admin_Request_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetParameters();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -2234,6 +2461,7 @@ public final class Audit {
       // @@protoc_insertion_point(enum_scope:flyteidl.admin.Request.Mode)
     }
 
+    private int bitField0_;
     public static final int METHOD_FIELD_NUMBER = 1;
     private volatile java.lang.Object method_;
     /**
@@ -2319,45 +2547,95 @@ public final class Audit {
     }
 
     public static final int PARAMETERS_FIELD_NUMBER = 3;
-    private volatile java.lang.Object parameters_;
-    /**
-     * <pre>
-     * Only includes identifier parameters (that is, a subset of all parameters) submitted in the request.
-     * </pre>
-     *
-     * <code>string parameters = 3;</code>
-     */
-    public java.lang.String getParameters() {
-      java.lang.Object ref = parameters_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        parameters_ = s;
-        return s;
+    private static final class ParametersDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  flyteidl.admin.Audit.internal_static_flyteidl_admin_Request_ParametersEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> parameters_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetParameters() {
+      if (parameters_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ParametersDefaultEntryHolder.defaultEntry);
       }
+      return parameters_;
+    }
+
+    public int getParametersCount() {
+      return internalGetParameters().getMap().size();
     }
     /**
      * <pre>
-     * Only includes identifier parameters (that is, a subset of all parameters) submitted in the request.
+     * Includes parameters submitted in the request.
      * </pre>
      *
-     * <code>string parameters = 3;</code>
+     * <code>map&lt;string, string&gt; parameters = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getParametersBytes() {
-      java.lang.Object ref = parameters_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        parameters_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+
+    public boolean containsParameters(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetParameters().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getParametersMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getParameters() {
+      return getParametersMap();
+    }
+    /**
+     * <pre>
+     * Includes parameters submitted in the request.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; parameters = 3;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
+      return internalGetParameters().getMap();
+    }
+    /**
+     * <pre>
+     * Includes parameters submitted in the request.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; parameters = 3;</code>
+     */
+
+    public java.lang.String getParametersOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetParameters().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Includes parameters submitted in the request.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; parameters = 3;</code>
+     */
+
+    public java.lang.String getParametersOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetParameters().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
       }
+      return map.get(key);
     }
 
     public static final int MODE_FIELD_NUMBER = 4;
@@ -2418,9 +2696,12 @@ public final class Audit {
       if (!getHttpVerbBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, httpVerb_);
       }
-      if (!getParametersBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, parameters_);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetParameters(),
+          ParametersDefaultEntryHolder.defaultEntry,
+          3);
       if (mode_ != flyteidl.admin.Audit.Request.Mode.READ_ONLY.getNumber()) {
         output.writeEnum(4, mode_);
       }
@@ -2442,8 +2723,15 @@ public final class Audit {
       if (!getHttpVerbBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, httpVerb_);
       }
-      if (!getParametersBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, parameters_);
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetParameters().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        parameters__ = ParametersDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, parameters__);
       }
       if (mode_ != flyteidl.admin.Audit.Request.Mode.READ_ONLY.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -2472,8 +2760,8 @@ public final class Audit {
           .equals(other.getMethod())) return false;
       if (!getHttpVerb()
           .equals(other.getHttpVerb())) return false;
-      if (!getParameters()
-          .equals(other.getParameters())) return false;
+      if (!internalGetParameters().equals(
+          other.internalGetParameters())) return false;
       if (mode_ != other.mode_) return false;
       if (hasReceivedAt() != other.hasReceivedAt()) return false;
       if (hasReceivedAt()) {
@@ -2495,8 +2783,10 @@ public final class Audit {
       hash = (53 * hash) + getMethod().hashCode();
       hash = (37 * hash) + HTTP_VERB_FIELD_NUMBER;
       hash = (53 * hash) + getHttpVerb().hashCode();
-      hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
-      hash = (53 * hash) + getParameters().hashCode();
+      if (!internalGetParameters().getMap().isEmpty()) {
+        hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetParameters().hashCode();
+      }
       hash = (37 * hash) + MODE_FIELD_NUMBER;
       hash = (53 * hash) + mode_;
       if (hasReceivedAt()) {
@@ -2614,6 +2904,28 @@ public final class Audit {
         return flyteidl.admin.Audit.internal_static_flyteidl_admin_Request_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 3:
+            return internalGetParameters();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 3:
+            return internalGetMutableParameters();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -2644,8 +2956,7 @@ public final class Audit {
 
         httpVerb_ = "";
 
-        parameters_ = "";
-
+        internalGetMutableParameters().clear();
         mode_ = 0;
 
         if (receivedAtBuilder_ == null) {
@@ -2680,15 +2991,19 @@ public final class Audit {
       @java.lang.Override
       public flyteidl.admin.Audit.Request buildPartial() {
         flyteidl.admin.Audit.Request result = new flyteidl.admin.Audit.Request(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.method_ = method_;
         result.httpVerb_ = httpVerb_;
-        result.parameters_ = parameters_;
+        result.parameters_ = internalGetParameters();
+        result.parameters_.makeImmutable();
         result.mode_ = mode_;
         if (receivedAtBuilder_ == null) {
           result.receivedAt_ = receivedAt_;
         } else {
           result.receivedAt_ = receivedAtBuilder_.build();
         }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -2745,10 +3060,8 @@ public final class Audit {
           httpVerb_ = other.httpVerb_;
           onChanged();
         }
-        if (!other.getParameters().isEmpty()) {
-          parameters_ = other.parameters_;
-          onChanged();
-        }
+        internalGetMutableParameters().mergeFrom(
+            other.internalGetParameters());
         if (other.mode_ != 0) {
           setModeValue(other.getModeValue());
         }
@@ -2783,6 +3096,7 @@ public final class Audit {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object method_ = "";
       /**
@@ -2962,92 +3276,154 @@ public final class Audit {
         return this;
       }
 
-      private java.lang.Object parameters_ = "";
-      /**
-       * <pre>
-       * Only includes identifier parameters (that is, a subset of all parameters) submitted in the request.
-       * </pre>
-       *
-       * <code>string parameters = 3;</code>
-       */
-      public java.lang.String getParameters() {
-        java.lang.Object ref = parameters_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          parameters_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> parameters_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetParameters() {
+        if (parameters_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ParametersDefaultEntryHolder.defaultEntry);
         }
+        return parameters_;
       }
-      /**
-       * <pre>
-       * Only includes identifier parameters (that is, a subset of all parameters) submitted in the request.
-       * </pre>
-       *
-       * <code>string parameters = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getParametersBytes() {
-        java.lang.Object ref = parameters_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          parameters_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableParameters() {
+        onChanged();;
+        if (parameters_ == null) {
+          parameters_ = com.google.protobuf.MapField.newMapField(
+              ParametersDefaultEntryHolder.defaultEntry);
         }
+        if (!parameters_.isMutable()) {
+          parameters_ = parameters_.copy();
+        }
+        return parameters_;
+      }
+
+      public int getParametersCount() {
+        return internalGetParameters().getMap().size();
       }
       /**
        * <pre>
-       * Only includes identifier parameters (that is, a subset of all parameters) submitted in the request.
+       * Includes parameters submitted in the request.
        * </pre>
        *
-       * <code>string parameters = 3;</code>
+       * <code>map&lt;string, string&gt; parameters = 3;</code>
        */
-      public Builder setParameters(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        parameters_ = value;
-        onChanged();
-        return this;
+
+      public boolean containsParameters(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetParameters().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getParametersMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getParameters() {
+        return getParametersMap();
       }
       /**
        * <pre>
-       * Only includes identifier parameters (that is, a subset of all parameters) submitted in the request.
+       * Includes parameters submitted in the request.
        * </pre>
        *
-       * <code>string parameters = 3;</code>
+       * <code>map&lt;string, string&gt; parameters = 3;</code>
        */
+
+      public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
+        return internalGetParameters().getMap();
+      }
+      /**
+       * <pre>
+       * Includes parameters submitted in the request.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; parameters = 3;</code>
+       */
+
+      public java.lang.String getParametersOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetParameters().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Includes parameters submitted in the request.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; parameters = 3;</code>
+       */
+
+      public java.lang.String getParametersOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetParameters().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
       public Builder clearParameters() {
-        
-        parameters_ = getDefaultInstance().getParameters();
-        onChanged();
+        internalGetMutableParameters().getMutableMap()
+            .clear();
         return this;
       }
       /**
        * <pre>
-       * Only includes identifier parameters (that is, a subset of all parameters) submitted in the request.
+       * Includes parameters submitted in the request.
        * </pre>
        *
-       * <code>string parameters = 3;</code>
+       * <code>map&lt;string, string&gt; parameters = 3;</code>
        */
-      public Builder setParametersBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        parameters_ = value;
-        onChanged();
+
+      public Builder removeParameters(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableParameters().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableParameters() {
+        return internalGetMutableParameters().getMutableMap();
+      }
+      /**
+       * <pre>
+       * Includes parameters submitted in the request.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; parameters = 3;</code>
+       */
+      public Builder putParameters(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableParameters().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * Includes parameters submitted in the request.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; parameters = 3;</code>
+       */
+
+      public Builder putAllParameters(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableParameters().getMutableMap()
+            .putAll(values);
         return this;
       }
 
@@ -4058,15 +4434,20 @@ public final class Audit {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_AuditLog_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_Actor_descriptor;
+    internal_static_flyteidl_admin_Principal_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_Actor_fieldAccessorTable;
+      internal_static_flyteidl_admin_Principal_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_Request_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_Request_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_Request_ParametersEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_Request_ParametersEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_Response_descriptor;
   private static final 
@@ -4082,22 +4463,25 @@ public final class Audit {
   static {
     java.lang.String[] descriptorData = {
       "\n\032flyteidl/admin/audit.proto\022\016flyteidl.a" +
-      "dmin\032\037google/protobuf/timestamp.proto\"\231\001" +
-      "\n\010AuditLog\022$\n\005actor\030\001 \001(\0132\025.flyteidl.adm" +
-      "in.Actor\022\021\n\tclient_ip\030\002 \001(\t\022(\n\007request\030\003" +
-      " \001(\0132\027.flyteidl.admin.Request\022*\n\010respons" +
-      "e\030\004 \001(\0132\030.flyteidl.admin.Response\"M\n\005Act" +
-      "or\022\017\n\007subject\030\001 \001(\t\0223\n\017token_issued_at\030\002" +
-      " \001(\0132\032.google.protobuf.Timestamp\"\304\001\n\007Req" +
-      "uest\022\016\n\006method\030\001 \001(\t\022\021\n\thttp_verb\030\002 \001(\t\022" +
-      "\022\n\nparameters\030\003 \001(\t\022*\n\004mode\030\004 \001(\0162\034.flyt" +
-      "eidl.admin.Request.Mode\022/\n\013received_at\030\005" +
-      " \001(\0132\032.google.protobuf.Timestamp\"%\n\004Mode" +
-      "\022\r\n\tREAD_ONLY\020\000\022\016\n\nREAD_WRITE\020\001\"N\n\010Respo" +
-      "nse\022\025\n\rresponse_code\030\001 \001(\t\022+\n\007sent_at\030\002 " +
-      "\001(\0132\032.google.protobuf.TimestampB3Z1githu" +
-      "b.com/lyft/flyteidl/gen/pb-go/flyteidl/a" +
-      "dminb\006proto3"
+      "dmin\032\037google/protobuf/timestamp.proto\"\264\001" +
+      "\n\010AuditLog\022,\n\tprincipal\030\001 \001(\0132\031.flyteidl" +
+      ".admin.Principal\022\021\n\tclient_ip\030\002 \001(\t\022\021\n\tc" +
+      "lient_id\030\003 \001(\t\022(\n\007request\030\004 \001(\0132\027.flytei" +
+      "dl.admin.Request\022*\n\010response\030\005 \001(\0132\030.fly" +
+      "teidl.admin.Response\"Q\n\tPrincipal\022\017\n\007sub" +
+      "ject\030\001 \001(\t\0223\n\017token_issued_at\030\002 \001(\0132\032.go" +
+      "ogle.protobuf.Timestamp\"\240\002\n\007Request\022\016\n\006m" +
+      "ethod\030\001 \001(\t\022\021\n\thttp_verb\030\002 \001(\t\022;\n\nparame" +
+      "ters\030\003 \003(\0132\'.flyteidl.admin.Request.Para" +
+      "metersEntry\022*\n\004mode\030\004 \001(\0162\034.flyteidl.adm" +
+      "in.Request.Mode\022/\n\013received_at\030\005 \001(\0132\032.g" +
+      "oogle.protobuf.Timestamp\0321\n\017ParametersEn" +
+      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"%\n\004M" +
+      "ode\022\r\n\tREAD_ONLY\020\000\022\016\n\nREAD_WRITE\020\001\"N\n\010Re" +
+      "sponse\022\025\n\rresponse_code\030\001 \001(\t\022+\n\007sent_at" +
+      "\030\002 \001(\0132\032.google.protobuf.TimestampB3Z1gi" +
+      "thub.com/lyft/flyteidl/gen/pb-go/flyteid" +
+      "l/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4117,12 +4501,12 @@ public final class Audit {
     internal_static_flyteidl_admin_AuditLog_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_AuditLog_descriptor,
-        new java.lang.String[] { "Actor", "ClientIp", "Request", "Response", });
-    internal_static_flyteidl_admin_Actor_descriptor =
+        new java.lang.String[] { "Principal", "ClientIp", "ClientId", "Request", "Response", });
+    internal_static_flyteidl_admin_Principal_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_flyteidl_admin_Actor_fieldAccessorTable = new
+    internal_static_flyteidl_admin_Principal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_Actor_descriptor,
+        internal_static_flyteidl_admin_Principal_descriptor,
         new java.lang.String[] { "Subject", "TokenIssuedAt", });
     internal_static_flyteidl_admin_Request_descriptor =
       getDescriptor().getMessageTypes().get(2);
@@ -4130,6 +4514,12 @@ public final class Audit {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Request_descriptor,
         new java.lang.String[] { "Method", "HttpVerb", "Parameters", "Mode", "ReceivedAt", });
+    internal_static_flyteidl_admin_Request_ParametersEntry_descriptor =
+      internal_static_flyteidl_admin_Request_descriptor.getNestedTypes().get(0);
+    internal_static_flyteidl_admin_Request_ParametersEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_Request_ParametersEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_admin_Response_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_admin_Response_fieldAccessorTable = new

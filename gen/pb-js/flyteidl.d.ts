@@ -4660,11 +4660,14 @@ export namespace flyteidl {
         /** Properties of an AuditLog. */
         interface IAuditLog {
 
-            /** AuditLog actor */
-            actor?: (flyteidl.admin.IActor|null);
+            /** AuditLog principal */
+            principal?: (flyteidl.admin.IPrincipal|null);
 
             /** AuditLog clientIp */
             clientIp?: (string|null);
+
+            /** AuditLog clientId */
+            clientId?: (string|null);
 
             /** AuditLog request */
             request?: (flyteidl.admin.IRequest|null);
@@ -4682,11 +4685,14 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.IAuditLog);
 
-            /** AuditLog actor. */
-            public actor?: (flyteidl.admin.IActor|null);
+            /** AuditLog principal. */
+            public principal?: (flyteidl.admin.IPrincipal|null);
 
             /** AuditLog clientIp. */
             public clientIp: string;
+
+            /** AuditLog clientId. */
+            public clientId: string;
 
             /** AuditLog request. */
             public request?: (flyteidl.admin.IRequest|null);
@@ -4727,58 +4733,58 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of an Actor. */
-        interface IActor {
+        /** Properties of a Principal. */
+        interface IPrincipal {
 
-            /** Actor subject */
+            /** Principal subject */
             subject?: (string|null);
 
-            /** Actor tokenIssuedAt */
+            /** Principal tokenIssuedAt */
             tokenIssuedAt?: (google.protobuf.ITimestamp|null);
         }
 
-        /** Represents an Actor. */
-        class Actor implements IActor {
+        /** Represents a Principal. */
+        class Principal implements IPrincipal {
 
             /**
-             * Constructs a new Actor.
+             * Constructs a new Principal.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.admin.IActor);
+            constructor(properties?: flyteidl.admin.IPrincipal);
 
-            /** Actor subject. */
+            /** Principal subject. */
             public subject: string;
 
-            /** Actor tokenIssuedAt. */
+            /** Principal tokenIssuedAt. */
             public tokenIssuedAt?: (google.protobuf.ITimestamp|null);
 
             /**
-             * Creates a new Actor instance using the specified properties.
+             * Creates a new Principal instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns Actor instance
+             * @returns Principal instance
              */
-            public static create(properties?: flyteidl.admin.IActor): flyteidl.admin.Actor;
+            public static create(properties?: flyteidl.admin.IPrincipal): flyteidl.admin.Principal;
 
             /**
-             * Encodes the specified Actor message. Does not implicitly {@link flyteidl.admin.Actor.verify|verify} messages.
-             * @param message Actor message or plain object to encode
+             * Encodes the specified Principal message. Does not implicitly {@link flyteidl.admin.Principal.verify|verify} messages.
+             * @param message Principal message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.admin.IActor, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.admin.IPrincipal, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an Actor message from the specified reader or buffer.
+             * Decodes a Principal message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns Actor
+             * @returns Principal
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Actor;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Principal;
 
             /**
-             * Verifies an Actor message.
+             * Verifies a Principal message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -4795,7 +4801,7 @@ export namespace flyteidl {
             httpVerb?: (string|null);
 
             /** Request parameters */
-            parameters?: (string|null);
+            parameters?: ({ [k: string]: string }|null);
 
             /** Request mode */
             mode?: (flyteidl.admin.Request.Mode|null);
@@ -4820,7 +4826,7 @@ export namespace flyteidl {
             public httpVerb: string;
 
             /** Request parameters. */
-            public parameters: string;
+            public parameters: { [k: string]: string };
 
             /** Request mode. */
             public mode: flyteidl.admin.Request.Mode;

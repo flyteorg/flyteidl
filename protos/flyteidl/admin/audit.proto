@@ -8,17 +8,20 @@ import "google/protobuf/timestamp.proto";
 
 // Audit log that is emitted on each user request.
 message AuditLog {
-  Actor actor = 1;
+  Principal principal = 1;
 
   string client_ip = 2;
 
-  Request request = 3;
+  // The client that initiated the auth flow.
+  string client_id = 3;
 
-  Response response = 4;
+  Request request = 4;
+
+  Response response = 5;
 }
 
 // Details about the authenticated user who issued a service request.
-message Actor {
+message Principal {
   // Identifies authenticated end-user
   string subject = 1;
 
@@ -33,8 +36,8 @@ message Request {
   // In the case of HTTP service calls.
   string http_verb = 2;
 
-  // Only includes identifier parameters (that is, a subset of all parameters) submitted in the request.
-  string parameters = 3;
+  // Includes parameters submitted in the request.
+  map<string, string> parameters = 3;
 
   enum Mode {
     READ_ONLY = 0;
