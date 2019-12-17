@@ -2,6 +2,14 @@
 
 
 [[projects]]
+  digest = "1:26ee1e365ea8f312ee11e170fc6675bac0dd3d4adf2406e753d0a43527e1afb8"
+  name = "cloud.google.com/go"
+  packages = ["compute/metadata"]
+  pruneopts = "UT"
+  revision = "d1ee711ee996fa74abaffbdb572963f368f215a9"
+  version = "v0.49.0"
+
+[[projects]]
   digest = "1:3d3da1dd49a4492069391f9ae0c3e39a8b6e96fb5e8b3e5bbfb8d4820e8d4c36"
   name = "github.com/antihax/optional"
   packages = ["."]
@@ -127,6 +135,14 @@
   pruneopts = "UT"
   revision = "ece8fdf051b731392b407fdb9a9b1b9ffb6f9793"
   version = "v1.11.3"
+
+[[projects]]
+  digest = "1:9a0de3882cd5fa16871caff91af7265a254931181d1212322f5c6e18a9be7df4"
+  name = "github.com/grpc/grpc-go"
+  packages = ["credentials/oauth"]
+  pruneopts = "UT"
+  revision = "1a3960e4bd028ac0cec0a2afd27d7d8e67c11514"
+  version = "v1.25.1"
 
 [[projects]]
   branch = "master"
@@ -362,11 +378,15 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:8d1c112fb1679fa097e9a9255a786ee47383fa2549a3da71bcb1334a693ebcfe"
+  digest = "1:dbd0f5d2c3d68686f4b80fcc71c632d4f9b5cf622f17c64affecfc90f7650639"
   name = "golang.org/x/oauth2"
   packages = [
     ".",
+    "clientcredentials",
+    "google",
     "internal",
+    "jws",
+    "jwt",
   ]
   pruneopts = "UT"
   revision = "0f29369cfe4552d0e4bcddc57cc75f4d7e672a33"
@@ -435,13 +455,16 @@
   revision = "80f3f9ca0853fa9dbf1ffdc81029677e3c23108b"
 
 [[projects]]
-  digest = "1:e0a1881f9e0564bebdeac98c75e59f07acdde6ed3a5396e0e613eaad31194866"
+  digest = "1:3c03b58f57452764a4499c55c582346c0ee78c8a5033affe5bdfd9efd3da5bd1"
   name = "google.golang.org/appengine"
   packages = [
+    ".",
     "internal",
+    "internal/app_identity",
     "internal/base",
     "internal/datastore",
     "internal/log",
+    "internal/modules",
     "internal/remote_api",
     "internal/urlfetch",
     "urlfetch",
@@ -594,6 +617,7 @@
     "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options",
     "github.com/grpc-ecosystem/grpc-gateway/runtime",
     "github.com/grpc-ecosystem/grpc-gateway/utilities",
+    "github.com/grpc/grpc-go/credentials/oauth",
     "github.com/influxdata/influxdb/pkg/testing/assert",
     "github.com/lyft/flytestdlib/config",
     "github.com/lyft/flytestdlib/logger",
@@ -605,6 +629,7 @@
     "github.com/stretchr/testify/mock",
     "github.com/vektra/mockery/cmd/mockery",
     "golang.org/x/oauth2",
+    "golang.org/x/oauth2/clientcredentials",
     "golang.org/x/time/rate",
     "google.golang.org/genproto/googleapis/api/annotations",
     "google.golang.org/grpc",

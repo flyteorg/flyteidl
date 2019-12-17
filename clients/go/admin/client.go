@@ -2,7 +2,6 @@ package admin
 
 import (
 	"context"
-	"crypto/x509"
 	"fmt"
 	"github.com/grpc-ecosystem/go-grpc-middleware"
 	"github.com/grpc-ecosystem/go-grpc-middleware/retry"
@@ -10,6 +9,7 @@ import (
 	"github.com/lyft/flyteidl/clients/go/admin/mocks"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/lyft/flytestdlib/logger"
+	"golang.org/x/oauth2/clientcredentials"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"sync"
@@ -22,7 +22,8 @@ var (
 
 func NewAdminClient(ctx context.Context, conn *grpc.ClientConn) service.AdminServiceClient {
 	logger.Infof(ctx, "Initialized Admin client")
-	return service.NewAdminServiceClient(conn)
+	client := service.NewAdminServiceClient(conn)
+	return client
 }
 
 func GetAdditionalAdminClientConfigOptions(cfg Config) []grpc.DialOption {
@@ -48,19 +49,34 @@ func GetAdditionalAdminClientConfigOptions(cfg Config) []grpc.DialOption {
 	return opts
 }
 
-func NewAdminConnection(_ context.Context, cfg Config) (*grpc.ClientConn, error) {
+func NewAdminConnection(ctx context.Context, cfg Config) (*grpc.ClientConn, error) {
 	var opts []grpc.DialOption
+
 	if cfg.UseInsecureConnection {
 		opts = append(opts, grpc.WithInsecure())
 	} else {
-		// TODO: as of Go 1.11.4, this is not supported on Windows. https://github.com/golang/go/issues/16736
-		pool, err := x509.SystemCertPool()
+
+		creds, err := credentials.NewClientTLSFromFile("/Users/ytong/.ssh/admin/server.pem", ":8088")
 		if err != nil {
 			return nil, err
 		}
+		//creds := credentials.NewClientTLSFromCert(nil, "")
 
-		creds := credentials.NewClientTLSFromCert(pool, "")
 		opts = append(opts, grpc.WithTransportCredentials(creds))
+
+		if cfg.UseAuth {
+			logger.Infof(ctx, "Instantiating a TokenSource to authenticate against Admin, ID: %s", cfg.ClientId)
+			ccConfig := clientcredentials.Config{
+				ClientID:     cfg.ClientId,
+				ClientSecret: cfg.ClientSecret,
+				TokenURL:     cfg.TokenURL,
+				Scopes:       cfg.Scopes,
+			}
+			tSource := ccConfig.TokenSource(ctx)
+			oauthTokenSource := NewTokenSource(tSource, cfg.GrpcAuthorizationHeader)
+			jwtDialOption := grpc.WithPerRPCCredentials(oauthTokenSource)
+			opts = append(opts, jwtDialOption)
+		}
 	}
 
 	opts = append(opts, GetAdditionalAdminClientConfigOptions(cfg)...)

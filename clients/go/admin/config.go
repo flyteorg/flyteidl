@@ -18,6 +18,19 @@ type Config struct {
 	MaxBackoffDelay       config.Duration `json:"maxBackoffDelay" pflag:",Max delay for grpc backoff"`
 	PerRetryTimeout       config.Duration `json:"perRetryTimeout" pflag:",gRPC per retry timeout"`
 	MaxRetries            int             `json:"maxRetries" pflag:",Max number of gRPC retries"`
+
+	// Auth can only be used if also running with a secure connection. If UseInsecureConnection is set to true, none
+	// of the following options will even be referenced.
+	UseAuth      bool     `json:"useAuth" pflag:",Whether or not to try to authenticate with options below"`
+	ClientId     string   `json:"clientId" pflag:",Client ID"`
+	ClientSecret string   `json:"clientSecret" pflag:",Client secret"`
+	Scopes       []string `json:"scopes" pflag:",List of scopes to request"`
+	TokenURL     string   `json:"tokenUrl" pflag:",Your IDP's token endpoint"`
+
+	// See the implementation of the 'grpcAuthorizationHeader' option in Flyte Admin for more information. But
+	// basically we want to be able to use a different string to pass the token from this client to the the Admin service
+	// because things might be running in a service mesh (like Envoy) that already uses the default 'authorization' header
+	GrpcAuthorizationHeader string `json:"grpcAuthorizationHeader" pflag:",Custom metadata header to pass JWT"`
 }
 
 var (
