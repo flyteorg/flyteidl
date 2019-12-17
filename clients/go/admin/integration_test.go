@@ -36,3 +36,22 @@ func TestLiveAdminClient(t *testing.T) {
 	assert.NoError(t, err)
 	fmt.Printf("Response: %v\n", resp)
 }
+
+func TestGetTokenEndpoint(t *testing.T) {
+	ctx := context.Background()
+
+	endpoint, err := getTokenEndpointFromIssuer(ctx,  "https://lyft.okta.com/oauth2/ausc5wmjw96cRKvTd1t7")
+	assert.NoError(t, err)
+	assert.NotEmpty(t, endpoint)
+}
+
+func TestGetDialOption(t *testing.T) {
+	ctx := context.Background()
+
+	cfg := Config{
+		IssuerURL: "https://lyft.okta.com/oauth2/ausc5wmjw96cRKvTd1t7",
+	}
+	dialOption, err := getAuthenticationDialOption(ctx, cfg)
+	assert.NoError(t, err)
+	assert.NotNil(t, dialOption)
+}

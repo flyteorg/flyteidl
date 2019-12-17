@@ -2,9 +2,9 @@ package admin
 
 import (
 	"context"
+	"errors"
 	"fmt"
-	"sync"
-
+	"github.com/coreos/go-oidc"
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	grpc_retry "github.com/grpc-ecosystem/go-grpc-middleware/retry"
 	grpc_prometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
@@ -14,6 +14,8 @@ import (
 	"golang.org/x/oauth2/clientcredentials"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
+	"net/http"
+	"sync"
 )
 
 var (
@@ -50,6 +52,48 @@ func GetAdditionalAdminClientConfigOptions(cfg Config) []grpc.DialOption {
 	return opts
 }
 
+// This function assumes that the issuer supports the Authorization Server Metadata standard, and uses the oidc
+// library to retrieve the token endpoint.
+func getTokenEndpointFromIssuer(ctx context.Context, issuer string) (string, error) {
+	if issuer == "" {
+		logger.Errorf(ctx, "Attempting to construct provider with empty issuer")
+		return "", errors.New("cannot get token URL from empty issuer")
+	}
+
+	oidcCtx := oidc.ClientContext(ctx, &http.Client{})
+	provider, err := oidc.NewProvider(oidcCtx, issuer)
+	if err != nil {
+		logger.Errorf(ctx, "Error when constructing new OIDC Provider")
+		return "", err
+	}
+	logger.Infof(ctx, "Constructing Admin client with token endpoint %s", provider.Endpoint().TokenURL)
+
+	return provider.Endpoint().TokenURL, nil
+}
+
+// This retrieves a DialOption that contains a source for generating JWTs for authentication with Flyte Admin
+func getAuthenticationDialOption(ctx context.Context, cfg Config) (grpc.DialOption, error) {
+	var tokenURL string
+	tokenURL, err := getTokenEndpointFromIssuer(ctx, cfg.IssuerURL)
+	if err != nil || tokenURL == "" {
+		logger.Infof(ctx, "No token URL found from configuration Issuer, looking for token endpoint directly")
+		tokenURL = cfg.TokenURL
+		if tokenURL == "" {
+			return nil, errors.New("no token endpoint could be found")
+		}
+	}
+
+	ccConfig := clientcredentials.Config{
+		ClientID:     cfg.ClientId,
+		ClientSecret: cfg.ClientSecret,
+		TokenURL:     tokenURL,
+		Scopes:       cfg.Scopes,
+	}
+	tSource := ccConfig.TokenSource(ctx)
+	oauthTokenSource := NewTokenSource(tSource, cfg.GrpcAuthorizationHeader)
+	return grpc.WithPerRPCCredentials(oauthTokenSource), nil
+}
+
 func NewAdminConnection(ctx context.Context, cfg Config) (*grpc.ClientConn, error) {
 	var opts []grpc.DialOption
 
@@ -60,15 +104,10 @@ func NewAdminConnection(ctx context.Context, cfg Config) (*grpc.ClientConn, erro
 		opts = append(opts, grpc.WithTransportCredentials(creds))
 		if cfg.UseAuth {
 			logger.Infof(ctx, "Instantiating a TokenSource to authenticate against Admin, ID: %s", cfg.ClientId)
-			ccConfig := clientcredentials.Config{
-				ClientID:     cfg.ClientId,
-				ClientSecret: cfg.ClientSecret,
-				TokenURL:     cfg.TokenURL,
-				Scopes:       cfg.Scopes,
+			jwtDialOption, err := getAuthenticationDialOption(ctx, cfg)
+			if err != nil {
+				return nil, err
 			}
-			tSource := ccConfig.TokenSource(ctx)
-			oauthTokenSource := NewTokenSource(tSource, cfg.GrpcAuthorizationHeader)
-			jwtDialOption := grpc.WithPerRPCCredentials(oauthTokenSource)
 			opts = append(opts, jwtDialOption)
 		}
 	}
