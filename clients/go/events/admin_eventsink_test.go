@@ -35,7 +35,7 @@ func TestAdminWorkflowEvent(t *testing.T) {
 		OccurredAt:   ptypes.TimestampNow(),
 		ExecutionId:  nil,
 		ProducerId:   "",
-		OutputResult: &event.WorkflowExecutionEvent_OutputUri{""},
+		OutputResult: &event.WorkflowExecutionEvent_OutputUri{OutputUri: ""},
 	}
 
 	adminClient.On(

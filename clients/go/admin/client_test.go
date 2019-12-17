@@ -39,7 +39,7 @@ func TestGetAdditionalAdminClientConfigOptions(t *testing.T) {
 	adminServiceConfig := Config{
 		Endpoint:              config.URL{URL: *u},
 		UseInsecureConnection: true,
-		PerRetryTimeout:       config.Duration{1 * time.Second},
+		PerRetryTimeout:       config.Duration{Duration: 1 * time.Second},
 		MaxRetries:            1,
 	}
 	opts := GetAdditionalAdminClientConfigOptions(adminServiceConfig)

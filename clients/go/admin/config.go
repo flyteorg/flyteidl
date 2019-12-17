@@ -41,8 +41,8 @@ type Config struct {
 
 var (
 	defaultConfig = Config{
-		MaxBackoffDelay: config.Duration{8 * time.Second},
-		PerRetryTimeout: config.Duration{15 * time.Second},
+		MaxBackoffDelay: config.Duration{Duration: 8 * time.Second},
+		PerRetryTimeout: config.Duration{Duration: 15 * time.Second},
 		MaxRetries:      4,
 	}
 	configSection = config.MustRegisterSectionWithUpdates(configSectionKey, &defaultConfig, func(ctx context.Context, newValue config.Config) {
