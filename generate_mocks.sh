@@ -2,6 +2,8 @@
 set -e
 set -x
 
+# install outside of current module, workaround https://github.com/golang/go/issues/30515
+# we need to copy go.mod and go.sum because we have a mockery fork
 go_get_mockery () {
   tmp_dir=$(mktemp -d -t mockery-XXXXXXXXXX)
   cp go.mod go.sum "$tmp_dir"
