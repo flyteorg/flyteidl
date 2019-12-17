@@ -10,7 +10,7 @@ require (
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
 	github.com/grpc-ecosystem/grpc-gateway v1.11.3
 	github.com/influxdata/influxdb v1.7.9
-	github.com/lyft/flytestdlib v0.2.29
+	github.com/lyft/flytestdlib v0.2.30
 	github.com/mitchellh/mapstructure v1.1.2
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.4.0
