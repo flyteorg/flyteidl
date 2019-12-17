@@ -3,16 +3,17 @@ package admin
 import (
 	"context"
 	"fmt"
-	"github.com/grpc-ecosystem/go-grpc-middleware"
-	"github.com/grpc-ecosystem/go-grpc-middleware/retry"
-	"github.com/grpc-ecosystem/go-grpc-prometheus"
+	"sync"
+
+	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
+	grpc_retry "github.com/grpc-ecosystem/go-grpc-middleware/retry"
+	grpc_prometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
 	"github.com/lyft/flyteidl/clients/go/admin/mocks"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/lyft/flytestdlib/logger"
 	"golang.org/x/oauth2/clientcredentials"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
-	"sync"
 )
 
 var (

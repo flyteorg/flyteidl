@@ -37,7 +37,7 @@ func TestInitializeMockAdminClient(t *testing.T) {
 func TestGetAdditionalAdminClientConfigOptions(t *testing.T) {
 	u, _ := url.Parse("localhost:8089")
 	adminServiceConfig := Config{
-		Endpoint:              config.URL{URL: *u,},
+		Endpoint:              config.URL{URL: *u},
 		UseInsecureConnection: true,
 		PerRetryTimeout:       config.Duration{1 * time.Second},
 		MaxRetries:            1,

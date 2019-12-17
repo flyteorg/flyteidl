@@ -39,4 +39,3 @@ func NewTokenSource(source oauth2.TokenSource, customHeader string) TokenSource 
 		customHeader: header,
 	}
 }
-

@@ -2,7 +2,16 @@
 
 package admin
 
-import "context"
+import (
+	"context"
+	"fmt"
+	"net/url"
+	"testing"
+
+	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin"
+	"github.com/lyft/flytestdlib/config"
+	"github.com/stretchr/testify/assert"
+)
 
 func TestLiveAdminClient(t *testing.T) {
 	ctx := context.Background()
