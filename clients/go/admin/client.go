@@ -56,15 +56,8 @@ func NewAdminConnection(ctx context.Context, cfg Config) (*grpc.ClientConn, erro
 	if cfg.UseInsecureConnection {
 		opts = append(opts, grpc.WithInsecure())
 	} else {
-
-		//creds, err := credentials.NewClientTLSFromFile("/Users/ytong/.ssh/admin/server.pem", ":8088")
-		//if err != nil {
-		//	return nil, err
-		//}
 		creds := credentials.NewClientTLSFromCert(nil, "")
-
 		opts = append(opts, grpc.WithTransportCredentials(creds))
-
 		if cfg.UseAuth {
 			logger.Infof(ctx, "Instantiating a TokenSource to authenticate against Admin, ID: %s", cfg.ClientId)
 			ccConfig := clientcredentials.Config{

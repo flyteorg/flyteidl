@@ -16,7 +16,6 @@ import (
 func TestLiveAdminClient(t *testing.T) {
 	ctx := context.Background()
 
-	//u, err := url.Parse("dns:///localhost:8088")
 	u, err := url.Parse("dns:///flyte.lyft.net")
 	assert.NoError(t, err)
 	client := InitializeAdminClient(ctx, Config{
