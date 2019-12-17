@@ -31,7 +31,7 @@ type Config struct {
 	// Note that the IssuerURL option doesn't follow redirects yet!!! So you'll need to specify the endpoint directly
 	// where the .well-known metadata can be found.
 	IssuerURL string `json:"issuerUrl" pflag:",This is the URL to your IDP's authorization server'"`
-	TokenURL  string `json:"tokenUrl" pflag:",Your IDP's token endpoint"`
+	TokenURL  string `json:"tokenUrl" pflag:",Your IDPs token endpoint"`
 
 	// See the implementation of the 'grpcAuthorizationHeader' option in Flyte Admin for more information. But
 	// basically we want to be able to use a different string to pass the token from this client to the the Admin service
@@ -48,6 +48,10 @@ var (
 	configSection = config.MustRegisterSectionWithUpdates(configSectionKey, &defaultConfig, func(ctx context.Context, newValue config.Config) {
 		if newValue.(*Config).MaxRetries < 0 {
 			logger.Panicf(ctx, "Admin configuration given with negative gRPC retry value.")
+		}
+
+		if newValue.(*Config).UseAuth {
+			logger.Warnf(ctx, "Admin client config has authentication ON with server %s", newValue.(*Config).IssuerURL)
 		}
 	})
 )
