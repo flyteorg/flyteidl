@@ -21,10 +21,10 @@ type Config struct {
 
 	// Auth can only be used if also running with a secure connection. If UseInsecureConnection is set to true, none
 	// of the following options will even be referenced.
-	UseAuth      bool     `json:"useAuth" pflag:",Whether or not to try to authenticate with options below"`
-	ClientId     string   `json:"clientId" pflag:",Client ID"`
-	ClientSecret string   `json:"clientSecret" pflag:",Client secret"`
-	Scopes       []string `json:"scopes" pflag:",List of scopes to request"`
+	UseAuth              bool     `json:"useAuth" pflag:",Whether or not to try to authenticate with options below"`
+	ClientId             string   `json:"clientId" pflag:",Client ID"`
+	ClientSecretLocation string   `json:"clientSecretLocation" pflag:",File containing the client secret"`
+	Scopes               []string `json:"scopes" pflag:",List of scopes to request"`
 
 	// There are two ways to get the token URL. If the issuer url is provided, the client will try to use RFC 8414 to
 	// try to get the token URL. Or you can just specify it directly.

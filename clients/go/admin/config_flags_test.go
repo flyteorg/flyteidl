@@ -253,11 +253,11 @@ func TestConfig_SetFlags(t *testing.T) {
 			}
 		})
 	})
-	t.Run("Test_clientSecret", func(t *testing.T) {
+	t.Run("Test_clientSecretLocation", func(t *testing.T) {
 		t.Run("DefaultValue", func(t *testing.T) {
 			// Test that default value is set properly
-			if vString, err := cmdFlags.GetString("clientSecret"); err == nil {
-				assert.Equal(t, string(defaultConfig.ClientSecret), vString)
+			if vString, err := cmdFlags.GetString("clientSecretLocation"); err == nil {
+				assert.Equal(t, string(defaultConfig.ClientSecretLocation), vString)
 			} else {
 				assert.FailNow(t, err.Error())
 			}
@@ -266,9 +266,9 @@ func TestConfig_SetFlags(t *testing.T) {
 		t.Run("Override", func(t *testing.T) {
 			testValue := "1"
 
-			cmdFlags.Set("clientSecret", testValue)
-			if vString, err := cmdFlags.GetString("clientSecret"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.ClientSecret)
+			cmdFlags.Set("clientSecretLocation", testValue)
+			if vString, err := cmdFlags.GetString("clientSecretLocation"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.ClientSecretLocation)
 
 			} else {
 				assert.FailNow(t, err.Error())

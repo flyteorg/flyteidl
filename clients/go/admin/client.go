@@ -14,7 +14,9 @@ import (
 	"golang.org/x/oauth2/clientcredentials"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
+	"io/ioutil"
 	"net/http"
+	"strings"
 	"sync"
 )
 
@@ -60,7 +62,7 @@ func getTokenEndpointFromIssuer(ctx context.Context, issuer string) (string, err
 		return "", errors.New("cannot get token URL from empty issuer")
 	}
 
-	oidcCtx := oidc.ClientContext(ctx, &http.Client{})
+	oidcCtx := oidc.ClientContext(ctx, &http.Client{CheckRedirect: nil})
 	provider, err := oidc.NewProvider(oidcCtx, issuer)
 	if err != nil {
 		logger.Errorf(ctx, "Error when constructing new OIDC Provider")
@@ -83,9 +85,16 @@ func getAuthenticationDialOption(ctx context.Context, cfg Config) (grpc.DialOpti
 		}
 	}
 
+	secretBytes, err := ioutil.ReadFile(cfg.ClientSecretLocation)
+	if err != nil {
+		logger.Errorf(ctx, "Error reading secret from location %s", cfg.ClientSecretLocation)
+		return nil, err
+	}
+	secret := strings.TrimSpace(string(secretBytes))
+
 	ccConfig := clientcredentials.Config{
 		ClientID:     cfg.ClientId,
-		ClientSecret: cfg.ClientSecret,
+		ClientSecret: secret,
 		TokenURL:     tokenURL,
 		Scopes:       cfg.Scopes,
 	}

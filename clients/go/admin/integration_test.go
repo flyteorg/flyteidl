@@ -25,7 +25,7 @@ func TestLiveAdminClient(t *testing.T) {
 		UseInsecureConnection:   false,
 		UseAuth:                 true,
 		ClientId:                "0oacmtueinpXk72Af1t7",
-		ClientSecret:            "my-secret",
+		ClientSecretLocation:    "/path/to/secret",
 		TokenURL:                "https://lyft.okta.com/oauth2/ausc5wmjw96cRKvTd1t7/v1/token",
 		Scopes:                  []string{"svc"},
 		GrpcAuthorizationHeader: "Flyte-Authorization",
