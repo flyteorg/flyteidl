@@ -1,4 +1,4 @@
-// +xxbuild integration
+// +build integration
 
 package admin
 

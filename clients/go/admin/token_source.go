@@ -13,7 +13,7 @@ type TokenSourcePerCallCredential struct {
 
 const DefaultAuthorizationHeader = "authorization"
 
-// GetRequestMetadata gets the request metadata as a map from a TokenSourcePerCallCredential.
+// GetRequestMetadata gets the authorization metadata as a map using a TokenSource to generate a token
 func (ts TokenSourcePerCallCredential) GetRequestMetadata(ctx context.Context, uri ...string) (map[string]string, error) {
 	token, err := ts.Token()
 	if err != nil {
@@ -24,7 +24,8 @@ func (ts TokenSourcePerCallCredential) GetRequestMetadata(ctx context.Context, u
 	}, nil
 }
 
-// RequireTransportSecurity indicates whether the credentials requires transport security.
+// Even though Admin is capable of serving authentication without SSL, we're going to require it here. That is, this module's
+// canonical Admin client will only do auth over SSL.
 func (ts TokenSourcePerCallCredential) RequireTransportSecurity() bool {
 	return true
 }
