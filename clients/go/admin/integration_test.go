@@ -42,7 +42,7 @@ func TestLiveAdminClient(t *testing.T) {
 func TestGetTokenEndpoint(t *testing.T) {
 	ctx := context.Background()
 
-	endpoint, err := getTokenEndpointFromIssuer(ctx,  "https://lyft.okta.com/oauth2/ausc5wmjw96cRKvTd1t7")
+	endpoint, err := getTokenEndpointFromIssuer(ctx, "https://flyte-staging.lyft.net")
 	assert.NoError(t, err)
 	assert.NotEmpty(t, endpoint)
 }

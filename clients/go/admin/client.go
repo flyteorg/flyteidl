@@ -62,7 +62,7 @@ func getTokenEndpointFromIssuer(ctx context.Context, issuer string) (string, err
 		return "", errors.New("cannot get token URL from empty issuer")
 	}
 
-	oidcCtx := oidc.ClientContext(ctx, &http.Client{CheckRedirect: nil})
+	oidcCtx := oidc.ClientContext(ctx, &http.Client{})
 	provider, err := oidc.NewProvider(oidcCtx, issuer)
 	if err != nil {
 		logger.Errorf(ctx, "Error when constructing new OIDC Provider")
