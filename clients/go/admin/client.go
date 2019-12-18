@@ -99,7 +99,7 @@ func getAuthenticationDialOption(ctx context.Context, cfg Config) (grpc.DialOpti
 		Scopes:       cfg.Scopes,
 	}
 	tSource := ccConfig.TokenSource(ctx)
-	oauthTokenSource := NewTokenSource(tSource, cfg.GrpcAuthorizationHeader)
+	oauthTokenSource := NewTokenSourcePerCallCredential(tSource, cfg.GrpcAuthorizationHeader)
 	return grpc.WithPerRPCCredentials(oauthTokenSource), nil
 }
 
@@ -112,7 +112,7 @@ func NewAdminConnection(ctx context.Context, cfg Config) (*grpc.ClientConn, erro
 		creds := credentials.NewClientTLSFromCert(nil, "")
 		opts = append(opts, grpc.WithTransportCredentials(creds))
 		if cfg.UseAuth {
-			logger.Infof(ctx, "Instantiating a TokenSource to authenticate against Admin, ID: %s", cfg.ClientId)
+			logger.Infof(ctx, "Instantiating a token source to authenticate against Admin, ID: %s", cfg.ClientId)
 			jwtDialOption, err := getAuthenticationDialOption(ctx, cfg)
 			if err != nil {
 				return nil, err

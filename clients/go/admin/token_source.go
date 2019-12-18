@@ -6,15 +6,15 @@ import "context"
 // This class is here because we cannot use the normal "github.com/grpc/grpc-go/credentials/oauth" package to satisfy
 // the credentials.PerRPCCredentials interface. This is because we want to be able to support a different 'header'
 // when passing the token in the gRPC call's metadata. The default is filled in in the constructor if none is supplied.
-type TokenSource struct {
+type TokenSourcePerCallCredential struct {
 	oauth2.TokenSource
 	customHeader string
 }
 
 const DefaultAuthorizationHeader = "authorization"
 
-// GetRequestMetadata gets the request metadata as a map from a TokenSource.
-func (ts TokenSource) GetRequestMetadata(ctx context.Context, uri ...string) (map[string]string, error) {
+// GetRequestMetadata gets the request metadata as a map from a TokenSourcePerCallCredential.
+func (ts TokenSourcePerCallCredential) GetRequestMetadata(ctx context.Context, uri ...string) (map[string]string, error) {
 	token, err := ts.Token()
 	if err != nil {
 		return nil, err
@@ -25,16 +25,16 @@ func (ts TokenSource) GetRequestMetadata(ctx context.Context, uri ...string) (ma
 }
 
 // RequireTransportSecurity indicates whether the credentials requires transport security.
-func (ts TokenSource) RequireTransportSecurity() bool {
+func (ts TokenSourcePerCallCredential) RequireTransportSecurity() bool {
 	return true
 }
 
-func NewTokenSource(source oauth2.TokenSource, customHeader string) TokenSource {
+func NewTokenSourcePerCallCredential(source oauth2.TokenSource, customHeader string) TokenSourcePerCallCredential {
 	header := DefaultAuthorizationHeader
 	if customHeader != "" {
 		header = customHeader
 	}
-	return TokenSource{
+	return TokenSourcePerCallCredential{
 		TokenSource:  source,
 		customHeader: header,
 	}
