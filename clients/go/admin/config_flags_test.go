@@ -297,11 +297,11 @@ func TestConfig_SetFlags(t *testing.T) {
 			}
 		})
 	})
-	t.Run("Test_issuerUrl", func(t *testing.T) {
+	t.Run("Test_authorizationServerUrl", func(t *testing.T) {
 		t.Run("DefaultValue", func(t *testing.T) {
 			// Test that default value is set properly
-			if vString, err := cmdFlags.GetString("issuerUrl"); err == nil {
-				assert.Equal(t, string(defaultConfig.IssuerURL), vString)
+			if vString, err := cmdFlags.GetString("authorizationServerUrl"); err == nil {
+				assert.Equal(t, string(defaultConfig.AuthorizationServerURL), vString)
 			} else {
 				assert.FailNow(t, err.Error())
 			}
@@ -310,9 +310,9 @@ func TestConfig_SetFlags(t *testing.T) {
 		t.Run("Override", func(t *testing.T) {
 			testValue := "1"
 
-			cmdFlags.Set("issuerUrl", testValue)
-			if vString, err := cmdFlags.GetString("issuerUrl"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.IssuerURL)
+			cmdFlags.Set("authorizationServerUrl", testValue)
+			if vString, err := cmdFlags.GetString("authorizationServerUrl"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.AuthorizationServerURL)
 
 			} else {
 				assert.FailNow(t, err.Error())

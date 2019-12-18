@@ -54,16 +54,16 @@ func GetAdditionalAdminClientConfigOptions(cfg Config) []grpc.DialOption {
 	return opts
 }
 
-// This function assumes that the issuer supports the Authorization Server Metadata standard, and uses the oidc
+// This function assumes that the authorization server supports the OAuth metadata standard, and uses the oidc
 // library to retrieve the token endpoint.
-func getTokenEndpointFromIssuer(ctx context.Context, issuer string) (string, error) {
-	if issuer == "" {
-		logger.Errorf(ctx, "Attempting to construct provider with empty issuer")
-		return "", errors.New("cannot get token URL from empty issuer")
+func getTokenEndpointFromAuthServer(ctx context.Context, authorizationServer string) (string, error) {
+	if authorizationServer == "" {
+		logger.Errorf(ctx, "Attempting to construct provider with empty authorizationServer")
+		return "", errors.New("cannot get token URL from empty authorizationServer")
 	}
 
 	oidcCtx := oidc.ClientContext(ctx, &http.Client{})
-	provider, err := oidc.NewProvider(oidcCtx, issuer)
+	provider, err := oidc.NewProvider(oidcCtx, authorizationServer)
 	if err != nil {
 		logger.Errorf(ctx, "Error when constructing new OIDC Provider")
 		return "", err
@@ -73,10 +73,12 @@ func getTokenEndpointFromIssuer(ctx context.Context, issuer string) (string, err
 	return provider.Endpoint().TokenURL, nil
 }
 
-// This retrieves a DialOption that contains a source for generating JWTs for authentication with Flyte Admin
+// This retrieves a DialOption that contains a source for generating JWTs for authentication with Flyte Admin.
+// It will first attempt to retrieve the token endpoint by making a metadata call. If that fails, but the token endpoint
+// is set in the config, that will be used instead.
 func getAuthenticationDialOption(ctx context.Context, cfg Config) (grpc.DialOption, error) {
 	var tokenURL string
-	tokenURL, err := getTokenEndpointFromIssuer(ctx, cfg.IssuerURL)
+	tokenURL, err := getTokenEndpointFromAuthServer(ctx, cfg.AuthorizationServerURL)
 	if err != nil || tokenURL == "" {
 		logger.Infof(ctx, "No token URL found from configuration Issuer, looking for token endpoint directly")
 		tokenURL = cfg.TokenURL

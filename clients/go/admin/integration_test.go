@@ -25,8 +25,8 @@ func TestLiveAdminClient(t *testing.T) {
 		UseInsecureConnection:   false,
 		UseAuth:                 true,
 		ClientId:                "0oacmtueinpXk72Af1t7",
-		ClientSecretLocation:    "/path/to/propeller_secret",
-		IssuerURL:                "https://lyft.okta.com/oauth2/ausc5wmjw96cRKvTd1t7",
+		ClientSecretLocation:    "/Users/username/.ssh/admin/propeller_secret",
+		AuthorizationServerURL:  "https://lyft.okta.com/oauth2/ausc5wmjw96cRKvTd1t7",
 		Scopes:                  []string{"svc"},
 		GrpcAuthorizationHeader: "Flyte-Authorization",
 	})
@@ -42,7 +42,7 @@ func TestLiveAdminClient(t *testing.T) {
 func TestGetTokenEndpoint(t *testing.T) {
 	ctx := context.Background()
 
-	endpoint, err := getTokenEndpointFromIssuer(ctx, "https://flyte-staging.lyft.net")
+	endpoint, err := getTokenEndpointFromAuthServer(ctx, "https://flyte-staging.lyft.net")
 	assert.NoError(t, err)
 	assert.NotEmpty(t, endpoint)
 }
@@ -51,7 +51,7 @@ func TestGetDialOption(t *testing.T) {
 	ctx := context.Background()
 
 	cfg := Config{
-		IssuerURL: "https://lyft.okta.com/oauth2/ausc5wmjw96cRKvTd1t7",
+		AuthorizationServerURL: "https://lyft.okta.com/oauth2/ausc5wmjw96cRKvTd1t7",
 	}
 	dialOption, err := getAuthenticationDialOption(ctx, cfg)
 	assert.NoError(t, err)

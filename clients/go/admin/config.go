@@ -28,10 +28,8 @@ type Config struct {
 
 	// There are two ways to get the token URL. If the issuer url is provided, the client will try to use RFC 8414 to
 	// try to get the token URL. Or you can just specify it directly.
-	// Note that the IssuerURL option doesn't follow redirects yet!!! So you'll need to specify the endpoint directly
-	// where the .well-known metadata can be found.
-	IssuerURL string `json:"issuerUrl" pflag:",This is the URL to your IDP's authorization server'"`
-	TokenURL  string `json:"tokenUrl" pflag:",Your IDPs token endpoint"`
+	AuthorizationServerURL string `json:"authorizationServerUrl" pflag:",This is the URL to your IDP's authorization server'"`
+	TokenURL               string `json:"tokenUrl" pflag:",Your IDPs token endpoint"`
 
 	// See the implementation of the 'grpcAuthorizationHeader' option in Flyte Admin for more information. But
 	// basically we want to be able to use a different string to pass the token from this client to the the Admin service
@@ -51,7 +49,7 @@ var (
 		}
 
 		if newValue.(*Config).UseAuth {
-			logger.Warnf(ctx, "Admin client config has authentication ON with server %s", newValue.(*Config).IssuerURL)
+			logger.Warnf(ctx, "Admin client config has authentication ON with server %s", newValue.(*Config).AuthorizationServerURL)
 		}
 	})
 )
