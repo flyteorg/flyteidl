@@ -26,8 +26,8 @@ type Config struct {
 	ClientSecretLocation string   `json:"clientSecretLocation" pflag:",File containing the client secret"`
 	Scopes               []string `json:"scopes" pflag:",List of scopes to request"`
 
-	// There are two ways to get the token URL. If the issuer url is provided, the client will try to use RFC 8414 to
-	// try to get the token URL. Or you can just specify it directly.
+	// There are two ways to get the token URL. If the authorization server url is provided, the client will try to use RFC 8414 to
+	// try to get the token URL. Or it can be specified directly through TokenURL config.
 	AuthorizationServerURL string `json:"authorizationServerUrl" pflag:",This is the URL to your IDP's authorization server'"`
 	TokenURL               string `json:"tokenUrl" pflag:",Your IDPs token endpoint"`
 
