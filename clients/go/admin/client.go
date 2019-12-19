@@ -81,6 +81,9 @@ func getAuthenticationDialOption(ctx context.Context, cfg Config) (grpc.DialOpti
 	tokenURL, err := getTokenEndpointFromAuthServer(ctx, cfg.AuthorizationServerURL)
 	if err != nil || tokenURL == "" {
 		logger.Infof(ctx, "No token URL found from configuration Issuer, looking for token endpoint directly")
+		if err != nil {
+			logger.Errorf(ctx, "Err is %s", err)
+		}
 		tokenURL = cfg.TokenURL
 		if tokenURL == "" {
 			return nil, errors.New("no token endpoint could be found")
@@ -111,6 +114,7 @@ func NewAdminConnection(ctx context.Context, cfg Config) (*grpc.ClientConn, erro
 	if cfg.UseInsecureConnection {
 		opts = append(opts, grpc.WithInsecure())
 	} else {
+		// TODO: as of Go 1.11.4, this is not supported on Windows. https://github.com/golang/go/issues/16736
 		creds := credentials.NewClientTLSFromCert(nil, "")
 		opts = append(opts, grpc.WithTransportCredentials(creds))
 		if cfg.UseAuth {
