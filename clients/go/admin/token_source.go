@@ -30,7 +30,7 @@ func (ts CustomHeaderTokenSource) RequireTransportSecurity() bool {
 	return true
 }
 
-func NewTokenSourcePerCallCredential(source oauth2.TokenSource, customHeader string) CustomHeaderTokenSource {
+func NewCustomHeaderTokenSource(source oauth2.TokenSource, customHeader string) CustomHeaderTokenSource {
 	header := DefaultAuthorizationHeader
 	if customHeader != "" {
 		header = customHeader
