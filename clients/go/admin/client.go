@@ -27,8 +27,7 @@ var (
 
 func NewAdminClient(ctx context.Context, conn *grpc.ClientConn) service.AdminServiceClient {
 	logger.Infof(ctx, "Initialized Admin client")
-	client := service.NewAdminServiceClient(conn)
-	return client
+	return service.NewAdminServiceClient(conn)
 }
 
 func GetAdditionalAdminClientConfigOptions(cfg Config) []grpc.DialOption {
