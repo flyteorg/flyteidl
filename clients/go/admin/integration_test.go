@@ -21,14 +21,14 @@ func TestLiveAdminClient(t *testing.T) {
 	u, err := url.Parse("dns:///flyte.lyft.net")
 	assert.NoError(t, err)
 	client := InitializeAdminClient(ctx, Config{
-		Endpoint:                config.URL{URL: *u},
-		UseInsecureConnection:   false,
-		UseAuth:                 true,
-		ClientId:                "0oacmtueinpXk72Af1t7",
-		ClientSecretLocation:    "/Users/username/.ssh/admin/propeller_secret",
-		AuthorizationServerURL:  "https://lyft.okta.com/oauth2/ausc5wmjw96cRKvTd1t7",
-		Scopes:                  []string{"svc"},
-		GrpcAuthorizationHeader: "Flyte-Authorization",
+		Endpoint:               config.URL{URL: *u},
+		UseInsecureConnection:  false,
+		UseAuth:                true,
+		ClientId:               "0oacmtueinpXk72Af1t7",
+		ClientSecretLocation:   "/Users/username/.ssh/admin/propeller_secret",
+		AuthorizationServerURL: "https://lyft.okta.com/oauth2/ausc5wmjw96cRKvTd1t7",
+		Scopes:                 []string{"svc"},
+		AuthorizationHeader:    "Flyte-Authorization",
 	})
 
 	resp, err := client.ListProjects(ctx, &admin.ProjectListRequest{})

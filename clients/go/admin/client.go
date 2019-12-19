@@ -103,7 +103,7 @@ func getAuthenticationDialOption(ctx context.Context, cfg Config) (grpc.DialOpti
 		Scopes:       cfg.Scopes,
 	}
 	tSource := ccConfig.TokenSource(ctx)
-	oauthTokenSource := NewTokenSourcePerCallCredential(tSource, cfg.GrpcAuthorizationHeader)
+	oauthTokenSource := NewTokenSourcePerCallCredential(tSource, cfg.AuthorizationHeader)
 	return grpc.WithPerRPCCredentials(oauthTokenSource), nil
 }
 
