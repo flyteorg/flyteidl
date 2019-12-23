@@ -8,7 +8,7 @@ workflow_attributes.proto
 flyteidl.admin.WorkflowAttributes
 ---------------------------------
 
-`[flyteidl.admin.WorkflowAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L5>`_
+`[flyteidl.admin.WorkflowAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L7>`_
 
 
 .. code-block:: json
@@ -17,7 +17,7 @@ flyteidl.admin.WorkflowAttributes
     "project": "...",
     "domain": "...",
     "workflow": "...",
-    "tags": []
+    "matching_attributes": "{...}"
   }
 
 .. _api_field_flyteidl.admin.WorkflowAttributes.project:
@@ -38,11 +38,10 @@ workflow
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Workflow name for which this set of attributes will be applied.
   
   
-.. _api_field_flyteidl.admin.WorkflowAttributes.tags:
+.. _api_field_flyteidl.admin.WorkflowAttributes.matching_attributes:
 
-tags
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-  
+matching_attributes
+  (:ref:`flyteidl.admin.MatchingAttributes <api_msg_flyteidl.admin.MatchingAttributes>`) 
   
 
 
@@ -51,7 +50,7 @@ tags
 flyteidl.admin.WorkflowAttributesUpdateRequest
 ----------------------------------------------
 
-`[flyteidl.admin.WorkflowAttributesUpdateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L20>`_
+`[flyteidl.admin.WorkflowAttributesUpdateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L21>`_
 
 Sets custom attributes for a project, domain and workflow combination.
 
@@ -73,7 +72,7 @@ attributes
 flyteidl.admin.WorkflowAttributesUpdateResponse
 -----------------------------------------------
 
-`[flyteidl.admin.WorkflowAttributesUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L25>`_
+`[flyteidl.admin.WorkflowAttributesUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L26>`_
 
 Purposefully empty, may be populated in the future.
 

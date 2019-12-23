@@ -50,6 +50,16 @@ func (m *WorkflowAttributes) Validate() error {
 
 	// no validation rules for Workflow
 
+	if v, ok := interface{}(m.GetMatchingAttributes()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return WorkflowAttributesValidationError{
+				field:  "MatchingAttributes",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	return nil
 }
 

@@ -3,6 +3,8 @@ syntax = "proto3";
 package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
+import "flyteidl/admin/matchable_resource.proto";
+
 message WorkflowAttributes {
     // Unique project id for which this set of attributes will be applied.
     string project                 = 1;
@@ -13,8 +15,7 @@ message WorkflowAttributes {
     // Workflow name for which this set of attributes will be applied.
     string workflow                = 3;
 
-    // Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-    repeated string tags           = 4;
+    MatchingAttributes matching_attributes = 4;
 }
 
 // Sets custom attributes for a project, domain and workflow combination.

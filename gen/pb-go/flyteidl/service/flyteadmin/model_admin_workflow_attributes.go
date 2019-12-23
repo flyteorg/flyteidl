@@ -16,6 +16,5 @@ type AdminWorkflowAttributes struct {
 	Domain string `json:"domain,omitempty"`
 	// Workflow name for which this set of attributes will be applied.
 	Workflow string `json:"workflow,omitempty"`
-	// Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-	Tags []string `json:"tags,omitempty"`
+	MatchingAttributes *AdminMatchingAttributes `json:"matching_attributes,omitempty"`
 }

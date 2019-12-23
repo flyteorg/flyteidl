@@ -31,6 +31,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "flyteidl/admin/matchable_resource.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto
@@ -168,28 +169,6 @@ class WorkflowAttributes final :
 
   // accessors -------------------------------------------------------
 
-  // repeated string tags = 4;
-  int tags_size() const;
-  void clear_tags();
-  static const int kTagsFieldNumber = 4;
-  const ::std::string& tags(int index) const;
-  ::std::string* mutable_tags(int index);
-  void set_tags(int index, const ::std::string& value);
-  #if LANG_CXX11
-  void set_tags(int index, ::std::string&& value);
-  #endif
-  void set_tags(int index, const char* value);
-  void set_tags(int index, const char* value, size_t size);
-  ::std::string* add_tags();
-  void add_tags(const ::std::string& value);
-  #if LANG_CXX11
-  void add_tags(::std::string&& value);
-  #endif
-  void add_tags(const char* value);
-  void add_tags(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField<::std::string>& tags() const;
-  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_tags();
-
   // string project = 1;
   void clear_project();
   static const int kProjectFieldNumber = 1;
@@ -232,15 +211,24 @@ class WorkflowAttributes final :
   ::std::string* release_workflow();
   void set_allocated_workflow(::std::string* workflow);
 
+  // .flyteidl.admin.MatchingAttributes matching_attributes = 4;
+  bool has_matching_attributes() const;
+  void clear_matching_attributes();
+  static const int kMatchingAttributesFieldNumber = 4;
+  const ::flyteidl::admin::MatchingAttributes& matching_attributes() const;
+  ::flyteidl::admin::MatchingAttributes* release_matching_attributes();
+  ::flyteidl::admin::MatchingAttributes* mutable_matching_attributes();
+  void set_allocated_matching_attributes(::flyteidl::admin::MatchingAttributes* matching_attributes);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.WorkflowAttributes)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField<::std::string> tags_;
   ::google::protobuf::internal::ArenaStringPtr project_;
   ::google::protobuf::internal::ArenaStringPtr domain_;
   ::google::protobuf::internal::ArenaStringPtr workflow_;
+  ::flyteidl::admin::MatchingAttributes* matching_attributes_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto;
 };
@@ -634,73 +622,49 @@ inline void WorkflowAttributes::set_allocated_workflow(::std::string* workflow) 
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.WorkflowAttributes.workflow)
 }
 
-// repeated string tags = 4;
-inline int WorkflowAttributes::tags_size() const {
-  return tags_.size();
+// .flyteidl.admin.MatchingAttributes matching_attributes = 4;
+inline bool WorkflowAttributes::has_matching_attributes() const {
+  return this != internal_default_instance() && matching_attributes_ != nullptr;
 }
-inline void WorkflowAttributes::clear_tags() {
-  tags_.Clear();
+inline const ::flyteidl::admin::MatchingAttributes& WorkflowAttributes::matching_attributes() const {
+  const ::flyteidl::admin::MatchingAttributes* p = matching_attributes_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.WorkflowAttributes.matching_attributes)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::MatchingAttributes*>(
+      &::flyteidl::admin::_MatchingAttributes_default_instance_);
 }
-inline const ::std::string& WorkflowAttributes::tags(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.WorkflowAttributes.tags)
-  return tags_.Get(index);
+inline ::flyteidl::admin::MatchingAttributes* WorkflowAttributes::release_matching_attributes() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.WorkflowAttributes.matching_attributes)
+  
+  ::flyteidl::admin::MatchingAttributes* temp = matching_attributes_;
+  matching_attributes_ = nullptr;
+  return temp;
 }
-inline ::std::string* WorkflowAttributes::mutable_tags(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.WorkflowAttributes.tags)
-  return tags_.Mutable(index);
+inline ::flyteidl::admin::MatchingAttributes* WorkflowAttributes::mutable_matching_attributes() {
+  
+  if (matching_attributes_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::MatchingAttributes>(GetArenaNoVirtual());
+    matching_attributes_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.WorkflowAttributes.matching_attributes)
+  return matching_attributes_;
 }
-inline void WorkflowAttributes::set_tags(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.admin.WorkflowAttributes.tags)
-  tags_.Mutable(index)->assign(value);
-}
-#if LANG_CXX11
-inline void WorkflowAttributes::set_tags(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.admin.WorkflowAttributes.tags)
-  tags_.Mutable(index)->assign(std::move(value));
-}
-#endif
-inline void WorkflowAttributes::set_tags(int index, const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  tags_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.WorkflowAttributes.tags)
-}
-inline void WorkflowAttributes::set_tags(int index, const char* value, size_t size) {
-  tags_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.WorkflowAttributes.tags)
-}
-inline ::std::string* WorkflowAttributes::add_tags() {
-  // @@protoc_insertion_point(field_add_mutable:flyteidl.admin.WorkflowAttributes.tags)
-  return tags_.Add();
-}
-inline void WorkflowAttributes::add_tags(const ::std::string& value) {
-  tags_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:flyteidl.admin.WorkflowAttributes.tags)
-}
-#if LANG_CXX11
-inline void WorkflowAttributes::add_tags(::std::string&& value) {
-  tags_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:flyteidl.admin.WorkflowAttributes.tags)
-}
-#endif
-inline void WorkflowAttributes::add_tags(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  tags_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:flyteidl.admin.WorkflowAttributes.tags)
-}
-inline void WorkflowAttributes::add_tags(const char* value, size_t size) {
-  tags_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:flyteidl.admin.WorkflowAttributes.tags)
-}
-inline const ::google::protobuf::RepeatedPtrField<::std::string>&
-WorkflowAttributes::tags() const {
-  // @@protoc_insertion_point(field_list:flyteidl.admin.WorkflowAttributes.tags)
-  return tags_;
-}
-inline ::google::protobuf::RepeatedPtrField<::std::string>*
-WorkflowAttributes::mutable_tags() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.WorkflowAttributes.tags)
-  return &tags_;
+inline void WorkflowAttributes::set_allocated_matching_attributes(::flyteidl::admin::MatchingAttributes* matching_attributes) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(matching_attributes_);
+  }
+  if (matching_attributes) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      matching_attributes = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, matching_attributes, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  matching_attributes_ = matching_attributes;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.WorkflowAttributes.matching_attributes)
 }
 
 // -------------------------------------------------------------------

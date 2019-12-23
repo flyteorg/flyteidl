@@ -46,7 +46,15 @@ func (m *ProjectAttributes) Validate() error {
 
 	// no validation rules for Project
 
-	// no validation rules for Attributes
+	if v, ok := interface{}(m.GetMatchingAttributes()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ProjectAttributesValidationError{
+				field:  "MatchingAttributes",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	return nil
 }

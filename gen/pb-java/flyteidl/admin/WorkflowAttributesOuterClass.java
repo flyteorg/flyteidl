@@ -73,39 +73,17 @@ public final class WorkflowAttributesOuterClass {
         getWorkflowBytes();
 
     /**
-     * <pre>
-     * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-     * </pre>
-     *
-     * <code>repeated string tags = 4;</code>
+     * <code>.flyteidl.admin.MatchingAttributes matching_attributes = 4;</code>
      */
-    java.util.List<java.lang.String>
-        getTagsList();
+    boolean hasMatchingAttributes();
     /**
-     * <pre>
-     * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-     * </pre>
-     *
-     * <code>repeated string tags = 4;</code>
+     * <code>.flyteidl.admin.MatchingAttributes matching_attributes = 4;</code>
      */
-    int getTagsCount();
+    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getMatchingAttributes();
     /**
-     * <pre>
-     * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-     * </pre>
-     *
-     * <code>repeated string tags = 4;</code>
+     * <code>.flyteidl.admin.MatchingAttributes matching_attributes = 4;</code>
      */
-    java.lang.String getTags(int index);
-    /**
-     * <pre>
-     * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-     * </pre>
-     *
-     * <code>repeated string tags = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getTagsBytes(int index);
+    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getMatchingAttributesOrBuilder();
   }
   /**
    * Protobuf type {@code flyteidl.admin.WorkflowAttributes}
@@ -123,7 +101,6 @@ public final class WorkflowAttributesOuterClass {
       project_ = "";
       domain_ = "";
       workflow_ = "";
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -169,12 +146,16 @@ public final class WorkflowAttributesOuterClass {
               break;
             }
             case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder subBuilder = null;
+              if (matchingAttributes_ != null) {
+                subBuilder = matchingAttributes_.toBuilder();
               }
-              tags_.add(s);
+              matchingAttributes_ = input.readMessage(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(matchingAttributes_);
+                matchingAttributes_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -192,9 +173,6 @@ public final class WorkflowAttributesOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -212,7 +190,6 @@ public final class WorkflowAttributesOuterClass {
               flyteidl.admin.WorkflowAttributesOuterClass.WorkflowAttributes.class, flyteidl.admin.WorkflowAttributesOuterClass.WorkflowAttributes.Builder.class);
     }
 
-    private int bitField0_;
     public static final int PROJECT_FIELD_NUMBER = 1;
     private volatile java.lang.Object project_;
     /**
@@ -339,49 +316,25 @@ public final class WorkflowAttributesOuterClass {
       }
     }
 
-    public static final int TAGS_FIELD_NUMBER = 4;
-    private com.google.protobuf.LazyStringList tags_;
+    public static final int MATCHING_ATTRIBUTES_FIELD_NUMBER = 4;
+    private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes matchingAttributes_;
     /**
-     * <pre>
-     * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-     * </pre>
-     *
-     * <code>repeated string tags = 4;</code>
+     * <code>.flyteidl.admin.MatchingAttributes matching_attributes = 4;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getTagsList() {
-      return tags_;
+    public boolean hasMatchingAttributes() {
+      return matchingAttributes_ != null;
     }
     /**
-     * <pre>
-     * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-     * </pre>
-     *
-     * <code>repeated string tags = 4;</code>
+     * <code>.flyteidl.admin.MatchingAttributes matching_attributes = 4;</code>
      */
-    public int getTagsCount() {
-      return tags_.size();
+    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getMatchingAttributes() {
+      return matchingAttributes_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : matchingAttributes_;
     }
     /**
-     * <pre>
-     * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-     * </pre>
-     *
-     * <code>repeated string tags = 4;</code>
+     * <code>.flyteidl.admin.MatchingAttributes matching_attributes = 4;</code>
      */
-    public java.lang.String getTags(int index) {
-      return tags_.get(index);
-    }
-    /**
-     * <pre>
-     * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-     * </pre>
-     *
-     * <code>repeated string tags = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTagsBytes(int index) {
-      return tags_.getByteString(index);
+    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getMatchingAttributesOrBuilder() {
+      return getMatchingAttributes();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -407,8 +360,8 @@ public final class WorkflowAttributesOuterClass {
       if (!getWorkflowBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, workflow_);
       }
-      for (int i = 0; i < tags_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tags_.getRaw(i));
+      if (matchingAttributes_ != null) {
+        output.writeMessage(4, getMatchingAttributes());
       }
       unknownFields.writeTo(output);
     }
@@ -428,13 +381,9 @@ public final class WorkflowAttributesOuterClass {
       if (!getWorkflowBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, workflow_);
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < tags_.size(); i++) {
-          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getTagsList().size();
+      if (matchingAttributes_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getMatchingAttributes());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -457,8 +406,11 @@ public final class WorkflowAttributesOuterClass {
           .equals(other.getDomain())) return false;
       if (!getWorkflow()
           .equals(other.getWorkflow())) return false;
-      if (!getTagsList()
-          .equals(other.getTagsList())) return false;
+      if (hasMatchingAttributes() != other.hasMatchingAttributes()) return false;
+      if (hasMatchingAttributes()) {
+        if (!getMatchingAttributes()
+            .equals(other.getMatchingAttributes())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -476,9 +428,9 @@ public final class WorkflowAttributesOuterClass {
       hash = (53 * hash) + getDomain().hashCode();
       hash = (37 * hash) + WORKFLOW_FIELD_NUMBER;
       hash = (53 * hash) + getWorkflow().hashCode();
-      if (getTagsCount() > 0) {
-        hash = (37 * hash) + TAGS_FIELD_NUMBER;
-        hash = (53 * hash) + getTagsList().hashCode();
+      if (hasMatchingAttributes()) {
+        hash = (37 * hash) + MATCHING_ATTRIBUTES_FIELD_NUMBER;
+        hash = (53 * hash) + getMatchingAttributes().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -619,8 +571,12 @@ public final class WorkflowAttributesOuterClass {
 
         workflow_ = "";
 
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        if (matchingAttributesBuilder_ == null) {
+          matchingAttributes_ = null;
+        } else {
+          matchingAttributes_ = null;
+          matchingAttributesBuilder_ = null;
+        }
         return this;
       }
 
@@ -647,17 +603,14 @@ public final class WorkflowAttributesOuterClass {
       @java.lang.Override
       public flyteidl.admin.WorkflowAttributesOuterClass.WorkflowAttributes buildPartial() {
         flyteidl.admin.WorkflowAttributesOuterClass.WorkflowAttributes result = new flyteidl.admin.WorkflowAttributesOuterClass.WorkflowAttributes(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.project_ = project_;
         result.domain_ = domain_;
         result.workflow_ = workflow_;
-        if (((bitField0_ & 0x00000008) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
+        if (matchingAttributesBuilder_ == null) {
+          result.matchingAttributes_ = matchingAttributes_;
+        } else {
+          result.matchingAttributes_ = matchingAttributesBuilder_.build();
         }
-        result.tags_ = tags_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -718,15 +671,8 @@ public final class WorkflowAttributesOuterClass {
           workflow_ = other.workflow_;
           onChanged();
         }
-        if (!other.tags_.isEmpty()) {
-          if (tags_.isEmpty()) {
-            tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-          } else {
-            ensureTagsIsMutable();
-            tags_.addAll(other.tags_);
-          }
-          onChanged();
+        if (other.hasMatchingAttributes()) {
+          mergeMatchingAttributes(other.getMatchingAttributes());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -756,7 +702,6 @@ public final class WorkflowAttributesOuterClass {
         }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object project_ = "";
       /**
@@ -1025,134 +970,121 @@ public final class WorkflowAttributesOuterClass {
         return this;
       }
 
-      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
-          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000008;
-         }
+      private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes matchingAttributes_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> matchingAttributesBuilder_;
+      /**
+       * <code>.flyteidl.admin.MatchingAttributes matching_attributes = 4;</code>
+       */
+      public boolean hasMatchingAttributes() {
+        return matchingAttributesBuilder_ != null || matchingAttributes_ != null;
       }
       /**
-       * <pre>
-       * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-       * </pre>
-       *
-       * <code>repeated string tags = 4;</code>
+       * <code>.flyteidl.admin.MatchingAttributes matching_attributes = 4;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getTagsList() {
-        return tags_.getUnmodifiableView();
+      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getMatchingAttributes() {
+        if (matchingAttributesBuilder_ == null) {
+          return matchingAttributes_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : matchingAttributes_;
+        } else {
+          return matchingAttributesBuilder_.getMessage();
+        }
       }
       /**
-       * <pre>
-       * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-       * </pre>
-       *
-       * <code>repeated string tags = 4;</code>
+       * <code>.flyteidl.admin.MatchingAttributes matching_attributes = 4;</code>
        */
-      public int getTagsCount() {
-        return tags_.size();
-      }
-      /**
-       * <pre>
-       * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-       * </pre>
-       *
-       * <code>repeated string tags = 4;</code>
-       */
-      public java.lang.String getTags(int index) {
-        return tags_.get(index);
-      }
-      /**
-       * <pre>
-       * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-       * </pre>
-       *
-       * <code>repeated string tags = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTagsBytes(int index) {
-        return tags_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-       * </pre>
-       *
-       * <code>repeated string tags = 4;</code>
-       */
-      public Builder setTags(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
-        tags_.set(index, value);
-        onChanged();
+      public Builder setMatchingAttributes(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+        if (matchingAttributesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          matchingAttributes_ = value;
+          onChanged();
+        } else {
+          matchingAttributesBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
-       * <pre>
-       * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-       * </pre>
-       *
-       * <code>repeated string tags = 4;</code>
+       * <code>.flyteidl.admin.MatchingAttributes matching_attributes = 4;</code>
        */
-      public Builder addTags(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
-        tags_.add(value);
-        onChanged();
+      public Builder setMatchingAttributes(
+          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder builderForValue) {
+        if (matchingAttributesBuilder_ == null) {
+          matchingAttributes_ = builderForValue.build();
+          onChanged();
+        } else {
+          matchingAttributesBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <pre>
-       * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-       * </pre>
-       *
-       * <code>repeated string tags = 4;</code>
+       * <code>.flyteidl.admin.MatchingAttributes matching_attributes = 4;</code>
        */
-      public Builder addAllTags(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureTagsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, tags_);
-        onChanged();
+      public Builder mergeMatchingAttributes(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+        if (matchingAttributesBuilder_ == null) {
+          if (matchingAttributes_ != null) {
+            matchingAttributes_ =
+              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.newBuilder(matchingAttributes_).mergeFrom(value).buildPartial();
+          } else {
+            matchingAttributes_ = value;
+          }
+          onChanged();
+        } else {
+          matchingAttributesBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
-       * <pre>
-       * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-       * </pre>
-       *
-       * <code>repeated string tags = 4;</code>
+       * <code>.flyteidl.admin.MatchingAttributes matching_attributes = 4;</code>
        */
-      public Builder clearTags() {
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        onChanged();
+      public Builder clearMatchingAttributes() {
+        if (matchingAttributesBuilder_ == null) {
+          matchingAttributes_ = null;
+          onChanged();
+        } else {
+          matchingAttributes_ = null;
+          matchingAttributesBuilder_ = null;
+        }
+
         return this;
       }
       /**
-       * <pre>
-       * Tags used for assigning execution queues for tasks defined within this project, domain and workflow.
-       * </pre>
-       *
-       * <code>repeated string tags = 4;</code>
+       * <code>.flyteidl.admin.MatchingAttributes matching_attributes = 4;</code>
        */
-      public Builder addTagsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureTagsIsMutable();
-        tags_.add(value);
+      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder getMatchingAttributesBuilder() {
+        
         onChanged();
-        return this;
+        return getMatchingAttributesFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.admin.MatchingAttributes matching_attributes = 4;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getMatchingAttributesOrBuilder() {
+        if (matchingAttributesBuilder_ != null) {
+          return matchingAttributesBuilder_.getMessageOrBuilder();
+        } else {
+          return matchingAttributes_ == null ?
+              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : matchingAttributes_;
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.MatchingAttributes matching_attributes = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> 
+          getMatchingAttributesFieldBuilder() {
+        if (matchingAttributesBuilder_ == null) {
+          matchingAttributesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder>(
+                  getMatchingAttributes(),
+                  getParentForChildren(),
+                  isClean());
+          matchingAttributes_ = null;
+        }
+        return matchingAttributesBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2265,14 +2197,16 @@ public final class WorkflowAttributesOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n(flyteidl/admin/workflow_attributes.pro" +
-      "to\022\016flyteidl.admin\"U\n\022WorkflowAttributes" +
-      "\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010wor" +
-      "kflow\030\003 \001(\t\022\014\n\004tags\030\004 \003(\t\"Y\n\037WorkflowAtt" +
-      "ributesUpdateRequest\0226\n\nattributes\030\001 \001(\013" +
-      "2\".flyteidl.admin.WorkflowAttributes\"\"\n " +
-      "WorkflowAttributesUpdateResponseB3Z1gith" +
-      "ub.com/lyft/flyteidl/gen/pb-go/flyteidl/" +
-      "adminb\006proto3"
+      "to\022\016flyteidl.admin\032\'flyteidl/admin/match" +
+      "able_resource.proto\"\210\001\n\022WorkflowAttribut" +
+      "es\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010w" +
+      "orkflow\030\003 \001(\t\022?\n\023matching_attributes\030\004 \001" +
+      "(\0132\".flyteidl.admin.MatchingAttributes\"Y" +
+      "\n\037WorkflowAttributesUpdateRequest\0226\n\natt" +
+      "ributes\030\001 \001(\0132\".flyteidl.admin.WorkflowA" +
+      "ttributes\"\"\n WorkflowAttributesUpdateRes" +
+      "ponseB3Z1github.com/lyft/flyteidl/gen/pb" +
+      "-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2285,13 +2219,14 @@ public final class WorkflowAttributesOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          flyteidl.admin.MatchableResourceOuterClass.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_admin_WorkflowAttributes_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_flyteidl_admin_WorkflowAttributes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowAttributes_descriptor,
-        new java.lang.String[] { "Project", "Domain", "Workflow", "Tags", });
+        new java.lang.String[] { "Project", "Domain", "Workflow", "MatchingAttributes", });
     internal_static_flyteidl_admin_WorkflowAttributesUpdateRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_admin_WorkflowAttributesUpdateRequest_fieldAccessorTable = new
@@ -2304,6 +2239,7 @@ public final class WorkflowAttributesOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowAttributesUpdateResponse_descriptor,
         new java.lang.String[] { });
+    flyteidl.admin.MatchableResourceOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

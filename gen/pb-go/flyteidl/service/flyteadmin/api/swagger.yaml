@@ -2253,6 +2253,17 @@ definitions:
     example:
       kubernetes_service_account: "kubernetes_service_account"
       assumable_iam_role: "assumable_iam_role"
+  adminClusterResourceAttributes:
+    type: "object"
+    properties:
+      attributes:
+        type: "object"
+        description: "Custom resource attributes which will be applied in cluster\
+          \ resource creation (e.g. quotas).\nMap keys are the *case-sensitive* names\
+          \ of variables in templatized resource files.\nMap values should be the\
+          \ custom values which get substituted during resource creation."
+        additionalProperties:
+          type: "string"
   adminDomain:
     type: "object"
     properties:
@@ -2876,6 +2887,15 @@ definitions:
         project: "project"
       scheduled_at: "2000-01-23T04:56:07.000+00:00"
       nesting: 0
+  adminExecutionQueueAttributes:
+    type: "object"
+    properties:
+      tags:
+        type: "array"
+        description: "Tags used for assigning execution queues for tasks defined within\
+          \ this project."
+        items:
+          type: "string"
   adminExecutionRelaunchRequest:
     type: "object"
     properties:
@@ -4192,6 +4212,17 @@ definitions:
       values:
         literals: {}
       uri: "uri"
+  adminMatchingAttributes:
+    type: "object"
+    properties:
+      task_resource_attributes:
+        $ref: "#/definitions/adminTaskResourceAttributes"
+      cluster_resource_attributes:
+        $ref: "#/definitions/adminClusterResourceAttributes"
+      execution_queue_attributes:
+        $ref: "#/definitions/adminExecutionQueueAttributes"
+    description: "Generic container for encapsulating all types of the above attributes\
+      \ messages."
   adminNamedEntity:
     type: "object"
     properties:
@@ -4566,20 +4597,8 @@ definitions:
       project:
         type: "string"
         description: "Unique project id for which this set of attributes will be applied."
-      attributes:
-        type: "object"
-        description: "Custom resource attributes which will be applied in cluster\
-          \ resource creation (e.g. quotas).\nMap keys are the *case-sensitive* names\
-          \ of variables in templatized resource files.\nMap values should be the\
-          \ custom values which get substituted during resource creation."
-        additionalProperties:
-          type: "string"
-      tags:
-        type: "array"
-        description: "Tags used for assigning execution queues for tasks defined within\
-          \ this project."
-        items:
-          type: "string"
+      matching_attributes:
+        $ref: "#/definitions/adminMatchingAttributes"
   adminProjectAttributesUpdateRequest:
     type: "object"
     properties:
@@ -4598,20 +4617,8 @@ definitions:
       domain:
         type: "string"
         description: "Unique domain id for which this set of attributes will be applied."
-      attributes:
-        type: "object"
-        description: "Custom resource attributes which will be applied in cluster\
-          \ resource creation (e.g. quotas).\nMap keys are the *case-sensitive* names\
-          \ of variables in templatized resource files.\nMap values should be the\
-          \ custom values which get substituted during resource creation."
-        additionalProperties:
-          type: "string"
-      tags:
-        type: "array"
-        description: "Tags used for assigning execution queues for tasks defined within\
-          \ this project and domain."
-        items:
-          type: "string"
+      matching_attributes:
+        $ref: "#/definitions/adminMatchingAttributes"
   adminProjectDomainAttributesUpdateRequest:
     type: "object"
     properties:
@@ -5454,6 +5461,17 @@ definitions:
                           format: "format"
                         simple: {}
       token: "token"
+  adminTaskResourceAttributes:
+    type: "object"
+    properties:
+      cpu:
+        type: "string"
+      gpu:
+        type: "string"
+      memory:
+        type: "string"
+      storage:
+        type: "string"
   adminTaskSpec:
     type: "object"
     properties:
@@ -8194,12 +8212,8 @@ definitions:
       workflow:
         type: "string"
         description: "Workflow name for which this set of attributes will be applied."
-      tags:
-        type: "array"
-        description: "Tags used for assigning execution queues for tasks defined within\
-          \ this project, domain and workflow."
-        items:
-          type: "string"
+      matching_attributes:
+        $ref: "#/definitions/adminMatchingAttributes"
   adminWorkflowAttributesUpdateRequest:
     type: "object"
     properties:

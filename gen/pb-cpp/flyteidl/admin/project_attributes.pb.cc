@@ -16,14 +16,10 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fproject_5fattributes_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ProjectAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fproject_5fattributes_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_MatchingAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fproject_5fattributes_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ProjectAttributes_flyteidl_2fadmin_2fproject_5fattributes_2eproto;
 namespace flyteidl {
 namespace admin {
-class ProjectAttributes_AttributesEntry_DoNotUseDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ProjectAttributes_AttributesEntry_DoNotUse> _instance;
-} _ProjectAttributes_AttributesEntry_DoNotUse_default_instance_;
 class ProjectAttributesDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<ProjectAttributes> _instance;
@@ -38,19 +34,6 @@ class ProjectAttributesUpdateResponseDefaultTypeInternal {
 } _ProjectAttributesUpdateResponse_default_instance_;
 }  // namespace admin
 }  // namespace flyteidl
-static void InitDefaultsProjectAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fproject_5fattributes_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::flyteidl::admin::_ProjectAttributes_AttributesEntry_DoNotUse_default_instance_;
-    new (ptr) ::flyteidl::admin::ProjectAttributes_AttributesEntry_DoNotUse();
-  }
-  ::flyteidl::admin::ProjectAttributes_AttributesEntry_DoNotUse::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_ProjectAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fproject_5fattributes_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsProjectAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fproject_5fattributes_2eproto}, {}};
-
 static void InitDefaultsProjectAttributes_flyteidl_2fadmin_2fproject_5fattributes_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -64,7 +47,7 @@ static void InitDefaultsProjectAttributes_flyteidl_2fadmin_2fproject_5fattribute
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_ProjectAttributes_flyteidl_2fadmin_2fproject_5fattributes_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsProjectAttributes_flyteidl_2fadmin_2fproject_5fattributes_2eproto}, {
-      &scc_info_ProjectAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fproject_5fattributes_2eproto.base,}};
+      &scc_info_MatchingAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base,}};
 
 static void InitDefaultsProjectAttributesUpdateRequest_flyteidl_2fadmin_2fproject_5fattributes_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -96,34 +79,23 @@ static void InitDefaultsProjectAttributesUpdateResponse_flyteidl_2fadmin_2fproje
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsProjectAttributesUpdateResponse_flyteidl_2fadmin_2fproject_5fattributes_2eproto}, {}};
 
 void InitDefaults_flyteidl_2fadmin_2fproject_5fattributes_2eproto() {
-  ::google::protobuf::internal::InitSCC(&scc_info_ProjectAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fproject_5fattributes_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ProjectAttributes_flyteidl_2fadmin_2fproject_5fattributes_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ProjectAttributesUpdateRequest_flyteidl_2fadmin_2fproject_5fattributes_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ProjectAttributesUpdateResponse_flyteidl_2fadmin_2fproject_5fattributes_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fproject_5fattributes_2eproto[4];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fproject_5fattributes_2eproto[3];
 constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_flyteidl_2fadmin_2fproject_5fattributes_2eproto = nullptr;
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fadmin_2fproject_5fattributes_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fproject_5fattributes_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectAttributes_AttributesEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectAttributes_AttributesEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectAttributes_AttributesEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectAttributes_AttributesEntry_DoNotUse, value_),
-  0,
-  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectAttributes, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectAttributes, project_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectAttributes, attributes_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectAttributes, tags_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectAttributes, matching_attributes_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectAttributesUpdateRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -137,14 +109,12 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fproject_5fattrib
   ~0u,  // no _weak_field_map_
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 7, sizeof(::flyteidl::admin::ProjectAttributes_AttributesEntry_DoNotUse)},
-  { 9, -1, sizeof(::flyteidl::admin::ProjectAttributes)},
-  { 17, -1, sizeof(::flyteidl::admin::ProjectAttributesUpdateRequest)},
-  { 23, -1, sizeof(::flyteidl::admin::ProjectAttributesUpdateResponse)},
+  { 0, -1, sizeof(::flyteidl::admin::ProjectAttributes)},
+  { 7, -1, sizeof(::flyteidl::admin::ProjectAttributesUpdateRequest)},
+  { 13, -1, sizeof(::flyteidl::admin::ProjectAttributesUpdateResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ProjectAttributes_AttributesEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ProjectAttributes_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ProjectAttributesUpdateRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ProjectAttributesUpdateResponse_default_instance_),
@@ -153,33 +123,33 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fadmin_2fproject_5fattributes_2eproto = {
   {}, AddDescriptors_flyteidl_2fadmin_2fproject_5fattributes_2eproto, "flyteidl/admin/project_attributes.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fadmin_2fproject_5fattributes_2eproto::offsets,
-  file_level_metadata_flyteidl_2fadmin_2fproject_5fattributes_2eproto, 4, file_level_enum_descriptors_flyteidl_2fadmin_2fproject_5fattributes_2eproto, file_level_service_descriptors_flyteidl_2fadmin_2fproject_5fattributes_2eproto,
+  file_level_metadata_flyteidl_2fadmin_2fproject_5fattributes_2eproto, 3, file_level_enum_descriptors_flyteidl_2fadmin_2fproject_5fattributes_2eproto, file_level_service_descriptors_flyteidl_2fadmin_2fproject_5fattributes_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fadmin_2fproject_5fattributes_2eproto[] =
   "\n\'flyteidl/admin/project_attributes.prot"
-  "o\022\016flyteidl.admin\"\254\001\n\021ProjectAttributes\022"
-  "\017\n\007project\030\001 \001(\t\022E\n\nattributes\030\002 \003(\01321.f"
-  "lyteidl.admin.ProjectAttributes.Attribut"
-  "esEntry\022\014\n\004tags\030\003 \003(\t\0321\n\017AttributesEntry"
-  "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"W\n\036Proj"
-  "ectAttributesUpdateRequest\0225\n\nattributes"
-  "\030\001 \001(\0132!.flyteidl.admin.ProjectAttribute"
-  "s\"!\n\037ProjectAttributesUpdateResponseB3Z1"
-  "github.com/lyft/flyteidl/gen/pb-go/flyte"
-  "idl/adminb\006proto3"
+  "o\022\016flyteidl.admin\032\'flyteidl/admin/matcha"
+  "ble_resource.proto\"e\n\021ProjectAttributes\022"
+  "\017\n\007project\030\001 \001(\t\022\?\n\023matching_attributes\030"
+  "\002 \001(\0132\".flyteidl.admin.MatchingAttribute"
+  "s\"W\n\036ProjectAttributesUpdateRequest\0225\n\na"
+  "ttributes\030\001 \001(\0132!.flyteidl.admin.Project"
+  "Attributes\"!\n\037ProjectAttributesUpdateRes"
+  "ponseB3Z1github.com/lyft/flyteidl/gen/pb"
+  "-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fproject_5fattributes_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fproject_5fattributes_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fproject_5fattributes_2eproto,
-  "flyteidl/admin/project_attributes.proto", &assign_descriptors_table_flyteidl_2fadmin_2fproject_5fattributes_2eproto, 417,
+  "flyteidl/admin/project_attributes.proto", &assign_descriptors_table_flyteidl_2fadmin_2fproject_5fattributes_2eproto, 386,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fproject_5fattributes_2eproto() {
   static constexpr ::google::protobuf::internal::InitFunc deps[1] =
   {
+    ::AddDescriptors_flyteidl_2fadmin_2fmatchable_5fresource_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fproject_5fattributes_2eproto, deps, 0);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fproject_5fattributes_2eproto, deps, 1);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -189,57 +159,28 @@ namespace admin {
 
 // ===================================================================
 
-ProjectAttributes_AttributesEntry_DoNotUse::ProjectAttributes_AttributesEntry_DoNotUse() {}
-ProjectAttributes_AttributesEntry_DoNotUse::ProjectAttributes_AttributesEntry_DoNotUse(::google::protobuf::Arena* arena)
-    : SuperType(arena) {}
-void ProjectAttributes_AttributesEntry_DoNotUse::MergeFrom(const ProjectAttributes_AttributesEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::google::protobuf::Metadata ProjectAttributes_AttributesEntry_DoNotUse::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fproject_5fattributes_2eproto);
-  return ::file_level_metadata_flyteidl_2fadmin_2fproject_5fattributes_2eproto[0];
-}
-void ProjectAttributes_AttributesEntry_DoNotUse::MergeFrom(
-    const ::google::protobuf::Message& other) {
-  ::google::protobuf::Message::MergeFrom(other);
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool ProjectAttributes_AttributesEntry_DoNotUse::_ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx) {
-  using MF = ::google::protobuf::internal::MapField<
-      ProjectAttributes_AttributesEntry_DoNotUse, EntryKeyType, EntryValueType,
-      kEntryKeyFieldType, kEntryValueFieldType,
-      kEntryDefaultEnumValue>;
-  auto mf = static_cast<MF*>(object);
-  Parser<MF, ::google::protobuf::Map<EntryKeyType, EntryValueType>> parser(mf);
-#define DO_(x) if (!(x)) return false
-  DO_(parser.ParseMap(begin, end));
-  DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-    parser.key().data(), static_cast<int>(parser.key().length()),
-    ::google::protobuf::internal::WireFormatLite::PARSE,
-    "flyteidl.admin.ProjectAttributes.AttributesEntry.key"));
-  DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-    parser.value().data(), static_cast<int>(parser.value().length()),
-    ::google::protobuf::internal::WireFormatLite::PARSE,
-    "flyteidl.admin.ProjectAttributes.AttributesEntry.value"));
-#undef DO_
-  return true;
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-
-// ===================================================================
-
 void ProjectAttributes::InitAsDefaultInstance() {
+  ::flyteidl::admin::_ProjectAttributes_default_instance_._instance.get_mutable()->matching_attributes_ = const_cast< ::flyteidl::admin::MatchingAttributes*>(
+      ::flyteidl::admin::MatchingAttributes::internal_default_instance());
 }
 class ProjectAttributes::HasBitSetters {
  public:
+  static const ::flyteidl::admin::MatchingAttributes& matching_attributes(const ProjectAttributes* msg);
 };
 
+const ::flyteidl::admin::MatchingAttributes&
+ProjectAttributes::HasBitSetters::matching_attributes(const ProjectAttributes* msg) {
+  return *msg->matching_attributes_;
+}
+void ProjectAttributes::clear_matching_attributes() {
+  if (GetArenaNoVirtual() == nullptr && matching_attributes_ != nullptr) {
+    delete matching_attributes_;
+  }
+  matching_attributes_ = nullptr;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ProjectAttributes::kProjectFieldNumber;
-const int ProjectAttributes::kAttributesFieldNumber;
-const int ProjectAttributes::kTagsFieldNumber;
+const int ProjectAttributes::kMatchingAttributesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ProjectAttributes::ProjectAttributes()
@@ -249,13 +190,16 @@ ProjectAttributes::ProjectAttributes()
 }
 ProjectAttributes::ProjectAttributes(const ProjectAttributes& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr),
-      tags_(from.tags_) {
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  attributes_.MergeFrom(from.attributes_);
   project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.project().size() > 0) {
     project_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.project_);
+  }
+  if (from.has_matching_attributes()) {
+    matching_attributes_ = new ::flyteidl::admin::MatchingAttributes(*from.matching_attributes_);
+  } else {
+    matching_attributes_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.ProjectAttributes)
 }
@@ -264,6 +208,7 @@ void ProjectAttributes::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_ProjectAttributes_flyteidl_2fadmin_2fproject_5fattributes_2eproto.base);
   project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  matching_attributes_ = nullptr;
 }
 
 ProjectAttributes::~ProjectAttributes() {
@@ -273,6 +218,7 @@ ProjectAttributes::~ProjectAttributes() {
 
 void ProjectAttributes::SharedDtor() {
   project_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete matching_attributes_;
 }
 
 void ProjectAttributes::SetCachedSize(int size) const {
@@ -290,9 +236,11 @@ void ProjectAttributes::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  attributes_.Clear();
-  tags_.Clear();
   project_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && matching_attributes_ != nullptr) {
+    delete matching_attributes_;
+  }
+  matching_attributes_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -325,42 +273,17 @@ const char* ProjectAttributes::_InternalParse(const char* begin, const char* end
         ptr += size;
         break;
       }
-      // map<string, string> attributes = 2;
+      // .flyteidl.admin.MatchingAttributes matching_attributes = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        do {
-          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::google::protobuf::internal::SlowMapEntryParser;
-          auto parse_map = ::flyteidl::admin::ProjectAttributes_AttributesEntry_DoNotUse::_ParseMap;
-          ctx->extra_parse_data().payload.clear();
-          ctx->extra_parse_data().parse_map = parse_map;
-          object = &msg->attributes_;
-          if (size > end - ptr) goto len_delim_till_end;
-          auto newend = ptr + size;
-          GOOGLE_PROTOBUF_PARSER_ASSERT(parse_map(ptr, newend, object, ctx));
-          ptr = newend;
-          if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 18 && (ptr += 1));
-        break;
-      }
-      // repeated string tags = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        do {
-          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          ctx->extra_parse_data().SetFieldName("flyteidl.admin.ProjectAttributes.tags");
-          object = msg->add_tags();
-          if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-            parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-            goto string_till_end;
-          }
-          GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-          ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-          ptr += size;
-          if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 26 && (ptr += 1));
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::admin::MatchingAttributes::_InternalParse;
+        object = msg->mutable_matching_attributes();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
         break;
       }
       default: {
@@ -412,42 +335,11 @@ bool ProjectAttributes::MergePartialFromCodedStream(
         break;
       }
 
-      // map<string, string> attributes = 2;
+      // .flyteidl.admin.MatchingAttributes matching_attributes = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          ProjectAttributes_AttributesEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
-              ProjectAttributes_AttributesEntry_DoNotUse,
-              ::std::string, ::std::string,
-              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-              0 >,
-            ::google::protobuf::Map< ::std::string, ::std::string > > parser(&attributes_);
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-              input, &parser));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.key().data(), static_cast<int>(parser.key().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.ProjectAttributes.AttributesEntry.key"));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.value().data(), static_cast<int>(parser.value().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.ProjectAttributes.AttributesEntry.value"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated string tags = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_tags()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->tags(this->tags_size() - 1).data(),
-            static_cast<int>(this->tags(this->tags_size() - 1).length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.ProjectAttributes.tags"));
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_matching_attributes()));
         } else {
           goto handle_unusual;
         }
@@ -491,63 +383,10 @@ void ProjectAttributes::SerializeWithCachedSizes(
       1, this->project(), output);
   }
 
-  // map<string, string> attributes = 2;
-  if (!this->attributes().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "flyteidl.admin.ProjectAttributes.AttributesEntry.key");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "flyteidl.admin.ProjectAttributes.AttributesEntry.value");
-      }
-    };
-
-    if (output->IsSerializationDeterministic() &&
-        this->attributes().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->attributes().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->attributes().begin();
-          it != this->attributes().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::std::unique_ptr<ProjectAttributes_AttributesEntry_DoNotUse> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(attributes_.NewEntryWrapper(items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(2, *entry, output);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      ::std::unique_ptr<ProjectAttributes_AttributesEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->attributes().begin();
-          it != this->attributes().end(); ++it) {
-        entry.reset(attributes_.NewEntryWrapper(it->first, it->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(2, *entry, output);
-        Utf8Check::Check(&(*it));
-      }
-    }
-  }
-
-  // repeated string tags = 3;
-  for (int i = 0, n = this->tags_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.ProjectAttributes.tags");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      3, this->tags(i), output);
+  // .flyteidl.admin.MatchingAttributes matching_attributes = 2;
+  if (this->has_matching_attributes()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, HasBitSetters::matching_attributes(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -574,63 +413,11 @@ void ProjectAttributes::SerializeWithCachedSizes(
         1, this->project(), target);
   }
 
-  // map<string, string> attributes = 2;
-  if (!this->attributes().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "flyteidl.admin.ProjectAttributes.AttributesEntry.key");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "flyteidl.admin.ProjectAttributes.AttributesEntry.value");
-      }
-    };
-
-    if (false &&
-        this->attributes().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->attributes().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->attributes().begin();
-          it != this->attributes().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::std::unique_ptr<ProjectAttributes_AttributesEntry_DoNotUse> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(attributes_.NewEntryWrapper(items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(2, *entry, target);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      ::std::unique_ptr<ProjectAttributes_AttributesEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->attributes().begin();
-          it != this->attributes().end(); ++it) {
-        entry.reset(attributes_.NewEntryWrapper(it->first, it->second));
-        target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(2, *entry, target);
-        Utf8Check::Check(&(*it));
-      }
-    }
-  }
-
-  // repeated string tags = 3;
-  for (int i = 0, n = this->tags_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.ProjectAttributes.tags");
+  // .flyteidl.admin.MatchingAttributes matching_attributes = 2;
+  if (this->has_matching_attributes()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(3, this->tags(i), target);
+      InternalWriteMessageToArray(
+        2, HasBitSetters::matching_attributes(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -654,33 +441,18 @@ size_t ProjectAttributes::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // map<string, string> attributes = 2;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->attributes_size());
-  {
-    ::std::unique_ptr<ProjectAttributes_AttributesEntry_DoNotUse> entry;
-    for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-        it = this->attributes().begin();
-        it != this->attributes().end(); ++it) {
-      entry.reset(attributes_.NewEntryWrapper(it->first, it->second));
-      total_size += ::google::protobuf::internal::WireFormatLite::
-          MessageSizeNoVirtual(*entry);
-    }
-  }
-
-  // repeated string tags = 3;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->tags_size());
-  for (int i = 0, n = this->tags_size(); i < n; i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->tags(i));
-  }
-
   // string project = 1;
   if (this->project().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->project());
+  }
+
+  // .flyteidl.admin.MatchingAttributes matching_attributes = 2;
+  if (this->has_matching_attributes()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *matching_attributes_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -710,11 +482,12 @@ void ProjectAttributes::MergeFrom(const ProjectAttributes& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  attributes_.MergeFrom(from.attributes_);
-  tags_.MergeFrom(from.tags_);
   if (from.project().size() > 0) {
 
     project_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.project_);
+  }
+  if (from.has_matching_attributes()) {
+    mutable_matching_attributes()->::flyteidl::admin::MatchingAttributes::MergeFrom(from.matching_attributes());
   }
 }
 
@@ -743,10 +516,9 @@ void ProjectAttributes::Swap(ProjectAttributes* other) {
 void ProjectAttributes::InternalSwap(ProjectAttributes* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  attributes_.Swap(&other->attributes_);
-  tags_.InternalSwap(CastToBase(&other->tags_));
   project_.Swap(&other->project_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(matching_attributes_, other->matching_attributes_);
 }
 
 ::google::protobuf::Metadata ProjectAttributes::GetMetadata() const {
@@ -1256,9 +1028,6 @@ void ProjectAttributesUpdateResponse::InternalSwap(ProjectAttributesUpdateRespon
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
-template<> PROTOBUF_NOINLINE ::flyteidl::admin::ProjectAttributes_AttributesEntry_DoNotUse* Arena::CreateMaybeMessage< ::flyteidl::admin::ProjectAttributes_AttributesEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::admin::ProjectAttributes_AttributesEntry_DoNotUse >(arena);
-}
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::ProjectAttributes* Arena::CreateMaybeMessage< ::flyteidl::admin::ProjectAttributes >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::admin::ProjectAttributes >(arena);
 }

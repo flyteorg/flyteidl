@@ -25,6 +25,7 @@ from flyteadmin.configuration import Configuration
 from flyteadmin.models.admin_abort_metadata import AdminAbortMetadata
 from flyteadmin.models.admin_annotations import AdminAnnotations
 from flyteadmin.models.admin_auth import AdminAuth
+from flyteadmin.models.admin_cluster_resource_attributes import AdminClusterResourceAttributes
 from flyteadmin.models.admin_domain import AdminDomain
 from flyteadmin.models.admin_email_notification import AdminEmailNotification
 from flyteadmin.models.admin_execution import AdminExecution
@@ -33,6 +34,7 @@ from flyteadmin.models.admin_execution_create_request import AdminExecutionCreat
 from flyteadmin.models.admin_execution_create_response import AdminExecutionCreateResponse
 from flyteadmin.models.admin_execution_list import AdminExecutionList
 from flyteadmin.models.admin_execution_metadata import AdminExecutionMetadata
+from flyteadmin.models.admin_execution_queue_attributes import AdminExecutionQueueAttributes
 from flyteadmin.models.admin_execution_relaunch_request import AdminExecutionRelaunchRequest
 from flyteadmin.models.admin_execution_spec import AdminExecutionSpec
 from flyteadmin.models.admin_execution_terminate_request import AdminExecutionTerminateRequest
@@ -51,6 +53,7 @@ from flyteadmin.models.admin_launch_plan_state import AdminLaunchPlanState
 from flyteadmin.models.admin_launch_plan_update_request import AdminLaunchPlanUpdateRequest
 from flyteadmin.models.admin_launch_plan_update_response import AdminLaunchPlanUpdateResponse
 from flyteadmin.models.admin_literal_map_blob import AdminLiteralMapBlob
+from flyteadmin.models.admin_matching_attributes import AdminMatchingAttributes
 from flyteadmin.models.admin_named_entity import AdminNamedEntity
 from flyteadmin.models.admin_named_entity_identifier import AdminNamedEntityIdentifier
 from flyteadmin.models.admin_named_entity_identifier_list import AdminNamedEntityIdentifierList
@@ -89,6 +92,7 @@ from flyteadmin.models.admin_task_execution_event_response import AdminTaskExecu
 from flyteadmin.models.admin_task_execution_get_data_response import AdminTaskExecutionGetDataResponse
 from flyteadmin.models.admin_task_execution_list import AdminTaskExecutionList
 from flyteadmin.models.admin_task_list import AdminTaskList
+from flyteadmin.models.admin_task_resource_attributes import AdminTaskResourceAttributes
 from flyteadmin.models.admin_task_spec import AdminTaskSpec
 from flyteadmin.models.admin_url_blob import AdminUrlBlob
 from flyteadmin.models.admin_workflow import AdminWorkflow

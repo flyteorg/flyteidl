@@ -13,6 +13,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from flyteidl.admin import matchable_resource_pb2 as flyteidl_dot_admin_dot_matchable__resource__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,8 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n(flyteidl/admin/workflow_attributes.proto\x12\x0e\x66lyteidl.admin\"U\n\x12WorkflowAttributes\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x10\n\x08workflow\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\"Y\n\x1fWorkflowAttributesUpdateRequest\x12\x36\n\nattributes\x18\x01 \x01(\x0b\x32\".flyteidl.admin.WorkflowAttributes\"\"\n WorkflowAttributesUpdateResponseB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
-)
+  serialized_pb=_b('\n(flyteidl/admin/workflow_attributes.proto\x12\x0e\x66lyteidl.admin\x1a\'flyteidl/admin/matchable_resource.proto\"\x88\x01\n\x12WorkflowAttributes\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x10\n\x08workflow\x18\x03 \x01(\t\x12?\n\x13matching_attributes\x18\x04 \x01(\x0b\x32\".flyteidl.admin.MatchingAttributes\"Y\n\x1fWorkflowAttributesUpdateRequest\x12\x36\n\nattributes\x18\x01 \x01(\x0b\x32\".flyteidl.admin.WorkflowAttributes\"\"\n WorkflowAttributesUpdateResponseB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  ,
+  dependencies=[flyteidl_dot_admin_dot_matchable__resource__pb2.DESCRIPTOR,])
 
 
 
@@ -55,9 +57,9 @@ _WORKFLOWATTRIBUTES = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='tags', full_name='flyteidl.admin.WorkflowAttributes.tags', index=3,
-      number=4, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
+      name='matching_attributes', full_name='flyteidl.admin.WorkflowAttributes.matching_attributes', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -73,8 +75,8 @@ _WORKFLOWATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=60,
-  serialized_end=145,
+  serialized_start=102,
+  serialized_end=238,
 )
 
 
@@ -104,8 +106,8 @@ _WORKFLOWATTRIBUTESUPDATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=147,
-  serialized_end=236,
+  serialized_start=240,
+  serialized_end=329,
 )
 
 
@@ -128,10 +130,11 @@ _WORKFLOWATTRIBUTESUPDATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=238,
-  serialized_end=272,
+  serialized_start=331,
+  serialized_end=365,
 )
 
+_WORKFLOWATTRIBUTES.fields_by_name['matching_attributes'].message_type = flyteidl_dot_admin_dot_matchable__resource__pb2._MATCHINGATTRIBUTES
 _WORKFLOWATTRIBUTESUPDATEREQUEST.fields_by_name['attributes'].message_type = _WORKFLOWATTRIBUTES
 DESCRIPTOR.message_types_by_name['WorkflowAttributes'] = _WORKFLOWATTRIBUTES
 DESCRIPTOR.message_types_by_name['WorkflowAttributesUpdateRequest'] = _WORKFLOWATTRIBUTESUPDATEREQUEST

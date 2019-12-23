@@ -9,8 +9,7 @@
 
 package flyteadmin
 
-type AdminProjectAttributes struct {
-	// Unique project id for which this set of attributes will be applied.
-	Project string `json:"project,omitempty"`
-	MatchingAttributes *AdminMatchingAttributes `json:"matching_attributes,omitempty"`
+type AdminExecutionQueueAttributes struct {
+	// Tags used for assigning execution queues for tasks defined within this project.
+	Tags []string `json:"tags,omitempty"`
 }
