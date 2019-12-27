@@ -5464,6 +5464,13 @@ definitions:
   adminTaskResourceAttributes:
     type: "object"
     properties:
+      defaults:
+        $ref: "#/definitions/adminTaskResourceSpec"
+      limits:
+        $ref: "#/definitions/adminTaskResourceSpec"
+  adminTaskResourceSpec:
+    type: "object"
+    properties:
       cpu:
         type: "string"
       gpu:

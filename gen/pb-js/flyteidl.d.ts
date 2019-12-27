@@ -8227,20 +8227,84 @@ export namespace flyteidl {
             EXECUTION_QUEUE = 2
         }
 
+        /** Properties of a TaskResourceSpec. */
+        interface ITaskResourceSpec {
+
+            /** TaskResourceSpec cpu */
+            cpu?: (string|null);
+
+            /** TaskResourceSpec gpu */
+            gpu?: (string|null);
+
+            /** TaskResourceSpec memory */
+            memory?: (string|null);
+
+            /** TaskResourceSpec storage */
+            storage?: (string|null);
+        }
+
+        /** Represents a TaskResourceSpec. */
+        class TaskResourceSpec implements ITaskResourceSpec {
+
+            /**
+             * Constructs a new TaskResourceSpec.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ITaskResourceSpec);
+
+            /** TaskResourceSpec cpu. */
+            public cpu: string;
+
+            /** TaskResourceSpec gpu. */
+            public gpu: string;
+
+            /** TaskResourceSpec memory. */
+            public memory: string;
+
+            /** TaskResourceSpec storage. */
+            public storage: string;
+
+            /**
+             * Creates a new TaskResourceSpec instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskResourceSpec instance
+             */
+            public static create(properties?: flyteidl.admin.ITaskResourceSpec): flyteidl.admin.TaskResourceSpec;
+
+            /**
+             * Encodes the specified TaskResourceSpec message. Does not implicitly {@link flyteidl.admin.TaskResourceSpec.verify|verify} messages.
+             * @param message TaskResourceSpec message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ITaskResourceSpec, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskResourceSpec message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskResourceSpec
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.TaskResourceSpec;
+
+            /**
+             * Verifies a TaskResourceSpec message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a TaskResourceAttributes. */
         interface ITaskResourceAttributes {
 
-            /** TaskResourceAttributes cpu */
-            cpu?: (string|null);
+            /** TaskResourceAttributes defaults */
+            defaults?: (flyteidl.admin.ITaskResourceSpec|null);
 
-            /** TaskResourceAttributes gpu */
-            gpu?: (string|null);
-
-            /** TaskResourceAttributes memory */
-            memory?: (string|null);
-
-            /** TaskResourceAttributes storage */
-            storage?: (string|null);
+            /** TaskResourceAttributes limits */
+            limits?: (flyteidl.admin.ITaskResourceSpec|null);
         }
 
         /** Represents a TaskResourceAttributes. */
@@ -8252,17 +8316,11 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.ITaskResourceAttributes);
 
-            /** TaskResourceAttributes cpu. */
-            public cpu: string;
+            /** TaskResourceAttributes defaults. */
+            public defaults?: (flyteidl.admin.ITaskResourceSpec|null);
 
-            /** TaskResourceAttributes gpu. */
-            public gpu: string;
-
-            /** TaskResourceAttributes memory. */
-            public memory: string;
-
-            /** TaskResourceAttributes storage. */
-            public storage: string;
+            /** TaskResourceAttributes limits. */
+            public limits?: (flyteidl.admin.ITaskResourceSpec|null);
 
             /**
              * Creates a new TaskResourceAttributes instance using the specified properties.

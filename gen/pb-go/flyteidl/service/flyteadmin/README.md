@@ -138,6 +138,7 @@ Class | Method | HTTP request | Description
  - [AdminTaskExecutionList](docs/AdminTaskExecutionList.md)
  - [AdminTaskList](docs/AdminTaskList.md)
  - [AdminTaskResourceAttributes](docs/AdminTaskResourceAttributes.md)
+ - [AdminTaskResourceSpec](docs/AdminTaskResourceSpec.md)
  - [AdminTaskSpec](docs/AdminTaskSpec.md)
  - [AdminUrlBlob](docs/AdminUrlBlob.md)
  - [AdminWorkflow](docs/AdminWorkflow.md)

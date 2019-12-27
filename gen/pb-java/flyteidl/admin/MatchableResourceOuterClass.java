@@ -150,8 +150,8 @@ public final class MatchableResourceOuterClass {
     // @@protoc_insertion_point(enum_scope:flyteidl.admin.MatchableResource)
   }
 
-  public interface TaskResourceAttributesOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.admin.TaskResourceAttributes)
+  public interface TaskResourceSpecOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.TaskResourceSpec)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -195,18 +195,18 @@ public final class MatchableResourceOuterClass {
         getStorageBytes();
   }
   /**
-   * Protobuf type {@code flyteidl.admin.TaskResourceAttributes}
+   * Protobuf type {@code flyteidl.admin.TaskResourceSpec}
    */
-  public  static final class TaskResourceAttributes extends
+  public  static final class TaskResourceSpec extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.TaskResourceAttributes)
-      TaskResourceAttributesOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.TaskResourceSpec)
+      TaskResourceSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use TaskResourceAttributes.newBuilder() to construct.
-    private TaskResourceAttributes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use TaskResourceSpec.newBuilder() to construct.
+    private TaskResourceSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private TaskResourceAttributes() {
+    private TaskResourceSpec() {
       cpu_ = "";
       gpu_ = "";
       memory_ = "";
@@ -218,7 +218,7 @@ public final class MatchableResourceOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TaskResourceAttributes(
+    private TaskResourceSpec(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -282,15 +282,15 @@ public final class MatchableResourceOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_TaskResourceAttributes_descriptor;
+      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_TaskResourceSpec_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_TaskResourceAttributes_fieldAccessorTable
+      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_TaskResourceSpec_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.class, flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.Builder.class);
+              flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.class, flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.Builder.class);
     }
 
     public static final int CPU_FIELD_NUMBER = 1;
@@ -486,10 +486,10 @@ public final class MatchableResourceOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes)) {
+      if (!(obj instanceof flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec)) {
         return super.equals(obj);
       }
-      flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes other = (flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes) obj;
+      flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec other = (flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec) obj;
 
       if (!getCpu()
           .equals(other.getCpu())) return false;
@@ -523,69 +523,69 @@ public final class MatchableResourceOuterClass {
       return hash;
     }
 
-    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(byte[] data)
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(java.io.InputStream input)
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseDelimitedFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -598,7 +598,7 @@ public final class MatchableResourceOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes prototype) {
+    public static Builder newBuilder(flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -614,26 +614,26 @@ public final class MatchableResourceOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code flyteidl.admin.TaskResourceAttributes}
+     * Protobuf type {@code flyteidl.admin.TaskResourceSpec}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.TaskResourceAttributes)
-        flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributesOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.TaskResourceSpec)
+        flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpecOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_TaskResourceAttributes_descriptor;
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_TaskResourceSpec_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_TaskResourceAttributes_fieldAccessorTable
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_TaskResourceSpec_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.class, flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.Builder.class);
+                flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.class, flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.Builder.class);
       }
 
-      // Construct using flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.newBuilder()
+      // Construct using flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -665,17 +665,17 @@ public final class MatchableResourceOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_TaskResourceAttributes_descriptor;
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_TaskResourceSpec_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes getDefaultInstanceForType() {
-        return flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.getDefaultInstance();
+      public flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec getDefaultInstanceForType() {
+        return flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes build() {
-        flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes result = buildPartial();
+      public flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec build() {
+        flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -683,8 +683,8 @@ public final class MatchableResourceOuterClass {
       }
 
       @java.lang.Override
-      public flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes buildPartial() {
-        flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes result = new flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes(this);
+      public flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec buildPartial() {
+        flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec result = new flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec(this);
         result.cpu_ = cpu_;
         result.gpu_ = gpu_;
         result.memory_ = memory_;
@@ -727,16 +727,16 @@ public final class MatchableResourceOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes) {
-          return mergeFrom((flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes)other);
+        if (other instanceof flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec) {
+          return mergeFrom((flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes other) {
-        if (other == flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec other) {
+        if (other == flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.getDefaultInstance()) return this;
         if (!other.getCpu().isEmpty()) {
           cpu_ = other.cpu_;
           onChanged();
@@ -768,11 +768,11 @@ public final class MatchableResourceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parsedMessage = null;
+        flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1056,6 +1056,806 @@ public final class MatchableResourceOuterClass {
         storage_ = value;
         onChanged();
         return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.TaskResourceSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.TaskResourceSpec)
+    private static final flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec();
+    }
+
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TaskResourceSpec>
+        PARSER = new com.google.protobuf.AbstractParser<TaskResourceSpec>() {
+      @java.lang.Override
+      public TaskResourceSpec parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TaskResourceSpec(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TaskResourceSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TaskResourceSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TaskResourceAttributesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.TaskResourceAttributes)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.flyteidl.admin.TaskResourceSpec defaults = 1;</code>
+     */
+    boolean hasDefaults();
+    /**
+     * <code>.flyteidl.admin.TaskResourceSpec defaults = 1;</code>
+     */
+    flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec getDefaults();
+    /**
+     * <code>.flyteidl.admin.TaskResourceSpec defaults = 1;</code>
+     */
+    flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpecOrBuilder getDefaultsOrBuilder();
+
+    /**
+     * <code>.flyteidl.admin.TaskResourceSpec limits = 2;</code>
+     */
+    boolean hasLimits();
+    /**
+     * <code>.flyteidl.admin.TaskResourceSpec limits = 2;</code>
+     */
+    flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec getLimits();
+    /**
+     * <code>.flyteidl.admin.TaskResourceSpec limits = 2;</code>
+     */
+    flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpecOrBuilder getLimitsOrBuilder();
+  }
+  /**
+   * Protobuf type {@code flyteidl.admin.TaskResourceAttributes}
+   */
+  public  static final class TaskResourceAttributes extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.TaskResourceAttributes)
+      TaskResourceAttributesOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TaskResourceAttributes.newBuilder() to construct.
+    private TaskResourceAttributes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TaskResourceAttributes() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TaskResourceAttributes(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.Builder subBuilder = null;
+              if (defaults_ != null) {
+                subBuilder = defaults_.toBuilder();
+              }
+              defaults_ = input.readMessage(flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(defaults_);
+                defaults_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.Builder subBuilder = null;
+              if (limits_ != null) {
+                subBuilder = limits_.toBuilder();
+              }
+              limits_ = input.readMessage(flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(limits_);
+                limits_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_TaskResourceAttributes_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_TaskResourceAttributes_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.class, flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.Builder.class);
+    }
+
+    public static final int DEFAULTS_FIELD_NUMBER = 1;
+    private flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec defaults_;
+    /**
+     * <code>.flyteidl.admin.TaskResourceSpec defaults = 1;</code>
+     */
+    public boolean hasDefaults() {
+      return defaults_ != null;
+    }
+    /**
+     * <code>.flyteidl.admin.TaskResourceSpec defaults = 1;</code>
+     */
+    public flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec getDefaults() {
+      return defaults_ == null ? flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.getDefaultInstance() : defaults_;
+    }
+    /**
+     * <code>.flyteidl.admin.TaskResourceSpec defaults = 1;</code>
+     */
+    public flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpecOrBuilder getDefaultsOrBuilder() {
+      return getDefaults();
+    }
+
+    public static final int LIMITS_FIELD_NUMBER = 2;
+    private flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec limits_;
+    /**
+     * <code>.flyteidl.admin.TaskResourceSpec limits = 2;</code>
+     */
+    public boolean hasLimits() {
+      return limits_ != null;
+    }
+    /**
+     * <code>.flyteidl.admin.TaskResourceSpec limits = 2;</code>
+     */
+    public flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec getLimits() {
+      return limits_ == null ? flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.getDefaultInstance() : limits_;
+    }
+    /**
+     * <code>.flyteidl.admin.TaskResourceSpec limits = 2;</code>
+     */
+    public flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpecOrBuilder getLimitsOrBuilder() {
+      return getLimits();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (defaults_ != null) {
+        output.writeMessage(1, getDefaults());
+      }
+      if (limits_ != null) {
+        output.writeMessage(2, getLimits());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (defaults_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getDefaults());
+      }
+      if (limits_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getLimits());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes other = (flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes) obj;
+
+      if (hasDefaults() != other.hasDefaults()) return false;
+      if (hasDefaults()) {
+        if (!getDefaults()
+            .equals(other.getDefaults())) return false;
+      }
+      if (hasLimits() != other.hasLimits()) return false;
+      if (hasLimits()) {
+        if (!getLimits()
+            .equals(other.getLimits())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDefaults()) {
+        hash = (37 * hash) + DEFAULTS_FIELD_NUMBER;
+        hash = (53 * hash) + getDefaults().hashCode();
+      }
+      if (hasLimits()) {
+        hash = (37 * hash) + LIMITS_FIELD_NUMBER;
+        hash = (53 * hash) + getLimits().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code flyteidl.admin.TaskResourceAttributes}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.TaskResourceAttributes)
+        flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_TaskResourceAttributes_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_TaskResourceAttributes_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.class, flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (defaultsBuilder_ == null) {
+          defaults_ = null;
+        } else {
+          defaults_ = null;
+          defaultsBuilder_ = null;
+        }
+        if (limitsBuilder_ == null) {
+          limits_ = null;
+        } else {
+          limits_ = null;
+          limitsBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_TaskResourceAttributes_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes getDefaultInstanceForType() {
+        return flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes build() {
+        flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes buildPartial() {
+        flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes result = new flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes(this);
+        if (defaultsBuilder_ == null) {
+          result.defaults_ = defaults_;
+        } else {
+          result.defaults_ = defaultsBuilder_.build();
+        }
+        if (limitsBuilder_ == null) {
+          result.limits_ = limits_;
+        } else {
+          result.limits_ = limitsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes) {
+          return mergeFrom((flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes other) {
+        if (other == flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.getDefaultInstance()) return this;
+        if (other.hasDefaults()) {
+          mergeDefaults(other.getDefaults());
+        }
+        if (other.hasLimits()) {
+          mergeLimits(other.getLimits());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec defaults_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec, flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.Builder, flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpecOrBuilder> defaultsBuilder_;
+      /**
+       * <code>.flyteidl.admin.TaskResourceSpec defaults = 1;</code>
+       */
+      public boolean hasDefaults() {
+        return defaultsBuilder_ != null || defaults_ != null;
+      }
+      /**
+       * <code>.flyteidl.admin.TaskResourceSpec defaults = 1;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec getDefaults() {
+        if (defaultsBuilder_ == null) {
+          return defaults_ == null ? flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.getDefaultInstance() : defaults_;
+        } else {
+          return defaultsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.TaskResourceSpec defaults = 1;</code>
+       */
+      public Builder setDefaults(flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec value) {
+        if (defaultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          defaults_ = value;
+          onChanged();
+        } else {
+          defaultsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.TaskResourceSpec defaults = 1;</code>
+       */
+      public Builder setDefaults(
+          flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.Builder builderForValue) {
+        if (defaultsBuilder_ == null) {
+          defaults_ = builderForValue.build();
+          onChanged();
+        } else {
+          defaultsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.TaskResourceSpec defaults = 1;</code>
+       */
+      public Builder mergeDefaults(flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec value) {
+        if (defaultsBuilder_ == null) {
+          if (defaults_ != null) {
+            defaults_ =
+              flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.newBuilder(defaults_).mergeFrom(value).buildPartial();
+          } else {
+            defaults_ = value;
+          }
+          onChanged();
+        } else {
+          defaultsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.TaskResourceSpec defaults = 1;</code>
+       */
+      public Builder clearDefaults() {
+        if (defaultsBuilder_ == null) {
+          defaults_ = null;
+          onChanged();
+        } else {
+          defaults_ = null;
+          defaultsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.TaskResourceSpec defaults = 1;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.Builder getDefaultsBuilder() {
+        
+        onChanged();
+        return getDefaultsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.admin.TaskResourceSpec defaults = 1;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpecOrBuilder getDefaultsOrBuilder() {
+        if (defaultsBuilder_ != null) {
+          return defaultsBuilder_.getMessageOrBuilder();
+        } else {
+          return defaults_ == null ?
+              flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.getDefaultInstance() : defaults_;
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.TaskResourceSpec defaults = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec, flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.Builder, flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpecOrBuilder> 
+          getDefaultsFieldBuilder() {
+        if (defaultsBuilder_ == null) {
+          defaultsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec, flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.Builder, flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpecOrBuilder>(
+                  getDefaults(),
+                  getParentForChildren(),
+                  isClean());
+          defaults_ = null;
+        }
+        return defaultsBuilder_;
+      }
+
+      private flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec limits_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec, flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.Builder, flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpecOrBuilder> limitsBuilder_;
+      /**
+       * <code>.flyteidl.admin.TaskResourceSpec limits = 2;</code>
+       */
+      public boolean hasLimits() {
+        return limitsBuilder_ != null || limits_ != null;
+      }
+      /**
+       * <code>.flyteidl.admin.TaskResourceSpec limits = 2;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec getLimits() {
+        if (limitsBuilder_ == null) {
+          return limits_ == null ? flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.getDefaultInstance() : limits_;
+        } else {
+          return limitsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.TaskResourceSpec limits = 2;</code>
+       */
+      public Builder setLimits(flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec value) {
+        if (limitsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          limits_ = value;
+          onChanged();
+        } else {
+          limitsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.TaskResourceSpec limits = 2;</code>
+       */
+      public Builder setLimits(
+          flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.Builder builderForValue) {
+        if (limitsBuilder_ == null) {
+          limits_ = builderForValue.build();
+          onChanged();
+        } else {
+          limitsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.TaskResourceSpec limits = 2;</code>
+       */
+      public Builder mergeLimits(flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec value) {
+        if (limitsBuilder_ == null) {
+          if (limits_ != null) {
+            limits_ =
+              flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.newBuilder(limits_).mergeFrom(value).buildPartial();
+          } else {
+            limits_ = value;
+          }
+          onChanged();
+        } else {
+          limitsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.TaskResourceSpec limits = 2;</code>
+       */
+      public Builder clearLimits() {
+        if (limitsBuilder_ == null) {
+          limits_ = null;
+          onChanged();
+        } else {
+          limits_ = null;
+          limitsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.TaskResourceSpec limits = 2;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.Builder getLimitsBuilder() {
+        
+        onChanged();
+        return getLimitsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.admin.TaskResourceSpec limits = 2;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpecOrBuilder getLimitsOrBuilder() {
+        if (limitsBuilder_ != null) {
+          return limitsBuilder_.getMessageOrBuilder();
+        } else {
+          return limits_ == null ?
+              flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.getDefaultInstance() : limits_;
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.TaskResourceSpec limits = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec, flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.Builder, flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpecOrBuilder> 
+          getLimitsFieldBuilder() {
+        if (limitsBuilder_ == null) {
+          limitsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec, flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpec.Builder, flyteidl.admin.MatchableResourceOuterClass.TaskResourceSpecOrBuilder>(
+                  getLimits(),
+                  getParentForChildren(),
+                  isClean());
+          limits_ = null;
+        }
+        return limitsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3738,6 +4538,11 @@ public final class MatchableResourceOuterClass {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_TaskResourceSpec_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_TaskResourceSpec_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_TaskResourceAttributes_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -3772,24 +4577,28 @@ public final class MatchableResourceOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\'flyteidl/admin/matchable_resource.prot" +
-      "o\022\016flyteidl.admin\"S\n\026TaskResourceAttribu" +
-      "tes\022\013\n\003cpu\030\001 \001(\t\022\013\n\003gpu\030\002 \001(\t\022\016\n\006memory\030" +
-      "\003 \001(\t\022\017\n\007storage\030\004 \001(\t\"\235\001\n\031ClusterResour" +
-      "ceAttributes\022M\n\nattributes\030\001 \003(\01329.flyte" +
-      "idl.admin.ClusterResourceAttributes.Attr" +
-      "ibutesEntry\0321\n\017AttributesEntry\022\013\n\003key\030\001 " +
-      "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"(\n\030ExecutionQueue" +
-      "Attributes\022\014\n\004tags\030\001 \003(\t\"\214\002\n\022MatchingAtt" +
-      "ributes\022J\n\030task_resource_attributes\030\001 \001(" +
-      "\0132&.flyteidl.admin.TaskResourceAttribute" +
-      "sH\000\022P\n\033cluster_resource_attributes\030\002 \001(\013" +
-      "2).flyteidl.admin.ClusterResourceAttribu" +
-      "tesH\000\022N\n\032execution_queue_attributes\030\003 \001(" +
-      "\0132(.flyteidl.admin.ExecutionQueueAttribu" +
-      "tesH\000B\010\n\006target*Q\n\021MatchableResource\022\021\n\r" +
-      "TASK_RESOURCE\020\000\022\024\n\020CLUSTER_RESOURCE\020\001\022\023\n" +
-      "\017EXECUTION_QUEUE\020\002B3Z1github.com/lyft/fl" +
-      "yteidl/gen/pb-go/flyteidl/adminb\006proto3"
+      "o\022\016flyteidl.admin\"M\n\020TaskResourceSpec\022\013\n" +
+      "\003cpu\030\001 \001(\t\022\013\n\003gpu\030\002 \001(\t\022\016\n\006memory\030\003 \001(\t\022" +
+      "\017\n\007storage\030\004 \001(\t\"~\n\026TaskResourceAttribut" +
+      "es\0222\n\010defaults\030\001 \001(\0132 .flyteidl.admin.Ta" +
+      "skResourceSpec\0220\n\006limits\030\002 \001(\0132 .flyteid" +
+      "l.admin.TaskResourceSpec\"\235\001\n\031ClusterReso" +
+      "urceAttributes\022M\n\nattributes\030\001 \003(\01329.fly" +
+      "teidl.admin.ClusterResourceAttributes.At" +
+      "tributesEntry\0321\n\017AttributesEntry\022\013\n\003key\030" +
+      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"(\n\030ExecutionQue" +
+      "ueAttributes\022\014\n\004tags\030\001 \003(\t\"\214\002\n\022MatchingA" +
+      "ttributes\022J\n\030task_resource_attributes\030\001 " +
+      "\001(\0132&.flyteidl.admin.TaskResourceAttribu" +
+      "tesH\000\022P\n\033cluster_resource_attributes\030\002 \001" +
+      "(\0132).flyteidl.admin.ClusterResourceAttri" +
+      "butesH\000\022N\n\032execution_queue_attributes\030\003 " +
+      "\001(\0132(.flyteidl.admin.ExecutionQueueAttri" +
+      "butesH\000B\010\n\006target*Q\n\021MatchableResource\022\021" +
+      "\n\rTASK_RESOURCE\020\000\022\024\n\020CLUSTER_RESOURCE\020\001\022" +
+      "\023\n\017EXECUTION_QUEUE\020\002B3Z1github.com/lyft/" +
+      "flyteidl/gen/pb-go/flyteidl/adminb\006proto" +
+      "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3803,14 +4612,20 @@ public final class MatchableResourceOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_flyteidl_admin_TaskResourceAttributes_descriptor =
+    internal_static_flyteidl_admin_TaskResourceSpec_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_flyteidl_admin_TaskResourceSpec_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_TaskResourceSpec_descriptor,
+        new java.lang.String[] { "Cpu", "Gpu", "Memory", "Storage", });
+    internal_static_flyteidl_admin_TaskResourceAttributes_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_admin_TaskResourceAttributes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_TaskResourceAttributes_descriptor,
-        new java.lang.String[] { "Cpu", "Gpu", "Memory", "Storage", });
+        new java.lang.String[] { "Defaults", "Limits", });
     internal_static_flyteidl_admin_ClusterResourceAttributes_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_admin_ClusterResourceAttributes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ClusterResourceAttributes_descriptor,
@@ -3822,13 +4637,13 @@ public final class MatchableResourceOuterClass {
         internal_static_flyteidl_admin_ClusterResourceAttributes_AttributesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_admin_ExecutionQueueAttributes_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_admin_ExecutionQueueAttributes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionQueueAttributes_descriptor,
         new java.lang.String[] { "Tags", });
     internal_static_flyteidl_admin_MatchingAttributes_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_admin_MatchingAttributes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_MatchingAttributes_descriptor,

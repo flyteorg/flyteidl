@@ -3,12 +3,12 @@
 matchable_resource.proto
 =======================================
 
-.. _api_msg_flyteidl.admin.TaskResourceAttributes:
+.. _api_msg_flyteidl.admin.TaskResourceSpec:
 
-flyteidl.admin.TaskResourceAttributes
--------------------------------------
+flyteidl.admin.TaskResourceSpec
+-------------------------------
 
-`[flyteidl.admin.TaskResourceAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L18>`_
+`[flyteidl.admin.TaskResourceSpec proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L18>`_
 
 
 .. code-block:: json
@@ -20,25 +20,52 @@ flyteidl.admin.TaskResourceAttributes
     "storage": "..."
   }
 
-.. _api_field_flyteidl.admin.TaskResourceAttributes.cpu:
+.. _api_field_flyteidl.admin.TaskResourceSpec.cpu:
 
 cpu
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.admin.TaskResourceAttributes.gpu:
+.. _api_field_flyteidl.admin.TaskResourceSpec.gpu:
 
 gpu
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.admin.TaskResourceAttributes.memory:
+.. _api_field_flyteidl.admin.TaskResourceSpec.memory:
 
 memory
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.admin.TaskResourceAttributes.storage:
+.. _api_field_flyteidl.admin.TaskResourceSpec.storage:
 
 storage
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+
+
+.. _api_msg_flyteidl.admin.TaskResourceAttributes:
+
+flyteidl.admin.TaskResourceAttributes
+-------------------------------------
+
+`[flyteidl.admin.TaskResourceAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L28>`_
+
+
+.. code-block:: json
+
+  {
+    "defaults": "{...}",
+    "limits": "{...}"
+  }
+
+.. _api_field_flyteidl.admin.TaskResourceAttributes.defaults:
+
+defaults
+  (:ref:`flyteidl.admin.TaskResourceSpec <api_msg_flyteidl.admin.TaskResourceSpec>`) 
+  
+.. _api_field_flyteidl.admin.TaskResourceAttributes.limits:
+
+limits
+  (:ref:`flyteidl.admin.TaskResourceSpec <api_msg_flyteidl.admin.TaskResourceSpec>`) 
   
 
 
@@ -47,7 +74,7 @@ storage
 flyteidl.admin.ClusterResourceAttributes
 ----------------------------------------
 
-`[flyteidl.admin.ClusterResourceAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L28>`_
+`[flyteidl.admin.ClusterResourceAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L34>`_
 
 
 .. code-block:: json
@@ -71,7 +98,7 @@ attributes
 flyteidl.admin.ExecutionQueueAttributes
 ---------------------------------------
 
-`[flyteidl.admin.ExecutionQueueAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L35>`_
+`[flyteidl.admin.ExecutionQueueAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L41>`_
 
 
 .. code-block:: json
@@ -93,7 +120,7 @@ tags
 flyteidl.admin.MatchingAttributes
 ---------------------------------
 
-`[flyteidl.admin.MatchingAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L41>`_
+`[flyteidl.admin.MatchingAttributes proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L47>`_
 
 Generic container for encapsulating all types of the above attributes messages.
 

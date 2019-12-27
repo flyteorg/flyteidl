@@ -19666,16 +19666,175 @@ export const flyteidl = $root.flyteidl = (() => {
             return values;
         })();
 
+        admin.TaskResourceSpec = (function() {
+
+            /**
+             * Properties of a TaskResourceSpec.
+             * @memberof flyteidl.admin
+             * @interface ITaskResourceSpec
+             * @property {string|null} [cpu] TaskResourceSpec cpu
+             * @property {string|null} [gpu] TaskResourceSpec gpu
+             * @property {string|null} [memory] TaskResourceSpec memory
+             * @property {string|null} [storage] TaskResourceSpec storage
+             */
+
+            /**
+             * Constructs a new TaskResourceSpec.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a TaskResourceSpec.
+             * @implements ITaskResourceSpec
+             * @constructor
+             * @param {flyteidl.admin.ITaskResourceSpec=} [properties] Properties to set
+             */
+            function TaskResourceSpec(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TaskResourceSpec cpu.
+             * @member {string} cpu
+             * @memberof flyteidl.admin.TaskResourceSpec
+             * @instance
+             */
+            TaskResourceSpec.prototype.cpu = "";
+
+            /**
+             * TaskResourceSpec gpu.
+             * @member {string} gpu
+             * @memberof flyteidl.admin.TaskResourceSpec
+             * @instance
+             */
+            TaskResourceSpec.prototype.gpu = "";
+
+            /**
+             * TaskResourceSpec memory.
+             * @member {string} memory
+             * @memberof flyteidl.admin.TaskResourceSpec
+             * @instance
+             */
+            TaskResourceSpec.prototype.memory = "";
+
+            /**
+             * TaskResourceSpec storage.
+             * @member {string} storage
+             * @memberof flyteidl.admin.TaskResourceSpec
+             * @instance
+             */
+            TaskResourceSpec.prototype.storage = "";
+
+            /**
+             * Creates a new TaskResourceSpec instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.TaskResourceSpec
+             * @static
+             * @param {flyteidl.admin.ITaskResourceSpec=} [properties] Properties to set
+             * @returns {flyteidl.admin.TaskResourceSpec} TaskResourceSpec instance
+             */
+            TaskResourceSpec.create = function create(properties) {
+                return new TaskResourceSpec(properties);
+            };
+
+            /**
+             * Encodes the specified TaskResourceSpec message. Does not implicitly {@link flyteidl.admin.TaskResourceSpec.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.TaskResourceSpec
+             * @static
+             * @param {flyteidl.admin.ITaskResourceSpec} message TaskResourceSpec message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TaskResourceSpec.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.cpu != null && message.hasOwnProperty("cpu"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.cpu);
+                if (message.gpu != null && message.hasOwnProperty("gpu"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.gpu);
+                if (message.memory != null && message.hasOwnProperty("memory"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.memory);
+                if (message.storage != null && message.hasOwnProperty("storage"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.storage);
+                return writer;
+            };
+
+            /**
+             * Decodes a TaskResourceSpec message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.TaskResourceSpec
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.TaskResourceSpec} TaskResourceSpec
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TaskResourceSpec.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.TaskResourceSpec();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.cpu = reader.string();
+                        break;
+                    case 2:
+                        message.gpu = reader.string();
+                        break;
+                    case 3:
+                        message.memory = reader.string();
+                        break;
+                    case 4:
+                        message.storage = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a TaskResourceSpec message.
+             * @function verify
+             * @memberof flyteidl.admin.TaskResourceSpec
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TaskResourceSpec.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.cpu != null && message.hasOwnProperty("cpu"))
+                    if (!$util.isString(message.cpu))
+                        return "cpu: string expected";
+                if (message.gpu != null && message.hasOwnProperty("gpu"))
+                    if (!$util.isString(message.gpu))
+                        return "gpu: string expected";
+                if (message.memory != null && message.hasOwnProperty("memory"))
+                    if (!$util.isString(message.memory))
+                        return "memory: string expected";
+                if (message.storage != null && message.hasOwnProperty("storage"))
+                    if (!$util.isString(message.storage))
+                        return "storage: string expected";
+                return null;
+            };
+
+            return TaskResourceSpec;
+        })();
+
         admin.TaskResourceAttributes = (function() {
 
             /**
              * Properties of a TaskResourceAttributes.
              * @memberof flyteidl.admin
              * @interface ITaskResourceAttributes
-             * @property {string|null} [cpu] TaskResourceAttributes cpu
-             * @property {string|null} [gpu] TaskResourceAttributes gpu
-             * @property {string|null} [memory] TaskResourceAttributes memory
-             * @property {string|null} [storage] TaskResourceAttributes storage
+             * @property {flyteidl.admin.ITaskResourceSpec|null} [defaults] TaskResourceAttributes defaults
+             * @property {flyteidl.admin.ITaskResourceSpec|null} [limits] TaskResourceAttributes limits
              */
 
             /**
@@ -19694,36 +19853,20 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * TaskResourceAttributes cpu.
-             * @member {string} cpu
+             * TaskResourceAttributes defaults.
+             * @member {flyteidl.admin.ITaskResourceSpec|null|undefined} defaults
              * @memberof flyteidl.admin.TaskResourceAttributes
              * @instance
              */
-            TaskResourceAttributes.prototype.cpu = "";
+            TaskResourceAttributes.prototype.defaults = null;
 
             /**
-             * TaskResourceAttributes gpu.
-             * @member {string} gpu
+             * TaskResourceAttributes limits.
+             * @member {flyteidl.admin.ITaskResourceSpec|null|undefined} limits
              * @memberof flyteidl.admin.TaskResourceAttributes
              * @instance
              */
-            TaskResourceAttributes.prototype.gpu = "";
-
-            /**
-             * TaskResourceAttributes memory.
-             * @member {string} memory
-             * @memberof flyteidl.admin.TaskResourceAttributes
-             * @instance
-             */
-            TaskResourceAttributes.prototype.memory = "";
-
-            /**
-             * TaskResourceAttributes storage.
-             * @member {string} storage
-             * @memberof flyteidl.admin.TaskResourceAttributes
-             * @instance
-             */
-            TaskResourceAttributes.prototype.storage = "";
+            TaskResourceAttributes.prototype.limits = null;
 
             /**
              * Creates a new TaskResourceAttributes instance using the specified properties.
@@ -19749,14 +19892,10 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskResourceAttributes.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.cpu != null && message.hasOwnProperty("cpu"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.cpu);
-                if (message.gpu != null && message.hasOwnProperty("gpu"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.gpu);
-                if (message.memory != null && message.hasOwnProperty("memory"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.memory);
-                if (message.storage != null && message.hasOwnProperty("storage"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.storage);
+                if (message.defaults != null && message.hasOwnProperty("defaults"))
+                    $root.flyteidl.admin.TaskResourceSpec.encode(message.defaults, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.limits != null && message.hasOwnProperty("limits"))
+                    $root.flyteidl.admin.TaskResourceSpec.encode(message.limits, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
 
@@ -19779,16 +19918,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.cpu = reader.string();
+                        message.defaults = $root.flyteidl.admin.TaskResourceSpec.decode(reader, reader.uint32());
                         break;
                     case 2:
-                        message.gpu = reader.string();
-                        break;
-                    case 3:
-                        message.memory = reader.string();
-                        break;
-                    case 4:
-                        message.storage = reader.string();
+                        message.limits = $root.flyteidl.admin.TaskResourceSpec.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -19809,18 +19942,16 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskResourceAttributes.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.cpu != null && message.hasOwnProperty("cpu"))
-                    if (!$util.isString(message.cpu))
-                        return "cpu: string expected";
-                if (message.gpu != null && message.hasOwnProperty("gpu"))
-                    if (!$util.isString(message.gpu))
-                        return "gpu: string expected";
-                if (message.memory != null && message.hasOwnProperty("memory"))
-                    if (!$util.isString(message.memory))
-                        return "memory: string expected";
-                if (message.storage != null && message.hasOwnProperty("storage"))
-                    if (!$util.isString(message.storage))
-                        return "storage: string expected";
+                if (message.defaults != null && message.hasOwnProperty("defaults")) {
+                    let error = $root.flyteidl.admin.TaskResourceSpec.verify(message.defaults);
+                    if (error)
+                        return "defaults." + error;
+                }
+                if (message.limits != null && message.hasOwnProperty("limits")) {
+                    let error = $root.flyteidl.admin.TaskResourceSpec.verify(message.limits);
+                    if (error)
+                        return "limits." + error;
+                }
                 return null;
             };
 

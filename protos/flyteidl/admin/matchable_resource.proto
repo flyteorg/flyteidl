@@ -16,7 +16,7 @@ enum MatchableResource {
   EXECUTION_QUEUE = 2;
 }
 
-message TaskResourceAttributes {
+message TaskResourceSpec {
   string cpu = 1;
 
   string gpu = 2;
@@ -24,6 +24,12 @@ message TaskResourceAttributes {
   string memory = 3;
 
   string storage = 4;  
+}
+
+message TaskResourceAttributes {
+  TaskResourceSpec defaults = 1;
+
+  TaskResourceSpec limits = 2;
 }
 
 message ClusterResourceAttributes {

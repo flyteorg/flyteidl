@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n\'flyteidl/admin/matchable_resource.proto\x12\x0e\x66lyteidl.admin\"S\n\x16TaskResourceAttributes\x12\x0b\n\x03\x63pu\x18\x01 \x01(\t\x12\x0b\n\x03gpu\x18\x02 \x01(\t\x12\x0e\n\x06memory\x18\x03 \x01(\t\x12\x0f\n\x07storage\x18\x04 \x01(\t\"\x9d\x01\n\x19\x43lusterResourceAttributes\x12M\n\nattributes\x18\x01 \x03(\x0b\x32\x39.flyteidl.admin.ClusterResourceAttributes.AttributesEntry\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"(\n\x18\x45xecutionQueueAttributes\x12\x0c\n\x04tags\x18\x01 \x03(\t\"\x8c\x02\n\x12MatchingAttributes\x12J\n\x18task_resource_attributes\x18\x01 \x01(\x0b\x32&.flyteidl.admin.TaskResourceAttributesH\x00\x12P\n\x1b\x63luster_resource_attributes\x18\x02 \x01(\x0b\x32).flyteidl.admin.ClusterResourceAttributesH\x00\x12N\n\x1a\x65xecution_queue_attributes\x18\x03 \x01(\x0b\x32(.flyteidl.admin.ExecutionQueueAttributesH\x00\x42\x08\n\x06target*Q\n\x11MatchableResource\x12\x11\n\rTASK_RESOURCE\x10\x00\x12\x14\n\x10\x43LUSTER_RESOURCE\x10\x01\x12\x13\n\x0f\x45XECUTION_QUEUE\x10\x02\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\'flyteidl/admin/matchable_resource.proto\x12\x0e\x66lyteidl.admin\"M\n\x10TaskResourceSpec\x12\x0b\n\x03\x63pu\x18\x01 \x01(\t\x12\x0b\n\x03gpu\x18\x02 \x01(\t\x12\x0e\n\x06memory\x18\x03 \x01(\t\x12\x0f\n\x07storage\x18\x04 \x01(\t\"~\n\x16TaskResourceAttributes\x12\x32\n\x08\x64\x65\x66\x61ults\x18\x01 \x01(\x0b\x32 .flyteidl.admin.TaskResourceSpec\x12\x30\n\x06limits\x18\x02 \x01(\x0b\x32 .flyteidl.admin.TaskResourceSpec\"\x9d\x01\n\x19\x43lusterResourceAttributes\x12M\n\nattributes\x18\x01 \x03(\x0b\x32\x39.flyteidl.admin.ClusterResourceAttributes.AttributesEntry\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"(\n\x18\x45xecutionQueueAttributes\x12\x0c\n\x04tags\x18\x01 \x03(\t\"\x8c\x02\n\x12MatchingAttributes\x12J\n\x18task_resource_attributes\x18\x01 \x01(\x0b\x32&.flyteidl.admin.TaskResourceAttributesH\x00\x12P\n\x1b\x63luster_resource_attributes\x18\x02 \x01(\x0b\x32).flyteidl.admin.ClusterResourceAttributesH\x00\x12N\n\x1a\x65xecution_queue_attributes\x18\x03 \x01(\x0b\x32(.flyteidl.admin.ExecutionQueueAttributesH\x00\x42\x08\n\x06target*Q\n\x11MatchableResource\x12\x11\n\rTASK_RESOURCE\x10\x00\x12\x14\n\x10\x43LUSTER_RESOURCE\x10\x01\x12\x13\n\x0f\x45XECUTION_QUEUE\x10\x02\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
 )
 
 _MATCHABLERESOURCE = _descriptor.EnumDescriptor(
@@ -45,8 +45,8 @@ _MATCHABLERESOURCE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=617,
-  serialized_end=698,
+  serialized_start=739,
+  serialized_end=820,
 )
 _sym_db.RegisterEnumDescriptor(_MATCHABLERESOURCE)
 
@@ -57,36 +57,36 @@ EXECUTION_QUEUE = 2
 
 
 
-_TASKRESOURCEATTRIBUTES = _descriptor.Descriptor(
-  name='TaskResourceAttributes',
-  full_name='flyteidl.admin.TaskResourceAttributes',
+_TASKRESOURCESPEC = _descriptor.Descriptor(
+  name='TaskResourceSpec',
+  full_name='flyteidl.admin.TaskResourceSpec',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='cpu', full_name='flyteidl.admin.TaskResourceAttributes.cpu', index=0,
+      name='cpu', full_name='flyteidl.admin.TaskResourceSpec.cpu', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='gpu', full_name='flyteidl.admin.TaskResourceAttributes.gpu', index=1,
+      name='gpu', full_name='flyteidl.admin.TaskResourceSpec.gpu', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='memory', full_name='flyteidl.admin.TaskResourceAttributes.memory', index=2,
+      name='memory', full_name='flyteidl.admin.TaskResourceSpec.memory', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='storage', full_name='flyteidl.admin.TaskResourceAttributes.storage', index=3,
+      name='storage', full_name='flyteidl.admin.TaskResourceSpec.storage', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -105,7 +105,45 @@ _TASKRESOURCEATTRIBUTES = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=59,
-  serialized_end=142,
+  serialized_end=136,
+)
+
+
+_TASKRESOURCEATTRIBUTES = _descriptor.Descriptor(
+  name='TaskResourceAttributes',
+  full_name='flyteidl.admin.TaskResourceAttributes',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='defaults', full_name='flyteidl.admin.TaskResourceAttributes.defaults', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='limits', full_name='flyteidl.admin.TaskResourceAttributes.limits', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=138,
+  serialized_end=264,
 )
 
 
@@ -142,8 +180,8 @@ _CLUSTERRESOURCEATTRIBUTES_ATTRIBUTESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=253,
-  serialized_end=302,
+  serialized_start=375,
+  serialized_end=424,
 )
 
 _CLUSTERRESOURCEATTRIBUTES = _descriptor.Descriptor(
@@ -172,8 +210,8 @@ _CLUSTERRESOURCEATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=145,
-  serialized_end=302,
+  serialized_start=267,
+  serialized_end=424,
 )
 
 
@@ -203,8 +241,8 @@ _EXECUTIONQUEUEATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=304,
-  serialized_end=344,
+  serialized_start=426,
+  serialized_end=466,
 )
 
 
@@ -251,10 +289,12 @@ _MATCHINGATTRIBUTES = _descriptor.Descriptor(
       name='target', full_name='flyteidl.admin.MatchingAttributes.target',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=347,
-  serialized_end=615,
+  serialized_start=469,
+  serialized_end=737,
 )
 
+_TASKRESOURCEATTRIBUTES.fields_by_name['defaults'].message_type = _TASKRESOURCESPEC
+_TASKRESOURCEATTRIBUTES.fields_by_name['limits'].message_type = _TASKRESOURCESPEC
 _CLUSTERRESOURCEATTRIBUTES_ATTRIBUTESENTRY.containing_type = _CLUSTERRESOURCEATTRIBUTES
 _CLUSTERRESOURCEATTRIBUTES.fields_by_name['attributes'].message_type = _CLUSTERRESOURCEATTRIBUTES_ATTRIBUTESENTRY
 _MATCHINGATTRIBUTES.fields_by_name['task_resource_attributes'].message_type = _TASKRESOURCEATTRIBUTES
@@ -269,12 +309,20 @@ _MATCHINGATTRIBUTES.fields_by_name['cluster_resource_attributes'].containing_one
 _MATCHINGATTRIBUTES.oneofs_by_name['target'].fields.append(
   _MATCHINGATTRIBUTES.fields_by_name['execution_queue_attributes'])
 _MATCHINGATTRIBUTES.fields_by_name['execution_queue_attributes'].containing_oneof = _MATCHINGATTRIBUTES.oneofs_by_name['target']
+DESCRIPTOR.message_types_by_name['TaskResourceSpec'] = _TASKRESOURCESPEC
 DESCRIPTOR.message_types_by_name['TaskResourceAttributes'] = _TASKRESOURCEATTRIBUTES
 DESCRIPTOR.message_types_by_name['ClusterResourceAttributes'] = _CLUSTERRESOURCEATTRIBUTES
 DESCRIPTOR.message_types_by_name['ExecutionQueueAttributes'] = _EXECUTIONQUEUEATTRIBUTES
 DESCRIPTOR.message_types_by_name['MatchingAttributes'] = _MATCHINGATTRIBUTES
 DESCRIPTOR.enum_types_by_name['MatchableResource'] = _MATCHABLERESOURCE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+TaskResourceSpec = _reflection.GeneratedProtocolMessageType('TaskResourceSpec', (_message.Message,), dict(
+  DESCRIPTOR = _TASKRESOURCESPEC,
+  __module__ = 'flyteidl.admin.matchable_resource_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.TaskResourceSpec)
+  ))
+_sym_db.RegisterMessage(TaskResourceSpec)
 
 TaskResourceAttributes = _reflection.GeneratedProtocolMessageType('TaskResourceAttributes', (_message.Message,), dict(
   DESCRIPTOR = _TASKRESOURCEATTRIBUTES,
