@@ -36,7 +36,7 @@ public final class Admin {
       "l/admin/node_execution.proto\032#flyteidl/a" +
       "dmin/task_execution.proto\032\033flyteidl/admi" +
       "n/common.proto\032,protoc-gen-swagger/optio" +
-      "ns/annotations.proto2\350c\n\014AdminService\022\305\002" +
+      "ns/annotations.proto2\337c\n\014AdminService\022\305\002" +
       "\n\nCreateTask\022!.flyteidl.admin.TaskCreate" +
       "Request\032\".flyteidl.admin.TaskCreateRespo" +
       "nse\"\357\001\202\323\344\223\002\022\"\r/api/v1/tasks:\001*\222A\323\001\032&Crea" +
@@ -276,88 +276,88 @@ public final class Admin {
       "onse\"\202\001\202\323\344\223\0024\032//api/v1/project_attribute" +
       "s/{attributes.project}:\001*\222AE\032CUpdate the" +
       " customized resource attributes associat" +
-      "ed with a project\022\370\001\n\024GetProjectAttribut" +
+      "ed with a project\022\365\001\n\024GetProjectAttribut" +
       "es\022+.flyteidl.admin.ProjectAttributesGet" +
       "Request\032,.flyteidl.admin.ProjectAttribut" +
-      "esGetResponse\"\204\001\202\323\344\223\0024\022//api/v1/project_" +
-      "attributes/{attributes.project}:\001*\222AG\032ER" +
-      "etrieve the customized resource attribut" +
-      "es associated with a project\022\377\001\n\027DeleteP" +
-      "rojectAttributes\022..flyteidl.admin.Projec" +
-      "tAttributesDeleteRequest\032/.flyteidl.admi" +
-      "n.ProjectAttributesDeleteResponse\"\202\001\202\323\344\223" +
-      "\0024*//api/v1/project_attributes/{attribut" +
-      "es.project}:\001*\222AE\032CDelete the customized" +
-      " resource attributes associated with a p" +
-      "roject\022\277\002\n\035UpdateProjectDomainAttributes" +
-      "\0224.flyteidl.admin.ProjectDomainAttribute" +
-      "sUpdateRequest\0325.flyteidl.admin.ProjectD" +
-      "omainAttributesUpdateResponse\"\260\001\202\323\344\223\002O\032J" +
-      "/api/v1/project_domain_attributes/{attri" +
-      "butes.project}/{attributes.domain}:\001*\222AX" +
-      "\032VUpdate the customized resource attribu" +
-      "tes associated with a project-domain com" +
-      "bination\022\270\002\n\032GetProjectDomainAttributes\022" +
-      "1.flyteidl.admin.ProjectDomainAttributes" +
-      "GetRequest\0322.flyteidl.admin.ProjectDomai" +
-      "nAttributesGetResponse\"\262\001\202\323\344\223\002O\022J/api/v1" +
-      "/project_domain_attributes/{attributes.p" +
-      "roject}/{attributes.domain}:\001*\222AZ\032XRetri" +
-      "eve the customized resource attributes a" +
-      "ssociated with a project-domain combinat" +
-      "ion\022\277\002\n\035DeleteProjectDomainAttributes\0224." +
-      "flyteidl.admin.ProjectDomainAttributesDe" +
-      "leteRequest\0325.flyteidl.admin.ProjectDoma" +
-      "inAttributesDeleteResponse\"\260\001\202\323\344\223\002O*J/ap" +
+      "esGetResponse\"\201\001\202\323\344\223\0021\022//api/v1/project_" +
+      "attributes/{attributes.project}\222AG\032ERetr" +
+      "ieve the customized resource attributes " +
+      "associated with a project\022\377\001\n\027DeleteProj" +
+      "ectAttributes\022..flyteidl.admin.ProjectAt" +
+      "tributesDeleteRequest\032/.flyteidl.admin.P" +
+      "rojectAttributesDeleteResponse\"\202\001\202\323\344\223\0024*" +
+      "//api/v1/project_attributes/{attributes." +
+      "project}:\001*\222AE\032CDelete the customized re" +
+      "source attributes associated with a proj" +
+      "ect\022\277\002\n\035UpdateProjectDomainAttributes\0224." +
+      "flyteidl.admin.ProjectDomainAttributesUp" +
+      "dateRequest\0325.flyteidl.admin.ProjectDoma" +
+      "inAttributesUpdateResponse\"\260\001\202\323\344\223\002O\032J/ap" +
       "i/v1/project_domain_attributes/{attribut" +
-      "es.project}/{attributes.domain}:\001*\222AX\032VD" +
-      "elete the customized resource attributes" +
+      "es.project}/{attributes.domain}:\001*\222AX\032VU" +
+      "pdate the customized resource attributes" +
       " associated with a project-domain combin" +
-      "ation\022\316\002\n\030UpdateWorkflowAttributes\022/.fly" +
-      "teidl.admin.WorkflowAttributesUpdateRequ" +
-      "est\0320.flyteidl.admin.WorkflowAttributesU" +
-      "pdateResponse\"\316\001\202\323\344\223\002_\032Z/api/v1/workflow" +
-      "_attributes/{attributes.project}/{attrib" +
-      "utes.domain}/{attributes.workflow}:\001*\222Af" +
-      "\032dUpdate the customized resource attribu" +
-      "tes associated with a project, domain an" +
-      "d workflow combination\022\307\002\n\025GetWorkflowAt" +
-      "tributes\022,.flyteidl.admin.WorkflowAttrib" +
-      "utesGetRequest\032-.flyteidl.admin.Workflow" +
-      "AttributesGetResponse\"\320\001\202\323\344\223\002_\022Z/api/v1/" +
-      "workflow_attributes/{attributes.project}" +
-      "/{attributes.domain}/{attributes.workflo" +
-      "w}:\001*\222Ah\032fRetrieve the customized resour" +
-      "ce attributes associated with a project," +
-      " domain and workflow combination\022\316\002\n\030Del" +
-      "eteWorkflowAttributes\022/.flyteidl.admin.W" +
-      "orkflowAttributesDeleteRequest\0320.flyteid" +
-      "l.admin.WorkflowAttributesDeleteResponse" +
-      "\"\316\001\202\323\344\223\002_*Z/api/v1/workflow_attributes/{" +
-      "attributes.project}/{attributes.domain}/" +
-      "{attributes.workflow}:\001*\222Af\032dDelete the " +
-      "customized resource attributes associate" +
-      "d with a project, domain and workflow co" +
-      "mbination\022\200\002\n\021ListNamedEntities\022&.flytei" +
-      "dl.admin.NamedEntityListRequest\032\037.flytei" +
-      "dl.admin.NamedEntityList\"\241\001\202\323\344\223\002;\0229/api/" +
-      "v1/named_entities/{resource_type}/{proje" +
-      "ct}/{domain}\222A]\032[Retrieve a list of Name" +
-      "dEntity objects sharing a common resourc" +
-      "e type, project, and domain.\022\312\001\n\016GetName" +
-      "dEntity\022%.flyteidl.admin.NamedEntityGetR" +
-      "equest\032\033.flyteidl.admin.NamedEntity\"t\202\323\344" +
-      "\223\002K\022I/api/v1/named_entities/{resource_ty" +
-      "pe}/{id.project}/{id.domain}/{id.name}\222A" +
-      " \032\036Retrieve a NamedEntity object.\022\363\001\n\021Up" +
-      "dateNamedEntity\022(.flyteidl.admin.NamedEn" +
-      "tityUpdateRequest\032).flyteidl.admin.Named" +
-      "EntityUpdateResponse\"\210\001\202\323\344\223\002N\032I/api/v1/n" +
-      "amed_entities/{resource_type}/{id.projec" +
-      "t}/{id.domain}/{id.name}:\001*\222A1\032/Update t" +
-      "he fields associated with a NamedEntityB" +
-      "5Z3github.com/lyft/flyteidl/gen/pb-go/fl" +
-      "yteidl/serviceb\006proto3"
+      "ation\022\265\002\n\032GetProjectDomainAttributes\0221.f" +
+      "lyteidl.admin.ProjectDomainAttributesGet" +
+      "Request\0322.flyteidl.admin.ProjectDomainAt" +
+      "tributesGetResponse\"\257\001\202\323\344\223\002L\022J/api/v1/pr" +
+      "oject_domain_attributes/{attributes.proj" +
+      "ect}/{attributes.domain}\222AZ\032XRetrieve th" +
+      "e customized resource attributes associa" +
+      "ted with a project-domain combination\022\277\002" +
+      "\n\035DeleteProjectDomainAttributes\0224.flytei" +
+      "dl.admin.ProjectDomainAttributesDeleteRe" +
+      "quest\0325.flyteidl.admin.ProjectDomainAttr" +
+      "ibutesDeleteResponse\"\260\001\202\323\344\223\002O*J/api/v1/p" +
+      "roject_domain_attributes/{attributes.pro" +
+      "ject}/{attributes.domain}:\001*\222AX\032VDelete " +
+      "the customized resource attributes assoc" +
+      "iated with a project-domain combination\022" +
+      "\316\002\n\030UpdateWorkflowAttributes\022/.flyteidl." +
+      "admin.WorkflowAttributesUpdateRequest\0320." +
+      "flyteidl.admin.WorkflowAttributesUpdateR" +
+      "esponse\"\316\001\202\323\344\223\002_\032Z/api/v1/workflow_attri" +
+      "butes/{attributes.project}/{attributes.d" +
+      "omain}/{attributes.workflow}:\001*\222Af\032dUpda" +
+      "te the customized resource attributes as" +
+      "sociated with a project, domain and work" +
+      "flow combination\022\304\002\n\025GetWorkflowAttribut" +
+      "es\022,.flyteidl.admin.WorkflowAttributesGe" +
+      "tRequest\032-.flyteidl.admin.WorkflowAttrib" +
+      "utesGetResponse\"\315\001\202\323\344\223\002\\\022Z/api/v1/workfl" +
+      "ow_attributes/{attributes.project}/{attr" +
+      "ibutes.domain}/{attributes.workflow}\222Ah\032" +
+      "fRetrieve the customized resource attrib" +
+      "utes associated with a project, domain a" +
+      "nd workflow combination\022\316\002\n\030DeleteWorkfl" +
+      "owAttributes\022/.flyteidl.admin.WorkflowAt" +
+      "tributesDeleteRequest\0320.flyteidl.admin.W" +
+      "orkflowAttributesDeleteResponse\"\316\001\202\323\344\223\002_" +
+      "*Z/api/v1/workflow_attributes/{attribute" +
+      "s.project}/{attributes.domain}/{attribut" +
+      "es.workflow}:\001*\222Af\032dDelete the customize" +
+      "d resource attributes associated with a " +
+      "project, domain and workflow combination" +
+      "\022\200\002\n\021ListNamedEntities\022&.flyteidl.admin." +
+      "NamedEntityListRequest\032\037.flyteidl.admin." +
+      "NamedEntityList\"\241\001\202\323\344\223\002;\0229/api/v1/named_" +
+      "entities/{resource_type}/{project}/{doma" +
+      "in}\222A]\032[Retrieve a list of NamedEntity o" +
+      "bjects sharing a common resource type, p" +
+      "roject, and domain.\022\312\001\n\016GetNamedEntity\022%" +
+      ".flyteidl.admin.NamedEntityGetRequest\032\033." +
+      "flyteidl.admin.NamedEntity\"t\202\323\344\223\002K\022I/api" +
+      "/v1/named_entities/{resource_type}/{id.p" +
+      "roject}/{id.domain}/{id.name}\222A \032\036Retrie" +
+      "ve a NamedEntity object.\022\363\001\n\021UpdateNamed" +
+      "Entity\022(.flyteidl.admin.NamedEntityUpdat" +
+      "eRequest\032).flyteidl.admin.NamedEntityUpd" +
+      "ateResponse\"\210\001\202\323\344\223\002N\032I/api/v1/named_enti" +
+      "ties/{resource_type}/{id.project}/{id.do" +
+      "main}/{id.name}:\001*\222A1\032/Update the fields" +
+      " associated with a NamedEntityB5Z3github" +
+      ".com/lyft/flyteidl/gen/pb-go/flyteidl/se" +
+      "rviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

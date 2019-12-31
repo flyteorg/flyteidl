@@ -393,7 +393,6 @@ service AdminService {
   rpc GetProjectAttributes (flyteidl.admin.ProjectAttributesGetRequest) returns (flyteidl.admin.ProjectAttributesGetResponse) {
     option (google.api.http) = {
       get: "/api/v1/project_attributes/{attributes.project}"
-      body: "*"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
       description: "Retrieve the customized resource attributes associated with a project"
@@ -423,7 +422,6 @@ service AdminService {
   rpc GetProjectDomainAttributes (flyteidl.admin.ProjectDomainAttributesGetRequest) returns (flyteidl.admin.ProjectDomainAttributesGetResponse) {
     option (google.api.http) = {
       get: "/api/v1/project_domain_attributes/{attributes.project}/{attributes.domain}"
-      body: "*"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
       description: "Retrieve the customized resource attributes associated with a project-domain combination"
@@ -453,7 +451,6 @@ service AdminService {
   rpc GetWorkflowAttributes (flyteidl.admin.WorkflowAttributesGetRequest) returns (flyteidl.admin.WorkflowAttributesGetResponse) {
     option (google.api.http) = {
       get: "/api/v1/workflow_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow}"
-      body: "*"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
       description: "Retrieve the customized resource attributes associated with a project, domain and workflow combination"
