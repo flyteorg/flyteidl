@@ -21,3 +21,22 @@ message ProjectAttributesUpdateRequest {
 // Purposefully empty, may be populated in the future.
 message ProjectAttributesUpdateResponse {
 }
+
+message ProjectAttributesGetRequest {
+    // Unique project id which this set of attributes references.
+    string project                 = 1;
+}
+
+message ProjectAttributesGetResponse {
+  ProjectAttributes attributes = 1;
+}
+
+
+message ProjectAttributesDeleteRequest {
+    // Unique project id which this set of attributes references.
+    string project                 = 1;
+}
+
+// Purposefully empty, may be populated in the future.
+message ProjectAttributesDeleteResponse {
+}

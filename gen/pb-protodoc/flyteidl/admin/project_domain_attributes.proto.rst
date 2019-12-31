@@ -75,3 +75,98 @@ Purposefully empty, may be populated in the future.
 
 
 
+
+.. _api_msg_flyteidl.admin.ProjectDomainAttributesGetRequest:
+
+flyteidl.admin.ProjectDomainAttributesGetRequest
+------------------------------------------------
+
+`[flyteidl.admin.ProjectDomainAttributesGetRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L26>`_
+
+
+.. code-block:: json
+
+  {
+    "project": "...",
+    "domain": "..."
+  }
+
+.. _api_field_flyteidl.admin.ProjectDomainAttributesGetRequest.project:
+
+project
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Unique project id which this set of attributes references.
+  
+  
+.. _api_field_flyteidl.admin.ProjectDomainAttributesGetRequest.domain:
+
+domain
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Unique domain id which this set of attributes references.
+  
+  
+
+
+.. _api_msg_flyteidl.admin.ProjectDomainAttributesGetResponse:
+
+flyteidl.admin.ProjectDomainAttributesGetResponse
+-------------------------------------------------
+
+`[flyteidl.admin.ProjectDomainAttributesGetResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L34>`_
+
+
+.. code-block:: json
+
+  {
+    "attributes": "{...}"
+  }
+
+.. _api_field_flyteidl.admin.ProjectDomainAttributesGetResponse.attributes:
+
+attributes
+  (:ref:`flyteidl.admin.ProjectDomainAttributes <api_msg_flyteidl.admin.ProjectDomainAttributes>`) 
+  
+
+
+.. _api_msg_flyteidl.admin.ProjectDomainAttributesDeleteRequest:
+
+flyteidl.admin.ProjectDomainAttributesDeleteRequest
+---------------------------------------------------
+
+`[flyteidl.admin.ProjectDomainAttributesDeleteRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L39>`_
+
+
+.. code-block:: json
+
+  {
+    "project": "...",
+    "domain": "..."
+  }
+
+.. _api_field_flyteidl.admin.ProjectDomainAttributesDeleteRequest.project:
+
+project
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Unique project id which this set of attributes references.
+  
+  
+.. _api_field_flyteidl.admin.ProjectDomainAttributesDeleteRequest.domain:
+
+domain
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Unique domain id which this set of attributes references.
+  
+  
+
+
+.. _api_msg_flyteidl.admin.ProjectDomainAttributesDeleteResponse:
+
+flyteidl.admin.ProjectDomainAttributesDeleteResponse
+----------------------------------------------------
+
+`[flyteidl.admin.ProjectDomainAttributesDeleteResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L48>`_
+
+Purposefully empty, may be populated in the future.
+
+.. code-block:: json
+
+  {}
+
+
+
