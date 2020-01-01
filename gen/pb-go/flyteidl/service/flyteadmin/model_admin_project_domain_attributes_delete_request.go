@@ -14,4 +14,5 @@ type AdminProjectDomainAttributesDeleteRequest struct {
 	Project string `json:"project,omitempty"`
 	// Unique domain id which this set of attributes references.
 	Domain string `json:"domain,omitempty"`
+	ResourceType *AdminMatchableResource `json:"resource_type,omitempty"`
 }

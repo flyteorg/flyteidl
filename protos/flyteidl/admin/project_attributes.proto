@@ -25,6 +25,8 @@ message ProjectAttributesUpdateResponse {
 message ProjectAttributesGetRequest {
     // Unique project id which this set of attributes references.
     string project                 = 1;
+
+    MatchableResource resource_type = 2;
 }
 
 message ProjectAttributesGetResponse {
@@ -35,6 +37,8 @@ message ProjectAttributesGetResponse {
 message ProjectAttributesDeleteRequest {
     // Unique project id which this set of attributes references.
     string project                 = 1;
+
+     MatchableResource resource_type = 2;
 }
 
 // Purposefully empty, may be populated in the future.

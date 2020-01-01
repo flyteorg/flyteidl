@@ -271,6 +271,8 @@ func (m *ProjectAttributesGetRequest) Validate() error {
 
 	// no validation rules for Project
 
+	// no validation rules for ResourceType
+
 	return nil
 }
 
@@ -418,6 +420,8 @@ func (m *ProjectAttributesDeleteRequest) Validate() error {
 	}
 
 	// no validation rules for Project
+
+	// no validation rules for ResourceType
 
 	return nil
 }

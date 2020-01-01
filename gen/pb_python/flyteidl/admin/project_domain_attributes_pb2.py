@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n.flyteidl/admin/project_domain_attributes.proto\x12\x0e\x66lyteidl.admin\x1a\'flyteidl/admin/matchable_resource.proto\"{\n\x17ProjectDomainAttributes\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12?\n\x13matching_attributes\x18\x03 \x01(\x0b\x32\".flyteidl.admin.MatchingAttributes\"c\n$ProjectDomainAttributesUpdateRequest\x12;\n\nattributes\x18\x01 \x01(\x0b\x32\'.flyteidl.admin.ProjectDomainAttributes\"\'\n%ProjectDomainAttributesUpdateResponse\"D\n!ProjectDomainAttributesGetRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\"a\n\"ProjectDomainAttributesGetResponse\x12;\n\nattributes\x18\x01 \x01(\x0b\x32\'.flyteidl.admin.ProjectDomainAttributes\"G\n$ProjectDomainAttributesDeleteRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\"\'\n%ProjectDomainAttributesDeleteResponseB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n.flyteidl/admin/project_domain_attributes.proto\x12\x0e\x66lyteidl.admin\x1a\'flyteidl/admin/matchable_resource.proto\"{\n\x17ProjectDomainAttributes\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12?\n\x13matching_attributes\x18\x03 \x01(\x0b\x32\".flyteidl.admin.MatchingAttributes\"c\n$ProjectDomainAttributesUpdateRequest\x12;\n\nattributes\x18\x01 \x01(\x0b\x32\'.flyteidl.admin.ProjectDomainAttributes\"\'\n%ProjectDomainAttributesUpdateResponse\"~\n!ProjectDomainAttributesGetRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x38\n\rresource_type\x18\x03 \x01(\x0e\x32!.flyteidl.admin.MatchableResource\"a\n\"ProjectDomainAttributesGetResponse\x12;\n\nattributes\x18\x01 \x01(\x0b\x32\'.flyteidl.admin.ProjectDomainAttributes\"\x81\x01\n$ProjectDomainAttributesDeleteRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x38\n\rresource_type\x18\x03 \x01(\x0e\x32!.flyteidl.admin.MatchableResource\"\'\n%ProjectDomainAttributesDeleteResponseB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_admin_dot_matchable__resource__pb2.DESCRIPTOR,])
 
@@ -149,6 +149,13 @@ _PROJECTDOMAINATTRIBUTESGETREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='resource_type', full_name='flyteidl.admin.ProjectDomainAttributesGetRequest.resource_type', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -162,7 +169,7 @@ _PROJECTDOMAINATTRIBUTESGETREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=374,
-  serialized_end=442,
+  serialized_end=500,
 )
 
 
@@ -192,8 +199,8 @@ _PROJECTDOMAINATTRIBUTESGETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=444,
-  serialized_end=541,
+  serialized_start=502,
+  serialized_end=599,
 )
 
 
@@ -218,6 +225,13 @@ _PROJECTDOMAINATTRIBUTESDELETEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='resource_type', full_name='flyteidl.admin.ProjectDomainAttributesDeleteRequest.resource_type', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -230,8 +244,8 @@ _PROJECTDOMAINATTRIBUTESDELETEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=543,
-  serialized_end=614,
+  serialized_start=602,
+  serialized_end=731,
 )
 
 
@@ -254,13 +268,15 @@ _PROJECTDOMAINATTRIBUTESDELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=616,
-  serialized_end=655,
+  serialized_start=733,
+  serialized_end=772,
 )
 
 _PROJECTDOMAINATTRIBUTES.fields_by_name['matching_attributes'].message_type = flyteidl_dot_admin_dot_matchable__resource__pb2._MATCHINGATTRIBUTES
 _PROJECTDOMAINATTRIBUTESUPDATEREQUEST.fields_by_name['attributes'].message_type = _PROJECTDOMAINATTRIBUTES
+_PROJECTDOMAINATTRIBUTESGETREQUEST.fields_by_name['resource_type'].enum_type = flyteidl_dot_admin_dot_matchable__resource__pb2._MATCHABLERESOURCE
 _PROJECTDOMAINATTRIBUTESGETRESPONSE.fields_by_name['attributes'].message_type = _PROJECTDOMAINATTRIBUTES
+_PROJECTDOMAINATTRIBUTESDELETEREQUEST.fields_by_name['resource_type'].enum_type = flyteidl_dot_admin_dot_matchable__resource__pb2._MATCHABLERESOURCE
 DESCRIPTOR.message_types_by_name['ProjectDomainAttributes'] = _PROJECTDOMAINATTRIBUTES
 DESCRIPTOR.message_types_by_name['ProjectDomainAttributesUpdateRequest'] = _PROJECTDOMAINATTRIBUTESUPDATEREQUEST
 DESCRIPTOR.message_types_by_name['ProjectDomainAttributesUpdateResponse'] = _PROJECTDOMAINATTRIBUTESUPDATERESPONSE

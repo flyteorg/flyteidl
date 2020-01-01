@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n(flyteidl/admin/workflow_attributes.proto\x12\x0e\x66lyteidl.admin\x1a\'flyteidl/admin/matchable_resource.proto\"\x88\x01\n\x12WorkflowAttributes\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x10\n\x08workflow\x18\x03 \x01(\t\x12?\n\x13matching_attributes\x18\x04 \x01(\x0b\x32\".flyteidl.admin.MatchingAttributes\"Y\n\x1fWorkflowAttributesUpdateRequest\x12\x36\n\nattributes\x18\x01 \x01(\x0b\x32\".flyteidl.admin.WorkflowAttributes\"\"\n WorkflowAttributesUpdateResponse\"Q\n\x1cWorkflowAttributesGetRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x10\n\x08workflow\x18\x03 \x01(\t\"W\n\x1dWorkflowAttributesGetResponse\x12\x36\n\nattributes\x18\x01 \x01(\x0b\x32\".flyteidl.admin.WorkflowAttributes\"T\n\x1fWorkflowAttributesDeleteRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x10\n\x08workflow\x18\x03 \x01(\t\"\"\n WorkflowAttributesDeleteResponseB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n(flyteidl/admin/workflow_attributes.proto\x12\x0e\x66lyteidl.admin\x1a\'flyteidl/admin/matchable_resource.proto\"\x88\x01\n\x12WorkflowAttributes\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x10\n\x08workflow\x18\x03 \x01(\t\x12?\n\x13matching_attributes\x18\x04 \x01(\x0b\x32\".flyteidl.admin.MatchingAttributes\"Y\n\x1fWorkflowAttributesUpdateRequest\x12\x36\n\nattributes\x18\x01 \x01(\x0b\x32\".flyteidl.admin.WorkflowAttributes\"\"\n WorkflowAttributesUpdateResponse\"\x8b\x01\n\x1cWorkflowAttributesGetRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x10\n\x08workflow\x18\x03 \x01(\t\x12\x38\n\rresource_type\x18\x04 \x01(\x0e\x32!.flyteidl.admin.MatchableResource\"W\n\x1dWorkflowAttributesGetResponse\x12\x36\n\nattributes\x18\x01 \x01(\x0b\x32\".flyteidl.admin.WorkflowAttributes\"\x8e\x01\n\x1fWorkflowAttributesDeleteRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x10\n\x08workflow\x18\x03 \x01(\t\x12\x38\n\rresource_type\x18\x04 \x01(\x0e\x32!.flyteidl.admin.MatchableResource\"\"\n WorkflowAttributesDeleteResponseB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_admin_dot_matchable__resource__pb2.DESCRIPTOR,])
 
@@ -163,6 +163,13 @@ _WORKFLOWATTRIBUTESGETREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='resource_type', full_name='flyteidl.admin.WorkflowAttributesGetRequest.resource_type', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -175,8 +182,8 @@ _WORKFLOWATTRIBUTESGETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=367,
-  serialized_end=448,
+  serialized_start=368,
+  serialized_end=507,
 )
 
 
@@ -206,8 +213,8 @@ _WORKFLOWATTRIBUTESGETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=450,
-  serialized_end=537,
+  serialized_start=509,
+  serialized_end=596,
 )
 
 
@@ -239,6 +246,13 @@ _WORKFLOWATTRIBUTESDELETEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='resource_type', full_name='flyteidl.admin.WorkflowAttributesDeleteRequest.resource_type', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -251,8 +265,8 @@ _WORKFLOWATTRIBUTESDELETEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=539,
-  serialized_end=623,
+  serialized_start=599,
+  serialized_end=741,
 )
 
 
@@ -275,13 +289,15 @@ _WORKFLOWATTRIBUTESDELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=625,
-  serialized_end=659,
+  serialized_start=743,
+  serialized_end=777,
 )
 
 _WORKFLOWATTRIBUTES.fields_by_name['matching_attributes'].message_type = flyteidl_dot_admin_dot_matchable__resource__pb2._MATCHINGATTRIBUTES
 _WORKFLOWATTRIBUTESUPDATEREQUEST.fields_by_name['attributes'].message_type = _WORKFLOWATTRIBUTES
+_WORKFLOWATTRIBUTESGETREQUEST.fields_by_name['resource_type'].enum_type = flyteidl_dot_admin_dot_matchable__resource__pb2._MATCHABLERESOURCE
 _WORKFLOWATTRIBUTESGETRESPONSE.fields_by_name['attributes'].message_type = _WORKFLOWATTRIBUTES
+_WORKFLOWATTRIBUTESDELETEREQUEST.fields_by_name['resource_type'].enum_type = flyteidl_dot_admin_dot_matchable__resource__pb2._MATCHABLERESOURCE
 DESCRIPTOR.message_types_by_name['WorkflowAttributes'] = _WORKFLOWATTRIBUTES
 DESCRIPTOR.message_types_by_name['WorkflowAttributesUpdateRequest'] = _WORKFLOWATTRIBUTESUPDATEREQUEST
 DESCRIPTOR.message_types_by_name['WorkflowAttributesUpdateResponse'] = _WORKFLOWATTRIBUTESUPDATERESPONSE

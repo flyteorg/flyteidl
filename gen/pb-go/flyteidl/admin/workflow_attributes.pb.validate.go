@@ -279,6 +279,8 @@ func (m *WorkflowAttributesGetRequest) Validate() error {
 
 	// no validation rules for Workflow
 
+	// no validation rules for ResourceType
+
 	return nil
 }
 
@@ -430,6 +432,8 @@ func (m *WorkflowAttributesDeleteRequest) Validate() error {
 	// no validation rules for Domain
 
 	// no validation rules for Workflow
+
+	// no validation rules for ResourceType
 
 	return nil
 }

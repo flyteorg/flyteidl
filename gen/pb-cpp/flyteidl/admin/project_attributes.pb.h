@@ -549,12 +549,19 @@ class ProjectAttributesGetRequest final :
   ::std::string* release_project();
   void set_allocated_project(::std::string* project);
 
+  // .flyteidl.admin.MatchableResource resource_type = 2;
+  void clear_resource_type();
+  static const int kResourceTypeFieldNumber = 2;
+  ::flyteidl::admin::MatchableResource resource_type() const;
+  void set_resource_type(::flyteidl::admin::MatchableResource value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.ProjectAttributesGetRequest)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr project_;
+  int resource_type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fproject_5fattributes_2eproto;
 };
@@ -784,12 +791,19 @@ class ProjectAttributesDeleteRequest final :
   ::std::string* release_project();
   void set_allocated_project(::std::string* project);
 
+  // .flyteidl.admin.MatchableResource resource_type = 2;
+  void clear_resource_type();
+  static const int kResourceTypeFieldNumber = 2;
+  ::flyteidl::admin::MatchableResource resource_type() const;
+  void set_resource_type(::flyteidl::admin::MatchableResource value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.ProjectAttributesDeleteRequest)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr project_;
+  int resource_type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fproject_5fattributes_2eproto;
 };
@@ -1123,6 +1137,20 @@ inline void ProjectAttributesGetRequest::set_allocated_project(::std::string* pr
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ProjectAttributesGetRequest.project)
 }
 
+// .flyteidl.admin.MatchableResource resource_type = 2;
+inline void ProjectAttributesGetRequest::clear_resource_type() {
+  resource_type_ = 0;
+}
+inline ::flyteidl::admin::MatchableResource ProjectAttributesGetRequest::resource_type() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ProjectAttributesGetRequest.resource_type)
+  return static_cast< ::flyteidl::admin::MatchableResource >(resource_type_);
+}
+inline void ProjectAttributesGetRequest::set_resource_type(::flyteidl::admin::MatchableResource value) {
+  
+  resource_type_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ProjectAttributesGetRequest.resource_type)
+}
+
 // -------------------------------------------------------------------
 
 // ProjectAttributesGetResponse
@@ -1233,6 +1261,20 @@ inline void ProjectAttributesDeleteRequest::set_allocated_project(::std::string*
   }
   project_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), project);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ProjectAttributesDeleteRequest.project)
+}
+
+// .flyteidl.admin.MatchableResource resource_type = 2;
+inline void ProjectAttributesDeleteRequest::clear_resource_type() {
+  resource_type_ = 0;
+}
+inline ::flyteidl::admin::MatchableResource ProjectAttributesDeleteRequest::resource_type() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ProjectAttributesDeleteRequest.resource_type)
+  return static_cast< ::flyteidl::admin::MatchableResource >(resource_type_);
+}
+inline void ProjectAttributesDeleteRequest::set_resource_type(::flyteidl::admin::MatchableResource value) {
+  
+  resource_type_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ProjectAttributesDeleteRequest.resource_type)
 }
 
 // -------------------------------------------------------------------

@@ -9669,6 +9669,9 @@ export namespace flyteidl {
 
             /** ProjectAttributesGetRequest project */
             project?: (string|null);
+
+            /** ProjectAttributesGetRequest resourceType */
+            resourceType?: (flyteidl.admin.MatchableResource|null);
         }
 
         /** Represents a ProjectAttributesGetRequest. */
@@ -9682,6 +9685,9 @@ export namespace flyteidl {
 
             /** ProjectAttributesGetRequest project. */
             public project: string;
+
+            /** ProjectAttributesGetRequest resourceType. */
+            public resourceType: flyteidl.admin.MatchableResource;
 
             /**
              * Creates a new ProjectAttributesGetRequest instance using the specified properties.
@@ -9773,6 +9779,9 @@ export namespace flyteidl {
 
             /** ProjectAttributesDeleteRequest project */
             project?: (string|null);
+
+            /** ProjectAttributesDeleteRequest resourceType */
+            resourceType?: (flyteidl.admin.MatchableResource|null);
         }
 
         /** Represents a ProjectAttributesDeleteRequest. */
@@ -9786,6 +9795,9 @@ export namespace flyteidl {
 
             /** ProjectAttributesDeleteRequest project. */
             public project: string;
+
+            /** ProjectAttributesDeleteRequest resourceType. */
+            public resourceType: flyteidl.admin.MatchableResource;
 
             /**
              * Creates a new ProjectAttributesDeleteRequest instance using the specified properties.
@@ -10036,6 +10048,9 @@ export namespace flyteidl {
 
             /** ProjectDomainAttributesGetRequest domain */
             domain?: (string|null);
+
+            /** ProjectDomainAttributesGetRequest resourceType */
+            resourceType?: (flyteidl.admin.MatchableResource|null);
         }
 
         /** Represents a ProjectDomainAttributesGetRequest. */
@@ -10052,6 +10067,9 @@ export namespace flyteidl {
 
             /** ProjectDomainAttributesGetRequest domain. */
             public domain: string;
+
+            /** ProjectDomainAttributesGetRequest resourceType. */
+            public resourceType: flyteidl.admin.MatchableResource;
 
             /**
              * Creates a new ProjectDomainAttributesGetRequest instance using the specified properties.
@@ -10146,6 +10164,9 @@ export namespace flyteidl {
 
             /** ProjectDomainAttributesDeleteRequest domain */
             domain?: (string|null);
+
+            /** ProjectDomainAttributesDeleteRequest resourceType */
+            resourceType?: (flyteidl.admin.MatchableResource|null);
         }
 
         /** Represents a ProjectDomainAttributesDeleteRequest. */
@@ -10162,6 +10183,9 @@ export namespace flyteidl {
 
             /** ProjectDomainAttributesDeleteRequest domain. */
             public domain: string;
+
+            /** ProjectDomainAttributesDeleteRequest resourceType. */
+            public resourceType: flyteidl.admin.MatchableResource;
 
             /**
              * Creates a new ProjectDomainAttributesDeleteRequest instance using the specified properties.
@@ -11550,6 +11574,9 @@ export namespace flyteidl {
 
             /** WorkflowAttributesGetRequest workflow */
             workflow?: (string|null);
+
+            /** WorkflowAttributesGetRequest resourceType */
+            resourceType?: (flyteidl.admin.MatchableResource|null);
         }
 
         /** Represents a WorkflowAttributesGetRequest. */
@@ -11569,6 +11596,9 @@ export namespace flyteidl {
 
             /** WorkflowAttributesGetRequest workflow. */
             public workflow: string;
+
+            /** WorkflowAttributesGetRequest resourceType. */
+            public resourceType: flyteidl.admin.MatchableResource;
 
             /**
              * Creates a new WorkflowAttributesGetRequest instance using the specified properties.
@@ -11666,6 +11696,9 @@ export namespace flyteidl {
 
             /** WorkflowAttributesDeleteRequest workflow */
             workflow?: (string|null);
+
+            /** WorkflowAttributesDeleteRequest resourceType */
+            resourceType?: (flyteidl.admin.MatchableResource|null);
         }
 
         /** Represents a WorkflowAttributesDeleteRequest. */
@@ -11685,6 +11718,9 @@ export namespace flyteidl {
 
             /** WorkflowAttributesDeleteRequest workflow. */
             public workflow: string;
+
+            /** WorkflowAttributesDeleteRequest resourceType. */
+            public resourceType: flyteidl.admin.MatchableResource;
 
             /**
              * Creates a new WorkflowAttributesDeleteRequest instance using the specified properties.

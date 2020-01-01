@@ -1923,6 +1923,7 @@ class AdminServiceApi(object):
 
         :param async_req bool
         :param str project: Unique project id which this set of attributes references. (required)
+        :param str resource_type:  - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.
         :return: AdminProjectAttributesGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1945,12 +1946,13 @@ class AdminServiceApi(object):
 
         :param async_req bool
         :param str project: Unique project id which this set of attributes references. (required)
+        :param str resource_type:  - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.
         :return: AdminProjectAttributesGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['project']  # noqa: E501
+        all_params = ['project', 'resource_type']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1977,6 +1979,8 @@ class AdminServiceApi(object):
             path_params['project'] = params['project']  # noqa: E501
 
         query_params = []
+        if 'resource_type' in params:
+            query_params.append(('resource_type', params['resource_type']))  # noqa: E501
 
         header_params = {}
 
@@ -2023,6 +2027,7 @@ class AdminServiceApi(object):
         :param async_req bool
         :param str project: Unique project id which this set of attributes references. (required)
         :param str domain: Unique domain id which this set of attributes references. (required)
+        :param str resource_type:  - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.
         :return: AdminProjectDomainAttributesGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2046,12 +2051,13 @@ class AdminServiceApi(object):
         :param async_req bool
         :param str project: Unique project id which this set of attributes references. (required)
         :param str domain: Unique domain id which this set of attributes references. (required)
+        :param str resource_type:  - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.
         :return: AdminProjectDomainAttributesGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['project', 'domain']  # noqa: E501
+        all_params = ['project', 'domain', 'resource_type']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2084,6 +2090,8 @@ class AdminServiceApi(object):
             path_params['domain'] = params['domain']  # noqa: E501
 
         query_params = []
+        if 'resource_type' in params:
+            query_params.append(('resource_type', params['resource_type']))  # noqa: E501
 
         header_params = {}
 
@@ -2719,6 +2727,7 @@ class AdminServiceApi(object):
         :param str project: Unique project id which this set of attributes references. (required)
         :param str domain: Unique domain id which this set of attributes references. (required)
         :param str workflow: Workflow name which this set of attributes references. (required)
+        :param str resource_type:  - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.
         :return: AdminWorkflowAttributesGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2743,12 +2752,13 @@ class AdminServiceApi(object):
         :param str project: Unique project id which this set of attributes references. (required)
         :param str domain: Unique domain id which this set of attributes references. (required)
         :param str workflow: Workflow name which this set of attributes references. (required)
+        :param str resource_type:  - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.
         :return: AdminWorkflowAttributesGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['project', 'domain', 'workflow']  # noqa: E501
+        all_params = ['project', 'domain', 'workflow', 'resource_type']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2787,6 +2797,8 @@ class AdminServiceApi(object):
             path_params['workflow'] = params['workflow']  # noqa: E501
 
         query_params = []
+        if 'resource_type' in params:
+            query_params.append(('resource_type', params['resource_type']))  # noqa: E501
 
         header_params = {}
 

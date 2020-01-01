@@ -1268,6 +1268,21 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "Project"
+      - name: "resource_type"
+        in: "query"
+        description: " - TASK_RESOURCE: Applies to customizable task resource requests\
+          \ and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes\
+          \ cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task\
+          \ execution queue assignment."
+        required: false
+        type: "string"
+        default: "TASK_RESOURCE"
+        enum:
+        - "TASK_RESOURCE"
+        - "CLUSTER_RESOURCE"
+        - "EXECUTION_QUEUE"
+        x-exportParamName: "ResourceType"
+        x-optionalDataType: "String"
       responses:
         200:
           description: "A successful response."
@@ -1347,6 +1362,21 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "Domain"
+      - name: "resource_type"
+        in: "query"
+        description: " - TASK_RESOURCE: Applies to customizable task resource requests\
+          \ and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes\
+          \ cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task\
+          \ execution queue assignment."
+        required: false
+        type: "string"
+        default: "TASK_RESOURCE"
+        enum:
+        - "TASK_RESOURCE"
+        - "CLUSTER_RESOURCE"
+        - "EXECUTION_QUEUE"
+        x-exportParamName: "ResourceType"
+        x-optionalDataType: "String"
       responses:
         200:
           description: "A successful response."
@@ -1926,6 +1956,21 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "Workflow"
+      - name: "resource_type"
+        in: "query"
+        description: " - TASK_RESOURCE: Applies to customizable task resource requests\
+          \ and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes\
+          \ cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task\
+          \ execution queue assignment."
+        required: false
+        type: "string"
+        default: "TASK_RESOURCE"
+        enum:
+        - "TASK_RESOURCE"
+        - "CLUSTER_RESOURCE"
+        - "EXECUTION_QUEUE"
+        x-exportParamName: "ResourceType"
+        x-optionalDataType: "String"
       responses:
         200:
           description: "A successful response."
@@ -4383,6 +4428,18 @@ definitions:
       values:
         literals: {}
       uri: "uri"
+  adminMatchableResource:
+    type: "string"
+    description: "Defines a resource that can be configured by customizable Project-,\
+      \ ProjectDomain- or WorkflowAttributes\nbased on matching tags.\n\n - TASK_RESOURCE:\
+      \ Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE:\
+      \ Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE:\
+      \ Configures task and dynamic task execution queue assignment."
+    enum:
+    - "TASK_RESOURCE"
+    - "CLUSTER_RESOURCE"
+    - "EXECUTION_QUEUE"
+    default: "TASK_RESOURCE"
   adminMatchingAttributes:
     type: "object"
     properties:
@@ -4816,6 +4873,8 @@ definitions:
       project:
         type: "string"
         description: "Unique project id which this set of attributes references."
+      resource_type:
+        $ref: "#/definitions/adminMatchableResource"
   adminProjectAttributesDeleteResponse:
     type: "object"
     description: "Purposefully empty, may be populated in the future."
@@ -4897,6 +4956,8 @@ definitions:
       domain:
         type: "string"
         description: "Unique domain id which this set of attributes references."
+      resource_type:
+        $ref: "#/definitions/adminMatchableResource"
   adminProjectDomainAttributesDeleteResponse:
     type: "object"
     description: "Purposefully empty, may be populated in the future."
@@ -8581,6 +8642,8 @@ definitions:
       workflow:
         type: "string"
         description: "Workflow name which this set of attributes references."
+      resource_type:
+        $ref: "#/definitions/adminMatchableResource"
   adminWorkflowAttributesDeleteResponse:
     type: "object"
     description: "Purposefully empty, may be populated in the future."

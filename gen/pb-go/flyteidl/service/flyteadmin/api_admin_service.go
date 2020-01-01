@@ -1678,10 +1678,17 @@ AdminServiceApiService
 Retrieve the customized resource attributes associated with a project
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param project Unique project id which this set of attributes references.
+ * @param optional nil or *GetProjectAttributesOpts - Optional Parameters:
+     * @param "ResourceType" (optional.String) -   - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.
 
 @return AdminProjectAttributesGetResponse
 */
-func (a *AdminServiceApiService) GetProjectAttributes(ctx context.Context, project string) (AdminProjectAttributesGetResponse, *http.Response, error) {
+
+type GetProjectAttributesOpts struct { 
+	ResourceType optional.String
+}
+
+func (a *AdminServiceApiService) GetProjectAttributes(ctx context.Context, project string, localVarOptionals *GetProjectAttributesOpts) (AdminProjectAttributesGetResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -1698,6 +1705,9 @@ func (a *AdminServiceApiService) GetProjectAttributes(ctx context.Context, proje
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.ResourceType.IsSet() {
+		localVarQueryParams.Add("resource_type", parameterToString(localVarOptionals.ResourceType.Value(), ""))
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -1768,10 +1778,17 @@ Retrieve the customized resource attributes associated with a project-domain com
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param project Unique project id which this set of attributes references.
  * @param domain Unique domain id which this set of attributes references.
+ * @param optional nil or *GetProjectDomainAttributesOpts - Optional Parameters:
+     * @param "ResourceType" (optional.String) -   - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.
 
 @return AdminProjectDomainAttributesGetResponse
 */
-func (a *AdminServiceApiService) GetProjectDomainAttributes(ctx context.Context, project string, domain string) (AdminProjectDomainAttributesGetResponse, *http.Response, error) {
+
+type GetProjectDomainAttributesOpts struct { 
+	ResourceType optional.String
+}
+
+func (a *AdminServiceApiService) GetProjectDomainAttributes(ctx context.Context, project string, domain string, localVarOptionals *GetProjectDomainAttributesOpts) (AdminProjectDomainAttributesGetResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -1789,6 +1806,9 @@ func (a *AdminServiceApiService) GetProjectDomainAttributes(ctx context.Context,
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.ResourceType.IsSet() {
+		localVarQueryParams.Add("resource_type", parameterToString(localVarOptionals.ResourceType.Value(), ""))
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -2300,10 +2320,17 @@ Retrieve the customized resource attributes associated with a project, domain an
  * @param project Unique project id which this set of attributes references.
  * @param domain Unique domain id which this set of attributes references.
  * @param workflow Workflow name which this set of attributes references.
+ * @param optional nil or *GetWorkflowAttributesOpts - Optional Parameters:
+     * @param "ResourceType" (optional.String) -   - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.
 
 @return AdminWorkflowAttributesGetResponse
 */
-func (a *AdminServiceApiService) GetWorkflowAttributes(ctx context.Context, project string, domain string, workflow string) (AdminWorkflowAttributesGetResponse, *http.Response, error) {
+
+type GetWorkflowAttributesOpts struct { 
+	ResourceType optional.String
+}
+
+func (a *AdminServiceApiService) GetWorkflowAttributes(ctx context.Context, project string, domain string, workflow string, localVarOptionals *GetWorkflowAttributesOpts) (AdminWorkflowAttributesGetResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -2322,6 +2349,9 @@ func (a *AdminServiceApiService) GetWorkflowAttributes(ctx context.Context, proj
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.ResourceType.IsSet() {
+		localVarQueryParams.Add("resource_type", parameterToString(localVarOptionals.ResourceType.Value(), ""))
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 

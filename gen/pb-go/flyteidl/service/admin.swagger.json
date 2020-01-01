@@ -1489,6 +1489,19 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "resource_type",
+            "description": " - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "TASK_RESOURCE",
+              "CLUSTER_RESOURCE",
+              "EXECUTION_QUEUE"
+            ],
+            "default": "TASK_RESOURCE"
           }
         ],
         "tags": [
@@ -1595,6 +1608,19 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "resource_type",
+            "description": " - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "TASK_RESOURCE",
+              "CLUSTER_RESOURCE",
+              "EXECUTION_QUEUE"
+            ],
+            "default": "TASK_RESOURCE"
           }
         ],
         "tags": [
@@ -2271,6 +2297,19 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "resource_type",
+            "description": " - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "TASK_RESOURCE",
+              "CLUSTER_RESOURCE",
+              "EXECUTION_QUEUE"
+            ],
+            "default": "TASK_RESOURCE"
           }
         ],
         "tags": [
@@ -3303,6 +3342,16 @@
       },
       "title": "Input/output data can represented by actual values or a link to where values are stored"
     },
+    "adminMatchableResource": {
+      "type": "string",
+      "enum": [
+        "TASK_RESOURCE",
+        "CLUSTER_RESOURCE",
+        "EXECUTION_QUEUE"
+      ],
+      "default": "TASK_RESOURCE",
+      "description": "Defines a resource that can be configured by customizable Project-, ProjectDomain- or WorkflowAttributes\nbased on matching tags.\n\n - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment."
+    },
     "adminMatchingAttributes": {
       "type": "object",
       "properties": {
@@ -3588,6 +3637,9 @@
         "project": {
           "type": "string",
           "description": "Unique project id which this set of attributes references."
+        },
+        "resource_type": {
+          "$ref": "#/definitions/adminMatchableResource"
         }
       }
     },
@@ -3642,6 +3694,9 @@
         "domain": {
           "type": "string",
           "description": "Unique domain id which this set of attributes references."
+        },
+        "resource_type": {
+          "$ref": "#/definitions/adminMatchableResource"
         }
       }
     },
@@ -3995,6 +4050,9 @@
         "workflow": {
           "type": "string",
           "description": "Workflow name which this set of attributes references."
+        },
+        "resource_type": {
+          "$ref": "#/definitions/adminMatchableResource"
         }
       }
     },

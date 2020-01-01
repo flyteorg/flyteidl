@@ -1847,6 +1847,15 @@ public final class ProjectAttributesOuterClass {
      */
     com.google.protobuf.ByteString
         getProjectBytes();
+
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+     */
+    int getResourceTypeValue();
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+     */
+    flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType();
   }
   /**
    * Protobuf type {@code flyteidl.admin.ProjectAttributesGetRequest}
@@ -1862,6 +1871,7 @@ public final class ProjectAttributesOuterClass {
     }
     private ProjectAttributesGetRequest() {
       project_ = "";
+      resourceType_ = 0;
     }
 
     @java.lang.Override
@@ -1892,6 +1902,12 @@ public final class ProjectAttributesOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              resourceType_ = rawValue;
               break;
             }
             default: {
@@ -1968,6 +1984,23 @@ public final class ProjectAttributesOuterClass {
       }
     }
 
+    public static final int RESOURCE_TYPE_FIELD_NUMBER = 2;
+    private int resourceType_;
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+     */
+    public int getResourceTypeValue() {
+      return resourceType_;
+    }
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+     */
+    public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
+      @SuppressWarnings("deprecation")
+      flyteidl.admin.MatchableResourceOuterClass.MatchableResource result = flyteidl.admin.MatchableResourceOuterClass.MatchableResource.valueOf(resourceType_);
+      return result == null ? flyteidl.admin.MatchableResourceOuterClass.MatchableResource.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1985,6 +2018,9 @@ public final class ProjectAttributesOuterClass {
       if (!getProjectBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, project_);
       }
+      if (resourceType_ != flyteidl.admin.MatchableResourceOuterClass.MatchableResource.TASK_RESOURCE.getNumber()) {
+        output.writeEnum(2, resourceType_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1996,6 +2032,10 @@ public final class ProjectAttributesOuterClass {
       size = 0;
       if (!getProjectBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, project_);
+      }
+      if (resourceType_ != flyteidl.admin.MatchableResourceOuterClass.MatchableResource.TASK_RESOURCE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, resourceType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2014,6 +2054,7 @@ public final class ProjectAttributesOuterClass {
 
       if (!getProject()
           .equals(other.getProject())) return false;
+      if (resourceType_ != other.resourceType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2027,6 +2068,8 @@ public final class ProjectAttributesOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PROJECT_FIELD_NUMBER;
       hash = (53 * hash) + getProject().hashCode();
+      hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + resourceType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2162,6 +2205,8 @@ public final class ProjectAttributesOuterClass {
         super.clear();
         project_ = "";
 
+        resourceType_ = 0;
+
         return this;
       }
 
@@ -2189,6 +2234,7 @@ public final class ProjectAttributesOuterClass {
       public flyteidl.admin.ProjectAttributesOuterClass.ProjectAttributesGetRequest buildPartial() {
         flyteidl.admin.ProjectAttributesOuterClass.ProjectAttributesGetRequest result = new flyteidl.admin.ProjectAttributesOuterClass.ProjectAttributesGetRequest(this);
         result.project_ = project_;
+        result.resourceType_ = resourceType_;
         onBuilt();
         return result;
       }
@@ -2240,6 +2286,9 @@ public final class ProjectAttributesOuterClass {
         if (!other.getProject().isEmpty()) {
           project_ = other.project_;
           onChanged();
+        }
+        if (other.resourceType_ != 0) {
+          setResourceTypeValue(other.getResourceTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2355,6 +2404,51 @@ public final class ProjectAttributesOuterClass {
   checkByteStringIsUtf8(value);
         
         project_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int resourceType_ = 0;
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+       */
+      public int getResourceTypeValue() {
+        return resourceType_;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+       */
+      public Builder setResourceTypeValue(int value) {
+        resourceType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
+        @SuppressWarnings("deprecation")
+        flyteidl.admin.MatchableResourceOuterClass.MatchableResource result = flyteidl.admin.MatchableResourceOuterClass.MatchableResource.valueOf(resourceType_);
+        return result == null ? flyteidl.admin.MatchableResourceOuterClass.MatchableResource.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+       */
+      public Builder setResourceType(flyteidl.admin.MatchableResourceOuterClass.MatchableResource value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        resourceType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+       */
+      public Builder clearResourceType() {
+        
+        resourceType_ = 0;
         onChanged();
         return this;
       }
@@ -3038,6 +3132,15 @@ public final class ProjectAttributesOuterClass {
      */
     com.google.protobuf.ByteString
         getProjectBytes();
+
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+     */
+    int getResourceTypeValue();
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+     */
+    flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType();
   }
   /**
    * Protobuf type {@code flyteidl.admin.ProjectAttributesDeleteRequest}
@@ -3053,6 +3156,7 @@ public final class ProjectAttributesOuterClass {
     }
     private ProjectAttributesDeleteRequest() {
       project_ = "";
+      resourceType_ = 0;
     }
 
     @java.lang.Override
@@ -3083,6 +3187,12 @@ public final class ProjectAttributesOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              resourceType_ = rawValue;
               break;
             }
             default: {
@@ -3159,6 +3269,23 @@ public final class ProjectAttributesOuterClass {
       }
     }
 
+    public static final int RESOURCE_TYPE_FIELD_NUMBER = 2;
+    private int resourceType_;
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+     */
+    public int getResourceTypeValue() {
+      return resourceType_;
+    }
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+     */
+    public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
+      @SuppressWarnings("deprecation")
+      flyteidl.admin.MatchableResourceOuterClass.MatchableResource result = flyteidl.admin.MatchableResourceOuterClass.MatchableResource.valueOf(resourceType_);
+      return result == null ? flyteidl.admin.MatchableResourceOuterClass.MatchableResource.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3176,6 +3303,9 @@ public final class ProjectAttributesOuterClass {
       if (!getProjectBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, project_);
       }
+      if (resourceType_ != flyteidl.admin.MatchableResourceOuterClass.MatchableResource.TASK_RESOURCE.getNumber()) {
+        output.writeEnum(2, resourceType_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3187,6 +3317,10 @@ public final class ProjectAttributesOuterClass {
       size = 0;
       if (!getProjectBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, project_);
+      }
+      if (resourceType_ != flyteidl.admin.MatchableResourceOuterClass.MatchableResource.TASK_RESOURCE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, resourceType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3205,6 +3339,7 @@ public final class ProjectAttributesOuterClass {
 
       if (!getProject()
           .equals(other.getProject())) return false;
+      if (resourceType_ != other.resourceType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3218,6 +3353,8 @@ public final class ProjectAttributesOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PROJECT_FIELD_NUMBER;
       hash = (53 * hash) + getProject().hashCode();
+      hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + resourceType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3353,6 +3490,8 @@ public final class ProjectAttributesOuterClass {
         super.clear();
         project_ = "";
 
+        resourceType_ = 0;
+
         return this;
       }
 
@@ -3380,6 +3519,7 @@ public final class ProjectAttributesOuterClass {
       public flyteidl.admin.ProjectAttributesOuterClass.ProjectAttributesDeleteRequest buildPartial() {
         flyteidl.admin.ProjectAttributesOuterClass.ProjectAttributesDeleteRequest result = new flyteidl.admin.ProjectAttributesOuterClass.ProjectAttributesDeleteRequest(this);
         result.project_ = project_;
+        result.resourceType_ = resourceType_;
         onBuilt();
         return result;
       }
@@ -3431,6 +3571,9 @@ public final class ProjectAttributesOuterClass {
         if (!other.getProject().isEmpty()) {
           project_ = other.project_;
           onChanged();
+        }
+        if (other.resourceType_ != 0) {
+          setResourceTypeValue(other.getResourceTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3546,6 +3689,51 @@ public final class ProjectAttributesOuterClass {
   checkByteStringIsUtf8(value);
         
         project_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int resourceType_ = 0;
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+       */
+      public int getResourceTypeValue() {
+        return resourceType_;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+       */
+      public Builder setResourceTypeValue(int value) {
+        resourceType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
+        @SuppressWarnings("deprecation")
+        flyteidl.admin.MatchableResourceOuterClass.MatchableResource result = flyteidl.admin.MatchableResourceOuterClass.MatchableResource.valueOf(resourceType_);
+        return result == null ? flyteidl.admin.MatchableResourceOuterClass.MatchableResource.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+       */
+      public Builder setResourceType(flyteidl.admin.MatchableResourceOuterClass.MatchableResource value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        resourceType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+       */
+      public Builder clearResourceType() {
+        
+        resourceType_ = 0;
         onChanged();
         return this;
       }
@@ -4073,14 +4261,17 @@ public final class ProjectAttributesOuterClass {
       "s\"W\n\036ProjectAttributesUpdateRequest\0225\n\na" +
       "ttributes\030\001 \001(\0132!.flyteidl.admin.Project" +
       "Attributes\"!\n\037ProjectAttributesUpdateRes" +
-      "ponse\".\n\033ProjectAttributesGetRequest\022\017\n\007" +
-      "project\030\001 \001(\t\"U\n\034ProjectAttributesGetRes" +
-      "ponse\0225\n\nattributes\030\001 \001(\0132!.flyteidl.adm" +
-      "in.ProjectAttributes\"1\n\036ProjectAttribute" +
-      "sDeleteRequest\022\017\n\007project\030\001 \001(\t\"!\n\037Proje" +
-      "ctAttributesDeleteResponseB3Z1github.com" +
-      "/lyft/flyteidl/gen/pb-go/flyteidl/adminb" +
-      "\006proto3"
+      "ponse\"h\n\033ProjectAttributesGetRequest\022\017\n\007" +
+      "project\030\001 \001(\t\0228\n\rresource_type\030\002 \001(\0162!.f" +
+      "lyteidl.admin.MatchableResource\"U\n\034Proje" +
+      "ctAttributesGetResponse\0225\n\nattributes\030\001 " +
+      "\001(\0132!.flyteidl.admin.ProjectAttributes\"k" +
+      "\n\036ProjectAttributesDeleteRequest\022\017\n\007proj" +
+      "ect\030\001 \001(\t\0228\n\rresource_type\030\002 \001(\0162!.flyte" +
+      "idl.admin.MatchableResource\"!\n\037ProjectAt" +
+      "tributesDeleteResponseB3Z1github.com/lyf" +
+      "t/flyteidl/gen/pb-go/flyteidl/adminb\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4118,7 +4309,7 @@ public final class ProjectAttributesOuterClass {
     internal_static_flyteidl_admin_ProjectAttributesGetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ProjectAttributesGetRequest_descriptor,
-        new java.lang.String[] { "Project", });
+        new java.lang.String[] { "Project", "ResourceType", });
     internal_static_flyteidl_admin_ProjectAttributesGetResponse_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_admin_ProjectAttributesGetResponse_fieldAccessorTable = new
@@ -4130,7 +4321,7 @@ public final class ProjectAttributesOuterClass {
     internal_static_flyteidl_admin_ProjectAttributesDeleteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ProjectAttributesDeleteRequest_descriptor,
-        new java.lang.String[] { "Project", });
+        new java.lang.String[] { "Project", "ResourceType", });
     internal_static_flyteidl_admin_ProjectAttributesDeleteResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_admin_ProjectAttributesDeleteResponse_fieldAccessorTable = new

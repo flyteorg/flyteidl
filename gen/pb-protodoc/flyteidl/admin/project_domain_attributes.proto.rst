@@ -88,7 +88,8 @@ flyteidl.admin.ProjectDomainAttributesGetRequest
 
   {
     "project": "...",
-    "domain": "..."
+    "domain": "...",
+    "resource_type": "..."
   }
 
 .. _api_field_flyteidl.admin.ProjectDomainAttributesGetRequest.project:
@@ -103,6 +104,11 @@ domain
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Unique domain id which this set of attributes references.
   
   
+.. _api_field_flyteidl.admin.ProjectDomainAttributesGetRequest.resource_type:
+
+resource_type
+  (:ref:`flyteidl.admin.MatchableResource <api_enum_flyteidl.admin.MatchableResource>`) 
+  
 
 
 .. _api_msg_flyteidl.admin.ProjectDomainAttributesGetResponse:
@@ -110,7 +116,7 @@ domain
 flyteidl.admin.ProjectDomainAttributesGetResponse
 -------------------------------------------------
 
-`[flyteidl.admin.ProjectDomainAttributesGetResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L34>`_
+`[flyteidl.admin.ProjectDomainAttributesGetResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L36>`_
 
 
 .. code-block:: json
@@ -131,14 +137,15 @@ attributes
 flyteidl.admin.ProjectDomainAttributesDeleteRequest
 ---------------------------------------------------
 
-`[flyteidl.admin.ProjectDomainAttributesDeleteRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L39>`_
+`[flyteidl.admin.ProjectDomainAttributesDeleteRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L41>`_
 
 
 .. code-block:: json
 
   {
     "project": "...",
-    "domain": "..."
+    "domain": "...",
+    "resource_type": "..."
   }
 
 .. _api_field_flyteidl.admin.ProjectDomainAttributesDeleteRequest.project:
@@ -153,6 +160,11 @@ domain
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Unique domain id which this set of attributes references.
   
   
+.. _api_field_flyteidl.admin.ProjectDomainAttributesDeleteRequest.resource_type:
+
+resource_type
+  (:ref:`flyteidl.admin.MatchableResource <api_enum_flyteidl.admin.MatchableResource>`) 
+  
 
 
 .. _api_msg_flyteidl.admin.ProjectDomainAttributesDeleteResponse:
@@ -160,7 +172,7 @@ domain
 flyteidl.admin.ProjectDomainAttributesDeleteResponse
 ----------------------------------------------------
 
-`[flyteidl.admin.ProjectDomainAttributesDeleteResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L48>`_
+`[flyteidl.admin.ProjectDomainAttributesDeleteResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/project_domain_attributes.proto#L52>`_
 
 Purposefully empty, may be populated in the future.
 

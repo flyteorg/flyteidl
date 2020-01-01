@@ -36,6 +36,8 @@ message WorkflowAttributesGetRequest {
 
     // Workflow name which this set of attributes references.
     string workflow                = 3;
+
+    MatchableResource resource_type = 4;
 }
 
 message WorkflowAttributesGetResponse {
@@ -51,6 +53,8 @@ message WorkflowAttributesDeleteRequest {
 
     // Workflow name which this set of attributes references.
     string workflow                = 3;
+
+    MatchableResource resource_type = 4;
 }
 
 // Purposefully empty, may be populated in the future.

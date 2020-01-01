@@ -194,6 +194,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fworkflow_5fattri
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributesGetRequest, project_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributesGetRequest, domain_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributesGetRequest, workflow_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributesGetRequest, resource_type_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributesGetResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -208,6 +209,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fworkflow_5fattri
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributesDeleteRequest, project_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributesDeleteRequest, domain_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributesDeleteRequest, workflow_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributesDeleteRequest, resource_type_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowAttributesDeleteResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -219,9 +221,9 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 9, -1, sizeof(::flyteidl::admin::WorkflowAttributesUpdateRequest)},
   { 15, -1, sizeof(::flyteidl::admin::WorkflowAttributesUpdateResponse)},
   { 20, -1, sizeof(::flyteidl::admin::WorkflowAttributesGetRequest)},
-  { 28, -1, sizeof(::flyteidl::admin::WorkflowAttributesGetResponse)},
-  { 34, -1, sizeof(::flyteidl::admin::WorkflowAttributesDeleteRequest)},
-  { 42, -1, sizeof(::flyteidl::admin::WorkflowAttributesDeleteResponse)},
+  { 29, -1, sizeof(::flyteidl::admin::WorkflowAttributesGetResponse)},
+  { 35, -1, sizeof(::flyteidl::admin::WorkflowAttributesDeleteRequest)},
+  { 44, -1, sizeof(::flyteidl::admin::WorkflowAttributesDeleteResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -250,20 +252,23 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fworkflow_5fattributes_2e
   "\n\037WorkflowAttributesUpdateRequest\0226\n\natt"
   "ributes\030\001 \001(\0132\".flyteidl.admin.WorkflowA"
   "ttributes\"\"\n WorkflowAttributesUpdateRes"
-  "ponse\"Q\n\034WorkflowAttributesGetRequest\022\017\n"
-  "\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010workfl"
-  "ow\030\003 \001(\t\"W\n\035WorkflowAttributesGetRespons"
-  "e\0226\n\nattributes\030\001 \001(\0132\".flyteidl.admin.W"
-  "orkflowAttributes\"T\n\037WorkflowAttributesD"
-  "eleteRequest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030"
-  "\002 \001(\t\022\020\n\010workflow\030\003 \001(\t\"\"\n WorkflowAttri"
-  "butesDeleteResponseB3Z1github.com/lyft/f"
-  "lyteidl/gen/pb-go/flyteidl/adminb\006proto3"
+  "ponse\"\213\001\n\034WorkflowAttributesGetRequest\022\017"
+  "\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010workf"
+  "low\030\003 \001(\t\0228\n\rresource_type\030\004 \001(\0162!.flyte"
+  "idl.admin.MatchableResource\"W\n\035WorkflowA"
+  "ttributesGetResponse\0226\n\nattributes\030\001 \001(\013"
+  "2\".flyteidl.admin.WorkflowAttributes\"\216\001\n"
+  "\037WorkflowAttributesDeleteRequest\022\017\n\007proj"
+  "ect\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010workflow\030\003 "
+  "\001(\t\0228\n\rresource_type\030\004 \001(\0162!.flyteidl.ad"
+  "min.MatchableResource\"\"\n WorkflowAttribu"
+  "tesDeleteResponseB3Z1github.com/lyft/fly"
+  "teidl/gen/pb-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto,
-  "flyteidl/admin/workflow_attributes.proto", &assign_descriptors_table_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto, 720,
+  "flyteidl/admin/workflow_attributes.proto", &assign_descriptors_table_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto, 838,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto() {
@@ -1303,6 +1308,7 @@ class WorkflowAttributesGetRequest::HasBitSetters {
 const int WorkflowAttributesGetRequest::kProjectFieldNumber;
 const int WorkflowAttributesGetRequest::kDomainFieldNumber;
 const int WorkflowAttributesGetRequest::kWorkflowFieldNumber;
+const int WorkflowAttributesGetRequest::kResourceTypeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 WorkflowAttributesGetRequest::WorkflowAttributesGetRequest()
@@ -1326,6 +1332,7 @@ WorkflowAttributesGetRequest::WorkflowAttributesGetRequest(const WorkflowAttribu
   if (from.workflow().size() > 0) {
     workflow_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.workflow_);
   }
+  resource_type_ = from.resource_type_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.WorkflowAttributesGetRequest)
 }
 
@@ -1335,6 +1342,7 @@ void WorkflowAttributesGetRequest::SharedCtor() {
   project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   workflow_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  resource_type_ = 0;
 }
 
 WorkflowAttributesGetRequest::~WorkflowAttributesGetRequest() {
@@ -1366,6 +1374,7 @@ void WorkflowAttributesGetRequest::Clear() {
   project_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   workflow_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  resource_type_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -1428,6 +1437,14 @@ const char* WorkflowAttributesGetRequest::_InternalParse(const char* begin, cons
         GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
         ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
         ptr += size;
+        break;
+      }
+      // .flyteidl.admin.MatchableResource resource_type = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_resource_type(static_cast<::flyteidl::admin::MatchableResource>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -1509,6 +1526,20 @@ bool WorkflowAttributesGetRequest::MergePartialFromCodedStream(
         break;
       }
 
+      // .flyteidl.admin.MatchableResource resource_type = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (32 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_resource_type(static_cast< ::flyteidl::admin::MatchableResource >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1566,6 +1597,12 @@ void WorkflowAttributesGetRequest::SerializeWithCachedSizes(
       3, this->workflow(), output);
   }
 
+  // .flyteidl.admin.MatchableResource resource_type = 4;
+  if (this->resource_type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      4, this->resource_type(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -1612,6 +1649,12 @@ void WorkflowAttributesGetRequest::SerializeWithCachedSizes(
         3, this->workflow(), target);
   }
 
+  // .flyteidl.admin.MatchableResource resource_type = 4;
+  if (this->resource_type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      4, this->resource_type(), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -1654,6 +1697,12 @@ size_t WorkflowAttributesGetRequest::ByteSizeLong() const {
         this->workflow());
   }
 
+  // .flyteidl.admin.MatchableResource resource_type = 4;
+  if (this->resource_type() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->resource_type());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -1693,6 +1742,9 @@ void WorkflowAttributesGetRequest::MergeFrom(const WorkflowAttributesGetRequest&
 
     workflow_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.workflow_);
   }
+  if (from.resource_type() != 0) {
+    set_resource_type(from.resource_type());
+  }
 }
 
 void WorkflowAttributesGetRequest::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1726,6 +1778,7 @@ void WorkflowAttributesGetRequest::InternalSwap(WorkflowAttributesGetRequest* ot
     GetArenaNoVirtual());
   workflow_.Swap(&other->workflow_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(resource_type_, other->resource_type_);
 }
 
 ::google::protobuf::Metadata WorkflowAttributesGetRequest::GetMetadata() const {
@@ -2033,6 +2086,7 @@ class WorkflowAttributesDeleteRequest::HasBitSetters {
 const int WorkflowAttributesDeleteRequest::kProjectFieldNumber;
 const int WorkflowAttributesDeleteRequest::kDomainFieldNumber;
 const int WorkflowAttributesDeleteRequest::kWorkflowFieldNumber;
+const int WorkflowAttributesDeleteRequest::kResourceTypeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 WorkflowAttributesDeleteRequest::WorkflowAttributesDeleteRequest()
@@ -2056,6 +2110,7 @@ WorkflowAttributesDeleteRequest::WorkflowAttributesDeleteRequest(const WorkflowA
   if (from.workflow().size() > 0) {
     workflow_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.workflow_);
   }
+  resource_type_ = from.resource_type_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.WorkflowAttributesDeleteRequest)
 }
 
@@ -2065,6 +2120,7 @@ void WorkflowAttributesDeleteRequest::SharedCtor() {
   project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   workflow_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  resource_type_ = 0;
 }
 
 WorkflowAttributesDeleteRequest::~WorkflowAttributesDeleteRequest() {
@@ -2096,6 +2152,7 @@ void WorkflowAttributesDeleteRequest::Clear() {
   project_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   workflow_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  resource_type_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -2158,6 +2215,14 @@ const char* WorkflowAttributesDeleteRequest::_InternalParse(const char* begin, c
         GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
         ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
         ptr += size;
+        break;
+      }
+      // .flyteidl.admin.MatchableResource resource_type = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_resource_type(static_cast<::flyteidl::admin::MatchableResource>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -2239,6 +2304,20 @@ bool WorkflowAttributesDeleteRequest::MergePartialFromCodedStream(
         break;
       }
 
+      // .flyteidl.admin.MatchableResource resource_type = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (32 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_resource_type(static_cast< ::flyteidl::admin::MatchableResource >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -2296,6 +2375,12 @@ void WorkflowAttributesDeleteRequest::SerializeWithCachedSizes(
       3, this->workflow(), output);
   }
 
+  // .flyteidl.admin.MatchableResource resource_type = 4;
+  if (this->resource_type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      4, this->resource_type(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -2342,6 +2427,12 @@ void WorkflowAttributesDeleteRequest::SerializeWithCachedSizes(
         3, this->workflow(), target);
   }
 
+  // .flyteidl.admin.MatchableResource resource_type = 4;
+  if (this->resource_type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      4, this->resource_type(), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -2384,6 +2475,12 @@ size_t WorkflowAttributesDeleteRequest::ByteSizeLong() const {
         this->workflow());
   }
 
+  // .flyteidl.admin.MatchableResource resource_type = 4;
+  if (this->resource_type() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->resource_type());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -2423,6 +2520,9 @@ void WorkflowAttributesDeleteRequest::MergeFrom(const WorkflowAttributesDeleteRe
 
     workflow_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.workflow_);
   }
+  if (from.resource_type() != 0) {
+    set_resource_type(from.resource_type());
+  }
 }
 
 void WorkflowAttributesDeleteRequest::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2456,6 +2556,7 @@ void WorkflowAttributesDeleteRequest::InternalSwap(WorkflowAttributesDeleteReque
     GetArenaNoVirtual());
   workflow_.Swap(&other->workflow_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(resource_type_, other->resource_type_);
 }
 
 ::google::protobuf::Metadata WorkflowAttributesDeleteRequest::GetMetadata() const {

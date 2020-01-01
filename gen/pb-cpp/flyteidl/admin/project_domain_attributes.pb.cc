@@ -192,6 +192,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fproject_5fdomain
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributesGetRequest, project_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributesGetRequest, domain_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributesGetRequest, resource_type_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributesGetResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -205,6 +206,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fproject_5fdomain
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributesDeleteRequest, project_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributesDeleteRequest, domain_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributesDeleteRequest, resource_type_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ProjectDomainAttributesDeleteResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -216,9 +218,9 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 8, -1, sizeof(::flyteidl::admin::ProjectDomainAttributesUpdateRequest)},
   { 14, -1, sizeof(::flyteidl::admin::ProjectDomainAttributesUpdateResponse)},
   { 19, -1, sizeof(::flyteidl::admin::ProjectDomainAttributesGetRequest)},
-  { 26, -1, sizeof(::flyteidl::admin::ProjectDomainAttributesGetResponse)},
-  { 32, -1, sizeof(::flyteidl::admin::ProjectDomainAttributesDeleteRequest)},
-  { 39, -1, sizeof(::flyteidl::admin::ProjectDomainAttributesDeleteResponse)},
+  { 27, -1, sizeof(::flyteidl::admin::ProjectDomainAttributesGetResponse)},
+  { 33, -1, sizeof(::flyteidl::admin::ProjectDomainAttributesDeleteRequest)},
+  { 41, -1, sizeof(::flyteidl::admin::ProjectDomainAttributesDeleteResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -247,20 +249,23 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fproject_5fdomain_5fattri
   "tDomainAttributesUpdateRequest\022;\n\nattrib"
   "utes\030\001 \001(\0132\'.flyteidl.admin.ProjectDomai"
   "nAttributes\"\'\n%ProjectDomainAttributesUp"
-  "dateResponse\"D\n!ProjectDomainAttributesG"
+  "dateResponse\"~\n!ProjectDomainAttributesG"
   "etRequest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001"
-  "(\t\"a\n\"ProjectDomainAttributesGetResponse"
-  "\022;\n\nattributes\030\001 \001(\0132\'.flyteidl.admin.Pr"
-  "ojectDomainAttributes\"G\n$ProjectDomainAt"
-  "tributesDeleteRequest\022\017\n\007project\030\001 \001(\t\022\016"
-  "\n\006domain\030\002 \001(\t\"\'\n%ProjectDomainAttribute"
-  "sDeleteResponseB3Z1github.com/lyft/flyte"
-  "idl/gen/pb-go/flyteidl/adminb\006proto3"
+  "(\t\0228\n\rresource_type\030\003 \001(\0162!.flyteidl.adm"
+  "in.MatchableResource\"a\n\"ProjectDomainAtt"
+  "ributesGetResponse\022;\n\nattributes\030\001 \001(\0132\'"
+  ".flyteidl.admin.ProjectDomainAttributes\""
+  "\201\001\n$ProjectDomainAttributesDeleteRequest"
+  "\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\0228\n\rres"
+  "ource_type\030\003 \001(\0162!.flyteidl.admin.Matcha"
+  "bleResource\"\'\n%ProjectDomainAttributesDe"
+  "leteResponseB3Z1github.com/lyft/flyteidl"
+  "/gen/pb-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto,
-  "flyteidl/admin/project_domain_attributes.proto", &assign_descriptors_table_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto, 716,
+  "flyteidl/admin/project_domain_attributes.proto", &assign_descriptors_table_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto, 833,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto() {
@@ -1226,6 +1231,7 @@ class ProjectDomainAttributesGetRequest::HasBitSetters {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ProjectDomainAttributesGetRequest::kProjectFieldNumber;
 const int ProjectDomainAttributesGetRequest::kDomainFieldNumber;
+const int ProjectDomainAttributesGetRequest::kResourceTypeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ProjectDomainAttributesGetRequest::ProjectDomainAttributesGetRequest()
@@ -1245,6 +1251,7 @@ ProjectDomainAttributesGetRequest::ProjectDomainAttributesGetRequest(const Proje
   if (from.domain().size() > 0) {
     domain_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.domain_);
   }
+  resource_type_ = from.resource_type_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.ProjectDomainAttributesGetRequest)
 }
 
@@ -1253,6 +1260,7 @@ void ProjectDomainAttributesGetRequest::SharedCtor() {
       &scc_info_ProjectDomainAttributesGetRequest_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto.base);
   project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  resource_type_ = 0;
 }
 
 ProjectDomainAttributesGetRequest::~ProjectDomainAttributesGetRequest() {
@@ -1282,6 +1290,7 @@ void ProjectDomainAttributesGetRequest::Clear() {
 
   project_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  resource_type_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -1328,6 +1337,14 @@ const char* ProjectDomainAttributesGetRequest::_InternalParse(const char* begin,
         GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
         ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
         ptr += size;
+        break;
+      }
+      // .flyteidl.admin.MatchableResource resource_type = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_resource_type(static_cast<::flyteidl::admin::MatchableResource>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -1394,6 +1411,20 @@ bool ProjectDomainAttributesGetRequest::MergePartialFromCodedStream(
         break;
       }
 
+      // .flyteidl.admin.MatchableResource resource_type = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_resource_type(static_cast< ::flyteidl::admin::MatchableResource >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1441,6 +1472,12 @@ void ProjectDomainAttributesGetRequest::SerializeWithCachedSizes(
       2, this->domain(), output);
   }
 
+  // .flyteidl.admin.MatchableResource resource_type = 3;
+  if (this->resource_type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      3, this->resource_type(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -1474,6 +1511,12 @@ void ProjectDomainAttributesGetRequest::SerializeWithCachedSizes(
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->domain(), target);
+  }
+
+  // .flyteidl.admin.MatchableResource resource_type = 3;
+  if (this->resource_type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      3, this->resource_type(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1511,6 +1554,12 @@ size_t ProjectDomainAttributesGetRequest::ByteSizeLong() const {
         this->domain());
   }
 
+  // .flyteidl.admin.MatchableResource resource_type = 3;
+  if (this->resource_type() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->resource_type());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -1546,6 +1595,9 @@ void ProjectDomainAttributesGetRequest::MergeFrom(const ProjectDomainAttributesG
 
     domain_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.domain_);
   }
+  if (from.resource_type() != 0) {
+    set_resource_type(from.resource_type());
+  }
 }
 
 void ProjectDomainAttributesGetRequest::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1577,6 +1629,7 @@ void ProjectDomainAttributesGetRequest::InternalSwap(ProjectDomainAttributesGetR
     GetArenaNoVirtual());
   domain_.Swap(&other->domain_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(resource_type_, other->resource_type_);
 }
 
 ::google::protobuf::Metadata ProjectDomainAttributesGetRequest::GetMetadata() const {
@@ -1883,6 +1936,7 @@ class ProjectDomainAttributesDeleteRequest::HasBitSetters {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ProjectDomainAttributesDeleteRequest::kProjectFieldNumber;
 const int ProjectDomainAttributesDeleteRequest::kDomainFieldNumber;
+const int ProjectDomainAttributesDeleteRequest::kResourceTypeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ProjectDomainAttributesDeleteRequest::ProjectDomainAttributesDeleteRequest()
@@ -1902,6 +1956,7 @@ ProjectDomainAttributesDeleteRequest::ProjectDomainAttributesDeleteRequest(const
   if (from.domain().size() > 0) {
     domain_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.domain_);
   }
+  resource_type_ = from.resource_type_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.ProjectDomainAttributesDeleteRequest)
 }
 
@@ -1910,6 +1965,7 @@ void ProjectDomainAttributesDeleteRequest::SharedCtor() {
       &scc_info_ProjectDomainAttributesDeleteRequest_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto.base);
   project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  resource_type_ = 0;
 }
 
 ProjectDomainAttributesDeleteRequest::~ProjectDomainAttributesDeleteRequest() {
@@ -1939,6 +1995,7 @@ void ProjectDomainAttributesDeleteRequest::Clear() {
 
   project_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  resource_type_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -1985,6 +2042,14 @@ const char* ProjectDomainAttributesDeleteRequest::_InternalParse(const char* beg
         GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
         ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
         ptr += size;
+        break;
+      }
+      // .flyteidl.admin.MatchableResource resource_type = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_resource_type(static_cast<::flyteidl::admin::MatchableResource>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -2051,6 +2116,20 @@ bool ProjectDomainAttributesDeleteRequest::MergePartialFromCodedStream(
         break;
       }
 
+      // .flyteidl.admin.MatchableResource resource_type = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_resource_type(static_cast< ::flyteidl::admin::MatchableResource >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -2098,6 +2177,12 @@ void ProjectDomainAttributesDeleteRequest::SerializeWithCachedSizes(
       2, this->domain(), output);
   }
 
+  // .flyteidl.admin.MatchableResource resource_type = 3;
+  if (this->resource_type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      3, this->resource_type(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -2131,6 +2216,12 @@ void ProjectDomainAttributesDeleteRequest::SerializeWithCachedSizes(
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->domain(), target);
+  }
+
+  // .flyteidl.admin.MatchableResource resource_type = 3;
+  if (this->resource_type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      3, this->resource_type(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2168,6 +2259,12 @@ size_t ProjectDomainAttributesDeleteRequest::ByteSizeLong() const {
         this->domain());
   }
 
+  // .flyteidl.admin.MatchableResource resource_type = 3;
+  if (this->resource_type() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->resource_type());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -2203,6 +2300,9 @@ void ProjectDomainAttributesDeleteRequest::MergeFrom(const ProjectDomainAttribut
 
     domain_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.domain_);
   }
+  if (from.resource_type() != 0) {
+    set_resource_type(from.resource_type());
+  }
 }
 
 void ProjectDomainAttributesDeleteRequest::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2234,6 +2334,7 @@ void ProjectDomainAttributesDeleteRequest::InternalSwap(ProjectDomainAttributesD
     GetArenaNoVirtual());
   domain_.Swap(&other->domain_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(resource_type_, other->resource_type_);
 }
 
 ::google::protobuf::Metadata ProjectDomainAttributesDeleteRequest::GetMetadata() const {

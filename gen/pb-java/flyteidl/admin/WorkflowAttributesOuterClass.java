@@ -2229,6 +2229,15 @@ public final class WorkflowAttributesOuterClass {
      */
     com.google.protobuf.ByteString
         getWorkflowBytes();
+
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
+     */
+    int getResourceTypeValue();
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
+     */
+    flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType();
   }
   /**
    * Protobuf type {@code flyteidl.admin.WorkflowAttributesGetRequest}
@@ -2246,6 +2255,7 @@ public final class WorkflowAttributesOuterClass {
       project_ = "";
       domain_ = "";
       workflow_ = "";
+      resourceType_ = 0;
     }
 
     @java.lang.Override
@@ -2288,6 +2298,12 @@ public final class WorkflowAttributesOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               workflow_ = s;
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              resourceType_ = rawValue;
               break;
             }
             default: {
@@ -2448,6 +2464,23 @@ public final class WorkflowAttributesOuterClass {
       }
     }
 
+    public static final int RESOURCE_TYPE_FIELD_NUMBER = 4;
+    private int resourceType_;
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
+     */
+    public int getResourceTypeValue() {
+      return resourceType_;
+    }
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
+     */
+    public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
+      @SuppressWarnings("deprecation")
+      flyteidl.admin.MatchableResourceOuterClass.MatchableResource result = flyteidl.admin.MatchableResourceOuterClass.MatchableResource.valueOf(resourceType_);
+      return result == null ? flyteidl.admin.MatchableResourceOuterClass.MatchableResource.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2471,6 +2504,9 @@ public final class WorkflowAttributesOuterClass {
       if (!getWorkflowBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, workflow_);
       }
+      if (resourceType_ != flyteidl.admin.MatchableResourceOuterClass.MatchableResource.TASK_RESOURCE.getNumber()) {
+        output.writeEnum(4, resourceType_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2488,6 +2524,10 @@ public final class WorkflowAttributesOuterClass {
       }
       if (!getWorkflowBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, workflow_);
+      }
+      if (resourceType_ != flyteidl.admin.MatchableResourceOuterClass.MatchableResource.TASK_RESOURCE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, resourceType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2510,6 +2550,7 @@ public final class WorkflowAttributesOuterClass {
           .equals(other.getDomain())) return false;
       if (!getWorkflow()
           .equals(other.getWorkflow())) return false;
+      if (resourceType_ != other.resourceType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2527,6 +2568,8 @@ public final class WorkflowAttributesOuterClass {
       hash = (53 * hash) + getDomain().hashCode();
       hash = (37 * hash) + WORKFLOW_FIELD_NUMBER;
       hash = (53 * hash) + getWorkflow().hashCode();
+      hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + resourceType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2666,6 +2709,8 @@ public final class WorkflowAttributesOuterClass {
 
         workflow_ = "";
 
+        resourceType_ = 0;
+
         return this;
       }
 
@@ -2695,6 +2740,7 @@ public final class WorkflowAttributesOuterClass {
         result.project_ = project_;
         result.domain_ = domain_;
         result.workflow_ = workflow_;
+        result.resourceType_ = resourceType_;
         onBuilt();
         return result;
       }
@@ -2754,6 +2800,9 @@ public final class WorkflowAttributesOuterClass {
         if (!other.getWorkflow().isEmpty()) {
           workflow_ = other.workflow_;
           onChanged();
+        }
+        if (other.resourceType_ != 0) {
+          setResourceTypeValue(other.getResourceTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3047,6 +3096,51 @@ public final class WorkflowAttributesOuterClass {
   checkByteStringIsUtf8(value);
         
         workflow_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int resourceType_ = 0;
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
+       */
+      public int getResourceTypeValue() {
+        return resourceType_;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
+       */
+      public Builder setResourceTypeValue(int value) {
+        resourceType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
+        @SuppressWarnings("deprecation")
+        flyteidl.admin.MatchableResourceOuterClass.MatchableResource result = flyteidl.admin.MatchableResourceOuterClass.MatchableResource.valueOf(resourceType_);
+        return result == null ? flyteidl.admin.MatchableResourceOuterClass.MatchableResource.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
+       */
+      public Builder setResourceType(flyteidl.admin.MatchableResourceOuterClass.MatchableResource value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        resourceType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
+       */
+      public Builder clearResourceType() {
+        
+        resourceType_ = 0;
         onChanged();
         return this;
       }
@@ -3766,6 +3860,15 @@ public final class WorkflowAttributesOuterClass {
      */
     com.google.protobuf.ByteString
         getWorkflowBytes();
+
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
+     */
+    int getResourceTypeValue();
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
+     */
+    flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType();
   }
   /**
    * Protobuf type {@code flyteidl.admin.WorkflowAttributesDeleteRequest}
@@ -3783,6 +3886,7 @@ public final class WorkflowAttributesOuterClass {
       project_ = "";
       domain_ = "";
       workflow_ = "";
+      resourceType_ = 0;
     }
 
     @java.lang.Override
@@ -3825,6 +3929,12 @@ public final class WorkflowAttributesOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               workflow_ = s;
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              resourceType_ = rawValue;
               break;
             }
             default: {
@@ -3985,6 +4095,23 @@ public final class WorkflowAttributesOuterClass {
       }
     }
 
+    public static final int RESOURCE_TYPE_FIELD_NUMBER = 4;
+    private int resourceType_;
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
+     */
+    public int getResourceTypeValue() {
+      return resourceType_;
+    }
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
+     */
+    public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
+      @SuppressWarnings("deprecation")
+      flyteidl.admin.MatchableResourceOuterClass.MatchableResource result = flyteidl.admin.MatchableResourceOuterClass.MatchableResource.valueOf(resourceType_);
+      return result == null ? flyteidl.admin.MatchableResourceOuterClass.MatchableResource.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4008,6 +4135,9 @@ public final class WorkflowAttributesOuterClass {
       if (!getWorkflowBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, workflow_);
       }
+      if (resourceType_ != flyteidl.admin.MatchableResourceOuterClass.MatchableResource.TASK_RESOURCE.getNumber()) {
+        output.writeEnum(4, resourceType_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4025,6 +4155,10 @@ public final class WorkflowAttributesOuterClass {
       }
       if (!getWorkflowBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, workflow_);
+      }
+      if (resourceType_ != flyteidl.admin.MatchableResourceOuterClass.MatchableResource.TASK_RESOURCE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, resourceType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4047,6 +4181,7 @@ public final class WorkflowAttributesOuterClass {
           .equals(other.getDomain())) return false;
       if (!getWorkflow()
           .equals(other.getWorkflow())) return false;
+      if (resourceType_ != other.resourceType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4064,6 +4199,8 @@ public final class WorkflowAttributesOuterClass {
       hash = (53 * hash) + getDomain().hashCode();
       hash = (37 * hash) + WORKFLOW_FIELD_NUMBER;
       hash = (53 * hash) + getWorkflow().hashCode();
+      hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + resourceType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4203,6 +4340,8 @@ public final class WorkflowAttributesOuterClass {
 
         workflow_ = "";
 
+        resourceType_ = 0;
+
         return this;
       }
 
@@ -4232,6 +4371,7 @@ public final class WorkflowAttributesOuterClass {
         result.project_ = project_;
         result.domain_ = domain_;
         result.workflow_ = workflow_;
+        result.resourceType_ = resourceType_;
         onBuilt();
         return result;
       }
@@ -4291,6 +4431,9 @@ public final class WorkflowAttributesOuterClass {
         if (!other.getWorkflow().isEmpty()) {
           workflow_ = other.workflow_;
           onChanged();
+        }
+        if (other.resourceType_ != 0) {
+          setResourceTypeValue(other.getResourceTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4584,6 +4727,51 @@ public final class WorkflowAttributesOuterClass {
   checkByteStringIsUtf8(value);
         
         workflow_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int resourceType_ = 0;
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
+       */
+      public int getResourceTypeValue() {
+        return resourceType_;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
+       */
+      public Builder setResourceTypeValue(int value) {
+        resourceType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
+        @SuppressWarnings("deprecation")
+        flyteidl.admin.MatchableResourceOuterClass.MatchableResource result = flyteidl.admin.MatchableResourceOuterClass.MatchableResource.valueOf(resourceType_);
+        return result == null ? flyteidl.admin.MatchableResourceOuterClass.MatchableResource.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
+       */
+      public Builder setResourceType(flyteidl.admin.MatchableResourceOuterClass.MatchableResource value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        resourceType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 4;</code>
+       */
+      public Builder clearResourceType() {
+        
+        resourceType_ = 0;
         onChanged();
         return this;
       }
@@ -5112,15 +5300,18 @@ public final class WorkflowAttributesOuterClass {
       "\n\037WorkflowAttributesUpdateRequest\0226\n\natt" +
       "ributes\030\001 \001(\0132\".flyteidl.admin.WorkflowA" +
       "ttributes\"\"\n WorkflowAttributesUpdateRes" +
-      "ponse\"Q\n\034WorkflowAttributesGetRequest\022\017\n" +
-      "\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010workfl" +
-      "ow\030\003 \001(\t\"W\n\035WorkflowAttributesGetRespons" +
-      "e\0226\n\nattributes\030\001 \001(\0132\".flyteidl.admin.W" +
-      "orkflowAttributes\"T\n\037WorkflowAttributesD" +
-      "eleteRequest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030" +
-      "\002 \001(\t\022\020\n\010workflow\030\003 \001(\t\"\"\n WorkflowAttri" +
-      "butesDeleteResponseB3Z1github.com/lyft/f" +
-      "lyteidl/gen/pb-go/flyteidl/adminb\006proto3"
+      "ponse\"\213\001\n\034WorkflowAttributesGetRequest\022\017" +
+      "\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010workf" +
+      "low\030\003 \001(\t\0228\n\rresource_type\030\004 \001(\0162!.flyte" +
+      "idl.admin.MatchableResource\"W\n\035WorkflowA" +
+      "ttributesGetResponse\0226\n\nattributes\030\001 \001(\013" +
+      "2\".flyteidl.admin.WorkflowAttributes\"\216\001\n" +
+      "\037WorkflowAttributesDeleteRequest\022\017\n\007proj" +
+      "ect\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010workflow\030\003 " +
+      "\001(\t\0228\n\rresource_type\030\004 \001(\0162!.flyteidl.ad" +
+      "min.MatchableResource\"\"\n WorkflowAttribu" +
+      "tesDeleteResponseB3Z1github.com/lyft/fly" +
+      "teidl/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5158,7 +5349,7 @@ public final class WorkflowAttributesOuterClass {
     internal_static_flyteidl_admin_WorkflowAttributesGetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowAttributesGetRequest_descriptor,
-        new java.lang.String[] { "Project", "Domain", "Workflow", });
+        new java.lang.String[] { "Project", "Domain", "Workflow", "ResourceType", });
     internal_static_flyteidl_admin_WorkflowAttributesGetResponse_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_admin_WorkflowAttributesGetResponse_fieldAccessorTable = new
@@ -5170,7 +5361,7 @@ public final class WorkflowAttributesOuterClass {
     internal_static_flyteidl_admin_WorkflowAttributesDeleteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowAttributesDeleteRequest_descriptor,
-        new java.lang.String[] { "Project", "Domain", "Workflow", });
+        new java.lang.String[] { "Project", "Domain", "Workflow", "ResourceType", });
     internal_static_flyteidl_admin_WorkflowAttributesDeleteResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_admin_WorkflowAttributesDeleteResponse_fieldAccessorTable = new

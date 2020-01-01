@@ -275,6 +275,8 @@ func (m *ProjectDomainAttributesGetRequest) Validate() error {
 
 	// no validation rules for Domain
 
+	// no validation rules for ResourceType
+
 	return nil
 }
 
@@ -424,6 +426,8 @@ func (m *ProjectDomainAttributesDeleteRequest) Validate() error {
 	// no validation rules for Project
 
 	// no validation rules for Domain
+
+	// no validation rules for ResourceType
 
 	return nil
 }

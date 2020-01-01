@@ -30,6 +30,8 @@ message ProjectDomainAttributesGetRequest {
 
     // Unique domain id which this set of attributes references.
     string domain                  = 2;
+
+    MatchableResource resource_type = 3;
 }
 
 message ProjectDomainAttributesGetResponse {
@@ -43,6 +45,8 @@ message ProjectDomainAttributesDeleteRequest {
 
     // Unique domain id which this set of attributes references.
     string domain                  = 2;
+
+    MatchableResource resource_type = 3;
 }
 
 // Purposefully empty, may be populated in the future.

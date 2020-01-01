@@ -23007,6 +23007,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface IProjectAttributesGetRequest
              * @property {string|null} [project] ProjectAttributesGetRequest project
+             * @property {flyteidl.admin.MatchableResource|null} [resourceType] ProjectAttributesGetRequest resourceType
              */
 
             /**
@@ -23031,6 +23032,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             ProjectAttributesGetRequest.prototype.project = "";
+
+            /**
+             * ProjectAttributesGetRequest resourceType.
+             * @member {flyteidl.admin.MatchableResource} resourceType
+             * @memberof flyteidl.admin.ProjectAttributesGetRequest
+             * @instance
+             */
+            ProjectAttributesGetRequest.prototype.resourceType = 0;
 
             /**
              * Creates a new ProjectAttributesGetRequest instance using the specified properties.
@@ -23058,6 +23067,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.project != null && message.hasOwnProperty("project"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.resourceType);
                 return writer;
             };
 
@@ -23082,6 +23093,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                         message.project = reader.string();
                         break;
+                    case 2:
+                        message.resourceType = reader.int32();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -23104,6 +23118,15 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.project != null && message.hasOwnProperty("project"))
                     if (!$util.isString(message.project))
                         return "project: string expected";
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    switch (message.resourceType) {
+                    default:
+                        return "resourceType: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                        break;
+                    }
                 return null;
             };
 
@@ -23229,6 +23252,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface IProjectAttributesDeleteRequest
              * @property {string|null} [project] ProjectAttributesDeleteRequest project
+             * @property {flyteidl.admin.MatchableResource|null} [resourceType] ProjectAttributesDeleteRequest resourceType
              */
 
             /**
@@ -23253,6 +23277,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             ProjectAttributesDeleteRequest.prototype.project = "";
+
+            /**
+             * ProjectAttributesDeleteRequest resourceType.
+             * @member {flyteidl.admin.MatchableResource} resourceType
+             * @memberof flyteidl.admin.ProjectAttributesDeleteRequest
+             * @instance
+             */
+            ProjectAttributesDeleteRequest.prototype.resourceType = 0;
 
             /**
              * Creates a new ProjectAttributesDeleteRequest instance using the specified properties.
@@ -23280,6 +23312,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.project != null && message.hasOwnProperty("project"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.resourceType);
                 return writer;
             };
 
@@ -23304,6 +23338,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                         message.project = reader.string();
                         break;
+                    case 2:
+                        message.resourceType = reader.int32();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -23326,6 +23363,15 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.project != null && message.hasOwnProperty("project"))
                     if (!$util.isString(message.project))
                         return "project: string expected";
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    switch (message.resourceType) {
+                    default:
+                        return "resourceType: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                        break;
+                    }
                 return null;
             };
 
@@ -23784,6 +23830,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IProjectDomainAttributesGetRequest
              * @property {string|null} [project] ProjectDomainAttributesGetRequest project
              * @property {string|null} [domain] ProjectDomainAttributesGetRequest domain
+             * @property {flyteidl.admin.MatchableResource|null} [resourceType] ProjectDomainAttributesGetRequest resourceType
              */
 
             /**
@@ -23818,6 +23865,14 @@ export const flyteidl = $root.flyteidl = (() => {
             ProjectDomainAttributesGetRequest.prototype.domain = "";
 
             /**
+             * ProjectDomainAttributesGetRequest resourceType.
+             * @member {flyteidl.admin.MatchableResource} resourceType
+             * @memberof flyteidl.admin.ProjectDomainAttributesGetRequest
+             * @instance
+             */
+            ProjectDomainAttributesGetRequest.prototype.resourceType = 0;
+
+            /**
              * Creates a new ProjectDomainAttributesGetRequest instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.ProjectDomainAttributesGetRequest
@@ -23845,6 +23900,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
                 if (message.domain != null && message.hasOwnProperty("domain"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.resourceType);
                 return writer;
             };
 
@@ -23872,6 +23929,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 2:
                         message.domain = reader.string();
                         break;
+                    case 3:
+                        message.resourceType = reader.int32();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -23897,6 +23957,15 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.domain != null && message.hasOwnProperty("domain"))
                     if (!$util.isString(message.domain))
                         return "domain: string expected";
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    switch (message.resourceType) {
+                    default:
+                        return "resourceType: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                        break;
+                    }
                 return null;
             };
 
@@ -24023,6 +24092,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IProjectDomainAttributesDeleteRequest
              * @property {string|null} [project] ProjectDomainAttributesDeleteRequest project
              * @property {string|null} [domain] ProjectDomainAttributesDeleteRequest domain
+             * @property {flyteidl.admin.MatchableResource|null} [resourceType] ProjectDomainAttributesDeleteRequest resourceType
              */
 
             /**
@@ -24057,6 +24127,14 @@ export const flyteidl = $root.flyteidl = (() => {
             ProjectDomainAttributesDeleteRequest.prototype.domain = "";
 
             /**
+             * ProjectDomainAttributesDeleteRequest resourceType.
+             * @member {flyteidl.admin.MatchableResource} resourceType
+             * @memberof flyteidl.admin.ProjectDomainAttributesDeleteRequest
+             * @instance
+             */
+            ProjectDomainAttributesDeleteRequest.prototype.resourceType = 0;
+
+            /**
              * Creates a new ProjectDomainAttributesDeleteRequest instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.ProjectDomainAttributesDeleteRequest
@@ -24084,6 +24162,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
                 if (message.domain != null && message.hasOwnProperty("domain"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.resourceType);
                 return writer;
             };
 
@@ -24111,6 +24191,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 2:
                         message.domain = reader.string();
                         break;
+                    case 3:
+                        message.resourceType = reader.int32();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -24136,6 +24219,15 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.domain != null && message.hasOwnProperty("domain"))
                     if (!$util.isString(message.domain))
                         return "domain: string expected";
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    switch (message.resourceType) {
+                    default:
+                        return "resourceType: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                        break;
+                    }
                 return null;
             };
 
@@ -27220,6 +27312,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [project] WorkflowAttributesGetRequest project
              * @property {string|null} [domain] WorkflowAttributesGetRequest domain
              * @property {string|null} [workflow] WorkflowAttributesGetRequest workflow
+             * @property {flyteidl.admin.MatchableResource|null} [resourceType] WorkflowAttributesGetRequest resourceType
              */
 
             /**
@@ -27262,6 +27355,14 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowAttributesGetRequest.prototype.workflow = "";
 
             /**
+             * WorkflowAttributesGetRequest resourceType.
+             * @member {flyteidl.admin.MatchableResource} resourceType
+             * @memberof flyteidl.admin.WorkflowAttributesGetRequest
+             * @instance
+             */
+            WorkflowAttributesGetRequest.prototype.resourceType = 0;
+
+            /**
              * Creates a new WorkflowAttributesGetRequest instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.WorkflowAttributesGetRequest
@@ -27291,6 +27392,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
                 if (message.workflow != null && message.hasOwnProperty("workflow"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.workflow);
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.resourceType);
                 return writer;
             };
 
@@ -27321,6 +27424,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 3:
                         message.workflow = reader.string();
                         break;
+                    case 4:
+                        message.resourceType = reader.int32();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -27349,6 +27455,15 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.workflow != null && message.hasOwnProperty("workflow"))
                     if (!$util.isString(message.workflow))
                         return "workflow: string expected";
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    switch (message.resourceType) {
+                    default:
+                        return "resourceType: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                        break;
+                    }
                 return null;
             };
 
@@ -27476,6 +27591,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [project] WorkflowAttributesDeleteRequest project
              * @property {string|null} [domain] WorkflowAttributesDeleteRequest domain
              * @property {string|null} [workflow] WorkflowAttributesDeleteRequest workflow
+             * @property {flyteidl.admin.MatchableResource|null} [resourceType] WorkflowAttributesDeleteRequest resourceType
              */
 
             /**
@@ -27518,6 +27634,14 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowAttributesDeleteRequest.prototype.workflow = "";
 
             /**
+             * WorkflowAttributesDeleteRequest resourceType.
+             * @member {flyteidl.admin.MatchableResource} resourceType
+             * @memberof flyteidl.admin.WorkflowAttributesDeleteRequest
+             * @instance
+             */
+            WorkflowAttributesDeleteRequest.prototype.resourceType = 0;
+
+            /**
              * Creates a new WorkflowAttributesDeleteRequest instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.WorkflowAttributesDeleteRequest
@@ -27547,6 +27671,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
                 if (message.workflow != null && message.hasOwnProperty("workflow"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.workflow);
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.resourceType);
                 return writer;
             };
 
@@ -27577,6 +27703,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 3:
                         message.workflow = reader.string();
                         break;
+                    case 4:
+                        message.resourceType = reader.int32();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -27605,6 +27734,15 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.workflow != null && message.hasOwnProperty("workflow"))
                     if (!$util.isString(message.workflow))
                         return "workflow: string expected";
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    switch (message.resourceType) {
+                    default:
+                        return "resourceType: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                        break;
+                    }
                 return null;
             };
 

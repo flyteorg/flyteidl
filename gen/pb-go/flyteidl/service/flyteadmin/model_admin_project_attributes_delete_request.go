@@ -12,4 +12,5 @@ package flyteadmin
 type AdminProjectAttributesDeleteRequest struct {
 	// Unique project id which this set of attributes references.
 	Project string `json:"project,omitempty"`
+	ResourceType *AdminMatchableResource `json:"resource_type,omitempty"`
 }

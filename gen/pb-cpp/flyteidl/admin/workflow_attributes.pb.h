@@ -607,6 +607,12 @@ class WorkflowAttributesGetRequest final :
   ::std::string* release_workflow();
   void set_allocated_workflow(::std::string* workflow);
 
+  // .flyteidl.admin.MatchableResource resource_type = 4;
+  void clear_resource_type();
+  static const int kResourceTypeFieldNumber = 4;
+  ::flyteidl::admin::MatchableResource resource_type() const;
+  void set_resource_type(::flyteidl::admin::MatchableResource value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.WorkflowAttributesGetRequest)
  private:
   class HasBitSetters;
@@ -615,6 +621,7 @@ class WorkflowAttributesGetRequest final :
   ::google::protobuf::internal::ArenaStringPtr project_;
   ::google::protobuf::internal::ArenaStringPtr domain_;
   ::google::protobuf::internal::ArenaStringPtr workflow_;
+  int resource_type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto;
 };
@@ -872,6 +879,12 @@ class WorkflowAttributesDeleteRequest final :
   ::std::string* release_workflow();
   void set_allocated_workflow(::std::string* workflow);
 
+  // .flyteidl.admin.MatchableResource resource_type = 4;
+  void clear_resource_type();
+  static const int kResourceTypeFieldNumber = 4;
+  ::flyteidl::admin::MatchableResource resource_type() const;
+  void set_resource_type(::flyteidl::admin::MatchableResource value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.WorkflowAttributesDeleteRequest)
  private:
   class HasBitSetters;
@@ -880,6 +893,7 @@ class WorkflowAttributesDeleteRequest final :
   ::google::protobuf::internal::ArenaStringPtr project_;
   ::google::protobuf::internal::ArenaStringPtr domain_;
   ::google::protobuf::internal::ArenaStringPtr workflow_;
+  int resource_type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fworkflow_5fattributes_2eproto;
 };
@@ -1425,6 +1439,20 @@ inline void WorkflowAttributesGetRequest::set_allocated_workflow(::std::string* 
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.WorkflowAttributesGetRequest.workflow)
 }
 
+// .flyteidl.admin.MatchableResource resource_type = 4;
+inline void WorkflowAttributesGetRequest::clear_resource_type() {
+  resource_type_ = 0;
+}
+inline ::flyteidl::admin::MatchableResource WorkflowAttributesGetRequest::resource_type() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.WorkflowAttributesGetRequest.resource_type)
+  return static_cast< ::flyteidl::admin::MatchableResource >(resource_type_);
+}
+inline void WorkflowAttributesGetRequest::set_resource_type(::flyteidl::admin::MatchableResource value) {
+  
+  resource_type_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.WorkflowAttributesGetRequest.resource_type)
+}
+
 // -------------------------------------------------------------------
 
 // WorkflowAttributesGetResponse
@@ -1641,6 +1669,20 @@ inline void WorkflowAttributesDeleteRequest::set_allocated_workflow(::std::strin
   }
   workflow_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), workflow);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.WorkflowAttributesDeleteRequest.workflow)
+}
+
+// .flyteidl.admin.MatchableResource resource_type = 4;
+inline void WorkflowAttributesDeleteRequest::clear_resource_type() {
+  resource_type_ = 0;
+}
+inline ::flyteidl::admin::MatchableResource WorkflowAttributesDeleteRequest::resource_type() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.WorkflowAttributesDeleteRequest.resource_type)
+  return static_cast< ::flyteidl::admin::MatchableResource >(resource_type_);
+}
+inline void WorkflowAttributesDeleteRequest::set_resource_type(::flyteidl::admin::MatchableResource value) {
+  
+  resource_type_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.WorkflowAttributesDeleteRequest.resource_type)
 }
 
 // -------------------------------------------------------------------

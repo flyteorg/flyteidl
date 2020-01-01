@@ -2038,6 +2038,15 @@ public final class ProjectDomainAttributesOuterClass {
      */
     com.google.protobuf.ByteString
         getDomainBytes();
+
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 3;</code>
+     */
+    int getResourceTypeValue();
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 3;</code>
+     */
+    flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType();
   }
   /**
    * Protobuf type {@code flyteidl.admin.ProjectDomainAttributesGetRequest}
@@ -2054,6 +2063,7 @@ public final class ProjectDomainAttributesOuterClass {
     private ProjectDomainAttributesGetRequest() {
       project_ = "";
       domain_ = "";
+      resourceType_ = 0;
     }
 
     @java.lang.Override
@@ -2090,6 +2100,12 @@ public final class ProjectDomainAttributesOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               domain_ = s;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              resourceType_ = rawValue;
               break;
             }
             default: {
@@ -2208,6 +2224,23 @@ public final class ProjectDomainAttributesOuterClass {
       }
     }
 
+    public static final int RESOURCE_TYPE_FIELD_NUMBER = 3;
+    private int resourceType_;
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 3;</code>
+     */
+    public int getResourceTypeValue() {
+      return resourceType_;
+    }
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 3;</code>
+     */
+    public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
+      @SuppressWarnings("deprecation")
+      flyteidl.admin.MatchableResourceOuterClass.MatchableResource result = flyteidl.admin.MatchableResourceOuterClass.MatchableResource.valueOf(resourceType_);
+      return result == null ? flyteidl.admin.MatchableResourceOuterClass.MatchableResource.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2228,6 +2261,9 @@ public final class ProjectDomainAttributesOuterClass {
       if (!getDomainBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, domain_);
       }
+      if (resourceType_ != flyteidl.admin.MatchableResourceOuterClass.MatchableResource.TASK_RESOURCE.getNumber()) {
+        output.writeEnum(3, resourceType_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2242,6 +2278,10 @@ public final class ProjectDomainAttributesOuterClass {
       }
       if (!getDomainBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, domain_);
+      }
+      if (resourceType_ != flyteidl.admin.MatchableResourceOuterClass.MatchableResource.TASK_RESOURCE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, resourceType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2262,6 +2302,7 @@ public final class ProjectDomainAttributesOuterClass {
           .equals(other.getProject())) return false;
       if (!getDomain()
           .equals(other.getDomain())) return false;
+      if (resourceType_ != other.resourceType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2277,6 +2318,8 @@ public final class ProjectDomainAttributesOuterClass {
       hash = (53 * hash) + getProject().hashCode();
       hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
       hash = (53 * hash) + getDomain().hashCode();
+      hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + resourceType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2414,6 +2457,8 @@ public final class ProjectDomainAttributesOuterClass {
 
         domain_ = "";
 
+        resourceType_ = 0;
+
         return this;
       }
 
@@ -2442,6 +2487,7 @@ public final class ProjectDomainAttributesOuterClass {
         flyteidl.admin.ProjectDomainAttributesOuterClass.ProjectDomainAttributesGetRequest result = new flyteidl.admin.ProjectDomainAttributesOuterClass.ProjectDomainAttributesGetRequest(this);
         result.project_ = project_;
         result.domain_ = domain_;
+        result.resourceType_ = resourceType_;
         onBuilt();
         return result;
       }
@@ -2497,6 +2543,9 @@ public final class ProjectDomainAttributesOuterClass {
         if (!other.getDomain().isEmpty()) {
           domain_ = other.domain_;
           onChanged();
+        }
+        if (other.resourceType_ != 0) {
+          setResourceTypeValue(other.getResourceTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2701,6 +2750,51 @@ public final class ProjectDomainAttributesOuterClass {
   checkByteStringIsUtf8(value);
         
         domain_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int resourceType_ = 0;
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 3;</code>
+       */
+      public int getResourceTypeValue() {
+        return resourceType_;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 3;</code>
+       */
+      public Builder setResourceTypeValue(int value) {
+        resourceType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 3;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
+        @SuppressWarnings("deprecation")
+        flyteidl.admin.MatchableResourceOuterClass.MatchableResource result = flyteidl.admin.MatchableResourceOuterClass.MatchableResource.valueOf(resourceType_);
+        return result == null ? flyteidl.admin.MatchableResourceOuterClass.MatchableResource.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 3;</code>
+       */
+      public Builder setResourceType(flyteidl.admin.MatchableResourceOuterClass.MatchableResource value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        resourceType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 3;</code>
+       */
+      public Builder clearResourceType() {
+        
+        resourceType_ = 0;
         onChanged();
         return this;
       }
@@ -3402,6 +3496,15 @@ public final class ProjectDomainAttributesOuterClass {
      */
     com.google.protobuf.ByteString
         getDomainBytes();
+
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 3;</code>
+     */
+    int getResourceTypeValue();
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 3;</code>
+     */
+    flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType();
   }
   /**
    * Protobuf type {@code flyteidl.admin.ProjectDomainAttributesDeleteRequest}
@@ -3418,6 +3521,7 @@ public final class ProjectDomainAttributesOuterClass {
     private ProjectDomainAttributesDeleteRequest() {
       project_ = "";
       domain_ = "";
+      resourceType_ = 0;
     }
 
     @java.lang.Override
@@ -3454,6 +3558,12 @@ public final class ProjectDomainAttributesOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               domain_ = s;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              resourceType_ = rawValue;
               break;
             }
             default: {
@@ -3572,6 +3682,23 @@ public final class ProjectDomainAttributesOuterClass {
       }
     }
 
+    public static final int RESOURCE_TYPE_FIELD_NUMBER = 3;
+    private int resourceType_;
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 3;</code>
+     */
+    public int getResourceTypeValue() {
+      return resourceType_;
+    }
+    /**
+     * <code>.flyteidl.admin.MatchableResource resource_type = 3;</code>
+     */
+    public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
+      @SuppressWarnings("deprecation")
+      flyteidl.admin.MatchableResourceOuterClass.MatchableResource result = flyteidl.admin.MatchableResourceOuterClass.MatchableResource.valueOf(resourceType_);
+      return result == null ? flyteidl.admin.MatchableResourceOuterClass.MatchableResource.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3592,6 +3719,9 @@ public final class ProjectDomainAttributesOuterClass {
       if (!getDomainBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, domain_);
       }
+      if (resourceType_ != flyteidl.admin.MatchableResourceOuterClass.MatchableResource.TASK_RESOURCE.getNumber()) {
+        output.writeEnum(3, resourceType_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3606,6 +3736,10 @@ public final class ProjectDomainAttributesOuterClass {
       }
       if (!getDomainBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, domain_);
+      }
+      if (resourceType_ != flyteidl.admin.MatchableResourceOuterClass.MatchableResource.TASK_RESOURCE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, resourceType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3626,6 +3760,7 @@ public final class ProjectDomainAttributesOuterClass {
           .equals(other.getProject())) return false;
       if (!getDomain()
           .equals(other.getDomain())) return false;
+      if (resourceType_ != other.resourceType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3641,6 +3776,8 @@ public final class ProjectDomainAttributesOuterClass {
       hash = (53 * hash) + getProject().hashCode();
       hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
       hash = (53 * hash) + getDomain().hashCode();
+      hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + resourceType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3778,6 +3915,8 @@ public final class ProjectDomainAttributesOuterClass {
 
         domain_ = "";
 
+        resourceType_ = 0;
+
         return this;
       }
 
@@ -3806,6 +3945,7 @@ public final class ProjectDomainAttributesOuterClass {
         flyteidl.admin.ProjectDomainAttributesOuterClass.ProjectDomainAttributesDeleteRequest result = new flyteidl.admin.ProjectDomainAttributesOuterClass.ProjectDomainAttributesDeleteRequest(this);
         result.project_ = project_;
         result.domain_ = domain_;
+        result.resourceType_ = resourceType_;
         onBuilt();
         return result;
       }
@@ -3861,6 +4001,9 @@ public final class ProjectDomainAttributesOuterClass {
         if (!other.getDomain().isEmpty()) {
           domain_ = other.domain_;
           onChanged();
+        }
+        if (other.resourceType_ != 0) {
+          setResourceTypeValue(other.getResourceTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4065,6 +4208,51 @@ public final class ProjectDomainAttributesOuterClass {
   checkByteStringIsUtf8(value);
         
         domain_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int resourceType_ = 0;
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 3;</code>
+       */
+      public int getResourceTypeValue() {
+        return resourceType_;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 3;</code>
+       */
+      public Builder setResourceTypeValue(int value) {
+        resourceType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 3;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
+        @SuppressWarnings("deprecation")
+        flyteidl.admin.MatchableResourceOuterClass.MatchableResource result = flyteidl.admin.MatchableResourceOuterClass.MatchableResource.valueOf(resourceType_);
+        return result == null ? flyteidl.admin.MatchableResourceOuterClass.MatchableResource.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 3;</code>
+       */
+      public Builder setResourceType(flyteidl.admin.MatchableResourceOuterClass.MatchableResource value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        resourceType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource resource_type = 3;</code>
+       */
+      public Builder clearResourceType() {
+        
+        resourceType_ = 0;
         onChanged();
         return this;
       }
@@ -4593,15 +4781,18 @@ public final class ProjectDomainAttributesOuterClass {
       "tDomainAttributesUpdateRequest\022;\n\nattrib" +
       "utes\030\001 \001(\0132\'.flyteidl.admin.ProjectDomai" +
       "nAttributes\"\'\n%ProjectDomainAttributesUp" +
-      "dateResponse\"D\n!ProjectDomainAttributesG" +
+      "dateResponse\"~\n!ProjectDomainAttributesG" +
       "etRequest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001" +
-      "(\t\"a\n\"ProjectDomainAttributesGetResponse" +
-      "\022;\n\nattributes\030\001 \001(\0132\'.flyteidl.admin.Pr" +
-      "ojectDomainAttributes\"G\n$ProjectDomainAt" +
-      "tributesDeleteRequest\022\017\n\007project\030\001 \001(\t\022\016" +
-      "\n\006domain\030\002 \001(\t\"\'\n%ProjectDomainAttribute" +
-      "sDeleteResponseB3Z1github.com/lyft/flyte" +
-      "idl/gen/pb-go/flyteidl/adminb\006proto3"
+      "(\t\0228\n\rresource_type\030\003 \001(\0162!.flyteidl.adm" +
+      "in.MatchableResource\"a\n\"ProjectDomainAtt" +
+      "ributesGetResponse\022;\n\nattributes\030\001 \001(\0132\'" +
+      ".flyteidl.admin.ProjectDomainAttributes\"" +
+      "\201\001\n$ProjectDomainAttributesDeleteRequest" +
+      "\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\0228\n\rres" +
+      "ource_type\030\003 \001(\0162!.flyteidl.admin.Matcha" +
+      "bleResource\"\'\n%ProjectDomainAttributesDe" +
+      "leteResponseB3Z1github.com/lyft/flyteidl" +
+      "/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4639,7 +4830,7 @@ public final class ProjectDomainAttributesOuterClass {
     internal_static_flyteidl_admin_ProjectDomainAttributesGetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ProjectDomainAttributesGetRequest_descriptor,
-        new java.lang.String[] { "Project", "Domain", });
+        new java.lang.String[] { "Project", "Domain", "ResourceType", });
     internal_static_flyteidl_admin_ProjectDomainAttributesGetResponse_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_admin_ProjectDomainAttributesGetResponse_fieldAccessorTable = new
@@ -4651,7 +4842,7 @@ public final class ProjectDomainAttributesOuterClass {
     internal_static_flyteidl_admin_ProjectDomainAttributesDeleteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ProjectDomainAttributesDeleteRequest_descriptor,
-        new java.lang.String[] { "Project", "Domain", });
+        new java.lang.String[] { "Project", "Domain", "ResourceType", });
     internal_static_flyteidl_admin_ProjectDomainAttributesDeleteResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_admin_ProjectDomainAttributesDeleteResponse_fieldAccessorTable = new

@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n\'flyteidl/admin/project_attributes.proto\x12\x0e\x66lyteidl.admin\x1a\'flyteidl/admin/matchable_resource.proto\"e\n\x11ProjectAttributes\x12\x0f\n\x07project\x18\x01 \x01(\t\x12?\n\x13matching_attributes\x18\x02 \x01(\x0b\x32\".flyteidl.admin.MatchingAttributes\"W\n\x1eProjectAttributesUpdateRequest\x12\x35\n\nattributes\x18\x01 \x01(\x0b\x32!.flyteidl.admin.ProjectAttributes\"!\n\x1fProjectAttributesUpdateResponse\".\n\x1bProjectAttributesGetRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\"U\n\x1cProjectAttributesGetResponse\x12\x35\n\nattributes\x18\x01 \x01(\x0b\x32!.flyteidl.admin.ProjectAttributes\"1\n\x1eProjectAttributesDeleteRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\"!\n\x1fProjectAttributesDeleteResponseB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\'flyteidl/admin/project_attributes.proto\x12\x0e\x66lyteidl.admin\x1a\'flyteidl/admin/matchable_resource.proto\"e\n\x11ProjectAttributes\x12\x0f\n\x07project\x18\x01 \x01(\t\x12?\n\x13matching_attributes\x18\x02 \x01(\x0b\x32\".flyteidl.admin.MatchingAttributes\"W\n\x1eProjectAttributesUpdateRequest\x12\x35\n\nattributes\x18\x01 \x01(\x0b\x32!.flyteidl.admin.ProjectAttributes\"!\n\x1fProjectAttributesUpdateResponse\"h\n\x1bProjectAttributesGetRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x38\n\rresource_type\x18\x02 \x01(\x0e\x32!.flyteidl.admin.MatchableResource\"U\n\x1cProjectAttributesGetResponse\x12\x35\n\nattributes\x18\x01 \x01(\x0b\x32!.flyteidl.admin.ProjectAttributes\"k\n\x1eProjectAttributesDeleteRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x38\n\rresource_type\x18\x02 \x01(\x0e\x32!.flyteidl.admin.MatchableResource\"!\n\x1fProjectAttributesDeleteResponseB3Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_admin_dot_matchable__resource__pb2.DESCRIPTOR,])
 
@@ -135,6 +135,13 @@ _PROJECTATTRIBUTESGETREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='resource_type', full_name='flyteidl.admin.ProjectAttributesGetRequest.resource_type', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -148,7 +155,7 @@ _PROJECTATTRIBUTESGETREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=327,
-  serialized_end=373,
+  serialized_end=431,
 )
 
 
@@ -178,8 +185,8 @@ _PROJECTATTRIBUTESGETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=375,
-  serialized_end=460,
+  serialized_start=433,
+  serialized_end=518,
 )
 
 
@@ -197,6 +204,13 @@ _PROJECTATTRIBUTESDELETEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='resource_type', full_name='flyteidl.admin.ProjectAttributesDeleteRequest.resource_type', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -209,8 +223,8 @@ _PROJECTATTRIBUTESDELETEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=462,
-  serialized_end=511,
+  serialized_start=520,
+  serialized_end=627,
 )
 
 
@@ -233,13 +247,15 @@ _PROJECTATTRIBUTESDELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=513,
-  serialized_end=546,
+  serialized_start=629,
+  serialized_end=662,
 )
 
 _PROJECTATTRIBUTES.fields_by_name['matching_attributes'].message_type = flyteidl_dot_admin_dot_matchable__resource__pb2._MATCHINGATTRIBUTES
 _PROJECTATTRIBUTESUPDATEREQUEST.fields_by_name['attributes'].message_type = _PROJECTATTRIBUTES
+_PROJECTATTRIBUTESGETREQUEST.fields_by_name['resource_type'].enum_type = flyteidl_dot_admin_dot_matchable__resource__pb2._MATCHABLERESOURCE
 _PROJECTATTRIBUTESGETRESPONSE.fields_by_name['attributes'].message_type = _PROJECTATTRIBUTES
+_PROJECTATTRIBUTESDELETEREQUEST.fields_by_name['resource_type'].enum_type = flyteidl_dot_admin_dot_matchable__resource__pb2._MATCHABLERESOURCE
 DESCRIPTOR.message_types_by_name['ProjectAttributes'] = _PROJECTATTRIBUTES
 DESCRIPTOR.message_types_by_name['ProjectAttributesUpdateRequest'] = _PROJECTATTRIBUTESUPDATEREQUEST
 DESCRIPTOR.message_types_by_name['ProjectAttributesUpdateResponse'] = _PROJECTATTRIBUTESUPDATERESPONSE

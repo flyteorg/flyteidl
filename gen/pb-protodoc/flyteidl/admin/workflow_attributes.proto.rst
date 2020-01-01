@@ -96,7 +96,8 @@ flyteidl.admin.WorkflowAttributesGetRequest
   {
     "project": "...",
     "domain": "...",
-    "workflow": "..."
+    "workflow": "...",
+    "resource_type": "..."
   }
 
 .. _api_field_flyteidl.admin.WorkflowAttributesGetRequest.project:
@@ -117,6 +118,11 @@ workflow
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Workflow name which this set of attributes references.
   
   
+.. _api_field_flyteidl.admin.WorkflowAttributesGetRequest.resource_type:
+
+resource_type
+  (:ref:`flyteidl.admin.MatchableResource <api_enum_flyteidl.admin.MatchableResource>`) 
+  
 
 
 .. _api_msg_flyteidl.admin.WorkflowAttributesGetResponse:
@@ -124,7 +130,7 @@ workflow
 flyteidl.admin.WorkflowAttributesGetResponse
 --------------------------------------------
 
-`[flyteidl.admin.WorkflowAttributesGetResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L40>`_
+`[flyteidl.admin.WorkflowAttributesGetResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L42>`_
 
 
 .. code-block:: json
@@ -145,7 +151,7 @@ attributes
 flyteidl.admin.WorkflowAttributesDeleteRequest
 ----------------------------------------------
 
-`[flyteidl.admin.WorkflowAttributesDeleteRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L44>`_
+`[flyteidl.admin.WorkflowAttributesDeleteRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L46>`_
 
 
 .. code-block:: json
@@ -153,7 +159,8 @@ flyteidl.admin.WorkflowAttributesDeleteRequest
   {
     "project": "...",
     "domain": "...",
-    "workflow": "..."
+    "workflow": "...",
+    "resource_type": "..."
   }
 
 .. _api_field_flyteidl.admin.WorkflowAttributesDeleteRequest.project:
@@ -174,6 +181,11 @@ workflow
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Workflow name which this set of attributes references.
   
   
+.. _api_field_flyteidl.admin.WorkflowAttributesDeleteRequest.resource_type:
+
+resource_type
+  (:ref:`flyteidl.admin.MatchableResource <api_enum_flyteidl.admin.MatchableResource>`) 
+  
 
 
 .. _api_msg_flyteidl.admin.WorkflowAttributesDeleteResponse:
@@ -181,7 +193,7 @@ workflow
 flyteidl.admin.WorkflowAttributesDeleteResponse
 -----------------------------------------------
 
-`[flyteidl.admin.WorkflowAttributesDeleteResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L56>`_
+`[flyteidl.admin.WorkflowAttributesDeleteResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow_attributes.proto#L60>`_
 
 Purposefully empty, may be populated in the future.
 

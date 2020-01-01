@@ -104,6 +104,7 @@ Class | Method | HTTP request | Description
  - [AdminLaunchPlanUpdateRequest](docs/AdminLaunchPlanUpdateRequest.md)
  - [AdminLaunchPlanUpdateResponse](docs/AdminLaunchPlanUpdateResponse.md)
  - [AdminLiteralMapBlob](docs/AdminLiteralMapBlob.md)
+ - [AdminMatchableResource](docs/AdminMatchableResource.md)
  - [AdminMatchingAttributes](docs/AdminMatchingAttributes.md)
  - [AdminNamedEntity](docs/AdminNamedEntity.md)
  - [AdminNamedEntityIdentifier](docs/AdminNamedEntityIdentifier.md)

@@ -578,6 +578,12 @@ class ProjectDomainAttributesGetRequest final :
   ::std::string* release_domain();
   void set_allocated_domain(::std::string* domain);
 
+  // .flyteidl.admin.MatchableResource resource_type = 3;
+  void clear_resource_type();
+  static const int kResourceTypeFieldNumber = 3;
+  ::flyteidl::admin::MatchableResource resource_type() const;
+  void set_resource_type(::flyteidl::admin::MatchableResource value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.ProjectDomainAttributesGetRequest)
  private:
   class HasBitSetters;
@@ -585,6 +591,7 @@ class ProjectDomainAttributesGetRequest final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr project_;
   ::google::protobuf::internal::ArenaStringPtr domain_;
+  int resource_type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto;
 };
@@ -828,6 +835,12 @@ class ProjectDomainAttributesDeleteRequest final :
   ::std::string* release_domain();
   void set_allocated_domain(::std::string* domain);
 
+  // .flyteidl.admin.MatchableResource resource_type = 3;
+  void clear_resource_type();
+  static const int kResourceTypeFieldNumber = 3;
+  ::flyteidl::admin::MatchableResource resource_type() const;
+  void set_resource_type(::flyteidl::admin::MatchableResource value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.ProjectDomainAttributesDeleteRequest)
  private:
   class HasBitSetters;
@@ -835,6 +848,7 @@ class ProjectDomainAttributesDeleteRequest final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr project_;
   ::google::protobuf::internal::ArenaStringPtr domain_;
+  int resource_type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fproject_5fdomain_5fattributes_2eproto;
 };
@@ -1274,6 +1288,20 @@ inline void ProjectDomainAttributesGetRequest::set_allocated_domain(::std::strin
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ProjectDomainAttributesGetRequest.domain)
 }
 
+// .flyteidl.admin.MatchableResource resource_type = 3;
+inline void ProjectDomainAttributesGetRequest::clear_resource_type() {
+  resource_type_ = 0;
+}
+inline ::flyteidl::admin::MatchableResource ProjectDomainAttributesGetRequest::resource_type() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ProjectDomainAttributesGetRequest.resource_type)
+  return static_cast< ::flyteidl::admin::MatchableResource >(resource_type_);
+}
+inline void ProjectDomainAttributesGetRequest::set_resource_type(::flyteidl::admin::MatchableResource value) {
+  
+  resource_type_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ProjectDomainAttributesGetRequest.resource_type)
+}
+
 // -------------------------------------------------------------------
 
 // ProjectDomainAttributesGetResponse
@@ -1437,6 +1465,20 @@ inline void ProjectDomainAttributesDeleteRequest::set_allocated_domain(::std::st
   }
   domain_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), domain);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ProjectDomainAttributesDeleteRequest.domain)
+}
+
+// .flyteidl.admin.MatchableResource resource_type = 3;
+inline void ProjectDomainAttributesDeleteRequest::clear_resource_type() {
+  resource_type_ = 0;
+}
+inline ::flyteidl::admin::MatchableResource ProjectDomainAttributesDeleteRequest::resource_type() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ProjectDomainAttributesDeleteRequest.resource_type)
+  return static_cast< ::flyteidl::admin::MatchableResource >(resource_type_);
+}
+inline void ProjectDomainAttributesDeleteRequest::set_resource_type(::flyteidl::admin::MatchableResource value) {
+  
+  resource_type_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ProjectDomainAttributesDeleteRequest.resource_type)
 }
 
 // -------------------------------------------------------------------
