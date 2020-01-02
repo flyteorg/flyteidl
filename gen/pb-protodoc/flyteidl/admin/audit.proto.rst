@@ -16,7 +16,7 @@ Audit log that is emitted on each user request.
 
   {
     "principal": "{...}",
-    "client_ip": "...",
+    "client": "{...}",
     "request": "{...}",
     "response": "{...}"
   }
@@ -26,10 +26,10 @@ Audit log that is emitted on each user request.
 principal
   (:ref:`flyteidl.admin.Principal <api_msg_flyteidl.admin.Principal>`) 
   
-.. _api_field_flyteidl.admin.AuditLog.client_ip:
+.. _api_field_flyteidl.admin.AuditLog.client:
 
-client_ip
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+client
+  (:ref:`flyteidl.admin.Client <api_msg_flyteidl.admin.Client>`) 
   
 .. _api_field_flyteidl.admin.AuditLog.request:
 
@@ -79,12 +79,34 @@ token_issued_at
   
 
 
+.. _api_msg_flyteidl.admin.Client:
+
+flyteidl.admin.Client
+---------------------
+
+`[flyteidl.admin.Client proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/audit.proto#L31>`_
+
+Details about the user's browser client.
+
+.. code-block:: json
+
+  {
+    "client_ip": "..."
+  }
+
+.. _api_field_flyteidl.admin.Client.client_ip:
+
+client_ip
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+
+
 .. _api_msg_flyteidl.admin.Request:
 
 flyteidl.admin.Request
 ----------------------
 
-`[flyteidl.admin.Request proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/audit.proto#L31>`_
+`[flyteidl.admin.Request proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/audit.proto#L36>`_
 
 Details about a specific request issued by a user.
 
@@ -132,7 +154,7 @@ received_at
 Enum flyteidl.admin.Request.Mode
 --------------------------------
 
-`[flyteidl.admin.Request.Mode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/audit.proto#L41>`_
+`[flyteidl.admin.Request.Mode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/audit.proto#L46>`_
 
 
 .. _api_enum_value_flyteidl.admin.Request.Mode.READ_ONLY:
@@ -151,7 +173,7 @@ READ_WRITE
 flyteidl.admin.Response
 -----------------------
 
-`[flyteidl.admin.Response proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/audit.proto#L51>`_
+`[flyteidl.admin.Response proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/audit.proto#L56>`_
 
 Summary of service response details.
 

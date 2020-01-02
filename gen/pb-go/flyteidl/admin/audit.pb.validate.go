@@ -53,7 +53,15 @@ func (m *AuditLog) Validate() error {
 		}
 	}
 
-	// no validation rules for ClientIp
+	if v, ok := interface{}(m.GetClient()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return AuditLogValidationError{
+				field:  "Client",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	if v, ok := interface{}(m.GetRequest()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
@@ -209,6 +217,72 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = PrincipalValidationError{}
+
+// Validate checks the field values on Client with the rules defined in the
+// proto definition for this message. If any rules are violated, an error is returned.
+func (m *Client) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for ClientIp
+
+	return nil
+}
+
+// ClientValidationError is the validation error returned by Client.Validate if
+// the designated constraints aren't met.
+type ClientValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ClientValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ClientValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ClientValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ClientValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ClientValidationError) ErrorName() string { return "ClientValidationError" }
+
+// Error satisfies the builtin error interface
+func (e ClientValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sClient.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ClientValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ClientValidationError{}
 
 // Validate checks the field values on Request with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.

@@ -32,14 +32,17 @@ public final class Audit {
     flyteidl.admin.Audit.PrincipalOrBuilder getPrincipalOrBuilder();
 
     /**
-     * <code>string client_ip = 2;</code>
+     * <code>.flyteidl.admin.Client client = 2;</code>
      */
-    java.lang.String getClientIp();
+    boolean hasClient();
     /**
-     * <code>string client_ip = 2;</code>
+     * <code>.flyteidl.admin.Client client = 2;</code>
      */
-    com.google.protobuf.ByteString
-        getClientIpBytes();
+    flyteidl.admin.Audit.Client getClient();
+    /**
+     * <code>.flyteidl.admin.Client client = 2;</code>
+     */
+    flyteidl.admin.Audit.ClientOrBuilder getClientOrBuilder();
 
     /**
      * <code>.flyteidl.admin.Request request = 3;</code>
@@ -84,7 +87,6 @@ public final class Audit {
       super(builder);
     }
     private AuditLog() {
-      clientIp_ = "";
     }
 
     @java.lang.Override
@@ -125,9 +127,16 @@ public final class Audit {
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              flyteidl.admin.Audit.Client.Builder subBuilder = null;
+              if (client_ != null) {
+                subBuilder = client_.toBuilder();
+              }
+              client_ = input.readMessage(flyteidl.admin.Audit.Client.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(client_);
+                client_ = subBuilder.buildPartial();
+              }
 
-              clientIp_ = s;
               break;
             }
             case 26: {
@@ -209,38 +218,25 @@ public final class Audit {
       return getPrincipal();
     }
 
-    public static final int CLIENT_IP_FIELD_NUMBER = 2;
-    private volatile java.lang.Object clientIp_;
+    public static final int CLIENT_FIELD_NUMBER = 2;
+    private flyteidl.admin.Audit.Client client_;
     /**
-     * <code>string client_ip = 2;</code>
+     * <code>.flyteidl.admin.Client client = 2;</code>
      */
-    public java.lang.String getClientIp() {
-      java.lang.Object ref = clientIp_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        clientIp_ = s;
-        return s;
-      }
+    public boolean hasClient() {
+      return client_ != null;
     }
     /**
-     * <code>string client_ip = 2;</code>
+     * <code>.flyteidl.admin.Client client = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getClientIpBytes() {
-      java.lang.Object ref = clientIp_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        clientIp_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public flyteidl.admin.Audit.Client getClient() {
+      return client_ == null ? flyteidl.admin.Audit.Client.getDefaultInstance() : client_;
+    }
+    /**
+     * <code>.flyteidl.admin.Client client = 2;</code>
+     */
+    public flyteidl.admin.Audit.ClientOrBuilder getClientOrBuilder() {
+      return getClient();
     }
 
     public static final int REQUEST_FIELD_NUMBER = 3;
@@ -302,8 +298,8 @@ public final class Audit {
       if (principal_ != null) {
         output.writeMessage(1, getPrincipal());
       }
-      if (!getClientIpBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clientIp_);
+      if (client_ != null) {
+        output.writeMessage(2, getClient());
       }
       if (request_ != null) {
         output.writeMessage(3, getRequest());
@@ -324,8 +320,9 @@ public final class Audit {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getPrincipal());
       }
-      if (!getClientIpBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clientIp_);
+      if (client_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getClient());
       }
       if (request_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -355,8 +352,11 @@ public final class Audit {
         if (!getPrincipal()
             .equals(other.getPrincipal())) return false;
       }
-      if (!getClientIp()
-          .equals(other.getClientIp())) return false;
+      if (hasClient() != other.hasClient()) return false;
+      if (hasClient()) {
+        if (!getClient()
+            .equals(other.getClient())) return false;
+      }
       if (hasRequest() != other.hasRequest()) return false;
       if (hasRequest()) {
         if (!getRequest()
@@ -382,8 +382,10 @@ public final class Audit {
         hash = (37 * hash) + PRINCIPAL_FIELD_NUMBER;
         hash = (53 * hash) + getPrincipal().hashCode();
       }
-      hash = (37 * hash) + CLIENT_IP_FIELD_NUMBER;
-      hash = (53 * hash) + getClientIp().hashCode();
+      if (hasClient()) {
+        hash = (37 * hash) + CLIENT_FIELD_NUMBER;
+        hash = (53 * hash) + getClient().hashCode();
+      }
       if (hasRequest()) {
         hash = (37 * hash) + REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getRequest().hashCode();
@@ -535,8 +537,12 @@ public final class Audit {
           principal_ = null;
           principalBuilder_ = null;
         }
-        clientIp_ = "";
-
+        if (clientBuilder_ == null) {
+          client_ = null;
+        } else {
+          client_ = null;
+          clientBuilder_ = null;
+        }
         if (requestBuilder_ == null) {
           request_ = null;
         } else {
@@ -580,7 +586,11 @@ public final class Audit {
         } else {
           result.principal_ = principalBuilder_.build();
         }
-        result.clientIp_ = clientIp_;
+        if (clientBuilder_ == null) {
+          result.client_ = client_;
+        } else {
+          result.client_ = clientBuilder_.build();
+        }
         if (requestBuilder_ == null) {
           result.request_ = request_;
         } else {
@@ -642,9 +652,8 @@ public final class Audit {
         if (other.hasPrincipal()) {
           mergePrincipal(other.getPrincipal());
         }
-        if (!other.getClientIp().isEmpty()) {
-          clientIp_ = other.clientIp_;
-          onChanged();
+        if (other.hasClient()) {
+          mergeClient(other.getClient());
         }
         if (other.hasRequest()) {
           mergeRequest(other.getRequest());
@@ -798,73 +807,121 @@ public final class Audit {
         return principalBuilder_;
       }
 
-      private java.lang.Object clientIp_ = "";
+      private flyteidl.admin.Audit.Client client_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Audit.Client, flyteidl.admin.Audit.Client.Builder, flyteidl.admin.Audit.ClientOrBuilder> clientBuilder_;
       /**
-       * <code>string client_ip = 2;</code>
+       * <code>.flyteidl.admin.Client client = 2;</code>
        */
-      public java.lang.String getClientIp() {
-        java.lang.Object ref = clientIp_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          clientIp_ = s;
-          return s;
+      public boolean hasClient() {
+        return clientBuilder_ != null || client_ != null;
+      }
+      /**
+       * <code>.flyteidl.admin.Client client = 2;</code>
+       */
+      public flyteidl.admin.Audit.Client getClient() {
+        if (clientBuilder_ == null) {
+          return client_ == null ? flyteidl.admin.Audit.Client.getDefaultInstance() : client_;
         } else {
-          return (java.lang.String) ref;
+          return clientBuilder_.getMessage();
         }
       }
       /**
-       * <code>string client_ip = 2;</code>
+       * <code>.flyteidl.admin.Client client = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getClientIpBytes() {
-        java.lang.Object ref = clientIp_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          clientIp_ = b;
-          return b;
+      public Builder setClient(flyteidl.admin.Audit.Client value) {
+        if (clientBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          client_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          clientBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.Client client = 2;</code>
+       */
+      public Builder setClient(
+          flyteidl.admin.Audit.Client.Builder builderForValue) {
+        if (clientBuilder_ == null) {
+          client_ = builderForValue.build();
+          onChanged();
+        } else {
+          clientBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.Client client = 2;</code>
+       */
+      public Builder mergeClient(flyteidl.admin.Audit.Client value) {
+        if (clientBuilder_ == null) {
+          if (client_ != null) {
+            client_ =
+              flyteidl.admin.Audit.Client.newBuilder(client_).mergeFrom(value).buildPartial();
+          } else {
+            client_ = value;
+          }
+          onChanged();
+        } else {
+          clientBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.Client client = 2;</code>
+       */
+      public Builder clearClient() {
+        if (clientBuilder_ == null) {
+          client_ = null;
+          onChanged();
+        } else {
+          client_ = null;
+          clientBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.Client client = 2;</code>
+       */
+      public flyteidl.admin.Audit.Client.Builder getClientBuilder() {
+        
+        onChanged();
+        return getClientFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.admin.Client client = 2;</code>
+       */
+      public flyteidl.admin.Audit.ClientOrBuilder getClientOrBuilder() {
+        if (clientBuilder_ != null) {
+          return clientBuilder_.getMessageOrBuilder();
+        } else {
+          return client_ == null ?
+              flyteidl.admin.Audit.Client.getDefaultInstance() : client_;
         }
       }
       /**
-       * <code>string client_ip = 2;</code>
+       * <code>.flyteidl.admin.Client client = 2;</code>
        */
-      public Builder setClientIp(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        clientIp_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string client_ip = 2;</code>
-       */
-      public Builder clearClientIp() {
-        
-        clientIp_ = getDefaultInstance().getClientIp();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string client_ip = 2;</code>
-       */
-      public Builder setClientIpBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        clientIp_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Audit.Client, flyteidl.admin.Audit.Client.Builder, flyteidl.admin.Audit.ClientOrBuilder> 
+          getClientFieldBuilder() {
+        if (clientBuilder_ == null) {
+          clientBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.Audit.Client, flyteidl.admin.Audit.Client.Builder, flyteidl.admin.Audit.ClientOrBuilder>(
+                  getClient(),
+                  getParentForChildren(),
+                  isClean());
+          client_ = null;
+        }
+        return clientBuilder_;
       }
 
       private flyteidl.admin.Audit.Request request_;
@@ -2108,6 +2165,563 @@ public final class Audit {
 
     @java.lang.Override
     public flyteidl.admin.Audit.Principal getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ClientOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.Client)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string client_ip = 1;</code>
+     */
+    java.lang.String getClientIp();
+    /**
+     * <code>string client_ip = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getClientIpBytes();
+  }
+  /**
+   * <pre>
+   * Details about the user's browser client.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.Client}
+   */
+  public  static final class Client extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.Client)
+      ClientOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Client.newBuilder() to construct.
+    private Client(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Client() {
+      clientIp_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Client(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientIp_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.Audit.internal_static_flyteidl_admin_Client_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.Audit.internal_static_flyteidl_admin_Client_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.Audit.Client.class, flyteidl.admin.Audit.Client.Builder.class);
+    }
+
+    public static final int CLIENT_IP_FIELD_NUMBER = 1;
+    private volatile java.lang.Object clientIp_;
+    /**
+     * <code>string client_ip = 1;</code>
+     */
+    public java.lang.String getClientIp() {
+      java.lang.Object ref = clientIp_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientIp_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string client_ip = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClientIpBytes() {
+      java.lang.Object ref = clientIp_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientIp_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getClientIpBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, clientIp_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getClientIpBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, clientIp_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.Audit.Client)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.Audit.Client other = (flyteidl.admin.Audit.Client) obj;
+
+      if (!getClientIp()
+          .equals(other.getClientIp())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CLIENT_IP_FIELD_NUMBER;
+      hash = (53 * hash) + getClientIp().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.Audit.Client parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Audit.Client parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Audit.Client parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Audit.Client parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Audit.Client parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Audit.Client parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Audit.Client parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Audit.Client parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.Audit.Client parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Audit.Client parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.Audit.Client parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Audit.Client parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.Audit.Client prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Details about the user's browser client.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.admin.Client}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.Client)
+        flyteidl.admin.Audit.ClientOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.Audit.internal_static_flyteidl_admin_Client_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.Audit.internal_static_flyteidl_admin_Client_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.Audit.Client.class, flyteidl.admin.Audit.Client.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.Audit.Client.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        clientIp_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.Audit.internal_static_flyteidl_admin_Client_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Audit.Client getDefaultInstanceForType() {
+        return flyteidl.admin.Audit.Client.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Audit.Client build() {
+        flyteidl.admin.Audit.Client result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Audit.Client buildPartial() {
+        flyteidl.admin.Audit.Client result = new flyteidl.admin.Audit.Client(this);
+        result.clientIp_ = clientIp_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.Audit.Client) {
+          return mergeFrom((flyteidl.admin.Audit.Client)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.Audit.Client other) {
+        if (other == flyteidl.admin.Audit.Client.getDefaultInstance()) return this;
+        if (!other.getClientIp().isEmpty()) {
+          clientIp_ = other.clientIp_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.Audit.Client parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.Audit.Client) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object clientIp_ = "";
+      /**
+       * <code>string client_ip = 1;</code>
+       */
+      public java.lang.String getClientIp() {
+        java.lang.Object ref = clientIp_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clientIp_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string client_ip = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getClientIpBytes() {
+        java.lang.Object ref = clientIp_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientIp_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string client_ip = 1;</code>
+       */
+      public Builder setClientIp(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        clientIp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string client_ip = 1;</code>
+       */
+      public Builder clearClientIp() {
+        
+        clientIp_ = getDefaultInstance().getClientIp();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string client_ip = 1;</code>
+       */
+      public Builder setClientIpBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        clientIp_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.Client)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.Client)
+    private static final flyteidl.admin.Audit.Client DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.Audit.Client();
+    }
+
+    public static flyteidl.admin.Audit.Client getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Client>
+        PARSER = new com.google.protobuf.AbstractParser<Client>() {
+      @java.lang.Override
+      public Client parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Client(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Client> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Client> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.Audit.Client getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4439,6 +5053,11 @@ public final class Audit {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_Principal_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_Client_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_Client_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_Request_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -4463,25 +5082,26 @@ public final class Audit {
   static {
     java.lang.String[] descriptorData = {
       "\n\032flyteidl/admin/audit.proto\022\016flyteidl.a" +
-      "dmin\032\037google/protobuf/timestamp.proto\"\241\001" +
+      "dmin\032\037google/protobuf/timestamp.proto\"\266\001" +
       "\n\010AuditLog\022,\n\tprincipal\030\001 \001(\0132\031.flyteidl" +
-      ".admin.Principal\022\021\n\tclient_ip\030\002 \001(\t\022(\n\007r" +
-      "equest\030\003 \001(\0132\027.flyteidl.admin.Request\022*\n" +
-      "\010response\030\004 \001(\0132\030.flyteidl.admin.Respons" +
-      "e\"d\n\tPrincipal\022\017\n\007subject\030\001 \001(\t\022\021\n\tclien" +
-      "t_id\030\002 \001(\t\0223\n\017token_issued_at\030\003 \001(\0132\032.go" +
-      "ogle.protobuf.Timestamp\"\240\002\n\007Request\022\016\n\006m" +
-      "ethod\030\001 \001(\t\022\021\n\thttp_verb\030\002 \001(\t\022;\n\nparame" +
-      "ters\030\003 \003(\0132\'.flyteidl.admin.Request.Para" +
-      "metersEntry\022*\n\004mode\030\004 \001(\0162\034.flyteidl.adm" +
-      "in.Request.Mode\022/\n\013received_at\030\005 \001(\0132\032.g" +
-      "oogle.protobuf.Timestamp\0321\n\017ParametersEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"%\n\004M" +
-      "ode\022\r\n\tREAD_ONLY\020\000\022\016\n\nREAD_WRITE\020\001\"N\n\010Re" +
-      "sponse\022\025\n\rresponse_code\030\001 \001(\t\022+\n\007sent_at" +
-      "\030\002 \001(\0132\032.google.protobuf.TimestampB3Z1gi" +
-      "thub.com/lyft/flyteidl/gen/pb-go/flyteid" +
-      "l/adminb\006proto3"
+      ".admin.Principal\022&\n\006client\030\002 \001(\0132\026.flyte" +
+      "idl.admin.Client\022(\n\007request\030\003 \001(\0132\027.flyt" +
+      "eidl.admin.Request\022*\n\010response\030\004 \001(\0132\030.f" +
+      "lyteidl.admin.Response\"d\n\tPrincipal\022\017\n\007s" +
+      "ubject\030\001 \001(\t\022\021\n\tclient_id\030\002 \001(\t\0223\n\017token" +
+      "_issued_at\030\003 \001(\0132\032.google.protobuf.Times" +
+      "tamp\"\033\n\006Client\022\021\n\tclient_ip\030\001 \001(\t\"\240\002\n\007Re" +
+      "quest\022\016\n\006method\030\001 \001(\t\022\021\n\thttp_verb\030\002 \001(\t" +
+      "\022;\n\nparameters\030\003 \003(\0132\'.flyteidl.admin.Re" +
+      "quest.ParametersEntry\022*\n\004mode\030\004 \001(\0162\034.fl" +
+      "yteidl.admin.Request.Mode\022/\n\013received_at" +
+      "\030\005 \001(\0132\032.google.protobuf.Timestamp\0321\n\017Pa" +
+      "rametersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
+      "\t:\0028\001\"%\n\004Mode\022\r\n\tREAD_ONLY\020\000\022\016\n\nREAD_WRI" +
+      "TE\020\001\"N\n\010Response\022\025\n\rresponse_code\030\001 \001(\t\022" +
+      "+\n\007sent_at\030\002 \001(\0132\032.google.protobuf.Times" +
+      "tampB3Z1github.com/lyft/flyteidl/gen/pb-" +
+      "go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4501,15 +5121,21 @@ public final class Audit {
     internal_static_flyteidl_admin_AuditLog_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_AuditLog_descriptor,
-        new java.lang.String[] { "Principal", "ClientIp", "Request", "Response", });
+        new java.lang.String[] { "Principal", "Client", "Request", "Response", });
     internal_static_flyteidl_admin_Principal_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_admin_Principal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Principal_descriptor,
         new java.lang.String[] { "Subject", "ClientId", "TokenIssuedAt", });
-    internal_static_flyteidl_admin_Request_descriptor =
+    internal_static_flyteidl_admin_Client_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_flyteidl_admin_Client_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_Client_descriptor,
+        new java.lang.String[] { "ClientIp", });
+    internal_static_flyteidl_admin_Request_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_admin_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Request_descriptor,
@@ -4521,7 +5147,7 @@ public final class Audit {
         internal_static_flyteidl_admin_Request_ParametersEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_admin_Response_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_admin_Response_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Response_descriptor,

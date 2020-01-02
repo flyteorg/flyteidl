@@ -11301,7 +11301,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface IAuditLog
              * @property {flyteidl.admin.IPrincipal|null} [principal] AuditLog principal
-             * @property {string|null} [clientIp] AuditLog clientIp
+             * @property {flyteidl.admin.IClient|null} [client] AuditLog client
              * @property {flyteidl.admin.IRequest|null} [request] AuditLog request
              * @property {flyteidl.admin.IResponse|null} [response] AuditLog response
              */
@@ -11330,12 +11330,12 @@ export const flyteidl = $root.flyteidl = (() => {
             AuditLog.prototype.principal = null;
 
             /**
-             * AuditLog clientIp.
-             * @member {string} clientIp
+             * AuditLog client.
+             * @member {flyteidl.admin.IClient|null|undefined} client
              * @memberof flyteidl.admin.AuditLog
              * @instance
              */
-            AuditLog.prototype.clientIp = "";
+            AuditLog.prototype.client = null;
 
             /**
              * AuditLog request.
@@ -11379,8 +11379,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.principal != null && message.hasOwnProperty("principal"))
                     $root.flyteidl.admin.Principal.encode(message.principal, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.clientIp != null && message.hasOwnProperty("clientIp"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.clientIp);
+                if (message.client != null && message.hasOwnProperty("client"))
+                    $root.flyteidl.admin.Client.encode(message.client, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.request != null && message.hasOwnProperty("request"))
                     $root.flyteidl.admin.Request.encode(message.request, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.response != null && message.hasOwnProperty("response"))
@@ -11410,7 +11410,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.principal = $root.flyteidl.admin.Principal.decode(reader, reader.uint32());
                         break;
                     case 2:
-                        message.clientIp = reader.string();
+                        message.client = $root.flyteidl.admin.Client.decode(reader, reader.uint32());
                         break;
                     case 3:
                         message.request = $root.flyteidl.admin.Request.decode(reader, reader.uint32());
@@ -11442,9 +11442,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "principal." + error;
                 }
-                if (message.clientIp != null && message.hasOwnProperty("clientIp"))
-                    if (!$util.isString(message.clientIp))
-                        return "clientIp: string expected";
+                if (message.client != null && message.hasOwnProperty("client")) {
+                    let error = $root.flyteidl.admin.Client.verify(message.client);
+                    if (error)
+                        return "client." + error;
+                }
                 if (message.request != null && message.hasOwnProperty("request")) {
                     let error = $root.flyteidl.admin.Request.verify(message.request);
                     if (error)
@@ -11605,6 +11607,116 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             return Principal;
+        })();
+
+        admin.Client = (function() {
+
+            /**
+             * Properties of a Client.
+             * @memberof flyteidl.admin
+             * @interface IClient
+             * @property {string|null} [clientIp] Client clientIp
+             */
+
+            /**
+             * Constructs a new Client.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a Client.
+             * @implements IClient
+             * @constructor
+             * @param {flyteidl.admin.IClient=} [properties] Properties to set
+             */
+            function Client(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Client clientIp.
+             * @member {string} clientIp
+             * @memberof flyteidl.admin.Client
+             * @instance
+             */
+            Client.prototype.clientIp = "";
+
+            /**
+             * Creates a new Client instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.Client
+             * @static
+             * @param {flyteidl.admin.IClient=} [properties] Properties to set
+             * @returns {flyteidl.admin.Client} Client instance
+             */
+            Client.create = function create(properties) {
+                return new Client(properties);
+            };
+
+            /**
+             * Encodes the specified Client message. Does not implicitly {@link flyteidl.admin.Client.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.Client
+             * @static
+             * @param {flyteidl.admin.IClient} message Client message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Client.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.clientIp != null && message.hasOwnProperty("clientIp"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.clientIp);
+                return writer;
+            };
+
+            /**
+             * Decodes a Client message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.Client
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.Client} Client
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Client.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Client();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.clientIp = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Client message.
+             * @function verify
+             * @memberof flyteidl.admin.Client
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Client.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.clientIp != null && message.hasOwnProperty("clientIp"))
+                    if (!$util.isString(message.clientIp))
+                        return "clientIp: string expected";
+                return null;
+            };
+
+            return Client;
         })();
 
         admin.Request = (function() {

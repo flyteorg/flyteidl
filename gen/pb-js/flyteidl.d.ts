@@ -4663,8 +4663,8 @@ export namespace flyteidl {
             /** AuditLog principal */
             principal?: (flyteidl.admin.IPrincipal|null);
 
-            /** AuditLog clientIp */
-            clientIp?: (string|null);
+            /** AuditLog client */
+            client?: (flyteidl.admin.IClient|null);
 
             /** AuditLog request */
             request?: (flyteidl.admin.IRequest|null);
@@ -4685,8 +4685,8 @@ export namespace flyteidl {
             /** AuditLog principal. */
             public principal?: (flyteidl.admin.IPrincipal|null);
 
-            /** AuditLog clientIp. */
-            public clientIp: string;
+            /** AuditLog client. */
+            public client?: (flyteidl.admin.IClient|null);
 
             /** AuditLog request. */
             public request?: (flyteidl.admin.IRequest|null);
@@ -4785,6 +4785,58 @@ export namespace flyteidl {
 
             /**
              * Verifies a Principal message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a Client. */
+        interface IClient {
+
+            /** Client clientIp */
+            clientIp?: (string|null);
+        }
+
+        /** Represents a Client. */
+        class Client implements IClient {
+
+            /**
+             * Constructs a new Client.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IClient);
+
+            /** Client clientIp. */
+            public clientIp: string;
+
+            /**
+             * Creates a new Client instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Client instance
+             */
+            public static create(properties?: flyteidl.admin.IClient): flyteidl.admin.Client;
+
+            /**
+             * Encodes the specified Client message. Does not implicitly {@link flyteidl.admin.Client.verify|verify} messages.
+             * @param message Client message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IClient, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Client message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Client
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Client;
+
+            /**
+             * Verifies a Client message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */

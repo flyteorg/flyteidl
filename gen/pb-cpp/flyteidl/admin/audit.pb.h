@@ -46,7 +46,7 @@ struct TableStruct_flyteidl_2fadmin_2faudit_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[5]
+  static const ::google::protobuf::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -58,6 +58,9 @@ namespace admin {
 class AuditLog;
 class AuditLogDefaultTypeInternal;
 extern AuditLogDefaultTypeInternal _AuditLog_default_instance_;
+class Client;
+class ClientDefaultTypeInternal;
+extern ClientDefaultTypeInternal _Client_default_instance_;
 class Principal;
 class PrincipalDefaultTypeInternal;
 extern PrincipalDefaultTypeInternal _Principal_default_instance_;
@@ -75,6 +78,7 @@ extern ResponseDefaultTypeInternal _Response_default_instance_;
 namespace google {
 namespace protobuf {
 template<> ::flyteidl::admin::AuditLog* Arena::CreateMaybeMessage<::flyteidl::admin::AuditLog>(Arena*);
+template<> ::flyteidl::admin::Client* Arena::CreateMaybeMessage<::flyteidl::admin::Client>(Arena*);
 template<> ::flyteidl::admin::Principal* Arena::CreateMaybeMessage<::flyteidl::admin::Principal>(Arena*);
 template<> ::flyteidl::admin::Request* Arena::CreateMaybeMessage<::flyteidl::admin::Request>(Arena*);
 template<> ::flyteidl::admin::Request_ParametersEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::admin::Request_ParametersEntry_DoNotUse>(Arena*);
@@ -202,20 +206,6 @@ class AuditLog final :
 
   // accessors -------------------------------------------------------
 
-  // string client_ip = 2;
-  void clear_client_ip();
-  static const int kClientIpFieldNumber = 2;
-  const ::std::string& client_ip() const;
-  void set_client_ip(const ::std::string& value);
-  #if LANG_CXX11
-  void set_client_ip(::std::string&& value);
-  #endif
-  void set_client_ip(const char* value);
-  void set_client_ip(const char* value, size_t size);
-  ::std::string* mutable_client_ip();
-  ::std::string* release_client_ip();
-  void set_allocated_client_ip(::std::string* client_ip);
-
   // .flyteidl.admin.Principal principal = 1;
   bool has_principal() const;
   void clear_principal();
@@ -224,6 +214,15 @@ class AuditLog final :
   ::flyteidl::admin::Principal* release_principal();
   ::flyteidl::admin::Principal* mutable_principal();
   void set_allocated_principal(::flyteidl::admin::Principal* principal);
+
+  // .flyteidl.admin.Client client = 2;
+  bool has_client() const;
+  void clear_client();
+  static const int kClientFieldNumber = 2;
+  const ::flyteidl::admin::Client& client() const;
+  ::flyteidl::admin::Client* release_client();
+  ::flyteidl::admin::Client* mutable_client();
+  void set_allocated_client(::flyteidl::admin::Client* client);
 
   // .flyteidl.admin.Request request = 3;
   bool has_request() const;
@@ -248,8 +247,8 @@ class AuditLog final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr client_ip_;
   ::flyteidl::admin::Principal* principal_;
+  ::flyteidl::admin::Client* client_;
   ::flyteidl::admin::Request* request_;
   ::flyteidl::admin::Response* response_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -402,6 +401,126 @@ class Principal final :
 };
 // -------------------------------------------------------------------
 
+class Client final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.Client) */ {
+ public:
+  Client();
+  virtual ~Client();
+
+  Client(const Client& from);
+
+  inline Client& operator=(const Client& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Client(Client&& from) noexcept
+    : Client() {
+    *this = ::std::move(from);
+  }
+
+  inline Client& operator=(Client&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Client& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Client* internal_default_instance() {
+    return reinterpret_cast<const Client*>(
+               &_Client_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  void Swap(Client* other);
+  friend void swap(Client& a, Client& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Client* New() const final {
+    return CreateMaybeMessage<Client>(nullptr);
+  }
+
+  Client* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Client>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Client& from);
+  void MergeFrom(const Client& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Client* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string client_ip = 1;
+  void clear_client_ip();
+  static const int kClientIpFieldNumber = 1;
+  const ::std::string& client_ip() const;
+  void set_client_ip(const ::std::string& value);
+  #if LANG_CXX11
+  void set_client_ip(::std::string&& value);
+  #endif
+  void set_client_ip(const char* value);
+  void set_client_ip(const char* value, size_t size);
+  ::std::string* mutable_client_ip();
+  ::std::string* release_client_ip();
+  void set_allocated_client_ip(::std::string* client_ip);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.Client)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr client_ip_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fadmin_2faudit_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Request_ParametersEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<Request_ParametersEntry_DoNotUse, 
     ::std::string, ::std::string,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
@@ -464,7 +583,7 @@ class Request final :
                &_Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(Request* other);
   friend void swap(Request& a, Request& b) {
@@ -658,7 +777,7 @@ class Response final :
                &_Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(Response* other);
   friend void swap(Response& a, Response& b) {
@@ -810,57 +929,55 @@ inline void AuditLog::set_allocated_principal(::flyteidl::admin::Principal* prin
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.AuditLog.principal)
 }
 
-// string client_ip = 2;
-inline void AuditLog::clear_client_ip() {
-  client_ip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// .flyteidl.admin.Client client = 2;
+inline bool AuditLog::has_client() const {
+  return this != internal_default_instance() && client_ != nullptr;
 }
-inline const ::std::string& AuditLog::client_ip() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.AuditLog.client_ip)
-  return client_ip_.GetNoArena();
+inline void AuditLog::clear_client() {
+  if (GetArenaNoVirtual() == nullptr && client_ != nullptr) {
+    delete client_;
+  }
+  client_ = nullptr;
 }
-inline void AuditLog::set_client_ip(const ::std::string& value) {
+inline const ::flyteidl::admin::Client& AuditLog::client() const {
+  const ::flyteidl::admin::Client* p = client_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.AuditLog.client)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::Client*>(
+      &::flyteidl::admin::_Client_default_instance_);
+}
+inline ::flyteidl::admin::Client* AuditLog::release_client() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.AuditLog.client)
   
-  client_ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.AuditLog.client_ip)
+  ::flyteidl::admin::Client* temp = client_;
+  client_ = nullptr;
+  return temp;
 }
-#if LANG_CXX11
-inline void AuditLog::set_client_ip(::std::string&& value) {
+inline ::flyteidl::admin::Client* AuditLog::mutable_client() {
   
-  client_ip_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.AuditLog.client_ip)
+  if (client_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::Client>(GetArenaNoVirtual());
+    client_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.AuditLog.client)
+  return client_;
 }
-#endif
-inline void AuditLog::set_client_ip(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  client_ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.AuditLog.client_ip)
-}
-inline void AuditLog::set_client_ip(const char* value, size_t size) {
-  
-  client_ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.AuditLog.client_ip)
-}
-inline ::std::string* AuditLog::mutable_client_ip() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.AuditLog.client_ip)
-  return client_ip_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* AuditLog::release_client_ip() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.AuditLog.client_ip)
-  
-  return client_ip_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void AuditLog::set_allocated_client_ip(::std::string* client_ip) {
-  if (client_ip != nullptr) {
+inline void AuditLog::set_allocated_client(::flyteidl::admin::Client* client) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete client_;
+  }
+  if (client) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      client = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, client, submessage_arena);
+    }
     
   } else {
     
   }
-  client_ip_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), client_ip);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.AuditLog.client_ip)
+  client_ = client;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.AuditLog.client)
 }
 
 // .flyteidl.admin.Request request = 3;
@@ -1119,6 +1236,63 @@ inline void Principal::set_allocated_token_issued_at(::google::protobuf::Timesta
   }
   token_issued_at_ = token_issued_at;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Principal.token_issued_at)
+}
+
+// -------------------------------------------------------------------
+
+// Client
+
+// string client_ip = 1;
+inline void Client::clear_client_ip() {
+  client_ip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Client::client_ip() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Client.client_ip)
+  return client_ip_.GetNoArena();
+}
+inline void Client::set_client_ip(const ::std::string& value) {
+  
+  client_ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.Client.client_ip)
+}
+#if LANG_CXX11
+inline void Client::set_client_ip(::std::string&& value) {
+  
+  client_ip_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.Client.client_ip)
+}
+#endif
+inline void Client::set_client_ip(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  client_ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.Client.client_ip)
+}
+inline void Client::set_client_ip(const char* value, size_t size) {
+  
+  client_ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.Client.client_ip)
+}
+inline ::std::string* Client::mutable_client_ip() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Client.client_ip)
+  return client_ip_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Client::release_client_ip() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.Client.client_ip)
+  
+  return client_ip_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Client::set_allocated_client_ip(::std::string* client_ip) {
+  if (client_ip != nullptr) {
+    
+  } else {
+    
+  }
+  client_ip_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), client_ip);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Client.client_ip)
 }
 
 // -------------------------------------------------------------------
@@ -1417,6 +1591,8 @@ inline void Response::set_allocated_sent_at(::google::protobuf::Timestamp* sent_
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

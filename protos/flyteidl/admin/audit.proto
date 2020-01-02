@@ -10,7 +10,7 @@ import "google/protobuf/timestamp.proto";
 message AuditLog {
   Principal principal = 1;
 
-  string client_ip = 2;
+  Client client = 2;
 
   Request request = 3;
 
@@ -26,6 +26,11 @@ message Principal {
   string client_id = 2;
 
   google.protobuf.Timestamp token_issued_at = 3;
+}
+
+// Details about the user's browser client.
+message Client {
+  string client_ip = 1;
 }
 
 // Details about a specific request issued by a user.
