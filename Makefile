@@ -16,9 +16,8 @@ generate: # generate protos, mocks and pflags
 .PHONY: test
 test: # ensures generate_protos script has been run
 	make install
+	which pflags || (cd /tmp && go get github.com/lyft/flytestdlib/cli/pflags && cd -)
 	git diff
-	which pflags || (go get github.com/lyft/flytestdlib/cli/pflags)
-	go mod download
 	./generate_mocks.sh
 	go generate ./...
 	DELTA_CHECK=true ./generate_protos.sh
