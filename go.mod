@@ -11,7 +11,7 @@ require (
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
 	github.com/grpc-ecosystem/grpc-gateway v1.11.3
 	github.com/influxdata/influxdb v1.7.9
-	github.com/lyft/flytestdlib v0.2.30
+	github.com/lyft/flytestdlib v0.2.31
 	github.com/mitchellh/mapstructure v1.1.2
 	github.com/pquerna/cachecontrol v0.0.0-20180517163645-1555304b9b35 // indirect
 	github.com/spf13/pflag v1.0.5
