@@ -16,6 +16,7 @@ generate: # generate protos, mocks and pflags
 .PHONY: test
 test: # ensures generate_protos script has been run
 	make install
+	# install outside of current module, workaround https://github.com/golang/go/issues/30515
 	which pflags || (cd /tmp && go get github.com/lyft/flytestdlib/cli/pflags && cd -)
 	git diff
 	./generate_mocks.sh
