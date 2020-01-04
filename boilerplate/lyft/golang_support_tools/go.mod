@@ -3,9 +3,9 @@ module github.com/lyft/flyteidl
 go 1.13
 
 require (
-	github.com/golangci/golangci-lint v1.22.2 // indirect
-	github.com/lyft/flytestdlib v0.2.31 // indirect
-	github.com/vektra/mockery v0.0.0-20181123154057-e78b021dcbb5 // indirect
+	github.com/golangci/golangci-lint v1.22.2
+	github.com/lyft/flytestdlib v0.2.31
+	github.com/vektra/mockery v0.0.0-20181123154057-e78b021dcbb5
 
 )
 
