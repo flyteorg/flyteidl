@@ -16,7 +16,7 @@ generate: # generate protos, mocks and pflags
 .PHONY: test
 test: # ensures generate_protos script has been run
 	make install
-	which pflags || (cd boilerplate/lyft/golang_support_tools && go get github.com/lyft/flytestdlib/cli/pflags && cd -)
+	which pflags || (cd boilerplate/lyft/golang_support_tools && go install github.com/lyft/flytestdlib/cli/pflags && cd -)
 	git diff
 	./generate_mocks.sh
 	go generate ./...
