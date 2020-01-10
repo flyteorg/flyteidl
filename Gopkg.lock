@@ -2,14 +2,6 @@
 
 
 [[projects]]
-  digest = "1:3d3da1dd49a4492069391f9ae0c3e39a8b6e96fb5e8b3e5bbfb8d4820e8d4c36"
-  name = "github.com/antihax/optional"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "c3f0ba9c1a592b971d66b2787679af55b5c58f21"
-  version = "v1.0.0"
-
-[[projects]]
   digest = "1:d6afaeed1502aa28e80a4ed0981d570ad91b2579193404256ce672ed0a609e0d"
   name = "github.com/beorn7/perks"
   packages = ["quantile"]
@@ -62,17 +54,6 @@
   version = "v1.7.0"
 
 [[projects]]
-  digest = "1:582e25eccee928dc12416ea4c23b6dae8f3b5687730632aa1473ebebe80a2359"
-  name = "github.com/gogo/protobuf"
-  packages = [
-    "proto",
-    "sortkeys",
-  ]
-  pruneopts = "UT"
-  revision = "5628607bb4c51c3157aacc3a50f0ab707582b805"
-  version = "v1.3.1"
-
-[[projects]]
   digest = "1:f285b85fea571597bd447bff6146429422af25d7f43879a454f564a7dd18472c"
   name = "github.com/golang/protobuf"
   packages = [
@@ -93,14 +74,6 @@
   pruneopts = "UT"
   revision = "6c65a5562fc06764971b7c5d05c76c75e84bdbf7"
   version = "v1.3.2"
-
-[[projects]]
-  digest = "1:a6181aca1fd5e27103f9a920876f29ac72854df7345a39f3b01e61c8c94cc8af"
-  name = "github.com/google/gofuzz"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "f140a6486e521aad38f5917de355cbf147cc0496"
-  version = "v1.0.0"
 
 [[projects]]
   digest = "1:64275948f03cdff02b7eca878ecc0f9539a6df62d12356d3d3d90c7e7b8f9023"
@@ -538,14 +511,6 @@
   version = "v1.24.0"
 
 [[projects]]
-  digest = "1:2d1fbdc6777e5408cabeb02bf336305e724b925ff4546ded0fa8715a7267922a"
-  name = "gopkg.in/inf.v0"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "d2d2541c53f18d2a059457998ce2876cc8e67cbf"
-  version = "v0.9.1"
-
-[[projects]]
   digest = "1:3c4aaca5a82adc021322f239e0cf3f46852bb0b18ae050d0feab2e9e4c527462"
   name = "gopkg.in/square/go-jose.v2"
   packages = [
@@ -566,40 +531,12 @@
   version = "v2.2.4"
 
 [[projects]]
-  branch = "master"
-  digest = "1:0e7cb9b5b42b48fe5c5cf45737580794ec44b97d56e1f09d140325b1cbfb3a1a"
-  name = "k8s.io/api"
-  packages = ["core/v1"]
-  pruneopts = "UT"
-  revision = "5524a3672fbb1d8e9528811576c859dbedffeed7"
-
-[[projects]]
-  digest = "1:a6b557272221546f0fec8ea4869650c75b5fc012a0748c6d86a8c82d41abdd5e"
+  digest = "1:b95897dba2a828fd2478f1bcaef504eb77b608525a76ec703a85cb09d3ff83dc"
   name = "k8s.io/apimachinery"
   packages = [
-    "pkg/api/resource",
-    "pkg/apis/meta/v1",
-    "pkg/conversion",
-    "pkg/conversion/queryparams",
-    "pkg/fields",
-    "pkg/labels",
-    "pkg/runtime",
-    "pkg/runtime/schema",
-    "pkg/selection",
-    "pkg/types",
     "pkg/util/clock",
-    "pkg/util/errors",
-    "pkg/util/intstr",
-    "pkg/util/json",
-    "pkg/util/naming",
-    "pkg/util/net",
     "pkg/util/rand",
     "pkg/util/runtime",
-    "pkg/util/sets",
-    "pkg/util/validation",
-    "pkg/util/validation/field",
-    "pkg/watch",
-    "third_party/forked/golang/reflect",
   ]
   pruneopts = "UT"
   revision = "a2eda9f80ab8a454a81bdde16d62a1afe5f931c0"
@@ -625,7 +562,6 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/antihax/optional",
     "github.com/coreos/go-oidc",
     "github.com/envoyproxy/protoc-gen-validate",
     "github.com/golang/protobuf/proto",
@@ -658,7 +594,6 @@
     "google.golang.org/grpc/credentials",
     "google.golang.org/grpc/grpclog",
     "google.golang.org/grpc/status",
-    "k8s.io/api/core/v1",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
