@@ -12288,48 +12288,6 @@ export namespace flyteidl {
             public getTaskExecutionData(request: flyteidl.admin.ITaskExecutionGetDataRequest): Promise<flyteidl.admin.TaskExecutionGetDataResponse>;
 
             /**
-             * Calls UpdateProjectAttributes.
-             * @param request ProjectAttributesUpdateRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and ProjectAttributesUpdateResponse
-             */
-            public updateProjectAttributes(request: flyteidl.admin.IProjectAttributesUpdateRequest, callback: flyteidl.service.AdminService.UpdateProjectAttributesCallback): void;
-
-            /**
-             * Calls UpdateProjectAttributes.
-             * @param request ProjectAttributesUpdateRequest message or plain object
-             * @returns Promise
-             */
-            public updateProjectAttributes(request: flyteidl.admin.IProjectAttributesUpdateRequest): Promise<flyteidl.admin.ProjectAttributesUpdateResponse>;
-
-            /**
-             * Calls GetProjectAttributes.
-             * @param request ProjectAttributesGetRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and ProjectAttributesGetResponse
-             */
-            public getProjectAttributes(request: flyteidl.admin.IProjectAttributesGetRequest, callback: flyteidl.service.AdminService.GetProjectAttributesCallback): void;
-
-            /**
-             * Calls GetProjectAttributes.
-             * @param request ProjectAttributesGetRequest message or plain object
-             * @returns Promise
-             */
-            public getProjectAttributes(request: flyteidl.admin.IProjectAttributesGetRequest): Promise<flyteidl.admin.ProjectAttributesGetResponse>;
-
-            /**
-             * Calls DeleteProjectAttributes.
-             * @param request ProjectAttributesDeleteRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and ProjectAttributesDeleteResponse
-             */
-            public deleteProjectAttributes(request: flyteidl.admin.IProjectAttributesDeleteRequest, callback: flyteidl.service.AdminService.DeleteProjectAttributesCallback): void;
-
-            /**
-             * Calls DeleteProjectAttributes.
-             * @param request ProjectAttributesDeleteRequest message or plain object
-             * @returns Promise
-             */
-            public deleteProjectAttributes(request: flyteidl.admin.IProjectAttributesDeleteRequest): Promise<flyteidl.admin.ProjectAttributesDeleteResponse>;
-
-            /**
              * Calls UpdateProjectDomainAttributes.
              * @param request ProjectDomainAttributesUpdateRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and ProjectDomainAttributesUpdateResponse
@@ -12688,27 +12646,6 @@ export namespace flyteidl {
              * @param [response] TaskExecutionGetDataResponse
              */
             type GetTaskExecutionDataCallback = (error: (Error|null), response?: flyteidl.admin.TaskExecutionGetDataResponse) => void;
-
-            /**
-             * Callback as used by {@link flyteidl.service.AdminService#updateProjectAttributes}.
-             * @param error Error, if any
-             * @param [response] ProjectAttributesUpdateResponse
-             */
-            type UpdateProjectAttributesCallback = (error: (Error|null), response?: flyteidl.admin.ProjectAttributesUpdateResponse) => void;
-
-            /**
-             * Callback as used by {@link flyteidl.service.AdminService#getProjectAttributes}.
-             * @param error Error, if any
-             * @param [response] ProjectAttributesGetResponse
-             */
-            type GetProjectAttributesCallback = (error: (Error|null), response?: flyteidl.admin.ProjectAttributesGetResponse) => void;
-
-            /**
-             * Callback as used by {@link flyteidl.service.AdminService#deleteProjectAttributes}.
-             * @param error Error, if any
-             * @param [response] ProjectAttributesDeleteResponse
-             */
-            type DeleteProjectAttributesCallback = (error: (Error|null), response?: flyteidl.admin.ProjectAttributesDeleteResponse) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.AdminService#updateProjectDomainAttributes}.
