@@ -7,16 +7,13 @@ update_boilerplate:
 	@boilerplate/update.sh
 
 .PHONY: generate
-generate: # generate protos, mocks and pflags
-	go mod download
+generate: mod_download # generate protos, mocks and pflags
 	./generate_protos.sh
 	./generate_mocks.sh
 	go generate ./...
 
 .PHONY: test
-test: # ensures generate_protos script has been run
-	make install
-	which pflags || (cd /tmp && go get github.com/lyft/flytestdlib/cli/pflags && cd -)
+test: install # ensures generate_protos script has been run
 	git diff
 	./generate_mocks.sh
 	go generate ./...
@@ -24,8 +21,8 @@ test: # ensures generate_protos script has been run
 
 .PHONY: test_unit
 test_unit:
-    # we cannot use test_unit from go.mk because generated files contain commented import statements that
-    # go tries to intepret. So we need to use go list to get the packages that go understands.
+	# we cannot use test_unit from go.mk because generated files contain commented import statements that
+	# go tries to intepret. So we need to use go list to get the packages that go understands.
 	go test -cover `go list ./...` -race
 
 .PHONY: build_python
