@@ -7,7 +7,7 @@ update_boilerplate:
 	@boilerplate/update.sh
 
 .PHONY: generate
-generate: mod_download # generate protos, mocks and pflags
+generate: install # install tools, generate protos, mocks and pflags
 	./generate_protos.sh
 	./generate_mocks.sh
 	go generate ./...
