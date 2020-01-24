@@ -27,5 +27,3 @@ require (
 	k8s.io/api v0.0.0-20191025225708-5524a3672fbb
 	k8s.io/client-go v0.0.0-20191016111102-bec269661e48 // indirect
 )
-
-replace github.com/vektra/mockery => github.com/enghabu/mockery v0.0.0-20191009061720-9d0c8670c2f0
