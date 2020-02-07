@@ -8224,7 +8224,8 @@ export namespace flyteidl {
         enum MatchableResource {
             TASK_RESOURCE = 0,
             CLUSTER_RESOURCE = 1,
-            EXECUTION_QUEUE = 2
+            EXECUTION_QUEUE = 2,
+            CLUSTER_LABEL = 3
         }
 
         /** Properties of a TaskResourceSpec. */
@@ -8470,6 +8471,9 @@ export namespace flyteidl {
 
             /** MatchingAttributes executionQueueAttributes */
             executionQueueAttributes?: (flyteidl.admin.IExecutionQueueAttributes|null);
+
+            /** MatchingAttributes clusterLabel */
+            clusterLabel?: (string|null);
         }
 
         /** Represents a MatchingAttributes. */
@@ -8490,8 +8494,11 @@ export namespace flyteidl {
             /** MatchingAttributes executionQueueAttributes. */
             public executionQueueAttributes?: (flyteidl.admin.IExecutionQueueAttributes|null);
 
+            /** MatchingAttributes clusterLabel. */
+            public clusterLabel: string;
+
             /** MatchingAttributes target. */
-            public target?: ("taskResourceAttributes"|"clusterResourceAttributes"|"executionQueueAttributes");
+            public target?: ("taskResourceAttributes"|"clusterResourceAttributes"|"executionQueueAttributes"|"clusterLabel");
 
             /**
              * Creates a new MatchingAttributes instance using the specified properties.

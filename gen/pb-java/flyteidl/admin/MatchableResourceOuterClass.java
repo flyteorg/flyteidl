@@ -48,6 +48,14 @@ public final class MatchableResourceOuterClass {
      * <code>EXECUTION_QUEUE = 2;</code>
      */
     EXECUTION_QUEUE(2),
+    /**
+     * <pre>
+     * Configures the K8s cluster for the execution to be run
+     * </pre>
+     *
+     * <code>CLUSTER_LABEL = 3;</code>
+     */
+    CLUSTER_LABEL(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -75,6 +83,14 @@ public final class MatchableResourceOuterClass {
      * <code>EXECUTION_QUEUE = 2;</code>
      */
     public static final int EXECUTION_QUEUE_VALUE = 2;
+    /**
+     * <pre>
+     * Configures the K8s cluster for the execution to be run
+     * </pre>
+     *
+     * <code>CLUSTER_LABEL = 3;</code>
+     */
+    public static final int CLUSTER_LABEL_VALUE = 3;
 
 
     public final int getNumber() {
@@ -98,6 +114,7 @@ public final class MatchableResourceOuterClass {
         case 0: return TASK_RESOURCE;
         case 1: return CLUSTER_RESOURCE;
         case 2: return EXECUTION_QUEUE;
+        case 3: return CLUSTER_LABEL;
         default: return null;
       }
     }
@@ -3441,6 +3458,16 @@ public final class MatchableResourceOuterClass {
      */
     flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributesOrBuilder getExecutionQueueAttributesOrBuilder();
 
+    /**
+     * <code>string cluster_label = 4;</code>
+     */
+    java.lang.String getClusterLabel();
+    /**
+     * <code>string cluster_label = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getClusterLabelBytes();
+
     public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.TargetCase getTargetCase();
   }
   /**
@@ -3528,6 +3555,12 @@ public final class MatchableResourceOuterClass {
               targetCase_ = 3;
               break;
             }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+              targetCase_ = 4;
+              target_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -3567,6 +3600,7 @@ public final class MatchableResourceOuterClass {
       TASK_RESOURCE_ATTRIBUTES(1),
       CLUSTER_RESOURCE_ATTRIBUTES(2),
       EXECUTION_QUEUE_ATTRIBUTES(3),
+      CLUSTER_LABEL(4),
       TARGET_NOT_SET(0);
       private final int value;
       private TargetCase(int value) {
@@ -3585,6 +3619,7 @@ public final class MatchableResourceOuterClass {
           case 1: return TASK_RESOURCE_ATTRIBUTES;
           case 2: return CLUSTER_RESOURCE_ATTRIBUTES;
           case 3: return EXECUTION_QUEUE_ATTRIBUTES;
+          case 4: return CLUSTER_LABEL;
           case 0: return TARGET_NOT_SET;
           default: return null;
         }
@@ -3678,6 +3713,49 @@ public final class MatchableResourceOuterClass {
       return flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes.getDefaultInstance();
     }
 
+    public static final int CLUSTER_LABEL_FIELD_NUMBER = 4;
+    /**
+     * <code>string cluster_label = 4;</code>
+     */
+    public java.lang.String getClusterLabel() {
+      java.lang.Object ref = "";
+      if (targetCase_ == 4) {
+        ref = target_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (targetCase_ == 4) {
+          target_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>string cluster_label = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClusterLabelBytes() {
+      java.lang.Object ref = "";
+      if (targetCase_ == 4) {
+        ref = target_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (targetCase_ == 4) {
+          target_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3701,6 +3779,9 @@ public final class MatchableResourceOuterClass {
       if (targetCase_ == 3) {
         output.writeMessage(3, (flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes) target_);
       }
+      if (targetCase_ == 4) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, target_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3721,6 +3802,9 @@ public final class MatchableResourceOuterClass {
       if (targetCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, (flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes) target_);
+      }
+      if (targetCase_ == 4) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, target_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3751,6 +3835,10 @@ public final class MatchableResourceOuterClass {
           if (!getExecutionQueueAttributes()
               .equals(other.getExecutionQueueAttributes())) return false;
           break;
+        case 4:
+          if (!getClusterLabel()
+              .equals(other.getClusterLabel())) return false;
+          break;
         case 0:
         default:
       }
@@ -3777,6 +3865,10 @@ public final class MatchableResourceOuterClass {
         case 3:
           hash = (37 * hash) + EXECUTION_QUEUE_ATTRIBUTES_FIELD_NUMBER;
           hash = (53 * hash) + getExecutionQueueAttributes().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + CLUSTER_LABEL_FIELD_NUMBER;
+          hash = (53 * hash) + getClusterLabel().hashCode();
           break;
         case 0:
         default:
@@ -3967,6 +4059,9 @@ public final class MatchableResourceOuterClass {
             result.target_ = executionQueueAttributesBuilder_.build();
           }
         }
+        if (targetCase_ == 4) {
+          result.target_ = target_;
+        }
         result.targetCase_ = targetCase_;
         onBuilt();
         return result;
@@ -4027,6 +4122,12 @@ public final class MatchableResourceOuterClass {
           }
           case EXECUTION_QUEUE_ATTRIBUTES: {
             mergeExecutionQueueAttributes(other.getExecutionQueueAttributes());
+            break;
+          }
+          case CLUSTER_LABEL: {
+            targetCase_ = 4;
+            target_ = other.target_;
+            onChanged();
             break;
           }
           case TARGET_NOT_SET: {
@@ -4484,6 +4585,86 @@ public final class MatchableResourceOuterClass {
         onChanged();;
         return executionQueueAttributesBuilder_;
       }
+
+      /**
+       * <code>string cluster_label = 4;</code>
+       */
+      public java.lang.String getClusterLabel() {
+        java.lang.Object ref = "";
+        if (targetCase_ == 4) {
+          ref = target_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (targetCase_ == 4) {
+            target_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string cluster_label = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getClusterLabelBytes() {
+        java.lang.Object ref = "";
+        if (targetCase_ == 4) {
+          ref = target_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (targetCase_ == 4) {
+            target_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string cluster_label = 4;</code>
+       */
+      public Builder setClusterLabel(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  targetCase_ = 4;
+        target_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cluster_label = 4;</code>
+       */
+      public Builder clearClusterLabel() {
+        if (targetCase_ == 4) {
+          targetCase_ = 0;
+          target_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>string cluster_label = 4;</code>
+       */
+      public Builder setClusterLabelBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        targetCase_ = 4;
+        target_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4587,18 +4768,19 @@ public final class MatchableResourceOuterClass {
       "teidl.admin.ClusterResourceAttributes.At" +
       "tributesEntry\0321\n\017AttributesEntry\022\013\n\003key\030" +
       "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"(\n\030ExecutionQue" +
-      "ueAttributes\022\014\n\004tags\030\001 \003(\t\"\214\002\n\022MatchingA" +
+      "ueAttributes\022\014\n\004tags\030\001 \003(\t\"\245\002\n\022MatchingA" +
       "ttributes\022J\n\030task_resource_attributes\030\001 " +
       "\001(\0132&.flyteidl.admin.TaskResourceAttribu" +
       "tesH\000\022P\n\033cluster_resource_attributes\030\002 \001" +
       "(\0132).flyteidl.admin.ClusterResourceAttri" +
       "butesH\000\022N\n\032execution_queue_attributes\030\003 " +
       "\001(\0132(.flyteidl.admin.ExecutionQueueAttri" +
-      "butesH\000B\010\n\006target*Q\n\021MatchableResource\022\021" +
-      "\n\rTASK_RESOURCE\020\000\022\024\n\020CLUSTER_RESOURCE\020\001\022" +
-      "\023\n\017EXECUTION_QUEUE\020\002B3Z1github.com/lyft/" +
-      "flyteidl/gen/pb-go/flyteidl/adminb\006proto" +
-      "3"
+      "butesH\000\022\027\n\rcluster_label\030\004 \001(\tH\000B\010\n\006targ" +
+      "et*d\n\021MatchableResource\022\021\n\rTASK_RESOURCE" +
+      "\020\000\022\024\n\020CLUSTER_RESOURCE\020\001\022\023\n\017EXECUTION_QU" +
+      "EUE\020\002\022\021\n\rCLUSTER_LABEL\020\003B3Z1github.com/l" +
+      "yft/flyteidl/gen/pb-go/flyteidl/adminb\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4647,7 +4829,7 @@ public final class MatchableResourceOuterClass {
     internal_static_flyteidl_admin_MatchingAttributes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_MatchingAttributes_descriptor,
-        new java.lang.String[] { "TaskResourceAttributes", "ClusterResourceAttributes", "ExecutionQueueAttributes", "Target", });
+        new java.lang.String[] { "TaskResourceAttributes", "ClusterResourceAttributes", "ExecutionQueueAttributes", "ClusterLabel", "Target", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -378,6 +378,9 @@ func (m *MatchingAttributes) Validate() error {
 			}
 		}
 
+	case *MatchingAttributes_ClusterLabel:
+		// no validation rules for ClusterLabel
+
 	}
 
 	return nil

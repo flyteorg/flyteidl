@@ -91,12 +91,13 @@ enum MatchableResource {
   TASK_RESOURCE = 0,
   CLUSTER_RESOURCE = 1,
   EXECUTION_QUEUE = 2,
+  CLUSTER_LABEL = 3,
   MatchableResource_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   MatchableResource_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool MatchableResource_IsValid(int value);
 const MatchableResource MatchableResource_MIN = TASK_RESOURCE;
-const MatchableResource MatchableResource_MAX = EXECUTION_QUEUE;
+const MatchableResource MatchableResource_MAX = CLUSTER_LABEL;
 const int MatchableResource_ARRAYSIZE = MatchableResource_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* MatchableResource_descriptor();
@@ -710,6 +711,7 @@ class MatchingAttributes final :
     kTaskResourceAttributes = 1,
     kClusterResourceAttributes = 2,
     kExecutionQueueAttributes = 3,
+    kClusterLabel = 4,
     TARGET_NOT_SET = 0,
   };
 
@@ -803,6 +805,23 @@ class MatchingAttributes final :
   ::flyteidl::admin::ExecutionQueueAttributes* mutable_execution_queue_attributes();
   void set_allocated_execution_queue_attributes(::flyteidl::admin::ExecutionQueueAttributes* execution_queue_attributes);
 
+  // string cluster_label = 4;
+  private:
+  bool has_cluster_label() const;
+  public:
+  void clear_cluster_label();
+  static const int kClusterLabelFieldNumber = 4;
+  const ::std::string& cluster_label() const;
+  void set_cluster_label(const ::std::string& value);
+  #if LANG_CXX11
+  void set_cluster_label(::std::string&& value);
+  #endif
+  void set_cluster_label(const char* value);
+  void set_cluster_label(const char* value, size_t size);
+  ::std::string* mutable_cluster_label();
+  ::std::string* release_cluster_label();
+  void set_allocated_cluster_label(::std::string* cluster_label);
+
   void clear_target();
   TargetCase target_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.admin.MatchingAttributes)
@@ -811,6 +830,7 @@ class MatchingAttributes final :
   void set_has_task_resource_attributes();
   void set_has_cluster_resource_attributes();
   void set_has_execution_queue_attributes();
+  void set_has_cluster_label();
 
   inline bool has_target() const;
   inline void clear_has_target();
@@ -821,6 +841,7 @@ class MatchingAttributes final :
     ::flyteidl::admin::TaskResourceAttributes* task_resource_attributes_;
     ::flyteidl::admin::ClusterResourceAttributes* cluster_resource_attributes_;
     ::flyteidl::admin::ExecutionQueueAttributes* execution_queue_attributes_;
+    ::google::protobuf::internal::ArenaStringPtr cluster_label_;
   } target_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1378,6 +1399,98 @@ inline ::flyteidl::admin::ExecutionQueueAttributes* MatchingAttributes::mutable_
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.admin.MatchingAttributes.execution_queue_attributes)
   return target_.execution_queue_attributes_;
+}
+
+// string cluster_label = 4;
+inline bool MatchingAttributes::has_cluster_label() const {
+  return target_case() == kClusterLabel;
+}
+inline void MatchingAttributes::set_has_cluster_label() {
+  _oneof_case_[0] = kClusterLabel;
+}
+inline void MatchingAttributes::clear_cluster_label() {
+  if (has_cluster_label()) {
+    target_.cluster_label_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_target();
+  }
+}
+inline const ::std::string& MatchingAttributes::cluster_label() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.MatchingAttributes.cluster_label)
+  if (has_cluster_label()) {
+    return target_.cluster_label_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+inline void MatchingAttributes::set_cluster_label(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.admin.MatchingAttributes.cluster_label)
+  if (!has_cluster_label()) {
+    clear_target();
+    set_has_cluster_label();
+    target_.cluster_label_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  target_.cluster_label_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.MatchingAttributes.cluster_label)
+}
+#if LANG_CXX11
+inline void MatchingAttributes::set_cluster_label(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.admin.MatchingAttributes.cluster_label)
+  if (!has_cluster_label()) {
+    clear_target();
+    set_has_cluster_label();
+    target_.cluster_label_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  target_.cluster_label_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.MatchingAttributes.cluster_label)
+}
+#endif
+inline void MatchingAttributes::set_cluster_label(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  if (!has_cluster_label()) {
+    clear_target();
+    set_has_cluster_label();
+    target_.cluster_label_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  target_.cluster_label_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.MatchingAttributes.cluster_label)
+}
+inline void MatchingAttributes::set_cluster_label(const char* value, size_t size) {
+  if (!has_cluster_label()) {
+    clear_target();
+    set_has_cluster_label();
+    target_.cluster_label_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  target_.cluster_label_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.MatchingAttributes.cluster_label)
+}
+inline ::std::string* MatchingAttributes::mutable_cluster_label() {
+  if (!has_cluster_label()) {
+    clear_target();
+    set_has_cluster_label();
+    target_.cluster_label_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.MatchingAttributes.cluster_label)
+  return target_.cluster_label_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* MatchingAttributes::release_cluster_label() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.MatchingAttributes.cluster_label)
+  if (has_cluster_label()) {
+    clear_has_target();
+    return target_.cluster_label_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void MatchingAttributes::set_allocated_cluster_label(::std::string* cluster_label) {
+  if (has_target()) {
+    clear_target();
+  }
+  if (cluster_label != nullptr) {
+    set_has_cluster_label();
+    target_.cluster_label_.UnsafeSetDefault(cluster_label);
+  }
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.MatchingAttributes.cluster_label)
 }
 
 inline bool MatchingAttributes::has_target() const {

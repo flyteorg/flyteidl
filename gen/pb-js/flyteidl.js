@@ -19657,12 +19657,14 @@ export const flyteidl = $root.flyteidl = (() => {
          * @property {number} TASK_RESOURCE=0 TASK_RESOURCE value
          * @property {number} CLUSTER_RESOURCE=1 CLUSTER_RESOURCE value
          * @property {number} EXECUTION_QUEUE=2 EXECUTION_QUEUE value
+         * @property {number} CLUSTER_LABEL=3 CLUSTER_LABEL value
          */
         admin.MatchableResource = (function() {
             const valuesById = {}, values = Object.create(valuesById);
             values[valuesById[0] = "TASK_RESOURCE"] = 0;
             values[valuesById[1] = "CLUSTER_RESOURCE"] = 1;
             values[valuesById[2] = "EXECUTION_QUEUE"] = 2;
+            values[valuesById[3] = "CLUSTER_LABEL"] = 3;
             return values;
         })();
 
@@ -20207,6 +20209,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.ITaskResourceAttributes|null} [taskResourceAttributes] MatchingAttributes taskResourceAttributes
              * @property {flyteidl.admin.IClusterResourceAttributes|null} [clusterResourceAttributes] MatchingAttributes clusterResourceAttributes
              * @property {flyteidl.admin.IExecutionQueueAttributes|null} [executionQueueAttributes] MatchingAttributes executionQueueAttributes
+             * @property {string|null} [clusterLabel] MatchingAttributes clusterLabel
              */
 
             /**
@@ -20248,17 +20251,25 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             MatchingAttributes.prototype.executionQueueAttributes = null;
 
+            /**
+             * MatchingAttributes clusterLabel.
+             * @member {string} clusterLabel
+             * @memberof flyteidl.admin.MatchingAttributes
+             * @instance
+             */
+            MatchingAttributes.prototype.clusterLabel = "";
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
             /**
              * MatchingAttributes target.
-             * @member {"taskResourceAttributes"|"clusterResourceAttributes"|"executionQueueAttributes"|undefined} target
+             * @member {"taskResourceAttributes"|"clusterResourceAttributes"|"executionQueueAttributes"|"clusterLabel"|undefined} target
              * @memberof flyteidl.admin.MatchingAttributes
              * @instance
              */
             Object.defineProperty(MatchingAttributes.prototype, "target", {
-                get: $util.oneOfGetter($oneOfFields = ["taskResourceAttributes", "clusterResourceAttributes", "executionQueueAttributes"]),
+                get: $util.oneOfGetter($oneOfFields = ["taskResourceAttributes", "clusterResourceAttributes", "executionQueueAttributes", "clusterLabel"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -20292,6 +20303,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.ClusterResourceAttributes.encode(message.clusterResourceAttributes, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.executionQueueAttributes != null && message.hasOwnProperty("executionQueueAttributes"))
                     $root.flyteidl.admin.ExecutionQueueAttributes.encode(message.executionQueueAttributes, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.clusterLabel != null && message.hasOwnProperty("clusterLabel"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.clusterLabel);
                 return writer;
             };
 
@@ -20321,6 +20334,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 3:
                         message.executionQueueAttributes = $root.flyteidl.admin.ExecutionQueueAttributes.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.clusterLabel = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -20369,6 +20385,13 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (error)
                             return "executionQueueAttributes." + error;
                     }
+                }
+                if (message.clusterLabel != null && message.hasOwnProperty("clusterLabel")) {
+                    if (properties.target === 1)
+                        return "target: multiple values";
+                    properties.target = 1;
+                    if (!$util.isString(message.clusterLabel))
+                        return "clusterLabel: string expected";
                 }
                 return null;
             };
@@ -23159,6 +23182,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 0:
                     case 1:
                     case 2:
+                    case 3:
                         break;
                     }
                 return null;
@@ -23421,6 +23445,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 0:
                     case 1:
                     case 2:
+                    case 3:
                         break;
                     }
                 return null;
@@ -26684,6 +26709,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 0:
                     case 1:
                     case 2:
+                    case 3:
                         break;
                     }
                 return null;
@@ -26963,6 +26989,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 0:
                     case 1:
                     case 2:
+                    case 3:
                         break;
                     }
                 return null;

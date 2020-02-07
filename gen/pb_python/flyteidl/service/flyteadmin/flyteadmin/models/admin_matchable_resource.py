@@ -29,6 +29,7 @@ class AdminMatchableResource(object):
     TASK_RESOURCE = "TASK_RESOURCE"
     CLUSTER_RESOURCE = "CLUSTER_RESOURCE"
     EXECUTION_QUEUE = "EXECUTION_QUEUE"
+    CLUSTER_LABEL = "CLUSTER_LABEL"
 
     """
     Attributes:
