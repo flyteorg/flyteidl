@@ -14,5 +14,5 @@ type AdminMatchingAttributes struct {
 	TaskResourceAttributes *AdminTaskResourceAttributes `json:"task_resource_attributes,omitempty"`
 	ClusterResourceAttributes *AdminClusterResourceAttributes `json:"cluster_resource_attributes,omitempty"`
 	ExecutionQueueAttributes *AdminExecutionQueueAttributes `json:"execution_queue_attributes,omitempty"`
-	ClusterLabel string `json:"cluster_label,omitempty"`
+	ExecutionCluster *AdminExecutionCluster `json:"execution_cluster,omitempty"`
 }

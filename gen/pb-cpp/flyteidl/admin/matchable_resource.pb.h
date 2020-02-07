@@ -45,7 +45,7 @@ struct TableStruct_flyteidl_2fadmin_2fmatchable_5fresource_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[6]
+  static const ::google::protobuf::internal::ParseTable schema[7]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -60,6 +60,9 @@ extern ClusterResourceAttributesDefaultTypeInternal _ClusterResourceAttributes_d
 class ClusterResourceAttributes_AttributesEntry_DoNotUse;
 class ClusterResourceAttributes_AttributesEntry_DoNotUseDefaultTypeInternal;
 extern ClusterResourceAttributes_AttributesEntry_DoNotUseDefaultTypeInternal _ClusterResourceAttributes_AttributesEntry_DoNotUse_default_instance_;
+class ExecutionCluster;
+class ExecutionClusterDefaultTypeInternal;
+extern ExecutionClusterDefaultTypeInternal _ExecutionCluster_default_instance_;
 class ExecutionQueueAttributes;
 class ExecutionQueueAttributesDefaultTypeInternal;
 extern ExecutionQueueAttributesDefaultTypeInternal _ExecutionQueueAttributes_default_instance_;
@@ -78,6 +81,7 @@ namespace google {
 namespace protobuf {
 template<> ::flyteidl::admin::ClusterResourceAttributes* Arena::CreateMaybeMessage<::flyteidl::admin::ClusterResourceAttributes>(Arena*);
 template<> ::flyteidl::admin::ClusterResourceAttributes_AttributesEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::admin::ClusterResourceAttributes_AttributesEntry_DoNotUse>(Arena*);
+template<> ::flyteidl::admin::ExecutionCluster* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionCluster>(Arena*);
 template<> ::flyteidl::admin::ExecutionQueueAttributes* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionQueueAttributes>(Arena*);
 template<> ::flyteidl::admin::MatchingAttributes* Arena::CreateMaybeMessage<::flyteidl::admin::MatchingAttributes>(Arena*);
 template<> ::flyteidl::admin::TaskResourceAttributes* Arena::CreateMaybeMessage<::flyteidl::admin::TaskResourceAttributes>(Arena*);
@@ -91,13 +95,13 @@ enum MatchableResource {
   TASK_RESOURCE = 0,
   CLUSTER_RESOURCE = 1,
   EXECUTION_QUEUE = 2,
-  CLUSTER_LABEL = 3,
+  EXECUTION_CLUSTER = 3,
   MatchableResource_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   MatchableResource_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool MatchableResource_IsValid(int value);
 const MatchableResource MatchableResource_MIN = TASK_RESOURCE;
-const MatchableResource MatchableResource_MAX = CLUSTER_LABEL;
+const MatchableResource MatchableResource_MAX = EXECUTION_CLUSTER;
 const int MatchableResource_ARRAYSIZE = MatchableResource_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* MatchableResource_descriptor();
@@ -675,6 +679,126 @@ class ExecutionQueueAttributes final :
 };
 // -------------------------------------------------------------------
 
+class ExecutionCluster final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.ExecutionCluster) */ {
+ public:
+  ExecutionCluster();
+  virtual ~ExecutionCluster();
+
+  ExecutionCluster(const ExecutionCluster& from);
+
+  inline ExecutionCluster& operator=(const ExecutionCluster& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ExecutionCluster(ExecutionCluster&& from) noexcept
+    : ExecutionCluster() {
+    *this = ::std::move(from);
+  }
+
+  inline ExecutionCluster& operator=(ExecutionCluster&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const ExecutionCluster& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ExecutionCluster* internal_default_instance() {
+    return reinterpret_cast<const ExecutionCluster*>(
+               &_ExecutionCluster_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  void Swap(ExecutionCluster* other);
+  friend void swap(ExecutionCluster& a, ExecutionCluster& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ExecutionCluster* New() const final {
+    return CreateMaybeMessage<ExecutionCluster>(nullptr);
+  }
+
+  ExecutionCluster* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ExecutionCluster>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ExecutionCluster& from);
+  void MergeFrom(const ExecutionCluster& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ExecutionCluster* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string label = 1;
+  void clear_label();
+  static const int kLabelFieldNumber = 1;
+  const ::std::string& label() const;
+  void set_label(const ::std::string& value);
+  #if LANG_CXX11
+  void set_label(::std::string&& value);
+  #endif
+  void set_label(const char* value);
+  void set_label(const char* value, size_t size);
+  ::std::string* mutable_label();
+  ::std::string* release_label();
+  void set_allocated_label(::std::string* label);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionCluster)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr label_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
+};
+// -------------------------------------------------------------------
+
 class MatchingAttributes final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.MatchingAttributes) */ {
  public:
@@ -711,7 +835,7 @@ class MatchingAttributes final :
     kTaskResourceAttributes = 1,
     kClusterResourceAttributes = 2,
     kExecutionQueueAttributes = 3,
-    kClusterLabel = 4,
+    kExecutionCluster = 4,
     TARGET_NOT_SET = 0,
   };
 
@@ -721,7 +845,7 @@ class MatchingAttributes final :
                &_MatchingAttributes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(MatchingAttributes* other);
   friend void swap(MatchingAttributes& a, MatchingAttributes& b) {
@@ -805,22 +929,14 @@ class MatchingAttributes final :
   ::flyteidl::admin::ExecutionQueueAttributes* mutable_execution_queue_attributes();
   void set_allocated_execution_queue_attributes(::flyteidl::admin::ExecutionQueueAttributes* execution_queue_attributes);
 
-  // string cluster_label = 4;
-  private:
-  bool has_cluster_label() const;
-  public:
-  void clear_cluster_label();
-  static const int kClusterLabelFieldNumber = 4;
-  const ::std::string& cluster_label() const;
-  void set_cluster_label(const ::std::string& value);
-  #if LANG_CXX11
-  void set_cluster_label(::std::string&& value);
-  #endif
-  void set_cluster_label(const char* value);
-  void set_cluster_label(const char* value, size_t size);
-  ::std::string* mutable_cluster_label();
-  ::std::string* release_cluster_label();
-  void set_allocated_cluster_label(::std::string* cluster_label);
+  // .flyteidl.admin.ExecutionCluster execution_cluster = 4;
+  bool has_execution_cluster() const;
+  void clear_execution_cluster();
+  static const int kExecutionClusterFieldNumber = 4;
+  const ::flyteidl::admin::ExecutionCluster& execution_cluster() const;
+  ::flyteidl::admin::ExecutionCluster* release_execution_cluster();
+  ::flyteidl::admin::ExecutionCluster* mutable_execution_cluster();
+  void set_allocated_execution_cluster(::flyteidl::admin::ExecutionCluster* execution_cluster);
 
   void clear_target();
   TargetCase target_case() const;
@@ -830,7 +946,7 @@ class MatchingAttributes final :
   void set_has_task_resource_attributes();
   void set_has_cluster_resource_attributes();
   void set_has_execution_queue_attributes();
-  void set_has_cluster_label();
+  void set_has_execution_cluster();
 
   inline bool has_target() const;
   inline void clear_has_target();
@@ -841,7 +957,7 @@ class MatchingAttributes final :
     ::flyteidl::admin::TaskResourceAttributes* task_resource_attributes_;
     ::flyteidl::admin::ClusterResourceAttributes* cluster_resource_attributes_;
     ::flyteidl::admin::ExecutionQueueAttributes* execution_queue_attributes_;
-    ::google::protobuf::internal::ArenaStringPtr cluster_label_;
+    ::flyteidl::admin::ExecutionCluster* execution_cluster_;
   } target_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1276,6 +1392,63 @@ ExecutionQueueAttributes::mutable_tags() {
 
 // -------------------------------------------------------------------
 
+// ExecutionCluster
+
+// string label = 1;
+inline void ExecutionCluster::clear_label() {
+  label_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ExecutionCluster::label() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionCluster.label)
+  return label_.GetNoArena();
+}
+inline void ExecutionCluster::set_label(const ::std::string& value) {
+  
+  label_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionCluster.label)
+}
+#if LANG_CXX11
+inline void ExecutionCluster::set_label(::std::string&& value) {
+  
+  label_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.ExecutionCluster.label)
+}
+#endif
+inline void ExecutionCluster::set_label(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  label_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.ExecutionCluster.label)
+}
+inline void ExecutionCluster::set_label(const char* value, size_t size) {
+  
+  label_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.ExecutionCluster.label)
+}
+inline ::std::string* ExecutionCluster::mutable_label() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionCluster.label)
+  return label_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ExecutionCluster::release_label() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.ExecutionCluster.label)
+  
+  return label_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ExecutionCluster::set_allocated_label(::std::string* label) {
+  if (label != nullptr) {
+    
+  } else {
+    
+  }
+  label_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), label);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionCluster.label)
+}
+
+// -------------------------------------------------------------------
+
 // MatchingAttributes
 
 // .flyteidl.admin.TaskResourceAttributes task_resource_attributes = 1;
@@ -1401,96 +1574,45 @@ inline ::flyteidl::admin::ExecutionQueueAttributes* MatchingAttributes::mutable_
   return target_.execution_queue_attributes_;
 }
 
-// string cluster_label = 4;
-inline bool MatchingAttributes::has_cluster_label() const {
-  return target_case() == kClusterLabel;
+// .flyteidl.admin.ExecutionCluster execution_cluster = 4;
+inline bool MatchingAttributes::has_execution_cluster() const {
+  return target_case() == kExecutionCluster;
 }
-inline void MatchingAttributes::set_has_cluster_label() {
-  _oneof_case_[0] = kClusterLabel;
+inline void MatchingAttributes::set_has_execution_cluster() {
+  _oneof_case_[0] = kExecutionCluster;
 }
-inline void MatchingAttributes::clear_cluster_label() {
-  if (has_cluster_label()) {
-    target_.cluster_label_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void MatchingAttributes::clear_execution_cluster() {
+  if (has_execution_cluster()) {
+    delete target_.execution_cluster_;
     clear_has_target();
   }
 }
-inline const ::std::string& MatchingAttributes::cluster_label() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.MatchingAttributes.cluster_label)
-  if (has_cluster_label()) {
-    return target_.cluster_label_.GetNoArena();
-  }
-  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
-}
-inline void MatchingAttributes::set_cluster_label(const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.admin.MatchingAttributes.cluster_label)
-  if (!has_cluster_label()) {
-    clear_target();
-    set_has_cluster_label();
-    target_.cluster_label_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  target_.cluster_label_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.MatchingAttributes.cluster_label)
-}
-#if LANG_CXX11
-inline void MatchingAttributes::set_cluster_label(::std::string&& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.admin.MatchingAttributes.cluster_label)
-  if (!has_cluster_label()) {
-    clear_target();
-    set_has_cluster_label();
-    target_.cluster_label_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  target_.cluster_label_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.MatchingAttributes.cluster_label)
-}
-#endif
-inline void MatchingAttributes::set_cluster_label(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  if (!has_cluster_label()) {
-    clear_target();
-    set_has_cluster_label();
-    target_.cluster_label_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  target_.cluster_label_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.MatchingAttributes.cluster_label)
-}
-inline void MatchingAttributes::set_cluster_label(const char* value, size_t size) {
-  if (!has_cluster_label()) {
-    clear_target();
-    set_has_cluster_label();
-    target_.cluster_label_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  target_.cluster_label_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
-      reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.MatchingAttributes.cluster_label)
-}
-inline ::std::string* MatchingAttributes::mutable_cluster_label() {
-  if (!has_cluster_label()) {
-    clear_target();
-    set_has_cluster_label();
-    target_.cluster_label_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.MatchingAttributes.cluster_label)
-  return target_.cluster_label_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* MatchingAttributes::release_cluster_label() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.MatchingAttributes.cluster_label)
-  if (has_cluster_label()) {
+inline ::flyteidl::admin::ExecutionCluster* MatchingAttributes::release_execution_cluster() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.MatchingAttributes.execution_cluster)
+  if (has_execution_cluster()) {
     clear_has_target();
-    return target_.cluster_label_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      ::flyteidl::admin::ExecutionCluster* temp = target_.execution_cluster_;
+    target_.execution_cluster_ = nullptr;
+    return temp;
   } else {
     return nullptr;
   }
 }
-inline void MatchingAttributes::set_allocated_cluster_label(::std::string* cluster_label) {
-  if (has_target()) {
+inline const ::flyteidl::admin::ExecutionCluster& MatchingAttributes::execution_cluster() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.MatchingAttributes.execution_cluster)
+  return has_execution_cluster()
+      ? *target_.execution_cluster_
+      : *reinterpret_cast< ::flyteidl::admin::ExecutionCluster*>(&::flyteidl::admin::_ExecutionCluster_default_instance_);
+}
+inline ::flyteidl::admin::ExecutionCluster* MatchingAttributes::mutable_execution_cluster() {
+  if (!has_execution_cluster()) {
     clear_target();
+    set_has_execution_cluster();
+    target_.execution_cluster_ = CreateMaybeMessage< ::flyteidl::admin::ExecutionCluster >(
+        GetArenaNoVirtual());
   }
-  if (cluster_label != nullptr) {
-    set_has_cluster_label();
-    target_.cluster_label_.UnsafeSetDefault(cluster_label);
-  }
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.MatchingAttributes.cluster_label)
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.MatchingAttributes.execution_cluster)
+  return target_.execution_cluster_;
 }
 
 inline bool MatchingAttributes::has_target() const {
@@ -1505,6 +1627,8 @@ inline MatchingAttributes::TargetCase MatchingAttributes::target_case() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

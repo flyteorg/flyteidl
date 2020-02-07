@@ -332,6 +332,73 @@ var _ interface {
 	ErrorName() string
 } = ExecutionQueueAttributesValidationError{}
 
+// Validate checks the field values on ExecutionCluster with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *ExecutionCluster) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Label
+
+	return nil
+}
+
+// ExecutionClusterValidationError is the validation error returned by
+// ExecutionCluster.Validate if the designated constraints aren't met.
+type ExecutionClusterValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ExecutionClusterValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ExecutionClusterValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ExecutionClusterValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ExecutionClusterValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ExecutionClusterValidationError) ErrorName() string { return "ExecutionClusterValidationError" }
+
+// Error satisfies the builtin error interface
+func (e ExecutionClusterValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sExecutionCluster.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ExecutionClusterValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ExecutionClusterValidationError{}
+
 // Validate checks the field values on MatchingAttributes with the rules
 // defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
@@ -378,8 +445,17 @@ func (m *MatchingAttributes) Validate() error {
 			}
 		}
 
-	case *MatchingAttributes_ClusterLabel:
-		// no validation rules for ClusterLabel
+	case *MatchingAttributes_ExecutionCluster:
+
+		if v, ok := interface{}(m.GetExecutionCluster()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return MatchingAttributesValidationError{
+					field:  "ExecutionCluster",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
 
 	}
 

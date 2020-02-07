@@ -1506,7 +1506,7 @@
           },
           {
             "name": "resource_type",
-            "description": " - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.\n - CLUSTER_LABEL: Configures the K8s cluster for the execution to be run",
+            "description": " - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.\n - EXECUTION_CLUSTER: Configures the K8s cluster for the execution to be run",
             "in": "query",
             "required": false,
             "type": "string",
@@ -1514,7 +1514,7 @@
               "TASK_RESOURCE",
               "CLUSTER_RESOURCE",
               "EXECUTION_QUEUE",
-              "CLUSTER_LABEL"
+              "EXECUTION_CLUSTER"
             ],
             "default": "TASK_RESOURCE"
           }
@@ -2196,7 +2196,7 @@
           },
           {
             "name": "resource_type",
-            "description": " - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.\n - CLUSTER_LABEL: Configures the K8s cluster for the execution to be run",
+            "description": " - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.\n - EXECUTION_CLUSTER: Configures the K8s cluster for the execution to be run",
             "in": "query",
             "required": false,
             "type": "string",
@@ -2204,7 +2204,7 @@
               "TASK_RESOURCE",
               "CLUSTER_RESOURCE",
               "EXECUTION_QUEUE",
-              "CLUSTER_LABEL"
+              "EXECUTION_CLUSTER"
             ],
             "default": "TASK_RESOURCE"
           }
@@ -2871,6 +2871,15 @@
       },
       "title": "Encapsulates the results of the Execution"
     },
+    "adminExecutionCluster": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label to determine where the execution will be run"
+        }
+      }
+    },
     "adminExecutionCreateRequest": {
       "type": "object",
       "properties": {
@@ -3245,10 +3254,10 @@
         "TASK_RESOURCE",
         "CLUSTER_RESOURCE",
         "EXECUTION_QUEUE",
-        "CLUSTER_LABEL"
+        "EXECUTION_CLUSTER"
       ],
       "default": "TASK_RESOURCE",
-      "description": "Defines a resource that can be configured by customizable Project-, ProjectDomain- or WorkflowAttributes\nbased on matching tags.\n\n - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.\n - CLUSTER_LABEL: Configures the K8s cluster for the execution to be run"
+      "description": "Defines a resource that can be configured by customizable Project-, ProjectDomain- or WorkflowAttributes\nbased on matching tags.\n\n - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.\n - EXECUTION_CLUSTER: Configures the K8s cluster for the execution to be run"
     },
     "adminMatchingAttributes": {
       "type": "object",
@@ -3262,8 +3271,8 @@
         "execution_queue_attributes": {
           "$ref": "#/definitions/adminExecutionQueueAttributes"
         },
-        "cluster_label": {
-          "type": "string"
+        "execution_cluster": {
+          "$ref": "#/definitions/adminExecutionCluster"
         }
       },
       "description": "Generic container for encapsulating all types of the above attributes messages."

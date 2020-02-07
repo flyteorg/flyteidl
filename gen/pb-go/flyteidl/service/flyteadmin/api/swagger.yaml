@@ -1286,8 +1286,8 @@ paths:
         description: " - TASK_RESOURCE: Applies to customizable task resource requests\
           \ and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes\
           \ cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task\
-          \ execution queue assignment.\n - CLUSTER_LABEL: Configures the K8s cluster\
-          \ for the execution to be run"
+          \ execution queue assignment.\n - EXECUTION_CLUSTER: Configures the K8s\
+          \ cluster for the execution to be run"
         required: false
         type: "string"
         default: "TASK_RESOURCE"
@@ -1295,7 +1295,7 @@ paths:
         - "TASK_RESOURCE"
         - "CLUSTER_RESOURCE"
         - "EXECUTION_QUEUE"
-        - "CLUSTER_LABEL"
+        - "EXECUTION_CLUSTER"
         x-exportParamName: "ResourceType"
         x-optionalDataType: "String"
       responses:
@@ -1882,8 +1882,8 @@ paths:
         description: " - TASK_RESOURCE: Applies to customizable task resource requests\
           \ and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes\
           \ cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task\
-          \ execution queue assignment.\n - CLUSTER_LABEL: Configures the K8s cluster\
-          \ for the execution to be run"
+          \ execution queue assignment.\n - EXECUTION_CLUSTER: Configures the K8s\
+          \ cluster for the execution to be run"
         required: false
         type: "string"
         default: "TASK_RESOURCE"
@@ -1891,7 +1891,7 @@ paths:
         - "TASK_RESOURCE"
         - "CLUSTER_RESOURCE"
         - "EXECUTION_QUEUE"
-        - "CLUSTER_LABEL"
+        - "EXECUTION_CLUSTER"
         x-exportParamName: "ResourceType"
         x-optionalDataType: "String"
       responses:
@@ -2673,6 +2673,14 @@ definitions:
           recipients_email:
           - "recipients_email"
           - "recipients_email"
+  adminExecutionCluster:
+    type: "object"
+    properties:
+      label:
+        type: "string"
+        title: "Label to determine where the execution will be run"
+    example:
+      label: "label"
   adminExecutionCreateRequest:
     type: "object"
     properties:
@@ -4357,13 +4365,13 @@ definitions:
       \ ProjectDomain- or WorkflowAttributes\nbased on matching tags.\n\n - TASK_RESOURCE:\
       \ Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE:\
       \ Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE:\
-      \ Configures task and dynamic task execution queue assignment.\n - CLUSTER_LABEL:\
+      \ Configures task and dynamic task execution queue assignment.\n - EXECUTION_CLUSTER:\
       \ Configures the K8s cluster for the execution to be run"
     enum:
     - "TASK_RESOURCE"
     - "CLUSTER_RESOURCE"
     - "EXECUTION_QUEUE"
-    - "CLUSTER_LABEL"
+    - "EXECUTION_CLUSTER"
     default: "TASK_RESOURCE"
   adminMatchingAttributes:
     type: "object"
@@ -4374,12 +4382,13 @@ definitions:
         $ref: "#/definitions/adminClusterResourceAttributes"
       execution_queue_attributes:
         $ref: "#/definitions/adminExecutionQueueAttributes"
-      cluster_label:
-        type: "string"
+      execution_cluster:
+        $ref: "#/definitions/adminExecutionCluster"
     description: "Generic container for encapsulating all types of the above attributes\
       \ messages."
     example:
-      cluster_label: "cluster_label"
+      execution_cluster:
+        label: "label"
       cluster_resource_attributes:
         attributes:
           key: "attributes"
@@ -4781,7 +4790,8 @@ definitions:
       domain: "domain"
       project: "project"
       matching_attributes:
-        cluster_label: "cluster_label"
+        execution_cluster:
+          label: "label"
         cluster_resource_attributes:
           attributes:
             key: "attributes"
@@ -4824,7 +4834,8 @@ definitions:
         domain: "domain"
         project: "project"
         matching_attributes:
-          cluster_label: "cluster_label"
+          execution_cluster:
+            label: "label"
           cluster_resource_attributes:
             attributes:
               key: "attributes"
@@ -8466,7 +8477,8 @@ definitions:
       domain: "domain"
       project: "project"
       matching_attributes:
-        cluster_label: "cluster_label"
+        execution_cluster:
+          label: "label"
         cluster_resource_attributes:
           attributes:
             key: "attributes"
@@ -8513,7 +8525,8 @@ definitions:
         domain: "domain"
         project: "project"
         matching_attributes:
-          cluster_label: "cluster_label"
+          execution_cluster:
+            label: "label"
           cluster_resource_attributes:
             attributes:
               key: "attributes"

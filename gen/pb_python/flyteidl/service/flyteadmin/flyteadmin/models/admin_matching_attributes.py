@@ -17,6 +17,7 @@ import re  # noqa: F401
 import six
 
 from flyteadmin.models.admin_cluster_resource_attributes import AdminClusterResourceAttributes  # noqa: F401,E501
+from flyteadmin.models.admin_execution_cluster import AdminExecutionCluster  # noqa: F401,E501
 from flyteadmin.models.admin_execution_queue_attributes import AdminExecutionQueueAttributes  # noqa: F401,E501
 from flyteadmin.models.admin_task_resource_attributes import AdminTaskResourceAttributes  # noqa: F401,E501
 
@@ -38,23 +39,23 @@ class AdminMatchingAttributes(object):
         'task_resource_attributes': 'AdminTaskResourceAttributes',
         'cluster_resource_attributes': 'AdminClusterResourceAttributes',
         'execution_queue_attributes': 'AdminExecutionQueueAttributes',
-        'cluster_label': 'str'
+        'execution_cluster': 'AdminExecutionCluster'
     }
 
     attribute_map = {
         'task_resource_attributes': 'task_resource_attributes',
         'cluster_resource_attributes': 'cluster_resource_attributes',
         'execution_queue_attributes': 'execution_queue_attributes',
-        'cluster_label': 'cluster_label'
+        'execution_cluster': 'execution_cluster'
     }
 
-    def __init__(self, task_resource_attributes=None, cluster_resource_attributes=None, execution_queue_attributes=None, cluster_label=None):  # noqa: E501
+    def __init__(self, task_resource_attributes=None, cluster_resource_attributes=None, execution_queue_attributes=None, execution_cluster=None):  # noqa: E501
         """AdminMatchingAttributes - a model defined in Swagger"""  # noqa: E501
 
         self._task_resource_attributes = None
         self._cluster_resource_attributes = None
         self._execution_queue_attributes = None
-        self._cluster_label = None
+        self._execution_cluster = None
         self.discriminator = None
 
         if task_resource_attributes is not None:
@@ -63,8 +64,8 @@ class AdminMatchingAttributes(object):
             self.cluster_resource_attributes = cluster_resource_attributes
         if execution_queue_attributes is not None:
             self.execution_queue_attributes = execution_queue_attributes
-        if cluster_label is not None:
-            self.cluster_label = cluster_label
+        if execution_cluster is not None:
+            self.execution_cluster = execution_cluster
 
     @property
     def task_resource_attributes(self):
@@ -130,25 +131,25 @@ class AdminMatchingAttributes(object):
         self._execution_queue_attributes = execution_queue_attributes
 
     @property
-    def cluster_label(self):
-        """Gets the cluster_label of this AdminMatchingAttributes.  # noqa: E501
+    def execution_cluster(self):
+        """Gets the execution_cluster of this AdminMatchingAttributes.  # noqa: E501
 
 
-        :return: The cluster_label of this AdminMatchingAttributes.  # noqa: E501
-        :rtype: str
+        :return: The execution_cluster of this AdminMatchingAttributes.  # noqa: E501
+        :rtype: AdminExecutionCluster
         """
-        return self._cluster_label
+        return self._execution_cluster
 
-    @cluster_label.setter
-    def cluster_label(self, cluster_label):
-        """Sets the cluster_label of this AdminMatchingAttributes.
+    @execution_cluster.setter
+    def execution_cluster(self, execution_cluster):
+        """Sets the execution_cluster of this AdminMatchingAttributes.
 
 
-        :param cluster_label: The cluster_label of this AdminMatchingAttributes.  # noqa: E501
-        :type: str
+        :param execution_cluster: The execution_cluster of this AdminMatchingAttributes.  # noqa: E501
+        :type: AdminExecutionCluster
         """
 
-        self._cluster_label = cluster_label
+        self._execution_cluster = execution_cluster
 
     def to_dict(self):
         """Returns the model properties as a dict"""
