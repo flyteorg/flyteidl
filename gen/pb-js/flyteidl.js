@@ -19657,14 +19657,14 @@ export const flyteidl = $root.flyteidl = (() => {
          * @property {number} TASK_RESOURCE=0 TASK_RESOURCE value
          * @property {number} CLUSTER_RESOURCE=1 CLUSTER_RESOURCE value
          * @property {number} EXECUTION_QUEUE=2 EXECUTION_QUEUE value
-         * @property {number} EXECUTION_CLUSTER=3 EXECUTION_CLUSTER value
+         * @property {number} EXECUTION_CLUSTER_LABEL=3 EXECUTION_CLUSTER_LABEL value
          */
         admin.MatchableResource = (function() {
             const valuesById = {}, values = Object.create(valuesById);
             values[valuesById[0] = "TASK_RESOURCE"] = 0;
             values[valuesById[1] = "CLUSTER_RESOURCE"] = 1;
             values[valuesById[2] = "EXECUTION_QUEUE"] = 2;
-            values[valuesById[3] = "EXECUTION_CLUSTER"] = 3;
+            values[valuesById[3] = "EXECUTION_CLUSTER_LABEL"] = 3;
             return values;
         })();
 
@@ -20200,24 +20200,24 @@ export const flyteidl = $root.flyteidl = (() => {
             return ExecutionQueueAttributes;
         })();
 
-        admin.ExecutionCluster = (function() {
+        admin.ExecutionClusterLabel = (function() {
 
             /**
-             * Properties of an ExecutionCluster.
+             * Properties of an ExecutionClusterLabel.
              * @memberof flyteidl.admin
-             * @interface IExecutionCluster
-             * @property {string|null} [label] ExecutionCluster label
+             * @interface IExecutionClusterLabel
+             * @property {string|null} [value] ExecutionClusterLabel value
              */
 
             /**
-             * Constructs a new ExecutionCluster.
+             * Constructs a new ExecutionClusterLabel.
              * @memberof flyteidl.admin
-             * @classdesc Represents an ExecutionCluster.
-             * @implements IExecutionCluster
+             * @classdesc Represents an ExecutionClusterLabel.
+             * @implements IExecutionClusterLabel
              * @constructor
-             * @param {flyteidl.admin.IExecutionCluster=} [properties] Properties to set
+             * @param {flyteidl.admin.IExecutionClusterLabel=} [properties] Properties to set
              */
-            function ExecutionCluster(properties) {
+            function ExecutionClusterLabel(properties) {
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -20225,62 +20225,62 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * ExecutionCluster label.
-             * @member {string} label
-             * @memberof flyteidl.admin.ExecutionCluster
+             * ExecutionClusterLabel value.
+             * @member {string} value
+             * @memberof flyteidl.admin.ExecutionClusterLabel
              * @instance
              */
-            ExecutionCluster.prototype.label = "";
+            ExecutionClusterLabel.prototype.value = "";
 
             /**
-             * Creates a new ExecutionCluster instance using the specified properties.
+             * Creates a new ExecutionClusterLabel instance using the specified properties.
              * @function create
-             * @memberof flyteidl.admin.ExecutionCluster
+             * @memberof flyteidl.admin.ExecutionClusterLabel
              * @static
-             * @param {flyteidl.admin.IExecutionCluster=} [properties] Properties to set
-             * @returns {flyteidl.admin.ExecutionCluster} ExecutionCluster instance
+             * @param {flyteidl.admin.IExecutionClusterLabel=} [properties] Properties to set
+             * @returns {flyteidl.admin.ExecutionClusterLabel} ExecutionClusterLabel instance
              */
-            ExecutionCluster.create = function create(properties) {
-                return new ExecutionCluster(properties);
+            ExecutionClusterLabel.create = function create(properties) {
+                return new ExecutionClusterLabel(properties);
             };
 
             /**
-             * Encodes the specified ExecutionCluster message. Does not implicitly {@link flyteidl.admin.ExecutionCluster.verify|verify} messages.
+             * Encodes the specified ExecutionClusterLabel message. Does not implicitly {@link flyteidl.admin.ExecutionClusterLabel.verify|verify} messages.
              * @function encode
-             * @memberof flyteidl.admin.ExecutionCluster
+             * @memberof flyteidl.admin.ExecutionClusterLabel
              * @static
-             * @param {flyteidl.admin.IExecutionCluster} message ExecutionCluster message or plain object to encode
+             * @param {flyteidl.admin.IExecutionClusterLabel} message ExecutionClusterLabel message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ExecutionCluster.encode = function encode(message, writer) {
+            ExecutionClusterLabel.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.label != null && message.hasOwnProperty("label"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.label);
+                if (message.value != null && message.hasOwnProperty("value"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.value);
                 return writer;
             };
 
             /**
-             * Decodes an ExecutionCluster message from the specified reader or buffer.
+             * Decodes an ExecutionClusterLabel message from the specified reader or buffer.
              * @function decode
-             * @memberof flyteidl.admin.ExecutionCluster
+             * @memberof flyteidl.admin.ExecutionClusterLabel
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.ExecutionCluster} ExecutionCluster
+             * @returns {flyteidl.admin.ExecutionClusterLabel} ExecutionClusterLabel
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ExecutionCluster.decode = function decode(reader, length) {
+            ExecutionClusterLabel.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ExecutionCluster();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ExecutionClusterLabel();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.label = reader.string();
+                        message.value = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -20291,23 +20291,23 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Verifies an ExecutionCluster message.
+             * Verifies an ExecutionClusterLabel message.
              * @function verify
-             * @memberof flyteidl.admin.ExecutionCluster
+             * @memberof flyteidl.admin.ExecutionClusterLabel
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            ExecutionCluster.verify = function verify(message) {
+            ExecutionClusterLabel.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.label != null && message.hasOwnProperty("label"))
-                    if (!$util.isString(message.label))
-                        return "label: string expected";
+                if (message.value != null && message.hasOwnProperty("value"))
+                    if (!$util.isString(message.value))
+                        return "value: string expected";
                 return null;
             };
 
-            return ExecutionCluster;
+            return ExecutionClusterLabel;
         })();
 
         admin.MatchingAttributes = (function() {
@@ -20319,7 +20319,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.ITaskResourceAttributes|null} [taskResourceAttributes] MatchingAttributes taskResourceAttributes
              * @property {flyteidl.admin.IClusterResourceAttributes|null} [clusterResourceAttributes] MatchingAttributes clusterResourceAttributes
              * @property {flyteidl.admin.IExecutionQueueAttributes|null} [executionQueueAttributes] MatchingAttributes executionQueueAttributes
-             * @property {flyteidl.admin.IExecutionCluster|null} [executionCluster] MatchingAttributes executionCluster
+             * @property {flyteidl.admin.IExecutionClusterLabel|null} [executionClusterLabel] MatchingAttributes executionClusterLabel
              */
 
             /**
@@ -20362,24 +20362,24 @@ export const flyteidl = $root.flyteidl = (() => {
             MatchingAttributes.prototype.executionQueueAttributes = null;
 
             /**
-             * MatchingAttributes executionCluster.
-             * @member {flyteidl.admin.IExecutionCluster|null|undefined} executionCluster
+             * MatchingAttributes executionClusterLabel.
+             * @member {flyteidl.admin.IExecutionClusterLabel|null|undefined} executionClusterLabel
              * @memberof flyteidl.admin.MatchingAttributes
              * @instance
              */
-            MatchingAttributes.prototype.executionCluster = null;
+            MatchingAttributes.prototype.executionClusterLabel = null;
 
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
             /**
              * MatchingAttributes target.
-             * @member {"taskResourceAttributes"|"clusterResourceAttributes"|"executionQueueAttributes"|"executionCluster"|undefined} target
+             * @member {"taskResourceAttributes"|"clusterResourceAttributes"|"executionQueueAttributes"|"executionClusterLabel"|undefined} target
              * @memberof flyteidl.admin.MatchingAttributes
              * @instance
              */
             Object.defineProperty(MatchingAttributes.prototype, "target", {
-                get: $util.oneOfGetter($oneOfFields = ["taskResourceAttributes", "clusterResourceAttributes", "executionQueueAttributes", "executionCluster"]),
+                get: $util.oneOfGetter($oneOfFields = ["taskResourceAttributes", "clusterResourceAttributes", "executionQueueAttributes", "executionClusterLabel"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -20413,8 +20413,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.ClusterResourceAttributes.encode(message.clusterResourceAttributes, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.executionQueueAttributes != null && message.hasOwnProperty("executionQueueAttributes"))
                     $root.flyteidl.admin.ExecutionQueueAttributes.encode(message.executionQueueAttributes, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.executionCluster != null && message.hasOwnProperty("executionCluster"))
-                    $root.flyteidl.admin.ExecutionCluster.encode(message.executionCluster, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.executionClusterLabel != null && message.hasOwnProperty("executionClusterLabel"))
+                    $root.flyteidl.admin.ExecutionClusterLabel.encode(message.executionClusterLabel, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -20446,7 +20446,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.executionQueueAttributes = $root.flyteidl.admin.ExecutionQueueAttributes.decode(reader, reader.uint32());
                         break;
                     case 4:
-                        message.executionCluster = $root.flyteidl.admin.ExecutionCluster.decode(reader, reader.uint32());
+                        message.executionClusterLabel = $root.flyteidl.admin.ExecutionClusterLabel.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -20496,14 +20496,14 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "executionQueueAttributes." + error;
                     }
                 }
-                if (message.executionCluster != null && message.hasOwnProperty("executionCluster")) {
+                if (message.executionClusterLabel != null && message.hasOwnProperty("executionClusterLabel")) {
                     if (properties.target === 1)
                         return "target: multiple values";
                     properties.target = 1;
                     {
-                        let error = $root.flyteidl.admin.ExecutionCluster.verify(message.executionCluster);
+                        let error = $root.flyteidl.admin.ExecutionClusterLabel.verify(message.executionClusterLabel);
                         if (error)
-                            return "executionCluster." + error;
+                            return "executionClusterLabel." + error;
                     }
                 }
                 return null;

@@ -115,24 +115,24 @@ tags
   
 
 
-.. _api_msg_flyteidl.admin.ExecutionCluster:
+.. _api_msg_flyteidl.admin.ExecutionClusterLabel:
 
-flyteidl.admin.ExecutionCluster
--------------------------------
+flyteidl.admin.ExecutionClusterLabel
+------------------------------------
 
-`[flyteidl.admin.ExecutionCluster proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L49>`_
+`[flyteidl.admin.ExecutionClusterLabel proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L49>`_
 
 
 .. code-block:: json
 
   {
-    "label": "..."
+    "value": "..."
   }
 
-.. _api_field_flyteidl.admin.ExecutionCluster.label:
+.. _api_field_flyteidl.admin.ExecutionClusterLabel.value:
 
-label
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Label to determine where the execution will be run
+value
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Label value to determine where the execution will be run
   
   
 
@@ -152,7 +152,7 @@ Generic container for encapsulating all types of the above attributes messages.
     "task_resource_attributes": "{...}",
     "cluster_resource_attributes": "{...}",
     "execution_queue_attributes": "{...}",
-    "execution_cluster": "{...}"
+    "execution_cluster_label": "{...}"
   }
 
 .. _api_field_flyteidl.admin.MatchingAttributes.task_resource_attributes:
@@ -161,7 +161,7 @@ task_resource_attributes
   (:ref:`flyteidl.admin.TaskResourceAttributes <api_msg_flyteidl.admin.TaskResourceAttributes>`) 
   
   
-  Only one of :ref:`task_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.task_resource_attributes>`, :ref:`cluster_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.cluster_resource_attributes>`, :ref:`execution_queue_attributes <api_field_flyteidl.admin.MatchingAttributes.execution_queue_attributes>`, :ref:`execution_cluster <api_field_flyteidl.admin.MatchingAttributes.execution_cluster>` may be set.
+  Only one of :ref:`task_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.task_resource_attributes>`, :ref:`cluster_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.cluster_resource_attributes>`, :ref:`execution_queue_attributes <api_field_flyteidl.admin.MatchingAttributes.execution_queue_attributes>`, :ref:`execution_cluster_label <api_field_flyteidl.admin.MatchingAttributes.execution_cluster_label>` may be set.
   
 .. _api_field_flyteidl.admin.MatchingAttributes.cluster_resource_attributes:
 
@@ -169,7 +169,7 @@ cluster_resource_attributes
   (:ref:`flyteidl.admin.ClusterResourceAttributes <api_msg_flyteidl.admin.ClusterResourceAttributes>`) 
   
   
-  Only one of :ref:`task_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.task_resource_attributes>`, :ref:`cluster_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.cluster_resource_attributes>`, :ref:`execution_queue_attributes <api_field_flyteidl.admin.MatchingAttributes.execution_queue_attributes>`, :ref:`execution_cluster <api_field_flyteidl.admin.MatchingAttributes.execution_cluster>` may be set.
+  Only one of :ref:`task_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.task_resource_attributes>`, :ref:`cluster_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.cluster_resource_attributes>`, :ref:`execution_queue_attributes <api_field_flyteidl.admin.MatchingAttributes.execution_queue_attributes>`, :ref:`execution_cluster_label <api_field_flyteidl.admin.MatchingAttributes.execution_cluster_label>` may be set.
   
 .. _api_field_flyteidl.admin.MatchingAttributes.execution_queue_attributes:
 
@@ -177,15 +177,15 @@ execution_queue_attributes
   (:ref:`flyteidl.admin.ExecutionQueueAttributes <api_msg_flyteidl.admin.ExecutionQueueAttributes>`) 
   
   
-  Only one of :ref:`task_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.task_resource_attributes>`, :ref:`cluster_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.cluster_resource_attributes>`, :ref:`execution_queue_attributes <api_field_flyteidl.admin.MatchingAttributes.execution_queue_attributes>`, :ref:`execution_cluster <api_field_flyteidl.admin.MatchingAttributes.execution_cluster>` may be set.
+  Only one of :ref:`task_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.task_resource_attributes>`, :ref:`cluster_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.cluster_resource_attributes>`, :ref:`execution_queue_attributes <api_field_flyteidl.admin.MatchingAttributes.execution_queue_attributes>`, :ref:`execution_cluster_label <api_field_flyteidl.admin.MatchingAttributes.execution_cluster_label>` may be set.
   
-.. _api_field_flyteidl.admin.MatchingAttributes.execution_cluster:
+.. _api_field_flyteidl.admin.MatchingAttributes.execution_cluster_label:
 
-execution_cluster
-  (:ref:`flyteidl.admin.ExecutionCluster <api_msg_flyteidl.admin.ExecutionCluster>`) 
+execution_cluster_label
+  (:ref:`flyteidl.admin.ExecutionClusterLabel <api_msg_flyteidl.admin.ExecutionClusterLabel>`) 
   
   
-  Only one of :ref:`task_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.task_resource_attributes>`, :ref:`cluster_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.cluster_resource_attributes>`, :ref:`execution_queue_attributes <api_field_flyteidl.admin.MatchingAttributes.execution_queue_attributes>`, :ref:`execution_cluster <api_field_flyteidl.admin.MatchingAttributes.execution_cluster>` may be set.
+  Only one of :ref:`task_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.task_resource_attributes>`, :ref:`cluster_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.cluster_resource_attributes>`, :ref:`execution_queue_attributes <api_field_flyteidl.admin.MatchingAttributes.execution_queue_attributes>`, :ref:`execution_cluster_label <api_field_flyteidl.admin.MatchingAttributes.execution_cluster_label>` may be set.
   
 
 .. _api_enum_flyteidl.admin.MatchableResource:
@@ -216,9 +216,9 @@ EXECUTION_QUEUE
   ⁣Configures task and dynamic task execution queue assignment.
   
   
-.. _api_enum_value_flyteidl.admin.MatchableResource.EXECUTION_CLUSTER:
+.. _api_enum_value_flyteidl.admin.MatchableResource.EXECUTION_CLUSTER_LABEL:
 
-EXECUTION_CLUSTER
-  ⁣Configures the K8s cluster for the execution to be run
+EXECUTION_CLUSTER_LABEL
+  ⁣Configures the K8s cluster label to be used for execution to be run
   
   

@@ -8225,7 +8225,7 @@ export namespace flyteidl {
             TASK_RESOURCE = 0,
             CLUSTER_RESOURCE = 1,
             EXECUTION_QUEUE = 2,
-            EXECUTION_CLUSTER = 3
+            EXECUTION_CLUSTER_LABEL = 3
         }
 
         /** Properties of a TaskResourceSpec. */
@@ -8460,52 +8460,52 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of an ExecutionCluster. */
-        interface IExecutionCluster {
+        /** Properties of an ExecutionClusterLabel. */
+        interface IExecutionClusterLabel {
 
-            /** ExecutionCluster label */
-            label?: (string|null);
+            /** ExecutionClusterLabel value */
+            value?: (string|null);
         }
 
-        /** Represents an ExecutionCluster. */
-        class ExecutionCluster implements IExecutionCluster {
+        /** Represents an ExecutionClusterLabel. */
+        class ExecutionClusterLabel implements IExecutionClusterLabel {
 
             /**
-             * Constructs a new ExecutionCluster.
+             * Constructs a new ExecutionClusterLabel.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.admin.IExecutionCluster);
+            constructor(properties?: flyteidl.admin.IExecutionClusterLabel);
 
-            /** ExecutionCluster label. */
-            public label: string;
+            /** ExecutionClusterLabel value. */
+            public value: string;
 
             /**
-             * Creates a new ExecutionCluster instance using the specified properties.
+             * Creates a new ExecutionClusterLabel instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns ExecutionCluster instance
+             * @returns ExecutionClusterLabel instance
              */
-            public static create(properties?: flyteidl.admin.IExecutionCluster): flyteidl.admin.ExecutionCluster;
+            public static create(properties?: flyteidl.admin.IExecutionClusterLabel): flyteidl.admin.ExecutionClusterLabel;
 
             /**
-             * Encodes the specified ExecutionCluster message. Does not implicitly {@link flyteidl.admin.ExecutionCluster.verify|verify} messages.
-             * @param message ExecutionCluster message or plain object to encode
+             * Encodes the specified ExecutionClusterLabel message. Does not implicitly {@link flyteidl.admin.ExecutionClusterLabel.verify|verify} messages.
+             * @param message ExecutionClusterLabel message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.admin.IExecutionCluster, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.admin.IExecutionClusterLabel, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an ExecutionCluster message from the specified reader or buffer.
+             * Decodes an ExecutionClusterLabel message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns ExecutionCluster
+             * @returns ExecutionClusterLabel
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionCluster;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ExecutionClusterLabel;
 
             /**
-             * Verifies an ExecutionCluster message.
+             * Verifies an ExecutionClusterLabel message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -8524,8 +8524,8 @@ export namespace flyteidl {
             /** MatchingAttributes executionQueueAttributes */
             executionQueueAttributes?: (flyteidl.admin.IExecutionQueueAttributes|null);
 
-            /** MatchingAttributes executionCluster */
-            executionCluster?: (flyteidl.admin.IExecutionCluster|null);
+            /** MatchingAttributes executionClusterLabel */
+            executionClusterLabel?: (flyteidl.admin.IExecutionClusterLabel|null);
         }
 
         /** Represents a MatchingAttributes. */
@@ -8546,11 +8546,11 @@ export namespace flyteidl {
             /** MatchingAttributes executionQueueAttributes. */
             public executionQueueAttributes?: (flyteidl.admin.IExecutionQueueAttributes|null);
 
-            /** MatchingAttributes executionCluster. */
-            public executionCluster?: (flyteidl.admin.IExecutionCluster|null);
+            /** MatchingAttributes executionClusterLabel. */
+            public executionClusterLabel?: (flyteidl.admin.IExecutionClusterLabel|null);
 
             /** MatchingAttributes target. */
-            public target?: ("taskResourceAttributes"|"clusterResourceAttributes"|"executionQueueAttributes"|"executionCluster");
+            public target?: ("taskResourceAttributes"|"clusterResourceAttributes"|"executionQueueAttributes"|"executionClusterLabel");
 
             /**
              * Creates a new MatchingAttributes instance using the specified properties.
