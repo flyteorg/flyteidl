@@ -3266,17 +3266,16 @@ class AdminServiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_matchable_resources(self, domain, **kwargs):  # noqa: E501
+    def list_matchable_resources(self, **kwargs):  # noqa: E501
         """list_matchable_resources  # noqa: E501
 
         Retrieve a list of MatchableResourceConfiguration objects.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_matchable_resources(domain, async_req=True)
+        >>> thread = api.list_matchable_resources(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str domain: (required)
         :param str resource_type:  - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run
         :return: AdminListMatchableResourcesResponse
                  If the method is called asynchronously,
@@ -3284,29 +3283,28 @@ class AdminServiceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_matchable_resources_with_http_info(domain, **kwargs)  # noqa: E501
+            return self.list_matchable_resources_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.list_matchable_resources_with_http_info(domain, **kwargs)  # noqa: E501
+            (data) = self.list_matchable_resources_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def list_matchable_resources_with_http_info(self, domain, **kwargs):  # noqa: E501
+    def list_matchable_resources_with_http_info(self, **kwargs):  # noqa: E501
         """list_matchable_resources  # noqa: E501
 
         Retrieve a list of MatchableResourceConfiguration objects.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_matchable_resources_with_http_info(domain, async_req=True)
+        >>> thread = api.list_matchable_resources_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str domain: (required)
         :param str resource_type:  - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run
         :return: AdminListMatchableResourcesResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['domain', 'resource_type']  # noqa: E501
+        all_params = ['resource_type']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3321,16 +3319,10 @@ class AdminServiceApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'domain' is set
-        if ('domain' not in params or
-                params['domain'] is None):
-            raise ValueError("Missing the required parameter `domain` when calling `list_matchable_resources`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'domain' in params:
-            path_params['domain'] = params['domain']  # noqa: E501
 
         query_params = []
         if 'resource_type' in params:
@@ -3354,7 +3346,7 @@ class AdminServiceApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v1/matchable_resources/{domain}', 'GET',
+            '/api/v1/matchable_resources', 'GET',
             path_params,
             query_params,
             header_params,

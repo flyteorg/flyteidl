@@ -956,18 +956,13 @@ paths:
           description: "A successful response."
           schema:
             $ref: "#/definitions/adminLaunchPlanUpdateResponse"
-  /api/v1/matchable_resources/{domain}:
+  /api/v1/matchable_resources:
     get:
       tags:
       - "AdminService"
       description: "Retrieve a list of MatchableResourceConfiguration objects."
       operationId: "ListMatchableResources"
       parameters:
-      - name: "domain"
-        in: "path"
-        required: true
-        type: "string"
-        x-exportParamName: "Domain"
       - name: "resource_type"
         in: "query"
         description: " - TASK_RESOURCE: Applies to customizable task resource requests\
@@ -4385,6 +4380,7 @@ definitions:
         type: "array"
         items:
           $ref: "#/definitions/adminMatchableResourceConfiguration"
+    description: "Response for a request for all matching resource attributes."
     example:
       configurations:
       - workflow: "workflow"
@@ -4475,6 +4471,8 @@ definitions:
         type: "string"
       workflow:
         type: "string"
+    description: "Represents a custom set of attributes applied for either a domain;\
+      \ a domain and project; or\ndomain, project and workflow name."
     example:
       workflow: "workflow"
       domain: "domain"

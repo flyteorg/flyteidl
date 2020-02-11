@@ -65,6 +65,8 @@ message MatchingAttributes {
   }
 }
 
+// Represents a custom set of attributes applied for either a domain; a domain and project; or
+// domain, project and workflow name.
 message MatchableResourceConfiguration {
     MatchingAttributes attributes = 1;
 
@@ -75,12 +77,12 @@ message MatchableResourceConfiguration {
     string workflow = 4;
 }
 
+// Request all matching resource attributes.
 message ListMatchableResourcesRequest {
-    string domain = 1;
-
-    MatchableResource resource_type = 2;
+    MatchableResource resource_type = 1;
 }
 
+// Response for a request for all matching resource attributes.
 message ListMatchableResourcesResponse {
     repeated MatchableResourceConfiguration configurations = 1;
 }

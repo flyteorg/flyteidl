@@ -5404,6 +5404,11 @@ public final class MatchableResourceOuterClass {
         getWorkflowBytes();
   }
   /**
+   * <pre>
+   * Represents a custom set of attributes applied for either a domain; a domain and project; or
+   * domain, project and workflow name.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.MatchableResourceConfiguration}
    */
   public  static final class MatchableResourceConfiguration extends
@@ -5822,6 +5827,11 @@ public final class MatchableResourceOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Represents a custom set of attributes applied for either a domain; a domain and project; or
+     * domain, project and workflow name.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.MatchableResourceConfiguration}
      */
     public static final class Builder extends
@@ -6378,25 +6388,19 @@ public final class MatchableResourceOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string domain = 1;</code>
-     */
-    java.lang.String getDomain();
-    /**
-     * <code>string domain = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getDomainBytes();
-
-    /**
-     * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+     * <code>.flyteidl.admin.MatchableResource resource_type = 1;</code>
      */
     int getResourceTypeValue();
     /**
-     * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+     * <code>.flyteidl.admin.MatchableResource resource_type = 1;</code>
      */
     flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType();
   }
   /**
+   * <pre>
+   * Request all matching resource attributes.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.ListMatchableResourcesRequest}
    */
   public  static final class ListMatchableResourcesRequest extends
@@ -6409,7 +6413,6 @@ public final class MatchableResourceOuterClass {
       super(builder);
     }
     private ListMatchableResourcesRequest() {
-      domain_ = "";
       resourceType_ = 0;
     }
 
@@ -6437,13 +6440,7 @@ public final class MatchableResourceOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              domain_ = s;
-              break;
-            }
-            case 16: {
+            case 8: {
               int rawValue = input.readEnum();
 
               resourceType_ = rawValue;
@@ -6481,50 +6478,16 @@ public final class MatchableResourceOuterClass {
               flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest.class, flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest.Builder.class);
     }
 
-    public static final int DOMAIN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object domain_;
-    /**
-     * <code>string domain = 1;</code>
-     */
-    public java.lang.String getDomain() {
-      java.lang.Object ref = domain_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        domain_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string domain = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDomainBytes() {
-      java.lang.Object ref = domain_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        domain_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int RESOURCE_TYPE_FIELD_NUMBER = 2;
+    public static final int RESOURCE_TYPE_FIELD_NUMBER = 1;
     private int resourceType_;
     /**
-     * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+     * <code>.flyteidl.admin.MatchableResource resource_type = 1;</code>
      */
     public int getResourceTypeValue() {
       return resourceType_;
     }
     /**
-     * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+     * <code>.flyteidl.admin.MatchableResource resource_type = 1;</code>
      */
     public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
       @SuppressWarnings("deprecation")
@@ -6546,11 +6509,8 @@ public final class MatchableResourceOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getDomainBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, domain_);
-      }
       if (resourceType_ != flyteidl.admin.MatchableResourceOuterClass.MatchableResource.TASK_RESOURCE.getNumber()) {
-        output.writeEnum(2, resourceType_);
+        output.writeEnum(1, resourceType_);
       }
       unknownFields.writeTo(output);
     }
@@ -6561,12 +6521,9 @@ public final class MatchableResourceOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getDomainBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, domain_);
-      }
       if (resourceType_ != flyteidl.admin.MatchableResourceOuterClass.MatchableResource.TASK_RESOURCE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, resourceType_);
+          .computeEnumSize(1, resourceType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6583,8 +6540,6 @@ public final class MatchableResourceOuterClass {
       }
       flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest other = (flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest) obj;
 
-      if (!getDomain()
-          .equals(other.getDomain())) return false;
       if (resourceType_ != other.resourceType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -6597,8 +6552,6 @@ public final class MatchableResourceOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
-      hash = (53 * hash) + getDomain().hashCode();
       hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + resourceType_;
       hash = (29 * hash) + unknownFields.hashCode();
@@ -6697,6 +6650,10 @@ public final class MatchableResourceOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Request all matching resource attributes.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.ListMatchableResourcesRequest}
      */
     public static final class Builder extends
@@ -6734,8 +6691,6 @@ public final class MatchableResourceOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        domain_ = "";
-
         resourceType_ = 0;
 
         return this;
@@ -6764,7 +6719,6 @@ public final class MatchableResourceOuterClass {
       @java.lang.Override
       public flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest buildPartial() {
         flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest result = new flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest(this);
-        result.domain_ = domain_;
         result.resourceType_ = resourceType_;
         onBuilt();
         return result;
@@ -6814,10 +6768,6 @@ public final class MatchableResourceOuterClass {
 
       public Builder mergeFrom(flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest other) {
         if (other == flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest.getDefaultInstance()) return this;
-        if (!other.getDomain().isEmpty()) {
-          domain_ = other.domain_;
-          onChanged();
-        }
         if (other.resourceType_ != 0) {
           setResourceTypeValue(other.getResourceTypeValue());
         }
@@ -6850,84 +6800,15 @@ public final class MatchableResourceOuterClass {
         return this;
       }
 
-      private java.lang.Object domain_ = "";
-      /**
-       * <code>string domain = 1;</code>
-       */
-      public java.lang.String getDomain() {
-        java.lang.Object ref = domain_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          domain_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string domain = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDomainBytes() {
-        java.lang.Object ref = domain_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          domain_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string domain = 1;</code>
-       */
-      public Builder setDomain(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        domain_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string domain = 1;</code>
-       */
-      public Builder clearDomain() {
-        
-        domain_ = getDefaultInstance().getDomain();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string domain = 1;</code>
-       */
-      public Builder setDomainBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        domain_ = value;
-        onChanged();
-        return this;
-      }
-
       private int resourceType_ = 0;
       /**
-       * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+       * <code>.flyteidl.admin.MatchableResource resource_type = 1;</code>
        */
       public int getResourceTypeValue() {
         return resourceType_;
       }
       /**
-       * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+       * <code>.flyteidl.admin.MatchableResource resource_type = 1;</code>
        */
       public Builder setResourceTypeValue(int value) {
         resourceType_ = value;
@@ -6935,7 +6816,7 @@ public final class MatchableResourceOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+       * <code>.flyteidl.admin.MatchableResource resource_type = 1;</code>
        */
       public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getResourceType() {
         @SuppressWarnings("deprecation")
@@ -6943,7 +6824,7 @@ public final class MatchableResourceOuterClass {
         return result == null ? flyteidl.admin.MatchableResourceOuterClass.MatchableResource.UNRECOGNIZED : result;
       }
       /**
-       * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+       * <code>.flyteidl.admin.MatchableResource resource_type = 1;</code>
        */
       public Builder setResourceType(flyteidl.admin.MatchableResourceOuterClass.MatchableResource value) {
         if (value == null) {
@@ -6955,7 +6836,7 @@ public final class MatchableResourceOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchableResource resource_type = 2;</code>
+       * <code>.flyteidl.admin.MatchableResource resource_type = 1;</code>
        */
       public Builder clearResourceType() {
         
@@ -7045,6 +6926,10 @@ public final class MatchableResourceOuterClass {
         int index);
   }
   /**
+   * <pre>
+   * Response for a request for all matching resource attributes.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.ListMatchableResourcesResponse}
    */
   public  static final class ListMatchableResourcesResponse extends
@@ -7321,6 +7206,10 @@ public final class MatchableResourceOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Response for a request for all matching resource attributes.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.ListMatchableResourcesResponse}
      */
     public static final class Builder extends
@@ -7880,17 +7769,17 @@ public final class MatchableResourceOuterClass {
       "\000B\010\n\006target\"\213\001\n\036MatchableResourceConfigu" +
       "ration\0226\n\nattributes\030\001 \001(\0132\".flyteidl.ad" +
       "min.MatchingAttributes\022\016\n\006domain\030\002 \001(\t\022\017" +
-      "\n\007project\030\003 \001(\t\022\020\n\010workflow\030\004 \001(\t\"i\n\035Lis" +
-      "tMatchableResourcesRequest\022\016\n\006domain\030\001 \001" +
-      "(\t\0228\n\rresource_type\030\002 \001(\0162!.flyteidl.adm" +
-      "in.MatchableResource\"h\n\036ListMatchableRes" +
-      "ourcesResponse\022F\n\016configurations\030\001 \003(\0132." +
-      ".flyteidl.admin.MatchableResourceConfigu" +
-      "ration*n\n\021MatchableResource\022\021\n\rTASK_RESO" +
-      "URCE\020\000\022\024\n\020CLUSTER_RESOURCE\020\001\022\023\n\017EXECUTIO" +
-      "N_QUEUE\020\002\022\033\n\027EXECUTION_CLUSTER_LABEL\020\003B3" +
-      "Z1github.com/lyft/flyteidl/gen/pb-go/fly" +
-      "teidl/adminb\006proto3"
+      "\n\007project\030\003 \001(\t\022\020\n\010workflow\030\004 \001(\t\"Y\n\035Lis" +
+      "tMatchableResourcesRequest\0228\n\rresource_t" +
+      "ype\030\001 \001(\0162!.flyteidl.admin.MatchableReso" +
+      "urce\"h\n\036ListMatchableResourcesResponse\022F" +
+      "\n\016configurations\030\001 \003(\0132..flyteidl.admin." +
+      "MatchableResourceConfiguration*n\n\021Matcha" +
+      "bleResource\022\021\n\rTASK_RESOURCE\020\000\022\024\n\020CLUSTE" +
+      "R_RESOURCE\020\001\022\023\n\017EXECUTION_QUEUE\020\002\022\033\n\027EXE" +
+      "CUTION_CLUSTER_LABEL\020\003B3Z1github.com/lyf" +
+      "t/flyteidl/gen/pb-go/flyteidl/adminb\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7957,7 +7846,7 @@ public final class MatchableResourceOuterClass {
     internal_static_flyteidl_admin_ListMatchableResourcesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ListMatchableResourcesRequest_descriptor,
-        new java.lang.String[] { "Domain", "ResourceType", });
+        new java.lang.String[] { "ResourceType", });
     internal_static_flyteidl_admin_ListMatchableResourcesResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_admin_ListMatchableResourcesResponse_fieldAccessorTable = new

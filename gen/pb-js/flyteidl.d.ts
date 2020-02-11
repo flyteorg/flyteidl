@@ -8658,9 +8658,6 @@ export namespace flyteidl {
         /** Properties of a ListMatchableResourcesRequest. */
         interface IListMatchableResourcesRequest {
 
-            /** ListMatchableResourcesRequest domain */
-            domain?: (string|null);
-
             /** ListMatchableResourcesRequest resourceType */
             resourceType?: (flyteidl.admin.MatchableResource|null);
         }
@@ -8673,9 +8670,6 @@ export namespace flyteidl {
              * @param [properties] Properties to set
              */
             constructor(properties?: flyteidl.admin.IListMatchableResourcesRequest);
-
-            /** ListMatchableResourcesRequest domain. */
-            public domain: string;
 
             /** ListMatchableResourcesRequest resourceType. */
             public resourceType: flyteidl.admin.MatchableResource;

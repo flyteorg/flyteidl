@@ -194,8 +194,10 @@ execution_cluster_label
 flyteidl.admin.MatchableResourceConfiguration
 ---------------------------------------------
 
-`[flyteidl.admin.MatchableResourceConfiguration proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L67>`_
+`[flyteidl.admin.MatchableResourceConfiguration proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L69>`_
 
+Represents a custom set of attributes applied for either a domain; a domain and project; or
+domain, project and workflow name.
 
 .. code-block:: json
 
@@ -233,21 +235,16 @@ workflow
 flyteidl.admin.ListMatchableResourcesRequest
 --------------------------------------------
 
-`[flyteidl.admin.ListMatchableResourcesRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L77>`_
+`[flyteidl.admin.ListMatchableResourcesRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L80>`_
 
+Request all matching resource attributes.
 
 .. code-block:: json
 
   {
-    "domain": "...",
     "resource_type": "..."
   }
 
-.. _api_field_flyteidl.admin.ListMatchableResourcesRequest.domain:
-
-domain
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
-  
 .. _api_field_flyteidl.admin.ListMatchableResourcesRequest.resource_type:
 
 resource_type
@@ -260,8 +257,9 @@ resource_type
 flyteidl.admin.ListMatchableResourcesResponse
 ---------------------------------------------
 
-`[flyteidl.admin.ListMatchableResourcesResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L83>`_
+`[flyteidl.admin.ListMatchableResourcesResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L85>`_
 
+Response for a request for all matching resource attributes.
 
 .. code-block:: json
 

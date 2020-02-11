@@ -2836,7 +2836,6 @@ func (a *AdminServiceApiService) ListLaunchPlans2(ctx context.Context, idProject
 AdminServiceApiService
 Retrieve a list of MatchableResourceConfiguration objects.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param domain
  * @param optional nil or *ListMatchableResourcesOpts - Optional Parameters:
      * @param "ResourceType" (optional.String) -   - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run
 
@@ -2847,7 +2846,7 @@ type ListMatchableResourcesOpts struct {
 	ResourceType optional.String
 }
 
-func (a *AdminServiceApiService) ListMatchableResources(ctx context.Context, domain string, localVarOptionals *ListMatchableResourcesOpts) (AdminListMatchableResourcesResponse, *http.Response, error) {
+func (a *AdminServiceApiService) ListMatchableResources(ctx context.Context, localVarOptionals *ListMatchableResourcesOpts) (AdminListMatchableResourcesResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -2857,8 +2856,7 @@ func (a *AdminServiceApiService) ListMatchableResources(ctx context.Context, dom
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/api/v1/matchable_resources/{domain}"
-	localVarPath = strings.Replace(localVarPath, "{"+"domain"+"}", fmt.Sprintf("%v", domain), -1)
+	localVarPath := a.client.cfg.BasePath + "/api/v1/matchable_resources"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

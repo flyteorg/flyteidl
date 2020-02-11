@@ -612,8 +612,6 @@ func (m *ListMatchableResourcesRequest) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Domain
-
 	// no validation rules for ResourceType
 
 	return nil

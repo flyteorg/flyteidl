@@ -1119,7 +1119,7 @@
         ]
       }
     },
-    "/api/v1/matchable_resources/{domain}": {
+    "/api/v1/matchable_resources": {
       "get": {
         "description": "Retrieve a list of MatchableResourceConfiguration objects.",
         "operationId": "ListMatchableResources",
@@ -1132,12 +1132,6 @@
           }
         },
         "parameters": [
-          {
-            "name": "domain",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "resource_type",
             "description": " - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.\n - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run",
@@ -3282,7 +3276,8 @@
             "$ref": "#/definitions/adminMatchableResourceConfiguration"
           }
         }
-      }
+      },
+      "description": "Response for a request for all matching resource attributes."
     },
     "adminLiteralMapBlob": {
       "type": "object",
@@ -3324,7 +3319,8 @@
         "workflow": {
           "type": "string"
         }
-      }
+      },
+      "description": "Represents a custom set of attributes applied for either a domain; a domain and project; or\ndomain, project and workflow name."
     },
     "adminMatchingAttributes": {
       "type": "object",

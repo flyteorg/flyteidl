@@ -9,6 +9,7 @@
 
 package flyteadmin
 
+// Response for a request for all matching resource attributes.
 type AdminListMatchableResourcesResponse struct {
 	Configurations []AdminMatchableResourceConfiguration `json:"configurations,omitempty"`
 }

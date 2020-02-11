@@ -1233,23 +1233,9 @@ class ListMatchableResourcesRequest final :
 
   // accessors -------------------------------------------------------
 
-  // string domain = 1;
-  void clear_domain();
-  static const int kDomainFieldNumber = 1;
-  const ::std::string& domain() const;
-  void set_domain(const ::std::string& value);
-  #if LANG_CXX11
-  void set_domain(::std::string&& value);
-  #endif
-  void set_domain(const char* value);
-  void set_domain(const char* value, size_t size);
-  ::std::string* mutable_domain();
-  ::std::string* release_domain();
-  void set_allocated_domain(::std::string* domain);
-
-  // .flyteidl.admin.MatchableResource resource_type = 2;
+  // .flyteidl.admin.MatchableResource resource_type = 1;
   void clear_resource_type();
-  static const int kResourceTypeFieldNumber = 2;
+  static const int kResourceTypeFieldNumber = 1;
   ::flyteidl::admin::MatchableResource resource_type() const;
   void set_resource_type(::flyteidl::admin::MatchableResource value);
 
@@ -1258,7 +1244,6 @@ class ListMatchableResourcesRequest final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr domain_;
   int resource_type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
@@ -2259,60 +2244,7 @@ inline void MatchableResourceConfiguration::set_allocated_workflow(::std::string
 
 // ListMatchableResourcesRequest
 
-// string domain = 1;
-inline void ListMatchableResourcesRequest::clear_domain() {
-  domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& ListMatchableResourcesRequest::domain() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.ListMatchableResourcesRequest.domain)
-  return domain_.GetNoArena();
-}
-inline void ListMatchableResourcesRequest::set_domain(const ::std::string& value) {
-  
-  domain_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.ListMatchableResourcesRequest.domain)
-}
-#if LANG_CXX11
-inline void ListMatchableResourcesRequest::set_domain(::std::string&& value) {
-  
-  domain_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.ListMatchableResourcesRequest.domain)
-}
-#endif
-inline void ListMatchableResourcesRequest::set_domain(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  domain_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.ListMatchableResourcesRequest.domain)
-}
-inline void ListMatchableResourcesRequest::set_domain(const char* value, size_t size) {
-  
-  domain_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.ListMatchableResourcesRequest.domain)
-}
-inline ::std::string* ListMatchableResourcesRequest::mutable_domain() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ListMatchableResourcesRequest.domain)
-  return domain_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* ListMatchableResourcesRequest::release_domain() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.ListMatchableResourcesRequest.domain)
-  
-  return domain_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void ListMatchableResourcesRequest::set_allocated_domain(::std::string* domain) {
-  if (domain != nullptr) {
-    
-  } else {
-    
-  }
-  domain_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), domain);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ListMatchableResourcesRequest.domain)
-}
-
-// .flyteidl.admin.MatchableResource resource_type = 2;
+// .flyteidl.admin.MatchableResource resource_type = 1;
 inline void ListMatchableResourcesRequest::clear_resource_type() {
   resource_type_ = 0;
 }

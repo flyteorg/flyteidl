@@ -20681,7 +20681,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a ListMatchableResourcesRequest.
              * @memberof flyteidl.admin
              * @interface IListMatchableResourcesRequest
-             * @property {string|null} [domain] ListMatchableResourcesRequest domain
              * @property {flyteidl.admin.MatchableResource|null} [resourceType] ListMatchableResourcesRequest resourceType
              */
 
@@ -20699,14 +20698,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
-
-            /**
-             * ListMatchableResourcesRequest domain.
-             * @member {string} domain
-             * @memberof flyteidl.admin.ListMatchableResourcesRequest
-             * @instance
-             */
-            ListMatchableResourcesRequest.prototype.domain = "";
 
             /**
              * ListMatchableResourcesRequest resourceType.
@@ -20740,10 +20731,8 @@ export const flyteidl = $root.flyteidl = (() => {
             ListMatchableResourcesRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.domain != null && message.hasOwnProperty("domain"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.domain);
                 if (message.resourceType != null && message.hasOwnProperty("resourceType"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.resourceType);
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.resourceType);
                 return writer;
             };
 
@@ -20766,9 +20755,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.domain = reader.string();
-                        break;
-                    case 2:
                         message.resourceType = reader.int32();
                         break;
                     default:
@@ -20790,9 +20776,6 @@ export const flyteidl = $root.flyteidl = (() => {
             ListMatchableResourcesRequest.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.domain != null && message.hasOwnProperty("domain"))
-                    if (!$util.isString(message.domain))
-                        return "domain: string expected";
                 if (message.resourceType != null && message.hasOwnProperty("resourceType"))
                     switch (message.resourceType) {
                     default:
