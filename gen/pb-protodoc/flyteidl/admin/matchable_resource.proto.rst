@@ -188,6 +188,93 @@ execution_cluster_label
   Only one of :ref:`task_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.task_resource_attributes>`, :ref:`cluster_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.cluster_resource_attributes>`, :ref:`execution_queue_attributes <api_field_flyteidl.admin.MatchingAttributes.execution_queue_attributes>`, :ref:`execution_cluster_label <api_field_flyteidl.admin.MatchingAttributes.execution_cluster_label>` may be set.
   
 
+
+.. _api_msg_flyteidl.admin.MatchableResourceConfiguration:
+
+flyteidl.admin.MatchableResourceConfiguration
+---------------------------------------------
+
+`[flyteidl.admin.MatchableResourceConfiguration proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L67>`_
+
+
+.. code-block:: json
+
+  {
+    "attributes": "{...}",
+    "domain": "...",
+    "project": "...",
+    "workflow": "..."
+  }
+
+.. _api_field_flyteidl.admin.MatchableResourceConfiguration.attributes:
+
+attributes
+  (:ref:`flyteidl.admin.MatchingAttributes <api_msg_flyteidl.admin.MatchingAttributes>`) 
+  
+.. _api_field_flyteidl.admin.MatchableResourceConfiguration.domain:
+
+domain
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+.. _api_field_flyteidl.admin.MatchableResourceConfiguration.project:
+
+project
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+.. _api_field_flyteidl.admin.MatchableResourceConfiguration.workflow:
+
+workflow
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+
+
+.. _api_msg_flyteidl.admin.ListMatchableResourcesRequest:
+
+flyteidl.admin.ListMatchableResourcesRequest
+--------------------------------------------
+
+`[flyteidl.admin.ListMatchableResourcesRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L77>`_
+
+
+.. code-block:: json
+
+  {
+    "type": "...",
+    "domain": "..."
+  }
+
+.. _api_field_flyteidl.admin.ListMatchableResourcesRequest.type:
+
+type
+  (:ref:`flyteidl.admin.MatchableResource <api_enum_flyteidl.admin.MatchableResource>`) 
+  
+.. _api_field_flyteidl.admin.ListMatchableResourcesRequest.domain:
+
+domain
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+
+
+.. _api_msg_flyteidl.admin.ListMatchableResourcesResponse:
+
+flyteidl.admin.ListMatchableResourcesResponse
+---------------------------------------------
+
+`[flyteidl.admin.ListMatchableResourcesResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L83>`_
+
+
+.. code-block:: json
+
+  {
+    "configurations": []
+  }
+
+.. _api_field_flyteidl.admin.ListMatchableResourcesResponse.configurations:
+
+configurations
+  (:ref:`flyteidl.admin.MatchableResourceConfiguration <api_msg_flyteidl.admin.MatchableResourceConfiguration>`) 
+  
+
 .. _api_enum_flyteidl.admin.MatchableResource:
 
 Enum flyteidl.admin.MatchableResource

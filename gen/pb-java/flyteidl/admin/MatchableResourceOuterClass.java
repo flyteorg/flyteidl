@@ -5356,6 +5356,2447 @@ public final class MatchableResourceOuterClass {
 
   }
 
+  public interface MatchableResourceConfigurationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.MatchableResourceConfiguration)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.flyteidl.admin.MatchingAttributes attributes = 1;</code>
+     */
+    boolean hasAttributes();
+    /**
+     * <code>.flyteidl.admin.MatchingAttributes attributes = 1;</code>
+     */
+    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getAttributes();
+    /**
+     * <code>.flyteidl.admin.MatchingAttributes attributes = 1;</code>
+     */
+    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getAttributesOrBuilder();
+
+    /**
+     * <code>string domain = 2;</code>
+     */
+    java.lang.String getDomain();
+    /**
+     * <code>string domain = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getDomainBytes();
+
+    /**
+     * <code>string project = 3;</code>
+     */
+    java.lang.String getProject();
+    /**
+     * <code>string project = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getProjectBytes();
+
+    /**
+     * <code>string workflow = 4;</code>
+     */
+    java.lang.String getWorkflow();
+    /**
+     * <code>string workflow = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getWorkflowBytes();
+  }
+  /**
+   * Protobuf type {@code flyteidl.admin.MatchableResourceConfiguration}
+   */
+  public  static final class MatchableResourceConfiguration extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.MatchableResourceConfiguration)
+      MatchableResourceConfigurationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MatchableResourceConfiguration.newBuilder() to construct.
+    private MatchableResourceConfiguration(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MatchableResourceConfiguration() {
+      domain_ = "";
+      project_ = "";
+      workflow_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MatchableResourceConfiguration(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder subBuilder = null;
+              if (attributes_ != null) {
+                subBuilder = attributes_.toBuilder();
+              }
+              attributes_ = input.readMessage(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(attributes_);
+                attributes_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              domain_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              workflow_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_MatchableResourceConfiguration_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_MatchableResourceConfiguration_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.class, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder.class);
+    }
+
+    public static final int ATTRIBUTES_FIELD_NUMBER = 1;
+    private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes attributes_;
+    /**
+     * <code>.flyteidl.admin.MatchingAttributes attributes = 1;</code>
+     */
+    public boolean hasAttributes() {
+      return attributes_ != null;
+    }
+    /**
+     * <code>.flyteidl.admin.MatchingAttributes attributes = 1;</code>
+     */
+    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getAttributes() {
+      return attributes_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : attributes_;
+    }
+    /**
+     * <code>.flyteidl.admin.MatchingAttributes attributes = 1;</code>
+     */
+    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getAttributesOrBuilder() {
+      return getAttributes();
+    }
+
+    public static final int DOMAIN_FIELD_NUMBER = 2;
+    private volatile java.lang.Object domain_;
+    /**
+     * <code>string domain = 2;</code>
+     */
+    public java.lang.String getDomain() {
+      java.lang.Object ref = domain_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        domain_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string domain = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDomainBytes() {
+      java.lang.Object ref = domain_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        domain_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROJECT_FIELD_NUMBER = 3;
+    private volatile java.lang.Object project_;
+    /**
+     * <code>string project = 3;</code>
+     */
+    public java.lang.String getProject() {
+      java.lang.Object ref = project_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        project_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string project = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getProjectBytes() {
+      java.lang.Object ref = project_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        project_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int WORKFLOW_FIELD_NUMBER = 4;
+    private volatile java.lang.Object workflow_;
+    /**
+     * <code>string workflow = 4;</code>
+     */
+    public java.lang.String getWorkflow() {
+      java.lang.Object ref = workflow_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        workflow_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string workflow = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getWorkflowBytes() {
+      java.lang.Object ref = workflow_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        workflow_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (attributes_ != null) {
+        output.writeMessage(1, getAttributes());
+      }
+      if (!getDomainBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, domain_);
+      }
+      if (!getProjectBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, project_);
+      }
+      if (!getWorkflowBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, workflow_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (attributes_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getAttributes());
+      }
+      if (!getDomainBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, domain_);
+      }
+      if (!getProjectBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, project_);
+      }
+      if (!getWorkflowBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, workflow_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration other = (flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration) obj;
+
+      if (hasAttributes() != other.hasAttributes()) return false;
+      if (hasAttributes()) {
+        if (!getAttributes()
+            .equals(other.getAttributes())) return false;
+      }
+      if (!getDomain()
+          .equals(other.getDomain())) return false;
+      if (!getProject()
+          .equals(other.getProject())) return false;
+      if (!getWorkflow()
+          .equals(other.getWorkflow())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAttributes()) {
+        hash = (37 * hash) + ATTRIBUTES_FIELD_NUMBER;
+        hash = (53 * hash) + getAttributes().hashCode();
+      }
+      hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
+      hash = (53 * hash) + getDomain().hashCode();
+      hash = (37 * hash) + PROJECT_FIELD_NUMBER;
+      hash = (53 * hash) + getProject().hashCode();
+      hash = (37 * hash) + WORKFLOW_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkflow().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code flyteidl.admin.MatchableResourceConfiguration}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.MatchableResourceConfiguration)
+        flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_MatchableResourceConfiguration_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_MatchableResourceConfiguration_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.class, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (attributesBuilder_ == null) {
+          attributes_ = null;
+        } else {
+          attributes_ = null;
+          attributesBuilder_ = null;
+        }
+        domain_ = "";
+
+        project_ = "";
+
+        workflow_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_MatchableResourceConfiguration_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration getDefaultInstanceForType() {
+        return flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration build() {
+        flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration buildPartial() {
+        flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration result = new flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration(this);
+        if (attributesBuilder_ == null) {
+          result.attributes_ = attributes_;
+        } else {
+          result.attributes_ = attributesBuilder_.build();
+        }
+        result.domain_ = domain_;
+        result.project_ = project_;
+        result.workflow_ = workflow_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration) {
+          return mergeFrom((flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration other) {
+        if (other == flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.getDefaultInstance()) return this;
+        if (other.hasAttributes()) {
+          mergeAttributes(other.getAttributes());
+        }
+        if (!other.getDomain().isEmpty()) {
+          domain_ = other.domain_;
+          onChanged();
+        }
+        if (!other.getProject().isEmpty()) {
+          project_ = other.project_;
+          onChanged();
+        }
+        if (!other.getWorkflow().isEmpty()) {
+          workflow_ = other.workflow_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes attributes_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> attributesBuilder_;
+      /**
+       * <code>.flyteidl.admin.MatchingAttributes attributes = 1;</code>
+       */
+      public boolean hasAttributes() {
+        return attributesBuilder_ != null || attributes_ != null;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchingAttributes attributes = 1;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getAttributes() {
+        if (attributesBuilder_ == null) {
+          return attributes_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : attributes_;
+        } else {
+          return attributesBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.MatchingAttributes attributes = 1;</code>
+       */
+      public Builder setAttributes(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+        if (attributesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          attributes_ = value;
+          onChanged();
+        } else {
+          attributesBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchingAttributes attributes = 1;</code>
+       */
+      public Builder setAttributes(
+          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder builderForValue) {
+        if (attributesBuilder_ == null) {
+          attributes_ = builderForValue.build();
+          onChanged();
+        } else {
+          attributesBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchingAttributes attributes = 1;</code>
+       */
+      public Builder mergeAttributes(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+        if (attributesBuilder_ == null) {
+          if (attributes_ != null) {
+            attributes_ =
+              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.newBuilder(attributes_).mergeFrom(value).buildPartial();
+          } else {
+            attributes_ = value;
+          }
+          onChanged();
+        } else {
+          attributesBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchingAttributes attributes = 1;</code>
+       */
+      public Builder clearAttributes() {
+        if (attributesBuilder_ == null) {
+          attributes_ = null;
+          onChanged();
+        } else {
+          attributes_ = null;
+          attributesBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchingAttributes attributes = 1;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder getAttributesBuilder() {
+        
+        onChanged();
+        return getAttributesFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.admin.MatchingAttributes attributes = 1;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getAttributesOrBuilder() {
+        if (attributesBuilder_ != null) {
+          return attributesBuilder_.getMessageOrBuilder();
+        } else {
+          return attributes_ == null ?
+              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : attributes_;
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.MatchingAttributes attributes = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> 
+          getAttributesFieldBuilder() {
+        if (attributesBuilder_ == null) {
+          attributesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder>(
+                  getAttributes(),
+                  getParentForChildren(),
+                  isClean());
+          attributes_ = null;
+        }
+        return attributesBuilder_;
+      }
+
+      private java.lang.Object domain_ = "";
+      /**
+       * <code>string domain = 2;</code>
+       */
+      public java.lang.String getDomain() {
+        java.lang.Object ref = domain_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          domain_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string domain = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDomainBytes() {
+        java.lang.Object ref = domain_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          domain_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string domain = 2;</code>
+       */
+      public Builder setDomain(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        domain_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string domain = 2;</code>
+       */
+      public Builder clearDomain() {
+        
+        domain_ = getDefaultInstance().getDomain();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string domain = 2;</code>
+       */
+      public Builder setDomainBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        domain_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object project_ = "";
+      /**
+       * <code>string project = 3;</code>
+       */
+      public java.lang.String getProject() {
+        java.lang.Object ref = project_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          project_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string project = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getProjectBytes() {
+        java.lang.Object ref = project_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          project_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string project = 3;</code>
+       */
+      public Builder setProject(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        project_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project = 3;</code>
+       */
+      public Builder clearProject() {
+        
+        project_ = getDefaultInstance().getProject();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string project = 3;</code>
+       */
+      public Builder setProjectBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        project_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object workflow_ = "";
+      /**
+       * <code>string workflow = 4;</code>
+       */
+      public java.lang.String getWorkflow() {
+        java.lang.Object ref = workflow_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          workflow_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string workflow = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getWorkflowBytes() {
+        java.lang.Object ref = workflow_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          workflow_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string workflow = 4;</code>
+       */
+      public Builder setWorkflow(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        workflow_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string workflow = 4;</code>
+       */
+      public Builder clearWorkflow() {
+        
+        workflow_ = getDefaultInstance().getWorkflow();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string workflow = 4;</code>
+       */
+      public Builder setWorkflowBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        workflow_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.MatchableResourceConfiguration)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.MatchableResourceConfiguration)
+    private static final flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration();
+    }
+
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MatchableResourceConfiguration>
+        PARSER = new com.google.protobuf.AbstractParser<MatchableResourceConfiguration>() {
+      @java.lang.Override
+      public MatchableResourceConfiguration parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MatchableResourceConfiguration(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MatchableResourceConfiguration> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MatchableResourceConfiguration> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListMatchableResourcesRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.ListMatchableResourcesRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.flyteidl.admin.MatchableResource type = 1;</code>
+     */
+    int getTypeValue();
+    /**
+     * <code>.flyteidl.admin.MatchableResource type = 1;</code>
+     */
+    flyteidl.admin.MatchableResourceOuterClass.MatchableResource getType();
+
+    /**
+     * <code>string domain = 2;</code>
+     */
+    java.lang.String getDomain();
+    /**
+     * <code>string domain = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getDomainBytes();
+  }
+  /**
+   * Protobuf type {@code flyteidl.admin.ListMatchableResourcesRequest}
+   */
+  public  static final class ListMatchableResourcesRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.ListMatchableResourcesRequest)
+      ListMatchableResourcesRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListMatchableResourcesRequest.newBuilder() to construct.
+    private ListMatchableResourcesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListMatchableResourcesRequest() {
+      type_ = 0;
+      domain_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListMatchableResourcesRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              domain_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest.class, flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest.Builder.class);
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_;
+    /**
+     * <code>.flyteidl.admin.MatchableResource type = 1;</code>
+     */
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>.flyteidl.admin.MatchableResource type = 1;</code>
+     */
+    public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getType() {
+      @SuppressWarnings("deprecation")
+      flyteidl.admin.MatchableResourceOuterClass.MatchableResource result = flyteidl.admin.MatchableResourceOuterClass.MatchableResource.valueOf(type_);
+      return result == null ? flyteidl.admin.MatchableResourceOuterClass.MatchableResource.UNRECOGNIZED : result;
+    }
+
+    public static final int DOMAIN_FIELD_NUMBER = 2;
+    private volatile java.lang.Object domain_;
+    /**
+     * <code>string domain = 2;</code>
+     */
+    public java.lang.String getDomain() {
+      java.lang.Object ref = domain_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        domain_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string domain = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDomainBytes() {
+      java.lang.Object ref = domain_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        domain_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (type_ != flyteidl.admin.MatchableResourceOuterClass.MatchableResource.TASK_RESOURCE.getNumber()) {
+        output.writeEnum(1, type_);
+      }
+      if (!getDomainBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, domain_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (type_ != flyteidl.admin.MatchableResourceOuterClass.MatchableResource.TASK_RESOURCE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, type_);
+      }
+      if (!getDomainBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, domain_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest other = (flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest) obj;
+
+      if (type_ != other.type_) return false;
+      if (!getDomain()
+          .equals(other.getDomain())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
+      hash = (53 * hash) + getDomain().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code flyteidl.admin.ListMatchableResourcesRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.ListMatchableResourcesRequest)
+        flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest.class, flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        type_ = 0;
+
+        domain_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest getDefaultInstanceForType() {
+        return flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest build() {
+        flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest buildPartial() {
+        flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest result = new flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest(this);
+        result.type_ = type_;
+        result.domain_ = domain_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest) {
+          return mergeFrom((flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest other) {
+        if (other == flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest.getDefaultInstance()) return this;
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (!other.getDomain().isEmpty()) {
+          domain_ = other.domain_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <code>.flyteidl.admin.MatchableResource type = 1;</code>
+       */
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource type = 1;</code>
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource type = 1;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableResource getType() {
+        @SuppressWarnings("deprecation")
+        flyteidl.admin.MatchableResourceOuterClass.MatchableResource result = flyteidl.admin.MatchableResourceOuterClass.MatchableResource.valueOf(type_);
+        return result == null ? flyteidl.admin.MatchableResourceOuterClass.MatchableResource.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource type = 1;</code>
+       */
+      public Builder setType(flyteidl.admin.MatchableResourceOuterClass.MatchableResource value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.MatchableResource type = 1;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object domain_ = "";
+      /**
+       * <code>string domain = 2;</code>
+       */
+      public java.lang.String getDomain() {
+        java.lang.Object ref = domain_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          domain_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string domain = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDomainBytes() {
+        java.lang.Object ref = domain_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          domain_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string domain = 2;</code>
+       */
+      public Builder setDomain(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        domain_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string domain = 2;</code>
+       */
+      public Builder clearDomain() {
+        
+        domain_ = getDefaultInstance().getDomain();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string domain = 2;</code>
+       */
+      public Builder setDomainBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        domain_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.ListMatchableResourcesRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.ListMatchableResourcesRequest)
+    private static final flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest();
+    }
+
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListMatchableResourcesRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ListMatchableResourcesRequest>() {
+      @java.lang.Override
+      public ListMatchableResourcesRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListMatchableResourcesRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListMatchableResourcesRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListMatchableResourcesRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListMatchableResourcesResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.ListMatchableResourcesResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     */
+    java.util.List<flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration> 
+        getConfigurationsList();
+    /**
+     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     */
+    flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration getConfigurations(int index);
+    /**
+     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     */
+    int getConfigurationsCount();
+    /**
+     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     */
+    java.util.List<? extends flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder> 
+        getConfigurationsOrBuilderList();
+    /**
+     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     */
+    flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder getConfigurationsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code flyteidl.admin.ListMatchableResourcesResponse}
+   */
+  public  static final class ListMatchableResourcesResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.ListMatchableResourcesResponse)
+      ListMatchableResourcesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListMatchableResourcesResponse.newBuilder() to construct.
+    private ListMatchableResourcesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListMatchableResourcesResponse() {
+      configurations_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListMatchableResourcesResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                configurations_ = new java.util.ArrayList<flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              configurations_.add(
+                  input.readMessage(flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          configurations_ = java.util.Collections.unmodifiableList(configurations_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse.class, flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse.Builder.class);
+    }
+
+    public static final int CONFIGURATIONS_FIELD_NUMBER = 1;
+    private java.util.List<flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration> configurations_;
+    /**
+     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     */
+    public java.util.List<flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration> getConfigurationsList() {
+      return configurations_;
+    }
+    /**
+     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     */
+    public java.util.List<? extends flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder> 
+        getConfigurationsOrBuilderList() {
+      return configurations_;
+    }
+    /**
+     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     */
+    public int getConfigurationsCount() {
+      return configurations_.size();
+    }
+    /**
+     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     */
+    public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration getConfigurations(int index) {
+      return configurations_.get(index);
+    }
+    /**
+     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     */
+    public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder getConfigurationsOrBuilder(
+        int index) {
+      return configurations_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < configurations_.size(); i++) {
+        output.writeMessage(1, configurations_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < configurations_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, configurations_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse other = (flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse) obj;
+
+      if (!getConfigurationsList()
+          .equals(other.getConfigurationsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getConfigurationsCount() > 0) {
+        hash = (37 * hash) + CONFIGURATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getConfigurationsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code flyteidl.admin.ListMatchableResourcesResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.ListMatchableResourcesResponse)
+        flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse.class, flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getConfigurationsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (configurationsBuilder_ == null) {
+          configurations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          configurationsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse getDefaultInstanceForType() {
+        return flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse build() {
+        flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse buildPartial() {
+        flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse result = new flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (configurationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            configurations_ = java.util.Collections.unmodifiableList(configurations_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.configurations_ = configurations_;
+        } else {
+          result.configurations_ = configurationsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse) {
+          return mergeFrom((flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse other) {
+        if (other == flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse.getDefaultInstance()) return this;
+        if (configurationsBuilder_ == null) {
+          if (!other.configurations_.isEmpty()) {
+            if (configurations_.isEmpty()) {
+              configurations_ = other.configurations_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureConfigurationsIsMutable();
+              configurations_.addAll(other.configurations_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.configurations_.isEmpty()) {
+            if (configurationsBuilder_.isEmpty()) {
+              configurationsBuilder_.dispose();
+              configurationsBuilder_ = null;
+              configurations_ = other.configurations_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              configurationsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getConfigurationsFieldBuilder() : null;
+            } else {
+              configurationsBuilder_.addAllMessages(other.configurations_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration> configurations_ =
+        java.util.Collections.emptyList();
+      private void ensureConfigurationsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          configurations_ = new java.util.ArrayList<flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration>(configurations_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder> configurationsBuilder_;
+
+      /**
+       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       */
+      public java.util.List<flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration> getConfigurationsList() {
+        if (configurationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(configurations_);
+        } else {
+          return configurationsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       */
+      public int getConfigurationsCount() {
+        if (configurationsBuilder_ == null) {
+          return configurations_.size();
+        } else {
+          return configurationsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration getConfigurations(int index) {
+        if (configurationsBuilder_ == null) {
+          return configurations_.get(index);
+        } else {
+          return configurationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       */
+      public Builder setConfigurations(
+          int index, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration value) {
+        if (configurationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureConfigurationsIsMutable();
+          configurations_.set(index, value);
+          onChanged();
+        } else {
+          configurationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       */
+      public Builder setConfigurations(
+          int index, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder builderForValue) {
+        if (configurationsBuilder_ == null) {
+          ensureConfigurationsIsMutable();
+          configurations_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          configurationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       */
+      public Builder addConfigurations(flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration value) {
+        if (configurationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureConfigurationsIsMutable();
+          configurations_.add(value);
+          onChanged();
+        } else {
+          configurationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       */
+      public Builder addConfigurations(
+          int index, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration value) {
+        if (configurationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureConfigurationsIsMutable();
+          configurations_.add(index, value);
+          onChanged();
+        } else {
+          configurationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       */
+      public Builder addConfigurations(
+          flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder builderForValue) {
+        if (configurationsBuilder_ == null) {
+          ensureConfigurationsIsMutable();
+          configurations_.add(builderForValue.build());
+          onChanged();
+        } else {
+          configurationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       */
+      public Builder addConfigurations(
+          int index, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder builderForValue) {
+        if (configurationsBuilder_ == null) {
+          ensureConfigurationsIsMutable();
+          configurations_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          configurationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       */
+      public Builder addAllConfigurations(
+          java.lang.Iterable<? extends flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration> values) {
+        if (configurationsBuilder_ == null) {
+          ensureConfigurationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, configurations_);
+          onChanged();
+        } else {
+          configurationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       */
+      public Builder clearConfigurations() {
+        if (configurationsBuilder_ == null) {
+          configurations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          configurationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       */
+      public Builder removeConfigurations(int index) {
+        if (configurationsBuilder_ == null) {
+          ensureConfigurationsIsMutable();
+          configurations_.remove(index);
+          onChanged();
+        } else {
+          configurationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder getConfigurationsBuilder(
+          int index) {
+        return getConfigurationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder getConfigurationsOrBuilder(
+          int index) {
+        if (configurationsBuilder_ == null) {
+          return configurations_.get(index);  } else {
+          return configurationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       */
+      public java.util.List<? extends flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder> 
+           getConfigurationsOrBuilderList() {
+        if (configurationsBuilder_ != null) {
+          return configurationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(configurations_);
+        }
+      }
+      /**
+       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder addConfigurationsBuilder() {
+        return getConfigurationsFieldBuilder().addBuilder(
+            flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       */
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder addConfigurationsBuilder(
+          int index) {
+        return getConfigurationsFieldBuilder().addBuilder(
+            index, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       */
+      public java.util.List<flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder> 
+           getConfigurationsBuilderList() {
+        return getConfigurationsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder> 
+          getConfigurationsFieldBuilder() {
+        if (configurationsBuilder_ == null) {
+          configurationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder>(
+                  configurations_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          configurations_ = null;
+        }
+        return configurationsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.ListMatchableResourcesResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.ListMatchableResourcesResponse)
+    private static final flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse();
+    }
+
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListMatchableResourcesResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ListMatchableResourcesResponse>() {
+      @java.lang.Override
+      public ListMatchableResourcesResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListMatchableResourcesResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListMatchableResourcesResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListMatchableResourcesResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_TaskResourceSpec_descriptor;
   private static final 
@@ -5391,6 +7832,21 @@ public final class MatchableResourceOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_MatchingAttributes_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_MatchableResourceConfiguration_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_MatchableResourceConfiguration_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_ListMatchableResourcesRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_ListMatchableResourcesRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_ListMatchableResourcesResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_ListMatchableResourcesResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5421,11 +7877,20 @@ public final class MatchableResourceOuterClass {
       "\001(\0132(.flyteidl.admin.ExecutionQueueAttri" +
       "butesH\000\022H\n\027execution_cluster_label\030\004 \001(\013" +
       "2%.flyteidl.admin.ExecutionClusterLabelH" +
-      "\000B\010\n\006target*n\n\021MatchableResource\022\021\n\rTASK" +
-      "_RESOURCE\020\000\022\024\n\020CLUSTER_RESOURCE\020\001\022\023\n\017EXE" +
-      "CUTION_QUEUE\020\002\022\033\n\027EXECUTION_CLUSTER_LABE" +
-      "L\020\003B3Z1github.com/lyft/flyteidl/gen/pb-g" +
-      "o/flyteidl/adminb\006proto3"
+      "\000B\010\n\006target\"\213\001\n\036MatchableResourceConfigu" +
+      "ration\0226\n\nattributes\030\001 \001(\0132\".flyteidl.ad" +
+      "min.MatchingAttributes\022\016\n\006domain\030\002 \001(\t\022\017" +
+      "\n\007project\030\003 \001(\t\022\020\n\010workflow\030\004 \001(\t\"`\n\035Lis" +
+      "tMatchableResourcesRequest\022/\n\004type\030\001 \001(\016" +
+      "2!.flyteidl.admin.MatchableResource\022\016\n\006d" +
+      "omain\030\002 \001(\t\"h\n\036ListMatchableResourcesRes" +
+      "ponse\022F\n\016configurations\030\001 \003(\0132..flyteidl" +
+      ".admin.MatchableResourceConfiguration*n\n" +
+      "\021MatchableResource\022\021\n\rTASK_RESOURCE\020\000\022\024\n" +
+      "\020CLUSTER_RESOURCE\020\001\022\023\n\017EXECUTION_QUEUE\020\002" +
+      "\022\033\n\027EXECUTION_CLUSTER_LABEL\020\003B3Z1github." +
+      "com/lyft/flyteidl/gen/pb-go/flyteidl/adm" +
+      "inb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5481,6 +7946,24 @@ public final class MatchableResourceOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_MatchingAttributes_descriptor,
         new java.lang.String[] { "TaskResourceAttributes", "ClusterResourceAttributes", "ExecutionQueueAttributes", "ExecutionClusterLabel", "Target", });
+    internal_static_flyteidl_admin_MatchableResourceConfiguration_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_flyteidl_admin_MatchableResourceConfiguration_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_MatchableResourceConfiguration_descriptor,
+        new java.lang.String[] { "Attributes", "Domain", "Project", "Workflow", });
+    internal_static_flyteidl_admin_ListMatchableResourcesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_flyteidl_admin_ListMatchableResourcesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_ListMatchableResourcesRequest_descriptor,
+        new java.lang.String[] { "Type", "Domain", });
+    internal_static_flyteidl_admin_ListMatchableResourcesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_flyteidl_admin_ListMatchableResourcesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_ListMatchableResourcesResponse_descriptor,
+        new java.lang.String[] { "Configurations", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

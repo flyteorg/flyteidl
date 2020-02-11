@@ -956,6 +956,33 @@ paths:
           description: "A successful response."
           schema:
             $ref: "#/definitions/adminLaunchPlanUpdateResponse"
+  /api/v1/matchable_resources/{type}/{domain}:
+    get:
+      tags:
+      - "AdminService"
+      description: "Retrieve a list of MatchableResourceConfiguration objects."
+      operationId: "ListMatchableResources"
+      parameters:
+      - name: "type"
+        in: "path"
+        required: true
+        type: "string"
+        enum:
+        - "TASK_RESOURCE"
+        - "CLUSTER_RESOURCE"
+        - "EXECUTION_QUEUE"
+        - "EXECUTION_CLUSTER_LABEL"
+        x-exportParamName: "Type_"
+      - name: "domain"
+        in: "path"
+        required: true
+        type: "string"
+        x-exportParamName: "Domain"
+      responses:
+        200:
+          description: "A successful response."
+          schema:
+            $ref: "#/definitions/adminListMatchableResourcesResponse"
   /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name}:
     get:
       tags:
@@ -4344,6 +4371,63 @@ definitions:
   adminLaunchPlanUpdateResponse:
     type: "object"
     description: "Purposefully empty, may be populated in the future."
+  adminListMatchableResourcesResponse:
+    type: "object"
+    properties:
+      configurations:
+        type: "array"
+        items:
+          $ref: "#/definitions/adminMatchableResourceConfiguration"
+    example:
+      configurations:
+      - workflow: "workflow"
+        domain: "domain"
+        project: "project"
+        attributes:
+          cluster_resource_attributes:
+            attributes:
+              key: "attributes"
+          execution_queue_attributes:
+            tags:
+            - "tags"
+            - "tags"
+          task_resource_attributes:
+            defaults:
+              memory: "memory"
+              cpu: "cpu"
+              storage: "storage"
+              gpu: "gpu"
+            limits:
+              memory: "memory"
+              cpu: "cpu"
+              storage: "storage"
+              gpu: "gpu"
+          execution_cluster_label:
+            value: "value"
+      - workflow: "workflow"
+        domain: "domain"
+        project: "project"
+        attributes:
+          cluster_resource_attributes:
+            attributes:
+              key: "attributes"
+          execution_queue_attributes:
+            tags:
+            - "tags"
+            - "tags"
+          task_resource_attributes:
+            defaults:
+              memory: "memory"
+              cpu: "cpu"
+              storage: "storage"
+              gpu: "gpu"
+            limits:
+              memory: "memory"
+              cpu: "cpu"
+              storage: "storage"
+              gpu: "gpu"
+          execution_cluster_label:
+            value: "value"
   adminLiteralMapBlob:
     type: "object"
     properties:
@@ -4373,6 +4457,42 @@ definitions:
     - "EXECUTION_QUEUE"
     - "EXECUTION_CLUSTER_LABEL"
     default: "TASK_RESOURCE"
+  adminMatchableResourceConfiguration:
+    type: "object"
+    properties:
+      attributes:
+        $ref: "#/definitions/adminMatchingAttributes"
+      domain:
+        type: "string"
+      project:
+        type: "string"
+      workflow:
+        type: "string"
+    example:
+      workflow: "workflow"
+      domain: "domain"
+      project: "project"
+      attributes:
+        cluster_resource_attributes:
+          attributes:
+            key: "attributes"
+        execution_queue_attributes:
+          tags:
+          - "tags"
+          - "tags"
+        task_resource_attributes:
+          defaults:
+            memory: "memory"
+            cpu: "cpu"
+            storage: "storage"
+            gpu: "gpu"
+          limits:
+            memory: "memory"
+            cpu: "cpu"
+            storage: "storage"
+            gpu: "gpu"
+        execution_cluster_label:
+          value: "value"
   adminMatchingAttributes:
     type: "object"
     properties:

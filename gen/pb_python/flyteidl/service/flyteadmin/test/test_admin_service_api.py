@@ -191,6 +191,12 @@ class TestAdminServiceApi(unittest.TestCase):
         """
         pass
 
+    def test_list_matchable_resources(self):
+        """Test case for list_matchable_resources
+
+        """
+        pass
+
     def test_list_named_entities(self):
         """Test case for list_named_entities
 

@@ -1119,6 +1119,43 @@
         ]
       }
     },
+    "/api/v1/matchable_resources/{type}/{domain}": {
+      "get": {
+        "description": "Retrieve a list of MatchableResourceConfiguration objects.",
+        "operationId": "ListMatchableResources",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminListMatchableResourcesResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "TASK_RESOURCE",
+              "CLUSTER_RESOURCE",
+              "EXECUTION_QUEUE",
+              "EXECUTION_CLUSTER_LABEL"
+            ]
+          },
+          {
+            "name": "domain",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name}": {
       "get": {
         "description": "Retrieve a NamedEntity object.",
@@ -3234,6 +3271,17 @@
       "type": "object",
       "description": "Purposefully empty, may be populated in the future."
     },
+    "adminListMatchableResourcesResponse": {
+      "type": "object",
+      "properties": {
+        "configurations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminMatchableResourceConfiguration"
+          }
+        }
+      }
+    },
     "adminLiteralMapBlob": {
       "type": "object",
       "properties": {
@@ -3258,6 +3306,23 @@
       ],
       "default": "TASK_RESOURCE",
       "description": "Defines a resource that can be configured by customizable Project-, ProjectDomain- or WorkflowAttributes\nbased on matching tags.\n\n - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.\n - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run"
+    },
+    "adminMatchableResourceConfiguration": {
+      "type": "object",
+      "properties": {
+        "attributes": {
+          "$ref": "#/definitions/adminMatchingAttributes"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "project": {
+          "type": "string"
+        },
+        "workflow": {
+          "type": "string"
+        }
+      }
     },
     "adminMatchingAttributes": {
       "type": "object",
