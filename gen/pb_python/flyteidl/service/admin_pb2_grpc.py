@@ -221,10 +221,10 @@ class AdminServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_workflow__attributes__pb2.WorkflowAttributesDeleteRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_workflow__attributes__pb2.WorkflowAttributesDeleteResponse.FromString,
         )
-    self.ListMatchableResources = channel.unary_unary(
-        '/flyteidl.service.AdminService/ListMatchableResources',
-        request_serializer=flyteidl_dot_admin_dot_matchable__resource__pb2.ListMatchableResourcesRequest.SerializeToString,
-        response_deserializer=flyteidl_dot_admin_dot_matchable__resource__pb2.ListMatchableResourcesResponse.FromString,
+    self.ListMatchableAttributes = channel.unary_unary(
+        '/flyteidl.service.AdminService/ListMatchableAttributes',
+        request_serializer=flyteidl_dot_admin_dot_matchable__resource__pb2.ListMatchableAttributesRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_matchable__resource__pb2.ListMatchableAttributesResponse.FromString,
         )
     self.ListNamedEntities = channel.unary_unary(
         '/flyteidl.service.AdminService/ListNamedEntities',
@@ -521,7 +521,7 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def ListMatchableResources(self, request, context):
+  def ListMatchableAttributes(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -747,10 +747,10 @@ def add_AdminServiceServicer_to_server(servicer, server):
           request_deserializer=flyteidl_dot_admin_dot_workflow__attributes__pb2.WorkflowAttributesDeleteRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_workflow__attributes__pb2.WorkflowAttributesDeleteResponse.SerializeToString,
       ),
-      'ListMatchableResources': grpc.unary_unary_rpc_method_handler(
-          servicer.ListMatchableResources,
-          request_deserializer=flyteidl_dot_admin_dot_matchable__resource__pb2.ListMatchableResourcesRequest.FromString,
-          response_serializer=flyteidl_dot_admin_dot_matchable__resource__pb2.ListMatchableResourcesResponse.SerializeToString,
+      'ListMatchableAttributes': grpc.unary_unary_rpc_method_handler(
+          servicer.ListMatchableAttributes,
+          request_deserializer=flyteidl_dot_admin_dot_matchable__resource__pb2.ListMatchableAttributesRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_matchable__resource__pb2.ListMatchableAttributesResponse.SerializeToString,
       ),
       'ListNamedEntities': grpc.unary_unary_rpc_method_handler(
           servicer.ListNamedEntities,

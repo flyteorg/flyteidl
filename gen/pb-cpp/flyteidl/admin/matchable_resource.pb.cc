@@ -21,7 +21,7 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto 
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ExecutionQueueAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TaskResourceSpec_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ClusterResourceAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_MatchableResourceConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_MatchableAttributesConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TaskResourceAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_MatchingAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
 namespace flyteidl {
@@ -58,18 +58,18 @@ class MatchingAttributesDefaultTypeInternal {
   const ::flyteidl::admin::ExecutionQueueAttributes* execution_queue_attributes_;
   const ::flyteidl::admin::ExecutionClusterLabel* execution_cluster_label_;
 } _MatchingAttributes_default_instance_;
-class MatchableResourceConfigurationDefaultTypeInternal {
+class MatchableAttributesConfigurationDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<MatchableResourceConfiguration> _instance;
-} _MatchableResourceConfiguration_default_instance_;
-class ListMatchableResourcesRequestDefaultTypeInternal {
+  ::google::protobuf::internal::ExplicitlyConstructed<MatchableAttributesConfiguration> _instance;
+} _MatchableAttributesConfiguration_default_instance_;
+class ListMatchableAttributesRequestDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ListMatchableResourcesRequest> _instance;
-} _ListMatchableResourcesRequest_default_instance_;
-class ListMatchableResourcesResponseDefaultTypeInternal {
+  ::google::protobuf::internal::ExplicitlyConstructed<ListMatchableAttributesRequest> _instance;
+} _ListMatchableAttributesRequest_default_instance_;
+class ListMatchableAttributesResponseDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ListMatchableResourcesResponse> _instance;
-} _ListMatchableResourcesResponse_default_instance_;
+  ::google::protobuf::internal::ExplicitlyConstructed<ListMatchableAttributesResponse> _instance;
+} _ListMatchableAttributesResponse_default_instance_;
 }  // namespace admin
 }  // namespace flyteidl
 static void InitDefaultsTaskResourceSpec_flyteidl_2fadmin_2fmatchable_5fresource_2eproto() {
@@ -175,49 +175,49 @@ static void InitDefaultsMatchingAttributes_flyteidl_2fadmin_2fmatchable_5fresour
       &scc_info_ExecutionQueueAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base,
       &scc_info_ExecutionClusterLabel_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base,}};
 
-static void InitDefaultsMatchableResourceConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto() {
+static void InitDefaultsMatchableAttributesConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::flyteidl::admin::_MatchableResourceConfiguration_default_instance_;
-    new (ptr) ::flyteidl::admin::MatchableResourceConfiguration();
+    void* ptr = &::flyteidl::admin::_MatchableAttributesConfiguration_default_instance_;
+    new (ptr) ::flyteidl::admin::MatchableAttributesConfiguration();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::flyteidl::admin::MatchableResourceConfiguration::InitAsDefaultInstance();
+  ::flyteidl::admin::MatchableAttributesConfiguration::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_MatchableResourceConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsMatchableResourceConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto}, {
+::google::protobuf::internal::SCCInfo<1> scc_info_MatchableAttributesConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsMatchableAttributesConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto}, {
       &scc_info_MatchingAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base,}};
 
-static void InitDefaultsListMatchableResourcesRequest_flyteidl_2fadmin_2fmatchable_5fresource_2eproto() {
+static void InitDefaultsListMatchableAttributesRequest_flyteidl_2fadmin_2fmatchable_5fresource_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::flyteidl::admin::_ListMatchableResourcesRequest_default_instance_;
-    new (ptr) ::flyteidl::admin::ListMatchableResourcesRequest();
+    void* ptr = &::flyteidl::admin::_ListMatchableAttributesRequest_default_instance_;
+    new (ptr) ::flyteidl::admin::ListMatchableAttributesRequest();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::flyteidl::admin::ListMatchableResourcesRequest::InitAsDefaultInstance();
+  ::flyteidl::admin::ListMatchableAttributesRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_ListMatchableResourcesRequest_flyteidl_2fadmin_2fmatchable_5fresource_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsListMatchableResourcesRequest_flyteidl_2fadmin_2fmatchable_5fresource_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_ListMatchableAttributesRequest_flyteidl_2fadmin_2fmatchable_5fresource_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsListMatchableAttributesRequest_flyteidl_2fadmin_2fmatchable_5fresource_2eproto}, {}};
 
-static void InitDefaultsListMatchableResourcesResponse_flyteidl_2fadmin_2fmatchable_5fresource_2eproto() {
+static void InitDefaultsListMatchableAttributesResponse_flyteidl_2fadmin_2fmatchable_5fresource_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::flyteidl::admin::_ListMatchableResourcesResponse_default_instance_;
-    new (ptr) ::flyteidl::admin::ListMatchableResourcesResponse();
+    void* ptr = &::flyteidl::admin::_ListMatchableAttributesResponse_default_instance_;
+    new (ptr) ::flyteidl::admin::ListMatchableAttributesResponse();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::flyteidl::admin::ListMatchableResourcesResponse::InitAsDefaultInstance();
+  ::flyteidl::admin::ListMatchableAttributesResponse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_ListMatchableResourcesResponse_flyteidl_2fadmin_2fmatchable_5fresource_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsListMatchableResourcesResponse_flyteidl_2fadmin_2fmatchable_5fresource_2eproto}, {
-      &scc_info_MatchableResourceConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<1> scc_info_ListMatchableAttributesResponse_flyteidl_2fadmin_2fmatchable_5fresource_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsListMatchableAttributesResponse_flyteidl_2fadmin_2fmatchable_5fresource_2eproto}, {
+      &scc_info_MatchableAttributesConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base,}};
 
 void InitDefaults_flyteidl_2fadmin_2fmatchable_5fresource_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_TaskResourceSpec_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
@@ -227,9 +227,9 @@ void InitDefaults_flyteidl_2fadmin_2fmatchable_5fresource_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_ExecutionQueueAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ExecutionClusterLabel_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_MatchingAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_MatchableResourceConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_ListMatchableResourcesRequest_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_ListMatchableResourcesResponse_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_MatchableAttributesConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_ListMatchableAttributesRequest_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_ListMatchableAttributesResponse_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
 }
 
 ::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fmatchable_5fresource_2eproto[10];
@@ -291,26 +291,27 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fmatchable_5freso
   offsetof(::flyteidl::admin::MatchingAttributesDefaultTypeInternal, execution_cluster_label_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::MatchingAttributes, target_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::MatchableResourceConfiguration, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::MatchableAttributesConfiguration, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::MatchableResourceConfiguration, attributes_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::MatchableResourceConfiguration, domain_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::MatchableResourceConfiguration, project_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::MatchableResourceConfiguration, workflow_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::MatchableAttributesConfiguration, attributes_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::MatchableAttributesConfiguration, domain_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::MatchableAttributesConfiguration, project_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::MatchableAttributesConfiguration, workflow_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::MatchableAttributesConfiguration, launch_plan_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ListMatchableResourcesRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ListMatchableAttributesRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ListMatchableResourcesRequest, resource_type_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ListMatchableAttributesRequest, resource_type_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ListMatchableResourcesResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ListMatchableAttributesResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ListMatchableResourcesResponse, configurations_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ListMatchableAttributesResponse, configurations_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::admin::TaskResourceSpec)},
@@ -320,9 +321,9 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 31, -1, sizeof(::flyteidl::admin::ExecutionQueueAttributes)},
   { 37, -1, sizeof(::flyteidl::admin::ExecutionClusterLabel)},
   { 43, -1, sizeof(::flyteidl::admin::MatchingAttributes)},
-  { 53, -1, sizeof(::flyteidl::admin::MatchableResourceConfiguration)},
-  { 62, -1, sizeof(::flyteidl::admin::ListMatchableResourcesRequest)},
-  { 68, -1, sizeof(::flyteidl::admin::ListMatchableResourcesResponse)},
+  { 53, -1, sizeof(::flyteidl::admin::MatchableAttributesConfiguration)},
+  { 63, -1, sizeof(::flyteidl::admin::ListMatchableAttributesRequest)},
+  { 69, -1, sizeof(::flyteidl::admin::ListMatchableAttributesResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -333,9 +334,9 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ExecutionQueueAttributes_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ExecutionClusterLabel_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_MatchingAttributes_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_MatchableResourceConfiguration_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ListMatchableResourcesRequest_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ListMatchableResourcesResponse_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_MatchableAttributesConfiguration_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ListMatchableAttributesRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ListMatchableAttributesResponse_default_instance_),
 };
 
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto = {
@@ -366,25 +367,25 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fmatchable_5fresource_2ep
   "\001(\0132(.flyteidl.admin.ExecutionQueueAttri"
   "butesH\000\022H\n\027execution_cluster_label\030\004 \001(\013"
   "2%.flyteidl.admin.ExecutionClusterLabelH"
-  "\000B\010\n\006target\"\213\001\n\036MatchableResourceConfigu"
-  "ration\0226\n\nattributes\030\001 \001(\0132\".flyteidl.ad"
-  "min.MatchingAttributes\022\016\n\006domain\030\002 \001(\t\022\017"
-  "\n\007project\030\003 \001(\t\022\020\n\010workflow\030\004 \001(\t\"Y\n\035Lis"
-  "tMatchableResourcesRequest\0228\n\rresource_t"
-  "ype\030\001 \001(\0162!.flyteidl.admin.MatchableReso"
-  "urce\"h\n\036ListMatchableResourcesResponse\022F"
-  "\n\016configurations\030\001 \003(\0132..flyteidl.admin."
-  "MatchableResourceConfiguration*n\n\021Matcha"
-  "bleResource\022\021\n\rTASK_RESOURCE\020\000\022\024\n\020CLUSTE"
-  "R_RESOURCE\020\001\022\023\n\017EXECUTION_QUEUE\020\002\022\033\n\027EXE"
-  "CUTION_CLUSTER_LABEL\020\003B3Z1github.com/lyf"
-  "t/flyteidl/gen/pb-go/flyteidl/adminb\006pro"
-  "to3"
+  "\000B\010\n\006target\"\242\001\n MatchableAttributesConfi"
+  "guration\0226\n\nattributes\030\001 \001(\0132\".flyteidl."
+  "admin.MatchingAttributes\022\016\n\006domain\030\002 \001(\t"
+  "\022\017\n\007project\030\003 \001(\t\022\020\n\010workflow\030\004 \001(\t\022\023\n\013l"
+  "aunch_plan\030\005 \001(\t\"Z\n\036ListMatchableAttribu"
+  "tesRequest\0228\n\rresource_type\030\001 \001(\0162!.flyt"
+  "eidl.admin.MatchableResource\"k\n\037ListMatc"
+  "hableAttributesResponse\022H\n\016configuration"
+  "s\030\001 \003(\01320.flyteidl.admin.MatchableAttrib"
+  "utesConfiguration*n\n\021MatchableResource\022\021"
+  "\n\rTASK_RESOURCE\020\000\022\024\n\020CLUSTER_RESOURCE\020\001\022"
+  "\023\n\017EXECUTION_QUEUE\020\002\022\033\n\027EXECUTION_CLUSTE"
+  "R_LABEL\020\003B3Z1github.com/lyft/flyteidl/ge"
+  "n/pb-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fmatchable_5fresource_2eproto,
-  "flyteidl/admin/matchable_resource.proto", &assign_descriptors_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, 1363,
+  "flyteidl/admin/matchable_resource.proto", &assign_descriptors_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, 1390,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fmatchable_5fresource_2eproto() {
@@ -2866,32 +2867,33 @@ void MatchingAttributes::InternalSwap(MatchingAttributes* other) {
 
 // ===================================================================
 
-void MatchableResourceConfiguration::InitAsDefaultInstance() {
-  ::flyteidl::admin::_MatchableResourceConfiguration_default_instance_._instance.get_mutable()->attributes_ = const_cast< ::flyteidl::admin::MatchingAttributes*>(
+void MatchableAttributesConfiguration::InitAsDefaultInstance() {
+  ::flyteidl::admin::_MatchableAttributesConfiguration_default_instance_._instance.get_mutable()->attributes_ = const_cast< ::flyteidl::admin::MatchingAttributes*>(
       ::flyteidl::admin::MatchingAttributes::internal_default_instance());
 }
-class MatchableResourceConfiguration::HasBitSetters {
+class MatchableAttributesConfiguration::HasBitSetters {
  public:
-  static const ::flyteidl::admin::MatchingAttributes& attributes(const MatchableResourceConfiguration* msg);
+  static const ::flyteidl::admin::MatchingAttributes& attributes(const MatchableAttributesConfiguration* msg);
 };
 
 const ::flyteidl::admin::MatchingAttributes&
-MatchableResourceConfiguration::HasBitSetters::attributes(const MatchableResourceConfiguration* msg) {
+MatchableAttributesConfiguration::HasBitSetters::attributes(const MatchableAttributesConfiguration* msg) {
   return *msg->attributes_;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int MatchableResourceConfiguration::kAttributesFieldNumber;
-const int MatchableResourceConfiguration::kDomainFieldNumber;
-const int MatchableResourceConfiguration::kProjectFieldNumber;
-const int MatchableResourceConfiguration::kWorkflowFieldNumber;
+const int MatchableAttributesConfiguration::kAttributesFieldNumber;
+const int MatchableAttributesConfiguration::kDomainFieldNumber;
+const int MatchableAttributesConfiguration::kProjectFieldNumber;
+const int MatchableAttributesConfiguration::kWorkflowFieldNumber;
+const int MatchableAttributesConfiguration::kLaunchPlanFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-MatchableResourceConfiguration::MatchableResourceConfiguration()
+MatchableAttributesConfiguration::MatchableAttributesConfiguration()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.admin.MatchableResourceConfiguration)
+  // @@protoc_insertion_point(constructor:flyteidl.admin.MatchableAttributesConfiguration)
 }
-MatchableResourceConfiguration::MatchableResourceConfiguration(const MatchableResourceConfiguration& from)
+MatchableAttributesConfiguration::MatchableAttributesConfiguration(const MatchableAttributesConfiguration& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -2907,46 +2909,52 @@ MatchableResourceConfiguration::MatchableResourceConfiguration(const MatchableRe
   if (from.workflow().size() > 0) {
     workflow_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.workflow_);
   }
+  launch_plan_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.launch_plan().size() > 0) {
+    launch_plan_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.launch_plan_);
+  }
   if (from.has_attributes()) {
     attributes_ = new ::flyteidl::admin::MatchingAttributes(*from.attributes_);
   } else {
     attributes_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:flyteidl.admin.MatchableResourceConfiguration)
+  // @@protoc_insertion_point(copy_constructor:flyteidl.admin.MatchableAttributesConfiguration)
 }
 
-void MatchableResourceConfiguration::SharedCtor() {
+void MatchableAttributesConfiguration::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
-      &scc_info_MatchableResourceConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
+      &scc_info_MatchableAttributesConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
   domain_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   workflow_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  launch_plan_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   attributes_ = nullptr;
 }
 
-MatchableResourceConfiguration::~MatchableResourceConfiguration() {
-  // @@protoc_insertion_point(destructor:flyteidl.admin.MatchableResourceConfiguration)
+MatchableAttributesConfiguration::~MatchableAttributesConfiguration() {
+  // @@protoc_insertion_point(destructor:flyteidl.admin.MatchableAttributesConfiguration)
   SharedDtor();
 }
 
-void MatchableResourceConfiguration::SharedDtor() {
+void MatchableAttributesConfiguration::SharedDtor() {
   domain_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   project_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   workflow_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  launch_plan_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete attributes_;
 }
 
-void MatchableResourceConfiguration::SetCachedSize(int size) const {
+void MatchableAttributesConfiguration::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const MatchableResourceConfiguration& MatchableResourceConfiguration::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_MatchableResourceConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
+const MatchableAttributesConfiguration& MatchableAttributesConfiguration::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_MatchableAttributesConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void MatchableResourceConfiguration::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.admin.MatchableResourceConfiguration)
+void MatchableAttributesConfiguration::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.admin.MatchableAttributesConfiguration)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2954,6 +2962,7 @@ void MatchableResourceConfiguration::Clear() {
   domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   project_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   workflow_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  launch_plan_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && attributes_ != nullptr) {
     delete attributes_;
   }
@@ -2962,9 +2971,9 @@ void MatchableResourceConfiguration::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* MatchableResourceConfiguration::_InternalParse(const char* begin, const char* end, void* object,
+const char* MatchableAttributesConfiguration::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<MatchableResourceConfiguration*>(object);
+  auto msg = static_cast<MatchableAttributesConfiguration*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -2992,7 +3001,7 @@ const char* MatchableResourceConfiguration::_InternalParse(const char* begin, co
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.MatchableResourceConfiguration.domain");
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.MatchableAttributesConfiguration.domain");
         object = msg->mutable_domain();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
@@ -3008,7 +3017,7 @@ const char* MatchableResourceConfiguration::_InternalParse(const char* begin, co
         if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.MatchableResourceConfiguration.project");
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.MatchableAttributesConfiguration.project");
         object = msg->mutable_project();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
@@ -3024,8 +3033,24 @@ const char* MatchableResourceConfiguration::_InternalParse(const char* begin, co
         if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.MatchableResourceConfiguration.workflow");
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.MatchableAttributesConfiguration.workflow");
         object = msg->mutable_workflow();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // string launch_plan = 5;
+      case 5: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.MatchableAttributesConfiguration.launch_plan");
+        object = msg->mutable_launch_plan();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
           goto string_till_end;
@@ -3059,11 +3084,11 @@ len_delim_till_end:
                                {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool MatchableResourceConfiguration::MergePartialFromCodedStream(
+bool MatchableAttributesConfiguration::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.admin.MatchableResourceConfiguration)
+  // @@protoc_insertion_point(parse_start:flyteidl.admin.MatchableAttributesConfiguration)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -3088,7 +3113,7 @@ bool MatchableResourceConfiguration::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->domain().data(), static_cast<int>(this->domain().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.MatchableResourceConfiguration.domain"));
+            "flyteidl.admin.MatchableAttributesConfiguration.domain"));
         } else {
           goto handle_unusual;
         }
@@ -3103,7 +3128,7 @@ bool MatchableResourceConfiguration::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->project().data(), static_cast<int>(this->project().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.MatchableResourceConfiguration.project"));
+            "flyteidl.admin.MatchableAttributesConfiguration.project"));
         } else {
           goto handle_unusual;
         }
@@ -3118,7 +3143,22 @@ bool MatchableResourceConfiguration::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->workflow().data(), static_cast<int>(this->workflow().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.MatchableResourceConfiguration.workflow"));
+            "flyteidl.admin.MatchableAttributesConfiguration.workflow"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string launch_plan = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_launch_plan()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->launch_plan().data(), static_cast<int>(this->launch_plan().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.admin.MatchableAttributesConfiguration.launch_plan"));
         } else {
           goto handle_unusual;
         }
@@ -3137,18 +3177,18 @@ bool MatchableResourceConfiguration::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:flyteidl.admin.MatchableResourceConfiguration)
+  // @@protoc_insertion_point(parse_success:flyteidl.admin.MatchableAttributesConfiguration)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.admin.MatchableResourceConfiguration)
+  // @@protoc_insertion_point(parse_failure:flyteidl.admin.MatchableAttributesConfiguration)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void MatchableResourceConfiguration::SerializeWithCachedSizes(
+void MatchableAttributesConfiguration::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.admin.MatchableResourceConfiguration)
+  // @@protoc_insertion_point(serialize_start:flyteidl.admin.MatchableAttributesConfiguration)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3163,7 +3203,7 @@ void MatchableResourceConfiguration::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->domain().data(), static_cast<int>(this->domain().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.MatchableResourceConfiguration.domain");
+      "flyteidl.admin.MatchableAttributesConfiguration.domain");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->domain(), output);
   }
@@ -3173,7 +3213,7 @@ void MatchableResourceConfiguration::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->project().data(), static_cast<int>(this->project().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.MatchableResourceConfiguration.project");
+      "flyteidl.admin.MatchableAttributesConfiguration.project");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       3, this->project(), output);
   }
@@ -3183,21 +3223,31 @@ void MatchableResourceConfiguration::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->workflow().data(), static_cast<int>(this->workflow().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.MatchableResourceConfiguration.workflow");
+      "flyteidl.admin.MatchableAttributesConfiguration.workflow");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       4, this->workflow(), output);
+  }
+
+  // string launch_plan = 5;
+  if (this->launch_plan().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->launch_plan().data(), static_cast<int>(this->launch_plan().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.MatchableAttributesConfiguration.launch_plan");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->launch_plan(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:flyteidl.admin.MatchableResourceConfiguration)
+  // @@protoc_insertion_point(serialize_end:flyteidl.admin.MatchableAttributesConfiguration)
 }
 
-::google::protobuf::uint8* MatchableResourceConfiguration::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* MatchableAttributesConfiguration::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.MatchableResourceConfiguration)
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.MatchableAttributesConfiguration)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3213,7 +3263,7 @@ void MatchableResourceConfiguration::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->domain().data(), static_cast<int>(this->domain().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.MatchableResourceConfiguration.domain");
+      "flyteidl.admin.MatchableAttributesConfiguration.domain");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->domain(), target);
@@ -3224,7 +3274,7 @@ void MatchableResourceConfiguration::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->project().data(), static_cast<int>(this->project().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.MatchableResourceConfiguration.project");
+      "flyteidl.admin.MatchableAttributesConfiguration.project");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         3, this->project(), target);
@@ -3235,22 +3285,33 @@ void MatchableResourceConfiguration::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->workflow().data(), static_cast<int>(this->workflow().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.MatchableResourceConfiguration.workflow");
+      "flyteidl.admin.MatchableAttributesConfiguration.workflow");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         4, this->workflow(), target);
+  }
+
+  // string launch_plan = 5;
+  if (this->launch_plan().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->launch_plan().data(), static_cast<int>(this->launch_plan().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.MatchableAttributesConfiguration.launch_plan");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->launch_plan(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.MatchableResourceConfiguration)
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.MatchableAttributesConfiguration)
   return target;
 }
 
-size_t MatchableResourceConfiguration::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.MatchableResourceConfiguration)
+size_t MatchableAttributesConfiguration::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.MatchableAttributesConfiguration)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3283,6 +3344,13 @@ size_t MatchableResourceConfiguration::ByteSizeLong() const {
         this->workflow());
   }
 
+  // string launch_plan = 5;
+  if (this->launch_plan().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->launch_plan());
+  }
+
   // .flyteidl.admin.MatchingAttributes attributes = 1;
   if (this->has_attributes()) {
     total_size += 1 +
@@ -3295,23 +3363,23 @@ size_t MatchableResourceConfiguration::ByteSizeLong() const {
   return total_size;
 }
 
-void MatchableResourceConfiguration::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.MatchableResourceConfiguration)
+void MatchableAttributesConfiguration::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.MatchableAttributesConfiguration)
   GOOGLE_DCHECK_NE(&from, this);
-  const MatchableResourceConfiguration* source =
-      ::google::protobuf::DynamicCastToGenerated<MatchableResourceConfiguration>(
+  const MatchableAttributesConfiguration* source =
+      ::google::protobuf::DynamicCastToGenerated<MatchableAttributesConfiguration>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.MatchableResourceConfiguration)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.MatchableAttributesConfiguration)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.admin.MatchableResourceConfiguration)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.admin.MatchableAttributesConfiguration)
     MergeFrom(*source);
   }
 }
 
-void MatchableResourceConfiguration::MergeFrom(const MatchableResourceConfiguration& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.admin.MatchableResourceConfiguration)
+void MatchableAttributesConfiguration::MergeFrom(const MatchableAttributesConfiguration& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.admin.MatchableAttributesConfiguration)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -3329,34 +3397,38 @@ void MatchableResourceConfiguration::MergeFrom(const MatchableResourceConfigurat
 
     workflow_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.workflow_);
   }
+  if (from.launch_plan().size() > 0) {
+
+    launch_plan_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.launch_plan_);
+  }
   if (from.has_attributes()) {
     mutable_attributes()->::flyteidl::admin::MatchingAttributes::MergeFrom(from.attributes());
   }
 }
 
-void MatchableResourceConfiguration::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.admin.MatchableResourceConfiguration)
+void MatchableAttributesConfiguration::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.admin.MatchableAttributesConfiguration)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void MatchableResourceConfiguration::CopyFrom(const MatchableResourceConfiguration& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.admin.MatchableResourceConfiguration)
+void MatchableAttributesConfiguration::CopyFrom(const MatchableAttributesConfiguration& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.admin.MatchableAttributesConfiguration)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool MatchableResourceConfiguration::IsInitialized() const {
+bool MatchableAttributesConfiguration::IsInitialized() const {
   return true;
 }
 
-void MatchableResourceConfiguration::Swap(MatchableResourceConfiguration* other) {
+void MatchableAttributesConfiguration::Swap(MatchableAttributesConfiguration* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void MatchableResourceConfiguration::InternalSwap(MatchableResourceConfiguration* other) {
+void MatchableAttributesConfiguration::InternalSwap(MatchableAttributesConfiguration* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   domain_.Swap(&other->domain_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
@@ -3365,10 +3437,12 @@ void MatchableResourceConfiguration::InternalSwap(MatchableResourceConfiguration
     GetArenaNoVirtual());
   workflow_.Swap(&other->workflow_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  launch_plan_.Swap(&other->launch_plan_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(attributes_, other->attributes_);
 }
 
-::google::protobuf::Metadata MatchableResourceConfiguration::GetMetadata() const {
+::google::protobuf::Metadata MatchableAttributesConfiguration::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto);
   return ::file_level_metadata_flyteidl_2fadmin_2fmatchable_5fresource_2eproto[kIndexInFileMessages];
 }
@@ -3376,52 +3450,52 @@ void MatchableResourceConfiguration::InternalSwap(MatchableResourceConfiguration
 
 // ===================================================================
 
-void ListMatchableResourcesRequest::InitAsDefaultInstance() {
+void ListMatchableAttributesRequest::InitAsDefaultInstance() {
 }
-class ListMatchableResourcesRequest::HasBitSetters {
+class ListMatchableAttributesRequest::HasBitSetters {
  public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ListMatchableResourcesRequest::kResourceTypeFieldNumber;
+const int ListMatchableAttributesRequest::kResourceTypeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-ListMatchableResourcesRequest::ListMatchableResourcesRequest()
+ListMatchableAttributesRequest::ListMatchableAttributesRequest()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.admin.ListMatchableResourcesRequest)
+  // @@protoc_insertion_point(constructor:flyteidl.admin.ListMatchableAttributesRequest)
 }
-ListMatchableResourcesRequest::ListMatchableResourcesRequest(const ListMatchableResourcesRequest& from)
+ListMatchableAttributesRequest::ListMatchableAttributesRequest(const ListMatchableAttributesRequest& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   resource_type_ = from.resource_type_;
-  // @@protoc_insertion_point(copy_constructor:flyteidl.admin.ListMatchableResourcesRequest)
+  // @@protoc_insertion_point(copy_constructor:flyteidl.admin.ListMatchableAttributesRequest)
 }
 
-void ListMatchableResourcesRequest::SharedCtor() {
+void ListMatchableAttributesRequest::SharedCtor() {
   resource_type_ = 0;
 }
 
-ListMatchableResourcesRequest::~ListMatchableResourcesRequest() {
-  // @@protoc_insertion_point(destructor:flyteidl.admin.ListMatchableResourcesRequest)
+ListMatchableAttributesRequest::~ListMatchableAttributesRequest() {
+  // @@protoc_insertion_point(destructor:flyteidl.admin.ListMatchableAttributesRequest)
   SharedDtor();
 }
 
-void ListMatchableResourcesRequest::SharedDtor() {
+void ListMatchableAttributesRequest::SharedDtor() {
 }
 
-void ListMatchableResourcesRequest::SetCachedSize(int size) const {
+void ListMatchableAttributesRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ListMatchableResourcesRequest& ListMatchableResourcesRequest::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_ListMatchableResourcesRequest_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
+const ListMatchableAttributesRequest& ListMatchableAttributesRequest::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_ListMatchableAttributesRequest_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void ListMatchableResourcesRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.admin.ListMatchableResourcesRequest)
+void ListMatchableAttributesRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.admin.ListMatchableAttributesRequest)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3431,9 +3505,9 @@ void ListMatchableResourcesRequest::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* ListMatchableResourcesRequest::_InternalParse(const char* begin, const char* end, void* object,
+const char* ListMatchableAttributesRequest::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<ListMatchableResourcesRequest*>(object);
+  auto msg = static_cast<ListMatchableAttributesRequest*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -3468,11 +3542,11 @@ const char* ListMatchableResourcesRequest::_InternalParse(const char* begin, con
   return ptr;
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool ListMatchableResourcesRequest::MergePartialFromCodedStream(
+bool ListMatchableAttributesRequest::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.admin.ListMatchableResourcesRequest)
+  // @@protoc_insertion_point(parse_start:flyteidl.admin.ListMatchableAttributesRequest)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -3504,18 +3578,18 @@ bool ListMatchableResourcesRequest::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:flyteidl.admin.ListMatchableResourcesRequest)
+  // @@protoc_insertion_point(parse_success:flyteidl.admin.ListMatchableAttributesRequest)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.admin.ListMatchableResourcesRequest)
+  // @@protoc_insertion_point(parse_failure:flyteidl.admin.ListMatchableAttributesRequest)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void ListMatchableResourcesRequest::SerializeWithCachedSizes(
+void ListMatchableAttributesRequest::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.admin.ListMatchableResourcesRequest)
+  // @@protoc_insertion_point(serialize_start:flyteidl.admin.ListMatchableAttributesRequest)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3529,12 +3603,12 @@ void ListMatchableResourcesRequest::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:flyteidl.admin.ListMatchableResourcesRequest)
+  // @@protoc_insertion_point(serialize_end:flyteidl.admin.ListMatchableAttributesRequest)
 }
 
-::google::protobuf::uint8* ListMatchableResourcesRequest::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* ListMatchableAttributesRequest::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.ListMatchableResourcesRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.ListMatchableAttributesRequest)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3548,12 +3622,12 @@ void ListMatchableResourcesRequest::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.ListMatchableResourcesRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.ListMatchableAttributesRequest)
   return target;
 }
 
-size_t ListMatchableResourcesRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.ListMatchableResourcesRequest)
+size_t ListMatchableAttributesRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.ListMatchableAttributesRequest)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3576,23 +3650,23 @@ size_t ListMatchableResourcesRequest::ByteSizeLong() const {
   return total_size;
 }
 
-void ListMatchableResourcesRequest::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.ListMatchableResourcesRequest)
+void ListMatchableAttributesRequest::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.ListMatchableAttributesRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  const ListMatchableResourcesRequest* source =
-      ::google::protobuf::DynamicCastToGenerated<ListMatchableResourcesRequest>(
+  const ListMatchableAttributesRequest* source =
+      ::google::protobuf::DynamicCastToGenerated<ListMatchableAttributesRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.ListMatchableResourcesRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.ListMatchableAttributesRequest)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.admin.ListMatchableResourcesRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.admin.ListMatchableAttributesRequest)
     MergeFrom(*source);
   }
 }
 
-void ListMatchableResourcesRequest::MergeFrom(const ListMatchableResourcesRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.admin.ListMatchableResourcesRequest)
+void ListMatchableAttributesRequest::MergeFrom(const ListMatchableAttributesRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.admin.ListMatchableAttributesRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -3603,35 +3677,35 @@ void ListMatchableResourcesRequest::MergeFrom(const ListMatchableResourcesReques
   }
 }
 
-void ListMatchableResourcesRequest::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.admin.ListMatchableResourcesRequest)
+void ListMatchableAttributesRequest::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.admin.ListMatchableAttributesRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void ListMatchableResourcesRequest::CopyFrom(const ListMatchableResourcesRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.admin.ListMatchableResourcesRequest)
+void ListMatchableAttributesRequest::CopyFrom(const ListMatchableAttributesRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.admin.ListMatchableAttributesRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool ListMatchableResourcesRequest::IsInitialized() const {
+bool ListMatchableAttributesRequest::IsInitialized() const {
   return true;
 }
 
-void ListMatchableResourcesRequest::Swap(ListMatchableResourcesRequest* other) {
+void ListMatchableAttributesRequest::Swap(ListMatchableAttributesRequest* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void ListMatchableResourcesRequest::InternalSwap(ListMatchableResourcesRequest* other) {
+void ListMatchableAttributesRequest::InternalSwap(ListMatchableAttributesRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(resource_type_, other->resource_type_);
 }
 
-::google::protobuf::Metadata ListMatchableResourcesRequest::GetMetadata() const {
+::google::protobuf::Metadata ListMatchableAttributesRequest::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto);
   return ::file_level_metadata_flyteidl_2fadmin_2fmatchable_5fresource_2eproto[kIndexInFileMessages];
 }
@@ -3639,53 +3713,53 @@ void ListMatchableResourcesRequest::InternalSwap(ListMatchableResourcesRequest* 
 
 // ===================================================================
 
-void ListMatchableResourcesResponse::InitAsDefaultInstance() {
+void ListMatchableAttributesResponse::InitAsDefaultInstance() {
 }
-class ListMatchableResourcesResponse::HasBitSetters {
+class ListMatchableAttributesResponse::HasBitSetters {
  public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ListMatchableResourcesResponse::kConfigurationsFieldNumber;
+const int ListMatchableAttributesResponse::kConfigurationsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-ListMatchableResourcesResponse::ListMatchableResourcesResponse()
+ListMatchableAttributesResponse::ListMatchableAttributesResponse()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.admin.ListMatchableResourcesResponse)
+  // @@protoc_insertion_point(constructor:flyteidl.admin.ListMatchableAttributesResponse)
 }
-ListMatchableResourcesResponse::ListMatchableResourcesResponse(const ListMatchableResourcesResponse& from)
+ListMatchableAttributesResponse::ListMatchableAttributesResponse(const ListMatchableAttributesResponse& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr),
       configurations_(from.configurations_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:flyteidl.admin.ListMatchableResourcesResponse)
+  // @@protoc_insertion_point(copy_constructor:flyteidl.admin.ListMatchableAttributesResponse)
 }
 
-void ListMatchableResourcesResponse::SharedCtor() {
+void ListMatchableAttributesResponse::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
-      &scc_info_ListMatchableResourcesResponse_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
+      &scc_info_ListMatchableAttributesResponse_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
 }
 
-ListMatchableResourcesResponse::~ListMatchableResourcesResponse() {
-  // @@protoc_insertion_point(destructor:flyteidl.admin.ListMatchableResourcesResponse)
+ListMatchableAttributesResponse::~ListMatchableAttributesResponse() {
+  // @@protoc_insertion_point(destructor:flyteidl.admin.ListMatchableAttributesResponse)
   SharedDtor();
 }
 
-void ListMatchableResourcesResponse::SharedDtor() {
+void ListMatchableAttributesResponse::SharedDtor() {
 }
 
-void ListMatchableResourcesResponse::SetCachedSize(int size) const {
+void ListMatchableAttributesResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ListMatchableResourcesResponse& ListMatchableResourcesResponse::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_ListMatchableResourcesResponse_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
+const ListMatchableAttributesResponse& ListMatchableAttributesResponse::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_ListMatchableAttributesResponse_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void ListMatchableResourcesResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.admin.ListMatchableResourcesResponse)
+void ListMatchableAttributesResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.admin.ListMatchableAttributesResponse)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3695,9 +3769,9 @@ void ListMatchableResourcesResponse::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* ListMatchableResourcesResponse::_InternalParse(const char* begin, const char* end, void* object,
+const char* ListMatchableAttributesResponse::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<ListMatchableResourcesResponse*>(object);
+  auto msg = static_cast<ListMatchableAttributesResponse*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -3707,13 +3781,13 @@ const char* ListMatchableResourcesResponse::_InternalParse(const char* begin, co
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;
+      // repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::flyteidl::admin::MatchableResourceConfiguration::_InternalParse;
+          parser_till_end = ::flyteidl::admin::MatchableAttributesConfiguration::_InternalParse;
           object = msg->add_configurations();
           if (size > end - ptr) goto len_delim_till_end;
           ptr += size;
@@ -3743,17 +3817,17 @@ len_delim_till_end:
                                {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool ListMatchableResourcesResponse::MergePartialFromCodedStream(
+bool ListMatchableAttributesResponse::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.admin.ListMatchableResourcesResponse)
+  // @@protoc_insertion_point(parse_start:flyteidl.admin.ListMatchableAttributesResponse)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;
+      // repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -3776,22 +3850,22 @@ bool ListMatchableResourcesResponse::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:flyteidl.admin.ListMatchableResourcesResponse)
+  // @@protoc_insertion_point(parse_success:flyteidl.admin.ListMatchableAttributesResponse)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.admin.ListMatchableResourcesResponse)
+  // @@protoc_insertion_point(parse_failure:flyteidl.admin.ListMatchableAttributesResponse)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void ListMatchableResourcesResponse::SerializeWithCachedSizes(
+void ListMatchableAttributesResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.admin.ListMatchableResourcesResponse)
+  // @@protoc_insertion_point(serialize_start:flyteidl.admin.ListMatchableAttributesResponse)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;
+  // repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->configurations_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -3804,16 +3878,16 @@ void ListMatchableResourcesResponse::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:flyteidl.admin.ListMatchableResourcesResponse)
+  // @@protoc_insertion_point(serialize_end:flyteidl.admin.ListMatchableAttributesResponse)
 }
 
-::google::protobuf::uint8* ListMatchableResourcesResponse::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* ListMatchableAttributesResponse::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.ListMatchableResourcesResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.ListMatchableAttributesResponse)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;
+  // repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->configurations_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -3825,12 +3899,12 @@ void ListMatchableResourcesResponse::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.ListMatchableResourcesResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.ListMatchableAttributesResponse)
   return target;
 }
 
-size_t ListMatchableResourcesResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.ListMatchableResourcesResponse)
+size_t ListMatchableAttributesResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.ListMatchableAttributesResponse)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3842,7 +3916,7 @@ size_t ListMatchableResourcesResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;
+  // repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;
   {
     unsigned int count = static_cast<unsigned int>(this->configurations_size());
     total_size += 1UL * count;
@@ -3858,23 +3932,23 @@ size_t ListMatchableResourcesResponse::ByteSizeLong() const {
   return total_size;
 }
 
-void ListMatchableResourcesResponse::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.ListMatchableResourcesResponse)
+void ListMatchableAttributesResponse::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.ListMatchableAttributesResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  const ListMatchableResourcesResponse* source =
-      ::google::protobuf::DynamicCastToGenerated<ListMatchableResourcesResponse>(
+  const ListMatchableAttributesResponse* source =
+      ::google::protobuf::DynamicCastToGenerated<ListMatchableAttributesResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.ListMatchableResourcesResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.ListMatchableAttributesResponse)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.admin.ListMatchableResourcesResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.admin.ListMatchableAttributesResponse)
     MergeFrom(*source);
   }
 }
 
-void ListMatchableResourcesResponse::MergeFrom(const ListMatchableResourcesResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.admin.ListMatchableResourcesResponse)
+void ListMatchableAttributesResponse::MergeFrom(const ListMatchableAttributesResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.admin.ListMatchableAttributesResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -3883,35 +3957,35 @@ void ListMatchableResourcesResponse::MergeFrom(const ListMatchableResourcesRespo
   configurations_.MergeFrom(from.configurations_);
 }
 
-void ListMatchableResourcesResponse::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.admin.ListMatchableResourcesResponse)
+void ListMatchableAttributesResponse::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.admin.ListMatchableAttributesResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void ListMatchableResourcesResponse::CopyFrom(const ListMatchableResourcesResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.admin.ListMatchableResourcesResponse)
+void ListMatchableAttributesResponse::CopyFrom(const ListMatchableAttributesResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.admin.ListMatchableAttributesResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool ListMatchableResourcesResponse::IsInitialized() const {
+bool ListMatchableAttributesResponse::IsInitialized() const {
   return true;
 }
 
-void ListMatchableResourcesResponse::Swap(ListMatchableResourcesResponse* other) {
+void ListMatchableAttributesResponse::Swap(ListMatchableAttributesResponse* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void ListMatchableResourcesResponse::InternalSwap(ListMatchableResourcesResponse* other) {
+void ListMatchableAttributesResponse::InternalSwap(ListMatchableAttributesResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   CastToBase(&configurations_)->InternalSwap(CastToBase(&other->configurations_));
 }
 
-::google::protobuf::Metadata ListMatchableResourcesResponse::GetMetadata() const {
+::google::protobuf::Metadata ListMatchableAttributesResponse::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto);
   return ::file_level_metadata_flyteidl_2fadmin_2fmatchable_5fresource_2eproto[kIndexInFileMessages];
 }
@@ -3943,14 +4017,14 @@ template<> PROTOBUF_NOINLINE ::flyteidl::admin::ExecutionClusterLabel* Arena::Cr
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::MatchingAttributes* Arena::CreateMaybeMessage< ::flyteidl::admin::MatchingAttributes >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::admin::MatchingAttributes >(arena);
 }
-template<> PROTOBUF_NOINLINE ::flyteidl::admin::MatchableResourceConfiguration* Arena::CreateMaybeMessage< ::flyteidl::admin::MatchableResourceConfiguration >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::admin::MatchableResourceConfiguration >(arena);
+template<> PROTOBUF_NOINLINE ::flyteidl::admin::MatchableAttributesConfiguration* Arena::CreateMaybeMessage< ::flyteidl::admin::MatchableAttributesConfiguration >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::admin::MatchableAttributesConfiguration >(arena);
 }
-template<> PROTOBUF_NOINLINE ::flyteidl::admin::ListMatchableResourcesRequest* Arena::CreateMaybeMessage< ::flyteidl::admin::ListMatchableResourcesRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::admin::ListMatchableResourcesRequest >(arena);
+template<> PROTOBUF_NOINLINE ::flyteidl::admin::ListMatchableAttributesRequest* Arena::CreateMaybeMessage< ::flyteidl::admin::ListMatchableAttributesRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::admin::ListMatchableAttributesRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::flyteidl::admin::ListMatchableResourcesResponse* Arena::CreateMaybeMessage< ::flyteidl::admin::ListMatchableResourcesResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::admin::ListMatchableResourcesResponse >(arena);
+template<> PROTOBUF_NOINLINE ::flyteidl::admin::ListMatchableAttributesResponse* Arena::CreateMaybeMessage< ::flyteidl::admin::ListMatchableAttributesResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::admin::ListMatchableAttributesResponse >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

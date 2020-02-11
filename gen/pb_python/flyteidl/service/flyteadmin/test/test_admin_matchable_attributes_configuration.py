@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.admin_list_matchable_resources_response import AdminListMatchableResourcesResponse  # noqa: E501
+from flyteadmin.models.admin_matchable_attributes_configuration import AdminMatchableAttributesConfiguration  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestAdminListMatchableResourcesResponse(unittest.TestCase):
-    """AdminListMatchableResourcesResponse unit test stubs"""
+class TestAdminMatchableAttributesConfiguration(unittest.TestCase):
+    """AdminMatchableAttributesConfiguration unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestAdminListMatchableResourcesResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAdminListMatchableResourcesResponse(self):
-        """Test AdminListMatchableResourcesResponse"""
+    def testAdminMatchableAttributesConfiguration(self):
+        """Test AdminMatchableAttributesConfiguration"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.admin_list_matchable_resources_response.AdminListMatchableResourcesResponse()  # noqa: E501
+        # model = flyteadmin.models.admin_matchable_attributes_configuration.AdminMatchableAttributesConfiguration()  # noqa: E501
         pass
 
 

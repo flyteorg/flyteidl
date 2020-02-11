@@ -36,7 +36,7 @@ public final class Admin {
       "l/admin/node_execution.proto\032#flyteidl/a" +
       "dmin/task_execution.proto\032\033flyteidl/admi" +
       "n/common.proto\032,protoc-gen-swagger/optio" +
-      "ns/annotations.proto2\323^\n\014AdminService\022\305\002" +
+      "ns/annotations.proto2\331^\n\014AdminService\022\305\002" +
       "\n\nCreateTask\022!.flyteidl.admin.TaskCreate" +
       "Request\032\".flyteidl.admin.TaskCreateRespo" +
       "nse\"\357\001\202\323\344\223\002\022\"\r/api/v1/tasks:\001*\222A\323\001\032&Crea" +
@@ -316,32 +316,32 @@ public final class Admin {
       "domain}/{workflow}:\001*\222Af\032dDelete the cus" +
       "tomized resource attributes associated w" +
       "ith a project, domain and workflow combi" +
-      "nation\022\333\001\n\026ListMatchableResources\022-.flyt" +
-      "eidl.admin.ListMatchableResourcesRequest" +
-      "\032..flyteidl.admin.ListMatchableResources" +
-      "Response\"b\202\323\344\223\002\035\022\033/api/v1/matchable_reso" +
-      "urces\222A<\032:Retrieve a list of MatchableRe" +
-      "sourceConfiguration objects.\022\200\002\n\021ListNam" +
-      "edEntities\022&.flyteidl.admin.NamedEntityL" +
-      "istRequest\032\037.flyteidl.admin.NamedEntityL" +
-      "ist\"\241\001\202\323\344\223\002;\0229/api/v1/named_entities/{re" +
-      "source_type}/{project}/{domain}\222A]\032[Retr" +
-      "ieve a list of NamedEntity objects shari" +
-      "ng a common resource type, project, and " +
-      "domain.\022\312\001\n\016GetNamedEntity\022%.flyteidl.ad" +
-      "min.NamedEntityGetRequest\032\033.flyteidl.adm" +
-      "in.NamedEntity\"t\202\323\344\223\002K\022I/api/v1/named_en" +
-      "tities/{resource_type}/{id.project}/{id." +
-      "domain}/{id.name}\222A \032\036Retrieve a NamedEn" +
-      "tity object.\022\363\001\n\021UpdateNamedEntity\022(.fly" +
-      "teidl.admin.NamedEntityUpdateRequest\032).f" +
-      "lyteidl.admin.NamedEntityUpdateResponse\"" +
-      "\210\001\202\323\344\223\002N\032I/api/v1/named_entities/{resour" +
-      "ce_type}/{id.project}/{id.domain}/{id.na" +
-      "me}:\001*\222A1\032/Update the fields associated " +
-      "with a NamedEntityB5Z3github.com/lyft/fl" +
-      "yteidl/gen/pb-go/flyteidl/serviceb\006proto" +
-      "3"
+      "nation\022\341\001\n\027ListMatchableAttributes\022..fly" +
+      "teidl.admin.ListMatchableAttributesReque" +
+      "st\032/.flyteidl.admin.ListMatchableAttribu" +
+      "tesResponse\"e\202\323\344\223\002\036\022\034/api/v1/matchable_a" +
+      "ttributes\222A>\032<Retrieve a list of Matchab" +
+      "leAttributesConfiguration objects.\022\200\002\n\021L" +
+      "istNamedEntities\022&.flyteidl.admin.NamedE" +
+      "ntityListRequest\032\037.flyteidl.admin.NamedE" +
+      "ntityList\"\241\001\202\323\344\223\002;\0229/api/v1/named_entiti" +
+      "es/{resource_type}/{project}/{domain}\222A]" +
+      "\032[Retrieve a list of NamedEntity objects" +
+      " sharing a common resource type, project" +
+      ", and domain.\022\312\001\n\016GetNamedEntity\022%.flyte" +
+      "idl.admin.NamedEntityGetRequest\032\033.flytei" +
+      "dl.admin.NamedEntity\"t\202\323\344\223\002K\022I/api/v1/na" +
+      "med_entities/{resource_type}/{id.project" +
+      "}/{id.domain}/{id.name}\222A \032\036Retrieve a N" +
+      "amedEntity object.\022\363\001\n\021UpdateNamedEntity" +
+      "\022(.flyteidl.admin.NamedEntityUpdateReque" +
+      "st\032).flyteidl.admin.NamedEntityUpdateRes" +
+      "ponse\"\210\001\202\323\344\223\002N\032I/api/v1/named_entities/{" +
+      "resource_type}/{id.project}/{id.domain}/" +
+      "{id.name}:\001*\222A1\032/Update the fields assoc" +
+      "iated with a NamedEntityB5Z3github.com/l" +
+      "yft/flyteidl/gen/pb-go/flyteidl/serviceb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

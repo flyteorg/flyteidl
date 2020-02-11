@@ -10,9 +10,10 @@
 package flyteadmin
 
 // Represents a custom set of attributes applied for either a domain; a domain and project; or domain, project and workflow name.
-type AdminMatchableResourceConfiguration struct {
+type AdminMatchableAttributesConfiguration struct {
 	Attributes *AdminMatchingAttributes `json:"attributes,omitempty"`
 	Domain string `json:"domain,omitempty"`
 	Project string `json:"project,omitempty"`
 	Workflow string `json:"workflow,omitempty"`
+	LaunchPlan string `json:"launch_plan,omitempty"`
 }

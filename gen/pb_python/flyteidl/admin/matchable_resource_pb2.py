@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n\'flyteidl/admin/matchable_resource.proto\x12\x0e\x66lyteidl.admin\"M\n\x10TaskResourceSpec\x12\x0b\n\x03\x63pu\x18\x01 \x01(\t\x12\x0b\n\x03gpu\x18\x02 \x01(\t\x12\x0e\n\x06memory\x18\x03 \x01(\t\x12\x0f\n\x07storage\x18\x04 \x01(\t\"~\n\x16TaskResourceAttributes\x12\x32\n\x08\x64\x65\x66\x61ults\x18\x01 \x01(\x0b\x32 .flyteidl.admin.TaskResourceSpec\x12\x30\n\x06limits\x18\x02 \x01(\x0b\x32 .flyteidl.admin.TaskResourceSpec\"\x9d\x01\n\x19\x43lusterResourceAttributes\x12M\n\nattributes\x18\x01 \x03(\x0b\x32\x39.flyteidl.admin.ClusterResourceAttributes.AttributesEntry\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"(\n\x18\x45xecutionQueueAttributes\x12\x0c\n\x04tags\x18\x01 \x03(\t\"&\n\x15\x45xecutionClusterLabel\x12\r\n\x05value\x18\x01 \x01(\t\"\xd6\x02\n\x12MatchingAttributes\x12J\n\x18task_resource_attributes\x18\x01 \x01(\x0b\x32&.flyteidl.admin.TaskResourceAttributesH\x00\x12P\n\x1b\x63luster_resource_attributes\x18\x02 \x01(\x0b\x32).flyteidl.admin.ClusterResourceAttributesH\x00\x12N\n\x1a\x65xecution_queue_attributes\x18\x03 \x01(\x0b\x32(.flyteidl.admin.ExecutionQueueAttributesH\x00\x12H\n\x17\x65xecution_cluster_label\x18\x04 \x01(\x0b\x32%.flyteidl.admin.ExecutionClusterLabelH\x00\x42\x08\n\x06target\"\x8b\x01\n\x1eMatchableResourceConfiguration\x12\x36\n\nattributes\x18\x01 \x01(\x0b\x32\".flyteidl.admin.MatchingAttributes\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0f\n\x07project\x18\x03 \x01(\t\x12\x10\n\x08workflow\x18\x04 \x01(\t\"Y\n\x1dListMatchableResourcesRequest\x12\x38\n\rresource_type\x18\x01 \x01(\x0e\x32!.flyteidl.admin.MatchableResource\"h\n\x1eListMatchableResourcesResponse\x12\x46\n\x0e\x63onfigurations\x18\x01 \x03(\x0b\x32..flyteidl.admin.MatchableResourceConfiguration*n\n\x11MatchableResource\x12\x11\n\rTASK_RESOURCE\x10\x00\x12\x14\n\x10\x43LUSTER_RESOURCE\x10\x01\x12\x13\n\x0f\x45XECUTION_QUEUE\x10\x02\x12\x1b\n\x17\x45XECUTION_CLUSTER_LABEL\x10\x03\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\'flyteidl/admin/matchable_resource.proto\x12\x0e\x66lyteidl.admin\"M\n\x10TaskResourceSpec\x12\x0b\n\x03\x63pu\x18\x01 \x01(\t\x12\x0b\n\x03gpu\x18\x02 \x01(\t\x12\x0e\n\x06memory\x18\x03 \x01(\t\x12\x0f\n\x07storage\x18\x04 \x01(\t\"~\n\x16TaskResourceAttributes\x12\x32\n\x08\x64\x65\x66\x61ults\x18\x01 \x01(\x0b\x32 .flyteidl.admin.TaskResourceSpec\x12\x30\n\x06limits\x18\x02 \x01(\x0b\x32 .flyteidl.admin.TaskResourceSpec\"\x9d\x01\n\x19\x43lusterResourceAttributes\x12M\n\nattributes\x18\x01 \x03(\x0b\x32\x39.flyteidl.admin.ClusterResourceAttributes.AttributesEntry\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"(\n\x18\x45xecutionQueueAttributes\x12\x0c\n\x04tags\x18\x01 \x03(\t\"&\n\x15\x45xecutionClusterLabel\x12\r\n\x05value\x18\x01 \x01(\t\"\xd6\x02\n\x12MatchingAttributes\x12J\n\x18task_resource_attributes\x18\x01 \x01(\x0b\x32&.flyteidl.admin.TaskResourceAttributesH\x00\x12P\n\x1b\x63luster_resource_attributes\x18\x02 \x01(\x0b\x32).flyteidl.admin.ClusterResourceAttributesH\x00\x12N\n\x1a\x65xecution_queue_attributes\x18\x03 \x01(\x0b\x32(.flyteidl.admin.ExecutionQueueAttributesH\x00\x12H\n\x17\x65xecution_cluster_label\x18\x04 \x01(\x0b\x32%.flyteidl.admin.ExecutionClusterLabelH\x00\x42\x08\n\x06target\"\xa2\x01\n MatchableAttributesConfiguration\x12\x36\n\nattributes\x18\x01 \x01(\x0b\x32\".flyteidl.admin.MatchingAttributes\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x0f\n\x07project\x18\x03 \x01(\t\x12\x10\n\x08workflow\x18\x04 \x01(\t\x12\x13\n\x0blaunch_plan\x18\x05 \x01(\t\"Z\n\x1eListMatchableAttributesRequest\x12\x38\n\rresource_type\x18\x01 \x01(\x0e\x32!.flyteidl.admin.MatchableResource\"k\n\x1fListMatchableAttributesResponse\x12H\n\x0e\x63onfigurations\x18\x01 \x03(\x0b\x32\x30.flyteidl.admin.MatchableAttributesConfiguration*n\n\x11MatchableResource\x12\x11\n\rTASK_RESOURCE\x10\x00\x12\x14\n\x10\x43LUSTER_RESOURCE\x10\x01\x12\x13\n\x0f\x45XECUTION_QUEUE\x10\x02\x12\x1b\n\x17\x45XECUTION_CLUSTER_LABEL\x10\x03\x42\x33Z1github.com/lyft/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
 )
 
 _MATCHABLERESOURCE = _descriptor.EnumDescriptor(
@@ -49,8 +49,8 @@ _MATCHABLERESOURCE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1192,
-  serialized_end=1302,
+  serialized_start=1219,
+  serialized_end=1329,
 )
 _sym_db.RegisterEnumDescriptor(_MATCHABLERESOURCE)
 
@@ -337,37 +337,44 @@ _MATCHINGATTRIBUTES = _descriptor.Descriptor(
 )
 
 
-_MATCHABLERESOURCECONFIGURATION = _descriptor.Descriptor(
-  name='MatchableResourceConfiguration',
-  full_name='flyteidl.admin.MatchableResourceConfiguration',
+_MATCHABLEATTRIBUTESCONFIGURATION = _descriptor.Descriptor(
+  name='MatchableAttributesConfiguration',
+  full_name='flyteidl.admin.MatchableAttributesConfiguration',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='attributes', full_name='flyteidl.admin.MatchableResourceConfiguration.attributes', index=0,
+      name='attributes', full_name='flyteidl.admin.MatchableAttributesConfiguration.attributes', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='domain', full_name='flyteidl.admin.MatchableResourceConfiguration.domain', index=1,
+      name='domain', full_name='flyteidl.admin.MatchableAttributesConfiguration.domain', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='project', full_name='flyteidl.admin.MatchableResourceConfiguration.project', index=2,
+      name='project', full_name='flyteidl.admin.MatchableAttributesConfiguration.project', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='workflow', full_name='flyteidl.admin.MatchableResourceConfiguration.workflow', index=3,
+      name='workflow', full_name='flyteidl.admin.MatchableAttributesConfiguration.workflow', index=3,
       number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='launch_plan', full_name='flyteidl.admin.MatchableAttributesConfiguration.launch_plan', index=4,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -385,19 +392,19 @@ _MATCHABLERESOURCECONFIGURATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=854,
-  serialized_end=993,
+  serialized_end=1016,
 )
 
 
-_LISTMATCHABLERESOURCESREQUEST = _descriptor.Descriptor(
-  name='ListMatchableResourcesRequest',
-  full_name='flyteidl.admin.ListMatchableResourcesRequest',
+_LISTMATCHABLEATTRIBUTESREQUEST = _descriptor.Descriptor(
+  name='ListMatchableAttributesRequest',
+  full_name='flyteidl.admin.ListMatchableAttributesRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='resource_type', full_name='flyteidl.admin.ListMatchableResourcesRequest.resource_type', index=0,
+      name='resource_type', full_name='flyteidl.admin.ListMatchableAttributesRequest.resource_type', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -415,20 +422,20 @@ _LISTMATCHABLERESOURCESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=995,
-  serialized_end=1084,
+  serialized_start=1018,
+  serialized_end=1108,
 )
 
 
-_LISTMATCHABLERESOURCESRESPONSE = _descriptor.Descriptor(
-  name='ListMatchableResourcesResponse',
-  full_name='flyteidl.admin.ListMatchableResourcesResponse',
+_LISTMATCHABLEATTRIBUTESRESPONSE = _descriptor.Descriptor(
+  name='ListMatchableAttributesResponse',
+  full_name='flyteidl.admin.ListMatchableAttributesResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='configurations', full_name='flyteidl.admin.ListMatchableResourcesResponse.configurations', index=0,
+      name='configurations', full_name='flyteidl.admin.ListMatchableAttributesResponse.configurations', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -446,8 +453,8 @@ _LISTMATCHABLERESOURCESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1086,
-  serialized_end=1190,
+  serialized_start=1110,
+  serialized_end=1217,
 )
 
 _TASKRESOURCEATTRIBUTES.fields_by_name['defaults'].message_type = _TASKRESOURCESPEC
@@ -470,18 +477,18 @@ _MATCHINGATTRIBUTES.fields_by_name['execution_queue_attributes'].containing_oneo
 _MATCHINGATTRIBUTES.oneofs_by_name['target'].fields.append(
   _MATCHINGATTRIBUTES.fields_by_name['execution_cluster_label'])
 _MATCHINGATTRIBUTES.fields_by_name['execution_cluster_label'].containing_oneof = _MATCHINGATTRIBUTES.oneofs_by_name['target']
-_MATCHABLERESOURCECONFIGURATION.fields_by_name['attributes'].message_type = _MATCHINGATTRIBUTES
-_LISTMATCHABLERESOURCESREQUEST.fields_by_name['resource_type'].enum_type = _MATCHABLERESOURCE
-_LISTMATCHABLERESOURCESRESPONSE.fields_by_name['configurations'].message_type = _MATCHABLERESOURCECONFIGURATION
+_MATCHABLEATTRIBUTESCONFIGURATION.fields_by_name['attributes'].message_type = _MATCHINGATTRIBUTES
+_LISTMATCHABLEATTRIBUTESREQUEST.fields_by_name['resource_type'].enum_type = _MATCHABLERESOURCE
+_LISTMATCHABLEATTRIBUTESRESPONSE.fields_by_name['configurations'].message_type = _MATCHABLEATTRIBUTESCONFIGURATION
 DESCRIPTOR.message_types_by_name['TaskResourceSpec'] = _TASKRESOURCESPEC
 DESCRIPTOR.message_types_by_name['TaskResourceAttributes'] = _TASKRESOURCEATTRIBUTES
 DESCRIPTOR.message_types_by_name['ClusterResourceAttributes'] = _CLUSTERRESOURCEATTRIBUTES
 DESCRIPTOR.message_types_by_name['ExecutionQueueAttributes'] = _EXECUTIONQUEUEATTRIBUTES
 DESCRIPTOR.message_types_by_name['ExecutionClusterLabel'] = _EXECUTIONCLUSTERLABEL
 DESCRIPTOR.message_types_by_name['MatchingAttributes'] = _MATCHINGATTRIBUTES
-DESCRIPTOR.message_types_by_name['MatchableResourceConfiguration'] = _MATCHABLERESOURCECONFIGURATION
-DESCRIPTOR.message_types_by_name['ListMatchableResourcesRequest'] = _LISTMATCHABLERESOURCESREQUEST
-DESCRIPTOR.message_types_by_name['ListMatchableResourcesResponse'] = _LISTMATCHABLERESOURCESRESPONSE
+DESCRIPTOR.message_types_by_name['MatchableAttributesConfiguration'] = _MATCHABLEATTRIBUTESCONFIGURATION
+DESCRIPTOR.message_types_by_name['ListMatchableAttributesRequest'] = _LISTMATCHABLEATTRIBUTESREQUEST
+DESCRIPTOR.message_types_by_name['ListMatchableAttributesResponse'] = _LISTMATCHABLEATTRIBUTESRESPONSE
 DESCRIPTOR.enum_types_by_name['MatchableResource'] = _MATCHABLERESOURCE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -535,26 +542,26 @@ MatchingAttributes = _reflection.GeneratedProtocolMessageType('MatchingAttribute
   ))
 _sym_db.RegisterMessage(MatchingAttributes)
 
-MatchableResourceConfiguration = _reflection.GeneratedProtocolMessageType('MatchableResourceConfiguration', (_message.Message,), dict(
-  DESCRIPTOR = _MATCHABLERESOURCECONFIGURATION,
+MatchableAttributesConfiguration = _reflection.GeneratedProtocolMessageType('MatchableAttributesConfiguration', (_message.Message,), dict(
+  DESCRIPTOR = _MATCHABLEATTRIBUTESCONFIGURATION,
   __module__ = 'flyteidl.admin.matchable_resource_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.admin.MatchableResourceConfiguration)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.MatchableAttributesConfiguration)
   ))
-_sym_db.RegisterMessage(MatchableResourceConfiguration)
+_sym_db.RegisterMessage(MatchableAttributesConfiguration)
 
-ListMatchableResourcesRequest = _reflection.GeneratedProtocolMessageType('ListMatchableResourcesRequest', (_message.Message,), dict(
-  DESCRIPTOR = _LISTMATCHABLERESOURCESREQUEST,
+ListMatchableAttributesRequest = _reflection.GeneratedProtocolMessageType('ListMatchableAttributesRequest', (_message.Message,), dict(
+  DESCRIPTOR = _LISTMATCHABLEATTRIBUTESREQUEST,
   __module__ = 'flyteidl.admin.matchable_resource_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.admin.ListMatchableResourcesRequest)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.ListMatchableAttributesRequest)
   ))
-_sym_db.RegisterMessage(ListMatchableResourcesRequest)
+_sym_db.RegisterMessage(ListMatchableAttributesRequest)
 
-ListMatchableResourcesResponse = _reflection.GeneratedProtocolMessageType('ListMatchableResourcesResponse', (_message.Message,), dict(
-  DESCRIPTOR = _LISTMATCHABLERESOURCESRESPONSE,
+ListMatchableAttributesResponse = _reflection.GeneratedProtocolMessageType('ListMatchableAttributesResponse', (_message.Message,), dict(
+  DESCRIPTOR = _LISTMATCHABLEATTRIBUTESRESPONSE,
   __module__ = 'flyteidl.admin.matchable_resource_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.admin.ListMatchableResourcesResponse)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.ListMatchableAttributesResponse)
   ))
-_sym_db.RegisterMessage(ListMatchableResourcesResponse)
+_sym_db.RegisterMessage(ListMatchableAttributesResponse)
 
 
 DESCRIPTOR._options = None

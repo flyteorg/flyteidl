@@ -8585,174 +8585,180 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a MatchableResourceConfiguration. */
-        interface IMatchableResourceConfiguration {
+        /** Properties of a MatchableAttributesConfiguration. */
+        interface IMatchableAttributesConfiguration {
 
-            /** MatchableResourceConfiguration attributes */
+            /** MatchableAttributesConfiguration attributes */
             attributes?: (flyteidl.admin.IMatchingAttributes|null);
 
-            /** MatchableResourceConfiguration domain */
+            /** MatchableAttributesConfiguration domain */
             domain?: (string|null);
 
-            /** MatchableResourceConfiguration project */
+            /** MatchableAttributesConfiguration project */
             project?: (string|null);
 
-            /** MatchableResourceConfiguration workflow */
+            /** MatchableAttributesConfiguration workflow */
             workflow?: (string|null);
+
+            /** MatchableAttributesConfiguration launchPlan */
+            launchPlan?: (string|null);
         }
 
-        /** Represents a MatchableResourceConfiguration. */
-        class MatchableResourceConfiguration implements IMatchableResourceConfiguration {
+        /** Represents a MatchableAttributesConfiguration. */
+        class MatchableAttributesConfiguration implements IMatchableAttributesConfiguration {
 
             /**
-             * Constructs a new MatchableResourceConfiguration.
+             * Constructs a new MatchableAttributesConfiguration.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.admin.IMatchableResourceConfiguration);
+            constructor(properties?: flyteidl.admin.IMatchableAttributesConfiguration);
 
-            /** MatchableResourceConfiguration attributes. */
+            /** MatchableAttributesConfiguration attributes. */
             public attributes?: (flyteidl.admin.IMatchingAttributes|null);
 
-            /** MatchableResourceConfiguration domain. */
+            /** MatchableAttributesConfiguration domain. */
             public domain: string;
 
-            /** MatchableResourceConfiguration project. */
+            /** MatchableAttributesConfiguration project. */
             public project: string;
 
-            /** MatchableResourceConfiguration workflow. */
+            /** MatchableAttributesConfiguration workflow. */
             public workflow: string;
 
-            /**
-             * Creates a new MatchableResourceConfiguration instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns MatchableResourceConfiguration instance
-             */
-            public static create(properties?: flyteidl.admin.IMatchableResourceConfiguration): flyteidl.admin.MatchableResourceConfiguration;
+            /** MatchableAttributesConfiguration launchPlan. */
+            public launchPlan: string;
 
             /**
-             * Encodes the specified MatchableResourceConfiguration message. Does not implicitly {@link flyteidl.admin.MatchableResourceConfiguration.verify|verify} messages.
-             * @param message MatchableResourceConfiguration message or plain object to encode
+             * Creates a new MatchableAttributesConfiguration instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns MatchableAttributesConfiguration instance
+             */
+            public static create(properties?: flyteidl.admin.IMatchableAttributesConfiguration): flyteidl.admin.MatchableAttributesConfiguration;
+
+            /**
+             * Encodes the specified MatchableAttributesConfiguration message. Does not implicitly {@link flyteidl.admin.MatchableAttributesConfiguration.verify|verify} messages.
+             * @param message MatchableAttributesConfiguration message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.admin.IMatchableResourceConfiguration, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.admin.IMatchableAttributesConfiguration, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a MatchableResourceConfiguration message from the specified reader or buffer.
+             * Decodes a MatchableAttributesConfiguration message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns MatchableResourceConfiguration
+             * @returns MatchableAttributesConfiguration
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.MatchableResourceConfiguration;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.MatchableAttributesConfiguration;
 
             /**
-             * Verifies a MatchableResourceConfiguration message.
+             * Verifies a MatchableAttributesConfiguration message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a ListMatchableResourcesRequest. */
-        interface IListMatchableResourcesRequest {
+        /** Properties of a ListMatchableAttributesRequest. */
+        interface IListMatchableAttributesRequest {
 
-            /** ListMatchableResourcesRequest resourceType */
+            /** ListMatchableAttributesRequest resourceType */
             resourceType?: (flyteidl.admin.MatchableResource|null);
         }
 
-        /** Represents a ListMatchableResourcesRequest. */
-        class ListMatchableResourcesRequest implements IListMatchableResourcesRequest {
+        /** Represents a ListMatchableAttributesRequest. */
+        class ListMatchableAttributesRequest implements IListMatchableAttributesRequest {
 
             /**
-             * Constructs a new ListMatchableResourcesRequest.
+             * Constructs a new ListMatchableAttributesRequest.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.admin.IListMatchableResourcesRequest);
+            constructor(properties?: flyteidl.admin.IListMatchableAttributesRequest);
 
-            /** ListMatchableResourcesRequest resourceType. */
+            /** ListMatchableAttributesRequest resourceType. */
             public resourceType: flyteidl.admin.MatchableResource;
 
             /**
-             * Creates a new ListMatchableResourcesRequest instance using the specified properties.
+             * Creates a new ListMatchableAttributesRequest instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns ListMatchableResourcesRequest instance
+             * @returns ListMatchableAttributesRequest instance
              */
-            public static create(properties?: flyteidl.admin.IListMatchableResourcesRequest): flyteidl.admin.ListMatchableResourcesRequest;
+            public static create(properties?: flyteidl.admin.IListMatchableAttributesRequest): flyteidl.admin.ListMatchableAttributesRequest;
 
             /**
-             * Encodes the specified ListMatchableResourcesRequest message. Does not implicitly {@link flyteidl.admin.ListMatchableResourcesRequest.verify|verify} messages.
-             * @param message ListMatchableResourcesRequest message or plain object to encode
+             * Encodes the specified ListMatchableAttributesRequest message. Does not implicitly {@link flyteidl.admin.ListMatchableAttributesRequest.verify|verify} messages.
+             * @param message ListMatchableAttributesRequest message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.admin.IListMatchableResourcesRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.admin.IListMatchableAttributesRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a ListMatchableResourcesRequest message from the specified reader or buffer.
+             * Decodes a ListMatchableAttributesRequest message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns ListMatchableResourcesRequest
+             * @returns ListMatchableAttributesRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ListMatchableResourcesRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ListMatchableAttributesRequest;
 
             /**
-             * Verifies a ListMatchableResourcesRequest message.
+             * Verifies a ListMatchableAttributesRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a ListMatchableResourcesResponse. */
-        interface IListMatchableResourcesResponse {
+        /** Properties of a ListMatchableAttributesResponse. */
+        interface IListMatchableAttributesResponse {
 
-            /** ListMatchableResourcesResponse configurations */
-            configurations?: (flyteidl.admin.IMatchableResourceConfiguration[]|null);
+            /** ListMatchableAttributesResponse configurations */
+            configurations?: (flyteidl.admin.IMatchableAttributesConfiguration[]|null);
         }
 
-        /** Represents a ListMatchableResourcesResponse. */
-        class ListMatchableResourcesResponse implements IListMatchableResourcesResponse {
+        /** Represents a ListMatchableAttributesResponse. */
+        class ListMatchableAttributesResponse implements IListMatchableAttributesResponse {
 
             /**
-             * Constructs a new ListMatchableResourcesResponse.
+             * Constructs a new ListMatchableAttributesResponse.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.admin.IListMatchableResourcesResponse);
+            constructor(properties?: flyteidl.admin.IListMatchableAttributesResponse);
 
-            /** ListMatchableResourcesResponse configurations. */
-            public configurations: flyteidl.admin.IMatchableResourceConfiguration[];
+            /** ListMatchableAttributesResponse configurations. */
+            public configurations: flyteidl.admin.IMatchableAttributesConfiguration[];
 
             /**
-             * Creates a new ListMatchableResourcesResponse instance using the specified properties.
+             * Creates a new ListMatchableAttributesResponse instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns ListMatchableResourcesResponse instance
+             * @returns ListMatchableAttributesResponse instance
              */
-            public static create(properties?: flyteidl.admin.IListMatchableResourcesResponse): flyteidl.admin.ListMatchableResourcesResponse;
+            public static create(properties?: flyteidl.admin.IListMatchableAttributesResponse): flyteidl.admin.ListMatchableAttributesResponse;
 
             /**
-             * Encodes the specified ListMatchableResourcesResponse message. Does not implicitly {@link flyteidl.admin.ListMatchableResourcesResponse.verify|verify} messages.
-             * @param message ListMatchableResourcesResponse message or plain object to encode
+             * Encodes the specified ListMatchableAttributesResponse message. Does not implicitly {@link flyteidl.admin.ListMatchableAttributesResponse.verify|verify} messages.
+             * @param message ListMatchableAttributesResponse message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.admin.IListMatchableResourcesResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.admin.IListMatchableAttributesResponse, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a ListMatchableResourcesResponse message from the specified reader or buffer.
+             * Decodes a ListMatchableAttributesResponse message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns ListMatchableResourcesResponse
+             * @returns ListMatchableAttributesResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ListMatchableResourcesResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ListMatchableAttributesResponse;
 
             /**
-             * Verifies a ListMatchableResourcesResponse message.
+             * Verifies a ListMatchableAttributesResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -12241,18 +12247,18 @@ export namespace flyteidl {
             public deleteWorkflowAttributes(request: flyteidl.admin.IWorkflowAttributesDeleteRequest): Promise<flyteidl.admin.WorkflowAttributesDeleteResponse>;
 
             /**
-             * Calls ListMatchableResources.
-             * @param request ListMatchableResourcesRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and ListMatchableResourcesResponse
+             * Calls ListMatchableAttributes.
+             * @param request ListMatchableAttributesRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and ListMatchableAttributesResponse
              */
-            public listMatchableResources(request: flyteidl.admin.IListMatchableResourcesRequest, callback: flyteidl.service.AdminService.ListMatchableResourcesCallback): void;
+            public listMatchableAttributes(request: flyteidl.admin.IListMatchableAttributesRequest, callback: flyteidl.service.AdminService.ListMatchableAttributesCallback): void;
 
             /**
-             * Calls ListMatchableResources.
-             * @param request ListMatchableResourcesRequest message or plain object
+             * Calls ListMatchableAttributes.
+             * @param request ListMatchableAttributesRequest message or plain object
              * @returns Promise
              */
-            public listMatchableResources(request: flyteidl.admin.IListMatchableResourcesRequest): Promise<flyteidl.admin.ListMatchableResourcesResponse>;
+            public listMatchableAttributes(request: flyteidl.admin.IListMatchableAttributesRequest): Promise<flyteidl.admin.ListMatchableAttributesResponse>;
 
             /**
              * Calls ListNamedEntities.
@@ -12573,11 +12579,11 @@ export namespace flyteidl {
             type DeleteWorkflowAttributesCallback = (error: (Error|null), response?: flyteidl.admin.WorkflowAttributesDeleteResponse) => void;
 
             /**
-             * Callback as used by {@link flyteidl.service.AdminService#listMatchableResources}.
+             * Callback as used by {@link flyteidl.service.AdminService#listMatchableAttributes}.
              * @param error Error, if any
-             * @param [response] ListMatchableResourcesResponse
+             * @param [response] ListMatchableAttributesResponse
              */
-            type ListMatchableResourcesCallback = (error: (Error|null), response?: flyteidl.admin.ListMatchableResourcesResponse) => void;
+            type ListMatchableAttributesCallback = (error: (Error|null), response?: flyteidl.admin.ListMatchableAttributesResponse) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.AdminService#listNamedEntities}.

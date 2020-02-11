@@ -189,12 +189,12 @@ execution_cluster_label
   
 
 
-.. _api_msg_flyteidl.admin.MatchableResourceConfiguration:
+.. _api_msg_flyteidl.admin.MatchableAttributesConfiguration:
 
-flyteidl.admin.MatchableResourceConfiguration
----------------------------------------------
+flyteidl.admin.MatchableAttributesConfiguration
+-----------------------------------------------
 
-`[flyteidl.admin.MatchableResourceConfiguration proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L69>`_
+`[flyteidl.admin.MatchableAttributesConfiguration proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L69>`_
 
 Represents a custom set of attributes applied for either a domain; a domain and project; or
 domain, project and workflow name.
@@ -205,37 +205,43 @@ domain, project and workflow name.
     "attributes": "{...}",
     "domain": "...",
     "project": "...",
-    "workflow": "..."
+    "workflow": "...",
+    "launch_plan": "..."
   }
 
-.. _api_field_flyteidl.admin.MatchableResourceConfiguration.attributes:
+.. _api_field_flyteidl.admin.MatchableAttributesConfiguration.attributes:
 
 attributes
   (:ref:`flyteidl.admin.MatchingAttributes <api_msg_flyteidl.admin.MatchingAttributes>`) 
   
-.. _api_field_flyteidl.admin.MatchableResourceConfiguration.domain:
+.. _api_field_flyteidl.admin.MatchableAttributesConfiguration.domain:
 
 domain
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.admin.MatchableResourceConfiguration.project:
+.. _api_field_flyteidl.admin.MatchableAttributesConfiguration.project:
 
 project
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.admin.MatchableResourceConfiguration.workflow:
+.. _api_field_flyteidl.admin.MatchableAttributesConfiguration.workflow:
 
 workflow
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
+.. _api_field_flyteidl.admin.MatchableAttributesConfiguration.launch_plan:
+
+launch_plan
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
 
 
-.. _api_msg_flyteidl.admin.ListMatchableResourcesRequest:
+.. _api_msg_flyteidl.admin.ListMatchableAttributesRequest:
 
-flyteidl.admin.ListMatchableResourcesRequest
---------------------------------------------
+flyteidl.admin.ListMatchableAttributesRequest
+---------------------------------------------
 
-`[flyteidl.admin.ListMatchableResourcesRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L80>`_
+`[flyteidl.admin.ListMatchableAttributesRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L82>`_
 
 Request all matching resource attributes.
 
@@ -245,19 +251,19 @@ Request all matching resource attributes.
     "resource_type": "..."
   }
 
-.. _api_field_flyteidl.admin.ListMatchableResourcesRequest.resource_type:
+.. _api_field_flyteidl.admin.ListMatchableAttributesRequest.resource_type:
 
 resource_type
   (:ref:`flyteidl.admin.MatchableResource <api_enum_flyteidl.admin.MatchableResource>`) 
   
 
 
-.. _api_msg_flyteidl.admin.ListMatchableResourcesResponse:
+.. _api_msg_flyteidl.admin.ListMatchableAttributesResponse:
 
-flyteidl.admin.ListMatchableResourcesResponse
----------------------------------------------
+flyteidl.admin.ListMatchableAttributesResponse
+----------------------------------------------
 
-`[flyteidl.admin.ListMatchableResourcesResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L85>`_
+`[flyteidl.admin.ListMatchableAttributesResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/matchable_resource.proto#L87>`_
 
 Response for a request for all matching resource attributes.
 
@@ -267,10 +273,10 @@ Response for a request for all matching resource attributes.
     "configurations": []
   }
 
-.. _api_field_flyteidl.admin.ListMatchableResourcesResponse.configurations:
+.. _api_field_flyteidl.admin.ListMatchableAttributesResponse.configurations:
 
 configurations
-  (:ref:`flyteidl.admin.MatchableResourceConfiguration <api_msg_flyteidl.admin.MatchableResourceConfiguration>`) 
+  (:ref:`flyteidl.admin.MatchableAttributesConfiguration <api_msg_flyteidl.admin.MatchableAttributesConfiguration>`) 
   
 
 .. _api_enum_flyteidl.admin.MatchableResource:

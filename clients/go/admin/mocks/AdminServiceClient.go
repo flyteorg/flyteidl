@@ -1265,26 +1265,26 @@ func (_m *AdminServiceClient) ListLaunchPlans(ctx context.Context, in *admin.Res
 	return r0, r1
 }
 
-type AdminServiceClient_ListMatchableResources struct {
+type AdminServiceClient_ListMatchableAttributes struct {
 	*mock.Call
 }
 
-func (_m AdminServiceClient_ListMatchableResources) Return(_a0 *admin.ListMatchableResourcesResponse, _a1 error) *AdminServiceClient_ListMatchableResources {
-	return &AdminServiceClient_ListMatchableResources{Call: _m.Call.Return(_a0, _a1)}
+func (_m AdminServiceClient_ListMatchableAttributes) Return(_a0 *admin.ListMatchableAttributesResponse, _a1 error) *AdminServiceClient_ListMatchableAttributes {
+	return &AdminServiceClient_ListMatchableAttributes{Call: _m.Call.Return(_a0, _a1)}
 }
 
-func (_m *AdminServiceClient) OnListMatchableResources(ctx context.Context, in *admin.ListMatchableResourcesRequest, opts ...grpc.CallOption) *AdminServiceClient_ListMatchableResources {
-	c := _m.On("ListMatchableResources", ctx, in, opts)
-	return &AdminServiceClient_ListMatchableResources{Call: c}
+func (_m *AdminServiceClient) OnListMatchableAttributes(ctx context.Context, in *admin.ListMatchableAttributesRequest, opts ...grpc.CallOption) *AdminServiceClient_ListMatchableAttributes {
+	c := _m.On("ListMatchableAttributes", ctx, in, opts)
+	return &AdminServiceClient_ListMatchableAttributes{Call: c}
 }
 
-func (_m *AdminServiceClient) OnListMatchableResourcesMatch(matchers ...interface{}) *AdminServiceClient_ListMatchableResources {
-	c := _m.On("ListMatchableResources", matchers...)
-	return &AdminServiceClient_ListMatchableResources{Call: c}
+func (_m *AdminServiceClient) OnListMatchableAttributesMatch(matchers ...interface{}) *AdminServiceClient_ListMatchableAttributes {
+	c := _m.On("ListMatchableAttributes", matchers...)
+	return &AdminServiceClient_ListMatchableAttributes{Call: c}
 }
 
-// ListMatchableResources provides a mock function with given fields: ctx, in, opts
-func (_m *AdminServiceClient) ListMatchableResources(ctx context.Context, in *admin.ListMatchableResourcesRequest, opts ...grpc.CallOption) (*admin.ListMatchableResourcesResponse, error) {
+// ListMatchableAttributes provides a mock function with given fields: ctx, in, opts
+func (_m *AdminServiceClient) ListMatchableAttributes(ctx context.Context, in *admin.ListMatchableAttributesRequest, opts ...grpc.CallOption) (*admin.ListMatchableAttributesResponse, error) {
 	_va := make([]interface{}, len(opts))
 	for _i := range opts {
 		_va[_i] = opts[_i]
@@ -1294,17 +1294,17 @@ func (_m *AdminServiceClient) ListMatchableResources(ctx context.Context, in *ad
 	_ca = append(_ca, _va...)
 	ret := _m.Called(_ca...)
 
-	var r0 *admin.ListMatchableResourcesResponse
-	if rf, ok := ret.Get(0).(func(context.Context, *admin.ListMatchableResourcesRequest, ...grpc.CallOption) *admin.ListMatchableResourcesResponse); ok {
+	var r0 *admin.ListMatchableAttributesResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.ListMatchableAttributesRequest, ...grpc.CallOption) *admin.ListMatchableAttributesResponse); ok {
 		r0 = rf(ctx, in, opts...)
 	} else {
 		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(*admin.ListMatchableResourcesResponse)
+			r0 = ret.Get(0).(*admin.ListMatchableAttributesResponse)
 		}
 	}
 
 	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, *admin.ListMatchableResourcesRequest, ...grpc.CallOption) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.ListMatchableAttributesRequest, ...grpc.CallOption) error); ok {
 		r1 = rf(ctx, in, opts...)
 	} else {
 		r1 = ret.Error(1)

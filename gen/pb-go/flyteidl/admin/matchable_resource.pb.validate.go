@@ -520,17 +520,17 @@ var _ interface {
 	ErrorName() string
 } = MatchingAttributesValidationError{}
 
-// Validate checks the field values on MatchableResourceConfiguration with the
-// rules defined in the proto definition for this message. If any rules are
-// violated, an error is returned.
-func (m *MatchableResourceConfiguration) Validate() error {
+// Validate checks the field values on MatchableAttributesConfiguration with
+// the rules defined in the proto definition for this message. If any rules
+// are violated, an error is returned.
+func (m *MatchableAttributesConfiguration) Validate() error {
 	if m == nil {
 		return nil
 	}
 
 	if v, ok := interface{}(m.GetAttributes()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return MatchableResourceConfigurationValidationError{
+			return MatchableAttributesConfigurationValidationError{
 				field:  "Attributes",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -544,13 +544,15 @@ func (m *MatchableResourceConfiguration) Validate() error {
 
 	// no validation rules for Workflow
 
+	// no validation rules for LaunchPlan
+
 	return nil
 }
 
-// MatchableResourceConfigurationValidationError is the validation error
-// returned by MatchableResourceConfiguration.Validate if the designated
+// MatchableAttributesConfigurationValidationError is the validation error
+// returned by MatchableAttributesConfiguration.Validate if the designated
 // constraints aren't met.
-type MatchableResourceConfigurationValidationError struct {
+type MatchableAttributesConfigurationValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -558,24 +560,24 @@ type MatchableResourceConfigurationValidationError struct {
 }
 
 // Field function returns field value.
-func (e MatchableResourceConfigurationValidationError) Field() string { return e.field }
+func (e MatchableAttributesConfigurationValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e MatchableResourceConfigurationValidationError) Reason() string { return e.reason }
+func (e MatchableAttributesConfigurationValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e MatchableResourceConfigurationValidationError) Cause() error { return e.cause }
+func (e MatchableAttributesConfigurationValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e MatchableResourceConfigurationValidationError) Key() bool { return e.key }
+func (e MatchableAttributesConfigurationValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e MatchableResourceConfigurationValidationError) ErrorName() string {
-	return "MatchableResourceConfigurationValidationError"
+func (e MatchableAttributesConfigurationValidationError) ErrorName() string {
+	return "MatchableAttributesConfigurationValidationError"
 }
 
 // Error satisfies the builtin error interface
-func (e MatchableResourceConfigurationValidationError) Error() string {
+func (e MatchableAttributesConfigurationValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -587,14 +589,14 @@ func (e MatchableResourceConfigurationValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sMatchableResourceConfiguration.%s: %s%s",
+		"invalid %sMatchableAttributesConfiguration.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = MatchableResourceConfigurationValidationError{}
+var _ error = MatchableAttributesConfigurationValidationError{}
 
 var _ interface {
 	Field() string
@@ -602,12 +604,12 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = MatchableResourceConfigurationValidationError{}
+} = MatchableAttributesConfigurationValidationError{}
 
-// Validate checks the field values on ListMatchableResourcesRequest with the
+// Validate checks the field values on ListMatchableAttributesRequest with the
 // rules defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
-func (m *ListMatchableResourcesRequest) Validate() error {
+func (m *ListMatchableAttributesRequest) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -617,10 +619,10 @@ func (m *ListMatchableResourcesRequest) Validate() error {
 	return nil
 }
 
-// ListMatchableResourcesRequestValidationError is the validation error
-// returned by ListMatchableResourcesRequest.Validate if the designated
+// ListMatchableAttributesRequestValidationError is the validation error
+// returned by ListMatchableAttributesRequest.Validate if the designated
 // constraints aren't met.
-type ListMatchableResourcesRequestValidationError struct {
+type ListMatchableAttributesRequestValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -628,24 +630,24 @@ type ListMatchableResourcesRequestValidationError struct {
 }
 
 // Field function returns field value.
-func (e ListMatchableResourcesRequestValidationError) Field() string { return e.field }
+func (e ListMatchableAttributesRequestValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e ListMatchableResourcesRequestValidationError) Reason() string { return e.reason }
+func (e ListMatchableAttributesRequestValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e ListMatchableResourcesRequestValidationError) Cause() error { return e.cause }
+func (e ListMatchableAttributesRequestValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e ListMatchableResourcesRequestValidationError) Key() bool { return e.key }
+func (e ListMatchableAttributesRequestValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e ListMatchableResourcesRequestValidationError) ErrorName() string {
-	return "ListMatchableResourcesRequestValidationError"
+func (e ListMatchableAttributesRequestValidationError) ErrorName() string {
+	return "ListMatchableAttributesRequestValidationError"
 }
 
 // Error satisfies the builtin error interface
-func (e ListMatchableResourcesRequestValidationError) Error() string {
+func (e ListMatchableAttributesRequestValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -657,14 +659,14 @@ func (e ListMatchableResourcesRequestValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sListMatchableResourcesRequest.%s: %s%s",
+		"invalid %sListMatchableAttributesRequest.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = ListMatchableResourcesRequestValidationError{}
+var _ error = ListMatchableAttributesRequestValidationError{}
 
 var _ interface {
 	Field() string
@@ -672,12 +674,12 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = ListMatchableResourcesRequestValidationError{}
+} = ListMatchableAttributesRequestValidationError{}
 
-// Validate checks the field values on ListMatchableResourcesResponse with the
+// Validate checks the field values on ListMatchableAttributesResponse with the
 // rules defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
-func (m *ListMatchableResourcesResponse) Validate() error {
+func (m *ListMatchableAttributesResponse) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -687,7 +689,7 @@ func (m *ListMatchableResourcesResponse) Validate() error {
 
 		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
-				return ListMatchableResourcesResponseValidationError{
+				return ListMatchableAttributesResponseValidationError{
 					field:  fmt.Sprintf("Configurations[%v]", idx),
 					reason: "embedded message failed validation",
 					cause:  err,
@@ -700,10 +702,10 @@ func (m *ListMatchableResourcesResponse) Validate() error {
 	return nil
 }
 
-// ListMatchableResourcesResponseValidationError is the validation error
-// returned by ListMatchableResourcesResponse.Validate if the designated
+// ListMatchableAttributesResponseValidationError is the validation error
+// returned by ListMatchableAttributesResponse.Validate if the designated
 // constraints aren't met.
-type ListMatchableResourcesResponseValidationError struct {
+type ListMatchableAttributesResponseValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -711,24 +713,24 @@ type ListMatchableResourcesResponseValidationError struct {
 }
 
 // Field function returns field value.
-func (e ListMatchableResourcesResponseValidationError) Field() string { return e.field }
+func (e ListMatchableAttributesResponseValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e ListMatchableResourcesResponseValidationError) Reason() string { return e.reason }
+func (e ListMatchableAttributesResponseValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e ListMatchableResourcesResponseValidationError) Cause() error { return e.cause }
+func (e ListMatchableAttributesResponseValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e ListMatchableResourcesResponseValidationError) Key() bool { return e.key }
+func (e ListMatchableAttributesResponseValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e ListMatchableResourcesResponseValidationError) ErrorName() string {
-	return "ListMatchableResourcesResponseValidationError"
+func (e ListMatchableAttributesResponseValidationError) ErrorName() string {
+	return "ListMatchableAttributesResponseValidationError"
 }
 
 // Error satisfies the builtin error interface
-func (e ListMatchableResourcesResponseValidationError) Error() string {
+func (e ListMatchableAttributesResponseValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -740,14 +742,14 @@ func (e ListMatchableResourcesResponseValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sListMatchableResourcesResponse.%s: %s%s",
+		"invalid %sListMatchableAttributesResponse.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = ListMatchableResourcesResponseValidationError{}
+var _ error = ListMatchableAttributesResponseValidationError{}
 
 var _ interface {
 	Field() string
@@ -755,4 +757,4 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = ListMatchableResourcesResponseValidationError{}
+} = ListMatchableAttributesResponseValidationError{}

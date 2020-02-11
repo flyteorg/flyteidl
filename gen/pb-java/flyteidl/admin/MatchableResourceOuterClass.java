@@ -5356,8 +5356,8 @@ public final class MatchableResourceOuterClass {
 
   }
 
-  public interface MatchableResourceConfigurationOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.admin.MatchableResourceConfiguration)
+  public interface MatchableAttributesConfigurationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.MatchableAttributesConfiguration)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -5402,6 +5402,16 @@ public final class MatchableResourceOuterClass {
      */
     com.google.protobuf.ByteString
         getWorkflowBytes();
+
+    /**
+     * <code>string launch_plan = 5;</code>
+     */
+    java.lang.String getLaunchPlan();
+    /**
+     * <code>string launch_plan = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getLaunchPlanBytes();
   }
   /**
    * <pre>
@@ -5409,21 +5419,22 @@ public final class MatchableResourceOuterClass {
    * domain, project and workflow name.
    * </pre>
    *
-   * Protobuf type {@code flyteidl.admin.MatchableResourceConfiguration}
+   * Protobuf type {@code flyteidl.admin.MatchableAttributesConfiguration}
    */
-  public  static final class MatchableResourceConfiguration extends
+  public  static final class MatchableAttributesConfiguration extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.MatchableResourceConfiguration)
-      MatchableResourceConfigurationOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.MatchableAttributesConfiguration)
+      MatchableAttributesConfigurationOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use MatchableResourceConfiguration.newBuilder() to construct.
-    private MatchableResourceConfiguration(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use MatchableAttributesConfiguration.newBuilder() to construct.
+    private MatchableAttributesConfiguration(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MatchableResourceConfiguration() {
+    private MatchableAttributesConfiguration() {
       domain_ = "";
       project_ = "";
       workflow_ = "";
+      launchPlan_ = "";
     }
 
     @java.lang.Override
@@ -5431,7 +5442,7 @@ public final class MatchableResourceOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MatchableResourceConfiguration(
+    private MatchableAttributesConfiguration(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5481,6 +5492,12 @@ public final class MatchableResourceOuterClass {
               workflow_ = s;
               break;
             }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              launchPlan_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -5502,15 +5519,15 @@ public final class MatchableResourceOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_MatchableResourceConfiguration_descriptor;
+      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_MatchableAttributesConfiguration_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_MatchableResourceConfiguration_fieldAccessorTable
+      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_MatchableAttributesConfiguration_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.class, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder.class);
+              flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.class, flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.Builder.class);
     }
 
     public static final int ATTRIBUTES_FIELD_NUMBER = 1;
@@ -5636,6 +5653,40 @@ public final class MatchableResourceOuterClass {
       }
     }
 
+    public static final int LAUNCH_PLAN_FIELD_NUMBER = 5;
+    private volatile java.lang.Object launchPlan_;
+    /**
+     * <code>string launch_plan = 5;</code>
+     */
+    public java.lang.String getLaunchPlan() {
+      java.lang.Object ref = launchPlan_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        launchPlan_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string launch_plan = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLaunchPlanBytes() {
+      java.lang.Object ref = launchPlan_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        launchPlan_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5662,6 +5713,9 @@ public final class MatchableResourceOuterClass {
       if (!getWorkflowBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, workflow_);
       }
+      if (!getLaunchPlanBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, launchPlan_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5684,6 +5738,9 @@ public final class MatchableResourceOuterClass {
       if (!getWorkflowBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, workflow_);
       }
+      if (!getLaunchPlanBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, launchPlan_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5694,10 +5751,10 @@ public final class MatchableResourceOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration)) {
+      if (!(obj instanceof flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration)) {
         return super.equals(obj);
       }
-      flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration other = (flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration) obj;
+      flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration other = (flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration) obj;
 
       if (hasAttributes() != other.hasAttributes()) return false;
       if (hasAttributes()) {
@@ -5710,6 +5767,8 @@ public final class MatchableResourceOuterClass {
           .equals(other.getProject())) return false;
       if (!getWorkflow()
           .equals(other.getWorkflow())) return false;
+      if (!getLaunchPlan()
+          .equals(other.getLaunchPlan())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5731,74 +5790,76 @@ public final class MatchableResourceOuterClass {
       hash = (53 * hash) + getProject().hashCode();
       hash = (37 * hash) + WORKFLOW_FIELD_NUMBER;
       hash = (53 * hash) + getWorkflow().hashCode();
+      hash = (37 * hash) + LAUNCH_PLAN_FIELD_NUMBER;
+      hash = (53 * hash) + getLaunchPlan().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(byte[] data)
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(java.io.InputStream input)
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseDelimitedFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5811,7 +5872,7 @@ public final class MatchableResourceOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration prototype) {
+    public static Builder newBuilder(flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -5832,26 +5893,26 @@ public final class MatchableResourceOuterClass {
      * domain, project and workflow name.
      * </pre>
      *
-     * Protobuf type {@code flyteidl.admin.MatchableResourceConfiguration}
+     * Protobuf type {@code flyteidl.admin.MatchableAttributesConfiguration}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.MatchableResourceConfiguration)
-        flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.MatchableAttributesConfiguration)
+        flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfigurationOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_MatchableResourceConfiguration_descriptor;
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_MatchableAttributesConfiguration_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_MatchableResourceConfiguration_fieldAccessorTable
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_MatchableAttributesConfiguration_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.class, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder.class);
+                flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.class, flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.Builder.class);
       }
 
-      // Construct using flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.newBuilder()
+      // Construct using flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5881,23 +5942,25 @@ public final class MatchableResourceOuterClass {
 
         workflow_ = "";
 
+        launchPlan_ = "";
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_MatchableResourceConfiguration_descriptor;
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_MatchableAttributesConfiguration_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration getDefaultInstanceForType() {
-        return flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.getDefaultInstance();
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration getDefaultInstanceForType() {
+        return flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration build() {
-        flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration result = buildPartial();
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration build() {
+        flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -5905,8 +5968,8 @@ public final class MatchableResourceOuterClass {
       }
 
       @java.lang.Override
-      public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration buildPartial() {
-        flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration result = new flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration(this);
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration buildPartial() {
+        flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration result = new flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration(this);
         if (attributesBuilder_ == null) {
           result.attributes_ = attributes_;
         } else {
@@ -5915,6 +5978,7 @@ public final class MatchableResourceOuterClass {
         result.domain_ = domain_;
         result.project_ = project_;
         result.workflow_ = workflow_;
+        result.launchPlan_ = launchPlan_;
         onBuilt();
         return result;
       }
@@ -5953,16 +6017,16 @@ public final class MatchableResourceOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration) {
-          return mergeFrom((flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration)other);
+        if (other instanceof flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration) {
+          return mergeFrom((flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration other) {
-        if (other == flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration other) {
+        if (other == flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.getDefaultInstance()) return this;
         if (other.hasAttributes()) {
           mergeAttributes(other.getAttributes());
         }
@@ -5976,6 +6040,10 @@ public final class MatchableResourceOuterClass {
         }
         if (!other.getWorkflow().isEmpty()) {
           workflow_ = other.workflow_;
+          onChanged();
+        }
+        if (!other.getLaunchPlan().isEmpty()) {
+          launchPlan_ = other.launchPlan_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -5993,11 +6061,11 @@ public final class MatchableResourceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration parsedMessage = null;
+        flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6330,6 +6398,75 @@ public final class MatchableResourceOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object launchPlan_ = "";
+      /**
+       * <code>string launch_plan = 5;</code>
+       */
+      public java.lang.String getLaunchPlan() {
+        java.lang.Object ref = launchPlan_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          launchPlan_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string launch_plan = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLaunchPlanBytes() {
+        java.lang.Object ref = launchPlan_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          launchPlan_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string launch_plan = 5;</code>
+       */
+      public Builder setLaunchPlan(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        launchPlan_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string launch_plan = 5;</code>
+       */
+      public Builder clearLaunchPlan() {
+        
+        launchPlan_ = getDefaultInstance().getLaunchPlan();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string launch_plan = 5;</code>
+       */
+      public Builder setLaunchPlanBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        launchPlan_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -6343,48 +6480,48 @@ public final class MatchableResourceOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.admin.MatchableResourceConfiguration)
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.MatchableAttributesConfiguration)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.admin.MatchableResourceConfiguration)
-    private static final flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.MatchableAttributesConfiguration)
+    private static final flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration();
+      DEFAULT_INSTANCE = new flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration();
     }
 
-    public static flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration getDefaultInstance() {
+    public static flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MatchableResourceConfiguration>
-        PARSER = new com.google.protobuf.AbstractParser<MatchableResourceConfiguration>() {
+    private static final com.google.protobuf.Parser<MatchableAttributesConfiguration>
+        PARSER = new com.google.protobuf.AbstractParser<MatchableAttributesConfiguration>() {
       @java.lang.Override
-      public MatchableResourceConfiguration parsePartialFrom(
+      public MatchableAttributesConfiguration parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MatchableResourceConfiguration(input, extensionRegistry);
+        return new MatchableAttributesConfiguration(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<MatchableResourceConfiguration> parser() {
+    public static com.google.protobuf.Parser<MatchableAttributesConfiguration> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MatchableResourceConfiguration> getParserForType() {
+    public com.google.protobuf.Parser<MatchableAttributesConfiguration> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration getDefaultInstanceForType() {
+    public flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ListMatchableResourcesRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.admin.ListMatchableResourcesRequest)
+  public interface ListMatchableAttributesRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.ListMatchableAttributesRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -6401,18 +6538,18 @@ public final class MatchableResourceOuterClass {
    * Request all matching resource attributes.
    * </pre>
    *
-   * Protobuf type {@code flyteidl.admin.ListMatchableResourcesRequest}
+   * Protobuf type {@code flyteidl.admin.ListMatchableAttributesRequest}
    */
-  public  static final class ListMatchableResourcesRequest extends
+  public  static final class ListMatchableAttributesRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.ListMatchableResourcesRequest)
-      ListMatchableResourcesRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.ListMatchableAttributesRequest)
+      ListMatchableAttributesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ListMatchableResourcesRequest.newBuilder() to construct.
-    private ListMatchableResourcesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ListMatchableAttributesRequest.newBuilder() to construct.
+    private ListMatchableAttributesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ListMatchableResourcesRequest() {
+    private ListMatchableAttributesRequest() {
       resourceType_ = 0;
     }
 
@@ -6421,7 +6558,7 @@ public final class MatchableResourceOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ListMatchableResourcesRequest(
+    private ListMatchableAttributesRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6467,15 +6604,15 @@ public final class MatchableResourceOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesRequest_descriptor;
+      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableAttributesRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesRequest_fieldAccessorTable
+      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableAttributesRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest.class, flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest.Builder.class);
+              flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest.class, flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest.Builder.class);
     }
 
     public static final int RESOURCE_TYPE_FIELD_NUMBER = 1;
@@ -6535,10 +6672,10 @@ public final class MatchableResourceOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest)) {
+      if (!(obj instanceof flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest)) {
         return super.equals(obj);
       }
-      flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest other = (flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest) obj;
+      flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest other = (flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest) obj;
 
       if (resourceType_ != other.resourceType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -6559,69 +6696,69 @@ public final class MatchableResourceOuterClass {
       return hash;
     }
 
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(byte[] data)
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(java.io.InputStream input)
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseDelimitedFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6634,7 +6771,7 @@ public final class MatchableResourceOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest prototype) {
+    public static Builder newBuilder(flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -6654,26 +6791,26 @@ public final class MatchableResourceOuterClass {
      * Request all matching resource attributes.
      * </pre>
      *
-     * Protobuf type {@code flyteidl.admin.ListMatchableResourcesRequest}
+     * Protobuf type {@code flyteidl.admin.ListMatchableAttributesRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.ListMatchableResourcesRequest)
-        flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.ListMatchableAttributesRequest)
+        flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesRequest_descriptor;
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableAttributesRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesRequest_fieldAccessorTable
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableAttributesRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest.class, flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest.Builder.class);
+                flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest.class, flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest.Builder.class);
       }
 
-      // Construct using flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest.newBuilder()
+      // Construct using flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -6699,17 +6836,17 @@ public final class MatchableResourceOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesRequest_descriptor;
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableAttributesRequest_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest getDefaultInstanceForType() {
-        return flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest.getDefaultInstance();
+      public flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest getDefaultInstanceForType() {
+        return flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest build() {
-        flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest result = buildPartial();
+      public flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest build() {
+        flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -6717,8 +6854,8 @@ public final class MatchableResourceOuterClass {
       }
 
       @java.lang.Override
-      public flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest buildPartial() {
-        flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest result = new flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest(this);
+      public flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest buildPartial() {
+        flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest result = new flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest(this);
         result.resourceType_ = resourceType_;
         onBuilt();
         return result;
@@ -6758,16 +6895,16 @@ public final class MatchableResourceOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest) {
-          return mergeFrom((flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest)other);
+        if (other instanceof flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest) {
+          return mergeFrom((flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest other) {
-        if (other == flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest other) {
+        if (other == flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest.getDefaultInstance()) return this;
         if (other.resourceType_ != 0) {
           setResourceTypeValue(other.getResourceTypeValue());
         }
@@ -6786,11 +6923,11 @@ public final class MatchableResourceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest parsedMessage = null;
+        flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6857,72 +6994,72 @@ public final class MatchableResourceOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.admin.ListMatchableResourcesRequest)
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.ListMatchableAttributesRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.admin.ListMatchableResourcesRequest)
-    private static final flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.ListMatchableAttributesRequest)
+    private static final flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest();
+      DEFAULT_INSTANCE = new flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest();
     }
 
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest getDefaultInstance() {
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ListMatchableResourcesRequest>
-        PARSER = new com.google.protobuf.AbstractParser<ListMatchableResourcesRequest>() {
+    private static final com.google.protobuf.Parser<ListMatchableAttributesRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ListMatchableAttributesRequest>() {
       @java.lang.Override
-      public ListMatchableResourcesRequest parsePartialFrom(
+      public ListMatchableAttributesRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListMatchableResourcesRequest(input, extensionRegistry);
+        return new ListMatchableAttributesRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ListMatchableResourcesRequest> parser() {
+    public static com.google.protobuf.Parser<ListMatchableAttributesRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ListMatchableResourcesRequest> getParserForType() {
+    public com.google.protobuf.Parser<ListMatchableAttributesRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesRequest getDefaultInstanceForType() {
+    public flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ListMatchableResourcesResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.admin.ListMatchableResourcesResponse)
+  public interface ListMatchableAttributesResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.ListMatchableAttributesResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
      */
-    java.util.List<flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration> 
+    java.util.List<flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration> 
         getConfigurationsList();
     /**
-     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
      */
-    flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration getConfigurations(int index);
+    flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration getConfigurations(int index);
     /**
-     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
      */
     int getConfigurationsCount();
     /**
-     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
      */
-    java.util.List<? extends flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder> 
+    java.util.List<? extends flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfigurationOrBuilder> 
         getConfigurationsOrBuilderList();
     /**
-     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
      */
-    flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder getConfigurationsOrBuilder(
+    flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfigurationOrBuilder getConfigurationsOrBuilder(
         int index);
   }
   /**
@@ -6930,18 +7067,18 @@ public final class MatchableResourceOuterClass {
    * Response for a request for all matching resource attributes.
    * </pre>
    *
-   * Protobuf type {@code flyteidl.admin.ListMatchableResourcesResponse}
+   * Protobuf type {@code flyteidl.admin.ListMatchableAttributesResponse}
    */
-  public  static final class ListMatchableResourcesResponse extends
+  public  static final class ListMatchableAttributesResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.ListMatchableResourcesResponse)
-      ListMatchableResourcesResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.ListMatchableAttributesResponse)
+      ListMatchableAttributesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ListMatchableResourcesResponse.newBuilder() to construct.
-    private ListMatchableResourcesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ListMatchableAttributesResponse.newBuilder() to construct.
+    private ListMatchableAttributesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ListMatchableResourcesResponse() {
+    private ListMatchableAttributesResponse() {
       configurations_ = java.util.Collections.emptyList();
     }
 
@@ -6950,7 +7087,7 @@ public final class MatchableResourceOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ListMatchableResourcesResponse(
+    private ListMatchableAttributesResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6971,11 +7108,11 @@ public final class MatchableResourceOuterClass {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                configurations_ = new java.util.ArrayList<flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration>();
+                configurations_ = new java.util.ArrayList<flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration>();
                 mutable_bitField0_ |= 0x00000001;
               }
               configurations_.add(
-                  input.readMessage(flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.parser(), extensionRegistry));
+                  input.readMessage(flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -7002,48 +7139,48 @@ public final class MatchableResourceOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesResponse_descriptor;
+      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableAttributesResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesResponse_fieldAccessorTable
+      return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableAttributesResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse.class, flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse.Builder.class);
+              flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse.class, flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse.Builder.class);
     }
 
     public static final int CONFIGURATIONS_FIELD_NUMBER = 1;
-    private java.util.List<flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration> configurations_;
+    private java.util.List<flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration> configurations_;
     /**
-     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
      */
-    public java.util.List<flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration> getConfigurationsList() {
+    public java.util.List<flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration> getConfigurationsList() {
       return configurations_;
     }
     /**
-     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
      */
-    public java.util.List<? extends flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder> 
+    public java.util.List<? extends flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfigurationOrBuilder> 
         getConfigurationsOrBuilderList() {
       return configurations_;
     }
     /**
-     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
      */
     public int getConfigurationsCount() {
       return configurations_.size();
     }
     /**
-     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
      */
-    public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration getConfigurations(int index) {
+    public flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration getConfigurations(int index) {
       return configurations_.get(index);
     }
     /**
-     * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+     * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
      */
-    public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder getConfigurationsOrBuilder(
+    public flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfigurationOrBuilder getConfigurationsOrBuilder(
         int index) {
       return configurations_.get(index);
     }
@@ -7088,10 +7225,10 @@ public final class MatchableResourceOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse)) {
+      if (!(obj instanceof flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse)) {
         return super.equals(obj);
       }
-      flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse other = (flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse) obj;
+      flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse other = (flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse) obj;
 
       if (!getConfigurationsList()
           .equals(other.getConfigurationsList())) return false;
@@ -7115,69 +7252,69 @@ public final class MatchableResourceOuterClass {
       return hash;
     }
 
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(byte[] data)
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(java.io.InputStream input)
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseDelimitedFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parseFrom(
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7190,7 +7327,7 @@ public final class MatchableResourceOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse prototype) {
+    public static Builder newBuilder(flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -7210,26 +7347,26 @@ public final class MatchableResourceOuterClass {
      * Response for a request for all matching resource attributes.
      * </pre>
      *
-     * Protobuf type {@code flyteidl.admin.ListMatchableResourcesResponse}
+     * Protobuf type {@code flyteidl.admin.ListMatchableAttributesResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.ListMatchableResourcesResponse)
-        flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.ListMatchableAttributesResponse)
+        flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesResponse_descriptor;
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableAttributesResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesResponse_fieldAccessorTable
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableAttributesResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse.class, flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse.Builder.class);
+                flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse.class, flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse.Builder.class);
       }
 
-      // Construct using flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse.newBuilder()
+      // Construct using flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -7260,17 +7397,17 @@ public final class MatchableResourceOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableResourcesResponse_descriptor;
+        return flyteidl.admin.MatchableResourceOuterClass.internal_static_flyteidl_admin_ListMatchableAttributesResponse_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse getDefaultInstanceForType() {
-        return flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse.getDefaultInstance();
+      public flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse getDefaultInstanceForType() {
+        return flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse build() {
-        flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse result = buildPartial();
+      public flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse build() {
+        flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -7278,8 +7415,8 @@ public final class MatchableResourceOuterClass {
       }
 
       @java.lang.Override
-      public flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse buildPartial() {
-        flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse result = new flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse(this);
+      public flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse buildPartial() {
+        flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse result = new flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse(this);
         int from_bitField0_ = bitField0_;
         if (configurationsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -7328,16 +7465,16 @@ public final class MatchableResourceOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse) {
-          return mergeFrom((flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse)other);
+        if (other instanceof flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse) {
+          return mergeFrom((flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse other) {
-        if (other == flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse other) {
+        if (other == flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse.getDefaultInstance()) return this;
         if (configurationsBuilder_ == null) {
           if (!other.configurations_.isEmpty()) {
             if (configurations_.isEmpty()) {
@@ -7379,11 +7516,11 @@ public final class MatchableResourceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse parsedMessage = null;
+        flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -7394,22 +7531,22 @@ public final class MatchableResourceOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration> configurations_ =
+      private java.util.List<flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration> configurations_ =
         java.util.Collections.emptyList();
       private void ensureConfigurationsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          configurations_ = new java.util.ArrayList<flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration>(configurations_);
+          configurations_ = new java.util.ArrayList<flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration>(configurations_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder> configurationsBuilder_;
+          flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration, flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfigurationOrBuilder> configurationsBuilder_;
 
       /**
-       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
        */
-      public java.util.List<flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration> getConfigurationsList() {
+      public java.util.List<flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration> getConfigurationsList() {
         if (configurationsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(configurations_);
         } else {
@@ -7417,7 +7554,7 @@ public final class MatchableResourceOuterClass {
         }
       }
       /**
-       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
        */
       public int getConfigurationsCount() {
         if (configurationsBuilder_ == null) {
@@ -7427,9 +7564,9 @@ public final class MatchableResourceOuterClass {
         }
       }
       /**
-       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration getConfigurations(int index) {
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration getConfigurations(int index) {
         if (configurationsBuilder_ == null) {
           return configurations_.get(index);
         } else {
@@ -7437,10 +7574,10 @@ public final class MatchableResourceOuterClass {
         }
       }
       /**
-       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
        */
       public Builder setConfigurations(
-          int index, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration value) {
+          int index, flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration value) {
         if (configurationsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7454,10 +7591,10 @@ public final class MatchableResourceOuterClass {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
        */
       public Builder setConfigurations(
-          int index, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder builderForValue) {
+          int index, flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.Builder builderForValue) {
         if (configurationsBuilder_ == null) {
           ensureConfigurationsIsMutable();
           configurations_.set(index, builderForValue.build());
@@ -7468,9 +7605,9 @@ public final class MatchableResourceOuterClass {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
        */
-      public Builder addConfigurations(flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration value) {
+      public Builder addConfigurations(flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration value) {
         if (configurationsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7484,10 +7621,10 @@ public final class MatchableResourceOuterClass {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
        */
       public Builder addConfigurations(
-          int index, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration value) {
+          int index, flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration value) {
         if (configurationsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7501,10 +7638,10 @@ public final class MatchableResourceOuterClass {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
        */
       public Builder addConfigurations(
-          flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder builderForValue) {
+          flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.Builder builderForValue) {
         if (configurationsBuilder_ == null) {
           ensureConfigurationsIsMutable();
           configurations_.add(builderForValue.build());
@@ -7515,10 +7652,10 @@ public final class MatchableResourceOuterClass {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
        */
       public Builder addConfigurations(
-          int index, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder builderForValue) {
+          int index, flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.Builder builderForValue) {
         if (configurationsBuilder_ == null) {
           ensureConfigurationsIsMutable();
           configurations_.add(index, builderForValue.build());
@@ -7529,10 +7666,10 @@ public final class MatchableResourceOuterClass {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
        */
       public Builder addAllConfigurations(
-          java.lang.Iterable<? extends flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration> values) {
+          java.lang.Iterable<? extends flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration> values) {
         if (configurationsBuilder_ == null) {
           ensureConfigurationsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -7544,7 +7681,7 @@ public final class MatchableResourceOuterClass {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
        */
       public Builder clearConfigurations() {
         if (configurationsBuilder_ == null) {
@@ -7557,7 +7694,7 @@ public final class MatchableResourceOuterClass {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
        */
       public Builder removeConfigurations(int index) {
         if (configurationsBuilder_ == null) {
@@ -7570,16 +7707,16 @@ public final class MatchableResourceOuterClass {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder getConfigurationsBuilder(
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.Builder getConfigurationsBuilder(
           int index) {
         return getConfigurationsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder getConfigurationsOrBuilder(
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfigurationOrBuilder getConfigurationsOrBuilder(
           int index) {
         if (configurationsBuilder_ == null) {
           return configurations_.get(index);  } else {
@@ -7587,9 +7724,9 @@ public final class MatchableResourceOuterClass {
         }
       }
       /**
-       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
        */
-      public java.util.List<? extends flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder> 
+      public java.util.List<? extends flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfigurationOrBuilder> 
            getConfigurationsOrBuilderList() {
         if (configurationsBuilder_ != null) {
           return configurationsBuilder_.getMessageOrBuilderList();
@@ -7598,33 +7735,33 @@ public final class MatchableResourceOuterClass {
         }
       }
       /**
-       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder addConfigurationsBuilder() {
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.Builder addConfigurationsBuilder() {
         return getConfigurationsFieldBuilder().addBuilder(
-            flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.getDefaultInstance());
+            flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.getDefaultInstance());
       }
       /**
-       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder addConfigurationsBuilder(
+      public flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.Builder addConfigurationsBuilder(
           int index) {
         return getConfigurationsFieldBuilder().addBuilder(
-            index, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.getDefaultInstance());
+            index, flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.getDefaultInstance());
       }
       /**
-       * <code>repeated .flyteidl.admin.MatchableResourceConfiguration configurations = 1;</code>
+       * <code>repeated .flyteidl.admin.MatchableAttributesConfiguration configurations = 1;</code>
        */
-      public java.util.List<flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder> 
+      public java.util.List<flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.Builder> 
            getConfigurationsBuilderList() {
         return getConfigurationsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder> 
+          flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration, flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfigurationOrBuilder> 
           getConfigurationsFieldBuilder() {
         if (configurationsBuilder_ == null) {
           configurationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfiguration.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchableResourceConfigurationOrBuilder>(
+              flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration, flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfiguration.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchableAttributesConfigurationOrBuilder>(
                   configurations_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -7646,41 +7783,41 @@ public final class MatchableResourceOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.admin.ListMatchableResourcesResponse)
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.ListMatchableAttributesResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.admin.ListMatchableResourcesResponse)
-    private static final flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.ListMatchableAttributesResponse)
+    private static final flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse();
+      DEFAULT_INSTANCE = new flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse();
     }
 
-    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse getDefaultInstance() {
+    public static flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ListMatchableResourcesResponse>
-        PARSER = new com.google.protobuf.AbstractParser<ListMatchableResourcesResponse>() {
+    private static final com.google.protobuf.Parser<ListMatchableAttributesResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ListMatchableAttributesResponse>() {
       @java.lang.Override
-      public ListMatchableResourcesResponse parsePartialFrom(
+      public ListMatchableAttributesResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListMatchableResourcesResponse(input, extensionRegistry);
+        return new ListMatchableAttributesResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ListMatchableResourcesResponse> parser() {
+    public static com.google.protobuf.Parser<ListMatchableAttributesResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ListMatchableResourcesResponse> getParserForType() {
+    public com.google.protobuf.Parser<ListMatchableAttributesResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.admin.MatchableResourceOuterClass.ListMatchableResourcesResponse getDefaultInstanceForType() {
+    public flyteidl.admin.MatchableResourceOuterClass.ListMatchableAttributesResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7722,20 +7859,20 @@ public final class MatchableResourceOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_MatchingAttributes_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_MatchableResourceConfiguration_descriptor;
+    internal_static_flyteidl_admin_MatchableAttributesConfiguration_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_MatchableResourceConfiguration_fieldAccessorTable;
+      internal_static_flyteidl_admin_MatchableAttributesConfiguration_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_ListMatchableResourcesRequest_descriptor;
+    internal_static_flyteidl_admin_ListMatchableAttributesRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_ListMatchableResourcesRequest_fieldAccessorTable;
+      internal_static_flyteidl_admin_ListMatchableAttributesRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_ListMatchableResourcesResponse_descriptor;
+    internal_static_flyteidl_admin_ListMatchableAttributesResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_ListMatchableResourcesResponse_fieldAccessorTable;
+      internal_static_flyteidl_admin_ListMatchableAttributesResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -7766,20 +7903,20 @@ public final class MatchableResourceOuterClass {
       "\001(\0132(.flyteidl.admin.ExecutionQueueAttri" +
       "butesH\000\022H\n\027execution_cluster_label\030\004 \001(\013" +
       "2%.flyteidl.admin.ExecutionClusterLabelH" +
-      "\000B\010\n\006target\"\213\001\n\036MatchableResourceConfigu" +
-      "ration\0226\n\nattributes\030\001 \001(\0132\".flyteidl.ad" +
-      "min.MatchingAttributes\022\016\n\006domain\030\002 \001(\t\022\017" +
-      "\n\007project\030\003 \001(\t\022\020\n\010workflow\030\004 \001(\t\"Y\n\035Lis" +
-      "tMatchableResourcesRequest\0228\n\rresource_t" +
-      "ype\030\001 \001(\0162!.flyteidl.admin.MatchableReso" +
-      "urce\"h\n\036ListMatchableResourcesResponse\022F" +
-      "\n\016configurations\030\001 \003(\0132..flyteidl.admin." +
-      "MatchableResourceConfiguration*n\n\021Matcha" +
-      "bleResource\022\021\n\rTASK_RESOURCE\020\000\022\024\n\020CLUSTE" +
-      "R_RESOURCE\020\001\022\023\n\017EXECUTION_QUEUE\020\002\022\033\n\027EXE" +
-      "CUTION_CLUSTER_LABEL\020\003B3Z1github.com/lyf" +
-      "t/flyteidl/gen/pb-go/flyteidl/adminb\006pro" +
-      "to3"
+      "\000B\010\n\006target\"\242\001\n MatchableAttributesConfi" +
+      "guration\0226\n\nattributes\030\001 \001(\0132\".flyteidl." +
+      "admin.MatchingAttributes\022\016\n\006domain\030\002 \001(\t" +
+      "\022\017\n\007project\030\003 \001(\t\022\020\n\010workflow\030\004 \001(\t\022\023\n\013l" +
+      "aunch_plan\030\005 \001(\t\"Z\n\036ListMatchableAttribu" +
+      "tesRequest\0228\n\rresource_type\030\001 \001(\0162!.flyt" +
+      "eidl.admin.MatchableResource\"k\n\037ListMatc" +
+      "hableAttributesResponse\022H\n\016configuration" +
+      "s\030\001 \003(\01320.flyteidl.admin.MatchableAttrib" +
+      "utesConfiguration*n\n\021MatchableResource\022\021" +
+      "\n\rTASK_RESOURCE\020\000\022\024\n\020CLUSTER_RESOURCE\020\001\022" +
+      "\023\n\017EXECUTION_QUEUE\020\002\022\033\n\027EXECUTION_CLUSTE" +
+      "R_LABEL\020\003B3Z1github.com/lyft/flyteidl/ge" +
+      "n/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7835,23 +7972,23 @@ public final class MatchableResourceOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_MatchingAttributes_descriptor,
         new java.lang.String[] { "TaskResourceAttributes", "ClusterResourceAttributes", "ExecutionQueueAttributes", "ExecutionClusterLabel", "Target", });
-    internal_static_flyteidl_admin_MatchableResourceConfiguration_descriptor =
+    internal_static_flyteidl_admin_MatchableAttributesConfiguration_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_flyteidl_admin_MatchableResourceConfiguration_fieldAccessorTable = new
+    internal_static_flyteidl_admin_MatchableAttributesConfiguration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_MatchableResourceConfiguration_descriptor,
-        new java.lang.String[] { "Attributes", "Domain", "Project", "Workflow", });
-    internal_static_flyteidl_admin_ListMatchableResourcesRequest_descriptor =
+        internal_static_flyteidl_admin_MatchableAttributesConfiguration_descriptor,
+        new java.lang.String[] { "Attributes", "Domain", "Project", "Workflow", "LaunchPlan", });
+    internal_static_flyteidl_admin_ListMatchableAttributesRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_flyteidl_admin_ListMatchableResourcesRequest_fieldAccessorTable = new
+    internal_static_flyteidl_admin_ListMatchableAttributesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_ListMatchableResourcesRequest_descriptor,
+        internal_static_flyteidl_admin_ListMatchableAttributesRequest_descriptor,
         new java.lang.String[] { "ResourceType", });
-    internal_static_flyteidl_admin_ListMatchableResourcesResponse_descriptor =
+    internal_static_flyteidl_admin_ListMatchableAttributesResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_flyteidl_admin_ListMatchableResourcesResponse_fieldAccessorTable = new
+    internal_static_flyteidl_admin_ListMatchableAttributesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_ListMatchableResourcesResponse_descriptor,
+        internal_static_flyteidl_admin_ListMatchableAttributesResponse_descriptor,
         new java.lang.String[] { "Configurations", });
   }
 

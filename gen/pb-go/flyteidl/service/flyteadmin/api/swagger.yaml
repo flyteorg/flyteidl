@@ -956,12 +956,12 @@ paths:
           description: "A successful response."
           schema:
             $ref: "#/definitions/adminLaunchPlanUpdateResponse"
-  /api/v1/matchable_resources:
+  /api/v1/matchable_attributes:
     get:
       tags:
       - "AdminService"
-      description: "Retrieve a list of MatchableResourceConfiguration objects."
-      operationId: "ListMatchableResources"
+      description: "Retrieve a list of MatchableAttributesConfiguration objects."
+      operationId: "ListMatchableAttributes"
       parameters:
       - name: "resource_type"
         in: "query"
@@ -984,7 +984,7 @@ paths:
         200:
           description: "A successful response."
           schema:
-            $ref: "#/definitions/adminListMatchableResourcesResponse"
+            $ref: "#/definitions/adminListMatchableAttributesResponse"
   /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name}:
     get:
       tags:
@@ -4373,17 +4373,18 @@ definitions:
   adminLaunchPlanUpdateResponse:
     type: "object"
     description: "Purposefully empty, may be populated in the future."
-  adminListMatchableResourcesResponse:
+  adminListMatchableAttributesResponse:
     type: "object"
     properties:
       configurations:
         type: "array"
         items:
-          $ref: "#/definitions/adminMatchableResourceConfiguration"
+          $ref: "#/definitions/adminMatchableAttributesConfiguration"
     description: "Response for a request for all matching resource attributes."
     example:
       configurations:
-      - workflow: "workflow"
+      - launch_plan: "launch_plan"
+        workflow: "workflow"
         domain: "domain"
         project: "project"
         attributes:
@@ -4407,7 +4408,8 @@ definitions:
               gpu: "gpu"
           execution_cluster_label:
             value: "value"
-      - workflow: "workflow"
+      - launch_plan: "launch_plan"
+        workflow: "workflow"
         domain: "domain"
         project: "project"
         attributes:
@@ -4446,21 +4448,7 @@ definitions:
       values:
         literals: {}
       uri: "uri"
-  adminMatchableResource:
-    type: "string"
-    description: "Defines a resource that can be configured by customizable Project-,\
-      \ ProjectDomain- or WorkflowAttributes\nbased on matching tags.\n\n - TASK_RESOURCE:\
-      \ Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE:\
-      \ Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE:\
-      \ Configures task and dynamic task execution queue assignment.\n - EXECUTION_CLUSTER_LABEL:\
-      \ Configures the K8s cluster label to be used for execution to be run"
-    enum:
-    - "TASK_RESOURCE"
-    - "CLUSTER_RESOURCE"
-    - "EXECUTION_QUEUE"
-    - "EXECUTION_CLUSTER_LABEL"
-    default: "TASK_RESOURCE"
-  adminMatchableResourceConfiguration:
+  adminMatchableAttributesConfiguration:
     type: "object"
     properties:
       attributes:
@@ -4471,9 +4459,12 @@ definitions:
         type: "string"
       workflow:
         type: "string"
+      launch_plan:
+        type: "string"
     description: "Represents a custom set of attributes applied for either a domain;\
       \ a domain and project; or\ndomain, project and workflow name."
     example:
+      launch_plan: "launch_plan"
       workflow: "workflow"
       domain: "domain"
       project: "project"
@@ -4498,6 +4489,20 @@ definitions:
             gpu: "gpu"
         execution_cluster_label:
           value: "value"
+  adminMatchableResource:
+    type: "string"
+    description: "Defines a resource that can be configured by customizable Project-,\
+      \ ProjectDomain- or WorkflowAttributes\nbased on matching tags.\n\n - TASK_RESOURCE:\
+      \ Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE:\
+      \ Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE:\
+      \ Configures task and dynamic task execution queue assignment.\n - EXECUTION_CLUSTER_LABEL:\
+      \ Configures the K8s cluster label to be used for execution to be run"
+    enum:
+    - "TASK_RESOURCE"
+    - "CLUSTER_RESOURCE"
+    - "EXECUTION_QUEUE"
+    - "EXECUTION_CLUSTER_LABEL"
+    default: "TASK_RESOURCE"
   adminMatchingAttributes:
     type: "object"
     properties:

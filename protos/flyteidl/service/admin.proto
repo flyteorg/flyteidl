@@ -438,12 +438,12 @@ service AdminService {
     };
   }
 
-  rpc ListMatchableResources (flyteidl.admin.ListMatchableResourcesRequest) returns (flyteidl.admin.ListMatchableResourcesResponse) {
+  rpc ListMatchableAttributes (flyteidl.admin.ListMatchableAttributesRequest) returns (flyteidl.admin.ListMatchableAttributesResponse) {
     option (google.api.http) = {
-      get: "/api/v1/matchable_resources"
+      get: "/api/v1/matchable_attributes"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
-      description: "Retrieve a list of MatchableResourceConfiguration objects."
+      description: "Retrieve a list of MatchableAttributesConfiguration objects."
     };
   }
 

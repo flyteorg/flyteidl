@@ -59,7 +59,7 @@ static const char* AdminService_method_names[] = {
   "/flyteidl.service.AdminService/UpdateWorkflowAttributes",
   "/flyteidl.service.AdminService/GetWorkflowAttributes",
   "/flyteidl.service.AdminService/DeleteWorkflowAttributes",
-  "/flyteidl.service.AdminService/ListMatchableResources",
+  "/flyteidl.service.AdminService/ListMatchableAttributes",
   "/flyteidl.service.AdminService/ListNamedEntities",
   "/flyteidl.service.AdminService/GetNamedEntity",
   "/flyteidl.service.AdminService/UpdateNamedEntity",
@@ -111,7 +111,7 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   , rpcmethod_UpdateWorkflowAttributes_(AdminService_method_names[36], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetWorkflowAttributes_(AdminService_method_names[37], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteWorkflowAttributes_(AdminService_method_names[38], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListMatchableResources_(AdminService_method_names[39], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListMatchableAttributes_(AdminService_method_names[39], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListNamedEntities_(AdminService_method_names[40], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetNamedEntity_(AdminService_method_names[41], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateNamedEntity_(AdminService_method_names[42], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
@@ -1209,32 +1209,32 @@ void AdminService::Stub::experimental_async::DeleteWorkflowAttributes(::grpc::Cl
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::WorkflowAttributesDeleteResponse>::Create(channel_.get(), cq, rpcmethod_DeleteWorkflowAttributes_, context, request, false);
 }
 
-::grpc::Status AdminService::Stub::ListMatchableResources(::grpc::ClientContext* context, const ::flyteidl::admin::ListMatchableResourcesRequest& request, ::flyteidl::admin::ListMatchableResourcesResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListMatchableResources_, context, request, response);
+::grpc::Status AdminService::Stub::ListMatchableAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::ListMatchableAttributesRequest& request, ::flyteidl::admin::ListMatchableAttributesResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListMatchableAttributes_, context, request, response);
 }
 
-void AdminService::Stub::experimental_async::ListMatchableResources(::grpc::ClientContext* context, const ::flyteidl::admin::ListMatchableResourcesRequest* request, ::flyteidl::admin::ListMatchableResourcesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListMatchableResources_, context, request, response, std::move(f));
+void AdminService::Stub::experimental_async::ListMatchableAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::ListMatchableAttributesRequest* request, ::flyteidl::admin::ListMatchableAttributesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListMatchableAttributes_, context, request, response, std::move(f));
 }
 
-void AdminService::Stub::experimental_async::ListMatchableResources(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ListMatchableResourcesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListMatchableResources_, context, request, response, std::move(f));
+void AdminService::Stub::experimental_async::ListMatchableAttributes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ListMatchableAttributesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListMatchableAttributes_, context, request, response, std::move(f));
 }
 
-void AdminService::Stub::experimental_async::ListMatchableResources(::grpc::ClientContext* context, const ::flyteidl::admin::ListMatchableResourcesRequest* request, ::flyteidl::admin::ListMatchableResourcesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListMatchableResources_, context, request, response, reactor);
+void AdminService::Stub::experimental_async::ListMatchableAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::ListMatchableAttributesRequest* request, ::flyteidl::admin::ListMatchableAttributesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListMatchableAttributes_, context, request, response, reactor);
 }
 
-void AdminService::Stub::experimental_async::ListMatchableResources(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ListMatchableResourcesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListMatchableResources_, context, request, response, reactor);
+void AdminService::Stub::experimental_async::ListMatchableAttributes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::ListMatchableAttributesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListMatchableAttributes_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ListMatchableResourcesResponse>* AdminService::Stub::AsyncListMatchableResourcesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ListMatchableResourcesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::ListMatchableResourcesResponse>::Create(channel_.get(), cq, rpcmethod_ListMatchableResources_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ListMatchableAttributesResponse>* AdminService::Stub::AsyncListMatchableAttributesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ListMatchableAttributesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::ListMatchableAttributesResponse>::Create(channel_.get(), cq, rpcmethod_ListMatchableAttributes_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ListMatchableResourcesResponse>* AdminService::Stub::PrepareAsyncListMatchableResourcesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ListMatchableResourcesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::ListMatchableResourcesResponse>::Create(channel_.get(), cq, rpcmethod_ListMatchableResources_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::ListMatchableAttributesResponse>* AdminService::Stub::PrepareAsyncListMatchableAttributesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ListMatchableAttributesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::ListMatchableAttributesResponse>::Create(channel_.get(), cq, rpcmethod_ListMatchableAttributes_, context, request, false);
 }
 
 ::grpc::Status AdminService::Stub::ListNamedEntities(::grpc::ClientContext* context, const ::flyteidl::admin::NamedEntityListRequest& request, ::flyteidl::admin::NamedEntityList* response) {
@@ -1520,8 +1520,8 @@ AdminService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AdminService_method_names[39],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::ListMatchableResourcesRequest, ::flyteidl::admin::ListMatchableResourcesResponse>(
-          std::mem_fn(&AdminService::Service::ListMatchableResources), this)));
+      new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::ListMatchableAttributesRequest, ::flyteidl::admin::ListMatchableAttributesResponse>(
+          std::mem_fn(&AdminService::Service::ListMatchableAttributes), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AdminService_method_names[40],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
@@ -1815,7 +1815,7 @@ AdminService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status AdminService::Service::ListMatchableResources(::grpc::ServerContext* context, const ::flyteidl::admin::ListMatchableResourcesRequest* request, ::flyteidl::admin::ListMatchableResourcesResponse* response) {
+::grpc::Status AdminService::Service::ListMatchableAttributes(::grpc::ServerContext* context, const ::flyteidl::admin::ListMatchableAttributesRequest* request, ::flyteidl::admin::ListMatchableAttributesResponse* response) {
   (void) context;
   (void) request;
   (void) response;

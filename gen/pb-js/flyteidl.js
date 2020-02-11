@@ -20512,27 +20512,28 @@ export const flyteidl = $root.flyteidl = (() => {
             return MatchingAttributes;
         })();
 
-        admin.MatchableResourceConfiguration = (function() {
+        admin.MatchableAttributesConfiguration = (function() {
 
             /**
-             * Properties of a MatchableResourceConfiguration.
+             * Properties of a MatchableAttributesConfiguration.
              * @memberof flyteidl.admin
-             * @interface IMatchableResourceConfiguration
-             * @property {flyteidl.admin.IMatchingAttributes|null} [attributes] MatchableResourceConfiguration attributes
-             * @property {string|null} [domain] MatchableResourceConfiguration domain
-             * @property {string|null} [project] MatchableResourceConfiguration project
-             * @property {string|null} [workflow] MatchableResourceConfiguration workflow
+             * @interface IMatchableAttributesConfiguration
+             * @property {flyteidl.admin.IMatchingAttributes|null} [attributes] MatchableAttributesConfiguration attributes
+             * @property {string|null} [domain] MatchableAttributesConfiguration domain
+             * @property {string|null} [project] MatchableAttributesConfiguration project
+             * @property {string|null} [workflow] MatchableAttributesConfiguration workflow
+             * @property {string|null} [launchPlan] MatchableAttributesConfiguration launchPlan
              */
 
             /**
-             * Constructs a new MatchableResourceConfiguration.
+             * Constructs a new MatchableAttributesConfiguration.
              * @memberof flyteidl.admin
-             * @classdesc Represents a MatchableResourceConfiguration.
-             * @implements IMatchableResourceConfiguration
+             * @classdesc Represents a MatchableAttributesConfiguration.
+             * @implements IMatchableAttributesConfiguration
              * @constructor
-             * @param {flyteidl.admin.IMatchableResourceConfiguration=} [properties] Properties to set
+             * @param {flyteidl.admin.IMatchableAttributesConfiguration=} [properties] Properties to set
              */
-            function MatchableResourceConfiguration(properties) {
+            function MatchableAttributesConfiguration(properties) {
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -20540,59 +20541,67 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * MatchableResourceConfiguration attributes.
+             * MatchableAttributesConfiguration attributes.
              * @member {flyteidl.admin.IMatchingAttributes|null|undefined} attributes
-             * @memberof flyteidl.admin.MatchableResourceConfiguration
+             * @memberof flyteidl.admin.MatchableAttributesConfiguration
              * @instance
              */
-            MatchableResourceConfiguration.prototype.attributes = null;
+            MatchableAttributesConfiguration.prototype.attributes = null;
 
             /**
-             * MatchableResourceConfiguration domain.
+             * MatchableAttributesConfiguration domain.
              * @member {string} domain
-             * @memberof flyteidl.admin.MatchableResourceConfiguration
+             * @memberof flyteidl.admin.MatchableAttributesConfiguration
              * @instance
              */
-            MatchableResourceConfiguration.prototype.domain = "";
+            MatchableAttributesConfiguration.prototype.domain = "";
 
             /**
-             * MatchableResourceConfiguration project.
+             * MatchableAttributesConfiguration project.
              * @member {string} project
-             * @memberof flyteidl.admin.MatchableResourceConfiguration
+             * @memberof flyteidl.admin.MatchableAttributesConfiguration
              * @instance
              */
-            MatchableResourceConfiguration.prototype.project = "";
+            MatchableAttributesConfiguration.prototype.project = "";
 
             /**
-             * MatchableResourceConfiguration workflow.
+             * MatchableAttributesConfiguration workflow.
              * @member {string} workflow
-             * @memberof flyteidl.admin.MatchableResourceConfiguration
+             * @memberof flyteidl.admin.MatchableAttributesConfiguration
              * @instance
              */
-            MatchableResourceConfiguration.prototype.workflow = "";
+            MatchableAttributesConfiguration.prototype.workflow = "";
 
             /**
-             * Creates a new MatchableResourceConfiguration instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.admin.MatchableResourceConfiguration
-             * @static
-             * @param {flyteidl.admin.IMatchableResourceConfiguration=} [properties] Properties to set
-             * @returns {flyteidl.admin.MatchableResourceConfiguration} MatchableResourceConfiguration instance
+             * MatchableAttributesConfiguration launchPlan.
+             * @member {string} launchPlan
+             * @memberof flyteidl.admin.MatchableAttributesConfiguration
+             * @instance
              */
-            MatchableResourceConfiguration.create = function create(properties) {
-                return new MatchableResourceConfiguration(properties);
+            MatchableAttributesConfiguration.prototype.launchPlan = "";
+
+            /**
+             * Creates a new MatchableAttributesConfiguration instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.MatchableAttributesConfiguration
+             * @static
+             * @param {flyteidl.admin.IMatchableAttributesConfiguration=} [properties] Properties to set
+             * @returns {flyteidl.admin.MatchableAttributesConfiguration} MatchableAttributesConfiguration instance
+             */
+            MatchableAttributesConfiguration.create = function create(properties) {
+                return new MatchableAttributesConfiguration(properties);
             };
 
             /**
-             * Encodes the specified MatchableResourceConfiguration message. Does not implicitly {@link flyteidl.admin.MatchableResourceConfiguration.verify|verify} messages.
+             * Encodes the specified MatchableAttributesConfiguration message. Does not implicitly {@link flyteidl.admin.MatchableAttributesConfiguration.verify|verify} messages.
              * @function encode
-             * @memberof flyteidl.admin.MatchableResourceConfiguration
+             * @memberof flyteidl.admin.MatchableAttributesConfiguration
              * @static
-             * @param {flyteidl.admin.IMatchableResourceConfiguration} message MatchableResourceConfiguration message or plain object to encode
+             * @param {flyteidl.admin.IMatchableAttributesConfiguration} message MatchableAttributesConfiguration message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            MatchableResourceConfiguration.encode = function encode(message, writer) {
+            MatchableAttributesConfiguration.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.attributes != null && message.hasOwnProperty("attributes"))
@@ -20603,24 +20612,26 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.project);
                 if (message.workflow != null && message.hasOwnProperty("workflow"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.workflow);
+                if (message.launchPlan != null && message.hasOwnProperty("launchPlan"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.launchPlan);
                 return writer;
             };
 
             /**
-             * Decodes a MatchableResourceConfiguration message from the specified reader or buffer.
+             * Decodes a MatchableAttributesConfiguration message from the specified reader or buffer.
              * @function decode
-             * @memberof flyteidl.admin.MatchableResourceConfiguration
+             * @memberof flyteidl.admin.MatchableAttributesConfiguration
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.MatchableResourceConfiguration} MatchableResourceConfiguration
+             * @returns {flyteidl.admin.MatchableAttributesConfiguration} MatchableAttributesConfiguration
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            MatchableResourceConfiguration.decode = function decode(reader, length) {
+            MatchableAttributesConfiguration.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.MatchableResourceConfiguration();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.MatchableAttributesConfiguration();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -20636,6 +20647,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 4:
                         message.workflow = reader.string();
                         break;
+                    case 5:
+                        message.launchPlan = reader.string();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -20645,14 +20659,14 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Verifies a MatchableResourceConfiguration message.
+             * Verifies a MatchableAttributesConfiguration message.
              * @function verify
-             * @memberof flyteidl.admin.MatchableResourceConfiguration
+             * @memberof flyteidl.admin.MatchableAttributesConfiguration
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            MatchableResourceConfiguration.verify = function verify(message) {
+            MatchableAttributesConfiguration.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.attributes != null && message.hasOwnProperty("attributes")) {
@@ -20669,30 +20683,33 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.workflow != null && message.hasOwnProperty("workflow"))
                     if (!$util.isString(message.workflow))
                         return "workflow: string expected";
+                if (message.launchPlan != null && message.hasOwnProperty("launchPlan"))
+                    if (!$util.isString(message.launchPlan))
+                        return "launchPlan: string expected";
                 return null;
             };
 
-            return MatchableResourceConfiguration;
+            return MatchableAttributesConfiguration;
         })();
 
-        admin.ListMatchableResourcesRequest = (function() {
+        admin.ListMatchableAttributesRequest = (function() {
 
             /**
-             * Properties of a ListMatchableResourcesRequest.
+             * Properties of a ListMatchableAttributesRequest.
              * @memberof flyteidl.admin
-             * @interface IListMatchableResourcesRequest
-             * @property {flyteidl.admin.MatchableResource|null} [resourceType] ListMatchableResourcesRequest resourceType
+             * @interface IListMatchableAttributesRequest
+             * @property {flyteidl.admin.MatchableResource|null} [resourceType] ListMatchableAttributesRequest resourceType
              */
 
             /**
-             * Constructs a new ListMatchableResourcesRequest.
+             * Constructs a new ListMatchableAttributesRequest.
              * @memberof flyteidl.admin
-             * @classdesc Represents a ListMatchableResourcesRequest.
-             * @implements IListMatchableResourcesRequest
+             * @classdesc Represents a ListMatchableAttributesRequest.
+             * @implements IListMatchableAttributesRequest
              * @constructor
-             * @param {flyteidl.admin.IListMatchableResourcesRequest=} [properties] Properties to set
+             * @param {flyteidl.admin.IListMatchableAttributesRequest=} [properties] Properties to set
              */
-            function ListMatchableResourcesRequest(properties) {
+            function ListMatchableAttributesRequest(properties) {
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -20700,35 +20717,35 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * ListMatchableResourcesRequest resourceType.
+             * ListMatchableAttributesRequest resourceType.
              * @member {flyteidl.admin.MatchableResource} resourceType
-             * @memberof flyteidl.admin.ListMatchableResourcesRequest
+             * @memberof flyteidl.admin.ListMatchableAttributesRequest
              * @instance
              */
-            ListMatchableResourcesRequest.prototype.resourceType = 0;
+            ListMatchableAttributesRequest.prototype.resourceType = 0;
 
             /**
-             * Creates a new ListMatchableResourcesRequest instance using the specified properties.
+             * Creates a new ListMatchableAttributesRequest instance using the specified properties.
              * @function create
-             * @memberof flyteidl.admin.ListMatchableResourcesRequest
+             * @memberof flyteidl.admin.ListMatchableAttributesRequest
              * @static
-             * @param {flyteidl.admin.IListMatchableResourcesRequest=} [properties] Properties to set
-             * @returns {flyteidl.admin.ListMatchableResourcesRequest} ListMatchableResourcesRequest instance
+             * @param {flyteidl.admin.IListMatchableAttributesRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.ListMatchableAttributesRequest} ListMatchableAttributesRequest instance
              */
-            ListMatchableResourcesRequest.create = function create(properties) {
-                return new ListMatchableResourcesRequest(properties);
+            ListMatchableAttributesRequest.create = function create(properties) {
+                return new ListMatchableAttributesRequest(properties);
             };
 
             /**
-             * Encodes the specified ListMatchableResourcesRequest message. Does not implicitly {@link flyteidl.admin.ListMatchableResourcesRequest.verify|verify} messages.
+             * Encodes the specified ListMatchableAttributesRequest message. Does not implicitly {@link flyteidl.admin.ListMatchableAttributesRequest.verify|verify} messages.
              * @function encode
-             * @memberof flyteidl.admin.ListMatchableResourcesRequest
+             * @memberof flyteidl.admin.ListMatchableAttributesRequest
              * @static
-             * @param {flyteidl.admin.IListMatchableResourcesRequest} message ListMatchableResourcesRequest message or plain object to encode
+             * @param {flyteidl.admin.IListMatchableAttributesRequest} message ListMatchableAttributesRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ListMatchableResourcesRequest.encode = function encode(message, writer) {
+            ListMatchableAttributesRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.resourceType != null && message.hasOwnProperty("resourceType"))
@@ -20737,20 +20754,20 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Decodes a ListMatchableResourcesRequest message from the specified reader or buffer.
+             * Decodes a ListMatchableAttributesRequest message from the specified reader or buffer.
              * @function decode
-             * @memberof flyteidl.admin.ListMatchableResourcesRequest
+             * @memberof flyteidl.admin.ListMatchableAttributesRequest
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.ListMatchableResourcesRequest} ListMatchableResourcesRequest
+             * @returns {flyteidl.admin.ListMatchableAttributesRequest} ListMatchableAttributesRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ListMatchableResourcesRequest.decode = function decode(reader, length) {
+            ListMatchableAttributesRequest.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ListMatchableResourcesRequest();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ListMatchableAttributesRequest();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -20766,14 +20783,14 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Verifies a ListMatchableResourcesRequest message.
+             * Verifies a ListMatchableAttributesRequest message.
              * @function verify
-             * @memberof flyteidl.admin.ListMatchableResourcesRequest
+             * @memberof flyteidl.admin.ListMatchableAttributesRequest
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            ListMatchableResourcesRequest.verify = function verify(message) {
+            ListMatchableAttributesRequest.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.resourceType != null && message.hasOwnProperty("resourceType"))
@@ -20789,27 +20806,27 @@ export const flyteidl = $root.flyteidl = (() => {
                 return null;
             };
 
-            return ListMatchableResourcesRequest;
+            return ListMatchableAttributesRequest;
         })();
 
-        admin.ListMatchableResourcesResponse = (function() {
+        admin.ListMatchableAttributesResponse = (function() {
 
             /**
-             * Properties of a ListMatchableResourcesResponse.
+             * Properties of a ListMatchableAttributesResponse.
              * @memberof flyteidl.admin
-             * @interface IListMatchableResourcesResponse
-             * @property {Array.<flyteidl.admin.IMatchableResourceConfiguration>|null} [configurations] ListMatchableResourcesResponse configurations
+             * @interface IListMatchableAttributesResponse
+             * @property {Array.<flyteidl.admin.IMatchableAttributesConfiguration>|null} [configurations] ListMatchableAttributesResponse configurations
              */
 
             /**
-             * Constructs a new ListMatchableResourcesResponse.
+             * Constructs a new ListMatchableAttributesResponse.
              * @memberof flyteidl.admin
-             * @classdesc Represents a ListMatchableResourcesResponse.
-             * @implements IListMatchableResourcesResponse
+             * @classdesc Represents a ListMatchableAttributesResponse.
+             * @implements IListMatchableAttributesResponse
              * @constructor
-             * @param {flyteidl.admin.IListMatchableResourcesResponse=} [properties] Properties to set
+             * @param {flyteidl.admin.IListMatchableAttributesResponse=} [properties] Properties to set
              */
-            function ListMatchableResourcesResponse(properties) {
+            function ListMatchableAttributesResponse(properties) {
                 this.configurations = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
@@ -20818,65 +20835,65 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * ListMatchableResourcesResponse configurations.
-             * @member {Array.<flyteidl.admin.IMatchableResourceConfiguration>} configurations
-             * @memberof flyteidl.admin.ListMatchableResourcesResponse
+             * ListMatchableAttributesResponse configurations.
+             * @member {Array.<flyteidl.admin.IMatchableAttributesConfiguration>} configurations
+             * @memberof flyteidl.admin.ListMatchableAttributesResponse
              * @instance
              */
-            ListMatchableResourcesResponse.prototype.configurations = $util.emptyArray;
+            ListMatchableAttributesResponse.prototype.configurations = $util.emptyArray;
 
             /**
-             * Creates a new ListMatchableResourcesResponse instance using the specified properties.
+             * Creates a new ListMatchableAttributesResponse instance using the specified properties.
              * @function create
-             * @memberof flyteidl.admin.ListMatchableResourcesResponse
+             * @memberof flyteidl.admin.ListMatchableAttributesResponse
              * @static
-             * @param {flyteidl.admin.IListMatchableResourcesResponse=} [properties] Properties to set
-             * @returns {flyteidl.admin.ListMatchableResourcesResponse} ListMatchableResourcesResponse instance
+             * @param {flyteidl.admin.IListMatchableAttributesResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.ListMatchableAttributesResponse} ListMatchableAttributesResponse instance
              */
-            ListMatchableResourcesResponse.create = function create(properties) {
-                return new ListMatchableResourcesResponse(properties);
+            ListMatchableAttributesResponse.create = function create(properties) {
+                return new ListMatchableAttributesResponse(properties);
             };
 
             /**
-             * Encodes the specified ListMatchableResourcesResponse message. Does not implicitly {@link flyteidl.admin.ListMatchableResourcesResponse.verify|verify} messages.
+             * Encodes the specified ListMatchableAttributesResponse message. Does not implicitly {@link flyteidl.admin.ListMatchableAttributesResponse.verify|verify} messages.
              * @function encode
-             * @memberof flyteidl.admin.ListMatchableResourcesResponse
+             * @memberof flyteidl.admin.ListMatchableAttributesResponse
              * @static
-             * @param {flyteidl.admin.IListMatchableResourcesResponse} message ListMatchableResourcesResponse message or plain object to encode
+             * @param {flyteidl.admin.IListMatchableAttributesResponse} message ListMatchableAttributesResponse message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            ListMatchableResourcesResponse.encode = function encode(message, writer) {
+            ListMatchableAttributesResponse.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.configurations != null && message.configurations.length)
                     for (let i = 0; i < message.configurations.length; ++i)
-                        $root.flyteidl.admin.MatchableResourceConfiguration.encode(message.configurations[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.flyteidl.admin.MatchableAttributesConfiguration.encode(message.configurations[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
             /**
-             * Decodes a ListMatchableResourcesResponse message from the specified reader or buffer.
+             * Decodes a ListMatchableAttributesResponse message from the specified reader or buffer.
              * @function decode
-             * @memberof flyteidl.admin.ListMatchableResourcesResponse
+             * @memberof flyteidl.admin.ListMatchableAttributesResponse
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.ListMatchableResourcesResponse} ListMatchableResourcesResponse
+             * @returns {flyteidl.admin.ListMatchableAttributesResponse} ListMatchableAttributesResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            ListMatchableResourcesResponse.decode = function decode(reader, length) {
+            ListMatchableAttributesResponse.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ListMatchableResourcesResponse();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ListMatchableAttributesResponse();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         if (!(message.configurations && message.configurations.length))
                             message.configurations = [];
-                        message.configurations.push($root.flyteidl.admin.MatchableResourceConfiguration.decode(reader, reader.uint32()));
+                        message.configurations.push($root.flyteidl.admin.MatchableAttributesConfiguration.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -20887,21 +20904,21 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Verifies a ListMatchableResourcesResponse message.
+             * Verifies a ListMatchableAttributesResponse message.
              * @function verify
-             * @memberof flyteidl.admin.ListMatchableResourcesResponse
+             * @memberof flyteidl.admin.ListMatchableAttributesResponse
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            ListMatchableResourcesResponse.verify = function verify(message) {
+            ListMatchableAttributesResponse.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.configurations != null && message.hasOwnProperty("configurations")) {
                     if (!Array.isArray(message.configurations))
                         return "configurations: array expected";
                     for (let i = 0; i < message.configurations.length; ++i) {
-                        let error = $root.flyteidl.admin.MatchableResourceConfiguration.verify(message.configurations[i]);
+                        let error = $root.flyteidl.admin.MatchableAttributesConfiguration.verify(message.configurations[i]);
                         if (error)
                             return "configurations." + error;
                     }
@@ -20909,7 +20926,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 return null;
             };
 
-            return ListMatchableResourcesResponse;
+            return ListMatchableAttributesResponse;
         })();
 
         admin.NodeExecutionGetRequest = (function() {
@@ -28936,35 +28953,35 @@ export const flyteidl = $root.flyteidl = (() => {
              */
 
             /**
-             * Callback as used by {@link flyteidl.service.AdminService#listMatchableResources}.
+             * Callback as used by {@link flyteidl.service.AdminService#listMatchableAttributes}.
              * @memberof flyteidl.service.AdminService
-             * @typedef ListMatchableResourcesCallback
+             * @typedef ListMatchableAttributesCallback
              * @type {function}
              * @param {Error|null} error Error, if any
-             * @param {flyteidl.admin.ListMatchableResourcesResponse} [response] ListMatchableResourcesResponse
+             * @param {flyteidl.admin.ListMatchableAttributesResponse} [response] ListMatchableAttributesResponse
              */
 
             /**
-             * Calls ListMatchableResources.
-             * @function listMatchableResources
+             * Calls ListMatchableAttributes.
+             * @function listMatchableAttributes
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.IListMatchableResourcesRequest} request ListMatchableResourcesRequest message or plain object
-             * @param {flyteidl.service.AdminService.ListMatchableResourcesCallback} callback Node-style callback called with the error, if any, and ListMatchableResourcesResponse
+             * @param {flyteidl.admin.IListMatchableAttributesRequest} request ListMatchableAttributesRequest message or plain object
+             * @param {flyteidl.service.AdminService.ListMatchableAttributesCallback} callback Node-style callback called with the error, if any, and ListMatchableAttributesResponse
              * @returns {undefined}
              * @variation 1
              */
-            Object.defineProperty(AdminService.prototype.listMatchableResources = function listMatchableResources(request, callback) {
-                return this.rpcCall(listMatchableResources, $root.flyteidl.admin.ListMatchableResourcesRequest, $root.flyteidl.admin.ListMatchableResourcesResponse, request, callback);
-            }, "name", { value: "ListMatchableResources" });
+            Object.defineProperty(AdminService.prototype.listMatchableAttributes = function listMatchableAttributes(request, callback) {
+                return this.rpcCall(listMatchableAttributes, $root.flyteidl.admin.ListMatchableAttributesRequest, $root.flyteidl.admin.ListMatchableAttributesResponse, request, callback);
+            }, "name", { value: "ListMatchableAttributes" });
 
             /**
-             * Calls ListMatchableResources.
-             * @function listMatchableResources
+             * Calls ListMatchableAttributes.
+             * @function listMatchableAttributes
              * @memberof flyteidl.service.AdminService
              * @instance
-             * @param {flyteidl.admin.IListMatchableResourcesRequest} request ListMatchableResourcesRequest message or plain object
-             * @returns {Promise<flyteidl.admin.ListMatchableResourcesResponse>} Promise
+             * @param {flyteidl.admin.IListMatchableAttributesRequest} request ListMatchableAttributesRequest message or plain object
+             * @returns {Promise<flyteidl.admin.ListMatchableAttributesResponse>} Promise
              * @variation 2
              */
 
