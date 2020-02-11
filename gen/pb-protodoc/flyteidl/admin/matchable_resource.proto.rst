@@ -239,19 +239,19 @@ flyteidl.admin.ListMatchableResourcesRequest
 .. code-block:: json
 
   {
-    "type": "...",
-    "domain": "..."
+    "domain": "...",
+    "resource_type": "..."
   }
 
-.. _api_field_flyteidl.admin.ListMatchableResourcesRequest.type:
-
-type
-  (:ref:`flyteidl.admin.MatchableResource <api_enum_flyteidl.admin.MatchableResource>`) 
-  
 .. _api_field_flyteidl.admin.ListMatchableResourcesRequest.domain:
 
 domain
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+.. _api_field_flyteidl.admin.ListMatchableResourcesRequest.resource_type:
+
+resource_type
+  (:ref:`flyteidl.admin.MatchableResource <api_enum_flyteidl.admin.MatchableResource>`) 
   
 
 

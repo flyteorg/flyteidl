@@ -8658,11 +8658,11 @@ export namespace flyteidl {
         /** Properties of a ListMatchableResourcesRequest. */
         interface IListMatchableResourcesRequest {
 
-            /** ListMatchableResourcesRequest type */
-            type?: (flyteidl.admin.MatchableResource|null);
-
             /** ListMatchableResourcesRequest domain */
             domain?: (string|null);
+
+            /** ListMatchableResourcesRequest resourceType */
+            resourceType?: (flyteidl.admin.MatchableResource|null);
         }
 
         /** Represents a ListMatchableResourcesRequest. */
@@ -8674,11 +8674,11 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.IListMatchableResourcesRequest);
 
-            /** ListMatchableResourcesRequest type. */
-            public type: flyteidl.admin.MatchableResource;
-
             /** ListMatchableResourcesRequest domain. */
             public domain: string;
+
+            /** ListMatchableResourcesRequest resourceType. */
+            public resourceType: flyteidl.admin.MatchableResource;
 
             /**
              * Creates a new ListMatchableResourcesRequest instance using the specified properties.

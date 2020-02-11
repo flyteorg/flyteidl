@@ -1233,9 +1233,9 @@ class ListMatchableResourcesRequest final :
 
   // accessors -------------------------------------------------------
 
-  // string domain = 2;
+  // string domain = 1;
   void clear_domain();
-  static const int kDomainFieldNumber = 2;
+  static const int kDomainFieldNumber = 1;
   const ::std::string& domain() const;
   void set_domain(const ::std::string& value);
   #if LANG_CXX11
@@ -1247,11 +1247,11 @@ class ListMatchableResourcesRequest final :
   ::std::string* release_domain();
   void set_allocated_domain(::std::string* domain);
 
-  // .flyteidl.admin.MatchableResource type = 1;
-  void clear_type();
-  static const int kTypeFieldNumber = 1;
-  ::flyteidl::admin::MatchableResource type() const;
-  void set_type(::flyteidl::admin::MatchableResource value);
+  // .flyteidl.admin.MatchableResource resource_type = 2;
+  void clear_resource_type();
+  static const int kResourceTypeFieldNumber = 2;
+  ::flyteidl::admin::MatchableResource resource_type() const;
+  void set_resource_type(::flyteidl::admin::MatchableResource value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.ListMatchableResourcesRequest)
  private:
@@ -1259,7 +1259,7 @@ class ListMatchableResourcesRequest final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr domain_;
-  int type_;
+  int resource_type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
 };
@@ -2259,21 +2259,7 @@ inline void MatchableResourceConfiguration::set_allocated_workflow(::std::string
 
 // ListMatchableResourcesRequest
 
-// .flyteidl.admin.MatchableResource type = 1;
-inline void ListMatchableResourcesRequest::clear_type() {
-  type_ = 0;
-}
-inline ::flyteidl::admin::MatchableResource ListMatchableResourcesRequest::type() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.ListMatchableResourcesRequest.type)
-  return static_cast< ::flyteidl::admin::MatchableResource >(type_);
-}
-inline void ListMatchableResourcesRequest::set_type(::flyteidl::admin::MatchableResource value) {
-  
-  type_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.admin.ListMatchableResourcesRequest.type)
-}
-
-// string domain = 2;
+// string domain = 1;
 inline void ListMatchableResourcesRequest::clear_domain() {
   domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -2324,6 +2310,20 @@ inline void ListMatchableResourcesRequest::set_allocated_domain(::std::string* d
   }
   domain_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), domain);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ListMatchableResourcesRequest.domain)
+}
+
+// .flyteidl.admin.MatchableResource resource_type = 2;
+inline void ListMatchableResourcesRequest::clear_resource_type() {
+  resource_type_ = 0;
+}
+inline ::flyteidl::admin::MatchableResource ListMatchableResourcesRequest::resource_type() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ListMatchableResourcesRequest.resource_type)
+  return static_cast< ::flyteidl::admin::MatchableResource >(resource_type_);
+}
+inline void ListMatchableResourcesRequest::set_resource_type(::flyteidl::admin::MatchableResource value) {
+  
+  resource_type_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ListMatchableResourcesRequest.resource_type)
 }
 
 // -------------------------------------------------------------------

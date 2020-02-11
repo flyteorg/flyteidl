@@ -20681,8 +20681,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a ListMatchableResourcesRequest.
              * @memberof flyteidl.admin
              * @interface IListMatchableResourcesRequest
-             * @property {flyteidl.admin.MatchableResource|null} [type] ListMatchableResourcesRequest type
              * @property {string|null} [domain] ListMatchableResourcesRequest domain
+             * @property {flyteidl.admin.MatchableResource|null} [resourceType] ListMatchableResourcesRequest resourceType
              */
 
             /**
@@ -20701,20 +20701,20 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * ListMatchableResourcesRequest type.
-             * @member {flyteidl.admin.MatchableResource} type
-             * @memberof flyteidl.admin.ListMatchableResourcesRequest
-             * @instance
-             */
-            ListMatchableResourcesRequest.prototype.type = 0;
-
-            /**
              * ListMatchableResourcesRequest domain.
              * @member {string} domain
              * @memberof flyteidl.admin.ListMatchableResourcesRequest
              * @instance
              */
             ListMatchableResourcesRequest.prototype.domain = "";
+
+            /**
+             * ListMatchableResourcesRequest resourceType.
+             * @member {flyteidl.admin.MatchableResource} resourceType
+             * @memberof flyteidl.admin.ListMatchableResourcesRequest
+             * @instance
+             */
+            ListMatchableResourcesRequest.prototype.resourceType = 0;
 
             /**
              * Creates a new ListMatchableResourcesRequest instance using the specified properties.
@@ -20740,10 +20740,10 @@ export const flyteidl = $root.flyteidl = (() => {
             ListMatchableResourcesRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.type != null && message.hasOwnProperty("type"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
                 if (message.domain != null && message.hasOwnProperty("domain"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.domain);
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.resourceType);
                 return writer;
             };
 
@@ -20766,10 +20766,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.type = reader.int32();
+                        message.domain = reader.string();
                         break;
                     case 2:
-                        message.domain = reader.string();
+                        message.resourceType = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -20790,19 +20790,19 @@ export const flyteidl = $root.flyteidl = (() => {
             ListMatchableResourcesRequest.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.type != null && message.hasOwnProperty("type"))
-                    switch (message.type) {
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    if (!$util.isString(message.domain))
+                        return "domain: string expected";
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    switch (message.resourceType) {
                     default:
-                        return "type: enum value expected";
+                        return "resourceType: enum value expected";
                     case 0:
                     case 1:
                     case 2:
                     case 3:
                         break;
                     }
-                if (message.domain != null && message.hasOwnProperty("domain"))
-                    if (!$util.isString(message.domain))
-                        return "domain: string expected";
                 return null;
             };
 

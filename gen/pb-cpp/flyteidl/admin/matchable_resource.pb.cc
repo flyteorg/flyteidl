@@ -304,8 +304,8 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fmatchable_5freso
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ListMatchableResourcesRequest, type_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ListMatchableResourcesRequest, domain_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ListMatchableResourcesRequest, resource_type_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ListMatchableResourcesResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -370,22 +370,22 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fmatchable_5fresource_2ep
   "\000B\010\n\006target\"\213\001\n\036MatchableResourceConfigu"
   "ration\0226\n\nattributes\030\001 \001(\0132\".flyteidl.ad"
   "min.MatchingAttributes\022\016\n\006domain\030\002 \001(\t\022\017"
-  "\n\007project\030\003 \001(\t\022\020\n\010workflow\030\004 \001(\t\"`\n\035Lis"
-  "tMatchableResourcesRequest\022/\n\004type\030\001 \001(\016"
-  "2!.flyteidl.admin.MatchableResource\022\016\n\006d"
-  "omain\030\002 \001(\t\"h\n\036ListMatchableResourcesRes"
-  "ponse\022F\n\016configurations\030\001 \003(\0132..flyteidl"
-  ".admin.MatchableResourceConfiguration*n\n"
-  "\021MatchableResource\022\021\n\rTASK_RESOURCE\020\000\022\024\n"
-  "\020CLUSTER_RESOURCE\020\001\022\023\n\017EXECUTION_QUEUE\020\002"
-  "\022\033\n\027EXECUTION_CLUSTER_LABEL\020\003B3Z1github."
-  "com/lyft/flyteidl/gen/pb-go/flyteidl/adm"
-  "inb\006proto3"
+  "\n\007project\030\003 \001(\t\022\020\n\010workflow\030\004 \001(\t\"i\n\035Lis"
+  "tMatchableResourcesRequest\022\016\n\006domain\030\001 \001"
+  "(\t\0228\n\rresource_type\030\002 \001(\0162!.flyteidl.adm"
+  "in.MatchableResource\"h\n\036ListMatchableRes"
+  "ourcesResponse\022F\n\016configurations\030\001 \003(\0132."
+  ".flyteidl.admin.MatchableResourceConfigu"
+  "ration*n\n\021MatchableResource\022\021\n\rTASK_RESO"
+  "URCE\020\000\022\024\n\020CLUSTER_RESOURCE\020\001\022\023\n\017EXECUTIO"
+  "N_QUEUE\020\002\022\033\n\027EXECUTION_CLUSTER_LABEL\020\003B3"
+  "Z1github.com/lyft/flyteidl/gen/pb-go/fly"
+  "teidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fmatchable_5fresource_2eproto,
-  "flyteidl/admin/matchable_resource.proto", &assign_descriptors_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, 1370,
+  "flyteidl/admin/matchable_resource.proto", &assign_descriptors_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, 1379,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fmatchable_5fresource_2eproto() {
@@ -3384,8 +3384,8 @@ class ListMatchableResourcesRequest::HasBitSetters {
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ListMatchableResourcesRequest::kTypeFieldNumber;
 const int ListMatchableResourcesRequest::kDomainFieldNumber;
+const int ListMatchableResourcesRequest::kResourceTypeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ListMatchableResourcesRequest::ListMatchableResourcesRequest()
@@ -3401,7 +3401,7 @@ ListMatchableResourcesRequest::ListMatchableResourcesRequest(const ListMatchable
   if (from.domain().size() > 0) {
     domain_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.domain_);
   }
-  type_ = from.type_;
+  resource_type_ = from.resource_type_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.ListMatchableResourcesRequest)
 }
 
@@ -3409,7 +3409,7 @@ void ListMatchableResourcesRequest::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_ListMatchableResourcesRequest_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
   domain_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  type_ = 0;
+  resource_type_ = 0;
 }
 
 ListMatchableResourcesRequest::~ListMatchableResourcesRequest() {
@@ -3437,7 +3437,7 @@ void ListMatchableResourcesRequest::Clear() {
   (void) cached_has_bits;
 
   domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  type_ = 0;
+  resource_type_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -3454,17 +3454,9 @@ const char* ListMatchableResourcesRequest::_InternalParse(const char* begin, con
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .flyteidl.admin.MatchableResource type = 1;
+      // string domain = 1;
       case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
-        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_type(static_cast<::flyteidl::admin::MatchableResource>(val));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
-      // string domain = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("flyteidl.admin.ListMatchableResourcesRequest.domain");
@@ -3476,6 +3468,14 @@ const char* ListMatchableResourcesRequest::_InternalParse(const char* begin, con
         GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
         ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
         ptr += size;
+        break;
+      }
+      // .flyteidl.admin.MatchableResource resource_type = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_resource_type(static_cast<::flyteidl::admin::MatchableResource>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -3512,29 +3512,29 @@ bool ListMatchableResourcesRequest::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .flyteidl.admin.MatchableResource type = 1;
+      // string domain = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
-          int value = 0;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_type(static_cast< ::flyteidl::admin::MatchableResource >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string domain = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_domain()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->domain().data(), static_cast<int>(this->domain().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "flyteidl.admin.ListMatchableResourcesRequest.domain"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .flyteidl.admin.MatchableResource resource_type = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_resource_type(static_cast< ::flyteidl::admin::MatchableResource >(value));
         } else {
           goto handle_unusual;
         }
@@ -3568,20 +3568,20 @@ void ListMatchableResourcesRequest::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.admin.MatchableResource type = 1;
-  if (this->type() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->type(), output);
-  }
-
-  // string domain = 2;
+  // string domain = 1;
   if (this->domain().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->domain().data(), static_cast<int>(this->domain().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.admin.ListMatchableResourcesRequest.domain");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->domain(), output);
+      1, this->domain(), output);
+  }
+
+  // .flyteidl.admin.MatchableResource resource_type = 2;
+  if (this->resource_type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->resource_type(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3597,13 +3597,7 @@ void ListMatchableResourcesRequest::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.admin.MatchableResource type = 1;
-  if (this->type() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->type(), target);
-  }
-
-  // string domain = 2;
+  // string domain = 1;
   if (this->domain().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->domain().data(), static_cast<int>(this->domain().length()),
@@ -3611,7 +3605,13 @@ void ListMatchableResourcesRequest::SerializeWithCachedSizes(
       "flyteidl.admin.ListMatchableResourcesRequest.domain");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->domain(), target);
+        1, this->domain(), target);
+  }
+
+  // .flyteidl.admin.MatchableResource resource_type = 2;
+  if (this->resource_type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->resource_type(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3635,17 +3635,17 @@ size_t ListMatchableResourcesRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string domain = 2;
+  // string domain = 1;
   if (this->domain().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->domain());
   }
 
-  // .flyteidl.admin.MatchableResource type = 1;
-  if (this->type() != 0) {
+  // .flyteidl.admin.MatchableResource resource_type = 2;
+  if (this->resource_type() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->resource_type());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -3679,8 +3679,8 @@ void ListMatchableResourcesRequest::MergeFrom(const ListMatchableResourcesReques
 
     domain_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.domain_);
   }
-  if (from.type() != 0) {
-    set_type(from.type());
+  if (from.resource_type() != 0) {
+    set_resource_type(from.resource_type());
   }
 }
 
@@ -3711,7 +3711,7 @@ void ListMatchableResourcesRequest::InternalSwap(ListMatchableResourcesRequest* 
   _internal_metadata_.Swap(&other->_internal_metadata_);
   domain_.Swap(&other->domain_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  swap(type_, other->type_);
+  swap(resource_type_, other->resource_type_);
 }
 
 ::google::protobuf::Metadata ListMatchableResourcesRequest::GetMetadata() const {

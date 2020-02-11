@@ -1119,7 +1119,7 @@
         ]
       }
     },
-    "/api/v1/matchable_resources/{type}/{domain}": {
+    "/api/v1/matchable_resources/{domain}": {
       "get": {
         "description": "Retrieve a list of MatchableResourceConfiguration objects.",
         "operationId": "ListMatchableResources",
@@ -1133,22 +1133,24 @@
         },
         "parameters": [
           {
-            "name": "type",
+            "name": "domain",
             "in": "path",
             "required": true,
+            "type": "string"
+          },
+          {
+            "name": "resource_type",
+            "description": " - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.\n - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run",
+            "in": "query",
+            "required": false,
             "type": "string",
             "enum": [
               "TASK_RESOURCE",
               "CLUSTER_RESOURCE",
               "EXECUTION_QUEUE",
               "EXECUTION_CLUSTER_LABEL"
-            ]
-          },
-          {
-            "name": "domain",
-            "in": "path",
-            "required": true,
-            "type": "string"
+            ],
+            "default": "TASK_RESOURCE"
           }
         ],
         "tags": [

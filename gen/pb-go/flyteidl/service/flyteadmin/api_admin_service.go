@@ -2836,12 +2836,18 @@ func (a *AdminServiceApiService) ListLaunchPlans2(ctx context.Context, idProject
 AdminServiceApiService
 Retrieve a list of MatchableResourceConfiguration objects.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param type_
  * @param domain
+ * @param optional nil or *ListMatchableResourcesOpts - Optional Parameters:
+     * @param "ResourceType" (optional.String) -   - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run
 
 @return AdminListMatchableResourcesResponse
 */
-func (a *AdminServiceApiService) ListMatchableResources(ctx context.Context, type_ string, domain string) (AdminListMatchableResourcesResponse, *http.Response, error) {
+
+type ListMatchableResourcesOpts struct { 
+	ResourceType optional.String
+}
+
+func (a *AdminServiceApiService) ListMatchableResources(ctx context.Context, domain string, localVarOptionals *ListMatchableResourcesOpts) (AdminListMatchableResourcesResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -2851,14 +2857,16 @@ func (a *AdminServiceApiService) ListMatchableResources(ctx context.Context, typ
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/api/v1/matchable_resources/{type}/{domain}"
-	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", fmt.Sprintf("%v", type_), -1)
+	localVarPath := a.client.cfg.BasePath + "/api/v1/matchable_resources/{domain}"
 	localVarPath = strings.Replace(localVarPath, "{"+"domain"+"}", fmt.Sprintf("%v", domain), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.ResourceType.IsSet() {
+		localVarQueryParams.Add("resource_type", parameterToString(localVarOptionals.ResourceType.Value(), ""))
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 

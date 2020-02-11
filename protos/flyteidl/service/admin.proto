@@ -440,7 +440,7 @@ service AdminService {
 
   rpc ListMatchableResources (flyteidl.admin.ListMatchableResourcesRequest) returns (flyteidl.admin.ListMatchableResourcesResponse) {
     option (google.api.http) = {
-      get: "/api/v1/matchable_resources/{type}/{domain}"
+      get: "/api/v1/matchable_resources/{domain}"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
       description: "Retrieve a list of MatchableResourceConfiguration objects."

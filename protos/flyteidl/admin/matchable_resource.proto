@@ -76,9 +76,9 @@ message MatchableResourceConfiguration {
 }
 
 message ListMatchableResourcesRequest {
-    MatchableResource type = 1;
+    string domain = 1;
 
-    string domain = 2;
+    MatchableResource resource_type = 2;
 }
 
 message ListMatchableResourcesResponse {
