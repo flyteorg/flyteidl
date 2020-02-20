@@ -60,7 +60,7 @@ message ExecutionError {
     // Full error contents accessible via a URI
     string error_uri = 3;
     // Error type: System or User
-    enum ErrorType {
+    enum ErrorKind {
         UNKNOWN = 0;
         USER = 1;
         SYSTEM = 2;
