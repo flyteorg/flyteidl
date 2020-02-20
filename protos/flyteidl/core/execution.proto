@@ -65,7 +65,7 @@ message ExecutionError {
         USER = 1;
         SYSTEM = 2;
     }
-    ErrorType error_type = 4; 
+    ErrorKind kind = 4; 
 }
 
 // Log information for the task that is specific to a log sink
