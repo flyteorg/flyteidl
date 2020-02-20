@@ -2553,13 +2553,13 @@ definitions:
             project: "project"
           scheduled_at: "2000-01-23T04:56:07.000+00:00"
           nesting: 0
+          interruptible: true
         disable_all: true
         inputs:
           literals: {}
         annotations:
           values:
             key: "values"
-        interruptible: true
         notifications:
           notifications:
           - pager_duty:
@@ -2846,13 +2846,13 @@ definitions:
               project: "project"
             scheduled_at: "2000-01-23T04:56:07.000+00:00"
             nesting: 0
+            interruptible: true
           disable_all: true
           inputs:
             literals: {}
           annotations:
             values:
               key: "values"
-          interruptible: true
           notifications:
             notifications:
             - pager_duty:
@@ -2971,13 +2971,13 @@ definitions:
               project: "project"
             scheduled_at: "2000-01-23T04:56:07.000+00:00"
             nesting: 0
+            interruptible: true
           disable_all: true
           inputs:
             literals: {}
           annotations:
             values:
               key: "values"
-          interruptible: true
           notifications:
             notifications:
             - pager_duty:
@@ -3044,6 +3044,10 @@ definitions:
         description: "Optional, a reference workflow execution related to this execution.\n\
           In the case of a relaunch, this references the original workflow execution."
         $ref: "#/definitions/coreWorkflowExecutionIdentifier"
+      interruptible:
+        type: "boolean"
+        format: "boolean"
+        title: "Identify whether execution is interruptible"
     description: "Represents attributes about an execution which are not required\
       \ to launch the execution but are useful to record.\nThese attributes are assigned\
       \ at launch time and do not change."
@@ -3062,6 +3066,7 @@ definitions:
         project: "project"
       scheduled_at: "2000-01-23T04:56:07.000+00:00"
       nesting: 0
+      interruptible: true
   adminExecutionQueueAttributes:
     type: "object"
     properties:
@@ -3115,10 +3120,6 @@ definitions:
       annotations:
         description: "Annotations to apply to the execution resource."
         $ref: "#/definitions/adminAnnotations"
-      interruptible:
-        type: "boolean"
-        format: "boolean"
-        title: "Identify whether execution is interruptible"
     description: "An ExecutionSpec encompasses all data used to launch this execution.\
       \ The Spec does not change over the lifetime\nof an execution as it progresses\
       \ across phase changes.."
@@ -3144,13 +3145,13 @@ definitions:
           project: "project"
         scheduled_at: "2000-01-23T04:56:07.000+00:00"
         nesting: 0
+        interruptible: true
       disable_all: true
       inputs:
         literals: {}
       annotations:
         values:
           key: "values"
-      interruptible: true
       notifications:
         notifications:
         - pager_duty:

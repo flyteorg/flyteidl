@@ -16520,6 +16520,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.ITimestamp|null} [scheduledAt] ExecutionMetadata scheduledAt
              * @property {flyteidl.core.INodeExecutionIdentifier|null} [parentNodeExecution] ExecutionMetadata parentNodeExecution
              * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [referenceExecution] ExecutionMetadata referenceExecution
+             * @property {boolean|null} [interruptible] ExecutionMetadata interruptible
              */
 
             /**
@@ -16586,6 +16587,14 @@ export const flyteidl = $root.flyteidl = (() => {
             ExecutionMetadata.prototype.referenceExecution = null;
 
             /**
+             * ExecutionMetadata interruptible.
+             * @member {boolean} interruptible
+             * @memberof flyteidl.admin.ExecutionMetadata
+             * @instance
+             */
+            ExecutionMetadata.prototype.interruptible = false;
+
+            /**
              * Creates a new ExecutionMetadata instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.ExecutionMetadata
@@ -16619,6 +16628,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.google.protobuf.Timestamp.encode(message.scheduledAt, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.parentNodeExecution != null && message.hasOwnProperty("parentNodeExecution"))
                     $root.flyteidl.core.NodeExecutionIdentifier.encode(message.parentNodeExecution, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.interruptible != null && message.hasOwnProperty("interruptible"))
+                    writer.uint32(/* id 7, wireType 0 =*/56).bool(message.interruptible);
                 if (message.referenceExecution != null && message.hasOwnProperty("referenceExecution"))
                     $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.referenceExecution, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 return writer;
@@ -16659,6 +16670,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 16:
                         message.referenceExecution = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    case 7:
+                        message.interruptible = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -16711,6 +16725,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "referenceExecution." + error;
                 }
+                if (message.interruptible != null && message.hasOwnProperty("interruptible"))
+                    if (typeof message.interruptible !== "boolean")
+                        return "interruptible: boolean expected";
                 return null;
             };
 
@@ -16870,7 +16887,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {boolean|null} [disableAll] ExecutionSpec disableAll
              * @property {flyteidl.admin.ILabels|null} [labels] ExecutionSpec labels
              * @property {flyteidl.admin.IAnnotations|null} [annotations] ExecutionSpec annotations
-             * @property {boolean|null} [interruptible] ExecutionSpec interruptible
              */
 
             /**
@@ -16944,14 +16960,6 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             ExecutionSpec.prototype.annotations = null;
 
-            /**
-             * ExecutionSpec interruptible.
-             * @member {boolean} interruptible
-             * @memberof flyteidl.admin.ExecutionSpec
-             * @instance
-             */
-            ExecutionSpec.prototype.interruptible = false;
-
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -17004,8 +17012,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 if (message.annotations != null && message.hasOwnProperty("annotations"))
                     $root.flyteidl.admin.Annotations.encode(message.annotations, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-                if (message.interruptible != null && message.hasOwnProperty("interruptible"))
-                    writer.uint32(/* id 9, wireType 0 =*/72).bool(message.interruptible);
                 return writer;
             };
 
@@ -17047,9 +17053,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 8:
                         message.annotations = $root.flyteidl.admin.Annotations.decode(reader, reader.uint32());
-                        break;
-                    case 9:
-                        message.interruptible = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -17111,9 +17114,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "annotations." + error;
                 }
-                if (message.interruptible != null && message.hasOwnProperty("interruptible"))
-                    if (typeof message.interruptible !== "boolean")
-                        return "interruptible: boolean expected";
                 return null;
             };
 

@@ -1675,6 +1675,12 @@ class ExecutionMetadata final :
   ::google::protobuf::uint32 nesting() const;
   void set_nesting(::google::protobuf::uint32 value);
 
+  // bool interruptible = 7;
+  void clear_interruptible();
+  static const int kInterruptibleFieldNumber = 7;
+  bool interruptible() const;
+  void set_interruptible(bool value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionMetadata)
  private:
   class HasBitSetters;
@@ -1686,6 +1692,7 @@ class ExecutionMetadata final :
   ::flyteidl::core::WorkflowExecutionIdentifier* reference_execution_;
   int mode_;
   ::google::protobuf::uint32 nesting_;
+  bool interruptible_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fexecution_2eproto;
 };
@@ -1955,12 +1962,6 @@ class ExecutionSpec final :
   ::flyteidl::admin::Annotations* mutable_annotations();
   void set_allocated_annotations(::flyteidl::admin::Annotations* annotations);
 
-  // bool interruptible = 9;
-  void clear_interruptible();
-  static const int kInterruptibleFieldNumber = 9;
-  bool interruptible() const;
-  void set_interruptible(bool value);
-
   // .flyteidl.admin.NotificationList notifications = 5;
   bool has_notifications() const;
   void clear_notifications();
@@ -1996,7 +1997,6 @@ class ExecutionSpec final :
   ::flyteidl::admin::ExecutionMetadata* metadata_;
   ::flyteidl::admin::Labels* labels_;
   ::flyteidl::admin::Annotations* annotations_;
-  bool interruptible_;
   union NotificationOverridesUnion {
     NotificationOverridesUnion() {}
     ::flyteidl::admin::NotificationList* notifications_;
@@ -4194,6 +4194,20 @@ inline void ExecutionMetadata::set_allocated_reference_execution(::flyteidl::cor
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionMetadata.reference_execution)
 }
 
+// bool interruptible = 7;
+inline void ExecutionMetadata::clear_interruptible() {
+  interruptible_ = false;
+}
+inline bool ExecutionMetadata::interruptible() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionMetadata.interruptible)
+  return interruptible_;
+}
+inline void ExecutionMetadata::set_interruptible(bool value) {
+  
+  interruptible_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionMetadata.interruptible)
+}
+
 // -------------------------------------------------------------------
 
 // NotificationList
@@ -4528,20 +4542,6 @@ inline void ExecutionSpec::set_allocated_annotations(::flyteidl::admin::Annotati
   }
   annotations_ = annotations;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionSpec.annotations)
-}
-
-// bool interruptible = 9;
-inline void ExecutionSpec::clear_interruptible() {
-  interruptible_ = false;
-}
-inline bool ExecutionSpec::interruptible() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionSpec.interruptible)
-  return interruptible_;
-}
-inline void ExecutionSpec::set_interruptible(bool value) {
-  
-  interruptible_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionSpec.interruptible)
 }
 
 inline bool ExecutionSpec::has_notification_overrides() const {

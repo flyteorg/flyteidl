@@ -22,5 +22,4 @@ type AdminExecutionSpec struct {
 	Labels *AdminLabels `json:"labels,omitempty"`
 	// Annotations to apply to the execution resource.
 	Annotations *AdminAnnotations `json:"annotations,omitempty"`
-	Interruptible bool `json:"interruptible,omitempty"`
 }

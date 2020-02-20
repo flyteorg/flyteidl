@@ -925,6 +925,8 @@ func (m *ExecutionMetadata) Validate() error {
 		}
 	}
 
+	// no validation rules for Interruptible
+
 	return nil
 }
 
@@ -1121,8 +1123,6 @@ func (m *ExecutionSpec) Validate() error {
 			}
 		}
 	}
-
-	// no validation rules for Interruptible
 
 	switch m.NotificationOverrides.(type) {
 

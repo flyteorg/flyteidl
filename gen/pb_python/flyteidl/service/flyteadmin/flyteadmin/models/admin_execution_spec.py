@@ -44,8 +44,7 @@ class AdminExecutionSpec(object):
         'notifications': 'AdminNotificationList',
         'disable_all': 'bool',
         'labels': 'AdminLabels',
-        'annotations': 'AdminAnnotations',
-        'interruptible': 'bool'
+        'annotations': 'AdminAnnotations'
     }
 
     attribute_map = {
@@ -55,11 +54,10 @@ class AdminExecutionSpec(object):
         'notifications': 'notifications',
         'disable_all': 'disable_all',
         'labels': 'labels',
-        'annotations': 'annotations',
-        'interruptible': 'interruptible'
+        'annotations': 'annotations'
     }
 
-    def __init__(self, launch_plan=None, inputs=None, metadata=None, notifications=None, disable_all=None, labels=None, annotations=None, interruptible=None):  # noqa: E501
+    def __init__(self, launch_plan=None, inputs=None, metadata=None, notifications=None, disable_all=None, labels=None, annotations=None):  # noqa: E501
         """AdminExecutionSpec - a model defined in Swagger"""  # noqa: E501
 
         self._launch_plan = None
@@ -69,7 +67,6 @@ class AdminExecutionSpec(object):
         self._disable_all = None
         self._labels = None
         self._annotations = None
-        self._interruptible = None
         self.discriminator = None
 
         if launch_plan is not None:
@@ -86,8 +83,6 @@ class AdminExecutionSpec(object):
             self.labels = labels
         if annotations is not None:
             self.annotations = annotations
-        if interruptible is not None:
-            self.interruptible = interruptible
 
     @property
     def launch_plan(self):
@@ -243,27 +238,6 @@ class AdminExecutionSpec(object):
         """
 
         self._annotations = annotations
-
-    @property
-    def interruptible(self):
-        """Gets the interruptible of this AdminExecutionSpec.  # noqa: E501
-
-
-        :return: The interruptible of this AdminExecutionSpec.  # noqa: E501
-        :rtype: bool
-        """
-        return self._interruptible
-
-    @interruptible.setter
-    def interruptible(self, interruptible):
-        """Sets the interruptible of this AdminExecutionSpec.
-
-
-        :param interruptible: The interruptible of this AdminExecutionSpec.  # noqa: E501
-        :type: bool
-        """
-
-        self._interruptible = interruptible
 
     def to_dict(self):
         """Returns the model properties as a dict"""

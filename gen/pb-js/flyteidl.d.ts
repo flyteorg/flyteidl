@@ -6904,6 +6904,9 @@ export namespace flyteidl {
 
             /** ExecutionMetadata referenceExecution */
             referenceExecution?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** ExecutionMetadata interruptible */
+            interruptible?: (boolean|null);
         }
 
         /** Represents an ExecutionMetadata. */
@@ -6932,6 +6935,9 @@ export namespace flyteidl {
 
             /** ExecutionMetadata referenceExecution. */
             public referenceExecution?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** ExecutionMetadata interruptible. */
+            public interruptible: boolean;
 
             /**
              * Creates a new ExecutionMetadata instance using the specified properties.
@@ -7053,9 +7059,6 @@ export namespace flyteidl {
 
             /** ExecutionSpec annotations */
             annotations?: (flyteidl.admin.IAnnotations|null);
-
-            /** ExecutionSpec interruptible */
-            interruptible?: (boolean|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -7087,9 +7090,6 @@ export namespace flyteidl {
 
             /** ExecutionSpec annotations. */
             public annotations?: (flyteidl.admin.IAnnotations|null);
-
-            /** ExecutionSpec interruptible. */
-            public interruptible: boolean;
 
             /** ExecutionSpec notificationOverrides. */
             public notificationOverrides?: ("notifications"|"disableAll");
