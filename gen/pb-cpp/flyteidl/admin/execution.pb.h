@@ -1955,6 +1955,12 @@ class ExecutionSpec final :
   ::flyteidl::admin::Annotations* mutable_annotations();
   void set_allocated_annotations(::flyteidl::admin::Annotations* annotations);
 
+  // bool interruptible = 9;
+  void clear_interruptible();
+  static const int kInterruptibleFieldNumber = 9;
+  bool interruptible() const;
+  void set_interruptible(bool value);
+
   // .flyteidl.admin.NotificationList notifications = 5;
   bool has_notifications() const;
   void clear_notifications();
@@ -1990,6 +1996,7 @@ class ExecutionSpec final :
   ::flyteidl::admin::ExecutionMetadata* metadata_;
   ::flyteidl::admin::Labels* labels_;
   ::flyteidl::admin::Annotations* annotations_;
+  bool interruptible_;
   union NotificationOverridesUnion {
     NotificationOverridesUnion() {}
     ::flyteidl::admin::NotificationList* notifications_;
@@ -4521,6 +4528,20 @@ inline void ExecutionSpec::set_allocated_annotations(::flyteidl::admin::Annotati
   }
   annotations_ = annotations;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionSpec.annotations)
+}
+
+// bool interruptible = 9;
+inline void ExecutionSpec::clear_interruptible() {
+  interruptible_ = false;
+}
+inline bool ExecutionSpec::interruptible() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionSpec.interruptible)
+  return interruptible_;
+}
+inline void ExecutionSpec::set_interruptible(bool value) {
+  
+  interruptible_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionSpec.interruptible)
 }
 
 inline bool ExecutionSpec::has_notification_overrides() const {

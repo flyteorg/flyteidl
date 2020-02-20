@@ -222,6 +222,9 @@ message ExecutionSpec {
 
     // Annotations to apply to the execution resource.
     Annotations annotations   = 8;
+
+    // Identify whether execution is interruptible
+    bool interruptible = 9;
 }
 
 // Request to terminate an in-progress execution.  This action is irreversible.

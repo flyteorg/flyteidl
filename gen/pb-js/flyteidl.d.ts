@@ -7053,6 +7053,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec annotations */
             annotations?: (flyteidl.admin.IAnnotations|null);
+
+            /** ExecutionSpec interruptible */
+            interruptible?: (boolean|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -7084,6 +7087,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec annotations. */
             public annotations?: (flyteidl.admin.IAnnotations|null);
+
+            /** ExecutionSpec interruptible. */
+            public interruptible: boolean;
 
             /** ExecutionSpec notificationOverrides. */
             public notificationOverrides?: ("notifications"|"disableAll");

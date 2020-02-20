@@ -14010,6 +14010,15 @@ public final class ExecutionOuterClass {
      */
     flyteidl.admin.Common.AnnotationsOrBuilder getAnnotationsOrBuilder();
 
+    /**
+     * <pre>
+     * Identify whether execution is interruptible
+     * </pre>
+     *
+     * <code>bool interruptible = 9;</code>
+     */
+    boolean getInterruptible();
+
     public flyteidl.admin.ExecutionOuterClass.ExecutionSpec.NotificationOverridesCase getNotificationOverridesCase();
   }
   /**
@@ -14138,6 +14147,11 @@ public final class ExecutionOuterClass {
                 annotations_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 72: {
+
+              interruptible_ = input.readBool();
               break;
             }
             default: {
@@ -14434,6 +14448,19 @@ public final class ExecutionOuterClass {
       return getAnnotations();
     }
 
+    public static final int INTERRUPTIBLE_FIELD_NUMBER = 9;
+    private boolean interruptible_;
+    /**
+     * <pre>
+     * Identify whether execution is interruptible
+     * </pre>
+     *
+     * <code>bool interruptible = 9;</code>
+     */
+    public boolean getInterruptible() {
+      return interruptible_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -14469,6 +14496,9 @@ public final class ExecutionOuterClass {
       }
       if (annotations_ != null) {
         output.writeMessage(8, getAnnotations());
+      }
+      if (interruptible_ != false) {
+        output.writeBool(9, interruptible_);
       }
       unknownFields.writeTo(output);
     }
@@ -14507,6 +14537,10 @@ public final class ExecutionOuterClass {
       if (annotations_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getAnnotations());
+      }
+      if (interruptible_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, interruptible_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -14548,6 +14582,8 @@ public final class ExecutionOuterClass {
         if (!getAnnotations()
             .equals(other.getAnnotations())) return false;
       }
+      if (getInterruptible()
+          != other.getInterruptible()) return false;
       if (!getNotificationOverridesCase().equals(other.getNotificationOverridesCase())) return false;
       switch (notificationOverridesCase_) {
         case 5:
@@ -14592,6 +14628,9 @@ public final class ExecutionOuterClass {
         hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getAnnotations().hashCode();
       }
+      hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getInterruptible());
       switch (notificationOverridesCase_) {
         case 5:
           hash = (37 * hash) + NOTIFICATIONS_FIELD_NUMBER;
@@ -14773,6 +14812,8 @@ public final class ExecutionOuterClass {
           annotations_ = null;
           annotationsBuilder_ = null;
         }
+        interruptible_ = false;
+
         notificationOverridesCase_ = 0;
         notificationOverrides_ = null;
         return this;
@@ -14836,6 +14877,7 @@ public final class ExecutionOuterClass {
         } else {
           result.annotations_ = annotationsBuilder_.build();
         }
+        result.interruptible_ = interruptible_;
         result.notificationOverridesCase_ = notificationOverridesCase_;
         onBuilt();
         return result;
@@ -14899,6 +14941,9 @@ public final class ExecutionOuterClass {
         }
         if (other.hasAnnotations()) {
           mergeAnnotations(other.getAnnotations());
+        }
+        if (other.getInterruptible() != false) {
+          setInterruptible(other.getInterruptible());
         }
         switch (other.getNotificationOverridesCase()) {
           case NOTIFICATIONS: {
@@ -15952,6 +15997,44 @@ public final class ExecutionOuterClass {
           annotations_ = null;
         }
         return annotationsBuilder_;
+      }
+
+      private boolean interruptible_ ;
+      /**
+       * <pre>
+       * Identify whether execution is interruptible
+       * </pre>
+       *
+       * <code>bool interruptible = 9;</code>
+       */
+      public boolean getInterruptible() {
+        return interruptible_;
+      }
+      /**
+       * <pre>
+       * Identify whether execution is interruptible
+       * </pre>
+       *
+       * <code>bool interruptible = 9;</code>
+       */
+      public Builder setInterruptible(boolean value) {
+        
+        interruptible_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Identify whether execution is interruptible
+       * </pre>
+       *
+       * <code>bool interruptible = 9;</code>
+       */
+      public Builder clearInterruptible() {
+        
+        interruptible_ = false;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -19024,7 +19107,7 @@ public final class ExecutionOuterClass {
       "e\022\n\n\006MANUAL\020\000\022\r\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002" +
       "\022\014\n\010RELAUNCH\020\003\022\022\n\016CHILD_WORKFLOW\020\004\"G\n\020No" +
       "tificationList\0223\n\rnotifications\030\001 \003(\0132\034." +
-      "flyteidl.admin.Notification\"\357\002\n\rExecutio" +
+      "flyteidl.admin.Notification\"\206\003\n\rExecutio" +
       "nSpec\022.\n\013launch_plan\030\001 \001(\0132\031.flyteidl.co" +
       "re.Identifier\022-\n\006inputs\030\002 \001(\0132\031.flyteidl" +
       ".core.LiteralMapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!" +
@@ -19033,17 +19116,18 @@ public final class ExecutionOuterClass {
       "cationListH\000\022\025\n\013disable_all\030\006 \001(\010H\000\022&\n\006l" +
       "abels\030\007 \001(\0132\026.flyteidl.admin.Labels\0220\n\013a" +
       "nnotations\030\010 \001(\0132\033.flyteidl.admin.Annota" +
-      "tionsB\030\n\026notification_overridesJ\004\010\004\020\005\"b\n" +
-      "\031ExecutionTerminateRequest\0226\n\002id\030\001 \001(\0132*" +
-      ".flyteidl.core.WorkflowExecutionIdentifi" +
-      "er\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTerminateR" +
-      "esponse\"Y\n\037WorkflowExecutionGetDataReque" +
-      "st\0226\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowE" +
-      "xecutionIdentifier\"u\n WorkflowExecutionG" +
-      "etDataResponse\022(\n\007outputs\030\001 \001(\0132\027.flytei" +
-      "dl.admin.UrlBlob\022\'\n\006inputs\030\002 \001(\0132\027.flyte" +
-      "idl.admin.UrlBlobB3Z1github.com/lyft/fly" +
-      "teidl/gen/pb-go/flyteidl/adminb\006proto3"
+      "tions\022\025\n\rinterruptible\030\t \001(\010B\030\n\026notifica" +
+      "tion_overridesJ\004\010\004\020\005\"b\n\031ExecutionTermina" +
+      "teRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Wo" +
+      "rkflowExecutionIdentifier\022\r\n\005cause\030\002 \001(\t" +
+      "\"\034\n\032ExecutionTerminateResponse\"Y\n\037Workfl" +
+      "owExecutionGetDataRequest\0226\n\002id\030\001 \001(\0132*." +
+      "flyteidl.core.WorkflowExecutionIdentifie" +
+      "r\"u\n WorkflowExecutionGetDataResponse\022(\n" +
+      "\007outputs\030\001 \001(\0132\027.flyteidl.admin.UrlBlob\022" +
+      "\'\n\006inputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlob" +
+      "B3Z1github.com/lyft/flyteidl/gen/pb-go/f" +
+      "lyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -19134,7 +19218,7 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_ExecutionSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionSpec_descriptor,
-        new java.lang.String[] { "LaunchPlan", "Inputs", "Metadata", "Notifications", "DisableAll", "Labels", "Annotations", "NotificationOverrides", });
+        new java.lang.String[] { "LaunchPlan", "Inputs", "Metadata", "Notifications", "DisableAll", "Labels", "Annotations", "Interruptible", "NotificationOverrides", });
     internal_static_flyteidl_admin_ExecutionTerminateRequest_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_flyteidl_admin_ExecutionTerminateRequest_fieldAccessorTable = new

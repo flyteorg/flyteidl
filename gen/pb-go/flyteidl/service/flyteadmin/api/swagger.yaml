@@ -2559,6 +2559,7 @@ definitions:
         annotations:
           values:
             key: "values"
+        interruptible: true
         notifications:
           notifications:
           - pager_duty:
@@ -2851,6 +2852,7 @@ definitions:
           annotations:
             values:
               key: "values"
+          interruptible: true
           notifications:
             notifications:
             - pager_duty:
@@ -2975,6 +2977,7 @@ definitions:
           annotations:
             values:
               key: "values"
+          interruptible: true
           notifications:
             notifications:
             - pager_duty:
@@ -3112,6 +3115,10 @@ definitions:
       annotations:
         description: "Annotations to apply to the execution resource."
         $ref: "#/definitions/adminAnnotations"
+      interruptible:
+        type: "boolean"
+        format: "boolean"
+        title: "Identify whether execution is interruptible"
     description: "An ExecutionSpec encompasses all data used to launch this execution.\
       \ The Spec does not change over the lifetime\nof an execution as it progresses\
       \ across phase changes.."
@@ -3143,6 +3150,7 @@ definitions:
       annotations:
         values:
           key: "values"
+      interruptible: true
       notifications:
         notifications:
         - pager_duty:

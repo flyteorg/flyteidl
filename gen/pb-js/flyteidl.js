@@ -16870,6 +16870,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {boolean|null} [disableAll] ExecutionSpec disableAll
              * @property {flyteidl.admin.ILabels|null} [labels] ExecutionSpec labels
              * @property {flyteidl.admin.IAnnotations|null} [annotations] ExecutionSpec annotations
+             * @property {boolean|null} [interruptible] ExecutionSpec interruptible
              */
 
             /**
@@ -16943,6 +16944,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             ExecutionSpec.prototype.annotations = null;
 
+            /**
+             * ExecutionSpec interruptible.
+             * @member {boolean} interruptible
+             * @memberof flyteidl.admin.ExecutionSpec
+             * @instance
+             */
+            ExecutionSpec.prototype.interruptible = false;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -16995,6 +17004,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 if (message.annotations != null && message.hasOwnProperty("annotations"))
                     $root.flyteidl.admin.Annotations.encode(message.annotations, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                if (message.interruptible != null && message.hasOwnProperty("interruptible"))
+                    writer.uint32(/* id 9, wireType 0 =*/72).bool(message.interruptible);
                 return writer;
             };
 
@@ -17036,6 +17047,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 8:
                         message.annotations = $root.flyteidl.admin.Annotations.decode(reader, reader.uint32());
+                        break;
+                    case 9:
+                        message.interruptible = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -17097,6 +17111,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "annotations." + error;
                 }
+                if (message.interruptible != null && message.hasOwnProperty("interruptible"))
+                    if (typeof message.interruptible !== "boolean")
+                        return "interruptible: boolean expected";
                 return null;
             };
 

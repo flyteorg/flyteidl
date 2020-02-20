@@ -495,6 +495,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fexecution_2eprot
   offsetof(::flyteidl::admin::ExecutionSpecDefaultTypeInternal, disable_all_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, labels_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, annotations_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, interruptible_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, notification_overrides_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionTerminateRequest, _internal_metadata_),
@@ -535,10 +536,10 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 77, -1, sizeof(::flyteidl::admin::ExecutionMetadata)},
   { 88, -1, sizeof(::flyteidl::admin::NotificationList)},
   { 94, -1, sizeof(::flyteidl::admin::ExecutionSpec)},
-  { 107, -1, sizeof(::flyteidl::admin::ExecutionTerminateRequest)},
-  { 114, -1, sizeof(::flyteidl::admin::ExecutionTerminateResponse)},
-  { 119, -1, sizeof(::flyteidl::admin::WorkflowExecutionGetDataRequest)},
-  { 125, -1, sizeof(::flyteidl::admin::WorkflowExecutionGetDataResponse)},
+  { 108, -1, sizeof(::flyteidl::admin::ExecutionTerminateRequest)},
+  { 115, -1, sizeof(::flyteidl::admin::ExecutionTerminateResponse)},
+  { 120, -1, sizeof(::flyteidl::admin::WorkflowExecutionGetDataRequest)},
+  { 126, -1, sizeof(::flyteidl::admin::WorkflowExecutionGetDataResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -620,7 +621,7 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto[] =
   "e\022\n\n\006MANUAL\020\000\022\r\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002"
   "\022\014\n\010RELAUNCH\020\003\022\022\n\016CHILD_WORKFLOW\020\004\"G\n\020No"
   "tificationList\0223\n\rnotifications\030\001 \003(\0132\034."
-  "flyteidl.admin.Notification\"\357\002\n\rExecutio"
+  "flyteidl.admin.Notification\"\206\003\n\rExecutio"
   "nSpec\022.\n\013launch_plan\030\001 \001(\0132\031.flyteidl.co"
   "re.Identifier\022-\n\006inputs\030\002 \001(\0132\031.flyteidl"
   ".core.LiteralMapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!"
@@ -629,22 +630,23 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto[] =
   "cationListH\000\022\025\n\013disable_all\030\006 \001(\010H\000\022&\n\006l"
   "abels\030\007 \001(\0132\026.flyteidl.admin.Labels\0220\n\013a"
   "nnotations\030\010 \001(\0132\033.flyteidl.admin.Annota"
-  "tionsB\030\n\026notification_overridesJ\004\010\004\020\005\"b\n"
-  "\031ExecutionTerminateRequest\0226\n\002id\030\001 \001(\0132*"
-  ".flyteidl.core.WorkflowExecutionIdentifi"
-  "er\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTerminateR"
-  "esponse\"Y\n\037WorkflowExecutionGetDataReque"
-  "st\0226\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowE"
-  "xecutionIdentifier\"u\n WorkflowExecutionG"
-  "etDataResponse\022(\n\007outputs\030\001 \001(\0132\027.flytei"
-  "dl.admin.UrlBlob\022\'\n\006inputs\030\002 \001(\0132\027.flyte"
-  "idl.admin.UrlBlobB3Z1github.com/lyft/fly"
-  "teidl/gen/pb-go/flyteidl/adminb\006proto3"
+  "tions\022\025\n\rinterruptible\030\t \001(\010B\030\n\026notifica"
+  "tion_overridesJ\004\010\004\020\005\"b\n\031ExecutionTermina"
+  "teRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Wo"
+  "rkflowExecutionIdentifier\022\r\n\005cause\030\002 \001(\t"
+  "\"\034\n\032ExecutionTerminateResponse\"Y\n\037Workfl"
+  "owExecutionGetDataRequest\0226\n\002id\030\001 \001(\0132*."
+  "flyteidl.core.WorkflowExecutionIdentifie"
+  "r\"u\n WorkflowExecutionGetDataResponse\022(\n"
+  "\007outputs\030\001 \001(\0132\027.flyteidl.admin.UrlBlob\022"
+  "\'\n\006inputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlob"
+  "B3Z1github.com/lyft/flyteidl/gen/pb-go/f"
+  "lyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fexecution_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fexecution_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto,
-  "flyteidl/admin/execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto, 2918,
+  "flyteidl/admin/execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto, 2941,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fexecution_2eproto() {
@@ -5908,6 +5910,7 @@ const int ExecutionSpec::kNotificationsFieldNumber;
 const int ExecutionSpec::kDisableAllFieldNumber;
 const int ExecutionSpec::kLabelsFieldNumber;
 const int ExecutionSpec::kAnnotationsFieldNumber;
+const int ExecutionSpec::kInterruptibleFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ExecutionSpec::ExecutionSpec()
@@ -5944,6 +5947,7 @@ ExecutionSpec::ExecutionSpec(const ExecutionSpec& from)
   } else {
     annotations_ = nullptr;
   }
+  interruptible_ = from.interruptible_;
   clear_has_notification_overrides();
   switch (from.notification_overrides_case()) {
     case kNotifications: {
@@ -5965,8 +5969,8 @@ void ExecutionSpec::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_ExecutionSpec_flyteidl_2fadmin_2fexecution_2eproto.base);
   ::memset(&launch_plan_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&annotations_) -
-      reinterpret_cast<char*>(&launch_plan_)) + sizeof(annotations_));
+      reinterpret_cast<char*>(&interruptible_) -
+      reinterpret_cast<char*>(&launch_plan_)) + sizeof(interruptible_));
   clear_has_notification_overrides();
 }
 
@@ -6040,6 +6044,7 @@ void ExecutionSpec::Clear() {
     delete annotations_;
   }
   annotations_ = nullptr;
+  interruptible_ = false;
   clear_notification_overrides();
   _internal_metadata_.Clear();
 }
@@ -6140,6 +6145,13 @@ const char* ExecutionSpec::_InternalParse(const char* begin, const char* end, vo
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // bool interruptible = 9;
+      case 9: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 72) goto handle_unusual;
+        msg->set_interruptible(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -6252,6 +6264,19 @@ bool ExecutionSpec::MergePartialFromCodedStream(
         break;
       }
 
+      // bool interruptible = 9;
+      case 9: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (72 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &interruptible_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -6320,6 +6345,11 @@ void ExecutionSpec::SerializeWithCachedSizes(
       8, HasBitSetters::annotations(this), output);
   }
 
+  // bool interruptible = 9;
+  if (this->interruptible() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(9, this->interruptible(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -6380,6 +6410,11 @@ void ExecutionSpec::SerializeWithCachedSizes(
         8, HasBitSetters::annotations(this), target);
   }
 
+  // bool interruptible = 9;
+  if (this->interruptible() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(9, this->interruptible(), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -6434,6 +6469,11 @@ size_t ExecutionSpec::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *annotations_);
+  }
+
+  // bool interruptible = 9;
+  if (this->interruptible() != 0) {
+    total_size += 1 + 1;
   }
 
   switch (notification_overrides_case()) {
@@ -6495,6 +6535,9 @@ void ExecutionSpec::MergeFrom(const ExecutionSpec& from) {
   if (from.has_annotations()) {
     mutable_annotations()->::flyteidl::admin::Annotations::MergeFrom(from.annotations());
   }
+  if (from.interruptible() != 0) {
+    set_interruptible(from.interruptible());
+  }
   switch (from.notification_overrides_case()) {
     case kNotifications: {
       mutable_notifications()->::flyteidl::admin::NotificationList::MergeFrom(from.notifications());
@@ -6540,6 +6583,7 @@ void ExecutionSpec::InternalSwap(ExecutionSpec* other) {
   swap(metadata_, other->metadata_);
   swap(labels_, other->labels_);
   swap(annotations_, other->annotations_);
+  swap(interruptible_, other->interruptible_);
   swap(notification_overrides_, other->notification_overrides_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }

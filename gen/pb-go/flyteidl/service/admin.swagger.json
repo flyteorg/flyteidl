@@ -3052,6 +3052,11 @@
         "annotations": {
           "$ref": "#/definitions/adminAnnotations",
           "description": "Annotations to apply to the execution resource."
+        },
+        "interruptible": {
+          "type": "boolean",
+          "format": "boolean",
+          "title": "Identify whether execution is interruptible"
         }
       },
       "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes.."
