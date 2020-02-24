@@ -207,7 +207,7 @@ retries
 .. _api_field_flyteidl.core.NodeMetadata.interruptible:
 
 interruptible
-  (`bool <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Identify whether execution is interruptible
+  (`bool <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Identify whether node is interruptible
   
   
 

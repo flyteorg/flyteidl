@@ -74,7 +74,7 @@ message NodeMetadata {
     // Number of retries per task.
     RetryStrategy retries = 5;
 
-    // Identify whether execution is interruptible
+    // Identify whether node is interruptible
     bool interruptible = 6;
 }
 

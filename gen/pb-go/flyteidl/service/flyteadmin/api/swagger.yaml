@@ -21734,7 +21734,7 @@ definitions:
       interruptible:
         type: "boolean"
         format: "boolean"
-        title: "Identify whether execution is interruptible"
+        title: "Identify whether node is interruptible"
     description: "Defines extra information about the Node."
     example:
       retries:

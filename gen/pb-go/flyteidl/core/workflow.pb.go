@@ -368,7 +368,7 @@ type NodeMetadata struct {
 	Timeout *duration.Duration `protobuf:"bytes,4,opt,name=timeout,proto3" json:"timeout,omitempty"`
 	// Number of retries per task.
 	Retries *RetryStrategy `protobuf:"bytes,5,opt,name=retries,proto3" json:"retries,omitempty"`
-	// Identify whether execution is interruptible
+	// Identify whether node is interruptible
 	Interruptible        bool     `protobuf:"varint,6,opt,name=interruptible,proto3" json:"interruptible,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

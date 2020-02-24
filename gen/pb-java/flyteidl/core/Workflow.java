@@ -5161,7 +5161,7 @@ public final class Workflow {
 
     /**
      * <pre>
-     * Identify whether execution is interruptible
+     * Identify whether node is interruptible
      * </pre>
      *
      * <code>bool interruptible = 6;</code>
@@ -5393,7 +5393,7 @@ public final class Workflow {
     private boolean interruptible_;
     /**
      * <pre>
-     * Identify whether execution is interruptible
+     * Identify whether node is interruptible
      * </pre>
      *
      * <code>bool interruptible = 6;</code>
@@ -6184,7 +6184,7 @@ public final class Workflow {
       private boolean interruptible_ ;
       /**
        * <pre>
-       * Identify whether execution is interruptible
+       * Identify whether node is interruptible
        * </pre>
        *
        * <code>bool interruptible = 6;</code>
@@ -6194,7 +6194,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * Identify whether execution is interruptible
+       * Identify whether node is interruptible
        * </pre>
        *
        * <code>bool interruptible = 6;</code>
@@ -6207,7 +6207,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * Identify whether execution is interruptible
+       * Identify whether node is interruptible
        * </pre>
        *
        * <code>bool interruptible = 6;</code>
