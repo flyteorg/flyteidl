@@ -1447,6 +1447,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [name] NodeMetadata name
              * @property {google.protobuf.IDuration|null} [timeout] NodeMetadata timeout
              * @property {flyteidl.core.IRetryStrategy|null} [retries] NodeMetadata retries
+             * @property {boolean|null} [interruptible] NodeMetadata interruptible
              */
 
             /**
@@ -1489,6 +1490,14 @@ export const flyteidl = $root.flyteidl = (() => {
             NodeMetadata.prototype.retries = null;
 
             /**
+             * NodeMetadata interruptible.
+             * @member {boolean} interruptible
+             * @memberof flyteidl.core.NodeMetadata
+             * @instance
+             */
+            NodeMetadata.prototype.interruptible = false;
+
+            /**
              * Creates a new NodeMetadata instance using the specified properties.
              * @function create
              * @memberof flyteidl.core.NodeMetadata
@@ -1518,6 +1527,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.google.protobuf.Duration.encode(message.timeout, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.retries != null && message.hasOwnProperty("retries"))
                     $root.flyteidl.core.RetryStrategy.encode(message.retries, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.interruptible != null && message.hasOwnProperty("interruptible"))
+                    writer.uint32(/* id 6, wireType 0 =*/48).bool(message.interruptible);
                 return writer;
             };
 
@@ -1547,6 +1558,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 5:
                         message.retries = $root.flyteidl.core.RetryStrategy.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.interruptible = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -1580,6 +1594,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "retries." + error;
                 }
+                if (message.interruptible != null && message.hasOwnProperty("interruptible"))
+                    if (typeof message.interruptible !== "boolean")
+                        return "interruptible: boolean expected";
                 return null;
             };
 
@@ -2012,6 +2029,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a WorkflowMetadata.
              * @memberof flyteidl.core
              * @interface IWorkflowMetadata
+             * @property {boolean|null} [interruptible] WorkflowMetadata interruptible
              */
 
             /**
@@ -2028,6 +2046,14 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
+
+            /**
+             * WorkflowMetadata interruptible.
+             * @member {boolean} interruptible
+             * @memberof flyteidl.core.WorkflowMetadata
+             * @instance
+             */
+            WorkflowMetadata.prototype.interruptible = false;
 
             /**
              * Creates a new WorkflowMetadata instance using the specified properties.
@@ -2053,6 +2079,8 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowMetadata.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
+                if (message.interruptible != null && message.hasOwnProperty("interruptible"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).bool(message.interruptible);
                 return writer;
             };
 
@@ -2074,6 +2102,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
+                    case 1:
+                        message.interruptible = reader.bool();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -2093,6 +2124,9 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowMetadata.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (message.interruptible != null && message.hasOwnProperty("interruptible"))
+                    if (typeof message.interruptible !== "boolean")
+                        return "interruptible: boolean expected";
                 return null;
             };
 

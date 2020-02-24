@@ -6051,7 +6051,8 @@ definitions:
                     - null
                   map:
                     bindings: {}
-              metadata: {}
+              metadata:
+                interruptible: true
               failure_node:
                 branch_node:
                   if_else:
@@ -6133,6 +6134,7 @@ definitions:
                   retries:
                     retries: 0
                   name: "name"
+                  interruptible: true
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -6347,6 +6349,7 @@ definitions:
                   retries:
                     retries: 0
                   name: "name"
+                  interruptible: true
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -6560,6 +6563,7 @@ definitions:
                   retries:
                     retries: 0
                   name: "name"
+                  interruptible: true
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -6867,7 +6871,8 @@ definitions:
                     - null
                   map:
                     bindings: {}
-              metadata: {}
+              metadata:
+                interruptible: true
               failure_node:
                 branch_node:
                   if_else:
@@ -6949,6 +6954,7 @@ definitions:
                   retries:
                     retries: 0
                   name: "name"
+                  interruptible: true
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -7163,6 +7169,7 @@ definitions:
                   retries:
                     retries: 0
                   name: "name"
+                  interruptible: true
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -7376,6 +7383,7 @@ definitions:
                   retries:
                     retries: 0
                   name: "name"
+                  interruptible: true
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -7915,7 +7923,8 @@ definitions:
                     - null
                   map:
                     bindings: {}
-              metadata: {}
+              metadata:
+                interruptible: true
               failure_node:
                 branch_node:
                   if_else:
@@ -7997,6 +8006,7 @@ definitions:
                   retries:
                     retries: 0
                   name: "name"
+                  interruptible: true
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -8211,6 +8221,7 @@ definitions:
                   retries:
                     retries: 0
                   name: "name"
+                  interruptible: true
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -8424,6 +8435,7 @@ definitions:
                   retries:
                     retries: 0
                   name: "name"
+                  interruptible: true
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -8844,7 +8856,8 @@ definitions:
                   - null
                 map:
                   bindings: {}
-            metadata: {}
+            metadata:
+              interruptible: true
             failure_node:
               branch_node:
                 if_else:
@@ -8926,6 +8939,7 @@ definitions:
                 retries:
                   retries: 0
                 name: "name"
+                interruptible: true
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -9140,6 +9154,7 @@ definitions:
                 retries:
                   retries: 0
                 name: "name"
+                interruptible: true
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -9353,6 +9368,7 @@ definitions:
                 retries:
                   retries: 0
                 name: "name"
+                interruptible: true
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -9660,7 +9676,8 @@ definitions:
                   - null
                 map:
                   bindings: {}
-            metadata: {}
+            metadata:
+              interruptible: true
             failure_node:
               branch_node:
                 if_else:
@@ -9742,6 +9759,7 @@ definitions:
                 retries:
                   retries: 0
                 name: "name"
+                interruptible: true
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -9956,6 +9974,7 @@ definitions:
                 retries:
                   retries: 0
                 name: "name"
+                interruptible: true
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -10169,6 +10188,7 @@ definitions:
                 retries:
                   retries: 0
                 name: "name"
+                interruptible: true
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -10708,7 +10728,8 @@ definitions:
                   - null
                 map:
                   bindings: {}
-            metadata: {}
+            metadata:
+              interruptible: true
             failure_node:
               branch_node:
                 if_else:
@@ -10790,6 +10811,7 @@ definitions:
                 retries:
                   retries: 0
                 name: "name"
+                interruptible: true
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -11004,6 +11026,7 @@ definitions:
                 retries:
                   retries: 0
                 name: "name"
+                interruptible: true
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -11217,6 +11240,7 @@ definitions:
                 retries:
                   retries: 0
                 name: "name"
+                interruptible: true
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -11593,7 +11617,8 @@ definitions:
                       - null
                     map:
                       bindings: {}
-                metadata: {}
+                metadata:
+                  interruptible: true
                 failure_node:
                   branch_node:
                     if_else:
@@ -11675,6 +11700,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -11889,6 +11915,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -12102,6 +12129,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -12409,7 +12437,8 @@ definitions:
                       - null
                     map:
                       bindings: {}
-                metadata: {}
+                metadata:
+                  interruptible: true
                 failure_node:
                   branch_node:
                     if_else:
@@ -12491,6 +12520,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -12705,6 +12735,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -12918,6 +12949,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -13457,7 +13489,8 @@ definitions:
                       - null
                     map:
                       bindings: {}
-                metadata: {}
+                metadata:
+                  interruptible: true
                 failure_node:
                   branch_node:
                     if_else:
@@ -13539,6 +13572,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -13753,6 +13787,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -13966,6 +14001,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -14283,7 +14319,8 @@ definitions:
                       - null
                     map:
                       bindings: {}
-                metadata: {}
+                metadata:
+                  interruptible: true
                 failure_node:
                   branch_node:
                     if_else:
@@ -14365,6 +14402,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -14579,6 +14617,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -14792,6 +14831,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -15099,7 +15139,8 @@ definitions:
                       - null
                     map:
                       bindings: {}
-                metadata: {}
+                metadata:
+                  interruptible: true
                 failure_node:
                   branch_node:
                     if_else:
@@ -15181,6 +15222,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -15395,6 +15437,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -15608,6 +15651,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -16147,7 +16191,8 @@ definitions:
                       - null
                     map:
                       bindings: {}
-                metadata: {}
+                metadata:
+                  interruptible: true
                 failure_node:
                   branch_node:
                     if_else:
@@ -16229,6 +16274,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -16443,6 +16489,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -16656,6 +16703,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -17491,7 +17539,8 @@ definitions:
               - null
             map:
               bindings: {}
-        metadata: {}
+        metadata:
+          interruptible: true
         failure_node:
           branch_node:
             if_else:
@@ -17573,6 +17622,7 @@ definitions:
             retries:
               retries: 0
             name: "name"
+            interruptible: true
             timeout: "timeout"
           upstream_node_ids:
           - "upstream_node_ids"
@@ -17787,6 +17837,7 @@ definitions:
             retries:
               retries: 0
             name: "name"
+            interruptible: true
             timeout: "timeout"
           upstream_node_ids:
           - "upstream_node_ids"
@@ -18000,6 +18051,7 @@ definitions:
             retries:
               retries: 0
             name: "name"
+            interruptible: true
             timeout: "timeout"
           upstream_node_ids:
           - "upstream_node_ids"
@@ -18334,7 +18386,8 @@ definitions:
                 - null
               map:
                 bindings: {}
-          metadata: {}
+          metadata:
+            interruptible: true
           failure_node:
             branch_node:
               if_else:
@@ -18416,6 +18469,7 @@ definitions:
               retries:
                 retries: 0
               name: "name"
+              interruptible: true
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -18630,6 +18684,7 @@ definitions:
               retries:
                 retries: 0
               name: "name"
+              interruptible: true
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -18843,6 +18898,7 @@ definitions:
               retries:
                 retries: 0
               name: "name"
+              interruptible: true
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -19150,7 +19206,8 @@ definitions:
                 - null
               map:
                 bindings: {}
-          metadata: {}
+          metadata:
+            interruptible: true
           failure_node:
             branch_node:
               if_else:
@@ -19232,6 +19289,7 @@ definitions:
               retries:
                 retries: 0
               name: "name"
+              interruptible: true
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -19446,6 +19504,7 @@ definitions:
               retries:
                 retries: 0
               name: "name"
+              interruptible: true
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -19659,6 +19718,7 @@ definitions:
               retries:
                 retries: 0
               name: "name"
+              interruptible: true
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -20198,7 +20258,8 @@ definitions:
                 - null
               map:
                 bindings: {}
-          metadata: {}
+          metadata:
+            interruptible: true
           failure_node:
             branch_node:
               if_else:
@@ -20280,6 +20341,7 @@ definitions:
               retries:
                 retries: 0
               name: "name"
+              interruptible: true
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -20494,6 +20556,7 @@ definitions:
               retries:
                 retries: 0
               name: "name"
+              interruptible: true
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -20707,6 +20770,7 @@ definitions:
               retries:
                 retries: 0
               name: "name"
+              interruptible: true
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -21494,6 +21558,7 @@ definitions:
         retries:
           retries: 0
         name: "name"
+        interruptible: true
         timeout: "timeout"
       upstream_node_ids:
       - "upstream_node_ids"
@@ -21666,11 +21731,16 @@ definitions:
       retries:
         description: "Number of retries per task."
         $ref: "#/definitions/coreRetryStrategy"
+      interruptible:
+        type: "boolean"
+        format: "boolean"
+        title: "Identify whether execution is interruptible"
     description: "Defines extra information about the Node."
     example:
       retries:
         retries: 0
       name: "name"
+      interruptible: true
       timeout: "timeout"
   coreOperand:
     type: "object"
@@ -22480,7 +22550,14 @@ definitions:
     default: "UNDEFINED"
   coreWorkflowMetadata:
     type: "object"
+    properties:
+      interruptible:
+        type: "boolean"
+        format: "boolean"
+        title: "Identify whether workflow is interruptible"
     description: "Metadata for the entire workflow.\nTo be used in the future."
+    example:
+      interruptible: true
   coreWorkflowNode:
     type: "object"
     properties:
@@ -22649,7 +22726,8 @@ definitions:
             - null
           map:
             bindings: {}
-      metadata: {}
+      metadata:
+        interruptible: true
       failure_node:
         branch_node:
           if_else:
@@ -22731,6 +22809,7 @@ definitions:
           retries:
             retries: 0
           name: "name"
+          interruptible: true
           timeout: "timeout"
         upstream_node_ids:
         - "upstream_node_ids"
@@ -22945,6 +23024,7 @@ definitions:
           retries:
             retries: 0
           name: "name"
+          interruptible: true
           timeout: "timeout"
         upstream_node_ids:
         - "upstream_node_ids"
@@ -23158,6 +23238,7 @@ definitions:
           retries:
             retries: 0
           name: "name"
+          interruptible: true
           timeout: "timeout"
         upstream_node_ids:
         - "upstream_node_ids"

@@ -4701,6 +4701,11 @@
         "retries": {
           "$ref": "#/definitions/coreRetryStrategy",
           "description": "Number of retries per task."
+        },
+        "interruptible": {
+          "type": "boolean",
+          "format": "boolean",
+          "title": "Identify whether execution is interruptible"
         }
       },
       "description": "Defines extra information about the Node."
@@ -5103,6 +5108,13 @@
     },
     "coreWorkflowMetadata": {
       "type": "object",
+      "properties": {
+        "interruptible": {
+          "type": "boolean",
+          "format": "boolean",
+          "title": "Identify whether workflow is interruptible"
+        }
+      },
       "description": "Metadata for the entire workflow.\nTo be used in the future."
     },
     "coreWorkflowNode": {

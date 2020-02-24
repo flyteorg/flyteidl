@@ -16,4 +16,5 @@ type CoreNodeMetadata struct {
 	Timeout string `json:"timeout,omitempty"`
 	// Number of retries per task.
 	Retries *CoreRetryStrategy `json:"retries,omitempty"`
+	Interruptible bool `json:"interruptible,omitempty"`
 }

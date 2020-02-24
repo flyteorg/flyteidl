@@ -5158,6 +5158,15 @@ public final class Workflow {
      * <code>.flyteidl.core.RetryStrategy retries = 5;</code>
      */
     flyteidl.core.Literals.RetryStrategyOrBuilder getRetriesOrBuilder();
+
+    /**
+     * <pre>
+     * Identify whether execution is interruptible
+     * </pre>
+     *
+     * <code>bool interruptible = 6;</code>
+     */
+    boolean getInterruptible();
   }
   /**
    * <pre>
@@ -5233,6 +5242,11 @@ public final class Workflow {
                 retries_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 48: {
+
+              interruptible_ = input.readBool();
               break;
             }
             default: {
@@ -5375,6 +5389,19 @@ public final class Workflow {
       return getRetries();
     }
 
+    public static final int INTERRUPTIBLE_FIELD_NUMBER = 6;
+    private boolean interruptible_;
+    /**
+     * <pre>
+     * Identify whether execution is interruptible
+     * </pre>
+     *
+     * <code>bool interruptible = 6;</code>
+     */
+    public boolean getInterruptible() {
+      return interruptible_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5398,6 +5425,9 @@ public final class Workflow {
       if (retries_ != null) {
         output.writeMessage(5, getRetries());
       }
+      if (interruptible_ != false) {
+        output.writeBool(6, interruptible_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5417,6 +5447,10 @@ public final class Workflow {
       if (retries_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getRetries());
+      }
+      if (interruptible_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, interruptible_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5445,6 +5479,8 @@ public final class Workflow {
         if (!getRetries()
             .equals(other.getRetries())) return false;
       }
+      if (getInterruptible()
+          != other.getInterruptible()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5466,6 +5502,9 @@ public final class Workflow {
         hash = (37 * hash) + RETRIES_FIELD_NUMBER;
         hash = (53 * hash) + getRetries().hashCode();
       }
+      hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getInterruptible());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5617,6 +5656,8 @@ public final class Workflow {
           retries_ = null;
           retriesBuilder_ = null;
         }
+        interruptible_ = false;
+
         return this;
       }
 
@@ -5654,6 +5695,7 @@ public final class Workflow {
         } else {
           result.retries_ = retriesBuilder_.build();
         }
+        result.interruptible_ = interruptible_;
         onBuilt();
         return result;
       }
@@ -5711,6 +5753,9 @@ public final class Workflow {
         }
         if (other.hasRetries()) {
           mergeRetries(other.getRetries());
+        }
+        if (other.getInterruptible() != false) {
+          setInterruptible(other.getInterruptible());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6134,6 +6179,44 @@ public final class Workflow {
           retries_ = null;
         }
         return retriesBuilder_;
+      }
+
+      private boolean interruptible_ ;
+      /**
+       * <pre>
+       * Identify whether execution is interruptible
+       * </pre>
+       *
+       * <code>bool interruptible = 6;</code>
+       */
+      public boolean getInterruptible() {
+        return interruptible_;
+      }
+      /**
+       * <pre>
+       * Identify whether execution is interruptible
+       * </pre>
+       *
+       * <code>bool interruptible = 6;</code>
+       */
+      public Builder setInterruptible(boolean value) {
+        
+        interruptible_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Identify whether execution is interruptible
+       * </pre>
+       *
+       * <code>bool interruptible = 6;</code>
+       */
+      public Builder clearInterruptible() {
+        
+        interruptible_ = false;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -10052,6 +10135,15 @@ public final class Workflow {
   public interface WorkflowMetadataOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.core.WorkflowMetadata)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Identify whether workflow is interruptible
+     * </pre>
+     *
+     * <code>bool interruptible = 1;</code>
+     */
+    boolean getInterruptible();
   }
   /**
    * <pre>
@@ -10086,6 +10178,7 @@ public final class Workflow {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -10096,6 +10189,11 @@ public final class Workflow {
             case 0:
               done = true;
               break;
+            case 8: {
+
+              interruptible_ = input.readBool();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -10128,6 +10226,19 @@ public final class Workflow {
               flyteidl.core.Workflow.WorkflowMetadata.class, flyteidl.core.Workflow.WorkflowMetadata.Builder.class);
     }
 
+    public static final int INTERRUPTIBLE_FIELD_NUMBER = 1;
+    private boolean interruptible_;
+    /**
+     * <pre>
+     * Identify whether workflow is interruptible
+     * </pre>
+     *
+     * <code>bool interruptible = 1;</code>
+     */
+    public boolean getInterruptible() {
+      return interruptible_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10142,6 +10253,9 @@ public final class Workflow {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (interruptible_ != false) {
+        output.writeBool(1, interruptible_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -10151,6 +10265,10 @@ public final class Workflow {
       if (size != -1) return size;
 
       size = 0;
+      if (interruptible_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, interruptible_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -10166,6 +10284,8 @@ public final class Workflow {
       }
       flyteidl.core.Workflow.WorkflowMetadata other = (flyteidl.core.Workflow.WorkflowMetadata) obj;
 
+      if (getInterruptible()
+          != other.getInterruptible()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10177,6 +10297,9 @@ public final class Workflow {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getInterruptible());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10315,6 +10438,8 @@ public final class Workflow {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        interruptible_ = false;
+
         return this;
       }
 
@@ -10341,6 +10466,7 @@ public final class Workflow {
       @java.lang.Override
       public flyteidl.core.Workflow.WorkflowMetadata buildPartial() {
         flyteidl.core.Workflow.WorkflowMetadata result = new flyteidl.core.Workflow.WorkflowMetadata(this);
+        result.interruptible_ = interruptible_;
         onBuilt();
         return result;
       }
@@ -10389,6 +10515,9 @@ public final class Workflow {
 
       public Builder mergeFrom(flyteidl.core.Workflow.WorkflowMetadata other) {
         if (other == flyteidl.core.Workflow.WorkflowMetadata.getDefaultInstance()) return this;
+        if (other.getInterruptible() != false) {
+          setInterruptible(other.getInterruptible());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -10415,6 +10544,44 @@ public final class Workflow {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private boolean interruptible_ ;
+      /**
+       * <pre>
+       * Identify whether workflow is interruptible
+       * </pre>
+       *
+       * <code>bool interruptible = 1;</code>
+       */
+      public boolean getInterruptible() {
+        return interruptible_;
+      }
+      /**
+       * <pre>
+       * Identify whether workflow is interruptible
+       * </pre>
+       *
+       * <code>bool interruptible = 1;</code>
+       */
+      public Builder setInterruptible(boolean value) {
+        
+        interruptible_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Identify whether workflow is interruptible
+       * </pre>
+       *
+       * <code>bool interruptible = 1;</code>
+       */
+      public Builder clearInterruptible() {
+        
+        interruptible_ = false;
+        onChanged();
         return this;
       }
       @java.lang.Override
@@ -13147,29 +13314,30 @@ public final class Workflow {
       "\013\n\treference\"\207\001\n\014WorkflowNode\0223\n\016launchp" +
       "lan_ref\030\001 \001(\0132\031.flyteidl.core.Identifier" +
       "H\000\0225\n\020sub_workflow_ref\030\002 \001(\0132\031.flyteidl." +
-      "core.IdentifierH\000B\013\n\treference\"w\n\014NodeMe" +
-      "tadata\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031." +
-      "google.protobuf.Duration\022-\n\007retries\030\005 \001(" +
-      "\0132\034.flyteidl.core.RetryStrategy\"#\n\005Alias" +
-      "\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\322\002\n\004Node\022\n\n" +
-      "\002id\030\001 \001(\t\022-\n\010metadata\030\002 \001(\0132\033.flyteidl.c" +
-      "ore.NodeMetadata\022&\n\006inputs\030\003 \003(\0132\026.flyte" +
-      "idl.core.Binding\022\031\n\021upstream_node_ids\030\004 " +
-      "\003(\t\022,\n\016output_aliases\030\005 \003(\0132\024.flyteidl.c" +
-      "ore.Alias\022,\n\ttask_node\030\006 \001(\0132\027.flyteidl." +
-      "core.TaskNodeH\000\0224\n\rworkflow_node\030\007 \001(\0132\033" +
-      ".flyteidl.core.WorkflowNodeH\000\0220\n\013branch_" +
-      "node\030\010 \001(\0132\031.flyteidl.core.BranchNodeH\000B" +
-      "\010\n\006target\"\022\n\020WorkflowMetadata\"\226\002\n\020Workfl" +
-      "owTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.I" +
-      "dentifier\0221\n\010metadata\030\002 \001(\0132\037.flyteidl.c" +
-      "ore.WorkflowMetadata\0220\n\tinterface\030\003 \001(\0132" +
-      "\035.flyteidl.core.TypedInterface\022\"\n\005nodes\030" +
-      "\004 \003(\0132\023.flyteidl.core.Node\022\'\n\007outputs\030\005 " +
-      "\003(\0132\026.flyteidl.core.Binding\022)\n\014failure_n" +
-      "ode\030\006 \001(\0132\023.flyteidl.core.NodeB2Z0github" +
-      ".com/lyft/flyteidl/gen/pb-go/flyteidl/co" +
-      "reb\006proto3"
+      "core.IdentifierH\000B\013\n\treference\"\216\001\n\014NodeM" +
+      "etadata\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031" +
+      ".google.protobuf.Duration\022-\n\007retries\030\005 \001" +
+      "(\0132\034.flyteidl.core.RetryStrategy\022\025\n\rinte" +
+      "rruptible\030\006 \001(\010\"#\n\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n" +
+      "\005alias\030\002 \001(\t\"\322\002\n\004Node\022\n\n\002id\030\001 \001(\t\022-\n\010met" +
+      "adata\030\002 \001(\0132\033.flyteidl.core.NodeMetadata" +
+      "\022&\n\006inputs\030\003 \003(\0132\026.flyteidl.core.Binding" +
+      "\022\031\n\021upstream_node_ids\030\004 \003(\t\022,\n\016output_al" +
+      "iases\030\005 \003(\0132\024.flyteidl.core.Alias\022,\n\ttas" +
+      "k_node\030\006 \001(\0132\027.flyteidl.core.TaskNodeH\000\022" +
+      "4\n\rworkflow_node\030\007 \001(\0132\033.flyteidl.core.W" +
+      "orkflowNodeH\000\0220\n\013branch_node\030\010 \001(\0132\031.fly" +
+      "teidl.core.BranchNodeH\000B\010\n\006target\")\n\020Wor" +
+      "kflowMetadata\022\025\n\rinterruptible\030\001 \001(\010\"\226\002\n" +
+      "\020WorkflowTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl" +
+      ".core.Identifier\0221\n\010metadata\030\002 \001(\0132\037.fly" +
+      "teidl.core.WorkflowMetadata\0220\n\tinterface" +
+      "\030\003 \001(\0132\035.flyteidl.core.TypedInterface\022\"\n" +
+      "\005nodes\030\004 \003(\0132\023.flyteidl.core.Node\022\'\n\007out" +
+      "puts\030\005 \003(\0132\026.flyteidl.core.Binding\022)\n\014fa" +
+      "ilure_node\030\006 \001(\0132\023.flyteidl.core.NodeB2Z" +
+      "0github.com/lyft/flyteidl/gen/pb-go/flyt" +
+      "eidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13224,7 +13392,7 @@ public final class Workflow {
     internal_static_flyteidl_core_NodeMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_NodeMetadata_descriptor,
-        new java.lang.String[] { "Name", "Timeout", "Retries", });
+        new java.lang.String[] { "Name", "Timeout", "Retries", "Interruptible", });
     internal_static_flyteidl_core_Alias_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_core_Alias_fieldAccessorTable = new
@@ -13242,7 +13410,7 @@ public final class Workflow {
     internal_static_flyteidl_core_WorkflowMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkflowMetadata_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "Interruptible", });
     internal_static_flyteidl_core_WorkflowTemplate_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_core_WorkflowTemplate_fieldAccessorTable = new

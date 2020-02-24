@@ -914,6 +914,12 @@ class NodeMetadata final :
   ::flyteidl::core::RetryStrategy* mutable_retries();
   void set_allocated_retries(::flyteidl::core::RetryStrategy* retries);
 
+  // bool interruptible = 6;
+  void clear_interruptible();
+  static const int kInterruptibleFieldNumber = 6;
+  bool interruptible() const;
+  void set_interruptible(bool value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.core.NodeMetadata)
  private:
   class HasBitSetters;
@@ -922,6 +928,7 @@ class NodeMetadata final :
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::Duration* timeout_;
   ::flyteidl::core::RetryStrategy* retries_;
+  bool interruptible_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fworkflow_2eproto;
 };
@@ -1386,11 +1393,18 @@ class WorkflowMetadata final :
 
   // accessors -------------------------------------------------------
 
+  // bool interruptible = 1;
+  void clear_interruptible();
+  static const int kInterruptibleFieldNumber = 1;
+  bool interruptible() const;
+  void set_interruptible(bool value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.core.WorkflowMetadata)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  bool interruptible_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fworkflow_2eproto;
 };
@@ -2176,6 +2190,20 @@ inline void NodeMetadata::set_allocated_retries(::flyteidl::core::RetryStrategy*
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.NodeMetadata.retries)
 }
 
+// bool interruptible = 6;
+inline void NodeMetadata::clear_interruptible() {
+  interruptible_ = false;
+}
+inline bool NodeMetadata::interruptible() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.NodeMetadata.interruptible)
+  return interruptible_;
+}
+inline void NodeMetadata::set_interruptible(bool value) {
+  
+  interruptible_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.NodeMetadata.interruptible)
+}
+
 // -------------------------------------------------------------------
 
 // Alias
@@ -2655,6 +2683,20 @@ inline Node::TargetCase Node::target_case() const {
 // -------------------------------------------------------------------
 
 // WorkflowMetadata
+
+// bool interruptible = 1;
+inline void WorkflowMetadata::clear_interruptible() {
+  interruptible_ = false;
+}
+inline bool WorkflowMetadata::interruptible() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.WorkflowMetadata.interruptible)
+  return interruptible_;
+}
+inline void WorkflowMetadata::set_interruptible(bool value) {
+  
+  interruptible_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.WorkflowMetadata.interruptible)
+}
 
 // -------------------------------------------------------------------
 

@@ -515,6 +515,8 @@ func (m *NodeMetadata) Validate() error {
 		}
 	}
 
+	// no validation rules for Interruptible
+
 	return nil
 }
 
@@ -793,6 +795,8 @@ func (m *WorkflowMetadata) Validate() error {
 	if m == nil {
 		return nil
 	}
+
+	// no validation rules for Interruptible
 
 	return nil
 }

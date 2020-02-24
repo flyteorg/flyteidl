@@ -182,7 +182,8 @@ Defines extra information about the Node.
   {
     "name": "...",
     "timeout": "{...}",
-    "retries": "{...}"
+    "retries": "{...}",
+    "interruptible": "..."
   }
 
 .. _api_field_flyteidl.core.NodeMetadata.name:
@@ -203,6 +204,12 @@ retries
   (:ref:`flyteidl.core.RetryStrategy <api_msg_flyteidl.core.RetryStrategy>`) Number of retries per task.
   
   
+.. _api_field_flyteidl.core.NodeMetadata.interruptible:
+
+interruptible
+  (`bool <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Identify whether execution is interruptible
+  
+  
 
 
 .. _api_msg_flyteidl.core.Alias:
@@ -210,7 +217,7 @@ retries
 flyteidl.core.Alias
 -------------------
 
-`[flyteidl.core.Alias proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L78>`_
+`[flyteidl.core.Alias proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L81>`_
 
 Links a variable to an alias.
 
@@ -240,7 +247,7 @@ alias
 flyteidl.core.Node
 ------------------
 
-`[flyteidl.core.Node proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L88>`_
+`[flyteidl.core.Node proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L91>`_
 
 A Workflow graph Node. One unit of execution in the graph. Each node can be linked to a Task, a Workflow or a branch
 node.
@@ -331,16 +338,23 @@ branch_node
 flyteidl.core.WorkflowMetadata
 ------------------------------
 
-`[flyteidl.core.WorkflowMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L125>`_
+`[flyteidl.core.WorkflowMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L128>`_
 
 Metadata for the entire workflow.
 To be used in the future.
 
 .. code-block:: json
 
-  {}
+  {
+    "interruptible": "..."
+  }
 
+.. _api_field_flyteidl.core.WorkflowMetadata.interruptible:
 
+interruptible
+  (`bool <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Identify whether workflow is interruptible
+  
+  
 
 
 .. _api_msg_flyteidl.core.WorkflowTemplate:
@@ -348,7 +362,7 @@ To be used in the future.
 flyteidl.core.WorkflowTemplate
 ------------------------------
 
-`[flyteidl.core.WorkflowTemplate proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L130>`_
+`[flyteidl.core.WorkflowTemplate proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L135>`_
 
 Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,
 directed acyclic graph.

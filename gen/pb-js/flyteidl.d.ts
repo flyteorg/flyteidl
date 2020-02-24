@@ -602,6 +602,9 @@ export namespace flyteidl {
 
             /** NodeMetadata retries */
             retries?: (flyteidl.core.IRetryStrategy|null);
+
+            /** NodeMetadata interruptible */
+            interruptible?: (boolean|null);
         }
 
         /** Represents a NodeMetadata. */
@@ -621,6 +624,9 @@ export namespace flyteidl {
 
             /** NodeMetadata retries. */
             public retries?: (flyteidl.core.IRetryStrategy|null);
+
+            /** NodeMetadata interruptible. */
+            public interruptible: boolean;
 
             /**
              * Creates a new NodeMetadata instance using the specified properties.
@@ -812,6 +818,9 @@ export namespace flyteidl {
 
         /** Properties of a WorkflowMetadata. */
         interface IWorkflowMetadata {
+
+            /** WorkflowMetadata interruptible */
+            interruptible?: (boolean|null);
         }
 
         /** Represents a WorkflowMetadata. */
@@ -822,6 +831,9 @@ export namespace flyteidl {
              * @param [properties] Properties to set
              */
             constructor(properties?: flyteidl.core.IWorkflowMetadata);
+
+            /** WorkflowMetadata interruptible. */
+            public interruptible: boolean;
 
             /**
              * Creates a new WorkflowMetadata instance using the specified properties.

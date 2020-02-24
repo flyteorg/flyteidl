@@ -274,6 +274,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fworkflow_2eproto:
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::NodeMetadata, name_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::NodeMetadata, timeout_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::NodeMetadata, retries_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::NodeMetadata, interruptible_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Alias, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -300,6 +301,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fworkflow_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowMetadata, interruptible_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowTemplate, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -319,10 +321,10 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 23, -1, sizeof(::flyteidl::core::TaskNode)},
   { 30, -1, sizeof(::flyteidl::core::WorkflowNode)},
   { 38, -1, sizeof(::flyteidl::core::NodeMetadata)},
-  { 46, -1, sizeof(::flyteidl::core::Alias)},
-  { 53, -1, sizeof(::flyteidl::core::Node)},
-  { 67, -1, sizeof(::flyteidl::core::WorkflowMetadata)},
-  { 72, -1, sizeof(::flyteidl::core::WorkflowTemplate)},
+  { 47, -1, sizeof(::flyteidl::core::Alias)},
+  { 54, -1, sizeof(::flyteidl::core::Node)},
+  { 68, -1, sizeof(::flyteidl::core::WorkflowMetadata)},
+  { 74, -1, sizeof(::flyteidl::core::WorkflowTemplate)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -364,34 +366,35 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto[] =
   "\013\n\treference\"\207\001\n\014WorkflowNode\0223\n\016launchp"
   "lan_ref\030\001 \001(\0132\031.flyteidl.core.Identifier"
   "H\000\0225\n\020sub_workflow_ref\030\002 \001(\0132\031.flyteidl."
-  "core.IdentifierH\000B\013\n\treference\"w\n\014NodeMe"
-  "tadata\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031."
-  "google.protobuf.Duration\022-\n\007retries\030\005 \001("
-  "\0132\034.flyteidl.core.RetryStrategy\"#\n\005Alias"
-  "\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\322\002\n\004Node\022\n\n"
-  "\002id\030\001 \001(\t\022-\n\010metadata\030\002 \001(\0132\033.flyteidl.c"
-  "ore.NodeMetadata\022&\n\006inputs\030\003 \003(\0132\026.flyte"
-  "idl.core.Binding\022\031\n\021upstream_node_ids\030\004 "
-  "\003(\t\022,\n\016output_aliases\030\005 \003(\0132\024.flyteidl.c"
-  "ore.Alias\022,\n\ttask_node\030\006 \001(\0132\027.flyteidl."
-  "core.TaskNodeH\000\0224\n\rworkflow_node\030\007 \001(\0132\033"
-  ".flyteidl.core.WorkflowNodeH\000\0220\n\013branch_"
-  "node\030\010 \001(\0132\031.flyteidl.core.BranchNodeH\000B"
-  "\010\n\006target\"\022\n\020WorkflowMetadata\"\226\002\n\020Workfl"
-  "owTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.I"
-  "dentifier\0221\n\010metadata\030\002 \001(\0132\037.flyteidl.c"
-  "ore.WorkflowMetadata\0220\n\tinterface\030\003 \001(\0132"
-  "\035.flyteidl.core.TypedInterface\022\"\n\005nodes\030"
-  "\004 \003(\0132\023.flyteidl.core.Node\022\'\n\007outputs\030\005 "
-  "\003(\0132\026.flyteidl.core.Binding\022)\n\014failure_n"
-  "ode\030\006 \001(\0132\023.flyteidl.core.NodeB2Z0github"
-  ".com/lyft/flyteidl/gen/pb-go/flyteidl/co"
-  "reb\006proto3"
+  "core.IdentifierH\000B\013\n\treference\"\216\001\n\014NodeM"
+  "etadata\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031"
+  ".google.protobuf.Duration\022-\n\007retries\030\005 \001"
+  "(\0132\034.flyteidl.core.RetryStrategy\022\025\n\rinte"
+  "rruptible\030\006 \001(\010\"#\n\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n"
+  "\005alias\030\002 \001(\t\"\322\002\n\004Node\022\n\n\002id\030\001 \001(\t\022-\n\010met"
+  "adata\030\002 \001(\0132\033.flyteidl.core.NodeMetadata"
+  "\022&\n\006inputs\030\003 \003(\0132\026.flyteidl.core.Binding"
+  "\022\031\n\021upstream_node_ids\030\004 \003(\t\022,\n\016output_al"
+  "iases\030\005 \003(\0132\024.flyteidl.core.Alias\022,\n\ttas"
+  "k_node\030\006 \001(\0132\027.flyteidl.core.TaskNodeH\000\022"
+  "4\n\rworkflow_node\030\007 \001(\0132\033.flyteidl.core.W"
+  "orkflowNodeH\000\0220\n\013branch_node\030\010 \001(\0132\031.fly"
+  "teidl.core.BranchNodeH\000B\010\n\006target\")\n\020Wor"
+  "kflowMetadata\022\025\n\rinterruptible\030\001 \001(\010\"\226\002\n"
+  "\020WorkflowTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl"
+  ".core.Identifier\0221\n\010metadata\030\002 \001(\0132\037.fly"
+  "teidl.core.WorkflowMetadata\0220\n\tinterface"
+  "\030\003 \001(\0132\035.flyteidl.core.TypedInterface\022\"\n"
+  "\005nodes\030\004 \003(\0132\023.flyteidl.core.Node\022\'\n\007out"
+  "puts\030\005 \003(\0132\026.flyteidl.core.Binding\022)\n\014fa"
+  "ilure_node\030\006 \001(\0132\023.flyteidl.core.NodeB2Z"
+  "0github.com/lyft/flyteidl/gen/pb-go/flyt"
+  "eidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fworkflow_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fworkflow_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto,
-  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 1650,
+  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 1697,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fworkflow_2eproto() {
@@ -2401,6 +2404,7 @@ void NodeMetadata::clear_retries() {
 const int NodeMetadata::kNameFieldNumber;
 const int NodeMetadata::kTimeoutFieldNumber;
 const int NodeMetadata::kRetriesFieldNumber;
+const int NodeMetadata::kInterruptibleFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 NodeMetadata::NodeMetadata()
@@ -2426,6 +2430,7 @@ NodeMetadata::NodeMetadata(const NodeMetadata& from)
   } else {
     retries_ = nullptr;
   }
+  interruptible_ = from.interruptible_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.NodeMetadata)
 }
 
@@ -2434,8 +2439,8 @@ void NodeMetadata::SharedCtor() {
       &scc_info_NodeMetadata_flyteidl_2fcore_2fworkflow_2eproto.base);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&timeout_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&retries_) -
-      reinterpret_cast<char*>(&timeout_)) + sizeof(retries_));
+      reinterpret_cast<char*>(&interruptible_) -
+      reinterpret_cast<char*>(&timeout_)) + sizeof(interruptible_));
 }
 
 NodeMetadata::~NodeMetadata() {
@@ -2473,6 +2478,7 @@ void NodeMetadata::Clear() {
     delete retries_;
   }
   retries_ = nullptr;
+  interruptible_ = false;
   _internal_metadata_.Clear();
 }
 
@@ -2529,6 +2535,13 @@ const char* NodeMetadata::_InternalParse(const char* begin, const char* end, voi
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // bool interruptible = 6;
+      case 6: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 48) goto handle_unusual;
+        msg->set_interruptible(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -2602,6 +2615,19 @@ bool NodeMetadata::MergePartialFromCodedStream(
         break;
       }
 
+      // bool interruptible = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (48 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &interruptible_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -2651,6 +2677,11 @@ void NodeMetadata::SerializeWithCachedSizes(
       5, HasBitSetters::retries(this), output);
   }
 
+  // bool interruptible = 6;
+  if (this->interruptible() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->interruptible(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -2687,6 +2718,11 @@ void NodeMetadata::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         5, HasBitSetters::retries(this), target);
+  }
+
+  // bool interruptible = 6;
+  if (this->interruptible() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->interruptible(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2731,6 +2767,11 @@ size_t NodeMetadata::ByteSizeLong() const {
         *retries_);
   }
 
+  // bool interruptible = 6;
+  if (this->interruptible() != 0) {
+    total_size += 1 + 1;
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -2768,6 +2809,9 @@ void NodeMetadata::MergeFrom(const NodeMetadata& from) {
   if (from.has_retries()) {
     mutable_retries()->::flyteidl::core::RetryStrategy::MergeFrom(from.retries());
   }
+  if (from.interruptible() != 0) {
+    set_interruptible(from.interruptible());
+  }
 }
 
 void NodeMetadata::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2799,6 +2843,7 @@ void NodeMetadata::InternalSwap(NodeMetadata* other) {
     GetArenaNoVirtual());
   swap(timeout_, other->timeout_);
   swap(retries_, other->retries_);
+  swap(interruptible_, other->interruptible_);
 }
 
 ::google::protobuf::Metadata NodeMetadata::GetMetadata() const {
@@ -4009,6 +4054,7 @@ class WorkflowMetadata::HasBitSetters {
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int WorkflowMetadata::kInterruptibleFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 WorkflowMetadata::WorkflowMetadata()
@@ -4020,10 +4066,12 @@ WorkflowMetadata::WorkflowMetadata(const WorkflowMetadata& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  interruptible_ = from.interruptible_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.WorkflowMetadata)
 }
 
 void WorkflowMetadata::SharedCtor() {
+  interruptible_ = false;
 }
 
 WorkflowMetadata::~WorkflowMetadata() {
@@ -4049,6 +4097,7 @@ void WorkflowMetadata::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  interruptible_ = false;
   _internal_metadata_.Clear();
 }
 
@@ -4065,7 +4114,15 @@ const char* WorkflowMetadata::_InternalParse(const char* begin, const char* end,
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
+      // bool interruptible = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        msg->set_interruptible(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
       default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->EndGroup(tag);
           return ptr;
@@ -4090,12 +4147,30 @@ bool WorkflowMetadata::MergePartialFromCodedStream(
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
-  handle_unusual:
-    if (tag == 0) {
-      goto success;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // bool interruptible = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &interruptible_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
     }
-    DO_(::google::protobuf::internal::WireFormat::SkipField(
-          input, tag, _internal_metadata_.mutable_unknown_fields()));
   }
 success:
   // @@protoc_insertion_point(parse_success:flyteidl.core.WorkflowMetadata)
@@ -4113,6 +4188,11 @@ void WorkflowMetadata::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  // bool interruptible = 1;
+  if (this->interruptible() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->interruptible(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -4125,6 +4205,11 @@ void WorkflowMetadata::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_to_array_start:flyteidl.core.WorkflowMetadata)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // bool interruptible = 1;
+  if (this->interruptible() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->interruptible(), target);
+  }
 
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
@@ -4146,6 +4231,11 @@ size_t WorkflowMetadata::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // bool interruptible = 1;
+  if (this->interruptible() != 0) {
+    total_size += 1 + 1;
+  }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -4174,6 +4264,9 @@ void WorkflowMetadata::MergeFrom(const WorkflowMetadata& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.interruptible() != 0) {
+    set_interruptible(from.interruptible());
+  }
 }
 
 void WorkflowMetadata::CopyFrom(const ::google::protobuf::Message& from) {
@@ -4201,6 +4294,7 @@ void WorkflowMetadata::Swap(WorkflowMetadata* other) {
 void WorkflowMetadata::InternalSwap(WorkflowMetadata* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(interruptible_, other->interruptible_);
 }
 
 ::google::protobuf::Metadata WorkflowMetadata::GetMetadata() const {

@@ -11,4 +11,5 @@ package flyteadmin
 
 // Metadata for the entire workflow. To be used in the future.
 type CoreWorkflowMetadata struct {
+	Interruptible bool `json:"interruptible,omitempty"`
 }
