@@ -183,7 +183,7 @@ Defines extra information about the Node.
     "name": "...",
     "timeout": "{...}",
     "retries": "{...}",
-    "interruptible": "{...}"
+    "interruptible": "..."
   }
 
 .. _api_field_flyteidl.core.NodeMetadata.name:
@@ -207,7 +207,7 @@ retries
 .. _api_field_flyteidl.core.NodeMetadata.interruptible:
 
 interruptible
-  (:ref:`flyteidl.core.Primitive <api_msg_flyteidl.core.Primitive>`) 
+  (`bool <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   Identify whether node is interruptible
   
   

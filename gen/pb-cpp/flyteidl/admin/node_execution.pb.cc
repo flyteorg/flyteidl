@@ -18,7 +18,7 @@
 
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Sort_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_UrlBlob_flyteidl_2fadmin_2fcommon_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fnode_5fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_NodeExecutionMetaData_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fnode_5fexecution_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_NodeExecutionMetaData_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fnode_5fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_WorkflowNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fnode_5fexecution_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_NodeExecution_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fnode_5fexecution_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_NodeExecutionClosure_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
@@ -26,7 +26,6 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fexecution_2eproto ::google::pr
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_WorkflowExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_NodeExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_TaskExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Primitive_flyteidl_2fcore_2fliterals_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2fduration_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Duration_google_2fprotobuf_2fduration_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2ftimestamp_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto;
 namespace flyteidl {
@@ -50,7 +49,7 @@ class NodeExecutionDefaultTypeInternal {
 class NodeExecutionMetaDataDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<NodeExecutionMetaData> _instance;
-  const ::flyteidl::core::Primitive* interruptible_;
+  bool interruptible_;
 } _NodeExecutionMetaData_default_instance_;
 class NodeExecutionListDefaultTypeInternal {
  public:
@@ -152,9 +151,8 @@ static void InitDefaultsNodeExecutionMetaData_flyteidl_2fadmin_2fnode_5fexecutio
   ::flyteidl::admin::NodeExecutionMetaData::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_NodeExecutionMetaData_flyteidl_2fadmin_2fnode_5fexecution_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsNodeExecutionMetaData_flyteidl_2fadmin_2fnode_5fexecution_2eproto}, {
-      &scc_info_Primitive_flyteidl_2fcore_2fliterals_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<0> scc_info_NodeExecutionMetaData_flyteidl_2fadmin_2fnode_5fexecution_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsNodeExecutionMetaData_flyteidl_2fadmin_2fnode_5fexecution_2eproto}, {}};
 
 static void InitDefaultsNodeExecutionList_flyteidl_2fadmin_2fnode_5fexecution_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -372,69 +370,66 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fnode_5fexecution_2eproto
   "\n#flyteidl/admin/node_execution.proto\022\016f"
   "lyteidl.admin\032\033flyteidl/admin/common.pro"
   "to\032\035flyteidl/core/execution.proto\032\036flyte"
-  "idl/core/identifier.proto\032\034flyteidl/core"
-  "/literals.proto\032\037google/protobuf/timesta"
-  "mp.proto\032\036google/protobuf/duration.proto"
-  "\"M\n\027NodeExecutionGetRequest\0222\n\002id\030\001 \001(\0132"
-  "&.flyteidl.core.NodeExecutionIdentifier\""
-  "\273\001\n\030NodeExecutionListRequest\022I\n\025workflow"
-  "_execution_id\030\001 \001(\0132*.flyteidl.core.Work"
-  "flowExecutionIdentifier\022\r\n\005limit\030\002 \001(\r\022\r"
-  "\n\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_b"
-  "y\030\005 \001(\0132\024.flyteidl.admin.Sort\"\272\001\n\037NodeEx"
-  "ecutionForTaskListRequest\022A\n\021task_execut"
-  "ion_id\030\001 \001(\0132&.flyteidl.core.TaskExecuti"
-  "onIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030\003 \001"
-  "(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.f"
-  "lyteidl.admin.Sort\"\306\001\n\rNodeExecution\0222\n\002"
-  "id\030\001 \001(\0132&.flyteidl.core.NodeExecutionId"
-  "entifier\022\021\n\tinput_uri\030\002 \001(\t\0225\n\007closure\030\003"
-  " \001(\0132$.flyteidl.admin.NodeExecutionClosu"
-  "re\0227\n\010metadata\030\004 \001(\0132%.flyteidl.admin.No"
-  "deExecutionMetaData\"g\n\025NodeExecutionMeta"
-  "Data\0221\n\rinterruptible\030\002 \001(\0132\030.flyteidl.c"
-  "ore.PrimitiveH\000B\025\n\023interruptible_valueJ\004"
-  "\010\001\020\002\"Z\n\021NodeExecutionList\0226\n\017node_execut"
-  "ions\030\001 \003(\0132\035.flyteidl.admin.NodeExecutio"
-  "n\022\r\n\005token\030\002 \001(\t\"\270\003\n\024NodeExecutionClosur"
-  "e\022\024\n\noutput_uri\030\001 \001(\tH\000\022.\n\005error\030\002 \001(\0132\035"
-  ".flyteidl.core.ExecutionErrorH\000\0221\n\005phase"
-  "\030\003 \001(\0162\".flyteidl.core.NodeExecution.Pha"
-  "se\022.\n\nstarted_at\030\004 \001(\0132\032.google.protobuf"
-  ".Timestamp\022+\n\010duration\030\005 \001(\0132\031.google.pr"
-  "otobuf.Duration\022.\n\ncreated_at\030\006 \001(\0132\032.go"
-  "ogle.protobuf.Timestamp\022.\n\nupdated_at\030\007 "
-  "\001(\0132\032.google.protobuf.Timestamp\022F\n\026workf"
-  "low_node_metadata\030\010 \001(\0132$.flyteidl.admin"
-  ".WorkflowNodeMetadataH\001B\017\n\routput_result"
-  "B\021\n\017target_metadata\"W\n\024WorkflowNodeMetad"
-  "ata\022\?\n\013executionId\030\001 \001(\0132*.flyteidl.core"
-  ".WorkflowExecutionIdentifier\"Q\n\033NodeExec"
-  "utionGetDataRequest\0222\n\002id\030\001 \001(\0132&.flytei"
-  "dl.core.NodeExecutionIdentifier\"q\n\034NodeE"
-  "xecutionGetDataResponse\022\'\n\006inputs\030\001 \001(\0132"
-  "\027.flyteidl.admin.UrlBlob\022(\n\007outputs\030\002 \001("
-  "\0132\027.flyteidl.admin.UrlBlobB3Z1github.com"
-  "/lyft/flyteidl/gen/pb-go/flyteidl/adminb"
-  "\006proto3"
+  "idl/core/identifier.proto\032\037google/protob"
+  "uf/timestamp.proto\032\036google/protobuf/dura"
+  "tion.proto\"M\n\027NodeExecutionGetRequest\0222\n"
+  "\002id\030\001 \001(\0132&.flyteidl.core.NodeExecutionI"
+  "dentifier\"\273\001\n\030NodeExecutionListRequest\022I"
+  "\n\025workflow_execution_id\030\001 \001(\0132*.flyteidl"
+  ".core.WorkflowExecutionIdentifier\022\r\n\005lim"
+  "it\030\002 \001(\r\022\r\n\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t"
+  "\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin.Sort\""
+  "\272\001\n\037NodeExecutionForTaskListRequest\022A\n\021t"
+  "ask_execution_id\030\001 \001(\0132&.flyteidl.core.T"
+  "askExecutionIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n"
+  "\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by"
+  "\030\005 \001(\0132\024.flyteidl.admin.Sort\"\306\001\n\rNodeExe"
+  "cution\0222\n\002id\030\001 \001(\0132&.flyteidl.core.NodeE"
+  "xecutionIdentifier\022\021\n\tinput_uri\030\002 \001(\t\0225\n"
+  "\007closure\030\003 \001(\0132$.flyteidl.admin.NodeExec"
+  "utionClosure\0227\n\010metadata\030\004 \001(\0132%.flyteid"
+  "l.admin.NodeExecutionMetaData\"G\n\025NodeExe"
+  "cutionMetaData\022\027\n\rinterruptible\030\001 \001(\010H\000B"
+  "\025\n\023interruptible_value\"Z\n\021NodeExecutionL"
+  "ist\0226\n\017node_executions\030\001 \003(\0132\035.flyteidl."
+  "admin.NodeExecution\022\r\n\005token\030\002 \001(\t\"\270\003\n\024N"
+  "odeExecutionClosure\022\024\n\noutput_uri\030\001 \001(\tH"
+  "\000\022.\n\005error\030\002 \001(\0132\035.flyteidl.core.Executi"
+  "onErrorH\000\0221\n\005phase\030\003 \001(\0162\".flyteidl.core"
+  ".NodeExecution.Phase\022.\n\nstarted_at\030\004 \001(\013"
+  "2\032.google.protobuf.Timestamp\022+\n\010duration"
+  "\030\005 \001(\0132\031.google.protobuf.Duration\022.\n\ncre"
+  "ated_at\030\006 \001(\0132\032.google.protobuf.Timestam"
+  "p\022.\n\nupdated_at\030\007 \001(\0132\032.google.protobuf."
+  "Timestamp\022F\n\026workflow_node_metadata\030\010 \001("
+  "\0132$.flyteidl.admin.WorkflowNodeMetadataH"
+  "\001B\017\n\routput_resultB\021\n\017target_metadata\"W\n"
+  "\024WorkflowNodeMetadata\022\?\n\013executionId\030\001 \001"
+  "(\0132*.flyteidl.core.WorkflowExecutionIden"
+  "tifier\"Q\n\033NodeExecutionGetDataRequest\0222\n"
+  "\002id\030\001 \001(\0132&.flyteidl.core.NodeExecutionI"
+  "dentifier\"q\n\034NodeExecutionGetDataRespons"
+  "e\022\'\n\006inputs\030\001 \001(\0132\027.flyteidl.admin.UrlBl"
+  "ob\022(\n\007outputs\030\002 \001(\0132\027.flyteidl.admin.Url"
+  "BlobB3Z1github.com/lyft/flyteidl/gen/pb-"
+  "go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fnode_5fexecution_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fnode_5fexecution_2eproto,
-  "flyteidl/admin/node_execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto, 1887,
+  "flyteidl/admin/node_execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto, 1825,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fnode_5fexecution_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[6] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[5] =
   {
     ::AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fexecution_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fidentifier_2eproto,
-    ::AddDescriptors_flyteidl_2fcore_2fliterals_2eproto,
     ::AddDescriptors_google_2fprotobuf_2ftimestamp_2eproto,
     ::AddDescriptors_google_2fprotobuf_2fduration_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto, deps, 6);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto, deps, 5);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -2364,38 +2359,12 @@ void NodeExecution::InternalSwap(NodeExecution* other) {
 // ===================================================================
 
 void NodeExecutionMetaData::InitAsDefaultInstance() {
-  ::flyteidl::admin::_NodeExecutionMetaData_default_instance_.interruptible_ = const_cast< ::flyteidl::core::Primitive*>(
-      ::flyteidl::core::Primitive::internal_default_instance());
+  ::flyteidl::admin::_NodeExecutionMetaData_default_instance_.interruptible_ = false;
 }
 class NodeExecutionMetaData::HasBitSetters {
  public:
-  static const ::flyteidl::core::Primitive& interruptible(const NodeExecutionMetaData* msg);
 };
 
-const ::flyteidl::core::Primitive&
-NodeExecutionMetaData::HasBitSetters::interruptible(const NodeExecutionMetaData* msg) {
-  return *msg->interruptible_value_.interruptible_;
-}
-void NodeExecutionMetaData::set_allocated_interruptible(::flyteidl::core::Primitive* interruptible) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  clear_interruptible_value();
-  if (interruptible) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      interruptible = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, interruptible, submessage_arena);
-    }
-    set_has_interruptible();
-    interruptible_value_.interruptible_ = interruptible;
-  }
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.NodeExecutionMetaData.interruptible)
-}
-void NodeExecutionMetaData::clear_interruptible() {
-  if (has_interruptible()) {
-    delete interruptible_value_.interruptible_;
-    clear_has_interruptible_value();
-  }
-}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int NodeExecutionMetaData::kInterruptibleFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -2412,7 +2381,7 @@ NodeExecutionMetaData::NodeExecutionMetaData(const NodeExecutionMetaData& from)
   clear_has_interruptible_value();
   switch (from.interruptible_value_case()) {
     case kInterruptible: {
-      mutable_interruptible()->::flyteidl::core::Primitive::MergeFrom(from.interruptible());
+      set_interruptible(from.interruptible());
       break;
     }
     case INTERRUPTIBLE_VALUE_NOT_SET: {
@@ -2423,8 +2392,6 @@ NodeExecutionMetaData::NodeExecutionMetaData(const NodeExecutionMetaData& from)
 }
 
 void NodeExecutionMetaData::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_NodeExecutionMetaData_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base);
   clear_has_interruptible_value();
 }
 
@@ -2452,7 +2419,7 @@ void NodeExecutionMetaData::clear_interruptible_value() {
 // @@protoc_insertion_point(one_of_clear_start:flyteidl.admin.NodeExecutionMetaData)
   switch (interruptible_value_case()) {
     case kInterruptible: {
-      delete interruptible_value_.interruptible_;
+      // No need to clear
       break;
     }
     case INTERRUPTIBLE_VALUE_NOT_SET: {
@@ -2486,17 +2453,11 @@ const char* NodeExecutionMetaData::_InternalParse(const char* begin, const char*
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .flyteidl.core.Primitive interruptible = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+      // bool interruptible = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        msg->set_interruptible(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::core::Primitive::_InternalParse;
-        object = msg->mutable_interruptible();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
         break;
       }
       default: {
@@ -2514,9 +2475,6 @@ const char* NodeExecutionMetaData::_InternalParse(const char* begin, const char*
     }  // switch
   }  // while
   return ptr;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool NodeExecutionMetaData::MergePartialFromCodedStream(
@@ -2529,11 +2487,14 @@ bool NodeExecutionMetaData::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .flyteidl.core.Primitive interruptible = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_interruptible()));
+      // bool interruptible = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+          clear_interruptible_value();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &interruptible_value_.interruptible_)));
+          set_has_interruptible();
         } else {
           goto handle_unusual;
         }
@@ -2567,10 +2528,9 @@ void NodeExecutionMetaData::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.core.Primitive interruptible = 2;
+  // bool interruptible = 1;
   if (has_interruptible()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::interruptible(this), output);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->interruptible(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2586,11 +2546,9 @@ void NodeExecutionMetaData::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.core.Primitive interruptible = 2;
+  // bool interruptible = 1;
   if (has_interruptible()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, HasBitSetters::interruptible(this), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->interruptible(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2615,11 +2573,9 @@ size_t NodeExecutionMetaData::ByteSizeLong() const {
   (void) cached_has_bits;
 
   switch (interruptible_value_case()) {
-    // .flyteidl.core.Primitive interruptible = 2;
+    // bool interruptible = 1;
     case kInterruptible: {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *interruptible_value_.interruptible_);
+      total_size += 1 + 1;
       break;
     }
     case INTERRUPTIBLE_VALUE_NOT_SET: {
@@ -2655,7 +2611,7 @@ void NodeExecutionMetaData::MergeFrom(const NodeExecutionMetaData& from) {
 
   switch (from.interruptible_value_case()) {
     case kInterruptible: {
-      mutable_interruptible()->::flyteidl::core::Primitive::MergeFrom(from.interruptible());
+      set_interruptible(from.interruptible());
       break;
     }
     case INTERRUPTIBLE_VALUE_NOT_SET: {

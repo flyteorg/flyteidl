@@ -4769,13 +4769,7 @@ definitions:
     example:
       node_executions:
       - metadata:
-          interruptible:
-            duration: "duration"
-            datetime: "2000-01-23T04:56:07.000+00:00"
-            string_value: "string_value"
-            boolean: true
-            float_value: 1.4658129805029452
-            integer: "integer"
+          interruptible: true
         input_uri: "input_uri"
         id:
           execution_id:
@@ -4801,13 +4795,7 @@ definitions:
             message: "message"
             error_uri: "error_uri"
       - metadata:
-          interruptible:
-            duration: "duration"
-            datetime: "2000-01-23T04:56:07.000+00:00"
-            string_value: "string_value"
-            boolean: true
-            float_value: 1.4658129805029452
-            integer: "integer"
+          interruptible: true
         input_uri: "input_uri"
         id:
           execution_id:
@@ -4837,16 +4825,11 @@ definitions:
     type: "object"
     properties:
       interruptible:
-        $ref: "#/definitions/corePrimitive"
+        type: "boolean"
+        format: "boolean"
     title: "Represents additional attributes related to a Node Execution"
     example:
-      interruptible:
-        duration: "duration"
-        datetime: "2000-01-23T04:56:07.000+00:00"
-        string_value: "string_value"
-        boolean: true
-        float_value: 1.4658129805029452
-        integer: "integer"
+      interruptible: true
   adminNotification:
     type: "object"
     properties:
@@ -6151,13 +6134,7 @@ definitions:
                   retries:
                     retries: 0
                   name: "name"
-                  interruptible:
-                    duration: "duration"
-                    datetime: "2000-01-23T04:56:07.000+00:00"
-                    string_value: "string_value"
-                    boolean: true
-                    float_value: 1.4658129805029452
-                    integer: "integer"
+                  interruptible: true
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -6372,13 +6349,7 @@ definitions:
                   retries:
                     retries: 0
                   name: "name"
-                  interruptible:
-                    duration: "duration"
-                    datetime: "2000-01-23T04:56:07.000+00:00"
-                    string_value: "string_value"
-                    boolean: true
-                    float_value: 1.4658129805029452
-                    integer: "integer"
+                  interruptible: true
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -6592,13 +6563,7 @@ definitions:
                   retries:
                     retries: 0
                   name: "name"
-                  interruptible:
-                    duration: "duration"
-                    datetime: "2000-01-23T04:56:07.000+00:00"
-                    string_value: "string_value"
-                    boolean: true
-                    float_value: 1.4658129805029452
-                    integer: "integer"
+                  interruptible: true
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -6989,13 +6954,7 @@ definitions:
                   retries:
                     retries: 0
                   name: "name"
-                  interruptible:
-                    duration: "duration"
-                    datetime: "2000-01-23T04:56:07.000+00:00"
-                    string_value: "string_value"
-                    boolean: true
-                    float_value: 1.4658129805029452
-                    integer: "integer"
+                  interruptible: true
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -7210,13 +7169,7 @@ definitions:
                   retries:
                     retries: 0
                   name: "name"
-                  interruptible:
-                    duration: "duration"
-                    datetime: "2000-01-23T04:56:07.000+00:00"
-                    string_value: "string_value"
-                    boolean: true
-                    float_value: 1.4658129805029452
-                    integer: "integer"
+                  interruptible: true
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -7430,13 +7383,7 @@ definitions:
                   retries:
                     retries: 0
                   name: "name"
-                  interruptible:
-                    duration: "duration"
-                    datetime: "2000-01-23T04:56:07.000+00:00"
-                    string_value: "string_value"
-                    boolean: true
-                    float_value: 1.4658129805029452
-                    integer: "integer"
+                  interruptible: true
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -8059,13 +8006,7 @@ definitions:
                   retries:
                     retries: 0
                   name: "name"
-                  interruptible:
-                    duration: "duration"
-                    datetime: "2000-01-23T04:56:07.000+00:00"
-                    string_value: "string_value"
-                    boolean: true
-                    float_value: 1.4658129805029452
-                    integer: "integer"
+                  interruptible: true
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -8280,13 +8221,7 @@ definitions:
                   retries:
                     retries: 0
                   name: "name"
-                  interruptible:
-                    duration: "duration"
-                    datetime: "2000-01-23T04:56:07.000+00:00"
-                    string_value: "string_value"
-                    boolean: true
-                    float_value: 1.4658129805029452
-                    integer: "integer"
+                  interruptible: true
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -8500,13 +8435,7 @@ definitions:
                   retries:
                     retries: 0
                   name: "name"
-                  interruptible:
-                    duration: "duration"
-                    datetime: "2000-01-23T04:56:07.000+00:00"
-                    string_value: "string_value"
-                    boolean: true
-                    float_value: 1.4658129805029452
-                    integer: "integer"
+                  interruptible: true
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -9010,13 +8939,7 @@ definitions:
                 retries:
                   retries: 0
                 name: "name"
-                interruptible:
-                  duration: "duration"
-                  datetime: "2000-01-23T04:56:07.000+00:00"
-                  string_value: "string_value"
-                  boolean: true
-                  float_value: 1.4658129805029452
-                  integer: "integer"
+                interruptible: true
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -9231,13 +9154,7 @@ definitions:
                 retries:
                   retries: 0
                 name: "name"
-                interruptible:
-                  duration: "duration"
-                  datetime: "2000-01-23T04:56:07.000+00:00"
-                  string_value: "string_value"
-                  boolean: true
-                  float_value: 1.4658129805029452
-                  integer: "integer"
+                interruptible: true
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -9451,13 +9368,7 @@ definitions:
                 retries:
                   retries: 0
                 name: "name"
-                interruptible:
-                  duration: "duration"
-                  datetime: "2000-01-23T04:56:07.000+00:00"
-                  string_value: "string_value"
-                  boolean: true
-                  float_value: 1.4658129805029452
-                  integer: "integer"
+                interruptible: true
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -9848,13 +9759,7 @@ definitions:
                 retries:
                   retries: 0
                 name: "name"
-                interruptible:
-                  duration: "duration"
-                  datetime: "2000-01-23T04:56:07.000+00:00"
-                  string_value: "string_value"
-                  boolean: true
-                  float_value: 1.4658129805029452
-                  integer: "integer"
+                interruptible: true
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -10069,13 +9974,7 @@ definitions:
                 retries:
                   retries: 0
                 name: "name"
-                interruptible:
-                  duration: "duration"
-                  datetime: "2000-01-23T04:56:07.000+00:00"
-                  string_value: "string_value"
-                  boolean: true
-                  float_value: 1.4658129805029452
-                  integer: "integer"
+                interruptible: true
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -10289,13 +10188,7 @@ definitions:
                 retries:
                   retries: 0
                 name: "name"
-                interruptible:
-                  duration: "duration"
-                  datetime: "2000-01-23T04:56:07.000+00:00"
-                  string_value: "string_value"
-                  boolean: true
-                  float_value: 1.4658129805029452
-                  integer: "integer"
+                interruptible: true
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -10918,13 +10811,7 @@ definitions:
                 retries:
                   retries: 0
                 name: "name"
-                interruptible:
-                  duration: "duration"
-                  datetime: "2000-01-23T04:56:07.000+00:00"
-                  string_value: "string_value"
-                  boolean: true
-                  float_value: 1.4658129805029452
-                  integer: "integer"
+                interruptible: true
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -11139,13 +11026,7 @@ definitions:
                 retries:
                   retries: 0
                 name: "name"
-                interruptible:
-                  duration: "duration"
-                  datetime: "2000-01-23T04:56:07.000+00:00"
-                  string_value: "string_value"
-                  boolean: true
-                  float_value: 1.4658129805029452
-                  integer: "integer"
+                interruptible: true
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -11359,13 +11240,7 @@ definitions:
                 retries:
                   retries: 0
                 name: "name"
-                interruptible:
-                  duration: "duration"
-                  datetime: "2000-01-23T04:56:07.000+00:00"
-                  string_value: "string_value"
-                  boolean: true
-                  float_value: 1.4658129805029452
-                  integer: "integer"
+                interruptible: true
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -11825,13 +11700,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
-                    interruptible:
-                      duration: "duration"
-                      datetime: "2000-01-23T04:56:07.000+00:00"
-                      string_value: "string_value"
-                      boolean: true
-                      float_value: 1.4658129805029452
-                      integer: "integer"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -12046,13 +11915,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
-                    interruptible:
-                      duration: "duration"
-                      datetime: "2000-01-23T04:56:07.000+00:00"
-                      string_value: "string_value"
-                      boolean: true
-                      float_value: 1.4658129805029452
-                      integer: "integer"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -12266,13 +12129,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
-                    interruptible:
-                      duration: "duration"
-                      datetime: "2000-01-23T04:56:07.000+00:00"
-                      string_value: "string_value"
-                      boolean: true
-                      float_value: 1.4658129805029452
-                      integer: "integer"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -12663,13 +12520,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
-                    interruptible:
-                      duration: "duration"
-                      datetime: "2000-01-23T04:56:07.000+00:00"
-                      string_value: "string_value"
-                      boolean: true
-                      float_value: 1.4658129805029452
-                      integer: "integer"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -12884,13 +12735,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
-                    interruptible:
-                      duration: "duration"
-                      datetime: "2000-01-23T04:56:07.000+00:00"
-                      string_value: "string_value"
-                      boolean: true
-                      float_value: 1.4658129805029452
-                      integer: "integer"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -13104,13 +12949,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
-                    interruptible:
-                      duration: "duration"
-                      datetime: "2000-01-23T04:56:07.000+00:00"
-                      string_value: "string_value"
-                      boolean: true
-                      float_value: 1.4658129805029452
-                      integer: "integer"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -13733,13 +13572,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
-                    interruptible:
-                      duration: "duration"
-                      datetime: "2000-01-23T04:56:07.000+00:00"
-                      string_value: "string_value"
-                      boolean: true
-                      float_value: 1.4658129805029452
-                      integer: "integer"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -13954,13 +13787,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
-                    interruptible:
-                      duration: "duration"
-                      datetime: "2000-01-23T04:56:07.000+00:00"
-                      string_value: "string_value"
-                      boolean: true
-                      float_value: 1.4658129805029452
-                      integer: "integer"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -14174,13 +14001,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
-                    interruptible:
-                      duration: "duration"
-                      datetime: "2000-01-23T04:56:07.000+00:00"
-                      string_value: "string_value"
-                      boolean: true
-                      float_value: 1.4658129805029452
-                      integer: "integer"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -14581,13 +14402,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
-                    interruptible:
-                      duration: "duration"
-                      datetime: "2000-01-23T04:56:07.000+00:00"
-                      string_value: "string_value"
-                      boolean: true
-                      float_value: 1.4658129805029452
-                      integer: "integer"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -14802,13 +14617,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
-                    interruptible:
-                      duration: "duration"
-                      datetime: "2000-01-23T04:56:07.000+00:00"
-                      string_value: "string_value"
-                      boolean: true
-                      float_value: 1.4658129805029452
-                      integer: "integer"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -15022,13 +14831,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
-                    interruptible:
-                      duration: "duration"
-                      datetime: "2000-01-23T04:56:07.000+00:00"
-                      string_value: "string_value"
-                      boolean: true
-                      float_value: 1.4658129805029452
-                      integer: "integer"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -15419,13 +15222,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
-                    interruptible:
-                      duration: "duration"
-                      datetime: "2000-01-23T04:56:07.000+00:00"
-                      string_value: "string_value"
-                      boolean: true
-                      float_value: 1.4658129805029452
-                      integer: "integer"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -15640,13 +15437,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
-                    interruptible:
-                      duration: "duration"
-                      datetime: "2000-01-23T04:56:07.000+00:00"
-                      string_value: "string_value"
-                      boolean: true
-                      float_value: 1.4658129805029452
-                      integer: "integer"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -15860,13 +15651,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
-                    interruptible:
-                      duration: "duration"
-                      datetime: "2000-01-23T04:56:07.000+00:00"
-                      string_value: "string_value"
-                      boolean: true
-                      float_value: 1.4658129805029452
-                      integer: "integer"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -16489,13 +16274,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
-                    interruptible:
-                      duration: "duration"
-                      datetime: "2000-01-23T04:56:07.000+00:00"
-                      string_value: "string_value"
-                      boolean: true
-                      float_value: 1.4658129805029452
-                      integer: "integer"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -16710,13 +16489,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
-                    interruptible:
-                      duration: "duration"
-                      datetime: "2000-01-23T04:56:07.000+00:00"
-                      string_value: "string_value"
-                      boolean: true
-                      float_value: 1.4658129805029452
-                      integer: "integer"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -16930,13 +16703,7 @@ definitions:
                     retries:
                       retries: 0
                     name: "name"
-                    interruptible:
-                      duration: "duration"
-                      datetime: "2000-01-23T04:56:07.000+00:00"
-                      string_value: "string_value"
-                      boolean: true
-                      float_value: 1.4658129805029452
-                      integer: "integer"
+                    interruptible: true
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -17855,13 +17622,7 @@ definitions:
             retries:
               retries: 0
             name: "name"
-            interruptible:
-              duration: "duration"
-              datetime: "2000-01-23T04:56:07.000+00:00"
-              string_value: "string_value"
-              boolean: true
-              float_value: 1.4658129805029452
-              integer: "integer"
+            interruptible: true
             timeout: "timeout"
           upstream_node_ids:
           - "upstream_node_ids"
@@ -18076,13 +17837,7 @@ definitions:
             retries:
               retries: 0
             name: "name"
-            interruptible:
-              duration: "duration"
-              datetime: "2000-01-23T04:56:07.000+00:00"
-              string_value: "string_value"
-              boolean: true
-              float_value: 1.4658129805029452
-              integer: "integer"
+            interruptible: true
             timeout: "timeout"
           upstream_node_ids:
           - "upstream_node_ids"
@@ -18296,13 +18051,7 @@ definitions:
             retries:
               retries: 0
             name: "name"
-            interruptible:
-              duration: "duration"
-              datetime: "2000-01-23T04:56:07.000+00:00"
-              string_value: "string_value"
-              boolean: true
-              float_value: 1.4658129805029452
-              integer: "integer"
+            interruptible: true
             timeout: "timeout"
           upstream_node_ids:
           - "upstream_node_ids"
@@ -18720,13 +18469,7 @@ definitions:
               retries:
                 retries: 0
               name: "name"
-              interruptible:
-                duration: "duration"
-                datetime: "2000-01-23T04:56:07.000+00:00"
-                string_value: "string_value"
-                boolean: true
-                float_value: 1.4658129805029452
-                integer: "integer"
+              interruptible: true
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -18941,13 +18684,7 @@ definitions:
               retries:
                 retries: 0
               name: "name"
-              interruptible:
-                duration: "duration"
-                datetime: "2000-01-23T04:56:07.000+00:00"
-                string_value: "string_value"
-                boolean: true
-                float_value: 1.4658129805029452
-                integer: "integer"
+              interruptible: true
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -19161,13 +18898,7 @@ definitions:
               retries:
                 retries: 0
               name: "name"
-              interruptible:
-                duration: "duration"
-                datetime: "2000-01-23T04:56:07.000+00:00"
-                string_value: "string_value"
-                boolean: true
-                float_value: 1.4658129805029452
-                integer: "integer"
+              interruptible: true
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -19558,13 +19289,7 @@ definitions:
               retries:
                 retries: 0
               name: "name"
-              interruptible:
-                duration: "duration"
-                datetime: "2000-01-23T04:56:07.000+00:00"
-                string_value: "string_value"
-                boolean: true
-                float_value: 1.4658129805029452
-                integer: "integer"
+              interruptible: true
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -19779,13 +19504,7 @@ definitions:
               retries:
                 retries: 0
               name: "name"
-              interruptible:
-                duration: "duration"
-                datetime: "2000-01-23T04:56:07.000+00:00"
-                string_value: "string_value"
-                boolean: true
-                float_value: 1.4658129805029452
-                integer: "integer"
+              interruptible: true
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -19999,13 +19718,7 @@ definitions:
               retries:
                 retries: 0
               name: "name"
-              interruptible:
-                duration: "duration"
-                datetime: "2000-01-23T04:56:07.000+00:00"
-                string_value: "string_value"
-                boolean: true
-                float_value: 1.4658129805029452
-                integer: "integer"
+              interruptible: true
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -20628,13 +20341,7 @@ definitions:
               retries:
                 retries: 0
               name: "name"
-              interruptible:
-                duration: "duration"
-                datetime: "2000-01-23T04:56:07.000+00:00"
-                string_value: "string_value"
-                boolean: true
-                float_value: 1.4658129805029452
-                integer: "integer"
+              interruptible: true
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -20849,13 +20556,7 @@ definitions:
               retries:
                 retries: 0
               name: "name"
-              interruptible:
-                duration: "duration"
-                datetime: "2000-01-23T04:56:07.000+00:00"
-                string_value: "string_value"
-                boolean: true
-                float_value: 1.4658129805029452
-                integer: "integer"
+              interruptible: true
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -21069,13 +20770,7 @@ definitions:
               retries:
                 retries: 0
               name: "name"
-              interruptible:
-                duration: "duration"
-                datetime: "2000-01-23T04:56:07.000+00:00"
-                string_value: "string_value"
-                boolean: true
-                float_value: 1.4658129805029452
-                integer: "integer"
+              interruptible: true
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -21863,13 +21558,7 @@ definitions:
         retries:
           retries: 0
         name: "name"
-        interruptible:
-          duration: "duration"
-          datetime: "2000-01-23T04:56:07.000+00:00"
-          string_value: "string_value"
-          boolean: true
-          float_value: 1.4658129805029452
-          integer: "integer"
+        interruptible: true
         timeout: "timeout"
       upstream_node_ids:
       - "upstream_node_ids"
@@ -22043,19 +21732,14 @@ definitions:
         description: "Number of retries per task."
         $ref: "#/definitions/coreRetryStrategy"
       interruptible:
-        $ref: "#/definitions/corePrimitive"
+        type: "boolean"
+        format: "boolean"
     description: "Defines extra information about the Node."
     example:
       retries:
         retries: 0
       name: "name"
-      interruptible:
-        duration: "duration"
-        datetime: "2000-01-23T04:56:07.000+00:00"
-        string_value: "string_value"
-        boolean: true
-        float_value: 1.4658129805029452
-        integer: "integer"
+      interruptible: true
       timeout: "timeout"
   coreOperand:
     type: "object"
@@ -23126,13 +22810,7 @@ definitions:
           retries:
             retries: 0
           name: "name"
-          interruptible:
-            duration: "duration"
-            datetime: "2000-01-23T04:56:07.000+00:00"
-            string_value: "string_value"
-            boolean: true
-            float_value: 1.4658129805029452
-            integer: "integer"
+          interruptible: true
           timeout: "timeout"
         upstream_node_ids:
         - "upstream_node_ids"
@@ -23347,13 +23025,7 @@ definitions:
           retries:
             retries: 0
           name: "name"
-          interruptible:
-            duration: "duration"
-            datetime: "2000-01-23T04:56:07.000+00:00"
-            string_value: "string_value"
-            boolean: true
-            float_value: 1.4658129805029452
-            integer: "integer"
+          interruptible: true
           timeout: "timeout"
         upstream_node_ids:
         - "upstream_node_ids"
@@ -23567,13 +23239,7 @@ definitions:
           retries:
             retries: 0
           name: "name"
-          interruptible:
-            duration: "duration"
-            datetime: "2000-01-23T04:56:07.000+00:00"
-            string_value: "string_value"
-            boolean: true
-            float_value: 1.4658129805029452
-            integer: "integer"
+          interruptible: true
           timeout: "timeout"
         upstream_node_ids:
         - "upstream_node_ids"
@@ -23902,13 +23568,7 @@ definitions:
       \ each node is unique."
     example:
       metadata:
-        interruptible:
-          duration: "duration"
-          datetime: "2000-01-23T04:56:07.000+00:00"
-          string_value: "string_value"
-          boolean: true
-          float_value: 1.4658129805029452
-          integer: "integer"
+        interruptible: true
       input_uri: "input_uri"
       id:
         execution_id:

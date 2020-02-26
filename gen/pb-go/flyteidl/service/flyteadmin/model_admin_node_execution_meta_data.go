@@ -10,5 +10,5 @@
 package flyteadmin
 
 type AdminNodeExecutionMetaData struct {
-	Interruptible *CorePrimitive `json:"interruptible,omitempty"`
+	Interruptible bool `json:"interruptible,omitempty"`
 }

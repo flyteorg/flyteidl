@@ -76,7 +76,7 @@ message NodeMetadata {
 
     // Identify whether node is interruptible
     oneof interruptible_value {
-        Primitive interruptible = 6;
+        bool interruptible = 6;
     };
 }
 
