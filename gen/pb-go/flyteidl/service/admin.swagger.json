@@ -5109,7 +5109,7 @@
         "interruptible": {
           "type": "boolean",
           "format": "boolean",
-          "title": "Identify whether workflow is interruptible"
+          "description": "Identify whether workflow is interruptible.\nThe value set at the workflow level will be the defualt value used for nodes\nunless explicitly set at the node level."
         }
       },
       "description": "Metadata for the entire workflow.\nTo be used in the future."

@@ -353,7 +353,9 @@ To be used in the future.
 .. _api_field_flyteidl.core.WorkflowMetadata.interruptible:
 
 interruptible
-  (`bool <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Identify whether workflow is interruptible
+  (`bool <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Identify whether workflow is interruptible.
+  The value set at the workflow level will be the defualt value used for nodes
+  unless explicitly set at the node level.
   
   
 
@@ -363,7 +365,7 @@ interruptible
 flyteidl.core.WorkflowTemplate
 ------------------------------
 
-`[flyteidl.core.WorkflowTemplate proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L137>`_
+`[flyteidl.core.WorkflowTemplate proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L139>`_
 
 Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,
 directed acyclic graph.

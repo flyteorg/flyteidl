@@ -658,7 +658,9 @@ func (*Node) XXX_OneofWrappers() []interface{} {
 // Metadata for the entire workflow.
 // To be used in the future.
 type WorkflowMetadata struct {
-	// Identify whether workflow is interruptible
+	// Identify whether workflow is interruptible.
+	// The value set at the workflow level will be the defualt value used for nodes
+	// unless explicitly set at the node level.
 	Interruptible        bool     `protobuf:"varint,1,opt,name=interruptible,proto3" json:"interruptible,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

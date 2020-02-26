@@ -10340,7 +10340,9 @@ public final class Workflow {
 
     /**
      * <pre>
-     * Identify whether workflow is interruptible
+     * Identify whether workflow is interruptible.
+     * The value set at the workflow level will be the defualt value used for nodes
+     * unless explicitly set at the node level.
      * </pre>
      *
      * <code>bool interruptible = 1;</code>
@@ -10432,7 +10434,9 @@ public final class Workflow {
     private boolean interruptible_;
     /**
      * <pre>
-     * Identify whether workflow is interruptible
+     * Identify whether workflow is interruptible.
+     * The value set at the workflow level will be the defualt value used for nodes
+     * unless explicitly set at the node level.
      * </pre>
      *
      * <code>bool interruptible = 1;</code>
@@ -10752,7 +10756,9 @@ public final class Workflow {
       private boolean interruptible_ ;
       /**
        * <pre>
-       * Identify whether workflow is interruptible
+       * Identify whether workflow is interruptible.
+       * The value set at the workflow level will be the defualt value used for nodes
+       * unless explicitly set at the node level.
        * </pre>
        *
        * <code>bool interruptible = 1;</code>
@@ -10762,7 +10768,9 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * Identify whether workflow is interruptible
+       * Identify whether workflow is interruptible.
+       * The value set at the workflow level will be the defualt value used for nodes
+       * unless explicitly set at the node level.
        * </pre>
        *
        * <code>bool interruptible = 1;</code>
@@ -10775,7 +10783,9 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * Identify whether workflow is interruptible
+       * Identify whether workflow is interruptible.
+       * The value set at the workflow level will be the defualt value used for nodes
+       * unless explicitly set at the node level.
        * </pre>
        *
        * <code>bool interruptible = 1;</code>

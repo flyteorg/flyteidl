@@ -51,6 +51,7 @@ class CoreWorkflowMetadata(object):
     def interruptible(self):
         """Gets the interruptible of this CoreWorkflowMetadata.  # noqa: E501
 
+        Identify whether workflow is interruptible. The value set at the workflow level will be the defualt value used for nodes unless explicitly set at the node level.  # noqa: E501
 
         :return: The interruptible of this CoreWorkflowMetadata.  # noqa: E501
         :rtype: bool
@@ -61,6 +62,7 @@ class CoreWorkflowMetadata(object):
     def interruptible(self, interruptible):
         """Sets the interruptible of this CoreWorkflowMetadata.
 
+        Identify whether workflow is interruptible. The value set at the workflow level will be the defualt value used for nodes unless explicitly set at the node level.  # noqa: E501
 
         :param interruptible: The interruptible of this CoreWorkflowMetadata.  # noqa: E501
         :type: bool
