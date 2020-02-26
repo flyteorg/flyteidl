@@ -409,7 +409,21 @@ func (m *NodeExecutionMetaData) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Interruptible
+	switch m.InterruptibleValue.(type) {
+
+	case *NodeExecutionMetaData_Interruptible:
+
+		if v, ok := interface{}(m.GetInterruptible()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return NodeExecutionMetaDataValidationError{
+					field:  "Interruptible",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
 
 	return nil
 }

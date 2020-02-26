@@ -5160,13 +5160,19 @@ public final class Workflow {
     flyteidl.core.Literals.RetryStrategyOrBuilder getRetriesOrBuilder();
 
     /**
-     * <pre>
-     * Identify whether node is interruptible
-     * </pre>
-     *
-     * <code>bool interruptible = 6;</code>
+     * <code>.flyteidl.core.Primitive interruptible = 6;</code>
      */
-    boolean getInterruptible();
+    boolean hasInterruptible();
+    /**
+     * <code>.flyteidl.core.Primitive interruptible = 6;</code>
+     */
+    flyteidl.core.Literals.Primitive getInterruptible();
+    /**
+     * <code>.flyteidl.core.Primitive interruptible = 6;</code>
+     */
+    flyteidl.core.Literals.PrimitiveOrBuilder getInterruptibleOrBuilder();
+
+    public flyteidl.core.Workflow.NodeMetadata.InterruptibleValueCase getInterruptibleValueCase();
   }
   /**
    * <pre>
@@ -5244,9 +5250,18 @@ public final class Workflow {
 
               break;
             }
-            case 48: {
-
-              interruptible_ = input.readBool();
+            case 50: {
+              flyteidl.core.Literals.Primitive.Builder subBuilder = null;
+              if (interruptibleValueCase_ == 6) {
+                subBuilder = ((flyteidl.core.Literals.Primitive) interruptibleValue_).toBuilder();
+              }
+              interruptibleValue_ =
+                  input.readMessage(flyteidl.core.Literals.Primitive.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.Literals.Primitive) interruptibleValue_);
+                interruptibleValue_ = subBuilder.buildPartial();
+              }
+              interruptibleValueCase_ = 6;
               break;
             }
             default: {
@@ -5279,6 +5294,42 @@ public final class Workflow {
       return flyteidl.core.Workflow.internal_static_flyteidl_core_NodeMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               flyteidl.core.Workflow.NodeMetadata.class, flyteidl.core.Workflow.NodeMetadata.Builder.class);
+    }
+
+    private int interruptibleValueCase_ = 0;
+    private java.lang.Object interruptibleValue_;
+    public enum InterruptibleValueCase
+        implements com.google.protobuf.Internal.EnumLite {
+      INTERRUPTIBLE(6),
+      INTERRUPTIBLEVALUE_NOT_SET(0);
+      private final int value;
+      private InterruptibleValueCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static InterruptibleValueCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static InterruptibleValueCase forNumber(int value) {
+        switch (value) {
+          case 6: return INTERRUPTIBLE;
+          case 0: return INTERRUPTIBLEVALUE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public InterruptibleValueCase
+    getInterruptibleValueCase() {
+      return InterruptibleValueCase.forNumber(
+          interruptibleValueCase_);
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
@@ -5390,16 +5441,29 @@ public final class Workflow {
     }
 
     public static final int INTERRUPTIBLE_FIELD_NUMBER = 6;
-    private boolean interruptible_;
     /**
-     * <pre>
-     * Identify whether node is interruptible
-     * </pre>
-     *
-     * <code>bool interruptible = 6;</code>
+     * <code>.flyteidl.core.Primitive interruptible = 6;</code>
      */
-    public boolean getInterruptible() {
-      return interruptible_;
+    public boolean hasInterruptible() {
+      return interruptibleValueCase_ == 6;
+    }
+    /**
+     * <code>.flyteidl.core.Primitive interruptible = 6;</code>
+     */
+    public flyteidl.core.Literals.Primitive getInterruptible() {
+      if (interruptibleValueCase_ == 6) {
+         return (flyteidl.core.Literals.Primitive) interruptibleValue_;
+      }
+      return flyteidl.core.Literals.Primitive.getDefaultInstance();
+    }
+    /**
+     * <code>.flyteidl.core.Primitive interruptible = 6;</code>
+     */
+    public flyteidl.core.Literals.PrimitiveOrBuilder getInterruptibleOrBuilder() {
+      if (interruptibleValueCase_ == 6) {
+         return (flyteidl.core.Literals.Primitive) interruptibleValue_;
+      }
+      return flyteidl.core.Literals.Primitive.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5425,8 +5489,8 @@ public final class Workflow {
       if (retries_ != null) {
         output.writeMessage(5, getRetries());
       }
-      if (interruptible_ != false) {
-        output.writeBool(6, interruptible_);
+      if (interruptibleValueCase_ == 6) {
+        output.writeMessage(6, (flyteidl.core.Literals.Primitive) interruptibleValue_);
       }
       unknownFields.writeTo(output);
     }
@@ -5448,9 +5512,9 @@ public final class Workflow {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getRetries());
       }
-      if (interruptible_ != false) {
+      if (interruptibleValueCase_ == 6) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, interruptible_);
+          .computeMessageSize(6, (flyteidl.core.Literals.Primitive) interruptibleValue_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5479,8 +5543,15 @@ public final class Workflow {
         if (!getRetries()
             .equals(other.getRetries())) return false;
       }
-      if (getInterruptible()
-          != other.getInterruptible()) return false;
+      if (!getInterruptibleValueCase().equals(other.getInterruptibleValueCase())) return false;
+      switch (interruptibleValueCase_) {
+        case 6:
+          if (!getInterruptible()
+              .equals(other.getInterruptible())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5502,9 +5573,14 @@ public final class Workflow {
         hash = (37 * hash) + RETRIES_FIELD_NUMBER;
         hash = (53 * hash) + getRetries().hashCode();
       }
-      hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getInterruptible());
+      switch (interruptibleValueCase_) {
+        case 6:
+          hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
+          hash = (53 * hash) + getInterruptible().hashCode();
+          break;
+        case 0:
+        default:
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5656,8 +5732,8 @@ public final class Workflow {
           retries_ = null;
           retriesBuilder_ = null;
         }
-        interruptible_ = false;
-
+        interruptibleValueCase_ = 0;
+        interruptibleValue_ = null;
         return this;
       }
 
@@ -5695,7 +5771,14 @@ public final class Workflow {
         } else {
           result.retries_ = retriesBuilder_.build();
         }
-        result.interruptible_ = interruptible_;
+        if (interruptibleValueCase_ == 6) {
+          if (interruptibleBuilder_ == null) {
+            result.interruptibleValue_ = interruptibleValue_;
+          } else {
+            result.interruptibleValue_ = interruptibleBuilder_.build();
+          }
+        }
+        result.interruptibleValueCase_ = interruptibleValueCase_;
         onBuilt();
         return result;
       }
@@ -5754,8 +5837,14 @@ public final class Workflow {
         if (other.hasRetries()) {
           mergeRetries(other.getRetries());
         }
-        if (other.getInterruptible() != false) {
-          setInterruptible(other.getInterruptible());
+        switch (other.getInterruptibleValueCase()) {
+          case INTERRUPTIBLE: {
+            mergeInterruptible(other.getInterruptible());
+            break;
+          }
+          case INTERRUPTIBLEVALUE_NOT_SET: {
+            break;
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5785,6 +5874,21 @@ public final class Workflow {
         }
         return this;
       }
+      private int interruptibleValueCase_ = 0;
+      private java.lang.Object interruptibleValue_;
+      public InterruptibleValueCase
+          getInterruptibleValueCase() {
+        return InterruptibleValueCase.forNumber(
+            interruptibleValueCase_);
+      }
+
+      public Builder clearInterruptibleValue() {
+        interruptibleValueCase_ = 0;
+        interruptibleValue_ = null;
+        onChanged();
+        return this;
+      }
+
 
       private java.lang.Object name_ = "";
       /**
@@ -6181,42 +6285,140 @@ public final class Workflow {
         return retriesBuilder_;
       }
 
-      private boolean interruptible_ ;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Primitive, flyteidl.core.Literals.Primitive.Builder, flyteidl.core.Literals.PrimitiveOrBuilder> interruptibleBuilder_;
       /**
-       * <pre>
-       * Identify whether node is interruptible
-       * </pre>
-       *
-       * <code>bool interruptible = 6;</code>
+       * <code>.flyteidl.core.Primitive interruptible = 6;</code>
        */
-      public boolean getInterruptible() {
-        return interruptible_;
+      public boolean hasInterruptible() {
+        return interruptibleValueCase_ == 6;
       }
       /**
-       * <pre>
-       * Identify whether node is interruptible
-       * </pre>
-       *
-       * <code>bool interruptible = 6;</code>
+       * <code>.flyteidl.core.Primitive interruptible = 6;</code>
        */
-      public Builder setInterruptible(boolean value) {
-        
-        interruptible_ = value;
-        onChanged();
+      public flyteidl.core.Literals.Primitive getInterruptible() {
+        if (interruptibleBuilder_ == null) {
+          if (interruptibleValueCase_ == 6) {
+            return (flyteidl.core.Literals.Primitive) interruptibleValue_;
+          }
+          return flyteidl.core.Literals.Primitive.getDefaultInstance();
+        } else {
+          if (interruptibleValueCase_ == 6) {
+            return interruptibleBuilder_.getMessage();
+          }
+          return flyteidl.core.Literals.Primitive.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.Primitive interruptible = 6;</code>
+       */
+      public Builder setInterruptible(flyteidl.core.Literals.Primitive value) {
+        if (interruptibleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          interruptibleValue_ = value;
+          onChanged();
+        } else {
+          interruptibleBuilder_.setMessage(value);
+        }
+        interruptibleValueCase_ = 6;
         return this;
       }
       /**
-       * <pre>
-       * Identify whether node is interruptible
-       * </pre>
-       *
-       * <code>bool interruptible = 6;</code>
+       * <code>.flyteidl.core.Primitive interruptible = 6;</code>
+       */
+      public Builder setInterruptible(
+          flyteidl.core.Literals.Primitive.Builder builderForValue) {
+        if (interruptibleBuilder_ == null) {
+          interruptibleValue_ = builderForValue.build();
+          onChanged();
+        } else {
+          interruptibleBuilder_.setMessage(builderForValue.build());
+        }
+        interruptibleValueCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Primitive interruptible = 6;</code>
+       */
+      public Builder mergeInterruptible(flyteidl.core.Literals.Primitive value) {
+        if (interruptibleBuilder_ == null) {
+          if (interruptibleValueCase_ == 6 &&
+              interruptibleValue_ != flyteidl.core.Literals.Primitive.getDefaultInstance()) {
+            interruptibleValue_ = flyteidl.core.Literals.Primitive.newBuilder((flyteidl.core.Literals.Primitive) interruptibleValue_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            interruptibleValue_ = value;
+          }
+          onChanged();
+        } else {
+          if (interruptibleValueCase_ == 6) {
+            interruptibleBuilder_.mergeFrom(value);
+          }
+          interruptibleBuilder_.setMessage(value);
+        }
+        interruptibleValueCase_ = 6;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Primitive interruptible = 6;</code>
        */
       public Builder clearInterruptible() {
-        
-        interruptible_ = false;
-        onChanged();
+        if (interruptibleBuilder_ == null) {
+          if (interruptibleValueCase_ == 6) {
+            interruptibleValueCase_ = 0;
+            interruptibleValue_ = null;
+            onChanged();
+          }
+        } else {
+          if (interruptibleValueCase_ == 6) {
+            interruptibleValueCase_ = 0;
+            interruptibleValue_ = null;
+          }
+          interruptibleBuilder_.clear();
+        }
         return this;
+      }
+      /**
+       * <code>.flyteidl.core.Primitive interruptible = 6;</code>
+       */
+      public flyteidl.core.Literals.Primitive.Builder getInterruptibleBuilder() {
+        return getInterruptibleFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.core.Primitive interruptible = 6;</code>
+       */
+      public flyteidl.core.Literals.PrimitiveOrBuilder getInterruptibleOrBuilder() {
+        if ((interruptibleValueCase_ == 6) && (interruptibleBuilder_ != null)) {
+          return interruptibleBuilder_.getMessageOrBuilder();
+        } else {
+          if (interruptibleValueCase_ == 6) {
+            return (flyteidl.core.Literals.Primitive) interruptibleValue_;
+          }
+          return flyteidl.core.Literals.Primitive.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.Primitive interruptible = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Primitive, flyteidl.core.Literals.Primitive.Builder, flyteidl.core.Literals.PrimitiveOrBuilder> 
+          getInterruptibleFieldBuilder() {
+        if (interruptibleBuilder_ == null) {
+          if (!(interruptibleValueCase_ == 6)) {
+            interruptibleValue_ = flyteidl.core.Literals.Primitive.getDefaultInstance();
+          }
+          interruptibleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.Primitive, flyteidl.core.Literals.Primitive.Builder, flyteidl.core.Literals.PrimitiveOrBuilder>(
+                  (flyteidl.core.Literals.Primitive) interruptibleValue_,
+                  getParentForChildren(),
+                  isClean());
+          interruptibleValue_ = null;
+        }
+        interruptibleValueCase_ = 6;
+        onChanged();;
+        return interruptibleBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -13314,30 +13516,31 @@ public final class Workflow {
       "\013\n\treference\"\207\001\n\014WorkflowNode\0223\n\016launchp" +
       "lan_ref\030\001 \001(\0132\031.flyteidl.core.Identifier" +
       "H\000\0225\n\020sub_workflow_ref\030\002 \001(\0132\031.flyteidl." +
-      "core.IdentifierH\000B\013\n\treference\"\216\001\n\014NodeM" +
+      "core.IdentifierH\000B\013\n\treference\"\301\001\n\014NodeM" +
       "etadata\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031" +
       ".google.protobuf.Duration\022-\n\007retries\030\005 \001" +
-      "(\0132\034.flyteidl.core.RetryStrategy\022\025\n\rinte" +
-      "rruptible\030\006 \001(\010\"#\n\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n" +
-      "\005alias\030\002 \001(\t\"\322\002\n\004Node\022\n\n\002id\030\001 \001(\t\022-\n\010met" +
-      "adata\030\002 \001(\0132\033.flyteidl.core.NodeMetadata" +
-      "\022&\n\006inputs\030\003 \003(\0132\026.flyteidl.core.Binding" +
-      "\022\031\n\021upstream_node_ids\030\004 \003(\t\022,\n\016output_al" +
-      "iases\030\005 \003(\0132\024.flyteidl.core.Alias\022,\n\ttas" +
-      "k_node\030\006 \001(\0132\027.flyteidl.core.TaskNodeH\000\022" +
-      "4\n\rworkflow_node\030\007 \001(\0132\033.flyteidl.core.W" +
-      "orkflowNodeH\000\0220\n\013branch_node\030\010 \001(\0132\031.fly" +
-      "teidl.core.BranchNodeH\000B\010\n\006target\")\n\020Wor" +
-      "kflowMetadata\022\025\n\rinterruptible\030\001 \001(\010\"\226\002\n" +
-      "\020WorkflowTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl" +
-      ".core.Identifier\0221\n\010metadata\030\002 \001(\0132\037.fly" +
-      "teidl.core.WorkflowMetadata\0220\n\tinterface" +
-      "\030\003 \001(\0132\035.flyteidl.core.TypedInterface\022\"\n" +
-      "\005nodes\030\004 \003(\0132\023.flyteidl.core.Node\022\'\n\007out" +
-      "puts\030\005 \003(\0132\026.flyteidl.core.Binding\022)\n\014fa" +
-      "ilure_node\030\006 \001(\0132\023.flyteidl.core.NodeB2Z" +
-      "0github.com/lyft/flyteidl/gen/pb-go/flyt" +
-      "eidl/coreb\006proto3"
+      "(\0132\034.flyteidl.core.RetryStrategy\0221\n\rinte" +
+      "rruptible\030\006 \001(\0132\030.flyteidl.core.Primitiv" +
+      "eH\000B\025\n\023interruptible_value\"#\n\005Alias\022\013\n\003v" +
+      "ar\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\322\002\n\004Node\022\n\n\002id\030\001" +
+      " \001(\t\022-\n\010metadata\030\002 \001(\0132\033.flyteidl.core.N" +
+      "odeMetadata\022&\n\006inputs\030\003 \003(\0132\026.flyteidl.c" +
+      "ore.Binding\022\031\n\021upstream_node_ids\030\004 \003(\t\022," +
+      "\n\016output_aliases\030\005 \003(\0132\024.flyteidl.core.A" +
+      "lias\022,\n\ttask_node\030\006 \001(\0132\027.flyteidl.core." +
+      "TaskNodeH\000\0224\n\rworkflow_node\030\007 \001(\0132\033.flyt" +
+      "eidl.core.WorkflowNodeH\000\0220\n\013branch_node\030" +
+      "\010 \001(\0132\031.flyteidl.core.BranchNodeH\000B\010\n\006ta" +
+      "rget\")\n\020WorkflowMetadata\022\025\n\rinterruptibl" +
+      "e\030\001 \001(\010\"\226\002\n\020WorkflowTemplate\022%\n\002id\030\001 \001(\013" +
+      "2\031.flyteidl.core.Identifier\0221\n\010metadata\030" +
+      "\002 \001(\0132\037.flyteidl.core.WorkflowMetadata\0220" +
+      "\n\tinterface\030\003 \001(\0132\035.flyteidl.core.TypedI" +
+      "nterface\022\"\n\005nodes\030\004 \003(\0132\023.flyteidl.core." +
+      "Node\022\'\n\007outputs\030\005 \003(\0132\026.flyteidl.core.Bi" +
+      "nding\022)\n\014failure_node\030\006 \001(\0132\023.flyteidl.c" +
+      "ore.NodeB2Z0github.com/lyft/flyteidl/gen" +
+      "/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13392,7 +13595,7 @@ public final class Workflow {
     internal_static_flyteidl_core_NodeMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_NodeMetadata_descriptor,
-        new java.lang.String[] { "Name", "Timeout", "Retries", "Interruptible", });
+        new java.lang.String[] { "Name", "Timeout", "Retries", "Interruptible", "InterruptibleValue", });
     internal_static_flyteidl_core_Alias_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_core_Alias_fieldAccessorTable = new

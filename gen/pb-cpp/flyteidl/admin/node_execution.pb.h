@@ -34,6 +34,7 @@
 #include "flyteidl/admin/common.pb.h"
 #include "flyteidl/core/execution.pb.h"
 #include "flyteidl/core/identifier.pb.h"
+#include "flyteidl/core/literals.pb.h"
 #include <google/protobuf/timestamp.pb.h>
 #include <google/protobuf/duration.pb.h>
 // @@protoc_insertion_point(includes)
@@ -727,6 +728,11 @@ class NodeExecutionMetaData final :
   }
   static const NodeExecutionMetaData& default_instance();
 
+  enum InterruptibleValueCase {
+    kInterruptible = 2,
+    INTERRUPTIBLE_VALUE_NOT_SET = 0,
+  };
+
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
   static inline const NodeExecutionMetaData* internal_default_instance() {
     return reinterpret_cast<const NodeExecutionMetaData*>(
@@ -790,19 +796,33 @@ class NodeExecutionMetaData final :
 
   // accessors -------------------------------------------------------
 
-  // bool interruptible = 1;
+  // .flyteidl.core.Primitive interruptible = 2;
+  bool has_interruptible() const;
   void clear_interruptible();
-  static const int kInterruptibleFieldNumber = 1;
-  bool interruptible() const;
-  void set_interruptible(bool value);
+  static const int kInterruptibleFieldNumber = 2;
+  const ::flyteidl::core::Primitive& interruptible() const;
+  ::flyteidl::core::Primitive* release_interruptible();
+  ::flyteidl::core::Primitive* mutable_interruptible();
+  void set_allocated_interruptible(::flyteidl::core::Primitive* interruptible);
 
+  void clear_interruptible_value();
+  InterruptibleValueCase interruptible_value_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.admin.NodeExecutionMetaData)
  private:
   class HasBitSetters;
+  void set_has_interruptible();
+
+  inline bool has_interruptible_value() const;
+  inline void clear_has_interruptible_value();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  bool interruptible_;
+  union InterruptibleValueUnion {
+    InterruptibleValueUnion() {}
+    ::flyteidl::core::Primitive* interruptible_;
+  } interruptible_value_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
   friend struct ::TableStruct_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
 };
 // -------------------------------------------------------------------
@@ -2207,20 +2227,50 @@ inline void NodeExecution::set_allocated_metadata(::flyteidl::admin::NodeExecuti
 
 // NodeExecutionMetaData
 
-// bool interruptible = 1;
-inline void NodeExecutionMetaData::clear_interruptible() {
-  interruptible_ = false;
+// .flyteidl.core.Primitive interruptible = 2;
+inline bool NodeExecutionMetaData::has_interruptible() const {
+  return interruptible_value_case() == kInterruptible;
 }
-inline bool NodeExecutionMetaData::interruptible() const {
+inline void NodeExecutionMetaData::set_has_interruptible() {
+  _oneof_case_[0] = kInterruptible;
+}
+inline ::flyteidl::core::Primitive* NodeExecutionMetaData::release_interruptible() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.NodeExecutionMetaData.interruptible)
+  if (has_interruptible()) {
+    clear_has_interruptible_value();
+      ::flyteidl::core::Primitive* temp = interruptible_value_.interruptible_;
+    interruptible_value_.interruptible_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::Primitive& NodeExecutionMetaData::interruptible() const {
   // @@protoc_insertion_point(field_get:flyteidl.admin.NodeExecutionMetaData.interruptible)
-  return interruptible_;
+  return has_interruptible()
+      ? *interruptible_value_.interruptible_
+      : *reinterpret_cast< ::flyteidl::core::Primitive*>(&::flyteidl::core::_Primitive_default_instance_);
 }
-inline void NodeExecutionMetaData::set_interruptible(bool value) {
-  
-  interruptible_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.admin.NodeExecutionMetaData.interruptible)
+inline ::flyteidl::core::Primitive* NodeExecutionMetaData::mutable_interruptible() {
+  if (!has_interruptible()) {
+    clear_interruptible_value();
+    set_has_interruptible();
+    interruptible_value_.interruptible_ = CreateMaybeMessage< ::flyteidl::core::Primitive >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.NodeExecutionMetaData.interruptible)
+  return interruptible_value_.interruptible_;
 }
 
+inline bool NodeExecutionMetaData::has_interruptible_value() const {
+  return interruptible_value_case() != INTERRUPTIBLE_VALUE_NOT_SET;
+}
+inline void NodeExecutionMetaData::clear_has_interruptible_value() {
+  _oneof_case_[0] = INTERRUPTIBLE_VALUE_NOT_SET;
+}
+inline NodeExecutionMetaData::InterruptibleValueCase NodeExecutionMetaData::interruptible_value_case() const {
+  return NodeExecutionMetaData::InterruptibleValueCase(_oneof_case_[0]);
+}
 // -------------------------------------------------------------------
 
 // NodeExecutionList

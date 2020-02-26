@@ -4868,9 +4868,19 @@ public final class NodeExecutionOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool interruptible = 1;</code>
+     * <code>.flyteidl.core.Primitive interruptible = 2;</code>
      */
-    boolean getInterruptible();
+    boolean hasInterruptible();
+    /**
+     * <code>.flyteidl.core.Primitive interruptible = 2;</code>
+     */
+    flyteidl.core.Literals.Primitive getInterruptible();
+    /**
+     * <code>.flyteidl.core.Primitive interruptible = 2;</code>
+     */
+    flyteidl.core.Literals.PrimitiveOrBuilder getInterruptibleOrBuilder();
+
+    public flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData.InterruptibleValueCase getInterruptibleValueCase();
   }
   /**
    * <pre>
@@ -4915,9 +4925,18 @@ public final class NodeExecutionOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              interruptible_ = input.readBool();
+            case 18: {
+              flyteidl.core.Literals.Primitive.Builder subBuilder = null;
+              if (interruptibleValueCase_ == 2) {
+                subBuilder = ((flyteidl.core.Literals.Primitive) interruptibleValue_).toBuilder();
+              }
+              interruptibleValue_ =
+                  input.readMessage(flyteidl.core.Literals.Primitive.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.Literals.Primitive) interruptibleValue_);
+                interruptibleValue_ = subBuilder.buildPartial();
+              }
+              interruptibleValueCase_ = 2;
               break;
             }
             default: {
@@ -4952,13 +4971,66 @@ public final class NodeExecutionOuterClass {
               flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData.class, flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData.Builder.class);
     }
 
-    public static final int INTERRUPTIBLE_FIELD_NUMBER = 1;
-    private boolean interruptible_;
+    private int interruptibleValueCase_ = 0;
+    private java.lang.Object interruptibleValue_;
+    public enum InterruptibleValueCase
+        implements com.google.protobuf.Internal.EnumLite {
+      INTERRUPTIBLE(2),
+      INTERRUPTIBLEVALUE_NOT_SET(0);
+      private final int value;
+      private InterruptibleValueCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static InterruptibleValueCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static InterruptibleValueCase forNumber(int value) {
+        switch (value) {
+          case 2: return INTERRUPTIBLE;
+          case 0: return INTERRUPTIBLEVALUE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public InterruptibleValueCase
+    getInterruptibleValueCase() {
+      return InterruptibleValueCase.forNumber(
+          interruptibleValueCase_);
+    }
+
+    public static final int INTERRUPTIBLE_FIELD_NUMBER = 2;
     /**
-     * <code>bool interruptible = 1;</code>
+     * <code>.flyteidl.core.Primitive interruptible = 2;</code>
      */
-    public boolean getInterruptible() {
-      return interruptible_;
+    public boolean hasInterruptible() {
+      return interruptibleValueCase_ == 2;
+    }
+    /**
+     * <code>.flyteidl.core.Primitive interruptible = 2;</code>
+     */
+    public flyteidl.core.Literals.Primitive getInterruptible() {
+      if (interruptibleValueCase_ == 2) {
+         return (flyteidl.core.Literals.Primitive) interruptibleValue_;
+      }
+      return flyteidl.core.Literals.Primitive.getDefaultInstance();
+    }
+    /**
+     * <code>.flyteidl.core.Primitive interruptible = 2;</code>
+     */
+    public flyteidl.core.Literals.PrimitiveOrBuilder getInterruptibleOrBuilder() {
+      if (interruptibleValueCase_ == 2) {
+         return (flyteidl.core.Literals.Primitive) interruptibleValue_;
+      }
+      return flyteidl.core.Literals.Primitive.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4975,8 +5047,8 @@ public final class NodeExecutionOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (interruptible_ != false) {
-        output.writeBool(1, interruptible_);
+      if (interruptibleValueCase_ == 2) {
+        output.writeMessage(2, (flyteidl.core.Literals.Primitive) interruptibleValue_);
       }
       unknownFields.writeTo(output);
     }
@@ -4987,9 +5059,9 @@ public final class NodeExecutionOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (interruptible_ != false) {
+      if (interruptibleValueCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, interruptible_);
+          .computeMessageSize(2, (flyteidl.core.Literals.Primitive) interruptibleValue_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5006,8 +5078,15 @@ public final class NodeExecutionOuterClass {
       }
       flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData other = (flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData) obj;
 
-      if (getInterruptible()
-          != other.getInterruptible()) return false;
+      if (!getInterruptibleValueCase().equals(other.getInterruptibleValueCase())) return false;
+      switch (interruptibleValueCase_) {
+        case 2:
+          if (!getInterruptible()
+              .equals(other.getInterruptible())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5019,9 +5098,14 @@ public final class NodeExecutionOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getInterruptible());
+      switch (interruptibleValueCase_) {
+        case 2:
+          hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
+          hash = (53 * hash) + getInterruptible().hashCode();
+          break;
+        case 0:
+        default:
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5159,8 +5243,8 @@ public final class NodeExecutionOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        interruptible_ = false;
-
+        interruptibleValueCase_ = 0;
+        interruptibleValue_ = null;
         return this;
       }
 
@@ -5187,7 +5271,14 @@ public final class NodeExecutionOuterClass {
       @java.lang.Override
       public flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData buildPartial() {
         flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData result = new flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData(this);
-        result.interruptible_ = interruptible_;
+        if (interruptibleValueCase_ == 2) {
+          if (interruptibleBuilder_ == null) {
+            result.interruptibleValue_ = interruptibleValue_;
+          } else {
+            result.interruptibleValue_ = interruptibleBuilder_.build();
+          }
+        }
+        result.interruptibleValueCase_ = interruptibleValueCase_;
         onBuilt();
         return result;
       }
@@ -5236,8 +5327,14 @@ public final class NodeExecutionOuterClass {
 
       public Builder mergeFrom(flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData other) {
         if (other == flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData.getDefaultInstance()) return this;
-        if (other.getInterruptible() != false) {
-          setInterruptible(other.getInterruptible());
+        switch (other.getInterruptibleValueCase()) {
+          case INTERRUPTIBLE: {
+            mergeInterruptible(other.getInterruptible());
+            break;
+          }
+          case INTERRUPTIBLEVALUE_NOT_SET: {
+            break;
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5267,31 +5364,156 @@ public final class NodeExecutionOuterClass {
         }
         return this;
       }
-
-      private boolean interruptible_ ;
-      /**
-       * <code>bool interruptible = 1;</code>
-       */
-      public boolean getInterruptible() {
-        return interruptible_;
+      private int interruptibleValueCase_ = 0;
+      private java.lang.Object interruptibleValue_;
+      public InterruptibleValueCase
+          getInterruptibleValueCase() {
+        return InterruptibleValueCase.forNumber(
+            interruptibleValueCase_);
       }
-      /**
-       * <code>bool interruptible = 1;</code>
-       */
-      public Builder setInterruptible(boolean value) {
-        
-        interruptible_ = value;
+
+      public Builder clearInterruptibleValue() {
+        interruptibleValueCase_ = 0;
+        interruptibleValue_ = null;
         onChanged();
         return this;
       }
+
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Primitive, flyteidl.core.Literals.Primitive.Builder, flyteidl.core.Literals.PrimitiveOrBuilder> interruptibleBuilder_;
       /**
-       * <code>bool interruptible = 1;</code>
+       * <code>.flyteidl.core.Primitive interruptible = 2;</code>
+       */
+      public boolean hasInterruptible() {
+        return interruptibleValueCase_ == 2;
+      }
+      /**
+       * <code>.flyteidl.core.Primitive interruptible = 2;</code>
+       */
+      public flyteidl.core.Literals.Primitive getInterruptible() {
+        if (interruptibleBuilder_ == null) {
+          if (interruptibleValueCase_ == 2) {
+            return (flyteidl.core.Literals.Primitive) interruptibleValue_;
+          }
+          return flyteidl.core.Literals.Primitive.getDefaultInstance();
+        } else {
+          if (interruptibleValueCase_ == 2) {
+            return interruptibleBuilder_.getMessage();
+          }
+          return flyteidl.core.Literals.Primitive.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.Primitive interruptible = 2;</code>
+       */
+      public Builder setInterruptible(flyteidl.core.Literals.Primitive value) {
+        if (interruptibleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          interruptibleValue_ = value;
+          onChanged();
+        } else {
+          interruptibleBuilder_.setMessage(value);
+        }
+        interruptibleValueCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Primitive interruptible = 2;</code>
+       */
+      public Builder setInterruptible(
+          flyteidl.core.Literals.Primitive.Builder builderForValue) {
+        if (interruptibleBuilder_ == null) {
+          interruptibleValue_ = builderForValue.build();
+          onChanged();
+        } else {
+          interruptibleBuilder_.setMessage(builderForValue.build());
+        }
+        interruptibleValueCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Primitive interruptible = 2;</code>
+       */
+      public Builder mergeInterruptible(flyteidl.core.Literals.Primitive value) {
+        if (interruptibleBuilder_ == null) {
+          if (interruptibleValueCase_ == 2 &&
+              interruptibleValue_ != flyteidl.core.Literals.Primitive.getDefaultInstance()) {
+            interruptibleValue_ = flyteidl.core.Literals.Primitive.newBuilder((flyteidl.core.Literals.Primitive) interruptibleValue_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            interruptibleValue_ = value;
+          }
+          onChanged();
+        } else {
+          if (interruptibleValueCase_ == 2) {
+            interruptibleBuilder_.mergeFrom(value);
+          }
+          interruptibleBuilder_.setMessage(value);
+        }
+        interruptibleValueCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.Primitive interruptible = 2;</code>
        */
       public Builder clearInterruptible() {
-        
-        interruptible_ = false;
-        onChanged();
+        if (interruptibleBuilder_ == null) {
+          if (interruptibleValueCase_ == 2) {
+            interruptibleValueCase_ = 0;
+            interruptibleValue_ = null;
+            onChanged();
+          }
+        } else {
+          if (interruptibleValueCase_ == 2) {
+            interruptibleValueCase_ = 0;
+            interruptibleValue_ = null;
+          }
+          interruptibleBuilder_.clear();
+        }
         return this;
+      }
+      /**
+       * <code>.flyteidl.core.Primitive interruptible = 2;</code>
+       */
+      public flyteidl.core.Literals.Primitive.Builder getInterruptibleBuilder() {
+        return getInterruptibleFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.core.Primitive interruptible = 2;</code>
+       */
+      public flyteidl.core.Literals.PrimitiveOrBuilder getInterruptibleOrBuilder() {
+        if ((interruptibleValueCase_ == 2) && (interruptibleBuilder_ != null)) {
+          return interruptibleBuilder_.getMessageOrBuilder();
+        } else {
+          if (interruptibleValueCase_ == 2) {
+            return (flyteidl.core.Literals.Primitive) interruptibleValue_;
+          }
+          return flyteidl.core.Literals.Primitive.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.Primitive interruptible = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.Primitive, flyteidl.core.Literals.Primitive.Builder, flyteidl.core.Literals.PrimitiveOrBuilder> 
+          getInterruptibleFieldBuilder() {
+        if (interruptibleBuilder_ == null) {
+          if (!(interruptibleValueCase_ == 2)) {
+            interruptibleValue_ = flyteidl.core.Literals.Primitive.getDefaultInstance();
+          }
+          interruptibleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.Primitive, flyteidl.core.Literals.Primitive.Builder, flyteidl.core.Literals.PrimitiveOrBuilder>(
+                  (flyteidl.core.Literals.Primitive) interruptibleValue_,
+                  getParentForChildren(),
+                  isClean());
+          interruptibleValue_ = null;
+        }
+        interruptibleValueCase_ = 2;
+        onChanged();;
+        return interruptibleBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -10958,48 +11180,51 @@ public final class NodeExecutionOuterClass {
       "\n#flyteidl/admin/node_execution.proto\022\016f" +
       "lyteidl.admin\032\033flyteidl/admin/common.pro" +
       "to\032\035flyteidl/core/execution.proto\032\036flyte" +
-      "idl/core/identifier.proto\032\037google/protob" +
-      "uf/timestamp.proto\032\036google/protobuf/dura" +
-      "tion.proto\"M\n\027NodeExecutionGetRequest\0222\n" +
-      "\002id\030\001 \001(\0132&.flyteidl.core.NodeExecutionI" +
-      "dentifier\"\273\001\n\030NodeExecutionListRequest\022I" +
-      "\n\025workflow_execution_id\030\001 \001(\0132*.flyteidl" +
-      ".core.WorkflowExecutionIdentifier\022\r\n\005lim" +
-      "it\030\002 \001(\r\022\r\n\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t" +
-      "\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin.Sort\"" +
-      "\272\001\n\037NodeExecutionForTaskListRequest\022A\n\021t" +
-      "ask_execution_id\030\001 \001(\0132&.flyteidl.core.T" +
-      "askExecutionIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n" +
-      "\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by" +
-      "\030\005 \001(\0132\024.flyteidl.admin.Sort\"\306\001\n\rNodeExe" +
-      "cution\0222\n\002id\030\001 \001(\0132&.flyteidl.core.NodeE" +
-      "xecutionIdentifier\022\021\n\tinput_uri\030\002 \001(\t\0225\n" +
-      "\007closure\030\003 \001(\0132$.flyteidl.admin.NodeExec" +
-      "utionClosure\0227\n\010metadata\030\004 \001(\0132%.flyteid" +
-      "l.admin.NodeExecutionMetaData\".\n\025NodeExe" +
-      "cutionMetaData\022\025\n\rinterruptible\030\001 \001(\010\"Z\n" +
-      "\021NodeExecutionList\0226\n\017node_executions\030\001 " +
-      "\003(\0132\035.flyteidl.admin.NodeExecution\022\r\n\005to" +
-      "ken\030\002 \001(\t\"\270\003\n\024NodeExecutionClosure\022\024\n\nou" +
-      "tput_uri\030\001 \001(\tH\000\022.\n\005error\030\002 \001(\0132\035.flytei" +
-      "dl.core.ExecutionErrorH\000\0221\n\005phase\030\003 \001(\0162" +
-      "\".flyteidl.core.NodeExecution.Phase\022.\n\ns" +
-      "tarted_at\030\004 \001(\0132\032.google.protobuf.Timest" +
-      "amp\022+\n\010duration\030\005 \001(\0132\031.google.protobuf." +
-      "Duration\022.\n\ncreated_at\030\006 \001(\0132\032.google.pr" +
-      "otobuf.Timestamp\022.\n\nupdated_at\030\007 \001(\0132\032.g" +
-      "oogle.protobuf.Timestamp\022F\n\026workflow_nod" +
-      "e_metadata\030\010 \001(\0132$.flyteidl.admin.Workfl" +
-      "owNodeMetadataH\001B\017\n\routput_resultB\021\n\017tar" +
-      "get_metadata\"W\n\024WorkflowNodeMetadata\022?\n\013" +
-      "executionId\030\001 \001(\0132*.flyteidl.core.Workfl" +
-      "owExecutionIdentifier\"Q\n\033NodeExecutionGe" +
-      "tDataRequest\0222\n\002id\030\001 \001(\0132&.flyteidl.core" +
-      ".NodeExecutionIdentifier\"q\n\034NodeExecutio" +
-      "nGetDataResponse\022\'\n\006inputs\030\001 \001(\0132\027.flyte" +
-      "idl.admin.UrlBlob\022(\n\007outputs\030\002 \001(\0132\027.fly" +
-      "teidl.admin.UrlBlobB3Z1github.com/lyft/f" +
-      "lyteidl/gen/pb-go/flyteidl/adminb\006proto3"
+      "idl/core/identifier.proto\032\034flyteidl/core" +
+      "/literals.proto\032\037google/protobuf/timesta" +
+      "mp.proto\032\036google/protobuf/duration.proto" +
+      "\"M\n\027NodeExecutionGetRequest\0222\n\002id\030\001 \001(\0132" +
+      "&.flyteidl.core.NodeExecutionIdentifier\"" +
+      "\273\001\n\030NodeExecutionListRequest\022I\n\025workflow" +
+      "_execution_id\030\001 \001(\0132*.flyteidl.core.Work" +
+      "flowExecutionIdentifier\022\r\n\005limit\030\002 \001(\r\022\r" +
+      "\n\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_b" +
+      "y\030\005 \001(\0132\024.flyteidl.admin.Sort\"\272\001\n\037NodeEx" +
+      "ecutionForTaskListRequest\022A\n\021task_execut" +
+      "ion_id\030\001 \001(\0132&.flyteidl.core.TaskExecuti" +
+      "onIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030\003 \001" +
+      "(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.f" +
+      "lyteidl.admin.Sort\"\306\001\n\rNodeExecution\0222\n\002" +
+      "id\030\001 \001(\0132&.flyteidl.core.NodeExecutionId" +
+      "entifier\022\021\n\tinput_uri\030\002 \001(\t\0225\n\007closure\030\003" +
+      " \001(\0132$.flyteidl.admin.NodeExecutionClosu" +
+      "re\0227\n\010metadata\030\004 \001(\0132%.flyteidl.admin.No" +
+      "deExecutionMetaData\"g\n\025NodeExecutionMeta" +
+      "Data\0221\n\rinterruptible\030\002 \001(\0132\030.flyteidl.c" +
+      "ore.PrimitiveH\000B\025\n\023interruptible_valueJ\004" +
+      "\010\001\020\002\"Z\n\021NodeExecutionList\0226\n\017node_execut" +
+      "ions\030\001 \003(\0132\035.flyteidl.admin.NodeExecutio" +
+      "n\022\r\n\005token\030\002 \001(\t\"\270\003\n\024NodeExecutionClosur" +
+      "e\022\024\n\noutput_uri\030\001 \001(\tH\000\022.\n\005error\030\002 \001(\0132\035" +
+      ".flyteidl.core.ExecutionErrorH\000\0221\n\005phase" +
+      "\030\003 \001(\0162\".flyteidl.core.NodeExecution.Pha" +
+      "se\022.\n\nstarted_at\030\004 \001(\0132\032.google.protobuf" +
+      ".Timestamp\022+\n\010duration\030\005 \001(\0132\031.google.pr" +
+      "otobuf.Duration\022.\n\ncreated_at\030\006 \001(\0132\032.go" +
+      "ogle.protobuf.Timestamp\022.\n\nupdated_at\030\007 " +
+      "\001(\0132\032.google.protobuf.Timestamp\022F\n\026workf" +
+      "low_node_metadata\030\010 \001(\0132$.flyteidl.admin" +
+      ".WorkflowNodeMetadataH\001B\017\n\routput_result" +
+      "B\021\n\017target_metadata\"W\n\024WorkflowNodeMetad" +
+      "ata\022?\n\013executionId\030\001 \001(\0132*.flyteidl.core" +
+      ".WorkflowExecutionIdentifier\"Q\n\033NodeExec" +
+      "utionGetDataRequest\0222\n\002id\030\001 \001(\0132&.flytei" +
+      "dl.core.NodeExecutionIdentifier\"q\n\034NodeE" +
+      "xecutionGetDataResponse\022\'\n\006inputs\030\001 \001(\0132" +
+      "\027.flyteidl.admin.UrlBlob\022(\n\007outputs\030\002 \001(" +
+      "\0132\027.flyteidl.admin.UrlBlobB3Z1github.com" +
+      "/lyft/flyteidl/gen/pb-go/flyteidl/adminb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -11015,6 +11240,7 @@ public final class NodeExecutionOuterClass {
           flyteidl.admin.Common.getDescriptor(),
           flyteidl.core.Execution.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
+          flyteidl.core.Literals.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
         }, assigner);
@@ -11047,7 +11273,7 @@ public final class NodeExecutionOuterClass {
     internal_static_flyteidl_admin_NodeExecutionMetaData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NodeExecutionMetaData_descriptor,
-        new java.lang.String[] { "Interruptible", });
+        new java.lang.String[] { "Interruptible", "InterruptibleValue", });
     internal_static_flyteidl_admin_NodeExecutionList_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_NodeExecutionList_fieldAccessorTable = new
@@ -11081,6 +11307,7 @@ public final class NodeExecutionOuterClass {
     flyteidl.admin.Common.getDescriptor();
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
+    flyteidl.core.Literals.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
   }

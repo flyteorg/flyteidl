@@ -3546,8 +3546,7 @@
       "type": "object",
       "properties": {
         "interruptible": {
-          "type": "boolean",
-          "format": "boolean"
+          "$ref": "#/definitions/corePrimitive"
         }
       },
       "title": "Represents additional attributes related to a Node Execution"
@@ -4703,9 +4702,7 @@
           "description": "Number of retries per task."
         },
         "interruptible": {
-          "type": "boolean",
-          "format": "boolean",
-          "title": "Identify whether node is interruptible"
+          "$ref": "#/definitions/corePrimitive"
         }
       },
       "description": "Defines extra information about the Node."

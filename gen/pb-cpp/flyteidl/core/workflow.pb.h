@@ -819,6 +819,11 @@ class NodeMetadata final :
   }
   static const NodeMetadata& default_instance();
 
+  enum InterruptibleValueCase {
+    kInterruptible = 6,
+    INTERRUPTIBLE_VALUE_NOT_SET = 0,
+  };
+
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
   static inline const NodeMetadata* internal_default_instance() {
     return reinterpret_cast<const NodeMetadata*>(
@@ -914,22 +919,36 @@ class NodeMetadata final :
   ::flyteidl::core::RetryStrategy* mutable_retries();
   void set_allocated_retries(::flyteidl::core::RetryStrategy* retries);
 
-  // bool interruptible = 6;
+  // .flyteidl.core.Primitive interruptible = 6;
+  bool has_interruptible() const;
   void clear_interruptible();
   static const int kInterruptibleFieldNumber = 6;
-  bool interruptible() const;
-  void set_interruptible(bool value);
+  const ::flyteidl::core::Primitive& interruptible() const;
+  ::flyteidl::core::Primitive* release_interruptible();
+  ::flyteidl::core::Primitive* mutable_interruptible();
+  void set_allocated_interruptible(::flyteidl::core::Primitive* interruptible);
 
+  void clear_interruptible_value();
+  InterruptibleValueCase interruptible_value_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.core.NodeMetadata)
  private:
   class HasBitSetters;
+  void set_has_interruptible();
+
+  inline bool has_interruptible_value() const;
+  inline void clear_has_interruptible_value();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::Duration* timeout_;
   ::flyteidl::core::RetryStrategy* retries_;
-  bool interruptible_;
+  union InterruptibleValueUnion {
+    InterruptibleValueUnion() {}
+    ::flyteidl::core::Primitive* interruptible_;
+  } interruptible_value_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
   friend struct ::TableStruct_flyteidl_2fcore_2fworkflow_2eproto;
 };
 // -------------------------------------------------------------------
@@ -2190,20 +2209,50 @@ inline void NodeMetadata::set_allocated_retries(::flyteidl::core::RetryStrategy*
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.NodeMetadata.retries)
 }
 
-// bool interruptible = 6;
-inline void NodeMetadata::clear_interruptible() {
-  interruptible_ = false;
+// .flyteidl.core.Primitive interruptible = 6;
+inline bool NodeMetadata::has_interruptible() const {
+  return interruptible_value_case() == kInterruptible;
 }
-inline bool NodeMetadata::interruptible() const {
+inline void NodeMetadata::set_has_interruptible() {
+  _oneof_case_[0] = kInterruptible;
+}
+inline ::flyteidl::core::Primitive* NodeMetadata::release_interruptible() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.NodeMetadata.interruptible)
+  if (has_interruptible()) {
+    clear_has_interruptible_value();
+      ::flyteidl::core::Primitive* temp = interruptible_value_.interruptible_;
+    interruptible_value_.interruptible_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::Primitive& NodeMetadata::interruptible() const {
   // @@protoc_insertion_point(field_get:flyteidl.core.NodeMetadata.interruptible)
-  return interruptible_;
+  return has_interruptible()
+      ? *interruptible_value_.interruptible_
+      : *reinterpret_cast< ::flyteidl::core::Primitive*>(&::flyteidl::core::_Primitive_default_instance_);
 }
-inline void NodeMetadata::set_interruptible(bool value) {
-  
-  interruptible_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.core.NodeMetadata.interruptible)
+inline ::flyteidl::core::Primitive* NodeMetadata::mutable_interruptible() {
+  if (!has_interruptible()) {
+    clear_interruptible_value();
+    set_has_interruptible();
+    interruptible_value_.interruptible_ = CreateMaybeMessage< ::flyteidl::core::Primitive >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.NodeMetadata.interruptible)
+  return interruptible_value_.interruptible_;
 }
 
+inline bool NodeMetadata::has_interruptible_value() const {
+  return interruptible_value_case() != INTERRUPTIBLE_VALUE_NOT_SET;
+}
+inline void NodeMetadata::clear_has_interruptible_value() {
+  _oneof_case_[0] = INTERRUPTIBLE_VALUE_NOT_SET;
+}
+inline NodeMetadata::InterruptibleValueCase NodeMetadata::interruptible_value_case() const {
+  return NodeMetadata::InterruptibleValueCase(_oneof_case_[0]);
+}
 // -------------------------------------------------------------------
 
 // Alias

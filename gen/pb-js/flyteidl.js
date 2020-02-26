@@ -1447,7 +1447,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [name] NodeMetadata name
              * @property {google.protobuf.IDuration|null} [timeout] NodeMetadata timeout
              * @property {flyteidl.core.IRetryStrategy|null} [retries] NodeMetadata retries
-             * @property {boolean|null} [interruptible] NodeMetadata interruptible
+             * @property {flyteidl.core.IPrimitive|null} [interruptible] NodeMetadata interruptible
              */
 
             /**
@@ -1491,11 +1491,25 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * NodeMetadata interruptible.
-             * @member {boolean} interruptible
+             * @member {flyteidl.core.IPrimitive|null|undefined} interruptible
              * @memberof flyteidl.core.NodeMetadata
              * @instance
              */
-            NodeMetadata.prototype.interruptible = false;
+            NodeMetadata.prototype.interruptible = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * NodeMetadata interruptibleValue.
+             * @member {"interruptible"|undefined} interruptibleValue
+             * @memberof flyteidl.core.NodeMetadata
+             * @instance
+             */
+            Object.defineProperty(NodeMetadata.prototype, "interruptibleValue", {
+                get: $util.oneOfGetter($oneOfFields = ["interruptible"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
 
             /**
              * Creates a new NodeMetadata instance using the specified properties.
@@ -1528,7 +1542,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.retries != null && message.hasOwnProperty("retries"))
                     $root.flyteidl.core.RetryStrategy.encode(message.retries, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 if (message.interruptible != null && message.hasOwnProperty("interruptible"))
-                    writer.uint32(/* id 6, wireType 0 =*/48).bool(message.interruptible);
+                    $root.flyteidl.core.Primitive.encode(message.interruptible, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 return writer;
             };
 
@@ -1560,7 +1574,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.retries = $root.flyteidl.core.RetryStrategy.decode(reader, reader.uint32());
                         break;
                     case 6:
-                        message.interruptible = reader.bool();
+                        message.interruptible = $root.flyteidl.core.Primitive.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -1581,6 +1595,7 @@ export const flyteidl = $root.flyteidl = (() => {
             NodeMetadata.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                let properties = {};
                 if (message.name != null && message.hasOwnProperty("name"))
                     if (!$util.isString(message.name))
                         return "name: string expected";
@@ -1594,9 +1609,14 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "retries." + error;
                 }
-                if (message.interruptible != null && message.hasOwnProperty("interruptible"))
-                    if (typeof message.interruptible !== "boolean")
-                        return "interruptible: boolean expected";
+                if (message.interruptible != null && message.hasOwnProperty("interruptible")) {
+                    properties.interruptibleValue = 1;
+                    {
+                        let error = $root.flyteidl.core.Primitive.verify(message.interruptible);
+                        if (error)
+                            return "interruptible." + error;
+                    }
+                }
                 return null;
             };
 
@@ -21668,7 +21688,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a NodeExecutionMetaData.
              * @memberof flyteidl.admin
              * @interface INodeExecutionMetaData
-             * @property {boolean|null} [interruptible] NodeExecutionMetaData interruptible
+             * @property {flyteidl.core.IPrimitive|null} [interruptible] NodeExecutionMetaData interruptible
              */
 
             /**
@@ -21688,11 +21708,25 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * NodeExecutionMetaData interruptible.
-             * @member {boolean} interruptible
+             * @member {flyteidl.core.IPrimitive|null|undefined} interruptible
              * @memberof flyteidl.admin.NodeExecutionMetaData
              * @instance
              */
-            NodeExecutionMetaData.prototype.interruptible = false;
+            NodeExecutionMetaData.prototype.interruptible = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * NodeExecutionMetaData interruptibleValue.
+             * @member {"interruptible"|undefined} interruptibleValue
+             * @memberof flyteidl.admin.NodeExecutionMetaData
+             * @instance
+             */
+            Object.defineProperty(NodeExecutionMetaData.prototype, "interruptibleValue", {
+                get: $util.oneOfGetter($oneOfFields = ["interruptible"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
 
             /**
              * Creates a new NodeExecutionMetaData instance using the specified properties.
@@ -21719,7 +21753,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.interruptible != null && message.hasOwnProperty("interruptible"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).bool(message.interruptible);
+                    $root.flyteidl.core.Primitive.encode(message.interruptible, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
 
@@ -21741,8 +21775,8 @@ export const flyteidl = $root.flyteidl = (() => {
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1:
-                        message.interruptible = reader.bool();
+                    case 2:
+                        message.interruptible = $root.flyteidl.core.Primitive.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -21763,9 +21797,15 @@ export const flyteidl = $root.flyteidl = (() => {
             NodeExecutionMetaData.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.interruptible != null && message.hasOwnProperty("interruptible"))
-                    if (typeof message.interruptible !== "boolean")
-                        return "interruptible: boolean expected";
+                let properties = {};
+                if (message.interruptible != null && message.hasOwnProperty("interruptible")) {
+                    properties.interruptibleValue = 1;
+                    {
+                        let error = $root.flyteidl.core.Primitive.verify(message.interruptible);
+                        if (error)
+                            return "interruptible." + error;
+                    }
+                }
                 return null;
             };
 

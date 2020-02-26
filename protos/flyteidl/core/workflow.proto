@@ -75,7 +75,9 @@ message NodeMetadata {
     RetryStrategy retries = 5;
 
     // Identify whether node is interruptible
-    bool interruptible = 6;
+    oneof interruptible_value {
+        Primitive interruptible = 6;
+    };
 }
 
 // Links a variable to an alias.

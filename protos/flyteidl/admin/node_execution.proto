@@ -6,6 +6,7 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 import "flyteidl/admin/common.proto";
 import "flyteidl/core/execution.proto";
 import "flyteidl/core/identifier.proto";
+import "flyteidl/core/literals.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
 
@@ -79,7 +80,13 @@ message NodeExecution {
 
 // Represents additional attributes related to a Node Execution
 message NodeExecutionMetaData {
-    bool interruptible = 1;
+    // This field is deprecated
+    reserved 1;
+
+    // Identify whether node is interruptible
+    oneof interruptible_value {
+        core.Primitive interruptible = 2;
+    };
 }
 
 // Request structure to retrieve a list of node execution entities.

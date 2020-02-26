@@ -604,7 +604,7 @@ export namespace flyteidl {
             retries?: (flyteidl.core.IRetryStrategy|null);
 
             /** NodeMetadata interruptible */
-            interruptible?: (boolean|null);
+            interruptible?: (flyteidl.core.IPrimitive|null);
         }
 
         /** Represents a NodeMetadata. */
@@ -626,7 +626,10 @@ export namespace flyteidl {
             public retries?: (flyteidl.core.IRetryStrategy|null);
 
             /** NodeMetadata interruptible. */
-            public interruptible: boolean;
+            public interruptible?: (flyteidl.core.IPrimitive|null);
+
+            /** NodeMetadata interruptibleValue. */
+            public interruptibleValue?: "interruptible";
 
             /**
              * Creates a new NodeMetadata instance using the specified properties.
@@ -9077,7 +9080,7 @@ export namespace flyteidl {
         interface INodeExecutionMetaData {
 
             /** NodeExecutionMetaData interruptible */
-            interruptible?: (boolean|null);
+            interruptible?: (flyteidl.core.IPrimitive|null);
         }
 
         /** Represents a NodeExecutionMetaData. */
@@ -9090,7 +9093,10 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.admin.INodeExecutionMetaData);
 
             /** NodeExecutionMetaData interruptible. */
-            public interruptible: boolean;
+            public interruptible?: (flyteidl.core.IPrimitive|null);
+
+            /** NodeExecutionMetaData interruptibleValue. */
+            public interruptibleValue?: "interruptible";
 
             /**
              * Creates a new NodeExecutionMetaData instance using the specified properties.

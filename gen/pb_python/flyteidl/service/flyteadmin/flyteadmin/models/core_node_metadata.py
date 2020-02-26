@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.core_primitive import CorePrimitive  # noqa: F401,E501
 from flyteadmin.models.core_retry_strategy import CoreRetryStrategy  # noqa: F401,E501
 
 
@@ -36,7 +37,7 @@ class CoreNodeMetadata(object):
         'name': 'str',
         'timeout': 'str',
         'retries': 'CoreRetryStrategy',
-        'interruptible': 'bool'
+        'interruptible': 'CorePrimitive'
     }
 
     attribute_map = {
@@ -137,7 +138,7 @@ class CoreNodeMetadata(object):
 
 
         :return: The interruptible of this CoreNodeMetadata.  # noqa: E501
-        :rtype: bool
+        :rtype: CorePrimitive
         """
         return self._interruptible
 
@@ -147,7 +148,7 @@ class CoreNodeMetadata(object):
 
 
         :param interruptible: The interruptible of this CoreNodeMetadata.  # noqa: E501
-        :type: bool
+        :type: CorePrimitive
         """
 
         self._interruptible = interruptible
