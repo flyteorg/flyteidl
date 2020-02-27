@@ -3375,6 +3375,9 @@ export namespace flyteidl {
 
             /** TaskMetadata deprecatedErrorMessage */
             deprecatedErrorMessage?: (string|null);
+
+            /** TaskMetadata interruptible */
+            interruptible?: (boolean|null);
         }
 
         /** Represents a TaskMetadata. */
@@ -3403,6 +3406,12 @@ export namespace flyteidl {
 
             /** TaskMetadata deprecatedErrorMessage. */
             public deprecatedErrorMessage: string;
+
+            /** TaskMetadata interruptible. */
+            public interruptible: boolean;
+
+            /** TaskMetadata interruptibleValue. */
+            public interruptibleValue?: "interruptible";
 
             /**
              * Creates a new TaskMetadata instance using the specified properties.
@@ -6935,9 +6944,6 @@ export namespace flyteidl {
 
             /** ExecutionMetadata referenceExecution */
             referenceExecution?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
-
-            /** ExecutionMetadata interruptible */
-            interruptible?: (boolean|null);
         }
 
         /** Represents an ExecutionMetadata. */
@@ -6966,9 +6972,6 @@ export namespace flyteidl {
 
             /** ExecutionMetadata referenceExecution. */
             public referenceExecution?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
-
-            /** ExecutionMetadata interruptible. */
-            public interruptible: boolean;
 
             /**
              * Creates a new ExecutionMetadata instance using the specified properties.
@@ -9078,9 +9081,6 @@ export namespace flyteidl {
 
         /** Properties of a NodeExecutionMetaData. */
         interface INodeExecutionMetaData {
-
-            /** NodeExecutionMetaData interruptible */
-            interruptible?: (boolean|null);
         }
 
         /** Represents a NodeExecutionMetaData. */
@@ -9091,12 +9091,6 @@ export namespace flyteidl {
              * @param [properties] Properties to set
              */
             constructor(properties?: flyteidl.admin.INodeExecutionMetaData);
-
-            /** NodeExecutionMetaData interruptible. */
-            public interruptible: boolean;
-
-            /** NodeExecutionMetaData interruptibleValue. */
-            public interruptibleValue?: "interruptible";
 
             /**
              * Creates a new NodeExecutionMetaData instance using the specified properties.

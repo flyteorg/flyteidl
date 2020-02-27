@@ -409,13 +409,6 @@ func (m *NodeExecutionMetaData) Validate() error {
 		return nil
 	}
 
-	switch m.InterruptibleValue.(type) {
-
-	case *NodeExecutionMetaData_Interruptible:
-		// no validation rules for Interruptible
-
-	}
-
 	return nil
 }
 

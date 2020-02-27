@@ -4866,13 +4866,6 @@ public final class NodeExecutionOuterClass {
   public interface NodeExecutionMetaDataOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.admin.NodeExecutionMetaData)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>bool interruptible = 1;</code>
-     */
-    boolean getInterruptible();
-
-    public flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData.InterruptibleValueCase getInterruptibleValueCase();
   }
   /**
    * <pre>
@@ -4906,7 +4899,6 @@ public final class NodeExecutionOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -4917,11 +4909,6 @@ public final class NodeExecutionOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-              interruptibleValueCase_ = 1;
-              interruptibleValue_ = input.readBool();
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -4954,53 +4941,6 @@ public final class NodeExecutionOuterClass {
               flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData.class, flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData.Builder.class);
     }
 
-    private int interruptibleValueCase_ = 0;
-    private java.lang.Object interruptibleValue_;
-    public enum InterruptibleValueCase
-        implements com.google.protobuf.Internal.EnumLite {
-      INTERRUPTIBLE(1),
-      INTERRUPTIBLEVALUE_NOT_SET(0);
-      private final int value;
-      private InterruptibleValueCase(int value) {
-        this.value = value;
-      }
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static InterruptibleValueCase valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static InterruptibleValueCase forNumber(int value) {
-        switch (value) {
-          case 1: return INTERRUPTIBLE;
-          case 0: return INTERRUPTIBLEVALUE_NOT_SET;
-          default: return null;
-        }
-      }
-      public int getNumber() {
-        return this.value;
-      }
-    };
-
-    public InterruptibleValueCase
-    getInterruptibleValueCase() {
-      return InterruptibleValueCase.forNumber(
-          interruptibleValueCase_);
-    }
-
-    public static final int INTERRUPTIBLE_FIELD_NUMBER = 1;
-    /**
-     * <code>bool interruptible = 1;</code>
-     */
-    public boolean getInterruptible() {
-      if (interruptibleValueCase_ == 1) {
-        return (java.lang.Boolean) interruptibleValue_;
-      }
-      return false;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5015,10 +4955,6 @@ public final class NodeExecutionOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (interruptibleValueCase_ == 1) {
-        output.writeBool(
-            1, (boolean)((java.lang.Boolean) interruptibleValue_));
-      }
       unknownFields.writeTo(output);
     }
 
@@ -5028,11 +4964,6 @@ public final class NodeExecutionOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (interruptibleValueCase_ == 1) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(
-              1, (boolean)((java.lang.Boolean) interruptibleValue_));
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5048,15 +4979,6 @@ public final class NodeExecutionOuterClass {
       }
       flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData other = (flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData) obj;
 
-      if (!getInterruptibleValueCase().equals(other.getInterruptibleValueCase())) return false;
-      switch (interruptibleValueCase_) {
-        case 1:
-          if (getInterruptible()
-              != other.getInterruptible()) return false;
-          break;
-        case 0:
-        default:
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5068,15 +4990,6 @@ public final class NodeExecutionOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      switch (interruptibleValueCase_) {
-        case 1:
-          hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
-          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-              getInterruptible());
-          break;
-        case 0:
-        default:
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5214,8 +5127,6 @@ public final class NodeExecutionOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        interruptibleValueCase_ = 0;
-        interruptibleValue_ = null;
         return this;
       }
 
@@ -5242,10 +5153,6 @@ public final class NodeExecutionOuterClass {
       @java.lang.Override
       public flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData buildPartial() {
         flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData result = new flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData(this);
-        if (interruptibleValueCase_ == 1) {
-          result.interruptibleValue_ = interruptibleValue_;
-        }
-        result.interruptibleValueCase_ = interruptibleValueCase_;
         onBuilt();
         return result;
       }
@@ -5294,15 +5201,6 @@ public final class NodeExecutionOuterClass {
 
       public Builder mergeFrom(flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData other) {
         if (other == flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData.getDefaultInstance()) return this;
-        switch (other.getInterruptibleValueCase()) {
-          case INTERRUPTIBLE: {
-            setInterruptible(other.getInterruptible());
-            break;
-          }
-          case INTERRUPTIBLEVALUE_NOT_SET: {
-            break;
-          }
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -5328,51 +5226,6 @@ public final class NodeExecutionOuterClass {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
-        }
-        return this;
-      }
-      private int interruptibleValueCase_ = 0;
-      private java.lang.Object interruptibleValue_;
-      public InterruptibleValueCase
-          getInterruptibleValueCase() {
-        return InterruptibleValueCase.forNumber(
-            interruptibleValueCase_);
-      }
-
-      public Builder clearInterruptibleValue() {
-        interruptibleValueCase_ = 0;
-        interruptibleValue_ = null;
-        onChanged();
-        return this;
-      }
-
-
-      /**
-       * <code>bool interruptible = 1;</code>
-       */
-      public boolean getInterruptible() {
-        if (interruptibleValueCase_ == 1) {
-          return (java.lang.Boolean) interruptibleValue_;
-        }
-        return false;
-      }
-      /**
-       * <code>bool interruptible = 1;</code>
-       */
-      public Builder setInterruptible(boolean value) {
-        interruptibleValueCase_ = 1;
-        interruptibleValue_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool interruptible = 1;</code>
-       */
-      public Builder clearInterruptible() {
-        if (interruptibleValueCase_ == 1) {
-          interruptibleValueCase_ = 0;
-          interruptibleValue_ = null;
-          onChanged();
         }
         return this;
       }
@@ -11059,31 +10912,30 @@ public final class NodeExecutionOuterClass {
       "xecutionIdentifier\022\021\n\tinput_uri\030\002 \001(\t\0225\n" +
       "\007closure\030\003 \001(\0132$.flyteidl.admin.NodeExec" +
       "utionClosure\0227\n\010metadata\030\004 \001(\0132%.flyteid" +
-      "l.admin.NodeExecutionMetaData\"G\n\025NodeExe" +
-      "cutionMetaData\022\027\n\rinterruptible\030\001 \001(\010H\000B" +
-      "\025\n\023interruptible_value\"Z\n\021NodeExecutionL" +
-      "ist\0226\n\017node_executions\030\001 \003(\0132\035.flyteidl." +
-      "admin.NodeExecution\022\r\n\005token\030\002 \001(\t\"\270\003\n\024N" +
-      "odeExecutionClosure\022\024\n\noutput_uri\030\001 \001(\tH" +
-      "\000\022.\n\005error\030\002 \001(\0132\035.flyteidl.core.Executi" +
-      "onErrorH\000\0221\n\005phase\030\003 \001(\0162\".flyteidl.core" +
-      ".NodeExecution.Phase\022.\n\nstarted_at\030\004 \001(\013" +
-      "2\032.google.protobuf.Timestamp\022+\n\010duration" +
-      "\030\005 \001(\0132\031.google.protobuf.Duration\022.\n\ncre" +
-      "ated_at\030\006 \001(\0132\032.google.protobuf.Timestam" +
-      "p\022.\n\nupdated_at\030\007 \001(\0132\032.google.protobuf." +
-      "Timestamp\022F\n\026workflow_node_metadata\030\010 \001(" +
-      "\0132$.flyteidl.admin.WorkflowNodeMetadataH" +
-      "\001B\017\n\routput_resultB\021\n\017target_metadata\"W\n" +
-      "\024WorkflowNodeMetadata\022?\n\013executionId\030\001 \001" +
-      "(\0132*.flyteidl.core.WorkflowExecutionIden" +
-      "tifier\"Q\n\033NodeExecutionGetDataRequest\0222\n" +
-      "\002id\030\001 \001(\0132&.flyteidl.core.NodeExecutionI" +
-      "dentifier\"q\n\034NodeExecutionGetDataRespons" +
-      "e\022\'\n\006inputs\030\001 \001(\0132\027.flyteidl.admin.UrlBl" +
-      "ob\022(\n\007outputs\030\002 \001(\0132\027.flyteidl.admin.Url" +
-      "BlobB3Z1github.com/lyft/flyteidl/gen/pb-" +
-      "go/flyteidl/adminb\006proto3"
+      "l.admin.NodeExecutionMetaData\"\027\n\025NodeExe" +
+      "cutionMetaData\"Z\n\021NodeExecutionList\0226\n\017n" +
+      "ode_executions\030\001 \003(\0132\035.flyteidl.admin.No" +
+      "deExecution\022\r\n\005token\030\002 \001(\t\"\270\003\n\024NodeExecu" +
+      "tionClosure\022\024\n\noutput_uri\030\001 \001(\tH\000\022.\n\005err" +
+      "or\030\002 \001(\0132\035.flyteidl.core.ExecutionErrorH" +
+      "\000\0221\n\005phase\030\003 \001(\0162\".flyteidl.core.NodeExe" +
+      "cution.Phase\022.\n\nstarted_at\030\004 \001(\0132\032.googl" +
+      "e.protobuf.Timestamp\022+\n\010duration\030\005 \001(\0132\031" +
+      ".google.protobuf.Duration\022.\n\ncreated_at\030" +
+      "\006 \001(\0132\032.google.protobuf.Timestamp\022.\n\nupd" +
+      "ated_at\030\007 \001(\0132\032.google.protobuf.Timestam" +
+      "p\022F\n\026workflow_node_metadata\030\010 \001(\0132$.flyt" +
+      "eidl.admin.WorkflowNodeMetadataH\001B\017\n\rout" +
+      "put_resultB\021\n\017target_metadata\"W\n\024Workflo" +
+      "wNodeMetadata\022?\n\013executionId\030\001 \001(\0132*.fly" +
+      "teidl.core.WorkflowExecutionIdentifier\"Q" +
+      "\n\033NodeExecutionGetDataRequest\0222\n\002id\030\001 \001(" +
+      "\0132&.flyteidl.core.NodeExecutionIdentifie" +
+      "r\"q\n\034NodeExecutionGetDataResponse\022\'\n\006inp" +
+      "uts\030\001 \001(\0132\027.flyteidl.admin.UrlBlob\022(\n\007ou" +
+      "tputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlobB3Z1" +
+      "github.com/lyft/flyteidl/gen/pb-go/flyte" +
+      "idl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -11131,7 +10983,7 @@ public final class NodeExecutionOuterClass {
     internal_static_flyteidl_admin_NodeExecutionMetaData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NodeExecutionMetaData_descriptor,
-        new java.lang.String[] { "Interruptible", "InterruptibleValue", });
+        new java.lang.String[] { });
     internal_static_flyteidl_admin_NodeExecutionList_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_NodeExecutionList_fieldAccessorTable = new

@@ -727,11 +727,6 @@ class NodeExecutionMetaData final :
   }
   static const NodeExecutionMetaData& default_instance();
 
-  enum InterruptibleValueCase {
-    kInterruptible = 1,
-    INTERRUPTIBLE_VALUE_NOT_SET = 0,
-  };
-
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
   static inline const NodeExecutionMetaData* internal_default_instance() {
     return reinterpret_cast<const NodeExecutionMetaData*>(
@@ -795,33 +790,12 @@ class NodeExecutionMetaData final :
 
   // accessors -------------------------------------------------------
 
-  // bool interruptible = 1;
-  private:
-  bool has_interruptible() const;
-  public:
-  void clear_interruptible();
-  static const int kInterruptibleFieldNumber = 1;
-  bool interruptible() const;
-  void set_interruptible(bool value);
-
-  void clear_interruptible_value();
-  InterruptibleValueCase interruptible_value_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.admin.NodeExecutionMetaData)
  private:
   class HasBitSetters;
-  void set_has_interruptible();
-
-  inline bool has_interruptible_value() const;
-  inline void clear_has_interruptible_value();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  union InterruptibleValueUnion {
-    InterruptibleValueUnion() {}
-    bool interruptible_;
-  } interruptible_value_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  ::google::protobuf::uint32 _oneof_case_[1];
-
   friend struct ::TableStruct_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
 };
 // -------------------------------------------------------------------
@@ -2226,44 +2200,6 @@ inline void NodeExecution::set_allocated_metadata(::flyteidl::admin::NodeExecuti
 
 // NodeExecutionMetaData
 
-// bool interruptible = 1;
-inline bool NodeExecutionMetaData::has_interruptible() const {
-  return interruptible_value_case() == kInterruptible;
-}
-inline void NodeExecutionMetaData::set_has_interruptible() {
-  _oneof_case_[0] = kInterruptible;
-}
-inline void NodeExecutionMetaData::clear_interruptible() {
-  if (has_interruptible()) {
-    interruptible_value_.interruptible_ = false;
-    clear_has_interruptible_value();
-  }
-}
-inline bool NodeExecutionMetaData::interruptible() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.NodeExecutionMetaData.interruptible)
-  if (has_interruptible()) {
-    return interruptible_value_.interruptible_;
-  }
-  return false;
-}
-inline void NodeExecutionMetaData::set_interruptible(bool value) {
-  if (!has_interruptible()) {
-    clear_interruptible_value();
-    set_has_interruptible();
-  }
-  interruptible_value_.interruptible_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.admin.NodeExecutionMetaData.interruptible)
-}
-
-inline bool NodeExecutionMetaData::has_interruptible_value() const {
-  return interruptible_value_case() != INTERRUPTIBLE_VALUE_NOT_SET;
-}
-inline void NodeExecutionMetaData::clear_has_interruptible_value() {
-  _oneof_case_[0] = INTERRUPTIBLE_VALUE_NOT_SET;
-}
-inline NodeExecutionMetaData::InterruptibleValueCase NodeExecutionMetaData::interruptible_value_case() const {
-  return NodeExecutionMetaData::InterruptibleValueCase(_oneof_case_[0]);
-}
 // -------------------------------------------------------------------
 
 // NodeExecutionList
