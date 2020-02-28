@@ -334,15 +334,14 @@ branch_node
   
 
 
-.. _api_msg_flyteidl.core.WorkflowMetadata:
+.. _api_msg_flyteidl.core.WorkflowMetadataDefaults:
 
-flyteidl.core.WorkflowMetadata
-------------------------------
+flyteidl.core.WorkflowMetadataDefaults
+--------------------------------------
 
-`[flyteidl.core.WorkflowMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L130>`_
+`[flyteidl.core.WorkflowMetadataDefaults proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L129>`_
 
-Metadata for the entire workflow.
-To be used in the future.
+Default Workflow Metadata for the entire workflow.
 
 .. code-block:: json
 
@@ -350,7 +349,7 @@ To be used in the future.
     "interruptible": "..."
   }
 
-.. _api_field_flyteidl.core.WorkflowMetadata.interruptible:
+.. _api_field_flyteidl.core.WorkflowMetadataDefaults.interruptible:
 
 interruptible
   (`bool <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Identify whether workflow is interruptible.
@@ -365,7 +364,7 @@ interruptible
 flyteidl.core.WorkflowTemplate
 ------------------------------
 
-`[flyteidl.core.WorkflowTemplate proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L139>`_
+`[flyteidl.core.WorkflowTemplate proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L138>`_
 
 Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,
 directed acyclic graph.
@@ -374,7 +373,7 @@ directed acyclic graph.
 
   {
     "id": "{...}",
-    "metadata": "{...}",
+    "metadata_defaults": "{...}",
     "interface": "{...}",
     "nodes": [],
     "outputs": [],
@@ -387,10 +386,10 @@ id
   (:ref:`flyteidl.core.Identifier <api_msg_flyteidl.core.Identifier>`) A globally unique identifier for the workflow.
   
   
-.. _api_field_flyteidl.core.WorkflowTemplate.metadata:
+.. _api_field_flyteidl.core.WorkflowTemplate.metadata_defaults:
 
-metadata
-  (:ref:`flyteidl.core.WorkflowMetadata <api_msg_flyteidl.core.WorkflowMetadata>`) Extra metadata about the workflow.
+metadata_defaults
+  (:ref:`flyteidl.core.WorkflowMetadataDefaults <api_msg_flyteidl.core.WorkflowMetadataDefaults>`) Extra metadata about the workflow.
   
   
 .. _api_field_flyteidl.core.WorkflowTemplate.interface:

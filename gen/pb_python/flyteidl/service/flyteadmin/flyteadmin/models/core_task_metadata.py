@@ -39,8 +39,7 @@ class CoreTaskMetadata(object):
         'timeout': 'str',
         'retries': 'CoreRetryStrategy',
         'discovery_version': 'str',
-        'deprecated_error_message': 'str',
-        'interruptible': 'bool'
+        'deprecated_error_message': 'str'
     }
 
     attribute_map = {
@@ -49,11 +48,10 @@ class CoreTaskMetadata(object):
         'timeout': 'timeout',
         'retries': 'retries',
         'discovery_version': 'discovery_version',
-        'deprecated_error_message': 'deprecated_error_message',
-        'interruptible': 'interruptible'
+        'deprecated_error_message': 'deprecated_error_message'
     }
 
-    def __init__(self, discoverable=None, runtime=None, timeout=None, retries=None, discovery_version=None, deprecated_error_message=None, interruptible=None):  # noqa: E501
+    def __init__(self, discoverable=None, runtime=None, timeout=None, retries=None, discovery_version=None, deprecated_error_message=None):  # noqa: E501
         """CoreTaskMetadata - a model defined in Swagger"""  # noqa: E501
 
         self._discoverable = None
@@ -62,7 +60,6 @@ class CoreTaskMetadata(object):
         self._retries = None
         self._discovery_version = None
         self._deprecated_error_message = None
-        self._interruptible = None
         self.discriminator = None
 
         if discoverable is not None:
@@ -77,8 +74,6 @@ class CoreTaskMetadata(object):
             self.discovery_version = discovery_version
         if deprecated_error_message is not None:
             self.deprecated_error_message = deprecated_error_message
-        if interruptible is not None:
-            self.interruptible = interruptible
 
     @property
     def discoverable(self):
@@ -217,27 +212,6 @@ class CoreTaskMetadata(object):
         """
 
         self._deprecated_error_message = deprecated_error_message
-
-    @property
-    def interruptible(self):
-        """Gets the interruptible of this CoreTaskMetadata.  # noqa: E501
-
-
-        :return: The interruptible of this CoreTaskMetadata.  # noqa: E501
-        :rtype: bool
-        """
-        return self._interruptible
-
-    @interruptible.setter
-    def interruptible(self, interruptible):
-        """Sets the interruptible of this CoreTaskMetadata.
-
-
-        :param interruptible: The interruptible of this CoreTaskMetadata.  # noqa: E501
-        :type: bool
-        """
-
-        self._interruptible = interruptible
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -819,52 +819,52 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a WorkflowMetadata. */
-        interface IWorkflowMetadata {
+        /** Properties of a WorkflowMetadataDefaults. */
+        interface IWorkflowMetadataDefaults {
 
-            /** WorkflowMetadata interruptible */
+            /** WorkflowMetadataDefaults interruptible */
             interruptible?: (boolean|null);
         }
 
-        /** Represents a WorkflowMetadata. */
-        class WorkflowMetadata implements IWorkflowMetadata {
+        /** Represents a WorkflowMetadataDefaults. */
+        class WorkflowMetadataDefaults implements IWorkflowMetadataDefaults {
 
             /**
-             * Constructs a new WorkflowMetadata.
+             * Constructs a new WorkflowMetadataDefaults.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.core.IWorkflowMetadata);
+            constructor(properties?: flyteidl.core.IWorkflowMetadataDefaults);
 
-            /** WorkflowMetadata interruptible. */
+            /** WorkflowMetadataDefaults interruptible. */
             public interruptible: boolean;
 
             /**
-             * Creates a new WorkflowMetadata instance using the specified properties.
+             * Creates a new WorkflowMetadataDefaults instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns WorkflowMetadata instance
+             * @returns WorkflowMetadataDefaults instance
              */
-            public static create(properties?: flyteidl.core.IWorkflowMetadata): flyteidl.core.WorkflowMetadata;
+            public static create(properties?: flyteidl.core.IWorkflowMetadataDefaults): flyteidl.core.WorkflowMetadataDefaults;
 
             /**
-             * Encodes the specified WorkflowMetadata message. Does not implicitly {@link flyteidl.core.WorkflowMetadata.verify|verify} messages.
-             * @param message WorkflowMetadata message or plain object to encode
+             * Encodes the specified WorkflowMetadataDefaults message. Does not implicitly {@link flyteidl.core.WorkflowMetadataDefaults.verify|verify} messages.
+             * @param message WorkflowMetadataDefaults message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.core.IWorkflowMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.core.IWorkflowMetadataDefaults, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a WorkflowMetadata message from the specified reader or buffer.
+             * Decodes a WorkflowMetadataDefaults message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns WorkflowMetadata
+             * @returns WorkflowMetadataDefaults
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.WorkflowMetadata;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.WorkflowMetadataDefaults;
 
             /**
-             * Verifies a WorkflowMetadata message.
+             * Verifies a WorkflowMetadataDefaults message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -877,8 +877,8 @@ export namespace flyteidl {
             /** WorkflowTemplate id */
             id?: (flyteidl.core.IIdentifier|null);
 
-            /** WorkflowTemplate metadata */
-            metadata?: (flyteidl.core.IWorkflowMetadata|null);
+            /** WorkflowTemplate metadataDefaults */
+            metadataDefaults?: (flyteidl.core.IWorkflowMetadataDefaults|null);
 
             /** WorkflowTemplate interface */
             "interface"?: (flyteidl.core.ITypedInterface|null);
@@ -905,8 +905,8 @@ export namespace flyteidl {
             /** WorkflowTemplate id. */
             public id?: (flyteidl.core.IIdentifier|null);
 
-            /** WorkflowTemplate metadata. */
-            public metadata?: (flyteidl.core.IWorkflowMetadata|null);
+            /** WorkflowTemplate metadataDefaults. */
+            public metadataDefaults?: (flyteidl.core.IWorkflowMetadataDefaults|null);
 
             /** WorkflowTemplate interface. */
             public interface?: (flyteidl.core.ITypedInterface|null);
@@ -3375,9 +3375,6 @@ export namespace flyteidl {
 
             /** TaskMetadata deprecatedErrorMessage */
             deprecatedErrorMessage?: (string|null);
-
-            /** TaskMetadata interruptible */
-            interruptible?: (boolean|null);
         }
 
         /** Represents a TaskMetadata. */
@@ -3406,12 +3403,6 @@ export namespace flyteidl {
 
             /** TaskMetadata deprecatedErrorMessage. */
             public deprecatedErrorMessage: string;
-
-            /** TaskMetadata interruptible. */
-            public interruptible: boolean;
-
-            /** TaskMetadata interruptibleValue. */
-            public interruptibleValue?: "interruptible";
 
             /**
              * Creates a new TaskMetadata instance using the specified properties.

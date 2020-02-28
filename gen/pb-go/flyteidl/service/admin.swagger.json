@@ -4975,10 +4975,6 @@
         "deprecated_error_message": {
           "type": "string",
           "description": "If set, this indicates that this task is deprecated.  This will enable owners of tasks to notify consumers\nof the ending of support for a given task."
-        },
-        "interruptible": {
-          "type": "boolean",
-          "format": "boolean"
         }
       },
       "title": "Task Metadata"
@@ -5098,7 +5094,7 @@
       ],
       "default": "UNDEFINED"
     },
-    "coreWorkflowMetadata": {
+    "coreWorkflowMetadataDefaults": {
       "type": "object",
       "properties": {
         "interruptible": {
@@ -5107,7 +5103,7 @@
           "description": "Identify whether workflow is interruptible.\nThe value set at the workflow level will be the defualt value used for nodes\nunless explicitly set at the node level."
         }
       },
-      "description": "Metadata for the entire workflow.\nTo be used in the future."
+      "description": "Default Workflow Metadata for the entire workflow."
     },
     "coreWorkflowNode": {
       "type": "object",
@@ -5130,8 +5126,8 @@
           "$ref": "#/definitions/coreIdentifier",
           "description": "A globally unique identifier for the workflow."
         },
-        "metadata": {
-          "$ref": "#/definitions/coreWorkflowMetadata",
+        "metadata_defaults": {
+          "$ref": "#/definitions/coreWorkflowMetadataDefaults",
           "description": "Extra metadata about the workflow."
         },
         "interface": {

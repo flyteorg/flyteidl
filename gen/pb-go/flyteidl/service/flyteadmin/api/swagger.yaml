@@ -5156,7 +5156,6 @@ definitions:
                 version: "version"
               discovery_version: "discovery_version"
               deprecated_error_message: "deprecated_error_message"
-              interruptible: true
               timeout: "timeout"
             custom:
               fields:
@@ -5288,7 +5287,6 @@ definitions:
               version: "version"
             discovery_version: "discovery_version"
             deprecated_error_message: "deprecated_error_message"
-            interruptible: true
             timeout: "timeout"
           custom:
             fields:
@@ -5654,7 +5652,6 @@ definitions:
                   version: "version"
                 discovery_version: "discovery_version"
                 deprecated_error_message: "deprecated_error_message"
-                interruptible: true
                 timeout: "timeout"
               custom:
                 fields:
@@ -5779,7 +5776,6 @@ definitions:
                   version: "version"
                 discovery_version: "discovery_version"
                 deprecated_error_message: "deprecated_error_message"
-                interruptible: true
                 timeout: "timeout"
               custom:
                 fields:
@@ -6038,8 +6034,6 @@ definitions:
                     - null
                   map:
                     bindings: {}
-              metadata:
-                interruptible: true
               failure_node:
                 branch_node:
                   if_else:
@@ -6684,6 +6678,8 @@ definitions:
                     name: "name"
                     project: "project"
                     version: "version"
+              metadata_defaults:
+                interruptible: true
               id:
                 domain: "domain"
                 resource_type: {}
@@ -6858,8 +6854,6 @@ definitions:
                     - null
                   map:
                     bindings: {}
-              metadata:
-                interruptible: true
               failure_node:
                 branch_node:
                   if_else:
@@ -7504,6 +7498,8 @@ definitions:
                     name: "name"
                     project: "project"
                     version: "version"
+              metadata_defaults:
+                interruptible: true
               id:
                 domain: "domain"
                 resource_type: {}
@@ -7618,7 +7614,6 @@ definitions:
                   version: "version"
                 discovery_version: "discovery_version"
                 deprecated_error_message: "deprecated_error_message"
-                interruptible: true
                 timeout: "timeout"
               custom:
                 fields:
@@ -7734,7 +7729,6 @@ definitions:
                   version: "version"
                 discovery_version: "discovery_version"
                 deprecated_error_message: "deprecated_error_message"
-                interruptible: true
                 timeout: "timeout"
               custom:
                 fields:
@@ -7912,8 +7906,6 @@ definitions:
                     - null
                   map:
                     bindings: {}
-              metadata:
-                interruptible: true
               failure_node:
                 branch_node:
                   if_else:
@@ -8558,6 +8550,8 @@ definitions:
                     name: "name"
                     project: "project"
                     version: "version"
+              metadata_defaults:
+                interruptible: true
               id:
                 domain: "domain"
                 resource_type: {}
@@ -8845,8 +8839,6 @@ definitions:
                   - null
                 map:
                   bindings: {}
-            metadata:
-              interruptible: true
             failure_node:
               branch_node:
                 if_else:
@@ -9491,6 +9483,8 @@ definitions:
                   name: "name"
                   project: "project"
                   version: "version"
+            metadata_defaults:
+              interruptible: true
             id:
               domain: "domain"
               resource_type: {}
@@ -9665,8 +9659,6 @@ definitions:
                   - null
                 map:
                   bindings: {}
-            metadata:
-              interruptible: true
             failure_node:
               branch_node:
                 if_else:
@@ -10311,6 +10303,8 @@ definitions:
                   name: "name"
                   project: "project"
                   version: "version"
+            metadata_defaults:
+              interruptible: true
             id:
               domain: "domain"
               resource_type: {}
@@ -10425,7 +10419,6 @@ definitions:
                 version: "version"
               discovery_version: "discovery_version"
               deprecated_error_message: "deprecated_error_message"
-              interruptible: true
               timeout: "timeout"
             custom:
               fields:
@@ -10541,7 +10534,6 @@ definitions:
                 version: "version"
               discovery_version: "discovery_version"
               deprecated_error_message: "deprecated_error_message"
-              interruptible: true
               timeout: "timeout"
             custom:
               fields:
@@ -10719,8 +10711,6 @@ definitions:
                   - null
                 map:
                   bindings: {}
-            metadata:
-              interruptible: true
             failure_node:
               branch_node:
                 if_else:
@@ -11365,6 +11355,8 @@ definitions:
                   name: "name"
                   project: "project"
                   version: "version"
+            metadata_defaults:
+              interruptible: true
             id:
               domain: "domain"
               resource_type: {}
@@ -11608,8 +11600,6 @@ definitions:
                       - null
                     map:
                       bindings: {}
-                metadata:
-                  interruptible: true
                 failure_node:
                   branch_node:
                     if_else:
@@ -12254,6 +12244,8 @@ definitions:
                       name: "name"
                       project: "project"
                       version: "version"
+                metadata_defaults:
+                  interruptible: true
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -12428,8 +12420,6 @@ definitions:
                       - null
                     map:
                       bindings: {}
-                metadata:
-                  interruptible: true
                 failure_node:
                   branch_node:
                     if_else:
@@ -13074,6 +13064,8 @@ definitions:
                       name: "name"
                       project: "project"
                       version: "version"
+                metadata_defaults:
+                  interruptible: true
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -13188,7 +13180,6 @@ definitions:
                     version: "version"
                   discovery_version: "discovery_version"
                   deprecated_error_message: "deprecated_error_message"
-                  interruptible: true
                   timeout: "timeout"
                 custom:
                   fields:
@@ -13304,7 +13295,6 @@ definitions:
                     version: "version"
                   discovery_version: "discovery_version"
                   deprecated_error_message: "deprecated_error_message"
-                  interruptible: true
                   timeout: "timeout"
                 custom:
                   fields:
@@ -13482,8 +13472,6 @@ definitions:
                       - null
                     map:
                       bindings: {}
-                metadata:
-                  interruptible: true
                 failure_node:
                   branch_node:
                     if_else:
@@ -14128,6 +14116,8 @@ definitions:
                       name: "name"
                       project: "project"
                       version: "version"
+                metadata_defaults:
+                  interruptible: true
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -14312,8 +14302,6 @@ definitions:
                       - null
                     map:
                       bindings: {}
-                metadata:
-                  interruptible: true
                 failure_node:
                   branch_node:
                     if_else:
@@ -14958,6 +14946,8 @@ definitions:
                       name: "name"
                       project: "project"
                       version: "version"
+                metadata_defaults:
+                  interruptible: true
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -15132,8 +15122,6 @@ definitions:
                       - null
                     map:
                       bindings: {}
-                metadata:
-                  interruptible: true
                 failure_node:
                   branch_node:
                     if_else:
@@ -15778,6 +15766,8 @@ definitions:
                       name: "name"
                       project: "project"
                       version: "version"
+                metadata_defaults:
+                  interruptible: true
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -15892,7 +15882,6 @@ definitions:
                     version: "version"
                   discovery_version: "discovery_version"
                   deprecated_error_message: "deprecated_error_message"
-                  interruptible: true
                   timeout: "timeout"
                 custom:
                   fields:
@@ -16008,7 +15997,6 @@ definitions:
                     version: "version"
                   discovery_version: "discovery_version"
                   deprecated_error_message: "deprecated_error_message"
-                  interruptible: true
                   timeout: "timeout"
                 custom:
                   fields:
@@ -16186,8 +16174,6 @@ definitions:
                       - null
                     map:
                       bindings: {}
-                metadata:
-                  interruptible: true
                 failure_node:
                   branch_node:
                     if_else:
@@ -16832,6 +16818,8 @@ definitions:
                       name: "name"
                       project: "project"
                       version: "version"
+                metadata_defaults:
+                  interruptible: true
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -17345,7 +17333,6 @@ definitions:
             version: "version"
           discovery_version: "discovery_version"
           deprecated_error_message: "deprecated_error_message"
-          interruptible: true
           timeout: "timeout"
         custom:
           fields:
@@ -17535,8 +17522,6 @@ definitions:
               - null
             map:
               bindings: {}
-        metadata:
-          interruptible: true
         failure_node:
           branch_node:
             if_else:
@@ -18181,6 +18166,8 @@ definitions:
               name: "name"
               project: "project"
               version: "version"
+        metadata_defaults:
+          interruptible: true
         id:
           domain: "domain"
           resource_type: {}
@@ -18382,8 +18369,6 @@ definitions:
                 - null
               map:
                 bindings: {}
-          metadata:
-            interruptible: true
           failure_node:
             branch_node:
               if_else:
@@ -19028,6 +19013,8 @@ definitions:
                 name: "name"
                 project: "project"
                 version: "version"
+          metadata_defaults:
+            interruptible: true
           id:
             domain: "domain"
             resource_type: {}
@@ -19202,8 +19189,6 @@ definitions:
                 - null
               map:
                 bindings: {}
-          metadata:
-            interruptible: true
           failure_node:
             branch_node:
               if_else:
@@ -19848,6 +19833,8 @@ definitions:
                 name: "name"
                 project: "project"
                 version: "version"
+          metadata_defaults:
+            interruptible: true
           id:
             domain: "domain"
             resource_type: {}
@@ -19962,7 +19949,6 @@ definitions:
               version: "version"
             discovery_version: "discovery_version"
             deprecated_error_message: "deprecated_error_message"
-            interruptible: true
             timeout: "timeout"
           custom:
             fields:
@@ -20078,7 +20064,6 @@ definitions:
               version: "version"
             discovery_version: "discovery_version"
             deprecated_error_message: "deprecated_error_message"
-            interruptible: true
             timeout: "timeout"
           custom:
             fields:
@@ -20256,8 +20241,6 @@ definitions:
                 - null
               map:
                 bindings: {}
-          metadata:
-            interruptible: true
           failure_node:
             branch_node:
               if_else:
@@ -20902,6 +20885,8 @@ definitions:
                 name: "name"
                 project: "project"
                 version: "version"
+          metadata_defaults:
+            interruptible: true
           id:
             domain: "domain"
             resource_type: {}
@@ -22209,9 +22194,6 @@ definitions:
         description: "If set, this indicates that this task is deprecated.  This will\
           \ enable owners of tasks to notify consumers\nof the ending of support for\
           \ a given task."
-      interruptible:
-        type: "boolean"
-        format: "boolean"
     title: "Task Metadata"
     example:
       retries:
@@ -22223,7 +22205,6 @@ definitions:
         version: "version"
       discovery_version: "discovery_version"
       deprecated_error_message: "deprecated_error_message"
-      interruptible: true
       timeout: "timeout"
   coreTaskNode:
     type: "object"
@@ -22311,7 +22292,6 @@ definitions:
           version: "version"
         discovery_version: "discovery_version"
         deprecated_error_message: "deprecated_error_message"
-        interruptible: true
         timeout: "timeout"
       custom:
         fields:
@@ -22550,7 +22530,7 @@ definitions:
     - "ABORTED"
     - "TIMED_OUT"
     default: "UNDEFINED"
-  coreWorkflowMetadata:
+  coreWorkflowMetadataDefaults:
     type: "object"
     properties:
       interruptible:
@@ -22559,7 +22539,7 @@ definitions:
         description: "Identify whether workflow is interruptible.\nThe value set at\
           \ the workflow level will be the defualt value used for nodes\nunless explicitly\
           \ set at the node level."
-    description: "Metadata for the entire workflow.\nTo be used in the future."
+    description: "Default Workflow Metadata for the entire workflow."
     example:
       interruptible: true
   coreWorkflowNode:
@@ -22592,9 +22572,9 @@ definitions:
       id:
         description: "A globally unique identifier for the workflow."
         $ref: "#/definitions/coreIdentifier"
-      metadata:
+      metadata_defaults:
         description: "Extra metadata about the workflow."
-        $ref: "#/definitions/coreWorkflowMetadata"
+        $ref: "#/definitions/coreWorkflowMetadataDefaults"
       interface:
         description: "Defines a strongly typed interface for the Workflow. This can\
           \ include some optional parameters."
@@ -22730,8 +22710,6 @@ definitions:
             - null
           map:
             bindings: {}
-      metadata:
-        interruptible: true
       failure_node:
         branch_node:
           if_else:
@@ -23376,6 +23354,8 @@ definitions:
             name: "name"
             project: "project"
             version: "version"
+      metadata_defaults:
+        interruptible: true
       id:
         domain: "domain"
         resource_type: {}

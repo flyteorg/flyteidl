@@ -2040,24 +2040,24 @@ export const flyteidl = $root.flyteidl = (() => {
             return Node;
         })();
 
-        core.WorkflowMetadata = (function() {
+        core.WorkflowMetadataDefaults = (function() {
 
             /**
-             * Properties of a WorkflowMetadata.
+             * Properties of a WorkflowMetadataDefaults.
              * @memberof flyteidl.core
-             * @interface IWorkflowMetadata
-             * @property {boolean|null} [interruptible] WorkflowMetadata interruptible
+             * @interface IWorkflowMetadataDefaults
+             * @property {boolean|null} [interruptible] WorkflowMetadataDefaults interruptible
              */
 
             /**
-             * Constructs a new WorkflowMetadata.
+             * Constructs a new WorkflowMetadataDefaults.
              * @memberof flyteidl.core
-             * @classdesc Represents a WorkflowMetadata.
-             * @implements IWorkflowMetadata
+             * @classdesc Represents a WorkflowMetadataDefaults.
+             * @implements IWorkflowMetadataDefaults
              * @constructor
-             * @param {flyteidl.core.IWorkflowMetadata=} [properties] Properties to set
+             * @param {flyteidl.core.IWorkflowMetadataDefaults=} [properties] Properties to set
              */
-            function WorkflowMetadata(properties) {
+            function WorkflowMetadataDefaults(properties) {
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -2065,35 +2065,35 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * WorkflowMetadata interruptible.
+             * WorkflowMetadataDefaults interruptible.
              * @member {boolean} interruptible
-             * @memberof flyteidl.core.WorkflowMetadata
+             * @memberof flyteidl.core.WorkflowMetadataDefaults
              * @instance
              */
-            WorkflowMetadata.prototype.interruptible = false;
+            WorkflowMetadataDefaults.prototype.interruptible = false;
 
             /**
-             * Creates a new WorkflowMetadata instance using the specified properties.
+             * Creates a new WorkflowMetadataDefaults instance using the specified properties.
              * @function create
-             * @memberof flyteidl.core.WorkflowMetadata
+             * @memberof flyteidl.core.WorkflowMetadataDefaults
              * @static
-             * @param {flyteidl.core.IWorkflowMetadata=} [properties] Properties to set
-             * @returns {flyteidl.core.WorkflowMetadata} WorkflowMetadata instance
+             * @param {flyteidl.core.IWorkflowMetadataDefaults=} [properties] Properties to set
+             * @returns {flyteidl.core.WorkflowMetadataDefaults} WorkflowMetadataDefaults instance
              */
-            WorkflowMetadata.create = function create(properties) {
-                return new WorkflowMetadata(properties);
+            WorkflowMetadataDefaults.create = function create(properties) {
+                return new WorkflowMetadataDefaults(properties);
             };
 
             /**
-             * Encodes the specified WorkflowMetadata message. Does not implicitly {@link flyteidl.core.WorkflowMetadata.verify|verify} messages.
+             * Encodes the specified WorkflowMetadataDefaults message. Does not implicitly {@link flyteidl.core.WorkflowMetadataDefaults.verify|verify} messages.
              * @function encode
-             * @memberof flyteidl.core.WorkflowMetadata
+             * @memberof flyteidl.core.WorkflowMetadataDefaults
              * @static
-             * @param {flyteidl.core.IWorkflowMetadata} message WorkflowMetadata message or plain object to encode
+             * @param {flyteidl.core.IWorkflowMetadataDefaults} message WorkflowMetadataDefaults message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            WorkflowMetadata.encode = function encode(message, writer) {
+            WorkflowMetadataDefaults.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.interruptible != null && message.hasOwnProperty("interruptible"))
@@ -2102,20 +2102,20 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Decodes a WorkflowMetadata message from the specified reader or buffer.
+             * Decodes a WorkflowMetadataDefaults message from the specified reader or buffer.
              * @function decode
-             * @memberof flyteidl.core.WorkflowMetadata
+             * @memberof flyteidl.core.WorkflowMetadataDefaults
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.WorkflowMetadata} WorkflowMetadata
+             * @returns {flyteidl.core.WorkflowMetadataDefaults} WorkflowMetadataDefaults
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            WorkflowMetadata.decode = function decode(reader, length) {
+            WorkflowMetadataDefaults.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.WorkflowMetadata();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.WorkflowMetadataDefaults();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -2131,14 +2131,14 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Verifies a WorkflowMetadata message.
+             * Verifies a WorkflowMetadataDefaults message.
              * @function verify
-             * @memberof flyteidl.core.WorkflowMetadata
+             * @memberof flyteidl.core.WorkflowMetadataDefaults
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            WorkflowMetadata.verify = function verify(message) {
+            WorkflowMetadataDefaults.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.interruptible != null && message.hasOwnProperty("interruptible"))
@@ -2147,7 +2147,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 return null;
             };
 
-            return WorkflowMetadata;
+            return WorkflowMetadataDefaults;
         })();
 
         core.WorkflowTemplate = (function() {
@@ -2157,7 +2157,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.core
              * @interface IWorkflowTemplate
              * @property {flyteidl.core.IIdentifier|null} [id] WorkflowTemplate id
-             * @property {flyteidl.core.IWorkflowMetadata|null} [metadata] WorkflowTemplate metadata
+             * @property {flyteidl.core.IWorkflowMetadataDefaults|null} [metadataDefaults] WorkflowTemplate metadataDefaults
              * @property {flyteidl.core.ITypedInterface|null} ["interface"] WorkflowTemplate interface
              * @property {Array.<flyteidl.core.INode>|null} [nodes] WorkflowTemplate nodes
              * @property {Array.<flyteidl.core.IBinding>|null} [outputs] WorkflowTemplate outputs
@@ -2190,12 +2190,12 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowTemplate.prototype.id = null;
 
             /**
-             * WorkflowTemplate metadata.
-             * @member {flyteidl.core.IWorkflowMetadata|null|undefined} metadata
+             * WorkflowTemplate metadataDefaults.
+             * @member {flyteidl.core.IWorkflowMetadataDefaults|null|undefined} metadataDefaults
              * @memberof flyteidl.core.WorkflowTemplate
              * @instance
              */
-            WorkflowTemplate.prototype.metadata = null;
+            WorkflowTemplate.prototype.metadataDefaults = null;
 
             /**
              * WorkflowTemplate interface.
@@ -2255,8 +2255,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.id != null && message.hasOwnProperty("id"))
                     $root.flyteidl.core.Identifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.metadata != null && message.hasOwnProperty("metadata"))
-                    $root.flyteidl.core.WorkflowMetadata.encode(message.metadata, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.metadataDefaults != null && message.hasOwnProperty("metadataDefaults"))
+                    $root.flyteidl.core.WorkflowMetadataDefaults.encode(message.metadataDefaults, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message["interface"] != null && message.hasOwnProperty("interface"))
                     $root.flyteidl.core.TypedInterface.encode(message["interface"], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.nodes != null && message.nodes.length)
@@ -2292,7 +2292,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.id = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
                         break;
                     case 2:
-                        message.metadata = $root.flyteidl.core.WorkflowMetadata.decode(reader, reader.uint32());
+                        message.metadataDefaults = $root.flyteidl.core.WorkflowMetadataDefaults.decode(reader, reader.uint32());
                         break;
                     case 3:
                         message["interface"] = $root.flyteidl.core.TypedInterface.decode(reader, reader.uint32());
@@ -2334,10 +2334,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "id." + error;
                 }
-                if (message.metadata != null && message.hasOwnProperty("metadata")) {
-                    let error = $root.flyteidl.core.WorkflowMetadata.verify(message.metadata);
+                if (message.metadataDefaults != null && message.hasOwnProperty("metadataDefaults")) {
+                    let error = $root.flyteidl.core.WorkflowMetadataDefaults.verify(message.metadataDefaults);
                     if (error)
-                        return "metadata." + error;
+                        return "metadataDefaults." + error;
                 }
                 if (message["interface"] != null && message.hasOwnProperty("interface")) {
                     let error = $root.flyteidl.core.TypedInterface.verify(message["interface"]);
@@ -8110,7 +8110,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.IRetryStrategy|null} [retries] TaskMetadata retries
              * @property {string|null} [discoveryVersion] TaskMetadata discoveryVersion
              * @property {string|null} [deprecatedErrorMessage] TaskMetadata deprecatedErrorMessage
-             * @property {boolean|null} [interruptible] TaskMetadata interruptible
              */
 
             /**
@@ -8177,28 +8176,6 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskMetadata.prototype.deprecatedErrorMessage = "";
 
             /**
-             * TaskMetadata interruptible.
-             * @member {boolean} interruptible
-             * @memberof flyteidl.core.TaskMetadata
-             * @instance
-             */
-            TaskMetadata.prototype.interruptible = false;
-
-            // OneOf field names bound to virtual getters and setters
-            let $oneOfFields;
-
-            /**
-             * TaskMetadata interruptibleValue.
-             * @member {"interruptible"|undefined} interruptibleValue
-             * @memberof flyteidl.core.TaskMetadata
-             * @instance
-             */
-            Object.defineProperty(TaskMetadata.prototype, "interruptibleValue", {
-                get: $util.oneOfGetter($oneOfFields = ["interruptible"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
              * Creates a new TaskMetadata instance using the specified properties.
              * @function create
              * @memberof flyteidl.core.TaskMetadata
@@ -8234,8 +8211,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 6, wireType 2 =*/50).string(message.discoveryVersion);
                 if (message.deprecatedErrorMessage != null && message.hasOwnProperty("deprecatedErrorMessage"))
                     writer.uint32(/* id 7, wireType 2 =*/58).string(message.deprecatedErrorMessage);
-                if (message.interruptible != null && message.hasOwnProperty("interruptible"))
-                    writer.uint32(/* id 8, wireType 0 =*/64).bool(message.interruptible);
                 return writer;
             };
 
@@ -8275,9 +8250,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 7:
                         message.deprecatedErrorMessage = reader.string();
                         break;
-                    case 8:
-                        message.interruptible = reader.bool();
-                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -8297,7 +8269,6 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskMetadata.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                let properties = {};
                 if (message.discoverable != null && message.hasOwnProperty("discoverable"))
                     if (typeof message.discoverable !== "boolean")
                         return "discoverable: boolean expected";
@@ -8322,11 +8293,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.deprecatedErrorMessage != null && message.hasOwnProperty("deprecatedErrorMessage"))
                     if (!$util.isString(message.deprecatedErrorMessage))
                         return "deprecatedErrorMessage: string expected";
-                if (message.interruptible != null && message.hasOwnProperty("interruptible")) {
-                    properties.interruptibleValue = 1;
-                    if (typeof message.interruptible !== "boolean")
-                        return "interruptible: boolean expected";
-                }
                 return null;
             };
 

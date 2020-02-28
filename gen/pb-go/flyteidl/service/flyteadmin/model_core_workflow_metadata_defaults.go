@@ -9,8 +9,8 @@
 
 package flyteadmin
 
-// Metadata for the entire workflow. To be used in the future.
-type CoreWorkflowMetadata struct {
+// Default Workflow Metadata for the entire workflow.
+type CoreWorkflowMetadataDefaults struct {
 	// Identify whether workflow is interruptible. The value set at the workflow level will be the defualt value used for nodes unless explicitly set at the node level.
 	Interruptible bool `json:"interruptible,omitempty"`
 }

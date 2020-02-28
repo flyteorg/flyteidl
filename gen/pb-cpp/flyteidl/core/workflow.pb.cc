@@ -23,7 +23,7 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::pro
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Binding_flyteidl_2fcore_2fliterals_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftypes_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Error_flyteidl_2fcore_2ftypes_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Alias_flyteidl_2fcore_2fworkflow_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_WorkflowMetadata_flyteidl_2fcore_2fworkflow_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_WorkflowMetadataDefaults_flyteidl_2fcore_2fworkflow_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TaskNode_flyteidl_2fcore_2fworkflow_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_WorkflowNode_flyteidl_2fcore_2fworkflow_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_NodeMetadata_flyteidl_2fcore_2fworkflow_2eproto;
@@ -72,10 +72,10 @@ class NodeDefaultTypeInternal {
   const ::flyteidl::core::WorkflowNode* workflow_node_;
   const ::flyteidl::core::BranchNode* branch_node_;
 } _Node_default_instance_;
-class WorkflowMetadataDefaultTypeInternal {
+class WorkflowMetadataDefaultsDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<WorkflowMetadata> _instance;
-} _WorkflowMetadata_default_instance_;
+  ::google::protobuf::internal::ExplicitlyConstructed<WorkflowMetadataDefaults> _instance;
+} _WorkflowMetadataDefaults_default_instance_;
 class WorkflowTemplateDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<WorkflowTemplate> _instance;
@@ -181,19 +181,19 @@ static void InitDefaultsAlias_flyteidl_2fcore_2fworkflow_2eproto() {
 ::google::protobuf::internal::SCCInfo<0> scc_info_Alias_flyteidl_2fcore_2fworkflow_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsAlias_flyteidl_2fcore_2fworkflow_2eproto}, {}};
 
-static void InitDefaultsWorkflowMetadata_flyteidl_2fcore_2fworkflow_2eproto() {
+static void InitDefaultsWorkflowMetadataDefaults_flyteidl_2fcore_2fworkflow_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::flyteidl::core::_WorkflowMetadata_default_instance_;
-    new (ptr) ::flyteidl::core::WorkflowMetadata();
+    void* ptr = &::flyteidl::core::_WorkflowMetadataDefaults_default_instance_;
+    new (ptr) ::flyteidl::core::WorkflowMetadataDefaults();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::flyteidl::core::WorkflowMetadata::InitAsDefaultInstance();
+  ::flyteidl::core::WorkflowMetadataDefaults::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_WorkflowMetadata_flyteidl_2fcore_2fworkflow_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsWorkflowMetadata_flyteidl_2fcore_2fworkflow_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_WorkflowMetadataDefaults_flyteidl_2fcore_2fworkflow_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsWorkflowMetadataDefaults_flyteidl_2fcore_2fworkflow_2eproto}, {}};
 
 static void InitDefaultsWorkflowTemplate_flyteidl_2fcore_2fworkflow_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -209,7 +209,7 @@ static void InitDefaultsWorkflowTemplate_flyteidl_2fcore_2fworkflow_2eproto() {
 ::google::protobuf::internal::SCCInfo<5> scc_info_WorkflowTemplate_flyteidl_2fcore_2fworkflow_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 5, InitDefaultsWorkflowTemplate_flyteidl_2fcore_2fworkflow_2eproto}, {
       &scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto.base,
-      &scc_info_WorkflowMetadata_flyteidl_2fcore_2fworkflow_2eproto.base,
+      &scc_info_WorkflowMetadataDefaults_flyteidl_2fcore_2fworkflow_2eproto.base,
       &scc_info_TypedInterface_flyteidl_2fcore_2finterface_2eproto.base,
       &scc_info_BranchNode_flyteidl_2fcore_2fworkflow_2eproto.base,
       &scc_info_Binding_flyteidl_2fcore_2fliterals_2eproto.base,}};
@@ -220,7 +220,7 @@ void InitDefaults_flyteidl_2fcore_2fworkflow_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_WorkflowNode_flyteidl_2fcore_2fworkflow_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_NodeMetadata_flyteidl_2fcore_2fworkflow_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Alias_flyteidl_2fcore_2fworkflow_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_WorkflowMetadata_flyteidl_2fcore_2fworkflow_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_WorkflowMetadataDefaults_flyteidl_2fcore_2fworkflow_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_WorkflowTemplate_flyteidl_2fcore_2fworkflow_2eproto.base);
 }
 
@@ -299,18 +299,18 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fworkflow_2eproto:
   offsetof(::flyteidl::core::NodeDefaultTypeInternal, branch_node_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Node, target_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowMetadata, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowMetadataDefaults, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowMetadata, interruptible_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowMetadataDefaults, interruptible_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowTemplate, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowTemplate, id_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowTemplate, metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowTemplate, metadata_defaults_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowTemplate, interface_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowTemplate, nodes_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowTemplate, outputs_),
@@ -325,7 +325,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 38, -1, sizeof(::flyteidl::core::NodeMetadata)},
   { 48, -1, sizeof(::flyteidl::core::Alias)},
   { 55, -1, sizeof(::flyteidl::core::Node)},
-  { 69, -1, sizeof(::flyteidl::core::WorkflowMetadata)},
+  { 69, -1, sizeof(::flyteidl::core::WorkflowMetadataDefaults)},
   { 75, -1, sizeof(::flyteidl::core::WorkflowTemplate)},
 };
 
@@ -338,7 +338,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_NodeMetadata_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_Alias_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_Node_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_WorkflowMetadata_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_WorkflowMetadataDefaults_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_WorkflowTemplate_default_instance_),
 };
 
@@ -382,22 +382,22 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto[] =
   "flyteidl.core.TaskNodeH\000\0224\n\rworkflow_nod"
   "e\030\007 \001(\0132\033.flyteidl.core.WorkflowNodeH\000\0220"
   "\n\013branch_node\030\010 \001(\0132\031.flyteidl.core.Bran"
-  "chNodeH\000B\010\n\006target\")\n\020WorkflowMetadata\022\025"
-  "\n\rinterruptible\030\001 \001(\010\"\226\002\n\020WorkflowTempla"
-  "te\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifie"
-  "r\0221\n\010metadata\030\002 \001(\0132\037.flyteidl.core.Work"
-  "flowMetadata\0220\n\tinterface\030\003 \001(\0132\035.flytei"
-  "dl.core.TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023."
-  "flyteidl.core.Node\022\'\n\007outputs\030\005 \003(\0132\026.fl"
-  "yteidl.core.Binding\022)\n\014failure_node\030\006 \001("
-  "\0132\023.flyteidl.core.NodeB2Z0github.com/lyf"
-  "t/flyteidl/gen/pb-go/flyteidl/coreb\006prot"
-  "o3"
+  "chNodeH\000B\010\n\006target\"1\n\030WorkflowMetadataDe"
+  "faults\022\025\n\rinterruptible\030\001 \001(\010\"\247\002\n\020Workfl"
+  "owTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.I"
+  "dentifier\022B\n\021metadata_defaults\030\002 \001(\0132\'.f"
+  "lyteidl.core.WorkflowMetadataDefaults\0220\n"
+  "\tinterface\030\003 \001(\0132\035.flyteidl.core.TypedIn"
+  "terface\022\"\n\005nodes\030\004 \003(\0132\023.flyteidl.core.N"
+  "ode\022\'\n\007outputs\030\005 \003(\0132\026.flyteidl.core.Bin"
+  "ding\022)\n\014failure_node\030\006 \001(\0132\023.flyteidl.co"
+  "re.NodeB2Z0github.com/lyft/flyteidl/gen/"
+  "pb-go/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fworkflow_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fworkflow_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto,
-  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 1722,
+  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 1747,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fworkflow_2eproto() {
@@ -4092,52 +4092,52 @@ void Node::InternalSwap(Node* other) {
 
 // ===================================================================
 
-void WorkflowMetadata::InitAsDefaultInstance() {
+void WorkflowMetadataDefaults::InitAsDefaultInstance() {
 }
-class WorkflowMetadata::HasBitSetters {
+class WorkflowMetadataDefaults::HasBitSetters {
  public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int WorkflowMetadata::kInterruptibleFieldNumber;
+const int WorkflowMetadataDefaults::kInterruptibleFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-WorkflowMetadata::WorkflowMetadata()
+WorkflowMetadataDefaults::WorkflowMetadataDefaults()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.core.WorkflowMetadata)
+  // @@protoc_insertion_point(constructor:flyteidl.core.WorkflowMetadataDefaults)
 }
-WorkflowMetadata::WorkflowMetadata(const WorkflowMetadata& from)
+WorkflowMetadataDefaults::WorkflowMetadataDefaults(const WorkflowMetadataDefaults& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   interruptible_ = from.interruptible_;
-  // @@protoc_insertion_point(copy_constructor:flyteidl.core.WorkflowMetadata)
+  // @@protoc_insertion_point(copy_constructor:flyteidl.core.WorkflowMetadataDefaults)
 }
 
-void WorkflowMetadata::SharedCtor() {
+void WorkflowMetadataDefaults::SharedCtor() {
   interruptible_ = false;
 }
 
-WorkflowMetadata::~WorkflowMetadata() {
-  // @@protoc_insertion_point(destructor:flyteidl.core.WorkflowMetadata)
+WorkflowMetadataDefaults::~WorkflowMetadataDefaults() {
+  // @@protoc_insertion_point(destructor:flyteidl.core.WorkflowMetadataDefaults)
   SharedDtor();
 }
 
-void WorkflowMetadata::SharedDtor() {
+void WorkflowMetadataDefaults::SharedDtor() {
 }
 
-void WorkflowMetadata::SetCachedSize(int size) const {
+void WorkflowMetadataDefaults::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const WorkflowMetadata& WorkflowMetadata::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_WorkflowMetadata_flyteidl_2fcore_2fworkflow_2eproto.base);
+const WorkflowMetadataDefaults& WorkflowMetadataDefaults::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_WorkflowMetadataDefaults_flyteidl_2fcore_2fworkflow_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void WorkflowMetadata::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.core.WorkflowMetadata)
+void WorkflowMetadataDefaults::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.core.WorkflowMetadataDefaults)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4147,9 +4147,9 @@ void WorkflowMetadata::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* WorkflowMetadata::_InternalParse(const char* begin, const char* end, void* object,
+const char* WorkflowMetadataDefaults::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<WorkflowMetadata*>(object);
+  auto msg = static_cast<WorkflowMetadataDefaults*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -4183,11 +4183,11 @@ const char* WorkflowMetadata::_InternalParse(const char* begin, const char* end,
   return ptr;
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool WorkflowMetadata::MergePartialFromCodedStream(
+bool WorkflowMetadataDefaults::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.core.WorkflowMetadata)
+  // @@protoc_insertion_point(parse_start:flyteidl.core.WorkflowMetadataDefaults)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -4218,18 +4218,18 @@ bool WorkflowMetadata::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:flyteidl.core.WorkflowMetadata)
+  // @@protoc_insertion_point(parse_success:flyteidl.core.WorkflowMetadataDefaults)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.core.WorkflowMetadata)
+  // @@protoc_insertion_point(parse_failure:flyteidl.core.WorkflowMetadataDefaults)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void WorkflowMetadata::SerializeWithCachedSizes(
+void WorkflowMetadataDefaults::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.core.WorkflowMetadata)
+  // @@protoc_insertion_point(serialize_start:flyteidl.core.WorkflowMetadataDefaults)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4242,12 +4242,12 @@ void WorkflowMetadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:flyteidl.core.WorkflowMetadata)
+  // @@protoc_insertion_point(serialize_end:flyteidl.core.WorkflowMetadataDefaults)
 }
 
-::google::protobuf::uint8* WorkflowMetadata::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* WorkflowMetadataDefaults::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.core.WorkflowMetadata)
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.core.WorkflowMetadataDefaults)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4260,12 +4260,12 @@ void WorkflowMetadata::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.core.WorkflowMetadata)
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.core.WorkflowMetadataDefaults)
   return target;
 }
 
-size_t WorkflowMetadata::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.core.WorkflowMetadata)
+size_t WorkflowMetadataDefaults::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.core.WorkflowMetadataDefaults)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -4287,23 +4287,23 @@ size_t WorkflowMetadata::ByteSizeLong() const {
   return total_size;
 }
 
-void WorkflowMetadata::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.core.WorkflowMetadata)
+void WorkflowMetadataDefaults::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.core.WorkflowMetadataDefaults)
   GOOGLE_DCHECK_NE(&from, this);
-  const WorkflowMetadata* source =
-      ::google::protobuf::DynamicCastToGenerated<WorkflowMetadata>(
+  const WorkflowMetadataDefaults* source =
+      ::google::protobuf::DynamicCastToGenerated<WorkflowMetadataDefaults>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.core.WorkflowMetadata)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.core.WorkflowMetadataDefaults)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.core.WorkflowMetadata)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.core.WorkflowMetadataDefaults)
     MergeFrom(*source);
   }
 }
 
-void WorkflowMetadata::MergeFrom(const WorkflowMetadata& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.core.WorkflowMetadata)
+void WorkflowMetadataDefaults::MergeFrom(const WorkflowMetadataDefaults& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.core.WorkflowMetadataDefaults)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -4314,35 +4314,35 @@ void WorkflowMetadata::MergeFrom(const WorkflowMetadata& from) {
   }
 }
 
-void WorkflowMetadata::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.core.WorkflowMetadata)
+void WorkflowMetadataDefaults::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.core.WorkflowMetadataDefaults)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void WorkflowMetadata::CopyFrom(const WorkflowMetadata& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.core.WorkflowMetadata)
+void WorkflowMetadataDefaults::CopyFrom(const WorkflowMetadataDefaults& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.core.WorkflowMetadataDefaults)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool WorkflowMetadata::IsInitialized() const {
+bool WorkflowMetadataDefaults::IsInitialized() const {
   return true;
 }
 
-void WorkflowMetadata::Swap(WorkflowMetadata* other) {
+void WorkflowMetadataDefaults::Swap(WorkflowMetadataDefaults* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void WorkflowMetadata::InternalSwap(WorkflowMetadata* other) {
+void WorkflowMetadataDefaults::InternalSwap(WorkflowMetadataDefaults* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(interruptible_, other->interruptible_);
 }
 
-::google::protobuf::Metadata WorkflowMetadata::GetMetadata() const {
+::google::protobuf::Metadata WorkflowMetadataDefaults::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto);
   return ::file_level_metadata_flyteidl_2fcore_2fworkflow_2eproto[kIndexInFileMessages];
 }
@@ -4353,8 +4353,8 @@ void WorkflowMetadata::InternalSwap(WorkflowMetadata* other) {
 void WorkflowTemplate::InitAsDefaultInstance() {
   ::flyteidl::core::_WorkflowTemplate_default_instance_._instance.get_mutable()->id_ = const_cast< ::flyteidl::core::Identifier*>(
       ::flyteidl::core::Identifier::internal_default_instance());
-  ::flyteidl::core::_WorkflowTemplate_default_instance_._instance.get_mutable()->metadata_ = const_cast< ::flyteidl::core::WorkflowMetadata*>(
-      ::flyteidl::core::WorkflowMetadata::internal_default_instance());
+  ::flyteidl::core::_WorkflowTemplate_default_instance_._instance.get_mutable()->metadata_defaults_ = const_cast< ::flyteidl::core::WorkflowMetadataDefaults*>(
+      ::flyteidl::core::WorkflowMetadataDefaults::internal_default_instance());
   ::flyteidl::core::_WorkflowTemplate_default_instance_._instance.get_mutable()->interface_ = const_cast< ::flyteidl::core::TypedInterface*>(
       ::flyteidl::core::TypedInterface::internal_default_instance());
   ::flyteidl::core::_WorkflowTemplate_default_instance_._instance.get_mutable()->failure_node_ = const_cast< ::flyteidl::core::Node*>(
@@ -4363,7 +4363,7 @@ void WorkflowTemplate::InitAsDefaultInstance() {
 class WorkflowTemplate::HasBitSetters {
  public:
   static const ::flyteidl::core::Identifier& id(const WorkflowTemplate* msg);
-  static const ::flyteidl::core::WorkflowMetadata& metadata(const WorkflowTemplate* msg);
+  static const ::flyteidl::core::WorkflowMetadataDefaults& metadata_defaults(const WorkflowTemplate* msg);
   static const ::flyteidl::core::TypedInterface& interface(const WorkflowTemplate* msg);
   static const ::flyteidl::core::Node& failure_node(const WorkflowTemplate* msg);
 };
@@ -4372,9 +4372,9 @@ const ::flyteidl::core::Identifier&
 WorkflowTemplate::HasBitSetters::id(const WorkflowTemplate* msg) {
   return *msg->id_;
 }
-const ::flyteidl::core::WorkflowMetadata&
-WorkflowTemplate::HasBitSetters::metadata(const WorkflowTemplate* msg) {
-  return *msg->metadata_;
+const ::flyteidl::core::WorkflowMetadataDefaults&
+WorkflowTemplate::HasBitSetters::metadata_defaults(const WorkflowTemplate* msg) {
+  return *msg->metadata_defaults_;
 }
 const ::flyteidl::core::TypedInterface&
 WorkflowTemplate::HasBitSetters::interface(const WorkflowTemplate* msg) {
@@ -4401,7 +4401,7 @@ void WorkflowTemplate::clear_outputs() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int WorkflowTemplate::kIdFieldNumber;
-const int WorkflowTemplate::kMetadataFieldNumber;
+const int WorkflowTemplate::kMetadataDefaultsFieldNumber;
 const int WorkflowTemplate::kInterfaceFieldNumber;
 const int WorkflowTemplate::kNodesFieldNumber;
 const int WorkflowTemplate::kOutputsFieldNumber;
@@ -4424,10 +4424,10 @@ WorkflowTemplate::WorkflowTemplate(const WorkflowTemplate& from)
   } else {
     id_ = nullptr;
   }
-  if (from.has_metadata()) {
-    metadata_ = new ::flyteidl::core::WorkflowMetadata(*from.metadata_);
+  if (from.has_metadata_defaults()) {
+    metadata_defaults_ = new ::flyteidl::core::WorkflowMetadataDefaults(*from.metadata_defaults_);
   } else {
-    metadata_ = nullptr;
+    metadata_defaults_ = nullptr;
   }
   if (from.has_interface()) {
     interface_ = new ::flyteidl::core::TypedInterface(*from.interface_);
@@ -4457,7 +4457,7 @@ WorkflowTemplate::~WorkflowTemplate() {
 
 void WorkflowTemplate::SharedDtor() {
   if (this != internal_default_instance()) delete id_;
-  if (this != internal_default_instance()) delete metadata_;
+  if (this != internal_default_instance()) delete metadata_defaults_;
   if (this != internal_default_instance()) delete interface_;
   if (this != internal_default_instance()) delete failure_node_;
 }
@@ -4483,10 +4483,10 @@ void WorkflowTemplate::Clear() {
     delete id_;
   }
   id_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && metadata_ != nullptr) {
-    delete metadata_;
+  if (GetArenaNoVirtual() == nullptr && metadata_defaults_ != nullptr) {
+    delete metadata_defaults_;
   }
-  metadata_ = nullptr;
+  metadata_defaults_ = nullptr;
   if (GetArenaNoVirtual() == nullptr && interface_ != nullptr) {
     delete interface_;
   }
@@ -4524,13 +4524,13 @@ const char* WorkflowTemplate::_InternalParse(const char* begin, const char* end,
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.core.WorkflowMetadata metadata = 2;
+      // .flyteidl.core.WorkflowMetadataDefaults metadata_defaults = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::core::WorkflowMetadata::_InternalParse;
-        object = msg->mutable_metadata();
+        parser_till_end = ::flyteidl::core::WorkflowMetadataDefaults::_InternalParse;
+        object = msg->mutable_metadata_defaults();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -4636,11 +4636,11 @@ bool WorkflowTemplate::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.core.WorkflowMetadata metadata = 2;
+      // .flyteidl.core.WorkflowMetadataDefaults metadata_defaults = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_metadata()));
+               input, mutable_metadata_defaults()));
         } else {
           goto handle_unusual;
         }
@@ -4724,10 +4724,10 @@ void WorkflowTemplate::SerializeWithCachedSizes(
       1, HasBitSetters::id(this), output);
   }
 
-  // .flyteidl.core.WorkflowMetadata metadata = 2;
-  if (this->has_metadata()) {
+  // .flyteidl.core.WorkflowMetadataDefaults metadata_defaults = 2;
+  if (this->has_metadata_defaults()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::metadata(this), output);
+      2, HasBitSetters::metadata_defaults(this), output);
   }
 
   // .flyteidl.core.TypedInterface interface = 3;
@@ -4780,11 +4780,11 @@ void WorkflowTemplate::SerializeWithCachedSizes(
         1, HasBitSetters::id(this), target);
   }
 
-  // .flyteidl.core.WorkflowMetadata metadata = 2;
-  if (this->has_metadata()) {
+  // .flyteidl.core.WorkflowMetadataDefaults metadata_defaults = 2;
+  if (this->has_metadata_defaults()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        2, HasBitSetters::metadata(this), target);
+        2, HasBitSetters::metadata_defaults(this), target);
   }
 
   // .flyteidl.core.TypedInterface interface = 3;
@@ -4867,11 +4867,11 @@ size_t WorkflowTemplate::ByteSizeLong() const {
         *id_);
   }
 
-  // .flyteidl.core.WorkflowMetadata metadata = 2;
-  if (this->has_metadata()) {
+  // .flyteidl.core.WorkflowMetadataDefaults metadata_defaults = 2;
+  if (this->has_metadata_defaults()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *metadata_);
+        *metadata_defaults_);
   }
 
   // .flyteidl.core.TypedInterface interface = 3;
@@ -4920,8 +4920,8 @@ void WorkflowTemplate::MergeFrom(const WorkflowTemplate& from) {
   if (from.has_id()) {
     mutable_id()->::flyteidl::core::Identifier::MergeFrom(from.id());
   }
-  if (from.has_metadata()) {
-    mutable_metadata()->::flyteidl::core::WorkflowMetadata::MergeFrom(from.metadata());
+  if (from.has_metadata_defaults()) {
+    mutable_metadata_defaults()->::flyteidl::core::WorkflowMetadataDefaults::MergeFrom(from.metadata_defaults());
   }
   if (from.has_interface()) {
     mutable_interface()->::flyteidl::core::TypedInterface::MergeFrom(from.interface());
@@ -4959,7 +4959,7 @@ void WorkflowTemplate::InternalSwap(WorkflowTemplate* other) {
   CastToBase(&nodes_)->InternalSwap(CastToBase(&other->nodes_));
   CastToBase(&outputs_)->InternalSwap(CastToBase(&other->outputs_));
   swap(id_, other->id_);
-  swap(metadata_, other->metadata_);
+  swap(metadata_defaults_, other->metadata_defaults_);
   swap(interface_, other->interface_);
   swap(failure_node_, other->failure_node_);
 }
@@ -4999,8 +4999,8 @@ template<> PROTOBUF_NOINLINE ::flyteidl::core::Alias* Arena::CreateMaybeMessage<
 template<> PROTOBUF_NOINLINE ::flyteidl::core::Node* Arena::CreateMaybeMessage< ::flyteidl::core::Node >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::core::Node >(arena);
 }
-template<> PROTOBUF_NOINLINE ::flyteidl::core::WorkflowMetadata* Arena::CreateMaybeMessage< ::flyteidl::core::WorkflowMetadata >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::core::WorkflowMetadata >(arena);
+template<> PROTOBUF_NOINLINE ::flyteidl::core::WorkflowMetadataDefaults* Arena::CreateMaybeMessage< ::flyteidl::core::WorkflowMetadataDefaults >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::core::WorkflowMetadataDefaults >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::core::WorkflowTemplate* Arena::CreateMaybeMessage< ::flyteidl::core::WorkflowTemplate >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::core::WorkflowTemplate >(arena);
