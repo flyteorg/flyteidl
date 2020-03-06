@@ -79,7 +79,7 @@ message TaskMetadata {
     // of the ending of support for a given task.
     string deprecated_error_message = 7;
 
-    // Identify whether node is interruptible
+    // Identify whether task is interruptible
     oneof interruptible_value {
         bool interruptible = 8;
     };

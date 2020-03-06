@@ -260,7 +260,7 @@ type TaskMetadata struct {
 	// If set, this indicates that this task is deprecated.  This will enable owners of tasks to notify consumers
 	// of the ending of support for a given task.
 	DeprecatedErrorMessage string `protobuf:"bytes,7,opt,name=deprecated_error_message,json=deprecatedErrorMessage,proto3" json:"deprecated_error_message,omitempty"`
-	// Identify whether node is interruptible
+	// Identify whether task is interruptible
 	//
 	// Types that are valid to be assigned to InterruptibleValue:
 	//	*TaskMetadata_Interruptible

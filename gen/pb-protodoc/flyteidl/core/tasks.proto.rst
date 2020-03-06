@@ -219,7 +219,7 @@ deprecated_error_message
 
 interruptible
   (`bool <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
-  Identify whether node is interruptible
+  Identify whether task is interruptible
   
   
 
