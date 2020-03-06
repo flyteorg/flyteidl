@@ -174,7 +174,8 @@ Task Metadata
     "timeout": "{...}",
     "retries": "{...}",
     "discovery_version": "...",
-    "deprecated_error_message": "..."
+    "deprecated_error_message": "...",
+    "interruptible": "..."
   }
 
 .. _api_field_flyteidl.core.TaskMetadata.discoverable:
@@ -214,6 +215,13 @@ deprecated_error_message
   of the ending of support for a given task.
   
   
+.. _api_field_flyteidl.core.TaskMetadata.interruptible:
+
+interruptible
+  (`bool <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  Identify whether node is interruptible
+  
+  
 
 
 .. _api_msg_flyteidl.core.TaskTemplate:
@@ -221,7 +229,7 @@ deprecated_error_message
 flyteidl.core.TaskTemplate
 --------------------------
 
-`[flyteidl.core.TaskTemplate proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/tasks.proto#L84>`_
+`[flyteidl.core.TaskTemplate proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/tasks.proto#L89>`_
 
 A Task structure that uniquely identifies a task in the system
 Tasks are registered as a first step in the system.
@@ -286,7 +294,7 @@ container
 flyteidl.core.ContainerPort
 ---------------------------
 
-`[flyteidl.core.ContainerPort proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/tasks.proto#L114>`_
+`[flyteidl.core.ContainerPort proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/tasks.proto#L119>`_
 
 Defines port properties for a container.
 
@@ -310,7 +318,7 @@ container_port
 flyteidl.core.Container
 -----------------------
 
-`[flyteidl.core.Container proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/tasks.proto#L120>`_
+`[flyteidl.core.Container proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/tasks.proto#L125>`_
 
 
 .. code-block:: json
