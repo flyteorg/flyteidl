@@ -6976,6 +6976,58 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a PlatformMetadata. */
+        interface IPlatformMetadata {
+
+            /** PlatformMetadata executionCluster */
+            executionCluster?: (string|null);
+        }
+
+        /** Represents a PlatformMetadata. */
+        class PlatformMetadata implements IPlatformMetadata {
+
+            /**
+             * Constructs a new PlatformMetadata.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IPlatformMetadata);
+
+            /** PlatformMetadata executionCluster. */
+            public executionCluster: string;
+
+            /**
+             * Creates a new PlatformMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns PlatformMetadata instance
+             */
+            public static create(properties?: flyteidl.admin.IPlatformMetadata): flyteidl.admin.PlatformMetadata;
+
+            /**
+             * Encodes the specified PlatformMetadata message. Does not implicitly {@link flyteidl.admin.PlatformMetadata.verify|verify} messages.
+             * @param message PlatformMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IPlatformMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a PlatformMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns PlatformMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.PlatformMetadata;
+
+            /**
+             * Verifies a PlatformMetadata message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of an ExecutionMetadata. */
         interface IExecutionMetadata {
 
@@ -6996,6 +7048,9 @@ export namespace flyteidl {
 
             /** ExecutionMetadata referenceExecution */
             referenceExecution?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** ExecutionMetadata platformMetadata */
+            platformMetadata?: (flyteidl.admin.IPlatformMetadata|null);
         }
 
         /** Represents an ExecutionMetadata. */
@@ -7024,6 +7079,9 @@ export namespace flyteidl {
 
             /** ExecutionMetadata referenceExecution. */
             public referenceExecution?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** ExecutionMetadata platformMetadata. */
+            public platformMetadata?: (flyteidl.admin.IPlatformMetadata|null);
 
             /**
              * Creates a new ExecutionMetadata instance using the specified properties.

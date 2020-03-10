@@ -171,6 +171,7 @@ Class | Method | HTTP request | Description
  - [AdminNotification](docs/AdminNotification.md)
  - [AdminNotificationList](docs/AdminNotificationList.md)
  - [AdminPagerDutyNotification](docs/AdminPagerDutyNotification.md)
+ - [AdminPlatformMetadata](docs/AdminPlatformMetadata.md)
  - [AdminProject](docs/AdminProject.md)
  - [AdminProjectDomainAttributes](docs/AdminProjectDomainAttributes.md)
  - [AdminProjectDomainAttributesDeleteRequest](docs/AdminProjectDomainAttributesDeleteRequest.md)

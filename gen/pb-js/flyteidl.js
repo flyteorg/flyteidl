@@ -16744,6 +16744,116 @@ export const flyteidl = $root.flyteidl = (() => {
             return ExecutionClosure;
         })();
 
+        admin.PlatformMetadata = (function() {
+
+            /**
+             * Properties of a PlatformMetadata.
+             * @memberof flyteidl.admin
+             * @interface IPlatformMetadata
+             * @property {string|null} [executionCluster] PlatformMetadata executionCluster
+             */
+
+            /**
+             * Constructs a new PlatformMetadata.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a PlatformMetadata.
+             * @implements IPlatformMetadata
+             * @constructor
+             * @param {flyteidl.admin.IPlatformMetadata=} [properties] Properties to set
+             */
+            function PlatformMetadata(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * PlatformMetadata executionCluster.
+             * @member {string} executionCluster
+             * @memberof flyteidl.admin.PlatformMetadata
+             * @instance
+             */
+            PlatformMetadata.prototype.executionCluster = "";
+
+            /**
+             * Creates a new PlatformMetadata instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.PlatformMetadata
+             * @static
+             * @param {flyteidl.admin.IPlatformMetadata=} [properties] Properties to set
+             * @returns {flyteidl.admin.PlatformMetadata} PlatformMetadata instance
+             */
+            PlatformMetadata.create = function create(properties) {
+                return new PlatformMetadata(properties);
+            };
+
+            /**
+             * Encodes the specified PlatformMetadata message. Does not implicitly {@link flyteidl.admin.PlatformMetadata.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.PlatformMetadata
+             * @static
+             * @param {flyteidl.admin.IPlatformMetadata} message PlatformMetadata message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PlatformMetadata.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.executionCluster != null && message.hasOwnProperty("executionCluster"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.executionCluster);
+                return writer;
+            };
+
+            /**
+             * Decodes a PlatformMetadata message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.PlatformMetadata
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.PlatformMetadata} PlatformMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PlatformMetadata.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.PlatformMetadata();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.executionCluster = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a PlatformMetadata message.
+             * @function verify
+             * @memberof flyteidl.admin.PlatformMetadata
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            PlatformMetadata.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.executionCluster != null && message.hasOwnProperty("executionCluster"))
+                    if (!$util.isString(message.executionCluster))
+                        return "executionCluster: string expected";
+                return null;
+            };
+
+            return PlatformMetadata;
+        })();
+
         admin.ExecutionMetadata = (function() {
 
             /**
@@ -16756,6 +16866,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.ITimestamp|null} [scheduledAt] ExecutionMetadata scheduledAt
              * @property {flyteidl.core.INodeExecutionIdentifier|null} [parentNodeExecution] ExecutionMetadata parentNodeExecution
              * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [referenceExecution] ExecutionMetadata referenceExecution
+             * @property {flyteidl.admin.IPlatformMetadata|null} [platformMetadata] ExecutionMetadata platformMetadata
              */
 
             /**
@@ -16822,6 +16933,14 @@ export const flyteidl = $root.flyteidl = (() => {
             ExecutionMetadata.prototype.referenceExecution = null;
 
             /**
+             * ExecutionMetadata platformMetadata.
+             * @member {flyteidl.admin.IPlatformMetadata|null|undefined} platformMetadata
+             * @memberof flyteidl.admin.ExecutionMetadata
+             * @instance
+             */
+            ExecutionMetadata.prototype.platformMetadata = null;
+
+            /**
              * Creates a new ExecutionMetadata instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.ExecutionMetadata
@@ -16857,6 +16976,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.NodeExecutionIdentifier.encode(message.parentNodeExecution, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 if (message.referenceExecution != null && message.hasOwnProperty("referenceExecution"))
                     $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.referenceExecution, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+                if (message.platformMetadata != null && message.hasOwnProperty("platformMetadata"))
+                    $root.flyteidl.admin.PlatformMetadata.encode(message.platformMetadata, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
                 return writer;
             };
 
@@ -16895,6 +17016,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 16:
                         message.referenceExecution = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    case 17:
+                        message.platformMetadata = $root.flyteidl.admin.PlatformMetadata.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -16946,6 +17070,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.referenceExecution);
                     if (error)
                         return "referenceExecution." + error;
+                }
+                if (message.platformMetadata != null && message.hasOwnProperty("platformMetadata")) {
+                    let error = $root.flyteidl.admin.PlatformMetadata.verify(message.platformMetadata);
+                    if (error)
+                        return "platformMetadata." + error;
                 }
                 return null;
             };

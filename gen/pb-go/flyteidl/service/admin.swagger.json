@@ -3001,6 +3001,10 @@
         "reference_execution": {
           "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
           "description": "Optional, a reference workflow execution related to this execution.\nIn the case of a relaunch, this references the original workflow execution."
+        },
+        "platform_metadata": {
+          "$ref": "#/definitions/adminPlatformMetadata",
+          "description": "Optional, platform-specific metadata about the execution.\nIn this the future this may be gated behind an ACL or some sort of authorization."
         }
       },
       "description": "Represents attributes about an execution which are not required to launch the execution but are useful to record.\nThese attributes are assigned at launch time and do not change."
@@ -3586,6 +3590,16 @@
           "description": "Currently, PagerDuty notifications leverage email to trigger a notification."
         }
       }
+    },
+    "adminPlatformMetadata": {
+      "type": "object",
+      "properties": {
+        "execution_cluster": {
+          "type": "string",
+          "description": "Which execution cluster this execution ran on."
+        }
+      },
+      "description": "Represents platform-specific and not necessarily user-facing metadata about an execution."
     },
     "adminProject": {
       "type": "object",

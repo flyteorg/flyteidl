@@ -11269,6 +11269,599 @@ public final class ExecutionOuterClass {
 
   }
 
+  public interface PlatformMetadataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.PlatformMetadata)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Which execution cluster this execution ran on.
+     * </pre>
+     *
+     * <code>string execution_cluster = 1;</code>
+     */
+    java.lang.String getExecutionCluster();
+    /**
+     * <pre>
+     * Which execution cluster this execution ran on.
+     * </pre>
+     *
+     * <code>string execution_cluster = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getExecutionClusterBytes();
+  }
+  /**
+   * <pre>
+   * Represents platform-specific and not necessarily user-facing metadata about an execution.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.PlatformMetadata}
+   */
+  public  static final class PlatformMetadata extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.PlatformMetadata)
+      PlatformMetadataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PlatformMetadata.newBuilder() to construct.
+    private PlatformMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PlatformMetadata() {
+      executionCluster_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PlatformMetadata(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              executionCluster_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_PlatformMetadata_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_PlatformMetadata_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.ExecutionOuterClass.PlatformMetadata.class, flyteidl.admin.ExecutionOuterClass.PlatformMetadata.Builder.class);
+    }
+
+    public static final int EXECUTION_CLUSTER_FIELD_NUMBER = 1;
+    private volatile java.lang.Object executionCluster_;
+    /**
+     * <pre>
+     * Which execution cluster this execution ran on.
+     * </pre>
+     *
+     * <code>string execution_cluster = 1;</code>
+     */
+    public java.lang.String getExecutionCluster() {
+      java.lang.Object ref = executionCluster_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        executionCluster_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Which execution cluster this execution ran on.
+     * </pre>
+     *
+     * <code>string execution_cluster = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getExecutionClusterBytes() {
+      java.lang.Object ref = executionCluster_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        executionCluster_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getExecutionClusterBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, executionCluster_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getExecutionClusterBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, executionCluster_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.ExecutionOuterClass.PlatformMetadata)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.ExecutionOuterClass.PlatformMetadata other = (flyteidl.admin.ExecutionOuterClass.PlatformMetadata) obj;
+
+      if (!getExecutionCluster()
+          .equals(other.getExecutionCluster())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + EXECUTION_CLUSTER_FIELD_NUMBER;
+      hash = (53 * hash) + getExecutionCluster().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.ExecutionOuterClass.PlatformMetadata parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.PlatformMetadata parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.PlatformMetadata parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.PlatformMetadata parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.PlatformMetadata parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.PlatformMetadata parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.PlatformMetadata parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.PlatformMetadata parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.PlatformMetadata parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.PlatformMetadata parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.PlatformMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.ExecutionOuterClass.PlatformMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.ExecutionOuterClass.PlatformMetadata prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Represents platform-specific and not necessarily user-facing metadata about an execution.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.admin.PlatformMetadata}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.PlatformMetadata)
+        flyteidl.admin.ExecutionOuterClass.PlatformMetadataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_PlatformMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_PlatformMetadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.ExecutionOuterClass.PlatformMetadata.class, flyteidl.admin.ExecutionOuterClass.PlatformMetadata.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.ExecutionOuterClass.PlatformMetadata.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        executionCluster_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.ExecutionOuterClass.internal_static_flyteidl_admin_PlatformMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.PlatformMetadata getDefaultInstanceForType() {
+        return flyteidl.admin.ExecutionOuterClass.PlatformMetadata.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.PlatformMetadata build() {
+        flyteidl.admin.ExecutionOuterClass.PlatformMetadata result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.ExecutionOuterClass.PlatformMetadata buildPartial() {
+        flyteidl.admin.ExecutionOuterClass.PlatformMetadata result = new flyteidl.admin.ExecutionOuterClass.PlatformMetadata(this);
+        result.executionCluster_ = executionCluster_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.ExecutionOuterClass.PlatformMetadata) {
+          return mergeFrom((flyteidl.admin.ExecutionOuterClass.PlatformMetadata)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.ExecutionOuterClass.PlatformMetadata other) {
+        if (other == flyteidl.admin.ExecutionOuterClass.PlatformMetadata.getDefaultInstance()) return this;
+        if (!other.getExecutionCluster().isEmpty()) {
+          executionCluster_ = other.executionCluster_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.ExecutionOuterClass.PlatformMetadata parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.ExecutionOuterClass.PlatformMetadata) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object executionCluster_ = "";
+      /**
+       * <pre>
+       * Which execution cluster this execution ran on.
+       * </pre>
+       *
+       * <code>string execution_cluster = 1;</code>
+       */
+      public java.lang.String getExecutionCluster() {
+        java.lang.Object ref = executionCluster_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          executionCluster_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Which execution cluster this execution ran on.
+       * </pre>
+       *
+       * <code>string execution_cluster = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getExecutionClusterBytes() {
+        java.lang.Object ref = executionCluster_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          executionCluster_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Which execution cluster this execution ran on.
+       * </pre>
+       *
+       * <code>string execution_cluster = 1;</code>
+       */
+      public Builder setExecutionCluster(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        executionCluster_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Which execution cluster this execution ran on.
+       * </pre>
+       *
+       * <code>string execution_cluster = 1;</code>
+       */
+      public Builder clearExecutionCluster() {
+        
+        executionCluster_ = getDefaultInstance().getExecutionCluster();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Which execution cluster this execution ran on.
+       * </pre>
+       *
+       * <code>string execution_cluster = 1;</code>
+       */
+      public Builder setExecutionClusterBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        executionCluster_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.PlatformMetadata)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.PlatformMetadata)
+    private static final flyteidl.admin.ExecutionOuterClass.PlatformMetadata DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.ExecutionOuterClass.PlatformMetadata();
+    }
+
+    public static flyteidl.admin.ExecutionOuterClass.PlatformMetadata getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PlatformMetadata>
+        PARSER = new com.google.protobuf.AbstractParser<PlatformMetadata>() {
+      @java.lang.Override
+      public PlatformMetadata parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PlatformMetadata(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PlatformMetadata> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PlatformMetadata> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.ExecutionOuterClass.PlatformMetadata getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ExecutionMetadataOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.admin.ExecutionMetadata)
       com.google.protobuf.MessageOrBuilder {
@@ -11402,6 +11995,34 @@ public final class ExecutionOuterClass {
      * <code>.flyteidl.core.WorkflowExecutionIdentifier reference_execution = 16;</code>
      */
     flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getReferenceExecutionOrBuilder();
+
+    /**
+     * <pre>
+     * Optional, platform-specific metadata about the execution.
+     * In this the future this may be gated behind an ACL or some sort of authorization.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.PlatformMetadata platform_metadata = 17;</code>
+     */
+    boolean hasPlatformMetadata();
+    /**
+     * <pre>
+     * Optional, platform-specific metadata about the execution.
+     * In this the future this may be gated behind an ACL or some sort of authorization.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.PlatformMetadata platform_metadata = 17;</code>
+     */
+    flyteidl.admin.ExecutionOuterClass.PlatformMetadata getPlatformMetadata();
+    /**
+     * <pre>
+     * Optional, platform-specific metadata about the execution.
+     * In this the future this may be gated behind an ACL or some sort of authorization.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.PlatformMetadata platform_metadata = 17;</code>
+     */
+    flyteidl.admin.ExecutionOuterClass.PlatformMetadataOrBuilder getPlatformMetadataOrBuilder();
   }
   /**
    * <pre>
@@ -11501,6 +12122,19 @@ public final class ExecutionOuterClass {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(referenceExecution_);
                 referenceExecution_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 138: {
+              flyteidl.admin.ExecutionOuterClass.PlatformMetadata.Builder subBuilder = null;
+              if (platformMetadata_ != null) {
+                subBuilder = platformMetadata_.toBuilder();
+              }
+              platformMetadata_ = input.readMessage(flyteidl.admin.ExecutionOuterClass.PlatformMetadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(platformMetadata_);
+                platformMetadata_ = subBuilder.buildPartial();
               }
 
               break;
@@ -11896,6 +12530,42 @@ public final class ExecutionOuterClass {
       return getReferenceExecution();
     }
 
+    public static final int PLATFORM_METADATA_FIELD_NUMBER = 17;
+    private flyteidl.admin.ExecutionOuterClass.PlatformMetadata platformMetadata_;
+    /**
+     * <pre>
+     * Optional, platform-specific metadata about the execution.
+     * In this the future this may be gated behind an ACL or some sort of authorization.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.PlatformMetadata platform_metadata = 17;</code>
+     */
+    public boolean hasPlatformMetadata() {
+      return platformMetadata_ != null;
+    }
+    /**
+     * <pre>
+     * Optional, platform-specific metadata about the execution.
+     * In this the future this may be gated behind an ACL or some sort of authorization.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.PlatformMetadata platform_metadata = 17;</code>
+     */
+    public flyteidl.admin.ExecutionOuterClass.PlatformMetadata getPlatformMetadata() {
+      return platformMetadata_ == null ? flyteidl.admin.ExecutionOuterClass.PlatformMetadata.getDefaultInstance() : platformMetadata_;
+    }
+    /**
+     * <pre>
+     * Optional, platform-specific metadata about the execution.
+     * In this the future this may be gated behind an ACL or some sort of authorization.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.PlatformMetadata platform_metadata = 17;</code>
+     */
+    public flyteidl.admin.ExecutionOuterClass.PlatformMetadataOrBuilder getPlatformMetadataOrBuilder() {
+      return getPlatformMetadata();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -11928,6 +12598,9 @@ public final class ExecutionOuterClass {
       if (referenceExecution_ != null) {
         output.writeMessage(16, getReferenceExecution());
       }
+      if (platformMetadata_ != null) {
+        output.writeMessage(17, getPlatformMetadata());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -11959,6 +12632,10 @@ public final class ExecutionOuterClass {
       if (referenceExecution_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(16, getReferenceExecution());
+      }
+      if (platformMetadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(17, getPlatformMetadata());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11995,6 +12672,11 @@ public final class ExecutionOuterClass {
         if (!getReferenceExecution()
             .equals(other.getReferenceExecution())) return false;
       }
+      if (hasPlatformMetadata() != other.hasPlatformMetadata()) return false;
+      if (hasPlatformMetadata()) {
+        if (!getPlatformMetadata()
+            .equals(other.getPlatformMetadata())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12023,6 +12705,10 @@ public final class ExecutionOuterClass {
       if (hasReferenceExecution()) {
         hash = (37 * hash) + REFERENCE_EXECUTION_FIELD_NUMBER;
         hash = (53 * hash) + getReferenceExecution().hashCode();
+      }
+      if (hasPlatformMetadata()) {
+        hash = (37 * hash) + PLATFORM_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getPlatformMetadata().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -12186,6 +12872,12 @@ public final class ExecutionOuterClass {
           referenceExecution_ = null;
           referenceExecutionBuilder_ = null;
         }
+        if (platformMetadataBuilder_ == null) {
+          platformMetadata_ = null;
+        } else {
+          platformMetadata_ = null;
+          platformMetadataBuilder_ = null;
+        }
         return this;
       }
 
@@ -12229,6 +12921,11 @@ public final class ExecutionOuterClass {
           result.referenceExecution_ = referenceExecution_;
         } else {
           result.referenceExecution_ = referenceExecutionBuilder_.build();
+        }
+        if (platformMetadataBuilder_ == null) {
+          result.platformMetadata_ = platformMetadata_;
+        } else {
+          result.platformMetadata_ = platformMetadataBuilder_.build();
         }
         onBuilt();
         return result;
@@ -12296,6 +12993,9 @@ public final class ExecutionOuterClass {
         }
         if (other.hasReferenceExecution()) {
           mergeReferenceExecution(other.getReferenceExecution());
+        }
+        if (other.hasPlatformMetadata()) {
+          mergePlatformMetadata(other.getPlatformMetadata());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -13006,6 +13706,168 @@ public final class ExecutionOuterClass {
           referenceExecution_ = null;
         }
         return referenceExecutionBuilder_;
+      }
+
+      private flyteidl.admin.ExecutionOuterClass.PlatformMetadata platformMetadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.ExecutionOuterClass.PlatformMetadata, flyteidl.admin.ExecutionOuterClass.PlatformMetadata.Builder, flyteidl.admin.ExecutionOuterClass.PlatformMetadataOrBuilder> platformMetadataBuilder_;
+      /**
+       * <pre>
+       * Optional, platform-specific metadata about the execution.
+       * In this the future this may be gated behind an ACL or some sort of authorization.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.PlatformMetadata platform_metadata = 17;</code>
+       */
+      public boolean hasPlatformMetadata() {
+        return platformMetadataBuilder_ != null || platformMetadata_ != null;
+      }
+      /**
+       * <pre>
+       * Optional, platform-specific metadata about the execution.
+       * In this the future this may be gated behind an ACL or some sort of authorization.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.PlatformMetadata platform_metadata = 17;</code>
+       */
+      public flyteidl.admin.ExecutionOuterClass.PlatformMetadata getPlatformMetadata() {
+        if (platformMetadataBuilder_ == null) {
+          return platformMetadata_ == null ? flyteidl.admin.ExecutionOuterClass.PlatformMetadata.getDefaultInstance() : platformMetadata_;
+        } else {
+          return platformMetadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Optional, platform-specific metadata about the execution.
+       * In this the future this may be gated behind an ACL or some sort of authorization.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.PlatformMetadata platform_metadata = 17;</code>
+       */
+      public Builder setPlatformMetadata(flyteidl.admin.ExecutionOuterClass.PlatformMetadata value) {
+        if (platformMetadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          platformMetadata_ = value;
+          onChanged();
+        } else {
+          platformMetadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional, platform-specific metadata about the execution.
+       * In this the future this may be gated behind an ACL or some sort of authorization.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.PlatformMetadata platform_metadata = 17;</code>
+       */
+      public Builder setPlatformMetadata(
+          flyteidl.admin.ExecutionOuterClass.PlatformMetadata.Builder builderForValue) {
+        if (platformMetadataBuilder_ == null) {
+          platformMetadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          platformMetadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional, platform-specific metadata about the execution.
+       * In this the future this may be gated behind an ACL or some sort of authorization.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.PlatformMetadata platform_metadata = 17;</code>
+       */
+      public Builder mergePlatformMetadata(flyteidl.admin.ExecutionOuterClass.PlatformMetadata value) {
+        if (platformMetadataBuilder_ == null) {
+          if (platformMetadata_ != null) {
+            platformMetadata_ =
+              flyteidl.admin.ExecutionOuterClass.PlatformMetadata.newBuilder(platformMetadata_).mergeFrom(value).buildPartial();
+          } else {
+            platformMetadata_ = value;
+          }
+          onChanged();
+        } else {
+          platformMetadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional, platform-specific metadata about the execution.
+       * In this the future this may be gated behind an ACL or some sort of authorization.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.PlatformMetadata platform_metadata = 17;</code>
+       */
+      public Builder clearPlatformMetadata() {
+        if (platformMetadataBuilder_ == null) {
+          platformMetadata_ = null;
+          onChanged();
+        } else {
+          platformMetadata_ = null;
+          platformMetadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional, platform-specific metadata about the execution.
+       * In this the future this may be gated behind an ACL or some sort of authorization.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.PlatformMetadata platform_metadata = 17;</code>
+       */
+      public flyteidl.admin.ExecutionOuterClass.PlatformMetadata.Builder getPlatformMetadataBuilder() {
+        
+        onChanged();
+        return getPlatformMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Optional, platform-specific metadata about the execution.
+       * In this the future this may be gated behind an ACL or some sort of authorization.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.PlatformMetadata platform_metadata = 17;</code>
+       */
+      public flyteidl.admin.ExecutionOuterClass.PlatformMetadataOrBuilder getPlatformMetadataOrBuilder() {
+        if (platformMetadataBuilder_ != null) {
+          return platformMetadataBuilder_.getMessageOrBuilder();
+        } else {
+          return platformMetadata_ == null ?
+              flyteidl.admin.ExecutionOuterClass.PlatformMetadata.getDefaultInstance() : platformMetadata_;
+        }
+      }
+      /**
+       * <pre>
+       * Optional, platform-specific metadata about the execution.
+       * In this the future this may be gated behind an ACL or some sort of authorization.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.PlatformMetadata platform_metadata = 17;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.ExecutionOuterClass.PlatformMetadata, flyteidl.admin.ExecutionOuterClass.PlatformMetadata.Builder, flyteidl.admin.ExecutionOuterClass.PlatformMetadataOrBuilder> 
+          getPlatformMetadataFieldBuilder() {
+        if (platformMetadataBuilder_ == null) {
+          platformMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.ExecutionOuterClass.PlatformMetadata, flyteidl.admin.ExecutionOuterClass.PlatformMetadata.Builder, flyteidl.admin.ExecutionOuterClass.PlatformMetadataOrBuilder>(
+                  getPlatformMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          platformMetadata_ = null;
+        }
+        return platformMetadataBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -18928,6 +19790,11 @@ public final class ExecutionOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_ExecutionClosure_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_PlatformMetadata_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_PlatformMetadata_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_ExecutionMetadata_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -19012,38 +19879,41 @@ public final class ExecutionOuterClass {
       "\001(\0132\032.google.protobuf.Timestamp\0223\n\rnotif" +
       "ications\030\t \003(\0132\034.flyteidl.admin.Notifica" +
       "tion\022.\n\013workflow_id\030\013 \001(\0132\031.flyteidl.cor" +
-      "e.IdentifierB\017\n\routput_result\"\222\003\n\021Execut" +
-      "ionMetadata\022=\n\004mode\030\001 \001(\0162/.flyteidl.adm" +
-      "in.ExecutionMetadata.ExecutionMode\022\021\n\tpr" +
-      "incipal\030\002 \001(\t\022\017\n\007nesting\030\003 \001(\r\0220\n\014schedu" +
-      "led_at\030\004 \001(\0132\032.google.protobuf.Timestamp" +
-      "\022E\n\025parent_node_execution\030\005 \001(\0132&.flytei" +
-      "dl.core.NodeExecutionIdentifier\022G\n\023refer" +
-      "ence_execution\030\020 \001(\0132*.flyteidl.core.Wor" +
-      "kflowExecutionIdentifier\"X\n\rExecutionMod" +
-      "e\022\n\n\006MANUAL\020\000\022\r\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002" +
-      "\022\014\n\010RELAUNCH\020\003\022\022\n\016CHILD_WORKFLOW\020\004\"G\n\020No" +
-      "tificationList\0223\n\rnotifications\030\001 \003(\0132\034." +
-      "flyteidl.admin.Notification\"\357\002\n\rExecutio" +
-      "nSpec\022.\n\013launch_plan\030\001 \001(\0132\031.flyteidl.co" +
-      "re.Identifier\022-\n\006inputs\030\002 \001(\0132\031.flyteidl" +
-      ".core.LiteralMapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!" +
-      ".flyteidl.admin.ExecutionMetadata\0229\n\rnot" +
-      "ifications\030\005 \001(\0132 .flyteidl.admin.Notifi" +
-      "cationListH\000\022\025\n\013disable_all\030\006 \001(\010H\000\022&\n\006l" +
-      "abels\030\007 \001(\0132\026.flyteidl.admin.Labels\0220\n\013a" +
-      "nnotations\030\010 \001(\0132\033.flyteidl.admin.Annota" +
-      "tionsB\030\n\026notification_overridesJ\004\010\004\020\005\"b\n" +
-      "\031ExecutionTerminateRequest\0226\n\002id\030\001 \001(\0132*" +
-      ".flyteidl.core.WorkflowExecutionIdentifi" +
-      "er\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTerminateR" +
-      "esponse\"Y\n\037WorkflowExecutionGetDataReque" +
-      "st\0226\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowE" +
-      "xecutionIdentifier\"u\n WorkflowExecutionG" +
-      "etDataResponse\022(\n\007outputs\030\001 \001(\0132\027.flytei" +
-      "dl.admin.UrlBlob\022\'\n\006inputs\030\002 \001(\0132\027.flyte" +
-      "idl.admin.UrlBlobB3Z1github.com/lyft/fly" +
-      "teidl/gen/pb-go/flyteidl/adminb\006proto3"
+      "e.IdentifierB\017\n\routput_result\"-\n\020Platfor" +
+      "mMetadata\022\031\n\021execution_cluster\030\001 \001(\t\"\317\003\n" +
+      "\021ExecutionMetadata\022=\n\004mode\030\001 \001(\0162/.flyte" +
+      "idl.admin.ExecutionMetadata.ExecutionMod" +
+      "e\022\021\n\tprincipal\030\002 \001(\t\022\017\n\007nesting\030\003 \001(\r\0220\n" +
+      "\014scheduled_at\030\004 \001(\0132\032.google.protobuf.Ti" +
+      "mestamp\022E\n\025parent_node_execution\030\005 \001(\0132&" +
+      ".flyteidl.core.NodeExecutionIdentifier\022G" +
+      "\n\023reference_execution\030\020 \001(\0132*.flyteidl.c" +
+      "ore.WorkflowExecutionIdentifier\022;\n\021platf" +
+      "orm_metadata\030\021 \001(\0132 .flyteidl.admin.Plat" +
+      "formMetadata\"X\n\rExecutionMode\022\n\n\006MANUAL\020" +
+      "\000\022\r\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH" +
+      "\020\003\022\022\n\016CHILD_WORKFLOW\020\004\"G\n\020NotificationLi" +
+      "st\0223\n\rnotifications\030\001 \003(\0132\034.flyteidl.adm" +
+      "in.Notification\"\357\002\n\rExecutionSpec\022.\n\013lau" +
+      "nch_plan\030\001 \001(\0132\031.flyteidl.core.Identifie" +
+      "r\022-\n\006inputs\030\002 \001(\0132\031.flyteidl.core.Litera" +
+      "lMapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!.flyteidl.ad" +
+      "min.ExecutionMetadata\0229\n\rnotifications\030\005" +
+      " \001(\0132 .flyteidl.admin.NotificationListH\000" +
+      "\022\025\n\013disable_all\030\006 \001(\010H\000\022&\n\006labels\030\007 \001(\0132" +
+      "\026.flyteidl.admin.Labels\0220\n\013annotations\030\010" +
+      " \001(\0132\033.flyteidl.admin.AnnotationsB\030\n\026not" +
+      "ification_overridesJ\004\010\004\020\005\"b\n\031ExecutionTe" +
+      "rminateRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.co" +
+      "re.WorkflowExecutionIdentifier\022\r\n\005cause\030" +
+      "\002 \001(\t\"\034\n\032ExecutionTerminateResponse\"Y\n\037W" +
+      "orkflowExecutionGetDataRequest\0226\n\002id\030\001 \001" +
+      "(\0132*.flyteidl.core.WorkflowExecutionIden" +
+      "tifier\"u\n WorkflowExecutionGetDataRespon" +
+      "se\022(\n\007outputs\030\001 \001(\0132\027.flyteidl.admin.Url" +
+      "Blob\022\'\n\006inputs\030\002 \001(\0132\027.flyteidl.admin.Ur" +
+      "lBlobB3Z1github.com/lyft/flyteidl/gen/pb" +
+      "-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -19117,44 +19987,50 @@ public final class ExecutionOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionClosure_descriptor,
         new java.lang.String[] { "Outputs", "Error", "AbortCause", "AbortMetadata", "ComputedInputs", "Phase", "StartedAt", "Duration", "CreatedAt", "UpdatedAt", "Notifications", "WorkflowId", "OutputResult", });
-    internal_static_flyteidl_admin_ExecutionMetadata_descriptor =
+    internal_static_flyteidl_admin_PlatformMetadata_descriptor =
       getDescriptor().getMessageTypes().get(9);
+    internal_static_flyteidl_admin_PlatformMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_PlatformMetadata_descriptor,
+        new java.lang.String[] { "ExecutionCluster", });
+    internal_static_flyteidl_admin_ExecutionMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(10);
     internal_static_flyteidl_admin_ExecutionMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionMetadata_descriptor,
-        new java.lang.String[] { "Mode", "Principal", "Nesting", "ScheduledAt", "ParentNodeExecution", "ReferenceExecution", });
+        new java.lang.String[] { "Mode", "Principal", "Nesting", "ScheduledAt", "ParentNodeExecution", "ReferenceExecution", "PlatformMetadata", });
     internal_static_flyteidl_admin_NotificationList_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_flyteidl_admin_NotificationList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NotificationList_descriptor,
         new java.lang.String[] { "Notifications", });
     internal_static_flyteidl_admin_ExecutionSpec_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_flyteidl_admin_ExecutionSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionSpec_descriptor,
         new java.lang.String[] { "LaunchPlan", "Inputs", "Metadata", "Notifications", "DisableAll", "Labels", "Annotations", "NotificationOverrides", });
     internal_static_flyteidl_admin_ExecutionTerminateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_flyteidl_admin_ExecutionTerminateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionTerminateRequest_descriptor,
         new java.lang.String[] { "Id", "Cause", });
     internal_static_flyteidl_admin_ExecutionTerminateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_flyteidl_admin_ExecutionTerminateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionTerminateResponse_descriptor,
         new java.lang.String[] { });
     internal_static_flyteidl_admin_WorkflowExecutionGetDataRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_flyteidl_admin_WorkflowExecutionGetDataRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowExecutionGetDataRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_flyteidl_admin_WorkflowExecutionGetDataResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_flyteidl_admin_WorkflowExecutionGetDataResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowExecutionGetDataResponse_descriptor,

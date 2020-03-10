@@ -2556,6 +2556,8 @@ definitions:
               name: "name"
               project: "project"
             node_id: "node_id"
+          platform_metadata:
+            execution_cluster: "execution_cluster"
           reference_execution:
             domain: "domain"
             name: "name"
@@ -2850,6 +2852,8 @@ definitions:
                 name: "name"
                 project: "project"
               node_id: "node_id"
+            platform_metadata:
+              execution_cluster: "execution_cluster"
             reference_execution:
               domain: "domain"
               name: "name"
@@ -2975,6 +2979,8 @@ definitions:
                 name: "name"
                 project: "project"
               node_id: "node_id"
+            platform_metadata:
+              execution_cluster: "execution_cluster"
             reference_execution:
               domain: "domain"
               name: "name"
@@ -3053,6 +3059,10 @@ definitions:
         description: "Optional, a reference workflow execution related to this execution.\n\
           In the case of a relaunch, this references the original workflow execution."
         $ref: "#/definitions/coreWorkflowExecutionIdentifier"
+      platform_metadata:
+        description: "Optional, platform-specific metadata about the execution.\n\
+          In this the future this may be gated behind an ACL or some sort of authorization."
+        $ref: "#/definitions/adminPlatformMetadata"
     description: "Represents attributes about an execution which are not required\
       \ to launch the execution but are useful to record.\nThese attributes are assigned\
       \ at launch time and do not change."
@@ -3065,6 +3075,8 @@ definitions:
           name: "name"
           project: "project"
         node_id: "node_id"
+      platform_metadata:
+        execution_cluster: "execution_cluster"
       reference_execution:
         domain: "domain"
         name: "name"
@@ -3143,6 +3155,8 @@ definitions:
             name: "name"
             project: "project"
           node_id: "node_id"
+        platform_metadata:
+          execution_cluster: "execution_cluster"
         reference_execution:
           domain: "domain"
           name: "name"
@@ -4900,6 +4914,16 @@ definitions:
       recipients_email:
       - "recipients_email"
       - "recipients_email"
+  adminPlatformMetadata:
+    type: "object"
+    properties:
+      execution_cluster:
+        type: "string"
+        description: "Which execution cluster this execution ran on."
+    description: "Represents platform-specific and not necessarily user-facing metadata\
+      \ about an execution."
+    example:
+      execution_cluster: "execution_cluster"
   adminProject:
     type: "object"
     properties:
