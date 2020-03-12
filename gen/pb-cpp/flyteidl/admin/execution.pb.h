@@ -96,9 +96,9 @@ extern LiteralMapBlobDefaultTypeInternal _LiteralMapBlob_default_instance_;
 class NotificationList;
 class NotificationListDefaultTypeInternal;
 extern NotificationListDefaultTypeInternal _NotificationList_default_instance_;
-class PlatformMetadata;
-class PlatformMetadataDefaultTypeInternal;
-extern PlatformMetadataDefaultTypeInternal _PlatformMetadata_default_instance_;
+class SystemMetadata;
+class SystemMetadataDefaultTypeInternal;
+extern SystemMetadataDefaultTypeInternal _SystemMetadata_default_instance_;
 class WorkflowExecutionGetDataRequest;
 class WorkflowExecutionGetDataRequestDefaultTypeInternal;
 extern WorkflowExecutionGetDataRequestDefaultTypeInternal _WorkflowExecutionGetDataRequest_default_instance_;
@@ -125,7 +125,7 @@ template<> ::flyteidl::admin::ExecutionTerminateRequest* Arena::CreateMaybeMessa
 template<> ::flyteidl::admin::ExecutionTerminateResponse* Arena::CreateMaybeMessage<::flyteidl::admin::ExecutionTerminateResponse>(Arena*);
 template<> ::flyteidl::admin::LiteralMapBlob* Arena::CreateMaybeMessage<::flyteidl::admin::LiteralMapBlob>(Arena*);
 template<> ::flyteidl::admin::NotificationList* Arena::CreateMaybeMessage<::flyteidl::admin::NotificationList>(Arena*);
-template<> ::flyteidl::admin::PlatformMetadata* Arena::CreateMaybeMessage<::flyteidl::admin::PlatformMetadata>(Arena*);
+template<> ::flyteidl::admin::SystemMetadata* Arena::CreateMaybeMessage<::flyteidl::admin::SystemMetadata>(Arena*);
 template<> ::flyteidl::admin::WorkflowExecutionGetDataRequest* Arena::CreateMaybeMessage<::flyteidl::admin::WorkflowExecutionGetDataRequest>(Arena*);
 template<> ::flyteidl::admin::WorkflowExecutionGetDataResponse* Arena::CreateMaybeMessage<::flyteidl::admin::WorkflowExecutionGetDataResponse>(Arena*);
 template<> ::flyteidl::admin::WorkflowExecutionGetRequest* Arena::CreateMaybeMessage<::flyteidl::admin::WorkflowExecutionGetRequest>(Arena*);
@@ -1499,25 +1499,25 @@ class ExecutionClosure final :
 };
 // -------------------------------------------------------------------
 
-class PlatformMetadata final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.PlatformMetadata) */ {
+class SystemMetadata final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.SystemMetadata) */ {
  public:
-  PlatformMetadata();
-  virtual ~PlatformMetadata();
+  SystemMetadata();
+  virtual ~SystemMetadata();
 
-  PlatformMetadata(const PlatformMetadata& from);
+  SystemMetadata(const SystemMetadata& from);
 
-  inline PlatformMetadata& operator=(const PlatformMetadata& from) {
+  inline SystemMetadata& operator=(const SystemMetadata& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  PlatformMetadata(PlatformMetadata&& from) noexcept
-    : PlatformMetadata() {
+  SystemMetadata(SystemMetadata&& from) noexcept
+    : SystemMetadata() {
     *this = ::std::move(from);
   }
 
-  inline PlatformMetadata& operator=(PlatformMetadata&& from) noexcept {
+  inline SystemMetadata& operator=(SystemMetadata&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1529,34 +1529,34 @@ class PlatformMetadata final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const PlatformMetadata& default_instance();
+  static const SystemMetadata& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const PlatformMetadata* internal_default_instance() {
-    return reinterpret_cast<const PlatformMetadata*>(
-               &_PlatformMetadata_default_instance_);
+  static inline const SystemMetadata* internal_default_instance() {
+    return reinterpret_cast<const SystemMetadata*>(
+               &_SystemMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     9;
 
-  void Swap(PlatformMetadata* other);
-  friend void swap(PlatformMetadata& a, PlatformMetadata& b) {
+  void Swap(SystemMetadata* other);
+  friend void swap(SystemMetadata& a, SystemMetadata& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline PlatformMetadata* New() const final {
-    return CreateMaybeMessage<PlatformMetadata>(nullptr);
+  inline SystemMetadata* New() const final {
+    return CreateMaybeMessage<SystemMetadata>(nullptr);
   }
 
-  PlatformMetadata* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<PlatformMetadata>(arena);
+  SystemMetadata* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<SystemMetadata>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const PlatformMetadata& from);
-  void MergeFrom(const PlatformMetadata& from);
+  void CopyFrom(const SystemMetadata& from);
+  void MergeFrom(const SystemMetadata& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1578,7 +1578,7 @@ class PlatformMetadata final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(PlatformMetadata* other);
+  void InternalSwap(SystemMetadata* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -1608,7 +1608,7 @@ class PlatformMetadata final :
   ::std::string* release_execution_cluster();
   void set_allocated_execution_cluster(::std::string* execution_cluster);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.admin.PlatformMetadata)
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.SystemMetadata)
  private:
   class HasBitSetters;
 
@@ -1787,14 +1787,14 @@ class ExecutionMetadata final :
   ::flyteidl::core::WorkflowExecutionIdentifier* mutable_reference_execution();
   void set_allocated_reference_execution(::flyteidl::core::WorkflowExecutionIdentifier* reference_execution);
 
-  // .flyteidl.admin.PlatformMetadata platform_metadata = 17;
-  bool has_platform_metadata() const;
-  void clear_platform_metadata();
-  static const int kPlatformMetadataFieldNumber = 17;
-  const ::flyteidl::admin::PlatformMetadata& platform_metadata() const;
-  ::flyteidl::admin::PlatformMetadata* release_platform_metadata();
-  ::flyteidl::admin::PlatformMetadata* mutable_platform_metadata();
-  void set_allocated_platform_metadata(::flyteidl::admin::PlatformMetadata* platform_metadata);
+  // .flyteidl.admin.SystemMetadata system_metadata = 17;
+  bool has_system_metadata() const;
+  void clear_system_metadata();
+  static const int kSystemMetadataFieldNumber = 17;
+  const ::flyteidl::admin::SystemMetadata& system_metadata() const;
+  ::flyteidl::admin::SystemMetadata* release_system_metadata();
+  ::flyteidl::admin::SystemMetadata* mutable_system_metadata();
+  void set_allocated_system_metadata(::flyteidl::admin::SystemMetadata* system_metadata);
 
   // .flyteidl.admin.ExecutionMetadata.ExecutionMode mode = 1;
   void clear_mode();
@@ -1817,7 +1817,7 @@ class ExecutionMetadata final :
   ::google::protobuf::Timestamp* scheduled_at_;
   ::flyteidl::core::NodeExecutionIdentifier* parent_node_execution_;
   ::flyteidl::core::WorkflowExecutionIdentifier* reference_execution_;
-  ::flyteidl::admin::PlatformMetadata* platform_metadata_;
+  ::flyteidl::admin::SystemMetadata* system_metadata_;
   int mode_;
   ::google::protobuf::uint32 nesting_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -4102,59 +4102,59 @@ inline ExecutionClosure::OutputResultCase ExecutionClosure::output_result_case()
 }
 // -------------------------------------------------------------------
 
-// PlatformMetadata
+// SystemMetadata
 
 // string execution_cluster = 1;
-inline void PlatformMetadata::clear_execution_cluster() {
+inline void SystemMetadata::clear_execution_cluster() {
   execution_cluster_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& PlatformMetadata::execution_cluster() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.PlatformMetadata.execution_cluster)
+inline const ::std::string& SystemMetadata::execution_cluster() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.SystemMetadata.execution_cluster)
   return execution_cluster_.GetNoArena();
 }
-inline void PlatformMetadata::set_execution_cluster(const ::std::string& value) {
+inline void SystemMetadata::set_execution_cluster(const ::std::string& value) {
   
   execution_cluster_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.PlatformMetadata.execution_cluster)
+  // @@protoc_insertion_point(field_set:flyteidl.admin.SystemMetadata.execution_cluster)
 }
 #if LANG_CXX11
-inline void PlatformMetadata::set_execution_cluster(::std::string&& value) {
+inline void SystemMetadata::set_execution_cluster(::std::string&& value) {
   
   execution_cluster_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.PlatformMetadata.execution_cluster)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.SystemMetadata.execution_cluster)
 }
 #endif
-inline void PlatformMetadata::set_execution_cluster(const char* value) {
+inline void SystemMetadata::set_execution_cluster(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   execution_cluster_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.PlatformMetadata.execution_cluster)
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.SystemMetadata.execution_cluster)
 }
-inline void PlatformMetadata::set_execution_cluster(const char* value, size_t size) {
+inline void SystemMetadata::set_execution_cluster(const char* value, size_t size) {
   
   execution_cluster_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.PlatformMetadata.execution_cluster)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.SystemMetadata.execution_cluster)
 }
-inline ::std::string* PlatformMetadata::mutable_execution_cluster() {
+inline ::std::string* SystemMetadata::mutable_execution_cluster() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.PlatformMetadata.execution_cluster)
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.SystemMetadata.execution_cluster)
   return execution_cluster_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* PlatformMetadata::release_execution_cluster() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.PlatformMetadata.execution_cluster)
+inline ::std::string* SystemMetadata::release_execution_cluster() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.SystemMetadata.execution_cluster)
   
   return execution_cluster_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void PlatformMetadata::set_allocated_execution_cluster(::std::string* execution_cluster) {
+inline void SystemMetadata::set_allocated_execution_cluster(::std::string* execution_cluster) {
   if (execution_cluster != nullptr) {
     
   } else {
     
   }
   execution_cluster_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), execution_cluster);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.PlatformMetadata.execution_cluster)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SystemMetadata.execution_cluster)
 }
 
 // -------------------------------------------------------------------
@@ -4378,55 +4378,55 @@ inline void ExecutionMetadata::set_allocated_reference_execution(::flyteidl::cor
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionMetadata.reference_execution)
 }
 
-// .flyteidl.admin.PlatformMetadata platform_metadata = 17;
-inline bool ExecutionMetadata::has_platform_metadata() const {
-  return this != internal_default_instance() && platform_metadata_ != nullptr;
+// .flyteidl.admin.SystemMetadata system_metadata = 17;
+inline bool ExecutionMetadata::has_system_metadata() const {
+  return this != internal_default_instance() && system_metadata_ != nullptr;
 }
-inline void ExecutionMetadata::clear_platform_metadata() {
-  if (GetArenaNoVirtual() == nullptr && platform_metadata_ != nullptr) {
-    delete platform_metadata_;
+inline void ExecutionMetadata::clear_system_metadata() {
+  if (GetArenaNoVirtual() == nullptr && system_metadata_ != nullptr) {
+    delete system_metadata_;
   }
-  platform_metadata_ = nullptr;
+  system_metadata_ = nullptr;
 }
-inline const ::flyteidl::admin::PlatformMetadata& ExecutionMetadata::platform_metadata() const {
-  const ::flyteidl::admin::PlatformMetadata* p = platform_metadata_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionMetadata.platform_metadata)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::PlatformMetadata*>(
-      &::flyteidl::admin::_PlatformMetadata_default_instance_);
+inline const ::flyteidl::admin::SystemMetadata& ExecutionMetadata::system_metadata() const {
+  const ::flyteidl::admin::SystemMetadata* p = system_metadata_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionMetadata.system_metadata)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::SystemMetadata*>(
+      &::flyteidl::admin::_SystemMetadata_default_instance_);
 }
-inline ::flyteidl::admin::PlatformMetadata* ExecutionMetadata::release_platform_metadata() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.ExecutionMetadata.platform_metadata)
+inline ::flyteidl::admin::SystemMetadata* ExecutionMetadata::release_system_metadata() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.ExecutionMetadata.system_metadata)
   
-  ::flyteidl::admin::PlatformMetadata* temp = platform_metadata_;
-  platform_metadata_ = nullptr;
+  ::flyteidl::admin::SystemMetadata* temp = system_metadata_;
+  system_metadata_ = nullptr;
   return temp;
 }
-inline ::flyteidl::admin::PlatformMetadata* ExecutionMetadata::mutable_platform_metadata() {
+inline ::flyteidl::admin::SystemMetadata* ExecutionMetadata::mutable_system_metadata() {
   
-  if (platform_metadata_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::PlatformMetadata>(GetArenaNoVirtual());
-    platform_metadata_ = p;
+  if (system_metadata_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::SystemMetadata>(GetArenaNoVirtual());
+    system_metadata_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionMetadata.platform_metadata)
-  return platform_metadata_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionMetadata.system_metadata)
+  return system_metadata_;
 }
-inline void ExecutionMetadata::set_allocated_platform_metadata(::flyteidl::admin::PlatformMetadata* platform_metadata) {
+inline void ExecutionMetadata::set_allocated_system_metadata(::flyteidl::admin::SystemMetadata* system_metadata) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete platform_metadata_;
+    delete system_metadata_;
   }
-  if (platform_metadata) {
+  if (system_metadata) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      platform_metadata = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, platform_metadata, submessage_arena);
+      system_metadata = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, system_metadata, submessage_arena);
     }
     
   } else {
     
   }
-  platform_metadata_ = platform_metadata;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionMetadata.platform_metadata)
+  system_metadata_ = system_metadata;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionMetadata.system_metadata)
 }
 
 // -------------------------------------------------------------------

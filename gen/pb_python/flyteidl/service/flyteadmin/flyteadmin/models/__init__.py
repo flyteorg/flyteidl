@@ -67,7 +67,6 @@ from flyteadmin.models.admin_node_execution_meta_data import AdminNodeExecutionM
 from flyteadmin.models.admin_notification import AdminNotification
 from flyteadmin.models.admin_notification_list import AdminNotificationList
 from flyteadmin.models.admin_pager_duty_notification import AdminPagerDutyNotification
-from flyteadmin.models.admin_platform_metadata import AdminPlatformMetadata
 from flyteadmin.models.admin_project import AdminProject
 from flyteadmin.models.admin_project_domain_attributes import AdminProjectDomainAttributes
 from flyteadmin.models.admin_project_domain_attributes_delete_request import AdminProjectDomainAttributesDeleteRequest
@@ -81,6 +80,7 @@ from flyteadmin.models.admin_projects import AdminProjects
 from flyteadmin.models.admin_schedule import AdminSchedule
 from flyteadmin.models.admin_slack_notification import AdminSlackNotification
 from flyteadmin.models.admin_sort import AdminSort
+from flyteadmin.models.admin_system_metadata import AdminSystemMetadata
 from flyteadmin.models.admin_task import AdminTask
 from flyteadmin.models.admin_task_closure import AdminTaskClosure
 from flyteadmin.models.admin_task_create_request import AdminTaskCreateRequest

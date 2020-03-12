@@ -393,14 +393,14 @@ workflow_id
   
 
 
-.. _api_msg_flyteidl.admin.PlatformMetadata:
+.. _api_msg_flyteidl.admin.SystemMetadata:
 
-flyteidl.admin.PlatformMetadata
--------------------------------
+flyteidl.admin.SystemMetadata
+-----------------------------
 
-`[flyteidl.admin.PlatformMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L146>`_
+`[flyteidl.admin.SystemMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L146>`_
 
-Represents platform-specific and not necessarily user-facing metadata about an execution.
+Represents system rather than user-facing metadata about an execution.
 
 .. code-block:: json
 
@@ -408,7 +408,7 @@ Represents platform-specific and not necessarily user-facing metadata about an e
     "execution_cluster": "..."
   }
 
-.. _api_field_flyteidl.admin.PlatformMetadata.execution_cluster:
+.. _api_field_flyteidl.admin.SystemMetadata.execution_cluster:
 
 execution_cluster
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Which execution cluster this execution ran on.
@@ -435,7 +435,7 @@ These attributes are assigned at launch time and do not change.
     "scheduled_at": "{...}",
     "parent_node_execution": "{...}",
     "reference_execution": "{...}",
-    "platform_metadata": "{...}"
+    "system_metadata": "{...}"
   }
 
 .. _api_field_flyteidl.admin.ExecutionMetadata.mode:
@@ -480,10 +480,10 @@ reference_execution
   In the case of a relaunch, this references the original workflow execution.
   
   
-.. _api_field_flyteidl.admin.ExecutionMetadata.platform_metadata:
+.. _api_field_flyteidl.admin.ExecutionMetadata.system_metadata:
 
-platform_metadata
-  (:ref:`flyteidl.admin.PlatformMetadata <api_msg_flyteidl.admin.PlatformMetadata>`) Optional, platform-specific metadata about the execution.
+system_metadata
+  (:ref:`flyteidl.admin.SystemMetadata <api_msg_flyteidl.admin.SystemMetadata>`) Optional, platform-specific metadata about the execution.
   In this the future this may be gated behind an ACL or some sort of authorization.
   
   

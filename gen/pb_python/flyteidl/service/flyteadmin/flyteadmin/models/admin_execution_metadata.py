@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.admin_platform_metadata import AdminPlatformMetadata  # noqa: F401,E501
+from flyteadmin.models.admin_system_metadata import AdminSystemMetadata  # noqa: F401,E501
 from flyteadmin.models.core_node_execution_identifier import CoreNodeExecutionIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_workflow_execution_identifier import CoreWorkflowExecutionIdentifier  # noqa: F401,E501
 from flyteadmin.models.execution_metadata_execution_mode import ExecutionMetadataExecutionMode  # noqa: F401,E501
@@ -42,7 +42,7 @@ class AdminExecutionMetadata(object):
         'scheduled_at': 'datetime',
         'parent_node_execution': 'CoreNodeExecutionIdentifier',
         'reference_execution': 'CoreWorkflowExecutionIdentifier',
-        'platform_metadata': 'AdminPlatformMetadata'
+        'system_metadata': 'AdminSystemMetadata'
     }
 
     attribute_map = {
@@ -52,10 +52,10 @@ class AdminExecutionMetadata(object):
         'scheduled_at': 'scheduled_at',
         'parent_node_execution': 'parent_node_execution',
         'reference_execution': 'reference_execution',
-        'platform_metadata': 'platform_metadata'
+        'system_metadata': 'system_metadata'
     }
 
-    def __init__(self, mode=None, principal=None, nesting=None, scheduled_at=None, parent_node_execution=None, reference_execution=None, platform_metadata=None):  # noqa: E501
+    def __init__(self, mode=None, principal=None, nesting=None, scheduled_at=None, parent_node_execution=None, reference_execution=None, system_metadata=None):  # noqa: E501
         """AdminExecutionMetadata - a model defined in Swagger"""  # noqa: E501
 
         self._mode = None
@@ -64,7 +64,7 @@ class AdminExecutionMetadata(object):
         self._scheduled_at = None
         self._parent_node_execution = None
         self._reference_execution = None
-        self._platform_metadata = None
+        self._system_metadata = None
         self.discriminator = None
 
         if mode is not None:
@@ -79,8 +79,8 @@ class AdminExecutionMetadata(object):
             self.parent_node_execution = parent_node_execution
         if reference_execution is not None:
             self.reference_execution = reference_execution
-        if platform_metadata is not None:
-            self.platform_metadata = platform_metadata
+        if system_metadata is not None:
+            self.system_metadata = system_metadata
 
     @property
     def mode(self):
@@ -217,27 +217,27 @@ class AdminExecutionMetadata(object):
         self._reference_execution = reference_execution
 
     @property
-    def platform_metadata(self):
-        """Gets the platform_metadata of this AdminExecutionMetadata.  # noqa: E501
+    def system_metadata(self):
+        """Gets the system_metadata of this AdminExecutionMetadata.  # noqa: E501
 
         Optional, platform-specific metadata about the execution. In this the future this may be gated behind an ACL or some sort of authorization.  # noqa: E501
 
-        :return: The platform_metadata of this AdminExecutionMetadata.  # noqa: E501
-        :rtype: AdminPlatformMetadata
+        :return: The system_metadata of this AdminExecutionMetadata.  # noqa: E501
+        :rtype: AdminSystemMetadata
         """
-        return self._platform_metadata
+        return self._system_metadata
 
-    @platform_metadata.setter
-    def platform_metadata(self, platform_metadata):
-        """Sets the platform_metadata of this AdminExecutionMetadata.
+    @system_metadata.setter
+    def system_metadata(self, system_metadata):
+        """Sets the system_metadata of this AdminExecutionMetadata.
 
         Optional, platform-specific metadata about the execution. In this the future this may be gated behind an ACL or some sort of authorization.  # noqa: E501
 
-        :param platform_metadata: The platform_metadata of this AdminExecutionMetadata.  # noqa: E501
-        :type: AdminPlatformMetadata
+        :param system_metadata: The system_metadata of this AdminExecutionMetadata.  # noqa: E501
+        :type: AdminSystemMetadata
         """
 
-        self._platform_metadata = platform_metadata
+        self._system_metadata = system_metadata
 
     def to_dict(self):
         """Returns the model properties as a dict"""

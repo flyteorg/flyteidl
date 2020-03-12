@@ -6976,52 +6976,52 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a PlatformMetadata. */
-        interface IPlatformMetadata {
+        /** Properties of a SystemMetadata. */
+        interface ISystemMetadata {
 
-            /** PlatformMetadata executionCluster */
+            /** SystemMetadata executionCluster */
             executionCluster?: (string|null);
         }
 
-        /** Represents a PlatformMetadata. */
-        class PlatformMetadata implements IPlatformMetadata {
+        /** Represents a SystemMetadata. */
+        class SystemMetadata implements ISystemMetadata {
 
             /**
-             * Constructs a new PlatformMetadata.
+             * Constructs a new SystemMetadata.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.admin.IPlatformMetadata);
+            constructor(properties?: flyteidl.admin.ISystemMetadata);
 
-            /** PlatformMetadata executionCluster. */
+            /** SystemMetadata executionCluster. */
             public executionCluster: string;
 
             /**
-             * Creates a new PlatformMetadata instance using the specified properties.
+             * Creates a new SystemMetadata instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns PlatformMetadata instance
+             * @returns SystemMetadata instance
              */
-            public static create(properties?: flyteidl.admin.IPlatformMetadata): flyteidl.admin.PlatformMetadata;
+            public static create(properties?: flyteidl.admin.ISystemMetadata): flyteidl.admin.SystemMetadata;
 
             /**
-             * Encodes the specified PlatformMetadata message. Does not implicitly {@link flyteidl.admin.PlatformMetadata.verify|verify} messages.
-             * @param message PlatformMetadata message or plain object to encode
+             * Encodes the specified SystemMetadata message. Does not implicitly {@link flyteidl.admin.SystemMetadata.verify|verify} messages.
+             * @param message SystemMetadata message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.admin.IPlatformMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.admin.ISystemMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a PlatformMetadata message from the specified reader or buffer.
+             * Decodes a SystemMetadata message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns PlatformMetadata
+             * @returns SystemMetadata
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.PlatformMetadata;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.SystemMetadata;
 
             /**
-             * Verifies a PlatformMetadata message.
+             * Verifies a SystemMetadata message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -7049,8 +7049,8 @@ export namespace flyteidl {
             /** ExecutionMetadata referenceExecution */
             referenceExecution?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
 
-            /** ExecutionMetadata platformMetadata */
-            platformMetadata?: (flyteidl.admin.IPlatformMetadata|null);
+            /** ExecutionMetadata systemMetadata */
+            systemMetadata?: (flyteidl.admin.ISystemMetadata|null);
         }
 
         /** Represents an ExecutionMetadata. */
@@ -7080,8 +7080,8 @@ export namespace flyteidl {
             /** ExecutionMetadata referenceExecution. */
             public referenceExecution?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
 
-            /** ExecutionMetadata platformMetadata. */
-            public platformMetadata?: (flyteidl.admin.IPlatformMetadata|null);
+            /** ExecutionMetadata systemMetadata. */
+            public systemMetadata?: (flyteidl.admin.ISystemMetadata|null);
 
             /**
              * Creates a new ExecutionMetadata instance using the specified properties.

@@ -26,5 +26,5 @@ type AdminExecutionMetadata struct {
 	// Optional, a reference workflow execution related to this execution. In the case of a relaunch, this references the original workflow execution.
 	ReferenceExecution *CoreWorkflowExecutionIdentifier `json:"reference_execution,omitempty"`
 	// Optional, platform-specific metadata about the execution. In this the future this may be gated behind an ACL or some sort of authorization.
-	PlatformMetadata *AdminPlatformMetadata `json:"platform_metadata,omitempty"`
+	SystemMetadata *AdminSystemMetadata `json:"system_metadata,omitempty"`
 }

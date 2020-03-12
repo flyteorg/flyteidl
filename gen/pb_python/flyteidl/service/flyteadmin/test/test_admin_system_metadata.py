@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.admin_platform_metadata import AdminPlatformMetadata  # noqa: E501
+from flyteadmin.models.admin_system_metadata import AdminSystemMetadata  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestAdminPlatformMetadata(unittest.TestCase):
-    """AdminPlatformMetadata unit test stubs"""
+class TestAdminSystemMetadata(unittest.TestCase):
+    """AdminSystemMetadata unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestAdminPlatformMetadata(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAdminPlatformMetadata(self):
-        """Test AdminPlatformMetadata"""
+    def testAdminSystemMetadata(self):
+        """Test AdminSystemMetadata"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.admin_platform_metadata.AdminPlatformMetadata()  # noqa: E501
+        # model = flyteadmin.models.admin_system_metadata.AdminSystemMetadata()  # noqa: E501
         pass
 
 
