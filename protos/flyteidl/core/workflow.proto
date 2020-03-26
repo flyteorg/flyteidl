@@ -79,8 +79,9 @@ message NodeMetadata {
         bool interruptible = 6;
     };
 
-    // Total wait time a workflow can be delayed by queueing.
-    string max_queue_time = 7;
+    // Total wait time a node can be delayed by queueing.
+    // This value cannot be smaller than value set at the workflow level.
+    string duration = 7;
 }
 
 // Links a variable to an alias.
@@ -133,7 +134,10 @@ message Node {
 // To be used in the future.
 message WorkflowMetadata {
     // Total wait time a workflow can be delayed by queueing.
-    string max_queue_time = 1;
+    // Duration set at the workflow level will take precedence over duration
+    // set at the node level in the case that the value set at the node level 
+    // is larger than the workflow level.
+    string duration = 1;
 }
 
 // Default Workflow Metadata for the entire workflow.

@@ -515,7 +515,7 @@ func (m *NodeMetadata) Validate() error {
 		}
 	}
 
-	// no validation rules for MaxQueueTime
+	// no validation rules for Duration
 
 	switch m.InterruptibleValue.(type) {
 
@@ -803,7 +803,7 @@ func (m *WorkflowMetadata) Validate() error {
 		return nil
 	}
 
-	// no validation rules for MaxQueueTime
+	// no validation rules for Duration
 
 	return nil
 }

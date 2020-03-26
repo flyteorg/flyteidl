@@ -905,19 +905,19 @@ class NodeMetadata final :
   ::std::string* release_name();
   void set_allocated_name(::std::string* name);
 
-  // string max_queue_time = 7;
-  void clear_max_queue_time();
-  static const int kMaxQueueTimeFieldNumber = 7;
-  const ::std::string& max_queue_time() const;
-  void set_max_queue_time(const ::std::string& value);
+  // string duration = 7;
+  void clear_duration();
+  static const int kDurationFieldNumber = 7;
+  const ::std::string& duration() const;
+  void set_duration(const ::std::string& value);
   #if LANG_CXX11
-  void set_max_queue_time(::std::string&& value);
+  void set_duration(::std::string&& value);
   #endif
-  void set_max_queue_time(const char* value);
-  void set_max_queue_time(const char* value, size_t size);
-  ::std::string* mutable_max_queue_time();
-  ::std::string* release_max_queue_time();
-  void set_allocated_max_queue_time(::std::string* max_queue_time);
+  void set_duration(const char* value);
+  void set_duration(const char* value, size_t size);
+  ::std::string* mutable_duration();
+  ::std::string* release_duration();
+  void set_allocated_duration(::std::string* duration);
 
   // .google.protobuf.Duration timeout = 4;
   bool has_timeout() const;
@@ -958,7 +958,7 @@ class NodeMetadata final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr name_;
-  ::google::protobuf::internal::ArenaStringPtr max_queue_time_;
+  ::google::protobuf::internal::ArenaStringPtr duration_;
   ::google::protobuf::Duration* timeout_;
   ::flyteidl::core::RetryStrategy* retries_;
   union InterruptibleValueUnion {
@@ -1431,26 +1431,26 @@ class WorkflowMetadata final :
 
   // accessors -------------------------------------------------------
 
-  // string max_queue_time = 1;
-  void clear_max_queue_time();
-  static const int kMaxQueueTimeFieldNumber = 1;
-  const ::std::string& max_queue_time() const;
-  void set_max_queue_time(const ::std::string& value);
+  // string duration = 1;
+  void clear_duration();
+  static const int kDurationFieldNumber = 1;
+  const ::std::string& duration() const;
+  void set_duration(const ::std::string& value);
   #if LANG_CXX11
-  void set_max_queue_time(::std::string&& value);
+  void set_duration(::std::string&& value);
   #endif
-  void set_max_queue_time(const char* value);
-  void set_max_queue_time(const char* value, size_t size);
-  ::std::string* mutable_max_queue_time();
-  ::std::string* release_max_queue_time();
-  void set_allocated_max_queue_time(::std::string* max_queue_time);
+  void set_duration(const char* value);
+  void set_duration(const char* value, size_t size);
+  ::std::string* mutable_duration();
+  ::std::string* release_duration();
+  void set_allocated_duration(::std::string* duration);
 
   // @@protoc_insertion_point(class_scope:flyteidl.core.WorkflowMetadata)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr max_queue_time_;
+  ::google::protobuf::internal::ArenaStringPtr duration_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fworkflow_2eproto;
 };
@@ -2387,57 +2387,57 @@ inline void NodeMetadata::set_interruptible(bool value) {
   // @@protoc_insertion_point(field_set:flyteidl.core.NodeMetadata.interruptible)
 }
 
-// string max_queue_time = 7;
-inline void NodeMetadata::clear_max_queue_time() {
-  max_queue_time_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string duration = 7;
+inline void NodeMetadata::clear_duration() {
+  duration_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& NodeMetadata::max_queue_time() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.NodeMetadata.max_queue_time)
-  return max_queue_time_.GetNoArena();
+inline const ::std::string& NodeMetadata::duration() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.NodeMetadata.duration)
+  return duration_.GetNoArena();
 }
-inline void NodeMetadata::set_max_queue_time(const ::std::string& value) {
+inline void NodeMetadata::set_duration(const ::std::string& value) {
   
-  max_queue_time_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.core.NodeMetadata.max_queue_time)
+  duration_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.NodeMetadata.duration)
 }
 #if LANG_CXX11
-inline void NodeMetadata::set_max_queue_time(::std::string&& value) {
+inline void NodeMetadata::set_duration(::std::string&& value) {
   
-  max_queue_time_.SetNoArena(
+  duration_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.NodeMetadata.max_queue_time)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.NodeMetadata.duration)
 }
 #endif
-inline void NodeMetadata::set_max_queue_time(const char* value) {
+inline void NodeMetadata::set_duration(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  max_queue_time_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.core.NodeMetadata.max_queue_time)
+  duration_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.NodeMetadata.duration)
 }
-inline void NodeMetadata::set_max_queue_time(const char* value, size_t size) {
+inline void NodeMetadata::set_duration(const char* value, size_t size) {
   
-  max_queue_time_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  duration_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.NodeMetadata.max_queue_time)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.NodeMetadata.duration)
 }
-inline ::std::string* NodeMetadata::mutable_max_queue_time() {
+inline ::std::string* NodeMetadata::mutable_duration() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.NodeMetadata.max_queue_time)
-  return max_queue_time_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.NodeMetadata.duration)
+  return duration_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* NodeMetadata::release_max_queue_time() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.NodeMetadata.max_queue_time)
+inline ::std::string* NodeMetadata::release_duration() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.NodeMetadata.duration)
   
-  return max_queue_time_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return duration_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void NodeMetadata::set_allocated_max_queue_time(::std::string* max_queue_time) {
-  if (max_queue_time != nullptr) {
+inline void NodeMetadata::set_allocated_duration(::std::string* duration) {
+  if (duration != nullptr) {
     
   } else {
     
   }
-  max_queue_time_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), max_queue_time);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.NodeMetadata.max_queue_time)
+  duration_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), duration);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.NodeMetadata.duration)
 }
 
 inline bool NodeMetadata::has_interruptible_value() const {
@@ -2929,57 +2929,57 @@ inline Node::TargetCase Node::target_case() const {
 
 // WorkflowMetadata
 
-// string max_queue_time = 1;
-inline void WorkflowMetadata::clear_max_queue_time() {
-  max_queue_time_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string duration = 1;
+inline void WorkflowMetadata::clear_duration() {
+  duration_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& WorkflowMetadata::max_queue_time() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.WorkflowMetadata.max_queue_time)
-  return max_queue_time_.GetNoArena();
+inline const ::std::string& WorkflowMetadata::duration() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.WorkflowMetadata.duration)
+  return duration_.GetNoArena();
 }
-inline void WorkflowMetadata::set_max_queue_time(const ::std::string& value) {
+inline void WorkflowMetadata::set_duration(const ::std::string& value) {
   
-  max_queue_time_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.core.WorkflowMetadata.max_queue_time)
+  duration_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.WorkflowMetadata.duration)
 }
 #if LANG_CXX11
-inline void WorkflowMetadata::set_max_queue_time(::std::string&& value) {
+inline void WorkflowMetadata::set_duration(::std::string&& value) {
   
-  max_queue_time_.SetNoArena(
+  duration_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.WorkflowMetadata.max_queue_time)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.WorkflowMetadata.duration)
 }
 #endif
-inline void WorkflowMetadata::set_max_queue_time(const char* value) {
+inline void WorkflowMetadata::set_duration(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  max_queue_time_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.core.WorkflowMetadata.max_queue_time)
+  duration_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.WorkflowMetadata.duration)
 }
-inline void WorkflowMetadata::set_max_queue_time(const char* value, size_t size) {
+inline void WorkflowMetadata::set_duration(const char* value, size_t size) {
   
-  max_queue_time_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  duration_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.WorkflowMetadata.max_queue_time)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.WorkflowMetadata.duration)
 }
-inline ::std::string* WorkflowMetadata::mutable_max_queue_time() {
+inline ::std::string* WorkflowMetadata::mutable_duration() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.WorkflowMetadata.max_queue_time)
-  return max_queue_time_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.WorkflowMetadata.duration)
+  return duration_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* WorkflowMetadata::release_max_queue_time() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.WorkflowMetadata.max_queue_time)
+inline ::std::string* WorkflowMetadata::release_duration() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.WorkflowMetadata.duration)
   
-  return max_queue_time_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return duration_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void WorkflowMetadata::set_allocated_max_queue_time(::std::string* max_queue_time) {
-  if (max_queue_time != nullptr) {
+inline void WorkflowMetadata::set_allocated_duration(::std::string* duration) {
+  if (duration != nullptr) {
     
   } else {
     
   }
-  max_queue_time_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), max_queue_time);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.WorkflowMetadata.max_queue_time)
+  duration_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), duration);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.WorkflowMetadata.duration)
 }
 
 // -------------------------------------------------------------------

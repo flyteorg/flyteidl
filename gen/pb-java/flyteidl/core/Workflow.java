@@ -5166,21 +5166,23 @@ public final class Workflow {
 
     /**
      * <pre>
-     * Total wait time a workflow can be delayed by queueing.
+     * Total wait time a node can be delayed by queueing.
+     * This value cannot be smaller than value set at the workflow level.
      * </pre>
      *
-     * <code>string max_queue_time = 7;</code>
+     * <code>string duration = 7;</code>
      */
-    java.lang.String getMaxQueueTime();
+    java.lang.String getDuration();
     /**
      * <pre>
-     * Total wait time a workflow can be delayed by queueing.
+     * Total wait time a node can be delayed by queueing.
+     * This value cannot be smaller than value set at the workflow level.
      * </pre>
      *
-     * <code>string max_queue_time = 7;</code>
+     * <code>string duration = 7;</code>
      */
     com.google.protobuf.ByteString
-        getMaxQueueTimeBytes();
+        getDurationBytes();
 
     public flyteidl.core.Workflow.NodeMetadata.InterruptibleValueCase getInterruptibleValueCase();
   }
@@ -5202,7 +5204,7 @@ public final class Workflow {
     }
     private NodeMetadata() {
       name_ = "";
-      maxQueueTime_ = "";
+      duration_ = "";
     }
 
     @java.lang.Override
@@ -5269,7 +5271,7 @@ public final class Workflow {
             case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              maxQueueTime_ = s;
+              duration_ = s;
               break;
             }
             default: {
@@ -5459,42 +5461,44 @@ public final class Workflow {
       return false;
     }
 
-    public static final int MAX_QUEUE_TIME_FIELD_NUMBER = 7;
-    private volatile java.lang.Object maxQueueTime_;
+    public static final int DURATION_FIELD_NUMBER = 7;
+    private volatile java.lang.Object duration_;
     /**
      * <pre>
-     * Total wait time a workflow can be delayed by queueing.
+     * Total wait time a node can be delayed by queueing.
+     * This value cannot be smaller than value set at the workflow level.
      * </pre>
      *
-     * <code>string max_queue_time = 7;</code>
+     * <code>string duration = 7;</code>
      */
-    public java.lang.String getMaxQueueTime() {
-      java.lang.Object ref = maxQueueTime_;
+    public java.lang.String getDuration() {
+      java.lang.Object ref = duration_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        maxQueueTime_ = s;
+        duration_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * Total wait time a workflow can be delayed by queueing.
+     * Total wait time a node can be delayed by queueing.
+     * This value cannot be smaller than value set at the workflow level.
      * </pre>
      *
-     * <code>string max_queue_time = 7;</code>
+     * <code>string duration = 7;</code>
      */
     public com.google.protobuf.ByteString
-        getMaxQueueTimeBytes() {
-      java.lang.Object ref = maxQueueTime_;
+        getDurationBytes() {
+      java.lang.Object ref = duration_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        maxQueueTime_ = b;
+        duration_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -5528,8 +5532,8 @@ public final class Workflow {
         output.writeBool(
             6, (boolean)((java.lang.Boolean) interruptibleValue_));
       }
-      if (!getMaxQueueTimeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, maxQueueTime_);
+      if (!getDurationBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, duration_);
       }
       unknownFields.writeTo(output);
     }
@@ -5556,8 +5560,8 @@ public final class Workflow {
           .computeBoolSize(
               6, (boolean)((java.lang.Boolean) interruptibleValue_));
       }
-      if (!getMaxQueueTimeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, maxQueueTime_);
+      if (!getDurationBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, duration_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5586,8 +5590,8 @@ public final class Workflow {
         if (!getRetries()
             .equals(other.getRetries())) return false;
       }
-      if (!getMaxQueueTime()
-          .equals(other.getMaxQueueTime())) return false;
+      if (!getDuration()
+          .equals(other.getDuration())) return false;
       if (!getInterruptibleValueCase().equals(other.getInterruptibleValueCase())) return false;
       switch (interruptibleValueCase_) {
         case 6:
@@ -5618,8 +5622,8 @@ public final class Workflow {
         hash = (37 * hash) + RETRIES_FIELD_NUMBER;
         hash = (53 * hash) + getRetries().hashCode();
       }
-      hash = (37 * hash) + MAX_QUEUE_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxQueueTime().hashCode();
+      hash = (37 * hash) + DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getDuration().hashCode();
       switch (interruptibleValueCase_) {
         case 6:
           hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
@@ -5780,7 +5784,7 @@ public final class Workflow {
           retries_ = null;
           retriesBuilder_ = null;
         }
-        maxQueueTime_ = "";
+        duration_ = "";
 
         interruptibleValueCase_ = 0;
         interruptibleValue_ = null;
@@ -5824,7 +5828,7 @@ public final class Workflow {
         if (interruptibleValueCase_ == 6) {
           result.interruptibleValue_ = interruptibleValue_;
         }
-        result.maxQueueTime_ = maxQueueTime_;
+        result.duration_ = duration_;
         result.interruptibleValueCase_ = interruptibleValueCase_;
         onBuilt();
         return result;
@@ -5884,8 +5888,8 @@ public final class Workflow {
         if (other.hasRetries()) {
           mergeRetries(other.getRetries());
         }
-        if (!other.getMaxQueueTime().isEmpty()) {
-          maxQueueTime_ = other.maxQueueTime_;
+        if (!other.getDuration().isEmpty()) {
+          duration_ = other.duration_;
           onChanged();
         }
         switch (other.getInterruptibleValueCase()) {
@@ -6366,21 +6370,22 @@ public final class Workflow {
         return this;
       }
 
-      private java.lang.Object maxQueueTime_ = "";
+      private java.lang.Object duration_ = "";
       /**
        * <pre>
-       * Total wait time a workflow can be delayed by queueing.
+       * Total wait time a node can be delayed by queueing.
+       * This value cannot be smaller than value set at the workflow level.
        * </pre>
        *
-       * <code>string max_queue_time = 7;</code>
+       * <code>string duration = 7;</code>
        */
-      public java.lang.String getMaxQueueTime() {
-        java.lang.Object ref = maxQueueTime_;
+      public java.lang.String getDuration() {
+        java.lang.Object ref = duration_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          maxQueueTime_ = s;
+          duration_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -6388,19 +6393,20 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * Total wait time a workflow can be delayed by queueing.
+       * Total wait time a node can be delayed by queueing.
+       * This value cannot be smaller than value set at the workflow level.
        * </pre>
        *
-       * <code>string max_queue_time = 7;</code>
+       * <code>string duration = 7;</code>
        */
       public com.google.protobuf.ByteString
-          getMaxQueueTimeBytes() {
-        java.lang.Object ref = maxQueueTime_;
+          getDurationBytes() {
+        java.lang.Object ref = duration_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          maxQueueTime_ = b;
+          duration_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -6408,49 +6414,52 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * Total wait time a workflow can be delayed by queueing.
+       * Total wait time a node can be delayed by queueing.
+       * This value cannot be smaller than value set at the workflow level.
        * </pre>
        *
-       * <code>string max_queue_time = 7;</code>
+       * <code>string duration = 7;</code>
        */
-      public Builder setMaxQueueTime(
+      public Builder setDuration(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        maxQueueTime_ = value;
+        duration_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Total wait time a workflow can be delayed by queueing.
+       * Total wait time a node can be delayed by queueing.
+       * This value cannot be smaller than value set at the workflow level.
        * </pre>
        *
-       * <code>string max_queue_time = 7;</code>
+       * <code>string duration = 7;</code>
        */
-      public Builder clearMaxQueueTime() {
+      public Builder clearDuration() {
         
-        maxQueueTime_ = getDefaultInstance().getMaxQueueTime();
+        duration_ = getDefaultInstance().getDuration();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Total wait time a workflow can be delayed by queueing.
+       * Total wait time a node can be delayed by queueing.
+       * This value cannot be smaller than value set at the workflow level.
        * </pre>
        *
-       * <code>string max_queue_time = 7;</code>
+       * <code>string duration = 7;</code>
        */
-      public Builder setMaxQueueTimeBytes(
+      public Builder setDurationBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        maxQueueTime_ = value;
+        duration_ = value;
         onChanged();
         return this;
       }
@@ -10375,20 +10384,26 @@ public final class Workflow {
     /**
      * <pre>
      * Total wait time a workflow can be delayed by queueing.
+     * Duration set at the workflow level will take precedence over duration
+     * set at the node level in the case that the value set at the node level 
+     * is larger than the workflow level.
      * </pre>
      *
-     * <code>string max_queue_time = 1;</code>
+     * <code>string duration = 1;</code>
      */
-    java.lang.String getMaxQueueTime();
+    java.lang.String getDuration();
     /**
      * <pre>
      * Total wait time a workflow can be delayed by queueing.
+     * Duration set at the workflow level will take precedence over duration
+     * set at the node level in the case that the value set at the node level 
+     * is larger than the workflow level.
      * </pre>
      *
-     * <code>string max_queue_time = 1;</code>
+     * <code>string duration = 1;</code>
      */
     com.google.protobuf.ByteString
-        getMaxQueueTimeBytes();
+        getDurationBytes();
   }
   /**
    * <pre>
@@ -10408,7 +10423,7 @@ public final class Workflow {
       super(builder);
     }
     private WorkflowMetadata() {
-      maxQueueTime_ = "";
+      duration_ = "";
     }
 
     @java.lang.Override
@@ -10438,7 +10453,7 @@ public final class Workflow {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              maxQueueTime_ = s;
+              duration_ = s;
               break;
             }
             default: {
@@ -10473,42 +10488,48 @@ public final class Workflow {
               flyteidl.core.Workflow.WorkflowMetadata.class, flyteidl.core.Workflow.WorkflowMetadata.Builder.class);
     }
 
-    public static final int MAX_QUEUE_TIME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object maxQueueTime_;
+    public static final int DURATION_FIELD_NUMBER = 1;
+    private volatile java.lang.Object duration_;
     /**
      * <pre>
      * Total wait time a workflow can be delayed by queueing.
+     * Duration set at the workflow level will take precedence over duration
+     * set at the node level in the case that the value set at the node level 
+     * is larger than the workflow level.
      * </pre>
      *
-     * <code>string max_queue_time = 1;</code>
+     * <code>string duration = 1;</code>
      */
-    public java.lang.String getMaxQueueTime() {
-      java.lang.Object ref = maxQueueTime_;
+    public java.lang.String getDuration() {
+      java.lang.Object ref = duration_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        maxQueueTime_ = s;
+        duration_ = s;
         return s;
       }
     }
     /**
      * <pre>
      * Total wait time a workflow can be delayed by queueing.
+     * Duration set at the workflow level will take precedence over duration
+     * set at the node level in the case that the value set at the node level 
+     * is larger than the workflow level.
      * </pre>
      *
-     * <code>string max_queue_time = 1;</code>
+     * <code>string duration = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getMaxQueueTimeBytes() {
-      java.lang.Object ref = maxQueueTime_;
+        getDurationBytes() {
+      java.lang.Object ref = duration_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        maxQueueTime_ = b;
+        duration_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -10529,8 +10550,8 @@ public final class Workflow {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getMaxQueueTimeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, maxQueueTime_);
+      if (!getDurationBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, duration_);
       }
       unknownFields.writeTo(output);
     }
@@ -10541,8 +10562,8 @@ public final class Workflow {
       if (size != -1) return size;
 
       size = 0;
-      if (!getMaxQueueTimeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, maxQueueTime_);
+      if (!getDurationBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, duration_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10559,8 +10580,8 @@ public final class Workflow {
       }
       flyteidl.core.Workflow.WorkflowMetadata other = (flyteidl.core.Workflow.WorkflowMetadata) obj;
 
-      if (!getMaxQueueTime()
-          .equals(other.getMaxQueueTime())) return false;
+      if (!getDuration()
+          .equals(other.getDuration())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10572,8 +10593,8 @@ public final class Workflow {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MAX_QUEUE_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxQueueTime().hashCode();
+      hash = (37 * hash) + DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getDuration().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10712,7 +10733,7 @@ public final class Workflow {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        maxQueueTime_ = "";
+        duration_ = "";
 
         return this;
       }
@@ -10740,7 +10761,7 @@ public final class Workflow {
       @java.lang.Override
       public flyteidl.core.Workflow.WorkflowMetadata buildPartial() {
         flyteidl.core.Workflow.WorkflowMetadata result = new flyteidl.core.Workflow.WorkflowMetadata(this);
-        result.maxQueueTime_ = maxQueueTime_;
+        result.duration_ = duration_;
         onBuilt();
         return result;
       }
@@ -10789,8 +10810,8 @@ public final class Workflow {
 
       public Builder mergeFrom(flyteidl.core.Workflow.WorkflowMetadata other) {
         if (other == flyteidl.core.Workflow.WorkflowMetadata.getDefaultInstance()) return this;
-        if (!other.getMaxQueueTime().isEmpty()) {
-          maxQueueTime_ = other.maxQueueTime_;
+        if (!other.getDuration().isEmpty()) {
+          duration_ = other.duration_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -10822,21 +10843,24 @@ public final class Workflow {
         return this;
       }
 
-      private java.lang.Object maxQueueTime_ = "";
+      private java.lang.Object duration_ = "";
       /**
        * <pre>
        * Total wait time a workflow can be delayed by queueing.
+       * Duration set at the workflow level will take precedence over duration
+       * set at the node level in the case that the value set at the node level 
+       * is larger than the workflow level.
        * </pre>
        *
-       * <code>string max_queue_time = 1;</code>
+       * <code>string duration = 1;</code>
        */
-      public java.lang.String getMaxQueueTime() {
-        java.lang.Object ref = maxQueueTime_;
+      public java.lang.String getDuration() {
+        java.lang.Object ref = duration_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          maxQueueTime_ = s;
+          duration_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -10845,18 +10869,21 @@ public final class Workflow {
       /**
        * <pre>
        * Total wait time a workflow can be delayed by queueing.
+       * Duration set at the workflow level will take precedence over duration
+       * set at the node level in the case that the value set at the node level 
+       * is larger than the workflow level.
        * </pre>
        *
-       * <code>string max_queue_time = 1;</code>
+       * <code>string duration = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getMaxQueueTimeBytes() {
-        java.lang.Object ref = maxQueueTime_;
+          getDurationBytes() {
+        java.lang.Object ref = duration_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          maxQueueTime_ = b;
+          duration_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -10865,48 +10892,57 @@ public final class Workflow {
       /**
        * <pre>
        * Total wait time a workflow can be delayed by queueing.
+       * Duration set at the workflow level will take precedence over duration
+       * set at the node level in the case that the value set at the node level 
+       * is larger than the workflow level.
        * </pre>
        *
-       * <code>string max_queue_time = 1;</code>
+       * <code>string duration = 1;</code>
        */
-      public Builder setMaxQueueTime(
+      public Builder setDuration(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        maxQueueTime_ = value;
+        duration_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
        * Total wait time a workflow can be delayed by queueing.
+       * Duration set at the workflow level will take precedence over duration
+       * set at the node level in the case that the value set at the node level 
+       * is larger than the workflow level.
        * </pre>
        *
-       * <code>string max_queue_time = 1;</code>
+       * <code>string duration = 1;</code>
        */
-      public Builder clearMaxQueueTime() {
+      public Builder clearDuration() {
         
-        maxQueueTime_ = getDefaultInstance().getMaxQueueTime();
+        duration_ = getDefaultInstance().getDuration();
         onChanged();
         return this;
       }
       /**
        * <pre>
        * Total wait time a workflow can be delayed by queueing.
+       * Duration set at the workflow level will take precedence over duration
+       * set at the node level in the case that the value set at the node level 
+       * is larger than the workflow level.
        * </pre>
        *
-       * <code>string max_queue_time = 1;</code>
+       * <code>string duration = 1;</code>
        */
-      public Builder setMaxQueueTimeBytes(
+      public Builder setDurationBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        maxQueueTime_ = value;
+        duration_ = value;
         onChanged();
         return this;
       }
@@ -14412,34 +14448,34 @@ public final class Workflow {
       "\013\n\treference\"\207\001\n\014WorkflowNode\0223\n\016launchp" +
       "lan_ref\030\001 \001(\0132\031.flyteidl.core.Identifier" +
       "H\000\0225\n\020sub_workflow_ref\030\002 \001(\0132\031.flyteidl." +
-      "core.IdentifierH\000B\013\n\treference\"\277\001\n\014NodeM" +
+      "core.IdentifierH\000B\013\n\treference\"\271\001\n\014NodeM" +
       "etadata\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031" +
       ".google.protobuf.Duration\022-\n\007retries\030\005 \001" +
       "(\0132\034.flyteidl.core.RetryStrategy\022\027\n\rinte" +
-      "rruptible\030\006 \001(\010H\000\022\026\n\016max_queue_time\030\007 \001(" +
-      "\tB\025\n\023interruptible_value\"#\n\005Alias\022\013\n\003var" +
-      "\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\322\002\n\004Node\022\n\n\002id\030\001 \001" +
-      "(\t\022-\n\010metadata\030\002 \001(\0132\033.flyteidl.core.Nod" +
-      "eMetadata\022&\n\006inputs\030\003 \003(\0132\026.flyteidl.cor" +
-      "e.Binding\022\031\n\021upstream_node_ids\030\004 \003(\t\022,\n\016" +
-      "output_aliases\030\005 \003(\0132\024.flyteidl.core.Ali" +
-      "as\022,\n\ttask_node\030\006 \001(\0132\027.flyteidl.core.Ta" +
-      "skNodeH\000\0224\n\rworkflow_node\030\007 \001(\0132\033.flytei" +
-      "dl.core.WorkflowNodeH\000\0220\n\013branch_node\030\010 " +
-      "\001(\0132\031.flyteidl.core.BranchNodeH\000B\010\n\006targ" +
-      "et\"*\n\020WorkflowMetadata\022\026\n\016max_queue_time" +
-      "\030\001 \001(\t\"1\n\030WorkflowMetadataDefaults\022\025\n\rin" +
-      "terruptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplate\022%" +
-      "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\0221\n" +
-      "\010metadata\030\002 \001(\0132\037.flyteidl.core.Workflow" +
-      "Metadata\0220\n\tinterface\030\003 \001(\0132\035.flyteidl.c" +
-      "ore.TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.flyt" +
-      "eidl.core.Node\022\'\n\007outputs\030\005 \003(\0132\026.flytei" +
-      "dl.core.Binding\022)\n\014failure_node\030\006 \001(\0132\023." +
-      "flyteidl.core.Node\022B\n\021metadata_defaults\030" +
-      "\007 \001(\0132\'.flyteidl.core.WorkflowMetadataDe" +
-      "faultsB2Z0github.com/lyft/flyteidl/gen/p" +
-      "b-go/flyteidl/coreb\006proto3"
+      "rruptible\030\006 \001(\010H\000\022\020\n\010duration\030\007 \001(\tB\025\n\023i" +
+      "nterruptible_value\"#\n\005Alias\022\013\n\003var\030\001 \001(\t" +
+      "\022\r\n\005alias\030\002 \001(\t\"\322\002\n\004Node\022\n\n\002id\030\001 \001(\t\022-\n\010" +
+      "metadata\030\002 \001(\0132\033.flyteidl.core.NodeMetad" +
+      "ata\022&\n\006inputs\030\003 \003(\0132\026.flyteidl.core.Bind" +
+      "ing\022\031\n\021upstream_node_ids\030\004 \003(\t\022,\n\016output" +
+      "_aliases\030\005 \003(\0132\024.flyteidl.core.Alias\022,\n\t" +
+      "task_node\030\006 \001(\0132\027.flyteidl.core.TaskNode" +
+      "H\000\0224\n\rworkflow_node\030\007 \001(\0132\033.flyteidl.cor" +
+      "e.WorkflowNodeH\000\0220\n\013branch_node\030\010 \001(\0132\031." +
+      "flyteidl.core.BranchNodeH\000B\010\n\006target\"$\n\020" +
+      "WorkflowMetadata\022\020\n\010duration\030\001 \001(\t\"1\n\030Wo" +
+      "rkflowMetadataDefaults\022\025\n\rinterruptible\030" +
+      "\001 \001(\010\"\332\002\n\020WorkflowTemplate\022%\n\002id\030\001 \001(\0132\031" +
+      ".flyteidl.core.Identifier\0221\n\010metadata\030\002 " +
+      "\001(\0132\037.flyteidl.core.WorkflowMetadata\0220\n\t" +
+      "interface\030\003 \001(\0132\035.flyteidl.core.TypedInt" +
+      "erface\022\"\n\005nodes\030\004 \003(\0132\023.flyteidl.core.No" +
+      "de\022\'\n\007outputs\030\005 \003(\0132\026.flyteidl.core.Bind" +
+      "ing\022)\n\014failure_node\030\006 \001(\0132\023.flyteidl.cor" +
+      "e.Node\022B\n\021metadata_defaults\030\007 \001(\0132\'.flyt" +
+      "eidl.core.WorkflowMetadataDefaultsB2Z0gi" +
+      "thub.com/lyft/flyteidl/gen/pb-go/flyteid" +
+      "l/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14494,7 +14530,7 @@ public final class Workflow {
     internal_static_flyteidl_core_NodeMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_NodeMetadata_descriptor,
-        new java.lang.String[] { "Name", "Timeout", "Retries", "Interruptible", "MaxQueueTime", "InterruptibleValue", });
+        new java.lang.String[] { "Name", "Timeout", "Retries", "Interruptible", "Duration", "InterruptibleValue", });
     internal_static_flyteidl_core_Alias_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_core_Alias_fieldAccessorTable = new
@@ -14512,7 +14548,7 @@ public final class Workflow {
     internal_static_flyteidl_core_WorkflowMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkflowMetadata_descriptor,
-        new java.lang.String[] { "MaxQueueTime", });
+        new java.lang.String[] { "Duration", });
     internal_static_flyteidl_core_WorkflowMetadataDefaults_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_core_WorkflowMetadataDefaults_fieldAccessorTable = new

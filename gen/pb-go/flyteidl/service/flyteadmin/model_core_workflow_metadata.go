@@ -11,6 +11,6 @@ package flyteadmin
 
 // Metadata for the entire workflow. To be used in the future.
 type CoreWorkflowMetadata struct {
-	// Total wait time a workflow can be delayed by queueing.
-	MaxQueueTime string `json:"max_queue_time,omitempty"`
+	// Total wait time a workflow can be delayed by queueing. Duration set at the workflow level will take precedence over duration set at the node level in the case that the value set at the node level  is larger than the workflow level.
+	Duration string `json:"duration,omitempty"`
 }

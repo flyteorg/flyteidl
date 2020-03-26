@@ -606,8 +606,8 @@ export namespace flyteidl {
             /** NodeMetadata interruptible */
             interruptible?: (boolean|null);
 
-            /** NodeMetadata maxQueueTime */
-            maxQueueTime?: (string|null);
+            /** NodeMetadata duration */
+            duration?: (string|null);
         }
 
         /** Represents a NodeMetadata. */
@@ -631,8 +631,8 @@ export namespace flyteidl {
             /** NodeMetadata interruptible. */
             public interruptible: boolean;
 
-            /** NodeMetadata maxQueueTime. */
-            public maxQueueTime: string;
+            /** NodeMetadata duration. */
+            public duration: string;
 
             /** NodeMetadata interruptibleValue. */
             public interruptibleValue?: "interruptible";
@@ -828,8 +828,8 @@ export namespace flyteidl {
         /** Properties of a WorkflowMetadata. */
         interface IWorkflowMetadata {
 
-            /** WorkflowMetadata maxQueueTime */
-            maxQueueTime?: (string|null);
+            /** WorkflowMetadata duration */
+            duration?: (string|null);
         }
 
         /** Represents a WorkflowMetadata. */
@@ -841,8 +841,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.core.IWorkflowMetadata);
 
-            /** WorkflowMetadata maxQueueTime. */
-            public maxQueueTime: string;
+            /** WorkflowMetadata duration. */
+            public duration: string;
 
             /**
              * Creates a new WorkflowMetadata instance using the specified properties.

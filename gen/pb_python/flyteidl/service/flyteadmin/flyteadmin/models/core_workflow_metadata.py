@@ -31,44 +31,44 @@ class CoreWorkflowMetadata(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'max_queue_time': 'str'
+        'duration': 'str'
     }
 
     attribute_map = {
-        'max_queue_time': 'max_queue_time'
+        'duration': 'duration'
     }
 
-    def __init__(self, max_queue_time=None):  # noqa: E501
+    def __init__(self, duration=None):  # noqa: E501
         """CoreWorkflowMetadata - a model defined in Swagger"""  # noqa: E501
 
-        self._max_queue_time = None
+        self._duration = None
         self.discriminator = None
 
-        if max_queue_time is not None:
-            self.max_queue_time = max_queue_time
+        if duration is not None:
+            self.duration = duration
 
     @property
-    def max_queue_time(self):
-        """Gets the max_queue_time of this CoreWorkflowMetadata.  # noqa: E501
+    def duration(self):
+        """Gets the duration of this CoreWorkflowMetadata.  # noqa: E501
 
-        Total wait time a workflow can be delayed by queueing.  # noqa: E501
+        Total wait time a workflow can be delayed by queueing. Duration set at the workflow level will take precedence over duration set at the node level in the case that the value set at the node level  is larger than the workflow level.  # noqa: E501
 
-        :return: The max_queue_time of this CoreWorkflowMetadata.  # noqa: E501
+        :return: The duration of this CoreWorkflowMetadata.  # noqa: E501
         :rtype: str
         """
-        return self._max_queue_time
+        return self._duration
 
-    @max_queue_time.setter
-    def max_queue_time(self, max_queue_time):
-        """Sets the max_queue_time of this CoreWorkflowMetadata.
+    @duration.setter
+    def duration(self, duration):
+        """Sets the duration of this CoreWorkflowMetadata.
 
-        Total wait time a workflow can be delayed by queueing.  # noqa: E501
+        Total wait time a workflow can be delayed by queueing. Duration set at the workflow level will take precedence over duration set at the node level in the case that the value set at the node level  is larger than the workflow level.  # noqa: E501
 
-        :param max_queue_time: The max_queue_time of this CoreWorkflowMetadata.  # noqa: E501
+        :param duration: The duration of this CoreWorkflowMetadata.  # noqa: E501
         :type: str
         """
 
-        self._max_queue_time = max_queue_time
+        self._duration = duration
 
     def to_dict(self):
         """Returns the model properties as a dict"""
