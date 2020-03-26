@@ -606,8 +606,8 @@ export namespace flyteidl {
             /** NodeMetadata interruptible */
             interruptible?: (boolean|null);
 
-            /** NodeMetadata duration */
-            duration?: (string|null);
+            /** NodeMetadata maxWaitTime */
+            maxWaitTime?: (google.protobuf.IDuration|null);
         }
 
         /** Represents a NodeMetadata. */
@@ -631,8 +631,8 @@ export namespace flyteidl {
             /** NodeMetadata interruptible. */
             public interruptible: boolean;
 
-            /** NodeMetadata duration. */
-            public duration: string;
+            /** NodeMetadata maxWaitTime. */
+            public maxWaitTime?: (google.protobuf.IDuration|null);
 
             /** NodeMetadata interruptibleValue. */
             public interruptibleValue?: "interruptible";
@@ -828,8 +828,8 @@ export namespace flyteidl {
         /** Properties of a WorkflowMetadata. */
         interface IWorkflowMetadata {
 
-            /** WorkflowMetadata duration */
-            duration?: (string|null);
+            /** WorkflowMetadata maxWaitTime */
+            maxWaitTime?: (google.protobuf.IDuration|null);
         }
 
         /** Represents a WorkflowMetadata. */
@@ -841,8 +841,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.core.IWorkflowMetadata);
 
-            /** WorkflowMetadata duration. */
-            public duration: string;
+            /** WorkflowMetadata maxWaitTime. */
+            public maxWaitTime?: (google.protobuf.IDuration|null);
 
             /**
              * Creates a new WorkflowMetadata instance using the specified properties.

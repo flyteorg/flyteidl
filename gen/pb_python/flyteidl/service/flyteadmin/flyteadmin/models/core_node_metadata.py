@@ -37,7 +37,7 @@ class CoreNodeMetadata(object):
         'timeout': 'str',
         'retries': 'CoreRetryStrategy',
         'interruptible': 'bool',
-        'duration': 'str'
+        'max_wait_time': 'str'
     }
 
     attribute_map = {
@@ -45,17 +45,17 @@ class CoreNodeMetadata(object):
         'timeout': 'timeout',
         'retries': 'retries',
         'interruptible': 'interruptible',
-        'duration': 'duration'
+        'max_wait_time': 'max_wait_time'
     }
 
-    def __init__(self, name=None, timeout=None, retries=None, interruptible=None, duration=None):  # noqa: E501
+    def __init__(self, name=None, timeout=None, retries=None, interruptible=None, max_wait_time=None):  # noqa: E501
         """CoreNodeMetadata - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
         self._timeout = None
         self._retries = None
         self._interruptible = None
-        self._duration = None
+        self._max_wait_time = None
         self.discriminator = None
 
         if name is not None:
@@ -66,8 +66,8 @@ class CoreNodeMetadata(object):
             self.retries = retries
         if interruptible is not None:
             self.interruptible = interruptible
-        if duration is not None:
-            self.duration = duration
+        if max_wait_time is not None:
+            self.max_wait_time = max_wait_time
 
     @property
     def name(self):
@@ -158,27 +158,27 @@ class CoreNodeMetadata(object):
         self._interruptible = interruptible
 
     @property
-    def duration(self):
-        """Gets the duration of this CoreNodeMetadata.  # noqa: E501
+    def max_wait_time(self):
+        """Gets the max_wait_time of this CoreNodeMetadata.  # noqa: E501
 
         Total wait time a node can be delayed by queueing. This value cannot be smaller than value set at the workflow level.  # noqa: E501
 
-        :return: The duration of this CoreNodeMetadata.  # noqa: E501
+        :return: The max_wait_time of this CoreNodeMetadata.  # noqa: E501
         :rtype: str
         """
-        return self._duration
+        return self._max_wait_time
 
-    @duration.setter
-    def duration(self, duration):
-        """Sets the duration of this CoreNodeMetadata.
+    @max_wait_time.setter
+    def max_wait_time(self, max_wait_time):
+        """Sets the max_wait_time of this CoreNodeMetadata.
 
         Total wait time a node can be delayed by queueing. This value cannot be smaller than value set at the workflow level.  # noqa: E501
 
-        :param duration: The duration of this CoreNodeMetadata.  # noqa: E501
+        :param max_wait_time: The max_wait_time of this CoreNodeMetadata.  # noqa: E501
         :type: str
         """
 
-        self._duration = duration
+        self._max_wait_time = max_wait_time
 
     def to_dict(self):
         """Returns the model properties as a dict"""

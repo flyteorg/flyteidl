@@ -515,7 +515,15 @@ func (m *NodeMetadata) Validate() error {
 		}
 	}
 
-	// no validation rules for Duration
+	if v, ok := interface{}(m.GetMaxWaitTime()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return NodeMetadataValidationError{
+				field:  "MaxWaitTime",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	switch m.InterruptibleValue.(type) {
 
@@ -803,7 +811,15 @@ func (m *WorkflowMetadata) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Duration
+	if v, ok := interface{}(m.GetMaxWaitTime()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return WorkflowMetadataValidationError{
+				field:  "MaxWaitTime",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	return nil
 }

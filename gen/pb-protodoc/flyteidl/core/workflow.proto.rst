@@ -184,7 +184,7 @@ Defines extra information about the Node.
     "timeout": "{...}",
     "retries": "{...}",
     "interruptible": "...",
-    "duration": "..."
+    "max_wait_time": "{...}"
   }
 
 .. _api_field_flyteidl.core.NodeMetadata.name:
@@ -212,10 +212,10 @@ interruptible
   Identify whether node is interruptible
   
   
-.. _api_field_flyteidl.core.NodeMetadata.duration:
+.. _api_field_flyteidl.core.NodeMetadata.max_wait_time:
 
-duration
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Total wait time a node can be delayed by queueing.
+max_wait_time
+  (:ref:`google.protobuf.Duration <api_msg_google.protobuf.Duration>`) Total wait time a node can be delayed by queueing.
   This value cannot be smaller than value set at the workflow level.
   
   
@@ -355,14 +355,14 @@ To be used in the future.
 .. code-block:: json
 
   {
-    "duration": "..."
+    "max_wait_time": "{...}"
   }
 
-.. _api_field_flyteidl.core.WorkflowMetadata.duration:
+.. _api_field_flyteidl.core.WorkflowMetadata.max_wait_time:
 
-duration
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Total wait time a workflow can be delayed by queueing.
-  Duration set at the workflow level will take precedence over duration
+max_wait_time
+  (:ref:`google.protobuf.Duration <api_msg_google.protobuf.Duration>`) Total wait time a workflow can be delayed by queueing.
+  max_wait_time set at the workflow level will take precedence over max_wait_time
   set at the node level in the case that the value set at the node level 
   is larger than the workflow level.
   

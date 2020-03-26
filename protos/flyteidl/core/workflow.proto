@@ -81,7 +81,7 @@ message NodeMetadata {
 
     // Total wait time a node can be delayed by queueing.
     // This value cannot be smaller than value set at the workflow level.
-    string duration = 7;
+    google.protobuf.Duration max_wait_time = 7;
 }
 
 // Links a variable to an alias.
@@ -134,10 +134,10 @@ message Node {
 // To be used in the future.
 message WorkflowMetadata {
     // Total wait time a workflow can be delayed by queueing.
-    // Duration set at the workflow level will take precedence over duration
+    // max_wait_time set at the workflow level will take precedence over max_wait_time
     // set at the node level in the case that the value set at the node level 
     // is larger than the workflow level.
-    string duration = 1;
+    google.protobuf.Duration max_wait_time = 1;
 }
 
 // Default Workflow Metadata for the entire workflow.
