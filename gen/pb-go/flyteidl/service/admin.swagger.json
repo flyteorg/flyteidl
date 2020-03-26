@@ -4708,6 +4708,10 @@
         "interruptible": {
           "type": "boolean",
           "format": "boolean"
+        },
+        "max_queue_time": {
+          "type": "string",
+          "description": "Total wait time a workflow can be delayed by queueing."
         }
       },
       "description": "Defines extra information about the Node."
@@ -5114,6 +5118,12 @@
     },
     "coreWorkflowMetadata": {
       "type": "object",
+      "properties": {
+        "max_queue_time": {
+          "type": "string",
+          "description": "Total wait time a workflow can be delayed by queueing."
+        }
+      },
       "description": "Metadata for the entire workflow.\nTo be used in the future."
     },
     "coreWorkflowMetadataDefaults": {

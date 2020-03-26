@@ -297,6 +297,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fworkflow_2eproto:
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::NodeMetadata, timeout_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::NodeMetadata, retries_),
   offsetof(::flyteidl::core::NodeMetadataDefaultTypeInternal, interruptible_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::NodeMetadata, max_queue_time_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::NodeMetadata, interruptible_value_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Alias, _internal_metadata_),
@@ -324,6 +325,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fworkflow_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowMetadata, max_queue_time_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowMetadataDefaults, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -350,11 +352,11 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 23, -1, sizeof(::flyteidl::core::TaskNode)},
   { 30, -1, sizeof(::flyteidl::core::WorkflowNode)},
   { 38, -1, sizeof(::flyteidl::core::NodeMetadata)},
-  { 48, -1, sizeof(::flyteidl::core::Alias)},
-  { 55, -1, sizeof(::flyteidl::core::Node)},
-  { 69, -1, sizeof(::flyteidl::core::WorkflowMetadata)},
-  { 74, -1, sizeof(::flyteidl::core::WorkflowMetadataDefaults)},
-  { 80, -1, sizeof(::flyteidl::core::WorkflowTemplate)},
+  { 49, -1, sizeof(::flyteidl::core::Alias)},
+  { 56, -1, sizeof(::flyteidl::core::Node)},
+  { 70, -1, sizeof(::flyteidl::core::WorkflowMetadata)},
+  { 76, -1, sizeof(::flyteidl::core::WorkflowMetadataDefaults)},
+  { 82, -1, sizeof(::flyteidl::core::WorkflowTemplate)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -397,38 +399,39 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto[] =
   "\013\n\treference\"\207\001\n\014WorkflowNode\0223\n\016launchp"
   "lan_ref\030\001 \001(\0132\031.flyteidl.core.Identifier"
   "H\000\0225\n\020sub_workflow_ref\030\002 \001(\0132\031.flyteidl."
-  "core.IdentifierH\000B\013\n\treference\"\247\001\n\014NodeM"
+  "core.IdentifierH\000B\013\n\treference\"\277\001\n\014NodeM"
   "etadata\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031"
   ".google.protobuf.Duration\022-\n\007retries\030\005 \001"
   "(\0132\034.flyteidl.core.RetryStrategy\022\027\n\rinte"
-  "rruptible\030\006 \001(\010H\000B\025\n\023interruptible_value"
-  "\"#\n\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\322\002"
-  "\n\004Node\022\n\n\002id\030\001 \001(\t\022-\n\010metadata\030\002 \001(\0132\033.f"
-  "lyteidl.core.NodeMetadata\022&\n\006inputs\030\003 \003("
-  "\0132\026.flyteidl.core.Binding\022\031\n\021upstream_no"
-  "de_ids\030\004 \003(\t\022,\n\016output_aliases\030\005 \003(\0132\024.f"
-  "lyteidl.core.Alias\022,\n\ttask_node\030\006 \001(\0132\027."
-  "flyteidl.core.TaskNodeH\000\0224\n\rworkflow_nod"
-  "e\030\007 \001(\0132\033.flyteidl.core.WorkflowNodeH\000\0220"
-  "\n\013branch_node\030\010 \001(\0132\031.flyteidl.core.Bran"
-  "chNodeH\000B\010\n\006target\"\022\n\020WorkflowMetadata\"1"
-  "\n\030WorkflowMetadataDefaults\022\025\n\rinterrupti"
-  "ble\030\001 \001(\010\"\332\002\n\020WorkflowTemplate\022%\n\002id\030\001 \001"
-  "(\0132\031.flyteidl.core.Identifier\0221\n\010metadat"
-  "a\030\002 \001(\0132\037.flyteidl.core.WorkflowMetadata"
-  "\0220\n\tinterface\030\003 \001(\0132\035.flyteidl.core.Type"
-  "dInterface\022\"\n\005nodes\030\004 \003(\0132\023.flyteidl.cor"
-  "e.Node\022\'\n\007outputs\030\005 \003(\0132\026.flyteidl.core."
-  "Binding\022)\n\014failure_node\030\006 \001(\0132\023.flyteidl"
-  ".core.Node\022B\n\021metadata_defaults\030\007 \001(\0132\'."
-  "flyteidl.core.WorkflowMetadataDefaultsB2"
-  "Z0github.com/lyft/flyteidl/gen/pb-go/fly"
-  "teidl/coreb\006proto3"
+  "rruptible\030\006 \001(\010H\000\022\026\n\016max_queue_time\030\007 \001("
+  "\tB\025\n\023interruptible_value\"#\n\005Alias\022\013\n\003var"
+  "\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\322\002\n\004Node\022\n\n\002id\030\001 \001"
+  "(\t\022-\n\010metadata\030\002 \001(\0132\033.flyteidl.core.Nod"
+  "eMetadata\022&\n\006inputs\030\003 \003(\0132\026.flyteidl.cor"
+  "e.Binding\022\031\n\021upstream_node_ids\030\004 \003(\t\022,\n\016"
+  "output_aliases\030\005 \003(\0132\024.flyteidl.core.Ali"
+  "as\022,\n\ttask_node\030\006 \001(\0132\027.flyteidl.core.Ta"
+  "skNodeH\000\0224\n\rworkflow_node\030\007 \001(\0132\033.flytei"
+  "dl.core.WorkflowNodeH\000\0220\n\013branch_node\030\010 "
+  "\001(\0132\031.flyteidl.core.BranchNodeH\000B\010\n\006targ"
+  "et\"*\n\020WorkflowMetadata\022\026\n\016max_queue_time"
+  "\030\001 \001(\t\"1\n\030WorkflowMetadataDefaults\022\025\n\rin"
+  "terruptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplate\022%"
+  "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\0221\n"
+  "\010metadata\030\002 \001(\0132\037.flyteidl.core.Workflow"
+  "Metadata\0220\n\tinterface\030\003 \001(\0132\035.flyteidl.c"
+  "ore.TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.flyt"
+  "eidl.core.Node\022\'\n\007outputs\030\005 \003(\0132\026.flytei"
+  "dl.core.Binding\022)\n\014failure_node\030\006 \001(\0132\023."
+  "flyteidl.core.Node\022B\n\021metadata_defaults\030"
+  "\007 \001(\0132\'.flyteidl.core.WorkflowMetadataDe"
+  "faultsB2Z0github.com/lyft/flyteidl/gen/p"
+  "b-go/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fworkflow_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fworkflow_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto,
-  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 1818,
+  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 1866,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fworkflow_2eproto() {
@@ -2440,6 +2443,7 @@ const int NodeMetadata::kNameFieldNumber;
 const int NodeMetadata::kTimeoutFieldNumber;
 const int NodeMetadata::kRetriesFieldNumber;
 const int NodeMetadata::kInterruptibleFieldNumber;
+const int NodeMetadata::kMaxQueueTimeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 NodeMetadata::NodeMetadata()
@@ -2454,6 +2458,10 @@ NodeMetadata::NodeMetadata(const NodeMetadata& from)
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.name().size() > 0) {
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  max_queue_time_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.max_queue_time().size() > 0) {
+    max_queue_time_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.max_queue_time_);
   }
   if (from.has_timeout()) {
     timeout_ = new ::google::protobuf::Duration(*from.timeout_);
@@ -2482,6 +2490,7 @@ void NodeMetadata::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_NodeMetadata_flyteidl_2fcore_2fworkflow_2eproto.base);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  max_queue_time_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&timeout_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&retries_) -
       reinterpret_cast<char*>(&timeout_)) + sizeof(retries_));
@@ -2495,6 +2504,7 @@ NodeMetadata::~NodeMetadata() {
 
 void NodeMetadata::SharedDtor() {
   name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  max_queue_time_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete timeout_;
   if (this != internal_default_instance()) delete retries_;
   if (has_interruptible_value()) {
@@ -2533,6 +2543,7 @@ void NodeMetadata::Clear() {
   (void) cached_has_bits;
 
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  max_queue_time_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && timeout_ != nullptr) {
     delete timeout_;
   }
@@ -2605,6 +2616,22 @@ const char* NodeMetadata::_InternalParse(const char* begin, const char* end, voi
         if (static_cast<::google::protobuf::uint8>(tag) != 48) goto handle_unusual;
         msg->set_interruptible(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // string max_queue_time = 7;
+      case 7: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 58) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.core.NodeMetadata.max_queue_time");
+        object = msg->mutable_max_queue_time();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
         break;
       }
       default: {
@@ -2692,6 +2719,21 @@ bool NodeMetadata::MergePartialFromCodedStream(
         break;
       }
 
+      // string max_queue_time = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (58 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_max_queue_time()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->max_queue_time().data(), static_cast<int>(this->max_queue_time().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.core.NodeMetadata.max_queue_time"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -2746,6 +2788,16 @@ void NodeMetadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->interruptible(), output);
   }
 
+  // string max_queue_time = 7;
+  if (this->max_queue_time().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->max_queue_time().data(), static_cast<int>(this->max_queue_time().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.core.NodeMetadata.max_queue_time");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      7, this->max_queue_time(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -2789,6 +2841,17 @@ void NodeMetadata::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->interruptible(), target);
   }
 
+  // string max_queue_time = 7;
+  if (this->max_queue_time().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->max_queue_time().data(), static_cast<int>(this->max_queue_time().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.core.NodeMetadata.max_queue_time");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        7, this->max_queue_time(), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -2815,6 +2878,13 @@ size_t NodeMetadata::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->name());
+  }
+
+  // string max_queue_time = 7;
+  if (this->max_queue_time().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->max_queue_time());
   }
 
   // .google.protobuf.Duration timeout = 4;
@@ -2872,6 +2942,10 @@ void NodeMetadata::MergeFrom(const NodeMetadata& from) {
 
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
+  if (from.max_queue_time().size() > 0) {
+
+    max_queue_time_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.max_queue_time_);
+  }
   if (from.has_timeout()) {
     mutable_timeout()->::google::protobuf::Duration::MergeFrom(from.timeout());
   }
@@ -2915,6 +2989,8 @@ void NodeMetadata::InternalSwap(NodeMetadata* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  max_queue_time_.Swap(&other->max_queue_time_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(timeout_, other->timeout_);
   swap(retries_, other->retries_);
@@ -4130,6 +4206,7 @@ class WorkflowMetadata::HasBitSetters {
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int WorkflowMetadata::kMaxQueueTimeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 WorkflowMetadata::WorkflowMetadata()
@@ -4141,10 +4218,17 @@ WorkflowMetadata::WorkflowMetadata(const WorkflowMetadata& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  max_queue_time_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.max_queue_time().size() > 0) {
+    max_queue_time_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.max_queue_time_);
+  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.WorkflowMetadata)
 }
 
 void WorkflowMetadata::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_WorkflowMetadata_flyteidl_2fcore_2fworkflow_2eproto.base);
+  max_queue_time_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 WorkflowMetadata::~WorkflowMetadata() {
@@ -4153,6 +4237,7 @@ WorkflowMetadata::~WorkflowMetadata() {
 }
 
 void WorkflowMetadata::SharedDtor() {
+  max_queue_time_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void WorkflowMetadata::SetCachedSize(int size) const {
@@ -4170,6 +4255,7 @@ void WorkflowMetadata::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  max_queue_time_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -4186,7 +4272,24 @@ const char* WorkflowMetadata::_InternalParse(const char* begin, const char* end,
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
+      // string max_queue_time = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.core.WorkflowMetadata.max_queue_time");
+        object = msg->mutable_max_queue_time();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
       default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->EndGroup(tag);
           return ptr;
@@ -4200,6 +4303,13 @@ const char* WorkflowMetadata::_InternalParse(const char* begin, const char* end,
     }  // switch
   }  // while
   return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool WorkflowMetadata::MergePartialFromCodedStream(
@@ -4211,12 +4321,32 @@ bool WorkflowMetadata::MergePartialFromCodedStream(
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
-  handle_unusual:
-    if (tag == 0) {
-      goto success;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string max_queue_time = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_max_queue_time()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->max_queue_time().data(), static_cast<int>(this->max_queue_time().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.core.WorkflowMetadata.max_queue_time"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
     }
-    DO_(::google::protobuf::internal::WireFormat::SkipField(
-          input, tag, _internal_metadata_.mutable_unknown_fields()));
   }
 success:
   // @@protoc_insertion_point(parse_success:flyteidl.core.WorkflowMetadata)
@@ -4234,6 +4364,16 @@ void WorkflowMetadata::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  // string max_queue_time = 1;
+  if (this->max_queue_time().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->max_queue_time().data(), static_cast<int>(this->max_queue_time().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.core.WorkflowMetadata.max_queue_time");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->max_queue_time(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -4246,6 +4386,17 @@ void WorkflowMetadata::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_to_array_start:flyteidl.core.WorkflowMetadata)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // string max_queue_time = 1;
+  if (this->max_queue_time().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->max_queue_time().data(), static_cast<int>(this->max_queue_time().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.core.WorkflowMetadata.max_queue_time");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->max_queue_time(), target);
+  }
 
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
@@ -4267,6 +4418,13 @@ size_t WorkflowMetadata::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // string max_queue_time = 1;
+  if (this->max_queue_time().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->max_queue_time());
+  }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -4295,6 +4453,10 @@ void WorkflowMetadata::MergeFrom(const WorkflowMetadata& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.max_queue_time().size() > 0) {
+
+    max_queue_time_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.max_queue_time_);
+  }
 }
 
 void WorkflowMetadata::CopyFrom(const ::google::protobuf::Message& from) {
@@ -4322,6 +4484,8 @@ void WorkflowMetadata::Swap(WorkflowMetadata* other) {
 void WorkflowMetadata::InternalSwap(WorkflowMetadata* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  max_queue_time_.Swap(&other->max_queue_time_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
 }
 
 ::google::protobuf::Metadata WorkflowMetadata::GetMetadata() const {

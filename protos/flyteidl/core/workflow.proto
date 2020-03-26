@@ -78,6 +78,9 @@ message NodeMetadata {
     oneof interruptible_value {
         bool interruptible = 6;
     };
+
+    // Total wait time a workflow can be delayed by queueing.
+    string max_queue_time = 7;
 }
 
 // Links a variable to an alias.
@@ -129,7 +132,8 @@ message Node {
 // Metadata for the entire workflow.
 // To be used in the future.
 message WorkflowMetadata {
-    // Default Workflow Metadata for the entire workflow.
+    // Total wait time a workflow can be delayed by queueing.
+    string max_queue_time = 1;
 }
 
 // Default Workflow Metadata for the entire workflow.

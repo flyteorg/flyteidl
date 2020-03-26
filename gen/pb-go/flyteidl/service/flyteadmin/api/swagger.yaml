@@ -6061,7 +6061,8 @@ definitions:
                     - null
                   map:
                     bindings: {}
-              metadata: {}
+              metadata:
+                max_queue_time: "max_queue_time"
               failure_node:
                 branch_node:
                   if_else:
@@ -6142,6 +6143,7 @@ definitions:
                 metadata:
                   retries:
                     retries: 0
+                  max_queue_time: "max_queue_time"
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
@@ -6357,6 +6359,7 @@ definitions:
                 metadata:
                   retries:
                     retries: 0
+                  max_queue_time: "max_queue_time"
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
@@ -6571,6 +6574,7 @@ definitions:
                 metadata:
                   retries:
                     retries: 0
+                  max_queue_time: "max_queue_time"
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
@@ -6882,7 +6886,8 @@ definitions:
                     - null
                   map:
                     bindings: {}
-              metadata: {}
+              metadata:
+                max_queue_time: "max_queue_time"
               failure_node:
                 branch_node:
                   if_else:
@@ -6963,6 +6968,7 @@ definitions:
                 metadata:
                   retries:
                     retries: 0
+                  max_queue_time: "max_queue_time"
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
@@ -7178,6 +7184,7 @@ definitions:
                 metadata:
                   retries:
                     retries: 0
+                  max_queue_time: "max_queue_time"
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
@@ -7392,6 +7399,7 @@ definitions:
                 metadata:
                   retries:
                     retries: 0
+                  max_queue_time: "max_queue_time"
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
@@ -7937,7 +7945,8 @@ definitions:
                     - null
                   map:
                     bindings: {}
-              metadata: {}
+              metadata:
+                max_queue_time: "max_queue_time"
               failure_node:
                 branch_node:
                   if_else:
@@ -8018,6 +8027,7 @@ definitions:
                 metadata:
                   retries:
                     retries: 0
+                  max_queue_time: "max_queue_time"
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
@@ -8233,6 +8243,7 @@ definitions:
                 metadata:
                   retries:
                     retries: 0
+                  max_queue_time: "max_queue_time"
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
@@ -8447,6 +8458,7 @@ definitions:
                 metadata:
                   retries:
                     retries: 0
+                  max_queue_time: "max_queue_time"
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
@@ -8871,7 +8883,8 @@ definitions:
                   - null
                 map:
                   bindings: {}
-            metadata: {}
+            metadata:
+              max_queue_time: "max_queue_time"
             failure_node:
               branch_node:
                 if_else:
@@ -8952,6 +8965,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                max_queue_time: "max_queue_time"
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
@@ -9167,6 +9181,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                max_queue_time: "max_queue_time"
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
@@ -9381,6 +9396,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                max_queue_time: "max_queue_time"
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
@@ -9692,7 +9708,8 @@ definitions:
                   - null
                 map:
                   bindings: {}
-            metadata: {}
+            metadata:
+              max_queue_time: "max_queue_time"
             failure_node:
               branch_node:
                 if_else:
@@ -9773,6 +9790,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                max_queue_time: "max_queue_time"
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
@@ -9988,6 +10006,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                max_queue_time: "max_queue_time"
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
@@ -10202,6 +10221,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                max_queue_time: "max_queue_time"
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
@@ -10747,7 +10767,8 @@ definitions:
                   - null
                 map:
                   bindings: {}
-            metadata: {}
+            metadata:
+              max_queue_time: "max_queue_time"
             failure_node:
               branch_node:
                 if_else:
@@ -10828,6 +10849,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                max_queue_time: "max_queue_time"
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
@@ -11043,6 +11065,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                max_queue_time: "max_queue_time"
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
@@ -11257,6 +11280,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                max_queue_time: "max_queue_time"
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
@@ -11637,7 +11661,8 @@ definitions:
                       - null
                     map:
                       bindings: {}
-                metadata: {}
+                metadata:
+                  max_queue_time: "max_queue_time"
                 failure_node:
                   branch_node:
                     if_else:
@@ -11718,6 +11743,7 @@ definitions:
                   metadata:
                     retries:
                       retries: 0
+                    max_queue_time: "max_queue_time"
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
@@ -11933,6 +11959,7 @@ definitions:
                   metadata:
                     retries:
                       retries: 0
+                    max_queue_time: "max_queue_time"
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
@@ -12147,6 +12174,7 @@ definitions:
                   metadata:
                     retries:
                       retries: 0
+                    max_queue_time: "max_queue_time"
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
@@ -12458,7 +12486,8 @@ definitions:
                       - null
                     map:
                       bindings: {}
-                metadata: {}
+                metadata:
+                  max_queue_time: "max_queue_time"
                 failure_node:
                   branch_node:
                     if_else:
@@ -12539,6 +12568,7 @@ definitions:
                   metadata:
                     retries:
                       retries: 0
+                    max_queue_time: "max_queue_time"
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
@@ -12754,6 +12784,7 @@ definitions:
                   metadata:
                     retries:
                       retries: 0
+                    max_queue_time: "max_queue_time"
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
@@ -12968,6 +12999,7 @@ definitions:
                   metadata:
                     retries:
                       retries: 0
+                    max_queue_time: "max_queue_time"
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
@@ -13513,7 +13545,8 @@ definitions:
                       - null
                     map:
                       bindings: {}
-                metadata: {}
+                metadata:
+                  max_queue_time: "max_queue_time"
                 failure_node:
                   branch_node:
                     if_else:
@@ -13594,6 +13627,7 @@ definitions:
                   metadata:
                     retries:
                       retries: 0
+                    max_queue_time: "max_queue_time"
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
@@ -13809,6 +13843,7 @@ definitions:
                   metadata:
                     retries:
                       retries: 0
+                    max_queue_time: "max_queue_time"
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
@@ -14023,6 +14058,7 @@ definitions:
                   metadata:
                     retries:
                       retries: 0
+                    max_queue_time: "max_queue_time"
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
@@ -14344,7 +14380,8 @@ definitions:
                       - null
                     map:
                       bindings: {}
-                metadata: {}
+                metadata:
+                  max_queue_time: "max_queue_time"
                 failure_node:
                   branch_node:
                     if_else:
@@ -14425,6 +14462,7 @@ definitions:
                   metadata:
                     retries:
                       retries: 0
+                    max_queue_time: "max_queue_time"
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
@@ -14640,6 +14678,7 @@ definitions:
                   metadata:
                     retries:
                       retries: 0
+                    max_queue_time: "max_queue_time"
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
@@ -14854,6 +14893,7 @@ definitions:
                   metadata:
                     retries:
                       retries: 0
+                    max_queue_time: "max_queue_time"
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
@@ -15165,7 +15205,8 @@ definitions:
                       - null
                     map:
                       bindings: {}
-                metadata: {}
+                metadata:
+                  max_queue_time: "max_queue_time"
                 failure_node:
                   branch_node:
                     if_else:
@@ -15246,6 +15287,7 @@ definitions:
                   metadata:
                     retries:
                       retries: 0
+                    max_queue_time: "max_queue_time"
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
@@ -15461,6 +15503,7 @@ definitions:
                   metadata:
                     retries:
                       retries: 0
+                    max_queue_time: "max_queue_time"
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
@@ -15675,6 +15718,7 @@ definitions:
                   metadata:
                     retries:
                       retries: 0
+                    max_queue_time: "max_queue_time"
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
@@ -16220,7 +16264,8 @@ definitions:
                       - null
                     map:
                       bindings: {}
-                metadata: {}
+                metadata:
+                  max_queue_time: "max_queue_time"
                 failure_node:
                   branch_node:
                     if_else:
@@ -16301,6 +16346,7 @@ definitions:
                   metadata:
                     retries:
                       retries: 0
+                    max_queue_time: "max_queue_time"
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
@@ -16516,6 +16562,7 @@ definitions:
                   metadata:
                     retries:
                       retries: 0
+                    max_queue_time: "max_queue_time"
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
@@ -16730,6 +16777,7 @@ definitions:
                   metadata:
                     retries:
                       retries: 0
+                    max_queue_time: "max_queue_time"
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
@@ -17570,7 +17618,8 @@ definitions:
               - null
             map:
               bindings: {}
-        metadata: {}
+        metadata:
+          max_queue_time: "max_queue_time"
         failure_node:
           branch_node:
             if_else:
@@ -17651,6 +17700,7 @@ definitions:
           metadata:
             retries:
               retries: 0
+            max_queue_time: "max_queue_time"
             name: "name"
             interruptible: true
             timeout: "timeout"
@@ -17866,6 +17916,7 @@ definitions:
           metadata:
             retries:
               retries: 0
+            max_queue_time: "max_queue_time"
             name: "name"
             interruptible: true
             timeout: "timeout"
@@ -18080,6 +18131,7 @@ definitions:
           metadata:
             retries:
               retries: 0
+            max_queue_time: "max_queue_time"
             name: "name"
             interruptible: true
             timeout: "timeout"
@@ -18418,7 +18470,8 @@ definitions:
                 - null
               map:
                 bindings: {}
-          metadata: {}
+          metadata:
+            max_queue_time: "max_queue_time"
           failure_node:
             branch_node:
               if_else:
@@ -18499,6 +18552,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              max_queue_time: "max_queue_time"
               name: "name"
               interruptible: true
               timeout: "timeout"
@@ -18714,6 +18768,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              max_queue_time: "max_queue_time"
               name: "name"
               interruptible: true
               timeout: "timeout"
@@ -18928,6 +18983,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              max_queue_time: "max_queue_time"
               name: "name"
               interruptible: true
               timeout: "timeout"
@@ -19239,7 +19295,8 @@ definitions:
                 - null
               map:
                 bindings: {}
-          metadata: {}
+          metadata:
+            max_queue_time: "max_queue_time"
           failure_node:
             branch_node:
               if_else:
@@ -19320,6 +19377,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              max_queue_time: "max_queue_time"
               name: "name"
               interruptible: true
               timeout: "timeout"
@@ -19535,6 +19593,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              max_queue_time: "max_queue_time"
               name: "name"
               interruptible: true
               timeout: "timeout"
@@ -19749,6 +19808,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              max_queue_time: "max_queue_time"
               name: "name"
               interruptible: true
               timeout: "timeout"
@@ -20294,7 +20354,8 @@ definitions:
                 - null
               map:
                 bindings: {}
-          metadata: {}
+          metadata:
+            max_queue_time: "max_queue_time"
           failure_node:
             branch_node:
               if_else:
@@ -20375,6 +20436,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              max_queue_time: "max_queue_time"
               name: "name"
               interruptible: true
               timeout: "timeout"
@@ -20590,6 +20652,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              max_queue_time: "max_queue_time"
               name: "name"
               interruptible: true
               timeout: "timeout"
@@ -20804,6 +20867,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              max_queue_time: "max_queue_time"
               name: "name"
               interruptible: true
               timeout: "timeout"
@@ -21594,6 +21658,7 @@ definitions:
       metadata:
         retries:
           retries: 0
+        max_queue_time: "max_queue_time"
         name: "name"
         interruptible: true
         timeout: "timeout"
@@ -21771,10 +21836,14 @@ definitions:
       interruptible:
         type: "boolean"
         format: "boolean"
+      max_queue_time:
+        type: "string"
+        description: "Total wait time a workflow can be delayed by queueing."
     description: "Defines extra information about the Node."
     example:
       retries:
         retries: 0
+      max_queue_time: "max_queue_time"
       name: "name"
       interruptible: true
       timeout: "timeout"
@@ -22591,7 +22660,13 @@ definitions:
     default: "UNDEFINED"
   coreWorkflowMetadata:
     type: "object"
+    properties:
+      max_queue_time:
+        type: "string"
+        description: "Total wait time a workflow can be delayed by queueing."
     description: "Metadata for the entire workflow.\nTo be used in the future."
+    example:
+      max_queue_time: "max_queue_time"
   coreWorkflowMetadataDefaults:
     type: "object"
     properties:
@@ -22775,7 +22850,8 @@ definitions:
             - null
           map:
             bindings: {}
-      metadata: {}
+      metadata:
+        max_queue_time: "max_queue_time"
       failure_node:
         branch_node:
           if_else:
@@ -22856,6 +22932,7 @@ definitions:
         metadata:
           retries:
             retries: 0
+          max_queue_time: "max_queue_time"
           name: "name"
           interruptible: true
           timeout: "timeout"
@@ -23071,6 +23148,7 @@ definitions:
         metadata:
           retries:
             retries: 0
+          max_queue_time: "max_queue_time"
           name: "name"
           interruptible: true
           timeout: "timeout"
@@ -23285,6 +23363,7 @@ definitions:
         metadata:
           retries:
             retries: 0
+          max_queue_time: "max_queue_time"
           name: "name"
           interruptible: true
           timeout: "timeout"

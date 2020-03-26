@@ -1448,6 +1448,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.IDuration|null} [timeout] NodeMetadata timeout
              * @property {flyteidl.core.IRetryStrategy|null} [retries] NodeMetadata retries
              * @property {boolean|null} [interruptible] NodeMetadata interruptible
+             * @property {string|null} [maxQueueTime] NodeMetadata maxQueueTime
              */
 
             /**
@@ -1497,6 +1498,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             NodeMetadata.prototype.interruptible = false;
 
+            /**
+             * NodeMetadata maxQueueTime.
+             * @member {string} maxQueueTime
+             * @memberof flyteidl.core.NodeMetadata
+             * @instance
+             */
+            NodeMetadata.prototype.maxQueueTime = "";
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -1543,6 +1552,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.RetryStrategy.encode(message.retries, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 if (message.interruptible != null && message.hasOwnProperty("interruptible"))
                     writer.uint32(/* id 6, wireType 0 =*/48).bool(message.interruptible);
+                if (message.maxQueueTime != null && message.hasOwnProperty("maxQueueTime"))
+                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.maxQueueTime);
                 return writer;
             };
 
@@ -1575,6 +1586,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 6:
                         message.interruptible = reader.bool();
+                        break;
+                    case 7:
+                        message.maxQueueTime = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -1614,6 +1628,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (typeof message.interruptible !== "boolean")
                         return "interruptible: boolean expected";
                 }
+                if (message.maxQueueTime != null && message.hasOwnProperty("maxQueueTime"))
+                    if (!$util.isString(message.maxQueueTime))
+                        return "maxQueueTime: string expected";
                 return null;
             };
 
@@ -2046,6 +2063,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a WorkflowMetadata.
              * @memberof flyteidl.core
              * @interface IWorkflowMetadata
+             * @property {string|null} [maxQueueTime] WorkflowMetadata maxQueueTime
              */
 
             /**
@@ -2062,6 +2080,14 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
+
+            /**
+             * WorkflowMetadata maxQueueTime.
+             * @member {string} maxQueueTime
+             * @memberof flyteidl.core.WorkflowMetadata
+             * @instance
+             */
+            WorkflowMetadata.prototype.maxQueueTime = "";
 
             /**
              * Creates a new WorkflowMetadata instance using the specified properties.
@@ -2087,6 +2113,8 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowMetadata.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
+                if (message.maxQueueTime != null && message.hasOwnProperty("maxQueueTime"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.maxQueueTime);
                 return writer;
             };
 
@@ -2108,6 +2136,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
+                    case 1:
+                        message.maxQueueTime = reader.string();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -2127,6 +2158,9 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowMetadata.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (message.maxQueueTime != null && message.hasOwnProperty("maxQueueTime"))
+                    if (!$util.isString(message.maxQueueTime))
+                        return "maxQueueTime: string expected";
                 return null;
             };
 
