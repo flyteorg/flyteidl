@@ -822,8 +822,8 @@ export namespace flyteidl {
         /** Properties of a WorkflowMetadata. */
         interface IWorkflowMetadata {
 
-            /** WorkflowMetadata maxWaitTime */
-            maxWaitTime?: (google.protobuf.IDuration|null);
+            /** WorkflowMetadata queuingBudget */
+            queuingBudget?: (google.protobuf.IDuration|null);
         }
 
         /** Represents a WorkflowMetadata. */
@@ -835,8 +835,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.core.IWorkflowMetadata);
 
-            /** WorkflowMetadata maxWaitTime. */
-            public maxWaitTime?: (google.protobuf.IDuration|null);
+            /** WorkflowMetadata queuingBudget. */
+            public queuingBudget?: (google.protobuf.IDuration|null);
 
             /**
              * Creates a new WorkflowMetadata instance using the specified properties.

@@ -5115,7 +5115,7 @@
     "coreWorkflowMetadata": {
       "type": "object",
       "properties": {
-        "max_wait_time": {
+        "queuing_budget": {
           "type": "string",
           "description": "Total wait time a workflow can be delayed by queueing."
         }

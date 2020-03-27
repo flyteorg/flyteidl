@@ -31,44 +31,44 @@ class CoreWorkflowMetadata(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'max_wait_time': 'str'
+        'queuing_budget': 'str'
     }
 
     attribute_map = {
-        'max_wait_time': 'max_wait_time'
+        'queuing_budget': 'queuing_budget'
     }
 
-    def __init__(self, max_wait_time=None):  # noqa: E501
+    def __init__(self, queuing_budget=None):  # noqa: E501
         """CoreWorkflowMetadata - a model defined in Swagger"""  # noqa: E501
 
-        self._max_wait_time = None
+        self._queuing_budget = None
         self.discriminator = None
 
-        if max_wait_time is not None:
-            self.max_wait_time = max_wait_time
+        if queuing_budget is not None:
+            self.queuing_budget = queuing_budget
 
     @property
-    def max_wait_time(self):
-        """Gets the max_wait_time of this CoreWorkflowMetadata.  # noqa: E501
+    def queuing_budget(self):
+        """Gets the queuing_budget of this CoreWorkflowMetadata.  # noqa: E501
 
         Total wait time a workflow can be delayed by queueing.  # noqa: E501
 
-        :return: The max_wait_time of this CoreWorkflowMetadata.  # noqa: E501
+        :return: The queuing_budget of this CoreWorkflowMetadata.  # noqa: E501
         :rtype: str
         """
-        return self._max_wait_time
+        return self._queuing_budget
 
-    @max_wait_time.setter
-    def max_wait_time(self, max_wait_time):
-        """Sets the max_wait_time of this CoreWorkflowMetadata.
+    @queuing_budget.setter
+    def queuing_budget(self, queuing_budget):
+        """Sets the queuing_budget of this CoreWorkflowMetadata.
 
         Total wait time a workflow can be delayed by queueing.  # noqa: E501
 
-        :param max_wait_time: The max_wait_time of this CoreWorkflowMetadata.  # noqa: E501
+        :param queuing_budget: The queuing_budget of this CoreWorkflowMetadata.  # noqa: E501
         :type: str
         """
 
-        self._max_wait_time = max_wait_time
+        self._queuing_budget = queuing_budget
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -6062,7 +6062,7 @@ definitions:
                   map:
                     bindings: {}
               metadata:
-                max_wait_time: "max_wait_time"
+                queuing_budget: "queuing_budget"
               failure_node:
                 branch_node:
                   if_else:
@@ -6884,7 +6884,7 @@ definitions:
                   map:
                     bindings: {}
               metadata:
-                max_wait_time: "max_wait_time"
+                queuing_budget: "queuing_budget"
               failure_node:
                 branch_node:
                   if_else:
@@ -7940,7 +7940,7 @@ definitions:
                   map:
                     bindings: {}
               metadata:
-                max_wait_time: "max_wait_time"
+                queuing_budget: "queuing_budget"
               failure_node:
                 branch_node:
                   if_else:
@@ -8875,7 +8875,7 @@ definitions:
                 map:
                   bindings: {}
             metadata:
-              max_wait_time: "max_wait_time"
+              queuing_budget: "queuing_budget"
             failure_node:
               branch_node:
                 if_else:
@@ -9697,7 +9697,7 @@ definitions:
                 map:
                   bindings: {}
             metadata:
-              max_wait_time: "max_wait_time"
+              queuing_budget: "queuing_budget"
             failure_node:
               branch_node:
                 if_else:
@@ -10753,7 +10753,7 @@ definitions:
                 map:
                   bindings: {}
             metadata:
-              max_wait_time: "max_wait_time"
+              queuing_budget: "queuing_budget"
             failure_node:
               branch_node:
                 if_else:
@@ -11644,7 +11644,7 @@ definitions:
                     map:
                       bindings: {}
                 metadata:
-                  max_wait_time: "max_wait_time"
+                  queuing_budget: "queuing_budget"
                 failure_node:
                   branch_node:
                     if_else:
@@ -12466,7 +12466,7 @@ definitions:
                     map:
                       bindings: {}
                 metadata:
-                  max_wait_time: "max_wait_time"
+                  queuing_budget: "queuing_budget"
                 failure_node:
                   branch_node:
                     if_else:
@@ -13522,7 +13522,7 @@ definitions:
                     map:
                       bindings: {}
                 metadata:
-                  max_wait_time: "max_wait_time"
+                  queuing_budget: "queuing_budget"
                 failure_node:
                   branch_node:
                     if_else:
@@ -14354,7 +14354,7 @@ definitions:
                     map:
                       bindings: {}
                 metadata:
-                  max_wait_time: "max_wait_time"
+                  queuing_budget: "queuing_budget"
                 failure_node:
                   branch_node:
                     if_else:
@@ -15176,7 +15176,7 @@ definitions:
                     map:
                       bindings: {}
                 metadata:
-                  max_wait_time: "max_wait_time"
+                  queuing_budget: "queuing_budget"
                 failure_node:
                   branch_node:
                     if_else:
@@ -16232,7 +16232,7 @@ definitions:
                     map:
                       bindings: {}
                 metadata:
-                  max_wait_time: "max_wait_time"
+                  queuing_budget: "queuing_budget"
                 failure_node:
                   branch_node:
                     if_else:
@@ -17583,7 +17583,7 @@ definitions:
             map:
               bindings: {}
         metadata:
-          max_wait_time: "max_wait_time"
+          queuing_budget: "queuing_budget"
         failure_node:
           branch_node:
             if_else:
@@ -18432,7 +18432,7 @@ definitions:
               map:
                 bindings: {}
           metadata:
-            max_wait_time: "max_wait_time"
+            queuing_budget: "queuing_budget"
           failure_node:
             branch_node:
               if_else:
@@ -19254,7 +19254,7 @@ definitions:
               map:
                 bindings: {}
           metadata:
-            max_wait_time: "max_wait_time"
+            queuing_budget: "queuing_budget"
           failure_node:
             branch_node:
               if_else:
@@ -20310,7 +20310,7 @@ definitions:
               map:
                 bindings: {}
           metadata:
-            max_wait_time: "max_wait_time"
+            queuing_budget: "queuing_budget"
           failure_node:
             branch_node:
               if_else:
@@ -22608,12 +22608,12 @@ definitions:
   coreWorkflowMetadata:
     type: "object"
     properties:
-      max_wait_time:
+      queuing_budget:
         type: "string"
         description: "Total wait time a workflow can be delayed by queueing."
     description: "Metadata for the entire workflow.\nTo be used in the future."
     example:
-      max_wait_time: "max_wait_time"
+      queuing_budget: "queuing_budget"
   coreWorkflowMetadataDefaults:
     type: "object"
     properties:
@@ -22798,7 +22798,7 @@ definitions:
           map:
             bindings: {}
       metadata:
-        max_wait_time: "max_wait_time"
+        queuing_budget: "queuing_budget"
       failure_node:
         branch_node:
           if_else:

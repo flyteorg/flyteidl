@@ -325,7 +325,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fworkflow_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowMetadata, max_wait_time_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowMetadata, queuing_budget_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowMetadataDefaults, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -413,25 +413,25 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto[] =
   "flyteidl.core.TaskNodeH\000\0224\n\rworkflow_nod"
   "e\030\007 \001(\0132\033.flyteidl.core.WorkflowNodeH\000\0220"
   "\n\013branch_node\030\010 \001(\0132\031.flyteidl.core.Bran"
-  "chNodeH\000B\010\n\006target\"D\n\020WorkflowMetadata\0220"
-  "\n\rmax_wait_time\030\001 \001(\0132\031.google.protobuf."
-  "Duration\"1\n\030WorkflowMetadataDefaults\022\025\n\r"
-  "interruptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplate"
-  "\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022"
-  "1\n\010metadata\030\002 \001(\0132\037.flyteidl.core.Workfl"
-  "owMetadata\0220\n\tinterface\030\003 \001(\0132\035.flyteidl"
-  ".core.TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.fl"
-  "yteidl.core.Node\022\'\n\007outputs\030\005 \003(\0132\026.flyt"
-  "eidl.core.Binding\022)\n\014failure_node\030\006 \001(\0132"
-  "\023.flyteidl.core.Node\022B\n\021metadata_default"
-  "s\030\007 \001(\0132\'.flyteidl.core.WorkflowMetadata"
-  "DefaultsB2Z0github.com/lyft/flyteidl/gen"
-  "/pb-go/flyteidl/coreb\006proto3"
+  "chNodeH\000B\010\n\006target\"E\n\020WorkflowMetadata\0221"
+  "\n\016queuing_budget\030\001 \001(\0132\031.google.protobuf"
+  ".Duration\"1\n\030WorkflowMetadataDefaults\022\025\n"
+  "\rinterruptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplat"
+  "e\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier"
+  "\0221\n\010metadata\030\002 \001(\0132\037.flyteidl.core.Workf"
+  "lowMetadata\0220\n\tinterface\030\003 \001(\0132\035.flyteid"
+  "l.core.TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.f"
+  "lyteidl.core.Node\022\'\n\007outputs\030\005 \003(\0132\026.fly"
+  "teidl.core.Binding\022)\n\014failure_node\030\006 \001(\013"
+  "2\023.flyteidl.core.Node\022B\n\021metadata_defaul"
+  "ts\030\007 \001(\0132\'.flyteidl.core.WorkflowMetadat"
+  "aDefaultsB2Z0github.com/lyft/flyteidl/ge"
+  "n/pb-go/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fworkflow_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fworkflow_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto,
-  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 1868,
+  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 1869,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fworkflow_2eproto() {
@@ -4127,26 +4127,26 @@ void Node::InternalSwap(Node* other) {
 // ===================================================================
 
 void WorkflowMetadata::InitAsDefaultInstance() {
-  ::flyteidl::core::_WorkflowMetadata_default_instance_._instance.get_mutable()->max_wait_time_ = const_cast< ::google::protobuf::Duration*>(
+  ::flyteidl::core::_WorkflowMetadata_default_instance_._instance.get_mutable()->queuing_budget_ = const_cast< ::google::protobuf::Duration*>(
       ::google::protobuf::Duration::internal_default_instance());
 }
 class WorkflowMetadata::HasBitSetters {
  public:
-  static const ::google::protobuf::Duration& max_wait_time(const WorkflowMetadata* msg);
+  static const ::google::protobuf::Duration& queuing_budget(const WorkflowMetadata* msg);
 };
 
 const ::google::protobuf::Duration&
-WorkflowMetadata::HasBitSetters::max_wait_time(const WorkflowMetadata* msg) {
-  return *msg->max_wait_time_;
+WorkflowMetadata::HasBitSetters::queuing_budget(const WorkflowMetadata* msg) {
+  return *msg->queuing_budget_;
 }
-void WorkflowMetadata::clear_max_wait_time() {
-  if (GetArenaNoVirtual() == nullptr && max_wait_time_ != nullptr) {
-    delete max_wait_time_;
+void WorkflowMetadata::clear_queuing_budget() {
+  if (GetArenaNoVirtual() == nullptr && queuing_budget_ != nullptr) {
+    delete queuing_budget_;
   }
-  max_wait_time_ = nullptr;
+  queuing_budget_ = nullptr;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int WorkflowMetadata::kMaxWaitTimeFieldNumber;
+const int WorkflowMetadata::kQueuingBudgetFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 WorkflowMetadata::WorkflowMetadata()
@@ -4158,10 +4158,10 @@ WorkflowMetadata::WorkflowMetadata(const WorkflowMetadata& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_max_wait_time()) {
-    max_wait_time_ = new ::google::protobuf::Duration(*from.max_wait_time_);
+  if (from.has_queuing_budget()) {
+    queuing_budget_ = new ::google::protobuf::Duration(*from.queuing_budget_);
   } else {
-    max_wait_time_ = nullptr;
+    queuing_budget_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.WorkflowMetadata)
 }
@@ -4169,7 +4169,7 @@ WorkflowMetadata::WorkflowMetadata(const WorkflowMetadata& from)
 void WorkflowMetadata::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_WorkflowMetadata_flyteidl_2fcore_2fworkflow_2eproto.base);
-  max_wait_time_ = nullptr;
+  queuing_budget_ = nullptr;
 }
 
 WorkflowMetadata::~WorkflowMetadata() {
@@ -4178,7 +4178,7 @@ WorkflowMetadata::~WorkflowMetadata() {
 }
 
 void WorkflowMetadata::SharedDtor() {
-  if (this != internal_default_instance()) delete max_wait_time_;
+  if (this != internal_default_instance()) delete queuing_budget_;
 }
 
 void WorkflowMetadata::SetCachedSize(int size) const {
@@ -4196,10 +4196,10 @@ void WorkflowMetadata::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && max_wait_time_ != nullptr) {
-    delete max_wait_time_;
+  if (GetArenaNoVirtual() == nullptr && queuing_budget_ != nullptr) {
+    delete queuing_budget_;
   }
-  max_wait_time_ = nullptr;
+  queuing_budget_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -4216,13 +4216,13 @@ const char* WorkflowMetadata::_InternalParse(const char* begin, const char* end,
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .google.protobuf.Duration max_wait_time = 1;
+      // .google.protobuf.Duration queuing_budget = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::google::protobuf::Duration::_InternalParse;
-        object = msg->mutable_max_wait_time();
+        object = msg->mutable_queuing_budget();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -4259,11 +4259,11 @@ bool WorkflowMetadata::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .google.protobuf.Duration max_wait_time = 1;
+      // .google.protobuf.Duration queuing_budget = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_max_wait_time()));
+               input, mutable_queuing_budget()));
         } else {
           goto handle_unusual;
         }
@@ -4297,10 +4297,10 @@ void WorkflowMetadata::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .google.protobuf.Duration max_wait_time = 1;
-  if (this->has_max_wait_time()) {
+  // .google.protobuf.Duration queuing_budget = 1;
+  if (this->has_queuing_budget()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, HasBitSetters::max_wait_time(this), output);
+      1, HasBitSetters::queuing_budget(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -4316,11 +4316,11 @@ void WorkflowMetadata::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .google.protobuf.Duration max_wait_time = 1;
-  if (this->has_max_wait_time()) {
+  // .google.protobuf.Duration queuing_budget = 1;
+  if (this->has_queuing_budget()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, HasBitSetters::max_wait_time(this), target);
+        1, HasBitSetters::queuing_budget(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -4344,11 +4344,11 @@ size_t WorkflowMetadata::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .google.protobuf.Duration max_wait_time = 1;
-  if (this->has_max_wait_time()) {
+  // .google.protobuf.Duration queuing_budget = 1;
+  if (this->has_queuing_budget()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *max_wait_time_);
+        *queuing_budget_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -4378,8 +4378,8 @@ void WorkflowMetadata::MergeFrom(const WorkflowMetadata& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_max_wait_time()) {
-    mutable_max_wait_time()->::google::protobuf::Duration::MergeFrom(from.max_wait_time());
+  if (from.has_queuing_budget()) {
+    mutable_queuing_budget()->::google::protobuf::Duration::MergeFrom(from.queuing_budget());
   }
 }
 
@@ -4408,7 +4408,7 @@ void WorkflowMetadata::Swap(WorkflowMetadata* other) {
 void WorkflowMetadata::InternalSwap(WorkflowMetadata* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(max_wait_time_, other->max_wait_time_);
+  swap(queuing_budget_, other->queuing_budget_);
 }
 
 ::google::protobuf::Metadata WorkflowMetadata::GetMetadata() const {

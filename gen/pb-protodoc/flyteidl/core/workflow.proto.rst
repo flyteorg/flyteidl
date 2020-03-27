@@ -347,12 +347,12 @@ To be used in the future.
 .. code-block:: json
 
   {
-    "max_wait_time": "{...}"
+    "queuing_budget": "{...}"
   }
 
-.. _api_field_flyteidl.core.WorkflowMetadata.max_wait_time:
+.. _api_field_flyteidl.core.WorkflowMetadata.queuing_budget:
 
-max_wait_time
+queuing_budget
   (:ref:`google.protobuf.Duration <api_msg_google.protobuf.Duration>`) Total wait time a workflow can be delayed by queueing.
   
   

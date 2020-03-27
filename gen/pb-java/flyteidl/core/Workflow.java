@@ -10204,25 +10204,25 @@ public final class Workflow {
      * Total wait time a workflow can be delayed by queueing.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_wait_time = 1;</code>
+     * <code>.google.protobuf.Duration queuing_budget = 1;</code>
      */
-    boolean hasMaxWaitTime();
+    boolean hasQueuingBudget();
     /**
      * <pre>
      * Total wait time a workflow can be delayed by queueing.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_wait_time = 1;</code>
+     * <code>.google.protobuf.Duration queuing_budget = 1;</code>
      */
-    com.google.protobuf.Duration getMaxWaitTime();
+    com.google.protobuf.Duration getQueuingBudget();
     /**
      * <pre>
      * Total wait time a workflow can be delayed by queueing.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_wait_time = 1;</code>
+     * <code>.google.protobuf.Duration queuing_budget = 1;</code>
      */
-    com.google.protobuf.DurationOrBuilder getMaxWaitTimeOrBuilder();
+    com.google.protobuf.DurationOrBuilder getQueuingBudgetOrBuilder();
   }
   /**
    * <pre>
@@ -10270,13 +10270,13 @@ public final class Workflow {
               break;
             case 10: {
               com.google.protobuf.Duration.Builder subBuilder = null;
-              if (maxWaitTime_ != null) {
-                subBuilder = maxWaitTime_.toBuilder();
+              if (queuingBudget_ != null) {
+                subBuilder = queuingBudget_.toBuilder();
               }
-              maxWaitTime_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              queuingBudget_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(maxWaitTime_);
-                maxWaitTime_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(queuingBudget_);
+                queuingBudget_ = subBuilder.buildPartial();
               }
 
               break;
@@ -10313,37 +10313,37 @@ public final class Workflow {
               flyteidl.core.Workflow.WorkflowMetadata.class, flyteidl.core.Workflow.WorkflowMetadata.Builder.class);
     }
 
-    public static final int MAX_WAIT_TIME_FIELD_NUMBER = 1;
-    private com.google.protobuf.Duration maxWaitTime_;
+    public static final int QUEUING_BUDGET_FIELD_NUMBER = 1;
+    private com.google.protobuf.Duration queuingBudget_;
     /**
      * <pre>
      * Total wait time a workflow can be delayed by queueing.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_wait_time = 1;</code>
+     * <code>.google.protobuf.Duration queuing_budget = 1;</code>
      */
-    public boolean hasMaxWaitTime() {
-      return maxWaitTime_ != null;
+    public boolean hasQueuingBudget() {
+      return queuingBudget_ != null;
     }
     /**
      * <pre>
      * Total wait time a workflow can be delayed by queueing.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_wait_time = 1;</code>
+     * <code>.google.protobuf.Duration queuing_budget = 1;</code>
      */
-    public com.google.protobuf.Duration getMaxWaitTime() {
-      return maxWaitTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxWaitTime_;
+    public com.google.protobuf.Duration getQueuingBudget() {
+      return queuingBudget_ == null ? com.google.protobuf.Duration.getDefaultInstance() : queuingBudget_;
     }
     /**
      * <pre>
      * Total wait time a workflow can be delayed by queueing.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_wait_time = 1;</code>
+     * <code>.google.protobuf.Duration queuing_budget = 1;</code>
      */
-    public com.google.protobuf.DurationOrBuilder getMaxWaitTimeOrBuilder() {
-      return getMaxWaitTime();
+    public com.google.protobuf.DurationOrBuilder getQueuingBudgetOrBuilder() {
+      return getQueuingBudget();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -10360,8 +10360,8 @@ public final class Workflow {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (maxWaitTime_ != null) {
-        output.writeMessage(1, getMaxWaitTime());
+      if (queuingBudget_ != null) {
+        output.writeMessage(1, getQueuingBudget());
       }
       unknownFields.writeTo(output);
     }
@@ -10372,9 +10372,9 @@ public final class Workflow {
       if (size != -1) return size;
 
       size = 0;
-      if (maxWaitTime_ != null) {
+      if (queuingBudget_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getMaxWaitTime());
+          .computeMessageSize(1, getQueuingBudget());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10391,10 +10391,10 @@ public final class Workflow {
       }
       flyteidl.core.Workflow.WorkflowMetadata other = (flyteidl.core.Workflow.WorkflowMetadata) obj;
 
-      if (hasMaxWaitTime() != other.hasMaxWaitTime()) return false;
-      if (hasMaxWaitTime()) {
-        if (!getMaxWaitTime()
-            .equals(other.getMaxWaitTime())) return false;
+      if (hasQueuingBudget() != other.hasQueuingBudget()) return false;
+      if (hasQueuingBudget()) {
+        if (!getQueuingBudget()
+            .equals(other.getQueuingBudget())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -10407,9 +10407,9 @@ public final class Workflow {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasMaxWaitTime()) {
-        hash = (37 * hash) + MAX_WAIT_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getMaxWaitTime().hashCode();
+      if (hasQueuingBudget()) {
+        hash = (37 * hash) + QUEUING_BUDGET_FIELD_NUMBER;
+        hash = (53 * hash) + getQueuingBudget().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -10549,11 +10549,11 @@ public final class Workflow {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (maxWaitTimeBuilder_ == null) {
-          maxWaitTime_ = null;
+        if (queuingBudgetBuilder_ == null) {
+          queuingBudget_ = null;
         } else {
-          maxWaitTime_ = null;
-          maxWaitTimeBuilder_ = null;
+          queuingBudget_ = null;
+          queuingBudgetBuilder_ = null;
         }
         return this;
       }
@@ -10581,10 +10581,10 @@ public final class Workflow {
       @java.lang.Override
       public flyteidl.core.Workflow.WorkflowMetadata buildPartial() {
         flyteidl.core.Workflow.WorkflowMetadata result = new flyteidl.core.Workflow.WorkflowMetadata(this);
-        if (maxWaitTimeBuilder_ == null) {
-          result.maxWaitTime_ = maxWaitTime_;
+        if (queuingBudgetBuilder_ == null) {
+          result.queuingBudget_ = queuingBudget_;
         } else {
-          result.maxWaitTime_ = maxWaitTimeBuilder_.build();
+          result.queuingBudget_ = queuingBudgetBuilder_.build();
         }
         onBuilt();
         return result;
@@ -10634,8 +10634,8 @@ public final class Workflow {
 
       public Builder mergeFrom(flyteidl.core.Workflow.WorkflowMetadata other) {
         if (other == flyteidl.core.Workflow.WorkflowMetadata.getDefaultInstance()) return this;
-        if (other.hasMaxWaitTime()) {
-          mergeMaxWaitTime(other.getMaxWaitTime());
+        if (other.hasQueuingBudget()) {
+          mergeQueuingBudget(other.getQueuingBudget());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -10666,31 +10666,31 @@ public final class Workflow {
         return this;
       }
 
-      private com.google.protobuf.Duration maxWaitTime_;
+      private com.google.protobuf.Duration queuingBudget_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> maxWaitTimeBuilder_;
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> queuingBudgetBuilder_;
       /**
        * <pre>
        * Total wait time a workflow can be delayed by queueing.
        * </pre>
        *
-       * <code>.google.protobuf.Duration max_wait_time = 1;</code>
+       * <code>.google.protobuf.Duration queuing_budget = 1;</code>
        */
-      public boolean hasMaxWaitTime() {
-        return maxWaitTimeBuilder_ != null || maxWaitTime_ != null;
+      public boolean hasQueuingBudget() {
+        return queuingBudgetBuilder_ != null || queuingBudget_ != null;
       }
       /**
        * <pre>
        * Total wait time a workflow can be delayed by queueing.
        * </pre>
        *
-       * <code>.google.protobuf.Duration max_wait_time = 1;</code>
+       * <code>.google.protobuf.Duration queuing_budget = 1;</code>
        */
-      public com.google.protobuf.Duration getMaxWaitTime() {
-        if (maxWaitTimeBuilder_ == null) {
-          return maxWaitTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxWaitTime_;
+      public com.google.protobuf.Duration getQueuingBudget() {
+        if (queuingBudgetBuilder_ == null) {
+          return queuingBudget_ == null ? com.google.protobuf.Duration.getDefaultInstance() : queuingBudget_;
         } else {
-          return maxWaitTimeBuilder_.getMessage();
+          return queuingBudgetBuilder_.getMessage();
         }
       }
       /**
@@ -10698,17 +10698,17 @@ public final class Workflow {
        * Total wait time a workflow can be delayed by queueing.
        * </pre>
        *
-       * <code>.google.protobuf.Duration max_wait_time = 1;</code>
+       * <code>.google.protobuf.Duration queuing_budget = 1;</code>
        */
-      public Builder setMaxWaitTime(com.google.protobuf.Duration value) {
-        if (maxWaitTimeBuilder_ == null) {
+      public Builder setQueuingBudget(com.google.protobuf.Duration value) {
+        if (queuingBudgetBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          maxWaitTime_ = value;
+          queuingBudget_ = value;
           onChanged();
         } else {
-          maxWaitTimeBuilder_.setMessage(value);
+          queuingBudgetBuilder_.setMessage(value);
         }
 
         return this;
@@ -10718,15 +10718,15 @@ public final class Workflow {
        * Total wait time a workflow can be delayed by queueing.
        * </pre>
        *
-       * <code>.google.protobuf.Duration max_wait_time = 1;</code>
+       * <code>.google.protobuf.Duration queuing_budget = 1;</code>
        */
-      public Builder setMaxWaitTime(
+      public Builder setQueuingBudget(
           com.google.protobuf.Duration.Builder builderForValue) {
-        if (maxWaitTimeBuilder_ == null) {
-          maxWaitTime_ = builderForValue.build();
+        if (queuingBudgetBuilder_ == null) {
+          queuingBudget_ = builderForValue.build();
           onChanged();
         } else {
-          maxWaitTimeBuilder_.setMessage(builderForValue.build());
+          queuingBudgetBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
@@ -10736,19 +10736,19 @@ public final class Workflow {
        * Total wait time a workflow can be delayed by queueing.
        * </pre>
        *
-       * <code>.google.protobuf.Duration max_wait_time = 1;</code>
+       * <code>.google.protobuf.Duration queuing_budget = 1;</code>
        */
-      public Builder mergeMaxWaitTime(com.google.protobuf.Duration value) {
-        if (maxWaitTimeBuilder_ == null) {
-          if (maxWaitTime_ != null) {
-            maxWaitTime_ =
-              com.google.protobuf.Duration.newBuilder(maxWaitTime_).mergeFrom(value).buildPartial();
+      public Builder mergeQueuingBudget(com.google.protobuf.Duration value) {
+        if (queuingBudgetBuilder_ == null) {
+          if (queuingBudget_ != null) {
+            queuingBudget_ =
+              com.google.protobuf.Duration.newBuilder(queuingBudget_).mergeFrom(value).buildPartial();
           } else {
-            maxWaitTime_ = value;
+            queuingBudget_ = value;
           }
           onChanged();
         } else {
-          maxWaitTimeBuilder_.mergeFrom(value);
+          queuingBudgetBuilder_.mergeFrom(value);
         }
 
         return this;
@@ -10758,15 +10758,15 @@ public final class Workflow {
        * Total wait time a workflow can be delayed by queueing.
        * </pre>
        *
-       * <code>.google.protobuf.Duration max_wait_time = 1;</code>
+       * <code>.google.protobuf.Duration queuing_budget = 1;</code>
        */
-      public Builder clearMaxWaitTime() {
-        if (maxWaitTimeBuilder_ == null) {
-          maxWaitTime_ = null;
+      public Builder clearQueuingBudget() {
+        if (queuingBudgetBuilder_ == null) {
+          queuingBudget_ = null;
           onChanged();
         } else {
-          maxWaitTime_ = null;
-          maxWaitTimeBuilder_ = null;
+          queuingBudget_ = null;
+          queuingBudgetBuilder_ = null;
         }
 
         return this;
@@ -10776,26 +10776,26 @@ public final class Workflow {
        * Total wait time a workflow can be delayed by queueing.
        * </pre>
        *
-       * <code>.google.protobuf.Duration max_wait_time = 1;</code>
+       * <code>.google.protobuf.Duration queuing_budget = 1;</code>
        */
-      public com.google.protobuf.Duration.Builder getMaxWaitTimeBuilder() {
+      public com.google.protobuf.Duration.Builder getQueuingBudgetBuilder() {
         
         onChanged();
-        return getMaxWaitTimeFieldBuilder().getBuilder();
+        return getQueuingBudgetFieldBuilder().getBuilder();
       }
       /**
        * <pre>
        * Total wait time a workflow can be delayed by queueing.
        * </pre>
        *
-       * <code>.google.protobuf.Duration max_wait_time = 1;</code>
+       * <code>.google.protobuf.Duration queuing_budget = 1;</code>
        */
-      public com.google.protobuf.DurationOrBuilder getMaxWaitTimeOrBuilder() {
-        if (maxWaitTimeBuilder_ != null) {
-          return maxWaitTimeBuilder_.getMessageOrBuilder();
+      public com.google.protobuf.DurationOrBuilder getQueuingBudgetOrBuilder() {
+        if (queuingBudgetBuilder_ != null) {
+          return queuingBudgetBuilder_.getMessageOrBuilder();
         } else {
-          return maxWaitTime_ == null ?
-              com.google.protobuf.Duration.getDefaultInstance() : maxWaitTime_;
+          return queuingBudget_ == null ?
+              com.google.protobuf.Duration.getDefaultInstance() : queuingBudget_;
         }
       }
       /**
@@ -10803,20 +10803,20 @@ public final class Workflow {
        * Total wait time a workflow can be delayed by queueing.
        * </pre>
        *
-       * <code>.google.protobuf.Duration max_wait_time = 1;</code>
+       * <code>.google.protobuf.Duration queuing_budget = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
-          getMaxWaitTimeFieldBuilder() {
-        if (maxWaitTimeBuilder_ == null) {
-          maxWaitTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getQueuingBudgetFieldBuilder() {
+        if (queuingBudgetBuilder_ == null) {
+          queuingBudgetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                  getMaxWaitTime(),
+                  getQueuingBudget(),
                   getParentForChildren(),
                   isClean());
-          maxWaitTime_ = null;
+          queuingBudget_ = null;
         }
-        return maxWaitTimeBuilder_;
+        return queuingBudgetBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -14334,20 +14334,20 @@ public final class Workflow {
       "flyteidl.core.TaskNodeH\000\0224\n\rworkflow_nod" +
       "e\030\007 \001(\0132\033.flyteidl.core.WorkflowNodeH\000\0220" +
       "\n\013branch_node\030\010 \001(\0132\031.flyteidl.core.Bran" +
-      "chNodeH\000B\010\n\006target\"D\n\020WorkflowMetadata\0220" +
-      "\n\rmax_wait_time\030\001 \001(\0132\031.google.protobuf." +
-      "Duration\"1\n\030WorkflowMetadataDefaults\022\025\n\r" +
-      "interruptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplate" +
-      "\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022" +
-      "1\n\010metadata\030\002 \001(\0132\037.flyteidl.core.Workfl" +
-      "owMetadata\0220\n\tinterface\030\003 \001(\0132\035.flyteidl" +
-      ".core.TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.fl" +
-      "yteidl.core.Node\022\'\n\007outputs\030\005 \003(\0132\026.flyt" +
-      "eidl.core.Binding\022)\n\014failure_node\030\006 \001(\0132" +
-      "\023.flyteidl.core.Node\022B\n\021metadata_default" +
-      "s\030\007 \001(\0132\'.flyteidl.core.WorkflowMetadata" +
-      "DefaultsB2Z0github.com/lyft/flyteidl/gen" +
-      "/pb-go/flyteidl/coreb\006proto3"
+      "chNodeH\000B\010\n\006target\"E\n\020WorkflowMetadata\0221" +
+      "\n\016queuing_budget\030\001 \001(\0132\031.google.protobuf" +
+      ".Duration\"1\n\030WorkflowMetadataDefaults\022\025\n" +
+      "\rinterruptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplat" +
+      "e\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier" +
+      "\0221\n\010metadata\030\002 \001(\0132\037.flyteidl.core.Workf" +
+      "lowMetadata\0220\n\tinterface\030\003 \001(\0132\035.flyteid" +
+      "l.core.TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.f" +
+      "lyteidl.core.Node\022\'\n\007outputs\030\005 \003(\0132\026.fly" +
+      "teidl.core.Binding\022)\n\014failure_node\030\006 \001(\013" +
+      "2\023.flyteidl.core.Node\022B\n\021metadata_defaul" +
+      "ts\030\007 \001(\0132\'.flyteidl.core.WorkflowMetadat" +
+      "aDefaultsB2Z0github.com/lyft/flyteidl/ge" +
+      "n/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14420,7 +14420,7 @@ public final class Workflow {
     internal_static_flyteidl_core_WorkflowMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkflowMetadata_descriptor,
-        new java.lang.String[] { "MaxWaitTime", });
+        new java.lang.String[] { "QueuingBudget", });
     internal_static_flyteidl_core_WorkflowMetadataDefaults_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_core_WorkflowMetadataDefaults_fieldAccessorTable = new
