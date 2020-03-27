@@ -1448,7 +1448,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.IDuration|null} [timeout] NodeMetadata timeout
              * @property {flyteidl.core.IRetryStrategy|null} [retries] NodeMetadata retries
              * @property {boolean|null} [interruptible] NodeMetadata interruptible
-             * @property {google.protobuf.IDuration|null} [maxWaitTime] NodeMetadata maxWaitTime
              */
 
             /**
@@ -1498,14 +1497,6 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             NodeMetadata.prototype.interruptible = false;
 
-            /**
-             * NodeMetadata maxWaitTime.
-             * @member {google.protobuf.IDuration|null|undefined} maxWaitTime
-             * @memberof flyteidl.core.NodeMetadata
-             * @instance
-             */
-            NodeMetadata.prototype.maxWaitTime = null;
-
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -1552,8 +1543,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.RetryStrategy.encode(message.retries, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 if (message.interruptible != null && message.hasOwnProperty("interruptible"))
                     writer.uint32(/* id 6, wireType 0 =*/48).bool(message.interruptible);
-                if (message.maxWaitTime != null && message.hasOwnProperty("maxWaitTime"))
-                    $root.google.protobuf.Duration.encode(message.maxWaitTime, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 return writer;
             };
 
@@ -1586,9 +1575,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 6:
                         message.interruptible = reader.bool();
-                        break;
-                    case 7:
-                        message.maxWaitTime = $root.google.protobuf.Duration.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -1627,11 +1613,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     properties.interruptibleValue = 1;
                     if (typeof message.interruptible !== "boolean")
                         return "interruptible: boolean expected";
-                }
-                if (message.maxWaitTime != null && message.hasOwnProperty("maxWaitTime")) {
-                    let error = $root.google.protobuf.Duration.verify(message.maxWaitTime);
-                    if (error)
-                        return "maxWaitTime." + error;
                 }
                 return null;
             };

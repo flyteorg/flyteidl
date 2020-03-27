@@ -51,7 +51,7 @@ class CoreWorkflowMetadata(object):
     def max_wait_time(self):
         """Gets the max_wait_time of this CoreWorkflowMetadata.  # noqa: E501
 
-        Total wait time a workflow can be delayed by queueing. max_wait_time set at the workflow level will take precedence over max_wait_time set at the node level in the case that the value set at the node level  is larger than the workflow level.  # noqa: E501
+        Total wait time a workflow can be delayed by queueing.  # noqa: E501
 
         :return: The max_wait_time of this CoreWorkflowMetadata.  # noqa: E501
         :rtype: str
@@ -62,7 +62,7 @@ class CoreWorkflowMetadata(object):
     def max_wait_time(self, max_wait_time):
         """Sets the max_wait_time of this CoreWorkflowMetadata.
 
-        Total wait time a workflow can be delayed by queueing. max_wait_time set at the workflow level will take precedence over max_wait_time set at the node level in the case that the value set at the node level  is larger than the workflow level.  # noqa: E501
+        Total wait time a workflow can be delayed by queueing.  # noqa: E501
 
         :param max_wait_time: The max_wait_time of this CoreWorkflowMetadata.  # noqa: E501
         :type: str

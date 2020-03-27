@@ -923,15 +923,6 @@ class NodeMetadata final :
   ::flyteidl::core::RetryStrategy* mutable_retries();
   void set_allocated_retries(::flyteidl::core::RetryStrategy* retries);
 
-  // .google.protobuf.Duration max_wait_time = 7;
-  bool has_max_wait_time() const;
-  void clear_max_wait_time();
-  static const int kMaxWaitTimeFieldNumber = 7;
-  const ::google::protobuf::Duration& max_wait_time() const;
-  ::google::protobuf::Duration* release_max_wait_time();
-  ::google::protobuf::Duration* mutable_max_wait_time();
-  void set_allocated_max_wait_time(::google::protobuf::Duration* max_wait_time);
-
   // bool interruptible = 6;
   private:
   bool has_interruptible() const;
@@ -955,7 +946,6 @@ class NodeMetadata final :
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::Duration* timeout_;
   ::flyteidl::core::RetryStrategy* retries_;
-  ::google::protobuf::Duration* max_wait_time_;
   union InterruptibleValueUnion {
     InterruptibleValueUnion() {}
     bool interruptible_;
@@ -2375,52 +2365,6 @@ inline void NodeMetadata::set_interruptible(bool value) {
   }
   interruptible_value_.interruptible_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.core.NodeMetadata.interruptible)
-}
-
-// .google.protobuf.Duration max_wait_time = 7;
-inline bool NodeMetadata::has_max_wait_time() const {
-  return this != internal_default_instance() && max_wait_time_ != nullptr;
-}
-inline const ::google::protobuf::Duration& NodeMetadata::max_wait_time() const {
-  const ::google::protobuf::Duration* p = max_wait_time_;
-  // @@protoc_insertion_point(field_get:flyteidl.core.NodeMetadata.max_wait_time)
-  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Duration*>(
-      &::google::protobuf::_Duration_default_instance_);
-}
-inline ::google::protobuf::Duration* NodeMetadata::release_max_wait_time() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.NodeMetadata.max_wait_time)
-  
-  ::google::protobuf::Duration* temp = max_wait_time_;
-  max_wait_time_ = nullptr;
-  return temp;
-}
-inline ::google::protobuf::Duration* NodeMetadata::mutable_max_wait_time() {
-  
-  if (max_wait_time_ == nullptr) {
-    auto* p = CreateMaybeMessage<::google::protobuf::Duration>(GetArenaNoVirtual());
-    max_wait_time_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.NodeMetadata.max_wait_time)
-  return max_wait_time_;
-}
-inline void NodeMetadata::set_allocated_max_wait_time(::google::protobuf::Duration* max_wait_time) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(max_wait_time_);
-  }
-  if (max_wait_time) {
-    ::google::protobuf::Arena* submessage_arena =
-      reinterpret_cast<::google::protobuf::MessageLite*>(max_wait_time)->GetArena();
-    if (message_arena != submessage_arena) {
-      max_wait_time = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, max_wait_time, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  max_wait_time_ = max_wait_time;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.NodeMetadata.max_wait_time)
 }
 
 inline bool NodeMetadata::has_interruptible_value() const {

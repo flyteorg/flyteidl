@@ -605,9 +605,6 @@ export namespace flyteidl {
 
             /** NodeMetadata interruptible */
             interruptible?: (boolean|null);
-
-            /** NodeMetadata maxWaitTime */
-            maxWaitTime?: (google.protobuf.IDuration|null);
         }
 
         /** Represents a NodeMetadata. */
@@ -630,9 +627,6 @@ export namespace flyteidl {
 
             /** NodeMetadata interruptible. */
             public interruptible: boolean;
-
-            /** NodeMetadata maxWaitTime. */
-            public maxWaitTime?: (google.protobuf.IDuration|null);
 
             /** NodeMetadata interruptibleValue. */
             public interruptibleValue?: "interruptible";

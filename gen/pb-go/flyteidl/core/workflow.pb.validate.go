@@ -515,16 +515,6 @@ func (m *NodeMetadata) Validate() error {
 		}
 	}
 
-	if v, ok := interface{}(m.GetMaxWaitTime()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return NodeMetadataValidationError{
-				field:  "MaxWaitTime",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
 	switch m.InterruptibleValue.(type) {
 
 	case *NodeMetadata_Interruptible:

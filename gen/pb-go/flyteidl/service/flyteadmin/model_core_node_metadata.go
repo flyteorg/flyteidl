@@ -17,6 +17,4 @@ type CoreNodeMetadata struct {
 	// Number of retries per task.
 	Retries *CoreRetryStrategy `json:"retries,omitempty"`
 	Interruptible bool `json:"interruptible,omitempty"`
-	// Total wait time a node can be delayed by queueing. This value cannot be smaller than value set at the workflow level.
-	MaxWaitTime string `json:"max_wait_time,omitempty"`
 }

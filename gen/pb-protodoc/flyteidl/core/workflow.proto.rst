@@ -183,8 +183,7 @@ Defines extra information about the Node.
     "name": "...",
     "timeout": "{...}",
     "retries": "{...}",
-    "interruptible": "...",
-    "max_wait_time": "{...}"
+    "interruptible": "..."
   }
 
 .. _api_field_flyteidl.core.NodeMetadata.name:
@@ -212,13 +211,6 @@ interruptible
   Identify whether node is interruptible
   
   
-.. _api_field_flyteidl.core.NodeMetadata.max_wait_time:
-
-max_wait_time
-  (:ref:`google.protobuf.Duration <api_msg_google.protobuf.Duration>`) Total wait time a node can be delayed by queueing.
-  This value cannot be smaller than value set at the workflow level.
-  
-  
 
 
 .. _api_msg_flyteidl.core.Alias:
@@ -226,7 +218,7 @@ max_wait_time
 flyteidl.core.Alias
 -------------------
 
-`[flyteidl.core.Alias proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L87>`_
+`[flyteidl.core.Alias proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L84>`_
 
 Links a variable to an alias.
 
@@ -256,7 +248,7 @@ alias
 flyteidl.core.Node
 ------------------
 
-`[flyteidl.core.Node proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L97>`_
+`[flyteidl.core.Node proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L94>`_
 
 A Workflow graph Node. One unit of execution in the graph. Each node can be linked to a Task, a Workflow or a branch
 node.
@@ -347,7 +339,7 @@ branch_node
 flyteidl.core.WorkflowMetadata
 ------------------------------
 
-`[flyteidl.core.WorkflowMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L134>`_
+`[flyteidl.core.WorkflowMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L131>`_
 
 Metadata for the entire workflow.
 To be used in the future.
@@ -362,9 +354,6 @@ To be used in the future.
 
 max_wait_time
   (:ref:`google.protobuf.Duration <api_msg_google.protobuf.Duration>`) Total wait time a workflow can be delayed by queueing.
-  max_wait_time set at the workflow level will take precedence over max_wait_time
-  set at the node level in the case that the value set at the node level 
-  is larger than the workflow level.
   
   
 
@@ -374,7 +363,7 @@ max_wait_time
 flyteidl.core.WorkflowMetadataDefaults
 --------------------------------------
 
-`[flyteidl.core.WorkflowMetadataDefaults proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L143>`_
+`[flyteidl.core.WorkflowMetadataDefaults proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L137>`_
 
 Default Workflow Metadata for the entire workflow.
 
@@ -399,7 +388,7 @@ interruptible
 flyteidl.core.WorkflowTemplate
 ------------------------------
 
-`[flyteidl.core.WorkflowTemplate proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L152>`_
+`[flyteidl.core.WorkflowTemplate proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L146>`_
 
 Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,
 directed acyclic graph.

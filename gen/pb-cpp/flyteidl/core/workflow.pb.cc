@@ -298,7 +298,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fworkflow_2eproto:
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::NodeMetadata, timeout_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::NodeMetadata, retries_),
   offsetof(::flyteidl::core::NodeMetadataDefaultTypeInternal, interruptible_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::NodeMetadata, max_wait_time_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::NodeMetadata, interruptible_value_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Alias, _internal_metadata_),
@@ -353,11 +352,11 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 23, -1, sizeof(::flyteidl::core::TaskNode)},
   { 30, -1, sizeof(::flyteidl::core::WorkflowNode)},
   { 38, -1, sizeof(::flyteidl::core::NodeMetadata)},
-  { 49, -1, sizeof(::flyteidl::core::Alias)},
-  { 56, -1, sizeof(::flyteidl::core::Node)},
-  { 70, -1, sizeof(::flyteidl::core::WorkflowMetadata)},
-  { 76, -1, sizeof(::flyteidl::core::WorkflowMetadataDefaults)},
-  { 82, -1, sizeof(::flyteidl::core::WorkflowTemplate)},
+  { 48, -1, sizeof(::flyteidl::core::Alias)},
+  { 55, -1, sizeof(::flyteidl::core::Node)},
+  { 69, -1, sizeof(::flyteidl::core::WorkflowMetadata)},
+  { 75, -1, sizeof(::flyteidl::core::WorkflowMetadataDefaults)},
+  { 81, -1, sizeof(::flyteidl::core::WorkflowTemplate)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -400,40 +399,39 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto[] =
   "\013\n\treference\"\207\001\n\014WorkflowNode\0223\n\016launchp"
   "lan_ref\030\001 \001(\0132\031.flyteidl.core.Identifier"
   "H\000\0225\n\020sub_workflow_ref\030\002 \001(\0132\031.flyteidl."
-  "core.IdentifierH\000B\013\n\treference\"\331\001\n\014NodeM"
+  "core.IdentifierH\000B\013\n\treference\"\247\001\n\014NodeM"
   "etadata\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031"
   ".google.protobuf.Duration\022-\n\007retries\030\005 \001"
   "(\0132\034.flyteidl.core.RetryStrategy\022\027\n\rinte"
-  "rruptible\030\006 \001(\010H\000\0220\n\rmax_wait_time\030\007 \001(\013"
-  "2\031.google.protobuf.DurationB\025\n\023interrupt"
-  "ible_value\"#\n\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005alia"
-  "s\030\002 \001(\t\"\322\002\n\004Node\022\n\n\002id\030\001 \001(\t\022-\n\010metadata"
-  "\030\002 \001(\0132\033.flyteidl.core.NodeMetadata\022&\n\006i"
-  "nputs\030\003 \003(\0132\026.flyteidl.core.Binding\022\031\n\021u"
-  "pstream_node_ids\030\004 \003(\t\022,\n\016output_aliases"
-  "\030\005 \003(\0132\024.flyteidl.core.Alias\022,\n\ttask_nod"
-  "e\030\006 \001(\0132\027.flyteidl.core.TaskNodeH\000\0224\n\rwo"
-  "rkflow_node\030\007 \001(\0132\033.flyteidl.core.Workfl"
-  "owNodeH\000\0220\n\013branch_node\030\010 \001(\0132\031.flyteidl"
-  ".core.BranchNodeH\000B\010\n\006target\"D\n\020Workflow"
-  "Metadata\0220\n\rmax_wait_time\030\001 \001(\0132\031.google"
-  ".protobuf.Duration\"1\n\030WorkflowMetadataDe"
-  "faults\022\025\n\rinterruptible\030\001 \001(\010\"\332\002\n\020Workfl"
-  "owTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.I"
-  "dentifier\0221\n\010metadata\030\002 \001(\0132\037.flyteidl.c"
-  "ore.WorkflowMetadata\0220\n\tinterface\030\003 \001(\0132"
-  "\035.flyteidl.core.TypedInterface\022\"\n\005nodes\030"
-  "\004 \003(\0132\023.flyteidl.core.Node\022\'\n\007outputs\030\005 "
-  "\003(\0132\026.flyteidl.core.Binding\022)\n\014failure_n"
-  "ode\030\006 \001(\0132\023.flyteidl.core.Node\022B\n\021metada"
-  "ta_defaults\030\007 \001(\0132\'.flyteidl.core.Workfl"
-  "owMetadataDefaultsB2Z0github.com/lyft/fl"
-  "yteidl/gen/pb-go/flyteidl/coreb\006proto3"
+  "rruptible\030\006 \001(\010H\000B\025\n\023interruptible_value"
+  "\"#\n\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\322\002"
+  "\n\004Node\022\n\n\002id\030\001 \001(\t\022-\n\010metadata\030\002 \001(\0132\033.f"
+  "lyteidl.core.NodeMetadata\022&\n\006inputs\030\003 \003("
+  "\0132\026.flyteidl.core.Binding\022\031\n\021upstream_no"
+  "de_ids\030\004 \003(\t\022,\n\016output_aliases\030\005 \003(\0132\024.f"
+  "lyteidl.core.Alias\022,\n\ttask_node\030\006 \001(\0132\027."
+  "flyteidl.core.TaskNodeH\000\0224\n\rworkflow_nod"
+  "e\030\007 \001(\0132\033.flyteidl.core.WorkflowNodeH\000\0220"
+  "\n\013branch_node\030\010 \001(\0132\031.flyteidl.core.Bran"
+  "chNodeH\000B\010\n\006target\"D\n\020WorkflowMetadata\0220"
+  "\n\rmax_wait_time\030\001 \001(\0132\031.google.protobuf."
+  "Duration\"1\n\030WorkflowMetadataDefaults\022\025\n\r"
+  "interruptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplate"
+  "\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022"
+  "1\n\010metadata\030\002 \001(\0132\037.flyteidl.core.Workfl"
+  "owMetadata\0220\n\tinterface\030\003 \001(\0132\035.flyteidl"
+  ".core.TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.fl"
+  "yteidl.core.Node\022\'\n\007outputs\030\005 \003(\0132\026.flyt"
+  "eidl.core.Binding\022)\n\014failure_node\030\006 \001(\0132"
+  "\023.flyteidl.core.Node\022B\n\021metadata_default"
+  "s\030\007 \001(\0132\'.flyteidl.core.WorkflowMetadata"
+  "DefaultsB2Z0github.com/lyft/flyteidl/gen"
+  "/pb-go/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fworkflow_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fworkflow_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto,
-  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 1918,
+  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 1868,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fworkflow_2eproto() {
@@ -2413,14 +2411,11 @@ void NodeMetadata::InitAsDefaultInstance() {
   ::flyteidl::core::_NodeMetadata_default_instance_._instance.get_mutable()->retries_ = const_cast< ::flyteidl::core::RetryStrategy*>(
       ::flyteidl::core::RetryStrategy::internal_default_instance());
   ::flyteidl::core::_NodeMetadata_default_instance_.interruptible_ = false;
-  ::flyteidl::core::_NodeMetadata_default_instance_._instance.get_mutable()->max_wait_time_ = const_cast< ::google::protobuf::Duration*>(
-      ::google::protobuf::Duration::internal_default_instance());
 }
 class NodeMetadata::HasBitSetters {
  public:
   static const ::google::protobuf::Duration& timeout(const NodeMetadata* msg);
   static const ::flyteidl::core::RetryStrategy& retries(const NodeMetadata* msg);
-  static const ::google::protobuf::Duration& max_wait_time(const NodeMetadata* msg);
 };
 
 const ::google::protobuf::Duration&
@@ -2430,10 +2425,6 @@ NodeMetadata::HasBitSetters::timeout(const NodeMetadata* msg) {
 const ::flyteidl::core::RetryStrategy&
 NodeMetadata::HasBitSetters::retries(const NodeMetadata* msg) {
   return *msg->retries_;
-}
-const ::google::protobuf::Duration&
-NodeMetadata::HasBitSetters::max_wait_time(const NodeMetadata* msg) {
-  return *msg->max_wait_time_;
 }
 void NodeMetadata::clear_timeout() {
   if (GetArenaNoVirtual() == nullptr && timeout_ != nullptr) {
@@ -2447,18 +2438,11 @@ void NodeMetadata::clear_retries() {
   }
   retries_ = nullptr;
 }
-void NodeMetadata::clear_max_wait_time() {
-  if (GetArenaNoVirtual() == nullptr && max_wait_time_ != nullptr) {
-    delete max_wait_time_;
-  }
-  max_wait_time_ = nullptr;
-}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int NodeMetadata::kNameFieldNumber;
 const int NodeMetadata::kTimeoutFieldNumber;
 const int NodeMetadata::kRetriesFieldNumber;
 const int NodeMetadata::kInterruptibleFieldNumber;
-const int NodeMetadata::kMaxWaitTimeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 NodeMetadata::NodeMetadata()
@@ -2484,11 +2468,6 @@ NodeMetadata::NodeMetadata(const NodeMetadata& from)
   } else {
     retries_ = nullptr;
   }
-  if (from.has_max_wait_time()) {
-    max_wait_time_ = new ::google::protobuf::Duration(*from.max_wait_time_);
-  } else {
-    max_wait_time_ = nullptr;
-  }
   clear_has_interruptible_value();
   switch (from.interruptible_value_case()) {
     case kInterruptible: {
@@ -2507,8 +2486,8 @@ void NodeMetadata::SharedCtor() {
       &scc_info_NodeMetadata_flyteidl_2fcore_2fworkflow_2eproto.base);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&timeout_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&max_wait_time_) -
-      reinterpret_cast<char*>(&timeout_)) + sizeof(max_wait_time_));
+      reinterpret_cast<char*>(&retries_) -
+      reinterpret_cast<char*>(&timeout_)) + sizeof(retries_));
   clear_has_interruptible_value();
 }
 
@@ -2521,7 +2500,6 @@ void NodeMetadata::SharedDtor() {
   name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete timeout_;
   if (this != internal_default_instance()) delete retries_;
-  if (this != internal_default_instance()) delete max_wait_time_;
   if (has_interruptible_value()) {
     clear_interruptible_value();
   }
@@ -2566,10 +2544,6 @@ void NodeMetadata::Clear() {
     delete retries_;
   }
   retries_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && max_wait_time_ != nullptr) {
-    delete max_wait_time_;
-  }
-  max_wait_time_ = nullptr;
   clear_interruptible_value();
   _internal_metadata_.Clear();
 }
@@ -2634,19 +2608,6 @@ const char* NodeMetadata::_InternalParse(const char* begin, const char* end, voi
         if (static_cast<::google::protobuf::uint8>(tag) != 48) goto handle_unusual;
         msg->set_interruptible(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
-      // .google.protobuf.Duration max_wait_time = 7;
-      case 7: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 58) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::google::protobuf::Duration::_InternalParse;
-        object = msg->mutable_max_wait_time();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
         break;
       }
       default: {
@@ -2734,17 +2695,6 @@ bool NodeMetadata::MergePartialFromCodedStream(
         break;
       }
 
-      // .google.protobuf.Duration max_wait_time = 7;
-      case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (58 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_max_wait_time()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -2799,12 +2749,6 @@ void NodeMetadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->interruptible(), output);
   }
 
-  // .google.protobuf.Duration max_wait_time = 7;
-  if (this->has_max_wait_time()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      7, HasBitSetters::max_wait_time(this), output);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -2848,13 +2792,6 @@ void NodeMetadata::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->interruptible(), target);
   }
 
-  // .google.protobuf.Duration max_wait_time = 7;
-  if (this->has_max_wait_time()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        7, HasBitSetters::max_wait_time(this), target);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -2895,13 +2832,6 @@ size_t NodeMetadata::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *retries_);
-  }
-
-  // .google.protobuf.Duration max_wait_time = 7;
-  if (this->has_max_wait_time()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *max_wait_time_);
   }
 
   switch (interruptible_value_case()) {
@@ -2951,9 +2881,6 @@ void NodeMetadata::MergeFrom(const NodeMetadata& from) {
   if (from.has_retries()) {
     mutable_retries()->::flyteidl::core::RetryStrategy::MergeFrom(from.retries());
   }
-  if (from.has_max_wait_time()) {
-    mutable_max_wait_time()->::google::protobuf::Duration::MergeFrom(from.max_wait_time());
-  }
   switch (from.interruptible_value_case()) {
     case kInterruptible: {
       set_interruptible(from.interruptible());
@@ -2994,7 +2921,6 @@ void NodeMetadata::InternalSwap(NodeMetadata* other) {
     GetArenaNoVirtual());
   swap(timeout_, other->timeout_);
   swap(retries_, other->retries_);
-  swap(max_wait_time_, other->max_wait_time_);
   swap(interruptible_value_, other->interruptible_value_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }

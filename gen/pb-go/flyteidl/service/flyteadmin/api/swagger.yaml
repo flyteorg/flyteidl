@@ -6145,7 +6145,6 @@ definitions:
                     retries: 0
                   name: "name"
                   interruptible: true
-                  max_wait_time: "max_wait_time"
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -6361,7 +6360,6 @@ definitions:
                     retries: 0
                   name: "name"
                   interruptible: true
-                  max_wait_time: "max_wait_time"
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -6576,7 +6574,6 @@ definitions:
                     retries: 0
                   name: "name"
                   interruptible: true
-                  max_wait_time: "max_wait_time"
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -6970,7 +6967,6 @@ definitions:
                     retries: 0
                   name: "name"
                   interruptible: true
-                  max_wait_time: "max_wait_time"
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -7186,7 +7182,6 @@ definitions:
                     retries: 0
                   name: "name"
                   interruptible: true
-                  max_wait_time: "max_wait_time"
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -7401,7 +7396,6 @@ definitions:
                     retries: 0
                   name: "name"
                   interruptible: true
-                  max_wait_time: "max_wait_time"
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -8029,7 +8023,6 @@ definitions:
                     retries: 0
                   name: "name"
                   interruptible: true
-                  max_wait_time: "max_wait_time"
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -8245,7 +8238,6 @@ definitions:
                     retries: 0
                   name: "name"
                   interruptible: true
-                  max_wait_time: "max_wait_time"
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -8460,7 +8452,6 @@ definitions:
                     retries: 0
                   name: "name"
                   interruptible: true
-                  max_wait_time: "max_wait_time"
                   timeout: "timeout"
                 upstream_node_ids:
                 - "upstream_node_ids"
@@ -8967,7 +8958,6 @@ definitions:
                   retries: 0
                 name: "name"
                 interruptible: true
-                max_wait_time: "max_wait_time"
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -9183,7 +9173,6 @@ definitions:
                   retries: 0
                 name: "name"
                 interruptible: true
-                max_wait_time: "max_wait_time"
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -9398,7 +9387,6 @@ definitions:
                   retries: 0
                 name: "name"
                 interruptible: true
-                max_wait_time: "max_wait_time"
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -9792,7 +9780,6 @@ definitions:
                   retries: 0
                 name: "name"
                 interruptible: true
-                max_wait_time: "max_wait_time"
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -10008,7 +9995,6 @@ definitions:
                   retries: 0
                 name: "name"
                 interruptible: true
-                max_wait_time: "max_wait_time"
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -10223,7 +10209,6 @@ definitions:
                   retries: 0
                 name: "name"
                 interruptible: true
-                max_wait_time: "max_wait_time"
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -10851,7 +10836,6 @@ definitions:
                   retries: 0
                 name: "name"
                 interruptible: true
-                max_wait_time: "max_wait_time"
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -11067,7 +11051,6 @@ definitions:
                   retries: 0
                 name: "name"
                 interruptible: true
-                max_wait_time: "max_wait_time"
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -11282,7 +11265,6 @@ definitions:
                   retries: 0
                 name: "name"
                 interruptible: true
-                max_wait_time: "max_wait_time"
                 timeout: "timeout"
               upstream_node_ids:
               - "upstream_node_ids"
@@ -11745,7 +11727,6 @@ definitions:
                       retries: 0
                     name: "name"
                     interruptible: true
-                    max_wait_time: "max_wait_time"
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -11961,7 +11942,6 @@ definitions:
                       retries: 0
                     name: "name"
                     interruptible: true
-                    max_wait_time: "max_wait_time"
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -12176,7 +12156,6 @@ definitions:
                       retries: 0
                     name: "name"
                     interruptible: true
-                    max_wait_time: "max_wait_time"
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -12570,7 +12549,6 @@ definitions:
                       retries: 0
                     name: "name"
                     interruptible: true
-                    max_wait_time: "max_wait_time"
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -12786,7 +12764,6 @@ definitions:
                       retries: 0
                     name: "name"
                     interruptible: true
-                    max_wait_time: "max_wait_time"
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -13001,7 +12978,6 @@ definitions:
                       retries: 0
                     name: "name"
                     interruptible: true
-                    max_wait_time: "max_wait_time"
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -13629,7 +13605,6 @@ definitions:
                       retries: 0
                     name: "name"
                     interruptible: true
-                    max_wait_time: "max_wait_time"
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -13845,7 +13820,6 @@ definitions:
                       retries: 0
                     name: "name"
                     interruptible: true
-                    max_wait_time: "max_wait_time"
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -14060,7 +14034,6 @@ definitions:
                       retries: 0
                     name: "name"
                     interruptible: true
-                    max_wait_time: "max_wait_time"
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -14464,7 +14437,6 @@ definitions:
                       retries: 0
                     name: "name"
                     interruptible: true
-                    max_wait_time: "max_wait_time"
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -14680,7 +14652,6 @@ definitions:
                       retries: 0
                     name: "name"
                     interruptible: true
-                    max_wait_time: "max_wait_time"
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -14895,7 +14866,6 @@ definitions:
                       retries: 0
                     name: "name"
                     interruptible: true
-                    max_wait_time: "max_wait_time"
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -15289,7 +15259,6 @@ definitions:
                       retries: 0
                     name: "name"
                     interruptible: true
-                    max_wait_time: "max_wait_time"
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -15505,7 +15474,6 @@ definitions:
                       retries: 0
                     name: "name"
                     interruptible: true
-                    max_wait_time: "max_wait_time"
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -15720,7 +15688,6 @@ definitions:
                       retries: 0
                     name: "name"
                     interruptible: true
-                    max_wait_time: "max_wait_time"
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -16348,7 +16315,6 @@ definitions:
                       retries: 0
                     name: "name"
                     interruptible: true
-                    max_wait_time: "max_wait_time"
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -16564,7 +16530,6 @@ definitions:
                       retries: 0
                     name: "name"
                     interruptible: true
-                    max_wait_time: "max_wait_time"
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -16779,7 +16744,6 @@ definitions:
                       retries: 0
                     name: "name"
                     interruptible: true
-                    max_wait_time: "max_wait_time"
                     timeout: "timeout"
                   upstream_node_ids:
                   - "upstream_node_ids"
@@ -17702,7 +17666,6 @@ definitions:
               retries: 0
             name: "name"
             interruptible: true
-            max_wait_time: "max_wait_time"
             timeout: "timeout"
           upstream_node_ids:
           - "upstream_node_ids"
@@ -17918,7 +17881,6 @@ definitions:
               retries: 0
             name: "name"
             interruptible: true
-            max_wait_time: "max_wait_time"
             timeout: "timeout"
           upstream_node_ids:
           - "upstream_node_ids"
@@ -18133,7 +18095,6 @@ definitions:
               retries: 0
             name: "name"
             interruptible: true
-            max_wait_time: "max_wait_time"
             timeout: "timeout"
           upstream_node_ids:
           - "upstream_node_ids"
@@ -18554,7 +18515,6 @@ definitions:
                 retries: 0
               name: "name"
               interruptible: true
-              max_wait_time: "max_wait_time"
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -18770,7 +18730,6 @@ definitions:
                 retries: 0
               name: "name"
               interruptible: true
-              max_wait_time: "max_wait_time"
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -18985,7 +18944,6 @@ definitions:
                 retries: 0
               name: "name"
               interruptible: true
-              max_wait_time: "max_wait_time"
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -19379,7 +19337,6 @@ definitions:
                 retries: 0
               name: "name"
               interruptible: true
-              max_wait_time: "max_wait_time"
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -19595,7 +19552,6 @@ definitions:
                 retries: 0
               name: "name"
               interruptible: true
-              max_wait_time: "max_wait_time"
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -19810,7 +19766,6 @@ definitions:
                 retries: 0
               name: "name"
               interruptible: true
-              max_wait_time: "max_wait_time"
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -20438,7 +20393,6 @@ definitions:
                 retries: 0
               name: "name"
               interruptible: true
-              max_wait_time: "max_wait_time"
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -20654,7 +20608,6 @@ definitions:
                 retries: 0
               name: "name"
               interruptible: true
-              max_wait_time: "max_wait_time"
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -20869,7 +20822,6 @@ definitions:
                 retries: 0
               name: "name"
               interruptible: true
-              max_wait_time: "max_wait_time"
               timeout: "timeout"
             upstream_node_ids:
             - "upstream_node_ids"
@@ -21660,7 +21612,6 @@ definitions:
           retries: 0
         name: "name"
         interruptible: true
-        max_wait_time: "max_wait_time"
         timeout: "timeout"
       upstream_node_ids:
       - "upstream_node_ids"
@@ -21836,17 +21787,12 @@ definitions:
       interruptible:
         type: "boolean"
         format: "boolean"
-      max_wait_time:
-        type: "string"
-        description: "Total wait time a node can be delayed by queueing.\nThis value\
-          \ cannot be smaller than value set at the workflow level."
     description: "Defines extra information about the Node."
     example:
       retries:
         retries: 0
       name: "name"
       interruptible: true
-      max_wait_time: "max_wait_time"
       timeout: "timeout"
   coreOperand:
     type: "object"
@@ -22664,10 +22610,7 @@ definitions:
     properties:
       max_wait_time:
         type: "string"
-        description: "Total wait time a workflow can be delayed by queueing.\nmax_wait_time\
-          \ set at the workflow level will take precedence over max_wait_time\nset\
-          \ at the node level in the case that the value set at the node level \n\
-          is larger than the workflow level."
+        description: "Total wait time a workflow can be delayed by queueing."
     description: "Metadata for the entire workflow.\nTo be used in the future."
     example:
       max_wait_time: "max_wait_time"
@@ -22938,7 +22881,6 @@ definitions:
             retries: 0
           name: "name"
           interruptible: true
-          max_wait_time: "max_wait_time"
           timeout: "timeout"
         upstream_node_ids:
         - "upstream_node_ids"
@@ -23154,7 +23096,6 @@ definitions:
             retries: 0
           name: "name"
           interruptible: true
-          max_wait_time: "max_wait_time"
           timeout: "timeout"
         upstream_node_ids:
         - "upstream_node_ids"
@@ -23369,7 +23310,6 @@ definitions:
             retries: 0
           name: "name"
           interruptible: true
-          max_wait_time: "max_wait_time"
           timeout: "timeout"
         upstream_node_ids:
         - "upstream_node_ids"
