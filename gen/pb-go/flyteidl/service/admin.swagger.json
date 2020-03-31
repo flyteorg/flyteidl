@@ -4940,7 +4940,9 @@
         "RUNNING",
         "SUCCEEDED",
         "ABORTED",
-        "FAILED"
+        "FAILED",
+        "INITIALIZING",
+        "WAITING_FOR_RESOURCES"
       ],
       "default": "UNDEFINED"
     },

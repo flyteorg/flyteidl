@@ -22219,6 +22219,8 @@ definitions:
     - "SUCCEEDED"
     - "ABORTED"
     - "FAILED"
+    - "INITIALIZING"
+    - "WAITING_FOR_RESOURCES"
     default: "UNDEFINED"
   coreTaskLog:
     type: "object"
