@@ -116,13 +116,15 @@ func (NodeExecution_Phase) EnumDescriptor() ([]byte, []int) {
 type TaskExecution_Phase int32
 
 const (
-	TaskExecution_UNDEFINED             TaskExecution_Phase = 0
-	TaskExecution_QUEUED                TaskExecution_Phase = 1
-	TaskExecution_RUNNING               TaskExecution_Phase = 2
-	TaskExecution_SUCCEEDED             TaskExecution_Phase = 3
-	TaskExecution_ABORTED               TaskExecution_Phase = 4
-	TaskExecution_FAILED                TaskExecution_Phase = 5
-	TaskExecution_INITIALIZING          TaskExecution_Phase = 6
+	TaskExecution_UNDEFINED TaskExecution_Phase = 0
+	TaskExecution_QUEUED    TaskExecution_Phase = 1
+	TaskExecution_RUNNING   TaskExecution_Phase = 2
+	TaskExecution_SUCCEEDED TaskExecution_Phase = 3
+	TaskExecution_ABORTED   TaskExecution_Phase = 4
+	TaskExecution_FAILED    TaskExecution_Phase = 5
+	// To indicate cases where task is initializing, like: ErrImagePull, ContainerCreating, PodInitializing
+	TaskExecution_INITIALIZING TaskExecution_Phase = 6
+	// To address cases, where underlying resource is not available: Backoff error, Resource quota exceeded
 	TaskExecution_WAITING_FOR_RESOURCES TaskExecution_Phase = 7
 )
 

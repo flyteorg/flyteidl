@@ -1283,10 +1283,18 @@ public final class Execution {
        */
       FAILED(5),
       /**
+       * <pre>
+       * To indicate cases where task is initializing, like: ErrImagePull, ContainerCreating, PodInitializing
+       * </pre>
+       *
        * <code>INITIALIZING = 6;</code>
        */
       INITIALIZING(6),
       /**
+       * <pre>
+       * To address cases, where underlying resource is not available: Backoff error, Resource quota exceeded
+       * </pre>
+       *
        * <code>WAITING_FOR_RESOURCES = 7;</code>
        */
       WAITING_FOR_RESOURCES(7),
@@ -1318,10 +1326,18 @@ public final class Execution {
        */
       public static final int FAILED_VALUE = 5;
       /**
+       * <pre>
+       * To indicate cases where task is initializing, like: ErrImagePull, ContainerCreating, PodInitializing
+       * </pre>
+       *
        * <code>INITIALIZING = 6;</code>
        */
       public static final int INITIALIZING_VALUE = 6;
       /**
+       * <pre>
+       * To address cases, where underlying resource is not available: Backoff error, Resource quota exceeded
+       * </pre>
+       *
        * <code>WAITING_FOR_RESOURCES = 7;</code>
        */
       public static final int WAITING_FOR_RESOURCES_VALUE = 7;
