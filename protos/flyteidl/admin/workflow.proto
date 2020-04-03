@@ -63,3 +63,11 @@ message WorkflowClosure {
     google.protobuf.Timestamp created_at           = 2;
 }
 
+// Defunct, do not use.
+enum WorkflowState {    
+    // By default, all workflows are considered active and under development.   
+    WORKFLOW_ACTIVE = 0;        
+
+    // Archived workflows are no longer visible in the UI.      
+    WORKFLOW_ARCHIVED = 1;      
+}

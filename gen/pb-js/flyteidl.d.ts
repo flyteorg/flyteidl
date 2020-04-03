@@ -11504,6 +11504,12 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** WorkflowState enum. */
+        enum WorkflowState {
+            WORKFLOW_ACTIVE = 0,
+            WORKFLOW_ARCHIVED = 1
+        }
+
         /** Properties of a WorkflowAttributes. */
         interface IWorkflowAttributes {
 

@@ -27286,6 +27286,20 @@ export const flyteidl = $root.flyteidl = (() => {
             return WorkflowClosure;
         })();
 
+        /**
+         * WorkflowState enum.
+         * @name flyteidl.admin.WorkflowState
+         * @enum {string}
+         * @property {number} WORKFLOW_ACTIVE=0 WORKFLOW_ACTIVE value
+         * @property {number} WORKFLOW_ARCHIVED=1 WORKFLOW_ARCHIVED value
+         */
+        admin.WorkflowState = (function() {
+            const valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "WORKFLOW_ACTIVE"] = 0;
+            values[valuesById[1] = "WORKFLOW_ARCHIVED"] = 1;
+            return values;
+        })();
+
         admin.WorkflowAttributes = (function() {
 
             /**

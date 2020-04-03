@@ -30,6 +30,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "flyteidl/core/compiler.pb.h"
 #include "flyteidl/core/identifier.pb.h"
@@ -88,6 +89,27 @@ template<> ::flyteidl::admin::WorkflowSpec* Arena::CreateMaybeMessage<::flyteidl
 namespace flyteidl {
 namespace admin {
 
+enum WorkflowState {
+  WORKFLOW_ACTIVE = 0,
+  WORKFLOW_ARCHIVED = 1,
+  WorkflowState_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  WorkflowState_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool WorkflowState_IsValid(int value);
+const WorkflowState WorkflowState_MIN = WORKFLOW_ACTIVE;
+const WorkflowState WorkflowState_MAX = WORKFLOW_ARCHIVED;
+const int WorkflowState_ARRAYSIZE = WorkflowState_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* WorkflowState_descriptor();
+inline const ::std::string& WorkflowState_Name(WorkflowState value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    WorkflowState_descriptor(), value);
+}
+inline bool WorkflowState_Parse(
+    const ::std::string& name, WorkflowState* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<WorkflowState>(
+    WorkflowState_descriptor(), name, value);
+}
 // ===================================================================
 
 class WorkflowCreateRequest final :
@@ -1316,6 +1338,18 @@ inline void WorkflowClosure::set_allocated_created_at(::google::protobuf::Timest
 
 }  // namespace admin
 }  // namespace flyteidl
+
+namespace google {
+namespace protobuf {
+
+template <> struct is_proto_enum< ::flyteidl::admin::WorkflowState> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::admin::WorkflowState>() {
+  return ::flyteidl::admin::WorkflowState_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
 

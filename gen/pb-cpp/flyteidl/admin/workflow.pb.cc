@@ -153,7 +153,7 @@ void InitDefaults_flyteidl_2fadmin_2fworkflow_2eproto() {
 }
 
 ::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fworkflow_2eproto[6];
-constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_flyteidl_2fadmin_2fworkflow_2eproto = nullptr;
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fadmin_2fworkflow_2eproto[1];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fadmin_2fworkflow_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fworkflow_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -242,13 +242,15 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fworkflow_2eproto[] =
   "WorkflowClosure\022A\n\021compiled_workflow\030\001 \001"
   "(\0132&.flyteidl.core.CompiledWorkflowClosu"
   "re\022.\n\ncreated_at\030\002 \001(\0132\032.google.protobuf"
-  ".TimestampB3Z1github.com/lyft/flyteidl/g"
-  "en/pb-go/flyteidl/adminb\006proto3"
+  ".Timestamp*;\n\rWorkflowState\022\023\n\017WORKFLOW_"
+  "ACTIVE\020\000\022\025\n\021WORKFLOW_ARCHIVED\020\001B3Z1githu"
+  "b.com/lyft/flyteidl/gen/pb-go/flyteidl/a"
+  "dminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fworkflow_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fworkflow_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fworkflow_2eproto,
-  "flyteidl/admin/workflow.proto", &assign_descriptors_table_flyteidl_2fadmin_2fworkflow_2eproto, 831,
+  "flyteidl/admin/workflow.proto", &assign_descriptors_table_flyteidl_2fadmin_2fworkflow_2eproto, 892,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fworkflow_2eproto() {
@@ -267,6 +269,20 @@ void AddDescriptors_flyteidl_2fadmin_2fworkflow_2eproto() {
 static bool dynamic_init_dummy_flyteidl_2fadmin_2fworkflow_2eproto = []() { AddDescriptors_flyteidl_2fadmin_2fworkflow_2eproto(); return true; }();
 namespace flyteidl {
 namespace admin {
+const ::google::protobuf::EnumDescriptor* WorkflowState_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fadmin_2fworkflow_2eproto);
+  return file_level_enum_descriptors_flyteidl_2fadmin_2fworkflow_2eproto[0];
+}
+bool WorkflowState_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
 
 // ===================================================================
 

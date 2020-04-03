@@ -14,6 +14,124 @@ public final class WorkflowOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * <pre>
+   * Defunct, do not use.
+   * </pre>
+   *
+   * Protobuf enum {@code flyteidl.admin.WorkflowState}
+   */
+  public enum WorkflowState
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * By default, all workflows are considered active and under development.   
+     * </pre>
+     *
+     * <code>WORKFLOW_ACTIVE = 0;</code>
+     */
+    WORKFLOW_ACTIVE(0),
+    /**
+     * <pre>
+     * Archived workflows are no longer visible in the UI.      
+     * </pre>
+     *
+     * <code>WORKFLOW_ARCHIVED = 1;</code>
+     */
+    WORKFLOW_ARCHIVED(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * By default, all workflows are considered active and under development.   
+     * </pre>
+     *
+     * <code>WORKFLOW_ACTIVE = 0;</code>
+     */
+    public static final int WORKFLOW_ACTIVE_VALUE = 0;
+    /**
+     * <pre>
+     * Archived workflows are no longer visible in the UI.      
+     * </pre>
+     *
+     * <code>WORKFLOW_ARCHIVED = 1;</code>
+     */
+    public static final int WORKFLOW_ARCHIVED_VALUE = 1;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WorkflowState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static WorkflowState forNumber(int value) {
+      switch (value) {
+        case 0: return WORKFLOW_ACTIVE;
+        case 1: return WORKFLOW_ARCHIVED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<WorkflowState>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        WorkflowState> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<WorkflowState>() {
+            public WorkflowState findValueByNumber(int number) {
+              return WorkflowState.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return flyteidl.admin.WorkflowOuterClass.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final WorkflowState[] VALUES = values();
+
+    public static WorkflowState valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private WorkflowState(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:flyteidl.admin.WorkflowState)
+  }
+
   public interface WorkflowCreateRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.admin.WorkflowCreateRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -5579,8 +5697,10 @@ public final class WorkflowOuterClass {
       "WorkflowClosure\022A\n\021compiled_workflow\030\001 \001" +
       "(\0132&.flyteidl.core.CompiledWorkflowClosu" +
       "re\022.\n\ncreated_at\030\002 \001(\0132\032.google.protobuf" +
-      ".TimestampB3Z1github.com/lyft/flyteidl/g" +
-      "en/pb-go/flyteidl/adminb\006proto3"
+      ".Timestamp*;\n\rWorkflowState\022\023\n\017WORKFLOW_" +
+      "ACTIVE\020\000\022\025\n\021WORKFLOW_ARCHIVED\020\001B3Z1githu" +
+      "b.com/lyft/flyteidl/gen/pb-go/flyteidl/a" +
+      "dminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

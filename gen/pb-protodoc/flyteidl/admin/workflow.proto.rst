@@ -172,3 +172,24 @@ created_at
   
   
 
+.. _api_enum_flyteidl.admin.WorkflowState:
+
+Enum flyteidl.admin.WorkflowState
+---------------------------------
+
+`[flyteidl.admin.WorkflowState proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/workflow.proto#L66>`_
+
+Defunct, do not use.
+
+.. _api_enum_value_flyteidl.admin.WorkflowState.WORKFLOW_ACTIVE:
+
+WORKFLOW_ACTIVE
+  *(DEFAULT)* ⁣By default, all workflows are considered active and under development.   
+  
+  
+.. _api_enum_value_flyteidl.admin.WorkflowState.WORKFLOW_ARCHIVED:
+
+WORKFLOW_ARCHIVED
+  ⁣Archived workflows are no longer visible in the UI.      
+  
+  
