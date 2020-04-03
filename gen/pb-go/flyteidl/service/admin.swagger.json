@@ -3444,7 +3444,7 @@
         "NAMED_ENTITY_ARCHIVED"
       ],
       "default": "NAMED_ENTITY_ACTIVE",
-      "description": "The status of the named entity is used to control its visibility in the UI.\n\n - NAMED_ENTITY_ACTIVE: By default, all workflows are considered active and under development.\n - NAMED_ENTITY_ARCHIVED: Archived named entities are no longer visible in the UI."
+      "description": "The status of the named entity is used to control its visibility in the UI.\n\n - NAMED_ENTITY_ACTIVE: By default, all named entities are considered active and under development.\n - NAMED_ENTITY_ARCHIVED: Archived named entities are no longer visible in the UI."
     },
     "adminNamedEntityUpdateRequest": {
       "type": "object",

@@ -25,7 +25,7 @@ public final class Common {
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
-     * By default, all workflows are considered active and under development.
+     * By default, all named entities are considered active and under development.
      * </pre>
      *
      * <code>NAMED_ENTITY_ACTIVE = 0;</code>
@@ -44,7 +44,7 @@ public final class Common {
 
     /**
      * <pre>
-     * By default, all workflows are considered active and under development.
+     * By default, all named entities are considered active and under development.
      * </pre>
      *
      * <code>NAMED_ENTITY_ACTIVE = 0;</code>

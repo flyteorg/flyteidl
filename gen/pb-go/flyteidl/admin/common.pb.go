@@ -25,7 +25,7 @@ const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 type NamedEntityState int32
 
 const (
-	// By default, all workflows are considered active and under development.
+	// By default, all named entities are considered active and under development.
 	NamedEntityState_NAMED_ENTITY_ACTIVE NamedEntityState = 0
 	// Archived named entities are no longer visible in the UI.
 	NamedEntityState_NAMED_ENTITY_ARCHIVED NamedEntityState = 1

@@ -23,7 +23,7 @@ message NamedEntityIdentifier {
 
 // The status of the named entity is used to control its visibility in the UI.
 enum NamedEntityState {
-    // By default, all workflows are considered active and under development.
+    // By default, all named entities are considered active and under development.
     NAMED_ENTITY_ACTIVE = 0;
 
     // Archived named entities are no longer visible in the UI.

@@ -8,7 +8,7 @@
  */
 
 package flyteadmin
-// AdminNamedEntityState : The status of the named entity is used to control its visibility in the UI.   - NAMED_ENTITY_ACTIVE: By default, all workflows are considered active and under development.  - NAMED_ENTITY_ARCHIVED: Archived named entities are no longer visible in the UI.
+// AdminNamedEntityState : The status of the named entity is used to control its visibility in the UI.   - NAMED_ENTITY_ACTIVE: By default, all named entities are considered active and under development.  - NAMED_ENTITY_ARCHIVED: Archived named entities are no longer visible in the UI.
 type AdminNamedEntityState string
 
 // List of adminNamedEntityState

@@ -707,7 +707,7 @@ The status of the named entity is used to control its visibility in the UI.
 .. _api_enum_value_flyteidl.admin.NamedEntityState.NAMED_ENTITY_ACTIVE:
 
 NAMED_ENTITY_ACTIVE
-  *(DEFAULT)* ⁣By default, all workflows are considered active and under development.
+  *(DEFAULT)* ⁣By default, all named entities are considered active and under development.
   
   
 .. _api_enum_value_flyteidl.admin.NamedEntityState.NAMED_ENTITY_ARCHIVED:
