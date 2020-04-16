@@ -21,16 +21,18 @@ const (
 )
 
 type Config struct {
-	Type     EventReportingType `json:"type" pflag:",Sets the type of EventSink to configure [log/admin/file]."`
-	FilePath string             `json:"file-path" pflag:",For file types, specify where the file should be located."`
-	Rate     int64              `json:"rate" pflag:",Max rate at which events can be recorded per second."`
-	Capacity int                `json:"capacity" pflag:",The max bucket size for event recording tokens."`
+	Type                EventReportingType `json:"type" pflag:",Sets the type of EventSink to configure [log/admin/file]."`
+	FilePath            string             `json:"file-path" pflag:",For file types, specify where the file should be located."`
+	Rate                int64              `json:"rate" pflag:",Max rate at which events can be recorded per second."`
+	Capacity            int                `json:"capacity" pflag:",The max bucket size for event recording tokens."`
+	MaxUpdateLagSeconds int64              `json:"max-update-lag-seconds" pflag:"\"300\",Max lag to between two update events"`
 }
 
 var (
 	defaultConfig = Config{
-		Rate:     int64(500),
-		Capacity: 1000,
+		Rate:                int64(500),
+		Capacity:            1000,
+		MaxUpdateLagSeconds: int64(300),
 	}
 
 	configSection = config.MustRegisterSection(configSectionKey, &defaultConfig)
