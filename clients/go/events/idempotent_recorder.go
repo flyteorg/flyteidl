@@ -27,14 +27,14 @@ type idempotentWorkFlowEventRecorder struct {
 	mutex               *sync.Mutex
 }
 
-func (c *idempotentWorkFlowEventRecorder) idempotentRecord(ctx context.Context, id string, e proto.Message, phase string, terminal bool) error {
-	currentTime := time.Now()
-	c.mutex.Lock()
-	defer c.mutex.Unlock()
+func (i *idempotentWorkFlowEventRecorder) idempotentRecord(ctx context.Context, id string, e proto.Message, phase string, terminal bool) error {
+	i.mutex.Lock()
+	defer i.mutex.Unlock()
 
-	existing, ok := c.events[id]
-	if !ok || existing.phase != phase || int64(currentTime.Sub(existing.lastUpdatedAt).Seconds()) > c.maxUpdateLagSeconds {
-		err := c.internalRecorder.sinkEvent(ctx, e)
+	existing, ok := i.events[id]
+	emitTime := time.Now()
+	if !ok || existing.phase != phase || emitTime.Sub(existing.lastUpdatedAt) > time.Duration(i.maxUpdateLagSeconds)*time.Second {
+		err := i.internalRecorder.sinkEvent(ctx, e)
 		if err != nil {
 			if !eventsErr.IsAlreadyExists(err) {
 				return err
@@ -44,33 +44,33 @@ func (c *idempotentWorkFlowEventRecorder) idempotentRecord(ctx context.Context, 
 
 		// delete the event from events map if it is an terminal event
 		if ok && terminal {
-			delete(c.events, id)
+			delete(i.events, id)
 		} else {
-			c.events[id] = EmittedEventInfo{lastUpdatedAt: currentTime, phase: phase}
+			i.events[id] = EmittedEventInfo{lastUpdatedAt: emitTime, phase: phase}
 		}
 	}
 
 	return nil
 }
 
-func (c *idempotentWorkFlowEventRecorder) RecordWorkflowEvent(ctx context.Context, e *event.WorkflowExecutionEvent) error {
+func (i *idempotentWorkFlowEventRecorder) RecordWorkflowEvent(ctx context.Context, e *event.WorkflowExecutionEvent) error {
 	id := e.ExecutionId.String()
 	terminal := e.Phase == core.WorkflowExecution_SUCCEEDED || e.Phase == core.WorkflowExecution_FAILED ||
 		e.Phase == core.WorkflowExecution_ABORTED || e.Phase == core.WorkflowExecution_TIMED_OUT
-	return c.idempotentRecord(ctx, id, e, e.Phase.String(), terminal)
+	return i.idempotentRecord(ctx, id, e, e.Phase.String(), terminal)
 }
 
-func (c *idempotentWorkFlowEventRecorder) RecordNodeEvent(ctx context.Context, e *event.NodeExecutionEvent) error {
+func (i *idempotentWorkFlowEventRecorder) RecordNodeEvent(ctx context.Context, e *event.NodeExecutionEvent) error {
 	id := e.Id.String()
 	terminal := e.Phase == core.NodeExecution_SUCCEEDED || e.Phase == core.NodeExecution_FAILED ||
 		e.Phase == core.NodeExecution_ABORTED || e.Phase == core.NodeExecution_SKIPPED || e.Phase == core.NodeExecution_TIMED_OUT
-	return c.idempotentRecord(ctx, id, e, e.Phase.String(), terminal)
+	return i.idempotentRecord(ctx, id, e, e.Phase.String(), terminal)
 }
 
-func (c *idempotentWorkFlowEventRecorder) RecordTaskEvent(ctx context.Context, e *event.TaskExecutionEvent) error {
+func (i *idempotentWorkFlowEventRecorder) RecordTaskEvent(ctx context.Context, e *event.TaskExecutionEvent) error {
 	id := e.TaskId.String()
 	terminal := e.Phase == core.TaskExecution_SUCCEEDED || e.Phase == core.TaskExecution_ABORTED || e.Phase == core.TaskExecution_FAILED
-	return c.idempotentRecord(ctx, id, e, e.Phase.String(), terminal)
+	return i.idempotentRecord(ctx, id, e, e.Phase.String(), terminal)
 }
 
 func constructIdempotentEventRecorder(eventSink EventSink, scope promutils.Scope) *idempotentWorkFlowEventRecorder {
