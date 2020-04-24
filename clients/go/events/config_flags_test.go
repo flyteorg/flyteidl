@@ -187,4 +187,48 @@ func TestConfig_SetFlags(t *testing.T) {
 			}
 		})
 	})
+	t.Run("Test_max-update-lag-seconds", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vInt64, err := cmdFlags.GetInt64("max-update-lag-seconds"); err == nil {
+				assert.Equal(t, int64(defaultConfig.MaxUpdateLagSeconds), vInt64)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+
+		t.Run("Override", func(t *testing.T) {
+			testValue := "1"
+
+			cmdFlags.Set("max-update-lag-seconds", testValue)
+			if vInt64, err := cmdFlags.GetInt64("max-update-lag-seconds"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vInt64), &actual.MaxUpdateLagSeconds)
+
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+	})
+	t.Run("Test_local-cache-size", func(t *testing.T) {
+		t.Run("DefaultValue", func(t *testing.T) {
+			// Test that default value is set properly
+			if vInt, err := cmdFlags.GetInt("local-cache-size"); err == nil {
+				assert.Equal(t, int(defaultConfig.LocalCacheSize), vInt)
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+
+		t.Run("Override", func(t *testing.T) {
+			testValue := "1"
+
+			cmdFlags.Set("local-cache-size", testValue)
+			if vInt, err := cmdFlags.GetInt("local-cache-size"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vInt), &actual.LocalCacheSize)
+
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+	})
 }

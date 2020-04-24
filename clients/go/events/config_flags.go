@@ -45,5 +45,7 @@ func (cfg Config) GetPFlagSet(prefix string) *pflag.FlagSet {
 	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "file-path"), defaultConfig.FilePath, "For file types,  specify where the file should be located.")
 	cmdFlags.Int64(fmt.Sprintf("%v%v", prefix, "rate"), defaultConfig.Rate, "Max rate at which events can be recorded per second.")
 	cmdFlags.Int(fmt.Sprintf("%v%v", prefix, "capacity"), defaultConfig.Capacity, "The max bucket size for event recording tokens.")
+	cmdFlags.Int64(fmt.Sprintf("%v%v", prefix, "max-update-lag-seconds"), defaultConfig.MaxUpdateLagSeconds, "Max lag to between two update events")
+	cmdFlags.Int(fmt.Sprintf("%v%v", prefix, "local-cache-size"), defaultConfig.LocalCacheSize, " The size of cache used to remove duplicate events")
 	return cmdFlags
 }

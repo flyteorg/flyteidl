@@ -2,7 +2,6 @@ package events
 
 import (
 	"context"
-	"sync"
 	"time"
 
 	"github.com/golang/protobuf/proto"
@@ -13,6 +12,8 @@ import (
 
 	"github.com/lyft/flytestdlib/logger"
 	"github.com/lyft/flytestdlib/promutils"
+
+	lru "github.com/hashicorp/golang-lru"
 )
 
 type EmittedEventInfo struct {
@@ -22,18 +23,19 @@ type EmittedEventInfo struct {
 
 type idempotentWorkFlowEventRecorder struct {
 	internalRecorder    *eventRecorder
-	events              map[string]EmittedEventInfo
 	maxUpdateLagSeconds int64
-	mutex               *sync.Mutex
+	cache               *lru.Cache
 }
 
 func (i *idempotentWorkFlowEventRecorder) idempotentRecord(ctx context.Context, id string, e proto.Message, phase string, terminal bool) error {
-	i.mutex.Lock()
-	defer i.mutex.Unlock()
+	var existing *EmittedEventInfo
+	o, found := i.cache.Get(id)
+	if found {
+		existing = o.(*EmittedEventInfo)
+	}
 
-	existing, ok := i.events[id]
 	emitTime := time.Now()
-	if !ok || existing.phase != phase || emitTime.Sub(existing.lastUpdatedAt) > time.Duration(i.maxUpdateLagSeconds)*time.Second {
+	if !found || existing.phase != phase || emitTime.Sub(existing.lastUpdatedAt) > time.Duration(i.maxUpdateLagSeconds)*time.Second {
 		err := i.internalRecorder.sinkEvent(ctx, e)
 		if err != nil {
 			if !eventsErr.IsAlreadyExists(err) {
@@ -42,12 +44,7 @@ func (i *idempotentWorkFlowEventRecorder) idempotentRecord(ctx context.Context, 
 			logger.Infof(ctx, "Workflow event phase: %s, executionId %s already exist", phase, id)
 		}
 
-		// delete the event from events map if it is an terminal event
-		if ok && terminal {
-			delete(i.events, id)
-		} else {
-			i.events[id] = EmittedEventInfo{lastUpdatedAt: emitTime, phase: phase}
-		}
+		i.cache.Add(id, &EmittedEventInfo{lastUpdatedAt: emitTime, phase: phase})
 	}
 
 	return nil
@@ -73,27 +70,33 @@ func (i *idempotentWorkFlowEventRecorder) RecordTaskEvent(ctx context.Context, e
 	return i.idempotentRecord(ctx, id, e, e.Phase.String(), terminal)
 }
 
-func constructIdempotentEventRecorder(eventSink EventSink, scope promutils.Scope) *idempotentWorkFlowEventRecorder {
-	maxUpdateLagSeconds := GetConfig(context.Background()).MaxUpdateLagSeconds
+// cache of size 5000, ~300KB in size
+func constructIdempotentEventRecorder(eventSink EventSink, scope promutils.Scope) (*idempotentWorkFlowEventRecorder, error) {
+	cfg := GetConfig(context.Background())
+	maxUpdateLagSeconds := cfg.MaxUpdateLagSeconds
+	cache, err := lru.New(cfg.LocalCacheSize)
+	if err != nil {
+		return nil, err
+	}
+
 	return &idempotentWorkFlowEventRecorder{
 		internalRecorder:    constructEventRecorder(eventSink, scope),
-		events:              make(map[string]EmittedEventInfo),
 		maxUpdateLagSeconds: maxUpdateLagSeconds,
-		mutex:               &sync.Mutex{},
-	}
+		cache:               cache,
+	}, nil
 }
 
 // Construct a new Workflow Event Recorder
-func NewIdempotentWorkflowEventRecorder(eventSink EventSink, scope promutils.Scope) WorkflowEventRecorder {
+func NewIdempotentWorkflowEventRecorder(eventSink EventSink, scope promutils.Scope) (WorkflowEventRecorder, error) {
 	return constructIdempotentEventRecorder(eventSink, scope)
 }
 
 // Construct a new Node Event Recorder
-func NewIdempotentNodeEventRecorder(eventSink EventSink, scope promutils.Scope) NodeEventRecorder {
+func NewIdempotentNodeEventRecorder(eventSink EventSink, scope promutils.Scope) (NodeEventRecorder, error) {
 	return constructIdempotentEventRecorder(eventSink, scope)
 }
 
 // Construct a new Task Event Recorder
-func NewIdempotentTaskEventRecorder(eventSink EventSink, scope promutils.Scope) TaskEventRecorder {
+func NewIdempotentTaskEventRecorder(eventSink EventSink, scope promutils.Scope) (TaskEventRecorder, error) {
 	return constructIdempotentEventRecorder(eventSink, scope)
 }

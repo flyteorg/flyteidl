@@ -49,30 +49,33 @@ func TestIdempotentWorkflowEventRecorder_PhaseChange(t *testing.T) {
 	adminClient.On("CreateWorkflowEvent", ctx, mock.Anything).Return(&admin.WorkflowExecutionEventResponse{}, nil)
 	mockScope := promutils.NewTestScope()
 
-	recorder := NewIdempotentWorkflowEventRecorder(adminEventSink, mockScope)
+	recorder, err := NewIdempotentWorkflowEventRecorder(adminEventSink, mockScope)
+	assert.NoError(t, err)
+
 	idempotentRecorder := recorder.(*idempotentWorkFlowEventRecorder)
 
-	recordEnsureNoError := func (phase core.WorkflowExecution_Phase) (EmittedEventInfo, bool) {
+	recordEnsureNoError := func (phase core.WorkflowExecution_Phase) (*EmittedEventInfo, bool) {
 		wfEvent := createWfEvent(phase)
 		err := recorder.RecordWorkflowEvent(ctx, wfEvent)
 		assert.NoError(t, err)
-		event, ok := idempotentRecorder.events[wfEvent.ExecutionId.String()]
-		return event, ok
+		event, ok := idempotentRecorder.cache.Get(wfEvent.ExecutionId.String())
+		return event.(*EmittedEventInfo), ok
 	}
 
 	// queued
-	event, ok := recordEnsureNoError(core.WorkflowExecution_QUEUED)
+	event, _ := recordEnsureNoError(core.WorkflowExecution_QUEUED)
 	assert.Equal(t, core.WorkflowExecution_QUEUED.String(), event.phase)
 	lastUpdatedAt := event.lastUpdatedAt
 
 	// Running
-	event, ok = recordEnsureNoError(core.WorkflowExecution_RUNNING)
+	event, _ = recordEnsureNoError(core.WorkflowExecution_RUNNING)
 	assert.Equal(t, core.WorkflowExecution_RUNNING.String(), event.phase)
 	assert.True(t, event.lastUpdatedAt.After(lastUpdatedAt))
 
 	// phase Succeeded should delete the entry
-	event, ok = recordEnsureNoError(core.WorkflowExecution_SUCCEEDED)
-	assert.False(t, ok)
+	event, _ = recordEnsureNoError(core.WorkflowExecution_SUCCEEDED)
+	assert.Equal(t, core.WorkflowExecution_SUCCEEDED.String(), event.phase)
+	assert.True(t, event.lastUpdatedAt.After(lastUpdatedAt))
 }
 
 func TestIdempotentNodeEventRecorder_PhaseChange(t *testing.T) {
@@ -82,63 +85,67 @@ func TestIdempotentNodeEventRecorder_PhaseChange(t *testing.T) {
 	adminClient.On("CreateNodeEvent", ctx, mock.Anything).Return(&admin.NodeExecutionEventResponse{}, nil)
 	mockScope := promutils.NewTestScope()
 
-	recorder := NewIdempotentNodeEventRecorder(adminEventSink, mockScope)
-	idempotentRecorder := recorder.(*idempotentWorkFlowEventRecorder)
+	recorder, err := NewIdempotentNodeEventRecorder(adminEventSink, mockScope)
+	assert.NoError(t, err)
 
-	recordEnsureNoError := func (phase core.NodeExecution_Phase) (EmittedEventInfo, bool) {
+	idempotentRecorder := recorder.(*idempotentWorkFlowEventRecorder)
+	recordEnsureNoError := func (phase core.NodeExecution_Phase) (*EmittedEventInfo, bool) {
 		nodeExecutionEvent := createNodeEvent(phase)
 		err := recorder.RecordNodeEvent(ctx, nodeExecutionEvent)
 		assert.NoError(t, err)
-		event, ok := idempotentRecorder.events[nodeExecutionEvent.Id.String()]
-		return event, ok
+		event, ok := idempotentRecorder.cache.Get(nodeExecutionEvent.Id.String())
+		return event.(*EmittedEventInfo), ok
 	}
 
 	// queued
-	event, ok := recordEnsureNoError(core.NodeExecution_QUEUED)
+	event, _ := recordEnsureNoError(core.NodeExecution_QUEUED)
 	assert.Equal(t, core.NodeExecution_QUEUED.String(), event.phase)
 	lastUpdatedAt := event.lastUpdatedAt
 
 	// Running
-	event, ok = recordEnsureNoError(core.NodeExecution_RUNNING)
+	event, _ = recordEnsureNoError(core.NodeExecution_RUNNING)
 	assert.Equal(t, core.NodeExecution_RUNNING.String(), event.phase)
 	assert.True(t, event.lastUpdatedAt.After(lastUpdatedAt))
 
 	// phase Succeeded should delete the entry
-	event, ok = recordEnsureNoError(core.NodeExecution_SUCCEEDED)
-	assert.False(t, ok)
+	event, _ = recordEnsureNoError(core.NodeExecution_SUCCEEDED)
+	assert.Equal(t, core.NodeExecution_SUCCEEDED.String(), event.phase)
+	assert.True(t, event.lastUpdatedAt.After(lastUpdatedAt))
 }
 
 func TestIdempotentTaskEventRecorder_PhaseChange(t *testing.T) {
 	ctx := context.Background()
 
 	adminEventSink, adminClient := CreateMockAdminEventSink(t)
-	adminClient.On("CreateNodeEvent", ctx, mock.Anything).Return(&admin.NodeExecutionEventResponse{}, nil)
+	adminClient.On("CreateTaskEvent", ctx, mock.Anything).Return(&admin.TaskExecutionEventResponse{}, nil)
 	mockScope := promutils.NewTestScope()
 
-	recorder := NewIdempotentTaskEventRecorder(adminEventSink, mockScope)
-	idempotentRecorder := recorder.(*idempotentWorkFlowEventRecorder)
+	recorder, err := NewIdempotentTaskEventRecorder(adminEventSink, mockScope)
+	assert.NoError(t, err)
 
-	recordEnsureNoError := func (phase core.TaskExecution_Phase) (EmittedEventInfo, bool) {
+	idempotentRecorder := recorder.(*idempotentWorkFlowEventRecorder)
+	recordEnsureNoError := func(phase core.TaskExecution_Phase) (*EmittedEventInfo, bool) {
 		taskExecutionEvent := createTaskEvent(phase)
 		err := recorder.RecordTaskEvent(ctx, taskExecutionEvent)
 		assert.NoError(t, err)
-		event, ok := idempotentRecorder.events[taskExecutionEvent.TaskId.String()]
-		return event, ok
+		event, ok := idempotentRecorder.cache.Get(taskExecutionEvent.TaskId.String())
+		return event.(*EmittedEventInfo), ok
 	}
 
 	// queued
-	event, ok := recordEnsureNoError(core.TaskExecution_QUEUED)
+	event, _ := recordEnsureNoError(core.TaskExecution_QUEUED)
 	assert.Equal(t, core.TaskExecution_QUEUED.String(), event.phase)
 	lastUpdatedAt := event.lastUpdatedAt
 
 	// Running
-	event, ok = recordEnsureNoError(core.TaskExecution_RUNNING)
+	event, _ = recordEnsureNoError(core.TaskExecution_RUNNING)
 	assert.Equal(t, core.TaskExecution_RUNNING.String(), event.phase)
 	assert.True(t, event.lastUpdatedAt.After(lastUpdatedAt))
 
 	// phase Succeeded should delete the entry
-	event, ok = recordEnsureNoError(core.TaskExecution_SUCCEEDED)
-	assert.False(t, ok)
+	event, _ = recordEnsureNoError(core.TaskExecution_SUCCEEDED)
+	assert.Equal(t, core.TaskExecution_SUCCEEDED.String(), event.phase)
+	assert.True(t, event.lastUpdatedAt.After(lastUpdatedAt))
 }
 
 func TestIdempotentEventRecorder_DuplicateEvents(t *testing.T) {
@@ -148,21 +155,25 @@ func TestIdempotentEventRecorder_DuplicateEvents(t *testing.T) {
 	adminClient.On("CreateWorkflowEvent", ctx, mock.Anything).Return(&admin.WorkflowExecutionEventResponse{}, nil)
 	mockScope := promutils.NewTestScope()
 
-	recorder := NewIdempotentWorkflowEventRecorder(adminEventSink, mockScope)
+	recorder, err := NewIdempotentWorkflowEventRecorder(adminEventSink, mockScope)
+	assert.NoError(t, err)
+
 	idempotentRecorder := recorder.(*idempotentWorkFlowEventRecorder)
 	wfEvent := createWfEvent(core.WorkflowExecution_QUEUED)
 	id := wfEvent.ExecutionId.String()
 
 	// First queued event
-	err := idempotentRecorder.idempotentRecord(ctx, id, wfEvent, wfEvent.Phase.String(), false)
+	err = idempotentRecorder.idempotentRecord(ctx, id, wfEvent, wfEvent.Phase.String(), false)
 	assert.NoError(t, err)
-	event, _ := idempotentRecorder.events[id]
+	o, _ := idempotentRecorder.cache.Get(id)
+	event := o.(*EmittedEventInfo)
 	lastUpdatedAt := event.lastUpdatedAt
 
 	// Second queued event should be a no-op
 	err = idempotentRecorder.idempotentRecord(ctx, id, wfEvent, wfEvent.Phase.String(), false)
 	assert.NoError(t, err)
-	event, _ = idempotentRecorder.events[id]
+	o, _ = idempotentRecorder.cache.Get(id)
+	event = o.(*EmittedEventInfo)
 	assert.Equal(t, event.lastUpdatedAt, lastUpdatedAt)
 	lastUpdatedAt = event.lastUpdatedAt
 
@@ -170,6 +181,7 @@ func TestIdempotentEventRecorder_DuplicateEvents(t *testing.T) {
 	idempotentRecorder.maxUpdateLagSeconds = 0
 	err = idempotentRecorder.idempotentRecord(ctx, id, wfEvent, wfEvent.Phase.String(), false)
 	assert.NoError(t, err)
-	event, _ = idempotentRecorder.events[id]
+	o, _ = idempotentRecorder.cache.Get(id)
+	event = o.(*EmittedEventInfo)
 	assert.True(t, event.lastUpdatedAt.After(lastUpdatedAt))
 }
