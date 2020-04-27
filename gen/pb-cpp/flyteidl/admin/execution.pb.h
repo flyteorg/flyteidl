@@ -2089,6 +2089,15 @@ class ExecutionSpec final :
   ::flyteidl::admin::Annotations* mutable_annotations();
   void set_allocated_annotations(::flyteidl::admin::Annotations* annotations);
 
+  // .flyteidl.admin.Auth auth = 16;
+  bool has_auth() const;
+  void clear_auth();
+  static const int kAuthFieldNumber = 16;
+  const ::flyteidl::admin::Auth& auth() const;
+  ::flyteidl::admin::Auth* release_auth();
+  ::flyteidl::admin::Auth* mutable_auth();
+  void set_allocated_auth(::flyteidl::admin::Auth* auth);
+
   // .flyteidl.admin.NotificationList notifications = 5;
   bool has_notifications() const;
   void clear_notifications();
@@ -2124,6 +2133,7 @@ class ExecutionSpec final :
   ::flyteidl::admin::ExecutionMetadata* metadata_;
   ::flyteidl::admin::Labels* labels_;
   ::flyteidl::admin::Annotations* annotations_;
+  ::flyteidl::admin::Auth* auth_;
   union NotificationOverridesUnion {
     NotificationOverridesUnion() {}
     ::flyteidl::admin::NotificationList* notifications_;
@@ -4763,6 +4773,51 @@ inline void ExecutionSpec::set_allocated_annotations(::flyteidl::admin::Annotati
   }
   annotations_ = annotations;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionSpec.annotations)
+}
+
+// .flyteidl.admin.Auth auth = 16;
+inline bool ExecutionSpec::has_auth() const {
+  return this != internal_default_instance() && auth_ != nullptr;
+}
+inline const ::flyteidl::admin::Auth& ExecutionSpec::auth() const {
+  const ::flyteidl::admin::Auth* p = auth_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionSpec.auth)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::Auth*>(
+      &::flyteidl::admin::_Auth_default_instance_);
+}
+inline ::flyteidl::admin::Auth* ExecutionSpec::release_auth() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.ExecutionSpec.auth)
+  
+  ::flyteidl::admin::Auth* temp = auth_;
+  auth_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::admin::Auth* ExecutionSpec::mutable_auth() {
+  
+  if (auth_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::Auth>(GetArenaNoVirtual());
+    auth_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionSpec.auth)
+  return auth_;
+}
+inline void ExecutionSpec::set_allocated_auth(::flyteidl::admin::Auth* auth) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(auth_);
+  }
+  if (auth) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      auth = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, auth, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  auth_ = auth;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionSpec.auth)
 }
 
 inline bool ExecutionSpec::has_notification_overrides() const {

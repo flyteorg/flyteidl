@@ -2825,7 +2825,7 @@
           "type": "string"
         }
       },
-      "description": "Defines permissions associated with executions created by this launch plan spec."
+      "description": "Defines permissions associated with executions."
     },
     "adminClusterResourceAttributes": {
       "type": "object",
@@ -3094,6 +3094,10 @@
         "annotations": {
           "$ref": "#/definitions/adminAnnotations",
           "description": "Annotations to apply to the execution resource."
+        },
+        "auth": {
+          "$ref": "#/definitions/adminAuth",
+          "description": "Optional: auth override to apply this execution."
         }
       },
       "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes.."

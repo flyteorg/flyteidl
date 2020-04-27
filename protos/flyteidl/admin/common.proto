@@ -234,3 +234,11 @@ message Annotations {
     map<string, string> values          = 1;
 }
 
+// Defines permissions associated with executions.
+message Auth {
+  oneof method {
+    string assumable_iam_role         = 1;
+    string kubernetes_service_account = 2;
+  }
+}
+

@@ -711,6 +711,40 @@ values
   
   
 
+
+.. _api_msg_flyteidl.admin.Auth:
+
+flyteidl.admin.Auth
+-------------------
+
+`[flyteidl.admin.Auth proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/common.proto#L237>`_
+
+Defines permissions associated with executions.
+
+.. code-block:: json
+
+  {
+    "assumable_iam_role": "...",
+    "kubernetes_service_account": "..."
+  }
+
+.. _api_field_flyteidl.admin.Auth.assumable_iam_role:
+
+assumable_iam_role
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+  
+  Only one of :ref:`assumable_iam_role <api_field_flyteidl.admin.Auth.assumable_iam_role>`, :ref:`kubernetes_service_account <api_field_flyteidl.admin.Auth.kubernetes_service_account>` may be set.
+  
+.. _api_field_flyteidl.admin.Auth.kubernetes_service_account:
+
+kubernetes_service_account
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+  
+  Only one of :ref:`assumable_iam_role <api_field_flyteidl.admin.Auth.assumable_iam_role>`, :ref:`kubernetes_service_account <api_field_flyteidl.admin.Auth.kubernetes_service_account>` may be set.
+  
+
 .. _api_enum_flyteidl.admin.NamedEntityState:
 
 Enum flyteidl.admin.NamedEntityState

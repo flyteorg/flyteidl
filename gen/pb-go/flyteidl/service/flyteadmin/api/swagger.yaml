@@ -2445,8 +2445,7 @@ definitions:
         type: "string"
       kubernetes_service_account:
         type: "string"
-    description: "Defines permissions associated with executions created by this launch\
-      \ plan spec."
+    description: "Defines permissions associated with executions."
     example:
       kubernetes_service_account: "kubernetes_service_account"
       assumable_iam_role: "assumable_iam_role"
@@ -2593,6 +2592,9 @@ definitions:
           system_metadata:
             execution_cluster: "execution_cluster"
         disable_all: true
+        auth:
+          kubernetes_service_account: "kubernetes_service_account"
+          assumable_iam_role: "assumable_iam_role"
         inputs:
           literals: {}
         annotations:
@@ -2889,6 +2891,9 @@ definitions:
             system_metadata:
               execution_cluster: "execution_cluster"
           disable_all: true
+          auth:
+            kubernetes_service_account: "kubernetes_service_account"
+            assumable_iam_role: "assumable_iam_role"
           inputs:
             literals: {}
           annotations:
@@ -3016,6 +3021,9 @@ definitions:
             system_metadata:
               execution_cluster: "execution_cluster"
           disable_all: true
+          auth:
+            kubernetes_service_account: "kubernetes_service_account"
+            assumable_iam_role: "assumable_iam_role"
           inputs:
             literals: {}
           annotations:
@@ -3164,6 +3172,9 @@ definitions:
       annotations:
         description: "Annotations to apply to the execution resource."
         $ref: "#/definitions/adminAnnotations"
+      auth:
+        description: "Optional: auth override to apply this execution."
+        $ref: "#/definitions/adminAuth"
     description: "An ExecutionSpec encompasses all data used to launch this execution.\
       \ The Spec does not change over the lifetime\nof an execution as it progresses\
       \ across phase changes.."
@@ -3192,6 +3203,9 @@ definitions:
         system_metadata:
           execution_cluster: "execution_cluster"
       disable_all: true
+      auth:
+        kubernetes_service_account: "kubernetes_service_account"
+        assumable_iam_role: "assumable_iam_role"
       inputs:
         literals: {}
       annotations:
