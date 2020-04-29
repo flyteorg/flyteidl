@@ -49,7 +49,8 @@ func TestIdempotentWorkflowEventRecorder_PhaseChange(t *testing.T) {
 	adminClient.On("CreateWorkflowEvent", ctx, mock.Anything).Return(&admin.WorkflowExecutionEventResponse{}, nil)
 	mockScope := promutils.NewTestScope()
 
-	recorder, err := NewIdempotentWorkflowEventRecorder(adminEventSink, mockScope)
+	cfg := GetConfig(ctx)
+	recorder, err := NewIdempotentWorkflowEventRecorder(adminEventSink, mockScope, cfg)
 	assert.NoError(t, err)
 
 	idempotentRecorder := recorder.(*idempotentWorkFlowEventRecorder)
@@ -85,7 +86,8 @@ func TestIdempotentNodeEventRecorder_PhaseChange(t *testing.T) {
 	adminClient.On("CreateNodeEvent", ctx, mock.Anything).Return(&admin.NodeExecutionEventResponse{}, nil)
 	mockScope := promutils.NewTestScope()
 
-	recorder, err := NewIdempotentNodeEventRecorder(adminEventSink, mockScope)
+	cfg := GetConfig(ctx)
+	recorder, err := NewIdempotentNodeEventRecorder(adminEventSink, mockScope, cfg)
 	assert.NoError(t, err)
 
 	idempotentRecorder := recorder.(*idempotentWorkFlowEventRecorder)
@@ -120,7 +122,8 @@ func TestIdempotentTaskEventRecorder_PhaseChange(t *testing.T) {
 	adminClient.On("CreateTaskEvent", ctx, mock.Anything).Return(&admin.TaskExecutionEventResponse{}, nil)
 	mockScope := promutils.NewTestScope()
 
-	recorder, err := NewIdempotentTaskEventRecorder(adminEventSink, mockScope)
+	cfg := GetConfig(ctx)
+	recorder, err := NewIdempotentTaskEventRecorder(adminEventSink, mockScope, cfg)
 	assert.NoError(t, err)
 
 	idempotentRecorder := recorder.(*idempotentWorkFlowEventRecorder)
@@ -155,7 +158,8 @@ func TestIdempotentEventRecorder_DuplicateEvents(t *testing.T) {
 	adminClient.On("CreateWorkflowEvent", ctx, mock.Anything).Return(&admin.WorkflowExecutionEventResponse{}, nil)
 	mockScope := promutils.NewTestScope()
 
-	recorder, err := NewIdempotentWorkflowEventRecorder(adminEventSink, mockScope)
+	cfg := GetConfig(ctx)
+	recorder, err := NewIdempotentWorkflowEventRecorder(adminEventSink, mockScope, cfg)
 	assert.NoError(t, err)
 
 	idempotentRecorder := recorder.(*idempotentWorkFlowEventRecorder)
@@ -163,14 +167,14 @@ func TestIdempotentEventRecorder_DuplicateEvents(t *testing.T) {
 	id := wfEvent.ExecutionId.String()
 
 	// First queued event
-	err = idempotentRecorder.idempotentRecord(ctx, id, wfEvent, wfEvent.Phase.String(), false)
+	err = idempotentRecorder.idempotentRecord(ctx, id, wfEvent, wfEvent.Phase.String())
 	assert.NoError(t, err)
 	o, _ := idempotentRecorder.cache.Get(id)
 	event := o.(*EmittedEventInfo)
 	lastUpdatedAt := event.lastUpdatedAt
 
 	// Second queued event should be a no-op
-	err = idempotentRecorder.idempotentRecord(ctx, id, wfEvent, wfEvent.Phase.String(), false)
+	err = idempotentRecorder.idempotentRecord(ctx, id, wfEvent, wfEvent.Phase.String())
 	assert.NoError(t, err)
 	o, _ = idempotentRecorder.cache.Get(id)
 	event = o.(*EmittedEventInfo)
@@ -179,7 +183,7 @@ func TestIdempotentEventRecorder_DuplicateEvents(t *testing.T) {
 
 	// Third queued event will be resent as maxUpdateLag is reduced to 0
 	idempotentRecorder.maxUpdateLagSeconds = 0
-	err = idempotentRecorder.idempotentRecord(ctx, id, wfEvent, wfEvent.Phase.String(), false)
+	err = idempotentRecorder.idempotentRecord(ctx, id, wfEvent, wfEvent.Phase.String())
 	assert.NoError(t, err)
 	o, _ = idempotentRecorder.cache.Get(id)
 	event = o.(*EmittedEventInfo)

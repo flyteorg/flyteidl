@@ -7,7 +7,6 @@ import (
 	"github.com/golang/protobuf/proto"
 
 	eventsErr "github.com/lyft/flyteidl/clients/go/events/errors"
-	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/core"
 	"github.com/lyft/flyteidl/gen/pb-go/flyteidl/event"
 
 	"github.com/lyft/flytestdlib/logger"
@@ -27,7 +26,7 @@ type idempotentWorkFlowEventRecorder struct {
 	cache               *lru.Cache
 }
 
-func (i *idempotentWorkFlowEventRecorder) idempotentRecord(ctx context.Context, id string, e proto.Message, phase string, terminal bool) error {
+func (i *idempotentWorkFlowEventRecorder) idempotentRecord(ctx context.Context, id string, e proto.Message, phase string) error {
 	var existing *EmittedEventInfo
 	o, found := i.cache.Get(id)
 	if found {
@@ -52,27 +51,21 @@ func (i *idempotentWorkFlowEventRecorder) idempotentRecord(ctx context.Context, 
 
 func (i *idempotentWorkFlowEventRecorder) RecordWorkflowEvent(ctx context.Context, e *event.WorkflowExecutionEvent) error {
 	id := e.ExecutionId.String()
-	terminal := e.Phase == core.WorkflowExecution_SUCCEEDED || e.Phase == core.WorkflowExecution_FAILED ||
-		e.Phase == core.WorkflowExecution_ABORTED || e.Phase == core.WorkflowExecution_TIMED_OUT
-	return i.idempotentRecord(ctx, id, e, e.Phase.String(), terminal)
+	return i.idempotentRecord(ctx, id, e, e.Phase.String())
 }
 
 func (i *idempotentWorkFlowEventRecorder) RecordNodeEvent(ctx context.Context, e *event.NodeExecutionEvent) error {
 	id := e.Id.String()
-	terminal := e.Phase == core.NodeExecution_SUCCEEDED || e.Phase == core.NodeExecution_FAILED ||
-		e.Phase == core.NodeExecution_ABORTED || e.Phase == core.NodeExecution_SKIPPED || e.Phase == core.NodeExecution_TIMED_OUT
-	return i.idempotentRecord(ctx, id, e, e.Phase.String(), terminal)
+	return i.idempotentRecord(ctx, id, e, e.Phase.String())
 }
 
 func (i *idempotentWorkFlowEventRecorder) RecordTaskEvent(ctx context.Context, e *event.TaskExecutionEvent) error {
 	id := e.TaskId.String()
-	terminal := e.Phase == core.TaskExecution_SUCCEEDED || e.Phase == core.TaskExecution_ABORTED || e.Phase == core.TaskExecution_FAILED
-	return i.idempotentRecord(ctx, id, e, e.Phase.String(), terminal)
+	return i.idempotentRecord(ctx, id, e, e.Phase.String())
 }
 
 // cache of size 5000, ~300KB in size
-func constructIdempotentEventRecorder(eventSink EventSink, scope promutils.Scope) (*idempotentWorkFlowEventRecorder, error) {
-	cfg := GetConfig(context.Background())
+func constructIdempotentEventRecorder(eventSink EventSink, scope promutils.Scope, cfg *Config) (*idempotentWorkFlowEventRecorder, error) {
 	maxUpdateLagSeconds := cfg.MaxUpdateLagSeconds
 	cache, err := lru.New(cfg.LocalCacheSize)
 	if err != nil {
@@ -87,16 +80,16 @@ func constructIdempotentEventRecorder(eventSink EventSink, scope promutils.Scope
 }
 
 // Construct a new Workflow Event Recorder
-func NewIdempotentWorkflowEventRecorder(eventSink EventSink, scope promutils.Scope) (WorkflowEventRecorder, error) {
-	return constructIdempotentEventRecorder(eventSink, scope)
+func NewIdempotentWorkflowEventRecorder(eventSink EventSink, scope promutils.Scope, cfg *Config) (WorkflowEventRecorder, error) {
+	return constructIdempotentEventRecorder(eventSink, scope, cfg)
 }
 
 // Construct a new Node Event Recorder
-func NewIdempotentNodeEventRecorder(eventSink EventSink, scope promutils.Scope) (NodeEventRecorder, error) {
-	return constructIdempotentEventRecorder(eventSink, scope)
+func NewIdempotentNodeEventRecorder(eventSink EventSink, scope promutils.Scope, cfg *Config) (NodeEventRecorder, error) {
+	return constructIdempotentEventRecorder(eventSink, scope, cfg)
 }
 
 // Construct a new Task Event Recorder
-func NewIdempotentTaskEventRecorder(eventSink EventSink, scope promutils.Scope) (TaskEventRecorder, error) {
-	return constructIdempotentEventRecorder(eventSink, scope)
+func NewIdempotentTaskEventRecorder(eventSink EventSink, scope promutils.Scope, cfg *Config) (TaskEventRecorder, error) {
+	return constructIdempotentEventRecorder(eventSink, scope, cfg)
 }
