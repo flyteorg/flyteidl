@@ -25,7 +25,7 @@ type Config struct {
 	FilePath            string             `json:"file-path" pflag:",For file types, specify where the file should be located."`
 	Rate                int64              `json:"rate" pflag:",Max rate at which events can be recorded per second."`
 	Capacity            int                `json:"capacity" pflag:",The max bucket size for event recording tokens."`
-	MaxUpdateLagSeconds int64              `json:"max-update-lag-seconds" pflag:"\"300\",Max lag to between two update events"`
+	MaxUpdateLagSeconds int64              `json:"max-update-lag-seconds" pflag:",Max lag to between two update events"`
 	LocalCacheSize      int                `json:"local-cache-size" pflag:"\"5000\", The size of cache used to remove duplicate events"`
 }
 
