@@ -2,6 +2,7 @@ package events
 
 import (
 	"context"
+	"fmt"
 	"testing"
 
 	"github.com/lyft/flytestdlib/contextutils"
@@ -131,7 +132,8 @@ func TestIdempotentTaskEventRecorder_PhaseChange(t *testing.T) {
 		taskExecutionEvent := createTaskEvent(phase)
 		err := recorder.RecordTaskEvent(ctx, taskExecutionEvent)
 		assert.NoError(t, err)
-		event, ok := idempotentRecorder.cache.Get(taskExecutionEvent.TaskId.String())
+		id := fmt.Sprintf("%v:%v:%v", taskExecutionEvent.ParentNodeExecutionId.String(), taskExecutionEvent.TaskId.String(), taskExecutionEvent.RetryAttempt)
+		event, ok := idempotentRecorder.cache.Get(id)
 		return event.(*EmittedEventInfo), ok
 	}
 

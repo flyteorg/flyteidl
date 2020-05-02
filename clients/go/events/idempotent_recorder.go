@@ -2,6 +2,7 @@ package events
 
 import (
 	"context"
+	"fmt"
 	"time"
 
 	"github.com/golang/protobuf/proto"
@@ -60,7 +61,7 @@ func (i *idempotentWorkFlowEventRecorder) RecordNodeEvent(ctx context.Context, e
 }
 
 func (i *idempotentWorkFlowEventRecorder) RecordTaskEvent(ctx context.Context, e *event.TaskExecutionEvent) error {
-	id := e.TaskId.String()
+	id := fmt.Sprintf("%v:%v:%v", e.ParentNodeExecutionId.String(), e.TaskId.String(), e.RetryAttempt)
 	return i.idempotentRecord(ctx, id, e, e.Phase.String())
 }
 
