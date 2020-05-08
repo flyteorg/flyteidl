@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package flyteidl.plugins;
+
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
+
+message PyTorchOperatorTask {
+  int32 workers = 1;
+}
