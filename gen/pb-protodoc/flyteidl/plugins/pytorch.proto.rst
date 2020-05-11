@@ -8,8 +8,9 @@ pytorch.proto
 flyteidl.plugins.PyTorchOperatorTask
 ------------------------------------
 
-`[flyteidl.plugins.PyTorchOperatorTask proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/pytorch.proto#L6>`_
+`[flyteidl.plugins.PyTorchOperatorTask proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/pytorch.proto#L7>`_
 
+Custom proto for Pytorch plugin
 
 .. code-block:: json
 
@@ -20,6 +21,7 @@ flyteidl.plugins.PyTorchOperatorTask
 .. _api_field_flyteidl.plugins.PyTorchOperatorTask.workers:
 
 workers
-  (`int32 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  (`int32 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) number of worker replicas spawned in the cluster for this job
+  
   
 

@@ -20,7 +20,9 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
+// Custom proto for Pytorch plugin
 type PyTorchOperatorTask struct {
+	// number of worker replicas spawned in the cluster for this job
 	Workers              int32    `protobuf:"varint,1,opt,name=workers,proto3" json:"workers,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

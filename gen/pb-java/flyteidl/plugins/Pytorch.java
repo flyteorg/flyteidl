@@ -19,11 +19,19 @@ public final class Pytorch {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * number of worker replicas spawned in the cluster for this job
+     * </pre>
+     *
      * <code>int32 workers = 1;</code>
      */
     int getWorkers();
   }
   /**
+   * <pre>
+   * Custom proto for Pytorch plugin
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.plugins.PyTorchOperatorTask}
    */
   public  static final class PyTorchOperatorTask extends
@@ -102,6 +110,10 @@ public final class Pytorch {
     public static final int WORKERS_FIELD_NUMBER = 1;
     private int workers_;
     /**
+     * <pre>
+     * number of worker replicas spawned in the cluster for this job
+     * </pre>
+     *
      * <code>int32 workers = 1;</code>
      */
     public int getWorkers() {
@@ -264,6 +276,10 @@ public final class Pytorch {
       return builder;
     }
     /**
+     * <pre>
+     * Custom proto for Pytorch plugin
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.plugins.PyTorchOperatorTask}
      */
     public static final class Builder extends
@@ -412,12 +428,20 @@ public final class Pytorch {
 
       private int workers_ ;
       /**
+       * <pre>
+       * number of worker replicas spawned in the cluster for this job
+       * </pre>
+       *
        * <code>int32 workers = 1;</code>
        */
       public int getWorkers() {
         return workers_;
       }
       /**
+       * <pre>
+       * number of worker replicas spawned in the cluster for this job
+       * </pre>
+       *
        * <code>int32 workers = 1;</code>
        */
       public Builder setWorkers(int value) {
@@ -427,6 +451,10 @@ public final class Pytorch {
         return this;
       }
       /**
+       * <pre>
+       * number of worker replicas spawned in the cluster for this job
+       * </pre>
+       *
        * <code>int32 workers = 1;</code>
        */
       public Builder clearWorkers() {
