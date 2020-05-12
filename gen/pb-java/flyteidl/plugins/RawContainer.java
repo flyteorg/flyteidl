@@ -53,9 +53,18 @@ public final class RawContainer {
      * File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
      * </pre>
      *
-     * <code>uint32 output_path = 2;</code>
+     * <code>string output_path = 2;</code>
      */
-    int getOutputPath();
+    java.lang.String getOutputPath();
+    /**
+     * <pre>
+     * File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
+     * </pre>
+     *
+     * <code>string output_path = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getOutputPathBytes();
 
     /**
      * <pre>
@@ -98,6 +107,7 @@ public final class RawContainer {
     }
     private CoPilot() {
       inputPath_ = "";
+      outputPath_ = "";
       format_ = 0;
     }
 
@@ -131,9 +141,10 @@ public final class RawContainer {
               inputPath_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              outputPath_ = input.readUInt32();
+              outputPath_ = s;
               break;
             }
             case 24: {
@@ -359,16 +370,45 @@ public final class RawContainer {
     }
 
     public static final int OUTPUT_PATH_FIELD_NUMBER = 2;
-    private int outputPath_;
+    private volatile java.lang.Object outputPath_;
     /**
      * <pre>
      * File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
      * </pre>
      *
-     * <code>uint32 output_path = 2;</code>
+     * <code>string output_path = 2;</code>
      */
-    public int getOutputPath() {
-      return outputPath_;
+    public java.lang.String getOutputPath() {
+      java.lang.Object ref = outputPath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        outputPath_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
+     * </pre>
+     *
+     * <code>string output_path = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOutputPathBytes() {
+      java.lang.Object ref = outputPath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        outputPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int FORMAT_FIELD_NUMBER = 3;
@@ -415,8 +455,8 @@ public final class RawContainer {
       if (!getInputPathBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, inputPath_);
       }
-      if (outputPath_ != 0) {
-        output.writeUInt32(2, outputPath_);
+      if (!getOutputPathBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, outputPath_);
       }
       if (format_ != flyteidl.plugins.RawContainer.CoPilot.MetadataFormat.JSON.getNumber()) {
         output.writeEnum(3, format_);
@@ -433,9 +473,8 @@ public final class RawContainer {
       if (!getInputPathBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, inputPath_);
       }
-      if (outputPath_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, outputPath_);
+      if (!getOutputPathBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, outputPath_);
       }
       if (format_ != flyteidl.plugins.RawContainer.CoPilot.MetadataFormat.JSON.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -458,8 +497,8 @@ public final class RawContainer {
 
       if (!getInputPath()
           .equals(other.getInputPath())) return false;
-      if (getOutputPath()
-          != other.getOutputPath()) return false;
+      if (!getOutputPath()
+          .equals(other.getOutputPath())) return false;
       if (format_ != other.format_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -475,7 +514,7 @@ public final class RawContainer {
       hash = (37 * hash) + INPUT_PATH_FIELD_NUMBER;
       hash = (53 * hash) + getInputPath().hashCode();
       hash = (37 * hash) + OUTPUT_PATH_FIELD_NUMBER;
-      hash = (53 * hash) + getOutputPath();
+      hash = (53 * hash) + getOutputPath().hashCode();
       hash = (37 * hash) + FORMAT_FIELD_NUMBER;
       hash = (53 * hash) + format_;
       hash = (29 * hash) + unknownFields.hashCode();
@@ -621,7 +660,7 @@ public final class RawContainer {
         super.clear();
         inputPath_ = "";
 
-        outputPath_ = 0;
+        outputPath_ = "";
 
         format_ = 0;
 
@@ -706,8 +745,9 @@ public final class RawContainer {
           inputPath_ = other.inputPath_;
           onChanged();
         }
-        if (other.getOutputPath() != 0) {
-          setOutputPath(other.getOutputPath());
+        if (!other.getOutputPath().isEmpty()) {
+          outputPath_ = other.outputPath_;
+          onChanged();
         }
         if (other.format_ != 0) {
           setFormatValue(other.getFormatValue());
@@ -860,26 +900,59 @@ public final class RawContainer {
         return this;
       }
 
-      private int outputPath_ ;
+      private java.lang.Object outputPath_ = "";
       /**
        * <pre>
        * File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
        * </pre>
        *
-       * <code>uint32 output_path = 2;</code>
+       * <code>string output_path = 2;</code>
        */
-      public int getOutputPath() {
-        return outputPath_;
+      public java.lang.String getOutputPath() {
+        java.lang.Object ref = outputPath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          outputPath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
        * </pre>
        *
-       * <code>uint32 output_path = 2;</code>
+       * <code>string output_path = 2;</code>
        */
-      public Builder setOutputPath(int value) {
-        
+      public com.google.protobuf.ByteString
+          getOutputPathBytes() {
+        java.lang.Object ref = outputPath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          outputPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
+       * </pre>
+       *
+       * <code>string output_path = 2;</code>
+       */
+      public Builder setOutputPath(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         outputPath_ = value;
         onChanged();
         return this;
@@ -889,11 +962,29 @@ public final class RawContainer {
        * File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
        * </pre>
        *
-       * <code>uint32 output_path = 2;</code>
+       * <code>string output_path = 2;</code>
        */
       public Builder clearOutputPath() {
         
-        outputPath_ = 0;
+        outputPath_ = getDefaultInstance().getOutputPath();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
+       * </pre>
+       *
+       * <code>string output_path = 2;</code>
+       */
+      public Builder setOutputPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        outputPath_ = value;
         onChanged();
         return this;
       }
@@ -1036,7 +1127,7 @@ public final class RawContainer {
     java.lang.String[] descriptorData = {
       "\n$flyteidl/plugins/raw_container.proto\022\020" +
       "flyteidl.plugins\"\235\001\n\007CoPilot\022\022\n\ninput_pa" +
-      "th\030\001 \001(\t\022\023\n\013output_path\030\002 \001(\r\0228\n\006format\030" +
+      "th\030\001 \001(\t\022\023\n\013output_path\030\002 \001(\t\0228\n\006format\030" +
       "\003 \001(\0162(.flyteidl.plugins.CoPilot.Metadat" +
       "aFormat\"/\n\016MetadataFormat\022\010\n\004JSON\020\000\022\010\n\004Y" +
       "AML\020\001\022\t\n\005PROTO\020\002B5Z3github.com/lyft/flyt" +

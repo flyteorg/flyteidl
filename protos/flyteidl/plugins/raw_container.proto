@@ -30,7 +30,7 @@ message CoPilot {
   // More information about the protocol - refer to docs #TODO reference docs here
   string input_path = 1;
   // File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
-  uint32 output_path = 2;
+  string output_path = 2;
   // In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
   // This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
   MetadataFormat format = 3;

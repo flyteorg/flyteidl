@@ -73,7 +73,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 const char descriptor_table_protodef_flyteidl_2fplugins_2fraw_5fcontainer_2eproto[] =
   "\n$flyteidl/plugins/raw_container.proto\022\020"
   "flyteidl.plugins\"\235\001\n\007CoPilot\022\022\n\ninput_pa"
-  "th\030\001 \001(\t\022\023\n\013output_path\030\002 \001(\r\0228\n\006format\030"
+  "th\030\001 \001(\t\022\023\n\013output_path\030\002 \001(\t\0228\n\006format\030"
   "\003 \001(\0162(.flyteidl.plugins.CoPilot.Metadat"
   "aFormat\"/\n\016MetadataFormat\022\010\n\004JSON\020\000\022\010\n\004Y"
   "AML\020\001\022\t\n\005PROTO\020\002B5Z3github.com/lyft/flyt"
@@ -147,9 +147,11 @@ CoPilot::CoPilot(const CoPilot& from)
   if (from.input_path().size() > 0) {
     input_path_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.input_path_);
   }
-  ::memcpy(&output_path_, &from.output_path_,
-    static_cast<size_t>(reinterpret_cast<char*>(&format_) -
-    reinterpret_cast<char*>(&output_path_)) + sizeof(format_));
+  output_path_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.output_path().size() > 0) {
+    output_path_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.output_path_);
+  }
+  format_ = from.format_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.CoPilot)
 }
 
@@ -157,9 +159,8 @@ void CoPilot::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_CoPilot_flyteidl_2fplugins_2fraw_5fcontainer_2eproto.base);
   input_path_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&output_path_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&format_) -
-      reinterpret_cast<char*>(&output_path_)) + sizeof(format_));
+  output_path_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  format_ = 0;
 }
 
 CoPilot::~CoPilot() {
@@ -169,6 +170,7 @@ CoPilot::~CoPilot() {
 
 void CoPilot::SharedDtor() {
   input_path_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  output_path_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void CoPilot::SetCachedSize(int size) const {
@@ -187,9 +189,8 @@ void CoPilot::Clear() {
   (void) cached_has_bits;
 
   input_path_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&output_path_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&format_) -
-      reinterpret_cast<char*>(&output_path_)) + sizeof(format_));
+  output_path_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  format_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -222,11 +223,20 @@ const char* CoPilot::_InternalParse(const char* begin, const char* end, void* ob
         ptr += size;
         break;
       }
-      // uint32 output_path = 2;
+      // string output_path = 2;
       case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
-        msg->set_output_path(::google::protobuf::internal::ReadVarint(&ptr));
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.plugins.CoPilot.output_path");
+        object = msg->mutable_output_path();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
         break;
       }
       // .flyteidl.plugins.CoPilot.MetadataFormat format = 3;
@@ -286,13 +296,15 @@ bool CoPilot::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 output_path = 2;
+      // string output_path = 2;
       case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &output_path_)));
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_output_path()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->output_path().data(), static_cast<int>(this->output_path().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.plugins.CoPilot.output_path"));
         } else {
           goto handle_unusual;
         }
@@ -350,9 +362,14 @@ void CoPilot::SerializeWithCachedSizes(
       1, this->input_path(), output);
   }
 
-  // uint32 output_path = 2;
-  if (this->output_path() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->output_path(), output);
+  // string output_path = 2;
+  if (this->output_path().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->output_path().data(), static_cast<int>(this->output_path().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.CoPilot.output_path");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->output_path(), output);
   }
 
   // .flyteidl.plugins.CoPilot.MetadataFormat format = 3;
@@ -385,9 +402,15 @@ void CoPilot::SerializeWithCachedSizes(
         1, this->input_path(), target);
   }
 
-  // uint32 output_path = 2;
-  if (this->output_path() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->output_path(), target);
+  // string output_path = 2;
+  if (this->output_path().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->output_path().data(), static_cast<int>(this->output_path().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.CoPilot.output_path");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->output_path(), target);
   }
 
   // .flyteidl.plugins.CoPilot.MetadataFormat format = 3;
@@ -424,10 +447,10 @@ size_t CoPilot::ByteSizeLong() const {
         this->input_path());
   }
 
-  // uint32 output_path = 2;
-  if (this->output_path() != 0) {
+  // string output_path = 2;
+  if (this->output_path().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+      ::google::protobuf::internal::WireFormatLite::StringSize(
         this->output_path());
   }
 
@@ -468,8 +491,9 @@ void CoPilot::MergeFrom(const CoPilot& from) {
 
     input_path_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.input_path_);
   }
-  if (from.output_path() != 0) {
-    set_output_path(from.output_path());
+  if (from.output_path().size() > 0) {
+
+    output_path_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.output_path_);
   }
   if (from.format() != 0) {
     set_format(from.format());
@@ -503,7 +527,8 @@ void CoPilot::InternalSwap(CoPilot* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   input_path_.Swap(&other->input_path_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  swap(output_path_, other->output_path_);
+  output_path_.Swap(&other->output_path_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(format_, other->format_);
 }
 

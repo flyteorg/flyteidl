@@ -39,7 +39,7 @@ input_path
 .. _api_field_flyteidl.plugins.CoPilot.output_path:
 
 output_path
-  (`uint32 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
   
   
 .. _api_field_flyteidl.plugins.CoPilot.format:

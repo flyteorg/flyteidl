@@ -225,11 +225,19 @@ class CoPilot final :
   ::std::string* release_input_path();
   void set_allocated_input_path(::std::string* input_path);
 
-  // uint32 output_path = 2;
+  // string output_path = 2;
   void clear_output_path();
   static const int kOutputPathFieldNumber = 2;
-  ::google::protobuf::uint32 output_path() const;
-  void set_output_path(::google::protobuf::uint32 value);
+  const ::std::string& output_path() const;
+  void set_output_path(const ::std::string& value);
+  #if LANG_CXX11
+  void set_output_path(::std::string&& value);
+  #endif
+  void set_output_path(const char* value);
+  void set_output_path(const char* value, size_t size);
+  ::std::string* mutable_output_path();
+  ::std::string* release_output_path();
+  void set_allocated_output_path(::std::string* output_path);
 
   // .flyteidl.plugins.CoPilot.MetadataFormat format = 3;
   void clear_format();
@@ -243,7 +251,7 @@ class CoPilot final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr input_path_;
-  ::google::protobuf::uint32 output_path_;
+  ::google::protobuf::internal::ArenaStringPtr output_path_;
   int format_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fraw_5fcontainer_2eproto;
@@ -312,18 +320,57 @@ inline void CoPilot::set_allocated_input_path(::std::string* input_path) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.CoPilot.input_path)
 }
 
-// uint32 output_path = 2;
+// string output_path = 2;
 inline void CoPilot::clear_output_path() {
-  output_path_ = 0u;
+  output_path_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::google::protobuf::uint32 CoPilot::output_path() const {
+inline const ::std::string& CoPilot::output_path() const {
   // @@protoc_insertion_point(field_get:flyteidl.plugins.CoPilot.output_path)
-  return output_path_;
+  return output_path_.GetNoArena();
 }
-inline void CoPilot::set_output_path(::google::protobuf::uint32 value) {
+inline void CoPilot::set_output_path(const ::std::string& value) {
   
-  output_path_ = value;
+  output_path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:flyteidl.plugins.CoPilot.output_path)
+}
+#if LANG_CXX11
+inline void CoPilot::set_output_path(::std::string&& value) {
+  
+  output_path_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.CoPilot.output_path)
+}
+#endif
+inline void CoPilot::set_output_path(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  output_path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.CoPilot.output_path)
+}
+inline void CoPilot::set_output_path(const char* value, size_t size) {
+  
+  output_path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.CoPilot.output_path)
+}
+inline ::std::string* CoPilot::mutable_output_path() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.CoPilot.output_path)
+  return output_path_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CoPilot::release_output_path() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.CoPilot.output_path)
+  
+  return output_path_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CoPilot::set_allocated_output_path(::std::string* output_path) {
+  if (output_path != nullptr) {
+    
+  } else {
+    
+  }
+  output_path_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), output_path);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.CoPilot.output_path)
 }
 
 // .flyteidl.plugins.CoPilot.MetadataFormat format = 3;
