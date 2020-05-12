@@ -3453,6 +3453,822 @@ public final class LaunchPlanOuterClass {
 
   }
 
+  public interface AuthOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.Auth)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string assumable_iam_role = 1;</code>
+     */
+    java.lang.String getAssumableIamRole();
+    /**
+     * <code>string assumable_iam_role = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getAssumableIamRoleBytes();
+
+    /**
+     * <code>string kubernetes_service_account = 2;</code>
+     */
+    java.lang.String getKubernetesServiceAccount();
+    /**
+     * <code>string kubernetes_service_account = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getKubernetesServiceAccountBytes();
+
+    public flyteidl.admin.LaunchPlanOuterClass.Auth.MethodCase getMethodCase();
+  }
+  /**
+   * <pre>
+   * Defines permissions associated with executions created by this launch plan spec.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.Auth}
+   */
+  public  static final class Auth extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.Auth)
+      AuthOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Auth.newBuilder() to construct.
+    private Auth(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Auth() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Auth(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+              methodCase_ = 1;
+              method_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+              methodCase_ = 2;
+              method_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.LaunchPlanOuterClass.internal_static_flyteidl_admin_Auth_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.LaunchPlanOuterClass.internal_static_flyteidl_admin_Auth_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.LaunchPlanOuterClass.Auth.class, flyteidl.admin.LaunchPlanOuterClass.Auth.Builder.class);
+    }
+
+    private int methodCase_ = 0;
+    private java.lang.Object method_;
+    public enum MethodCase
+        implements com.google.protobuf.Internal.EnumLite {
+      ASSUMABLE_IAM_ROLE(1),
+      KUBERNETES_SERVICE_ACCOUNT(2),
+      METHOD_NOT_SET(0);
+      private final int value;
+      private MethodCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static MethodCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static MethodCase forNumber(int value) {
+        switch (value) {
+          case 1: return ASSUMABLE_IAM_ROLE;
+          case 2: return KUBERNETES_SERVICE_ACCOUNT;
+          case 0: return METHOD_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public MethodCase
+    getMethodCase() {
+      return MethodCase.forNumber(
+          methodCase_);
+    }
+
+    public static final int ASSUMABLE_IAM_ROLE_FIELD_NUMBER = 1;
+    /**
+     * <code>string assumable_iam_role = 1;</code>
+     */
+    public java.lang.String getAssumableIamRole() {
+      java.lang.Object ref = "";
+      if (methodCase_ == 1) {
+        ref = method_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (methodCase_ == 1) {
+          method_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>string assumable_iam_role = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAssumableIamRoleBytes() {
+      java.lang.Object ref = "";
+      if (methodCase_ == 1) {
+        ref = method_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (methodCase_ == 1) {
+          method_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int KUBERNETES_SERVICE_ACCOUNT_FIELD_NUMBER = 2;
+    /**
+     * <code>string kubernetes_service_account = 2;</code>
+     */
+    public java.lang.String getKubernetesServiceAccount() {
+      java.lang.Object ref = "";
+      if (methodCase_ == 2) {
+        ref = method_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (methodCase_ == 2) {
+          method_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>string kubernetes_service_account = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getKubernetesServiceAccountBytes() {
+      java.lang.Object ref = "";
+      if (methodCase_ == 2) {
+        ref = method_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (methodCase_ == 2) {
+          method_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (methodCase_ == 1) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, method_);
+      }
+      if (methodCase_ == 2) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, method_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (methodCase_ == 1) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, method_);
+      }
+      if (methodCase_ == 2) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, method_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.LaunchPlanOuterClass.Auth)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.LaunchPlanOuterClass.Auth other = (flyteidl.admin.LaunchPlanOuterClass.Auth) obj;
+
+      if (!getMethodCase().equals(other.getMethodCase())) return false;
+      switch (methodCase_) {
+        case 1:
+          if (!getAssumableIamRole()
+              .equals(other.getAssumableIamRole())) return false;
+          break;
+        case 2:
+          if (!getKubernetesServiceAccount()
+              .equals(other.getKubernetesServiceAccount())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (methodCase_) {
+        case 1:
+          hash = (37 * hash) + ASSUMABLE_IAM_ROLE_FIELD_NUMBER;
+          hash = (53 * hash) + getAssumableIamRole().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + KUBERNETES_SERVICE_ACCOUNT_FIELD_NUMBER;
+          hash = (53 * hash) + getKubernetesServiceAccount().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.LaunchPlanOuterClass.Auth parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.LaunchPlanOuterClass.Auth parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.LaunchPlanOuterClass.Auth parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.LaunchPlanOuterClass.Auth parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.LaunchPlanOuterClass.Auth parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.LaunchPlanOuterClass.Auth parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.LaunchPlanOuterClass.Auth parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.LaunchPlanOuterClass.Auth parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.LaunchPlanOuterClass.Auth parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.LaunchPlanOuterClass.Auth parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.LaunchPlanOuterClass.Auth parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.LaunchPlanOuterClass.Auth parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.LaunchPlanOuterClass.Auth prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Defines permissions associated with executions created by this launch plan spec.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.admin.Auth}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.Auth)
+        flyteidl.admin.LaunchPlanOuterClass.AuthOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.LaunchPlanOuterClass.internal_static_flyteidl_admin_Auth_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.LaunchPlanOuterClass.internal_static_flyteidl_admin_Auth_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.LaunchPlanOuterClass.Auth.class, flyteidl.admin.LaunchPlanOuterClass.Auth.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.LaunchPlanOuterClass.Auth.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        methodCase_ = 0;
+        method_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.LaunchPlanOuterClass.internal_static_flyteidl_admin_Auth_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.LaunchPlanOuterClass.Auth getDefaultInstanceForType() {
+        return flyteidl.admin.LaunchPlanOuterClass.Auth.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.LaunchPlanOuterClass.Auth build() {
+        flyteidl.admin.LaunchPlanOuterClass.Auth result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.LaunchPlanOuterClass.Auth buildPartial() {
+        flyteidl.admin.LaunchPlanOuterClass.Auth result = new flyteidl.admin.LaunchPlanOuterClass.Auth(this);
+        if (methodCase_ == 1) {
+          result.method_ = method_;
+        }
+        if (methodCase_ == 2) {
+          result.method_ = method_;
+        }
+        result.methodCase_ = methodCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.LaunchPlanOuterClass.Auth) {
+          return mergeFrom((flyteidl.admin.LaunchPlanOuterClass.Auth)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.LaunchPlanOuterClass.Auth other) {
+        if (other == flyteidl.admin.LaunchPlanOuterClass.Auth.getDefaultInstance()) return this;
+        switch (other.getMethodCase()) {
+          case ASSUMABLE_IAM_ROLE: {
+            methodCase_ = 1;
+            method_ = other.method_;
+            onChanged();
+            break;
+          }
+          case KUBERNETES_SERVICE_ACCOUNT: {
+            methodCase_ = 2;
+            method_ = other.method_;
+            onChanged();
+            break;
+          }
+          case METHOD_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.LaunchPlanOuterClass.Auth parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.LaunchPlanOuterClass.Auth) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int methodCase_ = 0;
+      private java.lang.Object method_;
+      public MethodCase
+          getMethodCase() {
+        return MethodCase.forNumber(
+            methodCase_);
+      }
+
+      public Builder clearMethod() {
+        methodCase_ = 0;
+        method_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      /**
+       * <code>string assumable_iam_role = 1;</code>
+       */
+      public java.lang.String getAssumableIamRole() {
+        java.lang.Object ref = "";
+        if (methodCase_ == 1) {
+          ref = method_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (methodCase_ == 1) {
+            method_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string assumable_iam_role = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAssumableIamRoleBytes() {
+        java.lang.Object ref = "";
+        if (methodCase_ == 1) {
+          ref = method_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (methodCase_ == 1) {
+            method_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string assumable_iam_role = 1;</code>
+       */
+      public Builder setAssumableIamRole(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  methodCase_ = 1;
+        method_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string assumable_iam_role = 1;</code>
+       */
+      public Builder clearAssumableIamRole() {
+        if (methodCase_ == 1) {
+          methodCase_ = 0;
+          method_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>string assumable_iam_role = 1;</code>
+       */
+      public Builder setAssumableIamRoleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        methodCase_ = 1;
+        method_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string kubernetes_service_account = 2;</code>
+       */
+      public java.lang.String getKubernetesServiceAccount() {
+        java.lang.Object ref = "";
+        if (methodCase_ == 2) {
+          ref = method_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (methodCase_ == 2) {
+            method_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string kubernetes_service_account = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKubernetesServiceAccountBytes() {
+        java.lang.Object ref = "";
+        if (methodCase_ == 2) {
+          ref = method_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (methodCase_ == 2) {
+            method_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string kubernetes_service_account = 2;</code>
+       */
+      public Builder setKubernetesServiceAccount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  methodCase_ = 2;
+        method_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kubernetes_service_account = 2;</code>
+       */
+      public Builder clearKubernetesServiceAccount() {
+        if (methodCase_ == 2) {
+          methodCase_ = 0;
+          method_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>string kubernetes_service_account = 2;</code>
+       */
+      public Builder setKubernetesServiceAccountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        methodCase_ = 2;
+        method_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.Auth)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.Auth)
+    private static final flyteidl.admin.LaunchPlanOuterClass.Auth DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.LaunchPlanOuterClass.Auth();
+    }
+
+    public static flyteidl.admin.LaunchPlanOuterClass.Auth getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Auth>
+        PARSER = new com.google.protobuf.AbstractParser<Auth>() {
+      @java.lang.Override
+      public Auth parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Auth(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Auth> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Auth> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.LaunchPlanOuterClass.Auth getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface LaunchPlanSpecOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.admin.LaunchPlanSpec)
       com.google.protobuf.MessageOrBuilder {
@@ -3630,25 +4446,38 @@ public final class LaunchPlanOuterClass {
      * Indicates the permission associated with workflow executions triggered with this launch plan.
      * </pre>
      *
-     * <code>.flyteidl.admin.Auth auth = 8;</code>
+     * <code>.flyteidl.admin.Auth auth = 8 [deprecated = true];</code>
      */
-    boolean hasAuth();
+    @java.lang.Deprecated boolean hasAuth();
     /**
      * <pre>
      * Indicates the permission associated with workflow executions triggered with this launch plan.
      * </pre>
      *
-     * <code>.flyteidl.admin.Auth auth = 8;</code>
+     * <code>.flyteidl.admin.Auth auth = 8 [deprecated = true];</code>
      */
-    flyteidl.admin.Common.Auth getAuth();
+    @java.lang.Deprecated flyteidl.admin.LaunchPlanOuterClass.Auth getAuth();
     /**
      * <pre>
      * Indicates the permission associated with workflow executions triggered with this launch plan.
      * </pre>
      *
-     * <code>.flyteidl.admin.Auth auth = 8;</code>
+     * <code>.flyteidl.admin.Auth auth = 8 [deprecated = true];</code>
      */
-    flyteidl.admin.Common.AuthOrBuilder getAuthOrBuilder();
+    @java.lang.Deprecated flyteidl.admin.LaunchPlanOuterClass.AuthOrBuilder getAuthOrBuilder();
+
+    /**
+     * <code>.flyteidl.admin.AuthRole auth_role = 9;</code>
+     */
+    boolean hasAuthRole();
+    /**
+     * <code>.flyteidl.admin.AuthRole auth_role = 9;</code>
+     */
+    flyteidl.admin.Common.AuthRole getAuthRole();
+    /**
+     * <code>.flyteidl.admin.AuthRole auth_role = 9;</code>
+     */
+    flyteidl.admin.Common.AuthRoleOrBuilder getAuthRoleOrBuilder();
   }
   /**
    * <pre>
@@ -3779,14 +4608,27 @@ public final class LaunchPlanOuterClass {
               break;
             }
             case 66: {
-              flyteidl.admin.Common.Auth.Builder subBuilder = null;
+              flyteidl.admin.LaunchPlanOuterClass.Auth.Builder subBuilder = null;
               if (auth_ != null) {
                 subBuilder = auth_.toBuilder();
               }
-              auth_ = input.readMessage(flyteidl.admin.Common.Auth.parser(), extensionRegistry);
+              auth_ = input.readMessage(flyteidl.admin.LaunchPlanOuterClass.Auth.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(auth_);
                 auth_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 74: {
+              flyteidl.admin.Common.AuthRole.Builder subBuilder = null;
+              if (authRole_ != null) {
+                subBuilder = authRole_.toBuilder();
+              }
+              authRole_ = input.readMessage(flyteidl.admin.Common.AuthRole.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(authRole_);
+                authRole_ = subBuilder.buildPartial();
               }
 
               break;
@@ -4064,15 +4906,15 @@ public final class LaunchPlanOuterClass {
     }
 
     public static final int AUTH_FIELD_NUMBER = 8;
-    private flyteidl.admin.Common.Auth auth_;
+    private flyteidl.admin.LaunchPlanOuterClass.Auth auth_;
     /**
      * <pre>
      * Indicates the permission associated with workflow executions triggered with this launch plan.
      * </pre>
      *
-     * <code>.flyteidl.admin.Auth auth = 8;</code>
+     * <code>.flyteidl.admin.Auth auth = 8 [deprecated = true];</code>
      */
-    public boolean hasAuth() {
+    @java.lang.Deprecated public boolean hasAuth() {
       return auth_ != null;
     }
     /**
@@ -4080,20 +4922,41 @@ public final class LaunchPlanOuterClass {
      * Indicates the permission associated with workflow executions triggered with this launch plan.
      * </pre>
      *
-     * <code>.flyteidl.admin.Auth auth = 8;</code>
+     * <code>.flyteidl.admin.Auth auth = 8 [deprecated = true];</code>
      */
-    public flyteidl.admin.Common.Auth getAuth() {
-      return auth_ == null ? flyteidl.admin.Common.Auth.getDefaultInstance() : auth_;
+    @java.lang.Deprecated public flyteidl.admin.LaunchPlanOuterClass.Auth getAuth() {
+      return auth_ == null ? flyteidl.admin.LaunchPlanOuterClass.Auth.getDefaultInstance() : auth_;
     }
     /**
      * <pre>
      * Indicates the permission associated with workflow executions triggered with this launch plan.
      * </pre>
      *
-     * <code>.flyteidl.admin.Auth auth = 8;</code>
+     * <code>.flyteidl.admin.Auth auth = 8 [deprecated = true];</code>
      */
-    public flyteidl.admin.Common.AuthOrBuilder getAuthOrBuilder() {
+    @java.lang.Deprecated public flyteidl.admin.LaunchPlanOuterClass.AuthOrBuilder getAuthOrBuilder() {
       return getAuth();
+    }
+
+    public static final int AUTH_ROLE_FIELD_NUMBER = 9;
+    private flyteidl.admin.Common.AuthRole authRole_;
+    /**
+     * <code>.flyteidl.admin.AuthRole auth_role = 9;</code>
+     */
+    public boolean hasAuthRole() {
+      return authRole_ != null;
+    }
+    /**
+     * <code>.flyteidl.admin.AuthRole auth_role = 9;</code>
+     */
+    public flyteidl.admin.Common.AuthRole getAuthRole() {
+      return authRole_ == null ? flyteidl.admin.Common.AuthRole.getDefaultInstance() : authRole_;
+    }
+    /**
+     * <code>.flyteidl.admin.AuthRole auth_role = 9;</code>
+     */
+    public flyteidl.admin.Common.AuthRoleOrBuilder getAuthRoleOrBuilder() {
+      return getAuthRole();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4134,6 +4997,9 @@ public final class LaunchPlanOuterClass {
       if (auth_ != null) {
         output.writeMessage(8, getAuth());
       }
+      if (authRole_ != null) {
+        output.writeMessage(9, getAuthRole());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4173,6 +5039,10 @@ public final class LaunchPlanOuterClass {
       if (auth_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getAuth());
+      }
+      if (authRole_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getAuthRole());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4226,6 +5096,11 @@ public final class LaunchPlanOuterClass {
         if (!getAuth()
             .equals(other.getAuth())) return false;
       }
+      if (hasAuthRole() != other.hasAuthRole()) return false;
+      if (hasAuthRole()) {
+        if (!getAuthRole()
+            .equals(other.getAuthRole())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4266,6 +5141,10 @@ public final class LaunchPlanOuterClass {
       if (hasAuth()) {
         hash = (37 * hash) + AUTH_FIELD_NUMBER;
         hash = (53 * hash) + getAuth().hashCode();
+      }
+      if (hasAuthRole()) {
+        hash = (37 * hash) + AUTH_ROLE_FIELD_NUMBER;
+        hash = (53 * hash) + getAuthRole().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4448,6 +5327,12 @@ public final class LaunchPlanOuterClass {
           auth_ = null;
           authBuilder_ = null;
         }
+        if (authRoleBuilder_ == null) {
+          authRole_ = null;
+        } else {
+          authRole_ = null;
+          authRoleBuilder_ = null;
+        }
         return this;
       }
 
@@ -4509,6 +5394,11 @@ public final class LaunchPlanOuterClass {
           result.auth_ = auth_;
         } else {
           result.auth_ = authBuilder_.build();
+        }
+        if (authRoleBuilder_ == null) {
+          result.authRole_ = authRole_;
+        } else {
+          result.authRole_ = authRoleBuilder_.build();
         }
         onBuilt();
         return result;
@@ -4582,6 +5472,9 @@ public final class LaunchPlanOuterClass {
         }
         if (other.hasAuth()) {
           mergeAuth(other.getAuth());
+        }
+        if (other.hasAuthRole()) {
+          mergeAuthRole(other.getAuthRole());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5619,17 +6512,17 @@ public final class LaunchPlanOuterClass {
         return annotationsBuilder_;
       }
 
-      private flyteidl.admin.Common.Auth auth_;
+      private flyteidl.admin.LaunchPlanOuterClass.Auth auth_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Common.Auth, flyteidl.admin.Common.Auth.Builder, flyteidl.admin.Common.AuthOrBuilder> authBuilder_;
+          flyteidl.admin.LaunchPlanOuterClass.Auth, flyteidl.admin.LaunchPlanOuterClass.Auth.Builder, flyteidl.admin.LaunchPlanOuterClass.AuthOrBuilder> authBuilder_;
       /**
        * <pre>
        * Indicates the permission associated with workflow executions triggered with this launch plan.
        * </pre>
        *
-       * <code>.flyteidl.admin.Auth auth = 8;</code>
+       * <code>.flyteidl.admin.Auth auth = 8 [deprecated = true];</code>
        */
-      public boolean hasAuth() {
+      @java.lang.Deprecated public boolean hasAuth() {
         return authBuilder_ != null || auth_ != null;
       }
       /**
@@ -5637,11 +6530,11 @@ public final class LaunchPlanOuterClass {
        * Indicates the permission associated with workflow executions triggered with this launch plan.
        * </pre>
        *
-       * <code>.flyteidl.admin.Auth auth = 8;</code>
+       * <code>.flyteidl.admin.Auth auth = 8 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.Auth getAuth() {
+      @java.lang.Deprecated public flyteidl.admin.LaunchPlanOuterClass.Auth getAuth() {
         if (authBuilder_ == null) {
-          return auth_ == null ? flyteidl.admin.Common.Auth.getDefaultInstance() : auth_;
+          return auth_ == null ? flyteidl.admin.LaunchPlanOuterClass.Auth.getDefaultInstance() : auth_;
         } else {
           return authBuilder_.getMessage();
         }
@@ -5651,9 +6544,9 @@ public final class LaunchPlanOuterClass {
        * Indicates the permission associated with workflow executions triggered with this launch plan.
        * </pre>
        *
-       * <code>.flyteidl.admin.Auth auth = 8;</code>
+       * <code>.flyteidl.admin.Auth auth = 8 [deprecated = true];</code>
        */
-      public Builder setAuth(flyteidl.admin.Common.Auth value) {
+      @java.lang.Deprecated public Builder setAuth(flyteidl.admin.LaunchPlanOuterClass.Auth value) {
         if (authBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5671,10 +6564,10 @@ public final class LaunchPlanOuterClass {
        * Indicates the permission associated with workflow executions triggered with this launch plan.
        * </pre>
        *
-       * <code>.flyteidl.admin.Auth auth = 8;</code>
+       * <code>.flyteidl.admin.Auth auth = 8 [deprecated = true];</code>
        */
-      public Builder setAuth(
-          flyteidl.admin.Common.Auth.Builder builderForValue) {
+      @java.lang.Deprecated public Builder setAuth(
+          flyteidl.admin.LaunchPlanOuterClass.Auth.Builder builderForValue) {
         if (authBuilder_ == null) {
           auth_ = builderForValue.build();
           onChanged();
@@ -5689,13 +6582,13 @@ public final class LaunchPlanOuterClass {
        * Indicates the permission associated with workflow executions triggered with this launch plan.
        * </pre>
        *
-       * <code>.flyteidl.admin.Auth auth = 8;</code>
+       * <code>.flyteidl.admin.Auth auth = 8 [deprecated = true];</code>
        */
-      public Builder mergeAuth(flyteidl.admin.Common.Auth value) {
+      @java.lang.Deprecated public Builder mergeAuth(flyteidl.admin.LaunchPlanOuterClass.Auth value) {
         if (authBuilder_ == null) {
           if (auth_ != null) {
             auth_ =
-              flyteidl.admin.Common.Auth.newBuilder(auth_).mergeFrom(value).buildPartial();
+              flyteidl.admin.LaunchPlanOuterClass.Auth.newBuilder(auth_).mergeFrom(value).buildPartial();
           } else {
             auth_ = value;
           }
@@ -5711,9 +6604,9 @@ public final class LaunchPlanOuterClass {
        * Indicates the permission associated with workflow executions triggered with this launch plan.
        * </pre>
        *
-       * <code>.flyteidl.admin.Auth auth = 8;</code>
+       * <code>.flyteidl.admin.Auth auth = 8 [deprecated = true];</code>
        */
-      public Builder clearAuth() {
+      @java.lang.Deprecated public Builder clearAuth() {
         if (authBuilder_ == null) {
           auth_ = null;
           onChanged();
@@ -5729,9 +6622,9 @@ public final class LaunchPlanOuterClass {
        * Indicates the permission associated with workflow executions triggered with this launch plan.
        * </pre>
        *
-       * <code>.flyteidl.admin.Auth auth = 8;</code>
+       * <code>.flyteidl.admin.Auth auth = 8 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.Auth.Builder getAuthBuilder() {
+      @java.lang.Deprecated public flyteidl.admin.LaunchPlanOuterClass.Auth.Builder getAuthBuilder() {
         
         onChanged();
         return getAuthFieldBuilder().getBuilder();
@@ -5741,14 +6634,14 @@ public final class LaunchPlanOuterClass {
        * Indicates the permission associated with workflow executions triggered with this launch plan.
        * </pre>
        *
-       * <code>.flyteidl.admin.Auth auth = 8;</code>
+       * <code>.flyteidl.admin.Auth auth = 8 [deprecated = true];</code>
        */
-      public flyteidl.admin.Common.AuthOrBuilder getAuthOrBuilder() {
+      @java.lang.Deprecated public flyteidl.admin.LaunchPlanOuterClass.AuthOrBuilder getAuthOrBuilder() {
         if (authBuilder_ != null) {
           return authBuilder_.getMessageOrBuilder();
         } else {
           return auth_ == null ?
-              flyteidl.admin.Common.Auth.getDefaultInstance() : auth_;
+              flyteidl.admin.LaunchPlanOuterClass.Auth.getDefaultInstance() : auth_;
         }
       }
       /**
@@ -5756,20 +6649,137 @@ public final class LaunchPlanOuterClass {
        * Indicates the permission associated with workflow executions triggered with this launch plan.
        * </pre>
        *
-       * <code>.flyteidl.admin.Auth auth = 8;</code>
+       * <code>.flyteidl.admin.Auth auth = 8 [deprecated = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Common.Auth, flyteidl.admin.Common.Auth.Builder, flyteidl.admin.Common.AuthOrBuilder> 
+          flyteidl.admin.LaunchPlanOuterClass.Auth, flyteidl.admin.LaunchPlanOuterClass.Auth.Builder, flyteidl.admin.LaunchPlanOuterClass.AuthOrBuilder> 
           getAuthFieldBuilder() {
         if (authBuilder_ == null) {
           authBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.Common.Auth, flyteidl.admin.Common.Auth.Builder, flyteidl.admin.Common.AuthOrBuilder>(
+              flyteidl.admin.LaunchPlanOuterClass.Auth, flyteidl.admin.LaunchPlanOuterClass.Auth.Builder, flyteidl.admin.LaunchPlanOuterClass.AuthOrBuilder>(
                   getAuth(),
                   getParentForChildren(),
                   isClean());
           auth_ = null;
         }
         return authBuilder_;
+      }
+
+      private flyteidl.admin.Common.AuthRole authRole_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.AuthRole, flyteidl.admin.Common.AuthRole.Builder, flyteidl.admin.Common.AuthRoleOrBuilder> authRoleBuilder_;
+      /**
+       * <code>.flyteidl.admin.AuthRole auth_role = 9;</code>
+       */
+      public boolean hasAuthRole() {
+        return authRoleBuilder_ != null || authRole_ != null;
+      }
+      /**
+       * <code>.flyteidl.admin.AuthRole auth_role = 9;</code>
+       */
+      public flyteidl.admin.Common.AuthRole getAuthRole() {
+        if (authRoleBuilder_ == null) {
+          return authRole_ == null ? flyteidl.admin.Common.AuthRole.getDefaultInstance() : authRole_;
+        } else {
+          return authRoleBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.AuthRole auth_role = 9;</code>
+       */
+      public Builder setAuthRole(flyteidl.admin.Common.AuthRole value) {
+        if (authRoleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          authRole_ = value;
+          onChanged();
+        } else {
+          authRoleBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.AuthRole auth_role = 9;</code>
+       */
+      public Builder setAuthRole(
+          flyteidl.admin.Common.AuthRole.Builder builderForValue) {
+        if (authRoleBuilder_ == null) {
+          authRole_ = builderForValue.build();
+          onChanged();
+        } else {
+          authRoleBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.AuthRole auth_role = 9;</code>
+       */
+      public Builder mergeAuthRole(flyteidl.admin.Common.AuthRole value) {
+        if (authRoleBuilder_ == null) {
+          if (authRole_ != null) {
+            authRole_ =
+              flyteidl.admin.Common.AuthRole.newBuilder(authRole_).mergeFrom(value).buildPartial();
+          } else {
+            authRole_ = value;
+          }
+          onChanged();
+        } else {
+          authRoleBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.AuthRole auth_role = 9;</code>
+       */
+      public Builder clearAuthRole() {
+        if (authRoleBuilder_ == null) {
+          authRole_ = null;
+          onChanged();
+        } else {
+          authRole_ = null;
+          authRoleBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.AuthRole auth_role = 9;</code>
+       */
+      public flyteidl.admin.Common.AuthRole.Builder getAuthRoleBuilder() {
+        
+        onChanged();
+        return getAuthRoleFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.admin.AuthRole auth_role = 9;</code>
+       */
+      public flyteidl.admin.Common.AuthRoleOrBuilder getAuthRoleOrBuilder() {
+        if (authRoleBuilder_ != null) {
+          return authRoleBuilder_.getMessageOrBuilder();
+        } else {
+          return authRole_ == null ?
+              flyteidl.admin.Common.AuthRole.getDefaultInstance() : authRole_;
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.AuthRole auth_role = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.AuthRole, flyteidl.admin.Common.AuthRole.Builder, flyteidl.admin.Common.AuthRoleOrBuilder> 
+          getAuthRoleFieldBuilder() {
+        if (authRoleBuilder_ == null) {
+          authRoleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.Common.AuthRole, flyteidl.admin.Common.AuthRole.Builder, flyteidl.admin.Common.AuthRoleOrBuilder>(
+                  getAuthRole(),
+                  getParentForChildren(),
+                  isClean());
+          authRole_ = null;
+        }
+        return authRoleBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -11720,6 +12730,11 @@ public final class LaunchPlanOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_LaunchPlanList_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_Auth_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_Auth_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_LaunchPlanSpec_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -11778,37 +12793,41 @@ public final class LaunchPlanOuterClass {
       "closure\030\003 \001(\0132!.flyteidl.admin.LaunchPla" +
       "nClosure\"Q\n\016LaunchPlanList\0220\n\014launch_pla" +
       "ns\030\001 \003(\0132\032.flyteidl.admin.LaunchPlan\022\r\n\005" +
-      "token\030\002 \001(\t\"\363\002\n\016LaunchPlanSpec\022.\n\013workfl" +
-      "ow_id\030\001 \001(\0132\031.flyteidl.core.Identifier\022;" +
-      "\n\017entity_metadata\030\002 \001(\0132\".flyteidl.admin" +
-      ".LaunchPlanMetadata\0223\n\016default_inputs\030\003 " +
-      "\001(\0132\033.flyteidl.core.ParameterMap\022/\n\014fixe" +
-      "d_inputs\030\004 \001(\0132\031.flyteidl.core.LiteralMa" +
-      "p\022\020\n\004role\030\005 \001(\tB\002\030\001\022&\n\006labels\030\006 \001(\0132\026.fl" +
-      "yteidl.admin.Labels\0220\n\013annotations\030\007 \001(\013" +
-      "2\033.flyteidl.admin.Annotations\022\"\n\004auth\030\010 " +
-      "\001(\0132\024.flyteidl.admin.Auth\"\217\002\n\021LaunchPlan" +
-      "Closure\022.\n\005state\030\001 \001(\0162\037.flyteidl.admin." +
-      "LaunchPlanState\0224\n\017expected_inputs\030\002 \001(\013" +
-      "2\033.flyteidl.core.ParameterMap\0224\n\020expecte" +
-      "d_outputs\030\003 \001(\0132\032.flyteidl.core.Variable" +
-      "Map\022.\n\ncreated_at\030\004 \001(\0132\032.google.protobu" +
-      "f.Timestamp\022.\n\nupdated_at\030\005 \001(\0132\032.google" +
-      ".protobuf.Timestamp\"u\n\022LaunchPlanMetadat" +
-      "a\022*\n\010schedule\030\001 \001(\0132\030.flyteidl.admin.Sch" +
-      "edule\0223\n\rnotifications\030\002 \003(\0132\034.flyteidl." +
-      "admin.Notification\"p\n\027LaunchPlanUpdateRe" +
-      "quest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identi" +
-      "fier\022.\n\005state\030\002 \001(\0162\037.flyteidl.admin.Lau" +
-      "nchPlanState\"\032\n\030LaunchPlanUpdateResponse" +
-      "\"L\n\027ActiveLaunchPlanRequest\0221\n\002id\030\001 \001(\0132" +
-      "%.flyteidl.admin.NamedEntityIdentifier\"\203" +
-      "\001\n\033ActiveLaunchPlanListRequest\022\017\n\007projec" +
-      "t\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\r\n\005limit\030\003 \001(\r\022\r" +
-      "\n\005token\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyteid" +
-      "l.admin.Sort*+\n\017LaunchPlanState\022\014\n\010INACT" +
-      "IVE\020\000\022\n\n\006ACTIVE\020\001B3Z1github.com/lyft/fly" +
-      "teidl/gen/pb-go/flyteidl/adminb\006proto3"
+      "token\030\002 \001(\t\"T\n\004Auth\022\034\n\022assumable_iam_rol" +
+      "e\030\001 \001(\tH\000\022$\n\032kubernetes_service_account\030" +
+      "\002 \001(\tH\000B\010\n\006method\"\244\003\n\016LaunchPlanSpec\022.\n\013" +
+      "workflow_id\030\001 \001(\0132\031.flyteidl.core.Identi" +
+      "fier\022;\n\017entity_metadata\030\002 \001(\0132\".flyteidl" +
+      ".admin.LaunchPlanMetadata\0223\n\016default_inp" +
+      "uts\030\003 \001(\0132\033.flyteidl.core.ParameterMap\022/" +
+      "\n\014fixed_inputs\030\004 \001(\0132\031.flyteidl.core.Lit" +
+      "eralMap\022\020\n\004role\030\005 \001(\tB\002\030\001\022&\n\006labels\030\006 \001(" +
+      "\0132\026.flyteidl.admin.Labels\0220\n\013annotations" +
+      "\030\007 \001(\0132\033.flyteidl.admin.Annotations\022&\n\004a" +
+      "uth\030\010 \001(\0132\024.flyteidl.admin.AuthB\002\030\001\022+\n\ta" +
+      "uth_role\030\t \001(\0132\030.flyteidl.admin.AuthRole" +
+      "\"\217\002\n\021LaunchPlanClosure\022.\n\005state\030\001 \001(\0162\037." +
+      "flyteidl.admin.LaunchPlanState\0224\n\017expect" +
+      "ed_inputs\030\002 \001(\0132\033.flyteidl.core.Paramete" +
+      "rMap\0224\n\020expected_outputs\030\003 \001(\0132\032.flyteid" +
+      "l.core.VariableMap\022.\n\ncreated_at\030\004 \001(\0132\032" +
+      ".google.protobuf.Timestamp\022.\n\nupdated_at" +
+      "\030\005 \001(\0132\032.google.protobuf.Timestamp\"u\n\022La" +
+      "unchPlanMetadata\022*\n\010schedule\030\001 \001(\0132\030.fly" +
+      "teidl.admin.Schedule\0223\n\rnotifications\030\002 " +
+      "\003(\0132\034.flyteidl.admin.Notification\"p\n\027Lau" +
+      "nchPlanUpdateRequest\022%\n\002id\030\001 \001(\0132\031.flyte" +
+      "idl.core.Identifier\022.\n\005state\030\002 \001(\0162\037.fly" +
+      "teidl.admin.LaunchPlanState\"\032\n\030LaunchPla" +
+      "nUpdateResponse\"L\n\027ActiveLaunchPlanReque" +
+      "st\0221\n\002id\030\001 \001(\0132%.flyteidl.admin.NamedEnt" +
+      "ityIdentifier\"\203\001\n\033ActiveLaunchPlanListRe" +
+      "quest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\r" +
+      "\n\005limit\030\003 \001(\r\022\r\n\005token\030\004 \001(\t\022%\n\007sort_by\030" +
+      "\005 \001(\0132\024.flyteidl.admin.Sort*+\n\017LaunchPla" +
+      "nState\022\014\n\010INACTIVE\020\000\022\n\n\006ACTIVE\020\001B3Z1gith" +
+      "ub.com/lyft/flyteidl/gen/pb-go/flyteidl/" +
+      "adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -11852,44 +12871,50 @@ public final class LaunchPlanOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_LaunchPlanList_descriptor,
         new java.lang.String[] { "LaunchPlans", "Token", });
-    internal_static_flyteidl_admin_LaunchPlanSpec_descriptor =
+    internal_static_flyteidl_admin_Auth_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_flyteidl_admin_Auth_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_Auth_descriptor,
+        new java.lang.String[] { "AssumableIamRole", "KubernetesServiceAccount", "Method", });
+    internal_static_flyteidl_admin_LaunchPlanSpec_descriptor =
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_LaunchPlanSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_LaunchPlanSpec_descriptor,
-        new java.lang.String[] { "WorkflowId", "EntityMetadata", "DefaultInputs", "FixedInputs", "Role", "Labels", "Annotations", "Auth", });
+        new java.lang.String[] { "WorkflowId", "EntityMetadata", "DefaultInputs", "FixedInputs", "Role", "Labels", "Annotations", "Auth", "AuthRole", });
     internal_static_flyteidl_admin_LaunchPlanClosure_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_admin_LaunchPlanClosure_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_LaunchPlanClosure_descriptor,
         new java.lang.String[] { "State", "ExpectedInputs", "ExpectedOutputs", "CreatedAt", "UpdatedAt", });
     internal_static_flyteidl_admin_LaunchPlanMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_admin_LaunchPlanMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_LaunchPlanMetadata_descriptor,
         new java.lang.String[] { "Schedule", "Notifications", });
     internal_static_flyteidl_admin_LaunchPlanUpdateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_admin_LaunchPlanUpdateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_LaunchPlanUpdateRequest_descriptor,
         new java.lang.String[] { "Id", "State", });
     internal_static_flyteidl_admin_LaunchPlanUpdateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_admin_LaunchPlanUpdateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_LaunchPlanUpdateResponse_descriptor,
         new java.lang.String[] { });
     internal_static_flyteidl_admin_ActiveLaunchPlanRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_flyteidl_admin_ActiveLaunchPlanRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ActiveLaunchPlanRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_flyteidl_admin_ActiveLaunchPlanListRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_flyteidl_admin_ActiveLaunchPlanListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ActiveLaunchPlanListRequest_descriptor,

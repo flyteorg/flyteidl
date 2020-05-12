@@ -238,7 +238,7 @@ message Annotations {
 }
 
 // Defines permissions associated with executions.
-message Auth {
+message AuthRole {
   oneof method {
     string assumable_iam_role         = 1;
     string kubernetes_service_account = 2;

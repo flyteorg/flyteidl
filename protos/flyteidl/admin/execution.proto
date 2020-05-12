@@ -235,7 +235,7 @@ message ExecutionSpec {
     Annotations annotations   = 8;
 
     // Optional: auth override to apply this execution.
-    Auth auth                 = 16;
+    AuthRole auth_role        = 16;
 
 }
 

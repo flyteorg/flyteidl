@@ -1598,19 +1598,19 @@ var _ interface {
 	ErrorName() string
 } = AnnotationsValidationError{}
 
-// Validate checks the field values on Auth with the rules defined in the proto
-// definition for this message. If any rules are violated, an error is returned.
-func (m *Auth) Validate() error {
+// Validate checks the field values on AuthRole with the rules defined in the
+// proto definition for this message. If any rules are violated, an error is returned.
+func (m *AuthRole) Validate() error {
 	if m == nil {
 		return nil
 	}
 
 	switch m.Method.(type) {
 
-	case *Auth_AssumableIamRole:
+	case *AuthRole_AssumableIamRole:
 		// no validation rules for AssumableIamRole
 
-	case *Auth_KubernetesServiceAccount:
+	case *AuthRole_KubernetesServiceAccount:
 		// no validation rules for KubernetesServiceAccount
 
 	}
@@ -1618,9 +1618,9 @@ func (m *Auth) Validate() error {
 	return nil
 }
 
-// AuthValidationError is the validation error returned by Auth.Validate if the
-// designated constraints aren't met.
-type AuthValidationError struct {
+// AuthRoleValidationError is the validation error returned by
+// AuthRole.Validate if the designated constraints aren't met.
+type AuthRoleValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -1628,22 +1628,22 @@ type AuthValidationError struct {
 }
 
 // Field function returns field value.
-func (e AuthValidationError) Field() string { return e.field }
+func (e AuthRoleValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e AuthValidationError) Reason() string { return e.reason }
+func (e AuthRoleValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e AuthValidationError) Cause() error { return e.cause }
+func (e AuthRoleValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e AuthValidationError) Key() bool { return e.key }
+func (e AuthRoleValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e AuthValidationError) ErrorName() string { return "AuthValidationError" }
+func (e AuthRoleValidationError) ErrorName() string { return "AuthRoleValidationError" }
 
 // Error satisfies the builtin error interface
-func (e AuthValidationError) Error() string {
+func (e AuthRoleValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -1655,14 +1655,14 @@ func (e AuthValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sAuth.%s: %s%s",
+		"invalid %sAuthRole.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = AuthValidationError{}
+var _ error = AuthRoleValidationError{}
 
 var _ interface {
 	Field() string
@@ -1670,4 +1670,4 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = AuthValidationError{}
+} = AuthRoleValidationError{}

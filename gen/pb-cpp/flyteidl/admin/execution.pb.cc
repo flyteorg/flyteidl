@@ -16,7 +16,7 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Auth_flyteidl_2fadmin_2fcommon_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_AuthRole_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_UrlBlob_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Annotations_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Labels_flyteidl_2fadmin_2fcommon_2eproto;
@@ -326,7 +326,7 @@ static void InitDefaultsExecutionSpec_flyteidl_2fadmin_2fexecution_2eproto() {
       &scc_info_NotificationList_flyteidl_2fadmin_2fexecution_2eproto.base,
       &scc_info_Labels_flyteidl_2fadmin_2fcommon_2eproto.base,
       &scc_info_Annotations_flyteidl_2fadmin_2fcommon_2eproto.base,
-      &scc_info_Auth_flyteidl_2fadmin_2fcommon_2eproto.base,}};
+      &scc_info_AuthRole_flyteidl_2fadmin_2fcommon_2eproto.base,}};
 
 static void InitDefaultsExecutionTerminateRequest_flyteidl_2fadmin_2fexecution_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -525,7 +525,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fexecution_2eprot
   offsetof(::flyteidl::admin::ExecutionSpecDefaultTypeInternal, disable_all_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, labels_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, annotations_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, auth_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, auth_role_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, notification_overrides_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionTerminateRequest, _internal_metadata_),
@@ -656,7 +656,7 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto[] =
   "CHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016"
   "CHILD_WORKFLOW\020\004\"G\n\020NotificationList\0223\n\r"
   "notifications\030\001 \003(\0132\034.flyteidl.admin.Not"
-  "ification\"\223\003\n\rExecutionSpec\022.\n\013launch_pl"
+  "ification\"\234\003\n\rExecutionSpec\022.\n\013launch_pl"
   "an\030\001 \001(\0132\031.flyteidl.core.Identifier\022-\n\006i"
   "nputs\030\002 \001(\0132\031.flyteidl.core.LiteralMapB\002"
   "\030\001\0223\n\010metadata\030\003 \001(\0132!.flyteidl.admin.Ex"
@@ -664,24 +664,24 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto[] =
   ".flyteidl.admin.NotificationListH\000\022\025\n\013di"
   "sable_all\030\006 \001(\010H\000\022&\n\006labels\030\007 \001(\0132\026.flyt"
   "eidl.admin.Labels\0220\n\013annotations\030\010 \001(\0132\033"
-  ".flyteidl.admin.Annotations\022\"\n\004auth\030\020 \001("
-  "\0132\024.flyteidl.admin.AuthB\030\n\026notification_"
-  "overridesJ\004\010\004\020\005\"b\n\031ExecutionTerminateReq"
-  "uest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflo"
-  "wExecutionIdentifier\022\r\n\005cause\030\002 \001(\t\"\034\n\032E"
-  "xecutionTerminateResponse\"Y\n\037WorkflowExe"
-  "cutionGetDataRequest\0226\n\002id\030\001 \001(\0132*.flyte"
-  "idl.core.WorkflowExecutionIdentifier\"u\n "
-  "WorkflowExecutionGetDataResponse\022(\n\007outp"
-  "uts\030\001 \001(\0132\027.flyteidl.admin.UrlBlob\022\'\n\006in"
-  "puts\030\002 \001(\0132\027.flyteidl.admin.UrlBlobB3Z1g"
-  "ithub.com/lyft/flyteidl/gen/pb-go/flytei"
-  "dl/adminb\006proto3"
+  ".flyteidl.admin.Annotations\022+\n\tauth_role"
+  "\030\020 \001(\0132\030.flyteidl.admin.AuthRoleB\030\n\026noti"
+  "fication_overridesJ\004\010\004\020\005\"b\n\031ExecutionTer"
+  "minateRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.cor"
+  "e.WorkflowExecutionIdentifier\022\r\n\005cause\030\002"
+  " \001(\t\"\034\n\032ExecutionTerminateResponse\"Y\n\037Wo"
+  "rkflowExecutionGetDataRequest\0226\n\002id\030\001 \001("
+  "\0132*.flyteidl.core.WorkflowExecutionIdent"
+  "ifier\"u\n WorkflowExecutionGetDataRespons"
+  "e\022(\n\007outputs\030\001 \001(\0132\027.flyteidl.admin.UrlB"
+  "lob\022\'\n\006inputs\030\002 \001(\0132\027.flyteidl.admin.Url"
+  "BlobB3Z1github.com/lyft/flyteidl/gen/pb-"
+  "go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fexecution_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fexecution_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto,
-  "flyteidl/admin/execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto, 3056,
+  "flyteidl/admin/execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fexecution_2eproto, 3065,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fexecution_2eproto() {
@@ -6227,8 +6227,8 @@ void ExecutionSpec::InitAsDefaultInstance() {
       ::flyteidl::admin::Labels::internal_default_instance());
   ::flyteidl::admin::_ExecutionSpec_default_instance_._instance.get_mutable()->annotations_ = const_cast< ::flyteidl::admin::Annotations*>(
       ::flyteidl::admin::Annotations::internal_default_instance());
-  ::flyteidl::admin::_ExecutionSpec_default_instance_._instance.get_mutable()->auth_ = const_cast< ::flyteidl::admin::Auth*>(
-      ::flyteidl::admin::Auth::internal_default_instance());
+  ::flyteidl::admin::_ExecutionSpec_default_instance_._instance.get_mutable()->auth_role_ = const_cast< ::flyteidl::admin::AuthRole*>(
+      ::flyteidl::admin::AuthRole::internal_default_instance());
 }
 class ExecutionSpec::HasBitSetters {
  public:
@@ -6238,7 +6238,7 @@ class ExecutionSpec::HasBitSetters {
   static const ::flyteidl::admin::NotificationList& notifications(const ExecutionSpec* msg);
   static const ::flyteidl::admin::Labels& labels(const ExecutionSpec* msg);
   static const ::flyteidl::admin::Annotations& annotations(const ExecutionSpec* msg);
-  static const ::flyteidl::admin::Auth& auth(const ExecutionSpec* msg);
+  static const ::flyteidl::admin::AuthRole& auth_role(const ExecutionSpec* msg);
 };
 
 const ::flyteidl::core::Identifier&
@@ -6265,9 +6265,9 @@ const ::flyteidl::admin::Annotations&
 ExecutionSpec::HasBitSetters::annotations(const ExecutionSpec* msg) {
   return *msg->annotations_;
 }
-const ::flyteidl::admin::Auth&
-ExecutionSpec::HasBitSetters::auth(const ExecutionSpec* msg) {
-  return *msg->auth_;
+const ::flyteidl::admin::AuthRole&
+ExecutionSpec::HasBitSetters::auth_role(const ExecutionSpec* msg) {
+  return *msg->auth_role_;
 }
 void ExecutionSpec::clear_launch_plan() {
   if (GetArenaNoVirtual() == nullptr && launch_plan_ != nullptr) {
@@ -6307,11 +6307,11 @@ void ExecutionSpec::clear_annotations() {
   }
   annotations_ = nullptr;
 }
-void ExecutionSpec::clear_auth() {
-  if (GetArenaNoVirtual() == nullptr && auth_ != nullptr) {
-    delete auth_;
+void ExecutionSpec::clear_auth_role() {
+  if (GetArenaNoVirtual() == nullptr && auth_role_ != nullptr) {
+    delete auth_role_;
   }
-  auth_ = nullptr;
+  auth_role_ = nullptr;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ExecutionSpec::kLaunchPlanFieldNumber;
@@ -6321,7 +6321,7 @@ const int ExecutionSpec::kNotificationsFieldNumber;
 const int ExecutionSpec::kDisableAllFieldNumber;
 const int ExecutionSpec::kLabelsFieldNumber;
 const int ExecutionSpec::kAnnotationsFieldNumber;
-const int ExecutionSpec::kAuthFieldNumber;
+const int ExecutionSpec::kAuthRoleFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ExecutionSpec::ExecutionSpec()
@@ -6358,10 +6358,10 @@ ExecutionSpec::ExecutionSpec(const ExecutionSpec& from)
   } else {
     annotations_ = nullptr;
   }
-  if (from.has_auth()) {
-    auth_ = new ::flyteidl::admin::Auth(*from.auth_);
+  if (from.has_auth_role()) {
+    auth_role_ = new ::flyteidl::admin::AuthRole(*from.auth_role_);
   } else {
-    auth_ = nullptr;
+    auth_role_ = nullptr;
   }
   clear_has_notification_overrides();
   switch (from.notification_overrides_case()) {
@@ -6384,8 +6384,8 @@ void ExecutionSpec::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_ExecutionSpec_flyteidl_2fadmin_2fexecution_2eproto.base);
   ::memset(&launch_plan_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&auth_) -
-      reinterpret_cast<char*>(&launch_plan_)) + sizeof(auth_));
+      reinterpret_cast<char*>(&auth_role_) -
+      reinterpret_cast<char*>(&launch_plan_)) + sizeof(auth_role_));
   clear_has_notification_overrides();
 }
 
@@ -6400,7 +6400,7 @@ void ExecutionSpec::SharedDtor() {
   if (this != internal_default_instance()) delete metadata_;
   if (this != internal_default_instance()) delete labels_;
   if (this != internal_default_instance()) delete annotations_;
-  if (this != internal_default_instance()) delete auth_;
+  if (this != internal_default_instance()) delete auth_role_;
   if (has_notification_overrides()) {
     clear_notification_overrides();
   }
@@ -6460,10 +6460,10 @@ void ExecutionSpec::Clear() {
     delete annotations_;
   }
   annotations_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && auth_ != nullptr) {
-    delete auth_;
+  if (GetArenaNoVirtual() == nullptr && auth_role_ != nullptr) {
+    delete auth_role_;
   }
-  auth_ = nullptr;
+  auth_role_ = nullptr;
   clear_notification_overrides();
   _internal_metadata_.Clear();
 }
@@ -6566,13 +6566,13 @@ const char* ExecutionSpec::_InternalParse(const char* begin, const char* end, vo
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.admin.Auth auth = 16;
+      // .flyteidl.admin.AuthRole auth_role = 16;
       case 16: {
         if (static_cast<::google::protobuf::uint8>(tag) != 130) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::admin::Auth::_InternalParse;
-        object = msg->mutable_auth();
+        parser_till_end = ::flyteidl::admin::AuthRole::_InternalParse;
+        object = msg->mutable_auth_role();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -6689,11 +6689,11 @@ bool ExecutionSpec::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.Auth auth = 16;
+      // .flyteidl.admin.AuthRole auth_role = 16;
       case 16: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (130 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_auth()));
+               input, mutable_auth_role()));
         } else {
           goto handle_unusual;
         }
@@ -6768,10 +6768,10 @@ void ExecutionSpec::SerializeWithCachedSizes(
       8, HasBitSetters::annotations(this), output);
   }
 
-  // .flyteidl.admin.Auth auth = 16;
-  if (this->has_auth()) {
+  // .flyteidl.admin.AuthRole auth_role = 16;
+  if (this->has_auth_role()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      16, HasBitSetters::auth(this), output);
+      16, HasBitSetters::auth_role(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6834,11 +6834,11 @@ void ExecutionSpec::SerializeWithCachedSizes(
         8, HasBitSetters::annotations(this), target);
   }
 
-  // .flyteidl.admin.Auth auth = 16;
-  if (this->has_auth()) {
+  // .flyteidl.admin.AuthRole auth_role = 16;
+  if (this->has_auth_role()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        16, HasBitSetters::auth(this), target);
+        16, HasBitSetters::auth_role(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6897,11 +6897,11 @@ size_t ExecutionSpec::ByteSizeLong() const {
         *annotations_);
   }
 
-  // .flyteidl.admin.Auth auth = 16;
-  if (this->has_auth()) {
+  // .flyteidl.admin.AuthRole auth_role = 16;
+  if (this->has_auth_role()) {
     total_size += 2 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *auth_);
+        *auth_role_);
   }
 
   switch (notification_overrides_case()) {
@@ -6963,8 +6963,8 @@ void ExecutionSpec::MergeFrom(const ExecutionSpec& from) {
   if (from.has_annotations()) {
     mutable_annotations()->::flyteidl::admin::Annotations::MergeFrom(from.annotations());
   }
-  if (from.has_auth()) {
-    mutable_auth()->::flyteidl::admin::Auth::MergeFrom(from.auth());
+  if (from.has_auth_role()) {
+    mutable_auth_role()->::flyteidl::admin::AuthRole::MergeFrom(from.auth_role());
   }
   switch (from.notification_overrides_case()) {
     case kNotifications: {
@@ -7011,7 +7011,7 @@ void ExecutionSpec::InternalSwap(ExecutionSpec* other) {
   swap(metadata_, other->metadata_);
   swap(labels_, other->labels_);
   swap(annotations_, other->annotations_);
-  swap(auth_, other->auth_);
+  swap(auth_role_, other->auth_role_);
   swap(notification_overrides_, other->notification_overrides_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }

@@ -18941,8 +18941,8 @@ public final class Common {
 
   }
 
-  public interface AuthOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.admin.Auth)
+  public interface AuthRoleOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.AuthRole)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -18965,25 +18965,25 @@ public final class Common {
     com.google.protobuf.ByteString
         getKubernetesServiceAccountBytes();
 
-    public flyteidl.admin.Common.Auth.MethodCase getMethodCase();
+    public flyteidl.admin.Common.AuthRole.MethodCase getMethodCase();
   }
   /**
    * <pre>
    * Defines permissions associated with executions.
    * </pre>
    *
-   * Protobuf type {@code flyteidl.admin.Auth}
+   * Protobuf type {@code flyteidl.admin.AuthRole}
    */
-  public  static final class Auth extends
+  public  static final class AuthRole extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.Auth)
-      AuthOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.AuthRole)
+      AuthRoleOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use Auth.newBuilder() to construct.
-    private Auth(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use AuthRole.newBuilder() to construct.
+    private AuthRole(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Auth() {
+    private AuthRole() {
     }
 
     @java.lang.Override
@@ -18991,7 +18991,7 @@ public final class Common {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Auth(
+    private AuthRole(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -19043,15 +19043,15 @@ public final class Common {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.admin.Common.internal_static_flyteidl_admin_Auth_descriptor;
+      return flyteidl.admin.Common.internal_static_flyteidl_admin_AuthRole_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.admin.Common.internal_static_flyteidl_admin_Auth_fieldAccessorTable
+      return flyteidl.admin.Common.internal_static_flyteidl_admin_AuthRole_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.admin.Common.Auth.class, flyteidl.admin.Common.Auth.Builder.class);
+              flyteidl.admin.Common.AuthRole.class, flyteidl.admin.Common.AuthRole.Builder.class);
     }
 
     private int methodCase_ = 0;
@@ -19223,10 +19223,10 @@ public final class Common {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.admin.Common.Auth)) {
+      if (!(obj instanceof flyteidl.admin.Common.AuthRole)) {
         return super.equals(obj);
       }
-      flyteidl.admin.Common.Auth other = (flyteidl.admin.Common.Auth) obj;
+      flyteidl.admin.Common.AuthRole other = (flyteidl.admin.Common.AuthRole) obj;
 
       if (!getMethodCase().equals(other.getMethodCase())) return false;
       switch (methodCase_) {
@@ -19269,69 +19269,69 @@ public final class Common {
       return hash;
     }
 
-    public static flyteidl.admin.Common.Auth parseFrom(
+    public static flyteidl.admin.Common.AuthRole parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.Common.Auth parseFrom(
+    public static flyteidl.admin.Common.AuthRole parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.Common.Auth parseFrom(
+    public static flyteidl.admin.Common.AuthRole parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.Common.Auth parseFrom(
+    public static flyteidl.admin.Common.AuthRole parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.Common.Auth parseFrom(byte[] data)
+    public static flyteidl.admin.Common.AuthRole parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.Common.Auth parseFrom(
+    public static flyteidl.admin.Common.AuthRole parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.Common.Auth parseFrom(java.io.InputStream input)
+    public static flyteidl.admin.Common.AuthRole parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.Common.Auth parseFrom(
+    public static flyteidl.admin.Common.AuthRole parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.Common.Auth parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.admin.Common.AuthRole parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.Common.Auth parseDelimitedFrom(
+    public static flyteidl.admin.Common.AuthRole parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.Common.Auth parseFrom(
+    public static flyteidl.admin.Common.AuthRole parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.Common.Auth parseFrom(
+    public static flyteidl.admin.Common.AuthRole parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -19344,7 +19344,7 @@ public final class Common {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.admin.Common.Auth prototype) {
+    public static Builder newBuilder(flyteidl.admin.Common.AuthRole prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -19364,26 +19364,26 @@ public final class Common {
      * Defines permissions associated with executions.
      * </pre>
      *
-     * Protobuf type {@code flyteidl.admin.Auth}
+     * Protobuf type {@code flyteidl.admin.AuthRole}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.Auth)
-        flyteidl.admin.Common.AuthOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.AuthRole)
+        flyteidl.admin.Common.AuthRoleOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.admin.Common.internal_static_flyteidl_admin_Auth_descriptor;
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_AuthRole_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.admin.Common.internal_static_flyteidl_admin_Auth_fieldAccessorTable
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_AuthRole_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.admin.Common.Auth.class, flyteidl.admin.Common.Auth.Builder.class);
+                flyteidl.admin.Common.AuthRole.class, flyteidl.admin.Common.AuthRole.Builder.class);
       }
 
-      // Construct using flyteidl.admin.Common.Auth.newBuilder()
+      // Construct using flyteidl.admin.Common.AuthRole.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -19409,17 +19409,17 @@ public final class Common {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.admin.Common.internal_static_flyteidl_admin_Auth_descriptor;
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_AuthRole_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.admin.Common.Auth getDefaultInstanceForType() {
-        return flyteidl.admin.Common.Auth.getDefaultInstance();
+      public flyteidl.admin.Common.AuthRole getDefaultInstanceForType() {
+        return flyteidl.admin.Common.AuthRole.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.admin.Common.Auth build() {
-        flyteidl.admin.Common.Auth result = buildPartial();
+      public flyteidl.admin.Common.AuthRole build() {
+        flyteidl.admin.Common.AuthRole result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -19427,8 +19427,8 @@ public final class Common {
       }
 
       @java.lang.Override
-      public flyteidl.admin.Common.Auth buildPartial() {
-        flyteidl.admin.Common.Auth result = new flyteidl.admin.Common.Auth(this);
+      public flyteidl.admin.Common.AuthRole buildPartial() {
+        flyteidl.admin.Common.AuthRole result = new flyteidl.admin.Common.AuthRole(this);
         if (methodCase_ == 1) {
           result.method_ = method_;
         }
@@ -19474,16 +19474,16 @@ public final class Common {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.Common.Auth) {
-          return mergeFrom((flyteidl.admin.Common.Auth)other);
+        if (other instanceof flyteidl.admin.Common.AuthRole) {
+          return mergeFrom((flyteidl.admin.Common.AuthRole)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.admin.Common.Auth other) {
-        if (other == flyteidl.admin.Common.Auth.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.admin.Common.AuthRole other) {
+        if (other == flyteidl.admin.Common.AuthRole.getDefaultInstance()) return this;
         switch (other.getMethodCase()) {
           case ASSUMABLE_IAM_ROLE: {
             methodCase_ = 1;
@@ -19516,11 +19516,11 @@ public final class Common {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.admin.Common.Auth parsedMessage = null;
+        flyteidl.admin.Common.AuthRole parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.Common.Auth) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.admin.Common.AuthRole) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -19717,41 +19717,41 @@ public final class Common {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.admin.Auth)
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.AuthRole)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.admin.Auth)
-    private static final flyteidl.admin.Common.Auth DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.AuthRole)
+    private static final flyteidl.admin.Common.AuthRole DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.admin.Common.Auth();
+      DEFAULT_INSTANCE = new flyteidl.admin.Common.AuthRole();
     }
 
-    public static flyteidl.admin.Common.Auth getDefaultInstance() {
+    public static flyteidl.admin.Common.AuthRole getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Auth>
-        PARSER = new com.google.protobuf.AbstractParser<Auth>() {
+    private static final com.google.protobuf.Parser<AuthRole>
+        PARSER = new com.google.protobuf.AbstractParser<AuthRole>() {
       @java.lang.Override
-      public Auth parsePartialFrom(
+      public AuthRole parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Auth(input, extensionRegistry);
+        return new AuthRole(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<Auth> parser() {
+    public static com.google.protobuf.Parser<AuthRole> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Auth> getParserForType() {
+    public com.google.protobuf.Parser<AuthRole> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.admin.Common.Auth getDefaultInstanceForType() {
+    public flyteidl.admin.Common.AuthRole getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -19868,10 +19868,10 @@ public final class Common {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_Annotations_ValuesEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_Auth_descriptor;
+    internal_static_flyteidl_admin_AuthRole_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_Auth_fieldAccessorTable;
+      internal_static_flyteidl_admin_AuthRole_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -19939,13 +19939,13 @@ public final class Common {
       "8\001\"u\n\013Annotations\0227\n\006values\030\001 \003(\0132\'.flyt" +
       "eidl.admin.Annotations.ValuesEntry\032-\n\013Va" +
       "luesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
-      "\001\"T\n\004Auth\022\034\n\022assumable_iam_role\030\001 \001(\tH\000\022" +
-      "$\n\032kubernetes_service_account\030\002 \001(\tH\000B\010\n" +
-      "\006method*\\\n\020NamedEntityState\022\027\n\023NAMED_ENT" +
-      "ITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001\022" +
-      "\024\n\020SYSTEM_GENERATED\020\002B3Z1github.com/lyft" +
-      "/flyteidl/gen/pb-go/flyteidl/adminb\006prot" +
-      "o3"
+      "\001\"X\n\010AuthRole\022\034\n\022assumable_iam_role\030\001 \001(" +
+      "\tH\000\022$\n\032kubernetes_service_account\030\002 \001(\tH" +
+      "\000B\010\n\006method*\\\n\020NamedEntityState\022\027\n\023NAMED" +
+      "_ENTITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVE" +
+      "D\020\001\022\024\n\020SYSTEM_GENERATED\020\002B3Z1github.com/" +
+      "lyft/flyteidl/gen/pb-go/flyteidl/adminb\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -20093,11 +20093,11 @@ public final class Common {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Annotations_ValuesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_flyteidl_admin_Auth_descriptor =
+    internal_static_flyteidl_admin_AuthRole_descriptor =
       getDescriptor().getMessageTypes().get(20);
-    internal_static_flyteidl_admin_Auth_fieldAccessorTable = new
+    internal_static_flyteidl_admin_AuthRole_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_Auth_descriptor,
+        internal_static_flyteidl_admin_AuthRole_descriptor,
         new java.lang.String[] { "AssumableIamRole", "KubernetesServiceAccount", "Method", });
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();

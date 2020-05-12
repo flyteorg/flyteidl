@@ -5996,61 +5996,61 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of an Auth. */
-        interface IAuth {
+        /** Properties of an AuthRole. */
+        interface IAuthRole {
 
-            /** Auth assumableIamRole */
+            /** AuthRole assumableIamRole */
             assumableIamRole?: (string|null);
 
-            /** Auth kubernetesServiceAccount */
+            /** AuthRole kubernetesServiceAccount */
             kubernetesServiceAccount?: (string|null);
         }
 
-        /** Represents an Auth. */
-        class Auth implements IAuth {
+        /** Represents an AuthRole. */
+        class AuthRole implements IAuthRole {
 
             /**
-             * Constructs a new Auth.
+             * Constructs a new AuthRole.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.admin.IAuth);
+            constructor(properties?: flyteidl.admin.IAuthRole);
 
-            /** Auth assumableIamRole. */
+            /** AuthRole assumableIamRole. */
             public assumableIamRole: string;
 
-            /** Auth kubernetesServiceAccount. */
+            /** AuthRole kubernetesServiceAccount. */
             public kubernetesServiceAccount: string;
 
-            /** Auth method. */
+            /** AuthRole method. */
             public method?: ("assumableIamRole"|"kubernetesServiceAccount");
 
             /**
-             * Creates a new Auth instance using the specified properties.
+             * Creates a new AuthRole instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns Auth instance
+             * @returns AuthRole instance
              */
-            public static create(properties?: flyteidl.admin.IAuth): flyteidl.admin.Auth;
+            public static create(properties?: flyteidl.admin.IAuthRole): flyteidl.admin.AuthRole;
 
             /**
-             * Encodes the specified Auth message. Does not implicitly {@link flyteidl.admin.Auth.verify|verify} messages.
-             * @param message Auth message or plain object to encode
+             * Encodes the specified AuthRole message. Does not implicitly {@link flyteidl.admin.AuthRole.verify|verify} messages.
+             * @param message AuthRole message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.admin.IAuth, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.admin.IAuthRole, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an Auth message from the specified reader or buffer.
+             * Decodes an AuthRole message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns Auth
+             * @returns AuthRole
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Auth;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.AuthRole;
 
             /**
-             * Verifies an Auth message.
+             * Verifies an AuthRole message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -7304,8 +7304,8 @@ export namespace flyteidl {
             /** ExecutionSpec annotations */
             annotations?: (flyteidl.admin.IAnnotations|null);
 
-            /** ExecutionSpec auth */
-            auth?: (flyteidl.admin.IAuth|null);
+            /** ExecutionSpec authRole */
+            authRole?: (flyteidl.admin.IAuthRole|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -7338,8 +7338,8 @@ export namespace flyteidl {
             /** ExecutionSpec annotations. */
             public annotations?: (flyteidl.admin.IAnnotations|null);
 
-            /** ExecutionSpec auth. */
-            public auth?: (flyteidl.admin.IAuth|null);
+            /** ExecutionSpec authRole. */
+            public authRole?: (flyteidl.admin.IAuthRole|null);
 
             /** ExecutionSpec notificationOverrides. */
             public notificationOverrides?: ("notifications"|"disableAll");
@@ -7823,6 +7823,67 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of an Auth. */
+        interface IAuth {
+
+            /** Auth assumableIamRole */
+            assumableIamRole?: (string|null);
+
+            /** Auth kubernetesServiceAccount */
+            kubernetesServiceAccount?: (string|null);
+        }
+
+        /** Represents an Auth. */
+        class Auth implements IAuth {
+
+            /**
+             * Constructs a new Auth.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IAuth);
+
+            /** Auth assumableIamRole. */
+            public assumableIamRole: string;
+
+            /** Auth kubernetesServiceAccount. */
+            public kubernetesServiceAccount: string;
+
+            /** Auth method. */
+            public method?: ("assumableIamRole"|"kubernetesServiceAccount");
+
+            /**
+             * Creates a new Auth instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Auth instance
+             */
+            public static create(properties?: flyteidl.admin.IAuth): flyteidl.admin.Auth;
+
+            /**
+             * Encodes the specified Auth message. Does not implicitly {@link flyteidl.admin.Auth.verify|verify} messages.
+             * @param message Auth message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IAuth, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an Auth message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Auth
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Auth;
+
+            /**
+             * Verifies an Auth message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a LaunchPlanSpec. */
         interface ILaunchPlanSpec {
 
@@ -7849,6 +7910,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec auth */
             auth?: (flyteidl.admin.IAuth|null);
+
+            /** LaunchPlanSpec authRole */
+            authRole?: (flyteidl.admin.IAuthRole|null);
         }
 
         /** Represents a LaunchPlanSpec. */
@@ -7883,6 +7947,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec auth. */
             public auth?: (flyteidl.admin.IAuth|null);
+
+            /** LaunchPlanSpec authRole. */
+            public authRole?: (flyteidl.admin.IAuthRole|null);
 
             /**
              * Creates a new LaunchPlanSpec instance using the specified properties.

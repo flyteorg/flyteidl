@@ -569,7 +569,7 @@ of an execution as it progresses across phase changes..
     "disable_all": "...",
     "labels": "{...}",
     "annotations": "{...}",
-    "auth": "{...}"
+    "auth_role": "{...}"
   }
 
 .. _api_field_flyteidl.admin.ExecutionSpec.launch_plan:
@@ -622,10 +622,10 @@ annotations
   (:ref:`flyteidl.admin.Annotations <api_msg_flyteidl.admin.Annotations>`) Annotations to apply to the execution resource.
   
   
-.. _api_field_flyteidl.admin.ExecutionSpec.auth:
+.. _api_field_flyteidl.admin.ExecutionSpec.auth_role:
 
-auth
-  (:ref:`flyteidl.admin.Auth <api_msg_flyteidl.admin.Auth>`) Optional: auth override to apply this execution.
+auth_role
+  (:ref:`flyteidl.admin.AuthRole <api_msg_flyteidl.admin.AuthRole>`) Optional: auth override to apply this execution.
   
   
 

@@ -2445,6 +2445,18 @@ definitions:
         type: "string"
       kubernetes_service_account:
         type: "string"
+    description: "Defines permissions associated with executions created by this launch\
+      \ plan spec."
+    example:
+      kubernetes_service_account: "kubernetes_service_account"
+      assumable_iam_role: "assumable_iam_role"
+  adminAuthRole:
+    type: "object"
+    properties:
+      assumable_iam_role:
+        type: "string"
+      kubernetes_service_account:
+        type: "string"
     description: "Defines permissions associated with executions."
     example:
       kubernetes_service_account: "kubernetes_service_account"
@@ -2592,9 +2604,6 @@ definitions:
           system_metadata:
             execution_cluster: "execution_cluster"
         disable_all: true
-        auth:
-          kubernetes_service_account: "kubernetes_service_account"
-          assumable_iam_role: "assumable_iam_role"
         inputs:
           literals: {}
         annotations:
@@ -2635,6 +2644,9 @@ definitions:
         labels:
           values:
             key: "values"
+        auth_role:
+          kubernetes_service_account: "kubernetes_service_account"
+          assumable_iam_role: "assumable_iam_role"
   adminExecutionClosure:
     type: "object"
     properties:
@@ -2891,9 +2903,6 @@ definitions:
             system_metadata:
               execution_cluster: "execution_cluster"
           disable_all: true
-          auth:
-            kubernetes_service_account: "kubernetes_service_account"
-            assumable_iam_role: "assumable_iam_role"
           inputs:
             literals: {}
           annotations:
@@ -2934,6 +2943,9 @@ definitions:
           labels:
             values:
               key: "values"
+          auth_role:
+            kubernetes_service_account: "kubernetes_service_account"
+            assumable_iam_role: "assumable_iam_role"
       - id:
           domain: "domain"
           name: "name"
@@ -3021,9 +3033,6 @@ definitions:
             system_metadata:
               execution_cluster: "execution_cluster"
           disable_all: true
-          auth:
-            kubernetes_service_account: "kubernetes_service_account"
-            assumable_iam_role: "assumable_iam_role"
           inputs:
             literals: {}
           annotations:
@@ -3064,6 +3073,9 @@ definitions:
           labels:
             values:
               key: "values"
+          auth_role:
+            kubernetes_service_account: "kubernetes_service_account"
+            assumable_iam_role: "assumable_iam_role"
       token: "token"
   adminExecutionMetadata:
     type: "object"
@@ -3172,9 +3184,9 @@ definitions:
       annotations:
         description: "Annotations to apply to the execution resource."
         $ref: "#/definitions/adminAnnotations"
-      auth:
+      auth_role:
         description: "Optional: auth override to apply this execution."
-        $ref: "#/definitions/adminAuth"
+        $ref: "#/definitions/adminAuthRole"
     description: "An ExecutionSpec encompasses all data used to launch this execution.\
       \ The Spec does not change over the lifetime\nof an execution as it progresses\
       \ across phase changes.."
@@ -3203,9 +3215,6 @@ definitions:
         system_metadata:
           execution_cluster: "execution_cluster"
       disable_all: true
-      auth:
-        kubernetes_service_account: "kubernetes_service_account"
-        assumable_iam_role: "assumable_iam_role"
       inputs:
         literals: {}
       annotations:
@@ -3246,6 +3255,9 @@ definitions:
       labels:
         values:
           key: "values"
+      auth_role:
+        kubernetes_service_account: "kubernetes_service_account"
+        assumable_iam_role: "assumable_iam_role"
   adminExecutionTerminateRequest:
     type: "object"
     properties:
@@ -3555,6 +3567,9 @@ definitions:
         labels:
           values:
             key: "values"
+        auth_role:
+          kubernetes_service_account: "kubernetes_service_account"
+          assumable_iam_role: "assumable_iam_role"
   adminLaunchPlanClosure:
     type: "object"
     properties:
@@ -3959,6 +3974,9 @@ definitions:
           labels:
             values:
               key: "values"
+          auth_role:
+            kubernetes_service_account: "kubernetes_service_account"
+            assumable_iam_role: "assumable_iam_role"
       - id:
           domain: "domain"
           resource_type: {}
@@ -4202,6 +4220,9 @@ definitions:
           labels:
             values:
               key: "values"
+          auth_role:
+            kubernetes_service_account: "kubernetes_service_account"
+            assumable_iam_role: "assumable_iam_role"
       token: "token"
   adminLaunchPlanMetadata:
     type: "object"
@@ -4282,6 +4303,8 @@ definitions:
         description: "Indicates the permission associated with workflow executions\
           \ triggered with this launch plan."
         $ref: "#/definitions/adminAuth"
+      auth_role:
+        $ref: "#/definitions/adminAuthRole"
     description: "User-provided launch plan definition and configuration values."
     example:
       workflow_id:
@@ -4415,6 +4438,9 @@ definitions:
       labels:
         values:
           key: "values"
+      auth_role:
+        kubernetes_service_account: "kubernetes_service_account"
+        assumable_iam_role: "assumable_iam_role"
   adminLaunchPlanState:
     type: "string"
     description: "By default any launch plan regardless of state can be used to launch\

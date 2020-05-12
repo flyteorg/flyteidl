@@ -1199,10 +1199,10 @@ func (m *ExecutionSpec) Validate() error {
 		}
 	}
 
-	if v, ok := interface{}(m.GetAuth()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetAuthRole()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ExecutionSpecValidationError{
-				field:  "Auth",
+				field:  "AuthRole",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}

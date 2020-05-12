@@ -55,6 +55,15 @@ message LaunchPlanList {
     string token                     = 2;
 }
 
+// Defines permissions associated with executions created by this launch plan spec.
+message Auth {
+  oneof method {
+    string assumable_iam_role         = 1;
+    string kubernetes_service_account = 2;
+  }
+}
+
+
 // User-provided launch plan definition and configuration values.
 message LaunchPlanSpec {
     // Reference to the Workflow template that the launch plan references
@@ -79,7 +88,9 @@ message LaunchPlanSpec {
     Annotations annotations               = 7;
 
     // Indicates the permission associated with workflow executions triggered with this launch plan.
-    Auth auth                             = 8;
+    Auth auth                             = 8 [deprecated=true];
+
+    AuthRole auth_role                    = 9;
 }
 
 // Values computed by the flyte platform after launch plan registration.

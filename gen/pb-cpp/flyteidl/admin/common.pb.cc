@@ -119,12 +119,12 @@ class AnnotationsDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Annotations> _instance;
 } _Annotations_default_instance_;
-class AuthDefaultTypeInternal {
+class AuthRoleDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Auth> _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<AuthRole> _instance;
   ::google::protobuf::internal::ArenaStringPtr assumable_iam_role_;
   ::google::protobuf::internal::ArenaStringPtr kubernetes_service_account_;
-} _Auth_default_instance_;
+} _AuthRole_default_instance_;
 }  // namespace admin
 }  // namespace flyteidl
 static void InitDefaultsNamedEntityIdentifier_flyteidl_2fadmin_2fcommon_2eproto() {
@@ -450,19 +450,19 @@ static void InitDefaultsAnnotations_flyteidl_2fadmin_2fcommon_2eproto() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsAnnotations_flyteidl_2fadmin_2fcommon_2eproto}, {
       &scc_info_Annotations_ValuesEntry_DoNotUse_flyteidl_2fadmin_2fcommon_2eproto.base,}};
 
-static void InitDefaultsAuth_flyteidl_2fadmin_2fcommon_2eproto() {
+static void InitDefaultsAuthRole_flyteidl_2fadmin_2fcommon_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::flyteidl::admin::_Auth_default_instance_;
-    new (ptr) ::flyteidl::admin::Auth();
+    void* ptr = &::flyteidl::admin::_AuthRole_default_instance_;
+    new (ptr) ::flyteidl::admin::AuthRole();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::flyteidl::admin::Auth::InitAsDefaultInstance();
+  ::flyteidl::admin::AuthRole::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_Auth_flyteidl_2fadmin_2fcommon_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsAuth_flyteidl_2fadmin_2fcommon_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_AuthRole_flyteidl_2fadmin_2fcommon_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsAuthRole_flyteidl_2fadmin_2fcommon_2eproto}, {}};
 
 void InitDefaults_flyteidl_2fadmin_2fcommon_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_NamedEntityIdentifier_flyteidl_2fadmin_2fcommon_2eproto.base);
@@ -487,7 +487,7 @@ void InitDefaults_flyteidl_2fadmin_2fcommon_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_Labels_flyteidl_2fadmin_2fcommon_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Annotations_ValuesEntry_DoNotUse_flyteidl_2fadmin_2fcommon_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Annotations_flyteidl_2fadmin_2fcommon_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Auth_flyteidl_2fadmin_2fcommon_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_AuthRole_flyteidl_2fadmin_2fcommon_2eproto.base);
 }
 
 ::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fcommon_2eproto[23];
@@ -664,13 +664,13 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fcommon_2eproto::
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Annotations, values_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Auth, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::AuthRole, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Auth, _oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::AuthRole, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
-  offsetof(::flyteidl::admin::AuthDefaultTypeInternal, assumable_iam_role_),
-  offsetof(::flyteidl::admin::AuthDefaultTypeInternal, kubernetes_service_account_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Auth, method_),
+  offsetof(::flyteidl::admin::AuthRoleDefaultTypeInternal, assumable_iam_role_),
+  offsetof(::flyteidl::admin::AuthRoleDefaultTypeInternal, kubernetes_service_account_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::AuthRole, method_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::admin::NamedEntityIdentifier)},
@@ -695,7 +695,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 147, -1, sizeof(::flyteidl::admin::Labels)},
   { 153, 160, sizeof(::flyteidl::admin::Annotations_ValuesEntry_DoNotUse)},
   { 162, -1, sizeof(::flyteidl::admin::Annotations)},
-  { 168, -1, sizeof(::flyteidl::admin::Auth)},
+  { 168, -1, sizeof(::flyteidl::admin::AuthRole)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -721,7 +721,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_Labels_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_Annotations_ValuesEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_Annotations_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_Auth_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_AuthRole_default_instance_),
 };
 
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto = {
@@ -789,18 +789,18 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto[] =
   "8\001\"u\n\013Annotations\0227\n\006values\030\001 \003(\0132\'.flyt"
   "eidl.admin.Annotations.ValuesEntry\032-\n\013Va"
   "luesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
-  "\001\"T\n\004Auth\022\034\n\022assumable_iam_role\030\001 \001(\tH\000\022"
-  "$\n\032kubernetes_service_account\030\002 \001(\tH\000B\010\n"
-  "\006method*\\\n\020NamedEntityState\022\027\n\023NAMED_ENT"
-  "ITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001\022"
-  "\024\n\020SYSTEM_GENERATED\020\002B3Z1github.com/lyft"
-  "/flyteidl/gen/pb-go/flyteidl/adminb\006prot"
-  "o3"
+  "\001\"X\n\010AuthRole\022\034\n\022assumable_iam_role\030\001 \001("
+  "\tH\000\022$\n\032kubernetes_service_account\030\002 \001(\tH"
+  "\000B\010\n\006method*\\\n\020NamedEntityState\022\027\n\023NAMED"
+  "_ENTITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVE"
+  "D\020\001\022\024\n\020SYSTEM_GENERATED\020\002B3Z1github.com/"
+  "lyft/flyteidl/gen/pb-go/flyteidl/adminb\006"
+  "proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fcommon_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fcommon_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto,
-  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 2562,
+  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 2566,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto() {
@@ -8848,27 +8848,27 @@ void Annotations::InternalSwap(Annotations* other) {
 
 // ===================================================================
 
-void Auth::InitAsDefaultInstance() {
-  ::flyteidl::admin::_Auth_default_instance_.assumable_iam_role_.UnsafeSetDefault(
+void AuthRole::InitAsDefaultInstance() {
+  ::flyteidl::admin::_AuthRole_default_instance_.assumable_iam_role_.UnsafeSetDefault(
       &::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::flyteidl::admin::_Auth_default_instance_.kubernetes_service_account_.UnsafeSetDefault(
+  ::flyteidl::admin::_AuthRole_default_instance_.kubernetes_service_account_.UnsafeSetDefault(
       &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-class Auth::HasBitSetters {
+class AuthRole::HasBitSetters {
  public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Auth::kAssumableIamRoleFieldNumber;
-const int Auth::kKubernetesServiceAccountFieldNumber;
+const int AuthRole::kAssumableIamRoleFieldNumber;
+const int AuthRole::kKubernetesServiceAccountFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-Auth::Auth()
+AuthRole::AuthRole()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.admin.Auth)
+  // @@protoc_insertion_point(constructor:flyteidl.admin.AuthRole)
 }
-Auth::Auth(const Auth& from)
+AuthRole::AuthRole(const AuthRole& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -8886,37 +8886,37 @@ Auth::Auth(const Auth& from)
       break;
     }
   }
-  // @@protoc_insertion_point(copy_constructor:flyteidl.admin.Auth)
+  // @@protoc_insertion_point(copy_constructor:flyteidl.admin.AuthRole)
 }
 
-void Auth::SharedCtor() {
+void AuthRole::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
-      &scc_info_Auth_flyteidl_2fadmin_2fcommon_2eproto.base);
+      &scc_info_AuthRole_flyteidl_2fadmin_2fcommon_2eproto.base);
   clear_has_method();
 }
 
-Auth::~Auth() {
-  // @@protoc_insertion_point(destructor:flyteidl.admin.Auth)
+AuthRole::~AuthRole() {
+  // @@protoc_insertion_point(destructor:flyteidl.admin.AuthRole)
   SharedDtor();
 }
 
-void Auth::SharedDtor() {
+void AuthRole::SharedDtor() {
   if (has_method()) {
     clear_method();
   }
 }
 
-void Auth::SetCachedSize(int size) const {
+void AuthRole::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Auth& Auth::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_Auth_flyteidl_2fadmin_2fcommon_2eproto.base);
+const AuthRole& AuthRole::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_AuthRole_flyteidl_2fadmin_2fcommon_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void Auth::clear_method() {
-// @@protoc_insertion_point(one_of_clear_start:flyteidl.admin.Auth)
+void AuthRole::clear_method() {
+// @@protoc_insertion_point(one_of_clear_start:flyteidl.admin.AuthRole)
   switch (method_case()) {
     case kAssumableIamRole: {
       method_.assumable_iam_role_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -8934,8 +8934,8 @@ void Auth::clear_method() {
 }
 
 
-void Auth::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.admin.Auth)
+void AuthRole::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.admin.AuthRole)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -8945,9 +8945,9 @@ void Auth::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* Auth::_InternalParse(const char* begin, const char* end, void* object,
+const char* AuthRole::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<Auth*>(object);
+  auto msg = static_cast<AuthRole*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -8962,7 +8962,7 @@ const char* Auth::_InternalParse(const char* begin, const char* end, void* objec
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.Auth.assumable_iam_role");
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.AuthRole.assumable_iam_role");
         object = msg->mutable_assumable_iam_role();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
@@ -8978,7 +8978,7 @@ const char* Auth::_InternalParse(const char* begin, const char* end, void* objec
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.Auth.kubernetes_service_account");
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.AuthRole.kubernetes_service_account");
         object = msg->mutable_kubernetes_service_account();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
@@ -9013,11 +9013,11 @@ len_delim_till_end:
                                {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool Auth::MergePartialFromCodedStream(
+bool AuthRole::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.admin.Auth)
+  // @@protoc_insertion_point(parse_start:flyteidl.admin.AuthRole)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -9031,7 +9031,7 @@ bool Auth::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->assumable_iam_role().data(), static_cast<int>(this->assumable_iam_role().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.Auth.assumable_iam_role"));
+            "flyteidl.admin.AuthRole.assumable_iam_role"));
         } else {
           goto handle_unusual;
         }
@@ -9046,7 +9046,7 @@ bool Auth::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->kubernetes_service_account().data(), static_cast<int>(this->kubernetes_service_account().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.Auth.kubernetes_service_account"));
+            "flyteidl.admin.AuthRole.kubernetes_service_account"));
         } else {
           goto handle_unusual;
         }
@@ -9065,18 +9065,18 @@ bool Auth::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:flyteidl.admin.Auth)
+  // @@protoc_insertion_point(parse_success:flyteidl.admin.AuthRole)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.admin.Auth)
+  // @@protoc_insertion_point(parse_failure:flyteidl.admin.AuthRole)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void Auth::SerializeWithCachedSizes(
+void AuthRole::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.admin.Auth)
+  // @@protoc_insertion_point(serialize_start:flyteidl.admin.AuthRole)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -9085,7 +9085,7 @@ void Auth::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->assumable_iam_role().data(), static_cast<int>(this->assumable_iam_role().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.Auth.assumable_iam_role");
+      "flyteidl.admin.AuthRole.assumable_iam_role");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->assumable_iam_role(), output);
   }
@@ -9095,7 +9095,7 @@ void Auth::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->kubernetes_service_account().data(), static_cast<int>(this->kubernetes_service_account().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.Auth.kubernetes_service_account");
+      "flyteidl.admin.AuthRole.kubernetes_service_account");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->kubernetes_service_account(), output);
   }
@@ -9104,12 +9104,12 @@ void Auth::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:flyteidl.admin.Auth)
+  // @@protoc_insertion_point(serialize_end:flyteidl.admin.AuthRole)
 }
 
-::google::protobuf::uint8* Auth::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* AuthRole::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.Auth)
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.AuthRole)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -9118,7 +9118,7 @@ void Auth::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->assumable_iam_role().data(), static_cast<int>(this->assumable_iam_role().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.Auth.assumable_iam_role");
+      "flyteidl.admin.AuthRole.assumable_iam_role");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->assumable_iam_role(), target);
@@ -9129,7 +9129,7 @@ void Auth::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->kubernetes_service_account().data(), static_cast<int>(this->kubernetes_service_account().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.Auth.kubernetes_service_account");
+      "flyteidl.admin.AuthRole.kubernetes_service_account");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->kubernetes_service_account(), target);
@@ -9139,12 +9139,12 @@ void Auth::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.Auth)
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.AuthRole)
   return target;
 }
 
-size_t Auth::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.Auth)
+size_t AuthRole::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.AuthRole)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -9180,23 +9180,23 @@ size_t Auth::ByteSizeLong() const {
   return total_size;
 }
 
-void Auth::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.Auth)
+void AuthRole::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.AuthRole)
   GOOGLE_DCHECK_NE(&from, this);
-  const Auth* source =
-      ::google::protobuf::DynamicCastToGenerated<Auth>(
+  const AuthRole* source =
+      ::google::protobuf::DynamicCastToGenerated<AuthRole>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.Auth)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.AuthRole)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.admin.Auth)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.admin.AuthRole)
     MergeFrom(*source);
   }
 }
 
-void Auth::MergeFrom(const Auth& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.admin.Auth)
+void AuthRole::MergeFrom(const AuthRole& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.admin.AuthRole)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -9217,36 +9217,36 @@ void Auth::MergeFrom(const Auth& from) {
   }
 }
 
-void Auth::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.admin.Auth)
+void AuthRole::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.admin.AuthRole)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void Auth::CopyFrom(const Auth& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.admin.Auth)
+void AuthRole::CopyFrom(const AuthRole& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.admin.AuthRole)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool Auth::IsInitialized() const {
+bool AuthRole::IsInitialized() const {
   return true;
 }
 
-void Auth::Swap(Auth* other) {
+void AuthRole::Swap(AuthRole* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void Auth::InternalSwap(Auth* other) {
+void AuthRole::InternalSwap(AuthRole* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(method_, other->method_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
-::google::protobuf::Metadata Auth::GetMetadata() const {
+::google::protobuf::Metadata AuthRole::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto);
   return ::file_level_metadata_flyteidl_2fadmin_2fcommon_2eproto[kIndexInFileMessages];
 }
@@ -9323,8 +9323,8 @@ template<> PROTOBUF_NOINLINE ::flyteidl::admin::Annotations_ValuesEntry_DoNotUse
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::Annotations* Arena::CreateMaybeMessage< ::flyteidl::admin::Annotations >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::admin::Annotations >(arena);
 }
-template<> PROTOBUF_NOINLINE ::flyteidl::admin::Auth* Arena::CreateMaybeMessage< ::flyteidl::admin::Auth >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::admin::Auth >(arena);
+template<> PROTOBUF_NOINLINE ::flyteidl::admin::AuthRole* Arena::CreateMaybeMessage< ::flyteidl::admin::AuthRole >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::admin::AuthRole >(arena);
 }
 }  // namespace protobuf
 }  // namespace google
