@@ -22,7 +22,7 @@ public final class RawContainer {
      * <pre>
      * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
      * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt;
+     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
      * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
      * /var/flyte/inputs/y -&gt; Y is a file in Binary format
      * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
@@ -36,7 +36,7 @@ public final class RawContainer {
      * <pre>
      * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
      * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt;
+     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
      * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
      * /var/flyte/inputs/y -&gt; Y is a file in Binary format
      * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
@@ -60,7 +60,7 @@ public final class RawContainer {
     /**
      * <pre>
      * In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
-     * This format decides the actual encoding for the data
+     * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
      * </pre>
      *
      * <code>.flyteidl.plugins.CoPilot.MetadataFormat format = 3;</code>
@@ -69,7 +69,7 @@ public final class RawContainer {
     /**
      * <pre>
      * In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
-     * This format decides the actual encoding for the data
+     * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
      * </pre>
      *
      * <code>.flyteidl.plugins.CoPilot.MetadataFormat format = 3;</code>
@@ -176,9 +176,10 @@ public final class RawContainer {
 
     /**
      * <pre>
-     * MetadataFormat is used to decide the format in which the input metadata so that the users containers can read it. If the user has access to the protocol buffer definitions, 
-     * it is recommended to use the PROTO format.
+     * MetadataFormat decides the encoding format in which the input metadata should be made available to the containers. 
+     * If the user has access to the protocol buffer definitions, it is recommended to use the PROTO format.
      * JSON and YAML do not need any protobuf definitions to read it
+     * All remote references in core.LiteralMap are replaced with local filesystem references (the data is downloaded to local filesystem)
      * </pre>
      *
      * Protobuf enum {@code flyteidl.plugins.CoPilot.MetadataFormat}
@@ -186,32 +187,48 @@ public final class RawContainer {
     public enum MetadataFormat
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
+       * <pre>
+       * JSON / YAML are serialized represnetation of a map[string]primitive. primitive -&gt; int, string, bool, double/float, bytes
+       * </pre>
+       *
        * <code>JSON = 0;</code>
        */
       JSON(0),
       /**
-       * <code>PROTO = 1;</code>
+       * <code>YAML = 1;</code>
        */
-      PROTO(1),
+      YAML(1),
       /**
-       * <code>YAML = 2;</code>
+       * <pre>
+       * Proto is a serialized binary of `core.LiteralMap` defined in flyteidl/core
+       * </pre>
+       *
+       * <code>PROTO = 2;</code>
        */
-      YAML(2),
+      PROTO(2),
       UNRECOGNIZED(-1),
       ;
 
       /**
+       * <pre>
+       * JSON / YAML are serialized represnetation of a map[string]primitive. primitive -&gt; int, string, bool, double/float, bytes
+       * </pre>
+       *
        * <code>JSON = 0;</code>
        */
       public static final int JSON_VALUE = 0;
       /**
-       * <code>PROTO = 1;</code>
+       * <code>YAML = 1;</code>
        */
-      public static final int PROTO_VALUE = 1;
+      public static final int YAML_VALUE = 1;
       /**
-       * <code>YAML = 2;</code>
+       * <pre>
+       * Proto is a serialized binary of `core.LiteralMap` defined in flyteidl/core
+       * </pre>
+       *
+       * <code>PROTO = 2;</code>
        */
-      public static final int YAML_VALUE = 2;
+      public static final int PROTO_VALUE = 2;
 
 
       public final int getNumber() {
@@ -233,8 +250,8 @@ public final class RawContainer {
       public static MetadataFormat forNumber(int value) {
         switch (value) {
           case 0: return JSON;
-          case 1: return PROTO;
-          case 2: return YAML;
+          case 1: return YAML;
+          case 2: return PROTO;
           default: return null;
         }
       }
@@ -293,7 +310,7 @@ public final class RawContainer {
      * <pre>
      * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
      * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt;
+     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
      * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
      * /var/flyte/inputs/y -&gt; Y is a file in Binary format
      * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
@@ -318,7 +335,7 @@ public final class RawContainer {
      * <pre>
      * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
      * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt;
+     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
      * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
      * /var/flyte/inputs/y -&gt; Y is a file in Binary format
      * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
@@ -359,7 +376,7 @@ public final class RawContainer {
     /**
      * <pre>
      * In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
-     * This format decides the actual encoding for the data
+     * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
      * </pre>
      *
      * <code>.flyteidl.plugins.CoPilot.MetadataFormat format = 3;</code>
@@ -370,7 +387,7 @@ public final class RawContainer {
     /**
      * <pre>
      * In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
-     * This format decides the actual encoding for the data
+     * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
      * </pre>
      *
      * <code>.flyteidl.plugins.CoPilot.MetadataFormat format = 3;</code>
@@ -729,7 +746,7 @@ public final class RawContainer {
        * <pre>
        * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
        * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt;
+       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
        * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
        * /var/flyte/inputs/y -&gt; Y is a file in Binary format
        * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
@@ -754,7 +771,7 @@ public final class RawContainer {
        * <pre>
        * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
        * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt;
+       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
        * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
        * /var/flyte/inputs/y -&gt; Y is a file in Binary format
        * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
@@ -780,7 +797,7 @@ public final class RawContainer {
        * <pre>
        * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
        * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt;
+       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
        * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
        * /var/flyte/inputs/y -&gt; Y is a file in Binary format
        * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
@@ -803,7 +820,7 @@ public final class RawContainer {
        * <pre>
        * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
        * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt;
+       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
        * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
        * /var/flyte/inputs/y -&gt; Y is a file in Binary format
        * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
@@ -822,7 +839,7 @@ public final class RawContainer {
        * <pre>
        * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
        * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt;
+       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
        * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
        * /var/flyte/inputs/y -&gt; Y is a file in Binary format
        * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
@@ -885,7 +902,7 @@ public final class RawContainer {
       /**
        * <pre>
        * In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
-       * This format decides the actual encoding for the data
+       * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
        * </pre>
        *
        * <code>.flyteidl.plugins.CoPilot.MetadataFormat format = 3;</code>
@@ -896,7 +913,7 @@ public final class RawContainer {
       /**
        * <pre>
        * In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
-       * This format decides the actual encoding for the data
+       * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
        * </pre>
        *
        * <code>.flyteidl.plugins.CoPilot.MetadataFormat format = 3;</code>
@@ -909,7 +926,7 @@ public final class RawContainer {
       /**
        * <pre>
        * In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
-       * This format decides the actual encoding for the data
+       * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
        * </pre>
        *
        * <code>.flyteidl.plugins.CoPilot.MetadataFormat format = 3;</code>
@@ -922,7 +939,7 @@ public final class RawContainer {
       /**
        * <pre>
        * In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
-       * This format decides the actual encoding for the data
+       * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
        * </pre>
        *
        * <code>.flyteidl.plugins.CoPilot.MetadataFormat format = 3;</code>
@@ -939,7 +956,7 @@ public final class RawContainer {
       /**
        * <pre>
        * In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
-       * This format decides the actual encoding for the data
+       * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
        * </pre>
        *
        * <code>.flyteidl.plugins.CoPilot.MetadataFormat format = 3;</code>
@@ -1021,8 +1038,8 @@ public final class RawContainer {
       "flyteidl.plugins\"\235\001\n\007CoPilot\022\022\n\ninput_pa" +
       "th\030\001 \001(\t\022\023\n\013output_path\030\002 \001(\r\0228\n\006format\030" +
       "\003 \001(\0162(.flyteidl.plugins.CoPilot.Metadat" +
-      "aFormat\"/\n\016MetadataFormat\022\010\n\004JSON\020\000\022\t\n\005P" +
-      "ROTO\020\001\022\010\n\004YAML\020\002B5Z3github.com/lyft/flyt" +
+      "aFormat\"/\n\016MetadataFormat\022\010\n\004JSON\020\000\022\010\n\004Y" +
+      "AML\020\001\022\t\n\005PROTO\020\002B5Z3github.com/lyft/flyt" +
       "eidl/gen/pb-go/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

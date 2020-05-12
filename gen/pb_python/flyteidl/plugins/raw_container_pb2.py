@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.plugins',
   syntax='proto3',
   serialized_options=_b('Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n$flyteidl/plugins/raw_container.proto\x12\x10\x66lyteidl.plugins\"\x9d\x01\n\x07\x43oPilot\x12\x12\n\ninput_path\x18\x01 \x01(\t\x12\x13\n\x0boutput_path\x18\x02 \x01(\r\x12\x38\n\x06\x66ormat\x18\x03 \x01(\x0e\x32(.flyteidl.plugins.CoPilot.MetadataFormat\"/\n\x0eMetadataFormat\x12\x08\n\x04JSON\x10\x00\x12\t\n\x05PROTO\x10\x01\x12\x08\n\x04YAML\x10\x02\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n$flyteidl/plugins/raw_container.proto\x12\x10\x66lyteidl.plugins\"\x9d\x01\n\x07\x43oPilot\x12\x12\n\ninput_path\x18\x01 \x01(\t\x12\x13\n\x0boutput_path\x18\x02 \x01(\r\x12\x38\n\x06\x66ormat\x18\x03 \x01(\x0e\x32(.flyteidl.plugins.CoPilot.MetadataFormat\"/\n\x0eMetadataFormat\x12\x08\n\x04JSON\x10\x00\x12\x08\n\x04YAML\x10\x01\x12\t\n\x05PROTO\x10\x02\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
 )
 
 
@@ -36,11 +36,11 @@ _COPILOT_METADATAFORMAT = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='PROTO', index=1, number=1,
+      name='YAML', index=1, number=1,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='YAML', index=2, number=2,
+      name='PROTO', index=2, number=2,
       serialized_options=None,
       type=None),
   ],

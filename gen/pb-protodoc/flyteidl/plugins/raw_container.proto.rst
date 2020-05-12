@@ -29,7 +29,7 @@ into the default task definition.
 input_path
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
   Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
-  /var/flyte/inputs/inputs.<metadata format dependent -> .pb .json .yaml>
+  /var/flyte/inputs/inputs.<metadata format dependent -> .pb .json .yaml> -> Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
   /var/flyte/inputs/x -> X is a file that contains the value of x (integer) in string format
   /var/flyte/inputs/y -> Y is a file in Binary format
   /var/flyte/inputs/z/... -> Note Z itself is a directory
@@ -46,7 +46,7 @@ output_path
 
 format
   (:ref:`flyteidl.plugins.CoPilot.MetadataFormat <api_enum_flyteidl.plugins.CoPilot.MetadataFormat>`) In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
-  This format decides the actual encoding for the data
+  This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
   
   
 
@@ -55,24 +55,27 @@ format
 Enum flyteidl.plugins.CoPilot.MetadataFormat
 --------------------------------------------
 
-`[flyteidl.plugins.CoPilot.MetadataFormat proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/raw_container.proto#L15>`_
+`[flyteidl.plugins.CoPilot.MetadataFormat proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/raw_container.proto#L16>`_
 
-MetadataFormat is used to decide the format in which the input metadata so that the users containers can read it. If the user has access to the protocol buffer definitions, 
-it is recommended to use the PROTO format.
+MetadataFormat decides the encoding format in which the input metadata should be made available to the containers. 
+If the user has access to the protocol buffer definitions, it is recommended to use the PROTO format.
 JSON and YAML do not need any protobuf definitions to read it
+All remote references in core.LiteralMap are replaced with local filesystem references (the data is downloaded to local filesystem)
 
 .. _api_enum_value_flyteidl.plugins.CoPilot.MetadataFormat.JSON:
 
 JSON
-  *(DEFAULT)* ⁣
+  *(DEFAULT)* ⁣JSON / YAML are serialized represnetation of a map[string]primitive. primitive -> int, string, bool, double/float, bytes
   
-.. _api_enum_value_flyteidl.plugins.CoPilot.MetadataFormat.PROTO:
-
-PROTO
-  ⁣
   
 .. _api_enum_value_flyteidl.plugins.CoPilot.MetadataFormat.YAML:
 
 YAML
   ⁣
+  
+.. _api_enum_value_flyteidl.plugins.CoPilot.MetadataFormat.PROTO:
+
+PROTO
+  ⁣Proto is a serialized binary of `core.LiteralMap` defined in flyteidl/core
+  
   

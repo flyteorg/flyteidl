@@ -75,8 +75,8 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fraw_5fcontainer_2eprot
   "flyteidl.plugins\"\235\001\n\007CoPilot\022\022\n\ninput_pa"
   "th\030\001 \001(\t\022\023\n\013output_path\030\002 \001(\r\0228\n\006format\030"
   "\003 \001(\0162(.flyteidl.plugins.CoPilot.Metadat"
-  "aFormat\"/\n\016MetadataFormat\022\010\n\004JSON\020\000\022\t\n\005P"
-  "ROTO\020\001\022\010\n\004YAML\020\002B5Z3github.com/lyft/flyt"
+  "aFormat\"/\n\016MetadataFormat\022\010\n\004JSON\020\000\022\010\n\004Y"
+  "AML\020\001\022\t\n\005PROTO\020\002B5Z3github.com/lyft/flyt"
   "eidl/gen/pb-go/flyteidl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fraw_5fcontainer_2eproto = {
@@ -113,8 +113,8 @@ bool CoPilot_MetadataFormat_IsValid(int value) {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const CoPilot_MetadataFormat CoPilot::JSON;
-const CoPilot_MetadataFormat CoPilot::PROTO;
 const CoPilot_MetadataFormat CoPilot::YAML;
+const CoPilot_MetadataFormat CoPilot::PROTO;
 const CoPilot_MetadataFormat CoPilot::MetadataFormat_MIN;
 const CoPilot_MetadataFormat CoPilot::MetadataFormat_MAX;
 const int CoPilot::MetadataFormat_ARRAYSIZE;

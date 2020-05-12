@@ -66,14 +66,14 @@ namespace plugins {
 
 enum CoPilot_MetadataFormat {
   CoPilot_MetadataFormat_JSON = 0,
-  CoPilot_MetadataFormat_PROTO = 1,
-  CoPilot_MetadataFormat_YAML = 2,
+  CoPilot_MetadataFormat_YAML = 1,
+  CoPilot_MetadataFormat_PROTO = 2,
   CoPilot_MetadataFormat_CoPilot_MetadataFormat_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   CoPilot_MetadataFormat_CoPilot_MetadataFormat_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool CoPilot_MetadataFormat_IsValid(int value);
 const CoPilot_MetadataFormat CoPilot_MetadataFormat_MetadataFormat_MIN = CoPilot_MetadataFormat_JSON;
-const CoPilot_MetadataFormat CoPilot_MetadataFormat_MetadataFormat_MAX = CoPilot_MetadataFormat_YAML;
+const CoPilot_MetadataFormat CoPilot_MetadataFormat_MetadataFormat_MAX = CoPilot_MetadataFormat_PROTO;
 const int CoPilot_MetadataFormat_MetadataFormat_ARRAYSIZE = CoPilot_MetadataFormat_MetadataFormat_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* CoPilot_MetadataFormat_descriptor();
@@ -184,10 +184,10 @@ class CoPilot final :
   typedef CoPilot_MetadataFormat MetadataFormat;
   static const MetadataFormat JSON =
     CoPilot_MetadataFormat_JSON;
-  static const MetadataFormat PROTO =
-    CoPilot_MetadataFormat_PROTO;
   static const MetadataFormat YAML =
     CoPilot_MetadataFormat_YAML;
+  static const MetadataFormat PROTO =
+    CoPilot_MetadataFormat_PROTO;
   static inline bool MetadataFormat_IsValid(int value) {
     return CoPilot_MetadataFormat_IsValid(value);
   }
