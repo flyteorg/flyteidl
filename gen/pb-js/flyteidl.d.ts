@@ -4830,7 +4830,8 @@ export namespace flyteidl {
         /** NamedEntityState enum. */
         enum NamedEntityState {
             NAMED_ENTITY_ACTIVE = 0,
-            NAMED_ENTITY_ARCHIVED = 1
+            NAMED_ENTITY_ARCHIVED = 1,
+            SYSTEM_GENERATED = 2
         }
 
         /** Properties of a NamedEntityMetadata. */

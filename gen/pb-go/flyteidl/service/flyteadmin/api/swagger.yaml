@@ -4720,10 +4720,12 @@ definitions:
     description: "The status of the named entity is used to control its visibility\
       \ in the UI.\n\n - NAMED_ENTITY_ACTIVE: By default, all named entities are considered\
       \ active and under development.\n - NAMED_ENTITY_ARCHIVED: Archived named entities\
-      \ are no longer visible in the UI."
+      \ are no longer visible in the UI.\n - SYSTEM_GENERATED: System generated entities\
+      \ that aren't explicitly created or managed by a user."
     enum:
     - "NAMED_ENTITY_ACTIVE"
     - "NAMED_ENTITY_ARCHIVED"
+    - "SYSTEM_GENERATED"
     default: "NAMED_ENTITY_ACTIVE"
   adminNamedEntityUpdateRequest:
     type: "object"

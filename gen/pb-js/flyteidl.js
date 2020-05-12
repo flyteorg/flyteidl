@@ -11728,11 +11728,13 @@ export const flyteidl = $root.flyteidl = (() => {
          * @enum {string}
          * @property {number} NAMED_ENTITY_ACTIVE=0 NAMED_ENTITY_ACTIVE value
          * @property {number} NAMED_ENTITY_ARCHIVED=1 NAMED_ENTITY_ARCHIVED value
+         * @property {number} SYSTEM_GENERATED=2 SYSTEM_GENERATED value
          */
         admin.NamedEntityState = (function() {
             const valuesById = {}, values = Object.create(valuesById);
             values[valuesById[0] = "NAMED_ENTITY_ACTIVE"] = 0;
             values[valuesById[1] = "NAMED_ENTITY_ARCHIVED"] = 1;
+            values[valuesById[2] = "SYSTEM_GENERATED"] = 2;
             return values;
         })();
 
@@ -11860,6 +11862,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         return "state: enum value expected";
                     case 0:
                     case 1:
+                    case 2:
                         break;
                     }
                 return null;

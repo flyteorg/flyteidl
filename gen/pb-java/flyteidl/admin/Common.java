@@ -39,6 +39,14 @@ public final class Common {
      * <code>NAMED_ENTITY_ARCHIVED = 1;</code>
      */
     NAMED_ENTITY_ARCHIVED(1),
+    /**
+     * <pre>
+     * System generated entities that aren't explicitly created or managed by a user.
+     * </pre>
+     *
+     * <code>SYSTEM_GENERATED = 2;</code>
+     */
+    SYSTEM_GENERATED(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -58,6 +66,14 @@ public final class Common {
      * <code>NAMED_ENTITY_ARCHIVED = 1;</code>
      */
     public static final int NAMED_ENTITY_ARCHIVED_VALUE = 1;
+    /**
+     * <pre>
+     * System generated entities that aren't explicitly created or managed by a user.
+     * </pre>
+     *
+     * <code>SYSTEM_GENERATED = 2;</code>
+     */
+    public static final int SYSTEM_GENERATED_VALUE = 2;
 
 
     public final int getNumber() {
@@ -80,6 +96,7 @@ public final class Common {
       switch (value) {
         case 0: return NAMED_ENTITY_ACTIVE;
         case 1: return NAMED_ENTITY_ARCHIVED;
+        case 2: return SYSTEM_GENERATED;
         default: return null;
       }
     }
@@ -19924,10 +19941,11 @@ public final class Common {
       "luesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
       "\001\"T\n\004Auth\022\034\n\022assumable_iam_role\030\001 \001(\tH\000\022" +
       "$\n\032kubernetes_service_account\030\002 \001(\tH\000B\010\n" +
-      "\006method*F\n\020NamedEntityState\022\027\n\023NAMED_ENT" +
-      "ITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001B" +
-      "3Z1github.com/lyft/flyteidl/gen/pb-go/fl" +
-      "yteidl/adminb\006proto3"
+      "\006method*\\\n\020NamedEntityState\022\027\n\023NAMED_ENT" +
+      "ITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001\022" +
+      "\024\n\020SYSTEM_GENERATED\020\002B3Z1github.com/lyft" +
+      "/flyteidl/gen/pb-go/flyteidl/adminb\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

@@ -26,8 +26,9 @@ class AdminNamedEntityState(object):
     """
     allowed enum values
     """
-    ACTIVE = "NAMED_ENTITY_ACTIVE"
-    ARCHIVED = "NAMED_ENTITY_ARCHIVED"
+    NAMED_ENTITY_ACTIVE = "NAMED_ENTITY_ACTIVE"
+    NAMED_ENTITY_ARCHIVED = "NAMED_ENTITY_ARCHIVED"
+    SYSTEM_GENERATED = "SYSTEM_GENERATED"
 
     """
     Attributes:

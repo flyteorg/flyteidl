@@ -791,15 +791,16 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto[] =
   "luesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
   "\001\"T\n\004Auth\022\034\n\022assumable_iam_role\030\001 \001(\tH\000\022"
   "$\n\032kubernetes_service_account\030\002 \001(\tH\000B\010\n"
-  "\006method*F\n\020NamedEntityState\022\027\n\023NAMED_ENT"
-  "ITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001B"
-  "3Z1github.com/lyft/flyteidl/gen/pb-go/fl"
-  "yteidl/adminb\006proto3"
+  "\006method*\\\n\020NamedEntityState\022\027\n\023NAMED_ENT"
+  "ITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001\022"
+  "\024\n\020SYSTEM_GENERATED\020\002B3Z1github.com/lyft"
+  "/flyteidl/gen/pb-go/flyteidl/adminb\006prot"
+  "o3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fcommon_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fcommon_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto,
-  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 2540,
+  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 2562,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto() {
@@ -844,6 +845,7 @@ bool NamedEntityState_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
+    case 2:
       return true;
     default:
       return false;

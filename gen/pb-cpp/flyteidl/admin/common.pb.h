@@ -181,12 +181,13 @@ inline bool Sort_Direction_Parse(
 enum NamedEntityState {
   NAMED_ENTITY_ACTIVE = 0,
   NAMED_ENTITY_ARCHIVED = 1,
+  SYSTEM_GENERATED = 2,
   NamedEntityState_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   NamedEntityState_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool NamedEntityState_IsValid(int value);
 const NamedEntityState NamedEntityState_MIN = NAMED_ENTITY_ACTIVE;
-const NamedEntityState NamedEntityState_MAX = NAMED_ENTITY_ARCHIVED;
+const NamedEntityState NamedEntityState_MAX = SYSTEM_GENERATED;
 const int NamedEntityState_ARRAYSIZE = NamedEntityState_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* NamedEntityState_descriptor();
