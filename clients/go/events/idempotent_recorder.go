@@ -61,7 +61,7 @@ func (i *idempotentWorkFlowEventRecorder) RecordNodeEvent(ctx context.Context, e
 }
 
 func (i *idempotentWorkFlowEventRecorder) RecordTaskEvent(ctx context.Context, e *event.TaskExecutionEvent) error {
-	id := fmt.Sprintf("%v:%v:%v", e.ParentNodeExecutionId.String(), e.TaskId.String(), e.RetryAttempt)
+	id := fmt.Sprintf("%v:%v:%v:%v", e.ParentNodeExecutionId.String(), e.TaskId.String(), e.PhaseVersion, e.RetryAttempt)
 	return i.idempotentRecord(ctx, id, e, e.Phase.String())
 }
 
