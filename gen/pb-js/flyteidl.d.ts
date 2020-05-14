@@ -3816,6 +3816,9 @@ export namespace flyteidl {
 
             /** ContainerError kind */
             kind?: (flyteidl.core.ContainerError.Kind|null);
+
+            /** ContainerError origin */
+            origin?: (flyteidl.core.ExecutionError.ErrorKind|null);
         }
 
         /** Represents a ContainerError. */
@@ -3835,6 +3838,9 @@ export namespace flyteidl {
 
             /** ContainerError kind. */
             public kind: flyteidl.core.ContainerError.Kind;
+
+            /** ContainerError origin. */
+            public origin: flyteidl.core.ExecutionError.ErrorKind;
 
             /**
              * Creates a new ContainerError instance using the specified properties.
@@ -4824,7 +4830,8 @@ export namespace flyteidl {
         /** NamedEntityState enum. */
         enum NamedEntityState {
             NAMED_ENTITY_ACTIVE = 0,
-            NAMED_ENTITY_ARCHIVED = 1
+            NAMED_ENTITY_ARCHIVED = 1,
+            SYSTEM_GENERATED = 2
         }
 
         /** Properties of a NamedEntityMetadata. */
@@ -5983,6 +5990,67 @@ export namespace flyteidl {
 
             /**
              * Verifies an Annotations message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an AuthRole. */
+        interface IAuthRole {
+
+            /** AuthRole assumableIamRole */
+            assumableIamRole?: (string|null);
+
+            /** AuthRole kubernetesServiceAccount */
+            kubernetesServiceAccount?: (string|null);
+        }
+
+        /** Represents an AuthRole. */
+        class AuthRole implements IAuthRole {
+
+            /**
+             * Constructs a new AuthRole.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IAuthRole);
+
+            /** AuthRole assumableIamRole. */
+            public assumableIamRole: string;
+
+            /** AuthRole kubernetesServiceAccount. */
+            public kubernetesServiceAccount: string;
+
+            /** AuthRole method. */
+            public method?: ("assumableIamRole"|"kubernetesServiceAccount");
+
+            /**
+             * Creates a new AuthRole instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns AuthRole instance
+             */
+            public static create(properties?: flyteidl.admin.IAuthRole): flyteidl.admin.AuthRole;
+
+            /**
+             * Encodes the specified AuthRole message. Does not implicitly {@link flyteidl.admin.AuthRole.verify|verify} messages.
+             * @param message AuthRole message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IAuthRole, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an AuthRole message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns AuthRole
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.AuthRole;
+
+            /**
+             * Verifies an AuthRole message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -7235,6 +7303,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec annotations */
             annotations?: (flyteidl.admin.IAnnotations|null);
+
+            /** ExecutionSpec authRole */
+            authRole?: (flyteidl.admin.IAuthRole|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -7266,6 +7337,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec annotations. */
             public annotations?: (flyteidl.admin.IAnnotations|null);
+
+            /** ExecutionSpec authRole. */
+            public authRole?: (flyteidl.admin.IAuthRole|null);
 
             /** ExecutionSpec notificationOverrides. */
             public notificationOverrides?: ("notifications"|"disableAll");
@@ -7836,6 +7910,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec auth */
             auth?: (flyteidl.admin.IAuth|null);
+
+            /** LaunchPlanSpec authRole */
+            authRole?: (flyteidl.admin.IAuthRole|null);
         }
 
         /** Represents a LaunchPlanSpec. */
@@ -7870,6 +7947,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec auth. */
             public auth?: (flyteidl.admin.IAuth|null);
+
+            /** LaunchPlanSpec authRole. */
+            public authRole?: (flyteidl.admin.IAuthRole|null);
 
             /**
              * Creates a new LaunchPlanSpec instance using the specified properties.
