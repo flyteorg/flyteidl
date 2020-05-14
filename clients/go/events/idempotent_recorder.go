@@ -52,7 +52,8 @@ func (i *idempotentWorkFlowEventRecorder) idempotentRecord(ctx context.Context, 
 
 func (i *idempotentWorkFlowEventRecorder) RecordWorkflowEvent(ctx context.Context, e *event.WorkflowExecutionEvent) error {
 	executionID := e.ExecutionId.String()
-	return i.idempotentRecord(ctx, executionID, e, e.Phase.String())
+	eventID := e.Phase.String()
+	return i.idempotentRecord(ctx, executionID, e, eventID)
 }
 
 func (i *idempotentWorkFlowEventRecorder) RecordNodeEvent(ctx context.Context, e *event.NodeExecutionEvent) error {
@@ -63,7 +64,7 @@ func (i *idempotentWorkFlowEventRecorder) RecordNodeEvent(ctx context.Context, e
 
 func (i *idempotentWorkFlowEventRecorder) RecordTaskEvent(ctx context.Context, e *event.TaskExecutionEvent) error {
 	taskID := fmt.Sprintf("%v:%v:%v", e.ParentNodeExecutionId.String(), e.TaskId.String(), e.RetryAttempt)
-	// Task event is uniquely identified using both Phase and PhaseVersion. For example, phase like Running can have
+	// Task events are uniquely identified by Phase and PhaseVersion. For example, phase like Running can have
 	// multiple events with changed metadata (new logs, additional custom_info, etc).
 	eventID := fmt.Sprintf("%v:%v", e.Phase.String(), e.PhaseVersion)
 	return i.idempotentRecord(ctx, taskID, e, eventID)
