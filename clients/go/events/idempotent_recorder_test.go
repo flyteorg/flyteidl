@@ -40,6 +40,7 @@ func createTaskEvent(phase core.TaskExecution_Phase) *event.TaskExecutionEvent {
 	return &event.TaskExecutionEvent{
 		TaskId: &core.Identifier{Project: "p", Domain: "d", Name: "w"},
 		Phase: phase,
+		PhaseVersion:1,
 	}
 }
 
@@ -132,7 +133,7 @@ func TestIdempotentTaskEventRecorder_PhaseChange(t *testing.T) {
 		taskExecutionEvent := createTaskEvent(phase)
 		err := recorder.RecordTaskEvent(ctx, taskExecutionEvent)
 		assert.NoError(t, err)
-		id := fmt.Sprintf("%v:%v:%v", taskExecutionEvent.ParentNodeExecutionId.String(), taskExecutionEvent.TaskId.String(), taskExecutionEvent.RetryAttempt)
+		id := fmt.Sprintf("%v:%v:%v:%v", taskExecutionEvent.ParentNodeExecutionId.String(), taskExecutionEvent.TaskId.String(), taskExecutionEvent.PhaseVersion, taskExecutionEvent.RetryAttempt)
 		event, ok := idempotentRecorder.cache.Get(id)
 		return event.(*EmittedEventInfo), ok
 	}
