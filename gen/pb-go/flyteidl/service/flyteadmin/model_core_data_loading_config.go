@@ -14,4 +14,5 @@ type CoreDataLoadingConfig struct {
 	InputPath string `json:"input_path,omitempty"`
 	OutputPath string `json:"output_path,omitempty"`
 	Format *DataLoadingConfigMetadataFormat `json:"format,omitempty"`
+	Enabled bool `json:"enabled,omitempty"`
 }

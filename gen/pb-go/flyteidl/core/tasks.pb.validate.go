@@ -563,8 +563,6 @@ func (m *Container) Validate() error {
 
 	}
 
-	// no validation rules for UseDataLoading
-
 	if v, ok := interface{}(m.GetDataConfig()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ContainerValidationError{
@@ -645,6 +643,8 @@ func (m *DataLoadingConfig) Validate() error {
 	// no validation rules for OutputPath
 
 	// no validation rules for Format
+
+	// no validation rules for Enabled
 
 	return nil
 }

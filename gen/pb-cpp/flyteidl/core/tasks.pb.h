@@ -1329,12 +1329,6 @@ class Container final :
   ::flyteidl::core::DataLoadingConfig* mutable_data_config();
   void set_allocated_data_config(::flyteidl::core::DataLoadingConfig* data_config);
 
-  // bool use_data_loading = 8;
-  void clear_use_data_loading();
-  static const int kUseDataLoadingFieldNumber = 8;
-  bool use_data_loading() const;
-  void set_use_data_loading(bool value);
-
   // @@protoc_insertion_point(class_scope:flyteidl.core.Container)
  private:
   class HasBitSetters;
@@ -1348,7 +1342,6 @@ class Container final :
   ::google::protobuf::internal::ArenaStringPtr image_;
   ::flyteidl::core::Resources* resources_;
   ::flyteidl::core::DataLoadingConfig* data_config_;
-  bool use_data_loading_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2ftasks_2eproto;
 };
@@ -1511,6 +1504,12 @@ class DataLoadingConfig final :
   ::flyteidl::core::DataLoadingConfig_MetadataFormat format() const;
   void set_format(::flyteidl::core::DataLoadingConfig_MetadataFormat value);
 
+  // bool enabled = 4;
+  void clear_enabled();
+  static const int kEnabledFieldNumber = 4;
+  bool enabled() const;
+  void set_enabled(bool value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.core.DataLoadingConfig)
  private:
   class HasBitSetters;
@@ -1519,6 +1518,7 @@ class DataLoadingConfig final :
   ::google::protobuf::internal::ArenaStringPtr input_path_;
   ::google::protobuf::internal::ArenaStringPtr output_path_;
   int format_;
+  bool enabled_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2ftasks_2eproto;
 };
@@ -2734,20 +2734,6 @@ Container::ports() const {
   return ports_;
 }
 
-// bool use_data_loading = 8;
-inline void Container::clear_use_data_loading() {
-  use_data_loading_ = false;
-}
-inline bool Container::use_data_loading() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.Container.use_data_loading)
-  return use_data_loading_;
-}
-inline void Container::set_use_data_loading(bool value) {
-  
-  use_data_loading_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.core.Container.use_data_loading)
-}
-
 // .flyteidl.core.DataLoadingConfig data_config = 9;
 inline bool Container::has_data_config() const {
   return this != internal_default_instance() && data_config_ != nullptr;
@@ -2921,6 +2907,20 @@ inline void DataLoadingConfig::set_format(::flyteidl::core::DataLoadingConfig_Me
   
   format_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.core.DataLoadingConfig.format)
+}
+
+// bool enabled = 4;
+inline void DataLoadingConfig::clear_enabled() {
+  enabled_ = false;
+}
+inline bool DataLoadingConfig::enabled() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.DataLoadingConfig.enabled)
+  return enabled_;
+}
+inline void DataLoadingConfig::set_enabled(bool value) {
+  
+  enabled_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.DataLoadingConfig.enabled)
 }
 
 #ifdef __GNUC__

@@ -8810,7 +8810,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {Array.<flyteidl.core.IKeyValuePair>|null} [env] Container env
              * @property {Array.<flyteidl.core.IKeyValuePair>|null} [config] Container config
              * @property {Array.<flyteidl.core.IContainerPort>|null} [ports] Container ports
-             * @property {boolean|null} [useDataLoading] Container useDataLoading
              * @property {flyteidl.core.IDataLoadingConfig|null} [dataConfig] Container dataConfig
              */
 
@@ -8891,14 +8890,6 @@ export const flyteidl = $root.flyteidl = (() => {
             Container.prototype.ports = $util.emptyArray;
 
             /**
-             * Container useDataLoading.
-             * @member {boolean} useDataLoading
-             * @memberof flyteidl.core.Container
-             * @instance
-             */
-            Container.prototype.useDataLoading = false;
-
-            /**
              * Container dataConfig.
              * @member {flyteidl.core.IDataLoadingConfig|null|undefined} dataConfig
              * @memberof flyteidl.core.Container
@@ -8949,8 +8940,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.ports != null && message.ports.length)
                     for (let i = 0; i < message.ports.length; ++i)
                         $root.flyteidl.core.ContainerPort.encode(message.ports[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                if (message.useDataLoading != null && message.hasOwnProperty("useDataLoading"))
-                    writer.uint32(/* id 8, wireType 0 =*/64).bool(message.useDataLoading);
                 if (message.dataConfig != null && message.hasOwnProperty("dataConfig"))
                     $root.flyteidl.core.DataLoadingConfig.encode(message.dataConfig, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 return writer;
@@ -9004,9 +8993,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!(message.ports && message.ports.length))
                             message.ports = [];
                         message.ports.push($root.flyteidl.core.ContainerPort.decode(reader, reader.uint32()));
-                        break;
-                    case 8:
-                        message.useDataLoading = reader.bool();
                         break;
                     case 9:
                         message.dataConfig = $root.flyteidl.core.DataLoadingConfig.decode(reader, reader.uint32());
@@ -9079,9 +9065,6 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "ports." + error;
                     }
                 }
-                if (message.useDataLoading != null && message.hasOwnProperty("useDataLoading"))
-                    if (typeof message.useDataLoading !== "boolean")
-                        return "useDataLoading: boolean expected";
                 if (message.dataConfig != null && message.hasOwnProperty("dataConfig")) {
                     let error = $root.flyteidl.core.DataLoadingConfig.verify(message.dataConfig);
                     if (error)
@@ -9102,6 +9085,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [inputPath] DataLoadingConfig inputPath
              * @property {string|null} [outputPath] DataLoadingConfig outputPath
              * @property {flyteidl.core.DataLoadingConfig.MetadataFormat|null} [format] DataLoadingConfig format
+             * @property {boolean|null} [enabled] DataLoadingConfig enabled
              */
 
             /**
@@ -9144,6 +9128,14 @@ export const flyteidl = $root.flyteidl = (() => {
             DataLoadingConfig.prototype.format = 0;
 
             /**
+             * DataLoadingConfig enabled.
+             * @member {boolean} enabled
+             * @memberof flyteidl.core.DataLoadingConfig
+             * @instance
+             */
+            DataLoadingConfig.prototype.enabled = false;
+
+            /**
              * Creates a new DataLoadingConfig instance using the specified properties.
              * @function create
              * @memberof flyteidl.core.DataLoadingConfig
@@ -9173,6 +9165,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.outputPath);
                 if (message.format != null && message.hasOwnProperty("format"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int32(message.format);
+                if (message.enabled != null && message.hasOwnProperty("enabled"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).bool(message.enabled);
                 return writer;
             };
 
@@ -9202,6 +9196,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 3:
                         message.format = reader.int32();
+                        break;
+                    case 4:
+                        message.enabled = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -9237,6 +9234,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 2:
                         break;
                     }
+                if (message.enabled != null && message.hasOwnProperty("enabled"))
+                    if (typeof message.enabled !== "boolean")
+                        return "enabled: boolean expected";
                 return null;
             };
 

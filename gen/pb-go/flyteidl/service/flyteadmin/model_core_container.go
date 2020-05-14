@@ -22,8 +22,5 @@ type CoreContainer struct {
 	// Allows extra configs to be available for the container. TODO: elaborate on how configs will become available.
 	Config []CoreKeyValuePair `json:"config,omitempty"`
 	Ports []CoreContainerPort `json:"ports,omitempty"`
-	// BETA: This enables use of CoPilot or automated data loading into the contaiiner. This makes it possible to to run a completely portable container, that uses inputs and outputs only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment. If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories  are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation to understand the default paths.
-	UseDataLoading bool `json:"use_data_loading,omitempty"`
-	// Optional configuration for CoPilot. If not specified, then default values are used.
 	DataConfig *CoreDataLoadingConfig `json:"data_config,omitempty"`
 }

@@ -3665,9 +3665,6 @@ export namespace flyteidl {
             /** Container ports */
             ports?: (flyteidl.core.IContainerPort[]|null);
 
-            /** Container useDataLoading */
-            useDataLoading?: (boolean|null);
-
             /** Container dataConfig */
             dataConfig?: (flyteidl.core.IDataLoadingConfig|null);
         }
@@ -3701,9 +3698,6 @@ export namespace flyteidl {
 
             /** Container ports. */
             public ports: flyteidl.core.IContainerPort[];
-
-            /** Container useDataLoading. */
-            public useDataLoading: boolean;
 
             /** Container dataConfig. */
             public dataConfig?: (flyteidl.core.IDataLoadingConfig|null);
@@ -3752,6 +3746,9 @@ export namespace flyteidl {
 
             /** DataLoadingConfig format */
             format?: (flyteidl.core.DataLoadingConfig.MetadataFormat|null);
+
+            /** DataLoadingConfig enabled */
+            enabled?: (boolean|null);
         }
 
         /** Represents a DataLoadingConfig. */
@@ -3771,6 +3768,9 @@ export namespace flyteidl {
 
             /** DataLoadingConfig format. */
             public format: flyteidl.core.DataLoadingConfig.MetadataFormat;
+
+            /** DataLoadingConfig enabled. */
+            public enabled: boolean;
 
             /**
              * Creates a new DataLoadingConfig instance using the specified properties.

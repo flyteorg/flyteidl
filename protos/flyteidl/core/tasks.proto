@@ -153,16 +153,16 @@ message Container {
 
     // Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
     // not supported on AWS Batch)
+    // Only K8s
     repeated ContainerPort ports = 7;
 
-    // BETA: This enables use of CoPilot or automated data loading into the contaiiner. This makes it possible to to run a completely portable container, that uses inputs and outputs
+    // BETA: Optional configuration for DataLoading. If not specified, then default values are used.
+    // This makes it possible to to run a completely portable container, that uses inputs and outputs
     // only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
     // If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
     // are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
     // to understand the default paths.
-    bool use_data_loading = 8;
-
-    // Optional configuration for CoPilot. If not specified, then default values are used.
+    // Only K8s
     DataLoadingConfig data_config = 9;
 }
 
@@ -194,4 +194,6 @@ message DataLoadingConfig {
   // In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
   // This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
   MetadataFormat format = 3;
+   // Flag enables DataLoading Config. If this is not set, data loading will not be used! 
+   bool enabled = 4;
 }

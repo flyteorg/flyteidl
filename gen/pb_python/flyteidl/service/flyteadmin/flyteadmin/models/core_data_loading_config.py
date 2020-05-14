@@ -35,21 +35,24 @@ class CoreDataLoadingConfig(object):
     swagger_types = {
         'input_path': 'str',
         'output_path': 'str',
-        'format': 'DataLoadingConfigMetadataFormat'
+        'format': 'DataLoadingConfigMetadataFormat',
+        'enabled': 'bool'
     }
 
     attribute_map = {
         'input_path': 'input_path',
         'output_path': 'output_path',
-        'format': 'format'
+        'format': 'format',
+        'enabled': 'enabled'
     }
 
-    def __init__(self, input_path=None, output_path=None, format=None):  # noqa: E501
+    def __init__(self, input_path=None, output_path=None, format=None, enabled=None):  # noqa: E501
         """CoreDataLoadingConfig - a model defined in Swagger"""  # noqa: E501
 
         self._input_path = None
         self._output_path = None
         self._format = None
+        self._enabled = None
         self.discriminator = None
 
         if input_path is not None:
@@ -58,6 +61,8 @@ class CoreDataLoadingConfig(object):
             self.output_path = output_path
         if format is not None:
             self.format = format
+        if enabled is not None:
+            self.enabled = enabled
 
     @property
     def input_path(self):
@@ -121,6 +126,27 @@ class CoreDataLoadingConfig(object):
         """
 
         self._format = format
+
+    @property
+    def enabled(self):
+        """Gets the enabled of this CoreDataLoadingConfig.  # noqa: E501
+
+
+        :return: The enabled of this CoreDataLoadingConfig.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enabled
+
+    @enabled.setter
+    def enabled(self, enabled):
+        """Sets the enabled of this CoreDataLoadingConfig.
+
+
+        :param enabled: The enabled of this CoreDataLoadingConfig.  # noqa: E501
+        :type: bool
+        """
+
+        self._enabled = enabled
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -7712,6 +7712,7 @@ public final class Tasks {
      * <pre>
      * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
      * not supported on AWS Batch)
+     * Only K8s
      * </pre>
      *
      * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -7722,6 +7723,7 @@ public final class Tasks {
      * <pre>
      * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
      * not supported on AWS Batch)
+     * Only K8s
      * </pre>
      *
      * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -7731,6 +7733,7 @@ public final class Tasks {
      * <pre>
      * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
      * not supported on AWS Batch)
+     * Only K8s
      * </pre>
      *
      * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -7740,6 +7743,7 @@ public final class Tasks {
      * <pre>
      * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
      * not supported on AWS Batch)
+     * Only K8s
      * </pre>
      *
      * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -7750,6 +7754,7 @@ public final class Tasks {
      * <pre>
      * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
      * not supported on AWS Batch)
+     * Only K8s
      * </pre>
      *
      * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -7759,20 +7764,13 @@ public final class Tasks {
 
     /**
      * <pre>
-     * BETA: This enables use of CoPilot or automated data loading into the contaiiner. This makes it possible to to run a completely portable container, that uses inputs and outputs
+     * BETA: Optional configuration for DataLoading. If not specified, then default values are used.
+     * This makes it possible to to run a completely portable container, that uses inputs and outputs
      * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
      * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
      * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
      * to understand the default paths.
-     * </pre>
-     *
-     * <code>bool use_data_loading = 8;</code>
-     */
-    boolean getUseDataLoading();
-
-    /**
-     * <pre>
-     * Optional configuration for CoPilot. If not specified, then default values are used.
+     * Only K8s
      * </pre>
      *
      * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
@@ -7780,7 +7778,13 @@ public final class Tasks {
     boolean hasDataConfig();
     /**
      * <pre>
-     * Optional configuration for CoPilot. If not specified, then default values are used.
+     * BETA: Optional configuration for DataLoading. If not specified, then default values are used.
+     * This makes it possible to to run a completely portable container, that uses inputs and outputs
+     * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+     * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
+     * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+     * to understand the default paths.
+     * Only K8s
      * </pre>
      *
      * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
@@ -7788,7 +7792,13 @@ public final class Tasks {
     flyteidl.core.Tasks.DataLoadingConfig getDataConfig();
     /**
      * <pre>
-     * Optional configuration for CoPilot. If not specified, then default values are used.
+     * BETA: Optional configuration for DataLoading. If not specified, then default values are used.
+     * This makes it possible to to run a completely portable container, that uses inputs and outputs
+     * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+     * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
+     * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+     * to understand the default paths.
+     * Only K8s
      * </pre>
      *
      * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
@@ -7902,11 +7912,6 @@ public final class Tasks {
               }
               ports_.add(
                   input.readMessage(flyteidl.core.Tasks.ContainerPort.parser(), extensionRegistry));
-              break;
-            }
-            case 64: {
-
-              useDataLoading_ = input.readBool();
               break;
             }
             case 74: {
@@ -8264,6 +8269,7 @@ public final class Tasks {
      * <pre>
      * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
      * not supported on AWS Batch)
+     * Only K8s
      * </pre>
      *
      * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -8275,6 +8281,7 @@ public final class Tasks {
      * <pre>
      * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
      * not supported on AWS Batch)
+     * Only K8s
      * </pre>
      *
      * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -8287,6 +8294,7 @@ public final class Tasks {
      * <pre>
      * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
      * not supported on AWS Batch)
+     * Only K8s
      * </pre>
      *
      * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -8298,6 +8306,7 @@ public final class Tasks {
      * <pre>
      * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
      * not supported on AWS Batch)
+     * Only K8s
      * </pre>
      *
      * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -8309,6 +8318,7 @@ public final class Tasks {
      * <pre>
      * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
      * not supported on AWS Batch)
+     * Only K8s
      * </pre>
      *
      * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -8318,28 +8328,17 @@ public final class Tasks {
       return ports_.get(index);
     }
 
-    public static final int USE_DATA_LOADING_FIELD_NUMBER = 8;
-    private boolean useDataLoading_;
-    /**
-     * <pre>
-     * BETA: This enables use of CoPilot or automated data loading into the contaiiner. This makes it possible to to run a completely portable container, that uses inputs and outputs
-     * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
-     * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
-     * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
-     * to understand the default paths.
-     * </pre>
-     *
-     * <code>bool use_data_loading = 8;</code>
-     */
-    public boolean getUseDataLoading() {
-      return useDataLoading_;
-    }
-
     public static final int DATA_CONFIG_FIELD_NUMBER = 9;
     private flyteidl.core.Tasks.DataLoadingConfig dataConfig_;
     /**
      * <pre>
-     * Optional configuration for CoPilot. If not specified, then default values are used.
+     * BETA: Optional configuration for DataLoading. If not specified, then default values are used.
+     * This makes it possible to to run a completely portable container, that uses inputs and outputs
+     * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+     * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
+     * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+     * to understand the default paths.
+     * Only K8s
      * </pre>
      *
      * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
@@ -8349,7 +8348,13 @@ public final class Tasks {
     }
     /**
      * <pre>
-     * Optional configuration for CoPilot. If not specified, then default values are used.
+     * BETA: Optional configuration for DataLoading. If not specified, then default values are used.
+     * This makes it possible to to run a completely portable container, that uses inputs and outputs
+     * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+     * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
+     * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+     * to understand the default paths.
+     * Only K8s
      * </pre>
      *
      * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
@@ -8359,7 +8364,13 @@ public final class Tasks {
     }
     /**
      * <pre>
-     * Optional configuration for CoPilot. If not specified, then default values are used.
+     * BETA: Optional configuration for DataLoading. If not specified, then default values are used.
+     * This makes it possible to to run a completely portable container, that uses inputs and outputs
+     * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+     * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
+     * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+     * to understand the default paths.
+     * Only K8s
      * </pre>
      *
      * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
@@ -8402,9 +8413,6 @@ public final class Tasks {
       }
       for (int i = 0; i < ports_.size(); i++) {
         output.writeMessage(7, ports_.get(i));
-      }
-      if (useDataLoading_ != false) {
-        output.writeBool(8, useDataLoading_);
       }
       if (dataConfig_ != null) {
         output.writeMessage(9, getDataConfig());
@@ -8453,10 +8461,6 @@ public final class Tasks {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, ports_.get(i));
       }
-      if (useDataLoading_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, useDataLoading_);
-      }
       if (dataConfig_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, getDataConfig());
@@ -8493,8 +8497,6 @@ public final class Tasks {
           .equals(other.getConfigList())) return false;
       if (!getPortsList()
           .equals(other.getPortsList())) return false;
-      if (getUseDataLoading()
-          != other.getUseDataLoading()) return false;
       if (hasDataConfig() != other.hasDataConfig()) return false;
       if (hasDataConfig()) {
         if (!getDataConfig()
@@ -8537,9 +8539,6 @@ public final class Tasks {
         hash = (37 * hash) + PORTS_FIELD_NUMBER;
         hash = (53 * hash) + getPortsList().hashCode();
       }
-      hash = (37 * hash) + USE_DATA_LOADING_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getUseDataLoading());
       if (hasDataConfig()) {
         hash = (37 * hash) + DATA_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getDataConfig().hashCode();
@@ -8710,8 +8709,6 @@ public final class Tasks {
         } else {
           portsBuilder_.clear();
         }
-        useDataLoading_ = false;
-
         if (dataConfigBuilder_ == null) {
           dataConfig_ = null;
         } else {
@@ -8789,7 +8786,6 @@ public final class Tasks {
         } else {
           result.ports_ = portsBuilder_.build();
         }
-        result.useDataLoading_ = useDataLoading_;
         if (dataConfigBuilder_ == null) {
           result.dataConfig_ = dataConfig_;
         } else {
@@ -8948,9 +8944,6 @@ public final class Tasks {
               portsBuilder_.addAllMessages(other.ports_);
             }
           }
-        }
-        if (other.getUseDataLoading() != false) {
-          setUseDataLoading(other.getUseDataLoading());
         }
         if (other.hasDataConfig()) {
           mergeDataConfig(other.getDataConfig());
@@ -10163,6 +10156,7 @@ public final class Tasks {
        * <pre>
        * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
        * not supported on AWS Batch)
+       * Only K8s
        * </pre>
        *
        * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -10178,6 +10172,7 @@ public final class Tasks {
        * <pre>
        * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
        * not supported on AWS Batch)
+       * Only K8s
        * </pre>
        *
        * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -10193,6 +10188,7 @@ public final class Tasks {
        * <pre>
        * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
        * not supported on AWS Batch)
+       * Only K8s
        * </pre>
        *
        * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -10208,6 +10204,7 @@ public final class Tasks {
        * <pre>
        * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
        * not supported on AWS Batch)
+       * Only K8s
        * </pre>
        *
        * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -10230,6 +10227,7 @@ public final class Tasks {
        * <pre>
        * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
        * not supported on AWS Batch)
+       * Only K8s
        * </pre>
        *
        * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -10249,6 +10247,7 @@ public final class Tasks {
        * <pre>
        * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
        * not supported on AWS Batch)
+       * Only K8s
        * </pre>
        *
        * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -10270,6 +10269,7 @@ public final class Tasks {
        * <pre>
        * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
        * not supported on AWS Batch)
+       * Only K8s
        * </pre>
        *
        * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -10292,6 +10292,7 @@ public final class Tasks {
        * <pre>
        * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
        * not supported on AWS Batch)
+       * Only K8s
        * </pre>
        *
        * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -10311,6 +10312,7 @@ public final class Tasks {
        * <pre>
        * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
        * not supported on AWS Batch)
+       * Only K8s
        * </pre>
        *
        * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -10330,6 +10332,7 @@ public final class Tasks {
        * <pre>
        * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
        * not supported on AWS Batch)
+       * Only K8s
        * </pre>
        *
        * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -10350,6 +10353,7 @@ public final class Tasks {
        * <pre>
        * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
        * not supported on AWS Batch)
+       * Only K8s
        * </pre>
        *
        * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -10368,6 +10372,7 @@ public final class Tasks {
        * <pre>
        * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
        * not supported on AWS Batch)
+       * Only K8s
        * </pre>
        *
        * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -10386,6 +10391,7 @@ public final class Tasks {
        * <pre>
        * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
        * not supported on AWS Batch)
+       * Only K8s
        * </pre>
        *
        * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -10398,6 +10404,7 @@ public final class Tasks {
        * <pre>
        * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
        * not supported on AWS Batch)
+       * Only K8s
        * </pre>
        *
        * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -10413,6 +10420,7 @@ public final class Tasks {
        * <pre>
        * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
        * not supported on AWS Batch)
+       * Only K8s
        * </pre>
        *
        * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -10429,6 +10437,7 @@ public final class Tasks {
        * <pre>
        * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
        * not supported on AWS Batch)
+       * Only K8s
        * </pre>
        *
        * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -10441,6 +10450,7 @@ public final class Tasks {
        * <pre>
        * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
        * not supported on AWS Batch)
+       * Only K8s
        * </pre>
        *
        * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -10454,6 +10464,7 @@ public final class Tasks {
        * <pre>
        * Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but
        * not supported on AWS Batch)
+       * Only K8s
        * </pre>
        *
        * <code>repeated .flyteidl.core.ContainerPort ports = 7;</code>
@@ -10477,62 +10488,18 @@ public final class Tasks {
         return portsBuilder_;
       }
 
-      private boolean useDataLoading_ ;
-      /**
-       * <pre>
-       * BETA: This enables use of CoPilot or automated data loading into the contaiiner. This makes it possible to to run a completely portable container, that uses inputs and outputs
-       * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
-       * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
-       * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
-       * to understand the default paths.
-       * </pre>
-       *
-       * <code>bool use_data_loading = 8;</code>
-       */
-      public boolean getUseDataLoading() {
-        return useDataLoading_;
-      }
-      /**
-       * <pre>
-       * BETA: This enables use of CoPilot or automated data loading into the contaiiner. This makes it possible to to run a completely portable container, that uses inputs and outputs
-       * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
-       * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
-       * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
-       * to understand the default paths.
-       * </pre>
-       *
-       * <code>bool use_data_loading = 8;</code>
-       */
-      public Builder setUseDataLoading(boolean value) {
-        
-        useDataLoading_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * BETA: This enables use of CoPilot or automated data loading into the contaiiner. This makes it possible to to run a completely portable container, that uses inputs and outputs
-       * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
-       * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
-       * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
-       * to understand the default paths.
-       * </pre>
-       *
-       * <code>bool use_data_loading = 8;</code>
-       */
-      public Builder clearUseDataLoading() {
-        
-        useDataLoading_ = false;
-        onChanged();
-        return this;
-      }
-
       private flyteidl.core.Tasks.DataLoadingConfig dataConfig_;
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Tasks.DataLoadingConfig, flyteidl.core.Tasks.DataLoadingConfig.Builder, flyteidl.core.Tasks.DataLoadingConfigOrBuilder> dataConfigBuilder_;
       /**
        * <pre>
-       * Optional configuration for CoPilot. If not specified, then default values are used.
+       * BETA: Optional configuration for DataLoading. If not specified, then default values are used.
+       * This makes it possible to to run a completely portable container, that uses inputs and outputs
+       * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+       * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
+       * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+       * to understand the default paths.
+       * Only K8s
        * </pre>
        *
        * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
@@ -10542,7 +10509,13 @@ public final class Tasks {
       }
       /**
        * <pre>
-       * Optional configuration for CoPilot. If not specified, then default values are used.
+       * BETA: Optional configuration for DataLoading. If not specified, then default values are used.
+       * This makes it possible to to run a completely portable container, that uses inputs and outputs
+       * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+       * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
+       * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+       * to understand the default paths.
+       * Only K8s
        * </pre>
        *
        * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
@@ -10556,7 +10529,13 @@ public final class Tasks {
       }
       /**
        * <pre>
-       * Optional configuration for CoPilot. If not specified, then default values are used.
+       * BETA: Optional configuration for DataLoading. If not specified, then default values are used.
+       * This makes it possible to to run a completely portable container, that uses inputs and outputs
+       * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+       * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
+       * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+       * to understand the default paths.
+       * Only K8s
        * </pre>
        *
        * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
@@ -10576,7 +10555,13 @@ public final class Tasks {
       }
       /**
        * <pre>
-       * Optional configuration for CoPilot. If not specified, then default values are used.
+       * BETA: Optional configuration for DataLoading. If not specified, then default values are used.
+       * This makes it possible to to run a completely portable container, that uses inputs and outputs
+       * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+       * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
+       * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+       * to understand the default paths.
+       * Only K8s
        * </pre>
        *
        * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
@@ -10594,7 +10579,13 @@ public final class Tasks {
       }
       /**
        * <pre>
-       * Optional configuration for CoPilot. If not specified, then default values are used.
+       * BETA: Optional configuration for DataLoading. If not specified, then default values are used.
+       * This makes it possible to to run a completely portable container, that uses inputs and outputs
+       * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+       * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
+       * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+       * to understand the default paths.
+       * Only K8s
        * </pre>
        *
        * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
@@ -10616,7 +10607,13 @@ public final class Tasks {
       }
       /**
        * <pre>
-       * Optional configuration for CoPilot. If not specified, then default values are used.
+       * BETA: Optional configuration for DataLoading. If not specified, then default values are used.
+       * This makes it possible to to run a completely portable container, that uses inputs and outputs
+       * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+       * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
+       * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+       * to understand the default paths.
+       * Only K8s
        * </pre>
        *
        * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
@@ -10634,7 +10631,13 @@ public final class Tasks {
       }
       /**
        * <pre>
-       * Optional configuration for CoPilot. If not specified, then default values are used.
+       * BETA: Optional configuration for DataLoading. If not specified, then default values are used.
+       * This makes it possible to to run a completely portable container, that uses inputs and outputs
+       * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+       * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
+       * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+       * to understand the default paths.
+       * Only K8s
        * </pre>
        *
        * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
@@ -10646,7 +10649,13 @@ public final class Tasks {
       }
       /**
        * <pre>
-       * Optional configuration for CoPilot. If not specified, then default values are used.
+       * BETA: Optional configuration for DataLoading. If not specified, then default values are used.
+       * This makes it possible to to run a completely portable container, that uses inputs and outputs
+       * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+       * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
+       * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+       * to understand the default paths.
+       * Only K8s
        * </pre>
        *
        * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
@@ -10661,7 +10670,13 @@ public final class Tasks {
       }
       /**
        * <pre>
-       * Optional configuration for CoPilot. If not specified, then default values are used.
+       * BETA: Optional configuration for DataLoading. If not specified, then default values are used.
+       * This makes it possible to to run a completely portable container, that uses inputs and outputs
+       * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+       * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
+       * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+       * to understand the default paths.
+       * Only K8s
        * </pre>
        *
        * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
@@ -10802,6 +10817,15 @@ public final class Tasks {
      * <code>.flyteidl.core.DataLoadingConfig.MetadataFormat format = 3;</code>
      */
     flyteidl.core.Tasks.DataLoadingConfig.MetadataFormat getFormat();
+
+    /**
+     * <pre>
+     * Flag enables DataLoading Config. If this is not set, data loading will not be used! 
+     * </pre>
+     *
+     * <code>bool enabled = 4;</code>
+     */
+    boolean getEnabled();
   }
   /**
    * <pre>
@@ -10867,6 +10891,11 @@ public final class Tasks {
               int rawValue = input.readEnum();
 
               format_ = rawValue;
+              break;
+            }
+            case 32: {
+
+              enabled_ = input.readBool();
               break;
             }
             default: {
@@ -11154,6 +11183,19 @@ public final class Tasks {
       return result == null ? flyteidl.core.Tasks.DataLoadingConfig.MetadataFormat.UNRECOGNIZED : result;
     }
 
+    public static final int ENABLED_FIELD_NUMBER = 4;
+    private boolean enabled_;
+    /**
+     * <pre>
+     * Flag enables DataLoading Config. If this is not set, data loading will not be used! 
+     * </pre>
+     *
+     * <code>bool enabled = 4;</code>
+     */
+    public boolean getEnabled() {
+      return enabled_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -11177,6 +11219,9 @@ public final class Tasks {
       if (format_ != flyteidl.core.Tasks.DataLoadingConfig.MetadataFormat.JSON.getNumber()) {
         output.writeEnum(3, format_);
       }
+      if (enabled_ != false) {
+        output.writeBool(4, enabled_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -11195,6 +11240,10 @@ public final class Tasks {
       if (format_ != flyteidl.core.Tasks.DataLoadingConfig.MetadataFormat.JSON.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, format_);
+      }
+      if (enabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, enabled_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11216,6 +11265,8 @@ public final class Tasks {
       if (!getOutputPath()
           .equals(other.getOutputPath())) return false;
       if (format_ != other.format_) return false;
+      if (getEnabled()
+          != other.getEnabled()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11233,6 +11284,9 @@ public final class Tasks {
       hash = (53 * hash) + getOutputPath().hashCode();
       hash = (37 * hash) + FORMAT_FIELD_NUMBER;
       hash = (53 * hash) + format_;
+      hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getEnabled());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11378,6 +11432,8 @@ public final class Tasks {
 
         format_ = 0;
 
+        enabled_ = false;
+
         return this;
       }
 
@@ -11407,6 +11463,7 @@ public final class Tasks {
         result.inputPath_ = inputPath_;
         result.outputPath_ = outputPath_;
         result.format_ = format_;
+        result.enabled_ = enabled_;
         onBuilt();
         return result;
       }
@@ -11465,6 +11522,9 @@ public final class Tasks {
         }
         if (other.format_ != 0) {
           setFormatValue(other.getFormatValue());
+        }
+        if (other.getEnabled() != false) {
+          setEnabled(other.getEnabled());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11772,6 +11832,44 @@ public final class Tasks {
         onChanged();
         return this;
       }
+
+      private boolean enabled_ ;
+      /**
+       * <pre>
+       * Flag enables DataLoading Config. If this is not set, data loading will not be used! 
+       * </pre>
+       *
+       * <code>bool enabled = 4;</code>
+       */
+      public boolean getEnabled() {
+        return enabled_;
+      }
+      /**
+       * <pre>
+       * Flag enables DataLoading Config. If this is not set, data loading will not be used! 
+       * </pre>
+       *
+       * <code>bool enabled = 4;</code>
+       */
+      public Builder setEnabled(boolean value) {
+        
+        enabled_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Flag enables DataLoading Config. If this is not set, data loading will not be used! 
+       * </pre>
+       *
+       * <code>bool enabled = 4;</code>
+       */
+      public Builder clearEnabled() {
+        
+        enabled_ = false;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -11904,21 +12002,21 @@ public final class Tasks {
       "Interface\022\'\n\006custom\030\005 \001(\0132\027.google.proto" +
       "buf.Struct\022-\n\tcontainer\030\006 \001(\0132\030.flyteidl" +
       ".core.ContainerH\000B\010\n\006target\"\'\n\rContainer" +
-      "Port\022\026\n\016container_port\030\001 \001(\r\"\273\002\n\tContain" +
+      "Port\022\026\n\016container_port\030\001 \001(\r\"\241\002\n\tContain" +
       "er\022\r\n\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004ar" +
       "gs\030\003 \003(\t\022+\n\tresources\030\004 \001(\0132\030.flyteidl.c" +
       "ore.Resources\022(\n\003env\030\005 \003(\0132\033.flyteidl.co" +
       "re.KeyValuePair\022+\n\006config\030\006 \003(\0132\033.flytei" +
       "dl.core.KeyValuePair\022+\n\005ports\030\007 \003(\0132\034.fl" +
-      "yteidl.core.ContainerPort\022\030\n\020use_data_lo" +
-      "ading\030\010 \001(\010\0225\n\013data_config\030\t \001(\0132 .flyte" +
-      "idl.core.DataLoadingConfig\"\256\001\n\021DataLoadi" +
-      "ngConfig\022\022\n\ninput_path\030\001 \001(\t\022\023\n\013output_p" +
-      "ath\030\002 \001(\t\022?\n\006format\030\003 \001(\0162/.flyteidl.cor" +
-      "e.DataLoadingConfig.MetadataFormat\"/\n\016Me" +
-      "tadataFormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROT" +
-      "O\020\002B2Z0github.com/lyft/flyteidl/gen/pb-g" +
-      "o/flyteidl/coreb\006proto3"
+      "yteidl.core.ContainerPort\0225\n\013data_config" +
+      "\030\t \001(\0132 .flyteidl.core.DataLoadingConfig" +
+      "\"\277\001\n\021DataLoadingConfig\022\022\n\ninput_path\030\001 \001" +
+      "(\t\022\023\n\013output_path\030\002 \001(\t\022?\n\006format\030\003 \001(\0162" +
+      "/.flyteidl.core.DataLoadingConfig.Metada" +
+      "taFormat\022\017\n\007enabled\030\004 \001(\010\"/\n\016MetadataFor" +
+      "mat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002B2Z0gi" +
+      "thub.com/lyft/flyteidl/gen/pb-go/flyteid" +
+      "l/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -11978,13 +12076,13 @@ public final class Tasks {
     internal_static_flyteidl_core_Container_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Container_descriptor,
-        new java.lang.String[] { "Image", "Command", "Args", "Resources", "Env", "Config", "Ports", "UseDataLoading", "DataConfig", });
+        new java.lang.String[] { "Image", "Command", "Args", "Resources", "Env", "Config", "Ports", "DataConfig", });
     internal_static_flyteidl_core_DataLoadingConfig_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_core_DataLoadingConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_DataLoadingConfig_descriptor,
-        new java.lang.String[] { "InputPath", "OutputPath", "Format", });
+        new java.lang.String[] { "InputPath", "OutputPath", "Format", "Enabled", });
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Interface.getDescriptor();
     flyteidl.core.Literals.getDescriptor();

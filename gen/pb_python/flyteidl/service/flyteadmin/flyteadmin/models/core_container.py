@@ -43,7 +43,6 @@ class CoreContainer(object):
         'env': 'list[CoreKeyValuePair]',
         'config': 'list[CoreKeyValuePair]',
         'ports': 'list[CoreContainerPort]',
-        'use_data_loading': 'bool',
         'data_config': 'CoreDataLoadingConfig'
     }
 
@@ -55,11 +54,10 @@ class CoreContainer(object):
         'env': 'env',
         'config': 'config',
         'ports': 'ports',
-        'use_data_loading': 'use_data_loading',
         'data_config': 'data_config'
     }
 
-    def __init__(self, image=None, command=None, args=None, resources=None, env=None, config=None, ports=None, use_data_loading=None, data_config=None):  # noqa: E501
+    def __init__(self, image=None, command=None, args=None, resources=None, env=None, config=None, ports=None, data_config=None):  # noqa: E501
         """CoreContainer - a model defined in Swagger"""  # noqa: E501
 
         self._image = None
@@ -69,7 +67,6 @@ class CoreContainer(object):
         self._env = None
         self._config = None
         self._ports = None
-        self._use_data_loading = None
         self._data_config = None
         self.discriminator = None
 
@@ -87,8 +84,6 @@ class CoreContainer(object):
             self.config = config
         if ports is not None:
             self.ports = ports
-        if use_data_loading is not None:
-            self.use_data_loading = use_data_loading
         if data_config is not None:
             self.data_config = data_config
 
@@ -250,33 +245,9 @@ class CoreContainer(object):
         self._ports = ports
 
     @property
-    def use_data_loading(self):
-        """Gets the use_data_loading of this CoreContainer.  # noqa: E501
-
-        BETA: This enables use of CoPilot or automated data loading into the contaiiner. This makes it possible to to run a completely portable container, that uses inputs and outputs only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment. If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories  are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation to understand the default paths.  # noqa: E501
-
-        :return: The use_data_loading of this CoreContainer.  # noqa: E501
-        :rtype: bool
-        """
-        return self._use_data_loading
-
-    @use_data_loading.setter
-    def use_data_loading(self, use_data_loading):
-        """Sets the use_data_loading of this CoreContainer.
-
-        BETA: This enables use of CoPilot or automated data loading into the contaiiner. This makes it possible to to run a completely portable container, that uses inputs and outputs only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment. If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories  are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation to understand the default paths.  # noqa: E501
-
-        :param use_data_loading: The use_data_loading of this CoreContainer.  # noqa: E501
-        :type: bool
-        """
-
-        self._use_data_loading = use_data_loading
-
-    @property
     def data_config(self):
         """Gets the data_config of this CoreContainer.  # noqa: E501
 
-        Optional configuration for CoPilot. If not specified, then default values are used.  # noqa: E501
 
         :return: The data_config of this CoreContainer.  # noqa: E501
         :rtype: CoreDataLoadingConfig
@@ -287,7 +258,6 @@ class CoreContainer(object):
     def data_config(self, data_config):
         """Sets the data_config of this CoreContainer.
 
-        Optional configuration for CoPilot. If not specified, then default values are used.  # noqa: E501
 
         :param data_config: The data_config of this CoreContainer.  # noqa: E501
         :type: CoreDataLoadingConfig
