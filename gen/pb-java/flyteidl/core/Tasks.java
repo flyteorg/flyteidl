@@ -7759,41 +7759,41 @@ public final class Tasks {
 
     /**
      * <pre>
-     * BETA: This enables use of CoPilot. This makes it possible to to run a completely portable container, that uses inputs and outputs
+     * BETA: This enables use of CoPilot or automated data loading into the contaiiner. This makes it possible to to run a completely portable container, that uses inputs and outputs
      * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
-     * If CoPilot is enabled, then data will be mounted in accompanying directories specified in the CoPilot settings. If the directories 
+     * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
      * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
      * to understand the default paths.
      * </pre>
      *
-     * <code>bool use_copilot = 8;</code>
+     * <code>bool use_data_loading = 8;</code>
      */
-    boolean getUseCopilot();
+    boolean getUseDataLoading();
 
     /**
      * <pre>
      * Optional configuration for CoPilot. If not specified, then default values are used.
      * </pre>
      *
-     * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+     * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
      */
-    boolean hasCopilotConfig();
+    boolean hasDataConfig();
     /**
      * <pre>
      * Optional configuration for CoPilot. If not specified, then default values are used.
      * </pre>
      *
-     * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+     * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
      */
-    flyteidl.core.Tasks.CoPilot getCopilotConfig();
+    flyteidl.core.Tasks.DataLoadingConfig getDataConfig();
     /**
      * <pre>
      * Optional configuration for CoPilot. If not specified, then default values are used.
      * </pre>
      *
-     * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+     * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
      */
-    flyteidl.core.Tasks.CoPilotOrBuilder getCopilotConfigOrBuilder();
+    flyteidl.core.Tasks.DataLoadingConfigOrBuilder getDataConfigOrBuilder();
   }
   /**
    * Protobuf type {@code flyteidl.core.Container}
@@ -7906,18 +7906,18 @@ public final class Tasks {
             }
             case 64: {
 
-              useCopilot_ = input.readBool();
+              useDataLoading_ = input.readBool();
               break;
             }
             case 74: {
-              flyteidl.core.Tasks.CoPilot.Builder subBuilder = null;
-              if (copilotConfig_ != null) {
-                subBuilder = copilotConfig_.toBuilder();
+              flyteidl.core.Tasks.DataLoadingConfig.Builder subBuilder = null;
+              if (dataConfig_ != null) {
+                subBuilder = dataConfig_.toBuilder();
               }
-              copilotConfig_ = input.readMessage(flyteidl.core.Tasks.CoPilot.parser(), extensionRegistry);
+              dataConfig_ = input.readMessage(flyteidl.core.Tasks.DataLoadingConfig.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(copilotConfig_);
-                copilotConfig_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(dataConfig_);
+                dataConfig_ = subBuilder.buildPartial();
               }
 
               break;
@@ -8318,54 +8318,54 @@ public final class Tasks {
       return ports_.get(index);
     }
 
-    public static final int USE_COPILOT_FIELD_NUMBER = 8;
-    private boolean useCopilot_;
+    public static final int USE_DATA_LOADING_FIELD_NUMBER = 8;
+    private boolean useDataLoading_;
     /**
      * <pre>
-     * BETA: This enables use of CoPilot. This makes it possible to to run a completely portable container, that uses inputs and outputs
+     * BETA: This enables use of CoPilot or automated data loading into the contaiiner. This makes it possible to to run a completely portable container, that uses inputs and outputs
      * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
-     * If CoPilot is enabled, then data will be mounted in accompanying directories specified in the CoPilot settings. If the directories 
+     * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
      * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
      * to understand the default paths.
      * </pre>
      *
-     * <code>bool use_copilot = 8;</code>
+     * <code>bool use_data_loading = 8;</code>
      */
-    public boolean getUseCopilot() {
-      return useCopilot_;
+    public boolean getUseDataLoading() {
+      return useDataLoading_;
     }
 
-    public static final int COPILOT_CONFIG_FIELD_NUMBER = 9;
-    private flyteidl.core.Tasks.CoPilot copilotConfig_;
+    public static final int DATA_CONFIG_FIELD_NUMBER = 9;
+    private flyteidl.core.Tasks.DataLoadingConfig dataConfig_;
     /**
      * <pre>
      * Optional configuration for CoPilot. If not specified, then default values are used.
      * </pre>
      *
-     * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+     * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
      */
-    public boolean hasCopilotConfig() {
-      return copilotConfig_ != null;
+    public boolean hasDataConfig() {
+      return dataConfig_ != null;
     }
     /**
      * <pre>
      * Optional configuration for CoPilot. If not specified, then default values are used.
      * </pre>
      *
-     * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+     * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
      */
-    public flyteidl.core.Tasks.CoPilot getCopilotConfig() {
-      return copilotConfig_ == null ? flyteidl.core.Tasks.CoPilot.getDefaultInstance() : copilotConfig_;
+    public flyteidl.core.Tasks.DataLoadingConfig getDataConfig() {
+      return dataConfig_ == null ? flyteidl.core.Tasks.DataLoadingConfig.getDefaultInstance() : dataConfig_;
     }
     /**
      * <pre>
      * Optional configuration for CoPilot. If not specified, then default values are used.
      * </pre>
      *
-     * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+     * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
      */
-    public flyteidl.core.Tasks.CoPilotOrBuilder getCopilotConfigOrBuilder() {
-      return getCopilotConfig();
+    public flyteidl.core.Tasks.DataLoadingConfigOrBuilder getDataConfigOrBuilder() {
+      return getDataConfig();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -8403,11 +8403,11 @@ public final class Tasks {
       for (int i = 0; i < ports_.size(); i++) {
         output.writeMessage(7, ports_.get(i));
       }
-      if (useCopilot_ != false) {
-        output.writeBool(8, useCopilot_);
+      if (useDataLoading_ != false) {
+        output.writeBool(8, useDataLoading_);
       }
-      if (copilotConfig_ != null) {
-        output.writeMessage(9, getCopilotConfig());
+      if (dataConfig_ != null) {
+        output.writeMessage(9, getDataConfig());
       }
       unknownFields.writeTo(output);
     }
@@ -8453,13 +8453,13 @@ public final class Tasks {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, ports_.get(i));
       }
-      if (useCopilot_ != false) {
+      if (useDataLoading_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, useCopilot_);
+          .computeBoolSize(8, useDataLoading_);
       }
-      if (copilotConfig_ != null) {
+      if (dataConfig_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getCopilotConfig());
+          .computeMessageSize(9, getDataConfig());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8493,12 +8493,12 @@ public final class Tasks {
           .equals(other.getConfigList())) return false;
       if (!getPortsList()
           .equals(other.getPortsList())) return false;
-      if (getUseCopilot()
-          != other.getUseCopilot()) return false;
-      if (hasCopilotConfig() != other.hasCopilotConfig()) return false;
-      if (hasCopilotConfig()) {
-        if (!getCopilotConfig()
-            .equals(other.getCopilotConfig())) return false;
+      if (getUseDataLoading()
+          != other.getUseDataLoading()) return false;
+      if (hasDataConfig() != other.hasDataConfig()) return false;
+      if (hasDataConfig()) {
+        if (!getDataConfig()
+            .equals(other.getDataConfig())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -8537,12 +8537,12 @@ public final class Tasks {
         hash = (37 * hash) + PORTS_FIELD_NUMBER;
         hash = (53 * hash) + getPortsList().hashCode();
       }
-      hash = (37 * hash) + USE_COPILOT_FIELD_NUMBER;
+      hash = (37 * hash) + USE_DATA_LOADING_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getUseCopilot());
-      if (hasCopilotConfig()) {
-        hash = (37 * hash) + COPILOT_CONFIG_FIELD_NUMBER;
-        hash = (53 * hash) + getCopilotConfig().hashCode();
+          getUseDataLoading());
+      if (hasDataConfig()) {
+        hash = (37 * hash) + DATA_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getDataConfig().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -8710,13 +8710,13 @@ public final class Tasks {
         } else {
           portsBuilder_.clear();
         }
-        useCopilot_ = false;
+        useDataLoading_ = false;
 
-        if (copilotConfigBuilder_ == null) {
-          copilotConfig_ = null;
+        if (dataConfigBuilder_ == null) {
+          dataConfig_ = null;
         } else {
-          copilotConfig_ = null;
-          copilotConfigBuilder_ = null;
+          dataConfig_ = null;
+          dataConfigBuilder_ = null;
         }
         return this;
       }
@@ -8789,11 +8789,11 @@ public final class Tasks {
         } else {
           result.ports_ = portsBuilder_.build();
         }
-        result.useCopilot_ = useCopilot_;
-        if (copilotConfigBuilder_ == null) {
-          result.copilotConfig_ = copilotConfig_;
+        result.useDataLoading_ = useDataLoading_;
+        if (dataConfigBuilder_ == null) {
+          result.dataConfig_ = dataConfig_;
         } else {
-          result.copilotConfig_ = copilotConfigBuilder_.build();
+          result.dataConfig_ = dataConfigBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -8949,11 +8949,11 @@ public final class Tasks {
             }
           }
         }
-        if (other.getUseCopilot() != false) {
-          setUseCopilot(other.getUseCopilot());
+        if (other.getUseDataLoading() != false) {
+          setUseDataLoading(other.getUseDataLoading());
         }
-        if (other.hasCopilotConfig()) {
-          mergeCopilotConfig(other.getCopilotConfig());
+        if (other.hasDataConfig()) {
+          mergeDataConfig(other.getDataConfig());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -10477,81 +10477,81 @@ public final class Tasks {
         return portsBuilder_;
       }
 
-      private boolean useCopilot_ ;
+      private boolean useDataLoading_ ;
       /**
        * <pre>
-       * BETA: This enables use of CoPilot. This makes it possible to to run a completely portable container, that uses inputs and outputs
+       * BETA: This enables use of CoPilot or automated data loading into the contaiiner. This makes it possible to to run a completely portable container, that uses inputs and outputs
        * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
-       * If CoPilot is enabled, then data will be mounted in accompanying directories specified in the CoPilot settings. If the directories 
+       * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
        * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
        * to understand the default paths.
        * </pre>
        *
-       * <code>bool use_copilot = 8;</code>
+       * <code>bool use_data_loading = 8;</code>
        */
-      public boolean getUseCopilot() {
-        return useCopilot_;
+      public boolean getUseDataLoading() {
+        return useDataLoading_;
       }
       /**
        * <pre>
-       * BETA: This enables use of CoPilot. This makes it possible to to run a completely portable container, that uses inputs and outputs
+       * BETA: This enables use of CoPilot or automated data loading into the contaiiner. This makes it possible to to run a completely portable container, that uses inputs and outputs
        * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
-       * If CoPilot is enabled, then data will be mounted in accompanying directories specified in the CoPilot settings. If the directories 
+       * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
        * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
        * to understand the default paths.
        * </pre>
        *
-       * <code>bool use_copilot = 8;</code>
+       * <code>bool use_data_loading = 8;</code>
        */
-      public Builder setUseCopilot(boolean value) {
+      public Builder setUseDataLoading(boolean value) {
         
-        useCopilot_ = value;
+        useDataLoading_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * BETA: This enables use of CoPilot. This makes it possible to to run a completely portable container, that uses inputs and outputs
+       * BETA: This enables use of CoPilot or automated data loading into the contaiiner. This makes it possible to to run a completely portable container, that uses inputs and outputs
        * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
-       * If CoPilot is enabled, then data will be mounted in accompanying directories specified in the CoPilot settings. If the directories 
+       * If data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories 
        * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
        * to understand the default paths.
        * </pre>
        *
-       * <code>bool use_copilot = 8;</code>
+       * <code>bool use_data_loading = 8;</code>
        */
-      public Builder clearUseCopilot() {
+      public Builder clearUseDataLoading() {
         
-        useCopilot_ = false;
+        useDataLoading_ = false;
         onChanged();
         return this;
       }
 
-      private flyteidl.core.Tasks.CoPilot copilotConfig_;
+      private flyteidl.core.Tasks.DataLoadingConfig dataConfig_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Tasks.CoPilot, flyteidl.core.Tasks.CoPilot.Builder, flyteidl.core.Tasks.CoPilotOrBuilder> copilotConfigBuilder_;
+          flyteidl.core.Tasks.DataLoadingConfig, flyteidl.core.Tasks.DataLoadingConfig.Builder, flyteidl.core.Tasks.DataLoadingConfigOrBuilder> dataConfigBuilder_;
       /**
        * <pre>
        * Optional configuration for CoPilot. If not specified, then default values are used.
        * </pre>
        *
-       * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+       * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
        */
-      public boolean hasCopilotConfig() {
-        return copilotConfigBuilder_ != null || copilotConfig_ != null;
+      public boolean hasDataConfig() {
+        return dataConfigBuilder_ != null || dataConfig_ != null;
       }
       /**
        * <pre>
        * Optional configuration for CoPilot. If not specified, then default values are used.
        * </pre>
        *
-       * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+       * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
        */
-      public flyteidl.core.Tasks.CoPilot getCopilotConfig() {
-        if (copilotConfigBuilder_ == null) {
-          return copilotConfig_ == null ? flyteidl.core.Tasks.CoPilot.getDefaultInstance() : copilotConfig_;
+      public flyteidl.core.Tasks.DataLoadingConfig getDataConfig() {
+        if (dataConfigBuilder_ == null) {
+          return dataConfig_ == null ? flyteidl.core.Tasks.DataLoadingConfig.getDefaultInstance() : dataConfig_;
         } else {
-          return copilotConfigBuilder_.getMessage();
+          return dataConfigBuilder_.getMessage();
         }
       }
       /**
@@ -10559,17 +10559,17 @@ public final class Tasks {
        * Optional configuration for CoPilot. If not specified, then default values are used.
        * </pre>
        *
-       * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+       * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
        */
-      public Builder setCopilotConfig(flyteidl.core.Tasks.CoPilot value) {
-        if (copilotConfigBuilder_ == null) {
+      public Builder setDataConfig(flyteidl.core.Tasks.DataLoadingConfig value) {
+        if (dataConfigBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          copilotConfig_ = value;
+          dataConfig_ = value;
           onChanged();
         } else {
-          copilotConfigBuilder_.setMessage(value);
+          dataConfigBuilder_.setMessage(value);
         }
 
         return this;
@@ -10579,15 +10579,15 @@ public final class Tasks {
        * Optional configuration for CoPilot. If not specified, then default values are used.
        * </pre>
        *
-       * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+       * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
        */
-      public Builder setCopilotConfig(
-          flyteidl.core.Tasks.CoPilot.Builder builderForValue) {
-        if (copilotConfigBuilder_ == null) {
-          copilotConfig_ = builderForValue.build();
+      public Builder setDataConfig(
+          flyteidl.core.Tasks.DataLoadingConfig.Builder builderForValue) {
+        if (dataConfigBuilder_ == null) {
+          dataConfig_ = builderForValue.build();
           onChanged();
         } else {
-          copilotConfigBuilder_.setMessage(builderForValue.build());
+          dataConfigBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
@@ -10597,19 +10597,19 @@ public final class Tasks {
        * Optional configuration for CoPilot. If not specified, then default values are used.
        * </pre>
        *
-       * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+       * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
        */
-      public Builder mergeCopilotConfig(flyteidl.core.Tasks.CoPilot value) {
-        if (copilotConfigBuilder_ == null) {
-          if (copilotConfig_ != null) {
-            copilotConfig_ =
-              flyteidl.core.Tasks.CoPilot.newBuilder(copilotConfig_).mergeFrom(value).buildPartial();
+      public Builder mergeDataConfig(flyteidl.core.Tasks.DataLoadingConfig value) {
+        if (dataConfigBuilder_ == null) {
+          if (dataConfig_ != null) {
+            dataConfig_ =
+              flyteidl.core.Tasks.DataLoadingConfig.newBuilder(dataConfig_).mergeFrom(value).buildPartial();
           } else {
-            copilotConfig_ = value;
+            dataConfig_ = value;
           }
           onChanged();
         } else {
-          copilotConfigBuilder_.mergeFrom(value);
+          dataConfigBuilder_.mergeFrom(value);
         }
 
         return this;
@@ -10619,15 +10619,15 @@ public final class Tasks {
        * Optional configuration for CoPilot. If not specified, then default values are used.
        * </pre>
        *
-       * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+       * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
        */
-      public Builder clearCopilotConfig() {
-        if (copilotConfigBuilder_ == null) {
-          copilotConfig_ = null;
+      public Builder clearDataConfig() {
+        if (dataConfigBuilder_ == null) {
+          dataConfig_ = null;
           onChanged();
         } else {
-          copilotConfig_ = null;
-          copilotConfigBuilder_ = null;
+          dataConfig_ = null;
+          dataConfigBuilder_ = null;
         }
 
         return this;
@@ -10637,26 +10637,26 @@ public final class Tasks {
        * Optional configuration for CoPilot. If not specified, then default values are used.
        * </pre>
        *
-       * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+       * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
        */
-      public flyteidl.core.Tasks.CoPilot.Builder getCopilotConfigBuilder() {
+      public flyteidl.core.Tasks.DataLoadingConfig.Builder getDataConfigBuilder() {
         
         onChanged();
-        return getCopilotConfigFieldBuilder().getBuilder();
+        return getDataConfigFieldBuilder().getBuilder();
       }
       /**
        * <pre>
        * Optional configuration for CoPilot. If not specified, then default values are used.
        * </pre>
        *
-       * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+       * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
        */
-      public flyteidl.core.Tasks.CoPilotOrBuilder getCopilotConfigOrBuilder() {
-        if (copilotConfigBuilder_ != null) {
-          return copilotConfigBuilder_.getMessageOrBuilder();
+      public flyteidl.core.Tasks.DataLoadingConfigOrBuilder getDataConfigOrBuilder() {
+        if (dataConfigBuilder_ != null) {
+          return dataConfigBuilder_.getMessageOrBuilder();
         } else {
-          return copilotConfig_ == null ?
-              flyteidl.core.Tasks.CoPilot.getDefaultInstance() : copilotConfig_;
+          return dataConfig_ == null ?
+              flyteidl.core.Tasks.DataLoadingConfig.getDefaultInstance() : dataConfig_;
         }
       }
       /**
@@ -10664,20 +10664,20 @@ public final class Tasks {
        * Optional configuration for CoPilot. If not specified, then default values are used.
        * </pre>
        *
-       * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+       * <code>.flyteidl.core.DataLoadingConfig data_config = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Tasks.CoPilot, flyteidl.core.Tasks.CoPilot.Builder, flyteidl.core.Tasks.CoPilotOrBuilder> 
-          getCopilotConfigFieldBuilder() {
-        if (copilotConfigBuilder_ == null) {
-          copilotConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.Tasks.CoPilot, flyteidl.core.Tasks.CoPilot.Builder, flyteidl.core.Tasks.CoPilotOrBuilder>(
-                  getCopilotConfig(),
+          flyteidl.core.Tasks.DataLoadingConfig, flyteidl.core.Tasks.DataLoadingConfig.Builder, flyteidl.core.Tasks.DataLoadingConfigOrBuilder> 
+          getDataConfigFieldBuilder() {
+        if (dataConfigBuilder_ == null) {
+          dataConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Tasks.DataLoadingConfig, flyteidl.core.Tasks.DataLoadingConfig.Builder, flyteidl.core.Tasks.DataLoadingConfigOrBuilder>(
+                  getDataConfig(),
                   getParentForChildren(),
                   isClean());
-          copilotConfig_ = null;
+          dataConfig_ = null;
         }
-        return copilotConfigBuilder_;
+        return dataConfigBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -10732,8 +10732,8 @@ public final class Tasks {
 
   }
 
-  public interface CoPilotOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.core.CoPilot)
+  public interface DataLoadingConfigOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.DataLoadingConfig)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -10790,7 +10790,7 @@ public final class Tasks {
      * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
      * </pre>
      *
-     * <code>.flyteidl.core.CoPilot.MetadataFormat format = 3;</code>
+     * <code>.flyteidl.core.DataLoadingConfig.MetadataFormat format = 3;</code>
      */
     int getFormatValue();
     /**
@@ -10799,9 +10799,9 @@ public final class Tasks {
      * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
      * </pre>
      *
-     * <code>.flyteidl.core.CoPilot.MetadataFormat format = 3;</code>
+     * <code>.flyteidl.core.DataLoadingConfig.MetadataFormat format = 3;</code>
      */
-    flyteidl.core.Tasks.CoPilot.MetadataFormat getFormat();
+    flyteidl.core.Tasks.DataLoadingConfig.MetadataFormat getFormat();
   }
   /**
    * <pre>
@@ -10810,18 +10810,18 @@ public final class Tasks {
    * Any outputs generated by the user container - within output_path are automatically uploaded.
    * </pre>
    *
-   * Protobuf type {@code flyteidl.core.CoPilot}
+   * Protobuf type {@code flyteidl.core.DataLoadingConfig}
    */
-  public  static final class CoPilot extends
+  public  static final class DataLoadingConfig extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.core.CoPilot)
-      CoPilotOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.core.DataLoadingConfig)
+      DataLoadingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CoPilot.newBuilder() to construct.
-    private CoPilot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use DataLoadingConfig.newBuilder() to construct.
+    private DataLoadingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CoPilot() {
+    private DataLoadingConfig() {
       inputPath_ = "";
       outputPath_ = "";
       format_ = 0;
@@ -10832,7 +10832,7 @@ public final class Tasks {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CoPilot(
+    private DataLoadingConfig(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10890,15 +10890,15 @@ public final class Tasks {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.core.Tasks.internal_static_flyteidl_core_CoPilot_descriptor;
+      return flyteidl.core.Tasks.internal_static_flyteidl_core_DataLoadingConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.core.Tasks.internal_static_flyteidl_core_CoPilot_fieldAccessorTable
+      return flyteidl.core.Tasks.internal_static_flyteidl_core_DataLoadingConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.core.Tasks.CoPilot.class, flyteidl.core.Tasks.CoPilot.Builder.class);
+              flyteidl.core.Tasks.DataLoadingConfig.class, flyteidl.core.Tasks.DataLoadingConfig.Builder.class);
     }
 
     /**
@@ -10909,13 +10909,13 @@ public final class Tasks {
      * All remote references in core.LiteralMap are replaced with local filesystem references (the data is downloaded to local filesystem)
      * </pre>
      *
-     * Protobuf enum {@code flyteidl.core.CoPilot.MetadataFormat}
+     * Protobuf enum {@code flyteidl.core.DataLoadingConfig.MetadataFormat}
      */
     public enum MetadataFormat
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <pre>
-       * JSON / YAML are serialized represnetation of a map[string]primitive. primitive -&gt; int, string, bool, double/float, bytes
+       * JSON / YAML for the metadata (which contains inlined primitive values). The representation is inline with the standard json specification as specified - https://www.json.org/json-en.html
        * </pre>
        *
        * <code>JSON = 0;</code>
@@ -10938,7 +10938,7 @@ public final class Tasks {
 
       /**
        * <pre>
-       * JSON / YAML are serialized represnetation of a map[string]primitive. primitive -&gt; int, string, bool, double/float, bytes
+       * JSON / YAML for the metadata (which contains inlined primitive values). The representation is inline with the standard json specification as specified - https://www.json.org/json-en.html
        * </pre>
        *
        * <code>JSON = 0;</code>
@@ -11005,7 +11005,7 @@ public final class Tasks {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return flyteidl.core.Tasks.CoPilot.getDescriptor().getEnumTypes().get(0);
+        return flyteidl.core.Tasks.DataLoadingConfig.getDescriptor().getEnumTypes().get(0);
       }
 
       private static final MetadataFormat[] VALUES = values();
@@ -11028,7 +11028,7 @@ public final class Tasks {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:flyteidl.core.CoPilot.MetadataFormat)
+      // @@protoc_insertion_point(enum_scope:flyteidl.core.DataLoadingConfig.MetadataFormat)
     }
 
     public static final int INPUT_PATH_FIELD_NUMBER = 1;
@@ -11135,7 +11135,7 @@ public final class Tasks {
      * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
      * </pre>
      *
-     * <code>.flyteidl.core.CoPilot.MetadataFormat format = 3;</code>
+     * <code>.flyteidl.core.DataLoadingConfig.MetadataFormat format = 3;</code>
      */
     public int getFormatValue() {
       return format_;
@@ -11146,12 +11146,12 @@ public final class Tasks {
      * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
      * </pre>
      *
-     * <code>.flyteidl.core.CoPilot.MetadataFormat format = 3;</code>
+     * <code>.flyteidl.core.DataLoadingConfig.MetadataFormat format = 3;</code>
      */
-    public flyteidl.core.Tasks.CoPilot.MetadataFormat getFormat() {
+    public flyteidl.core.Tasks.DataLoadingConfig.MetadataFormat getFormat() {
       @SuppressWarnings("deprecation")
-      flyteidl.core.Tasks.CoPilot.MetadataFormat result = flyteidl.core.Tasks.CoPilot.MetadataFormat.valueOf(format_);
-      return result == null ? flyteidl.core.Tasks.CoPilot.MetadataFormat.UNRECOGNIZED : result;
+      flyteidl.core.Tasks.DataLoadingConfig.MetadataFormat result = flyteidl.core.Tasks.DataLoadingConfig.MetadataFormat.valueOf(format_);
+      return result == null ? flyteidl.core.Tasks.DataLoadingConfig.MetadataFormat.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -11174,7 +11174,7 @@ public final class Tasks {
       if (!getOutputPathBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, outputPath_);
       }
-      if (format_ != flyteidl.core.Tasks.CoPilot.MetadataFormat.JSON.getNumber()) {
+      if (format_ != flyteidl.core.Tasks.DataLoadingConfig.MetadataFormat.JSON.getNumber()) {
         output.writeEnum(3, format_);
       }
       unknownFields.writeTo(output);
@@ -11192,7 +11192,7 @@ public final class Tasks {
       if (!getOutputPathBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, outputPath_);
       }
-      if (format_ != flyteidl.core.Tasks.CoPilot.MetadataFormat.JSON.getNumber()) {
+      if (format_ != flyteidl.core.Tasks.DataLoadingConfig.MetadataFormat.JSON.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, format_);
       }
@@ -11206,10 +11206,10 @@ public final class Tasks {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.core.Tasks.CoPilot)) {
+      if (!(obj instanceof flyteidl.core.Tasks.DataLoadingConfig)) {
         return super.equals(obj);
       }
-      flyteidl.core.Tasks.CoPilot other = (flyteidl.core.Tasks.CoPilot) obj;
+      flyteidl.core.Tasks.DataLoadingConfig other = (flyteidl.core.Tasks.DataLoadingConfig) obj;
 
       if (!getInputPath()
           .equals(other.getInputPath())) return false;
@@ -11238,69 +11238,69 @@ public final class Tasks {
       return hash;
     }
 
-    public static flyteidl.core.Tasks.CoPilot parseFrom(
+    public static flyteidl.core.Tasks.DataLoadingConfig parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Tasks.CoPilot parseFrom(
+    public static flyteidl.core.Tasks.DataLoadingConfig parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Tasks.CoPilot parseFrom(
+    public static flyteidl.core.Tasks.DataLoadingConfig parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Tasks.CoPilot parseFrom(
+    public static flyteidl.core.Tasks.DataLoadingConfig parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Tasks.CoPilot parseFrom(byte[] data)
+    public static flyteidl.core.Tasks.DataLoadingConfig parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Tasks.CoPilot parseFrom(
+    public static flyteidl.core.Tasks.DataLoadingConfig parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Tasks.CoPilot parseFrom(java.io.InputStream input)
+    public static flyteidl.core.Tasks.DataLoadingConfig parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Tasks.CoPilot parseFrom(
+    public static flyteidl.core.Tasks.DataLoadingConfig parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.Tasks.CoPilot parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.core.Tasks.DataLoadingConfig parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Tasks.CoPilot parseDelimitedFrom(
+    public static flyteidl.core.Tasks.DataLoadingConfig parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.Tasks.CoPilot parseFrom(
+    public static flyteidl.core.Tasks.DataLoadingConfig parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Tasks.CoPilot parseFrom(
+    public static flyteidl.core.Tasks.DataLoadingConfig parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -11313,7 +11313,7 @@ public final class Tasks {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.core.Tasks.CoPilot prototype) {
+    public static Builder newBuilder(flyteidl.core.Tasks.DataLoadingConfig prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -11335,26 +11335,26 @@ public final class Tasks {
      * Any outputs generated by the user container - within output_path are automatically uploaded.
      * </pre>
      *
-     * Protobuf type {@code flyteidl.core.CoPilot}
+     * Protobuf type {@code flyteidl.core.DataLoadingConfig}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.core.CoPilot)
-        flyteidl.core.Tasks.CoPilotOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.DataLoadingConfig)
+        flyteidl.core.Tasks.DataLoadingConfigOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.core.Tasks.internal_static_flyteidl_core_CoPilot_descriptor;
+        return flyteidl.core.Tasks.internal_static_flyteidl_core_DataLoadingConfig_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.core.Tasks.internal_static_flyteidl_core_CoPilot_fieldAccessorTable
+        return flyteidl.core.Tasks.internal_static_flyteidl_core_DataLoadingConfig_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.core.Tasks.CoPilot.class, flyteidl.core.Tasks.CoPilot.Builder.class);
+                flyteidl.core.Tasks.DataLoadingConfig.class, flyteidl.core.Tasks.DataLoadingConfig.Builder.class);
       }
 
-      // Construct using flyteidl.core.Tasks.CoPilot.newBuilder()
+      // Construct using flyteidl.core.Tasks.DataLoadingConfig.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -11384,17 +11384,17 @@ public final class Tasks {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.core.Tasks.internal_static_flyteidl_core_CoPilot_descriptor;
+        return flyteidl.core.Tasks.internal_static_flyteidl_core_DataLoadingConfig_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.core.Tasks.CoPilot getDefaultInstanceForType() {
-        return flyteidl.core.Tasks.CoPilot.getDefaultInstance();
+      public flyteidl.core.Tasks.DataLoadingConfig getDefaultInstanceForType() {
+        return flyteidl.core.Tasks.DataLoadingConfig.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.core.Tasks.CoPilot build() {
-        flyteidl.core.Tasks.CoPilot result = buildPartial();
+      public flyteidl.core.Tasks.DataLoadingConfig build() {
+        flyteidl.core.Tasks.DataLoadingConfig result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -11402,8 +11402,8 @@ public final class Tasks {
       }
 
       @java.lang.Override
-      public flyteidl.core.Tasks.CoPilot buildPartial() {
-        flyteidl.core.Tasks.CoPilot result = new flyteidl.core.Tasks.CoPilot(this);
+      public flyteidl.core.Tasks.DataLoadingConfig buildPartial() {
+        flyteidl.core.Tasks.DataLoadingConfig result = new flyteidl.core.Tasks.DataLoadingConfig(this);
         result.inputPath_ = inputPath_;
         result.outputPath_ = outputPath_;
         result.format_ = format_;
@@ -11445,16 +11445,16 @@ public final class Tasks {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.core.Tasks.CoPilot) {
-          return mergeFrom((flyteidl.core.Tasks.CoPilot)other);
+        if (other instanceof flyteidl.core.Tasks.DataLoadingConfig) {
+          return mergeFrom((flyteidl.core.Tasks.DataLoadingConfig)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.core.Tasks.CoPilot other) {
-        if (other == flyteidl.core.Tasks.CoPilot.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.core.Tasks.DataLoadingConfig other) {
+        if (other == flyteidl.core.Tasks.DataLoadingConfig.getDefaultInstance()) return this;
         if (!other.getInputPath().isEmpty()) {
           inputPath_ = other.inputPath_;
           onChanged();
@@ -11481,11 +11481,11 @@ public final class Tasks {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.core.Tasks.CoPilot parsedMessage = null;
+        flyteidl.core.Tasks.DataLoadingConfig parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.core.Tasks.CoPilot) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.core.Tasks.DataLoadingConfig) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -11710,7 +11710,7 @@ public final class Tasks {
        * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
        * </pre>
        *
-       * <code>.flyteidl.core.CoPilot.MetadataFormat format = 3;</code>
+       * <code>.flyteidl.core.DataLoadingConfig.MetadataFormat format = 3;</code>
        */
       public int getFormatValue() {
         return format_;
@@ -11721,7 +11721,7 @@ public final class Tasks {
        * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
        * </pre>
        *
-       * <code>.flyteidl.core.CoPilot.MetadataFormat format = 3;</code>
+       * <code>.flyteidl.core.DataLoadingConfig.MetadataFormat format = 3;</code>
        */
       public Builder setFormatValue(int value) {
         format_ = value;
@@ -11734,12 +11734,12 @@ public final class Tasks {
        * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
        * </pre>
        *
-       * <code>.flyteidl.core.CoPilot.MetadataFormat format = 3;</code>
+       * <code>.flyteidl.core.DataLoadingConfig.MetadataFormat format = 3;</code>
        */
-      public flyteidl.core.Tasks.CoPilot.MetadataFormat getFormat() {
+      public flyteidl.core.Tasks.DataLoadingConfig.MetadataFormat getFormat() {
         @SuppressWarnings("deprecation")
-        flyteidl.core.Tasks.CoPilot.MetadataFormat result = flyteidl.core.Tasks.CoPilot.MetadataFormat.valueOf(format_);
-        return result == null ? flyteidl.core.Tasks.CoPilot.MetadataFormat.UNRECOGNIZED : result;
+        flyteidl.core.Tasks.DataLoadingConfig.MetadataFormat result = flyteidl.core.Tasks.DataLoadingConfig.MetadataFormat.valueOf(format_);
+        return result == null ? flyteidl.core.Tasks.DataLoadingConfig.MetadataFormat.UNRECOGNIZED : result;
       }
       /**
        * <pre>
@@ -11747,9 +11747,9 @@ public final class Tasks {
        * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
        * </pre>
        *
-       * <code>.flyteidl.core.CoPilot.MetadataFormat format = 3;</code>
+       * <code>.flyteidl.core.DataLoadingConfig.MetadataFormat format = 3;</code>
        */
-      public Builder setFormat(flyteidl.core.Tasks.CoPilot.MetadataFormat value) {
+      public Builder setFormat(flyteidl.core.Tasks.DataLoadingConfig.MetadataFormat value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -11764,7 +11764,7 @@ public final class Tasks {
        * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
        * </pre>
        *
-       * <code>.flyteidl.core.CoPilot.MetadataFormat format = 3;</code>
+       * <code>.flyteidl.core.DataLoadingConfig.MetadataFormat format = 3;</code>
        */
       public Builder clearFormat() {
         
@@ -11785,41 +11785,41 @@ public final class Tasks {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.core.CoPilot)
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.DataLoadingConfig)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.core.CoPilot)
-    private static final flyteidl.core.Tasks.CoPilot DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.core.DataLoadingConfig)
+    private static final flyteidl.core.Tasks.DataLoadingConfig DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.core.Tasks.CoPilot();
+      DEFAULT_INSTANCE = new flyteidl.core.Tasks.DataLoadingConfig();
     }
 
-    public static flyteidl.core.Tasks.CoPilot getDefaultInstance() {
+    public static flyteidl.core.Tasks.DataLoadingConfig getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CoPilot>
-        PARSER = new com.google.protobuf.AbstractParser<CoPilot>() {
+    private static final com.google.protobuf.Parser<DataLoadingConfig>
+        PARSER = new com.google.protobuf.AbstractParser<DataLoadingConfig>() {
       @java.lang.Override
-      public CoPilot parsePartialFrom(
+      public DataLoadingConfig parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CoPilot(input, extensionRegistry);
+        return new DataLoadingConfig(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<CoPilot> parser() {
+    public static com.google.protobuf.Parser<DataLoadingConfig> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CoPilot> getParserForType() {
+    public com.google.protobuf.Parser<DataLoadingConfig> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.core.Tasks.CoPilot getDefaultInstanceForType() {
+    public flyteidl.core.Tasks.DataLoadingConfig getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -11861,10 +11861,10 @@ public final class Tasks {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_Container_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_core_CoPilot_descriptor;
+    internal_static_flyteidl_core_DataLoadingConfig_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_core_CoPilot_fieldAccessorTable;
+      internal_static_flyteidl_core_DataLoadingConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -11904,20 +11904,21 @@ public final class Tasks {
       "Interface\022\'\n\006custom\030\005 \001(\0132\027.google.proto" +
       "buf.Struct\022-\n\tcontainer\030\006 \001(\0132\030.flyteidl" +
       ".core.ContainerH\000B\010\n\006target\"\'\n\rContainer" +
-      "Port\022\026\n\016container_port\030\001 \001(\r\"\257\002\n\tContain" +
+      "Port\022\026\n\016container_port\030\001 \001(\r\"\273\002\n\tContain" +
       "er\022\r\n\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004ar" +
       "gs\030\003 \003(\t\022+\n\tresources\030\004 \001(\0132\030.flyteidl.c" +
       "ore.Resources\022(\n\003env\030\005 \003(\0132\033.flyteidl.co" +
       "re.KeyValuePair\022+\n\006config\030\006 \003(\0132\033.flytei" +
       "dl.core.KeyValuePair\022+\n\005ports\030\007 \003(\0132\034.fl" +
-      "yteidl.core.ContainerPort\022\023\n\013use_copilot" +
-      "\030\010 \001(\010\022.\n\016copilot_config\030\t \001(\0132\026.flyteid" +
-      "l.core.CoPilot\"\232\001\n\007CoPilot\022\022\n\ninput_path" +
-      "\030\001 \001(\t\022\023\n\013output_path\030\002 \001(\t\0225\n\006format\030\003 " +
-      "\001(\0162%.flyteidl.core.CoPilot.MetadataForm" +
-      "at\"/\n\016MetadataFormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001" +
-      "\022\t\n\005PROTO\020\002B2Z0github.com/lyft/flyteidl/" +
-      "gen/pb-go/flyteidl/coreb\006proto3"
+      "yteidl.core.ContainerPort\022\030\n\020use_data_lo" +
+      "ading\030\010 \001(\010\0225\n\013data_config\030\t \001(\0132 .flyte" +
+      "idl.core.DataLoadingConfig\"\256\001\n\021DataLoadi" +
+      "ngConfig\022\022\n\ninput_path\030\001 \001(\t\022\023\n\013output_p" +
+      "ath\030\002 \001(\t\022?\n\006format\030\003 \001(\0162/.flyteidl.cor" +
+      "e.DataLoadingConfig.MetadataFormat\"/\n\016Me" +
+      "tadataFormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROT" +
+      "O\020\002B2Z0github.com/lyft/flyteidl/gen/pb-g" +
+      "o/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -11977,12 +11978,12 @@ public final class Tasks {
     internal_static_flyteidl_core_Container_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Container_descriptor,
-        new java.lang.String[] { "Image", "Command", "Args", "Resources", "Env", "Config", "Ports", "UseCopilot", "CopilotConfig", });
-    internal_static_flyteidl_core_CoPilot_descriptor =
+        new java.lang.String[] { "Image", "Command", "Args", "Resources", "Env", "Config", "Ports", "UseDataLoading", "DataConfig", });
+    internal_static_flyteidl_core_DataLoadingConfig_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_flyteidl_core_CoPilot_fieldAccessorTable = new
+    internal_static_flyteidl_core_DataLoadingConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_core_CoPilot_descriptor,
+        internal_static_flyteidl_core_DataLoadingConfig_descriptor,
         new java.lang.String[] { "InputPath", "OutputPath", "Format", });
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Interface.getDescriptor();

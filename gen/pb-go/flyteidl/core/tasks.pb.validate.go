@@ -563,12 +563,12 @@ func (m *Container) Validate() error {
 
 	}
 
-	// no validation rules for UseCopilot
+	// no validation rules for UseDataLoading
 
-	if v, ok := interface{}(m.GetCopilotConfig()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetDataConfig()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ContainerValidationError{
-				field:  "CopilotConfig",
+				field:  "DataConfig",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
@@ -632,9 +632,10 @@ var _ interface {
 	ErrorName() string
 } = ContainerValidationError{}
 
-// Validate checks the field values on CoPilot with the rules defined in the
-// proto definition for this message. If any rules are violated, an error is returned.
-func (m *CoPilot) Validate() error {
+// Validate checks the field values on DataLoadingConfig with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *DataLoadingConfig) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -648,9 +649,9 @@ func (m *CoPilot) Validate() error {
 	return nil
 }
 
-// CoPilotValidationError is the validation error returned by CoPilot.Validate
-// if the designated constraints aren't met.
-type CoPilotValidationError struct {
+// DataLoadingConfigValidationError is the validation error returned by
+// DataLoadingConfig.Validate if the designated constraints aren't met.
+type DataLoadingConfigValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -658,22 +659,24 @@ type CoPilotValidationError struct {
 }
 
 // Field function returns field value.
-func (e CoPilotValidationError) Field() string { return e.field }
+func (e DataLoadingConfigValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e CoPilotValidationError) Reason() string { return e.reason }
+func (e DataLoadingConfigValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e CoPilotValidationError) Cause() error { return e.cause }
+func (e DataLoadingConfigValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e CoPilotValidationError) Key() bool { return e.key }
+func (e DataLoadingConfigValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e CoPilotValidationError) ErrorName() string { return "CoPilotValidationError" }
+func (e DataLoadingConfigValidationError) ErrorName() string {
+	return "DataLoadingConfigValidationError"
+}
 
 // Error satisfies the builtin error interface
-func (e CoPilotValidationError) Error() string {
+func (e DataLoadingConfigValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -685,14 +688,14 @@ func (e CoPilotValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sCoPilot.%s: %s%s",
+		"invalid %sDataLoadingConfig.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = CoPilotValidationError{}
+var _ error = DataLoadingConfigValidationError{}
 
 var _ interface {
 	Field() string
@@ -700,7 +703,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = CoPilotValidationError{}
+} = DataLoadingConfigValidationError{}
 
 // Validate checks the field values on Resources_ResourceEntry with the rules
 // defined in the proto definition for this message. If any rules are

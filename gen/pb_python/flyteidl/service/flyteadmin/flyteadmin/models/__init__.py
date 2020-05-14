@@ -113,7 +113,6 @@ from flyteadmin.models.admin_workflow_execution_get_data_response import AdminWo
 from flyteadmin.models.admin_workflow_list import AdminWorkflowList
 from flyteadmin.models.admin_workflow_spec import AdminWorkflowSpec
 from flyteadmin.models.blob_type_blob_dimensionality import BlobTypeBlobDimensionality
-from flyteadmin.models.co_pilot_metadata_format import CoPilotMetadataFormat
 from flyteadmin.models.comparison_expression_operator import ComparisonExpressionOperator
 from flyteadmin.models.conjunction_expression_logical_operator import ConjunctionExpressionLogicalOperator
 from flyteadmin.models.connection_set_id_list import ConnectionSetIdList
@@ -128,7 +127,6 @@ from flyteadmin.models.core_blob_metadata import CoreBlobMetadata
 from flyteadmin.models.core_blob_type import CoreBlobType
 from flyteadmin.models.core_boolean_expression import CoreBooleanExpression
 from flyteadmin.models.core_branch_node import CoreBranchNode
-from flyteadmin.models.core_co_pilot import CoreCoPilot
 from flyteadmin.models.core_comparison_expression import CoreComparisonExpression
 from flyteadmin.models.core_compiled_task import CoreCompiledTask
 from flyteadmin.models.core_compiled_workflow import CoreCompiledWorkflow
@@ -137,6 +135,7 @@ from flyteadmin.models.core_conjunction_expression import CoreConjunctionExpress
 from flyteadmin.models.core_connection_set import CoreConnectionSet
 from flyteadmin.models.core_container import CoreContainer
 from flyteadmin.models.core_container_port import CoreContainerPort
+from flyteadmin.models.core_data_loading_config import CoreDataLoadingConfig
 from flyteadmin.models.core_error import CoreError
 from flyteadmin.models.core_execution_error import CoreExecutionError
 from flyteadmin.models.core_identifier import CoreIdentifier
@@ -179,6 +178,7 @@ from flyteadmin.models.core_workflow_metadata import CoreWorkflowMetadata
 from flyteadmin.models.core_workflow_metadata_defaults import CoreWorkflowMetadataDefaults
 from flyteadmin.models.core_workflow_node import CoreWorkflowNode
 from flyteadmin.models.core_workflow_template import CoreWorkflowTemplate
+from flyteadmin.models.data_loading_config_metadata_format import DataLoadingConfigMetadataFormat
 from flyteadmin.models.event_node_execution_event import EventNodeExecutionEvent
 from flyteadmin.models.event_parent_task_execution_metadata import EventParentTaskExecutionMetadata
 from flyteadmin.models.event_task_execution_event import EventTaskExecutionEvent

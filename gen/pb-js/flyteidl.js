@@ -8810,8 +8810,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {Array.<flyteidl.core.IKeyValuePair>|null} [env] Container env
              * @property {Array.<flyteidl.core.IKeyValuePair>|null} [config] Container config
              * @property {Array.<flyteidl.core.IContainerPort>|null} [ports] Container ports
-             * @property {boolean|null} [useCopilot] Container useCopilot
-             * @property {flyteidl.core.ICoPilot|null} [copilotConfig] Container copilotConfig
+             * @property {boolean|null} [useDataLoading] Container useDataLoading
+             * @property {flyteidl.core.IDataLoadingConfig|null} [dataConfig] Container dataConfig
              */
 
             /**
@@ -8891,20 +8891,20 @@ export const flyteidl = $root.flyteidl = (() => {
             Container.prototype.ports = $util.emptyArray;
 
             /**
-             * Container useCopilot.
-             * @member {boolean} useCopilot
+             * Container useDataLoading.
+             * @member {boolean} useDataLoading
              * @memberof flyteidl.core.Container
              * @instance
              */
-            Container.prototype.useCopilot = false;
+            Container.prototype.useDataLoading = false;
 
             /**
-             * Container copilotConfig.
-             * @member {flyteidl.core.ICoPilot|null|undefined} copilotConfig
+             * Container dataConfig.
+             * @member {flyteidl.core.IDataLoadingConfig|null|undefined} dataConfig
              * @memberof flyteidl.core.Container
              * @instance
              */
-            Container.prototype.copilotConfig = null;
+            Container.prototype.dataConfig = null;
 
             /**
              * Creates a new Container instance using the specified properties.
@@ -8949,10 +8949,10 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.ports != null && message.ports.length)
                     for (let i = 0; i < message.ports.length; ++i)
                         $root.flyteidl.core.ContainerPort.encode(message.ports[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                if (message.useCopilot != null && message.hasOwnProperty("useCopilot"))
-                    writer.uint32(/* id 8, wireType 0 =*/64).bool(message.useCopilot);
-                if (message.copilotConfig != null && message.hasOwnProperty("copilotConfig"))
-                    $root.flyteidl.core.CoPilot.encode(message.copilotConfig, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                if (message.useDataLoading != null && message.hasOwnProperty("useDataLoading"))
+                    writer.uint32(/* id 8, wireType 0 =*/64).bool(message.useDataLoading);
+                if (message.dataConfig != null && message.hasOwnProperty("dataConfig"))
+                    $root.flyteidl.core.DataLoadingConfig.encode(message.dataConfig, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 return writer;
             };
 
@@ -9006,10 +9006,10 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.ports.push($root.flyteidl.core.ContainerPort.decode(reader, reader.uint32()));
                         break;
                     case 8:
-                        message.useCopilot = reader.bool();
+                        message.useDataLoading = reader.bool();
                         break;
                     case 9:
-                        message.copilotConfig = $root.flyteidl.core.CoPilot.decode(reader, reader.uint32());
+                        message.dataConfig = $root.flyteidl.core.DataLoadingConfig.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -9079,13 +9079,13 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "ports." + error;
                     }
                 }
-                if (message.useCopilot != null && message.hasOwnProperty("useCopilot"))
-                    if (typeof message.useCopilot !== "boolean")
-                        return "useCopilot: boolean expected";
-                if (message.copilotConfig != null && message.hasOwnProperty("copilotConfig")) {
-                    let error = $root.flyteidl.core.CoPilot.verify(message.copilotConfig);
+                if (message.useDataLoading != null && message.hasOwnProperty("useDataLoading"))
+                    if (typeof message.useDataLoading !== "boolean")
+                        return "useDataLoading: boolean expected";
+                if (message.dataConfig != null && message.hasOwnProperty("dataConfig")) {
+                    let error = $root.flyteidl.core.DataLoadingConfig.verify(message.dataConfig);
                     if (error)
-                        return "copilotConfig." + error;
+                        return "dataConfig." + error;
                 }
                 return null;
             };
@@ -9093,26 +9093,26 @@ export const flyteidl = $root.flyteidl = (() => {
             return Container;
         })();
 
-        core.CoPilot = (function() {
+        core.DataLoadingConfig = (function() {
 
             /**
-             * Properties of a CoPilot.
+             * Properties of a DataLoadingConfig.
              * @memberof flyteidl.core
-             * @interface ICoPilot
-             * @property {string|null} [inputPath] CoPilot inputPath
-             * @property {string|null} [outputPath] CoPilot outputPath
-             * @property {flyteidl.core.CoPilot.MetadataFormat|null} [format] CoPilot format
+             * @interface IDataLoadingConfig
+             * @property {string|null} [inputPath] DataLoadingConfig inputPath
+             * @property {string|null} [outputPath] DataLoadingConfig outputPath
+             * @property {flyteidl.core.DataLoadingConfig.MetadataFormat|null} [format] DataLoadingConfig format
              */
 
             /**
-             * Constructs a new CoPilot.
+             * Constructs a new DataLoadingConfig.
              * @memberof flyteidl.core
-             * @classdesc Represents a CoPilot.
-             * @implements ICoPilot
+             * @classdesc Represents a DataLoadingConfig.
+             * @implements IDataLoadingConfig
              * @constructor
-             * @param {flyteidl.core.ICoPilot=} [properties] Properties to set
+             * @param {flyteidl.core.IDataLoadingConfig=} [properties] Properties to set
              */
-            function CoPilot(properties) {
+            function DataLoadingConfig(properties) {
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -9120,51 +9120,51 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * CoPilot inputPath.
+             * DataLoadingConfig inputPath.
              * @member {string} inputPath
-             * @memberof flyteidl.core.CoPilot
+             * @memberof flyteidl.core.DataLoadingConfig
              * @instance
              */
-            CoPilot.prototype.inputPath = "";
+            DataLoadingConfig.prototype.inputPath = "";
 
             /**
-             * CoPilot outputPath.
+             * DataLoadingConfig outputPath.
              * @member {string} outputPath
-             * @memberof flyteidl.core.CoPilot
+             * @memberof flyteidl.core.DataLoadingConfig
              * @instance
              */
-            CoPilot.prototype.outputPath = "";
+            DataLoadingConfig.prototype.outputPath = "";
 
             /**
-             * CoPilot format.
-             * @member {flyteidl.core.CoPilot.MetadataFormat} format
-             * @memberof flyteidl.core.CoPilot
+             * DataLoadingConfig format.
+             * @member {flyteidl.core.DataLoadingConfig.MetadataFormat} format
+             * @memberof flyteidl.core.DataLoadingConfig
              * @instance
              */
-            CoPilot.prototype.format = 0;
+            DataLoadingConfig.prototype.format = 0;
 
             /**
-             * Creates a new CoPilot instance using the specified properties.
+             * Creates a new DataLoadingConfig instance using the specified properties.
              * @function create
-             * @memberof flyteidl.core.CoPilot
+             * @memberof flyteidl.core.DataLoadingConfig
              * @static
-             * @param {flyteidl.core.ICoPilot=} [properties] Properties to set
-             * @returns {flyteidl.core.CoPilot} CoPilot instance
+             * @param {flyteidl.core.IDataLoadingConfig=} [properties] Properties to set
+             * @returns {flyteidl.core.DataLoadingConfig} DataLoadingConfig instance
              */
-            CoPilot.create = function create(properties) {
-                return new CoPilot(properties);
+            DataLoadingConfig.create = function create(properties) {
+                return new DataLoadingConfig(properties);
             };
 
             /**
-             * Encodes the specified CoPilot message. Does not implicitly {@link flyteidl.core.CoPilot.verify|verify} messages.
+             * Encodes the specified DataLoadingConfig message. Does not implicitly {@link flyteidl.core.DataLoadingConfig.verify|verify} messages.
              * @function encode
-             * @memberof flyteidl.core.CoPilot
+             * @memberof flyteidl.core.DataLoadingConfig
              * @static
-             * @param {flyteidl.core.ICoPilot} message CoPilot message or plain object to encode
+             * @param {flyteidl.core.IDataLoadingConfig} message DataLoadingConfig message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            CoPilot.encode = function encode(message, writer) {
+            DataLoadingConfig.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.inputPath != null && message.hasOwnProperty("inputPath"))
@@ -9177,20 +9177,20 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Decodes a CoPilot message from the specified reader or buffer.
+             * Decodes a DataLoadingConfig message from the specified reader or buffer.
              * @function decode
-             * @memberof flyteidl.core.CoPilot
+             * @memberof flyteidl.core.DataLoadingConfig
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.CoPilot} CoPilot
+             * @returns {flyteidl.core.DataLoadingConfig} DataLoadingConfig
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            CoPilot.decode = function decode(reader, length) {
+            DataLoadingConfig.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.CoPilot();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.DataLoadingConfig();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -9212,14 +9212,14 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * Verifies a CoPilot message.
+             * Verifies a DataLoadingConfig message.
              * @function verify
-             * @memberof flyteidl.core.CoPilot
+             * @memberof flyteidl.core.DataLoadingConfig
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            CoPilot.verify = function verify(message) {
+            DataLoadingConfig.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.inputPath != null && message.hasOwnProperty("inputPath"))
@@ -9242,13 +9242,13 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * MetadataFormat enum.
-             * @name flyteidl.core.CoPilot.MetadataFormat
+             * @name flyteidl.core.DataLoadingConfig.MetadataFormat
              * @enum {string}
              * @property {number} JSON=0 JSON value
              * @property {number} YAML=1 YAML value
              * @property {number} PROTO=2 PROTO value
              */
-            CoPilot.MetadataFormat = (function() {
+            DataLoadingConfig.MetadataFormat = (function() {
                 const valuesById = {}, values = Object.create(valuesById);
                 values[valuesById[0] = "JSON"] = 0;
                 values[valuesById[1] = "YAML"] = 1;
@@ -9256,7 +9256,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 return values;
             })();
 
-            return CoPilot;
+            return DataLoadingConfig;
         })();
 
         core.DynamicJobSpec = (function() {

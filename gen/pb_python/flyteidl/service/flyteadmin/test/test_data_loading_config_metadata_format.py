@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.co_pilot_metadata_format import CoPilotMetadataFormat  # noqa: E501
+from flyteadmin.models.data_loading_config_metadata_format import DataLoadingConfigMetadataFormat  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestCoPilotMetadataFormat(unittest.TestCase):
-    """CoPilotMetadataFormat unit test stubs"""
+class TestDataLoadingConfigMetadataFormat(unittest.TestCase):
+    """DataLoadingConfigMetadataFormat unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCoPilotMetadataFormat(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCoPilotMetadataFormat(self):
-        """Test CoPilotMetadataFormat"""
+    def testDataLoadingConfigMetadataFormat(self):
+        """Test DataLoadingConfigMetadataFormat"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.co_pilot_metadata_format.CoPilotMetadataFormat()  # noqa: E501
+        # model = flyteadmin.models.data_loading_config_metadata_format.DataLoadingConfigMetadataFormat()  # noqa: E501
         pass
 
 

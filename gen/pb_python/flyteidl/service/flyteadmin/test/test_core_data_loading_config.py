@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.core_co_pilot import CoreCoPilot  # noqa: E501
+from flyteadmin.models.core_data_loading_config import CoreDataLoadingConfig  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestCoreCoPilot(unittest.TestCase):
-    """CoreCoPilot unit test stubs"""
+class TestCoreDataLoadingConfig(unittest.TestCase):
+    """CoreDataLoadingConfig unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCoreCoPilot(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCoreCoPilot(self):
-        """Test CoreCoPilot"""
+    def testCoreDataLoadingConfig(self):
+        """Test CoreDataLoadingConfig"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.core_co_pilot.CoreCoPilot()  # noqa: E501
+        # model = flyteadmin.models.core_data_loading_config.CoreDataLoadingConfig()  # noqa: E501
         pass
 
 

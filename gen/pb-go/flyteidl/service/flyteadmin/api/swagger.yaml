@@ -2291,22 +2291,6 @@ definitions:
     - "SINGLE"
     - "MULTIPART"
     default: "SINGLE"
-  CoPilotMetadataFormat:
-    type: "string"
-    title: "MetadataFormat decides the encoding format in which the input metadata\
-      \ should be made available to the containers. \nIf the user has access to the\
-      \ protocol buffer definitions, it is recommended to use the PROTO format.\n\
-      JSON and YAML do not need any protobuf definitions to read it\nAll remote references\
-      \ in core.LiteralMap are replaced with local filesystem references (the data\
-      \ is downloaded to local filesystem)"
-    description: "- JSON: JSON / YAML are serialized represnetation of a map[string]primitive.\
-      \ primitive -> int, string, bool, double/float, bytes\n - PROTO: Proto is a\
-      \ serialized binary of `core.LiteralMap` defined in flyteidl/core"
-    enum:
-    - "JSON"
-    - "YAML"
-    - "PROTO"
-    default: "JSON"
   ComparisonExpressionOperator:
     type: "string"
     title: "Binary Operator for each expression"
@@ -2339,6 +2323,23 @@ definitions:
       ids:
       - "ids"
       - "ids"
+  DataLoadingConfigMetadataFormat:
+    type: "string"
+    title: "MetadataFormat decides the encoding format in which the input metadata\
+      \ should be made available to the containers. \nIf the user has access to the\
+      \ protocol buffer definitions, it is recommended to use the PROTO format.\n\
+      JSON and YAML do not need any protobuf definitions to read it\nAll remote references\
+      \ in core.LiteralMap are replaced with local filesystem references (the data\
+      \ is downloaded to local filesystem)"
+    description: "- JSON: JSON / YAML for the metadata (which contains inlined primitive\
+      \ values). The representation is inline with the standard json specification\
+      \ as specified - https://www.json.org/json-en.html\n - PROTO: Proto is a serialized\
+      \ binary of `core.LiteralMap` defined in flyteidl/core"
+    enum:
+    - "JSON"
+    - "YAML"
+    - "PROTO"
+    default: "JSON"
   ExecutionErrorErrorKind:
     type: "string"
     title: "Error type: System or User"
@@ -5246,7 +5247,7 @@ definitions:
               - "args"
               - "args"
               image: "image"
-              use_copilot: true
+              use_data_loading: true
               resources:
                 requests:
                 - name: {}
@@ -5258,6 +5259,10 @@ definitions:
                   value: "value"
                 - name: {}
                   value: "value"
+              data_config:
+                format: {}
+                output_path: "output_path"
+                input_path: "input_path"
               env:
               - value: "value"
                 key: "key"
@@ -5274,10 +5279,6 @@ definitions:
               command:
               - "command"
               - "command"
-              copilot_config:
-                format: {}
-                output_path: "output_path"
-                input_path: "input_path"
             metadata:
               retries:
                 retries: 0
@@ -5383,7 +5384,7 @@ definitions:
             - "args"
             - "args"
             image: "image"
-            use_copilot: true
+            use_data_loading: true
             resources:
               requests:
               - name: {}
@@ -5395,6 +5396,10 @@ definitions:
                 value: "value"
               - name: {}
                 value: "value"
+            data_config:
+              format: {}
+              output_path: "output_path"
+              input_path: "input_path"
             env:
             - value: "value"
               key: "key"
@@ -5411,10 +5416,6 @@ definitions:
             command:
             - "command"
             - "command"
-            copilot_config:
-              format: {}
-              output_path: "output_path"
-              input_path: "input_path"
           metadata:
             retries:
               retries: 0
@@ -5754,7 +5755,7 @@ definitions:
                 - "args"
                 - "args"
                 image: "image"
-                use_copilot: true
+                use_data_loading: true
                 resources:
                   requests:
                   - name: {}
@@ -5766,6 +5767,10 @@ definitions:
                     value: "value"
                   - name: {}
                     value: "value"
+                data_config:
+                  format: {}
+                  output_path: "output_path"
+                  input_path: "input_path"
                 env:
                 - value: "value"
                   key: "key"
@@ -5782,10 +5787,6 @@ definitions:
                 command:
                 - "command"
                 - "command"
-                copilot_config:
-                  format: {}
-                  output_path: "output_path"
-                  input_path: "input_path"
               metadata:
                 retries:
                   retries: 0
@@ -5884,7 +5885,7 @@ definitions:
                 - "args"
                 - "args"
                 image: "image"
-                use_copilot: true
+                use_data_loading: true
                 resources:
                   requests:
                   - name: {}
@@ -5896,6 +5897,10 @@ definitions:
                     value: "value"
                   - name: {}
                     value: "value"
+                data_config:
+                  format: {}
+                  output_path: "output_path"
+                  input_path: "input_path"
                 env:
                 - value: "value"
                   key: "key"
@@ -5912,10 +5917,6 @@ definitions:
                 command:
                 - "command"
                 - "command"
-                copilot_config:
-                  format: {}
-                  output_path: "output_path"
-                  input_path: "input_path"
               metadata:
                 retries:
                   retries: 0
@@ -7732,7 +7733,7 @@ definitions:
                 - "args"
                 - "args"
                 image: "image"
-                use_copilot: true
+                use_data_loading: true
                 resources:
                   requests:
                   - name: {}
@@ -7744,6 +7745,10 @@ definitions:
                     value: "value"
                   - name: {}
                     value: "value"
+                data_config:
+                  format: {}
+                  output_path: "output_path"
+                  input_path: "input_path"
                 env:
                 - value: "value"
                   key: "key"
@@ -7760,10 +7765,6 @@ definitions:
                 command:
                 - "command"
                 - "command"
-                copilot_config:
-                  format: {}
-                  output_path: "output_path"
-                  input_path: "input_path"
               metadata:
                 retries:
                   retries: 0
@@ -7853,7 +7854,7 @@ definitions:
                 - "args"
                 - "args"
                 image: "image"
-                use_copilot: true
+                use_data_loading: true
                 resources:
                   requests:
                   - name: {}
@@ -7865,6 +7866,10 @@ definitions:
                     value: "value"
                   - name: {}
                     value: "value"
+                data_config:
+                  format: {}
+                  output_path: "output_path"
+                  input_path: "input_path"
                 env:
                 - value: "value"
                   key: "key"
@@ -7881,10 +7886,6 @@ definitions:
                 command:
                 - "command"
                 - "command"
-                copilot_config:
-                  format: {}
-                  output_path: "output_path"
-                  input_path: "input_path"
               metadata:
                 retries:
                   retries: 0
@@ -10555,7 +10556,7 @@ definitions:
               - "args"
               - "args"
               image: "image"
-              use_copilot: true
+              use_data_loading: true
               resources:
                 requests:
                 - name: {}
@@ -10567,6 +10568,10 @@ definitions:
                   value: "value"
                 - name: {}
                   value: "value"
+              data_config:
+                format: {}
+                output_path: "output_path"
+                input_path: "input_path"
               env:
               - value: "value"
                 key: "key"
@@ -10583,10 +10588,6 @@ definitions:
               command:
               - "command"
               - "command"
-              copilot_config:
-                format: {}
-                output_path: "output_path"
-                input_path: "input_path"
             metadata:
               retries:
                 retries: 0
@@ -10676,7 +10677,7 @@ definitions:
               - "args"
               - "args"
               image: "image"
-              use_copilot: true
+              use_data_loading: true
               resources:
                 requests:
                 - name: {}
@@ -10688,6 +10689,10 @@ definitions:
                   value: "value"
                 - name: {}
                   value: "value"
+              data_config:
+                format: {}
+                output_path: "output_path"
+                input_path: "input_path"
               env:
               - value: "value"
                 key: "key"
@@ -10704,10 +10709,6 @@ definitions:
               command:
               - "command"
               - "command"
-              copilot_config:
-                format: {}
-                output_path: "output_path"
-                input_path: "input_path"
             metadata:
               retries:
                 retries: 0
@@ -13334,7 +13335,7 @@ definitions:
                   - "args"
                   - "args"
                   image: "image"
-                  use_copilot: true
+                  use_data_loading: true
                   resources:
                     requests:
                     - name: {}
@@ -13346,6 +13347,10 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  data_config:
+                    format: {}
+                    output_path: "output_path"
+                    input_path: "input_path"
                   env:
                   - value: "value"
                     key: "key"
@@ -13362,10 +13367,6 @@ definitions:
                   command:
                   - "command"
                   - "command"
-                  copilot_config:
-                    format: {}
-                    output_path: "output_path"
-                    input_path: "input_path"
                 metadata:
                   retries:
                     retries: 0
@@ -13455,7 +13456,7 @@ definitions:
                   - "args"
                   - "args"
                   image: "image"
-                  use_copilot: true
+                  use_data_loading: true
                   resources:
                     requests:
                     - name: {}
@@ -13467,6 +13468,10 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  data_config:
+                    format: {}
+                    output_path: "output_path"
+                    input_path: "input_path"
                   env:
                   - value: "value"
                     key: "key"
@@ -13483,10 +13488,6 @@ definitions:
                   command:
                   - "command"
                   - "command"
-                  copilot_config:
-                    format: {}
-                    output_path: "output_path"
-                    input_path: "input_path"
                 metadata:
                   retries:
                     retries: 0
@@ -16054,7 +16055,7 @@ definitions:
                   - "args"
                   - "args"
                   image: "image"
-                  use_copilot: true
+                  use_data_loading: true
                   resources:
                     requests:
                     - name: {}
@@ -16066,6 +16067,10 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  data_config:
+                    format: {}
+                    output_path: "output_path"
+                    input_path: "input_path"
                   env:
                   - value: "value"
                     key: "key"
@@ -16082,10 +16087,6 @@ definitions:
                   command:
                   - "command"
                   - "command"
-                  copilot_config:
-                    format: {}
-                    output_path: "output_path"
-                    input_path: "input_path"
                 metadata:
                   retries:
                     retries: 0
@@ -16175,7 +16176,7 @@ definitions:
                   - "args"
                   - "args"
                   image: "image"
-                  use_copilot: true
+                  use_data_loading: true
                   resources:
                     requests:
                     - name: {}
@@ -16187,6 +16188,10 @@ definitions:
                       value: "value"
                     - name: {}
                       value: "value"
+                  data_config:
+                    format: {}
+                    output_path: "output_path"
+                    input_path: "input_path"
                   env:
                   - value: "value"
                     key: "key"
@@ -16203,10 +16208,6 @@ definitions:
                   command:
                   - "command"
                   - "command"
-                  copilot_config:
-                    format: {}
-                    output_path: "output_path"
-                    input_path: "input_path"
                 metadata:
                   retries:
                     retries: 0
@@ -17472,41 +17473,6 @@ definitions:
                   integer: "integer"
                 var: "var"
               operator: {}
-  coreCoPilot:
-    type: "object"
-    properties:
-      input_path:
-        type: "string"
-        title: "File system path (start at root). This folder will contain all the\
-          \ inputs exploded to a separate file. \nExample, if the input interface\
-          \ needs (x: int, y: blob, z: multipart_blob) and the input path is \"/var/flyte/inputs\"\
-          , then the file system will look like\n/var/flyte/inputs/inputs.<metadata\
-          \ format dependent -> .pb .json .yaml> -> Format as defined previously.\
-          \ The Blob and Multipart blob will reference local filesystem instead of\
-          \ remote locations \n/var/flyte/inputs/x -> X is a file that contains the\
-          \ value of x (integer) in string format\n/var/flyte/inputs/y -> Y is a file\
-          \ in Binary format\n/var/flyte/inputs/z/... -> Note Z itself is a directory\n\
-          More information about the protocol - refer to docs #TODO reference docs\
-          \ here"
-      output_path:
-        type: "string"
-        title: "File system path (start at root). This folder should contain all the\
-          \ outputs for the task as individual files and/or an error text file"
-      format:
-        title: "In the inputs folder, there will be an additional summary/metadata\
-          \ file that contains references to all files or inlined primitive values.\n\
-          This format decides the actual encoding for the data. Refer to the encoding\
-          \ to understand the specifics of the contents and the encoding"
-        $ref: "#/definitions/CoPilotMetadataFormat"
-    description: "This configuration allows executing raw containers in Flyte using\
-      \ the Flyte CoPilot system.\nFlyte CoPilot, eliminates the needs of flytekit\
-      \ or sdk inside the container. Any inputs required by the users container are\
-      \ side-loaded in the input_path\nAny outputs generated by the user container\
-      \ - within output_path are automatically uploaded."
-    example:
-      format: {}
-      output_path: "output_path"
-      input_path: "input_path"
   coreComparisonExpression:
     type: "object"
     properties:
@@ -17554,7 +17520,7 @@ definitions:
           - "args"
           - "args"
           image: "image"
-          use_copilot: true
+          use_data_loading: true
           resources:
             requests:
             - name: {}
@@ -17566,6 +17532,10 @@ definitions:
               value: "value"
             - name: {}
               value: "value"
+          data_config:
+            format: {}
+            output_path: "output_path"
+            input_path: "input_path"
           env:
           - value: "value"
             key: "key"
@@ -17582,10 +17552,6 @@ definitions:
           command:
           - "command"
           - "command"
-          copilot_config:
-            format: {}
-            output_path: "output_path"
-            input_path: "input_path"
         metadata:
           retries:
             retries: 0
@@ -20182,7 +20148,7 @@ definitions:
             - "args"
             - "args"
             image: "image"
-            use_copilot: true
+            use_data_loading: true
             resources:
               requests:
               - name: {}
@@ -20194,6 +20160,10 @@ definitions:
                 value: "value"
               - name: {}
                 value: "value"
+            data_config:
+              format: {}
+              output_path: "output_path"
+              input_path: "input_path"
             env:
             - value: "value"
               key: "key"
@@ -20210,10 +20180,6 @@ definitions:
             command:
             - "command"
             - "command"
-            copilot_config:
-              format: {}
-              output_path: "output_path"
-              input_path: "input_path"
           metadata:
             retries:
               retries: 0
@@ -20303,7 +20269,7 @@ definitions:
             - "args"
             - "args"
             image: "image"
-            use_copilot: true
+            use_data_loading: true
             resources:
               requests:
               - name: {}
@@ -20315,6 +20281,10 @@ definitions:
                 value: "value"
               - name: {}
                 value: "value"
+            data_config:
+              format: {}
+              output_path: "output_path"
+              input_path: "input_path"
             env:
             - value: "value"
               key: "key"
@@ -20331,10 +20301,6 @@ definitions:
             command:
             - "command"
             - "command"
-            copilot_config:
-              format: {}
-              output_path: "output_path"
-              input_path: "input_path"
           metadata:
             retries:
               retries: 0
@@ -21321,27 +21287,28 @@ definitions:
           \ execution engines. (e.g. supported on K8s but\nnot supported on AWS Batch)"
         items:
           $ref: "#/definitions/coreContainerPort"
-      use_copilot:
+      use_data_loading:
         type: "boolean"
         format: "boolean"
-        description: "BETA: This enables use of CoPilot. This makes it possible to\
-          \ to run a completely portable container, that uses inputs and outputs\n\
-          only from the local file-system and without having any reference to flyteidl.\
-          \ This is supported only on K8s at the moment.\nIf CoPilot is enabled, then\
-          \ data will be mounted in accompanying directories specified in the CoPilot\
-          \ settings. If the directories \nare not specified, inputs will be mounted\
-          \ onto and outputs will be uploaded from a pre-determined file-system path.\
-          \ Refer to the documentation\nto understand the default paths."
-      copilot_config:
+        description: "BETA: This enables use of CoPilot or automated data loading\
+          \ into the contaiiner. This makes it possible to to run a completely portable\
+          \ container, that uses inputs and outputs\nonly from the local file-system\
+          \ and without having any reference to flyteidl. This is supported only on\
+          \ K8s at the moment.\nIf data loading is enabled, then data will be mounted\
+          \ in accompanying directories specified in the DataLoadingConfig. If the\
+          \ directories \nare not specified, inputs will be mounted onto and outputs\
+          \ will be uploaded from a pre-determined file-system path. Refer to the\
+          \ documentation\nto understand the default paths."
+      data_config:
         description: "Optional configuration for CoPilot. If not specified, then default\
           \ values are used."
-        $ref: "#/definitions/coreCoPilot"
+        $ref: "#/definitions/coreDataLoadingConfig"
     example:
       args:
       - "args"
       - "args"
       image: "image"
-      use_copilot: true
+      use_data_loading: true
       resources:
         requests:
         - name: {}
@@ -21353,6 +21320,10 @@ definitions:
           value: "value"
         - name: {}
           value: "value"
+      data_config:
+        format: {}
+        output_path: "output_path"
+        input_path: "input_path"
       env:
       - value: "value"
         key: "key"
@@ -21369,10 +21340,6 @@ definitions:
       command:
       - "command"
       - "command"
-      copilot_config:
-        format: {}
-        output_path: "output_path"
-        input_path: "input_path"
   coreContainerPort:
     type: "object"
     properties:
@@ -21384,6 +21351,41 @@ definitions:
     description: "Defines port properties for a container."
     example:
       container_port: 6
+  coreDataLoadingConfig:
+    type: "object"
+    properties:
+      input_path:
+        type: "string"
+        title: "File system path (start at root). This folder will contain all the\
+          \ inputs exploded to a separate file. \nExample, if the input interface\
+          \ needs (x: int, y: blob, z: multipart_blob) and the input path is \"/var/flyte/inputs\"\
+          , then the file system will look like\n/var/flyte/inputs/inputs.<metadata\
+          \ format dependent -> .pb .json .yaml> -> Format as defined previously.\
+          \ The Blob and Multipart blob will reference local filesystem instead of\
+          \ remote locations \n/var/flyte/inputs/x -> X is a file that contains the\
+          \ value of x (integer) in string format\n/var/flyte/inputs/y -> Y is a file\
+          \ in Binary format\n/var/flyte/inputs/z/... -> Note Z itself is a directory\n\
+          More information about the protocol - refer to docs #TODO reference docs\
+          \ here"
+      output_path:
+        type: "string"
+        title: "File system path (start at root). This folder should contain all the\
+          \ outputs for the task as individual files and/or an error text file"
+      format:
+        title: "In the inputs folder, there will be an additional summary/metadata\
+          \ file that contains references to all files or inlined primitive values.\n\
+          This format decides the actual encoding for the data. Refer to the encoding\
+          \ to understand the specifics of the contents and the encoding"
+        $ref: "#/definitions/DataLoadingConfigMetadataFormat"
+    description: "This configuration allows executing raw containers in Flyte using\
+      \ the Flyte CoPilot system.\nFlyte CoPilot, eliminates the needs of flytekit\
+      \ or sdk inside the container. Any inputs required by the users container are\
+      \ side-loaded in the input_path\nAny outputs generated by the user container\
+      \ - within output_path are automatically uploaded."
+    example:
+      format: {}
+      output_path: "output_path"
+      input_path: "input_path"
   coreError:
     type: "object"
     properties:
@@ -22569,7 +22571,7 @@ definitions:
         - "args"
         - "args"
         image: "image"
-        use_copilot: true
+        use_data_loading: true
         resources:
           requests:
           - name: {}
@@ -22581,6 +22583,10 @@ definitions:
             value: "value"
           - name: {}
             value: "value"
+        data_config:
+          format: {}
+          output_path: "output_path"
+          input_path: "input_path"
         env:
         - value: "value"
           key: "key"
@@ -22597,10 +22603,6 @@ definitions:
         command:
         - "command"
         - "command"
-        copilot_config:
-          format: {}
-          output_path: "output_path"
-          input_path: "input_path"
       metadata:
         retries:
           retries: 0
