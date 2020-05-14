@@ -47,7 +47,7 @@ struct TableStruct_flyteidl_2fcore_2ftasks_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[7]
+  static const ::google::protobuf::internal::ParseTable schema[8]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -56,6 +56,9 @@ struct TableStruct_flyteidl_2fcore_2ftasks_2eproto {
 void AddDescriptors_flyteidl_2fcore_2ftasks_2eproto();
 namespace flyteidl {
 namespace core {
+class CoPilot;
+class CoPilotDefaultTypeInternal;
+extern CoPilotDefaultTypeInternal _CoPilot_default_instance_;
 class Container;
 class ContainerDefaultTypeInternal;
 extern ContainerDefaultTypeInternal _Container_default_instance_;
@@ -81,6 +84,7 @@ extern TaskTemplateDefaultTypeInternal _TaskTemplate_default_instance_;
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
+template<> ::flyteidl::core::CoPilot* Arena::CreateMaybeMessage<::flyteidl::core::CoPilot>(Arena*);
 template<> ::flyteidl::core::Container* Arena::CreateMaybeMessage<::flyteidl::core::Container>(Arena*);
 template<> ::flyteidl::core::ContainerPort* Arena::CreateMaybeMessage<::flyteidl::core::ContainerPort>(Arena*);
 template<> ::flyteidl::core::Resources* Arena::CreateMaybeMessage<::flyteidl::core::Resources>(Arena*);
@@ -137,6 +141,28 @@ inline bool RuntimeMetadata_RuntimeType_Parse(
     const ::std::string& name, RuntimeMetadata_RuntimeType* value) {
   return ::google::protobuf::internal::ParseNamedEnum<RuntimeMetadata_RuntimeType>(
     RuntimeMetadata_RuntimeType_descriptor(), name, value);
+}
+enum CoPilot_MetadataFormat {
+  CoPilot_MetadataFormat_JSON = 0,
+  CoPilot_MetadataFormat_YAML = 1,
+  CoPilot_MetadataFormat_PROTO = 2,
+  CoPilot_MetadataFormat_CoPilot_MetadataFormat_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  CoPilot_MetadataFormat_CoPilot_MetadataFormat_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool CoPilot_MetadataFormat_IsValid(int value);
+const CoPilot_MetadataFormat CoPilot_MetadataFormat_MetadataFormat_MIN = CoPilot_MetadataFormat_JSON;
+const CoPilot_MetadataFormat CoPilot_MetadataFormat_MetadataFormat_MAX = CoPilot_MetadataFormat_PROTO;
+const int CoPilot_MetadataFormat_MetadataFormat_ARRAYSIZE = CoPilot_MetadataFormat_MetadataFormat_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* CoPilot_MetadataFormat_descriptor();
+inline const ::std::string& CoPilot_MetadataFormat_Name(CoPilot_MetadataFormat value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    CoPilot_MetadataFormat_descriptor(), value);
+}
+inline bool CoPilot_MetadataFormat_Parse(
+    const ::std::string& name, CoPilot_MetadataFormat* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<CoPilot_MetadataFormat>(
+    CoPilot_MetadataFormat_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -1294,6 +1320,21 @@ class Container final :
   ::flyteidl::core::Resources* mutable_resources();
   void set_allocated_resources(::flyteidl::core::Resources* resources);
 
+  // .flyteidl.core.CoPilot copilot_config = 9;
+  bool has_copilot_config() const;
+  void clear_copilot_config();
+  static const int kCopilotConfigFieldNumber = 9;
+  const ::flyteidl::core::CoPilot& copilot_config() const;
+  ::flyteidl::core::CoPilot* release_copilot_config();
+  ::flyteidl::core::CoPilot* mutable_copilot_config();
+  void set_allocated_copilot_config(::flyteidl::core::CoPilot* copilot_config);
+
+  // bool use_copilot = 8;
+  void clear_use_copilot();
+  static const int kUseCopilotFieldNumber = 8;
+  bool use_copilot() const;
+  void set_use_copilot(bool value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.core.Container)
  private:
   class HasBitSetters;
@@ -1306,6 +1347,178 @@ class Container final :
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ContainerPort > ports_;
   ::google::protobuf::internal::ArenaStringPtr image_;
   ::flyteidl::core::Resources* resources_;
+  ::flyteidl::core::CoPilot* copilot_config_;
+  bool use_copilot_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2ftasks_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CoPilot final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.CoPilot) */ {
+ public:
+  CoPilot();
+  virtual ~CoPilot();
+
+  CoPilot(const CoPilot& from);
+
+  inline CoPilot& operator=(const CoPilot& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  CoPilot(CoPilot&& from) noexcept
+    : CoPilot() {
+    *this = ::std::move(from);
+  }
+
+  inline CoPilot& operator=(CoPilot&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const CoPilot& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CoPilot* internal_default_instance() {
+    return reinterpret_cast<const CoPilot*>(
+               &_CoPilot_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  void Swap(CoPilot* other);
+  friend void swap(CoPilot& a, CoPilot& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CoPilot* New() const final {
+    return CreateMaybeMessage<CoPilot>(nullptr);
+  }
+
+  CoPilot* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<CoPilot>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const CoPilot& from);
+  void MergeFrom(const CoPilot& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CoPilot* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef CoPilot_MetadataFormat MetadataFormat;
+  static const MetadataFormat JSON =
+    CoPilot_MetadataFormat_JSON;
+  static const MetadataFormat YAML =
+    CoPilot_MetadataFormat_YAML;
+  static const MetadataFormat PROTO =
+    CoPilot_MetadataFormat_PROTO;
+  static inline bool MetadataFormat_IsValid(int value) {
+    return CoPilot_MetadataFormat_IsValid(value);
+  }
+  static const MetadataFormat MetadataFormat_MIN =
+    CoPilot_MetadataFormat_MetadataFormat_MIN;
+  static const MetadataFormat MetadataFormat_MAX =
+    CoPilot_MetadataFormat_MetadataFormat_MAX;
+  static const int MetadataFormat_ARRAYSIZE =
+    CoPilot_MetadataFormat_MetadataFormat_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  MetadataFormat_descriptor() {
+    return CoPilot_MetadataFormat_descriptor();
+  }
+  static inline const ::std::string& MetadataFormat_Name(MetadataFormat value) {
+    return CoPilot_MetadataFormat_Name(value);
+  }
+  static inline bool MetadataFormat_Parse(const ::std::string& name,
+      MetadataFormat* value) {
+    return CoPilot_MetadataFormat_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // string input_path = 1;
+  void clear_input_path();
+  static const int kInputPathFieldNumber = 1;
+  const ::std::string& input_path() const;
+  void set_input_path(const ::std::string& value);
+  #if LANG_CXX11
+  void set_input_path(::std::string&& value);
+  #endif
+  void set_input_path(const char* value);
+  void set_input_path(const char* value, size_t size);
+  ::std::string* mutable_input_path();
+  ::std::string* release_input_path();
+  void set_allocated_input_path(::std::string* input_path);
+
+  // string output_path = 2;
+  void clear_output_path();
+  static const int kOutputPathFieldNumber = 2;
+  const ::std::string& output_path() const;
+  void set_output_path(const ::std::string& value);
+  #if LANG_CXX11
+  void set_output_path(::std::string&& value);
+  #endif
+  void set_output_path(const char* value);
+  void set_output_path(const char* value, size_t size);
+  ::std::string* mutable_output_path();
+  ::std::string* release_output_path();
+  void set_allocated_output_path(::std::string* output_path);
+
+  // .flyteidl.core.CoPilot.MetadataFormat format = 3;
+  void clear_format();
+  static const int kFormatFieldNumber = 3;
+  ::flyteidl::core::CoPilot_MetadataFormat format() const;
+  void set_format(::flyteidl::core::CoPilot_MetadataFormat value);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.CoPilot)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr input_path_;
+  ::google::protobuf::internal::ArenaStringPtr output_path_;
+  int format_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2ftasks_2eproto;
 };
@@ -2521,9 +2734,200 @@ Container::ports() const {
   return ports_;
 }
 
+// bool use_copilot = 8;
+inline void Container::clear_use_copilot() {
+  use_copilot_ = false;
+}
+inline bool Container::use_copilot() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Container.use_copilot)
+  return use_copilot_;
+}
+inline void Container::set_use_copilot(bool value) {
+  
+  use_copilot_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.Container.use_copilot)
+}
+
+// .flyteidl.core.CoPilot copilot_config = 9;
+inline bool Container::has_copilot_config() const {
+  return this != internal_default_instance() && copilot_config_ != nullptr;
+}
+inline void Container::clear_copilot_config() {
+  if (GetArenaNoVirtual() == nullptr && copilot_config_ != nullptr) {
+    delete copilot_config_;
+  }
+  copilot_config_ = nullptr;
+}
+inline const ::flyteidl::core::CoPilot& Container::copilot_config() const {
+  const ::flyteidl::core::CoPilot* p = copilot_config_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.Container.copilot_config)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::CoPilot*>(
+      &::flyteidl::core::_CoPilot_default_instance_);
+}
+inline ::flyteidl::core::CoPilot* Container::release_copilot_config() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Container.copilot_config)
+  
+  ::flyteidl::core::CoPilot* temp = copilot_config_;
+  copilot_config_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::CoPilot* Container::mutable_copilot_config() {
+  
+  if (copilot_config_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::CoPilot>(GetArenaNoVirtual());
+    copilot_config_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Container.copilot_config)
+  return copilot_config_;
+}
+inline void Container::set_allocated_copilot_config(::flyteidl::core::CoPilot* copilot_config) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete copilot_config_;
+  }
+  if (copilot_config) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      copilot_config = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, copilot_config, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  copilot_config_ = copilot_config;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Container.copilot_config)
+}
+
+// -------------------------------------------------------------------
+
+// CoPilot
+
+// string input_path = 1;
+inline void CoPilot::clear_input_path() {
+  input_path_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CoPilot::input_path() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.CoPilot.input_path)
+  return input_path_.GetNoArena();
+}
+inline void CoPilot::set_input_path(const ::std::string& value) {
+  
+  input_path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.CoPilot.input_path)
+}
+#if LANG_CXX11
+inline void CoPilot::set_input_path(::std::string&& value) {
+  
+  input_path_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.CoPilot.input_path)
+}
+#endif
+inline void CoPilot::set_input_path(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  input_path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.CoPilot.input_path)
+}
+inline void CoPilot::set_input_path(const char* value, size_t size) {
+  
+  input_path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.CoPilot.input_path)
+}
+inline ::std::string* CoPilot::mutable_input_path() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.CoPilot.input_path)
+  return input_path_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CoPilot::release_input_path() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.CoPilot.input_path)
+  
+  return input_path_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CoPilot::set_allocated_input_path(::std::string* input_path) {
+  if (input_path != nullptr) {
+    
+  } else {
+    
+  }
+  input_path_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), input_path);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.CoPilot.input_path)
+}
+
+// string output_path = 2;
+inline void CoPilot::clear_output_path() {
+  output_path_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CoPilot::output_path() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.CoPilot.output_path)
+  return output_path_.GetNoArena();
+}
+inline void CoPilot::set_output_path(const ::std::string& value) {
+  
+  output_path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.CoPilot.output_path)
+}
+#if LANG_CXX11
+inline void CoPilot::set_output_path(::std::string&& value) {
+  
+  output_path_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.CoPilot.output_path)
+}
+#endif
+inline void CoPilot::set_output_path(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  output_path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.CoPilot.output_path)
+}
+inline void CoPilot::set_output_path(const char* value, size_t size) {
+  
+  output_path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.CoPilot.output_path)
+}
+inline ::std::string* CoPilot::mutable_output_path() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.CoPilot.output_path)
+  return output_path_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CoPilot::release_output_path() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.CoPilot.output_path)
+  
+  return output_path_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CoPilot::set_allocated_output_path(::std::string* output_path) {
+  if (output_path != nullptr) {
+    
+  } else {
+    
+  }
+  output_path_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), output_path);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.CoPilot.output_path)
+}
+
+// .flyteidl.core.CoPilot.MetadataFormat format = 3;
+inline void CoPilot::clear_format() {
+  format_ = 0;
+}
+inline ::flyteidl::core::CoPilot_MetadataFormat CoPilot::format() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.CoPilot.format)
+  return static_cast< ::flyteidl::core::CoPilot_MetadataFormat >(format_);
+}
+inline void CoPilot::set_format(::flyteidl::core::CoPilot_MetadataFormat value) {
+  
+  format_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.CoPilot.format)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -2554,6 +2958,11 @@ template <> struct is_proto_enum< ::flyteidl::core::RuntimeMetadata_RuntimeType>
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::core::RuntimeMetadata_RuntimeType>() {
   return ::flyteidl::core::RuntimeMetadata_RuntimeType_descriptor();
+}
+template <> struct is_proto_enum< ::flyteidl::core::CoPilot_MetadataFormat> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::core::CoPilot_MetadataFormat>() {
+  return ::flyteidl::core::CoPilot_MetadataFormat_descriptor();
 }
 
 }  // namespace protobuf

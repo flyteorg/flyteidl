@@ -3664,6 +3664,12 @@ export namespace flyteidl {
 
             /** Container ports */
             ports?: (flyteidl.core.IContainerPort[]|null);
+
+            /** Container useCopilot */
+            useCopilot?: (boolean|null);
+
+            /** Container copilotConfig */
+            copilotConfig?: (flyteidl.core.ICoPilot|null);
         }
 
         /** Represents a Container. */
@@ -3696,6 +3702,12 @@ export namespace flyteidl {
             /** Container ports. */
             public ports: flyteidl.core.IContainerPort[];
 
+            /** Container useCopilot. */
+            public useCopilot: boolean;
+
+            /** Container copilotConfig. */
+            public copilotConfig?: (flyteidl.core.ICoPilot|null);
+
             /**
              * Creates a new Container instance using the specified properties.
              * @param [properties] Properties to set
@@ -3727,6 +3739,80 @@ export namespace flyteidl {
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a CoPilot. */
+        interface ICoPilot {
+
+            /** CoPilot inputPath */
+            inputPath?: (string|null);
+
+            /** CoPilot outputPath */
+            outputPath?: (string|null);
+
+            /** CoPilot format */
+            format?: (flyteidl.core.CoPilot.MetadataFormat|null);
+        }
+
+        /** Represents a CoPilot. */
+        class CoPilot implements ICoPilot {
+
+            /**
+             * Constructs a new CoPilot.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ICoPilot);
+
+            /** CoPilot inputPath. */
+            public inputPath: string;
+
+            /** CoPilot outputPath. */
+            public outputPath: string;
+
+            /** CoPilot format. */
+            public format: flyteidl.core.CoPilot.MetadataFormat;
+
+            /**
+             * Creates a new CoPilot instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CoPilot instance
+             */
+            public static create(properties?: flyteidl.core.ICoPilot): flyteidl.core.CoPilot;
+
+            /**
+             * Encodes the specified CoPilot message. Does not implicitly {@link flyteidl.core.CoPilot.verify|verify} messages.
+             * @param message CoPilot message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ICoPilot, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CoPilot message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CoPilot
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.CoPilot;
+
+            /**
+             * Verifies a CoPilot message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace CoPilot {
+
+            /** MetadataFormat enum. */
+            enum MetadataFormat {
+                JSON = 0,
+                YAML = 1,
+                PROTO = 2
+            }
         }
 
         /** Properties of a DynamicJobSpec. */

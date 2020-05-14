@@ -120,6 +120,7 @@ from flyteadmin.models.admin_workflow_execution_get_data_response import AdminWo
 from flyteadmin.models.admin_workflow_list import AdminWorkflowList
 from flyteadmin.models.admin_workflow_spec import AdminWorkflowSpec
 from flyteadmin.models.blob_type_blob_dimensionality import BlobTypeBlobDimensionality
+from flyteadmin.models.co_pilot_metadata_format import CoPilotMetadataFormat
 from flyteadmin.models.comparison_expression_operator import ComparisonExpressionOperator
 from flyteadmin.models.conjunction_expression_logical_operator import ConjunctionExpressionLogicalOperator
 from flyteadmin.models.connection_set_id_list import ConnectionSetIdList
@@ -134,6 +135,7 @@ from flyteadmin.models.core_blob_metadata import CoreBlobMetadata
 from flyteadmin.models.core_blob_type import CoreBlobType
 from flyteadmin.models.core_boolean_expression import CoreBooleanExpression
 from flyteadmin.models.core_branch_node import CoreBranchNode
+from flyteadmin.models.core_co_pilot import CoreCoPilot
 from flyteadmin.models.core_comparison_expression import CoreComparisonExpression
 from flyteadmin.models.core_compiled_task import CoreCompiledTask
 from flyteadmin.models.core_compiled_workflow import CoreCompiledWorkflow

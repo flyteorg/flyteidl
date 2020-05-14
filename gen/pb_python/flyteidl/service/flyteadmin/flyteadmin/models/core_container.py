@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.core_co_pilot import CoreCoPilot  # noqa: F401,E501
 from flyteadmin.models.core_container_port import CoreContainerPort  # noqa: F401,E501
 from flyteadmin.models.core_key_value_pair import CoreKeyValuePair  # noqa: F401,E501
 from flyteadmin.models.core_resources import CoreResources  # noqa: F401,E501
@@ -41,7 +42,9 @@ class CoreContainer(object):
         'resources': 'CoreResources',
         'env': 'list[CoreKeyValuePair]',
         'config': 'list[CoreKeyValuePair]',
-        'ports': 'list[CoreContainerPort]'
+        'ports': 'list[CoreContainerPort]',
+        'use_copilot': 'bool',
+        'copilot_config': 'CoreCoPilot'
     }
 
     attribute_map = {
@@ -51,10 +54,12 @@ class CoreContainer(object):
         'resources': 'resources',
         'env': 'env',
         'config': 'config',
-        'ports': 'ports'
+        'ports': 'ports',
+        'use_copilot': 'use_copilot',
+        'copilot_config': 'copilot_config'
     }
 
-    def __init__(self, image=None, command=None, args=None, resources=None, env=None, config=None, ports=None):  # noqa: E501
+    def __init__(self, image=None, command=None, args=None, resources=None, env=None, config=None, ports=None, use_copilot=None, copilot_config=None):  # noqa: E501
         """CoreContainer - a model defined in Swagger"""  # noqa: E501
 
         self._image = None
@@ -64,6 +69,8 @@ class CoreContainer(object):
         self._env = None
         self._config = None
         self._ports = None
+        self._use_copilot = None
+        self._copilot_config = None
         self.discriminator = None
 
         if image is not None:
@@ -80,6 +87,10 @@ class CoreContainer(object):
             self.config = config
         if ports is not None:
             self.ports = ports
+        if use_copilot is not None:
+            self.use_copilot = use_copilot
+        if copilot_config is not None:
+            self.copilot_config = copilot_config
 
     @property
     def image(self):
@@ -237,6 +248,52 @@ class CoreContainer(object):
         """
 
         self._ports = ports
+
+    @property
+    def use_copilot(self):
+        """Gets the use_copilot of this CoreContainer.  # noqa: E501
+
+        BETA: This enables use of CoPilot. This makes it possible to to run a completely portable container, that uses inputs and outputs only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment. If CoPilot is enabled, then data will be mounted in accompanying directories specified in the CoPilot settings. If the directories  are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation to understand the default paths.  # noqa: E501
+
+        :return: The use_copilot of this CoreContainer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_copilot
+
+    @use_copilot.setter
+    def use_copilot(self, use_copilot):
+        """Sets the use_copilot of this CoreContainer.
+
+        BETA: This enables use of CoPilot. This makes it possible to to run a completely portable container, that uses inputs and outputs only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment. If CoPilot is enabled, then data will be mounted in accompanying directories specified in the CoPilot settings. If the directories  are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation to understand the default paths.  # noqa: E501
+
+        :param use_copilot: The use_copilot of this CoreContainer.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_copilot = use_copilot
+
+    @property
+    def copilot_config(self):
+        """Gets the copilot_config of this CoreContainer.  # noqa: E501
+
+        Optional configuration for CoPilot. If not specified, then default values are used.  # noqa: E501
+
+        :return: The copilot_config of this CoreContainer.  # noqa: E501
+        :rtype: CoreCoPilot
+        """
+        return self._copilot_config
+
+    @copilot_config.setter
+    def copilot_config(self, copilot_config):
+        """Sets the copilot_config of this CoreContainer.
+
+        Optional configuration for CoPilot. If not specified, then default values are used.  # noqa: E501
+
+        :param copilot_config: The copilot_config of this CoreContainer.  # noqa: E501
+        :type: CoreCoPilot
+        """
+
+        self._copilot_config = copilot_config
 
     def to_dict(self):
         """Returns the model properties as a dict"""

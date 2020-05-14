@@ -8810,6 +8810,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {Array.<flyteidl.core.IKeyValuePair>|null} [env] Container env
              * @property {Array.<flyteidl.core.IKeyValuePair>|null} [config] Container config
              * @property {Array.<flyteidl.core.IContainerPort>|null} [ports] Container ports
+             * @property {boolean|null} [useCopilot] Container useCopilot
+             * @property {flyteidl.core.ICoPilot|null} [copilotConfig] Container copilotConfig
              */
 
             /**
@@ -8889,6 +8891,22 @@ export const flyteidl = $root.flyteidl = (() => {
             Container.prototype.ports = $util.emptyArray;
 
             /**
+             * Container useCopilot.
+             * @member {boolean} useCopilot
+             * @memberof flyteidl.core.Container
+             * @instance
+             */
+            Container.prototype.useCopilot = false;
+
+            /**
+             * Container copilotConfig.
+             * @member {flyteidl.core.ICoPilot|null|undefined} copilotConfig
+             * @memberof flyteidl.core.Container
+             * @instance
+             */
+            Container.prototype.copilotConfig = null;
+
+            /**
              * Creates a new Container instance using the specified properties.
              * @function create
              * @memberof flyteidl.core.Container
@@ -8931,6 +8949,10 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.ports != null && message.ports.length)
                     for (let i = 0; i < message.ports.length; ++i)
                         $root.flyteidl.core.ContainerPort.encode(message.ports[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                if (message.useCopilot != null && message.hasOwnProperty("useCopilot"))
+                    writer.uint32(/* id 8, wireType 0 =*/64).bool(message.useCopilot);
+                if (message.copilotConfig != null && message.hasOwnProperty("copilotConfig"))
+                    $root.flyteidl.core.CoPilot.encode(message.copilotConfig, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 return writer;
             };
 
@@ -8982,6 +9004,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!(message.ports && message.ports.length))
                             message.ports = [];
                         message.ports.push($root.flyteidl.core.ContainerPort.decode(reader, reader.uint32()));
+                        break;
+                    case 8:
+                        message.useCopilot = reader.bool();
+                        break;
+                    case 9:
+                        message.copilotConfig = $root.flyteidl.core.CoPilot.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -9051,10 +9079,184 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "ports." + error;
                     }
                 }
+                if (message.useCopilot != null && message.hasOwnProperty("useCopilot"))
+                    if (typeof message.useCopilot !== "boolean")
+                        return "useCopilot: boolean expected";
+                if (message.copilotConfig != null && message.hasOwnProperty("copilotConfig")) {
+                    let error = $root.flyteidl.core.CoPilot.verify(message.copilotConfig);
+                    if (error)
+                        return "copilotConfig." + error;
+                }
                 return null;
             };
 
             return Container;
+        })();
+
+        core.CoPilot = (function() {
+
+            /**
+             * Properties of a CoPilot.
+             * @memberof flyteidl.core
+             * @interface ICoPilot
+             * @property {string|null} [inputPath] CoPilot inputPath
+             * @property {string|null} [outputPath] CoPilot outputPath
+             * @property {flyteidl.core.CoPilot.MetadataFormat|null} [format] CoPilot format
+             */
+
+            /**
+             * Constructs a new CoPilot.
+             * @memberof flyteidl.core
+             * @classdesc Represents a CoPilot.
+             * @implements ICoPilot
+             * @constructor
+             * @param {flyteidl.core.ICoPilot=} [properties] Properties to set
+             */
+            function CoPilot(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * CoPilot inputPath.
+             * @member {string} inputPath
+             * @memberof flyteidl.core.CoPilot
+             * @instance
+             */
+            CoPilot.prototype.inputPath = "";
+
+            /**
+             * CoPilot outputPath.
+             * @member {string} outputPath
+             * @memberof flyteidl.core.CoPilot
+             * @instance
+             */
+            CoPilot.prototype.outputPath = "";
+
+            /**
+             * CoPilot format.
+             * @member {flyteidl.core.CoPilot.MetadataFormat} format
+             * @memberof flyteidl.core.CoPilot
+             * @instance
+             */
+            CoPilot.prototype.format = 0;
+
+            /**
+             * Creates a new CoPilot instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.CoPilot
+             * @static
+             * @param {flyteidl.core.ICoPilot=} [properties] Properties to set
+             * @returns {flyteidl.core.CoPilot} CoPilot instance
+             */
+            CoPilot.create = function create(properties) {
+                return new CoPilot(properties);
+            };
+
+            /**
+             * Encodes the specified CoPilot message. Does not implicitly {@link flyteidl.core.CoPilot.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.CoPilot
+             * @static
+             * @param {flyteidl.core.ICoPilot} message CoPilot message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CoPilot.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.inputPath != null && message.hasOwnProperty("inputPath"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.inputPath);
+                if (message.outputPath != null && message.hasOwnProperty("outputPath"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.outputPath);
+                if (message.format != null && message.hasOwnProperty("format"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.format);
+                return writer;
+            };
+
+            /**
+             * Decodes a CoPilot message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.CoPilot
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.CoPilot} CoPilot
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CoPilot.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.CoPilot();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.inputPath = reader.string();
+                        break;
+                    case 2:
+                        message.outputPath = reader.string();
+                        break;
+                    case 3:
+                        message.format = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a CoPilot message.
+             * @function verify
+             * @memberof flyteidl.core.CoPilot
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CoPilot.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.inputPath != null && message.hasOwnProperty("inputPath"))
+                    if (!$util.isString(message.inputPath))
+                        return "inputPath: string expected";
+                if (message.outputPath != null && message.hasOwnProperty("outputPath"))
+                    if (!$util.isString(message.outputPath))
+                        return "outputPath: string expected";
+                if (message.format != null && message.hasOwnProperty("format"))
+                    switch (message.format) {
+                    default:
+                        return "format: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                        break;
+                    }
+                return null;
+            };
+
+            /**
+             * MetadataFormat enum.
+             * @name flyteidl.core.CoPilot.MetadataFormat
+             * @enum {string}
+             * @property {number} JSON=0 JSON value
+             * @property {number} YAML=1 YAML value
+             * @property {number} PROTO=2 PROTO value
+             */
+            CoPilot.MetadataFormat = (function() {
+                const valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "JSON"] = 0;
+                values[valuesById[1] = "YAML"] = 1;
+                values[valuesById[2] = "PROTO"] = 2;
+                return values;
+            })();
+
+            return CoPilot;
         })();
 
         core.DynamicJobSpec = (function() {

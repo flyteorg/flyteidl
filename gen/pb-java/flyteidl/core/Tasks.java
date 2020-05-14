@@ -7756,6 +7756,44 @@ public final class Tasks {
      */
     flyteidl.core.Tasks.ContainerPortOrBuilder getPortsOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * BETA: This enables use of CoPilot. This makes it possible to to run a completely portable container, that uses inputs and outputs
+     * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+     * If CoPilot is enabled, then data will be mounted in accompanying directories specified in the CoPilot settings. If the directories 
+     * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+     * to understand the default paths.
+     * </pre>
+     *
+     * <code>bool use_copilot = 8;</code>
+     */
+    boolean getUseCopilot();
+
+    /**
+     * <pre>
+     * Optional configuration for CoPilot. If not specified, then default values are used.
+     * </pre>
+     *
+     * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+     */
+    boolean hasCopilotConfig();
+    /**
+     * <pre>
+     * Optional configuration for CoPilot. If not specified, then default values are used.
+     * </pre>
+     *
+     * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+     */
+    flyteidl.core.Tasks.CoPilot getCopilotConfig();
+    /**
+     * <pre>
+     * Optional configuration for CoPilot. If not specified, then default values are used.
+     * </pre>
+     *
+     * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+     */
+    flyteidl.core.Tasks.CoPilotOrBuilder getCopilotConfigOrBuilder();
   }
   /**
    * Protobuf type {@code flyteidl.core.Container}
@@ -7864,6 +7902,24 @@ public final class Tasks {
               }
               ports_.add(
                   input.readMessage(flyteidl.core.Tasks.ContainerPort.parser(), extensionRegistry));
+              break;
+            }
+            case 64: {
+
+              useCopilot_ = input.readBool();
+              break;
+            }
+            case 74: {
+              flyteidl.core.Tasks.CoPilot.Builder subBuilder = null;
+              if (copilotConfig_ != null) {
+                subBuilder = copilotConfig_.toBuilder();
+              }
+              copilotConfig_ = input.readMessage(flyteidl.core.Tasks.CoPilot.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(copilotConfig_);
+                copilotConfig_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -8262,6 +8318,56 @@ public final class Tasks {
       return ports_.get(index);
     }
 
+    public static final int USE_COPILOT_FIELD_NUMBER = 8;
+    private boolean useCopilot_;
+    /**
+     * <pre>
+     * BETA: This enables use of CoPilot. This makes it possible to to run a completely portable container, that uses inputs and outputs
+     * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+     * If CoPilot is enabled, then data will be mounted in accompanying directories specified in the CoPilot settings. If the directories 
+     * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+     * to understand the default paths.
+     * </pre>
+     *
+     * <code>bool use_copilot = 8;</code>
+     */
+    public boolean getUseCopilot() {
+      return useCopilot_;
+    }
+
+    public static final int COPILOT_CONFIG_FIELD_NUMBER = 9;
+    private flyteidl.core.Tasks.CoPilot copilotConfig_;
+    /**
+     * <pre>
+     * Optional configuration for CoPilot. If not specified, then default values are used.
+     * </pre>
+     *
+     * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+     */
+    public boolean hasCopilotConfig() {
+      return copilotConfig_ != null;
+    }
+    /**
+     * <pre>
+     * Optional configuration for CoPilot. If not specified, then default values are used.
+     * </pre>
+     *
+     * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+     */
+    public flyteidl.core.Tasks.CoPilot getCopilotConfig() {
+      return copilotConfig_ == null ? flyteidl.core.Tasks.CoPilot.getDefaultInstance() : copilotConfig_;
+    }
+    /**
+     * <pre>
+     * Optional configuration for CoPilot. If not specified, then default values are used.
+     * </pre>
+     *
+     * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+     */
+    public flyteidl.core.Tasks.CoPilotOrBuilder getCopilotConfigOrBuilder() {
+      return getCopilotConfig();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8296,6 +8402,12 @@ public final class Tasks {
       }
       for (int i = 0; i < ports_.size(); i++) {
         output.writeMessage(7, ports_.get(i));
+      }
+      if (useCopilot_ != false) {
+        output.writeBool(8, useCopilot_);
+      }
+      if (copilotConfig_ != null) {
+        output.writeMessage(9, getCopilotConfig());
       }
       unknownFields.writeTo(output);
     }
@@ -8341,6 +8453,14 @@ public final class Tasks {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, ports_.get(i));
       }
+      if (useCopilot_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, useCopilot_);
+      }
+      if (copilotConfig_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getCopilotConfig());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -8373,6 +8493,13 @@ public final class Tasks {
           .equals(other.getConfigList())) return false;
       if (!getPortsList()
           .equals(other.getPortsList())) return false;
+      if (getUseCopilot()
+          != other.getUseCopilot()) return false;
+      if (hasCopilotConfig() != other.hasCopilotConfig()) return false;
+      if (hasCopilotConfig()) {
+        if (!getCopilotConfig()
+            .equals(other.getCopilotConfig())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8409,6 +8536,13 @@ public final class Tasks {
       if (getPortsCount() > 0) {
         hash = (37 * hash) + PORTS_FIELD_NUMBER;
         hash = (53 * hash) + getPortsList().hashCode();
+      }
+      hash = (37 * hash) + USE_COPILOT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getUseCopilot());
+      if (hasCopilotConfig()) {
+        hash = (37 * hash) + COPILOT_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getCopilotConfig().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -8576,6 +8710,14 @@ public final class Tasks {
         } else {
           portsBuilder_.clear();
         }
+        useCopilot_ = false;
+
+        if (copilotConfigBuilder_ == null) {
+          copilotConfig_ = null;
+        } else {
+          copilotConfig_ = null;
+          copilotConfigBuilder_ = null;
+        }
         return this;
       }
 
@@ -8646,6 +8788,12 @@ public final class Tasks {
           result.ports_ = ports_;
         } else {
           result.ports_ = portsBuilder_.build();
+        }
+        result.useCopilot_ = useCopilot_;
+        if (copilotConfigBuilder_ == null) {
+          result.copilotConfig_ = copilotConfig_;
+        } else {
+          result.copilotConfig_ = copilotConfigBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -8800,6 +8948,12 @@ public final class Tasks {
               portsBuilder_.addAllMessages(other.ports_);
             }
           }
+        }
+        if (other.getUseCopilot() != false) {
+          setUseCopilot(other.getUseCopilot());
+        }
+        if (other.hasCopilotConfig()) {
+          mergeCopilotConfig(other.getCopilotConfig());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -10322,6 +10476,209 @@ public final class Tasks {
         }
         return portsBuilder_;
       }
+
+      private boolean useCopilot_ ;
+      /**
+       * <pre>
+       * BETA: This enables use of CoPilot. This makes it possible to to run a completely portable container, that uses inputs and outputs
+       * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+       * If CoPilot is enabled, then data will be mounted in accompanying directories specified in the CoPilot settings. If the directories 
+       * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+       * to understand the default paths.
+       * </pre>
+       *
+       * <code>bool use_copilot = 8;</code>
+       */
+      public boolean getUseCopilot() {
+        return useCopilot_;
+      }
+      /**
+       * <pre>
+       * BETA: This enables use of CoPilot. This makes it possible to to run a completely portable container, that uses inputs and outputs
+       * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+       * If CoPilot is enabled, then data will be mounted in accompanying directories specified in the CoPilot settings. If the directories 
+       * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+       * to understand the default paths.
+       * </pre>
+       *
+       * <code>bool use_copilot = 8;</code>
+       */
+      public Builder setUseCopilot(boolean value) {
+        
+        useCopilot_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * BETA: This enables use of CoPilot. This makes it possible to to run a completely portable container, that uses inputs and outputs
+       * only from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.
+       * If CoPilot is enabled, then data will be mounted in accompanying directories specified in the CoPilot settings. If the directories 
+       * are not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation
+       * to understand the default paths.
+       * </pre>
+       *
+       * <code>bool use_copilot = 8;</code>
+       */
+      public Builder clearUseCopilot() {
+        
+        useCopilot_ = false;
+        onChanged();
+        return this;
+      }
+
+      private flyteidl.core.Tasks.CoPilot copilotConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.CoPilot, flyteidl.core.Tasks.CoPilot.Builder, flyteidl.core.Tasks.CoPilotOrBuilder> copilotConfigBuilder_;
+      /**
+       * <pre>
+       * Optional configuration for CoPilot. If not specified, then default values are used.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+       */
+      public boolean hasCopilotConfig() {
+        return copilotConfigBuilder_ != null || copilotConfig_ != null;
+      }
+      /**
+       * <pre>
+       * Optional configuration for CoPilot. If not specified, then default values are used.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+       */
+      public flyteidl.core.Tasks.CoPilot getCopilotConfig() {
+        if (copilotConfigBuilder_ == null) {
+          return copilotConfig_ == null ? flyteidl.core.Tasks.CoPilot.getDefaultInstance() : copilotConfig_;
+        } else {
+          return copilotConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Optional configuration for CoPilot. If not specified, then default values are used.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+       */
+      public Builder setCopilotConfig(flyteidl.core.Tasks.CoPilot value) {
+        if (copilotConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          copilotConfig_ = value;
+          onChanged();
+        } else {
+          copilotConfigBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional configuration for CoPilot. If not specified, then default values are used.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+       */
+      public Builder setCopilotConfig(
+          flyteidl.core.Tasks.CoPilot.Builder builderForValue) {
+        if (copilotConfigBuilder_ == null) {
+          copilotConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          copilotConfigBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional configuration for CoPilot. If not specified, then default values are used.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+       */
+      public Builder mergeCopilotConfig(flyteidl.core.Tasks.CoPilot value) {
+        if (copilotConfigBuilder_ == null) {
+          if (copilotConfig_ != null) {
+            copilotConfig_ =
+              flyteidl.core.Tasks.CoPilot.newBuilder(copilotConfig_).mergeFrom(value).buildPartial();
+          } else {
+            copilotConfig_ = value;
+          }
+          onChanged();
+        } else {
+          copilotConfigBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional configuration for CoPilot. If not specified, then default values are used.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+       */
+      public Builder clearCopilotConfig() {
+        if (copilotConfigBuilder_ == null) {
+          copilotConfig_ = null;
+          onChanged();
+        } else {
+          copilotConfig_ = null;
+          copilotConfigBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional configuration for CoPilot. If not specified, then default values are used.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+       */
+      public flyteidl.core.Tasks.CoPilot.Builder getCopilotConfigBuilder() {
+        
+        onChanged();
+        return getCopilotConfigFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Optional configuration for CoPilot. If not specified, then default values are used.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+       */
+      public flyteidl.core.Tasks.CoPilotOrBuilder getCopilotConfigOrBuilder() {
+        if (copilotConfigBuilder_ != null) {
+          return copilotConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return copilotConfig_ == null ?
+              flyteidl.core.Tasks.CoPilot.getDefaultInstance() : copilotConfig_;
+        }
+      }
+      /**
+       * <pre>
+       * Optional configuration for CoPilot. If not specified, then default values are used.
+       * </pre>
+       *
+       * <code>.flyteidl.core.CoPilot copilot_config = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.CoPilot, flyteidl.core.Tasks.CoPilot.Builder, flyteidl.core.Tasks.CoPilotOrBuilder> 
+          getCopilotConfigFieldBuilder() {
+        if (copilotConfigBuilder_ == null) {
+          copilotConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Tasks.CoPilot, flyteidl.core.Tasks.CoPilot.Builder, flyteidl.core.Tasks.CoPilotOrBuilder>(
+                  getCopilotConfig(),
+                  getParentForChildren(),
+                  isClean());
+          copilotConfig_ = null;
+        }
+        return copilotConfigBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -10375,6 +10732,1099 @@ public final class Tasks {
 
   }
 
+  public interface CoPilotOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.CoPilot)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
+     * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
+     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
+     * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
+     * /var/flyte/inputs/y -&gt; Y is a file in Binary format
+     * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
+     * More information about the protocol - refer to docs #TODO reference docs here
+     * </pre>
+     *
+     * <code>string input_path = 1;</code>
+     */
+    java.lang.String getInputPath();
+    /**
+     * <pre>
+     * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
+     * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
+     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
+     * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
+     * /var/flyte/inputs/y -&gt; Y is a file in Binary format
+     * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
+     * More information about the protocol - refer to docs #TODO reference docs here
+     * </pre>
+     *
+     * <code>string input_path = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getInputPathBytes();
+
+    /**
+     * <pre>
+     * File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
+     * </pre>
+     *
+     * <code>string output_path = 2;</code>
+     */
+    java.lang.String getOutputPath();
+    /**
+     * <pre>
+     * File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
+     * </pre>
+     *
+     * <code>string output_path = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getOutputPathBytes();
+
+    /**
+     * <pre>
+     * In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
+     * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
+     * </pre>
+     *
+     * <code>.flyteidl.core.CoPilot.MetadataFormat format = 3;</code>
+     */
+    int getFormatValue();
+    /**
+     * <pre>
+     * In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
+     * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
+     * </pre>
+     *
+     * <code>.flyteidl.core.CoPilot.MetadataFormat format = 3;</code>
+     */
+    flyteidl.core.Tasks.CoPilot.MetadataFormat getFormat();
+  }
+  /**
+   * <pre>
+   * This configuration allows executing raw containers in Flyte using the Flyte CoPilot system.
+   * Flyte CoPilot, eliminates the needs of flytekit or sdk inside the container. Any inputs required by the users container are side-loaded in the input_path
+   * Any outputs generated by the user container - within output_path are automatically uploaded.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.CoPilot}
+   */
+  public  static final class CoPilot extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.CoPilot)
+      CoPilotOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CoPilot.newBuilder() to construct.
+    private CoPilot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CoPilot() {
+      inputPath_ = "";
+      outputPath_ = "";
+      format_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CoPilot(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              inputPath_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              outputPath_ = s;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              format_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Tasks.internal_static_flyteidl_core_CoPilot_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Tasks.internal_static_flyteidl_core_CoPilot_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Tasks.CoPilot.class, flyteidl.core.Tasks.CoPilot.Builder.class);
+    }
+
+    /**
+     * <pre>
+     * MetadataFormat decides the encoding format in which the input metadata should be made available to the containers. 
+     * If the user has access to the protocol buffer definitions, it is recommended to use the PROTO format.
+     * JSON and YAML do not need any protobuf definitions to read it
+     * All remote references in core.LiteralMap are replaced with local filesystem references (the data is downloaded to local filesystem)
+     * </pre>
+     *
+     * Protobuf enum {@code flyteidl.core.CoPilot.MetadataFormat}
+     */
+    public enum MetadataFormat
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <pre>
+       * JSON / YAML are serialized represnetation of a map[string]primitive. primitive -&gt; int, string, bool, double/float, bytes
+       * </pre>
+       *
+       * <code>JSON = 0;</code>
+       */
+      JSON(0),
+      /**
+       * <code>YAML = 1;</code>
+       */
+      YAML(1),
+      /**
+       * <pre>
+       * Proto is a serialized binary of `core.LiteralMap` defined in flyteidl/core
+       * </pre>
+       *
+       * <code>PROTO = 2;</code>
+       */
+      PROTO(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <pre>
+       * JSON / YAML are serialized represnetation of a map[string]primitive. primitive -&gt; int, string, bool, double/float, bytes
+       * </pre>
+       *
+       * <code>JSON = 0;</code>
+       */
+      public static final int JSON_VALUE = 0;
+      /**
+       * <code>YAML = 1;</code>
+       */
+      public static final int YAML_VALUE = 1;
+      /**
+       * <pre>
+       * Proto is a serialized binary of `core.LiteralMap` defined in flyteidl/core
+       * </pre>
+       *
+       * <code>PROTO = 2;</code>
+       */
+      public static final int PROTO_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static MetadataFormat valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static MetadataFormat forNumber(int value) {
+        switch (value) {
+          case 0: return JSON;
+          case 1: return YAML;
+          case 2: return PROTO;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<MetadataFormat>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          MetadataFormat> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MetadataFormat>() {
+              public MetadataFormat findValueByNumber(int number) {
+                return MetadataFormat.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return flyteidl.core.Tasks.CoPilot.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final MetadataFormat[] VALUES = values();
+
+      public static MetadataFormat valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private MetadataFormat(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:flyteidl.core.CoPilot.MetadataFormat)
+    }
+
+    public static final int INPUT_PATH_FIELD_NUMBER = 1;
+    private volatile java.lang.Object inputPath_;
+    /**
+     * <pre>
+     * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
+     * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
+     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
+     * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
+     * /var/flyte/inputs/y -&gt; Y is a file in Binary format
+     * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
+     * More information about the protocol - refer to docs #TODO reference docs here
+     * </pre>
+     *
+     * <code>string input_path = 1;</code>
+     */
+    public java.lang.String getInputPath() {
+      java.lang.Object ref = inputPath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        inputPath_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
+     * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
+     * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
+     * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
+     * /var/flyte/inputs/y -&gt; Y is a file in Binary format
+     * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
+     * More information about the protocol - refer to docs #TODO reference docs here
+     * </pre>
+     *
+     * <code>string input_path = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getInputPathBytes() {
+      java.lang.Object ref = inputPath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        inputPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OUTPUT_PATH_FIELD_NUMBER = 2;
+    private volatile java.lang.Object outputPath_;
+    /**
+     * <pre>
+     * File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
+     * </pre>
+     *
+     * <code>string output_path = 2;</code>
+     */
+    public java.lang.String getOutputPath() {
+      java.lang.Object ref = outputPath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        outputPath_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
+     * </pre>
+     *
+     * <code>string output_path = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOutputPathBytes() {
+      java.lang.Object ref = outputPath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        outputPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FORMAT_FIELD_NUMBER = 3;
+    private int format_;
+    /**
+     * <pre>
+     * In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
+     * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
+     * </pre>
+     *
+     * <code>.flyteidl.core.CoPilot.MetadataFormat format = 3;</code>
+     */
+    public int getFormatValue() {
+      return format_;
+    }
+    /**
+     * <pre>
+     * In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
+     * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
+     * </pre>
+     *
+     * <code>.flyteidl.core.CoPilot.MetadataFormat format = 3;</code>
+     */
+    public flyteidl.core.Tasks.CoPilot.MetadataFormat getFormat() {
+      @SuppressWarnings("deprecation")
+      flyteidl.core.Tasks.CoPilot.MetadataFormat result = flyteidl.core.Tasks.CoPilot.MetadataFormat.valueOf(format_);
+      return result == null ? flyteidl.core.Tasks.CoPilot.MetadataFormat.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getInputPathBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, inputPath_);
+      }
+      if (!getOutputPathBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, outputPath_);
+      }
+      if (format_ != flyteidl.core.Tasks.CoPilot.MetadataFormat.JSON.getNumber()) {
+        output.writeEnum(3, format_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getInputPathBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, inputPath_);
+      }
+      if (!getOutputPathBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, outputPath_);
+      }
+      if (format_ != flyteidl.core.Tasks.CoPilot.MetadataFormat.JSON.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, format_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Tasks.CoPilot)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Tasks.CoPilot other = (flyteidl.core.Tasks.CoPilot) obj;
+
+      if (!getInputPath()
+          .equals(other.getInputPath())) return false;
+      if (!getOutputPath()
+          .equals(other.getOutputPath())) return false;
+      if (format_ != other.format_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + INPUT_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getInputPath().hashCode();
+      hash = (37 * hash) + OUTPUT_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputPath().hashCode();
+      hash = (37 * hash) + FORMAT_FIELD_NUMBER;
+      hash = (53 * hash) + format_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Tasks.CoPilot parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Tasks.CoPilot parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Tasks.CoPilot parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Tasks.CoPilot parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Tasks.CoPilot parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Tasks.CoPilot parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Tasks.CoPilot parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Tasks.CoPilot parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Tasks.CoPilot parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Tasks.CoPilot parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Tasks.CoPilot parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Tasks.CoPilot parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Tasks.CoPilot prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * This configuration allows executing raw containers in Flyte using the Flyte CoPilot system.
+     * Flyte CoPilot, eliminates the needs of flytekit or sdk inside the container. Any inputs required by the users container are side-loaded in the input_path
+     * Any outputs generated by the user container - within output_path are automatically uploaded.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.CoPilot}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.CoPilot)
+        flyteidl.core.Tasks.CoPilotOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Tasks.internal_static_flyteidl_core_CoPilot_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Tasks.internal_static_flyteidl_core_CoPilot_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Tasks.CoPilot.class, flyteidl.core.Tasks.CoPilot.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Tasks.CoPilot.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        inputPath_ = "";
+
+        outputPath_ = "";
+
+        format_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Tasks.internal_static_flyteidl_core_CoPilot_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Tasks.CoPilot getDefaultInstanceForType() {
+        return flyteidl.core.Tasks.CoPilot.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Tasks.CoPilot build() {
+        flyteidl.core.Tasks.CoPilot result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Tasks.CoPilot buildPartial() {
+        flyteidl.core.Tasks.CoPilot result = new flyteidl.core.Tasks.CoPilot(this);
+        result.inputPath_ = inputPath_;
+        result.outputPath_ = outputPath_;
+        result.format_ = format_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Tasks.CoPilot) {
+          return mergeFrom((flyteidl.core.Tasks.CoPilot)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Tasks.CoPilot other) {
+        if (other == flyteidl.core.Tasks.CoPilot.getDefaultInstance()) return this;
+        if (!other.getInputPath().isEmpty()) {
+          inputPath_ = other.inputPath_;
+          onChanged();
+        }
+        if (!other.getOutputPath().isEmpty()) {
+          outputPath_ = other.outputPath_;
+          onChanged();
+        }
+        if (other.format_ != 0) {
+          setFormatValue(other.getFormatValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Tasks.CoPilot parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Tasks.CoPilot) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object inputPath_ = "";
+      /**
+       * <pre>
+       * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
+       * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
+       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
+       * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
+       * /var/flyte/inputs/y -&gt; Y is a file in Binary format
+       * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
+       * More information about the protocol - refer to docs #TODO reference docs here
+       * </pre>
+       *
+       * <code>string input_path = 1;</code>
+       */
+      public java.lang.String getInputPath() {
+        java.lang.Object ref = inputPath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          inputPath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
+       * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
+       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
+       * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
+       * /var/flyte/inputs/y -&gt; Y is a file in Binary format
+       * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
+       * More information about the protocol - refer to docs #TODO reference docs here
+       * </pre>
+       *
+       * <code>string input_path = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getInputPathBytes() {
+        java.lang.Object ref = inputPath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          inputPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
+       * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
+       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
+       * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
+       * /var/flyte/inputs/y -&gt; Y is a file in Binary format
+       * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
+       * More information about the protocol - refer to docs #TODO reference docs here
+       * </pre>
+       *
+       * <code>string input_path = 1;</code>
+       */
+      public Builder setInputPath(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        inputPath_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
+       * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
+       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
+       * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
+       * /var/flyte/inputs/y -&gt; Y is a file in Binary format
+       * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
+       * More information about the protocol - refer to docs #TODO reference docs here
+       * </pre>
+       *
+       * <code>string input_path = 1;</code>
+       */
+      public Builder clearInputPath() {
+        
+        inputPath_ = getDefaultInstance().getInputPath();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * File system path (start at root). This folder will contain all the inputs exploded to a separate file. 
+       * Example, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is "/var/flyte/inputs", then the file system will look like
+       * /var/flyte/inputs/inputs.&lt;metadata format dependent -&gt; .pb .json .yaml&gt; -&gt; Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations 
+       * /var/flyte/inputs/x -&gt; X is a file that contains the value of x (integer) in string format
+       * /var/flyte/inputs/y -&gt; Y is a file in Binary format
+       * /var/flyte/inputs/z/... -&gt; Note Z itself is a directory
+       * More information about the protocol - refer to docs #TODO reference docs here
+       * </pre>
+       *
+       * <code>string input_path = 1;</code>
+       */
+      public Builder setInputPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        inputPath_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object outputPath_ = "";
+      /**
+       * <pre>
+       * File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
+       * </pre>
+       *
+       * <code>string output_path = 2;</code>
+       */
+      public java.lang.String getOutputPath() {
+        java.lang.Object ref = outputPath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          outputPath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
+       * </pre>
+       *
+       * <code>string output_path = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOutputPathBytes() {
+        java.lang.Object ref = outputPath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          outputPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
+       * </pre>
+       *
+       * <code>string output_path = 2;</code>
+       */
+      public Builder setOutputPath(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        outputPath_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
+       * </pre>
+       *
+       * <code>string output_path = 2;</code>
+       */
+      public Builder clearOutputPath() {
+        
+        outputPath_ = getDefaultInstance().getOutputPath();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file
+       * </pre>
+       *
+       * <code>string output_path = 2;</code>
+       */
+      public Builder setOutputPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        outputPath_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int format_ = 0;
+      /**
+       * <pre>
+       * In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
+       * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
+       * </pre>
+       *
+       * <code>.flyteidl.core.CoPilot.MetadataFormat format = 3;</code>
+       */
+      public int getFormatValue() {
+        return format_;
+      }
+      /**
+       * <pre>
+       * In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
+       * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
+       * </pre>
+       *
+       * <code>.flyteidl.core.CoPilot.MetadataFormat format = 3;</code>
+       */
+      public Builder setFormatValue(int value) {
+        format_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
+       * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
+       * </pre>
+       *
+       * <code>.flyteidl.core.CoPilot.MetadataFormat format = 3;</code>
+       */
+      public flyteidl.core.Tasks.CoPilot.MetadataFormat getFormat() {
+        @SuppressWarnings("deprecation")
+        flyteidl.core.Tasks.CoPilot.MetadataFormat result = flyteidl.core.Tasks.CoPilot.MetadataFormat.valueOf(format_);
+        return result == null ? flyteidl.core.Tasks.CoPilot.MetadataFormat.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
+       * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
+       * </pre>
+       *
+       * <code>.flyteidl.core.CoPilot.MetadataFormat format = 3;</code>
+       */
+      public Builder setFormat(flyteidl.core.Tasks.CoPilot.MetadataFormat value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        format_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
+       * This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
+       * </pre>
+       *
+       * <code>.flyteidl.core.CoPilot.MetadataFormat format = 3;</code>
+       */
+      public Builder clearFormat() {
+        
+        format_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.CoPilot)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.CoPilot)
+    private static final flyteidl.core.Tasks.CoPilot DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Tasks.CoPilot();
+    }
+
+    public static flyteidl.core.Tasks.CoPilot getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CoPilot>
+        PARSER = new com.google.protobuf.AbstractParser<CoPilot>() {
+      @java.lang.Override
+      public CoPilot parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CoPilot(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CoPilot> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CoPilot> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Tasks.CoPilot getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_Resources_descriptor;
   private static final 
@@ -10410,6 +11860,11 @@ public final class Tasks {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_Container_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_CoPilot_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_CoPilot_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -10449,15 +11904,20 @@ public final class Tasks {
       "Interface\022\'\n\006custom\030\005 \001(\0132\027.google.proto" +
       "buf.Struct\022-\n\tcontainer\030\006 \001(\0132\030.flyteidl" +
       ".core.ContainerH\000B\010\n\006target\"\'\n\rContainer" +
-      "Port\022\026\n\016container_port\030\001 \001(\r\"\352\001\n\tContain" +
+      "Port\022\026\n\016container_port\030\001 \001(\r\"\257\002\n\tContain" +
       "er\022\r\n\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004ar" +
       "gs\030\003 \003(\t\022+\n\tresources\030\004 \001(\0132\030.flyteidl.c" +
       "ore.Resources\022(\n\003env\030\005 \003(\0132\033.flyteidl.co" +
       "re.KeyValuePair\022+\n\006config\030\006 \003(\0132\033.flytei" +
       "dl.core.KeyValuePair\022+\n\005ports\030\007 \003(\0132\034.fl" +
-      "yteidl.core.ContainerPortB2Z0github.com/" +
-      "lyft/flyteidl/gen/pb-go/flyteidl/coreb\006p" +
-      "roto3"
+      "yteidl.core.ContainerPort\022\023\n\013use_copilot" +
+      "\030\010 \001(\010\022.\n\016copilot_config\030\t \001(\0132\026.flyteid" +
+      "l.core.CoPilot\"\232\001\n\007CoPilot\022\022\n\ninput_path" +
+      "\030\001 \001(\t\022\023\n\013output_path\030\002 \001(\t\0225\n\006format\030\003 " +
+      "\001(\0162%.flyteidl.core.CoPilot.MetadataForm" +
+      "at\"/\n\016MetadataFormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001" +
+      "\022\t\n\005PROTO\020\002B2Z0github.com/lyft/flyteidl/" +
+      "gen/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10517,7 +11977,13 @@ public final class Tasks {
     internal_static_flyteidl_core_Container_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Container_descriptor,
-        new java.lang.String[] { "Image", "Command", "Args", "Resources", "Env", "Config", "Ports", });
+        new java.lang.String[] { "Image", "Command", "Args", "Resources", "Env", "Config", "Ports", "UseCopilot", "CopilotConfig", });
+    internal_static_flyteidl_core_CoPilot_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_flyteidl_core_CoPilot_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_CoPilot_descriptor,
+        new java.lang.String[] { "InputPath", "OutputPath", "Format", });
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Interface.getDescriptor();
     flyteidl.core.Literals.getDescriptor();
