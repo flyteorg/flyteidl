@@ -18,7 +18,7 @@ import (
 
 type EmittedEventInfo struct {
 	lastUpdatedAt time.Time
-	phase         string
+	eventID       string
 }
 
 type idempotentWorkFlowEventRecorder struct {
@@ -27,42 +27,46 @@ type idempotentWorkFlowEventRecorder struct {
 	cache               *lru.Cache
 }
 
-func (i *idempotentWorkFlowEventRecorder) idempotentRecord(ctx context.Context, id string, e proto.Message, phase string) error {
+func (i *idempotentWorkFlowEventRecorder) idempotentRecord(ctx context.Context, objectId string, e proto.Message, eventID string) error {
 	var existing *EmittedEventInfo
-	o, found := i.cache.Get(id)
+	o, found := i.cache.Get(objectId)
 	if found {
 		existing = o.(*EmittedEventInfo)
 	}
 
 	emitTime := time.Now()
-	if !found || existing.phase != phase || emitTime.Sub(existing.lastUpdatedAt) > time.Duration(i.maxUpdateLagSeconds)*time.Second {
+	if !found || existing.eventID != eventID || emitTime.Sub(existing.lastUpdatedAt) > time.Duration(i.maxUpdateLagSeconds)*time.Second {
 		err := i.internalRecorder.sinkEvent(ctx, e)
 		if err != nil {
 			if !eventsErr.IsAlreadyExists(err) {
 				return err
 			}
-			logger.Infof(ctx, "Workflow event phase: %s, executionId %s already exist", phase, id)
+			logger.Infof(ctx, "Workflow event eventID: %s, executionID %s already exist", eventID, objectId)
 		}
 
-		i.cache.Add(id, &EmittedEventInfo{lastUpdatedAt: emitTime, phase: phase})
+		i.cache.Add(objectId, &EmittedEventInfo{lastUpdatedAt: emitTime, eventID: eventID})
 	}
 
 	return nil
 }
 
 func (i *idempotentWorkFlowEventRecorder) RecordWorkflowEvent(ctx context.Context, e *event.WorkflowExecutionEvent) error {
-	id := e.ExecutionId.String()
-	return i.idempotentRecord(ctx, id, e, e.Phase.String())
+	executionID := e.ExecutionId.String()
+	return i.idempotentRecord(ctx, executionID, e, e.Phase.String())
 }
 
 func (i *idempotentWorkFlowEventRecorder) RecordNodeEvent(ctx context.Context, e *event.NodeExecutionEvent) error {
-	id := e.Id.String()
-	return i.idempotentRecord(ctx, id, e, e.Phase.String())
+	nodeID := e.Id.String()
+	eventID := e.Phase.String()
+	return i.idempotentRecord(ctx, nodeID, e, eventID)
 }
 
 func (i *idempotentWorkFlowEventRecorder) RecordTaskEvent(ctx context.Context, e *event.TaskExecutionEvent) error {
-	id := fmt.Sprintf("%v:%v:%v:%v", e.ParentNodeExecutionId.String(), e.TaskId.String(), e.PhaseVersion, e.RetryAttempt)
-	return i.idempotentRecord(ctx, id, e, e.Phase.String())
+	taskID := fmt.Sprintf("%v:%v:%v", e.ParentNodeExecutionId.String(), e.TaskId.String(), e.RetryAttempt)
+	// Task event is uniquely identified using both Phase and PhaseVersion. For example, phase like Running can have
+	// multiple events with changed metadata (new logs, additional custom_info, etc).
+	eventID := fmt.Sprintf("%v:%v", e.Phase.String(), e.PhaseVersion)
+	return i.idempotentRecord(ctx, taskID, e, eventID)
 }
 
 // cache of size 5000, ~300KB in size

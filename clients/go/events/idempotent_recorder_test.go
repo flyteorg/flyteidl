@@ -67,17 +67,17 @@ func TestIdempotentWorkflowEventRecorder_PhaseChange(t *testing.T) {
 
 	// queued
 	event, _ := recordEnsureNoError(core.WorkflowExecution_QUEUED)
-	assert.Equal(t, core.WorkflowExecution_QUEUED.String(), event.phase)
+	assert.Equal(t, core.WorkflowExecution_QUEUED.String(), event.eventID)
 	lastUpdatedAt := event.lastUpdatedAt
 
 	// Running
 	event, _ = recordEnsureNoError(core.WorkflowExecution_RUNNING)
-	assert.Equal(t, core.WorkflowExecution_RUNNING.String(), event.phase)
+	assert.Equal(t, core.WorkflowExecution_RUNNING.String(), event.eventID)
 	assert.True(t, event.lastUpdatedAt.After(lastUpdatedAt))
 
-	// phase Succeeded should delete the entry
+	// eventID Succeeded should delete the entry
 	event, _ = recordEnsureNoError(core.WorkflowExecution_SUCCEEDED)
-	assert.Equal(t, core.WorkflowExecution_SUCCEEDED.String(), event.phase)
+	assert.Equal(t, core.WorkflowExecution_SUCCEEDED.String(), event.eventID)
 	assert.True(t, event.lastUpdatedAt.After(lastUpdatedAt))
 }
 
@@ -103,17 +103,17 @@ func TestIdempotentNodeEventRecorder_PhaseChange(t *testing.T) {
 
 	// queued
 	event, _ := recordEnsureNoError(core.NodeExecution_QUEUED)
-	assert.Equal(t, core.NodeExecution_QUEUED.String(), event.phase)
+	assert.Equal(t, core.NodeExecution_QUEUED.String(), event.eventID)
 	lastUpdatedAt := event.lastUpdatedAt
 
 	// Running
 	event, _ = recordEnsureNoError(core.NodeExecution_RUNNING)
-	assert.Equal(t, core.NodeExecution_RUNNING.String(), event.phase)
+	assert.Equal(t, core.NodeExecution_RUNNING.String(), event.eventID)
 	assert.True(t, event.lastUpdatedAt.After(lastUpdatedAt))
 
-	// phase Succeeded should delete the entry
+	// eventID Succeeded should delete the entry
 	event, _ = recordEnsureNoError(core.NodeExecution_SUCCEEDED)
-	assert.Equal(t, core.NodeExecution_SUCCEEDED.String(), event.phase)
+	assert.Equal(t, core.NodeExecution_SUCCEEDED.String(), event.eventID)
 	assert.True(t, event.lastUpdatedAt.After(lastUpdatedAt))
 }
 
@@ -133,24 +133,27 @@ func TestIdempotentTaskEventRecorder_PhaseChange(t *testing.T) {
 		taskExecutionEvent := createTaskEvent(phase)
 		err := recorder.RecordTaskEvent(ctx, taskExecutionEvent)
 		assert.NoError(t, err)
-		id := fmt.Sprintf("%v:%v:%v:%v", taskExecutionEvent.ParentNodeExecutionId.String(), taskExecutionEvent.TaskId.String(), taskExecutionEvent.PhaseVersion, taskExecutionEvent.RetryAttempt)
+		id := fmt.Sprintf("%v:%v:%v", taskExecutionEvent.ParentNodeExecutionId.String(), taskExecutionEvent.TaskId.String(), taskExecutionEvent.RetryAttempt)
 		event, ok := idempotentRecorder.cache.Get(id)
 		return event.(*EmittedEventInfo), ok
 	}
 
 	// queued
 	event, _ := recordEnsureNoError(core.TaskExecution_QUEUED)
-	assert.Equal(t, core.TaskExecution_QUEUED.String(), event.phase)
+	eventID := fmt.Sprintf("%v:%v", core.TaskExecution_QUEUED.String(), 1)
+	assert.Equal(t, eventID, event.eventID)
 	lastUpdatedAt := event.lastUpdatedAt
 
 	// Running
 	event, _ = recordEnsureNoError(core.TaskExecution_RUNNING)
-	assert.Equal(t, core.TaskExecution_RUNNING.String(), event.phase)
+	eventID = fmt.Sprintf("%v:%v", core.TaskExecution_RUNNING.String(), 1)
+	assert.Equal(t, eventID, event.eventID)
 	assert.True(t, event.lastUpdatedAt.After(lastUpdatedAt))
 
-	// phase Succeeded should delete the entry
+	// eventID Succeeded should delete the entry
 	event, _ = recordEnsureNoError(core.TaskExecution_SUCCEEDED)
-	assert.Equal(t, core.TaskExecution_SUCCEEDED.String(), event.phase)
+	eventID = fmt.Sprintf("%v:%v", core.TaskExecution_SUCCEEDED.String(), 1)
+	assert.Equal(t, eventID, event.eventID)
 	assert.True(t, event.lastUpdatedAt.After(lastUpdatedAt))
 }
 
