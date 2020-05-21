@@ -194,6 +194,25 @@ message DataLoadingConfig {
   // In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.
   // This format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding
   MetadataFormat format = 3;
-   // Flag enables DataLoading Config. If this is not set, data loading will not be used! 
-   bool enabled = 4;
+  // Flag enables DataLoading Config. If this is not set, data loading will not be used! 
+  bool enabled = 4;
+  // Strategy to use when dealing with Blob, Schema, or multipart blob data (large datasets)
+  enum BlobDownload {
+    // All data will be downloaded before the main container is executed
+    BEFORE_STARTUP = 0;
+    // Data will be downloaded as a stream and an End-Of-Stream marker will be written to indicate all data has been downloaded. Refer to protocol for details
+    STREAM = 1;
+    // Large objects (offloaded) will not be downloaded
+    DO_NOT_DOWNLOAD = 2;
+  }
+  enum BlobUpload {
+    // All data will be uploaded after the main container exits
+    ON_EXIT = 0;
+    // Data will be uploaded as it appears. Refer to protocol specification for details
+    WHEN_AVAILABLE = 1;
+    // Data will not be uploaded, only references will be written
+    DO_NOT_UPLOAD = 2;    
+  }
+  BlobDownload download_strategy = 5;
+  BlobUpload upload_strategy = 6;
 }

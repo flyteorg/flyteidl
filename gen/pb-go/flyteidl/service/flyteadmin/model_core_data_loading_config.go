@@ -15,4 +15,6 @@ type CoreDataLoadingConfig struct {
 	OutputPath string `json:"output_path,omitempty"`
 	Format *DataLoadingConfigMetadataFormat `json:"format,omitempty"`
 	Enabled bool `json:"enabled,omitempty"`
+	DownloadStrategy *DataLoadingConfigBlobDownload `json:"download_strategy,omitempty"`
+	UploadStrategy *DataLoadingConfigBlobUpload `json:"upload_strategy,omitempty"`
 }

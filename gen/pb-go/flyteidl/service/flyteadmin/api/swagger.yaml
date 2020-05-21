@@ -2323,6 +2323,31 @@ definitions:
       ids:
       - "ids"
       - "ids"
+  DataLoadingConfigBlobDownload:
+    type: "string"
+    title: "Strategy to use when dealing with Blob, Schema, or multipart blob data\
+      \ (large datasets)"
+    description: "- BEFORE_STARTUP: All data will be downloaded before the main container\
+      \ is executed\n - STREAM: Data will be downloaded as a stream and an End-Of-Stream\
+      \ marker will be written to indicate all data has been downloaded. Refer to\
+      \ protocol for details\n - DO_NOT_DOWNLOAD: Large objects (offloaded) will not\
+      \ be downloaded"
+    enum:
+    - "BEFORE_STARTUP"
+    - "STREAM"
+    - "DO_NOT_DOWNLOAD"
+    default: "BEFORE_STARTUP"
+  DataLoadingConfigBlobUpload:
+    type: "string"
+    title: "- ON_EXIT: All data will be uploaded after the main container exits\n\
+      \ - WHEN_AVAILABLE: Data will be uploaded as it appears. Refer to protocol specification\
+      \ for details\n - DO_NOT_UPLOAD: Data will not be uploaded, only references\
+      \ will be written"
+    enum:
+    - "ON_EXIT"
+    - "WHEN_AVAILABLE"
+    - "DO_NOT_UPLOAD"
+    default: "ON_EXIT"
   DataLoadingConfigMetadataFormat:
     type: "string"
     title: "MetadataFormat decides the encoding format in which the input metadata\
@@ -5259,7 +5284,9 @@ definitions:
                 - name: {}
                   value: "value"
               data_config:
+                download_strategy: {}
                 format: {}
+                upload_strategy: {}
                 output_path: "output_path"
                 enabled: true
                 input_path: "input_path"
@@ -5396,7 +5423,9 @@ definitions:
               - name: {}
                 value: "value"
             data_config:
+              download_strategy: {}
               format: {}
+              upload_strategy: {}
               output_path: "output_path"
               enabled: true
               input_path: "input_path"
@@ -5767,7 +5796,9 @@ definitions:
                   - name: {}
                     value: "value"
                 data_config:
+                  download_strategy: {}
                   format: {}
+                  upload_strategy: {}
                   output_path: "output_path"
                   enabled: true
                   input_path: "input_path"
@@ -5897,7 +5928,9 @@ definitions:
                   - name: {}
                     value: "value"
                 data_config:
+                  download_strategy: {}
                   format: {}
+                  upload_strategy: {}
                   output_path: "output_path"
                   enabled: true
                   input_path: "input_path"
@@ -7745,7 +7778,9 @@ definitions:
                   - name: {}
                     value: "value"
                 data_config:
+                  download_strategy: {}
                   format: {}
+                  upload_strategy: {}
                   output_path: "output_path"
                   enabled: true
                   input_path: "input_path"
@@ -7866,7 +7901,9 @@ definitions:
                   - name: {}
                     value: "value"
                 data_config:
+                  download_strategy: {}
                   format: {}
+                  upload_strategy: {}
                   output_path: "output_path"
                   enabled: true
                   input_path: "input_path"
@@ -10568,7 +10605,9 @@ definitions:
                 - name: {}
                   value: "value"
               data_config:
+                download_strategy: {}
                 format: {}
+                upload_strategy: {}
                 output_path: "output_path"
                 enabled: true
                 input_path: "input_path"
@@ -10689,7 +10728,9 @@ definitions:
                 - name: {}
                   value: "value"
               data_config:
+                download_strategy: {}
                 format: {}
+                upload_strategy: {}
                 output_path: "output_path"
                 enabled: true
                 input_path: "input_path"
@@ -13347,7 +13388,9 @@ definitions:
                     - name: {}
                       value: "value"
                   data_config:
+                    download_strategy: {}
                     format: {}
+                    upload_strategy: {}
                     output_path: "output_path"
                     enabled: true
                     input_path: "input_path"
@@ -13468,7 +13511,9 @@ definitions:
                     - name: {}
                       value: "value"
                   data_config:
+                    download_strategy: {}
                     format: {}
+                    upload_strategy: {}
                     output_path: "output_path"
                     enabled: true
                     input_path: "input_path"
@@ -16067,7 +16112,9 @@ definitions:
                     - name: {}
                       value: "value"
                   data_config:
+                    download_strategy: {}
                     format: {}
+                    upload_strategy: {}
                     output_path: "output_path"
                     enabled: true
                     input_path: "input_path"
@@ -16188,7 +16235,9 @@ definitions:
                     - name: {}
                       value: "value"
                   data_config:
+                    download_strategy: {}
                     format: {}
+                    upload_strategy: {}
                     output_path: "output_path"
                     enabled: true
                     input_path: "input_path"
@@ -17532,7 +17581,9 @@ definitions:
             - name: {}
               value: "value"
           data_config:
+            download_strategy: {}
             format: {}
+            upload_strategy: {}
             output_path: "output_path"
             enabled: true
             input_path: "input_path"
@@ -20160,7 +20211,9 @@ definitions:
               - name: {}
                 value: "value"
             data_config:
+              download_strategy: {}
               format: {}
+              upload_strategy: {}
               output_path: "output_path"
               enabled: true
               input_path: "input_path"
@@ -20281,7 +20334,9 @@ definitions:
               - name: {}
                 value: "value"
             data_config:
+              download_strategy: {}
               format: {}
+              upload_strategy: {}
               output_path: "output_path"
               enabled: true
               input_path: "input_path"
@@ -21316,7 +21371,9 @@ definitions:
         - name: {}
           value: "value"
       data_config:
+        download_strategy: {}
         format: {}
+        upload_strategy: {}
         output_path: "output_path"
         enabled: true
         input_path: "input_path"
@@ -21378,13 +21435,19 @@ definitions:
         format: "boolean"
         title: "Flag enables DataLoading Config. If this is not set, data loading\
           \ will not be used!"
+      download_strategy:
+        $ref: "#/definitions/DataLoadingConfigBlobDownload"
+      upload_strategy:
+        $ref: "#/definitions/DataLoadingConfigBlobUpload"
     description: "This configuration allows executing raw containers in Flyte using\
       \ the Flyte CoPilot system.\nFlyte CoPilot, eliminates the needs of flytekit\
       \ or sdk inside the container. Any inputs required by the users container are\
       \ side-loaded in the input_path\nAny outputs generated by the user container\
       \ - within output_path are automatically uploaded."
     example:
+      download_strategy: {}
       format: {}
+      upload_strategy: {}
       output_path: "output_path"
       enabled: true
       input_path: "input_path"
@@ -22585,7 +22648,9 @@ definitions:
           - name: {}
             value: "value"
         data_config:
+          download_strategy: {}
           format: {}
+          upload_strategy: {}
           output_path: "output_path"
           enabled: true
           input_path: "input_path"

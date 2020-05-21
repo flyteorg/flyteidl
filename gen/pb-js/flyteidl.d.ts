@@ -3749,6 +3749,12 @@ export namespace flyteidl {
 
             /** DataLoadingConfig enabled */
             enabled?: (boolean|null);
+
+            /** DataLoadingConfig downloadStrategy */
+            downloadStrategy?: (flyteidl.core.DataLoadingConfig.BlobDownload|null);
+
+            /** DataLoadingConfig uploadStrategy */
+            uploadStrategy?: (flyteidl.core.DataLoadingConfig.BlobUpload|null);
         }
 
         /** Represents a DataLoadingConfig. */
@@ -3771,6 +3777,12 @@ export namespace flyteidl {
 
             /** DataLoadingConfig enabled. */
             public enabled: boolean;
+
+            /** DataLoadingConfig downloadStrategy. */
+            public downloadStrategy: flyteidl.core.DataLoadingConfig.BlobDownload;
+
+            /** DataLoadingConfig uploadStrategy. */
+            public uploadStrategy: flyteidl.core.DataLoadingConfig.BlobUpload;
 
             /**
              * Creates a new DataLoadingConfig instance using the specified properties.
@@ -3812,6 +3824,20 @@ export namespace flyteidl {
                 JSON = 0,
                 YAML = 1,
                 PROTO = 2
+            }
+
+            /** BlobDownload enum. */
+            enum BlobDownload {
+                BEFORE_STARTUP = 0,
+                STREAM = 1,
+                DO_NOT_DOWNLOAD = 2
+            }
+
+            /** BlobUpload enum. */
+            enum BlobUpload {
+                ON_EXIT = 0,
+                WHEN_AVAILABLE = 1,
+                DO_NOT_UPLOAD = 2
             }
         }
 

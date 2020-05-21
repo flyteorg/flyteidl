@@ -164,6 +164,50 @@ inline bool DataLoadingConfig_MetadataFormat_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<DataLoadingConfig_MetadataFormat>(
     DataLoadingConfig_MetadataFormat_descriptor(), name, value);
 }
+enum DataLoadingConfig_BlobDownload {
+  DataLoadingConfig_BlobDownload_BEFORE_STARTUP = 0,
+  DataLoadingConfig_BlobDownload_STREAM = 1,
+  DataLoadingConfig_BlobDownload_DO_NOT_DOWNLOAD = 2,
+  DataLoadingConfig_BlobDownload_DataLoadingConfig_BlobDownload_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  DataLoadingConfig_BlobDownload_DataLoadingConfig_BlobDownload_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool DataLoadingConfig_BlobDownload_IsValid(int value);
+const DataLoadingConfig_BlobDownload DataLoadingConfig_BlobDownload_BlobDownload_MIN = DataLoadingConfig_BlobDownload_BEFORE_STARTUP;
+const DataLoadingConfig_BlobDownload DataLoadingConfig_BlobDownload_BlobDownload_MAX = DataLoadingConfig_BlobDownload_DO_NOT_DOWNLOAD;
+const int DataLoadingConfig_BlobDownload_BlobDownload_ARRAYSIZE = DataLoadingConfig_BlobDownload_BlobDownload_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* DataLoadingConfig_BlobDownload_descriptor();
+inline const ::std::string& DataLoadingConfig_BlobDownload_Name(DataLoadingConfig_BlobDownload value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    DataLoadingConfig_BlobDownload_descriptor(), value);
+}
+inline bool DataLoadingConfig_BlobDownload_Parse(
+    const ::std::string& name, DataLoadingConfig_BlobDownload* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<DataLoadingConfig_BlobDownload>(
+    DataLoadingConfig_BlobDownload_descriptor(), name, value);
+}
+enum DataLoadingConfig_BlobUpload {
+  DataLoadingConfig_BlobUpload_ON_EXIT = 0,
+  DataLoadingConfig_BlobUpload_WHEN_AVAILABLE = 1,
+  DataLoadingConfig_BlobUpload_DO_NOT_UPLOAD = 2,
+  DataLoadingConfig_BlobUpload_DataLoadingConfig_BlobUpload_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  DataLoadingConfig_BlobUpload_DataLoadingConfig_BlobUpload_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool DataLoadingConfig_BlobUpload_IsValid(int value);
+const DataLoadingConfig_BlobUpload DataLoadingConfig_BlobUpload_BlobUpload_MIN = DataLoadingConfig_BlobUpload_ON_EXIT;
+const DataLoadingConfig_BlobUpload DataLoadingConfig_BlobUpload_BlobUpload_MAX = DataLoadingConfig_BlobUpload_DO_NOT_UPLOAD;
+const int DataLoadingConfig_BlobUpload_BlobUpload_ARRAYSIZE = DataLoadingConfig_BlobUpload_BlobUpload_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* DataLoadingConfig_BlobUpload_descriptor();
+inline const ::std::string& DataLoadingConfig_BlobUpload_Name(DataLoadingConfig_BlobUpload value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    DataLoadingConfig_BlobUpload_descriptor(), value);
+}
+inline bool DataLoadingConfig_BlobUpload_Parse(
+    const ::std::string& name, DataLoadingConfig_BlobUpload* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<DataLoadingConfig_BlobUpload>(
+    DataLoadingConfig_BlobUpload_descriptor(), name, value);
+}
 // ===================================================================
 
 class Resources_ResourceEntry final :
@@ -1468,6 +1512,62 @@ class DataLoadingConfig final :
     return DataLoadingConfig_MetadataFormat_Parse(name, value);
   }
 
+  typedef DataLoadingConfig_BlobDownload BlobDownload;
+  static const BlobDownload BEFORE_STARTUP =
+    DataLoadingConfig_BlobDownload_BEFORE_STARTUP;
+  static const BlobDownload STREAM =
+    DataLoadingConfig_BlobDownload_STREAM;
+  static const BlobDownload DO_NOT_DOWNLOAD =
+    DataLoadingConfig_BlobDownload_DO_NOT_DOWNLOAD;
+  static inline bool BlobDownload_IsValid(int value) {
+    return DataLoadingConfig_BlobDownload_IsValid(value);
+  }
+  static const BlobDownload BlobDownload_MIN =
+    DataLoadingConfig_BlobDownload_BlobDownload_MIN;
+  static const BlobDownload BlobDownload_MAX =
+    DataLoadingConfig_BlobDownload_BlobDownload_MAX;
+  static const int BlobDownload_ARRAYSIZE =
+    DataLoadingConfig_BlobDownload_BlobDownload_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  BlobDownload_descriptor() {
+    return DataLoadingConfig_BlobDownload_descriptor();
+  }
+  static inline const ::std::string& BlobDownload_Name(BlobDownload value) {
+    return DataLoadingConfig_BlobDownload_Name(value);
+  }
+  static inline bool BlobDownload_Parse(const ::std::string& name,
+      BlobDownload* value) {
+    return DataLoadingConfig_BlobDownload_Parse(name, value);
+  }
+
+  typedef DataLoadingConfig_BlobUpload BlobUpload;
+  static const BlobUpload ON_EXIT =
+    DataLoadingConfig_BlobUpload_ON_EXIT;
+  static const BlobUpload WHEN_AVAILABLE =
+    DataLoadingConfig_BlobUpload_WHEN_AVAILABLE;
+  static const BlobUpload DO_NOT_UPLOAD =
+    DataLoadingConfig_BlobUpload_DO_NOT_UPLOAD;
+  static inline bool BlobUpload_IsValid(int value) {
+    return DataLoadingConfig_BlobUpload_IsValid(value);
+  }
+  static const BlobUpload BlobUpload_MIN =
+    DataLoadingConfig_BlobUpload_BlobUpload_MIN;
+  static const BlobUpload BlobUpload_MAX =
+    DataLoadingConfig_BlobUpload_BlobUpload_MAX;
+  static const int BlobUpload_ARRAYSIZE =
+    DataLoadingConfig_BlobUpload_BlobUpload_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  BlobUpload_descriptor() {
+    return DataLoadingConfig_BlobUpload_descriptor();
+  }
+  static inline const ::std::string& BlobUpload_Name(BlobUpload value) {
+    return DataLoadingConfig_BlobUpload_Name(value);
+  }
+  static inline bool BlobUpload_Parse(const ::std::string& name,
+      BlobUpload* value) {
+    return DataLoadingConfig_BlobUpload_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   // string input_path = 1;
@@ -1510,6 +1610,18 @@ class DataLoadingConfig final :
   bool enabled() const;
   void set_enabled(bool value);
 
+  // .flyteidl.core.DataLoadingConfig.BlobDownload download_strategy = 5;
+  void clear_download_strategy();
+  static const int kDownloadStrategyFieldNumber = 5;
+  ::flyteidl::core::DataLoadingConfig_BlobDownload download_strategy() const;
+  void set_download_strategy(::flyteidl::core::DataLoadingConfig_BlobDownload value);
+
+  // .flyteidl.core.DataLoadingConfig.BlobUpload upload_strategy = 6;
+  void clear_upload_strategy();
+  static const int kUploadStrategyFieldNumber = 6;
+  ::flyteidl::core::DataLoadingConfig_BlobUpload upload_strategy() const;
+  void set_upload_strategy(::flyteidl::core::DataLoadingConfig_BlobUpload value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.core.DataLoadingConfig)
  private:
   class HasBitSetters;
@@ -1519,6 +1631,8 @@ class DataLoadingConfig final :
   ::google::protobuf::internal::ArenaStringPtr output_path_;
   int format_;
   bool enabled_;
+  int download_strategy_;
+  int upload_strategy_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2ftasks_2eproto;
 };
@@ -2923,6 +3037,34 @@ inline void DataLoadingConfig::set_enabled(bool value) {
   // @@protoc_insertion_point(field_set:flyteidl.core.DataLoadingConfig.enabled)
 }
 
+// .flyteidl.core.DataLoadingConfig.BlobDownload download_strategy = 5;
+inline void DataLoadingConfig::clear_download_strategy() {
+  download_strategy_ = 0;
+}
+inline ::flyteidl::core::DataLoadingConfig_BlobDownload DataLoadingConfig::download_strategy() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.DataLoadingConfig.download_strategy)
+  return static_cast< ::flyteidl::core::DataLoadingConfig_BlobDownload >(download_strategy_);
+}
+inline void DataLoadingConfig::set_download_strategy(::flyteidl::core::DataLoadingConfig_BlobDownload value) {
+  
+  download_strategy_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.DataLoadingConfig.download_strategy)
+}
+
+// .flyteidl.core.DataLoadingConfig.BlobUpload upload_strategy = 6;
+inline void DataLoadingConfig::clear_upload_strategy() {
+  upload_strategy_ = 0;
+}
+inline ::flyteidl::core::DataLoadingConfig_BlobUpload DataLoadingConfig::upload_strategy() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.DataLoadingConfig.upload_strategy)
+  return static_cast< ::flyteidl::core::DataLoadingConfig_BlobUpload >(upload_strategy_);
+}
+inline void DataLoadingConfig::set_upload_strategy(::flyteidl::core::DataLoadingConfig_BlobUpload value) {
+  
+  upload_strategy_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.DataLoadingConfig.upload_strategy)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
@@ -2963,6 +3105,16 @@ template <> struct is_proto_enum< ::flyteidl::core::DataLoadingConfig_MetadataFo
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::core::DataLoadingConfig_MetadataFormat>() {
   return ::flyteidl::core::DataLoadingConfig_MetadataFormat_descriptor();
+}
+template <> struct is_proto_enum< ::flyteidl::core::DataLoadingConfig_BlobDownload> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::core::DataLoadingConfig_BlobDownload>() {
+  return ::flyteidl::core::DataLoadingConfig_BlobDownload_descriptor();
+}
+template <> struct is_proto_enum< ::flyteidl::core::DataLoadingConfig_BlobUpload> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::core::DataLoadingConfig_BlobUpload>() {
+  return ::flyteidl::core::DataLoadingConfig_BlobUpload_descriptor();
 }
 
 }  // namespace protobuf

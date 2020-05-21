@@ -646,6 +646,10 @@ func (m *DataLoadingConfig) Validate() error {
 
 	// no validation rules for Enabled
 
+	// no validation rules for DownloadStrategy
+
+	// no validation rules for UploadStrategy
+
 	return nil
 }
 

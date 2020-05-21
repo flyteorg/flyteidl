@@ -9086,6 +9086,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [outputPath] DataLoadingConfig outputPath
              * @property {flyteidl.core.DataLoadingConfig.MetadataFormat|null} [format] DataLoadingConfig format
              * @property {boolean|null} [enabled] DataLoadingConfig enabled
+             * @property {flyteidl.core.DataLoadingConfig.BlobDownload|null} [downloadStrategy] DataLoadingConfig downloadStrategy
+             * @property {flyteidl.core.DataLoadingConfig.BlobUpload|null} [uploadStrategy] DataLoadingConfig uploadStrategy
              */
 
             /**
@@ -9136,6 +9138,22 @@ export const flyteidl = $root.flyteidl = (() => {
             DataLoadingConfig.prototype.enabled = false;
 
             /**
+             * DataLoadingConfig downloadStrategy.
+             * @member {flyteidl.core.DataLoadingConfig.BlobDownload} downloadStrategy
+             * @memberof flyteidl.core.DataLoadingConfig
+             * @instance
+             */
+            DataLoadingConfig.prototype.downloadStrategy = 0;
+
+            /**
+             * DataLoadingConfig uploadStrategy.
+             * @member {flyteidl.core.DataLoadingConfig.BlobUpload} uploadStrategy
+             * @memberof flyteidl.core.DataLoadingConfig
+             * @instance
+             */
+            DataLoadingConfig.prototype.uploadStrategy = 0;
+
+            /**
              * Creates a new DataLoadingConfig instance using the specified properties.
              * @function create
              * @memberof flyteidl.core.DataLoadingConfig
@@ -9167,6 +9185,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 3, wireType 0 =*/24).int32(message.format);
                 if (message.enabled != null && message.hasOwnProperty("enabled"))
                     writer.uint32(/* id 4, wireType 0 =*/32).bool(message.enabled);
+                if (message.downloadStrategy != null && message.hasOwnProperty("downloadStrategy"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.downloadStrategy);
+                if (message.uploadStrategy != null && message.hasOwnProperty("uploadStrategy"))
+                    writer.uint32(/* id 6, wireType 0 =*/48).int32(message.uploadStrategy);
                 return writer;
             };
 
@@ -9199,6 +9221,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 4:
                         message.enabled = reader.bool();
+                        break;
+                    case 5:
+                        message.downloadStrategy = reader.int32();
+                        break;
+                    case 6:
+                        message.uploadStrategy = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -9237,6 +9265,24 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.enabled != null && message.hasOwnProperty("enabled"))
                     if (typeof message.enabled !== "boolean")
                         return "enabled: boolean expected";
+                if (message.downloadStrategy != null && message.hasOwnProperty("downloadStrategy"))
+                    switch (message.downloadStrategy) {
+                    default:
+                        return "downloadStrategy: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                        break;
+                    }
+                if (message.uploadStrategy != null && message.hasOwnProperty("uploadStrategy"))
+                    switch (message.uploadStrategy) {
+                    default:
+                        return "uploadStrategy: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                        break;
+                    }
                 return null;
             };
 
@@ -9253,6 +9299,38 @@ export const flyteidl = $root.flyteidl = (() => {
                 values[valuesById[0] = "JSON"] = 0;
                 values[valuesById[1] = "YAML"] = 1;
                 values[valuesById[2] = "PROTO"] = 2;
+                return values;
+            })();
+
+            /**
+             * BlobDownload enum.
+             * @name flyteidl.core.DataLoadingConfig.BlobDownload
+             * @enum {string}
+             * @property {number} BEFORE_STARTUP=0 BEFORE_STARTUP value
+             * @property {number} STREAM=1 STREAM value
+             * @property {number} DO_NOT_DOWNLOAD=2 DO_NOT_DOWNLOAD value
+             */
+            DataLoadingConfig.BlobDownload = (function() {
+                const valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "BEFORE_STARTUP"] = 0;
+                values[valuesById[1] = "STREAM"] = 1;
+                values[valuesById[2] = "DO_NOT_DOWNLOAD"] = 2;
+                return values;
+            })();
+
+            /**
+             * BlobUpload enum.
+             * @name flyteidl.core.DataLoadingConfig.BlobUpload
+             * @enum {string}
+             * @property {number} ON_EXIT=0 ON_EXIT value
+             * @property {number} WHEN_AVAILABLE=1 WHEN_AVAILABLE value
+             * @property {number} DO_NOT_UPLOAD=2 DO_NOT_UPLOAD value
+             */
+            DataLoadingConfig.BlobUpload = (function() {
+                const valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "ON_EXIT"] = 0;
+                values[valuesById[1] = "WHEN_AVAILABLE"] = 1;
+                values[valuesById[2] = "DO_NOT_UPLOAD"] = 2;
                 return values;
             })();
 

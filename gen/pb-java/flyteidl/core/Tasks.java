@@ -10826,6 +10826,24 @@ public final class Tasks {
      * <code>bool enabled = 4;</code>
      */
     boolean getEnabled();
+
+    /**
+     * <code>.flyteidl.core.DataLoadingConfig.BlobDownload download_strategy = 5;</code>
+     */
+    int getDownloadStrategyValue();
+    /**
+     * <code>.flyteidl.core.DataLoadingConfig.BlobDownload download_strategy = 5;</code>
+     */
+    flyteidl.core.Tasks.DataLoadingConfig.BlobDownload getDownloadStrategy();
+
+    /**
+     * <code>.flyteidl.core.DataLoadingConfig.BlobUpload upload_strategy = 6;</code>
+     */
+    int getUploadStrategyValue();
+    /**
+     * <code>.flyteidl.core.DataLoadingConfig.BlobUpload upload_strategy = 6;</code>
+     */
+    flyteidl.core.Tasks.DataLoadingConfig.BlobUpload getUploadStrategy();
   }
   /**
    * <pre>
@@ -10849,6 +10867,8 @@ public final class Tasks {
       inputPath_ = "";
       outputPath_ = "";
       format_ = 0;
+      downloadStrategy_ = 0;
+      uploadStrategy_ = 0;
     }
 
     @java.lang.Override
@@ -10896,6 +10916,18 @@ public final class Tasks {
             case 32: {
 
               enabled_ = input.readBool();
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              downloadStrategy_ = rawValue;
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+
+              uploadStrategy_ = rawValue;
               break;
             }
             default: {
@@ -11060,6 +11092,272 @@ public final class Tasks {
       // @@protoc_insertion_point(enum_scope:flyteidl.core.DataLoadingConfig.MetadataFormat)
     }
 
+    /**
+     * <pre>
+     * Strategy to use when dealing with Blob, Schema, or multipart blob data (large datasets)
+     * </pre>
+     *
+     * Protobuf enum {@code flyteidl.core.DataLoadingConfig.BlobDownload}
+     */
+    public enum BlobDownload
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <pre>
+       * All data will be downloaded before the main container is executed
+       * </pre>
+       *
+       * <code>BEFORE_STARTUP = 0;</code>
+       */
+      BEFORE_STARTUP(0),
+      /**
+       * <pre>
+       * Data will be downloaded as a stream and an End-Of-Stream marker will be written to indicate all data has been downloaded. Refer to protocol for details
+       * </pre>
+       *
+       * <code>STREAM = 1;</code>
+       */
+      STREAM(1),
+      /**
+       * <pre>
+       * Large objects (offloaded) will not be downloaded
+       * </pre>
+       *
+       * <code>DO_NOT_DOWNLOAD = 2;</code>
+       */
+      DO_NOT_DOWNLOAD(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <pre>
+       * All data will be downloaded before the main container is executed
+       * </pre>
+       *
+       * <code>BEFORE_STARTUP = 0;</code>
+       */
+      public static final int BEFORE_STARTUP_VALUE = 0;
+      /**
+       * <pre>
+       * Data will be downloaded as a stream and an End-Of-Stream marker will be written to indicate all data has been downloaded. Refer to protocol for details
+       * </pre>
+       *
+       * <code>STREAM = 1;</code>
+       */
+      public static final int STREAM_VALUE = 1;
+      /**
+       * <pre>
+       * Large objects (offloaded) will not be downloaded
+       * </pre>
+       *
+       * <code>DO_NOT_DOWNLOAD = 2;</code>
+       */
+      public static final int DO_NOT_DOWNLOAD_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static BlobDownload valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static BlobDownload forNumber(int value) {
+        switch (value) {
+          case 0: return BEFORE_STARTUP;
+          case 1: return STREAM;
+          case 2: return DO_NOT_DOWNLOAD;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<BlobDownload>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          BlobDownload> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<BlobDownload>() {
+              public BlobDownload findValueByNumber(int number) {
+                return BlobDownload.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return flyteidl.core.Tasks.DataLoadingConfig.getDescriptor().getEnumTypes().get(1);
+      }
+
+      private static final BlobDownload[] VALUES = values();
+
+      public static BlobDownload valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private BlobDownload(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:flyteidl.core.DataLoadingConfig.BlobDownload)
+    }
+
+    /**
+     * Protobuf enum {@code flyteidl.core.DataLoadingConfig.BlobUpload}
+     */
+    public enum BlobUpload
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <pre>
+       * All data will be uploaded after the main container exits
+       * </pre>
+       *
+       * <code>ON_EXIT = 0;</code>
+       */
+      ON_EXIT(0),
+      /**
+       * <pre>
+       * Data will be uploaded as it appears. Refer to protocol specification for details
+       * </pre>
+       *
+       * <code>WHEN_AVAILABLE = 1;</code>
+       */
+      WHEN_AVAILABLE(1),
+      /**
+       * <pre>
+       * Data will not be uploaded, only references will be written
+       * </pre>
+       *
+       * <code>DO_NOT_UPLOAD = 2;</code>
+       */
+      DO_NOT_UPLOAD(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <pre>
+       * All data will be uploaded after the main container exits
+       * </pre>
+       *
+       * <code>ON_EXIT = 0;</code>
+       */
+      public static final int ON_EXIT_VALUE = 0;
+      /**
+       * <pre>
+       * Data will be uploaded as it appears. Refer to protocol specification for details
+       * </pre>
+       *
+       * <code>WHEN_AVAILABLE = 1;</code>
+       */
+      public static final int WHEN_AVAILABLE_VALUE = 1;
+      /**
+       * <pre>
+       * Data will not be uploaded, only references will be written
+       * </pre>
+       *
+       * <code>DO_NOT_UPLOAD = 2;</code>
+       */
+      public static final int DO_NOT_UPLOAD_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static BlobUpload valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static BlobUpload forNumber(int value) {
+        switch (value) {
+          case 0: return ON_EXIT;
+          case 1: return WHEN_AVAILABLE;
+          case 2: return DO_NOT_UPLOAD;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<BlobUpload>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          BlobUpload> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<BlobUpload>() {
+              public BlobUpload findValueByNumber(int number) {
+                return BlobUpload.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return flyteidl.core.Tasks.DataLoadingConfig.getDescriptor().getEnumTypes().get(2);
+      }
+
+      private static final BlobUpload[] VALUES = values();
+
+      public static BlobUpload valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private BlobUpload(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:flyteidl.core.DataLoadingConfig.BlobUpload)
+    }
+
     public static final int INPUT_PATH_FIELD_NUMBER = 1;
     private volatile java.lang.Object inputPath_;
     /**
@@ -11196,6 +11494,40 @@ public final class Tasks {
       return enabled_;
     }
 
+    public static final int DOWNLOAD_STRATEGY_FIELD_NUMBER = 5;
+    private int downloadStrategy_;
+    /**
+     * <code>.flyteidl.core.DataLoadingConfig.BlobDownload download_strategy = 5;</code>
+     */
+    public int getDownloadStrategyValue() {
+      return downloadStrategy_;
+    }
+    /**
+     * <code>.flyteidl.core.DataLoadingConfig.BlobDownload download_strategy = 5;</code>
+     */
+    public flyteidl.core.Tasks.DataLoadingConfig.BlobDownload getDownloadStrategy() {
+      @SuppressWarnings("deprecation")
+      flyteidl.core.Tasks.DataLoadingConfig.BlobDownload result = flyteidl.core.Tasks.DataLoadingConfig.BlobDownload.valueOf(downloadStrategy_);
+      return result == null ? flyteidl.core.Tasks.DataLoadingConfig.BlobDownload.UNRECOGNIZED : result;
+    }
+
+    public static final int UPLOAD_STRATEGY_FIELD_NUMBER = 6;
+    private int uploadStrategy_;
+    /**
+     * <code>.flyteidl.core.DataLoadingConfig.BlobUpload upload_strategy = 6;</code>
+     */
+    public int getUploadStrategyValue() {
+      return uploadStrategy_;
+    }
+    /**
+     * <code>.flyteidl.core.DataLoadingConfig.BlobUpload upload_strategy = 6;</code>
+     */
+    public flyteidl.core.Tasks.DataLoadingConfig.BlobUpload getUploadStrategy() {
+      @SuppressWarnings("deprecation")
+      flyteidl.core.Tasks.DataLoadingConfig.BlobUpload result = flyteidl.core.Tasks.DataLoadingConfig.BlobUpload.valueOf(uploadStrategy_);
+      return result == null ? flyteidl.core.Tasks.DataLoadingConfig.BlobUpload.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -11222,6 +11554,12 @@ public final class Tasks {
       if (enabled_ != false) {
         output.writeBool(4, enabled_);
       }
+      if (downloadStrategy_ != flyteidl.core.Tasks.DataLoadingConfig.BlobDownload.BEFORE_STARTUP.getNumber()) {
+        output.writeEnum(5, downloadStrategy_);
+      }
+      if (uploadStrategy_ != flyteidl.core.Tasks.DataLoadingConfig.BlobUpload.ON_EXIT.getNumber()) {
+        output.writeEnum(6, uploadStrategy_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -11245,6 +11583,14 @@ public final class Tasks {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, enabled_);
       }
+      if (downloadStrategy_ != flyteidl.core.Tasks.DataLoadingConfig.BlobDownload.BEFORE_STARTUP.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, downloadStrategy_);
+      }
+      if (uploadStrategy_ != flyteidl.core.Tasks.DataLoadingConfig.BlobUpload.ON_EXIT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(6, uploadStrategy_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -11267,6 +11613,8 @@ public final class Tasks {
       if (format_ != other.format_) return false;
       if (getEnabled()
           != other.getEnabled()) return false;
+      if (downloadStrategy_ != other.downloadStrategy_) return false;
+      if (uploadStrategy_ != other.uploadStrategy_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11287,6 +11635,10 @@ public final class Tasks {
       hash = (37 * hash) + ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getEnabled());
+      hash = (37 * hash) + DOWNLOAD_STRATEGY_FIELD_NUMBER;
+      hash = (53 * hash) + downloadStrategy_;
+      hash = (37 * hash) + UPLOAD_STRATEGY_FIELD_NUMBER;
+      hash = (53 * hash) + uploadStrategy_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11434,6 +11786,10 @@ public final class Tasks {
 
         enabled_ = false;
 
+        downloadStrategy_ = 0;
+
+        uploadStrategy_ = 0;
+
         return this;
       }
 
@@ -11464,6 +11820,8 @@ public final class Tasks {
         result.outputPath_ = outputPath_;
         result.format_ = format_;
         result.enabled_ = enabled_;
+        result.downloadStrategy_ = downloadStrategy_;
+        result.uploadStrategy_ = uploadStrategy_;
         onBuilt();
         return result;
       }
@@ -11525,6 +11883,12 @@ public final class Tasks {
         }
         if (other.getEnabled() != false) {
           setEnabled(other.getEnabled());
+        }
+        if (other.downloadStrategy_ != 0) {
+          setDownloadStrategyValue(other.getDownloadStrategyValue());
+        }
+        if (other.uploadStrategy_ != 0) {
+          setUploadStrategyValue(other.getUploadStrategyValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11870,6 +12234,96 @@ public final class Tasks {
         onChanged();
         return this;
       }
+
+      private int downloadStrategy_ = 0;
+      /**
+       * <code>.flyteidl.core.DataLoadingConfig.BlobDownload download_strategy = 5;</code>
+       */
+      public int getDownloadStrategyValue() {
+        return downloadStrategy_;
+      }
+      /**
+       * <code>.flyteidl.core.DataLoadingConfig.BlobDownload download_strategy = 5;</code>
+       */
+      public Builder setDownloadStrategyValue(int value) {
+        downloadStrategy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.DataLoadingConfig.BlobDownload download_strategy = 5;</code>
+       */
+      public flyteidl.core.Tasks.DataLoadingConfig.BlobDownload getDownloadStrategy() {
+        @SuppressWarnings("deprecation")
+        flyteidl.core.Tasks.DataLoadingConfig.BlobDownload result = flyteidl.core.Tasks.DataLoadingConfig.BlobDownload.valueOf(downloadStrategy_);
+        return result == null ? flyteidl.core.Tasks.DataLoadingConfig.BlobDownload.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.flyteidl.core.DataLoadingConfig.BlobDownload download_strategy = 5;</code>
+       */
+      public Builder setDownloadStrategy(flyteidl.core.Tasks.DataLoadingConfig.BlobDownload value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        downloadStrategy_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.DataLoadingConfig.BlobDownload download_strategy = 5;</code>
+       */
+      public Builder clearDownloadStrategy() {
+        
+        downloadStrategy_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int uploadStrategy_ = 0;
+      /**
+       * <code>.flyteidl.core.DataLoadingConfig.BlobUpload upload_strategy = 6;</code>
+       */
+      public int getUploadStrategyValue() {
+        return uploadStrategy_;
+      }
+      /**
+       * <code>.flyteidl.core.DataLoadingConfig.BlobUpload upload_strategy = 6;</code>
+       */
+      public Builder setUploadStrategyValue(int value) {
+        uploadStrategy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.DataLoadingConfig.BlobUpload upload_strategy = 6;</code>
+       */
+      public flyteidl.core.Tasks.DataLoadingConfig.BlobUpload getUploadStrategy() {
+        @SuppressWarnings("deprecation")
+        flyteidl.core.Tasks.DataLoadingConfig.BlobUpload result = flyteidl.core.Tasks.DataLoadingConfig.BlobUpload.valueOf(uploadStrategy_);
+        return result == null ? flyteidl.core.Tasks.DataLoadingConfig.BlobUpload.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.flyteidl.core.DataLoadingConfig.BlobUpload upload_strategy = 6;</code>
+       */
+      public Builder setUploadStrategy(flyteidl.core.Tasks.DataLoadingConfig.BlobUpload value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        uploadStrategy_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.DataLoadingConfig.BlobUpload upload_strategy = 6;</code>
+       */
+      public Builder clearUploadStrategy() {
+        
+        uploadStrategy_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -12010,13 +12464,20 @@ public final class Tasks {
       "dl.core.KeyValuePair\022+\n\005ports\030\007 \003(\0132\034.fl" +
       "yteidl.core.ContainerPort\0225\n\013data_config" +
       "\030\t \001(\0132 .flyteidl.core.DataLoadingConfig" +
-      "\"\277\001\n\021DataLoadingConfig\022\022\n\ninput_path\030\001 \001" +
+      "\"\326\003\n\021DataLoadingConfig\022\022\n\ninput_path\030\001 \001" +
       "(\t\022\023\n\013output_path\030\002 \001(\t\022?\n\006format\030\003 \001(\0162" +
       "/.flyteidl.core.DataLoadingConfig.Metada" +
-      "taFormat\022\017\n\007enabled\030\004 \001(\010\"/\n\016MetadataFor" +
-      "mat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002B2Z0gi" +
-      "thub.com/lyft/flyteidl/gen/pb-go/flyteid" +
-      "l/coreb\006proto3"
+      "taFormat\022\017\n\007enabled\030\004 \001(\010\022H\n\021download_st" +
+      "rategy\030\005 \001(\0162-.flyteidl.core.DataLoading" +
+      "Config.BlobDownload\022D\n\017upload_strategy\030\006" +
+      " \001(\0162+.flyteidl.core.DataLoadingConfig.B" +
+      "lobUpload\"/\n\016MetadataFormat\022\010\n\004JSON\020\000\022\010\n" +
+      "\004YAML\020\001\022\t\n\005PROTO\020\002\"C\n\014BlobDownload\022\022\n\016BE" +
+      "FORE_STARTUP\020\000\022\n\n\006STREAM\020\001\022\023\n\017DO_NOT_DOW" +
+      "NLOAD\020\002\"@\n\nBlobUpload\022\013\n\007ON_EXIT\020\000\022\022\n\016WH" +
+      "EN_AVAILABLE\020\001\022\021\n\rDO_NOT_UPLOAD\020\002B2Z0git" +
+      "hub.com/lyft/flyteidl/gen/pb-go/flyteidl" +
+      "/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -12082,7 +12543,7 @@ public final class Tasks {
     internal_static_flyteidl_core_DataLoadingConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_DataLoadingConfig_descriptor,
-        new java.lang.String[] { "InputPath", "OutputPath", "Format", "Enabled", });
+        new java.lang.String[] { "InputPath", "OutputPath", "Format", "Enabled", "DownloadStrategy", "UploadStrategy", });
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Interface.getDescriptor();
     flyteidl.core.Literals.getDescriptor();

@@ -282,6 +282,8 @@ Class | Method | HTTP request | Description
  - [CoreWorkflowMetadataDefaults](docs/CoreWorkflowMetadataDefaults.md)
  - [CoreWorkflowNode](docs/CoreWorkflowNode.md)
  - [CoreWorkflowTemplate](docs/CoreWorkflowTemplate.md)
+ - [DataLoadingConfigBlobDownload](docs/DataLoadingConfigBlobDownload.md)
+ - [DataLoadingConfigBlobUpload](docs/DataLoadingConfigBlobUpload.md)
  - [DataLoadingConfigMetadataFormat](docs/DataLoadingConfigMetadataFormat.md)
  - [EventNodeExecutionEvent](docs/EventNodeExecutionEvent.md)
  - [EventParentTaskExecutionMetadata](docs/EventParentTaskExecutionMetadata.md)

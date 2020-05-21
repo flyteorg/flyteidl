@@ -16,6 +16,8 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.data_loading_config_blob_download import DataLoadingConfigBlobDownload  # noqa: F401,E501
+from flyteadmin.models.data_loading_config_blob_upload import DataLoadingConfigBlobUpload  # noqa: F401,E501
 from flyteadmin.models.data_loading_config_metadata_format import DataLoadingConfigMetadataFormat  # noqa: F401,E501
 
 
@@ -36,23 +38,29 @@ class CoreDataLoadingConfig(object):
         'input_path': 'str',
         'output_path': 'str',
         'format': 'DataLoadingConfigMetadataFormat',
-        'enabled': 'bool'
+        'enabled': 'bool',
+        'download_strategy': 'DataLoadingConfigBlobDownload',
+        'upload_strategy': 'DataLoadingConfigBlobUpload'
     }
 
     attribute_map = {
         'input_path': 'input_path',
         'output_path': 'output_path',
         'format': 'format',
-        'enabled': 'enabled'
+        'enabled': 'enabled',
+        'download_strategy': 'download_strategy',
+        'upload_strategy': 'upload_strategy'
     }
 
-    def __init__(self, input_path=None, output_path=None, format=None, enabled=None):  # noqa: E501
+    def __init__(self, input_path=None, output_path=None, format=None, enabled=None, download_strategy=None, upload_strategy=None):  # noqa: E501
         """CoreDataLoadingConfig - a model defined in Swagger"""  # noqa: E501
 
         self._input_path = None
         self._output_path = None
         self._format = None
         self._enabled = None
+        self._download_strategy = None
+        self._upload_strategy = None
         self.discriminator = None
 
         if input_path is not None:
@@ -63,6 +71,10 @@ class CoreDataLoadingConfig(object):
             self.format = format
         if enabled is not None:
             self.enabled = enabled
+        if download_strategy is not None:
+            self.download_strategy = download_strategy
+        if upload_strategy is not None:
+            self.upload_strategy = upload_strategy
 
     @property
     def input_path(self):
@@ -147,6 +159,48 @@ class CoreDataLoadingConfig(object):
         """
 
         self._enabled = enabled
+
+    @property
+    def download_strategy(self):
+        """Gets the download_strategy of this CoreDataLoadingConfig.  # noqa: E501
+
+
+        :return: The download_strategy of this CoreDataLoadingConfig.  # noqa: E501
+        :rtype: DataLoadingConfigBlobDownload
+        """
+        return self._download_strategy
+
+    @download_strategy.setter
+    def download_strategy(self, download_strategy):
+        """Sets the download_strategy of this CoreDataLoadingConfig.
+
+
+        :param download_strategy: The download_strategy of this CoreDataLoadingConfig.  # noqa: E501
+        :type: DataLoadingConfigBlobDownload
+        """
+
+        self._download_strategy = download_strategy
+
+    @property
+    def upload_strategy(self):
+        """Gets the upload_strategy of this CoreDataLoadingConfig.  # noqa: E501
+
+
+        :return: The upload_strategy of this CoreDataLoadingConfig.  # noqa: E501
+        :rtype: DataLoadingConfigBlobUpload
+        """
+        return self._upload_strategy
+
+    @upload_strategy.setter
+    def upload_strategy(self, upload_strategy):
+        """Sets the upload_strategy of this CoreDataLoadingConfig.
+
+
+        :param upload_strategy: The upload_strategy of this CoreDataLoadingConfig.  # noqa: E501
+        :type: DataLoadingConfigBlobUpload
+        """
+
+        self._upload_strategy = upload_strategy
 
     def to_dict(self):
         """Returns the model properties as a dict"""
