@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.data_loading_config_blob_download import DataLoadingConfigBlobDownload  # noqa: E501
+from flyteadmin.models.io_strategy_upload_mode import IOStrategyUploadMode  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestDataLoadingConfigBlobDownload(unittest.TestCase):
-    """DataLoadingConfigBlobDownload unit test stubs"""
+class TestIOStrategyUploadMode(unittest.TestCase):
+    """IOStrategyUploadMode unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestDataLoadingConfigBlobDownload(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testDataLoadingConfigBlobDownload(self):
-        """Test DataLoadingConfigBlobDownload"""
+    def testIOStrategyUploadMode(self):
+        """Test IOStrategyUploadMode"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.data_loading_config_blob_download.DataLoadingConfigBlobDownload()  # noqa: E501
+        # model = flyteadmin.models.io_strategy_upload_mode.IOStrategyUploadMode()  # noqa: E501
         pass
 
 

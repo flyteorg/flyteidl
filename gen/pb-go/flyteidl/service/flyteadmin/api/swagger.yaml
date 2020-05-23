@@ -2323,34 +2323,9 @@ definitions:
       ids:
       - "ids"
       - "ids"
-  DataLoadingConfigBlobDownload:
+  DataLoadingConfigLiteralMapFormat:
     type: "string"
-    title: "Strategy to use when dealing with Blob, Schema, or multipart blob data\
-      \ (large datasets)"
-    description: "- BEFORE_STARTUP: All data will be downloaded before the main container\
-      \ is executed\n - STREAM: Data will be downloaded as a stream and an End-Of-Stream\
-      \ marker will be written to indicate all data has been downloaded. Refer to\
-      \ protocol for details\n - DO_NOT_DOWNLOAD: Large objects (offloaded) will not\
-      \ be downloaded"
-    enum:
-    - "BEFORE_STARTUP"
-    - "STREAM"
-    - "DO_NOT_DOWNLOAD"
-    default: "BEFORE_STARTUP"
-  DataLoadingConfigBlobUpload:
-    type: "string"
-    title: "- ON_EXIT: All data will be uploaded after the main container exits\n\
-      \ - WHEN_AVAILABLE: Data will be uploaded as it appears. Refer to protocol specification\
-      \ for details\n - DO_NOT_UPLOAD: Data will not be uploaded, only references\
-      \ will be written"
-    enum:
-    - "ON_EXIT"
-    - "WHEN_AVAILABLE"
-    - "DO_NOT_UPLOAD"
-    default: "ON_EXIT"
-  DataLoadingConfigMetadataFormat:
-    type: "string"
-    title: "MetadataFormat decides the encoding format in which the input metadata\
+    title: "LiteralMapFormat decides the encoding format in which the input metadata\
       \ should be made available to the containers. \nIf the user has access to the\
       \ protocol buffer definitions, it is recommended to use the PROTO format.\n\
       JSON and YAML do not need any protobuf definitions to read it\nAll remote references\
@@ -2389,6 +2364,31 @@ definitions:
     - "RELAUNCH"
     - "CHILD_WORKFLOW"
     default: "MANUAL"
+  IOStrategyDownloadMode:
+    type: "string"
+    title: "Mode to use for downloading"
+    description: "- DOWNLOAD_EAGER: All data will be downloaded before the main container\
+      \ is executed\n - DOWNLOAD_STREAM: Data will be downloaded as a stream and an\
+      \ End-Of-Stream marker will be written to indicate all data has been downloaded.\
+      \ Refer to protocol for details\n - DO_NOT_DOWNLOAD: Large objects (offloaded)\
+      \ will not be downloaded"
+    enum:
+    - "DOWNLOAD_EAGER"
+    - "DOWNLOAD_STREAM"
+    - "DO_NOT_DOWNLOAD"
+    default: "DOWNLOAD_EAGER"
+  IOStrategyUploadMode:
+    type: "string"
+    title: "Mode to use for uploading"
+    description: "- UPLOAD_ON_EXIT: All data will be uploaded after the main container\
+      \ exits\n - UPLOAD_EAGER: Data will be uploaded as it appears. Refer to protocol\
+      \ specification for details\n - DO_NOT_UPLOAD: Data will not be uploaded, only\
+      \ references will be written"
+    enum:
+    - "UPLOAD_ON_EXIT"
+    - "UPLOAD_EAGER"
+    - "DO_NOT_UPLOAD"
+    default: "UPLOAD_ON_EXIT"
   ResourcesResourceEntry:
     type: "object"
     properties:
@@ -5284,9 +5284,10 @@ definitions:
                 - name: {}
                   value: "value"
               data_config:
-                download_strategy: {}
+                io_strategy:
+                  upload_mode: {}
+                  download_mode: {}
                 format: {}
-                upload_strategy: {}
                 output_path: "output_path"
                 enabled: true
                 input_path: "input_path"
@@ -5423,9 +5424,10 @@ definitions:
               - name: {}
                 value: "value"
             data_config:
-              download_strategy: {}
+              io_strategy:
+                upload_mode: {}
+                download_mode: {}
               format: {}
-              upload_strategy: {}
               output_path: "output_path"
               enabled: true
               input_path: "input_path"
@@ -5796,9 +5798,10 @@ definitions:
                   - name: {}
                     value: "value"
                 data_config:
-                  download_strategy: {}
+                  io_strategy:
+                    upload_mode: {}
+                    download_mode: {}
                   format: {}
-                  upload_strategy: {}
                   output_path: "output_path"
                   enabled: true
                   input_path: "input_path"
@@ -5928,9 +5931,10 @@ definitions:
                   - name: {}
                     value: "value"
                 data_config:
-                  download_strategy: {}
+                  io_strategy:
+                    upload_mode: {}
+                    download_mode: {}
                   format: {}
-                  upload_strategy: {}
                   output_path: "output_path"
                   enabled: true
                   input_path: "input_path"
@@ -7778,9 +7782,10 @@ definitions:
                   - name: {}
                     value: "value"
                 data_config:
-                  download_strategy: {}
+                  io_strategy:
+                    upload_mode: {}
+                    download_mode: {}
                   format: {}
-                  upload_strategy: {}
                   output_path: "output_path"
                   enabled: true
                   input_path: "input_path"
@@ -7901,9 +7906,10 @@ definitions:
                   - name: {}
                     value: "value"
                 data_config:
-                  download_strategy: {}
+                  io_strategy:
+                    upload_mode: {}
+                    download_mode: {}
                   format: {}
-                  upload_strategy: {}
                   output_path: "output_path"
                   enabled: true
                   input_path: "input_path"
@@ -10605,9 +10611,10 @@ definitions:
                 - name: {}
                   value: "value"
               data_config:
-                download_strategy: {}
+                io_strategy:
+                  upload_mode: {}
+                  download_mode: {}
                 format: {}
-                upload_strategy: {}
                 output_path: "output_path"
                 enabled: true
                 input_path: "input_path"
@@ -10728,9 +10735,10 @@ definitions:
                 - name: {}
                   value: "value"
               data_config:
-                download_strategy: {}
+                io_strategy:
+                  upload_mode: {}
+                  download_mode: {}
                 format: {}
-                upload_strategy: {}
                 output_path: "output_path"
                 enabled: true
                 input_path: "input_path"
@@ -13388,9 +13396,10 @@ definitions:
                     - name: {}
                       value: "value"
                   data_config:
-                    download_strategy: {}
+                    io_strategy:
+                      upload_mode: {}
+                      download_mode: {}
                     format: {}
-                    upload_strategy: {}
                     output_path: "output_path"
                     enabled: true
                     input_path: "input_path"
@@ -13511,9 +13520,10 @@ definitions:
                     - name: {}
                       value: "value"
                   data_config:
-                    download_strategy: {}
+                    io_strategy:
+                      upload_mode: {}
+                      download_mode: {}
                     format: {}
-                    upload_strategy: {}
                     output_path: "output_path"
                     enabled: true
                     input_path: "input_path"
@@ -16112,9 +16122,10 @@ definitions:
                     - name: {}
                       value: "value"
                   data_config:
-                    download_strategy: {}
+                    io_strategy:
+                      upload_mode: {}
+                      download_mode: {}
                     format: {}
-                    upload_strategy: {}
                     output_path: "output_path"
                     enabled: true
                     input_path: "input_path"
@@ -16235,9 +16246,10 @@ definitions:
                     - name: {}
                       value: "value"
                   data_config:
-                    download_strategy: {}
+                    io_strategy:
+                      upload_mode: {}
+                      download_mode: {}
                     format: {}
-                    upload_strategy: {}
                     output_path: "output_path"
                     enabled: true
                     input_path: "input_path"
@@ -17581,9 +17593,10 @@ definitions:
             - name: {}
               value: "value"
           data_config:
-            download_strategy: {}
+            io_strategy:
+              upload_mode: {}
+              download_mode: {}
             format: {}
-            upload_strategy: {}
             output_path: "output_path"
             enabled: true
             input_path: "input_path"
@@ -20211,9 +20224,10 @@ definitions:
               - name: {}
                 value: "value"
             data_config:
-              download_strategy: {}
+              io_strategy:
+                upload_mode: {}
+                download_mode: {}
               format: {}
-              upload_strategy: {}
               output_path: "output_path"
               enabled: true
               input_path: "input_path"
@@ -20334,9 +20348,10 @@ definitions:
               - name: {}
                 value: "value"
             data_config:
-              download_strategy: {}
+              io_strategy:
+                upload_mode: {}
+                download_mode: {}
               format: {}
-              upload_strategy: {}
               output_path: "output_path"
               enabled: true
               input_path: "input_path"
@@ -21371,9 +21386,10 @@ definitions:
         - name: {}
           value: "value"
       data_config:
-        download_strategy: {}
+        io_strategy:
+          upload_mode: {}
+          download_mode: {}
         format: {}
-        upload_strategy: {}
         output_path: "output_path"
         enabled: true
         input_path: "input_path"
@@ -21407,6 +21423,11 @@ definitions:
   coreDataLoadingConfig:
     type: "object"
     properties:
+      enabled:
+        type: "boolean"
+        format: "boolean"
+        title: "Flag enables DataLoading Config. If this is not set, data loading\
+          \ will not be used!"
       input_path:
         type: "string"
         title: "File system path (start at root). This folder will contain all the\
@@ -21429,25 +21450,19 @@ definitions:
           \ file that contains references to all files or inlined primitive values.\n\
           This format decides the actual encoding for the data. Refer to the encoding\
           \ to understand the specifics of the contents and the encoding"
-        $ref: "#/definitions/DataLoadingConfigMetadataFormat"
-      enabled:
-        type: "boolean"
-        format: "boolean"
-        title: "Flag enables DataLoading Config. If this is not set, data loading\
-          \ will not be used!"
-      download_strategy:
-        $ref: "#/definitions/DataLoadingConfigBlobDownload"
-      upload_strategy:
-        $ref: "#/definitions/DataLoadingConfigBlobUpload"
+        $ref: "#/definitions/DataLoadingConfigLiteralMapFormat"
+      io_strategy:
+        $ref: "#/definitions/coreIOStrategy"
     description: "This configuration allows executing raw containers in Flyte using\
       \ the Flyte CoPilot system.\nFlyte CoPilot, eliminates the needs of flytekit\
       \ or sdk inside the container. Any inputs required by the users container are\
       \ side-loaded in the input_path\nAny outputs generated by the user container\
       \ - within output_path are automatically uploaded."
     example:
-      download_strategy: {}
+      io_strategy:
+        upload_mode: {}
+        download_mode: {}
       format: {}
-      upload_strategy: {}
       output_path: "output_path"
       enabled: true
       input_path: "input_path"
@@ -21484,6 +21499,20 @@ definitions:
       kind: {}
       message: "message"
       error_uri: "error_uri"
+  coreIOStrategy:
+    type: "object"
+    properties:
+      download_mode:
+        title: "Mode to use to manage downloads"
+        $ref: "#/definitions/IOStrategyDownloadMode"
+      upload_mode:
+        title: "Mode to use to manage uploads"
+        $ref: "#/definitions/IOStrategyUploadMode"
+    title: "Strategy to use when dealing with Blob, Schema, or multipart blob data\
+      \ (large datasets)"
+    example:
+      upload_mode: {}
+      download_mode: {}
   coreIdentifier:
     type: "object"
     properties:
@@ -22648,9 +22677,10 @@ definitions:
           - name: {}
             value: "value"
         data_config:
-          download_strategy: {}
+          io_strategy:
+            upload_mode: {}
+            download_mode: {}
           format: {}
-          upload_strategy: {}
           output_path: "output_path"
           enabled: true
           input_path: "input_path"

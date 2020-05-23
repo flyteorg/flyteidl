@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.data_loading_config_blob_upload import DataLoadingConfigBlobUpload  # noqa: E501
+from flyteadmin.models.data_loading_config_literal_map_format import DataLoadingConfigLiteralMapFormat  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestDataLoadingConfigBlobUpload(unittest.TestCase):
-    """DataLoadingConfigBlobUpload unit test stubs"""
+class TestDataLoadingConfigLiteralMapFormat(unittest.TestCase):
+    """DataLoadingConfigLiteralMapFormat unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestDataLoadingConfigBlobUpload(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testDataLoadingConfigBlobUpload(self):
-        """Test DataLoadingConfigBlobUpload"""
+    def testDataLoadingConfigLiteralMapFormat(self):
+        """Test DataLoadingConfigLiteralMapFormat"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.data_loading_config_blob_upload.DataLoadingConfigBlobUpload()  # noqa: E501
+        # model = flyteadmin.models.data_loading_config_literal_map_format.DataLoadingConfigLiteralMapFormat()  # noqa: E501
         pass
 
 
