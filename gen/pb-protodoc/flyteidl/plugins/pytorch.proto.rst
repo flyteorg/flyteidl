@@ -3,14 +3,14 @@
 pytorch.proto
 ==============================
 
-.. _api_msg_flyteidl.plugins.PyTorchOperatorTask:
+.. _api_msg_flyteidl.plugins.DistributedPyTorchTrainingTask:
 
-flyteidl.plugins.PyTorchOperatorTask
-------------------------------------
+flyteidl.plugins.DistributedPyTorchTrainingTask
+-----------------------------------------------
 
-`[flyteidl.plugins.PyTorchOperatorTask proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/pytorch.proto#L7>`_
+`[flyteidl.plugins.DistributedPyTorchTrainingTask proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/pytorch.proto#L7>`_
 
-Custom proto for Pytorch plugin
+Custom proto for plugin that enables distributed training using https://github.com/kubeflow/pytorch-operator
 
 .. code-block:: json
 
@@ -18,7 +18,7 @@ Custom proto for Pytorch plugin
     "workers": "..."
   }
 
-.. _api_field_flyteidl.plugins.PyTorchOperatorTask.workers:
+.. _api_field_flyteidl.plugins.DistributedPyTorchTrainingTask.workers:
 
 workers
   (`int32 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) number of worker replicas spawned in the cluster for this job

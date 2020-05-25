@@ -36,10 +36,10 @@ var (
 // define the regex for a UUID once up-front
 var _pytorch_uuidPattern = regexp.MustCompile("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$")
 
-// Validate checks the field values on PyTorchOperatorTask with the rules
-// defined in the proto definition for this message. If any rules are
+// Validate checks the field values on DistributedPyTorchTrainingTask with the
+// rules defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
-func (m *PyTorchOperatorTask) Validate() error {
+func (m *DistributedPyTorchTrainingTask) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -49,9 +49,10 @@ func (m *PyTorchOperatorTask) Validate() error {
 	return nil
 }
 
-// PyTorchOperatorTaskValidationError is the validation error returned by
-// PyTorchOperatorTask.Validate if the designated constraints aren't met.
-type PyTorchOperatorTaskValidationError struct {
+// DistributedPyTorchTrainingTaskValidationError is the validation error
+// returned by DistributedPyTorchTrainingTask.Validate if the designated
+// constraints aren't met.
+type DistributedPyTorchTrainingTaskValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -59,24 +60,24 @@ type PyTorchOperatorTaskValidationError struct {
 }
 
 // Field function returns field value.
-func (e PyTorchOperatorTaskValidationError) Field() string { return e.field }
+func (e DistributedPyTorchTrainingTaskValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e PyTorchOperatorTaskValidationError) Reason() string { return e.reason }
+func (e DistributedPyTorchTrainingTaskValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e PyTorchOperatorTaskValidationError) Cause() error { return e.cause }
+func (e DistributedPyTorchTrainingTaskValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e PyTorchOperatorTaskValidationError) Key() bool { return e.key }
+func (e DistributedPyTorchTrainingTaskValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e PyTorchOperatorTaskValidationError) ErrorName() string {
-	return "PyTorchOperatorTaskValidationError"
+func (e DistributedPyTorchTrainingTaskValidationError) ErrorName() string {
+	return "DistributedPyTorchTrainingTaskValidationError"
 }
 
 // Error satisfies the builtin error interface
-func (e PyTorchOperatorTaskValidationError) Error() string {
+func (e DistributedPyTorchTrainingTaskValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -88,14 +89,14 @@ func (e PyTorchOperatorTaskValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sPyTorchOperatorTask.%s: %s%s",
+		"invalid %sDistributedPyTorchTrainingTask.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = PyTorchOperatorTaskValidationError{}
+var _ error = DistributedPyTorchTrainingTaskValidationError{}
 
 var _ interface {
 	Field() string
@@ -103,4 +104,4 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = PyTorchOperatorTaskValidationError{}
+} = DistributedPyTorchTrainingTaskValidationError{}

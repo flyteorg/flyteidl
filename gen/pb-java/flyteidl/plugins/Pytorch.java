@@ -14,8 +14,8 @@ public final class Pytorch {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface PyTorchOperatorTaskOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.PyTorchOperatorTask)
+  public interface DistributedPyTorchTrainingTaskOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.DistributedPyTorchTrainingTask)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -29,21 +29,21 @@ public final class Pytorch {
   }
   /**
    * <pre>
-   * Custom proto for Pytorch plugin
+   * Custom proto for plugin that enables distributed training using https://github.com/kubeflow/pytorch-operator
    * </pre>
    *
-   * Protobuf type {@code flyteidl.plugins.PyTorchOperatorTask}
+   * Protobuf type {@code flyteidl.plugins.DistributedPyTorchTrainingTask}
    */
-  public  static final class PyTorchOperatorTask extends
+  public  static final class DistributedPyTorchTrainingTask extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.plugins.PyTorchOperatorTask)
-      PyTorchOperatorTaskOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.plugins.DistributedPyTorchTrainingTask)
+      DistributedPyTorchTrainingTaskOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use PyTorchOperatorTask.newBuilder() to construct.
-    private PyTorchOperatorTask(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use DistributedPyTorchTrainingTask.newBuilder() to construct.
+    private DistributedPyTorchTrainingTask(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private PyTorchOperatorTask() {
+    private DistributedPyTorchTrainingTask() {
     }
 
     @java.lang.Override
@@ -51,7 +51,7 @@ public final class Pytorch {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PyTorchOperatorTask(
+    private DistributedPyTorchTrainingTask(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -96,15 +96,15 @@ public final class Pytorch {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.plugins.Pytorch.internal_static_flyteidl_plugins_PyTorchOperatorTask_descriptor;
+      return flyteidl.plugins.Pytorch.internal_static_flyteidl_plugins_DistributedPyTorchTrainingTask_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.plugins.Pytorch.internal_static_flyteidl_plugins_PyTorchOperatorTask_fieldAccessorTable
+      return flyteidl.plugins.Pytorch.internal_static_flyteidl_plugins_DistributedPyTorchTrainingTask_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.plugins.Pytorch.PyTorchOperatorTask.class, flyteidl.plugins.Pytorch.PyTorchOperatorTask.Builder.class);
+              flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask.class, flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask.Builder.class);
     }
 
     public static final int WORKERS_FIELD_NUMBER = 1;
@@ -160,10 +160,10 @@ public final class Pytorch {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.plugins.Pytorch.PyTorchOperatorTask)) {
+      if (!(obj instanceof flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask)) {
         return super.equals(obj);
       }
-      flyteidl.plugins.Pytorch.PyTorchOperatorTask other = (flyteidl.plugins.Pytorch.PyTorchOperatorTask) obj;
+      flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask other = (flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask) obj;
 
       if (getWorkers()
           != other.getWorkers()) return false;
@@ -185,69 +185,69 @@ public final class Pytorch {
       return hash;
     }
 
-    public static flyteidl.plugins.Pytorch.PyTorchOperatorTask parseFrom(
+    public static flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.plugins.Pytorch.PyTorchOperatorTask parseFrom(
+    public static flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.plugins.Pytorch.PyTorchOperatorTask parseFrom(
+    public static flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.plugins.Pytorch.PyTorchOperatorTask parseFrom(
+    public static flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.plugins.Pytorch.PyTorchOperatorTask parseFrom(byte[] data)
+    public static flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.plugins.Pytorch.PyTorchOperatorTask parseFrom(
+    public static flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.plugins.Pytorch.PyTorchOperatorTask parseFrom(java.io.InputStream input)
+    public static flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.plugins.Pytorch.PyTorchOperatorTask parseFrom(
+    public static flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.plugins.Pytorch.PyTorchOperatorTask parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.plugins.Pytorch.PyTorchOperatorTask parseDelimitedFrom(
+    public static flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.plugins.Pytorch.PyTorchOperatorTask parseFrom(
+    public static flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.plugins.Pytorch.PyTorchOperatorTask parseFrom(
+    public static flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -260,7 +260,7 @@ public final class Pytorch {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.plugins.Pytorch.PyTorchOperatorTask prototype) {
+    public static Builder newBuilder(flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -277,29 +277,29 @@ public final class Pytorch {
     }
     /**
      * <pre>
-     * Custom proto for Pytorch plugin
+     * Custom proto for plugin that enables distributed training using https://github.com/kubeflow/pytorch-operator
      * </pre>
      *
-     * Protobuf type {@code flyteidl.plugins.PyTorchOperatorTask}
+     * Protobuf type {@code flyteidl.plugins.DistributedPyTorchTrainingTask}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.PyTorchOperatorTask)
-        flyteidl.plugins.Pytorch.PyTorchOperatorTaskOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.DistributedPyTorchTrainingTask)
+        flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTaskOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.plugins.Pytorch.internal_static_flyteidl_plugins_PyTorchOperatorTask_descriptor;
+        return flyteidl.plugins.Pytorch.internal_static_flyteidl_plugins_DistributedPyTorchTrainingTask_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.plugins.Pytorch.internal_static_flyteidl_plugins_PyTorchOperatorTask_fieldAccessorTable
+        return flyteidl.plugins.Pytorch.internal_static_flyteidl_plugins_DistributedPyTorchTrainingTask_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.plugins.Pytorch.PyTorchOperatorTask.class, flyteidl.plugins.Pytorch.PyTorchOperatorTask.Builder.class);
+                flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask.class, flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask.Builder.class);
       }
 
-      // Construct using flyteidl.plugins.Pytorch.PyTorchOperatorTask.newBuilder()
+      // Construct using flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -325,17 +325,17 @@ public final class Pytorch {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.plugins.Pytorch.internal_static_flyteidl_plugins_PyTorchOperatorTask_descriptor;
+        return flyteidl.plugins.Pytorch.internal_static_flyteidl_plugins_DistributedPyTorchTrainingTask_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.plugins.Pytorch.PyTorchOperatorTask getDefaultInstanceForType() {
-        return flyteidl.plugins.Pytorch.PyTorchOperatorTask.getDefaultInstance();
+      public flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask getDefaultInstanceForType() {
+        return flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.plugins.Pytorch.PyTorchOperatorTask build() {
-        flyteidl.plugins.Pytorch.PyTorchOperatorTask result = buildPartial();
+      public flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask build() {
+        flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -343,8 +343,8 @@ public final class Pytorch {
       }
 
       @java.lang.Override
-      public flyteidl.plugins.Pytorch.PyTorchOperatorTask buildPartial() {
-        flyteidl.plugins.Pytorch.PyTorchOperatorTask result = new flyteidl.plugins.Pytorch.PyTorchOperatorTask(this);
+      public flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask buildPartial() {
+        flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask result = new flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask(this);
         result.workers_ = workers_;
         onBuilt();
         return result;
@@ -384,16 +384,16 @@ public final class Pytorch {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.plugins.Pytorch.PyTorchOperatorTask) {
-          return mergeFrom((flyteidl.plugins.Pytorch.PyTorchOperatorTask)other);
+        if (other instanceof flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask) {
+          return mergeFrom((flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.plugins.Pytorch.PyTorchOperatorTask other) {
-        if (other == flyteidl.plugins.Pytorch.PyTorchOperatorTask.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask other) {
+        if (other == flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask.getDefaultInstance()) return this;
         if (other.getWorkers() != 0) {
           setWorkers(other.getWorkers());
         }
@@ -412,11 +412,11 @@ public final class Pytorch {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.plugins.Pytorch.PyTorchOperatorTask parsedMessage = null;
+        flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.plugins.Pytorch.PyTorchOperatorTask) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -476,51 +476,51 @@ public final class Pytorch {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.PyTorchOperatorTask)
+      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.DistributedPyTorchTrainingTask)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.plugins.PyTorchOperatorTask)
-    private static final flyteidl.plugins.Pytorch.PyTorchOperatorTask DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.plugins.DistributedPyTorchTrainingTask)
+    private static final flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.plugins.Pytorch.PyTorchOperatorTask();
+      DEFAULT_INSTANCE = new flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask();
     }
 
-    public static flyteidl.plugins.Pytorch.PyTorchOperatorTask getDefaultInstance() {
+    public static flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<PyTorchOperatorTask>
-        PARSER = new com.google.protobuf.AbstractParser<PyTorchOperatorTask>() {
+    private static final com.google.protobuf.Parser<DistributedPyTorchTrainingTask>
+        PARSER = new com.google.protobuf.AbstractParser<DistributedPyTorchTrainingTask>() {
       @java.lang.Override
-      public PyTorchOperatorTask parsePartialFrom(
+      public DistributedPyTorchTrainingTask parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PyTorchOperatorTask(input, extensionRegistry);
+        return new DistributedPyTorchTrainingTask(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<PyTorchOperatorTask> parser() {
+    public static com.google.protobuf.Parser<DistributedPyTorchTrainingTask> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<PyTorchOperatorTask> getParserForType() {
+    public com.google.protobuf.Parser<DistributedPyTorchTrainingTask> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.plugins.Pytorch.PyTorchOperatorTask getDefaultInstanceForType() {
+    public flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_plugins_PyTorchOperatorTask_descriptor;
+    internal_static_flyteidl_plugins_DistributedPyTorchTrainingTask_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_plugins_PyTorchOperatorTask_fieldAccessorTable;
+      internal_static_flyteidl_plugins_DistributedPyTorchTrainingTask_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -531,9 +531,10 @@ public final class Pytorch {
   static {
     java.lang.String[] descriptorData = {
       "\n\036flyteidl/plugins/pytorch.proto\022\020flytei" +
-      "dl.plugins\"&\n\023PyTorchOperatorTask\022\017\n\007wor" +
-      "kers\030\001 \001(\005B5Z3github.com/lyft/flyteidl/g" +
-      "en/pb-go/flyteidl/pluginsb\006proto3"
+      "dl.plugins\"1\n\036DistributedPyTorchTraining" +
+      "Task\022\017\n\007workers\030\001 \001(\005B5Z3github.com/lyft" +
+      "/flyteidl/gen/pb-go/flyteidl/pluginsb\006pr" +
+      "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -547,11 +548,11 @@ public final class Pytorch {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_flyteidl_plugins_PyTorchOperatorTask_descriptor =
+    internal_static_flyteidl_plugins_DistributedPyTorchTrainingTask_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_flyteidl_plugins_PyTorchOperatorTask_fieldAccessorTable = new
+    internal_static_flyteidl_plugins_DistributedPyTorchTrainingTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_plugins_PyTorchOperatorTask_descriptor,
+        internal_static_flyteidl_plugins_DistributedPyTorchTrainingTask_descriptor,
         new java.lang.String[] { "Workers", });
   }
 

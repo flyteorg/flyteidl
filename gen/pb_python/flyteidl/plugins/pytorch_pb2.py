@@ -20,21 +20,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.plugins',
   syntax='proto3',
   serialized_options=_b('Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n\x1e\x66lyteidl/plugins/pytorch.proto\x12\x10\x66lyteidl.plugins\"&\n\x13PyTorchOperatorTask\x12\x0f\n\x07workers\x18\x01 \x01(\x05\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n\x1e\x66lyteidl/plugins/pytorch.proto\x12\x10\x66lyteidl.plugins\"1\n\x1e\x44istributedPyTorchTrainingTask\x12\x0f\n\x07workers\x18\x01 \x01(\x05\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
 )
 
 
 
 
-_PYTORCHOPERATORTASK = _descriptor.Descriptor(
-  name='PyTorchOperatorTask',
-  full_name='flyteidl.plugins.PyTorchOperatorTask',
+_DISTRIBUTEDPYTORCHTRAININGTASK = _descriptor.Descriptor(
+  name='DistributedPyTorchTrainingTask',
+  full_name='flyteidl.plugins.DistributedPyTorchTrainingTask',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='workers', full_name='flyteidl.plugins.PyTorchOperatorTask.workers', index=0,
+      name='workers', full_name='flyteidl.plugins.DistributedPyTorchTrainingTask.workers', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -53,18 +53,18 @@ _PYTORCHOPERATORTASK = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=52,
-  serialized_end=90,
+  serialized_end=101,
 )
 
-DESCRIPTOR.message_types_by_name['PyTorchOperatorTask'] = _PYTORCHOPERATORTASK
+DESCRIPTOR.message_types_by_name['DistributedPyTorchTrainingTask'] = _DISTRIBUTEDPYTORCHTRAININGTASK
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-PyTorchOperatorTask = _reflection.GeneratedProtocolMessageType('PyTorchOperatorTask', (_message.Message,), dict(
-  DESCRIPTOR = _PYTORCHOPERATORTASK,
+DistributedPyTorchTrainingTask = _reflection.GeneratedProtocolMessageType('DistributedPyTorchTrainingTask', (_message.Message,), dict(
+  DESCRIPTOR = _DISTRIBUTEDPYTORCHTRAININGTASK,
   __module__ = 'flyteidl.plugins.pytorch_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.plugins.PyTorchOperatorTask)
+  # @@protoc_insertion_point(class_scope:flyteidl.plugins.DistributedPyTorchTrainingTask)
   ))
-_sym_db.RegisterMessage(PyTorchOperatorTask)
+_sym_db.RegisterMessage(DistributedPyTorchTrainingTask)
 
 
 DESCRIPTOR._options = None

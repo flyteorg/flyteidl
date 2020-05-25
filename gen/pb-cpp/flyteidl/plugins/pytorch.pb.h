@@ -50,14 +50,14 @@ struct TableStruct_flyteidl_2fplugins_2fpytorch_2eproto {
 void AddDescriptors_flyteidl_2fplugins_2fpytorch_2eproto();
 namespace flyteidl {
 namespace plugins {
-class PyTorchOperatorTask;
-class PyTorchOperatorTaskDefaultTypeInternal;
-extern PyTorchOperatorTaskDefaultTypeInternal _PyTorchOperatorTask_default_instance_;
+class DistributedPyTorchTrainingTask;
+class DistributedPyTorchTrainingTaskDefaultTypeInternal;
+extern DistributedPyTorchTrainingTaskDefaultTypeInternal _DistributedPyTorchTrainingTask_default_instance_;
 }  // namespace plugins
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
-template<> ::flyteidl::plugins::PyTorchOperatorTask* Arena::CreateMaybeMessage<::flyteidl::plugins::PyTorchOperatorTask>(Arena*);
+template<> ::flyteidl::plugins::DistributedPyTorchTrainingTask* Arena::CreateMaybeMessage<::flyteidl::plugins::DistributedPyTorchTrainingTask>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -65,25 +65,25 @@ namespace plugins {
 
 // ===================================================================
 
-class PyTorchOperatorTask final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.PyTorchOperatorTask) */ {
+class DistributedPyTorchTrainingTask final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.DistributedPyTorchTrainingTask) */ {
  public:
-  PyTorchOperatorTask();
-  virtual ~PyTorchOperatorTask();
+  DistributedPyTorchTrainingTask();
+  virtual ~DistributedPyTorchTrainingTask();
 
-  PyTorchOperatorTask(const PyTorchOperatorTask& from);
+  DistributedPyTorchTrainingTask(const DistributedPyTorchTrainingTask& from);
 
-  inline PyTorchOperatorTask& operator=(const PyTorchOperatorTask& from) {
+  inline DistributedPyTorchTrainingTask& operator=(const DistributedPyTorchTrainingTask& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  PyTorchOperatorTask(PyTorchOperatorTask&& from) noexcept
-    : PyTorchOperatorTask() {
+  DistributedPyTorchTrainingTask(DistributedPyTorchTrainingTask&& from) noexcept
+    : DistributedPyTorchTrainingTask() {
     *this = ::std::move(from);
   }
 
-  inline PyTorchOperatorTask& operator=(PyTorchOperatorTask&& from) noexcept {
+  inline DistributedPyTorchTrainingTask& operator=(DistributedPyTorchTrainingTask&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -95,34 +95,34 @@ class PyTorchOperatorTask final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const PyTorchOperatorTask& default_instance();
+  static const DistributedPyTorchTrainingTask& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const PyTorchOperatorTask* internal_default_instance() {
-    return reinterpret_cast<const PyTorchOperatorTask*>(
-               &_PyTorchOperatorTask_default_instance_);
+  static inline const DistributedPyTorchTrainingTask* internal_default_instance() {
+    return reinterpret_cast<const DistributedPyTorchTrainingTask*>(
+               &_DistributedPyTorchTrainingTask_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  void Swap(PyTorchOperatorTask* other);
-  friend void swap(PyTorchOperatorTask& a, PyTorchOperatorTask& b) {
+  void Swap(DistributedPyTorchTrainingTask* other);
+  friend void swap(DistributedPyTorchTrainingTask& a, DistributedPyTorchTrainingTask& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline PyTorchOperatorTask* New() const final {
-    return CreateMaybeMessage<PyTorchOperatorTask>(nullptr);
+  inline DistributedPyTorchTrainingTask* New() const final {
+    return CreateMaybeMessage<DistributedPyTorchTrainingTask>(nullptr);
   }
 
-  PyTorchOperatorTask* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<PyTorchOperatorTask>(arena);
+  DistributedPyTorchTrainingTask* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DistributedPyTorchTrainingTask>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const PyTorchOperatorTask& from);
-  void MergeFrom(const PyTorchOperatorTask& from);
+  void CopyFrom(const DistributedPyTorchTrainingTask& from);
+  void MergeFrom(const DistributedPyTorchTrainingTask& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -144,7 +144,7 @@ class PyTorchOperatorTask final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(PyTorchOperatorTask* other);
+  void InternalSwap(DistributedPyTorchTrainingTask* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -166,7 +166,7 @@ class PyTorchOperatorTask final :
   ::google::protobuf::int32 workers() const;
   void set_workers(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.plugins.PyTorchOperatorTask)
+  // @@protoc_insertion_point(class_scope:flyteidl.plugins.DistributedPyTorchTrainingTask)
  private:
   class HasBitSetters;
 
@@ -184,20 +184,20 @@ class PyTorchOperatorTask final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// PyTorchOperatorTask
+// DistributedPyTorchTrainingTask
 
 // int32 workers = 1;
-inline void PyTorchOperatorTask::clear_workers() {
+inline void DistributedPyTorchTrainingTask::clear_workers() {
   workers_ = 0;
 }
-inline ::google::protobuf::int32 PyTorchOperatorTask::workers() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.PyTorchOperatorTask.workers)
+inline ::google::protobuf::int32 DistributedPyTorchTrainingTask::workers() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedPyTorchTrainingTask.workers)
   return workers_;
 }
-inline void PyTorchOperatorTask::set_workers(::google::protobuf::int32 value) {
+inline void DistributedPyTorchTrainingTask::set_workers(::google::protobuf::int32 value) {
   
   workers_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.PyTorchOperatorTask.workers)
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedPyTorchTrainingTask.workers)
 }
 
 #ifdef __GNUC__

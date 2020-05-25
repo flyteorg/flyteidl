@@ -18,28 +18,28 @@
 
 namespace flyteidl {
 namespace plugins {
-class PyTorchOperatorTaskDefaultTypeInternal {
+class DistributedPyTorchTrainingTaskDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<PyTorchOperatorTask> _instance;
-} _PyTorchOperatorTask_default_instance_;
+  ::google::protobuf::internal::ExplicitlyConstructed<DistributedPyTorchTrainingTask> _instance;
+} _DistributedPyTorchTrainingTask_default_instance_;
 }  // namespace plugins
 }  // namespace flyteidl
-static void InitDefaultsPyTorchOperatorTask_flyteidl_2fplugins_2fpytorch_2eproto() {
+static void InitDefaultsDistributedPyTorchTrainingTask_flyteidl_2fplugins_2fpytorch_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::flyteidl::plugins::_PyTorchOperatorTask_default_instance_;
-    new (ptr) ::flyteidl::plugins::PyTorchOperatorTask();
+    void* ptr = &::flyteidl::plugins::_DistributedPyTorchTrainingTask_default_instance_;
+    new (ptr) ::flyteidl::plugins::DistributedPyTorchTrainingTask();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::flyteidl::plugins::PyTorchOperatorTask::InitAsDefaultInstance();
+  ::flyteidl::plugins::DistributedPyTorchTrainingTask::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_PyTorchOperatorTask_flyteidl_2fplugins_2fpytorch_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsPyTorchOperatorTask_flyteidl_2fplugins_2fpytorch_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_DistributedPyTorchTrainingTask_flyteidl_2fplugins_2fpytorch_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsDistributedPyTorchTrainingTask_flyteidl_2fplugins_2fpytorch_2eproto}, {}};
 
 void InitDefaults_flyteidl_2fplugins_2fpytorch_2eproto() {
-  ::google::protobuf::internal::InitSCC(&scc_info_PyTorchOperatorTask_flyteidl_2fplugins_2fpytorch_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_DistributedPyTorchTrainingTask_flyteidl_2fplugins_2fpytorch_2eproto.base);
 }
 
 ::google::protobuf::Metadata file_level_metadata_flyteidl_2fplugins_2fpytorch_2eproto[1];
@@ -48,18 +48,18 @@ constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descr
 
 const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fpytorch_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::PyTorchOperatorTask, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DistributedPyTorchTrainingTask, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::PyTorchOperatorTask, workers_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DistributedPyTorchTrainingTask, workers_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::flyteidl::plugins::PyTorchOperatorTask)},
+  { 0, -1, sizeof(::flyteidl::plugins::DistributedPyTorchTrainingTask)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::_PyTorchOperatorTask_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::_DistributedPyTorchTrainingTask_default_instance_),
 };
 
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fplugins_2fpytorch_2eproto = {
@@ -70,14 +70,15 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2fpytorch_2eproto[] =
   "\n\036flyteidl/plugins/pytorch.proto\022\020flytei"
-  "dl.plugins\"&\n\023PyTorchOperatorTask\022\017\n\007wor"
-  "kers\030\001 \001(\005B5Z3github.com/lyft/flyteidl/g"
-  "en/pb-go/flyteidl/pluginsb\006proto3"
+  "dl.plugins\"1\n\036DistributedPyTorchTraining"
+  "Task\022\017\n\007workers\030\001 \001(\005B5Z3github.com/lyft"
+  "/flyteidl/gen/pb-go/flyteidl/pluginsb\006pr"
+  "oto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fpytorch_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fpytorch_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fpytorch_2eproto,
-  "flyteidl/plugins/pytorch.proto", &assign_descriptors_table_flyteidl_2fplugins_2fpytorch_2eproto, 153,
+  "flyteidl/plugins/pytorch.proto", &assign_descriptors_table_flyteidl_2fplugins_2fpytorch_2eproto, 164,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fpytorch_2eproto() {
@@ -94,52 +95,52 @@ namespace plugins {
 
 // ===================================================================
 
-void PyTorchOperatorTask::InitAsDefaultInstance() {
+void DistributedPyTorchTrainingTask::InitAsDefaultInstance() {
 }
-class PyTorchOperatorTask::HasBitSetters {
+class DistributedPyTorchTrainingTask::HasBitSetters {
  public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int PyTorchOperatorTask::kWorkersFieldNumber;
+const int DistributedPyTorchTrainingTask::kWorkersFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-PyTorchOperatorTask::PyTorchOperatorTask()
+DistributedPyTorchTrainingTask::DistributedPyTorchTrainingTask()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.plugins.PyTorchOperatorTask)
+  // @@protoc_insertion_point(constructor:flyteidl.plugins.DistributedPyTorchTrainingTask)
 }
-PyTorchOperatorTask::PyTorchOperatorTask(const PyTorchOperatorTask& from)
+DistributedPyTorchTrainingTask::DistributedPyTorchTrainingTask(const DistributedPyTorchTrainingTask& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   workers_ = from.workers_;
-  // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.PyTorchOperatorTask)
+  // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.DistributedPyTorchTrainingTask)
 }
 
-void PyTorchOperatorTask::SharedCtor() {
+void DistributedPyTorchTrainingTask::SharedCtor() {
   workers_ = 0;
 }
 
-PyTorchOperatorTask::~PyTorchOperatorTask() {
-  // @@protoc_insertion_point(destructor:flyteidl.plugins.PyTorchOperatorTask)
+DistributedPyTorchTrainingTask::~DistributedPyTorchTrainingTask() {
+  // @@protoc_insertion_point(destructor:flyteidl.plugins.DistributedPyTorchTrainingTask)
   SharedDtor();
 }
 
-void PyTorchOperatorTask::SharedDtor() {
+void DistributedPyTorchTrainingTask::SharedDtor() {
 }
 
-void PyTorchOperatorTask::SetCachedSize(int size) const {
+void DistributedPyTorchTrainingTask::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PyTorchOperatorTask& PyTorchOperatorTask::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_PyTorchOperatorTask_flyteidl_2fplugins_2fpytorch_2eproto.base);
+const DistributedPyTorchTrainingTask& DistributedPyTorchTrainingTask::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_DistributedPyTorchTrainingTask_flyteidl_2fplugins_2fpytorch_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void PyTorchOperatorTask::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.plugins.PyTorchOperatorTask)
+void DistributedPyTorchTrainingTask::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.plugins.DistributedPyTorchTrainingTask)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -149,9 +150,9 @@ void PyTorchOperatorTask::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* PyTorchOperatorTask::_InternalParse(const char* begin, const char* end, void* object,
+const char* DistributedPyTorchTrainingTask::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<PyTorchOperatorTask*>(object);
+  auto msg = static_cast<DistributedPyTorchTrainingTask*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -185,11 +186,11 @@ const char* PyTorchOperatorTask::_InternalParse(const char* begin, const char* e
   return ptr;
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool PyTorchOperatorTask::MergePartialFromCodedStream(
+bool DistributedPyTorchTrainingTask::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.plugins.PyTorchOperatorTask)
+  // @@protoc_insertion_point(parse_start:flyteidl.plugins.DistributedPyTorchTrainingTask)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -220,18 +221,18 @@ bool PyTorchOperatorTask::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:flyteidl.plugins.PyTorchOperatorTask)
+  // @@protoc_insertion_point(parse_success:flyteidl.plugins.DistributedPyTorchTrainingTask)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.plugins.PyTorchOperatorTask)
+  // @@protoc_insertion_point(parse_failure:flyteidl.plugins.DistributedPyTorchTrainingTask)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void PyTorchOperatorTask::SerializeWithCachedSizes(
+void DistributedPyTorchTrainingTask::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.plugins.PyTorchOperatorTask)
+  // @@protoc_insertion_point(serialize_start:flyteidl.plugins.DistributedPyTorchTrainingTask)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -244,12 +245,12 @@ void PyTorchOperatorTask::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:flyteidl.plugins.PyTorchOperatorTask)
+  // @@protoc_insertion_point(serialize_end:flyteidl.plugins.DistributedPyTorchTrainingTask)
 }
 
-::google::protobuf::uint8* PyTorchOperatorTask::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* DistributedPyTorchTrainingTask::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.plugins.PyTorchOperatorTask)
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.plugins.DistributedPyTorchTrainingTask)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -262,12 +263,12 @@ void PyTorchOperatorTask::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.plugins.PyTorchOperatorTask)
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.plugins.DistributedPyTorchTrainingTask)
   return target;
 }
 
-size_t PyTorchOperatorTask::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.plugins.PyTorchOperatorTask)
+size_t DistributedPyTorchTrainingTask::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.plugins.DistributedPyTorchTrainingTask)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -291,23 +292,23 @@ size_t PyTorchOperatorTask::ByteSizeLong() const {
   return total_size;
 }
 
-void PyTorchOperatorTask::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.plugins.PyTorchOperatorTask)
+void DistributedPyTorchTrainingTask::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.plugins.DistributedPyTorchTrainingTask)
   GOOGLE_DCHECK_NE(&from, this);
-  const PyTorchOperatorTask* source =
-      ::google::protobuf::DynamicCastToGenerated<PyTorchOperatorTask>(
+  const DistributedPyTorchTrainingTask* source =
+      ::google::protobuf::DynamicCastToGenerated<DistributedPyTorchTrainingTask>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.plugins.PyTorchOperatorTask)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.plugins.DistributedPyTorchTrainingTask)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.plugins.PyTorchOperatorTask)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.plugins.DistributedPyTorchTrainingTask)
     MergeFrom(*source);
   }
 }
 
-void PyTorchOperatorTask::MergeFrom(const PyTorchOperatorTask& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.plugins.PyTorchOperatorTask)
+void DistributedPyTorchTrainingTask::MergeFrom(const DistributedPyTorchTrainingTask& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.plugins.DistributedPyTorchTrainingTask)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -318,35 +319,35 @@ void PyTorchOperatorTask::MergeFrom(const PyTorchOperatorTask& from) {
   }
 }
 
-void PyTorchOperatorTask::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.plugins.PyTorchOperatorTask)
+void DistributedPyTorchTrainingTask::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.plugins.DistributedPyTorchTrainingTask)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void PyTorchOperatorTask::CopyFrom(const PyTorchOperatorTask& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.plugins.PyTorchOperatorTask)
+void DistributedPyTorchTrainingTask::CopyFrom(const DistributedPyTorchTrainingTask& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.plugins.DistributedPyTorchTrainingTask)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool PyTorchOperatorTask::IsInitialized() const {
+bool DistributedPyTorchTrainingTask::IsInitialized() const {
   return true;
 }
 
-void PyTorchOperatorTask::Swap(PyTorchOperatorTask* other) {
+void DistributedPyTorchTrainingTask::Swap(DistributedPyTorchTrainingTask* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void PyTorchOperatorTask::InternalSwap(PyTorchOperatorTask* other) {
+void DistributedPyTorchTrainingTask::InternalSwap(DistributedPyTorchTrainingTask* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(workers_, other->workers_);
 }
 
-::google::protobuf::Metadata PyTorchOperatorTask::GetMetadata() const {
+::google::protobuf::Metadata DistributedPyTorchTrainingTask::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fplugins_2fpytorch_2eproto);
   return ::file_level_metadata_flyteidl_2fplugins_2fpytorch_2eproto[kIndexInFileMessages];
 }
@@ -357,8 +358,8 @@ void PyTorchOperatorTask::InternalSwap(PyTorchOperatorTask* other) {
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
-template<> PROTOBUF_NOINLINE ::flyteidl::plugins::PyTorchOperatorTask* Arena::CreateMaybeMessage< ::flyteidl::plugins::PyTorchOperatorTask >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::plugins::PyTorchOperatorTask >(arena);
+template<> PROTOBUF_NOINLINE ::flyteidl::plugins::DistributedPyTorchTrainingTask* Arena::CreateMaybeMessage< ::flyteidl::plugins::DistributedPyTorchTrainingTask >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::plugins::DistributedPyTorchTrainingTask >(arena);
 }
 }  // namespace protobuf
 }  // namespace google
