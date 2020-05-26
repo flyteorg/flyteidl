@@ -25,6 +25,7 @@ from flyteadmin.configuration import Configuration
 from flyteadmin.models.admin_abort_metadata import AdminAbortMetadata
 from flyteadmin.models.admin_annotations import AdminAnnotations
 from flyteadmin.models.admin_auth import AdminAuth
+from flyteadmin.models.admin_auth_role import AdminAuthRole
 from flyteadmin.models.admin_cluster_resource_attributes import AdminClusterResourceAttributes
 from flyteadmin.models.admin_domain import AdminDomain
 from flyteadmin.models.admin_email_notification import AdminEmailNotification
@@ -141,8 +142,10 @@ from flyteadmin.models.core_conjunction_expression import CoreConjunctionExpress
 from flyteadmin.models.core_connection_set import CoreConnectionSet
 from flyteadmin.models.core_container import CoreContainer
 from flyteadmin.models.core_container_port import CoreContainerPort
+from flyteadmin.models.core_data_loading_config import CoreDataLoadingConfig
 from flyteadmin.models.core_error import CoreError
 from flyteadmin.models.core_execution_error import CoreExecutionError
+from flyteadmin.models.core_io_strategy import CoreIOStrategy
 from flyteadmin.models.core_identifier import CoreIdentifier
 from flyteadmin.models.core_if_block import CoreIfBlock
 from flyteadmin.models.core_if_else_block import CoreIfElseBlock
@@ -183,6 +186,7 @@ from flyteadmin.models.core_workflow_metadata import CoreWorkflowMetadata
 from flyteadmin.models.core_workflow_metadata_defaults import CoreWorkflowMetadataDefaults
 from flyteadmin.models.core_workflow_node import CoreWorkflowNode
 from flyteadmin.models.core_workflow_template import CoreWorkflowTemplate
+from flyteadmin.models.data_loading_config_literal_map_format import DataLoadingConfigLiteralMapFormat
 from flyteadmin.models.event_node_execution_event import EventNodeExecutionEvent
 from flyteadmin.models.event_parent_task_execution_metadata import EventParentTaskExecutionMetadata
 from flyteadmin.models.event_task_execution_event import EventTaskExecutionEvent
@@ -194,6 +198,8 @@ from flyteadmin.models.flyteidladmin_task_execution import FlyteidladminTaskExec
 from flyteadmin.models.flyteidladmin_workflow_node_metadata import FlyteidladminWorkflowNodeMetadata
 from flyteadmin.models.flyteidlcore_schema import FlyteidlcoreSchema
 from flyteadmin.models.flyteidlevent_workflow_node_metadata import FlyteidleventWorkflowNodeMetadata
+from flyteadmin.models.io_strategy_download_mode import IOStrategyDownloadMode
+from flyteadmin.models.io_strategy_upload_mode import IOStrategyUploadMode
 from flyteadmin.models.protobuf_list_value import ProtobufListValue
 from flyteadmin.models.protobuf_null_value import ProtobufNullValue
 from flyteadmin.models.protobuf_struct import ProtobufStruct

@@ -47,7 +47,7 @@ struct TableStruct_flyteidl_2fcore_2ftasks_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[7]
+  static const ::google::protobuf::internal::ParseTable schema[9]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -62,6 +62,12 @@ extern ContainerDefaultTypeInternal _Container_default_instance_;
 class ContainerPort;
 class ContainerPortDefaultTypeInternal;
 extern ContainerPortDefaultTypeInternal _ContainerPort_default_instance_;
+class DataLoadingConfig;
+class DataLoadingConfigDefaultTypeInternal;
+extern DataLoadingConfigDefaultTypeInternal _DataLoadingConfig_default_instance_;
+class IOStrategy;
+class IOStrategyDefaultTypeInternal;
+extern IOStrategyDefaultTypeInternal _IOStrategy_default_instance_;
 class Resources;
 class ResourcesDefaultTypeInternal;
 extern ResourcesDefaultTypeInternal _Resources_default_instance_;
@@ -83,6 +89,8 @@ namespace google {
 namespace protobuf {
 template<> ::flyteidl::core::Container* Arena::CreateMaybeMessage<::flyteidl::core::Container>(Arena*);
 template<> ::flyteidl::core::ContainerPort* Arena::CreateMaybeMessage<::flyteidl::core::ContainerPort>(Arena*);
+template<> ::flyteidl::core::DataLoadingConfig* Arena::CreateMaybeMessage<::flyteidl::core::DataLoadingConfig>(Arena*);
+template<> ::flyteidl::core::IOStrategy* Arena::CreateMaybeMessage<::flyteidl::core::IOStrategy>(Arena*);
 template<> ::flyteidl::core::Resources* Arena::CreateMaybeMessage<::flyteidl::core::Resources>(Arena*);
 template<> ::flyteidl::core::Resources_ResourceEntry* Arena::CreateMaybeMessage<::flyteidl::core::Resources_ResourceEntry>(Arena*);
 template<> ::flyteidl::core::RuntimeMetadata* Arena::CreateMaybeMessage<::flyteidl::core::RuntimeMetadata>(Arena*);
@@ -137,6 +145,72 @@ inline bool RuntimeMetadata_RuntimeType_Parse(
     const ::std::string& name, RuntimeMetadata_RuntimeType* value) {
   return ::google::protobuf::internal::ParseNamedEnum<RuntimeMetadata_RuntimeType>(
     RuntimeMetadata_RuntimeType_descriptor(), name, value);
+}
+enum IOStrategy_DownloadMode {
+  IOStrategy_DownloadMode_DOWNLOAD_EAGER = 0,
+  IOStrategy_DownloadMode_DOWNLOAD_STREAM = 1,
+  IOStrategy_DownloadMode_DO_NOT_DOWNLOAD = 2,
+  IOStrategy_DownloadMode_IOStrategy_DownloadMode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  IOStrategy_DownloadMode_IOStrategy_DownloadMode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool IOStrategy_DownloadMode_IsValid(int value);
+const IOStrategy_DownloadMode IOStrategy_DownloadMode_DownloadMode_MIN = IOStrategy_DownloadMode_DOWNLOAD_EAGER;
+const IOStrategy_DownloadMode IOStrategy_DownloadMode_DownloadMode_MAX = IOStrategy_DownloadMode_DO_NOT_DOWNLOAD;
+const int IOStrategy_DownloadMode_DownloadMode_ARRAYSIZE = IOStrategy_DownloadMode_DownloadMode_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* IOStrategy_DownloadMode_descriptor();
+inline const ::std::string& IOStrategy_DownloadMode_Name(IOStrategy_DownloadMode value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    IOStrategy_DownloadMode_descriptor(), value);
+}
+inline bool IOStrategy_DownloadMode_Parse(
+    const ::std::string& name, IOStrategy_DownloadMode* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<IOStrategy_DownloadMode>(
+    IOStrategy_DownloadMode_descriptor(), name, value);
+}
+enum IOStrategy_UploadMode {
+  IOStrategy_UploadMode_UPLOAD_ON_EXIT = 0,
+  IOStrategy_UploadMode_UPLOAD_EAGER = 1,
+  IOStrategy_UploadMode_DO_NOT_UPLOAD = 2,
+  IOStrategy_UploadMode_IOStrategy_UploadMode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  IOStrategy_UploadMode_IOStrategy_UploadMode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool IOStrategy_UploadMode_IsValid(int value);
+const IOStrategy_UploadMode IOStrategy_UploadMode_UploadMode_MIN = IOStrategy_UploadMode_UPLOAD_ON_EXIT;
+const IOStrategy_UploadMode IOStrategy_UploadMode_UploadMode_MAX = IOStrategy_UploadMode_DO_NOT_UPLOAD;
+const int IOStrategy_UploadMode_UploadMode_ARRAYSIZE = IOStrategy_UploadMode_UploadMode_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* IOStrategy_UploadMode_descriptor();
+inline const ::std::string& IOStrategy_UploadMode_Name(IOStrategy_UploadMode value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    IOStrategy_UploadMode_descriptor(), value);
+}
+inline bool IOStrategy_UploadMode_Parse(
+    const ::std::string& name, IOStrategy_UploadMode* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<IOStrategy_UploadMode>(
+    IOStrategy_UploadMode_descriptor(), name, value);
+}
+enum DataLoadingConfig_LiteralMapFormat {
+  DataLoadingConfig_LiteralMapFormat_JSON = 0,
+  DataLoadingConfig_LiteralMapFormat_YAML = 1,
+  DataLoadingConfig_LiteralMapFormat_PROTO = 2,
+  DataLoadingConfig_LiteralMapFormat_DataLoadingConfig_LiteralMapFormat_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  DataLoadingConfig_LiteralMapFormat_DataLoadingConfig_LiteralMapFormat_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool DataLoadingConfig_LiteralMapFormat_IsValid(int value);
+const DataLoadingConfig_LiteralMapFormat DataLoadingConfig_LiteralMapFormat_LiteralMapFormat_MIN = DataLoadingConfig_LiteralMapFormat_JSON;
+const DataLoadingConfig_LiteralMapFormat DataLoadingConfig_LiteralMapFormat_LiteralMapFormat_MAX = DataLoadingConfig_LiteralMapFormat_PROTO;
+const int DataLoadingConfig_LiteralMapFormat_LiteralMapFormat_ARRAYSIZE = DataLoadingConfig_LiteralMapFormat_LiteralMapFormat_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* DataLoadingConfig_LiteralMapFormat_descriptor();
+inline const ::std::string& DataLoadingConfig_LiteralMapFormat_Name(DataLoadingConfig_LiteralMapFormat value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    DataLoadingConfig_LiteralMapFormat_descriptor(), value);
+}
+inline bool DataLoadingConfig_LiteralMapFormat_Parse(
+    const ::std::string& name, DataLoadingConfig_LiteralMapFormat* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<DataLoadingConfig_LiteralMapFormat>(
+    DataLoadingConfig_LiteralMapFormat_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -1294,6 +1368,15 @@ class Container final :
   ::flyteidl::core::Resources* mutable_resources();
   void set_allocated_resources(::flyteidl::core::Resources* resources);
 
+  // .flyteidl.core.DataLoadingConfig data_config = 9;
+  bool has_data_config() const;
+  void clear_data_config();
+  static const int kDataConfigFieldNumber = 9;
+  const ::flyteidl::core::DataLoadingConfig& data_config() const;
+  ::flyteidl::core::DataLoadingConfig* release_data_config();
+  ::flyteidl::core::DataLoadingConfig* mutable_data_config();
+  void set_allocated_data_config(::flyteidl::core::DataLoadingConfig* data_config);
+
   // @@protoc_insertion_point(class_scope:flyteidl.core.Container)
  private:
   class HasBitSetters;
@@ -1306,6 +1389,369 @@ class Container final :
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::ContainerPort > ports_;
   ::google::protobuf::internal::ArenaStringPtr image_;
   ::flyteidl::core::Resources* resources_;
+  ::flyteidl::core::DataLoadingConfig* data_config_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2ftasks_2eproto;
+};
+// -------------------------------------------------------------------
+
+class IOStrategy final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.IOStrategy) */ {
+ public:
+  IOStrategy();
+  virtual ~IOStrategy();
+
+  IOStrategy(const IOStrategy& from);
+
+  inline IOStrategy& operator=(const IOStrategy& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  IOStrategy(IOStrategy&& from) noexcept
+    : IOStrategy() {
+    *this = ::std::move(from);
+  }
+
+  inline IOStrategy& operator=(IOStrategy&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const IOStrategy& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const IOStrategy* internal_default_instance() {
+    return reinterpret_cast<const IOStrategy*>(
+               &_IOStrategy_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  void Swap(IOStrategy* other);
+  friend void swap(IOStrategy& a, IOStrategy& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline IOStrategy* New() const final {
+    return CreateMaybeMessage<IOStrategy>(nullptr);
+  }
+
+  IOStrategy* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<IOStrategy>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const IOStrategy& from);
+  void MergeFrom(const IOStrategy& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(IOStrategy* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef IOStrategy_DownloadMode DownloadMode;
+  static const DownloadMode DOWNLOAD_EAGER =
+    IOStrategy_DownloadMode_DOWNLOAD_EAGER;
+  static const DownloadMode DOWNLOAD_STREAM =
+    IOStrategy_DownloadMode_DOWNLOAD_STREAM;
+  static const DownloadMode DO_NOT_DOWNLOAD =
+    IOStrategy_DownloadMode_DO_NOT_DOWNLOAD;
+  static inline bool DownloadMode_IsValid(int value) {
+    return IOStrategy_DownloadMode_IsValid(value);
+  }
+  static const DownloadMode DownloadMode_MIN =
+    IOStrategy_DownloadMode_DownloadMode_MIN;
+  static const DownloadMode DownloadMode_MAX =
+    IOStrategy_DownloadMode_DownloadMode_MAX;
+  static const int DownloadMode_ARRAYSIZE =
+    IOStrategy_DownloadMode_DownloadMode_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  DownloadMode_descriptor() {
+    return IOStrategy_DownloadMode_descriptor();
+  }
+  static inline const ::std::string& DownloadMode_Name(DownloadMode value) {
+    return IOStrategy_DownloadMode_Name(value);
+  }
+  static inline bool DownloadMode_Parse(const ::std::string& name,
+      DownloadMode* value) {
+    return IOStrategy_DownloadMode_Parse(name, value);
+  }
+
+  typedef IOStrategy_UploadMode UploadMode;
+  static const UploadMode UPLOAD_ON_EXIT =
+    IOStrategy_UploadMode_UPLOAD_ON_EXIT;
+  static const UploadMode UPLOAD_EAGER =
+    IOStrategy_UploadMode_UPLOAD_EAGER;
+  static const UploadMode DO_NOT_UPLOAD =
+    IOStrategy_UploadMode_DO_NOT_UPLOAD;
+  static inline bool UploadMode_IsValid(int value) {
+    return IOStrategy_UploadMode_IsValid(value);
+  }
+  static const UploadMode UploadMode_MIN =
+    IOStrategy_UploadMode_UploadMode_MIN;
+  static const UploadMode UploadMode_MAX =
+    IOStrategy_UploadMode_UploadMode_MAX;
+  static const int UploadMode_ARRAYSIZE =
+    IOStrategy_UploadMode_UploadMode_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  UploadMode_descriptor() {
+    return IOStrategy_UploadMode_descriptor();
+  }
+  static inline const ::std::string& UploadMode_Name(UploadMode value) {
+    return IOStrategy_UploadMode_Name(value);
+  }
+  static inline bool UploadMode_Parse(const ::std::string& name,
+      UploadMode* value) {
+    return IOStrategy_UploadMode_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // .flyteidl.core.IOStrategy.DownloadMode download_mode = 1;
+  void clear_download_mode();
+  static const int kDownloadModeFieldNumber = 1;
+  ::flyteidl::core::IOStrategy_DownloadMode download_mode() const;
+  void set_download_mode(::flyteidl::core::IOStrategy_DownloadMode value);
+
+  // .flyteidl.core.IOStrategy.UploadMode upload_mode = 2;
+  void clear_upload_mode();
+  static const int kUploadModeFieldNumber = 2;
+  ::flyteidl::core::IOStrategy_UploadMode upload_mode() const;
+  void set_upload_mode(::flyteidl::core::IOStrategy_UploadMode value);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.IOStrategy)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  int download_mode_;
+  int upload_mode_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2ftasks_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DataLoadingConfig final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.DataLoadingConfig) */ {
+ public:
+  DataLoadingConfig();
+  virtual ~DataLoadingConfig();
+
+  DataLoadingConfig(const DataLoadingConfig& from);
+
+  inline DataLoadingConfig& operator=(const DataLoadingConfig& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  DataLoadingConfig(DataLoadingConfig&& from) noexcept
+    : DataLoadingConfig() {
+    *this = ::std::move(from);
+  }
+
+  inline DataLoadingConfig& operator=(DataLoadingConfig&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const DataLoadingConfig& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DataLoadingConfig* internal_default_instance() {
+    return reinterpret_cast<const DataLoadingConfig*>(
+               &_DataLoadingConfig_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  void Swap(DataLoadingConfig* other);
+  friend void swap(DataLoadingConfig& a, DataLoadingConfig& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DataLoadingConfig* New() const final {
+    return CreateMaybeMessage<DataLoadingConfig>(nullptr);
+  }
+
+  DataLoadingConfig* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DataLoadingConfig>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const DataLoadingConfig& from);
+  void MergeFrom(const DataLoadingConfig& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DataLoadingConfig* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef DataLoadingConfig_LiteralMapFormat LiteralMapFormat;
+  static const LiteralMapFormat JSON =
+    DataLoadingConfig_LiteralMapFormat_JSON;
+  static const LiteralMapFormat YAML =
+    DataLoadingConfig_LiteralMapFormat_YAML;
+  static const LiteralMapFormat PROTO =
+    DataLoadingConfig_LiteralMapFormat_PROTO;
+  static inline bool LiteralMapFormat_IsValid(int value) {
+    return DataLoadingConfig_LiteralMapFormat_IsValid(value);
+  }
+  static const LiteralMapFormat LiteralMapFormat_MIN =
+    DataLoadingConfig_LiteralMapFormat_LiteralMapFormat_MIN;
+  static const LiteralMapFormat LiteralMapFormat_MAX =
+    DataLoadingConfig_LiteralMapFormat_LiteralMapFormat_MAX;
+  static const int LiteralMapFormat_ARRAYSIZE =
+    DataLoadingConfig_LiteralMapFormat_LiteralMapFormat_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  LiteralMapFormat_descriptor() {
+    return DataLoadingConfig_LiteralMapFormat_descriptor();
+  }
+  static inline const ::std::string& LiteralMapFormat_Name(LiteralMapFormat value) {
+    return DataLoadingConfig_LiteralMapFormat_Name(value);
+  }
+  static inline bool LiteralMapFormat_Parse(const ::std::string& name,
+      LiteralMapFormat* value) {
+    return DataLoadingConfig_LiteralMapFormat_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // string input_path = 2;
+  void clear_input_path();
+  static const int kInputPathFieldNumber = 2;
+  const ::std::string& input_path() const;
+  void set_input_path(const ::std::string& value);
+  #if LANG_CXX11
+  void set_input_path(::std::string&& value);
+  #endif
+  void set_input_path(const char* value);
+  void set_input_path(const char* value, size_t size);
+  ::std::string* mutable_input_path();
+  ::std::string* release_input_path();
+  void set_allocated_input_path(::std::string* input_path);
+
+  // string output_path = 3;
+  void clear_output_path();
+  static const int kOutputPathFieldNumber = 3;
+  const ::std::string& output_path() const;
+  void set_output_path(const ::std::string& value);
+  #if LANG_CXX11
+  void set_output_path(::std::string&& value);
+  #endif
+  void set_output_path(const char* value);
+  void set_output_path(const char* value, size_t size);
+  ::std::string* mutable_output_path();
+  ::std::string* release_output_path();
+  void set_allocated_output_path(::std::string* output_path);
+
+  // .flyteidl.core.IOStrategy io_strategy = 5;
+  bool has_io_strategy() const;
+  void clear_io_strategy();
+  static const int kIoStrategyFieldNumber = 5;
+  const ::flyteidl::core::IOStrategy& io_strategy() const;
+  ::flyteidl::core::IOStrategy* release_io_strategy();
+  ::flyteidl::core::IOStrategy* mutable_io_strategy();
+  void set_allocated_io_strategy(::flyteidl::core::IOStrategy* io_strategy);
+
+  // bool enabled = 1;
+  void clear_enabled();
+  static const int kEnabledFieldNumber = 1;
+  bool enabled() const;
+  void set_enabled(bool value);
+
+  // .flyteidl.core.DataLoadingConfig.LiteralMapFormat format = 4;
+  void clear_format();
+  static const int kFormatFieldNumber = 4;
+  ::flyteidl::core::DataLoadingConfig_LiteralMapFormat format() const;
+  void set_format(::flyteidl::core::DataLoadingConfig_LiteralMapFormat value);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.DataLoadingConfig)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr input_path_;
+  ::google::protobuf::internal::ArenaStringPtr output_path_;
+  ::flyteidl::core::IOStrategy* io_strategy_;
+  bool enabled_;
+  int format_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2ftasks_2eproto;
 };
@@ -2521,9 +2967,285 @@ Container::ports() const {
   return ports_;
 }
 
+// .flyteidl.core.DataLoadingConfig data_config = 9;
+inline bool Container::has_data_config() const {
+  return this != internal_default_instance() && data_config_ != nullptr;
+}
+inline void Container::clear_data_config() {
+  if (GetArenaNoVirtual() == nullptr && data_config_ != nullptr) {
+    delete data_config_;
+  }
+  data_config_ = nullptr;
+}
+inline const ::flyteidl::core::DataLoadingConfig& Container::data_config() const {
+  const ::flyteidl::core::DataLoadingConfig* p = data_config_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.Container.data_config)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::DataLoadingConfig*>(
+      &::flyteidl::core::_DataLoadingConfig_default_instance_);
+}
+inline ::flyteidl::core::DataLoadingConfig* Container::release_data_config() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Container.data_config)
+  
+  ::flyteidl::core::DataLoadingConfig* temp = data_config_;
+  data_config_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::DataLoadingConfig* Container::mutable_data_config() {
+  
+  if (data_config_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::DataLoadingConfig>(GetArenaNoVirtual());
+    data_config_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Container.data_config)
+  return data_config_;
+}
+inline void Container::set_allocated_data_config(::flyteidl::core::DataLoadingConfig* data_config) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete data_config_;
+  }
+  if (data_config) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      data_config = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, data_config, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  data_config_ = data_config;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Container.data_config)
+}
+
+// -------------------------------------------------------------------
+
+// IOStrategy
+
+// .flyteidl.core.IOStrategy.DownloadMode download_mode = 1;
+inline void IOStrategy::clear_download_mode() {
+  download_mode_ = 0;
+}
+inline ::flyteidl::core::IOStrategy_DownloadMode IOStrategy::download_mode() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.IOStrategy.download_mode)
+  return static_cast< ::flyteidl::core::IOStrategy_DownloadMode >(download_mode_);
+}
+inline void IOStrategy::set_download_mode(::flyteidl::core::IOStrategy_DownloadMode value) {
+  
+  download_mode_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.IOStrategy.download_mode)
+}
+
+// .flyteidl.core.IOStrategy.UploadMode upload_mode = 2;
+inline void IOStrategy::clear_upload_mode() {
+  upload_mode_ = 0;
+}
+inline ::flyteidl::core::IOStrategy_UploadMode IOStrategy::upload_mode() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.IOStrategy.upload_mode)
+  return static_cast< ::flyteidl::core::IOStrategy_UploadMode >(upload_mode_);
+}
+inline void IOStrategy::set_upload_mode(::flyteidl::core::IOStrategy_UploadMode value) {
+  
+  upload_mode_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.IOStrategy.upload_mode)
+}
+
+// -------------------------------------------------------------------
+
+// DataLoadingConfig
+
+// bool enabled = 1;
+inline void DataLoadingConfig::clear_enabled() {
+  enabled_ = false;
+}
+inline bool DataLoadingConfig::enabled() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.DataLoadingConfig.enabled)
+  return enabled_;
+}
+inline void DataLoadingConfig::set_enabled(bool value) {
+  
+  enabled_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.DataLoadingConfig.enabled)
+}
+
+// string input_path = 2;
+inline void DataLoadingConfig::clear_input_path() {
+  input_path_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& DataLoadingConfig::input_path() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.DataLoadingConfig.input_path)
+  return input_path_.GetNoArena();
+}
+inline void DataLoadingConfig::set_input_path(const ::std::string& value) {
+  
+  input_path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.DataLoadingConfig.input_path)
+}
+#if LANG_CXX11
+inline void DataLoadingConfig::set_input_path(::std::string&& value) {
+  
+  input_path_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.DataLoadingConfig.input_path)
+}
+#endif
+inline void DataLoadingConfig::set_input_path(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  input_path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.DataLoadingConfig.input_path)
+}
+inline void DataLoadingConfig::set_input_path(const char* value, size_t size) {
+  
+  input_path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.DataLoadingConfig.input_path)
+}
+inline ::std::string* DataLoadingConfig::mutable_input_path() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.DataLoadingConfig.input_path)
+  return input_path_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* DataLoadingConfig::release_input_path() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.DataLoadingConfig.input_path)
+  
+  return input_path_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void DataLoadingConfig::set_allocated_input_path(::std::string* input_path) {
+  if (input_path != nullptr) {
+    
+  } else {
+    
+  }
+  input_path_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), input_path);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.DataLoadingConfig.input_path)
+}
+
+// string output_path = 3;
+inline void DataLoadingConfig::clear_output_path() {
+  output_path_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& DataLoadingConfig::output_path() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.DataLoadingConfig.output_path)
+  return output_path_.GetNoArena();
+}
+inline void DataLoadingConfig::set_output_path(const ::std::string& value) {
+  
+  output_path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.DataLoadingConfig.output_path)
+}
+#if LANG_CXX11
+inline void DataLoadingConfig::set_output_path(::std::string&& value) {
+  
+  output_path_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.DataLoadingConfig.output_path)
+}
+#endif
+inline void DataLoadingConfig::set_output_path(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  output_path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.DataLoadingConfig.output_path)
+}
+inline void DataLoadingConfig::set_output_path(const char* value, size_t size) {
+  
+  output_path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.DataLoadingConfig.output_path)
+}
+inline ::std::string* DataLoadingConfig::mutable_output_path() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.DataLoadingConfig.output_path)
+  return output_path_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* DataLoadingConfig::release_output_path() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.DataLoadingConfig.output_path)
+  
+  return output_path_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void DataLoadingConfig::set_allocated_output_path(::std::string* output_path) {
+  if (output_path != nullptr) {
+    
+  } else {
+    
+  }
+  output_path_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), output_path);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.DataLoadingConfig.output_path)
+}
+
+// .flyteidl.core.DataLoadingConfig.LiteralMapFormat format = 4;
+inline void DataLoadingConfig::clear_format() {
+  format_ = 0;
+}
+inline ::flyteidl::core::DataLoadingConfig_LiteralMapFormat DataLoadingConfig::format() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.DataLoadingConfig.format)
+  return static_cast< ::flyteidl::core::DataLoadingConfig_LiteralMapFormat >(format_);
+}
+inline void DataLoadingConfig::set_format(::flyteidl::core::DataLoadingConfig_LiteralMapFormat value) {
+  
+  format_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.DataLoadingConfig.format)
+}
+
+// .flyteidl.core.IOStrategy io_strategy = 5;
+inline bool DataLoadingConfig::has_io_strategy() const {
+  return this != internal_default_instance() && io_strategy_ != nullptr;
+}
+inline void DataLoadingConfig::clear_io_strategy() {
+  if (GetArenaNoVirtual() == nullptr && io_strategy_ != nullptr) {
+    delete io_strategy_;
+  }
+  io_strategy_ = nullptr;
+}
+inline const ::flyteidl::core::IOStrategy& DataLoadingConfig::io_strategy() const {
+  const ::flyteidl::core::IOStrategy* p = io_strategy_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.DataLoadingConfig.io_strategy)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::IOStrategy*>(
+      &::flyteidl::core::_IOStrategy_default_instance_);
+}
+inline ::flyteidl::core::IOStrategy* DataLoadingConfig::release_io_strategy() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.DataLoadingConfig.io_strategy)
+  
+  ::flyteidl::core::IOStrategy* temp = io_strategy_;
+  io_strategy_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::IOStrategy* DataLoadingConfig::mutable_io_strategy() {
+  
+  if (io_strategy_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::IOStrategy>(GetArenaNoVirtual());
+    io_strategy_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.DataLoadingConfig.io_strategy)
+  return io_strategy_;
+}
+inline void DataLoadingConfig::set_allocated_io_strategy(::flyteidl::core::IOStrategy* io_strategy) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete io_strategy_;
+  }
+  if (io_strategy) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      io_strategy = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, io_strategy, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  io_strategy_ = io_strategy;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.DataLoadingConfig.io_strategy)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -2554,6 +3276,21 @@ template <> struct is_proto_enum< ::flyteidl::core::RuntimeMetadata_RuntimeType>
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::core::RuntimeMetadata_RuntimeType>() {
   return ::flyteidl::core::RuntimeMetadata_RuntimeType_descriptor();
+}
+template <> struct is_proto_enum< ::flyteidl::core::IOStrategy_DownloadMode> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::core::IOStrategy_DownloadMode>() {
+  return ::flyteidl::core::IOStrategy_DownloadMode_descriptor();
+}
+template <> struct is_proto_enum< ::flyteidl::core::IOStrategy_UploadMode> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::core::IOStrategy_UploadMode>() {
+  return ::flyteidl::core::IOStrategy_UploadMode_descriptor();
+}
+template <> struct is_proto_enum< ::flyteidl::core::DataLoadingConfig_LiteralMapFormat> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::core::DataLoadingConfig_LiteralMapFormat>() {
+  return ::flyteidl::core::DataLoadingConfig_LiteralMapFormat_descriptor();
 }
 
 }  // namespace protobuf

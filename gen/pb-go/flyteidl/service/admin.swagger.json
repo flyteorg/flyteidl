@@ -2691,6 +2691,17 @@
         }
       }
     },
+    "DataLoadingConfigLiteralMapFormat": {
+      "type": "string",
+      "enum": [
+        "JSON",
+        "YAML",
+        "PROTO"
+      ],
+      "default": "JSON",
+      "description": "- JSON: JSON / YAML for the metadata (which contains inlined primitive values). The representation is inline with the standard json specification as specified - https://www.json.org/json-en.html\n - PROTO: Proto is a serialized binary of `core.LiteralMap` defined in flyteidl/core",
+      "title": "LiteralMapFormat decides the encoding format in which the input metadata should be made available to the containers. \nIf the user has access to the protocol buffer definitions, it is recommended to use the PROTO format.\nJSON and YAML do not need any protobuf definitions to read it\nAll remote references in core.LiteralMap are replaced with local filesystem references (the data is downloaded to local filesystem)"
+    },
     "ExecutionErrorErrorKind": {
       "type": "string",
       "enum": [
@@ -2712,6 +2723,28 @@
       ],
       "default": "MANUAL",
       "description": "The method by which this execution was launched.\n\n - MANUAL: The default execution mode, MANUAL implies that an execution was launched by an individual.\n - SCHEDULED: A schedule triggered this execution launch.\n - SYSTEM: A system process was responsible for launching this execution rather an individual.\n - RELAUNCH: This execution was launched with identical inputs as a previous execution.\n - CHILD_WORKFLOW: This execution was triggered by another execution."
+    },
+    "IOStrategyDownloadMode": {
+      "type": "string",
+      "enum": [
+        "DOWNLOAD_EAGER",
+        "DOWNLOAD_STREAM",
+        "DO_NOT_DOWNLOAD"
+      ],
+      "default": "DOWNLOAD_EAGER",
+      "description": "- DOWNLOAD_EAGER: All data will be downloaded before the main container is executed\n - DOWNLOAD_STREAM: Data will be downloaded as a stream and an End-Of-Stream marker will be written to indicate all data has been downloaded. Refer to protocol for details\n - DO_NOT_DOWNLOAD: Large objects (offloaded) will not be downloaded",
+      "title": "Mode to use for downloading"
+    },
+    "IOStrategyUploadMode": {
+      "type": "string",
+      "enum": [
+        "UPLOAD_ON_EXIT",
+        "UPLOAD_EAGER",
+        "DO_NOT_UPLOAD"
+      ],
+      "default": "UPLOAD_ON_EXIT",
+      "description": "- UPLOAD_ON_EXIT: All data will be uploaded after the main container exits\n - UPLOAD_EAGER: Data will be uploaded as it appears. Refer to protocol specification for details\n - DO_NOT_UPLOAD: Data will not be uploaded, only references will be written",
+      "title": "Mode to use for uploading"
     },
     "ResourcesResourceEntry": {
       "type": "object",
@@ -2826,6 +2859,18 @@
         }
       },
       "description": "Defines permissions associated with executions created by this launch plan spec."
+    },
+    "adminAuthRole": {
+      "type": "object",
+      "properties": {
+        "assumable_iam_role": {
+          "type": "string"
+        },
+        "kubernetes_service_account": {
+          "type": "string"
+        }
+      },
+      "description": "Defines permissions associated with executions."
     },
     "adminClusterResourceAttributes": {
       "type": "object",
@@ -3094,6 +3139,10 @@
         "annotations": {
           "$ref": "#/definitions/adminAnnotations",
           "description": "Annotations to apply to the execution resource."
+        },
+        "auth_role": {
+          "$ref": "#/definitions/adminAuthRole",
+          "description": "Optional: auth override to apply this execution."
         }
       },
       "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes.."
@@ -3278,6 +3327,9 @@
         "auth": {
           "$ref": "#/definitions/adminAuth",
           "description": "Indicates the permission associated with workflow executions triggered with this launch plan."
+        },
+        "auth_role": {
+          "$ref": "#/definitions/adminAuthRole"
         }
       },
       "description": "User-provided launch plan definition and configuration values."
@@ -3469,10 +3521,11 @@
       "type": "string",
       "enum": [
         "NAMED_ENTITY_ACTIVE",
-        "NAMED_ENTITY_ARCHIVED"
+        "NAMED_ENTITY_ARCHIVED",
+        "SYSTEM_GENERATED"
       ],
       "default": "NAMED_ENTITY_ACTIVE",
-      "description": "The status of the named entity is used to control its visibility in the UI.\n\n - NAMED_ENTITY_ACTIVE: By default, all named entities are considered active and under development.\n - NAMED_ENTITY_ARCHIVED: Archived named entities are no longer visible in the UI."
+      "description": "The status of the named entity is used to control its visibility in the UI.\n\n - NAMED_ENTITY_ACTIVE: By default, all named entities are considered active and under development.\n - NAMED_ENTITY_ARCHIVED: Archived named entities are no longer visible in the UI.\n - SYSTEM_GENERATED: System generated entities that aren't explicitly created or managed by a user."
     },
     "adminNamedEntityUpdateRequest": {
       "type": "object",
@@ -4458,7 +4511,11 @@
           "items": {
             "$ref": "#/definitions/coreContainerPort"
           },
-          "title": "Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but\nnot supported on AWS Batch)"
+          "title": "Ports to open in the container. This feature is not supported by all execution engines. (e.g. supported on K8s but\nnot supported on AWS Batch)\nOnly K8s"
+        },
+        "data_config": {
+          "$ref": "#/definitions/coreDataLoadingConfig",
+          "title": "BETA: Optional configuration for DataLoading. If not specified, then default values are used.\nThis makes it possible to to run a completely portable container, that uses inputs and outputs\nonly from the local file-system and without having any reference to flyteidl. This is supported only on K8s at the moment.\nIf data loading is enabled, then data will be mounted in accompanying directories specified in the DataLoadingConfig. If the directories \nare not specified, inputs will be mounted onto and outputs will be uploaded from a pre-determined file-system path. Refer to the documentation\nto understand the default paths.\nOnly K8s"
         }
       }
     },
@@ -4472,6 +4529,32 @@
         }
       },
       "description": "Defines port properties for a container."
+    },
+    "coreDataLoadingConfig": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "format": "boolean",
+          "title": "Flag enables DataLoading Config. If this is not set, data loading will not be used!"
+        },
+        "input_path": {
+          "type": "string",
+          "title": "File system path (start at root). This folder will contain all the inputs exploded to a separate file. \nExample, if the input interface needs (x: int, y: blob, z: multipart_blob) and the input path is \"/var/flyte/inputs\", then the file system will look like\n/var/flyte/inputs/inputs.\u003cmetadata format dependent -\u003e .pb .json .yaml\u003e -\u003e Format as defined previously. The Blob and Multipart blob will reference local filesystem instead of remote locations \n/var/flyte/inputs/x -\u003e X is a file that contains the value of x (integer) in string format\n/var/flyte/inputs/y -\u003e Y is a file in Binary format\n/var/flyte/inputs/z/... -\u003e Note Z itself is a directory\nMore information about the protocol - refer to docs #TODO reference docs here"
+        },
+        "output_path": {
+          "type": "string",
+          "title": "File system path (start at root). This folder should contain all the outputs for the task as individual files and/or an error text file"
+        },
+        "format": {
+          "$ref": "#/definitions/DataLoadingConfigLiteralMapFormat",
+          "title": "In the inputs folder, there will be an additional summary/metadata file that contains references to all files or inlined primitive values.\nThis format decides the actual encoding for the data. Refer to the encoding to understand the specifics of the contents and the encoding"
+        },
+        "io_strategy": {
+          "$ref": "#/definitions/coreIOStrategy"
+        }
+      },
+      "description": "This configuration allows executing raw containers in Flyte using the Flyte CoPilot system.\nFlyte CoPilot, eliminates the needs of flytekit or sdk inside the container. Any inputs required by the users container are side-loaded in the input_path\nAny outputs generated by the user container - within output_path are automatically uploaded."
     },
     "coreError": {
       "type": "object",
@@ -4507,6 +4590,20 @@
         }
       },
       "description": "Represents the error message from the execution."
+    },
+    "coreIOStrategy": {
+      "type": "object",
+      "properties": {
+        "download_mode": {
+          "$ref": "#/definitions/IOStrategyDownloadMode",
+          "title": "Mode to use to manage downloads"
+        },
+        "upload_mode": {
+          "$ref": "#/definitions/IOStrategyUploadMode",
+          "title": "Mode to use to manage uploads"
+        }
+      },
+      "title": "Strategy to use when dealing with Blob, Schema, or multipart blob data (large datasets)"
     },
     "coreIdentifier": {
       "type": "object",

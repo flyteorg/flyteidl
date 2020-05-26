@@ -3664,6 +3664,9 @@ export namespace flyteidl {
 
             /** Container ports */
             ports?: (flyteidl.core.IContainerPort[]|null);
+
+            /** Container dataConfig */
+            dataConfig?: (flyteidl.core.IDataLoadingConfig|null);
         }
 
         /** Represents a Container. */
@@ -3696,6 +3699,9 @@ export namespace flyteidl {
             /** Container ports. */
             public ports: flyteidl.core.IContainerPort[];
 
+            /** Container dataConfig. */
+            public dataConfig?: (flyteidl.core.IDataLoadingConfig|null);
+
             /**
              * Creates a new Container instance using the specified properties.
              * @param [properties] Properties to set
@@ -3727,6 +3733,167 @@ export namespace flyteidl {
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a IOStrategy. */
+        interface IIOStrategy {
+
+            /** IOStrategy downloadMode */
+            downloadMode?: (flyteidl.core.IOStrategy.DownloadMode|null);
+
+            /** IOStrategy uploadMode */
+            uploadMode?: (flyteidl.core.IOStrategy.UploadMode|null);
+        }
+
+        /** Represents a IOStrategy. */
+        class IOStrategy implements IIOStrategy {
+
+            /**
+             * Constructs a new IOStrategy.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IIOStrategy);
+
+            /** IOStrategy downloadMode. */
+            public downloadMode: flyteidl.core.IOStrategy.DownloadMode;
+
+            /** IOStrategy uploadMode. */
+            public uploadMode: flyteidl.core.IOStrategy.UploadMode;
+
+            /**
+             * Creates a new IOStrategy instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns IOStrategy instance
+             */
+            public static create(properties?: flyteidl.core.IIOStrategy): flyteidl.core.IOStrategy;
+
+            /**
+             * Encodes the specified IOStrategy message. Does not implicitly {@link flyteidl.core.IOStrategy.verify|verify} messages.
+             * @param message IOStrategy message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IIOStrategy, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a IOStrategy message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns IOStrategy
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.IOStrategy;
+
+            /**
+             * Verifies a IOStrategy message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace IOStrategy {
+
+            /** DownloadMode enum. */
+            enum DownloadMode {
+                DOWNLOAD_EAGER = 0,
+                DOWNLOAD_STREAM = 1,
+                DO_NOT_DOWNLOAD = 2
+            }
+
+            /** UploadMode enum. */
+            enum UploadMode {
+                UPLOAD_ON_EXIT = 0,
+                UPLOAD_EAGER = 1,
+                DO_NOT_UPLOAD = 2
+            }
+        }
+
+        /** Properties of a DataLoadingConfig. */
+        interface IDataLoadingConfig {
+
+            /** DataLoadingConfig enabled */
+            enabled?: (boolean|null);
+
+            /** DataLoadingConfig inputPath */
+            inputPath?: (string|null);
+
+            /** DataLoadingConfig outputPath */
+            outputPath?: (string|null);
+
+            /** DataLoadingConfig format */
+            format?: (flyteidl.core.DataLoadingConfig.LiteralMapFormat|null);
+
+            /** DataLoadingConfig ioStrategy */
+            ioStrategy?: (flyteidl.core.IIOStrategy|null);
+        }
+
+        /** Represents a DataLoadingConfig. */
+        class DataLoadingConfig implements IDataLoadingConfig {
+
+            /**
+             * Constructs a new DataLoadingConfig.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IDataLoadingConfig);
+
+            /** DataLoadingConfig enabled. */
+            public enabled: boolean;
+
+            /** DataLoadingConfig inputPath. */
+            public inputPath: string;
+
+            /** DataLoadingConfig outputPath. */
+            public outputPath: string;
+
+            /** DataLoadingConfig format. */
+            public format: flyteidl.core.DataLoadingConfig.LiteralMapFormat;
+
+            /** DataLoadingConfig ioStrategy. */
+            public ioStrategy?: (flyteidl.core.IIOStrategy|null);
+
+            /**
+             * Creates a new DataLoadingConfig instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns DataLoadingConfig instance
+             */
+            public static create(properties?: flyteidl.core.IDataLoadingConfig): flyteidl.core.DataLoadingConfig;
+
+            /**
+             * Encodes the specified DataLoadingConfig message. Does not implicitly {@link flyteidl.core.DataLoadingConfig.verify|verify} messages.
+             * @param message DataLoadingConfig message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IDataLoadingConfig, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a DataLoadingConfig message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DataLoadingConfig
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.DataLoadingConfig;
+
+            /**
+             * Verifies a DataLoadingConfig message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace DataLoadingConfig {
+
+            /** LiteralMapFormat enum. */
+            enum LiteralMapFormat {
+                JSON = 0,
+                YAML = 1,
+                PROTO = 2
+            }
         }
 
         /** Properties of a DynamicJobSpec. */
@@ -4830,7 +4997,8 @@ export namespace flyteidl {
         /** NamedEntityState enum. */
         enum NamedEntityState {
             NAMED_ENTITY_ACTIVE = 0,
-            NAMED_ENTITY_ARCHIVED = 1
+            NAMED_ENTITY_ARCHIVED = 1,
+            SYSTEM_GENERATED = 2
         }
 
         /** Properties of a NamedEntityMetadata. */
@@ -5989,6 +6157,67 @@ export namespace flyteidl {
 
             /**
              * Verifies an Annotations message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an AuthRole. */
+        interface IAuthRole {
+
+            /** AuthRole assumableIamRole */
+            assumableIamRole?: (string|null);
+
+            /** AuthRole kubernetesServiceAccount */
+            kubernetesServiceAccount?: (string|null);
+        }
+
+        /** Represents an AuthRole. */
+        class AuthRole implements IAuthRole {
+
+            /**
+             * Constructs a new AuthRole.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IAuthRole);
+
+            /** AuthRole assumableIamRole. */
+            public assumableIamRole: string;
+
+            /** AuthRole kubernetesServiceAccount. */
+            public kubernetesServiceAccount: string;
+
+            /** AuthRole method. */
+            public method?: ("assumableIamRole"|"kubernetesServiceAccount");
+
+            /**
+             * Creates a new AuthRole instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns AuthRole instance
+             */
+            public static create(properties?: flyteidl.admin.IAuthRole): flyteidl.admin.AuthRole;
+
+            /**
+             * Encodes the specified AuthRole message. Does not implicitly {@link flyteidl.admin.AuthRole.verify|verify} messages.
+             * @param message AuthRole message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IAuthRole, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an AuthRole message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns AuthRole
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.AuthRole;
+
+            /**
+             * Verifies an AuthRole message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -7241,6 +7470,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec annotations */
             annotations?: (flyteidl.admin.IAnnotations|null);
+
+            /** ExecutionSpec authRole */
+            authRole?: (flyteidl.admin.IAuthRole|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -7272,6 +7504,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec annotations. */
             public annotations?: (flyteidl.admin.IAnnotations|null);
+
+            /** ExecutionSpec authRole. */
+            public authRole?: (flyteidl.admin.IAuthRole|null);
 
             /** ExecutionSpec notificationOverrides. */
             public notificationOverrides?: ("notifications"|"disableAll");
@@ -7842,6 +8077,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec auth */
             auth?: (flyteidl.admin.IAuth|null);
+
+            /** LaunchPlanSpec authRole */
+            authRole?: (flyteidl.admin.IAuthRole|null);
         }
 
         /** Represents a LaunchPlanSpec. */
@@ -7876,6 +8114,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec auth. */
             public auth?: (flyteidl.admin.IAuth|null);
+
+            /** LaunchPlanSpec authRole. */
+            public authRole?: (flyteidl.admin.IAuthRole|null);
 
             /**
              * Creates a new LaunchPlanSpec instance using the specified properties.
