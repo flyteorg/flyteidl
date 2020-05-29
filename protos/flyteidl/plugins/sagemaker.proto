@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package flyte.plugins.sagemaker;
+package flyte.plugins;
 
-option go_package = "github.com/kumare3/awsflyteplugins/gen/pb-go/proto";
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
 
 enum HyperparameterScalingType {
     AUTO = 0;
@@ -85,17 +85,13 @@ message HPOJobObjective {
     string MetricName = 2;
 }
 
-message HPOJobConfig {
+message SagemakerHPOJob {
     string Strategy = 1;
     HPOJobObjective Objective = 2;
     int64 MaxNumberOfTrainingJobs = 3;
     int64 MaxParallelTrainingJobs = 4;
     ParameterRanges ParameterRanges = 5;
-}
-
-message SagemakerHPOJob {
-    HPOJobConfig = 1;
-    SagemakerTrainingJob TrainingJob = 2;
+    SagemakerTrainingJob TrainingJob = 6;
 }
 
 

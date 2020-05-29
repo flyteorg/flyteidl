@@ -14,6 +14,7 @@ Plugins available in the Flyte system.
 	presto.proto
 	pytorch.proto
 	qubole.proto
+	sagemaker.proto
 	sidecar.proto
 	spark.proto
 	waitable.proto
