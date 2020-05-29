@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package flyte.plugins;
+package flyte.plugins.sagemaker;
 
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
 
