@@ -1,0 +1,102 @@
+syntax = "proto3";
+
+package flyte.plugins.sagemaker;
+
+option go_package = "github.com/kumare3/awsflyteplugins/gen/pb-go/proto";
+
+enum HyperparameterScalingType {
+    AUTO = 0;
+    LINEAR = 1;
+    LOGARITHMIC = 2;
+    REVERSELOGARITHMIC = 3;
+}
+
+message ContinuousParameterRange {
+    string Name = 1;
+    double MaxValue = 2;
+    double MinValue = 3;
+    HyperparameterScalingType ScalingType = 4;
+}
+
+message IntegerParameterRange {
+    string Name = 1;
+    float MaxValue = 2;
+    float MinValue = 3;
+    HyperparameterScalingType ScalingType = 4;
+}
+
+message CategoricalParameterRange {
+    string Name = 1;
+    repeated string Values = 2;
+}
+
+message ParameterRanges {
+    repeated ContinuousParameterRange ContinuousParameterRanges = 1;
+    repeated IntegerParameterRange IntegerParameterRanges = 2;
+    repeated CategoricalParameterRange CategoricalParameterRanges = 3;
+}
+
+message AlgorithmSpecification {
+    string TrainingImage = 1;
+    string TrainingInputMode = 2;
+    string AlgorithmName = 3;
+
+    message MetricDefinition {
+        string Name = 1;
+        string Regex = 2;
+    }
+    repeated MetricDefinition MetricDefinitions = 4;
+}
+
+message ResourceConfig {
+    string InstanceType = 1;
+    int64 InstanceCount = 2;
+    int64 VolumeSizeInGB = 3;
+    string VolumeKmsKeyId = 4;
+}
+
+message StoppingCondition {
+    int64 MaxRuntimeInSeconds = 1;
+    int64 MaxWaitTimeInSeconds = 2;
+}
+
+message VpcConfig {
+    repeated string SecurityGroupIds = 1;
+    repeated string Subnets = 2;
+}
+
+message SagemakerTrainingJob {
+    string Region = 1;
+    string RoleArn = 2;
+    AlgorithmSpecification AlgorithmSpecification = 3;
+    ResourceConfig ResourceConfig = 4;
+    StoppingCondition StoppingCondition = 5;
+    VpcConfig VpcConfig = 6;
+    bool EnableSpotTraining = 7;
+}
+
+enum HPOJobObjectiveType {
+    MINIMIZE = 0;
+    MAXIMIZE = 1;
+}
+
+message HPOJobObjective {
+    HPOJobObjectiveType Type = 1;
+    string MetricName = 2;
+}
+
+message HPOJobConfig {
+    string Strategy = 1;
+    HPOJobObjective Objective = 2;
+    int64 MaxNumberOfTrainingJobs = 3;
+    int64 MaxParallelTrainingJobs = 4;
+    ParameterRanges ParameterRanges = 5;
+}
+
+message SagemakerHPOJob {
+    HPOJobConfig = 1;
+    SagemakerTrainingJob TrainingJob = 2;
+}
+
+
+
