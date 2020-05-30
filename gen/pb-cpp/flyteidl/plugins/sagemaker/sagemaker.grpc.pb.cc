@@ -16,11 +16,11 @@
 #include <grpcpp/impl/codegen/server_callback.h>
 #include <grpcpp/impl/codegen/service_type.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
-namespace flyte {
+namespace flyteidl {
 namespace plugins {
 namespace sagemaker {
 
-}  // namespace flyte
+}  // namespace flyteidl
 }  // namespace plugins
 }  // namespace sagemaker
 

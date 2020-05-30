@@ -37,13 +37,13 @@ namespace grpc {
 class ServerContext;
 }  // namespace grpc
 
-namespace flyte {
+namespace flyteidl {
 namespace plugins {
 namespace sagemaker {
 
 }  // namespace sagemaker
 }  // namespace plugins
-}  // namespace flyte
+}  // namespace flyteidl
 
 
 #endif  // GRPC_flyteidl_2fplugins_2fsagemaker_2fsagemaker_2eproto__INCLUDED

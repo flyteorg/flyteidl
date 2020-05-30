@@ -3,12 +3,51 @@
 sagemaker.proto
 ==========================================
 
-.. _api_msg_flyte.plugins.sagemaker.ContinuousParameterRange:
+.. _api_msg_flyteidl.plugins.sagemaker.ContinuousParameterRange:
 
-flyte.plugins.sagemaker.ContinuousParameterRange
+flyteidl.plugins.sagemaker.ContinuousParameterRange
+---------------------------------------------------
+
+`[flyteidl.plugins.sagemaker.ContinuousParameterRange proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L13>`_
+
+
+.. code-block:: json
+
+  {
+    "Name": "...",
+    "MaxValue": "...",
+    "MinValue": "...",
+    "ScalingType": "..."
+  }
+
+.. _api_field_flyteidl.plugins.sagemaker.ContinuousParameterRange.Name:
+
+Name
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+.. _api_field_flyteidl.plugins.sagemaker.ContinuousParameterRange.MaxValue:
+
+MaxValue
+  (`double <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+.. _api_field_flyteidl.plugins.sagemaker.ContinuousParameterRange.MinValue:
+
+MinValue
+  (`double <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  
+.. _api_field_flyteidl.plugins.sagemaker.ContinuousParameterRange.ScalingType:
+
+ScalingType
+  (:ref:`flyteidl.plugins.sagemaker.HyperparameterScalingType <api_enum_flyteidl.plugins.sagemaker.HyperparameterScalingType>`) 
+  
+
+
+.. _api_msg_flyteidl.plugins.sagemaker.IntegerParameterRange:
+
+flyteidl.plugins.sagemaker.IntegerParameterRange
 ------------------------------------------------
 
-`[flyte.plugins.sagemaker.ContinuousParameterRange proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L13>`_
+`[flyteidl.plugins.sagemaker.IntegerParameterRange proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L20>`_
 
 
 .. code-block:: json
@@ -20,73 +59,34 @@ flyte.plugins.sagemaker.ContinuousParameterRange
     "ScalingType": "..."
   }
 
-.. _api_field_flyte.plugins.sagemaker.ContinuousParameterRange.Name:
+.. _api_field_flyteidl.plugins.sagemaker.IntegerParameterRange.Name:
 
 Name
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyte.plugins.sagemaker.ContinuousParameterRange.MaxValue:
-
-MaxValue
-  (`double <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
-  
-.. _api_field_flyte.plugins.sagemaker.ContinuousParameterRange.MinValue:
-
-MinValue
-  (`double <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
-  
-.. _api_field_flyte.plugins.sagemaker.ContinuousParameterRange.ScalingType:
-
-ScalingType
-  (:ref:`flyte.plugins.sagemaker.HyperparameterScalingType <api_enum_flyte.plugins.sagemaker.HyperparameterScalingType>`) 
-  
-
-
-.. _api_msg_flyte.plugins.sagemaker.IntegerParameterRange:
-
-flyte.plugins.sagemaker.IntegerParameterRange
----------------------------------------------
-
-`[flyte.plugins.sagemaker.IntegerParameterRange proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L20>`_
-
-
-.. code-block:: json
-
-  {
-    "Name": "...",
-    "MaxValue": "...",
-    "MinValue": "...",
-    "ScalingType": "..."
-  }
-
-.. _api_field_flyte.plugins.sagemaker.IntegerParameterRange.Name:
-
-Name
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
-  
-.. _api_field_flyte.plugins.sagemaker.IntegerParameterRange.MaxValue:
+.. _api_field_flyteidl.plugins.sagemaker.IntegerParameterRange.MaxValue:
 
 MaxValue
   (`float <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyte.plugins.sagemaker.IntegerParameterRange.MinValue:
+.. _api_field_flyteidl.plugins.sagemaker.IntegerParameterRange.MinValue:
 
 MinValue
   (`float <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyte.plugins.sagemaker.IntegerParameterRange.ScalingType:
+.. _api_field_flyteidl.plugins.sagemaker.IntegerParameterRange.ScalingType:
 
 ScalingType
-  (:ref:`flyte.plugins.sagemaker.HyperparameterScalingType <api_enum_flyte.plugins.sagemaker.HyperparameterScalingType>`) 
+  (:ref:`flyteidl.plugins.sagemaker.HyperparameterScalingType <api_enum_flyteidl.plugins.sagemaker.HyperparameterScalingType>`) 
   
 
 
-.. _api_msg_flyte.plugins.sagemaker.CategoricalParameterRange:
+.. _api_msg_flyteidl.plugins.sagemaker.CategoricalParameterRange:
 
-flyte.plugins.sagemaker.CategoricalParameterRange
--------------------------------------------------
+flyteidl.plugins.sagemaker.CategoricalParameterRange
+----------------------------------------------------
 
-`[flyte.plugins.sagemaker.CategoricalParameterRange proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L27>`_
+`[flyteidl.plugins.sagemaker.CategoricalParameterRange proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L27>`_
 
 
 .. code-block:: json
@@ -96,24 +96,24 @@ flyte.plugins.sagemaker.CategoricalParameterRange
     "Values": []
   }
 
-.. _api_field_flyte.plugins.sagemaker.CategoricalParameterRange.Name:
+.. _api_field_flyteidl.plugins.sagemaker.CategoricalParameterRange.Name:
 
 Name
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyte.plugins.sagemaker.CategoricalParameterRange.Values:
+.. _api_field_flyteidl.plugins.sagemaker.CategoricalParameterRange.Values:
 
 Values
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 
 
-.. _api_msg_flyte.plugins.sagemaker.ParameterRanges:
+.. _api_msg_flyteidl.plugins.sagemaker.ParameterRanges:
 
-flyte.plugins.sagemaker.ParameterRanges
----------------------------------------
+flyteidl.plugins.sagemaker.ParameterRanges
+------------------------------------------
 
-`[flyte.plugins.sagemaker.ParameterRanges proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L32>`_
+`[flyteidl.plugins.sagemaker.ParameterRanges proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L32>`_
 
 
 .. code-block:: json
@@ -124,29 +124,29 @@ flyte.plugins.sagemaker.ParameterRanges
     "CategoricalParameterRanges": []
   }
 
-.. _api_field_flyte.plugins.sagemaker.ParameterRanges.ContinuousParameterRanges:
+.. _api_field_flyteidl.plugins.sagemaker.ParameterRanges.ContinuousParameterRanges:
 
 ContinuousParameterRanges
-  (:ref:`flyte.plugins.sagemaker.ContinuousParameterRange <api_msg_flyte.plugins.sagemaker.ContinuousParameterRange>`) 
+  (:ref:`flyteidl.plugins.sagemaker.ContinuousParameterRange <api_msg_flyteidl.plugins.sagemaker.ContinuousParameterRange>`) 
   
-.. _api_field_flyte.plugins.sagemaker.ParameterRanges.IntegerParameterRanges:
+.. _api_field_flyteidl.plugins.sagemaker.ParameterRanges.IntegerParameterRanges:
 
 IntegerParameterRanges
-  (:ref:`flyte.plugins.sagemaker.IntegerParameterRange <api_msg_flyte.plugins.sagemaker.IntegerParameterRange>`) 
+  (:ref:`flyteidl.plugins.sagemaker.IntegerParameterRange <api_msg_flyteidl.plugins.sagemaker.IntegerParameterRange>`) 
   
-.. _api_field_flyte.plugins.sagemaker.ParameterRanges.CategoricalParameterRanges:
+.. _api_field_flyteidl.plugins.sagemaker.ParameterRanges.CategoricalParameterRanges:
 
 CategoricalParameterRanges
-  (:ref:`flyte.plugins.sagemaker.CategoricalParameterRange <api_msg_flyte.plugins.sagemaker.CategoricalParameterRange>`) 
+  (:ref:`flyteidl.plugins.sagemaker.CategoricalParameterRange <api_msg_flyteidl.plugins.sagemaker.CategoricalParameterRange>`) 
   
 
 
-.. _api_msg_flyte.plugins.sagemaker.AlgorithmSpecification:
+.. _api_msg_flyteidl.plugins.sagemaker.AlgorithmSpecification:
 
-flyte.plugins.sagemaker.AlgorithmSpecification
-----------------------------------------------
+flyteidl.plugins.sagemaker.AlgorithmSpecification
+-------------------------------------------------
 
-`[flyte.plugins.sagemaker.AlgorithmSpecification proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L38>`_
+`[flyteidl.plugins.sagemaker.AlgorithmSpecification proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L38>`_
 
 
 .. code-block:: json
@@ -158,32 +158,32 @@ flyte.plugins.sagemaker.AlgorithmSpecification
     "MetricDefinitions": []
   }
 
-.. _api_field_flyte.plugins.sagemaker.AlgorithmSpecification.TrainingImage:
+.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingImage:
 
 TrainingImage
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyte.plugins.sagemaker.AlgorithmSpecification.TrainingInputMode:
+.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingInputMode:
 
 TrainingInputMode
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyte.plugins.sagemaker.AlgorithmSpecification.AlgorithmName:
+.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.AlgorithmName:
 
 AlgorithmName
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyte.plugins.sagemaker.AlgorithmSpecification.MetricDefinitions:
+.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinitions:
 
 MetricDefinitions
-  (:ref:`flyte.plugins.sagemaker.AlgorithmSpecification.MetricDefinition <api_msg_flyte.plugins.sagemaker.AlgorithmSpecification.MetricDefinition>`) 
+  (:ref:`flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition <api_msg_flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition>`) 
   
-.. _api_msg_flyte.plugins.sagemaker.AlgorithmSpecification.MetricDefinition:
+.. _api_msg_flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition:
 
-flyte.plugins.sagemaker.AlgorithmSpecification.MetricDefinition
----------------------------------------------------------------
+flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition
+------------------------------------------------------------------
 
-`[flyte.plugins.sagemaker.AlgorithmSpecification.MetricDefinition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L43>`_
+`[flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L43>`_
 
 
 .. code-block:: json
@@ -193,12 +193,12 @@ flyte.plugins.sagemaker.AlgorithmSpecification.MetricDefinition
     "Regex": "..."
   }
 
-.. _api_field_flyte.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Name:
+.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Name:
 
 Name
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyte.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Regex:
+.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Regex:
 
 Regex
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
@@ -206,12 +206,12 @@ Regex
 
 
 
-.. _api_msg_flyte.plugins.sagemaker.ResourceConfig:
+.. _api_msg_flyteidl.plugins.sagemaker.ResourceConfig:
 
-flyte.plugins.sagemaker.ResourceConfig
---------------------------------------
+flyteidl.plugins.sagemaker.ResourceConfig
+-----------------------------------------
 
-`[flyte.plugins.sagemaker.ResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L50>`_
+`[flyteidl.plugins.sagemaker.ResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L50>`_
 
 
 .. code-block:: json
@@ -223,34 +223,34 @@ flyte.plugins.sagemaker.ResourceConfig
     "VolumeKmsKeyId": "..."
   }
 
-.. _api_field_flyte.plugins.sagemaker.ResourceConfig.InstanceType:
+.. _api_field_flyteidl.plugins.sagemaker.ResourceConfig.InstanceType:
 
 InstanceType
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyte.plugins.sagemaker.ResourceConfig.InstanceCount:
+.. _api_field_flyteidl.plugins.sagemaker.ResourceConfig.InstanceCount:
 
 InstanceCount
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyte.plugins.sagemaker.ResourceConfig.VolumeSizeInGB:
+.. _api_field_flyteidl.plugins.sagemaker.ResourceConfig.VolumeSizeInGB:
 
 VolumeSizeInGB
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyte.plugins.sagemaker.ResourceConfig.VolumeKmsKeyId:
+.. _api_field_flyteidl.plugins.sagemaker.ResourceConfig.VolumeKmsKeyId:
 
 VolumeKmsKeyId
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 
 
-.. _api_msg_flyte.plugins.sagemaker.StoppingCondition:
+.. _api_msg_flyteidl.plugins.sagemaker.StoppingCondition:
 
-flyte.plugins.sagemaker.StoppingCondition
------------------------------------------
+flyteidl.plugins.sagemaker.StoppingCondition
+--------------------------------------------
 
-`[flyte.plugins.sagemaker.StoppingCondition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L57>`_
+`[flyteidl.plugins.sagemaker.StoppingCondition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L57>`_
 
 
 .. code-block:: json
@@ -260,24 +260,24 @@ flyte.plugins.sagemaker.StoppingCondition
     "MaxWaitTimeInSeconds": "..."
   }
 
-.. _api_field_flyte.plugins.sagemaker.StoppingCondition.MaxRuntimeInSeconds:
+.. _api_field_flyteidl.plugins.sagemaker.StoppingCondition.MaxRuntimeInSeconds:
 
 MaxRuntimeInSeconds
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyte.plugins.sagemaker.StoppingCondition.MaxWaitTimeInSeconds:
+.. _api_field_flyteidl.plugins.sagemaker.StoppingCondition.MaxWaitTimeInSeconds:
 
 MaxWaitTimeInSeconds
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 
 
-.. _api_msg_flyte.plugins.sagemaker.VpcConfig:
+.. _api_msg_flyteidl.plugins.sagemaker.VpcConfig:
 
-flyte.plugins.sagemaker.VpcConfig
----------------------------------
+flyteidl.plugins.sagemaker.VpcConfig
+------------------------------------
 
-`[flyte.plugins.sagemaker.VpcConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L62>`_
+`[flyteidl.plugins.sagemaker.VpcConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L62>`_
 
 
 .. code-block:: json
@@ -287,24 +287,24 @@ flyte.plugins.sagemaker.VpcConfig
     "Subnets": []
   }
 
-.. _api_field_flyte.plugins.sagemaker.VpcConfig.SecurityGroupIds:
+.. _api_field_flyteidl.plugins.sagemaker.VpcConfig.SecurityGroupIds:
 
 SecurityGroupIds
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyte.plugins.sagemaker.VpcConfig.Subnets:
+.. _api_field_flyteidl.plugins.sagemaker.VpcConfig.Subnets:
 
 Subnets
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 
 
-.. _api_msg_flyte.plugins.sagemaker.SagemakerTrainingJob:
+.. _api_msg_flyteidl.plugins.sagemaker.SagemakerTrainingJob:
 
-flyte.plugins.sagemaker.SagemakerTrainingJob
---------------------------------------------
+flyteidl.plugins.sagemaker.SagemakerTrainingJob
+-----------------------------------------------
 
-`[flyte.plugins.sagemaker.SagemakerTrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L67>`_
+`[flyteidl.plugins.sagemaker.SagemakerTrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L67>`_
 
 
 .. code-block:: json
@@ -319,49 +319,49 @@ flyte.plugins.sagemaker.SagemakerTrainingJob
     "EnableSpotTraining": "..."
   }
 
-.. _api_field_flyte.plugins.sagemaker.SagemakerTrainingJob.Region:
+.. _api_field_flyteidl.plugins.sagemaker.SagemakerTrainingJob.Region:
 
 Region
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyte.plugins.sagemaker.SagemakerTrainingJob.RoleArn:
+.. _api_field_flyteidl.plugins.sagemaker.SagemakerTrainingJob.RoleArn:
 
 RoleArn
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyte.plugins.sagemaker.SagemakerTrainingJob.AlgorithmSpecification:
+.. _api_field_flyteidl.plugins.sagemaker.SagemakerTrainingJob.AlgorithmSpecification:
 
 AlgorithmSpecification
-  (:ref:`flyte.plugins.sagemaker.AlgorithmSpecification <api_msg_flyte.plugins.sagemaker.AlgorithmSpecification>`) 
+  (:ref:`flyteidl.plugins.sagemaker.AlgorithmSpecification <api_msg_flyteidl.plugins.sagemaker.AlgorithmSpecification>`) 
   
-.. _api_field_flyte.plugins.sagemaker.SagemakerTrainingJob.ResourceConfig:
+.. _api_field_flyteidl.plugins.sagemaker.SagemakerTrainingJob.ResourceConfig:
 
 ResourceConfig
-  (:ref:`flyte.plugins.sagemaker.ResourceConfig <api_msg_flyte.plugins.sagemaker.ResourceConfig>`) 
+  (:ref:`flyteidl.plugins.sagemaker.ResourceConfig <api_msg_flyteidl.plugins.sagemaker.ResourceConfig>`) 
   
-.. _api_field_flyte.plugins.sagemaker.SagemakerTrainingJob.StoppingCondition:
+.. _api_field_flyteidl.plugins.sagemaker.SagemakerTrainingJob.StoppingCondition:
 
 StoppingCondition
-  (:ref:`flyte.plugins.sagemaker.StoppingCondition <api_msg_flyte.plugins.sagemaker.StoppingCondition>`) 
+  (:ref:`flyteidl.plugins.sagemaker.StoppingCondition <api_msg_flyteidl.plugins.sagemaker.StoppingCondition>`) 
   
-.. _api_field_flyte.plugins.sagemaker.SagemakerTrainingJob.VpcConfig:
+.. _api_field_flyteidl.plugins.sagemaker.SagemakerTrainingJob.VpcConfig:
 
 VpcConfig
-  (:ref:`flyte.plugins.sagemaker.VpcConfig <api_msg_flyte.plugins.sagemaker.VpcConfig>`) 
+  (:ref:`flyteidl.plugins.sagemaker.VpcConfig <api_msg_flyteidl.plugins.sagemaker.VpcConfig>`) 
   
-.. _api_field_flyte.plugins.sagemaker.SagemakerTrainingJob.EnableSpotTraining:
+.. _api_field_flyteidl.plugins.sagemaker.SagemakerTrainingJob.EnableSpotTraining:
 
 EnableSpotTraining
   (`bool <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 
 
-.. _api_msg_flyte.plugins.sagemaker.HPOJobObjective:
+.. _api_msg_flyteidl.plugins.sagemaker.HPOJobObjective:
 
-flyte.plugins.sagemaker.HPOJobObjective
----------------------------------------
+flyteidl.plugins.sagemaker.HPOJobObjective
+------------------------------------------
 
-`[flyte.plugins.sagemaker.HPOJobObjective proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L82>`_
+`[flyteidl.plugins.sagemaker.HPOJobObjective proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L77>`_
 
 
 .. code-block:: json
@@ -371,24 +371,42 @@ flyte.plugins.sagemaker.HPOJobObjective
     "MetricName": "..."
   }
 
-.. _api_field_flyte.plugins.sagemaker.HPOJobObjective.Type:
+.. _api_field_flyteidl.plugins.sagemaker.HPOJobObjective.Type:
 
 Type
-  (:ref:`flyte.plugins.sagemaker.HPOJobObjectiveType <api_enum_flyte.plugins.sagemaker.HPOJobObjectiveType>`) 
+  (:ref:`flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType <api_enum_flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType>`) 
   
-.. _api_field_flyte.plugins.sagemaker.HPOJobObjective.MetricName:
+.. _api_field_flyteidl.plugins.sagemaker.HPOJobObjective.MetricName:
 
 MetricName
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 
+.. _api_enum_flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType:
 
-.. _api_msg_flyte.plugins.sagemaker.SagemakerHPOJob:
+Enum flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType
+-------------------------------------------------------------------
 
-flyte.plugins.sagemaker.SagemakerHPOJob
----------------------------------------
+`[flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L78>`_
 
-`[flyte.plugins.sagemaker.SagemakerHPOJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L87>`_
+
+.. _api_enum_value_flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType.MINIMIZE:
+
+MINIMIZE
+  *(DEFAULT)* ⁣
+  
+.. _api_enum_value_flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType.MAXIMIZE:
+
+MAXIMIZE
+  ⁣
+  
+
+.. _api_msg_flyteidl.plugins.sagemaker.SagemakerHPOJob:
+
+flyteidl.plugins.sagemaker.SagemakerHPOJob
+------------------------------------------
+
+`[flyteidl.plugins.sagemaker.SagemakerHPOJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L87>`_
 
 
 .. code-block:: json
@@ -402,81 +420,62 @@ flyte.plugins.sagemaker.SagemakerHPOJob
     "TrainingJob": "{...}"
   }
 
-.. _api_field_flyte.plugins.sagemaker.SagemakerHPOJob.Strategy:
+.. _api_field_flyteidl.plugins.sagemaker.SagemakerHPOJob.Strategy:
 
 Strategy
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyte.plugins.sagemaker.SagemakerHPOJob.Objective:
+.. _api_field_flyteidl.plugins.sagemaker.SagemakerHPOJob.Objective:
 
 Objective
-  (:ref:`flyte.plugins.sagemaker.HPOJobObjective <api_msg_flyte.plugins.sagemaker.HPOJobObjective>`) 
+  (:ref:`flyteidl.plugins.sagemaker.HPOJobObjective <api_msg_flyteidl.plugins.sagemaker.HPOJobObjective>`) 
   
-.. _api_field_flyte.plugins.sagemaker.SagemakerHPOJob.MaxNumberOfTrainingJobs:
+.. _api_field_flyteidl.plugins.sagemaker.SagemakerHPOJob.MaxNumberOfTrainingJobs:
 
 MaxNumberOfTrainingJobs
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyte.plugins.sagemaker.SagemakerHPOJob.MaxParallelTrainingJobs:
+.. _api_field_flyteidl.plugins.sagemaker.SagemakerHPOJob.MaxParallelTrainingJobs:
 
 MaxParallelTrainingJobs
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyte.plugins.sagemaker.SagemakerHPOJob.ParameterRanges:
+.. _api_field_flyteidl.plugins.sagemaker.SagemakerHPOJob.ParameterRanges:
 
 ParameterRanges
-  (:ref:`flyte.plugins.sagemaker.ParameterRanges <api_msg_flyte.plugins.sagemaker.ParameterRanges>`) 
+  (:ref:`flyteidl.plugins.sagemaker.ParameterRanges <api_msg_flyteidl.plugins.sagemaker.ParameterRanges>`) 
   
-.. _api_field_flyte.plugins.sagemaker.SagemakerHPOJob.TrainingJob:
+.. _api_field_flyteidl.plugins.sagemaker.SagemakerHPOJob.TrainingJob:
 
 TrainingJob
-  (:ref:`flyte.plugins.sagemaker.SagemakerTrainingJob <api_msg_flyte.plugins.sagemaker.SagemakerTrainingJob>`) 
+  (:ref:`flyteidl.plugins.sagemaker.SagemakerTrainingJob <api_msg_flyteidl.plugins.sagemaker.SagemakerTrainingJob>`) 
   
 
-.. _api_enum_flyte.plugins.sagemaker.HyperparameterScalingType:
+.. _api_enum_flyteidl.plugins.sagemaker.HyperparameterScalingType:
 
-Enum flyte.plugins.sagemaker.HyperparameterScalingType
-------------------------------------------------------
+Enum flyteidl.plugins.sagemaker.HyperparameterScalingType
+---------------------------------------------------------
 
-`[flyte.plugins.sagemaker.HyperparameterScalingType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L6>`_
+`[flyteidl.plugins.sagemaker.HyperparameterScalingType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L6>`_
 
 
-.. _api_enum_value_flyte.plugins.sagemaker.HyperparameterScalingType.AUTO:
+.. _api_enum_value_flyteidl.plugins.sagemaker.HyperparameterScalingType.AUTO:
 
 AUTO
   *(DEFAULT)* ⁣
   
-.. _api_enum_value_flyte.plugins.sagemaker.HyperparameterScalingType.LINEAR:
+.. _api_enum_value_flyteidl.plugins.sagemaker.HyperparameterScalingType.LINEAR:
 
 LINEAR
   ⁣
   
-.. _api_enum_value_flyte.plugins.sagemaker.HyperparameterScalingType.LOGARITHMIC:
+.. _api_enum_value_flyteidl.plugins.sagemaker.HyperparameterScalingType.LOGARITHMIC:
 
 LOGARITHMIC
   ⁣
   
-.. _api_enum_value_flyte.plugins.sagemaker.HyperparameterScalingType.REVERSELOGARITHMIC:
+.. _api_enum_value_flyteidl.plugins.sagemaker.HyperparameterScalingType.REVERSELOGARITHMIC:
 
 REVERSELOGARITHMIC
-  ⁣
-  
-
-.. _api_enum_flyte.plugins.sagemaker.HPOJobObjectiveType:
-
-Enum flyte.plugins.sagemaker.HPOJobObjectiveType
-------------------------------------------------
-
-`[flyte.plugins.sagemaker.HPOJobObjectiveType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/sagemaker.proto#L77>`_
-
-
-.. _api_enum_value_flyte.plugins.sagemaker.HPOJobObjectiveType.MINIMIZE:
-
-MINIMIZE
-  *(DEFAULT)* ⁣
-  
-.. _api_enum_value_flyte.plugins.sagemaker.HPOJobObjectiveType.MAXIMIZE:
-
-MAXIMIZE
   ⁣
   

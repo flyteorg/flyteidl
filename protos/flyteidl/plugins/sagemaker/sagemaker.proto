@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package flyte.plugins.sagemaker;
+package flyteidl.plugins.sagemaker;
 
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
 
@@ -75,12 +75,12 @@ message SagemakerTrainingJob {
     bool EnableSpotTraining = 7;
 }
 
-enum HPOJobObjectiveType {
-    MINIMIZE = 0;
-    MAXIMIZE = 1;
-}
-
 message HPOJobObjective {
+    enum HPOJobObjectiveType {
+        MINIMIZE = 0;
+        MAXIMIZE = 1;
+    }
+
     HPOJobObjectiveType Type = 1;
     string MetricName = 2;
 }
