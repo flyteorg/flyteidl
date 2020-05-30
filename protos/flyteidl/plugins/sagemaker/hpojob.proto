@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package flyteidl.plugins.sagemaker;
+
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
+
+import "flyteidl/plugins/sagemaker/parameterranges.proto";
+import "flyteidl/plugins/sagemaker/trainingjob.proto";
+
+message HPOJobObjective {
+    enum HPOJobObjectiveType {
+        MINIMIZE = 0;
+        MAXIMIZE = 1;
+    }
+
+    HPOJobObjectiveType Type = 1;
+    string MetricName = 2;
+}
+
+message HPOJob {
+    string Strategy = 1;  // will impact output, should be in input, not custom
+    HPOJobObjective Objective = 2; // // will impact output, should be in input, not custom
+    int64 MaxNumberOfTrainingJobs = 3;
+    int64 MaxParallelTrainingJobs = 4;
+    ParameterRanges ParameterRanges = 5;  // will impact output, should be in input, not custom
+    TrainingJob TrainingJob = 6;  // TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
+}
+
+
+

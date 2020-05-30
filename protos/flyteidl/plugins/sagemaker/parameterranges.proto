@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package flyteidl.plugins.sagemaker;
+
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
+
+enum HyperparameterScalingType {
+    AUTO = 0;
+    LINEAR = 1;
+    LOGARITHMIC = 2;
+    REVERSELOGARITHMIC = 3;
+}
+
+message ContinuousParameterRange {
+    double MaxValue = 1;
+    double MinValue = 2;
+    HyperparameterScalingType ScalingType = 3;
+}
+
+message IntegerParameterRange {
+    float MaxValue = 1;
+    float MinValue = 2;
+    HyperparameterScalingType ScalingType = 3;
+}
+
+message CategoricalParameterRange {
+    repeated string Values = 1;
+}
+
+message ParameterRangeOneOf {
+    oneof ParameterRangeTypes {
+        ContinuousParameterRange ContinuousParameterRange = 1;
+        IntegerParameterRange IntegerParameterRange = 2;
+        CategoricalParameterRange CategoricalParameterRange = 3;
+    }
+}
+
+message ParameterRanges {
+    map<string, ParameterRangeOneOf> ParameterRangeMap = 1;
+}

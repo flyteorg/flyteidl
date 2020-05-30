@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package flyteidl.plugins.sagemaker;
+
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
+
+
+message AlgorithmSpecification {
+    string TrainingImage = 1;  // TODO: will this change output? should it be an input instead of a part of the task spec?
+    string TrainingInputMode = 2;
+    string AlgorithmName = 3;   // TODO: will this change output? should it be an input instead of a part of the task spec?
+
+    message MetricDefinition {
+        string Name = 1;
+        string Regex = 2;
+    }
+    repeated MetricDefinition MetricDefinitions = 4;
+}
+
+message ResourceConfig {
+    string InstanceType = 1;
+    int64 InstanceCount = 2;
+    int64 VolumeSizeInGB = 3;
+    string VolumeKmsKeyId = 4;
+}
+
+message StoppingCondition {
+    int64 MaxRuntimeInSeconds = 1;
+    int64 MaxWaitTimeInSeconds = 2;
+}
+
+message VpcConfig {
+    repeated string SecurityGroupIds = 1;
+    repeated string Subnets = 2;
+}
+
+message TrainingJob {
+    string Region = 1;
+    string RoleArn = 2;
+    AlgorithmSpecification AlgorithmSpecification = 3;
+    ResourceConfig ResourceConfig = 4;
+    StoppingCondition StoppingCondition = 5;
+    VpcConfig VpcConfig = 6;
+    bool EnableSpotTraining = 7;
+}
