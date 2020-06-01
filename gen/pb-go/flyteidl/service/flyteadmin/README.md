@@ -260,6 +260,7 @@ Class | Method | HTTP request | Description
  - [SchemaTypeSchemaColumn](docs/SchemaTypeSchemaColumn.md)
  - [SortDirection](docs/SortDirection.md)
  - [TaskLogMessageFormat](docs/TaskLogMessageFormat.md)
+ - [WorkflowMetadataFailureHandlingStrategy](docs/WorkflowMetadataFailureHandlingStrategy.md)
 
 
 ## Documentation For Authorization

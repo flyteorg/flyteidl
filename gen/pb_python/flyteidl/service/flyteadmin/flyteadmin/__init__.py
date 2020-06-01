@@ -211,3 +211,4 @@ from flyteadmin.models.schema_column_schema_column_type import SchemaColumnSchem
 from flyteadmin.models.schema_type_schema_column import SchemaTypeSchemaColumn
 from flyteadmin.models.sort_direction import SortDirection
 from flyteadmin.models.task_log_message_format import TaskLogMessageFormat
+from flyteadmin.models.workflow_metadata_failure_handling_strategy import WorkflowMetadataFailureHandlingStrategy

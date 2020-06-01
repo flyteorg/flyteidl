@@ -824,6 +824,9 @@ export namespace flyteidl {
 
             /** WorkflowMetadata queuingBudget */
             queuingBudget?: (google.protobuf.IDuration|null);
+
+            /** WorkflowMetadata failureHandlingStrategy */
+            failureHandlingStrategy?: (flyteidl.core.WorkflowMetadata.FailureHandlingStrategy|null);
         }
 
         /** Represents a WorkflowMetadata. */
@@ -837,6 +840,9 @@ export namespace flyteidl {
 
             /** WorkflowMetadata queuingBudget. */
             public queuingBudget?: (google.protobuf.IDuration|null);
+
+            /** WorkflowMetadata failureHandlingStrategy. */
+            public failureHandlingStrategy: flyteidl.core.WorkflowMetadata.FailureHandlingStrategy;
 
             /**
              * Creates a new WorkflowMetadata instance using the specified properties.
@@ -869,6 +875,16 @@ export namespace flyteidl {
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace WorkflowMetadata {
+
+            /** FailureHandlingStrategy enum. */
+            enum FailureHandlingStrategy {
+                IMMEDIATELY = 0,
+                WAIT_FOR_RUNNING_NODES = 1,
+                WAIT_FOR_EXECUTABLE_BRANCHES = 2
+            }
         }
 
         /** Properties of a WorkflowMetadataDefaults. */

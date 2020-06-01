@@ -2453,6 +2453,25 @@ definitions:
     - "CSV"
     - "JSON"
     default: "UNKNOWN"
+  WorkflowMetadataFailureHandlingStrategy:
+    type: "string"
+    title: "Failure Handling Strategy"
+    description: "- IMMEDIATELY: IMMEDIATELY instructs the system to fail as soon\
+      \ as a node fails in the workflow. It'll automatically abort\nall currently\
+      \ running nodes and clean up resources before finally marking the workflow executions\
+      \ as failed.\n - WAIT_FOR_RUNNING_NODES: WAIT_FOR_RUNNING_NODES instructs the\
+      \ system not to schedule new nodes to run but to wait for all currently\nrunning\
+      \ nodes to finish executing before cleaning up resources and marking the workflow\
+      \ execution as failed.\n - WAIT_FOR_EXECUTABLE_BRANCHES: WAIT_FOR_EXECUTABLE_BRANCHES\
+      \ instructs the system to make as much progress as it can. The system will not\n\
+      alter the dependencies of the execution graph so any node that depend on the\
+      \ failed node will not be run.\nOther nodes that will be executed to completion\
+      \ before cleaning up resources and marking the workflow\nexecution as failed."
+    enum:
+    - "IMMEDIATELY"
+    - "WAIT_FOR_RUNNING_NODES"
+    - "WAIT_FOR_EXECUTABLE_BRANCHES"
+    default: "IMMEDIATELY"
   adminAbortMetadata:
     type: "object"
     properties:
@@ -6224,6 +6243,7 @@ definitions:
                   map:
                     bindings: {}
               metadata:
+                failure_handling_strategy: {}
                 queuing_budget: "queuing_budget"
               failure_node:
                 branch_node:
@@ -7046,6 +7066,7 @@ definitions:
                   map:
                     bindings: {}
               metadata:
+                failure_handling_strategy: {}
                 queuing_budget: "queuing_budget"
               failure_node:
                 branch_node:
@@ -8118,6 +8139,7 @@ definitions:
                   map:
                     bindings: {}
               metadata:
+                failure_handling_strategy: {}
                 queuing_budget: "queuing_budget"
               failure_node:
                 branch_node:
@@ -9053,6 +9075,7 @@ definitions:
                 map:
                   bindings: {}
             metadata:
+              failure_handling_strategy: {}
               queuing_budget: "queuing_budget"
             failure_node:
               branch_node:
@@ -9875,6 +9898,7 @@ definitions:
                 map:
                   bindings: {}
             metadata:
+              failure_handling_strategy: {}
               queuing_budget: "queuing_budget"
             failure_node:
               branch_node:
@@ -10947,6 +10971,7 @@ definitions:
                 map:
                   bindings: {}
             metadata:
+              failure_handling_strategy: {}
               queuing_budget: "queuing_budget"
             failure_node:
               branch_node:
@@ -11838,6 +11863,7 @@ definitions:
                     map:
                       bindings: {}
                 metadata:
+                  failure_handling_strategy: {}
                   queuing_budget: "queuing_budget"
                 failure_node:
                   branch_node:
@@ -12660,6 +12686,7 @@ definitions:
                     map:
                       bindings: {}
                 metadata:
+                  failure_handling_strategy: {}
                   queuing_budget: "queuing_budget"
                 failure_node:
                   branch_node:
@@ -13732,6 +13759,7 @@ definitions:
                     map:
                       bindings: {}
                 metadata:
+                  failure_handling_strategy: {}
                   queuing_budget: "queuing_budget"
                 failure_node:
                   branch_node:
@@ -14564,6 +14592,7 @@ definitions:
                     map:
                       bindings: {}
                 metadata:
+                  failure_handling_strategy: {}
                   queuing_budget: "queuing_budget"
                 failure_node:
                   branch_node:
@@ -15386,6 +15415,7 @@ definitions:
                     map:
                       bindings: {}
                 metadata:
+                  failure_handling_strategy: {}
                   queuing_budget: "queuing_budget"
                 failure_node:
                   branch_node:
@@ -16458,6 +16488,7 @@ definitions:
                     map:
                       bindings: {}
                 metadata:
+                  failure_handling_strategy: {}
                   queuing_budget: "queuing_budget"
                 failure_node:
                   branch_node:
@@ -17817,6 +17848,7 @@ definitions:
             map:
               bindings: {}
         metadata:
+          failure_handling_strategy: {}
           queuing_budget: "queuing_budget"
         failure_node:
           branch_node:
@@ -18666,6 +18698,7 @@ definitions:
               map:
                 bindings: {}
           metadata:
+            failure_handling_strategy: {}
             queuing_budget: "queuing_budget"
           failure_node:
             branch_node:
@@ -19488,6 +19521,7 @@ definitions:
               map:
                 bindings: {}
           metadata:
+            failure_handling_strategy: {}
             queuing_budget: "queuing_budget"
           failure_node:
             branch_node:
@@ -20560,6 +20594,7 @@ definitions:
               map:
                 bindings: {}
           metadata:
+            failure_handling_strategy: {}
             queuing_budget: "queuing_budget"
           failure_node:
             branch_node:
@@ -22955,8 +22990,14 @@ definitions:
       queuing_budget:
         type: "string"
         description: "Total wait time a workflow can be delayed by queueing."
-    description: "Metadata for the entire workflow.\nTo be used in the future."
+      failure_handling_strategy:
+        description: "Defines how the system should behave when a failure is detected\
+          \ in the workflow execution."
+        $ref: "#/definitions/WorkflowMetadataFailureHandlingStrategy"
+    description: "Metadata for the entire workflow. Defines execution behavior that\
+      \ does not change the final outputs of the workflow."
     example:
+      failure_handling_strategy: {}
       queuing_budget: "queuing_budget"
   coreWorkflowMetadataDefaults:
     type: "object"
@@ -23142,6 +23183,7 @@ definitions:
           map:
             bindings: {}
       metadata:
+        failure_handling_strategy: {}
         queuing_budget: "queuing_budget"
       failure_node:
         branch_node:

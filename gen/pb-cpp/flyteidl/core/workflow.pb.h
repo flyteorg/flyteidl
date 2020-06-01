@@ -30,6 +30,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "flyteidl/core/condition.pb.h"
 #include "flyteidl/core/identifier.pb.h"
@@ -109,6 +110,28 @@ template<> ::flyteidl::core::WorkflowTemplate* Arena::CreateMaybeMessage<::flyte
 namespace flyteidl {
 namespace core {
 
+enum WorkflowMetadata_FailureHandlingStrategy {
+  WorkflowMetadata_FailureHandlingStrategy_IMMEDIATELY = 0,
+  WorkflowMetadata_FailureHandlingStrategy_WAIT_FOR_RUNNING_NODES = 1,
+  WorkflowMetadata_FailureHandlingStrategy_WAIT_FOR_EXECUTABLE_BRANCHES = 2,
+  WorkflowMetadata_FailureHandlingStrategy_WorkflowMetadata_FailureHandlingStrategy_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  WorkflowMetadata_FailureHandlingStrategy_WorkflowMetadata_FailureHandlingStrategy_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool WorkflowMetadata_FailureHandlingStrategy_IsValid(int value);
+const WorkflowMetadata_FailureHandlingStrategy WorkflowMetadata_FailureHandlingStrategy_FailureHandlingStrategy_MIN = WorkflowMetadata_FailureHandlingStrategy_IMMEDIATELY;
+const WorkflowMetadata_FailureHandlingStrategy WorkflowMetadata_FailureHandlingStrategy_FailureHandlingStrategy_MAX = WorkflowMetadata_FailureHandlingStrategy_WAIT_FOR_EXECUTABLE_BRANCHES;
+const int WorkflowMetadata_FailureHandlingStrategy_FailureHandlingStrategy_ARRAYSIZE = WorkflowMetadata_FailureHandlingStrategy_FailureHandlingStrategy_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* WorkflowMetadata_FailureHandlingStrategy_descriptor();
+inline const ::std::string& WorkflowMetadata_FailureHandlingStrategy_Name(WorkflowMetadata_FailureHandlingStrategy value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    WorkflowMetadata_FailureHandlingStrategy_descriptor(), value);
+}
+inline bool WorkflowMetadata_FailureHandlingStrategy_Parse(
+    const ::std::string& name, WorkflowMetadata_FailureHandlingStrategy* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<WorkflowMetadata_FailureHandlingStrategy>(
+    WorkflowMetadata_FailureHandlingStrategy_descriptor(), name, value);
+}
 // ===================================================================
 
 class IfBlock final :
@@ -1414,6 +1437,34 @@ class WorkflowMetadata final :
 
   // nested types ----------------------------------------------------
 
+  typedef WorkflowMetadata_FailureHandlingStrategy FailureHandlingStrategy;
+  static const FailureHandlingStrategy IMMEDIATELY =
+    WorkflowMetadata_FailureHandlingStrategy_IMMEDIATELY;
+  static const FailureHandlingStrategy WAIT_FOR_RUNNING_NODES =
+    WorkflowMetadata_FailureHandlingStrategy_WAIT_FOR_RUNNING_NODES;
+  static const FailureHandlingStrategy WAIT_FOR_EXECUTABLE_BRANCHES =
+    WorkflowMetadata_FailureHandlingStrategy_WAIT_FOR_EXECUTABLE_BRANCHES;
+  static inline bool FailureHandlingStrategy_IsValid(int value) {
+    return WorkflowMetadata_FailureHandlingStrategy_IsValid(value);
+  }
+  static const FailureHandlingStrategy FailureHandlingStrategy_MIN =
+    WorkflowMetadata_FailureHandlingStrategy_FailureHandlingStrategy_MIN;
+  static const FailureHandlingStrategy FailureHandlingStrategy_MAX =
+    WorkflowMetadata_FailureHandlingStrategy_FailureHandlingStrategy_MAX;
+  static const int FailureHandlingStrategy_ARRAYSIZE =
+    WorkflowMetadata_FailureHandlingStrategy_FailureHandlingStrategy_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  FailureHandlingStrategy_descriptor() {
+    return WorkflowMetadata_FailureHandlingStrategy_descriptor();
+  }
+  static inline const ::std::string& FailureHandlingStrategy_Name(FailureHandlingStrategy value) {
+    return WorkflowMetadata_FailureHandlingStrategy_Name(value);
+  }
+  static inline bool FailureHandlingStrategy_Parse(const ::std::string& name,
+      FailureHandlingStrategy* value) {
+    return WorkflowMetadata_FailureHandlingStrategy_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   // .google.protobuf.Duration queuing_budget = 1;
@@ -1425,12 +1476,19 @@ class WorkflowMetadata final :
   ::google::protobuf::Duration* mutable_queuing_budget();
   void set_allocated_queuing_budget(::google::protobuf::Duration* queuing_budget);
 
+  // .flyteidl.core.WorkflowMetadata.FailureHandlingStrategy failure_handling_strategy = 2;
+  void clear_failure_handling_strategy();
+  static const int kFailureHandlingStrategyFieldNumber = 2;
+  ::flyteidl::core::WorkflowMetadata_FailureHandlingStrategy failure_handling_strategy() const;
+  void set_failure_handling_strategy(::flyteidl::core::WorkflowMetadata_FailureHandlingStrategy value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.core.WorkflowMetadata)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::Duration* queuing_budget_;
+  int failure_handling_strategy_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fworkflow_2eproto;
 };
@@ -2902,6 +2960,20 @@ inline void WorkflowMetadata::set_allocated_queuing_budget(::google::protobuf::D
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.WorkflowMetadata.queuing_budget)
 }
 
+// .flyteidl.core.WorkflowMetadata.FailureHandlingStrategy failure_handling_strategy = 2;
+inline void WorkflowMetadata::clear_failure_handling_strategy() {
+  failure_handling_strategy_ = 0;
+}
+inline ::flyteidl::core::WorkflowMetadata_FailureHandlingStrategy WorkflowMetadata::failure_handling_strategy() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.WorkflowMetadata.failure_handling_strategy)
+  return static_cast< ::flyteidl::core::WorkflowMetadata_FailureHandlingStrategy >(failure_handling_strategy_);
+}
+inline void WorkflowMetadata::set_failure_handling_strategy(::flyteidl::core::WorkflowMetadata_FailureHandlingStrategy value) {
+  
+  failure_handling_strategy_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.WorkflowMetadata.failure_handling_strategy)
+}
+
 // -------------------------------------------------------------------
 
 // WorkflowMetadataDefaults
@@ -3252,6 +3324,18 @@ inline void WorkflowTemplate::set_allocated_metadata_defaults(::flyteidl::core::
 
 }  // namespace core
 }  // namespace flyteidl
+
+namespace google {
+namespace protobuf {
+
+template <> struct is_proto_enum< ::flyteidl::core::WorkflowMetadata_FailureHandlingStrategy> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::core::WorkflowMetadata_FailureHandlingStrategy>() {
+  return ::flyteidl::core::WorkflowMetadata_FailureHandlingStrategy_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
 
