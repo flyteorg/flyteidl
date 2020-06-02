@@ -2047,7 +2047,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.core
              * @interface IWorkflowMetadata
              * @property {google.protobuf.IDuration|null} [queuingBudget] WorkflowMetadata queuingBudget
-             * @property {flyteidl.core.WorkflowMetadata.FailureHandlingStrategy|null} [failureHandlingStrategy] WorkflowMetadata failureHandlingStrategy
+             * @property {flyteidl.core.WorkflowMetadata.OnFailurePolicy|null} [onFailure] WorkflowMetadata onFailure
              */
 
             /**
@@ -2074,12 +2074,12 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowMetadata.prototype.queuingBudget = null;
 
             /**
-             * WorkflowMetadata failureHandlingStrategy.
-             * @member {flyteidl.core.WorkflowMetadata.FailureHandlingStrategy} failureHandlingStrategy
+             * WorkflowMetadata onFailure.
+             * @member {flyteidl.core.WorkflowMetadata.OnFailurePolicy} onFailure
              * @memberof flyteidl.core.WorkflowMetadata
              * @instance
              */
-            WorkflowMetadata.prototype.failureHandlingStrategy = 0;
+            WorkflowMetadata.prototype.onFailure = 0;
 
             /**
              * Creates a new WorkflowMetadata instance using the specified properties.
@@ -2107,8 +2107,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.queuingBudget != null && message.hasOwnProperty("queuingBudget"))
                     $root.google.protobuf.Duration.encode(message.queuingBudget, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.failureHandlingStrategy != null && message.hasOwnProperty("failureHandlingStrategy"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.failureHandlingStrategy);
+                if (message.onFailure != null && message.hasOwnProperty("onFailure"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.onFailure);
                 return writer;
             };
 
@@ -2134,7 +2134,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.queuingBudget = $root.google.protobuf.Duration.decode(reader, reader.uint32());
                         break;
                     case 2:
-                        message.failureHandlingStrategy = reader.int32();
+                        message.onFailure = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -2160,10 +2160,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "queuingBudget." + error;
                 }
-                if (message.failureHandlingStrategy != null && message.hasOwnProperty("failureHandlingStrategy"))
-                    switch (message.failureHandlingStrategy) {
+                if (message.onFailure != null && message.hasOwnProperty("onFailure"))
+                    switch (message.onFailure) {
                     default:
-                        return "failureHandlingStrategy: enum value expected";
+                        return "onFailure: enum value expected";
                     case 0:
                     case 1:
                     case 2:
@@ -2173,18 +2173,18 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             /**
-             * FailureHandlingStrategy enum.
-             * @name flyteidl.core.WorkflowMetadata.FailureHandlingStrategy
+             * OnFailurePolicy enum.
+             * @name flyteidl.core.WorkflowMetadata.OnFailurePolicy
              * @enum {string}
-             * @property {number} IMMEDIATELY=0 IMMEDIATELY value
-             * @property {number} WAIT_FOR_RUNNING_NODES=1 WAIT_FOR_RUNNING_NODES value
-             * @property {number} WAIT_FOR_EXECUTABLE_BRANCHES=2 WAIT_FOR_EXECUTABLE_BRANCHES value
+             * @property {number} FAIL_IMMEDIATELY=0 FAIL_IMMEDIATELY value
+             * @property {number} FAIL_AFTER_RUNNING_NODES_COMPLETE=1 FAIL_AFTER_RUNNING_NODES_COMPLETE value
+             * @property {number} FAIL_AFTER_EXECUTABLE_NODES_COMPLETE=2 FAIL_AFTER_EXECUTABLE_NODES_COMPLETE value
              */
-            WorkflowMetadata.FailureHandlingStrategy = (function() {
+            WorkflowMetadata.OnFailurePolicy = (function() {
                 const valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "IMMEDIATELY"] = 0;
-                values[valuesById[1] = "WAIT_FOR_RUNNING_NODES"] = 1;
-                values[valuesById[2] = "WAIT_FOR_EXECUTABLE_BRANCHES"] = 2;
+                values[valuesById[0] = "FAIL_IMMEDIATELY"] = 0;
+                values[valuesById[1] = "FAIL_AFTER_RUNNING_NODES_COMPLETE"] = 1;
+                values[valuesById[2] = "FAIL_AFTER_EXECUTABLE_NODES_COMPLETE"] = 2;
                 return values;
             })();
 
@@ -17936,6 +17936,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.ILabels|null} [labels] ExecutionSpec labels
              * @property {flyteidl.admin.IAnnotations|null} [annotations] ExecutionSpec annotations
              * @property {flyteidl.admin.IAuthRole|null} [authRole] ExecutionSpec authRole
+             * @property {flyteidl.admin.IWorkflowTemplateOverrides|null} [workflowOverrides] ExecutionSpec workflowOverrides
              */
 
             /**
@@ -18017,6 +18018,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             ExecutionSpec.prototype.authRole = null;
 
+            /**
+             * ExecutionSpec workflowOverrides.
+             * @member {flyteidl.admin.IWorkflowTemplateOverrides|null|undefined} workflowOverrides
+             * @memberof flyteidl.admin.ExecutionSpec
+             * @instance
+             */
+            ExecutionSpec.prototype.workflowOverrides = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -18071,6 +18080,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.Annotations.encode(message.annotations, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 if (message.authRole != null && message.hasOwnProperty("authRole"))
                     $root.flyteidl.admin.AuthRole.encode(message.authRole, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+                if (message.workflowOverrides != null && message.hasOwnProperty("workflowOverrides"))
+                    $root.flyteidl.admin.WorkflowTemplateOverrides.encode(message.workflowOverrides, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
                 return writer;
             };
 
@@ -18115,6 +18126,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 16:
                         message.authRole = $root.flyteidl.admin.AuthRole.decode(reader, reader.uint32());
+                        break;
+                    case 17:
+                        message.workflowOverrides = $root.flyteidl.admin.WorkflowTemplateOverrides.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -18180,6 +18194,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.flyteidl.admin.AuthRole.verify(message.authRole);
                     if (error)
                         return "authRole." + error;
+                }
+                if (message.workflowOverrides != null && message.hasOwnProperty("workflowOverrides")) {
+                    let error = $root.flyteidl.admin.WorkflowTemplateOverrides.verify(message.workflowOverrides);
+                    if (error)
+                        return "workflowOverrides." + error;
                 }
                 return null;
             };
@@ -19325,6 +19344,118 @@ export const flyteidl = $root.flyteidl = (() => {
             return Auth;
         })();
 
+        admin.WorkflowTemplateOverrides = (function() {
+
+            /**
+             * Properties of a WorkflowTemplateOverrides.
+             * @memberof flyteidl.admin
+             * @interface IWorkflowTemplateOverrides
+             * @property {flyteidl.core.IWorkflowMetadata|null} [metadata] WorkflowTemplateOverrides metadata
+             */
+
+            /**
+             * Constructs a new WorkflowTemplateOverrides.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a WorkflowTemplateOverrides.
+             * @implements IWorkflowTemplateOverrides
+             * @constructor
+             * @param {flyteidl.admin.IWorkflowTemplateOverrides=} [properties] Properties to set
+             */
+            function WorkflowTemplateOverrides(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * WorkflowTemplateOverrides metadata.
+             * @member {flyteidl.core.IWorkflowMetadata|null|undefined} metadata
+             * @memberof flyteidl.admin.WorkflowTemplateOverrides
+             * @instance
+             */
+            WorkflowTemplateOverrides.prototype.metadata = null;
+
+            /**
+             * Creates a new WorkflowTemplateOverrides instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.WorkflowTemplateOverrides
+             * @static
+             * @param {flyteidl.admin.IWorkflowTemplateOverrides=} [properties] Properties to set
+             * @returns {flyteidl.admin.WorkflowTemplateOverrides} WorkflowTemplateOverrides instance
+             */
+            WorkflowTemplateOverrides.create = function create(properties) {
+                return new WorkflowTemplateOverrides(properties);
+            };
+
+            /**
+             * Encodes the specified WorkflowTemplateOverrides message. Does not implicitly {@link flyteidl.admin.WorkflowTemplateOverrides.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.WorkflowTemplateOverrides
+             * @static
+             * @param {flyteidl.admin.IWorkflowTemplateOverrides} message WorkflowTemplateOverrides message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            WorkflowTemplateOverrides.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.metadata != null && message.hasOwnProperty("metadata"))
+                    $root.flyteidl.core.WorkflowMetadata.encode(message.metadata, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a WorkflowTemplateOverrides message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.WorkflowTemplateOverrides
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.WorkflowTemplateOverrides} WorkflowTemplateOverrides
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            WorkflowTemplateOverrides.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.WorkflowTemplateOverrides();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.metadata = $root.flyteidl.core.WorkflowMetadata.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a WorkflowTemplateOverrides message.
+             * @function verify
+             * @memberof flyteidl.admin.WorkflowTemplateOverrides
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            WorkflowTemplateOverrides.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.metadata != null && message.hasOwnProperty("metadata")) {
+                    let error = $root.flyteidl.core.WorkflowMetadata.verify(message.metadata);
+                    if (error)
+                        return "metadata." + error;
+                }
+                return null;
+            };
+
+            return WorkflowTemplateOverrides;
+        })();
+
         admin.LaunchPlanSpec = (function() {
 
             /**
@@ -19340,6 +19471,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.IAnnotations|null} [annotations] LaunchPlanSpec annotations
              * @property {flyteidl.admin.IAuth|null} [auth] LaunchPlanSpec auth
              * @property {flyteidl.admin.IAuthRole|null} [authRole] LaunchPlanSpec authRole
+             * @property {flyteidl.admin.IWorkflowTemplateOverrides|null} [workflowOverrides] LaunchPlanSpec workflowOverrides
              */
 
             /**
@@ -19430,6 +19562,14 @@ export const flyteidl = $root.flyteidl = (() => {
             LaunchPlanSpec.prototype.authRole = null;
 
             /**
+             * LaunchPlanSpec workflowOverrides.
+             * @member {flyteidl.admin.IWorkflowTemplateOverrides|null|undefined} workflowOverrides
+             * @memberof flyteidl.admin.LaunchPlanSpec
+             * @instance
+             */
+            LaunchPlanSpec.prototype.workflowOverrides = null;
+
+            /**
              * Creates a new LaunchPlanSpec instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.LaunchPlanSpec
@@ -19471,6 +19611,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.Auth.encode(message.auth, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 if (message.authRole != null && message.hasOwnProperty("authRole"))
                     $root.flyteidl.admin.AuthRole.encode(message.authRole, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                if (message.workflowOverrides != null && message.hasOwnProperty("workflowOverrides"))
+                    $root.flyteidl.admin.WorkflowTemplateOverrides.encode(message.workflowOverrides, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                 return writer;
             };
 
@@ -19518,6 +19660,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 9:
                         message.authRole = $root.flyteidl.admin.AuthRole.decode(reader, reader.uint32());
+                        break;
+                    case 10:
+                        message.workflowOverrides = $root.flyteidl.admin.WorkflowTemplateOverrides.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -19580,6 +19725,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.flyteidl.admin.AuthRole.verify(message.authRole);
                     if (error)
                         return "authRole." + error;
+                }
+                if (message.workflowOverrides != null && message.hasOwnProperty("workflowOverrides")) {
+                    let error = $root.flyteidl.admin.WorkflowTemplateOverrides.verify(message.workflowOverrides);
+                    if (error)
+                        return "workflowOverrides." + error;
                 }
                 return null;
             };

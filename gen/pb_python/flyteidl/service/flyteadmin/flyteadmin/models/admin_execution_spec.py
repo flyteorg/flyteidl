@@ -21,6 +21,7 @@ from flyteadmin.models.admin_auth_role import AdminAuthRole  # noqa: F401,E501
 from flyteadmin.models.admin_execution_metadata import AdminExecutionMetadata  # noqa: F401,E501
 from flyteadmin.models.admin_labels import AdminLabels  # noqa: F401,E501
 from flyteadmin.models.admin_notification_list import AdminNotificationList  # noqa: F401,E501
+from flyteadmin.models.admin_workflow_template_overrides import AdminWorkflowTemplateOverrides  # noqa: F401,E501
 from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_literal_map import CoreLiteralMap  # noqa: F401,E501
 
@@ -46,7 +47,8 @@ class AdminExecutionSpec(object):
         'disable_all': 'bool',
         'labels': 'AdminLabels',
         'annotations': 'AdminAnnotations',
-        'auth_role': 'AdminAuthRole'
+        'auth_role': 'AdminAuthRole',
+        'workflow_overrides': 'AdminWorkflowTemplateOverrides'
     }
 
     attribute_map = {
@@ -57,10 +59,11 @@ class AdminExecutionSpec(object):
         'disable_all': 'disable_all',
         'labels': 'labels',
         'annotations': 'annotations',
-        'auth_role': 'auth_role'
+        'auth_role': 'auth_role',
+        'workflow_overrides': 'workflow_overrides'
     }
 
-    def __init__(self, launch_plan=None, inputs=None, metadata=None, notifications=None, disable_all=None, labels=None, annotations=None, auth_role=None):  # noqa: E501
+    def __init__(self, launch_plan=None, inputs=None, metadata=None, notifications=None, disable_all=None, labels=None, annotations=None, auth_role=None, workflow_overrides=None):  # noqa: E501
         """AdminExecutionSpec - a model defined in Swagger"""  # noqa: E501
 
         self._launch_plan = None
@@ -71,6 +74,7 @@ class AdminExecutionSpec(object):
         self._labels = None
         self._annotations = None
         self._auth_role = None
+        self._workflow_overrides = None
         self.discriminator = None
 
         if launch_plan is not None:
@@ -89,6 +93,8 @@ class AdminExecutionSpec(object):
             self.annotations = annotations
         if auth_role is not None:
             self.auth_role = auth_role
+        if workflow_overrides is not None:
+            self.workflow_overrides = workflow_overrides
 
     @property
     def launch_plan(self):
@@ -267,6 +273,29 @@ class AdminExecutionSpec(object):
         """
 
         self._auth_role = auth_role
+
+    @property
+    def workflow_overrides(self):
+        """Gets the workflow_overrides of this AdminExecutionSpec.  # noqa: E501
+
+        Override allowed fields from the original workflow template.  # noqa: E501
+
+        :return: The workflow_overrides of this AdminExecutionSpec.  # noqa: E501
+        :rtype: AdminWorkflowTemplateOverrides
+        """
+        return self._workflow_overrides
+
+    @workflow_overrides.setter
+    def workflow_overrides(self, workflow_overrides):
+        """Sets the workflow_overrides of this AdminExecutionSpec.
+
+        Override allowed fields from the original workflow template.  # noqa: E501
+
+        :param workflow_overrides: The workflow_overrides of this AdminExecutionSpec.  # noqa: E501
+        :type: AdminWorkflowTemplateOverrides
+        """
+
+        self._workflow_overrides = workflow_overrides
 
     def to_dict(self):
         """Returns the model properties as a dict"""

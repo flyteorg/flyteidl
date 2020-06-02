@@ -14897,6 +14897,31 @@ public final class ExecutionOuterClass {
      */
     flyteidl.admin.Common.AuthRoleOrBuilder getAuthRoleOrBuilder();
 
+    /**
+     * <pre>
+     * Override allowed fields from the original workflow template.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 17;</code>
+     */
+    boolean hasWorkflowOverrides();
+    /**
+     * <pre>
+     * Override allowed fields from the original workflow template.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 17;</code>
+     */
+    flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides getWorkflowOverrides();
+    /**
+     * <pre>
+     * Override allowed fields from the original workflow template.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 17;</code>
+     */
+    flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverridesOrBuilder getWorkflowOverridesOrBuilder();
+
     public flyteidl.admin.ExecutionOuterClass.ExecutionSpec.NotificationOverridesCase getNotificationOverridesCase();
   }
   /**
@@ -15036,6 +15061,19 @@ public final class ExecutionOuterClass {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(authRole_);
                 authRole_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 138: {
+              flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.Builder subBuilder = null;
+              if (workflowOverrides_ != null) {
+                subBuilder = workflowOverrides_.toBuilder();
+              }
+              workflowOverrides_ = input.readMessage(flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(workflowOverrides_);
+                workflowOverrides_ = subBuilder.buildPartial();
               }
 
               break;
@@ -15367,6 +15405,39 @@ public final class ExecutionOuterClass {
       return getAuthRole();
     }
 
+    public static final int WORKFLOW_OVERRIDES_FIELD_NUMBER = 17;
+    private flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides workflowOverrides_;
+    /**
+     * <pre>
+     * Override allowed fields from the original workflow template.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 17;</code>
+     */
+    public boolean hasWorkflowOverrides() {
+      return workflowOverrides_ != null;
+    }
+    /**
+     * <pre>
+     * Override allowed fields from the original workflow template.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 17;</code>
+     */
+    public flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides getWorkflowOverrides() {
+      return workflowOverrides_ == null ? flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.getDefaultInstance() : workflowOverrides_;
+    }
+    /**
+     * <pre>
+     * Override allowed fields from the original workflow template.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 17;</code>
+     */
+    public flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverridesOrBuilder getWorkflowOverridesOrBuilder() {
+      return getWorkflowOverrides();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -15405,6 +15476,9 @@ public final class ExecutionOuterClass {
       }
       if (authRole_ != null) {
         output.writeMessage(16, getAuthRole());
+      }
+      if (workflowOverrides_ != null) {
+        output.writeMessage(17, getWorkflowOverrides());
       }
       unknownFields.writeTo(output);
     }
@@ -15447,6 +15521,10 @@ public final class ExecutionOuterClass {
       if (authRole_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(16, getAuthRole());
+      }
+      if (workflowOverrides_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(17, getWorkflowOverrides());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -15492,6 +15570,11 @@ public final class ExecutionOuterClass {
       if (hasAuthRole()) {
         if (!getAuthRole()
             .equals(other.getAuthRole())) return false;
+      }
+      if (hasWorkflowOverrides() != other.hasWorkflowOverrides()) return false;
+      if (hasWorkflowOverrides()) {
+        if (!getWorkflowOverrides()
+            .equals(other.getWorkflowOverrides())) return false;
       }
       if (!getNotificationOverridesCase().equals(other.getNotificationOverridesCase())) return false;
       switch (notificationOverridesCase_) {
@@ -15540,6 +15623,10 @@ public final class ExecutionOuterClass {
       if (hasAuthRole()) {
         hash = (37 * hash) + AUTH_ROLE_FIELD_NUMBER;
         hash = (53 * hash) + getAuthRole().hashCode();
+      }
+      if (hasWorkflowOverrides()) {
+        hash = (37 * hash) + WORKFLOW_OVERRIDES_FIELD_NUMBER;
+        hash = (53 * hash) + getWorkflowOverrides().hashCode();
       }
       switch (notificationOverridesCase_) {
         case 5:
@@ -15728,6 +15815,12 @@ public final class ExecutionOuterClass {
           authRole_ = null;
           authRoleBuilder_ = null;
         }
+        if (workflowOverridesBuilder_ == null) {
+          workflowOverrides_ = null;
+        } else {
+          workflowOverrides_ = null;
+          workflowOverridesBuilder_ = null;
+        }
         notificationOverridesCase_ = 0;
         notificationOverrides_ = null;
         return this;
@@ -15796,6 +15889,11 @@ public final class ExecutionOuterClass {
         } else {
           result.authRole_ = authRoleBuilder_.build();
         }
+        if (workflowOverridesBuilder_ == null) {
+          result.workflowOverrides_ = workflowOverrides_;
+        } else {
+          result.workflowOverrides_ = workflowOverridesBuilder_.build();
+        }
         result.notificationOverridesCase_ = notificationOverridesCase_;
         onBuilt();
         return result;
@@ -15862,6 +15960,9 @@ public final class ExecutionOuterClass {
         }
         if (other.hasAuthRole()) {
           mergeAuthRole(other.getAuthRole());
+        }
+        if (other.hasWorkflowOverrides()) {
+          mergeWorkflowOverrides(other.getWorkflowOverrides());
         }
         switch (other.getNotificationOverridesCase()) {
           case NOTIFICATIONS: {
@@ -17068,6 +17169,159 @@ public final class ExecutionOuterClass {
           authRole_ = null;
         }
         return authRoleBuilder_;
+      }
+
+      private flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides workflowOverrides_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides, flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.Builder, flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverridesOrBuilder> workflowOverridesBuilder_;
+      /**
+       * <pre>
+       * Override allowed fields from the original workflow template.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 17;</code>
+       */
+      public boolean hasWorkflowOverrides() {
+        return workflowOverridesBuilder_ != null || workflowOverrides_ != null;
+      }
+      /**
+       * <pre>
+       * Override allowed fields from the original workflow template.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 17;</code>
+       */
+      public flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides getWorkflowOverrides() {
+        if (workflowOverridesBuilder_ == null) {
+          return workflowOverrides_ == null ? flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.getDefaultInstance() : workflowOverrides_;
+        } else {
+          return workflowOverridesBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Override allowed fields from the original workflow template.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 17;</code>
+       */
+      public Builder setWorkflowOverrides(flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides value) {
+        if (workflowOverridesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          workflowOverrides_ = value;
+          onChanged();
+        } else {
+          workflowOverridesBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Override allowed fields from the original workflow template.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 17;</code>
+       */
+      public Builder setWorkflowOverrides(
+          flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.Builder builderForValue) {
+        if (workflowOverridesBuilder_ == null) {
+          workflowOverrides_ = builderForValue.build();
+          onChanged();
+        } else {
+          workflowOverridesBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Override allowed fields from the original workflow template.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 17;</code>
+       */
+      public Builder mergeWorkflowOverrides(flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides value) {
+        if (workflowOverridesBuilder_ == null) {
+          if (workflowOverrides_ != null) {
+            workflowOverrides_ =
+              flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.newBuilder(workflowOverrides_).mergeFrom(value).buildPartial();
+          } else {
+            workflowOverrides_ = value;
+          }
+          onChanged();
+        } else {
+          workflowOverridesBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Override allowed fields from the original workflow template.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 17;</code>
+       */
+      public Builder clearWorkflowOverrides() {
+        if (workflowOverridesBuilder_ == null) {
+          workflowOverrides_ = null;
+          onChanged();
+        } else {
+          workflowOverrides_ = null;
+          workflowOverridesBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Override allowed fields from the original workflow template.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 17;</code>
+       */
+      public flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.Builder getWorkflowOverridesBuilder() {
+        
+        onChanged();
+        return getWorkflowOverridesFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Override allowed fields from the original workflow template.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 17;</code>
+       */
+      public flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverridesOrBuilder getWorkflowOverridesOrBuilder() {
+        if (workflowOverridesBuilder_ != null) {
+          return workflowOverridesBuilder_.getMessageOrBuilder();
+        } else {
+          return workflowOverrides_ == null ?
+              flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.getDefaultInstance() : workflowOverrides_;
+        }
+      }
+      /**
+       * <pre>
+       * Override allowed fields from the original workflow template.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 17;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides, flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.Builder, flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverridesOrBuilder> 
+          getWorkflowOverridesFieldBuilder() {
+        if (workflowOverridesBuilder_ == null) {
+          workflowOverridesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides, flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.Builder, flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverridesOrBuilder>(
+                  getWorkflowOverrides(),
+                  getParentForChildren(),
+                  isClean());
+          workflowOverrides_ = null;
+        }
+        return workflowOverridesBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -20093,82 +20347,85 @@ public final class ExecutionOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036flyteidl/admin/execution.proto\022\016flytei" +
-      "dl.admin\032\033flyteidl/admin/common.proto\032\034f" +
-      "lyteidl/core/literals.proto\032\035flyteidl/co" +
-      "re/execution.proto\032\036flyteidl/core/identi" +
-      "fier.proto\032\036google/protobuf/duration.pro" +
-      "to\032\037google/protobuf/timestamp.proto\"\237\001\n\026" +
-      "ExecutionCreateRequest\022\017\n\007project\030\001 \001(\t\022" +
-      "\016\n\006domain\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022+\n\004spec\030\004 " +
-      "\001(\0132\035.flyteidl.admin.ExecutionSpec\022)\n\006in" +
-      "puts\030\005 \001(\0132\031.flyteidl.core.LiteralMap\"`\n" +
-      "\030ExecutionRelaunchRequest\0226\n\002id\030\001 \001(\0132*." +
-      "flyteidl.core.WorkflowExecutionIdentifie" +
-      "r\022\014\n\004name\030\003 \001(\t\"Q\n\027ExecutionCreateRespon" +
-      "se\0226\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowE" +
-      "xecutionIdentifier\"U\n\033WorkflowExecutionG" +
-      "etRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Wo" +
-      "rkflowExecutionIdentifier\"\243\001\n\tExecution\022" +
-      "6\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowExec" +
-      "utionIdentifier\022+\n\004spec\030\002 \001(\0132\035.flyteidl" +
-      ".admin.ExecutionSpec\0221\n\007closure\030\003 \001(\0132 ." +
-      "flyteidl.admin.ExecutionClosure\"M\n\rExecu" +
-      "tionList\022-\n\nexecutions\030\001 \003(\0132\031.flyteidl." +
-      "admin.Execution\022\r\n\005token\030\002 \001(\t\"T\n\016Litera" +
-      "lMapBlob\022+\n\006values\030\001 \001(\0132\031.flyteidl.core" +
-      ".LiteralMapH\000\022\r\n\003uri\030\002 \001(\tH\000B\006\n\004data\"1\n\r" +
-      "AbortMetadata\022\r\n\005cause\030\001 \001(\t\022\021\n\tprincipa" +
-      "l\030\002 \001(\t\"\353\004\n\020ExecutionClosure\0221\n\007outputs\030" +
-      "\001 \001(\0132\036.flyteidl.admin.LiteralMapBlobH\000\022" +
-      ".\n\005error\030\002 \001(\0132\035.flyteidl.core.Execution" +
-      "ErrorH\000\022\031\n\013abort_cause\030\n \001(\tB\002\030\001H\000\0227\n\016ab" +
-      "ort_metadata\030\014 \001(\0132\035.flyteidl.admin.Abor" +
-      "tMetadataH\000\0226\n\017computed_inputs\030\003 \001(\0132\031.f" +
-      "lyteidl.core.LiteralMapB\002\030\001\0225\n\005phase\030\004 \001" +
-      "(\0162&.flyteidl.core.WorkflowExecution.Pha" +
-      "se\022.\n\nstarted_at\030\005 \001(\0132\032.google.protobuf" +
-      ".Timestamp\022+\n\010duration\030\006 \001(\0132\031.google.pr" +
-      "otobuf.Duration\022.\n\ncreated_at\030\007 \001(\0132\032.go" +
-      "ogle.protobuf.Timestamp\022.\n\nupdated_at\030\010 " +
-      "\001(\0132\032.google.protobuf.Timestamp\0223\n\rnotif" +
-      "ications\030\t \003(\0132\034.flyteidl.admin.Notifica" +
-      "tion\022.\n\013workflow_id\030\013 \001(\0132\031.flyteidl.cor" +
-      "e.IdentifierB\017\n\routput_result\"+\n\016SystemM" +
-      "etadata\022\031\n\021execution_cluster\030\001 \001(\t\"\313\003\n\021E" +
-      "xecutionMetadata\022=\n\004mode\030\001 \001(\0162/.flyteid" +
-      "l.admin.ExecutionMetadata.ExecutionMode\022" +
-      "\021\n\tprincipal\030\002 \001(\t\022\017\n\007nesting\030\003 \001(\r\0220\n\014s" +
-      "cheduled_at\030\004 \001(\0132\032.google.protobuf.Time" +
-      "stamp\022E\n\025parent_node_execution\030\005 \001(\0132&.f" +
-      "lyteidl.core.NodeExecutionIdentifier\022G\n\023" +
-      "reference_execution\030\020 \001(\0132*.flyteidl.cor" +
-      "e.WorkflowExecutionIdentifier\0227\n\017system_" +
-      "metadata\030\021 \001(\0132\036.flyteidl.admin.SystemMe" +
-      "tadata\"X\n\rExecutionMode\022\n\n\006MANUAL\020\000\022\r\n\tS" +
-      "CHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016" +
-      "CHILD_WORKFLOW\020\004\"G\n\020NotificationList\0223\n\r" +
-      "notifications\030\001 \003(\0132\034.flyteidl.admin.Not" +
-      "ification\"\234\003\n\rExecutionSpec\022.\n\013launch_pl" +
-      "an\030\001 \001(\0132\031.flyteidl.core.Identifier\022-\n\006i" +
-      "nputs\030\002 \001(\0132\031.flyteidl.core.LiteralMapB\002" +
-      "\030\001\0223\n\010metadata\030\003 \001(\0132!.flyteidl.admin.Ex" +
-      "ecutionMetadata\0229\n\rnotifications\030\005 \001(\0132 " +
-      ".flyteidl.admin.NotificationListH\000\022\025\n\013di" +
-      "sable_all\030\006 \001(\010H\000\022&\n\006labels\030\007 \001(\0132\026.flyt" +
-      "eidl.admin.Labels\0220\n\013annotations\030\010 \001(\0132\033" +
-      ".flyteidl.admin.Annotations\022+\n\tauth_role" +
-      "\030\020 \001(\0132\030.flyteidl.admin.AuthRoleB\030\n\026noti" +
-      "fication_overridesJ\004\010\004\020\005\"b\n\031ExecutionTer" +
-      "minateRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.cor" +
-      "e.WorkflowExecutionIdentifier\022\r\n\005cause\030\002" +
-      " \001(\t\"\034\n\032ExecutionTerminateResponse\"Y\n\037Wo" +
-      "rkflowExecutionGetDataRequest\0226\n\002id\030\001 \001(" +
-      "\0132*.flyteidl.core.WorkflowExecutionIdent" +
-      "ifier\"u\n WorkflowExecutionGetDataRespons" +
-      "e\022(\n\007outputs\030\001 \001(\0132\027.flyteidl.admin.UrlB" +
-      "lob\022\'\n\006inputs\030\002 \001(\0132\027.flyteidl.admin.Url" +
-      "BlobB3Z1github.com/lyft/flyteidl/gen/pb-" +
-      "go/flyteidl/adminb\006proto3"
+      "dl.admin\032\033flyteidl/admin/common.proto\032 f" +
+      "lyteidl/admin/launch_plan.proto\032\034flyteid" +
+      "l/core/literals.proto\032\035flyteidl/core/exe" +
+      "cution.proto\032\036flyteidl/core/identifier.p" +
+      "roto\032\036google/protobuf/duration.proto\032\037go" +
+      "ogle/protobuf/timestamp.proto\"\237\001\n\026Execut" +
+      "ionCreateRequest\022\017\n\007project\030\001 \001(\t\022\016\n\006dom" +
+      "ain\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022+\n\004spec\030\004 \001(\0132\035." +
+      "flyteidl.admin.ExecutionSpec\022)\n\006inputs\030\005" +
+      " \001(\0132\031.flyteidl.core.LiteralMap\"`\n\030Execu" +
+      "tionRelaunchRequest\0226\n\002id\030\001 \001(\0132*.flytei" +
+      "dl.core.WorkflowExecutionIdentifier\022\014\n\004n" +
+      "ame\030\003 \001(\t\"Q\n\027ExecutionCreateResponse\0226\n\002" +
+      "id\030\001 \001(\0132*.flyteidl.core.WorkflowExecuti" +
+      "onIdentifier\"U\n\033WorkflowExecutionGetRequ" +
+      "est\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflow" +
+      "ExecutionIdentifier\"\243\001\n\tExecution\0226\n\002id\030" +
+      "\001 \001(\0132*.flyteidl.core.WorkflowExecutionI" +
+      "dentifier\022+\n\004spec\030\002 \001(\0132\035.flyteidl.admin" +
+      ".ExecutionSpec\0221\n\007closure\030\003 \001(\0132 .flytei" +
+      "dl.admin.ExecutionClosure\"M\n\rExecutionLi" +
+      "st\022-\n\nexecutions\030\001 \003(\0132\031.flyteidl.admin." +
+      "Execution\022\r\n\005token\030\002 \001(\t\"T\n\016LiteralMapBl" +
+      "ob\022+\n\006values\030\001 \001(\0132\031.flyteidl.core.Liter" +
+      "alMapH\000\022\r\n\003uri\030\002 \001(\tH\000B\006\n\004data\"1\n\rAbortM" +
+      "etadata\022\r\n\005cause\030\001 \001(\t\022\021\n\tprincipal\030\002 \001(" +
+      "\t\"\353\004\n\020ExecutionClosure\0221\n\007outputs\030\001 \001(\0132" +
+      "\036.flyteidl.admin.LiteralMapBlobH\000\022.\n\005err" +
+      "or\030\002 \001(\0132\035.flyteidl.core.ExecutionErrorH" +
+      "\000\022\031\n\013abort_cause\030\n \001(\tB\002\030\001H\000\0227\n\016abort_me" +
+      "tadata\030\014 \001(\0132\035.flyteidl.admin.AbortMetad" +
+      "ataH\000\0226\n\017computed_inputs\030\003 \001(\0132\031.flyteid" +
+      "l.core.LiteralMapB\002\030\001\0225\n\005phase\030\004 \001(\0162&.f" +
+      "lyteidl.core.WorkflowExecution.Phase\022.\n\n" +
+      "started_at\030\005 \001(\0132\032.google.protobuf.Times" +
+      "tamp\022+\n\010duration\030\006 \001(\0132\031.google.protobuf" +
+      ".Duration\022.\n\ncreated_at\030\007 \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022.\n\nupdated_at\030\010 \001(\0132\032." +
+      "google.protobuf.Timestamp\0223\n\rnotificatio" +
+      "ns\030\t \003(\0132\034.flyteidl.admin.Notification\022." +
+      "\n\013workflow_id\030\013 \001(\0132\031.flyteidl.core.Iden" +
+      "tifierB\017\n\routput_result\"+\n\016SystemMetadat" +
+      "a\022\031\n\021execution_cluster\030\001 \001(\t\"\313\003\n\021Executi" +
+      "onMetadata\022=\n\004mode\030\001 \001(\0162/.flyteidl.admi" +
+      "n.ExecutionMetadata.ExecutionMode\022\021\n\tpri" +
+      "ncipal\030\002 \001(\t\022\017\n\007nesting\030\003 \001(\r\0220\n\014schedul" +
+      "ed_at\030\004 \001(\0132\032.google.protobuf.Timestamp\022" +
+      "E\n\025parent_node_execution\030\005 \001(\0132&.flyteid" +
+      "l.core.NodeExecutionIdentifier\022G\n\023refere" +
+      "nce_execution\030\020 \001(\0132*.flyteidl.core.Work" +
+      "flowExecutionIdentifier\0227\n\017system_metada" +
+      "ta\030\021 \001(\0132\036.flyteidl.admin.SystemMetadata" +
+      "\"X\n\rExecutionMode\022\n\n\006MANUAL\020\000\022\r\n\tSCHEDUL" +
+      "ED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016CHILD_" +
+      "WORKFLOW\020\004\"G\n\020NotificationList\0223\n\rnotifi" +
+      "cations\030\001 \003(\0132\034.flyteidl.admin.Notificat" +
+      "ion\"\343\003\n\rExecutionSpec\022.\n\013launch_plan\030\001 \001" +
+      "(\0132\031.flyteidl.core.Identifier\022-\n\006inputs\030" +
+      "\002 \001(\0132\031.flyteidl.core.LiteralMapB\002\030\001\0223\n\010" +
+      "metadata\030\003 \001(\0132!.flyteidl.admin.Executio" +
+      "nMetadata\0229\n\rnotifications\030\005 \001(\0132 .flyte" +
+      "idl.admin.NotificationListH\000\022\025\n\013disable_" +
+      "all\030\006 \001(\010H\000\022&\n\006labels\030\007 \001(\0132\026.flyteidl.a" +
+      "dmin.Labels\0220\n\013annotations\030\010 \001(\0132\033.flyte" +
+      "idl.admin.Annotations\022+\n\tauth_role\030\020 \001(\013" +
+      "2\030.flyteidl.admin.AuthRole\022E\n\022workflow_o" +
+      "verrides\030\021 \001(\0132).flyteidl.admin.Workflow" +
+      "TemplateOverridesB\030\n\026notification_overri" +
+      "desJ\004\010\004\020\005\"b\n\031ExecutionTerminateRequest\0226" +
+      "\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowExecu" +
+      "tionIdentifier\022\r\n\005cause\030\002 \001(\t\"\034\n\032Executi" +
+      "onTerminateResponse\"Y\n\037WorkflowExecution" +
+      "GetDataRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.co" +
+      "re.WorkflowExecutionIdentifier\"u\n Workfl" +
+      "owExecutionGetDataResponse\022(\n\007outputs\030\001 " +
+      "\001(\0132\027.flyteidl.admin.UrlBlob\022\'\n\006inputs\030\002" +
+      " \001(\0132\027.flyteidl.admin.UrlBlobB3Z1github." +
+      "com/lyft/flyteidl/gen/pb-go/flyteidl/adm" +
+      "inb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -20182,6 +20439,7 @@ public final class ExecutionOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           flyteidl.admin.Common.getDescriptor(),
+          flyteidl.admin.LaunchPlanOuterClass.getDescriptor(),
           flyteidl.core.Literals.getDescriptor(),
           flyteidl.core.Execution.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
@@ -20265,7 +20523,7 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_ExecutionSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionSpec_descriptor,
-        new java.lang.String[] { "LaunchPlan", "Inputs", "Metadata", "Notifications", "DisableAll", "Labels", "Annotations", "AuthRole", "NotificationOverrides", });
+        new java.lang.String[] { "LaunchPlan", "Inputs", "Metadata", "Notifications", "DisableAll", "Labels", "Annotations", "AuthRole", "WorkflowOverrides", "NotificationOverrides", });
     internal_static_flyteidl_admin_ExecutionTerminateRequest_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_flyteidl_admin_ExecutionTerminateRequest_fieldAccessorTable = new
@@ -20291,6 +20549,7 @@ public final class ExecutionOuterClass {
         internal_static_flyteidl_admin_WorkflowExecutionGetDataResponse_descriptor,
         new java.lang.String[] { "Outputs", "Inputs", });
     flyteidl.admin.Common.getDescriptor();
+    flyteidl.admin.LaunchPlanOuterClass.getDescriptor();
     flyteidl.core.Literals.getDescriptor();
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();

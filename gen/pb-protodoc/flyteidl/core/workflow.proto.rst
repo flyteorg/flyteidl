@@ -347,7 +347,7 @@ Metadata for the entire workflow. Defines execution behavior that does not chang
 
   {
     "queuing_budget": "{...}",
-    "failure_handling_strategy": "..."
+    "on_failure": "..."
   }
 
 .. _api_field_flyteidl.core.WorkflowMetadata.queuing_budget:
@@ -356,41 +356,43 @@ queuing_budget
   (:ref:`google.protobuf.Duration <api_msg_google.protobuf.Duration>`) Total wait time a workflow can be delayed by queueing.
   
   
-.. _api_field_flyteidl.core.WorkflowMetadata.failure_handling_strategy:
+.. _api_field_flyteidl.core.WorkflowMetadata.on_failure:
 
-failure_handling_strategy
-  (:ref:`flyteidl.core.WorkflowMetadata.FailureHandlingStrategy <api_enum_flyteidl.core.WorkflowMetadata.FailureHandlingStrategy>`) Defines how the system should behave when a failure is detected in the workflow execution.
+on_failure
+  (:ref:`flyteidl.core.WorkflowMetadata.OnFailurePolicy <api_enum_flyteidl.core.WorkflowMetadata.OnFailurePolicy>`) Defines how the system should behave when a failure is detected in the workflow execution.
   
   
 
-.. _api_enum_flyteidl.core.WorkflowMetadata.FailureHandlingStrategy:
+.. _api_enum_flyteidl.core.WorkflowMetadata.OnFailurePolicy:
 
-Enum flyteidl.core.WorkflowMetadata.FailureHandlingStrategy
------------------------------------------------------------
+Enum flyteidl.core.WorkflowMetadata.OnFailurePolicy
+---------------------------------------------------
 
-`[flyteidl.core.WorkflowMetadata.FailureHandlingStrategy proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L134>`_
+`[flyteidl.core.WorkflowMetadata.OnFailurePolicy proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L134>`_
 
 Failure Handling Strategy
 
-.. _api_enum_value_flyteidl.core.WorkflowMetadata.FailureHandlingStrategy.IMMEDIATELY:
+.. _api_enum_value_flyteidl.core.WorkflowMetadata.OnFailurePolicy.FAIL_IMMEDIATELY:
 
-IMMEDIATELY
-  *(DEFAULT)* ⁣IMMEDIATELY instructs the system to fail as soon as a node fails in the workflow. It'll automatically abort
-  all currently running nodes and clean up resources before finally marking the workflow executions as failed.
+FAIL_IMMEDIATELY
+  *(DEFAULT)* ⁣FAIL_IMMEDIATELY instructs the system to fail as soon as a node fails in the workflow. It'll automatically
+  abort all currently running nodes and clean up resources before finally marking the workflow executions as
+  failed.
   
   
-.. _api_enum_value_flyteidl.core.WorkflowMetadata.FailureHandlingStrategy.WAIT_FOR_RUNNING_NODES:
+.. _api_enum_value_flyteidl.core.WorkflowMetadata.OnFailurePolicy.FAIL_AFTER_RUNNING_NODES_COMPLETE:
 
-WAIT_FOR_RUNNING_NODES
-  ⁣WAIT_FOR_RUNNING_NODES instructs the system not to schedule new nodes to run but to wait for all currently
-  running nodes to finish executing before cleaning up resources and marking the workflow execution as failed.
+FAIL_AFTER_RUNNING_NODES_COMPLETE
+  ⁣FAIL_AFTER_RUNNING_NODES_COMPLETE instructs the system not to schedule new nodes to run but to wait for all
+  currently running nodes to finish executing before cleaning up resources and marking the workflow execution
+  as failed.
   
   
-.. _api_enum_value_flyteidl.core.WorkflowMetadata.FailureHandlingStrategy.WAIT_FOR_EXECUTABLE_BRANCHES:
+.. _api_enum_value_flyteidl.core.WorkflowMetadata.OnFailurePolicy.FAIL_AFTER_EXECUTABLE_NODES_COMPLETE:
 
-WAIT_FOR_EXECUTABLE_BRANCHES
-  ⁣WAIT_FOR_EXECUTABLE_BRANCHES instructs the system to make as much progress as it can. The system will not
-  alter the dependencies of the execution graph so any node that depend on the failed node will not be run.
+FAIL_AFTER_EXECUTABLE_NODES_COMPLETE
+  ⁣FAIL_AFTER_EXECUTABLE_NODES_COMPLETE instructs the system to make as much progress as it can. The system will
+  not alter the dependencies of the execution graph so any node that depend on the failed node will not be run.
   Other nodes that will be executed to completion before cleaning up resources and marking the workflow
   execution as failed.
   
@@ -401,7 +403,7 @@ WAIT_FOR_EXECUTABLE_BRANCHES
 flyteidl.core.WorkflowMetadataDefaults
 --------------------------------------
 
-`[flyteidl.core.WorkflowMetadataDefaults proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L155>`_
+`[flyteidl.core.WorkflowMetadataDefaults proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L157>`_
 
 Default Workflow Metadata for the entire workflow.
 
@@ -426,7 +428,7 @@ interruptible
 flyteidl.core.WorkflowTemplate
 ------------------------------
 
-`[flyteidl.core.WorkflowTemplate proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L164>`_
+`[flyteidl.core.WorkflowTemplate proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/core/workflow.proto#L166>`_
 
 Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,
 directed acyclic graph.

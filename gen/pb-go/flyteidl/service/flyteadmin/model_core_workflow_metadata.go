@@ -14,5 +14,5 @@ type CoreWorkflowMetadata struct {
 	// Total wait time a workflow can be delayed by queueing.
 	QueuingBudget string `json:"queuing_budget,omitempty"`
 	// Defines how the system should behave when a failure is detected in the workflow execution.
-	FailureHandlingStrategy *WorkflowMetadataFailureHandlingStrategy `json:"failure_handling_strategy,omitempty"`
+	OnFailure *WorkflowMetadataOnFailurePolicy `json:"on_failure,omitempty"`
 }

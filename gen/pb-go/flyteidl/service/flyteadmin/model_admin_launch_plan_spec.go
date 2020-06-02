@@ -23,4 +23,6 @@ type AdminLaunchPlanSpec struct {
 	// Indicates the permission associated with workflow executions triggered with this launch plan.
 	Auth *AdminAuth `json:"auth,omitempty"`
 	AuthRole *AdminAuthRole `json:"auth_role,omitempty"`
+	// Override allowed fields from the original workflow template.
+	WorkflowOverrides *AdminWorkflowTemplateOverrides `json:"workflow_overrides,omitempty"`
 }

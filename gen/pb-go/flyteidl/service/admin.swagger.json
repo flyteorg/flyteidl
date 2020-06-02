@@ -2822,15 +2822,15 @@
       ],
       "default": "UNKNOWN"
     },
-    "WorkflowMetadataFailureHandlingStrategy": {
+    "WorkflowMetadataOnFailurePolicy": {
       "type": "string",
       "enum": [
-        "IMMEDIATELY",
-        "WAIT_FOR_RUNNING_NODES",
-        "WAIT_FOR_EXECUTABLE_BRANCHES"
+        "FAIL_IMMEDIATELY",
+        "FAIL_AFTER_RUNNING_NODES_COMPLETE",
+        "FAIL_AFTER_EXECUTABLE_NODES_COMPLETE"
       ],
-      "default": "IMMEDIATELY",
-      "description": "- IMMEDIATELY: IMMEDIATELY instructs the system to fail as soon as a node fails in the workflow. It'll automatically abort\nall currently running nodes and clean up resources before finally marking the workflow executions as failed.\n - WAIT_FOR_RUNNING_NODES: WAIT_FOR_RUNNING_NODES instructs the system not to schedule new nodes to run but to wait for all currently\nrunning nodes to finish executing before cleaning up resources and marking the workflow execution as failed.\n - WAIT_FOR_EXECUTABLE_BRANCHES: WAIT_FOR_EXECUTABLE_BRANCHES instructs the system to make as much progress as it can. The system will not\nalter the dependencies of the execution graph so any node that depend on the failed node will not be run.\nOther nodes that will be executed to completion before cleaning up resources and marking the workflow\nexecution as failed.",
+      "default": "FAIL_IMMEDIATELY",
+      "description": "- FAIL_IMMEDIATELY: FAIL_IMMEDIATELY instructs the system to fail as soon as a node fails in the workflow. It'll automatically\nabort all currently running nodes and clean up resources before finally marking the workflow executions as\nfailed.\n - FAIL_AFTER_RUNNING_NODES_COMPLETE: FAIL_AFTER_RUNNING_NODES_COMPLETE instructs the system not to schedule new nodes to run but to wait for all\ncurrently running nodes to finish executing before cleaning up resources and marking the workflow execution\nas failed.\n - FAIL_AFTER_EXECUTABLE_NODES_COMPLETE: FAIL_AFTER_EXECUTABLE_NODES_COMPLETE instructs the system to make as much progress as it can. The system will\nnot alter the dependencies of the execution graph so any node that depend on the failed node will not be run.\nOther nodes that will be executed to completion before cleaning up resources and marking the workflow\nexecution as failed.",
       "title": "Failure Handling Strategy"
     },
     "adminAbortMetadata": {
@@ -3154,6 +3154,10 @@
         "auth_role": {
           "$ref": "#/definitions/adminAuthRole",
           "description": "Optional: auth override to apply this execution."
+        },
+        "workflow_overrides": {
+          "$ref": "#/definitions/adminWorkflowTemplateOverrides",
+          "description": "Override allowed fields from the original workflow template."
         }
       },
       "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes.."
@@ -3341,6 +3345,10 @@
         },
         "auth_role": {
           "$ref": "#/definitions/adminAuthRole"
+        },
+        "workflow_overrides": {
+          "$ref": "#/definitions/adminWorkflowTemplateOverrides",
+          "description": "Override allowed fields from the original workflow template."
         }
       },
       "description": "User-provided launch plan definition and configuration values."
@@ -4237,6 +4245,16 @@
         }
       },
       "description": "Represents a structure that encapsulates the specification of the workflow."
+    },
+    "adminWorkflowTemplateOverrides": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/coreWorkflowMetadata",
+          "title": "If a field is set in metadata, it'll override the one from the original workflow template.\nIf it's not-set, the system will continue to use the value from the original workflow template.\nTODO: Should we just require a full replacement of metadata to avoid having to deal with merges?"
+        }
+      },
+      "description": "Defines allowed overrides for the workflow template."
     },
     "coreAlias": {
       "type": "object",
@@ -5271,8 +5289,8 @@
           "type": "string",
           "description": "Total wait time a workflow can be delayed by queueing."
         },
-        "failure_handling_strategy": {
-          "$ref": "#/definitions/WorkflowMetadataFailureHandlingStrategy",
+        "on_failure": {
+          "$ref": "#/definitions/WorkflowMetadataOnFailurePolicy",
           "description": "Defines how the system should behave when a failure is detected in the workflow execution."
         }
       },

@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.workflow_metadata_failure_handling_strategy import WorkflowMetadataFailureHandlingStrategy  # noqa: E501
+from flyteadmin.models.admin_workflow_template_overrides import AdminWorkflowTemplateOverrides  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestWorkflowMetadataFailureHandlingStrategy(unittest.TestCase):
-    """WorkflowMetadataFailureHandlingStrategy unit test stubs"""
+class TestAdminWorkflowTemplateOverrides(unittest.TestCase):
+    """AdminWorkflowTemplateOverrides unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestWorkflowMetadataFailureHandlingStrategy(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testWorkflowMetadataFailureHandlingStrategy(self):
-        """Test WorkflowMetadataFailureHandlingStrategy"""
+    def testAdminWorkflowTemplateOverrides(self):
+        """Test AdminWorkflowTemplateOverrides"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.workflow_metadata_failure_handling_strategy.WorkflowMetadataFailureHandlingStrategy()  # noqa: E501
+        # model = flyteadmin.models.admin_workflow_template_overrides.AdminWorkflowTemplateOverrides()  # noqa: E501
         pass
 
 

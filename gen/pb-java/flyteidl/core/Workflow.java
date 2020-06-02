@@ -10229,17 +10229,17 @@ public final class Workflow {
      * Defines how the system should behave when a failure is detected in the workflow execution.
      * </pre>
      *
-     * <code>.flyteidl.core.WorkflowMetadata.FailureHandlingStrategy failure_handling_strategy = 2;</code>
+     * <code>.flyteidl.core.WorkflowMetadata.OnFailurePolicy on_failure = 2;</code>
      */
-    int getFailureHandlingStrategyValue();
+    int getOnFailureValue();
     /**
      * <pre>
      * Defines how the system should behave when a failure is detected in the workflow execution.
      * </pre>
      *
-     * <code>.flyteidl.core.WorkflowMetadata.FailureHandlingStrategy failure_handling_strategy = 2;</code>
+     * <code>.flyteidl.core.WorkflowMetadata.OnFailurePolicy on_failure = 2;</code>
      */
-    flyteidl.core.Workflow.WorkflowMetadata.FailureHandlingStrategy getFailureHandlingStrategy();
+    flyteidl.core.Workflow.WorkflowMetadata.OnFailurePolicy getOnFailure();
   }
   /**
    * <pre>
@@ -10258,7 +10258,7 @@ public final class Workflow {
       super(builder);
     }
     private WorkflowMetadata() {
-      failureHandlingStrategy_ = 0;
+      onFailure_ = 0;
     }
 
     @java.lang.Override
@@ -10301,7 +10301,7 @@ public final class Workflow {
             case 16: {
               int rawValue = input.readEnum();
 
-              failureHandlingStrategy_ = rawValue;
+              onFailure_ = rawValue;
               break;
             }
             default: {
@@ -10341,71 +10341,75 @@ public final class Workflow {
      * Failure Handling Strategy
      * </pre>
      *
-     * Protobuf enum {@code flyteidl.core.WorkflowMetadata.FailureHandlingStrategy}
+     * Protobuf enum {@code flyteidl.core.WorkflowMetadata.OnFailurePolicy}
      */
-    public enum FailureHandlingStrategy
+    public enum OnFailurePolicy
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <pre>
-       * IMMEDIATELY instructs the system to fail as soon as a node fails in the workflow. It'll automatically abort
-       * all currently running nodes and clean up resources before finally marking the workflow executions as failed.
+       * FAIL_IMMEDIATELY instructs the system to fail as soon as a node fails in the workflow. It'll automatically
+       * abort all currently running nodes and clean up resources before finally marking the workflow executions as
+       * failed.
        * </pre>
        *
-       * <code>IMMEDIATELY = 0;</code>
+       * <code>FAIL_IMMEDIATELY = 0;</code>
        */
-      IMMEDIATELY(0),
+      FAIL_IMMEDIATELY(0),
       /**
        * <pre>
-       * WAIT_FOR_RUNNING_NODES instructs the system not to schedule new nodes to run but to wait for all currently
-       * running nodes to finish executing before cleaning up resources and marking the workflow execution as failed.
+       * FAIL_AFTER_RUNNING_NODES_COMPLETE instructs the system not to schedule new nodes to run but to wait for all
+       * currently running nodes to finish executing before cleaning up resources and marking the workflow execution
+       * as failed.
        * </pre>
        *
-       * <code>WAIT_FOR_RUNNING_NODES = 1;</code>
+       * <code>FAIL_AFTER_RUNNING_NODES_COMPLETE = 1;</code>
        */
-      WAIT_FOR_RUNNING_NODES(1),
+      FAIL_AFTER_RUNNING_NODES_COMPLETE(1),
       /**
        * <pre>
-       * WAIT_FOR_EXECUTABLE_BRANCHES instructs the system to make as much progress as it can. The system will not
-       * alter the dependencies of the execution graph so any node that depend on the failed node will not be run.
+       * FAIL_AFTER_EXECUTABLE_NODES_COMPLETE instructs the system to make as much progress as it can. The system will
+       * not alter the dependencies of the execution graph so any node that depend on the failed node will not be run.
        * Other nodes that will be executed to completion before cleaning up resources and marking the workflow
        * execution as failed.
        * </pre>
        *
-       * <code>WAIT_FOR_EXECUTABLE_BRANCHES = 2;</code>
+       * <code>FAIL_AFTER_EXECUTABLE_NODES_COMPLETE = 2;</code>
        */
-      WAIT_FOR_EXECUTABLE_BRANCHES(2),
+      FAIL_AFTER_EXECUTABLE_NODES_COMPLETE(2),
       UNRECOGNIZED(-1),
       ;
 
       /**
        * <pre>
-       * IMMEDIATELY instructs the system to fail as soon as a node fails in the workflow. It'll automatically abort
-       * all currently running nodes and clean up resources before finally marking the workflow executions as failed.
+       * FAIL_IMMEDIATELY instructs the system to fail as soon as a node fails in the workflow. It'll automatically
+       * abort all currently running nodes and clean up resources before finally marking the workflow executions as
+       * failed.
        * </pre>
        *
-       * <code>IMMEDIATELY = 0;</code>
+       * <code>FAIL_IMMEDIATELY = 0;</code>
        */
-      public static final int IMMEDIATELY_VALUE = 0;
+      public static final int FAIL_IMMEDIATELY_VALUE = 0;
       /**
        * <pre>
-       * WAIT_FOR_RUNNING_NODES instructs the system not to schedule new nodes to run but to wait for all currently
-       * running nodes to finish executing before cleaning up resources and marking the workflow execution as failed.
+       * FAIL_AFTER_RUNNING_NODES_COMPLETE instructs the system not to schedule new nodes to run but to wait for all
+       * currently running nodes to finish executing before cleaning up resources and marking the workflow execution
+       * as failed.
        * </pre>
        *
-       * <code>WAIT_FOR_RUNNING_NODES = 1;</code>
+       * <code>FAIL_AFTER_RUNNING_NODES_COMPLETE = 1;</code>
        */
-      public static final int WAIT_FOR_RUNNING_NODES_VALUE = 1;
+      public static final int FAIL_AFTER_RUNNING_NODES_COMPLETE_VALUE = 1;
       /**
        * <pre>
-       * WAIT_FOR_EXECUTABLE_BRANCHES instructs the system to make as much progress as it can. The system will not
-       * alter the dependencies of the execution graph so any node that depend on the failed node will not be run.
+       * FAIL_AFTER_EXECUTABLE_NODES_COMPLETE instructs the system to make as much progress as it can. The system will
+       * not alter the dependencies of the execution graph so any node that depend on the failed node will not be run.
        * Other nodes that will be executed to completion before cleaning up resources and marking the workflow
        * execution as failed.
        * </pre>
        *
-       * <code>WAIT_FOR_EXECUTABLE_BRANCHES = 2;</code>
+       * <code>FAIL_AFTER_EXECUTABLE_NODES_COMPLETE = 2;</code>
        */
-      public static final int WAIT_FOR_EXECUTABLE_BRANCHES_VALUE = 2;
+      public static final int FAIL_AFTER_EXECUTABLE_NODES_COMPLETE_VALUE = 2;
 
 
       public final int getNumber() {
@@ -10420,28 +10424,28 @@ public final class Workflow {
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static FailureHandlingStrategy valueOf(int value) {
+      public static OnFailurePolicy valueOf(int value) {
         return forNumber(value);
       }
 
-      public static FailureHandlingStrategy forNumber(int value) {
+      public static OnFailurePolicy forNumber(int value) {
         switch (value) {
-          case 0: return IMMEDIATELY;
-          case 1: return WAIT_FOR_RUNNING_NODES;
-          case 2: return WAIT_FOR_EXECUTABLE_BRANCHES;
+          case 0: return FAIL_IMMEDIATELY;
+          case 1: return FAIL_AFTER_RUNNING_NODES_COMPLETE;
+          case 2: return FAIL_AFTER_EXECUTABLE_NODES_COMPLETE;
           default: return null;
         }
       }
 
-      public static com.google.protobuf.Internal.EnumLiteMap<FailureHandlingStrategy>
+      public static com.google.protobuf.Internal.EnumLiteMap<OnFailurePolicy>
           internalGetValueMap() {
         return internalValueMap;
       }
       private static final com.google.protobuf.Internal.EnumLiteMap<
-          FailureHandlingStrategy> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<FailureHandlingStrategy>() {
-              public FailureHandlingStrategy findValueByNumber(int number) {
-                return FailureHandlingStrategy.forNumber(number);
+          OnFailurePolicy> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<OnFailurePolicy>() {
+              public OnFailurePolicy findValueByNumber(int number) {
+                return OnFailurePolicy.forNumber(number);
               }
             };
 
@@ -10458,9 +10462,9 @@ public final class Workflow {
         return flyteidl.core.Workflow.WorkflowMetadata.getDescriptor().getEnumTypes().get(0);
       }
 
-      private static final FailureHandlingStrategy[] VALUES = values();
+      private static final OnFailurePolicy[] VALUES = values();
 
-      public static FailureHandlingStrategy valueOf(
+      public static OnFailurePolicy valueOf(
           com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
           throw new java.lang.IllegalArgumentException(
@@ -10474,11 +10478,11 @@ public final class Workflow {
 
       private final int value;
 
-      private FailureHandlingStrategy(int value) {
+      private OnFailurePolicy(int value) {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:flyteidl.core.WorkflowMetadata.FailureHandlingStrategy)
+      // @@protoc_insertion_point(enum_scope:flyteidl.core.WorkflowMetadata.OnFailurePolicy)
     }
 
     public static final int QUEUING_BUDGET_FIELD_NUMBER = 1;
@@ -10514,29 +10518,29 @@ public final class Workflow {
       return getQueuingBudget();
     }
 
-    public static final int FAILURE_HANDLING_STRATEGY_FIELD_NUMBER = 2;
-    private int failureHandlingStrategy_;
+    public static final int ON_FAILURE_FIELD_NUMBER = 2;
+    private int onFailure_;
     /**
      * <pre>
      * Defines how the system should behave when a failure is detected in the workflow execution.
      * </pre>
      *
-     * <code>.flyteidl.core.WorkflowMetadata.FailureHandlingStrategy failure_handling_strategy = 2;</code>
+     * <code>.flyteidl.core.WorkflowMetadata.OnFailurePolicy on_failure = 2;</code>
      */
-    public int getFailureHandlingStrategyValue() {
-      return failureHandlingStrategy_;
+    public int getOnFailureValue() {
+      return onFailure_;
     }
     /**
      * <pre>
      * Defines how the system should behave when a failure is detected in the workflow execution.
      * </pre>
      *
-     * <code>.flyteidl.core.WorkflowMetadata.FailureHandlingStrategy failure_handling_strategy = 2;</code>
+     * <code>.flyteidl.core.WorkflowMetadata.OnFailurePolicy on_failure = 2;</code>
      */
-    public flyteidl.core.Workflow.WorkflowMetadata.FailureHandlingStrategy getFailureHandlingStrategy() {
+    public flyteidl.core.Workflow.WorkflowMetadata.OnFailurePolicy getOnFailure() {
       @SuppressWarnings("deprecation")
-      flyteidl.core.Workflow.WorkflowMetadata.FailureHandlingStrategy result = flyteidl.core.Workflow.WorkflowMetadata.FailureHandlingStrategy.valueOf(failureHandlingStrategy_);
-      return result == null ? flyteidl.core.Workflow.WorkflowMetadata.FailureHandlingStrategy.UNRECOGNIZED : result;
+      flyteidl.core.Workflow.WorkflowMetadata.OnFailurePolicy result = flyteidl.core.Workflow.WorkflowMetadata.OnFailurePolicy.valueOf(onFailure_);
+      return result == null ? flyteidl.core.Workflow.WorkflowMetadata.OnFailurePolicy.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -10556,8 +10560,8 @@ public final class Workflow {
       if (queuingBudget_ != null) {
         output.writeMessage(1, getQueuingBudget());
       }
-      if (failureHandlingStrategy_ != flyteidl.core.Workflow.WorkflowMetadata.FailureHandlingStrategy.IMMEDIATELY.getNumber()) {
-        output.writeEnum(2, failureHandlingStrategy_);
+      if (onFailure_ != flyteidl.core.Workflow.WorkflowMetadata.OnFailurePolicy.FAIL_IMMEDIATELY.getNumber()) {
+        output.writeEnum(2, onFailure_);
       }
       unknownFields.writeTo(output);
     }
@@ -10572,9 +10576,9 @@ public final class Workflow {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getQueuingBudget());
       }
-      if (failureHandlingStrategy_ != flyteidl.core.Workflow.WorkflowMetadata.FailureHandlingStrategy.IMMEDIATELY.getNumber()) {
+      if (onFailure_ != flyteidl.core.Workflow.WorkflowMetadata.OnFailurePolicy.FAIL_IMMEDIATELY.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, failureHandlingStrategy_);
+          .computeEnumSize(2, onFailure_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10596,7 +10600,7 @@ public final class Workflow {
         if (!getQueuingBudget()
             .equals(other.getQueuingBudget())) return false;
       }
-      if (failureHandlingStrategy_ != other.failureHandlingStrategy_) return false;
+      if (onFailure_ != other.onFailure_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10612,8 +10616,8 @@ public final class Workflow {
         hash = (37 * hash) + QUEUING_BUDGET_FIELD_NUMBER;
         hash = (53 * hash) + getQueuingBudget().hashCode();
       }
-      hash = (37 * hash) + FAILURE_HANDLING_STRATEGY_FIELD_NUMBER;
-      hash = (53 * hash) + failureHandlingStrategy_;
+      hash = (37 * hash) + ON_FAILURE_FIELD_NUMBER;
+      hash = (53 * hash) + onFailure_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10757,7 +10761,7 @@ public final class Workflow {
           queuingBudget_ = null;
           queuingBudgetBuilder_ = null;
         }
-        failureHandlingStrategy_ = 0;
+        onFailure_ = 0;
 
         return this;
       }
@@ -10790,7 +10794,7 @@ public final class Workflow {
         } else {
           result.queuingBudget_ = queuingBudgetBuilder_.build();
         }
-        result.failureHandlingStrategy_ = failureHandlingStrategy_;
+        result.onFailure_ = onFailure_;
         onBuilt();
         return result;
       }
@@ -10842,8 +10846,8 @@ public final class Workflow {
         if (other.hasQueuingBudget()) {
           mergeQueuingBudget(other.getQueuingBudget());
         }
-        if (other.failureHandlingStrategy_ != 0) {
-          setFailureHandlingStrategyValue(other.getFailureHandlingStrategyValue());
+        if (other.onFailure_ != 0) {
+          setOnFailureValue(other.getOnFailureValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11027,26 +11031,26 @@ public final class Workflow {
         return queuingBudgetBuilder_;
       }
 
-      private int failureHandlingStrategy_ = 0;
+      private int onFailure_ = 0;
       /**
        * <pre>
        * Defines how the system should behave when a failure is detected in the workflow execution.
        * </pre>
        *
-       * <code>.flyteidl.core.WorkflowMetadata.FailureHandlingStrategy failure_handling_strategy = 2;</code>
+       * <code>.flyteidl.core.WorkflowMetadata.OnFailurePolicy on_failure = 2;</code>
        */
-      public int getFailureHandlingStrategyValue() {
-        return failureHandlingStrategy_;
+      public int getOnFailureValue() {
+        return onFailure_;
       }
       /**
        * <pre>
        * Defines how the system should behave when a failure is detected in the workflow execution.
        * </pre>
        *
-       * <code>.flyteidl.core.WorkflowMetadata.FailureHandlingStrategy failure_handling_strategy = 2;</code>
+       * <code>.flyteidl.core.WorkflowMetadata.OnFailurePolicy on_failure = 2;</code>
        */
-      public Builder setFailureHandlingStrategyValue(int value) {
-        failureHandlingStrategy_ = value;
+      public Builder setOnFailureValue(int value) {
+        onFailure_ = value;
         onChanged();
         return this;
       }
@@ -11055,26 +11059,26 @@ public final class Workflow {
        * Defines how the system should behave when a failure is detected in the workflow execution.
        * </pre>
        *
-       * <code>.flyteidl.core.WorkflowMetadata.FailureHandlingStrategy failure_handling_strategy = 2;</code>
+       * <code>.flyteidl.core.WorkflowMetadata.OnFailurePolicy on_failure = 2;</code>
        */
-      public flyteidl.core.Workflow.WorkflowMetadata.FailureHandlingStrategy getFailureHandlingStrategy() {
+      public flyteidl.core.Workflow.WorkflowMetadata.OnFailurePolicy getOnFailure() {
         @SuppressWarnings("deprecation")
-        flyteidl.core.Workflow.WorkflowMetadata.FailureHandlingStrategy result = flyteidl.core.Workflow.WorkflowMetadata.FailureHandlingStrategy.valueOf(failureHandlingStrategy_);
-        return result == null ? flyteidl.core.Workflow.WorkflowMetadata.FailureHandlingStrategy.UNRECOGNIZED : result;
+        flyteidl.core.Workflow.WorkflowMetadata.OnFailurePolicy result = flyteidl.core.Workflow.WorkflowMetadata.OnFailurePolicy.valueOf(onFailure_);
+        return result == null ? flyteidl.core.Workflow.WorkflowMetadata.OnFailurePolicy.UNRECOGNIZED : result;
       }
       /**
        * <pre>
        * Defines how the system should behave when a failure is detected in the workflow execution.
        * </pre>
        *
-       * <code>.flyteidl.core.WorkflowMetadata.FailureHandlingStrategy failure_handling_strategy = 2;</code>
+       * <code>.flyteidl.core.WorkflowMetadata.OnFailurePolicy on_failure = 2;</code>
        */
-      public Builder setFailureHandlingStrategy(flyteidl.core.Workflow.WorkflowMetadata.FailureHandlingStrategy value) {
+      public Builder setOnFailure(flyteidl.core.Workflow.WorkflowMetadata.OnFailurePolicy value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        failureHandlingStrategy_ = value.getNumber();
+        onFailure_ = value.getNumber();
         onChanged();
         return this;
       }
@@ -11083,11 +11087,11 @@ public final class Workflow {
        * Defines how the system should behave when a failure is detected in the workflow execution.
        * </pre>
        *
-       * <code>.flyteidl.core.WorkflowMetadata.FailureHandlingStrategy failure_handling_strategy = 2;</code>
+       * <code>.flyteidl.core.WorkflowMetadata.OnFailurePolicy on_failure = 2;</code>
        */
-      public Builder clearFailureHandlingStrategy() {
+      public Builder clearOnFailure() {
         
-        failureHandlingStrategy_ = 0;
+        onFailure_ = 0;
         onChanged();
         return this;
       }
@@ -14607,25 +14611,25 @@ public final class Workflow {
       "flyteidl.core.TaskNodeH\000\0224\n\rworkflow_nod" +
       "e\030\007 \001(\0132\033.flyteidl.core.WorkflowNodeH\000\0220" +
       "\n\013branch_node\030\010 \001(\0132\031.flyteidl.core.Bran" +
-      "chNodeH\000B\010\n\006target\"\213\002\n\020WorkflowMetadata\022" +
+      "chNodeH\000B\010\n\006target\"\204\002\n\020WorkflowMetadata\022" +
       "1\n\016queuing_budget\030\001 \001(\0132\031.google.protobu" +
-      "f.Duration\022Z\n\031failure_handling_strategy\030" +
-      "\002 \001(\01627.flyteidl.core.WorkflowMetadata.F" +
-      "ailureHandlingStrategy\"h\n\027FailureHandlin" +
-      "gStrategy\022\017\n\013IMMEDIATELY\020\000\022\032\n\026WAIT_FOR_R" +
-      "UNNING_NODES\020\001\022 \n\034WAIT_FOR_EXECUTABLE_BR" +
-      "ANCHES\020\002\"1\n\030WorkflowMetadataDefaults\022\025\n\r" +
-      "interruptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplate" +
-      "\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022" +
-      "1\n\010metadata\030\002 \001(\0132\037.flyteidl.core.Workfl" +
-      "owMetadata\0220\n\tinterface\030\003 \001(\0132\035.flyteidl" +
-      ".core.TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.fl" +
-      "yteidl.core.Node\022\'\n\007outputs\030\005 \003(\0132\026.flyt" +
-      "eidl.core.Binding\022)\n\014failure_node\030\006 \001(\0132" +
-      "\023.flyteidl.core.Node\022B\n\021metadata_default" +
-      "s\030\007 \001(\0132\'.flyteidl.core.WorkflowMetadata" +
-      "DefaultsB2Z0github.com/lyft/flyteidl/gen" +
-      "/pb-go/flyteidl/coreb\006proto3"
+      "f.Duration\022C\n\non_failure\030\002 \001(\0162/.flyteid" +
+      "l.core.WorkflowMetadata.OnFailurePolicy\"" +
+      "x\n\017OnFailurePolicy\022\024\n\020FAIL_IMMEDIATELY\020\000" +
+      "\022%\n!FAIL_AFTER_RUNNING_NODES_COMPLETE\020\001\022" +
+      "(\n$FAIL_AFTER_EXECUTABLE_NODES_COMPLETE\020" +
+      "\002\"1\n\030WorkflowMetadataDefaults\022\025\n\rinterru" +
+      "ptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplate\022%\n\002id\030" +
+      "\001 \001(\0132\031.flyteidl.core.Identifier\0221\n\010meta" +
+      "data\030\002 \001(\0132\037.flyteidl.core.WorkflowMetad" +
+      "ata\0220\n\tinterface\030\003 \001(\0132\035.flyteidl.core.T" +
+      "ypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.flyteidl." +
+      "core.Node\022\'\n\007outputs\030\005 \003(\0132\026.flyteidl.co" +
+      "re.Binding\022)\n\014failure_node\030\006 \001(\0132\023.flyte" +
+      "idl.core.Node\022B\n\021metadata_defaults\030\007 \001(\013" +
+      "2\'.flyteidl.core.WorkflowMetadataDefault" +
+      "sB2Z0github.com/lyft/flyteidl/gen/pb-go/" +
+      "flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14698,7 +14702,7 @@ public final class Workflow {
     internal_static_flyteidl_core_WorkflowMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkflowMetadata_descriptor,
-        new java.lang.String[] { "QueuingBudget", "FailureHandlingStrategy", });
+        new java.lang.String[] { "QueuingBudget", "OnFailure", });
     internal_static_flyteidl_core_WorkflowMetadataDefaults_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_core_WorkflowMetadataDefaults_fieldAccessorTable = new

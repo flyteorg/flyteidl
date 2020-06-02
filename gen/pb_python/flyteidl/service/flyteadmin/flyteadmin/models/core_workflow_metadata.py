@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.workflow_metadata_failure_handling_strategy import WorkflowMetadataFailureHandlingStrategy  # noqa: F401,E501
+from flyteadmin.models.workflow_metadata_on_failure_policy import WorkflowMetadataOnFailurePolicy  # noqa: F401,E501
 
 
 class CoreWorkflowMetadata(object):
@@ -34,25 +34,25 @@ class CoreWorkflowMetadata(object):
     """
     swagger_types = {
         'queuing_budget': 'str',
-        'failure_handling_strategy': 'WorkflowMetadataFailureHandlingStrategy'
+        'on_failure': 'WorkflowMetadataOnFailurePolicy'
     }
 
     attribute_map = {
         'queuing_budget': 'queuing_budget',
-        'failure_handling_strategy': 'failure_handling_strategy'
+        'on_failure': 'on_failure'
     }
 
-    def __init__(self, queuing_budget=None, failure_handling_strategy=None):  # noqa: E501
+    def __init__(self, queuing_budget=None, on_failure=None):  # noqa: E501
         """CoreWorkflowMetadata - a model defined in Swagger"""  # noqa: E501
 
         self._queuing_budget = None
-        self._failure_handling_strategy = None
+        self._on_failure = None
         self.discriminator = None
 
         if queuing_budget is not None:
             self.queuing_budget = queuing_budget
-        if failure_handling_strategy is not None:
-            self.failure_handling_strategy = failure_handling_strategy
+        if on_failure is not None:
+            self.on_failure = on_failure
 
     @property
     def queuing_budget(self):
@@ -78,27 +78,27 @@ class CoreWorkflowMetadata(object):
         self._queuing_budget = queuing_budget
 
     @property
-    def failure_handling_strategy(self):
-        """Gets the failure_handling_strategy of this CoreWorkflowMetadata.  # noqa: E501
+    def on_failure(self):
+        """Gets the on_failure of this CoreWorkflowMetadata.  # noqa: E501
 
         Defines how the system should behave when a failure is detected in the workflow execution.  # noqa: E501
 
-        :return: The failure_handling_strategy of this CoreWorkflowMetadata.  # noqa: E501
-        :rtype: WorkflowMetadataFailureHandlingStrategy
+        :return: The on_failure of this CoreWorkflowMetadata.  # noqa: E501
+        :rtype: WorkflowMetadataOnFailurePolicy
         """
-        return self._failure_handling_strategy
+        return self._on_failure
 
-    @failure_handling_strategy.setter
-    def failure_handling_strategy(self, failure_handling_strategy):
-        """Sets the failure_handling_strategy of this CoreWorkflowMetadata.
+    @on_failure.setter
+    def on_failure(self, on_failure):
+        """Sets the on_failure of this CoreWorkflowMetadata.
 
         Defines how the system should behave when a failure is detected in the workflow execution.  # noqa: E501
 
-        :param failure_handling_strategy: The failure_handling_strategy of this CoreWorkflowMetadata.  # noqa: E501
-        :type: WorkflowMetadataFailureHandlingStrategy
+        :param on_failure: The on_failure of this CoreWorkflowMetadata.  # noqa: E501
+        :type: WorkflowMetadataOnFailurePolicy
         """
 
-        self._failure_handling_strategy = failure_handling_strategy
+        self._on_failure = on_failure
 
     def to_dict(self):
         """Returns the model properties as a dict"""
