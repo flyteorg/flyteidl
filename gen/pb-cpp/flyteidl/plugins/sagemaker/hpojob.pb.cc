@@ -16,8 +16,6 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_HPOJobObjective_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2fparameterranges_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ParameterRanges_flyteidl_2fplugins_2fsagemaker_2fparameterranges_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2ftrainingjob_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_TrainingJob_flyteidl_2fplugins_2fsagemaker_2ftrainingjob_2eproto;
 namespace flyteidl {
 namespace plugins {
@@ -58,10 +56,8 @@ static void InitDefaultsHPOJob_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto()
   ::flyteidl::plugins::sagemaker::HPOJob::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<3> scc_info_HPOJob_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsHPOJob_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto}, {
-      &scc_info_HPOJobObjective_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto.base,
-      &scc_info_ParameterRanges_flyteidl_2fplugins_2fsagemaker_2fparameterranges_2eproto.base,
+::google::protobuf::internal::SCCInfo<1> scc_info_HPOJob_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsHPOJob_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto}, {
       &scc_info_TrainingJob_flyteidl_2fplugins_2fsagemaker_2ftrainingjob_2eproto.base,}};
 
 void InitDefaults_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto() {
@@ -86,11 +82,8 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fsagemaker_2fhp
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJob, strategy_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJob, objective_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJob, maxnumberoftrainingjobs_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJob, maxparalleltrainingjobs_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJob, parameterranges_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJob, trainingjob_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -118,21 +111,17 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2fhpojob_2ep
   "\?.flyteidl.plugins.sagemaker.HPOJobObjec"
   "tive.HPOJobObjectiveType\022\022\n\nMetricName\030\002"
   " \001(\t\"1\n\023HPOJobObjectiveType\022\014\n\010MINIMIZE\020"
-  "\000\022\014\n\010MAXIMIZE\020\001\"\240\002\n\006HPOJob\022\020\n\010Strategy\030\001"
-  " \001(\t\022>\n\tObjective\030\002 \001(\0132+.flyteidl.plugi"
-  "ns.sagemaker.HPOJobObjective\022\037\n\027MaxNumbe"
-  "rOfTrainingJobs\030\003 \001(\003\022\037\n\027MaxParallelTrai"
-  "ningJobs\030\004 \001(\003\022D\n\017ParameterRanges\030\005 \001(\0132"
-  "+.flyteidl.plugins.sagemaker.ParameterRa"
-  "nges\022<\n\013TrainingJob\030\006 \001(\0132\'.flyteidl.plu"
-  "gins.sagemaker.TrainingJobB5Z3github.com"
-  "/lyft/flyteidl/gen/pb-go/flyteidl/plugin"
-  "sb\006proto3"
+  "\000\022\014\n\010MAXIMIZE\020\001\"\210\001\n\006HPOJob\022\037\n\027MaxNumberO"
+  "fTrainingJobs\030\001 \001(\003\022\037\n\027MaxParallelTraini"
+  "ngJobs\030\002 \001(\003\022<\n\013TrainingJob\030\003 \001(\0132\'.flyt"
+  "eidl.plugins.sagemaker.TrainingJobB5Z3gi"
+  "thub.com/lyft/flyteidl/gen/pb-go/flyteid"
+  "l/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto,
-  "flyteidl/plugins/sagemaker/hpojob.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto, 689,
+  "flyteidl/plugins/sagemaker/hpojob.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto, 537,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto() {
@@ -519,37 +508,17 @@ void HPOJobObjective::InternalSwap(HPOJobObjective* other) {
 // ===================================================================
 
 void HPOJob::InitAsDefaultInstance() {
-  ::flyteidl::plugins::sagemaker::_HPOJob_default_instance_._instance.get_mutable()->objective_ = const_cast< ::flyteidl::plugins::sagemaker::HPOJobObjective*>(
-      ::flyteidl::plugins::sagemaker::HPOJobObjective::internal_default_instance());
-  ::flyteidl::plugins::sagemaker::_HPOJob_default_instance_._instance.get_mutable()->parameterranges_ = const_cast< ::flyteidl::plugins::sagemaker::ParameterRanges*>(
-      ::flyteidl::plugins::sagemaker::ParameterRanges::internal_default_instance());
   ::flyteidl::plugins::sagemaker::_HPOJob_default_instance_._instance.get_mutable()->trainingjob_ = const_cast< ::flyteidl::plugins::sagemaker::TrainingJob*>(
       ::flyteidl::plugins::sagemaker::TrainingJob::internal_default_instance());
 }
 class HPOJob::HasBitSetters {
  public:
-  static const ::flyteidl::plugins::sagemaker::HPOJobObjective& objective(const HPOJob* msg);
-  static const ::flyteidl::plugins::sagemaker::ParameterRanges& parameterranges(const HPOJob* msg);
   static const ::flyteidl::plugins::sagemaker::TrainingJob& trainingjob(const HPOJob* msg);
 };
 
-const ::flyteidl::plugins::sagemaker::HPOJobObjective&
-HPOJob::HasBitSetters::objective(const HPOJob* msg) {
-  return *msg->objective_;
-}
-const ::flyteidl::plugins::sagemaker::ParameterRanges&
-HPOJob::HasBitSetters::parameterranges(const HPOJob* msg) {
-  return *msg->parameterranges_;
-}
 const ::flyteidl::plugins::sagemaker::TrainingJob&
 HPOJob::HasBitSetters::trainingjob(const HPOJob* msg) {
   return *msg->trainingjob_;
-}
-void HPOJob::clear_parameterranges() {
-  if (GetArenaNoVirtual() == nullptr && parameterranges_ != nullptr) {
-    delete parameterranges_;
-  }
-  parameterranges_ = nullptr;
 }
 void HPOJob::clear_trainingjob() {
   if (GetArenaNoVirtual() == nullptr && trainingjob_ != nullptr) {
@@ -558,11 +527,8 @@ void HPOJob::clear_trainingjob() {
   trainingjob_ = nullptr;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int HPOJob::kStrategyFieldNumber;
-const int HPOJob::kObjectiveFieldNumber;
 const int HPOJob::kMaxNumberOfTrainingJobsFieldNumber;
 const int HPOJob::kMaxParallelTrainingJobsFieldNumber;
-const int HPOJob::kParameterRangesFieldNumber;
 const int HPOJob::kTrainingJobFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -575,20 +541,6 @@ HPOJob::HPOJob(const HPOJob& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  strategy_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.strategy().size() > 0) {
-    strategy_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.strategy_);
-  }
-  if (from.has_objective()) {
-    objective_ = new ::flyteidl::plugins::sagemaker::HPOJobObjective(*from.objective_);
-  } else {
-    objective_ = nullptr;
-  }
-  if (from.has_parameterranges()) {
-    parameterranges_ = new ::flyteidl::plugins::sagemaker::ParameterRanges(*from.parameterranges_);
-  } else {
-    parameterranges_ = nullptr;
-  }
   if (from.has_trainingjob()) {
     trainingjob_ = new ::flyteidl::plugins::sagemaker::TrainingJob(*from.trainingjob_);
   } else {
@@ -603,10 +555,9 @@ HPOJob::HPOJob(const HPOJob& from)
 void HPOJob::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_HPOJob_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto.base);
-  strategy_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&objective_, 0, static_cast<size_t>(
+  ::memset(&trainingjob_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&maxparalleltrainingjobs_) -
-      reinterpret_cast<char*>(&objective_)) + sizeof(maxparalleltrainingjobs_));
+      reinterpret_cast<char*>(&trainingjob_)) + sizeof(maxparalleltrainingjobs_));
 }
 
 HPOJob::~HPOJob() {
@@ -615,9 +566,6 @@ HPOJob::~HPOJob() {
 }
 
 void HPOJob::SharedDtor() {
-  strategy_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete objective_;
-  if (this != internal_default_instance()) delete parameterranges_;
   if (this != internal_default_instance()) delete trainingjob_;
 }
 
@@ -636,15 +584,6 @@ void HPOJob::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  strategy_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && objective_ != nullptr) {
-    delete objective_;
-  }
-  objective_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && parameterranges_ != nullptr) {
-    delete parameterranges_;
-  }
-  parameterranges_ = nullptr;
   if (GetArenaNoVirtual() == nullptr && trainingjob_ != nullptr) {
     delete trainingjob_;
   }
@@ -668,65 +607,23 @@ const char* HPOJob::_InternalParse(const char* begin, const char* end, void* obj
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // string Strategy = 1;
+      // int64 MaxNumberOfTrainingJobs = 1;
       case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.plugins.sagemaker.HPOJob.Strategy");
-        object = msg->mutable_strategy();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // .flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::plugins::sagemaker::HPOJobObjective::_InternalParse;
-        object = msg->mutable_objective();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // int64 MaxNumberOfTrainingJobs = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
         msg->set_maxnumberoftrainingjobs(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // int64 MaxParallelTrainingJobs = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
+      // int64 MaxParallelTrainingJobs = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
         msg->set_maxparalleltrainingjobs(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // .flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::plugins::sagemaker::ParameterRanges::_InternalParse;
-        object = msg->mutable_parameterranges();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // .flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;
-      case 6: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
+      // .flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::plugins::sagemaker::TrainingJob::_InternalParse;
@@ -752,10 +649,6 @@ const char* HPOJob::_InternalParse(const char* begin, const char* end, void* obj
     }  // switch
   }  // while
   return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
 len_delim_till_end:
   return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
                                {parser_till_end, object}, size);
@@ -771,35 +664,9 @@ bool HPOJob::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string Strategy = 1;
+      // int64 MaxNumberOfTrainingJobs = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_strategy()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->strategy().data(), static_cast<int>(this->strategy().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.plugins.sagemaker.HPOJob.Strategy"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_objective()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // int64 MaxNumberOfTrainingJobs = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
@@ -810,9 +677,9 @@ bool HPOJob::MergePartialFromCodedStream(
         break;
       }
 
-      // int64 MaxParallelTrainingJobs = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (32 & 0xFF)) {
+      // int64 MaxParallelTrainingJobs = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
@@ -823,20 +690,9 @@ bool HPOJob::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_parameterranges()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
+      // .flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_trainingjob()));
         } else {
@@ -872,42 +728,20 @@ void HPOJob::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string Strategy = 1;
-  if (this->strategy().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->strategy().data(), static_cast<int>(this->strategy().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.plugins.sagemaker.HPOJob.Strategy");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->strategy(), output);
-  }
-
-  // .flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;
-  if (this->has_objective()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::objective(this), output);
-  }
-
-  // int64 MaxNumberOfTrainingJobs = 3;
+  // int64 MaxNumberOfTrainingJobs = 1;
   if (this->maxnumberoftrainingjobs() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt64(3, this->maxnumberoftrainingjobs(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->maxnumberoftrainingjobs(), output);
   }
 
-  // int64 MaxParallelTrainingJobs = 4;
+  // int64 MaxParallelTrainingJobs = 2;
   if (this->maxparalleltrainingjobs() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt64(4, this->maxparalleltrainingjobs(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->maxparalleltrainingjobs(), output);
   }
 
-  // .flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;
-  if (this->has_parameterranges()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, HasBitSetters::parameterranges(this), output);
-  }
-
-  // .flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;
+  // .flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;
   if (this->has_trainingjob()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      6, HasBitSetters::trainingjob(this), output);
+      3, HasBitSetters::trainingjob(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -923,46 +757,21 @@ void HPOJob::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string Strategy = 1;
-  if (this->strategy().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->strategy().data(), static_cast<int>(this->strategy().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.plugins.sagemaker.HPOJob.Strategy");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->strategy(), target);
-  }
-
-  // .flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;
-  if (this->has_objective()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, HasBitSetters::objective(this), target);
-  }
-
-  // int64 MaxNumberOfTrainingJobs = 3;
+  // int64 MaxNumberOfTrainingJobs = 1;
   if (this->maxnumberoftrainingjobs() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(3, this->maxnumberoftrainingjobs(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->maxnumberoftrainingjobs(), target);
   }
 
-  // int64 MaxParallelTrainingJobs = 4;
+  // int64 MaxParallelTrainingJobs = 2;
   if (this->maxparalleltrainingjobs() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(4, this->maxparalleltrainingjobs(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->maxparalleltrainingjobs(), target);
   }
 
-  // .flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;
-  if (this->has_parameterranges()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        5, HasBitSetters::parameterranges(this), target);
-  }
-
-  // .flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;
+  // .flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;
   if (this->has_trainingjob()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        6, HasBitSetters::trainingjob(this), target);
+        3, HasBitSetters::trainingjob(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -986,42 +795,21 @@ size_t HPOJob::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string Strategy = 1;
-  if (this->strategy().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->strategy());
-  }
-
-  // .flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;
-  if (this->has_objective()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *objective_);
-  }
-
-  // .flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;
-  if (this->has_parameterranges()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *parameterranges_);
-  }
-
-  // .flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;
+  // .flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;
   if (this->has_trainingjob()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *trainingjob_);
   }
 
-  // int64 MaxNumberOfTrainingJobs = 3;
+  // int64 MaxNumberOfTrainingJobs = 1;
   if (this->maxnumberoftrainingjobs() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int64Size(
         this->maxnumberoftrainingjobs());
   }
 
-  // int64 MaxParallelTrainingJobs = 4;
+  // int64 MaxParallelTrainingJobs = 2;
   if (this->maxparalleltrainingjobs() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int64Size(
@@ -1055,16 +843,6 @@ void HPOJob::MergeFrom(const HPOJob& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.strategy().size() > 0) {
-
-    strategy_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.strategy_);
-  }
-  if (from.has_objective()) {
-    mutable_objective()->::flyteidl::plugins::sagemaker::HPOJobObjective::MergeFrom(from.objective());
-  }
-  if (from.has_parameterranges()) {
-    mutable_parameterranges()->::flyteidl::plugins::sagemaker::ParameterRanges::MergeFrom(from.parameterranges());
-  }
   if (from.has_trainingjob()) {
     mutable_trainingjob()->::flyteidl::plugins::sagemaker::TrainingJob::MergeFrom(from.trainingjob());
   }
@@ -1101,10 +879,6 @@ void HPOJob::Swap(HPOJob* other) {
 void HPOJob::InternalSwap(HPOJob* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  strategy_.Swap(&other->strategy_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(objective_, other->objective_);
-  swap(parameterranges_, other->parameterranges_);
   swap(trainingjob_, other->trainingjob_);
   swap(maxnumberoftrainingjobs_, other->maxnumberoftrainingjobs_);
   swap(maxparalleltrainingjobs_, other->maxparalleltrainingjobs_);

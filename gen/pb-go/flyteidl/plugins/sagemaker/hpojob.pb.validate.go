@@ -112,31 +112,9 @@ func (m *HPOJob) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Strategy
-
-	if v, ok := interface{}(m.GetObjective()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return HPOJobValidationError{
-				field:  "Objective",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
 	// no validation rules for MaxNumberOfTrainingJobs
 
 	// no validation rules for MaxParallelTrainingJobs
-
-	if v, ok := interface{}(m.GetParameterRanges()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return HPOJobValidationError{
-				field:  "ParameterRanges",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
 
 	if v, ok := interface{}(m.GetTrainingJob()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {

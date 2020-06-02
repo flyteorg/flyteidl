@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.plugins.sagemaker',
   syntax='proto3',
   serialized_options=_b('Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n\'flyteidl/plugins/sagemaker/hpojob.proto\x12\x1a\x66lyteidl.plugins.sagemaker\x1a\x30\x66lyteidl/plugins/sagemaker/parameterranges.proto\x1a,flyteidl/plugins/sagemaker/trainingjob.proto\"\xa7\x01\n\x0fHPOJobObjective\x12M\n\x04Type\x18\x01 \x01(\x0e\x32?.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType\x12\x12\n\nMetricName\x18\x02 \x01(\t\"1\n\x13HPOJobObjectiveType\x12\x0c\n\x08MINIMIZE\x10\x00\x12\x0c\n\x08MAXIMIZE\x10\x01\"\xa0\x02\n\x06HPOJob\x12\x10\n\x08Strategy\x18\x01 \x01(\t\x12>\n\tObjective\x18\x02 \x01(\x0b\x32+.flyteidl.plugins.sagemaker.HPOJobObjective\x12\x1f\n\x17MaxNumberOfTrainingJobs\x18\x03 \x01(\x03\x12\x1f\n\x17MaxParallelTrainingJobs\x18\x04 \x01(\x03\x12\x44\n\x0fParameterRanges\x18\x05 \x01(\x0b\x32+.flyteidl.plugins.sagemaker.ParameterRanges\x12<\n\x0bTrainingJob\x18\x06 \x01(\x0b\x32\'.flyteidl.plugins.sagemaker.TrainingJobB5Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n\'flyteidl/plugins/sagemaker/hpojob.proto\x12\x1a\x66lyteidl.plugins.sagemaker\x1a\x30\x66lyteidl/plugins/sagemaker/parameterranges.proto\x1a,flyteidl/plugins/sagemaker/trainingjob.proto\"\xa7\x01\n\x0fHPOJobObjective\x12M\n\x04Type\x18\x01 \x01(\x0e\x32?.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType\x12\x12\n\nMetricName\x18\x02 \x01(\t\"1\n\x13HPOJobObjectiveType\x12\x0c\n\x08MINIMIZE\x10\x00\x12\x0c\n\x08MAXIMIZE\x10\x01\"\x88\x01\n\x06HPOJob\x12\x1f\n\x17MaxNumberOfTrainingJobs\x18\x01 \x01(\x03\x12\x1f\n\x17MaxParallelTrainingJobs\x18\x02 \x01(\x03\x12<\n\x0bTrainingJob\x18\x03 \x01(\x0b\x32\'.flyteidl.plugins.sagemaker.TrainingJobB5Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
   ,
   dependencies=[flyteidl_dot_plugins_dot_sagemaker_dot_parameterranges__pb2.DESCRIPTOR,flyteidl_dot_plugins_dot_sagemaker_dot_trainingjob__pb2.DESCRIPTOR,])
 
@@ -98,43 +98,22 @@ _HPOJOB = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='Strategy', full_name='flyteidl.plugins.sagemaker.HPOJob.Strategy', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='Objective', full_name='flyteidl.plugins.sagemaker.HPOJob.Objective', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='MaxNumberOfTrainingJobs', full_name='flyteidl.plugins.sagemaker.HPOJob.MaxNumberOfTrainingJobs', index=2,
-      number=3, type=3, cpp_type=2, label=1,
+      name='MaxNumberOfTrainingJobs', full_name='flyteidl.plugins.sagemaker.HPOJob.MaxNumberOfTrainingJobs', index=0,
+      number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='MaxParallelTrainingJobs', full_name='flyteidl.plugins.sagemaker.HPOJob.MaxParallelTrainingJobs', index=3,
-      number=4, type=3, cpp_type=2, label=1,
+      name='MaxParallelTrainingJobs', full_name='flyteidl.plugins.sagemaker.HPOJob.MaxParallelTrainingJobs', index=1,
+      number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ParameterRanges', full_name='flyteidl.plugins.sagemaker.HPOJob.ParameterRanges', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='TrainingJob', full_name='flyteidl.plugins.sagemaker.HPOJob.TrainingJob', index=5,
-      number=6, type=11, cpp_type=10, label=1,
+      name='TrainingJob', full_name='flyteidl.plugins.sagemaker.HPOJob.TrainingJob', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -152,13 +131,11 @@ _HPOJOB = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=338,
-  serialized_end=626,
+  serialized_end=474,
 )
 
 _HPOJOBOBJECTIVE.fields_by_name['Type'].enum_type = _HPOJOBOBJECTIVE_HPOJOBOBJECTIVETYPE
 _HPOJOBOBJECTIVE_HPOJOBOBJECTIVETYPE.containing_type = _HPOJOBOBJECTIVE
-_HPOJOB.fields_by_name['Objective'].message_type = _HPOJOBOBJECTIVE
-_HPOJOB.fields_by_name['ParameterRanges'].message_type = flyteidl_dot_plugins_dot_sagemaker_dot_parameterranges__pb2._PARAMETERRANGES
 _HPOJOB.fields_by_name['TrainingJob'].message_type = flyteidl_dot_plugins_dot_sagemaker_dot_trainingjob__pb2._TRAININGJOB
 DESCRIPTOR.message_types_by_name['HPOJobObjective'] = _HPOJOBOBJECTIVE
 DESCRIPTOR.message_types_by_name['HPOJob'] = _HPOJOB

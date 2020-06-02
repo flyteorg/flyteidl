@@ -760,89 +760,21 @@ public final class Hpojob {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * will impact output, should be in input, not custom
-     * </pre>
-     *
-     * <code>string Strategy = 1;</code>
-     */
-    java.lang.String getStrategy();
-    /**
-     * <pre>
-     * will impact output, should be in input, not custom
-     * </pre>
-     *
-     * <code>string Strategy = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getStrategyBytes();
-
-    /**
-     * <pre>
-     * // will impact output, should be in input, not custom
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;</code>
-     */
-    boolean hasObjective();
-    /**
-     * <pre>
-     * // will impact output, should be in input, not custom
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;</code>
-     */
-    flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective getObjective();
-    /**
-     * <pre>
-     * // will impact output, should be in input, not custom
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;</code>
-     */
-    flyteidl.plugins.sagemaker.Hpojob.HPOJobObjectiveOrBuilder getObjectiveOrBuilder();
-
-    /**
-     * <code>int64 MaxNumberOfTrainingJobs = 3;</code>
+     * <code>int64 MaxNumberOfTrainingJobs = 1;</code>
      */
     long getMaxNumberOfTrainingJobs();
 
     /**
-     * <code>int64 MaxParallelTrainingJobs = 4;</code>
+     * <code>int64 MaxParallelTrainingJobs = 2;</code>
      */
     long getMaxParallelTrainingJobs();
-
-    /**
-     * <pre>
-     * will impact output, should be in input, not custom
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;</code>
-     */
-    boolean hasParameterRanges();
-    /**
-     * <pre>
-     * will impact output, should be in input, not custom
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;</code>
-     */
-    flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges getParameterRanges();
-    /**
-     * <pre>
-     * will impact output, should be in input, not custom
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;</code>
-     */
-    flyteidl.plugins.sagemaker.Parameterranges.ParameterRangesOrBuilder getParameterRangesOrBuilder();
 
     /**
      * <pre>
      * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
      */
     boolean hasTrainingJob();
     /**
@@ -850,7 +782,7 @@ public final class Hpojob {
      * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
      */
     flyteidl.plugins.sagemaker.Trainingjob.TrainingJob getTrainingJob();
     /**
@@ -858,7 +790,7 @@ public final class Hpojob {
      * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
      */
     flyteidl.plugins.sagemaker.Trainingjob.TrainingJobOrBuilder getTrainingJobOrBuilder();
   }
@@ -875,7 +807,6 @@ public final class Hpojob {
       super(builder);
     }
     private HPOJob() {
-      strategy_ = "";
     }
 
     @java.lang.Override
@@ -902,49 +833,17 @@ public final class Hpojob {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              strategy_ = s;
-              break;
-            }
-            case 18: {
-              flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.Builder subBuilder = null;
-              if (objective_ != null) {
-                subBuilder = objective_.toBuilder();
-              }
-              objective_ = input.readMessage(flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(objective_);
-                objective_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 24: {
+            case 8: {
 
               maxNumberOfTrainingJobs_ = input.readInt64();
               break;
             }
-            case 32: {
+            case 16: {
 
               maxParallelTrainingJobs_ = input.readInt64();
               break;
             }
-            case 42: {
-              flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges.Builder subBuilder = null;
-              if (parameterRanges_ != null) {
-                subBuilder = parameterRanges_.toBuilder();
-              }
-              parameterRanges_ = input.readMessage(flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(parameterRanges_);
-                parameterRanges_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 50: {
+            case 26: {
               flyteidl.plugins.sagemaker.Trainingjob.TrainingJob.Builder subBuilder = null;
               if (trainingJob_ != null) {
                 subBuilder = trainingJob_.toBuilder();
@@ -989,140 +888,32 @@ public final class Hpojob {
               flyteidl.plugins.sagemaker.Hpojob.HPOJob.class, flyteidl.plugins.sagemaker.Hpojob.HPOJob.Builder.class);
     }
 
-    public static final int STRATEGY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object strategy_;
-    /**
-     * <pre>
-     * will impact output, should be in input, not custom
-     * </pre>
-     *
-     * <code>string Strategy = 1;</code>
-     */
-    public java.lang.String getStrategy() {
-      java.lang.Object ref = strategy_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        strategy_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * will impact output, should be in input, not custom
-     * </pre>
-     *
-     * <code>string Strategy = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getStrategyBytes() {
-      java.lang.Object ref = strategy_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        strategy_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int OBJECTIVE_FIELD_NUMBER = 2;
-    private flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective objective_;
-    /**
-     * <pre>
-     * // will impact output, should be in input, not custom
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;</code>
-     */
-    public boolean hasObjective() {
-      return objective_ != null;
-    }
-    /**
-     * <pre>
-     * // will impact output, should be in input, not custom
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;</code>
-     */
-    public flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective getObjective() {
-      return objective_ == null ? flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.getDefaultInstance() : objective_;
-    }
-    /**
-     * <pre>
-     * // will impact output, should be in input, not custom
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;</code>
-     */
-    public flyteidl.plugins.sagemaker.Hpojob.HPOJobObjectiveOrBuilder getObjectiveOrBuilder() {
-      return getObjective();
-    }
-
-    public static final int MAXNUMBEROFTRAININGJOBS_FIELD_NUMBER = 3;
+    public static final int MAXNUMBEROFTRAININGJOBS_FIELD_NUMBER = 1;
     private long maxNumberOfTrainingJobs_;
     /**
-     * <code>int64 MaxNumberOfTrainingJobs = 3;</code>
+     * <code>int64 MaxNumberOfTrainingJobs = 1;</code>
      */
     public long getMaxNumberOfTrainingJobs() {
       return maxNumberOfTrainingJobs_;
     }
 
-    public static final int MAXPARALLELTRAININGJOBS_FIELD_NUMBER = 4;
+    public static final int MAXPARALLELTRAININGJOBS_FIELD_NUMBER = 2;
     private long maxParallelTrainingJobs_;
     /**
-     * <code>int64 MaxParallelTrainingJobs = 4;</code>
+     * <code>int64 MaxParallelTrainingJobs = 2;</code>
      */
     public long getMaxParallelTrainingJobs() {
       return maxParallelTrainingJobs_;
     }
 
-    public static final int PARAMETERRANGES_FIELD_NUMBER = 5;
-    private flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges parameterRanges_;
-    /**
-     * <pre>
-     * will impact output, should be in input, not custom
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;</code>
-     */
-    public boolean hasParameterRanges() {
-      return parameterRanges_ != null;
-    }
-    /**
-     * <pre>
-     * will impact output, should be in input, not custom
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;</code>
-     */
-    public flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges getParameterRanges() {
-      return parameterRanges_ == null ? flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges.getDefaultInstance() : parameterRanges_;
-    }
-    /**
-     * <pre>
-     * will impact output, should be in input, not custom
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;</code>
-     */
-    public flyteidl.plugins.sagemaker.Parameterranges.ParameterRangesOrBuilder getParameterRangesOrBuilder() {
-      return getParameterRanges();
-    }
-
-    public static final int TRAININGJOB_FIELD_NUMBER = 6;
+    public static final int TRAININGJOB_FIELD_NUMBER = 3;
     private flyteidl.plugins.sagemaker.Trainingjob.TrainingJob trainingJob_;
     /**
      * <pre>
      * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
      */
     public boolean hasTrainingJob() {
       return trainingJob_ != null;
@@ -1132,7 +923,7 @@ public final class Hpojob {
      * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
      */
     public flyteidl.plugins.sagemaker.Trainingjob.TrainingJob getTrainingJob() {
       return trainingJob_ == null ? flyteidl.plugins.sagemaker.Trainingjob.TrainingJob.getDefaultInstance() : trainingJob_;
@@ -1142,7 +933,7 @@ public final class Hpojob {
      * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
      */
     public flyteidl.plugins.sagemaker.Trainingjob.TrainingJobOrBuilder getTrainingJobOrBuilder() {
       return getTrainingJob();
@@ -1162,23 +953,14 @@ public final class Hpojob {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getStrategyBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, strategy_);
-      }
-      if (objective_ != null) {
-        output.writeMessage(2, getObjective());
-      }
       if (maxNumberOfTrainingJobs_ != 0L) {
-        output.writeInt64(3, maxNumberOfTrainingJobs_);
+        output.writeInt64(1, maxNumberOfTrainingJobs_);
       }
       if (maxParallelTrainingJobs_ != 0L) {
-        output.writeInt64(4, maxParallelTrainingJobs_);
-      }
-      if (parameterRanges_ != null) {
-        output.writeMessage(5, getParameterRanges());
+        output.writeInt64(2, maxParallelTrainingJobs_);
       }
       if (trainingJob_ != null) {
-        output.writeMessage(6, getTrainingJob());
+        output.writeMessage(3, getTrainingJob());
       }
       unknownFields.writeTo(output);
     }
@@ -1189,28 +971,17 @@ public final class Hpojob {
       if (size != -1) return size;
 
       size = 0;
-      if (!getStrategyBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, strategy_);
-      }
-      if (objective_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getObjective());
-      }
       if (maxNumberOfTrainingJobs_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, maxNumberOfTrainingJobs_);
+          .computeInt64Size(1, maxNumberOfTrainingJobs_);
       }
       if (maxParallelTrainingJobs_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, maxParallelTrainingJobs_);
-      }
-      if (parameterRanges_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getParameterRanges());
+          .computeInt64Size(2, maxParallelTrainingJobs_);
       }
       if (trainingJob_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getTrainingJob());
+          .computeMessageSize(3, getTrainingJob());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1227,22 +998,10 @@ public final class Hpojob {
       }
       flyteidl.plugins.sagemaker.Hpojob.HPOJob other = (flyteidl.plugins.sagemaker.Hpojob.HPOJob) obj;
 
-      if (!getStrategy()
-          .equals(other.getStrategy())) return false;
-      if (hasObjective() != other.hasObjective()) return false;
-      if (hasObjective()) {
-        if (!getObjective()
-            .equals(other.getObjective())) return false;
-      }
       if (getMaxNumberOfTrainingJobs()
           != other.getMaxNumberOfTrainingJobs()) return false;
       if (getMaxParallelTrainingJobs()
           != other.getMaxParallelTrainingJobs()) return false;
-      if (hasParameterRanges() != other.hasParameterRanges()) return false;
-      if (hasParameterRanges()) {
-        if (!getParameterRanges()
-            .equals(other.getParameterRanges())) return false;
-      }
       if (hasTrainingJob() != other.hasTrainingJob()) return false;
       if (hasTrainingJob()) {
         if (!getTrainingJob()
@@ -1259,22 +1018,12 @@ public final class Hpojob {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + STRATEGY_FIELD_NUMBER;
-      hash = (53 * hash) + getStrategy().hashCode();
-      if (hasObjective()) {
-        hash = (37 * hash) + OBJECTIVE_FIELD_NUMBER;
-        hash = (53 * hash) + getObjective().hashCode();
-      }
       hash = (37 * hash) + MAXNUMBEROFTRAININGJOBS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMaxNumberOfTrainingJobs());
       hash = (37 * hash) + MAXPARALLELTRAININGJOBS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMaxParallelTrainingJobs());
-      if (hasParameterRanges()) {
-        hash = (37 * hash) + PARAMETERRANGES_FIELD_NUMBER;
-        hash = (53 * hash) + getParameterRanges().hashCode();
-      }
       if (hasTrainingJob()) {
         hash = (37 * hash) + TRAININGJOB_FIELD_NUMBER;
         hash = (53 * hash) + getTrainingJob().hashCode();
@@ -1412,24 +1161,10 @@ public final class Hpojob {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        strategy_ = "";
-
-        if (objectiveBuilder_ == null) {
-          objective_ = null;
-        } else {
-          objective_ = null;
-          objectiveBuilder_ = null;
-        }
         maxNumberOfTrainingJobs_ = 0L;
 
         maxParallelTrainingJobs_ = 0L;
 
-        if (parameterRangesBuilder_ == null) {
-          parameterRanges_ = null;
-        } else {
-          parameterRanges_ = null;
-          parameterRangesBuilder_ = null;
-        }
         if (trainingJobBuilder_ == null) {
           trainingJob_ = null;
         } else {
@@ -1462,19 +1197,8 @@ public final class Hpojob {
       @java.lang.Override
       public flyteidl.plugins.sagemaker.Hpojob.HPOJob buildPartial() {
         flyteidl.plugins.sagemaker.Hpojob.HPOJob result = new flyteidl.plugins.sagemaker.Hpojob.HPOJob(this);
-        result.strategy_ = strategy_;
-        if (objectiveBuilder_ == null) {
-          result.objective_ = objective_;
-        } else {
-          result.objective_ = objectiveBuilder_.build();
-        }
         result.maxNumberOfTrainingJobs_ = maxNumberOfTrainingJobs_;
         result.maxParallelTrainingJobs_ = maxParallelTrainingJobs_;
-        if (parameterRangesBuilder_ == null) {
-          result.parameterRanges_ = parameterRanges_;
-        } else {
-          result.parameterRanges_ = parameterRangesBuilder_.build();
-        }
         if (trainingJobBuilder_ == null) {
           result.trainingJob_ = trainingJob_;
         } else {
@@ -1528,21 +1252,11 @@ public final class Hpojob {
 
       public Builder mergeFrom(flyteidl.plugins.sagemaker.Hpojob.HPOJob other) {
         if (other == flyteidl.plugins.sagemaker.Hpojob.HPOJob.getDefaultInstance()) return this;
-        if (!other.getStrategy().isEmpty()) {
-          strategy_ = other.strategy_;
-          onChanged();
-        }
-        if (other.hasObjective()) {
-          mergeObjective(other.getObjective());
-        }
         if (other.getMaxNumberOfTrainingJobs() != 0L) {
           setMaxNumberOfTrainingJobs(other.getMaxNumberOfTrainingJobs());
         }
         if (other.getMaxParallelTrainingJobs() != 0L) {
           setMaxParallelTrainingJobs(other.getMaxParallelTrainingJobs());
-        }
-        if (other.hasParameterRanges()) {
-          mergeParameterRanges(other.getParameterRanges());
         }
         if (other.hasTrainingJob()) {
           mergeTrainingJob(other.getTrainingJob());
@@ -1576,257 +1290,15 @@ public final class Hpojob {
         return this;
       }
 
-      private java.lang.Object strategy_ = "";
-      /**
-       * <pre>
-       * will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>string Strategy = 1;</code>
-       */
-      public java.lang.String getStrategy() {
-        java.lang.Object ref = strategy_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          strategy_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>string Strategy = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getStrategyBytes() {
-        java.lang.Object ref = strategy_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          strategy_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>string Strategy = 1;</code>
-       */
-      public Builder setStrategy(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        strategy_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>string Strategy = 1;</code>
-       */
-      public Builder clearStrategy() {
-        
-        strategy_ = getDefaultInstance().getStrategy();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>string Strategy = 1;</code>
-       */
-      public Builder setStrategyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        strategy_ = value;
-        onChanged();
-        return this;
-      }
-
-      private flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective objective_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective, flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.Builder, flyteidl.plugins.sagemaker.Hpojob.HPOJobObjectiveOrBuilder> objectiveBuilder_;
-      /**
-       * <pre>
-       * // will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;</code>
-       */
-      public boolean hasObjective() {
-        return objectiveBuilder_ != null || objective_ != null;
-      }
-      /**
-       * <pre>
-       * // will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;</code>
-       */
-      public flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective getObjective() {
-        if (objectiveBuilder_ == null) {
-          return objective_ == null ? flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.getDefaultInstance() : objective_;
-        } else {
-          return objectiveBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * // will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;</code>
-       */
-      public Builder setObjective(flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective value) {
-        if (objectiveBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          objective_ = value;
-          onChanged();
-        } else {
-          objectiveBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * // will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;</code>
-       */
-      public Builder setObjective(
-          flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.Builder builderForValue) {
-        if (objectiveBuilder_ == null) {
-          objective_ = builderForValue.build();
-          onChanged();
-        } else {
-          objectiveBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * // will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;</code>
-       */
-      public Builder mergeObjective(flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective value) {
-        if (objectiveBuilder_ == null) {
-          if (objective_ != null) {
-            objective_ =
-              flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.newBuilder(objective_).mergeFrom(value).buildPartial();
-          } else {
-            objective_ = value;
-          }
-          onChanged();
-        } else {
-          objectiveBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * // will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;</code>
-       */
-      public Builder clearObjective() {
-        if (objectiveBuilder_ == null) {
-          objective_ = null;
-          onChanged();
-        } else {
-          objective_ = null;
-          objectiveBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * // will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;</code>
-       */
-      public flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.Builder getObjectiveBuilder() {
-        
-        onChanged();
-        return getObjectiveFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * // will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;</code>
-       */
-      public flyteidl.plugins.sagemaker.Hpojob.HPOJobObjectiveOrBuilder getObjectiveOrBuilder() {
-        if (objectiveBuilder_ != null) {
-          return objectiveBuilder_.getMessageOrBuilder();
-        } else {
-          return objective_ == null ?
-              flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.getDefaultInstance() : objective_;
-        }
-      }
-      /**
-       * <pre>
-       * // will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective Objective = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective, flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.Builder, flyteidl.plugins.sagemaker.Hpojob.HPOJobObjectiveOrBuilder> 
-          getObjectiveFieldBuilder() {
-        if (objectiveBuilder_ == null) {
-          objectiveBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective, flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.Builder, flyteidl.plugins.sagemaker.Hpojob.HPOJobObjectiveOrBuilder>(
-                  getObjective(),
-                  getParentForChildren(),
-                  isClean());
-          objective_ = null;
-        }
-        return objectiveBuilder_;
-      }
-
       private long maxNumberOfTrainingJobs_ ;
       /**
-       * <code>int64 MaxNumberOfTrainingJobs = 3;</code>
+       * <code>int64 MaxNumberOfTrainingJobs = 1;</code>
        */
       public long getMaxNumberOfTrainingJobs() {
         return maxNumberOfTrainingJobs_;
       }
       /**
-       * <code>int64 MaxNumberOfTrainingJobs = 3;</code>
+       * <code>int64 MaxNumberOfTrainingJobs = 1;</code>
        */
       public Builder setMaxNumberOfTrainingJobs(long value) {
         
@@ -1835,7 +1307,7 @@ public final class Hpojob {
         return this;
       }
       /**
-       * <code>int64 MaxNumberOfTrainingJobs = 3;</code>
+       * <code>int64 MaxNumberOfTrainingJobs = 1;</code>
        */
       public Builder clearMaxNumberOfTrainingJobs() {
         
@@ -1846,13 +1318,13 @@ public final class Hpojob {
 
       private long maxParallelTrainingJobs_ ;
       /**
-       * <code>int64 MaxParallelTrainingJobs = 4;</code>
+       * <code>int64 MaxParallelTrainingJobs = 2;</code>
        */
       public long getMaxParallelTrainingJobs() {
         return maxParallelTrainingJobs_;
       }
       /**
-       * <code>int64 MaxParallelTrainingJobs = 4;</code>
+       * <code>int64 MaxParallelTrainingJobs = 2;</code>
        */
       public Builder setMaxParallelTrainingJobs(long value) {
         
@@ -1861,166 +1333,13 @@ public final class Hpojob {
         return this;
       }
       /**
-       * <code>int64 MaxParallelTrainingJobs = 4;</code>
+       * <code>int64 MaxParallelTrainingJobs = 2;</code>
        */
       public Builder clearMaxParallelTrainingJobs() {
         
         maxParallelTrainingJobs_ = 0L;
         onChanged();
         return this;
-      }
-
-      private flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges parameterRanges_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges, flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges.Builder, flyteidl.plugins.sagemaker.Parameterranges.ParameterRangesOrBuilder> parameterRangesBuilder_;
-      /**
-       * <pre>
-       * will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;</code>
-       */
-      public boolean hasParameterRanges() {
-        return parameterRangesBuilder_ != null || parameterRanges_ != null;
-      }
-      /**
-       * <pre>
-       * will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;</code>
-       */
-      public flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges getParameterRanges() {
-        if (parameterRangesBuilder_ == null) {
-          return parameterRanges_ == null ? flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges.getDefaultInstance() : parameterRanges_;
-        } else {
-          return parameterRangesBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;</code>
-       */
-      public Builder setParameterRanges(flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges value) {
-        if (parameterRangesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          parameterRanges_ = value;
-          onChanged();
-        } else {
-          parameterRangesBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;</code>
-       */
-      public Builder setParameterRanges(
-          flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges.Builder builderForValue) {
-        if (parameterRangesBuilder_ == null) {
-          parameterRanges_ = builderForValue.build();
-          onChanged();
-        } else {
-          parameterRangesBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;</code>
-       */
-      public Builder mergeParameterRanges(flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges value) {
-        if (parameterRangesBuilder_ == null) {
-          if (parameterRanges_ != null) {
-            parameterRanges_ =
-              flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges.newBuilder(parameterRanges_).mergeFrom(value).buildPartial();
-          } else {
-            parameterRanges_ = value;
-          }
-          onChanged();
-        } else {
-          parameterRangesBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;</code>
-       */
-      public Builder clearParameterRanges() {
-        if (parameterRangesBuilder_ == null) {
-          parameterRanges_ = null;
-          onChanged();
-        } else {
-          parameterRanges_ = null;
-          parameterRangesBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;</code>
-       */
-      public flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges.Builder getParameterRangesBuilder() {
-        
-        onChanged();
-        return getParameterRangesFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;</code>
-       */
-      public flyteidl.plugins.sagemaker.Parameterranges.ParameterRangesOrBuilder getParameterRangesOrBuilder() {
-        if (parameterRangesBuilder_ != null) {
-          return parameterRangesBuilder_.getMessageOrBuilder();
-        } else {
-          return parameterRanges_ == null ?
-              flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges.getDefaultInstance() : parameterRanges_;
-        }
-      }
-      /**
-       * <pre>
-       * will impact output, should be in input, not custom
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.sagemaker.ParameterRanges ParameterRanges = 5;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges, flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges.Builder, flyteidl.plugins.sagemaker.Parameterranges.ParameterRangesOrBuilder> 
-          getParameterRangesFieldBuilder() {
-        if (parameterRangesBuilder_ == null) {
-          parameterRangesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges, flyteidl.plugins.sagemaker.Parameterranges.ParameterRanges.Builder, flyteidl.plugins.sagemaker.Parameterranges.ParameterRangesOrBuilder>(
-                  getParameterRanges(),
-                  getParentForChildren(),
-                  isClean());
-          parameterRanges_ = null;
-        }
-        return parameterRangesBuilder_;
       }
 
       private flyteidl.plugins.sagemaker.Trainingjob.TrainingJob trainingJob_;
@@ -2031,7 +1350,7 @@ public final class Hpojob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
        */
       public boolean hasTrainingJob() {
         return trainingJobBuilder_ != null || trainingJob_ != null;
@@ -2041,7 +1360,7 @@ public final class Hpojob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.TrainingJob getTrainingJob() {
         if (trainingJobBuilder_ == null) {
@@ -2055,7 +1374,7 @@ public final class Hpojob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
        */
       public Builder setTrainingJob(flyteidl.plugins.sagemaker.Trainingjob.TrainingJob value) {
         if (trainingJobBuilder_ == null) {
@@ -2075,7 +1394,7 @@ public final class Hpojob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
        */
       public Builder setTrainingJob(
           flyteidl.plugins.sagemaker.Trainingjob.TrainingJob.Builder builderForValue) {
@@ -2093,7 +1412,7 @@ public final class Hpojob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
        */
       public Builder mergeTrainingJob(flyteidl.plugins.sagemaker.Trainingjob.TrainingJob value) {
         if (trainingJobBuilder_ == null) {
@@ -2115,7 +1434,7 @@ public final class Hpojob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
        */
       public Builder clearTrainingJob() {
         if (trainingJobBuilder_ == null) {
@@ -2133,7 +1452,7 @@ public final class Hpojob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.TrainingJob.Builder getTrainingJobBuilder() {
         
@@ -2145,7 +1464,7 @@ public final class Hpojob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.TrainingJobOrBuilder getTrainingJobOrBuilder() {
         if (trainingJobBuilder_ != null) {
@@ -2160,7 +1479,7 @@ public final class Hpojob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 6;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.plugins.sagemaker.Trainingjob.TrainingJob, flyteidl.plugins.sagemaker.Trainingjob.TrainingJob.Builder, flyteidl.plugins.sagemaker.Trainingjob.TrainingJobOrBuilder> 
@@ -2255,16 +1574,12 @@ public final class Hpojob {
       "?.flyteidl.plugins.sagemaker.HPOJobObjec" +
       "tive.HPOJobObjectiveType\022\022\n\nMetricName\030\002" +
       " \001(\t\"1\n\023HPOJobObjectiveType\022\014\n\010MINIMIZE\020" +
-      "\000\022\014\n\010MAXIMIZE\020\001\"\240\002\n\006HPOJob\022\020\n\010Strategy\030\001" +
-      " \001(\t\022>\n\tObjective\030\002 \001(\0132+.flyteidl.plugi" +
-      "ns.sagemaker.HPOJobObjective\022\037\n\027MaxNumbe" +
-      "rOfTrainingJobs\030\003 \001(\003\022\037\n\027MaxParallelTrai" +
-      "ningJobs\030\004 \001(\003\022D\n\017ParameterRanges\030\005 \001(\0132" +
-      "+.flyteidl.plugins.sagemaker.ParameterRa" +
-      "nges\022<\n\013TrainingJob\030\006 \001(\0132\'.flyteidl.plu" +
-      "gins.sagemaker.TrainingJobB5Z3github.com" +
-      "/lyft/flyteidl/gen/pb-go/flyteidl/plugin" +
-      "sb\006proto3"
+      "\000\022\014\n\010MAXIMIZE\020\001\"\210\001\n\006HPOJob\022\037\n\027MaxNumberO" +
+      "fTrainingJobs\030\001 \001(\003\022\037\n\027MaxParallelTraini" +
+      "ngJobs\030\002 \001(\003\022<\n\013TrainingJob\030\003 \001(\0132\'.flyt" +
+      "eidl.plugins.sagemaker.TrainingJobB5Z3gi" +
+      "thub.com/lyft/flyteidl/gen/pb-go/flyteid" +
+      "l/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2291,7 +1606,7 @@ public final class Hpojob {
     internal_static_flyteidl_plugins_sagemaker_HPOJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_HPOJob_descriptor,
-        new java.lang.String[] { "Strategy", "Objective", "MaxNumberOfTrainingJobs", "MaxParallelTrainingJobs", "ParameterRanges", "TrainingJob", });
+        new java.lang.String[] { "MaxNumberOfTrainingJobs", "MaxParallelTrainingJobs", "TrainingJob", });
     flyteidl.plugins.sagemaker.Parameterranges.getDescriptor();
     flyteidl.plugins.sagemaker.Trainingjob.getDescriptor();
   }
