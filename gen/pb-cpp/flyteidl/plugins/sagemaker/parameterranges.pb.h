@@ -210,32 +210,32 @@ class ContinuousParameterRange final :
 
   // accessors -------------------------------------------------------
 
-  // double MaxValue = 1;
-  void clear_maxvalue();
+  // double max_value = 1;
+  void clear_max_value();
   static const int kMaxValueFieldNumber = 1;
-  double maxvalue() const;
-  void set_maxvalue(double value);
+  double max_value() const;
+  void set_max_value(double value);
 
-  // double MinValue = 2;
-  void clear_minvalue();
+  // double min_value = 2;
+  void clear_min_value();
   static const int kMinValueFieldNumber = 2;
-  double minvalue() const;
-  void set_minvalue(double value);
+  double min_value() const;
+  void set_min_value(double value);
 
-  // .flyteidl.plugins.sagemaker.HyperparameterScalingType ScalingType = 3;
-  void clear_scalingtype();
+  // .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
+  void clear_scaling_type();
   static const int kScalingTypeFieldNumber = 3;
-  ::flyteidl::plugins::sagemaker::HyperparameterScalingType scalingtype() const;
-  void set_scalingtype(::flyteidl::plugins::sagemaker::HyperparameterScalingType value);
+  ::flyteidl::plugins::sagemaker::HyperparameterScalingType scaling_type() const;
+  void set_scaling_type(::flyteidl::plugins::sagemaker::HyperparameterScalingType value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.ContinuousParameterRange)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  double maxvalue_;
-  double minvalue_;
-  int scalingtype_;
+  double max_value_;
+  double min_value_;
+  int scaling_type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2fparameterranges_2eproto;
 };
@@ -336,32 +336,32 @@ class IntegerParameterRange final :
 
   // accessors -------------------------------------------------------
 
-  // float MaxValue = 1;
-  void clear_maxvalue();
+  // float max_value = 1;
+  void clear_max_value();
   static const int kMaxValueFieldNumber = 1;
-  float maxvalue() const;
-  void set_maxvalue(float value);
+  float max_value() const;
+  void set_max_value(float value);
 
-  // float MinValue = 2;
-  void clear_minvalue();
+  // float min_value = 2;
+  void clear_min_value();
   static const int kMinValueFieldNumber = 2;
-  float minvalue() const;
-  void set_minvalue(float value);
+  float min_value() const;
+  void set_min_value(float value);
 
-  // .flyteidl.plugins.sagemaker.HyperparameterScalingType ScalingType = 3;
-  void clear_scalingtype();
+  // .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
+  void clear_scaling_type();
   static const int kScalingTypeFieldNumber = 3;
-  ::flyteidl::plugins::sagemaker::HyperparameterScalingType scalingtype() const;
-  void set_scalingtype(::flyteidl::plugins::sagemaker::HyperparameterScalingType value);
+  ::flyteidl::plugins::sagemaker::HyperparameterScalingType scaling_type() const;
+  void set_scaling_type(::flyteidl::plugins::sagemaker::HyperparameterScalingType value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.IntegerParameterRange)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  float maxvalue_;
-  float minvalue_;
-  int scalingtype_;
+  float max_value_;
+  float min_value_;
+  int scaling_type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2fparameterranges_2eproto;
 };
@@ -462,7 +462,7 @@ class CategoricalParameterRange final :
 
   // accessors -------------------------------------------------------
 
-  // repeated string Values = 1;
+  // repeated string values = 1;
   int values_size() const;
   void clear_values();
   static const int kValuesFieldNumber = 1;
@@ -597,41 +597,41 @@ class ParameterRangeOneOf final :
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.plugins.sagemaker.ContinuousParameterRange ContinuousParameterRange = 1;
-  bool has_continuousparameterrange() const;
-  void clear_continuousparameterrange();
+  // .flyteidl.plugins.sagemaker.ContinuousParameterRange continuous_parameter_range = 1;
+  bool has_continuous_parameter_range() const;
+  void clear_continuous_parameter_range();
   static const int kContinuousParameterRangeFieldNumber = 1;
-  const ::flyteidl::plugins::sagemaker::ContinuousParameterRange& continuousparameterrange() const;
-  ::flyteidl::plugins::sagemaker::ContinuousParameterRange* release_continuousparameterrange();
-  ::flyteidl::plugins::sagemaker::ContinuousParameterRange* mutable_continuousparameterrange();
-  void set_allocated_continuousparameterrange(::flyteidl::plugins::sagemaker::ContinuousParameterRange* continuousparameterrange);
+  const ::flyteidl::plugins::sagemaker::ContinuousParameterRange& continuous_parameter_range() const;
+  ::flyteidl::plugins::sagemaker::ContinuousParameterRange* release_continuous_parameter_range();
+  ::flyteidl::plugins::sagemaker::ContinuousParameterRange* mutable_continuous_parameter_range();
+  void set_allocated_continuous_parameter_range(::flyteidl::plugins::sagemaker::ContinuousParameterRange* continuous_parameter_range);
 
-  // .flyteidl.plugins.sagemaker.IntegerParameterRange IntegerParameterRange = 2;
-  bool has_integerparameterrange() const;
-  void clear_integerparameterrange();
+  // .flyteidl.plugins.sagemaker.IntegerParameterRange integer_parameter_range = 2;
+  bool has_integer_parameter_range() const;
+  void clear_integer_parameter_range();
   static const int kIntegerParameterRangeFieldNumber = 2;
-  const ::flyteidl::plugins::sagemaker::IntegerParameterRange& integerparameterrange() const;
-  ::flyteidl::plugins::sagemaker::IntegerParameterRange* release_integerparameterrange();
-  ::flyteidl::plugins::sagemaker::IntegerParameterRange* mutable_integerparameterrange();
-  void set_allocated_integerparameterrange(::flyteidl::plugins::sagemaker::IntegerParameterRange* integerparameterrange);
+  const ::flyteidl::plugins::sagemaker::IntegerParameterRange& integer_parameter_range() const;
+  ::flyteidl::plugins::sagemaker::IntegerParameterRange* release_integer_parameter_range();
+  ::flyteidl::plugins::sagemaker::IntegerParameterRange* mutable_integer_parameter_range();
+  void set_allocated_integer_parameter_range(::flyteidl::plugins::sagemaker::IntegerParameterRange* integer_parameter_range);
 
-  // .flyteidl.plugins.sagemaker.CategoricalParameterRange CategoricalParameterRange = 3;
-  bool has_categoricalparameterrange() const;
-  void clear_categoricalparameterrange();
+  // .flyteidl.plugins.sagemaker.CategoricalParameterRange categorical_parameter_range = 3;
+  bool has_categorical_parameter_range() const;
+  void clear_categorical_parameter_range();
   static const int kCategoricalParameterRangeFieldNumber = 3;
-  const ::flyteidl::plugins::sagemaker::CategoricalParameterRange& categoricalparameterrange() const;
-  ::flyteidl::plugins::sagemaker::CategoricalParameterRange* release_categoricalparameterrange();
-  ::flyteidl::plugins::sagemaker::CategoricalParameterRange* mutable_categoricalparameterrange();
-  void set_allocated_categoricalparameterrange(::flyteidl::plugins::sagemaker::CategoricalParameterRange* categoricalparameterrange);
+  const ::flyteidl::plugins::sagemaker::CategoricalParameterRange& categorical_parameter_range() const;
+  ::flyteidl::plugins::sagemaker::CategoricalParameterRange* release_categorical_parameter_range();
+  ::flyteidl::plugins::sagemaker::CategoricalParameterRange* mutable_categorical_parameter_range();
+  void set_allocated_categorical_parameter_range(::flyteidl::plugins::sagemaker::CategoricalParameterRange* categorical_parameter_range);
 
   void clear_ParameterRangeTypes();
   ParameterRangeTypesCase ParameterRangeTypes_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.ParameterRangeOneOf)
  private:
   class HasBitSetters;
-  void set_has_continuousparameterrange();
-  void set_has_integerparameterrange();
-  void set_has_categoricalparameterrange();
+  void set_has_continuous_parameter_range();
+  void set_has_integer_parameter_range();
+  void set_has_categorical_parameter_range();
 
   inline bool has_ParameterRangeTypes() const;
   inline void clear_has_ParameterRangeTypes();
@@ -639,9 +639,9 @@ class ParameterRangeOneOf final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   union ParameterRangeTypesUnion {
     ParameterRangeTypesUnion() {}
-    ::flyteidl::plugins::sagemaker::ContinuousParameterRange* continuousparameterrange_;
-    ::flyteidl::plugins::sagemaker::IntegerParameterRange* integerparameterrange_;
-    ::flyteidl::plugins::sagemaker::CategoricalParameterRange* categoricalparameterrange_;
+    ::flyteidl::plugins::sagemaker::ContinuousParameterRange* continuous_parameter_range_;
+    ::flyteidl::plugins::sagemaker::IntegerParameterRange* integer_parameter_range_;
+    ::flyteidl::plugins::sagemaker::CategoricalParameterRange* categorical_parameter_range_;
   } ParameterRangeTypes_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -770,14 +770,14 @@ class ParameterRanges final :
 
   // accessors -------------------------------------------------------
 
-  // map<string, .flyteidl.plugins.sagemaker.ParameterRangeOneOf> ParameterRangeMap = 1;
-  int parameterrangemap_size() const;
-  void clear_parameterrangemap();
+  // map<string, .flyteidl.plugins.sagemaker.ParameterRangeOneOf> parameter_range_map = 1;
+  int parameter_range_map_size() const;
+  void clear_parameter_range_map();
   static const int kParameterRangeMapFieldNumber = 1;
   const ::google::protobuf::Map< ::std::string, ::flyteidl::plugins::sagemaker::ParameterRangeOneOf >&
-      parameterrangemap() const;
+      parameter_range_map() const;
   ::google::protobuf::Map< ::std::string, ::flyteidl::plugins::sagemaker::ParameterRangeOneOf >*
-      mutable_parameterrangemap();
+      mutable_parameter_range_map();
 
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.ParameterRanges)
  private:
@@ -789,7 +789,7 @@ class ParameterRanges final :
       ::std::string, ::flyteidl::plugins::sagemaker::ParameterRangeOneOf,
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
-      0 > parameterrangemap_;
+      0 > parameter_range_map_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2fparameterranges_2eproto;
 };
@@ -804,99 +804,99 @@ class ParameterRanges final :
 #endif  // __GNUC__
 // ContinuousParameterRange
 
-// double MaxValue = 1;
-inline void ContinuousParameterRange::clear_maxvalue() {
-  maxvalue_ = 0;
+// double max_value = 1;
+inline void ContinuousParameterRange::clear_max_value() {
+  max_value_ = 0;
 }
-inline double ContinuousParameterRange::maxvalue() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ContinuousParameterRange.MaxValue)
-  return maxvalue_;
+inline double ContinuousParameterRange::max_value() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ContinuousParameterRange.max_value)
+  return max_value_;
 }
-inline void ContinuousParameterRange::set_maxvalue(double value) {
+inline void ContinuousParameterRange::set_max_value(double value) {
   
-  maxvalue_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.ContinuousParameterRange.MaxValue)
+  max_value_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.ContinuousParameterRange.max_value)
 }
 
-// double MinValue = 2;
-inline void ContinuousParameterRange::clear_minvalue() {
-  minvalue_ = 0;
+// double min_value = 2;
+inline void ContinuousParameterRange::clear_min_value() {
+  min_value_ = 0;
 }
-inline double ContinuousParameterRange::minvalue() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ContinuousParameterRange.MinValue)
-  return minvalue_;
+inline double ContinuousParameterRange::min_value() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ContinuousParameterRange.min_value)
+  return min_value_;
 }
-inline void ContinuousParameterRange::set_minvalue(double value) {
+inline void ContinuousParameterRange::set_min_value(double value) {
   
-  minvalue_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.ContinuousParameterRange.MinValue)
+  min_value_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.ContinuousParameterRange.min_value)
 }
 
-// .flyteidl.plugins.sagemaker.HyperparameterScalingType ScalingType = 3;
-inline void ContinuousParameterRange::clear_scalingtype() {
-  scalingtype_ = 0;
+// .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
+inline void ContinuousParameterRange::clear_scaling_type() {
+  scaling_type_ = 0;
 }
-inline ::flyteidl::plugins::sagemaker::HyperparameterScalingType ContinuousParameterRange::scalingtype() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ContinuousParameterRange.ScalingType)
-  return static_cast< ::flyteidl::plugins::sagemaker::HyperparameterScalingType >(scalingtype_);
+inline ::flyteidl::plugins::sagemaker::HyperparameterScalingType ContinuousParameterRange::scaling_type() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ContinuousParameterRange.scaling_type)
+  return static_cast< ::flyteidl::plugins::sagemaker::HyperparameterScalingType >(scaling_type_);
 }
-inline void ContinuousParameterRange::set_scalingtype(::flyteidl::plugins::sagemaker::HyperparameterScalingType value) {
+inline void ContinuousParameterRange::set_scaling_type(::flyteidl::plugins::sagemaker::HyperparameterScalingType value) {
   
-  scalingtype_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.ContinuousParameterRange.ScalingType)
+  scaling_type_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.ContinuousParameterRange.scaling_type)
 }
 
 // -------------------------------------------------------------------
 
 // IntegerParameterRange
 
-// float MaxValue = 1;
-inline void IntegerParameterRange::clear_maxvalue() {
-  maxvalue_ = 0;
+// float max_value = 1;
+inline void IntegerParameterRange::clear_max_value() {
+  max_value_ = 0;
 }
-inline float IntegerParameterRange::maxvalue() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.IntegerParameterRange.MaxValue)
-  return maxvalue_;
+inline float IntegerParameterRange::max_value() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.IntegerParameterRange.max_value)
+  return max_value_;
 }
-inline void IntegerParameterRange::set_maxvalue(float value) {
+inline void IntegerParameterRange::set_max_value(float value) {
   
-  maxvalue_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.IntegerParameterRange.MaxValue)
+  max_value_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.IntegerParameterRange.max_value)
 }
 
-// float MinValue = 2;
-inline void IntegerParameterRange::clear_minvalue() {
-  minvalue_ = 0;
+// float min_value = 2;
+inline void IntegerParameterRange::clear_min_value() {
+  min_value_ = 0;
 }
-inline float IntegerParameterRange::minvalue() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.IntegerParameterRange.MinValue)
-  return minvalue_;
+inline float IntegerParameterRange::min_value() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.IntegerParameterRange.min_value)
+  return min_value_;
 }
-inline void IntegerParameterRange::set_minvalue(float value) {
+inline void IntegerParameterRange::set_min_value(float value) {
   
-  minvalue_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.IntegerParameterRange.MinValue)
+  min_value_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.IntegerParameterRange.min_value)
 }
 
-// .flyteidl.plugins.sagemaker.HyperparameterScalingType ScalingType = 3;
-inline void IntegerParameterRange::clear_scalingtype() {
-  scalingtype_ = 0;
+// .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
+inline void IntegerParameterRange::clear_scaling_type() {
+  scaling_type_ = 0;
 }
-inline ::flyteidl::plugins::sagemaker::HyperparameterScalingType IntegerParameterRange::scalingtype() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.IntegerParameterRange.ScalingType)
-  return static_cast< ::flyteidl::plugins::sagemaker::HyperparameterScalingType >(scalingtype_);
+inline ::flyteidl::plugins::sagemaker::HyperparameterScalingType IntegerParameterRange::scaling_type() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.IntegerParameterRange.scaling_type)
+  return static_cast< ::flyteidl::plugins::sagemaker::HyperparameterScalingType >(scaling_type_);
 }
-inline void IntegerParameterRange::set_scalingtype(::flyteidl::plugins::sagemaker::HyperparameterScalingType value) {
+inline void IntegerParameterRange::set_scaling_type(::flyteidl::plugins::sagemaker::HyperparameterScalingType value) {
   
-  scalingtype_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.IntegerParameterRange.ScalingType)
+  scaling_type_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.IntegerParameterRange.scaling_type)
 }
 
 // -------------------------------------------------------------------
 
 // CategoricalParameterRange
 
-// repeated string Values = 1;
+// repeated string values = 1;
 inline int CategoricalParameterRange::values_size() const {
   return values_.size();
 }
@@ -904,64 +904,64 @@ inline void CategoricalParameterRange::clear_values() {
   values_.Clear();
 }
 inline const ::std::string& CategoricalParameterRange::values(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.CategoricalParameterRange.Values)
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.CategoricalParameterRange.values)
   return values_.Get(index);
 }
 inline ::std::string* CategoricalParameterRange::mutable_values(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.CategoricalParameterRange.Values)
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.CategoricalParameterRange.values)
   return values_.Mutable(index);
 }
 inline void CategoricalParameterRange::set_values(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.CategoricalParameterRange.Values)
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.CategoricalParameterRange.values)
   values_.Mutable(index)->assign(value);
 }
 #if LANG_CXX11
 inline void CategoricalParameterRange::set_values(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.CategoricalParameterRange.Values)
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.CategoricalParameterRange.values)
   values_.Mutable(index)->assign(std::move(value));
 }
 #endif
 inline void CategoricalParameterRange::set_values(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   values_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.CategoricalParameterRange.Values)
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.CategoricalParameterRange.values)
 }
 inline void CategoricalParameterRange::set_values(int index, const char* value, size_t size) {
   values_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.CategoricalParameterRange.Values)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.CategoricalParameterRange.values)
 }
 inline ::std::string* CategoricalParameterRange::add_values() {
-  // @@protoc_insertion_point(field_add_mutable:flyteidl.plugins.sagemaker.CategoricalParameterRange.Values)
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.plugins.sagemaker.CategoricalParameterRange.values)
   return values_.Add();
 }
 inline void CategoricalParameterRange::add_values(const ::std::string& value) {
   values_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:flyteidl.plugins.sagemaker.CategoricalParameterRange.Values)
+  // @@protoc_insertion_point(field_add:flyteidl.plugins.sagemaker.CategoricalParameterRange.values)
 }
 #if LANG_CXX11
 inline void CategoricalParameterRange::add_values(::std::string&& value) {
   values_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:flyteidl.plugins.sagemaker.CategoricalParameterRange.Values)
+  // @@protoc_insertion_point(field_add:flyteidl.plugins.sagemaker.CategoricalParameterRange.values)
 }
 #endif
 inline void CategoricalParameterRange::add_values(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   values_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:flyteidl.plugins.sagemaker.CategoricalParameterRange.Values)
+  // @@protoc_insertion_point(field_add_char:flyteidl.plugins.sagemaker.CategoricalParameterRange.values)
 }
 inline void CategoricalParameterRange::add_values(const char* value, size_t size) {
   values_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:flyteidl.plugins.sagemaker.CategoricalParameterRange.Values)
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.plugins.sagemaker.CategoricalParameterRange.values)
 }
 inline const ::google::protobuf::RepeatedPtrField<::std::string>&
 CategoricalParameterRange::values() const {
-  // @@protoc_insertion_point(field_list:flyteidl.plugins.sagemaker.CategoricalParameterRange.Values)
+  // @@protoc_insertion_point(field_list:flyteidl.plugins.sagemaker.CategoricalParameterRange.values)
   return values_;
 }
 inline ::google::protobuf::RepeatedPtrField<::std::string>*
 CategoricalParameterRange::mutable_values() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.plugins.sagemaker.CategoricalParameterRange.Values)
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.plugins.sagemaker.CategoricalParameterRange.values)
   return &values_;
 }
 
@@ -969,127 +969,127 @@ CategoricalParameterRange::mutable_values() {
 
 // ParameterRangeOneOf
 
-// .flyteidl.plugins.sagemaker.ContinuousParameterRange ContinuousParameterRange = 1;
-inline bool ParameterRangeOneOf::has_continuousparameterrange() const {
+// .flyteidl.plugins.sagemaker.ContinuousParameterRange continuous_parameter_range = 1;
+inline bool ParameterRangeOneOf::has_continuous_parameter_range() const {
   return ParameterRangeTypes_case() == kContinuousParameterRange;
 }
-inline void ParameterRangeOneOf::set_has_continuousparameterrange() {
+inline void ParameterRangeOneOf::set_has_continuous_parameter_range() {
   _oneof_case_[0] = kContinuousParameterRange;
 }
-inline void ParameterRangeOneOf::clear_continuousparameterrange() {
-  if (has_continuousparameterrange()) {
-    delete ParameterRangeTypes_.continuousparameterrange_;
+inline void ParameterRangeOneOf::clear_continuous_parameter_range() {
+  if (has_continuous_parameter_range()) {
+    delete ParameterRangeTypes_.continuous_parameter_range_;
     clear_has_ParameterRangeTypes();
   }
 }
-inline ::flyteidl::plugins::sagemaker::ContinuousParameterRange* ParameterRangeOneOf::release_continuousparameterrange() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.ParameterRangeOneOf.ContinuousParameterRange)
-  if (has_continuousparameterrange()) {
+inline ::flyteidl::plugins::sagemaker::ContinuousParameterRange* ParameterRangeOneOf::release_continuous_parameter_range() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.ParameterRangeOneOf.continuous_parameter_range)
+  if (has_continuous_parameter_range()) {
     clear_has_ParameterRangeTypes();
-      ::flyteidl::plugins::sagemaker::ContinuousParameterRange* temp = ParameterRangeTypes_.continuousparameterrange_;
-    ParameterRangeTypes_.continuousparameterrange_ = nullptr;
+      ::flyteidl::plugins::sagemaker::ContinuousParameterRange* temp = ParameterRangeTypes_.continuous_parameter_range_;
+    ParameterRangeTypes_.continuous_parameter_range_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::flyteidl::plugins::sagemaker::ContinuousParameterRange& ParameterRangeOneOf::continuousparameterrange() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ParameterRangeOneOf.ContinuousParameterRange)
-  return has_continuousparameterrange()
-      ? *ParameterRangeTypes_.continuousparameterrange_
+inline const ::flyteidl::plugins::sagemaker::ContinuousParameterRange& ParameterRangeOneOf::continuous_parameter_range() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ParameterRangeOneOf.continuous_parameter_range)
+  return has_continuous_parameter_range()
+      ? *ParameterRangeTypes_.continuous_parameter_range_
       : *reinterpret_cast< ::flyteidl::plugins::sagemaker::ContinuousParameterRange*>(&::flyteidl::plugins::sagemaker::_ContinuousParameterRange_default_instance_);
 }
-inline ::flyteidl::plugins::sagemaker::ContinuousParameterRange* ParameterRangeOneOf::mutable_continuousparameterrange() {
-  if (!has_continuousparameterrange()) {
+inline ::flyteidl::plugins::sagemaker::ContinuousParameterRange* ParameterRangeOneOf::mutable_continuous_parameter_range() {
+  if (!has_continuous_parameter_range()) {
     clear_ParameterRangeTypes();
-    set_has_continuousparameterrange();
-    ParameterRangeTypes_.continuousparameterrange_ = CreateMaybeMessage< ::flyteidl::plugins::sagemaker::ContinuousParameterRange >(
+    set_has_continuous_parameter_range();
+    ParameterRangeTypes_.continuous_parameter_range_ = CreateMaybeMessage< ::flyteidl::plugins::sagemaker::ContinuousParameterRange >(
         GetArenaNoVirtual());
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.ParameterRangeOneOf.ContinuousParameterRange)
-  return ParameterRangeTypes_.continuousparameterrange_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.ParameterRangeOneOf.continuous_parameter_range)
+  return ParameterRangeTypes_.continuous_parameter_range_;
 }
 
-// .flyteidl.plugins.sagemaker.IntegerParameterRange IntegerParameterRange = 2;
-inline bool ParameterRangeOneOf::has_integerparameterrange() const {
+// .flyteidl.plugins.sagemaker.IntegerParameterRange integer_parameter_range = 2;
+inline bool ParameterRangeOneOf::has_integer_parameter_range() const {
   return ParameterRangeTypes_case() == kIntegerParameterRange;
 }
-inline void ParameterRangeOneOf::set_has_integerparameterrange() {
+inline void ParameterRangeOneOf::set_has_integer_parameter_range() {
   _oneof_case_[0] = kIntegerParameterRange;
 }
-inline void ParameterRangeOneOf::clear_integerparameterrange() {
-  if (has_integerparameterrange()) {
-    delete ParameterRangeTypes_.integerparameterrange_;
+inline void ParameterRangeOneOf::clear_integer_parameter_range() {
+  if (has_integer_parameter_range()) {
+    delete ParameterRangeTypes_.integer_parameter_range_;
     clear_has_ParameterRangeTypes();
   }
 }
-inline ::flyteidl::plugins::sagemaker::IntegerParameterRange* ParameterRangeOneOf::release_integerparameterrange() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.ParameterRangeOneOf.IntegerParameterRange)
-  if (has_integerparameterrange()) {
+inline ::flyteidl::plugins::sagemaker::IntegerParameterRange* ParameterRangeOneOf::release_integer_parameter_range() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.ParameterRangeOneOf.integer_parameter_range)
+  if (has_integer_parameter_range()) {
     clear_has_ParameterRangeTypes();
-      ::flyteidl::plugins::sagemaker::IntegerParameterRange* temp = ParameterRangeTypes_.integerparameterrange_;
-    ParameterRangeTypes_.integerparameterrange_ = nullptr;
+      ::flyteidl::plugins::sagemaker::IntegerParameterRange* temp = ParameterRangeTypes_.integer_parameter_range_;
+    ParameterRangeTypes_.integer_parameter_range_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::flyteidl::plugins::sagemaker::IntegerParameterRange& ParameterRangeOneOf::integerparameterrange() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ParameterRangeOneOf.IntegerParameterRange)
-  return has_integerparameterrange()
-      ? *ParameterRangeTypes_.integerparameterrange_
+inline const ::flyteidl::plugins::sagemaker::IntegerParameterRange& ParameterRangeOneOf::integer_parameter_range() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ParameterRangeOneOf.integer_parameter_range)
+  return has_integer_parameter_range()
+      ? *ParameterRangeTypes_.integer_parameter_range_
       : *reinterpret_cast< ::flyteidl::plugins::sagemaker::IntegerParameterRange*>(&::flyteidl::plugins::sagemaker::_IntegerParameterRange_default_instance_);
 }
-inline ::flyteidl::plugins::sagemaker::IntegerParameterRange* ParameterRangeOneOf::mutable_integerparameterrange() {
-  if (!has_integerparameterrange()) {
+inline ::flyteidl::plugins::sagemaker::IntegerParameterRange* ParameterRangeOneOf::mutable_integer_parameter_range() {
+  if (!has_integer_parameter_range()) {
     clear_ParameterRangeTypes();
-    set_has_integerparameterrange();
-    ParameterRangeTypes_.integerparameterrange_ = CreateMaybeMessage< ::flyteidl::plugins::sagemaker::IntegerParameterRange >(
+    set_has_integer_parameter_range();
+    ParameterRangeTypes_.integer_parameter_range_ = CreateMaybeMessage< ::flyteidl::plugins::sagemaker::IntegerParameterRange >(
         GetArenaNoVirtual());
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.ParameterRangeOneOf.IntegerParameterRange)
-  return ParameterRangeTypes_.integerparameterrange_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.ParameterRangeOneOf.integer_parameter_range)
+  return ParameterRangeTypes_.integer_parameter_range_;
 }
 
-// .flyteidl.plugins.sagemaker.CategoricalParameterRange CategoricalParameterRange = 3;
-inline bool ParameterRangeOneOf::has_categoricalparameterrange() const {
+// .flyteidl.plugins.sagemaker.CategoricalParameterRange categorical_parameter_range = 3;
+inline bool ParameterRangeOneOf::has_categorical_parameter_range() const {
   return ParameterRangeTypes_case() == kCategoricalParameterRange;
 }
-inline void ParameterRangeOneOf::set_has_categoricalparameterrange() {
+inline void ParameterRangeOneOf::set_has_categorical_parameter_range() {
   _oneof_case_[0] = kCategoricalParameterRange;
 }
-inline void ParameterRangeOneOf::clear_categoricalparameterrange() {
-  if (has_categoricalparameterrange()) {
-    delete ParameterRangeTypes_.categoricalparameterrange_;
+inline void ParameterRangeOneOf::clear_categorical_parameter_range() {
+  if (has_categorical_parameter_range()) {
+    delete ParameterRangeTypes_.categorical_parameter_range_;
     clear_has_ParameterRangeTypes();
   }
 }
-inline ::flyteidl::plugins::sagemaker::CategoricalParameterRange* ParameterRangeOneOf::release_categoricalparameterrange() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.ParameterRangeOneOf.CategoricalParameterRange)
-  if (has_categoricalparameterrange()) {
+inline ::flyteidl::plugins::sagemaker::CategoricalParameterRange* ParameterRangeOneOf::release_categorical_parameter_range() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.ParameterRangeOneOf.categorical_parameter_range)
+  if (has_categorical_parameter_range()) {
     clear_has_ParameterRangeTypes();
-      ::flyteidl::plugins::sagemaker::CategoricalParameterRange* temp = ParameterRangeTypes_.categoricalparameterrange_;
-    ParameterRangeTypes_.categoricalparameterrange_ = nullptr;
+      ::flyteidl::plugins::sagemaker::CategoricalParameterRange* temp = ParameterRangeTypes_.categorical_parameter_range_;
+    ParameterRangeTypes_.categorical_parameter_range_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::flyteidl::plugins::sagemaker::CategoricalParameterRange& ParameterRangeOneOf::categoricalparameterrange() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ParameterRangeOneOf.CategoricalParameterRange)
-  return has_categoricalparameterrange()
-      ? *ParameterRangeTypes_.categoricalparameterrange_
+inline const ::flyteidl::plugins::sagemaker::CategoricalParameterRange& ParameterRangeOneOf::categorical_parameter_range() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ParameterRangeOneOf.categorical_parameter_range)
+  return has_categorical_parameter_range()
+      ? *ParameterRangeTypes_.categorical_parameter_range_
       : *reinterpret_cast< ::flyteidl::plugins::sagemaker::CategoricalParameterRange*>(&::flyteidl::plugins::sagemaker::_CategoricalParameterRange_default_instance_);
 }
-inline ::flyteidl::plugins::sagemaker::CategoricalParameterRange* ParameterRangeOneOf::mutable_categoricalparameterrange() {
-  if (!has_categoricalparameterrange()) {
+inline ::flyteidl::plugins::sagemaker::CategoricalParameterRange* ParameterRangeOneOf::mutable_categorical_parameter_range() {
+  if (!has_categorical_parameter_range()) {
     clear_ParameterRangeTypes();
-    set_has_categoricalparameterrange();
-    ParameterRangeTypes_.categoricalparameterrange_ = CreateMaybeMessage< ::flyteidl::plugins::sagemaker::CategoricalParameterRange >(
+    set_has_categorical_parameter_range();
+    ParameterRangeTypes_.categorical_parameter_range_ = CreateMaybeMessage< ::flyteidl::plugins::sagemaker::CategoricalParameterRange >(
         GetArenaNoVirtual());
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.ParameterRangeOneOf.CategoricalParameterRange)
-  return ParameterRangeTypes_.categoricalparameterrange_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.ParameterRangeOneOf.categorical_parameter_range)
+  return ParameterRangeTypes_.categorical_parameter_range_;
 }
 
 inline bool ParameterRangeOneOf::has_ParameterRangeTypes() const {
@@ -1107,22 +1107,22 @@ inline ParameterRangeOneOf::ParameterRangeTypesCase ParameterRangeOneOf::Paramet
 
 // ParameterRanges
 
-// map<string, .flyteidl.plugins.sagemaker.ParameterRangeOneOf> ParameterRangeMap = 1;
-inline int ParameterRanges::parameterrangemap_size() const {
-  return parameterrangemap_.size();
+// map<string, .flyteidl.plugins.sagemaker.ParameterRangeOneOf> parameter_range_map = 1;
+inline int ParameterRanges::parameter_range_map_size() const {
+  return parameter_range_map_.size();
 }
-inline void ParameterRanges::clear_parameterrangemap() {
-  parameterrangemap_.Clear();
+inline void ParameterRanges::clear_parameter_range_map() {
+  parameter_range_map_.Clear();
 }
 inline const ::google::protobuf::Map< ::std::string, ::flyteidl::plugins::sagemaker::ParameterRangeOneOf >&
-ParameterRanges::parameterrangemap() const {
-  // @@protoc_insertion_point(field_map:flyteidl.plugins.sagemaker.ParameterRanges.ParameterRangeMap)
-  return parameterrangemap_.GetMap();
+ParameterRanges::parameter_range_map() const {
+  // @@protoc_insertion_point(field_map:flyteidl.plugins.sagemaker.ParameterRanges.parameter_range_map)
+  return parameter_range_map_.GetMap();
 }
 inline ::google::protobuf::Map< ::std::string, ::flyteidl::plugins::sagemaker::ParameterRangeOneOf >*
-ParameterRanges::mutable_parameterrangemap() {
-  // @@protoc_insertion_point(field_mutable_map:flyteidl.plugins.sagemaker.ParameterRanges.ParameterRangeMap)
-  return parameterrangemap_.MutableMap();
+ParameterRanges::mutable_parameter_range_map() {
+  // @@protoc_insertion_point(field_mutable_map:flyteidl.plugins.sagemaker.ParameterRanges.parameter_range_map)
+  return parameter_range_map_.MutableMap();
 }
 
 #ifdef __GNUC__

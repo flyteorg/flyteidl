@@ -183,7 +183,7 @@ class AlgorithmSpecification_MetricDefinition final :
 
   // accessors -------------------------------------------------------
 
-  // string Name = 1;
+  // string name = 1;
   void clear_name();
   static const int kNameFieldNumber = 1;
   const ::std::string& name() const;
@@ -197,7 +197,7 @@ class AlgorithmSpecification_MetricDefinition final :
   ::std::string* release_name();
   void set_allocated_name(::std::string* name);
 
-  // string Regex = 2;
+  // string regex = 2;
   void clear_regex();
   static const int kRegexFieldNumber = 2;
   const ::std::string& regex() const;
@@ -320,69 +320,69 @@ class AlgorithmSpecification final :
 
   // accessors -------------------------------------------------------
 
-  // repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;
-  int metricdefinitions_size() const;
-  void clear_metricdefinitions();
+  // repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;
+  int metric_definitions_size() const;
+  void clear_metric_definitions();
   static const int kMetricDefinitionsFieldNumber = 4;
-  ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition* mutable_metricdefinitions(int index);
+  ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition* mutable_metric_definitions(int index);
   ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition >*
-      mutable_metricdefinitions();
-  const ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition& metricdefinitions(int index) const;
-  ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition* add_metricdefinitions();
+      mutable_metric_definitions();
+  const ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition& metric_definitions(int index) const;
+  ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition* add_metric_definitions();
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition >&
-      metricdefinitions() const;
+      metric_definitions() const;
 
-  // string TrainingImage = 1;
-  void clear_trainingimage();
+  // string training_image = 1;
+  void clear_training_image();
   static const int kTrainingImageFieldNumber = 1;
-  const ::std::string& trainingimage() const;
-  void set_trainingimage(const ::std::string& value);
+  const ::std::string& training_image() const;
+  void set_training_image(const ::std::string& value);
   #if LANG_CXX11
-  void set_trainingimage(::std::string&& value);
+  void set_training_image(::std::string&& value);
   #endif
-  void set_trainingimage(const char* value);
-  void set_trainingimage(const char* value, size_t size);
-  ::std::string* mutable_trainingimage();
-  ::std::string* release_trainingimage();
-  void set_allocated_trainingimage(::std::string* trainingimage);
+  void set_training_image(const char* value);
+  void set_training_image(const char* value, size_t size);
+  ::std::string* mutable_training_image();
+  ::std::string* release_training_image();
+  void set_allocated_training_image(::std::string* training_image);
 
-  // string TrainingInputMode = 2;
-  void clear_traininginputmode();
+  // string training_input_mode = 2;
+  void clear_training_input_mode();
   static const int kTrainingInputModeFieldNumber = 2;
-  const ::std::string& traininginputmode() const;
-  void set_traininginputmode(const ::std::string& value);
+  const ::std::string& training_input_mode() const;
+  void set_training_input_mode(const ::std::string& value);
   #if LANG_CXX11
-  void set_traininginputmode(::std::string&& value);
+  void set_training_input_mode(::std::string&& value);
   #endif
-  void set_traininginputmode(const char* value);
-  void set_traininginputmode(const char* value, size_t size);
-  ::std::string* mutable_traininginputmode();
-  ::std::string* release_traininginputmode();
-  void set_allocated_traininginputmode(::std::string* traininginputmode);
+  void set_training_input_mode(const char* value);
+  void set_training_input_mode(const char* value, size_t size);
+  ::std::string* mutable_training_input_mode();
+  ::std::string* release_training_input_mode();
+  void set_allocated_training_input_mode(::std::string* training_input_mode);
 
-  // string AlgorithmName = 3;
-  void clear_algorithmname();
+  // string algorithm_name = 3;
+  void clear_algorithm_name();
   static const int kAlgorithmNameFieldNumber = 3;
-  const ::std::string& algorithmname() const;
-  void set_algorithmname(const ::std::string& value);
+  const ::std::string& algorithm_name() const;
+  void set_algorithm_name(const ::std::string& value);
   #if LANG_CXX11
-  void set_algorithmname(::std::string&& value);
+  void set_algorithm_name(::std::string&& value);
   #endif
-  void set_algorithmname(const char* value);
-  void set_algorithmname(const char* value, size_t size);
-  ::std::string* mutable_algorithmname();
-  ::std::string* release_algorithmname();
-  void set_allocated_algorithmname(::std::string* algorithmname);
+  void set_algorithm_name(const char* value);
+  void set_algorithm_name(const char* value, size_t size);
+  ::std::string* mutable_algorithm_name();
+  ::std::string* release_algorithm_name();
+  void set_allocated_algorithm_name(::std::string* algorithm_name);
 
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.AlgorithmSpecification)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition > metricdefinitions_;
-  ::google::protobuf::internal::ArenaStringPtr trainingimage_;
-  ::google::protobuf::internal::ArenaStringPtr traininginputmode_;
-  ::google::protobuf::internal::ArenaStringPtr algorithmname_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition > metric_definitions_;
+  ::google::protobuf::internal::ArenaStringPtr training_image_;
+  ::google::protobuf::internal::ArenaStringPtr training_input_mode_;
+  ::google::protobuf::internal::ArenaStringPtr algorithm_name_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftrainingjob_2eproto;
 };
@@ -483,55 +483,55 @@ class ResourceConfig final :
 
   // accessors -------------------------------------------------------
 
-  // string InstanceType = 1;
-  void clear_instancetype();
+  // string instance_type = 1;
+  void clear_instance_type();
   static const int kInstanceTypeFieldNumber = 1;
-  const ::std::string& instancetype() const;
-  void set_instancetype(const ::std::string& value);
+  const ::std::string& instance_type() const;
+  void set_instance_type(const ::std::string& value);
   #if LANG_CXX11
-  void set_instancetype(::std::string&& value);
+  void set_instance_type(::std::string&& value);
   #endif
-  void set_instancetype(const char* value);
-  void set_instancetype(const char* value, size_t size);
-  ::std::string* mutable_instancetype();
-  ::std::string* release_instancetype();
-  void set_allocated_instancetype(::std::string* instancetype);
+  void set_instance_type(const char* value);
+  void set_instance_type(const char* value, size_t size);
+  ::std::string* mutable_instance_type();
+  ::std::string* release_instance_type();
+  void set_allocated_instance_type(::std::string* instance_type);
 
-  // string VolumeKmsKeyId = 4;
-  void clear_volumekmskeyid();
+  // string volume_kms_key_id = 4;
+  void clear_volume_kms_key_id();
   static const int kVolumeKmsKeyIdFieldNumber = 4;
-  const ::std::string& volumekmskeyid() const;
-  void set_volumekmskeyid(const ::std::string& value);
+  const ::std::string& volume_kms_key_id() const;
+  void set_volume_kms_key_id(const ::std::string& value);
   #if LANG_CXX11
-  void set_volumekmskeyid(::std::string&& value);
+  void set_volume_kms_key_id(::std::string&& value);
   #endif
-  void set_volumekmskeyid(const char* value);
-  void set_volumekmskeyid(const char* value, size_t size);
-  ::std::string* mutable_volumekmskeyid();
-  ::std::string* release_volumekmskeyid();
-  void set_allocated_volumekmskeyid(::std::string* volumekmskeyid);
+  void set_volume_kms_key_id(const char* value);
+  void set_volume_kms_key_id(const char* value, size_t size);
+  ::std::string* mutable_volume_kms_key_id();
+  ::std::string* release_volume_kms_key_id();
+  void set_allocated_volume_kms_key_id(::std::string* volume_kms_key_id);
 
-  // int64 InstanceCount = 2;
-  void clear_instancecount();
+  // int64 instance_count = 2;
+  void clear_instance_count();
   static const int kInstanceCountFieldNumber = 2;
-  ::google::protobuf::int64 instancecount() const;
-  void set_instancecount(::google::protobuf::int64 value);
+  ::google::protobuf::int64 instance_count() const;
+  void set_instance_count(::google::protobuf::int64 value);
 
-  // int64 VolumeSizeInGB = 3;
-  void clear_volumesizeingb();
-  static const int kVolumeSizeInGBFieldNumber = 3;
-  ::google::protobuf::int64 volumesizeingb() const;
-  void set_volumesizeingb(::google::protobuf::int64 value);
+  // int64 volume_size_in_gb = 3;
+  void clear_volume_size_in_gb();
+  static const int kVolumeSizeInGbFieldNumber = 3;
+  ::google::protobuf::int64 volume_size_in_gb() const;
+  void set_volume_size_in_gb(::google::protobuf::int64 value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.ResourceConfig)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr instancetype_;
-  ::google::protobuf::internal::ArenaStringPtr volumekmskeyid_;
-  ::google::protobuf::int64 instancecount_;
-  ::google::protobuf::int64 volumesizeingb_;
+  ::google::protobuf::internal::ArenaStringPtr instance_type_;
+  ::google::protobuf::internal::ArenaStringPtr volume_kms_key_id_;
+  ::google::protobuf::int64 instance_count_;
+  ::google::protobuf::int64 volume_size_in_gb_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftrainingjob_2eproto;
 };
@@ -632,25 +632,25 @@ class StoppingCondition final :
 
   // accessors -------------------------------------------------------
 
-  // int64 MaxRuntimeInSeconds = 1;
-  void clear_maxruntimeinseconds();
+  // int64 max_runtime_in_seconds = 1;
+  void clear_max_runtime_in_seconds();
   static const int kMaxRuntimeInSecondsFieldNumber = 1;
-  ::google::protobuf::int64 maxruntimeinseconds() const;
-  void set_maxruntimeinseconds(::google::protobuf::int64 value);
+  ::google::protobuf::int64 max_runtime_in_seconds() const;
+  void set_max_runtime_in_seconds(::google::protobuf::int64 value);
 
-  // int64 MaxWaitTimeInSeconds = 2;
-  void clear_maxwaittimeinseconds();
+  // int64 max_wait_time_in_seconds = 2;
+  void clear_max_wait_time_in_seconds();
   static const int kMaxWaitTimeInSecondsFieldNumber = 2;
-  ::google::protobuf::int64 maxwaittimeinseconds() const;
-  void set_maxwaittimeinseconds(::google::protobuf::int64 value);
+  ::google::protobuf::int64 max_wait_time_in_seconds() const;
+  void set_max_wait_time_in_seconds(::google::protobuf::int64 value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.StoppingCondition)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::int64 maxruntimeinseconds_;
-  ::google::protobuf::int64 maxwaittimeinseconds_;
+  ::google::protobuf::int64 max_runtime_in_seconds_;
+  ::google::protobuf::int64 max_wait_time_in_seconds_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftrainingjob_2eproto;
 };
@@ -751,29 +751,29 @@ class VpcConfig final :
 
   // accessors -------------------------------------------------------
 
-  // repeated string SecurityGroupIds = 1;
-  int securitygroupids_size() const;
-  void clear_securitygroupids();
+  // repeated string security_group_ids = 1;
+  int security_group_ids_size() const;
+  void clear_security_group_ids();
   static const int kSecurityGroupIdsFieldNumber = 1;
-  const ::std::string& securitygroupids(int index) const;
-  ::std::string* mutable_securitygroupids(int index);
-  void set_securitygroupids(int index, const ::std::string& value);
+  const ::std::string& security_group_ids(int index) const;
+  ::std::string* mutable_security_group_ids(int index);
+  void set_security_group_ids(int index, const ::std::string& value);
   #if LANG_CXX11
-  void set_securitygroupids(int index, ::std::string&& value);
+  void set_security_group_ids(int index, ::std::string&& value);
   #endif
-  void set_securitygroupids(int index, const char* value);
-  void set_securitygroupids(int index, const char* value, size_t size);
-  ::std::string* add_securitygroupids();
-  void add_securitygroupids(const ::std::string& value);
+  void set_security_group_ids(int index, const char* value);
+  void set_security_group_ids(int index, const char* value, size_t size);
+  ::std::string* add_security_group_ids();
+  void add_security_group_ids(const ::std::string& value);
   #if LANG_CXX11
-  void add_securitygroupids(::std::string&& value);
+  void add_security_group_ids(::std::string&& value);
   #endif
-  void add_securitygroupids(const char* value);
-  void add_securitygroupids(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField<::std::string>& securitygroupids() const;
-  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_securitygroupids();
+  void add_security_group_ids(const char* value);
+  void add_security_group_ids(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& security_group_ids() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_security_group_ids();
 
-  // repeated string Subnets = 2;
+  // repeated string subnets = 2;
   int subnets_size() const;
   void clear_subnets();
   static const int kSubnetsFieldNumber = 2;
@@ -800,7 +800,7 @@ class VpcConfig final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField<::std::string> securitygroupids_;
+  ::google::protobuf::RepeatedPtrField<::std::string> security_group_ids_;
   ::google::protobuf::RepeatedPtrField<::std::string> subnets_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftrainingjob_2eproto;
@@ -902,7 +902,7 @@ class TrainingJob final :
 
   // accessors -------------------------------------------------------
 
-  // string Region = 1;
+  // string region = 1;
   void clear_region();
   static const int kRegionFieldNumber = 1;
   const ::std::string& region() const;
@@ -916,61 +916,61 @@ class TrainingJob final :
   ::std::string* release_region();
   void set_allocated_region(::std::string* region);
 
-  // string RoleArn = 2;
-  void clear_rolearn();
+  // string role_arn = 2;
+  void clear_role_arn();
   static const int kRoleArnFieldNumber = 2;
-  const ::std::string& rolearn() const;
-  void set_rolearn(const ::std::string& value);
+  const ::std::string& role_arn() const;
+  void set_role_arn(const ::std::string& value);
   #if LANG_CXX11
-  void set_rolearn(::std::string&& value);
+  void set_role_arn(::std::string&& value);
   #endif
-  void set_rolearn(const char* value);
-  void set_rolearn(const char* value, size_t size);
-  ::std::string* mutable_rolearn();
-  ::std::string* release_rolearn();
-  void set_allocated_rolearn(::std::string* rolearn);
+  void set_role_arn(const char* value);
+  void set_role_arn(const char* value, size_t size);
+  ::std::string* mutable_role_arn();
+  ::std::string* release_role_arn();
+  void set_allocated_role_arn(::std::string* role_arn);
 
-  // .flyteidl.plugins.sagemaker.AlgorithmSpecification AlgorithmSpecification = 3;
-  bool has_algorithmspecification() const;
-  void clear_algorithmspecification();
+  // .flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 3;
+  bool has_algorithm_specification() const;
+  void clear_algorithm_specification();
   static const int kAlgorithmSpecificationFieldNumber = 3;
-  const ::flyteidl::plugins::sagemaker::AlgorithmSpecification& algorithmspecification() const;
-  ::flyteidl::plugins::sagemaker::AlgorithmSpecification* release_algorithmspecification();
-  ::flyteidl::plugins::sagemaker::AlgorithmSpecification* mutable_algorithmspecification();
-  void set_allocated_algorithmspecification(::flyteidl::plugins::sagemaker::AlgorithmSpecification* algorithmspecification);
+  const ::flyteidl::plugins::sagemaker::AlgorithmSpecification& algorithm_specification() const;
+  ::flyteidl::plugins::sagemaker::AlgorithmSpecification* release_algorithm_specification();
+  ::flyteidl::plugins::sagemaker::AlgorithmSpecification* mutable_algorithm_specification();
+  void set_allocated_algorithm_specification(::flyteidl::plugins::sagemaker::AlgorithmSpecification* algorithm_specification);
 
-  // .flyteidl.plugins.sagemaker.ResourceConfig ResourceConfig = 4;
-  bool has_resourceconfig() const;
-  void clear_resourceconfig();
+  // .flyteidl.plugins.sagemaker.ResourceConfig resource_config = 4;
+  bool has_resource_config() const;
+  void clear_resource_config();
   static const int kResourceConfigFieldNumber = 4;
-  const ::flyteidl::plugins::sagemaker::ResourceConfig& resourceconfig() const;
-  ::flyteidl::plugins::sagemaker::ResourceConfig* release_resourceconfig();
-  ::flyteidl::plugins::sagemaker::ResourceConfig* mutable_resourceconfig();
-  void set_allocated_resourceconfig(::flyteidl::plugins::sagemaker::ResourceConfig* resourceconfig);
+  const ::flyteidl::plugins::sagemaker::ResourceConfig& resource_config() const;
+  ::flyteidl::plugins::sagemaker::ResourceConfig* release_resource_config();
+  ::flyteidl::plugins::sagemaker::ResourceConfig* mutable_resource_config();
+  void set_allocated_resource_config(::flyteidl::plugins::sagemaker::ResourceConfig* resource_config);
 
-  // .flyteidl.plugins.sagemaker.StoppingCondition StoppingCondition = 5;
-  bool has_stoppingcondition() const;
-  void clear_stoppingcondition();
+  // .flyteidl.plugins.sagemaker.StoppingCondition stopping_condition = 5;
+  bool has_stopping_condition() const;
+  void clear_stopping_condition();
   static const int kStoppingConditionFieldNumber = 5;
-  const ::flyteidl::plugins::sagemaker::StoppingCondition& stoppingcondition() const;
-  ::flyteidl::plugins::sagemaker::StoppingCondition* release_stoppingcondition();
-  ::flyteidl::plugins::sagemaker::StoppingCondition* mutable_stoppingcondition();
-  void set_allocated_stoppingcondition(::flyteidl::plugins::sagemaker::StoppingCondition* stoppingcondition);
+  const ::flyteidl::plugins::sagemaker::StoppingCondition& stopping_condition() const;
+  ::flyteidl::plugins::sagemaker::StoppingCondition* release_stopping_condition();
+  ::flyteidl::plugins::sagemaker::StoppingCondition* mutable_stopping_condition();
+  void set_allocated_stopping_condition(::flyteidl::plugins::sagemaker::StoppingCondition* stopping_condition);
 
-  // .flyteidl.plugins.sagemaker.VpcConfig VpcConfig = 6;
-  bool has_vpcconfig() const;
-  void clear_vpcconfig();
+  // .flyteidl.plugins.sagemaker.VpcConfig vpc_config = 6;
+  bool has_vpc_config() const;
+  void clear_vpc_config();
   static const int kVpcConfigFieldNumber = 6;
-  const ::flyteidl::plugins::sagemaker::VpcConfig& vpcconfig() const;
-  ::flyteidl::plugins::sagemaker::VpcConfig* release_vpcconfig();
-  ::flyteidl::plugins::sagemaker::VpcConfig* mutable_vpcconfig();
-  void set_allocated_vpcconfig(::flyteidl::plugins::sagemaker::VpcConfig* vpcconfig);
+  const ::flyteidl::plugins::sagemaker::VpcConfig& vpc_config() const;
+  ::flyteidl::plugins::sagemaker::VpcConfig* release_vpc_config();
+  ::flyteidl::plugins::sagemaker::VpcConfig* mutable_vpc_config();
+  void set_allocated_vpc_config(::flyteidl::plugins::sagemaker::VpcConfig* vpc_config);
 
-  // bool EnableSpotTraining = 7;
-  void clear_enablespottraining();
+  // bool enable_spot_training = 7;
+  void clear_enable_spot_training();
   static const int kEnableSpotTrainingFieldNumber = 7;
-  bool enablespottraining() const;
-  void set_enablespottraining(bool value);
+  bool enable_spot_training() const;
+  void set_enable_spot_training(bool value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.TrainingJob)
  private:
@@ -978,12 +978,12 @@ class TrainingJob final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr region_;
-  ::google::protobuf::internal::ArenaStringPtr rolearn_;
-  ::flyteidl::plugins::sagemaker::AlgorithmSpecification* algorithmspecification_;
-  ::flyteidl::plugins::sagemaker::ResourceConfig* resourceconfig_;
-  ::flyteidl::plugins::sagemaker::StoppingCondition* stoppingcondition_;
-  ::flyteidl::plugins::sagemaker::VpcConfig* vpcconfig_;
-  bool enablespottraining_;
+  ::google::protobuf::internal::ArenaStringPtr role_arn_;
+  ::flyteidl::plugins::sagemaker::AlgorithmSpecification* algorithm_specification_;
+  ::flyteidl::plugins::sagemaker::ResourceConfig* resource_config_;
+  ::flyteidl::plugins::sagemaker::StoppingCondition* stopping_condition_;
+  ::flyteidl::plugins::sagemaker::VpcConfig* vpc_config_;
+  bool enable_spot_training_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftrainingjob_2eproto;
 };
@@ -998,46 +998,46 @@ class TrainingJob final :
 #endif  // __GNUC__
 // AlgorithmSpecification_MetricDefinition
 
-// string Name = 1;
+// string name = 1;
 inline void AlgorithmSpecification_MetricDefinition::clear_name() {
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline const ::std::string& AlgorithmSpecification_MetricDefinition::name() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Name)
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name)
   return name_.GetNoArena();
 }
 inline void AlgorithmSpecification_MetricDefinition::set_name(const ::std::string& value) {
   
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Name)
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name)
 }
 #if LANG_CXX11
 inline void AlgorithmSpecification_MetricDefinition::set_name(::std::string&& value) {
   
   name_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Name)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name)
 }
 #endif
 inline void AlgorithmSpecification_MetricDefinition::set_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Name)
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name)
 }
 inline void AlgorithmSpecification_MetricDefinition::set_name(const char* value, size_t size) {
   
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Name)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name)
 }
 inline ::std::string* AlgorithmSpecification_MetricDefinition::mutable_name() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Name)
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name)
   return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* AlgorithmSpecification_MetricDefinition::release_name() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Name)
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name)
   
   return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1048,49 +1048,49 @@ inline void AlgorithmSpecification_MetricDefinition::set_allocated_name(::std::s
     
   }
   name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Name)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name)
 }
 
-// string Regex = 2;
+// string regex = 2;
 inline void AlgorithmSpecification_MetricDefinition::clear_regex() {
   regex_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline const ::std::string& AlgorithmSpecification_MetricDefinition::regex() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Regex)
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex)
   return regex_.GetNoArena();
 }
 inline void AlgorithmSpecification_MetricDefinition::set_regex(const ::std::string& value) {
   
   regex_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Regex)
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex)
 }
 #if LANG_CXX11
 inline void AlgorithmSpecification_MetricDefinition::set_regex(::std::string&& value) {
   
   regex_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Regex)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex)
 }
 #endif
 inline void AlgorithmSpecification_MetricDefinition::set_regex(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   regex_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Regex)
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex)
 }
 inline void AlgorithmSpecification_MetricDefinition::set_regex(const char* value, size_t size) {
   
   regex_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Regex)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex)
 }
 inline ::std::string* AlgorithmSpecification_MetricDefinition::mutable_regex() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Regex)
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex)
   return regex_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* AlgorithmSpecification_MetricDefinition::release_regex() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Regex)
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex)
   
   return regex_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1101,446 +1101,446 @@ inline void AlgorithmSpecification_MetricDefinition::set_allocated_regex(::std::
     
   }
   regex_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), regex);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Regex)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex)
 }
 
 // -------------------------------------------------------------------
 
 // AlgorithmSpecification
 
-// string TrainingImage = 1;
-inline void AlgorithmSpecification::clear_trainingimage() {
-  trainingimage_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string training_image = 1;
+inline void AlgorithmSpecification::clear_training_image() {
+  training_image_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& AlgorithmSpecification::trainingimage() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingImage)
-  return trainingimage_.GetNoArena();
+inline const ::std::string& AlgorithmSpecification::training_image() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.training_image)
+  return training_image_.GetNoArena();
 }
-inline void AlgorithmSpecification::set_trainingimage(const ::std::string& value) {
+inline void AlgorithmSpecification::set_training_image(const ::std::string& value) {
   
-  trainingimage_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingImage)
+  training_image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.AlgorithmSpecification.training_image)
 }
 #if LANG_CXX11
-inline void AlgorithmSpecification::set_trainingimage(::std::string&& value) {
+inline void AlgorithmSpecification::set_training_image(::std::string&& value) {
   
-  trainingimage_.SetNoArena(
+  training_image_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingImage)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.AlgorithmSpecification.training_image)
 }
 #endif
-inline void AlgorithmSpecification::set_trainingimage(const char* value) {
+inline void AlgorithmSpecification::set_training_image(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  trainingimage_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingImage)
+  training_image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.AlgorithmSpecification.training_image)
 }
-inline void AlgorithmSpecification::set_trainingimage(const char* value, size_t size) {
+inline void AlgorithmSpecification::set_training_image(const char* value, size_t size) {
   
-  trainingimage_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  training_image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingImage)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.AlgorithmSpecification.training_image)
 }
-inline ::std::string* AlgorithmSpecification::mutable_trainingimage() {
+inline ::std::string* AlgorithmSpecification::mutable_training_image() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingImage)
-  return trainingimage_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.AlgorithmSpecification.training_image)
+  return training_image_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* AlgorithmSpecification::release_trainingimage() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingImage)
+inline ::std::string* AlgorithmSpecification::release_training_image() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.AlgorithmSpecification.training_image)
   
-  return trainingimage_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return training_image_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void AlgorithmSpecification::set_allocated_trainingimage(::std::string* trainingimage) {
-  if (trainingimage != nullptr) {
+inline void AlgorithmSpecification::set_allocated_training_image(::std::string* training_image) {
+  if (training_image != nullptr) {
     
   } else {
     
   }
-  trainingimage_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), trainingimage);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingImage)
+  training_image_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), training_image);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.AlgorithmSpecification.training_image)
 }
 
-// string TrainingInputMode = 2;
-inline void AlgorithmSpecification::clear_traininginputmode() {
-  traininginputmode_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string training_input_mode = 2;
+inline void AlgorithmSpecification::clear_training_input_mode() {
+  training_input_mode_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& AlgorithmSpecification::traininginputmode() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingInputMode)
-  return traininginputmode_.GetNoArena();
+inline const ::std::string& AlgorithmSpecification::training_input_mode() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.training_input_mode)
+  return training_input_mode_.GetNoArena();
 }
-inline void AlgorithmSpecification::set_traininginputmode(const ::std::string& value) {
+inline void AlgorithmSpecification::set_training_input_mode(const ::std::string& value) {
   
-  traininginputmode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingInputMode)
+  training_input_mode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.AlgorithmSpecification.training_input_mode)
 }
 #if LANG_CXX11
-inline void AlgorithmSpecification::set_traininginputmode(::std::string&& value) {
+inline void AlgorithmSpecification::set_training_input_mode(::std::string&& value) {
   
-  traininginputmode_.SetNoArena(
+  training_input_mode_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingInputMode)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.AlgorithmSpecification.training_input_mode)
 }
 #endif
-inline void AlgorithmSpecification::set_traininginputmode(const char* value) {
+inline void AlgorithmSpecification::set_training_input_mode(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  traininginputmode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingInputMode)
+  training_input_mode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.AlgorithmSpecification.training_input_mode)
 }
-inline void AlgorithmSpecification::set_traininginputmode(const char* value, size_t size) {
+inline void AlgorithmSpecification::set_training_input_mode(const char* value, size_t size) {
   
-  traininginputmode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  training_input_mode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingInputMode)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.AlgorithmSpecification.training_input_mode)
 }
-inline ::std::string* AlgorithmSpecification::mutable_traininginputmode() {
+inline ::std::string* AlgorithmSpecification::mutable_training_input_mode() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingInputMode)
-  return traininginputmode_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.AlgorithmSpecification.training_input_mode)
+  return training_input_mode_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* AlgorithmSpecification::release_traininginputmode() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingInputMode)
+inline ::std::string* AlgorithmSpecification::release_training_input_mode() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.AlgorithmSpecification.training_input_mode)
   
-  return traininginputmode_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return training_input_mode_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void AlgorithmSpecification::set_allocated_traininginputmode(::std::string* traininginputmode) {
-  if (traininginputmode != nullptr) {
+inline void AlgorithmSpecification::set_allocated_training_input_mode(::std::string* training_input_mode) {
+  if (training_input_mode != nullptr) {
     
   } else {
     
   }
-  traininginputmode_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), traininginputmode);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingInputMode)
+  training_input_mode_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), training_input_mode);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.AlgorithmSpecification.training_input_mode)
 }
 
-// string AlgorithmName = 3;
-inline void AlgorithmSpecification::clear_algorithmname() {
-  algorithmname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string algorithm_name = 3;
+inline void AlgorithmSpecification::clear_algorithm_name() {
+  algorithm_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& AlgorithmSpecification::algorithmname() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.AlgorithmName)
-  return algorithmname_.GetNoArena();
+inline const ::std::string& AlgorithmSpecification::algorithm_name() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.algorithm_name)
+  return algorithm_name_.GetNoArena();
 }
-inline void AlgorithmSpecification::set_algorithmname(const ::std::string& value) {
+inline void AlgorithmSpecification::set_algorithm_name(const ::std::string& value) {
   
-  algorithmname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.AlgorithmSpecification.AlgorithmName)
+  algorithm_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.AlgorithmSpecification.algorithm_name)
 }
 #if LANG_CXX11
-inline void AlgorithmSpecification::set_algorithmname(::std::string&& value) {
+inline void AlgorithmSpecification::set_algorithm_name(::std::string&& value) {
   
-  algorithmname_.SetNoArena(
+  algorithm_name_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.AlgorithmSpecification.AlgorithmName)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.AlgorithmSpecification.algorithm_name)
 }
 #endif
-inline void AlgorithmSpecification::set_algorithmname(const char* value) {
+inline void AlgorithmSpecification::set_algorithm_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  algorithmname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.AlgorithmSpecification.AlgorithmName)
+  algorithm_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.AlgorithmSpecification.algorithm_name)
 }
-inline void AlgorithmSpecification::set_algorithmname(const char* value, size_t size) {
+inline void AlgorithmSpecification::set_algorithm_name(const char* value, size_t size) {
   
-  algorithmname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  algorithm_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.AlgorithmSpecification.AlgorithmName)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.AlgorithmSpecification.algorithm_name)
 }
-inline ::std::string* AlgorithmSpecification::mutable_algorithmname() {
+inline ::std::string* AlgorithmSpecification::mutable_algorithm_name() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.AlgorithmSpecification.AlgorithmName)
-  return algorithmname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.AlgorithmSpecification.algorithm_name)
+  return algorithm_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* AlgorithmSpecification::release_algorithmname() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.AlgorithmSpecification.AlgorithmName)
+inline ::std::string* AlgorithmSpecification::release_algorithm_name() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.AlgorithmSpecification.algorithm_name)
   
-  return algorithmname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return algorithm_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void AlgorithmSpecification::set_allocated_algorithmname(::std::string* algorithmname) {
-  if (algorithmname != nullptr) {
+inline void AlgorithmSpecification::set_allocated_algorithm_name(::std::string* algorithm_name) {
+  if (algorithm_name != nullptr) {
     
   } else {
     
   }
-  algorithmname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), algorithmname);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.AlgorithmSpecification.AlgorithmName)
+  algorithm_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), algorithm_name);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.AlgorithmSpecification.algorithm_name)
 }
 
-// repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;
-inline int AlgorithmSpecification::metricdefinitions_size() const {
-  return metricdefinitions_.size();
+// repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;
+inline int AlgorithmSpecification::metric_definitions_size() const {
+  return metric_definitions_.size();
 }
-inline void AlgorithmSpecification::clear_metricdefinitions() {
-  metricdefinitions_.Clear();
+inline void AlgorithmSpecification::clear_metric_definitions() {
+  metric_definitions_.Clear();
 }
-inline ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition* AlgorithmSpecification::mutable_metricdefinitions(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinitions)
-  return metricdefinitions_.Mutable(index);
+inline ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition* AlgorithmSpecification::mutable_metric_definitions(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.AlgorithmSpecification.metric_definitions)
+  return metric_definitions_.Mutable(index);
 }
 inline ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition >*
-AlgorithmSpecification::mutable_metricdefinitions() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinitions)
-  return &metricdefinitions_;
+AlgorithmSpecification::mutable_metric_definitions() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.plugins.sagemaker.AlgorithmSpecification.metric_definitions)
+  return &metric_definitions_;
 }
-inline const ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition& AlgorithmSpecification::metricdefinitions(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinitions)
-  return metricdefinitions_.Get(index);
+inline const ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition& AlgorithmSpecification::metric_definitions(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.metric_definitions)
+  return metric_definitions_.Get(index);
 }
-inline ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition* AlgorithmSpecification::add_metricdefinitions() {
-  // @@protoc_insertion_point(field_add:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinitions)
-  return metricdefinitions_.Add();
+inline ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition* AlgorithmSpecification::add_metric_definitions() {
+  // @@protoc_insertion_point(field_add:flyteidl.plugins.sagemaker.AlgorithmSpecification.metric_definitions)
+  return metric_definitions_.Add();
 }
 inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition >&
-AlgorithmSpecification::metricdefinitions() const {
-  // @@protoc_insertion_point(field_list:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinitions)
-  return metricdefinitions_;
+AlgorithmSpecification::metric_definitions() const {
+  // @@protoc_insertion_point(field_list:flyteidl.plugins.sagemaker.AlgorithmSpecification.metric_definitions)
+  return metric_definitions_;
 }
 
 // -------------------------------------------------------------------
 
 // ResourceConfig
 
-// string InstanceType = 1;
-inline void ResourceConfig::clear_instancetype() {
-  instancetype_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string instance_type = 1;
+inline void ResourceConfig::clear_instance_type() {
+  instance_type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& ResourceConfig::instancetype() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ResourceConfig.InstanceType)
-  return instancetype_.GetNoArena();
+inline const ::std::string& ResourceConfig::instance_type() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ResourceConfig.instance_type)
+  return instance_type_.GetNoArena();
 }
-inline void ResourceConfig::set_instancetype(const ::std::string& value) {
+inline void ResourceConfig::set_instance_type(const ::std::string& value) {
   
-  instancetype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.ResourceConfig.InstanceType)
+  instance_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.ResourceConfig.instance_type)
 }
 #if LANG_CXX11
-inline void ResourceConfig::set_instancetype(::std::string&& value) {
+inline void ResourceConfig::set_instance_type(::std::string&& value) {
   
-  instancetype_.SetNoArena(
+  instance_type_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.ResourceConfig.InstanceType)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.ResourceConfig.instance_type)
 }
 #endif
-inline void ResourceConfig::set_instancetype(const char* value) {
+inline void ResourceConfig::set_instance_type(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  instancetype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.ResourceConfig.InstanceType)
+  instance_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.ResourceConfig.instance_type)
 }
-inline void ResourceConfig::set_instancetype(const char* value, size_t size) {
+inline void ResourceConfig::set_instance_type(const char* value, size_t size) {
   
-  instancetype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  instance_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.ResourceConfig.InstanceType)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.ResourceConfig.instance_type)
 }
-inline ::std::string* ResourceConfig::mutable_instancetype() {
+inline ::std::string* ResourceConfig::mutable_instance_type() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.ResourceConfig.InstanceType)
-  return instancetype_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.ResourceConfig.instance_type)
+  return instance_type_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* ResourceConfig::release_instancetype() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.ResourceConfig.InstanceType)
+inline ::std::string* ResourceConfig::release_instance_type() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.ResourceConfig.instance_type)
   
-  return instancetype_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return instance_type_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void ResourceConfig::set_allocated_instancetype(::std::string* instancetype) {
-  if (instancetype != nullptr) {
+inline void ResourceConfig::set_allocated_instance_type(::std::string* instance_type) {
+  if (instance_type != nullptr) {
     
   } else {
     
   }
-  instancetype_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), instancetype);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.ResourceConfig.InstanceType)
+  instance_type_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), instance_type);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.ResourceConfig.instance_type)
 }
 
-// int64 InstanceCount = 2;
-inline void ResourceConfig::clear_instancecount() {
-  instancecount_ = PROTOBUF_LONGLONG(0);
+// int64 instance_count = 2;
+inline void ResourceConfig::clear_instance_count() {
+  instance_count_ = PROTOBUF_LONGLONG(0);
 }
-inline ::google::protobuf::int64 ResourceConfig::instancecount() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ResourceConfig.InstanceCount)
-  return instancecount_;
+inline ::google::protobuf::int64 ResourceConfig::instance_count() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ResourceConfig.instance_count)
+  return instance_count_;
 }
-inline void ResourceConfig::set_instancecount(::google::protobuf::int64 value) {
+inline void ResourceConfig::set_instance_count(::google::protobuf::int64 value) {
   
-  instancecount_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.ResourceConfig.InstanceCount)
+  instance_count_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.ResourceConfig.instance_count)
 }
 
-// int64 VolumeSizeInGB = 3;
-inline void ResourceConfig::clear_volumesizeingb() {
-  volumesizeingb_ = PROTOBUF_LONGLONG(0);
+// int64 volume_size_in_gb = 3;
+inline void ResourceConfig::clear_volume_size_in_gb() {
+  volume_size_in_gb_ = PROTOBUF_LONGLONG(0);
 }
-inline ::google::protobuf::int64 ResourceConfig::volumesizeingb() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ResourceConfig.VolumeSizeInGB)
-  return volumesizeingb_;
+inline ::google::protobuf::int64 ResourceConfig::volume_size_in_gb() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ResourceConfig.volume_size_in_gb)
+  return volume_size_in_gb_;
 }
-inline void ResourceConfig::set_volumesizeingb(::google::protobuf::int64 value) {
+inline void ResourceConfig::set_volume_size_in_gb(::google::protobuf::int64 value) {
   
-  volumesizeingb_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.ResourceConfig.VolumeSizeInGB)
+  volume_size_in_gb_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.ResourceConfig.volume_size_in_gb)
 }
 
-// string VolumeKmsKeyId = 4;
-inline void ResourceConfig::clear_volumekmskeyid() {
-  volumekmskeyid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string volume_kms_key_id = 4;
+inline void ResourceConfig::clear_volume_kms_key_id() {
+  volume_kms_key_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& ResourceConfig::volumekmskeyid() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ResourceConfig.VolumeKmsKeyId)
-  return volumekmskeyid_.GetNoArena();
+inline const ::std::string& ResourceConfig::volume_kms_key_id() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ResourceConfig.volume_kms_key_id)
+  return volume_kms_key_id_.GetNoArena();
 }
-inline void ResourceConfig::set_volumekmskeyid(const ::std::string& value) {
+inline void ResourceConfig::set_volume_kms_key_id(const ::std::string& value) {
   
-  volumekmskeyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.ResourceConfig.VolumeKmsKeyId)
+  volume_kms_key_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.ResourceConfig.volume_kms_key_id)
 }
 #if LANG_CXX11
-inline void ResourceConfig::set_volumekmskeyid(::std::string&& value) {
+inline void ResourceConfig::set_volume_kms_key_id(::std::string&& value) {
   
-  volumekmskeyid_.SetNoArena(
+  volume_kms_key_id_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.ResourceConfig.VolumeKmsKeyId)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.ResourceConfig.volume_kms_key_id)
 }
 #endif
-inline void ResourceConfig::set_volumekmskeyid(const char* value) {
+inline void ResourceConfig::set_volume_kms_key_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  volumekmskeyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.ResourceConfig.VolumeKmsKeyId)
+  volume_kms_key_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.ResourceConfig.volume_kms_key_id)
 }
-inline void ResourceConfig::set_volumekmskeyid(const char* value, size_t size) {
+inline void ResourceConfig::set_volume_kms_key_id(const char* value, size_t size) {
   
-  volumekmskeyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  volume_kms_key_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.ResourceConfig.VolumeKmsKeyId)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.ResourceConfig.volume_kms_key_id)
 }
-inline ::std::string* ResourceConfig::mutable_volumekmskeyid() {
+inline ::std::string* ResourceConfig::mutable_volume_kms_key_id() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.ResourceConfig.VolumeKmsKeyId)
-  return volumekmskeyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.ResourceConfig.volume_kms_key_id)
+  return volume_kms_key_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* ResourceConfig::release_volumekmskeyid() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.ResourceConfig.VolumeKmsKeyId)
+inline ::std::string* ResourceConfig::release_volume_kms_key_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.ResourceConfig.volume_kms_key_id)
   
-  return volumekmskeyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return volume_kms_key_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void ResourceConfig::set_allocated_volumekmskeyid(::std::string* volumekmskeyid) {
-  if (volumekmskeyid != nullptr) {
+inline void ResourceConfig::set_allocated_volume_kms_key_id(::std::string* volume_kms_key_id) {
+  if (volume_kms_key_id != nullptr) {
     
   } else {
     
   }
-  volumekmskeyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), volumekmskeyid);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.ResourceConfig.VolumeKmsKeyId)
+  volume_kms_key_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), volume_kms_key_id);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.ResourceConfig.volume_kms_key_id)
 }
 
 // -------------------------------------------------------------------
 
 // StoppingCondition
 
-// int64 MaxRuntimeInSeconds = 1;
-inline void StoppingCondition::clear_maxruntimeinseconds() {
-  maxruntimeinseconds_ = PROTOBUF_LONGLONG(0);
+// int64 max_runtime_in_seconds = 1;
+inline void StoppingCondition::clear_max_runtime_in_seconds() {
+  max_runtime_in_seconds_ = PROTOBUF_LONGLONG(0);
 }
-inline ::google::protobuf::int64 StoppingCondition::maxruntimeinseconds() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.StoppingCondition.MaxRuntimeInSeconds)
-  return maxruntimeinseconds_;
+inline ::google::protobuf::int64 StoppingCondition::max_runtime_in_seconds() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.StoppingCondition.max_runtime_in_seconds)
+  return max_runtime_in_seconds_;
 }
-inline void StoppingCondition::set_maxruntimeinseconds(::google::protobuf::int64 value) {
+inline void StoppingCondition::set_max_runtime_in_seconds(::google::protobuf::int64 value) {
   
-  maxruntimeinseconds_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.StoppingCondition.MaxRuntimeInSeconds)
+  max_runtime_in_seconds_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.StoppingCondition.max_runtime_in_seconds)
 }
 
-// int64 MaxWaitTimeInSeconds = 2;
-inline void StoppingCondition::clear_maxwaittimeinseconds() {
-  maxwaittimeinseconds_ = PROTOBUF_LONGLONG(0);
+// int64 max_wait_time_in_seconds = 2;
+inline void StoppingCondition::clear_max_wait_time_in_seconds() {
+  max_wait_time_in_seconds_ = PROTOBUF_LONGLONG(0);
 }
-inline ::google::protobuf::int64 StoppingCondition::maxwaittimeinseconds() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.StoppingCondition.MaxWaitTimeInSeconds)
-  return maxwaittimeinseconds_;
+inline ::google::protobuf::int64 StoppingCondition::max_wait_time_in_seconds() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.StoppingCondition.max_wait_time_in_seconds)
+  return max_wait_time_in_seconds_;
 }
-inline void StoppingCondition::set_maxwaittimeinseconds(::google::protobuf::int64 value) {
+inline void StoppingCondition::set_max_wait_time_in_seconds(::google::protobuf::int64 value) {
   
-  maxwaittimeinseconds_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.StoppingCondition.MaxWaitTimeInSeconds)
+  max_wait_time_in_seconds_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.StoppingCondition.max_wait_time_in_seconds)
 }
 
 // -------------------------------------------------------------------
 
 // VpcConfig
 
-// repeated string SecurityGroupIds = 1;
-inline int VpcConfig::securitygroupids_size() const {
-  return securitygroupids_.size();
+// repeated string security_group_ids = 1;
+inline int VpcConfig::security_group_ids_size() const {
+  return security_group_ids_.size();
 }
-inline void VpcConfig::clear_securitygroupids() {
-  securitygroupids_.Clear();
+inline void VpcConfig::clear_security_group_ids() {
+  security_group_ids_.Clear();
 }
-inline const ::std::string& VpcConfig::securitygroupids(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.VpcConfig.SecurityGroupIds)
-  return securitygroupids_.Get(index);
+inline const ::std::string& VpcConfig::security_group_ids(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.VpcConfig.security_group_ids)
+  return security_group_ids_.Get(index);
 }
-inline ::std::string* VpcConfig::mutable_securitygroupids(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.VpcConfig.SecurityGroupIds)
-  return securitygroupids_.Mutable(index);
+inline ::std::string* VpcConfig::mutable_security_group_ids(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.VpcConfig.security_group_ids)
+  return security_group_ids_.Mutable(index);
 }
-inline void VpcConfig::set_securitygroupids(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.VpcConfig.SecurityGroupIds)
-  securitygroupids_.Mutable(index)->assign(value);
+inline void VpcConfig::set_security_group_ids(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.VpcConfig.security_group_ids)
+  security_group_ids_.Mutable(index)->assign(value);
 }
 #if LANG_CXX11
-inline void VpcConfig::set_securitygroupids(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.VpcConfig.SecurityGroupIds)
-  securitygroupids_.Mutable(index)->assign(std::move(value));
+inline void VpcConfig::set_security_group_ids(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.VpcConfig.security_group_ids)
+  security_group_ids_.Mutable(index)->assign(std::move(value));
 }
 #endif
-inline void VpcConfig::set_securitygroupids(int index, const char* value) {
+inline void VpcConfig::set_security_group_ids(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  securitygroupids_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.VpcConfig.SecurityGroupIds)
+  security_group_ids_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.VpcConfig.security_group_ids)
 }
-inline void VpcConfig::set_securitygroupids(int index, const char* value, size_t size) {
-  securitygroupids_.Mutable(index)->assign(
+inline void VpcConfig::set_security_group_ids(int index, const char* value, size_t size) {
+  security_group_ids_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.VpcConfig.SecurityGroupIds)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.VpcConfig.security_group_ids)
 }
-inline ::std::string* VpcConfig::add_securitygroupids() {
-  // @@protoc_insertion_point(field_add_mutable:flyteidl.plugins.sagemaker.VpcConfig.SecurityGroupIds)
-  return securitygroupids_.Add();
+inline ::std::string* VpcConfig::add_security_group_ids() {
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.plugins.sagemaker.VpcConfig.security_group_ids)
+  return security_group_ids_.Add();
 }
-inline void VpcConfig::add_securitygroupids(const ::std::string& value) {
-  securitygroupids_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:flyteidl.plugins.sagemaker.VpcConfig.SecurityGroupIds)
+inline void VpcConfig::add_security_group_ids(const ::std::string& value) {
+  security_group_ids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:flyteidl.plugins.sagemaker.VpcConfig.security_group_ids)
 }
 #if LANG_CXX11
-inline void VpcConfig::add_securitygroupids(::std::string&& value) {
-  securitygroupids_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:flyteidl.plugins.sagemaker.VpcConfig.SecurityGroupIds)
+inline void VpcConfig::add_security_group_ids(::std::string&& value) {
+  security_group_ids_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:flyteidl.plugins.sagemaker.VpcConfig.security_group_ids)
 }
 #endif
-inline void VpcConfig::add_securitygroupids(const char* value) {
+inline void VpcConfig::add_security_group_ids(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  securitygroupids_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:flyteidl.plugins.sagemaker.VpcConfig.SecurityGroupIds)
+  security_group_ids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:flyteidl.plugins.sagemaker.VpcConfig.security_group_ids)
 }
-inline void VpcConfig::add_securitygroupids(const char* value, size_t size) {
-  securitygroupids_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:flyteidl.plugins.sagemaker.VpcConfig.SecurityGroupIds)
+inline void VpcConfig::add_security_group_ids(const char* value, size_t size) {
+  security_group_ids_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.plugins.sagemaker.VpcConfig.security_group_ids)
 }
 inline const ::google::protobuf::RepeatedPtrField<::std::string>&
-VpcConfig::securitygroupids() const {
-  // @@protoc_insertion_point(field_list:flyteidl.plugins.sagemaker.VpcConfig.SecurityGroupIds)
-  return securitygroupids_;
+VpcConfig::security_group_ids() const {
+  // @@protoc_insertion_point(field_list:flyteidl.plugins.sagemaker.VpcConfig.security_group_ids)
+  return security_group_ids_;
 }
 inline ::google::protobuf::RepeatedPtrField<::std::string>*
-VpcConfig::mutable_securitygroupids() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.plugins.sagemaker.VpcConfig.SecurityGroupIds)
-  return &securitygroupids_;
+VpcConfig::mutable_security_group_ids() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.plugins.sagemaker.VpcConfig.security_group_ids)
+  return &security_group_ids_;
 }
 
-// repeated string Subnets = 2;
+// repeated string subnets = 2;
 inline int VpcConfig::subnets_size() const {
   return subnets_.size();
 }
@@ -1548,64 +1548,64 @@ inline void VpcConfig::clear_subnets() {
   subnets_.Clear();
 }
 inline const ::std::string& VpcConfig::subnets(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.VpcConfig.Subnets)
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.VpcConfig.subnets)
   return subnets_.Get(index);
 }
 inline ::std::string* VpcConfig::mutable_subnets(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.VpcConfig.Subnets)
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.VpcConfig.subnets)
   return subnets_.Mutable(index);
 }
 inline void VpcConfig::set_subnets(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.VpcConfig.Subnets)
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.VpcConfig.subnets)
   subnets_.Mutable(index)->assign(value);
 }
 #if LANG_CXX11
 inline void VpcConfig::set_subnets(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.VpcConfig.Subnets)
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.VpcConfig.subnets)
   subnets_.Mutable(index)->assign(std::move(value));
 }
 #endif
 inline void VpcConfig::set_subnets(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   subnets_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.VpcConfig.Subnets)
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.VpcConfig.subnets)
 }
 inline void VpcConfig::set_subnets(int index, const char* value, size_t size) {
   subnets_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.VpcConfig.Subnets)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.VpcConfig.subnets)
 }
 inline ::std::string* VpcConfig::add_subnets() {
-  // @@protoc_insertion_point(field_add_mutable:flyteidl.plugins.sagemaker.VpcConfig.Subnets)
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.plugins.sagemaker.VpcConfig.subnets)
   return subnets_.Add();
 }
 inline void VpcConfig::add_subnets(const ::std::string& value) {
   subnets_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:flyteidl.plugins.sagemaker.VpcConfig.Subnets)
+  // @@protoc_insertion_point(field_add:flyteidl.plugins.sagemaker.VpcConfig.subnets)
 }
 #if LANG_CXX11
 inline void VpcConfig::add_subnets(::std::string&& value) {
   subnets_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:flyteidl.plugins.sagemaker.VpcConfig.Subnets)
+  // @@protoc_insertion_point(field_add:flyteidl.plugins.sagemaker.VpcConfig.subnets)
 }
 #endif
 inline void VpcConfig::add_subnets(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   subnets_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:flyteidl.plugins.sagemaker.VpcConfig.Subnets)
+  // @@protoc_insertion_point(field_add_char:flyteidl.plugins.sagemaker.VpcConfig.subnets)
 }
 inline void VpcConfig::add_subnets(const char* value, size_t size) {
   subnets_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:flyteidl.plugins.sagemaker.VpcConfig.Subnets)
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.plugins.sagemaker.VpcConfig.subnets)
 }
 inline const ::google::protobuf::RepeatedPtrField<::std::string>&
 VpcConfig::subnets() const {
-  // @@protoc_insertion_point(field_list:flyteidl.plugins.sagemaker.VpcConfig.Subnets)
+  // @@protoc_insertion_point(field_list:flyteidl.plugins.sagemaker.VpcConfig.subnets)
   return subnets_;
 }
 inline ::google::protobuf::RepeatedPtrField<::std::string>*
 VpcConfig::mutable_subnets() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.plugins.sagemaker.VpcConfig.Subnets)
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.plugins.sagemaker.VpcConfig.subnets)
   return &subnets_;
 }
 
@@ -1613,46 +1613,46 @@ VpcConfig::mutable_subnets() {
 
 // TrainingJob
 
-// string Region = 1;
+// string region = 1;
 inline void TrainingJob::clear_region() {
   region_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline const ::std::string& TrainingJob::region() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.Region)
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.region)
   return region_.GetNoArena();
 }
 inline void TrainingJob::set_region(const ::std::string& value) {
   
   region_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJob.Region)
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJob.region)
 }
 #if LANG_CXX11
 inline void TrainingJob::set_region(::std::string&& value) {
   
   region_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.TrainingJob.Region)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.TrainingJob.region)
 }
 #endif
 inline void TrainingJob::set_region(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   region_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.TrainingJob.Region)
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.TrainingJob.region)
 }
 inline void TrainingJob::set_region(const char* value, size_t size) {
   
   region_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.TrainingJob.Region)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.TrainingJob.region)
 }
 inline ::std::string* TrainingJob::mutable_region() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJob.Region)
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJob.region)
   return region_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* TrainingJob::release_region() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJob.Region)
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJob.region)
   
   return region_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1663,278 +1663,278 @@ inline void TrainingJob::set_allocated_region(::std::string* region) {
     
   }
   region_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), region);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.Region)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.region)
 }
 
-// string RoleArn = 2;
-inline void TrainingJob::clear_rolearn() {
-  rolearn_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string role_arn = 2;
+inline void TrainingJob::clear_role_arn() {
+  role_arn_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& TrainingJob::rolearn() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.RoleArn)
-  return rolearn_.GetNoArena();
+inline const ::std::string& TrainingJob::role_arn() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.role_arn)
+  return role_arn_.GetNoArena();
 }
-inline void TrainingJob::set_rolearn(const ::std::string& value) {
+inline void TrainingJob::set_role_arn(const ::std::string& value) {
   
-  rolearn_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJob.RoleArn)
+  role_arn_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJob.role_arn)
 }
 #if LANG_CXX11
-inline void TrainingJob::set_rolearn(::std::string&& value) {
+inline void TrainingJob::set_role_arn(::std::string&& value) {
   
-  rolearn_.SetNoArena(
+  role_arn_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.TrainingJob.RoleArn)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.TrainingJob.role_arn)
 }
 #endif
-inline void TrainingJob::set_rolearn(const char* value) {
+inline void TrainingJob::set_role_arn(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  rolearn_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.TrainingJob.RoleArn)
+  role_arn_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.TrainingJob.role_arn)
 }
-inline void TrainingJob::set_rolearn(const char* value, size_t size) {
+inline void TrainingJob::set_role_arn(const char* value, size_t size) {
   
-  rolearn_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  role_arn_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.TrainingJob.RoleArn)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.TrainingJob.role_arn)
 }
-inline ::std::string* TrainingJob::mutable_rolearn() {
+inline ::std::string* TrainingJob::mutable_role_arn() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJob.RoleArn)
-  return rolearn_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJob.role_arn)
+  return role_arn_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* TrainingJob::release_rolearn() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJob.RoleArn)
+inline ::std::string* TrainingJob::release_role_arn() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJob.role_arn)
   
-  return rolearn_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return role_arn_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void TrainingJob::set_allocated_rolearn(::std::string* rolearn) {
-  if (rolearn != nullptr) {
+inline void TrainingJob::set_allocated_role_arn(::std::string* role_arn) {
+  if (role_arn != nullptr) {
     
   } else {
     
   }
-  rolearn_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), rolearn);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.RoleArn)
+  role_arn_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), role_arn);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.role_arn)
 }
 
-// .flyteidl.plugins.sagemaker.AlgorithmSpecification AlgorithmSpecification = 3;
-inline bool TrainingJob::has_algorithmspecification() const {
-  return this != internal_default_instance() && algorithmspecification_ != nullptr;
+// .flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 3;
+inline bool TrainingJob::has_algorithm_specification() const {
+  return this != internal_default_instance() && algorithm_specification_ != nullptr;
 }
-inline void TrainingJob::clear_algorithmspecification() {
-  if (GetArenaNoVirtual() == nullptr && algorithmspecification_ != nullptr) {
-    delete algorithmspecification_;
+inline void TrainingJob::clear_algorithm_specification() {
+  if (GetArenaNoVirtual() == nullptr && algorithm_specification_ != nullptr) {
+    delete algorithm_specification_;
   }
-  algorithmspecification_ = nullptr;
+  algorithm_specification_ = nullptr;
 }
-inline const ::flyteidl::plugins::sagemaker::AlgorithmSpecification& TrainingJob::algorithmspecification() const {
-  const ::flyteidl::plugins::sagemaker::AlgorithmSpecification* p = algorithmspecification_;
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.AlgorithmSpecification)
+inline const ::flyteidl::plugins::sagemaker::AlgorithmSpecification& TrainingJob::algorithm_specification() const {
+  const ::flyteidl::plugins::sagemaker::AlgorithmSpecification* p = algorithm_specification_;
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.algorithm_specification)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::sagemaker::AlgorithmSpecification*>(
       &::flyteidl::plugins::sagemaker::_AlgorithmSpecification_default_instance_);
 }
-inline ::flyteidl::plugins::sagemaker::AlgorithmSpecification* TrainingJob::release_algorithmspecification() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJob.AlgorithmSpecification)
+inline ::flyteidl::plugins::sagemaker::AlgorithmSpecification* TrainingJob::release_algorithm_specification() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJob.algorithm_specification)
   
-  ::flyteidl::plugins::sagemaker::AlgorithmSpecification* temp = algorithmspecification_;
-  algorithmspecification_ = nullptr;
+  ::flyteidl::plugins::sagemaker::AlgorithmSpecification* temp = algorithm_specification_;
+  algorithm_specification_ = nullptr;
   return temp;
 }
-inline ::flyteidl::plugins::sagemaker::AlgorithmSpecification* TrainingJob::mutable_algorithmspecification() {
+inline ::flyteidl::plugins::sagemaker::AlgorithmSpecification* TrainingJob::mutable_algorithm_specification() {
   
-  if (algorithmspecification_ == nullptr) {
+  if (algorithm_specification_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::plugins::sagemaker::AlgorithmSpecification>(GetArenaNoVirtual());
-    algorithmspecification_ = p;
+    algorithm_specification_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJob.AlgorithmSpecification)
-  return algorithmspecification_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJob.algorithm_specification)
+  return algorithm_specification_;
 }
-inline void TrainingJob::set_allocated_algorithmspecification(::flyteidl::plugins::sagemaker::AlgorithmSpecification* algorithmspecification) {
+inline void TrainingJob::set_allocated_algorithm_specification(::flyteidl::plugins::sagemaker::AlgorithmSpecification* algorithm_specification) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete algorithmspecification_;
+    delete algorithm_specification_;
   }
-  if (algorithmspecification) {
+  if (algorithm_specification) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      algorithmspecification = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, algorithmspecification, submessage_arena);
+      algorithm_specification = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, algorithm_specification, submessage_arena);
     }
     
   } else {
     
   }
-  algorithmspecification_ = algorithmspecification;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.AlgorithmSpecification)
+  algorithm_specification_ = algorithm_specification;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.algorithm_specification)
 }
 
-// .flyteidl.plugins.sagemaker.ResourceConfig ResourceConfig = 4;
-inline bool TrainingJob::has_resourceconfig() const {
-  return this != internal_default_instance() && resourceconfig_ != nullptr;
+// .flyteidl.plugins.sagemaker.ResourceConfig resource_config = 4;
+inline bool TrainingJob::has_resource_config() const {
+  return this != internal_default_instance() && resource_config_ != nullptr;
 }
-inline void TrainingJob::clear_resourceconfig() {
-  if (GetArenaNoVirtual() == nullptr && resourceconfig_ != nullptr) {
-    delete resourceconfig_;
+inline void TrainingJob::clear_resource_config() {
+  if (GetArenaNoVirtual() == nullptr && resource_config_ != nullptr) {
+    delete resource_config_;
   }
-  resourceconfig_ = nullptr;
+  resource_config_ = nullptr;
 }
-inline const ::flyteidl::plugins::sagemaker::ResourceConfig& TrainingJob::resourceconfig() const {
-  const ::flyteidl::plugins::sagemaker::ResourceConfig* p = resourceconfig_;
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.ResourceConfig)
+inline const ::flyteidl::plugins::sagemaker::ResourceConfig& TrainingJob::resource_config() const {
+  const ::flyteidl::plugins::sagemaker::ResourceConfig* p = resource_config_;
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.resource_config)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::sagemaker::ResourceConfig*>(
       &::flyteidl::plugins::sagemaker::_ResourceConfig_default_instance_);
 }
-inline ::flyteidl::plugins::sagemaker::ResourceConfig* TrainingJob::release_resourceconfig() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJob.ResourceConfig)
+inline ::flyteidl::plugins::sagemaker::ResourceConfig* TrainingJob::release_resource_config() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJob.resource_config)
   
-  ::flyteidl::plugins::sagemaker::ResourceConfig* temp = resourceconfig_;
-  resourceconfig_ = nullptr;
+  ::flyteidl::plugins::sagemaker::ResourceConfig* temp = resource_config_;
+  resource_config_ = nullptr;
   return temp;
 }
-inline ::flyteidl::plugins::sagemaker::ResourceConfig* TrainingJob::mutable_resourceconfig() {
+inline ::flyteidl::plugins::sagemaker::ResourceConfig* TrainingJob::mutable_resource_config() {
   
-  if (resourceconfig_ == nullptr) {
+  if (resource_config_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::plugins::sagemaker::ResourceConfig>(GetArenaNoVirtual());
-    resourceconfig_ = p;
+    resource_config_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJob.ResourceConfig)
-  return resourceconfig_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJob.resource_config)
+  return resource_config_;
 }
-inline void TrainingJob::set_allocated_resourceconfig(::flyteidl::plugins::sagemaker::ResourceConfig* resourceconfig) {
+inline void TrainingJob::set_allocated_resource_config(::flyteidl::plugins::sagemaker::ResourceConfig* resource_config) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete resourceconfig_;
+    delete resource_config_;
   }
-  if (resourceconfig) {
+  if (resource_config) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      resourceconfig = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, resourceconfig, submessage_arena);
+      resource_config = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, resource_config, submessage_arena);
     }
     
   } else {
     
   }
-  resourceconfig_ = resourceconfig;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.ResourceConfig)
+  resource_config_ = resource_config;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.resource_config)
 }
 
-// .flyteidl.plugins.sagemaker.StoppingCondition StoppingCondition = 5;
-inline bool TrainingJob::has_stoppingcondition() const {
-  return this != internal_default_instance() && stoppingcondition_ != nullptr;
+// .flyteidl.plugins.sagemaker.StoppingCondition stopping_condition = 5;
+inline bool TrainingJob::has_stopping_condition() const {
+  return this != internal_default_instance() && stopping_condition_ != nullptr;
 }
-inline void TrainingJob::clear_stoppingcondition() {
-  if (GetArenaNoVirtual() == nullptr && stoppingcondition_ != nullptr) {
-    delete stoppingcondition_;
+inline void TrainingJob::clear_stopping_condition() {
+  if (GetArenaNoVirtual() == nullptr && stopping_condition_ != nullptr) {
+    delete stopping_condition_;
   }
-  stoppingcondition_ = nullptr;
+  stopping_condition_ = nullptr;
 }
-inline const ::flyteidl::plugins::sagemaker::StoppingCondition& TrainingJob::stoppingcondition() const {
-  const ::flyteidl::plugins::sagemaker::StoppingCondition* p = stoppingcondition_;
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.StoppingCondition)
+inline const ::flyteidl::plugins::sagemaker::StoppingCondition& TrainingJob::stopping_condition() const {
+  const ::flyteidl::plugins::sagemaker::StoppingCondition* p = stopping_condition_;
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.stopping_condition)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::sagemaker::StoppingCondition*>(
       &::flyteidl::plugins::sagemaker::_StoppingCondition_default_instance_);
 }
-inline ::flyteidl::plugins::sagemaker::StoppingCondition* TrainingJob::release_stoppingcondition() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJob.StoppingCondition)
+inline ::flyteidl::plugins::sagemaker::StoppingCondition* TrainingJob::release_stopping_condition() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJob.stopping_condition)
   
-  ::flyteidl::plugins::sagemaker::StoppingCondition* temp = stoppingcondition_;
-  stoppingcondition_ = nullptr;
+  ::flyteidl::plugins::sagemaker::StoppingCondition* temp = stopping_condition_;
+  stopping_condition_ = nullptr;
   return temp;
 }
-inline ::flyteidl::plugins::sagemaker::StoppingCondition* TrainingJob::mutable_stoppingcondition() {
+inline ::flyteidl::plugins::sagemaker::StoppingCondition* TrainingJob::mutable_stopping_condition() {
   
-  if (stoppingcondition_ == nullptr) {
+  if (stopping_condition_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::plugins::sagemaker::StoppingCondition>(GetArenaNoVirtual());
-    stoppingcondition_ = p;
+    stopping_condition_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJob.StoppingCondition)
-  return stoppingcondition_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJob.stopping_condition)
+  return stopping_condition_;
 }
-inline void TrainingJob::set_allocated_stoppingcondition(::flyteidl::plugins::sagemaker::StoppingCondition* stoppingcondition) {
+inline void TrainingJob::set_allocated_stopping_condition(::flyteidl::plugins::sagemaker::StoppingCondition* stopping_condition) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete stoppingcondition_;
+    delete stopping_condition_;
   }
-  if (stoppingcondition) {
+  if (stopping_condition) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      stoppingcondition = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, stoppingcondition, submessage_arena);
+      stopping_condition = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, stopping_condition, submessage_arena);
     }
     
   } else {
     
   }
-  stoppingcondition_ = stoppingcondition;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.StoppingCondition)
+  stopping_condition_ = stopping_condition;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.stopping_condition)
 }
 
-// .flyteidl.plugins.sagemaker.VpcConfig VpcConfig = 6;
-inline bool TrainingJob::has_vpcconfig() const {
-  return this != internal_default_instance() && vpcconfig_ != nullptr;
+// .flyteidl.plugins.sagemaker.VpcConfig vpc_config = 6;
+inline bool TrainingJob::has_vpc_config() const {
+  return this != internal_default_instance() && vpc_config_ != nullptr;
 }
-inline void TrainingJob::clear_vpcconfig() {
-  if (GetArenaNoVirtual() == nullptr && vpcconfig_ != nullptr) {
-    delete vpcconfig_;
+inline void TrainingJob::clear_vpc_config() {
+  if (GetArenaNoVirtual() == nullptr && vpc_config_ != nullptr) {
+    delete vpc_config_;
   }
-  vpcconfig_ = nullptr;
+  vpc_config_ = nullptr;
 }
-inline const ::flyteidl::plugins::sagemaker::VpcConfig& TrainingJob::vpcconfig() const {
-  const ::flyteidl::plugins::sagemaker::VpcConfig* p = vpcconfig_;
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.VpcConfig)
+inline const ::flyteidl::plugins::sagemaker::VpcConfig& TrainingJob::vpc_config() const {
+  const ::flyteidl::plugins::sagemaker::VpcConfig* p = vpc_config_;
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.vpc_config)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::sagemaker::VpcConfig*>(
       &::flyteidl::plugins::sagemaker::_VpcConfig_default_instance_);
 }
-inline ::flyteidl::plugins::sagemaker::VpcConfig* TrainingJob::release_vpcconfig() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJob.VpcConfig)
+inline ::flyteidl::plugins::sagemaker::VpcConfig* TrainingJob::release_vpc_config() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJob.vpc_config)
   
-  ::flyteidl::plugins::sagemaker::VpcConfig* temp = vpcconfig_;
-  vpcconfig_ = nullptr;
+  ::flyteidl::plugins::sagemaker::VpcConfig* temp = vpc_config_;
+  vpc_config_ = nullptr;
   return temp;
 }
-inline ::flyteidl::plugins::sagemaker::VpcConfig* TrainingJob::mutable_vpcconfig() {
+inline ::flyteidl::plugins::sagemaker::VpcConfig* TrainingJob::mutable_vpc_config() {
   
-  if (vpcconfig_ == nullptr) {
+  if (vpc_config_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::plugins::sagemaker::VpcConfig>(GetArenaNoVirtual());
-    vpcconfig_ = p;
+    vpc_config_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJob.VpcConfig)
-  return vpcconfig_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJob.vpc_config)
+  return vpc_config_;
 }
-inline void TrainingJob::set_allocated_vpcconfig(::flyteidl::plugins::sagemaker::VpcConfig* vpcconfig) {
+inline void TrainingJob::set_allocated_vpc_config(::flyteidl::plugins::sagemaker::VpcConfig* vpc_config) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete vpcconfig_;
+    delete vpc_config_;
   }
-  if (vpcconfig) {
+  if (vpc_config) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      vpcconfig = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, vpcconfig, submessage_arena);
+      vpc_config = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, vpc_config, submessage_arena);
     }
     
   } else {
     
   }
-  vpcconfig_ = vpcconfig;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.VpcConfig)
+  vpc_config_ = vpc_config;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.vpc_config)
 }
 
-// bool EnableSpotTraining = 7;
-inline void TrainingJob::clear_enablespottraining() {
-  enablespottraining_ = false;
+// bool enable_spot_training = 7;
+inline void TrainingJob::clear_enable_spot_training() {
+  enable_spot_training_ = false;
 }
-inline bool TrainingJob::enablespottraining() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.EnableSpotTraining)
-  return enablespottraining_;
+inline bool TrainingJob::enable_spot_training() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.enable_spot_training)
+  return enable_spot_training_;
 }
-inline void TrainingJob::set_enablespottraining(bool value) {
+inline void TrainingJob::set_enable_spot_training(bool value) {
   
-  enablespottraining_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJob.EnableSpotTraining)
+  enable_spot_training_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJob.enable_spot_training)
 }
 
 #ifdef __GNUC__

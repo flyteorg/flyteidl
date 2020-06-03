@@ -14,24 +14,24 @@ flyteidl.plugins.sagemaker.ContinuousParameterRange
 .. code-block:: json
 
   {
-    "MaxValue": "...",
-    "MinValue": "...",
-    "ScalingType": "..."
+    "max_value": "...",
+    "min_value": "...",
+    "scaling_type": "..."
   }
 
-.. _api_field_flyteidl.plugins.sagemaker.ContinuousParameterRange.MaxValue:
+.. _api_field_flyteidl.plugins.sagemaker.ContinuousParameterRange.max_value:
 
-MaxValue
+max_value
   (`double <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.plugins.sagemaker.ContinuousParameterRange.MinValue:
+.. _api_field_flyteidl.plugins.sagemaker.ContinuousParameterRange.min_value:
 
-MinValue
+min_value
   (`double <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.plugins.sagemaker.ContinuousParameterRange.ScalingType:
+.. _api_field_flyteidl.plugins.sagemaker.ContinuousParameterRange.scaling_type:
 
-ScalingType
+scaling_type
   (:ref:`flyteidl.plugins.sagemaker.HyperparameterScalingType <api_enum_flyteidl.plugins.sagemaker.HyperparameterScalingType>`) 
   
 
@@ -47,24 +47,24 @@ flyteidl.plugins.sagemaker.IntegerParameterRange
 .. code-block:: json
 
   {
-    "MaxValue": "...",
-    "MinValue": "...",
-    "ScalingType": "..."
+    "max_value": "...",
+    "min_value": "...",
+    "scaling_type": "..."
   }
 
-.. _api_field_flyteidl.plugins.sagemaker.IntegerParameterRange.MaxValue:
+.. _api_field_flyteidl.plugins.sagemaker.IntegerParameterRange.max_value:
 
-MaxValue
+max_value
   (`float <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.plugins.sagemaker.IntegerParameterRange.MinValue:
+.. _api_field_flyteidl.plugins.sagemaker.IntegerParameterRange.min_value:
 
-MinValue
+min_value
   (`float <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.plugins.sagemaker.IntegerParameterRange.ScalingType:
+.. _api_field_flyteidl.plugins.sagemaker.IntegerParameterRange.scaling_type:
 
-ScalingType
+scaling_type
   (:ref:`flyteidl.plugins.sagemaker.HyperparameterScalingType <api_enum_flyteidl.plugins.sagemaker.HyperparameterScalingType>`) 
   
 
@@ -80,12 +80,12 @@ flyteidl.plugins.sagemaker.CategoricalParameterRange
 .. code-block:: json
 
   {
-    "Values": []
+    "values": []
   }
 
-.. _api_field_flyteidl.plugins.sagemaker.CategoricalParameterRange.Values:
+.. _api_field_flyteidl.plugins.sagemaker.CategoricalParameterRange.values:
 
-Values
+values
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 
@@ -101,34 +101,34 @@ flyteidl.plugins.sagemaker.ParameterRangeOneOf
 .. code-block:: json
 
   {
-    "ContinuousParameterRange": "{...}",
-    "IntegerParameterRange": "{...}",
-    "CategoricalParameterRange": "{...}"
+    "continuous_parameter_range": "{...}",
+    "integer_parameter_range": "{...}",
+    "categorical_parameter_range": "{...}"
   }
 
-.. _api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.ContinuousParameterRange:
+.. _api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.continuous_parameter_range:
 
-ContinuousParameterRange
+continuous_parameter_range
   (:ref:`flyteidl.plugins.sagemaker.ContinuousParameterRange <api_msg_flyteidl.plugins.sagemaker.ContinuousParameterRange>`) 
   
   
-  Only one of :ref:`ContinuousParameterRange <api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.ContinuousParameterRange>`, :ref:`IntegerParameterRange <api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.IntegerParameterRange>`, :ref:`CategoricalParameterRange <api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.CategoricalParameterRange>` may be set.
+  Only one of :ref:`continuous_parameter_range <api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.continuous_parameter_range>`, :ref:`integer_parameter_range <api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.integer_parameter_range>`, :ref:`categorical_parameter_range <api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.categorical_parameter_range>` may be set.
   
-.. _api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.IntegerParameterRange:
+.. _api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.integer_parameter_range:
 
-IntegerParameterRange
+integer_parameter_range
   (:ref:`flyteidl.plugins.sagemaker.IntegerParameterRange <api_msg_flyteidl.plugins.sagemaker.IntegerParameterRange>`) 
   
   
-  Only one of :ref:`ContinuousParameterRange <api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.ContinuousParameterRange>`, :ref:`IntegerParameterRange <api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.IntegerParameterRange>`, :ref:`CategoricalParameterRange <api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.CategoricalParameterRange>` may be set.
+  Only one of :ref:`continuous_parameter_range <api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.continuous_parameter_range>`, :ref:`integer_parameter_range <api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.integer_parameter_range>`, :ref:`categorical_parameter_range <api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.categorical_parameter_range>` may be set.
   
-.. _api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.CategoricalParameterRange:
+.. _api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.categorical_parameter_range:
 
-CategoricalParameterRange
+categorical_parameter_range
   (:ref:`flyteidl.plugins.sagemaker.CategoricalParameterRange <api_msg_flyteidl.plugins.sagemaker.CategoricalParameterRange>`) 
   
   
-  Only one of :ref:`ContinuousParameterRange <api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.ContinuousParameterRange>`, :ref:`IntegerParameterRange <api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.IntegerParameterRange>`, :ref:`CategoricalParameterRange <api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.CategoricalParameterRange>` may be set.
+  Only one of :ref:`continuous_parameter_range <api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.continuous_parameter_range>`, :ref:`integer_parameter_range <api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.integer_parameter_range>`, :ref:`categorical_parameter_range <api_field_flyteidl.plugins.sagemaker.ParameterRangeOneOf.categorical_parameter_range>` may be set.
   
 
 
@@ -143,12 +143,12 @@ flyteidl.plugins.sagemaker.ParameterRanges
 .. code-block:: json
 
   {
-    "ParameterRangeMap": "{...}"
+    "parameter_range_map": "{...}"
   }
 
-.. _api_field_flyteidl.plugins.sagemaker.ParameterRanges.ParameterRangeMap:
+.. _api_field_flyteidl.plugins.sagemaker.ParameterRanges.parameter_range_map:
 
-ParameterRangeMap
+parameter_range_map
   (map<`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_, :ref:`flyteidl.plugins.sagemaker.ParameterRangeOneOf <api_msg_flyteidl.plugins.sagemaker.ParameterRangeOneOf>`>) 
   
 

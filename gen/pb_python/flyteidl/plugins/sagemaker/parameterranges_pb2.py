@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.plugins.sagemaker',
   syntax='proto3',
   serialized_options=_b('Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n0flyteidl/plugins/sagemaker/parameterranges.proto\x12\x1a\x66lyteidl.plugins.sagemaker\"\x8a\x01\n\x18\x43ontinuousParameterRange\x12\x10\n\x08MaxValue\x18\x01 \x01(\x01\x12\x10\n\x08MinValue\x18\x02 \x01(\x01\x12J\n\x0bScalingType\x18\x03 \x01(\x0e\x32\x35.flyteidl.plugins.sagemaker.HyperparameterScalingType\"\x87\x01\n\x15IntegerParameterRange\x12\x10\n\x08MaxValue\x18\x01 \x01(\x02\x12\x10\n\x08MinValue\x18\x02 \x01(\x02\x12J\n\x0bScalingType\x18\x03 \x01(\x0e\x32\x35.flyteidl.plugins.sagemaker.HyperparameterScalingType\"+\n\x19\x43\x61tegoricalParameterRange\x12\x0e\n\x06Values\x18\x01 \x03(\t\"\xb6\x02\n\x13ParameterRangeOneOf\x12X\n\x18\x43ontinuousParameterRange\x18\x01 \x01(\x0b\x32\x34.flyteidl.plugins.sagemaker.ContinuousParameterRangeH\x00\x12R\n\x15IntegerParameterRange\x18\x02 \x01(\x0b\x32\x31.flyteidl.plugins.sagemaker.IntegerParameterRangeH\x00\x12Z\n\x19\x43\x61tegoricalParameterRange\x18\x03 \x01(\x0b\x32\x35.flyteidl.plugins.sagemaker.CategoricalParameterRangeH\x00\x42\x15\n\x13ParameterRangeTypes\"\xdb\x01\n\x0fParameterRanges\x12]\n\x11ParameterRangeMap\x18\x01 \x03(\x0b\x32\x42.flyteidl.plugins.sagemaker.ParameterRanges.ParameterRangeMapEntry\x1ai\n\x16ParameterRangeMapEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12>\n\x05value\x18\x02 \x01(\x0b\x32/.flyteidl.plugins.sagemaker.ParameterRangeOneOf:\x02\x38\x01*Z\n\x19HyperparameterScalingType\x12\x08\n\x04\x41UTO\x10\x00\x12\n\n\x06LINEAR\x10\x01\x12\x0f\n\x0bLOGARITHMIC\x10\x02\x12\x16\n\x12REVERSELOGARITHMIC\x10\x03\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n0flyteidl/plugins/sagemaker/parameterranges.proto\x12\x1a\x66lyteidl.plugins.sagemaker\"\x8d\x01\n\x18\x43ontinuousParameterRange\x12\x11\n\tmax_value\x18\x01 \x01(\x01\x12\x11\n\tmin_value\x18\x02 \x01(\x01\x12K\n\x0cscaling_type\x18\x03 \x01(\x0e\x32\x35.flyteidl.plugins.sagemaker.HyperparameterScalingType\"\x8a\x01\n\x15IntegerParameterRange\x12\x11\n\tmax_value\x18\x01 \x01(\x02\x12\x11\n\tmin_value\x18\x02 \x01(\x02\x12K\n\x0cscaling_type\x18\x03 \x01(\x0e\x32\x35.flyteidl.plugins.sagemaker.HyperparameterScalingType\"+\n\x19\x43\x61tegoricalParameterRange\x12\x0e\n\x06values\x18\x01 \x03(\t\"\xbc\x02\n\x13ParameterRangeOneOf\x12Z\n\x1a\x63ontinuous_parameter_range\x18\x01 \x01(\x0b\x32\x34.flyteidl.plugins.sagemaker.ContinuousParameterRangeH\x00\x12T\n\x17integer_parameter_range\x18\x02 \x01(\x0b\x32\x31.flyteidl.plugins.sagemaker.IntegerParameterRangeH\x00\x12\\\n\x1b\x63\x61tegorical_parameter_range\x18\x03 \x01(\x0b\x32\x35.flyteidl.plugins.sagemaker.CategoricalParameterRangeH\x00\x42\x15\n\x13ParameterRangeTypes\"\xdd\x01\n\x0fParameterRanges\x12_\n\x13parameter_range_map\x18\x01 \x03(\x0b\x32\x42.flyteidl.plugins.sagemaker.ParameterRanges.ParameterRangeMapEntry\x1ai\n\x16ParameterRangeMapEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12>\n\x05value\x18\x02 \x01(\x0b\x32/.flyteidl.plugins.sagemaker.ParameterRangeOneOf:\x02\x38\x01*Z\n\x19HyperparameterScalingType\x12\x08\n\x04\x41UTO\x10\x00\x12\n\n\x06LINEAR\x10\x01\x12\x0f\n\x0bLOGARITHMIC\x10\x02\x12\x16\n\x12REVERSELOGARITHMIC\x10\x03\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
 )
 
 _HYPERPARAMETERSCALINGTYPE = _descriptor.EnumDescriptor(
@@ -49,8 +49,8 @@ _HYPERPARAMETERSCALINGTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=939,
-  serialized_end=1029,
+  serialized_start=953,
+  serialized_end=1043,
 )
 _sym_db.RegisterEnumDescriptor(_HYPERPARAMETERSCALINGTYPE)
 
@@ -70,21 +70,21 @@ _CONTINUOUSPARAMETERRANGE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='MaxValue', full_name='flyteidl.plugins.sagemaker.ContinuousParameterRange.MaxValue', index=0,
+      name='max_value', full_name='flyteidl.plugins.sagemaker.ContinuousParameterRange.max_value', index=0,
       number=1, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='MinValue', full_name='flyteidl.plugins.sagemaker.ContinuousParameterRange.MinValue', index=1,
+      name='min_value', full_name='flyteidl.plugins.sagemaker.ContinuousParameterRange.min_value', index=1,
       number=2, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ScalingType', full_name='flyteidl.plugins.sagemaker.ContinuousParameterRange.ScalingType', index=2,
+      name='scaling_type', full_name='flyteidl.plugins.sagemaker.ContinuousParameterRange.scaling_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -103,7 +103,7 @@ _CONTINUOUSPARAMETERRANGE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=81,
-  serialized_end=219,
+  serialized_end=222,
 )
 
 
@@ -115,21 +115,21 @@ _INTEGERPARAMETERRANGE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='MaxValue', full_name='flyteidl.plugins.sagemaker.IntegerParameterRange.MaxValue', index=0,
+      name='max_value', full_name='flyteidl.plugins.sagemaker.IntegerParameterRange.max_value', index=0,
       number=1, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='MinValue', full_name='flyteidl.plugins.sagemaker.IntegerParameterRange.MinValue', index=1,
+      name='min_value', full_name='flyteidl.plugins.sagemaker.IntegerParameterRange.min_value', index=1,
       number=2, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ScalingType', full_name='flyteidl.plugins.sagemaker.IntegerParameterRange.ScalingType', index=2,
+      name='scaling_type', full_name='flyteidl.plugins.sagemaker.IntegerParameterRange.scaling_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -147,8 +147,8 @@ _INTEGERPARAMETERRANGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=222,
-  serialized_end=357,
+  serialized_start=225,
+  serialized_end=363,
 )
 
 
@@ -160,7 +160,7 @@ _CATEGORICALPARAMETERRANGE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='Values', full_name='flyteidl.plugins.sagemaker.CategoricalParameterRange.Values', index=0,
+      name='values', full_name='flyteidl.plugins.sagemaker.CategoricalParameterRange.values', index=0,
       number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -178,8 +178,8 @@ _CATEGORICALPARAMETERRANGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=359,
-  serialized_end=402,
+  serialized_start=365,
+  serialized_end=408,
 )
 
 
@@ -191,21 +191,21 @@ _PARAMETERRANGEONEOF = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ContinuousParameterRange', full_name='flyteidl.plugins.sagemaker.ParameterRangeOneOf.ContinuousParameterRange', index=0,
+      name='continuous_parameter_range', full_name='flyteidl.plugins.sagemaker.ParameterRangeOneOf.continuous_parameter_range', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='IntegerParameterRange', full_name='flyteidl.plugins.sagemaker.ParameterRangeOneOf.IntegerParameterRange', index=1,
+      name='integer_parameter_range', full_name='flyteidl.plugins.sagemaker.ParameterRangeOneOf.integer_parameter_range', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='CategoricalParameterRange', full_name='flyteidl.plugins.sagemaker.ParameterRangeOneOf.CategoricalParameterRange', index=2,
+      name='categorical_parameter_range', full_name='flyteidl.plugins.sagemaker.ParameterRangeOneOf.categorical_parameter_range', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -226,8 +226,8 @@ _PARAMETERRANGEONEOF = _descriptor.Descriptor(
       name='ParameterRangeTypes', full_name='flyteidl.plugins.sagemaker.ParameterRangeOneOf.ParameterRangeTypes',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=405,
-  serialized_end=715,
+  serialized_start=411,
+  serialized_end=727,
 )
 
 
@@ -264,8 +264,8 @@ _PARAMETERRANGES_PARAMETERRANGEMAPENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=832,
-  serialized_end=937,
+  serialized_start=846,
+  serialized_end=951,
 )
 
 _PARAMETERRANGES = _descriptor.Descriptor(
@@ -276,7 +276,7 @@ _PARAMETERRANGES = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ParameterRangeMap', full_name='flyteidl.plugins.sagemaker.ParameterRanges.ParameterRangeMap', index=0,
+      name='parameter_range_map', full_name='flyteidl.plugins.sagemaker.ParameterRanges.parameter_range_map', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -294,27 +294,27 @@ _PARAMETERRANGES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=718,
-  serialized_end=937,
+  serialized_start=730,
+  serialized_end=951,
 )
 
-_CONTINUOUSPARAMETERRANGE.fields_by_name['ScalingType'].enum_type = _HYPERPARAMETERSCALINGTYPE
-_INTEGERPARAMETERRANGE.fields_by_name['ScalingType'].enum_type = _HYPERPARAMETERSCALINGTYPE
-_PARAMETERRANGEONEOF.fields_by_name['ContinuousParameterRange'].message_type = _CONTINUOUSPARAMETERRANGE
-_PARAMETERRANGEONEOF.fields_by_name['IntegerParameterRange'].message_type = _INTEGERPARAMETERRANGE
-_PARAMETERRANGEONEOF.fields_by_name['CategoricalParameterRange'].message_type = _CATEGORICALPARAMETERRANGE
+_CONTINUOUSPARAMETERRANGE.fields_by_name['scaling_type'].enum_type = _HYPERPARAMETERSCALINGTYPE
+_INTEGERPARAMETERRANGE.fields_by_name['scaling_type'].enum_type = _HYPERPARAMETERSCALINGTYPE
+_PARAMETERRANGEONEOF.fields_by_name['continuous_parameter_range'].message_type = _CONTINUOUSPARAMETERRANGE
+_PARAMETERRANGEONEOF.fields_by_name['integer_parameter_range'].message_type = _INTEGERPARAMETERRANGE
+_PARAMETERRANGEONEOF.fields_by_name['categorical_parameter_range'].message_type = _CATEGORICALPARAMETERRANGE
 _PARAMETERRANGEONEOF.oneofs_by_name['ParameterRangeTypes'].fields.append(
-  _PARAMETERRANGEONEOF.fields_by_name['ContinuousParameterRange'])
-_PARAMETERRANGEONEOF.fields_by_name['ContinuousParameterRange'].containing_oneof = _PARAMETERRANGEONEOF.oneofs_by_name['ParameterRangeTypes']
+  _PARAMETERRANGEONEOF.fields_by_name['continuous_parameter_range'])
+_PARAMETERRANGEONEOF.fields_by_name['continuous_parameter_range'].containing_oneof = _PARAMETERRANGEONEOF.oneofs_by_name['ParameterRangeTypes']
 _PARAMETERRANGEONEOF.oneofs_by_name['ParameterRangeTypes'].fields.append(
-  _PARAMETERRANGEONEOF.fields_by_name['IntegerParameterRange'])
-_PARAMETERRANGEONEOF.fields_by_name['IntegerParameterRange'].containing_oneof = _PARAMETERRANGEONEOF.oneofs_by_name['ParameterRangeTypes']
+  _PARAMETERRANGEONEOF.fields_by_name['integer_parameter_range'])
+_PARAMETERRANGEONEOF.fields_by_name['integer_parameter_range'].containing_oneof = _PARAMETERRANGEONEOF.oneofs_by_name['ParameterRangeTypes']
 _PARAMETERRANGEONEOF.oneofs_by_name['ParameterRangeTypes'].fields.append(
-  _PARAMETERRANGEONEOF.fields_by_name['CategoricalParameterRange'])
-_PARAMETERRANGEONEOF.fields_by_name['CategoricalParameterRange'].containing_oneof = _PARAMETERRANGEONEOF.oneofs_by_name['ParameterRangeTypes']
+  _PARAMETERRANGEONEOF.fields_by_name['categorical_parameter_range'])
+_PARAMETERRANGEONEOF.fields_by_name['categorical_parameter_range'].containing_oneof = _PARAMETERRANGEONEOF.oneofs_by_name['ParameterRangeTypes']
 _PARAMETERRANGES_PARAMETERRANGEMAPENTRY.fields_by_name['value'].message_type = _PARAMETERRANGEONEOF
 _PARAMETERRANGES_PARAMETERRANGEMAPENTRY.containing_type = _PARAMETERRANGES
-_PARAMETERRANGES.fields_by_name['ParameterRangeMap'].message_type = _PARAMETERRANGES_PARAMETERRANGEMAPENTRY
+_PARAMETERRANGES.fields_by_name['parameter_range_map'].message_type = _PARAMETERRANGES_PARAMETERRANGEMAPENTRY
 DESCRIPTOR.message_types_by_name['ContinuousParameterRange'] = _CONTINUOUSPARAMETERRANGE
 DESCRIPTOR.message_types_by_name['IntegerParameterRange'] = _INTEGERPARAMETERRANGE
 DESCRIPTOR.message_types_by_name['CategoricalParameterRange'] = _CATEGORICALPARAMETERRANGE

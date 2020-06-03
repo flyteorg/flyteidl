@@ -136,7 +136,7 @@ func (m *ResourceConfig) Validate() error {
 
 	// no validation rules for InstanceCount
 
-	// no validation rules for VolumeSizeInGB
+	// no validation rules for VolumeSizeInGb
 
 	// no validation rules for VolumeKmsKeyId
 

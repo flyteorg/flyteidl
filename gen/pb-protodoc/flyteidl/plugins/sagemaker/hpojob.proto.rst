@@ -14,18 +14,18 @@ flyteidl.plugins.sagemaker.HPOJobObjective
 .. code-block:: json
 
   {
-    "Type": "...",
-    "MetricName": "..."
+    "type": "...",
+    "metric_name": "..."
   }
 
-.. _api_field_flyteidl.plugins.sagemaker.HPOJobObjective.Type:
+.. _api_field_flyteidl.plugins.sagemaker.HPOJobObjective.type:
 
-Type
+type
   (:ref:`flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType <api_enum_flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType>`) 
   
-.. _api_field_flyteidl.plugins.sagemaker.HPOJobObjective.MetricName:
+.. _api_field_flyteidl.plugins.sagemaker.HPOJobObjective.metric_name:
 
-MetricName
+metric_name
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 
@@ -59,24 +59,24 @@ flyteidl.plugins.sagemaker.HPOJob
 .. code-block:: json
 
   {
-    "MaxNumberOfTrainingJobs": "...",
-    "MaxParallelTrainingJobs": "...",
-    "TrainingJob": "{...}"
+    "max_number_of_training_jobs": "...",
+    "max_parallel_training_jobs": "...",
+    "training_job": "{...}"
   }
 
-.. _api_field_flyteidl.plugins.sagemaker.HPOJob.MaxNumberOfTrainingJobs:
+.. _api_field_flyteidl.plugins.sagemaker.HPOJob.max_number_of_training_jobs:
 
-MaxNumberOfTrainingJobs
+max_number_of_training_jobs
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.plugins.sagemaker.HPOJob.MaxParallelTrainingJobs:
+.. _api_field_flyteidl.plugins.sagemaker.HPOJob.max_parallel_training_jobs:
 
-MaxParallelTrainingJobs
+max_parallel_training_jobs
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.plugins.sagemaker.HPOJob.TrainingJob:
+.. _api_field_flyteidl.plugins.sagemaker.HPOJob.training_job:
 
-TrainingJob
+training_job
   (:ref:`flyteidl.plugins.sagemaker.TrainingJob <api_msg_flyteidl.plugins.sagemaker.TrainingJob>`) 
   
 

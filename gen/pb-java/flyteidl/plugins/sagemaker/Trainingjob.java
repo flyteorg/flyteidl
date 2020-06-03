@@ -23,7 +23,7 @@ public final class Trainingjob {
      * TODO: will this change output? should it be an input instead of a part of the task spec?
      * </pre>
      *
-     * <code>string TrainingImage = 1;</code>
+     * <code>string training_image = 1;</code>
      */
     java.lang.String getTrainingImage();
     /**
@@ -31,17 +31,17 @@ public final class Trainingjob {
      * TODO: will this change output? should it be an input instead of a part of the task spec?
      * </pre>
      *
-     * <code>string TrainingImage = 1;</code>
+     * <code>string training_image = 1;</code>
      */
     com.google.protobuf.ByteString
         getTrainingImageBytes();
 
     /**
-     * <code>string TrainingInputMode = 2;</code>
+     * <code>string training_input_mode = 2;</code>
      */
     java.lang.String getTrainingInputMode();
     /**
-     * <code>string TrainingInputMode = 2;</code>
+     * <code>string training_input_mode = 2;</code>
      */
     com.google.protobuf.ByteString
         getTrainingInputModeBytes();
@@ -51,7 +51,7 @@ public final class Trainingjob {
      * TODO: will this change output? should it be an input instead of a part of the task spec?
      * </pre>
      *
-     * <code>string AlgorithmName = 3;</code>
+     * <code>string algorithm_name = 3;</code>
      */
     java.lang.String getAlgorithmName();
     /**
@@ -59,31 +59,31 @@ public final class Trainingjob {
      * TODO: will this change output? should it be an input instead of a part of the task spec?
      * </pre>
      *
-     * <code>string AlgorithmName = 3;</code>
+     * <code>string algorithm_name = 3;</code>
      */
     com.google.protobuf.ByteString
         getAlgorithmNameBytes();
 
     /**
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     java.util.List<flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition> 
         getMetricDefinitionsList();
     /**
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition getMetricDefinitions(int index);
     /**
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     int getMetricDefinitionsCount();
     /**
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     java.util.List<? extends flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinitionOrBuilder> 
         getMetricDefinitionsOrBuilderList();
     /**
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinitionOrBuilder getMetricDefinitionsOrBuilder(
         int index);
@@ -198,21 +198,21 @@ public final class Trainingjob {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>string Name = 1;</code>
+       * <code>string name = 1;</code>
        */
       java.lang.String getName();
       /**
-       * <code>string Name = 1;</code>
+       * <code>string name = 1;</code>
        */
       com.google.protobuf.ByteString
           getNameBytes();
 
       /**
-       * <code>string Regex = 2;</code>
+       * <code>string regex = 2;</code>
        */
       java.lang.String getRegex();
       /**
-       * <code>string Regex = 2;</code>
+       * <code>string regex = 2;</code>
        */
       com.google.protobuf.ByteString
           getRegexBytes();
@@ -305,7 +305,7 @@ public final class Trainingjob {
       public static final int NAME_FIELD_NUMBER = 1;
       private volatile java.lang.Object name_;
       /**
-       * <code>string Name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -320,7 +320,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>string Name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -339,7 +339,7 @@ public final class Trainingjob {
       public static final int REGEX_FIELD_NUMBER = 2;
       private volatile java.lang.Object regex_;
       /**
-       * <code>string Regex = 2;</code>
+       * <code>string regex = 2;</code>
        */
       public java.lang.String getRegex() {
         java.lang.Object ref = regex_;
@@ -354,7 +354,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>string Regex = 2;</code>
+       * <code>string regex = 2;</code>
        */
       public com.google.protobuf.ByteString
           getRegexBytes() {
@@ -691,7 +691,7 @@ public final class Trainingjob {
 
         private java.lang.Object name_ = "";
         /**
-         * <code>string Name = 1;</code>
+         * <code>string name = 1;</code>
          */
         public java.lang.String getName() {
           java.lang.Object ref = name_;
@@ -706,7 +706,7 @@ public final class Trainingjob {
           }
         }
         /**
-         * <code>string Name = 1;</code>
+         * <code>string name = 1;</code>
          */
         public com.google.protobuf.ByteString
             getNameBytes() {
@@ -722,7 +722,7 @@ public final class Trainingjob {
           }
         }
         /**
-         * <code>string Name = 1;</code>
+         * <code>string name = 1;</code>
          */
         public Builder setName(
             java.lang.String value) {
@@ -735,7 +735,7 @@ public final class Trainingjob {
           return this;
         }
         /**
-         * <code>string Name = 1;</code>
+         * <code>string name = 1;</code>
          */
         public Builder clearName() {
           
@@ -744,7 +744,7 @@ public final class Trainingjob {
           return this;
         }
         /**
-         * <code>string Name = 1;</code>
+         * <code>string name = 1;</code>
          */
         public Builder setNameBytes(
             com.google.protobuf.ByteString value) {
@@ -760,7 +760,7 @@ public final class Trainingjob {
 
         private java.lang.Object regex_ = "";
         /**
-         * <code>string Regex = 2;</code>
+         * <code>string regex = 2;</code>
          */
         public java.lang.String getRegex() {
           java.lang.Object ref = regex_;
@@ -775,7 +775,7 @@ public final class Trainingjob {
           }
         }
         /**
-         * <code>string Regex = 2;</code>
+         * <code>string regex = 2;</code>
          */
         public com.google.protobuf.ByteString
             getRegexBytes() {
@@ -791,7 +791,7 @@ public final class Trainingjob {
           }
         }
         /**
-         * <code>string Regex = 2;</code>
+         * <code>string regex = 2;</code>
          */
         public Builder setRegex(
             java.lang.String value) {
@@ -804,7 +804,7 @@ public final class Trainingjob {
           return this;
         }
         /**
-         * <code>string Regex = 2;</code>
+         * <code>string regex = 2;</code>
          */
         public Builder clearRegex() {
           
@@ -813,7 +813,7 @@ public final class Trainingjob {
           return this;
         }
         /**
-         * <code>string Regex = 2;</code>
+         * <code>string regex = 2;</code>
          */
         public Builder setRegexBytes(
             com.google.protobuf.ByteString value) {
@@ -880,14 +880,14 @@ public final class Trainingjob {
     }
 
     private int bitField0_;
-    public static final int TRAININGIMAGE_FIELD_NUMBER = 1;
+    public static final int TRAINING_IMAGE_FIELD_NUMBER = 1;
     private volatile java.lang.Object trainingImage_;
     /**
      * <pre>
      * TODO: will this change output? should it be an input instead of a part of the task spec?
      * </pre>
      *
-     * <code>string TrainingImage = 1;</code>
+     * <code>string training_image = 1;</code>
      */
     public java.lang.String getTrainingImage() {
       java.lang.Object ref = trainingImage_;
@@ -906,7 +906,7 @@ public final class Trainingjob {
      * TODO: will this change output? should it be an input instead of a part of the task spec?
      * </pre>
      *
-     * <code>string TrainingImage = 1;</code>
+     * <code>string training_image = 1;</code>
      */
     public com.google.protobuf.ByteString
         getTrainingImageBytes() {
@@ -922,10 +922,10 @@ public final class Trainingjob {
       }
     }
 
-    public static final int TRAININGINPUTMODE_FIELD_NUMBER = 2;
+    public static final int TRAINING_INPUT_MODE_FIELD_NUMBER = 2;
     private volatile java.lang.Object trainingInputMode_;
     /**
-     * <code>string TrainingInputMode = 2;</code>
+     * <code>string training_input_mode = 2;</code>
      */
     public java.lang.String getTrainingInputMode() {
       java.lang.Object ref = trainingInputMode_;
@@ -940,7 +940,7 @@ public final class Trainingjob {
       }
     }
     /**
-     * <code>string TrainingInputMode = 2;</code>
+     * <code>string training_input_mode = 2;</code>
      */
     public com.google.protobuf.ByteString
         getTrainingInputModeBytes() {
@@ -956,14 +956,14 @@ public final class Trainingjob {
       }
     }
 
-    public static final int ALGORITHMNAME_FIELD_NUMBER = 3;
+    public static final int ALGORITHM_NAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object algorithmName_;
     /**
      * <pre>
      * TODO: will this change output? should it be an input instead of a part of the task spec?
      * </pre>
      *
-     * <code>string AlgorithmName = 3;</code>
+     * <code>string algorithm_name = 3;</code>
      */
     public java.lang.String getAlgorithmName() {
       java.lang.Object ref = algorithmName_;
@@ -982,7 +982,7 @@ public final class Trainingjob {
      * TODO: will this change output? should it be an input instead of a part of the task spec?
      * </pre>
      *
-     * <code>string AlgorithmName = 3;</code>
+     * <code>string algorithm_name = 3;</code>
      */
     public com.google.protobuf.ByteString
         getAlgorithmNameBytes() {
@@ -998,35 +998,35 @@ public final class Trainingjob {
       }
     }
 
-    public static final int METRICDEFINITIONS_FIELD_NUMBER = 4;
+    public static final int METRIC_DEFINITIONS_FIELD_NUMBER = 4;
     private java.util.List<flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition> metricDefinitions_;
     /**
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     public java.util.List<flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition> getMetricDefinitionsList() {
       return metricDefinitions_;
     }
     /**
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     public java.util.List<? extends flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinitionOrBuilder> 
         getMetricDefinitionsOrBuilderList() {
       return metricDefinitions_;
     }
     /**
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     public int getMetricDefinitionsCount() {
       return metricDefinitions_.size();
     }
     /**
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     public flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition getMetricDefinitions(int index) {
       return metricDefinitions_.get(index);
     }
     /**
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     public flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinitionOrBuilder getMetricDefinitionsOrBuilder(
         int index) {
@@ -1115,14 +1115,14 @@ public final class Trainingjob {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TRAININGIMAGE_FIELD_NUMBER;
+      hash = (37 * hash) + TRAINING_IMAGE_FIELD_NUMBER;
       hash = (53 * hash) + getTrainingImage().hashCode();
-      hash = (37 * hash) + TRAININGINPUTMODE_FIELD_NUMBER;
+      hash = (37 * hash) + TRAINING_INPUT_MODE_FIELD_NUMBER;
       hash = (53 * hash) + getTrainingInputMode().hashCode();
-      hash = (37 * hash) + ALGORITHMNAME_FIELD_NUMBER;
+      hash = (37 * hash) + ALGORITHM_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getAlgorithmName().hashCode();
       if (getMetricDefinitionsCount() > 0) {
-        hash = (37 * hash) + METRICDEFINITIONS_FIELD_NUMBER;
+        hash = (37 * hash) + METRIC_DEFINITIONS_FIELD_NUMBER;
         hash = (53 * hash) + getMetricDefinitionsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -1434,7 +1434,7 @@ public final class Trainingjob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?
        * </pre>
        *
-       * <code>string TrainingImage = 1;</code>
+       * <code>string training_image = 1;</code>
        */
       public java.lang.String getTrainingImage() {
         java.lang.Object ref = trainingImage_;
@@ -1453,7 +1453,7 @@ public final class Trainingjob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?
        * </pre>
        *
-       * <code>string TrainingImage = 1;</code>
+       * <code>string training_image = 1;</code>
        */
       public com.google.protobuf.ByteString
           getTrainingImageBytes() {
@@ -1473,7 +1473,7 @@ public final class Trainingjob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?
        * </pre>
        *
-       * <code>string TrainingImage = 1;</code>
+       * <code>string training_image = 1;</code>
        */
       public Builder setTrainingImage(
           java.lang.String value) {
@@ -1490,7 +1490,7 @@ public final class Trainingjob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?
        * </pre>
        *
-       * <code>string TrainingImage = 1;</code>
+       * <code>string training_image = 1;</code>
        */
       public Builder clearTrainingImage() {
         
@@ -1503,7 +1503,7 @@ public final class Trainingjob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?
        * </pre>
        *
-       * <code>string TrainingImage = 1;</code>
+       * <code>string training_image = 1;</code>
        */
       public Builder setTrainingImageBytes(
           com.google.protobuf.ByteString value) {
@@ -1519,7 +1519,7 @@ public final class Trainingjob {
 
       private java.lang.Object trainingInputMode_ = "";
       /**
-       * <code>string TrainingInputMode = 2;</code>
+       * <code>string training_input_mode = 2;</code>
        */
       public java.lang.String getTrainingInputMode() {
         java.lang.Object ref = trainingInputMode_;
@@ -1534,7 +1534,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>string TrainingInputMode = 2;</code>
+       * <code>string training_input_mode = 2;</code>
        */
       public com.google.protobuf.ByteString
           getTrainingInputModeBytes() {
@@ -1550,7 +1550,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>string TrainingInputMode = 2;</code>
+       * <code>string training_input_mode = 2;</code>
        */
       public Builder setTrainingInputMode(
           java.lang.String value) {
@@ -1563,7 +1563,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>string TrainingInputMode = 2;</code>
+       * <code>string training_input_mode = 2;</code>
        */
       public Builder clearTrainingInputMode() {
         
@@ -1572,7 +1572,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>string TrainingInputMode = 2;</code>
+       * <code>string training_input_mode = 2;</code>
        */
       public Builder setTrainingInputModeBytes(
           com.google.protobuf.ByteString value) {
@@ -1592,7 +1592,7 @@ public final class Trainingjob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?
        * </pre>
        *
-       * <code>string AlgorithmName = 3;</code>
+       * <code>string algorithm_name = 3;</code>
        */
       public java.lang.String getAlgorithmName() {
         java.lang.Object ref = algorithmName_;
@@ -1611,7 +1611,7 @@ public final class Trainingjob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?
        * </pre>
        *
-       * <code>string AlgorithmName = 3;</code>
+       * <code>string algorithm_name = 3;</code>
        */
       public com.google.protobuf.ByteString
           getAlgorithmNameBytes() {
@@ -1631,7 +1631,7 @@ public final class Trainingjob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?
        * </pre>
        *
-       * <code>string AlgorithmName = 3;</code>
+       * <code>string algorithm_name = 3;</code>
        */
       public Builder setAlgorithmName(
           java.lang.String value) {
@@ -1648,7 +1648,7 @@ public final class Trainingjob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?
        * </pre>
        *
-       * <code>string AlgorithmName = 3;</code>
+       * <code>string algorithm_name = 3;</code>
        */
       public Builder clearAlgorithmName() {
         
@@ -1661,7 +1661,7 @@ public final class Trainingjob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?
        * </pre>
        *
-       * <code>string AlgorithmName = 3;</code>
+       * <code>string algorithm_name = 3;</code>
        */
       public Builder setAlgorithmNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1688,7 +1688,7 @@ public final class Trainingjob {
           flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition, flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition.Builder, flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinitionOrBuilder> metricDefinitionsBuilder_;
 
       /**
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public java.util.List<flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition> getMetricDefinitionsList() {
         if (metricDefinitionsBuilder_ == null) {
@@ -1698,7 +1698,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public int getMetricDefinitionsCount() {
         if (metricDefinitionsBuilder_ == null) {
@@ -1708,7 +1708,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition getMetricDefinitions(int index) {
         if (metricDefinitionsBuilder_ == null) {
@@ -1718,7 +1718,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder setMetricDefinitions(
           int index, flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition value) {
@@ -1735,7 +1735,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder setMetricDefinitions(
           int index, flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition.Builder builderForValue) {
@@ -1749,7 +1749,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder addMetricDefinitions(flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition value) {
         if (metricDefinitionsBuilder_ == null) {
@@ -1765,7 +1765,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder addMetricDefinitions(
           int index, flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition value) {
@@ -1782,7 +1782,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder addMetricDefinitions(
           flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition.Builder builderForValue) {
@@ -1796,7 +1796,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder addMetricDefinitions(
           int index, flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition.Builder builderForValue) {
@@ -1810,7 +1810,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder addAllMetricDefinitions(
           java.lang.Iterable<? extends flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition> values) {
@@ -1825,7 +1825,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder clearMetricDefinitions() {
         if (metricDefinitionsBuilder_ == null) {
@@ -1838,7 +1838,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder removeMetricDefinitions(int index) {
         if (metricDefinitionsBuilder_ == null) {
@@ -1851,14 +1851,14 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition.Builder getMetricDefinitionsBuilder(
           int index) {
         return getMetricDefinitionsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinitionOrBuilder getMetricDefinitionsOrBuilder(
           int index) {
@@ -1868,7 +1868,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public java.util.List<? extends flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinitionOrBuilder> 
            getMetricDefinitionsOrBuilderList() {
@@ -1879,14 +1879,14 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition.Builder addMetricDefinitionsBuilder() {
         return getMetricDefinitionsFieldBuilder().addBuilder(
             flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition.getDefaultInstance());
       }
       /**
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition.Builder addMetricDefinitionsBuilder(
           int index) {
@@ -1894,7 +1894,7 @@ public final class Trainingjob {
             index, flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition.getDefaultInstance());
       }
       /**
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition MetricDefinitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public java.util.List<flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.MetricDefinition.Builder> 
            getMetricDefinitionsBuilderList() {
@@ -1972,31 +1972,31 @@ public final class Trainingjob {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string InstanceType = 1;</code>
+     * <code>string instance_type = 1;</code>
      */
     java.lang.String getInstanceType();
     /**
-     * <code>string InstanceType = 1;</code>
+     * <code>string instance_type = 1;</code>
      */
     com.google.protobuf.ByteString
         getInstanceTypeBytes();
 
     /**
-     * <code>int64 InstanceCount = 2;</code>
+     * <code>int64 instance_count = 2;</code>
      */
     long getInstanceCount();
 
     /**
-     * <code>int64 VolumeSizeInGB = 3;</code>
+     * <code>int64 volume_size_in_gb = 3;</code>
      */
-    long getVolumeSizeInGB();
+    long getVolumeSizeInGb();
 
     /**
-     * <code>string VolumeKmsKeyId = 4;</code>
+     * <code>string volume_kms_key_id = 4;</code>
      */
     java.lang.String getVolumeKmsKeyId();
     /**
-     * <code>string VolumeKmsKeyId = 4;</code>
+     * <code>string volume_kms_key_id = 4;</code>
      */
     com.google.protobuf.ByteString
         getVolumeKmsKeyIdBytes();
@@ -2055,7 +2055,7 @@ public final class Trainingjob {
             }
             case 24: {
 
-              volumeSizeInGB_ = input.readInt64();
+              volumeSizeInGb_ = input.readInt64();
               break;
             }
             case 34: {
@@ -2096,10 +2096,10 @@ public final class Trainingjob {
               flyteidl.plugins.sagemaker.Trainingjob.ResourceConfig.class, flyteidl.plugins.sagemaker.Trainingjob.ResourceConfig.Builder.class);
     }
 
-    public static final int INSTANCETYPE_FIELD_NUMBER = 1;
+    public static final int INSTANCE_TYPE_FIELD_NUMBER = 1;
     private volatile java.lang.Object instanceType_;
     /**
-     * <code>string InstanceType = 1;</code>
+     * <code>string instance_type = 1;</code>
      */
     public java.lang.String getInstanceType() {
       java.lang.Object ref = instanceType_;
@@ -2114,7 +2114,7 @@ public final class Trainingjob {
       }
     }
     /**
-     * <code>string InstanceType = 1;</code>
+     * <code>string instance_type = 1;</code>
      */
     public com.google.protobuf.ByteString
         getInstanceTypeBytes() {
@@ -2130,28 +2130,28 @@ public final class Trainingjob {
       }
     }
 
-    public static final int INSTANCECOUNT_FIELD_NUMBER = 2;
+    public static final int INSTANCE_COUNT_FIELD_NUMBER = 2;
     private long instanceCount_;
     /**
-     * <code>int64 InstanceCount = 2;</code>
+     * <code>int64 instance_count = 2;</code>
      */
     public long getInstanceCount() {
       return instanceCount_;
     }
 
-    public static final int VOLUMESIZEINGB_FIELD_NUMBER = 3;
-    private long volumeSizeInGB_;
+    public static final int VOLUME_SIZE_IN_GB_FIELD_NUMBER = 3;
+    private long volumeSizeInGb_;
     /**
-     * <code>int64 VolumeSizeInGB = 3;</code>
+     * <code>int64 volume_size_in_gb = 3;</code>
      */
-    public long getVolumeSizeInGB() {
-      return volumeSizeInGB_;
+    public long getVolumeSizeInGb() {
+      return volumeSizeInGb_;
     }
 
-    public static final int VOLUMEKMSKEYID_FIELD_NUMBER = 4;
+    public static final int VOLUME_KMS_KEY_ID_FIELD_NUMBER = 4;
     private volatile java.lang.Object volumeKmsKeyId_;
     /**
-     * <code>string VolumeKmsKeyId = 4;</code>
+     * <code>string volume_kms_key_id = 4;</code>
      */
     public java.lang.String getVolumeKmsKeyId() {
       java.lang.Object ref = volumeKmsKeyId_;
@@ -2166,7 +2166,7 @@ public final class Trainingjob {
       }
     }
     /**
-     * <code>string VolumeKmsKeyId = 4;</code>
+     * <code>string volume_kms_key_id = 4;</code>
      */
     public com.google.protobuf.ByteString
         getVolumeKmsKeyIdBytes() {
@@ -2202,8 +2202,8 @@ public final class Trainingjob {
       if (instanceCount_ != 0L) {
         output.writeInt64(2, instanceCount_);
       }
-      if (volumeSizeInGB_ != 0L) {
-        output.writeInt64(3, volumeSizeInGB_);
+      if (volumeSizeInGb_ != 0L) {
+        output.writeInt64(3, volumeSizeInGb_);
       }
       if (!getVolumeKmsKeyIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, volumeKmsKeyId_);
@@ -2224,9 +2224,9 @@ public final class Trainingjob {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, instanceCount_);
       }
-      if (volumeSizeInGB_ != 0L) {
+      if (volumeSizeInGb_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, volumeSizeInGB_);
+          .computeInt64Size(3, volumeSizeInGb_);
       }
       if (!getVolumeKmsKeyIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, volumeKmsKeyId_);
@@ -2250,8 +2250,8 @@ public final class Trainingjob {
           .equals(other.getInstanceType())) return false;
       if (getInstanceCount()
           != other.getInstanceCount()) return false;
-      if (getVolumeSizeInGB()
-          != other.getVolumeSizeInGB()) return false;
+      if (getVolumeSizeInGb()
+          != other.getVolumeSizeInGb()) return false;
       if (!getVolumeKmsKeyId()
           .equals(other.getVolumeKmsKeyId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -2265,15 +2265,15 @@ public final class Trainingjob {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INSTANCETYPE_FIELD_NUMBER;
+      hash = (37 * hash) + INSTANCE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getInstanceType().hashCode();
-      hash = (37 * hash) + INSTANCECOUNT_FIELD_NUMBER;
+      hash = (37 * hash) + INSTANCE_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getInstanceCount());
-      hash = (37 * hash) + VOLUMESIZEINGB_FIELD_NUMBER;
+      hash = (37 * hash) + VOLUME_SIZE_IN_GB_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getVolumeSizeInGB());
-      hash = (37 * hash) + VOLUMEKMSKEYID_FIELD_NUMBER;
+          getVolumeSizeInGb());
+      hash = (37 * hash) + VOLUME_KMS_KEY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getVolumeKmsKeyId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2412,7 +2412,7 @@ public final class Trainingjob {
 
         instanceCount_ = 0L;
 
-        volumeSizeInGB_ = 0L;
+        volumeSizeInGb_ = 0L;
 
         volumeKmsKeyId_ = "";
 
@@ -2444,7 +2444,7 @@ public final class Trainingjob {
         flyteidl.plugins.sagemaker.Trainingjob.ResourceConfig result = new flyteidl.plugins.sagemaker.Trainingjob.ResourceConfig(this);
         result.instanceType_ = instanceType_;
         result.instanceCount_ = instanceCount_;
-        result.volumeSizeInGB_ = volumeSizeInGB_;
+        result.volumeSizeInGb_ = volumeSizeInGb_;
         result.volumeKmsKeyId_ = volumeKmsKeyId_;
         onBuilt();
         return result;
@@ -2501,8 +2501,8 @@ public final class Trainingjob {
         if (other.getInstanceCount() != 0L) {
           setInstanceCount(other.getInstanceCount());
         }
-        if (other.getVolumeSizeInGB() != 0L) {
-          setVolumeSizeInGB(other.getVolumeSizeInGB());
+        if (other.getVolumeSizeInGb() != 0L) {
+          setVolumeSizeInGb(other.getVolumeSizeInGb());
         }
         if (!other.getVolumeKmsKeyId().isEmpty()) {
           volumeKmsKeyId_ = other.volumeKmsKeyId_;
@@ -2539,7 +2539,7 @@ public final class Trainingjob {
 
       private java.lang.Object instanceType_ = "";
       /**
-       * <code>string InstanceType = 1;</code>
+       * <code>string instance_type = 1;</code>
        */
       public java.lang.String getInstanceType() {
         java.lang.Object ref = instanceType_;
@@ -2554,7 +2554,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>string InstanceType = 1;</code>
+       * <code>string instance_type = 1;</code>
        */
       public com.google.protobuf.ByteString
           getInstanceTypeBytes() {
@@ -2570,7 +2570,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>string InstanceType = 1;</code>
+       * <code>string instance_type = 1;</code>
        */
       public Builder setInstanceType(
           java.lang.String value) {
@@ -2583,7 +2583,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>string InstanceType = 1;</code>
+       * <code>string instance_type = 1;</code>
        */
       public Builder clearInstanceType() {
         
@@ -2592,7 +2592,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>string InstanceType = 1;</code>
+       * <code>string instance_type = 1;</code>
        */
       public Builder setInstanceTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -2608,13 +2608,13 @@ public final class Trainingjob {
 
       private long instanceCount_ ;
       /**
-       * <code>int64 InstanceCount = 2;</code>
+       * <code>int64 instance_count = 2;</code>
        */
       public long getInstanceCount() {
         return instanceCount_;
       }
       /**
-       * <code>int64 InstanceCount = 2;</code>
+       * <code>int64 instance_count = 2;</code>
        */
       public Builder setInstanceCount(long value) {
         
@@ -2623,7 +2623,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>int64 InstanceCount = 2;</code>
+       * <code>int64 instance_count = 2;</code>
        */
       public Builder clearInstanceCount() {
         
@@ -2632,35 +2632,35 @@ public final class Trainingjob {
         return this;
       }
 
-      private long volumeSizeInGB_ ;
+      private long volumeSizeInGb_ ;
       /**
-       * <code>int64 VolumeSizeInGB = 3;</code>
+       * <code>int64 volume_size_in_gb = 3;</code>
        */
-      public long getVolumeSizeInGB() {
-        return volumeSizeInGB_;
+      public long getVolumeSizeInGb() {
+        return volumeSizeInGb_;
       }
       /**
-       * <code>int64 VolumeSizeInGB = 3;</code>
+       * <code>int64 volume_size_in_gb = 3;</code>
        */
-      public Builder setVolumeSizeInGB(long value) {
+      public Builder setVolumeSizeInGb(long value) {
         
-        volumeSizeInGB_ = value;
+        volumeSizeInGb_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 VolumeSizeInGB = 3;</code>
+       * <code>int64 volume_size_in_gb = 3;</code>
        */
-      public Builder clearVolumeSizeInGB() {
+      public Builder clearVolumeSizeInGb() {
         
-        volumeSizeInGB_ = 0L;
+        volumeSizeInGb_ = 0L;
         onChanged();
         return this;
       }
 
       private java.lang.Object volumeKmsKeyId_ = "";
       /**
-       * <code>string VolumeKmsKeyId = 4;</code>
+       * <code>string volume_kms_key_id = 4;</code>
        */
       public java.lang.String getVolumeKmsKeyId() {
         java.lang.Object ref = volumeKmsKeyId_;
@@ -2675,7 +2675,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>string VolumeKmsKeyId = 4;</code>
+       * <code>string volume_kms_key_id = 4;</code>
        */
       public com.google.protobuf.ByteString
           getVolumeKmsKeyIdBytes() {
@@ -2691,7 +2691,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>string VolumeKmsKeyId = 4;</code>
+       * <code>string volume_kms_key_id = 4;</code>
        */
       public Builder setVolumeKmsKeyId(
           java.lang.String value) {
@@ -2704,7 +2704,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>string VolumeKmsKeyId = 4;</code>
+       * <code>string volume_kms_key_id = 4;</code>
        */
       public Builder clearVolumeKmsKeyId() {
         
@@ -2713,7 +2713,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>string VolumeKmsKeyId = 4;</code>
+       * <code>string volume_kms_key_id = 4;</code>
        */
       public Builder setVolumeKmsKeyIdBytes(
           com.google.protobuf.ByteString value) {
@@ -2784,12 +2784,12 @@ public final class Trainingjob {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 MaxRuntimeInSeconds = 1;</code>
+     * <code>int64 max_runtime_in_seconds = 1;</code>
      */
     long getMaxRuntimeInSeconds();
 
     /**
-     * <code>int64 MaxWaitTimeInSeconds = 2;</code>
+     * <code>int64 max_wait_time_in_seconds = 2;</code>
      */
     long getMaxWaitTimeInSeconds();
   }
@@ -2874,19 +2874,19 @@ public final class Trainingjob {
               flyteidl.plugins.sagemaker.Trainingjob.StoppingCondition.class, flyteidl.plugins.sagemaker.Trainingjob.StoppingCondition.Builder.class);
     }
 
-    public static final int MAXRUNTIMEINSECONDS_FIELD_NUMBER = 1;
+    public static final int MAX_RUNTIME_IN_SECONDS_FIELD_NUMBER = 1;
     private long maxRuntimeInSeconds_;
     /**
-     * <code>int64 MaxRuntimeInSeconds = 1;</code>
+     * <code>int64 max_runtime_in_seconds = 1;</code>
      */
     public long getMaxRuntimeInSeconds() {
       return maxRuntimeInSeconds_;
     }
 
-    public static final int MAXWAITTIMEINSECONDS_FIELD_NUMBER = 2;
+    public static final int MAX_WAIT_TIME_IN_SECONDS_FIELD_NUMBER = 2;
     private long maxWaitTimeInSeconds_;
     /**
-     * <code>int64 MaxWaitTimeInSeconds = 2;</code>
+     * <code>int64 max_wait_time_in_seconds = 2;</code>
      */
     public long getMaxWaitTimeInSeconds() {
       return maxWaitTimeInSeconds_;
@@ -2959,10 +2959,10 @@ public final class Trainingjob {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MAXRUNTIMEINSECONDS_FIELD_NUMBER;
+      hash = (37 * hash) + MAX_RUNTIME_IN_SECONDS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMaxRuntimeInSeconds());
-      hash = (37 * hash) + MAXWAITTIMEINSECONDS_FIELD_NUMBER;
+      hash = (37 * hash) + MAX_WAIT_TIME_IN_SECONDS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMaxWaitTimeInSeconds());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -3215,13 +3215,13 @@ public final class Trainingjob {
 
       private long maxRuntimeInSeconds_ ;
       /**
-       * <code>int64 MaxRuntimeInSeconds = 1;</code>
+       * <code>int64 max_runtime_in_seconds = 1;</code>
        */
       public long getMaxRuntimeInSeconds() {
         return maxRuntimeInSeconds_;
       }
       /**
-       * <code>int64 MaxRuntimeInSeconds = 1;</code>
+       * <code>int64 max_runtime_in_seconds = 1;</code>
        */
       public Builder setMaxRuntimeInSeconds(long value) {
         
@@ -3230,7 +3230,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>int64 MaxRuntimeInSeconds = 1;</code>
+       * <code>int64 max_runtime_in_seconds = 1;</code>
        */
       public Builder clearMaxRuntimeInSeconds() {
         
@@ -3241,13 +3241,13 @@ public final class Trainingjob {
 
       private long maxWaitTimeInSeconds_ ;
       /**
-       * <code>int64 MaxWaitTimeInSeconds = 2;</code>
+       * <code>int64 max_wait_time_in_seconds = 2;</code>
        */
       public long getMaxWaitTimeInSeconds() {
         return maxWaitTimeInSeconds_;
       }
       /**
-       * <code>int64 MaxWaitTimeInSeconds = 2;</code>
+       * <code>int64 max_wait_time_in_seconds = 2;</code>
        */
       public Builder setMaxWaitTimeInSeconds(long value) {
         
@@ -3256,7 +3256,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>int64 MaxWaitTimeInSeconds = 2;</code>
+       * <code>int64 max_wait_time_in_seconds = 2;</code>
        */
       public Builder clearMaxWaitTimeInSeconds() {
         
@@ -3322,39 +3322,39 @@ public final class Trainingjob {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated string SecurityGroupIds = 1;</code>
+     * <code>repeated string security_group_ids = 1;</code>
      */
     java.util.List<java.lang.String>
         getSecurityGroupIdsList();
     /**
-     * <code>repeated string SecurityGroupIds = 1;</code>
+     * <code>repeated string security_group_ids = 1;</code>
      */
     int getSecurityGroupIdsCount();
     /**
-     * <code>repeated string SecurityGroupIds = 1;</code>
+     * <code>repeated string security_group_ids = 1;</code>
      */
     java.lang.String getSecurityGroupIds(int index);
     /**
-     * <code>repeated string SecurityGroupIds = 1;</code>
+     * <code>repeated string security_group_ids = 1;</code>
      */
     com.google.protobuf.ByteString
         getSecurityGroupIdsBytes(int index);
 
     /**
-     * <code>repeated string Subnets = 2;</code>
+     * <code>repeated string subnets = 2;</code>
      */
     java.util.List<java.lang.String>
         getSubnetsList();
     /**
-     * <code>repeated string Subnets = 2;</code>
+     * <code>repeated string subnets = 2;</code>
      */
     int getSubnetsCount();
     /**
-     * <code>repeated string Subnets = 2;</code>
+     * <code>repeated string subnets = 2;</code>
      */
     java.lang.String getSubnets(int index);
     /**
-     * <code>repeated string Subnets = 2;</code>
+     * <code>repeated string subnets = 2;</code>
      */
     com.google.protobuf.ByteString
         getSubnetsBytes(int index);
@@ -3456,29 +3456,29 @@ public final class Trainingjob {
               flyteidl.plugins.sagemaker.Trainingjob.VpcConfig.class, flyteidl.plugins.sagemaker.Trainingjob.VpcConfig.Builder.class);
     }
 
-    public static final int SECURITYGROUPIDS_FIELD_NUMBER = 1;
+    public static final int SECURITY_GROUP_IDS_FIELD_NUMBER = 1;
     private com.google.protobuf.LazyStringList securityGroupIds_;
     /**
-     * <code>repeated string SecurityGroupIds = 1;</code>
+     * <code>repeated string security_group_ids = 1;</code>
      */
     public com.google.protobuf.ProtocolStringList
         getSecurityGroupIdsList() {
       return securityGroupIds_;
     }
     /**
-     * <code>repeated string SecurityGroupIds = 1;</code>
+     * <code>repeated string security_group_ids = 1;</code>
      */
     public int getSecurityGroupIdsCount() {
       return securityGroupIds_.size();
     }
     /**
-     * <code>repeated string SecurityGroupIds = 1;</code>
+     * <code>repeated string security_group_ids = 1;</code>
      */
     public java.lang.String getSecurityGroupIds(int index) {
       return securityGroupIds_.get(index);
     }
     /**
-     * <code>repeated string SecurityGroupIds = 1;</code>
+     * <code>repeated string security_group_ids = 1;</code>
      */
     public com.google.protobuf.ByteString
         getSecurityGroupIdsBytes(int index) {
@@ -3488,26 +3488,26 @@ public final class Trainingjob {
     public static final int SUBNETS_FIELD_NUMBER = 2;
     private com.google.protobuf.LazyStringList subnets_;
     /**
-     * <code>repeated string Subnets = 2;</code>
+     * <code>repeated string subnets = 2;</code>
      */
     public com.google.protobuf.ProtocolStringList
         getSubnetsList() {
       return subnets_;
     }
     /**
-     * <code>repeated string Subnets = 2;</code>
+     * <code>repeated string subnets = 2;</code>
      */
     public int getSubnetsCount() {
       return subnets_.size();
     }
     /**
-     * <code>repeated string Subnets = 2;</code>
+     * <code>repeated string subnets = 2;</code>
      */
     public java.lang.String getSubnets(int index) {
       return subnets_.get(index);
     }
     /**
-     * <code>repeated string Subnets = 2;</code>
+     * <code>repeated string subnets = 2;</code>
      */
     public com.google.protobuf.ByteString
         getSubnetsBytes(int index) {
@@ -3590,7 +3590,7 @@ public final class Trainingjob {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getSecurityGroupIdsCount() > 0) {
-        hash = (37 * hash) + SECURITYGROUPIDS_FIELD_NUMBER;
+        hash = (37 * hash) + SECURITY_GROUP_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getSecurityGroupIdsList().hashCode();
       }
       if (getSubnetsCount() > 0) {
@@ -3877,33 +3877,33 @@ public final class Trainingjob {
          }
       }
       /**
-       * <code>repeated string SecurityGroupIds = 1;</code>
+       * <code>repeated string security_group_ids = 1;</code>
        */
       public com.google.protobuf.ProtocolStringList
           getSecurityGroupIdsList() {
         return securityGroupIds_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string SecurityGroupIds = 1;</code>
+       * <code>repeated string security_group_ids = 1;</code>
        */
       public int getSecurityGroupIdsCount() {
         return securityGroupIds_.size();
       }
       /**
-       * <code>repeated string SecurityGroupIds = 1;</code>
+       * <code>repeated string security_group_ids = 1;</code>
        */
       public java.lang.String getSecurityGroupIds(int index) {
         return securityGroupIds_.get(index);
       }
       /**
-       * <code>repeated string SecurityGroupIds = 1;</code>
+       * <code>repeated string security_group_ids = 1;</code>
        */
       public com.google.protobuf.ByteString
           getSecurityGroupIdsBytes(int index) {
         return securityGroupIds_.getByteString(index);
       }
       /**
-       * <code>repeated string SecurityGroupIds = 1;</code>
+       * <code>repeated string security_group_ids = 1;</code>
        */
       public Builder setSecurityGroupIds(
           int index, java.lang.String value) {
@@ -3916,7 +3916,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>repeated string SecurityGroupIds = 1;</code>
+       * <code>repeated string security_group_ids = 1;</code>
        */
       public Builder addSecurityGroupIds(
           java.lang.String value) {
@@ -3929,7 +3929,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>repeated string SecurityGroupIds = 1;</code>
+       * <code>repeated string security_group_ids = 1;</code>
        */
       public Builder addAllSecurityGroupIds(
           java.lang.Iterable<java.lang.String> values) {
@@ -3940,7 +3940,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>repeated string SecurityGroupIds = 1;</code>
+       * <code>repeated string security_group_ids = 1;</code>
        */
       public Builder clearSecurityGroupIds() {
         securityGroupIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -3949,7 +3949,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>repeated string SecurityGroupIds = 1;</code>
+       * <code>repeated string security_group_ids = 1;</code>
        */
       public Builder addSecurityGroupIdsBytes(
           com.google.protobuf.ByteString value) {
@@ -3971,33 +3971,33 @@ public final class Trainingjob {
          }
       }
       /**
-       * <code>repeated string Subnets = 2;</code>
+       * <code>repeated string subnets = 2;</code>
        */
       public com.google.protobuf.ProtocolStringList
           getSubnetsList() {
         return subnets_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string Subnets = 2;</code>
+       * <code>repeated string subnets = 2;</code>
        */
       public int getSubnetsCount() {
         return subnets_.size();
       }
       /**
-       * <code>repeated string Subnets = 2;</code>
+       * <code>repeated string subnets = 2;</code>
        */
       public java.lang.String getSubnets(int index) {
         return subnets_.get(index);
       }
       /**
-       * <code>repeated string Subnets = 2;</code>
+       * <code>repeated string subnets = 2;</code>
        */
       public com.google.protobuf.ByteString
           getSubnetsBytes(int index) {
         return subnets_.getByteString(index);
       }
       /**
-       * <code>repeated string Subnets = 2;</code>
+       * <code>repeated string subnets = 2;</code>
        */
       public Builder setSubnets(
           int index, java.lang.String value) {
@@ -4010,7 +4010,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>repeated string Subnets = 2;</code>
+       * <code>repeated string subnets = 2;</code>
        */
       public Builder addSubnets(
           java.lang.String value) {
@@ -4023,7 +4023,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>repeated string Subnets = 2;</code>
+       * <code>repeated string subnets = 2;</code>
        */
       public Builder addAllSubnets(
           java.lang.Iterable<java.lang.String> values) {
@@ -4034,7 +4034,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>repeated string Subnets = 2;</code>
+       * <code>repeated string subnets = 2;</code>
        */
       public Builder clearSubnets() {
         subnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -4043,7 +4043,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>repeated string Subnets = 2;</code>
+       * <code>repeated string subnets = 2;</code>
        */
       public Builder addSubnetsBytes(
           com.google.protobuf.ByteString value) {
@@ -4114,79 +4114,79 @@ public final class Trainingjob {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string Region = 1;</code>
+     * <code>string region = 1;</code>
      */
     java.lang.String getRegion();
     /**
-     * <code>string Region = 1;</code>
+     * <code>string region = 1;</code>
      */
     com.google.protobuf.ByteString
         getRegionBytes();
 
     /**
-     * <code>string RoleArn = 2;</code>
+     * <code>string role_arn = 2;</code>
      */
     java.lang.String getRoleArn();
     /**
-     * <code>string RoleArn = 2;</code>
+     * <code>string role_arn = 2;</code>
      */
     com.google.protobuf.ByteString
         getRoleArnBytes();
 
     /**
-     * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification AlgorithmSpecification = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 3;</code>
      */
     boolean hasAlgorithmSpecification();
     /**
-     * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification AlgorithmSpecification = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 3;</code>
      */
     flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification getAlgorithmSpecification();
     /**
-     * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification AlgorithmSpecification = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 3;</code>
      */
     flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecificationOrBuilder getAlgorithmSpecificationOrBuilder();
 
     /**
-     * <code>.flyteidl.plugins.sagemaker.ResourceConfig ResourceConfig = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.ResourceConfig resource_config = 4;</code>
      */
     boolean hasResourceConfig();
     /**
-     * <code>.flyteidl.plugins.sagemaker.ResourceConfig ResourceConfig = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.ResourceConfig resource_config = 4;</code>
      */
     flyteidl.plugins.sagemaker.Trainingjob.ResourceConfig getResourceConfig();
     /**
-     * <code>.flyteidl.plugins.sagemaker.ResourceConfig ResourceConfig = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.ResourceConfig resource_config = 4;</code>
      */
     flyteidl.plugins.sagemaker.Trainingjob.ResourceConfigOrBuilder getResourceConfigOrBuilder();
 
     /**
-     * <code>.flyteidl.plugins.sagemaker.StoppingCondition StoppingCondition = 5;</code>
+     * <code>.flyteidl.plugins.sagemaker.StoppingCondition stopping_condition = 5;</code>
      */
     boolean hasStoppingCondition();
     /**
-     * <code>.flyteidl.plugins.sagemaker.StoppingCondition StoppingCondition = 5;</code>
+     * <code>.flyteidl.plugins.sagemaker.StoppingCondition stopping_condition = 5;</code>
      */
     flyteidl.plugins.sagemaker.Trainingjob.StoppingCondition getStoppingCondition();
     /**
-     * <code>.flyteidl.plugins.sagemaker.StoppingCondition StoppingCondition = 5;</code>
+     * <code>.flyteidl.plugins.sagemaker.StoppingCondition stopping_condition = 5;</code>
      */
     flyteidl.plugins.sagemaker.Trainingjob.StoppingConditionOrBuilder getStoppingConditionOrBuilder();
 
     /**
-     * <code>.flyteidl.plugins.sagemaker.VpcConfig VpcConfig = 6;</code>
+     * <code>.flyteidl.plugins.sagemaker.VpcConfig vpc_config = 6;</code>
      */
     boolean hasVpcConfig();
     /**
-     * <code>.flyteidl.plugins.sagemaker.VpcConfig VpcConfig = 6;</code>
+     * <code>.flyteidl.plugins.sagemaker.VpcConfig vpc_config = 6;</code>
      */
     flyteidl.plugins.sagemaker.Trainingjob.VpcConfig getVpcConfig();
     /**
-     * <code>.flyteidl.plugins.sagemaker.VpcConfig VpcConfig = 6;</code>
+     * <code>.flyteidl.plugins.sagemaker.VpcConfig vpc_config = 6;</code>
      */
     flyteidl.plugins.sagemaker.Trainingjob.VpcConfigOrBuilder getVpcConfigOrBuilder();
 
     /**
-     * <code>bool EnableSpotTraining = 7;</code>
+     * <code>bool enable_spot_training = 7;</code>
      */
     boolean getEnableSpotTraining();
   }
@@ -4335,7 +4335,7 @@ public final class Trainingjob {
     public static final int REGION_FIELD_NUMBER = 1;
     private volatile java.lang.Object region_;
     /**
-     * <code>string Region = 1;</code>
+     * <code>string region = 1;</code>
      */
     public java.lang.String getRegion() {
       java.lang.Object ref = region_;
@@ -4350,7 +4350,7 @@ public final class Trainingjob {
       }
     }
     /**
-     * <code>string Region = 1;</code>
+     * <code>string region = 1;</code>
      */
     public com.google.protobuf.ByteString
         getRegionBytes() {
@@ -4366,10 +4366,10 @@ public final class Trainingjob {
       }
     }
 
-    public static final int ROLEARN_FIELD_NUMBER = 2;
+    public static final int ROLE_ARN_FIELD_NUMBER = 2;
     private volatile java.lang.Object roleArn_;
     /**
-     * <code>string RoleArn = 2;</code>
+     * <code>string role_arn = 2;</code>
      */
     public java.lang.String getRoleArn() {
       java.lang.Object ref = roleArn_;
@@ -4384,7 +4384,7 @@ public final class Trainingjob {
       }
     }
     /**
-     * <code>string RoleArn = 2;</code>
+     * <code>string role_arn = 2;</code>
      */
     public com.google.protobuf.ByteString
         getRoleArnBytes() {
@@ -4400,94 +4400,94 @@ public final class Trainingjob {
       }
     }
 
-    public static final int ALGORITHMSPECIFICATION_FIELD_NUMBER = 3;
+    public static final int ALGORITHM_SPECIFICATION_FIELD_NUMBER = 3;
     private flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification algorithmSpecification_;
     /**
-     * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification AlgorithmSpecification = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 3;</code>
      */
     public boolean hasAlgorithmSpecification() {
       return algorithmSpecification_ != null;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification AlgorithmSpecification = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 3;</code>
      */
     public flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification getAlgorithmSpecification() {
       return algorithmSpecification_ == null ? flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.getDefaultInstance() : algorithmSpecification_;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification AlgorithmSpecification = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 3;</code>
      */
     public flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecificationOrBuilder getAlgorithmSpecificationOrBuilder() {
       return getAlgorithmSpecification();
     }
 
-    public static final int RESOURCECONFIG_FIELD_NUMBER = 4;
+    public static final int RESOURCE_CONFIG_FIELD_NUMBER = 4;
     private flyteidl.plugins.sagemaker.Trainingjob.ResourceConfig resourceConfig_;
     /**
-     * <code>.flyteidl.plugins.sagemaker.ResourceConfig ResourceConfig = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.ResourceConfig resource_config = 4;</code>
      */
     public boolean hasResourceConfig() {
       return resourceConfig_ != null;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.ResourceConfig ResourceConfig = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.ResourceConfig resource_config = 4;</code>
      */
     public flyteidl.plugins.sagemaker.Trainingjob.ResourceConfig getResourceConfig() {
       return resourceConfig_ == null ? flyteidl.plugins.sagemaker.Trainingjob.ResourceConfig.getDefaultInstance() : resourceConfig_;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.ResourceConfig ResourceConfig = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.ResourceConfig resource_config = 4;</code>
      */
     public flyteidl.plugins.sagemaker.Trainingjob.ResourceConfigOrBuilder getResourceConfigOrBuilder() {
       return getResourceConfig();
     }
 
-    public static final int STOPPINGCONDITION_FIELD_NUMBER = 5;
+    public static final int STOPPING_CONDITION_FIELD_NUMBER = 5;
     private flyteidl.plugins.sagemaker.Trainingjob.StoppingCondition stoppingCondition_;
     /**
-     * <code>.flyteidl.plugins.sagemaker.StoppingCondition StoppingCondition = 5;</code>
+     * <code>.flyteidl.plugins.sagemaker.StoppingCondition stopping_condition = 5;</code>
      */
     public boolean hasStoppingCondition() {
       return stoppingCondition_ != null;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.StoppingCondition StoppingCondition = 5;</code>
+     * <code>.flyteidl.plugins.sagemaker.StoppingCondition stopping_condition = 5;</code>
      */
     public flyteidl.plugins.sagemaker.Trainingjob.StoppingCondition getStoppingCondition() {
       return stoppingCondition_ == null ? flyteidl.plugins.sagemaker.Trainingjob.StoppingCondition.getDefaultInstance() : stoppingCondition_;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.StoppingCondition StoppingCondition = 5;</code>
+     * <code>.flyteidl.plugins.sagemaker.StoppingCondition stopping_condition = 5;</code>
      */
     public flyteidl.plugins.sagemaker.Trainingjob.StoppingConditionOrBuilder getStoppingConditionOrBuilder() {
       return getStoppingCondition();
     }
 
-    public static final int VPCCONFIG_FIELD_NUMBER = 6;
+    public static final int VPC_CONFIG_FIELD_NUMBER = 6;
     private flyteidl.plugins.sagemaker.Trainingjob.VpcConfig vpcConfig_;
     /**
-     * <code>.flyteidl.plugins.sagemaker.VpcConfig VpcConfig = 6;</code>
+     * <code>.flyteidl.plugins.sagemaker.VpcConfig vpc_config = 6;</code>
      */
     public boolean hasVpcConfig() {
       return vpcConfig_ != null;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.VpcConfig VpcConfig = 6;</code>
+     * <code>.flyteidl.plugins.sagemaker.VpcConfig vpc_config = 6;</code>
      */
     public flyteidl.plugins.sagemaker.Trainingjob.VpcConfig getVpcConfig() {
       return vpcConfig_ == null ? flyteidl.plugins.sagemaker.Trainingjob.VpcConfig.getDefaultInstance() : vpcConfig_;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.VpcConfig VpcConfig = 6;</code>
+     * <code>.flyteidl.plugins.sagemaker.VpcConfig vpc_config = 6;</code>
      */
     public flyteidl.plugins.sagemaker.Trainingjob.VpcConfigOrBuilder getVpcConfigOrBuilder() {
       return getVpcConfig();
     }
 
-    public static final int ENABLESPOTTRAINING_FIELD_NUMBER = 7;
+    public static final int ENABLE_SPOT_TRAINING_FIELD_NUMBER = 7;
     private boolean enableSpotTraining_;
     /**
-     * <code>bool EnableSpotTraining = 7;</code>
+     * <code>bool enable_spot_training = 7;</code>
      */
     public boolean getEnableSpotTraining() {
       return enableSpotTraining_;
@@ -4617,25 +4617,25 @@ public final class Trainingjob {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + REGION_FIELD_NUMBER;
       hash = (53 * hash) + getRegion().hashCode();
-      hash = (37 * hash) + ROLEARN_FIELD_NUMBER;
+      hash = (37 * hash) + ROLE_ARN_FIELD_NUMBER;
       hash = (53 * hash) + getRoleArn().hashCode();
       if (hasAlgorithmSpecification()) {
-        hash = (37 * hash) + ALGORITHMSPECIFICATION_FIELD_NUMBER;
+        hash = (37 * hash) + ALGORITHM_SPECIFICATION_FIELD_NUMBER;
         hash = (53 * hash) + getAlgorithmSpecification().hashCode();
       }
       if (hasResourceConfig()) {
-        hash = (37 * hash) + RESOURCECONFIG_FIELD_NUMBER;
+        hash = (37 * hash) + RESOURCE_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getResourceConfig().hashCode();
       }
       if (hasStoppingCondition()) {
-        hash = (37 * hash) + STOPPINGCONDITION_FIELD_NUMBER;
+        hash = (37 * hash) + STOPPING_CONDITION_FIELD_NUMBER;
         hash = (53 * hash) + getStoppingCondition().hashCode();
       }
       if (hasVpcConfig()) {
-        hash = (37 * hash) + VPCCONFIG_FIELD_NUMBER;
+        hash = (37 * hash) + VPC_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getVpcConfig().hashCode();
       }
-      hash = (37 * hash) + ENABLESPOTTRAINING_FIELD_NUMBER;
+      hash = (37 * hash) + ENABLE_SPOT_TRAINING_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getEnableSpotTraining());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -4952,7 +4952,7 @@ public final class Trainingjob {
 
       private java.lang.Object region_ = "";
       /**
-       * <code>string Region = 1;</code>
+       * <code>string region = 1;</code>
        */
       public java.lang.String getRegion() {
         java.lang.Object ref = region_;
@@ -4967,7 +4967,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>string Region = 1;</code>
+       * <code>string region = 1;</code>
        */
       public com.google.protobuf.ByteString
           getRegionBytes() {
@@ -4983,7 +4983,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>string Region = 1;</code>
+       * <code>string region = 1;</code>
        */
       public Builder setRegion(
           java.lang.String value) {
@@ -4996,7 +4996,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>string Region = 1;</code>
+       * <code>string region = 1;</code>
        */
       public Builder clearRegion() {
         
@@ -5005,7 +5005,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>string Region = 1;</code>
+       * <code>string region = 1;</code>
        */
       public Builder setRegionBytes(
           com.google.protobuf.ByteString value) {
@@ -5021,7 +5021,7 @@ public final class Trainingjob {
 
       private java.lang.Object roleArn_ = "";
       /**
-       * <code>string RoleArn = 2;</code>
+       * <code>string role_arn = 2;</code>
        */
       public java.lang.String getRoleArn() {
         java.lang.Object ref = roleArn_;
@@ -5036,7 +5036,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>string RoleArn = 2;</code>
+       * <code>string role_arn = 2;</code>
        */
       public com.google.protobuf.ByteString
           getRoleArnBytes() {
@@ -5052,7 +5052,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>string RoleArn = 2;</code>
+       * <code>string role_arn = 2;</code>
        */
       public Builder setRoleArn(
           java.lang.String value) {
@@ -5065,7 +5065,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>string RoleArn = 2;</code>
+       * <code>string role_arn = 2;</code>
        */
       public Builder clearRoleArn() {
         
@@ -5074,7 +5074,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>string RoleArn = 2;</code>
+       * <code>string role_arn = 2;</code>
        */
       public Builder setRoleArnBytes(
           com.google.protobuf.ByteString value) {
@@ -5092,13 +5092,13 @@ public final class Trainingjob {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification, flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.Builder, flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecificationOrBuilder> algorithmSpecificationBuilder_;
       /**
-       * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification AlgorithmSpecification = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 3;</code>
        */
       public boolean hasAlgorithmSpecification() {
         return algorithmSpecificationBuilder_ != null || algorithmSpecification_ != null;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification AlgorithmSpecification = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 3;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification getAlgorithmSpecification() {
         if (algorithmSpecificationBuilder_ == null) {
@@ -5108,7 +5108,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification AlgorithmSpecification = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 3;</code>
        */
       public Builder setAlgorithmSpecification(flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification value) {
         if (algorithmSpecificationBuilder_ == null) {
@@ -5124,7 +5124,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification AlgorithmSpecification = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 3;</code>
        */
       public Builder setAlgorithmSpecification(
           flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.Builder builderForValue) {
@@ -5138,7 +5138,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification AlgorithmSpecification = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 3;</code>
        */
       public Builder mergeAlgorithmSpecification(flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification value) {
         if (algorithmSpecificationBuilder_ == null) {
@@ -5156,7 +5156,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification AlgorithmSpecification = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 3;</code>
        */
       public Builder clearAlgorithmSpecification() {
         if (algorithmSpecificationBuilder_ == null) {
@@ -5170,7 +5170,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification AlgorithmSpecification = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 3;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.Builder getAlgorithmSpecificationBuilder() {
         
@@ -5178,7 +5178,7 @@ public final class Trainingjob {
         return getAlgorithmSpecificationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification AlgorithmSpecification = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 3;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecificationOrBuilder getAlgorithmSpecificationOrBuilder() {
         if (algorithmSpecificationBuilder_ != null) {
@@ -5189,7 +5189,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification AlgorithmSpecification = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification, flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecification.Builder, flyteidl.plugins.sagemaker.Trainingjob.AlgorithmSpecificationOrBuilder> 
@@ -5209,13 +5209,13 @@ public final class Trainingjob {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.plugins.sagemaker.Trainingjob.ResourceConfig, flyteidl.plugins.sagemaker.Trainingjob.ResourceConfig.Builder, flyteidl.plugins.sagemaker.Trainingjob.ResourceConfigOrBuilder> resourceConfigBuilder_;
       /**
-       * <code>.flyteidl.plugins.sagemaker.ResourceConfig ResourceConfig = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.ResourceConfig resource_config = 4;</code>
        */
       public boolean hasResourceConfig() {
         return resourceConfigBuilder_ != null || resourceConfig_ != null;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.ResourceConfig ResourceConfig = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.ResourceConfig resource_config = 4;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.ResourceConfig getResourceConfig() {
         if (resourceConfigBuilder_ == null) {
@@ -5225,7 +5225,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.ResourceConfig ResourceConfig = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.ResourceConfig resource_config = 4;</code>
        */
       public Builder setResourceConfig(flyteidl.plugins.sagemaker.Trainingjob.ResourceConfig value) {
         if (resourceConfigBuilder_ == null) {
@@ -5241,7 +5241,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.ResourceConfig ResourceConfig = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.ResourceConfig resource_config = 4;</code>
        */
       public Builder setResourceConfig(
           flyteidl.plugins.sagemaker.Trainingjob.ResourceConfig.Builder builderForValue) {
@@ -5255,7 +5255,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.ResourceConfig ResourceConfig = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.ResourceConfig resource_config = 4;</code>
        */
       public Builder mergeResourceConfig(flyteidl.plugins.sagemaker.Trainingjob.ResourceConfig value) {
         if (resourceConfigBuilder_ == null) {
@@ -5273,7 +5273,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.ResourceConfig ResourceConfig = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.ResourceConfig resource_config = 4;</code>
        */
       public Builder clearResourceConfig() {
         if (resourceConfigBuilder_ == null) {
@@ -5287,7 +5287,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.ResourceConfig ResourceConfig = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.ResourceConfig resource_config = 4;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.ResourceConfig.Builder getResourceConfigBuilder() {
         
@@ -5295,7 +5295,7 @@ public final class Trainingjob {
         return getResourceConfigFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.ResourceConfig ResourceConfig = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.ResourceConfig resource_config = 4;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.ResourceConfigOrBuilder getResourceConfigOrBuilder() {
         if (resourceConfigBuilder_ != null) {
@@ -5306,7 +5306,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.ResourceConfig ResourceConfig = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.ResourceConfig resource_config = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.plugins.sagemaker.Trainingjob.ResourceConfig, flyteidl.plugins.sagemaker.Trainingjob.ResourceConfig.Builder, flyteidl.plugins.sagemaker.Trainingjob.ResourceConfigOrBuilder> 
@@ -5326,13 +5326,13 @@ public final class Trainingjob {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.plugins.sagemaker.Trainingjob.StoppingCondition, flyteidl.plugins.sagemaker.Trainingjob.StoppingCondition.Builder, flyteidl.plugins.sagemaker.Trainingjob.StoppingConditionOrBuilder> stoppingConditionBuilder_;
       /**
-       * <code>.flyteidl.plugins.sagemaker.StoppingCondition StoppingCondition = 5;</code>
+       * <code>.flyteidl.plugins.sagemaker.StoppingCondition stopping_condition = 5;</code>
        */
       public boolean hasStoppingCondition() {
         return stoppingConditionBuilder_ != null || stoppingCondition_ != null;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.StoppingCondition StoppingCondition = 5;</code>
+       * <code>.flyteidl.plugins.sagemaker.StoppingCondition stopping_condition = 5;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.StoppingCondition getStoppingCondition() {
         if (stoppingConditionBuilder_ == null) {
@@ -5342,7 +5342,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.StoppingCondition StoppingCondition = 5;</code>
+       * <code>.flyteidl.plugins.sagemaker.StoppingCondition stopping_condition = 5;</code>
        */
       public Builder setStoppingCondition(flyteidl.plugins.sagemaker.Trainingjob.StoppingCondition value) {
         if (stoppingConditionBuilder_ == null) {
@@ -5358,7 +5358,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.StoppingCondition StoppingCondition = 5;</code>
+       * <code>.flyteidl.plugins.sagemaker.StoppingCondition stopping_condition = 5;</code>
        */
       public Builder setStoppingCondition(
           flyteidl.plugins.sagemaker.Trainingjob.StoppingCondition.Builder builderForValue) {
@@ -5372,7 +5372,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.StoppingCondition StoppingCondition = 5;</code>
+       * <code>.flyteidl.plugins.sagemaker.StoppingCondition stopping_condition = 5;</code>
        */
       public Builder mergeStoppingCondition(flyteidl.plugins.sagemaker.Trainingjob.StoppingCondition value) {
         if (stoppingConditionBuilder_ == null) {
@@ -5390,7 +5390,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.StoppingCondition StoppingCondition = 5;</code>
+       * <code>.flyteidl.plugins.sagemaker.StoppingCondition stopping_condition = 5;</code>
        */
       public Builder clearStoppingCondition() {
         if (stoppingConditionBuilder_ == null) {
@@ -5404,7 +5404,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.StoppingCondition StoppingCondition = 5;</code>
+       * <code>.flyteidl.plugins.sagemaker.StoppingCondition stopping_condition = 5;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.StoppingCondition.Builder getStoppingConditionBuilder() {
         
@@ -5412,7 +5412,7 @@ public final class Trainingjob {
         return getStoppingConditionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.StoppingCondition StoppingCondition = 5;</code>
+       * <code>.flyteidl.plugins.sagemaker.StoppingCondition stopping_condition = 5;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.StoppingConditionOrBuilder getStoppingConditionOrBuilder() {
         if (stoppingConditionBuilder_ != null) {
@@ -5423,7 +5423,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.StoppingCondition StoppingCondition = 5;</code>
+       * <code>.flyteidl.plugins.sagemaker.StoppingCondition stopping_condition = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.plugins.sagemaker.Trainingjob.StoppingCondition, flyteidl.plugins.sagemaker.Trainingjob.StoppingCondition.Builder, flyteidl.plugins.sagemaker.Trainingjob.StoppingConditionOrBuilder> 
@@ -5443,13 +5443,13 @@ public final class Trainingjob {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.plugins.sagemaker.Trainingjob.VpcConfig, flyteidl.plugins.sagemaker.Trainingjob.VpcConfig.Builder, flyteidl.plugins.sagemaker.Trainingjob.VpcConfigOrBuilder> vpcConfigBuilder_;
       /**
-       * <code>.flyteidl.plugins.sagemaker.VpcConfig VpcConfig = 6;</code>
+       * <code>.flyteidl.plugins.sagemaker.VpcConfig vpc_config = 6;</code>
        */
       public boolean hasVpcConfig() {
         return vpcConfigBuilder_ != null || vpcConfig_ != null;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.VpcConfig VpcConfig = 6;</code>
+       * <code>.flyteidl.plugins.sagemaker.VpcConfig vpc_config = 6;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.VpcConfig getVpcConfig() {
         if (vpcConfigBuilder_ == null) {
@@ -5459,7 +5459,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.VpcConfig VpcConfig = 6;</code>
+       * <code>.flyteidl.plugins.sagemaker.VpcConfig vpc_config = 6;</code>
        */
       public Builder setVpcConfig(flyteidl.plugins.sagemaker.Trainingjob.VpcConfig value) {
         if (vpcConfigBuilder_ == null) {
@@ -5475,7 +5475,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.VpcConfig VpcConfig = 6;</code>
+       * <code>.flyteidl.plugins.sagemaker.VpcConfig vpc_config = 6;</code>
        */
       public Builder setVpcConfig(
           flyteidl.plugins.sagemaker.Trainingjob.VpcConfig.Builder builderForValue) {
@@ -5489,7 +5489,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.VpcConfig VpcConfig = 6;</code>
+       * <code>.flyteidl.plugins.sagemaker.VpcConfig vpc_config = 6;</code>
        */
       public Builder mergeVpcConfig(flyteidl.plugins.sagemaker.Trainingjob.VpcConfig value) {
         if (vpcConfigBuilder_ == null) {
@@ -5507,7 +5507,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.VpcConfig VpcConfig = 6;</code>
+       * <code>.flyteidl.plugins.sagemaker.VpcConfig vpc_config = 6;</code>
        */
       public Builder clearVpcConfig() {
         if (vpcConfigBuilder_ == null) {
@@ -5521,7 +5521,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.VpcConfig VpcConfig = 6;</code>
+       * <code>.flyteidl.plugins.sagemaker.VpcConfig vpc_config = 6;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.VpcConfig.Builder getVpcConfigBuilder() {
         
@@ -5529,7 +5529,7 @@ public final class Trainingjob {
         return getVpcConfigFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.VpcConfig VpcConfig = 6;</code>
+       * <code>.flyteidl.plugins.sagemaker.VpcConfig vpc_config = 6;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.VpcConfigOrBuilder getVpcConfigOrBuilder() {
         if (vpcConfigBuilder_ != null) {
@@ -5540,7 +5540,7 @@ public final class Trainingjob {
         }
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.VpcConfig VpcConfig = 6;</code>
+       * <code>.flyteidl.plugins.sagemaker.VpcConfig vpc_config = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.plugins.sagemaker.Trainingjob.VpcConfig, flyteidl.plugins.sagemaker.Trainingjob.VpcConfig.Builder, flyteidl.plugins.sagemaker.Trainingjob.VpcConfigOrBuilder> 
@@ -5558,13 +5558,13 @@ public final class Trainingjob {
 
       private boolean enableSpotTraining_ ;
       /**
-       * <code>bool EnableSpotTraining = 7;</code>
+       * <code>bool enable_spot_training = 7;</code>
        */
       public boolean getEnableSpotTraining() {
         return enableSpotTraining_;
       }
       /**
-       * <code>bool EnableSpotTraining = 7;</code>
+       * <code>bool enable_spot_training = 7;</code>
        */
       public Builder setEnableSpotTraining(boolean value) {
         
@@ -5573,7 +5573,7 @@ public final class Trainingjob {
         return this;
       }
       /**
-       * <code>bool EnableSpotTraining = 7;</code>
+       * <code>bool enable_spot_training = 7;</code>
        */
       public Builder clearEnableSpotTraining() {
         
@@ -5674,30 +5674,31 @@ public final class Trainingjob {
   static {
     java.lang.String[] descriptorData = {
       "\n,flyteidl/plugins/sagemaker/trainingjob" +
-      ".proto\022\032flyteidl.plugins.sagemaker\"\362\001\n\026A" +
-      "lgorithmSpecification\022\025\n\rTrainingImage\030\001" +
-      " \001(\t\022\031\n\021TrainingInputMode\030\002 \001(\t\022\025\n\rAlgor" +
-      "ithmName\030\003 \001(\t\022^\n\021MetricDefinitions\030\004 \003(" +
-      "\0132C.flyteidl.plugins.sagemaker.Algorithm" +
-      "Specification.MetricDefinition\032/\n\020Metric" +
-      "Definition\022\014\n\004Name\030\001 \001(\t\022\r\n\005Regex\030\002 \001(\t\"" +
-      "m\n\016ResourceConfig\022\024\n\014InstanceType\030\001 \001(\t\022" +
-      "\025\n\rInstanceCount\030\002 \001(\003\022\026\n\016VolumeSizeInGB" +
-      "\030\003 \001(\003\022\026\n\016VolumeKmsKeyId\030\004 \001(\t\"N\n\021Stoppi" +
-      "ngCondition\022\033\n\023MaxRuntimeInSeconds\030\001 \001(\003" +
-      "\022\034\n\024MaxWaitTimeInSeconds\030\002 \001(\003\"6\n\tVpcCon" +
-      "fig\022\030\n\020SecurityGroupIds\030\001 \003(\t\022\017\n\007Subnets" +
-      "\030\002 \003(\t\"\346\002\n\013TrainingJob\022\016\n\006Region\030\001 \001(\t\022\017" +
-      "\n\007RoleArn\030\002 \001(\t\022R\n\026AlgorithmSpecificatio" +
-      "n\030\003 \001(\01322.flyteidl.plugins.sagemaker.Alg" +
-      "orithmSpecification\022B\n\016ResourceConfig\030\004 " +
-      "\001(\0132*.flyteidl.plugins.sagemaker.Resourc" +
-      "eConfig\022H\n\021StoppingCondition\030\005 \001(\0132-.fly" +
-      "teidl.plugins.sagemaker.StoppingConditio" +
-      "n\0228\n\tVpcConfig\030\006 \001(\0132%.flyteidl.plugins." +
-      "sagemaker.VpcConfig\022\032\n\022EnableSpotTrainin" +
-      "g\030\007 \001(\010B5Z3github.com/lyft/flyteidl/gen/" +
-      "pb-go/flyteidl/pluginsb\006proto3"
+      ".proto\022\032flyteidl.plugins.sagemaker\"\367\001\n\026A" +
+      "lgorithmSpecification\022\026\n\016training_image\030" +
+      "\001 \001(\t\022\033\n\023training_input_mode\030\002 \001(\t\022\026\n\016al" +
+      "gorithm_name\030\003 \001(\t\022_\n\022metric_definitions" +
+      "\030\004 \003(\0132C.flyteidl.plugins.sagemaker.Algo" +
+      "rithmSpecification.MetricDefinition\032/\n\020M" +
+      "etricDefinition\022\014\n\004name\030\001 \001(\t\022\r\n\005regex\030\002" +
+      " \001(\t\"u\n\016ResourceConfig\022\025\n\rinstance_type\030" +
+      "\001 \001(\t\022\026\n\016instance_count\030\002 \001(\003\022\031\n\021volume_" +
+      "size_in_gb\030\003 \001(\003\022\031\n\021volume_kms_key_id\030\004 " +
+      "\001(\t\"U\n\021StoppingCondition\022\036\n\026max_runtime_" +
+      "in_seconds\030\001 \001(\003\022 \n\030max_wait_time_in_sec" +
+      "onds\030\002 \001(\003\"8\n\tVpcConfig\022\032\n\022security_grou" +
+      "p_ids\030\001 \003(\t\022\017\n\007subnets\030\002 \003(\t\"\355\002\n\013Trainin" +
+      "gJob\022\016\n\006region\030\001 \001(\t\022\020\n\010role_arn\030\002 \001(\t\022S" +
+      "\n\027algorithm_specification\030\003 \001(\01322.flytei" +
+      "dl.plugins.sagemaker.AlgorithmSpecificat" +
+      "ion\022C\n\017resource_config\030\004 \001(\0132*.flyteidl." +
+      "plugins.sagemaker.ResourceConfig\022I\n\022stop" +
+      "ping_condition\030\005 \001(\0132-.flyteidl.plugins." +
+      "sagemaker.StoppingCondition\0229\n\nvpc_confi" +
+      "g\030\006 \001(\0132%.flyteidl.plugins.sagemaker.Vpc" +
+      "Config\022\034\n\024enable_spot_training\030\007 \001(\010B5Z3" +
+      "github.com/lyft/flyteidl/gen/pb-go/flyte" +
+      "idl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5728,7 +5729,7 @@ public final class Trainingjob {
     internal_static_flyteidl_plugins_sagemaker_ResourceConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_ResourceConfig_descriptor,
-        new java.lang.String[] { "InstanceType", "InstanceCount", "VolumeSizeInGB", "VolumeKmsKeyId", });
+        new java.lang.String[] { "InstanceType", "InstanceCount", "VolumeSizeInGb", "VolumeKmsKeyId", });
     internal_static_flyteidl_plugins_sagemaker_StoppingCondition_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_plugins_sagemaker_StoppingCondition_fieldAccessorTable = new

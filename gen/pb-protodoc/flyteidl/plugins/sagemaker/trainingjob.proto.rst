@@ -14,30 +14,30 @@ flyteidl.plugins.sagemaker.AlgorithmSpecification
 .. code-block:: json
 
   {
-    "TrainingImage": "...",
-    "TrainingInputMode": "...",
-    "AlgorithmName": "...",
-    "MetricDefinitions": []
+    "training_image": "...",
+    "training_input_mode": "...",
+    "algorithm_name": "...",
+    "metric_definitions": []
   }
 
-.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingImage:
+.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.training_image:
 
-TrainingImage
+training_image
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingInputMode:
+.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.training_input_mode:
 
-TrainingInputMode
+training_input_mode
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.AlgorithmName:
+.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.algorithm_name:
 
-AlgorithmName
+algorithm_name
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinitions:
+.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.metric_definitions:
 
-MetricDefinitions
+metric_definitions
   (:ref:`flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition <api_msg_flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition>`) 
   
 .. _api_msg_flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition:
@@ -51,18 +51,18 @@ flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition
 .. code-block:: json
 
   {
-    "Name": "...",
-    "Regex": "..."
+    "name": "...",
+    "regex": "..."
   }
 
-.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Name:
+.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name:
 
-Name
+name
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Regex:
+.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex:
 
-Regex
+regex
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 
@@ -79,30 +79,30 @@ flyteidl.plugins.sagemaker.ResourceConfig
 .. code-block:: json
 
   {
-    "InstanceType": "...",
-    "InstanceCount": "...",
-    "VolumeSizeInGB": "...",
-    "VolumeKmsKeyId": "..."
+    "instance_type": "...",
+    "instance_count": "...",
+    "volume_size_in_gb": "...",
+    "volume_kms_key_id": "..."
   }
 
-.. _api_field_flyteidl.plugins.sagemaker.ResourceConfig.InstanceType:
+.. _api_field_flyteidl.plugins.sagemaker.ResourceConfig.instance_type:
 
-InstanceType
+instance_type
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.plugins.sagemaker.ResourceConfig.InstanceCount:
+.. _api_field_flyteidl.plugins.sagemaker.ResourceConfig.instance_count:
 
-InstanceCount
+instance_count
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.plugins.sagemaker.ResourceConfig.VolumeSizeInGB:
+.. _api_field_flyteidl.plugins.sagemaker.ResourceConfig.volume_size_in_gb:
 
-VolumeSizeInGB
+volume_size_in_gb
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.plugins.sagemaker.ResourceConfig.VolumeKmsKeyId:
+.. _api_field_flyteidl.plugins.sagemaker.ResourceConfig.volume_kms_key_id:
 
-VolumeKmsKeyId
+volume_kms_key_id
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 
@@ -118,18 +118,18 @@ flyteidl.plugins.sagemaker.StoppingCondition
 .. code-block:: json
 
   {
-    "MaxRuntimeInSeconds": "...",
-    "MaxWaitTimeInSeconds": "..."
+    "max_runtime_in_seconds": "...",
+    "max_wait_time_in_seconds": "..."
   }
 
-.. _api_field_flyteidl.plugins.sagemaker.StoppingCondition.MaxRuntimeInSeconds:
+.. _api_field_flyteidl.plugins.sagemaker.StoppingCondition.max_runtime_in_seconds:
 
-MaxRuntimeInSeconds
+max_runtime_in_seconds
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.plugins.sagemaker.StoppingCondition.MaxWaitTimeInSeconds:
+.. _api_field_flyteidl.plugins.sagemaker.StoppingCondition.max_wait_time_in_seconds:
 
-MaxWaitTimeInSeconds
+max_wait_time_in_seconds
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 
@@ -145,18 +145,18 @@ flyteidl.plugins.sagemaker.VpcConfig
 .. code-block:: json
 
   {
-    "SecurityGroupIds": [],
-    "Subnets": []
+    "security_group_ids": [],
+    "subnets": []
   }
 
-.. _api_field_flyteidl.plugins.sagemaker.VpcConfig.SecurityGroupIds:
+.. _api_field_flyteidl.plugins.sagemaker.VpcConfig.security_group_ids:
 
-SecurityGroupIds
+security_group_ids
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.plugins.sagemaker.VpcConfig.Subnets:
+.. _api_field_flyteidl.plugins.sagemaker.VpcConfig.subnets:
 
-Subnets
+subnets
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 
@@ -172,48 +172,48 @@ flyteidl.plugins.sagemaker.TrainingJob
 .. code-block:: json
 
   {
-    "Region": "...",
-    "RoleArn": "...",
-    "AlgorithmSpecification": "{...}",
-    "ResourceConfig": "{...}",
-    "StoppingCondition": "{...}",
-    "VpcConfig": "{...}",
-    "EnableSpotTraining": "..."
+    "region": "...",
+    "role_arn": "...",
+    "algorithm_specification": "{...}",
+    "resource_config": "{...}",
+    "stopping_condition": "{...}",
+    "vpc_config": "{...}",
+    "enable_spot_training": "..."
   }
 
-.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.Region:
+.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.region:
 
-Region
+region
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.RoleArn:
+.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.role_arn:
 
-RoleArn
+role_arn
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
-.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.AlgorithmSpecification:
+.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.algorithm_specification:
 
-AlgorithmSpecification
+algorithm_specification
   (:ref:`flyteidl.plugins.sagemaker.AlgorithmSpecification <api_msg_flyteidl.plugins.sagemaker.AlgorithmSpecification>`) 
   
-.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.ResourceConfig:
+.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.resource_config:
 
-ResourceConfig
+resource_config
   (:ref:`flyteidl.plugins.sagemaker.ResourceConfig <api_msg_flyteidl.plugins.sagemaker.ResourceConfig>`) 
   
-.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.StoppingCondition:
+.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.stopping_condition:
 
-StoppingCondition
+stopping_condition
   (:ref:`flyteidl.plugins.sagemaker.StoppingCondition <api_msg_flyteidl.plugins.sagemaker.StoppingCondition>`) 
   
-.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.VpcConfig:
+.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.vpc_config:
 
-VpcConfig
+vpc_config
   (:ref:`flyteidl.plugins.sagemaker.VpcConfig <api_msg_flyteidl.plugins.sagemaker.VpcConfig>`) 
   
-.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.EnableSpotTraining:
+.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.enable_spot_training:
 
-EnableSpotTraining
+enable_spot_training
   (`bool <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 

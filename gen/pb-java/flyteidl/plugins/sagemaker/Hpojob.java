@@ -19,20 +19,20 @@ public final class Hpojob {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType Type = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;</code>
      */
     int getTypeValue();
     /**
-     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType Type = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;</code>
      */
     flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType getType();
 
     /**
-     * <code>string MetricName = 2;</code>
+     * <code>string metric_name = 2;</code>
      */
     java.lang.String getMetricName();
     /**
-     * <code>string MetricName = 2;</code>
+     * <code>string metric_name = 2;</code>
      */
     com.google.protobuf.ByteString
         getMetricNameBytes();
@@ -223,13 +223,13 @@ public final class Hpojob {
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_;
     /**
-     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType Type = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;</code>
      */
     public int getTypeValue() {
       return type_;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType Type = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;</code>
      */
     public flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType getType() {
       @SuppressWarnings("deprecation")
@@ -237,10 +237,10 @@ public final class Hpojob {
       return result == null ? flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType.UNRECOGNIZED : result;
     }
 
-    public static final int METRICNAME_FIELD_NUMBER = 2;
+    public static final int METRIC_NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object metricName_;
     /**
-     * <code>string MetricName = 2;</code>
+     * <code>string metric_name = 2;</code>
      */
     public java.lang.String getMetricName() {
       java.lang.Object ref = metricName_;
@@ -255,7 +255,7 @@ public final class Hpojob {
       }
     }
     /**
-     * <code>string MetricName = 2;</code>
+     * <code>string metric_name = 2;</code>
      */
     public com.google.protobuf.ByteString
         getMetricNameBytes() {
@@ -338,7 +338,7 @@ public final class Hpojob {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
-      hash = (37 * hash) + METRICNAME_FIELD_NUMBER;
+      hash = (37 * hash) + METRIC_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getMetricName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -591,13 +591,13 @@ public final class Hpojob {
 
       private int type_ = 0;
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType Type = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;</code>
        */
       public int getTypeValue() {
         return type_;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType Type = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;</code>
        */
       public Builder setTypeValue(int value) {
         type_ = value;
@@ -605,7 +605,7 @@ public final class Hpojob {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType Type = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;</code>
        */
       public flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType getType() {
         @SuppressWarnings("deprecation")
@@ -613,7 +613,7 @@ public final class Hpojob {
         return result == null ? flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType Type = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;</code>
        */
       public Builder setType(flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType value) {
         if (value == null) {
@@ -625,7 +625,7 @@ public final class Hpojob {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType Type = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;</code>
        */
       public Builder clearType() {
         
@@ -636,7 +636,7 @@ public final class Hpojob {
 
       private java.lang.Object metricName_ = "";
       /**
-       * <code>string MetricName = 2;</code>
+       * <code>string metric_name = 2;</code>
        */
       public java.lang.String getMetricName() {
         java.lang.Object ref = metricName_;
@@ -651,7 +651,7 @@ public final class Hpojob {
         }
       }
       /**
-       * <code>string MetricName = 2;</code>
+       * <code>string metric_name = 2;</code>
        */
       public com.google.protobuf.ByteString
           getMetricNameBytes() {
@@ -667,7 +667,7 @@ public final class Hpojob {
         }
       }
       /**
-       * <code>string MetricName = 2;</code>
+       * <code>string metric_name = 2;</code>
        */
       public Builder setMetricName(
           java.lang.String value) {
@@ -680,7 +680,7 @@ public final class Hpojob {
         return this;
       }
       /**
-       * <code>string MetricName = 2;</code>
+       * <code>string metric_name = 2;</code>
        */
       public Builder clearMetricName() {
         
@@ -689,7 +689,7 @@ public final class Hpojob {
         return this;
       }
       /**
-       * <code>string MetricName = 2;</code>
+       * <code>string metric_name = 2;</code>
        */
       public Builder setMetricNameBytes(
           com.google.protobuf.ByteString value) {
@@ -760,12 +760,12 @@ public final class Hpojob {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 MaxNumberOfTrainingJobs = 1;</code>
+     * <code>int64 max_number_of_training_jobs = 1;</code>
      */
     long getMaxNumberOfTrainingJobs();
 
     /**
-     * <code>int64 MaxParallelTrainingJobs = 2;</code>
+     * <code>int64 max_parallel_training_jobs = 2;</code>
      */
     long getMaxParallelTrainingJobs();
 
@@ -774,7 +774,7 @@ public final class Hpojob {
      * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJob training_job = 3;</code>
      */
     boolean hasTrainingJob();
     /**
@@ -782,7 +782,7 @@ public final class Hpojob {
      * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJob training_job = 3;</code>
      */
     flyteidl.plugins.sagemaker.Trainingjob.TrainingJob getTrainingJob();
     /**
@@ -790,7 +790,7 @@ public final class Hpojob {
      * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJob training_job = 3;</code>
      */
     flyteidl.plugins.sagemaker.Trainingjob.TrainingJobOrBuilder getTrainingJobOrBuilder();
   }
@@ -888,32 +888,32 @@ public final class Hpojob {
               flyteidl.plugins.sagemaker.Hpojob.HPOJob.class, flyteidl.plugins.sagemaker.Hpojob.HPOJob.Builder.class);
     }
 
-    public static final int MAXNUMBEROFTRAININGJOBS_FIELD_NUMBER = 1;
+    public static final int MAX_NUMBER_OF_TRAINING_JOBS_FIELD_NUMBER = 1;
     private long maxNumberOfTrainingJobs_;
     /**
-     * <code>int64 MaxNumberOfTrainingJobs = 1;</code>
+     * <code>int64 max_number_of_training_jobs = 1;</code>
      */
     public long getMaxNumberOfTrainingJobs() {
       return maxNumberOfTrainingJobs_;
     }
 
-    public static final int MAXPARALLELTRAININGJOBS_FIELD_NUMBER = 2;
+    public static final int MAX_PARALLEL_TRAINING_JOBS_FIELD_NUMBER = 2;
     private long maxParallelTrainingJobs_;
     /**
-     * <code>int64 MaxParallelTrainingJobs = 2;</code>
+     * <code>int64 max_parallel_training_jobs = 2;</code>
      */
     public long getMaxParallelTrainingJobs() {
       return maxParallelTrainingJobs_;
     }
 
-    public static final int TRAININGJOB_FIELD_NUMBER = 3;
+    public static final int TRAINING_JOB_FIELD_NUMBER = 3;
     private flyteidl.plugins.sagemaker.Trainingjob.TrainingJob trainingJob_;
     /**
      * <pre>
      * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJob training_job = 3;</code>
      */
     public boolean hasTrainingJob() {
       return trainingJob_ != null;
@@ -923,7 +923,7 @@ public final class Hpojob {
      * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJob training_job = 3;</code>
      */
     public flyteidl.plugins.sagemaker.Trainingjob.TrainingJob getTrainingJob() {
       return trainingJob_ == null ? flyteidl.plugins.sagemaker.Trainingjob.TrainingJob.getDefaultInstance() : trainingJob_;
@@ -933,7 +933,7 @@ public final class Hpojob {
      * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJob training_job = 3;</code>
      */
     public flyteidl.plugins.sagemaker.Trainingjob.TrainingJobOrBuilder getTrainingJobOrBuilder() {
       return getTrainingJob();
@@ -1018,14 +1018,14 @@ public final class Hpojob {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MAXNUMBEROFTRAININGJOBS_FIELD_NUMBER;
+      hash = (37 * hash) + MAX_NUMBER_OF_TRAINING_JOBS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMaxNumberOfTrainingJobs());
-      hash = (37 * hash) + MAXPARALLELTRAININGJOBS_FIELD_NUMBER;
+      hash = (37 * hash) + MAX_PARALLEL_TRAINING_JOBS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMaxParallelTrainingJobs());
       if (hasTrainingJob()) {
-        hash = (37 * hash) + TRAININGJOB_FIELD_NUMBER;
+        hash = (37 * hash) + TRAINING_JOB_FIELD_NUMBER;
         hash = (53 * hash) + getTrainingJob().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -1292,13 +1292,13 @@ public final class Hpojob {
 
       private long maxNumberOfTrainingJobs_ ;
       /**
-       * <code>int64 MaxNumberOfTrainingJobs = 1;</code>
+       * <code>int64 max_number_of_training_jobs = 1;</code>
        */
       public long getMaxNumberOfTrainingJobs() {
         return maxNumberOfTrainingJobs_;
       }
       /**
-       * <code>int64 MaxNumberOfTrainingJobs = 1;</code>
+       * <code>int64 max_number_of_training_jobs = 1;</code>
        */
       public Builder setMaxNumberOfTrainingJobs(long value) {
         
@@ -1307,7 +1307,7 @@ public final class Hpojob {
         return this;
       }
       /**
-       * <code>int64 MaxNumberOfTrainingJobs = 1;</code>
+       * <code>int64 max_number_of_training_jobs = 1;</code>
        */
       public Builder clearMaxNumberOfTrainingJobs() {
         
@@ -1318,13 +1318,13 @@ public final class Hpojob {
 
       private long maxParallelTrainingJobs_ ;
       /**
-       * <code>int64 MaxParallelTrainingJobs = 2;</code>
+       * <code>int64 max_parallel_training_jobs = 2;</code>
        */
       public long getMaxParallelTrainingJobs() {
         return maxParallelTrainingJobs_;
       }
       /**
-       * <code>int64 MaxParallelTrainingJobs = 2;</code>
+       * <code>int64 max_parallel_training_jobs = 2;</code>
        */
       public Builder setMaxParallelTrainingJobs(long value) {
         
@@ -1333,7 +1333,7 @@ public final class Hpojob {
         return this;
       }
       /**
-       * <code>int64 MaxParallelTrainingJobs = 2;</code>
+       * <code>int64 max_parallel_training_jobs = 2;</code>
        */
       public Builder clearMaxParallelTrainingJobs() {
         
@@ -1350,7 +1350,7 @@ public final class Hpojob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJob training_job = 3;</code>
        */
       public boolean hasTrainingJob() {
         return trainingJobBuilder_ != null || trainingJob_ != null;
@@ -1360,7 +1360,7 @@ public final class Hpojob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJob training_job = 3;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.TrainingJob getTrainingJob() {
         if (trainingJobBuilder_ == null) {
@@ -1374,7 +1374,7 @@ public final class Hpojob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJob training_job = 3;</code>
        */
       public Builder setTrainingJob(flyteidl.plugins.sagemaker.Trainingjob.TrainingJob value) {
         if (trainingJobBuilder_ == null) {
@@ -1394,7 +1394,7 @@ public final class Hpojob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJob training_job = 3;</code>
        */
       public Builder setTrainingJob(
           flyteidl.plugins.sagemaker.Trainingjob.TrainingJob.Builder builderForValue) {
@@ -1412,7 +1412,7 @@ public final class Hpojob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJob training_job = 3;</code>
        */
       public Builder mergeTrainingJob(flyteidl.plugins.sagemaker.Trainingjob.TrainingJob value) {
         if (trainingJobBuilder_ == null) {
@@ -1434,7 +1434,7 @@ public final class Hpojob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJob training_job = 3;</code>
        */
       public Builder clearTrainingJob() {
         if (trainingJobBuilder_ == null) {
@@ -1452,7 +1452,7 @@ public final class Hpojob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJob training_job = 3;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.TrainingJob.Builder getTrainingJobBuilder() {
         
@@ -1464,7 +1464,7 @@ public final class Hpojob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJob training_job = 3;</code>
        */
       public flyteidl.plugins.sagemaker.Trainingjob.TrainingJobOrBuilder getTrainingJobOrBuilder() {
         if (trainingJobBuilder_ != null) {
@@ -1479,7 +1479,7 @@ public final class Hpojob {
        * TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.TrainingJob TrainingJob = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJob training_job = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.plugins.sagemaker.Trainingjob.TrainingJob, flyteidl.plugins.sagemaker.Trainingjob.TrainingJob.Builder, flyteidl.plugins.sagemaker.Trainingjob.TrainingJobOrBuilder> 
@@ -1570,16 +1570,16 @@ public final class Hpojob {
       "o\022\032flyteidl.plugins.sagemaker\0320flyteidl/" +
       "plugins/sagemaker/parameterranges.proto\032" +
       ",flyteidl/plugins/sagemaker/trainingjob." +
-      "proto\"\247\001\n\017HPOJobObjective\022M\n\004Type\030\001 \001(\0162" +
+      "proto\"\250\001\n\017HPOJobObjective\022M\n\004type\030\001 \001(\0162" +
       "?.flyteidl.plugins.sagemaker.HPOJobObjec" +
-      "tive.HPOJobObjectiveType\022\022\n\nMetricName\030\002" +
-      " \001(\t\"1\n\023HPOJobObjectiveType\022\014\n\010MINIMIZE\020" +
-      "\000\022\014\n\010MAXIMIZE\020\001\"\210\001\n\006HPOJob\022\037\n\027MaxNumberO" +
-      "fTrainingJobs\030\001 \001(\003\022\037\n\027MaxParallelTraini" +
-      "ngJobs\030\002 \001(\003\022<\n\013TrainingJob\030\003 \001(\0132\'.flyt" +
-      "eidl.plugins.sagemaker.TrainingJobB5Z3gi" +
-      "thub.com/lyft/flyteidl/gen/pb-go/flyteid" +
-      "l/pluginsb\006proto3"
+      "tive.HPOJobObjectiveType\022\023\n\013metric_name\030" +
+      "\002 \001(\t\"1\n\023HPOJobObjectiveType\022\014\n\010MINIMIZE" +
+      "\020\000\022\014\n\010MAXIMIZE\020\001\"\220\001\n\006HPOJob\022#\n\033max_numbe" +
+      "r_of_training_jobs\030\001 \001(\003\022\"\n\032max_parallel" +
+      "_training_jobs\030\002 \001(\003\022=\n\014training_job\030\003 \001" +
+      "(\0132\'.flyteidl.plugins.sagemaker.Training" +
+      "JobB5Z3github.com/lyft/flyteidl/gen/pb-g" +
+      "o/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

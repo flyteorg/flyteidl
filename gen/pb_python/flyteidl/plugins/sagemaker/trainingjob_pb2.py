@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.plugins.sagemaker',
   syntax='proto3',
   serialized_options=_b('Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n,flyteidl/plugins/sagemaker/trainingjob.proto\x12\x1a\x66lyteidl.plugins.sagemaker\"\xf2\x01\n\x16\x41lgorithmSpecification\x12\x15\n\rTrainingImage\x18\x01 \x01(\t\x12\x19\n\x11TrainingInputMode\x18\x02 \x01(\t\x12\x15\n\rAlgorithmName\x18\x03 \x01(\t\x12^\n\x11MetricDefinitions\x18\x04 \x03(\x0b\x32\x43.flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition\x1a/\n\x10MetricDefinition\x12\x0c\n\x04Name\x18\x01 \x01(\t\x12\r\n\x05Regex\x18\x02 \x01(\t\"m\n\x0eResourceConfig\x12\x14\n\x0cInstanceType\x18\x01 \x01(\t\x12\x15\n\rInstanceCount\x18\x02 \x01(\x03\x12\x16\n\x0eVolumeSizeInGB\x18\x03 \x01(\x03\x12\x16\n\x0eVolumeKmsKeyId\x18\x04 \x01(\t\"N\n\x11StoppingCondition\x12\x1b\n\x13MaxRuntimeInSeconds\x18\x01 \x01(\x03\x12\x1c\n\x14MaxWaitTimeInSeconds\x18\x02 \x01(\x03\"6\n\tVpcConfig\x12\x18\n\x10SecurityGroupIds\x18\x01 \x03(\t\x12\x0f\n\x07Subnets\x18\x02 \x03(\t\"\xe6\x02\n\x0bTrainingJob\x12\x0e\n\x06Region\x18\x01 \x01(\t\x12\x0f\n\x07RoleArn\x18\x02 \x01(\t\x12R\n\x16\x41lgorithmSpecification\x18\x03 \x01(\x0b\x32\x32.flyteidl.plugins.sagemaker.AlgorithmSpecification\x12\x42\n\x0eResourceConfig\x18\x04 \x01(\x0b\x32*.flyteidl.plugins.sagemaker.ResourceConfig\x12H\n\x11StoppingCondition\x18\x05 \x01(\x0b\x32-.flyteidl.plugins.sagemaker.StoppingCondition\x12\x38\n\tVpcConfig\x18\x06 \x01(\x0b\x32%.flyteidl.plugins.sagemaker.VpcConfig\x12\x1a\n\x12\x45nableSpotTraining\x18\x07 \x01(\x08\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n,flyteidl/plugins/sagemaker/trainingjob.proto\x12\x1a\x66lyteidl.plugins.sagemaker\"\xf7\x01\n\x16\x41lgorithmSpecification\x12\x16\n\x0etraining_image\x18\x01 \x01(\t\x12\x1b\n\x13training_input_mode\x18\x02 \x01(\t\x12\x16\n\x0e\x61lgorithm_name\x18\x03 \x01(\t\x12_\n\x12metric_definitions\x18\x04 \x03(\x0b\x32\x43.flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition\x1a/\n\x10MetricDefinition\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05regex\x18\x02 \x01(\t\"u\n\x0eResourceConfig\x12\x15\n\rinstance_type\x18\x01 \x01(\t\x12\x16\n\x0einstance_count\x18\x02 \x01(\x03\x12\x19\n\x11volume_size_in_gb\x18\x03 \x01(\x03\x12\x19\n\x11volume_kms_key_id\x18\x04 \x01(\t\"U\n\x11StoppingCondition\x12\x1e\n\x16max_runtime_in_seconds\x18\x01 \x01(\x03\x12 \n\x18max_wait_time_in_seconds\x18\x02 \x01(\x03\"8\n\tVpcConfig\x12\x1a\n\x12security_group_ids\x18\x01 \x03(\t\x12\x0f\n\x07subnets\x18\x02 \x03(\t\"\xed\x02\n\x0bTrainingJob\x12\x0e\n\x06region\x18\x01 \x01(\t\x12\x10\n\x08role_arn\x18\x02 \x01(\t\x12S\n\x17\x61lgorithm_specification\x18\x03 \x01(\x0b\x32\x32.flyteidl.plugins.sagemaker.AlgorithmSpecification\x12\x43\n\x0fresource_config\x18\x04 \x01(\x0b\x32*.flyteidl.plugins.sagemaker.ResourceConfig\x12I\n\x12stopping_condition\x18\x05 \x01(\x0b\x32-.flyteidl.plugins.sagemaker.StoppingCondition\x12\x39\n\nvpc_config\x18\x06 \x01(\x0b\x32%.flyteidl.plugins.sagemaker.VpcConfig\x12\x1c\n\x14\x65nable_spot_training\x18\x07 \x01(\x08\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
 )
 
 
@@ -34,14 +34,14 @@ _ALGORITHMSPECIFICATION_METRICDEFINITION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='Name', full_name='flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Name', index=0,
+      name='name', full_name='flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Regex', full_name='flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.Regex', index=1,
+      name='regex', full_name='flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -59,8 +59,8 @@ _ALGORITHMSPECIFICATION_METRICDEFINITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=272,
-  serialized_end=319,
+  serialized_start=277,
+  serialized_end=324,
 )
 
 _ALGORITHMSPECIFICATION = _descriptor.Descriptor(
@@ -71,28 +71,28 @@ _ALGORITHMSPECIFICATION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='TrainingImage', full_name='flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingImage', index=0,
+      name='training_image', full_name='flyteidl.plugins.sagemaker.AlgorithmSpecification.training_image', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='TrainingInputMode', full_name='flyteidl.plugins.sagemaker.AlgorithmSpecification.TrainingInputMode', index=1,
+      name='training_input_mode', full_name='flyteidl.plugins.sagemaker.AlgorithmSpecification.training_input_mode', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='AlgorithmName', full_name='flyteidl.plugins.sagemaker.AlgorithmSpecification.AlgorithmName', index=2,
+      name='algorithm_name', full_name='flyteidl.plugins.sagemaker.AlgorithmSpecification.algorithm_name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='MetricDefinitions', full_name='flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinitions', index=3,
+      name='metric_definitions', full_name='flyteidl.plugins.sagemaker.AlgorithmSpecification.metric_definitions', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -111,7 +111,7 @@ _ALGORITHMSPECIFICATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=77,
-  serialized_end=319,
+  serialized_end=324,
 )
 
 
@@ -123,28 +123,28 @@ _RESOURCECONFIG = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='InstanceType', full_name='flyteidl.plugins.sagemaker.ResourceConfig.InstanceType', index=0,
+      name='instance_type', full_name='flyteidl.plugins.sagemaker.ResourceConfig.instance_type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='InstanceCount', full_name='flyteidl.plugins.sagemaker.ResourceConfig.InstanceCount', index=1,
+      name='instance_count', full_name='flyteidl.plugins.sagemaker.ResourceConfig.instance_count', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='VolumeSizeInGB', full_name='flyteidl.plugins.sagemaker.ResourceConfig.VolumeSizeInGB', index=2,
+      name='volume_size_in_gb', full_name='flyteidl.plugins.sagemaker.ResourceConfig.volume_size_in_gb', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='VolumeKmsKeyId', full_name='flyteidl.plugins.sagemaker.ResourceConfig.VolumeKmsKeyId', index=3,
+      name='volume_kms_key_id', full_name='flyteidl.plugins.sagemaker.ResourceConfig.volume_kms_key_id', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -162,8 +162,8 @@ _RESOURCECONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=321,
-  serialized_end=430,
+  serialized_start=326,
+  serialized_end=443,
 )
 
 
@@ -175,14 +175,14 @@ _STOPPINGCONDITION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='MaxRuntimeInSeconds', full_name='flyteidl.plugins.sagemaker.StoppingCondition.MaxRuntimeInSeconds', index=0,
+      name='max_runtime_in_seconds', full_name='flyteidl.plugins.sagemaker.StoppingCondition.max_runtime_in_seconds', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='MaxWaitTimeInSeconds', full_name='flyteidl.plugins.sagemaker.StoppingCondition.MaxWaitTimeInSeconds', index=1,
+      name='max_wait_time_in_seconds', full_name='flyteidl.plugins.sagemaker.StoppingCondition.max_wait_time_in_seconds', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -200,8 +200,8 @@ _STOPPINGCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=432,
-  serialized_end=510,
+  serialized_start=445,
+  serialized_end=530,
 )
 
 
@@ -213,14 +213,14 @@ _VPCCONFIG = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='SecurityGroupIds', full_name='flyteidl.plugins.sagemaker.VpcConfig.SecurityGroupIds', index=0,
+      name='security_group_ids', full_name='flyteidl.plugins.sagemaker.VpcConfig.security_group_ids', index=0,
       number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Subnets', full_name='flyteidl.plugins.sagemaker.VpcConfig.Subnets', index=1,
+      name='subnets', full_name='flyteidl.plugins.sagemaker.VpcConfig.subnets', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -238,8 +238,8 @@ _VPCCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=512,
-  serialized_end=566,
+  serialized_start=532,
+  serialized_end=588,
 )
 
 
@@ -251,49 +251,49 @@ _TRAININGJOB = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='Region', full_name='flyteidl.plugins.sagemaker.TrainingJob.Region', index=0,
+      name='region', full_name='flyteidl.plugins.sagemaker.TrainingJob.region', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='RoleArn', full_name='flyteidl.plugins.sagemaker.TrainingJob.RoleArn', index=1,
+      name='role_arn', full_name='flyteidl.plugins.sagemaker.TrainingJob.role_arn', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='AlgorithmSpecification', full_name='flyteidl.plugins.sagemaker.TrainingJob.AlgorithmSpecification', index=2,
+      name='algorithm_specification', full_name='flyteidl.plugins.sagemaker.TrainingJob.algorithm_specification', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ResourceConfig', full_name='flyteidl.plugins.sagemaker.TrainingJob.ResourceConfig', index=3,
+      name='resource_config', full_name='flyteidl.plugins.sagemaker.TrainingJob.resource_config', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='StoppingCondition', full_name='flyteidl.plugins.sagemaker.TrainingJob.StoppingCondition', index=4,
+      name='stopping_condition', full_name='flyteidl.plugins.sagemaker.TrainingJob.stopping_condition', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='VpcConfig', full_name='flyteidl.plugins.sagemaker.TrainingJob.VpcConfig', index=5,
+      name='vpc_config', full_name='flyteidl.plugins.sagemaker.TrainingJob.vpc_config', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='EnableSpotTraining', full_name='flyteidl.plugins.sagemaker.TrainingJob.EnableSpotTraining', index=6,
+      name='enable_spot_training', full_name='flyteidl.plugins.sagemaker.TrainingJob.enable_spot_training', index=6,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -311,16 +311,16 @@ _TRAININGJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=569,
-  serialized_end=927,
+  serialized_start=591,
+  serialized_end=956,
 )
 
 _ALGORITHMSPECIFICATION_METRICDEFINITION.containing_type = _ALGORITHMSPECIFICATION
-_ALGORITHMSPECIFICATION.fields_by_name['MetricDefinitions'].message_type = _ALGORITHMSPECIFICATION_METRICDEFINITION
-_TRAININGJOB.fields_by_name['AlgorithmSpecification'].message_type = _ALGORITHMSPECIFICATION
-_TRAININGJOB.fields_by_name['ResourceConfig'].message_type = _RESOURCECONFIG
-_TRAININGJOB.fields_by_name['StoppingCondition'].message_type = _STOPPINGCONDITION
-_TRAININGJOB.fields_by_name['VpcConfig'].message_type = _VPCCONFIG
+_ALGORITHMSPECIFICATION.fields_by_name['metric_definitions'].message_type = _ALGORITHMSPECIFICATION_METRICDEFINITION
+_TRAININGJOB.fields_by_name['algorithm_specification'].message_type = _ALGORITHMSPECIFICATION
+_TRAININGJOB.fields_by_name['resource_config'].message_type = _RESOURCECONFIG
+_TRAININGJOB.fields_by_name['stopping_condition'].message_type = _STOPPINGCONDITION
+_TRAININGJOB.fields_by_name['vpc_config'].message_type = _VPCCONFIG
 DESCRIPTOR.message_types_by_name['AlgorithmSpecification'] = _ALGORITHMSPECIFICATION
 DESCRIPTOR.message_types_by_name['ResourceConfig'] = _RESOURCECONFIG
 DESCRIPTOR.message_types_by_name['StoppingCondition'] = _STOPPINGCONDITION
