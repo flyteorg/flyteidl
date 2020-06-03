@@ -231,11 +231,11 @@ class HPOJobObjective final :
   ::std::string* release_metric_name();
   void set_allocated_metric_name(::std::string* metric_name);
 
-  // .flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;
-  void clear_type();
-  static const int kTypeFieldNumber = 1;
-  ::flyteidl::plugins::sagemaker::HPOJobObjective_HPOJobObjectiveType type() const;
-  void set_type(::flyteidl::plugins::sagemaker::HPOJobObjective_HPOJobObjectiveType value);
+  // .flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType objective_type = 1;
+  void clear_objective_type();
+  static const int kObjectiveTypeFieldNumber = 1;
+  ::flyteidl::plugins::sagemaker::HPOJobObjective_HPOJobObjectiveType objective_type() const;
+  void set_objective_type(::flyteidl::plugins::sagemaker::HPOJobObjective_HPOJobObjectiveType value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.HPOJobObjective)
  private:
@@ -243,7 +243,7 @@ class HPOJobObjective final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr metric_name_;
-  int type_;
+  int objective_type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto;
 };
@@ -387,18 +387,18 @@ class HPOJob final :
 #endif  // __GNUC__
 // HPOJobObjective
 
-// .flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;
-inline void HPOJobObjective::clear_type() {
-  type_ = 0;
+// .flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType objective_type = 1;
+inline void HPOJobObjective::clear_objective_type() {
+  objective_type_ = 0;
 }
-inline ::flyteidl::plugins::sagemaker::HPOJobObjective_HPOJobObjectiveType HPOJobObjective::type() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.HPOJobObjective.type)
-  return static_cast< ::flyteidl::plugins::sagemaker::HPOJobObjective_HPOJobObjectiveType >(type_);
+inline ::flyteidl::plugins::sagemaker::HPOJobObjective_HPOJobObjectiveType HPOJobObjective::objective_type() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.HPOJobObjective.objective_type)
+  return static_cast< ::flyteidl::plugins::sagemaker::HPOJobObjective_HPOJobObjectiveType >(objective_type_);
 }
-inline void HPOJobObjective::set_type(::flyteidl::plugins::sagemaker::HPOJobObjective_HPOJobObjectiveType value) {
+inline void HPOJobObjective::set_objective_type(::flyteidl::plugins::sagemaker::HPOJobObjective_HPOJobObjectiveType value) {
   
-  type_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.HPOJobObjective.type)
+  objective_type_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.HPOJobObjective.objective_type)
 }
 
 // string metric_name = 2;

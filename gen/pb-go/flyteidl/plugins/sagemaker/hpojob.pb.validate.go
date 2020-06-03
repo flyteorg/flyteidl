@@ -44,7 +44,7 @@ func (m *HPOJobObjective) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Type
+	// no validation rules for ObjectiveType
 
 	// no validation rules for MetricName
 

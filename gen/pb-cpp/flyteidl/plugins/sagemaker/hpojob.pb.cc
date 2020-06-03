@@ -75,7 +75,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fsagemaker_2fhp
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJobObjective, type_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJobObjective, objective_type_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJobObjective, metric_name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJob, _internal_metadata_),
@@ -107,21 +107,21 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2fhpojob_2ep
   "o\022\032flyteidl.plugins.sagemaker\0320flyteidl/"
   "plugins/sagemaker/parameterranges.proto\032"
   ",flyteidl/plugins/sagemaker/trainingjob."
-  "proto\"\250\001\n\017HPOJobObjective\022M\n\004type\030\001 \001(\0162"
-  "\?.flyteidl.plugins.sagemaker.HPOJobObjec"
-  "tive.HPOJobObjectiveType\022\023\n\013metric_name\030"
-  "\002 \001(\t\"1\n\023HPOJobObjectiveType\022\014\n\010MINIMIZE"
-  "\020\000\022\014\n\010MAXIMIZE\020\001\"\220\001\n\006HPOJob\022#\n\033max_numbe"
-  "r_of_training_jobs\030\001 \001(\003\022\"\n\032max_parallel"
-  "_training_jobs\030\002 \001(\003\022=\n\014training_job\030\003 \001"
-  "(\0132\'.flyteidl.plugins.sagemaker.Training"
-  "JobB5Z3github.com/lyft/flyteidl/gen/pb-g"
-  "o/flyteidl/pluginsb\006proto3"
+  "proto\"\262\001\n\017HPOJobObjective\022W\n\016objective_t"
+  "ype\030\001 \001(\0162\?.flyteidl.plugins.sagemaker.H"
+  "POJobObjective.HPOJobObjectiveType\022\023\n\013me"
+  "tric_name\030\002 \001(\t\"1\n\023HPOJobObjectiveType\022\014"
+  "\n\010MINIMIZE\020\000\022\014\n\010MAXIMIZE\020\001\"\220\001\n\006HPOJob\022#\n"
+  "\033max_number_of_training_jobs\030\001 \001(\003\022\"\n\032ma"
+  "x_parallel_training_jobs\030\002 \001(\003\022=\n\014traini"
+  "ng_job\030\003 \001(\0132\'.flyteidl.plugins.sagemake"
+  "r.TrainingJobB5Z3github.com/lyft/flyteid"
+  "l/gen/pb-go/flyteidl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto,
-  "flyteidl/plugins/sagemaker/hpojob.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto, 546,
+  "flyteidl/plugins/sagemaker/hpojob.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto, 556,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto() {
@@ -169,7 +169,7 @@ class HPOJobObjective::HasBitSetters {
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int HPOJobObjective::kTypeFieldNumber;
+const int HPOJobObjective::kObjectiveTypeFieldNumber;
 const int HPOJobObjective::kMetricNameFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -186,7 +186,7 @@ HPOJobObjective::HPOJobObjective(const HPOJobObjective& from)
   if (from.metric_name().size() > 0) {
     metric_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.metric_name_);
   }
-  type_ = from.type_;
+  objective_type_ = from.objective_type_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.sagemaker.HPOJobObjective)
 }
 
@@ -194,7 +194,7 @@ void HPOJobObjective::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_HPOJobObjective_flyteidl_2fplugins_2fsagemaker_2fhpojob_2eproto.base);
   metric_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  type_ = 0;
+  objective_type_ = 0;
 }
 
 HPOJobObjective::~HPOJobObjective() {
@@ -222,7 +222,7 @@ void HPOJobObjective::Clear() {
   (void) cached_has_bits;
 
   metric_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  type_ = 0;
+  objective_type_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -239,11 +239,11 @@ const char* HPOJobObjective::_InternalParse(const char* begin, const char* end, 
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;
+      // .flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType objective_type = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
         ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_type(static_cast<::flyteidl::plugins::sagemaker::HPOJobObjective_HPOJobObjectiveType>(val));
+        msg->set_objective_type(static_cast<::flyteidl::plugins::sagemaker::HPOJobObjective_HPOJobObjectiveType>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -297,14 +297,14 @@ bool HPOJobObjective::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;
+      // .flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType objective_type = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
           int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          set_type(static_cast< ::flyteidl::plugins::sagemaker::HPOJobObjective_HPOJobObjectiveType >(value));
+          set_objective_type(static_cast< ::flyteidl::plugins::sagemaker::HPOJobObjective_HPOJobObjectiveType >(value));
         } else {
           goto handle_unusual;
         }
@@ -353,10 +353,10 @@ void HPOJobObjective::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;
-  if (this->type() != 0) {
+  // .flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType objective_type = 1;
+  if (this->objective_type() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->type(), output);
+      1, this->objective_type(), output);
   }
 
   // string metric_name = 2;
@@ -382,10 +382,10 @@ void HPOJobObjective::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;
-  if (this->type() != 0) {
+  // .flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType objective_type = 1;
+  if (this->objective_type() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->type(), target);
+      1, this->objective_type(), target);
   }
 
   // string metric_name = 2;
@@ -427,10 +427,10 @@ size_t HPOJobObjective::ByteSizeLong() const {
         this->metric_name());
   }
 
-  // .flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;
-  if (this->type() != 0) {
+  // .flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType objective_type = 1;
+  if (this->objective_type() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->objective_type());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -464,8 +464,8 @@ void HPOJobObjective::MergeFrom(const HPOJobObjective& from) {
 
     metric_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.metric_name_);
   }
-  if (from.type() != 0) {
-    set_type(from.type());
+  if (from.objective_type() != 0) {
+    set_objective_type(from.objective_type());
   }
 }
 
@@ -496,7 +496,7 @@ void HPOJobObjective::InternalSwap(HPOJobObjective* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   metric_name_.Swap(&other->metric_name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  swap(type_, other->type_);
+  swap(objective_type_, other->objective_type_);
 }
 
 ::google::protobuf::Metadata HPOJobObjective::GetMetadata() const {

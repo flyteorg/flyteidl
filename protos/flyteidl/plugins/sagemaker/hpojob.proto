@@ -13,7 +13,7 @@ message HPOJobObjective {
         MAXIMIZE = 1;
     }
 
-    HPOJobObjectiveType type = 1;
+    HPOJobObjectiveType objective_type = 1;
     string metric_name = 2;
 }
 

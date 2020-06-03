@@ -19,13 +19,13 @@ public final class Hpojob {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType objective_type = 1;</code>
      */
-    int getTypeValue();
+    int getObjectiveTypeValue();
     /**
-     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType objective_type = 1;</code>
      */
-    flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType getType();
+    flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType getObjectiveType();
 
     /**
      * <code>string metric_name = 2;</code>
@@ -50,7 +50,7 @@ public final class Hpojob {
       super(builder);
     }
     private HPOJobObjective() {
-      type_ = 0;
+      objectiveType_ = 0;
       metricName_ = "";
     }
 
@@ -81,7 +81,7 @@ public final class Hpojob {
             case 8: {
               int rawValue = input.readEnum();
 
-              type_ = rawValue;
+              objectiveType_ = rawValue;
               break;
             }
             case 18: {
@@ -220,20 +220,20 @@ public final class Hpojob {
       // @@protoc_insertion_point(enum_scope:flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType)
     }
 
-    public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    public static final int OBJECTIVE_TYPE_FIELD_NUMBER = 1;
+    private int objectiveType_;
     /**
-     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType objective_type = 1;</code>
      */
-    public int getTypeValue() {
-      return type_;
+    public int getObjectiveTypeValue() {
+      return objectiveType_;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType objective_type = 1;</code>
      */
-    public flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType getType() {
+    public flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType getObjectiveType() {
       @SuppressWarnings("deprecation")
-      flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType result = flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType.valueOf(type_);
+      flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType result = flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType.valueOf(objectiveType_);
       return result == null ? flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType.UNRECOGNIZED : result;
     }
 
@@ -285,8 +285,8 @@ public final class Hpojob {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (type_ != flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType.MINIMIZE.getNumber()) {
-        output.writeEnum(1, type_);
+      if (objectiveType_ != flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType.MINIMIZE.getNumber()) {
+        output.writeEnum(1, objectiveType_);
       }
       if (!getMetricNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, metricName_);
@@ -300,9 +300,9 @@ public final class Hpojob {
       if (size != -1) return size;
 
       size = 0;
-      if (type_ != flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType.MINIMIZE.getNumber()) {
+      if (objectiveType_ != flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType.MINIMIZE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, type_);
+          .computeEnumSize(1, objectiveType_);
       }
       if (!getMetricNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, metricName_);
@@ -322,7 +322,7 @@ public final class Hpojob {
       }
       flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective other = (flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective) obj;
 
-      if (type_ != other.type_) return false;
+      if (objectiveType_ != other.objectiveType_) return false;
       if (!getMetricName()
           .equals(other.getMetricName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -336,8 +336,8 @@ public final class Hpojob {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
+      hash = (37 * hash) + OBJECTIVE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + objectiveType_;
       hash = (37 * hash) + METRIC_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getMetricName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -473,7 +473,7 @@ public final class Hpojob {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        type_ = 0;
+        objectiveType_ = 0;
 
         metricName_ = "";
 
@@ -503,7 +503,7 @@ public final class Hpojob {
       @java.lang.Override
       public flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective buildPartial() {
         flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective result = new flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective(this);
-        result.type_ = type_;
+        result.objectiveType_ = objectiveType_;
         result.metricName_ = metricName_;
         onBuilt();
         return result;
@@ -553,8 +553,8 @@ public final class Hpojob {
 
       public Builder mergeFrom(flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective other) {
         if (other == flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.getDefaultInstance()) return this;
-        if (other.type_ != 0) {
-          setTypeValue(other.getTypeValue());
+        if (other.objectiveType_ != 0) {
+          setObjectiveTypeValue(other.getObjectiveTypeValue());
         }
         if (!other.getMetricName().isEmpty()) {
           metricName_ = other.metricName_;
@@ -589,47 +589,47 @@ public final class Hpojob {
         return this;
       }
 
-      private int type_ = 0;
+      private int objectiveType_ = 0;
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType objective_type = 1;</code>
        */
-      public int getTypeValue() {
-        return type_;
+      public int getObjectiveTypeValue() {
+        return objectiveType_;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType objective_type = 1;</code>
        */
-      public Builder setTypeValue(int value) {
-        type_ = value;
+      public Builder setObjectiveTypeValue(int value) {
+        objectiveType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType objective_type = 1;</code>
        */
-      public flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType getType() {
+      public flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType getObjectiveType() {
         @SuppressWarnings("deprecation")
-        flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType result = flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType.valueOf(type_);
+        flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType result = flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType.valueOf(objectiveType_);
         return result == null ? flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType objective_type = 1;</code>
        */
-      public Builder setType(flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType value) {
+      public Builder setObjectiveType(flyteidl.plugins.sagemaker.Hpojob.HPOJobObjective.HPOJobObjectiveType value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        type_ = value.getNumber();
+        objectiveType_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType type = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType objective_type = 1;</code>
        */
-      public Builder clearType() {
+      public Builder clearObjectiveType() {
         
-        type_ = 0;
+        objectiveType_ = 0;
         onChanged();
         return this;
       }
@@ -1570,16 +1570,16 @@ public final class Hpojob {
       "o\022\032flyteidl.plugins.sagemaker\0320flyteidl/" +
       "plugins/sagemaker/parameterranges.proto\032" +
       ",flyteidl/plugins/sagemaker/trainingjob." +
-      "proto\"\250\001\n\017HPOJobObjective\022M\n\004type\030\001 \001(\0162" +
-      "?.flyteidl.plugins.sagemaker.HPOJobObjec" +
-      "tive.HPOJobObjectiveType\022\023\n\013metric_name\030" +
-      "\002 \001(\t\"1\n\023HPOJobObjectiveType\022\014\n\010MINIMIZE" +
-      "\020\000\022\014\n\010MAXIMIZE\020\001\"\220\001\n\006HPOJob\022#\n\033max_numbe" +
-      "r_of_training_jobs\030\001 \001(\003\022\"\n\032max_parallel" +
-      "_training_jobs\030\002 \001(\003\022=\n\014training_job\030\003 \001" +
-      "(\0132\'.flyteidl.plugins.sagemaker.Training" +
-      "JobB5Z3github.com/lyft/flyteidl/gen/pb-g" +
-      "o/flyteidl/pluginsb\006proto3"
+      "proto\"\262\001\n\017HPOJobObjective\022W\n\016objective_t" +
+      "ype\030\001 \001(\0162?.flyteidl.plugins.sagemaker.H" +
+      "POJobObjective.HPOJobObjectiveType\022\023\n\013me" +
+      "tric_name\030\002 \001(\t\"1\n\023HPOJobObjectiveType\022\014" +
+      "\n\010MINIMIZE\020\000\022\014\n\010MAXIMIZE\020\001\"\220\001\n\006HPOJob\022#\n" +
+      "\033max_number_of_training_jobs\030\001 \001(\003\022\"\n\032ma" +
+      "x_parallel_training_jobs\030\002 \001(\003\022=\n\014traini" +
+      "ng_job\030\003 \001(\0132\'.flyteidl.plugins.sagemake" +
+      "r.TrainingJobB5Z3github.com/lyft/flyteid" +
+      "l/gen/pb-go/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1600,7 +1600,7 @@ public final class Hpojob {
     internal_static_flyteidl_plugins_sagemaker_HPOJobObjective_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_HPOJobObjective_descriptor,
-        new java.lang.String[] { "Type", "MetricName", });
+        new java.lang.String[] { "ObjectiveType", "MetricName", });
     internal_static_flyteidl_plugins_sagemaker_HPOJob_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_plugins_sagemaker_HPOJob_fieldAccessorTable = new

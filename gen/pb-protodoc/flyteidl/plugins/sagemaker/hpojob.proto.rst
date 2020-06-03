@@ -14,13 +14,13 @@ flyteidl.plugins.sagemaker.HPOJobObjective
 .. code-block:: json
 
   {
-    "type": "...",
+    "objective_type": "...",
     "metric_name": "..."
   }
 
-.. _api_field_flyteidl.plugins.sagemaker.HPOJobObjective.type:
+.. _api_field_flyteidl.plugins.sagemaker.HPOJobObjective.objective_type:
 
-type
+objective_type
   (:ref:`flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType <api_enum_flyteidl.plugins.sagemaker.HPOJobObjective.HPOJobObjectiveType>`) 
   
 .. _api_field_flyteidl.plugins.sagemaker.HPOJobObjective.metric_name:
