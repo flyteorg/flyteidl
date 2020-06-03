@@ -12,29 +12,29 @@ enum HyperparameterScalingType {
 }
 
 message ContinuousParameterRange {
-    double MaxValue = 1;
-    double MinValue = 2;
-    HyperparameterScalingType ScalingType = 3;
+    double max_value = 1;
+    double min_value = 2;
+    HyperparameterScalingType scaling_type = 3;
 }
 
 message IntegerParameterRange {
-    float MaxValue = 1;
-    float MinValue = 2;
-    HyperparameterScalingType ScalingType = 3;
+    float max_value = 1;
+    float min_value = 2;
+    HyperparameterScalingType scaling_type = 3;
 }
 
 message CategoricalParameterRange {
-    repeated string Values = 1;
+    repeated string values = 1;
 }
 
 message ParameterRangeOneOf {
     oneof ParameterRangeTypes {
-        ContinuousParameterRange ContinuousParameterRange = 1;
-        IntegerParameterRange IntegerParameterRange = 2;
-        CategoricalParameterRange CategoricalParameterRange = 3;
+        ContinuousParameterRange continuous_parameter_range = 1;
+        IntegerParameterRange integer_parameter_range = 2;
+        CategoricalParameterRange categorical_parameter_range = 3;
     }
 }
 
 message ParameterRanges {
-    map<string, ParameterRangeOneOf> ParameterRangeMap = 1;
+    map<string, ParameterRangeOneOf> parameter_range_map = 1;
 }

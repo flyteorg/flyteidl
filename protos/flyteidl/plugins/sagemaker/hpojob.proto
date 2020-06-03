@@ -13,12 +13,12 @@ message HPOJobObjective {
         MAXIMIZE = 1;
     }
 
-    HPOJobObjectiveType Type = 1;
-    string MetricName = 2;
+    HPOJobObjectiveType type = 1;
+    string metric_name = 2;
 }
 
 message HPOJob {
-    int64 MaxNumberOfTrainingJobs = 1;
-    int64 MaxParallelTrainingJobs = 2;
-    TrainingJob TrainingJob = 3;  // TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
+    int64 max_number_of_training_jobs = 1;
+    int64 max_parallel_training_jobs = 2;
+    TrainingJob training_job = 3;  // TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
 }
