@@ -55,12 +55,12 @@ flyteidl.plugins.sagemaker.IntegerParameterRange
 .. _api_field_flyteidl.plugins.sagemaker.IntegerParameterRange.max_value:
 
 max_value
-  (`float <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 .. _api_field_flyteidl.plugins.sagemaker.IntegerParameterRange.min_value:
 
 min_value
-  (`float <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 .. _api_field_flyteidl.plugins.sagemaker.IntegerParameterRange.scaling_type:
 

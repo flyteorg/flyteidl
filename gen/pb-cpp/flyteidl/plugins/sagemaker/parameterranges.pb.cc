@@ -186,7 +186,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fsagemaker_2fpa
   offsetof(::flyteidl::plugins::sagemaker::ParameterRangeOneOfDefaultTypeInternal, continuous_parameter_range_),
   offsetof(::flyteidl::plugins::sagemaker::ParameterRangeOneOfDefaultTypeInternal, integer_parameter_range_),
   offsetof(::flyteidl::plugins::sagemaker::ParameterRangeOneOfDefaultTypeInternal, categorical_parameter_range_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::ParameterRangeOneOf, ParameterRangeTypes_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::ParameterRangeOneOf, parameter_range_type_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::ParameterRanges_ParameterRangeMapEntry_DoNotUse, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::ParameterRanges_ParameterRangeMapEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -234,33 +234,33 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2fparameterr
   "\030\001 \001(\001\022\021\n\tmin_value\030\002 \001(\001\022K\n\014scaling_typ"
   "e\030\003 \001(\01625.flyteidl.plugins.sagemaker.Hyp"
   "erparameterScalingType\"\212\001\n\025IntegerParame"
-  "terRange\022\021\n\tmax_value\030\001 \001(\002\022\021\n\tmin_value"
-  "\030\002 \001(\002\022K\n\014scaling_type\030\003 \001(\01625.flyteidl."
+  "terRange\022\021\n\tmax_value\030\001 \001(\003\022\021\n\tmin_value"
+  "\030\002 \001(\003\022K\n\014scaling_type\030\003 \001(\01625.flyteidl."
   "plugins.sagemaker.HyperparameterScalingT"
   "ype\"+\n\031CategoricalParameterRange\022\016\n\006valu"
-  "es\030\001 \003(\t\"\274\002\n\023ParameterRangeOneOf\022Z\n\032cont"
+  "es\030\001 \003(\t\"\275\002\n\023ParameterRangeOneOf\022Z\n\032cont"
   "inuous_parameter_range\030\001 \001(\01324.flyteidl."
   "plugins.sagemaker.ContinuousParameterRan"
   "geH\000\022T\n\027integer_parameter_range\030\002 \001(\01321."
   "flyteidl.plugins.sagemaker.IntegerParame"
   "terRangeH\000\022\\\n\033categorical_parameter_rang"
   "e\030\003 \001(\01325.flyteidl.plugins.sagemaker.Cat"
-  "egoricalParameterRangeH\000B\025\n\023ParameterRan"
-  "geTypes\"\335\001\n\017ParameterRanges\022_\n\023parameter"
-  "_range_map\030\001 \003(\0132B.flyteidl.plugins.sage"
-  "maker.ParameterRanges.ParameterRangeMapE"
-  "ntry\032i\n\026ParameterRangeMapEntry\022\013\n\003key\030\001 "
-  "\001(\t\022>\n\005value\030\002 \001(\0132/.flyteidl.plugins.sa"
-  "gemaker.ParameterRangeOneOf:\0028\001*Z\n\031Hyper"
-  "parameterScalingType\022\010\n\004AUTO\020\000\022\n\n\006LINEAR"
-  "\020\001\022\017\n\013LOGARITHMIC\020\002\022\026\n\022REVERSELOGARITHMI"
-  "C\020\003B5Z3github.com/lyft/flyteidl/gen/pb-g"
-  "o/flyteidl/pluginsb\006proto3"
+  "egoricalParameterRangeH\000B\026\n\024parameter_ra"
+  "nge_type\"\335\001\n\017ParameterRanges\022_\n\023paramete"
+  "r_range_map\030\001 \003(\0132B.flyteidl.plugins.sag"
+  "emaker.ParameterRanges.ParameterRangeMap"
+  "Entry\032i\n\026ParameterRangeMapEntry\022\013\n\003key\030\001"
+  " \001(\t\022>\n\005value\030\002 \001(\0132/.flyteidl.plugins.s"
+  "agemaker.ParameterRangeOneOf:\0028\001*Z\n\031Hype"
+  "rparameterScalingType\022\010\n\004AUTO\020\000\022\n\n\006LINEA"
+  "R\020\001\022\017\n\013LOGARITHMIC\020\002\022\026\n\022REVERSELOGARITHM"
+  "IC\020\003B5Z3github.com/lyft/flyteidl/gen/pb-"
+  "go/flyteidl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fsagemaker_2fparameterranges_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fsagemaker_2fparameterranges_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2fparameterranges_2eproto,
-  "flyteidl/plugins/sagemaker/parameterranges.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fparameterranges_2eproto, 1106,
+  "flyteidl/plugins/sagemaker/parameterranges.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fparameterranges_2eproto, 1107,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fsagemaker_2fparameterranges_2eproto() {
@@ -718,18 +718,18 @@ const char* IntegerParameterRange::_InternalParse(const char* begin, const char*
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // float max_value = 1;
+      // int64 max_value = 1;
       case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 13) goto handle_unusual;
-        msg->set_max_value(::google::protobuf::io::UnalignedLoad<float>(ptr));
-        ptr += sizeof(float);
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        msg->set_max_value(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // float min_value = 2;
+      // int64 min_value = 2;
       case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 21) goto handle_unusual;
-        msg->set_min_value(::google::protobuf::io::UnalignedLoad<float>(ptr));
-        ptr += sizeof(float);
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        msg->set_min_value(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       // .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
@@ -767,12 +767,12 @@ bool IntegerParameterRange::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // float max_value = 1;
+      // int64 max_value = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (13 & 0xFF)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
                  input, &max_value_)));
         } else {
           goto handle_unusual;
@@ -780,12 +780,12 @@ bool IntegerParameterRange::MergePartialFromCodedStream(
         break;
       }
 
-      // float min_value = 2;
+      // int64 min_value = 2;
       case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (21 & 0xFF)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
                  input, &min_value_)));
         } else {
           goto handle_unusual;
@@ -834,14 +834,14 @@ void IntegerParameterRange::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // float max_value = 1;
+  // int64 max_value = 1;
   if (this->max_value() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->max_value(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->max_value(), output);
   }
 
-  // float min_value = 2;
+  // int64 min_value = 2;
   if (this->min_value() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->min_value(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->min_value(), output);
   }
 
   // .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
@@ -863,14 +863,14 @@ void IntegerParameterRange::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // float max_value = 1;
+  // int64 max_value = 1;
   if (this->max_value() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->max_value(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->max_value(), target);
   }
 
-  // float min_value = 2;
+  // int64 min_value = 2;
   if (this->min_value() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->min_value(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->min_value(), target);
   }
 
   // .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
@@ -900,14 +900,18 @@ size_t IntegerParameterRange::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // float max_value = 1;
+  // int64 max_value = 1;
   if (this->max_value() != 0) {
-    total_size += 1 + 4;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->max_value());
   }
 
-  // float min_value = 2;
+  // int64 min_value = 2;
   if (this->min_value() != 0) {
-    total_size += 1 + 4;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->min_value());
   }
 
   // .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
@@ -1301,19 +1305,19 @@ class ParameterRangeOneOf::HasBitSetters {
 
 const ::flyteidl::plugins::sagemaker::ContinuousParameterRange&
 ParameterRangeOneOf::HasBitSetters::continuous_parameter_range(const ParameterRangeOneOf* msg) {
-  return *msg->ParameterRangeTypes_.continuous_parameter_range_;
+  return *msg->parameter_range_type_.continuous_parameter_range_;
 }
 const ::flyteidl::plugins::sagemaker::IntegerParameterRange&
 ParameterRangeOneOf::HasBitSetters::integer_parameter_range(const ParameterRangeOneOf* msg) {
-  return *msg->ParameterRangeTypes_.integer_parameter_range_;
+  return *msg->parameter_range_type_.integer_parameter_range_;
 }
 const ::flyteidl::plugins::sagemaker::CategoricalParameterRange&
 ParameterRangeOneOf::HasBitSetters::categorical_parameter_range(const ParameterRangeOneOf* msg) {
-  return *msg->ParameterRangeTypes_.categorical_parameter_range_;
+  return *msg->parameter_range_type_.categorical_parameter_range_;
 }
 void ParameterRangeOneOf::set_allocated_continuous_parameter_range(::flyteidl::plugins::sagemaker::ContinuousParameterRange* continuous_parameter_range) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  clear_ParameterRangeTypes();
+  clear_parameter_range_type();
   if (continuous_parameter_range) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
@@ -1321,13 +1325,13 @@ void ParameterRangeOneOf::set_allocated_continuous_parameter_range(::flyteidl::p
           message_arena, continuous_parameter_range, submessage_arena);
     }
     set_has_continuous_parameter_range();
-    ParameterRangeTypes_.continuous_parameter_range_ = continuous_parameter_range;
+    parameter_range_type_.continuous_parameter_range_ = continuous_parameter_range;
   }
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.ParameterRangeOneOf.continuous_parameter_range)
 }
 void ParameterRangeOneOf::set_allocated_integer_parameter_range(::flyteidl::plugins::sagemaker::IntegerParameterRange* integer_parameter_range) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  clear_ParameterRangeTypes();
+  clear_parameter_range_type();
   if (integer_parameter_range) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
@@ -1335,13 +1339,13 @@ void ParameterRangeOneOf::set_allocated_integer_parameter_range(::flyteidl::plug
           message_arena, integer_parameter_range, submessage_arena);
     }
     set_has_integer_parameter_range();
-    ParameterRangeTypes_.integer_parameter_range_ = integer_parameter_range;
+    parameter_range_type_.integer_parameter_range_ = integer_parameter_range;
   }
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.ParameterRangeOneOf.integer_parameter_range)
 }
 void ParameterRangeOneOf::set_allocated_categorical_parameter_range(::flyteidl::plugins::sagemaker::CategoricalParameterRange* categorical_parameter_range) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  clear_ParameterRangeTypes();
+  clear_parameter_range_type();
   if (categorical_parameter_range) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
@@ -1349,7 +1353,7 @@ void ParameterRangeOneOf::set_allocated_categorical_parameter_range(::flyteidl::
           message_arena, categorical_parameter_range, submessage_arena);
     }
     set_has_categorical_parameter_range();
-    ParameterRangeTypes_.categorical_parameter_range_ = categorical_parameter_range;
+    parameter_range_type_.categorical_parameter_range_ = categorical_parameter_range;
   }
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.ParameterRangeOneOf.categorical_parameter_range)
 }
@@ -1368,8 +1372,8 @@ ParameterRangeOneOf::ParameterRangeOneOf(const ParameterRangeOneOf& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  clear_has_ParameterRangeTypes();
-  switch (from.ParameterRangeTypes_case()) {
+  clear_has_parameter_range_type();
+  switch (from.parameter_range_type_case()) {
     case kContinuousParameterRange: {
       mutable_continuous_parameter_range()->::flyteidl::plugins::sagemaker::ContinuousParameterRange::MergeFrom(from.continuous_parameter_range());
       break;
@@ -1382,7 +1386,7 @@ ParameterRangeOneOf::ParameterRangeOneOf(const ParameterRangeOneOf& from)
       mutable_categorical_parameter_range()->::flyteidl::plugins::sagemaker::CategoricalParameterRange::MergeFrom(from.categorical_parameter_range());
       break;
     }
-    case PARAMETERRANGETYPES_NOT_SET: {
+    case PARAMETER_RANGE_TYPE_NOT_SET: {
       break;
     }
   }
@@ -1392,7 +1396,7 @@ ParameterRangeOneOf::ParameterRangeOneOf(const ParameterRangeOneOf& from)
 void ParameterRangeOneOf::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_ParameterRangeOneOf_flyteidl_2fplugins_2fsagemaker_2fparameterranges_2eproto.base);
-  clear_has_ParameterRangeTypes();
+  clear_has_parameter_range_type();
 }
 
 ParameterRangeOneOf::~ParameterRangeOneOf() {
@@ -1401,8 +1405,8 @@ ParameterRangeOneOf::~ParameterRangeOneOf() {
 }
 
 void ParameterRangeOneOf::SharedDtor() {
-  if (has_ParameterRangeTypes()) {
-    clear_ParameterRangeTypes();
+  if (has_parameter_range_type()) {
+    clear_parameter_range_type();
   }
 }
 
@@ -1415,26 +1419,26 @@ const ParameterRangeOneOf& ParameterRangeOneOf::default_instance() {
 }
 
 
-void ParameterRangeOneOf::clear_ParameterRangeTypes() {
+void ParameterRangeOneOf::clear_parameter_range_type() {
 // @@protoc_insertion_point(one_of_clear_start:flyteidl.plugins.sagemaker.ParameterRangeOneOf)
-  switch (ParameterRangeTypes_case()) {
+  switch (parameter_range_type_case()) {
     case kContinuousParameterRange: {
-      delete ParameterRangeTypes_.continuous_parameter_range_;
+      delete parameter_range_type_.continuous_parameter_range_;
       break;
     }
     case kIntegerParameterRange: {
-      delete ParameterRangeTypes_.integer_parameter_range_;
+      delete parameter_range_type_.integer_parameter_range_;
       break;
     }
     case kCategoricalParameterRange: {
-      delete ParameterRangeTypes_.categorical_parameter_range_;
+      delete parameter_range_type_.categorical_parameter_range_;
       break;
     }
-    case PARAMETERRANGETYPES_NOT_SET: {
+    case PARAMETER_RANGE_TYPE_NOT_SET: {
       break;
     }
   }
-  _oneof_case_[0] = PARAMETERRANGETYPES_NOT_SET;
+  _oneof_case_[0] = PARAMETER_RANGE_TYPE_NOT_SET;
 }
 
 
@@ -1444,7 +1448,7 @@ void ParameterRangeOneOf::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  clear_ParameterRangeTypes();
+  clear_parameter_range_type();
   _internal_metadata_.Clear();
 }
 
@@ -1663,29 +1667,29 @@ size_t ParameterRangeOneOf::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  switch (ParameterRangeTypes_case()) {
+  switch (parameter_range_type_case()) {
     // .flyteidl.plugins.sagemaker.ContinuousParameterRange continuous_parameter_range = 1;
     case kContinuousParameterRange: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *ParameterRangeTypes_.continuous_parameter_range_);
+          *parameter_range_type_.continuous_parameter_range_);
       break;
     }
     // .flyteidl.plugins.sagemaker.IntegerParameterRange integer_parameter_range = 2;
     case kIntegerParameterRange: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *ParameterRangeTypes_.integer_parameter_range_);
+          *parameter_range_type_.integer_parameter_range_);
       break;
     }
     // .flyteidl.plugins.sagemaker.CategoricalParameterRange categorical_parameter_range = 3;
     case kCategoricalParameterRange: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *ParameterRangeTypes_.categorical_parameter_range_);
+          *parameter_range_type_.categorical_parameter_range_);
       break;
     }
-    case PARAMETERRANGETYPES_NOT_SET: {
+    case PARAMETER_RANGE_TYPE_NOT_SET: {
       break;
     }
   }
@@ -1716,7 +1720,7 @@ void ParameterRangeOneOf::MergeFrom(const ParameterRangeOneOf& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  switch (from.ParameterRangeTypes_case()) {
+  switch (from.parameter_range_type_case()) {
     case kContinuousParameterRange: {
       mutable_continuous_parameter_range()->::flyteidl::plugins::sagemaker::ContinuousParameterRange::MergeFrom(from.continuous_parameter_range());
       break;
@@ -1729,7 +1733,7 @@ void ParameterRangeOneOf::MergeFrom(const ParameterRangeOneOf& from) {
       mutable_categorical_parameter_range()->::flyteidl::plugins::sagemaker::CategoricalParameterRange::MergeFrom(from.categorical_parameter_range());
       break;
     }
-    case PARAMETERRANGETYPES_NOT_SET: {
+    case PARAMETER_RANGE_TYPE_NOT_SET: {
       break;
     }
   }
@@ -1760,7 +1764,7 @@ void ParameterRangeOneOf::Swap(ParameterRangeOneOf* other) {
 void ParameterRangeOneOf::InternalSwap(ParameterRangeOneOf* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(ParameterRangeTypes_, other->ParameterRangeTypes_);
+  swap(parameter_range_type_, other->parameter_range_type_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 

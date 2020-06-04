@@ -769,14 +769,14 @@ public final class Parameterranges {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>float max_value = 1;</code>
+     * <code>int64 max_value = 1;</code>
      */
-    float getMaxValue();
+    long getMaxValue();
 
     /**
-     * <code>float min_value = 2;</code>
+     * <code>int64 min_value = 2;</code>
      */
-    float getMinValue();
+    long getMinValue();
 
     /**
      * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
@@ -827,14 +827,14 @@ public final class Parameterranges {
             case 0:
               done = true;
               break;
-            case 13: {
+            case 8: {
 
-              maxValue_ = input.readFloat();
+              maxValue_ = input.readInt64();
               break;
             }
-            case 21: {
+            case 16: {
 
-              minValue_ = input.readFloat();
+              minValue_ = input.readInt64();
               break;
             }
             case 24: {
@@ -876,20 +876,20 @@ public final class Parameterranges {
     }
 
     public static final int MAX_VALUE_FIELD_NUMBER = 1;
-    private float maxValue_;
+    private long maxValue_;
     /**
-     * <code>float max_value = 1;</code>
+     * <code>int64 max_value = 1;</code>
      */
-    public float getMaxValue() {
+    public long getMaxValue() {
       return maxValue_;
     }
 
     public static final int MIN_VALUE_FIELD_NUMBER = 2;
-    private float minValue_;
+    private long minValue_;
     /**
-     * <code>float min_value = 2;</code>
+     * <code>int64 min_value = 2;</code>
      */
-    public float getMinValue() {
+    public long getMinValue() {
       return minValue_;
     }
 
@@ -924,11 +924,11 @@ public final class Parameterranges {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (maxValue_ != 0F) {
-        output.writeFloat(1, maxValue_);
+      if (maxValue_ != 0L) {
+        output.writeInt64(1, maxValue_);
       }
-      if (minValue_ != 0F) {
-        output.writeFloat(2, minValue_);
+      if (minValue_ != 0L) {
+        output.writeInt64(2, minValue_);
       }
       if (scalingType_ != flyteidl.plugins.sagemaker.Parameterranges.HyperparameterScalingType.AUTO.getNumber()) {
         output.writeEnum(3, scalingType_);
@@ -942,13 +942,13 @@ public final class Parameterranges {
       if (size != -1) return size;
 
       size = 0;
-      if (maxValue_ != 0F) {
+      if (maxValue_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(1, maxValue_);
+          .computeInt64Size(1, maxValue_);
       }
-      if (minValue_ != 0F) {
+      if (minValue_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, minValue_);
+          .computeInt64Size(2, minValue_);
       }
       if (scalingType_ != flyteidl.plugins.sagemaker.Parameterranges.HyperparameterScalingType.AUTO.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -969,12 +969,10 @@ public final class Parameterranges {
       }
       flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange other = (flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) obj;
 
-      if (java.lang.Float.floatToIntBits(getMaxValue())
-          != java.lang.Float.floatToIntBits(
-              other.getMaxValue())) return false;
-      if (java.lang.Float.floatToIntBits(getMinValue())
-          != java.lang.Float.floatToIntBits(
-              other.getMinValue())) return false;
+      if (getMaxValue()
+          != other.getMaxValue()) return false;
+      if (getMinValue()
+          != other.getMinValue()) return false;
       if (scalingType_ != other.scalingType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -988,10 +986,10 @@ public final class Parameterranges {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MAX_VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMaxValue());
       hash = (37 * hash) + MIN_VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMinValue());
       hash = (37 * hash) + SCALING_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + scalingType_;
@@ -1128,9 +1126,9 @@ public final class Parameterranges {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        maxValue_ = 0F;
+        maxValue_ = 0L;
 
-        minValue_ = 0F;
+        minValue_ = 0L;
 
         scalingType_ = 0;
 
@@ -1211,10 +1209,10 @@ public final class Parameterranges {
 
       public Builder mergeFrom(flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange other) {
         if (other == flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange.getDefaultInstance()) return this;
-        if (other.getMaxValue() != 0F) {
+        if (other.getMaxValue() != 0L) {
           setMaxValue(other.getMaxValue());
         }
-        if (other.getMinValue() != 0F) {
+        if (other.getMinValue() != 0L) {
           setMinValue(other.getMinValue());
         }
         if (other.scalingType_ != 0) {
@@ -1249,54 +1247,54 @@ public final class Parameterranges {
         return this;
       }
 
-      private float maxValue_ ;
+      private long maxValue_ ;
       /**
-       * <code>float max_value = 1;</code>
+       * <code>int64 max_value = 1;</code>
        */
-      public float getMaxValue() {
+      public long getMaxValue() {
         return maxValue_;
       }
       /**
-       * <code>float max_value = 1;</code>
+       * <code>int64 max_value = 1;</code>
        */
-      public Builder setMaxValue(float value) {
+      public Builder setMaxValue(long value) {
         
         maxValue_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>float max_value = 1;</code>
+       * <code>int64 max_value = 1;</code>
        */
       public Builder clearMaxValue() {
         
-        maxValue_ = 0F;
+        maxValue_ = 0L;
         onChanged();
         return this;
       }
 
-      private float minValue_ ;
+      private long minValue_ ;
       /**
-       * <code>float min_value = 2;</code>
+       * <code>int64 min_value = 2;</code>
        */
-      public float getMinValue() {
+      public long getMinValue() {
         return minValue_;
       }
       /**
-       * <code>float min_value = 2;</code>
+       * <code>int64 min_value = 2;</code>
        */
-      public Builder setMinValue(float value) {
+      public Builder setMinValue(long value) {
         
         minValue_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>float min_value = 2;</code>
+       * <code>int64 min_value = 2;</code>
        */
       public Builder clearMinValue() {
         
-        minValue_ = 0F;
+        minValue_ = 0L;
         onChanged();
         return this;
       }
@@ -2044,7 +2042,7 @@ public final class Parameterranges {
      */
     flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRangeOrBuilder getCategoricalParameterRangeOrBuilder();
 
-    public flyteidl.plugins.sagemaker.Parameterranges.ParameterRangeOneOf.ParameterRangeTypesCase getParameterRangeTypesCase();
+    public flyteidl.plugins.sagemaker.Parameterranges.ParameterRangeOneOf.ParameterRangeTypeCase getParameterRangeTypeCase();
   }
   /**
    * Protobuf type {@code flyteidl.plugins.sagemaker.ParameterRangeOneOf}
@@ -2087,44 +2085,44 @@ public final class Parameterranges {
               break;
             case 10: {
               flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange.Builder subBuilder = null;
-              if (parameterRangeTypesCase_ == 1) {
-                subBuilder = ((flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeTypes_).toBuilder();
+              if (parameterRangeTypeCase_ == 1) {
+                subBuilder = ((flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeType_).toBuilder();
               }
-              parameterRangeTypes_ =
+              parameterRangeType_ =
                   input.readMessage(flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeTypes_);
-                parameterRangeTypes_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeType_);
+                parameterRangeType_ = subBuilder.buildPartial();
               }
-              parameterRangeTypesCase_ = 1;
+              parameterRangeTypeCase_ = 1;
               break;
             }
             case 18: {
               flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange.Builder subBuilder = null;
-              if (parameterRangeTypesCase_ == 2) {
-                subBuilder = ((flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeTypes_).toBuilder();
+              if (parameterRangeTypeCase_ == 2) {
+                subBuilder = ((flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeType_).toBuilder();
               }
-              parameterRangeTypes_ =
+              parameterRangeType_ =
                   input.readMessage(flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeTypes_);
-                parameterRangeTypes_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeType_);
+                parameterRangeType_ = subBuilder.buildPartial();
               }
-              parameterRangeTypesCase_ = 2;
+              parameterRangeTypeCase_ = 2;
               break;
             }
             case 26: {
               flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange.Builder subBuilder = null;
-              if (parameterRangeTypesCase_ == 3) {
-                subBuilder = ((flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeTypes_).toBuilder();
+              if (parameterRangeTypeCase_ == 3) {
+                subBuilder = ((flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeType_).toBuilder();
               }
-              parameterRangeTypes_ =
+              parameterRangeType_ =
                   input.readMessage(flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeTypes_);
-                parameterRangeTypes_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeType_);
+                parameterRangeType_ = subBuilder.buildPartial();
               }
-              parameterRangeTypesCase_ = 3;
+              parameterRangeTypeCase_ = 3;
               break;
             }
             default: {
@@ -2159,32 +2157,32 @@ public final class Parameterranges {
               flyteidl.plugins.sagemaker.Parameterranges.ParameterRangeOneOf.class, flyteidl.plugins.sagemaker.Parameterranges.ParameterRangeOneOf.Builder.class);
     }
 
-    private int parameterRangeTypesCase_ = 0;
-    private java.lang.Object parameterRangeTypes_;
-    public enum ParameterRangeTypesCase
+    private int parameterRangeTypeCase_ = 0;
+    private java.lang.Object parameterRangeType_;
+    public enum ParameterRangeTypeCase
         implements com.google.protobuf.Internal.EnumLite {
       CONTINUOUS_PARAMETER_RANGE(1),
       INTEGER_PARAMETER_RANGE(2),
       CATEGORICAL_PARAMETER_RANGE(3),
-      PARAMETERRANGETYPES_NOT_SET(0);
+      PARAMETERRANGETYPE_NOT_SET(0);
       private final int value;
-      private ParameterRangeTypesCase(int value) {
+      private ParameterRangeTypeCase(int value) {
         this.value = value;
       }
       /**
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static ParameterRangeTypesCase valueOf(int value) {
+      public static ParameterRangeTypeCase valueOf(int value) {
         return forNumber(value);
       }
 
-      public static ParameterRangeTypesCase forNumber(int value) {
+      public static ParameterRangeTypeCase forNumber(int value) {
         switch (value) {
           case 1: return CONTINUOUS_PARAMETER_RANGE;
           case 2: return INTEGER_PARAMETER_RANGE;
           case 3: return CATEGORICAL_PARAMETER_RANGE;
-          case 0: return PARAMETERRANGETYPES_NOT_SET;
+          case 0: return PARAMETERRANGETYPE_NOT_SET;
           default: return null;
         }
       }
@@ -2193,10 +2191,10 @@ public final class Parameterranges {
       }
     };
 
-    public ParameterRangeTypesCase
-    getParameterRangeTypesCase() {
-      return ParameterRangeTypesCase.forNumber(
-          parameterRangeTypesCase_);
+    public ParameterRangeTypeCase
+    getParameterRangeTypeCase() {
+      return ParameterRangeTypeCase.forNumber(
+          parameterRangeTypeCase_);
     }
 
     public static final int CONTINUOUS_PARAMETER_RANGE_FIELD_NUMBER = 1;
@@ -2204,14 +2202,14 @@ public final class Parameterranges {
      * <code>.flyteidl.plugins.sagemaker.ContinuousParameterRange continuous_parameter_range = 1;</code>
      */
     public boolean hasContinuousParameterRange() {
-      return parameterRangeTypesCase_ == 1;
+      return parameterRangeTypeCase_ == 1;
     }
     /**
      * <code>.flyteidl.plugins.sagemaker.ContinuousParameterRange continuous_parameter_range = 1;</code>
      */
     public flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange getContinuousParameterRange() {
-      if (parameterRangeTypesCase_ == 1) {
-         return (flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeTypes_;
+      if (parameterRangeTypeCase_ == 1) {
+         return (flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeType_;
       }
       return flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange.getDefaultInstance();
     }
@@ -2219,8 +2217,8 @@ public final class Parameterranges {
      * <code>.flyteidl.plugins.sagemaker.ContinuousParameterRange continuous_parameter_range = 1;</code>
      */
     public flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRangeOrBuilder getContinuousParameterRangeOrBuilder() {
-      if (parameterRangeTypesCase_ == 1) {
-         return (flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeTypes_;
+      if (parameterRangeTypeCase_ == 1) {
+         return (flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeType_;
       }
       return flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange.getDefaultInstance();
     }
@@ -2230,14 +2228,14 @@ public final class Parameterranges {
      * <code>.flyteidl.plugins.sagemaker.IntegerParameterRange integer_parameter_range = 2;</code>
      */
     public boolean hasIntegerParameterRange() {
-      return parameterRangeTypesCase_ == 2;
+      return parameterRangeTypeCase_ == 2;
     }
     /**
      * <code>.flyteidl.plugins.sagemaker.IntegerParameterRange integer_parameter_range = 2;</code>
      */
     public flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange getIntegerParameterRange() {
-      if (parameterRangeTypesCase_ == 2) {
-         return (flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeTypes_;
+      if (parameterRangeTypeCase_ == 2) {
+         return (flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeType_;
       }
       return flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange.getDefaultInstance();
     }
@@ -2245,8 +2243,8 @@ public final class Parameterranges {
      * <code>.flyteidl.plugins.sagemaker.IntegerParameterRange integer_parameter_range = 2;</code>
      */
     public flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRangeOrBuilder getIntegerParameterRangeOrBuilder() {
-      if (parameterRangeTypesCase_ == 2) {
-         return (flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeTypes_;
+      if (parameterRangeTypeCase_ == 2) {
+         return (flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeType_;
       }
       return flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange.getDefaultInstance();
     }
@@ -2256,14 +2254,14 @@ public final class Parameterranges {
      * <code>.flyteidl.plugins.sagemaker.CategoricalParameterRange categorical_parameter_range = 3;</code>
      */
     public boolean hasCategoricalParameterRange() {
-      return parameterRangeTypesCase_ == 3;
+      return parameterRangeTypeCase_ == 3;
     }
     /**
      * <code>.flyteidl.plugins.sagemaker.CategoricalParameterRange categorical_parameter_range = 3;</code>
      */
     public flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange getCategoricalParameterRange() {
-      if (parameterRangeTypesCase_ == 3) {
-         return (flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeTypes_;
+      if (parameterRangeTypeCase_ == 3) {
+         return (flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeType_;
       }
       return flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange.getDefaultInstance();
     }
@@ -2271,8 +2269,8 @@ public final class Parameterranges {
      * <code>.flyteidl.plugins.sagemaker.CategoricalParameterRange categorical_parameter_range = 3;</code>
      */
     public flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRangeOrBuilder getCategoricalParameterRangeOrBuilder() {
-      if (parameterRangeTypesCase_ == 3) {
-         return (flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeTypes_;
+      if (parameterRangeTypeCase_ == 3) {
+         return (flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeType_;
       }
       return flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange.getDefaultInstance();
     }
@@ -2291,14 +2289,14 @@ public final class Parameterranges {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (parameterRangeTypesCase_ == 1) {
-        output.writeMessage(1, (flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeTypes_);
+      if (parameterRangeTypeCase_ == 1) {
+        output.writeMessage(1, (flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeType_);
       }
-      if (parameterRangeTypesCase_ == 2) {
-        output.writeMessage(2, (flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeTypes_);
+      if (parameterRangeTypeCase_ == 2) {
+        output.writeMessage(2, (flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeType_);
       }
-      if (parameterRangeTypesCase_ == 3) {
-        output.writeMessage(3, (flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeTypes_);
+      if (parameterRangeTypeCase_ == 3) {
+        output.writeMessage(3, (flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeType_);
       }
       unknownFields.writeTo(output);
     }
@@ -2309,17 +2307,17 @@ public final class Parameterranges {
       if (size != -1) return size;
 
       size = 0;
-      if (parameterRangeTypesCase_ == 1) {
+      if (parameterRangeTypeCase_ == 1) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeTypes_);
+          .computeMessageSize(1, (flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeType_);
       }
-      if (parameterRangeTypesCase_ == 2) {
+      if (parameterRangeTypeCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeTypes_);
+          .computeMessageSize(2, (flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeType_);
       }
-      if (parameterRangeTypesCase_ == 3) {
+      if (parameterRangeTypeCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeTypes_);
+          .computeMessageSize(3, (flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2336,8 +2334,8 @@ public final class Parameterranges {
       }
       flyteidl.plugins.sagemaker.Parameterranges.ParameterRangeOneOf other = (flyteidl.plugins.sagemaker.Parameterranges.ParameterRangeOneOf) obj;
 
-      if (!getParameterRangeTypesCase().equals(other.getParameterRangeTypesCase())) return false;
-      switch (parameterRangeTypesCase_) {
+      if (!getParameterRangeTypeCase().equals(other.getParameterRangeTypeCase())) return false;
+      switch (parameterRangeTypeCase_) {
         case 1:
           if (!getContinuousParameterRange()
               .equals(other.getContinuousParameterRange())) return false;
@@ -2364,7 +2362,7 @@ public final class Parameterranges {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      switch (parameterRangeTypesCase_) {
+      switch (parameterRangeTypeCase_) {
         case 1:
           hash = (37 * hash) + CONTINUOUS_PARAMETER_RANGE_FIELD_NUMBER;
           hash = (53 * hash) + getContinuousParameterRange().hashCode();
@@ -2513,8 +2511,8 @@ public final class Parameterranges {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        parameterRangeTypesCase_ = 0;
-        parameterRangeTypes_ = null;
+        parameterRangeTypeCase_ = 0;
+        parameterRangeType_ = null;
         return this;
       }
 
@@ -2541,28 +2539,28 @@ public final class Parameterranges {
       @java.lang.Override
       public flyteidl.plugins.sagemaker.Parameterranges.ParameterRangeOneOf buildPartial() {
         flyteidl.plugins.sagemaker.Parameterranges.ParameterRangeOneOf result = new flyteidl.plugins.sagemaker.Parameterranges.ParameterRangeOneOf(this);
-        if (parameterRangeTypesCase_ == 1) {
+        if (parameterRangeTypeCase_ == 1) {
           if (continuousParameterRangeBuilder_ == null) {
-            result.parameterRangeTypes_ = parameterRangeTypes_;
+            result.parameterRangeType_ = parameterRangeType_;
           } else {
-            result.parameterRangeTypes_ = continuousParameterRangeBuilder_.build();
+            result.parameterRangeType_ = continuousParameterRangeBuilder_.build();
           }
         }
-        if (parameterRangeTypesCase_ == 2) {
+        if (parameterRangeTypeCase_ == 2) {
           if (integerParameterRangeBuilder_ == null) {
-            result.parameterRangeTypes_ = parameterRangeTypes_;
+            result.parameterRangeType_ = parameterRangeType_;
           } else {
-            result.parameterRangeTypes_ = integerParameterRangeBuilder_.build();
+            result.parameterRangeType_ = integerParameterRangeBuilder_.build();
           }
         }
-        if (parameterRangeTypesCase_ == 3) {
+        if (parameterRangeTypeCase_ == 3) {
           if (categoricalParameterRangeBuilder_ == null) {
-            result.parameterRangeTypes_ = parameterRangeTypes_;
+            result.parameterRangeType_ = parameterRangeType_;
           } else {
-            result.parameterRangeTypes_ = categoricalParameterRangeBuilder_.build();
+            result.parameterRangeType_ = categoricalParameterRangeBuilder_.build();
           }
         }
-        result.parameterRangeTypesCase_ = parameterRangeTypesCase_;
+        result.parameterRangeTypeCase_ = parameterRangeTypeCase_;
         onBuilt();
         return result;
       }
@@ -2611,7 +2609,7 @@ public final class Parameterranges {
 
       public Builder mergeFrom(flyteidl.plugins.sagemaker.Parameterranges.ParameterRangeOneOf other) {
         if (other == flyteidl.plugins.sagemaker.Parameterranges.ParameterRangeOneOf.getDefaultInstance()) return this;
-        switch (other.getParameterRangeTypesCase()) {
+        switch (other.getParameterRangeTypeCase()) {
           case CONTINUOUS_PARAMETER_RANGE: {
             mergeContinuousParameterRange(other.getContinuousParameterRange());
             break;
@@ -2624,7 +2622,7 @@ public final class Parameterranges {
             mergeCategoricalParameterRange(other.getCategoricalParameterRange());
             break;
           }
-          case PARAMETERRANGETYPES_NOT_SET: {
+          case PARAMETERRANGETYPE_NOT_SET: {
             break;
           }
         }
@@ -2656,17 +2654,17 @@ public final class Parameterranges {
         }
         return this;
       }
-      private int parameterRangeTypesCase_ = 0;
-      private java.lang.Object parameterRangeTypes_;
-      public ParameterRangeTypesCase
-          getParameterRangeTypesCase() {
-        return ParameterRangeTypesCase.forNumber(
-            parameterRangeTypesCase_);
+      private int parameterRangeTypeCase_ = 0;
+      private java.lang.Object parameterRangeType_;
+      public ParameterRangeTypeCase
+          getParameterRangeTypeCase() {
+        return ParameterRangeTypeCase.forNumber(
+            parameterRangeTypeCase_);
       }
 
-      public Builder clearParameterRangeTypes() {
-        parameterRangeTypesCase_ = 0;
-        parameterRangeTypes_ = null;
+      public Builder clearParameterRangeType() {
+        parameterRangeTypeCase_ = 0;
+        parameterRangeType_ = null;
         onChanged();
         return this;
       }
@@ -2678,19 +2676,19 @@ public final class Parameterranges {
        * <code>.flyteidl.plugins.sagemaker.ContinuousParameterRange continuous_parameter_range = 1;</code>
        */
       public boolean hasContinuousParameterRange() {
-        return parameterRangeTypesCase_ == 1;
+        return parameterRangeTypeCase_ == 1;
       }
       /**
        * <code>.flyteidl.plugins.sagemaker.ContinuousParameterRange continuous_parameter_range = 1;</code>
        */
       public flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange getContinuousParameterRange() {
         if (continuousParameterRangeBuilder_ == null) {
-          if (parameterRangeTypesCase_ == 1) {
-            return (flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeTypes_;
+          if (parameterRangeTypeCase_ == 1) {
+            return (flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeType_;
           }
           return flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange.getDefaultInstance();
         } else {
-          if (parameterRangeTypesCase_ == 1) {
+          if (parameterRangeTypeCase_ == 1) {
             return continuousParameterRangeBuilder_.getMessage();
           }
           return flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange.getDefaultInstance();
@@ -2704,12 +2702,12 @@ public final class Parameterranges {
           if (value == null) {
             throw new NullPointerException();
           }
-          parameterRangeTypes_ = value;
+          parameterRangeType_ = value;
           onChanged();
         } else {
           continuousParameterRangeBuilder_.setMessage(value);
         }
-        parameterRangeTypesCase_ = 1;
+        parameterRangeTypeCase_ = 1;
         return this;
       }
       /**
@@ -2718,12 +2716,12 @@ public final class Parameterranges {
       public Builder setContinuousParameterRange(
           flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange.Builder builderForValue) {
         if (continuousParameterRangeBuilder_ == null) {
-          parameterRangeTypes_ = builderForValue.build();
+          parameterRangeType_ = builderForValue.build();
           onChanged();
         } else {
           continuousParameterRangeBuilder_.setMessage(builderForValue.build());
         }
-        parameterRangeTypesCase_ = 1;
+        parameterRangeTypeCase_ = 1;
         return this;
       }
       /**
@@ -2731,21 +2729,21 @@ public final class Parameterranges {
        */
       public Builder mergeContinuousParameterRange(flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange value) {
         if (continuousParameterRangeBuilder_ == null) {
-          if (parameterRangeTypesCase_ == 1 &&
-              parameterRangeTypes_ != flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange.getDefaultInstance()) {
-            parameterRangeTypes_ = flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange.newBuilder((flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeTypes_)
+          if (parameterRangeTypeCase_ == 1 &&
+              parameterRangeType_ != flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange.getDefaultInstance()) {
+            parameterRangeType_ = flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange.newBuilder((flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeType_)
                 .mergeFrom(value).buildPartial();
           } else {
-            parameterRangeTypes_ = value;
+            parameterRangeType_ = value;
           }
           onChanged();
         } else {
-          if (parameterRangeTypesCase_ == 1) {
+          if (parameterRangeTypeCase_ == 1) {
             continuousParameterRangeBuilder_.mergeFrom(value);
           }
           continuousParameterRangeBuilder_.setMessage(value);
         }
-        parameterRangeTypesCase_ = 1;
+        parameterRangeTypeCase_ = 1;
         return this;
       }
       /**
@@ -2753,15 +2751,15 @@ public final class Parameterranges {
        */
       public Builder clearContinuousParameterRange() {
         if (continuousParameterRangeBuilder_ == null) {
-          if (parameterRangeTypesCase_ == 1) {
-            parameterRangeTypesCase_ = 0;
-            parameterRangeTypes_ = null;
+          if (parameterRangeTypeCase_ == 1) {
+            parameterRangeTypeCase_ = 0;
+            parameterRangeType_ = null;
             onChanged();
           }
         } else {
-          if (parameterRangeTypesCase_ == 1) {
-            parameterRangeTypesCase_ = 0;
-            parameterRangeTypes_ = null;
+          if (parameterRangeTypeCase_ == 1) {
+            parameterRangeTypeCase_ = 0;
+            parameterRangeType_ = null;
           }
           continuousParameterRangeBuilder_.clear();
         }
@@ -2777,11 +2775,11 @@ public final class Parameterranges {
        * <code>.flyteidl.plugins.sagemaker.ContinuousParameterRange continuous_parameter_range = 1;</code>
        */
       public flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRangeOrBuilder getContinuousParameterRangeOrBuilder() {
-        if ((parameterRangeTypesCase_ == 1) && (continuousParameterRangeBuilder_ != null)) {
+        if ((parameterRangeTypeCase_ == 1) && (continuousParameterRangeBuilder_ != null)) {
           return continuousParameterRangeBuilder_.getMessageOrBuilder();
         } else {
-          if (parameterRangeTypesCase_ == 1) {
-            return (flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeTypes_;
+          if (parameterRangeTypeCase_ == 1) {
+            return (flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeType_;
           }
           return flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange.getDefaultInstance();
         }
@@ -2793,17 +2791,17 @@ public final class Parameterranges {
           flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange, flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange.Builder, flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRangeOrBuilder> 
           getContinuousParameterRangeFieldBuilder() {
         if (continuousParameterRangeBuilder_ == null) {
-          if (!(parameterRangeTypesCase_ == 1)) {
-            parameterRangeTypes_ = flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange.getDefaultInstance();
+          if (!(parameterRangeTypeCase_ == 1)) {
+            parameterRangeType_ = flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange.getDefaultInstance();
           }
           continuousParameterRangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange, flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange.Builder, flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRangeOrBuilder>(
-                  (flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeTypes_,
+                  (flyteidl.plugins.sagemaker.Parameterranges.ContinuousParameterRange) parameterRangeType_,
                   getParentForChildren(),
                   isClean());
-          parameterRangeTypes_ = null;
+          parameterRangeType_ = null;
         }
-        parameterRangeTypesCase_ = 1;
+        parameterRangeTypeCase_ = 1;
         onChanged();;
         return continuousParameterRangeBuilder_;
       }
@@ -2814,19 +2812,19 @@ public final class Parameterranges {
        * <code>.flyteidl.plugins.sagemaker.IntegerParameterRange integer_parameter_range = 2;</code>
        */
       public boolean hasIntegerParameterRange() {
-        return parameterRangeTypesCase_ == 2;
+        return parameterRangeTypeCase_ == 2;
       }
       /**
        * <code>.flyteidl.plugins.sagemaker.IntegerParameterRange integer_parameter_range = 2;</code>
        */
       public flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange getIntegerParameterRange() {
         if (integerParameterRangeBuilder_ == null) {
-          if (parameterRangeTypesCase_ == 2) {
-            return (flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeTypes_;
+          if (parameterRangeTypeCase_ == 2) {
+            return (flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeType_;
           }
           return flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange.getDefaultInstance();
         } else {
-          if (parameterRangeTypesCase_ == 2) {
+          if (parameterRangeTypeCase_ == 2) {
             return integerParameterRangeBuilder_.getMessage();
           }
           return flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange.getDefaultInstance();
@@ -2840,12 +2838,12 @@ public final class Parameterranges {
           if (value == null) {
             throw new NullPointerException();
           }
-          parameterRangeTypes_ = value;
+          parameterRangeType_ = value;
           onChanged();
         } else {
           integerParameterRangeBuilder_.setMessage(value);
         }
-        parameterRangeTypesCase_ = 2;
+        parameterRangeTypeCase_ = 2;
         return this;
       }
       /**
@@ -2854,12 +2852,12 @@ public final class Parameterranges {
       public Builder setIntegerParameterRange(
           flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange.Builder builderForValue) {
         if (integerParameterRangeBuilder_ == null) {
-          parameterRangeTypes_ = builderForValue.build();
+          parameterRangeType_ = builderForValue.build();
           onChanged();
         } else {
           integerParameterRangeBuilder_.setMessage(builderForValue.build());
         }
-        parameterRangeTypesCase_ = 2;
+        parameterRangeTypeCase_ = 2;
         return this;
       }
       /**
@@ -2867,21 +2865,21 @@ public final class Parameterranges {
        */
       public Builder mergeIntegerParameterRange(flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange value) {
         if (integerParameterRangeBuilder_ == null) {
-          if (parameterRangeTypesCase_ == 2 &&
-              parameterRangeTypes_ != flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange.getDefaultInstance()) {
-            parameterRangeTypes_ = flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange.newBuilder((flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeTypes_)
+          if (parameterRangeTypeCase_ == 2 &&
+              parameterRangeType_ != flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange.getDefaultInstance()) {
+            parameterRangeType_ = flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange.newBuilder((flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeType_)
                 .mergeFrom(value).buildPartial();
           } else {
-            parameterRangeTypes_ = value;
+            parameterRangeType_ = value;
           }
           onChanged();
         } else {
-          if (parameterRangeTypesCase_ == 2) {
+          if (parameterRangeTypeCase_ == 2) {
             integerParameterRangeBuilder_.mergeFrom(value);
           }
           integerParameterRangeBuilder_.setMessage(value);
         }
-        parameterRangeTypesCase_ = 2;
+        parameterRangeTypeCase_ = 2;
         return this;
       }
       /**
@@ -2889,15 +2887,15 @@ public final class Parameterranges {
        */
       public Builder clearIntegerParameterRange() {
         if (integerParameterRangeBuilder_ == null) {
-          if (parameterRangeTypesCase_ == 2) {
-            parameterRangeTypesCase_ = 0;
-            parameterRangeTypes_ = null;
+          if (parameterRangeTypeCase_ == 2) {
+            parameterRangeTypeCase_ = 0;
+            parameterRangeType_ = null;
             onChanged();
           }
         } else {
-          if (parameterRangeTypesCase_ == 2) {
-            parameterRangeTypesCase_ = 0;
-            parameterRangeTypes_ = null;
+          if (parameterRangeTypeCase_ == 2) {
+            parameterRangeTypeCase_ = 0;
+            parameterRangeType_ = null;
           }
           integerParameterRangeBuilder_.clear();
         }
@@ -2913,11 +2911,11 @@ public final class Parameterranges {
        * <code>.flyteidl.plugins.sagemaker.IntegerParameterRange integer_parameter_range = 2;</code>
        */
       public flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRangeOrBuilder getIntegerParameterRangeOrBuilder() {
-        if ((parameterRangeTypesCase_ == 2) && (integerParameterRangeBuilder_ != null)) {
+        if ((parameterRangeTypeCase_ == 2) && (integerParameterRangeBuilder_ != null)) {
           return integerParameterRangeBuilder_.getMessageOrBuilder();
         } else {
-          if (parameterRangeTypesCase_ == 2) {
-            return (flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeTypes_;
+          if (parameterRangeTypeCase_ == 2) {
+            return (flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeType_;
           }
           return flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange.getDefaultInstance();
         }
@@ -2929,17 +2927,17 @@ public final class Parameterranges {
           flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange, flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange.Builder, flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRangeOrBuilder> 
           getIntegerParameterRangeFieldBuilder() {
         if (integerParameterRangeBuilder_ == null) {
-          if (!(parameterRangeTypesCase_ == 2)) {
-            parameterRangeTypes_ = flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange.getDefaultInstance();
+          if (!(parameterRangeTypeCase_ == 2)) {
+            parameterRangeType_ = flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange.getDefaultInstance();
           }
           integerParameterRangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange, flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange.Builder, flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRangeOrBuilder>(
-                  (flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeTypes_,
+                  (flyteidl.plugins.sagemaker.Parameterranges.IntegerParameterRange) parameterRangeType_,
                   getParentForChildren(),
                   isClean());
-          parameterRangeTypes_ = null;
+          parameterRangeType_ = null;
         }
-        parameterRangeTypesCase_ = 2;
+        parameterRangeTypeCase_ = 2;
         onChanged();;
         return integerParameterRangeBuilder_;
       }
@@ -2950,19 +2948,19 @@ public final class Parameterranges {
        * <code>.flyteidl.plugins.sagemaker.CategoricalParameterRange categorical_parameter_range = 3;</code>
        */
       public boolean hasCategoricalParameterRange() {
-        return parameterRangeTypesCase_ == 3;
+        return parameterRangeTypeCase_ == 3;
       }
       /**
        * <code>.flyteidl.plugins.sagemaker.CategoricalParameterRange categorical_parameter_range = 3;</code>
        */
       public flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange getCategoricalParameterRange() {
         if (categoricalParameterRangeBuilder_ == null) {
-          if (parameterRangeTypesCase_ == 3) {
-            return (flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeTypes_;
+          if (parameterRangeTypeCase_ == 3) {
+            return (flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeType_;
           }
           return flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange.getDefaultInstance();
         } else {
-          if (parameterRangeTypesCase_ == 3) {
+          if (parameterRangeTypeCase_ == 3) {
             return categoricalParameterRangeBuilder_.getMessage();
           }
           return flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange.getDefaultInstance();
@@ -2976,12 +2974,12 @@ public final class Parameterranges {
           if (value == null) {
             throw new NullPointerException();
           }
-          parameterRangeTypes_ = value;
+          parameterRangeType_ = value;
           onChanged();
         } else {
           categoricalParameterRangeBuilder_.setMessage(value);
         }
-        parameterRangeTypesCase_ = 3;
+        parameterRangeTypeCase_ = 3;
         return this;
       }
       /**
@@ -2990,12 +2988,12 @@ public final class Parameterranges {
       public Builder setCategoricalParameterRange(
           flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange.Builder builderForValue) {
         if (categoricalParameterRangeBuilder_ == null) {
-          parameterRangeTypes_ = builderForValue.build();
+          parameterRangeType_ = builderForValue.build();
           onChanged();
         } else {
           categoricalParameterRangeBuilder_.setMessage(builderForValue.build());
         }
-        parameterRangeTypesCase_ = 3;
+        parameterRangeTypeCase_ = 3;
         return this;
       }
       /**
@@ -3003,21 +3001,21 @@ public final class Parameterranges {
        */
       public Builder mergeCategoricalParameterRange(flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange value) {
         if (categoricalParameterRangeBuilder_ == null) {
-          if (parameterRangeTypesCase_ == 3 &&
-              parameterRangeTypes_ != flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange.getDefaultInstance()) {
-            parameterRangeTypes_ = flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange.newBuilder((flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeTypes_)
+          if (parameterRangeTypeCase_ == 3 &&
+              parameterRangeType_ != flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange.getDefaultInstance()) {
+            parameterRangeType_ = flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange.newBuilder((flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeType_)
                 .mergeFrom(value).buildPartial();
           } else {
-            parameterRangeTypes_ = value;
+            parameterRangeType_ = value;
           }
           onChanged();
         } else {
-          if (parameterRangeTypesCase_ == 3) {
+          if (parameterRangeTypeCase_ == 3) {
             categoricalParameterRangeBuilder_.mergeFrom(value);
           }
           categoricalParameterRangeBuilder_.setMessage(value);
         }
-        parameterRangeTypesCase_ = 3;
+        parameterRangeTypeCase_ = 3;
         return this;
       }
       /**
@@ -3025,15 +3023,15 @@ public final class Parameterranges {
        */
       public Builder clearCategoricalParameterRange() {
         if (categoricalParameterRangeBuilder_ == null) {
-          if (parameterRangeTypesCase_ == 3) {
-            parameterRangeTypesCase_ = 0;
-            parameterRangeTypes_ = null;
+          if (parameterRangeTypeCase_ == 3) {
+            parameterRangeTypeCase_ = 0;
+            parameterRangeType_ = null;
             onChanged();
           }
         } else {
-          if (parameterRangeTypesCase_ == 3) {
-            parameterRangeTypesCase_ = 0;
-            parameterRangeTypes_ = null;
+          if (parameterRangeTypeCase_ == 3) {
+            parameterRangeTypeCase_ = 0;
+            parameterRangeType_ = null;
           }
           categoricalParameterRangeBuilder_.clear();
         }
@@ -3049,11 +3047,11 @@ public final class Parameterranges {
        * <code>.flyteidl.plugins.sagemaker.CategoricalParameterRange categorical_parameter_range = 3;</code>
        */
       public flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRangeOrBuilder getCategoricalParameterRangeOrBuilder() {
-        if ((parameterRangeTypesCase_ == 3) && (categoricalParameterRangeBuilder_ != null)) {
+        if ((parameterRangeTypeCase_ == 3) && (categoricalParameterRangeBuilder_ != null)) {
           return categoricalParameterRangeBuilder_.getMessageOrBuilder();
         } else {
-          if (parameterRangeTypesCase_ == 3) {
-            return (flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeTypes_;
+          if (parameterRangeTypeCase_ == 3) {
+            return (flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeType_;
           }
           return flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange.getDefaultInstance();
         }
@@ -3065,17 +3063,17 @@ public final class Parameterranges {
           flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange, flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange.Builder, flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRangeOrBuilder> 
           getCategoricalParameterRangeFieldBuilder() {
         if (categoricalParameterRangeBuilder_ == null) {
-          if (!(parameterRangeTypesCase_ == 3)) {
-            parameterRangeTypes_ = flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange.getDefaultInstance();
+          if (!(parameterRangeTypeCase_ == 3)) {
+            parameterRangeType_ = flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange.getDefaultInstance();
           }
           categoricalParameterRangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange, flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange.Builder, flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRangeOrBuilder>(
-                  (flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeTypes_,
+                  (flyteidl.plugins.sagemaker.Parameterranges.CategoricalParameterRange) parameterRangeType_,
                   getParentForChildren(),
                   isClean());
-          parameterRangeTypes_ = null;
+          parameterRangeType_ = null;
         }
-        parameterRangeTypesCase_ = 3;
+        parameterRangeTypeCase_ = 3;
         onChanged();;
         return categoricalParameterRangeBuilder_;
       }
@@ -3898,28 +3896,28 @@ public final class Parameterranges {
       "\030\001 \001(\001\022\021\n\tmin_value\030\002 \001(\001\022K\n\014scaling_typ" +
       "e\030\003 \001(\01625.flyteidl.plugins.sagemaker.Hyp" +
       "erparameterScalingType\"\212\001\n\025IntegerParame" +
-      "terRange\022\021\n\tmax_value\030\001 \001(\002\022\021\n\tmin_value" +
-      "\030\002 \001(\002\022K\n\014scaling_type\030\003 \001(\01625.flyteidl." +
+      "terRange\022\021\n\tmax_value\030\001 \001(\003\022\021\n\tmin_value" +
+      "\030\002 \001(\003\022K\n\014scaling_type\030\003 \001(\01625.flyteidl." +
       "plugins.sagemaker.HyperparameterScalingT" +
       "ype\"+\n\031CategoricalParameterRange\022\016\n\006valu" +
-      "es\030\001 \003(\t\"\274\002\n\023ParameterRangeOneOf\022Z\n\032cont" +
+      "es\030\001 \003(\t\"\275\002\n\023ParameterRangeOneOf\022Z\n\032cont" +
       "inuous_parameter_range\030\001 \001(\01324.flyteidl." +
       "plugins.sagemaker.ContinuousParameterRan" +
       "geH\000\022T\n\027integer_parameter_range\030\002 \001(\01321." +
       "flyteidl.plugins.sagemaker.IntegerParame" +
       "terRangeH\000\022\\\n\033categorical_parameter_rang" +
       "e\030\003 \001(\01325.flyteidl.plugins.sagemaker.Cat" +
-      "egoricalParameterRangeH\000B\025\n\023ParameterRan" +
-      "geTypes\"\335\001\n\017ParameterRanges\022_\n\023parameter" +
-      "_range_map\030\001 \003(\0132B.flyteidl.plugins.sage" +
-      "maker.ParameterRanges.ParameterRangeMapE" +
-      "ntry\032i\n\026ParameterRangeMapEntry\022\013\n\003key\030\001 " +
-      "\001(\t\022>\n\005value\030\002 \001(\0132/.flyteidl.plugins.sa" +
-      "gemaker.ParameterRangeOneOf:\0028\001*Z\n\031Hyper" +
-      "parameterScalingType\022\010\n\004AUTO\020\000\022\n\n\006LINEAR" +
-      "\020\001\022\017\n\013LOGARITHMIC\020\002\022\026\n\022REVERSELOGARITHMI" +
-      "C\020\003B5Z3github.com/lyft/flyteidl/gen/pb-g" +
-      "o/flyteidl/pluginsb\006proto3"
+      "egoricalParameterRangeH\000B\026\n\024parameter_ra" +
+      "nge_type\"\335\001\n\017ParameterRanges\022_\n\023paramete" +
+      "r_range_map\030\001 \003(\0132B.flyteidl.plugins.sag" +
+      "emaker.ParameterRanges.ParameterRangeMap" +
+      "Entry\032i\n\026ParameterRangeMapEntry\022\013\n\003key\030\001" +
+      " \001(\t\022>\n\005value\030\002 \001(\0132/.flyteidl.plugins.s" +
+      "agemaker.ParameterRangeOneOf:\0028\001*Z\n\031Hype" +
+      "rparameterScalingType\022\010\n\004AUTO\020\000\022\n\n\006LINEA" +
+      "R\020\001\022\017\n\013LOGARITHMIC\020\002\022\026\n\022REVERSELOGARITHM" +
+      "IC\020\003B5Z3github.com/lyft/flyteidl/gen/pb-" +
+      "go/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3956,7 +3954,7 @@ public final class Parameterranges {
     internal_static_flyteidl_plugins_sagemaker_ParameterRangeOneOf_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_ParameterRangeOneOf_descriptor,
-        new java.lang.String[] { "ContinuousParameterRange", "IntegerParameterRange", "CategoricalParameterRange", "ParameterRangeTypes", });
+        new java.lang.String[] { "ContinuousParameterRange", "IntegerParameterRange", "CategoricalParameterRange", "ParameterRangeType", });
     internal_static_flyteidl_plugins_sagemaker_ParameterRanges_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_plugins_sagemaker_ParameterRanges_fieldAccessorTable = new

@@ -257,7 +257,7 @@ func (m *ParameterRangeOneOf) Validate() error {
 		return nil
 	}
 
-	switch m.ParameterRangeTypes.(type) {
+	switch m.ParameterRangeType.(type) {
 
 	case *ParameterRangeOneOf_ContinuousParameterRange:
 
