@@ -60,6 +60,7 @@ message NodeExecutionEvent {
     // on the node type
     oneof target_metadata {
         WorkflowNodeMetadata workflow_node_metadata = 8;
+        TaskNodeMetadata task_node_metadata = 10;
     }
 
     // Specifies which task (if any) launched this node.
@@ -70,6 +71,27 @@ message NodeExecutionEvent {
 message WorkflowNodeMetadata {
     core.WorkflowExecutionIdentifier execution_id = 1;
 }
+
+message FlyteCatalogMetadata {
+    string dataset_id = 1;
+    string artifact_tag = 2;
+}
+
+message TaskNodeMetadata {
+    bool cache_hit = 1;
+    
+    // TODO lets decide one of these
+
+    // Option 1: Generic metadata holder. Able to handle other discovery services. Not sure if this has value!
+    map<string, string> catalog_metadata = 2;
+
+    // Option 2: Specific metadata holder
+    // This would help in linking with Basemap explorer directly
+    oneof catalog_metadata {
+        FlyteCatalogMetadata catalog_key = 3;
+    }
+}
+
 
 message ParentTaskExecutionMetadata {
     core.TaskExecutionIdentifier id = 1;
