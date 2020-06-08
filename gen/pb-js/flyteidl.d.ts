@@ -7489,9 +7489,6 @@ export namespace flyteidl {
 
             /** ExecutionSpec authRole */
             authRole?: (flyteidl.admin.IAuthRole|null);
-
-            /** ExecutionSpec workflowOverrides */
-            workflowOverrides?: (flyteidl.admin.IWorkflowTemplateOverrides|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -7526,9 +7523,6 @@ export namespace flyteidl {
 
             /** ExecutionSpec authRole. */
             public authRole?: (flyteidl.admin.IAuthRole|null);
-
-            /** ExecutionSpec workflowOverrides. */
-            public workflowOverrides?: (flyteidl.admin.IWorkflowTemplateOverrides|null);
 
             /** ExecutionSpec notificationOverrides. */
             public notificationOverrides?: ("notifications"|"disableAll");
@@ -8073,58 +8067,6 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a WorkflowTemplateOverrides. */
-        interface IWorkflowTemplateOverrides {
-
-            /** WorkflowTemplateOverrides metadata */
-            metadata?: (flyteidl.core.IWorkflowMetadata|null);
-        }
-
-        /** Represents a WorkflowTemplateOverrides. */
-        class WorkflowTemplateOverrides implements IWorkflowTemplateOverrides {
-
-            /**
-             * Constructs a new WorkflowTemplateOverrides.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IWorkflowTemplateOverrides);
-
-            /** WorkflowTemplateOverrides metadata. */
-            public metadata?: (flyteidl.core.IWorkflowMetadata|null);
-
-            /**
-             * Creates a new WorkflowTemplateOverrides instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns WorkflowTemplateOverrides instance
-             */
-            public static create(properties?: flyteidl.admin.IWorkflowTemplateOverrides): flyteidl.admin.WorkflowTemplateOverrides;
-
-            /**
-             * Encodes the specified WorkflowTemplateOverrides message. Does not implicitly {@link flyteidl.admin.WorkflowTemplateOverrides.verify|verify} messages.
-             * @param message WorkflowTemplateOverrides message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IWorkflowTemplateOverrides, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a WorkflowTemplateOverrides message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns WorkflowTemplateOverrides
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.WorkflowTemplateOverrides;
-
-            /**
-             * Verifies a WorkflowTemplateOverrides message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of a LaunchPlanSpec. */
         interface ILaunchPlanSpec {
 
@@ -8154,9 +8096,6 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec authRole */
             authRole?: (flyteidl.admin.IAuthRole|null);
-
-            /** LaunchPlanSpec workflowOverrides */
-            workflowOverrides?: (flyteidl.admin.IWorkflowTemplateOverrides|null);
         }
 
         /** Represents a LaunchPlanSpec. */
@@ -8194,9 +8133,6 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec authRole. */
             public authRole?: (flyteidl.admin.IAuthRole|null);
-
-            /** LaunchPlanSpec workflowOverrides. */
-            public workflowOverrides?: (flyteidl.admin.IWorkflowTemplateOverrides|null);
 
             /**
              * Creates a new LaunchPlanSpec instance using the specified properties.

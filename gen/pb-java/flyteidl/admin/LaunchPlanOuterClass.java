@@ -4269,710 +4269,6 @@ public final class LaunchPlanOuterClass {
 
   }
 
-  public interface WorkflowTemplateOverridesOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.admin.WorkflowTemplateOverrides)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * If a field is set in metadata, it'll override the one from the original workflow template.
-     * If it's not-set, the system will continue to use the value from the original workflow template.
-     * TODO: Should we just require a full replacement of metadata to avoid having to deal with merges?
-     * </pre>
-     *
-     * <code>.flyteidl.core.WorkflowMetadata metadata = 1;</code>
-     */
-    boolean hasMetadata();
-    /**
-     * <pre>
-     * If a field is set in metadata, it'll override the one from the original workflow template.
-     * If it's not-set, the system will continue to use the value from the original workflow template.
-     * TODO: Should we just require a full replacement of metadata to avoid having to deal with merges?
-     * </pre>
-     *
-     * <code>.flyteidl.core.WorkflowMetadata metadata = 1;</code>
-     */
-    flyteidl.core.Workflow.WorkflowMetadata getMetadata();
-    /**
-     * <pre>
-     * If a field is set in metadata, it'll override the one from the original workflow template.
-     * If it's not-set, the system will continue to use the value from the original workflow template.
-     * TODO: Should we just require a full replacement of metadata to avoid having to deal with merges?
-     * </pre>
-     *
-     * <code>.flyteidl.core.WorkflowMetadata metadata = 1;</code>
-     */
-    flyteidl.core.Workflow.WorkflowMetadataOrBuilder getMetadataOrBuilder();
-  }
-  /**
-   * <pre>
-   * Defines allowed overrides for the workflow template.
-   * </pre>
-   *
-   * Protobuf type {@code flyteidl.admin.WorkflowTemplateOverrides}
-   */
-  public  static final class WorkflowTemplateOverrides extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.WorkflowTemplateOverrides)
-      WorkflowTemplateOverridesOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use WorkflowTemplateOverrides.newBuilder() to construct.
-    private WorkflowTemplateOverrides(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private WorkflowTemplateOverrides() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private WorkflowTemplateOverrides(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              flyteidl.core.Workflow.WorkflowMetadata.Builder subBuilder = null;
-              if (metadata_ != null) {
-                subBuilder = metadata_.toBuilder();
-              }
-              metadata_ = input.readMessage(flyteidl.core.Workflow.WorkflowMetadata.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(metadata_);
-                metadata_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return flyteidl.admin.LaunchPlanOuterClass.internal_static_flyteidl_admin_WorkflowTemplateOverrides_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return flyteidl.admin.LaunchPlanOuterClass.internal_static_flyteidl_admin_WorkflowTemplateOverrides_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.class, flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.Builder.class);
-    }
-
-    public static final int METADATA_FIELD_NUMBER = 1;
-    private flyteidl.core.Workflow.WorkflowMetadata metadata_;
-    /**
-     * <pre>
-     * If a field is set in metadata, it'll override the one from the original workflow template.
-     * If it's not-set, the system will continue to use the value from the original workflow template.
-     * TODO: Should we just require a full replacement of metadata to avoid having to deal with merges?
-     * </pre>
-     *
-     * <code>.flyteidl.core.WorkflowMetadata metadata = 1;</code>
-     */
-    public boolean hasMetadata() {
-      return metadata_ != null;
-    }
-    /**
-     * <pre>
-     * If a field is set in metadata, it'll override the one from the original workflow template.
-     * If it's not-set, the system will continue to use the value from the original workflow template.
-     * TODO: Should we just require a full replacement of metadata to avoid having to deal with merges?
-     * </pre>
-     *
-     * <code>.flyteidl.core.WorkflowMetadata metadata = 1;</code>
-     */
-    public flyteidl.core.Workflow.WorkflowMetadata getMetadata() {
-      return metadata_ == null ? flyteidl.core.Workflow.WorkflowMetadata.getDefaultInstance() : metadata_;
-    }
-    /**
-     * <pre>
-     * If a field is set in metadata, it'll override the one from the original workflow template.
-     * If it's not-set, the system will continue to use the value from the original workflow template.
-     * TODO: Should we just require a full replacement of metadata to avoid having to deal with merges?
-     * </pre>
-     *
-     * <code>.flyteidl.core.WorkflowMetadata metadata = 1;</code>
-     */
-    public flyteidl.core.Workflow.WorkflowMetadataOrBuilder getMetadataOrBuilder() {
-      return getMetadata();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (metadata_ != null) {
-        output.writeMessage(1, getMetadata());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (metadata_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getMetadata());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides)) {
-        return super.equals(obj);
-      }
-      flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides other = (flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides) obj;
-
-      if (hasMetadata() != other.hasMetadata()) return false;
-      if (hasMetadata()) {
-        if (!getMetadata()
-            .equals(other.getMetadata())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasMetadata()) {
-        hash = (37 * hash) + METADATA_FIELD_NUMBER;
-        hash = (53 * hash) + getMetadata().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Defines allowed overrides for the workflow template.
-     * </pre>
-     *
-     * Protobuf type {@code flyteidl.admin.WorkflowTemplateOverrides}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.WorkflowTemplateOverrides)
-        flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverridesOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return flyteidl.admin.LaunchPlanOuterClass.internal_static_flyteidl_admin_WorkflowTemplateOverrides_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return flyteidl.admin.LaunchPlanOuterClass.internal_static_flyteidl_admin_WorkflowTemplateOverrides_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.class, flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.Builder.class);
-      }
-
-      // Construct using flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (metadataBuilder_ == null) {
-          metadata_ = null;
-        } else {
-          metadata_ = null;
-          metadataBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return flyteidl.admin.LaunchPlanOuterClass.internal_static_flyteidl_admin_WorkflowTemplateOverrides_descriptor;
-      }
-
-      @java.lang.Override
-      public flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides getDefaultInstanceForType() {
-        return flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides build() {
-        flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides buildPartial() {
-        flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides result = new flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides(this);
-        if (metadataBuilder_ == null) {
-          result.metadata_ = metadata_;
-        } else {
-          result.metadata_ = metadataBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides) {
-          return mergeFrom((flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides other) {
-        if (other == flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.getDefaultInstance()) return this;
-        if (other.hasMetadata()) {
-          mergeMetadata(other.getMetadata());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private flyteidl.core.Workflow.WorkflowMetadata metadata_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Workflow.WorkflowMetadata, flyteidl.core.Workflow.WorkflowMetadata.Builder, flyteidl.core.Workflow.WorkflowMetadataOrBuilder> metadataBuilder_;
-      /**
-       * <pre>
-       * If a field is set in metadata, it'll override the one from the original workflow template.
-       * If it's not-set, the system will continue to use the value from the original workflow template.
-       * TODO: Should we just require a full replacement of metadata to avoid having to deal with merges?
-       * </pre>
-       *
-       * <code>.flyteidl.core.WorkflowMetadata metadata = 1;</code>
-       */
-      public boolean hasMetadata() {
-        return metadataBuilder_ != null || metadata_ != null;
-      }
-      /**
-       * <pre>
-       * If a field is set in metadata, it'll override the one from the original workflow template.
-       * If it's not-set, the system will continue to use the value from the original workflow template.
-       * TODO: Should we just require a full replacement of metadata to avoid having to deal with merges?
-       * </pre>
-       *
-       * <code>.flyteidl.core.WorkflowMetadata metadata = 1;</code>
-       */
-      public flyteidl.core.Workflow.WorkflowMetadata getMetadata() {
-        if (metadataBuilder_ == null) {
-          return metadata_ == null ? flyteidl.core.Workflow.WorkflowMetadata.getDefaultInstance() : metadata_;
-        } else {
-          return metadataBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * If a field is set in metadata, it'll override the one from the original workflow template.
-       * If it's not-set, the system will continue to use the value from the original workflow template.
-       * TODO: Should we just require a full replacement of metadata to avoid having to deal with merges?
-       * </pre>
-       *
-       * <code>.flyteidl.core.WorkflowMetadata metadata = 1;</code>
-       */
-      public Builder setMetadata(flyteidl.core.Workflow.WorkflowMetadata value) {
-        if (metadataBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          metadata_ = value;
-          onChanged();
-        } else {
-          metadataBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * If a field is set in metadata, it'll override the one from the original workflow template.
-       * If it's not-set, the system will continue to use the value from the original workflow template.
-       * TODO: Should we just require a full replacement of metadata to avoid having to deal with merges?
-       * </pre>
-       *
-       * <code>.flyteidl.core.WorkflowMetadata metadata = 1;</code>
-       */
-      public Builder setMetadata(
-          flyteidl.core.Workflow.WorkflowMetadata.Builder builderForValue) {
-        if (metadataBuilder_ == null) {
-          metadata_ = builderForValue.build();
-          onChanged();
-        } else {
-          metadataBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * If a field is set in metadata, it'll override the one from the original workflow template.
-       * If it's not-set, the system will continue to use the value from the original workflow template.
-       * TODO: Should we just require a full replacement of metadata to avoid having to deal with merges?
-       * </pre>
-       *
-       * <code>.flyteidl.core.WorkflowMetadata metadata = 1;</code>
-       */
-      public Builder mergeMetadata(flyteidl.core.Workflow.WorkflowMetadata value) {
-        if (metadataBuilder_ == null) {
-          if (metadata_ != null) {
-            metadata_ =
-              flyteidl.core.Workflow.WorkflowMetadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
-          } else {
-            metadata_ = value;
-          }
-          onChanged();
-        } else {
-          metadataBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * If a field is set in metadata, it'll override the one from the original workflow template.
-       * If it's not-set, the system will continue to use the value from the original workflow template.
-       * TODO: Should we just require a full replacement of metadata to avoid having to deal with merges?
-       * </pre>
-       *
-       * <code>.flyteidl.core.WorkflowMetadata metadata = 1;</code>
-       */
-      public Builder clearMetadata() {
-        if (metadataBuilder_ == null) {
-          metadata_ = null;
-          onChanged();
-        } else {
-          metadata_ = null;
-          metadataBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * If a field is set in metadata, it'll override the one from the original workflow template.
-       * If it's not-set, the system will continue to use the value from the original workflow template.
-       * TODO: Should we just require a full replacement of metadata to avoid having to deal with merges?
-       * </pre>
-       *
-       * <code>.flyteidl.core.WorkflowMetadata metadata = 1;</code>
-       */
-      public flyteidl.core.Workflow.WorkflowMetadata.Builder getMetadataBuilder() {
-        
-        onChanged();
-        return getMetadataFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * If a field is set in metadata, it'll override the one from the original workflow template.
-       * If it's not-set, the system will continue to use the value from the original workflow template.
-       * TODO: Should we just require a full replacement of metadata to avoid having to deal with merges?
-       * </pre>
-       *
-       * <code>.flyteidl.core.WorkflowMetadata metadata = 1;</code>
-       */
-      public flyteidl.core.Workflow.WorkflowMetadataOrBuilder getMetadataOrBuilder() {
-        if (metadataBuilder_ != null) {
-          return metadataBuilder_.getMessageOrBuilder();
-        } else {
-          return metadata_ == null ?
-              flyteidl.core.Workflow.WorkflowMetadata.getDefaultInstance() : metadata_;
-        }
-      }
-      /**
-       * <pre>
-       * If a field is set in metadata, it'll override the one from the original workflow template.
-       * If it's not-set, the system will continue to use the value from the original workflow template.
-       * TODO: Should we just require a full replacement of metadata to avoid having to deal with merges?
-       * </pre>
-       *
-       * <code>.flyteidl.core.WorkflowMetadata metadata = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Workflow.WorkflowMetadata, flyteidl.core.Workflow.WorkflowMetadata.Builder, flyteidl.core.Workflow.WorkflowMetadataOrBuilder> 
-          getMetadataFieldBuilder() {
-        if (metadataBuilder_ == null) {
-          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.Workflow.WorkflowMetadata, flyteidl.core.Workflow.WorkflowMetadata.Builder, flyteidl.core.Workflow.WorkflowMetadataOrBuilder>(
-                  getMetadata(),
-                  getParentForChildren(),
-                  isClean());
-          metadata_ = null;
-        }
-        return metadataBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:flyteidl.admin.WorkflowTemplateOverrides)
-    }
-
-    // @@protoc_insertion_point(class_scope:flyteidl.admin.WorkflowTemplateOverrides)
-    private static final flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides();
-    }
-
-    public static flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<WorkflowTemplateOverrides>
-        PARSER = new com.google.protobuf.AbstractParser<WorkflowTemplateOverrides>() {
-      @java.lang.Override
-      public WorkflowTemplateOverrides parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WorkflowTemplateOverrides(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<WorkflowTemplateOverrides> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<WorkflowTemplateOverrides> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface LaunchPlanSpecOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.admin.LaunchPlanSpec)
       com.google.protobuf.MessageOrBuilder {
@@ -5182,31 +4478,6 @@ public final class LaunchPlanOuterClass {
      * <code>.flyteidl.admin.AuthRole auth_role = 9;</code>
      */
     flyteidl.admin.Common.AuthRoleOrBuilder getAuthRoleOrBuilder();
-
-    /**
-     * <pre>
-     * Override allowed fields from the original workflow template.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 10;</code>
-     */
-    boolean hasWorkflowOverrides();
-    /**
-     * <pre>
-     * Override allowed fields from the original workflow template.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 10;</code>
-     */
-    flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides getWorkflowOverrides();
-    /**
-     * <pre>
-     * Override allowed fields from the original workflow template.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 10;</code>
-     */
-    flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverridesOrBuilder getWorkflowOverridesOrBuilder();
   }
   /**
    * <pre>
@@ -5358,19 +4629,6 @@ public final class LaunchPlanOuterClass {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(authRole_);
                 authRole_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 82: {
-              flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.Builder subBuilder = null;
-              if (workflowOverrides_ != null) {
-                subBuilder = workflowOverrides_.toBuilder();
-              }
-              workflowOverrides_ = input.readMessage(flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(workflowOverrides_);
-                workflowOverrides_ = subBuilder.buildPartial();
               }
 
               break;
@@ -5701,39 +4959,6 @@ public final class LaunchPlanOuterClass {
       return getAuthRole();
     }
 
-    public static final int WORKFLOW_OVERRIDES_FIELD_NUMBER = 10;
-    private flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides workflowOverrides_;
-    /**
-     * <pre>
-     * Override allowed fields from the original workflow template.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 10;</code>
-     */
-    public boolean hasWorkflowOverrides() {
-      return workflowOverrides_ != null;
-    }
-    /**
-     * <pre>
-     * Override allowed fields from the original workflow template.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 10;</code>
-     */
-    public flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides getWorkflowOverrides() {
-      return workflowOverrides_ == null ? flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.getDefaultInstance() : workflowOverrides_;
-    }
-    /**
-     * <pre>
-     * Override allowed fields from the original workflow template.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 10;</code>
-     */
-    public flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverridesOrBuilder getWorkflowOverridesOrBuilder() {
-      return getWorkflowOverrides();
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5774,9 +4999,6 @@ public final class LaunchPlanOuterClass {
       }
       if (authRole_ != null) {
         output.writeMessage(9, getAuthRole());
-      }
-      if (workflowOverrides_ != null) {
-        output.writeMessage(10, getWorkflowOverrides());
       }
       unknownFields.writeTo(output);
     }
@@ -5821,10 +5043,6 @@ public final class LaunchPlanOuterClass {
       if (authRole_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, getAuthRole());
-      }
-      if (workflowOverrides_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getWorkflowOverrides());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5883,11 +5101,6 @@ public final class LaunchPlanOuterClass {
         if (!getAuthRole()
             .equals(other.getAuthRole())) return false;
       }
-      if (hasWorkflowOverrides() != other.hasWorkflowOverrides()) return false;
-      if (hasWorkflowOverrides()) {
-        if (!getWorkflowOverrides()
-            .equals(other.getWorkflowOverrides())) return false;
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5932,10 +5145,6 @@ public final class LaunchPlanOuterClass {
       if (hasAuthRole()) {
         hash = (37 * hash) + AUTH_ROLE_FIELD_NUMBER;
         hash = (53 * hash) + getAuthRole().hashCode();
-      }
-      if (hasWorkflowOverrides()) {
-        hash = (37 * hash) + WORKFLOW_OVERRIDES_FIELD_NUMBER;
-        hash = (53 * hash) + getWorkflowOverrides().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -6124,12 +5333,6 @@ public final class LaunchPlanOuterClass {
           authRole_ = null;
           authRoleBuilder_ = null;
         }
-        if (workflowOverridesBuilder_ == null) {
-          workflowOverrides_ = null;
-        } else {
-          workflowOverrides_ = null;
-          workflowOverridesBuilder_ = null;
-        }
         return this;
       }
 
@@ -6196,11 +5399,6 @@ public final class LaunchPlanOuterClass {
           result.authRole_ = authRole_;
         } else {
           result.authRole_ = authRoleBuilder_.build();
-        }
-        if (workflowOverridesBuilder_ == null) {
-          result.workflowOverrides_ = workflowOverrides_;
-        } else {
-          result.workflowOverrides_ = workflowOverridesBuilder_.build();
         }
         onBuilt();
         return result;
@@ -6277,9 +5475,6 @@ public final class LaunchPlanOuterClass {
         }
         if (other.hasAuthRole()) {
           mergeAuthRole(other.getAuthRole());
-        }
-        if (other.hasWorkflowOverrides()) {
-          mergeWorkflowOverrides(other.getWorkflowOverrides());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7585,159 +6780,6 @@ public final class LaunchPlanOuterClass {
           authRole_ = null;
         }
         return authRoleBuilder_;
-      }
-
-      private flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides workflowOverrides_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides, flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.Builder, flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverridesOrBuilder> workflowOverridesBuilder_;
-      /**
-       * <pre>
-       * Override allowed fields from the original workflow template.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 10;</code>
-       */
-      public boolean hasWorkflowOverrides() {
-        return workflowOverridesBuilder_ != null || workflowOverrides_ != null;
-      }
-      /**
-       * <pre>
-       * Override allowed fields from the original workflow template.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 10;</code>
-       */
-      public flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides getWorkflowOverrides() {
-        if (workflowOverridesBuilder_ == null) {
-          return workflowOverrides_ == null ? flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.getDefaultInstance() : workflowOverrides_;
-        } else {
-          return workflowOverridesBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Override allowed fields from the original workflow template.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 10;</code>
-       */
-      public Builder setWorkflowOverrides(flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides value) {
-        if (workflowOverridesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          workflowOverrides_ = value;
-          onChanged();
-        } else {
-          workflowOverridesBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Override allowed fields from the original workflow template.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 10;</code>
-       */
-      public Builder setWorkflowOverrides(
-          flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.Builder builderForValue) {
-        if (workflowOverridesBuilder_ == null) {
-          workflowOverrides_ = builderForValue.build();
-          onChanged();
-        } else {
-          workflowOverridesBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Override allowed fields from the original workflow template.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 10;</code>
-       */
-      public Builder mergeWorkflowOverrides(flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides value) {
-        if (workflowOverridesBuilder_ == null) {
-          if (workflowOverrides_ != null) {
-            workflowOverrides_ =
-              flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.newBuilder(workflowOverrides_).mergeFrom(value).buildPartial();
-          } else {
-            workflowOverrides_ = value;
-          }
-          onChanged();
-        } else {
-          workflowOverridesBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Override allowed fields from the original workflow template.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 10;</code>
-       */
-      public Builder clearWorkflowOverrides() {
-        if (workflowOverridesBuilder_ == null) {
-          workflowOverrides_ = null;
-          onChanged();
-        } else {
-          workflowOverrides_ = null;
-          workflowOverridesBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Override allowed fields from the original workflow template.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 10;</code>
-       */
-      public flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.Builder getWorkflowOverridesBuilder() {
-        
-        onChanged();
-        return getWorkflowOverridesFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Override allowed fields from the original workflow template.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 10;</code>
-       */
-      public flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverridesOrBuilder getWorkflowOverridesOrBuilder() {
-        if (workflowOverridesBuilder_ != null) {
-          return workflowOverridesBuilder_.getMessageOrBuilder();
-        } else {
-          return workflowOverrides_ == null ?
-              flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.getDefaultInstance() : workflowOverrides_;
-        }
-      }
-      /**
-       * <pre>
-       * Override allowed fields from the original workflow template.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 10;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides, flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.Builder, flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverridesOrBuilder> 
-          getWorkflowOverridesFieldBuilder() {
-        if (workflowOverridesBuilder_ == null) {
-          workflowOverridesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides, flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverrides.Builder, flyteidl.admin.LaunchPlanOuterClass.WorkflowTemplateOverridesOrBuilder>(
-                  getWorkflowOverrides(),
-                  getParentForChildren(),
-                  isClean());
-          workflowOverrides_ = null;
-        }
-        return workflowOverridesBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -13693,11 +12735,6 @@ public final class LaunchPlanOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_Auth_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_WorkflowTemplateOverrides_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_WorkflowTemplateOverrides_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_LaunchPlanSpec_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -13759,9 +12796,7 @@ public final class LaunchPlanOuterClass {
       ".flyteidl.admin.LaunchPlan\022\r\n\005token\030\002 \001(" +
       "\t\"T\n\004Auth\022\034\n\022assumable_iam_role\030\001 \001(\tH\000\022" +
       "$\n\032kubernetes_service_account\030\002 \001(\tH\000B\010\n" +
-      "\006method\"N\n\031WorkflowTemplateOverrides\0221\n\010" +
-      "metadata\030\001 \001(\0132\037.flyteidl.core.WorkflowM" +
-      "etadata\"\353\003\n\016LaunchPlanSpec\022.\n\013workflow_i" +
+      "\006method\"\244\003\n\016LaunchPlanSpec\022.\n\013workflow_i" +
       "d\030\001 \001(\0132\031.flyteidl.core.Identifier\022;\n\017en" +
       "tity_metadata\030\002 \001(\0132\".flyteidl.admin.Lau" +
       "nchPlanMetadata\0223\n\016default_inputs\030\003 \001(\0132" +
@@ -13771,30 +12806,29 @@ public final class LaunchPlanOuterClass {
       "dl.admin.Labels\0220\n\013annotations\030\007 \001(\0132\033.f" +
       "lyteidl.admin.Annotations\022&\n\004auth\030\010 \001(\0132" +
       "\024.flyteidl.admin.AuthB\002\030\001\022+\n\tauth_role\030\t" +
-      " \001(\0132\030.flyteidl.admin.AuthRole\022E\n\022workfl" +
-      "ow_overrides\030\n \001(\0132).flyteidl.admin.Work" +
-      "flowTemplateOverrides\"\217\002\n\021LaunchPlanClos" +
-      "ure\022.\n\005state\030\001 \001(\0162\037.flyteidl.admin.Laun" +
-      "chPlanState\0224\n\017expected_inputs\030\002 \001(\0132\033.f" +
-      "lyteidl.core.ParameterMap\0224\n\020expected_ou" +
-      "tputs\030\003 \001(\0132\032.flyteidl.core.VariableMap\022" +
-      ".\n\ncreated_at\030\004 \001(\0132\032.google.protobuf.Ti" +
-      "mestamp\022.\n\nupdated_at\030\005 \001(\0132\032.google.pro" +
-      "tobuf.Timestamp\"u\n\022LaunchPlanMetadata\022*\n" +
-      "\010schedule\030\001 \001(\0132\030.flyteidl.admin.Schedul" +
-      "e\0223\n\rnotifications\030\002 \003(\0132\034.flyteidl.admi" +
-      "n.Notification\"p\n\027LaunchPlanUpdateReques" +
-      "t\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier" +
-      "\022.\n\005state\030\002 \001(\0162\037.flyteidl.admin.LaunchP" +
-      "lanState\"\032\n\030LaunchPlanUpdateResponse\"L\n\027" +
-      "ActiveLaunchPlanRequest\0221\n\002id\030\001 \001(\0132%.fl" +
-      "yteidl.admin.NamedEntityIdentifier\"\203\001\n\033A" +
-      "ctiveLaunchPlanListRequest\022\017\n\007project\030\001 " +
-      "\001(\t\022\016\n\006domain\030\002 \001(\t\022\r\n\005limit\030\003 \001(\r\022\r\n\005to" +
-      "ken\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.ad" +
-      "min.Sort*+\n\017LaunchPlanState\022\014\n\010INACTIVE\020" +
-      "\000\022\n\n\006ACTIVE\020\001B3Z1github.com/lyft/flyteid" +
-      "l/gen/pb-go/flyteidl/adminb\006proto3"
+      " \001(\0132\030.flyteidl.admin.AuthRole\"\217\002\n\021Launc" +
+      "hPlanClosure\022.\n\005state\030\001 \001(\0162\037.flyteidl.a" +
+      "dmin.LaunchPlanState\0224\n\017expected_inputs\030" +
+      "\002 \001(\0132\033.flyteidl.core.ParameterMap\0224\n\020ex" +
+      "pected_outputs\030\003 \001(\0132\032.flyteidl.core.Var" +
+      "iableMap\022.\n\ncreated_at\030\004 \001(\0132\032.google.pr" +
+      "otobuf.Timestamp\022.\n\nupdated_at\030\005 \001(\0132\032.g" +
+      "oogle.protobuf.Timestamp\"u\n\022LaunchPlanMe" +
+      "tadata\022*\n\010schedule\030\001 \001(\0132\030.flyteidl.admi" +
+      "n.Schedule\0223\n\rnotifications\030\002 \003(\0132\034.flyt" +
+      "eidl.admin.Notification\"p\n\027LaunchPlanUpd" +
+      "ateRequest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.I" +
+      "dentifier\022.\n\005state\030\002 \001(\0162\037.flyteidl.admi" +
+      "n.LaunchPlanState\"\032\n\030LaunchPlanUpdateRes" +
+      "ponse\"L\n\027ActiveLaunchPlanRequest\0221\n\002id\030\001" +
+      " \001(\0132%.flyteidl.admin.NamedEntityIdentif" +
+      "ier\"\203\001\n\033ActiveLaunchPlanListRequest\022\017\n\007p" +
+      "roject\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\r\n\005limit\030\003 " +
+      "\001(\r\022\r\n\005token\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.fl" +
+      "yteidl.admin.Sort*+\n\017LaunchPlanState\022\014\n\010" +
+      "INACTIVE\020\000\022\n\n\006ACTIVE\020\001B3Z1github.com/lyf" +
+      "t/flyteidl/gen/pb-go/flyteidl/adminb\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13845,50 +12879,44 @@ public final class LaunchPlanOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Auth_descriptor,
         new java.lang.String[] { "AssumableIamRole", "KubernetesServiceAccount", "Method", });
-    internal_static_flyteidl_admin_WorkflowTemplateOverrides_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_flyteidl_admin_WorkflowTemplateOverrides_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_WorkflowTemplateOverrides_descriptor,
-        new java.lang.String[] { "Metadata", });
     internal_static_flyteidl_admin_LaunchPlanSpec_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_LaunchPlanSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_LaunchPlanSpec_descriptor,
-        new java.lang.String[] { "WorkflowId", "EntityMetadata", "DefaultInputs", "FixedInputs", "Role", "Labels", "Annotations", "Auth", "AuthRole", "WorkflowOverrides", });
+        new java.lang.String[] { "WorkflowId", "EntityMetadata", "DefaultInputs", "FixedInputs", "Role", "Labels", "Annotations", "Auth", "AuthRole", });
     internal_static_flyteidl_admin_LaunchPlanClosure_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_admin_LaunchPlanClosure_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_LaunchPlanClosure_descriptor,
         new java.lang.String[] { "State", "ExpectedInputs", "ExpectedOutputs", "CreatedAt", "UpdatedAt", });
     internal_static_flyteidl_admin_LaunchPlanMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_admin_LaunchPlanMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_LaunchPlanMetadata_descriptor,
         new java.lang.String[] { "Schedule", "Notifications", });
     internal_static_flyteidl_admin_LaunchPlanUpdateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_admin_LaunchPlanUpdateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_LaunchPlanUpdateRequest_descriptor,
         new java.lang.String[] { "Id", "State", });
     internal_static_flyteidl_admin_LaunchPlanUpdateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_admin_LaunchPlanUpdateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_LaunchPlanUpdateResponse_descriptor,
         new java.lang.String[] { });
     internal_static_flyteidl_admin_ActiveLaunchPlanRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_flyteidl_admin_ActiveLaunchPlanRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ActiveLaunchPlanRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_flyteidl_admin_ActiveLaunchPlanListRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_flyteidl_admin_ActiveLaunchPlanListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ActiveLaunchPlanListRequest_descriptor,

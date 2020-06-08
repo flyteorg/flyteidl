@@ -49,7 +49,7 @@ struct TableStruct_flyteidl_2fadmin_2flaunch_5fplan_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[13]
+  static const ::google::protobuf::internal::ParseTable schema[12]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -94,9 +94,6 @@ extern LaunchPlanUpdateRequestDefaultTypeInternal _LaunchPlanUpdateRequest_defau
 class LaunchPlanUpdateResponse;
 class LaunchPlanUpdateResponseDefaultTypeInternal;
 extern LaunchPlanUpdateResponseDefaultTypeInternal _LaunchPlanUpdateResponse_default_instance_;
-class WorkflowTemplateOverrides;
-class WorkflowTemplateOverridesDefaultTypeInternal;
-extern WorkflowTemplateOverridesDefaultTypeInternal _WorkflowTemplateOverrides_default_instance_;
 }  // namespace admin
 }  // namespace flyteidl
 namespace google {
@@ -113,7 +110,6 @@ template<> ::flyteidl::admin::LaunchPlanMetadata* Arena::CreateMaybeMessage<::fl
 template<> ::flyteidl::admin::LaunchPlanSpec* Arena::CreateMaybeMessage<::flyteidl::admin::LaunchPlanSpec>(Arena*);
 template<> ::flyteidl::admin::LaunchPlanUpdateRequest* Arena::CreateMaybeMessage<::flyteidl::admin::LaunchPlanUpdateRequest>(Arena*);
 template<> ::flyteidl::admin::LaunchPlanUpdateResponse* Arena::CreateMaybeMessage<::flyteidl::admin::LaunchPlanUpdateResponse>(Arena*);
-template<> ::flyteidl::admin::WorkflowTemplateOverrides* Arena::CreateMaybeMessage<::flyteidl::admin::WorkflowTemplateOverrides>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -799,121 +795,6 @@ class Auth final :
 };
 // -------------------------------------------------------------------
 
-class WorkflowTemplateOverrides final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.WorkflowTemplateOverrides) */ {
- public:
-  WorkflowTemplateOverrides();
-  virtual ~WorkflowTemplateOverrides();
-
-  WorkflowTemplateOverrides(const WorkflowTemplateOverrides& from);
-
-  inline WorkflowTemplateOverrides& operator=(const WorkflowTemplateOverrides& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  WorkflowTemplateOverrides(WorkflowTemplateOverrides&& from) noexcept
-    : WorkflowTemplateOverrides() {
-    *this = ::std::move(from);
-  }
-
-  inline WorkflowTemplateOverrides& operator=(WorkflowTemplateOverrides&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const WorkflowTemplateOverrides& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const WorkflowTemplateOverrides* internal_default_instance() {
-    return reinterpret_cast<const WorkflowTemplateOverrides*>(
-               &_WorkflowTemplateOverrides_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    5;
-
-  void Swap(WorkflowTemplateOverrides* other);
-  friend void swap(WorkflowTemplateOverrides& a, WorkflowTemplateOverrides& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline WorkflowTemplateOverrides* New() const final {
-    return CreateMaybeMessage<WorkflowTemplateOverrides>(nullptr);
-  }
-
-  WorkflowTemplateOverrides* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<WorkflowTemplateOverrides>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const WorkflowTemplateOverrides& from);
-  void MergeFrom(const WorkflowTemplateOverrides& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(WorkflowTemplateOverrides* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // .flyteidl.core.WorkflowMetadata metadata = 1;
-  bool has_metadata() const;
-  void clear_metadata();
-  static const int kMetadataFieldNumber = 1;
-  const ::flyteidl::core::WorkflowMetadata& metadata() const;
-  ::flyteidl::core::WorkflowMetadata* release_metadata();
-  ::flyteidl::core::WorkflowMetadata* mutable_metadata();
-  void set_allocated_metadata(::flyteidl::core::WorkflowMetadata* metadata);
-
-  // @@protoc_insertion_point(class_scope:flyteidl.admin.WorkflowTemplateOverrides)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::core::WorkflowMetadata* metadata_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fadmin_2flaunch_5fplan_2eproto;
-};
-// -------------------------------------------------------------------
-
 class LaunchPlanSpec final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.LaunchPlanSpec) */ {
  public:
@@ -952,7 +833,7 @@ class LaunchPlanSpec final :
                &_LaunchPlanSpec_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    5;
 
   void Swap(LaunchPlanSpec* other);
   friend void swap(LaunchPlanSpec& a, LaunchPlanSpec& b) {
@@ -1095,15 +976,6 @@ class LaunchPlanSpec final :
   ::flyteidl::admin::AuthRole* mutable_auth_role();
   void set_allocated_auth_role(::flyteidl::admin::AuthRole* auth_role);
 
-  // .flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 10;
-  bool has_workflow_overrides() const;
-  void clear_workflow_overrides();
-  static const int kWorkflowOverridesFieldNumber = 10;
-  const ::flyteidl::admin::WorkflowTemplateOverrides& workflow_overrides() const;
-  ::flyteidl::admin::WorkflowTemplateOverrides* release_workflow_overrides();
-  ::flyteidl::admin::WorkflowTemplateOverrides* mutable_workflow_overrides();
-  void set_allocated_workflow_overrides(::flyteidl::admin::WorkflowTemplateOverrides* workflow_overrides);
-
   // @@protoc_insertion_point(class_scope:flyteidl.admin.LaunchPlanSpec)
  private:
   class HasBitSetters;
@@ -1118,7 +990,6 @@ class LaunchPlanSpec final :
   ::flyteidl::admin::Annotations* annotations_;
   ::flyteidl::admin::Auth* auth_;
   ::flyteidl::admin::AuthRole* auth_role_;
-  ::flyteidl::admin::WorkflowTemplateOverrides* workflow_overrides_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2flaunch_5fplan_2eproto;
 };
@@ -1162,7 +1033,7 @@ class LaunchPlanClosure final :
                &_LaunchPlanClosure_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    6;
 
   void Swap(LaunchPlanClosure* other);
   friend void swap(LaunchPlanClosure& a, LaunchPlanClosure& b) {
@@ -1314,7 +1185,7 @@ class LaunchPlanMetadata final :
                &_LaunchPlanMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    7;
 
   void Swap(LaunchPlanMetadata* other);
   friend void swap(LaunchPlanMetadata& a, LaunchPlanMetadata& b) {
@@ -1442,7 +1313,7 @@ class LaunchPlanUpdateRequest final :
                &_LaunchPlanUpdateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    8;
 
   void Swap(LaunchPlanUpdateRequest* other);
   friend void swap(LaunchPlanUpdateRequest& a, LaunchPlanUpdateRequest& b) {
@@ -1564,7 +1435,7 @@ class LaunchPlanUpdateResponse final :
                &_LaunchPlanUpdateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    9;
 
   void Swap(LaunchPlanUpdateResponse* other);
   friend void swap(LaunchPlanUpdateResponse& a, LaunchPlanUpdateResponse& b) {
@@ -1669,7 +1540,7 @@ class ActiveLaunchPlanRequest final :
                &_ActiveLaunchPlanRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    10;
 
   void Swap(ActiveLaunchPlanRequest* other);
   friend void swap(ActiveLaunchPlanRequest& a, ActiveLaunchPlanRequest& b) {
@@ -1784,7 +1655,7 @@ class ActiveLaunchPlanListRequest final :
                &_ActiveLaunchPlanListRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    11;
 
   void Swap(ActiveLaunchPlanListRequest* other);
   friend void swap(ActiveLaunchPlanListRequest& a, ActiveLaunchPlanListRequest& b) {
@@ -2459,55 +2330,6 @@ inline Auth::MethodCase Auth::method_case() const {
 }
 // -------------------------------------------------------------------
 
-// WorkflowTemplateOverrides
-
-// .flyteidl.core.WorkflowMetadata metadata = 1;
-inline bool WorkflowTemplateOverrides::has_metadata() const {
-  return this != internal_default_instance() && metadata_ != nullptr;
-}
-inline const ::flyteidl::core::WorkflowMetadata& WorkflowTemplateOverrides::metadata() const {
-  const ::flyteidl::core::WorkflowMetadata* p = metadata_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.WorkflowTemplateOverrides.metadata)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::WorkflowMetadata*>(
-      &::flyteidl::core::_WorkflowMetadata_default_instance_);
-}
-inline ::flyteidl::core::WorkflowMetadata* WorkflowTemplateOverrides::release_metadata() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.WorkflowTemplateOverrides.metadata)
-  
-  ::flyteidl::core::WorkflowMetadata* temp = metadata_;
-  metadata_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::core::WorkflowMetadata* WorkflowTemplateOverrides::mutable_metadata() {
-  
-  if (metadata_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::WorkflowMetadata>(GetArenaNoVirtual());
-    metadata_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.WorkflowTemplateOverrides.metadata)
-  return metadata_;
-}
-inline void WorkflowTemplateOverrides::set_allocated_metadata(::flyteidl::core::WorkflowMetadata* metadata) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(metadata_);
-  }
-  if (metadata) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      metadata = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, metadata, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  metadata_ = metadata;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.WorkflowTemplateOverrides.metadata)
-}
-
-// -------------------------------------------------------------------
-
 // LaunchPlanSpec
 
 // .flyteidl.core.Identifier workflow_id = 1;
@@ -2933,57 +2755,6 @@ inline void LaunchPlanSpec::set_allocated_auth_role(::flyteidl::admin::AuthRole*
   }
   auth_role_ = auth_role;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.LaunchPlanSpec.auth_role)
-}
-
-// .flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 10;
-inline bool LaunchPlanSpec::has_workflow_overrides() const {
-  return this != internal_default_instance() && workflow_overrides_ != nullptr;
-}
-inline void LaunchPlanSpec::clear_workflow_overrides() {
-  if (GetArenaNoVirtual() == nullptr && workflow_overrides_ != nullptr) {
-    delete workflow_overrides_;
-  }
-  workflow_overrides_ = nullptr;
-}
-inline const ::flyteidl::admin::WorkflowTemplateOverrides& LaunchPlanSpec::workflow_overrides() const {
-  const ::flyteidl::admin::WorkflowTemplateOverrides* p = workflow_overrides_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.LaunchPlanSpec.workflow_overrides)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::WorkflowTemplateOverrides*>(
-      &::flyteidl::admin::_WorkflowTemplateOverrides_default_instance_);
-}
-inline ::flyteidl::admin::WorkflowTemplateOverrides* LaunchPlanSpec::release_workflow_overrides() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.LaunchPlanSpec.workflow_overrides)
-  
-  ::flyteidl::admin::WorkflowTemplateOverrides* temp = workflow_overrides_;
-  workflow_overrides_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::admin::WorkflowTemplateOverrides* LaunchPlanSpec::mutable_workflow_overrides() {
-  
-  if (workflow_overrides_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::WorkflowTemplateOverrides>(GetArenaNoVirtual());
-    workflow_overrides_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.LaunchPlanSpec.workflow_overrides)
-  return workflow_overrides_;
-}
-inline void LaunchPlanSpec::set_allocated_workflow_overrides(::flyteidl::admin::WorkflowTemplateOverrides* workflow_overrides) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete workflow_overrides_;
-  }
-  if (workflow_overrides) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      workflow_overrides = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, workflow_overrides, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  workflow_overrides_ = workflow_overrides;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.LaunchPlanSpec.workflow_overrides)
 }
 
 // -------------------------------------------------------------------
@@ -3603,8 +3374,6 @@ inline void ActiveLaunchPlanListRequest::set_allocated_sort_by(::flyteidl::admin
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

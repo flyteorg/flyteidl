@@ -3154,10 +3154,6 @@
         "auth_role": {
           "$ref": "#/definitions/adminAuthRole",
           "description": "Optional: auth override to apply this execution."
-        },
-        "workflow_overrides": {
-          "$ref": "#/definitions/adminWorkflowTemplateOverrides",
-          "description": "Override allowed fields from the original workflow template."
         }
       },
       "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes.."
@@ -3345,10 +3341,6 @@
         },
         "auth_role": {
           "$ref": "#/definitions/adminAuthRole"
-        },
-        "workflow_overrides": {
-          "$ref": "#/definitions/adminWorkflowTemplateOverrides",
-          "description": "Override allowed fields from the original workflow template."
         }
       },
       "description": "User-provided launch plan definition and configuration values."
@@ -4245,16 +4237,6 @@
         }
       },
       "description": "Represents a structure that encapsulates the specification of the workflow."
-    },
-    "adminWorkflowTemplateOverrides": {
-      "type": "object",
-      "properties": {
-        "metadata": {
-          "$ref": "#/definitions/coreWorkflowMetadata",
-          "title": "If a field is set in metadata, it'll override the one from the original workflow template.\nIf it's not-set, the system will continue to use the value from the original workflow template.\nTODO: Should we just require a full replacement of metadata to avoid having to deal with merges?"
-        }
-      },
-      "description": "Defines allowed overrides for the workflow template."
     },
     "coreAlias": {
       "type": "object",

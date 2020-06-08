@@ -151,37 +151,12 @@ kubernetes_service_account
   
 
 
-.. _api_msg_flyteidl.admin.WorkflowTemplateOverrides:
-
-flyteidl.admin.WorkflowTemplateOverrides
-----------------------------------------
-
-`[flyteidl.admin.WorkflowTemplateOverrides proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L67>`_
-
-Defines allowed overrides for the workflow template.
-
-.. code-block:: json
-
-  {
-    "metadata": "{...}"
-  }
-
-.. _api_field_flyteidl.admin.WorkflowTemplateOverrides.metadata:
-
-metadata
-  (:ref:`flyteidl.core.WorkflowMetadata <api_msg_flyteidl.core.WorkflowMetadata>`) If a field is set in metadata, it'll override the one from the original workflow template.
-  If it's not-set, the system will continue to use the value from the original workflow template.
-  TODO: Should we just require a full replacement of metadata to avoid having to deal with merges?
-  
-  
-
-
 .. _api_msg_flyteidl.admin.LaunchPlanSpec:
 
 flyteidl.admin.LaunchPlanSpec
 -----------------------------
 
-`[flyteidl.admin.LaunchPlanSpec proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L75>`_
+`[flyteidl.admin.LaunchPlanSpec proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L67>`_
 
 User-provided launch plan definition and configuration values.
 
@@ -196,8 +171,7 @@ User-provided launch plan definition and configuration values.
     "labels": "{...}",
     "annotations": "{...}",
     "auth": "{...}",
-    "auth_role": "{...}",
-    "workflow_overrides": "{...}"
+    "auth_role": "{...}"
   }
 
 .. _api_field_flyteidl.admin.LaunchPlanSpec.workflow_id:
@@ -253,12 +227,6 @@ auth
 auth_role
   (:ref:`flyteidl.admin.AuthRole <api_msg_flyteidl.admin.AuthRole>`) 
   
-.. _api_field_flyteidl.admin.LaunchPlanSpec.workflow_overrides:
-
-workflow_overrides
-  (:ref:`flyteidl.admin.WorkflowTemplateOverrides <api_msg_flyteidl.admin.WorkflowTemplateOverrides>`) Override allowed fields from the original workflow template.
-  
-  
 
 
 .. _api_msg_flyteidl.admin.LaunchPlanClosure:
@@ -266,7 +234,7 @@ workflow_overrides
 flyteidl.admin.LaunchPlanClosure
 --------------------------------
 
-`[flyteidl.admin.LaunchPlanClosure proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L109>`_
+`[flyteidl.admin.LaunchPlanClosure proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L98>`_
 
 Values computed by the flyte platform after launch plan registration.
 These include expected_inputs required to be present in a CreateExecutionRequest
@@ -319,7 +287,7 @@ updated_at
 flyteidl.admin.LaunchPlanMetadata
 ---------------------------------
 
-`[flyteidl.admin.LaunchPlanMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L128>`_
+`[flyteidl.admin.LaunchPlanMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L117>`_
 
 Additional launch plan attributes included in the LaunchPlanSpec not strictly required to launch
 the reference workflow.
@@ -350,7 +318,7 @@ notifications
 flyteidl.admin.LaunchPlanUpdateRequest
 --------------------------------------
 
-`[flyteidl.admin.LaunchPlanUpdateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L137>`_
+`[flyteidl.admin.LaunchPlanUpdateRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L126>`_
 
 Request to set the referenced launch plan state to the configured value.
 
@@ -380,7 +348,7 @@ state
 flyteidl.admin.LaunchPlanUpdateResponse
 ---------------------------------------
 
-`[flyteidl.admin.LaunchPlanUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L146>`_
+`[flyteidl.admin.LaunchPlanUpdateResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L135>`_
 
 Purposefully empty, may be populated in the future.
 
@@ -396,7 +364,7 @@ Purposefully empty, may be populated in the future.
 flyteidl.admin.ActiveLaunchPlanRequest
 --------------------------------------
 
-`[flyteidl.admin.ActiveLaunchPlanRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L150>`_
+`[flyteidl.admin.ActiveLaunchPlanRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L139>`_
 
 Represents a request struct for finding an active launch plan for a given NamedEntityIdentifier
 
@@ -418,7 +386,7 @@ id
 flyteidl.admin.ActiveLaunchPlanListRequest
 ------------------------------------------
 
-`[flyteidl.admin.ActiveLaunchPlanListRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L155>`_
+`[flyteidl.admin.ActiveLaunchPlanListRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/launch_plan.proto#L144>`_
 
 Represents a request structure to list active launch plans within a project/domain.
 

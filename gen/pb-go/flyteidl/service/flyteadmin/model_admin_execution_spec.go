@@ -24,6 +24,4 @@ type AdminExecutionSpec struct {
 	Annotations *AdminAnnotations `json:"annotations,omitempty"`
 	// Optional: auth override to apply this execution.
 	AuthRole *AdminAuthRole `json:"auth_role,omitempty"`
-	// Override allowed fields from the original workflow template.
-	WorkflowOverrides *AdminWorkflowTemplateOverrides `json:"workflow_overrides,omitempty"`
 }

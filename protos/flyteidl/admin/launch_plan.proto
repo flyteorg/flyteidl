@@ -64,14 +64,6 @@ message Auth {
     }
 }
 
-// Defines allowed overrides for the workflow template.
-message WorkflowTemplateOverrides {
-    // If a field is set in metadata, it'll override the one from the original workflow template.
-    // If it's not-set, the system will continue to use the value from the original workflow template.
-    // TODO: Should we just require a full replacement of metadata to avoid having to deal with merges?
-    core.WorkflowMetadata metadata = 1;
-}
-
 // User-provided launch plan definition and configuration values.
 message LaunchPlanSpec {
     // Reference to the Workflow template that the launch plan references
@@ -99,9 +91,6 @@ message LaunchPlanSpec {
     Auth auth = 8 [deprecated = true];
 
     AuthRole auth_role = 9;
-
-    // Override allowed fields from the original workflow template.
-    WorkflowTemplateOverrides workflow_overrides = 10;
 }
 
 // Values computed by the flyte platform after launch plan registration.

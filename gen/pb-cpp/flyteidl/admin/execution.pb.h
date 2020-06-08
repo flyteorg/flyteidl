@@ -2099,15 +2099,6 @@ class ExecutionSpec final :
   ::flyteidl::admin::AuthRole* mutable_auth_role();
   void set_allocated_auth_role(::flyteidl::admin::AuthRole* auth_role);
 
-  // .flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 17;
-  bool has_workflow_overrides() const;
-  void clear_workflow_overrides();
-  static const int kWorkflowOverridesFieldNumber = 17;
-  const ::flyteidl::admin::WorkflowTemplateOverrides& workflow_overrides() const;
-  ::flyteidl::admin::WorkflowTemplateOverrides* release_workflow_overrides();
-  ::flyteidl::admin::WorkflowTemplateOverrides* mutable_workflow_overrides();
-  void set_allocated_workflow_overrides(::flyteidl::admin::WorkflowTemplateOverrides* workflow_overrides);
-
   // .flyteidl.admin.NotificationList notifications = 5;
   bool has_notifications() const;
   void clear_notifications();
@@ -2144,7 +2135,6 @@ class ExecutionSpec final :
   ::flyteidl::admin::Labels* labels_;
   ::flyteidl::admin::Annotations* annotations_;
   ::flyteidl::admin::AuthRole* auth_role_;
-  ::flyteidl::admin::WorkflowTemplateOverrides* workflow_overrides_;
   union NotificationOverridesUnion {
     NotificationOverridesUnion() {}
     ::flyteidl::admin::NotificationList* notifications_;
@@ -4829,51 +4819,6 @@ inline void ExecutionSpec::set_allocated_auth_role(::flyteidl::admin::AuthRole* 
   }
   auth_role_ = auth_role;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionSpec.auth_role)
-}
-
-// .flyteidl.admin.WorkflowTemplateOverrides workflow_overrides = 17;
-inline bool ExecutionSpec::has_workflow_overrides() const {
-  return this != internal_default_instance() && workflow_overrides_ != nullptr;
-}
-inline const ::flyteidl::admin::WorkflowTemplateOverrides& ExecutionSpec::workflow_overrides() const {
-  const ::flyteidl::admin::WorkflowTemplateOverrides* p = workflow_overrides_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionSpec.workflow_overrides)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::WorkflowTemplateOverrides*>(
-      &::flyteidl::admin::_WorkflowTemplateOverrides_default_instance_);
-}
-inline ::flyteidl::admin::WorkflowTemplateOverrides* ExecutionSpec::release_workflow_overrides() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.ExecutionSpec.workflow_overrides)
-  
-  ::flyteidl::admin::WorkflowTemplateOverrides* temp = workflow_overrides_;
-  workflow_overrides_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::admin::WorkflowTemplateOverrides* ExecutionSpec::mutable_workflow_overrides() {
-  
-  if (workflow_overrides_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::WorkflowTemplateOverrides>(GetArenaNoVirtual());
-    workflow_overrides_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionSpec.workflow_overrides)
-  return workflow_overrides_;
-}
-inline void ExecutionSpec::set_allocated_workflow_overrides(::flyteidl::admin::WorkflowTemplateOverrides* workflow_overrides) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(workflow_overrides_);
-  }
-  if (workflow_overrides) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      workflow_overrides = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, workflow_overrides, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  workflow_overrides_ = workflow_overrides;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionSpec.workflow_overrides)
 }
 
 inline bool ExecutionSpec::has_notification_overrides() const {
