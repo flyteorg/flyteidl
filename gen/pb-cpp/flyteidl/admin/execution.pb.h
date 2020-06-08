@@ -2098,6 +2098,12 @@ class ExecutionSpec final :
   ::flyteidl::admin::AuthRole* mutable_auth_role();
   void set_allocated_auth_role(::flyteidl::admin::AuthRole* auth_role);
 
+  // .flyteidl.admin.QualityOfService quality_of_service = 17;
+  void clear_quality_of_service();
+  static const int kQualityOfServiceFieldNumber = 17;
+  ::flyteidl::admin::QualityOfService quality_of_service() const;
+  void set_quality_of_service(::flyteidl::admin::QualityOfService value);
+
   // .flyteidl.admin.NotificationList notifications = 5;
   bool has_notifications() const;
   void clear_notifications();
@@ -2134,6 +2140,7 @@ class ExecutionSpec final :
   ::flyteidl::admin::Labels* labels_;
   ::flyteidl::admin::Annotations* annotations_;
   ::flyteidl::admin::AuthRole* auth_role_;
+  int quality_of_service_;
   union NotificationOverridesUnion {
     NotificationOverridesUnion() {}
     ::flyteidl::admin::NotificationList* notifications_;
@@ -4818,6 +4825,20 @@ inline void ExecutionSpec::set_allocated_auth_role(::flyteidl::admin::AuthRole* 
   }
   auth_role_ = auth_role;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionSpec.auth_role)
+}
+
+// .flyteidl.admin.QualityOfService quality_of_service = 17;
+inline void ExecutionSpec::clear_quality_of_service() {
+  quality_of_service_ = 0;
+}
+inline ::flyteidl::admin::QualityOfService ExecutionSpec::quality_of_service() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionSpec.quality_of_service)
+  return static_cast< ::flyteidl::admin::QualityOfService >(quality_of_service_);
+}
+inline void ExecutionSpec::set_quality_of_service(::flyteidl::admin::QualityOfService value) {
+  
+  quality_of_service_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionSpec.quality_of_service)
 }
 
 inline bool ExecutionSpec::has_notification_overrides() const {

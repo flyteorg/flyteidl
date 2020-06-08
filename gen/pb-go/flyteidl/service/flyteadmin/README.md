@@ -135,6 +135,7 @@ Class | Method | HTTP request | Description
  - [AdminProjectRegisterRequest](docs/AdminProjectRegisterRequest.md)
  - [AdminProjectRegisterResponse](docs/AdminProjectRegisterResponse.md)
  - [AdminProjects](docs/AdminProjects.md)
+ - [AdminQualityOfService](docs/AdminQualityOfService.md)
  - [AdminSchedule](docs/AdminSchedule.md)
  - [AdminSlackNotification](docs/AdminSlackNotification.md)
  - [AdminSort](docs/AdminSort.md)

@@ -2665,6 +2665,7 @@ definitions:
           nesting: 0
           system_metadata:
             execution_cluster: "execution_cluster"
+        quality_of_service: {}
         disable_all: true
         inputs:
           literals: {}
@@ -2964,6 +2965,7 @@ definitions:
             nesting: 0
             system_metadata:
               execution_cluster: "execution_cluster"
+          quality_of_service: {}
           disable_all: true
           inputs:
             literals: {}
@@ -3094,6 +3096,7 @@ definitions:
             nesting: 0
             system_metadata:
               execution_cluster: "execution_cluster"
+          quality_of_service: {}
           disable_all: true
           inputs:
             literals: {}
@@ -3249,6 +3252,10 @@ definitions:
       auth_role:
         description: "Optional: auth override to apply this execution."
         $ref: "#/definitions/adminAuthRole"
+      quality_of_service:
+        description: "Indicates the amount of queueing a launched workflow execution\
+          \ can tolerate."
+        $ref: "#/definitions/adminQualityOfService"
     description: "An ExecutionSpec encompasses all data used to launch this execution.\
       \ The Spec does not change over the lifetime\nof an execution as it progresses\
       \ across phase changes.."
@@ -3276,6 +3283,7 @@ definitions:
         nesting: 0
         system_metadata:
           execution_cluster: "execution_cluster"
+      quality_of_service: {}
       disable_all: true
       inputs:
         literals: {}
@@ -3507,6 +3515,7 @@ definitions:
         fixed_inputs:
           literals: {}
         role: "role"
+        quality_of_service: {}
         auth:
           kubernetes_service_account: "kubernetes_service_account"
           assumable_iam_role: "assumable_iam_role"
@@ -3914,6 +3923,7 @@ definitions:
           fixed_inputs:
             literals: {}
           role: "role"
+          quality_of_service: {}
           auth:
             kubernetes_service_account: "kubernetes_service_account"
             assumable_iam_role: "assumable_iam_role"
@@ -4160,6 +4170,7 @@ definitions:
           fixed_inputs:
             literals: {}
           role: "role"
+          quality_of_service: {}
           auth:
             kubernetes_service_account: "kubernetes_service_account"
             assumable_iam_role: "assumable_iam_role"
@@ -4367,6 +4378,10 @@ definitions:
         $ref: "#/definitions/adminAuth"
       auth_role:
         $ref: "#/definitions/adminAuthRole"
+      quality_of_service:
+        description: "Indicates the amount of queueing a launched workflow execution\
+          \ can tolerate."
+        $ref: "#/definitions/adminQualityOfService"
     description: "User-provided launch plan definition and configuration values."
     example:
       workflow_id:
@@ -4378,6 +4393,7 @@ definitions:
       fixed_inputs:
         literals: {}
       role: "role"
+      quality_of_service: {}
       auth:
         kubernetes_service_account: "kubernetes_service_account"
         assumable_iam_role: "assumable_iam_role"
@@ -5209,6 +5225,20 @@ definitions:
           id: "id"
         description: "description"
         id: "id"
+  adminQualityOfService:
+    type: "string"
+    description: "This general categorization specifies how much queue time an execution\
+      \ can tolerate. \nThis can be extended in the future to make other execution-time\
+      \ decisions.\n\n - QUALITY_OF_SERVICE_HIGH: Guarantees that this execution will\
+      \ begin as soon as requested and incur no queueing time.\n - QUALITY_OF_SERVICE_MEDIUM:\
+      \ This execution may incur some queueing delay (e.g. 30 minutes) and is medium\
+      \ priority.\n - QUALITY_OF_SERVICE_LOW: This execution may incur significant\
+      \ queueing delay (e.g. 2 hours) and is low priority."
+    enum:
+    - "QUALITY_OF_SERVICE_HIGH"
+    - "QUALITY_OF_SERVICE_MEDIUM"
+    - "QUALITY_OF_SERVICE_LOW"
+    default: "QUALITY_OF_SERVICE_HIGH"
   adminSchedule:
     type: "object"
     properties:

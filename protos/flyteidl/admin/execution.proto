@@ -237,6 +237,8 @@ message ExecutionSpec {
     // Optional: auth override to apply this execution.
     AuthRole auth_role        = 16;
 
+    // Indicates the amount of queueing a launched workflow execution can tolerate.
+    QualityOfService quality_of_service   = 17;
 }
 
 // Request to terminate an in-progress execution.  This action is irreversible.

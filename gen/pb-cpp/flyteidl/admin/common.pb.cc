@@ -491,7 +491,7 @@ void InitDefaults_flyteidl_2fadmin_2fcommon_2eproto() {
 }
 
 ::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fcommon_2eproto[23];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fadmin_2fcommon_2eproto[2];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fadmin_2fcommon_2eproto[3];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fadmin_2fcommon_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fcommon_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -793,14 +793,16 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto[] =
   "\tH\000\022$\n\032kubernetes_service_account\030\002 \001(\tH"
   "\000B\010\n\006method*\\\n\020NamedEntityState\022\027\n\023NAMED"
   "_ENTITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVE"
-  "D\020\001\022\024\n\020SYSTEM_GENERATED\020\002B3Z1github.com/"
-  "lyft/flyteidl/gen/pb-go/flyteidl/adminb\006"
-  "proto3"
+  "D\020\001\022\024\n\020SYSTEM_GENERATED\020\002*j\n\020QualityOfSe"
+  "rvice\022\033\n\027QUALITY_OF_SERVICE_HIGH\020\000\022\035\n\031QU"
+  "ALITY_OF_SERVICE_MEDIUM\020\001\022\032\n\026QUALITY_OF_"
+  "SERVICE_LOW\020\002B3Z1github.com/lyft/flyteid"
+  "l/gen/pb-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fcommon_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fcommon_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto,
-  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 2566,
+  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 2674,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto() {
@@ -842,6 +844,21 @@ const ::google::protobuf::EnumDescriptor* NamedEntityState_descriptor() {
   return file_level_enum_descriptors_flyteidl_2fadmin_2fcommon_2eproto[1];
 }
 bool NamedEntityState_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::google::protobuf::EnumDescriptor* QualityOfService_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto);
+  return file_level_enum_descriptors_flyteidl_2fadmin_2fcommon_2eproto[2];
+}
+bool QualityOfService_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:

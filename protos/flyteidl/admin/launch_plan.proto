@@ -91,6 +91,9 @@ message LaunchPlanSpec {
     Auth auth                             = 8 [deprecated=true];
 
     AuthRole auth_role                    = 9;
+
+    // Indicates the amount of queueing a launched workflow execution can tolerate.
+    QualityOfService quality_of_service   = 16;
 }
 
 // Values computed by the flyte platform after launch plan registration.

@@ -530,6 +530,8 @@ func (m *LaunchPlanSpec) Validate() error {
 		}
 	}
 
+	// no validation rules for QualityOfService
+
 	return nil
 }
 

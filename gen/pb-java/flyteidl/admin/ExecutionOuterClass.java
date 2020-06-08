@@ -14897,6 +14897,23 @@ public final class ExecutionOuterClass {
      */
     flyteidl.admin.Common.AuthRoleOrBuilder getAuthRoleOrBuilder();
 
+    /**
+     * <pre>
+     * Indicates the amount of queueing a launched workflow execution can tolerate.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.QualityOfService quality_of_service = 17;</code>
+     */
+    int getQualityOfServiceValue();
+    /**
+     * <pre>
+     * Indicates the amount of queueing a launched workflow execution can tolerate.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.QualityOfService quality_of_service = 17;</code>
+     */
+    flyteidl.admin.Common.QualityOfService getQualityOfService();
+
     public flyteidl.admin.ExecutionOuterClass.ExecutionSpec.NotificationOverridesCase getNotificationOverridesCase();
   }
   /**
@@ -14917,6 +14934,7 @@ public final class ExecutionOuterClass {
       super(builder);
     }
     private ExecutionSpec() {
+      qualityOfService_ = 0;
     }
 
     @java.lang.Override
@@ -15038,6 +15056,12 @@ public final class ExecutionOuterClass {
                 authRole_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 136: {
+              int rawValue = input.readEnum();
+
+              qualityOfService_ = rawValue;
               break;
             }
             default: {
@@ -15367,6 +15391,31 @@ public final class ExecutionOuterClass {
       return getAuthRole();
     }
 
+    public static final int QUALITY_OF_SERVICE_FIELD_NUMBER = 17;
+    private int qualityOfService_;
+    /**
+     * <pre>
+     * Indicates the amount of queueing a launched workflow execution can tolerate.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.QualityOfService quality_of_service = 17;</code>
+     */
+    public int getQualityOfServiceValue() {
+      return qualityOfService_;
+    }
+    /**
+     * <pre>
+     * Indicates the amount of queueing a launched workflow execution can tolerate.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.QualityOfService quality_of_service = 17;</code>
+     */
+    public flyteidl.admin.Common.QualityOfService getQualityOfService() {
+      @SuppressWarnings("deprecation")
+      flyteidl.admin.Common.QualityOfService result = flyteidl.admin.Common.QualityOfService.valueOf(qualityOfService_);
+      return result == null ? flyteidl.admin.Common.QualityOfService.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -15405,6 +15454,9 @@ public final class ExecutionOuterClass {
       }
       if (authRole_ != null) {
         output.writeMessage(16, getAuthRole());
+      }
+      if (qualityOfService_ != flyteidl.admin.Common.QualityOfService.QUALITY_OF_SERVICE_HIGH.getNumber()) {
+        output.writeEnum(17, qualityOfService_);
       }
       unknownFields.writeTo(output);
     }
@@ -15447,6 +15499,10 @@ public final class ExecutionOuterClass {
       if (authRole_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(16, getAuthRole());
+      }
+      if (qualityOfService_ != flyteidl.admin.Common.QualityOfService.QUALITY_OF_SERVICE_HIGH.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(17, qualityOfService_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -15493,6 +15549,7 @@ public final class ExecutionOuterClass {
         if (!getAuthRole()
             .equals(other.getAuthRole())) return false;
       }
+      if (qualityOfService_ != other.qualityOfService_) return false;
       if (!getNotificationOverridesCase().equals(other.getNotificationOverridesCase())) return false;
       switch (notificationOverridesCase_) {
         case 5:
@@ -15541,6 +15598,8 @@ public final class ExecutionOuterClass {
         hash = (37 * hash) + AUTH_ROLE_FIELD_NUMBER;
         hash = (53 * hash) + getAuthRole().hashCode();
       }
+      hash = (37 * hash) + QUALITY_OF_SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + qualityOfService_;
       switch (notificationOverridesCase_) {
         case 5:
           hash = (37 * hash) + NOTIFICATIONS_FIELD_NUMBER;
@@ -15728,6 +15787,8 @@ public final class ExecutionOuterClass {
           authRole_ = null;
           authRoleBuilder_ = null;
         }
+        qualityOfService_ = 0;
+
         notificationOverridesCase_ = 0;
         notificationOverrides_ = null;
         return this;
@@ -15796,6 +15857,7 @@ public final class ExecutionOuterClass {
         } else {
           result.authRole_ = authRoleBuilder_.build();
         }
+        result.qualityOfService_ = qualityOfService_;
         result.notificationOverridesCase_ = notificationOverridesCase_;
         onBuilt();
         return result;
@@ -15862,6 +15924,9 @@ public final class ExecutionOuterClass {
         }
         if (other.hasAuthRole()) {
           mergeAuthRole(other.getAuthRole());
+        }
+        if (other.qualityOfService_ != 0) {
+          setQualityOfServiceValue(other.getQualityOfServiceValue());
         }
         switch (other.getNotificationOverridesCase()) {
           case NOTIFICATIONS: {
@@ -17068,6 +17133,71 @@ public final class ExecutionOuterClass {
           authRole_ = null;
         }
         return authRoleBuilder_;
+      }
+
+      private int qualityOfService_ = 0;
+      /**
+       * <pre>
+       * Indicates the amount of queueing a launched workflow execution can tolerate.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.QualityOfService quality_of_service = 17;</code>
+       */
+      public int getQualityOfServiceValue() {
+        return qualityOfService_;
+      }
+      /**
+       * <pre>
+       * Indicates the amount of queueing a launched workflow execution can tolerate.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.QualityOfService quality_of_service = 17;</code>
+       */
+      public Builder setQualityOfServiceValue(int value) {
+        qualityOfService_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicates the amount of queueing a launched workflow execution can tolerate.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.QualityOfService quality_of_service = 17;</code>
+       */
+      public flyteidl.admin.Common.QualityOfService getQualityOfService() {
+        @SuppressWarnings("deprecation")
+        flyteidl.admin.Common.QualityOfService result = flyteidl.admin.Common.QualityOfService.valueOf(qualityOfService_);
+        return result == null ? flyteidl.admin.Common.QualityOfService.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Indicates the amount of queueing a launched workflow execution can tolerate.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.QualityOfService quality_of_service = 17;</code>
+       */
+      public Builder setQualityOfService(flyteidl.admin.Common.QualityOfService value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        qualityOfService_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicates the amount of queueing a launched workflow execution can tolerate.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.QualityOfService quality_of_service = 17;</code>
+       */
+      public Builder clearQualityOfService() {
+        
+        qualityOfService_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -20148,7 +20278,7 @@ public final class ExecutionOuterClass {
       "CHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016" +
       "CHILD_WORKFLOW\020\004\"G\n\020NotificationList\0223\n\r" +
       "notifications\030\001 \003(\0132\034.flyteidl.admin.Not" +
-      "ification\"\234\003\n\rExecutionSpec\022.\n\013launch_pl" +
+      "ification\"\332\003\n\rExecutionSpec\022.\n\013launch_pl" +
       "an\030\001 \001(\0132\031.flyteidl.core.Identifier\022-\n\006i" +
       "nputs\030\002 \001(\0132\031.flyteidl.core.LiteralMapB\002" +
       "\030\001\0223\n\010metadata\030\003 \001(\0132!.flyteidl.admin.Ex" +
@@ -20157,18 +20287,20 @@ public final class ExecutionOuterClass {
       "sable_all\030\006 \001(\010H\000\022&\n\006labels\030\007 \001(\0132\026.flyt" +
       "eidl.admin.Labels\0220\n\013annotations\030\010 \001(\0132\033" +
       ".flyteidl.admin.Annotations\022+\n\tauth_role" +
-      "\030\020 \001(\0132\030.flyteidl.admin.AuthRoleB\030\n\026noti" +
-      "fication_overridesJ\004\010\004\020\005\"b\n\031ExecutionTer" +
-      "minateRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.cor" +
-      "e.WorkflowExecutionIdentifier\022\r\n\005cause\030\002" +
-      " \001(\t\"\034\n\032ExecutionTerminateResponse\"Y\n\037Wo" +
-      "rkflowExecutionGetDataRequest\0226\n\002id\030\001 \001(" +
-      "\0132*.flyteidl.core.WorkflowExecutionIdent" +
-      "ifier\"u\n WorkflowExecutionGetDataRespons" +
-      "e\022(\n\007outputs\030\001 \001(\0132\027.flyteidl.admin.UrlB" +
-      "lob\022\'\n\006inputs\030\002 \001(\0132\027.flyteidl.admin.Url" +
-      "BlobB3Z1github.com/lyft/flyteidl/gen/pb-" +
-      "go/flyteidl/adminb\006proto3"
+      "\030\020 \001(\0132\030.flyteidl.admin.AuthRole\022<\n\022qual" +
+      "ity_of_service\030\021 \001(\0162 .flyteidl.admin.Qu" +
+      "alityOfServiceB\030\n\026notification_overrides" +
+      "J\004\010\004\020\005\"b\n\031ExecutionTerminateRequest\0226\n\002i" +
+      "d\030\001 \001(\0132*.flyteidl.core.WorkflowExecutio" +
+      "nIdentifier\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionT" +
+      "erminateResponse\"Y\n\037WorkflowExecutionGet" +
+      "DataRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core." +
+      "WorkflowExecutionIdentifier\"u\n WorkflowE" +
+      "xecutionGetDataResponse\022(\n\007outputs\030\001 \001(\013" +
+      "2\027.flyteidl.admin.UrlBlob\022\'\n\006inputs\030\002 \001(" +
+      "\0132\027.flyteidl.admin.UrlBlobB3Z1github.com" +
+      "/lyft/flyteidl/gen/pb-go/flyteidl/adminb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -20265,7 +20397,7 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_ExecutionSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionSpec_descriptor,
-        new java.lang.String[] { "LaunchPlan", "Inputs", "Metadata", "Notifications", "DisableAll", "Labels", "Annotations", "AuthRole", "NotificationOverrides", });
+        new java.lang.String[] { "LaunchPlan", "Inputs", "Metadata", "Notifications", "DisableAll", "Labels", "Annotations", "AuthRole", "QualityOfService", "NotificationOverrides", });
     internal_static_flyteidl_admin_ExecutionTerminateRequest_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_flyteidl_admin_ExecutionTerminateRequest_fieldAccessorTable = new

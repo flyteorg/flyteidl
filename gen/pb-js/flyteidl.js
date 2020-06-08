@@ -15069,6 +15069,22 @@ export const flyteidl = $root.flyteidl = (() => {
             return AuthRole;
         })();
 
+        /**
+         * QualityOfService enum.
+         * @name flyteidl.admin.QualityOfService
+         * @enum {string}
+         * @property {number} QUALITY_OF_SERVICE_HIGH=0 QUALITY_OF_SERVICE_HIGH value
+         * @property {number} QUALITY_OF_SERVICE_MEDIUM=1 QUALITY_OF_SERVICE_MEDIUM value
+         * @property {number} QUALITY_OF_SERVICE_LOW=2 QUALITY_OF_SERVICE_LOW value
+         */
+        admin.QualityOfService = (function() {
+            const valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "QUALITY_OF_SERVICE_HIGH"] = 0;
+            values[valuesById[1] = "QUALITY_OF_SERVICE_MEDIUM"] = 1;
+            values[valuesById[2] = "QUALITY_OF_SERVICE_LOW"] = 2;
+            return values;
+        })();
+
         admin.EventErrorAlreadyInTerminalState = (function() {
 
             /**
@@ -17936,6 +17952,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.ILabels|null} [labels] ExecutionSpec labels
              * @property {flyteidl.admin.IAnnotations|null} [annotations] ExecutionSpec annotations
              * @property {flyteidl.admin.IAuthRole|null} [authRole] ExecutionSpec authRole
+             * @property {flyteidl.admin.QualityOfService|null} [qualityOfService] ExecutionSpec qualityOfService
              */
 
             /**
@@ -18017,6 +18034,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             ExecutionSpec.prototype.authRole = null;
 
+            /**
+             * ExecutionSpec qualityOfService.
+             * @member {flyteidl.admin.QualityOfService} qualityOfService
+             * @memberof flyteidl.admin.ExecutionSpec
+             * @instance
+             */
+            ExecutionSpec.prototype.qualityOfService = 0;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -18071,6 +18096,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.Annotations.encode(message.annotations, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 if (message.authRole != null && message.hasOwnProperty("authRole"))
                     $root.flyteidl.admin.AuthRole.encode(message.authRole, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+                if (message.qualityOfService != null && message.hasOwnProperty("qualityOfService"))
+                    writer.uint32(/* id 17, wireType 0 =*/136).int32(message.qualityOfService);
                 return writer;
             };
 
@@ -18115,6 +18142,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 16:
                         message.authRole = $root.flyteidl.admin.AuthRole.decode(reader, reader.uint32());
+                        break;
+                    case 17:
+                        message.qualityOfService = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -18181,6 +18211,15 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "authRole." + error;
                 }
+                if (message.qualityOfService != null && message.hasOwnProperty("qualityOfService"))
+                    switch (message.qualityOfService) {
+                    default:
+                        return "qualityOfService: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                        break;
+                    }
                 return null;
             };
 
@@ -19340,6 +19379,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.IAnnotations|null} [annotations] LaunchPlanSpec annotations
              * @property {flyteidl.admin.IAuth|null} [auth] LaunchPlanSpec auth
              * @property {flyteidl.admin.IAuthRole|null} [authRole] LaunchPlanSpec authRole
+             * @property {flyteidl.admin.QualityOfService|null} [qualityOfService] LaunchPlanSpec qualityOfService
              */
 
             /**
@@ -19430,6 +19470,14 @@ export const flyteidl = $root.flyteidl = (() => {
             LaunchPlanSpec.prototype.authRole = null;
 
             /**
+             * LaunchPlanSpec qualityOfService.
+             * @member {flyteidl.admin.QualityOfService} qualityOfService
+             * @memberof flyteidl.admin.LaunchPlanSpec
+             * @instance
+             */
+            LaunchPlanSpec.prototype.qualityOfService = 0;
+
+            /**
              * Creates a new LaunchPlanSpec instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.LaunchPlanSpec
@@ -19471,6 +19519,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.Auth.encode(message.auth, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 if (message.authRole != null && message.hasOwnProperty("authRole"))
                     $root.flyteidl.admin.AuthRole.encode(message.authRole, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                if (message.qualityOfService != null && message.hasOwnProperty("qualityOfService"))
+                    writer.uint32(/* id 16, wireType 0 =*/128).int32(message.qualityOfService);
                 return writer;
             };
 
@@ -19518,6 +19568,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 9:
                         message.authRole = $root.flyteidl.admin.AuthRole.decode(reader, reader.uint32());
+                        break;
+                    case 16:
+                        message.qualityOfService = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -19581,6 +19634,15 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "authRole." + error;
                 }
+                if (message.qualityOfService != null && message.hasOwnProperty("qualityOfService"))
+                    switch (message.qualityOfService) {
+                    default:
+                        return "qualityOfService: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                        break;
+                    }
                 return null;
             };
 

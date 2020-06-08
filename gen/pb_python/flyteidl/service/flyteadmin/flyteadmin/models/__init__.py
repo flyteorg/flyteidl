@@ -79,6 +79,7 @@ from flyteadmin.models.admin_project_domain_attributes_update_response import Ad
 from flyteadmin.models.admin_project_register_request import AdminProjectRegisterRequest
 from flyteadmin.models.admin_project_register_response import AdminProjectRegisterResponse
 from flyteadmin.models.admin_projects import AdminProjects
+from flyteadmin.models.admin_quality_of_service import AdminQualityOfService
 from flyteadmin.models.admin_schedule import AdminSchedule
 from flyteadmin.models.admin_slack_notification import AdminSlackNotification
 from flyteadmin.models.admin_sort import AdminSort

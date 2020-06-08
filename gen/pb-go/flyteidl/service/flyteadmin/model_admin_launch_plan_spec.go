@@ -23,4 +23,6 @@ type AdminLaunchPlanSpec struct {
 	// Indicates the permission associated with workflow executions triggered with this launch plan.
 	Auth *AdminAuth `json:"auth,omitempty"`
 	AuthRole *AdminAuthRole `json:"auth_role,omitempty"`
+	// Indicates the amount of queueing a launched workflow execution can tolerate.
+	QualityOfService *AdminQualityOfService `json:"quality_of_service,omitempty"`
 }

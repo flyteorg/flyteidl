@@ -975,6 +975,12 @@ class LaunchPlanSpec final :
   ::flyteidl::admin::AuthRole* mutable_auth_role();
   void set_allocated_auth_role(::flyteidl::admin::AuthRole* auth_role);
 
+  // .flyteidl.admin.QualityOfService quality_of_service = 16;
+  void clear_quality_of_service();
+  static const int kQualityOfServiceFieldNumber = 16;
+  ::flyteidl::admin::QualityOfService quality_of_service() const;
+  void set_quality_of_service(::flyteidl::admin::QualityOfService value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.LaunchPlanSpec)
  private:
   class HasBitSetters;
@@ -989,6 +995,7 @@ class LaunchPlanSpec final :
   ::flyteidl::admin::Annotations* annotations_;
   ::flyteidl::admin::Auth* auth_;
   ::flyteidl::admin::AuthRole* auth_role_;
+  int quality_of_service_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2flaunch_5fplan_2eproto;
 };
@@ -2754,6 +2761,20 @@ inline void LaunchPlanSpec::set_allocated_auth_role(::flyteidl::admin::AuthRole*
   }
   auth_role_ = auth_role;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.LaunchPlanSpec.auth_role)
+}
+
+// .flyteidl.admin.QualityOfService quality_of_service = 16;
+inline void LaunchPlanSpec::clear_quality_of_service() {
+  quality_of_service_ = 0;
+}
+inline ::flyteidl::admin::QualityOfService LaunchPlanSpec::quality_of_service() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.LaunchPlanSpec.quality_of_service)
+  return static_cast< ::flyteidl::admin::QualityOfService >(quality_of_service_);
+}
+inline void LaunchPlanSpec::set_quality_of_service(::flyteidl::admin::QualityOfService value) {
+  
+  quality_of_service_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.LaunchPlanSpec.quality_of_service)
 }
 
 // -------------------------------------------------------------------

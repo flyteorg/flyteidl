@@ -6240,6 +6240,13 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** QualityOfService enum. */
+        enum QualityOfService {
+            QUALITY_OF_SERVICE_HIGH = 0,
+            QUALITY_OF_SERVICE_MEDIUM = 1,
+            QUALITY_OF_SERVICE_LOW = 2
+        }
+
         /** Properties of an EventErrorAlreadyInTerminalState. */
         interface IEventErrorAlreadyInTerminalState {
 
@@ -7489,6 +7496,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec authRole */
             authRole?: (flyteidl.admin.IAuthRole|null);
+
+            /** ExecutionSpec qualityOfService */
+            qualityOfService?: (flyteidl.admin.QualityOfService|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -7523,6 +7533,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec authRole. */
             public authRole?: (flyteidl.admin.IAuthRole|null);
+
+            /** ExecutionSpec qualityOfService. */
+            public qualityOfService: flyteidl.admin.QualityOfService;
 
             /** ExecutionSpec notificationOverrides. */
             public notificationOverrides?: ("notifications"|"disableAll");
@@ -8096,6 +8109,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec authRole */
             authRole?: (flyteidl.admin.IAuthRole|null);
+
+            /** LaunchPlanSpec qualityOfService */
+            qualityOfService?: (flyteidl.admin.QualityOfService|null);
         }
 
         /** Represents a LaunchPlanSpec. */
@@ -8133,6 +8149,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec authRole. */
             public authRole?: (flyteidl.admin.IAuthRole|null);
+
+            /** LaunchPlanSpec qualityOfService. */
+            public qualityOfService: flyteidl.admin.QualityOfService;
 
             /**
              * Creates a new LaunchPlanSpec instance using the specified properties.
