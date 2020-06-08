@@ -414,30 +414,30 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto[] =
   "flyteidl.core.TaskNodeH\000\0224\n\rworkflow_nod"
   "e\030\007 \001(\0132\033.flyteidl.core.WorkflowNodeH\000\0220"
   "\n\013branch_node\030\010 \001(\0132\031.flyteidl.core.Bran"
-  "chNodeH\000B\010\n\006target\"\204\002\n\020WorkflowMetadata\022"
-  "1\n\016queuing_budget\030\001 \001(\0132\031.google.protobu"
-  "f.Duration\022C\n\non_failure\030\002 \001(\0162/.flyteid"
-  "l.core.WorkflowMetadata.OnFailurePolicy\""
-  "x\n\017OnFailurePolicy\022\024\n\020FAIL_IMMEDIATELY\020\000"
-  "\022%\n!FAIL_AFTER_RUNNING_NODES_COMPLETE\020\001\022"
-  "(\n$FAIL_AFTER_EXECUTABLE_NODES_COMPLETE\020"
-  "\002\"1\n\030WorkflowMetadataDefaults\022\025\n\rinterru"
-  "ptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplate\022%\n\002id\030"
-  "\001 \001(\0132\031.flyteidl.core.Identifier\0221\n\010meta"
-  "data\030\002 \001(\0132\037.flyteidl.core.WorkflowMetad"
-  "ata\0220\n\tinterface\030\003 \001(\0132\035.flyteidl.core.T"
-  "ypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.flyteidl."
-  "core.Node\022\'\n\007outputs\030\005 \003(\0132\026.flyteidl.co"
-  "re.Binding\022)\n\014failure_node\030\006 \001(\0132\023.flyte"
-  "idl.core.Node\022B\n\021metadata_defaults\030\007 \001(\013"
-  "2\'.flyteidl.core.WorkflowMetadataDefault"
-  "sB2Z0github.com/lyft/flyteidl/gen/pb-go/"
-  "flyteidl/coreb\006proto3"
+  "chNodeH\000B\010\n\006target\"\210\002\n\020WorkflowMetadata\022"
+  "5\n\016queuing_budget\030\001 \001(\0132\031.google.protobu"
+  "f.DurationB\002\030\001\022C\n\non_failure\030\002 \001(\0162/.fly"
+  "teidl.core.WorkflowMetadata.OnFailurePol"
+  "icy\"x\n\017OnFailurePolicy\022\024\n\020FAIL_IMMEDIATE"
+  "LY\020\000\022%\n!FAIL_AFTER_RUNNING_NODES_COMPLET"
+  "E\020\001\022(\n$FAIL_AFTER_EXECUTABLE_NODES_COMPL"
+  "ETE\020\002\"1\n\030WorkflowMetadataDefaults\022\025\n\rint"
+  "erruptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplate\022%\n"
+  "\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\0221\n\010"
+  "metadata\030\002 \001(\0132\037.flyteidl.core.WorkflowM"
+  "etadata\0220\n\tinterface\030\003 \001(\0132\035.flyteidl.co"
+  "re.TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.flyte"
+  "idl.core.Node\022\'\n\007outputs\030\005 \003(\0132\026.flyteid"
+  "l.core.Binding\022)\n\014failure_node\030\006 \001(\0132\023.f"
+  "lyteidl.core.Node\022B\n\021metadata_defaults\030\007"
+  " \001(\0132\'.flyteidl.core.WorkflowMetadataDef"
+  "aultsB2Z0github.com/lyft/flyteidl/gen/pb"
+  "-go/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fworkflow_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fworkflow_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto,
-  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 2061,
+  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 2065,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fworkflow_2eproto() {
@@ -4250,7 +4250,7 @@ const char* WorkflowMetadata::_InternalParse(const char* begin, const char* end,
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .google.protobuf.Duration queuing_budget = 1;
+      // .google.protobuf.Duration queuing_budget = 1 [deprecated = true];
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
@@ -4301,7 +4301,7 @@ bool WorkflowMetadata::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .google.protobuf.Duration queuing_budget = 1;
+      // .google.protobuf.Duration queuing_budget = 1 [deprecated = true];
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -4353,7 +4353,7 @@ void WorkflowMetadata::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .google.protobuf.Duration queuing_budget = 1;
+  // .google.protobuf.Duration queuing_budget = 1 [deprecated = true];
   if (this->has_queuing_budget()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, HasBitSetters::queuing_budget(this), output);
@@ -4378,7 +4378,7 @@ void WorkflowMetadata::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .google.protobuf.Duration queuing_budget = 1;
+  // .google.protobuf.Duration queuing_budget = 1 [deprecated = true];
   if (this->has_queuing_budget()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
@@ -4412,7 +4412,7 @@ size_t WorkflowMetadata::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .google.protobuf.Duration queuing_budget = 1;
+  // .google.protobuf.Duration queuing_budget = 1 [deprecated = true];
   if (this->has_queuing_budget()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
