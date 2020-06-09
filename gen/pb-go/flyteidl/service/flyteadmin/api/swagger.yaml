@@ -976,7 +976,8 @@ paths:
           \ and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes\
           \ cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task\
           \ execution queue assignment.\n - EXECUTION_CLUSTER_LABEL: Configures the\
-          \ K8s cluster label to be used for execution to be run"
+          \ K8s cluster label to be used for execution to be run\n - QUALITY_OF_SERVICE_SPECIFICATION:\
+          \ Configures default quality of service when undefined in an execution spec."
         required: false
         type: "string"
         default: "TASK_RESOURCE"
@@ -985,6 +986,7 @@ paths:
         - "CLUSTER_RESOURCE"
         - "EXECUTION_QUEUE"
         - "EXECUTION_CLUSTER_LABEL"
+        - "QUALITY_OF_SERVICE_SPECIFICATION"
         x-exportParamName: "ResourceType"
         x-optionalDataType: "String"
       responses:
@@ -1330,7 +1332,8 @@ paths:
           \ and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes\
           \ cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task\
           \ execution queue assignment.\n - EXECUTION_CLUSTER_LABEL: Configures the\
-          \ K8s cluster label to be used for execution to be run"
+          \ K8s cluster label to be used for execution to be run\n - QUALITY_OF_SERVICE_SPECIFICATION:\
+          \ Configures default quality of service when undefined in an execution spec."
         required: false
         type: "string"
         default: "TASK_RESOURCE"
@@ -1339,6 +1342,7 @@ paths:
         - "CLUSTER_RESOURCE"
         - "EXECUTION_QUEUE"
         - "EXECUTION_CLUSTER_LABEL"
+        - "QUALITY_OF_SERVICE_SPECIFICATION"
         x-exportParamName: "ResourceType"
         x-optionalDataType: "String"
       responses:
@@ -1933,7 +1937,8 @@ paths:
           \ and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes\
           \ cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task\
           \ execution queue assignment.\n - EXECUTION_CLUSTER_LABEL: Configures the\
-          \ K8s cluster label to be used for execution to be run"
+          \ K8s cluster label to be used for execution to be run\n - QUALITY_OF_SERVICE_SPECIFICATION:\
+          \ Configures default quality of service when undefined in an execution spec."
         required: false
         type: "string"
         default: "TASK_RESOURCE"
@@ -1942,6 +1947,7 @@ paths:
         - "CLUSTER_RESOURCE"
         - "EXECUTION_QUEUE"
         - "EXECUTION_CLUSTER_LABEL"
+        - "QUALITY_OF_SERVICE_SPECIFICATION"
         x-exportParamName: "ResourceType"
         x-optionalDataType: "String"
       responses:
@@ -4560,6 +4566,8 @@ definitions:
         domain: "domain"
         project: "project"
         attributes:
+          quality_of_service_spec:
+            quality_of_service: {}
           cluster_resource_attributes:
             attributes:
               key: "attributes"
@@ -4585,6 +4593,8 @@ definitions:
         domain: "domain"
         project: "project"
         attributes:
+          quality_of_service_spec:
+            quality_of_service: {}
           cluster_resource_attributes:
             attributes:
               key: "attributes"
@@ -4641,6 +4651,8 @@ definitions:
       domain: "domain"
       project: "project"
       attributes:
+        quality_of_service_spec:
+          quality_of_service: {}
         cluster_resource_attributes:
           attributes:
             key: "attributes"
@@ -4668,12 +4680,14 @@ definitions:
       \ Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE:\
       \ Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE:\
       \ Configures task and dynamic task execution queue assignment.\n - EXECUTION_CLUSTER_LABEL:\
-      \ Configures the K8s cluster label to be used for execution to be run"
+      \ Configures the K8s cluster label to be used for execution to be run\n - QUALITY_OF_SERVICE_SPECIFICATION:\
+      \ Configures default quality of service when undefined in an execution spec."
     enum:
     - "TASK_RESOURCE"
     - "CLUSTER_RESOURCE"
     - "EXECUTION_QUEUE"
     - "EXECUTION_CLUSTER_LABEL"
+    - "QUALITY_OF_SERVICE_SPECIFICATION"
     default: "TASK_RESOURCE"
   adminMatchingAttributes:
     type: "object"
@@ -4686,9 +4700,13 @@ definitions:
         $ref: "#/definitions/adminExecutionQueueAttributes"
       execution_cluster_label:
         $ref: "#/definitions/adminExecutionClusterLabel"
+      quality_of_service_spec:
+        $ref: "#/definitions/adminQualityOfServiceSpec"
     description: "Generic container for encapsulating all types of the above attributes\
       \ messages."
     example:
+      quality_of_service_spec:
+        quality_of_service: {}
       cluster_resource_attributes:
         attributes:
           key: "attributes"
@@ -5120,6 +5138,8 @@ definitions:
       domain: "domain"
       project: "project"
       matching_attributes:
+        quality_of_service_spec:
+          quality_of_service: {}
         cluster_resource_attributes:
           attributes:
             key: "attributes"
@@ -5164,6 +5184,8 @@ definitions:
         domain: "domain"
         project: "project"
         matching_attributes:
+          quality_of_service_spec:
+            quality_of_service: {}
           cluster_resource_attributes:
             attributes:
               key: "attributes"
@@ -5241,6 +5263,15 @@ definitions:
     - "QUALITY_OF_SERVICE_MEDIUM"
     - "QUALITY_OF_SERVICE_LOW"
     default: "QUALITY_OF_SERVICE_UNDEFINED"
+  adminQualityOfServiceSpec:
+    type: "object"
+    properties:
+      quality_of_service:
+        description: "Default quality of service to be applied when when undefined\
+          \ in an execution spec."
+        $ref: "#/definitions/adminQualityOfService"
+    example:
+      quality_of_service: {}
   adminSchedule:
     type: "object"
     properties:
@@ -8910,6 +8941,8 @@ definitions:
       domain: "domain"
       project: "project"
       matching_attributes:
+        quality_of_service_spec:
+          quality_of_service: {}
         cluster_resource_attributes:
           attributes:
             key: "attributes"
@@ -8958,6 +8991,8 @@ definitions:
         domain: "domain"
         project: "project"
         matching_attributes:
+          quality_of_service_spec:
+            quality_of_service: {}
           cluster_resource_attributes:
             attributes:
               key: "attributes"

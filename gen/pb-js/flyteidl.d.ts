@@ -8690,7 +8690,8 @@ export namespace flyteidl {
             TASK_RESOURCE = 0,
             CLUSTER_RESOURCE = 1,
             EXECUTION_QUEUE = 2,
-            EXECUTION_CLUSTER_LABEL = 3
+            EXECUTION_CLUSTER_LABEL = 3,
+            QUALITY_OF_SERVICE_SPECIFICATION = 4
         }
 
         /** Properties of a TaskResourceSpec. */
@@ -8977,6 +8978,58 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a QualityOfServiceSpec. */
+        interface IQualityOfServiceSpec {
+
+            /** QualityOfServiceSpec qualityOfService */
+            qualityOfService?: (flyteidl.admin.QualityOfService|null);
+        }
+
+        /** Represents a QualityOfServiceSpec. */
+        class QualityOfServiceSpec implements IQualityOfServiceSpec {
+
+            /**
+             * Constructs a new QualityOfServiceSpec.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IQualityOfServiceSpec);
+
+            /** QualityOfServiceSpec qualityOfService. */
+            public qualityOfService: flyteidl.admin.QualityOfService;
+
+            /**
+             * Creates a new QualityOfServiceSpec instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns QualityOfServiceSpec instance
+             */
+            public static create(properties?: flyteidl.admin.IQualityOfServiceSpec): flyteidl.admin.QualityOfServiceSpec;
+
+            /**
+             * Encodes the specified QualityOfServiceSpec message. Does not implicitly {@link flyteidl.admin.QualityOfServiceSpec.verify|verify} messages.
+             * @param message QualityOfServiceSpec message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IQualityOfServiceSpec, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a QualityOfServiceSpec message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns QualityOfServiceSpec
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.QualityOfServiceSpec;
+
+            /**
+             * Verifies a QualityOfServiceSpec message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a MatchingAttributes. */
         interface IMatchingAttributes {
 
@@ -8991,6 +9044,9 @@ export namespace flyteidl {
 
             /** MatchingAttributes executionClusterLabel */
             executionClusterLabel?: (flyteidl.admin.IExecutionClusterLabel|null);
+
+            /** MatchingAttributes qualityOfServiceSpec */
+            qualityOfServiceSpec?: (flyteidl.admin.IQualityOfServiceSpec|null);
         }
 
         /** Represents a MatchingAttributes. */
@@ -9014,8 +9070,11 @@ export namespace flyteidl {
             /** MatchingAttributes executionClusterLabel. */
             public executionClusterLabel?: (flyteidl.admin.IExecutionClusterLabel|null);
 
+            /** MatchingAttributes qualityOfServiceSpec. */
+            public qualityOfServiceSpec?: (flyteidl.admin.IQualityOfServiceSpec|null);
+
             /** MatchingAttributes target. */
-            public target?: ("taskResourceAttributes"|"clusterResourceAttributes"|"executionQueueAttributes"|"executionClusterLabel");
+            public target?: ("taskResourceAttributes"|"clusterResourceAttributes"|"executionQueueAttributes"|"executionClusterLabel"|"qualityOfServiceSpec");
 
             /**
              * Creates a new MatchingAttributes instance using the specified properties.

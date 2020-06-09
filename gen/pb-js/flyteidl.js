@@ -20827,6 +20827,7 @@ export const flyteidl = $root.flyteidl = (() => {
          * @property {number} CLUSTER_RESOURCE=1 CLUSTER_RESOURCE value
          * @property {number} EXECUTION_QUEUE=2 EXECUTION_QUEUE value
          * @property {number} EXECUTION_CLUSTER_LABEL=3 EXECUTION_CLUSTER_LABEL value
+         * @property {number} QUALITY_OF_SERVICE_SPECIFICATION=4 QUALITY_OF_SERVICE_SPECIFICATION value
          */
         admin.MatchableResource = (function() {
             const valuesById = {}, values = Object.create(valuesById);
@@ -20834,6 +20835,7 @@ export const flyteidl = $root.flyteidl = (() => {
             values[valuesById[1] = "CLUSTER_RESOURCE"] = 1;
             values[valuesById[2] = "EXECUTION_QUEUE"] = 2;
             values[valuesById[3] = "EXECUTION_CLUSTER_LABEL"] = 3;
+            values[valuesById[4] = "QUALITY_OF_SERVICE_SPECIFICATION"] = 4;
             return values;
         })();
 
@@ -21479,6 +21481,123 @@ export const flyteidl = $root.flyteidl = (() => {
             return ExecutionClusterLabel;
         })();
 
+        admin.QualityOfServiceSpec = (function() {
+
+            /**
+             * Properties of a QualityOfServiceSpec.
+             * @memberof flyteidl.admin
+             * @interface IQualityOfServiceSpec
+             * @property {flyteidl.admin.QualityOfService|null} [qualityOfService] QualityOfServiceSpec qualityOfService
+             */
+
+            /**
+             * Constructs a new QualityOfServiceSpec.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a QualityOfServiceSpec.
+             * @implements IQualityOfServiceSpec
+             * @constructor
+             * @param {flyteidl.admin.IQualityOfServiceSpec=} [properties] Properties to set
+             */
+            function QualityOfServiceSpec(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * QualityOfServiceSpec qualityOfService.
+             * @member {flyteidl.admin.QualityOfService} qualityOfService
+             * @memberof flyteidl.admin.QualityOfServiceSpec
+             * @instance
+             */
+            QualityOfServiceSpec.prototype.qualityOfService = 0;
+
+            /**
+             * Creates a new QualityOfServiceSpec instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.QualityOfServiceSpec
+             * @static
+             * @param {flyteidl.admin.IQualityOfServiceSpec=} [properties] Properties to set
+             * @returns {flyteidl.admin.QualityOfServiceSpec} QualityOfServiceSpec instance
+             */
+            QualityOfServiceSpec.create = function create(properties) {
+                return new QualityOfServiceSpec(properties);
+            };
+
+            /**
+             * Encodes the specified QualityOfServiceSpec message. Does not implicitly {@link flyteidl.admin.QualityOfServiceSpec.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.QualityOfServiceSpec
+             * @static
+             * @param {flyteidl.admin.IQualityOfServiceSpec} message QualityOfServiceSpec message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            QualityOfServiceSpec.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.qualityOfService != null && message.hasOwnProperty("qualityOfService"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.qualityOfService);
+                return writer;
+            };
+
+            /**
+             * Decodes a QualityOfServiceSpec message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.QualityOfServiceSpec
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.QualityOfServiceSpec} QualityOfServiceSpec
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            QualityOfServiceSpec.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.QualityOfServiceSpec();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.qualityOfService = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a QualityOfServiceSpec message.
+             * @function verify
+             * @memberof flyteidl.admin.QualityOfServiceSpec
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            QualityOfServiceSpec.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.qualityOfService != null && message.hasOwnProperty("qualityOfService"))
+                    switch (message.qualityOfService) {
+                    default:
+                        return "qualityOfService: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                        break;
+                    }
+                return null;
+            };
+
+            return QualityOfServiceSpec;
+        })();
+
         admin.MatchingAttributes = (function() {
 
             /**
@@ -21489,6 +21608,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.IClusterResourceAttributes|null} [clusterResourceAttributes] MatchingAttributes clusterResourceAttributes
              * @property {flyteidl.admin.IExecutionQueueAttributes|null} [executionQueueAttributes] MatchingAttributes executionQueueAttributes
              * @property {flyteidl.admin.IExecutionClusterLabel|null} [executionClusterLabel] MatchingAttributes executionClusterLabel
+             * @property {flyteidl.admin.IQualityOfServiceSpec|null} [qualityOfServiceSpec] MatchingAttributes qualityOfServiceSpec
              */
 
             /**
@@ -21538,17 +21658,25 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             MatchingAttributes.prototype.executionClusterLabel = null;
 
+            /**
+             * MatchingAttributes qualityOfServiceSpec.
+             * @member {flyteidl.admin.IQualityOfServiceSpec|null|undefined} qualityOfServiceSpec
+             * @memberof flyteidl.admin.MatchingAttributes
+             * @instance
+             */
+            MatchingAttributes.prototype.qualityOfServiceSpec = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
             /**
              * MatchingAttributes target.
-             * @member {"taskResourceAttributes"|"clusterResourceAttributes"|"executionQueueAttributes"|"executionClusterLabel"|undefined} target
+             * @member {"taskResourceAttributes"|"clusterResourceAttributes"|"executionQueueAttributes"|"executionClusterLabel"|"qualityOfServiceSpec"|undefined} target
              * @memberof flyteidl.admin.MatchingAttributes
              * @instance
              */
             Object.defineProperty(MatchingAttributes.prototype, "target", {
-                get: $util.oneOfGetter($oneOfFields = ["taskResourceAttributes", "clusterResourceAttributes", "executionQueueAttributes", "executionClusterLabel"]),
+                get: $util.oneOfGetter($oneOfFields = ["taskResourceAttributes", "clusterResourceAttributes", "executionQueueAttributes", "executionClusterLabel", "qualityOfServiceSpec"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -21584,6 +21712,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.ExecutionQueueAttributes.encode(message.executionQueueAttributes, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.executionClusterLabel != null && message.hasOwnProperty("executionClusterLabel"))
                     $root.flyteidl.admin.ExecutionClusterLabel.encode(message.executionClusterLabel, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.qualityOfServiceSpec != null && message.hasOwnProperty("qualityOfServiceSpec"))
+                    $root.flyteidl.admin.QualityOfServiceSpec.encode(message.qualityOfServiceSpec, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -21616,6 +21746,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 4:
                         message.executionClusterLabel = $root.flyteidl.admin.ExecutionClusterLabel.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.qualityOfServiceSpec = $root.flyteidl.admin.QualityOfServiceSpec.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -21673,6 +21806,16 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.flyteidl.admin.ExecutionClusterLabel.verify(message.executionClusterLabel);
                         if (error)
                             return "executionClusterLabel." + error;
+                    }
+                }
+                if (message.qualityOfServiceSpec != null && message.hasOwnProperty("qualityOfServiceSpec")) {
+                    if (properties.target === 1)
+                        return "target: multiple values";
+                    properties.target = 1;
+                    {
+                        let error = $root.flyteidl.admin.QualityOfServiceSpec.verify(message.qualityOfServiceSpec);
+                        if (error)
+                            return "qualityOfServiceSpec." + error;
                     }
                 }
                 return null;
@@ -21970,6 +22113,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                     case 2:
                     case 3:
+                    case 4:
                         break;
                     }
                 return null;
@@ -24994,6 +25138,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                     case 2:
                     case 3:
+                    case 4:
                         break;
                     }
                 return null;
@@ -25257,6 +25402,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                     case 2:
                     case 3:
+                    case 4:
                         break;
                     }
                 return null;
@@ -28523,6 +28669,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                     case 2:
                     case 3:
+                    case 4:
                         break;
                     }
                 return null;
@@ -28803,6 +28950,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                     case 2:
                     case 3:
+                    case 4:
                         break;
                     }
                 return null;

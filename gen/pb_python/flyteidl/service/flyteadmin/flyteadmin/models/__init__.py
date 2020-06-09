@@ -80,6 +80,7 @@ from flyteadmin.models.admin_project_register_request import AdminProjectRegiste
 from flyteadmin.models.admin_project_register_response import AdminProjectRegisterResponse
 from flyteadmin.models.admin_projects import AdminProjects
 from flyteadmin.models.admin_quality_of_service import AdminQualityOfService
+from flyteadmin.models.admin_quality_of_service_spec import AdminQualityOfServiceSpec
 from flyteadmin.models.admin_schedule import AdminSchedule
 from flyteadmin.models.admin_slack_notification import AdminSlackNotification
 from flyteadmin.models.admin_sort import AdminSort

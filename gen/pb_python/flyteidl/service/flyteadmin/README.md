@@ -184,6 +184,7 @@ Class | Method | HTTP request | Description
  - [AdminProjectRegisterResponse](docs/AdminProjectRegisterResponse.md)
  - [AdminProjects](docs/AdminProjects.md)
  - [AdminQualityOfService](docs/AdminQualityOfService.md)
+ - [AdminQualityOfServiceSpec](docs/AdminQualityOfServiceSpec.md)
  - [AdminSchedule](docs/AdminSchedule.md)
  - [AdminSlackNotification](docs/AdminSlackNotification.md)
  - [AdminSort](docs/AdminSort.md)
