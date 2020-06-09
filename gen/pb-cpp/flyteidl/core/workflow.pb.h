@@ -1467,14 +1467,14 @@ class WorkflowMetadata final :
 
   // accessors -------------------------------------------------------
 
-  // .google.protobuf.Duration queuing_budget = 1 [deprecated = true];
-  PROTOBUF_DEPRECATED bool has_queuing_budget() const;
-  PROTOBUF_DEPRECATED void clear_queuing_budget();
-  PROTOBUF_DEPRECATED static const int kQueuingBudgetFieldNumber = 1;
-  PROTOBUF_DEPRECATED const ::google::protobuf::Duration& queuing_budget() const;
-  PROTOBUF_DEPRECATED ::google::protobuf::Duration* release_queuing_budget();
-  PROTOBUF_DEPRECATED ::google::protobuf::Duration* mutable_queuing_budget();
-  PROTOBUF_DEPRECATED void set_allocated_queuing_budget(::google::protobuf::Duration* queuing_budget);
+  // .google.protobuf.Duration queuing_budget = 1;
+  bool has_queuing_budget() const;
+  void clear_queuing_budget();
+  static const int kQueuingBudgetFieldNumber = 1;
+  const ::google::protobuf::Duration& queuing_budget() const;
+  ::google::protobuf::Duration* release_queuing_budget();
+  ::google::protobuf::Duration* mutable_queuing_budget();
+  void set_allocated_queuing_budget(::google::protobuf::Duration* queuing_budget);
 
   // .flyteidl.core.WorkflowMetadata.OnFailurePolicy on_failure = 2;
   void clear_on_failure();
@@ -2914,7 +2914,7 @@ inline Node::TargetCase Node::target_case() const {
 
 // WorkflowMetadata
 
-// .google.protobuf.Duration queuing_budget = 1 [deprecated = true];
+// .google.protobuf.Duration queuing_budget = 1;
 inline bool WorkflowMetadata::has_queuing_budget() const {
   return this != internal_default_instance() && queuing_budget_ != nullptr;
 }

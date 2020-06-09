@@ -6242,9 +6242,10 @@ export namespace flyteidl {
 
         /** QualityOfService enum. */
         enum QualityOfService {
-            QUALITY_OF_SERVICE_HIGH = 0,
-            QUALITY_OF_SERVICE_MEDIUM = 1,
-            QUALITY_OF_SERVICE_LOW = 2
+            QUALITY_OF_SERVICE_UNDEFINED = 0,
+            QUALITY_OF_SERVICE_HIGH = 1,
+            QUALITY_OF_SERVICE_MEDIUM = 2,
+            QUALITY_OF_SERVICE_LOW = 3
         }
 
         /** Properties of an EventErrorAlreadyInTerminalState. */

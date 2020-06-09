@@ -793,16 +793,17 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto[] =
   "\tH\000\022$\n\032kubernetes_service_account\030\002 \001(\tH"
   "\000B\010\n\006method*\\\n\020NamedEntityState\022\027\n\023NAMED"
   "_ENTITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVE"
-  "D\020\001\022\024\n\020SYSTEM_GENERATED\020\002*j\n\020QualityOfSe"
-  "rvice\022\033\n\027QUALITY_OF_SERVICE_HIGH\020\000\022\035\n\031QU"
-  "ALITY_OF_SERVICE_MEDIUM\020\001\022\032\n\026QUALITY_OF_"
-  "SERVICE_LOW\020\002B3Z1github.com/lyft/flyteid"
-  "l/gen/pb-go/flyteidl/adminb\006proto3"
+  "D\020\001\022\024\n\020SYSTEM_GENERATED\020\002*\214\001\n\020QualityOfS"
+  "ervice\022 \n\034QUALITY_OF_SERVICE_UNDEFINED\020\000"
+  "\022\033\n\027QUALITY_OF_SERVICE_HIGH\020\001\022\035\n\031QUALITY"
+  "_OF_SERVICE_MEDIUM\020\002\022\032\n\026QUALITY_OF_SERVI"
+  "CE_LOW\020\003B3Z1github.com/lyft/flyteidl/gen"
+  "/pb-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fcommon_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fcommon_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto,
-  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 2674,
+  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 2709,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto() {
@@ -863,6 +864,7 @@ bool QualityOfService_IsValid(int value) {
     case 0:
     case 1:
     case 2:
+    case 3:
       return true;
     default:
       return false;

@@ -161,55 +161,71 @@ public final class Common {
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
+     * Default: no quality of service specified.
+     * </pre>
+     *
+     * <code>QUALITY_OF_SERVICE_UNDEFINED = 0;</code>
+     */
+    QUALITY_OF_SERVICE_UNDEFINED(0),
+    /**
+     * <pre>
      * Guarantees that this execution will begin as soon as requested and incur no queueing time.
      * </pre>
      *
-     * <code>QUALITY_OF_SERVICE_HIGH = 0;</code>
+     * <code>QUALITY_OF_SERVICE_HIGH = 1;</code>
      */
-    QUALITY_OF_SERVICE_HIGH(0),
+    QUALITY_OF_SERVICE_HIGH(1),
     /**
      * <pre>
      * This execution may incur some queueing delay (e.g. 30 minutes) and is medium priority.
      * </pre>
      *
-     * <code>QUALITY_OF_SERVICE_MEDIUM = 1;</code>
+     * <code>QUALITY_OF_SERVICE_MEDIUM = 2;</code>
      */
-    QUALITY_OF_SERVICE_MEDIUM(1),
+    QUALITY_OF_SERVICE_MEDIUM(2),
     /**
      * <pre>
      * This execution may incur significant queueing delay (e.g. 2 hours) and is low priority.
      * </pre>
      *
-     * <code>QUALITY_OF_SERVICE_LOW = 2;</code>
+     * <code>QUALITY_OF_SERVICE_LOW = 3;</code>
      */
-    QUALITY_OF_SERVICE_LOW(2),
+    QUALITY_OF_SERVICE_LOW(3),
     UNRECOGNIZED(-1),
     ;
 
     /**
      * <pre>
+     * Default: no quality of service specified.
+     * </pre>
+     *
+     * <code>QUALITY_OF_SERVICE_UNDEFINED = 0;</code>
+     */
+    public static final int QUALITY_OF_SERVICE_UNDEFINED_VALUE = 0;
+    /**
+     * <pre>
      * Guarantees that this execution will begin as soon as requested and incur no queueing time.
      * </pre>
      *
-     * <code>QUALITY_OF_SERVICE_HIGH = 0;</code>
+     * <code>QUALITY_OF_SERVICE_HIGH = 1;</code>
      */
-    public static final int QUALITY_OF_SERVICE_HIGH_VALUE = 0;
+    public static final int QUALITY_OF_SERVICE_HIGH_VALUE = 1;
     /**
      * <pre>
      * This execution may incur some queueing delay (e.g. 30 minutes) and is medium priority.
      * </pre>
      *
-     * <code>QUALITY_OF_SERVICE_MEDIUM = 1;</code>
+     * <code>QUALITY_OF_SERVICE_MEDIUM = 2;</code>
      */
-    public static final int QUALITY_OF_SERVICE_MEDIUM_VALUE = 1;
+    public static final int QUALITY_OF_SERVICE_MEDIUM_VALUE = 2;
     /**
      * <pre>
      * This execution may incur significant queueing delay (e.g. 2 hours) and is low priority.
      * </pre>
      *
-     * <code>QUALITY_OF_SERVICE_LOW = 2;</code>
+     * <code>QUALITY_OF_SERVICE_LOW = 3;</code>
      */
-    public static final int QUALITY_OF_SERVICE_LOW_VALUE = 2;
+    public static final int QUALITY_OF_SERVICE_LOW_VALUE = 3;
 
 
     public final int getNumber() {
@@ -230,9 +246,10 @@ public final class Common {
 
     public static QualityOfService forNumber(int value) {
       switch (value) {
-        case 0: return QUALITY_OF_SERVICE_HIGH;
-        case 1: return QUALITY_OF_SERVICE_MEDIUM;
-        case 2: return QUALITY_OF_SERVICE_LOW;
+        case 0: return QUALITY_OF_SERVICE_UNDEFINED;
+        case 1: return QUALITY_OF_SERVICE_HIGH;
+        case 2: return QUALITY_OF_SERVICE_MEDIUM;
+        case 3: return QUALITY_OF_SERVICE_LOW;
         default: return null;
       }
     }
@@ -20079,11 +20096,12 @@ public final class Common {
       "\tH\000\022$\n\032kubernetes_service_account\030\002 \001(\tH" +
       "\000B\010\n\006method*\\\n\020NamedEntityState\022\027\n\023NAMED" +
       "_ENTITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVE" +
-      "D\020\001\022\024\n\020SYSTEM_GENERATED\020\002*j\n\020QualityOfSe" +
-      "rvice\022\033\n\027QUALITY_OF_SERVICE_HIGH\020\000\022\035\n\031QU" +
-      "ALITY_OF_SERVICE_MEDIUM\020\001\022\032\n\026QUALITY_OF_" +
-      "SERVICE_LOW\020\002B3Z1github.com/lyft/flyteid" +
-      "l/gen/pb-go/flyteidl/adminb\006proto3"
+      "D\020\001\022\024\n\020SYSTEM_GENERATED\020\002*\214\001\n\020QualityOfS" +
+      "ervice\022 \n\034QUALITY_OF_SERVICE_UNDEFINED\020\000" +
+      "\022\033\n\027QUALITY_OF_SERVICE_HIGH\020\001\022\035\n\031QUALITY" +
+      "_OF_SERVICE_MEDIUM\020\002\022\032\n\026QUALITY_OF_SERVI" +
+      "CE_LOW\020\003B3Z1github.com/lyft/flyteidl/gen" +
+      "/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

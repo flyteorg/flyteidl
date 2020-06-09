@@ -15073,15 +15073,17 @@ export const flyteidl = $root.flyteidl = (() => {
          * QualityOfService enum.
          * @name flyteidl.admin.QualityOfService
          * @enum {string}
-         * @property {number} QUALITY_OF_SERVICE_HIGH=0 QUALITY_OF_SERVICE_HIGH value
-         * @property {number} QUALITY_OF_SERVICE_MEDIUM=1 QUALITY_OF_SERVICE_MEDIUM value
-         * @property {number} QUALITY_OF_SERVICE_LOW=2 QUALITY_OF_SERVICE_LOW value
+         * @property {number} QUALITY_OF_SERVICE_UNDEFINED=0 QUALITY_OF_SERVICE_UNDEFINED value
+         * @property {number} QUALITY_OF_SERVICE_HIGH=1 QUALITY_OF_SERVICE_HIGH value
+         * @property {number} QUALITY_OF_SERVICE_MEDIUM=2 QUALITY_OF_SERVICE_MEDIUM value
+         * @property {number} QUALITY_OF_SERVICE_LOW=3 QUALITY_OF_SERVICE_LOW value
          */
         admin.QualityOfService = (function() {
             const valuesById = {}, values = Object.create(valuesById);
-            values[valuesById[0] = "QUALITY_OF_SERVICE_HIGH"] = 0;
-            values[valuesById[1] = "QUALITY_OF_SERVICE_MEDIUM"] = 1;
-            values[valuesById[2] = "QUALITY_OF_SERVICE_LOW"] = 2;
+            values[valuesById[0] = "QUALITY_OF_SERVICE_UNDEFINED"] = 0;
+            values[valuesById[1] = "QUALITY_OF_SERVICE_HIGH"] = 1;
+            values[valuesById[2] = "QUALITY_OF_SERVICE_MEDIUM"] = 2;
+            values[valuesById[3] = "QUALITY_OF_SERVICE_LOW"] = 3;
             return values;
         })();
 
@@ -18218,6 +18220,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 0:
                     case 1:
                     case 2:
+                    case 3:
                         break;
                     }
                 return null;
@@ -19641,6 +19644,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 0:
                     case 1:
                     case 2:
+                    case 3:
                         break;
                     }
                 return null;

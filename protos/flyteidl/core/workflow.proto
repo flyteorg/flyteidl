@@ -129,7 +129,7 @@ message Node {
 // Metadata for the entire workflow. Defines execution behavior that does not change the final outputs of the workflow.
 message WorkflowMetadata {
     // Total wait time a workflow can be delayed by queueing.
-    google.protobuf.Duration queuing_budget = 1 [deprecated=true];
+    google.protobuf.Duration queuing_budget = 1;
 
     // Failure Handling Strategy
     enum OnFailurePolicy {

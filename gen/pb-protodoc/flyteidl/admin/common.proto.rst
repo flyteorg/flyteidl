@@ -783,10 +783,16 @@ Enum flyteidl.admin.QualityOfService
 This general categorization specifies how much queue time an execution can tolerate. 
 This can be extended in the future to make other execution-time decisions.
 
+.. _api_enum_value_flyteidl.admin.QualityOfService.QUALITY_OF_SERVICE_UNDEFINED:
+
+QUALITY_OF_SERVICE_UNDEFINED
+  *(DEFAULT)* ⁣Default: no quality of service specified.
+  
+  
 .. _api_enum_value_flyteidl.admin.QualityOfService.QUALITY_OF_SERVICE_HIGH:
 
 QUALITY_OF_SERVICE_HIGH
-  *(DEFAULT)* ⁣Guarantees that this execution will begin as soon as requested and incur no queueing time.
+  ⁣Guarantees that this execution will begin as soon as requested and incur no queueing time.
   
   
 .. _api_enum_value_flyteidl.admin.QualityOfService.QUALITY_OF_SERVICE_MEDIUM:

@@ -5049,7 +5049,7 @@ public final class LaunchPlanOuterClass {
       if (authRole_ != null) {
         output.writeMessage(9, getAuthRole());
       }
-      if (qualityOfService_ != flyteidl.admin.Common.QualityOfService.QUALITY_OF_SERVICE_HIGH.getNumber()) {
+      if (qualityOfService_ != flyteidl.admin.Common.QualityOfService.QUALITY_OF_SERVICE_UNDEFINED.getNumber()) {
         output.writeEnum(16, qualityOfService_);
       }
       unknownFields.writeTo(output);
@@ -5096,7 +5096,7 @@ public final class LaunchPlanOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, getAuthRole());
       }
-      if (qualityOfService_ != flyteidl.admin.Common.QualityOfService.QUALITY_OF_SERVICE_HIGH.getNumber()) {
+      if (qualityOfService_ != flyteidl.admin.Common.QualityOfService.QUALITY_OF_SERVICE_UNDEFINED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(16, qualityOfService_);
       }

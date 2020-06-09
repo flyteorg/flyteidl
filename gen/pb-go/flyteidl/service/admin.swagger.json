@@ -3808,12 +3808,13 @@
     "adminQualityOfService": {
       "type": "string",
       "enum": [
+        "QUALITY_OF_SERVICE_UNDEFINED",
         "QUALITY_OF_SERVICE_HIGH",
         "QUALITY_OF_SERVICE_MEDIUM",
         "QUALITY_OF_SERVICE_LOW"
       ],
-      "default": "QUALITY_OF_SERVICE_HIGH",
-      "description": "This general categorization specifies how much queue time an execution can tolerate. \nThis can be extended in the future to make other execution-time decisions.\n\n - QUALITY_OF_SERVICE_HIGH: Guarantees that this execution will begin as soon as requested and incur no queueing time.\n - QUALITY_OF_SERVICE_MEDIUM: This execution may incur some queueing delay (e.g. 30 minutes) and is medium priority.\n - QUALITY_OF_SERVICE_LOW: This execution may incur significant queueing delay (e.g. 2 hours) and is low priority."
+      "default": "QUALITY_OF_SERVICE_UNDEFINED",
+      "description": "This general categorization specifies how much queue time an execution can tolerate. \nThis can be extended in the future to make other execution-time decisions.\n\n - QUALITY_OF_SERVICE_UNDEFINED: Default: no quality of service specified.\n - QUALITY_OF_SERVICE_HIGH: Guarantees that this execution will begin as soon as requested and incur no queueing time.\n - QUALITY_OF_SERVICE_MEDIUM: This execution may incur some queueing delay (e.g. 30 minutes) and is medium priority.\n - QUALITY_OF_SERVICE_LOW: This execution may incur significant queueing delay (e.g. 2 hours) and is low priority."
     },
     "adminSchedule": {
       "type": "object",

@@ -201,14 +201,15 @@ inline bool NamedEntityState_Parse(
     NamedEntityState_descriptor(), name, value);
 }
 enum QualityOfService {
-  QUALITY_OF_SERVICE_HIGH = 0,
-  QUALITY_OF_SERVICE_MEDIUM = 1,
-  QUALITY_OF_SERVICE_LOW = 2,
+  QUALITY_OF_SERVICE_UNDEFINED = 0,
+  QUALITY_OF_SERVICE_HIGH = 1,
+  QUALITY_OF_SERVICE_MEDIUM = 2,
+  QUALITY_OF_SERVICE_LOW = 3,
   QualityOfService_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   QualityOfService_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool QualityOfService_IsValid(int value);
-const QualityOfService QualityOfService_MIN = QUALITY_OF_SERVICE_HIGH;
+const QualityOfService QualityOfService_MIN = QUALITY_OF_SERVICE_UNDEFINED;
 const QualityOfService QualityOfService_MAX = QUALITY_OF_SERVICE_LOW;
 const int QualityOfService_ARRAYSIZE = QualityOfService_MAX + 1;
 

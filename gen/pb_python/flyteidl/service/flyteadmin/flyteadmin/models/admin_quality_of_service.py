@@ -26,6 +26,7 @@ class AdminQualityOfService(object):
     """
     allowed enum values
     """
+    UNDEFINED = "QUALITY_OF_SERVICE_UNDEFINED"
     HIGH = "QUALITY_OF_SERVICE_HIGH"
     MEDIUM = "QUALITY_OF_SERVICE_MEDIUM"
     LOW = "QUALITY_OF_SERVICE_LOW"

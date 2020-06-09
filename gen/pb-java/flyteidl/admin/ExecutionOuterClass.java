@@ -15455,7 +15455,7 @@ public final class ExecutionOuterClass {
       if (authRole_ != null) {
         output.writeMessage(16, getAuthRole());
       }
-      if (qualityOfService_ != flyteidl.admin.Common.QualityOfService.QUALITY_OF_SERVICE_HIGH.getNumber()) {
+      if (qualityOfService_ != flyteidl.admin.Common.QualityOfService.QUALITY_OF_SERVICE_UNDEFINED.getNumber()) {
         output.writeEnum(17, qualityOfService_);
       }
       unknownFields.writeTo(output);
@@ -15500,7 +15500,7 @@ public final class ExecutionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(16, getAuthRole());
       }
-      if (qualityOfService_ != flyteidl.admin.Common.QualityOfService.QUALITY_OF_SERVICE_HIGH.getNumber()) {
+      if (qualityOfService_ != flyteidl.admin.Common.QualityOfService.QUALITY_OF_SERVICE_UNDEFINED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(17, qualityOfService_);
       }

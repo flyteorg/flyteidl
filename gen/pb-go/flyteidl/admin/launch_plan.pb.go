@@ -445,7 +445,7 @@ func (m *LaunchPlanSpec) GetQualityOfService() QualityOfService {
 	if m != nil {
 		return m.QualityOfService
 	}
-	return QualityOfService_QUALITY_OF_SERVICE_HIGH
+	return QualityOfService_QUALITY_OF_SERVICE_UNDEFINED
 }
 
 // Values computed by the flyte platform after launch plan registration.

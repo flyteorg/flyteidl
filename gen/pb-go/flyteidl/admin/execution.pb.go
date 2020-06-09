@@ -1028,7 +1028,7 @@ func (m *ExecutionSpec) GetQualityOfService() QualityOfService {
 	if m != nil {
 		return m.QualityOfService
 	}
-	return QualityOfService_QUALITY_OF_SERVICE_HIGH
+	return QualityOfService_QUALITY_OF_SERVICE_UNDEFINED
 }
 
 // XXX_OneofWrappers is for the internal use of the proto package.
