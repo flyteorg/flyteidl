@@ -142,7 +142,7 @@ message WorkflowMetadata {
         // not alter the dependencies of the execution graph so any node that depend on the failed node will not be run.
         // Other nodes that will be executed to completion before cleaning up resources and marking the workflow
         // execution as failed.
-        FAIL_AFTER_EXECUTABLE_NODES_COMPLETE = 2;
+        FAIL_AFTER_EXECUTABLE_NODES_COMPLETE = 1;
     }
 
     // Defines how the system should behave when a failure is detected in the workflow execution.

@@ -10363,9 +10363,9 @@ public final class Workflow {
        * execution as failed.
        * </pre>
        *
-       * <code>FAIL_AFTER_EXECUTABLE_NODES_COMPLETE = 2;</code>
+       * <code>FAIL_AFTER_EXECUTABLE_NODES_COMPLETE = 1;</code>
        */
-      FAIL_AFTER_EXECUTABLE_NODES_COMPLETE(2),
+      FAIL_AFTER_EXECUTABLE_NODES_COMPLETE(1),
       UNRECOGNIZED(-1),
       ;
 
@@ -10387,9 +10387,9 @@ public final class Workflow {
        * execution as failed.
        * </pre>
        *
-       * <code>FAIL_AFTER_EXECUTABLE_NODES_COMPLETE = 2;</code>
+       * <code>FAIL_AFTER_EXECUTABLE_NODES_COMPLETE = 1;</code>
        */
-      public static final int FAIL_AFTER_EXECUTABLE_NODES_COMPLETE_VALUE = 2;
+      public static final int FAIL_AFTER_EXECUTABLE_NODES_COMPLETE_VALUE = 1;
 
 
       public final int getNumber() {
@@ -10411,7 +10411,7 @@ public final class Workflow {
       public static OnFailurePolicy forNumber(int value) {
         switch (value) {
           case 0: return FAIL_IMMEDIATELY;
-          case 2: return FAIL_AFTER_EXECUTABLE_NODES_COMPLETE;
+          case 1: return FAIL_AFTER_EXECUTABLE_NODES_COMPLETE;
           default: return null;
         }
       }
@@ -14596,7 +14596,7 @@ public final class Workflow {
       "l.core.WorkflowMetadata.OnFailurePolicy\"" +
       "Q\n\017OnFailurePolicy\022\024\n\020FAIL_IMMEDIATELY\020\000" +
       "\022(\n$FAIL_AFTER_EXECUTABLE_NODES_COMPLETE" +
-      "\020\002\"1\n\030WorkflowMetadataDefaults\022\025\n\rinterr" +
+      "\020\001\"1\n\030WorkflowMetadataDefaults\022\025\n\rinterr" +
       "uptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplate\022%\n\002id" +
       "\030\001 \001(\0132\031.flyteidl.core.Identifier\0221\n\010met" +
       "adata\030\002 \001(\0132\037.flyteidl.core.WorkflowMeta" +

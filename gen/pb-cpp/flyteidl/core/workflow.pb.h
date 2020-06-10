@@ -112,7 +112,7 @@ namespace core {
 
 enum WorkflowMetadata_OnFailurePolicy {
   WorkflowMetadata_OnFailurePolicy_FAIL_IMMEDIATELY = 0,
-  WorkflowMetadata_OnFailurePolicy_FAIL_AFTER_EXECUTABLE_NODES_COMPLETE = 2,
+  WorkflowMetadata_OnFailurePolicy_FAIL_AFTER_EXECUTABLE_NODES_COMPLETE = 1,
   WorkflowMetadata_OnFailurePolicy_WorkflowMetadata_OnFailurePolicy_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   WorkflowMetadata_OnFailurePolicy_WorkflowMetadata_OnFailurePolicy_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };

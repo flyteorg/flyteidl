@@ -420,7 +420,7 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto[] =
   "l.core.WorkflowMetadata.OnFailurePolicy\""
   "Q\n\017OnFailurePolicy\022\024\n\020FAIL_IMMEDIATELY\020\000"
   "\022(\n$FAIL_AFTER_EXECUTABLE_NODES_COMPLETE"
-  "\020\002\"1\n\030WorkflowMetadataDefaults\022\025\n\rinterr"
+  "\020\001\"1\n\030WorkflowMetadataDefaults\022\025\n\rinterr"
   "uptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplate\022%\n\002id"
   "\030\001 \001(\0132\031.flyteidl.core.Identifier\0221\n\010met"
   "adata\030\002 \001(\0132\037.flyteidl.core.WorkflowMeta"
@@ -463,7 +463,7 @@ const ::google::protobuf::EnumDescriptor* WorkflowMetadata_OnFailurePolicy_descr
 bool WorkflowMetadata_OnFailurePolicy_IsValid(int value) {
   switch (value) {
     case 0:
-    case 2:
+    case 1:
       return true;
     default:
       return false;
