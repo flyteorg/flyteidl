@@ -4622,6 +4622,9 @@ export namespace flyteidl {
             /** NodeExecutionEvent workflowNodeMetadata */
             workflowNodeMetadata?: (flyteidl.event.IWorkflowNodeMetadata|null);
 
+            /** NodeExecutionEvent taskNodeMetadata */
+            taskNodeMetadata?: (flyteidl.event.ITaskNodeMetadata|null);
+
             /** NodeExecutionEvent parentTaskMetadata */
             parentTaskMetadata?: (flyteidl.event.IParentTaskExecutionMetadata|null);
         }
@@ -4659,6 +4662,9 @@ export namespace flyteidl {
             /** NodeExecutionEvent workflowNodeMetadata. */
             public workflowNodeMetadata?: (flyteidl.event.IWorkflowNodeMetadata|null);
 
+            /** NodeExecutionEvent taskNodeMetadata. */
+            public taskNodeMetadata?: (flyteidl.event.ITaskNodeMetadata|null);
+
             /** NodeExecutionEvent parentTaskMetadata. */
             public parentTaskMetadata?: (flyteidl.event.IParentTaskExecutionMetadata|null);
 
@@ -4666,7 +4672,7 @@ export namespace flyteidl {
             public outputResult?: ("outputUri"|"error");
 
             /** NodeExecutionEvent targetMetadata. */
-            public targetMetadata?: "workflowNodeMetadata";
+            public targetMetadata?: ("workflowNodeMetadata"|"taskNodeMetadata");
 
             /**
              * Creates a new NodeExecutionEvent instance using the specified properties.
@@ -4747,6 +4753,138 @@ export namespace flyteidl {
 
             /**
              * Verifies a WorkflowNodeMetadata message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** CatalogCacheStatus enum. */
+        enum CatalogCacheStatus {
+            CACHE_DISABED = 0,
+            CACHE_MISS = 1,
+            CACHE_HIT = 2,
+            CACHE_POPULATED = 3,
+            CACHE_LOOKUP_FAILURE = 4,
+            CACHE_PUT_FAILURE = 5
+        }
+
+        /** Properties of a CatalogMetadata. */
+        interface ICatalogMetadata {
+
+            /** CatalogMetadata datasetId */
+            datasetId?: (string|null);
+
+            /** CatalogMetadata artifactTag */
+            artifactTag?: (string|null);
+
+            /** CatalogMetadata sourceExecutionId */
+            sourceExecutionId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+        }
+
+        /** Represents a CatalogMetadata. */
+        class CatalogMetadata implements ICatalogMetadata {
+
+            /**
+             * Constructs a new CatalogMetadata.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.event.ICatalogMetadata);
+
+            /** CatalogMetadata datasetId. */
+            public datasetId: string;
+
+            /** CatalogMetadata artifactTag. */
+            public artifactTag: string;
+
+            /** CatalogMetadata sourceExecutionId. */
+            public sourceExecutionId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /**
+             * Creates a new CatalogMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CatalogMetadata instance
+             */
+            public static create(properties?: flyteidl.event.ICatalogMetadata): flyteidl.event.CatalogMetadata;
+
+            /**
+             * Encodes the specified CatalogMetadata message. Does not implicitly {@link flyteidl.event.CatalogMetadata.verify|verify} messages.
+             * @param message CatalogMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.event.ICatalogMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CatalogMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CatalogMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.CatalogMetadata;
+
+            /**
+             * Verifies a CatalogMetadata message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a TaskNodeMetadata. */
+        interface ITaskNodeMetadata {
+
+            /** TaskNodeMetadata cacheStatus */
+            cacheStatus?: (flyteidl.event.CatalogCacheStatus|null);
+
+            /** TaskNodeMetadata catalogKey */
+            catalogKey?: (flyteidl.event.ICatalogMetadata|null);
+        }
+
+        /** Represents a TaskNodeMetadata. */
+        class TaskNodeMetadata implements ITaskNodeMetadata {
+
+            /**
+             * Constructs a new TaskNodeMetadata.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.event.ITaskNodeMetadata);
+
+            /** TaskNodeMetadata cacheStatus. */
+            public cacheStatus: flyteidl.event.CatalogCacheStatus;
+
+            /** TaskNodeMetadata catalogKey. */
+            public catalogKey?: (flyteidl.event.ICatalogMetadata|null);
+
+            /**
+             * Creates a new TaskNodeMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskNodeMetadata instance
+             */
+            public static create(properties?: flyteidl.event.ITaskNodeMetadata): flyteidl.event.TaskNodeMetadata;
+
+            /**
+             * Encodes the specified TaskNodeMetadata message. Does not implicitly {@link flyteidl.event.TaskNodeMetadata.verify|verify} messages.
+             * @param message TaskNodeMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.event.ITaskNodeMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskNodeMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskNodeMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.TaskNodeMetadata;
+
+            /**
+             * Verifies a TaskNodeMetadata message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */

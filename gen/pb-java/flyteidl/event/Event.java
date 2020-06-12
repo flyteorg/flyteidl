@@ -14,6 +14,192 @@ public final class Event {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * <pre>
+   * Indicates the status of CatalogCaching. The reason why this is not embeded in TaskNodeMetadata is, that we may use for other types of nodes as well in the future
+   * </pre>
+   *
+   * Protobuf enum {@code flyteidl.event.CatalogCacheStatus}
+   */
+  public enum CatalogCacheStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Used to indicate that caching was disabled
+     * </pre>
+     *
+     * <code>CACHE_DISABED = 0;</code>
+     */
+    CACHE_DISABED(0),
+    /**
+     * <pre>
+     * Used to indicate that the cache lookup resulted in no matches
+     * </pre>
+     *
+     * <code>CACHE_MISS = 1;</code>
+     */
+    CACHE_MISS(1),
+    /**
+     * <pre>
+     * used to indicate that the associated artifact was a result of a previous execution
+     * </pre>
+     *
+     * <code>CACHE_HIT = 2;</code>
+     */
+    CACHE_HIT(2),
+    /**
+     * <pre>
+     * used to indicate that the resultant artifact was added to the cache
+     * </pre>
+     *
+     * <code>CACHE_POPULATED = 3;</code>
+     */
+    CACHE_POPULATED(3),
+    /**
+     * <pre>
+     * Used to indicate that cache lookup failed because of an error
+     * </pre>
+     *
+     * <code>CACHE_LOOKUP_FAILURE = 4;</code>
+     */
+    CACHE_LOOKUP_FAILURE(4),
+    /**
+     * <pre>
+     * Used to indicate that cache lookup failed because of an error
+     * </pre>
+     *
+     * <code>CACHE_PUT_FAILURE = 5;</code>
+     */
+    CACHE_PUT_FAILURE(5),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * Used to indicate that caching was disabled
+     * </pre>
+     *
+     * <code>CACHE_DISABED = 0;</code>
+     */
+    public static final int CACHE_DISABED_VALUE = 0;
+    /**
+     * <pre>
+     * Used to indicate that the cache lookup resulted in no matches
+     * </pre>
+     *
+     * <code>CACHE_MISS = 1;</code>
+     */
+    public static final int CACHE_MISS_VALUE = 1;
+    /**
+     * <pre>
+     * used to indicate that the associated artifact was a result of a previous execution
+     * </pre>
+     *
+     * <code>CACHE_HIT = 2;</code>
+     */
+    public static final int CACHE_HIT_VALUE = 2;
+    /**
+     * <pre>
+     * used to indicate that the resultant artifact was added to the cache
+     * </pre>
+     *
+     * <code>CACHE_POPULATED = 3;</code>
+     */
+    public static final int CACHE_POPULATED_VALUE = 3;
+    /**
+     * <pre>
+     * Used to indicate that cache lookup failed because of an error
+     * </pre>
+     *
+     * <code>CACHE_LOOKUP_FAILURE = 4;</code>
+     */
+    public static final int CACHE_LOOKUP_FAILURE_VALUE = 4;
+    /**
+     * <pre>
+     * Used to indicate that cache lookup failed because of an error
+     * </pre>
+     *
+     * <code>CACHE_PUT_FAILURE = 5;</code>
+     */
+    public static final int CACHE_PUT_FAILURE_VALUE = 5;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CatalogCacheStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static CatalogCacheStatus forNumber(int value) {
+      switch (value) {
+        case 0: return CACHE_DISABED;
+        case 1: return CACHE_MISS;
+        case 2: return CACHE_HIT;
+        case 3: return CACHE_POPULATED;
+        case 4: return CACHE_LOOKUP_FAILURE;
+        case 5: return CACHE_PUT_FAILURE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CatalogCacheStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        CatalogCacheStatus> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<CatalogCacheStatus>() {
+            public CatalogCacheStatus findValueByNumber(int number) {
+              return CatalogCacheStatus.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return flyteidl.event.Event.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final CatalogCacheStatus[] VALUES = values();
+
+    public static CatalogCacheStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CatalogCacheStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:flyteidl.event.CatalogCacheStatus)
+  }
+
   public interface WorkflowExecutionEventOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.event.WorkflowExecutionEvent)
       com.google.protobuf.MessageOrBuilder {
@@ -1923,6 +2109,19 @@ public final class Event {
     flyteidl.event.Event.WorkflowNodeMetadataOrBuilder getWorkflowNodeMetadataOrBuilder();
 
     /**
+     * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+     */
+    boolean hasTaskNodeMetadata();
+    /**
+     * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+     */
+    flyteidl.event.Event.TaskNodeMetadata getTaskNodeMetadata();
+    /**
+     * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+     */
+    flyteidl.event.Event.TaskNodeMetadataOrBuilder getTaskNodeMetadataOrBuilder();
+
+    /**
      * <pre>
      * Specifies which task (if any) launched this node.
      * </pre>
@@ -2084,6 +2283,20 @@ public final class Event {
 
               break;
             }
+            case 82: {
+              flyteidl.event.Event.TaskNodeMetadata.Builder subBuilder = null;
+              if (targetMetadataCase_ == 10) {
+                subBuilder = ((flyteidl.event.Event.TaskNodeMetadata) targetMetadata_).toBuilder();
+              }
+              targetMetadata_ =
+                  input.readMessage(flyteidl.event.Event.TaskNodeMetadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.event.Event.TaskNodeMetadata) targetMetadata_);
+                targetMetadata_ = subBuilder.buildPartial();
+              }
+              targetMetadataCase_ = 10;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -2159,6 +2372,7 @@ public final class Event {
     public enum TargetMetadataCase
         implements com.google.protobuf.Internal.EnumLite {
       WORKFLOW_NODE_METADATA(8),
+      TASK_NODE_METADATA(10),
       TARGETMETADATA_NOT_SET(0);
       private final int value;
       private TargetMetadataCase(int value) {
@@ -2175,6 +2389,7 @@ public final class Event {
       public static TargetMetadataCase forNumber(int value) {
         switch (value) {
           case 8: return WORKFLOW_NODE_METADATA;
+          case 10: return TASK_NODE_METADATA;
           case 0: return TARGETMETADATA_NOT_SET;
           default: return null;
         }
@@ -2469,6 +2684,32 @@ public final class Event {
       return flyteidl.event.Event.WorkflowNodeMetadata.getDefaultInstance();
     }
 
+    public static final int TASK_NODE_METADATA_FIELD_NUMBER = 10;
+    /**
+     * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+     */
+    public boolean hasTaskNodeMetadata() {
+      return targetMetadataCase_ == 10;
+    }
+    /**
+     * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+     */
+    public flyteidl.event.Event.TaskNodeMetadata getTaskNodeMetadata() {
+      if (targetMetadataCase_ == 10) {
+         return (flyteidl.event.Event.TaskNodeMetadata) targetMetadata_;
+      }
+      return flyteidl.event.Event.TaskNodeMetadata.getDefaultInstance();
+    }
+    /**
+     * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+     */
+    public flyteidl.event.Event.TaskNodeMetadataOrBuilder getTaskNodeMetadataOrBuilder() {
+      if (targetMetadataCase_ == 10) {
+         return (flyteidl.event.Event.TaskNodeMetadata) targetMetadata_;
+      }
+      return flyteidl.event.Event.TaskNodeMetadata.getDefaultInstance();
+    }
+
     public static final int PARENT_TASK_METADATA_FIELD_NUMBER = 9;
     private flyteidl.event.Event.ParentTaskExecutionMetadata parentTaskMetadata_;
     /**
@@ -2543,6 +2784,9 @@ public final class Event {
       if (parentTaskMetadata_ != null) {
         output.writeMessage(9, getParentTaskMetadata());
       }
+      if (targetMetadataCase_ == 10) {
+        output.writeMessage(10, (flyteidl.event.Event.TaskNodeMetadata) targetMetadata_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2584,6 +2828,10 @@ public final class Event {
       if (parentTaskMetadata_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, getParentTaskMetadata());
+      }
+      if (targetMetadataCase_ == 10) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, (flyteidl.event.Event.TaskNodeMetadata) targetMetadata_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2639,6 +2887,10 @@ public final class Event {
           if (!getWorkflowNodeMetadata()
               .equals(other.getWorkflowNodeMetadata())) return false;
           break;
+        case 10:
+          if (!getTaskNodeMetadata()
+              .equals(other.getTaskNodeMetadata())) return false;
+          break;
         case 0:
         default:
       }
@@ -2687,6 +2939,10 @@ public final class Event {
         case 8:
           hash = (37 * hash) + WORKFLOW_NODE_METADATA_FIELD_NUMBER;
           hash = (53 * hash) + getWorkflowNodeMetadata().hashCode();
+          break;
+        case 10:
+          hash = (37 * hash) + TASK_NODE_METADATA_FIELD_NUMBER;
+          hash = (53 * hash) + getTaskNodeMetadata().hashCode();
           break;
         case 0:
         default:
@@ -2908,6 +3164,13 @@ public final class Event {
             result.targetMetadata_ = workflowNodeMetadataBuilder_.build();
           }
         }
+        if (targetMetadataCase_ == 10) {
+          if (taskNodeMetadataBuilder_ == null) {
+            result.targetMetadata_ = targetMetadata_;
+          } else {
+            result.targetMetadata_ = taskNodeMetadataBuilder_.build();
+          }
+        }
         if (parentTaskMetadataBuilder_ == null) {
           result.parentTaskMetadata_ = parentTaskMetadata_;
         } else {
@@ -3001,6 +3264,10 @@ public final class Event {
         switch (other.getTargetMetadataCase()) {
           case WORKFLOW_NODE_METADATA: {
             mergeWorkflowNodeMetadata(other.getWorkflowNodeMetadata());
+            break;
+          }
+          case TASK_NODE_METADATA: {
+            mergeTaskNodeMetadata(other.getTaskNodeMetadata());
             break;
           }
           case TARGETMETADATA_NOT_SET: {
@@ -3997,6 +4264,142 @@ public final class Event {
         return workflowNodeMetadataBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.event.Event.TaskNodeMetadata, flyteidl.event.Event.TaskNodeMetadata.Builder, flyteidl.event.Event.TaskNodeMetadataOrBuilder> taskNodeMetadataBuilder_;
+      /**
+       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+       */
+      public boolean hasTaskNodeMetadata() {
+        return targetMetadataCase_ == 10;
+      }
+      /**
+       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+       */
+      public flyteidl.event.Event.TaskNodeMetadata getTaskNodeMetadata() {
+        if (taskNodeMetadataBuilder_ == null) {
+          if (targetMetadataCase_ == 10) {
+            return (flyteidl.event.Event.TaskNodeMetadata) targetMetadata_;
+          }
+          return flyteidl.event.Event.TaskNodeMetadata.getDefaultInstance();
+        } else {
+          if (targetMetadataCase_ == 10) {
+            return taskNodeMetadataBuilder_.getMessage();
+          }
+          return flyteidl.event.Event.TaskNodeMetadata.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+       */
+      public Builder setTaskNodeMetadata(flyteidl.event.Event.TaskNodeMetadata value) {
+        if (taskNodeMetadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          targetMetadata_ = value;
+          onChanged();
+        } else {
+          taskNodeMetadataBuilder_.setMessage(value);
+        }
+        targetMetadataCase_ = 10;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+       */
+      public Builder setTaskNodeMetadata(
+          flyteidl.event.Event.TaskNodeMetadata.Builder builderForValue) {
+        if (taskNodeMetadataBuilder_ == null) {
+          targetMetadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          taskNodeMetadataBuilder_.setMessage(builderForValue.build());
+        }
+        targetMetadataCase_ = 10;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+       */
+      public Builder mergeTaskNodeMetadata(flyteidl.event.Event.TaskNodeMetadata value) {
+        if (taskNodeMetadataBuilder_ == null) {
+          if (targetMetadataCase_ == 10 &&
+              targetMetadata_ != flyteidl.event.Event.TaskNodeMetadata.getDefaultInstance()) {
+            targetMetadata_ = flyteidl.event.Event.TaskNodeMetadata.newBuilder((flyteidl.event.Event.TaskNodeMetadata) targetMetadata_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            targetMetadata_ = value;
+          }
+          onChanged();
+        } else {
+          if (targetMetadataCase_ == 10) {
+            taskNodeMetadataBuilder_.mergeFrom(value);
+          }
+          taskNodeMetadataBuilder_.setMessage(value);
+        }
+        targetMetadataCase_ = 10;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+       */
+      public Builder clearTaskNodeMetadata() {
+        if (taskNodeMetadataBuilder_ == null) {
+          if (targetMetadataCase_ == 10) {
+            targetMetadataCase_ = 0;
+            targetMetadata_ = null;
+            onChanged();
+          }
+        } else {
+          if (targetMetadataCase_ == 10) {
+            targetMetadataCase_ = 0;
+            targetMetadata_ = null;
+          }
+          taskNodeMetadataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+       */
+      public flyteidl.event.Event.TaskNodeMetadata.Builder getTaskNodeMetadataBuilder() {
+        return getTaskNodeMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+       */
+      public flyteidl.event.Event.TaskNodeMetadataOrBuilder getTaskNodeMetadataOrBuilder() {
+        if ((targetMetadataCase_ == 10) && (taskNodeMetadataBuilder_ != null)) {
+          return taskNodeMetadataBuilder_.getMessageOrBuilder();
+        } else {
+          if (targetMetadataCase_ == 10) {
+            return (flyteidl.event.Event.TaskNodeMetadata) targetMetadata_;
+          }
+          return flyteidl.event.Event.TaskNodeMetadata.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.event.Event.TaskNodeMetadata, flyteidl.event.Event.TaskNodeMetadata.Builder, flyteidl.event.Event.TaskNodeMetadataOrBuilder> 
+          getTaskNodeMetadataFieldBuilder() {
+        if (taskNodeMetadataBuilder_ == null) {
+          if (!(targetMetadataCase_ == 10)) {
+            targetMetadata_ = flyteidl.event.Event.TaskNodeMetadata.getDefaultInstance();
+          }
+          taskNodeMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.event.Event.TaskNodeMetadata, flyteidl.event.Event.TaskNodeMetadata.Builder, flyteidl.event.Event.TaskNodeMetadataOrBuilder>(
+                  (flyteidl.event.Event.TaskNodeMetadata) targetMetadata_,
+                  getParentForChildren(),
+                  isClean());
+          targetMetadata_ = null;
+        }
+        targetMetadataCase_ = 10;
+        onChanged();;
+        return taskNodeMetadataBuilder_;
+      }
+
       private flyteidl.event.Event.ParentTaskExecutionMetadata parentTaskMetadata_;
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.event.Event.ParentTaskExecutionMetadata, flyteidl.event.Event.ParentTaskExecutionMetadata.Builder, flyteidl.event.Event.ParentTaskExecutionMetadataOrBuilder> parentTaskMetadataBuilder_;
@@ -4811,6 +5214,1822 @@ public final class Event {
 
     @java.lang.Override
     public flyteidl.event.Event.WorkflowNodeMetadata getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CatalogMetadataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.event.CatalogMetadata)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Dataset ID in the catalog
+     * </pre>
+     *
+     * <code>string dataset_id = 1;</code>
+     */
+    java.lang.String getDatasetId();
+    /**
+     * <pre>
+     * Dataset ID in the catalog
+     * </pre>
+     *
+     * <code>string dataset_id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getDatasetIdBytes();
+
+    /**
+     * <pre>
+     * Artifact tag in the catalog
+     * </pre>
+     *
+     * <code>string artifact_tag = 2;</code>
+     */
+    java.lang.String getArtifactTag();
+    /**
+     * <pre>
+     * Artifact tag in the catalog
+     * </pre>
+     *
+     * <code>string artifact_tag = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getArtifactTagBytes();
+
+    /**
+     * <pre>
+     * Optional: Source Workflow Execution identifier, if this dataset was generated by another execution in Flyte
+     * </pre>
+     *
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier source_execution_id = 3;</code>
+     */
+    boolean hasSourceExecutionId();
+    /**
+     * <pre>
+     * Optional: Source Workflow Execution identifier, if this dataset was generated by another execution in Flyte
+     * </pre>
+     *
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier source_execution_id = 3;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getSourceExecutionId();
+    /**
+     * <pre>
+     * Optional: Source Workflow Execution identifier, if this dataset was generated by another execution in Flyte
+     * </pre>
+     *
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier source_execution_id = 3;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getSourceExecutionIdOrBuilder();
+  }
+  /**
+   * <pre>
+   * Catalog artifact information with specific metadata
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.event.CatalogMetadata}
+   */
+  public  static final class CatalogMetadata extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.event.CatalogMetadata)
+      CatalogMetadataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CatalogMetadata.newBuilder() to construct.
+    private CatalogMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CatalogMetadata() {
+      datasetId_ = "";
+      artifactTag_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CatalogMetadata(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              datasetId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              artifactTag_ = s;
+              break;
+            }
+            case 26: {
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder subBuilder = null;
+              if (sourceExecutionId_ != null) {
+                subBuilder = sourceExecutionId_.toBuilder();
+              }
+              sourceExecutionId_ = input.readMessage(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sourceExecutionId_);
+                sourceExecutionId_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.event.Event.internal_static_flyteidl_event_CatalogMetadata_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.event.Event.internal_static_flyteidl_event_CatalogMetadata_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.event.Event.CatalogMetadata.class, flyteidl.event.Event.CatalogMetadata.Builder.class);
+    }
+
+    public static final int DATASET_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object datasetId_;
+    /**
+     * <pre>
+     * Dataset ID in the catalog
+     * </pre>
+     *
+     * <code>string dataset_id = 1;</code>
+     */
+    public java.lang.String getDatasetId() {
+      java.lang.Object ref = datasetId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        datasetId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Dataset ID in the catalog
+     * </pre>
+     *
+     * <code>string dataset_id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDatasetIdBytes() {
+      java.lang.Object ref = datasetId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        datasetId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ARTIFACT_TAG_FIELD_NUMBER = 2;
+    private volatile java.lang.Object artifactTag_;
+    /**
+     * <pre>
+     * Artifact tag in the catalog
+     * </pre>
+     *
+     * <code>string artifact_tag = 2;</code>
+     */
+    public java.lang.String getArtifactTag() {
+      java.lang.Object ref = artifactTag_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        artifactTag_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Artifact tag in the catalog
+     * </pre>
+     *
+     * <code>string artifact_tag = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getArtifactTagBytes() {
+      java.lang.Object ref = artifactTag_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        artifactTag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SOURCE_EXECUTION_ID_FIELD_NUMBER = 3;
+    private flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier sourceExecutionId_;
+    /**
+     * <pre>
+     * Optional: Source Workflow Execution identifier, if this dataset was generated by another execution in Flyte
+     * </pre>
+     *
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier source_execution_id = 3;</code>
+     */
+    public boolean hasSourceExecutionId() {
+      return sourceExecutionId_ != null;
+    }
+    /**
+     * <pre>
+     * Optional: Source Workflow Execution identifier, if this dataset was generated by another execution in Flyte
+     * </pre>
+     *
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier source_execution_id = 3;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getSourceExecutionId() {
+      return sourceExecutionId_ == null ? flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance() : sourceExecutionId_;
+    }
+    /**
+     * <pre>
+     * Optional: Source Workflow Execution identifier, if this dataset was generated by another execution in Flyte
+     * </pre>
+     *
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier source_execution_id = 3;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getSourceExecutionIdOrBuilder() {
+      return getSourceExecutionId();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getDatasetIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, datasetId_);
+      }
+      if (!getArtifactTagBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, artifactTag_);
+      }
+      if (sourceExecutionId_ != null) {
+        output.writeMessage(3, getSourceExecutionId());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getDatasetIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, datasetId_);
+      }
+      if (!getArtifactTagBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, artifactTag_);
+      }
+      if (sourceExecutionId_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getSourceExecutionId());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.event.Event.CatalogMetadata)) {
+        return super.equals(obj);
+      }
+      flyteidl.event.Event.CatalogMetadata other = (flyteidl.event.Event.CatalogMetadata) obj;
+
+      if (!getDatasetId()
+          .equals(other.getDatasetId())) return false;
+      if (!getArtifactTag()
+          .equals(other.getArtifactTag())) return false;
+      if (hasSourceExecutionId() != other.hasSourceExecutionId()) return false;
+      if (hasSourceExecutionId()) {
+        if (!getSourceExecutionId()
+            .equals(other.getSourceExecutionId())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DATASET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDatasetId().hashCode();
+      hash = (37 * hash) + ARTIFACT_TAG_FIELD_NUMBER;
+      hash = (53 * hash) + getArtifactTag().hashCode();
+      if (hasSourceExecutionId()) {
+        hash = (37 * hash) + SOURCE_EXECUTION_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getSourceExecutionId().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.event.Event.CatalogMetadata parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.CatalogMetadata parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.CatalogMetadata parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.CatalogMetadata parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.CatalogMetadata parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.CatalogMetadata parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.CatalogMetadata parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.CatalogMetadata parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.event.Event.CatalogMetadata parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.CatalogMetadata parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.event.Event.CatalogMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.CatalogMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.event.Event.CatalogMetadata prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Catalog artifact information with specific metadata
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.event.CatalogMetadata}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.event.CatalogMetadata)
+        flyteidl.event.Event.CatalogMetadataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_CatalogMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_CatalogMetadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.event.Event.CatalogMetadata.class, flyteidl.event.Event.CatalogMetadata.Builder.class);
+      }
+
+      // Construct using flyteidl.event.Event.CatalogMetadata.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        datasetId_ = "";
+
+        artifactTag_ = "";
+
+        if (sourceExecutionIdBuilder_ == null) {
+          sourceExecutionId_ = null;
+        } else {
+          sourceExecutionId_ = null;
+          sourceExecutionIdBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_CatalogMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.CatalogMetadata getDefaultInstanceForType() {
+        return flyteidl.event.Event.CatalogMetadata.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.CatalogMetadata build() {
+        flyteidl.event.Event.CatalogMetadata result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.CatalogMetadata buildPartial() {
+        flyteidl.event.Event.CatalogMetadata result = new flyteidl.event.Event.CatalogMetadata(this);
+        result.datasetId_ = datasetId_;
+        result.artifactTag_ = artifactTag_;
+        if (sourceExecutionIdBuilder_ == null) {
+          result.sourceExecutionId_ = sourceExecutionId_;
+        } else {
+          result.sourceExecutionId_ = sourceExecutionIdBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.event.Event.CatalogMetadata) {
+          return mergeFrom((flyteidl.event.Event.CatalogMetadata)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.event.Event.CatalogMetadata other) {
+        if (other == flyteidl.event.Event.CatalogMetadata.getDefaultInstance()) return this;
+        if (!other.getDatasetId().isEmpty()) {
+          datasetId_ = other.datasetId_;
+          onChanged();
+        }
+        if (!other.getArtifactTag().isEmpty()) {
+          artifactTag_ = other.artifactTag_;
+          onChanged();
+        }
+        if (other.hasSourceExecutionId()) {
+          mergeSourceExecutionId(other.getSourceExecutionId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.event.Event.CatalogMetadata parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.event.Event.CatalogMetadata) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object datasetId_ = "";
+      /**
+       * <pre>
+       * Dataset ID in the catalog
+       * </pre>
+       *
+       * <code>string dataset_id = 1;</code>
+       */
+      public java.lang.String getDatasetId() {
+        java.lang.Object ref = datasetId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          datasetId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Dataset ID in the catalog
+       * </pre>
+       *
+       * <code>string dataset_id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDatasetIdBytes() {
+        java.lang.Object ref = datasetId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          datasetId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Dataset ID in the catalog
+       * </pre>
+       *
+       * <code>string dataset_id = 1;</code>
+       */
+      public Builder setDatasetId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        datasetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Dataset ID in the catalog
+       * </pre>
+       *
+       * <code>string dataset_id = 1;</code>
+       */
+      public Builder clearDatasetId() {
+        
+        datasetId_ = getDefaultInstance().getDatasetId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Dataset ID in the catalog
+       * </pre>
+       *
+       * <code>string dataset_id = 1;</code>
+       */
+      public Builder setDatasetIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        datasetId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object artifactTag_ = "";
+      /**
+       * <pre>
+       * Artifact tag in the catalog
+       * </pre>
+       *
+       * <code>string artifact_tag = 2;</code>
+       */
+      public java.lang.String getArtifactTag() {
+        java.lang.Object ref = artifactTag_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          artifactTag_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Artifact tag in the catalog
+       * </pre>
+       *
+       * <code>string artifact_tag = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getArtifactTagBytes() {
+        java.lang.Object ref = artifactTag_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          artifactTag_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Artifact tag in the catalog
+       * </pre>
+       *
+       * <code>string artifact_tag = 2;</code>
+       */
+      public Builder setArtifactTag(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        artifactTag_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Artifact tag in the catalog
+       * </pre>
+       *
+       * <code>string artifact_tag = 2;</code>
+       */
+      public Builder clearArtifactTag() {
+        
+        artifactTag_ = getDefaultInstance().getArtifactTag();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Artifact tag in the catalog
+       * </pre>
+       *
+       * <code>string artifact_tag = 2;</code>
+       */
+      public Builder setArtifactTagBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        artifactTag_ = value;
+        onChanged();
+        return this;
+      }
+
+      private flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier sourceExecutionId_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder> sourceExecutionIdBuilder_;
+      /**
+       * <pre>
+       * Optional: Source Workflow Execution identifier, if this dataset was generated by another execution in Flyte
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier source_execution_id = 3;</code>
+       */
+      public boolean hasSourceExecutionId() {
+        return sourceExecutionIdBuilder_ != null || sourceExecutionId_ != null;
+      }
+      /**
+       * <pre>
+       * Optional: Source Workflow Execution identifier, if this dataset was generated by another execution in Flyte
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier source_execution_id = 3;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getSourceExecutionId() {
+        if (sourceExecutionIdBuilder_ == null) {
+          return sourceExecutionId_ == null ? flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance() : sourceExecutionId_;
+        } else {
+          return sourceExecutionIdBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Optional: Source Workflow Execution identifier, if this dataset was generated by another execution in Flyte
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier source_execution_id = 3;</code>
+       */
+      public Builder setSourceExecutionId(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier value) {
+        if (sourceExecutionIdBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sourceExecutionId_ = value;
+          onChanged();
+        } else {
+          sourceExecutionIdBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional: Source Workflow Execution identifier, if this dataset was generated by another execution in Flyte
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier source_execution_id = 3;</code>
+       */
+      public Builder setSourceExecutionId(
+          flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder builderForValue) {
+        if (sourceExecutionIdBuilder_ == null) {
+          sourceExecutionId_ = builderForValue.build();
+          onChanged();
+        } else {
+          sourceExecutionIdBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional: Source Workflow Execution identifier, if this dataset was generated by another execution in Flyte
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier source_execution_id = 3;</code>
+       */
+      public Builder mergeSourceExecutionId(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier value) {
+        if (sourceExecutionIdBuilder_ == null) {
+          if (sourceExecutionId_ != null) {
+            sourceExecutionId_ =
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.newBuilder(sourceExecutionId_).mergeFrom(value).buildPartial();
+          } else {
+            sourceExecutionId_ = value;
+          }
+          onChanged();
+        } else {
+          sourceExecutionIdBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional: Source Workflow Execution identifier, if this dataset was generated by another execution in Flyte
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier source_execution_id = 3;</code>
+       */
+      public Builder clearSourceExecutionId() {
+        if (sourceExecutionIdBuilder_ == null) {
+          sourceExecutionId_ = null;
+          onChanged();
+        } else {
+          sourceExecutionId_ = null;
+          sourceExecutionIdBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional: Source Workflow Execution identifier, if this dataset was generated by another execution in Flyte
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier source_execution_id = 3;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder getSourceExecutionIdBuilder() {
+        
+        onChanged();
+        return getSourceExecutionIdFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Optional: Source Workflow Execution identifier, if this dataset was generated by another execution in Flyte
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier source_execution_id = 3;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getSourceExecutionIdOrBuilder() {
+        if (sourceExecutionIdBuilder_ != null) {
+          return sourceExecutionIdBuilder_.getMessageOrBuilder();
+        } else {
+          return sourceExecutionId_ == null ?
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance() : sourceExecutionId_;
+        }
+      }
+      /**
+       * <pre>
+       * Optional: Source Workflow Execution identifier, if this dataset was generated by another execution in Flyte
+       * </pre>
+       *
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier source_execution_id = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder> 
+          getSourceExecutionIdFieldBuilder() {
+        if (sourceExecutionIdBuilder_ == null) {
+          sourceExecutionIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder>(
+                  getSourceExecutionId(),
+                  getParentForChildren(),
+                  isClean());
+          sourceExecutionId_ = null;
+        }
+        return sourceExecutionIdBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.event.CatalogMetadata)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.event.CatalogMetadata)
+    private static final flyteidl.event.Event.CatalogMetadata DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.event.Event.CatalogMetadata();
+    }
+
+    public static flyteidl.event.Event.CatalogMetadata getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CatalogMetadata>
+        PARSER = new com.google.protobuf.AbstractParser<CatalogMetadata>() {
+      @java.lang.Override
+      public CatalogMetadata parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CatalogMetadata(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CatalogMetadata> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CatalogMetadata> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.event.Event.CatalogMetadata getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TaskNodeMetadataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.event.TaskNodeMetadata)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Captures the status of caching for this execution.
+     * </pre>
+     *
+     * <code>.flyteidl.event.CatalogCacheStatus cache_status = 1;</code>
+     */
+    int getCacheStatusValue();
+    /**
+     * <pre>
+     * Captures the status of caching for this execution.
+     * </pre>
+     *
+     * <code>.flyteidl.event.CatalogCacheStatus cache_status = 1;</code>
+     */
+    flyteidl.event.Event.CatalogCacheStatus getCacheStatus();
+
+    /**
+     * <pre>
+     * This structure carries the catalog artifact information
+     * </pre>
+     *
+     * <code>.flyteidl.event.CatalogMetadata catalog_key = 2;</code>
+     */
+    boolean hasCatalogKey();
+    /**
+     * <pre>
+     * This structure carries the catalog artifact information
+     * </pre>
+     *
+     * <code>.flyteidl.event.CatalogMetadata catalog_key = 2;</code>
+     */
+    flyteidl.event.Event.CatalogMetadata getCatalogKey();
+    /**
+     * <pre>
+     * This structure carries the catalog artifact information
+     * </pre>
+     *
+     * <code>.flyteidl.event.CatalogMetadata catalog_key = 2;</code>
+     */
+    flyteidl.event.Event.CatalogMetadataOrBuilder getCatalogKeyOrBuilder();
+  }
+  /**
+   * Protobuf type {@code flyteidl.event.TaskNodeMetadata}
+   */
+  public  static final class TaskNodeMetadata extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.event.TaskNodeMetadata)
+      TaskNodeMetadataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TaskNodeMetadata.newBuilder() to construct.
+    private TaskNodeMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TaskNodeMetadata() {
+      cacheStatus_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TaskNodeMetadata(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              cacheStatus_ = rawValue;
+              break;
+            }
+            case 18: {
+              flyteidl.event.Event.CatalogMetadata.Builder subBuilder = null;
+              if (catalogKey_ != null) {
+                subBuilder = catalogKey_.toBuilder();
+              }
+              catalogKey_ = input.readMessage(flyteidl.event.Event.CatalogMetadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(catalogKey_);
+                catalogKey_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.event.Event.internal_static_flyteidl_event_TaskNodeMetadata_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.event.Event.internal_static_flyteidl_event_TaskNodeMetadata_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.event.Event.TaskNodeMetadata.class, flyteidl.event.Event.TaskNodeMetadata.Builder.class);
+    }
+
+    public static final int CACHE_STATUS_FIELD_NUMBER = 1;
+    private int cacheStatus_;
+    /**
+     * <pre>
+     * Captures the status of caching for this execution.
+     * </pre>
+     *
+     * <code>.flyteidl.event.CatalogCacheStatus cache_status = 1;</code>
+     */
+    public int getCacheStatusValue() {
+      return cacheStatus_;
+    }
+    /**
+     * <pre>
+     * Captures the status of caching for this execution.
+     * </pre>
+     *
+     * <code>.flyteidl.event.CatalogCacheStatus cache_status = 1;</code>
+     */
+    public flyteidl.event.Event.CatalogCacheStatus getCacheStatus() {
+      @SuppressWarnings("deprecation")
+      flyteidl.event.Event.CatalogCacheStatus result = flyteidl.event.Event.CatalogCacheStatus.valueOf(cacheStatus_);
+      return result == null ? flyteidl.event.Event.CatalogCacheStatus.UNRECOGNIZED : result;
+    }
+
+    public static final int CATALOG_KEY_FIELD_NUMBER = 2;
+    private flyteidl.event.Event.CatalogMetadata catalogKey_;
+    /**
+     * <pre>
+     * This structure carries the catalog artifact information
+     * </pre>
+     *
+     * <code>.flyteidl.event.CatalogMetadata catalog_key = 2;</code>
+     */
+    public boolean hasCatalogKey() {
+      return catalogKey_ != null;
+    }
+    /**
+     * <pre>
+     * This structure carries the catalog artifact information
+     * </pre>
+     *
+     * <code>.flyteidl.event.CatalogMetadata catalog_key = 2;</code>
+     */
+    public flyteidl.event.Event.CatalogMetadata getCatalogKey() {
+      return catalogKey_ == null ? flyteidl.event.Event.CatalogMetadata.getDefaultInstance() : catalogKey_;
+    }
+    /**
+     * <pre>
+     * This structure carries the catalog artifact information
+     * </pre>
+     *
+     * <code>.flyteidl.event.CatalogMetadata catalog_key = 2;</code>
+     */
+    public flyteidl.event.Event.CatalogMetadataOrBuilder getCatalogKeyOrBuilder() {
+      return getCatalogKey();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (cacheStatus_ != flyteidl.event.Event.CatalogCacheStatus.CACHE_DISABED.getNumber()) {
+        output.writeEnum(1, cacheStatus_);
+      }
+      if (catalogKey_ != null) {
+        output.writeMessage(2, getCatalogKey());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (cacheStatus_ != flyteidl.event.Event.CatalogCacheStatus.CACHE_DISABED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, cacheStatus_);
+      }
+      if (catalogKey_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getCatalogKey());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.event.Event.TaskNodeMetadata)) {
+        return super.equals(obj);
+      }
+      flyteidl.event.Event.TaskNodeMetadata other = (flyteidl.event.Event.TaskNodeMetadata) obj;
+
+      if (cacheStatus_ != other.cacheStatus_) return false;
+      if (hasCatalogKey() != other.hasCatalogKey()) return false;
+      if (hasCatalogKey()) {
+        if (!getCatalogKey()
+            .equals(other.getCatalogKey())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CACHE_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + cacheStatus_;
+      if (hasCatalogKey()) {
+        hash = (37 * hash) + CATALOG_KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getCatalogKey().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.event.Event.TaskNodeMetadata parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.TaskNodeMetadata parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.TaskNodeMetadata parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.TaskNodeMetadata parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.TaskNodeMetadata parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.TaskNodeMetadata parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.TaskNodeMetadata parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.TaskNodeMetadata parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.event.Event.TaskNodeMetadata parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.TaskNodeMetadata parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.event.Event.TaskNodeMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.TaskNodeMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.event.Event.TaskNodeMetadata prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code flyteidl.event.TaskNodeMetadata}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.event.TaskNodeMetadata)
+        flyteidl.event.Event.TaskNodeMetadataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_TaskNodeMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_TaskNodeMetadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.event.Event.TaskNodeMetadata.class, flyteidl.event.Event.TaskNodeMetadata.Builder.class);
+      }
+
+      // Construct using flyteidl.event.Event.TaskNodeMetadata.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        cacheStatus_ = 0;
+
+        if (catalogKeyBuilder_ == null) {
+          catalogKey_ = null;
+        } else {
+          catalogKey_ = null;
+          catalogKeyBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_TaskNodeMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.TaskNodeMetadata getDefaultInstanceForType() {
+        return flyteidl.event.Event.TaskNodeMetadata.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.TaskNodeMetadata build() {
+        flyteidl.event.Event.TaskNodeMetadata result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.TaskNodeMetadata buildPartial() {
+        flyteidl.event.Event.TaskNodeMetadata result = new flyteidl.event.Event.TaskNodeMetadata(this);
+        result.cacheStatus_ = cacheStatus_;
+        if (catalogKeyBuilder_ == null) {
+          result.catalogKey_ = catalogKey_;
+        } else {
+          result.catalogKey_ = catalogKeyBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.event.Event.TaskNodeMetadata) {
+          return mergeFrom((flyteidl.event.Event.TaskNodeMetadata)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.event.Event.TaskNodeMetadata other) {
+        if (other == flyteidl.event.Event.TaskNodeMetadata.getDefaultInstance()) return this;
+        if (other.cacheStatus_ != 0) {
+          setCacheStatusValue(other.getCacheStatusValue());
+        }
+        if (other.hasCatalogKey()) {
+          mergeCatalogKey(other.getCatalogKey());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.event.Event.TaskNodeMetadata parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.event.Event.TaskNodeMetadata) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int cacheStatus_ = 0;
+      /**
+       * <pre>
+       * Captures the status of caching for this execution.
+       * </pre>
+       *
+       * <code>.flyteidl.event.CatalogCacheStatus cache_status = 1;</code>
+       */
+      public int getCacheStatusValue() {
+        return cacheStatus_;
+      }
+      /**
+       * <pre>
+       * Captures the status of caching for this execution.
+       * </pre>
+       *
+       * <code>.flyteidl.event.CatalogCacheStatus cache_status = 1;</code>
+       */
+      public Builder setCacheStatusValue(int value) {
+        cacheStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Captures the status of caching for this execution.
+       * </pre>
+       *
+       * <code>.flyteidl.event.CatalogCacheStatus cache_status = 1;</code>
+       */
+      public flyteidl.event.Event.CatalogCacheStatus getCacheStatus() {
+        @SuppressWarnings("deprecation")
+        flyteidl.event.Event.CatalogCacheStatus result = flyteidl.event.Event.CatalogCacheStatus.valueOf(cacheStatus_);
+        return result == null ? flyteidl.event.Event.CatalogCacheStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Captures the status of caching for this execution.
+       * </pre>
+       *
+       * <code>.flyteidl.event.CatalogCacheStatus cache_status = 1;</code>
+       */
+      public Builder setCacheStatus(flyteidl.event.Event.CatalogCacheStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        cacheStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Captures the status of caching for this execution.
+       * </pre>
+       *
+       * <code>.flyteidl.event.CatalogCacheStatus cache_status = 1;</code>
+       */
+      public Builder clearCacheStatus() {
+        
+        cacheStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private flyteidl.event.Event.CatalogMetadata catalogKey_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.event.Event.CatalogMetadata, flyteidl.event.Event.CatalogMetadata.Builder, flyteidl.event.Event.CatalogMetadataOrBuilder> catalogKeyBuilder_;
+      /**
+       * <pre>
+       * This structure carries the catalog artifact information
+       * </pre>
+       *
+       * <code>.flyteidl.event.CatalogMetadata catalog_key = 2;</code>
+       */
+      public boolean hasCatalogKey() {
+        return catalogKeyBuilder_ != null || catalogKey_ != null;
+      }
+      /**
+       * <pre>
+       * This structure carries the catalog artifact information
+       * </pre>
+       *
+       * <code>.flyteidl.event.CatalogMetadata catalog_key = 2;</code>
+       */
+      public flyteidl.event.Event.CatalogMetadata getCatalogKey() {
+        if (catalogKeyBuilder_ == null) {
+          return catalogKey_ == null ? flyteidl.event.Event.CatalogMetadata.getDefaultInstance() : catalogKey_;
+        } else {
+          return catalogKeyBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * This structure carries the catalog artifact information
+       * </pre>
+       *
+       * <code>.flyteidl.event.CatalogMetadata catalog_key = 2;</code>
+       */
+      public Builder setCatalogKey(flyteidl.event.Event.CatalogMetadata value) {
+        if (catalogKeyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          catalogKey_ = value;
+          onChanged();
+        } else {
+          catalogKeyBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * This structure carries the catalog artifact information
+       * </pre>
+       *
+       * <code>.flyteidl.event.CatalogMetadata catalog_key = 2;</code>
+       */
+      public Builder setCatalogKey(
+          flyteidl.event.Event.CatalogMetadata.Builder builderForValue) {
+        if (catalogKeyBuilder_ == null) {
+          catalogKey_ = builderForValue.build();
+          onChanged();
+        } else {
+          catalogKeyBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * This structure carries the catalog artifact information
+       * </pre>
+       *
+       * <code>.flyteidl.event.CatalogMetadata catalog_key = 2;</code>
+       */
+      public Builder mergeCatalogKey(flyteidl.event.Event.CatalogMetadata value) {
+        if (catalogKeyBuilder_ == null) {
+          if (catalogKey_ != null) {
+            catalogKey_ =
+              flyteidl.event.Event.CatalogMetadata.newBuilder(catalogKey_).mergeFrom(value).buildPartial();
+          } else {
+            catalogKey_ = value;
+          }
+          onChanged();
+        } else {
+          catalogKeyBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * This structure carries the catalog artifact information
+       * </pre>
+       *
+       * <code>.flyteidl.event.CatalogMetadata catalog_key = 2;</code>
+       */
+      public Builder clearCatalogKey() {
+        if (catalogKeyBuilder_ == null) {
+          catalogKey_ = null;
+          onChanged();
+        } else {
+          catalogKey_ = null;
+          catalogKeyBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * This structure carries the catalog artifact information
+       * </pre>
+       *
+       * <code>.flyteidl.event.CatalogMetadata catalog_key = 2;</code>
+       */
+      public flyteidl.event.Event.CatalogMetadata.Builder getCatalogKeyBuilder() {
+        
+        onChanged();
+        return getCatalogKeyFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * This structure carries the catalog artifact information
+       * </pre>
+       *
+       * <code>.flyteidl.event.CatalogMetadata catalog_key = 2;</code>
+       */
+      public flyteidl.event.Event.CatalogMetadataOrBuilder getCatalogKeyOrBuilder() {
+        if (catalogKeyBuilder_ != null) {
+          return catalogKeyBuilder_.getMessageOrBuilder();
+        } else {
+          return catalogKey_ == null ?
+              flyteidl.event.Event.CatalogMetadata.getDefaultInstance() : catalogKey_;
+        }
+      }
+      /**
+       * <pre>
+       * This structure carries the catalog artifact information
+       * </pre>
+       *
+       * <code>.flyteidl.event.CatalogMetadata catalog_key = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.event.Event.CatalogMetadata, flyteidl.event.Event.CatalogMetadata.Builder, flyteidl.event.Event.CatalogMetadataOrBuilder> 
+          getCatalogKeyFieldBuilder() {
+        if (catalogKeyBuilder_ == null) {
+          catalogKeyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.event.Event.CatalogMetadata, flyteidl.event.Event.CatalogMetadata.Builder, flyteidl.event.Event.CatalogMetadataOrBuilder>(
+                  getCatalogKey(),
+                  getParentForChildren(),
+                  isClean());
+          catalogKey_ = null;
+        }
+        return catalogKeyBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.event.TaskNodeMetadata)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.event.TaskNodeMetadata)
+    private static final flyteidl.event.Event.TaskNodeMetadata DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.event.Event.TaskNodeMetadata();
+    }
+
+    public static flyteidl.event.Event.TaskNodeMetadata getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TaskNodeMetadata>
+        PARSER = new com.google.protobuf.AbstractParser<TaskNodeMetadata>() {
+      @java.lang.Override
+      public TaskNodeMetadata parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TaskNodeMetadata(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TaskNodeMetadata> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TaskNodeMetadata> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.event.Event.TaskNodeMetadata getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8616,6 +10835,16 @@ public final class Event {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_event_WorkflowNodeMetadata_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_event_CatalogMetadata_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_event_CatalogMetadata_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_event_TaskNodeMetadata_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_event_TaskNodeMetadata_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_event_ParentTaskExecutionMetadata_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -8645,7 +10874,7 @@ public final class Event {
       "flowExecution.Phase\022/\n\013occurred_at\030\004 \001(\013" +
       "2\032.google.protobuf.Timestamp\022\024\n\noutput_u" +
       "ri\030\005 \001(\tH\000\022.\n\005error\030\006 \001(\0132\035.flyteidl.cor" +
-      "e.ExecutionErrorH\000B\017\n\routput_result\"\321\003\n\022" +
+      "e.ExecutionErrorH\000B\017\n\routput_result\"\221\004\n\022" +
       "NodeExecutionEvent\0222\n\002id\030\001 \001(\0132&.flyteid" +
       "l.core.NodeExecutionIdentifier\022\023\n\013produc" +
       "er_id\030\002 \001(\t\0221\n\005phase\030\003 \001(\0162\".flyteidl.co" +
@@ -8654,28 +10883,40 @@ public final class Event {
       "_uri\030\005 \001(\t\022\024\n\noutput_uri\030\006 \001(\tH\000\022.\n\005erro" +
       "r\030\007 \001(\0132\035.flyteidl.core.ExecutionErrorH\000" +
       "\022F\n\026workflow_node_metadata\030\010 \001(\0132$.flyte" +
-      "idl.event.WorkflowNodeMetadataH\001\022I\n\024pare" +
-      "nt_task_metadata\030\t \001(\0132+.flyteidl.event." +
-      "ParentTaskExecutionMetadataB\017\n\routput_re" +
-      "sultB\021\n\017target_metadata\"X\n\024WorkflowNodeM" +
-      "etadata\022@\n\014execution_id\030\001 \001(\0132*.flyteidl" +
-      ".core.WorkflowExecutionIdentifier\"Q\n\033Par" +
-      "entTaskExecutionMetadata\0222\n\002id\030\001 \001(\0132&.f" +
-      "lyteidl.core.TaskExecutionIdentifier\"\357\003\n" +
-      "\022TaskExecutionEvent\022*\n\007task_id\030\001 \001(\0132\031.f" +
-      "lyteidl.core.Identifier\022H\n\030parent_node_e" +
-      "xecution_id\030\002 \001(\0132&.flyteidl.core.NodeEx" +
-      "ecutionIdentifier\022\025\n\rretry_attempt\030\003 \001(\r" +
-      "\0221\n\005phase\030\004 \001(\0162\".flyteidl.core.TaskExec" +
-      "ution.Phase\022\023\n\013producer_id\030\005 \001(\t\022$\n\004logs" +
-      "\030\006 \003(\0132\026.flyteidl.core.TaskLog\022/\n\013occurr" +
-      "ed_at\030\007 \001(\0132\032.google.protobuf.Timestamp\022" +
-      "\021\n\tinput_uri\030\010 \001(\t\022\024\n\noutput_uri\030\t \001(\tH\000" +
-      "\022.\n\005error\030\n \001(\0132\035.flyteidl.core.Executio" +
-      "nErrorH\000\022,\n\013custom_info\030\013 \001(\0132\027.google.p" +
-      "rotobuf.Struct\022\025\n\rphase_version\030\014 \001(\rB\017\n" +
-      "\routput_resultB3Z1github.com/lyft/flytei" +
-      "dl/gen/pb-go/flyteidl/eventb\006proto3"
+      "idl.event.WorkflowNodeMetadataH\001\022>\n\022task" +
+      "_node_metadata\030\n \001(\0132 .flyteidl.event.Ta" +
+      "skNodeMetadataH\001\022I\n\024parent_task_metadata" +
+      "\030\t \001(\0132+.flyteidl.event.ParentTaskExecut" +
+      "ionMetadataB\017\n\routput_resultB\021\n\017target_m" +
+      "etadata\"X\n\024WorkflowNodeMetadata\022@\n\014execu" +
+      "tion_id\030\001 \001(\0132*.flyteidl.core.WorkflowEx" +
+      "ecutionIdentifier\"\204\001\n\017CatalogMetadata\022\022\n" +
+      "\ndataset_id\030\001 \001(\t\022\024\n\014artifact_tag\030\002 \001(\t\022" +
+      "G\n\023source_execution_id\030\003 \001(\0132*.flyteidl." +
+      "core.WorkflowExecutionIdentifier\"\202\001\n\020Tas" +
+      "kNodeMetadata\0228\n\014cache_status\030\001 \001(\0162\".fl" +
+      "yteidl.event.CatalogCacheStatus\0224\n\013catal" +
+      "og_key\030\002 \001(\0132\037.flyteidl.event.CatalogMet" +
+      "adata\"Q\n\033ParentTaskExecutionMetadata\0222\n\002" +
+      "id\030\001 \001(\0132&.flyteidl.core.TaskExecutionId" +
+      "entifier\"\357\003\n\022TaskExecutionEvent\022*\n\007task_" +
+      "id\030\001 \001(\0132\031.flyteidl.core.Identifier\022H\n\030p" +
+      "arent_node_execution_id\030\002 \001(\0132&.flyteidl" +
+      ".core.NodeExecutionIdentifier\022\025\n\rretry_a" +
+      "ttempt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyteidl.c" +
+      "ore.TaskExecution.Phase\022\023\n\013producer_id\030\005" +
+      " \001(\t\022$\n\004logs\030\006 \003(\0132\026.flyteidl.core.TaskL" +
+      "og\022/\n\013occurred_at\030\007 \001(\0132\032.google.protobu" +
+      "f.Timestamp\022\021\n\tinput_uri\030\010 \001(\t\022\024\n\noutput" +
+      "_uri\030\t \001(\tH\000\022.\n\005error\030\n \001(\0132\035.flyteidl.c" +
+      "ore.ExecutionErrorH\000\022,\n\013custom_info\030\013 \001(" +
+      "\0132\027.google.protobuf.Struct\022\025\n\rphase_vers" +
+      "ion\030\014 \001(\rB\017\n\routput_result*\214\001\n\022CatalogCa" +
+      "cheStatus\022\021\n\rCACHE_DISABED\020\000\022\016\n\nCACHE_MI" +
+      "SS\020\001\022\r\n\tCACHE_HIT\020\002\022\023\n\017CACHE_POPULATED\020\003" +
+      "\022\030\n\024CACHE_LOOKUP_FAILURE\020\004\022\025\n\021CACHE_PUT_" +
+      "FAILURE\020\005B3Z1github.com/lyft/flyteidl/ge" +
+      "n/pb-go/flyteidl/eventb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8704,21 +10945,33 @@ public final class Event {
     internal_static_flyteidl_event_NodeExecutionEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_NodeExecutionEvent_descriptor,
-        new java.lang.String[] { "Id", "ProducerId", "Phase", "OccurredAt", "InputUri", "OutputUri", "Error", "WorkflowNodeMetadata", "ParentTaskMetadata", "OutputResult", "TargetMetadata", });
+        new java.lang.String[] { "Id", "ProducerId", "Phase", "OccurredAt", "InputUri", "OutputUri", "Error", "WorkflowNodeMetadata", "TaskNodeMetadata", "ParentTaskMetadata", "OutputResult", "TargetMetadata", });
     internal_static_flyteidl_event_WorkflowNodeMetadata_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_event_WorkflowNodeMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_WorkflowNodeMetadata_descriptor,
         new java.lang.String[] { "ExecutionId", });
-    internal_static_flyteidl_event_ParentTaskExecutionMetadata_descriptor =
+    internal_static_flyteidl_event_CatalogMetadata_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_flyteidl_event_CatalogMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_event_CatalogMetadata_descriptor,
+        new java.lang.String[] { "DatasetId", "ArtifactTag", "SourceExecutionId", });
+    internal_static_flyteidl_event_TaskNodeMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_flyteidl_event_TaskNodeMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_event_TaskNodeMetadata_descriptor,
+        new java.lang.String[] { "CacheStatus", "CatalogKey", });
+    internal_static_flyteidl_event_ParentTaskExecutionMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_event_ParentTaskExecutionMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_ParentTaskExecutionMetadata_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_flyteidl_event_TaskExecutionEvent_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_event_TaskExecutionEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_TaskExecutionEvent_descriptor,

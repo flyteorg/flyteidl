@@ -11094,6 +11094,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [outputUri] NodeExecutionEvent outputUri
              * @property {flyteidl.core.IExecutionError|null} [error] NodeExecutionEvent error
              * @property {flyteidl.event.IWorkflowNodeMetadata|null} [workflowNodeMetadata] NodeExecutionEvent workflowNodeMetadata
+             * @property {flyteidl.event.ITaskNodeMetadata|null} [taskNodeMetadata] NodeExecutionEvent taskNodeMetadata
              * @property {flyteidl.event.IParentTaskExecutionMetadata|null} [parentTaskMetadata] NodeExecutionEvent parentTaskMetadata
              */
 
@@ -11177,6 +11178,14 @@ export const flyteidl = $root.flyteidl = (() => {
             NodeExecutionEvent.prototype.workflowNodeMetadata = null;
 
             /**
+             * NodeExecutionEvent taskNodeMetadata.
+             * @member {flyteidl.event.ITaskNodeMetadata|null|undefined} taskNodeMetadata
+             * @memberof flyteidl.event.NodeExecutionEvent
+             * @instance
+             */
+            NodeExecutionEvent.prototype.taskNodeMetadata = null;
+
+            /**
              * NodeExecutionEvent parentTaskMetadata.
              * @member {flyteidl.event.IParentTaskExecutionMetadata|null|undefined} parentTaskMetadata
              * @memberof flyteidl.event.NodeExecutionEvent
@@ -11200,12 +11209,12 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * NodeExecutionEvent targetMetadata.
-             * @member {"workflowNodeMetadata"|undefined} targetMetadata
+             * @member {"workflowNodeMetadata"|"taskNodeMetadata"|undefined} targetMetadata
              * @memberof flyteidl.event.NodeExecutionEvent
              * @instance
              */
             Object.defineProperty(NodeExecutionEvent.prototype, "targetMetadata", {
-                get: $util.oneOfGetter($oneOfFields = ["workflowNodeMetadata"]),
+                get: $util.oneOfGetter($oneOfFields = ["workflowNodeMetadata", "taskNodeMetadata"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -11251,6 +11260,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.event.WorkflowNodeMetadata.encode(message.workflowNodeMetadata, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 if (message.parentTaskMetadata != null && message.hasOwnProperty("parentTaskMetadata"))
                     $root.flyteidl.event.ParentTaskExecutionMetadata.encode(message.parentTaskMetadata, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                if (message.taskNodeMetadata != null && message.hasOwnProperty("taskNodeMetadata"))
+                    $root.flyteidl.event.TaskNodeMetadata.encode(message.taskNodeMetadata, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                 return writer;
             };
 
@@ -11295,6 +11306,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 8:
                         message.workflowNodeMetadata = $root.flyteidl.event.WorkflowNodeMetadata.decode(reader, reader.uint32());
+                        break;
+                    case 10:
+                        message.taskNodeMetadata = $root.flyteidl.event.TaskNodeMetadata.decode(reader, reader.uint32());
                         break;
                     case 9:
                         message.parentTaskMetadata = $root.flyteidl.event.ParentTaskExecutionMetadata.decode(reader, reader.uint32());
@@ -11371,6 +11385,16 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.flyteidl.event.WorkflowNodeMetadata.verify(message.workflowNodeMetadata);
                         if (error)
                             return "workflowNodeMetadata." + error;
+                    }
+                }
+                if (message.taskNodeMetadata != null && message.hasOwnProperty("taskNodeMetadata")) {
+                    if (properties.targetMetadata === 1)
+                        return "targetMetadata: multiple values";
+                    properties.targetMetadata = 1;
+                    {
+                        let error = $root.flyteidl.event.TaskNodeMetadata.verify(message.taskNodeMetadata);
+                        if (error)
+                            return "taskNodeMetadata." + error;
                     }
                 }
                 if (message.parentTaskMetadata != null && message.hasOwnProperty("parentTaskMetadata")) {
@@ -11494,6 +11518,312 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             return WorkflowNodeMetadata;
+        })();
+
+        /**
+         * CatalogCacheStatus enum.
+         * @name flyteidl.event.CatalogCacheStatus
+         * @enum {string}
+         * @property {number} CACHE_DISABED=0 CACHE_DISABED value
+         * @property {number} CACHE_MISS=1 CACHE_MISS value
+         * @property {number} CACHE_HIT=2 CACHE_HIT value
+         * @property {number} CACHE_POPULATED=3 CACHE_POPULATED value
+         * @property {number} CACHE_LOOKUP_FAILURE=4 CACHE_LOOKUP_FAILURE value
+         * @property {number} CACHE_PUT_FAILURE=5 CACHE_PUT_FAILURE value
+         */
+        event.CatalogCacheStatus = (function() {
+            const valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "CACHE_DISABED"] = 0;
+            values[valuesById[1] = "CACHE_MISS"] = 1;
+            values[valuesById[2] = "CACHE_HIT"] = 2;
+            values[valuesById[3] = "CACHE_POPULATED"] = 3;
+            values[valuesById[4] = "CACHE_LOOKUP_FAILURE"] = 4;
+            values[valuesById[5] = "CACHE_PUT_FAILURE"] = 5;
+            return values;
+        })();
+
+        event.CatalogMetadata = (function() {
+
+            /**
+             * Properties of a CatalogMetadata.
+             * @memberof flyteidl.event
+             * @interface ICatalogMetadata
+             * @property {string|null} [datasetId] CatalogMetadata datasetId
+             * @property {string|null} [artifactTag] CatalogMetadata artifactTag
+             * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [sourceExecutionId] CatalogMetadata sourceExecutionId
+             */
+
+            /**
+             * Constructs a new CatalogMetadata.
+             * @memberof flyteidl.event
+             * @classdesc Represents a CatalogMetadata.
+             * @implements ICatalogMetadata
+             * @constructor
+             * @param {flyteidl.event.ICatalogMetadata=} [properties] Properties to set
+             */
+            function CatalogMetadata(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * CatalogMetadata datasetId.
+             * @member {string} datasetId
+             * @memberof flyteidl.event.CatalogMetadata
+             * @instance
+             */
+            CatalogMetadata.prototype.datasetId = "";
+
+            /**
+             * CatalogMetadata artifactTag.
+             * @member {string} artifactTag
+             * @memberof flyteidl.event.CatalogMetadata
+             * @instance
+             */
+            CatalogMetadata.prototype.artifactTag = "";
+
+            /**
+             * CatalogMetadata sourceExecutionId.
+             * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} sourceExecutionId
+             * @memberof flyteidl.event.CatalogMetadata
+             * @instance
+             */
+            CatalogMetadata.prototype.sourceExecutionId = null;
+
+            /**
+             * Creates a new CatalogMetadata instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.event.CatalogMetadata
+             * @static
+             * @param {flyteidl.event.ICatalogMetadata=} [properties] Properties to set
+             * @returns {flyteidl.event.CatalogMetadata} CatalogMetadata instance
+             */
+            CatalogMetadata.create = function create(properties) {
+                return new CatalogMetadata(properties);
+            };
+
+            /**
+             * Encodes the specified CatalogMetadata message. Does not implicitly {@link flyteidl.event.CatalogMetadata.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.event.CatalogMetadata
+             * @static
+             * @param {flyteidl.event.ICatalogMetadata} message CatalogMetadata message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CatalogMetadata.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.datasetId != null && message.hasOwnProperty("datasetId"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.datasetId);
+                if (message.artifactTag != null && message.hasOwnProperty("artifactTag"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.artifactTag);
+                if (message.sourceExecutionId != null && message.hasOwnProperty("sourceExecutionId"))
+                    $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.sourceExecutionId, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a CatalogMetadata message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.event.CatalogMetadata
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.event.CatalogMetadata} CatalogMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CatalogMetadata.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.CatalogMetadata();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.datasetId = reader.string();
+                        break;
+                    case 2:
+                        message.artifactTag = reader.string();
+                        break;
+                    case 3:
+                        message.sourceExecutionId = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a CatalogMetadata message.
+             * @function verify
+             * @memberof flyteidl.event.CatalogMetadata
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CatalogMetadata.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.datasetId != null && message.hasOwnProperty("datasetId"))
+                    if (!$util.isString(message.datasetId))
+                        return "datasetId: string expected";
+                if (message.artifactTag != null && message.hasOwnProperty("artifactTag"))
+                    if (!$util.isString(message.artifactTag))
+                        return "artifactTag: string expected";
+                if (message.sourceExecutionId != null && message.hasOwnProperty("sourceExecutionId")) {
+                    let error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.sourceExecutionId);
+                    if (error)
+                        return "sourceExecutionId." + error;
+                }
+                return null;
+            };
+
+            return CatalogMetadata;
+        })();
+
+        event.TaskNodeMetadata = (function() {
+
+            /**
+             * Properties of a TaskNodeMetadata.
+             * @memberof flyteidl.event
+             * @interface ITaskNodeMetadata
+             * @property {flyteidl.event.CatalogCacheStatus|null} [cacheStatus] TaskNodeMetadata cacheStatus
+             * @property {flyteidl.event.ICatalogMetadata|null} [catalogKey] TaskNodeMetadata catalogKey
+             */
+
+            /**
+             * Constructs a new TaskNodeMetadata.
+             * @memberof flyteidl.event
+             * @classdesc Represents a TaskNodeMetadata.
+             * @implements ITaskNodeMetadata
+             * @constructor
+             * @param {flyteidl.event.ITaskNodeMetadata=} [properties] Properties to set
+             */
+            function TaskNodeMetadata(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TaskNodeMetadata cacheStatus.
+             * @member {flyteidl.event.CatalogCacheStatus} cacheStatus
+             * @memberof flyteidl.event.TaskNodeMetadata
+             * @instance
+             */
+            TaskNodeMetadata.prototype.cacheStatus = 0;
+
+            /**
+             * TaskNodeMetadata catalogKey.
+             * @member {flyteidl.event.ICatalogMetadata|null|undefined} catalogKey
+             * @memberof flyteidl.event.TaskNodeMetadata
+             * @instance
+             */
+            TaskNodeMetadata.prototype.catalogKey = null;
+
+            /**
+             * Creates a new TaskNodeMetadata instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.event.TaskNodeMetadata
+             * @static
+             * @param {flyteidl.event.ITaskNodeMetadata=} [properties] Properties to set
+             * @returns {flyteidl.event.TaskNodeMetadata} TaskNodeMetadata instance
+             */
+            TaskNodeMetadata.create = function create(properties) {
+                return new TaskNodeMetadata(properties);
+            };
+
+            /**
+             * Encodes the specified TaskNodeMetadata message. Does not implicitly {@link flyteidl.event.TaskNodeMetadata.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.event.TaskNodeMetadata
+             * @static
+             * @param {flyteidl.event.ITaskNodeMetadata} message TaskNodeMetadata message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TaskNodeMetadata.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.cacheStatus != null && message.hasOwnProperty("cacheStatus"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.cacheStatus);
+                if (message.catalogKey != null && message.hasOwnProperty("catalogKey"))
+                    $root.flyteidl.event.CatalogMetadata.encode(message.catalogKey, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a TaskNodeMetadata message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.event.TaskNodeMetadata
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.event.TaskNodeMetadata} TaskNodeMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TaskNodeMetadata.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.TaskNodeMetadata();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.cacheStatus = reader.int32();
+                        break;
+                    case 2:
+                        message.catalogKey = $root.flyteidl.event.CatalogMetadata.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a TaskNodeMetadata message.
+             * @function verify
+             * @memberof flyteidl.event.TaskNodeMetadata
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TaskNodeMetadata.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.cacheStatus != null && message.hasOwnProperty("cacheStatus"))
+                    switch (message.cacheStatus) {
+                    default:
+                        return "cacheStatus: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                        break;
+                    }
+                if (message.catalogKey != null && message.hasOwnProperty("catalogKey")) {
+                    let error = $root.flyteidl.event.CatalogMetadata.verify(message.catalogKey);
+                    if (error)
+                        return "catalogKey." + error;
+                }
+                return null;
+            };
+
+            return TaskNodeMetadata;
         })();
 
         event.ParentTaskExecutionMetadata = (function() {

@@ -24,6 +24,7 @@ type EventNodeExecutionEvent struct {
 	OutputUri string `json:"output_uri,omitempty"`
 	Error_ *CoreExecutionError `json:"error,omitempty"`
 	WorkflowNodeMetadata *FlyteidleventWorkflowNodeMetadata `json:"workflow_node_metadata,omitempty"`
+	TaskNodeMetadata *EventTaskNodeMetadata `json:"task_node_metadata,omitempty"`
 	// Specifies which task (if any) launched this node.
 	ParentTaskMetadata *EventParentTaskExecutionMetadata `json:"parent_task_metadata,omitempty"`
 }

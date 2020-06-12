@@ -20,6 +20,7 @@ from flyteadmin.models.core_execution_error import CoreExecutionError  # noqa: F
 from flyteadmin.models.core_node_execution_identifier import CoreNodeExecutionIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_node_execution_phase import CoreNodeExecutionPhase  # noqa: F401,E501
 from flyteadmin.models.event_parent_task_execution_metadata import EventParentTaskExecutionMetadata  # noqa: F401,E501
+from flyteadmin.models.event_task_node_metadata import EventTaskNodeMetadata  # noqa: F401,E501
 from flyteadmin.models.flyteidlevent_workflow_node_metadata import FlyteidleventWorkflowNodeMetadata  # noqa: F401,E501
 
 
@@ -45,6 +46,7 @@ class EventNodeExecutionEvent(object):
         'output_uri': 'str',
         'error': 'CoreExecutionError',
         'workflow_node_metadata': 'FlyteidleventWorkflowNodeMetadata',
+        'task_node_metadata': 'EventTaskNodeMetadata',
         'parent_task_metadata': 'EventParentTaskExecutionMetadata'
     }
 
@@ -57,10 +59,11 @@ class EventNodeExecutionEvent(object):
         'output_uri': 'output_uri',
         'error': 'error',
         'workflow_node_metadata': 'workflow_node_metadata',
+        'task_node_metadata': 'task_node_metadata',
         'parent_task_metadata': 'parent_task_metadata'
     }
 
-    def __init__(self, id=None, producer_id=None, phase=None, occurred_at=None, input_uri=None, output_uri=None, error=None, workflow_node_metadata=None, parent_task_metadata=None):  # noqa: E501
+    def __init__(self, id=None, producer_id=None, phase=None, occurred_at=None, input_uri=None, output_uri=None, error=None, workflow_node_metadata=None, task_node_metadata=None, parent_task_metadata=None):  # noqa: E501
         """EventNodeExecutionEvent - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -71,6 +74,7 @@ class EventNodeExecutionEvent(object):
         self._output_uri = None
         self._error = None
         self._workflow_node_metadata = None
+        self._task_node_metadata = None
         self._parent_task_metadata = None
         self.discriminator = None
 
@@ -90,6 +94,8 @@ class EventNodeExecutionEvent(object):
             self.error = error
         if workflow_node_metadata is not None:
             self.workflow_node_metadata = workflow_node_metadata
+        if task_node_metadata is not None:
+            self.task_node_metadata = task_node_metadata
         if parent_task_metadata is not None:
             self.parent_task_metadata = parent_task_metadata
 
@@ -264,6 +270,27 @@ class EventNodeExecutionEvent(object):
         """
 
         self._workflow_node_metadata = workflow_node_metadata
+
+    @property
+    def task_node_metadata(self):
+        """Gets the task_node_metadata of this EventNodeExecutionEvent.  # noqa: E501
+
+
+        :return: The task_node_metadata of this EventNodeExecutionEvent.  # noqa: E501
+        :rtype: EventTaskNodeMetadata
+        """
+        return self._task_node_metadata
+
+    @task_node_metadata.setter
+    def task_node_metadata(self, task_node_metadata):
+        """Sets the task_node_metadata of this EventNodeExecutionEvent.
+
+
+        :param task_node_metadata: The task_node_metadata of this EventNodeExecutionEvent.  # noqa: E501
+        :type: EventTaskNodeMetadata
+        """
+
+        self._task_node_metadata = task_node_metadata
 
     @property
     def parent_task_metadata(self):
