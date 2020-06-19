@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package flyteidl.plugins.sagemaker;
+
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
+
+
+enum InputMode {
+    FILE = 0;
+    PIPE = 1;
+}
+
+enum AlgorithmName {
+    CUSTOM = 0;
+    XGBOOST = 1;
+}
+
+message AlgorithmSpecification {
+    InputMode input_mode = 1;
+    AlgorithmName algorithm_name = 2;
+    string algorithm_version = 3;
+
+    message MetricDefinition {
+        string name = 1;
+        string regex = 2;
+    }
+    repeated MetricDefinition metric_definitions = 4;
+}
+
+message TrainingJobConfig {
+    int64 instance_count = 1;   // For multi-node training, not multi-GPU training
+    string instance_type = 2;
+    string volume_size_in_gb = 3;
+}
+
+message StoppingCondition {
+    int64 max_runtime_in_seconds = 1;
+    int64 max_wait_time_in_seconds = 2;
+}
+
+message TrainingJob {
+    AlgorithmSpecification algorithm_specification = 1;
+    TrainingJobConfig training_job_config = 2;
+    bool interruptible = 4;
+}

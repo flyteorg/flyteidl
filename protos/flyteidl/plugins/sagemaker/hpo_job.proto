@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package flyteidl.plugins.sagemaker;
+
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
+
+import "flyteidl/plugins/sagemaker/parameter_ranges.proto";
+import "flyteidl/plugins/sagemaker/training_job.proto";
+
+message HyperparameterTuningObjective {
+    enum HyperparameterTuningObjectiveType {
+        MINIMIZE = 0;
+        MAXIMIZE = 1;
+    }
+
+    HyperparameterTuningObjectiveType objective_type = 1;
+    string metric_name = 2;
+}
+
+message HPOJob {
+    TrainingJob training_job = 1;  // TODO: will this change output? should it be an input instead of a part of the task spec?  This hierarchical definition is tricky!!!!!!!
+    int64 max_number_of_training_jobs = 2;
+    int64 max_parallel_training_jobs = 3;
+}
+
+message HPOJobConfig {
+    ParameterRanges hyperparameter_ranges = 1;
+
+    enum HyperparameterTuningStrategy {
+        BAYESIAN = 0;
+    }
+
+    HyperparameterTuningStrategy tuning_strategy = 2;
+    HyperparameterTuningObjective tuning_objective = 3;
+
+    enum TrainingJobEarlyStoppingType {
+        OFF = 0;
+        AUTO = 1;
+    }
+    TrainingJobEarlyStoppingType training_job_early_stopping_type = 4;
+}
