@@ -11524,7 +11524,7 @@ export const flyteidl = $root.flyteidl = (() => {
          * CatalogCacheStatus enum.
          * @name flyteidl.event.CatalogCacheStatus
          * @enum {string}
-         * @property {number} CACHE_DISABED=0 CACHE_DISABED value
+         * @property {number} CACHE_DISABLED=0 CACHE_DISABLED value
          * @property {number} CACHE_MISS=1 CACHE_MISS value
          * @property {number} CACHE_HIT=2 CACHE_HIT value
          * @property {number} CACHE_POPULATED=3 CACHE_POPULATED value
@@ -11533,7 +11533,7 @@ export const flyteidl = $root.flyteidl = (() => {
          */
         event.CatalogCacheStatus = (function() {
             const valuesById = {}, values = Object.create(valuesById);
-            values[valuesById[0] = "CACHE_DISABED"] = 0;
+            values[valuesById[0] = "CACHE_DISABLED"] = 0;
             values[valuesById[1] = "CACHE_MISS"] = 1;
             values[valuesById[2] = "CACHE_HIT"] = 2;
             values[valuesById[3] = "CACHE_POPULATED"] = 3;

@@ -4761,7 +4761,7 @@ export namespace flyteidl {
 
         /** CatalogCacheStatus enum. */
         enum CatalogCacheStatus {
-            CACHE_DISABED = 0,
+            CACHE_DISABLED = 0,
             CACHE_MISS = 1,
             CACHE_HIT = 2,
             CACHE_POPULATED = 3,

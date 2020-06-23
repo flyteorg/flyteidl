@@ -28,9 +28,9 @@ public final class Event {
      * Used to indicate that caching was disabled
      * </pre>
      *
-     * <code>CACHE_DISABED = 0;</code>
+     * <code>CACHE_DISABLED = 0;</code>
      */
-    CACHE_DISABED(0),
+    CACHE_DISABLED(0),
     /**
      * <pre>
      * Used to indicate that the cache lookup resulted in no matches
@@ -79,9 +79,9 @@ public final class Event {
      * Used to indicate that caching was disabled
      * </pre>
      *
-     * <code>CACHE_DISABED = 0;</code>
+     * <code>CACHE_DISABLED = 0;</code>
      */
-    public static final int CACHE_DISABED_VALUE = 0;
+    public static final int CACHE_DISABLED_VALUE = 0;
     /**
      * <pre>
      * Used to indicate that the cache lookup resulted in no matches
@@ -142,7 +142,7 @@ public final class Event {
 
     public static CatalogCacheStatus forNumber(int value) {
       switch (value) {
-        case 0: return CACHE_DISABED;
+        case 0: return CACHE_DISABLED;
         case 1: return CACHE_MISS;
         case 2: return CACHE_HIT;
         case 3: return CACHE_POPULATED;
@@ -6448,7 +6448,7 @@ public final class Event {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (cacheStatus_ != flyteidl.event.Event.CatalogCacheStatus.CACHE_DISABED.getNumber()) {
+      if (cacheStatus_ != flyteidl.event.Event.CatalogCacheStatus.CACHE_DISABLED.getNumber()) {
         output.writeEnum(1, cacheStatus_);
       }
       if (catalogKey_ != null) {
@@ -6463,7 +6463,7 @@ public final class Event {
       if (size != -1) return size;
 
       size = 0;
-      if (cacheStatus_ != flyteidl.event.Event.CatalogCacheStatus.CACHE_DISABED.getNumber()) {
+      if (cacheStatus_ != flyteidl.event.Event.CatalogCacheStatus.CACHE_DISABLED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, cacheStatus_);
       }
@@ -10911,12 +10911,12 @@ public final class Event {
       "_uri\030\t \001(\tH\000\022.\n\005error\030\n \001(\0132\035.flyteidl.c" +
       "ore.ExecutionErrorH\000\022,\n\013custom_info\030\013 \001(" +
       "\0132\027.google.protobuf.Struct\022\025\n\rphase_vers" +
-      "ion\030\014 \001(\rB\017\n\routput_result*\214\001\n\022CatalogCa" +
-      "cheStatus\022\021\n\rCACHE_DISABED\020\000\022\016\n\nCACHE_MI" +
-      "SS\020\001\022\r\n\tCACHE_HIT\020\002\022\023\n\017CACHE_POPULATED\020\003" +
-      "\022\030\n\024CACHE_LOOKUP_FAILURE\020\004\022\025\n\021CACHE_PUT_" +
-      "FAILURE\020\005B3Z1github.com/lyft/flyteidl/ge" +
-      "n/pb-go/flyteidl/eventb\006proto3"
+      "ion\030\014 \001(\rB\017\n\routput_result*\215\001\n\022CatalogCa" +
+      "cheStatus\022\022\n\016CACHE_DISABLED\020\000\022\016\n\nCACHE_M" +
+      "ISS\020\001\022\r\n\tCACHE_HIT\020\002\022\023\n\017CACHE_POPULATED\020" +
+      "\003\022\030\n\024CACHE_LOOKUP_FAILURE\020\004\022\025\n\021CACHE_PUT" +
+      "_FAILURE\020\005B3Z1github.com/lyft/flyteidl/g" +
+      "en/pb-go/flyteidl/eventb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

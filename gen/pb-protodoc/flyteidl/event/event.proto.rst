@@ -396,9 +396,9 @@ Enum flyteidl.event.CatalogCacheStatus
 
 Indicates the status of CatalogCaching. The reason why this is not embeded in TaskNodeMetadata is, that we may use for other types of nodes as well in the future
 
-.. _api_enum_value_flyteidl.event.CatalogCacheStatus.CACHE_DISABED:
+.. _api_enum_value_flyteidl.event.CatalogCacheStatus.CACHE_DISABLED:
 
-CACHE_DISABED
+CACHE_DISABLED
   *(DEFAULT)* ⁣Used to indicate that caching was disabled
   
   

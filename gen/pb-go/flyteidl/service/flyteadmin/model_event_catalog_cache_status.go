@@ -8,12 +8,12 @@
  */
 
 package flyteadmin
-// EventCatalogCacheStatus : - CACHE_DISABED: Used to indicate that caching was disabled  - CACHE_MISS: Used to indicate that the cache lookup resulted in no matches  - CACHE_HIT: used to indicate that the associated artifact was a result of a previous execution  - CACHE_POPULATED: used to indicate that the resultant artifact was added to the cache  - CACHE_LOOKUP_FAILURE: Used to indicate that cache lookup failed because of an error  - CACHE_PUT_FAILURE: Used to indicate that cache lookup failed because of an error
+// EventCatalogCacheStatus : - CACHE_DISABLED: Used to indicate that caching was disabled  - CACHE_MISS: Used to indicate that the cache lookup resulted in no matches  - CACHE_HIT: used to indicate that the associated artifact was a result of a previous execution  - CACHE_POPULATED: used to indicate that the resultant artifact was added to the cache  - CACHE_LOOKUP_FAILURE: Used to indicate that cache lookup failed because of an error  - CACHE_PUT_FAILURE: Used to indicate that cache lookup failed because of an error
 type EventCatalogCacheStatus string
 
 // List of eventCatalogCacheStatus
 const (
-	EventCatalogCacheStatusDISABED EventCatalogCacheStatus = "CACHE_DISABED"
+	EventCatalogCacheStatusDISABLED EventCatalogCacheStatus = "CACHE_DISABLED"
 	EventCatalogCacheStatusMISS EventCatalogCacheStatus = "CACHE_MISS"
 	EventCatalogCacheStatusHIT EventCatalogCacheStatus = "CACHE_HIT"
 	EventCatalogCacheStatusPOPULATED EventCatalogCacheStatus = "CACHE_POPULATED"

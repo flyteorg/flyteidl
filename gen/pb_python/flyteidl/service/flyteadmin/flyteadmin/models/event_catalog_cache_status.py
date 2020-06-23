@@ -26,7 +26,7 @@ class EventCatalogCacheStatus(object):
     """
     allowed enum values
     """
-    DISABED = "CACHE_DISABED"
+    DISABLED = "CACHE_DISABLED"
     MISS = "CACHE_MISS"
     HIT = "CACHE_HIT"
     POPULATED = "CACHE_POPULATED"

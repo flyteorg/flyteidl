@@ -93,7 +93,7 @@ namespace flyteidl {
 namespace event {
 
 enum CatalogCacheStatus {
-  CACHE_DISABED = 0,
+  CACHE_DISABLED = 0,
   CACHE_MISS = 1,
   CACHE_HIT = 2,
   CACHE_POPULATED = 3,
@@ -103,7 +103,7 @@ enum CatalogCacheStatus {
   CatalogCacheStatus_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool CatalogCacheStatus_IsValid(int value);
-const CatalogCacheStatus CatalogCacheStatus_MIN = CACHE_DISABED;
+const CatalogCacheStatus CatalogCacheStatus_MIN = CACHE_DISABLED;
 const CatalogCacheStatus CatalogCacheStatus_MAX = CACHE_PUT_FAILURE;
 const int CatalogCacheStatus_ARRAYSIZE = CatalogCacheStatus_MAX + 1;
 

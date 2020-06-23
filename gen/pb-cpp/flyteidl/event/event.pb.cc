@@ -350,17 +350,17 @@ const char descriptor_table_protodef_flyteidl_2fevent_2fevent_2eproto[] =
   "_uri\030\t \001(\tH\000\022.\n\005error\030\n \001(\0132\035.flyteidl.c"
   "ore.ExecutionErrorH\000\022,\n\013custom_info\030\013 \001("
   "\0132\027.google.protobuf.Struct\022\025\n\rphase_vers"
-  "ion\030\014 \001(\rB\017\n\routput_result*\214\001\n\022CatalogCa"
-  "cheStatus\022\021\n\rCACHE_DISABED\020\000\022\016\n\nCACHE_MI"
-  "SS\020\001\022\r\n\tCACHE_HIT\020\002\022\023\n\017CACHE_POPULATED\020\003"
-  "\022\030\n\024CACHE_LOOKUP_FAILURE\020\004\022\025\n\021CACHE_PUT_"
-  "FAILURE\020\005B3Z1github.com/lyft/flyteidl/ge"
-  "n/pb-go/flyteidl/eventb\006proto3"
+  "ion\030\014 \001(\rB\017\n\routput_result*\215\001\n\022CatalogCa"
+  "cheStatus\022\022\n\016CACHE_DISABLED\020\000\022\016\n\nCACHE_M"
+  "ISS\020\001\022\r\n\tCACHE_HIT\020\002\022\023\n\017CACHE_POPULATED\020"
+  "\003\022\030\n\024CACHE_LOOKUP_FAILURE\020\004\022\025\n\021CACHE_PUT"
+  "_FAILURE\020\005B3Z1github.com/lyft/flyteidl/g"
+  "en/pb-go/flyteidl/eventb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fevent_2fevent_2eproto = {
   false, InitDefaults_flyteidl_2fevent_2fevent_2eproto, 
   descriptor_table_protodef_flyteidl_2fevent_2fevent_2eproto,
-  "flyteidl/event/event.proto", &assign_descriptors_table_flyteidl_2fevent_2fevent_2eproto, 2150,
+  "flyteidl/event/event.proto", &assign_descriptors_table_flyteidl_2fevent_2fevent_2eproto, 2151,
 };
 
 void AddDescriptors_flyteidl_2fevent_2fevent_2eproto() {

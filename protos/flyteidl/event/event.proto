@@ -75,7 +75,7 @@ message WorkflowNodeMetadata {
 // Indicates the status of CatalogCaching. The reason why this is not embeded in TaskNodeMetadata is, that we may use for other types of nodes as well in the future
 enum CatalogCacheStatus {
   // Used to indicate that caching was disabled
-  CACHE_DISABED = 0;
+  CACHE_DISABLED = 0;
   // Used to indicate that the cache lookup resulted in no matches
   CACHE_MISS = 1;
   // used to indicate that the associated artifact was a result of a previous execution
