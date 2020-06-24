@@ -520,25 +520,17 @@ class TrainingJobConfig final :
   ::std::string* release_instance_type();
   void set_allocated_instance_type(::std::string* instance_type);
 
-  // string volume_size_in_gb = 3;
-  void clear_volume_size_in_gb();
-  static const int kVolumeSizeInGbFieldNumber = 3;
-  const ::std::string& volume_size_in_gb() const;
-  void set_volume_size_in_gb(const ::std::string& value);
-  #if LANG_CXX11
-  void set_volume_size_in_gb(::std::string&& value);
-  #endif
-  void set_volume_size_in_gb(const char* value);
-  void set_volume_size_in_gb(const char* value, size_t size);
-  ::std::string* mutable_volume_size_in_gb();
-  ::std::string* release_volume_size_in_gb();
-  void set_allocated_volume_size_in_gb(::std::string* volume_size_in_gb);
-
   // int64 instance_count = 1;
   void clear_instance_count();
   static const int kInstanceCountFieldNumber = 1;
   ::google::protobuf::int64 instance_count() const;
   void set_instance_count(::google::protobuf::int64 value);
+
+  // int64 volume_size_in_gb = 3;
+  void clear_volume_size_in_gb();
+  static const int kVolumeSizeInGbFieldNumber = 3;
+  ::google::protobuf::int64 volume_size_in_gb() const;
+  void set_volume_size_in_gb(::google::protobuf::int64 value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.TrainingJobConfig)
  private:
@@ -546,8 +538,8 @@ class TrainingJobConfig final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr instance_type_;
-  ::google::protobuf::internal::ArenaStringPtr volume_size_in_gb_;
   ::google::protobuf::int64 instance_count_;
+  ::google::protobuf::int64 volume_size_in_gb_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
 };
@@ -1105,57 +1097,18 @@ inline void TrainingJobConfig::set_allocated_instance_type(::std::string* instan
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJobConfig.instance_type)
 }
 
-// string volume_size_in_gb = 3;
+// int64 volume_size_in_gb = 3;
 inline void TrainingJobConfig::clear_volume_size_in_gb() {
-  volume_size_in_gb_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  volume_size_in_gb_ = PROTOBUF_LONGLONG(0);
 }
-inline const ::std::string& TrainingJobConfig::volume_size_in_gb() const {
+inline ::google::protobuf::int64 TrainingJobConfig::volume_size_in_gb() const {
   // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJobConfig.volume_size_in_gb)
-  return volume_size_in_gb_.GetNoArena();
+  return volume_size_in_gb_;
 }
-inline void TrainingJobConfig::set_volume_size_in_gb(const ::std::string& value) {
+inline void TrainingJobConfig::set_volume_size_in_gb(::google::protobuf::int64 value) {
   
-  volume_size_in_gb_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  volume_size_in_gb_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJobConfig.volume_size_in_gb)
-}
-#if LANG_CXX11
-inline void TrainingJobConfig::set_volume_size_in_gb(::std::string&& value) {
-  
-  volume_size_in_gb_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.TrainingJobConfig.volume_size_in_gb)
-}
-#endif
-inline void TrainingJobConfig::set_volume_size_in_gb(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  volume_size_in_gb_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.TrainingJobConfig.volume_size_in_gb)
-}
-inline void TrainingJobConfig::set_volume_size_in_gb(const char* value, size_t size) {
-  
-  volume_size_in_gb_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.TrainingJobConfig.volume_size_in_gb)
-}
-inline ::std::string* TrainingJobConfig::mutable_volume_size_in_gb() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJobConfig.volume_size_in_gb)
-  return volume_size_in_gb_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* TrainingJobConfig::release_volume_size_in_gb() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJobConfig.volume_size_in_gb)
-  
-  return volume_size_in_gb_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void TrainingJobConfig::set_allocated_volume_size_in_gb(::std::string* volume_size_in_gb) {
-  if (volume_size_in_gb != nullptr) {
-    
-  } else {
-    
-  }
-  volume_size_in_gb_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), volume_size_in_gb);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJobConfig.volume_size_in_gb)
 }
 
 // -------------------------------------------------------------------

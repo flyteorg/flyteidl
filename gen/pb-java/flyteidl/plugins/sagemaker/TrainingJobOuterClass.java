@@ -2029,14 +2029,9 @@ public final class TrainingJobOuterClass {
         getInstanceTypeBytes();
 
     /**
-     * <code>string volume_size_in_gb = 3;</code>
+     * <code>int64 volume_size_in_gb = 3;</code>
      */
-    java.lang.String getVolumeSizeInGb();
-    /**
-     * <code>string volume_size_in_gb = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getVolumeSizeInGbBytes();
+    long getVolumeSizeInGb();
   }
   /**
    * Protobuf type {@code flyteidl.plugins.sagemaker.TrainingJobConfig}
@@ -2052,7 +2047,6 @@ public final class TrainingJobOuterClass {
     }
     private TrainingJobConfig() {
       instanceType_ = "";
-      volumeSizeInGb_ = "";
     }
 
     @java.lang.Override
@@ -2090,10 +2084,9 @@ public final class TrainingJobOuterClass {
               instanceType_ = s;
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 24: {
 
-              volumeSizeInGb_ = s;
+              volumeSizeInGb_ = input.readInt64();
               break;
             }
             default: {
@@ -2176,37 +2169,12 @@ public final class TrainingJobOuterClass {
     }
 
     public static final int VOLUME_SIZE_IN_GB_FIELD_NUMBER = 3;
-    private volatile java.lang.Object volumeSizeInGb_;
+    private long volumeSizeInGb_;
     /**
-     * <code>string volume_size_in_gb = 3;</code>
+     * <code>int64 volume_size_in_gb = 3;</code>
      */
-    public java.lang.String getVolumeSizeInGb() {
-      java.lang.Object ref = volumeSizeInGb_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        volumeSizeInGb_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string volume_size_in_gb = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getVolumeSizeInGbBytes() {
-      java.lang.Object ref = volumeSizeInGb_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        volumeSizeInGb_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getVolumeSizeInGb() {
+      return volumeSizeInGb_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2229,8 +2197,8 @@ public final class TrainingJobOuterClass {
       if (!getInstanceTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, instanceType_);
       }
-      if (!getVolumeSizeInGbBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, volumeSizeInGb_);
+      if (volumeSizeInGb_ != 0L) {
+        output.writeInt64(3, volumeSizeInGb_);
       }
       unknownFields.writeTo(output);
     }
@@ -2248,8 +2216,9 @@ public final class TrainingJobOuterClass {
       if (!getInstanceTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, instanceType_);
       }
-      if (!getVolumeSizeInGbBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, volumeSizeInGb_);
+      if (volumeSizeInGb_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, volumeSizeInGb_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2270,8 +2239,8 @@ public final class TrainingJobOuterClass {
           != other.getInstanceCount()) return false;
       if (!getInstanceType()
           .equals(other.getInstanceType())) return false;
-      if (!getVolumeSizeInGb()
-          .equals(other.getVolumeSizeInGb())) return false;
+      if (getVolumeSizeInGb()
+          != other.getVolumeSizeInGb()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2289,7 +2258,8 @@ public final class TrainingJobOuterClass {
       hash = (37 * hash) + INSTANCE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getInstanceType().hashCode();
       hash = (37 * hash) + VOLUME_SIZE_IN_GB_FIELD_NUMBER;
-      hash = (53 * hash) + getVolumeSizeInGb().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getVolumeSizeInGb());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2427,7 +2397,7 @@ public final class TrainingJobOuterClass {
 
         instanceType_ = "";
 
-        volumeSizeInGb_ = "";
+        volumeSizeInGb_ = 0L;
 
         return this;
       }
@@ -2513,9 +2483,8 @@ public final class TrainingJobOuterClass {
           instanceType_ = other.instanceType_;
           onChanged();
         }
-        if (!other.getVolumeSizeInGb().isEmpty()) {
-          volumeSizeInGb_ = other.volumeSizeInGb_;
-          onChanged();
+        if (other.getVolumeSizeInGb() != 0L) {
+          setVolumeSizeInGb(other.getVolumeSizeInGb());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2653,71 +2622,28 @@ public final class TrainingJobOuterClass {
         return this;
       }
 
-      private java.lang.Object volumeSizeInGb_ = "";
+      private long volumeSizeInGb_ ;
       /**
-       * <code>string volume_size_in_gb = 3;</code>
+       * <code>int64 volume_size_in_gb = 3;</code>
        */
-      public java.lang.String getVolumeSizeInGb() {
-        java.lang.Object ref = volumeSizeInGb_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          volumeSizeInGb_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getVolumeSizeInGb() {
+        return volumeSizeInGb_;
       }
       /**
-       * <code>string volume_size_in_gb = 3;</code>
+       * <code>int64 volume_size_in_gb = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getVolumeSizeInGbBytes() {
-        java.lang.Object ref = volumeSizeInGb_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          volumeSizeInGb_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string volume_size_in_gb = 3;</code>
-       */
-      public Builder setVolumeSizeInGb(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setVolumeSizeInGb(long value) {
+        
         volumeSizeInGb_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string volume_size_in_gb = 3;</code>
+       * <code>int64 volume_size_in_gb = 3;</code>
        */
       public Builder clearVolumeSizeInGb() {
         
-        volumeSizeInGb_ = getDefaultInstance().getVolumeSizeInGb();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string volume_size_in_gb = 3;</code>
-       */
-      public Builder setVolumeSizeInGbBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        volumeSizeInGb_ = value;
+        volumeSizeInGb_ = 0L;
         onChanged();
         return this;
       }
@@ -4221,7 +4147,7 @@ public final class TrainingJobOuterClass {
       "icDefinition\022\014\n\004name\030\001 \001(\t\022\r\n\005regex\030\002 \001(" +
       "\t\"]\n\021TrainingJobConfig\022\026\n\016instance_count" +
       "\030\001 \001(\003\022\025\n\rinstance_type\030\002 \001(\t\022\031\n\021volume_" +
-      "size_in_gb\030\003 \001(\t\"U\n\021StoppingCondition\022\036\n" +
+      "size_in_gb\030\003 \001(\003\"U\n\021StoppingCondition\022\036\n" +
       "\026max_runtime_in_seconds\030\001 \001(\003\022 \n\030max_wai" +
       "t_time_in_seconds\030\002 \001(\003\"\305\001\n\013TrainingJob\022" +
       "S\n\027algorithm_specification\030\001 \001(\01322.flyte" +

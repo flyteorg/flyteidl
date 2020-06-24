@@ -97,7 +97,7 @@ instance_type
 .. _api_field_flyteidl.plugins.sagemaker.TrainingJobConfig.volume_size_in_gb:
 
 volume_size_in_gb
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+  (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 
 

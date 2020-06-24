@@ -30,7 +30,7 @@ message AlgorithmSpecification {
 message TrainingJobConfig {
     int64 instance_count = 1;   // For multi-node training, not multi-GPU training
     string instance_type = 2;
-    string volume_size_in_gb = 3;
+    int64 volume_size_in_gb = 3;
 }
 
 message StoppingCondition {

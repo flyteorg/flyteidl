@@ -206,7 +206,7 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2ftraining_5
   "icDefinition\022\014\n\004name\030\001 \001(\t\022\r\n\005regex\030\002 \001("
   "\t\"]\n\021TrainingJobConfig\022\026\n\016instance_count"
   "\030\001 \001(\003\022\025\n\rinstance_type\030\002 \001(\t\022\031\n\021volume_"
-  "size_in_gb\030\003 \001(\t\"U\n\021StoppingCondition\022\036\n"
+  "size_in_gb\030\003 \001(\003\"U\n\021StoppingCondition\022\036\n"
   "\026max_runtime_in_seconds\030\001 \001(\003\022 \n\030max_wai"
   "t_time_in_seconds\030\002 \001(\003\"\305\001\n\013TrainingJob\022"
   "S\n\027algorithm_specification\030\001 \001(\01322.flyte"
@@ -1119,11 +1119,9 @@ TrainingJobConfig::TrainingJobConfig(const TrainingJobConfig& from)
   if (from.instance_type().size() > 0) {
     instance_type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.instance_type_);
   }
-  volume_size_in_gb_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.volume_size_in_gb().size() > 0) {
-    volume_size_in_gb_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.volume_size_in_gb_);
-  }
-  instance_count_ = from.instance_count_;
+  ::memcpy(&instance_count_, &from.instance_count_,
+    static_cast<size_t>(reinterpret_cast<char*>(&volume_size_in_gb_) -
+    reinterpret_cast<char*>(&instance_count_)) + sizeof(volume_size_in_gb_));
   // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.sagemaker.TrainingJobConfig)
 }
 
@@ -1131,8 +1129,9 @@ void TrainingJobConfig::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_TrainingJobConfig_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   instance_type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  volume_size_in_gb_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  instance_count_ = PROTOBUF_LONGLONG(0);
+  ::memset(&instance_count_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&volume_size_in_gb_) -
+      reinterpret_cast<char*>(&instance_count_)) + sizeof(volume_size_in_gb_));
 }
 
 TrainingJobConfig::~TrainingJobConfig() {
@@ -1142,7 +1141,6 @@ TrainingJobConfig::~TrainingJobConfig() {
 
 void TrainingJobConfig::SharedDtor() {
   instance_type_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  volume_size_in_gb_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void TrainingJobConfig::SetCachedSize(int size) const {
@@ -1161,8 +1159,9 @@ void TrainingJobConfig::Clear() {
   (void) cached_has_bits;
 
   instance_type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  volume_size_in_gb_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  instance_count_ = PROTOBUF_LONGLONG(0);
+  ::memset(&instance_count_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&volume_size_in_gb_) -
+      reinterpret_cast<char*>(&instance_count_)) + sizeof(volume_size_in_gb_));
   _internal_metadata_.Clear();
 }
 
@@ -1202,20 +1201,11 @@ const char* TrainingJobConfig::_InternalParse(const char* begin, const char* end
         ptr += size;
         break;
       }
-      // string volume_size_in_gb = 3;
+      // int64 volume_size_in_gb = 3;
       case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
+        msg->set_volume_size_in_gb(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.plugins.sagemaker.TrainingJobConfig.volume_size_in_gb");
-        object = msg->mutable_volume_size_in_gb();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
         break;
       }
       default: {
@@ -1280,15 +1270,13 @@ bool TrainingJobConfig::MergePartialFromCodedStream(
         break;
       }
 
-      // string volume_size_in_gb = 3;
+      // int64 volume_size_in_gb = 3;
       case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_volume_size_in_gb()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->volume_size_in_gb().data(), static_cast<int>(this->volume_size_in_gb().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.plugins.sagemaker.TrainingJobConfig.volume_size_in_gb"));
+        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &volume_size_in_gb_)));
         } else {
           goto handle_unusual;
         }
@@ -1337,14 +1325,9 @@ void TrainingJobConfig::SerializeWithCachedSizes(
       2, this->instance_type(), output);
   }
 
-  // string volume_size_in_gb = 3;
-  if (this->volume_size_in_gb().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->volume_size_in_gb().data(), static_cast<int>(this->volume_size_in_gb().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.plugins.sagemaker.TrainingJobConfig.volume_size_in_gb");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->volume_size_in_gb(), output);
+  // int64 volume_size_in_gb = 3;
+  if (this->volume_size_in_gb() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(3, this->volume_size_in_gb(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1376,15 +1359,9 @@ void TrainingJobConfig::SerializeWithCachedSizes(
         2, this->instance_type(), target);
   }
 
-  // string volume_size_in_gb = 3;
-  if (this->volume_size_in_gb().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->volume_size_in_gb().data(), static_cast<int>(this->volume_size_in_gb().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.plugins.sagemaker.TrainingJobConfig.volume_size_in_gb");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->volume_size_in_gb(), target);
+  // int64 volume_size_in_gb = 3;
+  if (this->volume_size_in_gb() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(3, this->volume_size_in_gb(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1415,18 +1392,18 @@ size_t TrainingJobConfig::ByteSizeLong() const {
         this->instance_type());
   }
 
-  // string volume_size_in_gb = 3;
-  if (this->volume_size_in_gb().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->volume_size_in_gb());
-  }
-
   // int64 instance_count = 1;
   if (this->instance_count() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int64Size(
         this->instance_count());
+  }
+
+  // int64 volume_size_in_gb = 3;
+  if (this->volume_size_in_gb() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->volume_size_in_gb());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -1460,12 +1437,11 @@ void TrainingJobConfig::MergeFrom(const TrainingJobConfig& from) {
 
     instance_type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.instance_type_);
   }
-  if (from.volume_size_in_gb().size() > 0) {
-
-    volume_size_in_gb_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.volume_size_in_gb_);
-  }
   if (from.instance_count() != 0) {
     set_instance_count(from.instance_count());
+  }
+  if (from.volume_size_in_gb() != 0) {
+    set_volume_size_in_gb(from.volume_size_in_gb());
   }
 }
 
@@ -1496,9 +1472,8 @@ void TrainingJobConfig::InternalSwap(TrainingJobConfig* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   instance_type_.Swap(&other->instance_type_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  volume_size_in_gb_.Swap(&other->volume_size_in_gb_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
   swap(instance_count_, other->instance_count_);
+  swap(volume_size_in_gb_, other->volume_size_in_gb_);
 }
 
 ::google::protobuf::Metadata TrainingJobConfig::GetMetadata() const {
