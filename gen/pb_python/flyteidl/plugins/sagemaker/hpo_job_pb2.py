@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.plugins.sagemaker',
   syntax='proto3',
   serialized_options=_b('Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n(flyteidl/plugins/sagemaker/hpo_job.proto\x12\x1a\x66lyteidl.plugins.sagemaker\x1a\x31\x66lyteidl/plugins/sagemaker/parameter_ranges.proto\x1a-flyteidl/plugins/sagemaker/training_job.proto\"\xea\x01\n\x1dHyperparameterTuningObjective\x12s\n\x0eobjective_type\x18\x01 \x01(\x0e\x32[.flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType\x12\x13\n\x0bmetric_name\x18\x02 \x01(\t\"?\n!HyperparameterTuningObjectiveType\x12\x0c\n\x08MINIMIZE\x10\x00\x12\x0c\n\x08MAXIMIZE\x10\x01\"\x90\x01\n\x06HPOJob\x12=\n\x0ctraining_job\x18\x01 \x01(\x0b\x32\'.flyteidl.plugins.sagemaker.TrainingJob\x12#\n\x1bmax_number_of_training_jobs\x18\x02 \x01(\x03\x12\"\n\x1amax_parallel_training_jobs\x18\x03 \x01(\x03\"\xe1\x03\n\x0cHPOJobConfig\x12J\n\x15hyperparameter_ranges\x18\x01 \x01(\x0b\x32+.flyteidl.plugins.sagemaker.ParameterRanges\x12^\n\x0ftuning_strategy\x18\x02 \x01(\x0e\x32\x45.flyteidl.plugins.sagemaker.HPOJobConfig.HyperparameterTuningStrategy\x12S\n\x10tuning_objective\x18\x03 \x01(\x0b\x32\x39.flyteidl.plugins.sagemaker.HyperparameterTuningObjective\x12o\n training_job_early_stopping_type\x18\x04 \x01(\x0e\x32\x45.flyteidl.plugins.sagemaker.HPOJobConfig.TrainingJobEarlyStoppingType\",\n\x1cHyperparameterTuningStrategy\x12\x0c\n\x08\x42\x41YESIAN\x10\x00\"1\n\x1cTrainingJobEarlyStoppingType\x12\x07\n\x03OFF\x10\x00\x12\x08\n\x04\x41UTO\x10\x01\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n(flyteidl/plugins/sagemaker/hpo_job.proto\x12\x1a\x66lyteidl.plugins.sagemaker\x1a\x31\x66lyteidl/plugins/sagemaker/parameter_ranges.proto\x1a-flyteidl/plugins/sagemaker/training_job.proto\"\xea\x01\n\x1dHyperparameterTuningObjective\x12s\n\x0eobjective_type\x18\x01 \x01(\x0e\x32[.flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType\x12\x13\n\x0bmetric_name\x18\x02 \x01(\t\"?\n!HyperparameterTuningObjectiveType\x12\x0c\n\x08MINIMIZE\x10\x00\x12\x0c\n\x08MAXIMIZE\x10\x01\"\x90\x01\n\x06HPOJob\x12=\n\x0ctraining_job\x18\x01 \x01(\x0b\x32\'.flyteidl.plugins.sagemaker.TrainingJob\x12#\n\x1bmax_number_of_training_jobs\x18\x02 \x01(\x03\x12\"\n\x1amax_parallel_training_jobs\x18\x03 \x01(\x03\"\xed\x03\n\x0cHPOJobConfig\x12J\n\x15hyperparameter_ranges\x18\x01 \x01(\x0b\x32+.flyteidl.plugins.sagemaker.ParameterRanges\x12^\n\x0ftuning_strategy\x18\x02 \x01(\x0e\x32\x45.flyteidl.plugins.sagemaker.HPOJobConfig.HyperparameterTuningStrategy\x12S\n\x10tuning_objective\x18\x03 \x01(\x0b\x32\x39.flyteidl.plugins.sagemaker.HyperparameterTuningObjective\x12o\n training_job_early_stopping_type\x18\x04 \x01(\x0e\x32\x45.flyteidl.plugins.sagemaker.HPOJobConfig.TrainingJobEarlyStoppingType\"8\n\x1cHyperparameterTuningStrategy\x12\x0c\n\x08\x42\x41YESIAN\x10\x00\x12\n\n\x06RANDOM\x10\x01\"1\n\x1cTrainingJobEarlyStoppingType\x12\x07\n\x03OFF\x10\x00\x12\x08\n\x04\x41UTO\x10\x01\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
   ,
   dependencies=[flyteidl_dot_plugins_dot_sagemaker_dot_parameter__ranges__pb2.DESCRIPTOR,flyteidl_dot_plugins_dot_sagemaker_dot_training__job__pb2.DESCRIPTOR,])
 
@@ -60,11 +60,15 @@ _HPOJOBCONFIG_HYPERPARAMETERTUNINGSTRATEGY = _descriptor.EnumDescriptor(
       name='BAYESIAN', index=0, number=0,
       serialized_options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RANDOM', index=1, number=1,
+      serialized_options=None,
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=941,
-  serialized_end=985,
+  serialized_end=997,
 )
 _sym_db.RegisterEnumDescriptor(_HPOJOBCONFIG_HYPERPARAMETERTUNINGSTRATEGY)
 
@@ -85,8 +89,8 @@ _HPOJOBCONFIG_TRAININGJOBEARLYSTOPPINGTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=987,
-  serialized_end=1036,
+  serialized_start=999,
+  serialized_end=1048,
 )
 _sym_db.RegisterEnumDescriptor(_HPOJOBCONFIG_TRAININGJOBEARLYSTOPPINGTYPE)
 
@@ -225,7 +229,7 @@ _HPOJOBCONFIG = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=555,
-  serialized_end=1036,
+  serialized_end=1048,
 )
 
 _HYPERPARAMETERTUNINGOBJECTIVE.fields_by_name['objective_type'].enum_type = _HYPERPARAMETERTUNINGOBJECTIVE_HYPERPARAMETERTUNINGOBJECTIVETYPE

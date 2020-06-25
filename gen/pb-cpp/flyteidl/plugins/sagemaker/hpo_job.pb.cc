@@ -150,7 +150,7 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_
   "IZE\020\001\"\220\001\n\006HPOJob\022=\n\014training_job\030\001 \001(\0132\'"
   ".flyteidl.plugins.sagemaker.TrainingJob\022"
   "#\n\033max_number_of_training_jobs\030\002 \001(\003\022\"\n\032"
-  "max_parallel_training_jobs\030\003 \001(\003\"\341\003\n\014HPO"
+  "max_parallel_training_jobs\030\003 \001(\003\"\355\003\n\014HPO"
   "JobConfig\022J\n\025hyperparameter_ranges\030\001 \001(\013"
   "2+.flyteidl.plugins.sagemaker.ParameterR"
   "anges\022^\n\017tuning_strategy\030\002 \001(\0162E.flyteid"
@@ -160,16 +160,16 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_
   "erparameterTuningObjective\022o\n training_j"
   "ob_early_stopping_type\030\004 \001(\0162E.flyteidl."
   "plugins.sagemaker.HPOJobConfig.TrainingJ"
-  "obEarlyStoppingType\",\n\034HyperparameterTun"
-  "ingStrategy\022\014\n\010BAYESIAN\020\000\"1\n\034TrainingJob"
-  "EarlyStoppingType\022\007\n\003OFF\020\000\022\010\n\004AUTO\020\001B5Z3"
-  "github.com/lyft/flyteidl/gen/pb-go/flyte"
-  "idl/pluginsb\006proto3"
+  "obEarlyStoppingType\"8\n\034HyperparameterTun"
+  "ingStrategy\022\014\n\010BAYESIAN\020\000\022\n\n\006RANDOM\020\001\"1\n"
+  "\034TrainingJobEarlyStoppingType\022\007\n\003OFF\020\000\022\010"
+  "\n\004AUTO\020\001B5Z3github.com/lyft/flyteidl/gen"
+  "/pb-go/flyteidl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto,
-  "flyteidl/plugins/sagemaker/hpo_job.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto, 1099,
+  "flyteidl/plugins/sagemaker/hpo_job.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto, 1111,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto() {
@@ -214,6 +214,7 @@ const ::google::protobuf::EnumDescriptor* HPOJobConfig_HyperparameterTuningStrat
 bool HPOJobConfig_HyperparameterTuningStrategy_IsValid(int value) {
   switch (value) {
     case 0:
+    case 1:
       return true;
     default:
       return false;
@@ -222,6 +223,7 @@ bool HPOJobConfig_HyperparameterTuningStrategy_IsValid(int value) {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const HPOJobConfig_HyperparameterTuningStrategy HPOJobConfig::BAYESIAN;
+const HPOJobConfig_HyperparameterTuningStrategy HPOJobConfig::RANDOM;
 const HPOJobConfig_HyperparameterTuningStrategy HPOJobConfig::HyperparameterTuningStrategy_MIN;
 const HPOJobConfig_HyperparameterTuningStrategy HPOJobConfig::HyperparameterTuningStrategy_MAX;
 const int HPOJobConfig::HyperparameterTuningStrategy_ARRAYSIZE;

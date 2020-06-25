@@ -28,6 +28,7 @@ message HPOJobConfig {
 
     enum HyperparameterTuningStrategy {
         BAYESIAN = 0;
+        RANDOM = 1;
     }
 
     HyperparameterTuningStrategy tuning_strategy = 2;

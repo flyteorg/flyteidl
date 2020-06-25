@@ -100,12 +100,13 @@ inline bool HyperparameterTuningObjective_HyperparameterTuningObjectiveType_Pars
 }
 enum HPOJobConfig_HyperparameterTuningStrategy {
   HPOJobConfig_HyperparameterTuningStrategy_BAYESIAN = 0,
+  HPOJobConfig_HyperparameterTuningStrategy_RANDOM = 1,
   HPOJobConfig_HyperparameterTuningStrategy_HPOJobConfig_HyperparameterTuningStrategy_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   HPOJobConfig_HyperparameterTuningStrategy_HPOJobConfig_HyperparameterTuningStrategy_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool HPOJobConfig_HyperparameterTuningStrategy_IsValid(int value);
 const HPOJobConfig_HyperparameterTuningStrategy HPOJobConfig_HyperparameterTuningStrategy_HyperparameterTuningStrategy_MIN = HPOJobConfig_HyperparameterTuningStrategy_BAYESIAN;
-const HPOJobConfig_HyperparameterTuningStrategy HPOJobConfig_HyperparameterTuningStrategy_HyperparameterTuningStrategy_MAX = HPOJobConfig_HyperparameterTuningStrategy_BAYESIAN;
+const HPOJobConfig_HyperparameterTuningStrategy HPOJobConfig_HyperparameterTuningStrategy_HyperparameterTuningStrategy_MAX = HPOJobConfig_HyperparameterTuningStrategy_RANDOM;
 const int HPOJobConfig_HyperparameterTuningStrategy_HyperparameterTuningStrategy_ARRAYSIZE = HPOJobConfig_HyperparameterTuningStrategy_HyperparameterTuningStrategy_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* HPOJobConfig_HyperparameterTuningStrategy_descriptor();
@@ -519,6 +520,8 @@ class HPOJobConfig final :
   typedef HPOJobConfig_HyperparameterTuningStrategy HyperparameterTuningStrategy;
   static const HyperparameterTuningStrategy BAYESIAN =
     HPOJobConfig_HyperparameterTuningStrategy_BAYESIAN;
+  static const HyperparameterTuningStrategy RANDOM =
+    HPOJobConfig_HyperparameterTuningStrategy_RANDOM;
   static inline bool HyperparameterTuningStrategy_IsValid(int value) {
     return HPOJobConfig_HyperparameterTuningStrategy_IsValid(value);
   }

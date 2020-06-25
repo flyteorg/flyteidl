@@ -1715,6 +1715,10 @@ public final class HpoJob {
        * <code>BAYESIAN = 0;</code>
        */
       BAYESIAN(0),
+      /**
+       * <code>RANDOM = 1;</code>
+       */
+      RANDOM(1),
       UNRECOGNIZED(-1),
       ;
 
@@ -1722,6 +1726,10 @@ public final class HpoJob {
        * <code>BAYESIAN = 0;</code>
        */
       public static final int BAYESIAN_VALUE = 0;
+      /**
+       * <code>RANDOM = 1;</code>
+       */
+      public static final int RANDOM_VALUE = 1;
 
 
       public final int getNumber() {
@@ -1743,6 +1751,7 @@ public final class HpoJob {
       public static HyperparameterTuningStrategy forNumber(int value) {
         switch (value) {
           case 0: return BAYESIAN;
+          case 1: return RANDOM;
           default: return null;
         }
       }
@@ -2759,7 +2768,7 @@ public final class HpoJob {
       "IZE\020\001\"\220\001\n\006HPOJob\022=\n\014training_job\030\001 \001(\0132\'" +
       ".flyteidl.plugins.sagemaker.TrainingJob\022" +
       "#\n\033max_number_of_training_jobs\030\002 \001(\003\022\"\n\032" +
-      "max_parallel_training_jobs\030\003 \001(\003\"\341\003\n\014HPO" +
+      "max_parallel_training_jobs\030\003 \001(\003\"\355\003\n\014HPO" +
       "JobConfig\022J\n\025hyperparameter_ranges\030\001 \001(\013" +
       "2+.flyteidl.plugins.sagemaker.ParameterR" +
       "anges\022^\n\017tuning_strategy\030\002 \001(\0162E.flyteid" +
@@ -2769,11 +2778,11 @@ public final class HpoJob {
       "erparameterTuningObjective\022o\n training_j" +
       "ob_early_stopping_type\030\004 \001(\0162E.flyteidl." +
       "plugins.sagemaker.HPOJobConfig.TrainingJ" +
-      "obEarlyStoppingType\",\n\034HyperparameterTun" +
-      "ingStrategy\022\014\n\010BAYESIAN\020\000\"1\n\034TrainingJob" +
-      "EarlyStoppingType\022\007\n\003OFF\020\000\022\010\n\004AUTO\020\001B5Z3" +
-      "github.com/lyft/flyteidl/gen/pb-go/flyte" +
-      "idl/pluginsb\006proto3"
+      "obEarlyStoppingType\"8\n\034HyperparameterTun" +
+      "ingStrategy\022\014\n\010BAYESIAN\020\000\022\n\n\006RANDOM\020\001\"1\n" +
+      "\034TrainingJobEarlyStoppingType\022\007\n\003OFF\020\000\022\010" +
+      "\n\004AUTO\020\001B5Z3github.com/lyft/flyteidl/gen" +
+      "/pb-go/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

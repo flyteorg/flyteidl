@@ -132,13 +132,18 @@ Enum flyteidl.plugins.sagemaker.HPOJobConfig.HyperparameterTuningStrategy
 BAYESIAN
   *(DEFAULT)* ⁣
   
+.. _api_enum_value_flyteidl.plugins.sagemaker.HPOJobConfig.HyperparameterTuningStrategy.RANDOM:
+
+RANDOM
+  ⁣
+  
 
 .. _api_enum_flyteidl.plugins.sagemaker.HPOJobConfig.TrainingJobEarlyStoppingType:
 
 Enum flyteidl.plugins.sagemaker.HPOJobConfig.TrainingJobEarlyStoppingType
 -------------------------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.HPOJobConfig.TrainingJobEarlyStoppingType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hpo_job.proto#L35>`_
+`[flyteidl.plugins.sagemaker.HPOJobConfig.TrainingJobEarlyStoppingType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hpo_job.proto#L36>`_
 
 
 .. _api_enum_value_flyteidl.plugins.sagemaker.HPOJobConfig.TrainingJobEarlyStoppingType.OFF:
