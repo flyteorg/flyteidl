@@ -10,6 +10,6 @@
 package flyteadmin
 
 type AdminQualityOfServiceSpec struct {
-	// Default quality of service to be applied when when undefined in an execution spec.
-	QualityOfService *AdminQualityOfService `json:"quality_of_service,omitempty"`
+	// Indicates how much queueing delay an execution can tolerate.
+	QueueingBudgetMins int64 `json:"queueing_budget_mins,omitempty"`
 }

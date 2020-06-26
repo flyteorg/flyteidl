@@ -19,12 +19,12 @@
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ClusterResourceAttributes_AttributesEntry_DoNotUse_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ExecutionClusterLabel_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ExecutionQueueAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_QualityOfServiceSpec_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TaskResourceSpec_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ClusterResourceAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_MatchableAttributesConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TaskResourceAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<5> scc_info_MatchingAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fquality_5fof_5fservice_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_QualityOfService_flyteidl_2fadmin_2fquality_5fof_5fservice_2eproto;
 namespace flyteidl {
 namespace admin {
 class TaskResourceSpecDefaultTypeInternal {
@@ -51,10 +51,6 @@ class ExecutionClusterLabelDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<ExecutionClusterLabel> _instance;
 } _ExecutionClusterLabel_default_instance_;
-class QualityOfServiceSpecDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<QualityOfServiceSpec> _instance;
-} _QualityOfServiceSpec_default_instance_;
 class MatchingAttributesDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<MatchingAttributes> _instance;
@@ -62,7 +58,7 @@ class MatchingAttributesDefaultTypeInternal {
   const ::flyteidl::admin::ClusterResourceAttributes* cluster_resource_attributes_;
   const ::flyteidl::admin::ExecutionQueueAttributes* execution_queue_attributes_;
   const ::flyteidl::admin::ExecutionClusterLabel* execution_cluster_label_;
-  const ::flyteidl::admin::QualityOfServiceSpec* quality_of_service_spec_;
+  const ::flyteidl::admin::QualityOfService* quality_of_service_;
 } _MatchingAttributes_default_instance_;
 class MatchableAttributesConfigurationDefaultTypeInternal {
  public:
@@ -163,20 +159,6 @@ static void InitDefaultsExecutionClusterLabel_flyteidl_2fadmin_2fmatchable_5fres
 ::google::protobuf::internal::SCCInfo<0> scc_info_ExecutionClusterLabel_flyteidl_2fadmin_2fmatchable_5fresource_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsExecutionClusterLabel_flyteidl_2fadmin_2fmatchable_5fresource_2eproto}, {}};
 
-static void InitDefaultsQualityOfServiceSpec_flyteidl_2fadmin_2fmatchable_5fresource_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::flyteidl::admin::_QualityOfServiceSpec_default_instance_;
-    new (ptr) ::flyteidl::admin::QualityOfServiceSpec();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::flyteidl::admin::QualityOfServiceSpec::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_QualityOfServiceSpec_flyteidl_2fadmin_2fmatchable_5fresource_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsQualityOfServiceSpec_flyteidl_2fadmin_2fmatchable_5fresource_2eproto}, {}};
-
 static void InitDefaultsMatchingAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -194,7 +176,7 @@ static void InitDefaultsMatchingAttributes_flyteidl_2fadmin_2fmatchable_5fresour
       &scc_info_ClusterResourceAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base,
       &scc_info_ExecutionQueueAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base,
       &scc_info_ExecutionClusterLabel_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base,
-      &scc_info_QualityOfServiceSpec_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base,}};
+      &scc_info_QualityOfService_flyteidl_2fadmin_2fquality_5fof_5fservice_2eproto.base,}};
 
 static void InitDefaultsMatchableAttributesConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -247,14 +229,13 @@ void InitDefaults_flyteidl_2fadmin_2fmatchable_5fresource_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_ClusterResourceAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ExecutionQueueAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ExecutionClusterLabel_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_QualityOfServiceSpec_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_MatchingAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_MatchableAttributesConfiguration_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ListMatchableAttributesRequest_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ListMatchableAttributesResponse_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fmatchable_5fresource_2eproto[11];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fmatchable_5fresource_2eproto[10];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fadmin_2fmatchable_5fresource_2eproto[1];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fadmin_2fmatchable_5fresource_2eproto = nullptr;
 
@@ -303,12 +284,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fmatchable_5freso
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionClusterLabel, value_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::QualityOfServiceSpec, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::QualityOfServiceSpec, quality_of_service_),
-  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::MatchingAttributes, _internal_metadata_),
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::MatchingAttributes, _oneof_case_[0]),
@@ -317,7 +292,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fmatchable_5freso
   offsetof(::flyteidl::admin::MatchingAttributesDefaultTypeInternal, cluster_resource_attributes_),
   offsetof(::flyteidl::admin::MatchingAttributesDefaultTypeInternal, execution_queue_attributes_),
   offsetof(::flyteidl::admin::MatchingAttributesDefaultTypeInternal, execution_cluster_label_),
-  offsetof(::flyteidl::admin::MatchingAttributesDefaultTypeInternal, quality_of_service_spec_),
+  offsetof(::flyteidl::admin::MatchingAttributesDefaultTypeInternal, quality_of_service_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::MatchingAttributes, target_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::MatchableAttributesConfiguration, _internal_metadata_),
@@ -349,11 +324,10 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 25, -1, sizeof(::flyteidl::admin::ClusterResourceAttributes)},
   { 31, -1, sizeof(::flyteidl::admin::ExecutionQueueAttributes)},
   { 37, -1, sizeof(::flyteidl::admin::ExecutionClusterLabel)},
-  { 43, -1, sizeof(::flyteidl::admin::QualityOfServiceSpec)},
-  { 49, -1, sizeof(::flyteidl::admin::MatchingAttributes)},
-  { 60, -1, sizeof(::flyteidl::admin::MatchableAttributesConfiguration)},
-  { 70, -1, sizeof(::flyteidl::admin::ListMatchableAttributesRequest)},
-  { 76, -1, sizeof(::flyteidl::admin::ListMatchableAttributesResponse)},
+  { 43, -1, sizeof(::flyteidl::admin::MatchingAttributes)},
+  { 54, -1, sizeof(::flyteidl::admin::MatchableAttributesConfiguration)},
+  { 64, -1, sizeof(::flyteidl::admin::ListMatchableAttributesRequest)},
+  { 70, -1, sizeof(::flyteidl::admin::ListMatchableAttributesResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -363,7 +337,6 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ClusterResourceAttributes_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ExecutionQueueAttributes_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ExecutionClusterLabel_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_QualityOfServiceSpec_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_MatchingAttributes_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_MatchableAttributesConfiguration_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_ListMatchableAttributesRequest_default_instance_),
@@ -373,64 +346,64 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto = {
   {}, AddDescriptors_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, "flyteidl/admin/matchable_resource.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fadmin_2fmatchable_5fresource_2eproto::offsets,
-  file_level_metadata_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, 11, file_level_enum_descriptors_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, file_level_service_descriptors_flyteidl_2fadmin_2fmatchable_5fresource_2eproto,
+  file_level_metadata_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, 10, file_level_enum_descriptors_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, file_level_service_descriptors_flyteidl_2fadmin_2fmatchable_5fresource_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fadmin_2fmatchable_5fresource_2eproto[] =
   "\n\'flyteidl/admin/matchable_resource.prot"
   "o\022\016flyteidl.admin\032\033flyteidl/admin/common"
-  ".proto\"M\n\020TaskResourceSpec\022\013\n\003cpu\030\001 \001(\t\022"
-  "\013\n\003gpu\030\002 \001(\t\022\016\n\006memory\030\003 \001(\t\022\017\n\007storage\030"
-  "\004 \001(\t\"~\n\026TaskResourceAttributes\0222\n\010defau"
-  "lts\030\001 \001(\0132 .flyteidl.admin.TaskResourceS"
-  "pec\0220\n\006limits\030\002 \001(\0132 .flyteidl.admin.Tas"
-  "kResourceSpec\"\235\001\n\031ClusterResourceAttribu"
-  "tes\022M\n\nattributes\030\001 \003(\01329.flyteidl.admin"
-  ".ClusterResourceAttributes.AttributesEnt"
-  "ry\0321\n\017AttributesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
-  "lue\030\002 \001(\t:\0028\001\"(\n\030ExecutionQueueAttribute"
-  "s\022\014\n\004tags\030\001 \003(\t\"&\n\025ExecutionClusterLabel"
-  "\022\r\n\005value\030\001 \001(\t\"T\n\024QualityOfServiceSpec\022"
-  "<\n\022quality_of_service\030\001 \001(\0162 .flyteidl.a"
-  "dmin.QualityOfService\"\237\003\n\022MatchingAttrib"
-  "utes\022J\n\030task_resource_attributes\030\001 \001(\0132&"
-  ".flyteidl.admin.TaskResourceAttributesH\000"
-  "\022P\n\033cluster_resource_attributes\030\002 \001(\0132)."
-  "flyteidl.admin.ClusterResourceAttributes"
-  "H\000\022N\n\032execution_queue_attributes\030\003 \001(\0132("
-  ".flyteidl.admin.ExecutionQueueAttributes"
-  "H\000\022H\n\027execution_cluster_label\030\004 \001(\0132%.fl"
-  "yteidl.admin.ExecutionClusterLabelH\000\022G\n\027"
-  "quality_of_service_spec\030\005 \001(\0132$.flyteidl"
-  ".admin.QualityOfServiceSpecH\000B\010\n\006target\""
-  "\242\001\n MatchableAttributesConfiguration\0226\n\n"
-  "attributes\030\001 \001(\0132\".flyteidl.admin.Matchi"
-  "ngAttributes\022\016\n\006domain\030\002 \001(\t\022\017\n\007project\030"
-  "\003 \001(\t\022\020\n\010workflow\030\004 \001(\t\022\023\n\013launch_plan\030\005"
-  " \001(\t\"Z\n\036ListMatchableAttributesRequest\0228"
-  "\n\rresource_type\030\001 \001(\0162!.flyteidl.admin.M"
-  "atchableResource\"k\n\037ListMatchableAttribu"
-  "tesResponse\022H\n\016configurations\030\001 \003(\01320.fl"
-  "yteidl.admin.MatchableAttributesConfigur"
-  "ation*\224\001\n\021MatchableResource\022\021\n\rTASK_RESO"
-  "URCE\020\000\022\024\n\020CLUSTER_RESOURCE\020\001\022\023\n\017EXECUTIO"
-  "N_QUEUE\020\002\022\033\n\027EXECUTION_CLUSTER_LABEL\020\003\022$"
-  "\n QUALITY_OF_SERVICE_SPECIFICATION\020\004B3Z1"
-  "github.com/lyft/flyteidl/gen/pb-go/flyte"
-  "idl/adminb\006proto3"
+  ".proto\032\'flyteidl/admin/quality_of_servic"
+  "e.proto\"M\n\020TaskResourceSpec\022\013\n\003cpu\030\001 \001(\t"
+  "\022\013\n\003gpu\030\002 \001(\t\022\016\n\006memory\030\003 \001(\t\022\017\n\007storage"
+  "\030\004 \001(\t\"~\n\026TaskResourceAttributes\0222\n\010defa"
+  "ults\030\001 \001(\0132 .flyteidl.admin.TaskResource"
+  "Spec\0220\n\006limits\030\002 \001(\0132 .flyteidl.admin.Ta"
+  "skResourceSpec\"\235\001\n\031ClusterResourceAttrib"
+  "utes\022M\n\nattributes\030\001 \003(\01329.flyteidl.admi"
+  "n.ClusterResourceAttributes.AttributesEn"
+  "try\0321\n\017AttributesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
+  "alue\030\002 \001(\t:\0028\001\"(\n\030ExecutionQueueAttribut"
+  "es\022\014\n\004tags\030\001 \003(\t\"&\n\025ExecutionClusterLabe"
+  "l\022\r\n\005value\030\001 \001(\t\"\226\003\n\022MatchingAttributes\022"
+  "J\n\030task_resource_attributes\030\001 \001(\0132&.flyt"
+  "eidl.admin.TaskResourceAttributesH\000\022P\n\033c"
+  "luster_resource_attributes\030\002 \001(\0132).flyte"
+  "idl.admin.ClusterResourceAttributesH\000\022N\n"
+  "\032execution_queue_attributes\030\003 \001(\0132(.flyt"
+  "eidl.admin.ExecutionQueueAttributesH\000\022H\n"
+  "\027execution_cluster_label\030\004 \001(\0132%.flyteid"
+  "l.admin.ExecutionClusterLabelH\000\022>\n\022quali"
+  "ty_of_service\030\005 \001(\0132 .flyteidl.admin.Qua"
+  "lityOfServiceH\000B\010\n\006target\"\242\001\n MatchableA"
+  "ttributesConfiguration\0226\n\nattributes\030\001 \001"
+  "(\0132\".flyteidl.admin.MatchingAttributes\022\016"
+  "\n\006domain\030\002 \001(\t\022\017\n\007project\030\003 \001(\t\022\020\n\010workf"
+  "low\030\004 \001(\t\022\023\n\013launch_plan\030\005 \001(\t\"Z\n\036ListMa"
+  "tchableAttributesRequest\0228\n\rresource_typ"
+  "e\030\001 \001(\0162!.flyteidl.admin.MatchableResour"
+  "ce\"k\n\037ListMatchableAttributesResponse\022H\n"
+  "\016configurations\030\001 \003(\01320.flyteidl.admin.M"
+  "atchableAttributesConfiguration*\224\001\n\021Matc"
+  "hableResource\022\021\n\rTASK_RESOURCE\020\000\022\024\n\020CLUS"
+  "TER_RESOURCE\020\001\022\023\n\017EXECUTION_QUEUE\020\002\022\033\n\027E"
+  "XECUTION_CLUSTER_LABEL\020\003\022$\n QUALITY_OF_S"
+  "ERVICE_SPECIFICATION\020\004B3Z1github.com/lyf"
+  "t/flyteidl/gen/pb-go/flyteidl/adminb\006pro"
+  "to3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fmatchable_5fresource_2eproto,
-  "flyteidl/admin/matchable_resource.proto", &assign_descriptors_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, 1617,
+  "flyteidl/admin/matchable_resource.proto", &assign_descriptors_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, 1563,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fmatchable_5fresource_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[1] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[2] =
   {
     ::AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto,
+    ::AddDescriptors_flyteidl_2fadmin_2fquality_5fof_5fservice_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, deps, 1);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, deps, 2);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -2340,269 +2313,6 @@ void ExecutionClusterLabel::InternalSwap(ExecutionClusterLabel* other) {
 
 // ===================================================================
 
-void QualityOfServiceSpec::InitAsDefaultInstance() {
-}
-class QualityOfServiceSpec::HasBitSetters {
- public:
-};
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int QualityOfServiceSpec::kQualityOfServiceFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-QualityOfServiceSpec::QualityOfServiceSpec()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.admin.QualityOfServiceSpec)
-}
-QualityOfServiceSpec::QualityOfServiceSpec(const QualityOfServiceSpec& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  quality_of_service_ = from.quality_of_service_;
-  // @@protoc_insertion_point(copy_constructor:flyteidl.admin.QualityOfServiceSpec)
-}
-
-void QualityOfServiceSpec::SharedCtor() {
-  quality_of_service_ = 0;
-}
-
-QualityOfServiceSpec::~QualityOfServiceSpec() {
-  // @@protoc_insertion_point(destructor:flyteidl.admin.QualityOfServiceSpec)
-  SharedDtor();
-}
-
-void QualityOfServiceSpec::SharedDtor() {
-}
-
-void QualityOfServiceSpec::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const QualityOfServiceSpec& QualityOfServiceSpec::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_QualityOfServiceSpec_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void QualityOfServiceSpec::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.admin.QualityOfServiceSpec)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  quality_of_service_ = 0;
-  _internal_metadata_.Clear();
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* QualityOfServiceSpec::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<QualityOfServiceSpec*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-    switch (tag >> 3) {
-      // .flyteidl.admin.QualityOfService quality_of_service = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
-        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_quality_of_service(static_cast<::flyteidl::admin::QualityOfService>(val));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
-        }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
-      }
-    }  // switch
-  }  // while
-  return ptr;
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool QualityOfServiceSpec::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.admin.QualityOfServiceSpec)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .flyteidl.admin.QualityOfService quality_of_service = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
-          int value = 0;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_quality_of_service(static_cast< ::flyteidl::admin::QualityOfService >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:flyteidl.admin.QualityOfServiceSpec)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.admin.QualityOfServiceSpec)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void QualityOfServiceSpec::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.admin.QualityOfServiceSpec)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .flyteidl.admin.QualityOfService quality_of_service = 1;
-  if (this->quality_of_service() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->quality_of_service(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:flyteidl.admin.QualityOfServiceSpec)
-}
-
-::google::protobuf::uint8* QualityOfServiceSpec::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.QualityOfServiceSpec)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .flyteidl.admin.QualityOfService quality_of_service = 1;
-  if (this->quality_of_service() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->quality_of_service(), target);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.QualityOfServiceSpec)
-  return target;
-}
-
-size_t QualityOfServiceSpec::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.QualityOfServiceSpec)
-  size_t total_size = 0;
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // .flyteidl.admin.QualityOfService quality_of_service = 1;
-  if (this->quality_of_service() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->quality_of_service());
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void QualityOfServiceSpec::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.QualityOfServiceSpec)
-  GOOGLE_DCHECK_NE(&from, this);
-  const QualityOfServiceSpec* source =
-      ::google::protobuf::DynamicCastToGenerated<QualityOfServiceSpec>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.QualityOfServiceSpec)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.admin.QualityOfServiceSpec)
-    MergeFrom(*source);
-  }
-}
-
-void QualityOfServiceSpec::MergeFrom(const QualityOfServiceSpec& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.admin.QualityOfServiceSpec)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.quality_of_service() != 0) {
-    set_quality_of_service(from.quality_of_service());
-  }
-}
-
-void QualityOfServiceSpec::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.admin.QualityOfServiceSpec)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void QualityOfServiceSpec::CopyFrom(const QualityOfServiceSpec& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.admin.QualityOfServiceSpec)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool QualityOfServiceSpec::IsInitialized() const {
-  return true;
-}
-
-void QualityOfServiceSpec::Swap(QualityOfServiceSpec* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void QualityOfServiceSpec::InternalSwap(QualityOfServiceSpec* other) {
-  using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(quality_of_service_, other->quality_of_service_);
-}
-
-::google::protobuf::Metadata QualityOfServiceSpec::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto);
-  return ::file_level_metadata_flyteidl_2fadmin_2fmatchable_5fresource_2eproto[kIndexInFileMessages];
-}
-
-
-// ===================================================================
-
 void MatchingAttributes::InitAsDefaultInstance() {
   ::flyteidl::admin::_MatchingAttributes_default_instance_.task_resource_attributes_ = const_cast< ::flyteidl::admin::TaskResourceAttributes*>(
       ::flyteidl::admin::TaskResourceAttributes::internal_default_instance());
@@ -2612,8 +2322,8 @@ void MatchingAttributes::InitAsDefaultInstance() {
       ::flyteidl::admin::ExecutionQueueAttributes::internal_default_instance());
   ::flyteidl::admin::_MatchingAttributes_default_instance_.execution_cluster_label_ = const_cast< ::flyteidl::admin::ExecutionClusterLabel*>(
       ::flyteidl::admin::ExecutionClusterLabel::internal_default_instance());
-  ::flyteidl::admin::_MatchingAttributes_default_instance_.quality_of_service_spec_ = const_cast< ::flyteidl::admin::QualityOfServiceSpec*>(
-      ::flyteidl::admin::QualityOfServiceSpec::internal_default_instance());
+  ::flyteidl::admin::_MatchingAttributes_default_instance_.quality_of_service_ = const_cast< ::flyteidl::admin::QualityOfService*>(
+      ::flyteidl::admin::QualityOfService::internal_default_instance());
 }
 class MatchingAttributes::HasBitSetters {
  public:
@@ -2621,7 +2331,7 @@ class MatchingAttributes::HasBitSetters {
   static const ::flyteidl::admin::ClusterResourceAttributes& cluster_resource_attributes(const MatchingAttributes* msg);
   static const ::flyteidl::admin::ExecutionQueueAttributes& execution_queue_attributes(const MatchingAttributes* msg);
   static const ::flyteidl::admin::ExecutionClusterLabel& execution_cluster_label(const MatchingAttributes* msg);
-  static const ::flyteidl::admin::QualityOfServiceSpec& quality_of_service_spec(const MatchingAttributes* msg);
+  static const ::flyteidl::admin::QualityOfService& quality_of_service(const MatchingAttributes* msg);
 };
 
 const ::flyteidl::admin::TaskResourceAttributes&
@@ -2640,9 +2350,9 @@ const ::flyteidl::admin::ExecutionClusterLabel&
 MatchingAttributes::HasBitSetters::execution_cluster_label(const MatchingAttributes* msg) {
   return *msg->target_.execution_cluster_label_;
 }
-const ::flyteidl::admin::QualityOfServiceSpec&
-MatchingAttributes::HasBitSetters::quality_of_service_spec(const MatchingAttributes* msg) {
-  return *msg->target_.quality_of_service_spec_;
+const ::flyteidl::admin::QualityOfService&
+MatchingAttributes::HasBitSetters::quality_of_service(const MatchingAttributes* msg) {
+  return *msg->target_.quality_of_service_;
 }
 void MatchingAttributes::set_allocated_task_resource_attributes(::flyteidl::admin::TaskResourceAttributes* task_resource_attributes) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
@@ -2700,26 +2410,32 @@ void MatchingAttributes::set_allocated_execution_cluster_label(::flyteidl::admin
   }
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.MatchingAttributes.execution_cluster_label)
 }
-void MatchingAttributes::set_allocated_quality_of_service_spec(::flyteidl::admin::QualityOfServiceSpec* quality_of_service_spec) {
+void MatchingAttributes::set_allocated_quality_of_service(::flyteidl::admin::QualityOfService* quality_of_service) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   clear_target();
-  if (quality_of_service_spec) {
+  if (quality_of_service) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      quality_of_service_spec = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, quality_of_service_spec, submessage_arena);
+      quality_of_service = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, quality_of_service, submessage_arena);
     }
-    set_has_quality_of_service_spec();
-    target_.quality_of_service_spec_ = quality_of_service_spec;
+    set_has_quality_of_service();
+    target_.quality_of_service_ = quality_of_service;
   }
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.MatchingAttributes.quality_of_service_spec)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.MatchingAttributes.quality_of_service)
+}
+void MatchingAttributes::clear_quality_of_service() {
+  if (has_quality_of_service()) {
+    delete target_.quality_of_service_;
+    clear_has_target();
+  }
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int MatchingAttributes::kTaskResourceAttributesFieldNumber;
 const int MatchingAttributes::kClusterResourceAttributesFieldNumber;
 const int MatchingAttributes::kExecutionQueueAttributesFieldNumber;
 const int MatchingAttributes::kExecutionClusterLabelFieldNumber;
-const int MatchingAttributes::kQualityOfServiceSpecFieldNumber;
+const int MatchingAttributes::kQualityOfServiceFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 MatchingAttributes::MatchingAttributes()
@@ -2749,8 +2465,8 @@ MatchingAttributes::MatchingAttributes(const MatchingAttributes& from)
       mutable_execution_cluster_label()->::flyteidl::admin::ExecutionClusterLabel::MergeFrom(from.execution_cluster_label());
       break;
     }
-    case kQualityOfServiceSpec: {
-      mutable_quality_of_service_spec()->::flyteidl::admin::QualityOfServiceSpec::MergeFrom(from.quality_of_service_spec());
+    case kQualityOfService: {
+      mutable_quality_of_service()->::flyteidl::admin::QualityOfService::MergeFrom(from.quality_of_service());
       break;
     }
     case TARGET_NOT_SET: {
@@ -2805,8 +2521,8 @@ void MatchingAttributes::clear_target() {
       delete target_.execution_cluster_label_;
       break;
     }
-    case kQualityOfServiceSpec: {
-      delete target_.quality_of_service_spec_;
+    case kQualityOfService: {
+      delete target_.quality_of_service_;
       break;
     }
     case TARGET_NOT_SET: {
@@ -2892,13 +2608,13 @@ const char* MatchingAttributes::_InternalParse(const char* begin, const char* en
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.admin.QualityOfServiceSpec quality_of_service_spec = 5;
+      // .flyteidl.admin.QualityOfService quality_of_service = 5;
       case 5: {
         if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::admin::QualityOfServiceSpec::_InternalParse;
-        object = msg->mutable_quality_of_service_spec();
+        parser_till_end = ::flyteidl::admin::QualityOfService::_InternalParse;
+        object = msg->mutable_quality_of_service();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -2979,11 +2695,11 @@ bool MatchingAttributes::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.QualityOfServiceSpec quality_of_service_spec = 5;
+      // .flyteidl.admin.QualityOfService quality_of_service = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_quality_of_service_spec()));
+               input, mutable_quality_of_service()));
         } else {
           goto handle_unusual;
         }
@@ -3041,10 +2757,10 @@ void MatchingAttributes::SerializeWithCachedSizes(
       4, HasBitSetters::execution_cluster_label(this), output);
   }
 
-  // .flyteidl.admin.QualityOfServiceSpec quality_of_service_spec = 5;
-  if (has_quality_of_service_spec()) {
+  // .flyteidl.admin.QualityOfService quality_of_service = 5;
+  if (has_quality_of_service()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, HasBitSetters::quality_of_service_spec(this), output);
+      5, HasBitSetters::quality_of_service(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3088,11 +2804,11 @@ void MatchingAttributes::SerializeWithCachedSizes(
         4, HasBitSetters::execution_cluster_label(this), target);
   }
 
-  // .flyteidl.admin.QualityOfServiceSpec quality_of_service_spec = 5;
-  if (has_quality_of_service_spec()) {
+  // .flyteidl.admin.QualityOfService quality_of_service = 5;
+  if (has_quality_of_service()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        5, HasBitSetters::quality_of_service_spec(this), target);
+        5, HasBitSetters::quality_of_service(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3145,11 +2861,11 @@ size_t MatchingAttributes::ByteSizeLong() const {
           *target_.execution_cluster_label_);
       break;
     }
-    // .flyteidl.admin.QualityOfServiceSpec quality_of_service_spec = 5;
-    case kQualityOfServiceSpec: {
+    // .flyteidl.admin.QualityOfService quality_of_service = 5;
+    case kQualityOfService: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *target_.quality_of_service_spec_);
+          *target_.quality_of_service_);
       break;
     }
     case TARGET_NOT_SET: {
@@ -3200,8 +2916,8 @@ void MatchingAttributes::MergeFrom(const MatchingAttributes& from) {
       mutable_execution_cluster_label()->::flyteidl::admin::ExecutionClusterLabel::MergeFrom(from.execution_cluster_label());
       break;
     }
-    case kQualityOfServiceSpec: {
-      mutable_quality_of_service_spec()->::flyteidl::admin::QualityOfServiceSpec::MergeFrom(from.quality_of_service_spec());
+    case kQualityOfService: {
+      mutable_quality_of_service()->::flyteidl::admin::QualityOfService::MergeFrom(from.quality_of_service());
       break;
     }
     case TARGET_NOT_SET: {
@@ -4393,9 +4109,6 @@ template<> PROTOBUF_NOINLINE ::flyteidl::admin::ExecutionQueueAttributes* Arena:
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::ExecutionClusterLabel* Arena::CreateMaybeMessage< ::flyteidl::admin::ExecutionClusterLabel >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::admin::ExecutionClusterLabel >(arena);
-}
-template<> PROTOBUF_NOINLINE ::flyteidl::admin::QualityOfServiceSpec* Arena::CreateMaybeMessage< ::flyteidl::admin::QualityOfServiceSpec >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::admin::QualityOfServiceSpec >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::MatchingAttributes* Arena::CreateMaybeMessage< ::flyteidl::admin::MatchingAttributes >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::admin::MatchingAttributes >(arena);

@@ -303,6 +303,7 @@ Class | Method | HTTP request | Description
  - [ProtobufNullValue](docs/ProtobufNullValue.md)
  - [ProtobufStruct](docs/ProtobufStruct.md)
  - [ProtobufValue](docs/ProtobufValue.md)
+ - [QualityOfServiceTier](docs/QualityOfServiceTier.md)
  - [ResourcesResourceEntry](docs/ResourcesResourceEntry.md)
  - [ResourcesResourceName](docs/ResourcesResourceName.md)
  - [RuntimeMetadataRuntimeType](docs/RuntimeMetadataRuntimeType.md)

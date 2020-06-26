@@ -206,6 +206,7 @@ from flyteadmin.models.protobuf_list_value import ProtobufListValue
 from flyteadmin.models.protobuf_null_value import ProtobufNullValue
 from flyteadmin.models.protobuf_struct import ProtobufStruct
 from flyteadmin.models.protobuf_value import ProtobufValue
+from flyteadmin.models.quality_of_service_tier import QualityOfServiceTier
 from flyteadmin.models.resources_resource_entry import ResourcesResourceEntry
 from flyteadmin.models.resources_resource_name import ResourcesResourceName
 from flyteadmin.models.runtime_metadata_runtime_type import RuntimeMetadataRuntimeType

@@ -37,6 +37,7 @@
 #include "flyteidl/core/interface.pb.h"
 #include "flyteidl/admin/schedule.pb.h"
 #include "flyteidl/admin/common.pb.h"
+#include "flyteidl/admin/quality_of_service.pb.h"
 #include <google/protobuf/timestamp.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -976,10 +977,13 @@ class LaunchPlanSpec final :
   void set_allocated_auth_role(::flyteidl::admin::AuthRole* auth_role);
 
   // .flyteidl.admin.QualityOfService quality_of_service = 16;
+  bool has_quality_of_service() const;
   void clear_quality_of_service();
   static const int kQualityOfServiceFieldNumber = 16;
-  ::flyteidl::admin::QualityOfService quality_of_service() const;
-  void set_quality_of_service(::flyteidl::admin::QualityOfService value);
+  const ::flyteidl::admin::QualityOfService& quality_of_service() const;
+  ::flyteidl::admin::QualityOfService* release_quality_of_service();
+  ::flyteidl::admin::QualityOfService* mutable_quality_of_service();
+  void set_allocated_quality_of_service(::flyteidl::admin::QualityOfService* quality_of_service);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.LaunchPlanSpec)
  private:
@@ -995,7 +999,7 @@ class LaunchPlanSpec final :
   ::flyteidl::admin::Annotations* annotations_;
   ::flyteidl::admin::Auth* auth_;
   ::flyteidl::admin::AuthRole* auth_role_;
-  int quality_of_service_;
+  ::flyteidl::admin::QualityOfService* quality_of_service_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2flaunch_5fplan_2eproto;
 };
@@ -2764,17 +2768,48 @@ inline void LaunchPlanSpec::set_allocated_auth_role(::flyteidl::admin::AuthRole*
 }
 
 // .flyteidl.admin.QualityOfService quality_of_service = 16;
-inline void LaunchPlanSpec::clear_quality_of_service() {
-  quality_of_service_ = 0;
+inline bool LaunchPlanSpec::has_quality_of_service() const {
+  return this != internal_default_instance() && quality_of_service_ != nullptr;
 }
-inline ::flyteidl::admin::QualityOfService LaunchPlanSpec::quality_of_service() const {
+inline const ::flyteidl::admin::QualityOfService& LaunchPlanSpec::quality_of_service() const {
+  const ::flyteidl::admin::QualityOfService* p = quality_of_service_;
   // @@protoc_insertion_point(field_get:flyteidl.admin.LaunchPlanSpec.quality_of_service)
-  return static_cast< ::flyteidl::admin::QualityOfService >(quality_of_service_);
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::QualityOfService*>(
+      &::flyteidl::admin::_QualityOfService_default_instance_);
 }
-inline void LaunchPlanSpec::set_quality_of_service(::flyteidl::admin::QualityOfService value) {
+inline ::flyteidl::admin::QualityOfService* LaunchPlanSpec::release_quality_of_service() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.LaunchPlanSpec.quality_of_service)
   
-  quality_of_service_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.admin.LaunchPlanSpec.quality_of_service)
+  ::flyteidl::admin::QualityOfService* temp = quality_of_service_;
+  quality_of_service_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::admin::QualityOfService* LaunchPlanSpec::mutable_quality_of_service() {
+  
+  if (quality_of_service_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::QualityOfService>(GetArenaNoVirtual());
+    quality_of_service_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.LaunchPlanSpec.quality_of_service)
+  return quality_of_service_;
+}
+inline void LaunchPlanSpec::set_allocated_quality_of_service(::flyteidl::admin::QualityOfService* quality_of_service) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(quality_of_service_);
+  }
+  if (quality_of_service) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      quality_of_service = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, quality_of_service, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  quality_of_service_ = quality_of_service;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.LaunchPlanSpec.quality_of_service)
 }
 
 // -------------------------------------------------------------------

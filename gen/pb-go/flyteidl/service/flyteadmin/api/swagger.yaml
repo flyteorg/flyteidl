@@ -2395,6 +2395,15 @@ definitions:
     - "UPLOAD_EAGER"
     - "DO_NOT_UPLOAD"
     default: "UPLOAD_ON_EXIT"
+  QualityOfServiceTier:
+    type: "string"
+    description: " - UNDEFINED: Default: no quality of service specified."
+    enum:
+    - "UNDEFINED"
+    - "HIGH"
+    - "MEDIUM"
+    - "LOW"
+    default: "UNDEFINED"
   ResourcesResourceEntry:
     type: "object"
     properties:
@@ -2465,18 +2474,13 @@ definitions:
     description: "- FAIL_IMMEDIATELY: FAIL_IMMEDIATELY instructs the system to fail\
       \ as soon as a node fails in the workflow. It'll automatically\nabort all currently\
       \ running nodes and clean up resources before finally marking the workflow executions\
-      \ as\nfailed.\n - FAIL_AFTER_RUNNING_NODES_COMPLETE: FAIL_AFTER_RUNNING_NODES_COMPLETE\
-      \ instructs the system not to schedule new nodes to run but to wait for all\n\
-      currently running nodes to finish executing before cleaning up resources and\
-      \ marking the workflow execution\nas failed.\n - FAIL_AFTER_EXECUTABLE_NODES_COMPLETE:\
-      \ FAIL_AFTER_EXECUTABLE_NODES_COMPLETE instructs the system to make as much\
-      \ progress as it can. The system will\nnot alter the dependencies of the execution\
-      \ graph so any node that depend on the failed node will not be run.\nOther nodes\
-      \ that will be executed to completion before cleaning up resources and marking\
-      \ the workflow\nexecution as failed."
+      \ as\nfailed.\n - FAIL_AFTER_EXECUTABLE_NODES_COMPLETE: FAIL_AFTER_EXECUTABLE_NODES_COMPLETE\
+      \ instructs the system to make as much progress as it can. The system will\n\
+      not alter the dependencies of the execution graph so any node that depend on\
+      \ the failed node will not be run.\nOther nodes that will be executed to completion\
+      \ before cleaning up resources and marking the workflow\nexecution as failed."
     enum:
     - "FAIL_IMMEDIATELY"
-    - "FAIL_AFTER_RUNNING_NODES_COMPLETE"
     - "FAIL_AFTER_EXECUTABLE_NODES_COMPLETE"
     default: "FAIL_IMMEDIATELY"
   adminAbortMetadata:
@@ -2671,7 +2675,10 @@ definitions:
           nesting: 0
           system_metadata:
             execution_cluster: "execution_cluster"
-        quality_of_service: {}
+        quality_of_service:
+          tier: {}
+          spec:
+            queueing_budget_mins: 5
         disable_all: true
         inputs:
           literals: {}
@@ -2971,7 +2978,10 @@ definitions:
             nesting: 0
             system_metadata:
               execution_cluster: "execution_cluster"
-          quality_of_service: {}
+          quality_of_service:
+            tier: {}
+            spec:
+              queueing_budget_mins: 5
           disable_all: true
           inputs:
             literals: {}
@@ -3102,7 +3112,10 @@ definitions:
             nesting: 0
             system_metadata:
               execution_cluster: "execution_cluster"
-          quality_of_service: {}
+          quality_of_service:
+            tier: {}
+            spec:
+              queueing_budget_mins: 5
           disable_all: true
           inputs:
             literals: {}
@@ -3289,7 +3302,10 @@ definitions:
         nesting: 0
         system_metadata:
           execution_cluster: "execution_cluster"
-      quality_of_service: {}
+      quality_of_service:
+        tier: {}
+        spec:
+          queueing_budget_mins: 5
       disable_all: true
       inputs:
         literals: {}
@@ -3521,7 +3537,10 @@ definitions:
         fixed_inputs:
           literals: {}
         role: "role"
-        quality_of_service: {}
+        quality_of_service:
+          tier: {}
+          spec:
+            queueing_budget_mins: 5
         auth:
           kubernetes_service_account: "kubernetes_service_account"
           assumable_iam_role: "assumable_iam_role"
@@ -3929,7 +3948,10 @@ definitions:
           fixed_inputs:
             literals: {}
           role: "role"
-          quality_of_service: {}
+          quality_of_service:
+            tier: {}
+            spec:
+              queueing_budget_mins: 5
           auth:
             kubernetes_service_account: "kubernetes_service_account"
             assumable_iam_role: "assumable_iam_role"
@@ -4176,7 +4198,10 @@ definitions:
           fixed_inputs:
             literals: {}
           role: "role"
-          quality_of_service: {}
+          quality_of_service:
+            tier: {}
+            spec:
+              queueing_budget_mins: 5
           auth:
             kubernetes_service_account: "kubernetes_service_account"
             assumable_iam_role: "assumable_iam_role"
@@ -4399,7 +4424,10 @@ definitions:
       fixed_inputs:
         literals: {}
       role: "role"
-      quality_of_service: {}
+      quality_of_service:
+        tier: {}
+        spec:
+          queueing_budget_mins: 5
       auth:
         kubernetes_service_account: "kubernetes_service_account"
         assumable_iam_role: "assumable_iam_role"
@@ -4566,8 +4594,10 @@ definitions:
         domain: "domain"
         project: "project"
         attributes:
-          quality_of_service_spec:
-            quality_of_service: {}
+          quality_of_service:
+            tier: {}
+            spec:
+              queueing_budget_mins: 5
           cluster_resource_attributes:
             attributes:
               key: "attributes"
@@ -4593,8 +4623,10 @@ definitions:
         domain: "domain"
         project: "project"
         attributes:
-          quality_of_service_spec:
-            quality_of_service: {}
+          quality_of_service:
+            tier: {}
+            spec:
+              queueing_budget_mins: 5
           cluster_resource_attributes:
             attributes:
               key: "attributes"
@@ -4651,8 +4683,10 @@ definitions:
       domain: "domain"
       project: "project"
       attributes:
-        quality_of_service_spec:
-          quality_of_service: {}
+        quality_of_service:
+          tier: {}
+          spec:
+            queueing_budget_mins: 5
         cluster_resource_attributes:
           attributes:
             key: "attributes"
@@ -4700,13 +4734,15 @@ definitions:
         $ref: "#/definitions/adminExecutionQueueAttributes"
       execution_cluster_label:
         $ref: "#/definitions/adminExecutionClusterLabel"
-      quality_of_service_spec:
-        $ref: "#/definitions/adminQualityOfServiceSpec"
+      quality_of_service:
+        $ref: "#/definitions/adminQualityOfService"
     description: "Generic container for encapsulating all types of the above attributes\
       \ messages."
     example:
-      quality_of_service_spec:
-        quality_of_service: {}
+      quality_of_service:
+        tier: {}
+        spec:
+          queueing_budget_mins: 5
       cluster_resource_attributes:
         attributes:
           key: "attributes"
@@ -5138,8 +5174,10 @@ definitions:
       domain: "domain"
       project: "project"
       matching_attributes:
-        quality_of_service_spec:
-          quality_of_service: {}
+        quality_of_service:
+          tier: {}
+          spec:
+            queueing_budget_mins: 5
         cluster_resource_attributes:
           attributes:
             key: "attributes"
@@ -5184,8 +5222,10 @@ definitions:
         domain: "domain"
         project: "project"
         matching_attributes:
-          quality_of_service_spec:
-            quality_of_service: {}
+          quality_of_service:
+            tier: {}
+            spec:
+              queueing_budget_mins: 5
           cluster_resource_attributes:
             attributes:
               key: "attributes"
@@ -5248,30 +5288,25 @@ definitions:
         description: "description"
         id: "id"
   adminQualityOfService:
-    type: "string"
-    description: "This general categorization specifies how much queue time an execution\
-      \ can tolerate. \nThis can be extended in the future to make other execution-time\
-      \ decisions.\n\n - QUALITY_OF_SERVICE_UNDEFINED: Default: no quality of service\
-      \ specified.\n - QUALITY_OF_SERVICE_HIGH: Guarantees that this execution will\
-      \ begin as soon as requested and incur no queueing time.\n - QUALITY_OF_SERVICE_MEDIUM:\
-      \ This execution may incur some queueing delay (e.g. 30 minutes) and is medium\
-      \ priority.\n - QUALITY_OF_SERVICE_LOW: This execution may incur significant\
-      \ queueing delay (e.g. 2 hours) and is low priority."
-    enum:
-    - "QUALITY_OF_SERVICE_UNDEFINED"
-    - "QUALITY_OF_SERVICE_HIGH"
-    - "QUALITY_OF_SERVICE_MEDIUM"
-    - "QUALITY_OF_SERVICE_LOW"
-    default: "QUALITY_OF_SERVICE_UNDEFINED"
+    type: "object"
+    properties:
+      tier:
+        $ref: "#/definitions/QualityOfServiceTier"
+      spec:
+        $ref: "#/definitions/adminQualityOfServiceSpec"
+    example:
+      tier: {}
+      spec:
+        queueing_budget_mins: 5
   adminQualityOfServiceSpec:
     type: "object"
     properties:
-      quality_of_service:
-        description: "Default quality of service to be applied when when undefined\
-          \ in an execution spec."
-        $ref: "#/definitions/adminQualityOfService"
+      queueing_budget_mins:
+        type: "integer"
+        format: "int64"
+        description: "Indicates how much queueing delay an execution can tolerate."
     example:
-      quality_of_service: {}
+      queueing_budget_mins: 5
   adminSchedule:
     type: "object"
     properties:
@@ -8941,8 +8976,10 @@ definitions:
       domain: "domain"
       project: "project"
       matching_attributes:
-        quality_of_service_spec:
-          quality_of_service: {}
+        quality_of_service:
+          tier: {}
+          spec:
+            queueing_budget_mins: 5
         cluster_resource_attributes:
           attributes:
             key: "attributes"
@@ -8991,8 +9028,10 @@ definitions:
         domain: "domain"
         project: "project"
         matching_attributes:
-          quality_of_service_spec:
-            quality_of_service: {}
+          quality_of_service:
+            tier: {}
+            spec:
+              queueing_budget_mins: 5
           cluster_resource_attributes:
             attributes:
               key: "attributes"

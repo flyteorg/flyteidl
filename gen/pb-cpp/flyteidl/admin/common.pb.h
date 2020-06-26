@@ -200,29 +200,6 @@ inline bool NamedEntityState_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<NamedEntityState>(
     NamedEntityState_descriptor(), name, value);
 }
-enum QualityOfService {
-  QUALITY_OF_SERVICE_UNDEFINED = 0,
-  QUALITY_OF_SERVICE_HIGH = 1,
-  QUALITY_OF_SERVICE_MEDIUM = 2,
-  QUALITY_OF_SERVICE_LOW = 3,
-  QualityOfService_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
-  QualityOfService_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
-};
-bool QualityOfService_IsValid(int value);
-const QualityOfService QualityOfService_MIN = QUALITY_OF_SERVICE_UNDEFINED;
-const QualityOfService QualityOfService_MAX = QUALITY_OF_SERVICE_LOW;
-const int QualityOfService_ARRAYSIZE = QualityOfService_MAX + 1;
-
-const ::google::protobuf::EnumDescriptor* QualityOfService_descriptor();
-inline const ::std::string& QualityOfService_Name(QualityOfService value) {
-  return ::google::protobuf::internal::NameOfEnum(
-    QualityOfService_descriptor(), value);
-}
-inline bool QualityOfService_Parse(
-    const ::std::string& name, QualityOfService* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<QualityOfService>(
-    QualityOfService_descriptor(), name, value);
-}
 // ===================================================================
 
 class NamedEntityIdentifier final :
@@ -5601,11 +5578,6 @@ template <> struct is_proto_enum< ::flyteidl::admin::NamedEntityState> : ::std::
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::admin::NamedEntityState>() {
   return ::flyteidl::admin::NamedEntityState_descriptor();
-}
-template <> struct is_proto_enum< ::flyteidl::admin::QualityOfService> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::admin::QualityOfService>() {
-  return ::flyteidl::admin::QualityOfService_descriptor();
 }
 
 }  // namespace protobuf

@@ -772,38 +772,3 @@ SYSTEM_GENERATED
   ⁣System generated entities that aren't explicitly created or managed by a user.
   
   
-
-.. _api_enum_flyteidl.admin.QualityOfService:
-
-Enum flyteidl.admin.QualityOfService
-------------------------------------
-
-`[flyteidl.admin.QualityOfService proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/common.proto#L249>`_
-
-This general categorization specifies how much queue time an execution can tolerate. 
-This can be extended in the future to make other execution-time decisions.
-
-.. _api_enum_value_flyteidl.admin.QualityOfService.QUALITY_OF_SERVICE_UNDEFINED:
-
-QUALITY_OF_SERVICE_UNDEFINED
-  *(DEFAULT)* ⁣Default: no quality of service specified.
-  
-  
-.. _api_enum_value_flyteidl.admin.QualityOfService.QUALITY_OF_SERVICE_HIGH:
-
-QUALITY_OF_SERVICE_HIGH
-  ⁣Guarantees that this execution will begin as soon as requested and incur no queueing time.
-  
-  
-.. _api_enum_value_flyteidl.admin.QualityOfService.QUALITY_OF_SERVICE_MEDIUM:
-
-QUALITY_OF_SERVICE_MEDIUM
-  ⁣This execution may incur some queueing delay (e.g. 30 minutes) and is medium priority.
-  
-  
-.. _api_enum_value_flyteidl.admin.QualityOfService.QUALITY_OF_SERVICE_LOW:
-
-QUALITY_OF_SERVICE_LOW
-  ⁣This execution may incur significant queueing delay (e.g. 2 hours) and is low priority.
-  
-  

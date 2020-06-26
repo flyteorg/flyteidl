@@ -8,6 +8,7 @@ import "flyteidl/core/identifier.proto";
 import "flyteidl/core/interface.proto";
 import "flyteidl/admin/schedule.proto";
 import "flyteidl/admin/common.proto";
+import "flyteidl/admin/quality_of_service.proto";
 import "google/protobuf/timestamp.proto";
 
 // Request to register a launch plan. A LaunchPlanSpec may include a complete or incomplete set of inputs required

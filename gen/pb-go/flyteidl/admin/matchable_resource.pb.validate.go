@@ -401,75 +401,6 @@ var _ interface {
 	ErrorName() string
 } = ExecutionClusterLabelValidationError{}
 
-// Validate checks the field values on QualityOfServiceSpec with the rules
-// defined in the proto definition for this message. If any rules are
-// violated, an error is returned.
-func (m *QualityOfServiceSpec) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	// no validation rules for QualityOfService
-
-	return nil
-}
-
-// QualityOfServiceSpecValidationError is the validation error returned by
-// QualityOfServiceSpec.Validate if the designated constraints aren't met.
-type QualityOfServiceSpecValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e QualityOfServiceSpecValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e QualityOfServiceSpecValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e QualityOfServiceSpecValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e QualityOfServiceSpecValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e QualityOfServiceSpecValidationError) ErrorName() string {
-	return "QualityOfServiceSpecValidationError"
-}
-
-// Error satisfies the builtin error interface
-func (e QualityOfServiceSpecValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sQualityOfServiceSpec.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = QualityOfServiceSpecValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = QualityOfServiceSpecValidationError{}
-
 // Validate checks the field values on MatchingAttributes with the rules
 // defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
@@ -528,12 +459,12 @@ func (m *MatchingAttributes) Validate() error {
 			}
 		}
 
-	case *MatchingAttributes_QualityOfServiceSpec:
+	case *MatchingAttributes_QualityOfService:
 
-		if v, ok := interface{}(m.GetQualityOfServiceSpec()).(interface{ Validate() error }); ok {
+		if v, ok := interface{}(m.GetQualityOfService()).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
 				return MatchingAttributesValidationError{
-					field:  "QualityOfServiceSpec",
+					field:  "QualityOfService",
 					reason: "embedded message failed validation",
 					cause:  err,
 				}

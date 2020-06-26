@@ -19,7 +19,7 @@ import six
 from flyteadmin.models.admin_cluster_resource_attributes import AdminClusterResourceAttributes  # noqa: F401,E501
 from flyteadmin.models.admin_execution_cluster_label import AdminExecutionClusterLabel  # noqa: F401,E501
 from flyteadmin.models.admin_execution_queue_attributes import AdminExecutionQueueAttributes  # noqa: F401,E501
-from flyteadmin.models.admin_quality_of_service_spec import AdminQualityOfServiceSpec  # noqa: F401,E501
+from flyteadmin.models.admin_quality_of_service import AdminQualityOfService  # noqa: F401,E501
 from flyteadmin.models.admin_task_resource_attributes import AdminTaskResourceAttributes  # noqa: F401,E501
 
 
@@ -41,7 +41,7 @@ class AdminMatchingAttributes(object):
         'cluster_resource_attributes': 'AdminClusterResourceAttributes',
         'execution_queue_attributes': 'AdminExecutionQueueAttributes',
         'execution_cluster_label': 'AdminExecutionClusterLabel',
-        'quality_of_service_spec': 'AdminQualityOfServiceSpec'
+        'quality_of_service': 'AdminQualityOfService'
     }
 
     attribute_map = {
@@ -49,17 +49,17 @@ class AdminMatchingAttributes(object):
         'cluster_resource_attributes': 'cluster_resource_attributes',
         'execution_queue_attributes': 'execution_queue_attributes',
         'execution_cluster_label': 'execution_cluster_label',
-        'quality_of_service_spec': 'quality_of_service_spec'
+        'quality_of_service': 'quality_of_service'
     }
 
-    def __init__(self, task_resource_attributes=None, cluster_resource_attributes=None, execution_queue_attributes=None, execution_cluster_label=None, quality_of_service_spec=None):  # noqa: E501
+    def __init__(self, task_resource_attributes=None, cluster_resource_attributes=None, execution_queue_attributes=None, execution_cluster_label=None, quality_of_service=None):  # noqa: E501
         """AdminMatchingAttributes - a model defined in Swagger"""  # noqa: E501
 
         self._task_resource_attributes = None
         self._cluster_resource_attributes = None
         self._execution_queue_attributes = None
         self._execution_cluster_label = None
-        self._quality_of_service_spec = None
+        self._quality_of_service = None
         self.discriminator = None
 
         if task_resource_attributes is not None:
@@ -70,8 +70,8 @@ class AdminMatchingAttributes(object):
             self.execution_queue_attributes = execution_queue_attributes
         if execution_cluster_label is not None:
             self.execution_cluster_label = execution_cluster_label
-        if quality_of_service_spec is not None:
-            self.quality_of_service_spec = quality_of_service_spec
+        if quality_of_service is not None:
+            self.quality_of_service = quality_of_service
 
     @property
     def task_resource_attributes(self):
@@ -158,25 +158,25 @@ class AdminMatchingAttributes(object):
         self._execution_cluster_label = execution_cluster_label
 
     @property
-    def quality_of_service_spec(self):
-        """Gets the quality_of_service_spec of this AdminMatchingAttributes.  # noqa: E501
+    def quality_of_service(self):
+        """Gets the quality_of_service of this AdminMatchingAttributes.  # noqa: E501
 
 
-        :return: The quality_of_service_spec of this AdminMatchingAttributes.  # noqa: E501
-        :rtype: AdminQualityOfServiceSpec
+        :return: The quality_of_service of this AdminMatchingAttributes.  # noqa: E501
+        :rtype: AdminQualityOfService
         """
-        return self._quality_of_service_spec
+        return self._quality_of_service
 
-    @quality_of_service_spec.setter
-    def quality_of_service_spec(self, quality_of_service_spec):
-        """Sets the quality_of_service_spec of this AdminMatchingAttributes.
+    @quality_of_service.setter
+    def quality_of_service(self, quality_of_service):
+        """Sets the quality_of_service of this AdminMatchingAttributes.
 
 
-        :param quality_of_service_spec: The quality_of_service_spec of this AdminMatchingAttributes.  # noqa: E501
-        :type: AdminQualityOfServiceSpec
+        :param quality_of_service: The quality_of_service of this AdminMatchingAttributes.  # noqa: E501
+        :type: AdminQualityOfService
         """
 
-        self._quality_of_service_spec = quality_of_service_spec
+        self._quality_of_service = quality_of_service
 
     def to_dict(self):
         """Returns the model properties as a dict"""

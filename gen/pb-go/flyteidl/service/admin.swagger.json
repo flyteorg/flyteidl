@@ -2749,6 +2749,17 @@
       "description": "- UPLOAD_ON_EXIT: All data will be uploaded after the main container exits\n - UPLOAD_EAGER: Data will be uploaded as it appears. Refer to protocol specification for details\n - DO_NOT_UPLOAD: Data will not be uploaded, only references will be written",
       "title": "Mode to use for uploading"
     },
+    "QualityOfServiceTier": {
+      "type": "string",
+      "enum": [
+        "UNDEFINED",
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ],
+      "default": "UNDEFINED",
+      "description": " - UNDEFINED: Default: no quality of service specified."
+    },
     "ResourcesResourceEntry": {
       "type": "object",
       "properties": {
@@ -2829,11 +2840,10 @@
       "type": "string",
       "enum": [
         "FAIL_IMMEDIATELY",
-        "FAIL_AFTER_RUNNING_NODES_COMPLETE",
         "FAIL_AFTER_EXECUTABLE_NODES_COMPLETE"
       ],
       "default": "FAIL_IMMEDIATELY",
-      "description": "- FAIL_IMMEDIATELY: FAIL_IMMEDIATELY instructs the system to fail as soon as a node fails in the workflow. It'll automatically\nabort all currently running nodes and clean up resources before finally marking the workflow executions as\nfailed.\n - FAIL_AFTER_RUNNING_NODES_COMPLETE: FAIL_AFTER_RUNNING_NODES_COMPLETE instructs the system not to schedule new nodes to run but to wait for all\ncurrently running nodes to finish executing before cleaning up resources and marking the workflow execution\nas failed.\n - FAIL_AFTER_EXECUTABLE_NODES_COMPLETE: FAIL_AFTER_EXECUTABLE_NODES_COMPLETE instructs the system to make as much progress as it can. The system will\nnot alter the dependencies of the execution graph so any node that depend on the failed node will not be run.\nOther nodes that will be executed to completion before cleaning up resources and marking the workflow\nexecution as failed.",
+      "description": "- FAIL_IMMEDIATELY: FAIL_IMMEDIATELY instructs the system to fail as soon as a node fails in the workflow. It'll automatically\nabort all currently running nodes and clean up resources before finally marking the workflow executions as\nfailed.\n - FAIL_AFTER_EXECUTABLE_NODES_COMPLETE: FAIL_AFTER_EXECUTABLE_NODES_COMPLETE instructs the system to make as much progress as it can. The system will\nnot alter the dependencies of the execution graph so any node that depend on the failed node will not be run.\nOther nodes that will be executed to completion before cleaning up resources and marking the workflow\nexecution as failed.",
       "title": "Failure Handling Strategy"
     },
     "adminAbortMetadata": {
@@ -3457,8 +3467,8 @@
         "execution_cluster_label": {
           "$ref": "#/definitions/adminExecutionClusterLabel"
         },
-        "quality_of_service_spec": {
-          "$ref": "#/definitions/adminQualityOfServiceSpec"
+        "quality_of_service": {
+          "$ref": "#/definitions/adminQualityOfService"
         }
       },
       "description": "Generic container for encapsulating all types of the above attributes messages."
@@ -3813,22 +3823,23 @@
       }
     },
     "adminQualityOfService": {
-      "type": "string",
-      "enum": [
-        "QUALITY_OF_SERVICE_UNDEFINED",
-        "QUALITY_OF_SERVICE_HIGH",
-        "QUALITY_OF_SERVICE_MEDIUM",
-        "QUALITY_OF_SERVICE_LOW"
-      ],
-      "default": "QUALITY_OF_SERVICE_UNDEFINED",
-      "description": "This general categorization specifies how much queue time an execution can tolerate. \nThis can be extended in the future to make other execution-time decisions.\n\n - QUALITY_OF_SERVICE_UNDEFINED: Default: no quality of service specified.\n - QUALITY_OF_SERVICE_HIGH: Guarantees that this execution will begin as soon as requested and incur no queueing time.\n - QUALITY_OF_SERVICE_MEDIUM: This execution may incur some queueing delay (e.g. 30 minutes) and is medium priority.\n - QUALITY_OF_SERVICE_LOW: This execution may incur significant queueing delay (e.g. 2 hours) and is low priority."
+      "type": "object",
+      "properties": {
+        "tier": {
+          "$ref": "#/definitions/QualityOfServiceTier"
+        },
+        "spec": {
+          "$ref": "#/definitions/adminQualityOfServiceSpec"
+        }
+      }
     },
     "adminQualityOfServiceSpec": {
       "type": "object",
       "properties": {
-        "quality_of_service": {
-          "$ref": "#/definitions/adminQualityOfService",
-          "description": "Default quality of service to be applied when when undefined in an execution spec."
+        "queueing_budget_mins": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Indicates how much queueing delay an execution can tolerate."
         }
       }
     },
