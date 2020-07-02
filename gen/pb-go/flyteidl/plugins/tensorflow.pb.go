@@ -22,6 +22,7 @@ const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
 // Custom proto for plugin that enables distributed training using https://github.com/kubeflow/tf-operator
 type DistributedTensorflowTrainingTask struct {
+	// number of worker, ps, chief replicas spawned in the cluster for this job
 	Workers              int32    `protobuf:"varint,1,opt,name=workers,proto3" json:"workers,omitempty"`
 	Ps                   int32    `protobuf:"varint,2,opt,name=ps,proto3" json:"ps,omitempty"`
 	Chief                int32    `protobuf:"varint,3,opt,name=chief,proto3" json:"chief,omitempty"`

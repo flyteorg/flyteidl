@@ -19,6 +19,10 @@ public final class Tensorflow {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * number of worker, ps, chief replicas spawned in the cluster for this job
+     * </pre>
+     *
      * <code>int32 workers = 1;</code>
      */
     int getWorkers();
@@ -126,6 +130,10 @@ public final class Tensorflow {
     public static final int WORKERS_FIELD_NUMBER = 1;
     private int workers_;
     /**
+     * <pre>
+     * number of worker, ps, chief replicas spawned in the cluster for this job
+     * </pre>
+     *
      * <code>int32 workers = 1;</code>
      */
     public int getWorkers() {
@@ -492,12 +500,20 @@ public final class Tensorflow {
 
       private int workers_ ;
       /**
+       * <pre>
+       * number of worker, ps, chief replicas spawned in the cluster for this job
+       * </pre>
+       *
        * <code>int32 workers = 1;</code>
        */
       public int getWorkers() {
         return workers_;
       }
       /**
+       * <pre>
+       * number of worker, ps, chief replicas spawned in the cluster for this job
+       * </pre>
+       *
        * <code>int32 workers = 1;</code>
        */
       public Builder setWorkers(int value) {
@@ -507,6 +523,10 @@ public final class Tensorflow {
         return this;
       }
       /**
+       * <pre>
+       * number of worker, ps, chief replicas spawned in the cluster for this job
+       * </pre>
+       *
        * <code>int32 workers = 1;</code>
        */
       public Builder clearWorkers() {
