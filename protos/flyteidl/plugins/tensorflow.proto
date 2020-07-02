@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package flyteidl.plugins;
+
+option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
+
+// Custom proto for plugin that enables distributed training using https://github.com/kubeflow/tf-operator
+message DistributedTensorflowTrainingTask {
+  int32 workers = 1;
+  int32 ps = 2;
+  int32 chief = 3;
+} 
