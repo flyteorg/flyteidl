@@ -231,7 +231,7 @@ auth_role
 .. _api_field_flyteidl.admin.LaunchPlanSpec.quality_of_service:
 
 quality_of_service
-  (:ref:`flyteidl.admin.QualityOfService <api_msg_flyteidl.admin.QualityOfService>`) Indicates the amount of queueing a launched workflow execution can tolerate.
+  (:ref:`flyteidl.core.QualityOfService <api_msg_flyteidl.core.QualityOfService>`) Indicates the runtime priority of the execution. 
   
   
 

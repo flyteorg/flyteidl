@@ -823,7 +823,7 @@ export namespace flyteidl {
         interface IWorkflowMetadata {
 
             /** WorkflowMetadata queuingBudget */
-            queuingBudget?: (google.protobuf.IDuration|null);
+            queuingBudget?: (flyteidl.core.IQualityOfService|null);
 
             /** WorkflowMetadata onFailure */
             onFailure?: (flyteidl.core.WorkflowMetadata.OnFailurePolicy|null);
@@ -839,7 +839,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.core.IWorkflowMetadata);
 
             /** WorkflowMetadata queuingBudget. */
-            public queuingBudget?: (google.protobuf.IDuration|null);
+            public queuingBudget?: (flyteidl.core.IQualityOfService|null);
 
             /** WorkflowMetadata onFailure. */
             public onFailure: flyteidl.core.WorkflowMetadata.OnFailurePolicy;
@@ -2670,6 +2670,475 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a WorkflowExecution. */
+        interface IWorkflowExecution {
+        }
+
+        /** Represents a WorkflowExecution. */
+        class WorkflowExecution implements IWorkflowExecution {
+
+            /**
+             * Constructs a new WorkflowExecution.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IWorkflowExecution);
+
+            /**
+             * Creates a new WorkflowExecution instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns WorkflowExecution instance
+             */
+            public static create(properties?: flyteidl.core.IWorkflowExecution): flyteidl.core.WorkflowExecution;
+
+            /**
+             * Encodes the specified WorkflowExecution message. Does not implicitly {@link flyteidl.core.WorkflowExecution.verify|verify} messages.
+             * @param message WorkflowExecution message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IWorkflowExecution, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a WorkflowExecution message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns WorkflowExecution
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.WorkflowExecution;
+
+            /**
+             * Verifies a WorkflowExecution message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace WorkflowExecution {
+
+            /** Phase enum. */
+            enum Phase {
+                UNDEFINED = 0,
+                QUEUED = 1,
+                RUNNING = 2,
+                SUCCEEDING = 3,
+                SUCCEEDED = 4,
+                FAILING = 5,
+                FAILED = 6,
+                ABORTED = 7,
+                TIMED_OUT = 8
+            }
+        }
+
+        /** Properties of a NodeExecution. */
+        interface INodeExecution {
+        }
+
+        /** Represents a NodeExecution. */
+        class NodeExecution implements INodeExecution {
+
+            /**
+             * Constructs a new NodeExecution.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.INodeExecution);
+
+            /**
+             * Creates a new NodeExecution instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns NodeExecution instance
+             */
+            public static create(properties?: flyteidl.core.INodeExecution): flyteidl.core.NodeExecution;
+
+            /**
+             * Encodes the specified NodeExecution message. Does not implicitly {@link flyteidl.core.NodeExecution.verify|verify} messages.
+             * @param message NodeExecution message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.INodeExecution, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a NodeExecution message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns NodeExecution
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.NodeExecution;
+
+            /**
+             * Verifies a NodeExecution message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace NodeExecution {
+
+            /** Phase enum. */
+            enum Phase {
+                UNDEFINED = 0,
+                QUEUED = 1,
+                RUNNING = 2,
+                SUCCEEDED = 3,
+                FAILING = 4,
+                FAILED = 5,
+                ABORTED = 6,
+                SKIPPED = 7,
+                TIMED_OUT = 8
+            }
+        }
+
+        /** Properties of a TaskExecution. */
+        interface ITaskExecution {
+        }
+
+        /** Represents a TaskExecution. */
+        class TaskExecution implements ITaskExecution {
+
+            /**
+             * Constructs a new TaskExecution.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ITaskExecution);
+
+            /**
+             * Creates a new TaskExecution instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskExecution instance
+             */
+            public static create(properties?: flyteidl.core.ITaskExecution): flyteidl.core.TaskExecution;
+
+            /**
+             * Encodes the specified TaskExecution message. Does not implicitly {@link flyteidl.core.TaskExecution.verify|verify} messages.
+             * @param message TaskExecution message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ITaskExecution, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskExecution message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskExecution
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.TaskExecution;
+
+            /**
+             * Verifies a TaskExecution message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace TaskExecution {
+
+            /** Phase enum. */
+            enum Phase {
+                UNDEFINED = 0,
+                QUEUED = 1,
+                RUNNING = 2,
+                SUCCEEDED = 3,
+                ABORTED = 4,
+                FAILED = 5,
+                INITIALIZING = 6,
+                WAITING_FOR_RESOURCES = 7
+            }
+        }
+
+        /** Properties of an ExecutionError. */
+        interface IExecutionError {
+
+            /** ExecutionError code */
+            code?: (string|null);
+
+            /** ExecutionError message */
+            message?: (string|null);
+
+            /** ExecutionError errorUri */
+            errorUri?: (string|null);
+
+            /** ExecutionError kind */
+            kind?: (flyteidl.core.ExecutionError.ErrorKind|null);
+        }
+
+        /** Represents an ExecutionError. */
+        class ExecutionError implements IExecutionError {
+
+            /**
+             * Constructs a new ExecutionError.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IExecutionError);
+
+            /** ExecutionError code. */
+            public code: string;
+
+            /** ExecutionError message. */
+            public message: string;
+
+            /** ExecutionError errorUri. */
+            public errorUri: string;
+
+            /** ExecutionError kind. */
+            public kind: flyteidl.core.ExecutionError.ErrorKind;
+
+            /**
+             * Creates a new ExecutionError instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ExecutionError instance
+             */
+            public static create(properties?: flyteidl.core.IExecutionError): flyteidl.core.ExecutionError;
+
+            /**
+             * Encodes the specified ExecutionError message. Does not implicitly {@link flyteidl.core.ExecutionError.verify|verify} messages.
+             * @param message ExecutionError message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IExecutionError, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ExecutionError message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ExecutionError
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ExecutionError;
+
+            /**
+             * Verifies an ExecutionError message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace ExecutionError {
+
+            /** ErrorKind enum. */
+            enum ErrorKind {
+                UNKNOWN = 0,
+                USER = 1,
+                SYSTEM = 2
+            }
+        }
+
+        /** Properties of a TaskLog. */
+        interface ITaskLog {
+
+            /** TaskLog uri */
+            uri?: (string|null);
+
+            /** TaskLog name */
+            name?: (string|null);
+
+            /** TaskLog messageFormat */
+            messageFormat?: (flyteidl.core.TaskLog.MessageFormat|null);
+
+            /** TaskLog ttl */
+            ttl?: (google.protobuf.IDuration|null);
+        }
+
+        /** Represents a TaskLog. */
+        class TaskLog implements ITaskLog {
+
+            /**
+             * Constructs a new TaskLog.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ITaskLog);
+
+            /** TaskLog uri. */
+            public uri: string;
+
+            /** TaskLog name. */
+            public name: string;
+
+            /** TaskLog messageFormat. */
+            public messageFormat: flyteidl.core.TaskLog.MessageFormat;
+
+            /** TaskLog ttl. */
+            public ttl?: (google.protobuf.IDuration|null);
+
+            /**
+             * Creates a new TaskLog instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskLog instance
+             */
+            public static create(properties?: flyteidl.core.ITaskLog): flyteidl.core.TaskLog;
+
+            /**
+             * Encodes the specified TaskLog message. Does not implicitly {@link flyteidl.core.TaskLog.verify|verify} messages.
+             * @param message TaskLog message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ITaskLog, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskLog message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskLog
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.TaskLog;
+
+            /**
+             * Verifies a TaskLog message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace TaskLog {
+
+            /** MessageFormat enum. */
+            enum MessageFormat {
+                UNKNOWN = 0,
+                CSV = 1,
+                JSON = 2
+            }
+        }
+
+        /** Properties of a QualityOfServiceSpec. */
+        interface IQualityOfServiceSpec {
+
+            /** QualityOfServiceSpec queueingBudgetMins */
+            queueingBudgetMins?: (number|null);
+        }
+
+        /** Represents a QualityOfServiceSpec. */
+        class QualityOfServiceSpec implements IQualityOfServiceSpec {
+
+            /**
+             * Constructs a new QualityOfServiceSpec.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IQualityOfServiceSpec);
+
+            /** QualityOfServiceSpec queueingBudgetMins. */
+            public queueingBudgetMins: number;
+
+            /**
+             * Creates a new QualityOfServiceSpec instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns QualityOfServiceSpec instance
+             */
+            public static create(properties?: flyteidl.core.IQualityOfServiceSpec): flyteidl.core.QualityOfServiceSpec;
+
+            /**
+             * Encodes the specified QualityOfServiceSpec message. Does not implicitly {@link flyteidl.core.QualityOfServiceSpec.verify|verify} messages.
+             * @param message QualityOfServiceSpec message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IQualityOfServiceSpec, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a QualityOfServiceSpec message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns QualityOfServiceSpec
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.QualityOfServiceSpec;
+
+            /**
+             * Verifies a QualityOfServiceSpec message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a QualityOfService. */
+        interface IQualityOfService {
+
+            /** QualityOfService tier */
+            tier?: (flyteidl.core.QualityOfService.Tier|null);
+
+            /** QualityOfService spec */
+            spec?: (flyteidl.core.IQualityOfServiceSpec|null);
+        }
+
+        /** Represents a QualityOfService. */
+        class QualityOfService implements IQualityOfService {
+
+            /**
+             * Constructs a new QualityOfService.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IQualityOfService);
+
+            /** QualityOfService tier. */
+            public tier: flyteidl.core.QualityOfService.Tier;
+
+            /** QualityOfService spec. */
+            public spec?: (flyteidl.core.IQualityOfServiceSpec|null);
+
+            /** QualityOfService designation. */
+            public designation?: ("tier"|"spec");
+
+            /**
+             * Creates a new QualityOfService instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns QualityOfService instance
+             */
+            public static create(properties?: flyteidl.core.IQualityOfService): flyteidl.core.QualityOfService;
+
+            /**
+             * Encodes the specified QualityOfService message. Does not implicitly {@link flyteidl.core.QualityOfService.verify|verify} messages.
+             * @param message QualityOfService message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IQualityOfService, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a QualityOfService message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns QualityOfService
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.QualityOfService;
+
+            /**
+             * Verifies a QualityOfService message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace QualityOfService {
+
+            /** Tier enum. */
+            enum Tier {
+                UNDEFINED = 0,
+                HIGH = 1,
+                MEDIUM = 2,
+                LOW = 3
+            }
+        }
+
         /** ResourceType enum. */
         enum ResourceType {
             UNSPECIFIED = 0,
@@ -4116,351 +4585,6 @@ export namespace flyteidl {
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a WorkflowExecution. */
-        interface IWorkflowExecution {
-        }
-
-        /** Represents a WorkflowExecution. */
-        class WorkflowExecution implements IWorkflowExecution {
-
-            /**
-             * Constructs a new WorkflowExecution.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.IWorkflowExecution);
-
-            /**
-             * Creates a new WorkflowExecution instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns WorkflowExecution instance
-             */
-            public static create(properties?: flyteidl.core.IWorkflowExecution): flyteidl.core.WorkflowExecution;
-
-            /**
-             * Encodes the specified WorkflowExecution message. Does not implicitly {@link flyteidl.core.WorkflowExecution.verify|verify} messages.
-             * @param message WorkflowExecution message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.IWorkflowExecution, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a WorkflowExecution message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns WorkflowExecution
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.WorkflowExecution;
-
-            /**
-             * Verifies a WorkflowExecution message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        namespace WorkflowExecution {
-
-            /** Phase enum. */
-            enum Phase {
-                UNDEFINED = 0,
-                QUEUED = 1,
-                RUNNING = 2,
-                SUCCEEDING = 3,
-                SUCCEEDED = 4,
-                FAILING = 5,
-                FAILED = 6,
-                ABORTED = 7,
-                TIMED_OUT = 8
-            }
-        }
-
-        /** Properties of a NodeExecution. */
-        interface INodeExecution {
-        }
-
-        /** Represents a NodeExecution. */
-        class NodeExecution implements INodeExecution {
-
-            /**
-             * Constructs a new NodeExecution.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.INodeExecution);
-
-            /**
-             * Creates a new NodeExecution instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns NodeExecution instance
-             */
-            public static create(properties?: flyteidl.core.INodeExecution): flyteidl.core.NodeExecution;
-
-            /**
-             * Encodes the specified NodeExecution message. Does not implicitly {@link flyteidl.core.NodeExecution.verify|verify} messages.
-             * @param message NodeExecution message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.INodeExecution, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a NodeExecution message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns NodeExecution
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.NodeExecution;
-
-            /**
-             * Verifies a NodeExecution message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        namespace NodeExecution {
-
-            /** Phase enum. */
-            enum Phase {
-                UNDEFINED = 0,
-                QUEUED = 1,
-                RUNNING = 2,
-                SUCCEEDED = 3,
-                FAILING = 4,
-                FAILED = 5,
-                ABORTED = 6,
-                SKIPPED = 7,
-                TIMED_OUT = 8
-            }
-        }
-
-        /** Properties of a TaskExecution. */
-        interface ITaskExecution {
-        }
-
-        /** Represents a TaskExecution. */
-        class TaskExecution implements ITaskExecution {
-
-            /**
-             * Constructs a new TaskExecution.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.ITaskExecution);
-
-            /**
-             * Creates a new TaskExecution instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns TaskExecution instance
-             */
-            public static create(properties?: flyteidl.core.ITaskExecution): flyteidl.core.TaskExecution;
-
-            /**
-             * Encodes the specified TaskExecution message. Does not implicitly {@link flyteidl.core.TaskExecution.verify|verify} messages.
-             * @param message TaskExecution message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.ITaskExecution, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a TaskExecution message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns TaskExecution
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.TaskExecution;
-
-            /**
-             * Verifies a TaskExecution message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        namespace TaskExecution {
-
-            /** Phase enum. */
-            enum Phase {
-                UNDEFINED = 0,
-                QUEUED = 1,
-                RUNNING = 2,
-                SUCCEEDED = 3,
-                ABORTED = 4,
-                FAILED = 5,
-                INITIALIZING = 6,
-                WAITING_FOR_RESOURCES = 7
-            }
-        }
-
-        /** Properties of an ExecutionError. */
-        interface IExecutionError {
-
-            /** ExecutionError code */
-            code?: (string|null);
-
-            /** ExecutionError message */
-            message?: (string|null);
-
-            /** ExecutionError errorUri */
-            errorUri?: (string|null);
-
-            /** ExecutionError kind */
-            kind?: (flyteidl.core.ExecutionError.ErrorKind|null);
-        }
-
-        /** Represents an ExecutionError. */
-        class ExecutionError implements IExecutionError {
-
-            /**
-             * Constructs a new ExecutionError.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.IExecutionError);
-
-            /** ExecutionError code. */
-            public code: string;
-
-            /** ExecutionError message. */
-            public message: string;
-
-            /** ExecutionError errorUri. */
-            public errorUri: string;
-
-            /** ExecutionError kind. */
-            public kind: flyteidl.core.ExecutionError.ErrorKind;
-
-            /**
-             * Creates a new ExecutionError instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ExecutionError instance
-             */
-            public static create(properties?: flyteidl.core.IExecutionError): flyteidl.core.ExecutionError;
-
-            /**
-             * Encodes the specified ExecutionError message. Does not implicitly {@link flyteidl.core.ExecutionError.verify|verify} messages.
-             * @param message ExecutionError message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.IExecutionError, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an ExecutionError message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns ExecutionError
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ExecutionError;
-
-            /**
-             * Verifies an ExecutionError message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        namespace ExecutionError {
-
-            /** ErrorKind enum. */
-            enum ErrorKind {
-                UNKNOWN = 0,
-                USER = 1,
-                SYSTEM = 2
-            }
-        }
-
-        /** Properties of a TaskLog. */
-        interface ITaskLog {
-
-            /** TaskLog uri */
-            uri?: (string|null);
-
-            /** TaskLog name */
-            name?: (string|null);
-
-            /** TaskLog messageFormat */
-            messageFormat?: (flyteidl.core.TaskLog.MessageFormat|null);
-
-            /** TaskLog ttl */
-            ttl?: (google.protobuf.IDuration|null);
-        }
-
-        /** Represents a TaskLog. */
-        class TaskLog implements ITaskLog {
-
-            /**
-             * Constructs a new TaskLog.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.ITaskLog);
-
-            /** TaskLog uri. */
-            public uri: string;
-
-            /** TaskLog name. */
-            public name: string;
-
-            /** TaskLog messageFormat. */
-            public messageFormat: flyteidl.core.TaskLog.MessageFormat;
-
-            /** TaskLog ttl. */
-            public ttl?: (google.protobuf.IDuration|null);
-
-            /**
-             * Creates a new TaskLog instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns TaskLog instance
-             */
-            public static create(properties?: flyteidl.core.ITaskLog): flyteidl.core.TaskLog;
-
-            /**
-             * Encodes the specified TaskLog message. Does not implicitly {@link flyteidl.core.TaskLog.verify|verify} messages.
-             * @param message TaskLog message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.ITaskLog, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a TaskLog message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns TaskLog
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.TaskLog;
-
-            /**
-             * Verifies a TaskLog message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        namespace TaskLog {
-
-            /** MessageFormat enum. */
-            enum MessageFormat {
-                UNKNOWN = 0,
-                CSV = 1,
-                JSON = 2
-            }
         }
 
         /** Properties of a WorkflowClosure. */
@@ -7490,7 +7614,7 @@ export namespace flyteidl {
             authRole?: (flyteidl.admin.IAuthRole|null);
 
             /** ExecutionSpec qualityOfService */
-            qualityOfService?: (flyteidl.admin.IQualityOfService|null);
+            qualityOfService?: (flyteidl.core.IQualityOfService|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -7527,7 +7651,7 @@ export namespace flyteidl {
             public authRole?: (flyteidl.admin.IAuthRole|null);
 
             /** ExecutionSpec qualityOfService. */
-            public qualityOfService?: (flyteidl.admin.IQualityOfService|null);
+            public qualityOfService?: (flyteidl.core.IQualityOfService|null);
 
             /** ExecutionSpec notificationOverrides. */
             public notificationOverrides?: ("notifications"|"disableAll");
@@ -7777,130 +7901,6 @@ export namespace flyteidl {
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a QualityOfServiceSpec. */
-        interface IQualityOfServiceSpec {
-
-            /** QualityOfServiceSpec queueingBudgetMins */
-            queueingBudgetMins?: (number|null);
-        }
-
-        /** Represents a QualityOfServiceSpec. */
-        class QualityOfServiceSpec implements IQualityOfServiceSpec {
-
-            /**
-             * Constructs a new QualityOfServiceSpec.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IQualityOfServiceSpec);
-
-            /** QualityOfServiceSpec queueingBudgetMins. */
-            public queueingBudgetMins: number;
-
-            /**
-             * Creates a new QualityOfServiceSpec instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns QualityOfServiceSpec instance
-             */
-            public static create(properties?: flyteidl.admin.IQualityOfServiceSpec): flyteidl.admin.QualityOfServiceSpec;
-
-            /**
-             * Encodes the specified QualityOfServiceSpec message. Does not implicitly {@link flyteidl.admin.QualityOfServiceSpec.verify|verify} messages.
-             * @param message QualityOfServiceSpec message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IQualityOfServiceSpec, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a QualityOfServiceSpec message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns QualityOfServiceSpec
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.QualityOfServiceSpec;
-
-            /**
-             * Verifies a QualityOfServiceSpec message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a QualityOfService. */
-        interface IQualityOfService {
-
-            /** QualityOfService tier */
-            tier?: (flyteidl.admin.QualityOfService.Tier|null);
-
-            /** QualityOfService spec */
-            spec?: (flyteidl.admin.IQualityOfServiceSpec|null);
-        }
-
-        /** Represents a QualityOfService. */
-        class QualityOfService implements IQualityOfService {
-
-            /**
-             * Constructs a new QualityOfService.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IQualityOfService);
-
-            /** QualityOfService tier. */
-            public tier: flyteidl.admin.QualityOfService.Tier;
-
-            /** QualityOfService spec. */
-            public spec?: (flyteidl.admin.IQualityOfServiceSpec|null);
-
-            /** QualityOfService designation. */
-            public designation?: ("tier"|"spec");
-
-            /**
-             * Creates a new QualityOfService instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns QualityOfService instance
-             */
-            public static create(properties?: flyteidl.admin.IQualityOfService): flyteidl.admin.QualityOfService;
-
-            /**
-             * Encodes the specified QualityOfService message. Does not implicitly {@link flyteidl.admin.QualityOfService.verify|verify} messages.
-             * @param message QualityOfService message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IQualityOfService, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a QualityOfService message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns QualityOfService
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.QualityOfService;
-
-            /**
-             * Verifies a QualityOfService message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        namespace QualityOfService {
-
-            /** Tier enum. */
-            enum Tier {
-                UNDEFINED = 0,
-                HIGH = 1,
-                MEDIUM = 2,
-                LOW = 3
-            }
         }
 
         /** Properties of a LaunchPlanCreateRequest. */
@@ -8227,7 +8227,7 @@ export namespace flyteidl {
             authRole?: (flyteidl.admin.IAuthRole|null);
 
             /** LaunchPlanSpec qualityOfService */
-            qualityOfService?: (flyteidl.admin.IQualityOfService|null);
+            qualityOfService?: (flyteidl.core.IQualityOfService|null);
         }
 
         /** Represents a LaunchPlanSpec. */
@@ -8267,7 +8267,7 @@ export namespace flyteidl {
             public authRole?: (flyteidl.admin.IAuthRole|null);
 
             /** LaunchPlanSpec qualityOfService. */
-            public qualityOfService?: (flyteidl.admin.IQualityOfService|null);
+            public qualityOfService?: (flyteidl.core.IQualityOfService|null);
 
             /**
              * Creates a new LaunchPlanSpec instance using the specified properties.
@@ -9350,6 +9350,130 @@ export namespace flyteidl {
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a QualityOfServiceSpec. */
+        interface IQualityOfServiceSpec {
+
+            /** QualityOfServiceSpec queueingBudgetMins */
+            queueingBudgetMins?: (number|null);
+        }
+
+        /** Represents a QualityOfServiceSpec. */
+        class QualityOfServiceSpec implements IQualityOfServiceSpec {
+
+            /**
+             * Constructs a new QualityOfServiceSpec.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IQualityOfServiceSpec);
+
+            /** QualityOfServiceSpec queueingBudgetMins. */
+            public queueingBudgetMins: number;
+
+            /**
+             * Creates a new QualityOfServiceSpec instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns QualityOfServiceSpec instance
+             */
+            public static create(properties?: flyteidl.admin.IQualityOfServiceSpec): flyteidl.admin.QualityOfServiceSpec;
+
+            /**
+             * Encodes the specified QualityOfServiceSpec message. Does not implicitly {@link flyteidl.admin.QualityOfServiceSpec.verify|verify} messages.
+             * @param message QualityOfServiceSpec message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IQualityOfServiceSpec, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a QualityOfServiceSpec message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns QualityOfServiceSpec
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.QualityOfServiceSpec;
+
+            /**
+             * Verifies a QualityOfServiceSpec message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a QualityOfService. */
+        interface IQualityOfService {
+
+            /** QualityOfService tier */
+            tier?: (flyteidl.admin.QualityOfService.Tier|null);
+
+            /** QualityOfService spec */
+            spec?: (flyteidl.admin.IQualityOfServiceSpec|null);
+        }
+
+        /** Represents a QualityOfService. */
+        class QualityOfService implements IQualityOfService {
+
+            /**
+             * Constructs a new QualityOfService.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IQualityOfService);
+
+            /** QualityOfService tier. */
+            public tier: flyteidl.admin.QualityOfService.Tier;
+
+            /** QualityOfService spec. */
+            public spec?: (flyteidl.admin.IQualityOfServiceSpec|null);
+
+            /** QualityOfService designation. */
+            public designation?: ("tier"|"spec");
+
+            /**
+             * Creates a new QualityOfService instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns QualityOfService instance
+             */
+            public static create(properties?: flyteidl.admin.IQualityOfService): flyteidl.admin.QualityOfService;
+
+            /**
+             * Encodes the specified QualityOfService message. Does not implicitly {@link flyteidl.admin.QualityOfService.verify|verify} messages.
+             * @param message QualityOfService message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IQualityOfService, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a QualityOfService message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns QualityOfService
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.QualityOfService;
+
+            /**
+             * Verifies a QualityOfService message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace QualityOfService {
+
+            /** Tier enum. */
+            enum Tier {
+                UNDEFINED = 0,
+                HIGH = 1,
+                MEDIUM = 2,
+                LOW = 3
+            }
         }
 
         /** Properties of a NodeExecutionGetRequest. */

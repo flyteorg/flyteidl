@@ -21,9 +21,9 @@ from flyteadmin.models.admin_auth_role import AdminAuthRole  # noqa: F401,E501
 from flyteadmin.models.admin_execution_metadata import AdminExecutionMetadata  # noqa: F401,E501
 from flyteadmin.models.admin_labels import AdminLabels  # noqa: F401,E501
 from flyteadmin.models.admin_notification_list import AdminNotificationList  # noqa: F401,E501
-from flyteadmin.models.admin_quality_of_service import AdminQualityOfService  # noqa: F401,E501
 from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_literal_map import CoreLiteralMap  # noqa: F401,E501
+from flyteadmin.models.flyteidlcore_quality_of_service import FlyteidlcoreQualityOfService  # noqa: F401,E501
 
 
 class AdminExecutionSpec(object):
@@ -48,7 +48,7 @@ class AdminExecutionSpec(object):
         'labels': 'AdminLabels',
         'annotations': 'AdminAnnotations',
         'auth_role': 'AdminAuthRole',
-        'quality_of_service': 'AdminQualityOfService'
+        'quality_of_service': 'FlyteidlcoreQualityOfService'
     }
 
     attribute_map = {
@@ -278,10 +278,10 @@ class AdminExecutionSpec(object):
     def quality_of_service(self):
         """Gets the quality_of_service of this AdminExecutionSpec.  # noqa: E501
 
-        Indicates the amount of queueing a launched workflow execution can tolerate.  # noqa: E501
+        Indicates the runtime priority of the execution.  # noqa: E501
 
         :return: The quality_of_service of this AdminExecutionSpec.  # noqa: E501
-        :rtype: AdminQualityOfService
+        :rtype: FlyteidlcoreQualityOfService
         """
         return self._quality_of_service
 
@@ -289,10 +289,10 @@ class AdminExecutionSpec(object):
     def quality_of_service(self, quality_of_service):
         """Sets the quality_of_service of this AdminExecutionSpec.
 
-        Indicates the amount of queueing a launched workflow execution can tolerate.  # noqa: E501
+        Indicates the runtime priority of the execution.  # noqa: E501
 
         :param quality_of_service: The quality_of_service of this AdminExecutionSpec.  # noqa: E501
-        :type: AdminQualityOfService
+        :type: FlyteidlcoreQualityOfService
         """
 
         self._quality_of_service = quality_of_service

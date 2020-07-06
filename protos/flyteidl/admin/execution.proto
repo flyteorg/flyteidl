@@ -4,7 +4,6 @@ package flyteidl.admin;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "flyteidl/admin/common.proto";
-import "flyteidl/admin/quality_of_service.proto";
 import "flyteidl/core/literals.proto";
 import "flyteidl/core/execution.proto";
 import "flyteidl/core/identifier.proto";
@@ -238,8 +237,8 @@ message ExecutionSpec {
     // Optional: auth override to apply this execution.
     AuthRole auth_role        = 16;
 
-    // Indicates the amount of queueing a launched workflow execution can tolerate.
-    QualityOfService quality_of_service   = 17;
+    // Indicates the runtime priority of the execution. 
+    core.QualityOfService quality_of_service   = 17;
 }
 
 // Request to terminate an in-progress execution.  This action is irreversible.

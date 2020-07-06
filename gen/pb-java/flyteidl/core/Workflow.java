@@ -10201,28 +10201,28 @@ public final class Workflow {
 
     /**
      * <pre>
-     * Total wait time a workflow can be delayed by queueing.
+     * Indicates the runtime priority of workflow executions. 
      * </pre>
      *
-     * <code>.google.protobuf.Duration queuing_budget = 1;</code>
+     * <code>.flyteidl.core.QualityOfService queuing_budget = 1;</code>
      */
     boolean hasQueuingBudget();
     /**
      * <pre>
-     * Total wait time a workflow can be delayed by queueing.
+     * Indicates the runtime priority of workflow executions. 
      * </pre>
      *
-     * <code>.google.protobuf.Duration queuing_budget = 1;</code>
+     * <code>.flyteidl.core.QualityOfService queuing_budget = 1;</code>
      */
-    com.google.protobuf.Duration getQueuingBudget();
+    flyteidl.core.Execution.QualityOfService getQueuingBudget();
     /**
      * <pre>
-     * Total wait time a workflow can be delayed by queueing.
+     * Indicates the runtime priority of workflow executions. 
      * </pre>
      *
-     * <code>.google.protobuf.Duration queuing_budget = 1;</code>
+     * <code>.flyteidl.core.QualityOfService queuing_budget = 1;</code>
      */
-    com.google.protobuf.DurationOrBuilder getQueuingBudgetOrBuilder();
+    flyteidl.core.Execution.QualityOfServiceOrBuilder getQueuingBudgetOrBuilder();
 
     /**
      * <pre>
@@ -10286,11 +10286,11 @@ public final class Workflow {
               done = true;
               break;
             case 10: {
-              com.google.protobuf.Duration.Builder subBuilder = null;
+              flyteidl.core.Execution.QualityOfService.Builder subBuilder = null;
               if (queuingBudget_ != null) {
                 subBuilder = queuingBudget_.toBuilder();
               }
-              queuingBudget_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              queuingBudget_ = input.readMessage(flyteidl.core.Execution.QualityOfService.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(queuingBudget_);
                 queuingBudget_ = subBuilder.buildPartial();
@@ -10465,35 +10465,35 @@ public final class Workflow {
     }
 
     public static final int QUEUING_BUDGET_FIELD_NUMBER = 1;
-    private com.google.protobuf.Duration queuingBudget_;
+    private flyteidl.core.Execution.QualityOfService queuingBudget_;
     /**
      * <pre>
-     * Total wait time a workflow can be delayed by queueing.
+     * Indicates the runtime priority of workflow executions. 
      * </pre>
      *
-     * <code>.google.protobuf.Duration queuing_budget = 1;</code>
+     * <code>.flyteidl.core.QualityOfService queuing_budget = 1;</code>
      */
     public boolean hasQueuingBudget() {
       return queuingBudget_ != null;
     }
     /**
      * <pre>
-     * Total wait time a workflow can be delayed by queueing.
+     * Indicates the runtime priority of workflow executions. 
      * </pre>
      *
-     * <code>.google.protobuf.Duration queuing_budget = 1;</code>
+     * <code>.flyteidl.core.QualityOfService queuing_budget = 1;</code>
      */
-    public com.google.protobuf.Duration getQueuingBudget() {
-      return queuingBudget_ == null ? com.google.protobuf.Duration.getDefaultInstance() : queuingBudget_;
+    public flyteidl.core.Execution.QualityOfService getQueuingBudget() {
+      return queuingBudget_ == null ? flyteidl.core.Execution.QualityOfService.getDefaultInstance() : queuingBudget_;
     }
     /**
      * <pre>
-     * Total wait time a workflow can be delayed by queueing.
+     * Indicates the runtime priority of workflow executions. 
      * </pre>
      *
-     * <code>.google.protobuf.Duration queuing_budget = 1;</code>
+     * <code>.flyteidl.core.QualityOfService queuing_budget = 1;</code>
      */
-    public com.google.protobuf.DurationOrBuilder getQueuingBudgetOrBuilder() {
+    public flyteidl.core.Execution.QualityOfServiceOrBuilder getQueuingBudgetOrBuilder() {
       return getQueuingBudget();
     }
 
@@ -10857,41 +10857,41 @@ public final class Workflow {
         return this;
       }
 
-      private com.google.protobuf.Duration queuingBudget_;
+      private flyteidl.core.Execution.QualityOfService queuingBudget_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> queuingBudgetBuilder_;
+          flyteidl.core.Execution.QualityOfService, flyteidl.core.Execution.QualityOfService.Builder, flyteidl.core.Execution.QualityOfServiceOrBuilder> queuingBudgetBuilder_;
       /**
        * <pre>
-       * Total wait time a workflow can be delayed by queueing.
+       * Indicates the runtime priority of workflow executions. 
        * </pre>
        *
-       * <code>.google.protobuf.Duration queuing_budget = 1;</code>
+       * <code>.flyteidl.core.QualityOfService queuing_budget = 1;</code>
        */
       public boolean hasQueuingBudget() {
         return queuingBudgetBuilder_ != null || queuingBudget_ != null;
       }
       /**
        * <pre>
-       * Total wait time a workflow can be delayed by queueing.
+       * Indicates the runtime priority of workflow executions. 
        * </pre>
        *
-       * <code>.google.protobuf.Duration queuing_budget = 1;</code>
+       * <code>.flyteidl.core.QualityOfService queuing_budget = 1;</code>
        */
-      public com.google.protobuf.Duration getQueuingBudget() {
+      public flyteidl.core.Execution.QualityOfService getQueuingBudget() {
         if (queuingBudgetBuilder_ == null) {
-          return queuingBudget_ == null ? com.google.protobuf.Duration.getDefaultInstance() : queuingBudget_;
+          return queuingBudget_ == null ? flyteidl.core.Execution.QualityOfService.getDefaultInstance() : queuingBudget_;
         } else {
           return queuingBudgetBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * Total wait time a workflow can be delayed by queueing.
+       * Indicates the runtime priority of workflow executions. 
        * </pre>
        *
-       * <code>.google.protobuf.Duration queuing_budget = 1;</code>
+       * <code>.flyteidl.core.QualityOfService queuing_budget = 1;</code>
        */
-      public Builder setQueuingBudget(com.google.protobuf.Duration value) {
+      public Builder setQueuingBudget(flyteidl.core.Execution.QualityOfService value) {
         if (queuingBudgetBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10906,13 +10906,13 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * Total wait time a workflow can be delayed by queueing.
+       * Indicates the runtime priority of workflow executions. 
        * </pre>
        *
-       * <code>.google.protobuf.Duration queuing_budget = 1;</code>
+       * <code>.flyteidl.core.QualityOfService queuing_budget = 1;</code>
        */
       public Builder setQueuingBudget(
-          com.google.protobuf.Duration.Builder builderForValue) {
+          flyteidl.core.Execution.QualityOfService.Builder builderForValue) {
         if (queuingBudgetBuilder_ == null) {
           queuingBudget_ = builderForValue.build();
           onChanged();
@@ -10924,16 +10924,16 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * Total wait time a workflow can be delayed by queueing.
+       * Indicates the runtime priority of workflow executions. 
        * </pre>
        *
-       * <code>.google.protobuf.Duration queuing_budget = 1;</code>
+       * <code>.flyteidl.core.QualityOfService queuing_budget = 1;</code>
        */
-      public Builder mergeQueuingBudget(com.google.protobuf.Duration value) {
+      public Builder mergeQueuingBudget(flyteidl.core.Execution.QualityOfService value) {
         if (queuingBudgetBuilder_ == null) {
           if (queuingBudget_ != null) {
             queuingBudget_ =
-              com.google.protobuf.Duration.newBuilder(queuingBudget_).mergeFrom(value).buildPartial();
+              flyteidl.core.Execution.QualityOfService.newBuilder(queuingBudget_).mergeFrom(value).buildPartial();
           } else {
             queuingBudget_ = value;
           }
@@ -10946,10 +10946,10 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * Total wait time a workflow can be delayed by queueing.
+       * Indicates the runtime priority of workflow executions. 
        * </pre>
        *
-       * <code>.google.protobuf.Duration queuing_budget = 1;</code>
+       * <code>.flyteidl.core.QualityOfService queuing_budget = 1;</code>
        */
       public Builder clearQueuingBudget() {
         if (queuingBudgetBuilder_ == null) {
@@ -10964,44 +10964,44 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * Total wait time a workflow can be delayed by queueing.
+       * Indicates the runtime priority of workflow executions. 
        * </pre>
        *
-       * <code>.google.protobuf.Duration queuing_budget = 1;</code>
+       * <code>.flyteidl.core.QualityOfService queuing_budget = 1;</code>
        */
-      public com.google.protobuf.Duration.Builder getQueuingBudgetBuilder() {
+      public flyteidl.core.Execution.QualityOfService.Builder getQueuingBudgetBuilder() {
         
         onChanged();
         return getQueuingBudgetFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Total wait time a workflow can be delayed by queueing.
+       * Indicates the runtime priority of workflow executions. 
        * </pre>
        *
-       * <code>.google.protobuf.Duration queuing_budget = 1;</code>
+       * <code>.flyteidl.core.QualityOfService queuing_budget = 1;</code>
        */
-      public com.google.protobuf.DurationOrBuilder getQueuingBudgetOrBuilder() {
+      public flyteidl.core.Execution.QualityOfServiceOrBuilder getQueuingBudgetOrBuilder() {
         if (queuingBudgetBuilder_ != null) {
           return queuingBudgetBuilder_.getMessageOrBuilder();
         } else {
           return queuingBudget_ == null ?
-              com.google.protobuf.Duration.getDefaultInstance() : queuingBudget_;
+              flyteidl.core.Execution.QualityOfService.getDefaultInstance() : queuingBudget_;
         }
       }
       /**
        * <pre>
-       * Total wait time a workflow can be delayed by queueing.
+       * Indicates the runtime priority of workflow executions. 
        * </pre>
        *
-       * <code>.google.protobuf.Duration queuing_budget = 1;</code>
+       * <code>.flyteidl.core.QualityOfService queuing_budget = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+          flyteidl.core.Execution.QualityOfService, flyteidl.core.Execution.QualityOfService.Builder, flyteidl.core.Execution.QualityOfServiceOrBuilder> 
           getQueuingBudgetFieldBuilder() {
         if (queuingBudgetBuilder_ == null) {
           queuingBudgetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+              flyteidl.core.Execution.QualityOfService, flyteidl.core.Execution.QualityOfService.Builder, flyteidl.core.Execution.QualityOfServiceOrBuilder>(
                   getQueuingBudget(),
                   getParentForChildren(),
                   isClean());
@@ -14558,56 +14558,57 @@ public final class Workflow {
   static {
     java.lang.String[] descriptorData = {
       "\n\034flyteidl/core/workflow.proto\022\rflyteidl" +
-      ".core\032\035flyteidl/core/condition.proto\032\036fl" +
-      "yteidl/core/identifier.proto\032\035flyteidl/c" +
-      "ore/interface.proto\032\034flyteidl/core/liter" +
-      "als.proto\032\031flyteidl/core/types.proto\032\036go" +
-      "ogle/protobuf/duration.proto\"f\n\007IfBlock\022" +
-      "3\n\tcondition\030\001 \001(\0132 .flyteidl.core.Boole" +
-      "anExpression\022&\n\tthen_node\030\002 \001(\0132\023.flytei" +
-      "dl.core.Node\"\266\001\n\013IfElseBlock\022$\n\004case\030\001 \001" +
-      "(\0132\026.flyteidl.core.IfBlock\022%\n\005other\030\002 \003(" +
-      "\0132\026.flyteidl.core.IfBlock\022(\n\telse_node\030\003" +
-      " \001(\0132\023.flyteidl.core.NodeH\000\022%\n\005error\030\004 \001" +
-      "(\0132\024.flyteidl.core.ErrorH\000B\t\n\007default\"9\n" +
-      "\nBranchNode\022+\n\007if_else\030\001 \001(\0132\032.flyteidl." +
-      "core.IfElseBlock\"J\n\010TaskNode\0221\n\014referenc" +
-      "e_id\030\001 \001(\0132\031.flyteidl.core.IdentifierH\000B" +
-      "\013\n\treference\"\207\001\n\014WorkflowNode\0223\n\016launchp" +
-      "lan_ref\030\001 \001(\0132\031.flyteidl.core.Identifier" +
-      "H\000\0225\n\020sub_workflow_ref\030\002 \001(\0132\031.flyteidl." +
-      "core.IdentifierH\000B\013\n\treference\"\247\001\n\014NodeM" +
-      "etadata\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031" +
-      ".google.protobuf.Duration\022-\n\007retries\030\005 \001" +
-      "(\0132\034.flyteidl.core.RetryStrategy\022\027\n\rinte" +
-      "rruptible\030\006 \001(\010H\000B\025\n\023interruptible_value" +
-      "\"#\n\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\322\002" +
-      "\n\004Node\022\n\n\002id\030\001 \001(\t\022-\n\010metadata\030\002 \001(\0132\033.f" +
-      "lyteidl.core.NodeMetadata\022&\n\006inputs\030\003 \003(" +
-      "\0132\026.flyteidl.core.Binding\022\031\n\021upstream_no" +
-      "de_ids\030\004 \003(\t\022,\n\016output_aliases\030\005 \003(\0132\024.f" +
-      "lyteidl.core.Alias\022,\n\ttask_node\030\006 \001(\0132\027." +
-      "flyteidl.core.TaskNodeH\000\0224\n\rworkflow_nod" +
-      "e\030\007 \001(\0132\033.flyteidl.core.WorkflowNodeH\000\0220" +
-      "\n\013branch_node\030\010 \001(\0132\031.flyteidl.core.Bran" +
-      "chNodeH\000B\010\n\006target\"\335\001\n\020WorkflowMetadata\022" +
-      "1\n\016queuing_budget\030\001 \001(\0132\031.google.protobu" +
-      "f.Duration\022C\n\non_failure\030\002 \001(\0162/.flyteid" +
-      "l.core.WorkflowMetadata.OnFailurePolicy\"" +
-      "Q\n\017OnFailurePolicy\022\024\n\020FAIL_IMMEDIATELY\020\000" +
-      "\022(\n$FAIL_AFTER_EXECUTABLE_NODES_COMPLETE" +
-      "\020\001\"1\n\030WorkflowMetadataDefaults\022\025\n\rinterr" +
-      "uptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplate\022%\n\002id" +
-      "\030\001 \001(\0132\031.flyteidl.core.Identifier\0221\n\010met" +
-      "adata\030\002 \001(\0132\037.flyteidl.core.WorkflowMeta" +
-      "data\0220\n\tinterface\030\003 \001(\0132\035.flyteidl.core." +
-      "TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.flyteidl" +
-      ".core.Node\022\'\n\007outputs\030\005 \003(\0132\026.flyteidl.c" +
-      "ore.Binding\022)\n\014failure_node\030\006 \001(\0132\023.flyt" +
-      "eidl.core.Node\022B\n\021metadata_defaults\030\007 \001(" +
-      "\0132\'.flyteidl.core.WorkflowMetadataDefaul" +
-      "tsB2Z0github.com/lyft/flyteidl/gen/pb-go" +
-      "/flyteidl/coreb\006proto3"
+      ".core\032\035flyteidl/core/condition.proto\032\035fl" +
+      "yteidl/core/execution.proto\032\036flyteidl/co" +
+      "re/identifier.proto\032\035flyteidl/core/inter" +
+      "face.proto\032\034flyteidl/core/literals.proto" +
+      "\032\031flyteidl/core/types.proto\032\036google/prot" +
+      "obuf/duration.proto\"f\n\007IfBlock\0223\n\tcondit" +
+      "ion\030\001 \001(\0132 .flyteidl.core.BooleanExpress" +
+      "ion\022&\n\tthen_node\030\002 \001(\0132\023.flyteidl.core.N" +
+      "ode\"\266\001\n\013IfElseBlock\022$\n\004case\030\001 \001(\0132\026.flyt" +
+      "eidl.core.IfBlock\022%\n\005other\030\002 \003(\0132\026.flyte" +
+      "idl.core.IfBlock\022(\n\telse_node\030\003 \001(\0132\023.fl" +
+      "yteidl.core.NodeH\000\022%\n\005error\030\004 \001(\0132\024.flyt" +
+      "eidl.core.ErrorH\000B\t\n\007default\"9\n\nBranchNo" +
+      "de\022+\n\007if_else\030\001 \001(\0132\032.flyteidl.core.IfEl" +
+      "seBlock\"J\n\010TaskNode\0221\n\014reference_id\030\001 \001(" +
+      "\0132\031.flyteidl.core.IdentifierH\000B\013\n\trefere" +
+      "nce\"\207\001\n\014WorkflowNode\0223\n\016launchplan_ref\030\001" +
+      " \001(\0132\031.flyteidl.core.IdentifierH\000\0225\n\020sub" +
+      "_workflow_ref\030\002 \001(\0132\031.flyteidl.core.Iden" +
+      "tifierH\000B\013\n\treference\"\247\001\n\014NodeMetadata\022\014" +
+      "\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031.google.p" +
+      "rotobuf.Duration\022-\n\007retries\030\005 \001(\0132\034.flyt" +
+      "eidl.core.RetryStrategy\022\027\n\rinterruptible" +
+      "\030\006 \001(\010H\000B\025\n\023interruptible_value\"#\n\005Alias" +
+      "\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\322\002\n\004Node\022\n\n" +
+      "\002id\030\001 \001(\t\022-\n\010metadata\030\002 \001(\0132\033.flyteidl.c" +
+      "ore.NodeMetadata\022&\n\006inputs\030\003 \003(\0132\026.flyte" +
+      "idl.core.Binding\022\031\n\021upstream_node_ids\030\004 " +
+      "\003(\t\022,\n\016output_aliases\030\005 \003(\0132\024.flyteidl.c" +
+      "ore.Alias\022,\n\ttask_node\030\006 \001(\0132\027.flyteidl." +
+      "core.TaskNodeH\000\0224\n\rworkflow_node\030\007 \001(\0132\033" +
+      ".flyteidl.core.WorkflowNodeH\000\0220\n\013branch_" +
+      "node\030\010 \001(\0132\031.flyteidl.core.BranchNodeH\000B" +
+      "\010\n\006target\"\343\001\n\020WorkflowMetadata\0227\n\016queuin" +
+      "g_budget\030\001 \001(\0132\037.flyteidl.core.QualityOf" +
+      "Service\022C\n\non_failure\030\002 \001(\0162/.flyteidl.c" +
+      "ore.WorkflowMetadata.OnFailurePolicy\"Q\n\017" +
+      "OnFailurePolicy\022\024\n\020FAIL_IMMEDIATELY\020\000\022(\n" +
+      "$FAIL_AFTER_EXECUTABLE_NODES_COMPLETE\020\001\"" +
+      "1\n\030WorkflowMetadataDefaults\022\025\n\rinterrupt" +
+      "ible\030\001 \001(\010\"\332\002\n\020WorkflowTemplate\022%\n\002id\030\001 " +
+      "\001(\0132\031.flyteidl.core.Identifier\0221\n\010metada" +
+      "ta\030\002 \001(\0132\037.flyteidl.core.WorkflowMetadat" +
+      "a\0220\n\tinterface\030\003 \001(\0132\035.flyteidl.core.Typ" +
+      "edInterface\022\"\n\005nodes\030\004 \003(\0132\023.flyteidl.co" +
+      "re.Node\022\'\n\007outputs\030\005 \003(\0132\026.flyteidl.core" +
+      ".Binding\022)\n\014failure_node\030\006 \001(\0132\023.flyteid" +
+      "l.core.Node\022B\n\021metadata_defaults\030\007 \001(\0132\'" +
+      ".flyteidl.core.WorkflowMetadataDefaultsB" +
+      "2Z0github.com/lyft/flyteidl/gen/pb-go/fl" +
+      "yteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14621,6 +14622,7 @@ public final class Workflow {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           flyteidl.core.Condition.getDescriptor(),
+          flyteidl.core.Execution.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Interface.getDescriptor(),
           flyteidl.core.Literals.getDescriptor(),
@@ -14694,6 +14696,7 @@ public final class Workflow {
         internal_static_flyteidl_core_WorkflowTemplate_descriptor,
         new java.lang.String[] { "Id", "Metadata", "Interface", "Nodes", "Outputs", "FailureNode", "MetadataDefaults", });
     flyteidl.core.Condition.getDescriptor();
+    flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Interface.getDescriptor();
     flyteidl.core.Literals.getDescriptor();

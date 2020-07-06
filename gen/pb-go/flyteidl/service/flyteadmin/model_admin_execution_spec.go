@@ -24,6 +24,6 @@ type AdminExecutionSpec struct {
 	Annotations *AdminAnnotations `json:"annotations,omitempty"`
 	// Optional: auth override to apply this execution.
 	AuthRole *AdminAuthRole `json:"auth_role,omitempty"`
-	// Indicates the amount of queueing a launched workflow execution can tolerate.
-	QualityOfService *AdminQualityOfService `json:"quality_of_service,omitempty"`
+	// Indicates the runtime priority of the execution.
+	QualityOfService *FlyteidlcoreQualityOfService `json:"quality_of_service,omitempty"`
 }

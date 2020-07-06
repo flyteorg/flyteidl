@@ -19,8 +19,8 @@ import six
 from flyteadmin.models.admin_cluster_resource_attributes import AdminClusterResourceAttributes  # noqa: F401,E501
 from flyteadmin.models.admin_execution_cluster_label import AdminExecutionClusterLabel  # noqa: F401,E501
 from flyteadmin.models.admin_execution_queue_attributes import AdminExecutionQueueAttributes  # noqa: F401,E501
-from flyteadmin.models.admin_quality_of_service import AdminQualityOfService  # noqa: F401,E501
 from flyteadmin.models.admin_task_resource_attributes import AdminTaskResourceAttributes  # noqa: F401,E501
+from flyteadmin.models.flyteidladmin_quality_of_service import FlyteidladminQualityOfService  # noqa: F401,E501
 
 
 class AdminMatchingAttributes(object):
@@ -41,7 +41,7 @@ class AdminMatchingAttributes(object):
         'cluster_resource_attributes': 'AdminClusterResourceAttributes',
         'execution_queue_attributes': 'AdminExecutionQueueAttributes',
         'execution_cluster_label': 'AdminExecutionClusterLabel',
-        'quality_of_service': 'AdminQualityOfService'
+        'quality_of_service': 'FlyteidladminQualityOfService'
     }
 
     attribute_map = {
@@ -163,7 +163,7 @@ class AdminMatchingAttributes(object):
 
 
         :return: The quality_of_service of this AdminMatchingAttributes.  # noqa: E501
-        :rtype: AdminQualityOfService
+        :rtype: FlyteidladminQualityOfService
         """
         return self._quality_of_service
 
@@ -173,7 +173,7 @@ class AdminMatchingAttributes(object):
 
 
         :param quality_of_service: The quality_of_service of this AdminMatchingAttributes.  # noqa: E501
-        :type: AdminQualityOfService
+        :type: FlyteidladminQualityOfService
         """
 
         self._quality_of_service = quality_of_service

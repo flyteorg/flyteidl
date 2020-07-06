@@ -9,7 +9,8 @@
 
 package flyteadmin
 
-type AdminQualityOfService struct {
-	Tier *QualityOfServiceTier `json:"tier,omitempty"`
-	Spec *AdminQualityOfServiceSpec `json:"spec,omitempty"`
+// Represents customized execution run-time attributes.
+type FlyteidlcoreQualityOfServiceSpec struct {
+	// Indicates how much queueing delay an execution can tolerate.
+	QueueingBudgetMins int64 `json:"queueing_budget_mins,omitempty"`
 }

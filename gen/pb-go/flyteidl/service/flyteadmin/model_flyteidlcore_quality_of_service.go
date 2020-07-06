@@ -9,7 +9,8 @@
 
 package flyteadmin
 
-type AdminQualityOfServiceSpec struct {
-	// Indicates how much queueing delay an execution can tolerate.
-	QueueingBudgetMins int64 `json:"queueing_budget_mins,omitempty"`
+// Indicates the priority of an execution.
+type FlyteidlcoreQualityOfService struct {
+	Tier *FlyteidlcoreQualityOfServiceTier `json:"tier,omitempty"`
+	Spec *FlyteidlcoreQualityOfServiceSpec `json:"spec,omitempty"`
 }

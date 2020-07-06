@@ -2395,15 +2395,6 @@ definitions:
     - "UPLOAD_EAGER"
     - "DO_NOT_UPLOAD"
     default: "UPLOAD_ON_EXIT"
-  QualityOfServiceTier:
-    type: "string"
-    description: " - UNDEFINED: Default: no quality of service specified."
-    enum:
-    - "UNDEFINED"
-    - "HIGH"
-    - "MEDIUM"
-    - "LOW"
-    default: "UNDEFINED"
   ResourcesResourceEntry:
     type: "object"
     properties:
@@ -3272,9 +3263,8 @@ definitions:
         description: "Optional: auth override to apply this execution."
         $ref: "#/definitions/adminAuthRole"
       quality_of_service:
-        description: "Indicates the amount of queueing a launched workflow execution\
-          \ can tolerate."
-        $ref: "#/definitions/adminQualityOfService"
+        description: "Indicates the runtime priority of the execution."
+        $ref: "#/definitions/flyteidlcoreQualityOfService"
     description: "An ExecutionSpec encompasses all data used to launch this execution.\
       \ The Spec does not change over the lifetime\nof an execution as it progresses\
       \ across phase changes.."
@@ -4410,9 +4400,8 @@ definitions:
       auth_role:
         $ref: "#/definitions/adminAuthRole"
       quality_of_service:
-        description: "Indicates the amount of queueing a launched workflow execution\
-          \ can tolerate."
-        $ref: "#/definitions/adminQualityOfService"
+        description: "Indicates the runtime priority of the execution."
+        $ref: "#/definitions/flyteidlcoreQualityOfService"
     description: "User-provided launch plan definition and configuration values."
     example:
       workflow_id:
@@ -4597,7 +4586,7 @@ definitions:
           quality_of_service:
             tier: {}
             spec:
-              queueing_budget_mins: 5
+              queueing_budget_mins: 0
           cluster_resource_attributes:
             attributes:
               key: "attributes"
@@ -4626,7 +4615,7 @@ definitions:
           quality_of_service:
             tier: {}
             spec:
-              queueing_budget_mins: 5
+              queueing_budget_mins: 0
           cluster_resource_attributes:
             attributes:
               key: "attributes"
@@ -4686,7 +4675,7 @@ definitions:
         quality_of_service:
           tier: {}
           spec:
-            queueing_budget_mins: 5
+            queueing_budget_mins: 0
         cluster_resource_attributes:
           attributes:
             key: "attributes"
@@ -4735,14 +4724,14 @@ definitions:
       execution_cluster_label:
         $ref: "#/definitions/adminExecutionClusterLabel"
       quality_of_service:
-        $ref: "#/definitions/adminQualityOfService"
+        $ref: "#/definitions/flyteidladminQualityOfService"
     description: "Generic container for encapsulating all types of the above attributes\
       \ messages."
     example:
       quality_of_service:
         tier: {}
         spec:
-          queueing_budget_mins: 5
+          queueing_budget_mins: 0
       cluster_resource_attributes:
         attributes:
           key: "attributes"
@@ -5177,7 +5166,7 @@ definitions:
         quality_of_service:
           tier: {}
           spec:
-            queueing_budget_mins: 5
+            queueing_budget_mins: 0
         cluster_resource_attributes:
           attributes:
             key: "attributes"
@@ -5225,7 +5214,7 @@ definitions:
           quality_of_service:
             tier: {}
             spec:
-              queueing_budget_mins: 5
+              queueing_budget_mins: 0
           cluster_resource_attributes:
             attributes:
               key: "attributes"
@@ -5287,26 +5276,6 @@ definitions:
           id: "id"
         description: "description"
         id: "id"
-  adminQualityOfService:
-    type: "object"
-    properties:
-      tier:
-        $ref: "#/definitions/QualityOfServiceTier"
-      spec:
-        $ref: "#/definitions/adminQualityOfServiceSpec"
-    example:
-      tier: {}
-      spec:
-        queueing_budget_mins: 5
-  adminQualityOfServiceSpec:
-    type: "object"
-    properties:
-      queueing_budget_mins:
-        type: "integer"
-        format: "int64"
-        description: "Indicates how much queueing delay an execution can tolerate."
-    example:
-      queueing_budget_mins: 5
   adminSchedule:
     type: "object"
     properties:
@@ -6343,7 +6312,10 @@ definitions:
                     bindings: {}
               metadata:
                 on_failure: {}
-                queuing_budget: "queuing_budget"
+                queuing_budget:
+                  tier: {}
+                  spec:
+                    queueing_budget_mins: 5
               failure_node:
                 branch_node:
                   if_else:
@@ -7166,7 +7138,10 @@ definitions:
                     bindings: {}
               metadata:
                 on_failure: {}
-                queuing_budget: "queuing_budget"
+                queuing_budget:
+                  tier: {}
+                  spec:
+                    queueing_budget_mins: 5
               failure_node:
                 branch_node:
                   if_else:
@@ -8239,7 +8214,10 @@ definitions:
                     bindings: {}
               metadata:
                 on_failure: {}
-                queuing_budget: "queuing_budget"
+                queuing_budget:
+                  tier: {}
+                  spec:
+                    queueing_budget_mins: 5
               failure_node:
                 branch_node:
                   if_else:
@@ -8979,7 +8957,7 @@ definitions:
         quality_of_service:
           tier: {}
           spec:
-            queueing_budget_mins: 5
+            queueing_budget_mins: 0
         cluster_resource_attributes:
           attributes:
             key: "attributes"
@@ -9031,7 +9009,7 @@ definitions:
           quality_of_service:
             tier: {}
             spec:
-              queueing_budget_mins: 5
+              queueing_budget_mins: 0
           cluster_resource_attributes:
             attributes:
               key: "attributes"
@@ -9183,7 +9161,10 @@ definitions:
                   bindings: {}
             metadata:
               on_failure: {}
-              queuing_budget: "queuing_budget"
+              queuing_budget:
+                tier: {}
+                spec:
+                  queueing_budget_mins: 5
             failure_node:
               branch_node:
                 if_else:
@@ -10006,7 +9987,10 @@ definitions:
                   bindings: {}
             metadata:
               on_failure: {}
-              queuing_budget: "queuing_budget"
+              queuing_budget:
+                tier: {}
+                spec:
+                  queueing_budget_mins: 5
             failure_node:
               branch_node:
                 if_else:
@@ -11079,7 +11063,10 @@ definitions:
                   bindings: {}
             metadata:
               on_failure: {}
-              queuing_budget: "queuing_budget"
+              queuing_budget:
+                tier: {}
+                spec:
+                  queueing_budget_mins: 5
             failure_node:
               branch_node:
                 if_else:
@@ -11971,7 +11958,10 @@ definitions:
                       bindings: {}
                 metadata:
                   on_failure: {}
-                  queuing_budget: "queuing_budget"
+                  queuing_budget:
+                    tier: {}
+                    spec:
+                      queueing_budget_mins: 5
                 failure_node:
                   branch_node:
                     if_else:
@@ -12794,7 +12784,10 @@ definitions:
                       bindings: {}
                 metadata:
                   on_failure: {}
-                  queuing_budget: "queuing_budget"
+                  queuing_budget:
+                    tier: {}
+                    spec:
+                      queueing_budget_mins: 5
                 failure_node:
                   branch_node:
                     if_else:
@@ -13867,7 +13860,10 @@ definitions:
                       bindings: {}
                 metadata:
                   on_failure: {}
-                  queuing_budget: "queuing_budget"
+                  queuing_budget:
+                    tier: {}
+                    spec:
+                      queueing_budget_mins: 5
                 failure_node:
                   branch_node:
                     if_else:
@@ -14700,7 +14696,10 @@ definitions:
                       bindings: {}
                 metadata:
                   on_failure: {}
-                  queuing_budget: "queuing_budget"
+                  queuing_budget:
+                    tier: {}
+                    spec:
+                      queueing_budget_mins: 5
                 failure_node:
                   branch_node:
                     if_else:
@@ -15523,7 +15522,10 @@ definitions:
                       bindings: {}
                 metadata:
                   on_failure: {}
-                  queuing_budget: "queuing_budget"
+                  queuing_budget:
+                    tier: {}
+                    spec:
+                      queueing_budget_mins: 5
                 failure_node:
                   branch_node:
                     if_else:
@@ -16596,7 +16598,10 @@ definitions:
                       bindings: {}
                 metadata:
                   on_failure: {}
-                  queuing_budget: "queuing_budget"
+                  queuing_budget:
+                    tier: {}
+                    spec:
+                      queueing_budget_mins: 5
                 failure_node:
                   branch_node:
                     if_else:
@@ -17956,7 +17961,10 @@ definitions:
               bindings: {}
         metadata:
           on_failure: {}
-          queuing_budget: "queuing_budget"
+          queuing_budget:
+            tier: {}
+            spec:
+              queueing_budget_mins: 5
         failure_node:
           branch_node:
             if_else:
@@ -18806,7 +18814,10 @@ definitions:
                 bindings: {}
           metadata:
             on_failure: {}
-            queuing_budget: "queuing_budget"
+            queuing_budget:
+              tier: {}
+              spec:
+                queueing_budget_mins: 5
           failure_node:
             branch_node:
               if_else:
@@ -19629,7 +19640,10 @@ definitions:
                 bindings: {}
           metadata:
             on_failure: {}
-            queuing_budget: "queuing_budget"
+            queuing_budget:
+              tier: {}
+              spec:
+                queueing_budget_mins: 5
           failure_node:
             branch_node:
               if_else:
@@ -20702,7 +20716,10 @@ definitions:
                 bindings: {}
           metadata:
             on_failure: {}
-            queuing_budget: "queuing_budget"
+            queuing_budget:
+              tier: {}
+              spec:
+                queueing_budget_mins: 5
           failure_node:
             branch_node:
               if_else:
@@ -23095,8 +23112,8 @@ definitions:
     type: "object"
     properties:
       queuing_budget:
-        type: "string"
-        description: "Total wait time a workflow can be delayed by queueing."
+        description: "Indicates the runtime priority of workflow executions."
+        $ref: "#/definitions/flyteidlcoreQualityOfService"
       on_failure:
         description: "Defines how the system should behave when a failure is detected\
           \ in the workflow execution."
@@ -23105,7 +23122,10 @@ definitions:
       \ does not change the final outputs of the workflow."
     example:
       on_failure: {}
-      queuing_budget: "queuing_budget"
+      queuing_budget:
+        tier: {}
+        spec:
+          queueing_budget_mins: 5
   coreWorkflowMetadataDefaults:
     type: "object"
     properties:
@@ -23291,7 +23311,10 @@ definitions:
             bindings: {}
       metadata:
         on_failure: {}
-        queuing_budget: "queuing_budget"
+        queuing_budget:
+          tier: {}
+          spec:
+            queueing_budget_mins: 5
       failure_node:
         branch_node:
           if_else:
@@ -24157,6 +24180,35 @@ definitions:
           kind: {}
           message: "message"
           error_uri: "error_uri"
+  flyteidladminQualityOfService:
+    type: "object"
+    properties:
+      tier:
+        $ref: "#/definitions/flyteidladminQualityOfServiceTier"
+      spec:
+        $ref: "#/definitions/flyteidladminQualityOfServiceSpec"
+    example:
+      tier: {}
+      spec:
+        queueing_budget_mins: 0
+  flyteidladminQualityOfServiceSpec:
+    type: "object"
+    properties:
+      queueing_budget_mins:
+        type: "integer"
+        format: "int64"
+        description: "Indicates how much queueing delay an execution can tolerate."
+    example:
+      queueing_budget_mins: 0
+  flyteidladminQualityOfServiceTier:
+    type: "string"
+    description: " - UNDEFINED: Default: no quality of service specified."
+    enum:
+    - "UNDEFINED"
+    - "HIGH"
+    - "MEDIUM"
+    - "LOW"
+    default: "UNDEFINED"
   flyteidladminTaskExecution:
     type: "object"
     properties:
@@ -24237,6 +24289,37 @@ definitions:
         domain: "domain"
         name: "name"
         project: "project"
+  flyteidlcoreQualityOfService:
+    type: "object"
+    properties:
+      tier:
+        $ref: "#/definitions/flyteidlcoreQualityOfServiceTier"
+      spec:
+        $ref: "#/definitions/flyteidlcoreQualityOfServiceSpec"
+    description: "Indicates the priority of an execution."
+    example:
+      tier: {}
+      spec:
+        queueing_budget_mins: 5
+  flyteidlcoreQualityOfServiceSpec:
+    type: "object"
+    properties:
+      queueing_budget_mins:
+        type: "integer"
+        format: "int64"
+        description: "Indicates how much queueing delay an execution can tolerate."
+    description: "Represents customized execution run-time attributes."
+    example:
+      queueing_budget_mins: 5
+  flyteidlcoreQualityOfServiceTier:
+    type: "string"
+    description: " - UNDEFINED: Default: no quality of service specified."
+    enum:
+    - "UNDEFINED"
+    - "HIGH"
+    - "MEDIUM"
+    - "LOW"
+    default: "UNDEFINED"
   flyteidlcoreSchema:
     type: "object"
     properties:
