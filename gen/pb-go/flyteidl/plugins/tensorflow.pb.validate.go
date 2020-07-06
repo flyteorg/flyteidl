@@ -46,9 +46,9 @@ func (m *DistributedTensorflowTrainingTask) Validate() error {
 
 	// no validation rules for Workers
 
-	// no validation rules for Ps
+	// no validation rules for PsReplicas
 
-	// no validation rules for Chief
+	// no validation rules for ChiefReplicas
 
 	return nil
 }

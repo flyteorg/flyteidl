@@ -8,6 +8,7 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
 message DistributedTensorflowTrainingTask {
   // number of worker, ps, chief replicas spawned in the cluster for this job
   int32 workers = 1;
-  int32 ps = 2;
-  int32 chief = 3;
+  // PS -> Parameter server
+  int32 ps_replicas = 2;
+  int32 chief_replicas = 3;
 } 

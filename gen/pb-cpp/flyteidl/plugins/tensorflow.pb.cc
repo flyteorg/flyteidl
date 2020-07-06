@@ -53,8 +53,8 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2ftensorflow_2ep
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DistributedTensorflowTrainingTask, workers_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DistributedTensorflowTrainingTask, ps_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DistributedTensorflowTrainingTask, chief_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DistributedTensorflowTrainingTask, ps_replicas_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DistributedTensorflowTrainingTask, chief_replicas_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::DistributedTensorflowTrainingTask)},
@@ -72,15 +72,16 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2ftensorflow_2eproto[] =
   "\n!flyteidl/plugins/tensorflow.proto\022\020fly"
-  "teidl.plugins\"O\n!DistributedTensorflowTr"
-  "ainingTask\022\017\n\007workers\030\001 \001(\005\022\n\n\002ps\030\002 \001(\005\022"
-  "\r\n\005chief\030\003 \001(\005B5Z3github.com/lyft/flytei"
-  "dl/gen/pb-go/flyteidl/pluginsb\006proto3"
+  "teidl.plugins\"a\n!DistributedTensorflowTr"
+  "ainingTask\022\017\n\007workers\030\001 \001(\005\022\023\n\013ps_replic"
+  "as\030\002 \001(\005\022\026\n\016chief_replicas\030\003 \001(\005B5Z3gith"
+  "ub.com/lyft/flyteidl/gen/pb-go/flyteidl/"
+  "pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2ftensorflow_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2ftensorflow_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2ftensorflow_2eproto,
-  "flyteidl/plugins/tensorflow.proto", &assign_descriptors_table_flyteidl_2fplugins_2ftensorflow_2eproto, 197,
+  "flyteidl/plugins/tensorflow.proto", &assign_descriptors_table_flyteidl_2fplugins_2ftensorflow_2eproto, 215,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2ftensorflow_2eproto() {
@@ -105,8 +106,8 @@ class DistributedTensorflowTrainingTask::HasBitSetters {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int DistributedTensorflowTrainingTask::kWorkersFieldNumber;
-const int DistributedTensorflowTrainingTask::kPsFieldNumber;
-const int DistributedTensorflowTrainingTask::kChiefFieldNumber;
+const int DistributedTensorflowTrainingTask::kPsReplicasFieldNumber;
+const int DistributedTensorflowTrainingTask::kChiefReplicasFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 DistributedTensorflowTrainingTask::DistributedTensorflowTrainingTask()
@@ -119,15 +120,15 @@ DistributedTensorflowTrainingTask::DistributedTensorflowTrainingTask(const Distr
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&workers_, &from.workers_,
-    static_cast<size_t>(reinterpret_cast<char*>(&chief_) -
-    reinterpret_cast<char*>(&workers_)) + sizeof(chief_));
+    static_cast<size_t>(reinterpret_cast<char*>(&chief_replicas_) -
+    reinterpret_cast<char*>(&workers_)) + sizeof(chief_replicas_));
   // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.DistributedTensorflowTrainingTask)
 }
 
 void DistributedTensorflowTrainingTask::SharedCtor() {
   ::memset(&workers_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&chief_) -
-      reinterpret_cast<char*>(&workers_)) + sizeof(chief_));
+      reinterpret_cast<char*>(&chief_replicas_) -
+      reinterpret_cast<char*>(&workers_)) + sizeof(chief_replicas_));
 }
 
 DistributedTensorflowTrainingTask::~DistributedTensorflowTrainingTask() {
@@ -154,8 +155,8 @@ void DistributedTensorflowTrainingTask::Clear() {
   (void) cached_has_bits;
 
   ::memset(&workers_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&chief_) -
-      reinterpret_cast<char*>(&workers_)) + sizeof(chief_));
+      reinterpret_cast<char*>(&chief_replicas_) -
+      reinterpret_cast<char*>(&workers_)) + sizeof(chief_replicas_));
   _internal_metadata_.Clear();
 }
 
@@ -179,17 +180,17 @@ const char* DistributedTensorflowTrainingTask::_InternalParse(const char* begin,
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // int32 ps = 2;
+      // int32 ps_replicas = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
-        msg->set_ps(::google::protobuf::internal::ReadVarint(&ptr));
+        msg->set_ps_replicas(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // int32 chief = 3;
+      // int32 chief_replicas = 3;
       case 3: {
         if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
-        msg->set_chief(::google::protobuf::internal::ReadVarint(&ptr));
+        msg->set_chief_replicas(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -233,26 +234,26 @@ bool DistributedTensorflowTrainingTask::MergePartialFromCodedStream(
         break;
       }
 
-      // int32 ps = 2;
+      // int32 ps_replicas = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &ps_)));
+                 input, &ps_replicas_)));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // int32 chief = 3;
+      // int32 chief_replicas = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &chief_)));
+                 input, &chief_replicas_)));
         } else {
           goto handle_unusual;
         }
@@ -291,14 +292,14 @@ void DistributedTensorflowTrainingTask::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->workers(), output);
   }
 
-  // int32 ps = 2;
-  if (this->ps() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->ps(), output);
+  // int32 ps_replicas = 2;
+  if (this->ps_replicas() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->ps_replicas(), output);
   }
 
-  // int32 chief = 3;
-  if (this->chief() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->chief(), output);
+  // int32 chief_replicas = 3;
+  if (this->chief_replicas() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->chief_replicas(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -319,14 +320,14 @@ void DistributedTensorflowTrainingTask::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->workers(), target);
   }
 
-  // int32 ps = 2;
-  if (this->ps() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->ps(), target);
+  // int32 ps_replicas = 2;
+  if (this->ps_replicas() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->ps_replicas(), target);
   }
 
-  // int32 chief = 3;
-  if (this->chief() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->chief(), target);
+  // int32 chief_replicas = 3;
+  if (this->chief_replicas() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->chief_replicas(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -357,18 +358,18 @@ size_t DistributedTensorflowTrainingTask::ByteSizeLong() const {
         this->workers());
   }
 
-  // int32 ps = 2;
-  if (this->ps() != 0) {
+  // int32 ps_replicas = 2;
+  if (this->ps_replicas() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->ps());
+        this->ps_replicas());
   }
 
-  // int32 chief = 3;
-  if (this->chief() != 0) {
+  // int32 chief_replicas = 3;
+  if (this->chief_replicas() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->chief());
+        this->chief_replicas());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -401,11 +402,11 @@ void DistributedTensorflowTrainingTask::MergeFrom(const DistributedTensorflowTra
   if (from.workers() != 0) {
     set_workers(from.workers());
   }
-  if (from.ps() != 0) {
-    set_ps(from.ps());
+  if (from.ps_replicas() != 0) {
+    set_ps_replicas(from.ps_replicas());
   }
-  if (from.chief() != 0) {
-    set_chief(from.chief());
+  if (from.chief_replicas() != 0) {
+    set_chief_replicas(from.chief_replicas());
   }
 }
 
@@ -435,8 +436,8 @@ void DistributedTensorflowTrainingTask::InternalSwap(DistributedTensorflowTraini
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(workers_, other->workers_);
-  swap(ps_, other->ps_);
-  swap(chief_, other->chief_);
+  swap(ps_replicas_, other->ps_replicas_);
+  swap(chief_replicas_, other->chief_replicas_);
 }
 
 ::google::protobuf::Metadata DistributedTensorflowTrainingTask::GetMetadata() const {

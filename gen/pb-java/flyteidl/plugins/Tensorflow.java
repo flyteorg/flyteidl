@@ -28,14 +28,18 @@ public final class Tensorflow {
     int getWorkers();
 
     /**
-     * <code>int32 ps = 2;</code>
+     * <pre>
+     * PS -&gt; Parameter server
+     * </pre>
+     *
+     * <code>int32 ps_replicas = 2;</code>
      */
-    int getPs();
+    int getPsReplicas();
 
     /**
-     * <code>int32 chief = 3;</code>
+     * <code>int32 chief_replicas = 3;</code>
      */
-    int getChief();
+    int getChiefReplicas();
   }
   /**
    * <pre>
@@ -87,12 +91,12 @@ public final class Tensorflow {
             }
             case 16: {
 
-              ps_ = input.readInt32();
+              psReplicas_ = input.readInt32();
               break;
             }
             case 24: {
 
-              chief_ = input.readInt32();
+              chiefReplicas_ = input.readInt32();
               break;
             }
             default: {
@@ -140,22 +144,26 @@ public final class Tensorflow {
       return workers_;
     }
 
-    public static final int PS_FIELD_NUMBER = 2;
-    private int ps_;
+    public static final int PS_REPLICAS_FIELD_NUMBER = 2;
+    private int psReplicas_;
     /**
-     * <code>int32 ps = 2;</code>
+     * <pre>
+     * PS -&gt; Parameter server
+     * </pre>
+     *
+     * <code>int32 ps_replicas = 2;</code>
      */
-    public int getPs() {
-      return ps_;
+    public int getPsReplicas() {
+      return psReplicas_;
     }
 
-    public static final int CHIEF_FIELD_NUMBER = 3;
-    private int chief_;
+    public static final int CHIEF_REPLICAS_FIELD_NUMBER = 3;
+    private int chiefReplicas_;
     /**
-     * <code>int32 chief = 3;</code>
+     * <code>int32 chief_replicas = 3;</code>
      */
-    public int getChief() {
-      return chief_;
+    public int getChiefReplicas() {
+      return chiefReplicas_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -175,11 +183,11 @@ public final class Tensorflow {
       if (workers_ != 0) {
         output.writeInt32(1, workers_);
       }
-      if (ps_ != 0) {
-        output.writeInt32(2, ps_);
+      if (psReplicas_ != 0) {
+        output.writeInt32(2, psReplicas_);
       }
-      if (chief_ != 0) {
-        output.writeInt32(3, chief_);
+      if (chiefReplicas_ != 0) {
+        output.writeInt32(3, chiefReplicas_);
       }
       unknownFields.writeTo(output);
     }
@@ -194,13 +202,13 @@ public final class Tensorflow {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, workers_);
       }
-      if (ps_ != 0) {
+      if (psReplicas_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, ps_);
+          .computeInt32Size(2, psReplicas_);
       }
-      if (chief_ != 0) {
+      if (chiefReplicas_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, chief_);
+          .computeInt32Size(3, chiefReplicas_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -219,10 +227,10 @@ public final class Tensorflow {
 
       if (getWorkers()
           != other.getWorkers()) return false;
-      if (getPs()
-          != other.getPs()) return false;
-      if (getChief()
-          != other.getChief()) return false;
+      if (getPsReplicas()
+          != other.getPsReplicas()) return false;
+      if (getChiefReplicas()
+          != other.getChiefReplicas()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -236,10 +244,10 @@ public final class Tensorflow {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + WORKERS_FIELD_NUMBER;
       hash = (53 * hash) + getWorkers();
-      hash = (37 * hash) + PS_FIELD_NUMBER;
-      hash = (53 * hash) + getPs();
-      hash = (37 * hash) + CHIEF_FIELD_NUMBER;
-      hash = (53 * hash) + getChief();
+      hash = (37 * hash) + PS_REPLICAS_FIELD_NUMBER;
+      hash = (53 * hash) + getPsReplicas();
+      hash = (37 * hash) + CHIEF_REPLICAS_FIELD_NUMBER;
+      hash = (53 * hash) + getChiefReplicas();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -379,9 +387,9 @@ public final class Tensorflow {
         super.clear();
         workers_ = 0;
 
-        ps_ = 0;
+        psReplicas_ = 0;
 
-        chief_ = 0;
+        chiefReplicas_ = 0;
 
         return this;
       }
@@ -410,8 +418,8 @@ public final class Tensorflow {
       public flyteidl.plugins.Tensorflow.DistributedTensorflowTrainingTask buildPartial() {
         flyteidl.plugins.Tensorflow.DistributedTensorflowTrainingTask result = new flyteidl.plugins.Tensorflow.DistributedTensorflowTrainingTask(this);
         result.workers_ = workers_;
-        result.ps_ = ps_;
-        result.chief_ = chief_;
+        result.psReplicas_ = psReplicas_;
+        result.chiefReplicas_ = chiefReplicas_;
         onBuilt();
         return result;
       }
@@ -463,11 +471,11 @@ public final class Tensorflow {
         if (other.getWorkers() != 0) {
           setWorkers(other.getWorkers());
         }
-        if (other.getPs() != 0) {
-          setPs(other.getPs());
+        if (other.getPsReplicas() != 0) {
+          setPsReplicas(other.getPsReplicas());
         }
-        if (other.getChief() != 0) {
-          setChief(other.getChief());
+        if (other.getChiefReplicas() != 0) {
+          setChiefReplicas(other.getChiefReplicas());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -536,54 +544,66 @@ public final class Tensorflow {
         return this;
       }
 
-      private int ps_ ;
+      private int psReplicas_ ;
       /**
-       * <code>int32 ps = 2;</code>
+       * <pre>
+       * PS -&gt; Parameter server
+       * </pre>
+       *
+       * <code>int32 ps_replicas = 2;</code>
        */
-      public int getPs() {
-        return ps_;
+      public int getPsReplicas() {
+        return psReplicas_;
       }
       /**
-       * <code>int32 ps = 2;</code>
+       * <pre>
+       * PS -&gt; Parameter server
+       * </pre>
+       *
+       * <code>int32 ps_replicas = 2;</code>
        */
-      public Builder setPs(int value) {
+      public Builder setPsReplicas(int value) {
         
-        ps_ = value;
+        psReplicas_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 ps = 2;</code>
+       * <pre>
+       * PS -&gt; Parameter server
+       * </pre>
+       *
+       * <code>int32 ps_replicas = 2;</code>
        */
-      public Builder clearPs() {
+      public Builder clearPsReplicas() {
         
-        ps_ = 0;
+        psReplicas_ = 0;
         onChanged();
         return this;
       }
 
-      private int chief_ ;
+      private int chiefReplicas_ ;
       /**
-       * <code>int32 chief = 3;</code>
+       * <code>int32 chief_replicas = 3;</code>
        */
-      public int getChief() {
-        return chief_;
+      public int getChiefReplicas() {
+        return chiefReplicas_;
       }
       /**
-       * <code>int32 chief = 3;</code>
+       * <code>int32 chief_replicas = 3;</code>
        */
-      public Builder setChief(int value) {
+      public Builder setChiefReplicas(int value) {
         
-        chief_ = value;
+        chiefReplicas_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 chief = 3;</code>
+       * <code>int32 chief_replicas = 3;</code>
        */
-      public Builder clearChief() {
+      public Builder clearChiefReplicas() {
         
-        chief_ = 0;
+        chiefReplicas_ = 0;
         onChanged();
         return this;
       }
@@ -655,10 +675,11 @@ public final class Tensorflow {
   static {
     java.lang.String[] descriptorData = {
       "\n!flyteidl/plugins/tensorflow.proto\022\020fly" +
-      "teidl.plugins\"O\n!DistributedTensorflowTr" +
-      "ainingTask\022\017\n\007workers\030\001 \001(\005\022\n\n\002ps\030\002 \001(\005\022" +
-      "\r\n\005chief\030\003 \001(\005B5Z3github.com/lyft/flytei" +
-      "dl/gen/pb-go/flyteidl/pluginsb\006proto3"
+      "teidl.plugins\"a\n!DistributedTensorflowTr" +
+      "ainingTask\022\017\n\007workers\030\001 \001(\005\022\023\n\013ps_replic" +
+      "as\030\002 \001(\005\022\026\n\016chief_replicas\030\003 \001(\005B5Z3gith" +
+      "ub.com/lyft/flyteidl/gen/pb-go/flyteidl/" +
+      "pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -677,7 +698,7 @@ public final class Tensorflow {
     internal_static_flyteidl_plugins_DistributedTensorflowTrainingTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_DistributedTensorflowTrainingTask_descriptor,
-        new java.lang.String[] { "Workers", "Ps", "Chief", });
+        new java.lang.String[] { "Workers", "PsReplicas", "ChiefReplicas", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

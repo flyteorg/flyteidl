@@ -166,17 +166,17 @@ class DistributedTensorflowTrainingTask final :
   ::google::protobuf::int32 workers() const;
   void set_workers(::google::protobuf::int32 value);
 
-  // int32 ps = 2;
-  void clear_ps();
-  static const int kPsFieldNumber = 2;
-  ::google::protobuf::int32 ps() const;
-  void set_ps(::google::protobuf::int32 value);
+  // int32 ps_replicas = 2;
+  void clear_ps_replicas();
+  static const int kPsReplicasFieldNumber = 2;
+  ::google::protobuf::int32 ps_replicas() const;
+  void set_ps_replicas(::google::protobuf::int32 value);
 
-  // int32 chief = 3;
-  void clear_chief();
-  static const int kChiefFieldNumber = 3;
-  ::google::protobuf::int32 chief() const;
-  void set_chief(::google::protobuf::int32 value);
+  // int32 chief_replicas = 3;
+  void clear_chief_replicas();
+  static const int kChiefReplicasFieldNumber = 3;
+  ::google::protobuf::int32 chief_replicas() const;
+  void set_chief_replicas(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.DistributedTensorflowTrainingTask)
  private:
@@ -184,8 +184,8 @@ class DistributedTensorflowTrainingTask final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::int32 workers_;
-  ::google::protobuf::int32 ps_;
-  ::google::protobuf::int32 chief_;
+  ::google::protobuf::int32 ps_replicas_;
+  ::google::protobuf::int32 chief_replicas_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2ftensorflow_2eproto;
 };
@@ -214,32 +214,32 @@ inline void DistributedTensorflowTrainingTask::set_workers(::google::protobuf::i
   // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedTensorflowTrainingTask.workers)
 }
 
-// int32 ps = 2;
-inline void DistributedTensorflowTrainingTask::clear_ps() {
-  ps_ = 0;
+// int32 ps_replicas = 2;
+inline void DistributedTensorflowTrainingTask::clear_ps_replicas() {
+  ps_replicas_ = 0;
 }
-inline ::google::protobuf::int32 DistributedTensorflowTrainingTask::ps() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedTensorflowTrainingTask.ps)
-  return ps_;
+inline ::google::protobuf::int32 DistributedTensorflowTrainingTask::ps_replicas() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedTensorflowTrainingTask.ps_replicas)
+  return ps_replicas_;
 }
-inline void DistributedTensorflowTrainingTask::set_ps(::google::protobuf::int32 value) {
+inline void DistributedTensorflowTrainingTask::set_ps_replicas(::google::protobuf::int32 value) {
   
-  ps_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedTensorflowTrainingTask.ps)
+  ps_replicas_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedTensorflowTrainingTask.ps_replicas)
 }
 
-// int32 chief = 3;
-inline void DistributedTensorflowTrainingTask::clear_chief() {
-  chief_ = 0;
+// int32 chief_replicas = 3;
+inline void DistributedTensorflowTrainingTask::clear_chief_replicas() {
+  chief_replicas_ = 0;
 }
-inline ::google::protobuf::int32 DistributedTensorflowTrainingTask::chief() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedTensorflowTrainingTask.chief)
-  return chief_;
+inline ::google::protobuf::int32 DistributedTensorflowTrainingTask::chief_replicas() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedTensorflowTrainingTask.chief_replicas)
+  return chief_replicas_;
 }
-inline void DistributedTensorflowTrainingTask::set_chief(::google::protobuf::int32 value) {
+inline void DistributedTensorflowTrainingTask::set_chief_replicas(::google::protobuf::int32 value) {
   
-  chief_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedTensorflowTrainingTask.chief)
+  chief_replicas_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedTensorflowTrainingTask.chief_replicas)
 }
 
 #ifdef __GNUC__

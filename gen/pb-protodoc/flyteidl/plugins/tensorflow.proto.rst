@@ -16,8 +16,8 @@ Custom proto for plugin that enables distributed training using https://github.c
 
   {
     "workers": "...",
-    "ps": "...",
-    "chief": "..."
+    "ps_replicas": "...",
+    "chief_replicas": "..."
   }
 
 .. _api_field_flyteidl.plugins.DistributedTensorflowTrainingTask.workers:
@@ -26,14 +26,15 @@ workers
   (`int32 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) number of worker, ps, chief replicas spawned in the cluster for this job
   
   
-.. _api_field_flyteidl.plugins.DistributedTensorflowTrainingTask.ps:
+.. _api_field_flyteidl.plugins.DistributedTensorflowTrainingTask.ps_replicas:
 
-ps
-  (`int32 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
+ps_replicas
+  (`int32 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) PS -> Parameter server
   
-.. _api_field_flyteidl.plugins.DistributedTensorflowTrainingTask.chief:
+  
+.. _api_field_flyteidl.plugins.DistributedTensorflowTrainingTask.chief_replicas:
 
-chief
+chief_replicas
   (`int32 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 
