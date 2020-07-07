@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.event_task_node_metadata import EventTaskNodeMetadata  # noqa: E501
+from flyteadmin.models.core_catalog_artifact_tag import CoreCatalogArtifactTag  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestEventTaskNodeMetadata(unittest.TestCase):
-    """EventTaskNodeMetadata unit test stubs"""
+class TestCoreCatalogArtifactTag(unittest.TestCase):
+    """CoreCatalogArtifactTag unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestEventTaskNodeMetadata(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testEventTaskNodeMetadata(self):
-        """Test EventTaskNodeMetadata"""
+    def testCoreCatalogArtifactTag(self):
+        """Test CoreCatalogArtifactTag"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.event_task_node_metadata.EventTaskNodeMetadata()  # noqa: E501
+        # model = flyteadmin.models.core_catalog_artifact_tag.CoreCatalogArtifactTag()  # noqa: E501
         pass
 
 

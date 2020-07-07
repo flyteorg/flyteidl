@@ -20,7 +20,7 @@ from flyteadmin.models.core_execution_error import CoreExecutionError  # noqa: F
 from flyteadmin.models.core_node_execution_identifier import CoreNodeExecutionIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_node_execution_phase import CoreNodeExecutionPhase  # noqa: F401,E501
 from flyteadmin.models.event_parent_task_execution_metadata import EventParentTaskExecutionMetadata  # noqa: F401,E501
-from flyteadmin.models.event_task_node_metadata import EventTaskNodeMetadata  # noqa: F401,E501
+from flyteadmin.models.flyteidlevent_task_node_metadata import FlyteidleventTaskNodeMetadata  # noqa: F401,E501
 from flyteadmin.models.flyteidlevent_workflow_node_metadata import FlyteidleventWorkflowNodeMetadata  # noqa: F401,E501
 
 
@@ -46,7 +46,7 @@ class EventNodeExecutionEvent(object):
         'output_uri': 'str',
         'error': 'CoreExecutionError',
         'workflow_node_metadata': 'FlyteidleventWorkflowNodeMetadata',
-        'task_node_metadata': 'EventTaskNodeMetadata',
+        'task_node_metadata': 'FlyteidleventTaskNodeMetadata',
         'parent_task_metadata': 'EventParentTaskExecutionMetadata'
     }
 
@@ -277,7 +277,7 @@ class EventNodeExecutionEvent(object):
 
 
         :return: The task_node_metadata of this EventNodeExecutionEvent.  # noqa: E501
-        :rtype: EventTaskNodeMetadata
+        :rtype: FlyteidleventTaskNodeMetadata
         """
         return self._task_node_metadata
 
@@ -287,7 +287,7 @@ class EventNodeExecutionEvent(object):
 
 
         :param task_node_metadata: The task_node_metadata of this EventNodeExecutionEvent.  # noqa: E501
-        :type: EventTaskNodeMetadata
+        :type: FlyteidleventTaskNodeMetadata
         """
 
         self._task_node_metadata = task_node_metadata

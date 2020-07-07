@@ -9,8 +9,8 @@
 
 package flyteadmin
 
-type EventCatalogMetadata struct {
-	DatasetId *CoreIdentifier `json:"dataset_id,omitempty"`
-	ArtifactTag *EventCatalogArtifactTag `json:"artifact_tag,omitempty"`
-	SourceTaskExecution *CoreTaskExecutionIdentifier `json:"source_task_execution,omitempty"`
+type FlyteidladminTaskNodeMetadata struct {
+	// Captures the status of caching for this execution.
+	CacheStatus *CoreCatalogCacheStatus `json:"cache_status,omitempty"`
+	CatalogKey *CoreCatalogMetadata `json:"catalog_key,omitempty"`
 }

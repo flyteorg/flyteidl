@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.event_catalog_cache_status import EventCatalogCacheStatus  # noqa: E501
+from flyteadmin.models.flyteidlevent_task_node_metadata import FlyteidleventTaskNodeMetadata  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestEventCatalogCacheStatus(unittest.TestCase):
-    """EventCatalogCacheStatus unit test stubs"""
+class TestFlyteidleventTaskNodeMetadata(unittest.TestCase):
+    """FlyteidleventTaskNodeMetadata unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestEventCatalogCacheStatus(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testEventCatalogCacheStatus(self):
-        """Test EventCatalogCacheStatus"""
+    def testFlyteidleventTaskNodeMetadata(self):
+        """Test FlyteidleventTaskNodeMetadata"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.event_catalog_cache_status.EventCatalogCacheStatus()  # noqa: E501
+        # model = flyteadmin.models.flyteidlevent_task_node_metadata.FlyteidleventTaskNodeMetadata()  # noqa: E501
         pass
 
 

@@ -9,8 +9,7 @@
 
 package flyteadmin
 
-type EventTaskNodeMetadata struct {
-	// Captures the status of caching for this execution.
-	CacheStatus *EventCatalogCacheStatus `json:"cache_status,omitempty"`
-	CatalogKey *EventCatalogMetadata `json:"catalog_key,omitempty"`
+type CoreCatalogArtifactTag struct {
+	ArtifactId string `json:"artifact_id,omitempty"`
+	Name string `json:"name,omitempty"`
 }

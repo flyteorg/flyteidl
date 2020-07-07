@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.event_catalog_artifact_tag import EventCatalogArtifactTag  # noqa: E501
+from flyteadmin.models.core_catalog_cache_status import CoreCatalogCacheStatus  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestEventCatalogArtifactTag(unittest.TestCase):
-    """EventCatalogArtifactTag unit test stubs"""
+class TestCoreCatalogCacheStatus(unittest.TestCase):
+    """CoreCatalogCacheStatus unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestEventCatalogArtifactTag(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testEventCatalogArtifactTag(self):
-        """Test EventCatalogArtifactTag"""
+    def testCoreCatalogCacheStatus(self):
+        """Test CoreCatalogCacheStatus"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.event_catalog_artifact_tag.EventCatalogArtifactTag()  # noqa: E501
+        # model = flyteadmin.models.core_catalog_cache_status.CoreCatalogCacheStatus()  # noqa: E501
         pass
 
 

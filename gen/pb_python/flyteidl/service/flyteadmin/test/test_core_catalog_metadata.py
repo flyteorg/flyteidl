@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.event_catalog_metadata import EventCatalogMetadata  # noqa: E501
+from flyteadmin.models.core_catalog_metadata import CoreCatalogMetadata  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestEventCatalogMetadata(unittest.TestCase):
-    """EventCatalogMetadata unit test stubs"""
+class TestCoreCatalogMetadata(unittest.TestCase):
+    """CoreCatalogMetadata unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestEventCatalogMetadata(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testEventCatalogMetadata(self):
-        """Test EventCatalogMetadata"""
+    def testCoreCatalogMetadata(self):
+        """Test CoreCatalogMetadata"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.event_catalog_metadata.EventCatalogMetadata()  # noqa: E501
+        # model = flyteadmin.models.core_catalog_metadata.CoreCatalogMetadata()  # noqa: E501
         pass
 
 
