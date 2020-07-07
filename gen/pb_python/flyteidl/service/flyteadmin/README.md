@@ -284,6 +284,7 @@ Class | Method | HTTP request | Description
  - [CoreWorkflowNode](docs/CoreWorkflowNode.md)
  - [CoreWorkflowTemplate](docs/CoreWorkflowTemplate.md)
  - [DataLoadingConfigLiteralMapFormat](docs/DataLoadingConfigLiteralMapFormat.md)
+ - [EventCatalogArtifactTag](docs/EventCatalogArtifactTag.md)
  - [EventCatalogCacheStatus](docs/EventCatalogCacheStatus.md)
  - [EventCatalogMetadata](docs/EventCatalogMetadata.md)
  - [EventNodeExecutionEvent](docs/EventNodeExecutionEvent.md)

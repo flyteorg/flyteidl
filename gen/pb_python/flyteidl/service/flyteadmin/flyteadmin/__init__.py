@@ -187,6 +187,7 @@ from flyteadmin.models.core_workflow_metadata_defaults import CoreWorkflowMetada
 from flyteadmin.models.core_workflow_node import CoreWorkflowNode
 from flyteadmin.models.core_workflow_template import CoreWorkflowTemplate
 from flyteadmin.models.data_loading_config_literal_map_format import DataLoadingConfigLiteralMapFormat
+from flyteadmin.models.event_catalog_artifact_tag import EventCatalogArtifactTag
 from flyteadmin.models.event_catalog_cache_status import EventCatalogCacheStatus
 from flyteadmin.models.event_catalog_metadata import EventCatalogMetadata
 from flyteadmin.models.event_node_execution_event import EventNodeExecutionEvent

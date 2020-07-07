@@ -17,7 +17,8 @@ import re  # noqa: F401
 import six
 
 from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
-from flyteadmin.models.core_workflow_execution_identifier import CoreWorkflowExecutionIdentifier  # noqa: F401,E501
+from flyteadmin.models.core_task_execution_identifier import CoreTaskExecutionIdentifier  # noqa: F401,E501
+from flyteadmin.models.event_catalog_artifact_tag import EventCatalogArtifactTag  # noqa: F401,E501
 
 
 class EventCatalogMetadata(object):
@@ -35,30 +36,30 @@ class EventCatalogMetadata(object):
     """
     swagger_types = {
         'dataset_id': 'CoreIdentifier',
-        'artifact_tag': 'str',
-        'source_execution_id': 'CoreWorkflowExecutionIdentifier'
+        'artifact_tag': 'EventCatalogArtifactTag',
+        'source_task_execution': 'CoreTaskExecutionIdentifier'
     }
 
     attribute_map = {
         'dataset_id': 'dataset_id',
         'artifact_tag': 'artifact_tag',
-        'source_execution_id': 'source_execution_id'
+        'source_task_execution': 'source_task_execution'
     }
 
-    def __init__(self, dataset_id=None, artifact_tag=None, source_execution_id=None):  # noqa: E501
+    def __init__(self, dataset_id=None, artifact_tag=None, source_task_execution=None):  # noqa: E501
         """EventCatalogMetadata - a model defined in Swagger"""  # noqa: E501
 
         self._dataset_id = None
         self._artifact_tag = None
-        self._source_execution_id = None
+        self._source_task_execution = None
         self.discriminator = None
 
         if dataset_id is not None:
             self.dataset_id = dataset_id
         if artifact_tag is not None:
             self.artifact_tag = artifact_tag
-        if source_execution_id is not None:
-            self.source_execution_id = source_execution_id
+        if source_task_execution is not None:
+            self.source_task_execution = source_task_execution
 
     @property
     def dataset_id(self):
@@ -87,7 +88,7 @@ class EventCatalogMetadata(object):
 
 
         :return: The artifact_tag of this EventCatalogMetadata.  # noqa: E501
-        :rtype: str
+        :rtype: EventCatalogArtifactTag
         """
         return self._artifact_tag
 
@@ -97,31 +98,31 @@ class EventCatalogMetadata(object):
 
 
         :param artifact_tag: The artifact_tag of this EventCatalogMetadata.  # noqa: E501
-        :type: str
+        :type: EventCatalogArtifactTag
         """
 
         self._artifact_tag = artifact_tag
 
     @property
-    def source_execution_id(self):
-        """Gets the source_execution_id of this EventCatalogMetadata.  # noqa: E501
+    def source_task_execution(self):
+        """Gets the source_task_execution of this EventCatalogMetadata.  # noqa: E501
 
 
-        :return: The source_execution_id of this EventCatalogMetadata.  # noqa: E501
-        :rtype: CoreWorkflowExecutionIdentifier
+        :return: The source_task_execution of this EventCatalogMetadata.  # noqa: E501
+        :rtype: CoreTaskExecutionIdentifier
         """
-        return self._source_execution_id
+        return self._source_task_execution
 
-    @source_execution_id.setter
-    def source_execution_id(self, source_execution_id):
-        """Sets the source_execution_id of this EventCatalogMetadata.
+    @source_task_execution.setter
+    def source_task_execution(self, source_task_execution):
+        """Sets the source_task_execution of this EventCatalogMetadata.
 
 
-        :param source_execution_id: The source_execution_id of this EventCatalogMetadata.  # noqa: E501
-        :type: CoreWorkflowExecutionIdentifier
+        :param source_task_execution: The source_task_execution of this EventCatalogMetadata.  # noqa: E501
+        :type: CoreTaskExecutionIdentifier
         """
 
-        self._source_execution_id = source_execution_id
+        self._source_task_execution = source_task_execution
 
     def to_dict(self):
         """Returns the model properties as a dict"""

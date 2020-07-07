@@ -4785,6 +4785,64 @@ export namespace flyteidl {
             CACHE_PUT_FAILURE = 5
         }
 
+        /** Properties of a CatalogArtifactTag. */
+        interface ICatalogArtifactTag {
+
+            /** CatalogArtifactTag artifactId */
+            artifactId?: (string|null);
+
+            /** CatalogArtifactTag name */
+            name?: (string|null);
+        }
+
+        /** Represents a CatalogArtifactTag. */
+        class CatalogArtifactTag implements ICatalogArtifactTag {
+
+            /**
+             * Constructs a new CatalogArtifactTag.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.event.ICatalogArtifactTag);
+
+            /** CatalogArtifactTag artifactId. */
+            public artifactId: string;
+
+            /** CatalogArtifactTag name. */
+            public name: string;
+
+            /**
+             * Creates a new CatalogArtifactTag instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CatalogArtifactTag instance
+             */
+            public static create(properties?: flyteidl.event.ICatalogArtifactTag): flyteidl.event.CatalogArtifactTag;
+
+            /**
+             * Encodes the specified CatalogArtifactTag message. Does not implicitly {@link flyteidl.event.CatalogArtifactTag.verify|verify} messages.
+             * @param message CatalogArtifactTag message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.event.ICatalogArtifactTag, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CatalogArtifactTag message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CatalogArtifactTag
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.event.CatalogArtifactTag;
+
+            /**
+             * Verifies a CatalogArtifactTag message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a CatalogMetadata. */
         interface ICatalogMetadata {
 
@@ -4792,10 +4850,10 @@ export namespace flyteidl {
             datasetId?: (flyteidl.core.IIdentifier|null);
 
             /** CatalogMetadata artifactTag */
-            artifactTag?: (string|null);
+            artifactTag?: (flyteidl.event.ICatalogArtifactTag|null);
 
-            /** CatalogMetadata sourceExecutionId */
-            sourceExecutionId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+            /** CatalogMetadata sourceTaskExecution */
+            sourceTaskExecution?: (flyteidl.core.ITaskExecutionIdentifier|null);
         }
 
         /** Represents a CatalogMetadata. */
@@ -4811,10 +4869,13 @@ export namespace flyteidl {
             public datasetId?: (flyteidl.core.IIdentifier|null);
 
             /** CatalogMetadata artifactTag. */
-            public artifactTag: string;
+            public artifactTag?: (flyteidl.event.ICatalogArtifactTag|null);
 
-            /** CatalogMetadata sourceExecutionId. */
-            public sourceExecutionId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+            /** CatalogMetadata sourceTaskExecution. */
+            public sourceTaskExecution?: (flyteidl.core.ITaskExecutionIdentifier|null);
+
+            /** CatalogMetadata sourceExecution. */
+            public sourceExecution?: "sourceTaskExecution";
 
             /**
              * Creates a new CatalogMetadata instance using the specified properties.

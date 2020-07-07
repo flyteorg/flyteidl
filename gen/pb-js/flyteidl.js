@@ -11581,6 +11581,133 @@ export const flyteidl = $root.flyteidl = (() => {
             return values;
         })();
 
+        event.CatalogArtifactTag = (function() {
+
+            /**
+             * Properties of a CatalogArtifactTag.
+             * @memberof flyteidl.event
+             * @interface ICatalogArtifactTag
+             * @property {string|null} [artifactId] CatalogArtifactTag artifactId
+             * @property {string|null} [name] CatalogArtifactTag name
+             */
+
+            /**
+             * Constructs a new CatalogArtifactTag.
+             * @memberof flyteidl.event
+             * @classdesc Represents a CatalogArtifactTag.
+             * @implements ICatalogArtifactTag
+             * @constructor
+             * @param {flyteidl.event.ICatalogArtifactTag=} [properties] Properties to set
+             */
+            function CatalogArtifactTag(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * CatalogArtifactTag artifactId.
+             * @member {string} artifactId
+             * @memberof flyteidl.event.CatalogArtifactTag
+             * @instance
+             */
+            CatalogArtifactTag.prototype.artifactId = "";
+
+            /**
+             * CatalogArtifactTag name.
+             * @member {string} name
+             * @memberof flyteidl.event.CatalogArtifactTag
+             * @instance
+             */
+            CatalogArtifactTag.prototype.name = "";
+
+            /**
+             * Creates a new CatalogArtifactTag instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.event.CatalogArtifactTag
+             * @static
+             * @param {flyteidl.event.ICatalogArtifactTag=} [properties] Properties to set
+             * @returns {flyteidl.event.CatalogArtifactTag} CatalogArtifactTag instance
+             */
+            CatalogArtifactTag.create = function create(properties) {
+                return new CatalogArtifactTag(properties);
+            };
+
+            /**
+             * Encodes the specified CatalogArtifactTag message. Does not implicitly {@link flyteidl.event.CatalogArtifactTag.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.event.CatalogArtifactTag
+             * @static
+             * @param {flyteidl.event.ICatalogArtifactTag} message CatalogArtifactTag message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CatalogArtifactTag.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.artifactId != null && message.hasOwnProperty("artifactId"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.artifactId);
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                return writer;
+            };
+
+            /**
+             * Decodes a CatalogArtifactTag message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.event.CatalogArtifactTag
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.event.CatalogArtifactTag} CatalogArtifactTag
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CatalogArtifactTag.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.event.CatalogArtifactTag();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.artifactId = reader.string();
+                        break;
+                    case 2:
+                        message.name = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a CatalogArtifactTag message.
+             * @function verify
+             * @memberof flyteidl.event.CatalogArtifactTag
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CatalogArtifactTag.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.artifactId != null && message.hasOwnProperty("artifactId"))
+                    if (!$util.isString(message.artifactId))
+                        return "artifactId: string expected";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                return null;
+            };
+
+            return CatalogArtifactTag;
+        })();
+
         event.CatalogMetadata = (function() {
 
             /**
@@ -11588,8 +11715,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.event
              * @interface ICatalogMetadata
              * @property {flyteidl.core.IIdentifier|null} [datasetId] CatalogMetadata datasetId
-             * @property {string|null} [artifactTag] CatalogMetadata artifactTag
-             * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [sourceExecutionId] CatalogMetadata sourceExecutionId
+             * @property {flyteidl.event.ICatalogArtifactTag|null} [artifactTag] CatalogMetadata artifactTag
+             * @property {flyteidl.core.ITaskExecutionIdentifier|null} [sourceTaskExecution] CatalogMetadata sourceTaskExecution
              */
 
             /**
@@ -11617,19 +11744,33 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * CatalogMetadata artifactTag.
-             * @member {string} artifactTag
+             * @member {flyteidl.event.ICatalogArtifactTag|null|undefined} artifactTag
              * @memberof flyteidl.event.CatalogMetadata
              * @instance
              */
-            CatalogMetadata.prototype.artifactTag = "";
+            CatalogMetadata.prototype.artifactTag = null;
 
             /**
-             * CatalogMetadata sourceExecutionId.
-             * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} sourceExecutionId
+             * CatalogMetadata sourceTaskExecution.
+             * @member {flyteidl.core.ITaskExecutionIdentifier|null|undefined} sourceTaskExecution
              * @memberof flyteidl.event.CatalogMetadata
              * @instance
              */
-            CatalogMetadata.prototype.sourceExecutionId = null;
+            CatalogMetadata.prototype.sourceTaskExecution = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * CatalogMetadata sourceExecution.
+             * @member {"sourceTaskExecution"|undefined} sourceExecution
+             * @memberof flyteidl.event.CatalogMetadata
+             * @instance
+             */
+            Object.defineProperty(CatalogMetadata.prototype, "sourceExecution", {
+                get: $util.oneOfGetter($oneOfFields = ["sourceTaskExecution"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
 
             /**
              * Creates a new CatalogMetadata instance using the specified properties.
@@ -11658,9 +11799,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.datasetId != null && message.hasOwnProperty("datasetId"))
                     $root.flyteidl.core.Identifier.encode(message.datasetId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.artifactTag != null && message.hasOwnProperty("artifactTag"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.artifactTag);
-                if (message.sourceExecutionId != null && message.hasOwnProperty("sourceExecutionId"))
-                    $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.sourceExecutionId, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    $root.flyteidl.event.CatalogArtifactTag.encode(message.artifactTag, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.sourceTaskExecution != null && message.hasOwnProperty("sourceTaskExecution"))
+                    $root.flyteidl.core.TaskExecutionIdentifier.encode(message.sourceTaskExecution, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
 
@@ -11686,10 +11827,10 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.datasetId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
                         break;
                     case 2:
-                        message.artifactTag = reader.string();
+                        message.artifactTag = $root.flyteidl.event.CatalogArtifactTag.decode(reader, reader.uint32());
                         break;
                     case 3:
-                        message.sourceExecutionId = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                        message.sourceTaskExecution = $root.flyteidl.core.TaskExecutionIdentifier.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11710,18 +11851,24 @@ export const flyteidl = $root.flyteidl = (() => {
             CatalogMetadata.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                let properties = {};
                 if (message.datasetId != null && message.hasOwnProperty("datasetId")) {
                     let error = $root.flyteidl.core.Identifier.verify(message.datasetId);
                     if (error)
                         return "datasetId." + error;
                 }
-                if (message.artifactTag != null && message.hasOwnProperty("artifactTag"))
-                    if (!$util.isString(message.artifactTag))
-                        return "artifactTag: string expected";
-                if (message.sourceExecutionId != null && message.hasOwnProperty("sourceExecutionId")) {
-                    let error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.sourceExecutionId);
+                if (message.artifactTag != null && message.hasOwnProperty("artifactTag")) {
+                    let error = $root.flyteidl.event.CatalogArtifactTag.verify(message.artifactTag);
                     if (error)
-                        return "sourceExecutionId." + error;
+                        return "artifactTag." + error;
+                }
+                if (message.sourceTaskExecution != null && message.hasOwnProperty("sourceTaskExecution")) {
+                    properties.sourceExecution = 1;
+                    {
+                        let error = $root.flyteidl.core.TaskExecutionIdentifier.verify(message.sourceTaskExecution);
+                        if (error)
+                            return "sourceTaskExecution." + error;
+                    }
                 }
                 return null;
             };

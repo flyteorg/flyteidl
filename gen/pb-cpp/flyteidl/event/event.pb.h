@@ -46,7 +46,7 @@ struct TableStruct_flyteidl_2fevent_2fevent_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[7]
+  static const ::google::protobuf::internal::ParseTable schema[8]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -55,6 +55,9 @@ struct TableStruct_flyteidl_2fevent_2fevent_2eproto {
 void AddDescriptors_flyteidl_2fevent_2fevent_2eproto();
 namespace flyteidl {
 namespace event {
+class CatalogArtifactTag;
+class CatalogArtifactTagDefaultTypeInternal;
+extern CatalogArtifactTagDefaultTypeInternal _CatalogArtifactTag_default_instance_;
 class CatalogMetadata;
 class CatalogMetadataDefaultTypeInternal;
 extern CatalogMetadataDefaultTypeInternal _CatalogMetadata_default_instance_;
@@ -80,6 +83,7 @@ extern WorkflowNodeMetadataDefaultTypeInternal _WorkflowNodeMetadata_default_ins
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
+template<> ::flyteidl::event::CatalogArtifactTag* Arena::CreateMaybeMessage<::flyteidl::event::CatalogArtifactTag>(Arena*);
 template<> ::flyteidl::event::CatalogMetadata* Arena::CreateMaybeMessage<::flyteidl::event::CatalogMetadata>(Arena*);
 template<> ::flyteidl::event::NodeExecutionEvent* Arena::CreateMaybeMessage<::flyteidl::event::NodeExecutionEvent>(Arena*);
 template<> ::flyteidl::event::ParentTaskExecutionMetadata* Arena::CreateMaybeMessage<::flyteidl::event::ParentTaskExecutionMetadata>(Arena*);
@@ -681,6 +685,141 @@ class WorkflowNodeMetadata final :
 };
 // -------------------------------------------------------------------
 
+class CatalogArtifactTag final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.event.CatalogArtifactTag) */ {
+ public:
+  CatalogArtifactTag();
+  virtual ~CatalogArtifactTag();
+
+  CatalogArtifactTag(const CatalogArtifactTag& from);
+
+  inline CatalogArtifactTag& operator=(const CatalogArtifactTag& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  CatalogArtifactTag(CatalogArtifactTag&& from) noexcept
+    : CatalogArtifactTag() {
+    *this = ::std::move(from);
+  }
+
+  inline CatalogArtifactTag& operator=(CatalogArtifactTag&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const CatalogArtifactTag& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CatalogArtifactTag* internal_default_instance() {
+    return reinterpret_cast<const CatalogArtifactTag*>(
+               &_CatalogArtifactTag_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  void Swap(CatalogArtifactTag* other);
+  friend void swap(CatalogArtifactTag& a, CatalogArtifactTag& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CatalogArtifactTag* New() const final {
+    return CreateMaybeMessage<CatalogArtifactTag>(nullptr);
+  }
+
+  CatalogArtifactTag* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<CatalogArtifactTag>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const CatalogArtifactTag& from);
+  void MergeFrom(const CatalogArtifactTag& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CatalogArtifactTag* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string artifact_id = 1;
+  void clear_artifact_id();
+  static const int kArtifactIdFieldNumber = 1;
+  const ::std::string& artifact_id() const;
+  void set_artifact_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_artifact_id(::std::string&& value);
+  #endif
+  void set_artifact_id(const char* value);
+  void set_artifact_id(const char* value, size_t size);
+  ::std::string* mutable_artifact_id();
+  ::std::string* release_artifact_id();
+  void set_allocated_artifact_id(::std::string* artifact_id);
+
+  // string name = 2;
+  void clear_name();
+  static const int kNameFieldNumber = 2;
+  const ::std::string& name() const;
+  void set_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_name(::std::string&& value);
+  #endif
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  ::std::string* mutable_name();
+  ::std::string* release_name();
+  void set_allocated_name(::std::string* name);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.event.CatalogArtifactTag)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr artifact_id_;
+  ::google::protobuf::internal::ArenaStringPtr name_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fevent_2fevent_2eproto;
+};
+// -------------------------------------------------------------------
+
 class CatalogMetadata final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.event.CatalogMetadata) */ {
  public:
@@ -713,13 +852,18 @@ class CatalogMetadata final :
   }
   static const CatalogMetadata& default_instance();
 
+  enum SourceExecutionCase {
+    kSourceTaskExecution = 3,
+    SOURCE_EXECUTION_NOT_SET = 0,
+  };
+
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
   static inline const CatalogMetadata* internal_default_instance() {
     return reinterpret_cast<const CatalogMetadata*>(
                &_CatalogMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(CatalogMetadata* other);
   friend void swap(CatalogMetadata& a, CatalogMetadata& b) {
@@ -776,20 +920,6 @@ class CatalogMetadata final :
 
   // accessors -------------------------------------------------------
 
-  // string artifact_tag = 2;
-  void clear_artifact_tag();
-  static const int kArtifactTagFieldNumber = 2;
-  const ::std::string& artifact_tag() const;
-  void set_artifact_tag(const ::std::string& value);
-  #if LANG_CXX11
-  void set_artifact_tag(::std::string&& value);
-  #endif
-  void set_artifact_tag(const char* value);
-  void set_artifact_tag(const char* value, size_t size);
-  ::std::string* mutable_artifact_tag();
-  ::std::string* release_artifact_tag();
-  void set_allocated_artifact_tag(::std::string* artifact_tag);
-
   // .flyteidl.core.Identifier dataset_id = 1;
   bool has_dataset_id() const;
   void clear_dataset_id();
@@ -799,24 +929,44 @@ class CatalogMetadata final :
   ::flyteidl::core::Identifier* mutable_dataset_id();
   void set_allocated_dataset_id(::flyteidl::core::Identifier* dataset_id);
 
-  // .flyteidl.core.WorkflowExecutionIdentifier source_execution_id = 3;
-  bool has_source_execution_id() const;
-  void clear_source_execution_id();
-  static const int kSourceExecutionIdFieldNumber = 3;
-  const ::flyteidl::core::WorkflowExecutionIdentifier& source_execution_id() const;
-  ::flyteidl::core::WorkflowExecutionIdentifier* release_source_execution_id();
-  ::flyteidl::core::WorkflowExecutionIdentifier* mutable_source_execution_id();
-  void set_allocated_source_execution_id(::flyteidl::core::WorkflowExecutionIdentifier* source_execution_id);
+  // .flyteidl.event.CatalogArtifactTag artifact_tag = 2;
+  bool has_artifact_tag() const;
+  void clear_artifact_tag();
+  static const int kArtifactTagFieldNumber = 2;
+  const ::flyteidl::event::CatalogArtifactTag& artifact_tag() const;
+  ::flyteidl::event::CatalogArtifactTag* release_artifact_tag();
+  ::flyteidl::event::CatalogArtifactTag* mutable_artifact_tag();
+  void set_allocated_artifact_tag(::flyteidl::event::CatalogArtifactTag* artifact_tag);
 
+  // .flyteidl.core.TaskExecutionIdentifier source_task_execution = 3;
+  bool has_source_task_execution() const;
+  void clear_source_task_execution();
+  static const int kSourceTaskExecutionFieldNumber = 3;
+  const ::flyteidl::core::TaskExecutionIdentifier& source_task_execution() const;
+  ::flyteidl::core::TaskExecutionIdentifier* release_source_task_execution();
+  ::flyteidl::core::TaskExecutionIdentifier* mutable_source_task_execution();
+  void set_allocated_source_task_execution(::flyteidl::core::TaskExecutionIdentifier* source_task_execution);
+
+  void clear_source_execution();
+  SourceExecutionCase source_execution_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.event.CatalogMetadata)
  private:
   class HasBitSetters;
+  void set_has_source_task_execution();
+
+  inline bool has_source_execution() const;
+  inline void clear_has_source_execution();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr artifact_tag_;
   ::flyteidl::core::Identifier* dataset_id_;
-  ::flyteidl::core::WorkflowExecutionIdentifier* source_execution_id_;
+  ::flyteidl::event::CatalogArtifactTag* artifact_tag_;
+  union SourceExecutionUnion {
+    SourceExecutionUnion() {}
+    ::flyteidl::core::TaskExecutionIdentifier* source_task_execution_;
+  } source_execution_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
   friend struct ::TableStruct_flyteidl_2fevent_2fevent_2eproto;
 };
 // -------------------------------------------------------------------
@@ -859,7 +1009,7 @@ class TaskNodeMetadata final :
                &_TaskNodeMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(TaskNodeMetadata* other);
   friend void swap(TaskNodeMetadata& a, TaskNodeMetadata& b) {
@@ -981,7 +1131,7 @@ class ParentTaskExecutionMetadata final :
                &_ParentTaskExecutionMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(ParentTaskExecutionMetadata* other);
   friend void swap(ParentTaskExecutionMetadata& a, ParentTaskExecutionMetadata& b) {
@@ -1102,7 +1252,7 @@ class TaskExecutionEvent final :
                &_TaskExecutionEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(TaskExecutionEvent* other);
   friend void swap(TaskExecutionEvent& a, TaskExecutionEvent& b) {
@@ -2160,6 +2310,116 @@ inline void WorkflowNodeMetadata::set_allocated_execution_id(::flyteidl::core::W
 
 // -------------------------------------------------------------------
 
+// CatalogArtifactTag
+
+// string artifact_id = 1;
+inline void CatalogArtifactTag::clear_artifact_id() {
+  artifact_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CatalogArtifactTag::artifact_id() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.CatalogArtifactTag.artifact_id)
+  return artifact_id_.GetNoArena();
+}
+inline void CatalogArtifactTag::set_artifact_id(const ::std::string& value) {
+  
+  artifact_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.CatalogArtifactTag.artifact_id)
+}
+#if LANG_CXX11
+inline void CatalogArtifactTag::set_artifact_id(::std::string&& value) {
+  
+  artifact_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.CatalogArtifactTag.artifact_id)
+}
+#endif
+inline void CatalogArtifactTag::set_artifact_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  artifact_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.CatalogArtifactTag.artifact_id)
+}
+inline void CatalogArtifactTag::set_artifact_id(const char* value, size_t size) {
+  
+  artifact_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.CatalogArtifactTag.artifact_id)
+}
+inline ::std::string* CatalogArtifactTag::mutable_artifact_id() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.CatalogArtifactTag.artifact_id)
+  return artifact_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CatalogArtifactTag::release_artifact_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.CatalogArtifactTag.artifact_id)
+  
+  return artifact_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CatalogArtifactTag::set_allocated_artifact_id(::std::string* artifact_id) {
+  if (artifact_id != nullptr) {
+    
+  } else {
+    
+  }
+  artifact_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), artifact_id);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.CatalogArtifactTag.artifact_id)
+}
+
+// string name = 2;
+inline void CatalogArtifactTag::clear_name() {
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CatalogArtifactTag::name() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.CatalogArtifactTag.name)
+  return name_.GetNoArena();
+}
+inline void CatalogArtifactTag::set_name(const ::std::string& value) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.CatalogArtifactTag.name)
+}
+#if LANG_CXX11
+inline void CatalogArtifactTag::set_name(::std::string&& value) {
+  
+  name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.CatalogArtifactTag.name)
+}
+#endif
+inline void CatalogArtifactTag::set_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.CatalogArtifactTag.name)
+}
+inline void CatalogArtifactTag::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.CatalogArtifactTag.name)
+}
+inline ::std::string* CatalogArtifactTag::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.CatalogArtifactTag.name)
+  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CatalogArtifactTag::release_name() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.CatalogArtifactTag.name)
+  
+  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CatalogArtifactTag::set_allocated_name(::std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.CatalogArtifactTag.name)
+}
+
+// -------------------------------------------------------------------
+
 // CatalogMetadata
 
 // .flyteidl.core.Identifier dataset_id = 1;
@@ -2207,104 +2467,101 @@ inline void CatalogMetadata::set_allocated_dataset_id(::flyteidl::core::Identifi
   // @@protoc_insertion_point(field_set_allocated:flyteidl.event.CatalogMetadata.dataset_id)
 }
 
-// string artifact_tag = 2;
+// .flyteidl.event.CatalogArtifactTag artifact_tag = 2;
+inline bool CatalogMetadata::has_artifact_tag() const {
+  return this != internal_default_instance() && artifact_tag_ != nullptr;
+}
 inline void CatalogMetadata::clear_artifact_tag() {
-  artifact_tag_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && artifact_tag_ != nullptr) {
+    delete artifact_tag_;
+  }
+  artifact_tag_ = nullptr;
 }
-inline const ::std::string& CatalogMetadata::artifact_tag() const {
+inline const ::flyteidl::event::CatalogArtifactTag& CatalogMetadata::artifact_tag() const {
+  const ::flyteidl::event::CatalogArtifactTag* p = artifact_tag_;
   // @@protoc_insertion_point(field_get:flyteidl.event.CatalogMetadata.artifact_tag)
-  return artifact_tag_.GetNoArena();
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::event::CatalogArtifactTag*>(
+      &::flyteidl::event::_CatalogArtifactTag_default_instance_);
 }
-inline void CatalogMetadata::set_artifact_tag(const ::std::string& value) {
-  
-  artifact_tag_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.event.CatalogMetadata.artifact_tag)
-}
-#if LANG_CXX11
-inline void CatalogMetadata::set_artifact_tag(::std::string&& value) {
-  
-  artifact_tag_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.CatalogMetadata.artifact_tag)
-}
-#endif
-inline void CatalogMetadata::set_artifact_tag(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  artifact_tag_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.event.CatalogMetadata.artifact_tag)
-}
-inline void CatalogMetadata::set_artifact_tag(const char* value, size_t size) {
-  
-  artifact_tag_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.CatalogMetadata.artifact_tag)
-}
-inline ::std::string* CatalogMetadata::mutable_artifact_tag() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.event.CatalogMetadata.artifact_tag)
-  return artifact_tag_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* CatalogMetadata::release_artifact_tag() {
+inline ::flyteidl::event::CatalogArtifactTag* CatalogMetadata::release_artifact_tag() {
   // @@protoc_insertion_point(field_release:flyteidl.event.CatalogMetadata.artifact_tag)
   
-  return artifact_tag_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void CatalogMetadata::set_allocated_artifact_tag(::std::string* artifact_tag) {
-  if (artifact_tag != nullptr) {
-    
-  } else {
-    
-  }
-  artifact_tag_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), artifact_tag);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.CatalogMetadata.artifact_tag)
-}
-
-// .flyteidl.core.WorkflowExecutionIdentifier source_execution_id = 3;
-inline bool CatalogMetadata::has_source_execution_id() const {
-  return this != internal_default_instance() && source_execution_id_ != nullptr;
-}
-inline const ::flyteidl::core::WorkflowExecutionIdentifier& CatalogMetadata::source_execution_id() const {
-  const ::flyteidl::core::WorkflowExecutionIdentifier* p = source_execution_id_;
-  // @@protoc_insertion_point(field_get:flyteidl.event.CatalogMetadata.source_execution_id)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::WorkflowExecutionIdentifier*>(
-      &::flyteidl::core::_WorkflowExecutionIdentifier_default_instance_);
-}
-inline ::flyteidl::core::WorkflowExecutionIdentifier* CatalogMetadata::release_source_execution_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.event.CatalogMetadata.source_execution_id)
-  
-  ::flyteidl::core::WorkflowExecutionIdentifier* temp = source_execution_id_;
-  source_execution_id_ = nullptr;
+  ::flyteidl::event::CatalogArtifactTag* temp = artifact_tag_;
+  artifact_tag_ = nullptr;
   return temp;
 }
-inline ::flyteidl::core::WorkflowExecutionIdentifier* CatalogMetadata::mutable_source_execution_id() {
+inline ::flyteidl::event::CatalogArtifactTag* CatalogMetadata::mutable_artifact_tag() {
   
-  if (source_execution_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::WorkflowExecutionIdentifier>(GetArenaNoVirtual());
-    source_execution_id_ = p;
+  if (artifact_tag_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::event::CatalogArtifactTag>(GetArenaNoVirtual());
+    artifact_tag_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.event.CatalogMetadata.source_execution_id)
-  return source_execution_id_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.CatalogMetadata.artifact_tag)
+  return artifact_tag_;
 }
-inline void CatalogMetadata::set_allocated_source_execution_id(::flyteidl::core::WorkflowExecutionIdentifier* source_execution_id) {
+inline void CatalogMetadata::set_allocated_artifact_tag(::flyteidl::event::CatalogArtifactTag* artifact_tag) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(source_execution_id_);
+    delete artifact_tag_;
   }
-  if (source_execution_id) {
+  if (artifact_tag) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      source_execution_id = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, source_execution_id, submessage_arena);
+      artifact_tag = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, artifact_tag, submessage_arena);
     }
     
   } else {
     
   }
-  source_execution_id_ = source_execution_id;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.CatalogMetadata.source_execution_id)
+  artifact_tag_ = artifact_tag;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.CatalogMetadata.artifact_tag)
 }
 
+// .flyteidl.core.TaskExecutionIdentifier source_task_execution = 3;
+inline bool CatalogMetadata::has_source_task_execution() const {
+  return source_execution_case() == kSourceTaskExecution;
+}
+inline void CatalogMetadata::set_has_source_task_execution() {
+  _oneof_case_[0] = kSourceTaskExecution;
+}
+inline ::flyteidl::core::TaskExecutionIdentifier* CatalogMetadata::release_source_task_execution() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.CatalogMetadata.source_task_execution)
+  if (has_source_task_execution()) {
+    clear_has_source_execution();
+      ::flyteidl::core::TaskExecutionIdentifier* temp = source_execution_.source_task_execution_;
+    source_execution_.source_task_execution_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::TaskExecutionIdentifier& CatalogMetadata::source_task_execution() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.CatalogMetadata.source_task_execution)
+  return has_source_task_execution()
+      ? *source_execution_.source_task_execution_
+      : *reinterpret_cast< ::flyteidl::core::TaskExecutionIdentifier*>(&::flyteidl::core::_TaskExecutionIdentifier_default_instance_);
+}
+inline ::flyteidl::core::TaskExecutionIdentifier* CatalogMetadata::mutable_source_task_execution() {
+  if (!has_source_task_execution()) {
+    clear_source_execution();
+    set_has_source_task_execution();
+    source_execution_.source_task_execution_ = CreateMaybeMessage< ::flyteidl::core::TaskExecutionIdentifier >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.CatalogMetadata.source_task_execution)
+  return source_execution_.source_task_execution_;
+}
+
+inline bool CatalogMetadata::has_source_execution() const {
+  return source_execution_case() != SOURCE_EXECUTION_NOT_SET;
+}
+inline void CatalogMetadata::clear_has_source_execution() {
+  _oneof_case_[0] = SOURCE_EXECUTION_NOT_SET;
+}
+inline CatalogMetadata::SourceExecutionCase CatalogMetadata::source_execution_case() const {
+  return CatalogMetadata::SourceExecutionCase(_oneof_case_[0]);
+}
 // -------------------------------------------------------------------
 
 // TaskNodeMetadata
@@ -2923,6 +3180,8 @@ inline TaskExecutionEvent::OutputResultCase TaskExecutionEvent::output_result_ca
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

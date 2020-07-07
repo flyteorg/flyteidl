@@ -9,8 +9,7 @@
 
 package flyteadmin
 
-type EventCatalogMetadata struct {
-	DatasetId *CoreIdentifier `json:"dataset_id,omitempty"`
-	ArtifactTag *EventCatalogArtifactTag `json:"artifact_tag,omitempty"`
-	SourceTaskExecution *CoreTaskExecutionIdentifier `json:"source_task_execution,omitempty"`
+type EventCatalogArtifactTag struct {
+	ArtifactId string `json:"artifact_id,omitempty"`
+	Name string `json:"name,omitempty"`
 }
