@@ -2046,7 +2046,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a WorkflowMetadata.
              * @memberof flyteidl.core
              * @interface IWorkflowMetadata
-             * @property {flyteidl.core.IQualityOfService|null} [queuingBudget] WorkflowMetadata queuingBudget
+             * @property {flyteidl.core.IQualityOfService|null} [qualityOfService] WorkflowMetadata qualityOfService
              * @property {flyteidl.core.WorkflowMetadata.OnFailurePolicy|null} [onFailure] WorkflowMetadata onFailure
              */
 
@@ -2066,12 +2066,12 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * WorkflowMetadata queuingBudget.
-             * @member {flyteidl.core.IQualityOfService|null|undefined} queuingBudget
+             * WorkflowMetadata qualityOfService.
+             * @member {flyteidl.core.IQualityOfService|null|undefined} qualityOfService
              * @memberof flyteidl.core.WorkflowMetadata
              * @instance
              */
-            WorkflowMetadata.prototype.queuingBudget = null;
+            WorkflowMetadata.prototype.qualityOfService = null;
 
             /**
              * WorkflowMetadata onFailure.
@@ -2105,8 +2105,8 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowMetadata.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.queuingBudget != null && message.hasOwnProperty("queuingBudget"))
-                    $root.flyteidl.core.QualityOfService.encode(message.queuingBudget, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.qualityOfService != null && message.hasOwnProperty("qualityOfService"))
+                    $root.flyteidl.core.QualityOfService.encode(message.qualityOfService, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.onFailure != null && message.hasOwnProperty("onFailure"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.onFailure);
                 return writer;
@@ -2131,7 +2131,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.queuingBudget = $root.flyteidl.core.QualityOfService.decode(reader, reader.uint32());
+                        message.qualityOfService = $root.flyteidl.core.QualityOfService.decode(reader, reader.uint32());
                         break;
                     case 2:
                         message.onFailure = reader.int32();
@@ -2155,10 +2155,10 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowMetadata.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.queuingBudget != null && message.hasOwnProperty("queuingBudget")) {
-                    let error = $root.flyteidl.core.QualityOfService.verify(message.queuingBudget);
+                if (message.qualityOfService != null && message.hasOwnProperty("qualityOfService")) {
+                    let error = $root.flyteidl.core.QualityOfService.verify(message.qualityOfService);
                     if (error)
-                        return "queuingBudget." + error;
+                        return "qualityOfService." + error;
                 }
                 if (message.onFailure != null && message.hasOwnProperty("onFailure"))
                     switch (message.onFailure) {

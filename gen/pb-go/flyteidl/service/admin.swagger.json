@@ -5315,7 +5315,7 @@
     "coreWorkflowMetadata": {
       "type": "object",
       "properties": {
-        "queuing_budget": {
+        "quality_of_service": {
           "$ref": "#/definitions/coreQualityOfService",
           "description": "Indicates the runtime priority of workflow executions."
         },

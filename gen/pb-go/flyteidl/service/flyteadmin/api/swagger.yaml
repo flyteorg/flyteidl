@@ -6321,7 +6321,7 @@ definitions:
                     bindings: {}
               metadata:
                 on_failure: {}
-                queuing_budget:
+                quality_of_service:
                   tier: {}
                   spec:
                     queueing_budget_mins: 5
@@ -7147,7 +7147,7 @@ definitions:
                     bindings: {}
               metadata:
                 on_failure: {}
-                queuing_budget:
+                quality_of_service:
                   tier: {}
                   spec:
                     queueing_budget_mins: 5
@@ -8223,7 +8223,7 @@ definitions:
                     bindings: {}
               metadata:
                 on_failure: {}
-                queuing_budget:
+                quality_of_service:
                   tier: {}
                   spec:
                     queueing_budget_mins: 5
@@ -9170,7 +9170,7 @@ definitions:
                   bindings: {}
             metadata:
               on_failure: {}
-              queuing_budget:
+              quality_of_service:
                 tier: {}
                 spec:
                   queueing_budget_mins: 5
@@ -9996,7 +9996,7 @@ definitions:
                   bindings: {}
             metadata:
               on_failure: {}
-              queuing_budget:
+              quality_of_service:
                 tier: {}
                 spec:
                   queueing_budget_mins: 5
@@ -11072,7 +11072,7 @@ definitions:
                   bindings: {}
             metadata:
               on_failure: {}
-              queuing_budget:
+              quality_of_service:
                 tier: {}
                 spec:
                   queueing_budget_mins: 5
@@ -11967,7 +11967,7 @@ definitions:
                       bindings: {}
                 metadata:
                   on_failure: {}
-                  queuing_budget:
+                  quality_of_service:
                     tier: {}
                     spec:
                       queueing_budget_mins: 5
@@ -12793,7 +12793,7 @@ definitions:
                       bindings: {}
                 metadata:
                   on_failure: {}
-                  queuing_budget:
+                  quality_of_service:
                     tier: {}
                     spec:
                       queueing_budget_mins: 5
@@ -13869,7 +13869,7 @@ definitions:
                       bindings: {}
                 metadata:
                   on_failure: {}
-                  queuing_budget:
+                  quality_of_service:
                     tier: {}
                     spec:
                       queueing_budget_mins: 5
@@ -14705,7 +14705,7 @@ definitions:
                       bindings: {}
                 metadata:
                   on_failure: {}
-                  queuing_budget:
+                  quality_of_service:
                     tier: {}
                     spec:
                       queueing_budget_mins: 5
@@ -15531,7 +15531,7 @@ definitions:
                       bindings: {}
                 metadata:
                   on_failure: {}
-                  queuing_budget:
+                  quality_of_service:
                     tier: {}
                     spec:
                       queueing_budget_mins: 5
@@ -16607,7 +16607,7 @@ definitions:
                       bindings: {}
                 metadata:
                   on_failure: {}
-                  queuing_budget:
+                  quality_of_service:
                     tier: {}
                     spec:
                       queueing_budget_mins: 5
@@ -17970,7 +17970,7 @@ definitions:
               bindings: {}
         metadata:
           on_failure: {}
-          queuing_budget:
+          quality_of_service:
             tier: {}
             spec:
               queueing_budget_mins: 5
@@ -18823,7 +18823,7 @@ definitions:
                 bindings: {}
           metadata:
             on_failure: {}
-            queuing_budget:
+            quality_of_service:
               tier: {}
               spec:
                 queueing_budget_mins: 5
@@ -19649,7 +19649,7 @@ definitions:
                 bindings: {}
           metadata:
             on_failure: {}
-            queuing_budget:
+            quality_of_service:
               tier: {}
               spec:
                 queueing_budget_mins: 5
@@ -20725,7 +20725,7 @@ definitions:
                 bindings: {}
           metadata:
             on_failure: {}
-            queuing_budget:
+            quality_of_service:
               tier: {}
               spec:
                 queueing_budget_mins: 5
@@ -23142,7 +23142,7 @@ definitions:
   coreWorkflowMetadata:
     type: "object"
     properties:
-      queuing_budget:
+      quality_of_service:
         description: "Indicates the runtime priority of workflow executions."
         $ref: "#/definitions/coreQualityOfService"
       on_failure:
@@ -23153,7 +23153,7 @@ definitions:
       \ does not change the final outputs of the workflow."
     example:
       on_failure: {}
-      queuing_budget:
+      quality_of_service:
         tier: {}
         spec:
           queueing_budget_mins: 5
@@ -23342,7 +23342,7 @@ definitions:
             bindings: {}
       metadata:
         on_failure: {}
-        queuing_budget:
+        quality_of_service:
           tier: {}
           spec:
             queueing_budget_mins: 5

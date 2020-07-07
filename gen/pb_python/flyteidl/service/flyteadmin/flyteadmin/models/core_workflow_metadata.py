@@ -34,49 +34,49 @@ class CoreWorkflowMetadata(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'queuing_budget': 'CoreQualityOfService',
+        'quality_of_service': 'CoreQualityOfService',
         'on_failure': 'WorkflowMetadataOnFailurePolicy'
     }
 
     attribute_map = {
-        'queuing_budget': 'queuing_budget',
+        'quality_of_service': 'quality_of_service',
         'on_failure': 'on_failure'
     }
 
-    def __init__(self, queuing_budget=None, on_failure=None):  # noqa: E501
+    def __init__(self, quality_of_service=None, on_failure=None):  # noqa: E501
         """CoreWorkflowMetadata - a model defined in Swagger"""  # noqa: E501
 
-        self._queuing_budget = None
+        self._quality_of_service = None
         self._on_failure = None
         self.discriminator = None
 
-        if queuing_budget is not None:
-            self.queuing_budget = queuing_budget
+        if quality_of_service is not None:
+            self.quality_of_service = quality_of_service
         if on_failure is not None:
             self.on_failure = on_failure
 
     @property
-    def queuing_budget(self):
-        """Gets the queuing_budget of this CoreWorkflowMetadata.  # noqa: E501
+    def quality_of_service(self):
+        """Gets the quality_of_service of this CoreWorkflowMetadata.  # noqa: E501
 
         Indicates the runtime priority of workflow executions.  # noqa: E501
 
-        :return: The queuing_budget of this CoreWorkflowMetadata.  # noqa: E501
+        :return: The quality_of_service of this CoreWorkflowMetadata.  # noqa: E501
         :rtype: CoreQualityOfService
         """
-        return self._queuing_budget
+        return self._quality_of_service
 
-    @queuing_budget.setter
-    def queuing_budget(self, queuing_budget):
-        """Sets the queuing_budget of this CoreWorkflowMetadata.
+    @quality_of_service.setter
+    def quality_of_service(self, quality_of_service):
+        """Sets the quality_of_service of this CoreWorkflowMetadata.
 
         Indicates the runtime priority of workflow executions.  # noqa: E501
 
-        :param queuing_budget: The queuing_budget of this CoreWorkflowMetadata.  # noqa: E501
+        :param quality_of_service: The quality_of_service of this CoreWorkflowMetadata.  # noqa: E501
         :type: CoreQualityOfService
         """
 
-        self._queuing_budget = queuing_budget
+        self._quality_of_service = quality_of_service
 
     @property
     def on_failure(self):

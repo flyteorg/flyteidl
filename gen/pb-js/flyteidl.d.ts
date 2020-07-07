@@ -822,8 +822,8 @@ export namespace flyteidl {
         /** Properties of a WorkflowMetadata. */
         interface IWorkflowMetadata {
 
-            /** WorkflowMetadata queuingBudget */
-            queuingBudget?: (flyteidl.core.IQualityOfService|null);
+            /** WorkflowMetadata qualityOfService */
+            qualityOfService?: (flyteidl.core.IQualityOfService|null);
 
             /** WorkflowMetadata onFailure */
             onFailure?: (flyteidl.core.WorkflowMetadata.OnFailurePolicy|null);
@@ -838,8 +838,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.core.IWorkflowMetadata);
 
-            /** WorkflowMetadata queuingBudget. */
-            public queuingBudget?: (flyteidl.core.IQualityOfService|null);
+            /** WorkflowMetadata qualityOfService. */
+            public qualityOfService?: (flyteidl.core.IQualityOfService|null);
 
             /** WorkflowMetadata onFailure. */
             public onFailure: flyteidl.core.WorkflowMetadata.OnFailurePolicy;

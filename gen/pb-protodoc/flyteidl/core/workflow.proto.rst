@@ -346,13 +346,13 @@ Metadata for the entire workflow. Defines execution behavior that does not chang
 .. code-block:: json
 
   {
-    "queuing_budget": "{...}",
+    "quality_of_service": "{...}",
     "on_failure": "..."
   }
 
-.. _api_field_flyteidl.core.WorkflowMetadata.queuing_budget:
+.. _api_field_flyteidl.core.WorkflowMetadata.quality_of_service:
 
-queuing_budget
+quality_of_service
   (:ref:`flyteidl.core.QualityOfService <api_msg_flyteidl.core.QualityOfService>`) Indicates the runtime priority of workflow executions. 
   
   

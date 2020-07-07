@@ -1465,14 +1465,14 @@ class WorkflowMetadata final :
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.core.QualityOfService queuing_budget = 1;
-  bool has_queuing_budget() const;
-  void clear_queuing_budget();
-  static const int kQueuingBudgetFieldNumber = 1;
-  const ::flyteidl::core::QualityOfService& queuing_budget() const;
-  ::flyteidl::core::QualityOfService* release_queuing_budget();
-  ::flyteidl::core::QualityOfService* mutable_queuing_budget();
-  void set_allocated_queuing_budget(::flyteidl::core::QualityOfService* queuing_budget);
+  // .flyteidl.core.QualityOfService quality_of_service = 1;
+  bool has_quality_of_service() const;
+  void clear_quality_of_service();
+  static const int kQualityOfServiceFieldNumber = 1;
+  const ::flyteidl::core::QualityOfService& quality_of_service() const;
+  ::flyteidl::core::QualityOfService* release_quality_of_service();
+  ::flyteidl::core::QualityOfService* mutable_quality_of_service();
+  void set_allocated_quality_of_service(::flyteidl::core::QualityOfService* quality_of_service);
 
   // .flyteidl.core.WorkflowMetadata.OnFailurePolicy on_failure = 2;
   void clear_on_failure();
@@ -1485,7 +1485,7 @@ class WorkflowMetadata final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::core::QualityOfService* queuing_budget_;
+  ::flyteidl::core::QualityOfService* quality_of_service_;
   int on_failure_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fworkflow_2eproto;
@@ -2912,49 +2912,49 @@ inline Node::TargetCase Node::target_case() const {
 
 // WorkflowMetadata
 
-// .flyteidl.core.QualityOfService queuing_budget = 1;
-inline bool WorkflowMetadata::has_queuing_budget() const {
-  return this != internal_default_instance() && queuing_budget_ != nullptr;
+// .flyteidl.core.QualityOfService quality_of_service = 1;
+inline bool WorkflowMetadata::has_quality_of_service() const {
+  return this != internal_default_instance() && quality_of_service_ != nullptr;
 }
-inline const ::flyteidl::core::QualityOfService& WorkflowMetadata::queuing_budget() const {
-  const ::flyteidl::core::QualityOfService* p = queuing_budget_;
-  // @@protoc_insertion_point(field_get:flyteidl.core.WorkflowMetadata.queuing_budget)
+inline const ::flyteidl::core::QualityOfService& WorkflowMetadata::quality_of_service() const {
+  const ::flyteidl::core::QualityOfService* p = quality_of_service_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.WorkflowMetadata.quality_of_service)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::QualityOfService*>(
       &::flyteidl::core::_QualityOfService_default_instance_);
 }
-inline ::flyteidl::core::QualityOfService* WorkflowMetadata::release_queuing_budget() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.WorkflowMetadata.queuing_budget)
+inline ::flyteidl::core::QualityOfService* WorkflowMetadata::release_quality_of_service() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.WorkflowMetadata.quality_of_service)
   
-  ::flyteidl::core::QualityOfService* temp = queuing_budget_;
-  queuing_budget_ = nullptr;
+  ::flyteidl::core::QualityOfService* temp = quality_of_service_;
+  quality_of_service_ = nullptr;
   return temp;
 }
-inline ::flyteidl::core::QualityOfService* WorkflowMetadata::mutable_queuing_budget() {
+inline ::flyteidl::core::QualityOfService* WorkflowMetadata::mutable_quality_of_service() {
   
-  if (queuing_budget_ == nullptr) {
+  if (quality_of_service_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::core::QualityOfService>(GetArenaNoVirtual());
-    queuing_budget_ = p;
+    quality_of_service_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.WorkflowMetadata.queuing_budget)
-  return queuing_budget_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.WorkflowMetadata.quality_of_service)
+  return quality_of_service_;
 }
-inline void WorkflowMetadata::set_allocated_queuing_budget(::flyteidl::core::QualityOfService* queuing_budget) {
+inline void WorkflowMetadata::set_allocated_quality_of_service(::flyteidl::core::QualityOfService* quality_of_service) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(queuing_budget_);
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(quality_of_service_);
   }
-  if (queuing_budget) {
+  if (quality_of_service) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      queuing_budget = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, queuing_budget, submessage_arena);
+      quality_of_service = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, quality_of_service, submessage_arena);
     }
     
   } else {
     
   }
-  queuing_budget_ = queuing_budget;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.WorkflowMetadata.queuing_budget)
+  quality_of_service_ = quality_of_service;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.WorkflowMetadata.quality_of_service)
 }
 
 // .flyteidl.core.WorkflowMetadata.OnFailurePolicy on_failure = 2;

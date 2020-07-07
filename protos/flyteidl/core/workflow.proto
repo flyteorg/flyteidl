@@ -130,7 +130,7 @@ message Node {
 // Metadata for the entire workflow. Defines execution behavior that does not change the final outputs of the workflow.
 message WorkflowMetadata {
     // Indicates the runtime priority of workflow executions. 
-    QualityOfService queuing_budget = 1;
+    QualityOfService quality_of_service = 1;
 
     // Failure Handling Strategy
     enum OnFailurePolicy {
