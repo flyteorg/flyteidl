@@ -200,7 +200,7 @@ Catalog artifact information with specific metadata
 .. code-block:: json
 
   {
-    "dataset_id": "...",
+    "dataset_id": "{...}",
     "artifact_tag": "...",
     "source_execution_id": "{...}"
   }
@@ -208,7 +208,7 @@ Catalog artifact information with specific metadata
 .. _api_field_flyteidl.event.CatalogMetadata.dataset_id:
 
 dataset_id
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Dataset ID in the catalog
+  (:ref:`flyteidl.core.Identifier <api_msg_flyteidl.core.Identifier>`) Dataset ID in the catalog
   
   
 .. _api_field_flyteidl.event.CatalogMetadata.artifact_tag:

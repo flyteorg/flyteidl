@@ -10,6 +10,7 @@ enum ResourceType {
   TASK               = 1;
   WORKFLOW           = 2;
   LAUNCH_PLAN        = 3;
+  DATASET            = 4;
 }
 
 // Encapsulation of fields that uniquely identifies a Flyte resource.

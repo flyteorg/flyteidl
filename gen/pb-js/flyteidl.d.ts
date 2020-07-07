@@ -2675,7 +2675,8 @@ export namespace flyteidl {
             UNSPECIFIED = 0,
             TASK = 1,
             WORKFLOW = 2,
-            LAUNCH_PLAN = 3
+            LAUNCH_PLAN = 3,
+            DATASET = 4
         }
 
         /** Properties of an Identifier. */
@@ -4788,7 +4789,7 @@ export namespace flyteidl {
         interface ICatalogMetadata {
 
             /** CatalogMetadata datasetId */
-            datasetId?: (string|null);
+            datasetId?: (flyteidl.core.IIdentifier|null);
 
             /** CatalogMetadata artifactTag */
             artifactTag?: (string|null);
@@ -4807,7 +4808,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.event.ICatalogMetadata);
 
             /** CatalogMetadata datasetId. */
-            public datasetId: string;
+            public datasetId?: (flyteidl.core.IIdentifier|null);
 
             /** CatalogMetadata artifactTag. */
             public artifactTag: string;

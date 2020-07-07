@@ -180,6 +180,7 @@ paths:
         - "TASK"
         - "WORKFLOW"
         - "LAUNCH_PLAN"
+        - "DATASET"
         x-exportParamName: "TaskExecutionIdTaskIdResourceType"
         x-optionalDataType: "String"
       - name: "limit"
@@ -372,6 +373,7 @@ paths:
         - "TASK"
         - "WORKFLOW"
         - "LAUNCH_PLAN"
+        - "DATASET"
         x-exportParamName: "IdTaskIdResourceType"
         x-optionalDataType: "String"
       responses:
@@ -906,6 +908,7 @@ paths:
         - "TASK"
         - "WORKFLOW"
         - "LAUNCH_PLAN"
+        - "DATASET"
         x-exportParamName: "IdResourceType"
         x-optionalDataType: "String"
       responses:
@@ -1008,6 +1011,7 @@ paths:
         - "TASK"
         - "WORKFLOW"
         - "LAUNCH_PLAN"
+        - "DATASET"
         x-exportParamName: "ResourceType"
       - name: "id.project"
         in: "path"
@@ -1051,6 +1055,7 @@ paths:
         - "TASK"
         - "WORKFLOW"
         - "LAUNCH_PLAN"
+        - "DATASET"
         x-exportParamName: "ResourceType"
       - name: "id.project"
         in: "path"
@@ -1101,6 +1106,7 @@ paths:
         - "TASK"
         - "WORKFLOW"
         - "LAUNCH_PLAN"
+        - "DATASET"
         x-exportParamName: "ResourceType"
       - name: "project"
         in: "path"
@@ -1479,6 +1485,7 @@ paths:
         - "TASK"
         - "WORKFLOW"
         - "LAUNCH_PLAN"
+        - "DATASET"
         x-exportParamName: "IdTaskIdResourceType"
         x-optionalDataType: "String"
       responses:
@@ -1857,6 +1864,7 @@ paths:
         - "TASK"
         - "WORKFLOW"
         - "LAUNCH_PLAN"
+        - "DATASET"
         x-exportParamName: "IdResourceType"
         x-optionalDataType: "String"
       responses:
@@ -2277,6 +2285,7 @@ paths:
         - "TASK"
         - "WORKFLOW"
         - "LAUNCH_PLAN"
+        - "DATASET"
         x-exportParamName: "IdResourceType"
         x-optionalDataType: "String"
       responses:
@@ -22397,6 +22406,7 @@ definitions:
     - "TASK"
     - "WORKFLOW"
     - "LAUNCH_PLAN"
+    - "DATASET"
     default: "UNSPECIFIED"
   coreResources:
     type: "object"
@@ -23910,8 +23920,8 @@ definitions:
     type: "object"
     properties:
       dataset_id:
-        type: "string"
         title: "Dataset ID in the catalog"
+        $ref: "#/definitions/coreIdentifier"
       artifact_tag:
         type: "string"
         title: "Artifact tag in the catalog"

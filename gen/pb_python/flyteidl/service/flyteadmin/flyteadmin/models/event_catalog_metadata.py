@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_workflow_execution_identifier import CoreWorkflowExecutionIdentifier  # noqa: F401,E501
 
 
@@ -33,7 +34,7 @@ class EventCatalogMetadata(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'dataset_id': 'str',
+        'dataset_id': 'CoreIdentifier',
         'artifact_tag': 'str',
         'source_execution_id': 'CoreWorkflowExecutionIdentifier'
     }
@@ -65,7 +66,7 @@ class EventCatalogMetadata(object):
 
 
         :return: The dataset_id of this EventCatalogMetadata.  # noqa: E501
-        :rtype: str
+        :rtype: CoreIdentifier
         """
         return self._dataset_id
 
@@ -75,7 +76,7 @@ class EventCatalogMetadata(object):
 
 
         :param dataset_id: The dataset_id of this EventCatalogMetadata.  # noqa: E501
-        :type: str
+        :type: CoreIdentifier
         """
 
         self._dataset_id = dataset_id

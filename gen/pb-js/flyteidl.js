@@ -6502,6 +6502,7 @@ export const flyteidl = $root.flyteidl = (() => {
          * @property {number} TASK=1 TASK value
          * @property {number} WORKFLOW=2 WORKFLOW value
          * @property {number} LAUNCH_PLAN=3 LAUNCH_PLAN value
+         * @property {number} DATASET=4 DATASET value
          */
         core.ResourceType = (function() {
             const valuesById = {}, values = Object.create(valuesById);
@@ -6509,6 +6510,7 @@ export const flyteidl = $root.flyteidl = (() => {
             values[valuesById[1] = "TASK"] = 1;
             values[valuesById[2] = "WORKFLOW"] = 2;
             values[valuesById[3] = "LAUNCH_PLAN"] = 3;
+            values[valuesById[4] = "DATASET"] = 4;
             return values;
         })();
 
@@ -6677,6 +6679,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                     case 2:
                     case 3:
+                    case 4:
                         break;
                     }
                 if (message.project != null && message.hasOwnProperty("project"))
@@ -11584,7 +11587,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a CatalogMetadata.
              * @memberof flyteidl.event
              * @interface ICatalogMetadata
-             * @property {string|null} [datasetId] CatalogMetadata datasetId
+             * @property {flyteidl.core.IIdentifier|null} [datasetId] CatalogMetadata datasetId
              * @property {string|null} [artifactTag] CatalogMetadata artifactTag
              * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [sourceExecutionId] CatalogMetadata sourceExecutionId
              */
@@ -11606,11 +11609,11 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * CatalogMetadata datasetId.
-             * @member {string} datasetId
+             * @member {flyteidl.core.IIdentifier|null|undefined} datasetId
              * @memberof flyteidl.event.CatalogMetadata
              * @instance
              */
-            CatalogMetadata.prototype.datasetId = "";
+            CatalogMetadata.prototype.datasetId = null;
 
             /**
              * CatalogMetadata artifactTag.
@@ -11653,7 +11656,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.datasetId != null && message.hasOwnProperty("datasetId"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.datasetId);
+                    $root.flyteidl.core.Identifier.encode(message.datasetId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.artifactTag != null && message.hasOwnProperty("artifactTag"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.artifactTag);
                 if (message.sourceExecutionId != null && message.hasOwnProperty("sourceExecutionId"))
@@ -11680,7 +11683,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.datasetId = reader.string();
+                        message.datasetId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
                         break;
                     case 2:
                         message.artifactTag = reader.string();
@@ -11707,9 +11710,11 @@ export const flyteidl = $root.flyteidl = (() => {
             CatalogMetadata.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.datasetId != null && message.hasOwnProperty("datasetId"))
-                    if (!$util.isString(message.datasetId))
-                        return "datasetId: string expected";
+                if (message.datasetId != null && message.hasOwnProperty("datasetId")) {
+                    let error = $root.flyteidl.core.Identifier.verify(message.datasetId);
+                    if (error)
+                        return "datasetId." + error;
+                }
                 if (message.artifactTag != null && message.hasOwnProperty("artifactTag"))
                     if (!$util.isString(message.artifactTag))
                         return "artifactTag: string expected";
@@ -12766,6 +12771,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                     case 2:
                     case 3:
+                    case 4:
                         break;
                     }
                 if (message.id != null && message.hasOwnProperty("id")) {
@@ -13320,6 +13326,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                     case 2:
                     case 3:
+                    case 4:
                         break;
                     }
                 if (message.project != null && message.hasOwnProperty("project"))
@@ -13745,6 +13752,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                     case 2:
                     case 3:
+                    case 4:
                         break;
                     }
                 if (message.id != null && message.hasOwnProperty("id")) {
@@ -13895,6 +13903,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                     case 2:
                     case 3:
+                    case 4:
                         break;
                     }
                 if (message.id != null && message.hasOwnProperty("id")) {

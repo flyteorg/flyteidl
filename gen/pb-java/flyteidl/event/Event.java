@@ -5228,18 +5228,25 @@ public final class Event {
      * Dataset ID in the catalog
      * </pre>
      *
-     * <code>string dataset_id = 1;</code>
+     * <code>.flyteidl.core.Identifier dataset_id = 1;</code>
      */
-    java.lang.String getDatasetId();
+    boolean hasDatasetId();
     /**
      * <pre>
      * Dataset ID in the catalog
      * </pre>
      *
-     * <code>string dataset_id = 1;</code>
+     * <code>.flyteidl.core.Identifier dataset_id = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getDatasetIdBytes();
+    flyteidl.core.IdentifierOuterClass.Identifier getDatasetId();
+    /**
+     * <pre>
+     * Dataset ID in the catalog
+     * </pre>
+     *
+     * <code>.flyteidl.core.Identifier dataset_id = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getDatasetIdOrBuilder();
 
     /**
      * <pre>
@@ -5301,7 +5308,6 @@ public final class Event {
       super(builder);
     }
     private CatalogMetadata() {
-      datasetId_ = "";
       artifactTag_ = "";
     }
 
@@ -5330,9 +5336,16 @@ public final class Event {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              flyteidl.core.IdentifierOuterClass.Identifier.Builder subBuilder = null;
+              if (datasetId_ != null) {
+                subBuilder = datasetId_.toBuilder();
+              }
+              datasetId_ = input.readMessage(flyteidl.core.IdentifierOuterClass.Identifier.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(datasetId_);
+                datasetId_ = subBuilder.buildPartial();
+              }
 
-              datasetId_ = s;
               break;
             }
             case 18: {
@@ -5387,45 +5400,36 @@ public final class Event {
     }
 
     public static final int DATASET_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object datasetId_;
+    private flyteidl.core.IdentifierOuterClass.Identifier datasetId_;
     /**
      * <pre>
      * Dataset ID in the catalog
      * </pre>
      *
-     * <code>string dataset_id = 1;</code>
+     * <code>.flyteidl.core.Identifier dataset_id = 1;</code>
      */
-    public java.lang.String getDatasetId() {
-      java.lang.Object ref = datasetId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        datasetId_ = s;
-        return s;
-      }
+    public boolean hasDatasetId() {
+      return datasetId_ != null;
     }
     /**
      * <pre>
      * Dataset ID in the catalog
      * </pre>
      *
-     * <code>string dataset_id = 1;</code>
+     * <code>.flyteidl.core.Identifier dataset_id = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getDatasetIdBytes() {
-      java.lang.Object ref = datasetId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        datasetId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public flyteidl.core.IdentifierOuterClass.Identifier getDatasetId() {
+      return datasetId_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : datasetId_;
+    }
+    /**
+     * <pre>
+     * Dataset ID in the catalog
+     * </pre>
+     *
+     * <code>.flyteidl.core.Identifier dataset_id = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getDatasetIdOrBuilder() {
+      return getDatasetId();
     }
 
     public static final int ARTIFACT_TAG_FIELD_NUMBER = 2;
@@ -5517,8 +5521,8 @@ public final class Event {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getDatasetIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, datasetId_);
+      if (datasetId_ != null) {
+        output.writeMessage(1, getDatasetId());
       }
       if (!getArtifactTagBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, artifactTag_);
@@ -5535,8 +5539,9 @@ public final class Event {
       if (size != -1) return size;
 
       size = 0;
-      if (!getDatasetIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, datasetId_);
+      if (datasetId_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getDatasetId());
       }
       if (!getArtifactTagBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, artifactTag_);
@@ -5560,8 +5565,11 @@ public final class Event {
       }
       flyteidl.event.Event.CatalogMetadata other = (flyteidl.event.Event.CatalogMetadata) obj;
 
-      if (!getDatasetId()
-          .equals(other.getDatasetId())) return false;
+      if (hasDatasetId() != other.hasDatasetId()) return false;
+      if (hasDatasetId()) {
+        if (!getDatasetId()
+            .equals(other.getDatasetId())) return false;
+      }
       if (!getArtifactTag()
           .equals(other.getArtifactTag())) return false;
       if (hasSourceExecutionId() != other.hasSourceExecutionId()) return false;
@@ -5580,8 +5588,10 @@ public final class Event {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DATASET_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getDatasetId().hashCode();
+      if (hasDatasetId()) {
+        hash = (37 * hash) + DATASET_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getDatasetId().hashCode();
+      }
       hash = (37 * hash) + ARTIFACT_TAG_FIELD_NUMBER;
       hash = (53 * hash) + getArtifactTag().hashCode();
       if (hasSourceExecutionId()) {
@@ -5725,8 +5735,12 @@ public final class Event {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        datasetId_ = "";
-
+        if (datasetIdBuilder_ == null) {
+          datasetId_ = null;
+        } else {
+          datasetId_ = null;
+          datasetIdBuilder_ = null;
+        }
         artifactTag_ = "";
 
         if (sourceExecutionIdBuilder_ == null) {
@@ -5761,7 +5775,11 @@ public final class Event {
       @java.lang.Override
       public flyteidl.event.Event.CatalogMetadata buildPartial() {
         flyteidl.event.Event.CatalogMetadata result = new flyteidl.event.Event.CatalogMetadata(this);
-        result.datasetId_ = datasetId_;
+        if (datasetIdBuilder_ == null) {
+          result.datasetId_ = datasetId_;
+        } else {
+          result.datasetId_ = datasetIdBuilder_.build();
+        }
         result.artifactTag_ = artifactTag_;
         if (sourceExecutionIdBuilder_ == null) {
           result.sourceExecutionId_ = sourceExecutionId_;
@@ -5816,9 +5834,8 @@ public final class Event {
 
       public Builder mergeFrom(flyteidl.event.Event.CatalogMetadata other) {
         if (other == flyteidl.event.Event.CatalogMetadata.getDefaultInstance()) return this;
-        if (!other.getDatasetId().isEmpty()) {
-          datasetId_ = other.datasetId_;
-          onChanged();
+        if (other.hasDatasetId()) {
+          mergeDatasetId(other.getDatasetId());
         }
         if (!other.getArtifactTag().isEmpty()) {
           artifactTag_ = other.artifactTag_;
@@ -5856,24 +5873,31 @@ public final class Event {
         return this;
       }
 
-      private java.lang.Object datasetId_ = "";
+      private flyteidl.core.IdentifierOuterClass.Identifier datasetId_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> datasetIdBuilder_;
       /**
        * <pre>
        * Dataset ID in the catalog
        * </pre>
        *
-       * <code>string dataset_id = 1;</code>
+       * <code>.flyteidl.core.Identifier dataset_id = 1;</code>
        */
-      public java.lang.String getDatasetId() {
-        java.lang.Object ref = datasetId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          datasetId_ = s;
-          return s;
+      public boolean hasDatasetId() {
+        return datasetIdBuilder_ != null || datasetId_ != null;
+      }
+      /**
+       * <pre>
+       * Dataset ID in the catalog
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier dataset_id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.Identifier getDatasetId() {
+        if (datasetIdBuilder_ == null) {
+          return datasetId_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : datasetId_;
         } else {
-          return (java.lang.String) ref;
+          return datasetIdBuilder_.getMessage();
         }
       }
       /**
@@ -5881,36 +5905,37 @@ public final class Event {
        * Dataset ID in the catalog
        * </pre>
        *
-       * <code>string dataset_id = 1;</code>
+       * <code>.flyteidl.core.Identifier dataset_id = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getDatasetIdBytes() {
-        java.lang.Object ref = datasetId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          datasetId_ = b;
-          return b;
+      public Builder setDatasetId(flyteidl.core.IdentifierOuterClass.Identifier value) {
+        if (datasetIdBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          datasetId_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          datasetIdBuilder_.setMessage(value);
         }
+
+        return this;
       }
       /**
        * <pre>
        * Dataset ID in the catalog
        * </pre>
        *
-       * <code>string dataset_id = 1;</code>
+       * <code>.flyteidl.core.Identifier dataset_id = 1;</code>
        */
       public Builder setDatasetId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        datasetId_ = value;
-        onChanged();
+          flyteidl.core.IdentifierOuterClass.Identifier.Builder builderForValue) {
+        if (datasetIdBuilder_ == null) {
+          datasetId_ = builderForValue.build();
+          onChanged();
+        } else {
+          datasetIdBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
@@ -5918,12 +5943,39 @@ public final class Event {
        * Dataset ID in the catalog
        * </pre>
        *
-       * <code>string dataset_id = 1;</code>
+       * <code>.flyteidl.core.Identifier dataset_id = 1;</code>
+       */
+      public Builder mergeDatasetId(flyteidl.core.IdentifierOuterClass.Identifier value) {
+        if (datasetIdBuilder_ == null) {
+          if (datasetId_ != null) {
+            datasetId_ =
+              flyteidl.core.IdentifierOuterClass.Identifier.newBuilder(datasetId_).mergeFrom(value).buildPartial();
+          } else {
+            datasetId_ = value;
+          }
+          onChanged();
+        } else {
+          datasetIdBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Dataset ID in the catalog
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier dataset_id = 1;</code>
        */
       public Builder clearDatasetId() {
-        
-        datasetId_ = getDefaultInstance().getDatasetId();
-        onChanged();
+        if (datasetIdBuilder_ == null) {
+          datasetId_ = null;
+          onChanged();
+        } else {
+          datasetId_ = null;
+          datasetIdBuilder_ = null;
+        }
+
         return this;
       }
       /**
@@ -5931,18 +5983,47 @@ public final class Event {
        * Dataset ID in the catalog
        * </pre>
        *
-       * <code>string dataset_id = 1;</code>
+       * <code>.flyteidl.core.Identifier dataset_id = 1;</code>
        */
-      public Builder setDatasetIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      public flyteidl.core.IdentifierOuterClass.Identifier.Builder getDatasetIdBuilder() {
         
-        datasetId_ = value;
         onChanged();
-        return this;
+        return getDatasetIdFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Dataset ID in the catalog
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier dataset_id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getDatasetIdOrBuilder() {
+        if (datasetIdBuilder_ != null) {
+          return datasetIdBuilder_.getMessageOrBuilder();
+        } else {
+          return datasetId_ == null ?
+              flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : datasetId_;
+        }
+      }
+      /**
+       * <pre>
+       * Dataset ID in the catalog
+       * </pre>
+       *
+       * <code>.flyteidl.core.Identifier dataset_id = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> 
+          getDatasetIdFieldBuilder() {
+        if (datasetIdBuilder_ == null) {
+          datasetIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder>(
+                  getDatasetId(),
+                  getParentForChildren(),
+                  isClean());
+          datasetId_ = null;
+        }
+        return datasetIdBuilder_;
       }
 
       private java.lang.Object artifactTag_ = "";
@@ -10890,33 +10971,34 @@ public final class Event {
       "ionMetadataB\017\n\routput_resultB\021\n\017target_m" +
       "etadata\"X\n\024WorkflowNodeMetadata\022@\n\014execu" +
       "tion_id\030\001 \001(\0132*.flyteidl.core.WorkflowEx" +
-      "ecutionIdentifier\"\204\001\n\017CatalogMetadata\022\022\n" +
-      "\ndataset_id\030\001 \001(\t\022\024\n\014artifact_tag\030\002 \001(\t\022" +
-      "G\n\023source_execution_id\030\003 \001(\0132*.flyteidl." +
-      "core.WorkflowExecutionIdentifier\"\202\001\n\020Tas" +
-      "kNodeMetadata\0228\n\014cache_status\030\001 \001(\0162\".fl" +
-      "yteidl.event.CatalogCacheStatus\0224\n\013catal" +
-      "og_key\030\002 \001(\0132\037.flyteidl.event.CatalogMet" +
-      "adata\"Q\n\033ParentTaskExecutionMetadata\0222\n\002" +
-      "id\030\001 \001(\0132&.flyteidl.core.TaskExecutionId" +
-      "entifier\"\357\003\n\022TaskExecutionEvent\022*\n\007task_" +
-      "id\030\001 \001(\0132\031.flyteidl.core.Identifier\022H\n\030p" +
-      "arent_node_execution_id\030\002 \001(\0132&.flyteidl" +
-      ".core.NodeExecutionIdentifier\022\025\n\rretry_a" +
-      "ttempt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyteidl.c" +
-      "ore.TaskExecution.Phase\022\023\n\013producer_id\030\005" +
-      " \001(\t\022$\n\004logs\030\006 \003(\0132\026.flyteidl.core.TaskL" +
-      "og\022/\n\013occurred_at\030\007 \001(\0132\032.google.protobu" +
-      "f.Timestamp\022\021\n\tinput_uri\030\010 \001(\t\022\024\n\noutput" +
-      "_uri\030\t \001(\tH\000\022.\n\005error\030\n \001(\0132\035.flyteidl.c" +
-      "ore.ExecutionErrorH\000\022,\n\013custom_info\030\013 \001(" +
-      "\0132\027.google.protobuf.Struct\022\025\n\rphase_vers" +
-      "ion\030\014 \001(\rB\017\n\routput_result*\215\001\n\022CatalogCa" +
-      "cheStatus\022\022\n\016CACHE_DISABLED\020\000\022\016\n\nCACHE_M" +
-      "ISS\020\001\022\r\n\tCACHE_HIT\020\002\022\023\n\017CACHE_POPULATED\020" +
-      "\003\022\030\n\024CACHE_LOOKUP_FAILURE\020\004\022\025\n\021CACHE_PUT" +
-      "_FAILURE\020\005B3Z1github.com/lyft/flyteidl/g" +
-      "en/pb-go/flyteidl/eventb\006proto3"
+      "ecutionIdentifier\"\237\001\n\017CatalogMetadata\022-\n" +
+      "\ndataset_id\030\001 \001(\0132\031.flyteidl.core.Identi" +
+      "fier\022\024\n\014artifact_tag\030\002 \001(\t\022G\n\023source_exe" +
+      "cution_id\030\003 \001(\0132*.flyteidl.core.Workflow" +
+      "ExecutionIdentifier\"\202\001\n\020TaskNodeMetadata" +
+      "\0228\n\014cache_status\030\001 \001(\0162\".flyteidl.event." +
+      "CatalogCacheStatus\0224\n\013catalog_key\030\002 \001(\0132" +
+      "\037.flyteidl.event.CatalogMetadata\"Q\n\033Pare" +
+      "ntTaskExecutionMetadata\0222\n\002id\030\001 \001(\0132&.fl" +
+      "yteidl.core.TaskExecutionIdentifier\"\357\003\n\022" +
+      "TaskExecutionEvent\022*\n\007task_id\030\001 \001(\0132\031.fl" +
+      "yteidl.core.Identifier\022H\n\030parent_node_ex" +
+      "ecution_id\030\002 \001(\0132&.flyteidl.core.NodeExe" +
+      "cutionIdentifier\022\025\n\rretry_attempt\030\003 \001(\r\022" +
+      "1\n\005phase\030\004 \001(\0162\".flyteidl.core.TaskExecu" +
+      "tion.Phase\022\023\n\013producer_id\030\005 \001(\t\022$\n\004logs\030" +
+      "\006 \003(\0132\026.flyteidl.core.TaskLog\022/\n\013occurre" +
+      "d_at\030\007 \001(\0132\032.google.protobuf.Timestamp\022\021" +
+      "\n\tinput_uri\030\010 \001(\t\022\024\n\noutput_uri\030\t \001(\tH\000\022" +
+      ".\n\005error\030\n \001(\0132\035.flyteidl.core.Execution" +
+      "ErrorH\000\022,\n\013custom_info\030\013 \001(\0132\027.google.pr" +
+      "otobuf.Struct\022\025\n\rphase_version\030\014 \001(\rB\017\n\r" +
+      "output_result*\215\001\n\022CatalogCacheStatus\022\022\n\016" +
+      "CACHE_DISABLED\020\000\022\016\n\nCACHE_MISS\020\001\022\r\n\tCACH" +
+      "E_HIT\020\002\022\023\n\017CACHE_POPULATED\020\003\022\030\n\024CACHE_LO" +
+      "OKUP_FAILURE\020\004\022\025\n\021CACHE_PUT_FAILURE\020\005B3Z" +
+      "1github.com/lyft/flyteidl/gen/pb-go/flyt" +
+      "eidl/eventb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

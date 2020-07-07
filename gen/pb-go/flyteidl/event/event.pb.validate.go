@@ -389,7 +389,15 @@ func (m *CatalogMetadata) Validate() error {
 		return nil
 	}
 
-	// no validation rules for DatasetId
+	if v, ok := interface{}(m.GetDatasetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return CatalogMetadataValidationError{
+				field:  "DatasetId",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	// no validation rules for ArtifactTag
 
