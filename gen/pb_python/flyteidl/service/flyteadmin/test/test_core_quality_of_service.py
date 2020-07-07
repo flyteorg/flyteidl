@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.flyteidladmin_quality_of_service_tier import FlyteidladminQualityOfServiceTier  # noqa: E501
+from flyteadmin.models.core_quality_of_service import CoreQualityOfService  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestFlyteidladminQualityOfServiceTier(unittest.TestCase):
-    """FlyteidladminQualityOfServiceTier unit test stubs"""
+class TestCoreQualityOfService(unittest.TestCase):
+    """CoreQualityOfService unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestFlyteidladminQualityOfServiceTier(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testFlyteidladminQualityOfServiceTier(self):
-        """Test FlyteidladminQualityOfServiceTier"""
+    def testCoreQualityOfService(self):
+        """Test CoreQualityOfService"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.flyteidladmin_quality_of_service_tier.FlyteidladminQualityOfServiceTier()  # noqa: E501
+        # model = flyteadmin.models.core_quality_of_service.CoreQualityOfService()  # noqa: E501
         pass
 
 

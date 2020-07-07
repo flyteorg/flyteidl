@@ -2749,6 +2749,17 @@
       "description": "- UPLOAD_ON_EXIT: All data will be uploaded after the main container exits\n - UPLOAD_EAGER: Data will be uploaded as it appears. Refer to protocol specification for details\n - DO_NOT_UPLOAD: Data will not be uploaded, only references will be written",
       "title": "Mode to use for uploading"
     },
+    "QualityOfServiceTier": {
+      "type": "string",
+      "enum": [
+        "UNDEFINED",
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ],
+      "default": "UNDEFINED",
+      "description": " - UNDEFINED: Default: no quality of service specified."
+    },
     "ResourcesResourceEntry": {
       "type": "object",
       "properties": {
@@ -3158,7 +3169,7 @@
           "description": "Optional: auth override to apply this execution."
         },
         "quality_of_service": {
-          "$ref": "#/definitions/flyteidlcoreQualityOfService",
+          "$ref": "#/definitions/coreQualityOfService",
           "description": "Indicates the runtime priority of the execution."
         }
       },
@@ -3349,7 +3360,7 @@
           "$ref": "#/definitions/adminAuthRole"
         },
         "quality_of_service": {
-          "$ref": "#/definitions/flyteidlcoreQualityOfService",
+          "$ref": "#/definitions/coreQualityOfService",
           "description": "Indicates the runtime priority of the execution."
         }
       },
@@ -3457,7 +3468,7 @@
           "$ref": "#/definitions/adminExecutionClusterLabel"
         },
         "quality_of_service": {
-          "$ref": "#/definitions/flyteidladminQualityOfService"
+          "$ref": "#/definitions/coreQualityOfService"
         }
       },
       "description": "Generic container for encapsulating all types of the above attributes messages."
@@ -4963,6 +4974,29 @@
       },
       "title": "Primitive Types"
     },
+    "coreQualityOfService": {
+      "type": "object",
+      "properties": {
+        "tier": {
+          "$ref": "#/definitions/QualityOfServiceTier"
+        },
+        "spec": {
+          "$ref": "#/definitions/coreQualityOfServiceSpec"
+        }
+      },
+      "description": "Indicates the priority of an execution."
+    },
+    "coreQualityOfServiceSpec": {
+      "type": "object",
+      "properties": {
+        "queueing_budget_mins": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Indicates how much queueing delay an execution can tolerate."
+        }
+      },
+      "description": "Represents customized execution run-time attributes."
+    },
     "coreResourceType": {
       "type": "string",
       "enum": [
@@ -5282,7 +5316,7 @@
       "type": "object",
       "properties": {
         "queuing_budget": {
-          "$ref": "#/definitions/flyteidlcoreQualityOfService",
+          "$ref": "#/definitions/coreQualityOfService",
           "description": "Indicates the runtime priority of workflow executions."
         },
         "on_failure": {
@@ -5515,38 +5549,6 @@
       },
       "description": "Encapsulates all details for a single node execution entity.\nA node represents a component in the overall workflow graph. A node launch a task, multiple tasks, an entire nested\nsub-workflow, or even a separate child-workflow execution.\nThe same task can be called repeatedly in a single workflow but each node is unique."
     },
-    "flyteidladminQualityOfService": {
-      "type": "object",
-      "properties": {
-        "tier": {
-          "$ref": "#/definitions/flyteidladminQualityOfServiceTier"
-        },
-        "spec": {
-          "$ref": "#/definitions/flyteidladminQualityOfServiceSpec"
-        }
-      }
-    },
-    "flyteidladminQualityOfServiceSpec": {
-      "type": "object",
-      "properties": {
-        "queueing_budget_mins": {
-          "type": "integer",
-          "format": "int64",
-          "description": "Indicates how much queueing delay an execution can tolerate."
-        }
-      }
-    },
-    "flyteidladminQualityOfServiceTier": {
-      "type": "string",
-      "enum": [
-        "UNDEFINED",
-        "HIGH",
-        "MEDIUM",
-        "LOW"
-      ],
-      "default": "UNDEFINED",
-      "description": " - UNDEFINED: Default: no quality of service specified."
-    },
     "flyteidladminTaskExecution": {
       "type": "object",
       "properties": {
@@ -5578,40 +5580,6 @@
         }
       },
       "title": "Metadata for a WorkflowNode"
-    },
-    "flyteidlcoreQualityOfService": {
-      "type": "object",
-      "properties": {
-        "tier": {
-          "$ref": "#/definitions/flyteidlcoreQualityOfServiceTier"
-        },
-        "spec": {
-          "$ref": "#/definitions/flyteidlcoreQualityOfServiceSpec"
-        }
-      },
-      "description": "Indicates the priority of an execution."
-    },
-    "flyteidlcoreQualityOfServiceSpec": {
-      "type": "object",
-      "properties": {
-        "queueing_budget_mins": {
-          "type": "integer",
-          "format": "int64",
-          "description": "Indicates how much queueing delay an execution can tolerate."
-        }
-      },
-      "description": "Represents customized execution run-time attributes."
-    },
-    "flyteidlcoreQualityOfServiceTier": {
-      "type": "string",
-      "enum": [
-        "UNDEFINED",
-        "HIGH",
-        "MEDIUM",
-        "LOW"
-      ],
-      "default": "UNDEFINED",
-      "description": " - UNDEFINED: Default: no quality of service specified."
     },
     "flyteidlcoreSchema": {
       "type": "object",

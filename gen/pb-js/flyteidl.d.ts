@@ -9109,7 +9109,7 @@ export namespace flyteidl {
             executionClusterLabel?: (flyteidl.admin.IExecutionClusterLabel|null);
 
             /** MatchingAttributes qualityOfService */
-            qualityOfService?: (flyteidl.admin.IQualityOfService|null);
+            qualityOfService?: (flyteidl.core.IQualityOfService|null);
         }
 
         /** Represents a MatchingAttributes. */
@@ -9134,7 +9134,7 @@ export namespace flyteidl {
             public executionClusterLabel?: (flyteidl.admin.IExecutionClusterLabel|null);
 
             /** MatchingAttributes qualityOfService. */
-            public qualityOfService?: (flyteidl.admin.IQualityOfService|null);
+            public qualityOfService?: (flyteidl.core.IQualityOfService|null);
 
             /** MatchingAttributes target. */
             public target?: ("taskResourceAttributes"|"clusterResourceAttributes"|"executionQueueAttributes"|"executionClusterLabel"|"qualityOfService");
@@ -9350,130 +9350,6 @@ export namespace flyteidl {
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a QualityOfServiceSpec. */
-        interface IQualityOfServiceSpec {
-
-            /** QualityOfServiceSpec queueingBudgetMins */
-            queueingBudgetMins?: (number|null);
-        }
-
-        /** Represents a QualityOfServiceSpec. */
-        class QualityOfServiceSpec implements IQualityOfServiceSpec {
-
-            /**
-             * Constructs a new QualityOfServiceSpec.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IQualityOfServiceSpec);
-
-            /** QualityOfServiceSpec queueingBudgetMins. */
-            public queueingBudgetMins: number;
-
-            /**
-             * Creates a new QualityOfServiceSpec instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns QualityOfServiceSpec instance
-             */
-            public static create(properties?: flyteidl.admin.IQualityOfServiceSpec): flyteidl.admin.QualityOfServiceSpec;
-
-            /**
-             * Encodes the specified QualityOfServiceSpec message. Does not implicitly {@link flyteidl.admin.QualityOfServiceSpec.verify|verify} messages.
-             * @param message QualityOfServiceSpec message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IQualityOfServiceSpec, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a QualityOfServiceSpec message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns QualityOfServiceSpec
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.QualityOfServiceSpec;
-
-            /**
-             * Verifies a QualityOfServiceSpec message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a QualityOfService. */
-        interface IQualityOfService {
-
-            /** QualityOfService tier */
-            tier?: (flyteidl.admin.QualityOfService.Tier|null);
-
-            /** QualityOfService spec */
-            spec?: (flyteidl.admin.IQualityOfServiceSpec|null);
-        }
-
-        /** Represents a QualityOfService. */
-        class QualityOfService implements IQualityOfService {
-
-            /**
-             * Constructs a new QualityOfService.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IQualityOfService);
-
-            /** QualityOfService tier. */
-            public tier: flyteidl.admin.QualityOfService.Tier;
-
-            /** QualityOfService spec. */
-            public spec?: (flyteidl.admin.IQualityOfServiceSpec|null);
-
-            /** QualityOfService designation. */
-            public designation?: ("tier"|"spec");
-
-            /**
-             * Creates a new QualityOfService instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns QualityOfService instance
-             */
-            public static create(properties?: flyteidl.admin.IQualityOfService): flyteidl.admin.QualityOfService;
-
-            /**
-             * Encodes the specified QualityOfService message. Does not implicitly {@link flyteidl.admin.QualityOfService.verify|verify} messages.
-             * @param message QualityOfService message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IQualityOfService, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a QualityOfService message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns QualityOfService
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.QualityOfService;
-
-            /**
-             * Verifies a QualityOfService message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        namespace QualityOfService {
-
-            /** Tier enum. */
-            enum Tier {
-                UNDEFINED = 0,
-                HIGH = 1,
-                MEDIUM = 2,
-                LOW = 3
-            }
         }
 
         /** Properties of a NodeExecutionGetRequest. */

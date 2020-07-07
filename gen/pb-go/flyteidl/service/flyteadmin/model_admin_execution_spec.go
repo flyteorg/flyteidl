@@ -25,5 +25,5 @@ type AdminExecutionSpec struct {
 	// Optional: auth override to apply this execution.
 	AuthRole *AdminAuthRole `json:"auth_role,omitempty"`
 	// Indicates the runtime priority of the execution.
-	QualityOfService *FlyteidlcoreQualityOfService `json:"quality_of_service,omitempty"`
+	QualityOfService *CoreQualityOfService `json:"quality_of_service,omitempty"`
 }

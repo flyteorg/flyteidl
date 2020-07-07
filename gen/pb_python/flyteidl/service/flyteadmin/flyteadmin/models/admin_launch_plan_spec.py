@@ -24,7 +24,7 @@ from flyteadmin.models.admin_launch_plan_metadata import AdminLaunchPlanMetadata
 from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_literal_map import CoreLiteralMap  # noqa: F401,E501
 from flyteadmin.models.core_parameter_map import CoreParameterMap  # noqa: F401,E501
-from flyteadmin.models.flyteidlcore_quality_of_service import FlyteidlcoreQualityOfService  # noqa: F401,E501
+from flyteadmin.models.core_quality_of_service import CoreQualityOfService  # noqa: F401,E501
 
 
 class AdminLaunchPlanSpec(object):
@@ -50,7 +50,7 @@ class AdminLaunchPlanSpec(object):
         'annotations': 'AdminAnnotations',
         'auth': 'AdminAuth',
         'auth_role': 'AdminAuthRole',
-        'quality_of_service': 'FlyteidlcoreQualityOfService'
+        'quality_of_service': 'CoreQualityOfService'
     }
 
     attribute_map = {
@@ -304,7 +304,7 @@ class AdminLaunchPlanSpec(object):
         Indicates the runtime priority of the execution.  # noqa: E501
 
         :return: The quality_of_service of this AdminLaunchPlanSpec.  # noqa: E501
-        :rtype: FlyteidlcoreQualityOfService
+        :rtype: CoreQualityOfService
         """
         return self._quality_of_service
 
@@ -315,7 +315,7 @@ class AdminLaunchPlanSpec(object):
         Indicates the runtime priority of the execution.  # noqa: E501
 
         :param quality_of_service: The quality_of_service of this AdminLaunchPlanSpec.  # noqa: E501
-        :type: FlyteidlcoreQualityOfService
+        :type: CoreQualityOfService
         """
 
         self._quality_of_service = quality_of_service

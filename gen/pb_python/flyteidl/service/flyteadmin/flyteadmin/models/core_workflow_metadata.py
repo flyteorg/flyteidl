@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.flyteidlcore_quality_of_service import FlyteidlcoreQualityOfService  # noqa: F401,E501
+from flyteadmin.models.core_quality_of_service import CoreQualityOfService  # noqa: F401,E501
 from flyteadmin.models.workflow_metadata_on_failure_policy import WorkflowMetadataOnFailurePolicy  # noqa: F401,E501
 
 
@@ -34,7 +34,7 @@ class CoreWorkflowMetadata(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'queuing_budget': 'FlyteidlcoreQualityOfService',
+        'queuing_budget': 'CoreQualityOfService',
         'on_failure': 'WorkflowMetadataOnFailurePolicy'
     }
 
@@ -62,7 +62,7 @@ class CoreWorkflowMetadata(object):
         Indicates the runtime priority of workflow executions.  # noqa: E501
 
         :return: The queuing_budget of this CoreWorkflowMetadata.  # noqa: E501
-        :rtype: FlyteidlcoreQualityOfService
+        :rtype: CoreQualityOfService
         """
         return self._queuing_budget
 
@@ -73,7 +73,7 @@ class CoreWorkflowMetadata(object):
         Indicates the runtime priority of workflow executions.  # noqa: E501
 
         :param queuing_budget: The queuing_budget of this CoreWorkflowMetadata.  # noqa: E501
-        :type: FlyteidlcoreQualityOfService
+        :type: CoreQualityOfService
         """
 
         self._queuing_budget = queuing_budget

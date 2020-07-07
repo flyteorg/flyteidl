@@ -15,5 +15,5 @@ type AdminMatchingAttributes struct {
 	ClusterResourceAttributes *AdminClusterResourceAttributes `json:"cluster_resource_attributes,omitempty"`
 	ExecutionQueueAttributes *AdminExecutionQueueAttributes `json:"execution_queue_attributes,omitempty"`
 	ExecutionClusterLabel *AdminExecutionClusterLabel `json:"execution_cluster_label,omitempty"`
-	QualityOfService *FlyteidladminQualityOfService `json:"quality_of_service,omitempty"`
+	QualityOfService *CoreQualityOfService `json:"quality_of_service,omitempty"`
 }

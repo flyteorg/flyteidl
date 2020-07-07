@@ -21746,7 +21746,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.IClusterResourceAttributes|null} [clusterResourceAttributes] MatchingAttributes clusterResourceAttributes
              * @property {flyteidl.admin.IExecutionQueueAttributes|null} [executionQueueAttributes] MatchingAttributes executionQueueAttributes
              * @property {flyteidl.admin.IExecutionClusterLabel|null} [executionClusterLabel] MatchingAttributes executionClusterLabel
-             * @property {flyteidl.admin.IQualityOfService|null} [qualityOfService] MatchingAttributes qualityOfService
+             * @property {flyteidl.core.IQualityOfService|null} [qualityOfService] MatchingAttributes qualityOfService
              */
 
             /**
@@ -21798,7 +21798,7 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * MatchingAttributes qualityOfService.
-             * @member {flyteidl.admin.IQualityOfService|null|undefined} qualityOfService
+             * @member {flyteidl.core.IQualityOfService|null|undefined} qualityOfService
              * @memberof flyteidl.admin.MatchingAttributes
              * @instance
              */
@@ -21851,7 +21851,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.executionClusterLabel != null && message.hasOwnProperty("executionClusterLabel"))
                     $root.flyteidl.admin.ExecutionClusterLabel.encode(message.executionClusterLabel, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.qualityOfService != null && message.hasOwnProperty("qualityOfService"))
-                    $root.flyteidl.admin.QualityOfService.encode(message.qualityOfService, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    $root.flyteidl.core.QualityOfService.encode(message.qualityOfService, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -21886,7 +21886,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.executionClusterLabel = $root.flyteidl.admin.ExecutionClusterLabel.decode(reader, reader.uint32());
                         break;
                     case 5:
-                        message.qualityOfService = $root.flyteidl.admin.QualityOfService.decode(reader, reader.uint32());
+                        message.qualityOfService = $root.flyteidl.core.QualityOfService.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -21951,7 +21951,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         return "target: multiple values";
                     properties.target = 1;
                     {
-                        let error = $root.flyteidl.admin.QualityOfService.verify(message.qualityOfService);
+                        let error = $root.flyteidl.core.QualityOfService.verify(message.qualityOfService);
                         if (error)
                             return "qualityOfService." + error;
                     }
@@ -22378,292 +22378,6 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             return ListMatchableAttributesResponse;
-        })();
-
-        admin.QualityOfServiceSpec = (function() {
-
-            /**
-             * Properties of a QualityOfServiceSpec.
-             * @memberof flyteidl.admin
-             * @interface IQualityOfServiceSpec
-             * @property {number|null} [queueingBudgetMins] QualityOfServiceSpec queueingBudgetMins
-             */
-
-            /**
-             * Constructs a new QualityOfServiceSpec.
-             * @memberof flyteidl.admin
-             * @classdesc Represents a QualityOfServiceSpec.
-             * @implements IQualityOfServiceSpec
-             * @constructor
-             * @param {flyteidl.admin.IQualityOfServiceSpec=} [properties] Properties to set
-             */
-            function QualityOfServiceSpec(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * QualityOfServiceSpec queueingBudgetMins.
-             * @member {number} queueingBudgetMins
-             * @memberof flyteidl.admin.QualityOfServiceSpec
-             * @instance
-             */
-            QualityOfServiceSpec.prototype.queueingBudgetMins = 0;
-
-            /**
-             * Creates a new QualityOfServiceSpec instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.admin.QualityOfServiceSpec
-             * @static
-             * @param {flyteidl.admin.IQualityOfServiceSpec=} [properties] Properties to set
-             * @returns {flyteidl.admin.QualityOfServiceSpec} QualityOfServiceSpec instance
-             */
-            QualityOfServiceSpec.create = function create(properties) {
-                return new QualityOfServiceSpec(properties);
-            };
-
-            /**
-             * Encodes the specified QualityOfServiceSpec message. Does not implicitly {@link flyteidl.admin.QualityOfServiceSpec.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.admin.QualityOfServiceSpec
-             * @static
-             * @param {flyteidl.admin.IQualityOfServiceSpec} message QualityOfServiceSpec message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            QualityOfServiceSpec.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.queueingBudgetMins != null && message.hasOwnProperty("queueingBudgetMins"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.queueingBudgetMins);
-                return writer;
-            };
-
-            /**
-             * Decodes a QualityOfServiceSpec message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.admin.QualityOfServiceSpec
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.QualityOfServiceSpec} QualityOfServiceSpec
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            QualityOfServiceSpec.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.QualityOfServiceSpec();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.queueingBudgetMins = reader.uint32();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a QualityOfServiceSpec message.
-             * @function verify
-             * @memberof flyteidl.admin.QualityOfServiceSpec
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            QualityOfServiceSpec.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.queueingBudgetMins != null && message.hasOwnProperty("queueingBudgetMins"))
-                    if (!$util.isInteger(message.queueingBudgetMins))
-                        return "queueingBudgetMins: integer expected";
-                return null;
-            };
-
-            return QualityOfServiceSpec;
-        })();
-
-        admin.QualityOfService = (function() {
-
-            /**
-             * Properties of a QualityOfService.
-             * @memberof flyteidl.admin
-             * @interface IQualityOfService
-             * @property {flyteidl.admin.QualityOfService.Tier|null} [tier] QualityOfService tier
-             * @property {flyteidl.admin.IQualityOfServiceSpec|null} [spec] QualityOfService spec
-             */
-
-            /**
-             * Constructs a new QualityOfService.
-             * @memberof flyteidl.admin
-             * @classdesc Represents a QualityOfService.
-             * @implements IQualityOfService
-             * @constructor
-             * @param {flyteidl.admin.IQualityOfService=} [properties] Properties to set
-             */
-            function QualityOfService(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * QualityOfService tier.
-             * @member {flyteidl.admin.QualityOfService.Tier} tier
-             * @memberof flyteidl.admin.QualityOfService
-             * @instance
-             */
-            QualityOfService.prototype.tier = 0;
-
-            /**
-             * QualityOfService spec.
-             * @member {flyteidl.admin.IQualityOfServiceSpec|null|undefined} spec
-             * @memberof flyteidl.admin.QualityOfService
-             * @instance
-             */
-            QualityOfService.prototype.spec = null;
-
-            // OneOf field names bound to virtual getters and setters
-            let $oneOfFields;
-
-            /**
-             * QualityOfService designation.
-             * @member {"tier"|"spec"|undefined} designation
-             * @memberof flyteidl.admin.QualityOfService
-             * @instance
-             */
-            Object.defineProperty(QualityOfService.prototype, "designation", {
-                get: $util.oneOfGetter($oneOfFields = ["tier", "spec"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new QualityOfService instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.admin.QualityOfService
-             * @static
-             * @param {flyteidl.admin.IQualityOfService=} [properties] Properties to set
-             * @returns {flyteidl.admin.QualityOfService} QualityOfService instance
-             */
-            QualityOfService.create = function create(properties) {
-                return new QualityOfService(properties);
-            };
-
-            /**
-             * Encodes the specified QualityOfService message. Does not implicitly {@link flyteidl.admin.QualityOfService.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.admin.QualityOfService
-             * @static
-             * @param {flyteidl.admin.IQualityOfService} message QualityOfService message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            QualityOfService.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.tier != null && message.hasOwnProperty("tier"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.tier);
-                if (message.spec != null && message.hasOwnProperty("spec"))
-                    $root.flyteidl.admin.QualityOfServiceSpec.encode(message.spec, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a QualityOfService message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.admin.QualityOfService
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.QualityOfService} QualityOfService
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            QualityOfService.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.QualityOfService();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.tier = reader.int32();
-                        break;
-                    case 2:
-                        message.spec = $root.flyteidl.admin.QualityOfServiceSpec.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a QualityOfService message.
-             * @function verify
-             * @memberof flyteidl.admin.QualityOfService
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            QualityOfService.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                let properties = {};
-                if (message.tier != null && message.hasOwnProperty("tier")) {
-                    properties.designation = 1;
-                    switch (message.tier) {
-                    default:
-                        return "tier: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                        break;
-                    }
-                }
-                if (message.spec != null && message.hasOwnProperty("spec")) {
-                    if (properties.designation === 1)
-                        return "designation: multiple values";
-                    properties.designation = 1;
-                    {
-                        let error = $root.flyteidl.admin.QualityOfServiceSpec.verify(message.spec);
-                        if (error)
-                            return "spec." + error;
-                    }
-                }
-                return null;
-            };
-
-            /**
-             * Tier enum.
-             * @name flyteidl.admin.QualityOfService.Tier
-             * @enum {string}
-             * @property {number} UNDEFINED=0 UNDEFINED value
-             * @property {number} HIGH=1 HIGH value
-             * @property {number} MEDIUM=2 MEDIUM value
-             * @property {number} LOW=3 LOW value
-             */
-            QualityOfService.Tier = (function() {
-                const valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "UNDEFINED"] = 0;
-                values[valuesById[1] = "HIGH"] = 1;
-                values[valuesById[2] = "MEDIUM"] = 2;
-                values[valuesById[3] = "LOW"] = 3;
-                return values;
-            })();
-
-            return QualityOfService;
         })();
 
         admin.NodeExecutionGetRequest = (function() {

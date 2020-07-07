@@ -191,7 +191,7 @@ execution_cluster_label
 .. _api_field_flyteidl.admin.MatchingAttributes.quality_of_service:
 
 quality_of_service
-  (:ref:`flyteidl.admin.QualityOfService <api_msg_flyteidl.admin.QualityOfService>`) 
+  (:ref:`flyteidl.core.QualityOfService <api_msg_flyteidl.core.QualityOfService>`) 
   
   
   Only one of :ref:`task_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.task_resource_attributes>`, :ref:`cluster_resource_attributes <api_field_flyteidl.admin.MatchingAttributes.cluster_resource_attributes>`, :ref:`execution_queue_attributes <api_field_flyteidl.admin.MatchingAttributes.execution_queue_attributes>`, :ref:`execution_cluster_label <api_field_flyteidl.admin.MatchingAttributes.execution_cluster_label>`, :ref:`quality_of_service <api_field_flyteidl.admin.MatchingAttributes.quality_of_service>` may be set.

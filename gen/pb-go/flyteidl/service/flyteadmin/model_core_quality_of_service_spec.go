@@ -10,7 +10,7 @@
 package flyteadmin
 
 // Represents customized execution run-time attributes.
-type FlyteidlcoreQualityOfServiceSpec struct {
+type CoreQualityOfServiceSpec struct {
 	// Indicates how much queueing delay an execution can tolerate.
 	QueueingBudgetMins int64 `json:"queueing_budget_mins,omitempty"`
 }

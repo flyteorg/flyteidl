@@ -12,7 +12,7 @@ package flyteadmin
 // Metadata for the entire workflow. Defines execution behavior that does not change the final outputs of the workflow.
 type CoreWorkflowMetadata struct {
 	// Indicates the runtime priority of workflow executions.
-	QueuingBudget *FlyteidlcoreQualityOfService `json:"queuing_budget,omitempty"`
+	QueuingBudget *CoreQualityOfService `json:"queuing_budget,omitempty"`
 	// Defines how the system should behave when a failure is detected in the workflow execution.
 	OnFailure *WorkflowMetadataOnFailurePolicy `json:"on_failure,omitempty"`
 }

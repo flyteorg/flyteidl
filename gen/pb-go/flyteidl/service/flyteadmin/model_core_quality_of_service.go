@@ -10,7 +10,7 @@
 package flyteadmin
 
 // Indicates the priority of an execution.
-type FlyteidlcoreQualityOfService struct {
-	Tier *FlyteidlcoreQualityOfServiceTier `json:"tier,omitempty"`
-	Spec *FlyteidlcoreQualityOfServiceSpec `json:"spec,omitempty"`
+type CoreQualityOfService struct {
+	Tier *QualityOfServiceTier `json:"tier,omitempty"`
+	Spec *CoreQualityOfServiceSpec `json:"spec,omitempty"`
 }
