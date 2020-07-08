@@ -7229,7 +7229,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a QualityOfServiceSpec.
              * @memberof flyteidl.core
              * @interface IQualityOfServiceSpec
-             * @property {number|null} [queueingBudgetMins] QualityOfServiceSpec queueingBudgetMins
+             * @property {google.protobuf.IDuration|null} [queueingBudget] QualityOfServiceSpec queueingBudget
              */
 
             /**
@@ -7248,12 +7248,12 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * QualityOfServiceSpec queueingBudgetMins.
-             * @member {number} queueingBudgetMins
+             * QualityOfServiceSpec queueingBudget.
+             * @member {google.protobuf.IDuration|null|undefined} queueingBudget
              * @memberof flyteidl.core.QualityOfServiceSpec
              * @instance
              */
-            QualityOfServiceSpec.prototype.queueingBudgetMins = 0;
+            QualityOfServiceSpec.prototype.queueingBudget = null;
 
             /**
              * Creates a new QualityOfServiceSpec instance using the specified properties.
@@ -7279,8 +7279,8 @@ export const flyteidl = $root.flyteidl = (() => {
             QualityOfServiceSpec.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.queueingBudgetMins != null && message.hasOwnProperty("queueingBudgetMins"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.queueingBudgetMins);
+                if (message.queueingBudget != null && message.hasOwnProperty("queueingBudget"))
+                    $root.google.protobuf.Duration.encode(message.queueingBudget, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -7303,7 +7303,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.queueingBudgetMins = reader.uint32();
+                        message.queueingBudget = $root.google.protobuf.Duration.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -7324,9 +7324,11 @@ export const flyteidl = $root.flyteidl = (() => {
             QualityOfServiceSpec.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.queueingBudgetMins != null && message.hasOwnProperty("queueingBudgetMins"))
-                    if (!$util.isInteger(message.queueingBudgetMins))
-                        return "queueingBudgetMins: integer expected";
+                if (message.queueingBudget != null && message.hasOwnProperty("queueingBudget")) {
+                    let error = $root.google.protobuf.Duration.verify(message.queueingBudget);
+                    if (error)
+                        return "queueingBudget." + error;
+                }
                 return null;
             };
 

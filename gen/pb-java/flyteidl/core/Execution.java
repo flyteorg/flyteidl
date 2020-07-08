@@ -4016,9 +4016,25 @@ public final class Execution {
      * Indicates how much queueing delay an execution can tolerate.
      * </pre>
      *
-     * <code>uint32 queueing_budget_mins = 1;</code>
+     * <code>.google.protobuf.Duration queueing_budget = 1;</code>
      */
-    int getQueueingBudgetMins();
+    boolean hasQueueingBudget();
+    /**
+     * <pre>
+     * Indicates how much queueing delay an execution can tolerate.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration queueing_budget = 1;</code>
+     */
+    com.google.protobuf.Duration getQueueingBudget();
+    /**
+     * <pre>
+     * Indicates how much queueing delay an execution can tolerate.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration queueing_budget = 1;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getQueueingBudgetOrBuilder();
   }
   /**
    * <pre>
@@ -4063,9 +4079,17 @@ public final class Execution {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (queueingBudget_ != null) {
+                subBuilder = queueingBudget_.toBuilder();
+              }
+              queueingBudget_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(queueingBudget_);
+                queueingBudget_ = subBuilder.buildPartial();
+              }
 
-              queueingBudgetMins_ = input.readUInt32();
               break;
             }
             default: {
@@ -4100,17 +4124,37 @@ public final class Execution {
               flyteidl.core.Execution.QualityOfServiceSpec.class, flyteidl.core.Execution.QualityOfServiceSpec.Builder.class);
     }
 
-    public static final int QUEUEING_BUDGET_MINS_FIELD_NUMBER = 1;
-    private int queueingBudgetMins_;
+    public static final int QUEUEING_BUDGET_FIELD_NUMBER = 1;
+    private com.google.protobuf.Duration queueingBudget_;
     /**
      * <pre>
      * Indicates how much queueing delay an execution can tolerate.
      * </pre>
      *
-     * <code>uint32 queueing_budget_mins = 1;</code>
+     * <code>.google.protobuf.Duration queueing_budget = 1;</code>
      */
-    public int getQueueingBudgetMins() {
-      return queueingBudgetMins_;
+    public boolean hasQueueingBudget() {
+      return queueingBudget_ != null;
+    }
+    /**
+     * <pre>
+     * Indicates how much queueing delay an execution can tolerate.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration queueing_budget = 1;</code>
+     */
+    public com.google.protobuf.Duration getQueueingBudget() {
+      return queueingBudget_ == null ? com.google.protobuf.Duration.getDefaultInstance() : queueingBudget_;
+    }
+    /**
+     * <pre>
+     * Indicates how much queueing delay an execution can tolerate.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration queueing_budget = 1;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getQueueingBudgetOrBuilder() {
+      return getQueueingBudget();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4127,8 +4171,8 @@ public final class Execution {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (queueingBudgetMins_ != 0) {
-        output.writeUInt32(1, queueingBudgetMins_);
+      if (queueingBudget_ != null) {
+        output.writeMessage(1, getQueueingBudget());
       }
       unknownFields.writeTo(output);
     }
@@ -4139,9 +4183,9 @@ public final class Execution {
       if (size != -1) return size;
 
       size = 0;
-      if (queueingBudgetMins_ != 0) {
+      if (queueingBudget_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, queueingBudgetMins_);
+          .computeMessageSize(1, getQueueingBudget());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4158,8 +4202,11 @@ public final class Execution {
       }
       flyteidl.core.Execution.QualityOfServiceSpec other = (flyteidl.core.Execution.QualityOfServiceSpec) obj;
 
-      if (getQueueingBudgetMins()
-          != other.getQueueingBudgetMins()) return false;
+      if (hasQueueingBudget() != other.hasQueueingBudget()) return false;
+      if (hasQueueingBudget()) {
+        if (!getQueueingBudget()
+            .equals(other.getQueueingBudget())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4171,8 +4218,10 @@ public final class Execution {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + QUEUEING_BUDGET_MINS_FIELD_NUMBER;
-      hash = (53 * hash) + getQueueingBudgetMins();
+      if (hasQueueingBudget()) {
+        hash = (37 * hash) + QUEUEING_BUDGET_FIELD_NUMBER;
+        hash = (53 * hash) + getQueueingBudget().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4310,8 +4359,12 @@ public final class Execution {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        queueingBudgetMins_ = 0;
-
+        if (queueingBudgetBuilder_ == null) {
+          queueingBudget_ = null;
+        } else {
+          queueingBudget_ = null;
+          queueingBudgetBuilder_ = null;
+        }
         return this;
       }
 
@@ -4338,7 +4391,11 @@ public final class Execution {
       @java.lang.Override
       public flyteidl.core.Execution.QualityOfServiceSpec buildPartial() {
         flyteidl.core.Execution.QualityOfServiceSpec result = new flyteidl.core.Execution.QualityOfServiceSpec(this);
-        result.queueingBudgetMins_ = queueingBudgetMins_;
+        if (queueingBudgetBuilder_ == null) {
+          result.queueingBudget_ = queueingBudget_;
+        } else {
+          result.queueingBudget_ = queueingBudgetBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -4387,8 +4444,8 @@ public final class Execution {
 
       public Builder mergeFrom(flyteidl.core.Execution.QualityOfServiceSpec other) {
         if (other == flyteidl.core.Execution.QualityOfServiceSpec.getDefaultInstance()) return this;
-        if (other.getQueueingBudgetMins() != 0) {
-          setQueueingBudgetMins(other.getQueueingBudgetMins());
+        if (other.hasQueueingBudget()) {
+          mergeQueueingBudget(other.getQueueingBudget());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4419,28 +4476,51 @@ public final class Execution {
         return this;
       }
 
-      private int queueingBudgetMins_ ;
+      private com.google.protobuf.Duration queueingBudget_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> queueingBudgetBuilder_;
       /**
        * <pre>
        * Indicates how much queueing delay an execution can tolerate.
        * </pre>
        *
-       * <code>uint32 queueing_budget_mins = 1;</code>
+       * <code>.google.protobuf.Duration queueing_budget = 1;</code>
        */
-      public int getQueueingBudgetMins() {
-        return queueingBudgetMins_;
+      public boolean hasQueueingBudget() {
+        return queueingBudgetBuilder_ != null || queueingBudget_ != null;
       }
       /**
        * <pre>
        * Indicates how much queueing delay an execution can tolerate.
        * </pre>
        *
-       * <code>uint32 queueing_budget_mins = 1;</code>
+       * <code>.google.protobuf.Duration queueing_budget = 1;</code>
        */
-      public Builder setQueueingBudgetMins(int value) {
-        
-        queueingBudgetMins_ = value;
-        onChanged();
+      public com.google.protobuf.Duration getQueueingBudget() {
+        if (queueingBudgetBuilder_ == null) {
+          return queueingBudget_ == null ? com.google.protobuf.Duration.getDefaultInstance() : queueingBudget_;
+        } else {
+          return queueingBudgetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Indicates how much queueing delay an execution can tolerate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration queueing_budget = 1;</code>
+       */
+      public Builder setQueueingBudget(com.google.protobuf.Duration value) {
+        if (queueingBudgetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          queueingBudget_ = value;
+          onChanged();
+        } else {
+          queueingBudgetBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
@@ -4448,13 +4528,105 @@ public final class Execution {
        * Indicates how much queueing delay an execution can tolerate.
        * </pre>
        *
-       * <code>uint32 queueing_budget_mins = 1;</code>
+       * <code>.google.protobuf.Duration queueing_budget = 1;</code>
        */
-      public Builder clearQueueingBudgetMins() {
-        
-        queueingBudgetMins_ = 0;
-        onChanged();
+      public Builder setQueueingBudget(
+          com.google.protobuf.Duration.Builder builderForValue) {
+        if (queueingBudgetBuilder_ == null) {
+          queueingBudget_ = builderForValue.build();
+          onChanged();
+        } else {
+          queueingBudgetBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
+      }
+      /**
+       * <pre>
+       * Indicates how much queueing delay an execution can tolerate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration queueing_budget = 1;</code>
+       */
+      public Builder mergeQueueingBudget(com.google.protobuf.Duration value) {
+        if (queueingBudgetBuilder_ == null) {
+          if (queueingBudget_ != null) {
+            queueingBudget_ =
+              com.google.protobuf.Duration.newBuilder(queueingBudget_).mergeFrom(value).buildPartial();
+          } else {
+            queueingBudget_ = value;
+          }
+          onChanged();
+        } else {
+          queueingBudgetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicates how much queueing delay an execution can tolerate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration queueing_budget = 1;</code>
+       */
+      public Builder clearQueueingBudget() {
+        if (queueingBudgetBuilder_ == null) {
+          queueingBudget_ = null;
+          onChanged();
+        } else {
+          queueingBudget_ = null;
+          queueingBudgetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicates how much queueing delay an execution can tolerate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration queueing_budget = 1;</code>
+       */
+      public com.google.protobuf.Duration.Builder getQueueingBudgetBuilder() {
+        
+        onChanged();
+        return getQueueingBudgetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Indicates how much queueing delay an execution can tolerate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration queueing_budget = 1;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getQueueingBudgetOrBuilder() {
+        if (queueingBudgetBuilder_ != null) {
+          return queueingBudgetBuilder_.getMessageOrBuilder();
+        } else {
+          return queueingBudget_ == null ?
+              com.google.protobuf.Duration.getDefaultInstance() : queueingBudget_;
+        }
+      }
+      /**
+       * <pre>
+       * Indicates how much queueing delay an execution can tolerate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration queueing_budget = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+          getQueueingBudgetFieldBuilder() {
+        if (queueingBudgetBuilder_ == null) {
+          queueingBudgetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                  getQueueingBudget(),
+                  getParentForChildren(),
+                  isClean());
+          queueingBudget_ = null;
+        }
+        return queueingBudgetBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5520,15 +5692,15 @@ public final class Execution {
       "ormat\030\003 \001(\0162$.flyteidl.core.TaskLog.Mess" +
       "ageFormat\022&\n\003ttl\030\004 \001(\0132\031.google.protobuf" +
       ".Duration\"/\n\rMessageFormat\022\013\n\007UNKNOWN\020\000\022" +
-      "\007\n\003CSV\020\001\022\010\n\004JSON\020\002\"4\n\024QualityOfServiceSp" +
-      "ec\022\034\n\024queueing_budget_mins\030\001 \001(\r\"\302\001\n\020Qua" +
-      "lityOfService\0224\n\004tier\030\001 \001(\0162$.flyteidl.c" +
-      "ore.QualityOfService.TierH\000\0223\n\004spec\030\002 \001(" +
-      "\0132#.flyteidl.core.QualityOfServiceSpecH\000" +
-      "\"4\n\004Tier\022\r\n\tUNDEFINED\020\000\022\010\n\004HIGH\020\001\022\n\n\006MED" +
-      "IUM\020\002\022\007\n\003LOW\020\003B\r\n\013designationB2Z0github." +
-      "com/lyft/flyteidl/gen/pb-go/flyteidl/cor" +
-      "eb\006proto3"
+      "\007\n\003CSV\020\001\022\010\n\004JSON\020\002\"J\n\024QualityOfServiceSp" +
+      "ec\0222\n\017queueing_budget\030\001 \001(\0132\031.google.pro" +
+      "tobuf.Duration\"\302\001\n\020QualityOfService\0224\n\004t" +
+      "ier\030\001 \001(\0162$.flyteidl.core.QualityOfServi" +
+      "ce.TierH\000\0223\n\004spec\030\002 \001(\0132#.flyteidl.core." +
+      "QualityOfServiceSpecH\000\"4\n\004Tier\022\r\n\tUNDEFI" +
+      "NED\020\000\022\010\n\004HIGH\020\001\022\n\n\006MEDIUM\020\002\022\007\n\003LOW\020\003B\r\n\013" +
+      "designationB2Z0github.com/lyft/flyteidl/" +
+      "gen/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5578,7 +5750,7 @@ public final class Execution {
     internal_static_flyteidl_core_QualityOfServiceSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_QualityOfServiceSpec_descriptor,
-        new java.lang.String[] { "QueueingBudgetMins", });
+        new java.lang.String[] { "QueueingBudget", });
     internal_static_flyteidl_core_QualityOfService_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_core_QualityOfService_fieldAccessorTable = new

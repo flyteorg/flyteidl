@@ -16,7 +16,7 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_QualityOfServiceSpec_flyteidl_2fcore_2fexecution_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_QualityOfServiceSpec_flyteidl_2fcore_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2fduration_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Duration_google_2fprotobuf_2fduration_2eproto;
 namespace flyteidl {
 namespace core {
@@ -134,8 +134,9 @@ static void InitDefaultsQualityOfServiceSpec_flyteidl_2fcore_2fexecution_2eproto
   ::flyteidl::core::QualityOfServiceSpec::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_QualityOfServiceSpec_flyteidl_2fcore_2fexecution_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsQualityOfServiceSpec_flyteidl_2fcore_2fexecution_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<1> scc_info_QualityOfServiceSpec_flyteidl_2fcore_2fexecution_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsQualityOfServiceSpec_flyteidl_2fcore_2fexecution_2eproto}, {
+      &scc_info_Duration_google_2fprotobuf_2fduration_2eproto.base,}};
 
 static void InitDefaultsQualityOfService_flyteidl_2fcore_2fexecution_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -205,7 +206,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fexecution_2eproto
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::QualityOfServiceSpec, queueing_budget_mins_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::QualityOfServiceSpec, queueing_budget_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::QualityOfService, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -264,20 +265,20 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fexecution_2eproto[] =
   "ormat\030\003 \001(\0162$.flyteidl.core.TaskLog.Mess"
   "ageFormat\022&\n\003ttl\030\004 \001(\0132\031.google.protobuf"
   ".Duration\"/\n\rMessageFormat\022\013\n\007UNKNOWN\020\000\022"
-  "\007\n\003CSV\020\001\022\010\n\004JSON\020\002\"4\n\024QualityOfServiceSp"
-  "ec\022\034\n\024queueing_budget_mins\030\001 \001(\r\"\302\001\n\020Qua"
-  "lityOfService\0224\n\004tier\030\001 \001(\0162$.flyteidl.c"
-  "ore.QualityOfService.TierH\000\0223\n\004spec\030\002 \001("
-  "\0132#.flyteidl.core.QualityOfServiceSpecH\000"
-  "\"4\n\004Tier\022\r\n\tUNDEFINED\020\000\022\010\n\004HIGH\020\001\022\n\n\006MED"
-  "IUM\020\002\022\007\n\003LOW\020\003B\r\n\013designationB2Z0github."
-  "com/lyft/flyteidl/gen/pb-go/flyteidl/cor"
-  "eb\006proto3"
+  "\007\n\003CSV\020\001\022\010\n\004JSON\020\002\"J\n\024QualityOfServiceSp"
+  "ec\0222\n\017queueing_budget\030\001 \001(\0132\031.google.pro"
+  "tobuf.Duration\"\302\001\n\020QualityOfService\0224\n\004t"
+  "ier\030\001 \001(\0162$.flyteidl.core.QualityOfServi"
+  "ce.TierH\000\0223\n\004spec\030\002 \001(\0132#.flyteidl.core."
+  "QualityOfServiceSpecH\000\"4\n\004Tier\022\r\n\tUNDEFI"
+  "NED\020\000\022\010\n\004HIGH\020\001\022\n\n\006MEDIUM\020\002\022\007\n\003LOW\020\003B\r\n\013"
+  "designationB2Z0github.com/lyft/flyteidl/"
+  "gen/pb-go/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fexecution_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fexecution_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fexecution_2eproto,
-  "flyteidl/core/execution.proto", &assign_descriptors_table_flyteidl_2fcore_2fexecution_2eproto, 1209,
+  "flyteidl/core/execution.proto", &assign_descriptors_table_flyteidl_2fcore_2fexecution_2eproto, 1231,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fexecution_2eproto() {
@@ -2080,13 +2081,26 @@ void TaskLog::InternalSwap(TaskLog* other) {
 // ===================================================================
 
 void QualityOfServiceSpec::InitAsDefaultInstance() {
+  ::flyteidl::core::_QualityOfServiceSpec_default_instance_._instance.get_mutable()->queueing_budget_ = const_cast< ::google::protobuf::Duration*>(
+      ::google::protobuf::Duration::internal_default_instance());
 }
 class QualityOfServiceSpec::HasBitSetters {
  public:
+  static const ::google::protobuf::Duration& queueing_budget(const QualityOfServiceSpec* msg);
 };
 
+const ::google::protobuf::Duration&
+QualityOfServiceSpec::HasBitSetters::queueing_budget(const QualityOfServiceSpec* msg) {
+  return *msg->queueing_budget_;
+}
+void QualityOfServiceSpec::clear_queueing_budget() {
+  if (GetArenaNoVirtual() == nullptr && queueing_budget_ != nullptr) {
+    delete queueing_budget_;
+  }
+  queueing_budget_ = nullptr;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int QualityOfServiceSpec::kQueueingBudgetMinsFieldNumber;
+const int QualityOfServiceSpec::kQueueingBudgetFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 QualityOfServiceSpec::QualityOfServiceSpec()
@@ -2098,12 +2112,18 @@ QualityOfServiceSpec::QualityOfServiceSpec(const QualityOfServiceSpec& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  queueing_budget_mins_ = from.queueing_budget_mins_;
+  if (from.has_queueing_budget()) {
+    queueing_budget_ = new ::google::protobuf::Duration(*from.queueing_budget_);
+  } else {
+    queueing_budget_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.QualityOfServiceSpec)
 }
 
 void QualityOfServiceSpec::SharedCtor() {
-  queueing_budget_mins_ = 0u;
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_QualityOfServiceSpec_flyteidl_2fcore_2fexecution_2eproto.base);
+  queueing_budget_ = nullptr;
 }
 
 QualityOfServiceSpec::~QualityOfServiceSpec() {
@@ -2112,6 +2132,7 @@ QualityOfServiceSpec::~QualityOfServiceSpec() {
 }
 
 void QualityOfServiceSpec::SharedDtor() {
+  if (this != internal_default_instance()) delete queueing_budget_;
 }
 
 void QualityOfServiceSpec::SetCachedSize(int size) const {
@@ -2129,7 +2150,10 @@ void QualityOfServiceSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  queueing_budget_mins_ = 0u;
+  if (GetArenaNoVirtual() == nullptr && queueing_budget_ != nullptr) {
+    delete queueing_budget_;
+  }
+  queueing_budget_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -2146,11 +2170,17 @@ const char* QualityOfServiceSpec::_InternalParse(const char* begin, const char* 
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // uint32 queueing_budget_mins = 1;
+      // .google.protobuf.Duration queueing_budget = 1;
       case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
-        msg->set_queueing_budget_mins(::google::protobuf::internal::ReadVarint(&ptr));
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::google::protobuf::Duration::_InternalParse;
+        object = msg->mutable_queueing_budget();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
         break;
       }
       default: {
@@ -2168,6 +2198,9 @@ const char* QualityOfServiceSpec::_InternalParse(const char* begin, const char* 
     }  // switch
   }  // while
   return ptr;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool QualityOfServiceSpec::MergePartialFromCodedStream(
@@ -2180,13 +2213,11 @@ bool QualityOfServiceSpec::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // uint32 queueing_budget_mins = 1;
+      // .google.protobuf.Duration queueing_budget = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &queueing_budget_mins_)));
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_queueing_budget()));
         } else {
           goto handle_unusual;
         }
@@ -2220,9 +2251,10 @@ void QualityOfServiceSpec::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 queueing_budget_mins = 1;
-  if (this->queueing_budget_mins() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->queueing_budget_mins(), output);
+  // .google.protobuf.Duration queueing_budget = 1;
+  if (this->has_queueing_budget()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, HasBitSetters::queueing_budget(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2238,9 +2270,11 @@ void QualityOfServiceSpec::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 queueing_budget_mins = 1;
-  if (this->queueing_budget_mins() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->queueing_budget_mins(), target);
+  // .google.protobuf.Duration queueing_budget = 1;
+  if (this->has_queueing_budget()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, HasBitSetters::queueing_budget(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2264,11 +2298,11 @@ size_t QualityOfServiceSpec::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 queueing_budget_mins = 1;
-  if (this->queueing_budget_mins() != 0) {
+  // .google.protobuf.Duration queueing_budget = 1;
+  if (this->has_queueing_budget()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->queueing_budget_mins());
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *queueing_budget_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -2298,8 +2332,8 @@ void QualityOfServiceSpec::MergeFrom(const QualityOfServiceSpec& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.queueing_budget_mins() != 0) {
-    set_queueing_budget_mins(from.queueing_budget_mins());
+  if (from.has_queueing_budget()) {
+    mutable_queueing_budget()->::google::protobuf::Duration::MergeFrom(from.queueing_budget());
   }
 }
 
@@ -2328,7 +2362,7 @@ void QualityOfServiceSpec::Swap(QualityOfServiceSpec* other) {
 void QualityOfServiceSpec::InternalSwap(QualityOfServiceSpec* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(queueing_budget_mins_, other->queueing_budget_mins_);
+  swap(queueing_budget_, other->queueing_budget_);
 }
 
 ::google::protobuf::Metadata QualityOfServiceSpec::GetMetadata() const {

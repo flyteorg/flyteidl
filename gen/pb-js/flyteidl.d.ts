@@ -3018,8 +3018,8 @@ export namespace flyteidl {
         /** Properties of a QualityOfServiceSpec. */
         interface IQualityOfServiceSpec {
 
-            /** QualityOfServiceSpec queueingBudgetMins */
-            queueingBudgetMins?: (number|null);
+            /** QualityOfServiceSpec queueingBudget */
+            queueingBudget?: (google.protobuf.IDuration|null);
         }
 
         /** Represents a QualityOfServiceSpec. */
@@ -3031,8 +3031,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.core.IQualityOfServiceSpec);
 
-            /** QualityOfServiceSpec queueingBudgetMins. */
-            public queueingBudgetMins: number;
+            /** QualityOfServiceSpec queueingBudget. */
+            public queueingBudget?: (google.protobuf.IDuration|null);
 
             /**
              * Creates a new QualityOfServiceSpec instance using the specified properties.

@@ -352,13 +352,13 @@ Represents customized execution run-time attributes.
 .. code-block:: json
 
   {
-    "queueing_budget_mins": "..."
+    "queueing_budget": "{...}"
   }
 
-.. _api_field_flyteidl.core.QualityOfServiceSpec.queueing_budget_mins:
+.. _api_field_flyteidl.core.QualityOfServiceSpec.queueing_budget:
 
-queueing_budget_mins
-  (`uint32 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Indicates how much queueing delay an execution can tolerate.
+queueing_budget
+  (:ref:`google.protobuf.Duration <api_msg_google.protobuf.Duration>`) Indicates how much queueing delay an execution can tolerate.
   
   
 

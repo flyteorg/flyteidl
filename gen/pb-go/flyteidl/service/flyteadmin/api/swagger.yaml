@@ -2678,7 +2678,7 @@ definitions:
         quality_of_service:
           tier: {}
           spec:
-            queueing_budget_mins: 5
+            queueing_budget: "queueing_budget"
         disable_all: true
         inputs:
           literals: {}
@@ -2981,7 +2981,7 @@ definitions:
           quality_of_service:
             tier: {}
             spec:
-              queueing_budget_mins: 5
+              queueing_budget: "queueing_budget"
           disable_all: true
           inputs:
             literals: {}
@@ -3115,7 +3115,7 @@ definitions:
           quality_of_service:
             tier: {}
             spec:
-              queueing_budget_mins: 5
+              queueing_budget: "queueing_budget"
           disable_all: true
           inputs:
             literals: {}
@@ -3304,7 +3304,7 @@ definitions:
       quality_of_service:
         tier: {}
         spec:
-          queueing_budget_mins: 5
+          queueing_budget: "queueing_budget"
       disable_all: true
       inputs:
         literals: {}
@@ -3539,7 +3539,7 @@ definitions:
         quality_of_service:
           tier: {}
           spec:
-            queueing_budget_mins: 5
+            queueing_budget: "queueing_budget"
         auth:
           kubernetes_service_account: "kubernetes_service_account"
           assumable_iam_role: "assumable_iam_role"
@@ -3950,7 +3950,7 @@ definitions:
           quality_of_service:
             tier: {}
             spec:
-              queueing_budget_mins: 5
+              queueing_budget: "queueing_budget"
           auth:
             kubernetes_service_account: "kubernetes_service_account"
             assumable_iam_role: "assumable_iam_role"
@@ -4200,7 +4200,7 @@ definitions:
           quality_of_service:
             tier: {}
             spec:
-              queueing_budget_mins: 5
+              queueing_budget: "queueing_budget"
           auth:
             kubernetes_service_account: "kubernetes_service_account"
             assumable_iam_role: "assumable_iam_role"
@@ -4425,7 +4425,7 @@ definitions:
       quality_of_service:
         tier: {}
         spec:
-          queueing_budget_mins: 5
+          queueing_budget: "queueing_budget"
       auth:
         kubernetes_service_account: "kubernetes_service_account"
         assumable_iam_role: "assumable_iam_role"
@@ -4595,7 +4595,7 @@ definitions:
           quality_of_service:
             tier: {}
             spec:
-              queueing_budget_mins: 5
+              queueing_budget: "queueing_budget"
           cluster_resource_attributes:
             attributes:
               key: "attributes"
@@ -4624,7 +4624,7 @@ definitions:
           quality_of_service:
             tier: {}
             spec:
-              queueing_budget_mins: 5
+              queueing_budget: "queueing_budget"
           cluster_resource_attributes:
             attributes:
               key: "attributes"
@@ -4684,7 +4684,7 @@ definitions:
         quality_of_service:
           tier: {}
           spec:
-            queueing_budget_mins: 5
+            queueing_budget: "queueing_budget"
         cluster_resource_attributes:
           attributes:
             key: "attributes"
@@ -4740,7 +4740,7 @@ definitions:
       quality_of_service:
         tier: {}
         spec:
-          queueing_budget_mins: 5
+          queueing_budget: "queueing_budget"
       cluster_resource_attributes:
         attributes:
           key: "attributes"
@@ -5175,7 +5175,7 @@ definitions:
         quality_of_service:
           tier: {}
           spec:
-            queueing_budget_mins: 5
+            queueing_budget: "queueing_budget"
         cluster_resource_attributes:
           attributes:
             key: "attributes"
@@ -5223,7 +5223,7 @@ definitions:
           quality_of_service:
             tier: {}
             spec:
-              queueing_budget_mins: 5
+              queueing_budget: "queueing_budget"
           cluster_resource_attributes:
             attributes:
               key: "attributes"
@@ -6324,7 +6324,7 @@ definitions:
                 quality_of_service:
                   tier: {}
                   spec:
-                    queueing_budget_mins: 5
+                    queueing_budget: "queueing_budget"
               failure_node:
                 branch_node:
                   if_else:
@@ -7150,7 +7150,7 @@ definitions:
                 quality_of_service:
                   tier: {}
                   spec:
-                    queueing_budget_mins: 5
+                    queueing_budget: "queueing_budget"
               failure_node:
                 branch_node:
                   if_else:
@@ -8226,7 +8226,7 @@ definitions:
                 quality_of_service:
                   tier: {}
                   spec:
-                    queueing_budget_mins: 5
+                    queueing_budget: "queueing_budget"
               failure_node:
                 branch_node:
                   if_else:
@@ -8966,7 +8966,7 @@ definitions:
         quality_of_service:
           tier: {}
           spec:
-            queueing_budget_mins: 5
+            queueing_budget: "queueing_budget"
         cluster_resource_attributes:
           attributes:
             key: "attributes"
@@ -9018,7 +9018,7 @@ definitions:
           quality_of_service:
             tier: {}
             spec:
-              queueing_budget_mins: 5
+              queueing_budget: "queueing_budget"
           cluster_resource_attributes:
             attributes:
               key: "attributes"
@@ -9173,7 +9173,7 @@ definitions:
               quality_of_service:
                 tier: {}
                 spec:
-                  queueing_budget_mins: 5
+                  queueing_budget: "queueing_budget"
             failure_node:
               branch_node:
                 if_else:
@@ -9999,7 +9999,7 @@ definitions:
               quality_of_service:
                 tier: {}
                 spec:
-                  queueing_budget_mins: 5
+                  queueing_budget: "queueing_budget"
             failure_node:
               branch_node:
                 if_else:
@@ -11075,7 +11075,7 @@ definitions:
               quality_of_service:
                 tier: {}
                 spec:
-                  queueing_budget_mins: 5
+                  queueing_budget: "queueing_budget"
             failure_node:
               branch_node:
                 if_else:
@@ -11970,7 +11970,7 @@ definitions:
                   quality_of_service:
                     tier: {}
                     spec:
-                      queueing_budget_mins: 5
+                      queueing_budget: "queueing_budget"
                 failure_node:
                   branch_node:
                     if_else:
@@ -12796,7 +12796,7 @@ definitions:
                   quality_of_service:
                     tier: {}
                     spec:
-                      queueing_budget_mins: 5
+                      queueing_budget: "queueing_budget"
                 failure_node:
                   branch_node:
                     if_else:
@@ -13872,7 +13872,7 @@ definitions:
                   quality_of_service:
                     tier: {}
                     spec:
-                      queueing_budget_mins: 5
+                      queueing_budget: "queueing_budget"
                 failure_node:
                   branch_node:
                     if_else:
@@ -14708,7 +14708,7 @@ definitions:
                   quality_of_service:
                     tier: {}
                     spec:
-                      queueing_budget_mins: 5
+                      queueing_budget: "queueing_budget"
                 failure_node:
                   branch_node:
                     if_else:
@@ -15534,7 +15534,7 @@ definitions:
                   quality_of_service:
                     tier: {}
                     spec:
-                      queueing_budget_mins: 5
+                      queueing_budget: "queueing_budget"
                 failure_node:
                   branch_node:
                     if_else:
@@ -16610,7 +16610,7 @@ definitions:
                   quality_of_service:
                     tier: {}
                     spec:
-                      queueing_budget_mins: 5
+                      queueing_budget: "queueing_budget"
                 failure_node:
                   branch_node:
                     if_else:
@@ -17973,7 +17973,7 @@ definitions:
           quality_of_service:
             tier: {}
             spec:
-              queueing_budget_mins: 5
+              queueing_budget: "queueing_budget"
         failure_node:
           branch_node:
             if_else:
@@ -18826,7 +18826,7 @@ definitions:
             quality_of_service:
               tier: {}
               spec:
-                queueing_budget_mins: 5
+                queueing_budget: "queueing_budget"
           failure_node:
             branch_node:
               if_else:
@@ -19652,7 +19652,7 @@ definitions:
             quality_of_service:
               tier: {}
               spec:
-                queueing_budget_mins: 5
+                queueing_budget: "queueing_budget"
           failure_node:
             branch_node:
               if_else:
@@ -20728,7 +20728,7 @@ definitions:
             quality_of_service:
               tier: {}
               spec:
-                queueing_budget_mins: 5
+                queueing_budget: "queueing_budget"
           failure_node:
             branch_node:
               if_else:
@@ -22537,17 +22537,16 @@ definitions:
     example:
       tier: {}
       spec:
-        queueing_budget_mins: 5
+        queueing_budget: "queueing_budget"
   coreQualityOfServiceSpec:
     type: "object"
     properties:
-      queueing_budget_mins:
-        type: "integer"
-        format: "int64"
+      queueing_budget:
+        type: "string"
         description: "Indicates how much queueing delay an execution can tolerate."
     description: "Represents customized execution run-time attributes."
     example:
-      queueing_budget_mins: 5
+      queueing_budget: "queueing_budget"
   coreResourceType:
     type: "string"
     description: "Indicates a resource type within Flyte."
@@ -23156,7 +23155,7 @@ definitions:
       quality_of_service:
         tier: {}
         spec:
-          queueing_budget_mins: 5
+          queueing_budget: "queueing_budget"
   coreWorkflowMetadataDefaults:
     type: "object"
     properties:
@@ -23345,7 +23344,7 @@ definitions:
         quality_of_service:
           tier: {}
           spec:
-            queueing_budget_mins: 5
+            queueing_budget: "queueing_budget"
       failure_node:
         branch_node:
           if_else:

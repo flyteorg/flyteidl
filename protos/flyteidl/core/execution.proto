@@ -91,7 +91,7 @@ message TaskLog {
 // Represents customized execution run-time attributes.
 message QualityOfServiceSpec {
   // Indicates how much queueing delay an execution can tolerate.
-  uint32 queueing_budget_mins = 1;
+  google.protobuf.Duration queueing_budget = 1;
 
   // Add future, user-configurable options here
 }

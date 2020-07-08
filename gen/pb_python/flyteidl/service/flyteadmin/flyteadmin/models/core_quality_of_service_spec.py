@@ -31,44 +31,44 @@ class CoreQualityOfServiceSpec(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'queueing_budget_mins': 'int'
+        'queueing_budget': 'str'
     }
 
     attribute_map = {
-        'queueing_budget_mins': 'queueing_budget_mins'
+        'queueing_budget': 'queueing_budget'
     }
 
-    def __init__(self, queueing_budget_mins=None):  # noqa: E501
+    def __init__(self, queueing_budget=None):  # noqa: E501
         """CoreQualityOfServiceSpec - a model defined in Swagger"""  # noqa: E501
 
-        self._queueing_budget_mins = None
+        self._queueing_budget = None
         self.discriminator = None
 
-        if queueing_budget_mins is not None:
-            self.queueing_budget_mins = queueing_budget_mins
+        if queueing_budget is not None:
+            self.queueing_budget = queueing_budget
 
     @property
-    def queueing_budget_mins(self):
-        """Gets the queueing_budget_mins of this CoreQualityOfServiceSpec.  # noqa: E501
+    def queueing_budget(self):
+        """Gets the queueing_budget of this CoreQualityOfServiceSpec.  # noqa: E501
 
         Indicates how much queueing delay an execution can tolerate.  # noqa: E501
 
-        :return: The queueing_budget_mins of this CoreQualityOfServiceSpec.  # noqa: E501
-        :rtype: int
+        :return: The queueing_budget of this CoreQualityOfServiceSpec.  # noqa: E501
+        :rtype: str
         """
-        return self._queueing_budget_mins
+        return self._queueing_budget
 
-    @queueing_budget_mins.setter
-    def queueing_budget_mins(self, queueing_budget_mins):
-        """Sets the queueing_budget_mins of this CoreQualityOfServiceSpec.
+    @queueing_budget.setter
+    def queueing_budget(self, queueing_budget):
+        """Sets the queueing_budget of this CoreQualityOfServiceSpec.
 
         Indicates how much queueing delay an execution can tolerate.  # noqa: E501
 
-        :param queueing_budget_mins: The queueing_budget_mins of this CoreQualityOfServiceSpec.  # noqa: E501
-        :type: int
+        :param queueing_budget: The queueing_budget of this CoreQualityOfServiceSpec.  # noqa: E501
+        :type: str
         """
 
-        self._queueing_budget_mins = queueing_budget_mins
+        self._queueing_budget = queueing_budget
 
     def to_dict(self):
         """Returns the model properties as a dict"""

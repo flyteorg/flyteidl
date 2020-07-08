@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.core',
   syntax='proto3',
   serialized_options=_b('Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/core'),
-  serialized_pb=_b('\n\x1d\x66lyteidl/core/execution.proto\x12\rflyteidl.core\x1a\x1egoogle/protobuf/duration.proto\"\x99\x01\n\x11WorkflowExecution\"\x83\x01\n\x05Phase\x12\r\n\tUNDEFINED\x10\x00\x12\n\n\x06QUEUED\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0e\n\nSUCCEEDING\x10\x03\x12\r\n\tSUCCEEDED\x10\x04\x12\x0b\n\x07\x46\x41ILING\x10\x05\x12\n\n\x06\x46\x41ILED\x10\x06\x12\x0b\n\x07\x41\x42ORTED\x10\x07\x12\r\n\tTIMED_OUT\x10\x08\"\x92\x01\n\rNodeExecution\"\x80\x01\n\x05Phase\x12\r\n\tUNDEFINED\x10\x00\x12\n\n\x06QUEUED\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\r\n\tSUCCEEDED\x10\x03\x12\x0b\n\x07\x46\x41ILING\x10\x04\x12\n\n\x06\x46\x41ILED\x10\x05\x12\x0b\n\x07\x41\x42ORTED\x10\x06\x12\x0b\n\x07SKIPPED\x10\x07\x12\r\n\tTIMED_OUT\x10\x08\"\x96\x01\n\rTaskExecution\"\x84\x01\n\x05Phase\x12\r\n\tUNDEFINED\x10\x00\x12\n\n\x06QUEUED\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\r\n\tSUCCEEDED\x10\x03\x12\x0b\n\x07\x41\x42ORTED\x10\x04\x12\n\n\x06\x46\x41ILED\x10\x05\x12\x10\n\x0cINITIALIZING\x10\x06\x12\x19\n\x15WAITING_FOR_RESOURCES\x10\x07\"\xa9\x01\n\x0e\x45xecutionError\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x11\n\terror_uri\x18\x03 \x01(\t\x12\x35\n\x04kind\x18\x04 \x01(\x0e\x32\'.flyteidl.core.ExecutionError.ErrorKind\".\n\tErrorKind\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x08\n\x04USER\x10\x01\x12\n\n\x06SYSTEM\x10\x02\"\xbb\x01\n\x07TaskLog\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12<\n\x0emessage_format\x18\x03 \x01(\x0e\x32$.flyteidl.core.TaskLog.MessageFormat\x12&\n\x03ttl\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\"/\n\rMessageFormat\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x07\n\x03\x43SV\x10\x01\x12\x08\n\x04JSON\x10\x02\"4\n\x14QualityOfServiceSpec\x12\x1c\n\x14queueing_budget_mins\x18\x01 \x01(\r\"\xc2\x01\n\x10QualityOfService\x12\x34\n\x04tier\x18\x01 \x01(\x0e\x32$.flyteidl.core.QualityOfService.TierH\x00\x12\x33\n\x04spec\x18\x02 \x01(\x0b\x32#.flyteidl.core.QualityOfServiceSpecH\x00\"4\n\x04Tier\x12\r\n\tUNDEFINED\x10\x00\x12\x08\n\x04HIGH\x10\x01\x12\n\n\x06MEDIUM\x10\x02\x12\x07\n\x03LOW\x10\x03\x42\r\n\x0b\x64\x65signationB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/core/execution.proto\x12\rflyteidl.core\x1a\x1egoogle/protobuf/duration.proto\"\x99\x01\n\x11WorkflowExecution\"\x83\x01\n\x05Phase\x12\r\n\tUNDEFINED\x10\x00\x12\n\n\x06QUEUED\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0e\n\nSUCCEEDING\x10\x03\x12\r\n\tSUCCEEDED\x10\x04\x12\x0b\n\x07\x46\x41ILING\x10\x05\x12\n\n\x06\x46\x41ILED\x10\x06\x12\x0b\n\x07\x41\x42ORTED\x10\x07\x12\r\n\tTIMED_OUT\x10\x08\"\x92\x01\n\rNodeExecution\"\x80\x01\n\x05Phase\x12\r\n\tUNDEFINED\x10\x00\x12\n\n\x06QUEUED\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\r\n\tSUCCEEDED\x10\x03\x12\x0b\n\x07\x46\x41ILING\x10\x04\x12\n\n\x06\x46\x41ILED\x10\x05\x12\x0b\n\x07\x41\x42ORTED\x10\x06\x12\x0b\n\x07SKIPPED\x10\x07\x12\r\n\tTIMED_OUT\x10\x08\"\x96\x01\n\rTaskExecution\"\x84\x01\n\x05Phase\x12\r\n\tUNDEFINED\x10\x00\x12\n\n\x06QUEUED\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\r\n\tSUCCEEDED\x10\x03\x12\x0b\n\x07\x41\x42ORTED\x10\x04\x12\n\n\x06\x46\x41ILED\x10\x05\x12\x10\n\x0cINITIALIZING\x10\x06\x12\x19\n\x15WAITING_FOR_RESOURCES\x10\x07\"\xa9\x01\n\x0e\x45xecutionError\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x11\n\terror_uri\x18\x03 \x01(\t\x12\x35\n\x04kind\x18\x04 \x01(\x0e\x32\'.flyteidl.core.ExecutionError.ErrorKind\".\n\tErrorKind\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x08\n\x04USER\x10\x01\x12\n\n\x06SYSTEM\x10\x02\"\xbb\x01\n\x07TaskLog\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12<\n\x0emessage_format\x18\x03 \x01(\x0e\x32$.flyteidl.core.TaskLog.MessageFormat\x12&\n\x03ttl\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\"/\n\rMessageFormat\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x07\n\x03\x43SV\x10\x01\x12\x08\n\x04JSON\x10\x02\"J\n\x14QualityOfServiceSpec\x12\x32\n\x0fqueueing_budget\x18\x01 \x01(\x0b\x32\x19.google.protobuf.Duration\"\xc2\x01\n\x10QualityOfService\x12\x34\n\x04tier\x18\x01 \x01(\x0e\x32$.flyteidl.core.QualityOfService.TierH\x00\x12\x33\n\x04spec\x18\x02 \x01(\x0b\x32#.flyteidl.core.QualityOfServiceSpecH\x00\"4\n\x04Tier\x12\r\n\tUNDEFINED\x10\x00\x12\x08\n\x04HIGH\x10\x01\x12\n\n\x06MEDIUM\x10\x02\x12\x07\n\x03LOW\x10\x03\x42\r\n\x0b\x64\x65signationB2Z0github.com/lyft/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,])
 
@@ -250,8 +250,8 @@ _QUALITYOFSERVICE_TIER = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1082,
-  serialized_end=1134,
+  serialized_start=1104,
+  serialized_end=1156,
 )
 _sym_db.RegisterEnumDescriptor(_QUALITYOFSERVICE_TIER)
 
@@ -445,9 +445,9 @@ _QUALITYOFSERVICESPEC = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='queueing_budget_mins', full_name='flyteidl.core.QualityOfServiceSpec.queueing_budget_mins', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      name='queueing_budget', full_name='flyteidl.core.QualityOfServiceSpec.queueing_budget', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -464,7 +464,7 @@ _QUALITYOFSERVICESPEC = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=900,
-  serialized_end=952,
+  serialized_end=974,
 )
 
 
@@ -505,8 +505,8 @@ _QUALITYOFSERVICE = _descriptor.Descriptor(
       name='designation', full_name='flyteidl.core.QualityOfService.designation',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=955,
-  serialized_end=1149,
+  serialized_start=977,
+  serialized_end=1171,
 )
 
 _WORKFLOWEXECUTION_PHASE.containing_type = _WORKFLOWEXECUTION
@@ -517,6 +517,7 @@ _EXECUTIONERROR_ERRORKIND.containing_type = _EXECUTIONERROR
 _TASKLOG.fields_by_name['message_format'].enum_type = _TASKLOG_MESSAGEFORMAT
 _TASKLOG.fields_by_name['ttl'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
 _TASKLOG_MESSAGEFORMAT.containing_type = _TASKLOG
+_QUALITYOFSERVICESPEC.fields_by_name['queueing_budget'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
 _QUALITYOFSERVICE.fields_by_name['tier'].enum_type = _QUALITYOFSERVICE_TIER
 _QUALITYOFSERVICE.fields_by_name['spec'].message_type = _QUALITYOFSERVICESPEC
 _QUALITYOFSERVICE_TIER.containing_type = _QUALITYOFSERVICE

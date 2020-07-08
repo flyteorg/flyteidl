@@ -394,7 +394,15 @@ func (m *QualityOfServiceSpec) Validate() error {
 		return nil
 	}
 
-	// no validation rules for QueueingBudgetMins
+	if v, ok := interface{}(m.GetQueueingBudget()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return QualityOfServiceSpecValidationError{
+				field:  "QueueingBudget",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	return nil
 }

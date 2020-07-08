@@ -1134,18 +1134,21 @@ class QualityOfServiceSpec final :
 
   // accessors -------------------------------------------------------
 
-  // uint32 queueing_budget_mins = 1;
-  void clear_queueing_budget_mins();
-  static const int kQueueingBudgetMinsFieldNumber = 1;
-  ::google::protobuf::uint32 queueing_budget_mins() const;
-  void set_queueing_budget_mins(::google::protobuf::uint32 value);
+  // .google.protobuf.Duration queueing_budget = 1;
+  bool has_queueing_budget() const;
+  void clear_queueing_budget();
+  static const int kQueueingBudgetFieldNumber = 1;
+  const ::google::protobuf::Duration& queueing_budget() const;
+  ::google::protobuf::Duration* release_queueing_budget();
+  ::google::protobuf::Duration* mutable_queueing_budget();
+  void set_allocated_queueing_budget(::google::protobuf::Duration* queueing_budget);
 
   // @@protoc_insertion_point(class_scope:flyteidl.core.QualityOfServiceSpec)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::uint32 queueing_budget_mins_;
+  ::google::protobuf::Duration* queueing_budget_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fexecution_2eproto;
 };
@@ -1692,18 +1695,50 @@ inline void TaskLog::set_allocated_ttl(::google::protobuf::Duration* ttl) {
 
 // QualityOfServiceSpec
 
-// uint32 queueing_budget_mins = 1;
-inline void QualityOfServiceSpec::clear_queueing_budget_mins() {
-  queueing_budget_mins_ = 0u;
+// .google.protobuf.Duration queueing_budget = 1;
+inline bool QualityOfServiceSpec::has_queueing_budget() const {
+  return this != internal_default_instance() && queueing_budget_ != nullptr;
 }
-inline ::google::protobuf::uint32 QualityOfServiceSpec::queueing_budget_mins() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.QualityOfServiceSpec.queueing_budget_mins)
-  return queueing_budget_mins_;
+inline const ::google::protobuf::Duration& QualityOfServiceSpec::queueing_budget() const {
+  const ::google::protobuf::Duration* p = queueing_budget_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.QualityOfServiceSpec.queueing_budget)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Duration*>(
+      &::google::protobuf::_Duration_default_instance_);
 }
-inline void QualityOfServiceSpec::set_queueing_budget_mins(::google::protobuf::uint32 value) {
+inline ::google::protobuf::Duration* QualityOfServiceSpec::release_queueing_budget() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.QualityOfServiceSpec.queueing_budget)
   
-  queueing_budget_mins_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.core.QualityOfServiceSpec.queueing_budget_mins)
+  ::google::protobuf::Duration* temp = queueing_budget_;
+  queueing_budget_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Duration* QualityOfServiceSpec::mutable_queueing_budget() {
+  
+  if (queueing_budget_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Duration>(GetArenaNoVirtual());
+    queueing_budget_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.QualityOfServiceSpec.queueing_budget)
+  return queueing_budget_;
+}
+inline void QualityOfServiceSpec::set_allocated_queueing_budget(::google::protobuf::Duration* queueing_budget) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(queueing_budget_);
+  }
+  if (queueing_budget) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(queueing_budget)->GetArena();
+    if (message_arena != submessage_arena) {
+      queueing_budget = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, queueing_budget, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  queueing_budget_ = queueing_budget;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.QualityOfServiceSpec.queueing_budget)
 }
 
 // -------------------------------------------------------------------

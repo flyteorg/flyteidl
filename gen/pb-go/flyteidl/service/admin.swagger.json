@@ -4989,9 +4989,8 @@
     "coreQualityOfServiceSpec": {
       "type": "object",
       "properties": {
-        "queueing_budget_mins": {
-          "type": "integer",
-          "format": "int64",
+        "queueing_budget": {
+          "type": "string",
           "description": "Indicates how much queueing delay an execution can tolerate."
         }
       },
