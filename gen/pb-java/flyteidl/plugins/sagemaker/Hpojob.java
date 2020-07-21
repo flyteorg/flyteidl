@@ -2731,6 +2731,806 @@ public final class HpoJob {
 
   }
 
+  public interface HPOJobCustomOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.HPOJobCustom)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;</code>
+     */
+    boolean hasHpoJobConfig();
+    /**
+     * <code>.flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;</code>
+     */
+    flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig getHpoJobConfig();
+    /**
+     * <code>.flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;</code>
+     */
+    flyteidl.plugins.sagemaker.HpoJob.HPOJobConfigOrBuilder getHpoJobConfigOrBuilder();
+
+    /**
+     * <code>.flyteidl.core.TaskTemplate training_job_task_template = 2;</code>
+     */
+    boolean hasTrainingJobTaskTemplate();
+    /**
+     * <code>.flyteidl.core.TaskTemplate training_job_task_template = 2;</code>
+     */
+    flyteidl.core.Tasks.TaskTemplate getTrainingJobTaskTemplate();
+    /**
+     * <code>.flyteidl.core.TaskTemplate training_job_task_template = 2;</code>
+     */
+    flyteidl.core.Tasks.TaskTemplateOrBuilder getTrainingJobTaskTemplateOrBuilder();
+  }
+  /**
+   * Protobuf type {@code flyteidl.plugins.sagemaker.HPOJobCustom}
+   */
+  public  static final class HPOJobCustom extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.plugins.sagemaker.HPOJobCustom)
+      HPOJobCustomOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use HPOJobCustom.newBuilder() to construct.
+    private HPOJobCustom(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private HPOJobCustom() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private HPOJobCustom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig.Builder subBuilder = null;
+              if (hpoJobConfig_ != null) {
+                subBuilder = hpoJobConfig_.toBuilder();
+              }
+              hpoJobConfig_ = input.readMessage(flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(hpoJobConfig_);
+                hpoJobConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              flyteidl.core.Tasks.TaskTemplate.Builder subBuilder = null;
+              if (trainingJobTaskTemplate_ != null) {
+                subBuilder = trainingJobTaskTemplate_.toBuilder();
+              }
+              trainingJobTaskTemplate_ = input.readMessage(flyteidl.core.Tasks.TaskTemplate.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(trainingJobTaskTemplate_);
+                trainingJobTaskTemplate_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.plugins.sagemaker.HpoJob.internal_static_flyteidl_plugins_sagemaker_HPOJobCustom_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.plugins.sagemaker.HpoJob.internal_static_flyteidl_plugins_sagemaker_HPOJobCustom_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom.class, flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom.Builder.class);
+    }
+
+    public static final int HPO_JOB_CONFIG_FIELD_NUMBER = 1;
+    private flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig hpoJobConfig_;
+    /**
+     * <code>.flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;</code>
+     */
+    public boolean hasHpoJobConfig() {
+      return hpoJobConfig_ != null;
+    }
+    /**
+     * <code>.flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;</code>
+     */
+    public flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig getHpoJobConfig() {
+      return hpoJobConfig_ == null ? flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig.getDefaultInstance() : hpoJobConfig_;
+    }
+    /**
+     * <code>.flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;</code>
+     */
+    public flyteidl.plugins.sagemaker.HpoJob.HPOJobConfigOrBuilder getHpoJobConfigOrBuilder() {
+      return getHpoJobConfig();
+    }
+
+    public static final int TRAINING_JOB_TASK_TEMPLATE_FIELD_NUMBER = 2;
+    private flyteidl.core.Tasks.TaskTemplate trainingJobTaskTemplate_;
+    /**
+     * <code>.flyteidl.core.TaskTemplate training_job_task_template = 2;</code>
+     */
+    public boolean hasTrainingJobTaskTemplate() {
+      return trainingJobTaskTemplate_ != null;
+    }
+    /**
+     * <code>.flyteidl.core.TaskTemplate training_job_task_template = 2;</code>
+     */
+    public flyteidl.core.Tasks.TaskTemplate getTrainingJobTaskTemplate() {
+      return trainingJobTaskTemplate_ == null ? flyteidl.core.Tasks.TaskTemplate.getDefaultInstance() : trainingJobTaskTemplate_;
+    }
+    /**
+     * <code>.flyteidl.core.TaskTemplate training_job_task_template = 2;</code>
+     */
+    public flyteidl.core.Tasks.TaskTemplateOrBuilder getTrainingJobTaskTemplateOrBuilder() {
+      return getTrainingJobTaskTemplate();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (hpoJobConfig_ != null) {
+        output.writeMessage(1, getHpoJobConfig());
+      }
+      if (trainingJobTaskTemplate_ != null) {
+        output.writeMessage(2, getTrainingJobTaskTemplate());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (hpoJobConfig_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getHpoJobConfig());
+      }
+      if (trainingJobTaskTemplate_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getTrainingJobTaskTemplate());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom)) {
+        return super.equals(obj);
+      }
+      flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom other = (flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom) obj;
+
+      if (hasHpoJobConfig() != other.hasHpoJobConfig()) return false;
+      if (hasHpoJobConfig()) {
+        if (!getHpoJobConfig()
+            .equals(other.getHpoJobConfig())) return false;
+      }
+      if (hasTrainingJobTaskTemplate() != other.hasTrainingJobTaskTemplate()) return false;
+      if (hasTrainingJobTaskTemplate()) {
+        if (!getTrainingJobTaskTemplate()
+            .equals(other.getTrainingJobTaskTemplate())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasHpoJobConfig()) {
+        hash = (37 * hash) + HPO_JOB_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getHpoJobConfig().hashCode();
+      }
+      if (hasTrainingJobTaskTemplate()) {
+        hash = (37 * hash) + TRAINING_JOB_TASK_TEMPLATE_FIELD_NUMBER;
+        hash = (53 * hash) + getTrainingJobTaskTemplate().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code flyteidl.plugins.sagemaker.HPOJobCustom}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.sagemaker.HPOJobCustom)
+        flyteidl.plugins.sagemaker.HpoJob.HPOJobCustomOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.plugins.sagemaker.HpoJob.internal_static_flyteidl_plugins_sagemaker_HPOJobCustom_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.plugins.sagemaker.HpoJob.internal_static_flyteidl_plugins_sagemaker_HPOJobCustom_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom.class, flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom.Builder.class);
+      }
+
+      // Construct using flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (hpoJobConfigBuilder_ == null) {
+          hpoJobConfig_ = null;
+        } else {
+          hpoJobConfig_ = null;
+          hpoJobConfigBuilder_ = null;
+        }
+        if (trainingJobTaskTemplateBuilder_ == null) {
+          trainingJobTaskTemplate_ = null;
+        } else {
+          trainingJobTaskTemplate_ = null;
+          trainingJobTaskTemplateBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.plugins.sagemaker.HpoJob.internal_static_flyteidl_plugins_sagemaker_HPOJobCustom_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom getDefaultInstanceForType() {
+        return flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom build() {
+        flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom buildPartial() {
+        flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom result = new flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom(this);
+        if (hpoJobConfigBuilder_ == null) {
+          result.hpoJobConfig_ = hpoJobConfig_;
+        } else {
+          result.hpoJobConfig_ = hpoJobConfigBuilder_.build();
+        }
+        if (trainingJobTaskTemplateBuilder_ == null) {
+          result.trainingJobTaskTemplate_ = trainingJobTaskTemplate_;
+        } else {
+          result.trainingJobTaskTemplate_ = trainingJobTaskTemplateBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom) {
+          return mergeFrom((flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom other) {
+        if (other == flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom.getDefaultInstance()) return this;
+        if (other.hasHpoJobConfig()) {
+          mergeHpoJobConfig(other.getHpoJobConfig());
+        }
+        if (other.hasTrainingJobTaskTemplate()) {
+          mergeTrainingJobTaskTemplate(other.getTrainingJobTaskTemplate());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig hpoJobConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig, flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig.Builder, flyteidl.plugins.sagemaker.HpoJob.HPOJobConfigOrBuilder> hpoJobConfigBuilder_;
+      /**
+       * <code>.flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;</code>
+       */
+      public boolean hasHpoJobConfig() {
+        return hpoJobConfigBuilder_ != null || hpoJobConfig_ != null;
+      }
+      /**
+       * <code>.flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;</code>
+       */
+      public flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig getHpoJobConfig() {
+        if (hpoJobConfigBuilder_ == null) {
+          return hpoJobConfig_ == null ? flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig.getDefaultInstance() : hpoJobConfig_;
+        } else {
+          return hpoJobConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;</code>
+       */
+      public Builder setHpoJobConfig(flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig value) {
+        if (hpoJobConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          hpoJobConfig_ = value;
+          onChanged();
+        } else {
+          hpoJobConfigBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;</code>
+       */
+      public Builder setHpoJobConfig(
+          flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig.Builder builderForValue) {
+        if (hpoJobConfigBuilder_ == null) {
+          hpoJobConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          hpoJobConfigBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;</code>
+       */
+      public Builder mergeHpoJobConfig(flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig value) {
+        if (hpoJobConfigBuilder_ == null) {
+          if (hpoJobConfig_ != null) {
+            hpoJobConfig_ =
+              flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig.newBuilder(hpoJobConfig_).mergeFrom(value).buildPartial();
+          } else {
+            hpoJobConfig_ = value;
+          }
+          onChanged();
+        } else {
+          hpoJobConfigBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;</code>
+       */
+      public Builder clearHpoJobConfig() {
+        if (hpoJobConfigBuilder_ == null) {
+          hpoJobConfig_ = null;
+          onChanged();
+        } else {
+          hpoJobConfig_ = null;
+          hpoJobConfigBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;</code>
+       */
+      public flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig.Builder getHpoJobConfigBuilder() {
+        
+        onChanged();
+        return getHpoJobConfigFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;</code>
+       */
+      public flyteidl.plugins.sagemaker.HpoJob.HPOJobConfigOrBuilder getHpoJobConfigOrBuilder() {
+        if (hpoJobConfigBuilder_ != null) {
+          return hpoJobConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return hpoJobConfig_ == null ?
+              flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig.getDefaultInstance() : hpoJobConfig_;
+        }
+      }
+      /**
+       * <code>.flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig, flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig.Builder, flyteidl.plugins.sagemaker.HpoJob.HPOJobConfigOrBuilder> 
+          getHpoJobConfigFieldBuilder() {
+        if (hpoJobConfigBuilder_ == null) {
+          hpoJobConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig, flyteidl.plugins.sagemaker.HpoJob.HPOJobConfig.Builder, flyteidl.plugins.sagemaker.HpoJob.HPOJobConfigOrBuilder>(
+                  getHpoJobConfig(),
+                  getParentForChildren(),
+                  isClean());
+          hpoJobConfig_ = null;
+        }
+        return hpoJobConfigBuilder_;
+      }
+
+      private flyteidl.core.Tasks.TaskTemplate trainingJobTaskTemplate_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.TaskTemplate, flyteidl.core.Tasks.TaskTemplate.Builder, flyteidl.core.Tasks.TaskTemplateOrBuilder> trainingJobTaskTemplateBuilder_;
+      /**
+       * <code>.flyteidl.core.TaskTemplate training_job_task_template = 2;</code>
+       */
+      public boolean hasTrainingJobTaskTemplate() {
+        return trainingJobTaskTemplateBuilder_ != null || trainingJobTaskTemplate_ != null;
+      }
+      /**
+       * <code>.flyteidl.core.TaskTemplate training_job_task_template = 2;</code>
+       */
+      public flyteidl.core.Tasks.TaskTemplate getTrainingJobTaskTemplate() {
+        if (trainingJobTaskTemplateBuilder_ == null) {
+          return trainingJobTaskTemplate_ == null ? flyteidl.core.Tasks.TaskTemplate.getDefaultInstance() : trainingJobTaskTemplate_;
+        } else {
+          return trainingJobTaskTemplateBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.TaskTemplate training_job_task_template = 2;</code>
+       */
+      public Builder setTrainingJobTaskTemplate(flyteidl.core.Tasks.TaskTemplate value) {
+        if (trainingJobTaskTemplateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          trainingJobTaskTemplate_ = value;
+          onChanged();
+        } else {
+          trainingJobTaskTemplateBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.TaskTemplate training_job_task_template = 2;</code>
+       */
+      public Builder setTrainingJobTaskTemplate(
+          flyteidl.core.Tasks.TaskTemplate.Builder builderForValue) {
+        if (trainingJobTaskTemplateBuilder_ == null) {
+          trainingJobTaskTemplate_ = builderForValue.build();
+          onChanged();
+        } else {
+          trainingJobTaskTemplateBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.TaskTemplate training_job_task_template = 2;</code>
+       */
+      public Builder mergeTrainingJobTaskTemplate(flyteidl.core.Tasks.TaskTemplate value) {
+        if (trainingJobTaskTemplateBuilder_ == null) {
+          if (trainingJobTaskTemplate_ != null) {
+            trainingJobTaskTemplate_ =
+              flyteidl.core.Tasks.TaskTemplate.newBuilder(trainingJobTaskTemplate_).mergeFrom(value).buildPartial();
+          } else {
+            trainingJobTaskTemplate_ = value;
+          }
+          onChanged();
+        } else {
+          trainingJobTaskTemplateBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.TaskTemplate training_job_task_template = 2;</code>
+       */
+      public Builder clearTrainingJobTaskTemplate() {
+        if (trainingJobTaskTemplateBuilder_ == null) {
+          trainingJobTaskTemplate_ = null;
+          onChanged();
+        } else {
+          trainingJobTaskTemplate_ = null;
+          trainingJobTaskTemplateBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.TaskTemplate training_job_task_template = 2;</code>
+       */
+      public flyteidl.core.Tasks.TaskTemplate.Builder getTrainingJobTaskTemplateBuilder() {
+        
+        onChanged();
+        return getTrainingJobTaskTemplateFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.core.TaskTemplate training_job_task_template = 2;</code>
+       */
+      public flyteidl.core.Tasks.TaskTemplateOrBuilder getTrainingJobTaskTemplateOrBuilder() {
+        if (trainingJobTaskTemplateBuilder_ != null) {
+          return trainingJobTaskTemplateBuilder_.getMessageOrBuilder();
+        } else {
+          return trainingJobTaskTemplate_ == null ?
+              flyteidl.core.Tasks.TaskTemplate.getDefaultInstance() : trainingJobTaskTemplate_;
+        }
+      }
+      /**
+       * <code>.flyteidl.core.TaskTemplate training_job_task_template = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.TaskTemplate, flyteidl.core.Tasks.TaskTemplate.Builder, flyteidl.core.Tasks.TaskTemplateOrBuilder> 
+          getTrainingJobTaskTemplateFieldBuilder() {
+        if (trainingJobTaskTemplateBuilder_ == null) {
+          trainingJobTaskTemplateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Tasks.TaskTemplate, flyteidl.core.Tasks.TaskTemplate.Builder, flyteidl.core.Tasks.TaskTemplateOrBuilder>(
+                  getTrainingJobTaskTemplate(),
+                  getParentForChildren(),
+                  isClean());
+          trainingJobTaskTemplate_ = null;
+        }
+        return trainingJobTaskTemplateBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.sagemaker.HPOJobCustom)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.HPOJobCustom)
+    private static final flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom();
+    }
+
+    public static flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HPOJobCustom>
+        PARSER = new com.google.protobuf.AbstractParser<HPOJobCustom>() {
+      @java.lang.Override
+      public HPOJobCustom parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new HPOJobCustom(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<HPOJobCustom> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HPOJobCustom> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjective_descriptor;
   private static final 
@@ -2746,6 +3546,11 @@ public final class HpoJob {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_plugins_sagemaker_HPOJobConfig_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_plugins_sagemaker_HPOJobCustom_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_plugins_sagemaker_HPOJobCustom_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2759,30 +3564,35 @@ public final class HpoJob {
       "to\022\032flyteidl.plugins.sagemaker\0321flyteidl" +
       "/plugins/sagemaker/parameter_ranges.prot" +
       "o\032-flyteidl/plugins/sagemaker/training_j" +
-      "ob.proto\"\352\001\n\035HyperparameterTuningObjecti" +
-      "ve\022s\n\016objective_type\030\001 \001(\0162[.flyteidl.pl" +
-      "ugins.sagemaker.HyperparameterTuningObje" +
-      "ctive.HyperparameterTuningObjectiveType\022" +
-      "\023\n\013metric_name\030\002 \001(\t\"?\n!HyperparameterTu" +
-      "ningObjectiveType\022\014\n\010MINIMIZE\020\000\022\014\n\010MAXIM" +
-      "IZE\020\001\"\220\001\n\006HPOJob\022=\n\014training_job\030\001 \001(\0132\'" +
-      ".flyteidl.plugins.sagemaker.TrainingJob\022" +
-      "#\n\033max_number_of_training_jobs\030\002 \001(\003\022\"\n\032" +
-      "max_parallel_training_jobs\030\003 \001(\003\"\355\003\n\014HPO" +
-      "JobConfig\022J\n\025hyperparameter_ranges\030\001 \001(\013" +
-      "2+.flyteidl.plugins.sagemaker.ParameterR" +
-      "anges\022^\n\017tuning_strategy\030\002 \001(\0162E.flyteid" +
-      "l.plugins.sagemaker.HPOJobConfig.Hyperpa" +
-      "rameterTuningStrategy\022S\n\020tuning_objectiv" +
-      "e\030\003 \001(\01329.flyteidl.plugins.sagemaker.Hyp" +
-      "erparameterTuningObjective\022o\n training_j" +
-      "ob_early_stopping_type\030\004 \001(\0162E.flyteidl." +
-      "plugins.sagemaker.HPOJobConfig.TrainingJ" +
-      "obEarlyStoppingType\"8\n\034HyperparameterTun" +
-      "ingStrategy\022\014\n\010BAYESIAN\020\000\022\n\n\006RANDOM\020\001\"1\n" +
-      "\034TrainingJobEarlyStoppingType\022\007\n\003OFF\020\000\022\010" +
-      "\n\004AUTO\020\001B5Z3github.com/lyft/flyteidl/gen" +
-      "/pb-go/flyteidl/pluginsb\006proto3"
+      "ob.proto\032\031flyteidl/core/tasks.proto\"\352\001\n\035" +
+      "HyperparameterTuningObjective\022s\n\016objecti" +
+      "ve_type\030\001 \001(\0162[.flyteidl.plugins.sagemak" +
+      "er.HyperparameterTuningObjective.Hyperpa" +
+      "rameterTuningObjectiveType\022\023\n\013metric_nam" +
+      "e\030\002 \001(\t\"?\n!HyperparameterTuningObjective" +
+      "Type\022\014\n\010MINIMIZE\020\000\022\014\n\010MAXIMIZE\020\001\"\220\001\n\006HPO" +
+      "Job\022=\n\014training_job\030\001 \001(\0132\'.flyteidl.plu" +
+      "gins.sagemaker.TrainingJob\022#\n\033max_number" +
+      "_of_training_jobs\030\002 \001(\003\022\"\n\032max_parallel_" +
+      "training_jobs\030\003 \001(\003\"\355\003\n\014HPOJobConfig\022J\n\025" +
+      "hyperparameter_ranges\030\001 \001(\0132+.flyteidl.p" +
+      "lugins.sagemaker.ParameterRanges\022^\n\017tuni" +
+      "ng_strategy\030\002 \001(\0162E.flyteidl.plugins.sag" +
+      "emaker.HPOJobConfig.HyperparameterTuning" +
+      "Strategy\022S\n\020tuning_objective\030\003 \001(\01329.fly" +
+      "teidl.plugins.sagemaker.HyperparameterTu" +
+      "ningObjective\022o\n training_job_early_stop" +
+      "ping_type\030\004 \001(\0162E.flyteidl.plugins.sagem" +
+      "aker.HPOJobConfig.TrainingJobEarlyStoppi" +
+      "ngType\"8\n\034HyperparameterTuningStrategy\022\014" +
+      "\n\010BAYESIAN\020\000\022\n\n\006RANDOM\020\001\"1\n\034TrainingJobE" +
+      "arlyStoppingType\022\007\n\003OFF\020\000\022\010\n\004AUTO\020\001\"\221\001\n\014" +
+      "HPOJobCustom\022@\n\016hpo_job_config\030\001 \001(\0132(.f" +
+      "lyteidl.plugins.sagemaker.HPOJobConfig\022?" +
+      "\n\032training_job_task_template\030\002 \001(\0132\033.fly" +
+      "teidl.core.TaskTemplateB5Z3github.com/ly" +
+      "ft/flyteidl/gen/pb-go/flyteidl/pluginsb\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2797,6 +3607,7 @@ public final class HpoJob {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           flyteidl.plugins.sagemaker.ParameterRangesOuterClass.getDescriptor(),
           flyteidl.plugins.sagemaker.TrainingJobOuterClass.getDescriptor(),
+          flyteidl.core.Tasks.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjective_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2816,8 +3627,15 @@ public final class HpoJob {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_HPOJobConfig_descriptor,
         new java.lang.String[] { "HyperparameterRanges", "TuningStrategy", "TuningObjective", "TrainingJobEarlyStoppingType", });
+    internal_static_flyteidl_plugins_sagemaker_HPOJobCustom_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_flyteidl_plugins_sagemaker_HPOJobCustom_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_plugins_sagemaker_HPOJobCustom_descriptor,
+        new java.lang.String[] { "HpoJobConfig", "TrainingJobTaskTemplate", });
     flyteidl.plugins.sagemaker.ParameterRangesOuterClass.getDescriptor();
     flyteidl.plugins.sagemaker.TrainingJobOuterClass.getDescriptor();
+    flyteidl.core.Tasks.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

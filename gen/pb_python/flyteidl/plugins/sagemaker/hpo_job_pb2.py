@@ -15,6 +15,7 @@ _sym_db = _symbol_database.Default()
 
 from flyteidl.plugins.sagemaker import parameter_ranges_pb2 as flyteidl_dot_plugins_dot_sagemaker_dot_parameter__ranges__pb2
 from flyteidl.plugins.sagemaker import training_job_pb2 as flyteidl_dot_plugins_dot_sagemaker_dot_training__job__pb2
+from flyteidl.core import tasks_pb2 as flyteidl_dot_core_dot_tasks__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.plugins.sagemaker',
   syntax='proto3',
   serialized_options=_b('Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n(flyteidl/plugins/sagemaker/hpo_job.proto\x12\x1a\x66lyteidl.plugins.sagemaker\x1a\x31\x66lyteidl/plugins/sagemaker/parameter_ranges.proto\x1a-flyteidl/plugins/sagemaker/training_job.proto\"\xea\x01\n\x1dHyperparameterTuningObjective\x12s\n\x0eobjective_type\x18\x01 \x01(\x0e\x32[.flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType\x12\x13\n\x0bmetric_name\x18\x02 \x01(\t\"?\n!HyperparameterTuningObjectiveType\x12\x0c\n\x08MINIMIZE\x10\x00\x12\x0c\n\x08MAXIMIZE\x10\x01\"\x90\x01\n\x06HPOJob\x12=\n\x0ctraining_job\x18\x01 \x01(\x0b\x32\'.flyteidl.plugins.sagemaker.TrainingJob\x12#\n\x1bmax_number_of_training_jobs\x18\x02 \x01(\x03\x12\"\n\x1amax_parallel_training_jobs\x18\x03 \x01(\x03\"\xed\x03\n\x0cHPOJobConfig\x12J\n\x15hyperparameter_ranges\x18\x01 \x01(\x0b\x32+.flyteidl.plugins.sagemaker.ParameterRanges\x12^\n\x0ftuning_strategy\x18\x02 \x01(\x0e\x32\x45.flyteidl.plugins.sagemaker.HPOJobConfig.HyperparameterTuningStrategy\x12S\n\x10tuning_objective\x18\x03 \x01(\x0b\x32\x39.flyteidl.plugins.sagemaker.HyperparameterTuningObjective\x12o\n training_job_early_stopping_type\x18\x04 \x01(\x0e\x32\x45.flyteidl.plugins.sagemaker.HPOJobConfig.TrainingJobEarlyStoppingType\"8\n\x1cHyperparameterTuningStrategy\x12\x0c\n\x08\x42\x41YESIAN\x10\x00\x12\n\n\x06RANDOM\x10\x01\"1\n\x1cTrainingJobEarlyStoppingType\x12\x07\n\x03OFF\x10\x00\x12\x08\n\x04\x41UTO\x10\x01\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n(flyteidl/plugins/sagemaker/hpo_job.proto\x12\x1a\x66lyteidl.plugins.sagemaker\x1a\x31\x66lyteidl/plugins/sagemaker/parameter_ranges.proto\x1a-flyteidl/plugins/sagemaker/training_job.proto\x1a\x19\x66lyteidl/core/tasks.proto\"\xea\x01\n\x1dHyperparameterTuningObjective\x12s\n\x0eobjective_type\x18\x01 \x01(\x0e\x32[.flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType\x12\x13\n\x0bmetric_name\x18\x02 \x01(\t\"?\n!HyperparameterTuningObjectiveType\x12\x0c\n\x08MINIMIZE\x10\x00\x12\x0c\n\x08MAXIMIZE\x10\x01\"\x90\x01\n\x06HPOJob\x12=\n\x0ctraining_job\x18\x01 \x01(\x0b\x32\'.flyteidl.plugins.sagemaker.TrainingJob\x12#\n\x1bmax_number_of_training_jobs\x18\x02 \x01(\x03\x12\"\n\x1amax_parallel_training_jobs\x18\x03 \x01(\x03\"\xed\x03\n\x0cHPOJobConfig\x12J\n\x15hyperparameter_ranges\x18\x01 \x01(\x0b\x32+.flyteidl.plugins.sagemaker.ParameterRanges\x12^\n\x0ftuning_strategy\x18\x02 \x01(\x0e\x32\x45.flyteidl.plugins.sagemaker.HPOJobConfig.HyperparameterTuningStrategy\x12S\n\x10tuning_objective\x18\x03 \x01(\x0b\x32\x39.flyteidl.plugins.sagemaker.HyperparameterTuningObjective\x12o\n training_job_early_stopping_type\x18\x04 \x01(\x0e\x32\x45.flyteidl.plugins.sagemaker.HPOJobConfig.TrainingJobEarlyStoppingType\"8\n\x1cHyperparameterTuningStrategy\x12\x0c\n\x08\x42\x41YESIAN\x10\x00\x12\n\n\x06RANDOM\x10\x01\"1\n\x1cTrainingJobEarlyStoppingType\x12\x07\n\x03OFF\x10\x00\x12\x08\n\x04\x41UTO\x10\x01\"\x91\x01\n\x0cHPOJobCustom\x12@\n\x0ehpo_job_config\x18\x01 \x01(\x0b\x32(.flyteidl.plugins.sagemaker.HPOJobConfig\x12?\n\x1atraining_job_task_template\x18\x02 \x01(\x0b\x32\x1b.flyteidl.core.TaskTemplateB5Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
   ,
-  dependencies=[flyteidl_dot_plugins_dot_sagemaker_dot_parameter__ranges__pb2.DESCRIPTOR,flyteidl_dot_plugins_dot_sagemaker_dot_training__job__pb2.DESCRIPTOR,])
+  dependencies=[flyteidl_dot_plugins_dot_sagemaker_dot_parameter__ranges__pb2.DESCRIPTOR,flyteidl_dot_plugins_dot_sagemaker_dot_training__job__pb2.DESCRIPTOR,flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,])
 
 
 
@@ -45,8 +46,8 @@ _HYPERPARAMETERTUNINGOBJECTIVE_HYPERPARAMETERTUNINGOBJECTIVETYPE = _descriptor.E
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=342,
-  serialized_end=405,
+  serialized_start=369,
+  serialized_end=432,
 )
 _sym_db.RegisterEnumDescriptor(_HYPERPARAMETERTUNINGOBJECTIVE_HYPERPARAMETERTUNINGOBJECTIVETYPE)
 
@@ -67,8 +68,8 @@ _HPOJOBCONFIG_HYPERPARAMETERTUNINGSTRATEGY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=941,
-  serialized_end=997,
+  serialized_start=968,
+  serialized_end=1024,
 )
 _sym_db.RegisterEnumDescriptor(_HPOJOBCONFIG_HYPERPARAMETERTUNINGSTRATEGY)
 
@@ -89,8 +90,8 @@ _HPOJOBCONFIG_TRAININGJOBEARLYSTOPPINGTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=999,
-  serialized_end=1048,
+  serialized_start=1026,
+  serialized_end=1075,
 )
 _sym_db.RegisterEnumDescriptor(_HPOJOBCONFIG_TRAININGJOBEARLYSTOPPINGTYPE)
 
@@ -129,8 +130,8 @@ _HYPERPARAMETERTUNINGOBJECTIVE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=171,
-  serialized_end=405,
+  serialized_start=198,
+  serialized_end=432,
 )
 
 
@@ -174,8 +175,8 @@ _HPOJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=408,
-  serialized_end=552,
+  serialized_start=435,
+  serialized_end=579,
 )
 
 
@@ -228,8 +229,46 @@ _HPOJOBCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=555,
-  serialized_end=1048,
+  serialized_start=582,
+  serialized_end=1075,
+)
+
+
+_HPOJOBCUSTOM = _descriptor.Descriptor(
+  name='HPOJobCustom',
+  full_name='flyteidl.plugins.sagemaker.HPOJobCustom',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='hpo_job_config', full_name='flyteidl.plugins.sagemaker.HPOJobCustom.hpo_job_config', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='training_job_task_template', full_name='flyteidl.plugins.sagemaker.HPOJobCustom.training_job_task_template', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1078,
+  serialized_end=1223,
 )
 
 _HYPERPARAMETERTUNINGOBJECTIVE.fields_by_name['objective_type'].enum_type = _HYPERPARAMETERTUNINGOBJECTIVE_HYPERPARAMETERTUNINGOBJECTIVETYPE
@@ -241,9 +280,12 @@ _HPOJOBCONFIG.fields_by_name['tuning_objective'].message_type = _HYPERPARAMETERT
 _HPOJOBCONFIG.fields_by_name['training_job_early_stopping_type'].enum_type = _HPOJOBCONFIG_TRAININGJOBEARLYSTOPPINGTYPE
 _HPOJOBCONFIG_HYPERPARAMETERTUNINGSTRATEGY.containing_type = _HPOJOBCONFIG
 _HPOJOBCONFIG_TRAININGJOBEARLYSTOPPINGTYPE.containing_type = _HPOJOBCONFIG
+_HPOJOBCUSTOM.fields_by_name['hpo_job_config'].message_type = _HPOJOBCONFIG
+_HPOJOBCUSTOM.fields_by_name['training_job_task_template'].message_type = flyteidl_dot_core_dot_tasks__pb2._TASKTEMPLATE
 DESCRIPTOR.message_types_by_name['HyperparameterTuningObjective'] = _HYPERPARAMETERTUNINGOBJECTIVE
 DESCRIPTOR.message_types_by_name['HPOJob'] = _HPOJOB
 DESCRIPTOR.message_types_by_name['HPOJobConfig'] = _HPOJOBCONFIG
+DESCRIPTOR.message_types_by_name['HPOJobCustom'] = _HPOJOBCUSTOM
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 HyperparameterTuningObjective = _reflection.GeneratedProtocolMessageType('HyperparameterTuningObjective', (_message.Message,), dict(
@@ -266,6 +308,13 @@ HPOJobConfig = _reflection.GeneratedProtocolMessageType('HPOJobConfig', (_messag
   # @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.HPOJobConfig)
   ))
 _sym_db.RegisterMessage(HPOJobConfig)
+
+HPOJobCustom = _reflection.GeneratedProtocolMessageType('HPOJobCustom', (_message.Message,), dict(
+  DESCRIPTOR = _HPOJOBCUSTOM,
+  __module__ = 'flyteidl.plugins.sagemaker.hpo_job_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.HPOJobCustom)
+  ))
+_sym_db.RegisterMessage(HPOJobCustom)
 
 
 DESCRIPTOR._options = None

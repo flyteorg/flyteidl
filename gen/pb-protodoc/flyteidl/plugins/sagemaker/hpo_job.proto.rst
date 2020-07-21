@@ -8,7 +8,7 @@ hpo_job.proto
 flyteidl.plugins.sagemaker.HyperparameterTuningObjective
 --------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.HyperparameterTuningObjective proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hpo_job.proto#L9>`_
+`[flyteidl.plugins.sagemaker.HyperparameterTuningObjective proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hpo_job.proto#L10>`_
 
 
 .. code-block:: json
@@ -34,7 +34,7 @@ metric_name
 Enum flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType
 -----------------------------------------------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hpo_job.proto#L10>`_
+`[flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hpo_job.proto#L11>`_
 
 
 .. _api_enum_value_flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType.MINIMIZE:
@@ -53,7 +53,7 @@ MAXIMIZE
 flyteidl.plugins.sagemaker.HPOJob
 ---------------------------------
 
-`[flyteidl.plugins.sagemaker.HPOJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hpo_job.proto#L19>`_
+`[flyteidl.plugins.sagemaker.HPOJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hpo_job.proto#L20>`_
 
 
 .. code-block:: json
@@ -86,7 +86,7 @@ max_parallel_training_jobs
 flyteidl.plugins.sagemaker.HPOJobConfig
 ---------------------------------------
 
-`[flyteidl.plugins.sagemaker.HPOJobConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hpo_job.proto#L25>`_
+`[flyteidl.plugins.sagemaker.HPOJobConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hpo_job.proto#L26>`_
 
 
 .. code-block:: json
@@ -124,7 +124,7 @@ training_job_early_stopping_type
 Enum flyteidl.plugins.sagemaker.HPOJobConfig.HyperparameterTuningStrategy
 -------------------------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.HPOJobConfig.HyperparameterTuningStrategy proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hpo_job.proto#L28>`_
+`[flyteidl.plugins.sagemaker.HPOJobConfig.HyperparameterTuningStrategy proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hpo_job.proto#L29>`_
 
 
 .. _api_enum_value_flyteidl.plugins.sagemaker.HPOJobConfig.HyperparameterTuningStrategy.BAYESIAN:
@@ -143,7 +143,7 @@ RANDOM
 Enum flyteidl.plugins.sagemaker.HPOJobConfig.TrainingJobEarlyStoppingType
 -------------------------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.HPOJobConfig.TrainingJobEarlyStoppingType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hpo_job.proto#L36>`_
+`[flyteidl.plugins.sagemaker.HPOJobConfig.TrainingJobEarlyStoppingType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hpo_job.proto#L37>`_
 
 
 .. _api_enum_value_flyteidl.plugins.sagemaker.HPOJobConfig.TrainingJobEarlyStoppingType.OFF:
@@ -156,3 +156,30 @@ OFF
 AUTO
   ⁣
   
+
+.. _api_msg_flyteidl.plugins.sagemaker.HPOJobCustom:
+
+flyteidl.plugins.sagemaker.HPOJobCustom
+---------------------------------------
+
+`[flyteidl.plugins.sagemaker.HPOJobCustom proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hpo_job.proto#L44>`_
+
+
+.. code-block:: json
+
+  {
+    "hpo_job_config": "{...}",
+    "training_job_task_template": "{...}"
+  }
+
+.. _api_field_flyteidl.plugins.sagemaker.HPOJobCustom.hpo_job_config:
+
+hpo_job_config
+  (:ref:`flyteidl.plugins.sagemaker.HPOJobConfig <api_msg_flyteidl.plugins.sagemaker.HPOJobConfig>`) 
+  
+.. _api_field_flyteidl.plugins.sagemaker.HPOJobCustom.training_job_task_template:
+
+training_job_task_template
+  (:ref:`flyteidl.core.TaskTemplate <api_msg_flyteidl.core.TaskTemplate>`) 
+  
+

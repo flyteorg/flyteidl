@@ -16,7 +16,9 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftasks_2eproto ::google::protobuf::internal::SCCInfo<5> scc_info_TaskTemplate_flyteidl_2fcore_2ftasks_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_HyperparameterTuningObjective_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_HPOJobConfig_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ParameterRanges_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_TrainingJob_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
 namespace flyteidl {
@@ -34,6 +36,10 @@ class HPOJobConfigDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<HPOJobConfig> _instance;
 } _HPOJobConfig_default_instance_;
+class HPOJobCustomDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<HPOJobCustom> _instance;
+} _HPOJobCustom_default_instance_;
 }  // namespace sagemaker
 }  // namespace plugins
 }  // namespace flyteidl
@@ -82,13 +88,30 @@ static void InitDefaultsHPOJobConfig_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_
       &scc_info_ParameterRanges_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto.base,
       &scc_info_HyperparameterTuningObjective_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto.base,}};
 
+static void InitDefaultsHPOJobCustom_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::flyteidl::plugins::sagemaker::_HPOJobCustom_default_instance_;
+    new (ptr) ::flyteidl::plugins::sagemaker::HPOJobCustom();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::flyteidl::plugins::sagemaker::HPOJobCustom::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<2> scc_info_HPOJobCustom_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsHPOJobCustom_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto}, {
+      &scc_info_HPOJobConfig_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto.base,
+      &scc_info_TaskTemplate_flyteidl_2fcore_2ftasks_2eproto.base,}};
+
 void InitDefaults_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_HyperparameterTuningObjective_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_HPOJob_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_HPOJobConfig_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_HPOJobCustom_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto[3];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto[4];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto[3];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto = nullptr;
 
@@ -117,23 +140,32 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fsagemaker_2fhp
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJobConfig, tuning_strategy_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJobConfig, tuning_objective_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJobConfig, training_job_early_stopping_type_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJobCustom, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJobCustom, hpo_job_config_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJobCustom, training_job_task_template_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::sagemaker::HyperparameterTuningObjective)},
   { 7, -1, sizeof(::flyteidl::plugins::sagemaker::HPOJob)},
   { 15, -1, sizeof(::flyteidl::plugins::sagemaker::HPOJobConfig)},
+  { 24, -1, sizeof(::flyteidl::plugins::sagemaker::HPOJobCustom)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_HyperparameterTuningObjective_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_HPOJob_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_HPOJobConfig_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_HPOJobCustom_default_instance_),
 };
 
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto = {
   {}, AddDescriptors_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto, "flyteidl/plugins/sagemaker/hpo_job.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto::offsets,
-  file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto, 3, file_level_enum_descriptors_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto, file_level_service_descriptors_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto,
+  file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto, 4, file_level_enum_descriptors_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto, file_level_service_descriptors_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto[] =
@@ -141,44 +173,50 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_
   "to\022\032flyteidl.plugins.sagemaker\0321flyteidl"
   "/plugins/sagemaker/parameter_ranges.prot"
   "o\032-flyteidl/plugins/sagemaker/training_j"
-  "ob.proto\"\352\001\n\035HyperparameterTuningObjecti"
-  "ve\022s\n\016objective_type\030\001 \001(\0162[.flyteidl.pl"
-  "ugins.sagemaker.HyperparameterTuningObje"
-  "ctive.HyperparameterTuningObjectiveType\022"
-  "\023\n\013metric_name\030\002 \001(\t\"\?\n!HyperparameterTu"
-  "ningObjectiveType\022\014\n\010MINIMIZE\020\000\022\014\n\010MAXIM"
-  "IZE\020\001\"\220\001\n\006HPOJob\022=\n\014training_job\030\001 \001(\0132\'"
-  ".flyteidl.plugins.sagemaker.TrainingJob\022"
-  "#\n\033max_number_of_training_jobs\030\002 \001(\003\022\"\n\032"
-  "max_parallel_training_jobs\030\003 \001(\003\"\355\003\n\014HPO"
-  "JobConfig\022J\n\025hyperparameter_ranges\030\001 \001(\013"
-  "2+.flyteidl.plugins.sagemaker.ParameterR"
-  "anges\022^\n\017tuning_strategy\030\002 \001(\0162E.flyteid"
-  "l.plugins.sagemaker.HPOJobConfig.Hyperpa"
-  "rameterTuningStrategy\022S\n\020tuning_objectiv"
-  "e\030\003 \001(\01329.flyteidl.plugins.sagemaker.Hyp"
-  "erparameterTuningObjective\022o\n training_j"
-  "ob_early_stopping_type\030\004 \001(\0162E.flyteidl."
-  "plugins.sagemaker.HPOJobConfig.TrainingJ"
-  "obEarlyStoppingType\"8\n\034HyperparameterTun"
-  "ingStrategy\022\014\n\010BAYESIAN\020\000\022\n\n\006RANDOM\020\001\"1\n"
-  "\034TrainingJobEarlyStoppingType\022\007\n\003OFF\020\000\022\010"
-  "\n\004AUTO\020\001B5Z3github.com/lyft/flyteidl/gen"
-  "/pb-go/flyteidl/pluginsb\006proto3"
+  "ob.proto\032\031flyteidl/core/tasks.proto\"\352\001\n\035"
+  "HyperparameterTuningObjective\022s\n\016objecti"
+  "ve_type\030\001 \001(\0162[.flyteidl.plugins.sagemak"
+  "er.HyperparameterTuningObjective.Hyperpa"
+  "rameterTuningObjectiveType\022\023\n\013metric_nam"
+  "e\030\002 \001(\t\"\?\n!HyperparameterTuningObjective"
+  "Type\022\014\n\010MINIMIZE\020\000\022\014\n\010MAXIMIZE\020\001\"\220\001\n\006HPO"
+  "Job\022=\n\014training_job\030\001 \001(\0132\'.flyteidl.plu"
+  "gins.sagemaker.TrainingJob\022#\n\033max_number"
+  "_of_training_jobs\030\002 \001(\003\022\"\n\032max_parallel_"
+  "training_jobs\030\003 \001(\003\"\355\003\n\014HPOJobConfig\022J\n\025"
+  "hyperparameter_ranges\030\001 \001(\0132+.flyteidl.p"
+  "lugins.sagemaker.ParameterRanges\022^\n\017tuni"
+  "ng_strategy\030\002 \001(\0162E.flyteidl.plugins.sag"
+  "emaker.HPOJobConfig.HyperparameterTuning"
+  "Strategy\022S\n\020tuning_objective\030\003 \001(\01329.fly"
+  "teidl.plugins.sagemaker.HyperparameterTu"
+  "ningObjective\022o\n training_job_early_stop"
+  "ping_type\030\004 \001(\0162E.flyteidl.plugins.sagem"
+  "aker.HPOJobConfig.TrainingJobEarlyStoppi"
+  "ngType\"8\n\034HyperparameterTuningStrategy\022\014"
+  "\n\010BAYESIAN\020\000\022\n\n\006RANDOM\020\001\"1\n\034TrainingJobE"
+  "arlyStoppingType\022\007\n\003OFF\020\000\022\010\n\004AUTO\020\001\"\221\001\n\014"
+  "HPOJobCustom\022@\n\016hpo_job_config\030\001 \001(\0132(.f"
+  "lyteidl.plugins.sagemaker.HPOJobConfig\022\?"
+  "\n\032training_job_task_template\030\002 \001(\0132\033.fly"
+  "teidl.core.TaskTemplateB5Z3github.com/ly"
+  "ft/flyteidl/gen/pb-go/flyteidl/pluginsb\006"
+  "proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto,
-  "flyteidl/plugins/sagemaker/hpo_job.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto, 1111,
+  "flyteidl/plugins/sagemaker/hpo_job.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto, 1286,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[2] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[3] =
   {
     ::AddDescriptors_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto,
     ::AddDescriptors_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto,
+    ::AddDescriptors_flyteidl_2fcore_2ftasks_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto, deps, 2);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto, deps, 3);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -1437,6 +1475,367 @@ void HPOJobConfig::InternalSwap(HPOJobConfig* other) {
 }
 
 
+// ===================================================================
+
+void HPOJobCustom::InitAsDefaultInstance() {
+  ::flyteidl::plugins::sagemaker::_HPOJobCustom_default_instance_._instance.get_mutable()->hpo_job_config_ = const_cast< ::flyteidl::plugins::sagemaker::HPOJobConfig*>(
+      ::flyteidl::plugins::sagemaker::HPOJobConfig::internal_default_instance());
+  ::flyteidl::plugins::sagemaker::_HPOJobCustom_default_instance_._instance.get_mutable()->training_job_task_template_ = const_cast< ::flyteidl::core::TaskTemplate*>(
+      ::flyteidl::core::TaskTemplate::internal_default_instance());
+}
+class HPOJobCustom::HasBitSetters {
+ public:
+  static const ::flyteidl::plugins::sagemaker::HPOJobConfig& hpo_job_config(const HPOJobCustom* msg);
+  static const ::flyteidl::core::TaskTemplate& training_job_task_template(const HPOJobCustom* msg);
+};
+
+const ::flyteidl::plugins::sagemaker::HPOJobConfig&
+HPOJobCustom::HasBitSetters::hpo_job_config(const HPOJobCustom* msg) {
+  return *msg->hpo_job_config_;
+}
+const ::flyteidl::core::TaskTemplate&
+HPOJobCustom::HasBitSetters::training_job_task_template(const HPOJobCustom* msg) {
+  return *msg->training_job_task_template_;
+}
+void HPOJobCustom::clear_training_job_task_template() {
+  if (GetArenaNoVirtual() == nullptr && training_job_task_template_ != nullptr) {
+    delete training_job_task_template_;
+  }
+  training_job_task_template_ = nullptr;
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int HPOJobCustom::kHpoJobConfigFieldNumber;
+const int HPOJobCustom::kTrainingJobTaskTemplateFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+HPOJobCustom::HPOJobCustom()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:flyteidl.plugins.sagemaker.HPOJobCustom)
+}
+HPOJobCustom::HPOJobCustom(const HPOJobCustom& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_hpo_job_config()) {
+    hpo_job_config_ = new ::flyteidl::plugins::sagemaker::HPOJobConfig(*from.hpo_job_config_);
+  } else {
+    hpo_job_config_ = nullptr;
+  }
+  if (from.has_training_job_task_template()) {
+    training_job_task_template_ = new ::flyteidl::core::TaskTemplate(*from.training_job_task_template_);
+  } else {
+    training_job_task_template_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.sagemaker.HPOJobCustom)
+}
+
+void HPOJobCustom::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_HPOJobCustom_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto.base);
+  ::memset(&hpo_job_config_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&training_job_task_template_) -
+      reinterpret_cast<char*>(&hpo_job_config_)) + sizeof(training_job_task_template_));
+}
+
+HPOJobCustom::~HPOJobCustom() {
+  // @@protoc_insertion_point(destructor:flyteidl.plugins.sagemaker.HPOJobCustom)
+  SharedDtor();
+}
+
+void HPOJobCustom::SharedDtor() {
+  if (this != internal_default_instance()) delete hpo_job_config_;
+  if (this != internal_default_instance()) delete training_job_task_template_;
+}
+
+void HPOJobCustom::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const HPOJobCustom& HPOJobCustom::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_HPOJobCustom_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void HPOJobCustom::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.plugins.sagemaker.HPOJobCustom)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaNoVirtual() == nullptr && hpo_job_config_ != nullptr) {
+    delete hpo_job_config_;
+  }
+  hpo_job_config_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && training_job_task_template_ != nullptr) {
+    delete training_job_task_template_;
+  }
+  training_job_task_template_ = nullptr;
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* HPOJobCustom::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<HPOJobCustom*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::plugins::sagemaker::HPOJobConfig::_InternalParse;
+        object = msg->mutable_hpo_job_config();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .flyteidl.core.TaskTemplate training_job_task_template = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::core::TaskTemplate::_InternalParse;
+        object = msg->mutable_training_job_task_template();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool HPOJobCustom::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:flyteidl.plugins.sagemaker.HPOJobCustom)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_hpo_job_config()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .flyteidl.core.TaskTemplate training_job_task_template = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_training_job_task_template()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:flyteidl.plugins.sagemaker.HPOJobCustom)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:flyteidl.plugins.sagemaker.HPOJobCustom)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void HPOJobCustom::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:flyteidl.plugins.sagemaker.HPOJobCustom)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;
+  if (this->has_hpo_job_config()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, HasBitSetters::hpo_job_config(this), output);
+  }
+
+  // .flyteidl.core.TaskTemplate training_job_task_template = 2;
+  if (this->has_training_job_task_template()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, HasBitSetters::training_job_task_template(this), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:flyteidl.plugins.sagemaker.HPOJobCustom)
+}
+
+::google::protobuf::uint8* HPOJobCustom::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.plugins.sagemaker.HPOJobCustom)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;
+  if (this->has_hpo_job_config()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, HasBitSetters::hpo_job_config(this), target);
+  }
+
+  // .flyteidl.core.TaskTemplate training_job_task_template = 2;
+  if (this->has_training_job_task_template()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, HasBitSetters::training_job_task_template(this), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.plugins.sagemaker.HPOJobCustom)
+  return target;
+}
+
+size_t HPOJobCustom::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.plugins.sagemaker.HPOJobCustom)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;
+  if (this->has_hpo_job_config()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *hpo_job_config_);
+  }
+
+  // .flyteidl.core.TaskTemplate training_job_task_template = 2;
+  if (this->has_training_job_task_template()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *training_job_task_template_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void HPOJobCustom::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.plugins.sagemaker.HPOJobCustom)
+  GOOGLE_DCHECK_NE(&from, this);
+  const HPOJobCustom* source =
+      ::google::protobuf::DynamicCastToGenerated<HPOJobCustom>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.plugins.sagemaker.HPOJobCustom)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.plugins.sagemaker.HPOJobCustom)
+    MergeFrom(*source);
+  }
+}
+
+void HPOJobCustom::MergeFrom(const HPOJobCustom& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.plugins.sagemaker.HPOJobCustom)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_hpo_job_config()) {
+    mutable_hpo_job_config()->::flyteidl::plugins::sagemaker::HPOJobConfig::MergeFrom(from.hpo_job_config());
+  }
+  if (from.has_training_job_task_template()) {
+    mutable_training_job_task_template()->::flyteidl::core::TaskTemplate::MergeFrom(from.training_job_task_template());
+  }
+}
+
+void HPOJobCustom::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.plugins.sagemaker.HPOJobCustom)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void HPOJobCustom::CopyFrom(const HPOJobCustom& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.plugins.sagemaker.HPOJobCustom)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool HPOJobCustom::IsInitialized() const {
+  return true;
+}
+
+void HPOJobCustom::Swap(HPOJobCustom* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void HPOJobCustom::InternalSwap(HPOJobCustom* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(hpo_job_config_, other->hpo_job_config_);
+  swap(training_job_task_template_, other->training_job_task_template_);
+}
+
+::google::protobuf::Metadata HPOJobCustom::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto);
+  return ::file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto[kIndexInFileMessages];
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace sagemaker
 }  // namespace plugins
@@ -1451,6 +1850,9 @@ template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::HPOJob* Arena::Crea
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::HPOJobConfig* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::HPOJobConfig >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::HPOJobConfig >(arena);
+}
+template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::HPOJobCustom* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::HPOJobCustom >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::HPOJobCustom >(arena);
 }
 }  // namespace protobuf
 }  // namespace google
