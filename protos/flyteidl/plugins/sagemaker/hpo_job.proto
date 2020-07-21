@@ -6,6 +6,7 @@ option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
 
 import "flyteidl/plugins/sagemaker/parameter_ranges.proto";
 import "flyteidl/plugins/sagemaker/training_job.proto";
+import "flyteidl/core/tasks.proto";
 
 message HyperparameterTuningObjective {
     enum HyperparameterTuningObjectiveType {
@@ -39,4 +40,9 @@ message HPOJobConfig {
         AUTO = 1;
     }
     TrainingJobEarlyStoppingType training_job_early_stopping_type = 4;
+}
+
+message HPOJobCustom {
+    HPOJobConfig hpo_job_config = 1;
+    core.TaskTemplate training_job_task_template = 2;
 }
