@@ -31,14 +31,70 @@ class AdminNodeExecutionMetaData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'group_id': 'str',
+        'is_parent_node': 'bool'
     }
 
     attribute_map = {
+        'group_id': 'group_id',
+        'is_parent_node': 'is_parent_node'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, group_id=None, is_parent_node=None):  # noqa: E501
         """AdminNodeExecutionMetaData - a model defined in Swagger"""  # noqa: E501
+
+        self._group_id = None
+        self._is_parent_node = None
         self.discriminator = None
+
+        if group_id is not None:
+            self.group_id = group_id
+        if is_parent_node is not None:
+            self.is_parent_node = is_parent_node
+
+    @property
+    def group_id(self):
+        """Gets the group_id of this AdminNodeExecutionMetaData.  # noqa: E501
+
+        Node executions are grouped depending on retries of the parent, and other scenarios Group id is unique within the context of a parent node.  # noqa: E501
+
+        :return: The group_id of this AdminNodeExecutionMetaData.  # noqa: E501
+        :rtype: str
+        """
+        return self._group_id
+
+    @group_id.setter
+    def group_id(self, group_id):
+        """Sets the group_id of this AdminNodeExecutionMetaData.
+
+        Node executions are grouped depending on retries of the parent, and other scenarios Group id is unique within the context of a parent node.  # noqa: E501
+
+        :param group_id: The group_id of this AdminNodeExecutionMetaData.  # noqa: E501
+        :type: str
+        """
+
+        self._group_id = group_id
+
+    @property
+    def is_parent_node(self):
+        """Gets the is_parent_node of this AdminNodeExecutionMetaData.  # noqa: E501
+
+
+        :return: The is_parent_node of this AdminNodeExecutionMetaData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_parent_node
+
+    @is_parent_node.setter
+    def is_parent_node(self, is_parent_node):
+        """Sets the is_parent_node of this AdminNodeExecutionMetaData.
+
+
+        :param is_parent_node: The is_parent_node of this AdminNodeExecutionMetaData.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_parent_node = is_parent_node
 
     def to_dict(self):
         """Returns the model properties as a dict"""

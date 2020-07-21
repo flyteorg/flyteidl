@@ -1477,6 +1477,13 @@
               "ASCENDING"
             ],
             "default": "DESCENDING"
+          },
+          {
+            "name": "unique_parent_id",
+            "description": "Unique identifier of the parent node in the execution\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
           }
         ],
         "tags": [
@@ -3673,6 +3680,17 @@
     },
     "adminNodeExecutionMetaData": {
       "type": "object",
+      "properties": {
+        "group_id": {
+          "type": "string",
+          "description": "Node executions are grouped depending on retries of the parent, and other scenarios\nGroup id is unique within the context of a parent node."
+        },
+        "is_parent_node": {
+          "type": "boolean",
+          "format": "boolean",
+          "title": "Boolean flag indicating if the node has child nodes under it"
+        }
+      },
       "title": "Represents additional attributes related to a Node Execution"
     },
     "adminNotification": {
@@ -5425,7 +5443,24 @@
         },
         "parent_task_metadata": {
           "$ref": "#/definitions/eventParentTaskExecutionMetadata",
-          "description": "Specifies which task (if any) launched this node."
+          "description": "[To be deprecated] Specifies which task (if any) launched this node."
+        },
+        "parent_node_metadata": {
+          "$ref": "#/definitions/eventParentNodeExecutionMetadata",
+          "description": "Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node."
+        },
+        "group_id": {
+          "type": "string",
+          "title": "Group identifier to indicate arbitrary grouping like retries, sub workflow"
+        }
+      }
+    },
+    "eventParentNodeExecutionMetadata": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Unique identifier of the parent node id within the execution"
         }
       }
     },

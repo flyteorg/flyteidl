@@ -62,8 +62,14 @@ message NodeExecutionEvent {
         WorkflowNodeMetadata workflow_node_metadata = 8;
     }
 
-    // Specifies which task (if any) launched this node.
+    // [To be deprecated] Specifies which task (if any) launched this node.
     ParentTaskExecutionMetadata parent_task_metadata         = 9;
+
+    // Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
+    ParentNodeExecutionMetadata parent_node_metadata	= 10;
+
+    // Group identifier to indicate arbitrary grouping like retries, sub workflow
+    string group_id = 11;
 }
 
 // For Workflow Nodes we need to send information about the workflow that's launched
@@ -73,6 +79,11 @@ message WorkflowNodeMetadata {
 
 message ParentTaskExecutionMetadata {
     core.TaskExecutionIdentifier id = 1;
+}
+
+message ParentNodeExecutionMetadata {
+    // Unique identifier of the parent node id within the execution
+    string id = 1;
 }
 
 // Plugin specific execution event information. For tasks like Python, Hive, Spark, DynamicJob.
