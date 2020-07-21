@@ -17,4 +17,5 @@ Plugins available in the Flyte system.
 	qubole.proto
 	sidecar.proto
 	spark.proto
+	tensorflow.proto
 	waitable.proto
