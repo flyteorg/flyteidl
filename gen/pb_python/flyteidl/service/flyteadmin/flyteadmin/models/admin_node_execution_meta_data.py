@@ -32,25 +32,30 @@ class AdminNodeExecutionMetaData(object):
     """
     swagger_types = {
         'group_id': 'str',
-        'is_parent_node': 'bool'
+        'is_parent_node': 'bool',
+        'graph_node_id': 'str'
     }
 
     attribute_map = {
         'group_id': 'group_id',
-        'is_parent_node': 'is_parent_node'
+        'is_parent_node': 'is_parent_node',
+        'graph_node_id': 'graph_node_id'
     }
 
-    def __init__(self, group_id=None, is_parent_node=None):  # noqa: E501
+    def __init__(self, group_id=None, is_parent_node=None, graph_node_id=None):  # noqa: E501
         """AdminNodeExecutionMetaData - a model defined in Swagger"""  # noqa: E501
 
         self._group_id = None
         self._is_parent_node = None
+        self._graph_node_id = None
         self.discriminator = None
 
         if group_id is not None:
             self.group_id = group_id
         if is_parent_node is not None:
             self.is_parent_node = is_parent_node
+        if graph_node_id is not None:
+            self.graph_node_id = graph_node_id
 
     @property
     def group_id(self):
@@ -95,6 +100,27 @@ class AdminNodeExecutionMetaData(object):
         """
 
         self._is_parent_node = is_parent_node
+
+    @property
+    def graph_node_id(self):
+        """Gets the graph_node_id of this AdminNodeExecutionMetaData.  # noqa: E501
+
+
+        :return: The graph_node_id of this AdminNodeExecutionMetaData.  # noqa: E501
+        :rtype: str
+        """
+        return self._graph_node_id
+
+    @graph_node_id.setter
+    def graph_node_id(self, graph_node_id):
+        """Sets the graph_node_id of this AdminNodeExecutionMetaData.
+
+
+        :param graph_node_id: The graph_node_id of this AdminNodeExecutionMetaData.  # noqa: E501
+        :type: str
+        """
+
+        self._graph_node_id = graph_node_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

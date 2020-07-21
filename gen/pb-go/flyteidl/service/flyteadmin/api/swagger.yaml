@@ -1270,13 +1270,6 @@ paths:
         - "ASCENDING"
         x-exportParamName: "SortByDirection"
         x-optionalDataType: "String"
-      - name: "unique_parent_id"
-        in: "query"
-        description: "Unique identifier of the parent node in the execution\n+optional."
-        required: false
-        type: "string"
-        x-exportParamName: "UniqueParentId"
-        x-optionalDataType: "String"
       responses:
         200:
           description: "A successful response."
@@ -5001,6 +4994,7 @@ definitions:
       - metadata:
           is_parent_node: true
           group_id: "group_id"
+          graph_node_id: "graph_node_id"
         input_uri: "input_uri"
         id:
           execution_id:
@@ -5028,6 +5022,7 @@ definitions:
       - metadata:
           is_parent_node: true
           group_id: "group_id"
+          graph_node_id: "graph_node_id"
         input_uri: "input_uri"
         id:
           execution_id:
@@ -5065,10 +5060,14 @@ definitions:
         type: "boolean"
         format: "boolean"
         title: "Boolean flag indicating if the node has child nodes under it"
+      graph_node_id:
+        type: "string"
+        title: "Node id of the node in the original workflow"
     title: "Represents additional attributes related to a Node Execution"
     example:
       is_parent_node: true
       group_id: "group_id"
+      graph_node_id: "graph_node_id"
   adminNotification:
     type: "object"
     properties:
@@ -24113,7 +24112,7 @@ definitions:
         type: "string"
         title: "Group identifier to indicate arbitrary grouping like retries, sub\
           \ workflow"
-      node_id:
+      graph_node_id:
         type: "string"
         title: "Identifier of the node in the original workflow/graph"
       node_name:
@@ -24233,6 +24232,7 @@ definitions:
       metadata:
         is_parent_node: true
         group_id: "group_id"
+        graph_node_id: "graph_node_id"
       input_uri: "input_uri"
       id:
         execution_id:

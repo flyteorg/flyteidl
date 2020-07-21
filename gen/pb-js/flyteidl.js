@@ -11421,7 +11421,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.event.IParentTaskExecutionMetadata|null} [parentTaskMetadata] NodeExecutionEvent parentTaskMetadata
              * @property {flyteidl.event.IParentNodeExecutionMetadata|null} [parentNodeMetadata] NodeExecutionEvent parentNodeMetadata
              * @property {string|null} [groupId] NodeExecutionEvent groupId
-             * @property {string|null} [nodeId] NodeExecutionEvent nodeId
+             * @property {string|null} [graphNodeId] NodeExecutionEvent graphNodeId
              * @property {string|null} [nodeName] NodeExecutionEvent nodeName
              */
 
@@ -11529,12 +11529,12 @@ export const flyteidl = $root.flyteidl = (() => {
             NodeExecutionEvent.prototype.groupId = "";
 
             /**
-             * NodeExecutionEvent nodeId.
-             * @member {string} nodeId
+             * NodeExecutionEvent graphNodeId.
+             * @member {string} graphNodeId
              * @memberof flyteidl.event.NodeExecutionEvent
              * @instance
              */
-            NodeExecutionEvent.prototype.nodeId = "";
+            NodeExecutionEvent.prototype.graphNodeId = "";
 
             /**
              * NodeExecutionEvent nodeName.
@@ -11615,8 +11615,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.event.ParentNodeExecutionMetadata.encode(message.parentNodeMetadata, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                 if (message.groupId != null && message.hasOwnProperty("groupId"))
                     writer.uint32(/* id 11, wireType 2 =*/90).string(message.groupId);
-                if (message.nodeId != null && message.hasOwnProperty("nodeId"))
-                    writer.uint32(/* id 12, wireType 2 =*/98).string(message.nodeId);
+                if (message.graphNodeId != null && message.hasOwnProperty("graphNodeId"))
+                    writer.uint32(/* id 12, wireType 2 =*/98).string(message.graphNodeId);
                 if (message.nodeName != null && message.hasOwnProperty("nodeName"))
                     writer.uint32(/* id 13, wireType 2 =*/106).string(message.nodeName);
                 return writer;
@@ -11674,7 +11674,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.groupId = reader.string();
                         break;
                     case 12:
-                        message.nodeId = reader.string();
+                        message.graphNodeId = reader.string();
                         break;
                     case 13:
                         message.nodeName = reader.string();
@@ -11766,9 +11766,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.groupId != null && message.hasOwnProperty("groupId"))
                     if (!$util.isString(message.groupId))
                         return "groupId: string expected";
-                if (message.nodeId != null && message.hasOwnProperty("nodeId"))
-                    if (!$util.isString(message.nodeId))
-                        return "nodeId: string expected";
+                if (message.graphNodeId != null && message.hasOwnProperty("graphNodeId"))
+                    if (!$util.isString(message.graphNodeId))
+                        return "graphNodeId: string expected";
                 if (message.nodeName != null && message.hasOwnProperty("nodeName"))
                     if (!$util.isString(message.nodeName))
                         return "nodeName: string expected";
@@ -22685,7 +22685,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [token] NodeExecutionListRequest token
              * @property {string|null} [filters] NodeExecutionListRequest filters
              * @property {flyteidl.admin.ISort|null} [sortBy] NodeExecutionListRequest sortBy
-             * @property {string|null} [uniqueParentId] NodeExecutionListRequest uniqueParentId
              */
 
             /**
@@ -22744,14 +22743,6 @@ export const flyteidl = $root.flyteidl = (() => {
             NodeExecutionListRequest.prototype.sortBy = null;
 
             /**
-             * NodeExecutionListRequest uniqueParentId.
-             * @member {string} uniqueParentId
-             * @memberof flyteidl.admin.NodeExecutionListRequest
-             * @instance
-             */
-            NodeExecutionListRequest.prototype.uniqueParentId = "";
-
-            /**
              * Creates a new NodeExecutionListRequest instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.NodeExecutionListRequest
@@ -22785,8 +22776,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.filters);
                 if (message.sortBy != null && message.hasOwnProperty("sortBy"))
                     $root.flyteidl.admin.Sort.encode(message.sortBy, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                if (message.uniqueParentId != null && message.hasOwnProperty("uniqueParentId"))
-                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.uniqueParentId);
                 return writer;
             };
 
@@ -22822,9 +22811,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 5:
                         message.sortBy = $root.flyteidl.admin.Sort.decode(reader, reader.uint32());
-                        break;
-                    case 6:
-                        message.uniqueParentId = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -22864,9 +22850,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "sortBy." + error;
                 }
-                if (message.uniqueParentId != null && message.hasOwnProperty("uniqueParentId"))
-                    if (!$util.isString(message.uniqueParentId))
-                        return "uniqueParentId: string expected";
                 return null;
             };
 
@@ -23230,6 +23213,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface INodeExecutionMetaData
              * @property {string|null} [groupId] NodeExecutionMetaData groupId
              * @property {boolean|null} [isParentNode] NodeExecutionMetaData isParentNode
+             * @property {string|null} [graphNodeId] NodeExecutionMetaData graphNodeId
              */
 
             /**
@@ -23264,6 +23248,14 @@ export const flyteidl = $root.flyteidl = (() => {
             NodeExecutionMetaData.prototype.isParentNode = false;
 
             /**
+             * NodeExecutionMetaData graphNodeId.
+             * @member {string} graphNodeId
+             * @memberof flyteidl.admin.NodeExecutionMetaData
+             * @instance
+             */
+            NodeExecutionMetaData.prototype.graphNodeId = "";
+
+            /**
              * Creates a new NodeExecutionMetaData instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.NodeExecutionMetaData
@@ -23291,6 +23283,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.groupId);
                 if (message.isParentNode != null && message.hasOwnProperty("isParentNode"))
                     writer.uint32(/* id 2, wireType 0 =*/16).bool(message.isParentNode);
+                if (message.graphNodeId != null && message.hasOwnProperty("graphNodeId"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.graphNodeId);
                 return writer;
             };
 
@@ -23318,6 +23312,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 2:
                         message.isParentNode = reader.bool();
                         break;
+                    case 3:
+                        message.graphNodeId = reader.string();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -23343,6 +23340,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.isParentNode != null && message.hasOwnProperty("isParentNode"))
                     if (typeof message.isParentNode !== "boolean")
                         return "isParentNode: boolean expected";
+                if (message.graphNodeId != null && message.hasOwnProperty("graphNodeId"))
+                    if (!$util.isString(message.graphNodeId))
+                        return "graphNodeId: string expected";
                 return null;
             };
 

@@ -3070,7 +3070,6 @@ Fetch existing node executions matching input filters.
      * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
      * @param "SortByKey" (optional.String) -  Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
      * @param "SortByDirection" (optional.String) -  Indicates the direction to apply sort key for response values. +optional.
-     * @param "UniqueParentId" (optional.String) -  Unique identifier of the parent node in the execution +optional.
 
 @return AdminNodeExecutionList
 */
@@ -3081,7 +3080,6 @@ type ListNodeExecutionsOpts struct {
 	Filters optional.String
 	SortByKey optional.String
 	SortByDirection optional.String
-	UniqueParentId optional.String
 }
 
 func (a *AdminServiceApiService) ListNodeExecutions(ctx context.Context, workflowExecutionIdProject string, workflowExecutionIdDomain string, workflowExecutionIdName string, localVarOptionals *ListNodeExecutionsOpts) (AdminNodeExecutionList, *http.Response, error) {
@@ -3117,9 +3115,6 @@ func (a *AdminServiceApiService) ListNodeExecutions(ctx context.Context, workflo
 	}
 	if localVarOptionals != nil && localVarOptionals.SortByDirection.IsSet() {
 		localVarQueryParams.Add("sort_by.direction", parameterToString(localVarOptionals.SortByDirection.Value(), ""))
-	}
-	if localVarOptionals != nil && localVarOptionals.UniqueParentId.IsSet() {
-		localVarQueryParams.Add("unique_parent_id", parameterToString(localVarOptionals.UniqueParentId.Value(), ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}

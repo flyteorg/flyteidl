@@ -1995,18 +1995,18 @@ public final class Event {
      * Identifier of the node in the original workflow/graph
      * </pre>
      *
-     * <code>string node_id = 12;</code>
+     * <code>string graph_node_id = 12;</code>
      */
-    java.lang.String getNodeId();
+    java.lang.String getGraphNodeId();
     /**
      * <pre>
      * Identifier of the node in the original workflow/graph
      * </pre>
      *
-     * <code>string node_id = 12;</code>
+     * <code>string graph_node_id = 12;</code>
      */
     com.google.protobuf.ByteString
-        getNodeIdBytes();
+        getGraphNodeIdBytes();
 
     /**
      * <pre>
@@ -2047,7 +2047,7 @@ public final class Event {
       phase_ = 0;
       inputUri_ = "";
       groupId_ = "";
-      nodeId_ = "";
+      graphNodeId_ = "";
       nodeName_ = "";
     }
 
@@ -2188,7 +2188,7 @@ public final class Event {
             case 98: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              nodeId_ = s;
+              graphNodeId_ = s;
               break;
             }
             case 106: {
@@ -2690,24 +2690,24 @@ public final class Event {
       }
     }
 
-    public static final int NODE_ID_FIELD_NUMBER = 12;
-    private volatile java.lang.Object nodeId_;
+    public static final int GRAPH_NODE_ID_FIELD_NUMBER = 12;
+    private volatile java.lang.Object graphNodeId_;
     /**
      * <pre>
      * Identifier of the node in the original workflow/graph
      * </pre>
      *
-     * <code>string node_id = 12;</code>
+     * <code>string graph_node_id = 12;</code>
      */
-    public java.lang.String getNodeId() {
-      java.lang.Object ref = nodeId_;
+    public java.lang.String getGraphNodeId() {
+      java.lang.Object ref = graphNodeId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        nodeId_ = s;
+        graphNodeId_ = s;
         return s;
       }
     }
@@ -2716,16 +2716,16 @@ public final class Event {
      * Identifier of the node in the original workflow/graph
      * </pre>
      *
-     * <code>string node_id = 12;</code>
+     * <code>string graph_node_id = 12;</code>
      */
     public com.google.protobuf.ByteString
-        getNodeIdBytes() {
-      java.lang.Object ref = nodeId_;
+        getGraphNodeIdBytes() {
+      java.lang.Object ref = graphNodeId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        nodeId_ = b;
+        graphNodeId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2821,8 +2821,8 @@ public final class Event {
       if (!getGroupIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, groupId_);
       }
-      if (!getNodeIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, nodeId_);
+      if (!getGraphNodeIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, graphNodeId_);
       }
       if (!getNodeNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, nodeName_);
@@ -2876,8 +2876,8 @@ public final class Event {
       if (!getGroupIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, groupId_);
       }
-      if (!getNodeIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, nodeId_);
+      if (!getGraphNodeIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, graphNodeId_);
       }
       if (!getNodeNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, nodeName_);
@@ -2924,8 +2924,8 @@ public final class Event {
       }
       if (!getGroupId()
           .equals(other.getGroupId())) return false;
-      if (!getNodeId()
-          .equals(other.getNodeId())) return false;
+      if (!getGraphNodeId()
+          .equals(other.getGraphNodeId())) return false;
       if (!getNodeName()
           .equals(other.getNodeName())) return false;
       if (!getOutputResultCase().equals(other.getOutputResultCase())) return false;
@@ -2985,8 +2985,8 @@ public final class Event {
       }
       hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGroupId().hashCode();
-      hash = (37 * hash) + NODE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getNodeId().hashCode();
+      hash = (37 * hash) + GRAPH_NODE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGraphNodeId().hashCode();
       hash = (37 * hash) + NODE_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getNodeName().hashCode();
       switch (outputResultCase_) {
@@ -3174,7 +3174,7 @@ public final class Event {
         }
         groupId_ = "";
 
-        nodeId_ = "";
+        graphNodeId_ = "";
 
         nodeName_ = "";
 
@@ -3249,7 +3249,7 @@ public final class Event {
           result.parentNodeMetadata_ = parentNodeMetadataBuilder_.build();
         }
         result.groupId_ = groupId_;
-        result.nodeId_ = nodeId_;
+        result.graphNodeId_ = graphNodeId_;
         result.nodeName_ = nodeName_;
         result.outputResultCase_ = outputResultCase_;
         result.targetMetadataCase_ = targetMetadataCase_;
@@ -3328,8 +3328,8 @@ public final class Event {
           groupId_ = other.groupId_;
           onChanged();
         }
-        if (!other.getNodeId().isEmpty()) {
-          nodeId_ = other.nodeId_;
+        if (!other.getGraphNodeId().isEmpty()) {
+          graphNodeId_ = other.graphNodeId_;
           onChanged();
         }
         if (!other.getNodeName().isEmpty()) {
@@ -4745,21 +4745,21 @@ public final class Event {
         return this;
       }
 
-      private java.lang.Object nodeId_ = "";
+      private java.lang.Object graphNodeId_ = "";
       /**
        * <pre>
        * Identifier of the node in the original workflow/graph
        * </pre>
        *
-       * <code>string node_id = 12;</code>
+       * <code>string graph_node_id = 12;</code>
        */
-      public java.lang.String getNodeId() {
-        java.lang.Object ref = nodeId_;
+      public java.lang.String getGraphNodeId() {
+        java.lang.Object ref = graphNodeId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          nodeId_ = s;
+          graphNodeId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4770,16 +4770,16 @@ public final class Event {
        * Identifier of the node in the original workflow/graph
        * </pre>
        *
-       * <code>string node_id = 12;</code>
+       * <code>string graph_node_id = 12;</code>
        */
       public com.google.protobuf.ByteString
-          getNodeIdBytes() {
-        java.lang.Object ref = nodeId_;
+          getGraphNodeIdBytes() {
+        java.lang.Object ref = graphNodeId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          nodeId_ = b;
+          graphNodeId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -4790,15 +4790,15 @@ public final class Event {
        * Identifier of the node in the original workflow/graph
        * </pre>
        *
-       * <code>string node_id = 12;</code>
+       * <code>string graph_node_id = 12;</code>
        */
-      public Builder setNodeId(
+      public Builder setGraphNodeId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        nodeId_ = value;
+        graphNodeId_ = value;
         onChanged();
         return this;
       }
@@ -4807,11 +4807,11 @@ public final class Event {
        * Identifier of the node in the original workflow/graph
        * </pre>
        *
-       * <code>string node_id = 12;</code>
+       * <code>string graph_node_id = 12;</code>
        */
-      public Builder clearNodeId() {
+      public Builder clearGraphNodeId() {
         
-        nodeId_ = getDefaultInstance().getNodeId();
+        graphNodeId_ = getDefaultInstance().getGraphNodeId();
         onChanged();
         return this;
       }
@@ -4820,16 +4820,16 @@ public final class Event {
        * Identifier of the node in the original workflow/graph
        * </pre>
        *
-       * <code>string node_id = 12;</code>
+       * <code>string graph_node_id = 12;</code>
        */
-      public Builder setNodeIdBytes(
+      public Builder setGraphNodeIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        nodeId_ = value;
+        graphNodeId_ = value;
         onChanged();
         return this;
       }
@@ -10008,7 +10008,7 @@ public final class Event {
       "flowExecution.Phase\022/\n\013occurred_at\030\004 \001(\013" +
       "2\032.google.protobuf.Timestamp\022\024\n\noutput_u" +
       "ri\030\005 \001(\tH\000\022.\n\005error\030\006 \001(\0132\035.flyteidl.cor" +
-      "e.ExecutionErrorH\000B\017\n\routput_result\"\322\004\n\022" +
+      "e.ExecutionErrorH\000B\017\n\routput_result\"\330\004\n\022" +
       "NodeExecutionEvent\0222\n\002id\030\001 \001(\0132&.flyteid" +
       "l.core.NodeExecutionIdentifier\022\023\n\013produc" +
       "er_id\030\002 \001(\t\0221\n\005phase\030\003 \001(\0162\".flyteidl.co" +
@@ -10022,28 +10022,28 @@ public final class Event {
       "ParentTaskExecutionMetadata\022I\n\024parent_no" +
       "de_metadata\030\n \001(\0132+.flyteidl.event.Paren" +
       "tNodeExecutionMetadata\022\020\n\010group_id\030\013 \001(\t" +
-      "\022\017\n\007node_id\030\014 \001(\t\022\021\n\tnode_name\030\r \001(\tB\017\n\r" +
-      "output_resultB\021\n\017target_metadata\"X\n\024Work" +
-      "flowNodeMetadata\022@\n\014execution_id\030\001 \001(\0132*" +
-      ".flyteidl.core.WorkflowExecutionIdentifi" +
-      "er\"Q\n\033ParentTaskExecutionMetadata\0222\n\002id\030" +
-      "\001 \001(\0132&.flyteidl.core.TaskExecutionIdent" +
-      "ifier\")\n\033ParentNodeExecutionMetadata\022\n\n\002" +
-      "id\030\001 \001(\t\"\357\003\n\022TaskExecutionEvent\022*\n\007task_" +
-      "id\030\001 \001(\0132\031.flyteidl.core.Identifier\022H\n\030p" +
-      "arent_node_execution_id\030\002 \001(\0132&.flyteidl" +
-      ".core.NodeExecutionIdentifier\022\025\n\rretry_a" +
-      "ttempt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyteidl.c" +
-      "ore.TaskExecution.Phase\022\023\n\013producer_id\030\005" +
-      " \001(\t\022$\n\004logs\030\006 \003(\0132\026.flyteidl.core.TaskL" +
-      "og\022/\n\013occurred_at\030\007 \001(\0132\032.google.protobu" +
-      "f.Timestamp\022\021\n\tinput_uri\030\010 \001(\t\022\024\n\noutput" +
-      "_uri\030\t \001(\tH\000\022.\n\005error\030\n \001(\0132\035.flyteidl.c" +
-      "ore.ExecutionErrorH\000\022,\n\013custom_info\030\013 \001(" +
-      "\0132\027.google.protobuf.Struct\022\025\n\rphase_vers" +
-      "ion\030\014 \001(\rB\017\n\routput_resultB3Z1github.com" +
-      "/lyft/flyteidl/gen/pb-go/flyteidl/eventb" +
-      "\006proto3"
+      "\022\025\n\rgraph_node_id\030\014 \001(\t\022\021\n\tnode_name\030\r \001" +
+      "(\tB\017\n\routput_resultB\021\n\017target_metadata\"X" +
+      "\n\024WorkflowNodeMetadata\022@\n\014execution_id\030\001" +
+      " \001(\0132*.flyteidl.core.WorkflowExecutionId" +
+      "entifier\"Q\n\033ParentTaskExecutionMetadata\022" +
+      "2\n\002id\030\001 \001(\0132&.flyteidl.core.TaskExecutio" +
+      "nIdentifier\")\n\033ParentNodeExecutionMetada" +
+      "ta\022\n\n\002id\030\001 \001(\t\"\357\003\n\022TaskExecutionEvent\022*\n" +
+      "\007task_id\030\001 \001(\0132\031.flyteidl.core.Identifie" +
+      "r\022H\n\030parent_node_execution_id\030\002 \001(\0132&.fl" +
+      "yteidl.core.NodeExecutionIdentifier\022\025\n\rr" +
+      "etry_attempt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyt" +
+      "eidl.core.TaskExecution.Phase\022\023\n\013produce" +
+      "r_id\030\005 \001(\t\022$\n\004logs\030\006 \003(\0132\026.flyteidl.core" +
+      ".TaskLog\022/\n\013occurred_at\030\007 \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022\021\n\tinput_uri\030\010 \001(\t\022\024\n\n" +
+      "output_uri\030\t \001(\tH\000\022.\n\005error\030\n \001(\0132\035.flyt" +
+      "eidl.core.ExecutionErrorH\000\022,\n\013custom_inf" +
+      "o\030\013 \001(\0132\027.google.protobuf.Struct\022\025\n\rphas" +
+      "e_version\030\014 \001(\rB\017\n\routput_resultB3Z1gith" +
+      "ub.com/lyft/flyteidl/gen/pb-go/flyteidl/" +
+      "eventb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10072,7 +10072,7 @@ public final class Event {
     internal_static_flyteidl_event_NodeExecutionEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_NodeExecutionEvent_descriptor,
-        new java.lang.String[] { "Id", "ProducerId", "Phase", "OccurredAt", "InputUri", "OutputUri", "Error", "WorkflowNodeMetadata", "ParentTaskMetadata", "ParentNodeMetadata", "GroupId", "NodeId", "NodeName", "OutputResult", "TargetMetadata", });
+        new java.lang.String[] { "Id", "ProducerId", "Phase", "OccurredAt", "InputUri", "OutputUri", "Error", "WorkflowNodeMetadata", "ParentTaskMetadata", "ParentNodeMetadata", "GroupId", "GraphNodeId", "NodeName", "OutputResult", "TargetMetadata", });
     internal_static_flyteidl_event_WorkflowNodeMetadata_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_event_WorkflowNodeMetadata_fieldAccessorTable = new

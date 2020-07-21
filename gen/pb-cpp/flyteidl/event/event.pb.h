@@ -430,19 +430,19 @@ class NodeExecutionEvent final :
   ::std::string* release_group_id();
   void set_allocated_group_id(::std::string* group_id);
 
-  // string node_id = 12;
-  void clear_node_id();
-  static const int kNodeIdFieldNumber = 12;
-  const ::std::string& node_id() const;
-  void set_node_id(const ::std::string& value);
+  // string graph_node_id = 12;
+  void clear_graph_node_id();
+  static const int kGraphNodeIdFieldNumber = 12;
+  const ::std::string& graph_node_id() const;
+  void set_graph_node_id(const ::std::string& value);
   #if LANG_CXX11
-  void set_node_id(::std::string&& value);
+  void set_graph_node_id(::std::string&& value);
   #endif
-  void set_node_id(const char* value);
-  void set_node_id(const char* value, size_t size);
-  ::std::string* mutable_node_id();
-  ::std::string* release_node_id();
-  void set_allocated_node_id(::std::string* node_id);
+  void set_graph_node_id(const char* value);
+  void set_graph_node_id(const char* value, size_t size);
+  ::std::string* mutable_graph_node_id();
+  ::std::string* release_graph_node_id();
+  void set_allocated_graph_node_id(::std::string* graph_node_id);
 
   // string node_name = 13;
   void clear_node_name();
@@ -556,7 +556,7 @@ class NodeExecutionEvent final :
   ::google::protobuf::internal::ArenaStringPtr producer_id_;
   ::google::protobuf::internal::ArenaStringPtr input_uri_;
   ::google::protobuf::internal::ArenaStringPtr group_id_;
-  ::google::protobuf::internal::ArenaStringPtr node_id_;
+  ::google::protobuf::internal::ArenaStringPtr graph_node_id_;
   ::google::protobuf::internal::ArenaStringPtr node_name_;
   ::flyteidl::core::NodeExecutionIdentifier* id_;
   ::google::protobuf::Timestamp* occurred_at_;
@@ -2025,57 +2025,57 @@ inline void NodeExecutionEvent::set_allocated_group_id(::std::string* group_id) 
   // @@protoc_insertion_point(field_set_allocated:flyteidl.event.NodeExecutionEvent.group_id)
 }
 
-// string node_id = 12;
-inline void NodeExecutionEvent::clear_node_id() {
-  node_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string graph_node_id = 12;
+inline void NodeExecutionEvent::clear_graph_node_id() {
+  graph_node_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& NodeExecutionEvent::node_id() const {
-  // @@protoc_insertion_point(field_get:flyteidl.event.NodeExecutionEvent.node_id)
-  return node_id_.GetNoArena();
+inline const ::std::string& NodeExecutionEvent::graph_node_id() const {
+  // @@protoc_insertion_point(field_get:flyteidl.event.NodeExecutionEvent.graph_node_id)
+  return graph_node_id_.GetNoArena();
 }
-inline void NodeExecutionEvent::set_node_id(const ::std::string& value) {
+inline void NodeExecutionEvent::set_graph_node_id(const ::std::string& value) {
   
-  node_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.event.NodeExecutionEvent.node_id)
+  graph_node_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.event.NodeExecutionEvent.graph_node_id)
 }
 #if LANG_CXX11
-inline void NodeExecutionEvent::set_node_id(::std::string&& value) {
+inline void NodeExecutionEvent::set_graph_node_id(::std::string&& value) {
   
-  node_id_.SetNoArena(
+  graph_node_id_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.NodeExecutionEvent.node_id)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.event.NodeExecutionEvent.graph_node_id)
 }
 #endif
-inline void NodeExecutionEvent::set_node_id(const char* value) {
+inline void NodeExecutionEvent::set_graph_node_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  node_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.event.NodeExecutionEvent.node_id)
+  graph_node_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.event.NodeExecutionEvent.graph_node_id)
 }
-inline void NodeExecutionEvent::set_node_id(const char* value, size_t size) {
+inline void NodeExecutionEvent::set_graph_node_id(const char* value, size_t size) {
   
-  node_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  graph_node_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.NodeExecutionEvent.node_id)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.event.NodeExecutionEvent.graph_node_id)
 }
-inline ::std::string* NodeExecutionEvent::mutable_node_id() {
+inline ::std::string* NodeExecutionEvent::mutable_graph_node_id() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.event.NodeExecutionEvent.node_id)
-  return node_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.NodeExecutionEvent.graph_node_id)
+  return graph_node_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* NodeExecutionEvent::release_node_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.event.NodeExecutionEvent.node_id)
+inline ::std::string* NodeExecutionEvent::release_graph_node_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.NodeExecutionEvent.graph_node_id)
   
-  return node_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return graph_node_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void NodeExecutionEvent::set_allocated_node_id(::std::string* node_id) {
-  if (node_id != nullptr) {
+inline void NodeExecutionEvent::set_allocated_graph_node_id(::std::string* graph_node_id) {
+  if (graph_node_id != nullptr) {
     
   } else {
     
   }
-  node_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), node_id);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.NodeExecutionEvent.node_id)
+  graph_node_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), graph_node_id);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.NodeExecutionEvent.graph_node_id)
 }
 
 // string node_name = 13;

@@ -89,7 +89,7 @@ flyteidl.event.NodeExecutionEvent
     "parent_task_metadata": "{...}",
     "parent_node_metadata": "{...}",
     "group_id": "...",
-    "node_id": "...",
+    "graph_node_id": "...",
     "node_name": "..."
   }
 
@@ -167,9 +167,9 @@ group_id
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Group identifier to indicate arbitrary grouping like retries, sub workflow
   
   
-.. _api_field_flyteidl.event.NodeExecutionEvent.node_id:
+.. _api_field_flyteidl.event.NodeExecutionEvent.graph_node_id:
 
-node_id
+graph_node_id
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Identifier of the node in the original workflow/graph
   
   

@@ -1477,13 +1477,6 @@
               "ASCENDING"
             ],
             "default": "DESCENDING"
-          },
-          {
-            "name": "unique_parent_id",
-            "description": "Unique identifier of the parent node in the execution\n+optional.",
-            "in": "query",
-            "required": false,
-            "type": "string"
           }
         ],
         "tags": [
@@ -3689,6 +3682,10 @@
           "type": "boolean",
           "format": "boolean",
           "title": "Boolean flag indicating if the node has child nodes under it"
+        },
+        "graph_node_id": {
+          "type": "string",
+          "title": "Node id of the node in the original workflow"
         }
       },
       "title": "Represents additional attributes related to a Node Execution"
@@ -5453,7 +5450,7 @@
           "type": "string",
           "title": "Group identifier to indicate arbitrary grouping like retries, sub workflow"
         },
-        "node_id": {
+        "graph_node_id": {
           "type": "string",
           "title": "Identifier of the node in the original workflow/graph"
         },

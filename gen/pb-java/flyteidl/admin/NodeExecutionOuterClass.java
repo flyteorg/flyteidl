@@ -797,26 +797,6 @@ public final class NodeExecutionOuterClass {
      * <code>.flyteidl.admin.Sort sort_by = 5;</code>
      */
     flyteidl.admin.Common.SortOrBuilder getSortByOrBuilder();
-
-    /**
-     * <pre>
-     * Unique identifier of the parent node in the execution
-     * +optional
-     * </pre>
-     *
-     * <code>string unique_parent_id = 6;</code>
-     */
-    java.lang.String getUniqueParentId();
-    /**
-     * <pre>
-     * Unique identifier of the parent node in the execution
-     * +optional
-     * </pre>
-     *
-     * <code>string unique_parent_id = 6;</code>
-     */
-    com.google.protobuf.ByteString
-        getUniqueParentIdBytes();
   }
   /**
    * <pre>
@@ -837,7 +817,6 @@ public final class NodeExecutionOuterClass {
     private NodeExecutionListRequest() {
       token_ = "";
       filters_ = "";
-      uniqueParentId_ = "";
     }
 
     @java.lang.Override
@@ -905,12 +884,6 @@ public final class NodeExecutionOuterClass {
                 sortBy_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              uniqueParentId_ = s;
               break;
             }
             default: {
@@ -1119,50 +1092,6 @@ public final class NodeExecutionOuterClass {
       return getSortBy();
     }
 
-    public static final int UNIQUE_PARENT_ID_FIELD_NUMBER = 6;
-    private volatile java.lang.Object uniqueParentId_;
-    /**
-     * <pre>
-     * Unique identifier of the parent node in the execution
-     * +optional
-     * </pre>
-     *
-     * <code>string unique_parent_id = 6;</code>
-     */
-    public java.lang.String getUniqueParentId() {
-      java.lang.Object ref = uniqueParentId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        uniqueParentId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Unique identifier of the parent node in the execution
-     * +optional
-     * </pre>
-     *
-     * <code>string unique_parent_id = 6;</code>
-     */
-    public com.google.protobuf.ByteString
-        getUniqueParentIdBytes() {
-      java.lang.Object ref = uniqueParentId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        uniqueParentId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1192,9 +1121,6 @@ public final class NodeExecutionOuterClass {
       if (sortBy_ != null) {
         output.writeMessage(5, getSortBy());
       }
-      if (!getUniqueParentIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, uniqueParentId_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -1221,9 +1147,6 @@ public final class NodeExecutionOuterClass {
       if (sortBy_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getSortBy());
-      }
-      if (!getUniqueParentIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, uniqueParentId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1256,8 +1179,6 @@ public final class NodeExecutionOuterClass {
         if (!getSortBy()
             .equals(other.getSortBy())) return false;
       }
-      if (!getUniqueParentId()
-          .equals(other.getUniqueParentId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1283,8 +1204,6 @@ public final class NodeExecutionOuterClass {
         hash = (37 * hash) + SORT_BY_FIELD_NUMBER;
         hash = (53 * hash) + getSortBy().hashCode();
       }
-      hash = (37 * hash) + UNIQUE_PARENT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getUniqueParentId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1440,8 +1359,6 @@ public final class NodeExecutionOuterClass {
           sortBy_ = null;
           sortByBuilder_ = null;
         }
-        uniqueParentId_ = "";
-
         return this;
       }
 
@@ -1481,7 +1398,6 @@ public final class NodeExecutionOuterClass {
         } else {
           result.sortBy_ = sortByBuilder_.build();
         }
-        result.uniqueParentId_ = uniqueParentId_;
         onBuilt();
         return result;
       }
@@ -1546,10 +1462,6 @@ public final class NodeExecutionOuterClass {
         }
         if (other.hasSortBy()) {
           mergeSortBy(other.getSortBy());
-        }
-        if (!other.getUniqueParentId().isEmpty()) {
-          uniqueParentId_ = other.uniqueParentId_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2129,100 +2041,6 @@ public final class NodeExecutionOuterClass {
           sortBy_ = null;
         }
         return sortByBuilder_;
-      }
-
-      private java.lang.Object uniqueParentId_ = "";
-      /**
-       * <pre>
-       * Unique identifier of the parent node in the execution
-       * +optional
-       * </pre>
-       *
-       * <code>string unique_parent_id = 6;</code>
-       */
-      public java.lang.String getUniqueParentId() {
-        java.lang.Object ref = uniqueParentId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          uniqueParentId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Unique identifier of the parent node in the execution
-       * +optional
-       * </pre>
-       *
-       * <code>string unique_parent_id = 6;</code>
-       */
-      public com.google.protobuf.ByteString
-          getUniqueParentIdBytes() {
-        java.lang.Object ref = uniqueParentId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          uniqueParentId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Unique identifier of the parent node in the execution
-       * +optional
-       * </pre>
-       *
-       * <code>string unique_parent_id = 6;</code>
-       */
-      public Builder setUniqueParentId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        uniqueParentId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Unique identifier of the parent node in the execution
-       * +optional
-       * </pre>
-       *
-       * <code>string unique_parent_id = 6;</code>
-       */
-      public Builder clearUniqueParentId() {
-        
-        uniqueParentId_ = getDefaultInstance().getUniqueParentId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Unique identifier of the parent node in the execution
-       * +optional
-       * </pre>
-       *
-       * <code>string unique_parent_id = 6;</code>
-       */
-      public Builder setUniqueParentIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        uniqueParentId_ = value;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5071,12 +4889,30 @@ public final class NodeExecutionOuterClass {
 
     /**
      * <pre>
-     *  Boolean flag indicating if the node has child nodes under it
+     * Boolean flag indicating if the node has child nodes under it
      * </pre>
      *
      * <code>bool is_parent_node = 2;</code>
      */
     boolean getIsParentNode();
+
+    /**
+     * <pre>
+     * Node id of the node in the original workflow
+     * </pre>
+     *
+     * <code>string graph_node_id = 3;</code>
+     */
+    java.lang.String getGraphNodeId();
+    /**
+     * <pre>
+     * Node id of the node in the original workflow
+     * </pre>
+     *
+     * <code>string graph_node_id = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getGraphNodeIdBytes();
   }
   /**
    * <pre>
@@ -5096,6 +4932,7 @@ public final class NodeExecutionOuterClass {
     }
     private NodeExecutionMetaData() {
       groupId_ = "";
+      graphNodeId_ = "";
     }
 
     @java.lang.Override
@@ -5131,6 +4968,12 @@ public final class NodeExecutionOuterClass {
             case 16: {
 
               isParentNode_ = input.readBool();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              graphNodeId_ = s;
               break;
             }
             default: {
@@ -5213,13 +5056,55 @@ public final class NodeExecutionOuterClass {
     private boolean isParentNode_;
     /**
      * <pre>
-     *  Boolean flag indicating if the node has child nodes under it
+     * Boolean flag indicating if the node has child nodes under it
      * </pre>
      *
      * <code>bool is_parent_node = 2;</code>
      */
     public boolean getIsParentNode() {
       return isParentNode_;
+    }
+
+    public static final int GRAPH_NODE_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object graphNodeId_;
+    /**
+     * <pre>
+     * Node id of the node in the original workflow
+     * </pre>
+     *
+     * <code>string graph_node_id = 3;</code>
+     */
+    public java.lang.String getGraphNodeId() {
+      java.lang.Object ref = graphNodeId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        graphNodeId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Node id of the node in the original workflow
+     * </pre>
+     *
+     * <code>string graph_node_id = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getGraphNodeIdBytes() {
+      java.lang.Object ref = graphNodeId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        graphNodeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5242,6 +5127,9 @@ public final class NodeExecutionOuterClass {
       if (isParentNode_ != false) {
         output.writeBool(2, isParentNode_);
       }
+      if (!getGraphNodeIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, graphNodeId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5257,6 +5145,9 @@ public final class NodeExecutionOuterClass {
       if (isParentNode_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(2, isParentNode_);
+      }
+      if (!getGraphNodeIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, graphNodeId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5277,6 +5168,8 @@ public final class NodeExecutionOuterClass {
           .equals(other.getGroupId())) return false;
       if (getIsParentNode()
           != other.getIsParentNode()) return false;
+      if (!getGraphNodeId()
+          .equals(other.getGraphNodeId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5293,6 +5186,8 @@ public final class NodeExecutionOuterClass {
       hash = (37 * hash) + IS_PARENT_NODE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsParentNode());
+      hash = (37 * hash) + GRAPH_NODE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGraphNodeId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5434,6 +5329,8 @@ public final class NodeExecutionOuterClass {
 
         isParentNode_ = false;
 
+        graphNodeId_ = "";
+
         return this;
       }
 
@@ -5462,6 +5359,7 @@ public final class NodeExecutionOuterClass {
         flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData result = new flyteidl.admin.NodeExecutionOuterClass.NodeExecutionMetaData(this);
         result.groupId_ = groupId_;
         result.isParentNode_ = isParentNode_;
+        result.graphNodeId_ = graphNodeId_;
         onBuilt();
         return result;
       }
@@ -5516,6 +5414,10 @@ public final class NodeExecutionOuterClass {
         }
         if (other.getIsParentNode() != false) {
           setIsParentNode(other.getIsParentNode());
+        }
+        if (!other.getGraphNodeId().isEmpty()) {
+          graphNodeId_ = other.graphNodeId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5643,7 +5545,7 @@ public final class NodeExecutionOuterClass {
       private boolean isParentNode_ ;
       /**
        * <pre>
-       *  Boolean flag indicating if the node has child nodes under it
+       * Boolean flag indicating if the node has child nodes under it
        * </pre>
        *
        * <code>bool is_parent_node = 2;</code>
@@ -5653,7 +5555,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       *  Boolean flag indicating if the node has child nodes under it
+       * Boolean flag indicating if the node has child nodes under it
        * </pre>
        *
        * <code>bool is_parent_node = 2;</code>
@@ -5666,7 +5568,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       *  Boolean flag indicating if the node has child nodes under it
+       * Boolean flag indicating if the node has child nodes under it
        * </pre>
        *
        * <code>bool is_parent_node = 2;</code>
@@ -5674,6 +5576,95 @@ public final class NodeExecutionOuterClass {
       public Builder clearIsParentNode() {
         
         isParentNode_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object graphNodeId_ = "";
+      /**
+       * <pre>
+       * Node id of the node in the original workflow
+       * </pre>
+       *
+       * <code>string graph_node_id = 3;</code>
+       */
+      public java.lang.String getGraphNodeId() {
+        java.lang.Object ref = graphNodeId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          graphNodeId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Node id of the node in the original workflow
+       * </pre>
+       *
+       * <code>string graph_node_id = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getGraphNodeIdBytes() {
+        java.lang.Object ref = graphNodeId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          graphNodeId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Node id of the node in the original workflow
+       * </pre>
+       *
+       * <code>string graph_node_id = 3;</code>
+       */
+      public Builder setGraphNodeId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        graphNodeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Node id of the node in the original workflow
+       * </pre>
+       *
+       * <code>string graph_node_id = 3;</code>
+       */
+      public Builder clearGraphNodeId() {
+        
+        graphNodeId_ = getDefaultInstance().getGraphNodeId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Node id of the node in the original workflow
+       * </pre>
+       *
+       * <code>string graph_node_id = 3;</code>
+       */
+      public Builder setGraphNodeIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        graphNodeId_ = value;
         onChanged();
         return this;
       }
@@ -11346,46 +11337,46 @@ public final class NodeExecutionOuterClass {
       "uf/timestamp.proto\032\036google/protobuf/dura" +
       "tion.proto\"M\n\027NodeExecutionGetRequest\0222\n" +
       "\002id\030\001 \001(\0132&.flyteidl.core.NodeExecutionI" +
-      "dentifier\"\325\001\n\030NodeExecutionListRequest\022I" +
+      "dentifier\"\273\001\n\030NodeExecutionListRequest\022I" +
       "\n\025workflow_execution_id\030\001 \001(\0132*.flyteidl" +
       ".core.WorkflowExecutionIdentifier\022\r\n\005lim" +
       "it\030\002 \001(\r\022\r\n\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t" +
-      "\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin.Sort\022" +
-      "\030\n\020unique_parent_id\030\006 \001(\t\"\272\001\n\037NodeExecut" +
-      "ionForTaskListRequest\022A\n\021task_execution_" +
-      "id\030\001 \001(\0132&.flyteidl.core.TaskExecutionId" +
-      "entifier\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030\003 \001(\t\022\017" +
-      "\n\007filters\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyte" +
-      "idl.admin.Sort\"\306\001\n\rNodeExecution\0222\n\002id\030\001" +
-      " \001(\0132&.flyteidl.core.NodeExecutionIdenti" +
-      "fier\022\021\n\tinput_uri\030\002 \001(\t\0225\n\007closure\030\003 \001(\013" +
-      "2$.flyteidl.admin.NodeExecutionClosure\0227" +
-      "\n\010metadata\030\004 \001(\0132%.flyteidl.admin.NodeEx" +
-      "ecutionMetaData\"A\n\025NodeExecutionMetaData" +
-      "\022\020\n\010group_id\030\001 \001(\t\022\026\n\016is_parent_node\030\002 \001" +
-      "(\010\"Z\n\021NodeExecutionList\0226\n\017node_executio" +
-      "ns\030\001 \003(\0132\035.flyteidl.admin.NodeExecution\022" +
-      "\r\n\005token\030\002 \001(\t\"\270\003\n\024NodeExecutionClosure\022" +
-      "\024\n\noutput_uri\030\001 \001(\tH\000\022.\n\005error\030\002 \001(\0132\035.f" +
-      "lyteidl.core.ExecutionErrorH\000\0221\n\005phase\030\003" +
-      " \001(\0162\".flyteidl.core.NodeExecution.Phase" +
-      "\022.\n\nstarted_at\030\004 \001(\0132\032.google.protobuf.T" +
-      "imestamp\022+\n\010duration\030\005 \001(\0132\031.google.prot" +
-      "obuf.Duration\022.\n\ncreated_at\030\006 \001(\0132\032.goog" +
-      "le.protobuf.Timestamp\022.\n\nupdated_at\030\007 \001(" +
-      "\0132\032.google.protobuf.Timestamp\022F\n\026workflo" +
-      "w_node_metadata\030\010 \001(\0132$.flyteidl.admin.W" +
-      "orkflowNodeMetadataH\001B\017\n\routput_resultB\021" +
-      "\n\017target_metadata\"W\n\024WorkflowNodeMetadat" +
-      "a\022?\n\013executionId\030\001 \001(\0132*.flyteidl.core.W" +
-      "orkflowExecutionIdentifier\"Q\n\033NodeExecut" +
-      "ionGetDataRequest\0222\n\002id\030\001 \001(\0132&.flyteidl" +
-      ".core.NodeExecutionIdentifier\"q\n\034NodeExe" +
-      "cutionGetDataResponse\022\'\n\006inputs\030\001 \001(\0132\027." +
-      "flyteidl.admin.UrlBlob\022(\n\007outputs\030\002 \001(\0132" +
-      "\027.flyteidl.admin.UrlBlobB3Z1github.com/l" +
-      "yft/flyteidl/gen/pb-go/flyteidl/adminb\006p" +
-      "roto3"
+      "\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin.Sort\"" +
+      "\272\001\n\037NodeExecutionForTaskListRequest\022A\n\021t" +
+      "ask_execution_id\030\001 \001(\0132&.flyteidl.core.T" +
+      "askExecutionIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n" +
+      "\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by" +
+      "\030\005 \001(\0132\024.flyteidl.admin.Sort\"\306\001\n\rNodeExe" +
+      "cution\0222\n\002id\030\001 \001(\0132&.flyteidl.core.NodeE" +
+      "xecutionIdentifier\022\021\n\tinput_uri\030\002 \001(\t\0225\n" +
+      "\007closure\030\003 \001(\0132$.flyteidl.admin.NodeExec" +
+      "utionClosure\0227\n\010metadata\030\004 \001(\0132%.flyteid" +
+      "l.admin.NodeExecutionMetaData\"X\n\025NodeExe" +
+      "cutionMetaData\022\020\n\010group_id\030\001 \001(\t\022\026\n\016is_p" +
+      "arent_node\030\002 \001(\010\022\025\n\rgraph_node_id\030\003 \001(\t\"" +
+      "Z\n\021NodeExecutionList\0226\n\017node_executions\030" +
+      "\001 \003(\0132\035.flyteidl.admin.NodeExecution\022\r\n\005" +
+      "token\030\002 \001(\t\"\270\003\n\024NodeExecutionClosure\022\024\n\n" +
+      "output_uri\030\001 \001(\tH\000\022.\n\005error\030\002 \001(\0132\035.flyt" +
+      "eidl.core.ExecutionErrorH\000\0221\n\005phase\030\003 \001(" +
+      "\0162\".flyteidl.core.NodeExecution.Phase\022.\n" +
+      "\nstarted_at\030\004 \001(\0132\032.google.protobuf.Time" +
+      "stamp\022+\n\010duration\030\005 \001(\0132\031.google.protobu" +
+      "f.Duration\022.\n\ncreated_at\030\006 \001(\0132\032.google." +
+      "protobuf.Timestamp\022.\n\nupdated_at\030\007 \001(\0132\032" +
+      ".google.protobuf.Timestamp\022F\n\026workflow_n" +
+      "ode_metadata\030\010 \001(\0132$.flyteidl.admin.Work" +
+      "flowNodeMetadataH\001B\017\n\routput_resultB\021\n\017t" +
+      "arget_metadata\"W\n\024WorkflowNodeMetadata\022?" +
+      "\n\013executionId\030\001 \001(\0132*.flyteidl.core.Work" +
+      "flowExecutionIdentifier\"Q\n\033NodeExecution" +
+      "GetDataRequest\0222\n\002id\030\001 \001(\0132&.flyteidl.co" +
+      "re.NodeExecutionIdentifier\"q\n\034NodeExecut" +
+      "ionGetDataResponse\022\'\n\006inputs\030\001 \001(\0132\027.fly" +
+      "teidl.admin.UrlBlob\022(\n\007outputs\030\002 \001(\0132\027.f" +
+      "lyteidl.admin.UrlBlobB3Z1github.com/lyft" +
+      "/flyteidl/gen/pb-go/flyteidl/adminb\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -11415,7 +11406,7 @@ public final class NodeExecutionOuterClass {
     internal_static_flyteidl_admin_NodeExecutionListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NodeExecutionListRequest_descriptor,
-        new java.lang.String[] { "WorkflowExecutionId", "Limit", "Token", "Filters", "SortBy", "UniqueParentId", });
+        new java.lang.String[] { "WorkflowExecutionId", "Limit", "Token", "Filters", "SortBy", });
     internal_static_flyteidl_admin_NodeExecutionForTaskListRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_admin_NodeExecutionForTaskListRequest_fieldAccessorTable = new
@@ -11433,7 +11424,7 @@ public final class NodeExecutionOuterClass {
     internal_static_flyteidl_admin_NodeExecutionMetaData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NodeExecutionMetaData_descriptor,
-        new java.lang.String[] { "GroupId", "IsParentNode", });
+        new java.lang.String[] { "GroupId", "IsParentNode", "GraphNodeId", });
     internal_static_flyteidl_admin_NodeExecutionList_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_NodeExecutionList_fieldAccessorTable = new

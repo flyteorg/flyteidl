@@ -29,6 +29,6 @@ type EventNodeExecutionEvent struct {
 	// Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
 	ParentNodeMetadata *EventParentNodeExecutionMetadata `json:"parent_node_metadata,omitempty"`
 	GroupId string `json:"group_id,omitempty"`
-	NodeId string `json:"node_id,omitempty"`
+	GraphNodeId string `json:"graph_node_id,omitempty"`
 	NodeName string `json:"node_name,omitempty"`
 }

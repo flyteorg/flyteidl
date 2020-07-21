@@ -4770,8 +4770,8 @@ export namespace flyteidl {
             /** NodeExecutionEvent groupId */
             groupId?: (string|null);
 
-            /** NodeExecutionEvent nodeId */
-            nodeId?: (string|null);
+            /** NodeExecutionEvent graphNodeId */
+            graphNodeId?: (string|null);
 
             /** NodeExecutionEvent nodeName */
             nodeName?: (string|null);
@@ -4819,8 +4819,8 @@ export namespace flyteidl {
             /** NodeExecutionEvent groupId. */
             public groupId: string;
 
-            /** NodeExecutionEvent nodeId. */
-            public nodeId: string;
+            /** NodeExecutionEvent graphNodeId. */
+            public graphNodeId: string;
 
             /** NodeExecutionEvent nodeName. */
             public nodeName: string;
@@ -9497,9 +9497,6 @@ export namespace flyteidl {
 
             /** NodeExecutionListRequest sortBy */
             sortBy?: (flyteidl.admin.ISort|null);
-
-            /** NodeExecutionListRequest uniqueParentId */
-            uniqueParentId?: (string|null);
         }
 
         /** Represents a NodeExecutionListRequest. */
@@ -9525,9 +9522,6 @@ export namespace flyteidl {
 
             /** NodeExecutionListRequest sortBy. */
             public sortBy?: (flyteidl.admin.ISort|null);
-
-            /** NodeExecutionListRequest uniqueParentId. */
-            public uniqueParentId: string;
 
             /**
              * Creates a new NodeExecutionListRequest instance using the specified properties.
@@ -9716,6 +9710,9 @@ export namespace flyteidl {
 
             /** NodeExecutionMetaData isParentNode */
             isParentNode?: (boolean|null);
+
+            /** NodeExecutionMetaData graphNodeId */
+            graphNodeId?: (string|null);
         }
 
         /** Represents a NodeExecutionMetaData. */
@@ -9732,6 +9729,9 @@ export namespace flyteidl {
 
             /** NodeExecutionMetaData isParentNode. */
             public isParentNode: boolean;
+
+            /** NodeExecutionMetaData graphNodeId. */
+            public graphNodeId: string;
 
             /**
              * Creates a new NodeExecutionMetaData instance using the specified properties.
