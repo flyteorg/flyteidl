@@ -4769,6 +4769,12 @@ export namespace flyteidl {
 
             /** NodeExecutionEvent groupId */
             groupId?: (string|null);
+
+            /** NodeExecutionEvent nodeId */
+            nodeId?: (string|null);
+
+            /** NodeExecutionEvent nodeName */
+            nodeName?: (string|null);
         }
 
         /** Represents a NodeExecutionEvent. */
@@ -4812,6 +4818,12 @@ export namespace flyteidl {
 
             /** NodeExecutionEvent groupId. */
             public groupId: string;
+
+            /** NodeExecutionEvent nodeId. */
+            public nodeId: string;
+
+            /** NodeExecutionEvent nodeName. */
+            public nodeName: string;
 
             /** NodeExecutionEvent outputResult. */
             public outputResult?: ("outputUri"|"error");

@@ -210,6 +210,10 @@ func (m *NodeExecutionEvent) Validate() error {
 
 	// no validation rules for GroupId
 
+	// no validation rules for NodeId
+
+	// no validation rules for NodeName
+
 	switch m.OutputResult.(type) {
 
 	case *NodeExecutionEvent_OutputUri:

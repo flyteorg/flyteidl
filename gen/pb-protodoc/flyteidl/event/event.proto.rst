@@ -88,7 +88,9 @@ flyteidl.event.NodeExecutionEvent
     "workflow_node_metadata": "{...}",
     "parent_task_metadata": "{...}",
     "parent_node_metadata": "{...}",
-    "group_id": "..."
+    "group_id": "...",
+    "node_id": "...",
+    "node_name": "..."
   }
 
 .. _api_field_flyteidl.event.NodeExecutionEvent.id:
@@ -165,6 +167,18 @@ group_id
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Group identifier to indicate arbitrary grouping like retries, sub workflow
   
   
+.. _api_field_flyteidl.event.NodeExecutionEvent.node_id:
+
+node_id
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Identifier of the node in the original workflow/graph
+  
+  
+.. _api_field_flyteidl.event.NodeExecutionEvent.node_name:
+
+node_name
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Friendly readable name for the node
+  
+  
 
 
 .. _api_msg_flyteidl.event.WorkflowNodeMetadata:
@@ -172,7 +186,7 @@ group_id
 flyteidl.event.WorkflowNodeMetadata
 -----------------------------------
 
-`[flyteidl.event.WorkflowNodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L75>`_
+`[flyteidl.event.WorkflowNodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L81>`_
 
 For Workflow Nodes we need to send information about the workflow that's launched
 
@@ -194,7 +208,7 @@ execution_id
 flyteidl.event.ParentTaskExecutionMetadata
 ------------------------------------------
 
-`[flyteidl.event.ParentTaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L79>`_
+`[flyteidl.event.ParentTaskExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L85>`_
 
 
 .. code-block:: json
@@ -215,7 +229,7 @@ id
 flyteidl.event.ParentNodeExecutionMetadata
 ------------------------------------------
 
-`[flyteidl.event.ParentNodeExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L83>`_
+`[flyteidl.event.ParentNodeExecutionMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L89>`_
 
 
 .. code-block:: json
@@ -237,7 +251,7 @@ id
 flyteidl.event.TaskExecutionEvent
 ---------------------------------
 
-`[flyteidl.event.TaskExecutionEvent proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L89>`_
+`[flyteidl.event.TaskExecutionEvent proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/event/event.proto#L95>`_
 
 Plugin specific execution event information. For tasks like Python, Hive, Spark, DynamicJob.
 

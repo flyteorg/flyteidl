@@ -24113,6 +24113,12 @@ definitions:
         type: "string"
         title: "Group identifier to indicate arbitrary grouping like retries, sub\
           \ workflow"
+      node_id:
+        type: "string"
+        title: "Identifier of the node in the original workflow/graph"
+      node_name:
+        type: "string"
+        title: "Friendly readable name for the node"
   eventParentNodeExecutionMetadata:
     type: "object"
     properties:

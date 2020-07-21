@@ -11421,6 +11421,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.event.IParentTaskExecutionMetadata|null} [parentTaskMetadata] NodeExecutionEvent parentTaskMetadata
              * @property {flyteidl.event.IParentNodeExecutionMetadata|null} [parentNodeMetadata] NodeExecutionEvent parentNodeMetadata
              * @property {string|null} [groupId] NodeExecutionEvent groupId
+             * @property {string|null} [nodeId] NodeExecutionEvent nodeId
+             * @property {string|null} [nodeName] NodeExecutionEvent nodeName
              */
 
             /**
@@ -11526,6 +11528,22 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             NodeExecutionEvent.prototype.groupId = "";
 
+            /**
+             * NodeExecutionEvent nodeId.
+             * @member {string} nodeId
+             * @memberof flyteidl.event.NodeExecutionEvent
+             * @instance
+             */
+            NodeExecutionEvent.prototype.nodeId = "";
+
+            /**
+             * NodeExecutionEvent nodeName.
+             * @member {string} nodeName
+             * @memberof flyteidl.event.NodeExecutionEvent
+             * @instance
+             */
+            NodeExecutionEvent.prototype.nodeName = "";
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -11597,6 +11615,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.event.ParentNodeExecutionMetadata.encode(message.parentNodeMetadata, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                 if (message.groupId != null && message.hasOwnProperty("groupId"))
                     writer.uint32(/* id 11, wireType 2 =*/90).string(message.groupId);
+                if (message.nodeId != null && message.hasOwnProperty("nodeId"))
+                    writer.uint32(/* id 12, wireType 2 =*/98).string(message.nodeId);
+                if (message.nodeName != null && message.hasOwnProperty("nodeName"))
+                    writer.uint32(/* id 13, wireType 2 =*/106).string(message.nodeName);
                 return writer;
             };
 
@@ -11650,6 +11672,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 11:
                         message.groupId = reader.string();
+                        break;
+                    case 12:
+                        message.nodeId = reader.string();
+                        break;
+                    case 13:
+                        message.nodeName = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11738,6 +11766,12 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.groupId != null && message.hasOwnProperty("groupId"))
                     if (!$util.isString(message.groupId))
                         return "groupId: string expected";
+                if (message.nodeId != null && message.hasOwnProperty("nodeId"))
+                    if (!$util.isString(message.nodeId))
+                        return "nodeId: string expected";
+                if (message.nodeName != null && message.hasOwnProperty("nodeName"))
+                    if (!$util.isString(message.nodeName))
+                        return "nodeName: string expected";
                 return null;
             };
 

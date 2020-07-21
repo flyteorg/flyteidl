@@ -70,6 +70,12 @@ message NodeExecutionEvent {
 
     // Group identifier to indicate arbitrary grouping like retries, sub workflow
     string group_id = 11;
+
+    // Identifier of the node in the original workflow/graph
+    string node_id = 12;
+
+    // Friendly readable name for the node
+    string node_name = 13;
 }
 
 // For Workflow Nodes we need to send information about the workflow that's launched

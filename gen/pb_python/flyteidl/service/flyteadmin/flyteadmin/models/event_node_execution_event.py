@@ -48,7 +48,9 @@ class EventNodeExecutionEvent(object):
         'workflow_node_metadata': 'FlyteidleventWorkflowNodeMetadata',
         'parent_task_metadata': 'EventParentTaskExecutionMetadata',
         'parent_node_metadata': 'EventParentNodeExecutionMetadata',
-        'group_id': 'str'
+        'group_id': 'str',
+        'node_id': 'str',
+        'node_name': 'str'
     }
 
     attribute_map = {
@@ -62,10 +64,12 @@ class EventNodeExecutionEvent(object):
         'workflow_node_metadata': 'workflow_node_metadata',
         'parent_task_metadata': 'parent_task_metadata',
         'parent_node_metadata': 'parent_node_metadata',
-        'group_id': 'group_id'
+        'group_id': 'group_id',
+        'node_id': 'node_id',
+        'node_name': 'node_name'
     }
 
-    def __init__(self, id=None, producer_id=None, phase=None, occurred_at=None, input_uri=None, output_uri=None, error=None, workflow_node_metadata=None, parent_task_metadata=None, parent_node_metadata=None, group_id=None):  # noqa: E501
+    def __init__(self, id=None, producer_id=None, phase=None, occurred_at=None, input_uri=None, output_uri=None, error=None, workflow_node_metadata=None, parent_task_metadata=None, parent_node_metadata=None, group_id=None, node_id=None, node_name=None):  # noqa: E501
         """EventNodeExecutionEvent - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -79,6 +83,8 @@ class EventNodeExecutionEvent(object):
         self._parent_task_metadata = None
         self._parent_node_metadata = None
         self._group_id = None
+        self._node_id = None
+        self._node_name = None
         self.discriminator = None
 
         if id is not None:
@@ -103,6 +109,10 @@ class EventNodeExecutionEvent(object):
             self.parent_node_metadata = parent_node_metadata
         if group_id is not None:
             self.group_id = group_id
+        if node_id is not None:
+            self.node_id = node_id
+        if node_name is not None:
+            self.node_name = node_name
 
     @property
     def id(self):
@@ -342,6 +352,48 @@ class EventNodeExecutionEvent(object):
         """
 
         self._group_id = group_id
+
+    @property
+    def node_id(self):
+        """Gets the node_id of this EventNodeExecutionEvent.  # noqa: E501
+
+
+        :return: The node_id of this EventNodeExecutionEvent.  # noqa: E501
+        :rtype: str
+        """
+        return self._node_id
+
+    @node_id.setter
+    def node_id(self, node_id):
+        """Sets the node_id of this EventNodeExecutionEvent.
+
+
+        :param node_id: The node_id of this EventNodeExecutionEvent.  # noqa: E501
+        :type: str
+        """
+
+        self._node_id = node_id
+
+    @property
+    def node_name(self):
+        """Gets the node_name of this EventNodeExecutionEvent.  # noqa: E501
+
+
+        :return: The node_name of this EventNodeExecutionEvent.  # noqa: E501
+        :rtype: str
+        """
+        return self._node_name
+
+    @node_name.setter
+    def node_name(self, node_name):
+        """Sets the node_name of this EventNodeExecutionEvent.
+
+
+        :param node_name: The node_name of this EventNodeExecutionEvent.  # noqa: E501
+        :type: str
+        """
+
+        self._node_name = node_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""
