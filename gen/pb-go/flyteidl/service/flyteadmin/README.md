@@ -249,6 +249,7 @@ Class | Method | HTTP request | Description
  - [FlyteidladminWorkflowNodeMetadata](docs/FlyteidladminWorkflowNodeMetadata.md)
  - [FlyteidlcoreSchema](docs/FlyteidlcoreSchema.md)
  - [FlyteidleventWorkflowNodeMetadata](docs/FlyteidleventWorkflowNodeMetadata.md)
+ - [GetExecutionDataMode](docs/GetExecutionDataMode.md)
  - [IoStrategyDownloadMode](docs/IoStrategyDownloadMode.md)
  - [IoStrategyUploadMode](docs/IoStrategyUploadMode.md)
  - [ProtobufListValue](docs/ProtobufListValue.md)

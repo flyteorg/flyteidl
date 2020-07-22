@@ -1105,10 +1105,17 @@ Retrieve input and output data from an existing workflow execution.
  * @param idProject Name of the project the resource belongs to.
  * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
  * @param idName User or system provided value for the resource.
+ * @param optional nil or *GetExecutionDataOpts - Optional Parameters:
+     * @param "Mode" (optional.String) -  Specifies what type of data to return in the response.   - URL_BLOB_ONLY: By deault, GetExecutionData calls will only return signed url blobs pointing to input/output data.  - FULL_DATA: FULL_DATA mode returns fully populated input/output data in addition to URL blobs.
 
 @return AdminWorkflowExecutionGetDataResponse
 */
-func (a *AdminServiceApiService) GetExecutionData(ctx context.Context, idProject string, idDomain string, idName string) (AdminWorkflowExecutionGetDataResponse, *http.Response, error) {
+
+type GetExecutionDataOpts struct { 
+	Mode optional.String
+}
+
+func (a *AdminServiceApiService) GetExecutionData(ctx context.Context, idProject string, idDomain string, idName string, localVarOptionals *GetExecutionDataOpts) (AdminWorkflowExecutionGetDataResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -1127,6 +1134,9 @@ func (a *AdminServiceApiService) GetExecutionData(ctx context.Context, idProject
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.Mode.IsSet() {
+		localVarQueryParams.Add("mode", parameterToString(localVarOptionals.Mode.Value(), ""))
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -1494,10 +1504,17 @@ Retrieve input and output data from an existing node execution.
  * @param idExecutionIdDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
  * @param idExecutionIdName User or system provided value for the resource.
  * @param idNodeId
+ * @param optional nil or *GetNodeExecutionDataOpts - Optional Parameters:
+     * @param "Mode" (optional.String) -  Specifies what type of data to return in the response.   - URL_BLOB_ONLY: By deault, GetExecutionData calls will only return signed url blobs pointing to input/output data.  - FULL_DATA: FULL_DATA mode returns fully populated input/output data in addition to URL blobs.
 
 @return AdminNodeExecutionGetDataResponse
 */
-func (a *AdminServiceApiService) GetNodeExecutionData(ctx context.Context, idExecutionIdProject string, idExecutionIdDomain string, idExecutionIdName string, idNodeId string) (AdminNodeExecutionGetDataResponse, *http.Response, error) {
+
+type GetNodeExecutionDataOpts struct { 
+	Mode optional.String
+}
+
+func (a *AdminServiceApiService) GetNodeExecutionData(ctx context.Context, idExecutionIdProject string, idExecutionIdDomain string, idExecutionIdName string, idNodeId string, localVarOptionals *GetNodeExecutionDataOpts) (AdminNodeExecutionGetDataResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -1517,6 +1534,9 @@ func (a *AdminServiceApiService) GetNodeExecutionData(ctx context.Context, idExe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.Mode.IsSet() {
+		localVarQueryParams.Add("mode", parameterToString(localVarOptionals.Mode.Value(), ""))
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -1917,12 +1937,14 @@ Retrieve input and output data from an existing task execution.
  * @param idRetryAttempt
  * @param optional nil or *GetTaskExecutionDataOpts - Optional Parameters:
      * @param "IdTaskIdResourceType" (optional.String) -  Identifies the specific type of resource that this identifer corresponds to.
+     * @param "Mode" (optional.String) -  Specifies what type of data to return in the response.   - URL_BLOB_ONLY: By deault, GetExecutionData calls will only return signed url blobs pointing to input/output data.  - FULL_DATA: FULL_DATA mode returns fully populated input/output data in addition to URL blobs.
 
 @return AdminTaskExecutionGetDataResponse
 */
 
 type GetTaskExecutionDataOpts struct { 
 	IdTaskIdResourceType optional.String
+	Mode optional.String
 }
 
 func (a *AdminServiceApiService) GetTaskExecutionData(ctx context.Context, idNodeExecutionIdExecutionIdProject string, idNodeExecutionIdExecutionIdDomain string, idNodeExecutionIdExecutionIdName string, idNodeExecutionIdNodeId string, idTaskIdProject string, idTaskIdDomain string, idTaskIdName string, idTaskIdVersion string, idRetryAttempt int64, localVarOptionals *GetTaskExecutionDataOpts) (AdminTaskExecutionGetDataResponse, *http.Response, error) {
@@ -1952,6 +1974,9 @@ func (a *AdminServiceApiService) GetTaskExecutionData(ctx context.Context, idNod
 
 	if localVarOptionals != nil && localVarOptionals.IdTaskIdResourceType.IsSet() {
 		localVarQueryParams.Add("id.task_id.resource_type", parameterToString(localVarOptionals.IdTaskIdResourceType.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Mode.IsSet() {
+		localVarQueryParams.Add("mode", parameterToString(localVarOptionals.Mode.Value(), ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}

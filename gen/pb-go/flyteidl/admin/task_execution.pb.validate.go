@@ -554,6 +554,8 @@ func (m *TaskExecutionGetDataRequest) Validate() error {
 		}
 	}
 
+	// no validation rules for Mode
+
 	return nil
 }
 
@@ -636,6 +638,26 @@ func (m *TaskExecutionGetDataResponse) Validate() error {
 		if err := v.Validate(); err != nil {
 			return TaskExecutionGetDataResponseValidationError{
 				field:  "Outputs",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetFullInputs()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TaskExecutionGetDataResponseValidationError{
+				field:  "FullInputs",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetFullOutputs()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TaskExecutionGetDataResponseValidationError{
+				field:  "FullOutputs",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}

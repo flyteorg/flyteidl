@@ -8,7 +8,7 @@ node_execution.proto
 flyteidl.admin.NodeExecutionGetRequest
 --------------------------------------
 
-`[flyteidl.admin.NodeExecutionGetRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L12>`_
+`[flyteidl.admin.NodeExecutionGetRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L13>`_
 
 A message used to fetch a single node execution entity.
 
@@ -31,7 +31,7 @@ id
 flyteidl.admin.NodeExecutionListRequest
 ---------------------------------------
 
-`[flyteidl.admin.NodeExecutionListRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L19>`_
+`[flyteidl.admin.NodeExecutionListRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L20>`_
 
 Represents a request structure to retrieve a list of node execution entities.
 
@@ -87,7 +87,7 @@ sort_by
 flyteidl.admin.NodeExecutionForTaskListRequest
 ----------------------------------------------
 
-`[flyteidl.admin.NodeExecutionForTaskListRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L40>`_
+`[flyteidl.admin.NodeExecutionForTaskListRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L41>`_
 
 Represents a request structure to retrieve a list of node execution entities launched by a specific task.
 
@@ -143,7 +143,7 @@ sort_by
 flyteidl.admin.NodeExecution
 ----------------------------
 
-`[flyteidl.admin.NodeExecution proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L64>`_
+`[flyteidl.admin.NodeExecution proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L65>`_
 
 Encapsulates all details for a single node execution entity.
 A node represents a component in the overall workflow graph. A node launch a task, multiple tasks, an entire nested
@@ -190,7 +190,7 @@ metadata
 flyteidl.admin.NodeExecutionMetaData
 ------------------------------------
 
-`[flyteidl.admin.NodeExecutionMetaData proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L80>`_
+`[flyteidl.admin.NodeExecutionMetaData proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L81>`_
 
 Represents additional attributes related to a Node Execution
 
@@ -206,7 +206,7 @@ Represents additional attributes related to a Node Execution
 flyteidl.admin.NodeExecutionList
 --------------------------------
 
-`[flyteidl.admin.NodeExecutionList proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L84>`_
+`[flyteidl.admin.NodeExecutionList proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L85>`_
 
 Request structure to retrieve a list of node execution entities.
 
@@ -236,7 +236,7 @@ token
 flyteidl.admin.NodeExecutionClosure
 -----------------------------------
 
-`[flyteidl.admin.NodeExecutionClosure proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L93>`_
+`[flyteidl.admin.NodeExecutionClosure proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L94>`_
 
 Container for node execution details and results.
 
@@ -317,7 +317,7 @@ workflow_node_metadata
 flyteidl.admin.WorkflowNodeMetadata
 -----------------------------------
 
-`[flyteidl.admin.WorkflowNodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L125>`_
+`[flyteidl.admin.WorkflowNodeMetadata proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L126>`_
 
 Metadata for a WorkflowNode
 
@@ -339,20 +339,27 @@ executionId
 flyteidl.admin.NodeExecutionGetDataRequest
 ------------------------------------------
 
-`[flyteidl.admin.NodeExecutionGetDataRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L130>`_
+`[flyteidl.admin.NodeExecutionGetDataRequest proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L131>`_
 
 Request structure to fetch inputs and output urls for a node execution.
 
 .. code-block:: json
 
   {
-    "id": "{...}"
+    "id": "{...}",
+    "mode": "..."
   }
 
 .. _api_field_flyteidl.admin.NodeExecutionGetDataRequest.id:
 
 id
   (:ref:`flyteidl.core.NodeExecutionIdentifier <api_msg_flyteidl.core.NodeExecutionIdentifier>`) The identifier of the node execution for which to fetch inputs and outputs.
+  
+  
+.. _api_field_flyteidl.admin.NodeExecutionGetDataRequest.mode:
+
+mode
+  (:ref:`flyteidl.admin.GetExecutionData.Mode <api_enum_flyteidl.admin.GetExecutionData.Mode>`) Specifies what type of data to return in the response.
   
   
 
@@ -362,7 +369,7 @@ id
 flyteidl.admin.NodeExecutionGetDataResponse
 -------------------------------------------
 
-`[flyteidl.admin.NodeExecutionGetDataResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L136>`_
+`[flyteidl.admin.NodeExecutionGetDataResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L140>`_
 
 Response structure for NodeExecutionGetDataRequest which contains inputs and outputs for a node execution.
 
@@ -370,7 +377,9 @@ Response structure for NodeExecutionGetDataRequest which contains inputs and out
 
   {
     "inputs": "{...}",
-    "outputs": "{...}"
+    "outputs": "{...}",
+    "full_inputs": "{...}",
+    "full_outputs": "{...}"
   }
 
 .. _api_field_flyteidl.admin.NodeExecutionGetDataResponse.inputs:
@@ -383,6 +392,18 @@ inputs
 
 outputs
   (:ref:`flyteidl.admin.UrlBlob <api_msg_flyteidl.admin.UrlBlob>`) Signed url to fetch a core.LiteralMap of node execution outputs.
+  
+  
+.. _api_field_flyteidl.admin.NodeExecutionGetDataResponse.full_inputs:
+
+full_inputs
+  (:ref:`flyteidl.core.LiteralMap <api_msg_flyteidl.core.LiteralMap>`) Optional, full_inputs will only be populated if the request specified for full data to be returned
+  
+  
+.. _api_field_flyteidl.admin.NodeExecutionGetDataResponse.full_outputs:
+
+full_outputs
+  (:ref:`flyteidl.core.LiteralMap <api_msg_flyteidl.core.LiteralMap>`) Optional, full_outputs will only be populated if the request specified for full data to be returned
   
   
 

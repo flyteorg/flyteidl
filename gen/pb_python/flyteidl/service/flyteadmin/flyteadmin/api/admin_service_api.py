@@ -1207,6 +1207,7 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User or system provided value for the resource. (required)
+        :param str mode: Specifies what type of data to return in the response.   - URL_BLOB_ONLY: By deault, GetExecutionData calls will only return signed url blobs pointing to input/output data.  - FULL_DATA: FULL_DATA mode returns fully populated input/output data in addition to URL blobs.
         :return: AdminWorkflowExecutionGetDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1231,12 +1232,13 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User or system provided value for the resource. (required)
+        :param str mode: Specifies what type of data to return in the response.   - URL_BLOB_ONLY: By deault, GetExecutionData calls will only return signed url blobs pointing to input/output data.  - FULL_DATA: FULL_DATA mode returns fully populated input/output data in addition to URL blobs.
         :return: AdminWorkflowExecutionGetDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'id_name']  # noqa: E501
+        all_params = ['id_project', 'id_domain', 'id_name', 'mode']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1275,6 +1277,8 @@ class AdminServiceApi(object):
             path_params['id.name'] = params['id_name']  # noqa: E501
 
         query_params = []
+        if 'mode' in params:
+            query_params.append(('mode', params['mode']))  # noqa: E501
 
         header_params = {}
 
@@ -1696,6 +1700,7 @@ class AdminServiceApi(object):
         :param str id_execution_id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_execution_id_name: User or system provided value for the resource. (required)
         :param str id_node_id: (required)
+        :param str mode: Specifies what type of data to return in the response.   - URL_BLOB_ONLY: By deault, GetExecutionData calls will only return signed url blobs pointing to input/output data.  - FULL_DATA: FULL_DATA mode returns fully populated input/output data in addition to URL blobs.
         :return: AdminNodeExecutionGetDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1721,12 +1726,13 @@ class AdminServiceApi(object):
         :param str id_execution_id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_execution_id_name: User or system provided value for the resource. (required)
         :param str id_node_id: (required)
+        :param str mode: Specifies what type of data to return in the response.   - URL_BLOB_ONLY: By deault, GetExecutionData calls will only return signed url blobs pointing to input/output data.  - FULL_DATA: FULL_DATA mode returns fully populated input/output data in addition to URL blobs.
         :return: AdminNodeExecutionGetDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id_execution_id_project', 'id_execution_id_domain', 'id_execution_id_name', 'id_node_id']  # noqa: E501
+        all_params = ['id_execution_id_project', 'id_execution_id_domain', 'id_execution_id_name', 'id_node_id', 'mode']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1771,6 +1777,8 @@ class AdminServiceApi(object):
             path_params['id.node_id'] = params['id_node_id']  # noqa: E501
 
         query_params = []
+        if 'mode' in params:
+            query_params.append(('mode', params['mode']))  # noqa: E501
 
         header_params = {}
 
@@ -2230,6 +2238,7 @@ class AdminServiceApi(object):
         :param str id_task_id_version: Specific version of the resource. (required)
         :param int id_retry_attempt: (required)
         :param str id_task_id_resource_type: Identifies the specific type of resource that this identifer corresponds to.
+        :param str mode: Specifies what type of data to return in the response.   - URL_BLOB_ONLY: By deault, GetExecutionData calls will only return signed url blobs pointing to input/output data.  - FULL_DATA: FULL_DATA mode returns fully populated input/output data in addition to URL blobs.
         :return: AdminTaskExecutionGetDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2261,12 +2270,13 @@ class AdminServiceApi(object):
         :param str id_task_id_version: Specific version of the resource. (required)
         :param int id_retry_attempt: (required)
         :param str id_task_id_resource_type: Identifies the specific type of resource that this identifer corresponds to.
+        :param str mode: Specifies what type of data to return in the response.   - URL_BLOB_ONLY: By deault, GetExecutionData calls will only return signed url blobs pointing to input/output data.  - FULL_DATA: FULL_DATA mode returns fully populated input/output data in addition to URL blobs.
         :return: AdminTaskExecutionGetDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id_node_execution_id_execution_id_project', 'id_node_execution_id_execution_id_domain', 'id_node_execution_id_execution_id_name', 'id_node_execution_id_node_id', 'id_task_id_project', 'id_task_id_domain', 'id_task_id_name', 'id_task_id_version', 'id_retry_attempt', 'id_task_id_resource_type']  # noqa: E501
+        all_params = ['id_node_execution_id_execution_id_project', 'id_node_execution_id_execution_id_domain', 'id_node_execution_id_execution_id_name', 'id_node_execution_id_node_id', 'id_task_id_project', 'id_task_id_domain', 'id_task_id_name', 'id_task_id_version', 'id_retry_attempt', 'id_task_id_resource_type', 'mode']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2343,6 +2353,8 @@ class AdminServiceApi(object):
         query_params = []
         if 'id_task_id_resource_type' in params:
             query_params.append(('id.task_id.resource_type', params['id_task_id_resource_type']))  # noqa: E501
+        if 'mode' in params:
+            query_params.append(('mode', params['mode']))  # noqa: E501
 
         header_params = {}
 

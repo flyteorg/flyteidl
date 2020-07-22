@@ -15,4 +15,6 @@ type AdminNodeExecutionGetDataResponse struct {
 	Inputs *AdminUrlBlob `json:"inputs,omitempty"`
 	// Signed url to fetch a core.LiteralMap of node execution outputs.
 	Outputs *AdminUrlBlob `json:"outputs,omitempty"`
+	FullInputs *CoreLiteralMap `json:"full_inputs,omitempty"`
+	FullOutputs *CoreLiteralMap `json:"full_outputs,omitempty"`
 }

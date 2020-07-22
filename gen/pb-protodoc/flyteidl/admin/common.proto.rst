@@ -745,6 +745,42 @@ kubernetes_service_account
   Only one of :ref:`assumable_iam_role <api_field_flyteidl.admin.AuthRole.assumable_iam_role>`, :ref:`kubernetes_service_account <api_field_flyteidl.admin.AuthRole.kubernetes_service_account>` may be set.
   
 
+
+.. _api_msg_flyteidl.admin.GetExecutionData:
+
+flyteidl.admin.GetExecutionData
+-------------------------------
+
+`[flyteidl.admin.GetExecutionData proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/common.proto#L248>`_
+
+Specifies how to populate Get{Workflow,Node,Task}ExecutionData responses.
+
+.. code-block:: json
+
+  {}
+
+
+
+.. _api_enum_flyteidl.admin.GetExecutionData.Mode:
+
+Enum flyteidl.admin.GetExecutionData.Mode
+-----------------------------------------
+
+`[flyteidl.admin.GetExecutionData.Mode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/common.proto#L249>`_
+
+
+.. _api_enum_value_flyteidl.admin.GetExecutionData.Mode.URL_BLOB_ONLY:
+
+URL_BLOB_ONLY
+  *(DEFAULT)* ⁣By deault, GetExecutionData calls will only return signed url blobs pointing to input/output data.
+  
+  
+.. _api_enum_value_flyteidl.admin.GetExecutionData.Mode.FULL_DATA:
+
+FULL_DATA
+  ⁣FULL_DATA mode returns fully populated input/output data in addition to URL blobs.
+  
+  
 .. _api_enum_flyteidl.admin.NamedEntityState:
 
 Enum flyteidl.admin.NamedEntityState

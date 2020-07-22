@@ -9258,6 +9258,23 @@ public final class NodeExecutionOuterClass {
      * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder getIdOrBuilder();
+
+    /**
+     * <pre>
+     * Specifies what type of data to return in the response.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.GetExecutionData.Mode mode = 2;</code>
+     */
+    int getModeValue();
+    /**
+     * <pre>
+     * Specifies what type of data to return in the response.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.GetExecutionData.Mode mode = 2;</code>
+     */
+    flyteidl.admin.Common.GetExecutionData.Mode getMode();
   }
   /**
    * <pre>
@@ -9276,6 +9293,7 @@ public final class NodeExecutionOuterClass {
       super(builder);
     }
     private NodeExecutionGetDataRequest() {
+      mode_ = 0;
     }
 
     @java.lang.Override
@@ -9313,6 +9331,12 @@ public final class NodeExecutionOuterClass {
                 id_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              mode_ = rawValue;
               break;
             }
             default: {
@@ -9380,6 +9404,31 @@ public final class NodeExecutionOuterClass {
       return getId();
     }
 
+    public static final int MODE_FIELD_NUMBER = 2;
+    private int mode_;
+    /**
+     * <pre>
+     * Specifies what type of data to return in the response.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.GetExecutionData.Mode mode = 2;</code>
+     */
+    public int getModeValue() {
+      return mode_;
+    }
+    /**
+     * <pre>
+     * Specifies what type of data to return in the response.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.GetExecutionData.Mode mode = 2;</code>
+     */
+    public flyteidl.admin.Common.GetExecutionData.Mode getMode() {
+      @SuppressWarnings("deprecation")
+      flyteidl.admin.Common.GetExecutionData.Mode result = flyteidl.admin.Common.GetExecutionData.Mode.valueOf(mode_);
+      return result == null ? flyteidl.admin.Common.GetExecutionData.Mode.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9397,6 +9446,9 @@ public final class NodeExecutionOuterClass {
       if (id_ != null) {
         output.writeMessage(1, getId());
       }
+      if (mode_ != flyteidl.admin.Common.GetExecutionData.Mode.URL_BLOB_ONLY.getNumber()) {
+        output.writeEnum(2, mode_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -9409,6 +9461,10 @@ public final class NodeExecutionOuterClass {
       if (id_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getId());
+      }
+      if (mode_ != flyteidl.admin.Common.GetExecutionData.Mode.URL_BLOB_ONLY.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, mode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9430,6 +9486,7 @@ public final class NodeExecutionOuterClass {
         if (!getId()
             .equals(other.getId())) return false;
       }
+      if (mode_ != other.mode_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9445,6 +9502,8 @@ public final class NodeExecutionOuterClass {
         hash = (37 * hash) + ID_FIELD_NUMBER;
         hash = (53 * hash) + getId().hashCode();
       }
+      hash = (37 * hash) + MODE_FIELD_NUMBER;
+      hash = (53 * hash) + mode_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9588,6 +9647,8 @@ public final class NodeExecutionOuterClass {
           id_ = null;
           idBuilder_ = null;
         }
+        mode_ = 0;
+
         return this;
       }
 
@@ -9619,6 +9680,7 @@ public final class NodeExecutionOuterClass {
         } else {
           result.id_ = idBuilder_.build();
         }
+        result.mode_ = mode_;
         onBuilt();
         return result;
       }
@@ -9669,6 +9731,9 @@ public final class NodeExecutionOuterClass {
         if (other == flyteidl.admin.NodeExecutionOuterClass.NodeExecutionGetDataRequest.getDefaultInstance()) return this;
         if (other.hasId()) {
           mergeId(other.getId());
+        }
+        if (other.mode_ != 0) {
+          setModeValue(other.getModeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9851,6 +9916,71 @@ public final class NodeExecutionOuterClass {
         }
         return idBuilder_;
       }
+
+      private int mode_ = 0;
+      /**
+       * <pre>
+       * Specifies what type of data to return in the response.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.GetExecutionData.Mode mode = 2;</code>
+       */
+      public int getModeValue() {
+        return mode_;
+      }
+      /**
+       * <pre>
+       * Specifies what type of data to return in the response.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.GetExecutionData.Mode mode = 2;</code>
+       */
+      public Builder setModeValue(int value) {
+        mode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Specifies what type of data to return in the response.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.GetExecutionData.Mode mode = 2;</code>
+       */
+      public flyteidl.admin.Common.GetExecutionData.Mode getMode() {
+        @SuppressWarnings("deprecation")
+        flyteidl.admin.Common.GetExecutionData.Mode result = flyteidl.admin.Common.GetExecutionData.Mode.valueOf(mode_);
+        return result == null ? flyteidl.admin.Common.GetExecutionData.Mode.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Specifies what type of data to return in the response.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.GetExecutionData.Mode mode = 2;</code>
+       */
+      public Builder setMode(flyteidl.admin.Common.GetExecutionData.Mode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        mode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Specifies what type of data to return in the response.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.GetExecutionData.Mode mode = 2;</code>
+       */
+      public Builder clearMode() {
+        
+        mode_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -9957,6 +10087,56 @@ public final class NodeExecutionOuterClass {
      * <code>.flyteidl.admin.UrlBlob outputs = 2;</code>
      */
     flyteidl.admin.Common.UrlBlobOrBuilder getOutputsOrBuilder();
+
+    /**
+     * <pre>
+     * Optional, full_inputs will only be populated if the request specified for full data to be returned
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
+     */
+    boolean hasFullInputs();
+    /**
+     * <pre>
+     * Optional, full_inputs will only be populated if the request specified for full data to be returned
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
+     */
+    flyteidl.core.Literals.LiteralMap getFullInputs();
+    /**
+     * <pre>
+     * Optional, full_inputs will only be populated if the request specified for full data to be returned
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
+     */
+    flyteidl.core.Literals.LiteralMapOrBuilder getFullInputsOrBuilder();
+
+    /**
+     * <pre>
+     * Optional, full_outputs will only be populated if the request specified for full data to be returned
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
+     */
+    boolean hasFullOutputs();
+    /**
+     * <pre>
+     * Optional, full_outputs will only be populated if the request specified for full data to be returned
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
+     */
+    flyteidl.core.Literals.LiteralMap getFullOutputs();
+    /**
+     * <pre>
+     * Optional, full_outputs will only be populated if the request specified for full data to be returned
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
+     */
+    flyteidl.core.Literals.LiteralMapOrBuilder getFullOutputsOrBuilder();
   }
   /**
    * <pre>
@@ -10023,6 +10203,32 @@ public final class NodeExecutionOuterClass {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(outputs_);
                 outputs_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              flyteidl.core.Literals.LiteralMap.Builder subBuilder = null;
+              if (fullInputs_ != null) {
+                subBuilder = fullInputs_.toBuilder();
+              }
+              fullInputs_ = input.readMessage(flyteidl.core.Literals.LiteralMap.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(fullInputs_);
+                fullInputs_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              flyteidl.core.Literals.LiteralMap.Builder subBuilder = null;
+              if (fullOutputs_ != null) {
+                subBuilder = fullOutputs_.toBuilder();
+              }
+              fullOutputs_ = input.readMessage(flyteidl.core.Literals.LiteralMap.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(fullOutputs_);
+                fullOutputs_ = subBuilder.buildPartial();
               }
 
               break;
@@ -10125,6 +10331,72 @@ public final class NodeExecutionOuterClass {
       return getOutputs();
     }
 
+    public static final int FULL_INPUTS_FIELD_NUMBER = 3;
+    private flyteidl.core.Literals.LiteralMap fullInputs_;
+    /**
+     * <pre>
+     * Optional, full_inputs will only be populated if the request specified for full data to be returned
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
+     */
+    public boolean hasFullInputs() {
+      return fullInputs_ != null;
+    }
+    /**
+     * <pre>
+     * Optional, full_inputs will only be populated if the request specified for full data to be returned
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
+     */
+    public flyteidl.core.Literals.LiteralMap getFullInputs() {
+      return fullInputs_ == null ? flyteidl.core.Literals.LiteralMap.getDefaultInstance() : fullInputs_;
+    }
+    /**
+     * <pre>
+     * Optional, full_inputs will only be populated if the request specified for full data to be returned
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
+     */
+    public flyteidl.core.Literals.LiteralMapOrBuilder getFullInputsOrBuilder() {
+      return getFullInputs();
+    }
+
+    public static final int FULL_OUTPUTS_FIELD_NUMBER = 4;
+    private flyteidl.core.Literals.LiteralMap fullOutputs_;
+    /**
+     * <pre>
+     * Optional, full_outputs will only be populated if the request specified for full data to be returned
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
+     */
+    public boolean hasFullOutputs() {
+      return fullOutputs_ != null;
+    }
+    /**
+     * <pre>
+     * Optional, full_outputs will only be populated if the request specified for full data to be returned
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
+     */
+    public flyteidl.core.Literals.LiteralMap getFullOutputs() {
+      return fullOutputs_ == null ? flyteidl.core.Literals.LiteralMap.getDefaultInstance() : fullOutputs_;
+    }
+    /**
+     * <pre>
+     * Optional, full_outputs will only be populated if the request specified for full data to be returned
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
+     */
+    public flyteidl.core.Literals.LiteralMapOrBuilder getFullOutputsOrBuilder() {
+      return getFullOutputs();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10145,6 +10417,12 @@ public final class NodeExecutionOuterClass {
       if (outputs_ != null) {
         output.writeMessage(2, getOutputs());
       }
+      if (fullInputs_ != null) {
+        output.writeMessage(3, getFullInputs());
+      }
+      if (fullOutputs_ != null) {
+        output.writeMessage(4, getFullOutputs());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -10161,6 +10439,14 @@ public final class NodeExecutionOuterClass {
       if (outputs_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getOutputs());
+      }
+      if (fullInputs_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getFullInputs());
+      }
+      if (fullOutputs_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getFullOutputs());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10187,6 +10473,16 @@ public final class NodeExecutionOuterClass {
         if (!getOutputs()
             .equals(other.getOutputs())) return false;
       }
+      if (hasFullInputs() != other.hasFullInputs()) return false;
+      if (hasFullInputs()) {
+        if (!getFullInputs()
+            .equals(other.getFullInputs())) return false;
+      }
+      if (hasFullOutputs() != other.hasFullOutputs()) return false;
+      if (hasFullOutputs()) {
+        if (!getFullOutputs()
+            .equals(other.getFullOutputs())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10205,6 +10501,14 @@ public final class NodeExecutionOuterClass {
       if (hasOutputs()) {
         hash = (37 * hash) + OUTPUTS_FIELD_NUMBER;
         hash = (53 * hash) + getOutputs().hashCode();
+      }
+      if (hasFullInputs()) {
+        hash = (37 * hash) + FULL_INPUTS_FIELD_NUMBER;
+        hash = (53 * hash) + getFullInputs().hashCode();
+      }
+      if (hasFullOutputs()) {
+        hash = (37 * hash) + FULL_OUTPUTS_FIELD_NUMBER;
+        hash = (53 * hash) + getFullOutputs().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -10355,6 +10659,18 @@ public final class NodeExecutionOuterClass {
           outputs_ = null;
           outputsBuilder_ = null;
         }
+        if (fullInputsBuilder_ == null) {
+          fullInputs_ = null;
+        } else {
+          fullInputs_ = null;
+          fullInputsBuilder_ = null;
+        }
+        if (fullOutputsBuilder_ == null) {
+          fullOutputs_ = null;
+        } else {
+          fullOutputs_ = null;
+          fullOutputsBuilder_ = null;
+        }
         return this;
       }
 
@@ -10390,6 +10706,16 @@ public final class NodeExecutionOuterClass {
           result.outputs_ = outputs_;
         } else {
           result.outputs_ = outputsBuilder_.build();
+        }
+        if (fullInputsBuilder_ == null) {
+          result.fullInputs_ = fullInputs_;
+        } else {
+          result.fullInputs_ = fullInputsBuilder_.build();
+        }
+        if (fullOutputsBuilder_ == null) {
+          result.fullOutputs_ = fullOutputs_;
+        } else {
+          result.fullOutputs_ = fullOutputsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -10444,6 +10770,12 @@ public final class NodeExecutionOuterClass {
         }
         if (other.hasOutputs()) {
           mergeOutputs(other.getOutputs());
+        }
+        if (other.hasFullInputs()) {
+          mergeFullInputs(other.getFullInputs());
+        }
+        if (other.hasFullOutputs()) {
+          mergeFullOutputs(other.getFullOutputs());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -10779,6 +11111,312 @@ public final class NodeExecutionOuterClass {
         }
         return outputsBuilder_;
       }
+
+      private flyteidl.core.Literals.LiteralMap fullInputs_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> fullInputsBuilder_;
+      /**
+       * <pre>
+       * Optional, full_inputs will only be populated if the request specified for full data to be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
+       */
+      public boolean hasFullInputs() {
+        return fullInputsBuilder_ != null || fullInputs_ != null;
+      }
+      /**
+       * <pre>
+       * Optional, full_inputs will only be populated if the request specified for full data to be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
+       */
+      public flyteidl.core.Literals.LiteralMap getFullInputs() {
+        if (fullInputsBuilder_ == null) {
+          return fullInputs_ == null ? flyteidl.core.Literals.LiteralMap.getDefaultInstance() : fullInputs_;
+        } else {
+          return fullInputsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Optional, full_inputs will only be populated if the request specified for full data to be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
+       */
+      public Builder setFullInputs(flyteidl.core.Literals.LiteralMap value) {
+        if (fullInputsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          fullInputs_ = value;
+          onChanged();
+        } else {
+          fullInputsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional, full_inputs will only be populated if the request specified for full data to be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
+       */
+      public Builder setFullInputs(
+          flyteidl.core.Literals.LiteralMap.Builder builderForValue) {
+        if (fullInputsBuilder_ == null) {
+          fullInputs_ = builderForValue.build();
+          onChanged();
+        } else {
+          fullInputsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional, full_inputs will only be populated if the request specified for full data to be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
+       */
+      public Builder mergeFullInputs(flyteidl.core.Literals.LiteralMap value) {
+        if (fullInputsBuilder_ == null) {
+          if (fullInputs_ != null) {
+            fullInputs_ =
+              flyteidl.core.Literals.LiteralMap.newBuilder(fullInputs_).mergeFrom(value).buildPartial();
+          } else {
+            fullInputs_ = value;
+          }
+          onChanged();
+        } else {
+          fullInputsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional, full_inputs will only be populated if the request specified for full data to be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
+       */
+      public Builder clearFullInputs() {
+        if (fullInputsBuilder_ == null) {
+          fullInputs_ = null;
+          onChanged();
+        } else {
+          fullInputs_ = null;
+          fullInputsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional, full_inputs will only be populated if the request specified for full data to be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
+       */
+      public flyteidl.core.Literals.LiteralMap.Builder getFullInputsBuilder() {
+        
+        onChanged();
+        return getFullInputsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Optional, full_inputs will only be populated if the request specified for full data to be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
+       */
+      public flyteidl.core.Literals.LiteralMapOrBuilder getFullInputsOrBuilder() {
+        if (fullInputsBuilder_ != null) {
+          return fullInputsBuilder_.getMessageOrBuilder();
+        } else {
+          return fullInputs_ == null ?
+              flyteidl.core.Literals.LiteralMap.getDefaultInstance() : fullInputs_;
+        }
+      }
+      /**
+       * <pre>
+       * Optional, full_inputs will only be populated if the request specified for full data to be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> 
+          getFullInputsFieldBuilder() {
+        if (fullInputsBuilder_ == null) {
+          fullInputsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder>(
+                  getFullInputs(),
+                  getParentForChildren(),
+                  isClean());
+          fullInputs_ = null;
+        }
+        return fullInputsBuilder_;
+      }
+
+      private flyteidl.core.Literals.LiteralMap fullOutputs_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> fullOutputsBuilder_;
+      /**
+       * <pre>
+       * Optional, full_outputs will only be populated if the request specified for full data to be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
+       */
+      public boolean hasFullOutputs() {
+        return fullOutputsBuilder_ != null || fullOutputs_ != null;
+      }
+      /**
+       * <pre>
+       * Optional, full_outputs will only be populated if the request specified for full data to be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
+       */
+      public flyteidl.core.Literals.LiteralMap getFullOutputs() {
+        if (fullOutputsBuilder_ == null) {
+          return fullOutputs_ == null ? flyteidl.core.Literals.LiteralMap.getDefaultInstance() : fullOutputs_;
+        } else {
+          return fullOutputsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Optional, full_outputs will only be populated if the request specified for full data to be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
+       */
+      public Builder setFullOutputs(flyteidl.core.Literals.LiteralMap value) {
+        if (fullOutputsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          fullOutputs_ = value;
+          onChanged();
+        } else {
+          fullOutputsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional, full_outputs will only be populated if the request specified for full data to be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
+       */
+      public Builder setFullOutputs(
+          flyteidl.core.Literals.LiteralMap.Builder builderForValue) {
+        if (fullOutputsBuilder_ == null) {
+          fullOutputs_ = builderForValue.build();
+          onChanged();
+        } else {
+          fullOutputsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional, full_outputs will only be populated if the request specified for full data to be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
+       */
+      public Builder mergeFullOutputs(flyteidl.core.Literals.LiteralMap value) {
+        if (fullOutputsBuilder_ == null) {
+          if (fullOutputs_ != null) {
+            fullOutputs_ =
+              flyteidl.core.Literals.LiteralMap.newBuilder(fullOutputs_).mergeFrom(value).buildPartial();
+          } else {
+            fullOutputs_ = value;
+          }
+          onChanged();
+        } else {
+          fullOutputsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional, full_outputs will only be populated if the request specified for full data to be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
+       */
+      public Builder clearFullOutputs() {
+        if (fullOutputsBuilder_ == null) {
+          fullOutputs_ = null;
+          onChanged();
+        } else {
+          fullOutputs_ = null;
+          fullOutputsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional, full_outputs will only be populated if the request specified for full data to be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
+       */
+      public flyteidl.core.Literals.LiteralMap.Builder getFullOutputsBuilder() {
+        
+        onChanged();
+        return getFullOutputsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Optional, full_outputs will only be populated if the request specified for full data to be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
+       */
+      public flyteidl.core.Literals.LiteralMapOrBuilder getFullOutputsOrBuilder() {
+        if (fullOutputsBuilder_ != null) {
+          return fullOutputsBuilder_.getMessageOrBuilder();
+        } else {
+          return fullOutputs_ == null ?
+              flyteidl.core.Literals.LiteralMap.getDefaultInstance() : fullOutputs_;
+        }
+      }
+      /**
+       * <pre>
+       * Optional, full_outputs will only be populated if the request specified for full data to be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> 
+          getFullOutputsFieldBuilder() {
+        if (fullOutputsBuilder_ == null) {
+          fullOutputsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder>(
+                  getFullOutputs(),
+                  getParentForChildren(),
+                  isClean());
+          fullOutputs_ = null;
+        }
+        return fullOutputsBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -10894,48 +11532,52 @@ public final class NodeExecutionOuterClass {
       "\n#flyteidl/admin/node_execution.proto\022\016f" +
       "lyteidl.admin\032\033flyteidl/admin/common.pro" +
       "to\032\035flyteidl/core/execution.proto\032\036flyte" +
-      "idl/core/identifier.proto\032\037google/protob" +
-      "uf/timestamp.proto\032\036google/protobuf/dura" +
-      "tion.proto\"M\n\027NodeExecutionGetRequest\0222\n" +
-      "\002id\030\001 \001(\0132&.flyteidl.core.NodeExecutionI" +
-      "dentifier\"\273\001\n\030NodeExecutionListRequest\022I" +
-      "\n\025workflow_execution_id\030\001 \001(\0132*.flyteidl" +
-      ".core.WorkflowExecutionIdentifier\022\r\n\005lim" +
-      "it\030\002 \001(\r\022\r\n\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t" +
-      "\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin.Sort\"" +
-      "\272\001\n\037NodeExecutionForTaskListRequest\022A\n\021t" +
-      "ask_execution_id\030\001 \001(\0132&.flyteidl.core.T" +
-      "askExecutionIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n" +
-      "\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by" +
-      "\030\005 \001(\0132\024.flyteidl.admin.Sort\"\306\001\n\rNodeExe" +
-      "cution\0222\n\002id\030\001 \001(\0132&.flyteidl.core.NodeE" +
-      "xecutionIdentifier\022\021\n\tinput_uri\030\002 \001(\t\0225\n" +
-      "\007closure\030\003 \001(\0132$.flyteidl.admin.NodeExec" +
-      "utionClosure\0227\n\010metadata\030\004 \001(\0132%.flyteid" +
-      "l.admin.NodeExecutionMetaData\"\027\n\025NodeExe" +
-      "cutionMetaData\"Z\n\021NodeExecutionList\0226\n\017n" +
-      "ode_executions\030\001 \003(\0132\035.flyteidl.admin.No" +
-      "deExecution\022\r\n\005token\030\002 \001(\t\"\270\003\n\024NodeExecu" +
-      "tionClosure\022\024\n\noutput_uri\030\001 \001(\tH\000\022.\n\005err" +
-      "or\030\002 \001(\0132\035.flyteidl.core.ExecutionErrorH" +
-      "\000\0221\n\005phase\030\003 \001(\0162\".flyteidl.core.NodeExe" +
-      "cution.Phase\022.\n\nstarted_at\030\004 \001(\0132\032.googl" +
-      "e.protobuf.Timestamp\022+\n\010duration\030\005 \001(\0132\031" +
-      ".google.protobuf.Duration\022.\n\ncreated_at\030" +
-      "\006 \001(\0132\032.google.protobuf.Timestamp\022.\n\nupd" +
-      "ated_at\030\007 \001(\0132\032.google.protobuf.Timestam" +
-      "p\022F\n\026workflow_node_metadata\030\010 \001(\0132$.flyt" +
-      "eidl.admin.WorkflowNodeMetadataH\001B\017\n\rout" +
-      "put_resultB\021\n\017target_metadata\"W\n\024Workflo" +
-      "wNodeMetadata\022?\n\013executionId\030\001 \001(\0132*.fly" +
-      "teidl.core.WorkflowExecutionIdentifier\"Q" +
-      "\n\033NodeExecutionGetDataRequest\0222\n\002id\030\001 \001(" +
-      "\0132&.flyteidl.core.NodeExecutionIdentifie" +
-      "r\"q\n\034NodeExecutionGetDataResponse\022\'\n\006inp" +
-      "uts\030\001 \001(\0132\027.flyteidl.admin.UrlBlob\022(\n\007ou" +
-      "tputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlobB3Z1" +
-      "github.com/lyft/flyteidl/gen/pb-go/flyte" +
-      "idl/adminb\006proto3"
+      "idl/core/identifier.proto\032\034flyteidl/core" +
+      "/literals.proto\032\037google/protobuf/timesta" +
+      "mp.proto\032\036google/protobuf/duration.proto" +
+      "\"M\n\027NodeExecutionGetRequest\0222\n\002id\030\001 \001(\0132" +
+      "&.flyteidl.core.NodeExecutionIdentifier\"" +
+      "\273\001\n\030NodeExecutionListRequest\022I\n\025workflow" +
+      "_execution_id\030\001 \001(\0132*.flyteidl.core.Work" +
+      "flowExecutionIdentifier\022\r\n\005limit\030\002 \001(\r\022\r" +
+      "\n\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_b" +
+      "y\030\005 \001(\0132\024.flyteidl.admin.Sort\"\272\001\n\037NodeEx" +
+      "ecutionForTaskListRequest\022A\n\021task_execut" +
+      "ion_id\030\001 \001(\0132&.flyteidl.core.TaskExecuti" +
+      "onIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030\003 \001" +
+      "(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.f" +
+      "lyteidl.admin.Sort\"\306\001\n\rNodeExecution\0222\n\002" +
+      "id\030\001 \001(\0132&.flyteidl.core.NodeExecutionId" +
+      "entifier\022\021\n\tinput_uri\030\002 \001(\t\0225\n\007closure\030\003" +
+      " \001(\0132$.flyteidl.admin.NodeExecutionClosu" +
+      "re\0227\n\010metadata\030\004 \001(\0132%.flyteidl.admin.No" +
+      "deExecutionMetaData\"\027\n\025NodeExecutionMeta" +
+      "Data\"Z\n\021NodeExecutionList\0226\n\017node_execut" +
+      "ions\030\001 \003(\0132\035.flyteidl.admin.NodeExecutio" +
+      "n\022\r\n\005token\030\002 \001(\t\"\270\003\n\024NodeExecutionClosur" +
+      "e\022\024\n\noutput_uri\030\001 \001(\tH\000\022.\n\005error\030\002 \001(\0132\035" +
+      ".flyteidl.core.ExecutionErrorH\000\0221\n\005phase" +
+      "\030\003 \001(\0162\".flyteidl.core.NodeExecution.Pha" +
+      "se\022.\n\nstarted_at\030\004 \001(\0132\032.google.protobuf" +
+      ".Timestamp\022+\n\010duration\030\005 \001(\0132\031.google.pr" +
+      "otobuf.Duration\022.\n\ncreated_at\030\006 \001(\0132\032.go" +
+      "ogle.protobuf.Timestamp\022.\n\nupdated_at\030\007 " +
+      "\001(\0132\032.google.protobuf.Timestamp\022F\n\026workf" +
+      "low_node_metadata\030\010 \001(\0132$.flyteidl.admin" +
+      ".WorkflowNodeMetadataH\001B\017\n\routput_result" +
+      "B\021\n\017target_metadata\"W\n\024WorkflowNodeMetad" +
+      "ata\022?\n\013executionId\030\001 \001(\0132*.flyteidl.core" +
+      ".WorkflowExecutionIdentifier\"\206\001\n\033NodeExe" +
+      "cutionGetDataRequest\0222\n\002id\030\001 \001(\0132&.flyte" +
+      "idl.core.NodeExecutionIdentifier\0223\n\004mode" +
+      "\030\002 \001(\0162%.flyteidl.admin.GetExecutionData" +
+      ".Mode\"\322\001\n\034NodeExecutionGetDataResponse\022\'" +
+      "\n\006inputs\030\001 \001(\0132\027.flyteidl.admin.UrlBlob\022" +
+      "(\n\007outputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlo" +
+      "b\022.\n\013full_inputs\030\003 \001(\0132\031.flyteidl.core.L" +
+      "iteralMap\022/\n\014full_outputs\030\004 \001(\0132\031.flytei" +
+      "dl.core.LiteralMapB3Z1github.com/lyft/fl" +
+      "yteidl/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10951,6 +11593,7 @@ public final class NodeExecutionOuterClass {
           flyteidl.admin.Common.getDescriptor(),
           flyteidl.core.Execution.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
+          flyteidl.core.Literals.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
         }, assigner);
@@ -11007,16 +11650,17 @@ public final class NodeExecutionOuterClass {
     internal_static_flyteidl_admin_NodeExecutionGetDataRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NodeExecutionGetDataRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "Mode", });
     internal_static_flyteidl_admin_NodeExecutionGetDataResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_admin_NodeExecutionGetDataResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NodeExecutionGetDataResponse_descriptor,
-        new java.lang.String[] { "Inputs", "Outputs", });
+        new java.lang.String[] { "Inputs", "Outputs", "FullInputs", "FullOutputs", });
     flyteidl.admin.Common.getDescriptor();
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
+    flyteidl.core.Literals.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
   }

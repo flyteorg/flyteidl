@@ -1459,6 +1459,8 @@ func (m *WorkflowExecutionGetDataRequest) Validate() error {
 		}
 	}
 
+	// no validation rules for Mode
+
 	return nil
 }
 
@@ -1541,6 +1543,26 @@ func (m *WorkflowExecutionGetDataResponse) Validate() error {
 		if err := v.Validate(); err != nil {
 			return WorkflowExecutionGetDataResponseValidationError{
 				field:  "Inputs",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetFullInputs()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return WorkflowExecutionGetDataResponseValidationError{
+				field:  "FullInputs",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetFullOutputs()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return WorkflowExecutionGetDataResponseValidationError{
+				field:  "FullOutputs",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}

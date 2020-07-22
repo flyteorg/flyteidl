@@ -15354,6 +15354,113 @@ export const flyteidl = $root.flyteidl = (() => {
             return AuthRole;
         })();
 
+        admin.GetExecutionData = (function() {
+
+            /**
+             * Properties of a GetExecutionData.
+             * @memberof flyteidl.admin
+             * @interface IGetExecutionData
+             */
+
+            /**
+             * Constructs a new GetExecutionData.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a GetExecutionData.
+             * @implements IGetExecutionData
+             * @constructor
+             * @param {flyteidl.admin.IGetExecutionData=} [properties] Properties to set
+             */
+            function GetExecutionData(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new GetExecutionData instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.GetExecutionData
+             * @static
+             * @param {flyteidl.admin.IGetExecutionData=} [properties] Properties to set
+             * @returns {flyteidl.admin.GetExecutionData} GetExecutionData instance
+             */
+            GetExecutionData.create = function create(properties) {
+                return new GetExecutionData(properties);
+            };
+
+            /**
+             * Encodes the specified GetExecutionData message. Does not implicitly {@link flyteidl.admin.GetExecutionData.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.GetExecutionData
+             * @static
+             * @param {flyteidl.admin.IGetExecutionData} message GetExecutionData message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            GetExecutionData.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a GetExecutionData message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.GetExecutionData
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.GetExecutionData} GetExecutionData
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            GetExecutionData.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.GetExecutionData();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a GetExecutionData message.
+             * @function verify
+             * @memberof flyteidl.admin.GetExecutionData
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            GetExecutionData.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            /**
+             * Mode enum.
+             * @name flyteidl.admin.GetExecutionData.Mode
+             * @enum {string}
+             * @property {number} URL_BLOB_ONLY=0 URL_BLOB_ONLY value
+             * @property {number} FULL_DATA=1 FULL_DATA value
+             */
+            GetExecutionData.Mode = (function() {
+                const valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "URL_BLOB_ONLY"] = 0;
+                values[valuesById[1] = "FULL_DATA"] = 1;
+                return values;
+            })();
+
+            return GetExecutionData;
+        })();
+
         admin.EventErrorAlreadyInTerminalState = (function() {
 
             /**
@@ -18720,6 +18827,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface IWorkflowExecutionGetDataRequest
              * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [id] WorkflowExecutionGetDataRequest id
+             * @property {flyteidl.admin.GetExecutionData.Mode|null} [mode] WorkflowExecutionGetDataRequest mode
              */
 
             /**
@@ -18744,6 +18852,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             WorkflowExecutionGetDataRequest.prototype.id = null;
+
+            /**
+             * WorkflowExecutionGetDataRequest mode.
+             * @member {flyteidl.admin.GetExecutionData.Mode} mode
+             * @memberof flyteidl.admin.WorkflowExecutionGetDataRequest
+             * @instance
+             */
+            WorkflowExecutionGetDataRequest.prototype.mode = 0;
 
             /**
              * Creates a new WorkflowExecutionGetDataRequest instance using the specified properties.
@@ -18771,6 +18887,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.id != null && message.hasOwnProperty("id"))
                     $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.mode != null && message.hasOwnProperty("mode"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.mode);
                 return writer;
             };
 
@@ -18794,6 +18912,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     switch (tag >>> 3) {
                     case 1:
                         message.id = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.mode = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -18819,6 +18940,14 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "id." + error;
                 }
+                if (message.mode != null && message.hasOwnProperty("mode"))
+                    switch (message.mode) {
+                    default:
+                        return "mode: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
                 return null;
             };
 
@@ -18833,6 +18962,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IWorkflowExecutionGetDataResponse
              * @property {flyteidl.admin.IUrlBlob|null} [outputs] WorkflowExecutionGetDataResponse outputs
              * @property {flyteidl.admin.IUrlBlob|null} [inputs] WorkflowExecutionGetDataResponse inputs
+             * @property {flyteidl.core.ILiteralMap|null} [fullInputs] WorkflowExecutionGetDataResponse fullInputs
+             * @property {flyteidl.core.ILiteralMap|null} [fullOutputs] WorkflowExecutionGetDataResponse fullOutputs
              */
 
             /**
@@ -18867,6 +18998,22 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowExecutionGetDataResponse.prototype.inputs = null;
 
             /**
+             * WorkflowExecutionGetDataResponse fullInputs.
+             * @member {flyteidl.core.ILiteralMap|null|undefined} fullInputs
+             * @memberof flyteidl.admin.WorkflowExecutionGetDataResponse
+             * @instance
+             */
+            WorkflowExecutionGetDataResponse.prototype.fullInputs = null;
+
+            /**
+             * WorkflowExecutionGetDataResponse fullOutputs.
+             * @member {flyteidl.core.ILiteralMap|null|undefined} fullOutputs
+             * @memberof flyteidl.admin.WorkflowExecutionGetDataResponse
+             * @instance
+             */
+            WorkflowExecutionGetDataResponse.prototype.fullOutputs = null;
+
+            /**
              * Creates a new WorkflowExecutionGetDataResponse instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.WorkflowExecutionGetDataResponse
@@ -18894,6 +19041,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.UrlBlob.encode(message.outputs, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.inputs != null && message.hasOwnProperty("inputs"))
                     $root.flyteidl.admin.UrlBlob.encode(message.inputs, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.fullInputs != null && message.hasOwnProperty("fullInputs"))
+                    $root.flyteidl.core.LiteralMap.encode(message.fullInputs, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.fullOutputs != null && message.hasOwnProperty("fullOutputs"))
+                    $root.flyteidl.core.LiteralMap.encode(message.fullOutputs, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -18920,6 +19071,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 2:
                         message.inputs = $root.flyteidl.admin.UrlBlob.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.fullInputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.fullOutputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -18949,6 +19106,16 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.flyteidl.admin.UrlBlob.verify(message.inputs);
                     if (error)
                         return "inputs." + error;
+                }
+                if (message.fullInputs != null && message.hasOwnProperty("fullInputs")) {
+                    let error = $root.flyteidl.core.LiteralMap.verify(message.fullInputs);
+                    if (error)
+                        return "fullInputs." + error;
+                }
+                if (message.fullOutputs != null && message.hasOwnProperty("fullOutputs")) {
+                    let error = $root.flyteidl.core.LiteralMap.verify(message.fullOutputs);
+                    if (error)
+                        return "fullOutputs." + error;
                 }
                 return null;
             };
@@ -23663,6 +23830,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface INodeExecutionGetDataRequest
              * @property {flyteidl.core.INodeExecutionIdentifier|null} [id] NodeExecutionGetDataRequest id
+             * @property {flyteidl.admin.GetExecutionData.Mode|null} [mode] NodeExecutionGetDataRequest mode
              */
 
             /**
@@ -23687,6 +23855,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             NodeExecutionGetDataRequest.prototype.id = null;
+
+            /**
+             * NodeExecutionGetDataRequest mode.
+             * @member {flyteidl.admin.GetExecutionData.Mode} mode
+             * @memberof flyteidl.admin.NodeExecutionGetDataRequest
+             * @instance
+             */
+            NodeExecutionGetDataRequest.prototype.mode = 0;
 
             /**
              * Creates a new NodeExecutionGetDataRequest instance using the specified properties.
@@ -23714,6 +23890,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.id != null && message.hasOwnProperty("id"))
                     $root.flyteidl.core.NodeExecutionIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.mode != null && message.hasOwnProperty("mode"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.mode);
                 return writer;
             };
 
@@ -23737,6 +23915,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     switch (tag >>> 3) {
                     case 1:
                         message.id = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.mode = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -23762,6 +23943,14 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "id." + error;
                 }
+                if (message.mode != null && message.hasOwnProperty("mode"))
+                    switch (message.mode) {
+                    default:
+                        return "mode: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
                 return null;
             };
 
@@ -23776,6 +23965,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface INodeExecutionGetDataResponse
              * @property {flyteidl.admin.IUrlBlob|null} [inputs] NodeExecutionGetDataResponse inputs
              * @property {flyteidl.admin.IUrlBlob|null} [outputs] NodeExecutionGetDataResponse outputs
+             * @property {flyteidl.core.ILiteralMap|null} [fullInputs] NodeExecutionGetDataResponse fullInputs
+             * @property {flyteidl.core.ILiteralMap|null} [fullOutputs] NodeExecutionGetDataResponse fullOutputs
              */
 
             /**
@@ -23810,6 +24001,22 @@ export const flyteidl = $root.flyteidl = (() => {
             NodeExecutionGetDataResponse.prototype.outputs = null;
 
             /**
+             * NodeExecutionGetDataResponse fullInputs.
+             * @member {flyteidl.core.ILiteralMap|null|undefined} fullInputs
+             * @memberof flyteidl.admin.NodeExecutionGetDataResponse
+             * @instance
+             */
+            NodeExecutionGetDataResponse.prototype.fullInputs = null;
+
+            /**
+             * NodeExecutionGetDataResponse fullOutputs.
+             * @member {flyteidl.core.ILiteralMap|null|undefined} fullOutputs
+             * @memberof flyteidl.admin.NodeExecutionGetDataResponse
+             * @instance
+             */
+            NodeExecutionGetDataResponse.prototype.fullOutputs = null;
+
+            /**
              * Creates a new NodeExecutionGetDataResponse instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.NodeExecutionGetDataResponse
@@ -23837,6 +24044,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.UrlBlob.encode(message.inputs, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.outputs != null && message.hasOwnProperty("outputs"))
                     $root.flyteidl.admin.UrlBlob.encode(message.outputs, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.fullInputs != null && message.hasOwnProperty("fullInputs"))
+                    $root.flyteidl.core.LiteralMap.encode(message.fullInputs, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.fullOutputs != null && message.hasOwnProperty("fullOutputs"))
+                    $root.flyteidl.core.LiteralMap.encode(message.fullOutputs, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -23863,6 +24074,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 2:
                         message.outputs = $root.flyteidl.admin.UrlBlob.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.fullInputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.fullOutputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -23892,6 +24109,16 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.flyteidl.admin.UrlBlob.verify(message.outputs);
                     if (error)
                         return "outputs." + error;
+                }
+                if (message.fullInputs != null && message.hasOwnProperty("fullInputs")) {
+                    let error = $root.flyteidl.core.LiteralMap.verify(message.fullInputs);
+                    if (error)
+                        return "fullInputs." + error;
+                }
+                if (message.fullOutputs != null && message.hasOwnProperty("fullOutputs")) {
+                    let error = $root.flyteidl.core.LiteralMap.verify(message.fullOutputs);
+                    if (error)
+                        return "fullOutputs." + error;
                 }
                 return null;
             };
@@ -27283,6 +27510,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface ITaskExecutionGetDataRequest
              * @property {flyteidl.core.ITaskExecutionIdentifier|null} [id] TaskExecutionGetDataRequest id
+             * @property {flyteidl.admin.GetExecutionData.Mode|null} [mode] TaskExecutionGetDataRequest mode
              */
 
             /**
@@ -27307,6 +27535,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             TaskExecutionGetDataRequest.prototype.id = null;
+
+            /**
+             * TaskExecutionGetDataRequest mode.
+             * @member {flyteidl.admin.GetExecutionData.Mode} mode
+             * @memberof flyteidl.admin.TaskExecutionGetDataRequest
+             * @instance
+             */
+            TaskExecutionGetDataRequest.prototype.mode = 0;
 
             /**
              * Creates a new TaskExecutionGetDataRequest instance using the specified properties.
@@ -27334,6 +27570,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.id != null && message.hasOwnProperty("id"))
                     $root.flyteidl.core.TaskExecutionIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.mode != null && message.hasOwnProperty("mode"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.mode);
                 return writer;
             };
 
@@ -27357,6 +27595,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     switch (tag >>> 3) {
                     case 1:
                         message.id = $root.flyteidl.core.TaskExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.mode = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -27382,6 +27623,14 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "id." + error;
                 }
+                if (message.mode != null && message.hasOwnProperty("mode"))
+                    switch (message.mode) {
+                    default:
+                        return "mode: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
                 return null;
             };
 
@@ -27396,6 +27645,8 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface ITaskExecutionGetDataResponse
              * @property {flyteidl.admin.IUrlBlob|null} [inputs] TaskExecutionGetDataResponse inputs
              * @property {flyteidl.admin.IUrlBlob|null} [outputs] TaskExecutionGetDataResponse outputs
+             * @property {flyteidl.core.ILiteralMap|null} [fullInputs] TaskExecutionGetDataResponse fullInputs
+             * @property {flyteidl.core.ILiteralMap|null} [fullOutputs] TaskExecutionGetDataResponse fullOutputs
              */
 
             /**
@@ -27430,6 +27681,22 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskExecutionGetDataResponse.prototype.outputs = null;
 
             /**
+             * TaskExecutionGetDataResponse fullInputs.
+             * @member {flyteidl.core.ILiteralMap|null|undefined} fullInputs
+             * @memberof flyteidl.admin.TaskExecutionGetDataResponse
+             * @instance
+             */
+            TaskExecutionGetDataResponse.prototype.fullInputs = null;
+
+            /**
+             * TaskExecutionGetDataResponse fullOutputs.
+             * @member {flyteidl.core.ILiteralMap|null|undefined} fullOutputs
+             * @memberof flyteidl.admin.TaskExecutionGetDataResponse
+             * @instance
+             */
+            TaskExecutionGetDataResponse.prototype.fullOutputs = null;
+
+            /**
              * Creates a new TaskExecutionGetDataResponse instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.TaskExecutionGetDataResponse
@@ -27457,6 +27724,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.UrlBlob.encode(message.inputs, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.outputs != null && message.hasOwnProperty("outputs"))
                     $root.flyteidl.admin.UrlBlob.encode(message.outputs, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.fullInputs != null && message.hasOwnProperty("fullInputs"))
+                    $root.flyteidl.core.LiteralMap.encode(message.fullInputs, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.fullOutputs != null && message.hasOwnProperty("fullOutputs"))
+                    $root.flyteidl.core.LiteralMap.encode(message.fullOutputs, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -27483,6 +27754,12 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 2:
                         message.outputs = $root.flyteidl.admin.UrlBlob.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.fullInputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.fullOutputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -27512,6 +27789,16 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.flyteidl.admin.UrlBlob.verify(message.outputs);
                     if (error)
                         return "outputs." + error;
+                }
+                if (message.fullInputs != null && message.hasOwnProperty("fullInputs")) {
+                    let error = $root.flyteidl.core.LiteralMap.verify(message.fullInputs);
+                    if (error)
+                        return "fullInputs." + error;
+                }
+                if (message.fullOutputs != null && message.hasOwnProperty("fullOutputs")) {
+                    let error = $root.flyteidl.core.LiteralMap.verify(message.fullOutputs);
+                    if (error)
+                        return "fullOutputs." + error;
                 }
                 return null;
             };
