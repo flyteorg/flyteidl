@@ -24117,7 +24117,7 @@ definitions:
         $ref: "#/definitions/eventParentNodeExecutionMetadata"
       retry_group:
         type: "string"
-        title: "Retry group to indicate arbitrary grouping like retries, sub workflow"
+        title: "Retry group to indicate grouping of nodes by retries"
       spec_node_id:
         type: "string"
         title: "Identifier of the node in the original workflow/graph\nThis maps to\

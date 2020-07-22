@@ -163,7 +163,7 @@ type NodeExecutionEvent struct {
 	ParentTaskMetadata *ParentTaskExecutionMetadata `protobuf:"bytes,9,opt,name=parent_task_metadata,json=parentTaskMetadata,proto3" json:"parent_task_metadata,omitempty"`
 	// Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
 	ParentNodeMetadata *ParentNodeExecutionMetadata `protobuf:"bytes,10,opt,name=parent_node_metadata,json=parentNodeMetadata,proto3" json:"parent_node_metadata,omitempty"`
-	// Retry group to indicate arbitrary grouping like retries, sub workflow
+	// Retry group to indicate grouping of nodes by retries
 	RetryGroup string `protobuf:"bytes,11,opt,name=retry_group,json=retryGroup,proto3" json:"retry_group,omitempty"`
 	// Identifier of the node in the original workflow/graph
 	// This maps to value of WorkflowTemplate.nodes[X].id

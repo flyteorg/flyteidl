@@ -1974,7 +1974,7 @@ public final class Event {
 
     /**
      * <pre>
-     * Retry group to indicate arbitrary grouping like retries, sub workflow
+     * Retry group to indicate grouping of nodes by retries
      * </pre>
      *
      * <code>string retry_group = 11;</code>
@@ -1982,7 +1982,7 @@ public final class Event {
     java.lang.String getRetryGroup();
     /**
      * <pre>
-     * Retry group to indicate arbitrary grouping like retries, sub workflow
+     * Retry group to indicate grouping of nodes by retries
      * </pre>
      *
      * <code>string retry_group = 11;</code>
@@ -2654,7 +2654,7 @@ public final class Event {
     private volatile java.lang.Object retryGroup_;
     /**
      * <pre>
-     * Retry group to indicate arbitrary grouping like retries, sub workflow
+     * Retry group to indicate grouping of nodes by retries
      * </pre>
      *
      * <code>string retry_group = 11;</code>
@@ -2673,7 +2673,7 @@ public final class Event {
     }
     /**
      * <pre>
-     * Retry group to indicate arbitrary grouping like retries, sub workflow
+     * Retry group to indicate grouping of nodes by retries
      * </pre>
      *
      * <code>string retry_group = 11;</code>
@@ -4663,7 +4663,7 @@ public final class Event {
       private java.lang.Object retryGroup_ = "";
       /**
        * <pre>
-       * Retry group to indicate arbitrary grouping like retries, sub workflow
+       * Retry group to indicate grouping of nodes by retries
        * </pre>
        *
        * <code>string retry_group = 11;</code>
@@ -4682,7 +4682,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Retry group to indicate arbitrary grouping like retries, sub workflow
+       * Retry group to indicate grouping of nodes by retries
        * </pre>
        *
        * <code>string retry_group = 11;</code>
@@ -4702,7 +4702,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Retry group to indicate arbitrary grouping like retries, sub workflow
+       * Retry group to indicate grouping of nodes by retries
        * </pre>
        *
        * <code>string retry_group = 11;</code>
@@ -4719,7 +4719,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Retry group to indicate arbitrary grouping like retries, sub workflow
+       * Retry group to indicate grouping of nodes by retries
        * </pre>
        *
        * <code>string retry_group = 11;</code>
@@ -4732,7 +4732,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Retry group to indicate arbitrary grouping like retries, sub workflow
+       * Retry group to indicate grouping of nodes by retries
        * </pre>
        *
        * <code>string retry_group = 11;</code>

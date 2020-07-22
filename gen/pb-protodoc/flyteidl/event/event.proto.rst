@@ -164,7 +164,7 @@ parent_node_metadata
 .. _api_field_flyteidl.event.NodeExecutionEvent.retry_group:
 
 retry_group
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Retry group to indicate arbitrary grouping like retries, sub workflow
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) Retry group to indicate grouping of nodes by retries
   
   
 .. _api_field_flyteidl.event.NodeExecutionEvent.spec_node_id:
