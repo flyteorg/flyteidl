@@ -4767,11 +4767,11 @@ export namespace flyteidl {
             /** NodeExecutionEvent parentNodeMetadata */
             parentNodeMetadata?: (flyteidl.event.IParentNodeExecutionMetadata|null);
 
-            /** NodeExecutionEvent groupId */
-            groupId?: (string|null);
+            /** NodeExecutionEvent retryGroup */
+            retryGroup?: (string|null);
 
-            /** NodeExecutionEvent graphNodeId */
-            graphNodeId?: (string|null);
+            /** NodeExecutionEvent specNodeId */
+            specNodeId?: (string|null);
 
             /** NodeExecutionEvent nodeName */
             nodeName?: (string|null);
@@ -4816,11 +4816,11 @@ export namespace flyteidl {
             /** NodeExecutionEvent parentNodeMetadata. */
             public parentNodeMetadata?: (flyteidl.event.IParentNodeExecutionMetadata|null);
 
-            /** NodeExecutionEvent groupId. */
-            public groupId: string;
+            /** NodeExecutionEvent retryGroup. */
+            public retryGroup: string;
 
-            /** NodeExecutionEvent graphNodeId. */
-            public graphNodeId: string;
+            /** NodeExecutionEvent specNodeId. */
+            public specNodeId: string;
 
             /** NodeExecutionEvent nodeName. */
             public nodeName: string;
@@ -4971,8 +4971,8 @@ export namespace flyteidl {
         /** Properties of a ParentNodeExecutionMetadata. */
         interface IParentNodeExecutionMetadata {
 
-            /** ParentNodeExecutionMetadata id */
-            id?: (string|null);
+            /** ParentNodeExecutionMetadata nodeId */
+            nodeId?: (string|null);
         }
 
         /** Represents a ParentNodeExecutionMetadata. */
@@ -4984,8 +4984,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.event.IParentNodeExecutionMetadata);
 
-            /** ParentNodeExecutionMetadata id. */
-            public id: string;
+            /** ParentNodeExecutionMetadata nodeId. */
+            public nodeId: string;
 
             /**
              * Creates a new ParentNodeExecutionMetadata instance using the specified properties.
@@ -9705,14 +9705,14 @@ export namespace flyteidl {
         /** Properties of a NodeExecutionMetaData. */
         interface INodeExecutionMetaData {
 
-            /** NodeExecutionMetaData groupId */
-            groupId?: (string|null);
+            /** NodeExecutionMetaData retryGroup */
+            retryGroup?: (string|null);
 
             /** NodeExecutionMetaData isParentNode */
             isParentNode?: (boolean|null);
 
-            /** NodeExecutionMetaData graphNodeId */
-            graphNodeId?: (string|null);
+            /** NodeExecutionMetaData specNodeId */
+            specNodeId?: (string|null);
         }
 
         /** Represents a NodeExecutionMetaData. */
@@ -9724,14 +9724,14 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.INodeExecutionMetaData);
 
-            /** NodeExecutionMetaData groupId. */
-            public groupId: string;
+            /** NodeExecutionMetaData retryGroup. */
+            public retryGroup: string;
 
             /** NodeExecutionMetaData isParentNode. */
             public isParentNode: boolean;
 
-            /** NodeExecutionMetaData graphNodeId. */
-            public graphNodeId: string;
+            /** NodeExecutionMetaData specNodeId. */
+            public specNodeId: string;
 
             /**
              * Creates a new NodeExecutionMetaData instance using the specified properties.

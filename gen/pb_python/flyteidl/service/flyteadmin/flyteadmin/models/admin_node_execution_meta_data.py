@@ -31,54 +31,54 @@ class AdminNodeExecutionMetaData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'group_id': 'str',
+        'retry_group': 'str',
         'is_parent_node': 'bool',
-        'graph_node_id': 'str'
+        'spec_node_id': 'str'
     }
 
     attribute_map = {
-        'group_id': 'group_id',
+        'retry_group': 'retry_group',
         'is_parent_node': 'is_parent_node',
-        'graph_node_id': 'graph_node_id'
+        'spec_node_id': 'spec_node_id'
     }
 
-    def __init__(self, group_id=None, is_parent_node=None, graph_node_id=None):  # noqa: E501
+    def __init__(self, retry_group=None, is_parent_node=None, spec_node_id=None):  # noqa: E501
         """AdminNodeExecutionMetaData - a model defined in Swagger"""  # noqa: E501
 
-        self._group_id = None
+        self._retry_group = None
         self._is_parent_node = None
-        self._graph_node_id = None
+        self._spec_node_id = None
         self.discriminator = None
 
-        if group_id is not None:
-            self.group_id = group_id
+        if retry_group is not None:
+            self.retry_group = retry_group
         if is_parent_node is not None:
             self.is_parent_node = is_parent_node
-        if graph_node_id is not None:
-            self.graph_node_id = graph_node_id
+        if spec_node_id is not None:
+            self.spec_node_id = spec_node_id
 
     @property
-    def group_id(self):
-        """Gets the group_id of this AdminNodeExecutionMetaData.  # noqa: E501
+    def retry_group(self):
+        """Gets the retry_group of this AdminNodeExecutionMetaData.  # noqa: E501
 
-        Node executions are grouped depending on retries of the parent, and other scenarios Group id is unique within the context of a parent node.  # noqa: E501
+        Node executions are grouped depending on retries of the parent Retry group is unique within the context of a parent node.  # noqa: E501
 
-        :return: The group_id of this AdminNodeExecutionMetaData.  # noqa: E501
+        :return: The retry_group of this AdminNodeExecutionMetaData.  # noqa: E501
         :rtype: str
         """
-        return self._group_id
+        return self._retry_group
 
-    @group_id.setter
-    def group_id(self, group_id):
-        """Sets the group_id of this AdminNodeExecutionMetaData.
+    @retry_group.setter
+    def retry_group(self, retry_group):
+        """Sets the retry_group of this AdminNodeExecutionMetaData.
 
-        Node executions are grouped depending on retries of the parent, and other scenarios Group id is unique within the context of a parent node.  # noqa: E501
+        Node executions are grouped depending on retries of the parent Retry group is unique within the context of a parent node.  # noqa: E501
 
-        :param group_id: The group_id of this AdminNodeExecutionMetaData.  # noqa: E501
+        :param retry_group: The retry_group of this AdminNodeExecutionMetaData.  # noqa: E501
         :type: str
         """
 
-        self._group_id = group_id
+        self._retry_group = retry_group
 
     @property
     def is_parent_node(self):
@@ -102,25 +102,25 @@ class AdminNodeExecutionMetaData(object):
         self._is_parent_node = is_parent_node
 
     @property
-    def graph_node_id(self):
-        """Gets the graph_node_id of this AdminNodeExecutionMetaData.  # noqa: E501
+    def spec_node_id(self):
+        """Gets the spec_node_id of this AdminNodeExecutionMetaData.  # noqa: E501
 
 
-        :return: The graph_node_id of this AdminNodeExecutionMetaData.  # noqa: E501
+        :return: The spec_node_id of this AdminNodeExecutionMetaData.  # noqa: E501
         :rtype: str
         """
-        return self._graph_node_id
+        return self._spec_node_id
 
-    @graph_node_id.setter
-    def graph_node_id(self, graph_node_id):
-        """Sets the graph_node_id of this AdminNodeExecutionMetaData.
+    @spec_node_id.setter
+    def spec_node_id(self, spec_node_id):
+        """Sets the spec_node_id of this AdminNodeExecutionMetaData.
 
 
-        :param graph_node_id: The graph_node_id of this AdminNodeExecutionMetaData.  # noqa: E501
+        :param spec_node_id: The spec_node_id of this AdminNodeExecutionMetaData.  # noqa: E501
         :type: str
         """
 
-        self._graph_node_id = graph_node_id
+        self._spec_node_id = spec_node_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

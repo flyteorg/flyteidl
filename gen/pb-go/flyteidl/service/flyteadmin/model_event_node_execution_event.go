@@ -28,7 +28,7 @@ type EventNodeExecutionEvent struct {
 	ParentTaskMetadata *EventParentTaskExecutionMetadata `json:"parent_task_metadata,omitempty"`
 	// Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
 	ParentNodeMetadata *EventParentNodeExecutionMetadata `json:"parent_node_metadata,omitempty"`
-	GroupId string `json:"group_id,omitempty"`
-	GraphNodeId string `json:"graph_node_id,omitempty"`
+	RetryGroup string `json:"retry_group,omitempty"`
+	SpecNodeId string `json:"spec_node_id,omitempty"`
 	NodeName string `json:"node_name,omitempty"`
 }

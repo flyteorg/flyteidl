@@ -208,9 +208,9 @@ func (m *NodeExecutionEvent) Validate() error {
 		}
 	}
 
-	// no validation rules for GroupId
+	// no validation rules for RetryGroup
 
-	// no validation rules for GraphNodeId
+	// no validation rules for SpecNodeId
 
 	// no validation rules for NodeName
 
@@ -471,7 +471,7 @@ func (m *ParentNodeExecutionMetadata) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Id
+	// no validation rules for NodeId
 
 	return nil
 }

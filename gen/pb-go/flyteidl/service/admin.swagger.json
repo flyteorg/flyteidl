@@ -3674,18 +3674,18 @@
     "adminNodeExecutionMetaData": {
       "type": "object",
       "properties": {
-        "group_id": {
+        "retry_group": {
           "type": "string",
-          "description": "Node executions are grouped depending on retries of the parent, and other scenarios\nGroup id is unique within the context of a parent node."
+          "description": "Node executions are grouped depending on retries of the parent\nRetry group is unique within the context of a parent node."
         },
         "is_parent_node": {
           "type": "boolean",
           "format": "boolean",
           "title": "Boolean flag indicating if the node has child nodes under it"
         },
-        "graph_node_id": {
+        "spec_node_id": {
           "type": "string",
-          "title": "Node id of the node in the original workflow"
+          "title": "Node id of the node in the original workflow\nThis maps to value of WorkflowTemplate.nodes[X].id"
         }
       },
       "title": "Represents additional attributes related to a Node Execution"
@@ -5446,13 +5446,13 @@
           "$ref": "#/definitions/eventParentNodeExecutionMetadata",
           "description": "Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node."
         },
-        "group_id": {
+        "retry_group": {
           "type": "string",
-          "title": "Group identifier to indicate arbitrary grouping like retries, sub workflow"
+          "title": "Retry group to indicate arbitrary grouping like retries, sub workflow"
         },
-        "graph_node_id": {
+        "spec_node_id": {
           "type": "string",
-          "title": "Identifier of the node in the original workflow/graph"
+          "title": "Identifier of the node in the original workflow/graph\nThis maps to value of WorkflowTemplate.nodes[X].id"
         },
         "node_name": {
           "type": "string",
@@ -5463,9 +5463,9 @@
     "eventParentNodeExecutionMetadata": {
       "type": "object",
       "properties": {
-        "id": {
+        "node_id": {
           "type": "string",
-          "title": "Unique identifier of the parent node id within the execution"
+          "title": "Unique identifier of the parent node id within the execution\nThis is value of core.NodeExecutionIdentifier.node_id of the parent node"
         }
       }
     },

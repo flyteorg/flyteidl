@@ -31,42 +31,42 @@ class EventParentNodeExecutionMetadata(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str'
+        'node_id': 'str'
     }
 
     attribute_map = {
-        'id': 'id'
+        'node_id': 'node_id'
     }
 
-    def __init__(self, id=None):  # noqa: E501
+    def __init__(self, node_id=None):  # noqa: E501
         """EventParentNodeExecutionMetadata - a model defined in Swagger"""  # noqa: E501
 
-        self._id = None
+        self._node_id = None
         self.discriminator = None
 
-        if id is not None:
-            self.id = id
+        if node_id is not None:
+            self.node_id = node_id
 
     @property
-    def id(self):
-        """Gets the id of this EventParentNodeExecutionMetadata.  # noqa: E501
+    def node_id(self):
+        """Gets the node_id of this EventParentNodeExecutionMetadata.  # noqa: E501
 
 
-        :return: The id of this EventParentNodeExecutionMetadata.  # noqa: E501
+        :return: The node_id of this EventParentNodeExecutionMetadata.  # noqa: E501
         :rtype: str
         """
-        return self._id
+        return self._node_id
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this EventParentNodeExecutionMetadata.
+    @node_id.setter
+    def node_id(self, node_id):
+        """Sets the node_id of this EventParentNodeExecutionMetadata.
 
 
-        :param id: The id of this EventParentNodeExecutionMetadata.  # noqa: E501
+        :param node_id: The node_id of this EventParentNodeExecutionMetadata.  # noqa: E501
         :type: str
         """
 
-        self._id = id
+        self._node_id = node_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

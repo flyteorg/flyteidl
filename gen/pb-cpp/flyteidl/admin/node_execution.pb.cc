@@ -289,9 +289,9 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fnode_5fexecution
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionMetaData, group_id_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionMetaData, retry_group_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionMetaData, is_parent_node_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionMetaData, graph_node_id_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionMetaData, spec_node_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -388,37 +388,37 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fnode_5fexecution_2eproto
   "xecutionIdentifier\022\021\n\tinput_uri\030\002 \001(\t\0225\n"
   "\007closure\030\003 \001(\0132$.flyteidl.admin.NodeExec"
   "utionClosure\0227\n\010metadata\030\004 \001(\0132%.flyteid"
-  "l.admin.NodeExecutionMetaData\"X\n\025NodeExe"
-  "cutionMetaData\022\020\n\010group_id\030\001 \001(\t\022\026\n\016is_p"
-  "arent_node\030\002 \001(\010\022\025\n\rgraph_node_id\030\003 \001(\t\""
-  "Z\n\021NodeExecutionList\0226\n\017node_executions\030"
-  "\001 \003(\0132\035.flyteidl.admin.NodeExecution\022\r\n\005"
-  "token\030\002 \001(\t\"\270\003\n\024NodeExecutionClosure\022\024\n\n"
-  "output_uri\030\001 \001(\tH\000\022.\n\005error\030\002 \001(\0132\035.flyt"
-  "eidl.core.ExecutionErrorH\000\0221\n\005phase\030\003 \001("
-  "\0162\".flyteidl.core.NodeExecution.Phase\022.\n"
-  "\nstarted_at\030\004 \001(\0132\032.google.protobuf.Time"
-  "stamp\022+\n\010duration\030\005 \001(\0132\031.google.protobu"
-  "f.Duration\022.\n\ncreated_at\030\006 \001(\0132\032.google."
-  "protobuf.Timestamp\022.\n\nupdated_at\030\007 \001(\0132\032"
-  ".google.protobuf.Timestamp\022F\n\026workflow_n"
-  "ode_metadata\030\010 \001(\0132$.flyteidl.admin.Work"
-  "flowNodeMetadataH\001B\017\n\routput_resultB\021\n\017t"
-  "arget_metadata\"W\n\024WorkflowNodeMetadata\022\?"
-  "\n\013executionId\030\001 \001(\0132*.flyteidl.core.Work"
-  "flowExecutionIdentifier\"Q\n\033NodeExecution"
-  "GetDataRequest\0222\n\002id\030\001 \001(\0132&.flyteidl.co"
-  "re.NodeExecutionIdentifier\"q\n\034NodeExecut"
-  "ionGetDataResponse\022\'\n\006inputs\030\001 \001(\0132\027.fly"
-  "teidl.admin.UrlBlob\022(\n\007outputs\030\002 \001(\0132\027.f"
-  "lyteidl.admin.UrlBlobB3Z1github.com/lyft"
-  "/flyteidl/gen/pb-go/flyteidl/adminb\006prot"
-  "o3"
+  "l.admin.NodeExecutionMetaData\"Z\n\025NodeExe"
+  "cutionMetaData\022\023\n\013retry_group\030\001 \001(\t\022\026\n\016i"
+  "s_parent_node\030\002 \001(\010\022\024\n\014spec_node_id\030\003 \001("
+  "\t\"Z\n\021NodeExecutionList\0226\n\017node_execution"
+  "s\030\001 \003(\0132\035.flyteidl.admin.NodeExecution\022\r"
+  "\n\005token\030\002 \001(\t\"\270\003\n\024NodeExecutionClosure\022\024"
+  "\n\noutput_uri\030\001 \001(\tH\000\022.\n\005error\030\002 \001(\0132\035.fl"
+  "yteidl.core.ExecutionErrorH\000\0221\n\005phase\030\003 "
+  "\001(\0162\".flyteidl.core.NodeExecution.Phase\022"
+  ".\n\nstarted_at\030\004 \001(\0132\032.google.protobuf.Ti"
+  "mestamp\022+\n\010duration\030\005 \001(\0132\031.google.proto"
+  "buf.Duration\022.\n\ncreated_at\030\006 \001(\0132\032.googl"
+  "e.protobuf.Timestamp\022.\n\nupdated_at\030\007 \001(\013"
+  "2\032.google.protobuf.Timestamp\022F\n\026workflow"
+  "_node_metadata\030\010 \001(\0132$.flyteidl.admin.Wo"
+  "rkflowNodeMetadataH\001B\017\n\routput_resultB\021\n"
+  "\017target_metadata\"W\n\024WorkflowNodeMetadata"
+  "\022\?\n\013executionId\030\001 \001(\0132*.flyteidl.core.Wo"
+  "rkflowExecutionIdentifier\"Q\n\033NodeExecuti"
+  "onGetDataRequest\0222\n\002id\030\001 \001(\0132&.flyteidl."
+  "core.NodeExecutionIdentifier\"q\n\034NodeExec"
+  "utionGetDataResponse\022\'\n\006inputs\030\001 \001(\0132\027.f"
+  "lyteidl.admin.UrlBlob\022(\n\007outputs\030\002 \001(\0132\027"
+  ".flyteidl.admin.UrlBlobB3Z1github.com/ly"
+  "ft/flyteidl/gen/pb-go/flyteidl/adminb\006pr"
+  "oto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fnode_5fexecution_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fnode_5fexecution_2eproto,
-  "flyteidl/admin/node_execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto, 1842,
+  "flyteidl/admin/node_execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto, 1844,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fnode_5fexecution_2eproto() {
@@ -2366,9 +2366,9 @@ class NodeExecutionMetaData::HasBitSetters {
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int NodeExecutionMetaData::kGroupIdFieldNumber;
+const int NodeExecutionMetaData::kRetryGroupFieldNumber;
 const int NodeExecutionMetaData::kIsParentNodeFieldNumber;
-const int NodeExecutionMetaData::kGraphNodeIdFieldNumber;
+const int NodeExecutionMetaData::kSpecNodeIdFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 NodeExecutionMetaData::NodeExecutionMetaData()
@@ -2380,13 +2380,13 @@ NodeExecutionMetaData::NodeExecutionMetaData(const NodeExecutionMetaData& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  group_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.group_id().size() > 0) {
-    group_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.group_id_);
+  retry_group_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.retry_group().size() > 0) {
+    retry_group_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.retry_group_);
   }
-  graph_node_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.graph_node_id().size() > 0) {
-    graph_node_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.graph_node_id_);
+  spec_node_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.spec_node_id().size() > 0) {
+    spec_node_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.spec_node_id_);
   }
   is_parent_node_ = from.is_parent_node_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.NodeExecutionMetaData)
@@ -2395,8 +2395,8 @@ NodeExecutionMetaData::NodeExecutionMetaData(const NodeExecutionMetaData& from)
 void NodeExecutionMetaData::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_NodeExecutionMetaData_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base);
-  group_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  graph_node_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  retry_group_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  spec_node_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   is_parent_node_ = false;
 }
 
@@ -2406,8 +2406,8 @@ NodeExecutionMetaData::~NodeExecutionMetaData() {
 }
 
 void NodeExecutionMetaData::SharedDtor() {
-  group_id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  graph_node_id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  retry_group_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  spec_node_id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void NodeExecutionMetaData::SetCachedSize(int size) const {
@@ -2425,8 +2425,8 @@ void NodeExecutionMetaData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  group_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  graph_node_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  retry_group_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  spec_node_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   is_parent_node_ = false;
   _internal_metadata_.Clear();
 }
@@ -2444,13 +2444,13 @@ const char* NodeExecutionMetaData::_InternalParse(const char* begin, const char*
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // string group_id = 1;
+      // string retry_group = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.NodeExecutionMetaData.group_id");
-        object = msg->mutable_group_id();
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.NodeExecutionMetaData.retry_group");
+        object = msg->mutable_retry_group();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
           goto string_till_end;
@@ -2467,13 +2467,13 @@ const char* NodeExecutionMetaData::_InternalParse(const char* begin, const char*
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // string graph_node_id = 3;
+      // string spec_node_id = 3;
       case 3: {
         if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.NodeExecutionMetaData.graph_node_id");
-        object = msg->mutable_graph_node_id();
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.NodeExecutionMetaData.spec_node_id");
+        object = msg->mutable_spec_node_id();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
           goto string_till_end;
@@ -2517,15 +2517,15 @@ bool NodeExecutionMetaData::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string group_id = 1;
+      // string retry_group = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_group_id()));
+                input, this->mutable_retry_group()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->group_id().data(), static_cast<int>(this->group_id().length()),
+            this->retry_group().data(), static_cast<int>(this->retry_group().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.NodeExecutionMetaData.group_id"));
+            "flyteidl.admin.NodeExecutionMetaData.retry_group"));
         } else {
           goto handle_unusual;
         }
@@ -2545,15 +2545,15 @@ bool NodeExecutionMetaData::MergePartialFromCodedStream(
         break;
       }
 
-      // string graph_node_id = 3;
+      // string spec_node_id = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_graph_node_id()));
+                input, this->mutable_spec_node_id()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->graph_node_id().data(), static_cast<int>(this->graph_node_id().length()),
+            this->spec_node_id().data(), static_cast<int>(this->spec_node_id().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.NodeExecutionMetaData.graph_node_id"));
+            "flyteidl.admin.NodeExecutionMetaData.spec_node_id"));
         } else {
           goto handle_unusual;
         }
@@ -2587,14 +2587,14 @@ void NodeExecutionMetaData::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string group_id = 1;
-  if (this->group_id().size() > 0) {
+  // string retry_group = 1;
+  if (this->retry_group().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->group_id().data(), static_cast<int>(this->group_id().length()),
+      this->retry_group().data(), static_cast<int>(this->retry_group().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.NodeExecutionMetaData.group_id");
+      "flyteidl.admin.NodeExecutionMetaData.retry_group");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->group_id(), output);
+      1, this->retry_group(), output);
   }
 
   // bool is_parent_node = 2;
@@ -2602,14 +2602,14 @@ void NodeExecutionMetaData::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->is_parent_node(), output);
   }
 
-  // string graph_node_id = 3;
-  if (this->graph_node_id().size() > 0) {
+  // string spec_node_id = 3;
+  if (this->spec_node_id().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->graph_node_id().data(), static_cast<int>(this->graph_node_id().length()),
+      this->spec_node_id().data(), static_cast<int>(this->spec_node_id().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.NodeExecutionMetaData.graph_node_id");
+      "flyteidl.admin.NodeExecutionMetaData.spec_node_id");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->graph_node_id(), output);
+      3, this->spec_node_id(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2625,15 +2625,15 @@ void NodeExecutionMetaData::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string group_id = 1;
-  if (this->group_id().size() > 0) {
+  // string retry_group = 1;
+  if (this->retry_group().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->group_id().data(), static_cast<int>(this->group_id().length()),
+      this->retry_group().data(), static_cast<int>(this->retry_group().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.NodeExecutionMetaData.group_id");
+      "flyteidl.admin.NodeExecutionMetaData.retry_group");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->group_id(), target);
+        1, this->retry_group(), target);
   }
 
   // bool is_parent_node = 2;
@@ -2641,15 +2641,15 @@ void NodeExecutionMetaData::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->is_parent_node(), target);
   }
 
-  // string graph_node_id = 3;
-  if (this->graph_node_id().size() > 0) {
+  // string spec_node_id = 3;
+  if (this->spec_node_id().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->graph_node_id().data(), static_cast<int>(this->graph_node_id().length()),
+      this->spec_node_id().data(), static_cast<int>(this->spec_node_id().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.NodeExecutionMetaData.graph_node_id");
+      "flyteidl.admin.NodeExecutionMetaData.spec_node_id");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->graph_node_id(), target);
+        3, this->spec_node_id(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2673,18 +2673,18 @@ size_t NodeExecutionMetaData::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string group_id = 1;
-  if (this->group_id().size() > 0) {
+  // string retry_group = 1;
+  if (this->retry_group().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->group_id());
+        this->retry_group());
   }
 
-  // string graph_node_id = 3;
-  if (this->graph_node_id().size() > 0) {
+  // string spec_node_id = 3;
+  if (this->spec_node_id().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->graph_node_id());
+        this->spec_node_id());
   }
 
   // bool is_parent_node = 2;
@@ -2719,13 +2719,13 @@ void NodeExecutionMetaData::MergeFrom(const NodeExecutionMetaData& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.group_id().size() > 0) {
+  if (from.retry_group().size() > 0) {
 
-    group_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.group_id_);
+    retry_group_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.retry_group_);
   }
-  if (from.graph_node_id().size() > 0) {
+  if (from.spec_node_id().size() > 0) {
 
-    graph_node_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.graph_node_id_);
+    spec_node_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.spec_node_id_);
   }
   if (from.is_parent_node() != 0) {
     set_is_parent_node(from.is_parent_node());
@@ -2757,9 +2757,9 @@ void NodeExecutionMetaData::Swap(NodeExecutionMetaData* other) {
 void NodeExecutionMetaData::InternalSwap(NodeExecutionMetaData* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  group_id_.Swap(&other->group_id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  retry_group_.Swap(&other->retry_group_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  graph_node_id_.Swap(&other->graph_node_id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  spec_node_id_.Swap(&other->spec_node_id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(is_parent_node_, other->is_parent_node_);
 }

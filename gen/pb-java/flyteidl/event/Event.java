@@ -1974,39 +1974,41 @@ public final class Event {
 
     /**
      * <pre>
-     * Group identifier to indicate arbitrary grouping like retries, sub workflow
+     * Retry group to indicate arbitrary grouping like retries, sub workflow
      * </pre>
      *
-     * <code>string group_id = 11;</code>
+     * <code>string retry_group = 11;</code>
      */
-    java.lang.String getGroupId();
+    java.lang.String getRetryGroup();
     /**
      * <pre>
-     * Group identifier to indicate arbitrary grouping like retries, sub workflow
+     * Retry group to indicate arbitrary grouping like retries, sub workflow
      * </pre>
      *
-     * <code>string group_id = 11;</code>
+     * <code>string retry_group = 11;</code>
      */
     com.google.protobuf.ByteString
-        getGroupIdBytes();
+        getRetryGroupBytes();
 
     /**
      * <pre>
      * Identifier of the node in the original workflow/graph
+     * This maps to value of WorkflowTemplate.nodes[X].id
      * </pre>
      *
-     * <code>string graph_node_id = 12;</code>
+     * <code>string spec_node_id = 12;</code>
      */
-    java.lang.String getGraphNodeId();
+    java.lang.String getSpecNodeId();
     /**
      * <pre>
      * Identifier of the node in the original workflow/graph
+     * This maps to value of WorkflowTemplate.nodes[X].id
      * </pre>
      *
-     * <code>string graph_node_id = 12;</code>
+     * <code>string spec_node_id = 12;</code>
      */
     com.google.protobuf.ByteString
-        getGraphNodeIdBytes();
+        getSpecNodeIdBytes();
 
     /**
      * <pre>
@@ -2046,8 +2048,8 @@ public final class Event {
       producerId_ = "";
       phase_ = 0;
       inputUri_ = "";
-      groupId_ = "";
-      graphNodeId_ = "";
+      retryGroup_ = "";
+      specNodeId_ = "";
       nodeName_ = "";
     }
 
@@ -2182,13 +2184,13 @@ public final class Event {
             case 90: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              groupId_ = s;
+              retryGroup_ = s;
               break;
             }
             case 98: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              graphNodeId_ = s;
+              specNodeId_ = s;
               break;
             }
             case 106: {
@@ -2648,84 +2650,86 @@ public final class Event {
       return getParentNodeMetadata();
     }
 
-    public static final int GROUP_ID_FIELD_NUMBER = 11;
-    private volatile java.lang.Object groupId_;
+    public static final int RETRY_GROUP_FIELD_NUMBER = 11;
+    private volatile java.lang.Object retryGroup_;
     /**
      * <pre>
-     * Group identifier to indicate arbitrary grouping like retries, sub workflow
+     * Retry group to indicate arbitrary grouping like retries, sub workflow
      * </pre>
      *
-     * <code>string group_id = 11;</code>
+     * <code>string retry_group = 11;</code>
      */
-    public java.lang.String getGroupId() {
-      java.lang.Object ref = groupId_;
+    public java.lang.String getRetryGroup() {
+      java.lang.Object ref = retryGroup_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        groupId_ = s;
+        retryGroup_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * Group identifier to indicate arbitrary grouping like retries, sub workflow
+     * Retry group to indicate arbitrary grouping like retries, sub workflow
      * </pre>
      *
-     * <code>string group_id = 11;</code>
+     * <code>string retry_group = 11;</code>
      */
     public com.google.protobuf.ByteString
-        getGroupIdBytes() {
-      java.lang.Object ref = groupId_;
+        getRetryGroupBytes() {
+      java.lang.Object ref = retryGroup_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        groupId_ = b;
+        retryGroup_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int GRAPH_NODE_ID_FIELD_NUMBER = 12;
-    private volatile java.lang.Object graphNodeId_;
+    public static final int SPEC_NODE_ID_FIELD_NUMBER = 12;
+    private volatile java.lang.Object specNodeId_;
     /**
      * <pre>
      * Identifier of the node in the original workflow/graph
+     * This maps to value of WorkflowTemplate.nodes[X].id
      * </pre>
      *
-     * <code>string graph_node_id = 12;</code>
+     * <code>string spec_node_id = 12;</code>
      */
-    public java.lang.String getGraphNodeId() {
-      java.lang.Object ref = graphNodeId_;
+    public java.lang.String getSpecNodeId() {
+      java.lang.Object ref = specNodeId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        graphNodeId_ = s;
+        specNodeId_ = s;
         return s;
       }
     }
     /**
      * <pre>
      * Identifier of the node in the original workflow/graph
+     * This maps to value of WorkflowTemplate.nodes[X].id
      * </pre>
      *
-     * <code>string graph_node_id = 12;</code>
+     * <code>string spec_node_id = 12;</code>
      */
     public com.google.protobuf.ByteString
-        getGraphNodeIdBytes() {
-      java.lang.Object ref = graphNodeId_;
+        getSpecNodeIdBytes() {
+      java.lang.Object ref = specNodeId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        graphNodeId_ = b;
+        specNodeId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2818,11 +2822,11 @@ public final class Event {
       if (parentNodeMetadata_ != null) {
         output.writeMessage(10, getParentNodeMetadata());
       }
-      if (!getGroupIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, groupId_);
+      if (!getRetryGroupBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, retryGroup_);
       }
-      if (!getGraphNodeIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, graphNodeId_);
+      if (!getSpecNodeIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, specNodeId_);
       }
       if (!getNodeNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, nodeName_);
@@ -2873,11 +2877,11 @@ public final class Event {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, getParentNodeMetadata());
       }
-      if (!getGroupIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, groupId_);
+      if (!getRetryGroupBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, retryGroup_);
       }
-      if (!getGraphNodeIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, graphNodeId_);
+      if (!getSpecNodeIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, specNodeId_);
       }
       if (!getNodeNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, nodeName_);
@@ -2922,10 +2926,10 @@ public final class Event {
         if (!getParentNodeMetadata()
             .equals(other.getParentNodeMetadata())) return false;
       }
-      if (!getGroupId()
-          .equals(other.getGroupId())) return false;
-      if (!getGraphNodeId()
-          .equals(other.getGraphNodeId())) return false;
+      if (!getRetryGroup()
+          .equals(other.getRetryGroup())) return false;
+      if (!getSpecNodeId()
+          .equals(other.getSpecNodeId())) return false;
       if (!getNodeName()
           .equals(other.getNodeName())) return false;
       if (!getOutputResultCase().equals(other.getOutputResultCase())) return false;
@@ -2983,10 +2987,10 @@ public final class Event {
         hash = (37 * hash) + PARENT_NODE_METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getParentNodeMetadata().hashCode();
       }
-      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGroupId().hashCode();
-      hash = (37 * hash) + GRAPH_NODE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGraphNodeId().hashCode();
+      hash = (37 * hash) + RETRY_GROUP_FIELD_NUMBER;
+      hash = (53 * hash) + getRetryGroup().hashCode();
+      hash = (37 * hash) + SPEC_NODE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpecNodeId().hashCode();
       hash = (37 * hash) + NODE_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getNodeName().hashCode();
       switch (outputResultCase_) {
@@ -3172,9 +3176,9 @@ public final class Event {
           parentNodeMetadata_ = null;
           parentNodeMetadataBuilder_ = null;
         }
-        groupId_ = "";
+        retryGroup_ = "";
 
-        graphNodeId_ = "";
+        specNodeId_ = "";
 
         nodeName_ = "";
 
@@ -3248,8 +3252,8 @@ public final class Event {
         } else {
           result.parentNodeMetadata_ = parentNodeMetadataBuilder_.build();
         }
-        result.groupId_ = groupId_;
-        result.graphNodeId_ = graphNodeId_;
+        result.retryGroup_ = retryGroup_;
+        result.specNodeId_ = specNodeId_;
         result.nodeName_ = nodeName_;
         result.outputResultCase_ = outputResultCase_;
         result.targetMetadataCase_ = targetMetadataCase_;
@@ -3324,12 +3328,12 @@ public final class Event {
         if (other.hasParentNodeMetadata()) {
           mergeParentNodeMetadata(other.getParentNodeMetadata());
         }
-        if (!other.getGroupId().isEmpty()) {
-          groupId_ = other.groupId_;
+        if (!other.getRetryGroup().isEmpty()) {
+          retryGroup_ = other.retryGroup_;
           onChanged();
         }
-        if (!other.getGraphNodeId().isEmpty()) {
-          graphNodeId_ = other.graphNodeId_;
+        if (!other.getSpecNodeId().isEmpty()) {
+          specNodeId_ = other.specNodeId_;
           onChanged();
         }
         if (!other.getNodeName().isEmpty()) {
@@ -4656,21 +4660,21 @@ public final class Event {
         return parentNodeMetadataBuilder_;
       }
 
-      private java.lang.Object groupId_ = "";
+      private java.lang.Object retryGroup_ = "";
       /**
        * <pre>
-       * Group identifier to indicate arbitrary grouping like retries, sub workflow
+       * Retry group to indicate arbitrary grouping like retries, sub workflow
        * </pre>
        *
-       * <code>string group_id = 11;</code>
+       * <code>string retry_group = 11;</code>
        */
-      public java.lang.String getGroupId() {
-        java.lang.Object ref = groupId_;
+      public java.lang.String getRetryGroup() {
+        java.lang.Object ref = retryGroup_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          groupId_ = s;
+          retryGroup_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4678,19 +4682,19 @@ public final class Event {
       }
       /**
        * <pre>
-       * Group identifier to indicate arbitrary grouping like retries, sub workflow
+       * Retry group to indicate arbitrary grouping like retries, sub workflow
        * </pre>
        *
-       * <code>string group_id = 11;</code>
+       * <code>string retry_group = 11;</code>
        */
       public com.google.protobuf.ByteString
-          getGroupIdBytes() {
-        java.lang.Object ref = groupId_;
+          getRetryGroupBytes() {
+        java.lang.Object ref = retryGroup_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          groupId_ = b;
+          retryGroup_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -4698,68 +4702,69 @@ public final class Event {
       }
       /**
        * <pre>
-       * Group identifier to indicate arbitrary grouping like retries, sub workflow
+       * Retry group to indicate arbitrary grouping like retries, sub workflow
        * </pre>
        *
-       * <code>string group_id = 11;</code>
+       * <code>string retry_group = 11;</code>
        */
-      public Builder setGroupId(
+      public Builder setRetryGroup(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        groupId_ = value;
+        retryGroup_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Group identifier to indicate arbitrary grouping like retries, sub workflow
+       * Retry group to indicate arbitrary grouping like retries, sub workflow
        * </pre>
        *
-       * <code>string group_id = 11;</code>
+       * <code>string retry_group = 11;</code>
        */
-      public Builder clearGroupId() {
+      public Builder clearRetryGroup() {
         
-        groupId_ = getDefaultInstance().getGroupId();
+        retryGroup_ = getDefaultInstance().getRetryGroup();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Group identifier to indicate arbitrary grouping like retries, sub workflow
+       * Retry group to indicate arbitrary grouping like retries, sub workflow
        * </pre>
        *
-       * <code>string group_id = 11;</code>
+       * <code>string retry_group = 11;</code>
        */
-      public Builder setGroupIdBytes(
+      public Builder setRetryGroupBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        groupId_ = value;
+        retryGroup_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object graphNodeId_ = "";
+      private java.lang.Object specNodeId_ = "";
       /**
        * <pre>
        * Identifier of the node in the original workflow/graph
+       * This maps to value of WorkflowTemplate.nodes[X].id
        * </pre>
        *
-       * <code>string graph_node_id = 12;</code>
+       * <code>string spec_node_id = 12;</code>
        */
-      public java.lang.String getGraphNodeId() {
-        java.lang.Object ref = graphNodeId_;
+      public java.lang.String getSpecNodeId() {
+        java.lang.Object ref = specNodeId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          graphNodeId_ = s;
+          specNodeId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4768,18 +4773,19 @@ public final class Event {
       /**
        * <pre>
        * Identifier of the node in the original workflow/graph
+       * This maps to value of WorkflowTemplate.nodes[X].id
        * </pre>
        *
-       * <code>string graph_node_id = 12;</code>
+       * <code>string spec_node_id = 12;</code>
        */
       public com.google.protobuf.ByteString
-          getGraphNodeIdBytes() {
-        java.lang.Object ref = graphNodeId_;
+          getSpecNodeIdBytes() {
+        java.lang.Object ref = specNodeId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          graphNodeId_ = b;
+          specNodeId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -4788,48 +4794,51 @@ public final class Event {
       /**
        * <pre>
        * Identifier of the node in the original workflow/graph
+       * This maps to value of WorkflowTemplate.nodes[X].id
        * </pre>
        *
-       * <code>string graph_node_id = 12;</code>
+       * <code>string spec_node_id = 12;</code>
        */
-      public Builder setGraphNodeId(
+      public Builder setSpecNodeId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        graphNodeId_ = value;
+        specNodeId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
        * Identifier of the node in the original workflow/graph
+       * This maps to value of WorkflowTemplate.nodes[X].id
        * </pre>
        *
-       * <code>string graph_node_id = 12;</code>
+       * <code>string spec_node_id = 12;</code>
        */
-      public Builder clearGraphNodeId() {
+      public Builder clearSpecNodeId() {
         
-        graphNodeId_ = getDefaultInstance().getGraphNodeId();
+        specNodeId_ = getDefaultInstance().getSpecNodeId();
         onChanged();
         return this;
       }
       /**
        * <pre>
        * Identifier of the node in the original workflow/graph
+       * This maps to value of WorkflowTemplate.nodes[X].id
        * </pre>
        *
-       * <code>string graph_node_id = 12;</code>
+       * <code>string spec_node_id = 12;</code>
        */
-      public Builder setGraphNodeIdBytes(
+      public Builder setSpecNodeIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        graphNodeId_ = value;
+        specNodeId_ = value;
         onChanged();
         return this;
       }
@@ -6202,20 +6211,22 @@ public final class Event {
     /**
      * <pre>
      * Unique identifier of the parent node id within the execution
+     * This is value of core.NodeExecutionIdentifier.node_id of the parent node 
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string node_id = 1;</code>
      */
-    java.lang.String getId();
+    java.lang.String getNodeId();
     /**
      * <pre>
      * Unique identifier of the parent node id within the execution
+     * This is value of core.NodeExecutionIdentifier.node_id of the parent node 
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string node_id = 1;</code>
      */
     com.google.protobuf.ByteString
-        getIdBytes();
+        getNodeIdBytes();
   }
   /**
    * Protobuf type {@code flyteidl.event.ParentNodeExecutionMetadata}
@@ -6230,7 +6241,7 @@ public final class Event {
       super(builder);
     }
     private ParentNodeExecutionMetadata() {
-      id_ = "";
+      nodeId_ = "";
     }
 
     @java.lang.Override
@@ -6260,7 +6271,7 @@ public final class Event {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = s;
+              nodeId_ = s;
               break;
             }
             default: {
@@ -6295,42 +6306,44 @@ public final class Event {
               flyteidl.event.Event.ParentNodeExecutionMetadata.class, flyteidl.event.Event.ParentNodeExecutionMetadata.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+    public static final int NODE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object nodeId_;
     /**
      * <pre>
      * Unique identifier of the parent node id within the execution
+     * This is value of core.NodeExecutionIdentifier.node_id of the parent node 
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string node_id = 1;</code>
      */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
+    public java.lang.String getNodeId() {
+      java.lang.Object ref = nodeId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        id_ = s;
+        nodeId_ = s;
         return s;
       }
     }
     /**
      * <pre>
      * Unique identifier of the parent node id within the execution
+     * This is value of core.NodeExecutionIdentifier.node_id of the parent node 
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string node_id = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
+        getNodeIdBytes() {
+      java.lang.Object ref = nodeId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        id_ = b;
+        nodeId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -6351,8 +6364,8 @@ public final class Event {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      if (!getNodeIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeId_);
       }
       unknownFields.writeTo(output);
     }
@@ -6363,8 +6376,8 @@ public final class Event {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      if (!getNodeIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6381,8 +6394,8 @@ public final class Event {
       }
       flyteidl.event.Event.ParentNodeExecutionMetadata other = (flyteidl.event.Event.ParentNodeExecutionMetadata) obj;
 
-      if (!getId()
-          .equals(other.getId())) return false;
+      if (!getNodeId()
+          .equals(other.getNodeId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6394,8 +6407,8 @@ public final class Event {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + NODE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6529,7 +6542,7 @@ public final class Event {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = "";
+        nodeId_ = "";
 
         return this;
       }
@@ -6557,7 +6570,7 @@ public final class Event {
       @java.lang.Override
       public flyteidl.event.Event.ParentNodeExecutionMetadata buildPartial() {
         flyteidl.event.Event.ParentNodeExecutionMetadata result = new flyteidl.event.Event.ParentNodeExecutionMetadata(this);
-        result.id_ = id_;
+        result.nodeId_ = nodeId_;
         onBuilt();
         return result;
       }
@@ -6606,8 +6619,8 @@ public final class Event {
 
       public Builder mergeFrom(flyteidl.event.Event.ParentNodeExecutionMetadata other) {
         if (other == flyteidl.event.Event.ParentNodeExecutionMetadata.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
-          id_ = other.id_;
+        if (!other.getNodeId().isEmpty()) {
+          nodeId_ = other.nodeId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -6639,21 +6652,22 @@ public final class Event {
         return this;
       }
 
-      private java.lang.Object id_ = "";
+      private java.lang.Object nodeId_ = "";
       /**
        * <pre>
        * Unique identifier of the parent node id within the execution
+       * This is value of core.NodeExecutionIdentifier.node_id of the parent node 
        * </pre>
        *
-       * <code>string id = 1;</code>
+       * <code>string node_id = 1;</code>
        */
-      public java.lang.String getId() {
-        java.lang.Object ref = id_;
+      public java.lang.String getNodeId() {
+        java.lang.Object ref = nodeId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          id_ = s;
+          nodeId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -6662,18 +6676,19 @@ public final class Event {
       /**
        * <pre>
        * Unique identifier of the parent node id within the execution
+       * This is value of core.NodeExecutionIdentifier.node_id of the parent node 
        * </pre>
        *
-       * <code>string id = 1;</code>
+       * <code>string node_id = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getIdBytes() {
-        java.lang.Object ref = id_;
+          getNodeIdBytes() {
+        java.lang.Object ref = nodeId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          id_ = b;
+          nodeId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -6682,48 +6697,51 @@ public final class Event {
       /**
        * <pre>
        * Unique identifier of the parent node id within the execution
+       * This is value of core.NodeExecutionIdentifier.node_id of the parent node 
        * </pre>
        *
-       * <code>string id = 1;</code>
+       * <code>string node_id = 1;</code>
        */
-      public Builder setId(
+      public Builder setNodeId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        id_ = value;
+        nodeId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
        * Unique identifier of the parent node id within the execution
+       * This is value of core.NodeExecutionIdentifier.node_id of the parent node 
        * </pre>
        *
-       * <code>string id = 1;</code>
+       * <code>string node_id = 1;</code>
        */
-      public Builder clearId() {
+      public Builder clearNodeId() {
         
-        id_ = getDefaultInstance().getId();
+        nodeId_ = getDefaultInstance().getNodeId();
         onChanged();
         return this;
       }
       /**
        * <pre>
        * Unique identifier of the parent node id within the execution
+       * This is value of core.NodeExecutionIdentifier.node_id of the parent node 
        * </pre>
        *
-       * <code>string id = 1;</code>
+       * <code>string node_id = 1;</code>
        */
-      public Builder setIdBytes(
+      public Builder setNodeIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        id_ = value;
+        nodeId_ = value;
         onChanged();
         return this;
       }
@@ -10008,7 +10026,7 @@ public final class Event {
       "flowExecution.Phase\022/\n\013occurred_at\030\004 \001(\013" +
       "2\032.google.protobuf.Timestamp\022\024\n\noutput_u" +
       "ri\030\005 \001(\tH\000\022.\n\005error\030\006 \001(\0132\035.flyteidl.cor" +
-      "e.ExecutionErrorH\000B\017\n\routput_result\"\330\004\n\022" +
+      "e.ExecutionErrorH\000B\017\n\routput_result\"\332\004\n\022" +
       "NodeExecutionEvent\0222\n\002id\030\001 \001(\0132&.flyteid" +
       "l.core.NodeExecutionIdentifier\022\023\n\013produc" +
       "er_id\030\002 \001(\t\0221\n\005phase\030\003 \001(\0162\".flyteidl.co" +
@@ -10021,29 +10039,29 @@ public final class Event {
       "nt_task_metadata\030\t \001(\0132+.flyteidl.event." +
       "ParentTaskExecutionMetadata\022I\n\024parent_no" +
       "de_metadata\030\n \001(\0132+.flyteidl.event.Paren" +
-      "tNodeExecutionMetadata\022\020\n\010group_id\030\013 \001(\t" +
-      "\022\025\n\rgraph_node_id\030\014 \001(\t\022\021\n\tnode_name\030\r \001" +
-      "(\tB\017\n\routput_resultB\021\n\017target_metadata\"X" +
-      "\n\024WorkflowNodeMetadata\022@\n\014execution_id\030\001" +
-      " \001(\0132*.flyteidl.core.WorkflowExecutionId" +
-      "entifier\"Q\n\033ParentTaskExecutionMetadata\022" +
-      "2\n\002id\030\001 \001(\0132&.flyteidl.core.TaskExecutio" +
-      "nIdentifier\")\n\033ParentNodeExecutionMetada" +
-      "ta\022\n\n\002id\030\001 \001(\t\"\357\003\n\022TaskExecutionEvent\022*\n" +
-      "\007task_id\030\001 \001(\0132\031.flyteidl.core.Identifie" +
-      "r\022H\n\030parent_node_execution_id\030\002 \001(\0132&.fl" +
-      "yteidl.core.NodeExecutionIdentifier\022\025\n\rr" +
-      "etry_attempt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyt" +
-      "eidl.core.TaskExecution.Phase\022\023\n\013produce" +
-      "r_id\030\005 \001(\t\022$\n\004logs\030\006 \003(\0132\026.flyteidl.core" +
-      ".TaskLog\022/\n\013occurred_at\030\007 \001(\0132\032.google.p" +
-      "rotobuf.Timestamp\022\021\n\tinput_uri\030\010 \001(\t\022\024\n\n" +
-      "output_uri\030\t \001(\tH\000\022.\n\005error\030\n \001(\0132\035.flyt" +
-      "eidl.core.ExecutionErrorH\000\022,\n\013custom_inf" +
-      "o\030\013 \001(\0132\027.google.protobuf.Struct\022\025\n\rphas" +
-      "e_version\030\014 \001(\rB\017\n\routput_resultB3Z1gith" +
-      "ub.com/lyft/flyteidl/gen/pb-go/flyteidl/" +
-      "eventb\006proto3"
+      "tNodeExecutionMetadata\022\023\n\013retry_group\030\013 " +
+      "\001(\t\022\024\n\014spec_node_id\030\014 \001(\t\022\021\n\tnode_name\030\r" +
+      " \001(\tB\017\n\routput_resultB\021\n\017target_metadata" +
+      "\"X\n\024WorkflowNodeMetadata\022@\n\014execution_id" +
+      "\030\001 \001(\0132*.flyteidl.core.WorkflowExecution" +
+      "Identifier\"Q\n\033ParentTaskExecutionMetadat" +
+      "a\0222\n\002id\030\001 \001(\0132&.flyteidl.core.TaskExecut" +
+      "ionIdentifier\".\n\033ParentNodeExecutionMeta" +
+      "data\022\017\n\007node_id\030\001 \001(\t\"\357\003\n\022TaskExecutionE" +
+      "vent\022*\n\007task_id\030\001 \001(\0132\031.flyteidl.core.Id" +
+      "entifier\022H\n\030parent_node_execution_id\030\002 \001" +
+      "(\0132&.flyteidl.core.NodeExecutionIdentifi" +
+      "er\022\025\n\rretry_attempt\030\003 \001(\r\0221\n\005phase\030\004 \001(\016" +
+      "2\".flyteidl.core.TaskExecution.Phase\022\023\n\013" +
+      "producer_id\030\005 \001(\t\022$\n\004logs\030\006 \003(\0132\026.flytei" +
+      "dl.core.TaskLog\022/\n\013occurred_at\030\007 \001(\0132\032.g" +
+      "oogle.protobuf.Timestamp\022\021\n\tinput_uri\030\010 " +
+      "\001(\t\022\024\n\noutput_uri\030\t \001(\tH\000\022.\n\005error\030\n \001(\013" +
+      "2\035.flyteidl.core.ExecutionErrorH\000\022,\n\013cus" +
+      "tom_info\030\013 \001(\0132\027.google.protobuf.Struct\022" +
+      "\025\n\rphase_version\030\014 \001(\rB\017\n\routput_resultB" +
+      "3Z1github.com/lyft/flyteidl/gen/pb-go/fl" +
+      "yteidl/eventb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10072,7 +10090,7 @@ public final class Event {
     internal_static_flyteidl_event_NodeExecutionEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_NodeExecutionEvent_descriptor,
-        new java.lang.String[] { "Id", "ProducerId", "Phase", "OccurredAt", "InputUri", "OutputUri", "Error", "WorkflowNodeMetadata", "ParentTaskMetadata", "ParentNodeMetadata", "GroupId", "GraphNodeId", "NodeName", "OutputResult", "TargetMetadata", });
+        new java.lang.String[] { "Id", "ProducerId", "Phase", "OccurredAt", "InputUri", "OutputUri", "Error", "WorkflowNodeMetadata", "ParentTaskMetadata", "ParentNodeMetadata", "RetryGroup", "SpecNodeId", "NodeName", "OutputResult", "TargetMetadata", });
     internal_static_flyteidl_event_WorkflowNodeMetadata_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_event_WorkflowNodeMetadata_fieldAccessorTable = new
@@ -10090,7 +10108,7 @@ public final class Event {
     internal_static_flyteidl_event_ParentNodeExecutionMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_ParentNodeExecutionMetadata_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "NodeId", });
     internal_static_flyteidl_event_TaskExecutionEvent_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_event_TaskExecutionEvent_fieldAccessorTable = new

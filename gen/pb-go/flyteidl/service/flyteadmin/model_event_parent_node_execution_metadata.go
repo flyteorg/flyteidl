@@ -10,5 +10,5 @@
 package flyteadmin
 
 type EventParentNodeExecutionMetadata struct {
-	Id string `json:"id,omitempty"`
+	NodeId string `json:"node_id,omitempty"`
 }

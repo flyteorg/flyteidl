@@ -409,11 +409,11 @@ func (m *NodeExecutionMetaData) Validate() error {
 		return nil
 	}
 
-	// no validation rules for GroupId
+	// no validation rules for RetryGroup
 
 	// no validation rules for IsParentNode
 
-	// no validation rules for GraphNodeId
+	// no validation rules for SpecNodeId
 
 	return nil
 }
