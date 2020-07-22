@@ -35,6 +35,10 @@ message NodeExecutionListRequest {
     // Sort ordering.
     // +optional
     Sort sort_by    = 5;
+
+    // Unique identifier of the parent node in the execution
+    // +optional
+    string unique_parent_id = 6;
 }
 
 // Represents a request structure to retrieve a list of node execution entities launched by a specific task.
