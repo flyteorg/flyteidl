@@ -68,7 +68,7 @@ message NodeExecutionEvent {
     // Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
     ParentNodeExecutionMetadata parent_node_metadata	= 10;
 
-    // Retry group to indicate arbitrary grouping like retries, sub workflow
+    // Retry group to indicate grouping of nodes by retries
     string retry_group = 11;
 
     // Identifier of the node in the original workflow/graph
