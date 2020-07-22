@@ -168,13 +168,13 @@ flyteidl.plugins.sagemaker.HPOJobCustom
 .. code-block:: json
 
   {
-    "hpo_job_spec": "{...}",
+    "hpo_job_core": "{...}",
     "training_job_task_template": "{...}"
   }
 
-.. _api_field_flyteidl.plugins.sagemaker.HPOJobCustom.hpo_job_spec:
+.. _api_field_flyteidl.plugins.sagemaker.HPOJobCustom.hpo_job_core:
 
-hpo_job_spec
+hpo_job_core
   (:ref:`flyteidl.plugins.sagemaker.HPOJob <api_msg_flyteidl.plugins.sagemaker.HPOJob>`) 
   
 .. _api_field_flyteidl.plugins.sagemaker.HPOJobCustom.training_job_task_template:

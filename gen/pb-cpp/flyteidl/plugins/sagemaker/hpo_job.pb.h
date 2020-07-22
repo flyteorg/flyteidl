@@ -715,14 +715,14 @@ class HPOJobCustom final :
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;
-  bool has_hpo_job_spec() const;
-  void clear_hpo_job_spec();
-  static const int kHpoJobSpecFieldNumber = 1;
-  const ::flyteidl::plugins::sagemaker::HPOJob& hpo_job_spec() const;
-  ::flyteidl::plugins::sagemaker::HPOJob* release_hpo_job_spec();
-  ::flyteidl::plugins::sagemaker::HPOJob* mutable_hpo_job_spec();
-  void set_allocated_hpo_job_spec(::flyteidl::plugins::sagemaker::HPOJob* hpo_job_spec);
+  // .flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;
+  bool has_hpo_job_core() const;
+  void clear_hpo_job_core();
+  static const int kHpoJobCoreFieldNumber = 1;
+  const ::flyteidl::plugins::sagemaker::HPOJob& hpo_job_core() const;
+  ::flyteidl::plugins::sagemaker::HPOJob* release_hpo_job_core();
+  ::flyteidl::plugins::sagemaker::HPOJob* mutable_hpo_job_core();
+  void set_allocated_hpo_job_core(::flyteidl::plugins::sagemaker::HPOJob* hpo_job_core);
 
   // .flyteidl.core.TaskTemplate training_job_task_template = 2;
   bool has_training_job_task_template() const;
@@ -738,7 +738,7 @@ class HPOJobCustom final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::plugins::sagemaker::HPOJob* hpo_job_spec_;
+  ::flyteidl::plugins::sagemaker::HPOJob* hpo_job_core_;
   ::flyteidl::core::TaskTemplate* training_job_task_template_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto;
@@ -1030,55 +1030,55 @@ inline void HPOJobConfig::set_training_job_early_stopping_type(::flyteidl::plugi
 
 // HPOJobCustom
 
-// .flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;
-inline bool HPOJobCustom::has_hpo_job_spec() const {
-  return this != internal_default_instance() && hpo_job_spec_ != nullptr;
+// .flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;
+inline bool HPOJobCustom::has_hpo_job_core() const {
+  return this != internal_default_instance() && hpo_job_core_ != nullptr;
 }
-inline void HPOJobCustom::clear_hpo_job_spec() {
-  if (GetArenaNoVirtual() == nullptr && hpo_job_spec_ != nullptr) {
-    delete hpo_job_spec_;
+inline void HPOJobCustom::clear_hpo_job_core() {
+  if (GetArenaNoVirtual() == nullptr && hpo_job_core_ != nullptr) {
+    delete hpo_job_core_;
   }
-  hpo_job_spec_ = nullptr;
+  hpo_job_core_ = nullptr;
 }
-inline const ::flyteidl::plugins::sagemaker::HPOJob& HPOJobCustom::hpo_job_spec() const {
-  const ::flyteidl::plugins::sagemaker::HPOJob* p = hpo_job_spec_;
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.HPOJobCustom.hpo_job_spec)
+inline const ::flyteidl::plugins::sagemaker::HPOJob& HPOJobCustom::hpo_job_core() const {
+  const ::flyteidl::plugins::sagemaker::HPOJob* p = hpo_job_core_;
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.HPOJobCustom.hpo_job_core)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::sagemaker::HPOJob*>(
       &::flyteidl::plugins::sagemaker::_HPOJob_default_instance_);
 }
-inline ::flyteidl::plugins::sagemaker::HPOJob* HPOJobCustom::release_hpo_job_spec() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.HPOJobCustom.hpo_job_spec)
+inline ::flyteidl::plugins::sagemaker::HPOJob* HPOJobCustom::release_hpo_job_core() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.HPOJobCustom.hpo_job_core)
   
-  ::flyteidl::plugins::sagemaker::HPOJob* temp = hpo_job_spec_;
-  hpo_job_spec_ = nullptr;
+  ::flyteidl::plugins::sagemaker::HPOJob* temp = hpo_job_core_;
+  hpo_job_core_ = nullptr;
   return temp;
 }
-inline ::flyteidl::plugins::sagemaker::HPOJob* HPOJobCustom::mutable_hpo_job_spec() {
+inline ::flyteidl::plugins::sagemaker::HPOJob* HPOJobCustom::mutable_hpo_job_core() {
   
-  if (hpo_job_spec_ == nullptr) {
+  if (hpo_job_core_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::plugins::sagemaker::HPOJob>(GetArenaNoVirtual());
-    hpo_job_spec_ = p;
+    hpo_job_core_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.HPOJobCustom.hpo_job_spec)
-  return hpo_job_spec_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.HPOJobCustom.hpo_job_core)
+  return hpo_job_core_;
 }
-inline void HPOJobCustom::set_allocated_hpo_job_spec(::flyteidl::plugins::sagemaker::HPOJob* hpo_job_spec) {
+inline void HPOJobCustom::set_allocated_hpo_job_core(::flyteidl::plugins::sagemaker::HPOJob* hpo_job_core) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete hpo_job_spec_;
+    delete hpo_job_core_;
   }
-  if (hpo_job_spec) {
+  if (hpo_job_core) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      hpo_job_spec = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, hpo_job_spec, submessage_arena);
+      hpo_job_core = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, hpo_job_core, submessage_arena);
     }
     
   } else {
     
   }
-  hpo_job_spec_ = hpo_job_spec;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.HPOJobCustom.hpo_job_spec)
+  hpo_job_core_ = hpo_job_core;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.HPOJobCustom.hpo_job_core)
 }
 
 // .flyteidl.core.TaskTemplate training_job_task_template = 2;

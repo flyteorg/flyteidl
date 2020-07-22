@@ -2736,17 +2736,17 @@ public final class HpoJob {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;</code>
      */
-    boolean hasHpoJobSpec();
+    boolean hasHpoJobCore();
     /**
-     * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;</code>
      */
-    flyteidl.plugins.sagemaker.HpoJob.HPOJob getHpoJobSpec();
+    flyteidl.plugins.sagemaker.HpoJob.HPOJob getHpoJobCore();
     /**
-     * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;</code>
      */
-    flyteidl.plugins.sagemaker.HpoJob.HPOJobOrBuilder getHpoJobSpecOrBuilder();
+    flyteidl.plugins.sagemaker.HpoJob.HPOJobOrBuilder getHpoJobCoreOrBuilder();
 
     /**
      * <code>.flyteidl.core.TaskTemplate training_job_task_template = 2;</code>
@@ -2802,13 +2802,13 @@ public final class HpoJob {
               break;
             case 10: {
               flyteidl.plugins.sagemaker.HpoJob.HPOJob.Builder subBuilder = null;
-              if (hpoJobSpec_ != null) {
-                subBuilder = hpoJobSpec_.toBuilder();
+              if (hpoJobCore_ != null) {
+                subBuilder = hpoJobCore_.toBuilder();
               }
-              hpoJobSpec_ = input.readMessage(flyteidl.plugins.sagemaker.HpoJob.HPOJob.parser(), extensionRegistry);
+              hpoJobCore_ = input.readMessage(flyteidl.plugins.sagemaker.HpoJob.HPOJob.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(hpoJobSpec_);
-                hpoJobSpec_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(hpoJobCore_);
+                hpoJobCore_ = subBuilder.buildPartial();
               }
 
               break;
@@ -2858,25 +2858,25 @@ public final class HpoJob {
               flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom.class, flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom.Builder.class);
     }
 
-    public static final int HPO_JOB_SPEC_FIELD_NUMBER = 1;
-    private flyteidl.plugins.sagemaker.HpoJob.HPOJob hpoJobSpec_;
+    public static final int HPO_JOB_CORE_FIELD_NUMBER = 1;
+    private flyteidl.plugins.sagemaker.HpoJob.HPOJob hpoJobCore_;
     /**
-     * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;</code>
      */
-    public boolean hasHpoJobSpec() {
-      return hpoJobSpec_ != null;
+    public boolean hasHpoJobCore() {
+      return hpoJobCore_ != null;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;</code>
      */
-    public flyteidl.plugins.sagemaker.HpoJob.HPOJob getHpoJobSpec() {
-      return hpoJobSpec_ == null ? flyteidl.plugins.sagemaker.HpoJob.HPOJob.getDefaultInstance() : hpoJobSpec_;
+    public flyteidl.plugins.sagemaker.HpoJob.HPOJob getHpoJobCore() {
+      return hpoJobCore_ == null ? flyteidl.plugins.sagemaker.HpoJob.HPOJob.getDefaultInstance() : hpoJobCore_;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;</code>
      */
-    public flyteidl.plugins.sagemaker.HpoJob.HPOJobOrBuilder getHpoJobSpecOrBuilder() {
-      return getHpoJobSpec();
+    public flyteidl.plugins.sagemaker.HpoJob.HPOJobOrBuilder getHpoJobCoreOrBuilder() {
+      return getHpoJobCore();
     }
 
     public static final int TRAINING_JOB_TASK_TEMPLATE_FIELD_NUMBER = 2;
@@ -2914,8 +2914,8 @@ public final class HpoJob {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (hpoJobSpec_ != null) {
-        output.writeMessage(1, getHpoJobSpec());
+      if (hpoJobCore_ != null) {
+        output.writeMessage(1, getHpoJobCore());
       }
       if (trainingJobTaskTemplate_ != null) {
         output.writeMessage(2, getTrainingJobTaskTemplate());
@@ -2929,9 +2929,9 @@ public final class HpoJob {
       if (size != -1) return size;
 
       size = 0;
-      if (hpoJobSpec_ != null) {
+      if (hpoJobCore_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getHpoJobSpec());
+          .computeMessageSize(1, getHpoJobCore());
       }
       if (trainingJobTaskTemplate_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -2952,10 +2952,10 @@ public final class HpoJob {
       }
       flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom other = (flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom) obj;
 
-      if (hasHpoJobSpec() != other.hasHpoJobSpec()) return false;
-      if (hasHpoJobSpec()) {
-        if (!getHpoJobSpec()
-            .equals(other.getHpoJobSpec())) return false;
+      if (hasHpoJobCore() != other.hasHpoJobCore()) return false;
+      if (hasHpoJobCore()) {
+        if (!getHpoJobCore()
+            .equals(other.getHpoJobCore())) return false;
       }
       if (hasTrainingJobTaskTemplate() != other.hasTrainingJobTaskTemplate()) return false;
       if (hasTrainingJobTaskTemplate()) {
@@ -2973,9 +2973,9 @@ public final class HpoJob {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasHpoJobSpec()) {
-        hash = (37 * hash) + HPO_JOB_SPEC_FIELD_NUMBER;
-        hash = (53 * hash) + getHpoJobSpec().hashCode();
+      if (hasHpoJobCore()) {
+        hash = (37 * hash) + HPO_JOB_CORE_FIELD_NUMBER;
+        hash = (53 * hash) + getHpoJobCore().hashCode();
       }
       if (hasTrainingJobTaskTemplate()) {
         hash = (37 * hash) + TRAINING_JOB_TASK_TEMPLATE_FIELD_NUMBER;
@@ -3114,11 +3114,11 @@ public final class HpoJob {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (hpoJobSpecBuilder_ == null) {
-          hpoJobSpec_ = null;
+        if (hpoJobCoreBuilder_ == null) {
+          hpoJobCore_ = null;
         } else {
-          hpoJobSpec_ = null;
-          hpoJobSpecBuilder_ = null;
+          hpoJobCore_ = null;
+          hpoJobCoreBuilder_ = null;
         }
         if (trainingJobTaskTemplateBuilder_ == null) {
           trainingJobTaskTemplate_ = null;
@@ -3152,10 +3152,10 @@ public final class HpoJob {
       @java.lang.Override
       public flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom buildPartial() {
         flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom result = new flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom(this);
-        if (hpoJobSpecBuilder_ == null) {
-          result.hpoJobSpec_ = hpoJobSpec_;
+        if (hpoJobCoreBuilder_ == null) {
+          result.hpoJobCore_ = hpoJobCore_;
         } else {
-          result.hpoJobSpec_ = hpoJobSpecBuilder_.build();
+          result.hpoJobCore_ = hpoJobCoreBuilder_.build();
         }
         if (trainingJobTaskTemplateBuilder_ == null) {
           result.trainingJobTaskTemplate_ = trainingJobTaskTemplate_;
@@ -3210,8 +3210,8 @@ public final class HpoJob {
 
       public Builder mergeFrom(flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom other) {
         if (other == flyteidl.plugins.sagemaker.HpoJob.HPOJobCustom.getDefaultInstance()) return this;
-        if (other.hasHpoJobSpec()) {
-          mergeHpoJobSpec(other.getHpoJobSpec());
+        if (other.hasHpoJobCore()) {
+          mergeHpoJobCore(other.getHpoJobCore());
         }
         if (other.hasTrainingJobTaskTemplate()) {
           mergeTrainingJobTaskTemplate(other.getTrainingJobTaskTemplate());
@@ -3245,121 +3245,121 @@ public final class HpoJob {
         return this;
       }
 
-      private flyteidl.plugins.sagemaker.HpoJob.HPOJob hpoJobSpec_;
+      private flyteidl.plugins.sagemaker.HpoJob.HPOJob hpoJobCore_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.sagemaker.HpoJob.HPOJob, flyteidl.plugins.sagemaker.HpoJob.HPOJob.Builder, flyteidl.plugins.sagemaker.HpoJob.HPOJobOrBuilder> hpoJobSpecBuilder_;
+          flyteidl.plugins.sagemaker.HpoJob.HPOJob, flyteidl.plugins.sagemaker.HpoJob.HPOJob.Builder, flyteidl.plugins.sagemaker.HpoJob.HPOJobOrBuilder> hpoJobCoreBuilder_;
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;</code>
        */
-      public boolean hasHpoJobSpec() {
-        return hpoJobSpecBuilder_ != null || hpoJobSpec_ != null;
+      public boolean hasHpoJobCore() {
+        return hpoJobCoreBuilder_ != null || hpoJobCore_ != null;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;</code>
        */
-      public flyteidl.plugins.sagemaker.HpoJob.HPOJob getHpoJobSpec() {
-        if (hpoJobSpecBuilder_ == null) {
-          return hpoJobSpec_ == null ? flyteidl.plugins.sagemaker.HpoJob.HPOJob.getDefaultInstance() : hpoJobSpec_;
+      public flyteidl.plugins.sagemaker.HpoJob.HPOJob getHpoJobCore() {
+        if (hpoJobCoreBuilder_ == null) {
+          return hpoJobCore_ == null ? flyteidl.plugins.sagemaker.HpoJob.HPOJob.getDefaultInstance() : hpoJobCore_;
         } else {
-          return hpoJobSpecBuilder_.getMessage();
+          return hpoJobCoreBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;</code>
        */
-      public Builder setHpoJobSpec(flyteidl.plugins.sagemaker.HpoJob.HPOJob value) {
-        if (hpoJobSpecBuilder_ == null) {
+      public Builder setHpoJobCore(flyteidl.plugins.sagemaker.HpoJob.HPOJob value) {
+        if (hpoJobCoreBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          hpoJobSpec_ = value;
+          hpoJobCore_ = value;
           onChanged();
         } else {
-          hpoJobSpecBuilder_.setMessage(value);
+          hpoJobCoreBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;</code>
        */
-      public Builder setHpoJobSpec(
+      public Builder setHpoJobCore(
           flyteidl.plugins.sagemaker.HpoJob.HPOJob.Builder builderForValue) {
-        if (hpoJobSpecBuilder_ == null) {
-          hpoJobSpec_ = builderForValue.build();
+        if (hpoJobCoreBuilder_ == null) {
+          hpoJobCore_ = builderForValue.build();
           onChanged();
         } else {
-          hpoJobSpecBuilder_.setMessage(builderForValue.build());
+          hpoJobCoreBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;</code>
        */
-      public Builder mergeHpoJobSpec(flyteidl.plugins.sagemaker.HpoJob.HPOJob value) {
-        if (hpoJobSpecBuilder_ == null) {
-          if (hpoJobSpec_ != null) {
-            hpoJobSpec_ =
-              flyteidl.plugins.sagemaker.HpoJob.HPOJob.newBuilder(hpoJobSpec_).mergeFrom(value).buildPartial();
+      public Builder mergeHpoJobCore(flyteidl.plugins.sagemaker.HpoJob.HPOJob value) {
+        if (hpoJobCoreBuilder_ == null) {
+          if (hpoJobCore_ != null) {
+            hpoJobCore_ =
+              flyteidl.plugins.sagemaker.HpoJob.HPOJob.newBuilder(hpoJobCore_).mergeFrom(value).buildPartial();
           } else {
-            hpoJobSpec_ = value;
+            hpoJobCore_ = value;
           }
           onChanged();
         } else {
-          hpoJobSpecBuilder_.mergeFrom(value);
+          hpoJobCoreBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;</code>
        */
-      public Builder clearHpoJobSpec() {
-        if (hpoJobSpecBuilder_ == null) {
-          hpoJobSpec_ = null;
+      public Builder clearHpoJobCore() {
+        if (hpoJobCoreBuilder_ == null) {
+          hpoJobCore_ = null;
           onChanged();
         } else {
-          hpoJobSpec_ = null;
-          hpoJobSpecBuilder_ = null;
+          hpoJobCore_ = null;
+          hpoJobCoreBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;</code>
        */
-      public flyteidl.plugins.sagemaker.HpoJob.HPOJob.Builder getHpoJobSpecBuilder() {
+      public flyteidl.plugins.sagemaker.HpoJob.HPOJob.Builder getHpoJobCoreBuilder() {
         
         onChanged();
-        return getHpoJobSpecFieldBuilder().getBuilder();
+        return getHpoJobCoreFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;</code>
        */
-      public flyteidl.plugins.sagemaker.HpoJob.HPOJobOrBuilder getHpoJobSpecOrBuilder() {
-        if (hpoJobSpecBuilder_ != null) {
-          return hpoJobSpecBuilder_.getMessageOrBuilder();
+      public flyteidl.plugins.sagemaker.HpoJob.HPOJobOrBuilder getHpoJobCoreOrBuilder() {
+        if (hpoJobCoreBuilder_ != null) {
+          return hpoJobCoreBuilder_.getMessageOrBuilder();
         } else {
-          return hpoJobSpec_ == null ?
-              flyteidl.plugins.sagemaker.HpoJob.HPOJob.getDefaultInstance() : hpoJobSpec_;
+          return hpoJobCore_ == null ?
+              flyteidl.plugins.sagemaker.HpoJob.HPOJob.getDefaultInstance() : hpoJobCore_;
         }
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.plugins.sagemaker.HpoJob.HPOJob, flyteidl.plugins.sagemaker.HpoJob.HPOJob.Builder, flyteidl.plugins.sagemaker.HpoJob.HPOJobOrBuilder> 
-          getHpoJobSpecFieldBuilder() {
-        if (hpoJobSpecBuilder_ == null) {
-          hpoJobSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getHpoJobCoreFieldBuilder() {
+        if (hpoJobCoreBuilder_ == null) {
+          hpoJobCoreBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               flyteidl.plugins.sagemaker.HpoJob.HPOJob, flyteidl.plugins.sagemaker.HpoJob.HPOJob.Builder, flyteidl.plugins.sagemaker.HpoJob.HPOJobOrBuilder>(
-                  getHpoJobSpec(),
+                  getHpoJobCore(),
                   getParentForChildren(),
                   isClean());
-          hpoJobSpec_ = null;
+          hpoJobCore_ = null;
         }
-        return hpoJobSpecBuilder_;
+        return hpoJobCoreBuilder_;
       }
 
       private flyteidl.core.Tasks.TaskTemplate trainingJobTaskTemplate_;
@@ -3587,7 +3587,7 @@ public final class HpoJob {
       "ngType\"8\n\034HyperparameterTuningStrategy\022\014" +
       "\n\010BAYESIAN\020\000\022\n\n\006RANDOM\020\001\"1\n\034TrainingJobE" +
       "arlyStoppingType\022\007\n\003OFF\020\000\022\010\n\004AUTO\020\001\"\211\001\n\014" +
-      "HPOJobCustom\0228\n\014hpo_job_spec\030\001 \001(\0132\".fly" +
+      "HPOJobCustom\0228\n\014hpo_job_core\030\001 \001(\0132\".fly" +
       "teidl.plugins.sagemaker.HPOJob\022?\n\032traini" +
       "ng_job_task_template\030\002 \001(\0132\033.flyteidl.co" +
       "re.TaskTemplateB5Z3github.com/lyft/flyte" +
@@ -3631,7 +3631,7 @@ public final class HpoJob {
     internal_static_flyteidl_plugins_sagemaker_HPOJobCustom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_HPOJobCustom_descriptor,
-        new java.lang.String[] { "HpoJobSpec", "TrainingJobTaskTemplate", });
+        new java.lang.String[] { "HpoJobCore", "TrainingJobTaskTemplate", });
     flyteidl.plugins.sagemaker.ParameterRangesOuterClass.getDescriptor();
     flyteidl.plugins.sagemaker.TrainingJobOuterClass.getDescriptor();
     flyteidl.core.Tasks.getDescriptor();
