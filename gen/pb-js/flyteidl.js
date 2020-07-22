@@ -22685,6 +22685,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [token] NodeExecutionListRequest token
              * @property {string|null} [filters] NodeExecutionListRequest filters
              * @property {flyteidl.admin.ISort|null} [sortBy] NodeExecutionListRequest sortBy
+             * @property {string|null} [uniqueParentId] NodeExecutionListRequest uniqueParentId
              */
 
             /**
@@ -22743,6 +22744,14 @@ export const flyteidl = $root.flyteidl = (() => {
             NodeExecutionListRequest.prototype.sortBy = null;
 
             /**
+             * NodeExecutionListRequest uniqueParentId.
+             * @member {string} uniqueParentId
+             * @memberof flyteidl.admin.NodeExecutionListRequest
+             * @instance
+             */
+            NodeExecutionListRequest.prototype.uniqueParentId = "";
+
+            /**
              * Creates a new NodeExecutionListRequest instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.NodeExecutionListRequest
@@ -22776,6 +22785,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.filters);
                 if (message.sortBy != null && message.hasOwnProperty("sortBy"))
                     $root.flyteidl.admin.Sort.encode(message.sortBy, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.uniqueParentId != null && message.hasOwnProperty("uniqueParentId"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.uniqueParentId);
                 return writer;
             };
 
@@ -22811,6 +22822,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 5:
                         message.sortBy = $root.flyteidl.admin.Sort.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.uniqueParentId = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -22850,6 +22864,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "sortBy." + error;
                 }
+                if (message.uniqueParentId != null && message.hasOwnProperty("uniqueParentId"))
+                    if (!$util.isString(message.uniqueParentId))
+                        return "uniqueParentId: string expected";
                 return null;
             };
 

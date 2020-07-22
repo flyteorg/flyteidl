@@ -1477,6 +1477,13 @@
               "ASCENDING"
             ],
             "default": "DESCENDING"
+          },
+          {
+            "name": "unique_parent_id",
+            "description": "Unique identifier of the parent node in the execution\n+optional.",
+            "in": "query",
+            "required": false,
+            "type": "string"
           }
         ],
         "tags": [

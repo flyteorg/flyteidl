@@ -1270,6 +1270,13 @@ paths:
         - "ASCENDING"
         x-exportParamName: "SortByDirection"
         x-optionalDataType: "String"
+      - name: "unique_parent_id"
+        in: "query"
+        description: "Unique identifier of the parent node in the execution\n+optional."
+        required: false
+        type: "string"
+        x-exportParamName: "UniqueParentId"
+        x-optionalDataType: "String"
       responses:
         200:
           description: "A successful response."

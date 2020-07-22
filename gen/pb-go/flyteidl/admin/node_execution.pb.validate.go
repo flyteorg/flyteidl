@@ -151,6 +151,8 @@ func (m *NodeExecutionListRequest) Validate() error {
 		}
 	}
 
+	// no validation rules for UniqueParentId
+
 	return nil
 }
 

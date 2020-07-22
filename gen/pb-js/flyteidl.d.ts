@@ -9497,6 +9497,9 @@ export namespace flyteidl {
 
             /** NodeExecutionListRequest sortBy */
             sortBy?: (flyteidl.admin.ISort|null);
+
+            /** NodeExecutionListRequest uniqueParentId */
+            uniqueParentId?: (string|null);
         }
 
         /** Represents a NodeExecutionListRequest. */
@@ -9522,6 +9525,9 @@ export namespace flyteidl {
 
             /** NodeExecutionListRequest sortBy. */
             public sortBy?: (flyteidl.admin.ISort|null);
+
+            /** NodeExecutionListRequest uniqueParentId. */
+            public uniqueParentId: string;
 
             /**
              * Creates a new NodeExecutionListRequest instance using the specified properties.

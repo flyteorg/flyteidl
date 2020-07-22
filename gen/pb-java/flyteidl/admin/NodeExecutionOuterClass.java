@@ -797,6 +797,26 @@ public final class NodeExecutionOuterClass {
      * <code>.flyteidl.admin.Sort sort_by = 5;</code>
      */
     flyteidl.admin.Common.SortOrBuilder getSortByOrBuilder();
+
+    /**
+     * <pre>
+     * Unique identifier of the parent node in the execution
+     * +optional
+     * </pre>
+     *
+     * <code>string unique_parent_id = 6;</code>
+     */
+    java.lang.String getUniqueParentId();
+    /**
+     * <pre>
+     * Unique identifier of the parent node in the execution
+     * +optional
+     * </pre>
+     *
+     * <code>string unique_parent_id = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getUniqueParentIdBytes();
   }
   /**
    * <pre>
@@ -817,6 +837,7 @@ public final class NodeExecutionOuterClass {
     private NodeExecutionListRequest() {
       token_ = "";
       filters_ = "";
+      uniqueParentId_ = "";
     }
 
     @java.lang.Override
@@ -884,6 +905,12 @@ public final class NodeExecutionOuterClass {
                 sortBy_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uniqueParentId_ = s;
               break;
             }
             default: {
@@ -1092,6 +1119,50 @@ public final class NodeExecutionOuterClass {
       return getSortBy();
     }
 
+    public static final int UNIQUE_PARENT_ID_FIELD_NUMBER = 6;
+    private volatile java.lang.Object uniqueParentId_;
+    /**
+     * <pre>
+     * Unique identifier of the parent node in the execution
+     * +optional
+     * </pre>
+     *
+     * <code>string unique_parent_id = 6;</code>
+     */
+    public java.lang.String getUniqueParentId() {
+      java.lang.Object ref = uniqueParentId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uniqueParentId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Unique identifier of the parent node in the execution
+     * +optional
+     * </pre>
+     *
+     * <code>string unique_parent_id = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUniqueParentIdBytes() {
+      java.lang.Object ref = uniqueParentId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uniqueParentId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1121,6 +1192,9 @@ public final class NodeExecutionOuterClass {
       if (sortBy_ != null) {
         output.writeMessage(5, getSortBy());
       }
+      if (!getUniqueParentIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, uniqueParentId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1147,6 +1221,9 @@ public final class NodeExecutionOuterClass {
       if (sortBy_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getSortBy());
+      }
+      if (!getUniqueParentIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, uniqueParentId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1179,6 +1256,8 @@ public final class NodeExecutionOuterClass {
         if (!getSortBy()
             .equals(other.getSortBy())) return false;
       }
+      if (!getUniqueParentId()
+          .equals(other.getUniqueParentId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1204,6 +1283,8 @@ public final class NodeExecutionOuterClass {
         hash = (37 * hash) + SORT_BY_FIELD_NUMBER;
         hash = (53 * hash) + getSortBy().hashCode();
       }
+      hash = (37 * hash) + UNIQUE_PARENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUniqueParentId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1359,6 +1440,8 @@ public final class NodeExecutionOuterClass {
           sortBy_ = null;
           sortByBuilder_ = null;
         }
+        uniqueParentId_ = "";
+
         return this;
       }
 
@@ -1398,6 +1481,7 @@ public final class NodeExecutionOuterClass {
         } else {
           result.sortBy_ = sortByBuilder_.build();
         }
+        result.uniqueParentId_ = uniqueParentId_;
         onBuilt();
         return result;
       }
@@ -1462,6 +1546,10 @@ public final class NodeExecutionOuterClass {
         }
         if (other.hasSortBy()) {
           mergeSortBy(other.getSortBy());
+        }
+        if (!other.getUniqueParentId().isEmpty()) {
+          uniqueParentId_ = other.uniqueParentId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2041,6 +2129,100 @@ public final class NodeExecutionOuterClass {
           sortBy_ = null;
         }
         return sortByBuilder_;
+      }
+
+      private java.lang.Object uniqueParentId_ = "";
+      /**
+       * <pre>
+       * Unique identifier of the parent node in the execution
+       * +optional
+       * </pre>
+       *
+       * <code>string unique_parent_id = 6;</code>
+       */
+      public java.lang.String getUniqueParentId() {
+        java.lang.Object ref = uniqueParentId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uniqueParentId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Unique identifier of the parent node in the execution
+       * +optional
+       * </pre>
+       *
+       * <code>string unique_parent_id = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUniqueParentIdBytes() {
+        java.lang.Object ref = uniqueParentId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uniqueParentId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Unique identifier of the parent node in the execution
+       * +optional
+       * </pre>
+       *
+       * <code>string unique_parent_id = 6;</code>
+       */
+      public Builder setUniqueParentId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uniqueParentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Unique identifier of the parent node in the execution
+       * +optional
+       * </pre>
+       *
+       * <code>string unique_parent_id = 6;</code>
+       */
+      public Builder clearUniqueParentId() {
+        
+        uniqueParentId_ = getDefaultInstance().getUniqueParentId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Unique identifier of the parent node in the execution
+       * +optional
+       * </pre>
+       *
+       * <code>string unique_parent_id = 6;</code>
+       */
+      public Builder setUniqueParentIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uniqueParentId_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -11346,46 +11528,46 @@ public final class NodeExecutionOuterClass {
       "uf/timestamp.proto\032\036google/protobuf/dura" +
       "tion.proto\"M\n\027NodeExecutionGetRequest\0222\n" +
       "\002id\030\001 \001(\0132&.flyteidl.core.NodeExecutionI" +
-      "dentifier\"\273\001\n\030NodeExecutionListRequest\022I" +
+      "dentifier\"\325\001\n\030NodeExecutionListRequest\022I" +
       "\n\025workflow_execution_id\030\001 \001(\0132*.flyteidl" +
       ".core.WorkflowExecutionIdentifier\022\r\n\005lim" +
       "it\030\002 \001(\r\022\r\n\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t" +
-      "\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin.Sort\"" +
-      "\272\001\n\037NodeExecutionForTaskListRequest\022A\n\021t" +
-      "ask_execution_id\030\001 \001(\0132&.flyteidl.core.T" +
-      "askExecutionIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n" +
-      "\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by" +
-      "\030\005 \001(\0132\024.flyteidl.admin.Sort\"\306\001\n\rNodeExe" +
-      "cution\0222\n\002id\030\001 \001(\0132&.flyteidl.core.NodeE" +
-      "xecutionIdentifier\022\021\n\tinput_uri\030\002 \001(\t\0225\n" +
-      "\007closure\030\003 \001(\0132$.flyteidl.admin.NodeExec" +
-      "utionClosure\0227\n\010metadata\030\004 \001(\0132%.flyteid" +
-      "l.admin.NodeExecutionMetaData\"Z\n\025NodeExe" +
-      "cutionMetaData\022\023\n\013retry_group\030\001 \001(\t\022\026\n\016i" +
-      "s_parent_node\030\002 \001(\010\022\024\n\014spec_node_id\030\003 \001(" +
-      "\t\"Z\n\021NodeExecutionList\0226\n\017node_execution" +
-      "s\030\001 \003(\0132\035.flyteidl.admin.NodeExecution\022\r" +
-      "\n\005token\030\002 \001(\t\"\270\003\n\024NodeExecutionClosure\022\024" +
-      "\n\noutput_uri\030\001 \001(\tH\000\022.\n\005error\030\002 \001(\0132\035.fl" +
-      "yteidl.core.ExecutionErrorH\000\0221\n\005phase\030\003 " +
-      "\001(\0162\".flyteidl.core.NodeExecution.Phase\022" +
-      ".\n\nstarted_at\030\004 \001(\0132\032.google.protobuf.Ti" +
-      "mestamp\022+\n\010duration\030\005 \001(\0132\031.google.proto" +
-      "buf.Duration\022.\n\ncreated_at\030\006 \001(\0132\032.googl" +
-      "e.protobuf.Timestamp\022.\n\nupdated_at\030\007 \001(\013" +
-      "2\032.google.protobuf.Timestamp\022F\n\026workflow" +
-      "_node_metadata\030\010 \001(\0132$.flyteidl.admin.Wo" +
-      "rkflowNodeMetadataH\001B\017\n\routput_resultB\021\n" +
-      "\017target_metadata\"W\n\024WorkflowNodeMetadata" +
-      "\022?\n\013executionId\030\001 \001(\0132*.flyteidl.core.Wo" +
-      "rkflowExecutionIdentifier\"Q\n\033NodeExecuti" +
-      "onGetDataRequest\0222\n\002id\030\001 \001(\0132&.flyteidl." +
-      "core.NodeExecutionIdentifier\"q\n\034NodeExec" +
-      "utionGetDataResponse\022\'\n\006inputs\030\001 \001(\0132\027.f" +
-      "lyteidl.admin.UrlBlob\022(\n\007outputs\030\002 \001(\0132\027" +
-      ".flyteidl.admin.UrlBlobB3Z1github.com/ly" +
-      "ft/flyteidl/gen/pb-go/flyteidl/adminb\006pr" +
-      "oto3"
+      "\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin.Sort\022" +
+      "\030\n\020unique_parent_id\030\006 \001(\t\"\272\001\n\037NodeExecut" +
+      "ionForTaskListRequest\022A\n\021task_execution_" +
+      "id\030\001 \001(\0132&.flyteidl.core.TaskExecutionId" +
+      "entifier\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030\003 \001(\t\022\017" +
+      "\n\007filters\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyte" +
+      "idl.admin.Sort\"\306\001\n\rNodeExecution\0222\n\002id\030\001" +
+      " \001(\0132&.flyteidl.core.NodeExecutionIdenti" +
+      "fier\022\021\n\tinput_uri\030\002 \001(\t\0225\n\007closure\030\003 \001(\013" +
+      "2$.flyteidl.admin.NodeExecutionClosure\0227" +
+      "\n\010metadata\030\004 \001(\0132%.flyteidl.admin.NodeEx" +
+      "ecutionMetaData\"Z\n\025NodeExecutionMetaData" +
+      "\022\023\n\013retry_group\030\001 \001(\t\022\026\n\016is_parent_node\030" +
+      "\002 \001(\010\022\024\n\014spec_node_id\030\003 \001(\t\"Z\n\021NodeExecu" +
+      "tionList\0226\n\017node_executions\030\001 \003(\0132\035.flyt" +
+      "eidl.admin.NodeExecution\022\r\n\005token\030\002 \001(\t\"" +
+      "\270\003\n\024NodeExecutionClosure\022\024\n\noutput_uri\030\001" +
+      " \001(\tH\000\022.\n\005error\030\002 \001(\0132\035.flyteidl.core.Ex" +
+      "ecutionErrorH\000\0221\n\005phase\030\003 \001(\0162\".flyteidl" +
+      ".core.NodeExecution.Phase\022.\n\nstarted_at\030" +
+      "\004 \001(\0132\032.google.protobuf.Timestamp\022+\n\010dur" +
+      "ation\030\005 \001(\0132\031.google.protobuf.Duration\022." +
+      "\n\ncreated_at\030\006 \001(\0132\032.google.protobuf.Tim" +
+      "estamp\022.\n\nupdated_at\030\007 \001(\0132\032.google.prot" +
+      "obuf.Timestamp\022F\n\026workflow_node_metadata" +
+      "\030\010 \001(\0132$.flyteidl.admin.WorkflowNodeMeta" +
+      "dataH\001B\017\n\routput_resultB\021\n\017target_metada" +
+      "ta\"W\n\024WorkflowNodeMetadata\022?\n\013executionI" +
+      "d\030\001 \001(\0132*.flyteidl.core.WorkflowExecutio" +
+      "nIdentifier\"Q\n\033NodeExecutionGetDataReque" +
+      "st\0222\n\002id\030\001 \001(\0132&.flyteidl.core.NodeExecu" +
+      "tionIdentifier\"q\n\034NodeExecutionGetDataRe" +
+      "sponse\022\'\n\006inputs\030\001 \001(\0132\027.flyteidl.admin." +
+      "UrlBlob\022(\n\007outputs\030\002 \001(\0132\027.flyteidl.admi" +
+      "n.UrlBlobB3Z1github.com/lyft/flyteidl/ge" +
+      "n/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -11415,7 +11597,7 @@ public final class NodeExecutionOuterClass {
     internal_static_flyteidl_admin_NodeExecutionListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NodeExecutionListRequest_descriptor,
-        new java.lang.String[] { "WorkflowExecutionId", "Limit", "Token", "Filters", "SortBy", });
+        new java.lang.String[] { "WorkflowExecutionId", "Limit", "Token", "Filters", "SortBy", "UniqueParentId", });
     internal_static_flyteidl_admin_NodeExecutionForTaskListRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_admin_NodeExecutionForTaskListRequest_fieldAccessorTable = new
