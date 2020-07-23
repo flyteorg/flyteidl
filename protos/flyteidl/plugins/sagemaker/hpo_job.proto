@@ -43,6 +43,6 @@ message HPOJobConfig {
 }
 
 message HPOJobCustom {
-    HPOJob hpo_job_spec = 1;
+    HPOJobConfig hpo_job_config = 1;
     core.TaskTemplate training_job_task_template = 2;
 }
