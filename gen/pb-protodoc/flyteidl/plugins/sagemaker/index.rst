@@ -6,6 +6,6 @@ sagemaker
 	:caption: sagemaker
 	:name: sagemakertoc
 
-	hpo_job.proto
-	parameter_ranges.proto
-	training_job.proto
+	hpojob.proto
+	parameterranges.proto
+	trainingjob.proto
