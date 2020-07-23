@@ -283,10 +283,10 @@ func (m *HPOJobCustom) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetHpoJobCore()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetHpoJobSpec()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return HPOJobCustomValidationError{
-				field:  "HpoJobCore",
+				field:  "HpoJobSpec",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}

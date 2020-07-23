@@ -145,7 +145,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fsagemaker_2fhp
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJobCustom, hpo_job_core_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJobCustom, hpo_job_spec_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HPOJobCustom, training_job_task_template_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -196,7 +196,7 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_
   "ngType\"8\n\034HyperparameterTuningStrategy\022\014"
   "\n\010BAYESIAN\020\000\022\n\n\006RANDOM\020\001\"1\n\034TrainingJobE"
   "arlyStoppingType\022\007\n\003OFF\020\000\022\010\n\004AUTO\020\001\"\211\001\n\014"
-  "HPOJobCustom\0228\n\014hpo_job_core\030\001 \001(\0132\".fly"
+  "HPOJobCustom\0228\n\014hpo_job_spec\030\001 \001(\0132\".fly"
   "teidl.plugins.sagemaker.HPOJob\022\?\n\032traini"
   "ng_job_task_template\030\002 \001(\0132\033.flyteidl.co"
   "re.TaskTemplateB5Z3github.com/lyft/flyte"
@@ -1477,20 +1477,20 @@ void HPOJobConfig::InternalSwap(HPOJobConfig* other) {
 // ===================================================================
 
 void HPOJobCustom::InitAsDefaultInstance() {
-  ::flyteidl::plugins::sagemaker::_HPOJobCustom_default_instance_._instance.get_mutable()->hpo_job_core_ = const_cast< ::flyteidl::plugins::sagemaker::HPOJob*>(
+  ::flyteidl::plugins::sagemaker::_HPOJobCustom_default_instance_._instance.get_mutable()->hpo_job_spec_ = const_cast< ::flyteidl::plugins::sagemaker::HPOJob*>(
       ::flyteidl::plugins::sagemaker::HPOJob::internal_default_instance());
   ::flyteidl::plugins::sagemaker::_HPOJobCustom_default_instance_._instance.get_mutable()->training_job_task_template_ = const_cast< ::flyteidl::core::TaskTemplate*>(
       ::flyteidl::core::TaskTemplate::internal_default_instance());
 }
 class HPOJobCustom::HasBitSetters {
  public:
-  static const ::flyteidl::plugins::sagemaker::HPOJob& hpo_job_core(const HPOJobCustom* msg);
+  static const ::flyteidl::plugins::sagemaker::HPOJob& hpo_job_spec(const HPOJobCustom* msg);
   static const ::flyteidl::core::TaskTemplate& training_job_task_template(const HPOJobCustom* msg);
 };
 
 const ::flyteidl::plugins::sagemaker::HPOJob&
-HPOJobCustom::HasBitSetters::hpo_job_core(const HPOJobCustom* msg) {
-  return *msg->hpo_job_core_;
+HPOJobCustom::HasBitSetters::hpo_job_spec(const HPOJobCustom* msg) {
+  return *msg->hpo_job_spec_;
 }
 const ::flyteidl::core::TaskTemplate&
 HPOJobCustom::HasBitSetters::training_job_task_template(const HPOJobCustom* msg) {
@@ -1503,7 +1503,7 @@ void HPOJobCustom::clear_training_job_task_template() {
   training_job_task_template_ = nullptr;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int HPOJobCustom::kHpoJobCoreFieldNumber;
+const int HPOJobCustom::kHpoJobSpecFieldNumber;
 const int HPOJobCustom::kTrainingJobTaskTemplateFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -1516,10 +1516,10 @@ HPOJobCustom::HPOJobCustom(const HPOJobCustom& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_hpo_job_core()) {
-    hpo_job_core_ = new ::flyteidl::plugins::sagemaker::HPOJob(*from.hpo_job_core_);
+  if (from.has_hpo_job_spec()) {
+    hpo_job_spec_ = new ::flyteidl::plugins::sagemaker::HPOJob(*from.hpo_job_spec_);
   } else {
-    hpo_job_core_ = nullptr;
+    hpo_job_spec_ = nullptr;
   }
   if (from.has_training_job_task_template()) {
     training_job_task_template_ = new ::flyteidl::core::TaskTemplate(*from.training_job_task_template_);
@@ -1532,9 +1532,9 @@ HPOJobCustom::HPOJobCustom(const HPOJobCustom& from)
 void HPOJobCustom::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_HPOJobCustom_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto.base);
-  ::memset(&hpo_job_core_, 0, static_cast<size_t>(
+  ::memset(&hpo_job_spec_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&training_job_task_template_) -
-      reinterpret_cast<char*>(&hpo_job_core_)) + sizeof(training_job_task_template_));
+      reinterpret_cast<char*>(&hpo_job_spec_)) + sizeof(training_job_task_template_));
 }
 
 HPOJobCustom::~HPOJobCustom() {
@@ -1543,7 +1543,7 @@ HPOJobCustom::~HPOJobCustom() {
 }
 
 void HPOJobCustom::SharedDtor() {
-  if (this != internal_default_instance()) delete hpo_job_core_;
+  if (this != internal_default_instance()) delete hpo_job_spec_;
   if (this != internal_default_instance()) delete training_job_task_template_;
 }
 
@@ -1562,10 +1562,10 @@ void HPOJobCustom::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && hpo_job_core_ != nullptr) {
-    delete hpo_job_core_;
+  if (GetArenaNoVirtual() == nullptr && hpo_job_spec_ != nullptr) {
+    delete hpo_job_spec_;
   }
-  hpo_job_core_ = nullptr;
+  hpo_job_spec_ = nullptr;
   if (GetArenaNoVirtual() == nullptr && training_job_task_template_ != nullptr) {
     delete training_job_task_template_;
   }
@@ -1586,13 +1586,13 @@ const char* HPOJobCustom::_InternalParse(const char* begin, const char* end, voi
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;
+      // .flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::plugins::sagemaker::HPOJob::_InternalParse;
-        object = msg->mutable_hpo_job_core();
+        object = msg->mutable_hpo_job_spec();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -1642,11 +1642,11 @@ bool HPOJobCustom::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;
+      // .flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_hpo_job_core()));
+               input, mutable_hpo_job_spec()));
         } else {
           goto handle_unusual;
         }
@@ -1691,10 +1691,10 @@ void HPOJobCustom::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;
-  if (this->has_hpo_job_core()) {
+  // .flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;
+  if (this->has_hpo_job_spec()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, HasBitSetters::hpo_job_core(this), output);
+      1, HasBitSetters::hpo_job_spec(this), output);
   }
 
   // .flyteidl.core.TaskTemplate training_job_task_template = 2;
@@ -1716,11 +1716,11 @@ void HPOJobCustom::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;
-  if (this->has_hpo_job_core()) {
+  // .flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;
+  if (this->has_hpo_job_spec()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, HasBitSetters::hpo_job_core(this), target);
+        1, HasBitSetters::hpo_job_spec(this), target);
   }
 
   // .flyteidl.core.TaskTemplate training_job_task_template = 2;
@@ -1751,11 +1751,11 @@ size_t HPOJobCustom::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .flyteidl.plugins.sagemaker.HPOJob hpo_job_core = 1;
-  if (this->has_hpo_job_core()) {
+  // .flyteidl.plugins.sagemaker.HPOJob hpo_job_spec = 1;
+  if (this->has_hpo_job_spec()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *hpo_job_core_);
+        *hpo_job_spec_);
   }
 
   // .flyteidl.core.TaskTemplate training_job_task_template = 2;
@@ -1792,8 +1792,8 @@ void HPOJobCustom::MergeFrom(const HPOJobCustom& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_hpo_job_core()) {
-    mutable_hpo_job_core()->::flyteidl::plugins::sagemaker::HPOJob::MergeFrom(from.hpo_job_core());
+  if (from.has_hpo_job_spec()) {
+    mutable_hpo_job_spec()->::flyteidl::plugins::sagemaker::HPOJob::MergeFrom(from.hpo_job_spec());
   }
   if (from.has_training_job_task_template()) {
     mutable_training_job_task_template()->::flyteidl::core::TaskTemplate::MergeFrom(from.training_job_task_template());
@@ -1825,7 +1825,7 @@ void HPOJobCustom::Swap(HPOJobCustom* other) {
 void HPOJobCustom::InternalSwap(HPOJobCustom* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(hpo_job_core_, other->hpo_job_core_);
+  swap(hpo_job_spec_, other->hpo_job_spec_);
   swap(training_job_task_template_, other->training_job_task_template_);
 }
 
