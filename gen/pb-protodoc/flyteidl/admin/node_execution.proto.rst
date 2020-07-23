@@ -377,20 +377,13 @@ Request structure to fetch inputs and output urls for a node execution.
 .. code-block:: json
 
   {
-    "id": "{...}",
-    "mode": "..."
+    "id": "{...}"
   }
 
 .. _api_field_flyteidl.admin.NodeExecutionGetDataRequest.id:
 
 id
   (:ref:`flyteidl.core.NodeExecutionIdentifier <api_msg_flyteidl.core.NodeExecutionIdentifier>`) The identifier of the node execution for which to fetch inputs and outputs.
-  
-  
-.. _api_field_flyteidl.admin.NodeExecutionGetDataRequest.mode:
-
-mode
-  (:ref:`flyteidl.admin.GetExecutionData.Mode <api_enum_flyteidl.admin.GetExecutionData.Mode>`) Specifies what type of data to return in the response.
   
   
 
@@ -400,7 +393,7 @@ mode
 flyteidl.admin.NodeExecutionGetDataResponse
 -------------------------------------------
 
-`[flyteidl.admin.NodeExecutionGetDataResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L154>`_
+`[flyteidl.admin.NodeExecutionGetDataResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/node_execution.proto#L151>`_
 
 Response structure for NodeExecutionGetDataRequest which contains inputs and outputs for a node execution.
 
@@ -428,13 +421,13 @@ outputs
 .. _api_field_flyteidl.admin.NodeExecutionGetDataResponse.full_inputs:
 
 full_inputs
-  (:ref:`flyteidl.core.LiteralMap <api_msg_flyteidl.core.LiteralMap>`) Optional, full_inputs will only be populated if the request specified for full data to be returned
+  (:ref:`flyteidl.core.LiteralMap <api_msg_flyteidl.core.LiteralMap>`) Optional, full_inputs will only be populated if they are small enough to be returned
   
   
 .. _api_field_flyteidl.admin.NodeExecutionGetDataResponse.full_outputs:
 
 full_outputs
-  (:ref:`flyteidl.core.LiteralMap <api_msg_flyteidl.core.LiteralMap>`) Optional, full_outputs will only be populated if the request specified for full data to be returned
+  (:ref:`flyteidl.core.LiteralMap <api_msg_flyteidl.core.LiteralMap>`) Optional, full_outputs will only be populated if they are small enough to be returned
   
   
 

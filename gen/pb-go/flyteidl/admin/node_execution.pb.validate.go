@@ -799,8 +799,6 @@ func (m *NodeExecutionGetDataRequest) Validate() error {
 		}
 	}
 
-	// no validation rules for Mode
-
 	return nil
 }
 

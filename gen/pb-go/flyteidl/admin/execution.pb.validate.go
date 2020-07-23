@@ -1459,8 +1459,6 @@ func (m *WorkflowExecutionGetDataRequest) Validate() error {
 		}
 	}
 
-	// no validation rules for Mode
-
 	return nil
 }
 

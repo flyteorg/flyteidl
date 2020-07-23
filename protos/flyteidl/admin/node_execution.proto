@@ -146,9 +146,6 @@ message WorkflowNodeMetadata {
 message NodeExecutionGetDataRequest {
     // The identifier of the node execution for which to fetch inputs and outputs.
     core.NodeExecutionIdentifier id        = 1;
-
-    // Specifies what type of data to return in the response.
-    GetExecutionData.Mode mode             = 2;
 }
 
 // Response structure for NodeExecutionGetDataRequest which contains inputs and outputs for a node execution.
@@ -159,9 +156,9 @@ message NodeExecutionGetDataResponse {
     // Signed url to fetch a core.LiteralMap of node execution outputs.
     UrlBlob outputs                            = 2;
 
-    // Optional, full_inputs will only be populated if the request specified for full data to be returned
+    // Optional, full_inputs will only be populated if they are small enough to be returned
     core.LiteralMap full_inputs                = 3;
 
-    // Optional, full_outputs will only be populated if the request specified for full data to be returned
+    // Optional, full_outputs will only be populated if they are small enough to be returned
     core.LiteralMap full_outputs               = 4;
 }

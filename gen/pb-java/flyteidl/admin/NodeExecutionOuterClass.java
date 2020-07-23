@@ -9888,23 +9888,6 @@ public final class NodeExecutionOuterClass {
      * <code>.flyteidl.core.NodeExecutionIdentifier id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder getIdOrBuilder();
-
-    /**
-     * <pre>
-     * Specifies what type of data to return in the response.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.GetExecutionData.Mode mode = 2;</code>
-     */
-    int getModeValue();
-    /**
-     * <pre>
-     * Specifies what type of data to return in the response.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.GetExecutionData.Mode mode = 2;</code>
-     */
-    flyteidl.admin.Common.GetExecutionData.Mode getMode();
   }
   /**
    * <pre>
@@ -9923,7 +9906,6 @@ public final class NodeExecutionOuterClass {
       super(builder);
     }
     private NodeExecutionGetDataRequest() {
-      mode_ = 0;
     }
 
     @java.lang.Override
@@ -9961,12 +9943,6 @@ public final class NodeExecutionOuterClass {
                 id_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 16: {
-              int rawValue = input.readEnum();
-
-              mode_ = rawValue;
               break;
             }
             default: {
@@ -10034,31 +10010,6 @@ public final class NodeExecutionOuterClass {
       return getId();
     }
 
-    public static final int MODE_FIELD_NUMBER = 2;
-    private int mode_;
-    /**
-     * <pre>
-     * Specifies what type of data to return in the response.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.GetExecutionData.Mode mode = 2;</code>
-     */
-    public int getModeValue() {
-      return mode_;
-    }
-    /**
-     * <pre>
-     * Specifies what type of data to return in the response.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.GetExecutionData.Mode mode = 2;</code>
-     */
-    public flyteidl.admin.Common.GetExecutionData.Mode getMode() {
-      @SuppressWarnings("deprecation")
-      flyteidl.admin.Common.GetExecutionData.Mode result = flyteidl.admin.Common.GetExecutionData.Mode.valueOf(mode_);
-      return result == null ? flyteidl.admin.Common.GetExecutionData.Mode.UNRECOGNIZED : result;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10076,9 +10027,6 @@ public final class NodeExecutionOuterClass {
       if (id_ != null) {
         output.writeMessage(1, getId());
       }
-      if (mode_ != flyteidl.admin.Common.GetExecutionData.Mode.URL_BLOB_ONLY.getNumber()) {
-        output.writeEnum(2, mode_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -10091,10 +10039,6 @@ public final class NodeExecutionOuterClass {
       if (id_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getId());
-      }
-      if (mode_ != flyteidl.admin.Common.GetExecutionData.Mode.URL_BLOB_ONLY.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, mode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10116,7 +10060,6 @@ public final class NodeExecutionOuterClass {
         if (!getId()
             .equals(other.getId())) return false;
       }
-      if (mode_ != other.mode_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10132,8 +10075,6 @@ public final class NodeExecutionOuterClass {
         hash = (37 * hash) + ID_FIELD_NUMBER;
         hash = (53 * hash) + getId().hashCode();
       }
-      hash = (37 * hash) + MODE_FIELD_NUMBER;
-      hash = (53 * hash) + mode_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10277,8 +10218,6 @@ public final class NodeExecutionOuterClass {
           id_ = null;
           idBuilder_ = null;
         }
-        mode_ = 0;
-
         return this;
       }
 
@@ -10310,7 +10249,6 @@ public final class NodeExecutionOuterClass {
         } else {
           result.id_ = idBuilder_.build();
         }
-        result.mode_ = mode_;
         onBuilt();
         return result;
       }
@@ -10361,9 +10299,6 @@ public final class NodeExecutionOuterClass {
         if (other == flyteidl.admin.NodeExecutionOuterClass.NodeExecutionGetDataRequest.getDefaultInstance()) return this;
         if (other.hasId()) {
           mergeId(other.getId());
-        }
-        if (other.mode_ != 0) {
-          setModeValue(other.getModeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -10546,71 +10481,6 @@ public final class NodeExecutionOuterClass {
         }
         return idBuilder_;
       }
-
-      private int mode_ = 0;
-      /**
-       * <pre>
-       * Specifies what type of data to return in the response.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.GetExecutionData.Mode mode = 2;</code>
-       */
-      public int getModeValue() {
-        return mode_;
-      }
-      /**
-       * <pre>
-       * Specifies what type of data to return in the response.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.GetExecutionData.Mode mode = 2;</code>
-       */
-      public Builder setModeValue(int value) {
-        mode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Specifies what type of data to return in the response.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.GetExecutionData.Mode mode = 2;</code>
-       */
-      public flyteidl.admin.Common.GetExecutionData.Mode getMode() {
-        @SuppressWarnings("deprecation")
-        flyteidl.admin.Common.GetExecutionData.Mode result = flyteidl.admin.Common.GetExecutionData.Mode.valueOf(mode_);
-        return result == null ? flyteidl.admin.Common.GetExecutionData.Mode.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * Specifies what type of data to return in the response.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.GetExecutionData.Mode mode = 2;</code>
-       */
-      public Builder setMode(flyteidl.admin.Common.GetExecutionData.Mode value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        mode_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Specifies what type of data to return in the response.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.GetExecutionData.Mode mode = 2;</code>
-       */
-      public Builder clearMode() {
-        
-        mode_ = 0;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -10720,7 +10590,7 @@ public final class NodeExecutionOuterClass {
 
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if the request specified for full data to be returned
+     * Optional, full_inputs will only be populated if they are small enough to be returned
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -10728,7 +10598,7 @@ public final class NodeExecutionOuterClass {
     boolean hasFullInputs();
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if the request specified for full data to be returned
+     * Optional, full_inputs will only be populated if they are small enough to be returned
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -10736,7 +10606,7 @@ public final class NodeExecutionOuterClass {
     flyteidl.core.Literals.LiteralMap getFullInputs();
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if the request specified for full data to be returned
+     * Optional, full_inputs will only be populated if they are small enough to be returned
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -10745,7 +10615,7 @@ public final class NodeExecutionOuterClass {
 
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if the request specified for full data to be returned
+     * Optional, full_outputs will only be populated if they are small enough to be returned
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -10753,7 +10623,7 @@ public final class NodeExecutionOuterClass {
     boolean hasFullOutputs();
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if the request specified for full data to be returned
+     * Optional, full_outputs will only be populated if they are small enough to be returned
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -10761,7 +10631,7 @@ public final class NodeExecutionOuterClass {
     flyteidl.core.Literals.LiteralMap getFullOutputs();
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if the request specified for full data to be returned
+     * Optional, full_outputs will only be populated if they are small enough to be returned
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -10965,7 +10835,7 @@ public final class NodeExecutionOuterClass {
     private flyteidl.core.Literals.LiteralMap fullInputs_;
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if the request specified for full data to be returned
+     * Optional, full_inputs will only be populated if they are small enough to be returned
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -10975,7 +10845,7 @@ public final class NodeExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if the request specified for full data to be returned
+     * Optional, full_inputs will only be populated if they are small enough to be returned
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -10985,7 +10855,7 @@ public final class NodeExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, full_inputs will only be populated if the request specified for full data to be returned
+     * Optional, full_inputs will only be populated if they are small enough to be returned
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -10998,7 +10868,7 @@ public final class NodeExecutionOuterClass {
     private flyteidl.core.Literals.LiteralMap fullOutputs_;
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if the request specified for full data to be returned
+     * Optional, full_outputs will only be populated if they are small enough to be returned
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -11008,7 +10878,7 @@ public final class NodeExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if the request specified for full data to be returned
+     * Optional, full_outputs will only be populated if they are small enough to be returned
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -11018,7 +10888,7 @@ public final class NodeExecutionOuterClass {
     }
     /**
      * <pre>
-     * Optional, full_outputs will only be populated if the request specified for full data to be returned
+     * Optional, full_outputs will only be populated if they are small enough to be returned
      * </pre>
      *
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -11747,7 +11617,7 @@ public final class NodeExecutionOuterClass {
           flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> fullInputsBuilder_;
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if the request specified for full data to be returned
+       * Optional, full_inputs will only be populated if they are small enough to be returned
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -11757,7 +11627,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if the request specified for full data to be returned
+       * Optional, full_inputs will only be populated if they are small enough to be returned
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -11771,7 +11641,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if the request specified for full data to be returned
+       * Optional, full_inputs will only be populated if they are small enough to be returned
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -11791,7 +11661,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if the request specified for full data to be returned
+       * Optional, full_inputs will only be populated if they are small enough to be returned
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -11809,7 +11679,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if the request specified for full data to be returned
+       * Optional, full_inputs will only be populated if they are small enough to be returned
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -11831,7 +11701,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if the request specified for full data to be returned
+       * Optional, full_inputs will only be populated if they are small enough to be returned
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -11849,7 +11719,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if the request specified for full data to be returned
+       * Optional, full_inputs will only be populated if they are small enough to be returned
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -11861,7 +11731,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if the request specified for full data to be returned
+       * Optional, full_inputs will only be populated if they are small enough to be returned
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -11876,7 +11746,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_inputs will only be populated if the request specified for full data to be returned
+       * Optional, full_inputs will only be populated if they are small enough to be returned
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_inputs = 3;</code>
@@ -11900,7 +11770,7 @@ public final class NodeExecutionOuterClass {
           flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> fullOutputsBuilder_;
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if the request specified for full data to be returned
+       * Optional, full_outputs will only be populated if they are small enough to be returned
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -11910,7 +11780,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if the request specified for full data to be returned
+       * Optional, full_outputs will only be populated if they are small enough to be returned
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -11924,7 +11794,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if the request specified for full data to be returned
+       * Optional, full_outputs will only be populated if they are small enough to be returned
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -11944,7 +11814,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if the request specified for full data to be returned
+       * Optional, full_outputs will only be populated if they are small enough to be returned
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -11962,7 +11832,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if the request specified for full data to be returned
+       * Optional, full_outputs will only be populated if they are small enough to be returned
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -11984,7 +11854,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if the request specified for full data to be returned
+       * Optional, full_outputs will only be populated if they are small enough to be returned
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -12002,7 +11872,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if the request specified for full data to be returned
+       * Optional, full_outputs will only be populated if they are small enough to be returned
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -12014,7 +11884,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if the request specified for full data to be returned
+       * Optional, full_outputs will only be populated if they are small enough to be returned
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -12029,7 +11899,7 @@ public final class NodeExecutionOuterClass {
       }
       /**
        * <pre>
-       * Optional, full_outputs will only be populated if the request specified for full data to be returned
+       * Optional, full_outputs will only be populated if they are small enough to be returned
        * </pre>
        *
        * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
@@ -12200,17 +12070,15 @@ public final class NodeExecutionOuterClass {
       "output_resultB\021\n\017target_metadata\"W\n\024Work" +
       "flowNodeMetadata\022?\n\013executionId\030\001 \001(\0132*." +
       "flyteidl.core.WorkflowExecutionIdentifie" +
-      "r\"\206\001\n\033NodeExecutionGetDataRequest\0222\n\002id\030" +
-      "\001 \001(\0132&.flyteidl.core.NodeExecutionIdent" +
-      "ifier\0223\n\004mode\030\002 \001(\0162%.flyteidl.admin.Get" +
-      "ExecutionData.Mode\"\322\001\n\034NodeExecutionGetD" +
-      "ataResponse\022\'\n\006inputs\030\001 \001(\0132\027.flyteidl.a" +
-      "dmin.UrlBlob\022(\n\007outputs\030\002 \001(\0132\027.flyteidl" +
-      ".admin.UrlBlob\022.\n\013full_inputs\030\003 \001(\0132\031.fl" +
-      "yteidl.core.LiteralMap\022/\n\014full_outputs\030\004" +
-      " \001(\0132\031.flyteidl.core.LiteralMapB3Z1githu" +
-      "b.com/lyft/flyteidl/gen/pb-go/flyteidl/a" +
-      "dminb\006proto3"
+      "r\"Q\n\033NodeExecutionGetDataRequest\0222\n\002id\030\001" +
+      " \001(\0132&.flyteidl.core.NodeExecutionIdenti" +
+      "fier\"\322\001\n\034NodeExecutionGetDataResponse\022\'\n" +
+      "\006inputs\030\001 \001(\0132\027.flyteidl.admin.UrlBlob\022(" +
+      "\n\007outputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlob" +
+      "\022.\n\013full_inputs\030\003 \001(\0132\031.flyteidl.core.Li" +
+      "teralMap\022/\n\014full_outputs\030\004 \001(\0132\031.flyteid" +
+      "l.core.LiteralMapB3Z1github.com/lyft/fly" +
+      "teidl/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -12283,7 +12151,7 @@ public final class NodeExecutionOuterClass {
     internal_static_flyteidl_admin_NodeExecutionGetDataRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NodeExecutionGetDataRequest_descriptor,
-        new java.lang.String[] { "Id", "Mode", });
+        new java.lang.String[] { "Id", });
     internal_static_flyteidl_admin_NodeExecutionGetDataResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_admin_NodeExecutionGetDataResponse_fieldAccessorTable = new

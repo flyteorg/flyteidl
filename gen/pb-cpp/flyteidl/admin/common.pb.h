@@ -47,7 +47,7 @@ struct TableStruct_flyteidl_2fadmin_2fcommon_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[24]
+  static const ::google::protobuf::internal::ParseTable schema[23]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -68,9 +68,6 @@ extern AuthRoleDefaultTypeInternal _AuthRole_default_instance_;
 class EmailNotification;
 class EmailNotificationDefaultTypeInternal;
 extern EmailNotificationDefaultTypeInternal _EmailNotification_default_instance_;
-class GetExecutionData;
-class GetExecutionDataDefaultTypeInternal;
-extern GetExecutionDataDefaultTypeInternal _GetExecutionData_default_instance_;
 class Labels;
 class LabelsDefaultTypeInternal;
 extern LabelsDefaultTypeInternal _Labels_default_instance_;
@@ -136,7 +133,6 @@ template<> ::flyteidl::admin::Annotations* Arena::CreateMaybeMessage<::flyteidl:
 template<> ::flyteidl::admin::Annotations_ValuesEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::admin::Annotations_ValuesEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::admin::AuthRole* Arena::CreateMaybeMessage<::flyteidl::admin::AuthRole>(Arena*);
 template<> ::flyteidl::admin::EmailNotification* Arena::CreateMaybeMessage<::flyteidl::admin::EmailNotification>(Arena*);
-template<> ::flyteidl::admin::GetExecutionData* Arena::CreateMaybeMessage<::flyteidl::admin::GetExecutionData>(Arena*);
 template<> ::flyteidl::admin::Labels* Arena::CreateMaybeMessage<::flyteidl::admin::Labels>(Arena*);
 template<> ::flyteidl::admin::Labels_ValuesEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::admin::Labels_ValuesEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::admin::NamedEntity* Arena::CreateMaybeMessage<::flyteidl::admin::NamedEntity>(Arena*);
@@ -181,27 +177,6 @@ inline bool Sort_Direction_Parse(
     const ::std::string& name, Sort_Direction* value) {
   return ::google::protobuf::internal::ParseNamedEnum<Sort_Direction>(
     Sort_Direction_descriptor(), name, value);
-}
-enum GetExecutionData_Mode {
-  GetExecutionData_Mode_URL_BLOB_ONLY = 0,
-  GetExecutionData_Mode_FULL_DATA = 1,
-  GetExecutionData_Mode_GetExecutionData_Mode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
-  GetExecutionData_Mode_GetExecutionData_Mode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
-};
-bool GetExecutionData_Mode_IsValid(int value);
-const GetExecutionData_Mode GetExecutionData_Mode_Mode_MIN = GetExecutionData_Mode_URL_BLOB_ONLY;
-const GetExecutionData_Mode GetExecutionData_Mode_Mode_MAX = GetExecutionData_Mode_FULL_DATA;
-const int GetExecutionData_Mode_Mode_ARRAYSIZE = GetExecutionData_Mode_Mode_MAX + 1;
-
-const ::google::protobuf::EnumDescriptor* GetExecutionData_Mode_descriptor();
-inline const ::std::string& GetExecutionData_Mode_Name(GetExecutionData_Mode value) {
-  return ::google::protobuf::internal::NameOfEnum(
-    GetExecutionData_Mode_descriptor(), value);
-}
-inline bool GetExecutionData_Mode_Parse(
-    const ::std::string& name, GetExecutionData_Mode* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<GetExecutionData_Mode>(
-    GetExecutionData_Mode_descriptor(), name, value);
 }
 enum NamedEntityState {
   NAMED_ENTITY_ACTIVE = 0,
@@ -3187,137 +3162,6 @@ class AuthRole final :
 
   friend struct ::TableStruct_flyteidl_2fadmin_2fcommon_2eproto;
 };
-// -------------------------------------------------------------------
-
-class GetExecutionData final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.GetExecutionData) */ {
- public:
-  GetExecutionData();
-  virtual ~GetExecutionData();
-
-  GetExecutionData(const GetExecutionData& from);
-
-  inline GetExecutionData& operator=(const GetExecutionData& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  GetExecutionData(GetExecutionData&& from) noexcept
-    : GetExecutionData() {
-    *this = ::std::move(from);
-  }
-
-  inline GetExecutionData& operator=(GetExecutionData&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const GetExecutionData& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const GetExecutionData* internal_default_instance() {
-    return reinterpret_cast<const GetExecutionData*>(
-               &_GetExecutionData_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    23;
-
-  void Swap(GetExecutionData* other);
-  friend void swap(GetExecutionData& a, GetExecutionData& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline GetExecutionData* New() const final {
-    return CreateMaybeMessage<GetExecutionData>(nullptr);
-  }
-
-  GetExecutionData* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<GetExecutionData>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const GetExecutionData& from);
-  void MergeFrom(const GetExecutionData& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(GetExecutionData* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  typedef GetExecutionData_Mode Mode;
-  static const Mode URL_BLOB_ONLY =
-    GetExecutionData_Mode_URL_BLOB_ONLY;
-  static const Mode FULL_DATA =
-    GetExecutionData_Mode_FULL_DATA;
-  static inline bool Mode_IsValid(int value) {
-    return GetExecutionData_Mode_IsValid(value);
-  }
-  static const Mode Mode_MIN =
-    GetExecutionData_Mode_Mode_MIN;
-  static const Mode Mode_MAX =
-    GetExecutionData_Mode_Mode_MAX;
-  static const int Mode_ARRAYSIZE =
-    GetExecutionData_Mode_Mode_ARRAYSIZE;
-  static inline const ::google::protobuf::EnumDescriptor*
-  Mode_descriptor() {
-    return GetExecutionData_Mode_descriptor();
-  }
-  static inline const ::std::string& Mode_Name(Mode value) {
-    return GetExecutionData_Mode_Name(value);
-  }
-  static inline bool Mode_Parse(const ::std::string& name,
-      Mode* value) {
-    return GetExecutionData_Mode_Parse(name, value);
-  }
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:flyteidl.admin.GetExecutionData)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fadmin_2fcommon_2eproto;
-};
 // ===================================================================
 
 
@@ -5669,15 +5513,9 @@ inline void AuthRole::clear_has_method() {
 inline AuthRole::MethodCase AuthRole::method_case() const {
   return AuthRole::MethodCase(_oneof_case_[0]);
 }
-// -------------------------------------------------------------------
-
-// GetExecutionData
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -5735,11 +5573,6 @@ template <> struct is_proto_enum< ::flyteidl::admin::Sort_Direction> : ::std::tr
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::admin::Sort_Direction>() {
   return ::flyteidl::admin::Sort_Direction_descriptor();
-}
-template <> struct is_proto_enum< ::flyteidl::admin::GetExecutionData_Mode> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::admin::GetExecutionData_Mode>() {
-  return ::flyteidl::admin::GetExecutionData_Mode_descriptor();
 }
 template <> struct is_proto_enum< ::flyteidl::admin::NamedEntityState> : ::std::true_type {};
 template <>

@@ -15,6 +15,8 @@ type AdminWorkflowExecutionGetDataResponse struct {
 	Outputs *AdminUrlBlob `json:"outputs,omitempty"`
 	// Signed url to fetch a core.LiteralMap of execution inputs.
 	Inputs *AdminUrlBlob `json:"inputs,omitempty"`
+	// Optional, full_inputs will only be populated if they are small enough to be returned.
 	FullInputs *CoreLiteralMap `json:"full_inputs,omitempty"`
+	// Optional, full_outputs will only be populated if they are small eough to be returned.
 	FullOutputs *CoreLiteralMap `json:"full_outputs,omitempty"`
 }

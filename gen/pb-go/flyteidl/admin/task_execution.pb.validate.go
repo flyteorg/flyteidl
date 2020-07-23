@@ -554,8 +554,6 @@ func (m *TaskExecutionGetDataRequest) Validate() error {
 		}
 	}
 
-	// no validation rules for Mode
-
 	return nil
 }
 

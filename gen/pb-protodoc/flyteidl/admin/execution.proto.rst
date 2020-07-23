@@ -698,20 +698,13 @@ Request structure to fetch inputs and output urls for an execution.
 .. code-block:: json
 
   {
-    "id": "{...}",
-    "mode": "..."
+    "id": "{...}"
   }
 
 .. _api_field_flyteidl.admin.WorkflowExecutionGetDataRequest.id:
 
 id
   (:ref:`flyteidl.core.WorkflowExecutionIdentifier <api_msg_flyteidl.core.WorkflowExecutionIdentifier>`) The identifier of the execution for which to fetch inputs and outputs.
-  
-  
-.. _api_field_flyteidl.admin.WorkflowExecutionGetDataRequest.mode:
-
-mode
-  (:ref:`flyteidl.admin.GetExecutionData.Mode <api_enum_flyteidl.admin.GetExecutionData.Mode>`) Specifies what type of data to return in the response.
   
   
 
@@ -721,7 +714,7 @@ mode
 flyteidl.admin.WorkflowExecutionGetDataResponse
 -----------------------------------------------
 
-`[flyteidl.admin.WorkflowExecutionGetDataResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L270>`_
+`[flyteidl.admin.WorkflowExecutionGetDataResponse proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/admin/execution.proto#L267>`_
 
 Response structure for WorkflowExecutionGetDataRequest which contains inputs and outputs for an execution.
 
@@ -749,13 +742,13 @@ inputs
 .. _api_field_flyteidl.admin.WorkflowExecutionGetDataResponse.full_inputs:
 
 full_inputs
-  (:ref:`flyteidl.core.LiteralMap <api_msg_flyteidl.core.LiteralMap>`) Optional, full_inputs will only be populated if the request specified for full data to be returned
+  (:ref:`flyteidl.core.LiteralMap <api_msg_flyteidl.core.LiteralMap>`) Optional, full_inputs will only be populated if they are small enough to be returned.
   
   
 .. _api_field_flyteidl.admin.WorkflowExecutionGetDataResponse.full_outputs:
 
 full_outputs
-  (:ref:`flyteidl.core.LiteralMap <api_msg_flyteidl.core.LiteralMap>`) Optional, full_outputs will only be populated if the request specified for full data to be returned
+  (:ref:`flyteidl.core.LiteralMap <api_msg_flyteidl.core.LiteralMap>`) Optional, full_outputs will only be populated if they are small eough to be returned.
   
   
 

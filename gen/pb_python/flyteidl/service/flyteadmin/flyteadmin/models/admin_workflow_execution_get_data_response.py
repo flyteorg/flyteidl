@@ -115,6 +115,7 @@ class AdminWorkflowExecutionGetDataResponse(object):
     def full_inputs(self):
         """Gets the full_inputs of this AdminWorkflowExecutionGetDataResponse.  # noqa: E501
 
+        Optional, full_inputs will only be populated if they are small enough to be returned.  # noqa: E501
 
         :return: The full_inputs of this AdminWorkflowExecutionGetDataResponse.  # noqa: E501
         :rtype: CoreLiteralMap
@@ -125,6 +126,7 @@ class AdminWorkflowExecutionGetDataResponse(object):
     def full_inputs(self, full_inputs):
         """Sets the full_inputs of this AdminWorkflowExecutionGetDataResponse.
 
+        Optional, full_inputs will only be populated if they are small enough to be returned.  # noqa: E501
 
         :param full_inputs: The full_inputs of this AdminWorkflowExecutionGetDataResponse.  # noqa: E501
         :type: CoreLiteralMap
@@ -136,6 +138,7 @@ class AdminWorkflowExecutionGetDataResponse(object):
     def full_outputs(self):
         """Gets the full_outputs of this AdminWorkflowExecutionGetDataResponse.  # noqa: E501
 
+        Optional, full_outputs will only be populated if they are small eough to be returned.  # noqa: E501
 
         :return: The full_outputs of this AdminWorkflowExecutionGetDataResponse.  # noqa: E501
         :rtype: CoreLiteralMap
@@ -146,6 +149,7 @@ class AdminWorkflowExecutionGetDataResponse(object):
     def full_outputs(self, full_outputs):
         """Sets the full_outputs of this AdminWorkflowExecutionGetDataResponse.
 
+        Optional, full_outputs will only be populated if they are small eough to be returned.  # noqa: E501
 
         :param full_outputs: The full_outputs of this AdminWorkflowExecutionGetDataResponse.  # noqa: E501
         :type: CoreLiteralMap

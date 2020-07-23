@@ -262,9 +262,6 @@ message ExecutionTerminateResponse {
 message WorkflowExecutionGetDataRequest {
     // The identifier of the execution for which to fetch inputs and outputs.
     core.WorkflowExecutionIdentifier id        = 1;
-
-    // Specifies what type of data to return in the response.
-    GetExecutionData.Mode mode                 = 2;
 }
 
 // Response structure for WorkflowExecutionGetDataRequest which contains inputs and outputs for an execution.
@@ -274,9 +271,9 @@ message WorkflowExecutionGetDataResponse {
     // Signed url to fetch a core.LiteralMap of execution inputs.
     UrlBlob inputs                             = 2;
 
-    // Optional, full_inputs will only be populated if the request specified for full data to be returned
+    // Optional, full_inputs will only be populated if they are small enough to be returned.
     core.LiteralMap full_inputs                = 3;
 
-    // Optional, full_outputs will only be populated if the request specified for full data to be returned
-    core.LiteralMap full_outputs	       = 4;
+    // Optional, full_outputs will only be populated if they are small eough to be returned.
+    core.LiteralMap full_outputs               = 4;
 }

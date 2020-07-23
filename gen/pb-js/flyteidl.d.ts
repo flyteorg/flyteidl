@@ -6439,61 +6439,6 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a GetExecutionData. */
-        interface IGetExecutionData {
-        }
-
-        /** Represents a GetExecutionData. */
-        class GetExecutionData implements IGetExecutionData {
-
-            /**
-             * Constructs a new GetExecutionData.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IGetExecutionData);
-
-            /**
-             * Creates a new GetExecutionData instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns GetExecutionData instance
-             */
-            public static create(properties?: flyteidl.admin.IGetExecutionData): flyteidl.admin.GetExecutionData;
-
-            /**
-             * Encodes the specified GetExecutionData message. Does not implicitly {@link flyteidl.admin.GetExecutionData.verify|verify} messages.
-             * @param message GetExecutionData message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IGetExecutionData, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a GetExecutionData message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns GetExecutionData
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.GetExecutionData;
-
-            /**
-             * Verifies a GetExecutionData message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        namespace GetExecutionData {
-
-            /** Mode enum. */
-            enum Mode {
-                URL_BLOB_ONLY = 0,
-                FULL_DATA = 1
-            }
-        }
-
         /** Properties of an EventErrorAlreadyInTerminalState. */
         interface IEventErrorAlreadyInTerminalState {
 
@@ -7929,9 +7874,6 @@ export namespace flyteidl {
 
             /** WorkflowExecutionGetDataRequest id */
             id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
-
-            /** WorkflowExecutionGetDataRequest mode */
-            mode?: (flyteidl.admin.GetExecutionData.Mode|null);
         }
 
         /** Represents a WorkflowExecutionGetDataRequest. */
@@ -7945,9 +7887,6 @@ export namespace flyteidl {
 
             /** WorkflowExecutionGetDataRequest id. */
             public id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
-
-            /** WorkflowExecutionGetDataRequest mode. */
-            public mode: flyteidl.admin.GetExecutionData.Mode;
 
             /**
              * Creates a new WorkflowExecutionGetDataRequest instance using the specified properties.
@@ -10060,9 +9999,6 @@ export namespace flyteidl {
 
             /** NodeExecutionGetDataRequest id */
             id?: (flyteidl.core.INodeExecutionIdentifier|null);
-
-            /** NodeExecutionGetDataRequest mode */
-            mode?: (flyteidl.admin.GetExecutionData.Mode|null);
         }
 
         /** Represents a NodeExecutionGetDataRequest. */
@@ -10076,9 +10012,6 @@ export namespace flyteidl {
 
             /** NodeExecutionGetDataRequest id. */
             public id?: (flyteidl.core.INodeExecutionIdentifier|null);
-
-            /** NodeExecutionGetDataRequest mode. */
-            public mode: flyteidl.admin.GetExecutionData.Mode;
 
             /**
              * Creates a new NodeExecutionGetDataRequest instance using the specified properties.
@@ -11659,9 +11592,6 @@ export namespace flyteidl {
 
             /** TaskExecutionGetDataRequest id */
             id?: (flyteidl.core.ITaskExecutionIdentifier|null);
-
-            /** TaskExecutionGetDataRequest mode */
-            mode?: (flyteidl.admin.GetExecutionData.Mode|null);
         }
 
         /** Represents a TaskExecutionGetDataRequest. */
@@ -11675,9 +11605,6 @@ export namespace flyteidl {
 
             /** TaskExecutionGetDataRequest id. */
             public id?: (flyteidl.core.ITaskExecutionIdentifier|null);
-
-            /** TaskExecutionGetDataRequest mode. */
-            public mode: flyteidl.admin.GetExecutionData.Mode;
 
             /**
              * Creates a new TaskExecutionGetDataRequest instance using the specified properties.

@@ -245,14 +245,3 @@ message AuthRole {
   }
 }
 
-// Specifies how to populate Get{Workflow,Node,Task}ExecutionData responses.
-message GetExecutionData {
-  enum Mode {
-    // By deault, GetExecutionData calls will only return signed url blobs pointing to input/output data.
-    URL_BLOB_ONLY = 0;
-
-    // FULL_DATA mode returns fully populated input/output data in addition to URL blobs.
-    FULL_DATA = 1;
-  } 
-}
-

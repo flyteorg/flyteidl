@@ -1427,19 +1427,12 @@ class NodeExecutionGetDataRequest final :
   ::flyteidl::core::NodeExecutionIdentifier* mutable_id();
   void set_allocated_id(::flyteidl::core::NodeExecutionIdentifier* id);
 
-  // .flyteidl.admin.GetExecutionData.Mode mode = 2;
-  void clear_mode();
-  static const int kModeFieldNumber = 2;
-  ::flyteidl::admin::GetExecutionData_Mode mode() const;
-  void set_mode(::flyteidl::admin::GetExecutionData_Mode value);
-
   // @@protoc_insertion_point(class_scope:flyteidl.admin.NodeExecutionGetDataRequest)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::flyteidl::core::NodeExecutionIdentifier* id_;
-  int mode_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
 };
@@ -3024,20 +3017,6 @@ inline void NodeExecutionGetDataRequest::set_allocated_id(::flyteidl::core::Node
   }
   id_ = id;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.NodeExecutionGetDataRequest.id)
-}
-
-// .flyteidl.admin.GetExecutionData.Mode mode = 2;
-inline void NodeExecutionGetDataRequest::clear_mode() {
-  mode_ = 0;
-}
-inline ::flyteidl::admin::GetExecutionData_Mode NodeExecutionGetDataRequest::mode() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.NodeExecutionGetDataRequest.mode)
-  return static_cast< ::flyteidl::admin::GetExecutionData_Mode >(mode_);
-}
-inline void NodeExecutionGetDataRequest::set_mode(::flyteidl::admin::GetExecutionData_Mode value) {
-  
-  mode_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.admin.NodeExecutionGetDataRequest.mode)
 }
 
 // -------------------------------------------------------------------

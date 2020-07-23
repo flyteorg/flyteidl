@@ -257,20 +257,6 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "IdName"
-      - name: "mode"
-        in: "query"
-        description: "Specifies what type of data to return in the response.\n\n -\
-          \ URL_BLOB_ONLY: By deault, GetExecutionData calls will only return signed\
-          \ url blobs pointing to input/output data.\n - FULL_DATA: FULL_DATA mode\
-          \ returns fully populated input/output data in addition to URL blobs."
-        required: false
-        type: "string"
-        default: "URL_BLOB_ONLY"
-        enum:
-        - "URL_BLOB_ONLY"
-        - "FULL_DATA"
-        x-exportParamName: "Mode"
-        x-optionalDataType: "String"
       responses:
         200:
           description: "A successful response."
@@ -307,20 +293,6 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "IdNodeId"
-      - name: "mode"
-        in: "query"
-        description: "Specifies what type of data to return in the response.\n\n -\
-          \ URL_BLOB_ONLY: By deault, GetExecutionData calls will only return signed\
-          \ url blobs pointing to input/output data.\n - FULL_DATA: FULL_DATA mode\
-          \ returns fully populated input/output data in addition to URL blobs."
-        required: false
-        type: "string"
-        default: "URL_BLOB_ONLY"
-        enum:
-        - "URL_BLOB_ONLY"
-        - "FULL_DATA"
-        x-exportParamName: "Mode"
-        x-optionalDataType: "String"
       responses:
         200:
           description: "A successful response."
@@ -401,20 +373,6 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         x-exportParamName: "IdTaskIdResourceType"
-        x-optionalDataType: "String"
-      - name: "mode"
-        in: "query"
-        description: "Specifies what type of data to return in the response.\n\n -\
-          \ URL_BLOB_ONLY: By deault, GetExecutionData calls will only return signed\
-          \ url blobs pointing to input/output data.\n - FULL_DATA: FULL_DATA mode\
-          \ returns fully populated input/output data in addition to URL blobs."
-        required: false
-        type: "string"
-        default: "URL_BLOB_ONLY"
-        enum:
-        - "URL_BLOB_ONLY"
-        - "FULL_DATA"
-        x-exportParamName: "Mode"
         x-optionalDataType: "String"
       responses:
         200:
@@ -2419,15 +2377,6 @@ definitions:
     - "RELAUNCH"
     - "CHILD_WORKFLOW"
     default: "MANUAL"
-  GetExecutionDataMode:
-    type: "string"
-    description: " - URL_BLOB_ONLY: By deault, GetExecutionData calls will only return\
-      \ signed url blobs pointing to input/output data.\n - FULL_DATA: FULL_DATA mode\
-      \ returns fully populated input/output data in addition to URL blobs."
-    enum:
-    - "URL_BLOB_ONLY"
-    - "FULL_DATA"
-    default: "URL_BLOB_ONLY"
   IOStrategyDownloadMode:
     type: "string"
     title: "Mode to use for downloading"
@@ -5026,12 +4975,12 @@ definitions:
         description: "Signed url to fetch a core.LiteralMap of node execution outputs."
         $ref: "#/definitions/adminUrlBlob"
       full_inputs:
-        title: "Optional, full_inputs will only be populated if the request specified\
-          \ for full data to be returned"
+        title: "Optional, full_inputs will only be populated if they are small enough\
+          \ to be returned"
         $ref: "#/definitions/coreLiteralMap"
       full_outputs:
-        title: "Optional, full_outputs will only be populated if the request specified\
-          \ for full data to be returned"
+        title: "Optional, full_outputs will only be populated if they are small enough\
+          \ to be returned"
         $ref: "#/definitions/coreLiteralMap"
     description: "Response structure for NodeExecutionGetDataRequest which contains\
       \ inputs and outputs for a node execution."
@@ -5824,12 +5773,12 @@ definitions:
         description: "Signed url to fetch a core.LiteralMap of task execution outputs."
         $ref: "#/definitions/adminUrlBlob"
       full_inputs:
-        title: "Optional, full_inputs will only be populated if the request specified\
-          \ for full data to be returned"
+        title: "Optional, full_inputs will only be populated if they are small enough\
+          \ to be returned"
         $ref: "#/definitions/coreLiteralMap"
       full_outputs:
-        title: "Optional, full_outputs will only be populated if the request specified\
-          \ for full data to be returned"
+        title: "Optional, full_outputs will only be populated if they are small enough\
+          \ to be returned"
         $ref: "#/definitions/coreLiteralMap"
     description: "Response structure for TaskExecutionGetDataRequest which contains\
       \ inputs and outputs for a task execution."
@@ -11933,12 +11882,12 @@ definitions:
         description: "Signed url to fetch a core.LiteralMap of execution inputs."
         $ref: "#/definitions/adminUrlBlob"
       full_inputs:
-        title: "Optional, full_inputs will only be populated if the request specified\
-          \ for full data to be returned"
+        description: "Optional, full_inputs will only be populated if they are small\
+          \ enough to be returned."
         $ref: "#/definitions/coreLiteralMap"
       full_outputs:
-        title: "Optional, full_outputs will only be populated if the request specified\
-          \ for full data to be returned"
+        description: "Optional, full_outputs will only be populated if they are small\
+          \ eough to be returned."
         $ref: "#/definitions/coreLiteralMap"
     description: "Response structure for WorkflowExecutionGetDataRequest which contains\
       \ inputs and outputs for an execution."

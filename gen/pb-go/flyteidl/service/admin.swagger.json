@@ -291,18 +291,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "mode",
-            "description": "Specifies what type of data to return in the response.\n\n - URL_BLOB_ONLY: By deault, GetExecutionData calls will only return signed url blobs pointing to input/output data.\n - FULL_DATA: FULL_DATA mode returns fully populated input/output data in addition to URL blobs.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "URL_BLOB_ONLY",
-              "FULL_DATA"
-            ],
-            "default": "URL_BLOB_ONLY"
           }
         ],
         "tags": [
@@ -349,18 +337,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "mode",
-            "description": "Specifies what type of data to return in the response.\n\n - URL_BLOB_ONLY: By deault, GetExecutionData calls will only return signed url blobs pointing to input/output data.\n - FULL_DATA: FULL_DATA mode returns fully populated input/output data in addition to URL blobs.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "URL_BLOB_ONLY",
-              "FULL_DATA"
-            ],
-            "default": "URL_BLOB_ONLY"
           }
         ],
         "tags": [
@@ -456,18 +432,6 @@
               "LAUNCH_PLAN"
             ],
             "default": "UNSPECIFIED"
-          },
-          {
-            "name": "mode",
-            "description": "Specifies what type of data to return in the response.\n\n - URL_BLOB_ONLY: By deault, GetExecutionData calls will only return signed url blobs pointing to input/output data.\n - FULL_DATA: FULL_DATA mode returns fully populated input/output data in addition to URL blobs.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "URL_BLOB_ONLY",
-              "FULL_DATA"
-            ],
-            "default": "URL_BLOB_ONLY"
           }
         ],
         "tags": [
@@ -2770,15 +2734,6 @@
       "default": "MANUAL",
       "description": "The method by which this execution was launched.\n\n - MANUAL: The default execution mode, MANUAL implies that an execution was launched by an individual.\n - SCHEDULED: A schedule triggered this execution launch.\n - SYSTEM: A system process was responsible for launching this execution rather an individual.\n - RELAUNCH: This execution was launched with identical inputs as a previous execution.\n - CHILD_WORKFLOW: This execution was triggered by another execution."
     },
-    "GetExecutionDataMode": {
-      "type": "string",
-      "enum": [
-        "URL_BLOB_ONLY",
-        "FULL_DATA"
-      ],
-      "default": "URL_BLOB_ONLY",
-      "description": " - URL_BLOB_ONLY: By deault, GetExecutionData calls will only return signed url blobs pointing to input/output data.\n - FULL_DATA: FULL_DATA mode returns fully populated input/output data in addition to URL blobs."
-    },
     "IOStrategyDownloadMode": {
       "type": "string",
       "enum": [
@@ -3706,11 +3661,11 @@
         },
         "full_inputs": {
           "$ref": "#/definitions/coreLiteralMap",
-          "title": "Optional, full_inputs will only be populated if the request specified for full data to be returned"
+          "title": "Optional, full_inputs will only be populated if they are small enough to be returned"
         },
         "full_outputs": {
           "$ref": "#/definitions/coreLiteralMap",
-          "title": "Optional, full_outputs will only be populated if the request specified for full data to be returned"
+          "title": "Optional, full_outputs will only be populated if they are small enough to be returned"
         }
       },
       "description": "Response structure for NodeExecutionGetDataRequest which contains inputs and outputs for a node execution."
@@ -4075,11 +4030,11 @@
         },
         "full_inputs": {
           "$ref": "#/definitions/coreLiteralMap",
-          "title": "Optional, full_inputs will only be populated if the request specified for full data to be returned"
+          "title": "Optional, full_inputs will only be populated if they are small enough to be returned"
         },
         "full_outputs": {
           "$ref": "#/definitions/coreLiteralMap",
-          "title": "Optional, full_outputs will only be populated if the request specified for full data to be returned"
+          "title": "Optional, full_outputs will only be populated if they are small enough to be returned"
         }
       },
       "description": "Response structure for TaskExecutionGetDataRequest which contains inputs and outputs for a task execution."
@@ -4311,11 +4266,11 @@
         },
         "full_inputs": {
           "$ref": "#/definitions/coreLiteralMap",
-          "title": "Optional, full_inputs will only be populated if the request specified for full data to be returned"
+          "description": "Optional, full_inputs will only be populated if they are small enough to be returned."
         },
         "full_outputs": {
           "$ref": "#/definitions/coreLiteralMap",
-          "title": "Optional, full_outputs will only be populated if the request specified for full data to be returned"
+          "description": "Optional, full_outputs will only be populated if they are small eough to be returned."
         }
       },
       "description": "Response structure for WorkflowExecutionGetDataRequest which contains inputs and outputs for an execution."

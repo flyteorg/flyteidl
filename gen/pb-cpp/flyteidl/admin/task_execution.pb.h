@@ -978,19 +978,12 @@ class TaskExecutionGetDataRequest final :
   ::flyteidl::core::TaskExecutionIdentifier* mutable_id();
   void set_allocated_id(::flyteidl::core::TaskExecutionIdentifier* id);
 
-  // .flyteidl.admin.GetExecutionData.Mode mode = 2;
-  void clear_mode();
-  static const int kModeFieldNumber = 2;
-  ::flyteidl::admin::GetExecutionData_Mode mode() const;
-  void set_mode(::flyteidl::admin::GetExecutionData_Mode value);
-
   // @@protoc_insertion_point(class_scope:flyteidl.admin.TaskExecutionGetDataRequest)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::flyteidl::core::TaskExecutionIdentifier* id_;
-  int mode_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2ftask_5fexecution_2eproto;
 };
@@ -2121,20 +2114,6 @@ inline void TaskExecutionGetDataRequest::set_allocated_id(::flyteidl::core::Task
   }
   id_ = id;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.TaskExecutionGetDataRequest.id)
-}
-
-// .flyteidl.admin.GetExecutionData.Mode mode = 2;
-inline void TaskExecutionGetDataRequest::clear_mode() {
-  mode_ = 0;
-}
-inline ::flyteidl::admin::GetExecutionData_Mode TaskExecutionGetDataRequest::mode() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.TaskExecutionGetDataRequest.mode)
-  return static_cast< ::flyteidl::admin::GetExecutionData_Mode >(mode_);
-}
-inline void TaskExecutionGetDataRequest::set_mode(::flyteidl::admin::GetExecutionData_Mode value) {
-  
-  mode_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.admin.TaskExecutionGetDataRequest.mode)
 }
 
 // -------------------------------------------------------------------
