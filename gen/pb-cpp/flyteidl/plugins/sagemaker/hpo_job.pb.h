@@ -34,7 +34,6 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "flyteidl/plugins/sagemaker/parameter_ranges.pb.h"
 #include "flyteidl/plugins/sagemaker/training_job.pb.h"
-#include "flyteidl/core/tasks.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto
@@ -45,7 +44,7 @@ struct TableStruct_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[4]
+  static const ::google::protobuf::internal::ParseTable schema[3]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -61,9 +60,6 @@ extern HPOJobDefaultTypeInternal _HPOJob_default_instance_;
 class HPOJobConfig;
 class HPOJobConfigDefaultTypeInternal;
 extern HPOJobConfigDefaultTypeInternal _HPOJobConfig_default_instance_;
-class HPOJobCustom;
-class HPOJobCustomDefaultTypeInternal;
-extern HPOJobCustomDefaultTypeInternal _HPOJobCustom_default_instance_;
 class HyperparameterTuningObjective;
 class HyperparameterTuningObjectiveDefaultTypeInternal;
 extern HyperparameterTuningObjectiveDefaultTypeInternal _HyperparameterTuningObjective_default_instance_;
@@ -74,7 +70,6 @@ namespace google {
 namespace protobuf {
 template<> ::flyteidl::plugins::sagemaker::HPOJob* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::HPOJob>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::HPOJobConfig* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::HPOJobConfig>(Arena*);
-template<> ::flyteidl::plugins::sagemaker::HPOJobCustom* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::HPOJobCustom>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::HyperparameterTuningObjective* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::HyperparameterTuningObjective>(Arena*);
 }  // namespace protobuf
 }  // namespace google
@@ -618,131 +613,6 @@ class HPOJobConfig final :
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto;
 };
-// -------------------------------------------------------------------
-
-class HPOJobCustom final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.sagemaker.HPOJobCustom) */ {
- public:
-  HPOJobCustom();
-  virtual ~HPOJobCustom();
-
-  HPOJobCustom(const HPOJobCustom& from);
-
-  inline HPOJobCustom& operator=(const HPOJobCustom& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  HPOJobCustom(HPOJobCustom&& from) noexcept
-    : HPOJobCustom() {
-    *this = ::std::move(from);
-  }
-
-  inline HPOJobCustom& operator=(HPOJobCustom&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const HPOJobCustom& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const HPOJobCustom* internal_default_instance() {
-    return reinterpret_cast<const HPOJobCustom*>(
-               &_HPOJobCustom_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    3;
-
-  void Swap(HPOJobCustom* other);
-  friend void swap(HPOJobCustom& a, HPOJobCustom& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline HPOJobCustom* New() const final {
-    return CreateMaybeMessage<HPOJobCustom>(nullptr);
-  }
-
-  HPOJobCustom* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<HPOJobCustom>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const HPOJobCustom& from);
-  void MergeFrom(const HPOJobCustom& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(HPOJobCustom* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // .flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;
-  bool has_hpo_job_config() const;
-  void clear_hpo_job_config();
-  static const int kHpoJobConfigFieldNumber = 1;
-  const ::flyteidl::plugins::sagemaker::HPOJobConfig& hpo_job_config() const;
-  ::flyteidl::plugins::sagemaker::HPOJobConfig* release_hpo_job_config();
-  ::flyteidl::plugins::sagemaker::HPOJobConfig* mutable_hpo_job_config();
-  void set_allocated_hpo_job_config(::flyteidl::plugins::sagemaker::HPOJobConfig* hpo_job_config);
-
-  // .flyteidl.core.TaskTemplate training_job_task_template = 2;
-  bool has_training_job_task_template() const;
-  void clear_training_job_task_template();
-  static const int kTrainingJobTaskTemplateFieldNumber = 2;
-  const ::flyteidl::core::TaskTemplate& training_job_task_template() const;
-  ::flyteidl::core::TaskTemplate* release_training_job_task_template();
-  ::flyteidl::core::TaskTemplate* mutable_training_job_task_template();
-  void set_allocated_training_job_task_template(::flyteidl::core::TaskTemplate* training_job_task_template);
-
-  // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.HPOJobCustom)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::plugins::sagemaker::HPOJobConfig* hpo_job_config_;
-  ::flyteidl::core::TaskTemplate* training_job_task_template_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2fhpo_5fjob_2eproto;
-};
 // ===================================================================
 
 
@@ -1026,111 +896,9 @@ inline void HPOJobConfig::set_training_job_early_stopping_type(::flyteidl::plugi
   // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.HPOJobConfig.training_job_early_stopping_type)
 }
 
-// -------------------------------------------------------------------
-
-// HPOJobCustom
-
-// .flyteidl.plugins.sagemaker.HPOJobConfig hpo_job_config = 1;
-inline bool HPOJobCustom::has_hpo_job_config() const {
-  return this != internal_default_instance() && hpo_job_config_ != nullptr;
-}
-inline void HPOJobCustom::clear_hpo_job_config() {
-  if (GetArenaNoVirtual() == nullptr && hpo_job_config_ != nullptr) {
-    delete hpo_job_config_;
-  }
-  hpo_job_config_ = nullptr;
-}
-inline const ::flyteidl::plugins::sagemaker::HPOJobConfig& HPOJobCustom::hpo_job_config() const {
-  const ::flyteidl::plugins::sagemaker::HPOJobConfig* p = hpo_job_config_;
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.HPOJobCustom.hpo_job_config)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::sagemaker::HPOJobConfig*>(
-      &::flyteidl::plugins::sagemaker::_HPOJobConfig_default_instance_);
-}
-inline ::flyteidl::plugins::sagemaker::HPOJobConfig* HPOJobCustom::release_hpo_job_config() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.HPOJobCustom.hpo_job_config)
-  
-  ::flyteidl::plugins::sagemaker::HPOJobConfig* temp = hpo_job_config_;
-  hpo_job_config_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::plugins::sagemaker::HPOJobConfig* HPOJobCustom::mutable_hpo_job_config() {
-  
-  if (hpo_job_config_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::plugins::sagemaker::HPOJobConfig>(GetArenaNoVirtual());
-    hpo_job_config_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.HPOJobCustom.hpo_job_config)
-  return hpo_job_config_;
-}
-inline void HPOJobCustom::set_allocated_hpo_job_config(::flyteidl::plugins::sagemaker::HPOJobConfig* hpo_job_config) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete hpo_job_config_;
-  }
-  if (hpo_job_config) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      hpo_job_config = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, hpo_job_config, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  hpo_job_config_ = hpo_job_config;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.HPOJobCustom.hpo_job_config)
-}
-
-// .flyteidl.core.TaskTemplate training_job_task_template = 2;
-inline bool HPOJobCustom::has_training_job_task_template() const {
-  return this != internal_default_instance() && training_job_task_template_ != nullptr;
-}
-inline const ::flyteidl::core::TaskTemplate& HPOJobCustom::training_job_task_template() const {
-  const ::flyteidl::core::TaskTemplate* p = training_job_task_template_;
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.HPOJobCustom.training_job_task_template)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::TaskTemplate*>(
-      &::flyteidl::core::_TaskTemplate_default_instance_);
-}
-inline ::flyteidl::core::TaskTemplate* HPOJobCustom::release_training_job_task_template() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.HPOJobCustom.training_job_task_template)
-  
-  ::flyteidl::core::TaskTemplate* temp = training_job_task_template_;
-  training_job_task_template_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::core::TaskTemplate* HPOJobCustom::mutable_training_job_task_template() {
-  
-  if (training_job_task_template_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::TaskTemplate>(GetArenaNoVirtual());
-    training_job_task_template_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.HPOJobCustom.training_job_task_template)
-  return training_job_task_template_;
-}
-inline void HPOJobCustom::set_allocated_training_job_task_template(::flyteidl::core::TaskTemplate* training_job_task_template) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(training_job_task_template_);
-  }
-  if (training_job_task_template) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      training_job_task_template = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, training_job_task_template, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  training_job_task_template_ = training_job_task_template;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.HPOJobCustom.training_job_task_template)
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
