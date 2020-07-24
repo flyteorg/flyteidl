@@ -4,6 +4,8 @@ package flyteidl.plugins.sagemaker;
 
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
 
+// HyperparameterScalingType defines the way to increase or decrease the value of the hyperparameter
+// https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
 enum HyperparameterScalingType {
     AUTO = 0;
     LINEAR = 1;
@@ -11,18 +13,24 @@ enum HyperparameterScalingType {
     REVERSELOGARITHMIC = 3;
 }
 
+// ContinuousParameterRange refers to a continuous range of hyperparameter values, allowing
+// users to specify the search space of a floating-point hyperparameter
 message ContinuousParameterRange {
     double max_value = 1;
     double min_value = 2;
     HyperparameterScalingType scaling_type = 3;
 }
 
+// IntegerParameterRange refers to a discrete range of hyperparameter values, allowing
+// users to specify the search space of an integer hyperparameter
 message IntegerParameterRange {
     int64 max_value = 1;
     int64 min_value = 2;
     HyperparameterScalingType scaling_type = 3;
 }
 
+// ContinuousParameterRange refers to a continuous range of hyperparameter values, allowing
+// users to specify the search space of a floating-point hyperparameter
 message CategoricalParameterRange {
     repeated string values = 1;
 }
@@ -35,6 +43,7 @@ message ParameterRangeOneOf {
     }
 }
 
+// ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
 message ParameterRanges {
     map<string, ParameterRangeOneOf> parameter_range_map = 1;
 }

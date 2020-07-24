@@ -213,7 +213,7 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2ftraining_5
   "idl.plugins.sagemaker.AlgorithmSpecifica"
   "tion\022J\n\023training_job_config\030\002 \001(\0132-.flyt"
   "eidl.plugins.sagemaker.TrainingJobConfig"
-  "\022\025\n\rinterruptible\030\004 \001(\010*\037\n\tInputMode\022\010\n\004"
+  "\022\025\n\rinterruptible\030\003 \001(\010*\037\n\tInputMode\022\010\n\004"
   "FILE\020\000\022\010\n\004PIPE\020\001*(\n\rAlgorithmName\022\n\n\006CUS"
   "TOM\020\000\022\013\n\007XGBOOST\020\001B5Z3github.com/lyft/fl"
   "yteidl/gen/pb-go/flyteidl/pluginsb\006proto"
@@ -1925,9 +1925,9 @@ const char* TrainingJob::_InternalParse(const char* begin, const char* end, void
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // bool interruptible = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
+      // bool interruptible = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
         msg->set_interruptible(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
@@ -1984,9 +1984,9 @@ bool TrainingJob::MergePartialFromCodedStream(
         break;
       }
 
-      // bool interruptible = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (32 & 0xFF)) {
+      // bool interruptible = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
@@ -2036,9 +2036,9 @@ void TrainingJob::SerializeWithCachedSizes(
       2, HasBitSetters::training_job_config(this), output);
   }
 
-  // bool interruptible = 4;
+  // bool interruptible = 3;
   if (this->interruptible() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(4, this->interruptible(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->interruptible(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2068,9 +2068,9 @@ void TrainingJob::SerializeWithCachedSizes(
         2, HasBitSetters::training_job_config(this), target);
   }
 
-  // bool interruptible = 4;
+  // bool interruptible = 3;
   if (this->interruptible() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(4, this->interruptible(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->interruptible(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2108,7 +2108,7 @@ size_t TrainingJob::ByteSizeLong() const {
         *training_job_config_);
   }
 
-  // bool interruptible = 4;
+  // bool interruptible = 3;
   if (this->interruptible() != 0) {
     total_size += 1 + 1;
   }

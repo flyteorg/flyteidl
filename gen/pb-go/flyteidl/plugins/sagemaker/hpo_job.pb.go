@@ -42,72 +42,138 @@ func (x HyperparameterTuningObjective_HyperparameterTuningObjectiveType) String(
 }
 
 func (HyperparameterTuningObjective_HyperparameterTuningObjectiveType) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_50903433b4c088ac, []int{0, 0}
+	return fileDescriptor_50903433b4c088ac, []int{1, 0}
 }
 
-type HPOJobConfig_HyperparameterTuningStrategy int32
+type HyperparameterTuningSpecification_HyperparameterTuningStrategy int32
 
 const (
-	HPOJobConfig_BAYESIAN HPOJobConfig_HyperparameterTuningStrategy = 0
-	HPOJobConfig_RANDOM   HPOJobConfig_HyperparameterTuningStrategy = 1
+	HyperparameterTuningSpecification_BAYESIAN HyperparameterTuningSpecification_HyperparameterTuningStrategy = 0
+	HyperparameterTuningSpecification_RANDOM   HyperparameterTuningSpecification_HyperparameterTuningStrategy = 1
 )
 
-var HPOJobConfig_HyperparameterTuningStrategy_name = map[int32]string{
+var HyperparameterTuningSpecification_HyperparameterTuningStrategy_name = map[int32]string{
 	0: "BAYESIAN",
 	1: "RANDOM",
 }
 
-var HPOJobConfig_HyperparameterTuningStrategy_value = map[string]int32{
+var HyperparameterTuningSpecification_HyperparameterTuningStrategy_value = map[string]int32{
 	"BAYESIAN": 0,
 	"RANDOM":   1,
 }
 
-func (x HPOJobConfig_HyperparameterTuningStrategy) String() string {
-	return proto.EnumName(HPOJobConfig_HyperparameterTuningStrategy_name, int32(x))
+func (x HyperparameterTuningSpecification_HyperparameterTuningStrategy) String() string {
+	return proto.EnumName(HyperparameterTuningSpecification_HyperparameterTuningStrategy_name, int32(x))
 }
 
-func (HPOJobConfig_HyperparameterTuningStrategy) EnumDescriptor() ([]byte, []int) {
+func (HyperparameterTuningSpecification_HyperparameterTuningStrategy) EnumDescriptor() ([]byte, []int) {
 	return fileDescriptor_50903433b4c088ac, []int{2, 0}
 }
 
-type HPOJobConfig_TrainingJobEarlyStoppingType int32
+// When the training jobs launched by the hyperparameter tuning job are not improving significantly,
+// a hyperparameter tuning job can be stopping early.
+// Note that there's only a subset of built-in algorithms that supports early stopping.
+// see: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html
+type HyperparameterTuningSpecification_TrainingJobEarlyStoppingType int32
 
 const (
-	HPOJobConfig_OFF  HPOJobConfig_TrainingJobEarlyStoppingType = 0
-	HPOJobConfig_AUTO HPOJobConfig_TrainingJobEarlyStoppingType = 1
+	HyperparameterTuningSpecification_OFF  HyperparameterTuningSpecification_TrainingJobEarlyStoppingType = 0
+	HyperparameterTuningSpecification_AUTO HyperparameterTuningSpecification_TrainingJobEarlyStoppingType = 1
 )
 
-var HPOJobConfig_TrainingJobEarlyStoppingType_name = map[int32]string{
+var HyperparameterTuningSpecification_TrainingJobEarlyStoppingType_name = map[int32]string{
 	0: "OFF",
 	1: "AUTO",
 }
 
-var HPOJobConfig_TrainingJobEarlyStoppingType_value = map[string]int32{
+var HyperparameterTuningSpecification_TrainingJobEarlyStoppingType_value = map[string]int32{
 	"OFF":  0,
 	"AUTO": 1,
 }
 
-func (x HPOJobConfig_TrainingJobEarlyStoppingType) String() string {
-	return proto.EnumName(HPOJobConfig_TrainingJobEarlyStoppingType_name, int32(x))
+func (x HyperparameterTuningSpecification_TrainingJobEarlyStoppingType) String() string {
+	return proto.EnumName(HyperparameterTuningSpecification_TrainingJobEarlyStoppingType_name, int32(x))
 }
 
-func (HPOJobConfig_TrainingJobEarlyStoppingType) EnumDescriptor() ([]byte, []int) {
+func (HyperparameterTuningSpecification_TrainingJobEarlyStoppingType) EnumDescriptor() ([]byte, []int) {
 	return fileDescriptor_50903433b4c088ac, []int{2, 1}
 }
 
+// The hyperparameter tuning job
+type HyperparameterTuningJob struct {
+	// The underlying training job that the hyperparameter tuning job will launch during the process
+	TrainingJob *TrainingJob `protobuf:"bytes,1,opt,name=training_job,json=trainingJob,proto3" json:"training_job,omitempty"`
+	// The maximum number of training jobs that an hpo job can launch. For resource limit purpose.
+	MaxNumberOfTrainingJobs int64 `protobuf:"varint,2,opt,name=max_number_of_training_jobs,json=maxNumberOfTrainingJobs,proto3" json:"max_number_of_training_jobs,omitempty"`
+	// The maximum number of concurrent training job that an hpo job can launch
+	MaxParallelTrainingJobs int64    `protobuf:"varint,3,opt,name=max_parallel_training_jobs,json=maxParallelTrainingJobs,proto3" json:"max_parallel_training_jobs,omitempty"`
+	XXX_NoUnkeyedLiteral    struct{} `json:"-"`
+	XXX_unrecognized        []byte   `json:"-"`
+	XXX_sizecache           int32    `json:"-"`
+}
+
+func (m *HyperparameterTuningJob) Reset()         { *m = HyperparameterTuningJob{} }
+func (m *HyperparameterTuningJob) String() string { return proto.CompactTextString(m) }
+func (*HyperparameterTuningJob) ProtoMessage()    {}
+func (*HyperparameterTuningJob) Descriptor() ([]byte, []int) {
+	return fileDescriptor_50903433b4c088ac, []int{0}
+}
+
+func (m *HyperparameterTuningJob) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_HyperparameterTuningJob.Unmarshal(m, b)
+}
+func (m *HyperparameterTuningJob) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_HyperparameterTuningJob.Marshal(b, m, deterministic)
+}
+func (m *HyperparameterTuningJob) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HyperparameterTuningJob.Merge(m, src)
+}
+func (m *HyperparameterTuningJob) XXX_Size() int {
+	return xxx_messageInfo_HyperparameterTuningJob.Size(m)
+}
+func (m *HyperparameterTuningJob) XXX_DiscardUnknown() {
+	xxx_messageInfo_HyperparameterTuningJob.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_HyperparameterTuningJob proto.InternalMessageInfo
+
+func (m *HyperparameterTuningJob) GetTrainingJob() *TrainingJob {
+	if m != nil {
+		return m.TrainingJob
+	}
+	return nil
+}
+
+func (m *HyperparameterTuningJob) GetMaxNumberOfTrainingJobs() int64 {
+	if m != nil {
+		return m.MaxNumberOfTrainingJobs
+	}
+	return 0
+}
+
+func (m *HyperparameterTuningJob) GetMaxParallelTrainingJobs() int64 {
+	if m != nil {
+		return m.MaxParallelTrainingJobs
+	}
+	return 0
+}
+
+// The objective of the hyperparameter tuning
 type HyperparameterTuningObjective struct {
-	ObjectiveType        HyperparameterTuningObjective_HyperparameterTuningObjectiveType `protobuf:"varint,1,opt,name=objective_type,json=objectiveType,proto3,enum=flyteidl.plugins.sagemaker.HyperparameterTuningObjective_HyperparameterTuningObjectiveType" json:"objective_type,omitempty"`
-	MetricName           string                                                          `protobuf:"bytes,2,opt,name=metric_name,json=metricName,proto3" json:"metric_name,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                                        `json:"-"`
-	XXX_unrecognized     []byte                                                          `json:"-"`
-	XXX_sizecache        int32                                                           `json:"-"`
+	ObjectiveType HyperparameterTuningObjective_HyperparameterTuningObjectiveType `protobuf:"varint,1,opt,name=objective_type,json=objectiveType,proto3,enum=flyteidl.plugins.sagemaker.HyperparameterTuningObjective_HyperparameterTuningObjectiveType" json:"objective_type,omitempty"`
+	// The target metric name, which is the user-defined name of the metric specified in the
+	// training job's algorithm specification
+	MetricName           string   `protobuf:"bytes,2,opt,name=metric_name,json=metricName,proto3" json:"metric_name,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
 func (m *HyperparameterTuningObjective) Reset()         { *m = HyperparameterTuningObjective{} }
 func (m *HyperparameterTuningObjective) String() string { return proto.CompactTextString(m) }
 func (*HyperparameterTuningObjective) ProtoMessage()    {}
 func (*HyperparameterTuningObjective) Descriptor() ([]byte, []int) {
-	return fileDescriptor_50903433b4c088ac, []int{0}
+	return fileDescriptor_50903433b4c088ac, []int{1}
 }
 
 func (m *HyperparameterTuningObjective) XXX_Unmarshal(b []byte) error {
@@ -142,131 +208,77 @@ func (m *HyperparameterTuningObjective) GetMetricName() string {
 	return ""
 }
 
-type HPOJob struct {
-	TrainingJob             *TrainingJob `protobuf:"bytes,1,opt,name=training_job,json=trainingJob,proto3" json:"training_job,omitempty"`
-	MaxNumberOfTrainingJobs int64        `protobuf:"varint,2,opt,name=max_number_of_training_jobs,json=maxNumberOfTrainingJobs,proto3" json:"max_number_of_training_jobs,omitempty"`
-	MaxParallelTrainingJobs int64        `protobuf:"varint,3,opt,name=max_parallel_training_jobs,json=maxParallelTrainingJobs,proto3" json:"max_parallel_training_jobs,omitempty"`
-	XXX_NoUnkeyedLiteral    struct{}     `json:"-"`
-	XXX_unrecognized        []byte       `json:"-"`
-	XXX_sizecache           int32        `json:"-"`
+// The specification of the hyperparameter tuning process
+type HyperparameterTuningSpecification struct {
+	HyperparameterRanges         *ParameterRanges                                               `protobuf:"bytes,1,opt,name=hyperparameter_ranges,json=hyperparameterRanges,proto3" json:"hyperparameter_ranges,omitempty"`
+	TuningStrategy               HyperparameterTuningSpecification_HyperparameterTuningStrategy `protobuf:"varint,2,opt,name=tuning_strategy,json=tuningStrategy,proto3,enum=flyteidl.plugins.sagemaker.HyperparameterTuningSpecification_HyperparameterTuningStrategy" json:"tuning_strategy,omitempty"`
+	TuningObjective              *HyperparameterTuningObjective                                 `protobuf:"bytes,3,opt,name=tuning_objective,json=tuningObjective,proto3" json:"tuning_objective,omitempty"`
+	TrainingJobEarlyStoppingType HyperparameterTuningSpecification_TrainingJobEarlyStoppingType `protobuf:"varint,4,opt,name=training_job_early_stopping_type,json=trainingJobEarlyStoppingType,proto3,enum=flyteidl.plugins.sagemaker.HyperparameterTuningSpecification_TrainingJobEarlyStoppingType" json:"training_job_early_stopping_type,omitempty"`
+	XXX_NoUnkeyedLiteral         struct{}                                                       `json:"-"`
+	XXX_unrecognized             []byte                                                         `json:"-"`
+	XXX_sizecache                int32                                                          `json:"-"`
 }
 
-func (m *HPOJob) Reset()         { *m = HPOJob{} }
-func (m *HPOJob) String() string { return proto.CompactTextString(m) }
-func (*HPOJob) ProtoMessage()    {}
-func (*HPOJob) Descriptor() ([]byte, []int) {
-	return fileDescriptor_50903433b4c088ac, []int{1}
-}
-
-func (m *HPOJob) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_HPOJob.Unmarshal(m, b)
-}
-func (m *HPOJob) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_HPOJob.Marshal(b, m, deterministic)
-}
-func (m *HPOJob) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_HPOJob.Merge(m, src)
-}
-func (m *HPOJob) XXX_Size() int {
-	return xxx_messageInfo_HPOJob.Size(m)
-}
-func (m *HPOJob) XXX_DiscardUnknown() {
-	xxx_messageInfo_HPOJob.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_HPOJob proto.InternalMessageInfo
-
-func (m *HPOJob) GetTrainingJob() *TrainingJob {
-	if m != nil {
-		return m.TrainingJob
-	}
-	return nil
-}
-
-func (m *HPOJob) GetMaxNumberOfTrainingJobs() int64 {
-	if m != nil {
-		return m.MaxNumberOfTrainingJobs
-	}
-	return 0
-}
-
-func (m *HPOJob) GetMaxParallelTrainingJobs() int64 {
-	if m != nil {
-		return m.MaxParallelTrainingJobs
-	}
-	return 0
-}
-
-type HPOJobConfig struct {
-	HyperparameterRanges         *ParameterRanges                          `protobuf:"bytes,1,opt,name=hyperparameter_ranges,json=hyperparameterRanges,proto3" json:"hyperparameter_ranges,omitempty"`
-	TuningStrategy               HPOJobConfig_HyperparameterTuningStrategy `protobuf:"varint,2,opt,name=tuning_strategy,json=tuningStrategy,proto3,enum=flyteidl.plugins.sagemaker.HPOJobConfig_HyperparameterTuningStrategy" json:"tuning_strategy,omitempty"`
-	TuningObjective              *HyperparameterTuningObjective            `protobuf:"bytes,3,opt,name=tuning_objective,json=tuningObjective,proto3" json:"tuning_objective,omitempty"`
-	TrainingJobEarlyStoppingType HPOJobConfig_TrainingJobEarlyStoppingType `protobuf:"varint,4,opt,name=training_job_early_stopping_type,json=trainingJobEarlyStoppingType,proto3,enum=flyteidl.plugins.sagemaker.HPOJobConfig_TrainingJobEarlyStoppingType" json:"training_job_early_stopping_type,omitempty"`
-	XXX_NoUnkeyedLiteral         struct{}                                  `json:"-"`
-	XXX_unrecognized             []byte                                    `json:"-"`
-	XXX_sizecache                int32                                     `json:"-"`
-}
-
-func (m *HPOJobConfig) Reset()         { *m = HPOJobConfig{} }
-func (m *HPOJobConfig) String() string { return proto.CompactTextString(m) }
-func (*HPOJobConfig) ProtoMessage()    {}
-func (*HPOJobConfig) Descriptor() ([]byte, []int) {
+func (m *HyperparameterTuningSpecification) Reset()         { *m = HyperparameterTuningSpecification{} }
+func (m *HyperparameterTuningSpecification) String() string { return proto.CompactTextString(m) }
+func (*HyperparameterTuningSpecification) ProtoMessage()    {}
+func (*HyperparameterTuningSpecification) Descriptor() ([]byte, []int) {
 	return fileDescriptor_50903433b4c088ac, []int{2}
 }
 
-func (m *HPOJobConfig) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_HPOJobConfig.Unmarshal(m, b)
+func (m *HyperparameterTuningSpecification) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_HyperparameterTuningSpecification.Unmarshal(m, b)
 }
-func (m *HPOJobConfig) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_HPOJobConfig.Marshal(b, m, deterministic)
+func (m *HyperparameterTuningSpecification) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_HyperparameterTuningSpecification.Marshal(b, m, deterministic)
 }
-func (m *HPOJobConfig) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_HPOJobConfig.Merge(m, src)
+func (m *HyperparameterTuningSpecification) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HyperparameterTuningSpecification.Merge(m, src)
 }
-func (m *HPOJobConfig) XXX_Size() int {
-	return xxx_messageInfo_HPOJobConfig.Size(m)
+func (m *HyperparameterTuningSpecification) XXX_Size() int {
+	return xxx_messageInfo_HyperparameterTuningSpecification.Size(m)
 }
-func (m *HPOJobConfig) XXX_DiscardUnknown() {
-	xxx_messageInfo_HPOJobConfig.DiscardUnknown(m)
+func (m *HyperparameterTuningSpecification) XXX_DiscardUnknown() {
+	xxx_messageInfo_HyperparameterTuningSpecification.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_HPOJobConfig proto.InternalMessageInfo
+var xxx_messageInfo_HyperparameterTuningSpecification proto.InternalMessageInfo
 
-func (m *HPOJobConfig) GetHyperparameterRanges() *ParameterRanges {
+func (m *HyperparameterTuningSpecification) GetHyperparameterRanges() *ParameterRanges {
 	if m != nil {
 		return m.HyperparameterRanges
 	}
 	return nil
 }
 
-func (m *HPOJobConfig) GetTuningStrategy() HPOJobConfig_HyperparameterTuningStrategy {
+func (m *HyperparameterTuningSpecification) GetTuningStrategy() HyperparameterTuningSpecification_HyperparameterTuningStrategy {
 	if m != nil {
 		return m.TuningStrategy
 	}
-	return HPOJobConfig_BAYESIAN
+	return HyperparameterTuningSpecification_BAYESIAN
 }
 
-func (m *HPOJobConfig) GetTuningObjective() *HyperparameterTuningObjective {
+func (m *HyperparameterTuningSpecification) GetTuningObjective() *HyperparameterTuningObjective {
 	if m != nil {
 		return m.TuningObjective
 	}
 	return nil
 }
 
-func (m *HPOJobConfig) GetTrainingJobEarlyStoppingType() HPOJobConfig_TrainingJobEarlyStoppingType {
+func (m *HyperparameterTuningSpecification) GetTrainingJobEarlyStoppingType() HyperparameterTuningSpecification_TrainingJobEarlyStoppingType {
 	if m != nil {
 		return m.TrainingJobEarlyStoppingType
 	}
-	return HPOJobConfig_OFF
+	return HyperparameterTuningSpecification_OFF
 }
 
 func init() {
 	proto.RegisterEnum("flyteidl.plugins.sagemaker.HyperparameterTuningObjective_HyperparameterTuningObjectiveType", HyperparameterTuningObjective_HyperparameterTuningObjectiveType_name, HyperparameterTuningObjective_HyperparameterTuningObjectiveType_value)
-	proto.RegisterEnum("flyteidl.plugins.sagemaker.HPOJobConfig_HyperparameterTuningStrategy", HPOJobConfig_HyperparameterTuningStrategy_name, HPOJobConfig_HyperparameterTuningStrategy_value)
-	proto.RegisterEnum("flyteidl.plugins.sagemaker.HPOJobConfig_TrainingJobEarlyStoppingType", HPOJobConfig_TrainingJobEarlyStoppingType_name, HPOJobConfig_TrainingJobEarlyStoppingType_value)
+	proto.RegisterEnum("flyteidl.plugins.sagemaker.HyperparameterTuningSpecification_HyperparameterTuningStrategy", HyperparameterTuningSpecification_HyperparameterTuningStrategy_name, HyperparameterTuningSpecification_HyperparameterTuningStrategy_value)
+	proto.RegisterEnum("flyteidl.plugins.sagemaker.HyperparameterTuningSpecification_TrainingJobEarlyStoppingType", HyperparameterTuningSpecification_TrainingJobEarlyStoppingType_name, HyperparameterTuningSpecification_TrainingJobEarlyStoppingType_value)
+	proto.RegisterType((*HyperparameterTuningJob)(nil), "flyteidl.plugins.sagemaker.HyperparameterTuningJob")
 	proto.RegisterType((*HyperparameterTuningObjective)(nil), "flyteidl.plugins.sagemaker.HyperparameterTuningObjective")
-	proto.RegisterType((*HPOJob)(nil), "flyteidl.plugins.sagemaker.HPOJob")
-	proto.RegisterType((*HPOJobConfig)(nil), "flyteidl.plugins.sagemaker.HPOJobConfig")
+	proto.RegisterType((*HyperparameterTuningSpecification)(nil), "flyteidl.plugins.sagemaker.HyperparameterTuningSpecification")
 }
 
 func init() {
@@ -274,39 +286,39 @@ func init() {
 }
 
 var fileDescriptor_50903433b4c088ac = []byte{
-	// 539 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x54, 0x41, 0x8f, 0xd2, 0x40,
-	0x18, 0xa5, 0x0b, 0xc1, 0xf5, 0x03, 0xb1, 0x99, 0x68, 0xdc, 0x20, 0x46, 0xec, 0x45, 0x12, 0xb3,
-	0x6d, 0x96, 0x8d, 0x89, 0x46, 0x13, 0xc3, 0x2a, 0x9b, 0x85, 0x04, 0x4a, 0x0a, 0x26, 0xba, 0x1e,
-	0xea, 0x94, 0x1d, 0x4a, 0xd7, 0xb6, 0xd3, 0x4c, 0x07, 0xb3, 0xbd, 0x7a, 0xf0, 0xe6, 0xaf, 0xf2,
-	0x07, 0xf8, 0x97, 0x4c, 0x87, 0x52, 0xca, 0x46, 0xc7, 0xb8, 0xc7, 0x6f, 0xfa, 0xde, 0x9b, 0x79,
-	0xaf, 0x6f, 0x06, 0x3a, 0x0b, 0x3f, 0xe1, 0xc4, 0xbb, 0xf0, 0x8d, 0xc8, 0x5f, 0xb9, 0x5e, 0x18,
-	0x1b, 0x31, 0x76, 0x49, 0x80, 0xbf, 0x10, 0x66, 0x2c, 0x23, 0x6a, 0x5f, 0x52, 0x47, 0x8f, 0x18,
-	0xe5, 0x14, 0x35, 0x37, 0x48, 0x3d, 0x43, 0xea, 0x39, 0xb2, 0x79, 0x24, 0x51, 0x89, 0x30, 0xc3,
-	0x01, 0xe1, 0x84, 0xd9, 0x0c, 0x87, 0x2e, 0x89, 0xd7, 0x72, 0xcd, 0x43, 0x09, 0x85, 0x33, 0xec,
-	0x85, 0x5e, 0xe8, 0x6e, 0x77, 0xd7, 0xbe, 0xef, 0xc1, 0xa3, 0xb3, 0x24, 0x22, 0x2c, 0x97, 0x9b,
-	0xad, 0x52, 0x88, 0xe9, 0x5c, 0x92, 0x39, 0xf7, 0xbe, 0x12, 0xf4, 0x4d, 0x81, 0x06, 0xdd, 0x4c,
-	0x36, 0x4f, 0x22, 0x72, 0xa0, 0xb4, 0x95, 0x4e, 0xa3, 0xfb, 0x49, 0xff, 0xfb, 0xc9, 0x75, 0xa9,
-	0xa6, 0xfc, 0xeb, 0x2c, 0x89, 0x88, 0x75, 0x87, 0x16, 0x47, 0xf4, 0x18, 0x6a, 0x01, 0xe1, 0xcc,
-	0x9b, 0xdb, 0x21, 0x0e, 0xc8, 0xc1, 0x5e, 0x5b, 0xe9, 0xdc, 0xb6, 0x60, 0xbd, 0x34, 0xc6, 0x01,
-	0xd1, 0xde, 0xc0, 0x93, 0x7f, 0x8a, 0xa2, 0x3a, 0xec, 0x8f, 0x06, 0xe3, 0xc1, 0x68, 0x70, 0xde,
-	0x57, 0x4b, 0x62, 0xea, 0x7d, 0x58, 0x4f, 0x8a, 0xf6, 0x4b, 0x81, 0xea, 0xd9, 0xc4, 0x1c, 0x52,
-	0x07, 0x0d, 0xa1, 0x5e, 0x4c, 0x4a, 0xd8, 0xad, 0x75, 0x9f, 0xca, 0xec, 0xce, 0x32, 0xfc, 0x90,
-	0x3a, 0x56, 0x8d, 0x6f, 0x07, 0xf4, 0x1a, 0x1e, 0x06, 0xf8, 0xca, 0x0e, 0x57, 0x81, 0x43, 0x98,
-	0x4d, 0x17, 0x76, 0x51, 0x39, 0x16, 0x46, 0xca, 0xd6, 0x83, 0x00, 0x5f, 0x8d, 0x05, 0xc2, 0x5c,
-	0x14, 0x94, 0x62, 0xf4, 0x0a, 0x9a, 0x29, 0x3b, 0x35, 0xe5, 0xfb, 0xc4, 0xbf, 0x46, 0x2e, 0xe7,
-	0xe4, 0x49, 0x06, 0x28, 0x92, 0xb5, 0x9f, 0x15, 0xa8, 0xaf, 0x1d, 0xbd, 0xa5, 0xe1, 0xc2, 0x73,
-	0xd1, 0x67, 0xb8, 0xbf, 0xdc, 0xc9, 0x28, 0x6b, 0x4e, 0x66, 0xf0, 0x99, 0xcc, 0xe0, 0x64, 0xc3,
-	0xb1, 0x04, 0xc5, 0xba, 0xb7, 0xab, 0xb4, 0x5e, 0x45, 0x21, 0xdc, 0xe5, 0x22, 0x77, 0x3b, 0xe6,
-	0x0c, 0x73, 0xe2, 0x26, 0xc2, 0x61, 0xa3, 0xdb, 0x97, 0x76, 0xa5, 0x70, 0xc8, 0x3f, 0x56, 0x63,
-	0x9a, 0x89, 0x59, 0x0d, 0xbe, 0x33, 0xa3, 0x0b, 0x50, 0xb3, 0xfd, 0xf2, 0xba, 0x88, 0x54, 0x6a,
-	0xdd, 0x97, 0x37, 0x2e, 0xa7, 0x95, 0x59, 0xd8, 0xde, 0x80, 0x1f, 0x0a, 0xb4, 0x8b, 0xc9, 0xdb,
-	0x04, 0x33, 0x3f, 0xb1, 0x63, 0x4e, 0xa3, 0x28, 0x5d, 0x12, 0x77, 0xa2, 0xf2, 0x9f, 0x3e, 0x0b,
-	0xbf, 0xaa, 0x9f, 0xca, 0x4d, 0x33, 0x35, 0xd1, 0xfe, 0x16, 0x97, 0x7c, 0xd5, 0x5e, 0x40, 0x4b,
-	0x96, 0x52, 0x5a, 0xec, 0x93, 0xde, 0xc7, 0xfe, 0x74, 0xd0, 0x1b, 0xab, 0x25, 0x04, 0x50, 0xb5,
-	0x7a, 0xe3, 0x77, 0xe6, 0x48, 0x55, 0xb4, 0x23, 0x68, 0xc9, 0xf6, 0x45, 0xb7, 0xa0, 0x6c, 0x9e,
-	0x9e, 0xaa, 0x25, 0xb4, 0x0f, 0x95, 0xde, 0xfb, 0x99, 0xa9, 0x2a, 0x27, 0xcf, 0xcf, 0x8f, 0x5d,
-	0x8f, 0x2f, 0x57, 0x8e, 0x3e, 0xa7, 0x81, 0xe1, 0x27, 0x0b, 0x6e, 0xe4, 0x2f, 0x8c, 0x4b, 0x42,
-	0x23, 0x72, 0x0e, 0x5d, 0x6a, 0x5c, 0x7f, 0x74, 0x9c, 0xaa, 0x78, 0x5e, 0x8e, 0x7f, 0x07, 0x00,
-	0x00, 0xff, 0xff, 0xc8, 0x08, 0xb2, 0xe9, 0x08, 0x05, 0x00, 0x00,
+	// 543 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x54, 0x61, 0x6b, 0xd3, 0x40,
+	0x18, 0x5e, 0xd6, 0x39, 0xe7, 0xdb, 0x59, 0xc3, 0xa1, 0x6c, 0xd4, 0x8a, 0x35, 0x5f, 0x2c, 0xc8,
+	0x12, 0xd6, 0x21, 0x28, 0x0a, 0xd2, 0x61, 0x87, 0x2d, 0xb4, 0x1d, 0x69, 0x05, 0xad, 0x1f, 0xe2,
+	0xa5, 0xbb, 0xa6, 0x37, 0x93, 0xdc, 0x71, 0xb9, 0xca, 0xf2, 0xd5, 0x81, 0x3f, 0xc4, 0x5f, 0xe6,
+	0x4f, 0x91, 0x5c, 0xd3, 0x34, 0x1d, 0x35, 0xa2, 0xf8, 0xf1, 0xbd, 0x7b, 0x9e, 0xe7, 0x7d, 0x9f,
+	0xf7, 0x1e, 0x0e, 0x1a, 0x53, 0x3f, 0x96, 0x84, 0x5e, 0xf8, 0x16, 0xf7, 0xe7, 0x1e, 0x0d, 0x23,
+	0x2b, 0xc2, 0x1e, 0x09, 0xf0, 0x17, 0x22, 0xac, 0x19, 0x67, 0xce, 0x25, 0x73, 0x4d, 0x2e, 0x98,
+	0x64, 0xa8, 0xba, 0x44, 0x9a, 0x29, 0xd2, 0xcc, 0x90, 0xd5, 0xe3, 0x02, 0x15, 0x8e, 0x05, 0x0e,
+	0x88, 0x24, 0xc2, 0x11, 0x38, 0xf4, 0x48, 0xb4, 0x90, 0xab, 0x1e, 0x15, 0x50, 0xa4, 0xc0, 0x34,
+	0xa4, 0xa1, 0xb7, 0xea, 0x6e, 0xfc, 0xd4, 0xe0, 0xe0, 0x5d, 0xcc, 0x89, 0xc8, 0xe4, 0x46, 0xf3,
+	0x04, 0xd2, 0x65, 0x2e, 0xea, 0xc2, 0x7e, 0x9e, 0x71, 0xa8, 0xd5, 0xb5, 0x46, 0xb9, 0xf9, 0xd4,
+	0xfc, 0xfd, 0xc0, 0xe6, 0x28, 0xc5, 0x77, 0x99, 0x6b, 0x97, 0xe5, 0xaa, 0x40, 0xaf, 0xe1, 0x61,
+	0x80, 0xaf, 0x9c, 0x70, 0x1e, 0xb8, 0x44, 0x38, 0x6c, 0xea, 0xe4, 0x95, 0xa3, 0xc3, 0xed, 0xba,
+	0xd6, 0x28, 0xd9, 0x07, 0x01, 0xbe, 0xea, 0x2b, 0xc4, 0x60, 0x9a, 0x53, 0x8a, 0xd0, 0x2b, 0xa8,
+	0x26, 0xec, 0x64, 0x46, 0xdf, 0x27, 0xfe, 0x0d, 0x72, 0x29, 0x23, 0x9f, 0xa7, 0x80, 0x3c, 0xd9,
+	0xf8, 0xbe, 0x0d, 0x8f, 0x36, 0x59, 0x1c, 0xb8, 0x97, 0x64, 0x22, 0xe9, 0x57, 0x82, 0xbe, 0x69,
+	0x50, 0x61, 0xcb, 0xca, 0x91, 0x31, 0x27, 0xca, 0x6b, 0xa5, 0xf9, 0xa9, 0xc8, 0x6b, 0xa1, 0x66,
+	0xf1, 0xed, 0x28, 0xe6, 0xc4, 0xbe, 0xcb, 0xf2, 0x25, 0x7a, 0x0c, 0xe5, 0x80, 0x48, 0x41, 0x27,
+	0x4e, 0x88, 0x03, 0xa2, 0x36, 0x72, 0xc7, 0x86, 0xc5, 0x51, 0x1f, 0x07, 0xc4, 0x78, 0x03, 0x4f,
+	0xfe, 0x28, 0x8a, 0xf6, 0x61, 0xaf, 0xd7, 0xe9, 0x77, 0x7a, 0x9d, 0x71, 0x5b, 0xdf, 0x52, 0x55,
+	0xeb, 0xc3, 0xa2, 0xd2, 0x8c, 0xeb, 0x5b, 0x9b, 0x15, 0x86, 0x9c, 0x4c, 0xe8, 0x94, 0x4e, 0xb0,
+	0xa4, 0x2c, 0x44, 0x9f, 0xe1, 0xc1, 0x6c, 0x0d, 0x94, 0xe6, 0x2b, 0x7d, 0xfe, 0x67, 0x45, 0x2b,
+	0x39, 0x5f, 0x72, 0x6c, 0x45, 0xb1, 0xef, 0xaf, 0x2b, 0x2d, 0x4e, 0xd1, 0xb5, 0x06, 0xf7, 0xa4,
+	0xea, 0xec, 0x44, 0x52, 0x60, 0x49, 0xbc, 0x58, 0xd9, 0xad, 0x34, 0xc7, 0x7f, 0xbb, 0xef, 0xb5,
+	0xd1, 0x37, 0x23, 0xd2, 0x0e, 0x76, 0x45, 0xae, 0xd5, 0xe8, 0x02, 0xf4, 0x74, 0x88, 0xec, 0x1d,
+	0x54, 0x92, 0xca, 0xcd, 0x97, 0xff, 0xfc, 0xea, 0x76, 0xea, 0x6b, 0x15, 0xad, 0x1f, 0x1a, 0xd4,
+	0xf3, 0x69, 0x75, 0x08, 0x16, 0x7e, 0xec, 0x44, 0x92, 0x71, 0x9e, 0x1c, 0xa9, 0xb0, 0xed, 0xfc,
+	0x0f, 0xf3, 0xb9, 0xcc, 0xb7, 0x93, 0x1e, 0xc3, 0xb4, 0x85, 0xca, 0x5a, 0x4d, 0x16, 0xdc, 0x1a,
+	0x2f, 0xa0, 0x56, 0xb4, 0xba, 0x24, 0x46, 0xa7, 0xad, 0x8f, 0xed, 0x61, 0xa7, 0xd5, 0xd7, 0xb7,
+	0x10, 0xc0, 0xae, 0xdd, 0xea, 0xbf, 0x1d, 0xf4, 0x74, 0xcd, 0x38, 0x86, 0x5a, 0x51, 0x5f, 0x74,
+	0x1b, 0x4a, 0x83, 0xb3, 0x33, 0x7d, 0x0b, 0xed, 0xc1, 0x4e, 0xeb, 0xfd, 0x68, 0xa0, 0x6b, 0xa7,
+	0xcf, 0xc7, 0x27, 0x1e, 0x95, 0xb3, 0xb9, 0x6b, 0x4e, 0x58, 0x60, 0xf9, 0xf1, 0x54, 0x5a, 0xd9,
+	0x97, 0xe5, 0x91, 0xd0, 0xe2, 0xee, 0x91, 0xc7, 0xac, 0x9b, 0xbf, 0x98, 0xbb, 0xab, 0xfe, 0xab,
+	0x93, 0x5f, 0x01, 0x00, 0x00, 0xff, 0xff, 0xf9, 0x2f, 0x19, 0xc5, 0x59, 0x05, 0x00, 0x00,
 }

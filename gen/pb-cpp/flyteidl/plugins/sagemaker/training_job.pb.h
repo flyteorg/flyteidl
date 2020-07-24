@@ -777,9 +777,9 @@ class TrainingJob final :
   ::flyteidl::plugins::sagemaker::TrainingJobConfig* mutable_training_job_config();
   void set_allocated_training_job_config(::flyteidl::plugins::sagemaker::TrainingJobConfig* training_job_config);
 
-  // bool interruptible = 4;
+  // bool interruptible = 3;
   void clear_interruptible();
-  static const int kInterruptibleFieldNumber = 4;
+  static const int kInterruptibleFieldNumber = 3;
   bool interruptible() const;
   void set_interruptible(bool value);
 
@@ -1249,7 +1249,7 @@ inline void TrainingJob::set_allocated_training_job_config(::flyteidl::plugins::
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.training_job_config)
 }
 
-// bool interruptible = 4;
+// bool interruptible = 3;
 inline void TrainingJob::clear_interruptible() {
   interruptible_ = false;
 }

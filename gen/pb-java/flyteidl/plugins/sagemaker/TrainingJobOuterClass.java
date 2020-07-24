@@ -215,52 +215,105 @@ public final class TrainingJobOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * The input mode can be either PIPE or FILE
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.InputMode input_mode = 1;</code>
      */
     int getInputModeValue();
     /**
+     * <pre>
+     * The input mode can be either PIPE or FILE
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.InputMode input_mode = 1;</code>
      */
     flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode getInputMode();
 
     /**
+     * <pre>
+     * The algorithm name is used for deciding which pre-built image to point to
+     * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;</code>
      */
     int getAlgorithmNameValue();
     /**
+     * <pre>
+     * The algorithm name is used for deciding which pre-built image to point to
+     * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;</code>
      */
     flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName getAlgorithmName();
 
     /**
+     * <pre>
+     * The algorithm version field is used for deciding which pre-built image to point to
+     * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
+     * </pre>
+     *
      * <code>string algorithm_version = 3;</code>
      */
     java.lang.String getAlgorithmVersion();
     /**
+     * <pre>
+     * The algorithm version field is used for deciding which pre-built image to point to
+     * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
+     * </pre>
+     *
      * <code>string algorithm_version = 3;</code>
      */
     com.google.protobuf.ByteString
         getAlgorithmVersionBytes();
 
     /**
+     * <pre>
+     * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * </pre>
+     *
      * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     java.util.List<flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition> 
         getMetricDefinitionsList();
     /**
+     * <pre>
+     * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * </pre>
+     *
      * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition getMetricDefinitions(int index);
     /**
+     * <pre>
+     * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * </pre>
+     *
      * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     int getMetricDefinitionsCount();
     /**
+     * <pre>
+     * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * </pre>
+     *
      * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     java.util.List<? extends flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinitionOrBuilder> 
         getMetricDefinitionsOrBuilderList();
     /**
+     * <pre>
+     * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * </pre>
+     *
      * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinitionOrBuilder getMetricDefinitionsOrBuilder(
@@ -376,20 +429,36 @@ public final class TrainingJobOuterClass {
         com.google.protobuf.MessageOrBuilder {
 
       /**
+       * <pre>
+       * User-defined name of the metric
+       * </pre>
+       *
        * <code>string name = 1;</code>
        */
       java.lang.String getName();
       /**
+       * <pre>
+       * User-defined name of the metric
+       * </pre>
+       *
        * <code>string name = 1;</code>
        */
       com.google.protobuf.ByteString
           getNameBytes();
 
       /**
+       * <pre>
+       * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+       * </pre>
+       *
        * <code>string regex = 2;</code>
        */
       java.lang.String getRegex();
       /**
+       * <pre>
+       * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+       * </pre>
+       *
        * <code>string regex = 2;</code>
        */
       com.google.protobuf.ByteString
@@ -483,6 +552,10 @@ public final class TrainingJobOuterClass {
       public static final int NAME_FIELD_NUMBER = 1;
       private volatile java.lang.Object name_;
       /**
+       * <pre>
+       * User-defined name of the metric
+       * </pre>
+       *
        * <code>string name = 1;</code>
        */
       public java.lang.String getName() {
@@ -498,6 +571,10 @@ public final class TrainingJobOuterClass {
         }
       }
       /**
+       * <pre>
+       * User-defined name of the metric
+       * </pre>
+       *
        * <code>string name = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -517,6 +594,10 @@ public final class TrainingJobOuterClass {
       public static final int REGEX_FIELD_NUMBER = 2;
       private volatile java.lang.Object regex_;
       /**
+       * <pre>
+       * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+       * </pre>
+       *
        * <code>string regex = 2;</code>
        */
       public java.lang.String getRegex() {
@@ -532,6 +613,10 @@ public final class TrainingJobOuterClass {
         }
       }
       /**
+       * <pre>
+       * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+       * </pre>
+       *
        * <code>string regex = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -869,6 +954,10 @@ public final class TrainingJobOuterClass {
 
         private java.lang.Object name_ = "";
         /**
+         * <pre>
+         * User-defined name of the metric
+         * </pre>
+         *
          * <code>string name = 1;</code>
          */
         public java.lang.String getName() {
@@ -884,6 +973,10 @@ public final class TrainingJobOuterClass {
           }
         }
         /**
+         * <pre>
+         * User-defined name of the metric
+         * </pre>
+         *
          * <code>string name = 1;</code>
          */
         public com.google.protobuf.ByteString
@@ -900,6 +993,10 @@ public final class TrainingJobOuterClass {
           }
         }
         /**
+         * <pre>
+         * User-defined name of the metric
+         * </pre>
+         *
          * <code>string name = 1;</code>
          */
         public Builder setName(
@@ -913,6 +1010,10 @@ public final class TrainingJobOuterClass {
           return this;
         }
         /**
+         * <pre>
+         * User-defined name of the metric
+         * </pre>
+         *
          * <code>string name = 1;</code>
          */
         public Builder clearName() {
@@ -922,6 +1023,10 @@ public final class TrainingJobOuterClass {
           return this;
         }
         /**
+         * <pre>
+         * User-defined name of the metric
+         * </pre>
+         *
          * <code>string name = 1;</code>
          */
         public Builder setNameBytes(
@@ -938,6 +1043,10 @@ public final class TrainingJobOuterClass {
 
         private java.lang.Object regex_ = "";
         /**
+         * <pre>
+         * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+         * </pre>
+         *
          * <code>string regex = 2;</code>
          */
         public java.lang.String getRegex() {
@@ -953,6 +1062,10 @@ public final class TrainingJobOuterClass {
           }
         }
         /**
+         * <pre>
+         * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+         * </pre>
+         *
          * <code>string regex = 2;</code>
          */
         public com.google.protobuf.ByteString
@@ -969,6 +1082,10 @@ public final class TrainingJobOuterClass {
           }
         }
         /**
+         * <pre>
+         * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+         * </pre>
+         *
          * <code>string regex = 2;</code>
          */
         public Builder setRegex(
@@ -982,6 +1099,10 @@ public final class TrainingJobOuterClass {
           return this;
         }
         /**
+         * <pre>
+         * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+         * </pre>
+         *
          * <code>string regex = 2;</code>
          */
         public Builder clearRegex() {
@@ -991,6 +1112,10 @@ public final class TrainingJobOuterClass {
           return this;
         }
         /**
+         * <pre>
+         * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+         * </pre>
+         *
          * <code>string regex = 2;</code>
          */
         public Builder setRegexBytes(
@@ -1061,12 +1186,20 @@ public final class TrainingJobOuterClass {
     public static final int INPUT_MODE_FIELD_NUMBER = 1;
     private int inputMode_;
     /**
+     * <pre>
+     * The input mode can be either PIPE or FILE
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.InputMode input_mode = 1;</code>
      */
     public int getInputModeValue() {
       return inputMode_;
     }
     /**
+     * <pre>
+     * The input mode can be either PIPE or FILE
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.InputMode input_mode = 1;</code>
      */
     public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode getInputMode() {
@@ -1078,12 +1211,22 @@ public final class TrainingJobOuterClass {
     public static final int ALGORITHM_NAME_FIELD_NUMBER = 2;
     private int algorithmName_;
     /**
+     * <pre>
+     * The algorithm name is used for deciding which pre-built image to point to
+     * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;</code>
      */
     public int getAlgorithmNameValue() {
       return algorithmName_;
     }
     /**
+     * <pre>
+     * The algorithm name is used for deciding which pre-built image to point to
+     * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;</code>
      */
     public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName getAlgorithmName() {
@@ -1095,6 +1238,11 @@ public final class TrainingJobOuterClass {
     public static final int ALGORITHM_VERSION_FIELD_NUMBER = 3;
     private volatile java.lang.Object algorithmVersion_;
     /**
+     * <pre>
+     * The algorithm version field is used for deciding which pre-built image to point to
+     * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
+     * </pre>
+     *
      * <code>string algorithm_version = 3;</code>
      */
     public java.lang.String getAlgorithmVersion() {
@@ -1110,6 +1258,11 @@ public final class TrainingJobOuterClass {
       }
     }
     /**
+     * <pre>
+     * The algorithm version field is used for deciding which pre-built image to point to
+     * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
+     * </pre>
+     *
      * <code>string algorithm_version = 3;</code>
      */
     public com.google.protobuf.ByteString
@@ -1129,12 +1282,22 @@ public final class TrainingJobOuterClass {
     public static final int METRIC_DEFINITIONS_FIELD_NUMBER = 4;
     private java.util.List<flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition> metricDefinitions_;
     /**
+     * <pre>
+     * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * </pre>
+     *
      * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     public java.util.List<flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition> getMetricDefinitionsList() {
       return metricDefinitions_;
     }
     /**
+     * <pre>
+     * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * </pre>
+     *
      * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     public java.util.List<? extends flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinitionOrBuilder> 
@@ -1142,18 +1305,33 @@ public final class TrainingJobOuterClass {
       return metricDefinitions_;
     }
     /**
+     * <pre>
+     * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * </pre>
+     *
      * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     public int getMetricDefinitionsCount() {
       return metricDefinitions_.size();
     }
     /**
+     * <pre>
+     * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * </pre>
+     *
      * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition getMetricDefinitions(int index) {
       return metricDefinitions_.get(index);
     }
     /**
+     * <pre>
+     * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * </pre>
+     *
      * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
      */
     public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinitionOrBuilder getMetricDefinitionsOrBuilder(
@@ -1556,12 +1734,20 @@ public final class TrainingJobOuterClass {
 
       private int inputMode_ = 0;
       /**
+       * <pre>
+       * The input mode can be either PIPE or FILE
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.InputMode input_mode = 1;</code>
        */
       public int getInputModeValue() {
         return inputMode_;
       }
       /**
+       * <pre>
+       * The input mode can be either PIPE or FILE
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.InputMode input_mode = 1;</code>
        */
       public Builder setInputModeValue(int value) {
@@ -1570,6 +1756,10 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The input mode can be either PIPE or FILE
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.InputMode input_mode = 1;</code>
        */
       public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode getInputMode() {
@@ -1578,6 +1768,10 @@ public final class TrainingJobOuterClass {
         return result == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.UNRECOGNIZED : result;
       }
       /**
+       * <pre>
+       * The input mode can be either PIPE or FILE
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.InputMode input_mode = 1;</code>
        */
       public Builder setInputMode(flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode value) {
@@ -1590,6 +1784,10 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The input mode can be either PIPE or FILE
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.InputMode input_mode = 1;</code>
        */
       public Builder clearInputMode() {
@@ -1601,12 +1799,22 @@ public final class TrainingJobOuterClass {
 
       private int algorithmName_ = 0;
       /**
+       * <pre>
+       * The algorithm name is used for deciding which pre-built image to point to
+       * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;</code>
        */
       public int getAlgorithmNameValue() {
         return algorithmName_;
       }
       /**
+       * <pre>
+       * The algorithm name is used for deciding which pre-built image to point to
+       * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;</code>
        */
       public Builder setAlgorithmNameValue(int value) {
@@ -1615,6 +1823,11 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The algorithm name is used for deciding which pre-built image to point to
+       * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;</code>
        */
       public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName getAlgorithmName() {
@@ -1623,6 +1836,11 @@ public final class TrainingJobOuterClass {
         return result == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.UNRECOGNIZED : result;
       }
       /**
+       * <pre>
+       * The algorithm name is used for deciding which pre-built image to point to
+       * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;</code>
        */
       public Builder setAlgorithmName(flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName value) {
@@ -1635,6 +1853,11 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The algorithm name is used for deciding which pre-built image to point to
+       * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;</code>
        */
       public Builder clearAlgorithmName() {
@@ -1646,6 +1869,11 @@ public final class TrainingJobOuterClass {
 
       private java.lang.Object algorithmVersion_ = "";
       /**
+       * <pre>
+       * The algorithm version field is used for deciding which pre-built image to point to
+       * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
+       * </pre>
+       *
        * <code>string algorithm_version = 3;</code>
        */
       public java.lang.String getAlgorithmVersion() {
@@ -1661,6 +1889,11 @@ public final class TrainingJobOuterClass {
         }
       }
       /**
+       * <pre>
+       * The algorithm version field is used for deciding which pre-built image to point to
+       * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
+       * </pre>
+       *
        * <code>string algorithm_version = 3;</code>
        */
       public com.google.protobuf.ByteString
@@ -1677,6 +1910,11 @@ public final class TrainingJobOuterClass {
         }
       }
       /**
+       * <pre>
+       * The algorithm version field is used for deciding which pre-built image to point to
+       * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
+       * </pre>
+       *
        * <code>string algorithm_version = 3;</code>
        */
       public Builder setAlgorithmVersion(
@@ -1690,6 +1928,11 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The algorithm version field is used for deciding which pre-built image to point to
+       * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
+       * </pre>
+       *
        * <code>string algorithm_version = 3;</code>
        */
       public Builder clearAlgorithmVersion() {
@@ -1699,6 +1942,11 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The algorithm version field is used for deciding which pre-built image to point to
+       * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
+       * </pre>
+       *
        * <code>string algorithm_version = 3;</code>
        */
       public Builder setAlgorithmVersionBytes(
@@ -1726,6 +1974,11 @@ public final class TrainingJobOuterClass {
           flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinitionOrBuilder> metricDefinitionsBuilder_;
 
       /**
+       * <pre>
+       * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * </pre>
+       *
        * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public java.util.List<flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition> getMetricDefinitionsList() {
@@ -1736,6 +1989,11 @@ public final class TrainingJobOuterClass {
         }
       }
       /**
+       * <pre>
+       * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * </pre>
+       *
        * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public int getMetricDefinitionsCount() {
@@ -1746,6 +2004,11 @@ public final class TrainingJobOuterClass {
         }
       }
       /**
+       * <pre>
+       * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * </pre>
+       *
        * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition getMetricDefinitions(int index) {
@@ -1756,6 +2019,11 @@ public final class TrainingJobOuterClass {
         }
       }
       /**
+       * <pre>
+       * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * </pre>
+       *
        * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder setMetricDefinitions(
@@ -1773,6 +2041,11 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * </pre>
+       *
        * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder setMetricDefinitions(
@@ -1787,6 +2060,11 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * </pre>
+       *
        * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder addMetricDefinitions(flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition value) {
@@ -1803,6 +2081,11 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * </pre>
+       *
        * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder addMetricDefinitions(
@@ -1820,6 +2103,11 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * </pre>
+       *
        * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder addMetricDefinitions(
@@ -1834,6 +2122,11 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * </pre>
+       *
        * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder addMetricDefinitions(
@@ -1848,6 +2141,11 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * </pre>
+       *
        * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder addAllMetricDefinitions(
@@ -1863,6 +2161,11 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * </pre>
+       *
        * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder clearMetricDefinitions() {
@@ -1876,6 +2179,11 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * </pre>
+       *
        * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder removeMetricDefinitions(int index) {
@@ -1889,6 +2197,11 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * </pre>
+       *
        * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.Builder getMetricDefinitionsBuilder(
@@ -1896,6 +2209,11 @@ public final class TrainingJobOuterClass {
         return getMetricDefinitionsFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * </pre>
+       *
        * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinitionOrBuilder getMetricDefinitionsOrBuilder(
@@ -1906,6 +2224,11 @@ public final class TrainingJobOuterClass {
         }
       }
       /**
+       * <pre>
+       * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * </pre>
+       *
        * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public java.util.List<? extends flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinitionOrBuilder> 
@@ -1917,6 +2240,11 @@ public final class TrainingJobOuterClass {
         }
       }
       /**
+       * <pre>
+       * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * </pre>
+       *
        * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.Builder addMetricDefinitionsBuilder() {
@@ -1924,6 +2252,11 @@ public final class TrainingJobOuterClass {
             flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.getDefaultInstance());
       }
       /**
+       * <pre>
+       * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * </pre>
+       *
        * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.Builder addMetricDefinitionsBuilder(
@@ -1932,6 +2265,11 @@ public final class TrainingJobOuterClass {
             index, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.getDefaultInstance());
       }
       /**
+       * <pre>
+       * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * </pre>
+       *
        * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
        */
       public java.util.List<flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.Builder> 
@@ -2011,7 +2349,8 @@ public final class TrainingJobOuterClass {
 
     /**
      * <pre>
-     * For multi-node training, not multi-GPU training
+     * The number of ML compute instances to use. For distributed training, provide a value greater than 1.
+     * This is for multi-node training, not multi-GPU training
      * </pre>
      *
      * <code>int64 instance_count = 1;</code>
@@ -2019,16 +2358,28 @@ public final class TrainingJobOuterClass {
     long getInstanceCount();
 
     /**
+     * <pre>
+     * The ML compute instance type
+     * </pre>
+     *
      * <code>string instance_type = 2;</code>
      */
     java.lang.String getInstanceType();
     /**
+     * <pre>
+     * The ML compute instance type
+     * </pre>
+     *
      * <code>string instance_type = 2;</code>
      */
     com.google.protobuf.ByteString
         getInstanceTypeBytes();
 
     /**
+     * <pre>
+     * The size of the ML storage volume that you want to provision.
+     * </pre>
+     *
      * <code>int64 volume_size_in_gb = 3;</code>
      */
     long getVolumeSizeInGb();
@@ -2125,7 +2476,8 @@ public final class TrainingJobOuterClass {
     private long instanceCount_;
     /**
      * <pre>
-     * For multi-node training, not multi-GPU training
+     * The number of ML compute instances to use. For distributed training, provide a value greater than 1.
+     * This is for multi-node training, not multi-GPU training
      * </pre>
      *
      * <code>int64 instance_count = 1;</code>
@@ -2137,6 +2489,10 @@ public final class TrainingJobOuterClass {
     public static final int INSTANCE_TYPE_FIELD_NUMBER = 2;
     private volatile java.lang.Object instanceType_;
     /**
+     * <pre>
+     * The ML compute instance type
+     * </pre>
+     *
      * <code>string instance_type = 2;</code>
      */
     public java.lang.String getInstanceType() {
@@ -2152,6 +2508,10 @@ public final class TrainingJobOuterClass {
       }
     }
     /**
+     * <pre>
+     * The ML compute instance type
+     * </pre>
+     *
      * <code>string instance_type = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -2171,6 +2531,10 @@ public final class TrainingJobOuterClass {
     public static final int VOLUME_SIZE_IN_GB_FIELD_NUMBER = 3;
     private long volumeSizeInGb_;
     /**
+     * <pre>
+     * The size of the ML storage volume that you want to provision.
+     * </pre>
+     *
      * <code>int64 volume_size_in_gb = 3;</code>
      */
     public long getVolumeSizeInGb() {
@@ -2518,7 +2882,8 @@ public final class TrainingJobOuterClass {
       private long instanceCount_ ;
       /**
        * <pre>
-       * For multi-node training, not multi-GPU training
+       * The number of ML compute instances to use. For distributed training, provide a value greater than 1.
+       * This is for multi-node training, not multi-GPU training
        * </pre>
        *
        * <code>int64 instance_count = 1;</code>
@@ -2528,7 +2893,8 @@ public final class TrainingJobOuterClass {
       }
       /**
        * <pre>
-       * For multi-node training, not multi-GPU training
+       * The number of ML compute instances to use. For distributed training, provide a value greater than 1.
+       * This is for multi-node training, not multi-GPU training
        * </pre>
        *
        * <code>int64 instance_count = 1;</code>
@@ -2541,7 +2907,8 @@ public final class TrainingJobOuterClass {
       }
       /**
        * <pre>
-       * For multi-node training, not multi-GPU training
+       * The number of ML compute instances to use. For distributed training, provide a value greater than 1.
+       * This is for multi-node training, not multi-GPU training
        * </pre>
        *
        * <code>int64 instance_count = 1;</code>
@@ -2555,6 +2922,10 @@ public final class TrainingJobOuterClass {
 
       private java.lang.Object instanceType_ = "";
       /**
+       * <pre>
+       * The ML compute instance type
+       * </pre>
+       *
        * <code>string instance_type = 2;</code>
        */
       public java.lang.String getInstanceType() {
@@ -2570,6 +2941,10 @@ public final class TrainingJobOuterClass {
         }
       }
       /**
+       * <pre>
+       * The ML compute instance type
+       * </pre>
+       *
        * <code>string instance_type = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -2586,6 +2961,10 @@ public final class TrainingJobOuterClass {
         }
       }
       /**
+       * <pre>
+       * The ML compute instance type
+       * </pre>
+       *
        * <code>string instance_type = 2;</code>
        */
       public Builder setInstanceType(
@@ -2599,6 +2978,10 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The ML compute instance type
+       * </pre>
+       *
        * <code>string instance_type = 2;</code>
        */
       public Builder clearInstanceType() {
@@ -2608,6 +2991,10 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The ML compute instance type
+       * </pre>
+       *
        * <code>string instance_type = 2;</code>
        */
       public Builder setInstanceTypeBytes(
@@ -2624,12 +3011,20 @@ public final class TrainingJobOuterClass {
 
       private long volumeSizeInGb_ ;
       /**
+       * <pre>
+       * The size of the ML storage volume that you want to provision.
+       * </pre>
+       *
        * <code>int64 volume_size_in_gb = 3;</code>
        */
       public long getVolumeSizeInGb() {
         return volumeSizeInGb_;
       }
       /**
+       * <pre>
+       * The size of the ML storage volume that you want to provision.
+       * </pre>
+       *
        * <code>int64 volume_size_in_gb = 3;</code>
        */
       public Builder setVolumeSizeInGb(long value) {
@@ -2639,6 +3034,10 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The size of the ML storage volume that you want to provision.
+       * </pre>
+       *
        * <code>int64 volume_size_in_gb = 3;</code>
        */
       public Builder clearVolumeSizeInGb() {
@@ -2705,16 +3104,34 @@ public final class TrainingJobOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * The maximum length of time in second that the training job can run.
+     * If this value is not specified, the default expiration time will be 1 day
+     * </pre>
+     *
      * <code>int64 max_runtime_in_seconds = 1;</code>
      */
     long getMaxRuntimeInSeconds();
 
     /**
+     * <pre>
+     * The maximum length of time in seconds that the users are willing to wait for a managed spot
+     * training job to complete.
+     * Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
+     * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
+     * </pre>
+     *
      * <code>int64 max_wait_time_in_seconds = 2;</code>
      */
     long getMaxWaitTimeInSeconds();
   }
   /**
+   * <pre>
+   * This option allows the users to specify a limit to how long a training job can run and
+   * how long the users are willing to wait for a managed spot training job to complete
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.plugins.sagemaker.StoppingCondition}
    */
   public  static final class StoppingCondition extends
@@ -2798,6 +3215,11 @@ public final class TrainingJobOuterClass {
     public static final int MAX_RUNTIME_IN_SECONDS_FIELD_NUMBER = 1;
     private long maxRuntimeInSeconds_;
     /**
+     * <pre>
+     * The maximum length of time in second that the training job can run.
+     * If this value is not specified, the default expiration time will be 1 day
+     * </pre>
+     *
      * <code>int64 max_runtime_in_seconds = 1;</code>
      */
     public long getMaxRuntimeInSeconds() {
@@ -2807,6 +3229,13 @@ public final class TrainingJobOuterClass {
     public static final int MAX_WAIT_TIME_IN_SECONDS_FIELD_NUMBER = 2;
     private long maxWaitTimeInSeconds_;
     /**
+     * <pre>
+     * The maximum length of time in seconds that the users are willing to wait for a managed spot
+     * training job to complete.
+     * Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
+     * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
+     * </pre>
+     *
      * <code>int64 max_wait_time_in_seconds = 2;</code>
      */
     public long getMaxWaitTimeInSeconds() {
@@ -2982,6 +3411,12 @@ public final class TrainingJobOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * This option allows the users to specify a limit to how long a training job can run and
+     * how long the users are willing to wait for a managed spot training job to complete
+     * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.plugins.sagemaker.StoppingCondition}
      */
     public static final class Builder extends
@@ -3136,12 +3571,22 @@ public final class TrainingJobOuterClass {
 
       private long maxRuntimeInSeconds_ ;
       /**
+       * <pre>
+       * The maximum length of time in second that the training job can run.
+       * If this value is not specified, the default expiration time will be 1 day
+       * </pre>
+       *
        * <code>int64 max_runtime_in_seconds = 1;</code>
        */
       public long getMaxRuntimeInSeconds() {
         return maxRuntimeInSeconds_;
       }
       /**
+       * <pre>
+       * The maximum length of time in second that the training job can run.
+       * If this value is not specified, the default expiration time will be 1 day
+       * </pre>
+       *
        * <code>int64 max_runtime_in_seconds = 1;</code>
        */
       public Builder setMaxRuntimeInSeconds(long value) {
@@ -3151,6 +3596,11 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The maximum length of time in second that the training job can run.
+       * If this value is not specified, the default expiration time will be 1 day
+       * </pre>
+       *
        * <code>int64 max_runtime_in_seconds = 1;</code>
        */
       public Builder clearMaxRuntimeInSeconds() {
@@ -3162,12 +3612,26 @@ public final class TrainingJobOuterClass {
 
       private long maxWaitTimeInSeconds_ ;
       /**
+       * <pre>
+       * The maximum length of time in seconds that the users are willing to wait for a managed spot
+       * training job to complete.
+       * Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
+       * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
+       * </pre>
+       *
        * <code>int64 max_wait_time_in_seconds = 2;</code>
        */
       public long getMaxWaitTimeInSeconds() {
         return maxWaitTimeInSeconds_;
       }
       /**
+       * <pre>
+       * The maximum length of time in seconds that the users are willing to wait for a managed spot
+       * training job to complete.
+       * Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
+       * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
+       * </pre>
+       *
        * <code>int64 max_wait_time_in_seconds = 2;</code>
        */
       public Builder setMaxWaitTimeInSeconds(long value) {
@@ -3177,6 +3641,13 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The maximum length of time in seconds that the users are willing to wait for a managed spot
+       * training job to complete.
+       * Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
+       * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
+       * </pre>
+       *
        * <code>int64 max_wait_time_in_seconds = 2;</code>
        */
       public Builder clearMaxWaitTimeInSeconds() {
@@ -3269,11 +3740,15 @@ public final class TrainingJobOuterClass {
     flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfigOrBuilder getTrainingJobConfigOrBuilder();
 
     /**
-     * <code>bool interruptible = 4;</code>
+     * <code>bool interruptible = 3;</code>
      */
     boolean getInterruptible();
   }
   /**
+   * <pre>
+   * The spec of a training job
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.plugins.sagemaker.TrainingJob}
    */
   public  static final class TrainingJob extends
@@ -3338,7 +3813,7 @@ public final class TrainingJobOuterClass {
 
               break;
             }
-            case 32: {
+            case 24: {
 
               interruptible_ = input.readBool();
               break;
@@ -3417,10 +3892,10 @@ public final class TrainingJobOuterClass {
       return getTrainingJobConfig();
     }
 
-    public static final int INTERRUPTIBLE_FIELD_NUMBER = 4;
+    public static final int INTERRUPTIBLE_FIELD_NUMBER = 3;
     private boolean interruptible_;
     /**
-     * <code>bool interruptible = 4;</code>
+     * <code>bool interruptible = 3;</code>
      */
     public boolean getInterruptible() {
       return interruptible_;
@@ -3447,7 +3922,7 @@ public final class TrainingJobOuterClass {
         output.writeMessage(2, getTrainingJobConfig());
       }
       if (interruptible_ != false) {
-        output.writeBool(4, interruptible_);
+        output.writeBool(3, interruptible_);
       }
       unknownFields.writeTo(output);
     }
@@ -3468,7 +3943,7 @@ public final class TrainingJobOuterClass {
       }
       if (interruptible_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, interruptible_);
+          .computeBoolSize(3, interruptible_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3615,6 +4090,10 @@ public final class TrainingJobOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * The spec of a training job
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.plugins.sagemaker.TrainingJob}
      */
     public static final class Builder extends
@@ -4025,13 +4504,13 @@ public final class TrainingJobOuterClass {
 
       private boolean interruptible_ ;
       /**
-       * <code>bool interruptible = 4;</code>
+       * <code>bool interruptible = 3;</code>
        */
       public boolean getInterruptible() {
         return interruptible_;
       }
       /**
-       * <code>bool interruptible = 4;</code>
+       * <code>bool interruptible = 3;</code>
        */
       public Builder setInterruptible(boolean value) {
         
@@ -4040,7 +4519,7 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
-       * <code>bool interruptible = 4;</code>
+       * <code>bool interruptible = 3;</code>
        */
       public Builder clearInterruptible() {
         
@@ -4154,7 +4633,7 @@ public final class TrainingJobOuterClass {
       "idl.plugins.sagemaker.AlgorithmSpecifica" +
       "tion\022J\n\023training_job_config\030\002 \001(\0132-.flyt" +
       "eidl.plugins.sagemaker.TrainingJobConfig" +
-      "\022\025\n\rinterruptible\030\004 \001(\010*\037\n\tInputMode\022\010\n\004" +
+      "\022\025\n\rinterruptible\030\003 \001(\010*\037\n\tInputMode\022\010\n\004" +
       "FILE\020\000\022\010\n\004PIPE\020\001*(\n\rAlgorithmName\022\n\n\006CUS" +
       "TOM\020\000\022\013\n\007XGBOOST\020\001B5Z3github.com/lyft/fl" +
       "yteidl/gen/pb-go/flyteidl/pluginsb\006proto" +

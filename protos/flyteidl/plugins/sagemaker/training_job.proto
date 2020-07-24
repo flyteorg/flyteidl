@@ -16,30 +16,55 @@ enum AlgorithmName {
 }
 
 message AlgorithmSpecification {
+    // The input mode can be either PIPE or FILE
     InputMode input_mode = 1;
+    // The algorithm name is used for deciding which pre-built image to point to
+    // This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
     AlgorithmName algorithm_name = 2;
+    // The algorithm version field is used for deciding which pre-built image to point to
+    // This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
     string algorithm_version = 3;
 
     message MetricDefinition {
+        // User-defined name of the metric
         string name = 1;
+        // SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
         string regex = 2;
     }
+    // A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+    // https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
     repeated MetricDefinition metric_definitions = 4;
 }
 
 message TrainingJobConfig {
-    int64 instance_count = 1;   // For multi-node training, not multi-GPU training
+    // The number of ML compute instances to use. For distributed training, provide a value greater than 1.
+    // This is for multi-node training, not multi-GPU training
+    int64 instance_count = 1;
+    // The ML compute instance type
     string instance_type = 2;
+    // The size of the ML storage volume that you want to provision.
     int64 volume_size_in_gb = 3;
 }
 
+// This option allows the users to specify a limit to how long a training job can run and
+// how long the users are willing to wait for a managed spot training job to complete
+// https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html
 message StoppingCondition {
+
+    // The maximum length of time in second that the training job can run.
+    // If this value is not specified, the default expiration time will be 1 day
     int64 max_runtime_in_seconds = 1;
+
+    // The maximum length of time in seconds that the users are willing to wait for a managed spot
+    // training job to complete.
+    // Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
+    // training job runs, so it must be equal to or greater than max_runtime_in_seconds.
     int64 max_wait_time_in_seconds = 2;
 }
 
+// The spec of a training job
 message TrainingJob {
     AlgorithmSpecification algorithm_specification = 1;
     TrainingJobConfig training_job_config = 2;
-    bool interruptible = 4;
+    bool interruptible = 3;
 }

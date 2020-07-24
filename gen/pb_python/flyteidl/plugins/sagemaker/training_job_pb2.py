@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.plugins.sagemaker',
   syntax='proto3',
   serialized_options=_b('Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n-flyteidl/plugins/sagemaker/training_job.proto\x12\x1a\x66lyteidl.plugins.sagemaker\"\xc3\x02\n\x16\x41lgorithmSpecification\x12\x39\n\ninput_mode\x18\x01 \x01(\x0e\x32%.flyteidl.plugins.sagemaker.InputMode\x12\x41\n\x0e\x61lgorithm_name\x18\x02 \x01(\x0e\x32).flyteidl.plugins.sagemaker.AlgorithmName\x12\x19\n\x11\x61lgorithm_version\x18\x03 \x01(\t\x12_\n\x12metric_definitions\x18\x04 \x03(\x0b\x32\x43.flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition\x1a/\n\x10MetricDefinition\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05regex\x18\x02 \x01(\t\"]\n\x11TrainingJobConfig\x12\x16\n\x0einstance_count\x18\x01 \x01(\x03\x12\x15\n\rinstance_type\x18\x02 \x01(\t\x12\x19\n\x11volume_size_in_gb\x18\x03 \x01(\x03\"U\n\x11StoppingCondition\x12\x1e\n\x16max_runtime_in_seconds\x18\x01 \x01(\x03\x12 \n\x18max_wait_time_in_seconds\x18\x02 \x01(\x03\"\xc5\x01\n\x0bTrainingJob\x12S\n\x17\x61lgorithm_specification\x18\x01 \x01(\x0b\x32\x32.flyteidl.plugins.sagemaker.AlgorithmSpecification\x12J\n\x13training_job_config\x18\x02 \x01(\x0b\x32-.flyteidl.plugins.sagemaker.TrainingJobConfig\x12\x15\n\rinterruptible\x18\x04 \x01(\x08*\x1f\n\tInputMode\x12\x08\n\x04\x46ILE\x10\x00\x12\x08\n\x04PIPE\x10\x01*(\n\rAlgorithmName\x12\n\n\x06\x43USTOM\x10\x00\x12\x0b\n\x07XGBOOST\x10\x01\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n-flyteidl/plugins/sagemaker/training_job.proto\x12\x1a\x66lyteidl.plugins.sagemaker\"\xc3\x02\n\x16\x41lgorithmSpecification\x12\x39\n\ninput_mode\x18\x01 \x01(\x0e\x32%.flyteidl.plugins.sagemaker.InputMode\x12\x41\n\x0e\x61lgorithm_name\x18\x02 \x01(\x0e\x32).flyteidl.plugins.sagemaker.AlgorithmName\x12\x19\n\x11\x61lgorithm_version\x18\x03 \x01(\t\x12_\n\x12metric_definitions\x18\x04 \x03(\x0b\x32\x43.flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition\x1a/\n\x10MetricDefinition\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05regex\x18\x02 \x01(\t\"]\n\x11TrainingJobConfig\x12\x16\n\x0einstance_count\x18\x01 \x01(\x03\x12\x15\n\rinstance_type\x18\x02 \x01(\t\x12\x19\n\x11volume_size_in_gb\x18\x03 \x01(\x03\"U\n\x11StoppingCondition\x12\x1e\n\x16max_runtime_in_seconds\x18\x01 \x01(\x03\x12 \n\x18max_wait_time_in_seconds\x18\x02 \x01(\x03\"\xc5\x01\n\x0bTrainingJob\x12S\n\x17\x61lgorithm_specification\x18\x01 \x01(\x0b\x32\x32.flyteidl.plugins.sagemaker.AlgorithmSpecification\x12J\n\x13training_job_config\x18\x02 \x01(\x0b\x32-.flyteidl.plugins.sagemaker.TrainingJobConfig\x12\x15\n\rinterruptible\x18\x03 \x01(\x08*\x1f\n\tInputMode\x12\x08\n\x04\x46ILE\x10\x00\x12\x08\n\x04PIPE\x10\x01*(\n\rAlgorithmName\x12\n\n\x06\x43USTOM\x10\x00\x12\x0b\n\x07XGBOOST\x10\x01\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
 )
 
 _INPUTMODE = _descriptor.EnumDescriptor(
@@ -272,7 +272,7 @@ _TRAININGJOB = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='interruptible', full_name='flyteidl.plugins.sagemaker.TrainingJob.interruptible', index=2,
-      number=4, type=8, cpp_type=7, label=1,
+      number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

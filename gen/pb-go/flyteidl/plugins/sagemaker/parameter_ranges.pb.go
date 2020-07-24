@@ -20,6 +20,8 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
+// HyperparameterScalingType defines the way to increase or decrease the value of the hyperparameter
+// https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
 type HyperparameterScalingType int32
 
 const (
@@ -51,6 +53,8 @@ func (HyperparameterScalingType) EnumDescriptor() ([]byte, []int) {
 	return fileDescriptor_5f31fcc87eba0a70, []int{0}
 }
 
+// ContinuousParameterRange refers to a continuous range of hyperparameter values, allowing
+// users to specify the search space of a floating-point hyperparameter
 type ContinuousParameterRange struct {
 	MaxValue             float64                   `protobuf:"fixed64,1,opt,name=max_value,json=maxValue,proto3" json:"max_value,omitempty"`
 	MinValue             float64                   `protobuf:"fixed64,2,opt,name=min_value,json=minValue,proto3" json:"min_value,omitempty"`
@@ -106,6 +110,8 @@ func (m *ContinuousParameterRange) GetScalingType() HyperparameterScalingType {
 	return HyperparameterScalingType_AUTO
 }
 
+// IntegerParameterRange refers to a discrete range of hyperparameter values, allowing
+// users to specify the search space of an integer hyperparameter
 type IntegerParameterRange struct {
 	MaxValue             int64                     `protobuf:"varint,1,opt,name=max_value,json=maxValue,proto3" json:"max_value,omitempty"`
 	MinValue             int64                     `protobuf:"varint,2,opt,name=min_value,json=minValue,proto3" json:"min_value,omitempty"`
@@ -161,6 +167,8 @@ func (m *IntegerParameterRange) GetScalingType() HyperparameterScalingType {
 	return HyperparameterScalingType_AUTO
 }
 
+// ContinuousParameterRange refers to a continuous range of hyperparameter values, allowing
+// users to specify the search space of a floating-point hyperparameter
 type CategoricalParameterRange struct {
 	Values               []string `protobuf:"bytes,1,rep,name=values,proto3" json:"values,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -295,6 +303,7 @@ func (*ParameterRangeOneOf) XXX_OneofWrappers() []interface{} {
 	}
 }
 
+// ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
 type ParameterRanges struct {
 	ParameterRangeMap    map[string]*ParameterRangeOneOf `protobuf:"bytes,1,rep,name=parameter_range_map,json=parameterRangeMap,proto3" json:"parameter_range_map,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	XXX_NoUnkeyedLiteral struct{}                        `json:"-"`

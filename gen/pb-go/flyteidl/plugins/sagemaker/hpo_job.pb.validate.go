@@ -36,6 +36,87 @@ var (
 // define the regex for a UUID once up-front
 var _hpo_job_uuidPattern = regexp.MustCompile("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$")
 
+// Validate checks the field values on HyperparameterTuningJob with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *HyperparameterTuningJob) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetTrainingJob()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return HyperparameterTuningJobValidationError{
+				field:  "TrainingJob",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	// no validation rules for MaxNumberOfTrainingJobs
+
+	// no validation rules for MaxParallelTrainingJobs
+
+	return nil
+}
+
+// HyperparameterTuningJobValidationError is the validation error returned by
+// HyperparameterTuningJob.Validate if the designated constraints aren't met.
+type HyperparameterTuningJobValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e HyperparameterTuningJobValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e HyperparameterTuningJobValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e HyperparameterTuningJobValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e HyperparameterTuningJobValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e HyperparameterTuningJobValidationError) ErrorName() string {
+	return "HyperparameterTuningJobValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e HyperparameterTuningJobValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sHyperparameterTuningJob.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = HyperparameterTuningJobValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = HyperparameterTuningJobValidationError{}
+
 // Validate checks the field values on HyperparameterTuningObjective with the
 // rules defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
@@ -108,95 +189,17 @@ var _ interface {
 	ErrorName() string
 } = HyperparameterTuningObjectiveValidationError{}
 
-// Validate checks the field values on HPOJob with the rules defined in the
-// proto definition for this message. If any rules are violated, an error is returned.
-func (m *HPOJob) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	if v, ok := interface{}(m.GetTrainingJob()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return HPOJobValidationError{
-				field:  "TrainingJob",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
-	// no validation rules for MaxNumberOfTrainingJobs
-
-	// no validation rules for MaxParallelTrainingJobs
-
-	return nil
-}
-
-// HPOJobValidationError is the validation error returned by HPOJob.Validate if
-// the designated constraints aren't met.
-type HPOJobValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e HPOJobValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e HPOJobValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e HPOJobValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e HPOJobValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e HPOJobValidationError) ErrorName() string { return "HPOJobValidationError" }
-
-// Error satisfies the builtin error interface
-func (e HPOJobValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sHPOJob.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = HPOJobValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = HPOJobValidationError{}
-
-// Validate checks the field values on HPOJobConfig with the rules defined in
-// the proto definition for this message. If any rules are violated, an error
-// is returned.
-func (m *HPOJobConfig) Validate() error {
+// Validate checks the field values on HyperparameterTuningSpecification with
+// the rules defined in the proto definition for this message. If any rules
+// are violated, an error is returned.
+func (m *HyperparameterTuningSpecification) Validate() error {
 	if m == nil {
 		return nil
 	}
 
 	if v, ok := interface{}(m.GetHyperparameterRanges()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return HPOJobConfigValidationError{
+			return HyperparameterTuningSpecificationValidationError{
 				field:  "HyperparameterRanges",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -208,7 +211,7 @@ func (m *HPOJobConfig) Validate() error {
 
 	if v, ok := interface{}(m.GetTuningObjective()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return HPOJobConfigValidationError{
+			return HyperparameterTuningSpecificationValidationError{
 				field:  "TuningObjective",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -221,9 +224,10 @@ func (m *HPOJobConfig) Validate() error {
 	return nil
 }
 
-// HPOJobConfigValidationError is the validation error returned by
-// HPOJobConfig.Validate if the designated constraints aren't met.
-type HPOJobConfigValidationError struct {
+// HyperparameterTuningSpecificationValidationError is the validation error
+// returned by HyperparameterTuningSpecification.Validate if the designated
+// constraints aren't met.
+type HyperparameterTuningSpecificationValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -231,22 +235,24 @@ type HPOJobConfigValidationError struct {
 }
 
 // Field function returns field value.
-func (e HPOJobConfigValidationError) Field() string { return e.field }
+func (e HyperparameterTuningSpecificationValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e HPOJobConfigValidationError) Reason() string { return e.reason }
+func (e HyperparameterTuningSpecificationValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e HPOJobConfigValidationError) Cause() error { return e.cause }
+func (e HyperparameterTuningSpecificationValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e HPOJobConfigValidationError) Key() bool { return e.key }
+func (e HyperparameterTuningSpecificationValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e HPOJobConfigValidationError) ErrorName() string { return "HPOJobConfigValidationError" }
+func (e HyperparameterTuningSpecificationValidationError) ErrorName() string {
+	return "HyperparameterTuningSpecificationValidationError"
+}
 
 // Error satisfies the builtin error interface
-func (e HPOJobConfigValidationError) Error() string {
+func (e HyperparameterTuningSpecificationValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -258,14 +264,14 @@ func (e HPOJobConfigValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sHPOJobConfig.%s: %s%s",
+		"invalid %sHyperparameterTuningSpecification.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = HPOJobConfigValidationError{}
+var _ error = HyperparameterTuningSpecificationValidationError{}
 
 var _ interface {
 	Field() string
@@ -273,4 +279,4 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = HPOJobConfigValidationError{}
+} = HyperparameterTuningSpecificationValidationError{}

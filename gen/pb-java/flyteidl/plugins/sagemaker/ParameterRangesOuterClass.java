@@ -15,6 +15,11 @@ public final class ParameterRangesOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * HyperparameterScalingType defines the way to increase or decrease the value of the hyperparameter
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
+   * </pre>
+   *
    * Protobuf enum {@code flyteidl.plugins.sagemaker.HyperparameterScalingType}
    */
   public enum HyperparameterScalingType
@@ -154,6 +159,11 @@ public final class ParameterRangesOuterClass {
     flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType getScalingType();
   }
   /**
+   * <pre>
+   * ContinuousParameterRange refers to a continuous range of hyperparameter values, allowing
+   * users to specify the search space of a floating-point hyperparameter
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.plugins.sagemaker.ContinuousParameterRange}
    */
   public  static final class ContinuousParameterRange extends
@@ -457,6 +467,11 @@ public final class ParameterRangesOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * ContinuousParameterRange refers to a continuous range of hyperparameter values, allowing
+     * users to specify the search space of a floating-point hyperparameter
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.plugins.sagemaker.ContinuousParameterRange}
      */
     public static final class Builder extends
@@ -788,6 +803,11 @@ public final class ParameterRangesOuterClass {
     flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType getScalingType();
   }
   /**
+   * <pre>
+   * IntegerParameterRange refers to a discrete range of hyperparameter values, allowing
+   * users to specify the search space of an integer hyperparameter
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.plugins.sagemaker.IntegerParameterRange}
    */
   public  static final class IntegerParameterRange extends
@@ -1089,6 +1109,11 @@ public final class ParameterRangesOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * IntegerParameterRange refers to a discrete range of hyperparameter values, allowing
+     * users to specify the search space of an integer hyperparameter
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.plugins.sagemaker.IntegerParameterRange}
      */
     public static final class Builder extends
@@ -1420,6 +1445,11 @@ public final class ParameterRangesOuterClass {
         getValuesBytes(int index);
   }
   /**
+   * <pre>
+   * ContinuousParameterRange refers to a continuous range of hyperparameter values, allowing
+   * users to specify the search space of a floating-point hyperparameter
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.plugins.sagemaker.CategoricalParameterRange}
    */
   public  static final class CategoricalParameterRange extends
@@ -1694,6 +1724,11 @@ public final class ParameterRangesOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * ContinuousParameterRange refers to a continuous range of hyperparameter values, allowing
+     * users to specify the search space of a floating-point hyperparameter
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.plugins.sagemaker.CategoricalParameterRange}
      */
     public static final class Builder extends
@@ -3169,6 +3204,10 @@ public final class ParameterRangesOuterClass {
         java.lang.String key);
   }
   /**
+   * <pre>
+   * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.plugins.sagemaker.ParameterRanges}
    */
   public  static final class ParameterRanges extends
@@ -3507,6 +3546,10 @@ public final class ParameterRangesOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.plugins.sagemaker.ParameterRanges}
      */
     public static final class Builder extends
