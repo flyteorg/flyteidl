@@ -4,8 +4,8 @@ package flyteidl.plugins.sagemaker;
 
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
 
-import "flyteidl/plugins/sagemaker/parameter_ranges.proto";
-import "flyteidl/plugins/sagemaker/training_job.proto";
+import "flyteidl/plugins/sagemaker/parameterranges.proto";
+import "flyteidl/plugins/sagemaker/trainingjob.proto";
 
 message HyperparameterTuningObjective {
     enum HyperparameterTuningObjectiveType {

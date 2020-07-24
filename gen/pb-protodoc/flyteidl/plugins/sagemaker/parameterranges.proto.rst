@@ -1,14 +1,14 @@
-.. _api_file_flyteidl/plugins/sagemaker/parameter_ranges.proto:
+.. _api_file_flyteidl/plugins/sagemaker/parameterranges.proto:
 
-parameter_ranges.proto
-=================================================
+parameterranges.proto
+================================================
 
 .. _api_msg_flyteidl.plugins.sagemaker.ContinuousParameterRange:
 
 flyteidl.plugins.sagemaker.ContinuousParameterRange
 ---------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.ContinuousParameterRange proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L13>`_
+`[flyteidl.plugins.sagemaker.ContinuousParameterRange proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameterranges.proto#L13>`_
 
 
 .. code-block:: json
@@ -41,7 +41,7 @@ scaling_type
 flyteidl.plugins.sagemaker.IntegerParameterRange
 ------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.IntegerParameterRange proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L19>`_
+`[flyteidl.plugins.sagemaker.IntegerParameterRange proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameterranges.proto#L19>`_
 
 
 .. code-block:: json
@@ -74,7 +74,7 @@ scaling_type
 flyteidl.plugins.sagemaker.CategoricalParameterRange
 ----------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.CategoricalParameterRange proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L25>`_
+`[flyteidl.plugins.sagemaker.CategoricalParameterRange proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameterranges.proto#L25>`_
 
 
 .. code-block:: json
@@ -95,7 +95,7 @@ values
 flyteidl.plugins.sagemaker.ParameterRangeOneOf
 ----------------------------------------------
 
-`[flyteidl.plugins.sagemaker.ParameterRangeOneOf proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L29>`_
+`[flyteidl.plugins.sagemaker.ParameterRangeOneOf proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameterranges.proto#L29>`_
 
 
 .. code-block:: json
@@ -137,7 +137,7 @@ categorical_parameter_range
 flyteidl.plugins.sagemaker.ParameterRanges
 ------------------------------------------
 
-`[flyteidl.plugins.sagemaker.ParameterRanges proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L37>`_
+`[flyteidl.plugins.sagemaker.ParameterRanges proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameterranges.proto#L37>`_
 
 
 .. code-block:: json
@@ -157,7 +157,7 @@ parameter_range_map
 Enum flyteidl.plugins.sagemaker.HyperparameterScalingType
 ---------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.HyperparameterScalingType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameter_ranges.proto#L6>`_
+`[flyteidl.plugins.sagemaker.HyperparameterScalingType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/parameterranges.proto#L6>`_
 
 
 .. _api_enum_value_flyteidl.plugins.sagemaker.HyperparameterScalingType.AUTO:

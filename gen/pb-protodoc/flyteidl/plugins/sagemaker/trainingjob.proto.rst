@@ -1,14 +1,14 @@
-.. _api_file_flyteidl/plugins/sagemaker/training_job.proto:
+.. _api_file_flyteidl/plugins/sagemaker/trainingjob.proto:
 
-training_job.proto
-=============================================
+trainingjob.proto
+============================================
 
 .. _api_msg_flyteidl.plugins.sagemaker.AlgorithmSpecification:
 
 flyteidl.plugins.sagemaker.AlgorithmSpecification
 -------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.AlgorithmSpecification proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L17>`_
+`[flyteidl.plugins.sagemaker.AlgorithmSpecification proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/trainingjob.proto#L17>`_
 
 
 .. code-block:: json
@@ -45,7 +45,7 @@ metric_definitions
 flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition
 ------------------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L22>`_
+`[flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/trainingjob.proto#L22>`_
 
 
 .. code-block:: json
@@ -73,7 +73,7 @@ regex
 flyteidl.plugins.sagemaker.TrainingJobConfig
 --------------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJobConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L29>`_
+`[flyteidl.plugins.sagemaker.TrainingJobConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/trainingjob.proto#L29>`_
 
 
 .. code-block:: json
@@ -106,7 +106,7 @@ volume_size_in_gb
 flyteidl.plugins.sagemaker.StoppingCondition
 --------------------------------------------
 
-`[flyteidl.plugins.sagemaker.StoppingCondition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L35>`_
+`[flyteidl.plugins.sagemaker.StoppingCondition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/trainingjob.proto#L35>`_
 
 
 .. code-block:: json
@@ -133,7 +133,7 @@ max_wait_time_in_seconds
 flyteidl.plugins.sagemaker.TrainingJob
 --------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L40>`_
+`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/trainingjob.proto#L40>`_
 
 
 .. code-block:: json
@@ -165,7 +165,7 @@ interruptible
 Enum flyteidl.plugins.sagemaker.InputMode
 -----------------------------------------
 
-`[flyteidl.plugins.sagemaker.InputMode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L7>`_
+`[flyteidl.plugins.sagemaker.InputMode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/trainingjob.proto#L7>`_
 
 
 .. _api_enum_value_flyteidl.plugins.sagemaker.InputMode.FILE:
@@ -184,7 +184,7 @@ PIPE
 Enum flyteidl.plugins.sagemaker.AlgorithmName
 ---------------------------------------------
 
-`[flyteidl.plugins.sagemaker.AlgorithmName proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L12>`_
+`[flyteidl.plugins.sagemaker.AlgorithmName proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/trainingjob.proto#L12>`_
 
 
 .. _api_enum_value_flyteidl.plugins.sagemaker.AlgorithmName.CUSTOM:
