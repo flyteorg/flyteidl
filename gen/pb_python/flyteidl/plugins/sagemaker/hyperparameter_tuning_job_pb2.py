@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.plugins.sagemaker',
   syntax='proto3',
   serialized_options=_b('Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n(flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto\x12\x1a\x66lyteidl.plugins.sagemaker\x1a\x31\x66lyteidl/plugins/sagemaker/parameter_ranges.proto\x1a-flyteidl/plugins/sagemaker/training_job.proto\"\xa1\x01\n\x17HyperparameterTuningJob\x12=\n\x0ctraining_job\x18\x01 \x01(\x0b\x32\'.flyteidl.plugins.sagemaker.TrainingJob\x12#\n\x1bmax_number_of_training_jobs\x18\x02 \x01(\x03\x12\"\n\x1amax_parallel_training_jobs\x18\x03 \x01(\x03\"\xea\x01\n\x1dHyperparameterTuningObjective\x12s\n\x0eobjective_type\x18\x01 \x01(\x0e\x32[.flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType\x12\x13\n\x0bmetric_name\x18\x02 \x01(\t\"?\n!HyperparameterTuningObjectiveType\x12\x0c\n\x08MINIMIZE\x10\x00\x12\x0c\n\x08MAXIMIZE\x10\x01\"\xad\x04\n!HyperparameterTuningSpecification\x12J\n\x15hyperparameter_ranges\x18\x01 \x01(\x0b\x32+.flyteidl.plugins.sagemaker.ParameterRanges\x12s\n\x0ftuning_strategy\x18\x02 \x01(\x0e\x32Z.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy\x12S\n\x10tuning_objective\x18\x03 \x01(\x0b\x32\x39.flyteidl.plugins.sagemaker.HyperparameterTuningObjective\x12\x84\x01\n training_job_early_stopping_type\x18\x04 \x01(\x0e\x32Z.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType\"8\n\x1cHyperparameterTuningStrategy\x12\x0c\n\x08\x42\x41YESIAN\x10\x00\x12\n\n\x06RANDOM\x10\x01\"1\n\x1cTrainingJobEarlyStoppingType\x12\x07\n\x03OFF\x10\x00\x12\x08\n\x04\x41UTO\x10\x01\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n:flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto\x12\x1a\x66lyteidl.plugins.sagemaker\x1a\x31\x66lyteidl/plugins/sagemaker/parameter_ranges.proto\x1a-flyteidl/plugins/sagemaker/training_job.proto\"\xa1\x01\n\x17HyperparameterTuningJob\x12=\n\x0ctraining_job\x18\x01 \x01(\x0b\x32\'.flyteidl.plugins.sagemaker.TrainingJob\x12#\n\x1bmax_number_of_training_jobs\x18\x02 \x01(\x03\x12\"\n\x1amax_parallel_training_jobs\x18\x03 \x01(\x03\"\xea\x01\n\x1dHyperparameterTuningObjective\x12s\n\x0eobjective_type\x18\x01 \x01(\x0e\x32[.flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType\x12\x13\n\x0bmetric_name\x18\x02 \x01(\t\"?\n!HyperparameterTuningObjectiveType\x12\x0c\n\x08MINIMIZE\x10\x00\x12\x0c\n\x08MAXIMIZE\x10\x01\"\xad\x04\n!HyperparameterTuningSpecification\x12J\n\x15hyperparameter_ranges\x18\x01 \x01(\x0b\x32+.flyteidl.plugins.sagemaker.ParameterRanges\x12s\n\x0ftuning_strategy\x18\x02 \x01(\x0e\x32Z.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy\x12S\n\x10tuning_objective\x18\x03 \x01(\x0b\x32\x39.flyteidl.plugins.sagemaker.HyperparameterTuningObjective\x12\x84\x01\n training_job_early_stopping_type\x18\x04 \x01(\x0e\x32Z.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType\"8\n\x1cHyperparameterTuningStrategy\x12\x0c\n\x08\x42\x41YESIAN\x10\x00\x12\n\n\x06RANDOM\x10\x01\"1\n\x1cTrainingJobEarlyStoppingType\x12\x07\n\x03OFF\x10\x00\x12\x08\n\x04\x41UTO\x10\x01\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
   ,
   dependencies=[flyteidl_dot_plugins_dot_sagemaker_dot_parameter__ranges__pb2.DESCRIPTOR,flyteidl_dot_plugins_dot_sagemaker_dot_training__job__pb2.DESCRIPTOR,])
 
@@ -45,8 +45,8 @@ _HYPERPARAMETERTUNINGOBJECTIVE_HYPERPARAMETERTUNINGOBJECTIVETYPE = _descriptor.E
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=506,
-  serialized_end=569,
+  serialized_start=524,
+  serialized_end=587,
 )
 _sym_db.RegisterEnumDescriptor(_HYPERPARAMETERTUNINGOBJECTIVE_HYPERPARAMETERTUNINGOBJECTIVETYPE)
 
@@ -67,8 +67,8 @@ _HYPERPARAMETERTUNINGSPECIFICATION_HYPERPARAMETERTUNINGSTRATEGY = _descriptor.En
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1022,
-  serialized_end=1078,
+  serialized_start=1040,
+  serialized_end=1096,
 )
 _sym_db.RegisterEnumDescriptor(_HYPERPARAMETERTUNINGSPECIFICATION_HYPERPARAMETERTUNINGSTRATEGY)
 
@@ -89,8 +89,8 @@ _HYPERPARAMETERTUNINGSPECIFICATION_TRAININGJOBEARLYSTOPPINGTYPE = _descriptor.En
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1080,
-  serialized_end=1129,
+  serialized_start=1098,
+  serialized_end=1147,
 )
 _sym_db.RegisterEnumDescriptor(_HYPERPARAMETERTUNINGSPECIFICATION_TRAININGJOBEARLYSTOPPINGTYPE)
 
@@ -135,8 +135,8 @@ _HYPERPARAMETERTUNINGJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=171,
-  serialized_end=332,
+  serialized_start=189,
+  serialized_end=350,
 )
 
 
@@ -174,8 +174,8 @@ _HYPERPARAMETERTUNINGOBJECTIVE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=335,
-  serialized_end=569,
+  serialized_start=353,
+  serialized_end=587,
 )
 
 
@@ -228,8 +228,8 @@ _HYPERPARAMETERTUNINGSPECIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=572,
-  serialized_end=1129,
+  serialized_start=590,
+  serialized_end=1147,
 )
 
 _HYPERPARAMETERTUNINGJOB.fields_by_name['training_job'].message_type = flyteidl_dot_plugins_dot_sagemaker_dot_training__job__pb2._TRAININGJOB
@@ -248,21 +248,21 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 HyperparameterTuningJob = _reflection.GeneratedProtocolMessageType('HyperparameterTuningJob', (_message.Message,), dict(
   DESCRIPTOR = _HYPERPARAMETERTUNINGJOB,
-  __module__ = 'flyteidl.plugins.sagemaker.hpo_job_pb2'
+  __module__ = 'flyteidl.plugins.sagemaker.hyperparameter_tuning_job_pb2'
   # @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.HyperparameterTuningJob)
   ))
 _sym_db.RegisterMessage(HyperparameterTuningJob)
 
 HyperparameterTuningObjective = _reflection.GeneratedProtocolMessageType('HyperparameterTuningObjective', (_message.Message,), dict(
   DESCRIPTOR = _HYPERPARAMETERTUNINGOBJECTIVE,
-  __module__ = 'flyteidl.plugins.sagemaker.hpo_job_pb2'
+  __module__ = 'flyteidl.plugins.sagemaker.hyperparameter_tuning_job_pb2'
   # @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.HyperparameterTuningObjective)
   ))
 _sym_db.RegisterMessage(HyperparameterTuningObjective)
 
 HyperparameterTuningSpecification = _reflection.GeneratedProtocolMessageType('HyperparameterTuningSpecification', (_message.Message,), dict(
   DESCRIPTOR = _HYPERPARAMETERTUNINGSPECIFICATION,
-  __module__ = 'flyteidl.plugins.sagemaker.hpo_job_pb2'
+  __module__ = 'flyteidl.plugins.sagemaker.hyperparameter_tuning_job_pb2'
   # @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
   ))
 _sym_db.RegisterMessage(HyperparameterTuningSpecification)
