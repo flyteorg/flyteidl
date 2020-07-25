@@ -5,22 +5,31 @@ package flyteidl.plugins.sagemaker;
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
 
 
-enum InputMode {
-    FILE = 0;
-    PIPE = 1;
+message InputMode {
+    enum Value {
+        FILE = 0;
+        PIPE = 1;
+    }
 }
 
-enum AlgorithmName {
-    CUSTOM = 0;
-    XGBOOST = 1;
+message AlgorithmName {
+    enum Value {
+        CUSTOM = 0;
+        XGBOOST = 1;
+    }
 }
 
+// Specifies the training algorithm to be used in the training job
+// This object is mostly a pass-through, with the exception that when users want to supply custom algorithms
+// they should set algorithm_name field to CUSTOM. In this case, the value of the algorithm_version field has no effect
+// For pass-through use cases: refer to this AWS official document for more details
+// https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
 message AlgorithmSpecification {
     // The input mode can be either PIPE or FILE
-    InputMode input_mode = 1;
+    InputMode.Value input_mode = 1;
     // The algorithm name is used for deciding which pre-built image to point to
     // This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
-    AlgorithmName algorithm_name = 2;
+    AlgorithmName.Value algorithm_name = 2;
     // The algorithm version field is used for deciding which pre-built image to point to
     // This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
     string algorithm_version = 3;
@@ -36,9 +45,11 @@ message AlgorithmSpecification {
     repeated MetricDefinition metric_definitions = 4;
 }
 
-message TrainingJobConfig {
+// TrainingJobResourceConfig is a pass-through, specifying the instance type to use for the training job, the
+// number of instances to launch, and the size of the ML storage volume the user wants to provision
+// Refer to SageMaker official doc for more details: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html
+message TrainingJobResourceConfig {
     // The number of ML compute instances to use. For distributed training, provide a value greater than 1.
-    // This is for multi-node training, not multi-GPU training
     int64 instance_count = 1;
     // The ML compute instance type
     string instance_type = 2;
@@ -62,9 +73,10 @@ message StoppingCondition {
     int64 max_wait_time_in_seconds = 2;
 }
 
-// The spec of a training job
+// The spec of a training job. This is mostly a pass-through object
+// https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html
 message TrainingJob {
     AlgorithmSpecification algorithm_specification = 1;
-    TrainingJobConfig training_job_config = 2;
+    TrainingJobResourceConfig training_job_config = 2;
     bool interruptible = 3;
 }
