@@ -14,200 +14,1022 @@ public final class TrainingJobOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface InputModeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.InputMode)
+      com.google.protobuf.MessageOrBuilder {
+  }
   /**
-   * Protobuf enum {@code flyteidl.plugins.sagemaker.InputMode}
+   * Protobuf type {@code flyteidl.plugins.sagemaker.InputMode}
    */
-  public enum InputMode
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>FILE = 0;</code>
-     */
-    FILE(0),
-    /**
-     * <code>PIPE = 1;</code>
-     */
-    PIPE(1),
-    UNRECOGNIZED(-1),
-    ;
+  public  static final class InputMode extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.plugins.sagemaker.InputMode)
+      InputModeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use InputMode.newBuilder() to construct.
+    private InputMode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private InputMode() {
+    }
 
-    /**
-     * <code>FILE = 0;</code>
-     */
-    public static final int FILE_VALUE = 0;
-    /**
-     * <code>PIPE = 1;</code>
-     */
-    public static final int PIPE_VALUE = 1;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private InputMode(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
       }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static InputMode valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static InputMode forNumber(int value) {
-      switch (value) {
-        case 0: return FILE;
-        case 1: return PIPE;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<InputMode>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        InputMode> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<InputMode>() {
-            public InputMode findValueByNumber(int number) {
-              return InputMode.forNumber(number);
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
+    public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.plugins.sagemaker.TrainingJobOuterClass.getDescriptor().getEnumTypes().get(0);
+      return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_InputMode_descriptor;
     }
 
-    private static final InputMode[] VALUES = values();
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_InputMode_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.Builder.class);
+    }
 
-    public static InputMode valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+    /**
+     * Protobuf enum {@code flyteidl.plugins.sagemaker.InputMode.Value}
+     */
+    public enum Value
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>FILE = 0;</code>
+       */
+      FILE(0),
+      /**
+       * <code>PIPE = 1;</code>
+       */
+      PIPE(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>FILE = 0;</code>
+       */
+      public static final int FILE_VALUE = 0;
+      /**
+       * <code>PIPE = 1;</code>
+       */
+      public static final int PIPE_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
       }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Value valueOf(int value) {
+        return forNumber(value);
       }
-      return VALUES[desc.getIndex()];
+
+      public static Value forNumber(int value) {
+        switch (value) {
+          case 0: return FILE;
+          case 1: return PIPE;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Value>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Value> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Value>() {
+              public Value findValueByNumber(int number) {
+                return Value.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Value[] VALUES = values();
+
+      public static Value valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Value(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:flyteidl.plugins.sagemaker.InputMode.Value)
     }
 
-    private final int value;
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
-    private InputMode(int value) {
-      this.value = value;
+      memoizedIsInitialized = 1;
+      return true;
     }
 
-    // @@protoc_insertion_point(enum_scope:flyteidl.plugins.sagemaker.InputMode)
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode)) {
+        return super.equals(obj);
+      }
+      flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode other = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code flyteidl.plugins.sagemaker.InputMode}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.sagemaker.InputMode)
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputModeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_InputMode_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_InputMode_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.Builder.class);
+      }
+
+      // Construct using flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_InputMode_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode getDefaultInstanceForType() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode build() {
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode buildPartial() {
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode result = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode) {
+          return mergeFrom((flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode other) {
+        if (other == flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.sagemaker.InputMode)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.InputMode)
+    private static final flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode();
+    }
+
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InputMode>
+        PARSER = new com.google.protobuf.AbstractParser<InputMode>() {
+      @java.lang.Override
+      public InputMode parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new InputMode(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<InputMode> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InputMode> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  public interface AlgorithmNameOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.AlgorithmName)
+      com.google.protobuf.MessageOrBuilder {
+  }
   /**
-   * Protobuf enum {@code flyteidl.plugins.sagemaker.AlgorithmName}
+   * Protobuf type {@code flyteidl.plugins.sagemaker.AlgorithmName}
    */
-  public enum AlgorithmName
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>CUSTOM = 0;</code>
-     */
-    CUSTOM(0),
-    /**
-     * <code>XGBOOST = 1;</code>
-     */
-    XGBOOST(1),
-    UNRECOGNIZED(-1),
-    ;
+  public  static final class AlgorithmName extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.plugins.sagemaker.AlgorithmName)
+      AlgorithmNameOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AlgorithmName.newBuilder() to construct.
+    private AlgorithmName(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AlgorithmName() {
+    }
 
-    /**
-     * <code>CUSTOM = 0;</code>
-     */
-    public static final int CUSTOM_VALUE = 0;
-    /**
-     * <code>XGBOOST = 1;</code>
-     */
-    public static final int XGBOOST_VALUE = 1;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AlgorithmName(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
       }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static AlgorithmName valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static AlgorithmName forNumber(int value) {
-      switch (value) {
-        case 0: return CUSTOM;
-        case 1: return XGBOOST;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<AlgorithmName>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        AlgorithmName> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<AlgorithmName>() {
-            public AlgorithmName findValueByNumber(int number) {
-              return AlgorithmName.forNumber(number);
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
+    public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.plugins.sagemaker.TrainingJobOuterClass.getDescriptor().getEnumTypes().get(1);
+      return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_AlgorithmName_descriptor;
     }
 
-    private static final AlgorithmName[] VALUES = values();
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_AlgorithmName_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.Builder.class);
+    }
 
-    public static AlgorithmName valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+    /**
+     * Protobuf enum {@code flyteidl.plugins.sagemaker.AlgorithmName.Value}
+     */
+    public enum Value
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>CUSTOM = 0;</code>
+       */
+      CUSTOM(0),
+      /**
+       * <code>XGBOOST = 1;</code>
+       */
+      XGBOOST(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>CUSTOM = 0;</code>
+       */
+      public static final int CUSTOM_VALUE = 0;
+      /**
+       * <code>XGBOOST = 1;</code>
+       */
+      public static final int XGBOOST_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
       }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Value valueOf(int value) {
+        return forNumber(value);
       }
-      return VALUES[desc.getIndex()];
+
+      public static Value forNumber(int value) {
+        switch (value) {
+          case 0: return CUSTOM;
+          case 1: return XGBOOST;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Value>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Value> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Value>() {
+              public Value findValueByNumber(int number) {
+                return Value.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Value[] VALUES = values();
+
+      public static Value valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Value(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:flyteidl.plugins.sagemaker.AlgorithmName.Value)
     }
 
-    private final int value;
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
-    private AlgorithmName(int value) {
-      this.value = value;
+      memoizedIsInitialized = 1;
+      return true;
     }
 
-    // @@protoc_insertion_point(enum_scope:flyteidl.plugins.sagemaker.AlgorithmName)
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName)) {
+        return super.equals(obj);
+      }
+      flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName other = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code flyteidl.plugins.sagemaker.AlgorithmName}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.sagemaker.AlgorithmName)
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmNameOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_AlgorithmName_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_AlgorithmName_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.Builder.class);
+      }
+
+      // Construct using flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_AlgorithmName_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName getDefaultInstanceForType() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName build() {
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName buildPartial() {
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName result = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName) {
+          return mergeFrom((flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName other) {
+        if (other == flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.sagemaker.AlgorithmName)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.AlgorithmName)
+    private static final flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName();
+    }
+
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AlgorithmName>
+        PARSER = new com.google.protobuf.AbstractParser<AlgorithmName>() {
+      @java.lang.Override
+      public AlgorithmName parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AlgorithmName(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AlgorithmName> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AlgorithmName> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface AlgorithmSpecificationOrBuilder extends
@@ -219,7 +1041,7 @@ public final class TrainingJobOuterClass {
      * The input mode can be either PIPE or FILE
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.InputMode input_mode = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.InputMode.Value input_mode = 1;</code>
      */
     int getInputModeValue();
     /**
@@ -227,9 +1049,9 @@ public final class TrainingJobOuterClass {
      * The input mode can be either PIPE or FILE
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.InputMode input_mode = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.InputMode.Value input_mode = 1;</code>
      */
-    flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode getInputMode();
+    flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.Value getInputMode();
 
     /**
      * <pre>
@@ -237,7 +1059,7 @@ public final class TrainingJobOuterClass {
      * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;</code>
      */
     int getAlgorithmNameValue();
     /**
@@ -246,9 +1068,9 @@ public final class TrainingJobOuterClass {
      * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;</code>
      */
-    flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName getAlgorithmName();
+    flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.Value getAlgorithmName();
 
     /**
      * <pre>
@@ -320,6 +1142,14 @@ public final class TrainingJobOuterClass {
         int index);
   }
   /**
+   * <pre>
+   * Specifies the training algorithm to be used in the training job
+   * This object is mostly a pass-through, with the exception that when users want to supply custom algorithms
+   * they should set algorithm_name field to CUSTOM. In this case, the value of the algorithm_version field has no effect
+   * For pass-through use cases: refer to this AWS official document for more details
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.plugins.sagemaker.AlgorithmSpecification}
    */
   public  static final class AlgorithmSpecification extends
@@ -1190,7 +2020,7 @@ public final class TrainingJobOuterClass {
      * The input mode can be either PIPE or FILE
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.InputMode input_mode = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.InputMode.Value input_mode = 1;</code>
      */
     public int getInputModeValue() {
       return inputMode_;
@@ -1200,12 +2030,12 @@ public final class TrainingJobOuterClass {
      * The input mode can be either PIPE or FILE
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.InputMode input_mode = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.InputMode.Value input_mode = 1;</code>
      */
-    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode getInputMode() {
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.Value getInputMode() {
       @SuppressWarnings("deprecation")
-      flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode result = flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.valueOf(inputMode_);
-      return result == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.UNRECOGNIZED : result;
+      flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.Value result = flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.Value.valueOf(inputMode_);
+      return result == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.Value.UNRECOGNIZED : result;
     }
 
     public static final int ALGORITHM_NAME_FIELD_NUMBER = 2;
@@ -1216,7 +2046,7 @@ public final class TrainingJobOuterClass {
      * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;</code>
      */
     public int getAlgorithmNameValue() {
       return algorithmName_;
@@ -1227,12 +2057,12 @@ public final class TrainingJobOuterClass {
      * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
      * </pre>
      *
-     * <code>.flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;</code>
      */
-    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName getAlgorithmName() {
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.Value getAlgorithmName() {
       @SuppressWarnings("deprecation")
-      flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName result = flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.valueOf(algorithmName_);
-      return result == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.UNRECOGNIZED : result;
+      flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.Value result = flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.Value.valueOf(algorithmName_);
+      return result == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.Value.UNRECOGNIZED : result;
     }
 
     public static final int ALGORITHM_VERSION_FIELD_NUMBER = 3;
@@ -1353,10 +2183,10 @@ public final class TrainingJobOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (inputMode_ != flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.FILE.getNumber()) {
+      if (inputMode_ != flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.Value.FILE.getNumber()) {
         output.writeEnum(1, inputMode_);
       }
-      if (algorithmName_ != flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.CUSTOM.getNumber()) {
+      if (algorithmName_ != flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.Value.CUSTOM.getNumber()) {
         output.writeEnum(2, algorithmName_);
       }
       if (!getAlgorithmVersionBytes().isEmpty()) {
@@ -1374,11 +2204,11 @@ public final class TrainingJobOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (inputMode_ != flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.FILE.getNumber()) {
+      if (inputMode_ != flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.Value.FILE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, inputMode_);
       }
-      if (algorithmName_ != flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.CUSTOM.getNumber()) {
+      if (algorithmName_ != flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.Value.CUSTOM.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, algorithmName_);
       }
@@ -1527,6 +2357,14 @@ public final class TrainingJobOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Specifies the training algorithm to be used in the training job
+     * This object is mostly a pass-through, with the exception that when users want to supply custom algorithms
+     * they should set algorithm_name field to CUSTOM. In this case, the value of the algorithm_version field has no effect
+     * For pass-through use cases: refer to this AWS official document for more details
+     * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.plugins.sagemaker.AlgorithmSpecification}
      */
     public static final class Builder extends
@@ -1738,7 +2576,7 @@ public final class TrainingJobOuterClass {
        * The input mode can be either PIPE or FILE
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.InputMode input_mode = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.InputMode.Value input_mode = 1;</code>
        */
       public int getInputModeValue() {
         return inputMode_;
@@ -1748,7 +2586,7 @@ public final class TrainingJobOuterClass {
        * The input mode can be either PIPE or FILE
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.InputMode input_mode = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.InputMode.Value input_mode = 1;</code>
        */
       public Builder setInputModeValue(int value) {
         inputMode_ = value;
@@ -1760,21 +2598,21 @@ public final class TrainingJobOuterClass {
        * The input mode can be either PIPE or FILE
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.InputMode input_mode = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.InputMode.Value input_mode = 1;</code>
        */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode getInputMode() {
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.Value getInputMode() {
         @SuppressWarnings("deprecation")
-        flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode result = flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.valueOf(inputMode_);
-        return result == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.UNRECOGNIZED : result;
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.Value result = flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.Value.valueOf(inputMode_);
+        return result == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.Value.UNRECOGNIZED : result;
       }
       /**
        * <pre>
        * The input mode can be either PIPE or FILE
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.InputMode input_mode = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.InputMode.Value input_mode = 1;</code>
        */
-      public Builder setInputMode(flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode value) {
+      public Builder setInputMode(flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputMode.Value value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1788,7 +2626,7 @@ public final class TrainingJobOuterClass {
        * The input mode can be either PIPE or FILE
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.InputMode input_mode = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.InputMode.Value input_mode = 1;</code>
        */
       public Builder clearInputMode() {
         
@@ -1804,7 +2642,7 @@ public final class TrainingJobOuterClass {
        * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;</code>
        */
       public int getAlgorithmNameValue() {
         return algorithmName_;
@@ -1815,7 +2653,7 @@ public final class TrainingJobOuterClass {
        * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;</code>
        */
       public Builder setAlgorithmNameValue(int value) {
         algorithmName_ = value;
@@ -1828,12 +2666,12 @@ public final class TrainingJobOuterClass {
        * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;</code>
        */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName getAlgorithmName() {
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.Value getAlgorithmName() {
         @SuppressWarnings("deprecation")
-        flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName result = flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.valueOf(algorithmName_);
-        return result == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.UNRECOGNIZED : result;
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.Value result = flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.Value.valueOf(algorithmName_);
+        return result == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.Value.UNRECOGNIZED : result;
       }
       /**
        * <pre>
@@ -1841,9 +2679,9 @@ public final class TrainingJobOuterClass {
        * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;</code>
        */
-      public Builder setAlgorithmName(flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName value) {
+      public Builder setAlgorithmName(flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmName.Value value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1858,7 +2696,7 @@ public final class TrainingJobOuterClass {
        * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
        * </pre>
        *
-       * <code>.flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;</code>
        */
       public Builder clearAlgorithmName() {
         
@@ -2343,14 +3181,13 @@ public final class TrainingJobOuterClass {
 
   }
 
-  public interface TrainingJobConfigOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.TrainingJobConfig)
+  public interface TrainingJobResourceConfigOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.TrainingJobResourceConfig)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
      * The number of ML compute instances to use. For distributed training, provide a value greater than 1.
-     * This is for multi-node training, not multi-GPU training
      * </pre>
      *
      * <code>int64 instance_count = 1;</code>
@@ -2385,18 +3222,24 @@ public final class TrainingJobOuterClass {
     long getVolumeSizeInGb();
   }
   /**
-   * Protobuf type {@code flyteidl.plugins.sagemaker.TrainingJobConfig}
+   * <pre>
+   * TrainingJobResourceConfig is a pass-through, specifying the instance type to use for the training job, the
+   * number of instances to launch, and the size of the ML storage volume the user wants to provision
+   * Refer to SageMaker official doc for more details: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.plugins.sagemaker.TrainingJobResourceConfig}
    */
-  public  static final class TrainingJobConfig extends
+  public  static final class TrainingJobResourceConfig extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.plugins.sagemaker.TrainingJobConfig)
-      TrainingJobConfigOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.plugins.sagemaker.TrainingJobResourceConfig)
+      TrainingJobResourceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use TrainingJobConfig.newBuilder() to construct.
-    private TrainingJobConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use TrainingJobResourceConfig.newBuilder() to construct.
+    private TrainingJobResourceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private TrainingJobConfig() {
+    private TrainingJobResourceConfig() {
       instanceType_ = "";
     }
 
@@ -2405,7 +3248,7 @@ public final class TrainingJobOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TrainingJobConfig(
+    private TrainingJobResourceConfig(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2461,15 +3304,15 @@ public final class TrainingJobOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_TrainingJobConfig_descriptor;
+      return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_TrainingJobConfig_fieldAccessorTable
+      return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig.Builder.class);
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.Builder.class);
     }
 
     public static final int INSTANCE_COUNT_FIELD_NUMBER = 1;
@@ -2477,7 +3320,6 @@ public final class TrainingJobOuterClass {
     /**
      * <pre>
      * The number of ML compute instances to use. For distributed training, provide a value greater than 1.
-     * This is for multi-node training, not multi-GPU training
      * </pre>
      *
      * <code>int64 instance_count = 1;</code>
@@ -2594,10 +3436,10 @@ public final class TrainingJobOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig)) {
+      if (!(obj instanceof flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig)) {
         return super.equals(obj);
       }
-      flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig other = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig) obj;
+      flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig other = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig) obj;
 
       if (getInstanceCount()
           != other.getInstanceCount()) return false;
@@ -2629,69 +3471,69 @@ public final class TrainingJobOuterClass {
       return hash;
     }
 
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig parseFrom(
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig parseFrom(
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig parseFrom(
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig parseFrom(
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig parseFrom(byte[] data)
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig parseFrom(
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig parseFrom(java.io.InputStream input)
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig parseFrom(
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig parseDelimitedFrom(
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig parseFrom(
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig parseFrom(
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2704,7 +3546,7 @@ public final class TrainingJobOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig prototype) {
+    public static Builder newBuilder(flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2720,26 +3562,32 @@ public final class TrainingJobOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code flyteidl.plugins.sagemaker.TrainingJobConfig}
+     * <pre>
+     * TrainingJobResourceConfig is a pass-through, specifying the instance type to use for the training job, the
+     * number of instances to launch, and the size of the ML storage volume the user wants to provision
+     * Refer to SageMaker official doc for more details: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.plugins.sagemaker.TrainingJobResourceConfig}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.sagemaker.TrainingJobConfig)
-        flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfigOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.sagemaker.TrainingJobResourceConfig)
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfigOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_TrainingJobConfig_descriptor;
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_TrainingJobConfig_fieldAccessorTable
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig.Builder.class);
+                flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.Builder.class);
       }
 
-      // Construct using flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig.newBuilder()
+      // Construct using flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2769,17 +3617,17 @@ public final class TrainingJobOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_TrainingJobConfig_descriptor;
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig getDefaultInstanceForType() {
-        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig.getDefaultInstance();
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig getDefaultInstanceForType() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig build() {
-        flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig result = buildPartial();
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig build() {
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2787,8 +3635,8 @@ public final class TrainingJobOuterClass {
       }
 
       @java.lang.Override
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig buildPartial() {
-        flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig result = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig(this);
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig buildPartial() {
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig result = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig(this);
         result.instanceCount_ = instanceCount_;
         result.instanceType_ = instanceType_;
         result.volumeSizeInGb_ = volumeSizeInGb_;
@@ -2830,16 +3678,16 @@ public final class TrainingJobOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig) {
-          return mergeFrom((flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig)other);
+        if (other instanceof flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig) {
+          return mergeFrom((flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig other) {
-        if (other == flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig other) {
+        if (other == flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.getDefaultInstance()) return this;
         if (other.getInstanceCount() != 0L) {
           setInstanceCount(other.getInstanceCount());
         }
@@ -2865,11 +3713,11 @@ public final class TrainingJobOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig parsedMessage = null;
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2883,7 +3731,6 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * The number of ML compute instances to use. For distributed training, provide a value greater than 1.
-       * This is for multi-node training, not multi-GPU training
        * </pre>
        *
        * <code>int64 instance_count = 1;</code>
@@ -2894,7 +3741,6 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * The number of ML compute instances to use. For distributed training, provide a value greater than 1.
-       * This is for multi-node training, not multi-GPU training
        * </pre>
        *
        * <code>int64 instance_count = 1;</code>
@@ -2908,7 +3754,6 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * The number of ML compute instances to use. For distributed training, provide a value greater than 1.
-       * This is for multi-node training, not multi-GPU training
        * </pre>
        *
        * <code>int64 instance_count = 1;</code>
@@ -3059,41 +3904,41 @@ public final class TrainingJobOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.sagemaker.TrainingJobConfig)
+      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.sagemaker.TrainingJobResourceConfig)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.TrainingJobConfig)
-    private static final flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.TrainingJobResourceConfig)
+    private static final flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig();
+      DEFAULT_INSTANCE = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig();
     }
 
-    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig getDefaultInstance() {
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<TrainingJobConfig>
-        PARSER = new com.google.protobuf.AbstractParser<TrainingJobConfig>() {
+    private static final com.google.protobuf.Parser<TrainingJobResourceConfig>
+        PARSER = new com.google.protobuf.AbstractParser<TrainingJobResourceConfig>() {
       @java.lang.Override
-      public TrainingJobConfig parsePartialFrom(
+      public TrainingJobResourceConfig parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TrainingJobConfig(input, extensionRegistry);
+        return new TrainingJobResourceConfig(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<TrainingJobConfig> parser() {
+    public static com.google.protobuf.Parser<TrainingJobResourceConfig> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<TrainingJobConfig> getParserForType() {
+    public com.google.protobuf.Parser<TrainingJobResourceConfig> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig getDefaultInstanceForType() {
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3727,17 +4572,17 @@ public final class TrainingJobOuterClass {
     flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecificationOrBuilder getAlgorithmSpecificationOrBuilder();
 
     /**
-     * <code>.flyteidl.plugins.sagemaker.TrainingJobConfig training_job_config = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
      */
     boolean hasTrainingJobConfig();
     /**
-     * <code>.flyteidl.plugins.sagemaker.TrainingJobConfig training_job_config = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
      */
-    flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig getTrainingJobConfig();
+    flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig getTrainingJobConfig();
     /**
-     * <code>.flyteidl.plugins.sagemaker.TrainingJobConfig training_job_config = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
      */
-    flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfigOrBuilder getTrainingJobConfigOrBuilder();
+    flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfigOrBuilder getTrainingJobConfigOrBuilder();
 
     /**
      * <code>bool interruptible = 3;</code>
@@ -3746,7 +4591,8 @@ public final class TrainingJobOuterClass {
   }
   /**
    * <pre>
-   * The spec of a training job
+   * The spec of a training job. This is mostly a pass-through object
+   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html
    * </pre>
    *
    * Protobuf type {@code flyteidl.plugins.sagemaker.TrainingJob}
@@ -3801,11 +4647,11 @@ public final class TrainingJobOuterClass {
               break;
             }
             case 18: {
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig.Builder subBuilder = null;
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.Builder subBuilder = null;
               if (trainingJobConfig_ != null) {
                 subBuilder = trainingJobConfig_.toBuilder();
               }
-              trainingJobConfig_ = input.readMessage(flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig.parser(), extensionRegistry);
+              trainingJobConfig_ = input.readMessage(flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(trainingJobConfig_);
                 trainingJobConfig_ = subBuilder.buildPartial();
@@ -3872,23 +4718,23 @@ public final class TrainingJobOuterClass {
     }
 
     public static final int TRAINING_JOB_CONFIG_FIELD_NUMBER = 2;
-    private flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig trainingJobConfig_;
+    private flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig trainingJobConfig_;
     /**
-     * <code>.flyteidl.plugins.sagemaker.TrainingJobConfig training_job_config = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
      */
     public boolean hasTrainingJobConfig() {
       return trainingJobConfig_ != null;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.TrainingJobConfig training_job_config = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
      */
-    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig getTrainingJobConfig() {
-      return trainingJobConfig_ == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig.getDefaultInstance() : trainingJobConfig_;
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig getTrainingJobConfig() {
+      return trainingJobConfig_ == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.getDefaultInstance() : trainingJobConfig_;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.TrainingJobConfig training_job_config = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
      */
-    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfigOrBuilder getTrainingJobConfigOrBuilder() {
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfigOrBuilder getTrainingJobConfigOrBuilder() {
       return getTrainingJobConfig();
     }
 
@@ -4091,7 +4937,8 @@ public final class TrainingJobOuterClass {
     }
     /**
      * <pre>
-     * The spec of a training job
+     * The spec of a training job. This is mostly a pass-through object
+     * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html
      * </pre>
      *
      * Protobuf type {@code flyteidl.plugins.sagemaker.TrainingJob}
@@ -4385,29 +5232,29 @@ public final class TrainingJobOuterClass {
         return algorithmSpecificationBuilder_;
       }
 
-      private flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig trainingJobConfig_;
+      private flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig trainingJobConfig_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfigOrBuilder> trainingJobConfigBuilder_;
+          flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfigOrBuilder> trainingJobConfigBuilder_;
       /**
-       * <code>.flyteidl.plugins.sagemaker.TrainingJobConfig training_job_config = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
        */
       public boolean hasTrainingJobConfig() {
         return trainingJobConfigBuilder_ != null || trainingJobConfig_ != null;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.TrainingJobConfig training_job_config = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
        */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig getTrainingJobConfig() {
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig getTrainingJobConfig() {
         if (trainingJobConfigBuilder_ == null) {
-          return trainingJobConfig_ == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig.getDefaultInstance() : trainingJobConfig_;
+          return trainingJobConfig_ == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.getDefaultInstance() : trainingJobConfig_;
         } else {
           return trainingJobConfigBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.TrainingJobConfig training_job_config = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
        */
-      public Builder setTrainingJobConfig(flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig value) {
+      public Builder setTrainingJobConfig(flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig value) {
         if (trainingJobConfigBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4421,10 +5268,10 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.TrainingJobConfig training_job_config = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
        */
       public Builder setTrainingJobConfig(
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig.Builder builderForValue) {
+          flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.Builder builderForValue) {
         if (trainingJobConfigBuilder_ == null) {
           trainingJobConfig_ = builderForValue.build();
           onChanged();
@@ -4435,13 +5282,13 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.TrainingJobConfig training_job_config = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
        */
-      public Builder mergeTrainingJobConfig(flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig value) {
+      public Builder mergeTrainingJobConfig(flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig value) {
         if (trainingJobConfigBuilder_ == null) {
           if (trainingJobConfig_ != null) {
             trainingJobConfig_ =
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig.newBuilder(trainingJobConfig_).mergeFrom(value).buildPartial();
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.newBuilder(trainingJobConfig_).mergeFrom(value).buildPartial();
           } else {
             trainingJobConfig_ = value;
           }
@@ -4453,7 +5300,7 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.TrainingJobConfig training_job_config = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
        */
       public Builder clearTrainingJobConfig() {
         if (trainingJobConfigBuilder_ == null) {
@@ -4467,33 +5314,33 @@ public final class TrainingJobOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.TrainingJobConfig training_job_config = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
        */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig.Builder getTrainingJobConfigBuilder() {
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.Builder getTrainingJobConfigBuilder() {
         
         onChanged();
         return getTrainingJobConfigFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.TrainingJobConfig training_job_config = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
        */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfigOrBuilder getTrainingJobConfigOrBuilder() {
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfigOrBuilder getTrainingJobConfigOrBuilder() {
         if (trainingJobConfigBuilder_ != null) {
           return trainingJobConfigBuilder_.getMessageOrBuilder();
         } else {
           return trainingJobConfig_ == null ?
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig.getDefaultInstance() : trainingJobConfig_;
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.getDefaultInstance() : trainingJobConfig_;
         }
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.TrainingJobConfig training_job_config = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfigOrBuilder> 
+          flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfigOrBuilder> 
           getTrainingJobConfigFieldBuilder() {
         if (trainingJobConfigBuilder_ == null) {
           trainingJobConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfig.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobConfigOrBuilder>(
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfigOrBuilder>(
                   getTrainingJobConfig(),
                   getParentForChildren(),
                   isClean());
@@ -4581,6 +5428,16 @@ public final class TrainingJobOuterClass {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_plugins_sagemaker_InputMode_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_plugins_sagemaker_InputMode_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_plugins_sagemaker_AlgorithmName_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_plugins_sagemaker_AlgorithmName_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -4591,10 +5448,10 @@ public final class TrainingJobOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_MetricDefinition_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_plugins_sagemaker_TrainingJobConfig_descriptor;
+    internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_plugins_sagemaker_TrainingJobConfig_fieldAccessorTable;
+      internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_plugins_sagemaker_StoppingCondition_descriptor;
   private static final 
@@ -4615,29 +5472,30 @@ public final class TrainingJobOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n-flyteidl/plugins/sagemaker/training_jo" +
-      "b.proto\022\032flyteidl.plugins.sagemaker\"\303\002\n\026" +
-      "AlgorithmSpecification\0229\n\ninput_mode\030\001 \001" +
-      "(\0162%.flyteidl.plugins.sagemaker.InputMod" +
-      "e\022A\n\016algorithm_name\030\002 \001(\0162).flyteidl.plu" +
-      "gins.sagemaker.AlgorithmName\022\031\n\021algorith" +
-      "m_version\030\003 \001(\t\022_\n\022metric_definitions\030\004 " +
-      "\003(\0132C.flyteidl.plugins.sagemaker.Algorit" +
-      "hmSpecification.MetricDefinition\032/\n\020Metr" +
-      "icDefinition\022\014\n\004name\030\001 \001(\t\022\r\n\005regex\030\002 \001(" +
-      "\t\"]\n\021TrainingJobConfig\022\026\n\016instance_count" +
-      "\030\001 \001(\003\022\025\n\rinstance_type\030\002 \001(\t\022\031\n\021volume_" +
-      "size_in_gb\030\003 \001(\003\"U\n\021StoppingCondition\022\036\n" +
-      "\026max_runtime_in_seconds\030\001 \001(\003\022 \n\030max_wai" +
-      "t_time_in_seconds\030\002 \001(\003\"\305\001\n\013TrainingJob\022" +
-      "S\n\027algorithm_specification\030\001 \001(\01322.flyte" +
-      "idl.plugins.sagemaker.AlgorithmSpecifica" +
-      "tion\022J\n\023training_job_config\030\002 \001(\0132-.flyt" +
-      "eidl.plugins.sagemaker.TrainingJobConfig" +
-      "\022\025\n\rinterruptible\030\003 \001(\010*\037\n\tInputMode\022\010\n\004" +
-      "FILE\020\000\022\010\n\004PIPE\020\001*(\n\rAlgorithmName\022\n\n\006CUS" +
-      "TOM\020\000\022\013\n\007XGBOOST\020\001B5Z3github.com/lyft/fl" +
-      "yteidl/gen/pb-go/flyteidl/pluginsb\006proto" +
-      "3"
+      "b.proto\022\032flyteidl.plugins.sagemaker\"(\n\tI" +
+      "nputMode\"\033\n\005Value\022\010\n\004FILE\020\000\022\010\n\004PIPE\020\001\"1\n" +
+      "\rAlgorithmName\" \n\005Value\022\n\n\006CUSTOM\020\000\022\013\n\007X" +
+      "GBOOST\020\001\"\317\002\n\026AlgorithmSpecification\022?\n\ni" +
+      "nput_mode\030\001 \001(\0162+.flyteidl.plugins.sagem" +
+      "aker.InputMode.Value\022G\n\016algorithm_name\030\002" +
+      " \001(\0162/.flyteidl.plugins.sagemaker.Algori" +
+      "thmName.Value\022\031\n\021algorithm_version\030\003 \001(\t" +
+      "\022_\n\022metric_definitions\030\004 \003(\0132C.flyteidl." +
+      "plugins.sagemaker.AlgorithmSpecification" +
+      ".MetricDefinition\032/\n\020MetricDefinition\022\014\n" +
+      "\004name\030\001 \001(\t\022\r\n\005regex\030\002 \001(\t\"e\n\031TrainingJo" +
+      "bResourceConfig\022\026\n\016instance_count\030\001 \001(\003\022" +
+      "\025\n\rinstance_type\030\002 \001(\t\022\031\n\021volume_size_in" +
+      "_gb\030\003 \001(\003\"U\n\021StoppingCondition\022\036\n\026max_ru" +
+      "ntime_in_seconds\030\001 \001(\003\022 \n\030max_wait_time_" +
+      "in_seconds\030\002 \001(\003\"\315\001\n\013TrainingJob\022S\n\027algo" +
+      "rithm_specification\030\001 \001(\01322.flyteidl.plu" +
+      "gins.sagemaker.AlgorithmSpecification\022R\n" +
+      "\023training_job_config\030\002 \001(\01325.flyteidl.pl" +
+      "ugins.sagemaker.TrainingJobResourceConfi" +
+      "g\022\025\n\rinterruptible\030\003 \001(\010B5Z3github.com/l" +
+      "yft/flyteidl/gen/pb-go/flyteidl/pluginsb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4651,8 +5509,20 @@ public final class TrainingJobOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_descriptor =
+    internal_static_flyteidl_plugins_sagemaker_InputMode_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_flyteidl_plugins_sagemaker_InputMode_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_plugins_sagemaker_InputMode_descriptor,
+        new java.lang.String[] { });
+    internal_static_flyteidl_plugins_sagemaker_AlgorithmName_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_flyteidl_plugins_sagemaker_AlgorithmName_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_plugins_sagemaker_AlgorithmName_descriptor,
+        new java.lang.String[] { });
+    internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_descriptor,
@@ -4663,20 +5533,20 @@ public final class TrainingJobOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_MetricDefinition_descriptor,
         new java.lang.String[] { "Name", "Regex", });
-    internal_static_flyteidl_plugins_sagemaker_TrainingJobConfig_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_flyteidl_plugins_sagemaker_TrainingJobConfig_fieldAccessorTable = new
+    internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_plugins_sagemaker_TrainingJobConfig_descriptor,
+        internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_descriptor,
         new java.lang.String[] { "InstanceCount", "InstanceType", "VolumeSizeInGb", });
     internal_static_flyteidl_plugins_sagemaker_StoppingCondition_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_plugins_sagemaker_StoppingCondition_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_StoppingCondition_descriptor,
         new java.lang.String[] { "MaxRuntimeInSeconds", "MaxWaitTimeInSeconds", });
     internal_static_flyteidl_plugins_sagemaker_TrainingJob_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_plugins_sagemaker_TrainingJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_TrainingJob_descriptor,

@@ -3,13 +3,84 @@
 training_job.proto
 =============================================
 
+.. _api_msg_flyteidl.plugins.sagemaker.InputMode:
+
+flyteidl.plugins.sagemaker.InputMode
+------------------------------------
+
+`[flyteidl.plugins.sagemaker.InputMode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L7>`_
+
+
+.. code-block:: json
+
+  {}
+
+
+
+.. _api_enum_flyteidl.plugins.sagemaker.InputMode.Value:
+
+Enum flyteidl.plugins.sagemaker.InputMode.Value
+-----------------------------------------------
+
+`[flyteidl.plugins.sagemaker.InputMode.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L8>`_
+
+
+.. _api_enum_value_flyteidl.plugins.sagemaker.InputMode.Value.FILE:
+
+FILE
+  *(DEFAULT)* ⁣
+  
+.. _api_enum_value_flyteidl.plugins.sagemaker.InputMode.Value.PIPE:
+
+PIPE
+  ⁣
+  
+
+.. _api_msg_flyteidl.plugins.sagemaker.AlgorithmName:
+
+flyteidl.plugins.sagemaker.AlgorithmName
+----------------------------------------
+
+`[flyteidl.plugins.sagemaker.AlgorithmName proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L14>`_
+
+
+.. code-block:: json
+
+  {}
+
+
+
+.. _api_enum_flyteidl.plugins.sagemaker.AlgorithmName.Value:
+
+Enum flyteidl.plugins.sagemaker.AlgorithmName.Value
+---------------------------------------------------
+
+`[flyteidl.plugins.sagemaker.AlgorithmName.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L15>`_
+
+
+.. _api_enum_value_flyteidl.plugins.sagemaker.AlgorithmName.Value.CUSTOM:
+
+CUSTOM
+  *(DEFAULT)* ⁣
+  
+.. _api_enum_value_flyteidl.plugins.sagemaker.AlgorithmName.Value.XGBOOST:
+
+XGBOOST
+  ⁣
+  
+
 .. _api_msg_flyteidl.plugins.sagemaker.AlgorithmSpecification:
 
 flyteidl.plugins.sagemaker.AlgorithmSpecification
 -------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.AlgorithmSpecification proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L17>`_
+`[flyteidl.plugins.sagemaker.AlgorithmSpecification proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L26>`_
 
+Specifies the training algorithm to be used in the training job
+This object is mostly a pass-through, with the exception that when users want to supply custom algorithms
+they should set algorithm_name field to CUSTOM. In this case, the value of the algorithm_version field has no effect
+For pass-through use cases: refer to this AWS official document for more details
+https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
 
 .. code-block:: json
 
@@ -23,13 +94,13 @@ flyteidl.plugins.sagemaker.AlgorithmSpecification
 .. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.input_mode:
 
 input_mode
-  (:ref:`flyteidl.plugins.sagemaker.InputMode <api_enum_flyteidl.plugins.sagemaker.InputMode>`) The input mode can be either PIPE or FILE
+  (:ref:`flyteidl.plugins.sagemaker.InputMode.Value <api_enum_flyteidl.plugins.sagemaker.InputMode.Value>`) The input mode can be either PIPE or FILE
   
   
 .. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.algorithm_name:
 
 algorithm_name
-  (:ref:`flyteidl.plugins.sagemaker.AlgorithmName <api_enum_flyteidl.plugins.sagemaker.AlgorithmName>`) The algorithm name is used for deciding which pre-built image to point to
+  (:ref:`flyteidl.plugins.sagemaker.AlgorithmName.Value <api_enum_flyteidl.plugins.sagemaker.AlgorithmName.Value>`) The algorithm name is used for deciding which pre-built image to point to
   This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
   
   
@@ -52,7 +123,7 @@ metric_definitions
 flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition
 ------------------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L27>`_
+`[flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L36>`_
 
 
 .. code-block:: json
@@ -77,13 +148,16 @@ regex
 
 
 
-.. _api_msg_flyteidl.plugins.sagemaker.TrainingJobConfig:
+.. _api_msg_flyteidl.plugins.sagemaker.TrainingJobResourceConfig:
 
-flyteidl.plugins.sagemaker.TrainingJobConfig
---------------------------------------------
+flyteidl.plugins.sagemaker.TrainingJobResourceConfig
+----------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJobConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L38>`_
+`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L50>`_
 
+TrainingJobResourceConfig is a pass-through, specifying the instance type to use for the training job, the
+number of instances to launch, and the size of the ML storage volume the user wants to provision
+Refer to SageMaker official doc for more details: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html
 
 .. code-block:: json
 
@@ -93,20 +167,19 @@ flyteidl.plugins.sagemaker.TrainingJobConfig
     "volume_size_in_gb": "..."
   }
 
-.. _api_field_flyteidl.plugins.sagemaker.TrainingJobConfig.instance_count:
+.. _api_field_flyteidl.plugins.sagemaker.TrainingJobResourceConfig.instance_count:
 
 instance_count
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The number of ML compute instances to use. For distributed training, provide a value greater than 1.
-  This is for multi-node training, not multi-GPU training
   
   
-.. _api_field_flyteidl.plugins.sagemaker.TrainingJobConfig.instance_type:
+.. _api_field_flyteidl.plugins.sagemaker.TrainingJobResourceConfig.instance_type:
 
 instance_type
   (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The ML compute instance type
   
   
-.. _api_field_flyteidl.plugins.sagemaker.TrainingJobConfig.volume_size_in_gb:
+.. _api_field_flyteidl.plugins.sagemaker.TrainingJobResourceConfig.volume_size_in_gb:
 
 volume_size_in_gb
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The size of the ML storage volume that you want to provision.
@@ -119,7 +192,7 @@ volume_size_in_gb
 flyteidl.plugins.sagemaker.StoppingCondition
 --------------------------------------------
 
-`[flyteidl.plugins.sagemaker.StoppingCondition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L51>`_
+`[flyteidl.plugins.sagemaker.StoppingCondition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L62>`_
 
 This option allows the users to specify a limit to how long a training job can run and
 how long the users are willing to wait for a managed spot training job to complete
@@ -155,9 +228,10 @@ max_wait_time_in_seconds
 flyteidl.plugins.sagemaker.TrainingJob
 --------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L65>`_
+`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L77>`_
 
-The spec of a training job
+The spec of a training job. This is mostly a pass-through object
+https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html
 
 .. code-block:: json
 
@@ -175,7 +249,7 @@ algorithm_specification
 .. _api_field_flyteidl.plugins.sagemaker.TrainingJob.training_job_config:
 
 training_job_config
-  (:ref:`flyteidl.plugins.sagemaker.TrainingJobConfig <api_msg_flyteidl.plugins.sagemaker.TrainingJobConfig>`) 
+  (:ref:`flyteidl.plugins.sagemaker.TrainingJobResourceConfig <api_msg_flyteidl.plugins.sagemaker.TrainingJobResourceConfig>`) 
   
 .. _api_field_flyteidl.plugins.sagemaker.TrainingJob.interruptible:
 
@@ -183,40 +257,3 @@ interruptible
   (`bool <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 
-.. _api_enum_flyteidl.plugins.sagemaker.InputMode:
-
-Enum flyteidl.plugins.sagemaker.InputMode
------------------------------------------
-
-`[flyteidl.plugins.sagemaker.InputMode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L7>`_
-
-
-.. _api_enum_value_flyteidl.plugins.sagemaker.InputMode.FILE:
-
-FILE
-  *(DEFAULT)* ⁣
-  
-.. _api_enum_value_flyteidl.plugins.sagemaker.InputMode.PIPE:
-
-PIPE
-  ⁣
-  
-
-.. _api_enum_flyteidl.plugins.sagemaker.AlgorithmName:
-
-Enum flyteidl.plugins.sagemaker.AlgorithmName
----------------------------------------------
-
-`[flyteidl.plugins.sagemaker.AlgorithmName proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L12>`_
-
-
-.. _api_enum_value_flyteidl.plugins.sagemaker.AlgorithmName.CUSTOM:
-
-CUSTOM
-  *(DEFAULT)* ⁣
-  
-.. _api_enum_value_flyteidl.plugins.sagemaker.AlgorithmName.XGBOOST:
-
-XGBOOST
-  ⁣
-  

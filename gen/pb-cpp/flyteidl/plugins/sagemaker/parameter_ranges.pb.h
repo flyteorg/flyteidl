@@ -45,7 +45,7 @@ struct TableStruct_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[6]
+  static const ::google::protobuf::internal::ParseTable schema[7]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -61,6 +61,9 @@ extern CategoricalParameterRangeDefaultTypeInternal _CategoricalParameterRange_d
 class ContinuousParameterRange;
 class ContinuousParameterRangeDefaultTypeInternal;
 extern ContinuousParameterRangeDefaultTypeInternal _ContinuousParameterRange_default_instance_;
+class HyperparameterScalingType;
+class HyperparameterScalingTypeDefaultTypeInternal;
+extern HyperparameterScalingTypeDefaultTypeInternal _HyperparameterScalingType_default_instance_;
 class IntegerParameterRange;
 class IntegerParameterRangeDefaultTypeInternal;
 extern IntegerParameterRangeDefaultTypeInternal _IntegerParameterRange_default_instance_;
@@ -80,6 +83,7 @@ namespace google {
 namespace protobuf {
 template<> ::flyteidl::plugins::sagemaker::CategoricalParameterRange* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::CategoricalParameterRange>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::ContinuousParameterRange* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::ContinuousParameterRange>(Arena*);
+template<> ::flyteidl::plugins::sagemaker::HyperparameterScalingType* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::HyperparameterScalingType>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::IntegerParameterRange* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::IntegerParameterRange>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::ParameterRangeOneOf* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::ParameterRangeOneOf>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::ParameterRanges* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::ParameterRanges>(Arena*);
@@ -90,30 +94,165 @@ namespace flyteidl {
 namespace plugins {
 namespace sagemaker {
 
-enum HyperparameterScalingType {
-  AUTO = 0,
-  LINEAR = 1,
-  LOGARITHMIC = 2,
-  REVERSELOGARITHMIC = 3,
-  HyperparameterScalingType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
-  HyperparameterScalingType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+enum HyperparameterScalingType_Value {
+  HyperparameterScalingType_Value_AUTO = 0,
+  HyperparameterScalingType_Value_LINEAR = 1,
+  HyperparameterScalingType_Value_LOGARITHMIC = 2,
+  HyperparameterScalingType_Value_REVERSELOGARITHMIC = 3,
+  HyperparameterScalingType_Value_HyperparameterScalingType_Value_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  HyperparameterScalingType_Value_HyperparameterScalingType_Value_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
-bool HyperparameterScalingType_IsValid(int value);
-const HyperparameterScalingType HyperparameterScalingType_MIN = AUTO;
-const HyperparameterScalingType HyperparameterScalingType_MAX = REVERSELOGARITHMIC;
-const int HyperparameterScalingType_ARRAYSIZE = HyperparameterScalingType_MAX + 1;
+bool HyperparameterScalingType_Value_IsValid(int value);
+const HyperparameterScalingType_Value HyperparameterScalingType_Value_Value_MIN = HyperparameterScalingType_Value_AUTO;
+const HyperparameterScalingType_Value HyperparameterScalingType_Value_Value_MAX = HyperparameterScalingType_Value_REVERSELOGARITHMIC;
+const int HyperparameterScalingType_Value_Value_ARRAYSIZE = HyperparameterScalingType_Value_Value_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* HyperparameterScalingType_descriptor();
-inline const ::std::string& HyperparameterScalingType_Name(HyperparameterScalingType value) {
+const ::google::protobuf::EnumDescriptor* HyperparameterScalingType_Value_descriptor();
+inline const ::std::string& HyperparameterScalingType_Value_Name(HyperparameterScalingType_Value value) {
   return ::google::protobuf::internal::NameOfEnum(
-    HyperparameterScalingType_descriptor(), value);
+    HyperparameterScalingType_Value_descriptor(), value);
 }
-inline bool HyperparameterScalingType_Parse(
-    const ::std::string& name, HyperparameterScalingType* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<HyperparameterScalingType>(
-    HyperparameterScalingType_descriptor(), name, value);
+inline bool HyperparameterScalingType_Value_Parse(
+    const ::std::string& name, HyperparameterScalingType_Value* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<HyperparameterScalingType_Value>(
+    HyperparameterScalingType_Value_descriptor(), name, value);
 }
 // ===================================================================
+
+class HyperparameterScalingType final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.sagemaker.HyperparameterScalingType) */ {
+ public:
+  HyperparameterScalingType();
+  virtual ~HyperparameterScalingType();
+
+  HyperparameterScalingType(const HyperparameterScalingType& from);
+
+  inline HyperparameterScalingType& operator=(const HyperparameterScalingType& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  HyperparameterScalingType(HyperparameterScalingType&& from) noexcept
+    : HyperparameterScalingType() {
+    *this = ::std::move(from);
+  }
+
+  inline HyperparameterScalingType& operator=(HyperparameterScalingType&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const HyperparameterScalingType& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const HyperparameterScalingType* internal_default_instance() {
+    return reinterpret_cast<const HyperparameterScalingType*>(
+               &_HyperparameterScalingType_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  void Swap(HyperparameterScalingType* other);
+  friend void swap(HyperparameterScalingType& a, HyperparameterScalingType& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline HyperparameterScalingType* New() const final {
+    return CreateMaybeMessage<HyperparameterScalingType>(nullptr);
+  }
+
+  HyperparameterScalingType* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<HyperparameterScalingType>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const HyperparameterScalingType& from);
+  void MergeFrom(const HyperparameterScalingType& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(HyperparameterScalingType* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef HyperparameterScalingType_Value Value;
+  static const Value AUTO =
+    HyperparameterScalingType_Value_AUTO;
+  static const Value LINEAR =
+    HyperparameterScalingType_Value_LINEAR;
+  static const Value LOGARITHMIC =
+    HyperparameterScalingType_Value_LOGARITHMIC;
+  static const Value REVERSELOGARITHMIC =
+    HyperparameterScalingType_Value_REVERSELOGARITHMIC;
+  static inline bool Value_IsValid(int value) {
+    return HyperparameterScalingType_Value_IsValid(value);
+  }
+  static const Value Value_MIN =
+    HyperparameterScalingType_Value_Value_MIN;
+  static const Value Value_MAX =
+    HyperparameterScalingType_Value_Value_MAX;
+  static const int Value_ARRAYSIZE =
+    HyperparameterScalingType_Value_Value_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Value_descriptor() {
+    return HyperparameterScalingType_Value_descriptor();
+  }
+  static inline const ::std::string& Value_Name(Value value) {
+    return HyperparameterScalingType_Value_Name(value);
+  }
+  static inline bool Value_Parse(const ::std::string& name,
+      Value* value) {
+    return HyperparameterScalingType_Value_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto;
+};
+// -------------------------------------------------------------------
 
 class ContinuousParameterRange final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.sagemaker.ContinuousParameterRange) */ {
@@ -153,7 +292,7 @@ class ContinuousParameterRange final :
                &_ContinuousParameterRange_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   void Swap(ContinuousParameterRange* other);
   friend void swap(ContinuousParameterRange& a, ContinuousParameterRange& b) {
@@ -222,11 +361,11 @@ class ContinuousParameterRange final :
   double min_value() const;
   void set_min_value(double value);
 
-  // .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
+  // .flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;
   void clear_scaling_type();
   static const int kScalingTypeFieldNumber = 3;
-  ::flyteidl::plugins::sagemaker::HyperparameterScalingType scaling_type() const;
-  void set_scaling_type(::flyteidl::plugins::sagemaker::HyperparameterScalingType value);
+  ::flyteidl::plugins::sagemaker::HyperparameterScalingType_Value scaling_type() const;
+  void set_scaling_type(::flyteidl::plugins::sagemaker::HyperparameterScalingType_Value value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.ContinuousParameterRange)
  private:
@@ -279,7 +418,7 @@ class IntegerParameterRange final :
                &_IntegerParameterRange_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(IntegerParameterRange* other);
   friend void swap(IntegerParameterRange& a, IntegerParameterRange& b) {
@@ -348,11 +487,11 @@ class IntegerParameterRange final :
   ::google::protobuf::int64 min_value() const;
   void set_min_value(::google::protobuf::int64 value);
 
-  // .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
+  // .flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;
   void clear_scaling_type();
   static const int kScalingTypeFieldNumber = 3;
-  ::flyteidl::plugins::sagemaker::HyperparameterScalingType scaling_type() const;
-  void set_scaling_type(::flyteidl::plugins::sagemaker::HyperparameterScalingType value);
+  ::flyteidl::plugins::sagemaker::HyperparameterScalingType_Value scaling_type() const;
+  void set_scaling_type(::flyteidl::plugins::sagemaker::HyperparameterScalingType_Value value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.IntegerParameterRange)
  private:
@@ -405,7 +544,7 @@ class CategoricalParameterRange final :
                &_CategoricalParameterRange_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(CategoricalParameterRange* other);
   friend void swap(CategoricalParameterRange& a, CategoricalParameterRange& b) {
@@ -540,7 +679,7 @@ class ParameterRangeOneOf final :
                &_ParameterRangeOneOf_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(ParameterRangeOneOf* other);
   friend void swap(ParameterRangeOneOf& a, ParameterRangeOneOf& b) {
@@ -712,7 +851,7 @@ class ParameterRanges final :
                &_ParameterRanges_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(ParameterRanges* other);
   friend void swap(ParameterRanges& a, ParameterRanges& b) {
@@ -802,6 +941,10 @@ class ParameterRanges final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// HyperparameterScalingType
+
+// -------------------------------------------------------------------
+
 // ContinuousParameterRange
 
 // double max_value = 1;
@@ -832,15 +975,15 @@ inline void ContinuousParameterRange::set_min_value(double value) {
   // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.ContinuousParameterRange.min_value)
 }
 
-// .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
+// .flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;
 inline void ContinuousParameterRange::clear_scaling_type() {
   scaling_type_ = 0;
 }
-inline ::flyteidl::plugins::sagemaker::HyperparameterScalingType ContinuousParameterRange::scaling_type() const {
+inline ::flyteidl::plugins::sagemaker::HyperparameterScalingType_Value ContinuousParameterRange::scaling_type() const {
   // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.ContinuousParameterRange.scaling_type)
-  return static_cast< ::flyteidl::plugins::sagemaker::HyperparameterScalingType >(scaling_type_);
+  return static_cast< ::flyteidl::plugins::sagemaker::HyperparameterScalingType_Value >(scaling_type_);
 }
-inline void ContinuousParameterRange::set_scaling_type(::flyteidl::plugins::sagemaker::HyperparameterScalingType value) {
+inline void ContinuousParameterRange::set_scaling_type(::flyteidl::plugins::sagemaker::HyperparameterScalingType_Value value) {
   
   scaling_type_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.ContinuousParameterRange.scaling_type)
@@ -878,15 +1021,15 @@ inline void IntegerParameterRange::set_min_value(::google::protobuf::int64 value
   // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.IntegerParameterRange.min_value)
 }
 
-// .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
+// .flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;
 inline void IntegerParameterRange::clear_scaling_type() {
   scaling_type_ = 0;
 }
-inline ::flyteidl::plugins::sagemaker::HyperparameterScalingType IntegerParameterRange::scaling_type() const {
+inline ::flyteidl::plugins::sagemaker::HyperparameterScalingType_Value IntegerParameterRange::scaling_type() const {
   // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.IntegerParameterRange.scaling_type)
-  return static_cast< ::flyteidl::plugins::sagemaker::HyperparameterScalingType >(scaling_type_);
+  return static_cast< ::flyteidl::plugins::sagemaker::HyperparameterScalingType_Value >(scaling_type_);
 }
-inline void IntegerParameterRange::set_scaling_type(::flyteidl::plugins::sagemaker::HyperparameterScalingType value) {
+inline void IntegerParameterRange::set_scaling_type(::flyteidl::plugins::sagemaker::HyperparameterScalingType_Value value) {
   
   scaling_type_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.IntegerParameterRange.scaling_type)
@@ -1138,6 +1281,8 @@ ParameterRanges::mutable_parameter_range_map() {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -1148,10 +1293,10 @@ ParameterRanges::mutable_parameter_range_map() {
 namespace google {
 namespace protobuf {
 
-template <> struct is_proto_enum< ::flyteidl::plugins::sagemaker::HyperparameterScalingType> : ::std::true_type {};
+template <> struct is_proto_enum< ::flyteidl::plugins::sagemaker::HyperparameterScalingType_Value> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::plugins::sagemaker::HyperparameterScalingType>() {
-  return ::flyteidl::plugins::sagemaker::HyperparameterScalingType_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::plugins::sagemaker::HyperparameterScalingType_Value>() {
+  return ::flyteidl::plugins::sagemaker::HyperparameterScalingType_Value_descriptor();
 }
 
 }  // namespace protobuf

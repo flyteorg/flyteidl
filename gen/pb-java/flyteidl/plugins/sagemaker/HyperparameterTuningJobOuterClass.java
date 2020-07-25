@@ -46,6 +46,7 @@ public final class HyperparameterTuningJobOuterClass {
     /**
      * <pre>
      * The maximum number of training jobs that an hpo job can launch. For resource limit purpose.
+     * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html
      * </pre>
      *
      * <code>int64 max_number_of_training_jobs = 2;</code>
@@ -55,6 +56,7 @@ public final class HyperparameterTuningJobOuterClass {
     /**
      * <pre>
      * The maximum number of concurrent training job that an hpo job can launch
+     * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html
      * </pre>
      *
      * <code>int64 max_parallel_training_jobs = 3;</code>
@@ -63,7 +65,7 @@ public final class HyperparameterTuningJobOuterClass {
   }
   /**
    * <pre>
-   * The hyperparameter tuning job
+   * A pass-through for SageMaker's hyperparameter tuning job
    * </pre>
    *
    * Protobuf type {@code flyteidl.plugins.sagemaker.HyperparameterTuningJob}
@@ -197,6 +199,7 @@ public final class HyperparameterTuningJobOuterClass {
     /**
      * <pre>
      * The maximum number of training jobs that an hpo job can launch. For resource limit purpose.
+     * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html
      * </pre>
      *
      * <code>int64 max_number_of_training_jobs = 2;</code>
@@ -210,6 +213,7 @@ public final class HyperparameterTuningJobOuterClass {
     /**
      * <pre>
      * The maximum number of concurrent training job that an hpo job can launch
+     * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html
      * </pre>
      *
      * <code>int64 max_parallel_training_jobs = 3;</code>
@@ -404,7 +408,7 @@ public final class HyperparameterTuningJobOuterClass {
     }
     /**
      * <pre>
-     * The hyperparameter tuning job
+     * A pass-through for SageMaker's hyperparameter tuning job
      * </pre>
      *
      * Protobuf type {@code flyteidl.plugins.sagemaker.HyperparameterTuningJob}
@@ -730,6 +734,7 @@ public final class HyperparameterTuningJobOuterClass {
       /**
        * <pre>
        * The maximum number of training jobs that an hpo job can launch. For resource limit purpose.
+       * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html
        * </pre>
        *
        * <code>int64 max_number_of_training_jobs = 2;</code>
@@ -740,6 +745,7 @@ public final class HyperparameterTuningJobOuterClass {
       /**
        * <pre>
        * The maximum number of training jobs that an hpo job can launch. For resource limit purpose.
+       * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html
        * </pre>
        *
        * <code>int64 max_number_of_training_jobs = 2;</code>
@@ -753,6 +759,7 @@ public final class HyperparameterTuningJobOuterClass {
       /**
        * <pre>
        * The maximum number of training jobs that an hpo job can launch. For resource limit purpose.
+       * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html
        * </pre>
        *
        * <code>int64 max_number_of_training_jobs = 2;</code>
@@ -768,6 +775,7 @@ public final class HyperparameterTuningJobOuterClass {
       /**
        * <pre>
        * The maximum number of concurrent training job that an hpo job can launch
+       * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html
        * </pre>
        *
        * <code>int64 max_parallel_training_jobs = 3;</code>
@@ -778,6 +786,7 @@ public final class HyperparameterTuningJobOuterClass {
       /**
        * <pre>
        * The maximum number of concurrent training job that an hpo job can launch
+       * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html
        * </pre>
        *
        * <code>int64 max_parallel_training_jobs = 3;</code>
@@ -791,6 +800,7 @@ public final class HyperparameterTuningJobOuterClass {
       /**
        * <pre>
        * The maximum number of concurrent training job that an hpo job can launch
+       * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html
        * </pre>
        *
        * <code>int64 max_parallel_training_jobs = 3;</code>
@@ -854,18 +864,527 @@ public final class HyperparameterTuningJobOuterClass {
 
   }
 
+  public interface HyperparameterTuningObjectiveTypeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType}
+   */
+  public  static final class HyperparameterTuningObjectiveType extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+      HyperparameterTuningObjectiveTypeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use HyperparameterTuningObjectiveType.newBuilder() to construct.
+    private HyperparameterTuningObjectiveType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private HyperparameterTuningObjectiveType() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private HyperparameterTuningObjectiveType(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjectiveType_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjectiveType_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.class, flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value}
+     */
+    public enum Value
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>MINIMIZE = 0;</code>
+       */
+      MINIMIZE(0),
+      /**
+       * <code>MAXIMIZE = 1;</code>
+       */
+      MAXIMIZE(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>MINIMIZE = 0;</code>
+       */
+      public static final int MINIMIZE_VALUE = 0;
+      /**
+       * <code>MAXIMIZE = 1;</code>
+       */
+      public static final int MAXIMIZE_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Value valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Value forNumber(int value) {
+        switch (value) {
+          case 0: return MINIMIZE;
+          case 1: return MAXIMIZE;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Value>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Value> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Value>() {
+              public Value findValueByNumber(int number) {
+                return Value.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Value[] VALUES = values();
+
+      public static Value valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Value(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value)
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType)) {
+        return super.equals(obj);
+      }
+      flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType other = (flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveTypeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjectiveType_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjectiveType_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.class, flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Builder.class);
+      }
+
+      // Construct using flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjectiveType_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType getDefaultInstanceForType() {
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType build() {
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType buildPartial() {
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType result = new flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType) {
+          return mergeFrom((flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType other) {
+        if (other == flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+    private static final flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType();
+    }
+
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HyperparameterTuningObjectiveType>
+        PARSER = new com.google.protobuf.AbstractParser<HyperparameterTuningObjectiveType>() {
+      @java.lang.Override
+      public HyperparameterTuningObjectiveType parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new HyperparameterTuningObjectiveType(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<HyperparameterTuningObjectiveType> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HyperparameterTuningObjectiveType> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface HyperparameterTuningObjectiveOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.HyperparameterTuningObjective)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType objective_type = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;</code>
      */
     int getObjectiveTypeValue();
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType objective_type = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;</code>
      */
-    flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective.HyperparameterTuningObjectiveType getObjectiveType();
+    flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Value getObjectiveType();
 
     /**
      * <pre>
@@ -976,119 +1495,21 @@ public final class HyperparameterTuningJobOuterClass {
               flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective.class, flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType}
-     */
-    public enum HyperparameterTuningObjectiveType
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>MINIMIZE = 0;</code>
-       */
-      MINIMIZE(0),
-      /**
-       * <code>MAXIMIZE = 1;</code>
-       */
-      MAXIMIZE(1),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>MINIMIZE = 0;</code>
-       */
-      public static final int MINIMIZE_VALUE = 0;
-      /**
-       * <code>MAXIMIZE = 1;</code>
-       */
-      public static final int MAXIMIZE_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static HyperparameterTuningObjectiveType valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static HyperparameterTuningObjectiveType forNumber(int value) {
-        switch (value) {
-          case 0: return MINIMIZE;
-          case 1: return MAXIMIZE;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<HyperparameterTuningObjectiveType>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          HyperparameterTuningObjectiveType> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<HyperparameterTuningObjectiveType>() {
-              public HyperparameterTuningObjectiveType findValueByNumber(int number) {
-                return HyperparameterTuningObjectiveType.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final HyperparameterTuningObjectiveType[] VALUES = values();
-
-      public static HyperparameterTuningObjectiveType valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private HyperparameterTuningObjectiveType(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType)
-    }
-
     public static final int OBJECTIVE_TYPE_FIELD_NUMBER = 1;
     private int objectiveType_;
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType objective_type = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;</code>
      */
     public int getObjectiveTypeValue() {
       return objectiveType_;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType objective_type = 1;</code>
+     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;</code>
      */
-    public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective.HyperparameterTuningObjectiveType getObjectiveType() {
+    public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Value getObjectiveType() {
       @SuppressWarnings("deprecation")
-      flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective.HyperparameterTuningObjectiveType result = flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective.HyperparameterTuningObjectiveType.valueOf(objectiveType_);
-      return result == null ? flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective.HyperparameterTuningObjectiveType.UNRECOGNIZED : result;
+      flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Value result = flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Value.valueOf(objectiveType_);
+      return result == null ? flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Value.UNRECOGNIZED : result;
     }
 
     public static final int METRIC_NAME_FIELD_NUMBER = 2;
@@ -1149,7 +1570,7 @@ public final class HyperparameterTuningJobOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (objectiveType_ != flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective.HyperparameterTuningObjectiveType.MINIMIZE.getNumber()) {
+      if (objectiveType_ != flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Value.MINIMIZE.getNumber()) {
         output.writeEnum(1, objectiveType_);
       }
       if (!getMetricNameBytes().isEmpty()) {
@@ -1164,7 +1585,7 @@ public final class HyperparameterTuningJobOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (objectiveType_ != flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective.HyperparameterTuningObjectiveType.MINIMIZE.getNumber()) {
+      if (objectiveType_ != flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Value.MINIMIZE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, objectiveType_);
       }
@@ -1459,13 +1880,13 @@ public final class HyperparameterTuningJobOuterClass {
 
       private int objectiveType_ = 0;
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType objective_type = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;</code>
        */
       public int getObjectiveTypeValue() {
         return objectiveType_;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType objective_type = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;</code>
        */
       public Builder setObjectiveTypeValue(int value) {
         objectiveType_ = value;
@@ -1473,17 +1894,17 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType objective_type = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;</code>
        */
-      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective.HyperparameterTuningObjectiveType getObjectiveType() {
+      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Value getObjectiveType() {
         @SuppressWarnings("deprecation")
-        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective.HyperparameterTuningObjectiveType result = flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective.HyperparameterTuningObjectiveType.valueOf(objectiveType_);
-        return result == null ? flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective.HyperparameterTuningObjectiveType.UNRECOGNIZED : result;
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Value result = flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Value.valueOf(objectiveType_);
+        return result == null ? flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Value.UNRECOGNIZED : result;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType objective_type = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;</code>
        */
-      public Builder setObjectiveType(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective.HyperparameterTuningObjectiveType value) {
+      public Builder setObjectiveType(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Value value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1493,7 +1914,7 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType objective_type = 1;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;</code>
        */
       public Builder clearObjectiveType() {
         
@@ -1648,8 +2069,1040 @@ public final class HyperparameterTuningJobOuterClass {
 
   }
 
-  public interface HyperparameterTuningSpecificationOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+  public interface HyperparameterTuningStrategyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code flyteidl.plugins.sagemaker.HyperparameterTuningStrategy}
+   */
+  public  static final class HyperparameterTuningStrategy extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+      HyperparameterTuningStrategyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use HyperparameterTuningStrategy.newBuilder() to construct.
+    private HyperparameterTuningStrategy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private HyperparameterTuningStrategy() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private HyperparameterTuningStrategy(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningStrategy_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningStrategy_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.class, flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value}
+     */
+    public enum Value
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>BAYESIAN = 0;</code>
+       */
+      BAYESIAN(0),
+      /**
+       * <code>RANDOM = 1;</code>
+       */
+      RANDOM(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>BAYESIAN = 0;</code>
+       */
+      public static final int BAYESIAN_VALUE = 0;
+      /**
+       * <code>RANDOM = 1;</code>
+       */
+      public static final int RANDOM_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Value valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Value forNumber(int value) {
+        switch (value) {
+          case 0: return BAYESIAN;
+          case 1: return RANDOM;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Value>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Value> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Value>() {
+              public Value findValueByNumber(int number) {
+                return Value.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Value[] VALUES = values();
+
+      public static Value valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Value(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value)
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy)) {
+        return super.equals(obj);
+      }
+      flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy other = (flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code flyteidl.plugins.sagemaker.HyperparameterTuningStrategy}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningStrategy_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningStrategy_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.class, flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Builder.class);
+      }
+
+      // Construct using flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningStrategy_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy getDefaultInstanceForType() {
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy build() {
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy buildPartial() {
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy result = new flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy) {
+          return mergeFrom((flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy other) {
+        if (other == flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+    private static final flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy();
+    }
+
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HyperparameterTuningStrategy>
+        PARSER = new com.google.protobuf.AbstractParser<HyperparameterTuningStrategy>() {
+      @java.lang.Override
+      public HyperparameterTuningStrategy parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new HyperparameterTuningStrategy(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<HyperparameterTuningStrategy> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HyperparameterTuningStrategy> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TrainingJobEarlyStoppingTypeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * When the training jobs launched by the hyperparameter tuning job are not improving significantly,
+   * a hyperparameter tuning job can be stopping early.
+   * Note that there's only a subset of built-in algorithms that supports early stopping.
+   * see: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType}
+   */
+  public  static final class TrainingJobEarlyStoppingType extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+      TrainingJobEarlyStoppingTypeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TrainingJobEarlyStoppingType.newBuilder() to construct.
+    private TrainingJobEarlyStoppingType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TrainingJobEarlyStoppingType() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TrainingJobEarlyStoppingType(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_TrainingJobEarlyStoppingType_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_TrainingJobEarlyStoppingType_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.class, flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value}
+     */
+    public enum Value
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>OFF = 0;</code>
+       */
+      OFF(0),
+      /**
+       * <code>AUTO = 1;</code>
+       */
+      AUTO(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>OFF = 0;</code>
+       */
+      public static final int OFF_VALUE = 0;
+      /**
+       * <code>AUTO = 1;</code>
+       */
+      public static final int AUTO_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Value valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Value forNumber(int value) {
+        switch (value) {
+          case 0: return OFF;
+          case 1: return AUTO;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Value>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Value> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Value>() {
+              public Value findValueByNumber(int number) {
+                return Value.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Value[] VALUES = values();
+
+      public static Value valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Value(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value)
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType)) {
+        return super.equals(obj);
+      }
+      flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType other = (flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * When the training jobs launched by the hyperparameter tuning job are not improving significantly,
+     * a hyperparameter tuning job can be stopping early.
+     * Note that there's only a subset of built-in algorithms that supports early stopping.
+     * see: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingTypeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_TrainingJobEarlyStoppingType_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_TrainingJobEarlyStoppingType_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.class, flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Builder.class);
+      }
+
+      // Construct using flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_TrainingJobEarlyStoppingType_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType getDefaultInstanceForType() {
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType build() {
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType buildPartial() {
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType result = new flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType) {
+          return mergeFrom((flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType other) {
+        if (other == flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+    private static final flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType();
+    }
+
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TrainingJobEarlyStoppingType>
+        PARSER = new com.google.protobuf.AbstractParser<TrainingJobEarlyStoppingType>() {
+      @java.lang.Override
+      public TrainingJobEarlyStoppingType parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TrainingJobEarlyStoppingType(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TrainingJobEarlyStoppingType> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TrainingJobEarlyStoppingType> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface HyperparameterTuningJobConfigOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1666,13 +3119,13 @@ public final class HyperparameterTuningJobOuterClass {
     flyteidl.plugins.sagemaker.ParameterRangesOuterClass.ParameterRangesOrBuilder getHyperparameterRangesOrBuilder();
 
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy tuning_strategy = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;</code>
      */
     int getTuningStrategyValue();
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy tuning_strategy = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;</code>
      */
-    flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.HyperparameterTuningStrategy getTuningStrategy();
+    flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Value getTuningStrategy();
 
     /**
      * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective tuning_objective = 3;</code>
@@ -1688,31 +3141,32 @@ public final class HyperparameterTuningJobOuterClass {
     flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveOrBuilder getTuningObjectiveOrBuilder();
 
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType training_job_early_stopping_type = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;</code>
      */
     int getTrainingJobEarlyStoppingTypeValue();
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType training_job_early_stopping_type = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;</code>
      */
-    flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType getTrainingJobEarlyStoppingType();
+    flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Value getTrainingJobEarlyStoppingType();
   }
   /**
    * <pre>
    * The specification of the hyperparameter tuning process
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-ex-tuning-job.html#automatic-model-tuning-ex-low-tuning-config
    * </pre>
    *
-   * Protobuf type {@code flyteidl.plugins.sagemaker.HyperparameterTuningSpecification}
+   * Protobuf type {@code flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig}
    */
-  public  static final class HyperparameterTuningSpecification extends
+  public  static final class HyperparameterTuningJobConfig extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
-      HyperparameterTuningSpecificationOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
+      HyperparameterTuningJobConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use HyperparameterTuningSpecification.newBuilder() to construct.
-    private HyperparameterTuningSpecification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use HyperparameterTuningJobConfig.newBuilder() to construct.
+    private HyperparameterTuningJobConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private HyperparameterTuningSpecification() {
+    private HyperparameterTuningJobConfig() {
       tuningStrategy_ = 0;
       trainingJobEarlyStoppingType_ = 0;
     }
@@ -1722,7 +3176,7 @@ public final class HyperparameterTuningJobOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HyperparameterTuningSpecification(
+    private HyperparameterTuningJobConfig(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1800,218 +3254,15 @@ public final class HyperparameterTuningJobOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningSpecification_descriptor;
+      return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningJobConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningSpecification_fieldAccessorTable
+      return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningJobConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.class, flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.Builder.class);
-    }
-
-    /**
-     * Protobuf enum {@code flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy}
-     */
-    public enum HyperparameterTuningStrategy
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>BAYESIAN = 0;</code>
-       */
-      BAYESIAN(0),
-      /**
-       * <code>RANDOM = 1;</code>
-       */
-      RANDOM(1),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>BAYESIAN = 0;</code>
-       */
-      public static final int BAYESIAN_VALUE = 0;
-      /**
-       * <code>RANDOM = 1;</code>
-       */
-      public static final int RANDOM_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static HyperparameterTuningStrategy valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static HyperparameterTuningStrategy forNumber(int value) {
-        switch (value) {
-          case 0: return BAYESIAN;
-          case 1: return RANDOM;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<HyperparameterTuningStrategy>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          HyperparameterTuningStrategy> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<HyperparameterTuningStrategy>() {
-              public HyperparameterTuningStrategy findValueByNumber(int number) {
-                return HyperparameterTuningStrategy.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final HyperparameterTuningStrategy[] VALUES = values();
-
-      public static HyperparameterTuningStrategy valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private HyperparameterTuningStrategy(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy)
-    }
-
-    /**
-     * <pre>
-     * When the training jobs launched by the hyperparameter tuning job are not improving significantly,
-     * a hyperparameter tuning job can be stopping early.
-     * Note that there's only a subset of built-in algorithms that supports early stopping.
-     * see: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html
-     * </pre>
-     *
-     * Protobuf enum {@code flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType}
-     */
-    public enum TrainingJobEarlyStoppingType
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>OFF = 0;</code>
-       */
-      OFF(0),
-      /**
-       * <code>AUTO = 1;</code>
-       */
-      AUTO(1),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>OFF = 0;</code>
-       */
-      public static final int OFF_VALUE = 0;
-      /**
-       * <code>AUTO = 1;</code>
-       */
-      public static final int AUTO_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static TrainingJobEarlyStoppingType valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static TrainingJobEarlyStoppingType forNumber(int value) {
-        switch (value) {
-          case 0: return OFF;
-          case 1: return AUTO;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<TrainingJobEarlyStoppingType>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          TrainingJobEarlyStoppingType> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<TrainingJobEarlyStoppingType>() {
-              public TrainingJobEarlyStoppingType findValueByNumber(int number) {
-                return TrainingJobEarlyStoppingType.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.getDescriptor().getEnumTypes().get(1);
-      }
-
-      private static final TrainingJobEarlyStoppingType[] VALUES = values();
-
-      public static TrainingJobEarlyStoppingType valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private TrainingJobEarlyStoppingType(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType)
+              flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig.class, flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig.Builder.class);
     }
 
     public static final int HYPERPARAMETER_RANGES_FIELD_NUMBER = 1;
@@ -2038,18 +3289,18 @@ public final class HyperparameterTuningJobOuterClass {
     public static final int TUNING_STRATEGY_FIELD_NUMBER = 2;
     private int tuningStrategy_;
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy tuning_strategy = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;</code>
      */
     public int getTuningStrategyValue() {
       return tuningStrategy_;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy tuning_strategy = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;</code>
      */
-    public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.HyperparameterTuningStrategy getTuningStrategy() {
+    public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Value getTuningStrategy() {
       @SuppressWarnings("deprecation")
-      flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.HyperparameterTuningStrategy result = flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.HyperparameterTuningStrategy.valueOf(tuningStrategy_);
-      return result == null ? flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.HyperparameterTuningStrategy.UNRECOGNIZED : result;
+      flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Value result = flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Value.valueOf(tuningStrategy_);
+      return result == null ? flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Value.UNRECOGNIZED : result;
     }
 
     public static final int TUNING_OBJECTIVE_FIELD_NUMBER = 3;
@@ -2076,18 +3327,18 @@ public final class HyperparameterTuningJobOuterClass {
     public static final int TRAINING_JOB_EARLY_STOPPING_TYPE_FIELD_NUMBER = 4;
     private int trainingJobEarlyStoppingType_;
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType training_job_early_stopping_type = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;</code>
      */
     public int getTrainingJobEarlyStoppingTypeValue() {
       return trainingJobEarlyStoppingType_;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType training_job_early_stopping_type = 4;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;</code>
      */
-    public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType getTrainingJobEarlyStoppingType() {
+    public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Value getTrainingJobEarlyStoppingType() {
       @SuppressWarnings("deprecation")
-      flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType result = flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType.valueOf(trainingJobEarlyStoppingType_);
-      return result == null ? flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType.UNRECOGNIZED : result;
+      flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Value result = flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Value.valueOf(trainingJobEarlyStoppingType_);
+      return result == null ? flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Value.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2107,13 +3358,13 @@ public final class HyperparameterTuningJobOuterClass {
       if (hyperparameterRanges_ != null) {
         output.writeMessage(1, getHyperparameterRanges());
       }
-      if (tuningStrategy_ != flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.HyperparameterTuningStrategy.BAYESIAN.getNumber()) {
+      if (tuningStrategy_ != flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Value.BAYESIAN.getNumber()) {
         output.writeEnum(2, tuningStrategy_);
       }
       if (tuningObjective_ != null) {
         output.writeMessage(3, getTuningObjective());
       }
-      if (trainingJobEarlyStoppingType_ != flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType.OFF.getNumber()) {
+      if (trainingJobEarlyStoppingType_ != flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Value.OFF.getNumber()) {
         output.writeEnum(4, trainingJobEarlyStoppingType_);
       }
       unknownFields.writeTo(output);
@@ -2129,7 +3380,7 @@ public final class HyperparameterTuningJobOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getHyperparameterRanges());
       }
-      if (tuningStrategy_ != flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.HyperparameterTuningStrategy.BAYESIAN.getNumber()) {
+      if (tuningStrategy_ != flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Value.BAYESIAN.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, tuningStrategy_);
       }
@@ -2137,7 +3388,7 @@ public final class HyperparameterTuningJobOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getTuningObjective());
       }
-      if (trainingJobEarlyStoppingType_ != flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType.OFF.getNumber()) {
+      if (trainingJobEarlyStoppingType_ != flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Value.OFF.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, trainingJobEarlyStoppingType_);
       }
@@ -2151,10 +3402,10 @@ public final class HyperparameterTuningJobOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification)) {
+      if (!(obj instanceof flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig)) {
         return super.equals(obj);
       }
-      flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification other = (flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification) obj;
+      flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig other = (flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig) obj;
 
       if (hasHyperparameterRanges() != other.hasHyperparameterRanges()) return false;
       if (hasHyperparameterRanges()) {
@@ -2196,69 +3447,69 @@ public final class HyperparameterTuningJobOuterClass {
       return hash;
     }
 
-    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification parseFrom(
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification parseFrom(
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification parseFrom(
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification parseFrom(
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification parseFrom(byte[] data)
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification parseFrom(
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification parseFrom(java.io.InputStream input)
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification parseFrom(
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification parseDelimitedFrom(
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification parseFrom(
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification parseFrom(
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2271,7 +3522,7 @@ public final class HyperparameterTuningJobOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification prototype) {
+    public static Builder newBuilder(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2289,28 +3540,29 @@ public final class HyperparameterTuningJobOuterClass {
     /**
      * <pre>
      * The specification of the hyperparameter tuning process
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-ex-tuning-job.html#automatic-model-tuning-ex-low-tuning-config
      * </pre>
      *
-     * Protobuf type {@code flyteidl.plugins.sagemaker.HyperparameterTuningSpecification}
+     * Protobuf type {@code flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
-        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecificationOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfigOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningSpecification_descriptor;
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningJobConfig_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningSpecification_fieldAccessorTable
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningJobConfig_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.class, flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.Builder.class);
+                flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig.class, flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig.Builder.class);
       }
 
-      // Construct using flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.newBuilder()
+      // Construct using flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2350,17 +3602,17 @@ public final class HyperparameterTuningJobOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningSpecification_descriptor;
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningJobConfig_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification getDefaultInstanceForType() {
-        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.getDefaultInstance();
+      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig getDefaultInstanceForType() {
+        return flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification build() {
-        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification result = buildPartial();
+      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig build() {
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2368,8 +3620,8 @@ public final class HyperparameterTuningJobOuterClass {
       }
 
       @java.lang.Override
-      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification buildPartial() {
-        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification result = new flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification(this);
+      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig buildPartial() {
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig result = new flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig(this);
         if (hyperparameterRangesBuilder_ == null) {
           result.hyperparameterRanges_ = hyperparameterRanges_;
         } else {
@@ -2420,16 +3672,16 @@ public final class HyperparameterTuningJobOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification) {
-          return mergeFrom((flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification)other);
+        if (other instanceof flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig) {
+          return mergeFrom((flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification other) {
-        if (other == flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig other) {
+        if (other == flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig.getDefaultInstance()) return this;
         if (other.hasHyperparameterRanges()) {
           mergeHyperparameterRanges(other.getHyperparameterRanges());
         }
@@ -2457,11 +3709,11 @@ public final class HyperparameterTuningJobOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification parsedMessage = null;
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2590,13 +3842,13 @@ public final class HyperparameterTuningJobOuterClass {
 
       private int tuningStrategy_ = 0;
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy tuning_strategy = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;</code>
        */
       public int getTuningStrategyValue() {
         return tuningStrategy_;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy tuning_strategy = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;</code>
        */
       public Builder setTuningStrategyValue(int value) {
         tuningStrategy_ = value;
@@ -2604,17 +3856,17 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy tuning_strategy = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;</code>
        */
-      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.HyperparameterTuningStrategy getTuningStrategy() {
+      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Value getTuningStrategy() {
         @SuppressWarnings("deprecation")
-        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.HyperparameterTuningStrategy result = flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.HyperparameterTuningStrategy.valueOf(tuningStrategy_);
-        return result == null ? flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.HyperparameterTuningStrategy.UNRECOGNIZED : result;
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Value result = flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Value.valueOf(tuningStrategy_);
+        return result == null ? flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Value.UNRECOGNIZED : result;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy tuning_strategy = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;</code>
        */
-      public Builder setTuningStrategy(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.HyperparameterTuningStrategy value) {
+      public Builder setTuningStrategy(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Value value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -2624,7 +3876,7 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy tuning_strategy = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;</code>
        */
       public Builder clearTuningStrategy() {
         
@@ -2752,13 +4004,13 @@ public final class HyperparameterTuningJobOuterClass {
 
       private int trainingJobEarlyStoppingType_ = 0;
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType training_job_early_stopping_type = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;</code>
        */
       public int getTrainingJobEarlyStoppingTypeValue() {
         return trainingJobEarlyStoppingType_;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType training_job_early_stopping_type = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;</code>
        */
       public Builder setTrainingJobEarlyStoppingTypeValue(int value) {
         trainingJobEarlyStoppingType_ = value;
@@ -2766,17 +4018,17 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType training_job_early_stopping_type = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;</code>
        */
-      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType getTrainingJobEarlyStoppingType() {
+      public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Value getTrainingJobEarlyStoppingType() {
         @SuppressWarnings("deprecation")
-        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType result = flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType.valueOf(trainingJobEarlyStoppingType_);
-        return result == null ? flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType.UNRECOGNIZED : result;
+        flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Value result = flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Value.valueOf(trainingJobEarlyStoppingType_);
+        return result == null ? flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Value.UNRECOGNIZED : result;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType training_job_early_stopping_type = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;</code>
        */
-      public Builder setTrainingJobEarlyStoppingType(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType value) {
+      public Builder setTrainingJobEarlyStoppingType(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Value value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -2786,7 +4038,7 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType training_job_early_stopping_type = 4;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;</code>
        */
       public Builder clearTrainingJobEarlyStoppingType() {
         
@@ -2807,41 +4059,41 @@ public final class HyperparameterTuningJobOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
-    private static final flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
+    private static final flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification();
+      DEFAULT_INSTANCE = new flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig();
     }
 
-    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification getDefaultInstance() {
+    public static flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<HyperparameterTuningSpecification>
-        PARSER = new com.google.protobuf.AbstractParser<HyperparameterTuningSpecification>() {
+    private static final com.google.protobuf.Parser<HyperparameterTuningJobConfig>
+        PARSER = new com.google.protobuf.AbstractParser<HyperparameterTuningJobConfig>() {
       @java.lang.Override
-      public HyperparameterTuningSpecification parsePartialFrom(
+      public HyperparameterTuningJobConfig parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HyperparameterTuningSpecification(input, extensionRegistry);
+        return new HyperparameterTuningJobConfig(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<HyperparameterTuningSpecification> parser() {
+    public static com.google.protobuf.Parser<HyperparameterTuningJobConfig> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<HyperparameterTuningSpecification> getParserForType() {
+    public com.google.protobuf.Parser<HyperparameterTuningJobConfig> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningSpecification getDefaultInstanceForType() {
+    public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningJobConfig getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2853,15 +4105,30 @@ public final class HyperparameterTuningJobOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningJob_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjectiveType_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjectiveType_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjective_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjective_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningSpecification_descriptor;
+    internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningStrategy_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningSpecification_fieldAccessorTable;
+      internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningStrategy_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_plugins_sagemaker_TrainingJobEarlyStoppingType_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_plugins_sagemaker_TrainingJobEarlyStoppingType_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningJobConfig_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningJobConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2879,29 +4146,27 @@ public final class HyperparameterTuningJobOuterClass {
       "meterTuningJob\022=\n\014training_job\030\001 \001(\0132\'.f" +
       "lyteidl.plugins.sagemaker.TrainingJob\022#\n" +
       "\033max_number_of_training_jobs\030\002 \001(\003\022\"\n\032ma" +
-      "x_parallel_training_jobs\030\003 \001(\003\"\352\001\n\035Hyper" +
-      "parameterTuningObjective\022s\n\016objective_ty" +
-      "pe\030\001 \001(\0162[.flyteidl.plugins.sagemaker.Hy" +
-      "perparameterTuningObjective.Hyperparamet" +
-      "erTuningObjectiveType\022\023\n\013metric_name\030\002 \001" +
-      "(\t\"?\n!HyperparameterTuningObjectiveType\022" +
-      "\014\n\010MINIMIZE\020\000\022\014\n\010MAXIMIZE\020\001\"\255\004\n!Hyperpar" +
-      "ameterTuningSpecification\022J\n\025hyperparame" +
-      "ter_ranges\030\001 \001(\0132+.flyteidl.plugins.sage" +
-      "maker.ParameterRanges\022s\n\017tuning_strategy" +
-      "\030\002 \001(\0162Z.flyteidl.plugins.sagemaker.Hype" +
-      "rparameterTuningSpecification.Hyperparam" +
-      "eterTuningStrategy\022S\n\020tuning_objective\030\003" +
+      "x_parallel_training_jobs\030\003 \001(\003\"H\n!Hyperp" +
+      "arameterTuningObjectiveType\"#\n\005Value\022\014\n\010" +
+      "MINIMIZE\020\000\022\014\n\010MAXIMIZE\020\001\"\221\001\n\035Hyperparame" +
+      "terTuningObjective\022[\n\016objective_type\030\001 \001" +
+      "(\0162C.flyteidl.plugins.sagemaker.Hyperpar" +
+      "ameterTuningObjectiveType.Value\022\023\n\013metri" +
+      "c_name\030\002 \001(\t\"A\n\034HyperparameterTuningStra" +
+      "tegy\"!\n\005Value\022\014\n\010BAYESIAN\020\000\022\n\n\006RANDOM\020\001\"" +
+      ":\n\034TrainingJobEarlyStoppingType\"\032\n\005Value" +
+      "\022\007\n\003OFF\020\000\022\010\n\004AUTO\020\001\"\203\003\n\035HyperparameterTu" +
+      "ningJobConfig\022J\n\025hyperparameter_ranges\030\001" +
+      " \001(\0132+.flyteidl.plugins.sagemaker.Parame" +
+      "terRanges\022W\n\017tuning_strategy\030\002 \001(\0162>.fly" +
+      "teidl.plugins.sagemaker.HyperparameterTu" +
+      "ningStrategy.Value\022S\n\020tuning_objective\030\003" +
       " \001(\01329.flyteidl.plugins.sagemaker.Hyperp" +
-      "arameterTuningObjective\022\204\001\n training_job" +
-      "_early_stopping_type\030\004 \001(\0162Z.flyteidl.pl" +
-      "ugins.sagemaker.HyperparameterTuningSpec" +
-      "ification.TrainingJobEarlyStoppingType\"8" +
-      "\n\034HyperparameterTuningStrategy\022\014\n\010BAYESI" +
-      "AN\020\000\022\n\n\006RANDOM\020\001\"1\n\034TrainingJobEarlyStop" +
-      "pingType\022\007\n\003OFF\020\000\022\010\n\004AUTO\020\001B5Z3github.co" +
-      "m/lyft/flyteidl/gen/pb-go/flyteidl/plugi" +
-      "nsb\006proto3"
+      "arameterTuningObjective\022h\n training_job_" +
+      "early_stopping_type\030\004 \001(\0162>.flyteidl.plu" +
+      "gins.sagemaker.TrainingJobEarlyStoppingT" +
+      "ype.ValueB5Z3github.com/lyft/flyteidl/ge" +
+      "n/pb-go/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2923,17 +4188,35 @@ public final class HyperparameterTuningJobOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningJob_descriptor,
         new java.lang.String[] { "TrainingJob", "MaxNumberOfTrainingJobs", "MaxParallelTrainingJobs", });
-    internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjective_descriptor =
+    internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjectiveType_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjectiveType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjectiveType_descriptor,
+        new java.lang.String[] { });
+    internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjective_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjective_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningObjective_descriptor,
         new java.lang.String[] { "ObjectiveType", "MetricName", });
-    internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningSpecification_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningSpecification_fieldAccessorTable = new
+    internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningStrategy_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningStrategy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningSpecification_descriptor,
+        internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningStrategy_descriptor,
+        new java.lang.String[] { });
+    internal_static_flyteidl_plugins_sagemaker_TrainingJobEarlyStoppingType_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_flyteidl_plugins_sagemaker_TrainingJobEarlyStoppingType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_plugins_sagemaker_TrainingJobEarlyStoppingType_descriptor,
+        new java.lang.String[] { });
+    internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningJobConfig_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningJobConfig_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_plugins_sagemaker_HyperparameterTuningJobConfig_descriptor,
         new java.lang.String[] { "HyperparameterRanges", "TuningStrategy", "TuningObjective", "TrainingJobEarlyStoppingType", });
     flyteidl.plugins.sagemaker.ParameterRangesOuterClass.getDescriptor();
     flyteidl.plugins.sagemaker.TrainingJobOuterClass.getDescriptor();

@@ -10,7 +10,7 @@ flyteidl.plugins.sagemaker.HyperparameterTuningJob
 
 `[flyteidl.plugins.sagemaker.HyperparameterTuningJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L10>`_
 
-The hyperparameter tuning job
+A pass-through for SageMaker's hyperparameter tuning job
 
 .. code-block:: json
 
@@ -30,22 +30,57 @@ training_job
 
 max_number_of_training_jobs
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The maximum number of training jobs that an hpo job can launch. For resource limit purpose.
+  https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html
   
   
 .. _api_field_flyteidl.plugins.sagemaker.HyperparameterTuningJob.max_parallel_training_jobs:
 
 max_parallel_training_jobs
   (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The maximum number of concurrent training job that an hpo job can launch
+  https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html
   
   
 
+
+.. _api_msg_flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType:
+
+flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType
+------------------------------------------------------------
+
+`[flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L23>`_
+
+
+.. code-block:: json
+
+  {}
+
+
+
+.. _api_enum_flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value:
+
+Enum flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value
+-----------------------------------------------------------------------
+
+`[flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L24>`_
+
+
+.. _api_enum_value_flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value.MINIMIZE:
+
+MINIMIZE
+  *(DEFAULT)* ⁣
+  
+.. _api_enum_value_flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value.MAXIMIZE:
+
+MAXIMIZE
+  ⁣
+  
 
 .. _api_msg_flyteidl.plugins.sagemaker.HyperparameterTuningObjective:
 
 flyteidl.plugins.sagemaker.HyperparameterTuningObjective
 --------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.HyperparameterTuningObjective proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L22>`_
+`[flyteidl.plugins.sagemaker.HyperparameterTuningObjective proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L31>`_
 
 The objective of the hyperparameter tuning
 
@@ -59,7 +94,7 @@ The objective of the hyperparameter tuning
 .. _api_field_flyteidl.plugins.sagemaker.HyperparameterTuningObjective.objective_type:
 
 objective_type
-  (:ref:`flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType <api_enum_flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType>`) 
+  (:ref:`flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value <api_enum_flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value>`) 
   
 .. _api_field_flyteidl.plugins.sagemaker.HyperparameterTuningObjective.metric_name:
 
@@ -69,33 +104,86 @@ metric_name
   
   
 
-.. _api_enum_flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType:
 
-Enum flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType
------------------------------------------------------------------------------------------------
+.. _api_msg_flyteidl.plugins.sagemaker.HyperparameterTuningStrategy:
 
-`[flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L23>`_
+flyteidl.plugins.sagemaker.HyperparameterTuningStrategy
+-------------------------------------------------------
+
+`[flyteidl.plugins.sagemaker.HyperparameterTuningStrategy proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L39>`_
 
 
-.. _api_enum_value_flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType.MINIMIZE:
+.. code-block:: json
 
-MINIMIZE
+  {}
+
+
+
+.. _api_enum_flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value:
+
+Enum flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value
+------------------------------------------------------------------
+
+`[flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L40>`_
+
+
+.. _api_enum_value_flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value.BAYESIAN:
+
+BAYESIAN
   *(DEFAULT)* ⁣
   
-.. _api_enum_value_flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType.MAXIMIZE:
+.. _api_enum_value_flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value.RANDOM:
 
-MAXIMIZE
+RANDOM
   ⁣
   
 
-.. _api_msg_flyteidl.plugins.sagemaker.HyperparameterTuningSpecification:
+.. _api_msg_flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType:
 
-flyteidl.plugins.sagemaker.HyperparameterTuningSpecification
-------------------------------------------------------------
+flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType
+-------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.HyperparameterTuningSpecification proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L35>`_
+`[flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L50>`_
+
+When the training jobs launched by the hyperparameter tuning job are not improving significantly,
+a hyperparameter tuning job can be stopping early.
+Note that there's only a subset of built-in algorithms that supports early stopping.
+see: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html
+
+.. code-block:: json
+
+  {}
+
+
+
+.. _api_enum_flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value:
+
+Enum flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value
+------------------------------------------------------------------
+
+`[flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L51>`_
+
+
+.. _api_enum_value_flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value.OFF:
+
+OFF
+  *(DEFAULT)* ⁣
+  
+.. _api_enum_value_flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value.AUTO:
+
+AUTO
+  ⁣
+  
+
+.. _api_msg_flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig:
+
+flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig
+--------------------------------------------------------
+
+`[flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L59>`_
 
 The specification of the hyperparameter tuning process
+https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-ex-tuning-job.html#automatic-model-tuning-ex-low-tuning-config
 
 .. code-block:: json
 
@@ -106,65 +194,24 @@ The specification of the hyperparameter tuning process
     "training_job_early_stopping_type": "..."
   }
 
-.. _api_field_flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.hyperparameter_ranges:
+.. _api_field_flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig.hyperparameter_ranges:
 
 hyperparameter_ranges
   (:ref:`flyteidl.plugins.sagemaker.ParameterRanges <api_msg_flyteidl.plugins.sagemaker.ParameterRanges>`) 
   
-.. _api_field_flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.tuning_strategy:
+.. _api_field_flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig.tuning_strategy:
 
 tuning_strategy
-  (:ref:`flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy <api_enum_flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy>`) 
+  (:ref:`flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value <api_enum_flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value>`) 
   
-.. _api_field_flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.tuning_objective:
+.. _api_field_flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig.tuning_objective:
 
 tuning_objective
   (:ref:`flyteidl.plugins.sagemaker.HyperparameterTuningObjective <api_msg_flyteidl.plugins.sagemaker.HyperparameterTuningObjective>`) 
   
-.. _api_field_flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.training_job_early_stopping_type:
+.. _api_field_flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig.training_job_early_stopping_type:
 
 training_job_early_stopping_type
-  (:ref:`flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType <api_enum_flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType>`) 
+  (:ref:`flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value <api_enum_flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value>`) 
   
 
-.. _api_enum_flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy:
-
-Enum flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy
-----------------------------------------------------------------------------------------------
-
-`[flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L38>`_
-
-
-.. _api_enum_value_flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy.BAYESIAN:
-
-BAYESIAN
-  *(DEFAULT)* ⁣
-  
-.. _api_enum_value_flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy.RANDOM:
-
-RANDOM
-  ⁣
-  
-
-.. _api_enum_flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType:
-
-Enum flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType
-----------------------------------------------------------------------------------------------
-
-`[flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L50>`_
-
-When the training jobs launched by the hyperparameter tuning job are not improving significantly,
-a hyperparameter tuning job can be stopping early.
-Note that there's only a subset of built-in algorithms that supports early stopping.
-see: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html
-
-.. _api_enum_value_flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType.OFF:
-
-OFF
-  *(DEFAULT)* ⁣
-  
-.. _api_enum_value_flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType.AUTO:
-
-AUTO
-  ⁣
-  

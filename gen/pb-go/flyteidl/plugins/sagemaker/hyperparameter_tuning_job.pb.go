@@ -20,92 +20,90 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-type HyperparameterTuningObjective_HyperparameterTuningObjectiveType int32
+type HyperparameterTuningObjectiveType_Value int32
 
 const (
-	HyperparameterTuningObjective_MINIMIZE HyperparameterTuningObjective_HyperparameterTuningObjectiveType = 0
-	HyperparameterTuningObjective_MAXIMIZE HyperparameterTuningObjective_HyperparameterTuningObjectiveType = 1
+	HyperparameterTuningObjectiveType_MINIMIZE HyperparameterTuningObjectiveType_Value = 0
+	HyperparameterTuningObjectiveType_MAXIMIZE HyperparameterTuningObjectiveType_Value = 1
 )
 
-var HyperparameterTuningObjective_HyperparameterTuningObjectiveType_name = map[int32]string{
+var HyperparameterTuningObjectiveType_Value_name = map[int32]string{
 	0: "MINIMIZE",
 	1: "MAXIMIZE",
 }
 
-var HyperparameterTuningObjective_HyperparameterTuningObjectiveType_value = map[string]int32{
+var HyperparameterTuningObjectiveType_Value_value = map[string]int32{
 	"MINIMIZE": 0,
 	"MAXIMIZE": 1,
 }
 
-func (x HyperparameterTuningObjective_HyperparameterTuningObjectiveType) String() string {
-	return proto.EnumName(HyperparameterTuningObjective_HyperparameterTuningObjectiveType_name, int32(x))
+func (x HyperparameterTuningObjectiveType_Value) String() string {
+	return proto.EnumName(HyperparameterTuningObjectiveType_Value_name, int32(x))
 }
 
-func (HyperparameterTuningObjective_HyperparameterTuningObjectiveType) EnumDescriptor() ([]byte, []int) {
+func (HyperparameterTuningObjectiveType_Value) EnumDescriptor() ([]byte, []int) {
 	return fileDescriptor_84374f4d1322c4ba, []int{1, 0}
 }
 
-type HyperparameterTuningSpecification_HyperparameterTuningStrategy int32
+type HyperparameterTuningStrategy_Value int32
 
 const (
-	HyperparameterTuningSpecification_BAYESIAN HyperparameterTuningSpecification_HyperparameterTuningStrategy = 0
-	HyperparameterTuningSpecification_RANDOM   HyperparameterTuningSpecification_HyperparameterTuningStrategy = 1
+	HyperparameterTuningStrategy_BAYESIAN HyperparameterTuningStrategy_Value = 0
+	HyperparameterTuningStrategy_RANDOM   HyperparameterTuningStrategy_Value = 1
 )
 
-var HyperparameterTuningSpecification_HyperparameterTuningStrategy_name = map[int32]string{
+var HyperparameterTuningStrategy_Value_name = map[int32]string{
 	0: "BAYESIAN",
 	1: "RANDOM",
 }
 
-var HyperparameterTuningSpecification_HyperparameterTuningStrategy_value = map[string]int32{
+var HyperparameterTuningStrategy_Value_value = map[string]int32{
 	"BAYESIAN": 0,
 	"RANDOM":   1,
 }
 
-func (x HyperparameterTuningSpecification_HyperparameterTuningStrategy) String() string {
-	return proto.EnumName(HyperparameterTuningSpecification_HyperparameterTuningStrategy_name, int32(x))
+func (x HyperparameterTuningStrategy_Value) String() string {
+	return proto.EnumName(HyperparameterTuningStrategy_Value_name, int32(x))
 }
 
-func (HyperparameterTuningSpecification_HyperparameterTuningStrategy) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_84374f4d1322c4ba, []int{2, 0}
+func (HyperparameterTuningStrategy_Value) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_84374f4d1322c4ba, []int{3, 0}
 }
 
-// When the training jobs launched by the hyperparameter tuning job are not improving significantly,
-// a hyperparameter tuning job can be stopping early.
-// Note that there's only a subset of built-in algorithms that supports early stopping.
-// see: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html
-type HyperparameterTuningSpecification_TrainingJobEarlyStoppingType int32
+type TrainingJobEarlyStoppingType_Value int32
 
 const (
-	HyperparameterTuningSpecification_OFF  HyperparameterTuningSpecification_TrainingJobEarlyStoppingType = 0
-	HyperparameterTuningSpecification_AUTO HyperparameterTuningSpecification_TrainingJobEarlyStoppingType = 1
+	TrainingJobEarlyStoppingType_OFF  TrainingJobEarlyStoppingType_Value = 0
+	TrainingJobEarlyStoppingType_AUTO TrainingJobEarlyStoppingType_Value = 1
 )
 
-var HyperparameterTuningSpecification_TrainingJobEarlyStoppingType_name = map[int32]string{
+var TrainingJobEarlyStoppingType_Value_name = map[int32]string{
 	0: "OFF",
 	1: "AUTO",
 }
 
-var HyperparameterTuningSpecification_TrainingJobEarlyStoppingType_value = map[string]int32{
+var TrainingJobEarlyStoppingType_Value_value = map[string]int32{
 	"OFF":  0,
 	"AUTO": 1,
 }
 
-func (x HyperparameterTuningSpecification_TrainingJobEarlyStoppingType) String() string {
-	return proto.EnumName(HyperparameterTuningSpecification_TrainingJobEarlyStoppingType_name, int32(x))
+func (x TrainingJobEarlyStoppingType_Value) String() string {
+	return proto.EnumName(TrainingJobEarlyStoppingType_Value_name, int32(x))
 }
 
-func (HyperparameterTuningSpecification_TrainingJobEarlyStoppingType) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_84374f4d1322c4ba, []int{2, 1}
+func (TrainingJobEarlyStoppingType_Value) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_84374f4d1322c4ba, []int{4, 0}
 }
 
-// The hyperparameter tuning job
+// A pass-through for SageMaker's hyperparameter tuning job
 type HyperparameterTuningJob struct {
 	// The underlying training job that the hyperparameter tuning job will launch during the process
 	TrainingJob *TrainingJob `protobuf:"bytes,1,opt,name=training_job,json=trainingJob,proto3" json:"training_job,omitempty"`
 	// The maximum number of training jobs that an hpo job can launch. For resource limit purpose.
+	// https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html
 	MaxNumberOfTrainingJobs int64 `protobuf:"varint,2,opt,name=max_number_of_training_jobs,json=maxNumberOfTrainingJobs,proto3" json:"max_number_of_training_jobs,omitempty"`
 	// The maximum number of concurrent training job that an hpo job can launch
+	// https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html
 	MaxParallelTrainingJobs int64    `protobuf:"varint,3,opt,name=max_parallel_training_jobs,json=maxParallelTrainingJobs,proto3" json:"max_parallel_training_jobs,omitempty"`
 	XXX_NoUnkeyedLiteral    struct{} `json:"-"`
 	XXX_unrecognized        []byte   `json:"-"`
@@ -158,9 +156,40 @@ func (m *HyperparameterTuningJob) GetMaxParallelTrainingJobs() int64 {
 	return 0
 }
 
+type HyperparameterTuningObjectiveType struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *HyperparameterTuningObjectiveType) Reset()         { *m = HyperparameterTuningObjectiveType{} }
+func (m *HyperparameterTuningObjectiveType) String() string { return proto.CompactTextString(m) }
+func (*HyperparameterTuningObjectiveType) ProtoMessage()    {}
+func (*HyperparameterTuningObjectiveType) Descriptor() ([]byte, []int) {
+	return fileDescriptor_84374f4d1322c4ba, []int{1}
+}
+
+func (m *HyperparameterTuningObjectiveType) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_HyperparameterTuningObjectiveType.Unmarshal(m, b)
+}
+func (m *HyperparameterTuningObjectiveType) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_HyperparameterTuningObjectiveType.Marshal(b, m, deterministic)
+}
+func (m *HyperparameterTuningObjectiveType) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HyperparameterTuningObjectiveType.Merge(m, src)
+}
+func (m *HyperparameterTuningObjectiveType) XXX_Size() int {
+	return xxx_messageInfo_HyperparameterTuningObjectiveType.Size(m)
+}
+func (m *HyperparameterTuningObjectiveType) XXX_DiscardUnknown() {
+	xxx_messageInfo_HyperparameterTuningObjectiveType.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_HyperparameterTuningObjectiveType proto.InternalMessageInfo
+
 // The objective of the hyperparameter tuning
 type HyperparameterTuningObjective struct {
-	ObjectiveType HyperparameterTuningObjective_HyperparameterTuningObjectiveType `protobuf:"varint,1,opt,name=objective_type,json=objectiveType,proto3,enum=flyteidl.plugins.sagemaker.HyperparameterTuningObjective_HyperparameterTuningObjectiveType" json:"objective_type,omitempty"`
+	ObjectiveType HyperparameterTuningObjectiveType_Value `protobuf:"varint,1,opt,name=objective_type,json=objectiveType,proto3,enum=flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType_Value" json:"objective_type,omitempty"`
 	// The target metric name, which is the user-defined name of the metric specified in the
 	// training job's algorithm specification
 	MetricName           string   `protobuf:"bytes,2,opt,name=metric_name,json=metricName,proto3" json:"metric_name,omitempty"`
@@ -173,7 +202,7 @@ func (m *HyperparameterTuningObjective) Reset()         { *m = HyperparameterTun
 func (m *HyperparameterTuningObjective) String() string { return proto.CompactTextString(m) }
 func (*HyperparameterTuningObjective) ProtoMessage()    {}
 func (*HyperparameterTuningObjective) Descriptor() ([]byte, []int) {
-	return fileDescriptor_84374f4d1322c4ba, []int{1}
+	return fileDescriptor_84374f4d1322c4ba, []int{2}
 }
 
 func (m *HyperparameterTuningObjective) XXX_Unmarshal(b []byte) error {
@@ -194,11 +223,11 @@ func (m *HyperparameterTuningObjective) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_HyperparameterTuningObjective proto.InternalMessageInfo
 
-func (m *HyperparameterTuningObjective) GetObjectiveType() HyperparameterTuningObjective_HyperparameterTuningObjectiveType {
+func (m *HyperparameterTuningObjective) GetObjectiveType() HyperparameterTuningObjectiveType_Value {
 	if m != nil {
 		return m.ObjectiveType
 	}
-	return HyperparameterTuningObjective_MINIMIZE
+	return HyperparameterTuningObjectiveType_MINIMIZE
 }
 
 func (m *HyperparameterTuningObjective) GetMetricName() string {
@@ -208,77 +237,147 @@ func (m *HyperparameterTuningObjective) GetMetricName() string {
 	return ""
 }
 
+type HyperparameterTuningStrategy struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *HyperparameterTuningStrategy) Reset()         { *m = HyperparameterTuningStrategy{} }
+func (m *HyperparameterTuningStrategy) String() string { return proto.CompactTextString(m) }
+func (*HyperparameterTuningStrategy) ProtoMessage()    {}
+func (*HyperparameterTuningStrategy) Descriptor() ([]byte, []int) {
+	return fileDescriptor_84374f4d1322c4ba, []int{3}
+}
+
+func (m *HyperparameterTuningStrategy) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_HyperparameterTuningStrategy.Unmarshal(m, b)
+}
+func (m *HyperparameterTuningStrategy) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_HyperparameterTuningStrategy.Marshal(b, m, deterministic)
+}
+func (m *HyperparameterTuningStrategy) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HyperparameterTuningStrategy.Merge(m, src)
+}
+func (m *HyperparameterTuningStrategy) XXX_Size() int {
+	return xxx_messageInfo_HyperparameterTuningStrategy.Size(m)
+}
+func (m *HyperparameterTuningStrategy) XXX_DiscardUnknown() {
+	xxx_messageInfo_HyperparameterTuningStrategy.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_HyperparameterTuningStrategy proto.InternalMessageInfo
+
+// When the training jobs launched by the hyperparameter tuning job are not improving significantly,
+// a hyperparameter tuning job can be stopping early.
+// Note that there's only a subset of built-in algorithms that supports early stopping.
+// see: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html
+type TrainingJobEarlyStoppingType struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *TrainingJobEarlyStoppingType) Reset()         { *m = TrainingJobEarlyStoppingType{} }
+func (m *TrainingJobEarlyStoppingType) String() string { return proto.CompactTextString(m) }
+func (*TrainingJobEarlyStoppingType) ProtoMessage()    {}
+func (*TrainingJobEarlyStoppingType) Descriptor() ([]byte, []int) {
+	return fileDescriptor_84374f4d1322c4ba, []int{4}
+}
+
+func (m *TrainingJobEarlyStoppingType) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_TrainingJobEarlyStoppingType.Unmarshal(m, b)
+}
+func (m *TrainingJobEarlyStoppingType) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_TrainingJobEarlyStoppingType.Marshal(b, m, deterministic)
+}
+func (m *TrainingJobEarlyStoppingType) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_TrainingJobEarlyStoppingType.Merge(m, src)
+}
+func (m *TrainingJobEarlyStoppingType) XXX_Size() int {
+	return xxx_messageInfo_TrainingJobEarlyStoppingType.Size(m)
+}
+func (m *TrainingJobEarlyStoppingType) XXX_DiscardUnknown() {
+	xxx_messageInfo_TrainingJobEarlyStoppingType.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_TrainingJobEarlyStoppingType proto.InternalMessageInfo
+
 // The specification of the hyperparameter tuning process
-type HyperparameterTuningSpecification struct {
-	HyperparameterRanges         *ParameterRanges                                               `protobuf:"bytes,1,opt,name=hyperparameter_ranges,json=hyperparameterRanges,proto3" json:"hyperparameter_ranges,omitempty"`
-	TuningStrategy               HyperparameterTuningSpecification_HyperparameterTuningStrategy `protobuf:"varint,2,opt,name=tuning_strategy,json=tuningStrategy,proto3,enum=flyteidl.plugins.sagemaker.HyperparameterTuningSpecification_HyperparameterTuningStrategy" json:"tuning_strategy,omitempty"`
-	TuningObjective              *HyperparameterTuningObjective                                 `protobuf:"bytes,3,opt,name=tuning_objective,json=tuningObjective,proto3" json:"tuning_objective,omitempty"`
-	TrainingJobEarlyStoppingType HyperparameterTuningSpecification_TrainingJobEarlyStoppingType `protobuf:"varint,4,opt,name=training_job_early_stopping_type,json=trainingJobEarlyStoppingType,proto3,enum=flyteidl.plugins.sagemaker.HyperparameterTuningSpecification_TrainingJobEarlyStoppingType" json:"training_job_early_stopping_type,omitempty"`
-	XXX_NoUnkeyedLiteral         struct{}                                                       `json:"-"`
-	XXX_unrecognized             []byte                                                         `json:"-"`
-	XXX_sizecache                int32                                                          `json:"-"`
+// https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-ex-tuning-job.html#automatic-model-tuning-ex-low-tuning-config
+type HyperparameterTuningJobConfig struct {
+	HyperparameterRanges         *ParameterRanges                   `protobuf:"bytes,1,opt,name=hyperparameter_ranges,json=hyperparameterRanges,proto3" json:"hyperparameter_ranges,omitempty"`
+	TuningStrategy               HyperparameterTuningStrategy_Value `protobuf:"varint,2,opt,name=tuning_strategy,json=tuningStrategy,proto3,enum=flyteidl.plugins.sagemaker.HyperparameterTuningStrategy_Value" json:"tuning_strategy,omitempty"`
+	TuningObjective              *HyperparameterTuningObjective     `protobuf:"bytes,3,opt,name=tuning_objective,json=tuningObjective,proto3" json:"tuning_objective,omitempty"`
+	TrainingJobEarlyStoppingType TrainingJobEarlyStoppingType_Value `protobuf:"varint,4,opt,name=training_job_early_stopping_type,json=trainingJobEarlyStoppingType,proto3,enum=flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType_Value" json:"training_job_early_stopping_type,omitempty"`
+	XXX_NoUnkeyedLiteral         struct{}                           `json:"-"`
+	XXX_unrecognized             []byte                             `json:"-"`
+	XXX_sizecache                int32                              `json:"-"`
 }
 
-func (m *HyperparameterTuningSpecification) Reset()         { *m = HyperparameterTuningSpecification{} }
-func (m *HyperparameterTuningSpecification) String() string { return proto.CompactTextString(m) }
-func (*HyperparameterTuningSpecification) ProtoMessage()    {}
-func (*HyperparameterTuningSpecification) Descriptor() ([]byte, []int) {
-	return fileDescriptor_84374f4d1322c4ba, []int{2}
+func (m *HyperparameterTuningJobConfig) Reset()         { *m = HyperparameterTuningJobConfig{} }
+func (m *HyperparameterTuningJobConfig) String() string { return proto.CompactTextString(m) }
+func (*HyperparameterTuningJobConfig) ProtoMessage()    {}
+func (*HyperparameterTuningJobConfig) Descriptor() ([]byte, []int) {
+	return fileDescriptor_84374f4d1322c4ba, []int{5}
 }
 
-func (m *HyperparameterTuningSpecification) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_HyperparameterTuningSpecification.Unmarshal(m, b)
+func (m *HyperparameterTuningJobConfig) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_HyperparameterTuningJobConfig.Unmarshal(m, b)
 }
-func (m *HyperparameterTuningSpecification) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_HyperparameterTuningSpecification.Marshal(b, m, deterministic)
+func (m *HyperparameterTuningJobConfig) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_HyperparameterTuningJobConfig.Marshal(b, m, deterministic)
 }
-func (m *HyperparameterTuningSpecification) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_HyperparameterTuningSpecification.Merge(m, src)
+func (m *HyperparameterTuningJobConfig) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HyperparameterTuningJobConfig.Merge(m, src)
 }
-func (m *HyperparameterTuningSpecification) XXX_Size() int {
-	return xxx_messageInfo_HyperparameterTuningSpecification.Size(m)
+func (m *HyperparameterTuningJobConfig) XXX_Size() int {
+	return xxx_messageInfo_HyperparameterTuningJobConfig.Size(m)
 }
-func (m *HyperparameterTuningSpecification) XXX_DiscardUnknown() {
-	xxx_messageInfo_HyperparameterTuningSpecification.DiscardUnknown(m)
+func (m *HyperparameterTuningJobConfig) XXX_DiscardUnknown() {
+	xxx_messageInfo_HyperparameterTuningJobConfig.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_HyperparameterTuningSpecification proto.InternalMessageInfo
+var xxx_messageInfo_HyperparameterTuningJobConfig proto.InternalMessageInfo
 
-func (m *HyperparameterTuningSpecification) GetHyperparameterRanges() *ParameterRanges {
+func (m *HyperparameterTuningJobConfig) GetHyperparameterRanges() *ParameterRanges {
 	if m != nil {
 		return m.HyperparameterRanges
 	}
 	return nil
 }
 
-func (m *HyperparameterTuningSpecification) GetTuningStrategy() HyperparameterTuningSpecification_HyperparameterTuningStrategy {
+func (m *HyperparameterTuningJobConfig) GetTuningStrategy() HyperparameterTuningStrategy_Value {
 	if m != nil {
 		return m.TuningStrategy
 	}
-	return HyperparameterTuningSpecification_BAYESIAN
+	return HyperparameterTuningStrategy_BAYESIAN
 }
 
-func (m *HyperparameterTuningSpecification) GetTuningObjective() *HyperparameterTuningObjective {
+func (m *HyperparameterTuningJobConfig) GetTuningObjective() *HyperparameterTuningObjective {
 	if m != nil {
 		return m.TuningObjective
 	}
 	return nil
 }
 
-func (m *HyperparameterTuningSpecification) GetTrainingJobEarlyStoppingType() HyperparameterTuningSpecification_TrainingJobEarlyStoppingType {
+func (m *HyperparameterTuningJobConfig) GetTrainingJobEarlyStoppingType() TrainingJobEarlyStoppingType_Value {
 	if m != nil {
 		return m.TrainingJobEarlyStoppingType
 	}
-	return HyperparameterTuningSpecification_OFF
+	return TrainingJobEarlyStoppingType_OFF
 }
 
 func init() {
-	proto.RegisterEnum("flyteidl.plugins.sagemaker.HyperparameterTuningObjective_HyperparameterTuningObjectiveType", HyperparameterTuningObjective_HyperparameterTuningObjectiveType_name, HyperparameterTuningObjective_HyperparameterTuningObjectiveType_value)
-	proto.RegisterEnum("flyteidl.plugins.sagemaker.HyperparameterTuningSpecification_HyperparameterTuningStrategy", HyperparameterTuningSpecification_HyperparameterTuningStrategy_name, HyperparameterTuningSpecification_HyperparameterTuningStrategy_value)
-	proto.RegisterEnum("flyteidl.plugins.sagemaker.HyperparameterTuningSpecification_TrainingJobEarlyStoppingType", HyperparameterTuningSpecification_TrainingJobEarlyStoppingType_name, HyperparameterTuningSpecification_TrainingJobEarlyStoppingType_value)
+	proto.RegisterEnum("flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType_Value", HyperparameterTuningObjectiveType_Value_name, HyperparameterTuningObjectiveType_Value_value)
+	proto.RegisterEnum("flyteidl.plugins.sagemaker.HyperparameterTuningStrategy_Value", HyperparameterTuningStrategy_Value_name, HyperparameterTuningStrategy_Value_value)
+	proto.RegisterEnum("flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType_Value", TrainingJobEarlyStoppingType_Value_name, TrainingJobEarlyStoppingType_Value_value)
 	proto.RegisterType((*HyperparameterTuningJob)(nil), "flyteidl.plugins.sagemaker.HyperparameterTuningJob")
+	proto.RegisterType((*HyperparameterTuningObjectiveType)(nil), "flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType")
 	proto.RegisterType((*HyperparameterTuningObjective)(nil), "flyteidl.plugins.sagemaker.HyperparameterTuningObjective")
-	proto.RegisterType((*HyperparameterTuningSpecification)(nil), "flyteidl.plugins.sagemaker.HyperparameterTuningSpecification")
+	proto.RegisterType((*HyperparameterTuningStrategy)(nil), "flyteidl.plugins.sagemaker.HyperparameterTuningStrategy")
+	proto.RegisterType((*TrainingJobEarlyStoppingType)(nil), "flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType")
+	proto.RegisterType((*HyperparameterTuningJobConfig)(nil), "flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig")
 }
 
 func init() {
@@ -286,40 +385,40 @@ func init() {
 }
 
 var fileDescriptor_84374f4d1322c4ba = []byte{
-	// 546 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x54, 0xdd, 0x6e, 0xd3, 0x4c,
-	0x10, 0x8d, 0x9b, 0x7e, 0xfd, 0xca, 0xa4, 0x04, 0x6b, 0x05, 0x6a, 0x15, 0x82, 0x08, 0xbe, 0xa1,
-	0x12, 0xaa, 0xad, 0xa6, 0x42, 0xe2, 0x4f, 0x42, 0xa9, 0x48, 0x45, 0x22, 0x25, 0xa9, 0x9c, 0x20,
-	0x41, 0xb8, 0x30, 0xeb, 0x74, 0xe2, 0xba, 0xd8, 0xde, 0xd5, 0x7a, 0x83, 0xea, 0x5b, 0x2a, 0xf1,
-	0x20, 0x3c, 0x19, 0x8f, 0x82, 0xb2, 0x71, 0x12, 0x27, 0x0a, 0x46, 0x20, 0x2e, 0x67, 0x3d, 0xe7,
-	0xcc, 0x39, 0xb3, 0xc7, 0x0b, 0x2f, 0xc6, 0x41, 0x22, 0xd1, 0xbf, 0x08, 0x2c, 0x1e, 0x4c, 0x3c,
-	0x3f, 0x8a, 0xad, 0x98, 0x7a, 0x18, 0xd2, 0xcf, 0x28, 0xac, 0xcb, 0x84, 0xa3, 0xe0, 0x54, 0xd0,
-	0x10, 0x25, 0x0a, 0x47, 0x4e, 0x22, 0x3f, 0xf2, 0x9c, 0x2b, 0xe6, 0x9a, 0x5c, 0x30, 0xc9, 0x48,
-	0x65, 0x8e, 0x35, 0x53, 0xac, 0xb9, 0xc0, 0x56, 0x8e, 0x73, 0x78, 0x97, 0x94, 0x82, 0x46, 0x1e,
-	0xc6, 0x33, 0xba, 0xca, 0x51, 0x0e, 0x44, 0x0a, 0xea, 0xaf, 0x4e, 0x37, 0x7e, 0x68, 0xb0, 0xff,
-	0x76, 0x45, 0xe1, 0x40, 0x09, 0x6c, 0x33, 0x97, 0xb4, 0x61, 0x2f, 0x8b, 0x38, 0xd0, 0x6a, 0xda,
-	0x61, 0xa9, 0xfe, 0xd8, 0xfc, 0xb5, 0x60, 0x73, 0x90, 0xf6, 0xb7, 0x99, 0x6b, 0x97, 0xe4, 0xb2,
-	0x20, 0xaf, 0xe0, 0x7e, 0x48, 0xaf, 0x9d, 0x68, 0x12, 0xba, 0x28, 0x1c, 0x36, 0x76, 0xb2, 0xcc,
-	0xf1, 0xc1, 0x56, 0x4d, 0x3b, 0x2c, 0xda, 0xfb, 0x21, 0xbd, 0xee, 0xaa, 0x8e, 0xde, 0x38, 0xc3,
-	0x14, 0x93, 0x97, 0x50, 0x99, 0xa2, 0xa7, 0x1a, 0x83, 0x00, 0x83, 0x35, 0x70, 0x71, 0x01, 0x3e,
-	0x4f, 0x1b, 0xb2, 0x60, 0xe3, 0xdb, 0x16, 0x3c, 0xd8, 0x64, 0xb1, 0xe7, 0x5e, 0xe1, 0x48, 0xfa,
-	0x5f, 0x90, 0x7c, 0xd5, 0xa0, 0xcc, 0xe6, 0x95, 0x23, 0x13, 0x8e, 0xca, 0x6b, 0xb9, 0xfe, 0x31,
-	0xcf, 0x6b, 0x2e, 0x67, 0xfe, 0xd7, 0x41, 0xc2, 0xd1, 0xbe, 0xcd, 0xb2, 0x25, 0x79, 0x08, 0xa5,
-	0x10, 0xa5, 0xf0, 0x47, 0x4e, 0x44, 0x43, 0x54, 0x1b, 0xb9, 0x65, 0xc3, 0xec, 0xa8, 0x4b, 0x43,
-	0x34, 0x5e, 0xc3, 0xa3, 0xdf, 0x92, 0x92, 0x3d, 0xd8, 0xed, 0xb4, 0xba, 0xad, 0x4e, 0x6b, 0xd8,
-	0xd4, 0x0b, 0xaa, 0x6a, 0xbc, 0x9f, 0x55, 0x9a, 0x71, 0xf3, 0xdf, 0x66, 0x86, 0x3e, 0xc7, 0x91,
-	0x3f, 0xf6, 0x47, 0x54, 0xfa, 0x2c, 0x22, 0x9f, 0xe0, 0xde, 0x5a, 0x64, 0x67, 0xf9, 0x4a, 0xaf,
-	0xff, 0x49, 0xde, 0x4a, 0xce, 0xe7, 0x18, 0x5b, 0x41, 0xec, 0xbb, 0xab, 0x4c, 0xb3, 0x53, 0x72,
-	0xa3, 0xc1, 0x9d, 0xf4, 0x37, 0x88, 0xa5, 0xa0, 0x12, 0xbd, 0x44, 0xd9, 0x2d, 0xd7, 0x87, 0x7f,
-	0xba, 0xef, 0x15, 0xe9, 0x9b, 0x3b, 0xd2, 0x09, 0x76, 0x59, 0xae, 0xd4, 0xe4, 0x02, 0xf4, 0x54,
-	0xc4, 0xe2, 0x1e, 0x54, 0x92, 0x4a, 0xf5, 0xe7, 0x7f, 0x7d, 0xeb, 0x76, 0xea, 0x6b, 0x19, 0xad,
-	0xef, 0x1a, 0xd4, 0xb2, 0x69, 0x75, 0x90, 0x8a, 0x20, 0x71, 0x62, 0xc9, 0x38, 0x9f, 0x1e, 0xa9,
-	0xb0, 0x6d, 0xff, 0x0b, 0xf3, 0x99, 0xcc, 0x37, 0xa7, 0x33, 0xfa, 0xe9, 0x08, 0x95, 0xb5, 0xaa,
-	0xcc, 0xf9, 0x6a, 0x3c, 0x83, 0x6a, 0xde, 0xea, 0xa6, 0x31, 0x3a, 0x6d, 0x7c, 0x68, 0xf6, 0x5b,
-	0x8d, 0xae, 0x5e, 0x20, 0x00, 0x3b, 0x76, 0xa3, 0xfb, 0xa6, 0xd7, 0xd1, 0x35, 0xe3, 0x18, 0xaa,
-	0x79, 0x73, 0xc9, 0xff, 0x50, 0xec, 0x9d, 0x9d, 0xe9, 0x05, 0xb2, 0x0b, 0xdb, 0x8d, 0x77, 0x83,
-	0x9e, 0xae, 0x9d, 0x3e, 0x1d, 0x9e, 0x78, 0xbe, 0xbc, 0x9c, 0xb8, 0xe6, 0x88, 0x85, 0x56, 0x90,
-	0x8c, 0xa5, 0xb5, 0x78, 0xb2, 0x3c, 0x8c, 0x2c, 0xee, 0x1e, 0x79, 0xcc, 0x5a, 0x7f, 0xc5, 0xdc,
-	0x1d, 0xf5, 0x5e, 0x9d, 0xfc, 0x0c, 0x00, 0x00, 0xff, 0xff, 0x92, 0x15, 0xdc, 0x87, 0x6b, 0x05,
-	0x00, 0x00,
+	// 554 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x54, 0xc1, 0x6e, 0xd3, 0x40,
+	0x10, 0xad, 0x49, 0x29, 0x65, 0x52, 0x82, 0xb5, 0x02, 0xb5, 0x0a, 0x41, 0xa4, 0xe6, 0x40, 0x25,
+	0x54, 0x5b, 0xa4, 0xe2, 0x40, 0x41, 0x48, 0x6e, 0x49, 0xd5, 0x44, 0x4a, 0x52, 0x39, 0x01, 0x41,
+	0x2f, 0x66, 0x9d, 0x6e, 0xb6, 0x0e, 0xb6, 0xd7, 0x5a, 0x6f, 0x50, 0xfd, 0x03, 0x7c, 0x0d, 0x3f,
+	0xc4, 0x8d, 0x4f, 0x41, 0x59, 0x6f, 0x12, 0x27, 0x0a, 0xae, 0xe0, 0x38, 0xa3, 0x79, 0xcf, 0x6f,
+	0xde, 0x1b, 0x2f, 0x1c, 0x8f, 0x82, 0x54, 0x10, 0xff, 0x2a, 0xb0, 0xe2, 0x60, 0x42, 0xfd, 0x28,
+	0xb1, 0x12, 0x4c, 0x49, 0x88, 0xbf, 0x11, 0x6e, 0x5d, 0xa7, 0x31, 0xe1, 0x31, 0xe6, 0x38, 0x24,
+	0x82, 0x70, 0x57, 0x4c, 0x22, 0x3f, 0xa2, 0xee, 0x98, 0x79, 0x66, 0xcc, 0x99, 0x60, 0xa8, 0x3a,
+	0xc3, 0x9a, 0x0a, 0x6b, 0xce, 0xb1, 0xd5, 0x57, 0x05, 0xbc, 0x0b, 0x4a, 0x8e, 0x23, 0x4a, 0x92,
+	0x8c, 0xae, 0x7a, 0x58, 0x00, 0x11, 0x1c, 0xfb, 0xcb, 0x5f, 0x37, 0x7e, 0x6b, 0xb0, 0x7b, 0xbe,
+	0xa4, 0x70, 0x20, 0x05, 0xb6, 0x99, 0x87, 0xda, 0xb0, 0x93, 0x47, 0xec, 0x69, 0x75, 0xed, 0xa0,
+	0xdc, 0x78, 0x61, 0xfe, 0x5d, 0xb0, 0x39, 0x50, 0xf3, 0x6d, 0xe6, 0x39, 0x65, 0xb1, 0x28, 0xd0,
+	0x3b, 0x78, 0x12, 0xe2, 0x1b, 0x37, 0x9a, 0x84, 0x1e, 0xe1, 0x2e, 0x1b, 0xb9, 0x79, 0xe6, 0x64,
+	0xef, 0x4e, 0x5d, 0x3b, 0x28, 0x39, 0xbb, 0x21, 0xbe, 0xe9, 0xca, 0x89, 0xde, 0x28, 0xc7, 0x94,
+	0xa0, 0xb7, 0x50, 0x9d, 0xa2, 0xa7, 0x1a, 0x83, 0x80, 0x04, 0x2b, 0xe0, 0xd2, 0x1c, 0x7c, 0xa1,
+	0x06, 0xf2, 0x60, 0xe3, 0x1c, 0xf6, 0xd7, 0x6d, 0xd8, 0xf3, 0xc6, 0x64, 0x28, 0xfc, 0xef, 0x64,
+	0x90, 0xc6, 0xc4, 0x78, 0x0e, 0x77, 0x3f, 0xe1, 0x60, 0x42, 0xd0, 0x0e, 0x6c, 0x77, 0x5a, 0xdd,
+	0x56, 0xa7, 0x75, 0xd9, 0xd4, 0x37, 0x64, 0x65, 0x7f, 0xce, 0x2a, 0xcd, 0xf8, 0xa9, 0xc1, 0xd3,
+	0x42, 0x2a, 0x34, 0x86, 0x0a, 0x9b, 0x15, 0xae, 0x48, 0x63, 0x22, 0x4d, 0xab, 0x34, 0x4e, 0x8b,
+	0x4c, 0xbb, 0x55, 0x9d, 0x29, 0xa5, 0x39, 0x0f, 0x58, 0xbe, 0x89, 0x9e, 0x41, 0x39, 0x24, 0x82,
+	0xfb, 0x43, 0x37, 0xc2, 0x21, 0x91, 0x16, 0xde, 0x77, 0x20, 0x6b, 0x75, 0x71, 0x48, 0x0c, 0x1b,
+	0x6a, 0xeb, 0xa8, 0xfb, 0x82, 0x63, 0x41, 0x68, 0x6a, 0xec, 0xe7, 0x76, 0x3e, 0xb1, 0xbf, 0x34,
+	0xfb, 0x2d, 0xbb, 0xab, 0x6f, 0x20, 0x80, 0x2d, 0xc7, 0xee, 0x7e, 0xe8, 0x75, 0x74, 0xcd, 0x38,
+	0x86, 0x5a, 0xce, 0xcb, 0x26, 0xe6, 0x41, 0xda, 0x17, 0x2c, 0x8e, 0xfd, 0x88, 0x4a, 0xdb, 0xaa,
+	0x33, 0x8a, 0x7b, 0x50, 0xea, 0x9d, 0x9d, 0xe9, 0x1b, 0x68, 0x1b, 0x36, 0xed, 0x8f, 0x83, 0x9e,
+	0xae, 0x19, 0xbf, 0x4a, 0xeb, 0xdd, 0x6a, 0x33, 0xef, 0x94, 0x45, 0x23, 0x9f, 0xa2, 0xaf, 0xf0,
+	0x78, 0xe5, 0xef, 0xc8, 0x4e, 0x59, 0x5d, 0xda, 0xcb, 0x22, 0xd3, 0x2e, 0x66, 0x18, 0x47, 0x42,
+	0x9c, 0x47, 0xcb, 0x4c, 0x59, 0x17, 0x51, 0x78, 0xa8, 0x7e, 0xb8, 0x44, 0x6d, 0x2d, 0x7d, 0xaa,
+	0x34, 0xde, 0xff, 0x6b, 0x20, 0x33, 0xd7, 0x54, 0x16, 0x15, 0xb1, 0xd4, 0x45, 0x57, 0xa0, 0xab,
+	0x0f, 0xcd, 0x43, 0x92, 0x77, 0x59, 0x6e, 0xbc, 0xf9, 0xef, 0xe8, 0x1d, 0xa5, 0x7d, 0x71, 0x5e,
+	0x3f, 0x34, 0xa8, 0xe7, 0x6f, 0xdf, 0x25, 0xd3, 0x44, 0xdc, 0x44, 0x45, 0x92, 0x5d, 0xdc, 0xe6,
+	0xed, 0x0b, 0x16, 0x65, 0xaa, 0x16, 0xac, 0x89, 0x82, 0x99, 0x93, 0xd7, 0x97, 0x47, 0xd4, 0x17,
+	0xd7, 0x13, 0xcf, 0x1c, 0xb2, 0xd0, 0x0a, 0xd2, 0x91, 0xb0, 0xe6, 0xef, 0x0e, 0x25, 0x91, 0x15,
+	0x7b, 0x87, 0x94, 0x59, 0xab, 0x4f, 0x91, 0xb7, 0x25, 0x1f, 0x9d, 0xa3, 0x3f, 0x01, 0x00, 0x00,
+	0xff, 0xff, 0x80, 0x43, 0xe0, 0x75, 0x30, 0x05, 0x00, 0x00,
 }

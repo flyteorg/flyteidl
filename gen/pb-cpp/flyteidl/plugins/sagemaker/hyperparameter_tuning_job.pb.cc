@@ -26,14 +26,26 @@ class HyperparameterTuningJobDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<HyperparameterTuningJob> _instance;
 } _HyperparameterTuningJob_default_instance_;
+class HyperparameterTuningObjectiveTypeDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<HyperparameterTuningObjectiveType> _instance;
+} _HyperparameterTuningObjectiveType_default_instance_;
 class HyperparameterTuningObjectiveDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<HyperparameterTuningObjective> _instance;
 } _HyperparameterTuningObjective_default_instance_;
-class HyperparameterTuningSpecificationDefaultTypeInternal {
+class HyperparameterTuningStrategyDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<HyperparameterTuningSpecification> _instance;
-} _HyperparameterTuningSpecification_default_instance_;
+  ::google::protobuf::internal::ExplicitlyConstructed<HyperparameterTuningStrategy> _instance;
+} _HyperparameterTuningStrategy_default_instance_;
+class TrainingJobEarlyStoppingTypeDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<TrainingJobEarlyStoppingType> _instance;
+} _TrainingJobEarlyStoppingType_default_instance_;
+class HyperparameterTuningJobConfigDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<HyperparameterTuningJobConfig> _instance;
+} _HyperparameterTuningJobConfig_default_instance_;
 }  // namespace sagemaker
 }  // namespace plugins
 }  // namespace flyteidl
@@ -52,6 +64,20 @@ static void InitDefaultsHyperparameterTuningJob_flyteidl_2fplugins_2fsagemaker_2
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsHyperparameterTuningJob_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto}, {
       &scc_info_TrainingJob_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base,}};
 
+static void InitDefaultsHyperparameterTuningObjectiveType_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::flyteidl::plugins::sagemaker::_HyperparameterTuningObjectiveType_default_instance_;
+    new (ptr) ::flyteidl::plugins::sagemaker::HyperparameterTuningObjectiveType();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::flyteidl::plugins::sagemaker::HyperparameterTuningObjectiveType::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_HyperparameterTuningObjectiveType_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsHyperparameterTuningObjectiveType_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto}, {}};
+
 static void InitDefaultsHyperparameterTuningObjective_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -66,29 +92,60 @@ static void InitDefaultsHyperparameterTuningObjective_flyteidl_2fplugins_2fsagem
 ::google::protobuf::internal::SCCInfo<0> scc_info_HyperparameterTuningObjective_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsHyperparameterTuningObjective_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto}, {}};
 
-static void InitDefaultsHyperparameterTuningSpecification_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto() {
+static void InitDefaultsHyperparameterTuningStrategy_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::flyteidl::plugins::sagemaker::_HyperparameterTuningSpecification_default_instance_;
-    new (ptr) ::flyteidl::plugins::sagemaker::HyperparameterTuningSpecification();
+    void* ptr = &::flyteidl::plugins::sagemaker::_HyperparameterTuningStrategy_default_instance_;
+    new (ptr) ::flyteidl::plugins::sagemaker::HyperparameterTuningStrategy();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::flyteidl::plugins::sagemaker::HyperparameterTuningSpecification::InitAsDefaultInstance();
+  ::flyteidl::plugins::sagemaker::HyperparameterTuningStrategy::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_HyperparameterTuningSpecification_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsHyperparameterTuningSpecification_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto}, {
+::google::protobuf::internal::SCCInfo<0> scc_info_HyperparameterTuningStrategy_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsHyperparameterTuningStrategy_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto}, {}};
+
+static void InitDefaultsTrainingJobEarlyStoppingType_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::flyteidl::plugins::sagemaker::_TrainingJobEarlyStoppingType_default_instance_;
+    new (ptr) ::flyteidl::plugins::sagemaker::TrainingJobEarlyStoppingType();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::flyteidl::plugins::sagemaker::TrainingJobEarlyStoppingType::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_TrainingJobEarlyStoppingType_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTrainingJobEarlyStoppingType_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto}, {}};
+
+static void InitDefaultsHyperparameterTuningJobConfig_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::flyteidl::plugins::sagemaker::_HyperparameterTuningJobConfig_default_instance_;
+    new (ptr) ::flyteidl::plugins::sagemaker::HyperparameterTuningJobConfig();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::flyteidl::plugins::sagemaker::HyperparameterTuningJobConfig::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<2> scc_info_HyperparameterTuningJobConfig_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsHyperparameterTuningJobConfig_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto}, {
       &scc_info_ParameterRanges_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto.base,
       &scc_info_HyperparameterTuningObjective_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto.base,}};
 
 void InitDefaults_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_HyperparameterTuningJob_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_HyperparameterTuningObjectiveType_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_HyperparameterTuningObjective_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_HyperparameterTuningSpecification_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_HyperparameterTuningStrategy_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_TrainingJobEarlyStoppingType_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_HyperparameterTuningJobConfig_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto[3];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto[6];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto[3];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto = nullptr;
 
@@ -102,6 +159,11 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fsagemaker_2fhy
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HyperparameterTuningJob, max_number_of_training_jobs_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HyperparameterTuningJob, max_parallel_training_jobs_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HyperparameterTuningObjectiveType, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HyperparameterTuningObjective, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -109,31 +171,47 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fsagemaker_2fhy
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HyperparameterTuningObjective, objective_type_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HyperparameterTuningObjective, metric_name_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HyperparameterTuningSpecification, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HyperparameterTuningStrategy, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HyperparameterTuningSpecification, hyperparameter_ranges_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HyperparameterTuningSpecification, tuning_strategy_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HyperparameterTuningSpecification, tuning_objective_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HyperparameterTuningSpecification, training_job_early_stopping_type_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJobEarlyStoppingType, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HyperparameterTuningJobConfig, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HyperparameterTuningJobConfig, hyperparameter_ranges_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HyperparameterTuningJobConfig, tuning_strategy_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HyperparameterTuningJobConfig, tuning_objective_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HyperparameterTuningJobConfig, training_job_early_stopping_type_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::sagemaker::HyperparameterTuningJob)},
-  { 8, -1, sizeof(::flyteidl::plugins::sagemaker::HyperparameterTuningObjective)},
-  { 15, -1, sizeof(::flyteidl::plugins::sagemaker::HyperparameterTuningSpecification)},
+  { 8, -1, sizeof(::flyteidl::plugins::sagemaker::HyperparameterTuningObjectiveType)},
+  { 13, -1, sizeof(::flyteidl::plugins::sagemaker::HyperparameterTuningObjective)},
+  { 20, -1, sizeof(::flyteidl::plugins::sagemaker::HyperparameterTuningStrategy)},
+  { 25, -1, sizeof(::flyteidl::plugins::sagemaker::TrainingJobEarlyStoppingType)},
+  { 30, -1, sizeof(::flyteidl::plugins::sagemaker::HyperparameterTuningJobConfig)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_HyperparameterTuningJob_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_HyperparameterTuningObjectiveType_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_HyperparameterTuningObjective_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_HyperparameterTuningSpecification_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_HyperparameterTuningStrategy_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_TrainingJobEarlyStoppingType_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_HyperparameterTuningJobConfig_default_instance_),
 };
 
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto = {
   {}, AddDescriptors_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto, "flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto::offsets,
-  file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto, 3, file_level_enum_descriptors_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto, file_level_service_descriptors_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto,
+  file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto, 6, file_level_enum_descriptors_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto, file_level_service_descriptors_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto[] =
@@ -145,34 +223,32 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2fhyperparam
   "meterTuningJob\022=\n\014training_job\030\001 \001(\0132\'.f"
   "lyteidl.plugins.sagemaker.TrainingJob\022#\n"
   "\033max_number_of_training_jobs\030\002 \001(\003\022\"\n\032ma"
-  "x_parallel_training_jobs\030\003 \001(\003\"\352\001\n\035Hyper"
-  "parameterTuningObjective\022s\n\016objective_ty"
-  "pe\030\001 \001(\0162[.flyteidl.plugins.sagemaker.Hy"
-  "perparameterTuningObjective.Hyperparamet"
-  "erTuningObjectiveType\022\023\n\013metric_name\030\002 \001"
-  "(\t\"\?\n!HyperparameterTuningObjectiveType\022"
-  "\014\n\010MINIMIZE\020\000\022\014\n\010MAXIMIZE\020\001\"\255\004\n!Hyperpar"
-  "ameterTuningSpecification\022J\n\025hyperparame"
-  "ter_ranges\030\001 \001(\0132+.flyteidl.plugins.sage"
-  "maker.ParameterRanges\022s\n\017tuning_strategy"
-  "\030\002 \001(\0162Z.flyteidl.plugins.sagemaker.Hype"
-  "rparameterTuningSpecification.Hyperparam"
-  "eterTuningStrategy\022S\n\020tuning_objective\030\003"
+  "x_parallel_training_jobs\030\003 \001(\003\"H\n!Hyperp"
+  "arameterTuningObjectiveType\"#\n\005Value\022\014\n\010"
+  "MINIMIZE\020\000\022\014\n\010MAXIMIZE\020\001\"\221\001\n\035Hyperparame"
+  "terTuningObjective\022[\n\016objective_type\030\001 \001"
+  "(\0162C.flyteidl.plugins.sagemaker.Hyperpar"
+  "ameterTuningObjectiveType.Value\022\023\n\013metri"
+  "c_name\030\002 \001(\t\"A\n\034HyperparameterTuningStra"
+  "tegy\"!\n\005Value\022\014\n\010BAYESIAN\020\000\022\n\n\006RANDOM\020\001\""
+  ":\n\034TrainingJobEarlyStoppingType\"\032\n\005Value"
+  "\022\007\n\003OFF\020\000\022\010\n\004AUTO\020\001\"\203\003\n\035HyperparameterTu"
+  "ningJobConfig\022J\n\025hyperparameter_ranges\030\001"
+  " \001(\0132+.flyteidl.plugins.sagemaker.Parame"
+  "terRanges\022W\n\017tuning_strategy\030\002 \001(\0162>.fly"
+  "teidl.plugins.sagemaker.HyperparameterTu"
+  "ningStrategy.Value\022S\n\020tuning_objective\030\003"
   " \001(\01329.flyteidl.plugins.sagemaker.Hyperp"
-  "arameterTuningObjective\022\204\001\n training_job"
-  "_early_stopping_type\030\004 \001(\0162Z.flyteidl.pl"
-  "ugins.sagemaker.HyperparameterTuningSpec"
-  "ification.TrainingJobEarlyStoppingType\"8"
-  "\n\034HyperparameterTuningStrategy\022\014\n\010BAYESI"
-  "AN\020\000\022\n\n\006RANDOM\020\001\"1\n\034TrainingJobEarlyStop"
-  "pingType\022\007\n\003OFF\020\000\022\010\n\004AUTO\020\001B5Z3github.co"
-  "m/lyft/flyteidl/gen/pb-go/flyteidl/plugi"
-  "nsb\006proto3"
+  "arameterTuningObjective\022h\n training_job_"
+  "early_stopping_type\030\004 \001(\0162>.flyteidl.plu"
+  "gins.sagemaker.TrainingJobEarlyStoppingT"
+  "ype.ValueB5Z3github.com/lyft/flyteidl/ge"
+  "n/pb-go/flyteidl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto,
-  "flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto, 1210,
+  "flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto, 1152,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto() {
@@ -189,11 +265,11 @@ static bool dynamic_init_dummy_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5
 namespace flyteidl {
 namespace plugins {
 namespace sagemaker {
-const ::google::protobuf::EnumDescriptor* HyperparameterTuningObjective_HyperparameterTuningObjectiveType_descriptor() {
+const ::google::protobuf::EnumDescriptor* HyperparameterTuningObjectiveType_Value_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto);
   return file_level_enum_descriptors_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto[0];
 }
-bool HyperparameterTuningObjective_HyperparameterTuningObjectiveType_IsValid(int value) {
+bool HyperparameterTuningObjectiveType_Value_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -204,17 +280,17 @@ bool HyperparameterTuningObjective_HyperparameterTuningObjectiveType_IsValid(int
 }
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const HyperparameterTuningObjective_HyperparameterTuningObjectiveType HyperparameterTuningObjective::MINIMIZE;
-const HyperparameterTuningObjective_HyperparameterTuningObjectiveType HyperparameterTuningObjective::MAXIMIZE;
-const HyperparameterTuningObjective_HyperparameterTuningObjectiveType HyperparameterTuningObjective::HyperparameterTuningObjectiveType_MIN;
-const HyperparameterTuningObjective_HyperparameterTuningObjectiveType HyperparameterTuningObjective::HyperparameterTuningObjectiveType_MAX;
-const int HyperparameterTuningObjective::HyperparameterTuningObjectiveType_ARRAYSIZE;
+const HyperparameterTuningObjectiveType_Value HyperparameterTuningObjectiveType::MINIMIZE;
+const HyperparameterTuningObjectiveType_Value HyperparameterTuningObjectiveType::MAXIMIZE;
+const HyperparameterTuningObjectiveType_Value HyperparameterTuningObjectiveType::Value_MIN;
+const HyperparameterTuningObjectiveType_Value HyperparameterTuningObjectiveType::Value_MAX;
+const int HyperparameterTuningObjectiveType::Value_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-const ::google::protobuf::EnumDescriptor* HyperparameterTuningSpecification_HyperparameterTuningStrategy_descriptor() {
+const ::google::protobuf::EnumDescriptor* HyperparameterTuningStrategy_Value_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto);
   return file_level_enum_descriptors_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto[1];
 }
-bool HyperparameterTuningSpecification_HyperparameterTuningStrategy_IsValid(int value) {
+bool HyperparameterTuningStrategy_Value_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -225,17 +301,17 @@ bool HyperparameterTuningSpecification_HyperparameterTuningStrategy_IsValid(int 
 }
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const HyperparameterTuningSpecification_HyperparameterTuningStrategy HyperparameterTuningSpecification::BAYESIAN;
-const HyperparameterTuningSpecification_HyperparameterTuningStrategy HyperparameterTuningSpecification::RANDOM;
-const HyperparameterTuningSpecification_HyperparameterTuningStrategy HyperparameterTuningSpecification::HyperparameterTuningStrategy_MIN;
-const HyperparameterTuningSpecification_HyperparameterTuningStrategy HyperparameterTuningSpecification::HyperparameterTuningStrategy_MAX;
-const int HyperparameterTuningSpecification::HyperparameterTuningStrategy_ARRAYSIZE;
+const HyperparameterTuningStrategy_Value HyperparameterTuningStrategy::BAYESIAN;
+const HyperparameterTuningStrategy_Value HyperparameterTuningStrategy::RANDOM;
+const HyperparameterTuningStrategy_Value HyperparameterTuningStrategy::Value_MIN;
+const HyperparameterTuningStrategy_Value HyperparameterTuningStrategy::Value_MAX;
+const int HyperparameterTuningStrategy::Value_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-const ::google::protobuf::EnumDescriptor* HyperparameterTuningSpecification_TrainingJobEarlyStoppingType_descriptor() {
+const ::google::protobuf::EnumDescriptor* TrainingJobEarlyStoppingType_Value_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto);
   return file_level_enum_descriptors_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto[2];
 }
-bool HyperparameterTuningSpecification_TrainingJobEarlyStoppingType_IsValid(int value) {
+bool TrainingJobEarlyStoppingType_Value_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -246,11 +322,11 @@ bool HyperparameterTuningSpecification_TrainingJobEarlyStoppingType_IsValid(int 
 }
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const HyperparameterTuningSpecification_TrainingJobEarlyStoppingType HyperparameterTuningSpecification::OFF;
-const HyperparameterTuningSpecification_TrainingJobEarlyStoppingType HyperparameterTuningSpecification::AUTO;
-const HyperparameterTuningSpecification_TrainingJobEarlyStoppingType HyperparameterTuningSpecification::TrainingJobEarlyStoppingType_MIN;
-const HyperparameterTuningSpecification_TrainingJobEarlyStoppingType HyperparameterTuningSpecification::TrainingJobEarlyStoppingType_MAX;
-const int HyperparameterTuningSpecification::TrainingJobEarlyStoppingType_ARRAYSIZE;
+const TrainingJobEarlyStoppingType_Value TrainingJobEarlyStoppingType::OFF;
+const TrainingJobEarlyStoppingType_Value TrainingJobEarlyStoppingType::AUTO;
+const TrainingJobEarlyStoppingType_Value TrainingJobEarlyStoppingType::Value_MIN;
+const TrainingJobEarlyStoppingType_Value TrainingJobEarlyStoppingType::Value_MAX;
+const int TrainingJobEarlyStoppingType::Value_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
@@ -640,6 +716,215 @@ void HyperparameterTuningJob::InternalSwap(HyperparameterTuningJob* other) {
 
 // ===================================================================
 
+void HyperparameterTuningObjectiveType::InitAsDefaultInstance() {
+}
+class HyperparameterTuningObjectiveType::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+HyperparameterTuningObjectiveType::HyperparameterTuningObjectiveType()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+}
+HyperparameterTuningObjectiveType::HyperparameterTuningObjectiveType(const HyperparameterTuningObjectiveType& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+}
+
+void HyperparameterTuningObjectiveType::SharedCtor() {
+}
+
+HyperparameterTuningObjectiveType::~HyperparameterTuningObjectiveType() {
+  // @@protoc_insertion_point(destructor:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+  SharedDtor();
+}
+
+void HyperparameterTuningObjectiveType::SharedDtor() {
+}
+
+void HyperparameterTuningObjectiveType::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const HyperparameterTuningObjectiveType& HyperparameterTuningObjectiveType::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_HyperparameterTuningObjectiveType_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void HyperparameterTuningObjectiveType::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* HyperparameterTuningObjectiveType::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<HyperparameterTuningObjectiveType*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      default: {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool HyperparameterTuningObjectiveType::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+  handle_unusual:
+    if (tag == 0) {
+      goto success;
+    }
+    DO_(::google::protobuf::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+  }
+success:
+  // @@protoc_insertion_point(parse_success:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void HyperparameterTuningObjectiveType::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+}
+
+::google::protobuf::uint8* HyperparameterTuningObjectiveType::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+  return target;
+}
+
+size_t HyperparameterTuningObjectiveType::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void HyperparameterTuningObjectiveType::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+  GOOGLE_DCHECK_NE(&from, this);
+  const HyperparameterTuningObjectiveType* source =
+      ::google::protobuf::DynamicCastToGenerated<HyperparameterTuningObjectiveType>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+    MergeFrom(*source);
+  }
+}
+
+void HyperparameterTuningObjectiveType::MergeFrom(const HyperparameterTuningObjectiveType& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void HyperparameterTuningObjectiveType::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void HyperparameterTuningObjectiveType::CopyFrom(const HyperparameterTuningObjectiveType& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool HyperparameterTuningObjectiveType::IsInitialized() const {
+  return true;
+}
+
+void HyperparameterTuningObjectiveType::Swap(HyperparameterTuningObjectiveType* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void HyperparameterTuningObjectiveType::InternalSwap(HyperparameterTuningObjectiveType* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata HyperparameterTuningObjectiveType::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto);
+  return ::file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
 void HyperparameterTuningObjective::InitAsDefaultInstance() {
 }
 class HyperparameterTuningObjective::HasBitSetters {
@@ -717,11 +1002,11 @@ const char* HyperparameterTuningObjective::_InternalParse(const char* begin, con
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType objective_type = 1;
+      // .flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
         ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_objective_type(static_cast<::flyteidl::plugins::sagemaker::HyperparameterTuningObjective_HyperparameterTuningObjectiveType>(val));
+        msg->set_objective_type(static_cast<::flyteidl::plugins::sagemaker::HyperparameterTuningObjectiveType_Value>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -775,14 +1060,14 @@ bool HyperparameterTuningObjective::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType objective_type = 1;
+      // .flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
           int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          set_objective_type(static_cast< ::flyteidl::plugins::sagemaker::HyperparameterTuningObjective_HyperparameterTuningObjectiveType >(value));
+          set_objective_type(static_cast< ::flyteidl::plugins::sagemaker::HyperparameterTuningObjectiveType_Value >(value));
         } else {
           goto handle_unusual;
         }
@@ -831,7 +1116,7 @@ void HyperparameterTuningObjective::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType objective_type = 1;
+  // .flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;
   if (this->objective_type() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       1, this->objective_type(), output);
@@ -860,7 +1145,7 @@ void HyperparameterTuningObjective::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType objective_type = 1;
+  // .flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;
   if (this->objective_type() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       1, this->objective_type(), target);
@@ -905,7 +1190,7 @@ size_t HyperparameterTuningObjective::ByteSizeLong() const {
         this->metric_name());
   }
 
-  // .flyteidl.plugins.sagemaker.HyperparameterTuningObjective.HyperparameterTuningObjectiveType objective_type = 1;
+  // .flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;
   if (this->objective_type() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->objective_type());
@@ -985,45 +1270,463 @@ void HyperparameterTuningObjective::InternalSwap(HyperparameterTuningObjective* 
 
 // ===================================================================
 
-void HyperparameterTuningSpecification::InitAsDefaultInstance() {
-  ::flyteidl::plugins::sagemaker::_HyperparameterTuningSpecification_default_instance_._instance.get_mutable()->hyperparameter_ranges_ = const_cast< ::flyteidl::plugins::sagemaker::ParameterRanges*>(
+void HyperparameterTuningStrategy::InitAsDefaultInstance() {
+}
+class HyperparameterTuningStrategy::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+HyperparameterTuningStrategy::HyperparameterTuningStrategy()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+}
+HyperparameterTuningStrategy::HyperparameterTuningStrategy(const HyperparameterTuningStrategy& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+}
+
+void HyperparameterTuningStrategy::SharedCtor() {
+}
+
+HyperparameterTuningStrategy::~HyperparameterTuningStrategy() {
+  // @@protoc_insertion_point(destructor:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+  SharedDtor();
+}
+
+void HyperparameterTuningStrategy::SharedDtor() {
+}
+
+void HyperparameterTuningStrategy::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const HyperparameterTuningStrategy& HyperparameterTuningStrategy::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_HyperparameterTuningStrategy_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void HyperparameterTuningStrategy::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* HyperparameterTuningStrategy::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<HyperparameterTuningStrategy*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      default: {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool HyperparameterTuningStrategy::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+  handle_unusual:
+    if (tag == 0) {
+      goto success;
+    }
+    DO_(::google::protobuf::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+  }
+success:
+  // @@protoc_insertion_point(parse_success:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void HyperparameterTuningStrategy::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+}
+
+::google::protobuf::uint8* HyperparameterTuningStrategy::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+  return target;
+}
+
+size_t HyperparameterTuningStrategy::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void HyperparameterTuningStrategy::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+  GOOGLE_DCHECK_NE(&from, this);
+  const HyperparameterTuningStrategy* source =
+      ::google::protobuf::DynamicCastToGenerated<HyperparameterTuningStrategy>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+    MergeFrom(*source);
+  }
+}
+
+void HyperparameterTuningStrategy::MergeFrom(const HyperparameterTuningStrategy& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void HyperparameterTuningStrategy::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void HyperparameterTuningStrategy::CopyFrom(const HyperparameterTuningStrategy& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.plugins.sagemaker.HyperparameterTuningStrategy)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool HyperparameterTuningStrategy::IsInitialized() const {
+  return true;
+}
+
+void HyperparameterTuningStrategy::Swap(HyperparameterTuningStrategy* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void HyperparameterTuningStrategy::InternalSwap(HyperparameterTuningStrategy* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata HyperparameterTuningStrategy::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto);
+  return ::file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void TrainingJobEarlyStoppingType::InitAsDefaultInstance() {
+}
+class TrainingJobEarlyStoppingType::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+TrainingJobEarlyStoppingType::TrainingJobEarlyStoppingType()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+}
+TrainingJobEarlyStoppingType::TrainingJobEarlyStoppingType(const TrainingJobEarlyStoppingType& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+}
+
+void TrainingJobEarlyStoppingType::SharedCtor() {
+}
+
+TrainingJobEarlyStoppingType::~TrainingJobEarlyStoppingType() {
+  // @@protoc_insertion_point(destructor:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+  SharedDtor();
+}
+
+void TrainingJobEarlyStoppingType::SharedDtor() {
+}
+
+void TrainingJobEarlyStoppingType::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const TrainingJobEarlyStoppingType& TrainingJobEarlyStoppingType::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_TrainingJobEarlyStoppingType_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void TrainingJobEarlyStoppingType::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* TrainingJobEarlyStoppingType::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<TrainingJobEarlyStoppingType*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      default: {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool TrainingJobEarlyStoppingType::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+  handle_unusual:
+    if (tag == 0) {
+      goto success;
+    }
+    DO_(::google::protobuf::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+  }
+success:
+  // @@protoc_insertion_point(parse_success:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void TrainingJobEarlyStoppingType::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+}
+
+::google::protobuf::uint8* TrainingJobEarlyStoppingType::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+  return target;
+}
+
+size_t TrainingJobEarlyStoppingType::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void TrainingJobEarlyStoppingType::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+  GOOGLE_DCHECK_NE(&from, this);
+  const TrainingJobEarlyStoppingType* source =
+      ::google::protobuf::DynamicCastToGenerated<TrainingJobEarlyStoppingType>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+    MergeFrom(*source);
+  }
+}
+
+void TrainingJobEarlyStoppingType::MergeFrom(const TrainingJobEarlyStoppingType& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void TrainingJobEarlyStoppingType::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TrainingJobEarlyStoppingType::CopyFrom(const TrainingJobEarlyStoppingType& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TrainingJobEarlyStoppingType::IsInitialized() const {
+  return true;
+}
+
+void TrainingJobEarlyStoppingType::Swap(TrainingJobEarlyStoppingType* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void TrainingJobEarlyStoppingType::InternalSwap(TrainingJobEarlyStoppingType* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata TrainingJobEarlyStoppingType::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto);
+  return ::file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void HyperparameterTuningJobConfig::InitAsDefaultInstance() {
+  ::flyteidl::plugins::sagemaker::_HyperparameterTuningJobConfig_default_instance_._instance.get_mutable()->hyperparameter_ranges_ = const_cast< ::flyteidl::plugins::sagemaker::ParameterRanges*>(
       ::flyteidl::plugins::sagemaker::ParameterRanges::internal_default_instance());
-  ::flyteidl::plugins::sagemaker::_HyperparameterTuningSpecification_default_instance_._instance.get_mutable()->tuning_objective_ = const_cast< ::flyteidl::plugins::sagemaker::HyperparameterTuningObjective*>(
+  ::flyteidl::plugins::sagemaker::_HyperparameterTuningJobConfig_default_instance_._instance.get_mutable()->tuning_objective_ = const_cast< ::flyteidl::plugins::sagemaker::HyperparameterTuningObjective*>(
       ::flyteidl::plugins::sagemaker::HyperparameterTuningObjective::internal_default_instance());
 }
-class HyperparameterTuningSpecification::HasBitSetters {
+class HyperparameterTuningJobConfig::HasBitSetters {
  public:
-  static const ::flyteidl::plugins::sagemaker::ParameterRanges& hyperparameter_ranges(const HyperparameterTuningSpecification* msg);
-  static const ::flyteidl::plugins::sagemaker::HyperparameterTuningObjective& tuning_objective(const HyperparameterTuningSpecification* msg);
+  static const ::flyteidl::plugins::sagemaker::ParameterRanges& hyperparameter_ranges(const HyperparameterTuningJobConfig* msg);
+  static const ::flyteidl::plugins::sagemaker::HyperparameterTuningObjective& tuning_objective(const HyperparameterTuningJobConfig* msg);
 };
 
 const ::flyteidl::plugins::sagemaker::ParameterRanges&
-HyperparameterTuningSpecification::HasBitSetters::hyperparameter_ranges(const HyperparameterTuningSpecification* msg) {
+HyperparameterTuningJobConfig::HasBitSetters::hyperparameter_ranges(const HyperparameterTuningJobConfig* msg) {
   return *msg->hyperparameter_ranges_;
 }
 const ::flyteidl::plugins::sagemaker::HyperparameterTuningObjective&
-HyperparameterTuningSpecification::HasBitSetters::tuning_objective(const HyperparameterTuningSpecification* msg) {
+HyperparameterTuningJobConfig::HasBitSetters::tuning_objective(const HyperparameterTuningJobConfig* msg) {
   return *msg->tuning_objective_;
 }
-void HyperparameterTuningSpecification::clear_hyperparameter_ranges() {
+void HyperparameterTuningJobConfig::clear_hyperparameter_ranges() {
   if (GetArenaNoVirtual() == nullptr && hyperparameter_ranges_ != nullptr) {
     delete hyperparameter_ranges_;
   }
   hyperparameter_ranges_ = nullptr;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int HyperparameterTuningSpecification::kHyperparameterRangesFieldNumber;
-const int HyperparameterTuningSpecification::kTuningStrategyFieldNumber;
-const int HyperparameterTuningSpecification::kTuningObjectiveFieldNumber;
-const int HyperparameterTuningSpecification::kTrainingJobEarlyStoppingTypeFieldNumber;
+const int HyperparameterTuningJobConfig::kHyperparameterRangesFieldNumber;
+const int HyperparameterTuningJobConfig::kTuningStrategyFieldNumber;
+const int HyperparameterTuningJobConfig::kTuningObjectiveFieldNumber;
+const int HyperparameterTuningJobConfig::kTrainingJobEarlyStoppingTypeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-HyperparameterTuningSpecification::HyperparameterTuningSpecification()
+HyperparameterTuningJobConfig::HyperparameterTuningJobConfig()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+  // @@protoc_insertion_point(constructor:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
 }
-HyperparameterTuningSpecification::HyperparameterTuningSpecification(const HyperparameterTuningSpecification& from)
+HyperparameterTuningJobConfig::HyperparameterTuningJobConfig(const HyperparameterTuningJobConfig& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -1040,38 +1743,38 @@ HyperparameterTuningSpecification::HyperparameterTuningSpecification(const Hyper
   ::memcpy(&tuning_strategy_, &from.tuning_strategy_,
     static_cast<size_t>(reinterpret_cast<char*>(&training_job_early_stopping_type_) -
     reinterpret_cast<char*>(&tuning_strategy_)) + sizeof(training_job_early_stopping_type_));
-  // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+  // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
 }
 
-void HyperparameterTuningSpecification::SharedCtor() {
+void HyperparameterTuningJobConfig::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
-      &scc_info_HyperparameterTuningSpecification_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto.base);
+      &scc_info_HyperparameterTuningJobConfig_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto.base);
   ::memset(&hyperparameter_ranges_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&training_job_early_stopping_type_) -
       reinterpret_cast<char*>(&hyperparameter_ranges_)) + sizeof(training_job_early_stopping_type_));
 }
 
-HyperparameterTuningSpecification::~HyperparameterTuningSpecification() {
-  // @@protoc_insertion_point(destructor:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+HyperparameterTuningJobConfig::~HyperparameterTuningJobConfig() {
+  // @@protoc_insertion_point(destructor:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
   SharedDtor();
 }
 
-void HyperparameterTuningSpecification::SharedDtor() {
+void HyperparameterTuningJobConfig::SharedDtor() {
   if (this != internal_default_instance()) delete hyperparameter_ranges_;
   if (this != internal_default_instance()) delete tuning_objective_;
 }
 
-void HyperparameterTuningSpecification::SetCachedSize(int size) const {
+void HyperparameterTuningJobConfig::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const HyperparameterTuningSpecification& HyperparameterTuningSpecification::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_HyperparameterTuningSpecification_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto.base);
+const HyperparameterTuningJobConfig& HyperparameterTuningJobConfig::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_HyperparameterTuningJobConfig_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void HyperparameterTuningSpecification::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+void HyperparameterTuningJobConfig::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1091,9 +1794,9 @@ void HyperparameterTuningSpecification::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* HyperparameterTuningSpecification::_InternalParse(const char* begin, const char* end, void* object,
+const char* HyperparameterTuningJobConfig::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<HyperparameterTuningSpecification*>(object);
+  auto msg = static_cast<HyperparameterTuningJobConfig*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -1116,11 +1819,11 @@ const char* HyperparameterTuningSpecification::_InternalParse(const char* begin,
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy tuning_strategy = 2;
+      // .flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
         ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_tuning_strategy(static_cast<::flyteidl::plugins::sagemaker::HyperparameterTuningSpecification_HyperparameterTuningStrategy>(val));
+        msg->set_tuning_strategy(static_cast<::flyteidl::plugins::sagemaker::HyperparameterTuningStrategy_Value>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -1137,11 +1840,11 @@ const char* HyperparameterTuningSpecification::_InternalParse(const char* begin,
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType training_job_early_stopping_type = 4;
+      // .flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;
       case 4: {
         if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
         ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_training_job_early_stopping_type(static_cast<::flyteidl::plugins::sagemaker::HyperparameterTuningSpecification_TrainingJobEarlyStoppingType>(val));
+        msg->set_training_job_early_stopping_type(static_cast<::flyteidl::plugins::sagemaker::TrainingJobEarlyStoppingType_Value>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -1165,11 +1868,11 @@ len_delim_till_end:
                                {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool HyperparameterTuningSpecification::MergePartialFromCodedStream(
+bool HyperparameterTuningJobConfig::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+  // @@protoc_insertion_point(parse_start:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -1186,14 +1889,14 @@ bool HyperparameterTuningSpecification::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy tuning_strategy = 2;
+      // .flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
           int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          set_tuning_strategy(static_cast< ::flyteidl::plugins::sagemaker::HyperparameterTuningSpecification_HyperparameterTuningStrategy >(value));
+          set_tuning_strategy(static_cast< ::flyteidl::plugins::sagemaker::HyperparameterTuningStrategy_Value >(value));
         } else {
           goto handle_unusual;
         }
@@ -1211,14 +1914,14 @@ bool HyperparameterTuningSpecification::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType training_job_early_stopping_type = 4;
+      // .flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (32 & 0xFF)) {
           int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          set_training_job_early_stopping_type(static_cast< ::flyteidl::plugins::sagemaker::HyperparameterTuningSpecification_TrainingJobEarlyStoppingType >(value));
+          set_training_job_early_stopping_type(static_cast< ::flyteidl::plugins::sagemaker::TrainingJobEarlyStoppingType_Value >(value));
         } else {
           goto handle_unusual;
         }
@@ -1237,18 +1940,18 @@ bool HyperparameterTuningSpecification::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+  // @@protoc_insertion_point(parse_success:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+  // @@protoc_insertion_point(parse_failure:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void HyperparameterTuningSpecification::SerializeWithCachedSizes(
+void HyperparameterTuningJobConfig::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+  // @@protoc_insertion_point(serialize_start:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1258,7 +1961,7 @@ void HyperparameterTuningSpecification::SerializeWithCachedSizes(
       1, HasBitSetters::hyperparameter_ranges(this), output);
   }
 
-  // .flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy tuning_strategy = 2;
+  // .flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;
   if (this->tuning_strategy() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       2, this->tuning_strategy(), output);
@@ -1270,7 +1973,7 @@ void HyperparameterTuningSpecification::SerializeWithCachedSizes(
       3, HasBitSetters::tuning_objective(this), output);
   }
 
-  // .flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType training_job_early_stopping_type = 4;
+  // .flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;
   if (this->training_job_early_stopping_type() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       4, this->training_job_early_stopping_type(), output);
@@ -1280,12 +1983,12 @@ void HyperparameterTuningSpecification::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+  // @@protoc_insertion_point(serialize_end:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
 }
 
-::google::protobuf::uint8* HyperparameterTuningSpecification::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* HyperparameterTuningJobConfig::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1296,7 +1999,7 @@ void HyperparameterTuningSpecification::SerializeWithCachedSizes(
         1, HasBitSetters::hyperparameter_ranges(this), target);
   }
 
-  // .flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy tuning_strategy = 2;
+  // .flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;
   if (this->tuning_strategy() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       2, this->tuning_strategy(), target);
@@ -1309,7 +2012,7 @@ void HyperparameterTuningSpecification::SerializeWithCachedSizes(
         3, HasBitSetters::tuning_objective(this), target);
   }
 
-  // .flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType training_job_early_stopping_type = 4;
+  // .flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;
   if (this->training_job_early_stopping_type() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       4, this->training_job_early_stopping_type(), target);
@@ -1319,12 +2022,12 @@ void HyperparameterTuningSpecification::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
   return target;
 }
 
-size_t HyperparameterTuningSpecification::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+size_t HyperparameterTuningJobConfig::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1350,13 +2053,13 @@ size_t HyperparameterTuningSpecification::ByteSizeLong() const {
         *tuning_objective_);
   }
 
-  // .flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.HyperparameterTuningStrategy tuning_strategy = 2;
+  // .flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;
   if (this->tuning_strategy() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->tuning_strategy());
   }
 
-  // .flyteidl.plugins.sagemaker.HyperparameterTuningSpecification.TrainingJobEarlyStoppingType training_job_early_stopping_type = 4;
+  // .flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;
   if (this->training_job_early_stopping_type() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->training_job_early_stopping_type());
@@ -1367,23 +2070,23 @@ size_t HyperparameterTuningSpecification::ByteSizeLong() const {
   return total_size;
 }
 
-void HyperparameterTuningSpecification::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+void HyperparameterTuningJobConfig::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
   GOOGLE_DCHECK_NE(&from, this);
-  const HyperparameterTuningSpecification* source =
-      ::google::protobuf::DynamicCastToGenerated<HyperparameterTuningSpecification>(
+  const HyperparameterTuningJobConfig* source =
+      ::google::protobuf::DynamicCastToGenerated<HyperparameterTuningJobConfig>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
     MergeFrom(*source);
   }
 }
 
-void HyperparameterTuningSpecification::MergeFrom(const HyperparameterTuningSpecification& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+void HyperparameterTuningJobConfig::MergeFrom(const HyperparameterTuningJobConfig& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -1403,29 +2106,29 @@ void HyperparameterTuningSpecification::MergeFrom(const HyperparameterTuningSpec
   }
 }
 
-void HyperparameterTuningSpecification::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+void HyperparameterTuningJobConfig::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void HyperparameterTuningSpecification::CopyFrom(const HyperparameterTuningSpecification& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.plugins.sagemaker.HyperparameterTuningSpecification)
+void HyperparameterTuningJobConfig::CopyFrom(const HyperparameterTuningJobConfig& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool HyperparameterTuningSpecification::IsInitialized() const {
+bool HyperparameterTuningJobConfig::IsInitialized() const {
   return true;
 }
 
-void HyperparameterTuningSpecification::Swap(HyperparameterTuningSpecification* other) {
+void HyperparameterTuningJobConfig::Swap(HyperparameterTuningJobConfig* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void HyperparameterTuningSpecification::InternalSwap(HyperparameterTuningSpecification* other) {
+void HyperparameterTuningJobConfig::InternalSwap(HyperparameterTuningJobConfig* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(hyperparameter_ranges_, other->hyperparameter_ranges_);
@@ -1434,7 +2137,7 @@ void HyperparameterTuningSpecification::InternalSwap(HyperparameterTuningSpecifi
   swap(training_job_early_stopping_type_, other->training_job_early_stopping_type_);
 }
 
-::google::protobuf::Metadata HyperparameterTuningSpecification::GetMetadata() const {
+::google::protobuf::Metadata HyperparameterTuningJobConfig::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto);
   return ::file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fhyperparameter_5ftuning_5fjob_2eproto[kIndexInFileMessages];
 }
@@ -1449,11 +2152,20 @@ namespace protobuf {
 template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::HyperparameterTuningJob* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::HyperparameterTuningJob >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::HyperparameterTuningJob >(arena);
 }
+template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::HyperparameterTuningObjectiveType* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::HyperparameterTuningObjectiveType >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::HyperparameterTuningObjectiveType >(arena);
+}
 template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::HyperparameterTuningObjective* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::HyperparameterTuningObjective >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::HyperparameterTuningObjective >(arena);
 }
-template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::HyperparameterTuningSpecification* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::HyperparameterTuningSpecification >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::HyperparameterTuningSpecification >(arena);
+template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::HyperparameterTuningStrategy* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::HyperparameterTuningStrategy >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::HyperparameterTuningStrategy >(arena);
+}
+template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::TrainingJobEarlyStoppingType* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::TrainingJobEarlyStoppingType >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::TrainingJobEarlyStoppingType >(arena);
+}
+template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::HyperparameterTuningJobConfig* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::HyperparameterTuningJobConfig >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::HyperparameterTuningJobConfig >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

@@ -24,6 +24,10 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2fparameter_5fran
 namespace flyteidl {
 namespace plugins {
 namespace sagemaker {
+class HyperparameterScalingTypeDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<HyperparameterScalingType> _instance;
+} _HyperparameterScalingType_default_instance_;
 class ContinuousParameterRangeDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<ContinuousParameterRange> _instance;
@@ -54,6 +58,20 @@ class ParameterRangesDefaultTypeInternal {
 }  // namespace sagemaker
 }  // namespace plugins
 }  // namespace flyteidl
+static void InitDefaultsHyperparameterScalingType_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::flyteidl::plugins::sagemaker::_HyperparameterScalingType_default_instance_;
+    new (ptr) ::flyteidl::plugins::sagemaker::HyperparameterScalingType();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::flyteidl::plugins::sagemaker::HyperparameterScalingType::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_HyperparameterScalingType_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsHyperparameterScalingType_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto}, {}};
+
 static void InitDefaultsContinuousParameterRange_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -143,6 +161,7 @@ static void InitDefaultsParameterRanges_flyteidl_2fplugins_2fsagemaker_2fparamet
       &scc_info_ParameterRanges_ParameterRangeMapEntry_DoNotUse_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto.base,}};
 
 void InitDefaults_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto() {
+  ::google::protobuf::internal::InitSCC(&scc_info_HyperparameterScalingType_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ContinuousParameterRange_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_IntegerParameterRange_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_CategoricalParameterRange_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto.base);
@@ -151,11 +170,16 @@ void InitDefaults_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto() 
   ::google::protobuf::internal::InitSCC(&scc_info_ParameterRanges_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto[6];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto[7];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto[1];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::HyperparameterScalingType, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::ContinuousParameterRange, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -204,15 +228,17 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fsagemaker_2fpa
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::ParameterRanges, parameter_range_map_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::flyteidl::plugins::sagemaker::ContinuousParameterRange)},
-  { 8, -1, sizeof(::flyteidl::plugins::sagemaker::IntegerParameterRange)},
-  { 16, -1, sizeof(::flyteidl::plugins::sagemaker::CategoricalParameterRange)},
-  { 22, -1, sizeof(::flyteidl::plugins::sagemaker::ParameterRangeOneOf)},
-  { 31, 38, sizeof(::flyteidl::plugins::sagemaker::ParameterRanges_ParameterRangeMapEntry_DoNotUse)},
-  { 40, -1, sizeof(::flyteidl::plugins::sagemaker::ParameterRanges)},
+  { 0, -1, sizeof(::flyteidl::plugins::sagemaker::HyperparameterScalingType)},
+  { 5, -1, sizeof(::flyteidl::plugins::sagemaker::ContinuousParameterRange)},
+  { 13, -1, sizeof(::flyteidl::plugins::sagemaker::IntegerParameterRange)},
+  { 21, -1, sizeof(::flyteidl::plugins::sagemaker::CategoricalParameterRange)},
+  { 27, -1, sizeof(::flyteidl::plugins::sagemaker::ParameterRangeOneOf)},
+  { 36, 43, sizeof(::flyteidl::plugins::sagemaker::ParameterRanges_ParameterRangeMapEntry_DoNotUse)},
+  { 45, -1, sizeof(::flyteidl::plugins::sagemaker::ParameterRanges)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_HyperparameterScalingType_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_ContinuousParameterRange_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_IntegerParameterRange_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_CategoricalParameterRange_default_instance_),
@@ -224,43 +250,44 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto = {
   {}, AddDescriptors_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto, "flyteidl/plugins/sagemaker/parameter_ranges.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto::offsets,
-  file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto, 6, file_level_enum_descriptors_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto, file_level_service_descriptors_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto,
+  file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto, 7, file_level_enum_descriptors_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto, file_level_service_descriptors_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto[] =
   "\n1flyteidl/plugins/sagemaker/parameter_r"
   "anges.proto\022\032flyteidl.plugins.sagemaker\""
-  "\215\001\n\030ContinuousParameterRange\022\021\n\tmax_valu"
-  "e\030\001 \001(\001\022\021\n\tmin_value\030\002 \001(\001\022K\n\014scaling_ty"
-  "pe\030\003 \001(\01625.flyteidl.plugins.sagemaker.Hy"
-  "perparameterScalingType\"\212\001\n\025IntegerParam"
-  "eterRange\022\021\n\tmax_value\030\001 \001(\003\022\021\n\tmin_valu"
-  "e\030\002 \001(\003\022K\n\014scaling_type\030\003 \001(\01625.flyteidl"
+  "c\n\031HyperparameterScalingType\"F\n\005Value\022\010\n"
+  "\004AUTO\020\000\022\n\n\006LINEAR\020\001\022\017\n\013LOGARITHMIC\020\002\022\026\n\022"
+  "REVERSELOGARITHMIC\020\003\"\223\001\n\030ContinuousParam"
+  "eterRange\022\021\n\tmax_value\030\001 \001(\001\022\021\n\tmin_valu"
+  "e\030\002 \001(\001\022Q\n\014scaling_type\030\003 \001(\0162;.flyteidl"
   ".plugins.sagemaker.HyperparameterScaling"
-  "Type\"+\n\031CategoricalParameterRange\022\016\n\006val"
-  "ues\030\001 \003(\t\"\275\002\n\023ParameterRangeOneOf\022Z\n\032con"
-  "tinuous_parameter_range\030\001 \001(\01324.flyteidl"
-  ".plugins.sagemaker.ContinuousParameterRa"
-  "ngeH\000\022T\n\027integer_parameter_range\030\002 \001(\01321"
-  ".flyteidl.plugins.sagemaker.IntegerParam"
-  "eterRangeH\000\022\\\n\033categorical_parameter_ran"
-  "ge\030\003 \001(\01325.flyteidl.plugins.sagemaker.Ca"
-  "tegoricalParameterRangeH\000B\026\n\024parameter_r"
-  "ange_type\"\335\001\n\017ParameterRanges\022_\n\023paramet"
-  "er_range_map\030\001 \003(\0132B.flyteidl.plugins.sa"
-  "gemaker.ParameterRanges.ParameterRangeMa"
-  "pEntry\032i\n\026ParameterRangeMapEntry\022\013\n\003key\030"
-  "\001 \001(\t\022>\n\005value\030\002 \001(\0132/.flyteidl.plugins."
-  "sagemaker.ParameterRangeOneOf:\0028\001*Z\n\031Hyp"
-  "erparameterScalingType\022\010\n\004AUTO\020\000\022\n\n\006LINE"
-  "AR\020\001\022\017\n\013LOGARITHMIC\020\002\022\026\n\022REVERSELOGARITH"
-  "MIC\020\003B5Z3github.com/lyft/flyteidl/gen/pb"
-  "-go/flyteidl/pluginsb\006proto3"
+  "Type.Value\"\220\001\n\025IntegerParameterRange\022\021\n\t"
+  "max_value\030\001 \001(\003\022\021\n\tmin_value\030\002 \001(\003\022Q\n\014sc"
+  "aling_type\030\003 \001(\0162;.flyteidl.plugins.sage"
+  "maker.HyperparameterScalingType.Value\"+\n"
+  "\031CategoricalParameterRange\022\016\n\006values\030\001 \003"
+  "(\t\"\275\002\n\023ParameterRangeOneOf\022Z\n\032continuous"
+  "_parameter_range\030\001 \001(\01324.flyteidl.plugin"
+  "s.sagemaker.ContinuousParameterRangeH\000\022T"
+  "\n\027integer_parameter_range\030\002 \001(\01321.flytei"
+  "dl.plugins.sagemaker.IntegerParameterRan"
+  "geH\000\022\\\n\033categorical_parameter_range\030\003 \001("
+  "\01325.flyteidl.plugins.sagemaker.Categoric"
+  "alParameterRangeH\000B\026\n\024parameter_range_ty"
+  "pe\"\335\001\n\017ParameterRanges\022_\n\023parameter_rang"
+  "e_map\030\001 \003(\0132B.flyteidl.plugins.sagemaker"
+  ".ParameterRanges.ParameterRangeMapEntry\032"
+  "i\n\026ParameterRangeMapEntry\022\013\n\003key\030\001 \001(\t\022>"
+  "\n\005value\030\002 \001(\0132/.flyteidl.plugins.sagemak"
+  "er.ParameterRangeOneOf:\0028\001B5Z3github.com"
+  "/lyft/flyteidl/gen/pb-go/flyteidl/plugin"
+  "sb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto,
-  "flyteidl/plugins/sagemaker/parameter_ranges.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto, 1108,
+  "flyteidl/plugins/sagemaker/parameter_ranges.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto, 1129,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto() {
@@ -275,11 +302,11 @@ static bool dynamic_init_dummy_flyteidl_2fplugins_2fsagemaker_2fparameter_5frang
 namespace flyteidl {
 namespace plugins {
 namespace sagemaker {
-const ::google::protobuf::EnumDescriptor* HyperparameterScalingType_descriptor() {
+const ::google::protobuf::EnumDescriptor* HyperparameterScalingType_Value_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto);
   return file_level_enum_descriptors_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto[0];
 }
-bool HyperparameterScalingType_IsValid(int value) {
+bool HyperparameterScalingType_Value_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -289,6 +316,224 @@ bool HyperparameterScalingType_IsValid(int value) {
     default:
       return false;
   }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const HyperparameterScalingType_Value HyperparameterScalingType::AUTO;
+const HyperparameterScalingType_Value HyperparameterScalingType::LINEAR;
+const HyperparameterScalingType_Value HyperparameterScalingType::LOGARITHMIC;
+const HyperparameterScalingType_Value HyperparameterScalingType::REVERSELOGARITHMIC;
+const HyperparameterScalingType_Value HyperparameterScalingType::Value_MIN;
+const HyperparameterScalingType_Value HyperparameterScalingType::Value_MAX;
+const int HyperparameterScalingType::Value_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+// ===================================================================
+
+void HyperparameterScalingType::InitAsDefaultInstance() {
+}
+class HyperparameterScalingType::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+HyperparameterScalingType::HyperparameterScalingType()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+}
+HyperparameterScalingType::HyperparameterScalingType(const HyperparameterScalingType& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+}
+
+void HyperparameterScalingType::SharedCtor() {
+}
+
+HyperparameterScalingType::~HyperparameterScalingType() {
+  // @@protoc_insertion_point(destructor:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+  SharedDtor();
+}
+
+void HyperparameterScalingType::SharedDtor() {
+}
+
+void HyperparameterScalingType::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const HyperparameterScalingType& HyperparameterScalingType::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_HyperparameterScalingType_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void HyperparameterScalingType::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* HyperparameterScalingType::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<HyperparameterScalingType*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      default: {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool HyperparameterScalingType::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+  handle_unusual:
+    if (tag == 0) {
+      goto success;
+    }
+    DO_(::google::protobuf::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+  }
+success:
+  // @@protoc_insertion_point(parse_success:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void HyperparameterScalingType::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+}
+
+::google::protobuf::uint8* HyperparameterScalingType::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+  return target;
+}
+
+size_t HyperparameterScalingType::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void HyperparameterScalingType::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+  GOOGLE_DCHECK_NE(&from, this);
+  const HyperparameterScalingType* source =
+      ::google::protobuf::DynamicCastToGenerated<HyperparameterScalingType>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+    MergeFrom(*source);
+  }
+}
+
+void HyperparameterScalingType::MergeFrom(const HyperparameterScalingType& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void HyperparameterScalingType::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void HyperparameterScalingType::CopyFrom(const HyperparameterScalingType& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool HyperparameterScalingType::IsInitialized() const {
+  return true;
+}
+
+void HyperparameterScalingType::Swap(HyperparameterScalingType* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void HyperparameterScalingType::InternalSwap(HyperparameterScalingType* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata HyperparameterScalingType::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto);
+  return ::file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto[kIndexInFileMessages];
 }
 
 
@@ -383,11 +628,11 @@ const char* ContinuousParameterRange::_InternalParse(const char* begin, const ch
         ptr += sizeof(double);
         break;
       }
-      // .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
+      // .flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;
       case 3: {
         if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
         ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_scaling_type(static_cast<::flyteidl::plugins::sagemaker::HyperparameterScalingType>(val));
+        msg->set_scaling_type(static_cast<::flyteidl::plugins::sagemaker::HyperparameterScalingType_Value>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -444,14 +689,14 @@ bool ContinuousParameterRange::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
+      // .flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
           int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          set_scaling_type(static_cast< ::flyteidl::plugins::sagemaker::HyperparameterScalingType >(value));
+          set_scaling_type(static_cast< ::flyteidl::plugins::sagemaker::HyperparameterScalingType_Value >(value));
         } else {
           goto handle_unusual;
         }
@@ -495,7 +740,7 @@ void ContinuousParameterRange::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->min_value(), output);
   }
 
-  // .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
+  // .flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;
   if (this->scaling_type() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       3, this->scaling_type(), output);
@@ -524,7 +769,7 @@ void ContinuousParameterRange::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->min_value(), target);
   }
 
-  // .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
+  // .flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;
   if (this->scaling_type() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       3, this->scaling_type(), target);
@@ -561,7 +806,7 @@ size_t ContinuousParameterRange::ByteSizeLong() const {
     total_size += 1 + 8;
   }
 
-  // .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
+  // .flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;
   if (this->scaling_type() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->scaling_type());
@@ -732,11 +977,11 @@ const char* IntegerParameterRange::_InternalParse(const char* begin, const char*
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
+      // .flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;
       case 3: {
         if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
         ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_scaling_type(static_cast<::flyteidl::plugins::sagemaker::HyperparameterScalingType>(val));
+        msg->set_scaling_type(static_cast<::flyteidl::plugins::sagemaker::HyperparameterScalingType_Value>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -793,14 +1038,14 @@ bool IntegerParameterRange::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
+      // .flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
           int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          set_scaling_type(static_cast< ::flyteidl::plugins::sagemaker::HyperparameterScalingType >(value));
+          set_scaling_type(static_cast< ::flyteidl::plugins::sagemaker::HyperparameterScalingType_Value >(value));
         } else {
           goto handle_unusual;
         }
@@ -844,7 +1089,7 @@ void IntegerParameterRange::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->min_value(), output);
   }
 
-  // .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
+  // .flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;
   if (this->scaling_type() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       3, this->scaling_type(), output);
@@ -873,7 +1118,7 @@ void IntegerParameterRange::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->min_value(), target);
   }
 
-  // .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
+  // .flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;
   if (this->scaling_type() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       3, this->scaling_type(), target);
@@ -914,7 +1159,7 @@ size_t IntegerParameterRange::ByteSizeLong() const {
         this->min_value());
   }
 
-  // .flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;
+  // .flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;
   if (this->scaling_type() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->scaling_type());
@@ -1784,7 +2029,7 @@ void ParameterRanges_ParameterRangeMapEntry_DoNotUse::MergeFrom(const ParameterR
 }
 ::google::protobuf::Metadata ParameterRanges_ParameterRangeMapEntry_DoNotUse::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto);
-  return ::file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto[4];
+  return ::file_level_metadata_flyteidl_2fplugins_2fsagemaker_2fparameter_5franges_2eproto[5];
 }
 void ParameterRanges_ParameterRangeMapEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -2187,6 +2432,9 @@ void ParameterRanges::InternalSwap(ParameterRanges* other) {
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
+template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::HyperparameterScalingType* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::HyperparameterScalingType >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::HyperparameterScalingType >(arena);
+}
 template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::ContinuousParameterRange* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::ContinuousParameterRange >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::ContinuousParameterRange >(arena);
 }

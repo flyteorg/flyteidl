@@ -36,6 +36,135 @@ var (
 // define the regex for a UUID once up-front
 var _training_job_uuidPattern = regexp.MustCompile("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$")
 
+// Validate checks the field values on InputMode with the rules defined in the
+// proto definition for this message. If any rules are violated, an error is returned.
+func (m *InputMode) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	return nil
+}
+
+// InputModeValidationError is the validation error returned by
+// InputMode.Validate if the designated constraints aren't met.
+type InputModeValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e InputModeValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e InputModeValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e InputModeValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e InputModeValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e InputModeValidationError) ErrorName() string { return "InputModeValidationError" }
+
+// Error satisfies the builtin error interface
+func (e InputModeValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sInputMode.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = InputModeValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = InputModeValidationError{}
+
+// Validate checks the field values on AlgorithmName with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *AlgorithmName) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	return nil
+}
+
+// AlgorithmNameValidationError is the validation error returned by
+// AlgorithmName.Validate if the designated constraints aren't met.
+type AlgorithmNameValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e AlgorithmNameValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e AlgorithmNameValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e AlgorithmNameValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e AlgorithmNameValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e AlgorithmNameValidationError) ErrorName() string { return "AlgorithmNameValidationError" }
+
+// Error satisfies the builtin error interface
+func (e AlgorithmNameValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sAlgorithmName.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = AlgorithmNameValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = AlgorithmNameValidationError{}
+
 // Validate checks the field values on AlgorithmSpecification with the rules
 // defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
@@ -124,10 +253,10 @@ var _ interface {
 	ErrorName() string
 } = AlgorithmSpecificationValidationError{}
 
-// Validate checks the field values on TrainingJobConfig with the rules defined
-// in the proto definition for this message. If any rules are violated, an
-// error is returned.
-func (m *TrainingJobConfig) Validate() error {
+// Validate checks the field values on TrainingJobResourceConfig with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *TrainingJobResourceConfig) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -141,9 +270,9 @@ func (m *TrainingJobConfig) Validate() error {
 	return nil
 }
 
-// TrainingJobConfigValidationError is the validation error returned by
-// TrainingJobConfig.Validate if the designated constraints aren't met.
-type TrainingJobConfigValidationError struct {
+// TrainingJobResourceConfigValidationError is the validation error returned by
+// TrainingJobResourceConfig.Validate if the designated constraints aren't met.
+type TrainingJobResourceConfigValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -151,24 +280,24 @@ type TrainingJobConfigValidationError struct {
 }
 
 // Field function returns field value.
-func (e TrainingJobConfigValidationError) Field() string { return e.field }
+func (e TrainingJobResourceConfigValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e TrainingJobConfigValidationError) Reason() string { return e.reason }
+func (e TrainingJobResourceConfigValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e TrainingJobConfigValidationError) Cause() error { return e.cause }
+func (e TrainingJobResourceConfigValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e TrainingJobConfigValidationError) Key() bool { return e.key }
+func (e TrainingJobResourceConfigValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e TrainingJobConfigValidationError) ErrorName() string {
-	return "TrainingJobConfigValidationError"
+func (e TrainingJobResourceConfigValidationError) ErrorName() string {
+	return "TrainingJobResourceConfigValidationError"
 }
 
 // Error satisfies the builtin error interface
-func (e TrainingJobConfigValidationError) Error() string {
+func (e TrainingJobResourceConfigValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -180,14 +309,14 @@ func (e TrainingJobConfigValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sTrainingJobConfig.%s: %s%s",
+		"invalid %sTrainingJobResourceConfig.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = TrainingJobConfigValidationError{}
+var _ error = TrainingJobResourceConfigValidationError{}
 
 var _ interface {
 	Field() string
@@ -195,7 +324,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = TrainingJobConfigValidationError{}
+} = TrainingJobResourceConfigValidationError{}
 
 // Validate checks the field values on StoppingCondition with the rules defined
 // in the proto definition for this message. If any rules are violated, an

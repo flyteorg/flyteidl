@@ -42,7 +42,7 @@ struct TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[5]
+  static const ::google::protobuf::internal::ParseTable schema[7]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -52,80 +52,350 @@ void AddDescriptors_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto();
 namespace flyteidl {
 namespace plugins {
 namespace sagemaker {
+class AlgorithmName;
+class AlgorithmNameDefaultTypeInternal;
+extern AlgorithmNameDefaultTypeInternal _AlgorithmName_default_instance_;
 class AlgorithmSpecification;
 class AlgorithmSpecificationDefaultTypeInternal;
 extern AlgorithmSpecificationDefaultTypeInternal _AlgorithmSpecification_default_instance_;
 class AlgorithmSpecification_MetricDefinition;
 class AlgorithmSpecification_MetricDefinitionDefaultTypeInternal;
 extern AlgorithmSpecification_MetricDefinitionDefaultTypeInternal _AlgorithmSpecification_MetricDefinition_default_instance_;
+class InputMode;
+class InputModeDefaultTypeInternal;
+extern InputModeDefaultTypeInternal _InputMode_default_instance_;
 class StoppingCondition;
 class StoppingConditionDefaultTypeInternal;
 extern StoppingConditionDefaultTypeInternal _StoppingCondition_default_instance_;
 class TrainingJob;
 class TrainingJobDefaultTypeInternal;
 extern TrainingJobDefaultTypeInternal _TrainingJob_default_instance_;
-class TrainingJobConfig;
-class TrainingJobConfigDefaultTypeInternal;
-extern TrainingJobConfigDefaultTypeInternal _TrainingJobConfig_default_instance_;
+class TrainingJobResourceConfig;
+class TrainingJobResourceConfigDefaultTypeInternal;
+extern TrainingJobResourceConfigDefaultTypeInternal _TrainingJobResourceConfig_default_instance_;
 }  // namespace sagemaker
 }  // namespace plugins
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
+template<> ::flyteidl::plugins::sagemaker::AlgorithmName* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::AlgorithmName>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::AlgorithmSpecification* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::AlgorithmSpecification>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition>(Arena*);
+template<> ::flyteidl::plugins::sagemaker::InputMode* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::InputMode>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::StoppingCondition* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::StoppingCondition>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::TrainingJob* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::TrainingJob>(Arena*);
-template<> ::flyteidl::plugins::sagemaker::TrainingJobConfig* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::TrainingJobConfig>(Arena*);
+template<> ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::TrainingJobResourceConfig>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
 namespace plugins {
 namespace sagemaker {
 
-enum InputMode {
-  FILE = 0,
-  PIPE = 1,
-  InputMode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
-  InputMode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+enum InputMode_Value {
+  InputMode_Value_FILE = 0,
+  InputMode_Value_PIPE = 1,
+  InputMode_Value_InputMode_Value_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  InputMode_Value_InputMode_Value_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
-bool InputMode_IsValid(int value);
-const InputMode InputMode_MIN = FILE;
-const InputMode InputMode_MAX = PIPE;
-const int InputMode_ARRAYSIZE = InputMode_MAX + 1;
+bool InputMode_Value_IsValid(int value);
+const InputMode_Value InputMode_Value_Value_MIN = InputMode_Value_FILE;
+const InputMode_Value InputMode_Value_Value_MAX = InputMode_Value_PIPE;
+const int InputMode_Value_Value_ARRAYSIZE = InputMode_Value_Value_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* InputMode_descriptor();
-inline const ::std::string& InputMode_Name(InputMode value) {
+const ::google::protobuf::EnumDescriptor* InputMode_Value_descriptor();
+inline const ::std::string& InputMode_Value_Name(InputMode_Value value) {
   return ::google::protobuf::internal::NameOfEnum(
-    InputMode_descriptor(), value);
+    InputMode_Value_descriptor(), value);
 }
-inline bool InputMode_Parse(
-    const ::std::string& name, InputMode* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<InputMode>(
-    InputMode_descriptor(), name, value);
+inline bool InputMode_Value_Parse(
+    const ::std::string& name, InputMode_Value* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<InputMode_Value>(
+    InputMode_Value_descriptor(), name, value);
 }
-enum AlgorithmName {
-  CUSTOM = 0,
-  XGBOOST = 1,
-  AlgorithmName_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
-  AlgorithmName_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+enum AlgorithmName_Value {
+  AlgorithmName_Value_CUSTOM = 0,
+  AlgorithmName_Value_XGBOOST = 1,
+  AlgorithmName_Value_AlgorithmName_Value_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  AlgorithmName_Value_AlgorithmName_Value_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
-bool AlgorithmName_IsValid(int value);
-const AlgorithmName AlgorithmName_MIN = CUSTOM;
-const AlgorithmName AlgorithmName_MAX = XGBOOST;
-const int AlgorithmName_ARRAYSIZE = AlgorithmName_MAX + 1;
+bool AlgorithmName_Value_IsValid(int value);
+const AlgorithmName_Value AlgorithmName_Value_Value_MIN = AlgorithmName_Value_CUSTOM;
+const AlgorithmName_Value AlgorithmName_Value_Value_MAX = AlgorithmName_Value_XGBOOST;
+const int AlgorithmName_Value_Value_ARRAYSIZE = AlgorithmName_Value_Value_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* AlgorithmName_descriptor();
-inline const ::std::string& AlgorithmName_Name(AlgorithmName value) {
+const ::google::protobuf::EnumDescriptor* AlgorithmName_Value_descriptor();
+inline const ::std::string& AlgorithmName_Value_Name(AlgorithmName_Value value) {
   return ::google::protobuf::internal::NameOfEnum(
-    AlgorithmName_descriptor(), value);
+    AlgorithmName_Value_descriptor(), value);
 }
-inline bool AlgorithmName_Parse(
-    const ::std::string& name, AlgorithmName* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<AlgorithmName>(
-    AlgorithmName_descriptor(), name, value);
+inline bool AlgorithmName_Value_Parse(
+    const ::std::string& name, AlgorithmName_Value* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<AlgorithmName_Value>(
+    AlgorithmName_Value_descriptor(), name, value);
 }
 // ===================================================================
+
+class InputMode final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.sagemaker.InputMode) */ {
+ public:
+  InputMode();
+  virtual ~InputMode();
+
+  InputMode(const InputMode& from);
+
+  inline InputMode& operator=(const InputMode& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  InputMode(InputMode&& from) noexcept
+    : InputMode() {
+    *this = ::std::move(from);
+  }
+
+  inline InputMode& operator=(InputMode&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const InputMode& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const InputMode* internal_default_instance() {
+    return reinterpret_cast<const InputMode*>(
+               &_InputMode_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  void Swap(InputMode* other);
+  friend void swap(InputMode& a, InputMode& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline InputMode* New() const final {
+    return CreateMaybeMessage<InputMode>(nullptr);
+  }
+
+  InputMode* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<InputMode>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const InputMode& from);
+  void MergeFrom(const InputMode& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InputMode* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef InputMode_Value Value;
+  static const Value FILE =
+    InputMode_Value_FILE;
+  static const Value PIPE =
+    InputMode_Value_PIPE;
+  static inline bool Value_IsValid(int value) {
+    return InputMode_Value_IsValid(value);
+  }
+  static const Value Value_MIN =
+    InputMode_Value_Value_MIN;
+  static const Value Value_MAX =
+    InputMode_Value_Value_MAX;
+  static const int Value_ARRAYSIZE =
+    InputMode_Value_Value_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Value_descriptor() {
+    return InputMode_Value_descriptor();
+  }
+  static inline const ::std::string& Value_Name(Value value) {
+    return InputMode_Value_Name(value);
+  }
+  static inline bool Value_Parse(const ::std::string& name,
+      Value* value) {
+    return InputMode_Value_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.InputMode)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AlgorithmName final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.sagemaker.AlgorithmName) */ {
+ public:
+  AlgorithmName();
+  virtual ~AlgorithmName();
+
+  AlgorithmName(const AlgorithmName& from);
+
+  inline AlgorithmName& operator=(const AlgorithmName& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  AlgorithmName(AlgorithmName&& from) noexcept
+    : AlgorithmName() {
+    *this = ::std::move(from);
+  }
+
+  inline AlgorithmName& operator=(AlgorithmName&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const AlgorithmName& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AlgorithmName* internal_default_instance() {
+    return reinterpret_cast<const AlgorithmName*>(
+               &_AlgorithmName_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  void Swap(AlgorithmName* other);
+  friend void swap(AlgorithmName& a, AlgorithmName& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AlgorithmName* New() const final {
+    return CreateMaybeMessage<AlgorithmName>(nullptr);
+  }
+
+  AlgorithmName* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<AlgorithmName>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const AlgorithmName& from);
+  void MergeFrom(const AlgorithmName& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AlgorithmName* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef AlgorithmName_Value Value;
+  static const Value CUSTOM =
+    AlgorithmName_Value_CUSTOM;
+  static const Value XGBOOST =
+    AlgorithmName_Value_XGBOOST;
+  static inline bool Value_IsValid(int value) {
+    return AlgorithmName_Value_IsValid(value);
+  }
+  static const Value Value_MIN =
+    AlgorithmName_Value_Value_MIN;
+  static const Value Value_MAX =
+    AlgorithmName_Value_Value_MAX;
+  static const int Value_ARRAYSIZE =
+    AlgorithmName_Value_Value_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Value_descriptor() {
+    return AlgorithmName_Value_descriptor();
+  }
+  static inline const ::std::string& Value_Name(Value value) {
+    return AlgorithmName_Value_Name(value);
+  }
+  static inline bool Value_Parse(const ::std::string& name,
+      Value* value) {
+    return AlgorithmName_Value_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.AlgorithmName)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
+};
+// -------------------------------------------------------------------
 
 class AlgorithmSpecification_MetricDefinition final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition) */ {
@@ -165,7 +435,7 @@ class AlgorithmSpecification_MetricDefinition final :
                &_AlgorithmSpecification_MetricDefinition_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    2;
 
   void Swap(AlgorithmSpecification_MetricDefinition* other);
   friend void swap(AlgorithmSpecification_MetricDefinition& a, AlgorithmSpecification_MetricDefinition& b) {
@@ -300,7 +570,7 @@ class AlgorithmSpecification final :
                &_AlgorithmSpecification_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   void Swap(AlgorithmSpecification* other);
   friend void swap(AlgorithmSpecification& a, AlgorithmSpecification& b) {
@@ -385,17 +655,17 @@ class AlgorithmSpecification final :
   ::std::string* release_algorithm_version();
   void set_allocated_algorithm_version(::std::string* algorithm_version);
 
-  // .flyteidl.plugins.sagemaker.InputMode input_mode = 1;
+  // .flyteidl.plugins.sagemaker.InputMode.Value input_mode = 1;
   void clear_input_mode();
   static const int kInputModeFieldNumber = 1;
-  ::flyteidl::plugins::sagemaker::InputMode input_mode() const;
-  void set_input_mode(::flyteidl::plugins::sagemaker::InputMode value);
+  ::flyteidl::plugins::sagemaker::InputMode_Value input_mode() const;
+  void set_input_mode(::flyteidl::plugins::sagemaker::InputMode_Value value);
 
-  // .flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;
+  // .flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;
   void clear_algorithm_name();
   static const int kAlgorithmNameFieldNumber = 2;
-  ::flyteidl::plugins::sagemaker::AlgorithmName algorithm_name() const;
-  void set_algorithm_name(::flyteidl::plugins::sagemaker::AlgorithmName value);
+  ::flyteidl::plugins::sagemaker::AlgorithmName_Value algorithm_name() const;
+  void set_algorithm_name(::flyteidl::plugins::sagemaker::AlgorithmName_Value value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.AlgorithmSpecification)
  private:
@@ -411,25 +681,25 @@ class AlgorithmSpecification final :
 };
 // -------------------------------------------------------------------
 
-class TrainingJobConfig final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.sagemaker.TrainingJobConfig) */ {
+class TrainingJobResourceConfig final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.sagemaker.TrainingJobResourceConfig) */ {
  public:
-  TrainingJobConfig();
-  virtual ~TrainingJobConfig();
+  TrainingJobResourceConfig();
+  virtual ~TrainingJobResourceConfig();
 
-  TrainingJobConfig(const TrainingJobConfig& from);
+  TrainingJobResourceConfig(const TrainingJobResourceConfig& from);
 
-  inline TrainingJobConfig& operator=(const TrainingJobConfig& from) {
+  inline TrainingJobResourceConfig& operator=(const TrainingJobResourceConfig& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  TrainingJobConfig(TrainingJobConfig&& from) noexcept
-    : TrainingJobConfig() {
+  TrainingJobResourceConfig(TrainingJobResourceConfig&& from) noexcept
+    : TrainingJobResourceConfig() {
     *this = ::std::move(from);
   }
 
-  inline TrainingJobConfig& operator=(TrainingJobConfig&& from) noexcept {
+  inline TrainingJobResourceConfig& operator=(TrainingJobResourceConfig&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -441,34 +711,34 @@ class TrainingJobConfig final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const TrainingJobConfig& default_instance();
+  static const TrainingJobResourceConfig& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const TrainingJobConfig* internal_default_instance() {
-    return reinterpret_cast<const TrainingJobConfig*>(
-               &_TrainingJobConfig_default_instance_);
+  static inline const TrainingJobResourceConfig* internal_default_instance() {
+    return reinterpret_cast<const TrainingJobResourceConfig*>(
+               &_TrainingJobResourceConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
-  void Swap(TrainingJobConfig* other);
-  friend void swap(TrainingJobConfig& a, TrainingJobConfig& b) {
+  void Swap(TrainingJobResourceConfig* other);
+  friend void swap(TrainingJobResourceConfig& a, TrainingJobResourceConfig& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline TrainingJobConfig* New() const final {
-    return CreateMaybeMessage<TrainingJobConfig>(nullptr);
+  inline TrainingJobResourceConfig* New() const final {
+    return CreateMaybeMessage<TrainingJobResourceConfig>(nullptr);
   }
 
-  TrainingJobConfig* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<TrainingJobConfig>(arena);
+  TrainingJobResourceConfig* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<TrainingJobResourceConfig>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const TrainingJobConfig& from);
-  void MergeFrom(const TrainingJobConfig& from);
+  void CopyFrom(const TrainingJobResourceConfig& from);
+  void MergeFrom(const TrainingJobResourceConfig& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -490,7 +760,7 @@ class TrainingJobConfig final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(TrainingJobConfig* other);
+  void InternalSwap(TrainingJobResourceConfig* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -532,7 +802,7 @@ class TrainingJobConfig final :
   ::google::protobuf::int64 volume_size_in_gb() const;
   void set_volume_size_in_gb(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.TrainingJobConfig)
+  // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.TrainingJobResourceConfig)
  private:
   class HasBitSetters;
 
@@ -583,7 +853,7 @@ class StoppingCondition final :
                &_StoppingCondition_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   void Swap(StoppingCondition* other);
   friend void swap(StoppingCondition& a, StoppingCondition& b) {
@@ -702,7 +972,7 @@ class TrainingJob final :
                &_TrainingJob_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   void Swap(TrainingJob* other);
   friend void swap(TrainingJob& a, TrainingJob& b) {
@@ -768,14 +1038,14 @@ class TrainingJob final :
   ::flyteidl::plugins::sagemaker::AlgorithmSpecification* mutable_algorithm_specification();
   void set_allocated_algorithm_specification(::flyteidl::plugins::sagemaker::AlgorithmSpecification* algorithm_specification);
 
-  // .flyteidl.plugins.sagemaker.TrainingJobConfig training_job_config = 2;
+  // .flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;
   bool has_training_job_config() const;
   void clear_training_job_config();
   static const int kTrainingJobConfigFieldNumber = 2;
-  const ::flyteidl::plugins::sagemaker::TrainingJobConfig& training_job_config() const;
-  ::flyteidl::plugins::sagemaker::TrainingJobConfig* release_training_job_config();
-  ::flyteidl::plugins::sagemaker::TrainingJobConfig* mutable_training_job_config();
-  void set_allocated_training_job_config(::flyteidl::plugins::sagemaker::TrainingJobConfig* training_job_config);
+  const ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig& training_job_config() const;
+  ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* release_training_job_config();
+  ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* mutable_training_job_config();
+  void set_allocated_training_job_config(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* training_job_config);
 
   // bool interruptible = 3;
   void clear_interruptible();
@@ -789,7 +1059,7 @@ class TrainingJob final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::flyteidl::plugins::sagemaker::AlgorithmSpecification* algorithm_specification_;
-  ::flyteidl::plugins::sagemaker::TrainingJobConfig* training_job_config_;
+  ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* training_job_config_;
   bool interruptible_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
@@ -803,6 +1073,14 @@ class TrainingJob final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// InputMode
+
+// -------------------------------------------------------------------
+
+// AlgorithmName
+
+// -------------------------------------------------------------------
+
 // AlgorithmSpecification_MetricDefinition
 
 // string name = 1;
@@ -915,29 +1193,29 @@ inline void AlgorithmSpecification_MetricDefinition::set_allocated_regex(::std::
 
 // AlgorithmSpecification
 
-// .flyteidl.plugins.sagemaker.InputMode input_mode = 1;
+// .flyteidl.plugins.sagemaker.InputMode.Value input_mode = 1;
 inline void AlgorithmSpecification::clear_input_mode() {
   input_mode_ = 0;
 }
-inline ::flyteidl::plugins::sagemaker::InputMode AlgorithmSpecification::input_mode() const {
+inline ::flyteidl::plugins::sagemaker::InputMode_Value AlgorithmSpecification::input_mode() const {
   // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.input_mode)
-  return static_cast< ::flyteidl::plugins::sagemaker::InputMode >(input_mode_);
+  return static_cast< ::flyteidl::plugins::sagemaker::InputMode_Value >(input_mode_);
 }
-inline void AlgorithmSpecification::set_input_mode(::flyteidl::plugins::sagemaker::InputMode value) {
+inline void AlgorithmSpecification::set_input_mode(::flyteidl::plugins::sagemaker::InputMode_Value value) {
   
   input_mode_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.AlgorithmSpecification.input_mode)
 }
 
-// .flyteidl.plugins.sagemaker.AlgorithmName algorithm_name = 2;
+// .flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;
 inline void AlgorithmSpecification::clear_algorithm_name() {
   algorithm_name_ = 0;
 }
-inline ::flyteidl::plugins::sagemaker::AlgorithmName AlgorithmSpecification::algorithm_name() const {
+inline ::flyteidl::plugins::sagemaker::AlgorithmName_Value AlgorithmSpecification::algorithm_name() const {
   // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.algorithm_name)
-  return static_cast< ::flyteidl::plugins::sagemaker::AlgorithmName >(algorithm_name_);
+  return static_cast< ::flyteidl::plugins::sagemaker::AlgorithmName_Value >(algorithm_name_);
 }
-inline void AlgorithmSpecification::set_algorithm_name(::flyteidl::plugins::sagemaker::AlgorithmName value) {
+inline void AlgorithmSpecification::set_algorithm_name(::flyteidl::plugins::sagemaker::AlgorithmName_Value value) {
   
   algorithm_name_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.AlgorithmSpecification.algorithm_name)
@@ -1028,87 +1306,87 @@ AlgorithmSpecification::metric_definitions() const {
 
 // -------------------------------------------------------------------
 
-// TrainingJobConfig
+// TrainingJobResourceConfig
 
 // int64 instance_count = 1;
-inline void TrainingJobConfig::clear_instance_count() {
+inline void TrainingJobResourceConfig::clear_instance_count() {
   instance_count_ = PROTOBUF_LONGLONG(0);
 }
-inline ::google::protobuf::int64 TrainingJobConfig::instance_count() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJobConfig.instance_count)
+inline ::google::protobuf::int64 TrainingJobResourceConfig::instance_count() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.instance_count)
   return instance_count_;
 }
-inline void TrainingJobConfig::set_instance_count(::google::protobuf::int64 value) {
+inline void TrainingJobResourceConfig::set_instance_count(::google::protobuf::int64 value) {
   
   instance_count_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJobConfig.instance_count)
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.instance_count)
 }
 
 // string instance_type = 2;
-inline void TrainingJobConfig::clear_instance_type() {
+inline void TrainingJobResourceConfig::clear_instance_type() {
   instance_type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& TrainingJobConfig::instance_type() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJobConfig.instance_type)
+inline const ::std::string& TrainingJobResourceConfig::instance_type() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.instance_type)
   return instance_type_.GetNoArena();
 }
-inline void TrainingJobConfig::set_instance_type(const ::std::string& value) {
+inline void TrainingJobResourceConfig::set_instance_type(const ::std::string& value) {
   
   instance_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJobConfig.instance_type)
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.instance_type)
 }
 #if LANG_CXX11
-inline void TrainingJobConfig::set_instance_type(::std::string&& value) {
+inline void TrainingJobResourceConfig::set_instance_type(::std::string&& value) {
   
   instance_type_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.TrainingJobConfig.instance_type)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.instance_type)
 }
 #endif
-inline void TrainingJobConfig::set_instance_type(const char* value) {
+inline void TrainingJobResourceConfig::set_instance_type(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   instance_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.TrainingJobConfig.instance_type)
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.instance_type)
 }
-inline void TrainingJobConfig::set_instance_type(const char* value, size_t size) {
+inline void TrainingJobResourceConfig::set_instance_type(const char* value, size_t size) {
   
   instance_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.TrainingJobConfig.instance_type)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.instance_type)
 }
-inline ::std::string* TrainingJobConfig::mutable_instance_type() {
+inline ::std::string* TrainingJobResourceConfig::mutable_instance_type() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJobConfig.instance_type)
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.instance_type)
   return instance_type_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* TrainingJobConfig::release_instance_type() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJobConfig.instance_type)
+inline ::std::string* TrainingJobResourceConfig::release_instance_type() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.instance_type)
   
   return instance_type_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void TrainingJobConfig::set_allocated_instance_type(::std::string* instance_type) {
+inline void TrainingJobResourceConfig::set_allocated_instance_type(::std::string* instance_type) {
   if (instance_type != nullptr) {
     
   } else {
     
   }
   instance_type_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), instance_type);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJobConfig.instance_type)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.instance_type)
 }
 
 // int64 volume_size_in_gb = 3;
-inline void TrainingJobConfig::clear_volume_size_in_gb() {
+inline void TrainingJobResourceConfig::clear_volume_size_in_gb() {
   volume_size_in_gb_ = PROTOBUF_LONGLONG(0);
 }
-inline ::google::protobuf::int64 TrainingJobConfig::volume_size_in_gb() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJobConfig.volume_size_in_gb)
+inline ::google::protobuf::int64 TrainingJobResourceConfig::volume_size_in_gb() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.volume_size_in_gb)
   return volume_size_in_gb_;
 }
-inline void TrainingJobConfig::set_volume_size_in_gb(::google::protobuf::int64 value) {
+inline void TrainingJobResourceConfig::set_volume_size_in_gb(::google::protobuf::int64 value) {
   
   volume_size_in_gb_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJobConfig.volume_size_in_gb)
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJobResourceConfig.volume_size_in_gb)
 }
 
 // -------------------------------------------------------------------
@@ -1198,7 +1476,7 @@ inline void TrainingJob::set_allocated_algorithm_specification(::flyteidl::plugi
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.algorithm_specification)
 }
 
-// .flyteidl.plugins.sagemaker.TrainingJobConfig training_job_config = 2;
+// .flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;
 inline bool TrainingJob::has_training_job_config() const {
   return this != internal_default_instance() && training_job_config_ != nullptr;
 }
@@ -1208,29 +1486,29 @@ inline void TrainingJob::clear_training_job_config() {
   }
   training_job_config_ = nullptr;
 }
-inline const ::flyteidl::plugins::sagemaker::TrainingJobConfig& TrainingJob::training_job_config() const {
-  const ::flyteidl::plugins::sagemaker::TrainingJobConfig* p = training_job_config_;
+inline const ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig& TrainingJob::training_job_config() const {
+  const ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* p = training_job_config_;
   // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.training_job_config)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::sagemaker::TrainingJobConfig*>(
-      &::flyteidl::plugins::sagemaker::_TrainingJobConfig_default_instance_);
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig*>(
+      &::flyteidl::plugins::sagemaker::_TrainingJobResourceConfig_default_instance_);
 }
-inline ::flyteidl::plugins::sagemaker::TrainingJobConfig* TrainingJob::release_training_job_config() {
+inline ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* TrainingJob::release_training_job_config() {
   // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJob.training_job_config)
   
-  ::flyteidl::plugins::sagemaker::TrainingJobConfig* temp = training_job_config_;
+  ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* temp = training_job_config_;
   training_job_config_ = nullptr;
   return temp;
 }
-inline ::flyteidl::plugins::sagemaker::TrainingJobConfig* TrainingJob::mutable_training_job_config() {
+inline ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* TrainingJob::mutable_training_job_config() {
   
   if (training_job_config_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::plugins::sagemaker::TrainingJobConfig>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::flyteidl::plugins::sagemaker::TrainingJobResourceConfig>(GetArenaNoVirtual());
     training_job_config_ = p;
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJob.training_job_config)
   return training_job_config_;
 }
-inline void TrainingJob::set_allocated_training_job_config(::flyteidl::plugins::sagemaker::TrainingJobConfig* training_job_config) {
+inline void TrainingJob::set_allocated_training_job_config(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* training_job_config) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete training_job_config_;
@@ -1274,6 +1552,10 @@ inline void TrainingJob::set_interruptible(bool value) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -1284,15 +1566,15 @@ inline void TrainingJob::set_interruptible(bool value) {
 namespace google {
 namespace protobuf {
 
-template <> struct is_proto_enum< ::flyteidl::plugins::sagemaker::InputMode> : ::std::true_type {};
+template <> struct is_proto_enum< ::flyteidl::plugins::sagemaker::InputMode_Value> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::plugins::sagemaker::InputMode>() {
-  return ::flyteidl::plugins::sagemaker::InputMode_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::plugins::sagemaker::InputMode_Value>() {
+  return ::flyteidl::plugins::sagemaker::InputMode_Value_descriptor();
 }
-template <> struct is_proto_enum< ::flyteidl::plugins::sagemaker::AlgorithmName> : ::std::true_type {};
+template <> struct is_proto_enum< ::flyteidl::plugins::sagemaker::AlgorithmName_Value> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::plugins::sagemaker::AlgorithmName>() {
-  return ::flyteidl::plugins::sagemaker::AlgorithmName_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::plugins::sagemaker::AlgorithmName_Value>() {
+  return ::flyteidl::plugins::sagemaker::AlgorithmName_Value_descriptor();
 }
 
 }  // namespace protobuf

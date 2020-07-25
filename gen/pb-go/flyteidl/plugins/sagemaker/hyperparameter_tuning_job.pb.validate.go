@@ -117,6 +117,74 @@ var _ interface {
 	ErrorName() string
 } = HyperparameterTuningJobValidationError{}
 
+// Validate checks the field values on HyperparameterTuningObjectiveType with
+// the rules defined in the proto definition for this message. If any rules
+// are violated, an error is returned.
+func (m *HyperparameterTuningObjectiveType) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	return nil
+}
+
+// HyperparameterTuningObjectiveTypeValidationError is the validation error
+// returned by HyperparameterTuningObjectiveType.Validate if the designated
+// constraints aren't met.
+type HyperparameterTuningObjectiveTypeValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e HyperparameterTuningObjectiveTypeValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e HyperparameterTuningObjectiveTypeValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e HyperparameterTuningObjectiveTypeValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e HyperparameterTuningObjectiveTypeValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e HyperparameterTuningObjectiveTypeValidationError) ErrorName() string {
+	return "HyperparameterTuningObjectiveTypeValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e HyperparameterTuningObjectiveTypeValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sHyperparameterTuningObjectiveType.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = HyperparameterTuningObjectiveTypeValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = HyperparameterTuningObjectiveTypeValidationError{}
+
 // Validate checks the field values on HyperparameterTuningObjective with the
 // rules defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
@@ -189,17 +257,153 @@ var _ interface {
 	ErrorName() string
 } = HyperparameterTuningObjectiveValidationError{}
 
-// Validate checks the field values on HyperparameterTuningSpecification with
-// the rules defined in the proto definition for this message. If any rules
-// are violated, an error is returned.
-func (m *HyperparameterTuningSpecification) Validate() error {
+// Validate checks the field values on HyperparameterTuningStrategy with the
+// rules defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *HyperparameterTuningStrategy) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	return nil
+}
+
+// HyperparameterTuningStrategyValidationError is the validation error returned
+// by HyperparameterTuningStrategy.Validate if the designated constraints
+// aren't met.
+type HyperparameterTuningStrategyValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e HyperparameterTuningStrategyValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e HyperparameterTuningStrategyValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e HyperparameterTuningStrategyValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e HyperparameterTuningStrategyValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e HyperparameterTuningStrategyValidationError) ErrorName() string {
+	return "HyperparameterTuningStrategyValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e HyperparameterTuningStrategyValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sHyperparameterTuningStrategy.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = HyperparameterTuningStrategyValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = HyperparameterTuningStrategyValidationError{}
+
+// Validate checks the field values on TrainingJobEarlyStoppingType with the
+// rules defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *TrainingJobEarlyStoppingType) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	return nil
+}
+
+// TrainingJobEarlyStoppingTypeValidationError is the validation error returned
+// by TrainingJobEarlyStoppingType.Validate if the designated constraints
+// aren't met.
+type TrainingJobEarlyStoppingTypeValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e TrainingJobEarlyStoppingTypeValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e TrainingJobEarlyStoppingTypeValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e TrainingJobEarlyStoppingTypeValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e TrainingJobEarlyStoppingTypeValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e TrainingJobEarlyStoppingTypeValidationError) ErrorName() string {
+	return "TrainingJobEarlyStoppingTypeValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e TrainingJobEarlyStoppingTypeValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sTrainingJobEarlyStoppingType.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = TrainingJobEarlyStoppingTypeValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = TrainingJobEarlyStoppingTypeValidationError{}
+
+// Validate checks the field values on HyperparameterTuningJobConfig with the
+// rules defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *HyperparameterTuningJobConfig) Validate() error {
 	if m == nil {
 		return nil
 	}
 
 	if v, ok := interface{}(m.GetHyperparameterRanges()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return HyperparameterTuningSpecificationValidationError{
+			return HyperparameterTuningJobConfigValidationError{
 				field:  "HyperparameterRanges",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -211,7 +415,7 @@ func (m *HyperparameterTuningSpecification) Validate() error {
 
 	if v, ok := interface{}(m.GetTuningObjective()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return HyperparameterTuningSpecificationValidationError{
+			return HyperparameterTuningJobConfigValidationError{
 				field:  "TuningObjective",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -224,10 +428,10 @@ func (m *HyperparameterTuningSpecification) Validate() error {
 	return nil
 }
 
-// HyperparameterTuningSpecificationValidationError is the validation error
-// returned by HyperparameterTuningSpecification.Validate if the designated
+// HyperparameterTuningJobConfigValidationError is the validation error
+// returned by HyperparameterTuningJobConfig.Validate if the designated
 // constraints aren't met.
-type HyperparameterTuningSpecificationValidationError struct {
+type HyperparameterTuningJobConfigValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -235,24 +439,24 @@ type HyperparameterTuningSpecificationValidationError struct {
 }
 
 // Field function returns field value.
-func (e HyperparameterTuningSpecificationValidationError) Field() string { return e.field }
+func (e HyperparameterTuningJobConfigValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e HyperparameterTuningSpecificationValidationError) Reason() string { return e.reason }
+func (e HyperparameterTuningJobConfigValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e HyperparameterTuningSpecificationValidationError) Cause() error { return e.cause }
+func (e HyperparameterTuningJobConfigValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e HyperparameterTuningSpecificationValidationError) Key() bool { return e.key }
+func (e HyperparameterTuningJobConfigValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e HyperparameterTuningSpecificationValidationError) ErrorName() string {
-	return "HyperparameterTuningSpecificationValidationError"
+func (e HyperparameterTuningJobConfigValidationError) ErrorName() string {
+	return "HyperparameterTuningJobConfigValidationError"
 }
 
 // Error satisfies the builtin error interface
-func (e HyperparameterTuningSpecificationValidationError) Error() string {
+func (e HyperparameterTuningJobConfigValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -264,14 +468,14 @@ func (e HyperparameterTuningSpecificationValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sHyperparameterTuningSpecification.%s: %s%s",
+		"invalid %sHyperparameterTuningJobConfig.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = HyperparameterTuningSpecificationValidationError{}
+var _ error = HyperparameterTuningJobConfigValidationError{}
 
 var _ interface {
 	Field() string
@@ -279,4 +483,4 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = HyperparameterTuningSpecificationValidationError{}
+} = HyperparameterTuningJobConfigValidationError{}

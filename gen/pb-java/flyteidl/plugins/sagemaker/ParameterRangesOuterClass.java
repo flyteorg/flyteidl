@@ -14,125 +14,541 @@ public final class ParameterRangesOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface HyperparameterScalingTypeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+      com.google.protobuf.MessageOrBuilder {
+  }
   /**
    * <pre>
    * HyperparameterScalingType defines the way to increase or decrease the value of the hyperparameter
    * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
    * </pre>
    *
-   * Protobuf enum {@code flyteidl.plugins.sagemaker.HyperparameterScalingType}
+   * Protobuf type {@code flyteidl.plugins.sagemaker.HyperparameterScalingType}
    */
-  public enum HyperparameterScalingType
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>AUTO = 0;</code>
-     */
-    AUTO(0),
-    /**
-     * <code>LINEAR = 1;</code>
-     */
-    LINEAR(1),
-    /**
-     * <code>LOGARITHMIC = 2;</code>
-     */
-    LOGARITHMIC(2),
-    /**
-     * <code>REVERSELOGARITHMIC = 3;</code>
-     */
-    REVERSELOGARITHMIC(3),
-    UNRECOGNIZED(-1),
-    ;
+  public  static final class HyperparameterScalingType extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+      HyperparameterScalingTypeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use HyperparameterScalingType.newBuilder() to construct.
+    private HyperparameterScalingType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private HyperparameterScalingType() {
+    }
 
-    /**
-     * <code>AUTO = 0;</code>
-     */
-    public static final int AUTO_VALUE = 0;
-    /**
-     * <code>LINEAR = 1;</code>
-     */
-    public static final int LINEAR_VALUE = 1;
-    /**
-     * <code>LOGARITHMIC = 2;</code>
-     */
-    public static final int LOGARITHMIC_VALUE = 2;
-    /**
-     * <code>REVERSELOGARITHMIC = 3;</code>
-     */
-    public static final int REVERSELOGARITHMIC_VALUE = 3;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private HyperparameterScalingType(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
       }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static HyperparameterScalingType valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static HyperparameterScalingType forNumber(int value) {
-      switch (value) {
-        case 0: return AUTO;
-        case 1: return LINEAR;
-        case 2: return LOGARITHMIC;
-        case 3: return REVERSELOGARITHMIC;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<HyperparameterScalingType>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        HyperparameterScalingType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<HyperparameterScalingType>() {
-            public HyperparameterScalingType findValueByNumber(int number) {
-              return HyperparameterScalingType.forNumber(number);
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
+    public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.plugins.sagemaker.ParameterRangesOuterClass.getDescriptor().getEnumTypes().get(0);
+      return flyteidl.plugins.sagemaker.ParameterRangesOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterScalingType_descriptor;
     }
 
-    private static final HyperparameterScalingType[] VALUES = values();
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.plugins.sagemaker.ParameterRangesOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterScalingType_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.class, flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Builder.class);
+    }
 
-    public static HyperparameterScalingType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+    /**
+     * Protobuf enum {@code flyteidl.plugins.sagemaker.HyperparameterScalingType.Value}
+     */
+    public enum Value
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>AUTO = 0;</code>
+       */
+      AUTO(0),
+      /**
+       * <code>LINEAR = 1;</code>
+       */
+      LINEAR(1),
+      /**
+       * <code>LOGARITHMIC = 2;</code>
+       */
+      LOGARITHMIC(2),
+      /**
+       * <code>REVERSELOGARITHMIC = 3;</code>
+       */
+      REVERSELOGARITHMIC(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>AUTO = 0;</code>
+       */
+      public static final int AUTO_VALUE = 0;
+      /**
+       * <code>LINEAR = 1;</code>
+       */
+      public static final int LINEAR_VALUE = 1;
+      /**
+       * <code>LOGARITHMIC = 2;</code>
+       */
+      public static final int LOGARITHMIC_VALUE = 2;
+      /**
+       * <code>REVERSELOGARITHMIC = 3;</code>
+       */
+      public static final int REVERSELOGARITHMIC_VALUE = 3;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
       }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Value valueOf(int value) {
+        return forNumber(value);
       }
-      return VALUES[desc.getIndex()];
+
+      public static Value forNumber(int value) {
+        switch (value) {
+          case 0: return AUTO;
+          case 1: return LINEAR;
+          case 2: return LOGARITHMIC;
+          case 3: return REVERSELOGARITHMIC;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Value>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Value> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Value>() {
+              public Value findValueByNumber(int number) {
+                return Value.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Value[] VALUES = values();
+
+      public static Value valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Value(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:flyteidl.plugins.sagemaker.HyperparameterScalingType.Value)
     }
 
-    private final int value;
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
-    private HyperparameterScalingType(int value) {
-      this.value = value;
+      memoizedIsInitialized = 1;
+      return true;
     }
 
-    // @@protoc_insertion_point(enum_scope:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType)) {
+        return super.equals(obj);
+      }
+      flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType other = (flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * HyperparameterScalingType defines the way to increase or decrease the value of the hyperparameter
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.plugins.sagemaker.HyperparameterScalingType}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+        flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingTypeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.plugins.sagemaker.ParameterRangesOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterScalingType_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.plugins.sagemaker.ParameterRangesOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterScalingType_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.class, flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Builder.class);
+      }
+
+      // Construct using flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.plugins.sagemaker.ParameterRangesOuterClass.internal_static_flyteidl_plugins_sagemaker_HyperparameterScalingType_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType getDefaultInstanceForType() {
+        return flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType build() {
+        flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType buildPartial() {
+        flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType result = new flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType) {
+          return mergeFrom((flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType other) {
+        if (other == flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.HyperparameterScalingType)
+    private static final flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType();
+    }
+
+    public static flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HyperparameterScalingType>
+        PARSER = new com.google.protobuf.AbstractParser<HyperparameterScalingType>() {
+      @java.lang.Override
+      public HyperparameterScalingType parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new HyperparameterScalingType(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<HyperparameterScalingType> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HyperparameterScalingType> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface ContinuousParameterRangeOrBuilder extends
@@ -150,18 +566,19 @@ public final class ParameterRangesOuterClass {
     double getMinValue();
 
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;</code>
      */
     int getScalingTypeValue();
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;</code>
      */
-    flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType getScalingType();
+    flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value getScalingType();
   }
   /**
    * <pre>
    * ContinuousParameterRange refers to a continuous range of hyperparameter values, allowing
    * users to specify the search space of a floating-point hyperparameter
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
    * </pre>
    *
    * Protobuf type {@code flyteidl.plugins.sagemaker.ContinuousParameterRange}
@@ -272,18 +689,18 @@ public final class ParameterRangesOuterClass {
     public static final int SCALING_TYPE_FIELD_NUMBER = 3;
     private int scalingType_;
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;</code>
      */
     public int getScalingTypeValue() {
       return scalingType_;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;</code>
      */
-    public flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType getScalingType() {
+    public flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value getScalingType() {
       @SuppressWarnings("deprecation")
-      flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType result = flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.valueOf(scalingType_);
-      return result == null ? flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.UNRECOGNIZED : result;
+      flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value result = flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value.valueOf(scalingType_);
+      return result == null ? flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -306,7 +723,7 @@ public final class ParameterRangesOuterClass {
       if (minValue_ != 0D) {
         output.writeDouble(2, minValue_);
       }
-      if (scalingType_ != flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.AUTO.getNumber()) {
+      if (scalingType_ != flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value.AUTO.getNumber()) {
         output.writeEnum(3, scalingType_);
       }
       unknownFields.writeTo(output);
@@ -326,7 +743,7 @@ public final class ParameterRangesOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(2, minValue_);
       }
-      if (scalingType_ != flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.AUTO.getNumber()) {
+      if (scalingType_ != flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value.AUTO.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, scalingType_);
       }
@@ -470,6 +887,7 @@ public final class ParameterRangesOuterClass {
      * <pre>
      * ContinuousParameterRange refers to a continuous range of hyperparameter values, allowing
      * users to specify the search space of a floating-point hyperparameter
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
      * </pre>
      *
      * Protobuf type {@code flyteidl.plugins.sagemaker.ContinuousParameterRange}
@@ -684,13 +1102,13 @@ public final class ParameterRangesOuterClass {
 
       private int scalingType_ = 0;
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;</code>
        */
       public int getScalingTypeValue() {
         return scalingType_;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;</code>
        */
       public Builder setScalingTypeValue(int value) {
         scalingType_ = value;
@@ -698,17 +1116,17 @@ public final class ParameterRangesOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;</code>
        */
-      public flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType getScalingType() {
+      public flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value getScalingType() {
         @SuppressWarnings("deprecation")
-        flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType result = flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.valueOf(scalingType_);
-        return result == null ? flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.UNRECOGNIZED : result;
+        flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value result = flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value.valueOf(scalingType_);
+        return result == null ? flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value.UNRECOGNIZED : result;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;</code>
        */
-      public Builder setScalingType(flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType value) {
+      public Builder setScalingType(flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -718,7 +1136,7 @@ public final class ParameterRangesOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;</code>
        */
       public Builder clearScalingType() {
         
@@ -794,18 +1212,19 @@ public final class ParameterRangesOuterClass {
     long getMinValue();
 
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;</code>
      */
     int getScalingTypeValue();
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;</code>
      */
-    flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType getScalingType();
+    flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value getScalingType();
   }
   /**
    * <pre>
    * IntegerParameterRange refers to a discrete range of hyperparameter values, allowing
    * users to specify the search space of an integer hyperparameter
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
    * </pre>
    *
    * Protobuf type {@code flyteidl.plugins.sagemaker.IntegerParameterRange}
@@ -916,18 +1335,18 @@ public final class ParameterRangesOuterClass {
     public static final int SCALING_TYPE_FIELD_NUMBER = 3;
     private int scalingType_;
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;</code>
      */
     public int getScalingTypeValue() {
       return scalingType_;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
+     * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;</code>
      */
-    public flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType getScalingType() {
+    public flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value getScalingType() {
       @SuppressWarnings("deprecation")
-      flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType result = flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.valueOf(scalingType_);
-      return result == null ? flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.UNRECOGNIZED : result;
+      flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value result = flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value.valueOf(scalingType_);
+      return result == null ? flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -950,7 +1369,7 @@ public final class ParameterRangesOuterClass {
       if (minValue_ != 0L) {
         output.writeInt64(2, minValue_);
       }
-      if (scalingType_ != flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.AUTO.getNumber()) {
+      if (scalingType_ != flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value.AUTO.getNumber()) {
         output.writeEnum(3, scalingType_);
       }
       unknownFields.writeTo(output);
@@ -970,7 +1389,7 @@ public final class ParameterRangesOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, minValue_);
       }
-      if (scalingType_ != flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.AUTO.getNumber()) {
+      if (scalingType_ != flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value.AUTO.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, scalingType_);
       }
@@ -1112,6 +1531,7 @@ public final class ParameterRangesOuterClass {
      * <pre>
      * IntegerParameterRange refers to a discrete range of hyperparameter values, allowing
      * users to specify the search space of an integer hyperparameter
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
      * </pre>
      *
      * Protobuf type {@code flyteidl.plugins.sagemaker.IntegerParameterRange}
@@ -1326,13 +1746,13 @@ public final class ParameterRangesOuterClass {
 
       private int scalingType_ = 0;
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;</code>
        */
       public int getScalingTypeValue() {
         return scalingType_;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;</code>
        */
       public Builder setScalingTypeValue(int value) {
         scalingType_ = value;
@@ -1340,17 +1760,17 @@ public final class ParameterRangesOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;</code>
        */
-      public flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType getScalingType() {
+      public flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value getScalingType() {
         @SuppressWarnings("deprecation")
-        flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType result = flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.valueOf(scalingType_);
-        return result == null ? flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.UNRECOGNIZED : result;
+        flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value result = flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value.valueOf(scalingType_);
+        return result == null ? flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value.UNRECOGNIZED : result;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;</code>
        */
-      public Builder setScalingType(flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType value) {
+      public Builder setScalingType(flyteidl.plugins.sagemaker.ParameterRangesOuterClass.HyperparameterScalingType.Value value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1360,7 +1780,7 @@ public final class ParameterRangesOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType scaling_type = 3;</code>
+       * <code>.flyteidl.plugins.sagemaker.HyperparameterScalingType.Value scaling_type = 3;</code>
        */
       public Builder clearScalingType() {
         
@@ -1448,6 +1868,7 @@ public final class ParameterRangesOuterClass {
    * <pre>
    * ContinuousParameterRange refers to a continuous range of hyperparameter values, allowing
    * users to specify the search space of a floating-point hyperparameter
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
    * </pre>
    *
    * Protobuf type {@code flyteidl.plugins.sagemaker.CategoricalParameterRange}
@@ -1727,6 +2148,7 @@ public final class ParameterRangesOuterClass {
      * <pre>
      * ContinuousParameterRange refers to a continuous range of hyperparameter values, allowing
      * users to specify the search space of a floating-point hyperparameter
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
      * </pre>
      *
      * Protobuf type {@code flyteidl.plugins.sagemaker.CategoricalParameterRange}
@@ -3206,6 +3628,7 @@ public final class ParameterRangesOuterClass {
   /**
    * <pre>
    * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
    * </pre>
    *
    * Protobuf type {@code flyteidl.plugins.sagemaker.ParameterRanges}
@@ -3548,6 +3971,7 @@ public final class ParameterRangesOuterClass {
     /**
      * <pre>
      * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
      * </pre>
      *
      * Protobuf type {@code flyteidl.plugins.sagemaker.ParameterRanges}
@@ -3895,6 +4319,11 @@ public final class ParameterRangesOuterClass {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_plugins_sagemaker_HyperparameterScalingType_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_plugins_sagemaker_HyperparameterScalingType_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_plugins_sagemaker_ContinuousParameterRange_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -3935,32 +4364,33 @@ public final class ParameterRangesOuterClass {
     java.lang.String[] descriptorData = {
       "\n1flyteidl/plugins/sagemaker/parameter_r" +
       "anges.proto\022\032flyteidl.plugins.sagemaker\"" +
-      "\215\001\n\030ContinuousParameterRange\022\021\n\tmax_valu" +
-      "e\030\001 \001(\001\022\021\n\tmin_value\030\002 \001(\001\022K\n\014scaling_ty" +
-      "pe\030\003 \001(\01625.flyteidl.plugins.sagemaker.Hy" +
-      "perparameterScalingType\"\212\001\n\025IntegerParam" +
-      "eterRange\022\021\n\tmax_value\030\001 \001(\003\022\021\n\tmin_valu" +
-      "e\030\002 \001(\003\022K\n\014scaling_type\030\003 \001(\01625.flyteidl" +
+      "c\n\031HyperparameterScalingType\"F\n\005Value\022\010\n" +
+      "\004AUTO\020\000\022\n\n\006LINEAR\020\001\022\017\n\013LOGARITHMIC\020\002\022\026\n\022" +
+      "REVERSELOGARITHMIC\020\003\"\223\001\n\030ContinuousParam" +
+      "eterRange\022\021\n\tmax_value\030\001 \001(\001\022\021\n\tmin_valu" +
+      "e\030\002 \001(\001\022Q\n\014scaling_type\030\003 \001(\0162;.flyteidl" +
       ".plugins.sagemaker.HyperparameterScaling" +
-      "Type\"+\n\031CategoricalParameterRange\022\016\n\006val" +
-      "ues\030\001 \003(\t\"\275\002\n\023ParameterRangeOneOf\022Z\n\032con" +
-      "tinuous_parameter_range\030\001 \001(\01324.flyteidl" +
-      ".plugins.sagemaker.ContinuousParameterRa" +
-      "ngeH\000\022T\n\027integer_parameter_range\030\002 \001(\01321" +
-      ".flyteidl.plugins.sagemaker.IntegerParam" +
-      "eterRangeH\000\022\\\n\033categorical_parameter_ran" +
-      "ge\030\003 \001(\01325.flyteidl.plugins.sagemaker.Ca" +
-      "tegoricalParameterRangeH\000B\026\n\024parameter_r" +
-      "ange_type\"\335\001\n\017ParameterRanges\022_\n\023paramet" +
-      "er_range_map\030\001 \003(\0132B.flyteidl.plugins.sa" +
-      "gemaker.ParameterRanges.ParameterRangeMa" +
-      "pEntry\032i\n\026ParameterRangeMapEntry\022\013\n\003key\030" +
-      "\001 \001(\t\022>\n\005value\030\002 \001(\0132/.flyteidl.plugins." +
-      "sagemaker.ParameterRangeOneOf:\0028\001*Z\n\031Hyp" +
-      "erparameterScalingType\022\010\n\004AUTO\020\000\022\n\n\006LINE" +
-      "AR\020\001\022\017\n\013LOGARITHMIC\020\002\022\026\n\022REVERSELOGARITH" +
-      "MIC\020\003B5Z3github.com/lyft/flyteidl/gen/pb" +
-      "-go/flyteidl/pluginsb\006proto3"
+      "Type.Value\"\220\001\n\025IntegerParameterRange\022\021\n\t" +
+      "max_value\030\001 \001(\003\022\021\n\tmin_value\030\002 \001(\003\022Q\n\014sc" +
+      "aling_type\030\003 \001(\0162;.flyteidl.plugins.sage" +
+      "maker.HyperparameterScalingType.Value\"+\n" +
+      "\031CategoricalParameterRange\022\016\n\006values\030\001 \003" +
+      "(\t\"\275\002\n\023ParameterRangeOneOf\022Z\n\032continuous" +
+      "_parameter_range\030\001 \001(\01324.flyteidl.plugin" +
+      "s.sagemaker.ContinuousParameterRangeH\000\022T" +
+      "\n\027integer_parameter_range\030\002 \001(\01321.flytei" +
+      "dl.plugins.sagemaker.IntegerParameterRan" +
+      "geH\000\022\\\n\033categorical_parameter_range\030\003 \001(" +
+      "\01325.flyteidl.plugins.sagemaker.Categoric" +
+      "alParameterRangeH\000B\026\n\024parameter_range_ty" +
+      "pe\"\335\001\n\017ParameterRanges\022_\n\023parameter_rang" +
+      "e_map\030\001 \003(\0132B.flyteidl.plugins.sagemaker" +
+      ".ParameterRanges.ParameterRangeMapEntry\032" +
+      "i\n\026ParameterRangeMapEntry\022\013\n\003key\030\001 \001(\t\022>" +
+      "\n\005value\030\002 \001(\0132/.flyteidl.plugins.sagemak" +
+      "er.ParameterRangeOneOf:\0028\001B5Z3github.com" +
+      "/lyft/flyteidl/gen/pb-go/flyteidl/plugin" +
+      "sb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3974,32 +4404,38 @@ public final class ParameterRangesOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_flyteidl_plugins_sagemaker_ContinuousParameterRange_descriptor =
+    internal_static_flyteidl_plugins_sagemaker_HyperparameterScalingType_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_flyteidl_plugins_sagemaker_HyperparameterScalingType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_plugins_sagemaker_HyperparameterScalingType_descriptor,
+        new java.lang.String[] { });
+    internal_static_flyteidl_plugins_sagemaker_ContinuousParameterRange_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_plugins_sagemaker_ContinuousParameterRange_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_ContinuousParameterRange_descriptor,
         new java.lang.String[] { "MaxValue", "MinValue", "ScalingType", });
     internal_static_flyteidl_plugins_sagemaker_IntegerParameterRange_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_plugins_sagemaker_IntegerParameterRange_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_IntegerParameterRange_descriptor,
         new java.lang.String[] { "MaxValue", "MinValue", "ScalingType", });
     internal_static_flyteidl_plugins_sagemaker_CategoricalParameterRange_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_plugins_sagemaker_CategoricalParameterRange_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_CategoricalParameterRange_descriptor,
         new java.lang.String[] { "Values", });
     internal_static_flyteidl_plugins_sagemaker_ParameterRangeOneOf_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_plugins_sagemaker_ParameterRangeOneOf_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_ParameterRangeOneOf_descriptor,
         new java.lang.String[] { "ContinuousParameterRange", "IntegerParameterRange", "CategoricalParameterRange", "ParameterRangeType", });
     internal_static_flyteidl_plugins_sagemaker_ParameterRanges_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_plugins_sagemaker_ParameterRanges_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_ParameterRanges_descriptor,

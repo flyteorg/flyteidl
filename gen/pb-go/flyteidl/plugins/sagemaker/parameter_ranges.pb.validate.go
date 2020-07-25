@@ -36,6 +36,73 @@ var (
 // define the regex for a UUID once up-front
 var _parameter_ranges_uuidPattern = regexp.MustCompile("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$")
 
+// Validate checks the field values on HyperparameterScalingType with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *HyperparameterScalingType) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	return nil
+}
+
+// HyperparameterScalingTypeValidationError is the validation error returned by
+// HyperparameterScalingType.Validate if the designated constraints aren't met.
+type HyperparameterScalingTypeValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e HyperparameterScalingTypeValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e HyperparameterScalingTypeValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e HyperparameterScalingTypeValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e HyperparameterScalingTypeValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e HyperparameterScalingTypeValidationError) ErrorName() string {
+	return "HyperparameterScalingTypeValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e HyperparameterScalingTypeValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sHyperparameterScalingType.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = HyperparameterScalingTypeValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = HyperparameterScalingTypeValidationError{}
+
 // Validate checks the field values on ContinuousParameterRange with the rules
 // defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
