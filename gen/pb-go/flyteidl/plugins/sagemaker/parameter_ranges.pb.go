@@ -52,7 +52,8 @@ func (HyperparameterScalingType_Value) EnumDescriptor() ([]byte, []int) {
 }
 
 // HyperparameterScalingType defines the way to increase or decrease the value of the hyperparameter
-// https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
+// For details, refer to: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html
+// See examples of these scaling type, refer to: https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-automatic-model-tuning-now-supports-random-search-and-hyperparameter-scaling/
 type HyperparameterScalingType struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

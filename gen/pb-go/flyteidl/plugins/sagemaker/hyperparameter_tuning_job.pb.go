@@ -188,6 +188,7 @@ func (m *HyperparameterTuningObjectiveType) XXX_DiscardUnknown() {
 var xxx_messageInfo_HyperparameterTuningObjectiveType proto.InternalMessageInfo
 
 // The objective of the hyperparameter tuning
+// https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
 type HyperparameterTuningObjective struct {
 	ObjectiveType HyperparameterTuningObjectiveType_Value `protobuf:"varint,1,opt,name=objective_type,json=objectiveType,proto3,enum=flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType_Value" json:"objective_type,omitempty"`
 	// The target metric name, which is the user-defined name of the metric specified in the
@@ -237,6 +238,9 @@ func (m *HyperparameterTuningObjective) GetMetricName() string {
 	return ""
 }
 
+// Setting the strategy used when doing search in the hyperparameter space
+// Refer this doc for more details:
+// https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-automatic-model-tuning-now-supports-random-search-and-hyperparameter-scaling/
 type HyperparameterTuningStrategy struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

@@ -80,9 +80,10 @@ MAXIMIZE
 flyteidl.plugins.sagemaker.HyperparameterTuningObjective
 --------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.HyperparameterTuningObjective proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L31>`_
+`[flyteidl.plugins.sagemaker.HyperparameterTuningObjective proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L32>`_
 
 The objective of the hyperparameter tuning
+https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
 
 .. code-block:: json
 
@@ -110,8 +111,11 @@ metric_name
 flyteidl.plugins.sagemaker.HyperparameterTuningStrategy
 -------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.HyperparameterTuningStrategy proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L39>`_
+`[flyteidl.plugins.sagemaker.HyperparameterTuningStrategy proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L44>`_
 
+Setting the strategy used when doing search in the hyperparameter space
+Refer this doc for more details:
+https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-automatic-model-tuning-now-supports-random-search-and-hyperparameter-scaling/
 
 .. code-block:: json
 
@@ -124,7 +128,7 @@ flyteidl.plugins.sagemaker.HyperparameterTuningStrategy
 Enum flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value
 ------------------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L40>`_
+`[flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L45>`_
 
 
 .. _api_enum_value_flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value.BAYESIAN:
@@ -143,7 +147,7 @@ RANDOM
 flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType
 -------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L50>`_
+`[flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L55>`_
 
 When the training jobs launched by the hyperparameter tuning job are not improving significantly,
 a hyperparameter tuning job can be stopping early.
@@ -161,7 +165,7 @@ see: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-earl
 Enum flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value
 ------------------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L51>`_
+`[flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L56>`_
 
 
 .. _api_enum_value_flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value.OFF:
@@ -180,7 +184,7 @@ AUTO
 flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig
 --------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L59>`_
+`[flyteidl.plugins.sagemaker.HyperparameterTuningJobConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/hyperparameter_tuning_job.proto#L64>`_
 
 The specification of the hyperparameter tuning process
 https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-ex-tuning-job.html#automatic-model-tuning-ex-low-tuning-config

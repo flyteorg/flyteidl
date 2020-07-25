@@ -74,11 +74,13 @@ XGBOOST
 flyteidl.plugins.sagemaker.AlgorithmSpecification
 -------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.AlgorithmSpecification proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L26>`_
+`[flyteidl.plugins.sagemaker.AlgorithmSpecification proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L28>`_
 
 Specifies the training algorithm to be used in the training job
-This object is mostly a pass-through, with the exception that when users want to supply custom algorithms
-they should set algorithm_name field to CUSTOM. In this case, the value of the algorithm_version field has no effect
+This object is mostly a pass-through, with a couple of exceptions include: (1) in Flyte, users don't need to specify
+TrainingImage; either use the built-in algorithm mode by using Flytekit's Simple Training Job and specifying an algorithm
+name and an algorithm version or (2) when users want to supply custom algorithms they should set algorithm_name field to
+CUSTOM. In this case, the value of the algorithm_version field has no effect
 For pass-through use cases: refer to this AWS official document for more details
 https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
 
@@ -123,7 +125,7 @@ metric_definitions
 flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition
 ------------------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L36>`_
+`[flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L38>`_
 
 
 .. code-block:: json
@@ -153,7 +155,7 @@ regex
 flyteidl.plugins.sagemaker.TrainingJobResourceConfig
 ----------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L50>`_
+`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L52>`_
 
 TrainingJobResourceConfig is a pass-through, specifying the instance type to use for the training job, the
 number of instances to launch, and the size of the ML storage volume the user wants to provision
@@ -192,7 +194,7 @@ volume_size_in_gb
 flyteidl.plugins.sagemaker.StoppingCondition
 --------------------------------------------
 
-`[flyteidl.plugins.sagemaker.StoppingCondition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L62>`_
+`[flyteidl.plugins.sagemaker.StoppingCondition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L64>`_
 
 This option allows the users to specify a limit to how long a training job can run and
 how long the users are willing to wait for a managed spot training job to complete
@@ -228,7 +230,7 @@ max_wait_time_in_seconds
 flyteidl.plugins.sagemaker.TrainingJob
 --------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L77>`_
+`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L79>`_
 
 The spec of a training job. This is mostly a pass-through object
 https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html

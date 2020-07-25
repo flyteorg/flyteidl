@@ -133,8 +133,10 @@ func (m *AlgorithmName) XXX_DiscardUnknown() {
 var xxx_messageInfo_AlgorithmName proto.InternalMessageInfo
 
 // Specifies the training algorithm to be used in the training job
-// This object is mostly a pass-through, with the exception that when users want to supply custom algorithms
-// they should set algorithm_name field to CUSTOM. In this case, the value of the algorithm_version field has no effect
+// This object is mostly a pass-through, with a couple of exceptions include: (1) in Flyte, users don't need to specify
+// TrainingImage; either use the built-in algorithm mode by using Flytekit's Simple Training Job and specifying an algorithm
+// name and an algorithm version or (2) when users want to supply custom algorithms they should set algorithm_name field to
+// CUSTOM. In this case, the value of the algorithm_version field has no effect
 // For pass-through use cases: refer to this AWS official document for more details
 // https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
 type AlgorithmSpecification struct {

@@ -1409,6 +1409,7 @@ public final class HyperparameterTuningJobOuterClass {
   /**
    * <pre>
    * The objective of the hyperparameter tuning
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
    * </pre>
    *
    * Protobuf type {@code flyteidl.plugins.sagemaker.HyperparameterTuningObjective}
@@ -1723,6 +1724,7 @@ public final class HyperparameterTuningJobOuterClass {
     /**
      * <pre>
      * The objective of the hyperparameter tuning
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
      * </pre>
      *
      * Protobuf type {@code flyteidl.plugins.sagemaker.HyperparameterTuningObjective}
@@ -2074,6 +2076,12 @@ public final class HyperparameterTuningJobOuterClass {
       com.google.protobuf.MessageOrBuilder {
   }
   /**
+   * <pre>
+   * Setting the strategy used when doing search in the hyperparameter space
+   * Refer this doc for more details:
+   * https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-automatic-model-tuning-now-supports-random-search-and-hyperparameter-scaling/
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.plugins.sagemaker.HyperparameterTuningStrategy}
    */
   public  static final class HyperparameterTuningStrategy extends
@@ -2386,6 +2394,12 @@ public final class HyperparameterTuningJobOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Setting the strategy used when doing search in the hyperparameter space
+     * Refer this doc for more details:
+     * https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-automatic-model-tuning-now-supports-random-search-and-hyperparameter-scaling/
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.plugins.sagemaker.HyperparameterTuningStrategy}
      */
     public static final class Builder extends
