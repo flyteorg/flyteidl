@@ -61,28 +61,9 @@ message TrainingJobResourceConfig {
     int64 volume_size_in_gb = 3;
 }
 
-// This option allows the users to specify a limit to how long a training job can run and
-// how long the users are willing to wait for a managed spot training job to complete
-// If the user uses SageMaker's built-in algorithms, SageMaker will try to automatically
-// save the intermediate artifacts in a best-effort manner.
-// See: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html
-message StoppingCondition {
-
-    // The maximum length of time in second that the training job can run.
-    // If this value is not specified, the default expiration time will be 1 day
-    google.protobuf.Duration max_runtime_in_seconds = 1;
-
-    // The maximum length of time in seconds that the users are willing to wait for a managed spot
-    // training job to complete.
-    // Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
-    // training job runs, so it must be equal to or greater than max_runtime_in_seconds.
-    google.protobuf.Duration max_wait_time_in_seconds = 2;
-}
-
 // The spec of a training job. This is mostly a pass-through object
 // https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html
 message TrainingJob {
     AlgorithmSpecification algorithm_specification = 1;
     TrainingJobResourceConfig training_job_config = 2;
-    bool interruptible = 3;
 }
