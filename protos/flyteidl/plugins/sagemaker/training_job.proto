@@ -61,7 +61,9 @@ message TrainingJobResourceConfig {
 
 // This option allows the users to specify a limit to how long a training job can run and
 // how long the users are willing to wait for a managed spot training job to complete
-// https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html
+// If the user uses SageMaker's built-in algorithms, SageMaker will try to automatically
+// save the intermediate artifacts in a best-effort manner.
+// See: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html
 message StoppingCondition {
 
     // The maximum length of time in second that the training job can run.
