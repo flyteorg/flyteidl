@@ -32,6 +32,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include <google/protobuf/duration.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto
@@ -910,25 +911,31 @@ class StoppingCondition final :
 
   // accessors -------------------------------------------------------
 
-  // int64 max_runtime_in_seconds = 1;
+  // .google.protobuf.Duration max_runtime_in_seconds = 1;
+  bool has_max_runtime_in_seconds() const;
   void clear_max_runtime_in_seconds();
   static const int kMaxRuntimeInSecondsFieldNumber = 1;
-  ::google::protobuf::int64 max_runtime_in_seconds() const;
-  void set_max_runtime_in_seconds(::google::protobuf::int64 value);
+  const ::google::protobuf::Duration& max_runtime_in_seconds() const;
+  ::google::protobuf::Duration* release_max_runtime_in_seconds();
+  ::google::protobuf::Duration* mutable_max_runtime_in_seconds();
+  void set_allocated_max_runtime_in_seconds(::google::protobuf::Duration* max_runtime_in_seconds);
 
-  // int64 max_wait_time_in_seconds = 2;
+  // .google.protobuf.Duration max_wait_time_in_seconds = 2;
+  bool has_max_wait_time_in_seconds() const;
   void clear_max_wait_time_in_seconds();
   static const int kMaxWaitTimeInSecondsFieldNumber = 2;
-  ::google::protobuf::int64 max_wait_time_in_seconds() const;
-  void set_max_wait_time_in_seconds(::google::protobuf::int64 value);
+  const ::google::protobuf::Duration& max_wait_time_in_seconds() const;
+  ::google::protobuf::Duration* release_max_wait_time_in_seconds();
+  ::google::protobuf::Duration* mutable_max_wait_time_in_seconds();
+  void set_allocated_max_wait_time_in_seconds(::google::protobuf::Duration* max_wait_time_in_seconds);
 
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.StoppingCondition)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::int64 max_runtime_in_seconds_;
-  ::google::protobuf::int64 max_wait_time_in_seconds_;
+  ::google::protobuf::Duration* max_runtime_in_seconds_;
+  ::google::protobuf::Duration* max_wait_time_in_seconds_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
 };
@@ -1393,32 +1400,96 @@ inline void TrainingJobResourceConfig::set_volume_size_in_gb(::google::protobuf:
 
 // StoppingCondition
 
-// int64 max_runtime_in_seconds = 1;
-inline void StoppingCondition::clear_max_runtime_in_seconds() {
-  max_runtime_in_seconds_ = PROTOBUF_LONGLONG(0);
+// .google.protobuf.Duration max_runtime_in_seconds = 1;
+inline bool StoppingCondition::has_max_runtime_in_seconds() const {
+  return this != internal_default_instance() && max_runtime_in_seconds_ != nullptr;
 }
-inline ::google::protobuf::int64 StoppingCondition::max_runtime_in_seconds() const {
+inline const ::google::protobuf::Duration& StoppingCondition::max_runtime_in_seconds() const {
+  const ::google::protobuf::Duration* p = max_runtime_in_seconds_;
   // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.StoppingCondition.max_runtime_in_seconds)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Duration*>(
+      &::google::protobuf::_Duration_default_instance_);
+}
+inline ::google::protobuf::Duration* StoppingCondition::release_max_runtime_in_seconds() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.StoppingCondition.max_runtime_in_seconds)
+  
+  ::google::protobuf::Duration* temp = max_runtime_in_seconds_;
+  max_runtime_in_seconds_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Duration* StoppingCondition::mutable_max_runtime_in_seconds() {
+  
+  if (max_runtime_in_seconds_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Duration>(GetArenaNoVirtual());
+    max_runtime_in_seconds_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.StoppingCondition.max_runtime_in_seconds)
   return max_runtime_in_seconds_;
 }
-inline void StoppingCondition::set_max_runtime_in_seconds(::google::protobuf::int64 value) {
-  
-  max_runtime_in_seconds_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.StoppingCondition.max_runtime_in_seconds)
+inline void StoppingCondition::set_allocated_max_runtime_in_seconds(::google::protobuf::Duration* max_runtime_in_seconds) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(max_runtime_in_seconds_);
+  }
+  if (max_runtime_in_seconds) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(max_runtime_in_seconds)->GetArena();
+    if (message_arena != submessage_arena) {
+      max_runtime_in_seconds = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, max_runtime_in_seconds, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  max_runtime_in_seconds_ = max_runtime_in_seconds;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.StoppingCondition.max_runtime_in_seconds)
 }
 
-// int64 max_wait_time_in_seconds = 2;
-inline void StoppingCondition::clear_max_wait_time_in_seconds() {
-  max_wait_time_in_seconds_ = PROTOBUF_LONGLONG(0);
+// .google.protobuf.Duration max_wait_time_in_seconds = 2;
+inline bool StoppingCondition::has_max_wait_time_in_seconds() const {
+  return this != internal_default_instance() && max_wait_time_in_seconds_ != nullptr;
 }
-inline ::google::protobuf::int64 StoppingCondition::max_wait_time_in_seconds() const {
+inline const ::google::protobuf::Duration& StoppingCondition::max_wait_time_in_seconds() const {
+  const ::google::protobuf::Duration* p = max_wait_time_in_seconds_;
   // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.StoppingCondition.max_wait_time_in_seconds)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Duration*>(
+      &::google::protobuf::_Duration_default_instance_);
+}
+inline ::google::protobuf::Duration* StoppingCondition::release_max_wait_time_in_seconds() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.StoppingCondition.max_wait_time_in_seconds)
+  
+  ::google::protobuf::Duration* temp = max_wait_time_in_seconds_;
+  max_wait_time_in_seconds_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Duration* StoppingCondition::mutable_max_wait_time_in_seconds() {
+  
+  if (max_wait_time_in_seconds_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Duration>(GetArenaNoVirtual());
+    max_wait_time_in_seconds_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.StoppingCondition.max_wait_time_in_seconds)
   return max_wait_time_in_seconds_;
 }
-inline void StoppingCondition::set_max_wait_time_in_seconds(::google::protobuf::int64 value) {
-  
-  max_wait_time_in_seconds_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.StoppingCondition.max_wait_time_in_seconds)
+inline void StoppingCondition::set_allocated_max_wait_time_in_seconds(::google::protobuf::Duration* max_wait_time_in_seconds) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(max_wait_time_in_seconds_);
+  }
+  if (max_wait_time_in_seconds) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(max_wait_time_in_seconds)->GetArena();
+    if (message_arena != submessage_arena) {
+      max_wait_time_in_seconds = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, max_wait_time_in_seconds, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  max_wait_time_in_seconds_ = max_wait_time_in_seconds;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.StoppingCondition.max_wait_time_in_seconds)
 }
 
 // -------------------------------------------------------------------

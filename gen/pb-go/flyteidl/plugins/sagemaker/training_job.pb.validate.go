@@ -334,9 +334,25 @@ func (m *StoppingCondition) Validate() error {
 		return nil
 	}
 
-	// no validation rules for MaxRuntimeInSeconds
+	if v, ok := interface{}(m.GetMaxRuntimeInSeconds()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return StoppingConditionValidationError{
+				field:  "MaxRuntimeInSeconds",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
-	// no validation rules for MaxWaitTimeInSeconds
+	if v, ok := interface{}(m.GetMaxWaitTimeInSeconds()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return StoppingConditionValidationError{
+				field:  "MaxWaitTimeInSeconds",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	return nil
 }

@@ -8,7 +8,7 @@ training_job.proto
 flyteidl.plugins.sagemaker.InputMode
 ------------------------------------
 
-`[flyteidl.plugins.sagemaker.InputMode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L7>`_
+`[flyteidl.plugins.sagemaker.InputMode proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L9>`_
 
 
 .. code-block:: json
@@ -22,7 +22,7 @@ flyteidl.plugins.sagemaker.InputMode
 Enum flyteidl.plugins.sagemaker.InputMode.Value
 -----------------------------------------------
 
-`[flyteidl.plugins.sagemaker.InputMode.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L8>`_
+`[flyteidl.plugins.sagemaker.InputMode.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L10>`_
 
 
 .. _api_enum_value_flyteidl.plugins.sagemaker.InputMode.Value.FILE:
@@ -41,7 +41,7 @@ PIPE
 flyteidl.plugins.sagemaker.AlgorithmName
 ----------------------------------------
 
-`[flyteidl.plugins.sagemaker.AlgorithmName proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L14>`_
+`[flyteidl.plugins.sagemaker.AlgorithmName proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L16>`_
 
 
 .. code-block:: json
@@ -55,7 +55,7 @@ flyteidl.plugins.sagemaker.AlgorithmName
 Enum flyteidl.plugins.sagemaker.AlgorithmName.Value
 ---------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.AlgorithmName.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L15>`_
+`[flyteidl.plugins.sagemaker.AlgorithmName.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L17>`_
 
 
 .. _api_enum_value_flyteidl.plugins.sagemaker.AlgorithmName.Value.CUSTOM:
@@ -74,7 +74,7 @@ XGBOOST
 flyteidl.plugins.sagemaker.AlgorithmSpecification
 -------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.AlgorithmSpecification proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L28>`_
+`[flyteidl.plugins.sagemaker.AlgorithmSpecification proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L30>`_
 
 Specifies the training algorithm to be used in the training job
 This object is mostly a pass-through, with a couple of exceptions include: (1) in Flyte, users don't need to specify
@@ -125,7 +125,7 @@ metric_definitions
 flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition
 ------------------------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L38>`_
+`[flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L40>`_
 
 
 .. code-block:: json
@@ -155,7 +155,7 @@ regex
 flyteidl.plugins.sagemaker.TrainingJobResourceConfig
 ----------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L52>`_
+`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L54>`_
 
 TrainingJobResourceConfig is a pass-through, specifying the instance type to use for the training job, the
 number of instances to launch, and the size of the ML storage volume the user wants to provision
@@ -194,30 +194,32 @@ volume_size_in_gb
 flyteidl.plugins.sagemaker.StoppingCondition
 --------------------------------------------
 
-`[flyteidl.plugins.sagemaker.StoppingCondition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L64>`_
+`[flyteidl.plugins.sagemaker.StoppingCondition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L68>`_
 
 This option allows the users to specify a limit to how long a training job can run and
 how long the users are willing to wait for a managed spot training job to complete
-https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html
+If the user uses SageMaker's built-in algorithms, SageMaker will try to automatically
+save the intermediate artifacts in a best-effort manner.
+See: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html
 
 .. code-block:: json
 
   {
-    "max_runtime_in_seconds": "...",
-    "max_wait_time_in_seconds": "..."
+    "max_runtime_in_seconds": "{...}",
+    "max_wait_time_in_seconds": "{...}"
   }
 
 .. _api_field_flyteidl.plugins.sagemaker.StoppingCondition.max_runtime_in_seconds:
 
 max_runtime_in_seconds
-  (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The maximum length of time in second that the training job can run.
+  (:ref:`google.protobuf.Duration <api_msg_google.protobuf.Duration>`) The maximum length of time in second that the training job can run.
   If this value is not specified, the default expiration time will be 1 day
   
   
 .. _api_field_flyteidl.plugins.sagemaker.StoppingCondition.max_wait_time_in_seconds:
 
 max_wait_time_in_seconds
-  (`int64 <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) The maximum length of time in seconds that the users are willing to wait for a managed spot
+  (:ref:`google.protobuf.Duration <api_msg_google.protobuf.Duration>`) The maximum length of time in seconds that the users are willing to wait for a managed spot
   training job to complete.
   Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
   training job runs, so it must be equal to or greater than max_runtime_in_seconds.
@@ -230,7 +232,7 @@ max_wait_time_in_seconds
 flyteidl.plugins.sagemaker.TrainingJob
 --------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L79>`_
+`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L83>`_
 
 The spec of a training job. This is mostly a pass-through object
 https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html

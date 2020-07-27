@@ -13,6 +13,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,8 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.plugins.sagemaker',
   syntax='proto3',
   serialized_options=_b('Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n-flyteidl/plugins/sagemaker/training_job.proto\x12\x1a\x66lyteidl.plugins.sagemaker\"(\n\tInputMode\"\x1b\n\x05Value\x12\x08\n\x04\x46ILE\x10\x00\x12\x08\n\x04PIPE\x10\x01\"1\n\rAlgorithmName\" \n\x05Value\x12\n\n\x06\x43USTOM\x10\x00\x12\x0b\n\x07XGBOOST\x10\x01\"\xcf\x02\n\x16\x41lgorithmSpecification\x12?\n\ninput_mode\x18\x01 \x01(\x0e\x32+.flyteidl.plugins.sagemaker.InputMode.Value\x12G\n\x0e\x61lgorithm_name\x18\x02 \x01(\x0e\x32/.flyteidl.plugins.sagemaker.AlgorithmName.Value\x12\x19\n\x11\x61lgorithm_version\x18\x03 \x01(\t\x12_\n\x12metric_definitions\x18\x04 \x03(\x0b\x32\x43.flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition\x1a/\n\x10MetricDefinition\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05regex\x18\x02 \x01(\t\"e\n\x19TrainingJobResourceConfig\x12\x16\n\x0einstance_count\x18\x01 \x01(\x03\x12\x15\n\rinstance_type\x18\x02 \x01(\t\x12\x19\n\x11volume_size_in_gb\x18\x03 \x01(\x03\"U\n\x11StoppingCondition\x12\x1e\n\x16max_runtime_in_seconds\x18\x01 \x01(\x03\x12 \n\x18max_wait_time_in_seconds\x18\x02 \x01(\x03\"\xcd\x01\n\x0bTrainingJob\x12S\n\x17\x61lgorithm_specification\x18\x01 \x01(\x0b\x32\x32.flyteidl.plugins.sagemaker.AlgorithmSpecification\x12R\n\x13training_job_config\x18\x02 \x01(\x0b\x32\x35.flyteidl.plugins.sagemaker.TrainingJobResourceConfig\x12\x15\n\rinterruptible\x18\x03 \x01(\x08\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
-)
+  serialized_pb=_b('\n-flyteidl/plugins/sagemaker/training_job.proto\x12\x1a\x66lyteidl.plugins.sagemaker\x1a\x1egoogle/protobuf/duration.proto\"(\n\tInputMode\"\x1b\n\x05Value\x12\x08\n\x04\x46ILE\x10\x00\x12\x08\n\x04PIPE\x10\x01\"1\n\rAlgorithmName\" \n\x05Value\x12\n\n\x06\x43USTOM\x10\x00\x12\x0b\n\x07XGBOOST\x10\x01\"\xcf\x02\n\x16\x41lgorithmSpecification\x12?\n\ninput_mode\x18\x01 \x01(\x0e\x32+.flyteidl.plugins.sagemaker.InputMode.Value\x12G\n\x0e\x61lgorithm_name\x18\x02 \x01(\x0e\x32/.flyteidl.plugins.sagemaker.AlgorithmName.Value\x12\x19\n\x11\x61lgorithm_version\x18\x03 \x01(\t\x12_\n\x12metric_definitions\x18\x04 \x03(\x0b\x32\x43.flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition\x1a/\n\x10MetricDefinition\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05regex\x18\x02 \x01(\t\"e\n\x19TrainingJobResourceConfig\x12\x16\n\x0einstance_count\x18\x01 \x01(\x03\x12\x15\n\rinstance_type\x18\x02 \x01(\t\x12\x19\n\x11volume_size_in_gb\x18\x03 \x01(\x03\"\x8b\x01\n\x11StoppingCondition\x12\x39\n\x16max_runtime_in_seconds\x18\x01 \x01(\x0b\x32\x19.google.protobuf.Duration\x12;\n\x18max_wait_time_in_seconds\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\"\xcd\x01\n\x0bTrainingJob\x12S\n\x17\x61lgorithm_specification\x18\x01 \x01(\x0b\x32\x32.flyteidl.plugins.sagemaker.AlgorithmSpecification\x12R\n\x13training_job_config\x18\x02 \x01(\x0b\x32\x35.flyteidl.plugins.sagemaker.TrainingJobResourceConfig\x12\x15\n\rinterruptible\x18\x03 \x01(\x08\x42\x35Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  ,
+  dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,])
 
 
 
@@ -42,8 +44,8 @@ _INPUTMODE_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=90,
-  serialized_end=117,
+  serialized_start=122,
+  serialized_end=149,
 )
 _sym_db.RegisterEnumDescriptor(_INPUTMODE_VALUE)
 
@@ -64,8 +66,8 @@ _ALGORITHMNAME_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=136,
-  serialized_end=168,
+  serialized_start=168,
+  serialized_end=200,
 )
 _sym_db.RegisterEnumDescriptor(_ALGORITHMNAME_VALUE)
 
@@ -90,8 +92,8 @@ _INPUTMODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=77,
-  serialized_end=117,
+  serialized_start=109,
+  serialized_end=149,
 )
 
 
@@ -115,8 +117,8 @@ _ALGORITHMNAME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=119,
-  serialized_end=168,
+  serialized_start=151,
+  serialized_end=200,
 )
 
 
@@ -153,8 +155,8 @@ _ALGORITHMSPECIFICATION_METRICDEFINITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=459,
-  serialized_end=506,
+  serialized_start=491,
+  serialized_end=538,
 )
 
 _ALGORITHMSPECIFICATION = _descriptor.Descriptor(
@@ -204,8 +206,8 @@ _ALGORITHMSPECIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=171,
-  serialized_end=506,
+  serialized_start=203,
+  serialized_end=538,
 )
 
 
@@ -249,8 +251,8 @@ _TRAININGJOBRESOURCECONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=508,
-  serialized_end=609,
+  serialized_start=540,
+  serialized_end=641,
 )
 
 
@@ -263,15 +265,15 @@ _STOPPINGCONDITION = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='max_runtime_in_seconds', full_name='flyteidl.plugins.sagemaker.StoppingCondition.max_runtime_in_seconds', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='max_wait_time_in_seconds', full_name='flyteidl.plugins.sagemaker.StoppingCondition.max_wait_time_in_seconds', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -287,8 +289,8 @@ _STOPPINGCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=611,
-  serialized_end=696,
+  serialized_start=644,
+  serialized_end=783,
 )
 
 
@@ -332,8 +334,8 @@ _TRAININGJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=699,
-  serialized_end=904,
+  serialized_start=786,
+  serialized_end=991,
 )
 
 _INPUTMODE_VALUE.containing_type = _INPUTMODE
@@ -342,6 +344,8 @@ _ALGORITHMSPECIFICATION_METRICDEFINITION.containing_type = _ALGORITHMSPECIFICATI
 _ALGORITHMSPECIFICATION.fields_by_name['input_mode'].enum_type = _INPUTMODE_VALUE
 _ALGORITHMSPECIFICATION.fields_by_name['algorithm_name'].enum_type = _ALGORITHMNAME_VALUE
 _ALGORITHMSPECIFICATION.fields_by_name['metric_definitions'].message_type = _ALGORITHMSPECIFICATION_METRICDEFINITION
+_STOPPINGCONDITION.fields_by_name['max_runtime_in_seconds'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
+_STOPPINGCONDITION.fields_by_name['max_wait_time_in_seconds'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
 _TRAININGJOB.fields_by_name['algorithm_specification'].message_type = _ALGORITHMSPECIFICATION
 _TRAININGJOB.fields_by_name['training_job_config'].message_type = _TRAININGJOBRESOURCECONFIG
 DESCRIPTOR.message_types_by_name['InputMode'] = _INPUTMODE

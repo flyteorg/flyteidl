@@ -3958,9 +3958,27 @@ public final class TrainingJobOuterClass {
      * If this value is not specified, the default expiration time will be 1 day
      * </pre>
      *
-     * <code>int64 max_runtime_in_seconds = 1;</code>
+     * <code>.google.protobuf.Duration max_runtime_in_seconds = 1;</code>
      */
-    long getMaxRuntimeInSeconds();
+    boolean hasMaxRuntimeInSeconds();
+    /**
+     * <pre>
+     * The maximum length of time in second that the training job can run.
+     * If this value is not specified, the default expiration time will be 1 day
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_runtime_in_seconds = 1;</code>
+     */
+    com.google.protobuf.Duration getMaxRuntimeInSeconds();
+    /**
+     * <pre>
+     * The maximum length of time in second that the training job can run.
+     * If this value is not specified, the default expiration time will be 1 day
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_runtime_in_seconds = 1;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getMaxRuntimeInSecondsOrBuilder();
 
     /**
      * <pre>
@@ -3970,15 +3988,39 @@ public final class TrainingJobOuterClass {
      * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
      * </pre>
      *
-     * <code>int64 max_wait_time_in_seconds = 2;</code>
+     * <code>.google.protobuf.Duration max_wait_time_in_seconds = 2;</code>
      */
-    long getMaxWaitTimeInSeconds();
+    boolean hasMaxWaitTimeInSeconds();
+    /**
+     * <pre>
+     * The maximum length of time in seconds that the users are willing to wait for a managed spot
+     * training job to complete.
+     * Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
+     * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_wait_time_in_seconds = 2;</code>
+     */
+    com.google.protobuf.Duration getMaxWaitTimeInSeconds();
+    /**
+     * <pre>
+     * The maximum length of time in seconds that the users are willing to wait for a managed spot
+     * training job to complete.
+     * Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
+     * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_wait_time_in_seconds = 2;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getMaxWaitTimeInSecondsOrBuilder();
   }
   /**
    * <pre>
    * This option allows the users to specify a limit to how long a training job can run and
    * how long the users are willing to wait for a managed spot training job to complete
-   * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html
+   * If the user uses SageMaker's built-in algorithms, SageMaker will try to automatically
+   * save the intermediate artifacts in a best-effort manner.
+   * See: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html
    * </pre>
    *
    * Protobuf type {@code flyteidl.plugins.sagemaker.StoppingCondition}
@@ -4019,14 +4061,30 @@ public final class TrainingJobOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (maxRuntimeInSeconds_ != null) {
+                subBuilder = maxRuntimeInSeconds_.toBuilder();
+              }
+              maxRuntimeInSeconds_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(maxRuntimeInSeconds_);
+                maxRuntimeInSeconds_ = subBuilder.buildPartial();
+              }
 
-              maxRuntimeInSeconds_ = input.readInt64();
               break;
             }
-            case 16: {
+            case 18: {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (maxWaitTimeInSeconds_ != null) {
+                subBuilder = maxWaitTimeInSeconds_.toBuilder();
+              }
+              maxWaitTimeInSeconds_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(maxWaitTimeInSeconds_);
+                maxWaitTimeInSeconds_ = subBuilder.buildPartial();
+              }
 
-              maxWaitTimeInSeconds_ = input.readInt64();
               break;
             }
             default: {
@@ -4062,21 +4120,43 @@ public final class TrainingJobOuterClass {
     }
 
     public static final int MAX_RUNTIME_IN_SECONDS_FIELD_NUMBER = 1;
-    private long maxRuntimeInSeconds_;
+    private com.google.protobuf.Duration maxRuntimeInSeconds_;
     /**
      * <pre>
      * The maximum length of time in second that the training job can run.
      * If this value is not specified, the default expiration time will be 1 day
      * </pre>
      *
-     * <code>int64 max_runtime_in_seconds = 1;</code>
+     * <code>.google.protobuf.Duration max_runtime_in_seconds = 1;</code>
      */
-    public long getMaxRuntimeInSeconds() {
-      return maxRuntimeInSeconds_;
+    public boolean hasMaxRuntimeInSeconds() {
+      return maxRuntimeInSeconds_ != null;
+    }
+    /**
+     * <pre>
+     * The maximum length of time in second that the training job can run.
+     * If this value is not specified, the default expiration time will be 1 day
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_runtime_in_seconds = 1;</code>
+     */
+    public com.google.protobuf.Duration getMaxRuntimeInSeconds() {
+      return maxRuntimeInSeconds_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxRuntimeInSeconds_;
+    }
+    /**
+     * <pre>
+     * The maximum length of time in second that the training job can run.
+     * If this value is not specified, the default expiration time will be 1 day
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_runtime_in_seconds = 1;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getMaxRuntimeInSecondsOrBuilder() {
+      return getMaxRuntimeInSeconds();
     }
 
     public static final int MAX_WAIT_TIME_IN_SECONDS_FIELD_NUMBER = 2;
-    private long maxWaitTimeInSeconds_;
+    private com.google.protobuf.Duration maxWaitTimeInSeconds_;
     /**
      * <pre>
      * The maximum length of time in seconds that the users are willing to wait for a managed spot
@@ -4085,10 +4165,36 @@ public final class TrainingJobOuterClass {
      * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
      * </pre>
      *
-     * <code>int64 max_wait_time_in_seconds = 2;</code>
+     * <code>.google.protobuf.Duration max_wait_time_in_seconds = 2;</code>
      */
-    public long getMaxWaitTimeInSeconds() {
-      return maxWaitTimeInSeconds_;
+    public boolean hasMaxWaitTimeInSeconds() {
+      return maxWaitTimeInSeconds_ != null;
+    }
+    /**
+     * <pre>
+     * The maximum length of time in seconds that the users are willing to wait for a managed spot
+     * training job to complete.
+     * Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
+     * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_wait_time_in_seconds = 2;</code>
+     */
+    public com.google.protobuf.Duration getMaxWaitTimeInSeconds() {
+      return maxWaitTimeInSeconds_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxWaitTimeInSeconds_;
+    }
+    /**
+     * <pre>
+     * The maximum length of time in seconds that the users are willing to wait for a managed spot
+     * training job to complete.
+     * Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
+     * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_wait_time_in_seconds = 2;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getMaxWaitTimeInSecondsOrBuilder() {
+      return getMaxWaitTimeInSeconds();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4105,11 +4211,11 @@ public final class TrainingJobOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (maxRuntimeInSeconds_ != 0L) {
-        output.writeInt64(1, maxRuntimeInSeconds_);
+      if (maxRuntimeInSeconds_ != null) {
+        output.writeMessage(1, getMaxRuntimeInSeconds());
       }
-      if (maxWaitTimeInSeconds_ != 0L) {
-        output.writeInt64(2, maxWaitTimeInSeconds_);
+      if (maxWaitTimeInSeconds_ != null) {
+        output.writeMessage(2, getMaxWaitTimeInSeconds());
       }
       unknownFields.writeTo(output);
     }
@@ -4120,13 +4226,13 @@ public final class TrainingJobOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (maxRuntimeInSeconds_ != 0L) {
+      if (maxRuntimeInSeconds_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, maxRuntimeInSeconds_);
+          .computeMessageSize(1, getMaxRuntimeInSeconds());
       }
-      if (maxWaitTimeInSeconds_ != 0L) {
+      if (maxWaitTimeInSeconds_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, maxWaitTimeInSeconds_);
+          .computeMessageSize(2, getMaxWaitTimeInSeconds());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4143,10 +4249,16 @@ public final class TrainingJobOuterClass {
       }
       flyteidl.plugins.sagemaker.TrainingJobOuterClass.StoppingCondition other = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.StoppingCondition) obj;
 
-      if (getMaxRuntimeInSeconds()
-          != other.getMaxRuntimeInSeconds()) return false;
-      if (getMaxWaitTimeInSeconds()
-          != other.getMaxWaitTimeInSeconds()) return false;
+      if (hasMaxRuntimeInSeconds() != other.hasMaxRuntimeInSeconds()) return false;
+      if (hasMaxRuntimeInSeconds()) {
+        if (!getMaxRuntimeInSeconds()
+            .equals(other.getMaxRuntimeInSeconds())) return false;
+      }
+      if (hasMaxWaitTimeInSeconds() != other.hasMaxWaitTimeInSeconds()) return false;
+      if (hasMaxWaitTimeInSeconds()) {
+        if (!getMaxWaitTimeInSeconds()
+            .equals(other.getMaxWaitTimeInSeconds())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4158,12 +4270,14 @@ public final class TrainingJobOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MAX_RUNTIME_IN_SECONDS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMaxRuntimeInSeconds());
-      hash = (37 * hash) + MAX_WAIT_TIME_IN_SECONDS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMaxWaitTimeInSeconds());
+      if (hasMaxRuntimeInSeconds()) {
+        hash = (37 * hash) + MAX_RUNTIME_IN_SECONDS_FIELD_NUMBER;
+        hash = (53 * hash) + getMaxRuntimeInSeconds().hashCode();
+      }
+      if (hasMaxWaitTimeInSeconds()) {
+        hash = (37 * hash) + MAX_WAIT_TIME_IN_SECONDS_FIELD_NUMBER;
+        hash = (53 * hash) + getMaxWaitTimeInSeconds().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4263,7 +4377,9 @@ public final class TrainingJobOuterClass {
      * <pre>
      * This option allows the users to specify a limit to how long a training job can run and
      * how long the users are willing to wait for a managed spot training job to complete
-     * https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html
+     * If the user uses SageMaker's built-in algorithms, SageMaker will try to automatically
+     * save the intermediate artifacts in a best-effort manner.
+     * See: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html
      * </pre>
      *
      * Protobuf type {@code flyteidl.plugins.sagemaker.StoppingCondition}
@@ -4303,10 +4419,18 @@ public final class TrainingJobOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        maxRuntimeInSeconds_ = 0L;
-
-        maxWaitTimeInSeconds_ = 0L;
-
+        if (maxRuntimeInSecondsBuilder_ == null) {
+          maxRuntimeInSeconds_ = null;
+        } else {
+          maxRuntimeInSeconds_ = null;
+          maxRuntimeInSecondsBuilder_ = null;
+        }
+        if (maxWaitTimeInSecondsBuilder_ == null) {
+          maxWaitTimeInSeconds_ = null;
+        } else {
+          maxWaitTimeInSeconds_ = null;
+          maxWaitTimeInSecondsBuilder_ = null;
+        }
         return this;
       }
 
@@ -4333,8 +4457,16 @@ public final class TrainingJobOuterClass {
       @java.lang.Override
       public flyteidl.plugins.sagemaker.TrainingJobOuterClass.StoppingCondition buildPartial() {
         flyteidl.plugins.sagemaker.TrainingJobOuterClass.StoppingCondition result = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.StoppingCondition(this);
-        result.maxRuntimeInSeconds_ = maxRuntimeInSeconds_;
-        result.maxWaitTimeInSeconds_ = maxWaitTimeInSeconds_;
+        if (maxRuntimeInSecondsBuilder_ == null) {
+          result.maxRuntimeInSeconds_ = maxRuntimeInSeconds_;
+        } else {
+          result.maxRuntimeInSeconds_ = maxRuntimeInSecondsBuilder_.build();
+        }
+        if (maxWaitTimeInSecondsBuilder_ == null) {
+          result.maxWaitTimeInSeconds_ = maxWaitTimeInSeconds_;
+        } else {
+          result.maxWaitTimeInSeconds_ = maxWaitTimeInSecondsBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -4383,11 +4515,11 @@ public final class TrainingJobOuterClass {
 
       public Builder mergeFrom(flyteidl.plugins.sagemaker.TrainingJobOuterClass.StoppingCondition other) {
         if (other == flyteidl.plugins.sagemaker.TrainingJobOuterClass.StoppingCondition.getDefaultInstance()) return this;
-        if (other.getMaxRuntimeInSeconds() != 0L) {
-          setMaxRuntimeInSeconds(other.getMaxRuntimeInSeconds());
+        if (other.hasMaxRuntimeInSeconds()) {
+          mergeMaxRuntimeInSeconds(other.getMaxRuntimeInSeconds());
         }
-        if (other.getMaxWaitTimeInSeconds() != 0L) {
-          setMaxWaitTimeInSeconds(other.getMaxWaitTimeInSeconds());
+        if (other.hasMaxWaitTimeInSeconds()) {
+          mergeMaxWaitTimeInSeconds(other.getMaxWaitTimeInSeconds());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4418,17 +4550,19 @@ public final class TrainingJobOuterClass {
         return this;
       }
 
-      private long maxRuntimeInSeconds_ ;
+      private com.google.protobuf.Duration maxRuntimeInSeconds_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> maxRuntimeInSecondsBuilder_;
       /**
        * <pre>
        * The maximum length of time in second that the training job can run.
        * If this value is not specified, the default expiration time will be 1 day
        * </pre>
        *
-       * <code>int64 max_runtime_in_seconds = 1;</code>
+       * <code>.google.protobuf.Duration max_runtime_in_seconds = 1;</code>
        */
-      public long getMaxRuntimeInSeconds() {
-        return maxRuntimeInSeconds_;
+      public boolean hasMaxRuntimeInSeconds() {
+        return maxRuntimeInSecondsBuilder_ != null || maxRuntimeInSeconds_ != null;
       }
       /**
        * <pre>
@@ -4436,12 +4570,34 @@ public final class TrainingJobOuterClass {
        * If this value is not specified, the default expiration time will be 1 day
        * </pre>
        *
-       * <code>int64 max_runtime_in_seconds = 1;</code>
+       * <code>.google.protobuf.Duration max_runtime_in_seconds = 1;</code>
        */
-      public Builder setMaxRuntimeInSeconds(long value) {
-        
-        maxRuntimeInSeconds_ = value;
-        onChanged();
+      public com.google.protobuf.Duration getMaxRuntimeInSeconds() {
+        if (maxRuntimeInSecondsBuilder_ == null) {
+          return maxRuntimeInSeconds_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxRuntimeInSeconds_;
+        } else {
+          return maxRuntimeInSecondsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The maximum length of time in second that the training job can run.
+       * If this value is not specified, the default expiration time will be 1 day
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_runtime_in_seconds = 1;</code>
+       */
+      public Builder setMaxRuntimeInSeconds(com.google.protobuf.Duration value) {
+        if (maxRuntimeInSecondsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          maxRuntimeInSeconds_ = value;
+          onChanged();
+        } else {
+          maxRuntimeInSecondsBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
@@ -4450,16 +4606,115 @@ public final class TrainingJobOuterClass {
        * If this value is not specified, the default expiration time will be 1 day
        * </pre>
        *
-       * <code>int64 max_runtime_in_seconds = 1;</code>
+       * <code>.google.protobuf.Duration max_runtime_in_seconds = 1;</code>
+       */
+      public Builder setMaxRuntimeInSeconds(
+          com.google.protobuf.Duration.Builder builderForValue) {
+        if (maxRuntimeInSecondsBuilder_ == null) {
+          maxRuntimeInSeconds_ = builderForValue.build();
+          onChanged();
+        } else {
+          maxRuntimeInSecondsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The maximum length of time in second that the training job can run.
+       * If this value is not specified, the default expiration time will be 1 day
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_runtime_in_seconds = 1;</code>
+       */
+      public Builder mergeMaxRuntimeInSeconds(com.google.protobuf.Duration value) {
+        if (maxRuntimeInSecondsBuilder_ == null) {
+          if (maxRuntimeInSeconds_ != null) {
+            maxRuntimeInSeconds_ =
+              com.google.protobuf.Duration.newBuilder(maxRuntimeInSeconds_).mergeFrom(value).buildPartial();
+          } else {
+            maxRuntimeInSeconds_ = value;
+          }
+          onChanged();
+        } else {
+          maxRuntimeInSecondsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The maximum length of time in second that the training job can run.
+       * If this value is not specified, the default expiration time will be 1 day
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_runtime_in_seconds = 1;</code>
        */
       public Builder clearMaxRuntimeInSeconds() {
-        
-        maxRuntimeInSeconds_ = 0L;
-        onChanged();
+        if (maxRuntimeInSecondsBuilder_ == null) {
+          maxRuntimeInSeconds_ = null;
+          onChanged();
+        } else {
+          maxRuntimeInSeconds_ = null;
+          maxRuntimeInSecondsBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <pre>
+       * The maximum length of time in second that the training job can run.
+       * If this value is not specified, the default expiration time will be 1 day
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_runtime_in_seconds = 1;</code>
+       */
+      public com.google.protobuf.Duration.Builder getMaxRuntimeInSecondsBuilder() {
+        
+        onChanged();
+        return getMaxRuntimeInSecondsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The maximum length of time in second that the training job can run.
+       * If this value is not specified, the default expiration time will be 1 day
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_runtime_in_seconds = 1;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getMaxRuntimeInSecondsOrBuilder() {
+        if (maxRuntimeInSecondsBuilder_ != null) {
+          return maxRuntimeInSecondsBuilder_.getMessageOrBuilder();
+        } else {
+          return maxRuntimeInSeconds_ == null ?
+              com.google.protobuf.Duration.getDefaultInstance() : maxRuntimeInSeconds_;
+        }
+      }
+      /**
+       * <pre>
+       * The maximum length of time in second that the training job can run.
+       * If this value is not specified, the default expiration time will be 1 day
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_runtime_in_seconds = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+          getMaxRuntimeInSecondsFieldBuilder() {
+        if (maxRuntimeInSecondsBuilder_ == null) {
+          maxRuntimeInSecondsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                  getMaxRuntimeInSeconds(),
+                  getParentForChildren(),
+                  isClean());
+          maxRuntimeInSeconds_ = null;
+        }
+        return maxRuntimeInSecondsBuilder_;
       }
 
-      private long maxWaitTimeInSeconds_ ;
+      private com.google.protobuf.Duration maxWaitTimeInSeconds_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> maxWaitTimeInSecondsBuilder_;
       /**
        * <pre>
        * The maximum length of time in seconds that the users are willing to wait for a managed spot
@@ -4468,10 +4723,10 @@ public final class TrainingJobOuterClass {
        * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
        * </pre>
        *
-       * <code>int64 max_wait_time_in_seconds = 2;</code>
+       * <code>.google.protobuf.Duration max_wait_time_in_seconds = 2;</code>
        */
-      public long getMaxWaitTimeInSeconds() {
-        return maxWaitTimeInSeconds_;
+      public boolean hasMaxWaitTimeInSeconds() {
+        return maxWaitTimeInSecondsBuilder_ != null || maxWaitTimeInSeconds_ != null;
       }
       /**
        * <pre>
@@ -4481,12 +4736,36 @@ public final class TrainingJobOuterClass {
        * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
        * </pre>
        *
-       * <code>int64 max_wait_time_in_seconds = 2;</code>
+       * <code>.google.protobuf.Duration max_wait_time_in_seconds = 2;</code>
        */
-      public Builder setMaxWaitTimeInSeconds(long value) {
-        
-        maxWaitTimeInSeconds_ = value;
-        onChanged();
+      public com.google.protobuf.Duration getMaxWaitTimeInSeconds() {
+        if (maxWaitTimeInSecondsBuilder_ == null) {
+          return maxWaitTimeInSeconds_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxWaitTimeInSeconds_;
+        } else {
+          return maxWaitTimeInSecondsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The maximum length of time in seconds that the users are willing to wait for a managed spot
+       * training job to complete.
+       * Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
+       * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_wait_time_in_seconds = 2;</code>
+       */
+      public Builder setMaxWaitTimeInSeconds(com.google.protobuf.Duration value) {
+        if (maxWaitTimeInSecondsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          maxWaitTimeInSeconds_ = value;
+          onChanged();
+        } else {
+          maxWaitTimeInSecondsBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
@@ -4497,13 +4776,120 @@ public final class TrainingJobOuterClass {
        * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
        * </pre>
        *
-       * <code>int64 max_wait_time_in_seconds = 2;</code>
+       * <code>.google.protobuf.Duration max_wait_time_in_seconds = 2;</code>
+       */
+      public Builder setMaxWaitTimeInSeconds(
+          com.google.protobuf.Duration.Builder builderForValue) {
+        if (maxWaitTimeInSecondsBuilder_ == null) {
+          maxWaitTimeInSeconds_ = builderForValue.build();
+          onChanged();
+        } else {
+          maxWaitTimeInSecondsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The maximum length of time in seconds that the users are willing to wait for a managed spot
+       * training job to complete.
+       * Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
+       * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_wait_time_in_seconds = 2;</code>
+       */
+      public Builder mergeMaxWaitTimeInSeconds(com.google.protobuf.Duration value) {
+        if (maxWaitTimeInSecondsBuilder_ == null) {
+          if (maxWaitTimeInSeconds_ != null) {
+            maxWaitTimeInSeconds_ =
+              com.google.protobuf.Duration.newBuilder(maxWaitTimeInSeconds_).mergeFrom(value).buildPartial();
+          } else {
+            maxWaitTimeInSeconds_ = value;
+          }
+          onChanged();
+        } else {
+          maxWaitTimeInSecondsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The maximum length of time in seconds that the users are willing to wait for a managed spot
+       * training job to complete.
+       * Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
+       * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_wait_time_in_seconds = 2;</code>
        */
       public Builder clearMaxWaitTimeInSeconds() {
-        
-        maxWaitTimeInSeconds_ = 0L;
-        onChanged();
+        if (maxWaitTimeInSecondsBuilder_ == null) {
+          maxWaitTimeInSeconds_ = null;
+          onChanged();
+        } else {
+          maxWaitTimeInSeconds_ = null;
+          maxWaitTimeInSecondsBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <pre>
+       * The maximum length of time in seconds that the users are willing to wait for a managed spot
+       * training job to complete.
+       * Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
+       * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_wait_time_in_seconds = 2;</code>
+       */
+      public com.google.protobuf.Duration.Builder getMaxWaitTimeInSecondsBuilder() {
+        
+        onChanged();
+        return getMaxWaitTimeInSecondsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The maximum length of time in seconds that the users are willing to wait for a managed spot
+       * training job to complete.
+       * Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
+       * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_wait_time_in_seconds = 2;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getMaxWaitTimeInSecondsOrBuilder() {
+        if (maxWaitTimeInSecondsBuilder_ != null) {
+          return maxWaitTimeInSecondsBuilder_.getMessageOrBuilder();
+        } else {
+          return maxWaitTimeInSeconds_ == null ?
+              com.google.protobuf.Duration.getDefaultInstance() : maxWaitTimeInSeconds_;
+        }
+      }
+      /**
+       * <pre>
+       * The maximum length of time in seconds that the users are willing to wait for a managed spot
+       * training job to complete.
+       * Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
+       * training job runs, so it must be equal to or greater than max_runtime_in_seconds.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_wait_time_in_seconds = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+          getMaxWaitTimeInSecondsFieldBuilder() {
+        if (maxWaitTimeInSecondsBuilder_ == null) {
+          maxWaitTimeInSecondsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                  getMaxWaitTimeInSeconds(),
+                  getParentForChildren(),
+                  isClean());
+          maxWaitTimeInSeconds_ = null;
+        }
+        return maxWaitTimeInSecondsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5476,30 +5862,32 @@ public final class TrainingJobOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n-flyteidl/plugins/sagemaker/training_jo" +
-      "b.proto\022\032flyteidl.plugins.sagemaker\"(\n\tI" +
-      "nputMode\"\033\n\005Value\022\010\n\004FILE\020\000\022\010\n\004PIPE\020\001\"1\n" +
-      "\rAlgorithmName\" \n\005Value\022\n\n\006CUSTOM\020\000\022\013\n\007X" +
-      "GBOOST\020\001\"\317\002\n\026AlgorithmSpecification\022?\n\ni" +
-      "nput_mode\030\001 \001(\0162+.flyteidl.plugins.sagem" +
-      "aker.InputMode.Value\022G\n\016algorithm_name\030\002" +
-      " \001(\0162/.flyteidl.plugins.sagemaker.Algori" +
-      "thmName.Value\022\031\n\021algorithm_version\030\003 \001(\t" +
-      "\022_\n\022metric_definitions\030\004 \003(\0132C.flyteidl." +
-      "plugins.sagemaker.AlgorithmSpecification" +
-      ".MetricDefinition\032/\n\020MetricDefinition\022\014\n" +
-      "\004name\030\001 \001(\t\022\r\n\005regex\030\002 \001(\t\"e\n\031TrainingJo" +
-      "bResourceConfig\022\026\n\016instance_count\030\001 \001(\003\022" +
-      "\025\n\rinstance_type\030\002 \001(\t\022\031\n\021volume_size_in" +
-      "_gb\030\003 \001(\003\"U\n\021StoppingCondition\022\036\n\026max_ru" +
-      "ntime_in_seconds\030\001 \001(\003\022 \n\030max_wait_time_" +
-      "in_seconds\030\002 \001(\003\"\315\001\n\013TrainingJob\022S\n\027algo" +
-      "rithm_specification\030\001 \001(\01322.flyteidl.plu" +
-      "gins.sagemaker.AlgorithmSpecification\022R\n" +
-      "\023training_job_config\030\002 \001(\01325.flyteidl.pl" +
-      "ugins.sagemaker.TrainingJobResourceConfi" +
-      "g\022\025\n\rinterruptible\030\003 \001(\010B5Z3github.com/l" +
-      "yft/flyteidl/gen/pb-go/flyteidl/pluginsb" +
-      "\006proto3"
+      "b.proto\022\032flyteidl.plugins.sagemaker\032\036goo" +
+      "gle/protobuf/duration.proto\"(\n\tInputMode" +
+      "\"\033\n\005Value\022\010\n\004FILE\020\000\022\010\n\004PIPE\020\001\"1\n\rAlgorit" +
+      "hmName\" \n\005Value\022\n\n\006CUSTOM\020\000\022\013\n\007XGBOOST\020\001" +
+      "\"\317\002\n\026AlgorithmSpecification\022?\n\ninput_mod" +
+      "e\030\001 \001(\0162+.flyteidl.plugins.sagemaker.Inp" +
+      "utMode.Value\022G\n\016algorithm_name\030\002 \001(\0162/.f" +
+      "lyteidl.plugins.sagemaker.AlgorithmName." +
+      "Value\022\031\n\021algorithm_version\030\003 \001(\t\022_\n\022metr" +
+      "ic_definitions\030\004 \003(\0132C.flyteidl.plugins." +
+      "sagemaker.AlgorithmSpecification.MetricD" +
+      "efinition\032/\n\020MetricDefinition\022\014\n\004name\030\001 " +
+      "\001(\t\022\r\n\005regex\030\002 \001(\t\"e\n\031TrainingJobResourc" +
+      "eConfig\022\026\n\016instance_count\030\001 \001(\003\022\025\n\rinsta" +
+      "nce_type\030\002 \001(\t\022\031\n\021volume_size_in_gb\030\003 \001(" +
+      "\003\"\213\001\n\021StoppingCondition\0229\n\026max_runtime_i" +
+      "n_seconds\030\001 \001(\0132\031.google.protobuf.Durati" +
+      "on\022;\n\030max_wait_time_in_seconds\030\002 \001(\0132\031.g" +
+      "oogle.protobuf.Duration\"\315\001\n\013TrainingJob\022" +
+      "S\n\027algorithm_specification\030\001 \001(\01322.flyte" +
+      "idl.plugins.sagemaker.AlgorithmSpecifica" +
+      "tion\022R\n\023training_job_config\030\002 \001(\01325.flyt" +
+      "eidl.plugins.sagemaker.TrainingJobResour" +
+      "ceConfig\022\025\n\rinterruptible\030\003 \001(\010B5Z3githu" +
+      "b.com/lyft/flyteidl/gen/pb-go/flyteidl/p" +
+      "luginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5512,6 +5900,7 @@ public final class TrainingJobOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.DurationProto.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_plugins_sagemaker_InputMode_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -5555,6 +5944,7 @@ public final class TrainingJobOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_TrainingJob_descriptor,
         new java.lang.String[] { "AlgorithmSpecification", "TrainingJobConfig", "Interruptible", });
+    com.google.protobuf.DurationProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
