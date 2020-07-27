@@ -21,6 +21,18 @@ message AlgorithmName {
     }
 }
 
+
+// Specifies a metric that the training algorithm writes to stderr or stdout.
+// This object is a pass-through.
+// See this for details: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html
+message MetricDefinition {
+    // User-defined name of the metric
+    string name = 1;
+    // SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+    string regex = 2;
+}
+
+
 // Specifies the training algorithm to be used in the training job
 // This object is mostly a pass-through, with a couple of exceptions include: (1) in Flyte, users don't need to specify
 // TrainingImage; either use the built-in algorithm mode by using Flytekit's Simple Training Job and specifying an algorithm
@@ -38,14 +50,9 @@ message AlgorithmSpecification {
     // This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
     string algorithm_version = 3;
 
-    message MetricDefinition {
-        // User-defined name of the metric
-        string name = 1;
-        // SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
-        string regex = 2;
-    }
     // A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-    // https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+    // See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+    // and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
     repeated MetricDefinition metric_definitions = 4;
 }
 
