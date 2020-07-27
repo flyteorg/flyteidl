@@ -69,12 +69,44 @@ XGBOOST
   ⁣
   
 
+.. _api_msg_flyteidl.plugins.sagemaker.MetricDefinition:
+
+flyteidl.plugins.sagemaker.MetricDefinition
+-------------------------------------------
+
+`[flyteidl.plugins.sagemaker.MetricDefinition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L27>`_
+
+Specifies a metric that the training algorithm writes to stderr or stdout.
+This object is a pass-through.
+See this for details: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html
+
+.. code-block:: json
+
+  {
+    "name": "...",
+    "regex": "..."
+  }
+
+.. _api_field_flyteidl.plugins.sagemaker.MetricDefinition.name:
+
+name
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) User-defined name of the metric
+  
+  
+.. _api_field_flyteidl.plugins.sagemaker.MetricDefinition.regex:
+
+regex
+  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+  
+  
+
+
 .. _api_msg_flyteidl.plugins.sagemaker.AlgorithmSpecification:
 
 flyteidl.plugins.sagemaker.AlgorithmSpecification
 -------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.AlgorithmSpecification proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L30>`_
+`[flyteidl.plugins.sagemaker.AlgorithmSpecification proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L42>`_
 
 Specifies the training algorithm to be used in the training job
 This object is mostly a pass-through, with a couple of exceptions include: (1) in Flyte, users don't need to specify
@@ -116,38 +148,11 @@ algorithm_version
 .. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.metric_definitions:
 
 metric_definitions
-  (:ref:`flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition <api_msg_flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition>`) A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-  https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+  (:ref:`flyteidl.plugins.sagemaker.MetricDefinition <api_msg_flyteidl.plugins.sagemaker.MetricDefinition>`) A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
+  See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+  and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
   
   
-.. _api_msg_flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition:
-
-flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition
-------------------------------------------------------------------
-
-`[flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L40>`_
-
-
-.. code-block:: json
-
-  {
-    "name": "...",
-    "regex": "..."
-  }
-
-.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name:
-
-name
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) User-defined name of the metric
-  
-  
-.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex:
-
-regex
-  (`string <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
-  
-  
-
 
 
 .. _api_msg_flyteidl.plugins.sagemaker.TrainingJobResourceConfig:
@@ -155,7 +160,7 @@ regex
 flyteidl.plugins.sagemaker.TrainingJobResourceConfig
 ----------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L54>`_
+`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L61>`_
 
 TrainingJobResourceConfig is a pass-through, specifying the instance type to use for the training job, the
 number of instances to launch, and the size of the ML storage volume the user wants to provision
@@ -194,7 +199,7 @@ volume_size_in_gb
 flyteidl.plugins.sagemaker.TrainingJob
 --------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L65>`_
+`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L72>`_
 
 The spec of a training job. This is mostly a pass-through object
 https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html

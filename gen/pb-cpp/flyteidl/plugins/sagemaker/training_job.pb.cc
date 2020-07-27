@@ -16,7 +16,7 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_AlgorithmSpecification_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TrainingJobResourceConfig_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_AlgorithmSpecification_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
 namespace flyteidl {
@@ -30,10 +30,10 @@ class AlgorithmNameDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<AlgorithmName> _instance;
 } _AlgorithmName_default_instance_;
-class AlgorithmSpecification_MetricDefinitionDefaultTypeInternal {
+class MetricDefinitionDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<AlgorithmSpecification_MetricDefinition> _instance;
-} _AlgorithmSpecification_MetricDefinition_default_instance_;
+  ::google::protobuf::internal::ExplicitlyConstructed<MetricDefinition> _instance;
+} _MetricDefinition_default_instance_;
 class AlgorithmSpecificationDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<AlgorithmSpecification> _instance;
@@ -77,19 +77,19 @@ static void InitDefaultsAlgorithmName_flyteidl_2fplugins_2fsagemaker_2ftraining_
 ::google::protobuf::internal::SCCInfo<0> scc_info_AlgorithmName_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsAlgorithmName_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto}, {}};
 
-static void InitDefaultsAlgorithmSpecification_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto() {
+static void InitDefaultsMetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::flyteidl::plugins::sagemaker::_AlgorithmSpecification_MetricDefinition_default_instance_;
-    new (ptr) ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition();
+    void* ptr = &::flyteidl::plugins::sagemaker::_MetricDefinition_default_instance_;
+    new (ptr) ::flyteidl::plugins::sagemaker::MetricDefinition();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition::InitAsDefaultInstance();
+  ::flyteidl::plugins::sagemaker::MetricDefinition::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_AlgorithmSpecification_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsAlgorithmSpecification_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsMetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto}, {}};
 
 static void InitDefaultsAlgorithmSpecification_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -104,7 +104,7 @@ static void InitDefaultsAlgorithmSpecification_flyteidl_2fplugins_2fsagemaker_2f
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_AlgorithmSpecification_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsAlgorithmSpecification_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto}, {
-      &scc_info_AlgorithmSpecification_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base,}};
+      &scc_info_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base,}};
 
 static void InitDefaultsTrainingJobResourceConfig_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -139,7 +139,7 @@ static void InitDefaultsTrainingJob_flyteidl_2fplugins_2fsagemaker_2ftraining_5f
 void InitDefaults_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_InputMode_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_AlgorithmName_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_AlgorithmSpecification_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_AlgorithmSpecification_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_TrainingJobResourceConfig_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_TrainingJob_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
@@ -161,12 +161,12 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fsagemaker_2ftr
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::MetricDefinition, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition, name_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition, regex_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::MetricDefinition, name_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::MetricDefinition, regex_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::AlgorithmSpecification, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -195,7 +195,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fsagemaker_2ftr
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::sagemaker::InputMode)},
   { 5, -1, sizeof(::flyteidl::plugins::sagemaker::AlgorithmName)},
-  { 10, -1, sizeof(::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition)},
+  { 10, -1, sizeof(::flyteidl::plugins::sagemaker::MetricDefinition)},
   { 17, -1, sizeof(::flyteidl::plugins::sagemaker::AlgorithmSpecification)},
   { 26, -1, sizeof(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig)},
   { 34, -1, sizeof(::flyteidl::plugins::sagemaker::TrainingJob)},
@@ -204,7 +204,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_InputMode_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_AlgorithmName_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_AlgorithmSpecification_MetricDefinition_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_MetricDefinition_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_AlgorithmSpecification_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_TrainingJobResourceConfig_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_TrainingJob_default_instance_),
@@ -222,29 +222,28 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2ftraining_5
   "gle/protobuf/duration.proto\"(\n\tInputMode"
   "\"\033\n\005Value\022\010\n\004FILE\020\000\022\010\n\004PIPE\020\001\"1\n\rAlgorit"
   "hmName\" \n\005Value\022\n\n\006CUSTOM\020\000\022\013\n\007XGBOOST\020\001"
-  "\"\317\002\n\026AlgorithmSpecification\022\?\n\ninput_mod"
-  "e\030\001 \001(\0162+.flyteidl.plugins.sagemaker.Inp"
-  "utMode.Value\022G\n\016algorithm_name\030\002 \001(\0162/.f"
-  "lyteidl.plugins.sagemaker.AlgorithmName."
-  "Value\022\031\n\021algorithm_version\030\003 \001(\t\022_\n\022metr"
-  "ic_definitions\030\004 \003(\0132C.flyteidl.plugins."
-  "sagemaker.AlgorithmSpecification.MetricD"
-  "efinition\032/\n\020MetricDefinition\022\014\n\004name\030\001 "
-  "\001(\t\022\r\n\005regex\030\002 \001(\t\"e\n\031TrainingJobResourc"
-  "eConfig\022\026\n\016instance_count\030\001 \001(\003\022\025\n\rinsta"
-  "nce_type\030\002 \001(\t\022\031\n\021volume_size_in_gb\030\003 \001("
-  "\003\"\266\001\n\013TrainingJob\022S\n\027algorithm_specifica"
-  "tion\030\001 \001(\01322.flyteidl.plugins.sagemaker."
-  "AlgorithmSpecification\022R\n\023training_job_c"
-  "onfig\030\002 \001(\01325.flyteidl.plugins.sagemaker"
-  ".TrainingJobResourceConfigB5Z3github.com"
-  "/lyft/flyteidl/gen/pb-go/flyteidl/plugin"
-  "sb\006proto3"
+  "\"/\n\020MetricDefinition\022\014\n\004name\030\001 \001(\t\022\r\n\005re"
+  "gex\030\002 \001(\t\"\207\002\n\026AlgorithmSpecification\022\?\n\n"
+  "input_mode\030\001 \001(\0162+.flyteidl.plugins.sage"
+  "maker.InputMode.Value\022G\n\016algorithm_name\030"
+  "\002 \001(\0162/.flyteidl.plugins.sagemaker.Algor"
+  "ithmName.Value\022\031\n\021algorithm_version\030\003 \001("
+  "\t\022H\n\022metric_definitions\030\004 \003(\0132,.flyteidl"
+  ".plugins.sagemaker.MetricDefinition\"e\n\031T"
+  "rainingJobResourceConfig\022\026\n\016instance_cou"
+  "nt\030\001 \001(\003\022\025\n\rinstance_type\030\002 \001(\t\022\031\n\021volum"
+  "e_size_in_gb\030\003 \001(\003\"\266\001\n\013TrainingJob\022S\n\027al"
+  "gorithm_specification\030\001 \001(\01322.flyteidl.p"
+  "lugins.sagemaker.AlgorithmSpecification\022"
+  "R\n\023training_job_config\030\002 \001(\01325.flyteidl."
+  "plugins.sagemaker.TrainingJobResourceCon"
+  "figB5Z3github.com/lyft/flyteidl/gen/pb-g"
+  "o/flyteidl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto,
-  "flyteidl/plugins/sagemaker/training_job.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, 889,
+  "flyteidl/plugins/sagemaker/training_job.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, 866,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto() {
@@ -723,23 +722,23 @@ void AlgorithmName::InternalSwap(AlgorithmName* other) {
 
 // ===================================================================
 
-void AlgorithmSpecification_MetricDefinition::InitAsDefaultInstance() {
+void MetricDefinition::InitAsDefaultInstance() {
 }
-class AlgorithmSpecification_MetricDefinition::HasBitSetters {
+class MetricDefinition::HasBitSetters {
  public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int AlgorithmSpecification_MetricDefinition::kNameFieldNumber;
-const int AlgorithmSpecification_MetricDefinition::kRegexFieldNumber;
+const int MetricDefinition::kNameFieldNumber;
+const int MetricDefinition::kRegexFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-AlgorithmSpecification_MetricDefinition::AlgorithmSpecification_MetricDefinition()
+MetricDefinition::MetricDefinition()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+  // @@protoc_insertion_point(constructor:flyteidl.plugins.sagemaker.MetricDefinition)
 }
-AlgorithmSpecification_MetricDefinition::AlgorithmSpecification_MetricDefinition(const AlgorithmSpecification_MetricDefinition& from)
+MetricDefinition::MetricDefinition(const MetricDefinition& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -751,37 +750,37 @@ AlgorithmSpecification_MetricDefinition::AlgorithmSpecification_MetricDefinition
   if (from.regex().size() > 0) {
     regex_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.regex_);
   }
-  // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+  // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.sagemaker.MetricDefinition)
 }
 
-void AlgorithmSpecification_MetricDefinition::SharedCtor() {
+void MetricDefinition::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
-      &scc_info_AlgorithmSpecification_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
+      &scc_info_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   regex_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-AlgorithmSpecification_MetricDefinition::~AlgorithmSpecification_MetricDefinition() {
-  // @@protoc_insertion_point(destructor:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+MetricDefinition::~MetricDefinition() {
+  // @@protoc_insertion_point(destructor:flyteidl.plugins.sagemaker.MetricDefinition)
   SharedDtor();
 }
 
-void AlgorithmSpecification_MetricDefinition::SharedDtor() {
+void MetricDefinition::SharedDtor() {
   name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   regex_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-void AlgorithmSpecification_MetricDefinition::SetCachedSize(int size) const {
+void MetricDefinition::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const AlgorithmSpecification_MetricDefinition& AlgorithmSpecification_MetricDefinition::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_AlgorithmSpecification_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
+const MetricDefinition& MetricDefinition::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void AlgorithmSpecification_MetricDefinition::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+void MetricDefinition::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.plugins.sagemaker.MetricDefinition)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -792,9 +791,9 @@ void AlgorithmSpecification_MetricDefinition::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* AlgorithmSpecification_MetricDefinition::_InternalParse(const char* begin, const char* end, void* object,
+const char* MetricDefinition::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<AlgorithmSpecification_MetricDefinition*>(object);
+  auto msg = static_cast<MetricDefinition*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -809,7 +808,7 @@ const char* AlgorithmSpecification_MetricDefinition::_InternalParse(const char* 
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name");
+        ctx->extra_parse_data().SetFieldName("flyteidl.plugins.sagemaker.MetricDefinition.name");
         object = msg->mutable_name();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
@@ -825,7 +824,7 @@ const char* AlgorithmSpecification_MetricDefinition::_InternalParse(const char* 
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex");
+        ctx->extra_parse_data().SetFieldName("flyteidl.plugins.sagemaker.MetricDefinition.regex");
         object = msg->mutable_regex();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
@@ -860,11 +859,11 @@ len_delim_till_end:
                                {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool AlgorithmSpecification_MetricDefinition::MergePartialFromCodedStream(
+bool MetricDefinition::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+  // @@protoc_insertion_point(parse_start:flyteidl.plugins.sagemaker.MetricDefinition)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -878,7 +877,7 @@ bool AlgorithmSpecification_MetricDefinition::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->name().data(), static_cast<int>(this->name().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name"));
+            "flyteidl.plugins.sagemaker.MetricDefinition.name"));
         } else {
           goto handle_unusual;
         }
@@ -893,7 +892,7 @@ bool AlgorithmSpecification_MetricDefinition::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->regex().data(), static_cast<int>(this->regex().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex"));
+            "flyteidl.plugins.sagemaker.MetricDefinition.regex"));
         } else {
           goto handle_unusual;
         }
@@ -912,18 +911,18 @@ bool AlgorithmSpecification_MetricDefinition::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+  // @@protoc_insertion_point(parse_success:flyteidl.plugins.sagemaker.MetricDefinition)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+  // @@protoc_insertion_point(parse_failure:flyteidl.plugins.sagemaker.MetricDefinition)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void AlgorithmSpecification_MetricDefinition::SerializeWithCachedSizes(
+void MetricDefinition::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+  // @@protoc_insertion_point(serialize_start:flyteidl.plugins.sagemaker.MetricDefinition)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -932,7 +931,7 @@ void AlgorithmSpecification_MetricDefinition::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->name().data(), static_cast<int>(this->name().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name");
+      "flyteidl.plugins.sagemaker.MetricDefinition.name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->name(), output);
   }
@@ -942,7 +941,7 @@ void AlgorithmSpecification_MetricDefinition::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->regex().data(), static_cast<int>(this->regex().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex");
+      "flyteidl.plugins.sagemaker.MetricDefinition.regex");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->regex(), output);
   }
@@ -951,12 +950,12 @@ void AlgorithmSpecification_MetricDefinition::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+  // @@protoc_insertion_point(serialize_end:flyteidl.plugins.sagemaker.MetricDefinition)
 }
 
-::google::protobuf::uint8* AlgorithmSpecification_MetricDefinition::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* MetricDefinition::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.plugins.sagemaker.MetricDefinition)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -965,7 +964,7 @@ void AlgorithmSpecification_MetricDefinition::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->name().data(), static_cast<int>(this->name().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name");
+      "flyteidl.plugins.sagemaker.MetricDefinition.name");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->name(), target);
@@ -976,7 +975,7 @@ void AlgorithmSpecification_MetricDefinition::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->regex().data(), static_cast<int>(this->regex().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex");
+      "flyteidl.plugins.sagemaker.MetricDefinition.regex");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->regex(), target);
@@ -986,12 +985,12 @@ void AlgorithmSpecification_MetricDefinition::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.plugins.sagemaker.MetricDefinition)
   return target;
 }
 
-size_t AlgorithmSpecification_MetricDefinition::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+size_t MetricDefinition::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.plugins.sagemaker.MetricDefinition)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1022,23 +1021,23 @@ size_t AlgorithmSpecification_MetricDefinition::ByteSizeLong() const {
   return total_size;
 }
 
-void AlgorithmSpecification_MetricDefinition::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+void MetricDefinition::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.plugins.sagemaker.MetricDefinition)
   GOOGLE_DCHECK_NE(&from, this);
-  const AlgorithmSpecification_MetricDefinition* source =
-      ::google::protobuf::DynamicCastToGenerated<AlgorithmSpecification_MetricDefinition>(
+  const MetricDefinition* source =
+      ::google::protobuf::DynamicCastToGenerated<MetricDefinition>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.plugins.sagemaker.MetricDefinition)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.plugins.sagemaker.MetricDefinition)
     MergeFrom(*source);
   }
 }
 
-void AlgorithmSpecification_MetricDefinition::MergeFrom(const AlgorithmSpecification_MetricDefinition& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+void MetricDefinition::MergeFrom(const MetricDefinition& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.plugins.sagemaker.MetricDefinition)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -1054,29 +1053,29 @@ void AlgorithmSpecification_MetricDefinition::MergeFrom(const AlgorithmSpecifica
   }
 }
 
-void AlgorithmSpecification_MetricDefinition::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+void MetricDefinition::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.plugins.sagemaker.MetricDefinition)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void AlgorithmSpecification_MetricDefinition::CopyFrom(const AlgorithmSpecification_MetricDefinition& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+void MetricDefinition::CopyFrom(const MetricDefinition& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.plugins.sagemaker.MetricDefinition)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool AlgorithmSpecification_MetricDefinition::IsInitialized() const {
+bool MetricDefinition::IsInitialized() const {
   return true;
 }
 
-void AlgorithmSpecification_MetricDefinition::Swap(AlgorithmSpecification_MetricDefinition* other) {
+void MetricDefinition::Swap(MetricDefinition* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void AlgorithmSpecification_MetricDefinition::InternalSwap(AlgorithmSpecification_MetricDefinition* other) {
+void MetricDefinition::InternalSwap(MetricDefinition* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
@@ -1085,7 +1084,7 @@ void AlgorithmSpecification_MetricDefinition::InternalSwap(AlgorithmSpecificatio
     GetArenaNoVirtual());
 }
 
-::google::protobuf::Metadata AlgorithmSpecification_MetricDefinition::GetMetadata() const {
+::google::protobuf::Metadata MetricDefinition::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto);
   return ::file_level_metadata_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto[kIndexInFileMessages];
 }
@@ -1212,13 +1211,13 @@ const char* AlgorithmSpecification::_InternalParse(const char* begin, const char
         ptr += size;
         break;
       }
-      // repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;
+      // repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;
       case 4: {
         if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition::_InternalParse;
+          parser_till_end = ::flyteidl::plugins::sagemaker::MetricDefinition::_InternalParse;
           object = msg->add_metric_definitions();
           if (size > end - ptr) goto len_delim_till_end;
           ptr += size;
@@ -1305,7 +1304,7 @@ bool AlgorithmSpecification::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;
+      // repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -1365,7 +1364,7 @@ void AlgorithmSpecification::SerializeWithCachedSizes(
       3, this->algorithm_version(), output);
   }
 
-  // repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;
+  // repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->metric_definitions_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -1410,7 +1409,7 @@ void AlgorithmSpecification::SerializeWithCachedSizes(
         3, this->algorithm_version(), target);
   }
 
-  // repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;
+  // repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->metric_definitions_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -1439,7 +1438,7 @@ size_t AlgorithmSpecification::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;
+  // repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;
   {
     unsigned int count = static_cast<unsigned int>(this->metric_definitions_size());
     total_size += 1UL * count;
@@ -2304,8 +2303,8 @@ template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::InputMode* Arena::C
 template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::AlgorithmName* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::AlgorithmName >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::AlgorithmName >(arena);
 }
-template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition >(arena);
+template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::MetricDefinition* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::MetricDefinition >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::MetricDefinition >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::AlgorithmSpecification* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::AlgorithmSpecification >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::AlgorithmSpecification >(arena);

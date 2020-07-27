@@ -59,12 +59,12 @@ extern AlgorithmNameDefaultTypeInternal _AlgorithmName_default_instance_;
 class AlgorithmSpecification;
 class AlgorithmSpecificationDefaultTypeInternal;
 extern AlgorithmSpecificationDefaultTypeInternal _AlgorithmSpecification_default_instance_;
-class AlgorithmSpecification_MetricDefinition;
-class AlgorithmSpecification_MetricDefinitionDefaultTypeInternal;
-extern AlgorithmSpecification_MetricDefinitionDefaultTypeInternal _AlgorithmSpecification_MetricDefinition_default_instance_;
 class InputMode;
 class InputModeDefaultTypeInternal;
 extern InputModeDefaultTypeInternal _InputMode_default_instance_;
+class MetricDefinition;
+class MetricDefinitionDefaultTypeInternal;
+extern MetricDefinitionDefaultTypeInternal _MetricDefinition_default_instance_;
 class TrainingJob;
 class TrainingJobDefaultTypeInternal;
 extern TrainingJobDefaultTypeInternal _TrainingJob_default_instance_;
@@ -78,8 +78,8 @@ namespace google {
 namespace protobuf {
 template<> ::flyteidl::plugins::sagemaker::AlgorithmName* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::AlgorithmName>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::AlgorithmSpecification* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::AlgorithmSpecification>(Arena*);
-template<> ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::InputMode* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::InputMode>(Arena*);
+template<> ::flyteidl::plugins::sagemaker::MetricDefinition* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::MetricDefinition>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::TrainingJob* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::TrainingJob>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::TrainingJobResourceConfig>(Arena*);
 }  // namespace protobuf
@@ -394,25 +394,25 @@ class AlgorithmName final :
 };
 // -------------------------------------------------------------------
 
-class AlgorithmSpecification_MetricDefinition final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition) */ {
+class MetricDefinition final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.sagemaker.MetricDefinition) */ {
  public:
-  AlgorithmSpecification_MetricDefinition();
-  virtual ~AlgorithmSpecification_MetricDefinition();
+  MetricDefinition();
+  virtual ~MetricDefinition();
 
-  AlgorithmSpecification_MetricDefinition(const AlgorithmSpecification_MetricDefinition& from);
+  MetricDefinition(const MetricDefinition& from);
 
-  inline AlgorithmSpecification_MetricDefinition& operator=(const AlgorithmSpecification_MetricDefinition& from) {
+  inline MetricDefinition& operator=(const MetricDefinition& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  AlgorithmSpecification_MetricDefinition(AlgorithmSpecification_MetricDefinition&& from) noexcept
-    : AlgorithmSpecification_MetricDefinition() {
+  MetricDefinition(MetricDefinition&& from) noexcept
+    : MetricDefinition() {
     *this = ::std::move(from);
   }
 
-  inline AlgorithmSpecification_MetricDefinition& operator=(AlgorithmSpecification_MetricDefinition&& from) noexcept {
+  inline MetricDefinition& operator=(MetricDefinition&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -424,34 +424,34 @@ class AlgorithmSpecification_MetricDefinition final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const AlgorithmSpecification_MetricDefinition& default_instance();
+  static const MetricDefinition& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const AlgorithmSpecification_MetricDefinition* internal_default_instance() {
-    return reinterpret_cast<const AlgorithmSpecification_MetricDefinition*>(
-               &_AlgorithmSpecification_MetricDefinition_default_instance_);
+  static inline const MetricDefinition* internal_default_instance() {
+    return reinterpret_cast<const MetricDefinition*>(
+               &_MetricDefinition_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     2;
 
-  void Swap(AlgorithmSpecification_MetricDefinition* other);
-  friend void swap(AlgorithmSpecification_MetricDefinition& a, AlgorithmSpecification_MetricDefinition& b) {
+  void Swap(MetricDefinition* other);
+  friend void swap(MetricDefinition& a, MetricDefinition& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline AlgorithmSpecification_MetricDefinition* New() const final {
-    return CreateMaybeMessage<AlgorithmSpecification_MetricDefinition>(nullptr);
+  inline MetricDefinition* New() const final {
+    return CreateMaybeMessage<MetricDefinition>(nullptr);
   }
 
-  AlgorithmSpecification_MetricDefinition* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<AlgorithmSpecification_MetricDefinition>(arena);
+  MetricDefinition* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<MetricDefinition>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const AlgorithmSpecification_MetricDefinition& from);
-  void MergeFrom(const AlgorithmSpecification_MetricDefinition& from);
+  void CopyFrom(const MetricDefinition& from);
+  void MergeFrom(const MetricDefinition& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -473,7 +473,7 @@ class AlgorithmSpecification_MetricDefinition final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(AlgorithmSpecification_MetricDefinition* other);
+  void InternalSwap(MetricDefinition* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -517,7 +517,7 @@ class AlgorithmSpecification_MetricDefinition final :
   ::std::string* release_regex();
   void set_allocated_regex(::std::string* regex);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
+  // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.MetricDefinition)
  private:
   class HasBitSetters;
 
@@ -622,20 +622,18 @@ class AlgorithmSpecification final :
 
   // nested types ----------------------------------------------------
 
-  typedef AlgorithmSpecification_MetricDefinition MetricDefinition;
-
   // accessors -------------------------------------------------------
 
-  // repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;
+  // repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;
   int metric_definitions_size() const;
   void clear_metric_definitions();
   static const int kMetricDefinitionsFieldNumber = 4;
-  ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition* mutable_metric_definitions(int index);
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition >*
+  ::flyteidl::plugins::sagemaker::MetricDefinition* mutable_metric_definitions(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::sagemaker::MetricDefinition >*
       mutable_metric_definitions();
-  const ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition& metric_definitions(int index) const;
-  ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition* add_metric_definitions();
-  const ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition >&
+  const ::flyteidl::plugins::sagemaker::MetricDefinition& metric_definitions(int index) const;
+  ::flyteidl::plugins::sagemaker::MetricDefinition* add_metric_definitions();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::sagemaker::MetricDefinition >&
       metric_definitions() const;
 
   // string algorithm_version = 3;
@@ -669,7 +667,7 @@ class AlgorithmSpecification final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition > metric_definitions_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::sagemaker::MetricDefinition > metric_definitions_;
   ::google::protobuf::internal::ArenaStringPtr algorithm_version_;
   int input_mode_;
   int algorithm_name_;
@@ -952,112 +950,112 @@ class TrainingJob final :
 
 // -------------------------------------------------------------------
 
-// AlgorithmSpecification_MetricDefinition
+// MetricDefinition
 
 // string name = 1;
-inline void AlgorithmSpecification_MetricDefinition::clear_name() {
+inline void MetricDefinition::clear_name() {
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& AlgorithmSpecification_MetricDefinition::name() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name)
+inline const ::std::string& MetricDefinition::name() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.MetricDefinition.name)
   return name_.GetNoArena();
 }
-inline void AlgorithmSpecification_MetricDefinition::set_name(const ::std::string& value) {
+inline void MetricDefinition::set_name(const ::std::string& value) {
   
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name)
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.MetricDefinition.name)
 }
 #if LANG_CXX11
-inline void AlgorithmSpecification_MetricDefinition::set_name(::std::string&& value) {
+inline void MetricDefinition::set_name(::std::string&& value) {
   
   name_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.MetricDefinition.name)
 }
 #endif
-inline void AlgorithmSpecification_MetricDefinition::set_name(const char* value) {
+inline void MetricDefinition::set_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name)
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.MetricDefinition.name)
 }
-inline void AlgorithmSpecification_MetricDefinition::set_name(const char* value, size_t size) {
+inline void MetricDefinition::set_name(const char* value, size_t size) {
   
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.MetricDefinition.name)
 }
-inline ::std::string* AlgorithmSpecification_MetricDefinition::mutable_name() {
+inline ::std::string* MetricDefinition::mutable_name() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name)
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.MetricDefinition.name)
   return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* AlgorithmSpecification_MetricDefinition::release_name() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name)
+inline ::std::string* MetricDefinition::release_name() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.MetricDefinition.name)
   
   return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void AlgorithmSpecification_MetricDefinition::set_allocated_name(::std::string* name) {
+inline void MetricDefinition::set_allocated_name(::std::string* name) {
   if (name != nullptr) {
     
   } else {
     
   }
   name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.name)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.MetricDefinition.name)
 }
 
 // string regex = 2;
-inline void AlgorithmSpecification_MetricDefinition::clear_regex() {
+inline void MetricDefinition::clear_regex() {
   regex_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& AlgorithmSpecification_MetricDefinition::regex() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex)
+inline const ::std::string& MetricDefinition::regex() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.MetricDefinition.regex)
   return regex_.GetNoArena();
 }
-inline void AlgorithmSpecification_MetricDefinition::set_regex(const ::std::string& value) {
+inline void MetricDefinition::set_regex(const ::std::string& value) {
   
   regex_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex)
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.MetricDefinition.regex)
 }
 #if LANG_CXX11
-inline void AlgorithmSpecification_MetricDefinition::set_regex(::std::string&& value) {
+inline void MetricDefinition::set_regex(::std::string&& value) {
   
   regex_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.sagemaker.MetricDefinition.regex)
 }
 #endif
-inline void AlgorithmSpecification_MetricDefinition::set_regex(const char* value) {
+inline void MetricDefinition::set_regex(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   regex_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex)
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.sagemaker.MetricDefinition.regex)
 }
-inline void AlgorithmSpecification_MetricDefinition::set_regex(const char* value, size_t size) {
+inline void MetricDefinition::set_regex(const char* value, size_t size) {
   
   regex_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.sagemaker.MetricDefinition.regex)
 }
-inline ::std::string* AlgorithmSpecification_MetricDefinition::mutable_regex() {
+inline ::std::string* MetricDefinition::mutable_regex() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex)
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.MetricDefinition.regex)
   return regex_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* AlgorithmSpecification_MetricDefinition::release_regex() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex)
+inline ::std::string* MetricDefinition::release_regex() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.MetricDefinition.regex)
   
   return regex_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void AlgorithmSpecification_MetricDefinition::set_allocated_regex(::std::string* regex) {
+inline void MetricDefinition::set_allocated_regex(::std::string* regex) {
   if (regex != nullptr) {
     
   } else {
     
   }
   regex_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), regex);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition.regex)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.MetricDefinition.regex)
 }
 
 // -------------------------------------------------------------------
@@ -1145,31 +1143,31 @@ inline void AlgorithmSpecification::set_allocated_algorithm_version(::std::strin
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.AlgorithmSpecification.algorithm_version)
 }
 
-// repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;
+// repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;
 inline int AlgorithmSpecification::metric_definitions_size() const {
   return metric_definitions_.size();
 }
 inline void AlgorithmSpecification::clear_metric_definitions() {
   metric_definitions_.Clear();
 }
-inline ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition* AlgorithmSpecification::mutable_metric_definitions(int index) {
+inline ::flyteidl::plugins::sagemaker::MetricDefinition* AlgorithmSpecification::mutable_metric_definitions(int index) {
   // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.AlgorithmSpecification.metric_definitions)
   return metric_definitions_.Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition >*
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::sagemaker::MetricDefinition >*
 AlgorithmSpecification::mutable_metric_definitions() {
   // @@protoc_insertion_point(field_mutable_list:flyteidl.plugins.sagemaker.AlgorithmSpecification.metric_definitions)
   return &metric_definitions_;
 }
-inline const ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition& AlgorithmSpecification::metric_definitions(int index) const {
+inline const ::flyteidl::plugins::sagemaker::MetricDefinition& AlgorithmSpecification::metric_definitions(int index) const {
   // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.AlgorithmSpecification.metric_definitions)
   return metric_definitions_.Get(index);
 }
-inline ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition* AlgorithmSpecification::add_metric_definitions() {
+inline ::flyteidl::plugins::sagemaker::MetricDefinition* AlgorithmSpecification::add_metric_definitions() {
   // @@protoc_insertion_point(field_add:flyteidl.plugins.sagemaker.AlgorithmSpecification.metric_definitions)
   return metric_definitions_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition >&
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::sagemaker::MetricDefinition >&
 AlgorithmSpecification::metric_definitions() const {
   // @@protoc_insertion_point(field_list:flyteidl.plugins.sagemaker.AlgorithmSpecification.metric_definitions)
   return metric_definitions_;

@@ -165,6 +165,75 @@ var _ interface {
 	ErrorName() string
 } = AlgorithmNameValidationError{}
 
+// Validate checks the field values on MetricDefinition with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *MetricDefinition) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for Name
+
+	// no validation rules for Regex
+
+	return nil
+}
+
+// MetricDefinitionValidationError is the validation error returned by
+// MetricDefinition.Validate if the designated constraints aren't met.
+type MetricDefinitionValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e MetricDefinitionValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e MetricDefinitionValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e MetricDefinitionValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e MetricDefinitionValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e MetricDefinitionValidationError) ErrorName() string { return "MetricDefinitionValidationError" }
+
+// Error satisfies the builtin error interface
+func (e MetricDefinitionValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sMetricDefinition.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = MetricDefinitionValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = MetricDefinitionValidationError{}
+
 // Validate checks the field values on AlgorithmSpecification with the rules
 // defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
@@ -410,75 +479,3 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = TrainingJobValidationError{}
-
-// Validate checks the field values on AlgorithmSpecification_MetricDefinition
-// with the rules defined in the proto definition for this message. If any
-// rules are violated, an error is returned.
-func (m *AlgorithmSpecification_MetricDefinition) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	// no validation rules for Name
-
-	// no validation rules for Regex
-
-	return nil
-}
-
-// AlgorithmSpecification_MetricDefinitionValidationError is the validation
-// error returned by AlgorithmSpecification_MetricDefinition.Validate if the
-// designated constraints aren't met.
-type AlgorithmSpecification_MetricDefinitionValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e AlgorithmSpecification_MetricDefinitionValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e AlgorithmSpecification_MetricDefinitionValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e AlgorithmSpecification_MetricDefinitionValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e AlgorithmSpecification_MetricDefinitionValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e AlgorithmSpecification_MetricDefinitionValidationError) ErrorName() string {
-	return "AlgorithmSpecification_MetricDefinitionValidationError"
-}
-
-// Error satisfies the builtin error interface
-func (e AlgorithmSpecification_MetricDefinitionValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sAlgorithmSpecification_MetricDefinition.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = AlgorithmSpecification_MetricDefinitionValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = AlgorithmSpecification_MetricDefinitionValidationError{}

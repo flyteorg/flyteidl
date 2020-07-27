@@ -1032,6 +1032,776 @@ public final class TrainingJobOuterClass {
 
   }
 
+  public interface MetricDefinitionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.MetricDefinition)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * User-defined name of the metric
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * User-defined name of the metric
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+     * </pre>
+     *
+     * <code>string regex = 2;</code>
+     */
+    java.lang.String getRegex();
+    /**
+     * <pre>
+     * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+     * </pre>
+     *
+     * <code>string regex = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getRegexBytes();
+  }
+  /**
+   * <pre>
+   * Specifies a metric that the training algorithm writes to stderr or stdout.
+   * This object is a pass-through.
+   * See this for details: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.plugins.sagemaker.MetricDefinition}
+   */
+  public  static final class MetricDefinition extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.plugins.sagemaker.MetricDefinition)
+      MetricDefinitionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MetricDefinition.newBuilder() to construct.
+    private MetricDefinition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MetricDefinition() {
+      name_ = "";
+      regex_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MetricDefinition(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              regex_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_MetricDefinition_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_MetricDefinition_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * User-defined name of the metric
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * User-defined name of the metric
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REGEX_FIELD_NUMBER = 2;
+    private volatile java.lang.Object regex_;
+    /**
+     * <pre>
+     * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+     * </pre>
+     *
+     * <code>string regex = 2;</code>
+     */
+    public java.lang.String getRegex() {
+      java.lang.Object ref = regex_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        regex_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+     * </pre>
+     *
+     * <code>string regex = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRegexBytes() {
+      java.lang.Object ref = regex_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        regex_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!getRegexBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, regex_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!getRegexBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, regex_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition)) {
+        return super.equals(obj);
+      }
+      flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition other = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition) obj;
+
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getRegex()
+          .equals(other.getRegex())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + REGEX_FIELD_NUMBER;
+      hash = (53 * hash) + getRegex().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Specifies a metric that the training algorithm writes to stderr or stdout.
+     * This object is a pass-through.
+     * See this for details: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.plugins.sagemaker.MetricDefinition}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.sagemaker.MetricDefinition)
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinitionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_MetricDefinition_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_MetricDefinition_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.Builder.class);
+      }
+
+      // Construct using flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        regex_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_MetricDefinition_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition getDefaultInstanceForType() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition build() {
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition buildPartial() {
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition result = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition(this);
+        result.name_ = name_;
+        result.regex_ = regex_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition) {
+          return mergeFrom((flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition other) {
+        if (other == flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getRegex().isEmpty()) {
+          regex_ = other.regex_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * User-defined name of the metric
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * User-defined name of the metric
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * User-defined name of the metric
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User-defined name of the metric
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User-defined name of the metric
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object regex_ = "";
+      /**
+       * <pre>
+       * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+       * </pre>
+       *
+       * <code>string regex = 2;</code>
+       */
+      public java.lang.String getRegex() {
+        java.lang.Object ref = regex_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          regex_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+       * </pre>
+       *
+       * <code>string regex = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRegexBytes() {
+        java.lang.Object ref = regex_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          regex_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+       * </pre>
+       *
+       * <code>string regex = 2;</code>
+       */
+      public Builder setRegex(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        regex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+       * </pre>
+       *
+       * <code>string regex = 2;</code>
+       */
+      public Builder clearRegex() {
+        
+        regex_ = getDefaultInstance().getRegex();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
+       * </pre>
+       *
+       * <code>string regex = 2;</code>
+       */
+      public Builder setRegexBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        regex_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.sagemaker.MetricDefinition)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.MetricDefinition)
+    private static final flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition();
+    }
+
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MetricDefinition>
+        PARSER = new com.google.protobuf.AbstractParser<MetricDefinition>() {
+      @java.lang.Override
+      public MetricDefinition parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MetricDefinition(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MetricDefinition> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MetricDefinition> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface AlgorithmSpecificationOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.AlgorithmSpecification)
       com.google.protobuf.MessageOrBuilder {
@@ -1095,50 +1865,55 @@ public final class TrainingJobOuterClass {
     /**
      * <pre>
      * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+     * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
      * </pre>
      *
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
      */
-    java.util.List<flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition> 
+    java.util.List<flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition> 
         getMetricDefinitionsList();
     /**
      * <pre>
      * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+     * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
      * </pre>
      *
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
      */
-    flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition getMetricDefinitions(int index);
+    flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition getMetricDefinitions(int index);
     /**
      * <pre>
      * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+     * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
      * </pre>
      *
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
      */
     int getMetricDefinitionsCount();
     /**
      * <pre>
      * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+     * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
      * </pre>
      *
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
      */
-    java.util.List<? extends flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinitionOrBuilder> 
+    java.util.List<? extends flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinitionOrBuilder> 
         getMetricDefinitionsOrBuilderList();
     /**
      * <pre>
      * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+     * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
      * </pre>
      *
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
      */
-    flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinitionOrBuilder getMetricDefinitionsOrBuilder(
+    flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinitionOrBuilder getMetricDefinitionsOrBuilder(
         int index);
   }
   /**
@@ -1214,11 +1989,11 @@ public final class TrainingJobOuterClass {
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                metricDefinitions_ = new java.util.ArrayList<flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition>();
+                metricDefinitions_ = new java.util.ArrayList<flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition>();
                 mutable_bitField0_ |= 0x00000008;
               }
               metricDefinitions_.add(
-                  input.readMessage(flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.parser(), extensionRegistry));
+                  input.readMessage(flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -1254,764 +2029,6 @@ public final class TrainingJobOuterClass {
       return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.Builder.class);
-    }
-
-    public interface MetricDefinitionOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <pre>
-       * User-defined name of the metric
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      java.lang.String getName();
-      /**
-       * <pre>
-       * User-defined name of the metric
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      com.google.protobuf.ByteString
-          getNameBytes();
-
-      /**
-       * <pre>
-       * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
-       * </pre>
-       *
-       * <code>string regex = 2;</code>
-       */
-      java.lang.String getRegex();
-      /**
-       * <pre>
-       * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
-       * </pre>
-       *
-       * <code>string regex = 2;</code>
-       */
-      com.google.protobuf.ByteString
-          getRegexBytes();
-    }
-    /**
-     * Protobuf type {@code flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition}
-     */
-    public  static final class MetricDefinition extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
-        MetricDefinitionOrBuilder {
-    private static final long serialVersionUID = 0L;
-      // Use MetricDefinition.newBuilder() to construct.
-      private MetricDefinition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private MetricDefinition() {
-        name_ = "";
-        regex_ = "";
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private MetricDefinition(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                name_ = s;
-                break;
-              }
-              case 18: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                regex_ = s;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_MetricDefinition_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_MetricDefinition_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.Builder.class);
-      }
-
-      public static final int NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object name_;
-      /**
-       * <pre>
-       * User-defined name of the metric
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        }
-      }
-      /**
-       * <pre>
-       * User-defined name of the metric
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      public static final int REGEX_FIELD_NUMBER = 2;
-      private volatile java.lang.Object regex_;
-      /**
-       * <pre>
-       * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
-       * </pre>
-       *
-       * <code>string regex = 2;</code>
-       */
-      public java.lang.String getRegex() {
-        java.lang.Object ref = regex_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          regex_ = s;
-          return s;
-        }
-      }
-      /**
-       * <pre>
-       * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
-       * </pre>
-       *
-       * <code>string regex = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getRegexBytes() {
-        java.lang.Object ref = regex_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          regex_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      private byte memoizedIsInitialized = -1;
-      @java.lang.Override
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (!getNameBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-        }
-        if (!getRegexBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, regex_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      @java.lang.Override
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (!getNameBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-        }
-        if (!getRegexBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, regex_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition)) {
-          return super.equals(obj);
-        }
-        flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition other = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition) obj;
-
-        if (!getName()
-            .equals(other.getName())) return false;
-        if (!getRegex()
-            .equals(other.getRegex())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
-        return true;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getName().hashCode();
-        hash = (37 * hash) + REGEX_FIELD_NUMBER;
-        hash = (53 * hash) + getRegex().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      @java.lang.Override
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinitionOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_MetricDefinition_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_MetricDefinition_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.Builder.class);
-        }
-
-        // Construct using flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        @java.lang.Override
-        public Builder clear() {
-          super.clear();
-          name_ = "";
-
-          regex_ = "";
-
-          return this;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_MetricDefinition_descriptor;
-        }
-
-        @java.lang.Override
-        public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition getDefaultInstanceForType() {
-          return flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.getDefaultInstance();
-        }
-
-        @java.lang.Override
-        public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition build() {
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        @java.lang.Override
-        public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition buildPartial() {
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition result = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition(this);
-          result.name_ = name_;
-          result.regex_ = regex_;
-          onBuilt();
-          return result;
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.setField(field, value);
-        }
-        @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-        @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.addRepeatedField(field, value);
-        }
-        @java.lang.Override
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition) {
-            return mergeFrom((flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition other) {
-          if (other == flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.getDefaultInstance()) return this;
-          if (!other.getName().isEmpty()) {
-            name_ = other.name_;
-            onChanged();
-          }
-          if (!other.getRegex().isEmpty()) {
-            regex_ = other.regex_;
-            onChanged();
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        @java.lang.Override
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private java.lang.Object name_ = "";
-        /**
-         * <pre>
-         * User-defined name of the metric
-         * </pre>
-         *
-         * <code>string name = 1;</code>
-         */
-        public java.lang.String getName() {
-          java.lang.Object ref = name_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            name_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <pre>
-         * User-defined name of the metric
-         * </pre>
-         *
-         * <code>string name = 1;</code>
-         */
-        public com.google.protobuf.ByteString
-            getNameBytes() {
-          java.lang.Object ref = name_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            name_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <pre>
-         * User-defined name of the metric
-         * </pre>
-         *
-         * <code>string name = 1;</code>
-         */
-        public Builder setName(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          name_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * User-defined name of the metric
-         * </pre>
-         *
-         * <code>string name = 1;</code>
-         */
-        public Builder clearName() {
-          
-          name_ = getDefaultInstance().getName();
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * User-defined name of the metric
-         * </pre>
-         *
-         * <code>string name = 1;</code>
-         */
-        public Builder setNameBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          name_ = value;
-          onChanged();
-          return this;
-        }
-
-        private java.lang.Object regex_ = "";
-        /**
-         * <pre>
-         * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
-         * </pre>
-         *
-         * <code>string regex = 2;</code>
-         */
-        public java.lang.String getRegex() {
-          java.lang.Object ref = regex_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            regex_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <pre>
-         * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
-         * </pre>
-         *
-         * <code>string regex = 2;</code>
-         */
-        public com.google.protobuf.ByteString
-            getRegexBytes() {
-          java.lang.Object ref = regex_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            regex_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <pre>
-         * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
-         * </pre>
-         *
-         * <code>string regex = 2;</code>
-         */
-        public Builder setRegex(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          regex_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
-         * </pre>
-         *
-         * <code>string regex = 2;</code>
-         */
-        public Builder clearRegex() {
-          
-          regex_ = getDefaultInstance().getRegex();
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * SageMaker hyperparameter tuning parses your algorithm’s stdout and stderr streams to find algorithm metrics
-         * </pre>
-         *
-         * <code>string regex = 2;</code>
-         */
-        public Builder setRegexBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          regex_ = value;
-          onChanged();
-          return this;
-        }
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
-      }
-
-      // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition)
-      private static final flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition();
-      }
-
-      public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<MetricDefinition>
-          PARSER = new com.google.protobuf.AbstractParser<MetricDefinition>() {
-        @java.lang.Override
-        public MetricDefinition parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MetricDefinition(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<MetricDefinition> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<MetricDefinition> getParserForType() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
     }
 
     private int bitField0_;
@@ -2112,37 +2129,40 @@ public final class TrainingJobOuterClass {
     }
 
     public static final int METRIC_DEFINITIONS_FIELD_NUMBER = 4;
-    private java.util.List<flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition> metricDefinitions_;
+    private java.util.List<flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition> metricDefinitions_;
     /**
      * <pre>
      * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+     * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
      * </pre>
      *
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
      */
-    public java.util.List<flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition> getMetricDefinitionsList() {
+    public java.util.List<flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition> getMetricDefinitionsList() {
       return metricDefinitions_;
     }
     /**
      * <pre>
      * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+     * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
      * </pre>
      *
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
      */
-    public java.util.List<? extends flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinitionOrBuilder> 
+    public java.util.List<? extends flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinitionOrBuilder> 
         getMetricDefinitionsOrBuilderList() {
       return metricDefinitions_;
     }
     /**
      * <pre>
      * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+     * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
      * </pre>
      *
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
      */
     public int getMetricDefinitionsCount() {
       return metricDefinitions_.size();
@@ -2150,23 +2170,25 @@ public final class TrainingJobOuterClass {
     /**
      * <pre>
      * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+     * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
      * </pre>
      *
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
      */
-    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition getMetricDefinitions(int index) {
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition getMetricDefinitions(int index) {
       return metricDefinitions_.get(index);
     }
     /**
      * <pre>
      * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-     * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+     * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+     * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
      * </pre>
      *
-     * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+     * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
      */
-    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinitionOrBuilder getMetricDefinitionsOrBuilder(
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinitionOrBuilder getMetricDefinitionsOrBuilder(
         int index) {
       return metricDefinitions_.get(index);
     }
@@ -2803,27 +2825,28 @@ public final class TrainingJobOuterClass {
         return this;
       }
 
-      private java.util.List<flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition> metricDefinitions_ =
+      private java.util.List<flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition> metricDefinitions_ =
         java.util.Collections.emptyList();
       private void ensureMetricDefinitionsIsMutable() {
         if (!((bitField0_ & 0x00000008) != 0)) {
-          metricDefinitions_ = new java.util.ArrayList<flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition>(metricDefinitions_);
+          metricDefinitions_ = new java.util.ArrayList<flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition>(metricDefinitions_);
           bitField0_ |= 0x00000008;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinitionOrBuilder> metricDefinitionsBuilder_;
+          flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition, flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinitionOrBuilder> metricDefinitionsBuilder_;
 
       /**
        * <pre>
        * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+       * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
        * </pre>
        *
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
        */
-      public java.util.List<flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition> getMetricDefinitionsList() {
+      public java.util.List<flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition> getMetricDefinitionsList() {
         if (metricDefinitionsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(metricDefinitions_);
         } else {
@@ -2833,10 +2856,11 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+       * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
        * </pre>
        *
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
        */
       public int getMetricDefinitionsCount() {
         if (metricDefinitionsBuilder_ == null) {
@@ -2848,12 +2872,13 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+       * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
        * </pre>
        *
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
        */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition getMetricDefinitions(int index) {
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition getMetricDefinitions(int index) {
         if (metricDefinitionsBuilder_ == null) {
           return metricDefinitions_.get(index);
         } else {
@@ -2863,13 +2888,14 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+       * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
        * </pre>
        *
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder setMetricDefinitions(
-          int index, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition value) {
+          int index, flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition value) {
         if (metricDefinitionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2885,13 +2911,14 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+       * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
        * </pre>
        *
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder setMetricDefinitions(
-          int index, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.Builder builderForValue) {
+          int index, flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.Builder builderForValue) {
         if (metricDefinitionsBuilder_ == null) {
           ensureMetricDefinitionsIsMutable();
           metricDefinitions_.set(index, builderForValue.build());
@@ -2904,12 +2931,13 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+       * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
        * </pre>
        *
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
        */
-      public Builder addMetricDefinitions(flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition value) {
+      public Builder addMetricDefinitions(flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition value) {
         if (metricDefinitionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2925,13 +2953,14 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+       * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
        * </pre>
        *
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder addMetricDefinitions(
-          int index, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition value) {
+          int index, flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition value) {
         if (metricDefinitionsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2947,13 +2976,14 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+       * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
        * </pre>
        *
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder addMetricDefinitions(
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.Builder builderForValue) {
+          flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.Builder builderForValue) {
         if (metricDefinitionsBuilder_ == null) {
           ensureMetricDefinitionsIsMutable();
           metricDefinitions_.add(builderForValue.build());
@@ -2966,13 +2996,14 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+       * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
        * </pre>
        *
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder addMetricDefinitions(
-          int index, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.Builder builderForValue) {
+          int index, flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.Builder builderForValue) {
         if (metricDefinitionsBuilder_ == null) {
           ensureMetricDefinitionsIsMutable();
           metricDefinitions_.add(index, builderForValue.build());
@@ -2985,13 +3016,14 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+       * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
        * </pre>
        *
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder addAllMetricDefinitions(
-          java.lang.Iterable<? extends flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition> values) {
+          java.lang.Iterable<? extends flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition> values) {
         if (metricDefinitionsBuilder_ == null) {
           ensureMetricDefinitionsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -3005,10 +3037,11 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+       * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
        * </pre>
        *
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder clearMetricDefinitions() {
         if (metricDefinitionsBuilder_ == null) {
@@ -3023,10 +3056,11 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+       * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
        * </pre>
        *
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
        */
       public Builder removeMetricDefinitions(int index) {
         if (metricDefinitionsBuilder_ == null) {
@@ -3041,24 +3075,26 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+       * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
        * </pre>
        *
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
        */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.Builder getMetricDefinitionsBuilder(
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.Builder getMetricDefinitionsBuilder(
           int index) {
         return getMetricDefinitionsFieldBuilder().getBuilder(index);
       }
       /**
        * <pre>
        * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+       * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
        * </pre>
        *
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
        */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinitionOrBuilder getMetricDefinitionsOrBuilder(
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinitionOrBuilder getMetricDefinitionsOrBuilder(
           int index) {
         if (metricDefinitionsBuilder_ == null) {
           return metricDefinitions_.get(index);  } else {
@@ -3068,12 +3104,13 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+       * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
        * </pre>
        *
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
        */
-      public java.util.List<? extends flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinitionOrBuilder> 
+      public java.util.List<? extends flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinitionOrBuilder> 
            getMetricDefinitionsOrBuilderList() {
         if (metricDefinitionsBuilder_ != null) {
           return metricDefinitionsBuilder_.getMessageOrBuilderList();
@@ -3084,46 +3121,49 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+       * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
        * </pre>
        *
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
        */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.Builder addMetricDefinitionsBuilder() {
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.Builder addMetricDefinitionsBuilder() {
         return getMetricDefinitionsFieldBuilder().addBuilder(
-            flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.getDefaultInstance());
+            flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.getDefaultInstance());
       }
       /**
        * <pre>
        * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+       * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
        * </pre>
        *
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
        */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.Builder addMetricDefinitionsBuilder(
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.Builder addMetricDefinitionsBuilder(
           int index) {
         return getMetricDefinitionsFieldBuilder().addBuilder(
-            index, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.getDefaultInstance());
+            index, flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.getDefaultInstance());
       }
       /**
        * <pre>
        * A list of metric definitions for SageMaker to evaluate/track on the progress of the training job
-       * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
+       * See this: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+       * and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
        * </pre>
        *
-       * <code>repeated .flyteidl.plugins.sagemaker.AlgorithmSpecification.MetricDefinition metric_definitions = 4;</code>
+       * <code>repeated .flyteidl.plugins.sagemaker.MetricDefinition metric_definitions = 4;</code>
        */
-      public java.util.List<flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.Builder> 
+      public java.util.List<flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.Builder> 
            getMetricDefinitionsBuilderList() {
         return getMetricDefinitionsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinitionOrBuilder> 
+          flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition, flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinitionOrBuilder> 
           getMetricDefinitionsFieldBuilder() {
         if (metricDefinitionsBuilder_ == null) {
           metricDefinitionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinition.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecification.MetricDefinitionOrBuilder>(
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition, flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinitionOrBuilder>(
                   metricDefinitions_,
                   ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
@@ -4769,15 +4809,15 @@ public final class TrainingJobOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_plugins_sagemaker_AlgorithmName_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_plugins_sagemaker_MetricDefinition_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_plugins_sagemaker_MetricDefinition_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_MetricDefinition_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_MetricDefinition_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_descriptor;
   private static final 
@@ -4802,24 +4842,23 @@ public final class TrainingJobOuterClass {
       "gle/protobuf/duration.proto\"(\n\tInputMode" +
       "\"\033\n\005Value\022\010\n\004FILE\020\000\022\010\n\004PIPE\020\001\"1\n\rAlgorit" +
       "hmName\" \n\005Value\022\n\n\006CUSTOM\020\000\022\013\n\007XGBOOST\020\001" +
-      "\"\317\002\n\026AlgorithmSpecification\022?\n\ninput_mod" +
-      "e\030\001 \001(\0162+.flyteidl.plugins.sagemaker.Inp" +
-      "utMode.Value\022G\n\016algorithm_name\030\002 \001(\0162/.f" +
-      "lyteidl.plugins.sagemaker.AlgorithmName." +
-      "Value\022\031\n\021algorithm_version\030\003 \001(\t\022_\n\022metr" +
-      "ic_definitions\030\004 \003(\0132C.flyteidl.plugins." +
-      "sagemaker.AlgorithmSpecification.MetricD" +
-      "efinition\032/\n\020MetricDefinition\022\014\n\004name\030\001 " +
-      "\001(\t\022\r\n\005regex\030\002 \001(\t\"e\n\031TrainingJobResourc" +
-      "eConfig\022\026\n\016instance_count\030\001 \001(\003\022\025\n\rinsta" +
-      "nce_type\030\002 \001(\t\022\031\n\021volume_size_in_gb\030\003 \001(" +
-      "\003\"\266\001\n\013TrainingJob\022S\n\027algorithm_specifica" +
-      "tion\030\001 \001(\01322.flyteidl.plugins.sagemaker." +
-      "AlgorithmSpecification\022R\n\023training_job_c" +
-      "onfig\030\002 \001(\01325.flyteidl.plugins.sagemaker" +
-      ".TrainingJobResourceConfigB5Z3github.com" +
-      "/lyft/flyteidl/gen/pb-go/flyteidl/plugin" +
-      "sb\006proto3"
+      "\"/\n\020MetricDefinition\022\014\n\004name\030\001 \001(\t\022\r\n\005re" +
+      "gex\030\002 \001(\t\"\207\002\n\026AlgorithmSpecification\022?\n\n" +
+      "input_mode\030\001 \001(\0162+.flyteidl.plugins.sage" +
+      "maker.InputMode.Value\022G\n\016algorithm_name\030" +
+      "\002 \001(\0162/.flyteidl.plugins.sagemaker.Algor" +
+      "ithmName.Value\022\031\n\021algorithm_version\030\003 \001(" +
+      "\t\022H\n\022metric_definitions\030\004 \003(\0132,.flyteidl" +
+      ".plugins.sagemaker.MetricDefinition\"e\n\031T" +
+      "rainingJobResourceConfig\022\026\n\016instance_cou" +
+      "nt\030\001 \001(\003\022\025\n\rinstance_type\030\002 \001(\t\022\031\n\021volum" +
+      "e_size_in_gb\030\003 \001(\003\"\266\001\n\013TrainingJob\022S\n\027al" +
+      "gorithm_specification\030\001 \001(\01322.flyteidl.p" +
+      "lugins.sagemaker.AlgorithmSpecification\022" +
+      "R\n\023training_job_config\030\002 \001(\01325.flyteidl." +
+      "plugins.sagemaker.TrainingJobResourceCon" +
+      "figB5Z3github.com/lyft/flyteidl/gen/pb-g" +
+      "o/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4846,26 +4885,26 @@ public final class TrainingJobOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_AlgorithmName_descriptor,
         new java.lang.String[] { });
-    internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_descriptor =
+    internal_static_flyteidl_plugins_sagemaker_MetricDefinition_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_flyteidl_plugins_sagemaker_MetricDefinition_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_plugins_sagemaker_MetricDefinition_descriptor,
+        new java.lang.String[] { "Name", "Regex", });
+    internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_descriptor,
         new java.lang.String[] { "InputMode", "AlgorithmName", "AlgorithmVersion", "MetricDefinitions", });
-    internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_MetricDefinition_descriptor =
-      internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_descriptor.getNestedTypes().get(0);
-    internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_MetricDefinition_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_MetricDefinition_descriptor,
-        new java.lang.String[] { "Name", "Regex", });
     internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_descriptor,
         new java.lang.String[] { "InstanceCount", "InstanceType", "VolumeSizeInGb", });
     internal_static_flyteidl_plugins_sagemaker_TrainingJob_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_plugins_sagemaker_TrainingJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_TrainingJob_descriptor,
