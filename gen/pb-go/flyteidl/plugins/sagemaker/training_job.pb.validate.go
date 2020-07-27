@@ -413,10 +413,10 @@ func (m *TrainingJob) Validate() error {
 		}
 	}
 
-	if v, ok := interface{}(m.GetTrainingJobConfig()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetTrainingJobResourceConfig()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return TrainingJobValidationError{
-				field:  "TrainingJobConfig",
+				field:  "TrainingJobResourceConfig",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}

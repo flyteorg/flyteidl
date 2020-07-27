@@ -208,7 +208,7 @@ https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.
 
   {
     "algorithm_specification": "{...}",
-    "training_job_config": "{...}"
+    "training_job_resource_config": "{...}"
   }
 
 .. _api_field_flyteidl.plugins.sagemaker.TrainingJob.algorithm_specification:
@@ -216,9 +216,9 @@ https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.
 algorithm_specification
   (:ref:`flyteidl.plugins.sagemaker.AlgorithmSpecification <api_msg_flyteidl.plugins.sagemaker.AlgorithmSpecification>`) 
   
-.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.training_job_config:
+.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.training_job_resource_config:
 
-training_job_config
+training_job_resource_config
   (:ref:`flyteidl.plugins.sagemaker.TrainingJobResourceConfig <api_msg_flyteidl.plugins.sagemaker.TrainingJobResourceConfig>`) 
   
 

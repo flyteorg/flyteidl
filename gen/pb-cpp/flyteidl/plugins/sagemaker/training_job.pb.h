@@ -914,14 +914,14 @@ class TrainingJob final :
   ::flyteidl::plugins::sagemaker::AlgorithmSpecification* mutable_algorithm_specification();
   void set_allocated_algorithm_specification(::flyteidl::plugins::sagemaker::AlgorithmSpecification* algorithm_specification);
 
-  // .flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;
-  bool has_training_job_config() const;
-  void clear_training_job_config();
-  static const int kTrainingJobConfigFieldNumber = 2;
-  const ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig& training_job_config() const;
-  ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* release_training_job_config();
-  ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* mutable_training_job_config();
-  void set_allocated_training_job_config(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* training_job_config);
+  // .flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;
+  bool has_training_job_resource_config() const;
+  void clear_training_job_resource_config();
+  static const int kTrainingJobResourceConfigFieldNumber = 2;
+  const ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig& training_job_resource_config() const;
+  ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* release_training_job_resource_config();
+  ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* mutable_training_job_resource_config();
+  void set_allocated_training_job_resource_config(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* training_job_resource_config);
 
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.TrainingJob)
  private:
@@ -929,7 +929,7 @@ class TrainingJob final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::flyteidl::plugins::sagemaker::AlgorithmSpecification* algorithm_specification_;
-  ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* training_job_config_;
+  ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* training_job_resource_config_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
 };
@@ -1313,55 +1313,55 @@ inline void TrainingJob::set_allocated_algorithm_specification(::flyteidl::plugi
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.algorithm_specification)
 }
 
-// .flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;
-inline bool TrainingJob::has_training_job_config() const {
-  return this != internal_default_instance() && training_job_config_ != nullptr;
+// .flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;
+inline bool TrainingJob::has_training_job_resource_config() const {
+  return this != internal_default_instance() && training_job_resource_config_ != nullptr;
 }
-inline void TrainingJob::clear_training_job_config() {
-  if (GetArenaNoVirtual() == nullptr && training_job_config_ != nullptr) {
-    delete training_job_config_;
+inline void TrainingJob::clear_training_job_resource_config() {
+  if (GetArenaNoVirtual() == nullptr && training_job_resource_config_ != nullptr) {
+    delete training_job_resource_config_;
   }
-  training_job_config_ = nullptr;
+  training_job_resource_config_ = nullptr;
 }
-inline const ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig& TrainingJob::training_job_config() const {
-  const ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* p = training_job_config_;
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.training_job_config)
+inline const ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig& TrainingJob::training_job_resource_config() const {
+  const ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* p = training_job_resource_config_;
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.training_job_resource_config)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig*>(
       &::flyteidl::plugins::sagemaker::_TrainingJobResourceConfig_default_instance_);
 }
-inline ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* TrainingJob::release_training_job_config() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJob.training_job_config)
+inline ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* TrainingJob::release_training_job_resource_config() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.TrainingJob.training_job_resource_config)
   
-  ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* temp = training_job_config_;
-  training_job_config_ = nullptr;
+  ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* temp = training_job_resource_config_;
+  training_job_resource_config_ = nullptr;
   return temp;
 }
-inline ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* TrainingJob::mutable_training_job_config() {
+inline ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* TrainingJob::mutable_training_job_resource_config() {
   
-  if (training_job_config_ == nullptr) {
+  if (training_job_resource_config_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::plugins::sagemaker::TrainingJobResourceConfig>(GetArenaNoVirtual());
-    training_job_config_ = p;
+    training_job_resource_config_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJob.training_job_config)
-  return training_job_config_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.TrainingJob.training_job_resource_config)
+  return training_job_resource_config_;
 }
-inline void TrainingJob::set_allocated_training_job_config(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* training_job_config) {
+inline void TrainingJob::set_allocated_training_job_resource_config(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* training_job_resource_config) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete training_job_config_;
+    delete training_job_resource_config_;
   }
-  if (training_job_config) {
+  if (training_job_resource_config) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      training_job_config = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, training_job_config, submessage_arena);
+      training_job_resource_config = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, training_job_resource_config, submessage_arena);
     }
     
   } else {
     
   }
-  training_job_config_ = training_job_config;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.training_job_config)
+  training_job_resource_config_ = training_job_resource_config;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.training_job_resource_config)
 }
 
 #ifdef __GNUC__

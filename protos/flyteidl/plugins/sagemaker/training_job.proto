@@ -72,5 +72,5 @@ message TrainingJobResourceConfig {
 // https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html
 message TrainingJob {
     AlgorithmSpecification algorithm_specification = 1;
-    TrainingJobResourceConfig training_job_config = 2;
+    TrainingJobResourceConfig training_job_resource_config = 2;
 }

@@ -190,7 +190,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fsagemaker_2ftr
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJob, algorithm_specification_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJob, training_job_config_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJob, training_job_resource_config_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::sagemaker::InputMode)},
@@ -232,18 +232,18 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2ftraining_5
   ".plugins.sagemaker.MetricDefinition\"e\n\031T"
   "rainingJobResourceConfig\022\026\n\016instance_cou"
   "nt\030\001 \001(\003\022\025\n\rinstance_type\030\002 \001(\t\022\031\n\021volum"
-  "e_size_in_gb\030\003 \001(\003\"\266\001\n\013TrainingJob\022S\n\027al"
+  "e_size_in_gb\030\003 \001(\003\"\277\001\n\013TrainingJob\022S\n\027al"
   "gorithm_specification\030\001 \001(\01322.flyteidl.p"
   "lugins.sagemaker.AlgorithmSpecification\022"
-  "R\n\023training_job_config\030\002 \001(\01325.flyteidl."
-  "plugins.sagemaker.TrainingJobResourceCon"
-  "figB5Z3github.com/lyft/flyteidl/gen/pb-g"
-  "o/flyteidl/pluginsb\006proto3"
+  "[\n\034training_job_resource_config\030\002 \001(\01325."
+  "flyteidl.plugins.sagemaker.TrainingJobRe"
+  "sourceConfigB5Z3github.com/lyft/flyteidl"
+  "/gen/pb-go/flyteidl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto,
-  "flyteidl/plugins/sagemaker/training_job.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, 866,
+  "flyteidl/plugins/sagemaker/training_job.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, 875,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto() {
@@ -1941,13 +1941,13 @@ void TrainingJobResourceConfig::InternalSwap(TrainingJobResourceConfig* other) {
 void TrainingJob::InitAsDefaultInstance() {
   ::flyteidl::plugins::sagemaker::_TrainingJob_default_instance_._instance.get_mutable()->algorithm_specification_ = const_cast< ::flyteidl::plugins::sagemaker::AlgorithmSpecification*>(
       ::flyteidl::plugins::sagemaker::AlgorithmSpecification::internal_default_instance());
-  ::flyteidl::plugins::sagemaker::_TrainingJob_default_instance_._instance.get_mutable()->training_job_config_ = const_cast< ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig*>(
+  ::flyteidl::plugins::sagemaker::_TrainingJob_default_instance_._instance.get_mutable()->training_job_resource_config_ = const_cast< ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig*>(
       ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig::internal_default_instance());
 }
 class TrainingJob::HasBitSetters {
  public:
   static const ::flyteidl::plugins::sagemaker::AlgorithmSpecification& algorithm_specification(const TrainingJob* msg);
-  static const ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig& training_job_config(const TrainingJob* msg);
+  static const ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig& training_job_resource_config(const TrainingJob* msg);
 };
 
 const ::flyteidl::plugins::sagemaker::AlgorithmSpecification&
@@ -1955,12 +1955,12 @@ TrainingJob::HasBitSetters::algorithm_specification(const TrainingJob* msg) {
   return *msg->algorithm_specification_;
 }
 const ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig&
-TrainingJob::HasBitSetters::training_job_config(const TrainingJob* msg) {
-  return *msg->training_job_config_;
+TrainingJob::HasBitSetters::training_job_resource_config(const TrainingJob* msg) {
+  return *msg->training_job_resource_config_;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TrainingJob::kAlgorithmSpecificationFieldNumber;
-const int TrainingJob::kTrainingJobConfigFieldNumber;
+const int TrainingJob::kTrainingJobResourceConfigFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TrainingJob::TrainingJob()
@@ -1977,10 +1977,10 @@ TrainingJob::TrainingJob(const TrainingJob& from)
   } else {
     algorithm_specification_ = nullptr;
   }
-  if (from.has_training_job_config()) {
-    training_job_config_ = new ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig(*from.training_job_config_);
+  if (from.has_training_job_resource_config()) {
+    training_job_resource_config_ = new ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig(*from.training_job_resource_config_);
   } else {
-    training_job_config_ = nullptr;
+    training_job_resource_config_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.sagemaker.TrainingJob)
 }
@@ -1989,8 +1989,8 @@ void TrainingJob::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_TrainingJob_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   ::memset(&algorithm_specification_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&training_job_config_) -
-      reinterpret_cast<char*>(&algorithm_specification_)) + sizeof(training_job_config_));
+      reinterpret_cast<char*>(&training_job_resource_config_) -
+      reinterpret_cast<char*>(&algorithm_specification_)) + sizeof(training_job_resource_config_));
 }
 
 TrainingJob::~TrainingJob() {
@@ -2000,7 +2000,7 @@ TrainingJob::~TrainingJob() {
 
 void TrainingJob::SharedDtor() {
   if (this != internal_default_instance()) delete algorithm_specification_;
-  if (this != internal_default_instance()) delete training_job_config_;
+  if (this != internal_default_instance()) delete training_job_resource_config_;
 }
 
 void TrainingJob::SetCachedSize(int size) const {
@@ -2022,10 +2022,10 @@ void TrainingJob::Clear() {
     delete algorithm_specification_;
   }
   algorithm_specification_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && training_job_config_ != nullptr) {
-    delete training_job_config_;
+  if (GetArenaNoVirtual() == nullptr && training_job_resource_config_ != nullptr) {
+    delete training_job_resource_config_;
   }
-  training_job_config_ = nullptr;
+  training_job_resource_config_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -2055,13 +2055,13 @@ const char* TrainingJob::_InternalParse(const char* begin, const char* end, void
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;
+      // .flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig::_InternalParse;
-        object = msg->mutable_training_job_config();
+        object = msg->mutable_training_job_resource_config();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -2109,11 +2109,11 @@ bool TrainingJob::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;
+      // .flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_training_job_config()));
+               input, mutable_training_job_resource_config()));
         } else {
           goto handle_unusual;
         }
@@ -2153,10 +2153,10 @@ void TrainingJob::SerializeWithCachedSizes(
       1, HasBitSetters::algorithm_specification(this), output);
   }
 
-  // .flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;
-  if (this->has_training_job_config()) {
+  // .flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;
+  if (this->has_training_job_resource_config()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::training_job_config(this), output);
+      2, HasBitSetters::training_job_resource_config(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2179,11 +2179,11 @@ void TrainingJob::SerializeWithCachedSizes(
         1, HasBitSetters::algorithm_specification(this), target);
   }
 
-  // .flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;
-  if (this->has_training_job_config()) {
+  // .flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;
+  if (this->has_training_job_resource_config()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        2, HasBitSetters::training_job_config(this), target);
+        2, HasBitSetters::training_job_resource_config(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2214,11 +2214,11 @@ size_t TrainingJob::ByteSizeLong() const {
         *algorithm_specification_);
   }
 
-  // .flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;
-  if (this->has_training_job_config()) {
+  // .flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;
+  if (this->has_training_job_resource_config()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *training_job_config_);
+        *training_job_resource_config_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -2251,8 +2251,8 @@ void TrainingJob::MergeFrom(const TrainingJob& from) {
   if (from.has_algorithm_specification()) {
     mutable_algorithm_specification()->::flyteidl::plugins::sagemaker::AlgorithmSpecification::MergeFrom(from.algorithm_specification());
   }
-  if (from.has_training_job_config()) {
-    mutable_training_job_config()->::flyteidl::plugins::sagemaker::TrainingJobResourceConfig::MergeFrom(from.training_job_config());
+  if (from.has_training_job_resource_config()) {
+    mutable_training_job_resource_config()->::flyteidl::plugins::sagemaker::TrainingJobResourceConfig::MergeFrom(from.training_job_resource_config());
   }
 }
 
@@ -2282,7 +2282,7 @@ void TrainingJob::InternalSwap(TrainingJob* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(algorithm_specification_, other->algorithm_specification_);
-  swap(training_job_config_, other->training_job_config_);
+  swap(training_job_resource_config_, other->training_job_resource_config_);
 }
 
 ::google::protobuf::Metadata TrainingJob::GetMetadata() const {

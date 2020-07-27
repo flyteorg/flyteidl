@@ -4006,17 +4006,17 @@ public final class TrainingJobOuterClass {
     flyteidl.plugins.sagemaker.TrainingJobOuterClass.AlgorithmSpecificationOrBuilder getAlgorithmSpecificationOrBuilder();
 
     /**
-     * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;</code>
      */
-    boolean hasTrainingJobConfig();
+    boolean hasTrainingJobResourceConfig();
     /**
-     * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;</code>
      */
-    flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig getTrainingJobConfig();
+    flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig getTrainingJobResourceConfig();
     /**
-     * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;</code>
      */
-    flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfigOrBuilder getTrainingJobConfigOrBuilder();
+    flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfigOrBuilder getTrainingJobResourceConfigOrBuilder();
   }
   /**
    * <pre>
@@ -4077,13 +4077,13 @@ public final class TrainingJobOuterClass {
             }
             case 18: {
               flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.Builder subBuilder = null;
-              if (trainingJobConfig_ != null) {
-                subBuilder = trainingJobConfig_.toBuilder();
+              if (trainingJobResourceConfig_ != null) {
+                subBuilder = trainingJobResourceConfig_.toBuilder();
               }
-              trainingJobConfig_ = input.readMessage(flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.parser(), extensionRegistry);
+              trainingJobResourceConfig_ = input.readMessage(flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(trainingJobConfig_);
-                trainingJobConfig_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(trainingJobResourceConfig_);
+                trainingJobResourceConfig_ = subBuilder.buildPartial();
               }
 
               break;
@@ -4141,25 +4141,25 @@ public final class TrainingJobOuterClass {
       return getAlgorithmSpecification();
     }
 
-    public static final int TRAINING_JOB_CONFIG_FIELD_NUMBER = 2;
-    private flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig trainingJobConfig_;
+    public static final int TRAINING_JOB_RESOURCE_CONFIG_FIELD_NUMBER = 2;
+    private flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig trainingJobResourceConfig_;
     /**
-     * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;</code>
      */
-    public boolean hasTrainingJobConfig() {
-      return trainingJobConfig_ != null;
+    public boolean hasTrainingJobResourceConfig() {
+      return trainingJobResourceConfig_ != null;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;</code>
      */
-    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig getTrainingJobConfig() {
-      return trainingJobConfig_ == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.getDefaultInstance() : trainingJobConfig_;
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig getTrainingJobResourceConfig() {
+      return trainingJobResourceConfig_ == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.getDefaultInstance() : trainingJobResourceConfig_;
     }
     /**
-     * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
+     * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;</code>
      */
-    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfigOrBuilder getTrainingJobConfigOrBuilder() {
-      return getTrainingJobConfig();
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfigOrBuilder getTrainingJobResourceConfigOrBuilder() {
+      return getTrainingJobResourceConfig();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4179,8 +4179,8 @@ public final class TrainingJobOuterClass {
       if (algorithmSpecification_ != null) {
         output.writeMessage(1, getAlgorithmSpecification());
       }
-      if (trainingJobConfig_ != null) {
-        output.writeMessage(2, getTrainingJobConfig());
+      if (trainingJobResourceConfig_ != null) {
+        output.writeMessage(2, getTrainingJobResourceConfig());
       }
       unknownFields.writeTo(output);
     }
@@ -4195,9 +4195,9 @@ public final class TrainingJobOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getAlgorithmSpecification());
       }
-      if (trainingJobConfig_ != null) {
+      if (trainingJobResourceConfig_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getTrainingJobConfig());
+          .computeMessageSize(2, getTrainingJobResourceConfig());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4219,10 +4219,10 @@ public final class TrainingJobOuterClass {
         if (!getAlgorithmSpecification()
             .equals(other.getAlgorithmSpecification())) return false;
       }
-      if (hasTrainingJobConfig() != other.hasTrainingJobConfig()) return false;
-      if (hasTrainingJobConfig()) {
-        if (!getTrainingJobConfig()
-            .equals(other.getTrainingJobConfig())) return false;
+      if (hasTrainingJobResourceConfig() != other.hasTrainingJobResourceConfig()) return false;
+      if (hasTrainingJobResourceConfig()) {
+        if (!getTrainingJobResourceConfig()
+            .equals(other.getTrainingJobResourceConfig())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -4239,9 +4239,9 @@ public final class TrainingJobOuterClass {
         hash = (37 * hash) + ALGORITHM_SPECIFICATION_FIELD_NUMBER;
         hash = (53 * hash) + getAlgorithmSpecification().hashCode();
       }
-      if (hasTrainingJobConfig()) {
-        hash = (37 * hash) + TRAINING_JOB_CONFIG_FIELD_NUMBER;
-        hash = (53 * hash) + getTrainingJobConfig().hashCode();
+      if (hasTrainingJobResourceConfig()) {
+        hash = (37 * hash) + TRAINING_JOB_RESOURCE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getTrainingJobResourceConfig().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4387,11 +4387,11 @@ public final class TrainingJobOuterClass {
           algorithmSpecification_ = null;
           algorithmSpecificationBuilder_ = null;
         }
-        if (trainingJobConfigBuilder_ == null) {
-          trainingJobConfig_ = null;
+        if (trainingJobResourceConfigBuilder_ == null) {
+          trainingJobResourceConfig_ = null;
         } else {
-          trainingJobConfig_ = null;
-          trainingJobConfigBuilder_ = null;
+          trainingJobResourceConfig_ = null;
+          trainingJobResourceConfigBuilder_ = null;
         }
         return this;
       }
@@ -4424,10 +4424,10 @@ public final class TrainingJobOuterClass {
         } else {
           result.algorithmSpecification_ = algorithmSpecificationBuilder_.build();
         }
-        if (trainingJobConfigBuilder_ == null) {
-          result.trainingJobConfig_ = trainingJobConfig_;
+        if (trainingJobResourceConfigBuilder_ == null) {
+          result.trainingJobResourceConfig_ = trainingJobResourceConfig_;
         } else {
-          result.trainingJobConfig_ = trainingJobConfigBuilder_.build();
+          result.trainingJobResourceConfig_ = trainingJobResourceConfigBuilder_.build();
         }
         onBuilt();
         return result;
@@ -4480,8 +4480,8 @@ public final class TrainingJobOuterClass {
         if (other.hasAlgorithmSpecification()) {
           mergeAlgorithmSpecification(other.getAlgorithmSpecification());
         }
-        if (other.hasTrainingJobConfig()) {
-          mergeTrainingJobConfig(other.getTrainingJobConfig());
+        if (other.hasTrainingJobResourceConfig()) {
+          mergeTrainingJobResourceConfig(other.getTrainingJobResourceConfig());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4629,121 +4629,121 @@ public final class TrainingJobOuterClass {
         return algorithmSpecificationBuilder_;
       }
 
-      private flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig trainingJobConfig_;
+      private flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig trainingJobResourceConfig_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfigOrBuilder> trainingJobConfigBuilder_;
+          flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfigOrBuilder> trainingJobResourceConfigBuilder_;
       /**
-       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;</code>
        */
-      public boolean hasTrainingJobConfig() {
-        return trainingJobConfigBuilder_ != null || trainingJobConfig_ != null;
+      public boolean hasTrainingJobResourceConfig() {
+        return trainingJobResourceConfigBuilder_ != null || trainingJobResourceConfig_ != null;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;</code>
        */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig getTrainingJobConfig() {
-        if (trainingJobConfigBuilder_ == null) {
-          return trainingJobConfig_ == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.getDefaultInstance() : trainingJobConfig_;
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig getTrainingJobResourceConfig() {
+        if (trainingJobResourceConfigBuilder_ == null) {
+          return trainingJobResourceConfig_ == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.getDefaultInstance() : trainingJobResourceConfig_;
         } else {
-          return trainingJobConfigBuilder_.getMessage();
+          return trainingJobResourceConfigBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;</code>
        */
-      public Builder setTrainingJobConfig(flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig value) {
-        if (trainingJobConfigBuilder_ == null) {
+      public Builder setTrainingJobResourceConfig(flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig value) {
+        if (trainingJobResourceConfigBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          trainingJobConfig_ = value;
+          trainingJobResourceConfig_ = value;
           onChanged();
         } else {
-          trainingJobConfigBuilder_.setMessage(value);
+          trainingJobResourceConfigBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;</code>
        */
-      public Builder setTrainingJobConfig(
+      public Builder setTrainingJobResourceConfig(
           flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.Builder builderForValue) {
-        if (trainingJobConfigBuilder_ == null) {
-          trainingJobConfig_ = builderForValue.build();
+        if (trainingJobResourceConfigBuilder_ == null) {
+          trainingJobResourceConfig_ = builderForValue.build();
           onChanged();
         } else {
-          trainingJobConfigBuilder_.setMessage(builderForValue.build());
+          trainingJobResourceConfigBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;</code>
        */
-      public Builder mergeTrainingJobConfig(flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig value) {
-        if (trainingJobConfigBuilder_ == null) {
-          if (trainingJobConfig_ != null) {
-            trainingJobConfig_ =
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.newBuilder(trainingJobConfig_).mergeFrom(value).buildPartial();
+      public Builder mergeTrainingJobResourceConfig(flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig value) {
+        if (trainingJobResourceConfigBuilder_ == null) {
+          if (trainingJobResourceConfig_ != null) {
+            trainingJobResourceConfig_ =
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.newBuilder(trainingJobResourceConfig_).mergeFrom(value).buildPartial();
           } else {
-            trainingJobConfig_ = value;
+            trainingJobResourceConfig_ = value;
           }
           onChanged();
         } else {
-          trainingJobConfigBuilder_.mergeFrom(value);
+          trainingJobResourceConfigBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;</code>
        */
-      public Builder clearTrainingJobConfig() {
-        if (trainingJobConfigBuilder_ == null) {
-          trainingJobConfig_ = null;
+      public Builder clearTrainingJobResourceConfig() {
+        if (trainingJobResourceConfigBuilder_ == null) {
+          trainingJobResourceConfig_ = null;
           onChanged();
         } else {
-          trainingJobConfig_ = null;
-          trainingJobConfigBuilder_ = null;
+          trainingJobResourceConfig_ = null;
+          trainingJobResourceConfigBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;</code>
        */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.Builder getTrainingJobConfigBuilder() {
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.Builder getTrainingJobResourceConfigBuilder() {
         
         onChanged();
-        return getTrainingJobConfigFieldBuilder().getBuilder();
+        return getTrainingJobResourceConfigFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;</code>
        */
-      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfigOrBuilder getTrainingJobConfigOrBuilder() {
-        if (trainingJobConfigBuilder_ != null) {
-          return trainingJobConfigBuilder_.getMessageOrBuilder();
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfigOrBuilder getTrainingJobResourceConfigOrBuilder() {
+        if (trainingJobResourceConfigBuilder_ != null) {
+          return trainingJobResourceConfigBuilder_.getMessageOrBuilder();
         } else {
-          return trainingJobConfig_ == null ?
-              flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.getDefaultInstance() : trainingJobConfig_;
+          return trainingJobResourceConfig_ == null ?
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.getDefaultInstance() : trainingJobResourceConfig_;
         }
       }
       /**
-       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_config = 2;</code>
+       * <code>.flyteidl.plugins.sagemaker.TrainingJobResourceConfig training_job_resource_config = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfigOrBuilder> 
-          getTrainingJobConfigFieldBuilder() {
-        if (trainingJobConfigBuilder_ == null) {
-          trainingJobConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getTrainingJobResourceConfigFieldBuilder() {
+        if (trainingJobResourceConfigBuilder_ == null) {
+          trainingJobResourceConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfig.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.TrainingJobResourceConfigOrBuilder>(
-                  getTrainingJobConfig(),
+                  getTrainingJobResourceConfig(),
                   getParentForChildren(),
                   isClean());
-          trainingJobConfig_ = null;
+          trainingJobResourceConfig_ = null;
         }
-        return trainingJobConfigBuilder_;
+        return trainingJobResourceConfigBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4852,13 +4852,13 @@ public final class TrainingJobOuterClass {
       ".plugins.sagemaker.MetricDefinition\"e\n\031T" +
       "rainingJobResourceConfig\022\026\n\016instance_cou" +
       "nt\030\001 \001(\003\022\025\n\rinstance_type\030\002 \001(\t\022\031\n\021volum" +
-      "e_size_in_gb\030\003 \001(\003\"\266\001\n\013TrainingJob\022S\n\027al" +
+      "e_size_in_gb\030\003 \001(\003\"\277\001\n\013TrainingJob\022S\n\027al" +
       "gorithm_specification\030\001 \001(\01322.flyteidl.p" +
       "lugins.sagemaker.AlgorithmSpecification\022" +
-      "R\n\023training_job_config\030\002 \001(\01325.flyteidl." +
-      "plugins.sagemaker.TrainingJobResourceCon" +
-      "figB5Z3github.com/lyft/flyteidl/gen/pb-g" +
-      "o/flyteidl/pluginsb\006proto3"
+      "[\n\034training_job_resource_config\030\002 \001(\01325." +
+      "flyteidl.plugins.sagemaker.TrainingJobRe" +
+      "sourceConfigB5Z3github.com/lyft/flyteidl" +
+      "/gen/pb-go/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4908,7 +4908,7 @@ public final class TrainingJobOuterClass {
     internal_static_flyteidl_plugins_sagemaker_TrainingJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_TrainingJob_descriptor,
-        new java.lang.String[] { "AlgorithmSpecification", "TrainingJobConfig", });
+        new java.lang.String[] { "AlgorithmSpecification", "TrainingJobResourceConfig", });
     com.google.protobuf.DurationProto.getDescriptor();
   }
 
