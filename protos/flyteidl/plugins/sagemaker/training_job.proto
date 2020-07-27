@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package flyteidl.plugins.sagemaker;
 
+import "google/protobuf/duration.proto";
+
 option go_package = "github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins";
 
 
@@ -68,13 +70,13 @@ message StoppingCondition {
 
     // The maximum length of time in second that the training job can run.
     // If this value is not specified, the default expiration time will be 1 day
-    int64 max_runtime_in_seconds = 1;
+    google.protobuf.Duration max_runtime_in_seconds = 1;
 
     // The maximum length of time in seconds that the users are willing to wait for a managed spot
     // training job to complete.
     // Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
     // training job runs, so it must be equal to or greater than max_runtime_in_seconds.
-    int64 max_wait_time_in_seconds = 2;
+    google.protobuf.Duration max_wait_time_in_seconds = 2;
 }
 
 // The spec of a training job. This is mostly a pass-through object
