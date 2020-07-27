@@ -189,50 +189,12 @@ volume_size_in_gb
   
 
 
-.. _api_msg_flyteidl.plugins.sagemaker.StoppingCondition:
-
-flyteidl.plugins.sagemaker.StoppingCondition
---------------------------------------------
-
-`[flyteidl.plugins.sagemaker.StoppingCondition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L68>`_
-
-This option allows the users to specify a limit to how long a training job can run and
-how long the users are willing to wait for a managed spot training job to complete
-If the user uses SageMaker's built-in algorithms, SageMaker will try to automatically
-save the intermediate artifacts in a best-effort manner.
-See: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html
-
-.. code-block:: json
-
-  {
-    "max_runtime_in_seconds": "{...}",
-    "max_wait_time_in_seconds": "{...}"
-  }
-
-.. _api_field_flyteidl.plugins.sagemaker.StoppingCondition.max_runtime_in_seconds:
-
-max_runtime_in_seconds
-  (:ref:`google.protobuf.Duration <api_msg_google.protobuf.Duration>`) The maximum length of time in second that the training job can run.
-  If this value is not specified, the default expiration time will be 1 day
-  
-  
-.. _api_field_flyteidl.plugins.sagemaker.StoppingCondition.max_wait_time_in_seconds:
-
-max_wait_time_in_seconds
-  (:ref:`google.protobuf.Duration <api_msg_google.protobuf.Duration>`) The maximum length of time in seconds that the users are willing to wait for a managed spot
-  training job to complete.
-  Note that it is the amount of time spent waiting for Spot capacity plus the amount of time the
-  training job runs, so it must be equal to or greater than max_runtime_in_seconds.
-  
-  
-
-
 .. _api_msg_flyteidl.plugins.sagemaker.TrainingJob:
 
 flyteidl.plugins.sagemaker.TrainingJob
 --------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L83>`_
+`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L65>`_
 
 The spec of a training job. This is mostly a pass-through object
 https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html
@@ -241,8 +203,7 @@ https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.
 
   {
     "algorithm_specification": "{...}",
-    "training_job_config": "{...}",
-    "interruptible": "..."
+    "training_job_config": "{...}"
   }
 
 .. _api_field_flyteidl.plugins.sagemaker.TrainingJob.algorithm_specification:
@@ -254,10 +215,5 @@ algorithm_specification
 
 training_job_config
   (:ref:`flyteidl.plugins.sagemaker.TrainingJobResourceConfig <api_msg_flyteidl.plugins.sagemaker.TrainingJobResourceConfig>`) 
-  
-.. _api_field_flyteidl.plugins.sagemaker.TrainingJob.interruptible:
-
-interruptible
-  (`bool <https://developers.google.com/protocol-buffers/docs/proto#scalar>`_) 
   
 

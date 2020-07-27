@@ -43,7 +43,7 @@ struct TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[7]
+  static const ::google::protobuf::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -65,9 +65,6 @@ extern AlgorithmSpecification_MetricDefinitionDefaultTypeInternal _AlgorithmSpec
 class InputMode;
 class InputModeDefaultTypeInternal;
 extern InputModeDefaultTypeInternal _InputMode_default_instance_;
-class StoppingCondition;
-class StoppingConditionDefaultTypeInternal;
-extern StoppingConditionDefaultTypeInternal _StoppingCondition_default_instance_;
 class TrainingJob;
 class TrainingJobDefaultTypeInternal;
 extern TrainingJobDefaultTypeInternal _TrainingJob_default_instance_;
@@ -83,7 +80,6 @@ template<> ::flyteidl::plugins::sagemaker::AlgorithmName* Arena::CreateMaybeMess
 template<> ::flyteidl::plugins::sagemaker::AlgorithmSpecification* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::AlgorithmSpecification>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::InputMode* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::InputMode>(Arena*);
-template<> ::flyteidl::plugins::sagemaker::StoppingCondition* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::StoppingCondition>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::TrainingJob* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::TrainingJob>(Arena*);
 template<> ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* Arena::CreateMaybeMessage<::flyteidl::plugins::sagemaker::TrainingJobResourceConfig>(Arena*);
 }  // namespace protobuf
@@ -816,131 +812,6 @@ class TrainingJobResourceConfig final :
 };
 // -------------------------------------------------------------------
 
-class StoppingCondition final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.sagemaker.StoppingCondition) */ {
- public:
-  StoppingCondition();
-  virtual ~StoppingCondition();
-
-  StoppingCondition(const StoppingCondition& from);
-
-  inline StoppingCondition& operator=(const StoppingCondition& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  StoppingCondition(StoppingCondition&& from) noexcept
-    : StoppingCondition() {
-    *this = ::std::move(from);
-  }
-
-  inline StoppingCondition& operator=(StoppingCondition&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const StoppingCondition& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const StoppingCondition* internal_default_instance() {
-    return reinterpret_cast<const StoppingCondition*>(
-               &_StoppingCondition_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    5;
-
-  void Swap(StoppingCondition* other);
-  friend void swap(StoppingCondition& a, StoppingCondition& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline StoppingCondition* New() const final {
-    return CreateMaybeMessage<StoppingCondition>(nullptr);
-  }
-
-  StoppingCondition* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<StoppingCondition>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const StoppingCondition& from);
-  void MergeFrom(const StoppingCondition& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(StoppingCondition* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // .google.protobuf.Duration max_runtime_in_seconds = 1;
-  bool has_max_runtime_in_seconds() const;
-  void clear_max_runtime_in_seconds();
-  static const int kMaxRuntimeInSecondsFieldNumber = 1;
-  const ::google::protobuf::Duration& max_runtime_in_seconds() const;
-  ::google::protobuf::Duration* release_max_runtime_in_seconds();
-  ::google::protobuf::Duration* mutable_max_runtime_in_seconds();
-  void set_allocated_max_runtime_in_seconds(::google::protobuf::Duration* max_runtime_in_seconds);
-
-  // .google.protobuf.Duration max_wait_time_in_seconds = 2;
-  bool has_max_wait_time_in_seconds() const;
-  void clear_max_wait_time_in_seconds();
-  static const int kMaxWaitTimeInSecondsFieldNumber = 2;
-  const ::google::protobuf::Duration& max_wait_time_in_seconds() const;
-  ::google::protobuf::Duration* release_max_wait_time_in_seconds();
-  ::google::protobuf::Duration* mutable_max_wait_time_in_seconds();
-  void set_allocated_max_wait_time_in_seconds(::google::protobuf::Duration* max_wait_time_in_seconds);
-
-  // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.StoppingCondition)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::Duration* max_runtime_in_seconds_;
-  ::google::protobuf::Duration* max_wait_time_in_seconds_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
-};
-// -------------------------------------------------------------------
-
 class TrainingJob final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.sagemaker.TrainingJob) */ {
  public:
@@ -979,7 +850,7 @@ class TrainingJob final :
                &_TrainingJob_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    5;
 
   void Swap(TrainingJob* other);
   friend void swap(TrainingJob& a, TrainingJob& b) {
@@ -1054,12 +925,6 @@ class TrainingJob final :
   ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* mutable_training_job_config();
   void set_allocated_training_job_config(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* training_job_config);
 
-  // bool interruptible = 3;
-  void clear_interruptible();
-  static const int kInterruptibleFieldNumber = 3;
-  bool interruptible() const;
-  void set_interruptible(bool value);
-
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.TrainingJob)
  private:
   class HasBitSetters;
@@ -1067,7 +932,6 @@ class TrainingJob final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::flyteidl::plugins::sagemaker::AlgorithmSpecification* algorithm_specification_;
   ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* training_job_config_;
-  bool interruptible_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
 };
@@ -1398,102 +1262,6 @@ inline void TrainingJobResourceConfig::set_volume_size_in_gb(::google::protobuf:
 
 // -------------------------------------------------------------------
 
-// StoppingCondition
-
-// .google.protobuf.Duration max_runtime_in_seconds = 1;
-inline bool StoppingCondition::has_max_runtime_in_seconds() const {
-  return this != internal_default_instance() && max_runtime_in_seconds_ != nullptr;
-}
-inline const ::google::protobuf::Duration& StoppingCondition::max_runtime_in_seconds() const {
-  const ::google::protobuf::Duration* p = max_runtime_in_seconds_;
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.StoppingCondition.max_runtime_in_seconds)
-  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Duration*>(
-      &::google::protobuf::_Duration_default_instance_);
-}
-inline ::google::protobuf::Duration* StoppingCondition::release_max_runtime_in_seconds() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.StoppingCondition.max_runtime_in_seconds)
-  
-  ::google::protobuf::Duration* temp = max_runtime_in_seconds_;
-  max_runtime_in_seconds_ = nullptr;
-  return temp;
-}
-inline ::google::protobuf::Duration* StoppingCondition::mutable_max_runtime_in_seconds() {
-  
-  if (max_runtime_in_seconds_ == nullptr) {
-    auto* p = CreateMaybeMessage<::google::protobuf::Duration>(GetArenaNoVirtual());
-    max_runtime_in_seconds_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.StoppingCondition.max_runtime_in_seconds)
-  return max_runtime_in_seconds_;
-}
-inline void StoppingCondition::set_allocated_max_runtime_in_seconds(::google::protobuf::Duration* max_runtime_in_seconds) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(max_runtime_in_seconds_);
-  }
-  if (max_runtime_in_seconds) {
-    ::google::protobuf::Arena* submessage_arena =
-      reinterpret_cast<::google::protobuf::MessageLite*>(max_runtime_in_seconds)->GetArena();
-    if (message_arena != submessage_arena) {
-      max_runtime_in_seconds = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, max_runtime_in_seconds, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  max_runtime_in_seconds_ = max_runtime_in_seconds;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.StoppingCondition.max_runtime_in_seconds)
-}
-
-// .google.protobuf.Duration max_wait_time_in_seconds = 2;
-inline bool StoppingCondition::has_max_wait_time_in_seconds() const {
-  return this != internal_default_instance() && max_wait_time_in_seconds_ != nullptr;
-}
-inline const ::google::protobuf::Duration& StoppingCondition::max_wait_time_in_seconds() const {
-  const ::google::protobuf::Duration* p = max_wait_time_in_seconds_;
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.StoppingCondition.max_wait_time_in_seconds)
-  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Duration*>(
-      &::google::protobuf::_Duration_default_instance_);
-}
-inline ::google::protobuf::Duration* StoppingCondition::release_max_wait_time_in_seconds() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.sagemaker.StoppingCondition.max_wait_time_in_seconds)
-  
-  ::google::protobuf::Duration* temp = max_wait_time_in_seconds_;
-  max_wait_time_in_seconds_ = nullptr;
-  return temp;
-}
-inline ::google::protobuf::Duration* StoppingCondition::mutable_max_wait_time_in_seconds() {
-  
-  if (max_wait_time_in_seconds_ == nullptr) {
-    auto* p = CreateMaybeMessage<::google::protobuf::Duration>(GetArenaNoVirtual());
-    max_wait_time_in_seconds_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.sagemaker.StoppingCondition.max_wait_time_in_seconds)
-  return max_wait_time_in_seconds_;
-}
-inline void StoppingCondition::set_allocated_max_wait_time_in_seconds(::google::protobuf::Duration* max_wait_time_in_seconds) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(max_wait_time_in_seconds_);
-  }
-  if (max_wait_time_in_seconds) {
-    ::google::protobuf::Arena* submessage_arena =
-      reinterpret_cast<::google::protobuf::MessageLite*>(max_wait_time_in_seconds)->GetArena();
-    if (message_arena != submessage_arena) {
-      max_wait_time_in_seconds = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, max_wait_time_in_seconds, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  max_wait_time_in_seconds_ = max_wait_time_in_seconds;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.StoppingCondition.max_wait_time_in_seconds)
-}
-
-// -------------------------------------------------------------------
-
 // TrainingJob
 
 // .flyteidl.plugins.sagemaker.AlgorithmSpecification algorithm_specification = 1;
@@ -1598,25 +1366,9 @@ inline void TrainingJob::set_allocated_training_job_config(::flyteidl::plugins::
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.sagemaker.TrainingJob.training_job_config)
 }
 
-// bool interruptible = 3;
-inline void TrainingJob::clear_interruptible() {
-  interruptible_ = false;
-}
-inline bool TrainingJob::interruptible() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.sagemaker.TrainingJob.interruptible)
-  return interruptible_;
-}
-inline void TrainingJob::set_interruptible(bool value) {
-  
-  interruptible_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.sagemaker.TrainingJob.interruptible)
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

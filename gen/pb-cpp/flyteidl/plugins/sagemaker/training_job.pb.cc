@@ -19,7 +19,6 @@
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_AlgorithmSpecification_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TrainingJobResourceConfig_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_AlgorithmSpecification_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2fduration_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Duration_google_2fprotobuf_2fduration_2eproto;
 namespace flyteidl {
 namespace plugins {
 namespace sagemaker {
@@ -43,10 +42,6 @@ class TrainingJobResourceConfigDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<TrainingJobResourceConfig> _instance;
 } _TrainingJobResourceConfig_default_instance_;
-class StoppingConditionDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<StoppingCondition> _instance;
-} _StoppingCondition_default_instance_;
 class TrainingJobDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<TrainingJob> _instance;
@@ -125,21 +120,6 @@ static void InitDefaultsTrainingJobResourceConfig_flyteidl_2fplugins_2fsagemaker
 ::google::protobuf::internal::SCCInfo<0> scc_info_TrainingJobResourceConfig_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTrainingJobResourceConfig_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto}, {}};
 
-static void InitDefaultsStoppingCondition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::flyteidl::plugins::sagemaker::_StoppingCondition_default_instance_;
-    new (ptr) ::flyteidl::plugins::sagemaker::StoppingCondition();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::flyteidl::plugins::sagemaker::StoppingCondition::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_StoppingCondition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsStoppingCondition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto}, {
-      &scc_info_Duration_google_2fprotobuf_2fduration_2eproto.base,}};
-
 static void InitDefaultsTrainingJob_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -162,11 +142,10 @@ void InitDefaults_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_AlgorithmSpecification_MetricDefinition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_AlgorithmSpecification_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_TrainingJobResourceConfig_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_StoppingCondition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_TrainingJob_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto[7];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto[6];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto[2];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto = nullptr;
 
@@ -206,20 +185,12 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fsagemaker_2ftr
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig, instance_type_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig, volume_size_in_gb_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::StoppingCondition, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::StoppingCondition, max_runtime_in_seconds_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::StoppingCondition, max_wait_time_in_seconds_),
-  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJob, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJob, algorithm_specification_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJob, training_job_config_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::sagemaker::TrainingJob, interruptible_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::sagemaker::InputMode)},
@@ -227,8 +198,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 10, -1, sizeof(::flyteidl::plugins::sagemaker::AlgorithmSpecification_MetricDefinition)},
   { 17, -1, sizeof(::flyteidl::plugins::sagemaker::AlgorithmSpecification)},
   { 26, -1, sizeof(::flyteidl::plugins::sagemaker::TrainingJobResourceConfig)},
-  { 34, -1, sizeof(::flyteidl::plugins::sagemaker::StoppingCondition)},
-  { 41, -1, sizeof(::flyteidl::plugins::sagemaker::TrainingJob)},
+  { 34, -1, sizeof(::flyteidl::plugins::sagemaker::TrainingJob)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -237,14 +207,13 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_AlgorithmSpecification_MetricDefinition_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_AlgorithmSpecification_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_TrainingJobResourceConfig_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_StoppingCondition_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::sagemaker::_TrainingJob_default_instance_),
 };
 
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto = {
   {}, AddDescriptors_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, "flyteidl/plugins/sagemaker/training_job.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto::offsets,
-  file_level_metadata_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, 7, file_level_enum_descriptors_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, file_level_service_descriptors_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto,
+  file_level_metadata_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, 6, file_level_enum_descriptors_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, file_level_service_descriptors_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto[] =
@@ -264,22 +233,18 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2ftraining_5
   "\001(\t\022\r\n\005regex\030\002 \001(\t\"e\n\031TrainingJobResourc"
   "eConfig\022\026\n\016instance_count\030\001 \001(\003\022\025\n\rinsta"
   "nce_type\030\002 \001(\t\022\031\n\021volume_size_in_gb\030\003 \001("
-  "\003\"\213\001\n\021StoppingCondition\0229\n\026max_runtime_i"
-  "n_seconds\030\001 \001(\0132\031.google.protobuf.Durati"
-  "on\022;\n\030max_wait_time_in_seconds\030\002 \001(\0132\031.g"
-  "oogle.protobuf.Duration\"\315\001\n\013TrainingJob\022"
-  "S\n\027algorithm_specification\030\001 \001(\01322.flyte"
-  "idl.plugins.sagemaker.AlgorithmSpecifica"
-  "tion\022R\n\023training_job_config\030\002 \001(\01325.flyt"
-  "eidl.plugins.sagemaker.TrainingJobResour"
-  "ceConfig\022\025\n\rinterruptible\030\003 \001(\010B5Z3githu"
-  "b.com/lyft/flyteidl/gen/pb-go/flyteidl/p"
-  "luginsb\006proto3"
+  "\003\"\266\001\n\013TrainingJob\022S\n\027algorithm_specifica"
+  "tion\030\001 \001(\01322.flyteidl.plugins.sagemaker."
+  "AlgorithmSpecification\022R\n\023training_job_c"
+  "onfig\030\002 \001(\01325.flyteidl.plugins.sagemaker"
+  ".TrainingJobResourceConfigB5Z3github.com"
+  "/lyft/flyteidl/gen/pb-go/flyteidl/plugin"
+  "sb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto,
-  "flyteidl/plugins/sagemaker/training_job.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, 1054,
+  "flyteidl/plugins/sagemaker/training_job.proto", &assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto, 889,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto() {
@@ -1974,373 +1939,6 @@ void TrainingJobResourceConfig::InternalSwap(TrainingJobResourceConfig* other) {
 
 // ===================================================================
 
-void StoppingCondition::InitAsDefaultInstance() {
-  ::flyteidl::plugins::sagemaker::_StoppingCondition_default_instance_._instance.get_mutable()->max_runtime_in_seconds_ = const_cast< ::google::protobuf::Duration*>(
-      ::google::protobuf::Duration::internal_default_instance());
-  ::flyteidl::plugins::sagemaker::_StoppingCondition_default_instance_._instance.get_mutable()->max_wait_time_in_seconds_ = const_cast< ::google::protobuf::Duration*>(
-      ::google::protobuf::Duration::internal_default_instance());
-}
-class StoppingCondition::HasBitSetters {
- public:
-  static const ::google::protobuf::Duration& max_runtime_in_seconds(const StoppingCondition* msg);
-  static const ::google::protobuf::Duration& max_wait_time_in_seconds(const StoppingCondition* msg);
-};
-
-const ::google::protobuf::Duration&
-StoppingCondition::HasBitSetters::max_runtime_in_seconds(const StoppingCondition* msg) {
-  return *msg->max_runtime_in_seconds_;
-}
-const ::google::protobuf::Duration&
-StoppingCondition::HasBitSetters::max_wait_time_in_seconds(const StoppingCondition* msg) {
-  return *msg->max_wait_time_in_seconds_;
-}
-void StoppingCondition::clear_max_runtime_in_seconds() {
-  if (GetArenaNoVirtual() == nullptr && max_runtime_in_seconds_ != nullptr) {
-    delete max_runtime_in_seconds_;
-  }
-  max_runtime_in_seconds_ = nullptr;
-}
-void StoppingCondition::clear_max_wait_time_in_seconds() {
-  if (GetArenaNoVirtual() == nullptr && max_wait_time_in_seconds_ != nullptr) {
-    delete max_wait_time_in_seconds_;
-  }
-  max_wait_time_in_seconds_ = nullptr;
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int StoppingCondition::kMaxRuntimeInSecondsFieldNumber;
-const int StoppingCondition::kMaxWaitTimeInSecondsFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-StoppingCondition::StoppingCondition()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.plugins.sagemaker.StoppingCondition)
-}
-StoppingCondition::StoppingCondition(const StoppingCondition& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_max_runtime_in_seconds()) {
-    max_runtime_in_seconds_ = new ::google::protobuf::Duration(*from.max_runtime_in_seconds_);
-  } else {
-    max_runtime_in_seconds_ = nullptr;
-  }
-  if (from.has_max_wait_time_in_seconds()) {
-    max_wait_time_in_seconds_ = new ::google::protobuf::Duration(*from.max_wait_time_in_seconds_);
-  } else {
-    max_wait_time_in_seconds_ = nullptr;
-  }
-  // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.sagemaker.StoppingCondition)
-}
-
-void StoppingCondition::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_StoppingCondition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
-  ::memset(&max_runtime_in_seconds_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&max_wait_time_in_seconds_) -
-      reinterpret_cast<char*>(&max_runtime_in_seconds_)) + sizeof(max_wait_time_in_seconds_));
-}
-
-StoppingCondition::~StoppingCondition() {
-  // @@protoc_insertion_point(destructor:flyteidl.plugins.sagemaker.StoppingCondition)
-  SharedDtor();
-}
-
-void StoppingCondition::SharedDtor() {
-  if (this != internal_default_instance()) delete max_runtime_in_seconds_;
-  if (this != internal_default_instance()) delete max_wait_time_in_seconds_;
-}
-
-void StoppingCondition::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const StoppingCondition& StoppingCondition::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_StoppingCondition_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void StoppingCondition::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.plugins.sagemaker.StoppingCondition)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  if (GetArenaNoVirtual() == nullptr && max_runtime_in_seconds_ != nullptr) {
-    delete max_runtime_in_seconds_;
-  }
-  max_runtime_in_seconds_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && max_wait_time_in_seconds_ != nullptr) {
-    delete max_wait_time_in_seconds_;
-  }
-  max_wait_time_in_seconds_ = nullptr;
-  _internal_metadata_.Clear();
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* StoppingCondition::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<StoppingCondition*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-    switch (tag >> 3) {
-      // .google.protobuf.Duration max_runtime_in_seconds = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::google::protobuf::Duration::_InternalParse;
-        object = msg->mutable_max_runtime_in_seconds();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // .google.protobuf.Duration max_wait_time_in_seconds = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::google::protobuf::Duration::_InternalParse;
-        object = msg->mutable_max_wait_time_in_seconds();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
-        }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
-      }
-    }  // switch
-  }  // while
-  return ptr;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool StoppingCondition::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.plugins.sagemaker.StoppingCondition)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .google.protobuf.Duration max_runtime_in_seconds = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_max_runtime_in_seconds()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .google.protobuf.Duration max_wait_time_in_seconds = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_max_wait_time_in_seconds()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:flyteidl.plugins.sagemaker.StoppingCondition)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.plugins.sagemaker.StoppingCondition)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void StoppingCondition::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.plugins.sagemaker.StoppingCondition)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .google.protobuf.Duration max_runtime_in_seconds = 1;
-  if (this->has_max_runtime_in_seconds()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, HasBitSetters::max_runtime_in_seconds(this), output);
-  }
-
-  // .google.protobuf.Duration max_wait_time_in_seconds = 2;
-  if (this->has_max_wait_time_in_seconds()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::max_wait_time_in_seconds(this), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:flyteidl.plugins.sagemaker.StoppingCondition)
-}
-
-::google::protobuf::uint8* StoppingCondition::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.plugins.sagemaker.StoppingCondition)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .google.protobuf.Duration max_runtime_in_seconds = 1;
-  if (this->has_max_runtime_in_seconds()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, HasBitSetters::max_runtime_in_seconds(this), target);
-  }
-
-  // .google.protobuf.Duration max_wait_time_in_seconds = 2;
-  if (this->has_max_wait_time_in_seconds()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, HasBitSetters::max_wait_time_in_seconds(this), target);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.plugins.sagemaker.StoppingCondition)
-  return target;
-}
-
-size_t StoppingCondition::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.plugins.sagemaker.StoppingCondition)
-  size_t total_size = 0;
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // .google.protobuf.Duration max_runtime_in_seconds = 1;
-  if (this->has_max_runtime_in_seconds()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *max_runtime_in_seconds_);
-  }
-
-  // .google.protobuf.Duration max_wait_time_in_seconds = 2;
-  if (this->has_max_wait_time_in_seconds()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *max_wait_time_in_seconds_);
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void StoppingCondition::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.plugins.sagemaker.StoppingCondition)
-  GOOGLE_DCHECK_NE(&from, this);
-  const StoppingCondition* source =
-      ::google::protobuf::DynamicCastToGenerated<StoppingCondition>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.plugins.sagemaker.StoppingCondition)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.plugins.sagemaker.StoppingCondition)
-    MergeFrom(*source);
-  }
-}
-
-void StoppingCondition::MergeFrom(const StoppingCondition& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.plugins.sagemaker.StoppingCondition)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.has_max_runtime_in_seconds()) {
-    mutable_max_runtime_in_seconds()->::google::protobuf::Duration::MergeFrom(from.max_runtime_in_seconds());
-  }
-  if (from.has_max_wait_time_in_seconds()) {
-    mutable_max_wait_time_in_seconds()->::google::protobuf::Duration::MergeFrom(from.max_wait_time_in_seconds());
-  }
-}
-
-void StoppingCondition::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.plugins.sagemaker.StoppingCondition)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void StoppingCondition::CopyFrom(const StoppingCondition& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.plugins.sagemaker.StoppingCondition)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool StoppingCondition::IsInitialized() const {
-  return true;
-}
-
-void StoppingCondition::Swap(StoppingCondition* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void StoppingCondition::InternalSwap(StoppingCondition* other) {
-  using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(max_runtime_in_seconds_, other->max_runtime_in_seconds_);
-  swap(max_wait_time_in_seconds_, other->max_wait_time_in_seconds_);
-}
-
-::google::protobuf::Metadata StoppingCondition::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto);
-  return ::file_level_metadata_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto[kIndexInFileMessages];
-}
-
-
-// ===================================================================
-
 void TrainingJob::InitAsDefaultInstance() {
   ::flyteidl::plugins::sagemaker::_TrainingJob_default_instance_._instance.get_mutable()->algorithm_specification_ = const_cast< ::flyteidl::plugins::sagemaker::AlgorithmSpecification*>(
       ::flyteidl::plugins::sagemaker::AlgorithmSpecification::internal_default_instance());
@@ -2364,7 +1962,6 @@ TrainingJob::HasBitSetters::training_job_config(const TrainingJob* msg) {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TrainingJob::kAlgorithmSpecificationFieldNumber;
 const int TrainingJob::kTrainingJobConfigFieldNumber;
-const int TrainingJob::kInterruptibleFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TrainingJob::TrainingJob()
@@ -2386,7 +1983,6 @@ TrainingJob::TrainingJob(const TrainingJob& from)
   } else {
     training_job_config_ = nullptr;
   }
-  interruptible_ = from.interruptible_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.sagemaker.TrainingJob)
 }
 
@@ -2394,8 +1990,8 @@ void TrainingJob::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_TrainingJob_flyteidl_2fplugins_2fsagemaker_2ftraining_5fjob_2eproto.base);
   ::memset(&algorithm_specification_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&interruptible_) -
-      reinterpret_cast<char*>(&algorithm_specification_)) + sizeof(interruptible_));
+      reinterpret_cast<char*>(&training_job_config_) -
+      reinterpret_cast<char*>(&algorithm_specification_)) + sizeof(training_job_config_));
 }
 
 TrainingJob::~TrainingJob() {
@@ -2431,7 +2027,6 @@ void TrainingJob::Clear() {
     delete training_job_config_;
   }
   training_job_config_ = nullptr;
-  interruptible_ = false;
   _internal_metadata_.Clear();
 }
 
@@ -2472,13 +2067,6 @@ const char* TrainingJob::_InternalParse(const char* begin, const char* end, void
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // bool interruptible = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
-        msg->set_interruptible(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -2533,19 +2121,6 @@ bool TrainingJob::MergePartialFromCodedStream(
         break;
       }
 
-      // bool interruptible = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &interruptible_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -2585,11 +2160,6 @@ void TrainingJob::SerializeWithCachedSizes(
       2, HasBitSetters::training_job_config(this), output);
   }
 
-  // bool interruptible = 3;
-  if (this->interruptible() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->interruptible(), output);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -2615,11 +2185,6 @@ void TrainingJob::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         2, HasBitSetters::training_job_config(this), target);
-  }
-
-  // bool interruptible = 3;
-  if (this->interruptible() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->interruptible(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2657,11 +2222,6 @@ size_t TrainingJob::ByteSizeLong() const {
         *training_job_config_);
   }
 
-  // bool interruptible = 3;
-  if (this->interruptible() != 0) {
-    total_size += 1 + 1;
-  }
-
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -2695,9 +2255,6 @@ void TrainingJob::MergeFrom(const TrainingJob& from) {
   if (from.has_training_job_config()) {
     mutable_training_job_config()->::flyteidl::plugins::sagemaker::TrainingJobResourceConfig::MergeFrom(from.training_job_config());
   }
-  if (from.interruptible() != 0) {
-    set_interruptible(from.interruptible());
-  }
 }
 
 void TrainingJob::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2727,7 +2284,6 @@ void TrainingJob::InternalSwap(TrainingJob* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(algorithm_specification_, other->algorithm_specification_);
   swap(training_job_config_, other->training_job_config_);
-  swap(interruptible_, other->interruptible_);
 }
 
 ::google::protobuf::Metadata TrainingJob::GetMetadata() const {
@@ -2756,9 +2312,6 @@ template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::AlgorithmSpecificat
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::TrainingJobResourceConfig >(arena);
-}
-template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::StoppingCondition* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::StoppingCondition >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::StoppingCondition >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::plugins::sagemaker::TrainingJob* Arena::CreateMaybeMessage< ::flyteidl::plugins::sagemaker::TrainingJob >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::plugins::sagemaker::TrainingJob >(arena);
