@@ -40,6 +40,12 @@ public final class IdentifierOuterClass {
      */
     LAUNCH_PLAN(3),
     /**
+     * <pre>
+     * A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.
+     * Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects 
+     * in a similar manner to other Flyte objects
+     * </pre>
+     *
      * <code>DATASET = 4;</code>
      */
     DATASET(4),
@@ -63,6 +69,12 @@ public final class IdentifierOuterClass {
      */
     public static final int LAUNCH_PLAN_VALUE = 3;
     /**
+     * <pre>
+     * A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.
+     * Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects 
+     * in a similar manner to other Flyte objects
+     * </pre>
+     *
      * <code>DATASET = 4;</code>
      */
     public static final int DATASET_VALUE = 4;

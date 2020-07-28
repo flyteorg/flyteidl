@@ -199,7 +199,7 @@
           },
           {
             "name": "task_execution_id.task_id.resource_type",
-            "description": "Identifies the specific type of resource that this identifer corresponds to.",
+            "description": "Identifies the specific type of resource that this identifer corresponds to.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects",
             "in": "query",
             "required": false,
             "type": "string",
@@ -422,7 +422,7 @@
           },
           {
             "name": "id.task_id.resource_type",
-            "description": "Identifies the specific type of resource that this identifer corresponds to.",
+            "description": "Identifies the specific type of resource that this identifer corresponds to.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects",
             "in": "query",
             "required": false,
             "type": "string",
@@ -1057,7 +1057,7 @@
           },
           {
             "name": "id.resource_type",
-            "description": "Identifies the specific type of resource that this identifer corresponds to.",
+            "description": "Identifies the specific type of resource that this identifer corresponds to.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects",
             "in": "query",
             "required": false,
             "type": "string",
@@ -1744,7 +1744,7 @@
           },
           {
             "name": "id.task_id.resource_type",
-            "description": "Identifies the specific type of resource that this identifer corresponds to.",
+            "description": "Identifies the specific type of resource that this identifer corresponds to.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects",
             "in": "query",
             "required": false,
             "type": "string",
@@ -2164,7 +2164,7 @@
           },
           {
             "name": "id.resource_type",
-            "description": "Identifies the specific type of resource that this identifer corresponds to.",
+            "description": "Identifies the specific type of resource that this identifer corresponds to.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects",
             "in": "query",
             "required": false,
             "type": "string",
@@ -2646,7 +2646,7 @@
           },
           {
             "name": "id.resource_type",
-            "description": "Identifies the specific type of resource that this identifer corresponds to.",
+            "description": "Identifies the specific type of resource that this identifer corresponds to.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects",
             "in": "query",
             "required": false,
             "type": "string",
@@ -5085,7 +5085,7 @@
         "DATASET"
       ],
       "default": "UNSPECIFIED",
-      "description": "Indicates a resource type within Flyte."
+      "description": "Indicates a resource type within Flyte.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects"
     },
     "coreResources": {
       "type": "object",
