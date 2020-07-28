@@ -1923,21 +1923,21 @@ public final class Event {
     flyteidl.event.Event.WorkflowNodeMetadataOrBuilder getWorkflowNodeMetadataOrBuilder();
 
     /**
-     * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+     * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 14;</code>
      */
     boolean hasTaskNodeMetadata();
     /**
-     * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+     * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 14;</code>
      */
     flyteidl.event.Event.TaskNodeMetadata getTaskNodeMetadata();
     /**
-     * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+     * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 14;</code>
      */
     flyteidl.event.Event.TaskNodeMetadataOrBuilder getTaskNodeMetadataOrBuilder();
 
     /**
      * <pre>
-     * Specifies which task (if any) launched this node.
+     * [To be deprecated] Specifies which task (if any) launched this node.
      * </pre>
      *
      * <code>.flyteidl.event.ParentTaskExecutionMetadata parent_task_metadata = 9;</code>
@@ -1945,7 +1945,7 @@ public final class Event {
     boolean hasParentTaskMetadata();
     /**
      * <pre>
-     * Specifies which task (if any) launched this node.
+     * [To be deprecated] Specifies which task (if any) launched this node.
      * </pre>
      *
      * <code>.flyteidl.event.ParentTaskExecutionMetadata parent_task_metadata = 9;</code>
@@ -1953,12 +1953,93 @@ public final class Event {
     flyteidl.event.Event.ParentTaskExecutionMetadata getParentTaskMetadata();
     /**
      * <pre>
-     * Specifies which task (if any) launched this node.
+     * [To be deprecated] Specifies which task (if any) launched this node.
      * </pre>
      *
      * <code>.flyteidl.event.ParentTaskExecutionMetadata parent_task_metadata = 9;</code>
      */
     flyteidl.event.Event.ParentTaskExecutionMetadataOrBuilder getParentTaskMetadataOrBuilder();
+
+    /**
+     * <pre>
+     * Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
+     * </pre>
+     *
+     * <code>.flyteidl.event.ParentNodeExecutionMetadata parent_node_metadata = 10;</code>
+     */
+    boolean hasParentNodeMetadata();
+    /**
+     * <pre>
+     * Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
+     * </pre>
+     *
+     * <code>.flyteidl.event.ParentNodeExecutionMetadata parent_node_metadata = 10;</code>
+     */
+    flyteidl.event.Event.ParentNodeExecutionMetadata getParentNodeMetadata();
+    /**
+     * <pre>
+     * Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
+     * </pre>
+     *
+     * <code>.flyteidl.event.ParentNodeExecutionMetadata parent_node_metadata = 10;</code>
+     */
+    flyteidl.event.Event.ParentNodeExecutionMetadataOrBuilder getParentNodeMetadataOrBuilder();
+
+    /**
+     * <pre>
+     * Retry group to indicate grouping of nodes by retries
+     * </pre>
+     *
+     * <code>string retry_group = 11;</code>
+     */
+    java.lang.String getRetryGroup();
+    /**
+     * <pre>
+     * Retry group to indicate grouping of nodes by retries
+     * </pre>
+     *
+     * <code>string retry_group = 11;</code>
+     */
+    com.google.protobuf.ByteString
+        getRetryGroupBytes();
+
+    /**
+     * <pre>
+     * Identifier of the node in the original workflow/graph
+     * This maps to value of WorkflowTemplate.nodes[X].id
+     * </pre>
+     *
+     * <code>string spec_node_id = 12;</code>
+     */
+    java.lang.String getSpecNodeId();
+    /**
+     * <pre>
+     * Identifier of the node in the original workflow/graph
+     * This maps to value of WorkflowTemplate.nodes[X].id
+     * </pre>
+     *
+     * <code>string spec_node_id = 12;</code>
+     */
+    com.google.protobuf.ByteString
+        getSpecNodeIdBytes();
+
+    /**
+     * <pre>
+     * Friendly readable name for the node
+     * </pre>
+     *
+     * <code>string node_name = 13;</code>
+     */
+    java.lang.String getNodeName();
+    /**
+     * <pre>
+     * Friendly readable name for the node
+     * </pre>
+     *
+     * <code>string node_name = 13;</code>
+     */
+    com.google.protobuf.ByteString
+        getNodeNameBytes();
 
     public flyteidl.event.Event.NodeExecutionEvent.OutputResultCase getOutputResultCase();
 
@@ -1980,6 +2061,9 @@ public final class Event {
       producerId_ = "";
       phase_ = 0;
       inputUri_ = "";
+      retryGroup_ = "";
+      specNodeId_ = "";
+      nodeName_ = "";
     }
 
     @java.lang.Override
@@ -2098,8 +2182,39 @@ public final class Event {
               break;
             }
             case 82: {
+              flyteidl.event.Event.ParentNodeExecutionMetadata.Builder subBuilder = null;
+              if (parentNodeMetadata_ != null) {
+                subBuilder = parentNodeMetadata_.toBuilder();
+              }
+              parentNodeMetadata_ = input.readMessage(flyteidl.event.Event.ParentNodeExecutionMetadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(parentNodeMetadata_);
+                parentNodeMetadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              retryGroup_ = s;
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              specNodeId_ = s;
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodeName_ = s;
+              break;
+            }
+            case 114: {
               flyteidl.event.Event.TaskNodeMetadata.Builder subBuilder = null;
-              if (targetMetadataCase_ == 10) {
+              if (targetMetadataCase_ == 14) {
                 subBuilder = ((flyteidl.event.Event.TaskNodeMetadata) targetMetadata_).toBuilder();
               }
               targetMetadata_ =
@@ -2108,7 +2223,7 @@ public final class Event {
                 subBuilder.mergeFrom((flyteidl.event.Event.TaskNodeMetadata) targetMetadata_);
                 targetMetadata_ = subBuilder.buildPartial();
               }
-              targetMetadataCase_ = 10;
+              targetMetadataCase_ = 14;
               break;
             }
             default: {
@@ -2186,7 +2301,7 @@ public final class Event {
     public enum TargetMetadataCase
         implements com.google.protobuf.Internal.EnumLite {
       WORKFLOW_NODE_METADATA(8),
-      TASK_NODE_METADATA(10),
+      TASK_NODE_METADATA(14),
       TARGETMETADATA_NOT_SET(0);
       private final int value;
       private TargetMetadataCase(int value) {
@@ -2203,7 +2318,7 @@ public final class Event {
       public static TargetMetadataCase forNumber(int value) {
         switch (value) {
           case 8: return WORKFLOW_NODE_METADATA;
-          case 10: return TASK_NODE_METADATA;
+          case 14: return TASK_NODE_METADATA;
           case 0: return TARGETMETADATA_NOT_SET;
           default: return null;
         }
@@ -2498,27 +2613,27 @@ public final class Event {
       return flyteidl.event.Event.WorkflowNodeMetadata.getDefaultInstance();
     }
 
-    public static final int TASK_NODE_METADATA_FIELD_NUMBER = 10;
+    public static final int TASK_NODE_METADATA_FIELD_NUMBER = 14;
     /**
-     * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+     * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 14;</code>
      */
     public boolean hasTaskNodeMetadata() {
-      return targetMetadataCase_ == 10;
+      return targetMetadataCase_ == 14;
     }
     /**
-     * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+     * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 14;</code>
      */
     public flyteidl.event.Event.TaskNodeMetadata getTaskNodeMetadata() {
-      if (targetMetadataCase_ == 10) {
+      if (targetMetadataCase_ == 14) {
          return (flyteidl.event.Event.TaskNodeMetadata) targetMetadata_;
       }
       return flyteidl.event.Event.TaskNodeMetadata.getDefaultInstance();
     }
     /**
-     * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+     * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 14;</code>
      */
     public flyteidl.event.Event.TaskNodeMetadataOrBuilder getTaskNodeMetadataOrBuilder() {
-      if (targetMetadataCase_ == 10) {
+      if (targetMetadataCase_ == 14) {
          return (flyteidl.event.Event.TaskNodeMetadata) targetMetadata_;
       }
       return flyteidl.event.Event.TaskNodeMetadata.getDefaultInstance();
@@ -2528,7 +2643,7 @@ public final class Event {
     private flyteidl.event.Event.ParentTaskExecutionMetadata parentTaskMetadata_;
     /**
      * <pre>
-     * Specifies which task (if any) launched this node.
+     * [To be deprecated] Specifies which task (if any) launched this node.
      * </pre>
      *
      * <code>.flyteidl.event.ParentTaskExecutionMetadata parent_task_metadata = 9;</code>
@@ -2538,7 +2653,7 @@ public final class Event {
     }
     /**
      * <pre>
-     * Specifies which task (if any) launched this node.
+     * [To be deprecated] Specifies which task (if any) launched this node.
      * </pre>
      *
      * <code>.flyteidl.event.ParentTaskExecutionMetadata parent_task_metadata = 9;</code>
@@ -2548,13 +2663,174 @@ public final class Event {
     }
     /**
      * <pre>
-     * Specifies which task (if any) launched this node.
+     * [To be deprecated] Specifies which task (if any) launched this node.
      * </pre>
      *
      * <code>.flyteidl.event.ParentTaskExecutionMetadata parent_task_metadata = 9;</code>
      */
     public flyteidl.event.Event.ParentTaskExecutionMetadataOrBuilder getParentTaskMetadataOrBuilder() {
       return getParentTaskMetadata();
+    }
+
+    public static final int PARENT_NODE_METADATA_FIELD_NUMBER = 10;
+    private flyteidl.event.Event.ParentNodeExecutionMetadata parentNodeMetadata_;
+    /**
+     * <pre>
+     * Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
+     * </pre>
+     *
+     * <code>.flyteidl.event.ParentNodeExecutionMetadata parent_node_metadata = 10;</code>
+     */
+    public boolean hasParentNodeMetadata() {
+      return parentNodeMetadata_ != null;
+    }
+    /**
+     * <pre>
+     * Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
+     * </pre>
+     *
+     * <code>.flyteidl.event.ParentNodeExecutionMetadata parent_node_metadata = 10;</code>
+     */
+    public flyteidl.event.Event.ParentNodeExecutionMetadata getParentNodeMetadata() {
+      return parentNodeMetadata_ == null ? flyteidl.event.Event.ParentNodeExecutionMetadata.getDefaultInstance() : parentNodeMetadata_;
+    }
+    /**
+     * <pre>
+     * Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
+     * </pre>
+     *
+     * <code>.flyteidl.event.ParentNodeExecutionMetadata parent_node_metadata = 10;</code>
+     */
+    public flyteidl.event.Event.ParentNodeExecutionMetadataOrBuilder getParentNodeMetadataOrBuilder() {
+      return getParentNodeMetadata();
+    }
+
+    public static final int RETRY_GROUP_FIELD_NUMBER = 11;
+    private volatile java.lang.Object retryGroup_;
+    /**
+     * <pre>
+     * Retry group to indicate grouping of nodes by retries
+     * </pre>
+     *
+     * <code>string retry_group = 11;</code>
+     */
+    public java.lang.String getRetryGroup() {
+      java.lang.Object ref = retryGroup_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        retryGroup_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Retry group to indicate grouping of nodes by retries
+     * </pre>
+     *
+     * <code>string retry_group = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRetryGroupBytes() {
+      java.lang.Object ref = retryGroup_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        retryGroup_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SPEC_NODE_ID_FIELD_NUMBER = 12;
+    private volatile java.lang.Object specNodeId_;
+    /**
+     * <pre>
+     * Identifier of the node in the original workflow/graph
+     * This maps to value of WorkflowTemplate.nodes[X].id
+     * </pre>
+     *
+     * <code>string spec_node_id = 12;</code>
+     */
+    public java.lang.String getSpecNodeId() {
+      java.lang.Object ref = specNodeId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        specNodeId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Identifier of the node in the original workflow/graph
+     * This maps to value of WorkflowTemplate.nodes[X].id
+     * </pre>
+     *
+     * <code>string spec_node_id = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSpecNodeIdBytes() {
+      java.lang.Object ref = specNodeId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        specNodeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NODE_NAME_FIELD_NUMBER = 13;
+    private volatile java.lang.Object nodeName_;
+    /**
+     * <pre>
+     * Friendly readable name for the node
+     * </pre>
+     *
+     * <code>string node_name = 13;</code>
+     */
+    public java.lang.String getNodeName() {
+      java.lang.Object ref = nodeName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nodeName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Friendly readable name for the node
+     * </pre>
+     *
+     * <code>string node_name = 13;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNodeNameBytes() {
+      java.lang.Object ref = nodeName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nodeName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2598,8 +2874,20 @@ public final class Event {
       if (parentTaskMetadata_ != null) {
         output.writeMessage(9, getParentTaskMetadata());
       }
-      if (targetMetadataCase_ == 10) {
-        output.writeMessage(10, (flyteidl.event.Event.TaskNodeMetadata) targetMetadata_);
+      if (parentNodeMetadata_ != null) {
+        output.writeMessage(10, getParentNodeMetadata());
+      }
+      if (!getRetryGroupBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, retryGroup_);
+      }
+      if (!getSpecNodeIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, specNodeId_);
+      }
+      if (!getNodeNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, nodeName_);
+      }
+      if (targetMetadataCase_ == 14) {
+        output.writeMessage(14, (flyteidl.event.Event.TaskNodeMetadata) targetMetadata_);
       }
       unknownFields.writeTo(output);
     }
@@ -2643,9 +2931,22 @@ public final class Event {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, getParentTaskMetadata());
       }
-      if (targetMetadataCase_ == 10) {
+      if (parentNodeMetadata_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, (flyteidl.event.Event.TaskNodeMetadata) targetMetadata_);
+          .computeMessageSize(10, getParentNodeMetadata());
+      }
+      if (!getRetryGroupBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, retryGroup_);
+      }
+      if (!getSpecNodeIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, specNodeId_);
+      }
+      if (!getNodeNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, nodeName_);
+      }
+      if (targetMetadataCase_ == 14) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, (flyteidl.event.Event.TaskNodeMetadata) targetMetadata_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2682,6 +2983,17 @@ public final class Event {
         if (!getParentTaskMetadata()
             .equals(other.getParentTaskMetadata())) return false;
       }
+      if (hasParentNodeMetadata() != other.hasParentNodeMetadata()) return false;
+      if (hasParentNodeMetadata()) {
+        if (!getParentNodeMetadata()
+            .equals(other.getParentNodeMetadata())) return false;
+      }
+      if (!getRetryGroup()
+          .equals(other.getRetryGroup())) return false;
+      if (!getSpecNodeId()
+          .equals(other.getSpecNodeId())) return false;
+      if (!getNodeName()
+          .equals(other.getNodeName())) return false;
       if (!getOutputResultCase().equals(other.getOutputResultCase())) return false;
       switch (outputResultCase_) {
         case 6:
@@ -2701,7 +3013,7 @@ public final class Event {
           if (!getWorkflowNodeMetadata()
               .equals(other.getWorkflowNodeMetadata())) return false;
           break;
-        case 10:
+        case 14:
           if (!getTaskNodeMetadata()
               .equals(other.getTaskNodeMetadata())) return false;
           break;
@@ -2737,6 +3049,16 @@ public final class Event {
         hash = (37 * hash) + PARENT_TASK_METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getParentTaskMetadata().hashCode();
       }
+      if (hasParentNodeMetadata()) {
+        hash = (37 * hash) + PARENT_NODE_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getParentNodeMetadata().hashCode();
+      }
+      hash = (37 * hash) + RETRY_GROUP_FIELD_NUMBER;
+      hash = (53 * hash) + getRetryGroup().hashCode();
+      hash = (37 * hash) + SPEC_NODE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpecNodeId().hashCode();
+      hash = (37 * hash) + NODE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeName().hashCode();
       switch (outputResultCase_) {
         case 6:
           hash = (37 * hash) + OUTPUT_URI_FIELD_NUMBER;
@@ -2754,7 +3076,7 @@ public final class Event {
           hash = (37 * hash) + WORKFLOW_NODE_METADATA_FIELD_NUMBER;
           hash = (53 * hash) + getWorkflowNodeMetadata().hashCode();
           break;
-        case 10:
+        case 14:
           hash = (37 * hash) + TASK_NODE_METADATA_FIELD_NUMBER;
           hash = (53 * hash) + getTaskNodeMetadata().hashCode();
           break;
@@ -2918,6 +3240,18 @@ public final class Event {
           parentTaskMetadata_ = null;
           parentTaskMetadataBuilder_ = null;
         }
+        if (parentNodeMetadataBuilder_ == null) {
+          parentNodeMetadata_ = null;
+        } else {
+          parentNodeMetadata_ = null;
+          parentNodeMetadataBuilder_ = null;
+        }
+        retryGroup_ = "";
+
+        specNodeId_ = "";
+
+        nodeName_ = "";
+
         outputResultCase_ = 0;
         outputResult_ = null;
         targetMetadataCase_ = 0;
@@ -2978,7 +3312,7 @@ public final class Event {
             result.targetMetadata_ = workflowNodeMetadataBuilder_.build();
           }
         }
-        if (targetMetadataCase_ == 10) {
+        if (targetMetadataCase_ == 14) {
           if (taskNodeMetadataBuilder_ == null) {
             result.targetMetadata_ = targetMetadata_;
           } else {
@@ -2990,6 +3324,14 @@ public final class Event {
         } else {
           result.parentTaskMetadata_ = parentTaskMetadataBuilder_.build();
         }
+        if (parentNodeMetadataBuilder_ == null) {
+          result.parentNodeMetadata_ = parentNodeMetadata_;
+        } else {
+          result.parentNodeMetadata_ = parentNodeMetadataBuilder_.build();
+        }
+        result.retryGroup_ = retryGroup_;
+        result.specNodeId_ = specNodeId_;
+        result.nodeName_ = nodeName_;
         result.outputResultCase_ = outputResultCase_;
         result.targetMetadataCase_ = targetMetadataCase_;
         onBuilt();
@@ -3059,6 +3401,21 @@ public final class Event {
         }
         if (other.hasParentTaskMetadata()) {
           mergeParentTaskMetadata(other.getParentTaskMetadata());
+        }
+        if (other.hasParentNodeMetadata()) {
+          mergeParentNodeMetadata(other.getParentNodeMetadata());
+        }
+        if (!other.getRetryGroup().isEmpty()) {
+          retryGroup_ = other.retryGroup_;
+          onChanged();
+        }
+        if (!other.getSpecNodeId().isEmpty()) {
+          specNodeId_ = other.specNodeId_;
+          onChanged();
+        }
+        if (!other.getNodeName().isEmpty()) {
+          nodeName_ = other.nodeName_;
+          onChanged();
         }
         switch (other.getOutputResultCase()) {
           case OUTPUT_URI: {
@@ -4081,29 +4438,29 @@ public final class Event {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.event.Event.TaskNodeMetadata, flyteidl.event.Event.TaskNodeMetadata.Builder, flyteidl.event.Event.TaskNodeMetadataOrBuilder> taskNodeMetadataBuilder_;
       /**
-       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 14;</code>
        */
       public boolean hasTaskNodeMetadata() {
-        return targetMetadataCase_ == 10;
+        return targetMetadataCase_ == 14;
       }
       /**
-       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 14;</code>
        */
       public flyteidl.event.Event.TaskNodeMetadata getTaskNodeMetadata() {
         if (taskNodeMetadataBuilder_ == null) {
-          if (targetMetadataCase_ == 10) {
+          if (targetMetadataCase_ == 14) {
             return (flyteidl.event.Event.TaskNodeMetadata) targetMetadata_;
           }
           return flyteidl.event.Event.TaskNodeMetadata.getDefaultInstance();
         } else {
-          if (targetMetadataCase_ == 10) {
+          if (targetMetadataCase_ == 14) {
             return taskNodeMetadataBuilder_.getMessage();
           }
           return flyteidl.event.Event.TaskNodeMetadata.getDefaultInstance();
         }
       }
       /**
-       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 14;</code>
        */
       public Builder setTaskNodeMetadata(flyteidl.event.Event.TaskNodeMetadata value) {
         if (taskNodeMetadataBuilder_ == null) {
@@ -4115,11 +4472,11 @@ public final class Event {
         } else {
           taskNodeMetadataBuilder_.setMessage(value);
         }
-        targetMetadataCase_ = 10;
+        targetMetadataCase_ = 14;
         return this;
       }
       /**
-       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 14;</code>
        */
       public Builder setTaskNodeMetadata(
           flyteidl.event.Event.TaskNodeMetadata.Builder builderForValue) {
@@ -4129,15 +4486,15 @@ public final class Event {
         } else {
           taskNodeMetadataBuilder_.setMessage(builderForValue.build());
         }
-        targetMetadataCase_ = 10;
+        targetMetadataCase_ = 14;
         return this;
       }
       /**
-       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 14;</code>
        */
       public Builder mergeTaskNodeMetadata(flyteidl.event.Event.TaskNodeMetadata value) {
         if (taskNodeMetadataBuilder_ == null) {
-          if (targetMetadataCase_ == 10 &&
+          if (targetMetadataCase_ == 14 &&
               targetMetadata_ != flyteidl.event.Event.TaskNodeMetadata.getDefaultInstance()) {
             targetMetadata_ = flyteidl.event.Event.TaskNodeMetadata.newBuilder((flyteidl.event.Event.TaskNodeMetadata) targetMetadata_)
                 .mergeFrom(value).buildPartial();
@@ -4146,26 +4503,26 @@ public final class Event {
           }
           onChanged();
         } else {
-          if (targetMetadataCase_ == 10) {
+          if (targetMetadataCase_ == 14) {
             taskNodeMetadataBuilder_.mergeFrom(value);
           }
           taskNodeMetadataBuilder_.setMessage(value);
         }
-        targetMetadataCase_ = 10;
+        targetMetadataCase_ = 14;
         return this;
       }
       /**
-       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 14;</code>
        */
       public Builder clearTaskNodeMetadata() {
         if (taskNodeMetadataBuilder_ == null) {
-          if (targetMetadataCase_ == 10) {
+          if (targetMetadataCase_ == 14) {
             targetMetadataCase_ = 0;
             targetMetadata_ = null;
             onChanged();
           }
         } else {
-          if (targetMetadataCase_ == 10) {
+          if (targetMetadataCase_ == 14) {
             targetMetadataCase_ = 0;
             targetMetadata_ = null;
           }
@@ -4174,32 +4531,32 @@ public final class Event {
         return this;
       }
       /**
-       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 14;</code>
        */
       public flyteidl.event.Event.TaskNodeMetadata.Builder getTaskNodeMetadataBuilder() {
         return getTaskNodeMetadataFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 14;</code>
        */
       public flyteidl.event.Event.TaskNodeMetadataOrBuilder getTaskNodeMetadataOrBuilder() {
-        if ((targetMetadataCase_ == 10) && (taskNodeMetadataBuilder_ != null)) {
+        if ((targetMetadataCase_ == 14) && (taskNodeMetadataBuilder_ != null)) {
           return taskNodeMetadataBuilder_.getMessageOrBuilder();
         } else {
-          if (targetMetadataCase_ == 10) {
+          if (targetMetadataCase_ == 14) {
             return (flyteidl.event.Event.TaskNodeMetadata) targetMetadata_;
           }
           return flyteidl.event.Event.TaskNodeMetadata.getDefaultInstance();
         }
       }
       /**
-       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 10;</code>
+       * <code>.flyteidl.event.TaskNodeMetadata task_node_metadata = 14;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.event.Event.TaskNodeMetadata, flyteidl.event.Event.TaskNodeMetadata.Builder, flyteidl.event.Event.TaskNodeMetadataOrBuilder> 
           getTaskNodeMetadataFieldBuilder() {
         if (taskNodeMetadataBuilder_ == null) {
-          if (!(targetMetadataCase_ == 10)) {
+          if (!(targetMetadataCase_ == 14)) {
             targetMetadata_ = flyteidl.event.Event.TaskNodeMetadata.getDefaultInstance();
           }
           taskNodeMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -4209,7 +4566,7 @@ public final class Event {
                   isClean());
           targetMetadata_ = null;
         }
-        targetMetadataCase_ = 10;
+        targetMetadataCase_ = 14;
         onChanged();;
         return taskNodeMetadataBuilder_;
       }
@@ -4219,7 +4576,7 @@ public final class Event {
           flyteidl.event.Event.ParentTaskExecutionMetadata, flyteidl.event.Event.ParentTaskExecutionMetadata.Builder, flyteidl.event.Event.ParentTaskExecutionMetadataOrBuilder> parentTaskMetadataBuilder_;
       /**
        * <pre>
-       * Specifies which task (if any) launched this node.
+       * [To be deprecated] Specifies which task (if any) launched this node.
        * </pre>
        *
        * <code>.flyteidl.event.ParentTaskExecutionMetadata parent_task_metadata = 9;</code>
@@ -4229,7 +4586,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Specifies which task (if any) launched this node.
+       * [To be deprecated] Specifies which task (if any) launched this node.
        * </pre>
        *
        * <code>.flyteidl.event.ParentTaskExecutionMetadata parent_task_metadata = 9;</code>
@@ -4243,7 +4600,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Specifies which task (if any) launched this node.
+       * [To be deprecated] Specifies which task (if any) launched this node.
        * </pre>
        *
        * <code>.flyteidl.event.ParentTaskExecutionMetadata parent_task_metadata = 9;</code>
@@ -4263,7 +4620,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Specifies which task (if any) launched this node.
+       * [To be deprecated] Specifies which task (if any) launched this node.
        * </pre>
        *
        * <code>.flyteidl.event.ParentTaskExecutionMetadata parent_task_metadata = 9;</code>
@@ -4281,7 +4638,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Specifies which task (if any) launched this node.
+       * [To be deprecated] Specifies which task (if any) launched this node.
        * </pre>
        *
        * <code>.flyteidl.event.ParentTaskExecutionMetadata parent_task_metadata = 9;</code>
@@ -4303,7 +4660,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Specifies which task (if any) launched this node.
+       * [To be deprecated] Specifies which task (if any) launched this node.
        * </pre>
        *
        * <code>.flyteidl.event.ParentTaskExecutionMetadata parent_task_metadata = 9;</code>
@@ -4321,7 +4678,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Specifies which task (if any) launched this node.
+       * [To be deprecated] Specifies which task (if any) launched this node.
        * </pre>
        *
        * <code>.flyteidl.event.ParentTaskExecutionMetadata parent_task_metadata = 9;</code>
@@ -4333,7 +4690,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Specifies which task (if any) launched this node.
+       * [To be deprecated] Specifies which task (if any) launched this node.
        * </pre>
        *
        * <code>.flyteidl.event.ParentTaskExecutionMetadata parent_task_metadata = 9;</code>
@@ -4348,7 +4705,7 @@ public final class Event {
       }
       /**
        * <pre>
-       * Specifies which task (if any) launched this node.
+       * [To be deprecated] Specifies which task (if any) launched this node.
        * </pre>
        *
        * <code>.flyteidl.event.ParentTaskExecutionMetadata parent_task_metadata = 9;</code>
@@ -4365,6 +4722,431 @@ public final class Event {
           parentTaskMetadata_ = null;
         }
         return parentTaskMetadataBuilder_;
+      }
+
+      private flyteidl.event.Event.ParentNodeExecutionMetadata parentNodeMetadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.event.Event.ParentNodeExecutionMetadata, flyteidl.event.Event.ParentNodeExecutionMetadata.Builder, flyteidl.event.Event.ParentNodeExecutionMetadataOrBuilder> parentNodeMetadataBuilder_;
+      /**
+       * <pre>
+       * Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
+       * </pre>
+       *
+       * <code>.flyteidl.event.ParentNodeExecutionMetadata parent_node_metadata = 10;</code>
+       */
+      public boolean hasParentNodeMetadata() {
+        return parentNodeMetadataBuilder_ != null || parentNodeMetadata_ != null;
+      }
+      /**
+       * <pre>
+       * Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
+       * </pre>
+       *
+       * <code>.flyteidl.event.ParentNodeExecutionMetadata parent_node_metadata = 10;</code>
+       */
+      public flyteidl.event.Event.ParentNodeExecutionMetadata getParentNodeMetadata() {
+        if (parentNodeMetadataBuilder_ == null) {
+          return parentNodeMetadata_ == null ? flyteidl.event.Event.ParentNodeExecutionMetadata.getDefaultInstance() : parentNodeMetadata_;
+        } else {
+          return parentNodeMetadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
+       * </pre>
+       *
+       * <code>.flyteidl.event.ParentNodeExecutionMetadata parent_node_metadata = 10;</code>
+       */
+      public Builder setParentNodeMetadata(flyteidl.event.Event.ParentNodeExecutionMetadata value) {
+        if (parentNodeMetadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          parentNodeMetadata_ = value;
+          onChanged();
+        } else {
+          parentNodeMetadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
+       * </pre>
+       *
+       * <code>.flyteidl.event.ParentNodeExecutionMetadata parent_node_metadata = 10;</code>
+       */
+      public Builder setParentNodeMetadata(
+          flyteidl.event.Event.ParentNodeExecutionMetadata.Builder builderForValue) {
+        if (parentNodeMetadataBuilder_ == null) {
+          parentNodeMetadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          parentNodeMetadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
+       * </pre>
+       *
+       * <code>.flyteidl.event.ParentNodeExecutionMetadata parent_node_metadata = 10;</code>
+       */
+      public Builder mergeParentNodeMetadata(flyteidl.event.Event.ParentNodeExecutionMetadata value) {
+        if (parentNodeMetadataBuilder_ == null) {
+          if (parentNodeMetadata_ != null) {
+            parentNodeMetadata_ =
+              flyteidl.event.Event.ParentNodeExecutionMetadata.newBuilder(parentNodeMetadata_).mergeFrom(value).buildPartial();
+          } else {
+            parentNodeMetadata_ = value;
+          }
+          onChanged();
+        } else {
+          parentNodeMetadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
+       * </pre>
+       *
+       * <code>.flyteidl.event.ParentNodeExecutionMetadata parent_node_metadata = 10;</code>
+       */
+      public Builder clearParentNodeMetadata() {
+        if (parentNodeMetadataBuilder_ == null) {
+          parentNodeMetadata_ = null;
+          onChanged();
+        } else {
+          parentNodeMetadata_ = null;
+          parentNodeMetadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
+       * </pre>
+       *
+       * <code>.flyteidl.event.ParentNodeExecutionMetadata parent_node_metadata = 10;</code>
+       */
+      public flyteidl.event.Event.ParentNodeExecutionMetadata.Builder getParentNodeMetadataBuilder() {
+        
+        onChanged();
+        return getParentNodeMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
+       * </pre>
+       *
+       * <code>.flyteidl.event.ParentNodeExecutionMetadata parent_node_metadata = 10;</code>
+       */
+      public flyteidl.event.Event.ParentNodeExecutionMetadataOrBuilder getParentNodeMetadataOrBuilder() {
+        if (parentNodeMetadataBuilder_ != null) {
+          return parentNodeMetadataBuilder_.getMessageOrBuilder();
+        } else {
+          return parentNodeMetadata_ == null ?
+              flyteidl.event.Event.ParentNodeExecutionMetadata.getDefaultInstance() : parentNodeMetadata_;
+        }
+      }
+      /**
+       * <pre>
+       * Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.
+       * </pre>
+       *
+       * <code>.flyteidl.event.ParentNodeExecutionMetadata parent_node_metadata = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.event.Event.ParentNodeExecutionMetadata, flyteidl.event.Event.ParentNodeExecutionMetadata.Builder, flyteidl.event.Event.ParentNodeExecutionMetadataOrBuilder> 
+          getParentNodeMetadataFieldBuilder() {
+        if (parentNodeMetadataBuilder_ == null) {
+          parentNodeMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.event.Event.ParentNodeExecutionMetadata, flyteidl.event.Event.ParentNodeExecutionMetadata.Builder, flyteidl.event.Event.ParentNodeExecutionMetadataOrBuilder>(
+                  getParentNodeMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          parentNodeMetadata_ = null;
+        }
+        return parentNodeMetadataBuilder_;
+      }
+
+      private java.lang.Object retryGroup_ = "";
+      /**
+       * <pre>
+       * Retry group to indicate grouping of nodes by retries
+       * </pre>
+       *
+       * <code>string retry_group = 11;</code>
+       */
+      public java.lang.String getRetryGroup() {
+        java.lang.Object ref = retryGroup_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          retryGroup_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Retry group to indicate grouping of nodes by retries
+       * </pre>
+       *
+       * <code>string retry_group = 11;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRetryGroupBytes() {
+        java.lang.Object ref = retryGroup_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          retryGroup_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Retry group to indicate grouping of nodes by retries
+       * </pre>
+       *
+       * <code>string retry_group = 11;</code>
+       */
+      public Builder setRetryGroup(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        retryGroup_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Retry group to indicate grouping of nodes by retries
+       * </pre>
+       *
+       * <code>string retry_group = 11;</code>
+       */
+      public Builder clearRetryGroup() {
+        
+        retryGroup_ = getDefaultInstance().getRetryGroup();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Retry group to indicate grouping of nodes by retries
+       * </pre>
+       *
+       * <code>string retry_group = 11;</code>
+       */
+      public Builder setRetryGroupBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        retryGroup_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object specNodeId_ = "";
+      /**
+       * <pre>
+       * Identifier of the node in the original workflow/graph
+       * This maps to value of WorkflowTemplate.nodes[X].id
+       * </pre>
+       *
+       * <code>string spec_node_id = 12;</code>
+       */
+      public java.lang.String getSpecNodeId() {
+        java.lang.Object ref = specNodeId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          specNodeId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Identifier of the node in the original workflow/graph
+       * This maps to value of WorkflowTemplate.nodes[X].id
+       * </pre>
+       *
+       * <code>string spec_node_id = 12;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSpecNodeIdBytes() {
+        java.lang.Object ref = specNodeId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          specNodeId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Identifier of the node in the original workflow/graph
+       * This maps to value of WorkflowTemplate.nodes[X].id
+       * </pre>
+       *
+       * <code>string spec_node_id = 12;</code>
+       */
+      public Builder setSpecNodeId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        specNodeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifier of the node in the original workflow/graph
+       * This maps to value of WorkflowTemplate.nodes[X].id
+       * </pre>
+       *
+       * <code>string spec_node_id = 12;</code>
+       */
+      public Builder clearSpecNodeId() {
+        
+        specNodeId_ = getDefaultInstance().getSpecNodeId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifier of the node in the original workflow/graph
+       * This maps to value of WorkflowTemplate.nodes[X].id
+       * </pre>
+       *
+       * <code>string spec_node_id = 12;</code>
+       */
+      public Builder setSpecNodeIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        specNodeId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object nodeName_ = "";
+      /**
+       * <pre>
+       * Friendly readable name for the node
+       * </pre>
+       *
+       * <code>string node_name = 13;</code>
+       */
+      public java.lang.String getNodeName() {
+        java.lang.Object ref = nodeName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nodeName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Friendly readable name for the node
+       * </pre>
+       *
+       * <code>string node_name = 13;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNodeNameBytes() {
+        java.lang.Object ref = nodeName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nodeName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Friendly readable name for the node
+       * </pre>
+       *
+       * <code>string node_name = 13;</code>
+       */
+      public Builder setNodeName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        nodeName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Friendly readable name for the node
+       * </pre>
+       *
+       * <code>string node_name = 13;</code>
+       */
+      public Builder clearNodeName() {
+        
+        nodeName_ = getDefaultInstance().getNodeName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Friendly readable name for the node
+       * </pre>
+       *
+       * <code>string node_name = 13;</code>
+       */
+      public Builder setNodeNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        nodeName_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6430,6 +7212,600 @@ public final class Event {
 
     @java.lang.Override
     public flyteidl.event.Event.ParentTaskExecutionMetadata getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ParentNodeExecutionMetadataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.event.ParentNodeExecutionMetadata)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Unique identifier of the parent node id within the execution
+     * This is value of core.NodeExecutionIdentifier.node_id of the parent node 
+     * </pre>
+     *
+     * <code>string node_id = 1;</code>
+     */
+    java.lang.String getNodeId();
+    /**
+     * <pre>
+     * Unique identifier of the parent node id within the execution
+     * This is value of core.NodeExecutionIdentifier.node_id of the parent node 
+     * </pre>
+     *
+     * <code>string node_id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNodeIdBytes();
+  }
+  /**
+   * Protobuf type {@code flyteidl.event.ParentNodeExecutionMetadata}
+   */
+  public  static final class ParentNodeExecutionMetadata extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.event.ParentNodeExecutionMetadata)
+      ParentNodeExecutionMetadataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ParentNodeExecutionMetadata.newBuilder() to construct.
+    private ParentNodeExecutionMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ParentNodeExecutionMetadata() {
+      nodeId_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ParentNodeExecutionMetadata(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodeId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.event.Event.internal_static_flyteidl_event_ParentNodeExecutionMetadata_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.event.Event.internal_static_flyteidl_event_ParentNodeExecutionMetadata_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.event.Event.ParentNodeExecutionMetadata.class, flyteidl.event.Event.ParentNodeExecutionMetadata.Builder.class);
+    }
+
+    public static final int NODE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object nodeId_;
+    /**
+     * <pre>
+     * Unique identifier of the parent node id within the execution
+     * This is value of core.NodeExecutionIdentifier.node_id of the parent node 
+     * </pre>
+     *
+     * <code>string node_id = 1;</code>
+     */
+    public java.lang.String getNodeId() {
+      java.lang.Object ref = nodeId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nodeId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Unique identifier of the parent node id within the execution
+     * This is value of core.NodeExecutionIdentifier.node_id of the parent node 
+     * </pre>
+     *
+     * <code>string node_id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNodeIdBytes() {
+      java.lang.Object ref = nodeId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nodeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNodeIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNodeIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.event.Event.ParentNodeExecutionMetadata)) {
+        return super.equals(obj);
+      }
+      flyteidl.event.Event.ParentNodeExecutionMetadata other = (flyteidl.event.Event.ParentNodeExecutionMetadata) obj;
+
+      if (!getNodeId()
+          .equals(other.getNodeId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NODE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.event.Event.ParentNodeExecutionMetadata parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.ParentNodeExecutionMetadata parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.ParentNodeExecutionMetadata parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.ParentNodeExecutionMetadata parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.ParentNodeExecutionMetadata parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.event.Event.ParentNodeExecutionMetadata parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.event.Event.ParentNodeExecutionMetadata parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.ParentNodeExecutionMetadata parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.event.Event.ParentNodeExecutionMetadata parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.ParentNodeExecutionMetadata parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.event.Event.ParentNodeExecutionMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.event.Event.ParentNodeExecutionMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.event.Event.ParentNodeExecutionMetadata prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code flyteidl.event.ParentNodeExecutionMetadata}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.event.ParentNodeExecutionMetadata)
+        flyteidl.event.Event.ParentNodeExecutionMetadataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_ParentNodeExecutionMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_ParentNodeExecutionMetadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.event.Event.ParentNodeExecutionMetadata.class, flyteidl.event.Event.ParentNodeExecutionMetadata.Builder.class);
+      }
+
+      // Construct using flyteidl.event.Event.ParentNodeExecutionMetadata.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        nodeId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.event.Event.internal_static_flyteidl_event_ParentNodeExecutionMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.ParentNodeExecutionMetadata getDefaultInstanceForType() {
+        return flyteidl.event.Event.ParentNodeExecutionMetadata.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.ParentNodeExecutionMetadata build() {
+        flyteidl.event.Event.ParentNodeExecutionMetadata result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.event.Event.ParentNodeExecutionMetadata buildPartial() {
+        flyteidl.event.Event.ParentNodeExecutionMetadata result = new flyteidl.event.Event.ParentNodeExecutionMetadata(this);
+        result.nodeId_ = nodeId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.event.Event.ParentNodeExecutionMetadata) {
+          return mergeFrom((flyteidl.event.Event.ParentNodeExecutionMetadata)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.event.Event.ParentNodeExecutionMetadata other) {
+        if (other == flyteidl.event.Event.ParentNodeExecutionMetadata.getDefaultInstance()) return this;
+        if (!other.getNodeId().isEmpty()) {
+          nodeId_ = other.nodeId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.event.Event.ParentNodeExecutionMetadata parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.event.Event.ParentNodeExecutionMetadata) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object nodeId_ = "";
+      /**
+       * <pre>
+       * Unique identifier of the parent node id within the execution
+       * This is value of core.NodeExecutionIdentifier.node_id of the parent node 
+       * </pre>
+       *
+       * <code>string node_id = 1;</code>
+       */
+      public java.lang.String getNodeId() {
+        java.lang.Object ref = nodeId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nodeId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Unique identifier of the parent node id within the execution
+       * This is value of core.NodeExecutionIdentifier.node_id of the parent node 
+       * </pre>
+       *
+       * <code>string node_id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNodeIdBytes() {
+        java.lang.Object ref = nodeId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nodeId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Unique identifier of the parent node id within the execution
+       * This is value of core.NodeExecutionIdentifier.node_id of the parent node 
+       * </pre>
+       *
+       * <code>string node_id = 1;</code>
+       */
+      public Builder setNodeId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        nodeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Unique identifier of the parent node id within the execution
+       * This is value of core.NodeExecutionIdentifier.node_id of the parent node 
+       * </pre>
+       *
+       * <code>string node_id = 1;</code>
+       */
+      public Builder clearNodeId() {
+        
+        nodeId_ = getDefaultInstance().getNodeId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Unique identifier of the parent node id within the execution
+       * This is value of core.NodeExecutionIdentifier.node_id of the parent node 
+       * </pre>
+       *
+       * <code>string node_id = 1;</code>
+       */
+      public Builder setNodeIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        nodeId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.event.ParentNodeExecutionMetadata)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.event.ParentNodeExecutionMetadata)
+    private static final flyteidl.event.Event.ParentNodeExecutionMetadata DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.event.Event.ParentNodeExecutionMetadata();
+    }
+
+    public static flyteidl.event.Event.ParentNodeExecutionMetadata getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ParentNodeExecutionMetadata>
+        PARSER = new com.google.protobuf.AbstractParser<ParentNodeExecutionMetadata>() {
+      @java.lang.Override
+      public ParentNodeExecutionMetadata parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ParentNodeExecutionMetadata(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ParentNodeExecutionMetadata> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ParentNodeExecutionMetadata> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.event.Event.ParentNodeExecutionMetadata getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -9639,6 +11015,11 @@ public final class Event {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_event_ParentTaskExecutionMetadata_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_event_ParentNodeExecutionMetadata_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_event_ParentNodeExecutionMetadata_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_event_TaskExecutionEvent_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -9664,7 +11045,7 @@ public final class Event {
       "on.Phase\022/\n\013occurred_at\030\004 \001(\0132\032.google.p" +
       "rotobuf.Timestamp\022\024\n\noutput_uri\030\005 \001(\tH\000\022" +
       ".\n\005error\030\006 \001(\0132\035.flyteidl.core.Execution" +
-      "ErrorH\000B\017\n\routput_result\"\221\004\n\022NodeExecuti" +
+      "ErrorH\000B\017\n\routput_result\"\232\005\n\022NodeExecuti" +
       "onEvent\0222\n\002id\030\001 \001(\0132&.flyteidl.core.Node" +
       "ExecutionIdentifier\022\023\n\013producer_id\030\002 \001(\t" +
       "\0221\n\005phase\030\003 \001(\0162\".flyteidl.core.NodeExec" +
@@ -9674,32 +11055,37 @@ public final class Event {
       "lyteidl.core.ExecutionErrorH\000\022F\n\026workflo" +
       "w_node_metadata\030\010 \001(\0132$.flyteidl.event.W" +
       "orkflowNodeMetadataH\001\022>\n\022task_node_metad" +
-      "ata\030\n \001(\0132 .flyteidl.event.TaskNodeMetad" +
+      "ata\030\016 \001(\0132 .flyteidl.event.TaskNodeMetad" +
       "ataH\001\022I\n\024parent_task_metadata\030\t \001(\0132+.fl" +
       "yteidl.event.ParentTaskExecutionMetadata" +
-      "B\017\n\routput_resultB\021\n\017target_metadata\"X\n\024" +
-      "WorkflowNodeMetadata\022@\n\014execution_id\030\001 \001" +
-      "(\0132*.flyteidl.core.WorkflowExecutionIden" +
-      "tifier\"\200\001\n\020TaskNodeMetadata\0227\n\014cache_sta" +
-      "tus\030\001 \001(\0162!.flyteidl.core.CatalogCacheSt" +
-      "atus\0223\n\013catalog_key\030\002 \001(\0132\036.flyteidl.cor" +
-      "e.CatalogMetadata\"Q\n\033ParentTaskExecution" +
-      "Metadata\0222\n\002id\030\001 \001(\0132&.flyteidl.core.Tas" +
-      "kExecutionIdentifier\"\357\003\n\022TaskExecutionEv" +
-      "ent\022*\n\007task_id\030\001 \001(\0132\031.flyteidl.core.Ide" +
-      "ntifier\022H\n\030parent_node_execution_id\030\002 \001(" +
-      "\0132&.flyteidl.core.NodeExecutionIdentifie" +
-      "r\022\025\n\rretry_attempt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162" +
-      "\".flyteidl.core.TaskExecution.Phase\022\023\n\013p" +
-      "roducer_id\030\005 \001(\t\022$\n\004logs\030\006 \003(\0132\026.flyteid" +
-      "l.core.TaskLog\022/\n\013occurred_at\030\007 \001(\0132\032.go" +
-      "ogle.protobuf.Timestamp\022\021\n\tinput_uri\030\010 \001" +
-      "(\t\022\024\n\noutput_uri\030\t \001(\tH\000\022.\n\005error\030\n \001(\0132" +
-      "\035.flyteidl.core.ExecutionErrorH\000\022,\n\013cust" +
-      "om_info\030\013 \001(\0132\027.google.protobuf.Struct\022\025" +
-      "\n\rphase_version\030\014 \001(\rB\017\n\routput_resultB3" +
-      "Z1github.com/lyft/flyteidl/gen/pb-go/fly" +
-      "teidl/eventb\006proto3"
+      "\022I\n\024parent_node_metadata\030\n \001(\0132+.flyteid" +
+      "l.event.ParentNodeExecutionMetadata\022\023\n\013r" +
+      "etry_group\030\013 \001(\t\022\024\n\014spec_node_id\030\014 \001(\t\022\021" +
+      "\n\tnode_name\030\r \001(\tB\017\n\routput_resultB\021\n\017ta" +
+      "rget_metadata\"X\n\024WorkflowNodeMetadata\022@\n" +
+      "\014execution_id\030\001 \001(\0132*.flyteidl.core.Work" +
+      "flowExecutionIdentifier\"\200\001\n\020TaskNodeMeta" +
+      "data\0227\n\014cache_status\030\001 \001(\0162!.flyteidl.co" +
+      "re.CatalogCacheStatus\0223\n\013catalog_key\030\002 \001" +
+      "(\0132\036.flyteidl.core.CatalogMetadata\"Q\n\033Pa" +
+      "rentTaskExecutionMetadata\0222\n\002id\030\001 \001(\0132&." +
+      "flyteidl.core.TaskExecutionIdentifier\".\n" +
+      "\033ParentNodeExecutionMetadata\022\017\n\007node_id\030" +
+      "\001 \001(\t\"\357\003\n\022TaskExecutionEvent\022*\n\007task_id\030" +
+      "\001 \001(\0132\031.flyteidl.core.Identifier\022H\n\030pare" +
+      "nt_node_execution_id\030\002 \001(\0132&.flyteidl.co" +
+      "re.NodeExecutionIdentifier\022\025\n\rretry_atte" +
+      "mpt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyteidl.core" +
+      ".TaskExecution.Phase\022\023\n\013producer_id\030\005 \001(" +
+      "\t\022$\n\004logs\030\006 \003(\0132\026.flyteidl.core.TaskLog\022" +
+      "/\n\013occurred_at\030\007 \001(\0132\032.google.protobuf.T" +
+      "imestamp\022\021\n\tinput_uri\030\010 \001(\t\022\024\n\noutput_ur" +
+      "i\030\t \001(\tH\000\022.\n\005error\030\n \001(\0132\035.flyteidl.core" +
+      ".ExecutionErrorH\000\022,\n\013custom_info\030\013 \001(\0132\027" +
+      ".google.protobuf.Struct\022\025\n\rphase_version" +
+      "\030\014 \001(\rB\017\n\routput_resultB3Z1github.com/ly" +
+      "ft/flyteidl/gen/pb-go/flyteidl/eventb\006pr" +
+      "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -9729,7 +11115,7 @@ public final class Event {
     internal_static_flyteidl_event_NodeExecutionEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_NodeExecutionEvent_descriptor,
-        new java.lang.String[] { "Id", "ProducerId", "Phase", "OccurredAt", "InputUri", "OutputUri", "Error", "WorkflowNodeMetadata", "TaskNodeMetadata", "ParentTaskMetadata", "OutputResult", "TargetMetadata", });
+        new java.lang.String[] { "Id", "ProducerId", "Phase", "OccurredAt", "InputUri", "OutputUri", "Error", "WorkflowNodeMetadata", "TaskNodeMetadata", "ParentTaskMetadata", "ParentNodeMetadata", "RetryGroup", "SpecNodeId", "NodeName", "OutputResult", "TargetMetadata", });
     internal_static_flyteidl_event_WorkflowNodeMetadata_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_event_WorkflowNodeMetadata_fieldAccessorTable = new
@@ -9748,8 +11134,14 @@ public final class Event {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_ParentTaskExecutionMetadata_descriptor,
         new java.lang.String[] { "Id", });
-    internal_static_flyteidl_event_TaskExecutionEvent_descriptor =
+    internal_static_flyteidl_event_ParentNodeExecutionMetadata_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_flyteidl_event_ParentNodeExecutionMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_event_ParentNodeExecutionMetadata_descriptor,
+        new java.lang.String[] { "NodeId", });
+    internal_static_flyteidl_event_TaskExecutionEvent_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_event_TaskExecutionEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_TaskExecutionEvent_descriptor,
