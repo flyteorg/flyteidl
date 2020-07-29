@@ -156,6 +156,8 @@ func (m *HyperparameterTuningJob) GetMaxParallelTrainingJobs() int64 {
 	return 0
 }
 
+// HyperparameterTuningObjectiveType determines the direction of the tuning of the Hyperparameter Tuning Job
+// with respect to the specified metric.
 type HyperparameterTuningObjectiveType struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -187,9 +189,11 @@ func (m *HyperparameterTuningObjectiveType) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_HyperparameterTuningObjectiveType proto.InternalMessageInfo
 
-// The objective of the hyperparameter tuning
+// The target metric and the objective of the hyperparameter tuning.
 // https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
 type HyperparameterTuningObjective struct {
+	// HyperparameterTuningObjectiveType determines the direction of the tuning of the Hyperparameter Tuning Job
+	// with respect to the specified metric.
 	ObjectiveType HyperparameterTuningObjectiveType_Value `protobuf:"varint,1,opt,name=objective_type,json=objectiveType,proto3,enum=flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType_Value" json:"objective_type,omitempty"`
 	// The target metric name, which is the user-defined name of the metric specified in the
 	// training job's algorithm specification
@@ -238,7 +242,7 @@ func (m *HyperparameterTuningObjective) GetMetricName() string {
 	return ""
 }
 
-// Setting the strategy used when doing search in the hyperparameter space
+// Setting the strategy used when searching in the hyperparameter space
 // Refer this doc for more details:
 // https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-automatic-model-tuning-now-supports-random-search-and-hyperparameter-scaling/
 type HyperparameterTuningStrategy struct {
@@ -310,9 +314,14 @@ var xxx_messageInfo_TrainingJobEarlyStoppingType proto.InternalMessageInfo
 // The specification of the hyperparameter tuning process
 // https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-ex-tuning-job.html#automatic-model-tuning-ex-low-tuning-config
 type HyperparameterTuningJobConfig struct {
-	HyperparameterRanges         *ParameterRanges                   `protobuf:"bytes,1,opt,name=hyperparameter_ranges,json=hyperparameterRanges,proto3" json:"hyperparameter_ranges,omitempty"`
-	TuningStrategy               HyperparameterTuningStrategy_Value `protobuf:"varint,2,opt,name=tuning_strategy,json=tuningStrategy,proto3,enum=flyteidl.plugins.sagemaker.HyperparameterTuningStrategy_Value" json:"tuning_strategy,omitempty"`
-	TuningObjective              *HyperparameterTuningObjective     `protobuf:"bytes,3,opt,name=tuning_objective,json=tuningObjective,proto3" json:"tuning_objective,omitempty"`
+	// ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+	HyperparameterRanges *ParameterRanges `protobuf:"bytes,1,opt,name=hyperparameter_ranges,json=hyperparameterRanges,proto3" json:"hyperparameter_ranges,omitempty"`
+	// Setting the strategy used when searching in the hyperparameter space
+	TuningStrategy HyperparameterTuningStrategy_Value `protobuf:"varint,2,opt,name=tuning_strategy,json=tuningStrategy,proto3,enum=flyteidl.plugins.sagemaker.HyperparameterTuningStrategy_Value" json:"tuning_strategy,omitempty"`
+	// The target metric and the objective of the hyperparameter tuning.
+	TuningObjective *HyperparameterTuningObjective `protobuf:"bytes,3,opt,name=tuning_objective,json=tuningObjective,proto3" json:"tuning_objective,omitempty"`
+	// When the training jobs launched by the hyperparameter tuning job are not improving significantly,
+	// a hyperparameter tuning job can be stopping early.
 	TrainingJobEarlyStoppingType TrainingJobEarlyStoppingType_Value `protobuf:"varint,4,opt,name=training_job_early_stopping_type,json=trainingJobEarlyStoppingType,proto3,enum=flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType_Value" json:"training_job_early_stopping_type,omitempty"`
 	XXX_NoUnkeyedLiteral         struct{}                           `json:"-"`
 	XXX_unrecognized             []byte                             `json:"-"`

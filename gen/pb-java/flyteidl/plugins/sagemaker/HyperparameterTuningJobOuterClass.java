@@ -869,6 +869,11 @@ public final class HyperparameterTuningJobOuterClass {
       com.google.protobuf.MessageOrBuilder {
   }
   /**
+   * <pre>
+   * HyperparameterTuningObjectiveType determines the direction of the tuning of the Hyperparameter Tuning Job
+   * with respect to the specified metric.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType}
    */
   public  static final class HyperparameterTuningObjectiveType extends
@@ -1181,6 +1186,11 @@ public final class HyperparameterTuningJobOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * HyperparameterTuningObjectiveType determines the direction of the tuning of the Hyperparameter Tuning Job
+     * with respect to the specified metric.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType}
      */
     public static final class Builder extends
@@ -1378,10 +1388,20 @@ public final class HyperparameterTuningJobOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * HyperparameterTuningObjectiveType determines the direction of the tuning of the Hyperparameter Tuning Job
+     * with respect to the specified metric.
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;</code>
      */
     int getObjectiveTypeValue();
     /**
+     * <pre>
+     * HyperparameterTuningObjectiveType determines the direction of the tuning of the Hyperparameter Tuning Job
+     * with respect to the specified metric.
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;</code>
      */
     flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Value getObjectiveType();
@@ -1408,7 +1428,7 @@ public final class HyperparameterTuningJobOuterClass {
   }
   /**
    * <pre>
-   * The objective of the hyperparameter tuning
+   * The target metric and the objective of the hyperparameter tuning.
    * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
    * </pre>
    *
@@ -1499,12 +1519,22 @@ public final class HyperparameterTuningJobOuterClass {
     public static final int OBJECTIVE_TYPE_FIELD_NUMBER = 1;
     private int objectiveType_;
     /**
+     * <pre>
+     * HyperparameterTuningObjectiveType determines the direction of the tuning of the Hyperparameter Tuning Job
+     * with respect to the specified metric.
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;</code>
      */
     public int getObjectiveTypeValue() {
       return objectiveType_;
     }
     /**
+     * <pre>
+     * HyperparameterTuningObjectiveType determines the direction of the tuning of the Hyperparameter Tuning Job
+     * with respect to the specified metric.
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;</code>
      */
     public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Value getObjectiveType() {
@@ -1723,7 +1753,7 @@ public final class HyperparameterTuningJobOuterClass {
     }
     /**
      * <pre>
-     * The objective of the hyperparameter tuning
+     * The target metric and the objective of the hyperparameter tuning.
      * https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
      * </pre>
      *
@@ -1882,12 +1912,22 @@ public final class HyperparameterTuningJobOuterClass {
 
       private int objectiveType_ = 0;
       /**
+       * <pre>
+       * HyperparameterTuningObjectiveType determines the direction of the tuning of the Hyperparameter Tuning Job
+       * with respect to the specified metric.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;</code>
        */
       public int getObjectiveTypeValue() {
         return objectiveType_;
       }
       /**
+       * <pre>
+       * HyperparameterTuningObjectiveType determines the direction of the tuning of the Hyperparameter Tuning Job
+       * with respect to the specified metric.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;</code>
        */
       public Builder setObjectiveTypeValue(int value) {
@@ -1896,6 +1936,11 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * HyperparameterTuningObjectiveType determines the direction of the tuning of the Hyperparameter Tuning Job
+       * with respect to the specified metric.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;</code>
        */
       public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Value getObjectiveType() {
@@ -1904,6 +1949,11 @@ public final class HyperparameterTuningJobOuterClass {
         return result == null ? flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Value.UNRECOGNIZED : result;
       }
       /**
+       * <pre>
+       * HyperparameterTuningObjectiveType determines the direction of the tuning of the Hyperparameter Tuning Job
+       * with respect to the specified metric.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;</code>
        */
       public Builder setObjectiveType(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveType.Value value) {
@@ -1916,6 +1966,11 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * HyperparameterTuningObjectiveType determines the direction of the tuning of the Hyperparameter Tuning Job
+       * with respect to the specified metric.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjectiveType.Value objective_type = 1;</code>
        */
       public Builder clearObjectiveType() {
@@ -2077,7 +2132,7 @@ public final class HyperparameterTuningJobOuterClass {
   }
   /**
    * <pre>
-   * Setting the strategy used when doing search in the hyperparameter space
+   * Setting the strategy used when searching in the hyperparameter space
    * Refer this doc for more details:
    * https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-automatic-model-tuning-now-supports-random-search-and-hyperparameter-scaling/
    * </pre>
@@ -2395,7 +2450,7 @@ public final class HyperparameterTuningJobOuterClass {
     }
     /**
      * <pre>
-     * Setting the strategy used when doing search in the hyperparameter space
+     * Setting the strategy used when searching in the hyperparameter space
      * Refer this doc for more details:
      * https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-automatic-model-tuning-now-supports-random-search-and-hyperparameter-scaling/
      * </pre>
@@ -3120,45 +3175,87 @@ public final class HyperparameterTuningJobOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.ParameterRanges hyperparameter_ranges = 1;</code>
      */
     boolean hasHyperparameterRanges();
     /**
+     * <pre>
+     * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.ParameterRanges hyperparameter_ranges = 1;</code>
      */
     flyteidl.plugins.sagemaker.ParameterRangesOuterClass.ParameterRanges getHyperparameterRanges();
     /**
+     * <pre>
+     * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.ParameterRanges hyperparameter_ranges = 1;</code>
      */
     flyteidl.plugins.sagemaker.ParameterRangesOuterClass.ParameterRangesOrBuilder getHyperparameterRangesOrBuilder();
 
     /**
+     * <pre>
+     * Setting the strategy used when searching in the hyperparameter space
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;</code>
      */
     int getTuningStrategyValue();
     /**
+     * <pre>
+     * Setting the strategy used when searching in the hyperparameter space
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;</code>
      */
     flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Value getTuningStrategy();
 
     /**
+     * <pre>
+     * The target metric and the objective of the hyperparameter tuning.
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective tuning_objective = 3;</code>
      */
     boolean hasTuningObjective();
     /**
+     * <pre>
+     * The target metric and the objective of the hyperparameter tuning.
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective tuning_objective = 3;</code>
      */
     flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective getTuningObjective();
     /**
+     * <pre>
+     * The target metric and the objective of the hyperparameter tuning.
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective tuning_objective = 3;</code>
      */
     flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveOrBuilder getTuningObjectiveOrBuilder();
 
     /**
+     * <pre>
+     * When the training jobs launched by the hyperparameter tuning job are not improving significantly,
+     * a hyperparameter tuning job can be stopping early.
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;</code>
      */
     int getTrainingJobEarlyStoppingTypeValue();
     /**
+     * <pre>
+     * When the training jobs launched by the hyperparameter tuning job are not improving significantly,
+     * a hyperparameter tuning job can be stopping early.
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;</code>
      */
     flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Value getTrainingJobEarlyStoppingType();
@@ -3282,18 +3379,30 @@ public final class HyperparameterTuningJobOuterClass {
     public static final int HYPERPARAMETER_RANGES_FIELD_NUMBER = 1;
     private flyteidl.plugins.sagemaker.ParameterRangesOuterClass.ParameterRanges hyperparameterRanges_;
     /**
+     * <pre>
+     * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.ParameterRanges hyperparameter_ranges = 1;</code>
      */
     public boolean hasHyperparameterRanges() {
       return hyperparameterRanges_ != null;
     }
     /**
+     * <pre>
+     * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.ParameterRanges hyperparameter_ranges = 1;</code>
      */
     public flyteidl.plugins.sagemaker.ParameterRangesOuterClass.ParameterRanges getHyperparameterRanges() {
       return hyperparameterRanges_ == null ? flyteidl.plugins.sagemaker.ParameterRangesOuterClass.ParameterRanges.getDefaultInstance() : hyperparameterRanges_;
     }
     /**
+     * <pre>
+     * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.ParameterRanges hyperparameter_ranges = 1;</code>
      */
     public flyteidl.plugins.sagemaker.ParameterRangesOuterClass.ParameterRangesOrBuilder getHyperparameterRangesOrBuilder() {
@@ -3303,12 +3412,20 @@ public final class HyperparameterTuningJobOuterClass {
     public static final int TUNING_STRATEGY_FIELD_NUMBER = 2;
     private int tuningStrategy_;
     /**
+     * <pre>
+     * Setting the strategy used when searching in the hyperparameter space
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;</code>
      */
     public int getTuningStrategyValue() {
       return tuningStrategy_;
     }
     /**
+     * <pre>
+     * Setting the strategy used when searching in the hyperparameter space
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;</code>
      */
     public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Value getTuningStrategy() {
@@ -3320,18 +3437,30 @@ public final class HyperparameterTuningJobOuterClass {
     public static final int TUNING_OBJECTIVE_FIELD_NUMBER = 3;
     private flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective tuningObjective_;
     /**
+     * <pre>
+     * The target metric and the objective of the hyperparameter tuning.
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective tuning_objective = 3;</code>
      */
     public boolean hasTuningObjective() {
       return tuningObjective_ != null;
     }
     /**
+     * <pre>
+     * The target metric and the objective of the hyperparameter tuning.
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective tuning_objective = 3;</code>
      */
     public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective getTuningObjective() {
       return tuningObjective_ == null ? flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective.getDefaultInstance() : tuningObjective_;
     }
     /**
+     * <pre>
+     * The target metric and the objective of the hyperparameter tuning.
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective tuning_objective = 3;</code>
      */
     public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveOrBuilder getTuningObjectiveOrBuilder() {
@@ -3341,12 +3470,22 @@ public final class HyperparameterTuningJobOuterClass {
     public static final int TRAINING_JOB_EARLY_STOPPING_TYPE_FIELD_NUMBER = 4;
     private int trainingJobEarlyStoppingType_;
     /**
+     * <pre>
+     * When the training jobs launched by the hyperparameter tuning job are not improving significantly,
+     * a hyperparameter tuning job can be stopping early.
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;</code>
      */
     public int getTrainingJobEarlyStoppingTypeValue() {
       return trainingJobEarlyStoppingType_;
     }
     /**
+     * <pre>
+     * When the training jobs launched by the hyperparameter tuning job are not improving significantly,
+     * a hyperparameter tuning job can be stopping early.
+     * </pre>
+     *
      * <code>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;</code>
      */
     public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Value getTrainingJobEarlyStoppingType() {
@@ -3741,12 +3880,20 @@ public final class HyperparameterTuningJobOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.plugins.sagemaker.ParameterRangesOuterClass.ParameterRanges, flyteidl.plugins.sagemaker.ParameterRangesOuterClass.ParameterRanges.Builder, flyteidl.plugins.sagemaker.ParameterRangesOuterClass.ParameterRangesOrBuilder> hyperparameterRangesBuilder_;
       /**
+       * <pre>
+       * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.ParameterRanges hyperparameter_ranges = 1;</code>
        */
       public boolean hasHyperparameterRanges() {
         return hyperparameterRangesBuilder_ != null || hyperparameterRanges_ != null;
       }
       /**
+       * <pre>
+       * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.ParameterRanges hyperparameter_ranges = 1;</code>
        */
       public flyteidl.plugins.sagemaker.ParameterRangesOuterClass.ParameterRanges getHyperparameterRanges() {
@@ -3757,6 +3904,10 @@ public final class HyperparameterTuningJobOuterClass {
         }
       }
       /**
+       * <pre>
+       * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.ParameterRanges hyperparameter_ranges = 1;</code>
        */
       public Builder setHyperparameterRanges(flyteidl.plugins.sagemaker.ParameterRangesOuterClass.ParameterRanges value) {
@@ -3773,6 +3924,10 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.ParameterRanges hyperparameter_ranges = 1;</code>
        */
       public Builder setHyperparameterRanges(
@@ -3787,6 +3942,10 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.ParameterRanges hyperparameter_ranges = 1;</code>
        */
       public Builder mergeHyperparameterRanges(flyteidl.plugins.sagemaker.ParameterRangesOuterClass.ParameterRanges value) {
@@ -3805,6 +3964,10 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.ParameterRanges hyperparameter_ranges = 1;</code>
        */
       public Builder clearHyperparameterRanges() {
@@ -3819,6 +3982,10 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.ParameterRanges hyperparameter_ranges = 1;</code>
        */
       public flyteidl.plugins.sagemaker.ParameterRangesOuterClass.ParameterRanges.Builder getHyperparameterRangesBuilder() {
@@ -3827,6 +3994,10 @@ public final class HyperparameterTuningJobOuterClass {
         return getHyperparameterRangesFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.ParameterRanges hyperparameter_ranges = 1;</code>
        */
       public flyteidl.plugins.sagemaker.ParameterRangesOuterClass.ParameterRangesOrBuilder getHyperparameterRangesOrBuilder() {
@@ -3838,6 +4009,10 @@ public final class HyperparameterTuningJobOuterClass {
         }
       }
       /**
+       * <pre>
+       * ParameterRanges is a map that maps hyperparameter name to the corresponding hyperparameter range
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.ParameterRanges hyperparameter_ranges = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -3856,12 +4031,20 @@ public final class HyperparameterTuningJobOuterClass {
 
       private int tuningStrategy_ = 0;
       /**
+       * <pre>
+       * Setting the strategy used when searching in the hyperparameter space
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;</code>
        */
       public int getTuningStrategyValue() {
         return tuningStrategy_;
       }
       /**
+       * <pre>
+       * Setting the strategy used when searching in the hyperparameter space
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;</code>
        */
       public Builder setTuningStrategyValue(int value) {
@@ -3870,6 +4053,10 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Setting the strategy used when searching in the hyperparameter space
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;</code>
        */
       public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Value getTuningStrategy() {
@@ -3878,6 +4065,10 @@ public final class HyperparameterTuningJobOuterClass {
         return result == null ? flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Value.UNRECOGNIZED : result;
       }
       /**
+       * <pre>
+       * Setting the strategy used when searching in the hyperparameter space
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;</code>
        */
       public Builder setTuningStrategy(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningStrategy.Value value) {
@@ -3890,6 +4081,10 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Setting the strategy used when searching in the hyperparameter space
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningStrategy.Value tuning_strategy = 2;</code>
        */
       public Builder clearTuningStrategy() {
@@ -3903,12 +4098,20 @@ public final class HyperparameterTuningJobOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective, flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective.Builder, flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveOrBuilder> tuningObjectiveBuilder_;
       /**
+       * <pre>
+       * The target metric and the objective of the hyperparameter tuning.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective tuning_objective = 3;</code>
        */
       public boolean hasTuningObjective() {
         return tuningObjectiveBuilder_ != null || tuningObjective_ != null;
       }
       /**
+       * <pre>
+       * The target metric and the objective of the hyperparameter tuning.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective tuning_objective = 3;</code>
        */
       public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective getTuningObjective() {
@@ -3919,6 +4122,10 @@ public final class HyperparameterTuningJobOuterClass {
         }
       }
       /**
+       * <pre>
+       * The target metric and the objective of the hyperparameter tuning.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective tuning_objective = 3;</code>
        */
       public Builder setTuningObjective(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective value) {
@@ -3935,6 +4142,10 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The target metric and the objective of the hyperparameter tuning.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective tuning_objective = 3;</code>
        */
       public Builder setTuningObjective(
@@ -3949,6 +4160,10 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The target metric and the objective of the hyperparameter tuning.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective tuning_objective = 3;</code>
        */
       public Builder mergeTuningObjective(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective value) {
@@ -3967,6 +4182,10 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The target metric and the objective of the hyperparameter tuning.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective tuning_objective = 3;</code>
        */
       public Builder clearTuningObjective() {
@@ -3981,6 +4200,10 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The target metric and the objective of the hyperparameter tuning.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective tuning_objective = 3;</code>
        */
       public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjective.Builder getTuningObjectiveBuilder() {
@@ -3989,6 +4212,10 @@ public final class HyperparameterTuningJobOuterClass {
         return getTuningObjectiveFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * The target metric and the objective of the hyperparameter tuning.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective tuning_objective = 3;</code>
        */
       public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.HyperparameterTuningObjectiveOrBuilder getTuningObjectiveOrBuilder() {
@@ -4000,6 +4227,10 @@ public final class HyperparameterTuningJobOuterClass {
         }
       }
       /**
+       * <pre>
+       * The target metric and the objective of the hyperparameter tuning.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.HyperparameterTuningObjective tuning_objective = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -4018,12 +4249,22 @@ public final class HyperparameterTuningJobOuterClass {
 
       private int trainingJobEarlyStoppingType_ = 0;
       /**
+       * <pre>
+       * When the training jobs launched by the hyperparameter tuning job are not improving significantly,
+       * a hyperparameter tuning job can be stopping early.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;</code>
        */
       public int getTrainingJobEarlyStoppingTypeValue() {
         return trainingJobEarlyStoppingType_;
       }
       /**
+       * <pre>
+       * When the training jobs launched by the hyperparameter tuning job are not improving significantly,
+       * a hyperparameter tuning job can be stopping early.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;</code>
        */
       public Builder setTrainingJobEarlyStoppingTypeValue(int value) {
@@ -4032,6 +4273,11 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * When the training jobs launched by the hyperparameter tuning job are not improving significantly,
+       * a hyperparameter tuning job can be stopping early.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;</code>
        */
       public flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Value getTrainingJobEarlyStoppingType() {
@@ -4040,6 +4286,11 @@ public final class HyperparameterTuningJobOuterClass {
         return result == null ? flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Value.UNRECOGNIZED : result;
       }
       /**
+       * <pre>
+       * When the training jobs launched by the hyperparameter tuning job are not improving significantly,
+       * a hyperparameter tuning job can be stopping early.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;</code>
        */
       public Builder setTrainingJobEarlyStoppingType(flyteidl.plugins.sagemaker.HyperparameterTuningJobOuterClass.TrainingJobEarlyStoppingType.Value value) {
@@ -4052,6 +4303,11 @@ public final class HyperparameterTuningJobOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * When the training jobs launched by the hyperparameter tuning job are not improving significantly,
+       * a hyperparameter tuning job can be stopping early.
+       * </pre>
+       *
        * <code>.flyteidl.plugins.sagemaker.TrainingJobEarlyStoppingType.Value training_job_early_stopping_type = 4;</code>
        */
       public Builder clearTrainingJobEarlyStoppingType() {

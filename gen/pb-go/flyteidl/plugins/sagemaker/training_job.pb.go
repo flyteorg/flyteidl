@@ -96,6 +96,13 @@ func (InputFileType_Value) EnumDescriptor() ([]byte, []int) {
 	return fileDescriptor_6a68f64d8fd9fe30, []int{2, 0}
 }
 
+// The input mode that the algorithm supports. When using the File input mode, SageMaker downloads
+// the training data from S3 to the provisioned ML storage Volume, and mounts the directory to docker
+// volume for training container. When using Pipe input mode, Amazon SageMaker streams data directly
+// from S3 to the container.
+// See: https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html
+// For the input modes that different SageMaker algorithms support, see:
+// https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
 type InputMode struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -127,6 +134,10 @@ func (m *InputMode) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_InputMode proto.InternalMessageInfo
 
+// The algorithm name is used for deciding which pre-built image to point to.
+// This is only required for use cases where SageMaker's built-in algorithm mode is used.
+// While we currently only support a subset of the algorithms, more will be added to the list.
+// See: https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html
 type AlgorithmName struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
