@@ -1323,7 +1323,7 @@ class AdminServiceApi(object):
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. (required)
         :param str id_version: Specific version of the resource. (required)
-        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :return: AdminLaunchPlan
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1349,7 +1349,7 @@ class AdminServiceApi(object):
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. (required)
         :param str id_version: Specific version of the resource. (required)
-        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :return: AdminLaunchPlan
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1930,7 +1930,7 @@ class AdminServiceApi(object):
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. (required)
         :param str id_version: Specific version of the resource. (required)
-        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :return: AdminTask
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1956,7 +1956,7 @@ class AdminServiceApi(object):
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. (required)
         :param str id_version: Specific version of the resource. (required)
-        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :return: AdminTask
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2062,7 +2062,7 @@ class AdminServiceApi(object):
         :param str id_task_id_name: User provided value for the resource. (required)
         :param str id_task_id_version: Specific version of the resource. (required)
         :param int id_retry_attempt: (required)
-        :param str id_task_id_resource_type: Identifies the specific type of resource that this identifer corresponds to.
+        :param str id_task_id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :return: FlyteidladminTaskExecution
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2093,7 +2093,7 @@ class AdminServiceApi(object):
         :param str id_task_id_name: User provided value for the resource. (required)
         :param str id_task_id_version: Specific version of the resource. (required)
         :param int id_retry_attempt: (required)
-        :param str id_task_id_resource_type: Identifies the specific type of resource that this identifer corresponds to.
+        :param str id_task_id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :return: FlyteidladminTaskExecution
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2229,7 +2229,7 @@ class AdminServiceApi(object):
         :param str id_task_id_name: User provided value for the resource. (required)
         :param str id_task_id_version: Specific version of the resource. (required)
         :param int id_retry_attempt: (required)
-        :param str id_task_id_resource_type: Identifies the specific type of resource that this identifer corresponds to.
+        :param str id_task_id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :return: AdminTaskExecutionGetDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2260,7 +2260,7 @@ class AdminServiceApi(object):
         :param str id_task_id_name: User provided value for the resource. (required)
         :param str id_task_id_version: Specific version of the resource. (required)
         :param int id_retry_attempt: (required)
-        :param str id_task_id_resource_type: Identifies the specific type of resource that this identifer corresponds to.
+        :param str id_task_id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :return: AdminTaskExecutionGetDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2391,7 +2391,7 @@ class AdminServiceApi(object):
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. (required)
         :param str id_version: Specific version of the resource. (required)
-        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :return: AdminWorkflow
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2417,7 +2417,7 @@ class AdminServiceApi(object):
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. (required)
         :param str id_version: Specific version of the resource. (required)
-        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.
+        :param str id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :return: AdminWorkflow
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3518,6 +3518,7 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str unique_parent_id: Unique identifier of the parent node in the execution +optional.
         :return: AdminNodeExecutionList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3547,12 +3548,13 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. TODO(katrogan): Add string validation here. This should never be empty.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.
+        :param str unique_parent_id: Unique identifier of the parent node in the execution +optional.
         :return: AdminNodeExecutionList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['workflow_execution_id_project', 'workflow_execution_id_domain', 'workflow_execution_id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params = ['workflow_execution_id_project', 'workflow_execution_id_domain', 'workflow_execution_id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction', 'unique_parent_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3601,6 +3603,8 @@ class AdminServiceApi(object):
             query_params.append(('sort_by.key', params['sort_by_key']))  # noqa: E501
         if 'sort_by_direction' in params:
             query_params.append(('sort_by.direction', params['sort_by_direction']))  # noqa: E501
+        if 'unique_parent_id' in params:
+            query_params.append(('unique_parent_id', params['unique_parent_id']))  # noqa: E501
 
         header_params = {}
 
@@ -3654,7 +3658,7 @@ class AdminServiceApi(object):
         :param str task_execution_id_task_id_name: User provided value for the resource. (required)
         :param str task_execution_id_task_id_version: Specific version of the resource. (required)
         :param int task_execution_id_retry_attempt: (required)
-        :param str task_execution_id_task_id_resource_type: Identifies the specific type of resource that this identifer corresponds to.
+        :param str task_execution_id_task_id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :param int limit: Indicates the number of resources to be returned.
         :param str token: In the case of multiple pages of results, the, server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
@@ -3690,7 +3694,7 @@ class AdminServiceApi(object):
         :param str task_execution_id_task_id_name: User provided value for the resource. (required)
         :param str task_execution_id_task_id_version: Specific version of the resource. (required)
         :param int task_execution_id_retry_attempt: (required)
-        :param str task_execution_id_task_id_resource_type: Identifies the specific type of resource that this identifer corresponds to.
+        :param str task_execution_id_task_id_resource_type: Identifies the specific type of resource that this identifer corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :param int limit: Indicates the number of resources to be returned.
         :param str token: In the case of multiple pages of results, the, server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.

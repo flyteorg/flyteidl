@@ -19,7 +19,9 @@ import six
 from flyteadmin.models.core_execution_error import CoreExecutionError  # noqa: F401,E501
 from flyteadmin.models.core_node_execution_identifier import CoreNodeExecutionIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_node_execution_phase import CoreNodeExecutionPhase  # noqa: F401,E501
+from flyteadmin.models.event_parent_node_execution_metadata import EventParentNodeExecutionMetadata  # noqa: F401,E501
 from flyteadmin.models.event_parent_task_execution_metadata import EventParentTaskExecutionMetadata  # noqa: F401,E501
+from flyteadmin.models.flyteidlevent_task_node_metadata import FlyteidleventTaskNodeMetadata  # noqa: F401,E501
 from flyteadmin.models.flyteidlevent_workflow_node_metadata import FlyteidleventWorkflowNodeMetadata  # noqa: F401,E501
 
 
@@ -45,7 +47,12 @@ class EventNodeExecutionEvent(object):
         'output_uri': 'str',
         'error': 'CoreExecutionError',
         'workflow_node_metadata': 'FlyteidleventWorkflowNodeMetadata',
-        'parent_task_metadata': 'EventParentTaskExecutionMetadata'
+        'task_node_metadata': 'FlyteidleventTaskNodeMetadata',
+        'parent_task_metadata': 'EventParentTaskExecutionMetadata',
+        'parent_node_metadata': 'EventParentNodeExecutionMetadata',
+        'retry_group': 'str',
+        'spec_node_id': 'str',
+        'node_name': 'str'
     }
 
     attribute_map = {
@@ -57,10 +64,15 @@ class EventNodeExecutionEvent(object):
         'output_uri': 'output_uri',
         'error': 'error',
         'workflow_node_metadata': 'workflow_node_metadata',
-        'parent_task_metadata': 'parent_task_metadata'
+        'task_node_metadata': 'task_node_metadata',
+        'parent_task_metadata': 'parent_task_metadata',
+        'parent_node_metadata': 'parent_node_metadata',
+        'retry_group': 'retry_group',
+        'spec_node_id': 'spec_node_id',
+        'node_name': 'node_name'
     }
 
-    def __init__(self, id=None, producer_id=None, phase=None, occurred_at=None, input_uri=None, output_uri=None, error=None, workflow_node_metadata=None, parent_task_metadata=None):  # noqa: E501
+    def __init__(self, id=None, producer_id=None, phase=None, occurred_at=None, input_uri=None, output_uri=None, error=None, workflow_node_metadata=None, task_node_metadata=None, parent_task_metadata=None, parent_node_metadata=None, retry_group=None, spec_node_id=None, node_name=None):  # noqa: E501
         """EventNodeExecutionEvent - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -71,7 +83,12 @@ class EventNodeExecutionEvent(object):
         self._output_uri = None
         self._error = None
         self._workflow_node_metadata = None
+        self._task_node_metadata = None
         self._parent_task_metadata = None
+        self._parent_node_metadata = None
+        self._retry_group = None
+        self._spec_node_id = None
+        self._node_name = None
         self.discriminator = None
 
         if id is not None:
@@ -90,8 +107,18 @@ class EventNodeExecutionEvent(object):
             self.error = error
         if workflow_node_metadata is not None:
             self.workflow_node_metadata = workflow_node_metadata
+        if task_node_metadata is not None:
+            self.task_node_metadata = task_node_metadata
         if parent_task_metadata is not None:
             self.parent_task_metadata = parent_task_metadata
+        if parent_node_metadata is not None:
+            self.parent_node_metadata = parent_node_metadata
+        if retry_group is not None:
+            self.retry_group = retry_group
+        if spec_node_id is not None:
+            self.spec_node_id = spec_node_id
+        if node_name is not None:
+            self.node_name = node_name
 
     @property
     def id(self):
@@ -266,10 +293,31 @@ class EventNodeExecutionEvent(object):
         self._workflow_node_metadata = workflow_node_metadata
 
     @property
+    def task_node_metadata(self):
+        """Gets the task_node_metadata of this EventNodeExecutionEvent.  # noqa: E501
+
+
+        :return: The task_node_metadata of this EventNodeExecutionEvent.  # noqa: E501
+        :rtype: FlyteidleventTaskNodeMetadata
+        """
+        return self._task_node_metadata
+
+    @task_node_metadata.setter
+    def task_node_metadata(self, task_node_metadata):
+        """Sets the task_node_metadata of this EventNodeExecutionEvent.
+
+
+        :param task_node_metadata: The task_node_metadata of this EventNodeExecutionEvent.  # noqa: E501
+        :type: FlyteidleventTaskNodeMetadata
+        """
+
+        self._task_node_metadata = task_node_metadata
+
+    @property
     def parent_task_metadata(self):
         """Gets the parent_task_metadata of this EventNodeExecutionEvent.  # noqa: E501
 
-        Specifies which task (if any) launched this node.  # noqa: E501
+        [To be deprecated] Specifies which task (if any) launched this node.  # noqa: E501
 
         :return: The parent_task_metadata of this EventNodeExecutionEvent.  # noqa: E501
         :rtype: EventParentTaskExecutionMetadata
@@ -280,13 +328,99 @@ class EventNodeExecutionEvent(object):
     def parent_task_metadata(self, parent_task_metadata):
         """Sets the parent_task_metadata of this EventNodeExecutionEvent.
 
-        Specifies which task (if any) launched this node.  # noqa: E501
+        [To be deprecated] Specifies which task (if any) launched this node.  # noqa: E501
 
         :param parent_task_metadata: The parent_task_metadata of this EventNodeExecutionEvent.  # noqa: E501
         :type: EventParentTaskExecutionMetadata
         """
 
         self._parent_task_metadata = parent_task_metadata
+
+    @property
+    def parent_node_metadata(self):
+        """Gets the parent_node_metadata of this EventNodeExecutionEvent.  # noqa: E501
+
+        Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.  # noqa: E501
+
+        :return: The parent_node_metadata of this EventNodeExecutionEvent.  # noqa: E501
+        :rtype: EventParentNodeExecutionMetadata
+        """
+        return self._parent_node_metadata
+
+    @parent_node_metadata.setter
+    def parent_node_metadata(self, parent_node_metadata):
+        """Sets the parent_node_metadata of this EventNodeExecutionEvent.
+
+        Specifies the parent node of the current node execution. Node executions at level zero will not have a parent node.  # noqa: E501
+
+        :param parent_node_metadata: The parent_node_metadata of this EventNodeExecutionEvent.  # noqa: E501
+        :type: EventParentNodeExecutionMetadata
+        """
+
+        self._parent_node_metadata = parent_node_metadata
+
+    @property
+    def retry_group(self):
+        """Gets the retry_group of this EventNodeExecutionEvent.  # noqa: E501
+
+
+        :return: The retry_group of this EventNodeExecutionEvent.  # noqa: E501
+        :rtype: str
+        """
+        return self._retry_group
+
+    @retry_group.setter
+    def retry_group(self, retry_group):
+        """Sets the retry_group of this EventNodeExecutionEvent.
+
+
+        :param retry_group: The retry_group of this EventNodeExecutionEvent.  # noqa: E501
+        :type: str
+        """
+
+        self._retry_group = retry_group
+
+    @property
+    def spec_node_id(self):
+        """Gets the spec_node_id of this EventNodeExecutionEvent.  # noqa: E501
+
+
+        :return: The spec_node_id of this EventNodeExecutionEvent.  # noqa: E501
+        :rtype: str
+        """
+        return self._spec_node_id
+
+    @spec_node_id.setter
+    def spec_node_id(self, spec_node_id):
+        """Sets the spec_node_id of this EventNodeExecutionEvent.
+
+
+        :param spec_node_id: The spec_node_id of this EventNodeExecutionEvent.  # noqa: E501
+        :type: str
+        """
+
+        self._spec_node_id = spec_node_id
+
+    @property
+    def node_name(self):
+        """Gets the node_name of this EventNodeExecutionEvent.  # noqa: E501
+
+
+        :return: The node_name of this EventNodeExecutionEvent.  # noqa: E501
+        :rtype: str
+        """
+        return self._node_name
+
+    @node_name.setter
+    def node_name(self, node_name):
+        """Sets the node_name of this EventNodeExecutionEvent.
+
+
+        :param node_name: The node_name of this EventNodeExecutionEvent.  # noqa: E501
+        :type: str
+        """
+
+        self._node_name = node_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

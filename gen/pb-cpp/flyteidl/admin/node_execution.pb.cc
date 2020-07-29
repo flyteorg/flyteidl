@@ -19,9 +19,11 @@
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Sort_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_UrlBlob_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fnode_5fexecution_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_NodeExecutionMetaData_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fnode_5fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TaskNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fnode_5fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_WorkflowNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fnode_5fexecution_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_NodeExecution_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fnode_5fexecution_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_NodeExecutionClosure_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fnode_5fexecution_2eproto ::google::protobuf::internal::SCCInfo<5> scc_info_NodeExecutionClosure_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fcatalog_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_CatalogMetadata_flyteidl_2fcore_2fcatalog_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ExecutionError_flyteidl_2fcore_2fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_WorkflowExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_NodeExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto;
@@ -60,11 +62,16 @@ class NodeExecutionClosureDefaultTypeInternal {
   ::google::protobuf::internal::ArenaStringPtr output_uri_;
   const ::flyteidl::core::ExecutionError* error_;
   const ::flyteidl::admin::WorkflowNodeMetadata* workflow_node_metadata_;
+  const ::flyteidl::admin::TaskNodeMetadata* task_node_metadata_;
 } _NodeExecutionClosure_default_instance_;
 class WorkflowNodeMetadataDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<WorkflowNodeMetadata> _instance;
 } _WorkflowNodeMetadata_default_instance_;
+class TaskNodeMetadataDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<TaskNodeMetadata> _instance;
+} _TaskNodeMetadata_default_instance_;
 class NodeExecutionGetDataRequestDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<NodeExecutionGetDataRequest> _instance;
@@ -179,12 +186,13 @@ static void InitDefaultsNodeExecutionClosure_flyteidl_2fadmin_2fnode_5fexecution
   ::flyteidl::admin::NodeExecutionClosure::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<4> scc_info_NodeExecutionClosure_flyteidl_2fadmin_2fnode_5fexecution_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsNodeExecutionClosure_flyteidl_2fadmin_2fnode_5fexecution_2eproto}, {
+::google::protobuf::internal::SCCInfo<5> scc_info_NodeExecutionClosure_flyteidl_2fadmin_2fnode_5fexecution_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 5, InitDefaultsNodeExecutionClosure_flyteidl_2fadmin_2fnode_5fexecution_2eproto}, {
       &scc_info_ExecutionError_flyteidl_2fcore_2fexecution_2eproto.base,
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,
       &scc_info_Duration_google_2fprotobuf_2fduration_2eproto.base,
-      &scc_info_WorkflowNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base,}};
+      &scc_info_WorkflowNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base,
+      &scc_info_TaskNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base,}};
 
 static void InitDefaultsWorkflowNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -200,6 +208,21 @@ static void InitDefaultsWorkflowNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution
 ::google::protobuf::internal::SCCInfo<1> scc_info_WorkflowNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsWorkflowNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto}, {
       &scc_info_WorkflowExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto.base,}};
+
+static void InitDefaultsTaskNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::flyteidl::admin::_TaskNodeMetadata_default_instance_;
+    new (ptr) ::flyteidl::admin::TaskNodeMetadata();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::flyteidl::admin::TaskNodeMetadata::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<1> scc_info_TaskNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsTaskNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto}, {
+      &scc_info_CatalogMetadata_flyteidl_2fcore_2fcatalog_2eproto.base,}};
 
 static void InitDefaultsNodeExecutionGetDataRequest_flyteidl_2fadmin_2fnode_5fexecution_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -240,11 +263,12 @@ void InitDefaults_flyteidl_2fadmin_2fnode_5fexecution_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_NodeExecutionList_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_NodeExecutionClosure_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_WorkflowNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_TaskNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_NodeExecutionGetDataRequest_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_NodeExecutionGetDataResponse_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto[10];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto[11];
 constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_flyteidl_2fadmin_2fnode_5fexecution_2eproto = nullptr;
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fadmin_2fnode_5fexecution_2eproto = nullptr;
 
@@ -265,6 +289,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fnode_5fexecution
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionListRequest, token_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionListRequest, filters_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionListRequest, sort_by_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionListRequest, unique_parent_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionForTaskListRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -289,6 +314,9 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fnode_5fexecution
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionMetaData, retry_group_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionMetaData, is_parent_node_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionMetaData, spec_node_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -309,6 +337,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fnode_5fexecution
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionClosure, created_at_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionClosure, updated_at_),
   offsetof(::flyteidl::admin::NodeExecutionClosureDefaultTypeInternal, workflow_node_metadata_),
+  offsetof(::flyteidl::admin::NodeExecutionClosureDefaultTypeInternal, task_node_metadata_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionClosure, output_result_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionClosure, target_metadata_),
   ~0u,  // no _has_bits_
@@ -317,6 +346,13 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fnode_5fexecution
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowNodeMetadata, executionid_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskNodeMetadata, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskNodeMetadata, cache_status_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskNodeMetadata, catalog_key_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionGetDataRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -334,14 +370,15 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fnode_5fexecution
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::admin::NodeExecutionGetRequest)},
   { 6, -1, sizeof(::flyteidl::admin::NodeExecutionListRequest)},
-  { 16, -1, sizeof(::flyteidl::admin::NodeExecutionForTaskListRequest)},
-  { 26, -1, sizeof(::flyteidl::admin::NodeExecution)},
-  { 35, -1, sizeof(::flyteidl::admin::NodeExecutionMetaData)},
-  { 40, -1, sizeof(::flyteidl::admin::NodeExecutionList)},
-  { 47, -1, sizeof(::flyteidl::admin::NodeExecutionClosure)},
-  { 62, -1, sizeof(::flyteidl::admin::WorkflowNodeMetadata)},
-  { 68, -1, sizeof(::flyteidl::admin::NodeExecutionGetDataRequest)},
-  { 74, -1, sizeof(::flyteidl::admin::NodeExecutionGetDataResponse)},
+  { 17, -1, sizeof(::flyteidl::admin::NodeExecutionForTaskListRequest)},
+  { 27, -1, sizeof(::flyteidl::admin::NodeExecution)},
+  { 36, -1, sizeof(::flyteidl::admin::NodeExecutionMetaData)},
+  { 44, -1, sizeof(::flyteidl::admin::NodeExecutionList)},
+  { 51, -1, sizeof(::flyteidl::admin::NodeExecutionClosure)},
+  { 67, -1, sizeof(::flyteidl::admin::WorkflowNodeMetadata)},
+  { 73, -1, sizeof(::flyteidl::admin::TaskNodeMetadata)},
+  { 80, -1, sizeof(::flyteidl::admin::NodeExecutionGetDataRequest)},
+  { 86, -1, sizeof(::flyteidl::admin::NodeExecutionGetDataResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -353,6 +390,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_NodeExecutionList_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_NodeExecutionClosure_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_WorkflowNodeMetadata_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_TaskNodeMetadata_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_NodeExecutionGetDataRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_NodeExecutionGetDataResponse_default_instance_),
 };
@@ -360,72 +398,81 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto = {
   {}, AddDescriptors_flyteidl_2fadmin_2fnode_5fexecution_2eproto, "flyteidl/admin/node_execution.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fadmin_2fnode_5fexecution_2eproto::offsets,
-  file_level_metadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto, 10, file_level_enum_descriptors_flyteidl_2fadmin_2fnode_5fexecution_2eproto, file_level_service_descriptors_flyteidl_2fadmin_2fnode_5fexecution_2eproto,
+  file_level_metadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto, 11, file_level_enum_descriptors_flyteidl_2fadmin_2fnode_5fexecution_2eproto, file_level_service_descriptors_flyteidl_2fadmin_2fnode_5fexecution_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fadmin_2fnode_5fexecution_2eproto[] =
   "\n#flyteidl/admin/node_execution.proto\022\016f"
   "lyteidl.admin\032\033flyteidl/admin/common.pro"
-  "to\032\035flyteidl/core/execution.proto\032\036flyte"
-  "idl/core/identifier.proto\032\037google/protob"
-  "uf/timestamp.proto\032\036google/protobuf/dura"
-  "tion.proto\"M\n\027NodeExecutionGetRequest\0222\n"
-  "\002id\030\001 \001(\0132&.flyteidl.core.NodeExecutionI"
-  "dentifier\"\273\001\n\030NodeExecutionListRequest\022I"
-  "\n\025workflow_execution_id\030\001 \001(\0132*.flyteidl"
-  ".core.WorkflowExecutionIdentifier\022\r\n\005lim"
-  "it\030\002 \001(\r\022\r\n\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t"
-  "\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin.Sort\""
-  "\272\001\n\037NodeExecutionForTaskListRequest\022A\n\021t"
-  "ask_execution_id\030\001 \001(\0132&.flyteidl.core.T"
-  "askExecutionIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n"
+  "to\032\035flyteidl/core/execution.proto\032\033flyte"
+  "idl/core/catalog.proto\032\036flyteidl/core/id"
+  "entifier.proto\032\037google/protobuf/timestam"
+  "p.proto\032\036google/protobuf/duration.proto\""
+  "M\n\027NodeExecutionGetRequest\0222\n\002id\030\001 \001(\0132&"
+  ".flyteidl.core.NodeExecutionIdentifier\"\325"
+  "\001\n\030NodeExecutionListRequest\022I\n\025workflow_"
+  "execution_id\030\001 \001(\0132*.flyteidl.core.Workf"
+  "lowExecutionIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n"
   "\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by"
-  "\030\005 \001(\0132\024.flyteidl.admin.Sort\"\306\001\n\rNodeExe"
-  "cution\0222\n\002id\030\001 \001(\0132&.flyteidl.core.NodeE"
-  "xecutionIdentifier\022\021\n\tinput_uri\030\002 \001(\t\0225\n"
-  "\007closure\030\003 \001(\0132$.flyteidl.admin.NodeExec"
-  "utionClosure\0227\n\010metadata\030\004 \001(\0132%.flyteid"
-  "l.admin.NodeExecutionMetaData\"\027\n\025NodeExe"
-  "cutionMetaData\"Z\n\021NodeExecutionList\0226\n\017n"
-  "ode_executions\030\001 \003(\0132\035.flyteidl.admin.No"
-  "deExecution\022\r\n\005token\030\002 \001(\t\"\270\003\n\024NodeExecu"
-  "tionClosure\022\024\n\noutput_uri\030\001 \001(\tH\000\022.\n\005err"
-  "or\030\002 \001(\0132\035.flyteidl.core.ExecutionErrorH"
-  "\000\0221\n\005phase\030\003 \001(\0162\".flyteidl.core.NodeExe"
-  "cution.Phase\022.\n\nstarted_at\030\004 \001(\0132\032.googl"
-  "e.protobuf.Timestamp\022+\n\010duration\030\005 \001(\0132\031"
-  ".google.protobuf.Duration\022.\n\ncreated_at\030"
-  "\006 \001(\0132\032.google.protobuf.Timestamp\022.\n\nupd"
-  "ated_at\030\007 \001(\0132\032.google.protobuf.Timestam"
-  "p\022F\n\026workflow_node_metadata\030\010 \001(\0132$.flyt"
-  "eidl.admin.WorkflowNodeMetadataH\001B\017\n\rout"
-  "put_resultB\021\n\017target_metadata\"W\n\024Workflo"
-  "wNodeMetadata\022\?\n\013executionId\030\001 \001(\0132*.fly"
-  "teidl.core.WorkflowExecutionIdentifier\"Q"
-  "\n\033NodeExecutionGetDataRequest\0222\n\002id\030\001 \001("
-  "\0132&.flyteidl.core.NodeExecutionIdentifie"
-  "r\"q\n\034NodeExecutionGetDataResponse\022\'\n\006inp"
-  "uts\030\001 \001(\0132\027.flyteidl.admin.UrlBlob\022(\n\007ou"
-  "tputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlobB3Z1"
-  "github.com/lyft/flyteidl/gen/pb-go/flyte"
-  "idl/adminb\006proto3"
+  "\030\005 \001(\0132\024.flyteidl.admin.Sort\022\030\n\020unique_p"
+  "arent_id\030\006 \001(\t\"\272\001\n\037NodeExecutionForTaskL"
+  "istRequest\022A\n\021task_execution_id\030\001 \001(\0132&."
+  "flyteidl.core.TaskExecutionIdentifier\022\r\n"
+  "\005limit\030\002 \001(\r\022\r\n\005token\030\003 \001(\t\022\017\n\007filters\030\004"
+  " \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin.S"
+  "ort\"\306\001\n\rNodeExecution\0222\n\002id\030\001 \001(\0132&.flyt"
+  "eidl.core.NodeExecutionIdentifier\022\021\n\tinp"
+  "ut_uri\030\002 \001(\t\0225\n\007closure\030\003 \001(\0132$.flyteidl"
+  ".admin.NodeExecutionClosure\0227\n\010metadata\030"
+  "\004 \001(\0132%.flyteidl.admin.NodeExecutionMeta"
+  "Data\"Z\n\025NodeExecutionMetaData\022\023\n\013retry_g"
+  "roup\030\001 \001(\t\022\026\n\016is_parent_node\030\002 \001(\010\022\024\n\014sp"
+  "ec_node_id\030\003 \001(\t\"Z\n\021NodeExecutionList\0226\n"
+  "\017node_executions\030\001 \003(\0132\035.flyteidl.admin."
+  "NodeExecution\022\r\n\005token\030\002 \001(\t\"\370\003\n\024NodeExe"
+  "cutionClosure\022\024\n\noutput_uri\030\001 \001(\tH\000\022.\n\005e"
+  "rror\030\002 \001(\0132\035.flyteidl.core.ExecutionErro"
+  "rH\000\0221\n\005phase\030\003 \001(\0162\".flyteidl.core.NodeE"
+  "xecution.Phase\022.\n\nstarted_at\030\004 \001(\0132\032.goo"
+  "gle.protobuf.Timestamp\022+\n\010duration\030\005 \001(\013"
+  "2\031.google.protobuf.Duration\022.\n\ncreated_a"
+  "t\030\006 \001(\0132\032.google.protobuf.Timestamp\022.\n\nu"
+  "pdated_at\030\007 \001(\0132\032.google.protobuf.Timest"
+  "amp\022F\n\026workflow_node_metadata\030\010 \001(\0132$.fl"
+  "yteidl.admin.WorkflowNodeMetadataH\001\022>\n\022t"
+  "ask_node_metadata\030\t \001(\0132 .flyteidl.admin"
+  ".TaskNodeMetadataH\001B\017\n\routput_resultB\021\n\017"
+  "target_metadata\"W\n\024WorkflowNodeMetadata\022"
+  "\?\n\013executionId\030\001 \001(\0132*.flyteidl.core.Wor"
+  "kflowExecutionIdentifier\"\200\001\n\020TaskNodeMet"
+  "adata\0227\n\014cache_status\030\001 \001(\0162!.flyteidl.c"
+  "ore.CatalogCacheStatus\0223\n\013catalog_key\030\002 "
+  "\001(\0132\036.flyteidl.core.CatalogMetadata\"Q\n\033N"
+  "odeExecutionGetDataRequest\0222\n\002id\030\001 \001(\0132&"
+  ".flyteidl.core.NodeExecutionIdentifier\"q"
+  "\n\034NodeExecutionGetDataResponse\022\'\n\006inputs"
+  "\030\001 \001(\0132\027.flyteidl.admin.UrlBlob\022(\n\007outpu"
+  "ts\030\002 \001(\0132\027.flyteidl.admin.UrlBlobB3Z1git"
+  "hub.com/lyft/flyteidl/gen/pb-go/flyteidl"
+  "/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fnode_5fexecution_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fnode_5fexecution_2eproto,
-  "flyteidl/admin/node_execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto, 1777,
+  "flyteidl/admin/node_execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto, 2094,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fnode_5fexecution_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[5] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[6] =
   {
     ::AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fexecution_2eproto,
+    ::AddDescriptors_flyteidl_2fcore_2fcatalog_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fidentifier_2eproto,
     ::AddDescriptors_google_2fprotobuf_2ftimestamp_2eproto,
     ::AddDescriptors_google_2fprotobuf_2fduration_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto, deps, 5);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto, deps, 6);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -766,6 +813,7 @@ const int NodeExecutionListRequest::kLimitFieldNumber;
 const int NodeExecutionListRequest::kTokenFieldNumber;
 const int NodeExecutionListRequest::kFiltersFieldNumber;
 const int NodeExecutionListRequest::kSortByFieldNumber;
+const int NodeExecutionListRequest::kUniqueParentIdFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 NodeExecutionListRequest::NodeExecutionListRequest()
@@ -784,6 +832,10 @@ NodeExecutionListRequest::NodeExecutionListRequest(const NodeExecutionListReques
   filters_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.filters().size() > 0) {
     filters_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.filters_);
+  }
+  unique_parent_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.unique_parent_id().size() > 0) {
+    unique_parent_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.unique_parent_id_);
   }
   if (from.has_workflow_execution_id()) {
     workflow_execution_id_ = new ::flyteidl::core::WorkflowExecutionIdentifier(*from.workflow_execution_id_);
@@ -804,6 +856,7 @@ void NodeExecutionListRequest::SharedCtor() {
       &scc_info_NodeExecutionListRequest_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base);
   token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   filters_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  unique_parent_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&workflow_execution_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&limit_) -
       reinterpret_cast<char*>(&workflow_execution_id_)) + sizeof(limit_));
@@ -817,6 +870,7 @@ NodeExecutionListRequest::~NodeExecutionListRequest() {
 void NodeExecutionListRequest::SharedDtor() {
   token_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   filters_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  unique_parent_id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete workflow_execution_id_;
   if (this != internal_default_instance()) delete sort_by_;
 }
@@ -838,6 +892,7 @@ void NodeExecutionListRequest::Clear() {
 
   token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   filters_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  unique_parent_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && workflow_execution_id_ != nullptr) {
     delete workflow_execution_id_;
   }
@@ -926,6 +981,22 @@ const char* NodeExecutionListRequest::_InternalParse(const char* begin, const ch
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // string unique_parent_id = 6;
+      case 6: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.NodeExecutionListRequest.unique_parent_id");
+        object = msg->mutable_unique_parent_id();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
         break;
       }
       default: {
@@ -1027,6 +1098,21 @@ bool NodeExecutionListRequest::MergePartialFromCodedStream(
         break;
       }
 
+      // string unique_parent_id = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_unique_parent_id()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->unique_parent_id().data(), static_cast<int>(this->unique_parent_id().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.admin.NodeExecutionListRequest.unique_parent_id"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1091,6 +1177,16 @@ void NodeExecutionListRequest::SerializeWithCachedSizes(
       5, HasBitSetters::sort_by(this), output);
   }
 
+  // string unique_parent_id = 6;
+  if (this->unique_parent_id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->unique_parent_id().data(), static_cast<int>(this->unique_parent_id().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.NodeExecutionListRequest.unique_parent_id");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      6, this->unique_parent_id(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -1145,6 +1241,17 @@ void NodeExecutionListRequest::SerializeWithCachedSizes(
         5, HasBitSetters::sort_by(this), target);
   }
 
+  // string unique_parent_id = 6;
+  if (this->unique_parent_id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->unique_parent_id().data(), static_cast<int>(this->unique_parent_id().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.NodeExecutionListRequest.unique_parent_id");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        6, this->unique_parent_id(), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -1178,6 +1285,13 @@ size_t NodeExecutionListRequest::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->filters());
+  }
+
+  // string unique_parent_id = 6;
+  if (this->unique_parent_id().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->unique_parent_id());
   }
 
   // .flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;
@@ -1236,6 +1350,10 @@ void NodeExecutionListRequest::MergeFrom(const NodeExecutionListRequest& from) {
 
     filters_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.filters_);
   }
+  if (from.unique_parent_id().size() > 0) {
+
+    unique_parent_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.unique_parent_id_);
+  }
   if (from.has_workflow_execution_id()) {
     mutable_workflow_execution_id()->::flyteidl::core::WorkflowExecutionIdentifier::MergeFrom(from.workflow_execution_id());
   }
@@ -1275,6 +1393,8 @@ void NodeExecutionListRequest::InternalSwap(NodeExecutionListRequest* other) {
   token_.Swap(&other->token_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   filters_.Swap(&other->filters_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  unique_parent_id_.Swap(&other->unique_parent_id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(workflow_execution_id_, other->workflow_execution_id_);
   swap(sort_by_, other->sort_by_);
@@ -2361,6 +2481,9 @@ class NodeExecutionMetaData::HasBitSetters {
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int NodeExecutionMetaData::kRetryGroupFieldNumber;
+const int NodeExecutionMetaData::kIsParentNodeFieldNumber;
+const int NodeExecutionMetaData::kSpecNodeIdFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 NodeExecutionMetaData::NodeExecutionMetaData()
@@ -2372,10 +2495,24 @@ NodeExecutionMetaData::NodeExecutionMetaData(const NodeExecutionMetaData& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  retry_group_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.retry_group().size() > 0) {
+    retry_group_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.retry_group_);
+  }
+  spec_node_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.spec_node_id().size() > 0) {
+    spec_node_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.spec_node_id_);
+  }
+  is_parent_node_ = from.is_parent_node_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.NodeExecutionMetaData)
 }
 
 void NodeExecutionMetaData::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_NodeExecutionMetaData_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base);
+  retry_group_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  spec_node_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  is_parent_node_ = false;
 }
 
 NodeExecutionMetaData::~NodeExecutionMetaData() {
@@ -2384,6 +2521,8 @@ NodeExecutionMetaData::~NodeExecutionMetaData() {
 }
 
 void NodeExecutionMetaData::SharedDtor() {
+  retry_group_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  spec_node_id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void NodeExecutionMetaData::SetCachedSize(int size) const {
@@ -2401,6 +2540,9 @@ void NodeExecutionMetaData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  retry_group_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  spec_node_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  is_parent_node_ = false;
   _internal_metadata_.Clear();
 }
 
@@ -2417,7 +2559,47 @@ const char* NodeExecutionMetaData::_InternalParse(const char* begin, const char*
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
+      // string retry_group = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.NodeExecutionMetaData.retry_group");
+        object = msg->mutable_retry_group();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // bool is_parent_node = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        msg->set_is_parent_node(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // string spec_node_id = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.NodeExecutionMetaData.spec_node_id");
+        object = msg->mutable_spec_node_id();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
       default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->EndGroup(tag);
           return ptr;
@@ -2431,6 +2613,13 @@ const char* NodeExecutionMetaData::_InternalParse(const char* begin, const char*
     }  // switch
   }  // while
   return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool NodeExecutionMetaData::MergePartialFromCodedStream(
@@ -2442,12 +2631,60 @@ bool NodeExecutionMetaData::MergePartialFromCodedStream(
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
-  handle_unusual:
-    if (tag == 0) {
-      goto success;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string retry_group = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_retry_group()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->retry_group().data(), static_cast<int>(this->retry_group().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.admin.NodeExecutionMetaData.retry_group"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // bool is_parent_node = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &is_parent_node_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string spec_node_id = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_spec_node_id()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->spec_node_id().data(), static_cast<int>(this->spec_node_id().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.admin.NodeExecutionMetaData.spec_node_id"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
     }
-    DO_(::google::protobuf::internal::WireFormat::SkipField(
-          input, tag, _internal_metadata_.mutable_unknown_fields()));
   }
 success:
   // @@protoc_insertion_point(parse_success:flyteidl.admin.NodeExecutionMetaData)
@@ -2465,6 +2702,31 @@ void NodeExecutionMetaData::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  // string retry_group = 1;
+  if (this->retry_group().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->retry_group().data(), static_cast<int>(this->retry_group().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.NodeExecutionMetaData.retry_group");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->retry_group(), output);
+  }
+
+  // bool is_parent_node = 2;
+  if (this->is_parent_node() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->is_parent_node(), output);
+  }
+
+  // string spec_node_id = 3;
+  if (this->spec_node_id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->spec_node_id().data(), static_cast<int>(this->spec_node_id().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.NodeExecutionMetaData.spec_node_id");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->spec_node_id(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -2477,6 +2739,33 @@ void NodeExecutionMetaData::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.NodeExecutionMetaData)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // string retry_group = 1;
+  if (this->retry_group().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->retry_group().data(), static_cast<int>(this->retry_group().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.NodeExecutionMetaData.retry_group");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->retry_group(), target);
+  }
+
+  // bool is_parent_node = 2;
+  if (this->is_parent_node() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->is_parent_node(), target);
+  }
+
+  // string spec_node_id = 3;
+  if (this->spec_node_id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->spec_node_id().data(), static_cast<int>(this->spec_node_id().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.NodeExecutionMetaData.spec_node_id");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->spec_node_id(), target);
+  }
 
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
@@ -2498,6 +2787,25 @@ size_t NodeExecutionMetaData::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // string retry_group = 1;
+  if (this->retry_group().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->retry_group());
+  }
+
+  // string spec_node_id = 3;
+  if (this->spec_node_id().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->spec_node_id());
+  }
+
+  // bool is_parent_node = 2;
+  if (this->is_parent_node() != 0) {
+    total_size += 1 + 1;
+  }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2526,6 +2834,17 @@ void NodeExecutionMetaData::MergeFrom(const NodeExecutionMetaData& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.retry_group().size() > 0) {
+
+    retry_group_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.retry_group_);
+  }
+  if (from.spec_node_id().size() > 0) {
+
+    spec_node_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.spec_node_id_);
+  }
+  if (from.is_parent_node() != 0) {
+    set_is_parent_node(from.is_parent_node());
+  }
 }
 
 void NodeExecutionMetaData::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2553,6 +2872,11 @@ void NodeExecutionMetaData::Swap(NodeExecutionMetaData* other) {
 void NodeExecutionMetaData::InternalSwap(NodeExecutionMetaData* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  retry_group_.Swap(&other->retry_group_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  spec_node_id_.Swap(&other->spec_node_id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(is_parent_node_, other->is_parent_node_);
 }
 
 ::google::protobuf::Metadata NodeExecutionMetaData::GetMetadata() const {
@@ -2935,6 +3259,8 @@ void NodeExecutionClosure::InitAsDefaultInstance() {
       ::google::protobuf::Timestamp::internal_default_instance());
   ::flyteidl::admin::_NodeExecutionClosure_default_instance_.workflow_node_metadata_ = const_cast< ::flyteidl::admin::WorkflowNodeMetadata*>(
       ::flyteidl::admin::WorkflowNodeMetadata::internal_default_instance());
+  ::flyteidl::admin::_NodeExecutionClosure_default_instance_.task_node_metadata_ = const_cast< ::flyteidl::admin::TaskNodeMetadata*>(
+      ::flyteidl::admin::TaskNodeMetadata::internal_default_instance());
 }
 class NodeExecutionClosure::HasBitSetters {
  public:
@@ -2944,6 +3270,7 @@ class NodeExecutionClosure::HasBitSetters {
   static const ::google::protobuf::Timestamp& created_at(const NodeExecutionClosure* msg);
   static const ::google::protobuf::Timestamp& updated_at(const NodeExecutionClosure* msg);
   static const ::flyteidl::admin::WorkflowNodeMetadata& workflow_node_metadata(const NodeExecutionClosure* msg);
+  static const ::flyteidl::admin::TaskNodeMetadata& task_node_metadata(const NodeExecutionClosure* msg);
 };
 
 const ::flyteidl::core::ExecutionError&
@@ -2969,6 +3296,10 @@ NodeExecutionClosure::HasBitSetters::updated_at(const NodeExecutionClosure* msg)
 const ::flyteidl::admin::WorkflowNodeMetadata&
 NodeExecutionClosure::HasBitSetters::workflow_node_metadata(const NodeExecutionClosure* msg) {
   return *msg->target_metadata_.workflow_node_metadata_;
+}
+const ::flyteidl::admin::TaskNodeMetadata&
+NodeExecutionClosure::HasBitSetters::task_node_metadata(const NodeExecutionClosure* msg) {
+  return *msg->target_metadata_.task_node_metadata_;
 }
 void NodeExecutionClosure::set_allocated_error(::flyteidl::core::ExecutionError* error) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
@@ -3028,6 +3359,20 @@ void NodeExecutionClosure::set_allocated_workflow_node_metadata(::flyteidl::admi
   }
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.NodeExecutionClosure.workflow_node_metadata)
 }
+void NodeExecutionClosure::set_allocated_task_node_metadata(::flyteidl::admin::TaskNodeMetadata* task_node_metadata) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_target_metadata();
+  if (task_node_metadata) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      task_node_metadata = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, task_node_metadata, submessage_arena);
+    }
+    set_has_task_node_metadata();
+    target_metadata_.task_node_metadata_ = task_node_metadata;
+  }
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.NodeExecutionClosure.task_node_metadata)
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int NodeExecutionClosure::kOutputUriFieldNumber;
 const int NodeExecutionClosure::kErrorFieldNumber;
@@ -3037,6 +3382,7 @@ const int NodeExecutionClosure::kDurationFieldNumber;
 const int NodeExecutionClosure::kCreatedAtFieldNumber;
 const int NodeExecutionClosure::kUpdatedAtFieldNumber;
 const int NodeExecutionClosure::kWorkflowNodeMetadataFieldNumber;
+const int NodeExecutionClosure::kTaskNodeMetadataFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 NodeExecutionClosure::NodeExecutionClosure()
@@ -3087,6 +3433,10 @@ NodeExecutionClosure::NodeExecutionClosure(const NodeExecutionClosure& from)
   switch (from.target_metadata_case()) {
     case kWorkflowNodeMetadata: {
       mutable_workflow_node_metadata()->::flyteidl::admin::WorkflowNodeMetadata::MergeFrom(from.workflow_node_metadata());
+      break;
+    }
+    case kTaskNodeMetadata: {
+      mutable_task_node_metadata()->::flyteidl::admin::TaskNodeMetadata::MergeFrom(from.task_node_metadata());
       break;
     }
     case TARGET_METADATA_NOT_SET: {
@@ -3156,6 +3506,10 @@ void NodeExecutionClosure::clear_target_metadata() {
   switch (target_metadata_case()) {
     case kWorkflowNodeMetadata: {
       delete target_metadata_.workflow_node_metadata_;
+      break;
+    }
+    case kTaskNodeMetadata: {
+      delete target_metadata_.task_node_metadata_;
       break;
     }
     case TARGET_METADATA_NOT_SET: {
@@ -3309,6 +3663,19 @@ const char* NodeExecutionClosure::_InternalParse(const char* begin, const char* 
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
+      // .flyteidl.admin.TaskNodeMetadata task_node_metadata = 9;
+      case 9: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 74) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::admin::TaskNodeMetadata::_InternalParse;
+        object = msg->mutable_task_node_metadata();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -3438,6 +3805,17 @@ bool NodeExecutionClosure::MergePartialFromCodedStream(
         break;
       }
 
+      // .flyteidl.admin.TaskNodeMetadata task_node_metadata = 9;
+      case 9: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (74 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_task_node_metadata()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -3517,6 +3895,12 @@ void NodeExecutionClosure::SerializeWithCachedSizes(
       8, HasBitSetters::workflow_node_metadata(this), output);
   }
 
+  // .flyteidl.admin.TaskNodeMetadata task_node_metadata = 9;
+  if (has_task_node_metadata()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      9, HasBitSetters::task_node_metadata(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -3587,6 +3971,13 @@ void NodeExecutionClosure::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         8, HasBitSetters::workflow_node_metadata(this), target);
+  }
+
+  // .flyteidl.admin.TaskNodeMetadata task_node_metadata = 9;
+  if (has_task_node_metadata()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        9, HasBitSetters::task_node_metadata(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3671,6 +4062,13 @@ size_t NodeExecutionClosure::ByteSizeLong() const {
           *target_metadata_.workflow_node_metadata_);
       break;
     }
+    // .flyteidl.admin.TaskNodeMetadata task_node_metadata = 9;
+    case kTaskNodeMetadata: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *target_metadata_.task_node_metadata_);
+      break;
+    }
     case TARGET_METADATA_NOT_SET: {
       break;
     }
@@ -3733,6 +4131,10 @@ void NodeExecutionClosure::MergeFrom(const NodeExecutionClosure& from) {
   switch (from.target_metadata_case()) {
     case kWorkflowNodeMetadata: {
       mutable_workflow_node_metadata()->::flyteidl::admin::WorkflowNodeMetadata::MergeFrom(from.workflow_node_metadata());
+      break;
+    }
+    case kTaskNodeMetadata: {
+      mutable_task_node_metadata()->::flyteidl::admin::TaskNodeMetadata::MergeFrom(from.task_node_metadata());
       break;
     }
     case TARGET_METADATA_NOT_SET: {
@@ -4071,6 +4473,348 @@ void WorkflowNodeMetadata::InternalSwap(WorkflowNodeMetadata* other) {
 }
 
 ::google::protobuf::Metadata WorkflowNodeMetadata::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto);
+  return ::file_level_metadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void TaskNodeMetadata::InitAsDefaultInstance() {
+  ::flyteidl::admin::_TaskNodeMetadata_default_instance_._instance.get_mutable()->catalog_key_ = const_cast< ::flyteidl::core::CatalogMetadata*>(
+      ::flyteidl::core::CatalogMetadata::internal_default_instance());
+}
+class TaskNodeMetadata::HasBitSetters {
+ public:
+  static const ::flyteidl::core::CatalogMetadata& catalog_key(const TaskNodeMetadata* msg);
+};
+
+const ::flyteidl::core::CatalogMetadata&
+TaskNodeMetadata::HasBitSetters::catalog_key(const TaskNodeMetadata* msg) {
+  return *msg->catalog_key_;
+}
+void TaskNodeMetadata::clear_catalog_key() {
+  if (GetArenaNoVirtual() == nullptr && catalog_key_ != nullptr) {
+    delete catalog_key_;
+  }
+  catalog_key_ = nullptr;
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int TaskNodeMetadata::kCacheStatusFieldNumber;
+const int TaskNodeMetadata::kCatalogKeyFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+TaskNodeMetadata::TaskNodeMetadata()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:flyteidl.admin.TaskNodeMetadata)
+}
+TaskNodeMetadata::TaskNodeMetadata(const TaskNodeMetadata& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_catalog_key()) {
+    catalog_key_ = new ::flyteidl::core::CatalogMetadata(*from.catalog_key_);
+  } else {
+    catalog_key_ = nullptr;
+  }
+  cache_status_ = from.cache_status_;
+  // @@protoc_insertion_point(copy_constructor:flyteidl.admin.TaskNodeMetadata)
+}
+
+void TaskNodeMetadata::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_TaskNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base);
+  ::memset(&catalog_key_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&cache_status_) -
+      reinterpret_cast<char*>(&catalog_key_)) + sizeof(cache_status_));
+}
+
+TaskNodeMetadata::~TaskNodeMetadata() {
+  // @@protoc_insertion_point(destructor:flyteidl.admin.TaskNodeMetadata)
+  SharedDtor();
+}
+
+void TaskNodeMetadata::SharedDtor() {
+  if (this != internal_default_instance()) delete catalog_key_;
+}
+
+void TaskNodeMetadata::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const TaskNodeMetadata& TaskNodeMetadata::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_TaskNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void TaskNodeMetadata::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.admin.TaskNodeMetadata)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaNoVirtual() == nullptr && catalog_key_ != nullptr) {
+    delete catalog_key_;
+  }
+  catalog_key_ = nullptr;
+  cache_status_ = 0;
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* TaskNodeMetadata::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<TaskNodeMetadata*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // .flyteidl.core.CatalogCacheStatus cache_status = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_cache_status(static_cast<::flyteidl::core::CatalogCacheStatus>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // .flyteidl.core.CatalogMetadata catalog_key = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::core::CatalogMetadata::_InternalParse;
+        object = msg->mutable_catalog_key();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool TaskNodeMetadata::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:flyteidl.admin.TaskNodeMetadata)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .flyteidl.core.CatalogCacheStatus cache_status = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_cache_status(static_cast< ::flyteidl::core::CatalogCacheStatus >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .flyteidl.core.CatalogMetadata catalog_key = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_catalog_key()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:flyteidl.admin.TaskNodeMetadata)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:flyteidl.admin.TaskNodeMetadata)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void TaskNodeMetadata::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:flyteidl.admin.TaskNodeMetadata)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .flyteidl.core.CatalogCacheStatus cache_status = 1;
+  if (this->cache_status() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->cache_status(), output);
+  }
+
+  // .flyteidl.core.CatalogMetadata catalog_key = 2;
+  if (this->has_catalog_key()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, HasBitSetters::catalog_key(this), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:flyteidl.admin.TaskNodeMetadata)
+}
+
+::google::protobuf::uint8* TaskNodeMetadata::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.TaskNodeMetadata)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .flyteidl.core.CatalogCacheStatus cache_status = 1;
+  if (this->cache_status() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->cache_status(), target);
+  }
+
+  // .flyteidl.core.CatalogMetadata catalog_key = 2;
+  if (this->has_catalog_key()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, HasBitSetters::catalog_key(this), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.TaskNodeMetadata)
+  return target;
+}
+
+size_t TaskNodeMetadata::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.TaskNodeMetadata)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .flyteidl.core.CatalogMetadata catalog_key = 2;
+  if (this->has_catalog_key()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *catalog_key_);
+  }
+
+  // .flyteidl.core.CatalogCacheStatus cache_status = 1;
+  if (this->cache_status() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->cache_status());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void TaskNodeMetadata::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.TaskNodeMetadata)
+  GOOGLE_DCHECK_NE(&from, this);
+  const TaskNodeMetadata* source =
+      ::google::protobuf::DynamicCastToGenerated<TaskNodeMetadata>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.TaskNodeMetadata)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.admin.TaskNodeMetadata)
+    MergeFrom(*source);
+  }
+}
+
+void TaskNodeMetadata::MergeFrom(const TaskNodeMetadata& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.admin.TaskNodeMetadata)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_catalog_key()) {
+    mutable_catalog_key()->::flyteidl::core::CatalogMetadata::MergeFrom(from.catalog_key());
+  }
+  if (from.cache_status() != 0) {
+    set_cache_status(from.cache_status());
+  }
+}
+
+void TaskNodeMetadata::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.admin.TaskNodeMetadata)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TaskNodeMetadata::CopyFrom(const TaskNodeMetadata& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.admin.TaskNodeMetadata)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TaskNodeMetadata::IsInitialized() const {
+  return true;
+}
+
+void TaskNodeMetadata::Swap(TaskNodeMetadata* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void TaskNodeMetadata::InternalSwap(TaskNodeMetadata* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(catalog_key_, other->catalog_key_);
+  swap(cache_status_, other->cache_status_);
+}
+
+::google::protobuf::Metadata TaskNodeMetadata::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto);
   return ::file_level_metadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto[kIndexInFileMessages];
 }
@@ -4764,6 +5508,9 @@ template<> PROTOBUF_NOINLINE ::flyteidl::admin::NodeExecutionClosure* Arena::Cre
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::WorkflowNodeMetadata* Arena::CreateMaybeMessage< ::flyteidl::admin::WorkflowNodeMetadata >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::admin::WorkflowNodeMetadata >(arena);
+}
+template<> PROTOBUF_NOINLINE ::flyteidl::admin::TaskNodeMetadata* Arena::CreateMaybeMessage< ::flyteidl::admin::TaskNodeMetadata >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::admin::TaskNodeMetadata >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::NodeExecutionGetDataRequest* Arena::CreateMaybeMessage< ::flyteidl::admin::NodeExecutionGetDataRequest >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::admin::NodeExecutionGetDataRequest >(arena);
