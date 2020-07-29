@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.plugins.sagemaker',
   syntax='proto3',
   serialized_options=_b('Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n-flyteidl/plugins/sagemaker/training_job.proto\x12\x1a\x66lyteidl.plugins.sagemaker\x1a\x1egoogle/protobuf/duration.proto\"(\n\tInputMode\"\x1b\n\x05Value\x12\x08\n\x04\x46ILE\x10\x00\x12\x08\n\x04PIPE\x10\x01\"1\n\rAlgorithmName\" \n\x05Value\x12\n\n\x06\x43USTOM\x10\x00\x12\x0b\n\x07XGBOOST\x10\x01\"/\n\x10MetricDefinition\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05regex\x18\x02 \x01(\t\"\x87\x02\n\x16\x41lgorithmSpecification\x12?\n\ninput_mode\x18\x01 \x01(\x0e\x32+.flyteidl.plugins.sagemaker.InputMode.Value\x12G\n\x0e\x61lgorithm_name\x18\x02 \x01(\x0e\x32/.flyteidl.plugins.sagemaker.AlgorithmName.Value\x12\x19\n\x11\x61lgorithm_version\x18\x03 \x01(\t\x12H\n\x12metric_definitions\x18\x04 \x03(\x0b\x32,.flyteidl.plugins.sagemaker.MetricDefinition\"e\n\x19TrainingJobResourceConfig\x12\x16\n\x0einstance_count\x18\x01 \x01(\x03\x12\x15\n\rinstance_type\x18\x02 \x01(\t\x12\x19\n\x11volume_size_in_gb\x18\x03 \x01(\x03\"\xbf\x01\n\x0bTrainingJob\x12S\n\x17\x61lgorithm_specification\x18\x01 \x01(\x0b\x32\x32.flyteidl.plugins.sagemaker.AlgorithmSpecification\x12[\n\x1ctraining_job_resource_config\x18\x02 \x01(\x0b\x32\x35.flyteidl.plugins.sagemaker.TrainingJobResourceConfigB5Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n-flyteidl/plugins/sagemaker/training_job.proto\x12\x1a\x66lyteidl.plugins.sagemaker\x1a\x1egoogle/protobuf/duration.proto\"(\n\tInputMode\"\x1b\n\x05Value\x12\x08\n\x04\x46ILE\x10\x00\x12\x08\n\x04PIPE\x10\x01\"1\n\rAlgorithmName\" \n\x05Value\x12\n\n\x06\x43USTOM\x10\x00\x12\x0b\n\x07XGBOOST\x10\x01\"7\n\rInputFileType\"&\n\x05Value\x12\x0c\n\x08TEXT_CSV\x10\x00\x12\x0f\n\x0bTEXT_LIBSVM\x10\x01\"/\n\x10MetricDefinition\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05regex\x18\x02 \x01(\t\"\xcb\x02\n\x16\x41lgorithmSpecification\x12?\n\ninput_mode\x18\x01 \x01(\x0e\x32+.flyteidl.plugins.sagemaker.InputMode.Value\x12G\n\x0e\x61lgorithm_name\x18\x02 \x01(\x0e\x32/.flyteidl.plugins.sagemaker.AlgorithmName.Value\x12\x19\n\x11\x61lgorithm_version\x18\x03 \x01(\t\x12H\n\x12metric_definitions\x18\x04 \x03(\x0b\x32,.flyteidl.plugins.sagemaker.MetricDefinition\x12\x42\n\x0finput_file_type\x18\x05 \x01(\x0b\x32).flyteidl.plugins.sagemaker.InputFileType\"e\n\x19TrainingJobResourceConfig\x12\x16\n\x0einstance_count\x18\x01 \x01(\x03\x12\x15\n\rinstance_type\x18\x02 \x01(\t\x12\x19\n\x11volume_size_in_gb\x18\x03 \x01(\x03\"\xbf\x01\n\x0bTrainingJob\x12S\n\x17\x61lgorithm_specification\x18\x01 \x01(\x0b\x32\x32.flyteidl.plugins.sagemaker.AlgorithmSpecification\x12[\n\x1ctraining_job_resource_config\x18\x02 \x01(\x0b\x32\x35.flyteidl.plugins.sagemaker.TrainingJobResourceConfigB5Z3github.com/lyft/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,])
 
@@ -70,6 +70,28 @@ _ALGORITHMNAME_VALUE = _descriptor.EnumDescriptor(
   serialized_end=200,
 )
 _sym_db.RegisterEnumDescriptor(_ALGORITHMNAME_VALUE)
+
+_INPUTFILETYPE_VALUE = _descriptor.EnumDescriptor(
+  name='Value',
+  full_name='flyteidl.plugins.sagemaker.InputFileType.Value',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='TEXT_CSV', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='TEXT_LIBSVM', index=1, number=1,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=219,
+  serialized_end=257,
+)
+_sym_db.RegisterEnumDescriptor(_INPUTFILETYPE_VALUE)
 
 
 _INPUTMODE = _descriptor.Descriptor(
@@ -122,6 +144,31 @@ _ALGORITHMNAME = _descriptor.Descriptor(
 )
 
 
+_INPUTFILETYPE = _descriptor.Descriptor(
+  name='InputFileType',
+  full_name='flyteidl.plugins.sagemaker.InputFileType',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _INPUTFILETYPE_VALUE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=202,
+  serialized_end=257,
+)
+
+
 _METRICDEFINITION = _descriptor.Descriptor(
   name='MetricDefinition',
   full_name='flyteidl.plugins.sagemaker.MetricDefinition',
@@ -155,8 +202,8 @@ _METRICDEFINITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=202,
-  serialized_end=249,
+  serialized_start=259,
+  serialized_end=306,
 )
 
 
@@ -195,6 +242,13 @@ _ALGORITHMSPECIFICATION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='input_file_type', full_name='flyteidl.plugins.sagemaker.AlgorithmSpecification.input_file_type', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -207,8 +261,8 @@ _ALGORITHMSPECIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=252,
-  serialized_end=515,
+  serialized_start=309,
+  serialized_end=640,
 )
 
 
@@ -252,8 +306,8 @@ _TRAININGJOBRESOURCECONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=517,
-  serialized_end=618,
+  serialized_start=642,
+  serialized_end=743,
 )
 
 
@@ -290,19 +344,22 @@ _TRAININGJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=621,
-  serialized_end=812,
+  serialized_start=746,
+  serialized_end=937,
 )
 
 _INPUTMODE_VALUE.containing_type = _INPUTMODE
 _ALGORITHMNAME_VALUE.containing_type = _ALGORITHMNAME
+_INPUTFILETYPE_VALUE.containing_type = _INPUTFILETYPE
 _ALGORITHMSPECIFICATION.fields_by_name['input_mode'].enum_type = _INPUTMODE_VALUE
 _ALGORITHMSPECIFICATION.fields_by_name['algorithm_name'].enum_type = _ALGORITHMNAME_VALUE
 _ALGORITHMSPECIFICATION.fields_by_name['metric_definitions'].message_type = _METRICDEFINITION
+_ALGORITHMSPECIFICATION.fields_by_name['input_file_type'].message_type = _INPUTFILETYPE
 _TRAININGJOB.fields_by_name['algorithm_specification'].message_type = _ALGORITHMSPECIFICATION
 _TRAININGJOB.fields_by_name['training_job_resource_config'].message_type = _TRAININGJOBRESOURCECONFIG
 DESCRIPTOR.message_types_by_name['InputMode'] = _INPUTMODE
 DESCRIPTOR.message_types_by_name['AlgorithmName'] = _ALGORITHMNAME
+DESCRIPTOR.message_types_by_name['InputFileType'] = _INPUTFILETYPE
 DESCRIPTOR.message_types_by_name['MetricDefinition'] = _METRICDEFINITION
 DESCRIPTOR.message_types_by_name['AlgorithmSpecification'] = _ALGORITHMSPECIFICATION
 DESCRIPTOR.message_types_by_name['TrainingJobResourceConfig'] = _TRAININGJOBRESOURCECONFIG
@@ -322,6 +379,13 @@ AlgorithmName = _reflection.GeneratedProtocolMessageType('AlgorithmName', (_mess
   # @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.AlgorithmName)
   ))
 _sym_db.RegisterMessage(AlgorithmName)
+
+InputFileType = _reflection.GeneratedProtocolMessageType('InputFileType', (_message.Message,), dict(
+  DESCRIPTOR = _INPUTFILETYPE,
+  __module__ = 'flyteidl.plugins.sagemaker.training_job_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.InputFileType)
+  ))
+_sym_db.RegisterMessage(InputFileType)
 
 MetricDefinition = _reflection.GeneratedProtocolMessageType('MetricDefinition', (_message.Message,), dict(
   DESCRIPTOR = _METRICDEFINITION,

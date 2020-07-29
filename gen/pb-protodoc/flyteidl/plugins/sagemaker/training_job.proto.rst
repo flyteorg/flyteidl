@@ -69,12 +69,48 @@ XGBOOST
   ⁣
   
 
+.. _api_msg_flyteidl.plugins.sagemaker.InputFileType:
+
+flyteidl.plugins.sagemaker.InputFileType
+----------------------------------------
+
+`[flyteidl.plugins.sagemaker.InputFileType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L27>`_
+
+When using FILE input mode, different SageMaker built-in algorithms require different file types of input data
+See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+
+.. code-block:: json
+
+  {}
+
+
+
+.. _api_enum_flyteidl.plugins.sagemaker.InputFileType.Value:
+
+Enum flyteidl.plugins.sagemaker.InputFileType.Value
+---------------------------------------------------
+
+`[flyteidl.plugins.sagemaker.InputFileType.Value proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L28>`_
+
+
+.. _api_enum_value_flyteidl.plugins.sagemaker.InputFileType.Value.TEXT_CSV:
+
+TEXT_CSV
+  *(DEFAULT)* ⁣
+  
+.. _api_enum_value_flyteidl.plugins.sagemaker.InputFileType.Value.TEXT_LIBSVM:
+
+TEXT_LIBSVM
+  ⁣
+  
+
 .. _api_msg_flyteidl.plugins.sagemaker.MetricDefinition:
 
 flyteidl.plugins.sagemaker.MetricDefinition
 -------------------------------------------
 
-`[flyteidl.plugins.sagemaker.MetricDefinition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L27>`_
+`[flyteidl.plugins.sagemaker.MetricDefinition proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L37>`_
 
 Specifies a metric that the training algorithm writes to stderr or stdout.
 This object is a pass-through.
@@ -106,7 +142,7 @@ regex
 flyteidl.plugins.sagemaker.AlgorithmSpecification
 -------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.AlgorithmSpecification proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L42>`_
+`[flyteidl.plugins.sagemaker.AlgorithmSpecification proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L52>`_
 
 Specifies the training algorithm to be used in the training job
 This object is mostly a pass-through, with a couple of exceptions include: (1) in Flyte, users don't need to specify
@@ -122,7 +158,8 @@ https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecifica
     "input_mode": "...",
     "algorithm_name": "...",
     "algorithm_version": "...",
-    "metric_definitions": []
+    "metric_definitions": [],
+    "input_file_type": "{...}"
   }
 
 .. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.input_mode:
@@ -153,6 +190,14 @@ metric_definitions
   and this: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html
   
   
+.. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.input_file_type:
+
+input_file_type
+  (:ref:`flyteidl.plugins.sagemaker.InputFileType <api_msg_flyteidl.plugins.sagemaker.InputFileType>`) The type of the input files (when using FILE input mode)
+  See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+  https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+  
+  
 
 
 .. _api_msg_flyteidl.plugins.sagemaker.TrainingJobResourceConfig:
@@ -160,7 +205,7 @@ metric_definitions
 flyteidl.plugins.sagemaker.TrainingJobResourceConfig
 ----------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L61>`_
+`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L77>`_
 
 TrainingJobResourceConfig is a pass-through, specifying the instance type to use for the training job, the
 number of instances to launch, and the size of the ML storage volume the user wants to provision
@@ -199,7 +244,7 @@ volume_size_in_gb
 flyteidl.plugins.sagemaker.TrainingJob
 --------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L72>`_
+`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L88>`_
 
 The spec of a training job. This is mostly a pass-through object
 https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html

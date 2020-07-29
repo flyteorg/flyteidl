@@ -1032,6 +1032,527 @@ public final class TrainingJobOuterClass {
 
   }
 
+  public interface InputFileTypeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.InputFileType)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * When using FILE input mode, different SageMaker built-in algorithms require different file types of input data
+   * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.plugins.sagemaker.InputFileType}
+   */
+  public  static final class InputFileType extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.plugins.sagemaker.InputFileType)
+      InputFileTypeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use InputFileType.newBuilder() to construct.
+    private InputFileType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private InputFileType() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private InputFileType(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_InputFileType_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_InputFileType_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code flyteidl.plugins.sagemaker.InputFileType.Value}
+     */
+    public enum Value
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>TEXT_CSV = 0;</code>
+       */
+      TEXT_CSV(0),
+      /**
+       * <code>TEXT_LIBSVM = 1;</code>
+       */
+      TEXT_LIBSVM(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>TEXT_CSV = 0;</code>
+       */
+      public static final int TEXT_CSV_VALUE = 0;
+      /**
+       * <code>TEXT_LIBSVM = 1;</code>
+       */
+      public static final int TEXT_LIBSVM_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Value valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Value forNumber(int value) {
+        switch (value) {
+          case 0: return TEXT_CSV;
+          case 1: return TEXT_LIBSVM;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Value>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Value> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Value>() {
+              public Value findValueByNumber(int number) {
+                return Value.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Value[] VALUES = values();
+
+      public static Value valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Value(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:flyteidl.plugins.sagemaker.InputFileType.Value)
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType)) {
+        return super.equals(obj);
+      }
+      flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType other = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * When using FILE input mode, different SageMaker built-in algorithms require different file types of input data
+     * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.plugins.sagemaker.InputFileType}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.sagemaker.InputFileType)
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileTypeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_InputFileType_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_InputFileType_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.class, flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Builder.class);
+      }
+
+      // Construct using flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.internal_static_flyteidl_plugins_sagemaker_InputFileType_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType getDefaultInstanceForType() {
+        return flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType build() {
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType buildPartial() {
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType result = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType) {
+          return mergeFrom((flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType other) {
+        if (other == flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.sagemaker.InputFileType)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.plugins.sagemaker.InputFileType)
+    private static final flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType();
+    }
+
+    public static flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InputFileType>
+        PARSER = new com.google.protobuf.AbstractParser<InputFileType>() {
+      @java.lang.Override
+      public InputFileType parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new InputFileType(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<InputFileType> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InputFileType> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface MetricDefinitionOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.plugins.sagemaker.MetricDefinition)
       com.google.protobuf.MessageOrBuilder {
@@ -1915,6 +2436,37 @@ public final class TrainingJobOuterClass {
      */
     flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinitionOrBuilder getMetricDefinitionsOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * The type of the input files (when using FILE input mode)
+     * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+     * </pre>
+     *
+     * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+     */
+    boolean hasInputFileType();
+    /**
+     * <pre>
+     * The type of the input files (when using FILE input mode)
+     * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+     * </pre>
+     *
+     * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+     */
+    flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType getInputFileType();
+    /**
+     * <pre>
+     * The type of the input files (when using FILE input mode)
+     * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+     * </pre>
+     *
+     * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+     */
+    flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileTypeOrBuilder getInputFileTypeOrBuilder();
   }
   /**
    * <pre>
@@ -1994,6 +2546,19 @@ public final class TrainingJobOuterClass {
               }
               metricDefinitions_.add(
                   input.readMessage(flyteidl.plugins.sagemaker.TrainingJobOuterClass.MetricDefinition.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Builder subBuilder = null;
+              if (inputFileType_ != null) {
+                subBuilder = inputFileType_.toBuilder();
+              }
+              inputFileType_ = input.readMessage(flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(inputFileType_);
+                inputFileType_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -2193,6 +2758,45 @@ public final class TrainingJobOuterClass {
       return metricDefinitions_.get(index);
     }
 
+    public static final int INPUT_FILE_TYPE_FIELD_NUMBER = 5;
+    private flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType inputFileType_;
+    /**
+     * <pre>
+     * The type of the input files (when using FILE input mode)
+     * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+     * </pre>
+     *
+     * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+     */
+    public boolean hasInputFileType() {
+      return inputFileType_ != null;
+    }
+    /**
+     * <pre>
+     * The type of the input files (when using FILE input mode)
+     * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+     * </pre>
+     *
+     * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+     */
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType getInputFileType() {
+      return inputFileType_ == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.getDefaultInstance() : inputFileType_;
+    }
+    /**
+     * <pre>
+     * The type of the input files (when using FILE input mode)
+     * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+     * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+     * </pre>
+     *
+     * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+     */
+    public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileTypeOrBuilder getInputFileTypeOrBuilder() {
+      return getInputFileType();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2219,6 +2823,9 @@ public final class TrainingJobOuterClass {
       for (int i = 0; i < metricDefinitions_.size(); i++) {
         output.writeMessage(4, metricDefinitions_.get(i));
       }
+      if (inputFileType_ != null) {
+        output.writeMessage(5, getInputFileType());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2243,6 +2850,10 @@ public final class TrainingJobOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, metricDefinitions_.get(i));
       }
+      if (inputFileType_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getInputFileType());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2264,6 +2875,11 @@ public final class TrainingJobOuterClass {
           .equals(other.getAlgorithmVersion())) return false;
       if (!getMetricDefinitionsList()
           .equals(other.getMetricDefinitionsList())) return false;
+      if (hasInputFileType() != other.hasInputFileType()) return false;
+      if (hasInputFileType()) {
+        if (!getInputFileType()
+            .equals(other.getInputFileType())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2284,6 +2900,10 @@ public final class TrainingJobOuterClass {
       if (getMetricDefinitionsCount() > 0) {
         hash = (37 * hash) + METRIC_DEFINITIONS_FIELD_NUMBER;
         hash = (53 * hash) + getMetricDefinitionsList().hashCode();
+      }
+      if (hasInputFileType()) {
+        hash = (37 * hash) + INPUT_FILE_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getInputFileType().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2441,6 +3061,12 @@ public final class TrainingJobOuterClass {
         } else {
           metricDefinitionsBuilder_.clear();
         }
+        if (inputFileTypeBuilder_ == null) {
+          inputFileType_ = null;
+        } else {
+          inputFileType_ = null;
+          inputFileTypeBuilder_ = null;
+        }
         return this;
       }
 
@@ -2480,6 +3106,11 @@ public final class TrainingJobOuterClass {
           result.metricDefinitions_ = metricDefinitions_;
         } else {
           result.metricDefinitions_ = metricDefinitionsBuilder_.build();
+        }
+        if (inputFileTypeBuilder_ == null) {
+          result.inputFileType_ = inputFileType_;
+        } else {
+          result.inputFileType_ = inputFileTypeBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -2565,6 +3196,9 @@ public final class TrainingJobOuterClass {
               metricDefinitionsBuilder_.addAllMessages(other.metricDefinitions_);
             }
           }
+        }
+        if (other.hasInputFileType()) {
+          mergeInputFileType(other.getInputFileType());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3171,6 +3805,177 @@ public final class TrainingJobOuterClass {
           metricDefinitions_ = null;
         }
         return metricDefinitionsBuilder_;
+      }
+
+      private flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType inputFileType_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType, flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileTypeOrBuilder> inputFileTypeBuilder_;
+      /**
+       * <pre>
+       * The type of the input files (when using FILE input mode)
+       * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+       */
+      public boolean hasInputFileType() {
+        return inputFileTypeBuilder_ != null || inputFileType_ != null;
+      }
+      /**
+       * <pre>
+       * The type of the input files (when using FILE input mode)
+       * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+       */
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType getInputFileType() {
+        if (inputFileTypeBuilder_ == null) {
+          return inputFileType_ == null ? flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.getDefaultInstance() : inputFileType_;
+        } else {
+          return inputFileTypeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The type of the input files (when using FILE input mode)
+       * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+       */
+      public Builder setInputFileType(flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType value) {
+        if (inputFileTypeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          inputFileType_ = value;
+          onChanged();
+        } else {
+          inputFileTypeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The type of the input files (when using FILE input mode)
+       * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+       */
+      public Builder setInputFileType(
+          flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Builder builderForValue) {
+        if (inputFileTypeBuilder_ == null) {
+          inputFileType_ = builderForValue.build();
+          onChanged();
+        } else {
+          inputFileTypeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The type of the input files (when using FILE input mode)
+       * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+       */
+      public Builder mergeInputFileType(flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType value) {
+        if (inputFileTypeBuilder_ == null) {
+          if (inputFileType_ != null) {
+            inputFileType_ =
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.newBuilder(inputFileType_).mergeFrom(value).buildPartial();
+          } else {
+            inputFileType_ = value;
+          }
+          onChanged();
+        } else {
+          inputFileTypeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The type of the input files (when using FILE input mode)
+       * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+       */
+      public Builder clearInputFileType() {
+        if (inputFileTypeBuilder_ == null) {
+          inputFileType_ = null;
+          onChanged();
+        } else {
+          inputFileType_ = null;
+          inputFileTypeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The type of the input files (when using FILE input mode)
+       * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+       */
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Builder getInputFileTypeBuilder() {
+        
+        onChanged();
+        return getInputFileTypeFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The type of the input files (when using FILE input mode)
+       * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+       */
+      public flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileTypeOrBuilder getInputFileTypeOrBuilder() {
+        if (inputFileTypeBuilder_ != null) {
+          return inputFileTypeBuilder_.getMessageOrBuilder();
+        } else {
+          return inputFileType_ == null ?
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.getDefaultInstance() : inputFileType_;
+        }
+      }
+      /**
+       * <pre>
+       * The type of the input files (when using FILE input mode)
+       * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
+       * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.sagemaker.InputFileType input_file_type = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType, flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileTypeOrBuilder> 
+          getInputFileTypeFieldBuilder() {
+        if (inputFileTypeBuilder_ == null) {
+          inputFileTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType, flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileType.Builder, flyteidl.plugins.sagemaker.TrainingJobOuterClass.InputFileTypeOrBuilder>(
+                  getInputFileType(),
+                  getParentForChildren(),
+                  isClean());
+          inputFileType_ = null;
+        }
+        return inputFileTypeBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4809,6 +5614,11 @@ public final class TrainingJobOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_plugins_sagemaker_AlgorithmName_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_plugins_sagemaker_InputFileType_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_plugins_sagemaker_InputFileType_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_plugins_sagemaker_MetricDefinition_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -4842,23 +5652,26 @@ public final class TrainingJobOuterClass {
       "gle/protobuf/duration.proto\"(\n\tInputMode" +
       "\"\033\n\005Value\022\010\n\004FILE\020\000\022\010\n\004PIPE\020\001\"1\n\rAlgorit" +
       "hmName\" \n\005Value\022\n\n\006CUSTOM\020\000\022\013\n\007XGBOOST\020\001" +
-      "\"/\n\020MetricDefinition\022\014\n\004name\030\001 \001(\t\022\r\n\005re" +
-      "gex\030\002 \001(\t\"\207\002\n\026AlgorithmSpecification\022?\n\n" +
-      "input_mode\030\001 \001(\0162+.flyteidl.plugins.sage" +
-      "maker.InputMode.Value\022G\n\016algorithm_name\030" +
-      "\002 \001(\0162/.flyteidl.plugins.sagemaker.Algor" +
-      "ithmName.Value\022\031\n\021algorithm_version\030\003 \001(" +
-      "\t\022H\n\022metric_definitions\030\004 \003(\0132,.flyteidl" +
-      ".plugins.sagemaker.MetricDefinition\"e\n\031T" +
-      "rainingJobResourceConfig\022\026\n\016instance_cou" +
-      "nt\030\001 \001(\003\022\025\n\rinstance_type\030\002 \001(\t\022\031\n\021volum" +
-      "e_size_in_gb\030\003 \001(\003\"\277\001\n\013TrainingJob\022S\n\027al" +
-      "gorithm_specification\030\001 \001(\01322.flyteidl.p" +
-      "lugins.sagemaker.AlgorithmSpecification\022" +
-      "[\n\034training_job_resource_config\030\002 \001(\01325." +
-      "flyteidl.plugins.sagemaker.TrainingJobRe" +
-      "sourceConfigB5Z3github.com/lyft/flyteidl" +
-      "/gen/pb-go/flyteidl/pluginsb\006proto3"
+      "\"7\n\rInputFileType\"&\n\005Value\022\014\n\010TEXT_CSV\020\000" +
+      "\022\017\n\013TEXT_LIBSVM\020\001\"/\n\020MetricDefinition\022\014\n" +
+      "\004name\030\001 \001(\t\022\r\n\005regex\030\002 \001(\t\"\313\002\n\026Algorithm" +
+      "Specification\022?\n\ninput_mode\030\001 \001(\0162+.flyt" +
+      "eidl.plugins.sagemaker.InputMode.Value\022G" +
+      "\n\016algorithm_name\030\002 \001(\0162/.flyteidl.plugin" +
+      "s.sagemaker.AlgorithmName.Value\022\031\n\021algor" +
+      "ithm_version\030\003 \001(\t\022H\n\022metric_definitions" +
+      "\030\004 \003(\0132,.flyteidl.plugins.sagemaker.Metr" +
+      "icDefinition\022B\n\017input_file_type\030\005 \001(\0132)." +
+      "flyteidl.plugins.sagemaker.InputFileType" +
+      "\"e\n\031TrainingJobResourceConfig\022\026\n\016instanc" +
+      "e_count\030\001 \001(\003\022\025\n\rinstance_type\030\002 \001(\t\022\031\n\021" +
+      "volume_size_in_gb\030\003 \001(\003\"\277\001\n\013TrainingJob\022" +
+      "S\n\027algorithm_specification\030\001 \001(\01322.flyte" +
+      "idl.plugins.sagemaker.AlgorithmSpecifica" +
+      "tion\022[\n\034training_job_resource_config\030\002 \001" +
+      "(\01325.flyteidl.plugins.sagemaker.Training" +
+      "JobResourceConfigB5Z3github.com/lyft/fly" +
+      "teidl/gen/pb-go/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4885,26 +5698,32 @@ public final class TrainingJobOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_AlgorithmName_descriptor,
         new java.lang.String[] { });
-    internal_static_flyteidl_plugins_sagemaker_MetricDefinition_descriptor =
+    internal_static_flyteidl_plugins_sagemaker_InputFileType_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_flyteidl_plugins_sagemaker_InputFileType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_plugins_sagemaker_InputFileType_descriptor,
+        new java.lang.String[] { });
+    internal_static_flyteidl_plugins_sagemaker_MetricDefinition_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_plugins_sagemaker_MetricDefinition_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_MetricDefinition_descriptor,
         new java.lang.String[] { "Name", "Regex", });
     internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_AlgorithmSpecification_descriptor,
-        new java.lang.String[] { "InputMode", "AlgorithmName", "AlgorithmVersion", "MetricDefinitions", });
+        new java.lang.String[] { "InputMode", "AlgorithmName", "AlgorithmVersion", "MetricDefinitions", "InputFileType", });
     internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_TrainingJobResourceConfig_descriptor,
         new java.lang.String[] { "InstanceCount", "InstanceType", "VolumeSizeInGb", });
     internal_static_flyteidl_plugins_sagemaker_TrainingJob_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_plugins_sagemaker_TrainingJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_sagemaker_TrainingJob_descriptor,
