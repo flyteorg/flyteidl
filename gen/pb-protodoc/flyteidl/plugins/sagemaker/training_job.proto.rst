@@ -87,7 +87,7 @@ flyteidl.plugins.sagemaker.InputFileType
 
 `[flyteidl.plugins.sagemaker.InputFileType proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L37>`_
 
-When using FILE input mode, different SageMaker built-in algorithms require different file types of input data
+Specifies the type of file for input data. Different SageMaker built-in algorithms require different file types of input data
 See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
 https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
 
@@ -183,7 +183,6 @@ input_mode
 
 algorithm_name
   (:ref:`flyteidl.plugins.sagemaker.AlgorithmName.Value <api_enum_flyteidl.plugins.sagemaker.AlgorithmName.Value>`) The algorithm name is used for deciding which pre-built image to point to
-  This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
   
   
 .. _api_field_flyteidl.plugins.sagemaker.AlgorithmSpecification.algorithm_version:
@@ -216,7 +215,7 @@ input_file_type
 flyteidl.plugins.sagemaker.TrainingJobResourceConfig
 ----------------------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L87>`_
+`[flyteidl.plugins.sagemaker.TrainingJobResourceConfig proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L86>`_
 
 TrainingJobResourceConfig is a pass-through, specifying the instance type to use for the training job, the
 number of instances to launch, and the size of the ML storage volume the user wants to provision
@@ -255,7 +254,7 @@ volume_size_in_gb
 flyteidl.plugins.sagemaker.TrainingJob
 --------------------------------------
 
-`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L98>`_
+`[flyteidl.plugins.sagemaker.TrainingJob proto] <https://github.com/lyft/flyteidl/blob/master/protos/flyteidl/plugins/sagemaker/training_job.proto#L97>`_
 
 The spec of a training job. This is mostly a pass-through object
 https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html

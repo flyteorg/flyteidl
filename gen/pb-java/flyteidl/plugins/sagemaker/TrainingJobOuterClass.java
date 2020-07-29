@@ -1072,7 +1072,7 @@ public final class TrainingJobOuterClass {
   }
   /**
    * <pre>
-   * When using FILE input mode, different SageMaker built-in algorithms require different file types of input data
+   * Specifies the type of file for input data. Different SageMaker built-in algorithms require different file types of input data
    * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
    * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
    * </pre>
@@ -1390,7 +1390,7 @@ public final class TrainingJobOuterClass {
     }
     /**
      * <pre>
-     * When using FILE input mode, different SageMaker built-in algorithms require different file types of input data
+     * Specifies the type of file for input data. Different SageMaker built-in algorithms require different file types of input data
      * See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
      * https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
      * </pre>
@@ -2381,7 +2381,6 @@ public final class TrainingJobOuterClass {
     /**
      * <pre>
      * The algorithm name is used for deciding which pre-built image to point to
-     * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
      * </pre>
      *
      * <code>.flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;</code>
@@ -2390,7 +2389,6 @@ public final class TrainingJobOuterClass {
     /**
      * <pre>
      * The algorithm name is used for deciding which pre-built image to point to
-     * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
      * </pre>
      *
      * <code>.flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;</code>
@@ -2645,7 +2643,6 @@ public final class TrainingJobOuterClass {
     /**
      * <pre>
      * The algorithm name is used for deciding which pre-built image to point to
-     * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
      * </pre>
      *
      * <code>.flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;</code>
@@ -2656,7 +2653,6 @@ public final class TrainingJobOuterClass {
     /**
      * <pre>
      * The algorithm name is used for deciding which pre-built image to point to
-     * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
      * </pre>
      *
      * <code>.flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;</code>
@@ -3293,7 +3289,6 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * The algorithm name is used for deciding which pre-built image to point to
-       * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
        * </pre>
        *
        * <code>.flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;</code>
@@ -3304,7 +3299,6 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * The algorithm name is used for deciding which pre-built image to point to
-       * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
        * </pre>
        *
        * <code>.flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;</code>
@@ -3317,7 +3311,6 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * The algorithm name is used for deciding which pre-built image to point to
-       * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
        * </pre>
        *
        * <code>.flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;</code>
@@ -3330,7 +3323,6 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * The algorithm name is used for deciding which pre-built image to point to
-       * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
        * </pre>
        *
        * <code>.flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;</code>
@@ -3347,7 +3339,6 @@ public final class TrainingJobOuterClass {
       /**
        * <pre>
        * The algorithm name is used for deciding which pre-built image to point to
-       * This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
        * </pre>
        *
        * <code>.flyteidl.plugins.sagemaker.AlgorithmName.Value algorithm_name = 2;</code>

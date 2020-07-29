@@ -169,7 +169,7 @@ func (m *AlgorithmName) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_AlgorithmName proto.InternalMessageInfo
 
-// When using FILE input mode, different SageMaker built-in algorithms require different file types of input data
+// Specifies the type of file for input data. Different SageMaker built-in algorithms require different file types of input data
 // See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
 // https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
 type InputFileType struct {
@@ -266,7 +266,6 @@ type AlgorithmSpecification struct {
 	// The input mode can be either PIPE or FILE
 	InputMode InputMode_Value `protobuf:"varint,1,opt,name=input_mode,json=inputMode,proto3,enum=flyteidl.plugins.sagemaker.InputMode_Value" json:"input_mode,omitempty"`
 	// The algorithm name is used for deciding which pre-built image to point to
-	// This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
 	AlgorithmName AlgorithmName_Value `protobuf:"varint,2,opt,name=algorithm_name,json=algorithmName,proto3,enum=flyteidl.plugins.sagemaker.AlgorithmName_Value" json:"algorithm_name,omitempty"`
 	// The algorithm version field is used for deciding which pre-built image to point to
 	// This is only needed for use cases where SageMaker's built-in algorithm mode is chosen
