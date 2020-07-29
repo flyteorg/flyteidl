@@ -93,8 +93,11 @@ message LaunchPlanSpec {
 
     AuthRole auth_role                    = 9;
 
-    // Indicates the runtime priority of the execution. 
+    // Indicates the runtime priority of the execution.
     core.QualityOfService quality_of_service   = 16;
+
+    // Prefix for where offloaded data from user workflows will be written (ie Blobs, Schema, query data, etc.)
+    string output_data_prefix            = 17;
 }
 
 // Values computed by the flyte platform after launch plan registration.
