@@ -79,7 +79,7 @@ message AlgorithmSpecification {
     // The type of the input files (when using FILE input mode)
     // See https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html
     // https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html
-    InputFileType input_file_type = 5;
+    InputFileType.Value input_file_type = 5;
 }
 
 // TrainingJobResourceConfig is a pass-through, specifying the instance type to use for the training job, the
