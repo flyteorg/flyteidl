@@ -96,8 +96,9 @@ message LaunchPlanSpec {
     // Indicates the runtime priority of the execution.
     core.QualityOfService quality_of_service   = 16;
 
-    // Prefix for where offloaded data from user workflows will be written (ie Blobs, Schema, query data, etc.)
-    string output_data_prefix            = 17;
+    // Prefix for where offloaded data from user workflows will be written (i.e. Blobs, Schema, query data, etc.)
+    // e.g. s3://bucket/key or s3://bucket/
+    string raw_output_data_prefix            = 17;
 }
 
 // Values computed by the flyte platform after launch plan registration.
